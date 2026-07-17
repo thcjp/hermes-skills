@@ -1,0 +1,276 @@
+---
+slug: aws
+name: aws
+version: "1.0.2"
+displayName: AWS | Amazon Web Services
+summary: Architect, deploy, and optimize AWS infrastructure avoiding cost explosions
+  and security pitfalls.
+license: MIT
+description: |-
+  Architect, deploy, and optimize AWS infrastructure avoiding cost explosions
+  and security pitfalls.
+
+  核心能力:
+
+  - 运维工具领域的专业化AI辅助工具
+
+  - 基于高人气开源Skill深度优化升级
+
+  - 移除风险代码,增强安全性和稳定性
+
+  适用场景:
+
+  - 系统运维、监控告警、资源管理
+
+  - 独立开发者与一人公司效率提升
+
+  - 自动化工作流与智能决策辅助
+
+  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
+
+  触发关键词: web, deploy, architect, avoiding, aws, optimize, infrastructure, amazon
+tags:
+- Operations
+tools:
+- read
+- exec
+---
+
+# AWS | Amazon Web Services
+
+## Setup
+
+On first use, read `setup.md` for integration options. The skill works immediately — setup is optional for personalization.
+
+## When to Use
+
+User needs AWS infrastructure guidance. Agent handles architecture decisions, service selection, cost optimization, security hardening, and deployment patterns.
+
+## Architecture
+
+Memory lives in `~/aws/`. See `memory-template.md` for structure.
+
+```text
+~/aws/
+├── memory.md        # Account context + preferences
+├── resources.md     # Active infrastructure inventory
+└── costs.md         # Cost tracking + alerts
+```
+
+## Quick Reference
+
+| Topic | File |
+| --- | --- |
+| Setup process | `setup.md` |
+| Memory template | `memory-template.md` |
+| Service patterns | `services.md` |
+| Cost optimization | `costs.md` |
+| Security hardening | `security.md` |
+
+## Core Rules
+
+### 1. Verify Account Context First
+
+Before any operation, confirm:
+
+* Region (default: us-east-1, but ask)
+* Account type (personal/startup/enterprise)
+* Existing infrastructure (VPC, subnets, security groups)
+
+```bash
+aws sts get-caller-identity
+aws ec2 describe-vpcs --query 'Vpcs[].{ID:VpcId,CIDR:CidrBlock,Default:IsDefault}'
+```
+
+### 2. Cost-First Architecture
+
+Every recommendation includes cost impact:
+
+| Stage | Recommended Stack | Monthly Cost |
+| --- | --- | --- |
+| MVP (<1k users) | Single EC2 + RDS | ~$50 |
+| Growth (1-10k) | ALB + ASG + RDS Multi-AZ | ~$200 |
+| Scale (10k+) | ECS/EKS + Aurora + ElastiCache | ~$500+ |
+
+**Default to smallest viable instance.** Scaling up is easy; scaling down wastes money.
+
+### 3. Security by Default
+
+Every resource includes:
+
+* Principle of least privilege IAM
+* Encryption at rest (KMS default key minimum)
+* VPC isolation (no public subnets for databases)
+* Security groups with explicit deny-all inbound
+
+### 4. Infrastructure as Code
+
+Generate Terraform or CloudFormation for reproducibility:
+
+```bash
+terraform init && terraform plan
+```
+
+Never rely on console-only changes.
+
+### 5. Tagging Strategy
+
+Every resource gets tagged for cost allocation:
+
+```bash
+--tags Key=Environment,Value=prod Key=Project,Value=myapp Key=Owner,Value=team
+```
+
+### 6. Monitoring from Day 1
+
+Deploy CloudWatch alarms with infrastructure:
+
+* Billing alerts (before you get surprised)
+* CPU/Memory thresholds
+* Error rate spikes
+
+## Cost Traps
+
+**NAT Gateway data processing ($0.045/GB):**
+VPC endpoints are free for S3/DynamoDB. A busy app can burn $500/month on NAT alone.
+
+```bash
+aws ec2 create-vpc-endpoint --vpc-id vpc-xxx \
+  --service-name com.amazonaws.us-east-1.s3 --route-table-ids rtb-xxx
+```
+
+**EBS snapshots accumulate forever:**
+Automated backups create snapshots that never delete. Set lifecycle policies.
+
+```bash
+aws ec2 describe-snapshots --owner-ids self \
+  --query 'Snapshots[?StartTime<=`2024-01-01`].[SnapshotId,StartTime,VolumeSize]'
+```
+
+**CloudWatch Logs default retention is forever:**
+
+```bash
+aws logs put-retention-policy --log-group-name /aws/lambda/fn --retention-in-days 14
+```
+
+**Idle load balancers cost $16/month minimum:**
+ALBs charge even with zero traffic. Delete unused ones.
+
+**Data transfer between AZs costs $0.01/GB each way:**
+Chatty microservices across AZs add up fast. Co-locate when possible.
+
+## Security Traps
+
+**S3 bucket policies override ACLs:**
+Console shows ACL as "private" but a bucket policy can still expose everything.
+
+```bash
+aws s3api get-bucket-policy --bucket my-bucket 2>/dev/null || echo "No policy"
+aws s3api get-public-access-block --bucket my-bucket
+```
+
+**Default VPC security groups allow all outbound:**
+Attackers exfiltrate through outbound. Restrict it.
+
+**IAM users with console access + programmatic access:**
+Credentials in code get leaked. Use roles + temporary credentials.
+
+**RDS publicly accessible defaults to Yes in console:**
+Always verify:
+
+```bash
+aws rds describe-db-instances --query 'DBInstances[].{ID:DBInstanceIdentifier,Public:PubliclyAccessible}'
+```
+
+## Performance Patterns
+
+**Lambda cold starts:**
+
+* Use provisioned concurrency for latency-sensitive functions
+* Keep packages small (<50MB unzipped)
+* Initialize SDK clients outside handler
+
+**RDS connection limits:**
+
+| Instance | Max Connections |
+| --- | --- |
+| db.t3.micro | 66 |
+| db.t3.small | 150 |
+| db.t3.medium | 300 |
+
+Use RDS Proxy for Lambda to avoid connection exhaustion.
+
+**EBS volume types:**
+
+| Type | Use Case | IOPS |
+| --- | --- | --- |
+| gp3 | Default (consistent) | 3,000 base |
+| io2 | Databases (guaranteed) | Up to 64,000 |
+| st1 | Big data (throughput) | 500 MiB/s |
+
+## Service Selection
+
+| Need | Service | Why |
+| --- | --- | --- |
+| Static site | S3 + CloudFront | Pennies/month, global CDN |
+| API backend | Lambda + API Gateway | Zero idle cost |
+| Container app | ECS Fargate | No cluster management |
+| Database | RDS PostgreSQL | Managed, Multi-AZ ready |
+| Cache | ElastiCache Redis | Session/cache, < DynamoDB latency |
+| Queue | SQS | Simpler than SNS for most cases |
+| Search | OpenSearch | Elasticsearch managed |
+
+## CLI Essentials
+
+```bash
+aws configure --profile myproject
+
+export AWS_PROFILE=myproject
+
+aws sts get-caller-identity
+
+aws ec2 describe-regions --query 'Regions[].RegionName'
+
+aws ce get-cost-forecast --time-period Start=$(date +%Y-%m-01),End=$(date -v+1m +%Y-%m-01) \
+  --metric UNBLENDED_COST --granularity MONTHLY
+```
+
+## Security & Privacy
+
+**Credentials:** This skill uses the AWS CLI, which reads credentials from `[REDACTED_AWS_PATH] or environment variables. The skill never stores, logs, or transmits AWS credentials.
+
+**Local storage:** Preferences and context stored in `~/aws/` — no data leaves your machine.
+
+**CLI commands:** All commands shown are read-only by default. Destructive operations (delete, terminate) require explicit user confirmation.
+
+## Related Skills
+
+Install with `* 安装此Skill请参考SkillHub平台指南
+
+* `infrastructure` — architecture decisions
+* `cloud` — multi-cloud patterns
+* `docker` — container basics
+* `backend` — API design
+
+## Feedback
+
+* If useful: `
+* Stay updated: `
+
+## 依赖说明
+
+### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **操作系统**: Windows / macOS / Linux
+
+### 第三方依赖
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+- 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
+
+### 可用性分类
+- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务

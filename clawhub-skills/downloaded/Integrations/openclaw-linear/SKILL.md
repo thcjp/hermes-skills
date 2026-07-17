@@ -1,0 +1,239 @@
+---
+slug: openclaw-linear
+name: openclaw-linear
+version: "1.0.1"
+displayName: Linear CLI
+summary: Manage Linear issues, projects, teams, and documents from the command line
+  using the linear CLI. ...
+license: MIT
+description: |-
+  Manage Linear issues, projects, teams, and documents from the command
+  line using the linear CLI. ...
+
+  核心能力:
+
+  - 集成工具领域的专业化AI辅助工具
+
+  - 基于高人气开源Skill深度优化升级
+
+  - 移除风险代码,增强安全性和稳定性
+
+  适用场景:
+
+  - 第三方API集成、平台对接、数据同步
+
+  - 独立开发者与一人公司效率提升
+
+  - 自动化工作流与智能决策辅助
+
+  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
+
+  触发关键词: teams, linear, manage, openclaw, issues, projects, cli
+tags:
+- Integrations
+tools:
+- read
+- exec
+---
+
+# Linear CLI
+
+A CLI to manage Linear issues from the command line, with git and jj integration.
+
+## Prerequisites
+
+The `linear` command must be available on PATH. To check:
+
+```bash
+linear --version
+```
+
+If not installed:
+
+* **Homebrew**: `brew install schpet/tap/linear`
+* **Deno**: `deno install -A --reload -f -g -n linear jsr:@schpet/linear-cli`
+* **Binaries**: <https://github.com/schpet/linear-cli/releases/latest>
+
+## Setup
+
+1. Create an API key at <https://linear.app/settings/account/security>
+2. Authenticate: `linear auth login`
+3. Configure your project: `cd my-project-repo && linear config`
+
+## Available Commands
+
+```text
+linear auth               # Manage Linear authentication
+linear issue              # Manage Linear issues
+linear team               # Manage Linear teams
+linear project            # Manage Linear projects
+linear project-update     # Manage project status updates
+linear milestone          # Manage Linear project milestones
+linear initiative         # Manage Linear initiatives
+linear initiative-update  # Manage initiative status updates
+linear label              # Manage Linear issue labels
+linear document           # Manage Linear documents
+linear config             # Interactively generate .linear.toml configuration
+linear schema             # Print the GraphQL schema to stdout
+linear api                # Make a raw GraphQL API request
+```
+
+## Common Workflows
+
+### List and view issues
+
+```bash
+linear issue list
+
+linear issue list -s started
+linear issue list -s completed
+
+linear issue list -A
+
+linear issue view
+
+linear issue view ABC-123
+```
+
+### Create and manage issues
+
+```bash
+linear issue create
+
+linear issue create -t "Fix login bug" -d "Users can't log in with SSO" -s "In Progress" -a self --priority 1
+
+linear issue update ABC-123 -s "Done" -t "Updated title"
+
+linear issue comment add ABC-123 -b "This is fixed in the latest build"
+
+linear issue delete ABC-123 -y
+```
+
+### Start working on an issue
+
+```bash
+linear issue start
+
+linear issue start ABC-123
+
+linear issue pr
+```
+
+### Projects and milestones
+
+```bash
+linear project list
+
+linear project create -n "Q1 Launch" -t ENG -s started --target-date 2026-03-31
+
+linear milestone list --project <projectId>
+```
+
+### Documents
+
+```bash
+linear document list
+
+linear document create --title "Design Spec" --content-file ./spec.md --project <projectId>
+
+linear document view <slug>
+```
+
+### Teams
+
+```bash
+linear team list
+
+linear team members
+```
+
+## Discovering Options
+
+Run `--help` on any command for flags and options:
+
+```bash
+linear --help
+linear issue --help
+linear issue list --help
+linear issue create --help
+```
+
+## Using the Linear GraphQL API Directly
+
+**Prefer the CLI for all supported operations.** The `api` command is a fallback for queries not covered by the CLI.
+
+### Check the schema
+
+```bash
+linear schema -o "${TMPDIR:-/tmp}/linear-schema.graphql"
+grep -i "cycle" "${TMPDIR:-/tmp}/linear-schema.graphql"
+grep -A 30 "^type Issue " "${TMPDIR:-/tmp}/linear-schema.graphql"
+```
+
+### Make a GraphQL request
+
+```bash
+linear api '{ viewer { id name email } }'
+
+linear api 'query($teamId: String!) { team(id: $teamId) { name } }' --variable teamId=abc123
+
+linear api 'query($filter: IssueFilter!) { issues(filter: $filter) { nodes { title } } }' \
+  --variables-json '{"filter": {"state": {"name": {"eq": "In Progress"}}}}'
+
+linear api '{ issues(first: 5) { nodes { identifier title } } }' | jq '.data.issues.nodes[].title'
+```
+
+### Using curl directly
+
+```bash
+curl -s -X POST https://api.linear.app/graphql \
+  -H "Content-Type: application/json" \
+  -H "Authorization: $(linear auth token)" \
+  -d '{"query": "{ viewer { id } }"}'
+```
+
+## Reference Documentation
+
+For detailed subcommand documentation with all flags and options:
+
+* [issue](/api/v1/skills/skill-platform-linear/file?path=references%2Fissue.md&ownerHandle=cipher-shad0w) - Manage Linear issues (list, create, update, start, view, comment, PR, delete)
+* [team](/api/v1/skills/skill-platform-linear/file?path=references%2Fteam.md&ownerHandle=cipher-shad0w) - Manage Linear teams (list, create, delete, members, autolinks)
+* [project](/api/v1/skills/skill-platform-linear/file?path=references%2Fproject.md&ownerHandle=cipher-shad0w) - Manage Linear projects (list, view, create)
+* [document](/api/v1/skills/skill-platform-linear/file?path=references%2Fdocument.md&ownerHandle=cipher-shad0w) - Manage Linear documents (list, view, create, update, delete)
+* [api](/api/v1/skills/skill-platform-linear/file?path=references%2Fapi.md&ownerHandle=cipher-shad0w) - Make raw GraphQL API requests
+
+## Configuration
+
+The CLI supports environment variables or a `.linear.toml` config file:
+
+| Option | Env Var | TOML Key | Example |
+| --- | --- | --- | --- |
+| Team ID | `LINEAR_TEAM_ID` | `team_id` | `"ENG"` |
+| Workspace | `LINEAR_WORKSPACE` | `workspace` | `"mycompany"` |
+| Issue sort | `LINEAR_ISSUE_SORT` | `issue_sort` | `"priority"` or `"manual"` |
+| VCS | `LINEAR_VCS` | `vcs` | `"git"` or `"jj"` |
+
+Config file locations (checked in order):
+
+1. `./linear.toml` or `./.linear.toml` (current directory)
+2. `<repo-root>/linear.toml` or `<repo-root>/.linear.toml`
+3. `<repo-root>/.config/linear.toml`
+4. `~/.config/linear/linear.toml`
+
+## 依赖说明
+
+### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **操作系统**: Windows / macOS / Linux
+
+### 第三方依赖
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+- 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
+
+### 可用性分类
+- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务

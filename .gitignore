@@ -1,0 +1,20 @@
+# Sensitive
+.skillhub-credentials/
+*.key
+*.pem
+.env
+
+# Temporary
+.trae-html-share-packages/
+*.tmp
+*.log
+*.bak
+
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
