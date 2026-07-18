@@ -1,0 +1,264 @@
+---
+slug: content-filter-tool-pro
+name: content-filter-tool-pro
+version: "1.0.0"
+displayName: 内容过滤工具专业版
+summary: 面向团队的 AI 语义过滤、多账号同步与合规审计工具。
+license: MIT
+edition: pro
+description: |-
+  面向团队的信息流 AI 语义过滤与合规治理专业工具。
+
+  核心能力:
+  - AI 语义识别与多语言过滤
+  - 多账号规则同步与团队治理
+  - 合规审计与敏感内容留痕
+  - 自定义过滤管道与 Webhook
+
+  适用场景:
+  - 团队多账号统一过滤治理
+  - AI 语义识别垃圾与敏感内容
+  - 合规审计与内容留痕
+
+  差异化: 专业版在免费版关键词过滤上扩展 AI 语义、多账号同步、合规审计与自定义管道，兼容免费版规则格式。
+
+  触发关键词: ai 语义过滤, 多语言过滤, 多账号同步, 合规审计, 敏感留痕, 自定义管道, content filter pro
+tags:
+- 内容过滤
+- 企业级
+- AI 语义
+- 合规
+- 其他工具
+tools:
+- read
+- exec
+---
+
+# 内容过滤工具（专业版）
+
+## 概述
+
+专业版面向团队与企业，在免费版关键词过滤基础上，扩展 AI 语义识别与多语言过滤、多账号规则同步与团队治理、合规审计与敏感内容留痕、自定义过滤管道与 Webhook。规则格式与免费版兼容，已有规则可直接纳入团队治理。
+
+## 核心能力
+
+| 能力 | 说明 | 专业版增强 |
+|:-----|:-----|:-----------|
+| AI 语义 | 语义识别垃圾与敏感 | 多语言 |
+| 多账号 | 规则同步与团队治理 | RBAC |
+| 合规审计 | 敏感内容留痕与报告 | 全量 |
+| 自定义管道 | 多阶段过滤与 Webhook | 可编排 |
+
+## 使用场景
+
+### 场景一：AI 语义过滤
+
+```bash
+# AI 语义过滤（专业版）
+{baseDir}/scripts/filter-pro.sh feed --ai --lang zh,en
+```
+
+```json
+{
+  "ai_filter": {
+    "enabled": true,
+    "categories": ["spam", "sensitive", "offtopic"],
+    "threshold": 0.8,
+    "languages": ["zh", "en"]
+  }
+}
+```
+
+### 场景二：多账号规则同步
+
+```bash
+# 同步团队规则到多账号
+{baseDir}/scripts/filter-pro.sh sync --team baseline.json --accounts acc1,acc2
+```
+
+### 场景三：合规审计
+
+```text
+合规审计报告:
+  过滤总数: 1,250
+  敏感内容: 42（已留痕）
+  误报申诉: 3（已复核）
+  规则命中率 TOP: 广告(380)、加微信(120)
+  建议: 加强「加微信」变体识别
+```
+
+## 快速开始
+
+1. 将免费版规则纳入团队基线。
+2. 配置 AI 语义过滤与多语言。
+3. 同步规则到多账号。
+4. 启用合规审计与 Webhook。
+
+## 配置示例
+
+过滤管道配置（`filter-pipeline.json`）：
+
+```json
+{
+  "stages": [
+    {"type": "keyword", "rules": "keywords.json"},
+    {"type": "author", "rules": "authors.json"},
+    {"type": "ai_semantic", "threshold": 0.8},
+    {"type": "compliance", "log": true}
+  ],
+  "webhook": {"url": "https://hook.example.com/filter", "events": ["blocked"]},
+  "accounts": ["acc1", "acc2"]
+}
+```
+
+## 最佳实践
+
+- **管道分阶段**：关键词→作者→AI 语义→合规，逐层过滤提效。
+- **AI 阈值别太低**：阈值过低误报多，建议 0.8 起，按需调。
+- **合规要留痕**：敏感内容留痕便于审计与申诉复核。
+- **规则集中管**：团队基线统一管理，账号继承而非各自维护。
+- **Webhook 实时通知**：关键过滤事件用 Webhook 实时通知运营。
+
+## 免费版兼容性
+
+| 项目 | 免费版 | 专业版 |
+|:-----|:-------|:-------|
+| 规则格式 | 相同 | 相同（纳入基线） |
+| 过滤方式 | 关键词/正则 | + AI 语义 |
+| 账号 | 单用户 | 多账号同步 |
+| 合规 | 不支持 | 审计留痕 |
+
+## 常见问题
+
+**Q1：AI 语义过滤准吗？**
+A：阈值 0.8 起准确率较高，误报可申诉人工复核。
+
+**Q2：多账号规则冲突怎么办？**
+A：团队基线优先，账号级覆盖需标注原因并留痕。
+
+**Q3：合规留痕存多久？**
+A：默认 90 天，可按合规要求延长。
+
+**Q4：免费版规则能升级吗？**
+A：能。规则 JSON 格式兼容，作为基线一项即可。
+
+**Q5：专业版有优先支持吗？**
+A：有。专业版享过滤策略与合规设计咨询。
+
+## 进阶用法
+
+### AI 语义过滤管道
+
+```text
+多阶段过滤管道:
+  Stage 1: 关键词/正则（快速，低成本）
+    → 命中直接屏蔽
+
+  Stage 2: 作者规则（白名单/屏蔽）
+    → 白名单优先放行
+
+  Stage 3: AI 语义识别（精确，高成本）
+    → 识别垃圾/敏感/偏题
+    → 阈值 > 0.8 屏蔽
+
+  Stage 4: 合规审计（留痕）
+    → 敏感内容留痕归档
+
+管道优势:
+  - 逐层过滤提效（AI 只处理前两层未屏蔽的）
+  - 成本可控（AI 调用少）
+  - 留痕完整（合规可追溯）
+```
+
+### 多语言语义识别
+
+```json
+{
+  "ai_filter": {
+    "enabled": true,
+    "languages": ["zh", "en", "ja"],
+    "categories": {
+      "spam": {"threshold": 0.8, "action": "block"},
+      "sensitive": {"threshold": 0.7, "action": "block", "log": true},
+      "offtopic": {"threshold": 0.9, "action": "deprioritize"}
+    },
+    "model": "multilingual-v2"
+  }
+}
+```
+
+### 合规审计报告
+
+```bash
+# 生成合规审计报告
+{baseDir}/scripts/filter-pro.sh audit --period 30d --report compliance.json
+```
+
+```text
+合规审计报告（30 天）:
+  过滤总数: 12,580
+    关键词层: 9,200（73%）
+    作者层: 1,380（11%）
+    AI 层: 2,000（16%）
+  敏感内容留痕: 142
+  误报申诉: 28（已复核 25 准确）
+  规则命中率 TOP:
+    1. 广告（3,800）
+    2. 加微信（1,200）
+    3. 敏感词（142）
+  建议: 加强「加微信」变体识别
+```
+
+### Webhook 实时通知
+
+```python
+# Webhook 接收过滤事件
+@app.route("/webhook/filter", methods=["POST"])
+def on_filtered():
+    event = request.json
+    if event["type"] == "sensitive_blocked":
+        notify_ops(event["data"])  # 敏感内容即时通知
+    elif event["type"] == "batch_complete":
+        update_dashboard(event["stats"])
+    return "", 200
+```
+
+## 治理流程
+
+- **基线统一管**：团队基线规则统一管理，账号继承。
+- **账号级覆盖**：账号可覆盖基线，需标注原因留痕。
+- **合规定期审**：每月合规审计，趋势监控。
+- **误报即复核**：误报申诉 24h 内复核。
+- **规则持续优化**：根据命中率与误报调优规则。
+
+## 多语言注意事项
+
+- **共享术语表**：多语言共享敏感词映射。
+- **语序差异**：AI 语义按目标语言处理，别直译规则。
+- **文化适配**：敏感词按文化适配，避免歧义。
+- **禁用词分语言**：各语言禁用词表分别维护。
+- **模型多语言**：用多语言模型，避免单语言漏检。
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+- **操作系统**: Windows / macOS / Linux
+- **网络**: 可访问信息流服务与 AI 语义接口
+
+### 第三方依赖
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| curl | 命令行工具 | 必需 | 系统包管理器 |
+| jq | JSON 处理 | 必需 | 系统包管理器 |
+| AI 语义 API | API | AI 过滤时必需 | 各 AI 平台控制台 |
+| LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
+
+### API Key 配置
+- 信息流服务访问令牌（团队级，RBAC）
+- AI 语义接口 API Key（如使用外部 AI 语义服务）
+- Webhook 签名密钥（验证回调合法性）
+
+### 可用性分类
+- **分类**: MD+EXEC（Markdown 指令 + 命令行执行）
+- **说明**: 通过自然语言指令驱动 Agent 完成多账号过滤与合规审计

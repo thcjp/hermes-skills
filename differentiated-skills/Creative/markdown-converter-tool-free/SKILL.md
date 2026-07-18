@@ -1,0 +1,299 @@
+---
+slug: markdown-converter-tool-free
+name: markdown-converter-tool-free
+version: "1.0.0"
+displayName: Markdown转换器免费版
+summary: 将PDF、Word、Excel、PPT等文件转换为Markdown格式,支持基础OCR与文档结构保留,适合个人使用。
+license: MIT
+edition: free
+description: |-
+  Markdown转换器免费版帮助个人用户将各类文档文件转换为Markdown格式。
+  支持PDF、Word、Excel、PPT、HTML、图片等常见格式,保留文档结构,
+  无需安装额外软件(使用uvx运行)。
+
+  核心能力:
+  - 多格式文档转Markdown(PDF/Word/Excel/PPT/HTML等)
+  - 保留文档结构(标题、表格、列表、链接)
+  - 图片OCR文字识别
+  - 音频转写(EXIF+转录)
+  - ZIP压缩包内容遍历
+
+  适用场景:
+  - 个人文档数字化与归档
+  - 学习笔记整理与知识管理
+  - 内容迁移(从Office到Markdown)
+
+  差异化:
+  - 免费版聚焦基础文档转换
+  - 无需安装,通过uvx直接运行
+  - 与PRO版完全兼容,可平滑升级
+
+  触发关键词: markdown, 转换, converter, pdf, word, excel, ppt, 文档, convert, 转换器, ocr
+tags:
+- Markdown
+- 文档转换
+- PDF
+- OCR
+- 生产力
+tools:
+- read
+- exec
+---
+
+# Markdown转换器免费版
+
+## 概述
+
+Markdown转换器免费版帮助个人用户将各类文档文件转换为Markdown格式。工具支持PDF、Word、Excel、PPT、HTML、图片、音频等常见格式,保留文档结构(标题、表格、列表、链接),无需安装额外软件,通过`uvx`直接运行。
+
+本版本面向个人用户,提供基础的文档转换能力,适合文档数字化与知识管理。
+
+## 核心能力
+
+### 支持的格式
+
+| 类别 | 格式 | 说明 |
+|------|------|------|
+| 文档 | PDF、Word(.docx)、PPT(.pptx)、Excel(.xlsx/.xls) | 办公文档转换 |
+| 网页/数据 | HTML、CSV、JSON、XML | 结构化数据转换 |
+| 媒体 | 图片(EXIF+OCR)、音频(EXIF+转录) | 媒体元数据与内容 |
+| 其他 | ZIP(遍历内容)、YouTube URL、EPub | 特殊格式支持 |
+
+### 文档结构保留
+
+转换后的Markdown保留原始文档结构:
+
+- 标题层级(h1-h6)
+- 表格(标准Markdown表格)
+- 列表(有序/无序)
+- 链接与引用
+- 图片引用
+- 代码块
+
+### 基础OCR
+
+对图片进行OCR文字识别,提取图片中的文字内容并转为Markdown。
+
+## 使用场景
+
+### 场景一:PDF文档转换
+
+需求:将PDF报告转换为Markdown便于编辑与归档。
+
+```bash
+# 基础转换
+uvx markitdown report.pdf -o report.md
+
+# 从标准输入转换
+cat input.pdf | uvx markitdown > output.md
+```
+
+### 场景二:Office文档批量转换
+
+需求:将Word、Excel、PPT文件转为Markdown。
+
+```bash
+# Word文档
+uvx markitdown document.docx -o document.md
+
+# Excel表格
+uvx markitdown data.xlsx > data.md
+
+# PowerPoint演示文稿
+uvx markitdown slides.pptx -o slides.md
+```
+
+### 场景三:网页与数据转换
+
+需求:将HTML页面或数据文件转为Markdown。
+
+```bash
+# HTML页面
+uvx markitdown page.html -o page.md
+
+# CSV数据
+uvx markitdown data.csv > data.md
+
+# JSON数据
+uvx markitdown config.json > config.md
+```
+
+## 快速开始
+
+### 步骤一:确保环境就绪
+
+```bash
+# 检查uv/uvx是否安装
+uvx --version
+
+# 如未安装,安装uv
+# macOS/Linux:
+curl -LsSf https://astral.sh/uv/install.sh | sh
+# Windows:
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+### 步骤二:执行转换
+
+```bash
+# 基础用法
+uvx markitdown input.pdf
+
+# 指定输出文件
+uvx markitdown input.pdf -o output.md
+
+# 重定向输出
+uvx markitdown input.docx > output.md
+```
+
+### 步骤三:检查结果
+
+```bash
+# 查看转换结果
+cat output.md
+
+# 检查文档结构是否完整
+# - 标题层级是否正确
+# - 表格是否保留
+# - 列表是否完整
+```
+
+## 配置示例
+
+### 命令行选项
+
+```bash
+uvx markitdown [输入文件] [选项]
+
+选项:
+  -o OUTPUT      # 输出文件路径
+  -x EXTENSION   # 提示文件扩展名(用于标准输入)
+  -m MIME_TYPE   # 提示MIME类型
+  -c CHARSET     # 提示字符集(如UTF-8)
+  -d             # 使用Azure文档智能(高级PDF)
+  -e ENDPOINT    # 文档智能端点
+  --use-plugins  # 启用第三方插件
+  --list-plugins # 列出已安装插件
+```
+
+### 常见转换示例
+
+```bash
+# PDF转Markdown
+uvx markitdown report.pdf -o report.md
+
+# Word转Markdown
+uvx markitdown document.docx -o document.md
+
+# Excel转Markdown(表格保留)
+uvx markitdown spreadsheet.xlsx > spreadsheet.md
+
+# PowerPoint转Markdown
+uvx markitdown presentation.pptx -o presentation.md
+
+# HTML转Markdown
+uvx markitdown webpage.html -o webpage.md
+
+# 图片OCR
+uvx markitdown scan.jpg -o scan.md
+
+# ZIP包遍历
+uvx markitdown archive.zip -o archive.md
+
+# 标准输入(需指定扩展名)
+cat document | uvx markitdown -x .pdf > output.md
+```
+
+## 最佳实践
+
+### 格式选择指南
+
+| 源格式 | 转换效果 | 注意事项 |
+|--------|---------|---------|
+| Word(.docx) | 优秀 | 保留格式、表格、列表 |
+| Excel(.xlsx) | 良好 | 表格转为Markdown表格 |
+| PPT(.pptx) | 良好 | 每页转为一个章节 |
+| PDF(文本) | 良好 | 保留文本与结构 |
+| PDF(扫描) | 需OCR | 使用`-d`选项启用文档智能 |
+| HTML | 优秀 | 保留链接与结构 |
+| 图片 | OCR依赖 | 清晰图片效果更好 |
+
+### 转换质量优化
+
+```bash
+# 复杂PDF使用文档智能提升效果
+uvx markitdown complex.pdf -d -e "https://your-resource.cognitiveservices.azure.com/"
+
+# 指定字符集确保中文正确
+uvx markitdown chinese-doc.pdf -c UTF-8 -o output.md
+
+# 使用插件扩展功能
+uvx markitdown --use-plugins input.docx -o output.md
+```
+
+### 性能建议
+
+| 场景 | 建议 |
+|------|------|
+| 首次运行 | 会缓存依赖,稍慢 |
+| 后续运行 | 使用缓存,更快 |
+| 大文件 | 可能需要较长时间 |
+| 批量转换 | 逐个执行或使用PRO版 |
+
+## 常见问题
+
+### Q1: 转换后中文乱码怎么办?
+
+A: 使用`-c`选项指定字符集:
+
+```bash
+uvx markitdown input.pdf -c UTF-8 -o output.md
+```
+
+### Q2: PDF转换效果不好?
+
+A: 对于扫描版PDF或复杂排版的PDF,使用`-d`选项启用文档智能服务:
+
+```bash
+uvx markitdown scan.pdf -d -e "https://your-resource.cognitiveservices.azure.com/"
+```
+
+### Q3: 免费版支持批量转换吗?
+
+A: 免费版需逐个文件执行转换。如需批量处理整个目录,请使用PRO版的批量转换功能。
+
+### Q4: 是否支持自定义输出格式?
+
+A: 免费版输出标准Markdown格式。如需自定义输出模板、元数据提取等高级功能,请使用PRO版。
+
+### Q5: 转换后的表格格式不对?
+
+A: 确保源文件的表格结构清晰。复杂合并单元格可能无法完美保留。建议在转换后手动检查并调整表格格式。
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent平台**: 支持SKILL.md规范的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **操作系统**: Windows / macOS / Linux
+- **Python**: 3.8+(通过uvx自动管理)
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+| uv/uvx | 工具 | 必需 | astral.sh安装 |
+| markitdown | Python包 | 必需 | uvx自动安装 |
+
+### API Key 配置
+
+- 本Skill基于Markdown指令驱动,无需额外API Key
+- 基础转换使用本地工具,无需云端服务
+- 如使用Azure文档智能(`-d`选项),需配置Azure端点与API Key
+
+### 可用性分类
+
+- **分类**: MD+EXEC(纯Markdown指令+命令行执行能力)
+- **说明**: 基于Markdown指令驱动Agent执行文档转换任务,通过uvx运行markitdown工具
+- **免费版限制**: 单文件转换、基础OCR、无批量处理、无自定义模板

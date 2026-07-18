@@ -1,0 +1,244 @@
+---
+slug: linear-toolkit-pro
+name: linear-toolkit-pro
+version: "1.0.0"
+displayName: Linear 工具箱专业版
+summary: 面向团队的跨团队看板、批量操作与项目健康度分析工具。
+license: MIT
+edition: pro
+description: |-
+  面向团队的 Linear 跨团队看板与项目健康度分析专业工具。
+
+  核心能力:
+  - 跨团队统一看板与批量操作
+  - 项目健康度与吞吐量分析
+  - 自动化工作流与状态联动
+  - 团队权限与审计治理
+
+  适用场景:
+  - 多团队统一任务看板
+  - 项目健康度与瓶颈分析
+  - 自动化状态联动与批量治理
+
+  差异化: 专业版在免费版单团队基础上扩展跨团队看板、健康度分析、自动化与审计，兼容免费版命令。
+
+  触发关键词: 跨团队看板, 项目健康度, 吞吐量, 自动化工作流, 批量操作, linear pro, analytics, automation
+tags:
+- Linear
+- 企业级
+- 项目管理
+- 数据分析
+- 其他工具
+tools:
+- read
+- exec
+---
+
+# Linear 工具箱（专业版）
+
+## 概述
+
+专业版面向团队与企业，在免费版单团队任务管理基础上，扩展跨团队统一看板、批量操作、项目健康度与吞吐量分析、自动化工作流与审计治理。命令与免费版兼容，已有脚本可直接纳入自动化。
+
+## 核心能力
+
+| 能力 | 说明 | 专业版增强 |
+|:-----|:-----|:-----------|
+| 跨团队看板 | 多团队任务统一视图 | 聚合筛选 |
+| 批量操作 | 批量状态/优先级/指派 | 历史回滚 |
+| 健康度分析 | 吞吐量、周期、瓶颈 | 趋势看板 |
+| 自动化 | 状态联动、定时摘要 | 规则引擎 |
+| 审计治理 | 操作留痕与权限 | RBAC |
+
+## 使用场景
+
+### 场景一：跨团队看板
+
+```bash
+# 跨团队聚合（专业版）
+{baseDir}/scripts/linear.sh board --teams A,B,C --status progress
+```
+
+```text
+跨团队看板:
+  团队A: 进行中 12 / 评审 4 / 阻塞 1
+  团队B: 进行中 8  / 评审 2 / 阻塞 0
+  团队C: 进行中 15 / 评审 6 / 阻塞 3
+  阻塞项 TOP: 团队C-3 条（建议优先处理）
+```
+
+### 场景二：项目健康度分析
+
+```python
+# 健康度分析（专业版）
+import json
+# data = linear.query(project_metrics)
+metrics = {
+    "throughput": 42,        # 本迭代完成数
+    "avg_cycle_days": 3.2,   # 平均周期
+    "blocked_ratio": 0.07,   # 阻塞率
+    "overdue": 3             # 逾期数
+}
+print(f"健康度: {'良好' if metrics['blocked_ratio']<0.1 else '预警'}")
+```
+
+### 场景三：自动化工作流
+
+```json
+{
+  "rules": [
+    {"when": "PR created", "then": "set status review"},
+    {"when": "PR merged", "then": "set status done"},
+    {"when": "blocked > 2 days", "then": "notify lead"},
+    {"schedule": "0 9 * * 1", "then": "send weekly summary"}
+  ]
+}
+```
+
+## 快速开始
+
+1. 将免费版命令纳入自动化规则。
+2. 配置跨团队看板与聚合筛选。
+3. 接入项目健康度分析。
+4. 启用自动化与审计。
+
+## 配置示例
+
+健康度看板配置（`linear-health.json`）：
+
+```json
+{
+  "teams": ["A", "B", "C"],
+  "metrics": ["throughput", "cycle_time", "blocked_ratio", "overdue"],
+  "thresholds": {"blocked_ratio_warn": 0.1, "cycle_days_warn": 5},
+  "automation": {"rules": "rules.json", "audit": true}
+}
+```
+
+## 最佳实践
+
+- **看板先聚合**：跨团队看板按状态聚合，阻塞项优先处理。
+- **健康度看周期**：周期过长或阻塞率高是预警信号。
+- **自动化减手工**：PR 状态联动、定时摘要交给规则引擎。
+- **审计要留痕**：批量操作留痕，便于回滚与追责。
+- **权限按角色**：批量操作限管理员，普通成员只读看板。
+
+## 免费版兼容性
+
+| 项目 | 免费版 | 专业版 |
+|:-----|:-------|:-------|
+| 命令 | 相同 | 相同（可编排） |
+| 范围 | 单团队 | 跨团队 |
+| 分析 | 站会摘要 | 健康度看板 |
+| 自动化 | 手动 | 规则引擎 |
+
+## 常见问题
+
+**Q1：跨团队看板会泄露数据吗？**
+A：按 RBAC 过滤，成员只看到有权访问的团队。
+
+**Q2：批量操作能回滚吗？**
+A：能。所有批量操作留痕，支持按批次回滚。
+
+**Q3：健康度数据多久更新？**
+A：默认每小时，可配置更短间隔。
+
+**Q4：自动化规则怎么测？**
+A：专业版提供规则试跑，用历史数据验证再上线。
+
+**Q5：专业版有优先支持吗？**
+A：有。专业版享工作流设计与健康度建模咨询。
+
+## 进阶用法
+
+### 跨团队看板聚合
+
+```bash
+# 聚合多团队按状态
+{baseDir}/scripts/linear.sh board --teams A,B,C --status progress
+
+# 按优先级聚合
+{baseDir}/scripts/linear.sh board --teams A,B,C --priority urgent,high
+
+# 阻塞项专项
+{baseDir}/scripts/linear.sh board --teams A,B,C --blocked
+```
+
+### 健康度指标计算
+
+```python
+# 项目健康度计算
+def health(metrics):
+    score = 100
+    score -= metrics["overdue"] * 5          # 每逾期项 -5
+    score -= max(0, metrics["blocked_ratio"] - 0.1) * 200  # 阻塞率超 10% 扣分
+    score -= max(0, metrics["avg_cycle_days"] - 5) * 3     # 周期超 5 天扣分
+    return max(0, score)
+
+metrics = {"overdue": 3, "blocked_ratio": 0.07, "avg_cycle_days": 3.2}
+print(f"健康度: {health(metrics)}/100")  # 健康度: 85/100
+```
+
+### 自动化规则引擎
+
+```json
+{
+  "rules": [
+    {"trigger": "PR created", "action": "set_status", "value": "In Review"},
+    {"trigger": "PR merged", "action": "set_status", "value": "Done"},
+    {"trigger": "blocked_days > 2", "action": "notify", "target": "lead"},
+    {"trigger": "priority = urgent", "action": "notify", "target": "team"},
+    {"schedule": "0 9 * * 1", "action": "send_summary", "scope": "team"}
+  ],
+  "dry_run": false,
+  "audit": true
+}
+```
+
+## 看板视图设计
+
+```text
+跨团队看板维度:
+  按状态: 待办/进行中/评审/阻塞/完成
+  按优先级: urgent/high/medium/low
+  按团队: A/B/C
+  按负责人: 各成员负载
+
+关键指标:
+  在制品数（WIP）: 控制在制品防过载
+  周期时间: 从开始到完成的时长
+  吞吐量: 单位时间完成数
+  阻塞率: 阻塞项占比
+```
+
+## 治理与审计
+
+- **批量操作留痕**：所有批量操作记录操作人与时间，可回滚。
+- **权限分级**：批量操作限管理员，普通成员只读看板。
+- **自动化先试跑**：新规则用历史数据试跑验证再上线。
+- **健康度定期报**：每周生成健康度报告，预警瓶颈。
+- **趋势归档**：指标定期归档，绘制趋势辅助决策。
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+- **操作系统**: Windows / macOS / Linux
+- **网络**: 可访问 api.linear.app
+- **Python**: 3.9+（分析脚本）
+
+### 第三方依赖
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| curl | 命令行工具 | 必需 | 系统包管理器 |
+| jq | JSON 处理 | 必需 | 系统包管理器 |
+| Python | 运行时 | 分析脚本必需 | python.org |
+| LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
+
+### API Key 配置
+- `LINEAR_API_KEY`：与免费版一致，建议用团队级 Key 配 RBAC
+- 自动化服务密钥：用于规则引擎定时执行，范围受限
+
+### 可用性分类
+- **分类**: MD+EXEC（Markdown 指令 + 命令行执行）
+- **说明**: 通过自然语言指令驱动 Agent 完成跨团队看板与健康度分析

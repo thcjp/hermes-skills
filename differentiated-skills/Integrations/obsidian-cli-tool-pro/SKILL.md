@@ -1,0 +1,556 @@
+---
+slug: obsidian-cli-tool-pro
+name: obsidian-cli-tool-pro
+version: "1.0.0"
+displayName: Obsidian CLI(专业版)
+summary: 全功能Obsidian命令行管理工具，支持模板、插件、同步、历史、开发工具与TUI交互模式
+license: MIT
+edition: pro
+description: |-
+  Obsidian CLI工具专业版是面向团队和高级用户的完整命令行知识管理方案，在免费版基础上解锁模板管理、插件与主题控制、Obsidian Sync同步、文件版本历史、开发者调试工具、工作区布局管理和TUI交互模式等全部高级能力。
+
+  核心能力：全量文件操作（移动/删除/覆盖）、模板读取与批量插入、插件安装与重载、主题切换与CSS片段管理、Sync同步状态与历史恢复、文件版本对比与回滚、开发者工具（控制台/错误/DOM/截图）、工作区保存加载、TUI交互终端。
+
+  适用场景：团队知识库批量管理、插件开发与调试、多设备同步运维、版本化文档管理、自动化内容审计、开发工作流集成。
+
+  差异化：专业版提供完整的Obsidian命令行能力覆盖，配合AI Agent可实现知识库的深度自动化运维。包含3+角色场景指南、完整故障排查表和性能优化策略。
+
+  触发关键词：obsidian、笔记管理、命令行、模板、插件、同步、版本历史、开发者工具、知识库运维
+tags:
+- 笔记管理
+- 命令行工具
+- 知识库运维
+- 高级集成
+tools:
+- read
+- exec
+---
+
+# Obsidian CLI工具（专业版）
+
+全功能Obsidian命令行管理工具，覆盖文件操作、模板、插件、同步、历史、开发者工具和TUI交互模式。专业版面向需要深度自动化和团队协作的高级用户。
+
+## 概述
+
+Obsidian作为本地优先的知识管理工具，其高级功能（插件管理、版本同步、开发调试）通常需要通过图形界面手动操作。专业版Skill将这些能力全部封装为命令行接口，让AI Agent能够执行完整的知识库运维任务，包括插件批量安装与配置、文件版本回滚、同步状态监控、开发调试截图等。
+
+相比免费版，专业版新增七大高级能力模块，并提供多角色场景指南、完整故障排查表和性能优化策略。
+
+## 核心能力
+
+| 能力模块 | 专业版支持 | 说明 |
+|:---------|:-----------|:-----|
+| 全量文件操作 | 支持 | 创建、读取、追加、移动、删除、覆盖 |
+| 全文搜索 | 支持 | 关键词搜索、路径过滤、JSON输出、打开结果 |
+| 标签与属性 | 支持 | 标签统计、属性读写、列表类型支持 |
+| 链接结构分析 | 支持 | 反向链接、外向链接、孤立笔记、断链检测 |
+| Daily Notes | 支持 | 打开、读取、追加、前置插入、分屏模式 |
+| 任务管理 | 支持 | 全库任务列表、状态切换、自定义状态标记 |
+| 模板管理 | 支持 | 列出模板、读取内容、变量解析、插入到文件 |
+| 书签管理 | 支持 | 文件/文件夹/搜索/URL书签的增删查 |
+| 插件管理 | 支持 | 安装、启用、禁用、卸载、开发重载 |
+| 主题与CSS | 支持 | 主题切换、安装、CSS片段启用禁用 |
+| Obsidian Sync | 支持 | 同步状态、暂停恢复、历史恢复、已删除文件 |
+| 文件历史 | 支持 | 版本列表、读取历史版本、恢复、diff对比 |
+| 开发者工具 | 支持 | 控制台、JS错误、eval执行、截图、DOM检查 |
+| 工作区管理 | 支持 | 当前布局查看、保存、加载工作区 |
+| TUI交互模式 | 支持 | 带自动补全和历史记录的终端交互界面 |
+
+## 使用场景
+
+### 开发者场景：插件开发与调试
+
+在开发Obsidian插件时，频繁需要重载插件、查看控制台日志和截图调试。通过命令行将整个调试流程自动化：
+
+```bash
+# 重载开发中的插件
+obsidian plugin:reload id=my-plugin
+
+# 查看JS错误
+obsidian dev:errors
+
+# 截图当前界面用于bug报告
+obsidian dev:screenshot path=bug-report.png
+
+# 执行Vault API查询
+obsidian eval code="app.vault.getFiles().length"
+```
+
+### 运维场景：知识库健康审计
+
+定期对大型知识库执行结构审计，识别需要处理的孤立笔记和断链：
+
+```bash
+# 查找无反向链接的孤立笔记
+obsidian orphans
+
+# 查找无外向链接的死端笔记
+obsidian deadends
+
+# 查找未解析的断链
+obsidian unresolved verbose counts
+```
+
+### 团队场景：多设备同步管理
+
+管理团队共享知识库的同步状态，确保多设备数据一致性：
+
+```bash
+# 查看同步状态和用量
+obsidian sync:status
+
+# 恢复误删文件
+obsidian sync:deleted
+obsidian sync:restore file="重要文档" version=2
+
+# 暂停同步进行批量本地操作
+obsidian sync off
+# ... 批量操作 ...
+obsidian sync on
+```
+
+### 内容场景：模板化批量创建
+
+使用模板批量创建结构化笔记，保持团队文档格式统一：
+
+```bash
+# 列出可用模板
+obsidian templates
+
+# 读取模板内容（含变量解析）
+obsidian template:read name=会议纪要 resolve title="周会202601"
+
+# 基于模板创建笔记
+obsidian create name="周会纪要-第10周" template=会议纪要
+
+# 将模板插入到当前活动文件
+obsidian template:insert name=任务清单
+```
+
+## 快速开始
+
+### 前置条件
+
+- Obsidian 1.12及以上版本，需Catalyst许可证
+- 在Obsidian中开启命令行接口：设置 → 通用 → 命令行接口 → 启用
+- 注册`obsidian`命令后重启终端
+- Obsidian应用必须处于运行状态
+
+### 验证安装
+
+```bash
+obsidian version
+```
+
+### 快速上手（120秒）
+
+```bash
+# 1. 查看当前工作区布局
+obsidian workspace
+
+# 2. 保存当前工作区为命名布局
+obsidian workspace:save name="开发模式"
+
+# 3. 列出已安装插件
+obsidian plugins
+
+# 4. 查看已启用的插件
+obsidian plugins:enabled
+
+# 5. 列出可用模板
+obsidian templates
+
+# 6. 查看同步状态
+obsidian sync:status
+
+# 7. 查看文件版本历史
+obsidian history file="项目计划"
+
+# 8. 进入TUI交互模式
+obsidian
+```
+
+## 配置示例
+
+### 文件高级操作
+
+```bash
+# 移动文件到指定文件夹
+obsidian move file="草稿" to="归档/"
+
+# 按路径精确移动
+obsidian move path="收件箱/旧笔记.md" to="项目/新笔记.md"
+
+# 删除文件到回收站
+obsidian delete file="废弃笔记"
+
+# 永久删除文件（不可恢复）
+obsidian delete file="废弃笔记" permanent
+
+# 创建文件时覆盖同名文件并静默执行
+obsidian create name="自动生成" content="# 自动内容" silent overwrite
+
+# 使用模板创建并指定路径
+obsidian create path="收件箱/想法.md" template=Daily
+```
+
+### 搜索高级用法
+
+```bash
+# 在搜索结果中直接打开
+obsidian search:open query="项目计划"
+
+# 搜索并显示匹配上下文
+obsidian search query="待办" matches
+
+# 按路径范围搜索并限制数量
+obsidian search query="报告" path="项目/" limit=10
+```
+
+### 链接结构分析
+
+```bash
+# 查看某篇笔记的反向链接（哪些笔记链接到它）
+obsidian backlinks file="核心概念"
+
+# 查看某篇笔记的外向链接
+obsidian links file="核心概念"
+
+# 查找孤立笔记（无任何反向链接）
+obsidian orphans
+
+# 查找死端笔记（无任何外向链接）
+obsidian deadends
+
+# 查找未解析的断链
+obsidian unresolved
+obsidian unresolved verbose counts
+```
+
+### 模板管理
+
+```bash
+# 列出所有模板
+obsidian templates
+
+# 读取模板原始内容
+obsidian template:read name=Daily
+
+# 读取模板并解析变量
+obsidian template:read name=Daily resolve title="今日笔记"
+
+# 将模板插入当前活动文件
+obsidian template:insert name=任务清单
+```
+
+### 书签管理
+
+```bash
+# 列出所有书签
+obsidian bookmarks
+
+# 为文件添加书签
+obsidian bookmark file="重要文档.md"
+
+# 为文件的特定章节添加书签
+obsidian bookmark file=笔记 subpath="#章节标题"
+
+# 为文件夹添加书签
+obsidian bookmark folder="项目/"
+
+# 为搜索查询添加书签
+obsidian bookmark search="TODO"
+
+# 添加URL书签
+obsidian bookmark url="https://example.com" title="参考资料"
+```
+
+### 插件与主题管理
+
+```bash
+# 列出所有已安装插件
+obsidian plugins
+
+# 仅列出已启用的插件
+obsidian plugins:enabled
+
+# 查看特定插件信息
+obsidian plugin id=dataview
+
+# 启用/禁用插件
+obsidian plugin:enable id=dataview
+obsidian plugin:disable id=dataview
+
+# 安装并启用插件
+obsidian plugin:install id=dataview enable
+
+# 卸载插件
+obsidian plugin:uninstall id=dataview
+
+# 开发模式重载插件
+obsidian plugin:reload id=my-plugin
+
+# 主题管理
+obsidian themes
+obsidian theme
+obsidian theme:set name=Minimal
+obsidian theme:install name="主题名称" enable
+
+# CSS片段管理
+obsidian snippets
+obsidian snippet:enable name=my-snippet
+obsidian snippet:disable name=my-snippet
+```
+
+### Obsidian Sync同步
+
+```bash
+# 查看同步状态和用量
+obsidian sync:status
+
+# 暂停/恢复同步
+obsidian sync off
+obsidian sync on
+
+# 查看文件同步历史
+obsidian sync:history file="项目计划"
+
+# 恢复文件的历史版本
+obsidian sync:restore file="项目计划" version=2
+
+# 查看已删除的文件
+obsidian sync:deleted
+```
+
+### 文件历史与版本对比
+
+```bash
+# 列出文件的所有版本
+obsidian history file="项目计划"
+
+# 读取文件的历史版本内容
+obsidian history:read file="项目计划" version=1
+
+# 恢复文件到历史版本
+obsidian history:restore file="项目计划" version=2
+
+# 对比两个版本的差异
+obsidian diff file="项目计划" from=2 to=1
+```
+
+### 开发者工具
+
+```bash
+# 切换开发者工具显示
+obsidian devtools
+
+# 查看控制台输出
+obsidian dev:console
+
+# 查看JS错误
+obsidian dev:errors
+
+# 执行Vault API代码
+obsidian eval code="app.vault.getFiles().length"
+
+# 截图保存到文件
+obsidian dev:screenshot path=screenshot.png
+
+# 检查DOM元素
+obsidian dev:dom selector=".workspace-leaf"
+
+# 检查CSS属性
+obsidian dev:css selector=".mod-active" prop=background
+
+# 移动端模拟开关
+obsidian dev:mobile on/off
+
+# 调试模式开关
+obsidian dev:debug on/off
+```
+
+### 工作区与导航
+
+```bash
+# 查看当前工作区布局
+obsidian workspace
+
+# 保存当前工作区
+obsidian workspace:save name="编码模式"
+
+# 加载已保存的工作区
+obsidian workspace:load name="编码模式"
+
+# 查看打开的标签页
+obsidian tabs
+
+# 在新标签页打开文件
+obsidian tab:open file=笔记
+
+# 随机打开一篇笔记
+obsidian random
+obsidian random folder=收件箱 newtab
+
+# 生成唯一文件名
+obsidian unique
+
+# 统计字数
+obsidian wordcount file=笔记
+```
+
+### 命令面板与快捷键
+
+```bash
+# 列出所有命令ID
+obsidian commands
+
+# 过滤命令
+obsidian commands filter=editor
+
+# 执行指定命令
+obsidian command id=editor:toggle-bold
+
+# 列出快捷键
+obsidian hotkeys
+```
+
+### TUI交互模式
+
+```bash
+# 进入TUI模式
+obsidian
+```
+
+TUI快捷键一览：
+
+| 类别 | 快捷键 | 功能 |
+|:-----|:-------|:-----|
+| 导航 | Ctrl+B/F | 光标左移/右移 |
+| 导航 | Ctrl+A/E | 行首/行尾 |
+| 编辑 | Ctrl+U | 删除至行首 |
+| 编辑 | Ctrl+K | 删除至行尾 |
+| 补全 | Tab/↓ | 确认补全 |
+| 补全 | Shift+Tab/Esc | 退出补全 |
+| 历史 | Ctrl+P/N | 上一条/下一条 |
+| 历史 | Ctrl+R | 反向搜索历史 |
+| 其他 | Enter | 执行命令 |
+| 其他 | Ctrl+L | 清屏 |
+| 其他 | Ctrl+C/D | 退出TUI |
+
+## 最佳实践
+
+1. **批量操作前暂停同步**：执行大量文件移动或删除前，先`obsidian sync off`暂停同步，操作完成后再`sync on`恢复，避免同步冲突。
+2. **版本对比用于内容审计**：定期使用`obsidian diff`对比重要文档的版本变化，追踪内容修改轨迹。
+3. **插件开发使用reload而非 reinstall**：开发迭代时用`plugin:reload`快速重载，避免反复卸载安装。
+4. **工作区按场景保存**：为不同工作场景（编码、写作、审阅）保存独立工作区，快速切换上下文。
+5. **TUI模式用于探索**：不熟悉命令参数时进入TUI模式，利用自动补全快速发现可用命令。
+6. **eval用于高级查询**：通过`eval`执行Vault API代码，实现命令行未覆盖的高级查询需求。
+7. **orphan定期清理**：每月执行一次`obsidian orphans`检查，将孤立笔记归档或建立链接，保持知识库连通性。
+
+## 常见问题
+
+### Q1: 插件安装后未生效？
+
+安装时添加`enable`标志：`obsidian plugin:install id=插件名 enable`。若已安装但未启用，使用`plugin:enable id=插件名`单独启用。
+
+### Q2: Sync恢复文件时选择哪个版本？
+
+先执行`sync:history file=文件名`查看版本列表和时间戳，确认目标版本后执行`sync:restore file=文件名 version=版本号`。
+
+### Q3: eval命令执行报错？
+
+`eval`执行的是Obsidian内部JavaScript API，需确保代码语法正确。常见用法：`app.vault.getFiles()`获取文件列表，`app.workspace.getActiveFile()`获取当前文件。复杂表达式建议先在开发者控制台测试。
+
+### Q4: TUI模式中文输入异常？
+
+TUI模式依赖终端的输入处理。若中文输入异常，尝试使用支持IME的现代终端（如iTerm2、Windows Terminal），或在非TUI模式下使用带引号的参数传递中文内容。
+
+### Q5: 主题安装后界面未更新？
+
+安装时添加`enable`标志：`theme:install name=主题名 enable`。若已安装，使用`theme:set name=主题名`切换激活主题。
+
+### Q6: diff命令显示的版本号含义？
+
+`diff file=文件 from=2 to=1`表示对比版本2和版本1的差异。版本号越大表示越新，通过`history file=文件`可查看完整版本列表。
+
+### Q7: 工作区保存后加载时布局错乱？
+
+工作区保存的是标签页和面板布局的快照。若加载时出现错乱，可能是因为相关文件已被移动或删除。确保引用的文件路径有效后再加载工作区。
+
+### Q8: 截图命令保存的文件在哪里？
+
+`dev:screenshot path=路径`中指定的路径为保存位置。建议使用绝对路径确保文件可找到，如`path=/tmp/screenshot.png`。
+
+### Q9: commands列表太长如何筛选？
+
+使用`commands filter=关键词`过滤命令，如`commands filter=editor`只显示编辑器相关命令。
+
+### Q10: 多Vault环境下如何切换操作的库？
+
+通过`vault`参数指定：`obsidian vault="库名" <命令>`。也可以在TUI模式中通过环境变量设置默认库。
+
+## 故障排查表
+
+| 症状 | 可能原因 | 解决方案 | 优先级 |
+|:-----|:---------|:---------|:-------|
+| 命令执行无响应 | Obsidian未运行 | 启动Obsidian应用后重试 | 高 |
+| command not found | CLI未注册或PATH未更新 | 在设置中启用CLI，重启终端 | 高 |
+| 插件安装失败 | 插件ID错误或网络问题 | 确认插件ID，检查网络连接 | 中 |
+| Sync状态显示错误 | Sync订阅过期 | 检查Obsidian Sync订阅状态 | 高 |
+| eval执行报错 | JS语法错误或API不存在 | 在开发者控制台先测试代码 | 中 |
+| 截图文件为空 | 路径权限问题 | 使用有写入权限的目录 | 低 |
+| TUI补全不工作 | 终端不兼容 | 使用现代终端模拟器 | 低 |
+| 工作区加载失败 | 引用的文件已删除 | 重建工作区或恢复文件 | 中 |
+| diff无输出 | 版本号超出范围 | 先用history查看有效版本 | 低 |
+| 主题切换无效 | 主题文件损坏 | 卸载后重新安装主题 | 中 |
+
+## 专业版特性
+
+本专业版相比免费版新增以下能力：
+- 模板管理：列出、读取、变量解析和批量插入模板，实现笔记格式标准化
+- 插件与主题管理：安装、启用、禁用、卸载插件，切换和安装主题，管理CSS片段
+- Obsidian Sync操作：查看同步状态、暂停恢复、历史恢复、已删除文件检索
+- 文件历史与版本对比：版本列表、历史读取、版本恢复、diff差异对比
+- 开发者工具：控制台查看、JS错误排查、eval代码执行、截图、DOM和CSS检查
+- 工作区管理：保存和加载工作区布局，支持多场景快速切换
+- TUI交互模式：带自动补全、历史搜索和快捷键的终端交互界面
+- 书签管理：文件、文件夹、搜索和URL书签的增删查
+- 链接结构分析：反向链接、外向链接、孤立笔记、死端和断链检测
+
+## 定价
+
+| 版本 | 价格 | 功能 | 适用场景 |
+|------|------|------|----------|
+| 免费体验版 | 0元 | 核心文件操作+搜索+标签+Daily Notes | 个人试用 |
+| 收费专业版 | 29.9元/月 | 全功能+模板+插件+同步+历史+开发工具+TUI | 团队/企业 |
+
+专业版通过SkillHub SkillPay发布。
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**：Windows / macOS / Linux
+- **Obsidian版本**：1.12及以上，需Catalyst许可证
+- **Obsidian Sync**：同步功能需要Obsidian Sync订阅
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| Obsidian应用 | 桌面应用 | 必需 | 从Obsidian官网下载安装 |
+| obsidian CLI | 命令行工具 | 必需 | 在Obsidian设置中启用命令行接口 |
+| Obsidian Sync | 订阅服务 | 可选 | 同步功能需要，按需订阅 |
+| LLM API | API | 必需 | 由Agent平台内置LLM提供 |
+
+### API Key 配置
+
+- 本Skill基于Obsidian本地命令行接口，无需额外API Key
+- Obsidian Sync功能需要Obsidian账户登录，在应用内配置
+- 开发者工具中的eval执行无需额外认证
+
+### 可用性分类
+
+- **分类**：MD+EXEC（纯Markdown指令，需要exec命令行执行能力）
+- **说明**：基于Markdown的AI Skill，通过自然语言指令驱动Agent执行Obsidian全量命令行操作

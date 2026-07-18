@@ -1,0 +1,242 @@
+---
+slug: ocean-chat-tool-free
+name: ocean-chat-tool-free
+version: "1.0.0"
+displayName: P2P通讯入门工具
+summary: 基于WASM的P2P消息通讯工具，支持点对点文本消息与基础文件传输。
+license: MIT
+edition: free
+description: |-
+  面向个人开发者的P2P消息通讯工具。基于WASM技术实现浏览器端的
+  点对点通讯，支持文本消息与基础文件传输。无需中心服务器中转，
+  适合个人用户的安全通讯需求。
+
+  核心能力:
+  - P2P点对点文本消息
+  - 基础文件传输（小文件）
+  - WebRTC信令交换
+  - 端到端加密通讯
+
+  适用场景:
+  - 个人安全通讯
+  - 开发测试P2P连接
+  - 局域网文件分享
+  - 学习WebRTC技术
+
+  差异化:
+  - 免费版聚焦基础P2P通讯
+  - 适合个人用户点对点
+  - 不支持群组与多设备
+  - 不支持企业级管理
+
+  触发关键词: P2P, 通讯, 消息, 文件传输, WebRTC, WASM, 加密, peer, chat
+tags:
+- Operations
+- 通讯
+- P2P
+- WebRTC
+tools:
+- read
+- exec
+---
+
+# P2P通讯入门工具（免费版）
+
+## 概述
+
+本工具为个人开发者提供基于WASM的P2P消息通讯能力。通过WebRTC技术实现浏览器端点对点连接，支持文本消息和基础文件传输，无需中心服务器中转消息内容，保障通讯隐私。
+
+## 核心能力
+
+### 通讯功能
+
+| 功能 | 说明 | 免费版支持 |
+| --- | --- | --- |
+| 文本消息 | 点对点文字通讯 | 支持 |
+| 文件传输 | 小文件传输 | 支持（<10MB） |
+| 端到端加密 | 消息加密 | 支持 |
+| 群组通讯 | 多人消息 | 不支持 |
+| 消息历史 | 历史记录 | 本地存储 |
+| 多设备同步 | 跨设备 | 不支持 |
+| 语音通话 | 实时语音 | 不支持 |
+| 视频通话 | 实时视频 | 不支持 |
+
+## 使用场景
+
+### 场景一：点对点文本通讯
+
+用户输入："建立P2P连接发送消息"
+
+```bash
+# 启动信令服务器
+python3 scripts/ocean.py signal start --port 8080
+
+# 生成连接码
+python3 scripts/ocean.py connect create
+
+# 输出：
+# 连接码: OCEAN-7K9M-2X4P
+# 分享给对方，对方输入此码建立连接
+
+# 对方连接
+python3 scripts/ocean.py connect join --code OCEAN-7K9M-2X4P
+
+# 发送消息
+python3 scripts/ocean.py send --message "你好，这是P2P消息"
+```
+
+### 场景二：文件传输
+
+用户输入："通过P2P发送文件"
+
+```bash
+# 发送文件
+python3 scripts/ocean.py send-file \
+  --file ./document.pdf \
+  --peer OCEAN-7K9M-2X4P
+
+# 接收文件
+python3 scripts/ocean.py receive --output ./received/
+```
+
+### 场景三：加密通讯
+
+用户输入："建立加密P2P连接"
+
+```bash
+# 建立加密连接
+python3 scripts/ocean.py connect create --encryption AES-256
+
+# 生成密钥对
+python3 scripts/ocean.py keys generate
+
+# 共享公钥
+python3 scripts/ocean.py keys share --peer OCEAN-7K9M-2X4P
+```
+
+## 快速开始
+
+### 环境准备
+
+```bash
+# 安装依赖
+pip install aiohttp cryptography
+
+# 启动信令服务器（用于连接建立）
+python3 scripts/ocean.py signal start --port 8080
+
+# 生成连接码
+python3 scripts/ocean.py connect create
+```
+
+### 常用命令
+
+```bash
+# 连接管理
+python3 scripts/ocean.py connect create
+python3 scripts/ocean.py connect join --code OCEAN-XXXX-XXXX
+python3 scripts/ocean.py connect status
+
+# 消息发送
+python3 scripts/ocean.py send --message "消息内容"
+python3 scripts/ocean.py send-file --file ./file.txt
+
+# 消息历史
+python3 scripts/ocean.py history list
+python3 scripts/ocean.py history clear
+
+# 密钥管理
+python3 scripts/ocean.py keys generate
+python3 scripts/ocean.py keys share --peer OCEAN-XXXX
+```
+
+## 配置示例
+
+### 通讯配置
+
+```yaml
+ocean_config:
+  signal:
+    server: "ws://localhost:8080"
+    timeout: 30
+
+  webrtc:
+    ice_servers:
+      - urls: "stun:stun.l.google.com:19302"
+    configuration:
+      ice_transport_policy: "all"
+
+  encryption:
+    algorithm: "AES-256-GCM"
+    key_exchange: "ECDH"
+
+  file_transfer:
+    max_size: 10485760            # 10MB
+    chunk_size: 16384             # 16KB分块
+
+  storage:
+    history: "local"              # 本地存储
+    max_history: 1000
+```
+
+## 最佳实践
+
+1. **信令服务器**：P2P连接建立需要信令服务器中转，但消息内容不经过服务器
+2. **NAT穿透**：复杂网络环境可能需要TURN服务器辅助穿透
+3. **文件大小**：免费版建议传输小于10MB的文件
+4. **密钥安全**：私钥保存在本地，不要分享给他人
+
+| 实践要点 | 说明 |
+| --- | --- |
+| 连接码 | 连接码有时效性，过期需重新生成 |
+| NAT环境 | 部分企业网络可能无法建立P2P连接 |
+| 加密传输 | 所有消息端到端加密，服务器无法解密 |
+| 文件验证 | 接收文件后验证哈希确保完整性 |
+
+## 常见问题
+
+### Q1：P2P连接建立失败怎么办？
+
+可能原因：NAT穿透失败、信令服务器不可达、防火墙阻止WebRTC。建议：配置TURN服务器、检查网络防火墙、确认信令服务器运行。
+
+### Q2：免费版支持群组通讯吗？
+
+免费版仅支持点对点通讯。如需群组消息，建议升级PRO版。
+
+### Q3：消息会被服务器看到吗？
+
+不会。P2P连接建立后，消息直接在两个对等端之间传输，信令服务器仅用于连接建立，不参与消息中转。所有消息端到端加密。
+
+### Q4：支持手机端使用吗？
+
+免费版主要支持桌面端。WASM技术兼容移动端浏览器，但体验可能受限。
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
+- **Python版本**: 3.8+
+- **浏览器**: 支持WebRTC的现代浏览器
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+| Python | 运行时 | 必需 | 系统安装或conda环境 |
+| aiohttp | Python库 | 必需 | `pip install aiohttp`（信令服务器） |
+| cryptography | Python库 | 必需 | `pip install cryptography`（加密） |
+
+### API Key 配置
+
+- 免费版无需API Key
+- 使用公共STUN服务器（Google）
+- 如需TURN服务器需自行配置
+
+### 可用性分类
+
+- **分类**: MD+EXEC（Markdown指令+Python脚本+WebRTC执行）
+- **说明**: 基于WASM和WebRTC的P2P通讯工具
+- **免费版限制**: 点对点通讯、小文件传输、不支持群组与多设备

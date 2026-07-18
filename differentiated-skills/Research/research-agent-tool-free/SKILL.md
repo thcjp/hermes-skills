@@ -1,0 +1,493 @@
+---
+slug: research-agent-tool-free
+name: research-agent-tool-free
+version: "1.0.0"
+displayName: 研究代理助手免费版
+summary: 开放式主题研究工具，构建可持续维护的Markdown研究文档，支持交互式探索
+license: MIT
+edition: free
+description: |-
+  研究代理助手免费版，帮助用户围绕特定主题开展开放式研究，通过交互式对话逐步构建结构化研究文档。
+
+  核心能力:
+  - 交互式研究模式，实时搜索与综合
+  - 为每个研究主题创建独立文件夹与文档
+  - 结构化研究文档（问题、发现、资源、后续步骤）
+  - 定期综合检查点与进度回顾
+  - 研究状态管理与PDF导出
+
+  适用场景:
+  - 个人开发者技术方案调研
+  - 学生课题研究与论文准备
+  - 独立创业者市场验证
+
+  差异化:
+  - 免费版聚焦交互式研究，文档驱动而非对话驱动
+  - 研究成果持久化保存，可持续维护
+  - 与PRO版本完全兼容，可平滑升级
+
+  触发关键词: 研究代理, 开放研究, 研究文档, 课题调研, 方案探索, research agent
+tags:
+- 研究
+- 文档
+- 调研
+- 知识管理
+tools:
+- read
+- exec
+---
+
+# 研究代理助手（免费版）
+
+## 概述
+
+研究代理助手免费版是一款帮助用户围绕特定主题开展开放式研究的智能代理工具。核心理念是"对话是短暂的，文档才是重要的"。代理为每个研究主题创建独立的研究文件夹，通过交互式对话逐步搜索、综合和更新研究文档，最终形成结构化的知识沉淀。
+
+本版本聚焦交互式研究模式，适合个人开发者技术方案调研、学生课题研究和独立创业者市场验证。如需深度异步研究、批量并行处理和 API 集成等高级能力，可升级至 PRO 版本。
+
+## 核心能力
+
+### 研究文档体系
+
+每个研究主题拥有独立的文档体系：
+
+```text
+~/.research-agent/workspace/research/<topic-slug>/
+├── prompt.md          # 原始研究问题
+├── research.md        # 主要研究发现
+├── research.pdf       # PDF导出（可选）
+└── ...                # 其他相关文件
+```
+
+### 免费版能力边界
+
+```text
+[支持] 交互式研究模式
+[支持] 研究文档结构化管理
+[支持] 实时搜索与综合更新
+[支持] 定期综合检查点
+[支持] 研究状态管理（Active/Complete/Ongoing）
+[支持] PDF导出
+[支持] 研究毕业（Graduate到项目spec）
+[限制] 不支持深度异步研究模式
+[限制] 不支持批量多主题并行研究
+[限制] 不支持API集成与自动化
+[限制] 不支持团队协作
+```
+
+## 使用场景
+
+### 场景一：技术方案调研
+
+开发者需要调研某个技术方向的不同方案，为项目选型做准备。
+
+```text
+用户：new research: 2026年主流前端框架性能对比
+
+Agent 执行流程：
+1. 创建研究文件夹 ~/.research-agent/workspace/research/frontend-frameworks-comparison/
+2. 创建 prompt.md 记录原始问题
+3. 创建 research.md 初始化研究结构
+4. 开始第一轮搜索与发现
+```
+
+prompt.md 内容：
+
+```markdown
+# 前端框架性能对比研究
+
+> 2026年主流前端框架（React/Vue/Svelte/Solid）的性能表现如何？
+> 各自的优劣势和适用场景是什么？
+
+**Started:** 2026-07-18
+```
+
+research.md 初始结构：
+
+```markdown
+# 前端框架性能对比研究
+
+**Status:** Active Research
+**Started:** 2026-07-18
+**Last Updated:** 2026-07-18
+
+---
+
+## Open Questions
+- 各框架的基准性能数据？
+- 渲染效率对比？
+- 包大小与加载性能？
+- 开发体验对比？
+- 生态系统成熟度？
+
+## Findings
+<!-- 随研究进展填充 -->
+
+## Options / Approaches
+<!-- 方案对比表 -->
+
+## Resources
+<!-- 链接、参考、来源 -->
+
+## Next Steps
+<!-- 下一步探索方向 -->
+```
+
+### 场景二：市场验证研究
+
+创业者需要验证某个市场方向是否值得投入。
+
+```text
+用户：new research: AI辅助医疗诊断的市场机会评估
+
+Agent：
+1. 创建研究文件夹
+2. 初始化研究文档
+3. 搜索市场规模、竞品、用户需求等信息
+4. 更新研究发现
+5. 提示下一步探索方向
+```
+
+研究循环示例：
+
+```text
+Agent: 已创建研究文档。我先搜索一下AI医疗诊断的市场规模。
+...（搜索后）
+Agent: 发现以下关键信息：
+- 全球AI医疗诊断市场规模约80亿美元（2026年）
+- 主要玩家：IBM Watson、Google Health、推想医疗
+- 年增长率约28%
+
+下一步你想深入哪个方面？
+1. 竞品详细分析
+2. 用户需求调研
+3. 商业模式对比
+4. 监管政策分析
+
+用户: 先深入竞品分析
+```
+
+### 场景三：学术课题研究
+
+学生需要围绕课题收集资料并整理研究文档。
+
+```text
+用户：new research: 联邦学习在隐私保护中的应用
+
+Agent：
+1. 创建包含学术文献结构的研究文档
+2. 搜索学术论文和案例
+3. 按主题组织发现
+4. 记录引用来源
+5. 标注信息可信度
+```
+
+## 快速开始
+
+### 步骤一：启动新研究
+
+```text
+new research: [你的研究主题]
+```
+
+### 步骤二：交互式探索
+
+Agent 会引导你逐步深入：
+
+```text
+# 每轮交互Agent会：
+1. 执行搜索（网页、文档、代码）
+2. 更新研究文档
+3. 展示新增发现（不重复已有内容）
+4. 提示下一步方向
+```
+
+### 步骤三：查看研究文档
+
+```text
+show doc
+```
+
+### 步骤四：综合检查
+
+每 5-10 轮交互后，可以请求综合检查：
+
+```text
+summarize
+```
+
+Agent 会执行以下操作：
+- 撰写"当前理解"总结
+- 清理冗余发现
+- 检查研究盲区
+- 重新组织文档结构
+
+### 步骤五：完成或毕业
+
+```text
+# 标记为已完成（保留作为参考）
+archive
+
+# 标记为持续更新（活文档）
+（保持 Status: Ongoing）
+
+# 如果研究是为构建项目做准备，可以毕业为项目spec
+graduate
+
+# 导出PDF
+export pdf
+```
+
+## 配置示例
+
+### 研究工作区配置
+
+```bash
+# 创建研究工作区
+mkdir -p ~/.research-agent/workspace/research
+
+# 配置研究偏好
+cat > ~/.research-agent/config.yaml << 'EOF'
+# 免费版研究代理配置
+edition: free
+version: "1.0.0"
+
+workspace:
+  path: "~/.research-agent/workspace/research"
+  naming: "slug"  # 文件夹命名方式
+
+document:
+  template: "default"
+  language: "zh-CN"
+  include_metadata: true
+  auto_update_timestamp: true
+
+research:
+  mode: "interactive"  # 免费版仅支持交互式
+  max_concurrent: 1    # 单主题研究
+  checkpoint_interval: 5  # 每5轮建议综合检查
+
+  # 文档原则
+  principles:
+    atomic_findings: true      # 原子化发现（一条一个要点）
+    link_everything: true       # 尽量链接到来源
+    capture_context: true       # 记录为什么查看这个
+    note_confidence: true       # 标注不确定性
+    date_findings: true         # 为重要发现标注日期
+
+export:
+  format: "pdf"
+  tool: "pandoc"
+  output_path: "~/.research-agent/workspace/research"
+
+naming:
+  slug_method: "kebab-case"
+  max_length: 50
+EOF
+```
+
+### 研究文档模板
+
+```markdown
+# {Topic Title}
+
+**Status:** Active Research
+**Started:** {date}
+**Last Updated:** {date}
+
+---
+
+## 研究问题
+{核心研究问题或好奇心}
+
+## Open Questions
+- {待探索的问题1}
+- {待探索的问题2}
+
+## Findings
+### {发现主题1}
+- {具体发现}（来源：{link}，{date}）
+
+### {发现主题2}
+- {具体发现}（来源：{link}，{date}）
+- "根据X来源" - 有明确来源
+- "似乎是" - 需要进一步验证
+- "未经证实" - 存疑信息
+
+## Options / Approaches
+| 方案 | 优势 | 劣势 | 适用场景 |
+|:-----|:-----|:-----|:---------|
+| {方案A} | ... | ... | ... |
+| {方案B} | ... | ... | ... |
+
+## Resources
+- [资源名称](链接) - 说明
+- [论文/报告](链接) - 说明
+
+## Next Steps
+- {下一步探索方向}
+- {待验证的假设}
+
+## Research Log
+- {date}: 开始研究
+- {date}: 完成{某方面}调研
+- {date}: 综合检查点 #{n}
+
+## Current Understanding
+<!-- 每5-10轮交互后自动生成的综合理解 -->
+```
+
+## 最佳实践
+
+### 1. 提出明确的研究问题
+
+```text
+# 推荐 - 问题明确
+new research: Rust vs Go在微服务后端开发中的性能对比
+
+# 不推荐 - 问题模糊
+new research: 编程语言
+```
+
+### 2. 分步骤深入
+
+```text
+# 先广度搜索
+帮我先搜索这个领域的主要参与者和基本概念
+
+# 再深度分析
+深入分析第一个发现的细节
+
+# 最后综合
+帮我综合所有发现，写一个当前理解的总结
+```
+
+### 3. 定期综合检查
+
+```text
+# 每5-10轮交互后执行
+summarize
+
+# Agent执行：
+# 1. 撰写"Current Understanding"总结
+# 2. 清理冗余发现
+# 3. 识别研究盲区
+# 4. 建议下一步方向
+```
+
+### 4. 记录不确定性
+
+```text
+# 在发现中标注信息可信度
+- "根据官方文档" - 权威来源
+- "根据X博客" - 需交叉验证
+- "似乎是" - 初步判断
+- "未经证实" - 存疑信息
+```
+
+### 5. 为重要发现标注日期
+
+对于快速变化领域的信息，标注发现日期至关重要。
+
+```markdown
+- 2026-07-18: 某框架发布3.0版本，性能提升50%（来源：官方博客）
+```
+
+### 6. 优先更新已有章节
+
+```text
+# Agent行为原则：
+# - 优先更新现有章节，而非创建新章节
+# - 发现用要点列表，总结用叙述段落
+# - 尽可能链接到来源
+```
+
+## 常见问题
+
+### Q1：研究文档保存在哪里？
+
+研究文档保存在 `~/.research-agent/workspace/research/<topic-slug>/` 目录下，每个研究主题独立文件夹。
+
+### Q2：免费版支持深度异步研究吗？
+
+免费版不支持深度异步研究模式。免费版仅支持交互式研究模式，即用户与 Agent 实时对话推进研究。如需深度异步研究，请升级至 PRO 版本。
+
+### Q3：可以同时进行多个研究吗？
+
+免费版建议单主题研究，确保研究质量。如需多主题并行研究，请升级至 PRO 版本。
+
+### Q4：PDF 导出需要什么工具？
+
+PDF 导出需要安装 pandoc。可通过系统包管理器安装。
+
+```bash
+# 安装pandoc
+# Ubuntu: sudo apt install pandoc
+# macOS: brew install pandoc
+# Windows: choco install pandoc
+```
+
+### Q5：研究完成后如何"毕业"为项目？
+
+如果研究是为构建项目做准备，可以使用 `graduate` 命令将研究发现转化为项目规格文档：
+
+```text
+graduate
+
+# Agent会：
+# 1. 将研究文档转化为 ~/specs/<project-name>.md
+# 2. 更新研究状态为 "Graduated → ~/specs/..."
+# 3. 保留原始研究文档作为参考
+```
+
+### Q6：免费版与 PRO 版本的区别？
+
+| 对比项 | 免费版 | PRO 版本 |
+|:-------|:-------|:---------|
+| 研究模式 | 交互式 | 交互式+深度异步 |
+| 并发主题 | 1个 | 10+个并行 |
+| 定时研究 | 不支持 | cron调度 |
+| API 集成 | 不支持 | REST API |
+| 团队协作 | 不支持 | 多租户 |
+| 导出格式 | PDF | PDF/Word/HTML |
+| 版本管理 | 不支持 | 完整版本控制 |
+| 历史检索 | 不支持 | 全文检索 |
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent 平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
+- **网络连接**: 需要可访问互联网以进行搜索研究
+- **本地存储**: 需要 `~/.research-agent/` 目录读写权限
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
+| 网络搜索 | 服务 | 必需 | Agent 内置搜索能力 |
+| 本地文件系统 | 存储 | 必需 | 操作系统提供 |
+| pandoc | 工具 | 可选 | 系统包管理器安装（PDF导出） |
+| PyMuPDF | Python 包 | 可选 | `pip install pymupdf`（PDF导出） |
+| Python 3.8+ | 运行时 | 可选 | 系统包管理器安装 |
+
+### API Key 配置
+
+免费版基于 Markdown 指令驱动，无需额外 API Key。
+
+```bash
+# 验证工作区可写
+mkdir -p ~/.research-agent/workspace/research && echo "ok"
+
+# 验证PDF导出工具（可选）
+pandoc --version 2>/dev/null && echo "pandoc就绪" || echo "pandoc未安装（PDF导出不可用）"
+```
+
+### 可用性分类
+
+- **分类**: MD+EXEC（纯 Markdown 指令，部分功能需要 exec 命令行执行能力）
+- **说明**: 基于自然语言指令驱动 Agent 进行交互式研究，研究结果持久化保存为 Markdown 文档
+- **适用规模**: 个人研究者、学生、独立开发者
+- **升级路径**: 可无缝升级至 research-agent-tool-pro 获取深度异步研究与多主题并行能力

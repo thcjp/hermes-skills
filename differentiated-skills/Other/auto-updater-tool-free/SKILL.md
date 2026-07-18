@@ -1,0 +1,271 @@
+---
+slug: auto-updater-tool-free
+name: auto-updater-tool-free
+version: "1.0.0"
+displayName: 自动更新工具-免费版
+summary: 智能自动更新工具,支持版本检查、差异更新与回滚,适合个人项目维护
+license: MIT
+edition: free
+description: |-
+  智能自动更新工具免费版,面向个人开发者与小型项目。
+
+  核心能力:
+  - 版本检查与更新通知
+  - 差异更新(仅下载变更部分)
+  - 更新前自动备份
+  - 一键回滚
+  - 更新日志查看
+  - 定时检查更新
+
+  适用场景:
+  - 个人项目版本更新
+  - 配置文件同步
+  - 脚本工具自动升级
+
+  差异化:免费版提供基础更新能力。PRO版扩展批量更新、灰度发布、企业级回滚策略与审计。
+
+  触发关键词: update, auto-update, 版本更新, 自动更新, rollback, 回滚, version check
+tags:
+- 自动更新
+- 版本管理
+- 工具
+tools:
+- read
+- exec
+---
+
+# 自动更新工具 - 免费版
+
+## 概述
+
+自动更新工具免费版帮助个人开发者实现项目的智能自动更新。支持版本检查、差异更新、自动备份与一键回滚,确保更新过程安全可靠。适合个人项目、脚本工具与配置文件的版本管理。
+
+## 核心能力
+
+### 1. 版本检查
+
+定期检查远程版本库,对比当前版本,发现新版本时通知用户。
+
+### 2. 差异更新
+
+只下载变更的文件,减少更新时间和带宽消耗。
+
+### 3. 自动备份
+
+更新前自动备份当前版本,确保可回滚。
+
+### 4. 一键回滚
+
+更新出现问题后,一键恢复到之前的版本。
+
+### 5. 更新日志
+
+记录每次更新的版本号、时间、变更内容。
+
+### 6. 定时检查
+
+按设定间隔自动检查更新,无需人工干预。
+
+## 使用场景
+
+### 场景一:个人项目自动更新
+
+为个人项目添加自动更新功能。
+
+```bash
+# 检查更新
+./auto-updater check \
+  --current "1.0.0" \
+  --remote "https://api.example.com/releases/latest"
+
+# 输出:
+# 当前版本: 1.0.0
+# 最新版本: 1.1.0
+# 有新版本可用!
+# 变更内容:
+#   - 修复登录问题
+#   - 新增导出功能
+#   - 性能优化
+
+# 执行更新
+./auto-updater update \
+  --current "1.0.0" \
+  --target "1.1.0" \
+  --backup-dir ~/backups \
+  --diff-only
+
+# 输出:
+# 正在备份当前版本...
+# 备份完成: ~/backups/v1.0.0_20250115.tar.gz
+# 正在下载差异文件...
+# 下载: 3 个文件 (共 125KB)
+# 正在应用更新...
+# 更新完成: 1.0.0 -> 1.1.0
+```
+
+### 场景二:配置文件同步
+
+同步远程配置文件到本地。
+
+```bash
+# 配置同步
+./auto-updater sync \
+  --source "https://config.example.com/rules.json" \
+  --target "./config/rules.json" \
+  --backup \
+  --on-change "reload-service.sh"
+
+# 输出:
+# 检查配置更新...
+# 远程版本: 2025-01-15T10:00:00Z
+# 本地版本: 2025-01-14T10:00:00Z
+# 发现更新!
+# 备份旧配置...
+# 下载新配置...
+# 配置已更新
+# 执行变更回调: reload-service.sh
+```
+
+### 场景三:回滚更新
+
+更新后发现问题,回滚到之前的版本。
+
+```bash
+# 查看更新历史
+./auto-updater history
+# 版本      更新时间              状态
+# 1.1.0    2025-01-15 10:30     当前版本
+# 1.0.0    2025-01-01 09:00     已备份
+# 0.9.0    2024-12-15 09:00     已备份
+
+# 回滚到 1.0.0
+./auto-updater rollback --to "1.0.0"
+
+# 输出:
+# 正在回滚: 1.1.0 -> 1.0.0
+# 恢复备份: ~/backups/v1.0.0_20250101.tar.gz
+# 回滚完成
+# 当前版本: 1.0.0
+```
+
+## 快速开始
+
+### 初始化
+
+```bash
+# 创建更新配置
+cat > update-config.json << 'EOF'
+{
+  "currentVersion": "1.0.0",
+  "remoteUrl": "https://api.example.com/releases",
+  "checkInterval": "24h",
+  "backupDir": "~/backups",
+  "diffOnly": true,
+  "autoBackup": true
+}
+EOF
+
+# 首次检查
+./auto-updater check --config update-config.json
+```
+
+### 设置定时检查
+
+```bash
+# 添加 cron 定时检查
+crontab -e
+# 每天早上 9 点检查更新
+0 9 * * * /path/to/auto-updater check --config /path/to/update-config.json
+```
+
+## 配置示例
+
+### 更新配置格式
+
+```json
+{
+  "currentVersion": "1.0.0",
+  "remoteUrl": "https://api.example.com/releases",
+  "checkInterval": "24h",
+  "backupDir": "~/backups",
+  "diffOnly": true,
+  "autoBackup": true,
+  "onUpdate": "post-update.sh",
+  "exclude": ["*.log", "tmp/*", ".env"]
+}
+```
+
+### 命令参数
+
+| 命令 | 说明 | 示例 |
+|------|------|------|
+| `check` | 检查更新 | `./auto-updater check --config config.json` |
+| `update` | 执行更新 | `./auto-updater update --target 1.1.0` |
+| `rollback` | 回滚版本 | `./auto-updater rollback --to 1.0.0` |
+| `history` | 查看历史 | `./auto-updater history` |
+| `sync` | 同步文件 | `./auto-updater sync --source URL --target PATH` |
+
+### 备份策略
+
+| 策略 | 说明 | 保留数量 |
+|------|------|----------|
+| 自动备份 | 更新前自动备份 | 最近 5 个版本 |
+| 手动备份 | 手动触发备份 | 无限制 |
+| 定期清理 | 自动清理旧备份 | 保留最近 30 天 |
+
+## 最佳实践
+
+1. **更新前必备份**:始终启用 `autoBackup`,确保可回滚
+2. **差异更新优先**:大项目使用 `diffOnly`,减少下载量
+3. **排除临时文件**:配置 `exclude` 排除日志、缓存等文件
+4. **更新后验证**:更新后运行测试或健康检查,确认功能正常
+5. **定期清理备份**:旧备份占用空间,设置合理保留策略
+6. **低峰期更新**:定时检查设在业务低峰期,避免影响使用
+
+## 常见问题
+
+### Q: 更新失败怎么办?
+
+A: 如果更新过程中失败,工具会自动回滚到更新前状态。如果更新成功后发现问题,使用 `rollback` 命令手动回滚到之前的版本。备份文件在 `backupDir` 中。
+
+### Q: 差异更新如何工作?
+
+A: 工具对比当前版本与目标版本的文件清单,只下载有变更的文件。通过文件的哈希值判断是否变更。对于大项目,差异更新可减少 80% 以上的下载量。
+
+### Q: 可以自动安装更新吗?
+
+A: 免费版只通知有更新可用,需要手动执行 `update` 命令。自动安装需要配置 `onUpdate` 回调脚本,在脚本中实现自动更新逻辑。
+
+### Q: 如何查看更新日志?
+
+A: 使用 `./auto-updater history` 查看更新历史,包含版本号、更新时间、状态。更新日志存储在 `~/.auto-updater/history.log`。
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
+- **操作系统**: Windows / macOS / Linux
+- **Shell 环境**: Bash 或兼容 Shell
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| curl | CLI工具 | 必需 | 系统自带 |
+| jq | CLI工具 | JSON处理推荐 | 包管理器安装 |
+| tar | CLI工具 | 备份必需 | 系统自带 |
+| rsync | CLI工具 | 差异更新推荐 | 包管理器安装 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+
+- 远程版本库:如果需要认证,通过环境变量配置 `UPDATE_API_TOKEN`
+- 私有仓库:配置 `UPDATE_AUTH_HEADER`
+- 本 Skill 核心功能无需 API Key
+
+### 可用性分类
+
+- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **说明**: 通过自然语言指令驱动 Agent 执行版本检查与更新操作
+- **限制**: 免费版不支持批量更新、灰度发布与企业级回滚策略

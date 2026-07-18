@@ -1,0 +1,305 @@
+---
+slug: azure-voicelive-tool-free
+name: azure-voicelive-tool-free
+version: "1.0.0"
+displayName: Azure语音交互免费版
+summary: 使用Azure VoiceLive构建基础实时语音AI应用，支持文本/音频输出与基本会话管理。
+license: MIT
+edition: free
+description: |-
+  Azure语音交互免费版 —— 面向个人开发者的轻量级实时语音AI工具。
+
+  核心能力:
+  - 通过WebSocket建立双向实时语音通信
+  - 支持文本与音频双模态输出
+  - 基本会话配置：指令、语音、模态设置
+  - 支持API Key认证方式
+  - 音频流发送与接收（Base64 PCM16）
+  - 多种语音选择（alloy、echo、shimmer等）
+
+  适用场景:
+  - 个人开发者构建语音助手原型
+  - 学习实时语音AI应用开发
+  - 简单的语音问答交互应用
+
+  差异化:免费版提供核心实时语音通信能力，适合个人开发者快速原型验证。PRO版本增加函数调用、自定义语音、电话音频格式、高级会话管理等专业能力。
+
+  触发关键词: 语音AI, 实时语音, VoiceLive, voice, realtime, WebSocket, 语音助手, Azure, 语音交互
+tags:
+- 语音AI
+- Azure
+- 实时通信
+- 个人开发
+tools:
+- read
+- exec
+---
+
+# Azure语音交互免费版
+
+## 概述
+
+Azure语音交互免费版是一款面向个人开发者的轻量级实时语音AI工具，基于Azure VoiceLive SDK构建。通过WebSocket双向通信实现实时语音交互，支持文本与音频双模态输出。几行Python代码即可建立实时语音会话，适合语音助手原型开发与学习实践。
+
+## 核心能力
+
+| 能力 | 说明 |
+| --- | --- |
+| 实时语音通信 | 通过WebSocket建立双向实时语音连接 |
+| 双模态输出 | 同时支持文本与音频输出 |
+| 会话配置 | 设置指令、语音类型、模态等基本参数 |
+| 音频流处理 | 发送与接收Base64 PCM16音频流 |
+| 多语音选择 | 支持alloy、echo、shimmer等多种语音 |
+| API Key认证 | 简单的API Key认证方式 |
+
+## 使用场景
+
+### 场景一：基础语音助手
+
+构建一个简单的语音问答助手，用户说话后AI语音回复。
+
+```python
+import asyncio
+import os
+from azure.ai.voicelive.aio import connect
+from azure.core.credentials import AzureKeyCredential
+
+async def voice_assistant():
+    async with connect(
+        endpoint=os.environ["AZURE_COGNITIVE_SERVICES_ENDPOINT"],
+        credential=AzureKeyCredential(os.environ["AZURE_COGNITIVE_SERVICES_KEY"]),
+        model="gpt-4o-realtime-preview"
+    ) as conn:
+        # 配置会话
+        await conn.session.update(session={
+            "instructions": "你是一个友好的中文语音助手，简洁回答问题。",
+            "modalities": ["text", "audio"],
+            "voice": "alloy"
+        })
+
+        # 发送音频输入
+        import base64
+        audio_chunk = await read_audio_from_microphone()
+        b64_audio = base64.b64encode(audio_chunk).decode()
+        await conn.input_audio_buffer.append(audio=b64_audio)
+        await conn.input_audio_buffer.commit()
+
+        # 接收响应
+        async for event in conn:
+            if event.type == "response.audio_transcript.done":
+                print(f"AI回复: {event.transcript}")
+            elif event.type == "response.audio.delta":
+                audio_bytes = base64.b64decode(event.delta)
+                await play_audio(audio_bytes)
+            elif event.type == "response.done":
+                break
+
+asyncio.run(voice_assistant())
+```
+
+### 场景二：文本转语音对话
+
+将文本输入转换为AI语音输出。
+
+```python
+async def text_to_speech():
+    async with connect(
+        endpoint=os.environ["AZURE_COGNITIVE_SERVICES_ENDPOINT"],
+        credential=AzureKeyCredential(os.environ["AZURE_COGNITIVE_SERVICES_KEY"]),
+        model="gpt-4o-realtime-preview"
+    ) as conn:
+        await conn.session.update(session={
+            "instructions": "用中文回答，语速适中。",
+            "modalities": ["text", "audio"],
+            "voice": "shimmer"
+        })
+
+        # 通过文本创建对话项
+        await conn.conversation.item.create(item={
+            "type": "message",
+            "role": "user",
+            "content": [{"type": "input_text", "text": "你好，请介绍一下你自己。"}]
+        })
+
+        # 触发响应
+        await conn.response.create()
+
+        # 接收音频响应
+        async for event in conn:
+            if event.type == "response.audio_transcript.delta":
+                print(event.delta, end="", flush=True)
+            elif event.type == "response.audio.delta":
+                audio = base64.b64decode(event.delta)
+                await play_audio(audio)
+            elif event.type == "response.done":
+                break
+
+asyncio.run(text_to_speech())
+```
+
+### 场景三：语音记录与转写
+
+实时语音输入并获取文字转写结果。
+
+```python
+async def voice_transcription():
+    async with connect(
+        endpoint=os.environ["AZURE_COGNITIVE_SERVICES_ENDPOINT"],
+        credential=AzureKeyCredential(os.environ["AZURE_COGNITIVE_SERVICES_KEY"]),
+        model="gpt-4o-realtime-preview"
+    ) as conn:
+        await conn.session.update(session={
+            "instructions": "转录用户的语音内容。",
+            "modalities": ["text"],
+            "voice": "alloy"
+        })
+
+        # 持续发送音频
+        audio_chunk = await read_audio_from_microphone()
+        b64_audio = base64.b64encode(audio_chunk).decode()
+        await conn.input_audio_buffer.append(audio=b64_audio)
+
+        # 接收转写结果
+        async for event in conn:
+            if event.type == "conversation.item.input_audio_transcription.completed":
+                print(f"你说: {event.transcript}")
+            elif event.type == "input_audio_buffer.speech_stopped":
+                break
+
+asyncio.run(voice_transcription())
+```
+
+## 快速开始
+
+### 1. 安装SDK
+
+```bash
+pip install azure-ai-voicelive aiohttp azure-identity
+```
+
+### 2. 配置环境变量
+
+```bash
+export AZURE_COGNITIVE_SERVICES_ENDPOINT="https://<region>.api.cognitive.microsoft.com"
+export AZURE_COGNITIVE_SERVICES_KEY="<your-api-key>"
+```
+
+### 3. 建立第一个语音会话
+
+```python
+import asyncio
+import os
+from azure.ai.voicelive.aio import connect
+from azure.core.credentials import AzureKeyCredential
+
+async def main():
+    async with connect(
+        endpoint=os.environ["AZURE_COGNITIVE_SERVICES_ENDPOINT"],
+        credential=AzureKeyCredential(os.environ["AZURE_COGNITIVE_SERVICES_KEY"]),
+        model="gpt-4o-realtime-preview"
+    ) as conn:
+        await conn.session.update(session={
+            "instructions": "你是一个有帮助的助手。",
+            "modalities": ["text", "audio"],
+            "voice": "alloy"
+        })
+
+        async for event in conn:
+            if event.type == "response.audio_transcript.done":
+                print(f"回复: {event.transcript}")
+            elif event.type == "response.done":
+                break
+
+asyncio.run(main())
+```
+
+## 配置示例
+
+### 环境变量配置
+
+```bash
+# .env 文件
+AZURE_COGNITIVE_SERVICES_ENDPOINT=https://myresource.api.cognitive.microsoft.com
+AZURE_COGNITIVE_SERVICES_KEY=your_api_key_here
+```
+
+### 语音选项
+
+| 语音 | 描述 | 适用场景 |
+| --- | --- | --- |
+| `alloy` | 中性平衡 | 通用场景 |
+| `echo` | 温暖对话 | 聊天助手 |
+| `shimmer` | 清晰专业 | 商务应用 |
+| `sage` | 沉稳权威 | 知识问答 |
+| `coral` | 友好活泼 | 娱乐互动 |
+
+### 连接资源说明
+
+| 资源 | 用途 | 关键方法 |
+| --- | --- | --- |
+| `conn.session` | 会话配置 | `update(session=...)` |
+| `conn.response` | 模型响应 | `create()`, `cancel()` |
+| `conn.input_audio_buffer` | 音频输入 | `append()`, `commit()`, `clear()` |
+| `conn.output_audio_buffer` | 音频输出 | `clear()` |
+| `conn.conversation` | 对话状态 | `item.create()`, `item.delete()` |
+
+## 最佳实践
+
+1. **音频格式**：使用PCM16 24kHz格式，获得最佳识别与合成质量
+2. **会话指令**：提供清晰简洁的instructions，引导AI行为
+3. **资源释放**：会话结束后及时关闭连接，释放资源
+4. **错误处理**：添加连接异常与API错误的处理逻辑
+5. **音频缓冲**：合理设置音频缓冲区大小，避免延迟或丢数据
+6. **模态选择**：仅需文本时关闭音频模态，减少带宽消耗
+
+## 常见问题
+
+### Q1：连接失败提示认证错误怎么办？
+
+检查 `AZURE_COGNITIVE_SERVICES_KEY` 是否正确，确认端点URL格式无误。免费版使用API Key认证。
+
+### Q2：语音延迟较高怎么办？
+
+确保网络连接稳定，减少音频缓冲区大小。使用PCM16格式避免转码延迟。
+
+### Q3：免费版支持函数调用吗？
+
+免费版不支持函数调用（Function Tools）。如需此功能，请升级至PRO版本。
+
+### Q4：如何选择合适的语音？
+
+通用场景选alloy，聊天场景选echo，商务场景选shimmer，可根据应用调性选择。
+
+### Q5：支持哪些音频格式？
+
+免费版默认支持PCM16 24kHz格式。如需电话音频格式（8kHz），请使用PRO版本。
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
+- **Python版本**: 3.8及以上
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+| Python 3 | 运行时 | 必需 | python.org 下载安装 |
+| azure-ai-voicelive | Python SDK | 必需 | `pip install azure-ai-voicelive` |
+| aiohttp | Python库 | 必需 | `pip install aiohttp` |
+| azure-identity | Python库 | 必需 | `pip install azure-identity` |
+| Azure认知服务 | 云服务 | 必需 | Azure门户创建资源 |
+
+### API Key 配置
+
+- `AZURE_COGNITIVE_SERVICES_ENDPOINT`：Azure认知服务端点URL
+- `AZURE_COGNITIVE_SERVICES_KEY`：Azure认知服务API密钥
+- 免费版使用API Key认证（AzureKeyCredential）
+
+### 可用性分类
+
+- **分类**: MD+EXEC（纯Markdown指令，核心功能需要exec命令行执行能力）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行实时语音交互任务。核心功能通过Python异步SDK调用Azure VoiceLive服务实现。

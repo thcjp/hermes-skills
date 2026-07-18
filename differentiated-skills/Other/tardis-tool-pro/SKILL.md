@@ -1,0 +1,374 @@
+---
+slug: tardis-tool-pro
+name: tardis-tool-pro
+version: "1.0.0"
+displayName: 生活事件追踪-专业版
+summary: 企业级事件追踪平台,支持数据分析、多维度回顾、团队协作与API集成
+license: MIT
+edition: pro
+description: |-
+  企业级生活事件追踪工具专业版,面向团队与专业用户。
+
+  核心能力:
+  - 多维度数据分析与可视化
+  - 智能回顾与年度报告
+  - 团队事件协作与共享
+  - 多平台同步与备份
+  - AI 辅助总结与洞察
+  - 自定义字段与表单
+  - API 接口与第三方集成
+  - Web 界面与移动端支持
+
+  适用场景:
+  - 团队项目事件追踪
+  - 个人年度总结生成
+  - 企业大事记管理
+  - 家庭记忆库建设
+
+  差异化:专业版在免费版基础上扩展数据分析、团队协作与 AI 洞察,兼容免费版数据格式。
+
+  触发关键词: 事件追踪, 数据分析, 年度报告, 团队协作, 智能回顾, 大事记, memory, insights
+tags:
+- 事件追踪
+- 企业级
+- 数据分析
+- 团队协作
+- AI洞察
+tools:
+- read
+- exec
+---
+
+# 生活事件追踪 - 专业版
+
+## 概述
+
+生活事件追踪工具专业版是企业级事件追踪平台,在免费版记录与回顾能力之上扩展多维度数据分析、智能回顾报告、团队协作与 AI 辅助洞察。适合团队项目追踪、个人年度总结与企业大事记管理。
+
+专业版兼容免费版数据格式,支持平滑升级。
+
+## 核心能力
+
+### 1. 数据分析与可视化
+
+按类别/时间/标签多维度统计分析,生成可视化图表。
+
+### 2. 智能回顾报告
+
+自动生成周报/月报/年报,包含事件统计、趋势分析与 AI 洞察。
+
+### 3. 团队协作
+
+团队成员共享事件空间,协作记录与评论,支持权限管理。
+
+### 4. 多平台同步
+
+支持云同步与多设备访问,数据自动备份。
+
+### 5. AI 辅助洞察
+
+AI 分析事件模式,提供生活洞察与建议。
+
+### 6. 自定义字段
+
+支持自定义事件字段,适配不同场景的记录需求。
+
+### 7. API 接口
+
+提供 RESTful API,支持与日历、笔记、项目管理工具集成。
+
+### 8. Web 与移动端
+
+提供 Web 界面与移动端适配,随时随地记录与回顾。
+
+## 使用场景
+
+### 场景一:年度回顾报告
+
+自动生成年度生活回顾报告。
+
+```bash
+# 生成年度报告
+./tardis-pro report annual \
+  --year 2025 \
+  --format html \
+  --output "annual-2025.html" \
+  --include-charts \
+  --include-insights
+
+# 输出:
+# === 2025 年度回顾报告 ===
+#
+# ## 概览
+# 总事件数: 487 条
+# 活跃天数: 312 天
+# 最活跃月份: 3月 (58条)
+#
+# ## 类别分布
+# 工作: 180条 (37%)  ████████████
+# 生活: 120条 (25%)  ████████
+# 学习: 95条 (19%)   ██████
+# 健康: 52条 (11%)   ████
+# 旅行: 25条 (5%)    ██
+# 情感: 15条 (3%)    █
+#
+# ## 关键里程碑
+# 01-15: 核心项目上线
+# 03-20: 获得晋升
+# 06-01: 完成 Rust 学习
+# 09-10: 跑完半程马拉松
+# 12-25: 家庭旅行
+#
+# ## AI 洞察
+# - 工作事件占比偏高(37%),建议增加生活与休闲时间
+# - 学习事件集中在上半年,下半年有所懈怠
+# - 健康事件呈上升趋势,坚持运动习惯良好
+# - 最幸福的月份是12月(旅行+家庭),建议增加陪伴时间
+```
+
+### 场景二:团队项目事件追踪
+
+团队共享事件空间,协作记录项目进展。
+
+```bash
+# 创建团队空间
+./tardis-pro space create \
+  --name "产品研发团队" \
+  --members "alice,bob,charlie" \
+  --permissions "read,write,comment"
+
+# 团队成员记录事件
+./tardis-pro add \
+  --space "产品研发团队" \
+  --mode detailed \
+  --title "V2.0 版本发布" \
+  --date "2025-01-15" \
+  --category "里程碑" \
+  --author "alice" \
+  --details "V2.0 版本正式发布,包含全新UI和性能优化"
+
+# 团队成员评论
+./tardis-pro comment \
+  --event "evt-001" \
+  --author "bob" \
+  --content "辛苦了!用户反馈很好"
+
+# 查看团队时间线
+./tardis-pro timeline \
+  --space "产品研发团队" \
+  --period "2025-01" \
+  --group-by "author"
+```
+
+### 场景三:数据分析与可视化
+
+```bash
+# 生成数据分析
+./tardis-pro analyze \
+  --period "2025" \
+  --dimensions "category,tags,time,location" \
+  --charts "pie,bar,heatmap,calendar" \
+  --output "analysis-2025.html"
+
+# 输出包含:
+# - 类别分布饼图
+# - 月度事件柱状图
+# - 活动热力图(按天)
+# - 年度日历视图
+# - 标签词云
+# - 趋势分析曲线
+```
+
+### 场景四:AI 洞察与建议
+
+```bash
+# 获取 AI 洞察
+./tardis-pro insights \
+  --period "2025" \
+  --focus "work-life-balance,growth,health" \
+  --output insights.md
+
+# 输出:
+# === AI 生活洞察 ===
+#
+# ## 工作生活平衡
+# 当前状态: 偏向工作
+# 工作事件占比 37%,高于建议的 25-30%
+# 建议: 每周至少安排 2 次非工作活动
+#
+# ## 个人成长
+# 学习事件: 95 条 (积极)
+# 学习方向: Rust, 系统设计, 项目管理
+# 建议: 下半年学习节奏放缓,建议设定新目标
+#
+# ## 健康管理
+# 运动频率: 每周 3-4 次 (良好)
+# 体重趋势: 下降 5kg (积极)
+# 建议: 增加力量训练,保持均衡饮食
+#
+# ## 情绪模式
+# 高频正面词汇: 兴奋, 满足, 成就
+# 高频负面词汇: 疲惫, 焦虑
+# 建议: 关注 3月和 9月的焦虑峰值,提前调整
+```
+
+## 快速开始
+
+### 从免费版升级
+
+```bash
+# 免费版数据自动兼容
+# 安装专业版
+pip install tardis-pro
+
+# 导入免费版数据
+./tardis-pro import --from ~/tardis-data/
+```
+
+### 启动 Web 界面
+
+```bash
+# 启动 Web 服务
+./tardis-pro web \
+  --port 8080 \
+  --auth true
+
+# 访问 http://localhost:8080
+# 支持浏览器与移动端访问
+```
+
+### 配置云同步
+
+```bash
+# 配置同步
+./tardis-pro sync configure \
+  --backend "s3" \
+  --endpoint "${S3_ENDPOINT}" \
+  --access-key "${S3_ACCESS_KEY}" \
+  --secret-key "${S3_SECRET_KEY}" \
+  --auto-sync true \
+  --interval "5m"
+```
+
+## 配置示例
+
+### 企业级配置
+
+```json
+{
+  "version": "2.0",
+  "storage": {
+    "local": "~/tardis-data",
+    "cloud": {
+      "enabled": true,
+      "backend": "s3",
+      "autoSync": true,
+      "interval": "5m"
+    }
+  },
+  "team": {
+    "enabled": true,
+    "spaces": [
+      {"name": "产品研发团队", "members": ["alice", "bob"]}
+    ]
+  },
+  "analysis": {
+    "enabled": true,
+    "dimensions": ["category", "tags", "time", "location"],
+    "charts": ["pie", "bar", "heatmap", "calendar"]
+  },
+  "insights": {
+    "enabled": true,
+    "focus": ["work-life-balance", "growth", "health"]
+  },
+  "web": {
+    "enabled": true,
+    "port": 8080,
+    "auth": true
+  },
+  "api": {
+    "enabled": true,
+    "port": 8443,
+    "integrations": ["calendar", "notion", "jira"]
+  }
+}
+```
+
+### 免费版与专业版能力对比
+
+| 能力 | 免费版 | 专业版 |
+|------|--------|--------|
+| 记录模式 | 三种 | 三种 + 自定义字段 |
+| 数据分析 | 基础统计 | 多维度可视化 |
+| 回顾报告 | 时间线 | +AI 年度报告 |
+| 团队协作 | 不支持 | 支持 |
+| 云同步 | 不支持 | 支持 |
+| AI 洞察 | 不支持 | 支持 |
+| Web 界面 | 不支持 | 支持 |
+| 移动端 | 不支持 | 支持 |
+| API 接口 | 不支持 | RESTful API |
+| 技术支持 | 社区 | 优先工单 + SLA |
+
+## 最佳实践
+
+1. **团队分类清晰**:团队空间按项目/部门分类,避免事件混乱
+2. **定期回顾**:每周快速回顾,每月深度分析,每年生成报告
+3. **关注 AI 洞察**:AI 洞察能发现人忽略的模式,认真对待建议
+4. **数据备份**:开启云同步,确保数据不丢失
+5. **自定义字段**:为特定场景添加自定义字段(如项目编号、客户名称)
+6. **集成工作流**:通过 API 与日历/笔记工具集成,自动记录事件
+7. **隐私分级**:团队空间与个人空间分开,敏感信息只记录在个人空间
+
+## 常见问题
+
+### Q: 团队协作如何保护隐私?
+
+A: 专业版支持空间隔离。个人事件记录在私人空间,团队事件记录在共享空间。空间间数据完全隔离,团队成员只能看到共享空间的事件。私人空间数据不会同步到团队。
+
+### Q: AI 洞察准确吗?
+
+A: AI 洞察基于事件数据的统计分析,准确率约 80-90%。洞察作为参考,不作为决策唯一依据。建议结合个人感受判断。AI 不会看到具体事件内容,只分析统计模式。
+
+### Q: 云同步安全吗?
+
+A: 专业版使用端到端加密,数据在传输和存储中都加密。即使云服务提供商也无法解密。加密密钥由用户保管,丢失密钥将无法恢复数据。建议定期导出本地备份。
+
+### Q: 如何与 Notion/日历集成?
+
+A: 通过 API 接口集成。1) 日历:事件自动同步到 Google Calendar/Outlook;2) Notion:事件导出为 Notion 数据库;3) Jira:工作事件关联 Jira 任务。配置 API Token 后自动同步。
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
+- **操作系统**: Windows / macOS / Linux
+- **Python**: 3.10+
+- **Node.js**: 18+(Web 界面)
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| Python 3 | 运行时 | 必需 | 官方网站下载 |
+| matplotlib | 数据可视化 | 推荐 | pip install matplotlib |
+| Node.js | Web服务 | Web界面必需 | 官方网站下载 |
+| Redis | 缓存 | 多用户推荐 | 官方网站下载 |
+| boto3 | S3同步 | 云同步必需 | pip install boto3 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+
+- 云存储(S3):配置 `S3_ACCESS_KEY` 和 `S3_SECRET_KEY`
+- Google Calendar:配置 `GOOGLE_CALENDAR_API_KEY`
+- Notion 集成:配置 `NOTION_API_TOKEN`
+- Jira 集成:配置 `JIRA_API_TOKEN`
+- API 接口:通过 `TARDIS_API_KEY` 配置访问密钥
+- AI 洞察由 Agent 内置 LLM 完成
+
+### 可用性分类
+
+- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **说明**: 通过自然语言指令驱动 Agent 执行企业级事件追踪与数据分析
+- **兼容性**: 完全兼容免费版数据格式
+- **支持**: 优先工单支持,SLA 保障响应时间

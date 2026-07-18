@@ -1,0 +1,278 @@
+---
+slug: note-taker-tool-free
+name: note-taker-tool-free
+version: "1.0.0"
+displayName: 笔记记录器基础版
+summary: 命令行任务与笔记管理工具,支持添加、列表、完成、优先级与提醒功能
+license: MIT
+edition: free
+description: |-
+  核心能力: 任务管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+
+  适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助。
+
+  差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持。
+
+  触发关键词: note-taker, 任务, 待办, 清单, 优先级, 提醒, todo
+tags:
+- 笔记
+- 任务管理
+- 待办清单
+- 命令行
+tools:
+- read
+- exec
+---
+
+# 笔记记录器基础版
+
+## 概述
+
+本工具是 **任务管理** 领域的 **FREE 版本** AI Skill,专为个人用户与轻量级场景设计。通过自然语言指令驱动 AI Agent 执行任务,提供核心功能与简洁易用的操作体验。
+
+FREE 版本与 PRO 版本完全兼容,可在需要时升级至 PRO 版本获取高级功能、批量操作与团队协同能力。
+
+### 版本定位
+
+| 维度 | FREE 版本 | PRO 版本 |
+|:-----|:----------|:---------|
+| 目标用户 | 个人用户 | 企业团队 |
+| 功能范围 | 核心功能 | 全部功能 |
+| 批量操作 | 不支持 | 支持 |
+| 团队协作 | 不支持 | 支持 |
+| 技术支持 | 社区支持 | 优先响应 |
+| 数据分析 | 基础统计 | 高级分析 |
+
+
+## 核心能力
+
+FREE 版本提供以下能力:
+
+- 添加任务到待办列表
+- 列出所有当前事项
+- 标记事项为已完成
+- 设置事项优先级
+- 查看今日与本周事项
+- 设置事项提醒
+
+### 功能详情
+
+本版本提供 6 项核心能力,覆盖 任务管理 的常见使用场景。如需批量操作、团队协作、数据分析等高级功能,可升级至 PRO 版本。
+
+**FREE 版本核心功能清单:**
+
+- 添加任务到待办列表
+- 列出所有当前事项
+- 标记事项为已完成
+- 设置事项优先级
+- 查看今日与本周事项
+- 设置事项提醒
+
+**PRO 版本扩展功能预览:**
+
+- 多项目管理与标签分类系统
+- 任务数据分析:完成率/延期率/趋势图
+- 团队任务共享与分配
+- 与日历集成自动安排任务
+- 数据导出 CSV/JSON 供分析
+- 自定义工作流与自动化规则
+
+
+## 使用场景
+
+### 场景 1: 添加并管理任务
+
+添加任务、设置优先级并查看
+
+```bash
+note-taker add "Review pull request for auth module"
+note-taker priority "Review pull request" high
+note-taker today
+```
+
+### 场景 2: 设置提醒并导出
+
+为任务设置提醒并导出数据
+
+```bash
+note-taker remind "Submit expense report" "Friday 5pm"
+note-taker export > backup.txt
+```
+
+
+
+## 快速开始
+
+### 1. 环境准备
+
+确保已安装并配置好 AI Agent 环境(Claude Code / Cursor / Codex / Gemini CLI 等),本 Skill 通过 SKILL.md 指令驱动 Agent 执行任务。
+
+**系统要求:**
+
+- 操作系统: Windows / macOS / Linux
+- Agent 平台: 支持 SKILL.md 格式的任意 AI Agent
+- 运行时: Python 3.8+ 或 Node.js 18+(视具体操作需求)
+
+### 2. 配置参数
+
+```bash
+# 配置
+NOTE_TAKER_DIR=~/.local/share/note-taker
+# 数据格式: YYYY-MM-DD <content>
+# 历史记录: history.log
+```
+
+### 3. 验证配置
+
+配置完成后,可通过以下方式验证是否正常工作:
+
+```bash
+# 验证环境变量是否设置
+echo "配置检查:"
+env | grep -E "API|KEY|TOKEN|SECRET" | sed "s/=.*/=***/"  # Linux/macOS
+# 或 PowerShell
+# Get-ChildItem Env: | Where-Object {$_.Name -match "API|KEY|TOKEN"} | Format-Table
+```
+
+### 4. 开始使用
+
+在 AI Agent 对话中描述你的需求,Agent 会根据本 Skill 的指令自动执行对应操作。
+
+```text
+请帮我添加并管理任务
+```
+
+Agent 将自动:
+1. 解析你的自然语言指令
+2. 调用相应的工具或 API
+3. 执行操作并返回结果
+4. 返回执行结果供你确认
+
+
+## 配置示例
+
+### 基础配置
+
+```bash
+# 配置
+NOTE_TAKER_DIR=~/.local/share/note-taker
+# 数据格式: YYYY-MM-DD <content>
+# 历史记录: history.log
+```
+### 可选配置
+
+```json
+{
+  "edition": "free",
+  "auto_retry": false,
+  "max_concurrent": 1,
+  "log_level": "info",
+  "cache_enabled": true,
+  "timeout": 30
+}
+```
+
+**FREE 配置项说明:**
+
+| 配置项 | 类型 | 默认值 | 说明 |
+|:-------|:-----|:-------|:-----|
+| auto_retry | bool | false | 失败后自动重试 |
+| max_concurrent | int | 1 | 最大并发数(FREE 限制为1) |
+| log_level | string | info | 日志级别 |
+| cache_enabled | bool | true | 启用结果缓存 |
+| timeout | int | 30 | 操作超时时间(秒) |
+
+
+## 最佳实践
+
+1. **每天早上用 today 查看当日任务**
+2. **完成的任务用 clear 清理保持列表整洁**
+3. **重要任务设置 high 优先级**
+4. **定期导出数据做备份**
+
+### 个人使用建议
+
+- 从简单任务开始熟悉工具行为,逐步扩展到复杂场景
+- 定期备份配置文件与数据,防止意外丢失
+- 遇到问题先查阅常见问题章节,再寻求社区帮助
+- 保持配置简洁,只启用必要的功能选项
+- 定期更新工具版本以获取最新功能与修复
+- 记录常用操作命令,提高日常使用效率
+
+
+## 常见问题
+
+### Q: 支持哪些操作系统?
+
+A: Linux 和 macOS,需要 Bash 环境。Windows 可通过 WSL 使用。
+
+### Q: 数据存储在哪里?
+
+A: 存储在 ~/.local/share/note-taker/data.log,可通过 NOTE_TAKER_DIR 自定义。
+
+### Q: 如何升级到 PRO 版本?
+
+A: 升级到 PRO 版本非常简单:
+1. 获取 PRO 版本授权
+2. 安装 PRO 版本 Skill
+3. 原有配置自动迁移,无需额外操作
+4. 即可使用批量操作、团队协作等高级功能
+
+### Q: FREE 版本有什么限制?
+
+A: FREE 版本主要限制:
+- 不支持批量操作(每次只能处理一个任务)
+- 不支持团队协作(仅限个人使用)
+- 不支持高级数据分析
+- 技术支持依赖社区
+如需这些功能,建议升级至 PRO 版本。
+
+### Q: FREE 版本的数据安全吗?
+
+A: FREE 版本所有数据本地存储,不上传云端,确保隐私安全。建议定期备份配置文件与数据目录。
+
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent 平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
+- **操作系统**: Windows / macOS / Linux
+- **运行时**: Python 3.8+ 或 Node.js 18+(视具体操作需求)
+- **网络**: 部分功能需要网络连接访问外部 API
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
+| curl | CLI 工具 | 推荐 | 系统自带或包管理器安装 |
+| jq | JSON 处理 | 推荐 | apt install jq / brew install jq |
+| Python 3.8+ | 运行时 | 视需求 | python.org 下载 |
+| Node.js 18+ | 运行时 | 视需求 | nodejs.org 下载 |
+
+### API Key 配置
+
+FREE 版本支持单一 API Key 配置,满足个人使用需求:
+- **环境变量**:通过环境变量配置 API Key
+- **配置文件**:支持配置文件方式存储 API Key
+- **安全提醒**:切勿将 API Key 硬编码到脚本或提交到版本控制系统
+
+### 可用性分类
+
+- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **说明**: 基于 Markdown 的 AI Skill,通过自然语言指令驱动 Agent 执行任务
+- **FREE 特性**: 支持单次执行、基础配置与社区支持
+- **安全等级**: 基础,数据本地存储,建议定期备份
+- **SLA**: 社区支持,尽力响应
+
+---
+
+**版本信息**
+
+| 项目 | 值 |
+|:-----|:---|
+| 版本号 | 1.0.0 |
+| 版本类型 | FREE |
+| 许可证 | MIT |
+| 兼容性 | 可升级至 PRO 版本 |

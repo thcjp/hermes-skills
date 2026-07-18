@@ -1,0 +1,302 @@
+---
+slug: merge-check-tool-free
+name: merge-check-tool-free
+version: "1.0.0"
+displayName: 合并检查工具(免费版)
+summary: 预测单个PR能否被合并,基于技术信号与PR卫生维度的拒绝向量分析。
+license: MIT
+edition: free
+description: |-
+  合并检查工具(免费版)为个人开发者预测单个Pull Request能否被合并,基于技术信号与PR卫生维度的拒绝向量分类体系。
+
+  核心能力:
+  - 单个PR数据采集与解析
+  - 技术信号分析:CI状态、构建、覆盖率
+  - PR卫生分析:规模、文件分布、单一职责、提交卫生
+  - 合并概率评分与改进建议
+
+  适用场景:
+  - 个人贡献者提交前自检
+  - 开源贡献者评估PR通过概率
+  - 学习PR最佳实践
+
+  差异化:
+  - 免费版聚焦单个PR的核心维度分析
+  - 移除原始平台引用,纯净适配SkillHub
+  - 提供中文友好的评分与建议输出
+
+  触发关键词: PR, merge, 合并, pull request, github, 代码审查, mergeability, 检查
+tags:
+- Development
+- 代码审查
+- GitHub
+- PR
+tools:
+- read
+- exec
+---
+
+# 合并检查工具(免费版)
+
+## 概述
+
+合并检查工具(免费版)预测单个 Pull Request 能否被维护者合并。它不是通用的代码质量工具,而是回答一个具体问题:**"这个PR会被合并吗?"**
+
+工具通过 `gh` CLI 采集 PR 的完整数据,基于拒绝向量分类体系,从技术信号、PR卫生、架构契合度、评审状态、流程合规、社交元信号等维度分析,输出合并概率评分、风险因素、优势点与可执行的改进建议。
+
+本版本聚焦单个PR的核心维度分析,适合个人贡献者提交前自检与开源贡献评估。如需批量分析、团队统计、历史趋势与CI/CD集成,请升级至 PRO 版本。
+
+## 核心能力
+
+| 能力 | 说明 |
+| --- | --- |
+| 数据采集 | 通过 gh CLI 采集PR完整数据并输出JSON |
+| 技术信号分析 | CI状态、构建状态、覆盖率回归检查 |
+| PR卫生分析 | 规模、文件分布、单一职责、标题描述、提交卫生 |
+| 架构契合度 | 模式一致性、依赖引入、范围蔓延、文件类型 |
+| 合并评分 | 高/中/低三档概率估计 |
+| 改进建议 | 按严重度排序的可执行步骤 |
+
+## 使用场景
+
+### 场景一:提交前自检PR
+
+个人贡献者在提交PR前自检,预估通过概率并优化。
+
+```bash
+# 采集PR数据
+bash scripts/merge-check.sh owner/repo#123
+# 或使用完整URL
+bash scripts/merge-check.sh https://github.com/owner/repo/pull/123
+```
+
+工具解析JSON输出后,生成结构化报告:
+
+```text
+## PR 合并性报告: owner/repo#123
+
+**评分: 中 (~55%)**
+
+### 风险因素
+- 847行变更 — 接近审查疲劳阈值
+- @maintainer 提出的修改意见尚未处理
+- 涉及6个目录共12个文件 — 范围分散
+- 未关联issue
+
+### 优势
+- 14项CI检查全部通过
+- 标题清晰、描述详尽
+- 作者在该仓库合并率73%(近期11个PR合并8个)
+- 讨论活跃 — 2小时前有更新
+
+### 建议
+1. 处理 @maintainer 的评审意见后再申请复审
+2. 考虑拆分为更小的PR(配置变更 vs 逻辑变更)
+3. 关联相关issue以便追溯
+
+### 结论
+PR本身质量不错且CI全绿、作者活跃,但卡在未处理的评审反馈 — 解决这些评论是合并的关键路径。
+```
+
+### 场景二:评估开源贡献通过率
+
+开源贡献者评估自己的PR是否符合维护者偏好。
+
+```bash
+# 采集后重点关注作者历史与评审情绪
+bash scripts/merge-check.sh owner/repo#456
+```
+
+工具会分析作者在该仓库的历史合并率、评审评论情绪(正面/中立/对抗)、是否首次贡献者等社交信号。
+
+### 场景三:学习PR最佳实践
+
+新手通过分析现有PR学习如何提高合并概率。
+
+```bash
+# 分析一个已合并的成功PR
+bash scripts/merge-check.sh owner/repo#100
+```
+
+工具会输出该PR的优势点(规模合理、单一职责、CI全绿、活跃讨论等),作为最佳实践参考。
+
+## 快速开始
+
+### 1. 前置准备
+
+```bash
+# 确认 gh CLI 已安装并登录
+gh auth status
+
+# 若未登录
+gh auth login
+```
+
+### 2. 运行检查
+
+```bash
+# 标准用法
+bash scripts/merge-check.sh owner/repo#123
+
+# 使用URL
+bash scripts/merge-check.sh https://github.com/owner/repo/pull/123
+```
+
+脚本输出单个JSON对象,包含以下键:
+
+| 键 | 内容 |
+| --- | --- |
+| `pr` | PR完整元数据(标题、正文、作者、状态、草稿、标签、评审人) |
+| `files` | 变更文件列表与patch统计 |
+| `diff_stats` | 总增删行数与变更文件数 |
+| `checks` | head提交的CI/检查运行结果 |
+| `reviews` | 所有评审(通过/修改意见/评论) |
+| `review_comments` | 行内评审评论 |
+| `issue_comments` | PR会话评论 |
+| `commits` | 提交列表与消息 |
+| `repo` | 仓库元数据(语言、规模、默认分支) |
+| `author_history` | 作者近期已关闭PR与合并率 |
+| `has_codeowners` | 是否存在CODEOWNERS |
+| `has_contributing` | 是否存在CONTRIBUTING |
+
+### 3. 分析与报告
+
+Agent 读取JSON后,按维度分析并产出报告。
+
+## 配置示例
+
+### 规模阈值参考
+
+| 变更行数 | 评级 | 说明 |
+| --- | --- | --- |
+| <400 | 理想 | 易于审查 |
+| 400-1000 | 风险 | 审查疲劳区 |
+| >1000 | 危险 | 易停滞或被拒 |
+
+### 单PR分析命令封装
+
+```bash
+# quick-check.sh 快速检查单个PR
+#!/usr/bin/env bash
+set -euo pipefail
+
+PR_REF="${1:?用法: ./quick-check.sh owner/repo#123}"
+OUTPUT=$(bash scripts/merge-check.sh "$PR_REF")
+
+echo "$OUTPUT" | jq '{
+  title: .pr.title,
+  state: .pr.state,
+  draft: .pr.draft,
+  additions: .diff_stats.additions,
+  deletions: .diff_stats.deletions,
+  changed_files: .diff_stats.changed_files,
+  ci_passed: ([.checks[] | select(.conclusion == "SUCCESS")] | length),
+  ci_total: (.checks | length),
+  reviews_approved: ([.reviews[] | select(.state == "APPROVED")] | length),
+  changes_requested: ([.reviews[] | select(.state == "CHANGES_REQUESTED")] | length),
+  author_merge_rate: .author_history.merge_rate
+}'
+```
+
+## 最佳实践
+
+### 1. 关注规模这个最强预测因子
+
+变更行数是最具预测性的单一因素。提交前评估:
+
+```bash
+# 查看本地未提交变更规模
+git diff --stat main...HEAD
+git diff --shortstat main...HEAD
+```
+
+如果超过1000行,主动拆分为多个PR。
+
+### 2. 确保单一职责
+
+一个PR只做一件事。常见反模式:
+
+- 配置变更 + 业务逻辑 + 重构混在一个PR
+- 修复bug同时顺带"清理"无关代码
+- 引入新功能同时修改无关测试
+
+### 3. 关联issue并写清描述
+
+```markdown
+## 关联issue
+Fixes #123
+
+## 变更说明
+- 修改了用户认证流程,使用新的token刷新机制
+- 新增 `/auth/refresh` 端点
+- 更新了相关测试
+
+## 测试方式
+- `pytest tests/auth/`
+- 手动测试: 登录 → 等待token过期 → 自动刷新
+```
+
+### 4. 提交卫生
+
+- 提交消息清晰,使用约定式提交(`feat:`、`fix:`、`docs:`)
+- 合理的提交数量,避免"草稿+修复+再修复"的噪音
+- 可被squash合并
+
+### 5. 主动响应评审
+
+评审意见提出后,逐条回复或修改,不要让PR停滞超过2周。
+
+## 常见问题
+
+### Q1:免费版支持多少个PR分析?
+
+免费版面向单PR分析,每次运行分析一个PR。如需批量分析多个PR,请使用PRO版。
+
+### Q2:需要什么权限?
+
+需要 `gh` CLI 已登录,且对目标仓库有读取权限。私有仓库需要对应访问令牌。
+
+### Q3:分析准确率如何?
+
+工具基于拒绝向量分类体系,提供高/中/低三档概率估计。准确率受仓库成熟度、维护者风格影响,建议作为参考而非绝对预测。
+
+### Q4:免费版与PRO版差异?
+
+| 维度 | 免费版 | PRO版 |
+| --- | --- | --- |
+| 分析范围 | 单个PR | 批量PR + 团队统计 |
+| 分析维度 | 核心维度 | 全6维度深度分析 |
+| 历史趋势 | 不支持 | 作者/仓库历史趋势 |
+| CI/CD集成 | 不支持 | 流水线门禁 |
+| 自定义规则 | 不支持 | 自定义拒绝向量 |
+| 支持 | 社区支持 | 优先支持 |
+
+### Q5:脚本失败怎么办?
+
+脚本在单个API调用失败(如限流、404)时会输出 `"error"` 字段。Agent 会分析可用数据并在报告中标注缺失项,不会因部分失败而中断。
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **操作系统**: Windows / macOS / Linux
+- **gh CLI版本**: 建议 2.40 及以上
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+| gh CLI | 命令行工具 | 必需 | github.com/cli/cli 下载 |
+| jq | JSON处理 | 推荐 | 系统包管理器安装 |
+
+### API Key 配置
+
+- 本Skill基于Markdown指令,无需额外API Key。
+- `gh` CLI 通过 `gh auth login` 完成OAuth认证,令牌存储在本地 `~/.config/gh/` 或对应平台凭据管理器。
+
+### 可用性分类
+
+- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。免费版聚焦单个PR的核心维度合并性分析。

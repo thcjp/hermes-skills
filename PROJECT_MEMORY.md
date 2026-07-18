@@ -4,7 +4,7 @@
 在腾讯 SkillHub (https://skillhub.cloud.tencent.com) 发布优质 Skill 获取收益。
 
 ## SkillHub 账号凭证
-- **API Key**: `skh_7906ab19cefaf3854349fae7b8b97310c5582073b76acf1557731c0f1c612c11`
+- **API Key**: 存储于 `d:\skills\.skillhub-credentials\api-key.txt`（已gitignore）
 - **Host**: `https://api.skillhub.cn`
 - **账号**: @user_cb75122a (userId=600324)
 - **状态**: 已实名,已登录

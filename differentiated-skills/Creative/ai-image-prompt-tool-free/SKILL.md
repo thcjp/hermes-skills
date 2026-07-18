@@ -1,0 +1,191 @@
+---
+slug: ai-image-prompt-tool-free
+name: ai-image-prompt-tool-free
+version: "1.0.0"
+displayName: AI图像提示词-免费版
+summary: AI图像生成提示词 crafting 工具,提供模板库与基础优化,适合个人创作者提升出图质量。
+license: MIT
+edition: free
+description: |-
+  AI图像提示词免费版,面向个人用户的图像生成提示词 crafting 工具。
+
+  核心能力:
+  - 提供常用场景提示词模板库(花卉、人物、风景、商品等)
+  - 基础提示词优化建议(主体、风格、构图、色调)
+  - 支持中文描述自动扩展为英文提示词
+  - 内置 10+ 艺术风格快速套用
+
+  适用场景:
+  - 个人创作者提升 AI 出图质量
+  - 社交媒体配图提示词快速生成
+  - 提示词学习与灵感参考
+
+  差异化:免费版聚焦基础提示词模板与优化建议,帮助个人用户快速上手 AI 图像生成,提升出图效果。
+
+  触发关键词: 提示词, prompt, 图像提示词, 提示词优化, 提示词模板, AI画图描述, 文生图描述
+tags:
+- Creative
+- 提示词工程
+- AI创作
+tools:
+- read
+- exec
+---
+
+# AI图像提示词工具 - 免费版
+
+## 概述
+
+AI图像提示词免费版是一款面向个人用户的图像生成提示词 crafting 工具。提供常用场景的提示词模板库、基础优化建议与风格快速套用,帮助用户写出更精准的提示词,提升 AI 图像生成效果。
+
+本版本适合 AI 图像生成初学者、个人创作者及社交媒体运营者,通过模板与示例快速掌握提示词写作技巧。
+
+## 核心能力
+
+| 能力项 | 免费版支持 | 说明 |
+|:-------|:-----------|:-----|
+| 提示词模板库 | 是 | 10+ 常用场景模板 |
+| 基础优化建议 | 是 | 主体/风格/构图/色调 |
+| 中英文转换 | 是 | 中文描述扩展为英文 |
+| 艺术风格套用 | 是 | 10+ 风格快速应用 |
+| 提示词历史 | 限制 | 最近 20 条 |
+| 批量提示词生成 | 否 | PRO 版支持 |
+| A/B 测试 | 否 | PRO 版支持 |
+| 提示词版本管理 | 否 | PRO 版支持 |
+
+## 使用场景
+
+### 场景一:花卉主题提示词
+
+用户希望生成一张童话风格的花卉拱门图片,使用模板快速构建提示词。
+
+```text
+模板: [主体描述] + [风格描述] + [色调描述] + [构图描述]
+
+生成提示词:
+"Generate an image of a whimsical, fairytale-inspired floral arch with pastel-colored flowers and delicate ivy, soft dreamy lighting, pastel color palette, centered composition with shallow depth of field."
+```
+
+### 场景二:人物肖像提示词
+
+用户需要生成一张人物肖像,套用写实摄影风格。
+
+```text
+中文描述: 一位年轻女性,微笑,户外阳光
+优化后提示词:
+"A young woman with a gentle smile, standing outdoors in warm sunlight, soft golden hour lighting, realistic photography style, shallow depth of field, natural skin tones, 85mm portrait lens composition."
+```
+
+### 场景三:风景插画提示词
+
+用户希望生成一幅风景插画,套用水彩风格。
+
+```text
+中文描述: 山间小屋,秋天,宁静
+优化后提示词:
+"A cozy cabin nestled in autumn mountains, surrounded by golden and red foliage, misty morning atmosphere, watercolor illustration style, soft brushstrokes, warm color palette with muted tones, peaceful and serene mood."
+```
+
+## 快速开始
+
+### 第一步:描述你的需求
+
+用中文或英文描述你想要生成的图像内容,例如:"一只在月光下奔跑的狼"。
+
+### 第二步:选择风格
+
+从内置风格库选择,例如:
+
+| 风格名称 | 英文关键词 | 适用场景 |
+|:---------|:-----------|:---------|
+| 水彩 | watercolor, soft brushstrokes | 插画、艺术 |
+| 油画 | oil painting, textured | 古典、艺术 |
+| 写实摄影 | realistic photography, 85mm | 人物、商品 |
+| 赛博朋克 | cyberpunk, neon, futuristic | 科技、未来 |
+| 吉卜力 | Studio Ghibli style, anime | 动漫、梦幻 |
+| 中国工笔 | Chinese gongbi, ink and gold | 传统、东方 |
+| 极简 | minimalist, clean lines | 设计、简约 |
+| 复古 | vintage, retro film | 怀旧、文艺 |
+
+### 第三步:组合生成提示词
+
+```python
+# 使用提示词构建脚本(示例)
+python3 scripts/build_prompt.py \
+  --subject "月光下奔跑的狼" \
+  --style "写实摄影" \
+  --tone "冷色调,蓝月光" \
+  --composition "动态构图,低角度"
+```
+
+输出:
+
+```text
+"A wolf running under moonlight, cold blue tones with silver highlights, realistic photography style, dynamic composition from low angle, motion blur on legs, sharp focus on eyes, cinematic lighting."
+```
+
+## 配置示例
+
+基础配置项说明:
+
+```bash
+# 提示词结构模板
+[主体描述] + [场景描述] + [风格描述] + [色调描述] + [构图描述] + [氛围描述]
+
+# 常用风格关键词(中英对照)
+水彩: watercolor, soft brushstrokes, pastel
+油画: oil painting, textured, rich colors
+写实: realistic photography, 85mm, natural lighting
+赛博朋克: cyberpunk, neon lights, futuristic
+吉卜力: Studio Ghibli style, anime, dreamy
+中国工笔: Chinese gongbi, ink and gold leaf
+极简: minimalist, clean lines, negative space
+```
+
+## 最佳实践
+
+1. **主体优先**:提示词开头明确描述主体,避免 AI 理解偏差
+2. **风格具体**:使用具体的风格关键词(如"watercolor"而非"artistic")
+3. **色调指定**:明确主色调与配色,如"pastel colors"或"warm golden tones"
+4. **构图说明**:说明视角、景深、焦点,如"low angle, shallow depth of field"
+5. **氛围点睛**:用一两个词描述情绪,如"peaceful"、"dramatic"、"melancholic"
+6. **长度适中**:50-150 字英文为佳,过短信息不足,过长可能互相矛盾
+
+## 常见问题
+
+### Q1:中文提示词效果不好?
+A:多数 AI 图像模型对英文提示词理解更准确,建议用英文描述,或使用本工具的中英文转换功能。
+
+### Q2:提示词越长越好吗?
+A:不是。关键信息要突出,过多的描述可能互相矛盾。建议聚焦 5-7 个核心要素。
+
+### Q3:如何让生成结果更稳定?
+A:固定风格关键词与构图描述,仅调整主体内容;使用相同的提示词结构模板。
+
+### Q4:免费版模板库够用吗?
+A:免费版提供 10+ 常用场景模板,覆盖大部分个人需求。如需行业专业模板(电商、广告、出版等),请使用 PRO 版。
+
+### Q5:可以保存常用提示词吗?
+A:免费版支持最近 20 条历史记录。如需提示词版本管理与团队共享,请使用 PRO 版。
+
+## 依赖说明
+
+### 运行环境
+- **Agent平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
+- **操作系统**: Windows / macOS / Linux
+- **运行时**: Python 3.8+(可选,用于脚本辅助)
+
+### 第三方依赖
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
+| Python 3.8+ | 运行时 | 可选 | 官方安装 |
+
+### API Key 配置
+- **本 Skill 基于 Markdown 指令,无需额外 API Key**
+- 提示词构建由 Agent 内置 LLM 完成,不依赖外部图像生成 API
+- 生成提示词后可配合任意图像生成工具使用
+
+### 可用性分类
+- **分类**: MD(纯 Markdown 指令,无需 exec 命令行执行能力)
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent构建与优化图像生成提示词

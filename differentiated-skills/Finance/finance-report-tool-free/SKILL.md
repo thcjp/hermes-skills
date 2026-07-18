@@ -1,0 +1,225 @@
+---
+slug: finance-report-tool-free
+name: finance-report-tool-free
+version: "1.0.0"
+displayName: 财报分析入门工具
+summary: 从Excel/PDF文件分析财务数据，生成含趋势图的HTML分析报告。
+license: MIT
+edition: free
+description: |-
+  面向个人投资者与初级分析师的财务报告分析工具。支持从本地Excel/PDF
+  文件提取财务数据，自动生成包含趋势走势图（sparkline）的交互式HTML
+  分析报告。适合单只标的的财报快速解读。
+
+  核心能力:
+  - Excel/PDF财务数据提取
+  - 关键财务指标自动计算
+  - 趋势走势图（sparkline）生成
+  - HTML格式分析报告输出
+
+  适用场景:
+  - 个人投资者财报解读
+  - 学生财报分析作业
+  - 单只标的快速分析
+  - 财报数据可视化
+
+  差异化:
+  - 免费版聚焦单文件分析
+  - 输出HTML格式报告
+  - 不支持PDF/DOCX多格式导出
+  - 不支持批量处理
+
+  触发关键词: 财报分析, 报告生成, 趋势图, Excel, PDF, 财务数据, sparkline, report, analyze
+tags:
+- Finance
+- 财报分析
+- 报告生成
+tools:
+- read
+- exec
+---
+
+# 财报分析入门工具（免费版）
+
+## 概述
+
+本工具为个人投资者提供从财务数据文件到分析报告的一站式解决方案。支持Excel和PDF格式的财务数据导入，自动计算关键财务指标，生成包含趋势走势图的交互式HTML报告。适合快速解读上市公司财报。
+
+## 核心能力
+
+### 报告功能
+
+| 功能 | 说明 | 免费版支持 |
+| --- | --- | --- |
+| 数据提取 | Excel/PDF文件解析 | 支持 |
+| 指标计算 | 关键财务指标 | 基础指标 |
+| 趋势图表 | sparkline走势图 | 支持 |
+| 报告格式 | 输出格式 | 仅HTML |
+| 批量处理 | 多文件分析 | 不支持 |
+| 行业对比 | 同业基准 | 不支持 |
+
+### 报告特性
+
+- 趋势走势图：每行指标含内嵌SVG走势图（实线=实际，虚线=预测）
+- 预测标记：预测值用特殊符号和黄色背景标记
+- 颜色编码：绿色=正面，红色=负面
+- 响应式：适配手机和桌面浏览器
+- 打印就绪：内置打印CSS样式
+
+## 使用场景
+
+### 场景一：分析上市公司财报
+
+用户输入："帮我分析这份Excel财报数据"
+
+```bash
+# 从Excel生成分析报告
+python3 scripts/generate_report.py input.xlsx \
+  -o html \
+  --company "示例公司" \
+  --ticker "000001.SZ"
+
+# 输出：./reports/示例公司_财务分析报告.html
+```
+
+### 场景二：PDF财报提取
+
+用户输入："从这份PDF年报里提取财务数据并分析"
+
+```bash
+# 从PDF提取并生成报告
+python3 scripts/generate_report.py annual_report.pdf \
+  -o html \
+  --company "某上市公司" \
+  --ticker "600519.SH"
+```
+
+### 场景三：数据可视化
+
+用户输入："把这些财务数据画成趋势图"
+
+```bash
+# 生成含趋势图的报告
+python3 scripts/generate_report.py financial_data.xlsx \
+  -o html \
+  --include-sparkline \
+  --include-forecast
+```
+
+## 快速开始
+
+### 环境准备
+
+```bash
+# 安装依赖
+pip install pandas openpyxl pdfplumber
+
+# 生成报告
+python3 scripts/generate_report.py data.xlsx -o html --company "公司名"
+```
+
+### 常用命令
+
+```bash
+# 基本用法
+python3 scripts/generate_report.py input.xlsx -o html
+
+# 指定公司信息
+python3 scripts/generate_report.py input.xlsx \
+  -o html \
+  --company "公司名" \
+  --ticker "000001.SZ" \
+  --output-dir ./reports
+
+# 含预测标记
+python3 scripts/generate_report.py input.xlsx \
+  -o html \
+  --include-forecast
+```
+
+## 配置示例
+
+### 报告生成配置
+
+```yaml
+report_config:
+  input:
+    supported_formats: ["xlsx", "xls", "pdf"]
+    encoding: "utf-8"
+
+  output:
+    format: "html"               # 免费版仅支持html
+    dir: "./reports"
+    filename_pattern: "{company}_财务分析报告_{date}"
+
+  charts:
+    sparkline: true              # 趋势走势图
+    forecast_markers: true       # 预测标记
+    color_coding: true           # 颜色编码
+    responsive: true             # 响应式布局
+
+  metrics:
+    auto_calculate: true         # 自动计算指标
+    include_definitions: true    # 包含指标定义
+```
+
+## 最佳实践
+
+1. **数据完整性**：确保Excel/PDF包含完整的三大报表数据
+2. **时间跨度**：至少3年数据才能生成有意义的趋势图
+3. **格式规范**：使用标准财务报表格式，便于自动提取
+4. **报告存档**：生成的HTML报告建议按公司+日期归档
+
+| 实践要点 | 说明 |
+| --- | --- |
+| 数据格式 | Excel优于PDF，提取准确率更高 |
+| 指标定义 | 报告中含指标定义说明，便于阅读 |
+| 趋势分析 | 关注趋势方向而非绝对值 |
+| 打印输出 | 使用浏览器打印功能生成PDF |
+
+## 常见问题
+
+### Q1：免费版支持PDF格式导出吗？
+
+免费版仅支持HTML格式输出。如需PDF/DOCX/Markdown等多格式导出，建议升级PRO版。
+
+### Q2：PDF数据提取准确率如何？
+
+PDF提取准确率取决于原文档格式。表格清晰的PDF提取效果较好，扫描版PDF效果较差。建议优先使用Excel格式。
+
+### Q3：支持批量处理多个文件吗？
+
+免费版仅支持单文件处理。如需批量分析多只公司的财报并生成对比报告，建议升级PRO版。
+
+### Q4：报告中的预测数据从哪来？
+
+预测数据基于历史趋势的简单外推，仅供参考。免费版使用基础预测算法，PRO版提供更高级的预测模型。
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
+- **Python版本**: 3.8+
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+| Python | 运行时 | 必需 | 系统安装或conda环境 |
+| pandas | Python库 | 必需 | `pip install pandas` |
+| openpyxl | Python库 | 必需 | `pip install openpyxl`（Excel） |
+| pdfplumber | Python库 | 可选 | `pip install pdfplumber`（PDF） |
+
+### API Key 配置
+
+- 免费版无需任何API Key
+- 所有数据处理在本地完成
+
+### 可用性分类
+
+- **分类**: MD+EXEC（Markdown指令+Python脚本执行）
+- **说明**: 从本地文件提取财务数据并生成HTML分析报告
+- **免费版限制**: 仅HTML输出、单文件处理、基础预测算法

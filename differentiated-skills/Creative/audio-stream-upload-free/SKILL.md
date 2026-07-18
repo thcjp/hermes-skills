@@ -1,0 +1,272 @@
+---
+slug: audio-stream-upload-free
+name: audio-stream-upload-free
+version: "1.0.0"
+displayName: 音频流上传免费版
+summary: 快速上传音频至流媒体平台，支持基础创建、上传与完成三步流程，获取HLS流媒体链接。
+license: MIT
+edition: free
+description: |-
+  音频流上传免费版 —— 面向个人创作者的轻量级音频上传工具。
+
+  核心能力:
+  - 通过三步API调用完成音频上传：创建对象 → 上传文件 → 完成处理
+  - 支持默认快速上传模式，仅需标题即可创建音频对象
+  - 自动计算文件MD5哈希值，确保上传完整性校验
+  - 上传完成后获取HLS流媒体播放链接
+  - 兼容主流音频格式（MP3、WAV、AAC等）
+
+  适用场景:
+  - 个人播客创作者上传音频节目
+  - 独立音乐人发布音乐作品
+  - 语音内容创作者分发音频内容
+
+  差异化:免费版聚焦核心上传功能，提供简洁的三步上传流程与默认配置，适合个人用户快速上手。PRO版本增加批量上传、自定义编码、多质量预设等高级能力。
+
+  触发关键词: 音频上传, 流媒体, audio, upload, stream, HLS, 播客上传, 音频发布
+tags:
+- 音频处理
+- 流媒体
+- 内容上传
+- 个人创作
+tools:
+- read
+- exec
+---
+
+# 音频流上传免费版
+
+## 概述
+
+音频流上传免费版是一款面向个人创作者的轻量级音频上传工具。通过简洁的三步API流程（创建 → 上传 → 完成），帮助用户将本地音频文件快速上传至流媒体平台，并获取HLS流媒体播放链接。无需复杂配置，开箱即用。
+
+## 核心能力
+
+| 能力 | 说明 |
+| --- | --- |
+| 快速创建 | 仅需标题即可创建音频对象，自动使用默认编码配置 |
+| 文件上传 | 支持单文件上传，自动计算MD5哈希进行完整性校验 |
+| 流链接获取 | 上传完成后获取HLS流媒体播放地址 |
+| 格式兼容 | 支持MP3、WAV、AAC、FLAC等主流音频格式 |
+
+## 使用场景
+
+### 场景一：播客节目上传
+
+个人播客创作者需要将录制好的MP3文件上传至流媒体平台，获取播放链接分享给听众。
+
+```bash
+# 第一步：创建音频对象（默认配置）
+curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
+  -H 'stream-public-key: YOUR_PUBLIC_KEY' \
+  -H 'stream-secret-key: YOUR_SECRET_KEY' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "title": "我的播客第一期",
+    "type": "audio"
+  }'
+
+# 返回结果中提取 data.id 作为 AUDIO_ID
+```
+
+```bash
+# 第二步：上传音频文件
+FILE_SIZE=$(stat -c%s /path/to/podcast.mp3)
+END_POS=$((FILE_SIZE - 1))
+HASH=$(md5sum /path/to/podcast.mp3 | awk '{print $1}')
+
+curl -s -X POST "https://api-w3stream.attoaioz.cyou/api/videos/AUDIO_ID/part" \
+  -H 'stream-public-key: YOUR_PUBLIC_KEY' \
+  -H 'stream-secret-key: YOUR_SECRET_KEY' \
+  -H "Content-Range: bytes 0-$END_POS/$FILE_SIZE" \
+  -F "file=@/path/to/podcast.mp3" \
+  -F "index=0" \
+  -F "hash=$HASH"
+```
+
+```bash
+# 第三步：完成上传
+curl -s -X GET "https://api-w3stream.attoaioz.cyou/api/videos/AUDIO_ID/complete" \
+  -H 'accept: application/json' \
+  -H 'stream-public-key: YOUR_PUBLIC_KEY' \
+  -H 'stream-secret-key: YOUR_SECRET_KEY'
+```
+
+### 场景二：语音内容分发
+
+语音教程或有声书创作者上传音频内容，获取流媒体链接嵌入到个人网站或博客。
+
+```bash
+# 上传完成后获取流媒体链接
+curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/AUDIO_ID' \
+  -H 'stream-public-key: YOUR_PUBLIC_KEY' \
+  -H 'stream-secret-key: YOUR_SECRET_KEY'
+
+# 从返回的 assets 或 hls 字段中提取播放地址
+```
+
+### 场景三：音乐作品发布
+
+独立音乐人上传原创音乐作品，获取HLS链接用于在线试听和分享。
+
+```bash
+# 完整上传流程的Python封装
+python3 -c "
+import requests, hashlib, os
+
+PUBLIC_KEY = 'YOUR_PUBLIC_KEY'
+SECRET_KEY = 'YOUR_SECRET_KEY'
+BASE_URL = 'https://api-w3stream.attoaioz.cyou/api'
+HEADERS = {
+    'stream-public-key': PUBLIC_KEY,
+    'stream-secret-key': SECRET_KEY
+}
+
+# 步骤1：创建音频对象
+create_resp = requests.post(f'{BASE_URL}/videos/create', headers=HEADERS, json={
+    'title': '我的原创音乐',
+    'type': 'audio'
+})
+audio_id = create_resp.json()['data']['id']
+
+# 步骤2：上传文件
+file_path = '/path/to/music.mp3'
+file_size = os.path.getsize(file_path)
+with open(file_path, 'rb') as f:
+    file_hash = hashlib.md5(f.read()).hexdigest()
+
+with open(file_path, 'rb') as f:
+    requests.post(f'{BASE_URL}/videos/{audio_id}/part', headers={
+        **HEADERS,
+        'Content-Range': f'bytes 0-{file_size-1}/{file_size}'
+    }, files={'file': f}, data={'index': 0, 'hash': file_hash})
+
+# 步骤3：完成上传
+requests.get(f'{BASE_URL}/videos/{audio_id}/complete', headers=HEADERS)
+print(f'上传完成！音频ID: {audio_id}')
+"
+```
+
+## 快速开始
+
+### 1. 获取API密钥
+
+在使用本工具前，需要准备以下凭证：
+
+- `stream-public-key`：流媒体平台的公钥
+- `stream-secret-key`：流媒体平台的密钥
+
+### 2. 执行三步上传
+
+```bash
+# 定义变量
+PUBLIC_KEY="your_public_key"
+SECRET_KEY="your_secret_key"
+AUDIO_FILE="/path/to/audio.mp3"
+TITLE="我的音频标题"
+
+# 第一步：创建
+AUDIO_ID=$(curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
+  -H "stream-public-key: $PUBLIC_KEY" \
+  -H "stream-secret-key: $SECRET_KEY" \
+  -H 'Content-Type: application/json' \
+  -d "{\"title\": \"$TITLE\", \"type\": \"audio\"}" | python3 -c "import sys,json; print(json.load(sys.stdin)['data']['id'])")
+
+echo "音频对象已创建，ID: $AUDIO_ID"
+
+# 第二步：上传
+FILE_SIZE=$(stat -c%s "$AUDIO_FILE")
+HASH=$(md5sum "$AUDIO_FILE" | awk '{print $1}')
+
+curl -s -X POST "https://api-w3stream.attoaioz.cyou/api/videos/$AUDIO_ID/part" \
+  -H "stream-public-key: $PUBLIC_KEY" \
+  -H "stream-secret-key: $SECRET_KEY" \
+  -H "Content-Range: bytes 0-$((FILE_SIZE-1))/$FILE_SIZE" \
+  -F "file=@$AUDIO_FILE" \
+  -F "index=0" \
+  -F "hash=$HASH"
+
+# 第三步：完成
+curl -s -X GET "https://api-w3stream.attoaioz.cyou/api/videos/$AUDIO_ID/complete" \
+  -H "accept: application/json" \
+  -H "stream-public-key: $PUBLIC_KEY" \
+  -H "stream-secret-key: $SECRET_KEY"
+
+echo "上传完成！"
+```
+
+## 配置示例
+
+### 基础配置
+
+```bash
+# 环境变量配置（推荐）
+export STREAM_PUBLIC_KEY="your_public_key"
+export STREAM_SECRET_KEY="your_secret_key"
+```
+
+### Content-Range 格式说明
+
+| 上传方式 | 格式 | 说明 |
+| --- | --- | --- |
+| 单文件上传 | `bytes 0-{size-1}/{size}` | 整个文件一次上传 |
+| 分片上传 | `bytes {start}-{end}/{total}` | 大文件分段上传 |
+
+## 最佳实践
+
+1. **文件大小控制**：免费版建议单个音频文件不超过500MB，超大文件建议使用分片上传
+2. **网络稳定性**：上传前确保网络连接稳定，避免上传中断导致需要重新上传
+3. **哈希校验**：始终使用MD5哈希进行完整性校验，确保文件传输无误
+4. **标题规范**：使用清晰有意义的标题，便于后续管理和查找
+5. **格式选择**：推荐使用MP3格式上传，兼容性最好且文件体积适中
+
+## 常见问题
+
+### Q1：上传失败提示401错误怎么办？
+
+401错误表示API密钥无效。请检查 `stream-public-key` 和 `stream-secret-key` 是否正确，确认密钥未过期。
+
+### Q2：上传完成后为什么获取不到播放链接？
+
+音频上传完成后需要经过转码处理。如果返回状态为 `transcoding`，请等待几分钟后再次查询。
+
+### Q3：Content-Range头部格式错误怎么办？
+
+确保格式为 `bytes {起始位置}-{结束位置}/{总大小}`。单文件上传时，起始位置为0，结束位置为文件大小减1。
+
+### Q4：支持哪些音频格式？
+
+支持MP3、WAV、AAC、FLAC、OGG等主流音频格式。建议使用MP3格式以获得最佳兼容性。
+
+### Q5：免费版有文件大小限制吗？
+
+免费版建议单个文件不超过500MB。如需上传更大文件，建议升级至PRO版本使用分片上传功能。
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
+- **Python版本**: 3.8及以上（使用Python脚本时）
+- **命令行工具**: curl、md5sum（或md5命令）
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| curl | 系统工具 | 必需 | 系统自带或包管理器安装 |
+| 流媒体平台API | 外部API | 必需 | 在平台注册获取 |
+| Python 3 | 运行时 | 可选 | python.org 下载安装 |
+| requests | Python库 | 可选 | `pip install requests` |
+
+### API Key 配置
+
+- `stream-public-key`：流媒体平台公钥，通过HTTP头发送
+- `stream-secret-key`：流媒体平台密钥，通过HTTP头发送
+- 所有API调用均需在HTTP头中携带以上两个密钥
+
+### 可用性分类
+
+- **分类**: MD+EXEC（纯Markdown指令，核心功能需要exec命令行执行能力）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行音频上传任务。核心三步流程通过curl命令执行，也可通过Python脚本封装调用。

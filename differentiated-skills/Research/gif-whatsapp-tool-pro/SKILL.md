@@ -1,0 +1,434 @@
+---
+slug: gif-whatsapp-tool-pro
+name: gif-whatsapp-tool-pro
+version: "1.0.0"
+displayName: WhatsApp表情专业版
+summary: 企业级 WhatsApp GIF 管理工具，支持批量发送、定时任务、GIF 库管理、多账号与营销分析，适合团队协作与营销场景。
+license: MIT
+edition: pro
+description: |-
+  企业级 WhatsApp GIF 管理工具，支持批量发送、定时任务、GIF 库管理、多账号与营销分析，适合团队协作与营销场景。
+
+  核心能力:
+  - 批量搜索与发送 GIF 到多个联系人
+  - 自定义 GIF 字幕与品牌水印
+  - 定时任务与营销活动调度
+  - GIF 收藏库分类管理与标签系统
+  - 多 WhatsApp 账号同时管理
+  - 发送效果统计与分析报告
+
+  适用场景:
+  - 企业 WhatsApp 营销活动
+  - 客户关系维护与节日关怀
+  - 团队内部沟通表情管理
+  - 社交媒体内容批量制作
+
+  差异化:
+  - PRO 版支持批量群发，效率提升 20 倍
+  - 内置 GIF 库管理系统，支持标签分类
+  - 支持定时发送与营销活动调度
+  - 与免费版完全兼容，无缝升级
+
+  触发关键词: 批量GIF发送, WhatsApp营销, GIF库管理, 定时表情, 群发工具, GIF专业版
+tags:
+- WhatsApp
+- GIF
+- 营销工具
+- 批量发送
+- 企业通讯
+tools:
+- read
+- exec
+---
+
+# WhatsApp 表情专业版
+
+## 概述
+
+WhatsApp 表情专业版是面向企业用户和营销团队的进阶 GIF 管理工具。在免费版基础搜索发送能力之上，新增批量群发、定时任务、GIF 库管理、多账号支持与效果分析等高级功能，助力企业通过 WhatsApp 进行高效的客户沟通与营销推广。与免费版完全兼容，已有工作流可无缝升级。
+
+## 核心能力
+
+### 功能对比
+
+| 能力 | 免费版 | PRO 版 |
+| --- | --- | --- |
+| GIF 搜索 | 单次 5 个结果 | 单次 20 个结果 |
+| 格式转换 | GIF 转 MP4 | GIF 转 MP4 + 水印 |
+| 发送方式 | 单人单发 | 批量群发 |
+| 自定义字幕 | 否 | 是 |
+| 定时发送 | 否 | Cron 调度 |
+| GIF 库管理 | 否 | 标签分类管理 |
+| 多账号 | 否 | 支持多账号 |
+| 效果分析 | 否 | 发送统计报告 |
+| 品牌水印 | 否 | 自定义水印 |
+| API 接口 | 否 | REST API |
+| 优先支持 | 社区 | 优先响应 |
+
+### PRO 版独有功能
+
+#### 1. 批量群发引擎
+
+```bash
+python scripts/batch_send.py \
+  --gif-library ./gifs/celebration.mp4 \
+  --contacts contacts.csv \
+  --message "节日快乐" \
+  --delay 5
+```
+
+支持从 CSV 导入联系人列表，批量发送相同或不同的 GIF，自动控制发送频率避免限制。
+
+#### 2. 定时任务调度
+
+```bash
+# 定时发送节日祝福
+python scripts/scheduled_send.py \
+  --gif ./gifs/newyear.mp4 \
+  --contacts customer_list.csv \
+  --cron="0 0 1 1 *" \
+  --message "新年快乐！感谢您一年的支持"
+```
+
+#### 3. GIF 库管理
+
+```bash
+# 添加 GIF 到收藏库
+python scripts/gif_library.py add ./gifs/thanks.mp4 \
+  --tags="感谢,客户关怀" \
+  --category="客户服务"
+
+# 搜索库中的 GIF
+python scripts/gif_library.py search --tag="感谢" --category="客户服务"
+
+# 查看库统计
+python scripts/gif_library.py stats
+```
+
+#### 4. 品牌水印
+
+```bash
+# 为 GIF 添加品牌水印
+python scripts/watermark.py \
+  --input ./gifs/original.mp4 \
+  --output ./gifs/branded.mp4 \
+  --logo ./assets/logo.png \
+  --position bottom-right \
+  --opacity 0.8
+```
+
+## 使用场景
+
+### 场景一：企业节日营销活动
+
+营销团队需要在节日期间向所有客户发送祝福 GIF。
+
+```bash
+# 准备客户联系人列表
+cat > customers.csv <<EOF
+name,phone
+张三,+8613800001111
+李四,+8613800002222
+王五,+8613800003333
+EOF
+
+# 搜索节日 GIF
+gifgrep "mid autumn festival" --max 10 --format url
+
+# 下载并添加品牌水印
+python scripts/watermark.py \
+  --input /tmp/festival.gif \
+  --output ./gifs/festival_branded.mp4 \
+  --logo ./assets/company_logo.png
+
+# 批量发送
+python scripts/batch_send.py \
+  --gif ./gifs/festival_branded.mp4 \
+  --contacts customers.csv \
+  --message "中秋快乐！感谢您选择我们的服务" \
+  --delay 10 \
+  --export=send_report.json
+```
+
+系统自动逐个发送，控制频率避免触发 WhatsApp 限制，生成发送报告包含成功/失败统计。
+
+### 场景二：客户关怀定时跟进
+
+客服团队需要在新客户注册后自动发送欢迎 GIF。
+
+```bash
+# 配置定时任务
+python scripts/scheduled_send.py \
+  --gif ./gifs/welcome.mp4 \
+  --contacts new_customers.csv \
+  --cron="0 10 * * *" \
+  --message "欢迎加入！如有问题随时联系我们" \
+  --condition="new_registration" \
+  --archive-dir=./welcome_campaign
+```
+
+每日 10 点检查新注册客户，自动发送欢迎 GIF，归档发送记录。
+
+### 场景三：多账号团队协作
+
+多个客服人员使用不同 WhatsApp 账号同时工作。
+
+```bash
+# 配置多账号
+python scripts/account_manager.py add \
+  --name="客服小王" \
+  --phone="+8613800001111"
+
+python scripts/account_manager.py add \
+  --name="客服小李" \
+  --phone="+8613800002222"
+
+# 分配发送任务
+python scripts/batch_send.py \
+  --gif ./gifs/thanks.mp4 \
+  --contacts customers.csv \
+  --account="客服小王" \
+  --split 50  # 每个账号发送 50%
+```
+
+## 快速开始
+
+### 从免费版升级
+
+```bash
+# 安装 PRO 版扩展依赖
+pip install pandas schedule pillow
+
+# 初始化 GIF 库
+python scripts/gif_library.py init \
+  --storage=./gif_library \
+  --categories="客户服务,节日祝福,产品推广,日常沟通"
+
+# 验证升级
+python scripts/batch_send.py --version
+```
+
+### 首次批量发送
+
+```bash
+# 准备联系人 CSV
+echo "name,phone
+测试用户,+8613800000000" > test_contacts.csv
+
+# 执行测试发送
+python scripts/batch_send.py \
+  --gif ./gifs/welcome.mp4 \
+  --contacts test_contacts.csv \
+  --message "测试发送" \
+  --delay 5
+```
+
+## 配置示例
+
+### 企业级配置文件
+
+```yaml
+# config.yaml - PRO 版企业配置
+whatsapp:
+  default_account: main
+  accounts:
+    main:
+      name: 主账号
+      phone: "+8613800000000"
+    service:
+      name: 客服账号
+      phone: "+8613800001111"
+
+sending:
+  batch_size: 100
+  delay_between_sends: 10
+  max_daily_sends: 500
+  retry_on_failure: true
+  retry_count: 3
+
+gif_library:
+  storage: ./gif_library
+  categories:
+    - 客户服务
+    - 节日祝福
+    - 产品推广
+    - 日常沟通
+  auto_tag: true
+
+watermark:
+  enabled: true
+  logo: ./assets/logo.png
+  position: bottom-right
+  opacity: 0.8
+
+analytics:
+  enabled: true
+  storage: ./analytics
+  report_frequency: weekly
+```
+
+### 参数说明
+
+| 参数 | 类型 | 默认值 | 范围 | 说明 |
+| --- | --- | --- | --- | --- |
+| `--gif` | 字符串 | 无 | 路径 | GIF/MP4 文件路径 |
+| `--contacts` | 字符串 | 无 | CSV 路径 | 联系人列表 |
+| `--message` | 字符串 | 空格 | 文本 | 自定义消息 |
+| `--delay` | 整数 | 5 | 1-60 | 发送间隔秒数 |
+| `--cron` | 字符串 | 无 | Cron 表达式 | 定时任务 |
+| `--watermark` | 布尔 | true | true/false | 启用水印 |
+| `--export` | 字符串 | json | json/csv | 报告格式 |
+| `--account` | 字符串 | main | 账号名 | 指定发送账号 |
+| `--split` | 整数 | 100 | 1-100 | 账号分流百分比 |
+
+## 最佳实践
+
+### 批量发送优化
+
+```python
+# batch_config.py - 批量发送配置
+from batch_send import BatchSendConfig
+
+config = BatchSendConfig(
+    batch_size=50,
+    delay_between_sends=10,
+    max_daily_sends=200,
+    retry_on_failure=True,
+    retry_count=3,
+    watermark_enabled=True,
+    custom_message=True,
+    track_delivery=True
+)
+
+# 执行批量发送
+results = config.execute(
+    gif_path="./gifs/promotion.mp4",
+    contacts="customers.csv"
+)
+```
+
+### GIF 库分类管理
+
+```bash
+# 按场景分类管理 GIF
+python scripts/gif_library.py organize \
+  --auto-classify \
+  --tags-from-filename
+
+# 创建标签体系
+python scripts/gif_library.py tags add \
+  --tag="高优先级" \
+  --description="重要客户使用"
+
+# 智能推荐
+python scripts/gif_library.py recommend \
+  --context="客户感谢" \
+  --limit 5
+```
+
+### 营销效果分析
+
+```bash
+# 生成发送效果报告
+python scripts/analytics.py \
+  --period="2026-01" \
+  --output=monthly_report.md
+
+# 查看发送统计
+python scripts/analytics.py stats \
+  --metric=delivery_rate \
+  --period=weekly
+
+# 导出详细数据
+python scripts/analytics.py export \
+  --format=csv \
+  --output=detailed_stats.csv
+```
+
+## 常见问题
+
+### 批量发送被 WhatsApp 限制
+
+```bash
+# 增加发送间隔
+python scripts/batch_send.py --delay 30 contacts.csv
+
+# 减少每日发送量
+python scripts/batch_send.py --max-daily=100 contacts.csv
+
+# 使用多账号分流
+python scripts/batch_send.py --split 50 --account=all contacts.csv
+```
+
+### GIF 水印添加失败
+
+```bash
+# 检查水印图片格式
+file ./assets/logo.png
+
+# 确保图片为 PNG 透明背景
+python scripts/watermark.py --validate-logo ./assets/logo.png
+
+# 调整水印参数
+python scripts/watermark.py \
+  --input input.mp4 \
+  --output output.mp4 \
+  --logo logo.png \
+  --opacity 0.5
+```
+
+### 定时任务不执行
+
+```bash
+# 检查任务列表
+python scripts/scheduled_send.py --list
+
+# 查看任务日志
+cat ./logs/scheduled_send.log
+
+# 手动触发测试
+python scripts/scheduled_send.py --run-now --task-id=task_001
+```
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent 平台**：支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+- **操作系统**：Windows / macOS / Linux
+- **网络环境**：需可访问 Tenor、Giphy 和 WhatsApp 服务
+- **推荐配置**：4 核 CPU、8GB 内存、20GB 磁盘空间（GIF 库存储）
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+| --- | --- | --- | --- |
+| gifgrep | CLI 工具 | 是 | 参考官方文档安装 |
+| ffmpeg | 多媒体处理 | 是 | `brew install ffmpeg` 或 `apt install ffmpeg` |
+| curl | 文件下载 | 是 | 系统自带 |
+| pandas | 数据处理 | 否（推荐） | `pip install pandas` |
+| schedule | 定时任务 | 否（推荐） | `pip install schedule` |
+| pillow | 图片处理 | 否（推荐） | `pip install pillow` |
+| WhatsApp message 工具 | 发送服务 | 是 | 平台内置 |
+| LLM API | API | 是 | 由 Agent 内置 LLM 提供 |
+
+### API Key 配置
+
+- PRO 版核心功能无需额外 API Key
+- 如需启用高级分析，配置数据库连接：
+
+```bash
+export DB_HOST=localhost
+export DB_PORT=5432
+export DB_NAME=whatsapp_analytics
+export DB_USER=admin
+export DB_PASSWORD=your_password
+```
+
+### 可用性分类
+
+- **分类**：MD+EXEC（纯 Markdown 指令，部分功能需要 exec 命令行执行能力）
+- **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务
+- **适用人群**：企业营销团队、客服团队、社交媒体运营人员
+- **兼容性**：与免费版完全兼容，配置可无缝迁移
+- **支持方式**：优先响应技术工单

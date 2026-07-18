@@ -1,0 +1,274 @@
+---
+slug: go-linter-config-tool-pro
+name: go-linter-config-tool-pro
+version: "1.0.0"
+displayName: Go Lint 配置工具专业版
+summary: 面向团队的多项目 lint 统一治理、自定义规则与 CI 矩阵工具。
+license: MIT
+edition: pro
+description: |-
+  面向团队的 golangci-lint 多项目统一治理与自定义规则专业工具。
+
+  核心能力:
+  - 多项目配置矩阵与统一基线
+  - 自定义规则集与排除策略
+  - CI 矩阵（GitHub Actions / GitLab CI / Jenkins）
+  - 质量门禁、趋势看板与历史回归
+
+  适用场景:
+  - 企业多仓库统一 lint 基线
+  - 团队自定义规则与豁免治理
+  - CI 质量门禁与回归追踪
+
+  差异化: 专业版在免费版单项目基础上扩展多项目矩阵、自定义规则、CI 集成与质量门禁，兼容免费版配置格式。
+
+  触发关键词: 多项目 lint, 自定义规则, 质量门禁, CI 矩阵, lint 基线, 回归追踪, golangci-lint pro, governance
+tags:
+- Go
+- 代码质量
+- 企业级
+- CI/CD
+- 其他工具
+tools:
+- read
+- exec
+---
+
+# Go Lint 配置工具（专业版）
+
+## 概述
+
+专业版面向团队与企业，在免费版单项目配置基础上，扩展多项目配置矩阵、自定义规则集、CI 矩阵集成与质量门禁。配置格式与免费版兼容，已有 `.golangci.yml` 可直接纳入统一基线。
+
+## 核心能力
+
+| 能力 | 说明 | 专业版增强 |
+|:-----|:-----|:-----------|
+| 配置矩阵 | 多项目统一基线 + 项目级覆盖 | 仓库级继承 |
+| 自定义规则 | 规则集、排除、豁免清单 | 版本化治理 |
+| CI 矩阵 | GitHub Actions / GitLab CI / Jenkins | 一键生成 |
+| 质量门禁 | 阈值卡控与阻断 | 趋势看板 |
+| 回归追踪 | 历史问题与修复趋势 | 全量归档 |
+
+## 使用场景
+
+### 场景一：多项目统一基线
+
+```yaml
+# 基线配置 base.golangci.yml（团队共享）
+run:
+  timeout: 5m
+  tests: true
+linters:
+  enable:
+    - gofmt
+    - govet
+    - errcheck
+    - staticcheck
+    - unused
+    - gosimple
+    - ineffassign
+    - gocyclo
+    - misspell
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
+```
+
+```yaml
+# 项目级覆盖 .golangci.yml（继承基线）
+inherit:
+  - ./base.golangci.yml
+linters:
+  enable:
+    - gosec
+issues:
+  exclude-rules:
+    - path: _test\.go
+      linters: [gosec]
+```
+
+### 场景二：CI 矩阵生成
+
+```yaml
+# .github/workflows/lint.yml（专业版生成）
+name: Lint Matrix
+on: [push, pull_request]
+jobs:
+  lint:
+    strategy:
+      matrix:
+        go-version: ["1.21", "1.22"]
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v4
+        with:
+          go-version: ${{ matrix.go-version }}
+      - run: go mod download
+      - run: golangci-lint run --config .golangci.yml ./...
+      - name: Quality Gate
+        run: |
+          RESULT=$(golangci-lint run --out-format json ./...)
+          echo "$RESULT" | jq '.Issues | length' > issues.txt
+          if [ $(cat issues.txt) -gt 0 ]; then exit 1; fi
+```
+
+### 场景三：质量门禁与趋势
+
+```bash
+# 输出 JSON 供门禁判断
+golangci-lint run --out-format json ./... > report.json
+
+# 门禁脚本
+python - <<'PY'
+import json, sys
+data = json.load(open("report.json"))
+issues = len(data.get("Issues", []))
+print(f"问题数: {issues}")
+sys.exit(1 if issues > 0 else 0)
+PY
+```
+
+## 快速开始
+
+1. 将免费版配置提升为团队基线 `base.golangci.yml`。
+2. 各项目用 `inherit` 继承并按需覆盖。
+3. 生成 CI 矩阵工作流。
+4. 接入质量门禁与趋势看板。
+
+## 配置示例
+
+门禁阈值配置（`lint-gate.json`）：
+
+```json
+{
+  "max_issues": 0,
+  "block_linters": ["gosec", "errcheck"],
+  "trend_baseline": "main",
+  "report_format": "json"
+}
+```
+
+## 最佳实践
+
+- **基线集中**：团队基线放共享仓库，项目继承而非复制。
+- **豁免可追溯**：所有 `exclude-rules` 标注原因与期限。
+- **门禁分级**：主分支零容忍，特性分支允许警告。
+- **趋势归档**：每次 CI 归档 JSON 报告，绘制问题趋势。
+- **矩阵控成本**：CI 矩阵按需组合 Go 版本与系统，避免冗余。
+
+## 免费版兼容性
+
+| 项目 | 免费版 | 专业版 |
+|:-----|:-------|:-------|
+| 配置格式 | 相同 | 相同（可继承） |
+| 模板 | 最小/标准 | 基线 + 覆盖 |
+| CI | 基础单任务 | 矩阵 + 门禁 |
+| 自定义规则 | 不支持 | 支持 |
+
+## 常见问题
+
+**Q1：基线更新后项目如何同步？**
+A：项目通过 `inherit` 引用基线路径，基线更新后 CI 自动拉取最新。
+
+**Q2：门禁太严阻塞开发怎么办？**
+A：按分支分级，特性分支放宽阈值，主分支零容忍。
+
+**Q3：免费版配置能直接升级吗？**
+A：能。把现有 `.golangci.yml` 作为项目级覆盖，再接入基线即可。
+
+**Q4：支持 GitLab CI 吗？**
+A：支持。专业版提供 GitHub Actions / GitLab CI / Jenkins 三套模板。
+
+**Q5：专业版有优先支持吗？**
+A：有。专业版享规则定制咨询与专属支持通道。
+
+## 进阶用法
+
+### 基线继承机制
+
+团队基线放共享仓库，项目用相对路径或远程引用继承：
+
+```yaml
+# 方式一：本地相对路径继承
+inherit: [./base.golangci.yml]
+
+# 方式二：远程基线（需工具拉取）
+inherit: [https://team-repo/base.golangci.yml]
+```
+
+继承后项目级配置只写差异，避免复制粘贴漂移。
+
+### 豁免治理与到期
+
+```yaml
+issues:
+  exclude-rules:
+    - path: "legacy/payments"
+      linters: [gosec]
+      text: "G104"
+      reason: "遗留支付模块迁移期豁免"
+      until: "2026-12-31"   # 到期自动告警
+```
+
+```text
+豁免治理原则:
+  - 每条豁免标注 reason 与 until
+  - 到期豁免自动告警，强制复核
+  - 豁免数纳入质量看板，趋势下降为佳
+```
+
+### 趋势看板数据归档
+
+```bash
+# 每次 CI 归档 JSON 报告
+golangci-lint run --out-format json ./... > "reports/$(date +%F).json"
+
+# 生成趋势
+python scripts/lint_trend.py --dir reports/ --out trend.json
+```
+
+## 治理流程
+
+```text
+规则集生命周期:
+  提案 → 评审 → 合并基线 → 项目继承 → CI 执行 → 趋势归档 → 定期复核
+
+豁免生命周期:
+  申报豁免 → 标注期限 → 自动告警 → 复核续期或移除
+```
+
+## 多平台 CI 模板
+
+| 平台 | 模板特点 |
+|:-----|:---------|
+| GitHub Actions | matrix 多版本、quality gate 步骤 |
+| GitLab CI | parallel + rules 条件触发 |
+| Jenkins | shared library + stage 门禁 |
+
+三套模板共享同一基线与门禁逻辑，仅编排语法不同。
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+- **操作系统**: Windows / macOS / Linux
+- **Go**: 1.21+
+
+### 第三方依赖
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| golangci-lint | 命令行工具 | 必需 | `go install ...@latest` |
+| jq | JSON 处理 | 门禁脚本推荐 | 系统包管理器 |
+| Go | 工具链 | 必需 | go.dev 下载 |
+| LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
+
+### API Key 配置
+- 本工具为纯 Markdown 指令，无需额外 API Key
+- CI 仓库访问需配置对应平台令牌
+
+### 可用性分类
+- **分类**: MD+EXEC（Markdown 指令 + 命令行执行）
+- **说明**: 通过自然语言指令驱动 Agent 生成多项目配置与 CI 矩阵

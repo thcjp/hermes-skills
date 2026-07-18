@@ -1,0 +1,308 @@
+---
+slug: k8s-toolkit-pro
+name: k8s-toolkit-pro
+version: "1.0.0"
+displayName: K8s运维专业版
+summary: 企业级K8s运维平台，支持集群诊断、自动修复、性能优化与安全合规。
+license: MIT
+edition: pro
+description: |-
+  面向企业K8s运维团队的全栈运维平台。支持集群级问题诊断、自动修复、
+  性能优化、安全合规审计与容量规划。内置88+问题知识库与自动化运维
+  流程，全面满足企业级K8s运维需求。
+
+  核心能力:
+  - 集群级全维度诊断（88+问题知识库）
+  - 自动修复与智能建议
+  - 性能优化与资源调优
+  - 安全合规审计（CIS/NIST）
+  - 容量规划与趋势预测
+  - 多集群统一管理
+  - 运维自动化流水线
+  - 自定义运维规则引擎
+
+  适用场景:
+  - 企业K8s集群日常运维
+  - 生产环境故障快速恢复
+  - 安全合规定期审计
+  - 容量规划与成本优化
+  - 多集群统一管理
+
+  差异化:
+  - 兼容免费版避坑指南，无缝升级
+  - 新增集群级诊断与自动修复
+  - 性能优化与安全审计
+  - 多集群与自动化运维
+  - 完整88+问题知识库
+
+  触发关键词: K8s, 集群诊断, 自动修复, 性能优化, 安全合规, 容量规划, 多集群, kubernetes, audit
+tags:
+- Operations
+- Kubernetes
+- 企业级
+- 运维自动化
+tools:
+- read
+- exec
+---
+
+# K8s运维专业版（PRO版）
+
+## 概述
+
+本平台为企业K8s运维团队提供全栈运维能力。相比免费版，PRO版新增集群级诊断、自动修复、性能优化、安全审计和多集群管理等高级功能，全面满足企业级K8s运维的复杂需求。
+
+PRO版完全包含免费版避坑指南知识库，升级后原有排查工作流可直接使用。
+
+## 核心能力
+
+### PRO版功能增强对比
+
+| 功能 | 免费版 | PRO版 |
+| --- | --- | --- |
+| 问题知识库 | 32个 | 88+个完整版 |
+| 诊断范围 | Pod/Service/Deployment | 全集群维度 |
+| 修复方式 | 手动建议 | 自动修复+智能建议 |
+| 性能优化 | 不支持 | 资源调优+瓶颈分析 |
+| 安全审计 | 不支持 | CIS/NIST合规 |
+| 容量规划 | 不支持 | 趋势预测 |
+| 集群管理 | 单集群 | 多集群统一 |
+| 自动化 | 不支持 | 运维流水线 |
+
+### 诊断维度
+
+| 维度 | 检查项数量 | PRO版覆盖 |
+| --- | --- | --- |
+| Pod健康 | 15项 | 全部 |
+| 网络连通性 | 12项 | 全部 |
+| 存储与卷 | 10项 | 全部 |
+| 资源利用 | 10项 | 全部 |
+| 安全配置 | 15项 | 全部 |
+| 控制平面 | 8项 | 全部 |
+| 节点健康 | 10项 | 全部 |
+| 应用配置 | 8项 | 全部 |
+
+## 使用场景
+
+### 场景一：集群全面诊断
+
+用户输入："对生产集群进行全面体检"
+
+```bash
+# 集群全面诊断
+python3 scripts/k8s_pro.py diagnose \
+  --cluster production \
+  --deep \
+  --output health_report.pdf
+
+# 输出包含：
+# - 集群健康评分（85/100）
+# - 88项检查结果
+# - 发现的问题列表（按严重程度排序）
+# - 自动修复建议
+# - 性能优化建议
+# - 安全合规状态
+```
+
+### 场景二：自动修复
+
+用户输入："自动修复所有可自动处理的问题"
+
+```bash
+# 自动修复
+python3 scripts/k8s_pro.py auto-fix \
+  --cluster production \
+  --severity "medium,high" \
+  --dry-run                  # 先预览
+
+# 确认后执行
+python3 scripts/k8s_pro.py auto-fix \
+  --cluster production \
+  --severity "medium,high" \
+  --apply
+
+# 输出修复报告
+```
+
+### 场景三：安全合规审计
+
+用户输入："检查K8s集群的安全合规性"
+
+```bash
+# 安全审计
+python3 scripts/k8s_pro.py audit \
+  --cluster production \
+  --standard "CIS-Benchmark" \
+  --output security_audit.pdf
+
+# 输出包含：
+# - CIS Benchmark检查项
+# - 不合规项详情
+# - 风险等级评估
+# - 修复建议
+```
+
+## 快速开始
+
+### PRO版初始化
+
+```bash
+# 安装PRO版依赖
+pip install -r requirements_pro.txt
+
+# 配置多集群访问
+cp config_pro_template.yaml config_pro.yaml
+```
+
+### 常用命令
+
+```bash
+# 集群诊断
+python3 scripts/k8s_pro.py diagnose --cluster production --deep
+python3 scripts/k8s_pro.py diagnose --cluster production --dimension security
+
+# 自动修复
+python3 scripts/k8s_pro.py auto-fix --cluster production --dry-run
+python3 scripts/k8s_pro.py auto-fix --cluster production --apply
+
+# 性能优化
+python3 scripts/k8s_pro.py optimize --cluster production --output optimization_report.pdf
+
+# 安全审计
+python3 scripts/k8s_pro.py audit --cluster production --standard "CIS-Benchmark"
+
+# 容量规划
+python3 scripts/k8s_pro.py capacity --cluster production --forecast-months 6
+
+# 多集群管理
+python3 scripts/k8s_pro.py clusters list
+python3 scripts/k8s_pro.py clusters status --all
+```
+
+## 配置示例
+
+### PRO企业级配置
+
+```yaml
+pro_config:
+  clusters:
+    - name: "production"
+      kubeconfig: "~/.kube/config-prod"
+      context: "prod-cluster"
+    - name: "staging"
+      kubeconfig: "~/.kube/config-staging"
+      context: "staging-cluster"
+    - name: "development"
+      kubeconfig: "~/.kube/config-dev"
+      context: "dev-cluster"
+
+  diagnosis:
+    dimensions: ["pod", "network", "storage", "resource", "security", "control_plane", "node", "app"]
+    deep_mode: true
+    knowledge_base: "full"         # full | basic
+
+  auto_fix:
+    enabled: true
+    safe_mode: true                # 仅修复安全项
+    severity_filter: ["medium", "high", "critical"]
+    require_approval: true         # 生产环境需确认
+    rollback_on_failure: true
+
+  optimization:
+    resource_tuning: true
+    hpa_analysis: true             # 水平Pod自动扩缩分析
+    pvc_optimization: true
+    network_optimization: true
+
+  audit:
+    standards: ["CIS-Benchmark", "NIST", "PCI-DSS"]
+    schedule: "weekly"
+    auto_remediation: false
+
+  capacity:
+    forecast_months: 6
+    model: "arima"
+    alert_threshold: 0.8           # 80%时预警
+
+  automation:
+    pipelines: true
+    schedule: "0 2 * * *"          # 每日凌晨2点
+    notification:
+      channels: ["webhook", "email"]
+```
+
+## 最佳实践
+
+### PRO版企业实践
+
+| 实践领域 | 建议做法 |
+| --- | --- |
+| 诊断策略 | 每日快速诊断，每周深度体检 |
+| 自动修复 | 先dry-run预览，确认后apply |
+| 安全审计 | 定期CIS审计，及时修复高危项 |
+| 容量规划 | 关注CPU/内存/PVC趋势，提前扩容 |
+| 多集群 | 统一配置基线，差异化管理 |
+
+### 免费版兼容性
+
+```text
+免费版命令 → PRO版命令（增强）：
+k8s troubleshoot pod     → k8s_pro.py diagnose --dimension pod (全维度)
+k8s check deployment     → k8s_pro.py auto-fix (自动修复)
+避坑指南(32个)           → 完整知识库(88+个)
+```
+
+## 常见问题
+
+### Q1：自动修复安全吗？
+
+PRO版自动修复采用安全模式，仅执行已知安全的修复操作。生产环境需人工确认（require_approval）。所有修复操作支持回滚（rollback_on_failure）。
+
+### Q2：支持哪些K8s发行版？
+
+支持所有CNCF认证的K8s发行版，包括EKS/GKE/AKS/自建集群。部分发行版特有功能（如GKE Autopilot）有针对性优化。
+
+### Q3：多集群如何管理？
+
+通过kubeconfig配置多个集群访问凭证。PRO版支持跨集群统一诊断、配置对比和批量操作。所有集群状态汇总展示。
+
+### Q4：容量预测准确吗？
+
+基于历史6个月数据使用ARIMA模型预测。准确度取决于历史数据质量和业务波动性。建议定期校正预测模型。
+
+### Q5：安全审计包含什么？
+
+包含CIS Kubernetes Benchmark全部检查项，覆盖API Server、etcd、控制平面、节点、网络、RBAC等维度。支持NIST和PCI-DSS标准。
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
+- **Python版本**: 3.9+
+- **kubectl**: 已配置集群访问
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+| Python | 运行时 | 必需 | 系统安装或conda环境 |
+| kubernetes | Python库 | 必需 | `pip install kubernetes` |
+| pandas | Python库 | 可选 | `pip install pandas`（数据分析） |
+| statsmodels | Python库 | 可选 | `pip install statsmodels`（预测模型） |
+| kube-hunter | CLI工具 | 可选 | 安全扫描 |
+
+### API Key 配置
+
+- PRO版通过kubeconfig认证集群
+- 无需额外API Key
+- 多集群通过不同kubeconfig context管理
+
+### 可用性分类
+
+- **分类**: MD+EXEC（Markdown指令+Python脚本+kubectl执行）
+- **说明**: 企业级K8s运维平台，支持诊断、修复、优化与审计
+- **PRO版特性**: 全维度诊断、自动修复、性能优化、安全审计、容量规划、多集群
+- **兼容性**: 完全包含免费版避坑指南知识库

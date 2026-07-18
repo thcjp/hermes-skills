@@ -3,6 +3,12 @@
 *.key
 *.pem
 .env
+PROJECT_MEMORY.md
+*.ps1
+skill-registry.db
+**/debranding-report.md
+**/skill-production-standards-*review*.md
+**/skill-production-standards-*audit*.md
 
 # Temporary
 .trae-html-share-packages/
@@ -18,3 +24,5 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
+
+skills.db

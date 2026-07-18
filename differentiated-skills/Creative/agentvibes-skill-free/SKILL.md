@@ -1,0 +1,208 @@
+---
+slug: agentvibes-skill-free
+name: agentvibes-skill-free
+version: "1.0.0"
+displayName: AgentVibes语音合成-免费版
+summary: 免费离线TTS语音合成工具,支持914+声音切换、语速调节、个性风格,适合个人开发者使用。
+license: MIT
+edition: free
+description: |-
+  AgentVibes语音合成免费版,面向个人开发者的离线文本转语音工具。
+
+  核心能力:
+  - 支持 914+ 离线声音,覆盖 30+ 语种
+  - 切换声音、设置个性风格、调节语速
+  - 跨平台运行(Windows/macOS/Linux),无需账号
+  - 内置 macOS Say 与 Windows SAPI 零配置方案
+
+  适用场景:
+  - 个人开发者语音播报与提醒
+  - 内容创作者为视频添加配音
+  - 语言学习者多语种听力练习
+
+  差异化:免费版聚焦核心语音合成与基础控制能力,完全离线运行,零成本上手,适合个人用户体验AI语音合成。
+
+  触发关键词: TTS, 语音合成, 文本转语音, 声音切换, 离线语音, Piper, 个性风格, 语速调节
+tags:
+- Creative
+- 语音合成
+- TTS
+tools:
+- read
+- exec
+---
+
+# AgentVibes语音合成工具 - 免费版
+
+## 概述
+
+AgentVibes语音合成免费版是一款面向个人用户的离线文本转语音(TTS)工具。集成 Piper TTS、macOS Say、Windows SAPI 等多种引擎,提供 914+ 离线声音,覆盖 30+ 语种,完全免费且无需账号。
+
+本版本适合个人开发者、内容创作者及语言学习者,通过简单的斜杠命令即可切换声音、调节语速、设置个性风格,快速实现语音播报需求。
+
+## 核心能力
+
+| 能力项 | 免费版支持 | 说明 |
+|:-------|:-----------|:-----|
+| 声音切换 | 是 | 914+ 声音可选 |
+| 声音列表与预览 | 是 | 列表与试听 |
+| 个性风格设置 | 是 | 内置基础风格 |
+| 语速调节 | 是 | 0.5x - 3.0x |
+| 静音/回放 | 是 | 最近10条 |
+| 背景音乐 | 限制 | 基础曲目 |
+| 神经声音引擎 | 否 | PRO 版支持 |
+| 多角色协同 | 否 | PRO 版支持 |
+| 批量音频导出 | 否 | PRO 版支持 |
+
+## 使用场景
+
+### 场景一:个人语音播报
+
+开发者希望将 Agent 的回复通过语音播报出来,选择一个舒适的声音。
+
+```bash
+# 列出可用声音
+/agent-vibes:list first 5
+
+# 切换到中文女声
+/agent-vibes:switch zh_CN-huayan-x_low
+
+# 调节语速为正常
+/agent-vibes:set-speed 1.0
+```
+
+### 场景二:视频配音创作
+
+内容创作者为短视频添加多语种配音,需要切换不同声音。
+
+```bash
+# 切换到英文男声
+/agent-vibes:switch en_US-ryan-high
+
+# 试听效果
+/agent-vibes:sample en_US-ryan-high
+
+# 切换到日文女声
+/agent-vibes:switch ja_JP-ayanami-medium
+```
+
+### 场景三:语言学习辅助
+
+语言学习者开启双语模式,辅助听力练习。
+
+```bash
+# 设置母语为中文
+/agent-vibes:language chinese
+
+# 开启学习模式(双语播报)
+/agent-vibes:learn on
+
+# 翻译并朗读
+/agent-vibes:translate "Hello, how are you?"
+```
+
+## 快速开始
+
+### 第一步:选择语音引擎
+
+```bash
+# 查看可用引擎
+/agent-vibes:provider list
+
+# 切换到 Piper(全平台,914+ 声音)
+/agent-vibes:provider switch piper
+
+# 或使用系统内置(零配置)
+# macOS:
+/agent-vibes:provider switch macos
+# Windows:
+/agent-vibes:provider switch sapi
+```
+
+### 第二步:选择并切换声音
+
+```bash
+# 预览前 3 个声音
+/agent-vibes:preview
+
+# 切换到指定声音
+/agent-vibes:switch en_US-amy-medium
+```
+
+### 第三步:开始使用
+
+```bash
+# 查看当前配置
+/agent-vibes:whoami
+
+# 设置个性风格(可选)
+/agent-vibes:personality sarcastic
+```
+
+## 配置示例
+
+基础配置项说明:
+
+```bash
+# 常用命令组合
+# 切换声音 + 调节语速
+/agent-vibes:switch en_GB-alan-medium
+/agent-vibes:set-speed 1.2
+
+# 设置前缀语
+/agent-vibes:set-pretext "助手"
+
+# 控制详细程度
+/agent-vibes:verbosity low      # 简洁
+/agent-vibes:verbosity medium   # 标准(默认)
+/agent-vibes:verbosity high     # 详细
+```
+
+## 最佳实践
+
+1. **先预览再切换**:使用 `/agent-vibes:preview` 试听后再用 `switch` 确认,避免反复切换
+2. **语速匹配内容**:信息密度高的内容用 1.2-1.5x,叙事内容用 0.8-1.0x
+3. **引擎按平台选**:macOS 优先 Say,Windows 优先 SAPI,跨平台用 Piper
+4. **设置收藏声音**:用 `set-favorite-voice` 标记常用声音,快速恢复
+5. **静音专注模式**:工作时 `/agent-vibes:mute`,需要时 `/agent-vibes:unmute`
+
+## 常见问题
+
+### Q1:首次使用需要下载声音吗?
+A:Piper 引擎首次使用某声音时会自动从 HuggingFace 下载,后续离线可用。macOS Say 与 Windows SAPI 使用系统内置声音,无需下载。
+
+### Q2:支持哪些语种?
+A:支持 30+ 语种,包括中文、英语、法语、德语、西班牙语、日语、韩语等,共 914+ 声音。
+
+### Q3:免费版可以商用吗?
+A:免费版仅供个人使用。如需商用或批量导出音频,请使用 PRO 版。
+
+### Q4:声音下载失败怎么办?
+A:检查网络连接;确认 HuggingFace 可访问;尝试切换到系统内置引擎(macOS Say / Windows SAPI)。
+
+### Q5:如何清理缓存音频?
+A:使用 `/agent-vibes:cleanup` 命令清理已缓存的音频文件。
+
+## 依赖说明
+
+### 运行环境
+- **Agent平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
+- **操作系统**: Windows / macOS / Linux
+- **运行时**: Node.js 或 Python(视引擎而定)
+
+### 第三方依赖
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| Piper TTS | 语音引擎 | 推荐 | 自动下载安装 |
+| macOS Say | 系统内置 | macOS 必需 | 系统自带 |
+| Windows SAPI | 系统内置 | Windows 必需 | 系统自带 |
+| HuggingFace 声音库 | 资源 | Piper 必需 | 自动下载 |
+
+### API Key 配置
+- **免费版无需 API Key**
+- 所有引擎均离线运行,无需外部服务鉴权
+- 声音资源从 HuggingFace 公开仓库下载,无需账号
+
+### 可用性分类
+- **分类**: MD+EXEC(纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
+- **说明**: 基于Markdown的AI Skill,通过斜杠命令驱动语音合成,完全离线运行

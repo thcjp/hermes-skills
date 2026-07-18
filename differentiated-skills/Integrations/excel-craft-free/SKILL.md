@@ -1,0 +1,219 @@
+---
+slug: excel-craft-free
+name: excel-craft-free
+version: "1.0.0"
+displayName: Excel工艺免费版
+summary: 专业 Excel 文件生成器，支持多 Sheet、公式、图表与基础格式，适合日常表格生成需求。
+license: MIT
+edition: free
+description: |-
+  Excel 工艺免费版面向需要程序化生成 Excel 文件的开发者与运营人员，提供多 Sheet、公式、图表与基础格式化能力。基于 openpyxl 与 Python，输出兼容 Excel / WPS / LibreOffice 的 .xlsx 文件，覆盖日常 80% 的报表生成场景。
+
+  核心能力：
+
+  - 多 Sheet 工作簿生成与跨 Sheet 引用
+  - 单元格格式化（字体、填充、边框、对齐、数字格式）
+  - 公式支持（SUM / AVERAGE / VLOOKUP / IF 等）
+  - 基础图表（柱状图、折线图、饼图）
+  - 自动列宽与合并单元格
+  - 中英文与 Unicode 字符支持
+
+  适用场景：
+
+  - 销售报表、财务报表、预算表生成
+  - 数据汇总与简单透视
+  - 项目跟踪与库存管理
+  - 个人记账本与日程表
+
+  差异化：相比手工 Excel 操作，本 Skill 通过 Python 脚本化生成，支持批量、可复用、可版本控制；相比通用 Excel 库教程，本 Skill 提供"诊断—模板—生成"工作流，让 Agent 直接产出可运行的代码。
+
+  触发关键词：生成 Excel、报表生成、openpyxl、xlsx 创建、Python 表格
+tags:
+- 集成工具
+- 表格生成
+- 开发者工具
+tools:
+- read
+- exec
+---
+
+# Excel 工艺（免费版）
+
+本 Skill 把 Excel 生成任务脚本化——通过 Python 与 openpyxl 生成结构化、可复用、可版本控制的 .xlsx 文件。免费版覆盖日常报表生成场景。
+
+## 概述
+
+手工制表痛点明显：每月重复同样操作、修改一处要手工同步到多处、版本难以管理。本 Skill 把制表过程转化为可执行脚本，支持参数化模板、批量生成、版本控制。所有输出兼容 Excel / WPS / LibreOffice，跨平台无障碍。
+
+## 核心能力
+
+| 能力模块 | 输入 | 输出 | 说明 |
+|---------|------|------|------|
+| 多 Sheet 工作簿 | Sheet 名 + 数据 | .xlsx 文件 | 跨 Sheet 引用 |
+| 单元格格式化 | 格式类型 | 应用样式 | 表头 / 数字 / 货币 / 日期 |
+| 公式 | 公式表达式 | 写入单元格 | SUM / AVERAGE / VLOOKUP |
+| 基础图表 | 数据范围 | 图表对象 | 柱状 / 折线 / 饼图 |
+| 自动列宽 | 工作表 | 列宽调整 | 按内容长度自适应 |
+| 合并单元格 | 范围 | 合并区域 | 标题 / 跨列布局 |
+
+## 使用场景
+
+### 场景一：季度销售报告（运营角色）
+按月份 × 产品生成销售表，自动计算总计与增长率，配套柱状图展示趋势。Agent 输出完整 Python 脚本，一键运行生成 .xlsx。
+
+### 场景二：库存管理表（仓储角色）
+多 Sheet 工作簿——按品类分 Sheet，每 Sheet 含入库、出库、库存三栏，公式自动算库存。
+
+### 场景三：项目跟踪表（PM 角色）
+任务列表 + 负责人 + 状态 + 完成度，条件格式高亮延期项。
+
+### 场景四：个人记账本（个人角色）
+按月分 Sheet，按日记录收支，自动汇总月度合计与饼图展示支出占比。
+
+## 快速开始
+
+```bash
+# 安装依赖
+pip install openpyxl
+
+# 运行示例脚本
+python3 sales_report.py
+```
+
+最小化示例：
+
+```python
+from openpyxl import Workbook
+from openpyxl.styles import Font, PatternFill, Alignment
+
+wb = Workbook()
+ws = wb.active
+ws.title = "销售数据"
+
+# 标题
+ws['A1'] = "2026 年第一季度销售报告"
+ws['A1'].font = Font(bold=True, size=16)
+
+# 表头
+headers = ['月份', '产品A', '产品B', '产品C', '总计']
+for col, h in enumerate(headers, 1):
+    cell = ws.cell(row=3, column=col, value=h)
+    cell.font = Font(bold=True, color='FFFFFF')
+    cell.fill = PatternFill(start_color='3182CE', end_color='3182CE', fill_type='solid')
+
+# 数据
+data = [
+    ['1月', 150000, 230000, 180000],
+    ['2月', 180000, 250000, 200000],
+    ['3月', 220000, 280000, 230000],
+]
+for r, row in enumerate(data, 4):
+    for c, v in enumerate(row, 1):
+        ws.cell(row=r, column=c, value=v)
+    # 总计公式
+    ws.cell(row=r, column=5, value=f'=SUM(B{r}:D{r})')
+
+wb.save('sales_report.xlsx')
+print("已生成 sales_report.xlsx")
+```
+
+## 配置示例
+
+### 格式化类型对照表
+
+| 格式类型 | 字体 | 填充 | 对齐 | 数字格式 |
+|---------|------|------|------|---------|
+| 标题 | 粗体 16 号 | - | 居中 | - |
+| 表头 | 粗体 12 号 白色 | 蓝色 | 居中 | - |
+| 数字 | - | - | 右对齐 | `#,##0.00` |
+| 百分比 | - | - | 右对齐 | `0.00%` |
+| 货币 | - | - | 右对齐 | `¥#,##0.00` |
+| 日期 | - | - | 居中 | `YYYY-MM-DD` |
+| 边框 | - | - | - | 四向细线 |
+
+### 图表类型选择
+
+| 类型 | 代码 | 适用场景 |
+|------|------|---------|
+| 柱状图 | `BarChart` | 数据对比 |
+| 折线图 | `LineChart` | 趋势分析 |
+| 饼图 | `PieChart` | 占比分析 |
+| 散点图 | `ScatterChart` | 相关性 |
+
+### 多 Sheet 跨引用
+
+```python
+# Sheet1 引用 Sheet2 的 A1
+ws1['A1'] = '=Sheet2!A1'
+
+# 跨 Sheet 求和
+ws1['A2'] = '=SUM(Sheet1:Sheet3!A1)
+
+# 跨 Sheet 条件求和
+ws1['A3'] = '=SUMIF(Sheet1!A:A, "条件", Sheet1!B:B)'
+```
+
+## 最佳实践
+
+1. **先规划再写码**：确定 Sheet 数量、字段、公式、图表位置后再开始，避免返工。
+2. **格式集中管理**：把格式对象定义为字典或常量，便于统一修改。
+3. **公式优先于计算值**：能写公式就别在 Python 里算死值，保留可编辑性。
+4. **自动列宽收尾**：所有数据写完后再调 `auto_column_width`，避免重复调整。
+5. **中文注意编码**：文件保存使用 UTF-8，openpyxl 默认支持中文。
+6. **大文件分批写**：超过 5 万行的表格用 `write_only=True` 模式，避免内存爆炸。
+
+## 常见问题
+
+### Q1：生成的文件在 WPS 中格式错乱？
+A：WPS 对部分高级格式（如条件格式、自定义数字格式）支持不全。建议测试时同时在 Excel 与 WPS 中打开验证。
+
+### Q2：图表数据范围设置错误？
+A：检查 `Reference` 的 `min_col / min_row / max_col / max_row` 是否与数据实际位置匹配。表头行通常需要 `titles_from_data=True`。
+
+### Q3：中文字符显示为方框？
+A：字体不支持中文。设置 `Font(name='微软雅黑')` 或 `Font(name='SimSun')` 显式指定中文字体。
+
+### Q4：公式写入后 Excel 不计算？
+A：openpyxl 只写入公式字符串，不计算结果。Excel 打开时会自动重算；如需预先计算，需调用 `LibreOffice --headless` 或使用 `xlwings`。
+
+### Q5：合并单元格后只有左上角可写入？
+A：这是 Excel 的设计——合并范围内只有左上角单元格保留值。写入时定位到左上角即可。
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**：支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+- **操作系统**：Windows / macOS / Linux
+- **Python**：3.8+
+- **办公软件**：Excel / WPS / LibreOffice 任一，用于打开生成的文件
+
+### 第三方依赖
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由 Agent 平台内置 LLM 提供 |
+| Python3 | 运行时 | 必需 | 官网下载 |
+| openpyxl | Python 库 | 必需 | `pip install openpyxl` |
+
+### API Key 配置
+- 本 Skill 基于本地 Python 与 openpyxl，无需额外 API Key
+- 不涉及网络调用与外部端点
+- 所有数据在本地处理，不上传任何服务器
+- 禁止在 SKILL.md 或脚本中硬编码任何密钥或 Token
+
+### 可用性分类
+- **分类**：MD+EXEC（纯 Markdown 指令，部分功能需要 exec 命令行执行能力）
+- **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 生成 Python 脚本并执行
+
+## 免费版限制
+
+本免费体验版限制以下高级功能：
+- 批量生成（一次仅生成单个文件）
+- 多文件合并与拆分
+- 条件格式与数据验证规则
+- 高级图表（散点图、瀑布图、组合图）
+- 自定义模板系统与变量插值
+- 跨平台深度格式优化（仅保证 Excel 兼容）
+- 数据源对接（数据库、API）
+- 优先技术支持
+
+解锁全部功能请使用专业版：excel-craft-pro

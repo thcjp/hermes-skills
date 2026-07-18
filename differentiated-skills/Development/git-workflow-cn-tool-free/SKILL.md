@@ -1,0 +1,291 @@
+---
+slug: git-workflow-cn-tool-free
+name: git-workflow-cn-tool-free
+version: "1.0.0"
+displayName: Git工作流助手免费版
+summary: Git 分支管理、冲突解决与提交规范助手，覆盖个人开发者日常版本控制场景。
+license: MIT
+edition: free
+description: |-
+  面向独立开发者的 Git 工作流辅助工具，聚焦分支管理、冲突解决与提交规范三大核心能力。
+
+  核心能力:
+  - 分支创建、切换、合并的标准化操作指引
+  - 合并冲突识别与基础解决策略
+  - Conventional Commits 提交规范生成
+  - 常用 Git 命令速查与撤销回滚操作
+
+  适用场景:
+  - 个人项目版本管理与分支规划
+  - 代码提交信息规范化生成
+  - 日常冲突处理与误操作恢复
+
+  差异化: 免费版聚焦个人开发者高频场景，提供轻量级命令速查与规范指引，开箱即用无额外配置。
+
+  触发关键词: git工作流, 分支管理, 冲突解决, 提交规范, conventional commits, 撤销回滚, 版本控制
+tags:
+- 开发工具
+- 版本控制
+- Git
+- 工作流
+tools:
+- read
+- exec
+---
+
+# Git 工作流助手（免费版）
+
+## 概述
+
+本工具为独立开发者提供 Git 日常操作的结构化指引，覆盖分支管理、冲突解决、提交规范三大核心场景。通过自然语言指令驱动，帮助开发者快速完成版本控制任务，降低 Git 学习成本，提升提交信息质量。免费版聚焦个人开发场景中的高频操作，提供开箱即用的命令速查与规范模板。
+
+## 核心能力
+
+| 能力模块 | 描述 | 典型用法 |
+| --- | --- | --- |
+| 分支管理 | 创建、切换、合并、删除分支 | `创建并切换到 feature/login 分支` |
+| 冲突解决 | 识别冲突标记并提供解决策略 | `帮我解决 Git 合并冲突` |
+| 提交规范 | 生成符合 Conventional Commits 的提交信息 | `为这些改动生成提交信息` |
+| 撤销回滚 | 撤销暂存、回滚提交、恢复删除文件 | `撤销最后一次提交` |
+
+## 使用场景
+
+### 场景一：个人项目分支规划
+
+开发者需要在个人项目中规划功能分支，保持主分支稳定。
+
+```text
+用户：我要开发登录功能，帮我规划分支策略
+
+助手：
+1. 从 main 分支创建功能分支
+   git checkout -b feature/login main
+
+2. 开发完成后提交
+   git add .
+   git commit -m "feat(auth): 添加登录功能"
+
+3. 合并回主分支
+   git checkout main
+   git merge feature/login
+   git branch -d feature/login
+```
+
+### 场景二：规范化提交信息生成
+
+开发者完成代码改动后，需要生成符合规范的提交信息。
+
+```text
+用户：为以下改动生成提交信息
+- 修改了支付模块的金额计算逻辑
+- 修复了小数精度丢失问题
+
+助手：
+git commit -m "fix(payment): 修复支付金额计算精度丢失问题
+
+- 使用整数分单位替代浮点元单位
+- 统一金额计算入口方法
+- 补充边界测试用例"
+```
+
+### 场景三：合并冲突处理
+
+功能分支合并时出现冲突，需要快速定位并解决。
+
+```text
+用户：合并 feature/login 时出现冲突，怎么处理
+
+助手：
+1. 查看冲突文件
+   git status
+
+2. 冲突标记格式
+   <<<<<<< HEAD
+   当前分支内容
+   =======
+   合并分支内容
+   >>>>>>> feature/login
+
+3. 手动编辑后标记解决
+   git add .
+   git commit
+
+4. 如需放弃合并
+   git merge --abort
+```
+
+## 快速开始
+
+### 基础配置
+
+```bash
+# 初始化身份信息
+git config --global user.name "Your Name"
+git config --global user.email "email@example.com"
+
+# 设置默认分支名
+git config --global init.defaultBranch main
+
+# 配置常用别名
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+git config --global alias.lg "log --graph --oneline --all"
+```
+
+### 常用命令速查
+
+```bash
+# 状态查看
+git status                         # 查看工作区状态
+git log --oneline                  # 简洁日志
+git log --graph --oneline --all    # 图形化日志
+git diff                           # 查看未暂存改动
+git diff --staged                  # 查看已暂存改动
+git show COMMIT_ID                 # 查看提交详情
+
+# 分支操作
+git branch                         # 本地分支列表
+git branch -a                      # 所有分支（含远程）
+git branch feature/login           # 创建分支
+git checkout -b feature/login      # 创建并切换
+git switch -c feature/login        # 新语法创建并切换
+git checkout feature/login         # 切换分支
+git switch feature/login           # 新语法切换
+git branch -d feature/login        # 安全删除（已合并）
+git branch -D feature/login        # 强制删除
+
+# 合并操作
+git merge feature/login            # 合并分支
+git merge --no-ff feature/login    # 禁用快进合并（保留记录）
+
+# 远程操作
+git remote -v                      # 查看远程仓库
+git fetch origin                   # 获取远程更新
+git pull origin main               # 拉取并合并
+git push origin main               # 推送到远程
+git push -u origin feature/login   # 推送并设置上游
+```
+
+## 配置示例
+
+### 提交规范模板
+
+Conventional Commits 格式：
+
+```text
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+| Type | 描述 | 示例 |
+| --- | --- | --- |
+| feat | 新功能 | `feat(auth): 添加登录功能` |
+| fix | 修复缺陷 | `fix(api): 修复接口超时` |
+| docs | 文档更新 | `docs(readme): 更新安装说明` |
+| style | 代码格式 | `style: 格式化代码` |
+| refactor | 重构 | `refactor(utils): 优化工具函数` |
+| perf | 性能优化 | `perf(list): 优化列表渲染` |
+| test | 测试 | `test(auth): 添加登录测试` |
+| chore | 构建/工具 | `chore: 更新依赖` |
+| revert | 回滚 | `revert: 回滚登录功能` |
+
+### 暂存操作配置
+
+```bash
+git stash                          # 暂存当前修改
+git stash save "WIP: 登录功能"     # 带消息暂存
+git stash list                     # 查看暂存列表
+git stash pop                      # 恢复并删除暂存
+git stash apply                    # 恢复但保留暂存
+git stash drop stash@{0}           # 删除指定暂存
+git stash clear                    # 清空所有暂存
+```
+
+## 最佳实践
+
+1. **提交前先拉取**：避免不必要的冲突
+   ```bash
+   git pull --rebase origin main
+   ```
+
+2. **功能分支及时合并**：避免长期分叉导致冲突累积
+
+3. **避免直接提交到 main**：通过功能分支合并
+
+4. **重要操作先备份**：危险操作前创建备份分支
+   ```bash
+   git branch backup-before-reset
+   ```
+
+5. **提交粒度适中**：一个提交解决一个问题
+
+6. **使用 .gitignore**：忽略不需要追踪的文件
+
+## 常见问题
+
+### Q1：如何撤销最后一次提交但保留改动？
+
+```bash
+git reset --soft HEAD~1
+```
+
+### Q2：如何修改最后一次提交的信息？
+
+```bash
+git commit --amend -m "新的提交信息"
+```
+
+### Q3：如何恢复误删的分支？
+
+```bash
+git reflog                        # 查找分支最后的提交
+git checkout -b recovered-branch COMMIT_ID
+```
+
+### Q4：如何回滚某个提交？
+
+```bash
+git revert COMMIT_ID              # 生成一个反向提交
+git revert --no-commit COMMIT_ID  # 不自动提交
+```
+
+### Q5：合并冲突太多想放弃怎么办？
+
+```bash
+git merge --abort                 # 取消合并，恢复合并前状态
+```
+
+### Q6：如何清理未追踪的文件？
+
+```bash
+git clean -n                      # 预览将要删除的文件
+git clean -f                      # 删除未追踪文件
+git clean -fd                     # 删除未追踪文件和目录
+```
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持读取 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+- **操作系统**: Windows / macOS / Linux
+- **Git 版本**: 建议 2.20 及以上
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| Git | 命令行工具 | 必需 | 系统包管理器安装 |
+| LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
+
+### API Key 配置
+- 本工具为纯 Markdown 指令驱动，无需额外 API Key
+- Git 远程推送需要配置 SSH Key 或个人访问令牌
+
+### 可用性分类
+- **分类**: MD+EXEC（Markdown 指令 + 命令行执行）
+- **说明**: 通过自然语言指令驱动 Agent 执行 Git 操作，部分功能需要 exec 命令行执行能力

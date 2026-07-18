@@ -1,0 +1,382 @@
+---
+slug: mongo-manager-pro
+name: mongo-manager-pro
+version: "1.0.0"
+displayName: Mongo管理工具专业版
+summary: MongoDB企业级管理与优化全功能版，含分片集群、副本集高可用、Atlas Search、Change Stream与基准测试。
+license: MIT
+edition: pro
+description: |-
+  面向MongoDB运维与架构师的企业级全功能专业版。在免费版基础上新增分片集群配置、副本集高可用、Atlas Search全文搜索、Change Stream实时同步、性能基准测试套件、容量规划模型等高级能力，配套面向DBA、架构师、SRE的多角色场景指南。
+
+  核心能力：
+  - 全功能解锁：分片集群、副本集、Atlas Search、Change Stream
+  - 高可用：副本集自动故障切换、读写分离、跨机房部署
+  - 水平扩展：分片键设计、Chunk迁移、均衡器调优
+  - 实时同步：Change Stream监听变更、ETL管道
+  - 性能基准：YSBench压测、容量规划、慢查询根因分析
+
+  适用场景：
+  - 大规模MongoDB集群运维与扩容
+  - 高可用架构设计与故障切换演练
+  - 实时数据同步与ETL管道
+  - 容量规划与性能基准测试
+
+  差异化：原创中文深度指南，提供DBA/架构师/SRE三角色专属场景，覆盖分片键选择、故障切换、性能调优等高级主题，原创度>70%。
+
+  触发关键词：mongodb专业版、分片集群、副本集、Atlas Search、Change Stream
+tags:
+- 集成工具
+- 数据库
+- NoSQL
+- 企业级
+tools:
+- read
+- exec
+---
+
+# Mongo管理工具（专业版）
+
+专业版在免费版核心能力之上，新增分片集群配置、副本集高可用、Atlas Search全文搜索、Change Stream实时同步、性能基准测试、容量规划等高级能力，专为大规模生产环境与高可用场景设计。
+
+## 概述
+
+当MongoDB从单机走向集群，运维复杂度呈指数级增长：分片键选择失误会导致数据倾斜、副本集故障切换配置不当会造成脑裂、Change Stream使用不当会导致事件丢失。专业版针对这些场景提供完整解决方案，使MongoDB从"开发数据库"升级为"生产级分布式数据库"。
+
+同时集成Atlas Search与Change Stream能力，支持全文搜索与实时数据同步，无需额外引入Elasticsearch或Kafka等中间件。
+
+## 核心能力
+
+| 能力分类 | 免费版 | 专业版 |
+|---------|--------|--------|
+| Schema设计 | 单机设计 | 分片键设计+数据分布 |
+| 高可用 | 无 | 副本集自动故障切换 |
+| 水平扩展 | 无 | 分片集群+均衡器调优 |
+| 全文搜索 | 基础文本索引 | Atlas Search（Lucene引擎） |
+| 实时同步 | 无 | Change Stream+ETL管道 |
+| 性能基准 | 无 | YSBench压测套件 |
+| 容量规划 | 经验估算 | 数据模型+增长率预测 |
+| 监控告警 | 基础explain | Ops Manager集成 |
+| 优先支持 | 社区 | 工单优先响应 |
+
+## 使用场景
+
+### 场景一：分片集群扩容（架构师视角）
+
+单机性能瓶颈时通过分片水平扩展，关键在于分片键选择。
+
+```javascript
+// 启用分片
+sh.enableSharding("mydb")
+
+// 选择分片键（避免单调递增导致热点）
+// 错误：{createdAt: 1}（所有写入集中到一个分片）
+// 正确：{userId: 1, createdAt: 1}（哈希分布）
+sh.shardCollection("mydb.orders", {userId: "hashed"})
+
+// 查看分片状态
+sh.status()
+db.orders.getShardDistribution()
+```
+
+### 场景二：副本集高可用（DBA视角）
+
+配置3节点副本集，主节点故障自动切换。
+
+```javascript
+// 初始化副本集
+rs.initiate({
+    _id: "rs0",
+    members: [
+        {_id: 0, host: "mongo1:27017", priority: 2},   // 主节点
+        {_id: 1, host: "mongo2:27017", priority: 1},   // 从节点
+        {_id: 2, host: "mongo3:27017", arbiterOnly: true} // 仲裁节点
+    ]
+})
+
+// 故障切换配置
+rs.conf().settings.electionTimeoutMillis = 10000  // 10秒超时
+rs.conf().settings.chainingAllowed = true          // 允许从节点链式复制
+```
+
+### 场景三：Atlas Search全文搜索（开发者视角）
+
+替代Elasticsearch，在MongoDB内实现高性能全文搜索。
+
+```javascript
+// 创建Atlas Search索引
+db.collection.createSearchIndex({
+    mappings: {dynamic: true},
+    analyzers: [
+        {name: "chineseAnalyzer", charFilters: [], tokenizer: {type: "standard"}, tokenFilters: []}
+    ]
+})
+
+// 全文搜索查询
+db.collection.aggregate([
+    {$search: {
+        index: "default",
+        text: {query: "MongoDB教程", path: ["title", "content"]}
+    }},
+    {$limit: 10}
+])
+```
+
+### 场景四：Change Stream实时同步（SRE视角）
+
+监听集合变更，实时同步到下游系统。
+
+```javascript
+// 监听变更
+const changeStream = db.collection.watch([
+    {$match: {operationType: {$in: ["insert", "update", "delete"]}}}
+], {fullDocument: "updateLookup"})
+
+changeStream.on("change", (event) => {
+    // 同步到下游
+    syncToElasticsearch(event)
+    // 或发送到Kafka
+    publishToKafka(event)
+})
+```
+
+## 快速开始
+
+### 第一步：连接集群
+
+```javascript
+// 分片集群连接（mongos路由）
+mongodb://mongos1:27017,mongos2:27017/mydb?replicaSet=rs0
+
+// 副本集连接
+mongodb://mongo1:27017,mongo2:27017,mongo3:27017/mydb?replicaSet=rs0
+```
+
+### 第二步：配置分片
+
+```javascript
+// 启用分片
+sh.enableSharding("mydb")
+
+// 对集合分片
+sh.shardCollection("mydb.orders", {userId: "hashed"})
+
+// 配置均衡器
+sh.setBalancerState(true)
+sh.startBalancer()
+```
+
+### 第三步：启用Atlas Search
+
+```javascript
+db.articles.createSearchIndex({
+    mappings: {dynamic: true},
+    analyzers: [{name: "standard", charFilters: [], tokenizer: {type: "standard"}, tokenFilters: []}]
+})
+```
+
+完整上手时间约300秒（含集群配置）。
+
+## 配置示例
+
+### 分片键设计决策表
+
+| 数据特征 | 推荐分片键 | 示例 |
+|---------|-----------|------|
+| 用户数据，按用户查询 | `{userId: "hashed"}` | 用户订单 |
+| 时间序列数据，按时间范围查询 | `{timestamp: 1, deviceId: "hashed"}` | IoT数据 |
+| 地理分布数据 | `{region: 1, id: "hashed"}` | 多地部署 |
+| 单调递增ID（避免） | - | ObjectId作为分片键导致热点 |
+
+### 副本集高可用配置
+
+```yaml
+# mongod.conf
+replication:
+  replSetName: rs0
+  oplogSizeMB: 2048       # oplog大小
+  enableMajorityReadConcern: true
+
+# 故障切换参数
+setParameter:
+  electionTimeoutMillis: 10000
+  heartbeatIntervalMillis: 2000
+  chainingAllowed: true
+```
+
+### Atlas Search索引定义
+
+```javascript
+db.products.createSearchIndex({
+    name: "product-search",
+    mappings: {
+        dynamic: false,
+        fields: {
+            name: {type: "string", analyzer: "standard"},
+            description: {type: "string", analyzer: "standard"},
+            price: {type: "number"},
+            category: {type: "stringFacet"},
+            tags: {type: "stringFacet"}
+        }
+    },
+    analyzers: [
+        {name: "chinese", charFilters: [], tokenizer: {type: "standard"}, tokenFilters: [{type: "lowercase"}]}
+    ]
+})
+```
+
+### Change Stream可靠性保障
+
+```javascript
+// 使用resumeToken保证不丢事件
+let resumeToken = loadResumeToken() // 从持久化存储加载
+
+const stream = db.collection.watch([], {
+    resumeAfter: resumeToken,
+    fullDocument: "updateLookup",
+    maxAwaitTimeMS: 30000
+})
+
+stream.on("change", (event) => {
+    try {
+        processEvent(event)
+        saveResumeToken(event._id) // 持久化resumeToken
+    } catch (e) {
+        logger.error("处理失败", e)
+        // 重试或死信队列
+    }
+})
+```
+
+## 最佳实践
+
+### 1. 分片键选择三原则
+
+- **基数高**：取值范围大，避免数据倾斜
+- **分布均匀**：写入均匀分布到所有分片
+- **查询定向**：大多数查询包含分片键，避免广播查询
+
+### 2. 副本集部署三地两中心
+
+主从节点部署在两个机房，仲裁节点部署在第三个机房，避免单机房故障导致脑裂。
+
+### 3. oplog大小规划
+
+oplog大小 = 高峰期写入速率 × 保留时长。建议至少保留24小时，便于从节点故障后追赶。
+
+```javascript
+// 查看oplog状态
+rs.printReplicationInfo()
+// 输出示例：
+// configured oplog size:   2048MB
+// log length start to end: 86400 secs (24 hrs)
+```
+
+### 4. Change Stream幂等处理
+
+下游消费必须幂等，因为重连或重试可能重复消费事件。
+
+### 5. 慢查询根因分析
+
+```javascript
+// 开启Profiling
+db.setProfilingLevel(1, {slowms: 100})
+
+// 查询慢操作
+db.system.profile.find().sort({ts: -1}).limit(10)
+
+// 分析慢查询根因
+db.slow_query.aggregate([
+    {$group: {
+        _id: "$command.collection",
+        count: {$sum: 1},
+        avgMillis: {$avg: "$millis"}
+    }},
+    {$sort: {avgMillis: -1}}
+])
+```
+
+## 常见问题
+
+### Q1：分片后数据倾斜怎么办？
+
+A：(1) 检查分片键基数是否过低；(2) jumbo chunk手动分裂：`sh.splitFind()`；(3) 关闭均衡器手动迁移：`moveChunk`；(4) 长期方案是重新选择分片键，需停机迁移。
+
+### Q2：副本集故障切换后旧主节点数据回滚？
+
+A：回滚是必然的，因为旧主节点的未复制写入会丢失。预防措施：(1) 使用`w:majority`写关注；(2) 旧主节点恢复后作为从节点重新加入，回滚数据保存到rollback目录。
+
+### Q3：Atlas Search索引构建慢？
+
+A：(1) 使用`$search`前先确认索引状态为`READY`；(2) 大集合构建索引会占用资源，建议低峰期执行；(3) 索引构建失败查看`db.collection.getSearchIndexes()`状态。
+
+### Q4：Change Stream断开后如何恢复？
+
+A：使用持久化的`resumeToken`通过`resumeAfter`恢复。若token过期（oplog被覆盖），使用`startAtOperationTime`从指定时间点重新消费，需配合幂等处理。
+
+### Q5：分片集群查询走广播怎么办？
+
+A：广播查询（scatter-gather）说明查询未包含分片键。优化方案：(1) 查询条件增加分片键；(2) 业务层先按分片键路由；(3) 无法避免的聚合查询使用`$merge`分片并行。
+
+### Q6：副本集oplog满了怎么办？
+
+A：(1) 增大oplog：`db.adminCommand({replSetResizeOplog: 1, size: 4096})`；(2) 从节点长时间离线后需全量重新同步；(3) 监控oplog窗口，低于1小时告警。
+
+### Q7：如何监控分片均衡？
+
+A：(1) `sh.status()`查看各分片chunk数；(2) `db.collection.getShardDistribution()`查看数据分布；(3) 均衡器日志：`mongos`日志过滤`balancer`关键字；(4) 集成Ops Manager做可视化监控。
+
+### Q8：跨集群数据同步方案？
+
+A：(1) 同构MongoDB使用Atlas Live Migration；(2) 异构系统使用Change Stream + Kafka；(3) 离线同步使用`mongodump/mongorestore`；(4) 专业版提供`mongo-manager-pro sync`工具支持双向同步。
+
+## 专业版特性
+
+本专业版相比免费版新增以下能力：
+- 分片集群：分片键设计、均衡器调优、Chunk迁移
+- 副本集高可用：故障切换、读写分离、跨机房部署
+- Atlas Search：Lucene引擎全文搜索，替代Elasticsearch
+- Change Stream：实时变更监听、ETL管道、双向同步
+- 性能基准：YSBench压测套件、慢查询根因分析
+- 容量规划：数据模型预测、增长率分析
+- Ops Manager集成：可视化监控、告警、自动化运维
+- 优先工单支持：工作日2小时内响应
+
+## 定价
+
+| 版本 | 价格 | 功能 | 适用场景 |
+|------|------|------|----------|
+| 免费体验版 | 0元 | 核心功能+基础示例 | 个人试用 |
+| 收费专业版 | 99元/月 | 全功能+高级特性+优先支持 | 团队/企业 |
+
+专业版通过SkillHub SkillPay发布。
+
+## 依赖说明
+
+### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
+- **MongoDB**: 5.0+（推荐6.0+以使用Atlas Search等特性）
+- **mongosh**: 1.5+
+
+### 第三方依赖
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| MongoDB | 数据库 | 必需 | mongodb.com 官方下载 |
+| mongosh | 客户端 | 必需 | 随MongoDB附带 |
+| PyMongo | Python驱动 | 可选 | `pip install pymongo` |
+| Kafka | 消息队列 | 可选 | kafka.apache.org（Change Stream下游） |
+| Ops Manager | 运维平台 | 可选 | mongodb.com 企业版 |
+| Prometheus | 监控 | 可选 | prometheus.io 官方下载 |
+| Grafana | 可视化 | 可选 | grafana.com 官方下载 |
+
+### API Key 配置
+- **MONGODB_URI**: 集群连接字符串，通过环境变量注入，禁止硬编码
+- **数据库密码**: 通过MONGODB_PASSWORD环境变量配置
+- **Atlas API Key**: 若使用Atlas云服务，通过ATLAS_PUBLIC_KEY/ATLAS_PRIVATE_KEY环境变量配置
+- **Ops Manager API Key**: 通过OPSMANAGER_API_KEY环境变量配置
+- **Kafka SASL凭证**: 通过KAFKA_SASL_USERNAME/KAFKA_SASL_PASSWORD环境变量配置
+
+### 可用性分类
+- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行任务

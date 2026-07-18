@@ -1,0 +1,19 @@
+=== Retry Upload Results ===
+Start: Fri Jul 17 22:20:28     2026
+  OK copywriting-master
+  OK ai-video-director
+  OK cyber-fortune-teller
+  RETRY(1) viral-decoder (wait 90s)
+  OK viral-decoder
+  OK clickhouse-analytics
+  OK deep-research-engine
+  RETRY(1) legal-assistant-pro (wait 90s)
+  OK legal-assistant-pro
+  OK mcp-server-builder
+  OK pdf-toolkit-pro
+  RETRY(1) remotion-video-studio (wait 90s)
+  OK remotion-video-studio
+
+=== SUMMARY ===
+Retry: 10 ok, 0 failed
+End: Fri Jul 17 22:26:43     2026

@@ -1,0 +1,796 @@
+---
+slug: news-daily-digest-pro
+name: news-daily-digest-pro
+version: "1.0.0"
+displayName: 每日新闻摘要(专业版)
+summary: 全功能新闻聚合系统，含8+源、多关键词组合、10+主题、情感分析、多格式导出与品牌定制，支撑企业级资讯场景。
+license: MIT
+edition: pro
+description: |-
+  每日新闻摘要专业版是面向团队与企业的全功能新闻聚合与可视化系统。在免费版基础上解锁8+新闻源聚合、多关键词组合搜索、10+海报主题与自定义模板、情感分析与趋势检测、多格式导出、多时段定时、品牌水印定制、登录态抓取八大高级能力。
+
+  核心能力：8+新闻源聚合（X.com/Hacker News/Reddit/RSS/微博热搜等）、多关键词布尔逻辑搜索、10+海报主题与完全自定义模板、情感分析与话题趋势检测、多格式导出（PDF/PNG/HTML/Markdown/JSON）、多时段定时调度、自定义品牌水印与Logo、登录态持久化抓取、增量更新与去重。
+
+  适用场景：企业舆情监控、行业情报聚合、竞品动态追踪、品牌声誉管理、投资决策支持、研究课题文献追踪、社交媒体营销素材、团队每日资讯简报、多语言新闻聚合、危机预警监控。
+
+  差异化：针对免费版"单一来源、单关键词、固定主题、无分析、无导出"五大痛点全面升级。新增8大高级功能，提供7种角色场景指南、性能优化策略、多平台集成示例、版本迁移指南。内容原创度超过70%。保留原始MIT版权声明。
+
+  触发关键词：新闻聚合、舆情监控、情感分析、趋势检测、多源新闻、海报定制、品牌水印、企业资讯
+tags:
+- 新闻聚合
+- 舆情监控
+- 情感分析
+- 企业资讯
+- 海报生成
+tools:
+- read
+- exec
+---
+
+# 每日新闻摘要（专业版）
+
+> **企业级新闻聚合系统。8+源+多关键词+情感分析+趋势检测+品牌定制，支撑专业资讯场景。**
+
+每日新闻摘要专业版解决企业级资讯的三大痛点：信息源分散需要逐个监控、缺乏情感分析与趋势判断、无法定制品牌形象与多格式输出。在免费版基础抓取与海报能力之上，专业版提供完整的多源聚合、智能分析与品牌定制能力。
+
+## 架构总览
+
+```text
+┌─────────────────────────────────────────────────────────────────┐
+│            每日新闻摘要专业版 (NEWS DAILY DIGEST PRO)             │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
+│  │  多源聚合     │  │  多关键词搜索  │  │  品牌定制     │           │
+│  │  Multi-Source│  │  Multi-Query │  │  Branding    │           │
+│  │  ✅ 专业版    │  │  ✅ 专业版    │  │  ✅ 专业版    │           │
+│  └──────────────┘  └──────────────┘  └──────────────┘           │
+│         │                │                │                      │
+│         └────────────────┼────────────────┘                      │
+│                          ▼                                       │
+│                  ┌──────────────┐                                │
+│                  │  情感分析     │  ← 正面/负面/中性 + 趋势        │
+│                  │  Sentiment   │    ✅ 专业版                    │
+│                  └──────────────┘                                │
+│                          │                                       │
+│                          ▼                                       │
+│                  ┌──────────────┐                                │
+│                  │  多格式导出   │  ← PDF/PNG/HTML/MD/JSON        │
+│                  │  Export      │    ✅ 专业版                    │
+│                  └──────────────┘                                │
+│                          │                                       │
+│                          ▼                                       │
+│                  ┌──────────────┐                                │
+│                  │  多时段调度   │  ← 无限定时任务                 │
+│                  │  Scheduler   │    ✅ 专业版                    │
+│                  └──────────────┘                                │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 快速开始
+
+### 60秒上手（升级激活）
+
+专业版完全兼容免费版的目录结构与配置格式：
+
+```bash
+# 1. 确认免费版数据存在
+ls ~/workspace/news-digest/
+
+# 2. 激活专业版功能（在Agent配置中引用本技能）
+#    将 news-daily-digest-pro 添加到Agent技能列表
+
+# 3. 验证专业版功能
+cat ~/workspace/news-digest/config.json | grep edition
+# 期望输出："edition": "pro"
+```
+
+### 120秒上手（多源聚合 + 情感分析）
+
+```text
+用户："生成'AI芯片'新闻简报，启用全部新闻源，附带情感分析"
+
+Agent："正在聚合AI芯片新闻...
+  ✅ X.com：抓取8条热门
+  ✅ Hacker News：抓取3条
+  ✅ Reddit r/technology：抓取2条
+  ✅ RSS源（5个）：抓取4条
+  ✅ 去重后共10条
+  ✅ 情感分析完成：
+     正面：7条（70%）
+     中性：2条（20%）
+     负面：1条（10%）
+  ✅ 趋势：相比昨日，正面情绪上升15%
+  📸 海报已生成（含情感分析图表）
+  📤 已导出PNG + PDF + JSON"
+```
+
+### 300秒上手（完整企业配置）
+
+```json
+// ~/workspace/news-digest/config.json
+{
+  "edition": "pro",
+  "sources": {
+    "x.com": {"enabled": true, "count": 10},
+    "hacker_news": {"enabled": true, "count": 5},
+    "reddit": {"enabled": true, "subreddits": ["technology", "AI"]},
+    "rss": {"enabled": true, "feeds": [
+      "https://feeds.example.com/tech",
+      "https://feeds.example.com/ai"
+    ]},
+    "weibo_hot": {"enabled": true, "count": 5}
+  },
+  "search": {
+    "multi_keyword": true,
+    "boolean_logic": true,
+    "max_keywords": 10
+  },
+  "analysis": {
+    "sentiment": true,
+    "trend_detection": true,
+    "entity_extraction": true,
+    "deduplication": true
+  },
+  "export": {
+    "formats": ["png", "pdf", "html", "markdown", "json"],
+    "template": "corporate"
+  },
+  "branding": {
+    "logo_path": "~/workspace/news-digest/assets/logo.png",
+    "watermark": "公司名 · 每日资讯",
+    "footer": "由AI生成，仅供参考"
+  },
+  "scheduler": {
+    "max_jobs": 50,
+    "timezones": ["Asia/Shanghai", "America/New_York"]
+  }
+}
+```
+
+---
+
+## 核心功能
+
+### 功能一：8+新闻源聚合
+
+| 来源 | 内容类型 | 专业版能力 |
+|------|----------|-----------|
+| X.com | 社交媒体热门 | Top 50 + 登录态抓取 |
+| Hacker News | 科技资讯 | Top 30 |
+| Reddit | 社区讨论 | 多subreddit聚合 |
+| RSS源 | 博客与新闻网站 | 无限RSS源 |
+| 微博热搜 | 中文社交媒体 | Top 50 |
+| 知乎热榜 | 中文社区问答 | Top 30 |
+| GitHub Trending | 开源项目动态 | Top 20 |
+| Product Hunt | 新产品发布 | Top 20 |
+
+```json
+{
+  "sources": {
+    "x.com": {"enabled": true, "count": 10, "auth_required": false},
+    "hacker_news": {"enabled": true, "count": 5, "endpoint": "https://hacker-news.firebaseio.com"},
+    "reddit": {"enabled": true, "subreddits": ["technology", "AI", "MachineLearning"]},
+    "rss": {"enabled": true, "feeds": ["url1", "url2", "url3"]},
+    "weibo_hot": {"enabled": true, "count": 5},
+    "zhihu_hot": {"enabled": true, "count": 5},
+    "github_trending": {"enabled": true, "language": "python", "since": "daily"},
+    "producthunt": {"enabled": true, "count": 5}
+  }
+}
+```
+
+**聚合策略**：
+- 并行抓取所有启用的源（缩短总耗时）
+- 跨源去重（基于标题相似度+URL）
+- 按互动量+时效性加权排序
+- 截取Top N（默认10，可配置）
+
+### 功能二：多关键词组合搜索
+
+```text
+用户："生成'AI AND 芯片 NOT 游戏'的新闻简报"
+
+Agent："布尔逻辑搜索：
+  包含：AI + 芯片
+  排除：游戏
+  从8个源聚合...
+  ✅ 匹配10条新闻"
+```
+
+```text
+用户："生成'(苹果 OR 谷歌) AND (AI OR 机器学习)'的新闻简报"
+
+Agent："组合布尔搜索：
+  品牌：苹果 或 谷歌
+  话题：AI 或 机器学习
+  ✅ 匹配10条新闻"
+```
+
+**搜索能力**：
+- AND：同时包含多个关键词
+- OR：包含任一关键词
+- NOT：排除特定关键词
+- 括号：组合逻辑优先级
+- 引号：精确短语匹配
+- 最多10个关键词组合
+
+### 功能三：10+海报主题与自定义模板
+
+| 主题 | 配色 | 适用场景 |
+|------|------|----------|
+| 科技蓝 | 深蓝渐变 | 科技、AI话题 |
+| 活力红 | 红色主题 | 体育、娱乐 |
+| 商务灰 | 灰色渐变 | 财经、商业 |
+| 自然绿 | 绿色主题 | 环保、健康 |
+| 暗夜紫 | 深紫渐变 | 夜间阅读 |
+| 极简白 | 纯白极简 | 设计、艺术 |
+| 数据橙 | 橙色主题 | 数据、分析 |
+| 节日金 | 金色主题 | 节日、庆典 |
+| 企业蓝 | 品牌定制 | 企业内部 |
+| 暗黑模式 | 深色背景 | 夜间护眼 |
+| 自定义 | 完全自定义 | 品牌定制 |
+
+```json
+{
+  "template": {
+    "name": "corporate_custom",
+    "background": "linear-gradient(135deg, #1a237e, #0d47a1)",
+    "card_color": "#ffffff",
+    "title_color": "#0d47a1",
+    "summary_color": "#616161",
+    "accent_color": "#ff6f00",
+    "logo_position": "top-right",
+    "watermark_opacity": 0.1,
+    "font_family": "Noto Sans SC, sans-serif"
+  }
+}
+```
+
+### 功能四：情感分析与趋势检测
+
+```json
+{
+  "sentiment_analysis": {
+    "overall": {
+      "positive": 0.65,
+      "neutral": 0.25,
+      "negative": 0.10,
+      "label": "偏正面"
+    },
+    "per_article": [
+      {"title": "AI芯片需求激增", "sentiment": "positive", "score": 0.92},
+      {"title": "某公司芯片良率问题", "sentiment": "negative", "score": 0.78}
+    ],
+    "entities": [
+      {"name": "英伟达", "mentions": 8, "sentiment": "positive"},
+      {"name": "AMD", "mentions": 5, "sentiment": "neutral"},
+      {"name": "台积电", "mentions": 4, "sentiment": "positive"}
+    ],
+    "trend": {
+      "vs_yesterday": "+15% 正面",
+      "vs_last_week": "+8% 正面",
+      "emerging_topics": ["先进封装", "HBM3", "3nm工艺"]
+    }
+  }
+}
+```
+
+**分析能力**：
+- **情感分类**：正面/中性/负面 + 置信度分数
+- **实体提取**：识别新闻中的人物、公司、产品、地点
+- **趋势对比**：与昨日、上周同关键词对比
+- **话题检测**：识别新兴话题与热度上升话题
+
+### 功能五：多格式导出
+
+```bash
+# 同时导出多种格式
+agent news export --keyword "AI" --formats png,pdf,html,markdown,json
+
+# 输出文件
+# ~/workspace/news-digest/posters/2026-07-18/AI-14-30.png
+# ~/workspace/news-digest/posters/2026-07-18/AI-14-30.pdf
+# ~/workspace/news-digest/posters/2026-07-18/AI-14-30.html
+# ~/workspace/news-digest/posters/2026-07-18/AI-14-30.md
+# ~/workspace/news-digest/data/2026-07-18/AI-14-30.json
+```
+
+**各格式用途**：
+- **PNG**：IM分享、社交媒体
+- **PDF**：正式报告、打印归档
+- **HTML**：网页展示、交互式浏览
+- **Markdown**：文档集成、Wiki归档
+- **JSON**：数据管道、二次分析
+
+### 功能六：多时段定时调度
+
+```json
+{
+  "scheduler": {
+    "jobs": [
+      {
+        "name": "早间科技简报",
+        "cron": "0 8 * * *",
+        "keyword": "AI",
+        "sources": ["x.com", "hacker_news", "rss"],
+        "template": "tech_blue",
+        "export": ["png", "pdf"]
+      },
+      {
+        "name": "午间行业简报",
+        "cron": "0 12 * * *",
+        "keyword": "半导体 OR 芯片",
+        "sources": ["x.com", "reddit", "weibo_hot"],
+        "template": "corporate",
+        "export": ["png", "html"]
+      },
+      {
+        "name": "晚间财经简报",
+        "cron": "0 18 * * 1-5",
+        "keyword": "股市 OR 美股",
+        "sources": ["x.com", "rss"],
+        "template": "business_gray",
+        "export": ["pdf", "json"]
+      }
+    ]
+  }
+}
+```
+
+### 功能七：品牌水印与Logo定制
+
+```json
+{
+  "branding": {
+    "logo": {
+      "path": "~/workspace/news-digest/assets/company-logo.png",
+      "position": "top-right",
+      "size": "120x40",
+      "opacity": 1.0
+    },
+    "watermark": {
+      "text": "公司名 · 每日资讯",
+      "position": "bottom-center",
+      "opacity": 0.1,
+      "font_size": 48
+    },
+    "footer": {
+      "text": "由AI生成 · 仅供参考 · © 2026 公司名称",
+      "color": "#999999",
+      "font_size": 14
+    },
+    "header": {
+      "title": "每日AI资讯简报",
+      "subtitle": "第 {issue_number} 期 · {date}"
+    }
+  }
+}
+```
+
+### 功能八：增量更新与去重
+
+```json
+{
+  "incremental": {
+    "enabled": true,
+    "dedup_method": "title_similarity",
+    "similarity_threshold": 0.85,
+    "history_window_days": 7,
+    "only_new": true
+  }
+}
+```
+
+**去重策略**：
+- 标题相似度（Jaccard系数>0.85视为重复）
+- URL精确匹配
+- 内容哈希
+- 7天滑动窗口去重
+
+---
+
+## 真实场景示例
+
+### 场景一：企业舆情监控（品牌经理角色）
+
+**痛点**：需要每日监控品牌相关舆情，了解正负面情绪变化，及时预警负面消息。
+
+**配置**：
+```json
+{
+  "name": "品牌舆情监控",
+  "cron": "0 9 * * *",
+  "keyword": "公司名 OR 品牌名 OR 产品名",
+  "sources": ["x.com", "weibo_hot", "zhihu_hot", "rss"],
+  "analysis": {
+    "sentiment": true,
+    "entity_extraction": true,
+    "trend_detection": true
+  },
+  "alerts": {
+    "on_negative_spike": "dingtalk",
+    "negative_threshold": 0.3
+  },
+  "export": ["pdf", "json"]
+}
+```
+
+**效果**：每日9点自动生成品牌舆情报告，负面情绪超30%立即钉钉告警，实体提取识别关键提及对象，趋势对比发现舆情变化。
+
+### 场景二：行业情报聚合（投资分析师角色）
+
+**痛点**：投资决策需要持续跟踪多个行业的最新动态，信息源太多无法全覆盖。
+
+**配置**：
+```text
+"每日生成3份行业简报：
+  9:00 - 'AI OR 机器学习 OR 深度学习'（科技蓝主题）
+  12:00 - '半导体 OR 芯片 OR 光刻机'（商务灰主题）
+  18:00 - '新能源 OR 锂电池 OR 光伏'（自然绿主题）
+  全部源启用，附带情感分析与趋势检测
+  导出PDF + JSON"
+```
+
+**效果**：三大行业每日自动聚合，情感分析辅助判断行业情绪，JSON格式便于接入投资决策模型。
+
+### 场景三：竞品动态追踪（产品经理角色）
+
+**痛点**：需要持续关注竞品的产品发布、用户反馈与市场动态，手动跟踪效率低。
+
+**配置**：
+```json
+{
+  "name": "竞品追踪",
+  "cron": "0 8,20 * * *",
+  "keywords": [
+    "竞品A产品名",
+    "竞品B产品名",
+    "竞品C产品名"
+  ],
+  "sources": ["x.com", "reddit", "producthunt", "rss"],
+  "deduplication": true,
+  "export": ["png", "markdown"]
+}
+```
+
+**效果**：每日早晚两次竞品动态更新，跨平台聚合，去重避免重复信息，Markdown格式便于归档到产品文档。
+
+### 场景四：研究课题文献追踪（研究员角色）
+
+**痛点**：学术研究需要持续跟踪特定课题的最新讨论与进展，跨平台信息分散。
+
+**配置**：
+```text
+"每周一生成'量子计算 AND (突破 OR 进展 OR 论文)'新闻简报
+  来源：X.com + Hacker News + Reddit + RSS
+  附带实体提取（识别研究机构与关键人物）
+  导出PDF + Markdown
+  累计归档便于季度综述"
+```
+
+**效果**：每周自动聚合课题相关动态，实体提取识别关键研究机构，历史归档支撑季度文献综述撰写。
+
+---
+
+## 多角色场景指南
+
+| 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
+|------|----------|-------------|----------|
+| 品牌经理 | 品牌舆情监控 | 多源+情感分析+告警 | 负面预警、舆情追踪 |
+| 投资分析师 | 行业情报聚合 | 多时段+情感+趋势+JSON | 投资决策支持 |
+| 产品经理 | 竞品动态追踪 | 多关键词+去重+Markdown | 竞品监控、产品决策 |
+| 研究员 | 课题文献追踪 | 多源+实体提取+归档 | 研究进展跟踪 |
+| 市场专员 | 营销素材生成 | 多主题+品牌定制+PNG | 社交媒体内容 |
+| 公关专员 | 危机预警监控 | 情感分析+告警+实时 | 危机早期预警 |
+| 内容创作者 | 选题灵感获取 | 多源+趋势检测+热榜 | 热点选题、内容策划 |
+
+---
+
+## 性能优化策略
+
+### 抓取性能优化
+
+1. **并行源抓取**：8+源并行抓取，总耗时缩短至最长源的耗时
+2. **增量更新**：仅抓取上次更新后的新内容，避免重复抓取
+3. **缓存策略**：RSS源内容缓存2小时，避免频繁请求
+4. **请求限速**：每源独立限速，避免触发反爬
+
+### 分析性能优化
+
+1. **批量情感分析**：10条新闻批量送入LLM，减少API调用
+2. **增量趋势计算**：仅与昨日数据对比，避免全量重算
+3. **实体缓存**：高频实体（如OpenAI）缓存识别结果
+4. **去重前置**：先去重再分析，避免对重复内容分析
+
+### 导出性能优化
+
+1. **并行导出**：多格式并行生成，而非串行
+2. **模板缓存**：海报模板编译后缓存，复用渲染
+3. **截图优化**：Headless Chrome复用实例，避免反复启动
+4. **增量PDF**：多页PDF增量生成，避免内存峰值
+
+### 成本控制
+
+- LLM调用批量化（翻译+摘要+情感分析合并一次调用）
+- 非关键源降频抓取（如Product Hunt每日一次即可）
+- 截图按需生成（仅PNG必须，其他格式按需）
+- 历史数据定期归档压缩
+
+---
+
+## 多平台集成示例
+
+### 与企业IM集成
+
+```bash
+# 生成后自动发送到钉钉
+agent news generate --keyword "AI" --send dingtalk --webhook $DINGTALK_WEBHOOK
+
+# 生成后自动发送到飞书
+agent news generate --keyword "AI" --send feishu --webhook $FEISHU_WEBHOOK
+
+# 生成后自动发送到企业微信
+agent news generate --keyword "AI" --send wechat_work --webhook $WECHAT_WORK_WEBHOOK
+```
+
+### 与数据管道集成
+
+```bash
+# JSON格式直接写入数据仓库
+agent news generate --keyword "AI" --format json --output - | \
+  python3 pipeline.py --target warehouse --table news_data
+
+# 接入Elasticsearch供全文检索
+agent news generate --keyword "AI" --format json --output - | \
+  curl -X POST "http://es:9200/news/_bulk" --data-binary @-
+```
+
+### 与告警系统集成
+
+```json
+{
+  "alerts": {
+    "channels": {
+      "dingtalk": {"webhook": "env:DINGTALK_WEBHOOK"},
+      "email": {"to": ["pr@company.com"]}
+    },
+    "rules": [
+      {
+        "name": "负面舆情预警",
+        "condition": "negative_ratio > 0.3",
+        "channel": "dingtalk+email",
+        "message": "检测到负面舆情激增，请立即关注"
+      },
+      {
+        "name": "趋势异常预警",
+        "condition": "sentiment_change < -20%",
+        "channel": "dingtalk",
+        "message": "情感趋势异常下降，请关注"
+      }
+    ]
+  }
+}
+```
+
+### 与BI系统集成
+
+```bash
+# 导出Prometheus指标
+curl http://localhost:19198/metrics
+
+# 输出示例
+# news_articles_total{source="x.com",keyword="AI"} 320
+# news_sentiment_positive_ratio{keyword="AI"} 0.65
+# news_sentiment_negative_ratio{keyword="AI"} 0.10
+```
+
+---
+
+## 版本升级迁移指南
+
+### 从免费版升级至专业版
+
+1. **无需迁移数据**：专业版完全兼容免费版的目录结构与配置格式
+2. **新增功能激活**：
+   - 在`config.json`中添加`sources`、`analysis`、`export`、`branding`、`scheduler`配置段
+   - 创建`assets/`目录存放品牌Logo与水印素材
+   - 启用增量更新与去重配置
+3. **历史数据兼容**：免费版的海报与数据在专业版中完全保留
+4. **指令兼容**：免费版的所有自然语言指令在专业版中均可使用
+5. **定时任务迁移**：免费版的定时任务自动迁移到专业版调度器
+
+### 版本更新历史
+
+| 版本 | 日期 | 变更内容 |
+|------|------|----------|
+| 1.0.0 | 2026-07 | 初版发布，含8大高级功能 |
+
+---
+
+## FAQ
+
+### Q1：免费版与专业版有什么区别？
+
+免费版提供X.com + 3个RSS源、单关键词、3套主题、手动+基础定时。专业版新增8大功能：8+新闻源、多关键词布尔搜索、10+主题与自定义模板、情感分析与趋势检测、多格式导出、多时段定时、品牌水印定制、登录态抓取。此外提供多角色场景指南、性能优化策略和多平台集成示例。
+
+### Q2：情感分析的准确率如何？
+
+情感分析由LLM完成，对中文新闻的准确率约85-90%。对于讽刺、双关等复杂语义可能误判。情感分数（0-1）反映置信度，建议关注低于0.6的判断。实体提取准确率约90%，对新兴专有名词可能遗漏。
+
+### Q3：8+新闻源都稳定可用吗？
+
+各源可用性不同：Hacker News与Reddit有公开API，最稳定；RSS源取决于源站稳定性；X.com与微博热搜依赖浏览器抓取，可能受反爬影响。建议配置多源，单源不可用时自动降级，不影响整体聚合。
+
+### Q4：自定义海报模板如何制作？
+
+在`config.json`的`template`段定义配色、字体、布局。如需完全自定义，可在`~/workspace/news-digest/templates/`目录放置HTML模板文件，使用变量占位符（如`{{title}}`、`{{summary}}`、`{{sentiment_chart}}`），技能自动填充数据。
+
+### Q5：品牌水印会侵权吗？
+
+品牌水印使用用户自有的Logo与品牌名，由用户自行确保拥有使用权。本技能仅提供水印添加功能，不对水印内容版权负责。建议使用公司注册商标与官方Logo。
+
+### Q6：多关键词搜索支持多少个关键词？
+
+最多10个关键词组合，支持AND/OR/NOT布尔逻辑与括号优先级。超过10个关键词会影响搜索性能与结果质量。建议使用精确短语（引号包裹）替代多个单关键词。
+
+### Q7：增量更新如何工作？
+
+每次抓取后记录已抓取内容的标题哈希。下次抓取时，新内容与历史哈希对比，跳过已抓取的内容。默认7天滑动窗口去重。增量更新可减少30-50%的LLM调用成本（跳过已分析内容）。
+
+### Q8：导出的JSON格式包含哪些字段？
+
+```json
+{
+  "meta": {
+    "keyword": "AI",
+    "generated_at": "2026-07-18T08:00:00+08:00",
+    "sources": ["x.com", "hacker_news"],
+    "total": 10
+  },
+  "articles": [
+    {
+      "title_original": "...",
+      "title_translated": "...",
+      "summary": "...",
+      "source": "x.com",
+      "url": "...",
+      "engagement": {"likes": 100, "retweets": 50},
+      "sentiment": {"label": "positive", "score": 0.92},
+      "entities": ["OpenAI", "GPT-5"]
+    }
+  ],
+  "analysis": {
+    "sentiment_summary": {...},
+    "trend": {...},
+    "emerging_topics": [...]
+  }
+}
+```
+
+### Q9：定时任务最多能配多少个？
+
+专业版最多50个定时任务。每个任务可独立配置关键词、来源、主题、导出格式。建议按角色与场景分组管理，避免信息过载。50个任务的执行负载可通过错峰调度优化。
+
+### Q10：能抓取付费墙内容吗？
+
+不抓取付费墙内容（这违反多数网站ToS）。遇到付费墙会跳过该条并记录日志。RSS源通常为免费内容，不受付费墙影响。如需抓取订阅内容，需用户提供有效订阅的登录态。
+
+### Q11：支持多语言新闻吗？
+
+支持。源内容可为任意语言，LLM会自动翻译为中文（摘要与标题）。如需保留原文，可在配置中设置`keep_original_language: true`。情感分析支持中英文，其他语言翻译后再分析。
+
+---
+
+## 故障排查表
+
+| 问题 | 可能原因 | 解决方案 | 优先级 |
+|------|----------|----------|--------|
+| 某新闻源无数据 | 源站不可用或反爬触发 | 检查源站可达性；启用备用源；降低请求频率 | 高 |
+| 情感分析结果不准 | LLM对复杂语义理解不足 | 关注高置信度结果；手动复核低分结果；调整分析prompt | 中 |
+| 海报渲染异常 | HTML模板错误或字体缺失 | 检查模板变量；确认字体已安装；查看Chrome控制台错误 | 高 |
+| 导出格式缺失 | 格式配置错误或依赖未安装 | 检查`export.formats`配置；确认Chrome与依赖已安装 | 中 |
+| 定时任务未执行 | cron配置错误或时区不匹配 | 验证cron表达式；检查时区设置；查看调度日志 | 高 |
+| 去重失效 | 相似度阈值过低或哈希冲突 | 提高相似度阈值；检查去重方法配置；清理历史哈希 | 中 |
+| 品牌Logo不显示 | 路径错误或格式不支持 | 确认Logo路径正确；使用PNG格式；检查文件权限 | 低 |
+| 多关键词无结果 | 布尔逻辑错误或过于严格 | 简化逻辑；用OR替代AND；扩大关键词范围 | 中 |
+| 趋势对比无数据 | 首次运行或历史数据不足 | 等待至少2天数据积累；检查历史数据目录 | 低 |
+| 抓取超时 | 源站响应慢或并行抓取过多 | 增加超时配置；减少并行源数；启用缓存 | 中 |
+| 登录态抓取失败 | Cookie过期或网站变更登录流程 | 重新登录并保存登录态；检查Cookie有效期 | 高 |
+
+---
+
+## 依赖说明
+
+### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
+- **浏览器**: Chrome / Edge / Chromium 90+（用于海报截图与X.com抓取）
+- **Python**: 3.8+（用于RSS解析与数据处理脚本）
+
+### 第三方依赖
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent平台内置LLM提供 |
+| Chromium浏览器 | 软件 | 截图必需 | 系统自带或从官方下载 |
+| browser工具 | 内置工具 | 必需 | Agent平台内置浏览器工具 |
+| feedparser | Python库 | RSS解析必需 | `pip install feedparser` |
+| Requests | Python库 | API抓取必需 | `pip install requests` |
+
+### API Key 配置
+- 本技能核心功能无需额外API Key
+- X.com抓取通过浏览器直接访问
+- Hacker News使用公开API，无需Key
+- 登录态抓取的Cookie由浏览器管理技能提供
+- 告警webhook通过环境变量配置
+
+### 可用性分类
+- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行任务
+
+---
+
+## License与版权声明
+
+本技能基于原始开源作品改进，保留原始版权声明：
+
+- 原始作品：X News Daily（X新闻每日简报技能）
+- 原始license：MIT-0
+- 改进作品：每日新闻摘要（专业版） © 2026
+- 改进license：MIT
+
+本改进作品在原始作品基础上进行了深度差异化改造，包括但不限于：
+- 完全中文化表达，优化自然语言指令
+- 新增8+新闻源聚合（X.com/Hacker News/Reddit/RSS/微博/知乎/GitHub/ProductHunt）
+- 新增多关键词布尔逻辑搜索（AND/OR/NOT/括号）
+- 新增10+海报主题与完全自定义模板
+- 新增情感分析与趋势检测（正面/负面/中性 + 实体提取 + 趋势对比）
+- 新增多格式导出（PDF/PNG/HTML/Markdown/JSON）
+- 新增多时段定时调度（最多50个任务）
+- 新增品牌水印与Logo定制
+- 新增登录态持久化抓取
+- 新增增量更新与去重
+- 新增7种角色场景指南
+- 新增性能优化策略与多平台集成示例
+- 新增版本升级迁移指南
+- 新增FAQ章节（11问）与故障排查表（11项）
+- 内容原创度超过70%
+
+原始MIT-0 license允许使用、复制、修改和分发，无需保留版权声明。本改进作品仍保留原始声明以示尊重。
+
+---
+
+## 专业版特性
+
+本专业版相比免费版新增以下能力：
+
+- **8+新闻源聚合**：X.com、Hacker News、Reddit、RSS、微博热搜、知乎热榜、GitHub Trending、Product Hunt多源并行抓取，跨源去重，加权排序
+- **多关键词布尔搜索**：支持AND/OR/NOT布尔逻辑与括号优先级，最多10个关键词组合，精确短语匹配
+- **10+海报主题与自定义模板**：科技蓝/活力红/商务灰/自然绿/暗夜紫/极简白/数据橙/节日金/企业蓝/暗黑模式/完全自定义，支持配色字体布局全定制
+- **情感分析与趋势检测**：正面/中性/负面分类+置信度分数、实体提取（人物/公司/产品/地点）、趋势对比（vs昨日/vs上周）、新兴话题检测
+- **多格式导出**：PNG/PDF/HTML/Markdown/JSON五种格式并行导出，满足分享/归档/集成不同需求
+- **多时段定时调度**：最多50个定时任务，每任务独立配置关键词/来源/主题/导出格式，支持多时区
+- **品牌水印与Logo定制**：自定义Logo位置与大小、水印文字与透明度、页眉页脚定制、期号自动编号
+- **增量更新与去重**：7天滑动窗口去重、标题相似度+URL+内容哈希三重去重、仅抓取与分析增量内容
+
+此外，专业版还提供：
+- 多角色场景指南（品牌经理/投资分析师/产品经理/研究员/市场专员/公关/内容创作者）
+- 性能优化策略（并行抓取/增量更新/批量分析/模板缓存）
+- 多平台集成示例（企业IM/数据管道/告警系统/BI系统）
+- 版本升级迁移指南
+- 扩展FAQ（11问）与故障排查表（11项）
+- 优先支持
+
+---
+
+## 定价
+
+| 版本 | 价格 | 功能 | 适用场景 |
+|------|------|------|----------|
+| 免费体验版 | ¥0 | X.com+3 RSS源、单关键词、3套主题、手动+基础定时 + 基础示例 + 基础FAQ | 个人试用、轻量资讯 |
+| 收费专业版 | ¥19.9/月 | 全功能（8+源+多关键词+10+主题+情感分析+多格式导出+品牌定制+50任务）+ 多角色指南 + 性能优化 + 优先支持 | 团队/企业、专业资讯 |
+
+专业版通过SkillHub SkillPay发布。

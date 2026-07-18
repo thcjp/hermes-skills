@@ -1,0 +1,232 @@
+---
+slug: finance-radar-tool-free
+name: finance-radar-tool-free
+version: "1.0.0"
+displayName: 股票分析雷达入门
+summary: 股票与加密货币基础分析工具，提供价格查询、基本面分析与单只标的评分。
+license: MIT
+edition: free
+description: |-
+  面向个人投资者的股票与加密货币分析工具，通过Yahoo Finance数据提供
+  价格查询、基本面分析和技术指标评估。适合个人投资者进行单只标的的
+  快速分析与初步筛选。
+
+  核心能力:
+  - 单只标的综合分析（价格/基本面/技术面）
+  - 8维度股票评分模型
+  - 股息收益率与历史查询
+  - 热门趋势扫描
+
+  适用场景:
+  - 个人投资标的分析
+  - 股票快速筛选
+  - 加密货币基本面查看
+  - 股息股评估
+
+  差异化:
+  - 免费版聚焦单只标的深度分析
+  - 适合个人投资者低频使用
+  - 不支持批量分析与CSV导出
+  - 不支持组合追踪与价格告警
+
+  触发关键词: 股票分析, 加密货币, 评分, 股息, 热门, 趋势, 雷达, stock, crypto, analyze, score
+tags:
+- Finance
+- 股票分析
+- 投资决策
+tools:
+- read
+- exec
+---
+
+# 股票分析雷达入门（免费版）
+
+## 概述
+
+本工具为个人投资者提供股票与加密货币的基础分析能力。通过Yahoo Finance数据源，用户可以快速获取单只标的的价格、基本面和技术面信息，并获得8维度综合评分。适合投资前的快速评估与筛选。
+
+## 核心能力
+
+### 分析功能
+
+| 功能 | 说明 | 免费版支持 |
+| --- | --- | --- |
+| 综合分析 | 价格/基本面/技术面 | 支持 |
+| 股票评分 | 8维度评分模型 | 支持 |
+| 批量分析 | 多标的并行 | 不支持 |
+| 组合追踪 | 持仓P&L | 不支持 |
+| 价格告警 | 阈值触发 | 不支持 |
+| 股息分析 | 收益率与历史 | 支持 |
+| 热门扫描 | 趋势检测 | 基础版 |
+
+### 8维度评分模型
+
+| 维度 | 权重 | 评估内容 |
+| --- | --- | --- |
+| 盈利能力 | 15% | 净利率、ROE、ROA |
+| 成长性 | 15% | 营收增长、利润增长 |
+| 估值水平 | 15% | PE、PB、PS对比行业 |
+| 财务健康 | 15% | 资产负债率、流动比率 |
+| 现金流 | 10% | 经营现金流、自由现金流 |
+| 股息回报 | 10% | 股息率、派息比率 |
+| 技术面 | 10% | 均线、RSI、MACD |
+| 市场情绪 | 10% | 分析师评级、机构持仓 |
+
+## 使用场景
+
+### 场景一：单只股票分析
+
+用户输入："帮我分析一下AAPL"
+
+```bash
+# 综合分析
+python3 scripts/analyze.py --ticker AAPL
+
+# 输出：
+# === AAPL 综合分析 ===
+# 当前价格: $178.45 (+1.23%)
+# 市值: $2.8T | PE: 29.5 | PB: 45.2
+# 8维度评分: 72/100 (⭐⭐⭐⭐)
+# - 盈利能力: 85  成长性: 70  估值: 55
+# - 财务健康: 90  现金流: 80  股息: 60
+# - 技术面: 65  市场情绪: 75
+```
+
+### 场景二：股票评分
+
+用户输入："给TSLA打个分"
+
+```bash
+# 8维度评分
+python3 scripts/score.py --ticker TSLA
+
+# 输出评分报告与建议
+```
+
+### 场景三：股息查询
+
+用户输入："查看可口可乐的股息情况"
+
+```bash
+# 股息分析
+python3 scripts/dividend.py --ticker KO
+
+# 输出：当前股息率、历史派息记录、派息增长率
+```
+
+## 快速开始
+
+### 环境准备
+
+```bash
+# 安装依赖
+pip install yfinance pandas numpy
+
+# 验证安装
+python3 scripts/analyze.py --ticker AAPL
+```
+
+### 常用命令
+
+```bash
+# 综合分析
+python3 scripts/analyze.py --ticker AAPL
+python3 scripts/analyze.py --ticker BTC-USD    # 加密货币
+
+# 评分
+python3 scripts/score.py --ticker TSLA
+
+# 股息
+python3 scripts/dividend.py --ticker KO
+
+# 热门扫描
+python3 scripts/hot_scan.py
+```
+
+## 配置示例
+
+### 分析参数配置
+
+```yaml
+analysis_config:
+  data_source: "yahoo_finance"
+  cache_ttl: 300
+
+  scoring:
+    model: "8-dimension"
+    weights:
+      profitability: 0.15
+      growth: 0.15
+      valuation: 0.15
+      financial_health: 0.15
+      cashflow: 0.10
+      dividend: 0.10
+      technical: 0.10
+      sentiment: 0.10
+
+  thresholds:
+    good_score: 70           # 优秀评分线
+    fair_score: 50           # 合格评分线
+    poor_score: 30           # 较差评分线
+```
+
+## 最佳实践
+
+1. **多维度交叉验证**：不要仅看价格涨跌，结合8维度评分综合判断
+2. **关注趋势变化**：定期重新评分，观察评分趋势变化
+3. **行业对比**：同类标的横向对比，找出相对优势
+4. **加密货币谨慎**：加密货币波动大，评分仅供参考
+
+| 实践要点 | 说明 |
+| --- | --- |
+| 数据时效 | Yahoo Finance延迟约15分钟，不适合高频交易 |
+| 评分局限 | 评分基于历史数据，不代表未来表现 |
+| 加密货币 | 波动性大，建议降低仓位比例 |
+| 免责声明 | 分析结果仅供参考，不构成投资建议 |
+
+## 常见问题
+
+### Q1：免费版支持批量分析吗？
+
+免费版仅支持单只标的分析。如需批量分析多只标的并导出CSV对比报告，建议升级至PRO版。
+
+### Q2：加密货币数据准确吗？
+
+加密货币数据来自Yahoo Finance，可能存在延迟或覆盖不全。建议结合专业加密货币工具交叉验证。
+
+### Q3：评分模型可以自定义吗？
+
+免费版使用固定的8维度评分模型。如需自定义权重或维度，建议升级PRO版。
+
+### Q4：分析结果可以直接用于投资决策吗？
+
+本工具提供的分析结果仅供参考，不构成投资建议。投资有风险，决策需谨慎。
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
+- **Python版本**: 3.8+
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+| Python | 运行时 | 必需 | 系统安装或conda环境 |
+| yfinance | Python库 | 必需 | `pip install yfinance` |
+| pandas | Python库 | 必需 | `pip install pandas` |
+| numpy | Python库 | 必需 | `pip install numpy` |
+
+### API Key 配置
+
+- 免费版无需任何API Key
+- 数据通过Yahoo Finance免费接口获取
+
+### 可用性分类
+
+- **分类**: MD+EXEC（Markdown指令+Python脚本执行）
+- **说明**: 通过Yahoo Finance免费数据源进行股票与加密货币分析
+- **免费版限制**: 单标的分析、不支持批量与组合追踪、不支持价格告警

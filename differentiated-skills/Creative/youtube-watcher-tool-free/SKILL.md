@@ -1,0 +1,382 @@
+---
+slug: youtube-watcher-tool-free
+name: youtube-watcher-tool-free
+version: "1.0.0"
+displayName: YouTube字幕提取-免费版
+summary: 轻量级YouTube视频字幕提取工具，支持单视频字幕获取与内容摘要，适合个人学习与内容分析。
+license: MIT
+edition: free
+description: |-
+  YouTube 字幕提取免费版，为个人用户提供轻量化的视频字幕获取能力。
+
+  核心能力:
+  - 单视频字幕提取（自动字幕与 CC 字幕）
+  - 字幕内容摘要生成
+  - 关键信息检索
+  - 视频内容问答
+  - 字幕文本导出
+
+  适用场景:
+  - 学习视频内容摘要
+  - 视频关键信息检索
+  - 外语视频内容理解
+  - 内容创作素材整理
+
+  差异化:
+  - 免费版聚焦单视频字幕提取核心场景，零配置上手
+  - 支持自动生成字幕与人工 CC 字幕
+  - 提取后可进行摘要、问答、检索
+  - PRO 版本提供批量提取、频道监控、多语言字幕、关键词追踪等高级能力
+
+  触发关键词: YouTube 字幕, 视频转文字, 字幕提取, 视频摘要, 视频问答, transcript, youtube
+tags:
+- Creative
+- 视频处理
+- 字幕提取
+- 免费版
+tools:
+- read
+- exec
+---
+
+# YouTube 字幕提取工具 - 免费版
+
+## 概述
+
+YouTube 字幕提取免费版是一款面向个人用户的轻量级视频字幕获取工具。它通过 `yt-dlp` 工具提取 YouTube 视频的字幕文本，支持自动生成字幕与人工 CC 字幕，提取后可进行内容摘要、问答、关键词检索等操作。
+
+免费版聚焦核心字幕提取场景：单视频字幕获取、基础内容分析。配置简单，适合以下用户：
+
+- 学习者获取视频内容摘要
+- 研究者检索视频关键信息
+- 内容创作者整理素材
+- 外语学习者理解视频内容
+
+> 免费版限制：单次处理 1 个视频，仅支持提取字幕文本，不支持批量提取、频道监控、多语言字幕对比、关键词追踪等高级能力。如需这些能力，请使用 PRO 版本。
+
+## 核心能力
+
+### 能力清单
+
+| 能力 | 描述 | 免费版 |
+|:-----|:-----|:-------|
+| 字幕提取 | 获取视频字幕文本 | 支持 |
+| 自动字幕 | 提取自动生成字幕 | 支持 |
+| CC 字幕 | 提取人工字幕 | 支持 |
+| 内容摘要 | 生成视频摘要 | 支持 |
+| 关键信息检索 | 搜索字幕内容 | 支持 |
+| 视频问答 | 基于内容回答问题 | 支持 |
+| 字幕导出 | 导出为文本文件 | 支持 |
+| 批量提取 | 多视频字幕 | 不支持 |
+| 频道监控 | 监控频道更新 | 不支持 |
+| 多语言字幕 | 多语言对比 | 不支持 |
+| 关键词追踪 | 跨视频关键词 | 不支持 |
+| 时间戳标记 | 字幕带时间戳 | 不支持（仅文本） |
+
+### 工作流程
+
+```text
+用户提供 YouTube 视频 URL
+      ↓
+调用 yt-dlp 提取字幕
+      ↓
+解析字幕文本内容
+      ↓
+可选：摘要 / 检索 / 问答
+      ↓
+返回结果给用户
+```
+
+### 字幕类型说明
+
+YouTube 视频通常有两种字幕：
+
+| 类型 | 说明 | 准确度 |
+|:-----|:-----|:-------|
+| 自动字幕 | YouTube 自动生成 | 中等（依赖语音识别） |
+| CC 字幕 | 人工上传字幕 | 高（人工校对） |
+
+免费版优先提取 CC 字幕，若无则使用自动字幕。
+
+## 使用场景
+
+### 场景 1：学习视频内容摘要
+
+小张想学习一个 YouTube 技术教程视频，但视频有 1 小时，希望先获取摘要判断是否值得学习。
+
+**操作步骤：**
+
+1. 告诉 Agent：「帮我提取这个视频的字幕并总结要点 https://www.youtube.com/watch?v=VIDEO_ID」
+2. Agent 调用字幕提取脚本
+3. 读取字幕文本内容
+4. 生成内容摘要返回给用户
+
+**示例命令：**
+
+```bash
+# 提取字幕
+python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID"
+```
+
+**返回示例：**
+
+```text
+视频摘要：
+- 主题：React Hooks 入门教程
+- 时长：45 分钟
+- 核心要点：
+  1. useState 状态管理基础
+  2. useEffect 副作用处理
+  3. useContext 跨组件传值
+  4. 自定义 Hook 开发
+- 适合人群：有 React 基础的开发者
+```
+
+### 场景 2：视频关键信息检索
+
+小李需要从一段产品评测视频中找到关于「续航时间」的具体信息。
+
+**操作步骤：**
+
+1. 告诉 Agent：「从这个视频找关于续航时间的内容 https://www.youtube.com/watch?v=VIDEO_ID」
+2. Agent 提取字幕文本
+3. 在字幕中搜索「续航」相关内容
+4. 返回相关片段
+
+**示例命令：**
+
+```bash
+# 提取字幕
+python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID"
+
+# 搜索关键词（示例）
+grep -A 2 -B 2 "续航" /tmp/transcript.txt
+```
+
+### 场景 3：外语视频内容理解
+
+小王想看一段英文演讲视频，但英语水平有限，希望通过字幕理解内容。
+
+**操作步骤：**
+
+1. 告诉 Agent：「提取这个英文视频的字幕并翻译要点 https://www.youtube.com/watch?v=VIDEO_ID」
+2. Agent 提取英文字幕
+3. 生成中文摘要
+4. 返回中文要点
+
+**示例命令：**
+
+```bash
+# 提取英文字幕
+python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID" --lang en
+```
+
+## 快速开始
+
+### 第一步：安装 yt-dlp
+
+```bash
+# 使用 pip 安装
+pip3 install yt-dlp
+
+# 或使用 brew 安装（macOS）
+brew install yt-dlp
+
+# 验证安装
+yt-dlp --version
+```
+
+### 第二步：提取字幕
+
+最简单的用法 - 提取视频字幕：
+
+```bash
+python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+```
+
+### 第三步：生成摘要
+
+提取字幕后，让 Agent 生成摘要：
+
+```bash
+# 提取字幕到文件
+python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID" > /tmp/transcript.txt
+
+# 让 Agent 读取并生成摘要
+```
+
+### 第四步：关键词检索
+
+```bash
+# 提取字幕
+python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID" > /tmp/transcript.txt
+
+# 搜索关键词
+grep -i "关键词" /tmp/transcript.txt
+```
+
+## 配置示例
+
+### 命令参数说明
+
+| 参数 | 类型 | 是否必需 | 默认值 | 说明 |
+|:-----|:-----|:---------|:-------|:-----|
+| url | 字符串 | 必需 | - | YouTube 视频 URL |
+| --lang | 字符串 | 可选 | auto | 字幕语言（en/zh/auto） |
+| --output | 字符串 | 可选 | stdout | 输出文件路径 |
+
+### 支持的视频格式
+
+- 标准观看链接：`https://www.youtube.com/watch?v=VIDEO_ID`
+- 短链接：`https://youtu.be/VIDEO_ID`
+- 嵌入链接：`https://www.youtube.com/embed/VIDEO_ID`
+
+### 字幕输出格式
+
+```text
+[00:00:00] 第一句字幕内容
+[00:00:05] 第二句字幕内容
+[00:00:10] 第三句字幕内容
+...
+```
+
+## 最佳实践
+
+### 1. 选择有字幕的视频
+
+```bash
+# 提取前检查视频是否有字幕
+yt-dlp --list-subs "https://www.youtube.com/watch?v=VIDEO_ID"
+```
+
+### 2. 优先使用 CC 字幕
+
+CC 字幕准确度更高：
+
+```bash
+# 优先提取人工字幕
+python3 {baseDir}/scripts/get_transcript.py "URL" --prefer-cc
+```
+
+### 3. 字幕语言选择
+
+```bash
+# 提取中文字幕
+python3 {baseDir}/scripts/get_transcript.py "URL" --lang zh
+
+# 提取英文字幕
+python3 {baseDir}/scripts/get_transcript.py "URL" --lang en
+```
+
+### 4. 长视频处理建议
+
+| 视频时长 | 建议 |
+|:---------|:-----|
+| < 10 分钟 | 直接提取全部字幕 |
+| 10-30 分钟 | 提取后分段摘要 |
+| 30-60 分钟 | 提取后按章节摘要 |
+| > 60 分钟 | 建议分段处理 |
+
+## 常见问题
+
+### Q1：提示 yt-dlp 未找到？
+
+**A：** 请安装 yt-dlp：
+
+```bash
+pip3 install yt-dlp
+# 或
+brew install yt-dlp
+```
+
+### Q2：视频没有字幕怎么办？
+
+**A：** 可能原因：
+
+1. 视频没有自动生成字幕（如纯音乐视频）
+2. 视频没有人工上传字幕
+3. 字幕已被创作者关闭
+
+建议：选择有 CC 字幕的视频，或使用其他有字幕的视频。
+
+### Q3：提取的字幕不准确？
+
+**A：** 自动字幕依赖语音识别，准确度受以下因素影响：
+
+- 视频音质（清晰度、背景噪音）
+- 说话人口音
+- 专业术语数量
+
+建议优先使用人工 CC 字幕。
+
+### Q4：能否提取多语言字幕？
+
+**A：** 免费版单次仅提取一种语言字幕。如需多语言对比，请使用 PRO 版本。
+
+### Q5：能否批量提取多个视频？
+
+**A：** 免费版仅支持单视频提取。如需批量处理，请使用 PRO 版本。
+
+### Q6：提取的字幕可以保存为文件吗？
+
+**A：** 可以：
+
+```bash
+python3 {baseDir}/scripts/get_transcript.py "URL" > /tmp/transcript.txt
+```
+
+### Q7：能否提取播放列表的字幕？
+
+**A：** 免费版仅支持单视频。播放列表批量提取请使用 PRO 版本。
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent 平台**：支持 SKILL.md 规范的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+- **操作系统**：Windows / macOS / Linux
+- **Python**：3.8+（脚本依赖）
+- **网络**：需要网络连接（访问 YouTube）
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
+|:-------|:-----|:---------|:---------|:---------|
+| Python | 运行时 | 必需 | python.org | 3.8+ |
+| yt-dlp | 命令行工具 | 必需 | `pip install yt-dlp` | 2023.0+ |
+| LLM API | API | 必需 | 由 Agent 内置 LLM 提供 | - |
+
+#### 安装命令
+
+```bash
+# 安装 yt-dlp
+pip3 install yt-dlp
+
+# 验证安装
+python3 --version
+yt-dlp --version
+```
+
+### API Key 配置
+
+- 本 Skill 纯本地运行，**无需任何 API Key**
+- 字幕提取通过 yt-dlp 公开接口完成
+- 如需访问私人视频，需配置 YouTube Cookie（可选）
+
+```bash
+# 可选：配置 YouTube Cookie 访问私人视频
+# yt-dlp --cookies /path/to/cookies.txt "URL"
+```
+
+### 可用性分类
+
+- **分类**：MD+EXEC（Markdown 指令 + 命令行执行 + Python 脚本）
+- **说明**：通过自然语言指令驱动 Agent 调用 `get_transcript.py` 完成字幕提取
+- **离线可用**：否（需要网络访问 YouTube）
+- **隐私等级**：高（字幕本地处理，不上传）
+
+## 版本说明
+
+- **当前版本**：1.0.0
+- **版本类型**：FREE（免费版）
+- **升级路径**：如需批量提取、频道监控、多语言字幕、关键词追踪等能力，请使用 `youtube-watcher-tool-pro`

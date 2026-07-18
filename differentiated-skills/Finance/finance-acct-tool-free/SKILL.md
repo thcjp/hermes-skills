@@ -1,0 +1,250 @@
+---
+slug: finance-acct-tool-free
+name: finance-acct-tool-free
+version: "1.0.0"
+displayName: 财务会计入门工具
+summary: 个人与小微企业财务会计工具，支持记账、对账、税务计算与基础报表生成。
+license: MIT
+edition: free
+description: |-
+  面向个人用户与小微企业的基础财务会计工具，提供流水账记录、银行对账、
+  增值税计算和标准财务报表生成功能。通过命令行操作简化日常财务工作，
+  适合独立开发者、自由职业者和小型工作室使用。
+
+  核心能力:
+  - 基础记账：收入、支出、转账记录
+  - 银行对账：自动匹配银行流水
+  - 增值税计算：自动计算应纳税额
+  - 标准报表：资产负债表、利润表、现金流量表
+
+  适用场景:
+  - 个人收支管理
+  - 小微企业日常记账
+  - 自由职业者收入记录
+  - 月度税务计算
+
+  差异化:
+  - 免费版聚焦基础记账与报表
+  - 适合单用户、单账套场景
+  - 本地数据存储，隐私安全
+  - 不支持多账套与团队协作
+
+  触发关键词: 记账, 对账, 税务, 增值税, 报表, 资产负债表, 利润表, 现金流量表, 会计, finance, accounting
+tags:
+- Finance
+- 会计记账
+- 税务计算
+tools:
+- read
+- exec
+---
+
+# 财务会计入门工具（免费版）
+
+## 概述
+
+本工具为个人用户和小微企业提供基础财务会计处理能力。涵盖日常记账、银行对账、增值税计算和标准财务报表生成四大核心功能。通过简洁的命令行操作，帮助用户高效管理日常财务事务。
+
+## 核心能力
+
+### 功能模块总览
+
+| 模块 | 功能 | 免费版支持 |
+| --- | --- | --- |
+| 基础记账 | 收入/支出/转账记录 | 支持 |
+| 科目管理 | 会计科目设置 | 基础科目 |
+| 银行对账 | 自动匹配流水 | 支持 |
+| 税务计算 | 增值税/所得税 | 基础计算 |
+| 报表生成 | 三大标准报表 | 支持 |
+| 文档生成 | 发票/对账单 | 基础模板 |
+
+### 基础记账模块
+
+- 流水账记录：收入、支出、转账
+- 科目管理：基础会计科目设置
+- 凭证生成：自动生成会计凭证
+- 余额计算：实时计算账户余额
+
+### 对账模块
+
+- 银行对账：自动匹配银行流水
+- 往来对账：客户/供应商对账
+- 差异处理：自动识别差异
+- 对账报告：生成对账报告
+
+## 使用场景
+
+### 场景一：日常记账
+
+用户输入："记录一笔销售收入1000元"
+
+```bash
+# 记录收入
+python finance.py record --type income --amount 1000 --category "销售收入" --date "2026-02-28"
+
+# 记录支出
+python finance.py record --type expense --amount 500 --category "办公用品" --date "2026-02-28"
+
+# 查看余额
+python finance.py balance
+```
+
+### 场景二：银行对账
+
+用户输入："帮我核对这月的银行流水"
+
+```bash
+# 导入银行流水
+python finance.py reconcile import --file bank_statement.csv
+
+# 自动对账
+python finance.py reconcile auto
+
+# 生成对账报告
+python finance.py reconcile report --output reconciliation_report.pdf
+```
+
+### 场景三：月度税务计算
+
+用户输入："计算二月份的增值税"
+
+```bash
+# 计算增值税
+python finance.py tax vat --period 2026-02
+
+# 生成税务报告
+python finance.py tax report --type vat --period 2026-02 --output vat_report.xlsx
+```
+
+## 快速开始
+
+### 初始化
+
+```bash
+# 初始化账套
+python finance.py init --company "我的工作室" --year 2026
+
+# 设置会计科目
+python finance.py accounts init --template small_business
+```
+
+### 常用命令
+
+```bash
+# 记账
+python finance.py record --type income --amount 1000 --category "销售收入"
+python finance.py record --type expense --amount 500 --category "办公费用"
+
+# 生成报表
+python finance.py report balance-sheet --period 2026-02 --output balance_sheet.pdf
+python finance.py report income-statement --period 2026-02 --output income_statement.pdf
+python finance.py report cash-flow --period 2026-02 --output cash_flow.pdf
+
+# 税务
+python finance.py tax vat --period 2026-02
+python finance.py tax plan --year 2026
+```
+
+## 配置示例
+
+### 会计科目设置
+
+```yaml
+accounts:
+  assets:
+    - code: 1001
+      name: 现金
+      type: current_asset
+    - code: 1002
+      name: 银行存款
+      type: current_asset
+  liabilities:
+    - code: 2001
+      name: 短期借款
+      type: current_liability
+  equity:
+    - code: 3001
+      name: 实收资本
+      type: equity
+  income:
+    - code: 4001
+      name: 主营业务收入
+      type: revenue
+  expenses:
+    - code: 5001
+      name: 办公费用
+      type: expense
+```
+
+### 税务设置
+
+```yaml
+tax:
+  vat_rate: 0.13            # 增值税率
+  income_tax_rate: 0.25     # 企业所得税率
+  tax_threshold: 300000     # 起征点
+  declarations:
+    vat: monthly            # 增值税申报周期
+    income_tax: quarterly   # 所得税申报周期
+```
+
+## 最佳实践
+
+1. **及时记账**：建议每日或每周记录收支，避免月底集中补录
+2. **科目规范**：使用标准会计科目编码，便于后续报表生成
+3. **对账频率**：每月至少进行一次银行对账，及时发现差异
+4. **票据留存**：电子票据按月归档，便于税务申报与审计
+
+| 实践要点 | 说明 |
+| --- | --- |
+| 数据备份 | 定期导出账套数据备份 |
+| 科目一致性 | 年度内不随意调整科目编码 |
+| 税率确认 | 每年初确认最新适用税率 |
+| 报表审核 | 生成报表后核对关键数据 |
+
+## 常见问题
+
+### Q1：免费版支持多公司账套吗？
+
+免费版仅支持单账套管理。如需管理多个公司的财务，建议升级至PRO版支持多账套切换。
+
+### Q2：税务计算是否支持所有税种？
+
+免费版支持增值税和企业所得税的基础计算。个人所得税、印花税等其他税种建议升级PRO版获取完整支持。
+
+### Q3：数据存储在哪里？
+
+所有财务数据存储在本地SQLite数据库中，不会上传至任何服务器。建议定期导出备份。
+
+### Q4：支持电子发票生成吗？
+
+免费版提供基础发票模板。如需批量生成或对接税务系统，建议升级PRO版。
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
+- **Python版本**: 3.8+
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+| Python | 运行时 | 必需 | 系统安装或conda环境 |
+| sqlite3 | Python库 | 必需 | Python内置 |
+| openpyxl | Python库 | 可选 | `pip install openpyxl`（Excel导出） |
+| reportlab | Python库 | 可选 | `pip install reportlab`（PDF生成） |
+
+### API Key 配置
+
+- 免费版无需任何API Key
+- 所有数据本地存储，不涉及外部API调用
+
+### 可用性分类
+
+- **分类**: MD+EXEC（Markdown指令+Python脚本执行）
+- **说明**: 本地财务会计处理，数据存储在SQLite数据库
+- **免费版限制**: 单账套、基础税种、基础报表模板

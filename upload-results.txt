@@ -1,0 +1,101 @@
+=== SkillHub Upload Results (v2) ===
+Start: Fri Jul 17 21:38:44     2026
+
+--- P0: Zero-dependency Skills ---
+  SLUG_CONFLICT api-design-architect: Error: slug 冲突: 版本 1.0.0 已存在，请使用新的版本号发布
+  OK requirement-explorer-pro
+  SLUG_CONFLICT brand-identity-creator: Error: slug 冲突: 版本 1.0.0 已存在，请使用新的版本号发布
+  RETRY(1) competitive-ad-spy (rate limited, wait 90s)
+  OK competitive-ad-spy
+  OK compliance-manager
+  SLUG_CONFLICT copywriting-master: Error: slug 冲突: slug 'copywriting-master' 已被 clawhub 来源占用
+  RETRY(1) plan-architect (rate limited, wait 90s)
+  OK plan-architect
+  OK c-suite-advisor
+P0 done
+
+--- P1: Contest Skills ---
+  OK ai-writing-style-cloner
+  RETRY(1) viral-prophet (rate limited, wait 90s)
+  OK viral-prophet
+  OK drama-hit-producer
+  OK ecommerce-pricing-strategist
+  RETRY(1) intel-sentinel (rate limited, wait 90s)
+  OK intel-sentinel
+P1 done
+
+--- P2: Award Skills ---
+  OK novel-autopilot
+  OK ai-artist-workstation
+  RETRY(1) ai-video-director (rate limited, wait 90s)
+  SLUG_CONFLICT ai-video-director: Error: slug 冲突: slug 'ai-video-director' 已被 clawhub 来源占用
+P2 done
+
+--- P3: Monetization Skills ---
+  OK topic-hunter
+  OK stealth-browser-assistant
+  RETRY(1) cyber-fortune-teller (rate limited, wait 90s)
+  SLUG_CONFLICT cyber-fortune-teller: Error: slug 冲突: slug 'cyber-fortune-teller' 已被 clawhub 来源占用
+  OK ebook-factory
+  OK poetry-craftsman
+  RETRY(1) title-hook-factory (rate limited, wait 90s)
+  OK title-hook-factory
+  OK sales-copy-writer
+  OK seo-doctor
+  RETRY(1) hook-retention-master (rate limited, wait 90s)
+  OK hook-retention-master
+  OK content-refiner
+  OK seo-rank-monopolizer
+  RETRY(1) viral-decoder (rate limited, wait 90s)
+  SLUG_CONFLICT viral-decoder: Error: slug 冲突: slug 'viral-decoder' 已被 clawhub 来源占用
+P3 done
+
+--- P4+P5: OpenSource Skills ---
+  OK auth-security-architect
+  OK azure-cloud-automator
+  RETRY(1) canvas-art-designer (rate limited, wait 90s)
+  OK canvas-art-designer
+  SLUG_CONFLICT clickhouse-analytics: Error: slug 冲突: slug 'clickhouse-analytics' 已被 clawhub 来源占用
+  OK cloudflare-edge-developer
+  RETRY(1) code-review-sentinel (rate limited, wait 90s)
+  OK code-review-sentinel
+  OK content-cms-architect
+  OK csv-insight-miner
+  RETRY(1) debug-doctor (rate limited, wait 90s)
+  OK debug-doctor
+  SLUG_CONFLICT deep-research-engine: Error: slug 冲突: slug 'deep-research-engine' 已被 clawhub 来源占用
+  OK docx-document-master
+  RETRY(1) duckdb-analytics-engine (rate limited, wait 90s)
+  OK duckdb-analytics-engine
+  OK lead-research-hunter
+  SLUG_CONFLICT legal-assistant-pro: Error: slug 冲突: slug 'legal-assistant-pro' 已被其他用户占用
+  RETRY(1) mcp-server-builder (rate limited, wait 90s)
+  SLUG_CONFLICT mcp-server-builder: Error: slug 冲突: slug 'mcp-server-builder' 已被 clawhub 来源占用
+  OK nextjs-fullstack-guide
+  SLUG_CONFLICT pdf-toolkit-pro: Error: slug 冲突: slug 'pdf-toolkit-pro' 已被 clawhub 来源占用
+  RETRY(1) performance-optimizer-pro (rate limited, wait 90s)
+  OK performance-optimizer-pro
+  OK pptx-presentation-pro
+  SLUG_CONFLICT remotion-video-studio: Error: slug 冲突: slug 'remotion-video-studio' 已被 clawhub 来源占用
+  RETRY(1) research-article-crafter (rate limited, wait 90s)
+  OK research-article-crafter
+  OK scientific-research-assistant
+  OK security-hardening-shield
+  RETRY(1) seo-audit-master (rate limited, wait 90s)
+  OK seo-audit-master
+  OK stripe-payment-integrator
+  OK terraform-iac-architect
+  RETRY(1) test-driven-coder (rate limited, wait 90s)
+  OK test-driven-coder
+  OK theme-stylist
+  OK twitter-viral-optimizer
+  RETRY(1) web-artifact-studio (rate limited, wait 90s)
+  OK web-artifact-studio
+  OK web-scraper-engine
+  OK xlsx-data-wizard
+P4+P5 done
+
+=== SUMMARY ===
+Total: 48 ok, 12 failed
+End: Fri Jul 17 22:18:16     2026
+Failed: api-design-architect(slug冲突) brand-identity-creator(slug冲突) copywriting-master(slug冲突) ai-video-director(slug冲突) cyber-fortune-teller(slug冲突) viral-decoder(slug冲突) clickhouse-analytics(slug冲突) deep-research-engine(slug冲突) legal-assistant-pro(slug冲突) mcp-server-builder(slug冲突) pdf-toolkit-pro(slug冲突) remotion-video-studio(slug冲突)

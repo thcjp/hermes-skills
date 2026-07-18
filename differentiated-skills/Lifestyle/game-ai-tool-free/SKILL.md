@@ -1,0 +1,531 @@
+---
+slug: game-ai-tool-free
+name: game-ai-tool-free
+version: "1.0.0"
+displayName: 游戏AI工具免费版
+summary: 游戏AI开发指南,涵盖FSM、行为树、寻路与决策系统的代码实现
+license: MIT
+edition: free
+description: |-
+  面向独立游戏开发者与学生的游戏 AI 开发指南与代码模板。
+  核心能力: 有限状态机、行为树、A*寻路、效用AI、感知系统、群体行为
+  适用场景: 独立游戏开发、游戏开发学习、原型验证、Game Jam
+  差异化: 免费版聚焦个人学习与原型开发,提供主流 AI 架构的代码模板
+  触发关键词: 游戏AI, FSM, 行为树, A*寻路, 效用AI, 群体行为, NPC AI
+tags:
+- 游戏开发
+- AI开发
+- 有限状态机
+- 行为树
+- 寻路算法
+- 独立游戏
+tools:
+- read
+- exec
+---
+
+# 游戏 AI 工具 (免费版)
+
+## 概述
+
+本工具为独立游戏开发者与学生提供游戏 AI 开发指南与代码模板,涵盖有限状态机 (FSM)、行为树 (Behavior Tree)、A* 寻路、效用 AI、感知系统、群体行为等主流 AI 架构。每种架构都配有完整的可运行代码示例,适合学习、原型验证与 Game Jam 使用。
+
+免费版聚焦个人学习与原型开发,适合独立开发者与学生使用。
+
+## 核心能力
+
+| 能力模块 | 描述 | 免费版支持 |
+|:--------|:-----|:-----------|
+| 有限状态机 (FSM) | 简单敌人与 Boss 阶段 AI | 支持 |
+| 行为树 (BT) | 复杂 NPC 与战术 AI | 支持 |
+| A* 寻路 | 标准寻路算法 | 支持 |
+| 效用 AI | 智能决策系统 | 支持 |
+| 感知系统 | 视觉、听觉感知 | 支持 |
+| 群体行为 (Boids) | 鸟群、鱼群模拟 | 支持 |
+| GOAP | 目标导向行动规划 | 不支持 (升级 PRO) |
+| 机器学习 AI | 强化学习集成 | 不支持 (升级 PRO) |
+| 多 AI 协作 | 团队战术 AI | 不支持 (升级 PRO) |
+| AI 调试工具 | 可视化调试器 | 基础 |
+
+## 使用场景
+
+### 场景一: 简单敌人 AI (FSM)
+
+为游戏中的敌人实现基础 AI 行为。
+
+```csharp
+// 敌人状态枚举
+public enum EnemyState
+{
+    Idle, Patrol, Chase, Attack, Flee
+}
+
+public class EnemyFSM : Node
+{
+    private EnemyState _currentState;
+    private Dictionary<EnemyState, IState> _states;
+
+    public override void _Ready()
+    {
+        _states = new Dictionary<EnemyState, IState>
+        {
+            [EnemyState.Idle] = new IdleState(this),
+            [EnemyState.Patrol] = new PatrolState(this),
+            [EnemyState.Chase] = new ChaseState(this),
+            [EnemyState.Attack] = new AttackState(this),
+            [EnemyState.Flee] = new FleeState(this)
+        };
+        ChangeState(EnemyState.Idle);
+    }
+
+    public void ChangeState(EnemyState newState)
+    {
+        _states[_currentState]?.Exit();
+        _currentState = newState;
+        _states[_currentState]?.Enter();
+    }
+
+    public override void _Process(double delta)
+    {
+        _states[_currentState]?.Update(delta);
+    }
+}
+
+// 追击状态示例
+public class ChaseState : IState
+{
+    private readonly EnemyFSM _fsm;
+    private NavigationAgent2D _navAgent;
+
+    public ChaseState(EnemyFSM fsm)
+    {
+        _fsm = fsm;
+        var owner = fsm.GetParent<CharacterBody2D>();
+        _navAgent = owner.GetNode<NavigationAgent2D>("NavigationAgent2D");
+    }
+
+    public void Enter()
+    {
+        _fsm.GetParent<CharacterBody2D>()
+            .GetNode<AnimationPlayer>("AnimationPlayer").Play("run");
+    }
+
+    public void Update(double delta)
+    {
+        var player = GetTree().GetFirstNodeInGroup("player") as Node2D;
+        if (player == null) return;
+
+        _navAgent.TargetPosition = player.GlobalPosition;
+        var owner = _fsm.GetParent<CharacterBody2D>();
+        var direction = owner.ToLocal(_navAgent.GetNextPathPosition()).Normalized();
+        owner.Velocity = direction * owner.Speed;
+        owner.MoveAndSlide();
+
+        float distance = owner.GlobalPosition.DistanceTo(player.GlobalPosition);
+        if (distance < 50)
+            _fsm.ChangeState(EnemyState.Attack);
+        else if (distance > 500)
+            _fsm.ChangeState(EnemyState.Patrol);
+    }
+
+    public void Exit() { _fsm.GetParent<CharacterBody2D>().Velocity = Vector2.Zero; }
+}
+```
+
+### 场景二: 复杂 NPC AI (行为树)
+
+为 NPC 实现模块化、可复用的复杂行为。
+
+```csharp
+// 行为树节点状态
+public enum NodeStatus { Running, Success, Failure }
+
+// 顺序节点 (全部成功才算成功)
+public class Sequence : BTNode
+{
+    private readonly List<BTNode> _children = new();
+    private int _currentChild = 0;
+
+    public Sequence(params BTNode[] children) => _children.AddRange(children);
+
+    public override NodeStatus Execute()
+    {
+        while (_currentChild < _children.Count)
+        {
+            var status = _children[_currentChild].Execute();
+            if (status == NodeStatus.Running) return NodeStatus.Running;
+            if (status == NodeStatus.Failure)
+            {
+                _currentChild = 0;
+                return NodeStatus.Failure;
+            }
+            _currentChild++;
+        }
+        _currentChild = 0;
+        return NodeStatus.Success;
+    }
+}
+
+// 选择节点 (一个成功就算成功)
+public class Selector : BTNode
+{
+    private readonly List<BTNode> _children = new();
+    private int _currentChild = 0;
+
+    public Selector(params BTNode[] children) => _children.AddRange(children);
+
+    public override NodeStatus Execute()
+    {
+        while (_currentChild < _children.Count)
+        {
+            var status = _children[_currentChild].Execute();
+            if (status == NodeStatus.Running) return NodeStatus.Running;
+            if (status == NodeStatus.Success)
+            {
+                _currentChild = 0;
+                return NodeStatus.Success;
+            }
+            _currentChild++;
+        }
+        _currentChild = 0;
+        return NodeStatus.Failure;
+    }
+}
+
+// 敌人 AI 组合示例
+public class EnemyAI : Node
+{
+    private BTNode _behaviorTree;
+
+    public override void _Ready()
+    {
+        _behaviorTree = new Selector(
+            // 优先攻击
+            new Sequence(
+                new Condition(IsPlayerInRange),
+                new Condition(HasAmmo),
+                new Action(Attack)
+            ),
+            // 追击玩家
+            new Sequence(
+                new Condition(CanSeePlayer),
+                new Action(ChasePlayer)
+            ),
+            // 默认巡逻
+            new Action(Patrol)
+        );
+    }
+
+    public override void _Process(double delta) => _behaviorTree.Execute();
+}
+```
+
+### 场景三: 寻路与群体行为
+
+实现 A* 寻路与鸟群模拟。
+
+```csharp
+// A* 寻路核心
+public class AStar
+{
+    private readonly Grid _grid;
+
+    public List<Point> FindPath(Point start, Point end)
+    {
+        var openSet = new PriorityQueue<Point>();
+        var cameFrom = new Dictionary<Point, Point>();
+        var gScore = new Dictionary<Point, float>();
+        var fScore = new Dictionary<Point, float>();
+
+        openSet.Enqueue(start, 0);
+        gScore[start] = 0;
+        fScore[start] = Heuristic(start, end);
+
+        while (openSet.Count > 0)
+        {
+            var current = openSet.Dequeue();
+            if (current == end) return ReconstructPath(cameFrom, current);
+
+            foreach (var neighbor in _grid.GetNeighbors(current))
+            {
+                float tentativeGScore = gScore[current] + _grid.GetCost(current, neighbor);
+                if (!gScore.ContainsKey(neighbor) || tentativeGScore < gScore[neighbor])
+                {
+                    cameFrom[neighbor] = current;
+                    gScore[neighbor] = tentativeGScore;
+                    fScore[neighbor] = gScore[neighbor] + Heuristic(neighbor, end);
+                    if (!openSet.Contains(neighbor))
+                        openSet.Enqueue(neighbor, fScore[neighbor]);
+                }
+            }
+        }
+        return null;
+    }
+
+    private float Heuristic(Point a, Point b) =>
+        Math.Abs(a.X - b.X) + Math.Abs(a.Y - b.Y); // 曼哈顿距离
+}
+
+// Boids 群体行为
+public class Boid : Node2D
+{
+    private Vector2 _velocity;
+
+    public override void _Process(double delta)
+    {
+        var separation = CalculateSeparation();
+        var alignment = CalculateAlignment();
+        var cohesion = CalculateCohesion();
+
+        var acceleration = separation * 1.5f + alignment * 1.0f + cohesion * 1.0f;
+        _velocity += acceleration * (float)delta;
+        _velocity = _velocity.LimitLength(MaxSpeed);
+        Position += _velocity * (float)delta;
+    }
+}
+```
+
+## 快速开始
+
+### 步骤 1: 选择 AI 架构
+
+根据游戏复杂度选择合适的 AI 架构。
+
+```yaml
+架构选择指南:
+  有限状态机 (FSM):
+    适用: 简单敌人、Boss 阶段切换
+    优点: 简单直观、易调试
+    缺点: 状态多时难维护
+
+  行为树 (BT):
+    适用: 复杂 NPC、战术 AI
+    优点: 模块化、可复用、易扩展
+    缺点: 需要框架支持
+
+  效用 AI:
+    适用: 模拟人生类、策略游戏
+    优点: 灵活、智能决策
+    缺点: 参数调节困难
+```
+
+### 步骤 2: 复用代码模板
+
+```bash
+# 克隆代码模板 (示例)
+# FSM 模板: 有限状态机基础实现
+# BT 模板: 行为树节点系统
+# A* 模板: 寻路算法实现
+# Boids 模板: 群体行为模拟
+```
+
+### 步骤 3: 集成到游戏引擎
+
+```csharp
+// 在 Godot 中集成 AI
+public partial class Enemy : CharacterBody2D
+{
+    private EnemyFSM _fsm;
+
+    public override void _Ready()
+    {
+        _fsm = new EnemyFSM();
+        AddChild(_fsm);
+    }
+
+    public override void _PhysicsProcess(double delta)
+    {
+        // FSM 自动处理移动逻辑
+    }
+}
+```
+
+## 配置示例
+
+### AI 参数配置
+
+```yaml
+# enemy_ai_config.yaml
+enemy_types:
+  basic:
+    fsm:
+      states: [idle, patrol, chase, attack]
+      detection_range: 200
+      attack_range: 50
+      attack_damage: 10
+      speed: 100
+
+  elite:
+    behavior_tree:
+      priorities: [attack, chase, patrol, flee]
+      sight_range: 300
+      hearing_range: 150
+      team_coordination: false  # 免费版不支持
+
+  boss:
+    phases:
+      - name: "phase_1"
+        health_threshold: 0.75
+        patterns: [sweep_attack, projectile_burst]
+      - name: "phase_2"
+        health_threshold: 0.5
+        patterns: [enrage, summon_adds]
+```
+
+### 效用 AI 示例
+
+```csharp
+public class UtilityAI
+{
+    private readonly List<UtilityAction> _actions = new();
+
+    public UtilityAction ChooseBestAction()
+    {
+        float bestScore = float.MinValue;
+        UtilityAction bestAction = null;
+
+        foreach (var action in _actions)
+        {
+            float score = action.CalculateScore();
+            score += GD.Randf() * 0.1f; // 添加随机性
+            if (score > bestScore)
+            {
+                bestScore = score;
+                bestAction = action;
+            }
+        }
+        return bestAction;
+    }
+}
+
+public class AttackAction : UtilityAction
+{
+    private readonly Enemy _enemy;
+
+    public override float CalculateScore()
+    {
+        float score = 0f;
+        float distance = _enemy.DistanceToPlayer();
+        score += Mathf.Clamp(1.0f - distance / 200.0f, 0, 1) * 0.5f;
+        score += _enemy.HasAmmo ? 0.3f : 0.0f;
+        score += _enemy.HealthPercent * 0.2f;
+        return score;
+    }
+
+    public override void Execute() => _enemy.Attack();
+}
+```
+
+## 最佳实践
+
+### 1. 状态机调试
+
+```csharp
+// 添加调试可视化
+public override void _Draw()
+{
+    DrawArc(Vector2.Zero, ViewDistance, -ViewAngle / 2, ViewAngle / 2, 32, Colors.Yellow, 1.0f);
+}
+
+// 状态切换日志
+public void ChangeState(EnemyState newState)
+{
+    GD.Print($"State: {_currentState} -> {newState}");
+    _states[_currentState]?.Exit();
+    _currentState = newState;
+    _states[_currentState]?.Enter();
+}
+```
+
+### 2. 性能优化
+
+```csharp
+// 避免每帧调用 GetFirstNodeInGroup
+private Node2D _playerCache;
+
+public override void _Ready()
+{
+    _playerCache = GetTree().GetFirstNodeInGroup("player") as Node2D;
+}
+
+// 限制 AI 计算频率
+private float _aiUpdateTimer = 0f;
+public override void _Process(double delta)
+{
+    _aiUpdateTimer += (float)delta;
+    if (_aiUpdateTimer >= 0.1f) // 10 FPS 更新 AI
+    {
+        UpdateAI();
+        _aiUpdateTimer = 0f;
+    }
+}
+```
+
+### 3. 数据驱动设计
+
+```csharp
+// 从配置文件加载 AI 参数
+public class AIConfig
+{
+    public float DetectionRange { get; set; }
+    public float AttackRange { get; set; }
+    public float Speed { get; set; }
+}
+
+// 配置与逻辑分离,便于平衡调整
+```
+
+## 常见问题
+
+### Q1: FSM 和行为树哪个更好?
+
+简单游戏用 FSM (3-5 个状态足够),复杂 NPC 用行为树 (模块化易扩展)。两者也可混合使用。
+
+### Q2: A* 寻路如何优化?
+
+使用 NavigationAgent (引擎内置)、限制寻路频率、简化网格、避免每帧重算路径。
+
+### Q3: 免费版有 AI 调试工具吗?
+
+提供基础调试 (状态日志、视野可视化)。完整可视化调试器需要 PRO 版本。
+
+### Q4: 支持哪些游戏引擎?
+
+代码示例以 Godot C# 为主,概念适用于 Unity、Unreal、Cocos 等主流引擎。
+
+### Q5: 如何实现机器学习 AI?
+
+免费版不包含。需要强化学习、神经网络等高级 AI,请升级 PRO 版本。
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent 平台**: 支持 SKILL.md 规范的任意 AI Agent (Claude Code、Cursor、Codex、Gemini CLI 等)
+- **操作系统**: Windows / macOS / Linux
+- **游戏引擎**: Godot 4.x (示例代码),也适用于 Unity、Unreal
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
+| Godot 4.x | 游戏引擎 | 推荐 | godotengine.org 下载 |
+| .NET 8 SDK | 运行时 | 可选 | dot.net 下载 (C# 支持) |
+
+### API Key 配置
+
+```bash
+# 免费版无需外部 API Key
+# 所有 AI 代码模板通过 Agent LLM 本地推理生成
+
+# 可选: 默认游戏引擎
+export GAME_AI_ENGINE="godot"
+export GAME_AI_LANGUAGE="csharp"
+```
+
+### 可用性分类
+
+- **分类**: MD (纯 Markdown 指令 + 代码模板)
+- **说明**: 本 Skill 通过自然语言指令驱动 Agent 生成游戏 AI 代码与架构建议
+- **免费版限制**: 单人使用、基础 AI 架构、无机器学习、无多 AI 协作、基础调试工具

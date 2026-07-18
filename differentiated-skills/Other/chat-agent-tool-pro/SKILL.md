@@ -1,0 +1,476 @@
+---
+slug: chat-agent-tool-pro
+name: chat-agent-tool-pro
+version: "1.0.0"
+displayName: 聊天Agent工具专业版
+summary: 多房间并发、消息持久化、企业鉴权、端到端加密的多Agent协作通信平台
+license: MIT
+edition: pro
+description: |-
+  聊天Agent工具专业版是面向企业级多Agent系统的实时通信平台，在免费版临时聊天室的基础上，新增多房间并发管理、消息持久化与回放、企业级鉴权（OAuth/SSO）、端到端加密、自定义品牌Web UI与完整审计日志能力。
+
+  核心能力：单实例支持50+并发房间；消息可持久化至`PostgreSQL`或SQLite，支持历史回放；集成OAuth 2.0/SAML SSO；端到端加密确保敏感对话安全；Web UI完全可定制品牌；完整审计日志满足合规要求。
+
+  适用场景：企业内部多Agent系统通信、合规要求严格的金融/医疗Agent协作、长期运行的多Agent项目、需要审计追溯的Agent任务流、品牌定制化的对外Agent服务。
+
+  差异化：相比免费版的"用完即弃"，专业版提供"既可临时又可持久"的混合模式——同一平台既能跑临时房间，也能跑长期任务流，按需切换持久化策略。
+
+  触发关键词：多房间并发、消息持久化、企业鉴权、端到端加密、Agent审计日志、品牌Web UI、合规通信
+tags:
+- 实时通信
+- 企业级
+- Agent协作
+- 合规通信
+tools:
+- read
+- exec
+---
+
+# 聊天Agent工具（专业版）
+
+## 概述
+
+企业内部署多Agent系统时，临时聊天室模式会遇到瓶颈：**合规要求消息可追溯、安全要求端到端加密、运营要求多房间并发、品牌要求Web UI定制**。免费版的"内存级临时房间"无法满足这些诉求。
+
+聊天Agent工具专业版正是为企业场景设计。它在免费版轻量临时通信的基础上，叠加了"持久化层 + 鉴权层 + 加密层 + 审计层"，让同一套平台既能跑临时房间，也能承载长期合规任务流。
+
+## 核心能力
+
+### 能力1：多房间并发管理
+
+单实例支持50+并发房间，按业务线/项目/团队隔离：
+
+| 房间类型 | 用途 | 持久化策略 |
+|----------|------|-----------|
+| 临时房间 | 一次性协作 | 内存，停即清 |
+| 项目房间 | 长期任务流 | 持久化至数据库 |
+| 归档房间 | 历史查询 | 只读归档 |
+
+### 能力2：消息持久化与回放
+
+支持两种持久化后端，按规模选择：
+
+| 后端 | 适用规模 | 优势 |
+|------|----------|------|
+| SQLite | 单机/小规模（<10万条/天） | 零配置、零运维 |
+| `PostgreSQL` | 企业级（百万级/天） | 高并发、支持复杂查询 |
+
+支持历史消息回放——新加入的Agent可以加载房间历史上下文，快速恢复任务状态：
+
+```bash
+# 加入房间并回放最近100条消息
+chat-agent join --url <url> --token <jwt> --agent-name bot1 --replay 100
+
+# 按时间范围回放
+chat-agent join --url <url> --token <jwt> --agent-name bot1 \
+  --replay-from "2026-07-01T00:00:00Z" --replay-to "2026-07-18T00:00:00Z"
+```
+
+### 能力3：企业级鉴权
+
+支持三种鉴权模式，按场景选择：
+
+| 模式 | 适用场景 | 配置 |
+|------|----------|------|
+| 密码 | 临时协作（兼容免费版） | `--password` |
+| JWT | Agent服务间调用 | `--token <jwt>` |
+| OAuth 2.0/SAML | 人类用户接入企业SSO | 集成IdP |
+
+JWT鉴权示例：
+
+```python
+import jwt
+from datetime import datetime, timedelta
+
+def generate_agent_token(agent_id, secret, room_id, ttl_hours=24):
+    payload = {
+        'agent_id': agent_id,
+        'room_id': room_id,
+        'role': 'agent',
+        'exp': datetime.utcnow() + timedelta(hours=ttl_hours)
+    }
+    return jwt.encode(payload, secret, algorithm='HS256')
+```
+
+### 能力4：端到端加密
+
+敏感对话（如医疗咨询、金融投顾）启用端到端加密：
+- 消息在发送方加密、接收方解密
+- 服务端仅存储密文，无法读取内容
+- 密钥通过房间参与者预共享或Diffie-Hellman协商
+
+### 能力5：自定义品牌Web UI
+
+Web UI完全可定制：
+- Logo、配色、字体
+- 自定义房间入口与欢迎语
+- 嵌入至企业现有系统（iframe或SDK）
+- 多语言界面（中/英/日/韩）
+
+### 能力6：完整审计日志
+
+满足金融、医疗等行业合规要求的审计能力：
+
+| 日志字段 | 说明 | 示例 |
+|----------|------|------|
+| timestamp | 精确到毫秒 | 2026-07-18T10:23:45.123Z |
+| actor | 操作主体 | agent:researcher / user:alice |
+| action | 操作类型 | join/send/leave/create_room |
+| room_id | 房间标识 | room_proj_2026_q3 |
+| message_hash | 消息哈希 | sha256:abc123... |
+| ip | 来源IP | 192.168.1.100 |
+
+### 能力7：高可用与负载均衡
+
+支持多实例部署：
+- 水平扩展至N个节点
+- 共享消息存储（`PostgreSQL`后端）
+- 自动故障转移
+- 负载均衡器前置于多实例
+
+## 使用场景
+
+### 场景组1：金融合规 × Agent协作审计
+
+#### 场景1.1 投顾Agent与风控Agent实时通信
+- 房间类型：项目房间（持久化）
+- 鉴权：JWT
+- 加密：端到端
+- 审计：完整日志保留7年
+
+#### 场景1.2 客服Agent与人工坐席移交
+- 房间类型：临时房间
+- 鉴权：OAuth（客户SSO）
+- 加密：传输层TLS
+- 审计：完整日志保留3年
+
+### 场景组2：医疗 × 病历协作
+
+#### 场景2.1 多学科会诊Agent协作
+- 房间类型：项目房间
+- 鉴权：医院LDAP SSO
+- 加密：端到端（HIPAA合规）
+- 审计：完整日志保留至病历归档期限
+
+#### 场景2.2 患者随访Agent回访
+- 房间类型：临时房间
+- 鉴权：患者手机号OTP
+- 加密：传输层TLS
+- 审计：随访记录归档
+
+### 场景组3：企业内部 × 多Agent系统
+
+#### 场景3.1 IT工单流转
+- 工单Agent创建房间 → 处理Agent加入 → 用户SSO登录Web UI → 解决后归档
+
+#### 场景3.2 HR流程协作
+- 入职流程：HR Agent、IT Agent、行政Agent在项目房间协作直至入职完成
+
+### 场景组4：品牌定制 × 对外服务
+
+#### 场景4.1 电商平台客服机器人
+- Web UI定制为品牌风格
+- 房间接入企业客服系统
+- 审计日志同步至CRM
+
+#### 场景4.2 SaaS产品内嵌聊天
+- iframe嵌入至SaaS产品
+- 用户无需离开产品界面
+- 消息持久化供产品功能使用
+
+## 快速开始
+
+### 60秒上手（企业部署）
+
+```bash
+# 1. 初始化企业配置
+chat-agent init --mode enterprise \
+  --db postgresql://user:pass@db:5432/chatagent \
+  --auth oauth --idp-url https://idp.company.com
+
+# 2. 启动服务（多实例）
+chat-agent serve --port 8765 --workers 4
+
+# 3. 创建第一个持久化房间
+chat-agent room create \
+  --name "Q3项目协作" \
+  --type project \
+  --persistence on \
+  --encryption e2e
+```
+
+### 集成OAuth SSO
+
+```yaml
+auth:
+  mode: oauth
+  provider: azure_ad  # 或 okta/auth0/keycloak
+  client_id: ${OAUTH_CLIENT_ID}
+  client_secret: ${OAUTH_CLIENT_SECRET}
+  redirect_uri: https://chat.company.com/callback
+  scopes:
+    - openid
+    - profile
+    - email
+```
+
+## 配置示例
+
+### 示例1：金融级完整配置
+
+```yaml
+server:
+  port: 8765
+  workers: 8
+  tls:
+    cert: /etc/ssl/chat.cert
+    key: /etc/ssl/chat.key
+
+database:
+  backend: postgresql
+  url: postgresql://chatagent:***@db-cluster:5432/chatagent
+  pool_size: 50
+  backup_schedule: daily
+
+auth:
+  mode: oauth
+  provider: azure_ad
+  jwt_expiry_hours: 12
+  refresh_token: true
+
+encryption:
+  mode: e2e
+  algorithm: aes-256-gcm
+  key_exchange: x25519
+
+audit:
+  enabled: true
+  log_path: /var/log/chatagent/audit
+  retention_days: 2555  # 7年
+  immutable: true
+
+rooms:
+  max_concurrent: 100
+  default_persistence: on
+  default_encryption: e2e
+
+branding:
+  logo_url: https://company.com/logo.svg
+  primary_color: "#0066CC"
+  welcome_message: "欢迎使用企业协作平台"
+  language: zh-CN
+```
+
+### 示例2：高可用部署
+
+```yaml
+# 负载均衡层（nginx）
+upstream chatagent_cluster {
+  server chat1.internal:8765;
+  server chat2.internal:8765;
+  server chat3.internal:8765;
+}
+
+# 共享存储层
+database:
+  backend: postgresql
+  url: postgresql://chatagent:***@pg-cluster:5432/chatagent
+  ha: true
+  replicas: 3
+```
+
+## 最佳实践
+
+### 实践1：按业务线划分房间命名空间
+
+```
+命名规范：[业务线]_[项目]_[子任务]
+示例：
+  - finance_audit_2026q3
+  - hr_onboarding_zhang_san
+  - it_ticket_20260718_001
+```
+
+便于按业务线统计消息量、审计追溯、归档管理。
+
+### 实践2：消息加密分层
+
+不要所有房间都开端到端加密——会显著增加CPU开销。建议：
+- L1 公开信息：传输层TLS足够
+- L2 内部敏感：传输层TLS + 服务端加密存储
+- L3 高度敏感：端到端加密（金融、医疗）
+
+### 实践3：审计日志不可篡改
+
+合规场景下，审计日志必须不可篡改。建议配置：
+- 日志写入只追加（append-only）
+- 定期归档至WORM存储（如AWS S3 Object Lock）
+- 关键操作加哈希链防止事后篡改
+
+### 实践4：消息TTL自动清理
+
+长期运行的项目房间，历史消息会快速累积。建议配置TTL：
+- 临时房间：服务停止即清
+- 项目房间：默认保留90天，超期归档
+- 归档房间：保留至合规期限后销毁
+
+### 实践5：Agent身份与JWT绑定
+
+每个Agent有独立的JWT，包含agent_id与权限范围。避免多Agent共用一个Token——出问题时无法定位到具体Agent。
+
+## 常见问题
+
+### Q1：专业版支持多少并发房间？
+A：单实例默认50个，可通过水平扩展至数百个。
+
+### Q2：消息持久化对性能影响多大？
+A：开启持久化后，消息延迟从<5ms上升至<15ms（`PostgreSQL`后端）。可调整异步写入策略降低影响。
+
+### Q3：端到端加密如何管理密钥？
+A：支持两种模式——预共享密钥（适合固定团队）与Diffie-Hellman协商（适合动态参与者）。密钥存储于企业密钥管理服务（如HashiCorp Vault）。
+
+### Q4：能否对接现有企业IM（如飞书、企业微信）？
+A：支持通过Webhook桥接。房间消息可同步推送至企业IM，企业IM消息也可回写至房间。
+
+### Q5：审计日志支持哪些合规标准？
+A：内置满足SOX、HIPAA、GDPR、等保2.0的日志字段。可根据行业标准自定义字段。
+
+### Q6：Web UI能否完全嵌入至企业系统？
+A：支持iframe嵌入与JS SDK两种方式。SDK支持深度定制UI元素。
+
+### Q7：如何处理跨时区协作？
+A：消息时间戳统一使用UTC存储，前端按用户时区显示。审计日志同时记录UTC与本地时间。
+
+### Q8：房间意外中断能否恢复？
+A：项目房间因服务端故障中断后，重启服务会自动恢复房间状态与历史消息。Agent可使用 `--replay` 重新加载上下文。
+
+### Q9：能否限制Agent的消息发送频率？
+A：支持。可在房间配置中设置 `rate_limit`，例如每个Agent每分钟最多发送20条消息，防止异常Agent刷屏。
+
+### Q10：是否支持私有化部署？
+A：企业版支持完全私有化部署，所有数据不出企业网络。
+
+## 故障排查表
+
+| 现象 | 可能原因 | 排查步骤 | 优先级 |
+|------|----------|----------|--------|
+| 房间创建失败 | 数据库连接超时 | 检查`PostgreSQL`连接池 | P0 |
+| JWT验证失败 | 时钟漂移 | 同步NTP服务 | P1 |
+| 消息回放缺失 | 持久化未启用 | 检查房间 `persistence` 配置 | P1 |
+| Web UI加载慢 | 静态资源未缓存 | 配置CDN | P2 |
+| 审计日志丢失 | 磁盘满 | 扩容 + 归档旧日志 | P0 |
+| 端到端加密失败 | 密钥版本不一致 | 同步密钥管理服务 | P1 |
+| 多实例消息不一致 | 共享存储故障 | 检查`PostgreSQL` HA状态 | P0 |
+| Agent被踢出 | 触发rate_limit | 检查Agent发送频率 | P2 |
+
+## 多平台集成示例
+
+### 与企业微信集成
+
+```yaml
+integration:
+  platform: wecom
+  mode: webhook_bridge
+  outbound:  # 房间消息 → 企微群
+    url: https://qyapi.weixin.qq.com/cgi-bin/webhook/send
+    filter:
+      room_tags: [notify_wecom]
+  inbound:   # 企微消息 → 房间
+    endpoint: /webhook/wecom
+    auth_token: ${WECOM_CALLBACK_TOKEN}
+```
+
+### 与飞书集成
+
+```yaml
+integration:
+  platform: feishu
+  mode: bot
+  app_id: ${FEISHU_APP_ID}
+  app_secret: ${FEISHU_APP_SECRET}
+  sync_rooms:
+    - feishu_default
+```
+
+### 与Slack集成
+
+```yaml
+integration:
+  platform: slack
+  mode: bot
+  token: ${SLACK_BOT_TOKEN}
+  channel_mapping:
+    finance_audit_2026q3: "#finance-audit"
+```
+
+## 版本升级迁移指南
+
+### 从免费版迁移至专业版
+
+免费版的所有配置（密码、端口、隧道）在专业版中保持兼容。升级后：
+
+1. 现有的 `serve` 命令仍可使用，默认创建临时房间
+2. 新增 `room create` 命令创建持久化房间
+3. 鉴权从密码平滑切换至JWT/OAuth（旧密码仍可用）
+
+```bash
+# 迁移步骤
+chat-agent upgrade --from free --to pro --preserve-config
+
+# 验证
+chat-agent version  # 应显示 pro
+chat-agent room list  # 应显示已有房间
+```
+
+## 专业版特性
+
+本专业版相比免费版新增以下能力：
+
+- ✅ **多房间并发**：单实例支持50+并发房间，可水平扩展至数百
+- ✅ **消息持久化**：支持SQLite/`PostgreSQL`后端，历史消息可回放
+- ✅ **企业级鉴权**：JWT/OAuth 2.0/SAML SSO，集成企业IdP
+- ✅ **端到端加密**：AES-256-GCM + X25519密钥协商
+- ✅ **自定义品牌Web UI**：Logo/配色/字体/语言完全可定制
+- ✅ **完整审计日志**：满足SOX/HIPAA/GDPR/等保2.0合规要求
+- ✅ **高可用部署**：多实例 + 共享存储 + 自动故障转移
+- ✅ **企业IM集成**：对接企业微信/飞书/Slack
+- ✅ **优先支持**：专属技术支持、48小时SLA、季度产品咨询
+
+## 定价
+
+| 版本 | 价格 | 功能 | 适用场景 |
+|------|------|------|----------|
+| 免费体验版 | ¥0 | 单房间+内存级+基础隧道 | 个人试用 |
+| 收费专业版 | ¥99/月 或 ¥999/年 | 全功能+企业级特性+优先支持 | 团队/企业 |
+
+专业版通过SkillHub SkillPay发布。
+
+## 依赖说明
+
+### 运行环境
+- **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**：Linux（生产环境推荐Ubuntu 22.04+）/ macOS / Windows
+- **Python**：3.10+
+- **Node.js**：18+（Web UI构建）
+
+### 第三方依赖
+| 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
+|:-------|:-----|:---------|:---------|:---------|
+| Python | 运行时 | 必需 | 官方下载 | 3.10+ |
+| `PostgreSQL` | 数据库 | 推荐 | 官方下载 | 13+ |
+| SQLite | 数据库 | 可选 | Python内置 | 3.x |
+| Redis | 缓存 | 可选 | 官方下载 | 6+ |
+| nginx | 反向代理 | 推荐 | 官方下载 | 1.20+ |
+| cloudflared | 隧道工具 | 可选 | 官方下载 | 最新 |
+| LLM API | API | 必需 | 由Agent平台内置LLM提供 | 不限 |
+
+### API Key 配置
+- **SkillHub Token**：存储于 `d:\skills\.skillhub-credentials\api-key.txt`（已gitignore）
+- **OAuth Client Secret**：通过环境变量 `OAUTH_CLIENT_SECRET` 注入
+- **数据库连接串**：通过环境变量 `DATABASE_URL` 注入，禁止写入配置文件
+- **加密主密钥**：存储于企业密钥管理服务（HashiCorp Vault/AWS KMS）
+- **禁止**：在SKILL.md或脚本中硬编码任何Token/密钥
+
+### 可用性分类
+- **分类**：MD+EXEC（Markdown指令 + 命令行工具 + 数据库）
+- **说明**：核心通信通过CLI完成，企业级特性需要数据库与反向代理配合

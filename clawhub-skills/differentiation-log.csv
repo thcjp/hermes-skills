@@ -1,0 +1,10 @@
+timestamp,category,original_slug,new_slug,enhancements,status
+2026-07-18,Automation,clawsec-feed,security-radar,资产关联过滤+双维度优先级矩阵+增量去重+离线降级+分级通知,completed
+2026-07-18,Automation,cloud-infra-automation,cloud-ops-orchestrator,职责边界红线+漂移检测+变更预演报告+销毁保护期+凭证隔离,completed
+2026-07-18,Automation,control,system-controller,跨平台命令映射+文件事务回滚+进程梯度终止+操作审计+危险分级,completed
+2026-07-18,Automation,cron,cron-scheduler-pro,时区锁定+一次性任务自清理+并发文件锁+失败熔断+运行时间线,completed
+2026-07-18,Automation,cron-helper,cron-assist,自然语言解析+模板库+成本优化器+批量标签管理,completed
+2026-07-18,Automation,cron-mastery,cron-master-pro,heartbeat决策矩阵+推送静默决策树+严格指令模板+自唤醒三档+迁移指南,completed
+2026-07-18,Automation,cron-worker-guardrails,cron-guard,跨平台含PowerShell+8类故障模式目录+预检清单+加固头部模板,completed
+2026-07-18,Automation,desktop-control,desktop-autopilot,视觉优先定位+智能等待+工作流编排+录制回放+DPI自适应+快照回滚,completed
+2026-07-18,Automation,drawing-analyzer,cad-insight-pro,DWG双格式+可配置标题栏模板+多比例检测+符号库+OCR管线+工程量统计,completed

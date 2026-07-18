@@ -1,0 +1,354 @@
+---
+slug: azure-agent-framework-tool-free
+name: azure-agent-framework-tool-free
+version: "1.0.0"
+displayName: Azure智能体框架工具-免费版
+summary: 基于Azure AI Foundry构建持久化智能体,支持函数工具、托管工具与会话线程
+license: MIT
+edition: free
+description: |-
+  文档型技能,指导开发者使用 Microsoft Agent Framework Python SDK 在 Azure AI Foundry 上
+  构建持久化智能体,支持函数工具、托管工具(代码解释器/文件搜索/Web搜索)与会话线程。
+
+  核心能力:
+  - 创建持久化 Azure AI 智能体
+  - 函数工具与托管工具集成
+  - 流式响应与会话线程管理
+  - 结构化输出(Pydantic 模型)
+
+  适用场景:
+  - 个人开发者构建 AI 助手
+  - 原型验证与功能演示
+  - 学习 Azure AI Foundry 智能体开发
+
+  差异化:免费版提供核心智能体构建能力,适合个人开发者与原型验证,无企业级编排与监控特性。
+
+  触发关键词: Azure, AI Foundry, 智能体, agent-framework, Python SDK, 函数工具, 托管工具
+tags:
+- 研究工具
+- AI开发
+- 智能体
+tools:
+- read
+- exec
+---
+
+# Azure智能体框架工具(免费版)
+
+## 概述
+
+本工具是文档型技能,指导开发者使用 Microsoft Agent Framework Python SDK 在 Azure AI Foundry 上构建持久化智能体。免费版面向个人开发者,提供核心的智能体创建、函数工具集成、托管工具使用、流式响应与会话线程管理能力。
+
+### 架构概览
+
+```text
+用户查询 → AzureAIAgentsProvider → Azure AI Agent Service(持久化)
+                ↓
+          Agent.run() / Agent.run_stream()
+                ↓
+          工具: 函数 | 托管(代码/搜索/Web) | MCP工具
+                ↓
+          AgentThread(会话持久化)
+```
+
+## 核心能力
+
+| 能力 | 说明 | 适用场景 |
+|:-----|:-----|:-----|
+| 创建智能体 | `create_agent()` 创建持久化智能体 | 构建 AI 助手 |
+| 函数工具 | 将 Python 函数作为工具提供给智能体 | 自定义业务逻辑 |
+| 托管工具 | 代码解释器、文件搜索、Web 搜索 | 复杂任务处理 |
+| 流式响应 | `run_stream()` 逐 token 输出 | 实时交互体验 |
+| 会话线程 | `get_new_thread()` 多轮对话 | 上下文保持 |
+| 结构化输出 | Pydantic 模型约束输出 | 数据抽取与校验 |
+
+## 使用场景
+
+### 场景一:构建基础 AI 助手
+
+个人开发者快速创建一个能对话的 AI 智能体。
+
+```python
+import asyncio
+from agent_framework.azure import AzureAIAgentsProvider
+from azure.identity.aio import AzureCliCredential
+
+async def main():
+    async with (
+        AzureCliCredential() as credential,
+        AzureAIAgentsProvider(credential=credential) as provider,
+    ):
+        # 创建智能体
+        agent = await provider.create_agent(
+            name="MyAgent",
+            instructions="你是一个乐于助人的助手。",
+        )
+
+        # 运行并获取响应
+        result = await agent.run("你好!")
+        print(result.text)
+
+asyncio.run(main())
+```
+
+### 场景二:带函数工具的智能体
+
+为智能体提供自定义函数(如天气查询、时间查询)。
+
+```python
+import asyncio
+from typing import Annotated
+from pydantic import Field
+from agent_framework.azure import AzureAIAgentsProvider
+from azure.identity.aio import AzureCliCredential
+
+def get_weather(
+    location: Annotated[str, Field(description="城市名称")],
+) -> str:
+    """获取指定城市的天气。"""
+    return f"{location} 的天气: 22°C, 晴"
+
+def get_current_time() -> str:
+    """获取当前 UTC 时间。"""
+    from datetime import datetime, timezone
+    return datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+
+async def main():
+    async with (
+        AzureCliCredential() as credential,
+        AzureAIAgentsProvider(credential=credential) as provider,
+    ):
+        agent = await provider.create_agent(
+            name="WeatherAgent",
+            instructions="你帮助用户查询天气和时间。",
+            tools=[get_weather, get_current_time],  # 直接传入函数
+        )
+
+        result = await agent.run("北京今天天气怎么样?")
+        print(result.text)
+
+asyncio.run(main())
+```
+
+### 场景三:多轮对话与会话线程
+
+使用线程保持多轮对话上下文。
+
+```python
+import asyncio
+from agent_framework.azure import AzureAIAgentsProvider
+from azure.identity.aio import AzureCliCredential
+
+async def main():
+    async with (
+        AzureCliCredential() as credential,
+        AzureAIAgentsProvider(credential=credential) as provider,
+    ):
+        agent = await provider.create_agent(
+            name="ChatAgent",
+            instructions="你是一个乐于助人的助手。",
+        )
+
+        # 创建会话线程
+        thread = agent.get_new_thread()
+
+        # 第一轮对话
+        result1 = await agent.run("北京的天气怎么样?", thread=thread)
+        print(f"助手: {result1.text}")
+
+        # 第二轮对话(上下文保持)
+        result2 = await agent.run("那上海呢?", thread=thread)
+        print(f"助手: {result2.text}")
+
+        # 保存线程 ID 以便后续恢复
+        print(f"会话 ID: {thread.conversation_id}")
+
+asyncio.run(main())
+```
+
+## 快速开始
+
+### 1. 安装 SDK
+
+```bash
+pip install agent-framework --pre
+pip install agent-framework-azure-ai --pre
+```
+
+### 2. 配置环境变量
+
+```bash
+export AZURE_AI_PROJECT_ENDPOINT="https://<project>.services.ai.azure.com/api/projects/<project-id>"
+export AZURE_AI_MODEL_DEPLOYMENT_NAME="gpt-4o-mini"
+export BING_CONNECTION_ID="your-bing-connection-id"  # Web 搜索可选
+```
+
+### 3. 认证方式
+
+```python
+from azure.identity.aio import AzureCliCredential, DefaultAzureCredential
+
+# 方式一:Azure CLI 认证(推荐本地开发)
+credential = AzureCliCredential()
+
+# 方式二:默认认证链(适用多种环境)
+credential = DefaultAzureCredential()
+```
+
+## 配置示例
+
+### 托管工具使用
+
+```python
+import asyncio
+from agent_framework import (
+    HostedCodeInterpreterTool,
+    HostedFileSearchTool,
+    HostedWebSearchTool,
+)
+from agent_framework.azure import AzureAIAgentsProvider
+from azure.identity.aio import AzureCliCredential
+
+async def main():
+    async with (
+        AzureCliCredential() as credential,
+        AzureAIAgentsProvider(credential=credential) as provider,
+    ):
+        agent = await provider.create_agent(
+            name="MultiToolAgent",
+            instructions="你可以执行代码、搜索文件和搜索网络。",
+            tools=[
+                HostedCodeInterpreterTool(),       # 代码解释器
+                HostedWebSearchTool(name="Bing"),   # Web 搜索
+            ],
+        )
+
+        result = await agent.run("用 Python 计算 20 的阶乘")
+        print(result.text)
+
+asyncio.run(main())
+```
+
+### 流式响应
+
+```python
+async def main():
+    async with (
+        AzureCliCredential() as credential,
+        AzureAIAgentsProvider(credential=credential) as provider,
+    ):
+        agent = await provider.create_agent(
+            name="StreamingAgent",
+            instructions="你是一个乐于助人的助手。",
+        )
+
+        print("助手: ", end="", flush=True)
+        async for chunk in agent.run_stream("讲一个短故事"):
+            if chunk.text:
+                print(chunk.text, end="", flush=True)
+        print()
+```
+
+### 结构化输出
+
+```python
+from pydantic import BaseModel, ConfigDict
+
+class WeatherResponse(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    location: str
+    temperature: float
+    unit: str
+    conditions: str
+
+async def main():
+    async with (
+        AzureCliCredential() as credential,
+        AzureAIAgentsProvider(credential=credential) as provider,
+    ):
+        agent = await provider.create_agent(
+            name="StructuredAgent",
+            instructions="以结构化格式提供天气信息。",
+            response_format=WeatherResponse,
+        )
+
+        result = await agent.run("北京的天气?")
+        weather = WeatherResponse.model_validate_json(result.text)
+        print(f"{weather.location}: {weather.temperature}°{weather.unit}, {weather.conditions}")
+```
+
+### 托管工具速查
+
+| 工具 | 导入语句 | 用途 |
+|:-----|:-----|:-----|
+| `HostedCodeInterpreterTool` | `from agent_framework import HostedCodeInterpreterTool` | 执行 Python 代码 |
+| `HostedFileSearchTool` | `from agent_framework import HostedFileSearchTool` | 搜索向量存储 |
+| `HostedWebSearchTool` | `from agent_framework import HostedWebSearchTool` | Bing Web 搜索 |
+| `HostedMCPTool` | `from agent_framework import HostedMCPTool` | 服务端托管 MCP工具 |
+| `MCPStreamableHTTPTool` | `from agent_framework import MCPStreamableHTTPTool` | 客户端管理 MCP server |
+
+## 最佳实践
+
+1. **使用异步上下文管理器**:始终用 `async with provider:` 确保资源正确释放。
+2. **函数直接传入**:将 Python 函数直接传入 `tools=` 参数(自动转换为 AIFunction)。
+3. **参数注解**:用 `Annotated[type, Field(description=...)]` 为函数参数添加描述。
+4. **多轮对话用线程**:`get_new_thread()` 保持上下文。
+5. **结构化输出用 Pydantic**:用 `response_format` 约束输出格式。
+6. **本地开发用 AzureCliCredential**:生产环境用 DefaultAzureCredential 或托管标识。
+
+## 常见问题
+
+### Q1: 认证失败怎么办?
+```bash
+# 确认已登录 Azure CLI
+az login
+# 确认订阅正确
+az account show
+```
+
+### Q2: 智能体创建失败?
+- 检查 `AZURE_AI_PROJECT_ENDPOINT` 是否正确
+- 确认模型部署名称 `AZURE_AI_MODEL_DEPLOYMENT_NAME` 存在
+- 确认账户有 Azure AI Foundry 的访问权限
+
+### Q3: 函数工具未被调用?
+- 确认函数有清晰的 docstring(描述函数用途)
+- 用 `Annotated` 为参数添加 `Field(description=...)`
+- 在 instructions 中明确指示何时使用工具
+
+### Q4: 免费版的限制?
+免费版提供核心智能体构建能力,适合个人开发与原型验证。如需企业级编排、批量智能体管理、监控告警、多租户隔离等高阶能力,请升级至专业版。
+
+### Q5: 如何调试智能体?
+- 使用流式响应 `run_stream()` 观察实时输出
+- 检查 `result` 对象的完整字段
+- 在函数工具中添加日志输出
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **操作系统**: Windows / macOS / Linux
+- **Python**: >= 3.10
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| agent-framework | Python 包 | 必需 | `pip install agent-framework --pre` |
+| agent-framework-azure-ai | Python 包 | 必需 | `pip install agent-framework-azure-ai --pre` |
+| azure-identity | Python 包 | 必需 | 随 agent-framework-azure-ai 安装 |
+| Azure CLI | 命令行工具 | 推荐 | 官方安装(用于认证) |
+| Azure AI Foundry | 云服务 | 必需 | Azure 订阅 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+- 配置 `AZURE_AI_PROJECT_ENDPOINT`:Azure AI Foundry 项目端点
+- 配置 `AZURE_AI_MODEL_DEPLOYMENT_NAME`:模型部署名称
+- 配置 `BING_CONNECTION_ID`:Web 搜索连接 ID(可选)
+- 认证:通过 Azure CLI(`az login`)或 DefaultAzureCredential
+
+### 可用性分类
+- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务

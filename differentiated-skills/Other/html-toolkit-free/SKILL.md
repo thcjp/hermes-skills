@@ -1,0 +1,225 @@
+---
+slug: html-toolkit-free
+name: html-toolkit-free
+version: "1.0.0"
+displayName: HTML 工具箱
+summary: 面向个人开发者的 HTML 常见坑规避工具，覆盖可访问性与表单。
+license: MIT
+edition: free
+description: |-
+  面向个人开发者的 HTML 常见错误规避工具。
+
+  核心能力:
+  - 布局抖动预防与表单陷阱规避
+  - 可访问性缺口（跳转链接、scope、aria）
+  - 链接安全与 SEO 元数据
+  - 原生元素优先（dialog/details）
+
+  适用场景:
+  - 个人站点 HTML 质量自检
+  - 单页表单与可访问性修复
+  - SEO 元数据基础配置
+
+  差异化: 免费版聚焦单页 HTML 常见坑规避，提供可访问性与表单清单，零成本自检。
+
+  触发关键词: html, 可访问性, 表单, 布局抖动, aria, scope, canonical, seo, accessibility, dialog
+tags:
+- HTML
+- 可访问性
+- 个人效率
+- 其他工具
+tools:
+- read
+- exec
+---
+
+# HTML 工具箱（免费版）
+
+## 概述
+
+本工具帮助个人开发者规避 HTML 常见错误：布局抖动、表单陷阱、可访问性缺口、链接安全与 SEO 元数据。提供原生元素优先建议，适合单页自检。
+
+## 核心能力
+
+| 能力 | 说明 | 免费版范围 |
+|:-----|:-----|:-----------|
+| 布局抖动 | img 尺寸与 aspect-ratio | 基础 |
+| 表单陷阱 | autocomplete、fieldset、inputmode | 常见项 |
+| 可访问性 | 跳转链接、scope、aria-hidden | 基础 |
+| 链接安全 | noopener、nofollow ugc | 全覆盖 |
+| SEO 元数据 | canonical、og、twitter | 基础 |
+
+## 使用场景
+
+### 场景一：表单可访问性
+
+```html
+<form>
+  <fieldset>
+    <legend>通知偏好</legend>
+    <label><input type="radio" name="notify" value="email"> 邮件</label>
+    <label><input type="radio" name="notify" value="sms"> 短信</label>
+  </fieldset>
+  <input type="email" autocomplete="email" inputmode="email" enterkeyhint="send">
+  <button type="submit">提交</button>
+</form>
+```
+
+### 场景二：链接安全
+
+```html
+<!-- 外链必加 noopener noreferrer -->
+<a href="https://example.com" target="_blank" rel="noopener noreferrer">外链</a>
+<!-- 用户生成内容加 nofollow ugc -->
+<a href="https://user-site.com" rel="nofollow ugc">用户链接</a>
+```
+
+### 场景三：原生组件优先
+
+```html
+<!-- 模态用 dialog：内置焦点陷阱与 ESC -->
+<dialog open>
+  <p>内容</p>
+  <form method="dialog"><button>关闭</button></form>
+</dialog>
+
+<!-- 手风琴用 details：无需 JS，默认可访问 -->
+<details>
+  <summary>常见问题</summary>
+  <p>答案内容</p>
+</details>
+```
+
+## 快速开始
+
+1. 对照清单逐项检查页面 HTML。
+2. 修复表单可访问性与链接安全。
+3. 用原生元素替代 JS 组件。
+4. 补全 SEO 元数据。
+
+## 配置示例
+
+```html
+<head>
+  <link rel="canonical" href="https://example.com/page">
+  <meta property="og:image" content="https://example.com/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <a href="#main" class="skip">跳到主内容</a>
+  <nav><!-- 导航 --></nav>
+  <main id="main"><!-- 主内容 --></main>
+</body>
+```
+
+## 最佳实践
+
+- **img 必加尺寸**：即使有 CSS 尺寸，`width`/`height` 让浏览器提前预留空间。
+- **button 显式 type**：默认 `type="submit"` 会触发表单提交，非提交按钮写 `type="button"`。
+- **外链必加 rel**：`target="_blank"` 配 `rel="noopener noreferrer"`。
+- **表格加 scope**：`<th scope="col">` 让屏幕阅读器关联表头。
+- **原生优先**：能用 `<dialog>`/`<details>` 就别写 JS。
+
+## 常见问题
+
+**Q1：为什么图片加载会跳位？**
+A：没设 `width`/`height`，浏览器不知预留多少空间。加上尺寸或 `aspect-ratio`。
+
+**Q2：button 点击触发了提交？**
+A：默认 `type="submit"`，非提交按钮要写 `type="button"`。
+
+**Q3：og:image 不显示？**
+A：og 图需要绝对 URL，相对路径在社交平台会失败。
+
+**Q4：免费版支持全站审计吗？**
+A：不支持。全站批量审计与 WCAG 合规为专业版能力。
+
+**Q5：aria-hidden 能用在按钮上吗？**
+A：不能。aria-hidden 用于装饰图标，交互元素用了会让屏幕阅读器忽略它。
+
+## 进阶用法
+
+### 表单可访问性完整模式
+
+```html
+<form>
+  <!-- label 显式关联 -->
+  <label for="email">邮箱</label>
+  <input id="email" type="email" autocomplete="email"
+         required aria-describedby="email-hint">
+  <p id="email-hint">用于接收通知，不会公开</p>
+
+  <!-- fieldset 分组单选 -->
+  <fieldset>
+    <legend>通知方式</legend>
+    <label><input type="radio" name="notify" value="email"> 邮件</label>
+    <label><input type="radio" name="notify" value="sms"> 短信</label>
+  </fieldset>
+
+  <button type="submit">提交</button>
+</form>
+```
+
+### 图片布局抖动预防
+
+```html
+<!-- 方式一：显式尺寸 -->
+<img src="hero.jpg" width="1200" height="630" alt="产品展示">
+
+<!-- 方式二：aspect-ratio -->
+<img src="hero.jpg" alt="产品展示" style="aspect-ratio: 1200/630; width: 100%;">
+```
+
+### 原生组件替代 JS
+
+| 需求 | 原生方案 | 优势 |
+|:-----|:---------|:-----|
+| 模态框 | `<dialog>` | 内置焦点陷阱、ESC 关闭 |
+| 手风琴 | `<details>` | 无需 JS、默认可访问 |
+| 进度条 | `<progress>` | 语义化、可访问 |
+| 下拉菜单 | `<select>` | 原生键盘支持 |
+| 标签页 | `:target` + 锚点 | 纯 CSS 实现 |
+
+## 语义化自查
+
+```text
+[ ] 页面只有一个 <h1>
+[ ] 标题层级不跳级（h1→h2→h3）
+[ ] 导航用 <nav>，主内容用 <main>
+[ ] 图片有 alt（装饰图 alt=""）
+[ ] 表单 label 关联 input
+[ ] 表头用 <th scope>
+[ ] 外链加 rel="noopener noreferrer"
+```
+
+## SEO 元数据清单
+
+```html
+<head>
+  <title>页面标题 - 品牌</title>
+  <meta name="description" content="150 字内页面摘要">
+  <link rel="canonical" href="https://example.com/page">
+  <meta property="og:title" content="分享标题">
+  <meta property="og:image" content="https://example.com/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+```
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+- **操作系统**: Windows / macOS / Linux
+- **浏览器**: 任意现代浏览器
+
+### 第三方依赖
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
+
+### API Key 配置
+- 本工具为纯 Markdown 指令，无需额外 API Key
+
+### 可用性分类
+- **分类**: MD+EXEC（Markdown 指令 + 命令行预览）
+- **说明**: 通过自然语言指令驱动 Agent 修复 HTML 常见问题

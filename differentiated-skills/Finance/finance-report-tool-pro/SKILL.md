@@ -1,0 +1,279 @@
+---
+slug: finance-report-tool-pro
+name: finance-report-tool-pro
+version: "1.0.0"
+displayName: 财报分析专业版
+summary: 企业级财报分析系统，支持批量处理、多格式导出、行业基准与深度预测模型。
+license: MIT
+edition: pro
+description: |-
+  面向专业分析师与机构的财报分析系统。支持批量文件处理、PDF/DOCX/
+  Markdown多格式导出、行业基准对比、高级预测模型与自定义报告模板。
+  内置OCR引擎支持扫描版PDF，全面满足专业财报分析需求。
+
+  核心能力:
+  - 批量处理：多文件并行分析与对比报告生成
+  - 多格式导出：HTML/PDF/DOCX/Markdown
+  - OCR识别：扫描版PDF财务数据提取
+  - 行业基准：同业对标与百分位排名
+  - 高级预测：ARIMA/线性回归/机器学习预测
+  - 自定义模板：企业品牌化报告模板
+
+  适用场景:
+  - 投研团队批量财报分析
+  - 上市公司定期财务体检
+  - 行业对比研究报告
+  - 审计与尽调报告生成
+  - 企业内部财务分析
+
+  差异化:
+  - 兼容免费版全部功能，无缝升级
+  - 新增批量处理与多格式导出
+  - OCR引擎支持扫描版PDF
+  - 行业基准对比与百分位排名
+  - 高级预测模型与自定义模板
+
+  触发关键词: 财报分析, 批量处理, 多格式导出, OCR, 行业基准, 预测模型, 报告模板, report, analyze, batch
+tags:
+- Finance
+- 财报分析
+- 企业级
+- 报告生成
+tools:
+- read
+- exec
+---
+
+# 财报分析专业版（PRO版）
+
+## 概述
+
+本系统为专业分析师和投研机构提供全功能的财报分析能力。相比免费版，PRO版新增批量处理、多格式导出、OCR识别、行业基准对比和高级预测模型，全面满足专业财报分析与报告生成的复杂需求。
+
+PRO版完全兼容免费版全部命令与报告格式，升级后原有工作流可直接使用。
+
+## 核心能力
+
+### PRO版功能增强对比
+
+| 功能 | 免费版 | PRO版 |
+| --- | --- | --- |
+| 数据提取 | Excel/PDF | +扫描版PDF(OCR) |
+| 报告格式 | 仅HTML | HTML/PDF/DOCX/MD |
+| 批量处理 | 不支持 | 多文件并行 |
+| 行业基准 | 不支持 | 同业对标+百分位 |
+| 预测模型 | 基础外推 | ARIMA/ML/回归 |
+| 报告模板 | 固定模板 | 自定义品牌模板 |
+| 对比报告 | 不支持 | 多公司横向对比 |
+
+### 高级预测模型
+
+| 模型 | 适用场景 | 准确度 |
+| --- | --- | --- |
+| 线性回归 | 线性趋势数据 | 中 |
+| ARIMA | 时间序列预测 | 高 |
+| 指数平滑 | 短期预测 | 中高 |
+| 机器学习 | 复杂模式 | 高（需训练数据） |
+| 蒙特卡洛 | 概率区间预测 | 高 |
+
+## 使用场景
+
+### 场景一：批量财报分析
+
+用户输入："分析这20家公司的年报"
+
+```bash
+# 批量处理多个文件
+python3 scripts/batch_report.py \
+  --input-dir ./annual_reports/ \
+  --output-dir ./reports/ \
+  --format pdf \
+  --parallel 5
+
+# 生成对比报告
+python3 scripts/comparison_report.py \
+  --input-dir ./reports/ \
+  --output industry_comparison.xlsx \
+  --benchmark "industry_average"
+```
+
+### 场景二：行业基准对比
+
+用户输入："对比这家公司与行业平均水平"
+
+```bash
+# 行业基准分析
+python3 scripts/benchmark.py \
+  --company "600519.SH" \
+  --industry "白酒" \
+  --metrics "roe,gross_margin,pe,pb" \
+  --output benchmark_report.pdf
+```
+
+### 场景三：自定义报告模板
+
+用户输入："用我们公司的模板生成财报分析"
+
+```bash
+# 使用自定义模板
+python3 scripts/generate_report.py data.xlsx \
+  -o pdf \
+  --template "company_brand" \
+  --logo ./logo.png \
+  --colors "#1a5276,#2e86c1"
+```
+
+## 快速开始
+
+### PRO版初始化
+
+```bash
+# 安装PRO版依赖
+pip install -r requirements_pro.txt
+
+# 配置报告模板
+cp config_pro_template.yaml config_pro.yaml
+```
+
+### 常用命令
+
+```bash
+# 批量处理
+python3 scripts/batch_report.py --input-dir ./data/ --format pdf
+
+# 多格式导出
+python3 scripts/generate_report.py data.xlsx -o pdf,docx,html
+
+# OCR提取
+python3 scripts/generate_report.py scanned_report.pdf --ocr
+
+# 行业基准
+python3 scripts/benchmark.py --company "000001.SZ" --industry "银行业"
+
+# 高级预测
+python3 scripts/generate_report.py data.xlsx \
+  --forecast-model arima \
+  --forecast-years 3
+```
+
+## 配置示例
+
+### PRO企业级配置
+
+```yaml
+pro_config:
+  processing:
+    batch:
+      max_parallel: 5              # 最大并行数
+      timeout: 600                 # 超时（秒）
+    ocr:
+      enabled: true
+      engine: "tesseract"
+      languages: ["chi_sim", "eng"]
+
+  output:
+    formats: ["html", "pdf", "docx", "markdown"]
+    dir: "./reports"
+    template_dir: "./templates"
+    branding:
+      logo: "./assets/logo.png"
+      primary_color: "#1a5276"
+      font: "Microsoft YaHei"
+
+  forecast:
+    models: ["arima", "linear", "exponential"]
+    default_model: "arima"
+    forecast_years: 3
+    confidence_interval: [0.05, 0.95]
+
+  benchmark:
+    industry_data: "./benchmarks/"
+    metrics:
+      - roe
+      - roa
+      - gross_margin
+      - net_margin
+      - pe
+      - pb
+      - debt_ratio
+    percentile_ranking: true
+```
+
+## 最佳实践
+
+### PRO版高级实践
+
+| 实践领域 | 建议做法 |
+| --- | --- |
+| 批量处理 | 先小批量测试模板，确认后全量运行 |
+| OCR质量 | 扫描版PDF建议300DPI以上，清晰度影响提取准确率 |
+| 预测模型 | 数据量少用线性回归，数据充足用ARIMA或ML |
+| 行业基准 | 选择3-5家可比公司，确保口径一致 |
+| 报告品牌 | 使用企业模板保持视觉一致性 |
+
+### 免费版兼容性
+
+```text
+免费版命令 → PRO版命令（增强）：
+generate_report.py data.xlsx -o html → 多格式+批量+OCR
+sparkline趋势图                     → +预测模型可视化
+基础指标计算                         → +行业基准百分位
+```
+
+## 常见问题
+
+### Q1：OCR识别准确率如何？
+
+OCR准确率取决于扫描质量。300DPI以上的清晰扫描件准确率可达90%+。建议优先使用原生PDF或Excel格式，扫描版作为备选。
+
+### Q2：批量处理支持多少文件？
+
+PRO版单批次支持最多50个文件的并行处理。建议根据CPU核心数调整并行度，避免内存不足。
+
+### Q3：行业基准数据从哪来？
+
+PRO版内置常见行业的基准数据。用户也可导入自定义基准数据（如同业公司的财务数据），进行更精准的对标分析。
+
+### Q4：自定义模板如何制作？
+
+PRO版支持基于Jinja2的自定义模板。在templates目录创建HTML模板文件，使用变量占位符（如{{company}}、{{metrics}}），系统自动填充数据。
+
+### Q5：预测模型的置信区间如何解读？
+
+置信区间表示预测值的可能范围。例如95%置信区间表示预测值有95%的概率落在该范围内。区间越窄说明预测越精确，但过低可能意味着模型过拟合。
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
+- **Python版本**: 3.9+
+- **Tesseract OCR**: 4.0+（扫描版PDF识别）
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+| Python | 运行时 | 必需 | 系统安装或conda环境 |
+| pandas | Python库 | 必需 | `pip install pandas` |
+| openpyxl | Python库 | 必需 | `pip install openpyxl` |
+| pdfplumber | Python库 | 必需 | `pip install pdfplumber` |
+| pytesseract | Python库 | 可选 | `pip install pytesseract`（OCR） |
+| jinja2 | Python库 | 必需 | `pip install jinja2`（模板） |
+| statsmodels | Python库 | 可选 | `pip install statsmodels`（ARIMA） |
+| weasyprint | Python库 | 可选 | `pip install weasyprint`（PDF导出） |
+
+### API Key 配置
+
+- PRO版无需外部API Key
+- 所有数据处理与报告生成在本地完成
+- 行业基准数据内置在系统中
+
+### 可用性分类
+
+- **分类**: MD+EXEC（Markdown指令+Python脚本执行）
+- **说明**: 企业级财报分析系统，支持批量处理、OCR识别与多格式导出
+- **PRO版特性**: 批量处理、OCR识别、多格式导出、行业基准、高级预测、自定义模板
+- **兼容性**: 完全兼容免费版全部命令与报告格式

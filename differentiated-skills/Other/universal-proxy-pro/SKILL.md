@@ -1,0 +1,687 @@
+---
+slug: universal-proxy-pro
+name: universal-proxy-pro
+version: "1.0.0"
+displayName: 通用代理工具专业版
+summary: 多电路并发、负载均衡、地区路由、企业审计与节点自建一体的Agent隐私通信平台
+license: MIT
+edition: pro
+description: |-
+  通用代理工具专业版是面向企业级Agent系统的隐私通信代理平台，在免费版单电路代理的基础上，新增多电路并发、流量负载均衡、按地区路由、企业级审计日志、自建代理节点与高可用部署能力。
+
+  核心能力：同时管理10+独立加密电路；请求级负载均衡与故障自动切换；按地区选择出口节点（覆盖全球50+地区）；完整流量审计日志满足合规要求；接入企业自建代理节点构建私有中继网络；多实例集群部署提供99.99%可用性。
+
+  适用场景：企业级爬虫与数据采集、跨境Agent业务调用、合规要求严格的金融/医疗匿名通信、大规模Agent系统的隐私保护、私有代理网络建设。
+
+  差异化：相比免费版的单电路被动使用，专业版提供"代理即基础设施"的企业级能力——从多电路调度到地区路由，从审计合规到节点自建，覆盖企业级代理通信全生命周期。
+
+  触发关键词：多电路并发、负载均衡、地区路由、代理审计、节点自建、企业级代理、隐私通信平台
+tags:
+- 网络代理
+- 企业级
+- 隐私通信
+- 合规审计
+tools:
+- read
+- exec
+---
+
+# 通用代理工具（专业版）
+
+## 概述
+
+当企业内部署大规模Agent系统时，免费版的单电路代理模型会遇到瓶颈：**单电路带宽有限、无法指定出口地区、缺乏审计日志、节点不可控、无故障切换**。一个电路被反爬识别后整个采集任务停摆，一次网络抖动导致代理中断而无人知晓。
+
+通用代理工具专业版正是为企业级代理通信而设计。它在免费版单电路加密转发的基础上，叠加"多电路层 + 调度层 + 路由层 + 审计层 + 节点层"，让代理成为可治理、可调度、可审计的企业基础设施。
+
+## 核心能力
+
+### 能力1：多电路并发管理
+
+同时维护10+独立加密电路，按需分配：
+
+```yaml
+circuits:
+  pool:
+    - id: circuit-us-east
+      region: us-east
+      hops: 3
+      status: ready
+    - id: circuit-eu-west
+      region: eu-west
+      hops: 3
+      status: ready
+    - id: circuit-apac
+      region: ap-singapore
+      hops: 3
+      status: ready
+    
+  max_concurrent: 20
+  auto_rotate: 1000  # 每1000请求自动轮换
+```
+
+每个电路独立维护会话状态，可并行处理请求。
+
+### 能力2：请求级负载均衡
+
+在多电路间智能分配请求：
+
+| 策略 | 算法 | 适用场景 |
+|------|------|----------|
+| 轮询 | Round-Robin | 均匀分配负载 |
+| 最少连接 | Least Connections | 长连接场景 |
+| 地区亲和 | Region Affinity | 按目标地区路由 |
+| 故障转移 | Failover | 主电路故障时切换 |
+
+```yaml
+load_balancer:
+  strategy: region_affinity
+  fallback: round_robin
+  health_check:
+    interval: 30s
+    timeout: 5s
+    failure_threshold: 3
+```
+
+### 能力3：按地区路由
+
+支持全球50+地区出口节点选择：
+
+```bash
+# 指定请求走美国出口
+universal-proxy request \
+  --url https://us-only-api.com \
+  --region us-east
+
+# 指定请求走欧洲出口
+universal-proxy request \
+  --url https://eu-only-api.com \
+  --region eu-west
+```
+
+按地区路由规则配置：
+
+```yaml
+routing:
+  region_rules:
+    - match: "*.us-restricted.com"
+      region: us-east
+    - match: "*.eu-restricted.com"
+      region: eu-west
+    - match: "*.apac-service.com"
+      region: ap-singapore
+```
+
+### 能力4：企业级审计日志
+
+完整记录所有代理通信，满足合规要求：
+
+| 日志字段 | 说明 | 示例 |
+|----------|------|------|
+| timestamp | 精确到毫秒 | 2026-07-18T10:23:45.123Z |
+| request_id | 请求唯一ID | req-abc123 |
+| circuit_id | 使用的电路 | circuit-us-east |
+| source_ip | 调用方IP | 10.0.0.5 |
+| exit_ip | 出口IP | 203.0.113.50 |
+| target_domain | 目标域名 | api.example.com |
+| bytes_sent | 发送字节数 | 1024 |
+| bytes_received | 接收字节数 | 8192 |
+| status | 请求状态 | success/failed |
+| latency_ms | 延迟毫秒 | 245 |
+
+```bash
+# 生成合规审计报告
+universal-proxy audit report \
+  --period 2026-07 \
+  --format pdf \
+  --output ./reports/audit-2026-07.pdf
+```
+
+### 能力5：自建代理节点
+
+接入企业自有的中继节点，构建私有代理网络：
+
+```yaml
+nodes:
+  self_hosted:
+    - id: node-hq
+      endpoint: relay-hq.company.com:9001
+      auth: mtls
+      cert: /etc/ssl/relay.crt
+      key: /etc/ssl/relay.key
+      
+    - id: node-bj
+      endpoint: relay-bj.company.com:9001
+      auth: mtls
+      cert: /etc/ssl/relay.crt
+      key: /etc/ssl/relay.key
+  
+  public_pool:
+    - use_default_circuits: true
+    
+  routing:
+    sensitive: self_hosted  # 敏感流量走自建节点
+    general: public_pool    # 一般流量走公共节点
+```
+
+### 能力6：高可用部署
+
+支持多实例集群部署：
+- 多实例共享电路状态
+- 跨节点故障自动切换
+- 99.99% SLA保障
+- 水平扩展至20+节点
+
+### 能力7：流量监控与告警
+
+实时监控代理流量与电路健康：
+
+```yaml
+monitoring:
+  metrics:
+    - requests_per_second
+    - circuit_health
+    - latency_p99
+    - bandwidth_usage
+    - error_rate
+  
+  alerts:
+    - name: circuit_unhealthy
+      condition: error_rate > 5%
+      action: rotate_circuit
+      
+    - name: bandwidth_spike
+      condition: bandwidth > 100Mbps
+      action: alert_admin
+      
+    - name: region_unavailable
+      condition: region_error_rate > 10%
+      action: failover_to_alternate
+```
+
+## 使用场景
+
+### 场景组1：企业级爬虫 × 大规模数据采集
+
+#### 场景1.1 跨地区电商价格监控
+- 监控50+地区电商价格
+- 每地区使用独立电路
+- 避免被反爬识别封禁
+
+#### 场景1.2 新闻舆情大规模采集
+- 并发抓取1000+新闻源
+- 多电路负载均衡
+- 故障自动切换保障可用性
+
+### 场景组2：跨境Agent业务 × 地区可达性
+
+#### 场景2.1 跨境API调用
+- 国内Agent调用海外API
+- 通过指定地区出口节点
+- 满足API地理可达性要求
+
+#### 场景2.2 多地区服务测试
+- 模拟不同地区用户访问
+- 验证服务地区适配性
+- 测试CDN路由效果
+
+### 场景组3：合规匿名通信 × 金融行业
+
+#### 场景3.1 投研数据匿名采集
+- 隐藏采集方身份
+- 完整审计日志满足合规
+- 避免被采集方识别
+
+#### 场景3.2 反欺诈调查
+- 匿名访问可疑网站
+- 保护调查员身份
+- 多电路轮换避免被识别
+
+### 场景组4：私有代理网络 × 企业自建
+
+#### 场景4.1 全球分支机构互联
+- 自建中继节点串联各分支机构
+- 加密电路保障通信安全
+- 不依赖公共代理节点
+
+#### 场景4.2 内部Agent系统隔离测试
+- 通过自建代理模拟外部访问
+- 验证ACL与WAF规则
+- 渗透测试合规代理使用
+
+### 场景组5：合规审计 × 金融/医疗
+
+#### 场景5.1 金融数据采集合规
+- 所有代理流量完整审计
+- 满足SOX/等保2.0要求
+- 7年日志保留期
+
+#### 场景5.2 医疗研究匿名采集
+- 研究数据匿名化采集
+- 完整审计追溯
+- 满足HIPAA合规
+
+## 快速开始
+
+### 60秒上手（企业部署）
+
+```bash
+# 1. 初始化企业配置
+universal-proxy init --mode enterprise \
+  --db postgresql://user:pass@db:5432/proxy \
+  --circuits 10 \
+  --regions us-east,eu-west,ap-singapore
+
+# 2. 启动代理集群
+universal-proxy serve --port 9050 --workers 4
+
+# 3. 添加自建节点
+universal-proxy node add \
+  --id node-hq \
+  --endpoint relay-hq.company.com:9001 \
+  --auth mtls
+
+# 4. 配置地区路由
+universal-proxy route configure \
+  --rule "*.us-only.com:us-east" \
+  --rule "*.eu-only.com:eu-west"
+
+# 5. 启用审计
+universal-proxy audit enable \
+  --standards SOX,等保2.0 \
+  --retention 2555
+```
+
+### 配置多电路负载均衡
+
+```yaml
+load_balancer:
+  strategy: region_affinity
+  fallback: least_connections
+  
+  circuits:
+    - id: circuit-us-east-1
+      region: us-east
+      weight: 30
+    - id: circuit-us-east-2
+      region: us-east
+      weight: 30
+    - id: circuit-us-west
+      region: us-west
+      weight: 20
+    - id: circuit-eu-west
+      region: eu-west
+      weight: 20
+  
+  health_check:
+    interval: 30s
+    timeout: 5s
+    failure_threshold: 3
+    auto_replace: true
+```
+
+## 配置示例
+
+### 示例1：金融行业完整配置
+
+```yaml
+deployment:
+  mode: enterprise_ha
+  nodes: 5
+  database:
+    backend: postgresql
+    cluster: pg-cluster.internal
+    ha: true
+    replicas: 3
+    
+circuits:
+  pool_size: 20
+  regions: [us-east, us-west, eu-west, eu-central, ap-singapore, ap-tokyo]
+  hops: 3
+  auto_rotate: 1000
+  
+load_balancer:
+  strategy: region_affinity
+  fallback: round_robin
+  
+routing:
+  region_rules:
+    - match: "*.us-restricted.com"
+      region: us-east
+    - match: "*.eu-restricted.com"
+      region: eu-west
+      
+nodes:
+  self_hosted:
+    - id: node-hq
+      endpoint: relay-hq.company.com:9001
+      auth: mtls
+    - id: node-bj
+      endpoint: relay-bj.company.com:9001
+      auth: mtls
+  routing:
+    sensitive: self_hosted
+    general: public_pool
+
+audit:
+  enabled: true
+  standards: [SOX, 等保2.0]
+  retention: 2555
+  immutable: true
+  siem_integration:
+    platform: splunk
+    endpoint: https://siem.company.com/api/logs
+    
+monitoring:
+  metrics: [rps, circuit_health, latency_p99, bandwidth, error_rate]
+  alerts:
+    - circuit_unhealthy
+    - bandwidth_spike
+    - region_unavailable
+```
+
+### 示例2：多地区爬虫配置
+
+```python
+from universal_proxy_pro import ProxyClient
+
+client = ProxyClient(
+    mode='enterprise',
+    db_url='postgresql://user:pass@db:5432/proxy'
+)
+
+# 启动代理集群
+await client.start_cluster(
+    circuits=10,
+    regions=['us-east', 'eu-west', 'ap-singapore']
+)
+
+# 按地区发起请求
+async def fetch_regional(url, region):
+    response = await client.request(
+        url=url,
+        region=region,
+        timeout=30
+    )
+    return response
+
+# 并发采集多地区数据
+import asyncio
+tasks = [
+    fetch_regional('https://us-service.com', 'us-east'),
+    fetch_regional('https://eu-service.com', 'eu-west'),
+    fetch_regional('https://apac-service.com', 'ap-singapore')
+]
+results = await asyncio.gather(*tasks)
+```
+
+### 示例3：自建节点配置
+
+```yaml
+nodes:
+  self_hosted:
+    - id: node-hq
+      endpoint: relay-hq.company.com:9001
+      auth: mtls
+      cert: /etc/ssl/relay.crt
+      key: /etc/ssl/relay.key
+      ca: /etc/ssl/ca.crt
+      capacity: 100  # 最大并发连接
+      
+    - id: node-bj
+      endpoint: relay-bj.company.com:9001
+      auth: mtls
+      cert: /etc/ssl/relay.crt
+      key: /etc/ssl/relay.key
+      capacity: 100
+      
+    - id: node-sh
+      endpoint: relay-sh.company.com:9001
+      auth: mtls
+      cert: /etc/ssl/relay.crt
+      key: /etc/ssl/relay.key
+      capacity: 100
+  
+  # 自建节点之间的电路
+  private_circuits:
+    - id: circuit-private-1
+      hops: [node-hq, node-bj, node-sh]
+      use: sensitive_traffic
+```
+
+## 最佳实践
+
+### 实践1：电路池规模按业务峰值规划
+
+电路数量建议为业务峰值QPS的1.5倍冗余：
+- 峰值100 QPS → 维护15个电路
+- 峰值500 QPS → 维护75个电路
+- 峰值1000 QPS → 维护150个电路
+
+### 实践2：地区分布按业务覆盖配置
+
+不要所有电路集中在同一地区：
+- 业务覆盖哪些地区，配置对应地区电路
+- 每个地区至少2个电路冗余
+- 故障时优先切换至邻近地区
+
+### 实践3：敏感流量走自建节点
+
+涉及企业敏感数据的流量走自建节点：
+- 投研数据、客户数据走自建
+- 公开信息采集走公共节点
+- 通过 routing 规则自动分流
+
+### 实践4：审计日志不可篡改
+
+合规要求下审计日志必须不可篡改：
+- 写入只追加（append-only）存储
+- 定期归档至WORM存储
+- 关键操作加哈希链
+- 异常访问实时告警
+
+### 实践5：定期切换电路避免识别
+
+即使使用代理，长时间使用同一电路仍可能被识别：
+- 每1000次请求自动轮换
+- 每小时主动切换电路
+- 高风险目标每次请求都切换
+
+### 实践6：监控关键指标
+
+建立代理服务监控看板：
+- 请求成功率（应>99%）
+- P99延迟（应<500ms）
+- 电路健康度（应>95%）
+- 异常告警实时通知
+
+## 常见问题
+
+### Q1：专业版支持多少并发电路？
+A：单实例默认20个，可通过水平扩展至数百个。
+
+### Q2：覆盖多少出口地区？
+A：覆盖全球50+主要地区，包括北美、欧洲、亚太、南美、中东。
+
+### Q3：自建节点的硬件要求？
+A：单节点建议4核8G + 100Mbps带宽，可承载100并发连接。
+
+### Q4：审计日志支持哪些合规标准？
+A：内置SOX、HIPAA、GDPR、等保2.0、个人信息保护法等标准模板。
+
+### Q5：能否对接现有SIEM系统？
+A：支持。通过Syslog或HTTP API推送至Splunk/ELK/QRadar等主流SIEM。
+
+### Q6：故障切换时长？
+A：电路故障检测30秒，切换至备用电路5秒，总计<40秒。
+
+### Q7：能否限制代理流量用途？
+A：支持。可配置域名白名单/黑名单，限制代理仅访问指定服务。
+
+### Q8：是否支持私有化部署？
+A：企业版支持完全私有化部署，所有代理节点与日志不出企业网络。
+
+### Q9：监控数据能否推送至现有监控系统？
+A：支持Prometheus/Grafana/Datadog等主流监控系统对接。
+
+### Q10：负载均衡策略可自定义吗？
+A：支持。可通过插件机制实现自定义负载均衡算法。
+
+## 故障排查表
+
+| 现象 | 可能原因 | 排查步骤 | 优先级 |
+|------|----------|----------|--------|
+| 电路建立失败 | 节点不可达 | 检查节点endpoint连通性 | P0 |
+| 请求超时 | 目标服务慢 | 增加timeout至30s+ | P1 |
+| 地区路由错误 | 规则配置错误 | 检查 `routing.region_rules` | P1 |
+| 自建节点认证失败 | 证书过期 | 更新mTLS证书 | P0 |
+| 审计日志缺失 | 磁盘满 | 扩容 + 归档旧日志 | P0 |
+| 负载不均 | 策略不合适 | 切换至 `least_connections` | P2 |
+| 多实例状态不一致 | 数据库同步延迟 | 检查`PostgreSQL`复制状态 | P0 |
+| 监控告警频繁 | 阈值过低 | 调整告警阈值 | P2 |
+
+## 多平台集成示例
+
+### 与Prometheus/Grafana监控集成
+
+```yaml
+monitoring:
+  prometheus:
+    enabled: true
+    endpoint: /metrics
+    metrics:
+      - proxy_requests_total
+      - proxy_circuit_health
+      - proxy_latency_p99
+      - proxy_bandwidth_bytes
+      - proxy_error_rate
+      
+  grafana:
+    dashboard: ./dashboards/proxy-overview.json
+    alerts:
+      - circuit_unhealthy
+      - bandwidth_spike
+```
+
+### 与SIEM系统集成
+
+```yaml
+audit:
+  siem_integration:
+    platform: splunk
+    endpoint: https://siem.company.com/api/logs
+    auth_token: ${SIEM_TOKEN}
+    events:
+      - proxy.request
+      - proxy.circuit_rotate
+      - proxy.node_failure
+      - proxy.alert_triggered
+    realtime: true
+    batch_size: 100
+```
+
+### 与企业VPN集成
+
+```yaml
+integration:
+  vpn:
+    mode: split_tunnel
+    routes:
+      - destination: 10.0.0.0/8  # 内网走VPN
+        via: vpn
+      - destination: 0.0.0.0/0  # 外网走代理
+        via: proxy
+```
+
+## 版本升级迁移指南
+
+### 从免费版迁移至专业版
+
+```bash
+# 1. 升级客户端
+npm install -g universal-proxy-client@pro
+
+# 2. 初始化企业配置（保留免费版配置）
+universal-proxy init --mode enterprise --migrate-from free
+
+# 3. 升级本地存储至PostgreSQL
+universal-proxy db migrate \
+  --from sqlite \
+  --to postgresql://user:pass@db:5432/proxy
+
+# 4. 添加多电路
+universal-proxy circuit add --count 10 --regions us-east,eu-west
+
+# 5. 配置自建节点
+universal-proxy node add --id node-hq --endpoint relay-hq.company.com:9001
+
+# 6. 启用审计
+universal-proxy audit enable --standards SOX,等保2.0
+
+# 7. 验证迁移结果
+universal-proxy verify --all
+```
+
+字段映射表：
+
+| 免费版字段 | 专业版字段 | 迁移策略 |
+|-----------|-----------|----------|
+| sqlite存储 | `PostgreSQL` | 数据迁移 |
+| 单电路 | 多电路池 | 保留原电路，新增N个 |
+| 自动选择地区 | 按地区路由 | 默认保持自动，按需配置规则 |
+| 无审计 | 完整审计 | 默认开启 |
+| 公共节点 | 公共+自建节点 | 默认仅公共，按需添加自建 |
+
+## 专业版特性
+
+本专业版相比免费版新增以下能力：
+
+- ✅ **多电路并发**：单实例支持20+独立电路，可水平扩展至数百
+- ✅ **请求级负载均衡**：轮询/最少连接/地区亲和/故障转移四种策略
+- ✅ **按地区路由**：覆盖全球50+地区出口节点
+- ✅ **企业级审计日志**：满足SOX/HIPAA/GDPR/等保2.0合规要求
+- ✅ **自建代理节点**：接入企业私有中继节点构建私有网络
+- ✅ **流量监控告警**：实时监控关键指标，异常自动告警
+- ✅ **高可用部署**：多实例集群、自动故障转移、99.99% SLA
+- ✅ **企业系统集成**：对接Prometheus/Splunk/VPN等
+- ✅ **优先支持**：专属技术支持、48小时SLA、季度产品咨询
+
+## 定价
+
+| 版本 | 价格 | 功能 | 适用场景 |
+|------|------|------|----------|
+| 免费体验版 | ¥0 | 单电路+本地代理+基础路由 | 个人试用 |
+| 收费专业版 | ¥99/月 或 ¥999/年 | 全功能+企业级特性+优先支持 | 团队/企业 |
+
+专业版通过SkillHub SkillPay发布。
+
+## 依赖说明
+
+### 运行环境
+- **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**：Linux（生产环境推荐Ubuntu 22.04+）/ macOS / Windows
+- **Node.js**：18+
+- **Python**：3.10+（可选，用于审计脚本）
+
+### 第三方依赖
+| 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
+|:-------|:-----|:---------|:---------|:---------|
+| Node.js | 运行时 | 必需 | 官方下载 | 18+ |
+| `PostgreSQL` | 数据库 | 推荐 | 官方下载 | 13+ |
+| SQLite | 数据库 | 可选 | Node.js内置 | 3.x |
+| Redis | 缓存 | 可选 | 官方下载 | 6+ |
+| OpenSSL | 加密库 | 必需 | 系统自带 | 1.1.1+ |
+| mTLS证书 | 证书 | 自建节点必需 | 企业CA签发 | - |
+| LLM API | API | 必需 | 由Agent平台内置LLM提供 | 不限 |
+
+### API Key 配置
+- **SkillHub Token**：存储于 `d:\skills\.skillhub-credentials\api-key.txt`（已gitignore）
+- **自建节点认证Token**：通过环境变量 `PROXY_AUTH_TOKEN` 注入
+- **SIEM集成Token**：通过环境变量 `SIEM_TOKEN` 注入
+- **数据库连接串**：通过环境变量 `DATABASE_URL` 注入
+- **mTLS证书密钥**：存储于企业密钥管理服务（HashiCorp Vault/AWS KMS）
+- **禁止**：在SKILL.md或脚本中硬编码任何Token/密钥
+
+### 可用性分类
+- **分类**：MD+EXEC（Markdown指令 + 命令行工具 + 数据库 + 网络代理）
+- **说明**：核心代理通过CLI启动，企业级特性需要数据库、密钥管理与监控系统集成

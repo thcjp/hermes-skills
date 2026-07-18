@@ -1,0 +1,322 @@
+---
+slug: aegis-security-tool-free
+name: aegis-security-tool-free
+version: "1.0.0"
+displayName: 区块链安全扫描免费版
+summary: 区块链地址与代币安全检查工具,支持地址信誉查询、代币蜜罐检测,适合个人开发者日常交易前快速验证。
+license: MIT
+edition: free
+description: |-
+  区块链安全扫描免费版,为个人用户提供地址信誉查询、代币安全检测等核心能力。
+  核心能力:地址风险检查、代币蜜罐检测、免费额度查询、风险等级分级。
+  适用场景:DeFi交易前验证、代币安全排查、收款地址风险评估。
+  差异化:免费版聚焦核心检查能力,每日100次免费额度,适合个人用户日常使用。
+  触发关键词: 区块链安全, 地址检查, 代币扫描, 蜜罐检测, blockchain, scan, token, address
+tags:
+- 安全
+- 区块链
+- DeFi
+- 免费版
+tools:
+- read
+- exec
+---
+
+# 区块链安全扫描免费版
+
+## 概述
+
+本工具为区块链用户提供轻量级安全检查能力,支持对以太坊、Base、Solana等多链地址进行信誉查询与代币安全检测。免费版提供每日100次检查额度,覆盖个人开发者日常交易验证需求,帮助用户在发送交易前快速识别风险地址与恶意代币。
+
+### 免费版与专业版对比
+
+| 能力维度 | 免费版 | 专业版 |
+|:---------|:-------|:-------|
+| 每日检查额度 | 100次/天 | 无限制 |
+| 交易模拟 | 不支持 | 支持 |
+| 多链覆盖 | 8条主流链 | 15条链+测试网 |
+| 批量检查 | 单次单地址 | 批量CSV导入 |
+| 风险报告导出 | 基础文本 | HTML/PDF/SARIF |
+| API并发 | 1 QPS | 10 QPS |
+| 告警推送 | 不支持 | Webhook/邮件 |
+
+## 核心能力
+
+### 1. 地址信誉查询
+
+查询任意区块链地址的风险评级,识别已知诈骗地址、钓鱼地址与恶意合约。
+
+```bash
+# 查询以太坊地址信誉
+curl -s "https://aegis402.xyz/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454e4438f44e?chain_id=1" | jq
+
+# 查询Base链地址信誉
+curl -s "https://aegis402.xyz/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454e4438f44e?chain_id=8453" | jq
+```
+
+返回示例:
+
+```json
+{
+  "address": "0x742d35Cc...",
+  "chain_id": 1,
+  "risk_level": "LOW",
+  "is_safe": true,
+  "flags": [],
+  "_meta": {
+    "requestId": "uuid-xxx",
+    "tier": "free",
+    "latencyMs": 42
+  }
+}
+```
+
+### 2. 代币蜜罐检测
+
+检测代币是否存在蜜罐风险(买入后无法卖出)、无限增发、隐藏转账等恶意行为。
+
+```bash
+# 检测ERC20代币安全性
+curl -s "https://aegis402.xyz/v1/check-token/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48?chain_id=1" | jq
+```
+
+### 3. 免费额度查询
+
+实时查看当日剩余免费检查次数。
+
+```bash
+curl -s "https://aegis402.xyz/v1/usage" | jq
+```
+
+返回示例:
+
+```json
+{
+  "freeTier": {
+    "enabled": true,
+    "dailyLimit": 100,
+    "usedToday": 12,
+    "remainingChecks": 88,
+    "nextResetAt": "2026-07-19T00:00:00.000Z",
+    "resetTimezone": "UTC"
+  }
+}
+```
+
+## 使用场景
+
+### 场景一:DeFi交易前安全验证
+
+用户准备在去中心化交易所进行代币兑换,需要验证目标代币合约是否安全。
+
+```bash
+#!/bin/bash
+# 交易前安全检查脚本(免费版)
+
+TOKEN_ADDRESS="0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+CHAIN_ID=1
+
+echo "正在检查代币安全性..."
+RESULT=$(curl -s "https://aegis402.xyz/v1/check-token/${TOKEN_ADDRESS}?chain_id=${CHAIN_ID}")
+
+RISK_LEVEL=$(echo "$RESULT" | jq -r '.risk_level')
+IS_SAFE=$(echo "$RESULT" | jq -r '.is_safe')
+
+echo "代币地址: ${TOKEN_ADDRESS}"
+echo "风险等级: ${RISK_LEVEL}"
+echo "是否安全: ${IS_SAFE}"
+
+if [ "$RISK_LEVEL" = "CRITICAL" ] || [ "$IS_SAFE" = "false" ]; then
+    echo "警告: 该代币存在高风险,建议不要交易!"
+    exit 1
+else
+    echo "该代币通过基础安全检查。"
+fi
+```
+
+### 场景二:收款地址风险评估
+
+用户收到来自未知地址的转账请求,需要评估该地址是否存在诈骗风险。
+
+```bash
+#!/bin/bash
+# 收款地址风险评估
+RECEIVER="0x742d35Cc6634C0532925a3b844Bc454e4438f44e"
+
+RESULT=$(curl -s "https://aegis402.xyz/v1/check-address/${RECEIVER}?chain_id=1")
+RISK=$(echo "$RESULT" | jq -r '.risk_level')
+
+case $RISK in
+    LOW)      echo "风险等级: 低 - 可以安全交互" ;;
+    MEDIUM)   echo "风险等级: 中 - 建议谨慎,核实对方身份" ;;
+    HIGH)     echo "风险等级: 高 - 不建议交互" ;;
+    CRITICAL) echo "风险等级: 极高 - 该地址可能为诈骗地址,请立即停止交互" ;;
+esac
+```
+
+### 场景三:多链地址批量查询(基础版)
+
+免费版支持手动循环查询多个地址,适合小规模验证。
+
+```bash
+#!/bin/bash
+# 批量地址检查(免费版,手动循环)
+CHAIN_ID=1
+ADDRESSES=(
+    "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"
+    "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+)
+
+for addr in "${ADDRESSES[@]}"; do
+    RISK=$(curl -s "https://aegis402.xyz/v1/check-address/${addr}?chain_id=${CHAIN_ID}" | jq -r '.risk_level')
+    echo "${addr} -> ${RISK}"
+    sleep 1  # 免费版限速,每次间隔1秒
+done
+```
+
+## 快速开始
+
+### 第一步:验证服务可用性
+
+```bash
+curl -s https://aegis402.xyz/health
+```
+
+### 第二步:查询免费额度
+
+```bash
+curl -s "https://aegis402.xyz/v1/usage" | jq '.freeTier'
+```
+
+### 第三步:执行首次地址检查
+
+```bash
+curl -s "https://aegis402.xyz/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454e4438f44e?chain_id=1" | jq
+```
+
+## 配置示例
+
+### 设置客户端指纹
+
+建议设置稳定的客户端指纹,便于免费额度统计:
+
+```bash
+# 在请求头中设置指纹
+FINGERPRINT="user-$(whoami)-$(hostname)"
+
+curl -s -H "X-Client-Fingerprint: ${FINGERPRINT}" \
+  "https://aegis402.xyz/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454e4438f44e?chain_id=1"
+```
+
+### 支持的链
+
+| 链名称 | Chain ID | 地址检查 | 代币检查 |
+|:-------|:---------|:---------|:---------|
+| Ethereum | 1 | 支持 | 支持 |
+| Base | 8453 | 支持 | 支持 |
+| Polygon | 137 | 支持 | 支持 |
+| Arbitrum | 42161 | 支持 | 支持 |
+| Optimism | 10 | 支持 | 支持 |
+| BSC | 56 | 支持 | 支持 |
+| Avalanche | 43114 | 支持 | 支持 |
+| Solana | solana | 支持 | 支持 |
+
+### 风险等级说明
+
+| 等级 | 含义 | 建议操作 |
+|:-----|:-----|:---------|
+| LOW | 风险较低,基本安全 | 可以正常交互 |
+| MEDIUM | 存在部分风险 | 建议人工复核 |
+| HIGH | 风险显著 | 不建议交互 |
+| CRITICAL | 极高风险,可能恶意 | 立即停止交互 |
+
+## 最佳实践
+
+1. **交易前必查**:在发送任何链上交易前,先对目标地址和代币执行安全检查。
+2. **稳定指纹**:设置固定的 `X-Client-Fingerprint` 头,确保免费额度准确统计。
+3. **额度管理**:定期查询 `/v1/usage` 接口,避免超额后无法使用。
+4. **结果留档**:对高风险交易保留检查结果的JSON输出,便于后续追溯。
+5. **多链注意**:`chain_id` 是被扫描的链,需与实际交易链一致。
+
+```bash
+# 最佳实践:交易前完整检查流程
+check_before_transact() {
+    local to_addr=$1
+    local chain=$2
+    local fingerprint="my-agent-$(date +%Y%m%d)"
+
+    echo "=== 交易前安全检查 ==="
+    echo "目标地址: ${to_addr}"
+    echo "链 ID: ${chain}"
+
+    # 查询额度
+    USAGE=$(curl -s -H "X-Client-Fingerprint: ${fingerprint}" "https://aegis402.xyz/v1/usage")
+    REMAINING=$(echo "$USAGE" | jq -r '.freeTier.remainingChecks')
+    echo "剩余免费额度: ${REMAINING}"
+
+    if [ "$REMAINING" -lt 5 ]; then
+        echo "警告: 免费额度不足,请谨慎使用"
+    fi
+
+    # 地址检查
+    RESULT=$(curl -s -H "X-Client-Fingerprint: ${fingerprint}" \
+        "https://aegis402.xyz/v1/check-address/${to_addr}?chain_id=${chain}")
+
+    RISK=$(echo "$RESULT" | jq -r '.risk_level')
+    echo "地址风险等级: ${RISK}"
+
+    if [ "$RISK" = "CRITICAL" ] || [ "$RISK" = "HIGH" ]; then
+        echo "阻止: 地址风险过高,建议取消交易"
+        return 1
+    fi
+
+    echo "通过: 地址检查完成,可以继续交易"
+    return 0
+}
+```
+
+## 常见问题
+
+### Q1: 免费额度用完后怎么办?
+
+免费额度每日UTC时间0点重置。如需更高额度,可升级至专业版获取无限制检查能力。
+
+### Q2: 查询返回402错误是什么意思?
+
+表示免费额度已用完。可通过 `GET /v1/usage` 确认剩余额度,等待次日重置或升级专业版。
+
+### Q3: 地址检查结果为LOW就一定安全吗?
+
+LOW表示未检测到已知风险,但不代表绝对安全。安全检查是辅助工具,仍需结合自身判断。免费版不包含交易模拟,无法检测复杂的交易逻辑风险。
+
+### Q4: Solana链的chain_id怎么填?
+
+Solana链使用字符串 `solana` 作为chain_id,而非数字。
+
+### Q5: 如何提高检查准确性?
+
+建议同时执行地址检查和代币检查(如涉及代币交易)。专业版提供交易模拟功能,可检测更深层风险。
+
+## 依赖说明
+
+### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **操作系统**: Windows / macOS / Linux
+- **网络**: 需可访问 `https://aegis402.xyz`
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| curl | 命令行工具 | 必需 | 系统自带或包管理器安装 |
+| jq | JSON处理工具 | 推荐 | `apt install jq` / `brew install jq` |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+- 免费版无需API Key,直接调用即可
+- 建议设置 `X-Client-Fingerprint` 请求头用于额度统计
+
+### 可用性分类
+- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行区块链安全检查任务

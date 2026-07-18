@@ -1,0 +1,249 @@
+---
+slug: humanizer-tool-pro
+name: humanizer-tool-pro
+version: "1.0.0"
+displayName: 文本人性化工具专业版
+summary: 面向团队的批量文本去痕、风格库与品牌语气治理工具。
+license: MIT
+edition: pro
+description: |-
+  面向团队的批量文本去痕与品牌语气治理专业工具。
+
+  核心能力:
+  - 批量文档去痕与流水线集成
+  - 品牌语气风格库与多场景模板
+  - AI 痕迹评分与回归追踪
+  - 多语言人性化与术语一致性
+
+  适用场景:
+  - 企业内容团队批量去 AI 味
+  - 品牌语气风格库沉淀与复用
+  - 多语言内容人性化与术语统一
+
+  差异化: 专业版在免费版单篇去痕上扩展批量流水线、品牌风格库、痕迹评分与多语言治理，兼容免费版 24 类痕迹。
+
+  触发关键词: 批量去痕, 品牌语气, 风格库, 痕迹评分, 多语言人性化, 术语一致, humanizer pro, brand voice
+tags:
+- 写作
+- 企业级
+- 品牌语气
+- 批量处理
+- 其他工具
+tools:
+- read
+- exec
+---
+
+# 文本人性化工具（专业版）
+
+## 概述
+
+专业版面向内容团队与企业，在免费版 24 类痕迹去痕基础上，扩展批量文档流水线、品牌语气风格库、AI 痕迹评分回归与多语言人性化。痕迹清单与免费版兼容，已有改写规则可直接纳入风格库。
+
+## 核心能力
+
+| 能力 | 说明 | 专业版增强 |
+|:-----|:-----|:-----------|
+| 批量去痕 | 多文档流水线处理 | CI 集成 |
+| 品牌风格库 | 语气、禁用词、模板 | 版本化治理 |
+| 痕迹评分 | AI 痕迹密度量化 | 回归追踪 |
+| 多语言 | 中英等多语言人性化 | 术语统一 |
+| 术语一致 | 术语表与禁用词表 | 全文校对 |
+
+## 使用场景
+
+### 场景一：批量文档去痕流水线
+
+```python
+# 批量处理脚本
+import os, json
+from pathlib import Path
+
+style = json.load(open("brand-voice.json"))
+for md in Path("content/").glob("*.md"):
+    text = md.read_text(encoding="utf-8")
+    # 调用 Agent 按 style 去痕
+    # humanized = agent.humanize(text, style)
+    # Path("output/").joinpath(md.name).write_text(humanized, encoding="utf-8")
+    print(f"已处理: {md.name}")
+```
+
+### 场景二：品牌语气风格库
+
+```json
+{
+  "brand_voice": {
+    "tone": "专业但平易，不卖弄",
+    "forbidden_words": ["赋能", "抓手", "闭环", "生态", "深度"],
+    "preferred": {"重要": "关键", "此外": "另外"},
+    "rhythm": "短长句交替，避免三连排比",
+    "first_person": "产品文档用「我们」，技术博客可用「我」"
+  },
+  "templates": {
+    "release_note": "先说改了什么，再说为什么，最后说影响",
+    "faq": "问句口语化，答句先给结论再给原因"
+  }
+}
+```
+
+### 场景三：痕迹评分与回归
+
+```text
+评分维度（0-10，越低越自然）:
+  夸大意义密度: 1.2
+  AI 高频词密度: 0.8
+  三连排比次数: 2
+  破折号密度: 0.5
+  模糊归因次数: 1
+综合痕迹分: 1.1（基线 2.3，已下降 52%）
+```
+
+## 快速开始
+
+1. 将免费版 24 类痕迹纳入品牌风格库。
+2. 定义禁用词表与语气模板。
+3. 配置批量处理流水线。
+4. 接入痕迹评分与回归追踪。
+
+## 配置示例
+
+风格库配置（`brand-voice.json`）：
+
+```json
+{
+  "version": "1.2.0",
+  "languages": ["zh", "en"],
+  "terminology": {"AI": "人工智能", "API": "接口"},
+  "scoring": {"baseline": 2.3, "target": 1.5, "block_above": 3.0}
+}
+```
+
+## 最佳实践
+
+- **风格库版本化**：品牌语气变更走版本，便于回溯与协同。
+- **禁用词先行**：先定禁用词表，再定语气，落地最快。
+- **评分入 CI**：内容发布前跑痕迹评分，超阈值阻断。
+- **术语统一**：术语表避免同一概念多种叫法。
+- **多语言对齐**：多语言版本共享术语表与禁用词。
+
+## 免费版兼容性
+
+| 项目 | 免费版 | 专业版 |
+|:-----|:-------|:-------|
+| 24 类痕迹 | 相同 | 相同（纳入风格库） |
+| 范围 | 单篇 | 批量流水线 |
+| 语气 | 基础注入 | 品牌风格库 |
+| 评分 | 不支持 | 量化回归 |
+
+## 常见问题
+
+**Q1：风格库怎么团队协同？**
+A：风格库以 JSON 版本化管理，团队评审后合并。
+
+**Q2：批量处理要多大机器？**
+A：纯文本处理开销低，千篇文档普通笔记本即可。
+
+**Q3：评分能躲过检测器吗？**
+A：评分目标是量化自然度，不针对特定检测器。
+
+**Q4：术语表支持多少条？**
+A：无上限，建议按业务域分组管理。
+
+**Q5：专业版有优先支持吗？**
+A：有。专业版享风格库设计与语气调优咨询。
+
+## 进阶用法
+
+### 批量流水线集成
+
+```python
+# CI 集成：内容发布前跑痕迹评分
+import json, subprocess, sys
+
+def humanize_file(path, style):
+    text = open(path, encoding="utf-8").read()
+    # 调用 Agent 按 style 去痕
+    result = agent.humanize(text, style)
+    score = score_traces(result)
+    if score > style["scoring"]["block_above"]:
+        print(f"{path}: 痕迹分 {score} 超阈值，阻断")
+        sys.exit(1)
+    open(path, "w", encoding="utf-8").write(result)
+
+for md in Path("content/").glob("*.md"):
+    humanize_file(md, json.load(open("brand-voice.json")))
+```
+
+### 多语言术语一致性
+
+```json
+{
+  "terminology": {
+    "AI": {"zh": "人工智能", "en": "AI"},
+    "API": {"zh": "接口", "en": "API"},
+    "cloud": {"zh": "云服务", "en": "cloud"}
+  },
+  "consistency_check": true,
+  "block_on_mismatch": true
+}
+```
+
+```text
+一致性检查:
+  zh 版: 「人工智能」✓
+  en 版: 「AI」✓
+  术语统一，无混用
+```
+
+### 痕迹评分回归
+
+```bash
+# 归档每次评分
+python scripts/trace_score.py --input content/ --save scores/$(date +%F).json
+
+# 趋势对比
+python scripts/trace_trend.py --dir scores/ --baseline main
+```
+
+```text
+趋势报告:
+  基线（main）: 2.3
+  当前: 1.1（下降 52%）
+  分项: 夸大意义 1.2→0.4, 高频词 0.8→0.3
+  判定: 达标，可发布
+```
+
+## 风格库治理
+
+- **版本化协同**：风格库走 Git 版本，团队评审合并。
+- **禁用词先定**：先定禁用词表落地最快，再调语气。
+- **模板分场景**：发布说明、FAQ、博客各有模板。
+- **评分入 CI**：发布前跑评分，超阈值阻断。
+- **定期复盘**：月度复盘评分趋势与误报，调优风格库。
+
+## 多语言注意事项
+
+- **共享术语表**：多语言共享术语映射，避免同一概念多种叫法。
+- **语序差异**：去痕时遵循目标语言语序，别直译。
+- **文化适配**：幽默、比喻按文化适配，避免歧义。
+- **禁用词分语言**：中英文禁用词表分别维护。
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+- **操作系统**: Windows / macOS / Linux
+- **Python**: 3.9+（批量脚本）
+
+### 第三方依赖
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| Python | 运行时 | 批量脚本必需 | python.org |
+| LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
+
+### API Key 配置
+- 本工具为纯 Markdown 指令，无需额外 API Key
+
+### 可用性分类
+- **分类**: MD+EXEC（Markdown 指令 + 命令行执行）
+- **说明**: 通过自然语言指令驱动 Agent 批量去痕并治理品牌语气

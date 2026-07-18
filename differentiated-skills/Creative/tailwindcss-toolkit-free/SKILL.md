@@ -1,0 +1,367 @@
+---
+slug: tailwindcss-toolkit-free
+name: tailwindcss-toolkit-free
+version: "1.0.0"
+displayName: Tailwind CSS工具包免费版
+summary: Tailwind CSS实用类编写工具,涵盖响应式设计、暗黑模式与基础配置,适合个人开发者快速上手。
+license: MIT
+edition: free
+description: |-
+  面向个人开发者的 Tailwind CSS 实用类编写工具(免费版)。
+
+  核心能力:
+  - Tailwind 实用类编写规范与最佳实践
+  - 响应式设计前缀与断点配置
+  - 暗黑模式(dark mode)实现
+  - 状态变体(hover/focus/active)
+  - 任意值(arbitrary values)使用
+  - 基础配置与常见陷阱规避
+
+  适用场景:
+  - 个人项目快速搭建界面
+  - 响应式网页开发
+  - 暗黑模式实现
+  - 学习 Tailwind CSS
+
+  差异化:
+  - 免费版聚焦核心实用类与常见场景
+  - 提供清晰的配置示例与陷阱说明
+  - 适配个人开发者与小型项目
+  - 命令行友好,便于与 Agent 协作
+
+  触发关键词: tailwind, css, utility, classes, responsive, dark mode, 响应式, 暗黑模式, free
+tags:
+- 创意设计
+- 前端开发
+- CSS
+- Tailwind
+- 响应式设计
+tools:
+- read
+- exec
+---
+
+# Tailwind CSS 工具包 - 免费版
+
+## 概述
+
+Tailwind CSS 工具包(免费版)为个人开发者提供 Tailwind 实用类的编写规范与最佳实践。涵盖响应式设计、暗黑模式、状态变体与基础配置,帮助快速构建一致的界面样式。
+
+免费版聚焦核心实用类与常见场景,专业版(`tailwindcss-toolkit-pro`)在此基础上提供自定义插件、设计系统、性能优化与组件库等高级能力。
+
+## 核心能力
+
+| 能力 | 免费版 | 说明 |
+|:-----|:-------|:-----|
+| 实用类编写 | 支持 | 全部核心工具类 |
+| 响应式设计 | 支持 | sm/md/lg/xl/2xl 断点 |
+| 暗黑模式 | 支持 | class 与 media 策略 |
+| 状态变体 | 支持 | hover/focus/active/group |
+| 任意值 | 支持 | `bg-[#xxx]` / `w-[calc()]` |
+| 基础配置 | 支持 | tailwind.config.js |
+| @apply 使用 | 支持 | 含陷阱说明 |
+| 自定义插件 | 不支持 | 升级专业版 |
+| 设计系统 | 不支持 | 升级专业版 |
+| 性能优化 | 不支持 | 升级专业版 |
+| 组件库 | 不支持 | 升级专业版 |
+
+## 使用场景
+
+### 场景一:响应式卡片组件
+
+构建适配多端的卡片组件。
+
+```html
+<!-- 响应式卡片:移动端单列,桌面端三列 -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+  <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+    <h3 class="text-lg font-semibold text-gray-900 mb-2">卡片标题</h3>
+    <p class="text-sm text-gray-600 leading-relaxed">
+      卡片描述文字,使用 leading-relaxed 提升可读性。
+    </p>
+    <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md
+                   hover:bg-blue-600 active:bg-blue-700 transition-colors">
+      查看详情
+    </button>
+  </div>
+</div>
+```
+
+### 场景二:暗黑模式切换
+
+实现明暗主题切换。
+
+```html
+<!-- 配置 darkMode: 'class' -->
+<html class="dark">
+<body class="bg-white dark:bg-gray-900 transition-colors">
+  <div class="max-w-4xl mx-auto p-6">
+    <h1 class="text-3xl font-bold text-gray-900 dark:text-white">
+      标题
+    </h1>
+    <p class="mt-2 text-gray-600 dark:text-gray-300">
+      内容文字,暗黑模式下自动调整颜色。
+    </p>
+    <input class="mt-4 px-3 py-2 border border-gray-300 dark:border-gray-700
+                  bg-white dark:bg-gray-800 text-gray-900 dark:text-white
+                  rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+           placeholder="输入框" />
+  </div>
+</body>
+</html>
+```
+
+```javascript
+// 主题切换脚本
+function toggleTheme() {
+  document.documentElement.classList.toggle('dark');
+  localStorage.setItem('theme',
+    document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+  );
+}
+
+// 初始化主题
+if (localStorage.getItem('theme') === 'dark' ||
+    (!localStorage.getItem('theme') && matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark');
+}
+```
+
+### 场景三:表单与状态样式
+
+构建带状态的表单组件。
+
+```html
+<form class="max-w-md mx-auto space-y-4">
+  <!-- 输入框:focus 状态 -->
+  <div>
+    <label class="block text-sm font-medium text-gray-700 mb-1">邮箱</label>
+    <input type="email"
+           class="w-full px-3 py-2 border border-gray-300 rounded-md
+                  focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+                  disabled:bg-gray-100 disabled:cursor-not-allowed
+                  transition-colors"
+           placeholder="you@example.com" />
+  </div>
+
+  <!-- 错误状态 -->
+  <div>
+    <label class="block text-sm font-medium text-gray-700 mb-1">密码</label>
+    <input type="password"
+           class="w-full px-3 py-2 border border-red-500 rounded-md
+                  focus:ring-2 focus:ring-red-500 focus:border-red-500"
+           placeholder="至少 8 位" />
+    <p class="mt-1 text-sm text-red-600">密码长度不足</p>
+  </div>
+
+  <!-- 提交按钮 -->
+  <button class="w-full py-2 px-4 bg-blue-500 text-white rounded-md
+                 hover:bg-blue-600 active:bg-blue-700
+                 disabled:bg-gray-400 disabled:cursor-not-allowed
+                 transition-colors">
+    提交
+  </button>
+</form>
+```
+
+## 快速开始
+
+### 1. 安装 Tailwind CSS
+
+```bash
+# 方式一:PostCSS 插件(推荐生产)
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+# 方式二:CDN(快速原型)
+# <script src="https://cdn.tailwindcss.com"></script>
+
+# 方式三:CLI 独立使用
+npm install -g tailwindcss
+npx tailwindcss init
+```
+
+### 2. 配置内容路径
+
+```javascript
+// tailwind.config.js
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx,html}",
+    "./components/**/*.{js,jsx,ts,tsx}",
+    "./pages/**/*.{js,jsx,ts,tsx,html}"
+  ],
+  darkMode: 'class',  // 手动切换暗黑模式
+  theme: {
+    extend: {
+      colors: {
+        brand: '#3b82f6',  // 自定义品牌色
+      }
+    },
+  },
+  plugins: [],
+}
+```
+
+### 3. 引入样式
+
+```css
+/* src/style.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+### 4. 构建生产版本
+
+```bash
+# 开发模式(监听变化)
+npx tailwindcss -i ./src/style.css -o ./dist/style.css --watch
+
+# 生产构建(压缩)
+npx tailwindcss -i ./src/style.css -o ./dist/style.css --minify
+```
+
+## 配置示例
+
+### 响应式断点
+
+| 前缀 | 最小宽度 | 说明 |
+|:-----|:---------|:-----|
+| (无) | 0px | 移动端优先,所有尺寸生效 |
+| `sm:` | 640px | 小屏(平板竖屏) |
+| `md:` | 768px | 中屏(平板横屏) |
+| `lg:` | 1024px | 大屏(笔记本) |
+| `xl:` | 1280px | 超大屏(桌面) |
+| `2xl:` | 1536px | 超超大屏 |
+
+### 常用实用类速查
+
+```html
+<!-- 间距 -->
+<div class="p-4 m-2 space-y-3 gap-4">
+
+<!-- 排版 -->
+<h1 class="text-3xl font-bold text-gray-900 leading-tight tracking-tight">
+
+<!-- 颜色 -->
+<div class="bg-blue-500 text-white border border-gray-200">
+
+<!-- 布局 -->
+<div class="flex items-center justify-between grid grid-cols-3 gap-4">
+
+<!-- 响应式 -->
+<div class="grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+<!-- 暗黑模式 -->
+<div class="bg-white dark:bg-gray-900 text-black dark:text-white">
+
+<!-- 状态 -->
+<button class="hover:bg-blue-600 focus:ring-2 active:scale-95">
+
+<!-- 任意值 -->
+<div class="bg-[#1da1f2] w-[calc(100%-2rem)] min-h-[200px]">
+```
+
+## 最佳实践
+
+1. **移动端优先**
+   - 不加前缀的类对所有尺寸生效
+   - `md:` 表示"中等及以上",而非"仅中等"
+   - 从小屏开始设计,逐步增强大屏
+
+```html
+<!-- 正确:移动端单列,大屏三列 -->
+<div class="grid grid-cols-1 lg:grid-cols-3">
+
+<!-- 错误:不要这样理解 -->
+<!-- sm:hidden md:block 不是"仅 md 显示" -->
+```
+
+2. **暗黑模式配置**
+   - 使用 `darkMode: 'class'` 支持手动切换
+   - dark 类放在 `<html>` 或 `<body>` 上
+   - `dark:` 前缀在祖先有 `dark` 类时生效
+
+3. **content 路径必须完整**
+   - 缺少路径会导致生产构建样式丢失
+   - 使用 glob 覆盖所有含类名的文件
+   - 动态类名不会被检测,需用 safelist
+
+```javascript
+// 错误:动态拼接不会被检测
+const color = "blue"
+<div class={`bg-${color}-500`}>  // 生产环境会丢失!
+
+// 正确:使用完整类名
+const colors = { blue: "bg-blue-500", red: "bg-red-500" }
+<div class={colors[color]}>
+```
+
+4. **@apply 使用注意**
+   - `@apply` 会丢失响应式与状态变体
+   - 优先在 HTML 中直接使用类名
+   - 如必须用 @apply,仅用于基础样式
+
+```css
+/* 可以:基础样式 */
+.btn { @apply px-4 py-2 rounded-md font-medium; }
+
+/* 不推荐:响应式与状态会丢失 */
+.card { @apply p-4 hover:shadow-lg md:p-6; }
+```
+
+5. **避免常见陷阱**
+   - `h-screen` 在移动端不准确,用 `h-dvh`
+   - `truncate` 需配合宽度限制
+   - `overflow-hidden` 配合 `rounded-*` 防止溢出
+
+## 常见问题
+
+### Q1: 生产环境样式丢失?
+
+检查 `content` 配置是否覆盖所有含类名的文件。如果构建产物体积异常小,通常是 content 路径遗漏。
+
+### Q2: 暗黑模式不生效?
+
+- 确认 `darkMode: 'class'` 已配置
+- 确认 `<html>` 或 `<body>` 有 `dark` 类
+- `dark:` 前缀依赖祖先的 `dark` 类
+
+### Q3: 动态类名不生效?
+
+JIT 模式只能检测完整的类名字符串。动态拼接(如 `bg-${color}-500`)不会被检测。使用完整类名映射或 safelist。
+
+### Q4: 免费版与专业版的区别?
+
+免费版聚焦核心实用类与常见场景;专业版提供自定义插件、设计系统、性能优化与组件库。大型项目或团队协作建议升级。
+
+### Q5: 是否支持 Tailwind v4?
+
+免费版以 v3 为主流版本。v4 的配置方式有变化(使用 CSS 配置而非 JS)。如需 v4 支持与迁移指导,建议升级专业版。
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **操作系统**: Windows / macOS / Linux
+- **Node.js**: 16 及以上
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| tailwindcss | npm 库 | 必需 | `npm install -D tailwindcss` |
+| postcss | npm 库 | 推荐(生产) | `npm install -D postcss` |
+| autoprefixer | npm 库 | 推荐(生产) | `npm install -D autoprefixer` |
+| Node.js 16+ | 运行时 | 必需 | `nodejs.org` 下载 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+- 本 Skill **无需任何 API Key**
+- Tailwind CSS 为本地构建工具,不依赖云服务
+- CDN 模式仅需引入脚本,无需配置
+
+### 可用性分类
+- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。免费版聚焦 Tailwind CSS 核心实用类与常见场景,适合个人开发者快速构建界面。

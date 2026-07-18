@@ -1,0 +1,374 @@
+---
+slug: music-gen-tool-free
+name: music-gen-tool-free
+version: "1.0.0"
+displayName: 音乐生成工具免费版
+summary: 聚合Suno、Udio等主流AI音乐平台,提供歌词生成、风格匹配与基础乐理支持,适合个人内容创作者。
+license: MIT
+edition: free
+description: |-
+  音乐生成工具免费版帮助个人用户通过聚合多个AI音乐生成平台创建音乐。
+  支持Suno、Udio、Stable Audio等主流服务,提供歌词生成、风格匹配、
+  基础乐理指导与版权注意事项。
+
+  核心能力:
+  - 聚合多个AI音乐生成平台
+  - AI辅助歌词创作(结构化歌词)
+  - 音乐风格匹配与建议
+  - 基础乐理指导(调性、和声、节奏)
+  - 版权与商用注意事项指南
+
+  适用场景:
+  - 个人内容创作(Vlog、播客背景音乐)
+  - 独立游戏与短视频配乐
+  - 音乐爱好者的创作探索
+
+  差异化:
+  - 免费版聚焦基础音乐生成与歌词创作
+  - 提供主流平台对比与选择建议
+  - 与PRO版完全兼容,可平滑升级
+
+  触发关键词: music, 音乐, generate, 生成, suno, udio, song, 歌词, lyrics, 配乐, soundtrack
+tags:
+- 音乐生成
+- AI音乐
+- 歌词创作
+- 配乐
+- 内容创作
+tools:
+- read
+- exec
+---
+
+# 音乐生成工具免费版
+
+## 概述
+
+音乐生成工具免费版帮助个人用户通过聚合多个AI音乐生成平台创建音乐。工具支持Suno、Udio、Stable Audio等主流服务,提供AI辅助歌词创作、音乐风格匹配、基础乐理指导与版权注意事项,让没有专业音乐背景的用户也能产出可用的音乐作品。
+
+本版本面向个人用户与内容创作者,提供基础的音乐生成与歌词创作能力。
+
+## 核心能力
+
+### AI音乐平台聚合
+
+| 平台 | 最佳用途 | 商用许可 | 特点 |
+|------|---------|---------|------|
+| Suno | 流行/电子/民谣完整歌曲 | 付费版可商用 | 全曲生成,含人声 |
+| Udio | 高品质人声歌曲 | 付费版可商用 | 音质优秀,风格多样 |
+| Stable Audio | 纯器乐/环境音乐 | 付费版可商用 | 适合背景音乐 |
+| MusicGen | 开源可本地运行 | 开源许可 | 可定制,需技术能力 |
+| Mubert | 电子/循环音乐 | 付费版可商用 | 实时生成,适合直播 |
+| Soundraw | 背景音乐 | 付费版可商用 | 可编辑结构 |
+| Riffusion | 实验性音乐 | 开源许可 | 基于图像生成音乐 |
+
+### 歌词创作
+
+**结构化歌词框架**:
+
+```text
+[Verse 1]
+第一段主歌,介绍主题与背景
+建立情感基调
+
+[Chorus]
+副歌,核心记忆点
+朗朗上口,重复关键词
+
+[Verse 2]
+第二段主歌,深化主题
+引入新元素或视角
+
+[Chorus]
+副歌重复
+
+[Bridge]
+桥段,转折与高潮
+情感爆发
+
+[Chorus]
+副歌最终重复
+
+[Outro]
+结尾,渐弱收束
+```
+
+### 音乐风格匹配
+
+| 风格 | 适用场景 | BPM范围 | 特征 |
+|------|---------|---------|------|
+| Pop | 流行歌曲 | 100-130 | 朗朗上口,副歌突出 |
+| Electronic | 电子/舞曲 | 120-140 | 合成器,强劲节拍 |
+| Lo-fi | 学习/放松背景 | 70-90 | 柔和,循环 |
+| Cinematic | 影视配乐 | 60-120 | 史诗感,弦乐 |
+| Ambient | 冥想/环境 | 60-80 | 无明显节拍 |
+| Rock | 摇滚 | 110-140 | 吉他,鼓点强烈 |
+
+### 基础乐理支持
+
+- 调性与情感映射
+- 和弦进行建议
+- BPM选择指导
+- 歌曲结构建议
+
+## 使用场景
+
+### 场景一:Vlog背景音乐
+
+需求:内容创作者需要为Vlog制作背景音乐。
+
+```bash
+# 使用Stable Audio生成背景音乐
+# 提示词:"lo-fi hip hop beat, mellow piano, soft drums,
+#         study focus, 80 BPM, instrumental, 2 minutes"
+
+# 或使用Mubert实时生成
+# 风格:Lo-fi
+# 时长:3分钟
+# 用途:Vlog背景
+```
+
+### 场景二:原创歌曲创作
+
+需求:独立音乐人希望创作一首完整歌曲。
+
+```text
+# 歌词创作示例
+[Verse 1]
+城市的灯光在夜里闪烁
+我走在熟悉的街道上
+回忆像风一样吹过
+带走了昨天的忧伤
+
+[Chorus]
+我们在时光中奔跑
+追逐着远方的星光
+即使跌倒也不害怕
+因为心中有方向
+
+[Verse 2]
+每个清晨都是新的开始
+阳光照进窗台
+昨天的泪水已经干涸
+今天会更好
+
+[Chorus]
+我们在时光中奔跑
+追逐着远方的星光
+即使跌倒也不害怕
+因为心中有方向
+
+[Bridge]
+也许路途遥远
+也许风雨交加
+但只要不放弃
+就能到达远方
+
+[Chorus]
+我们在时光中奔跑
+追逐着远方的星光
+即使跌倒也不害怕
+因为心中有方向
+
+[Outro]
+奔跑...奔跑...
+向着星光...
+```
+
+### 场景三:独立游戏配乐
+
+需求:独立游戏开发者需要为主题场景配乐。
+
+```bash
+# 使用MusicGen生成游戏配乐
+# 提示词:"epic orchestral cinematic, fantasy adventure,
+#         strings and brass, heroic theme, 120 BPM,
+#         instrumental, 3 minutes"
+
+# 或使用Suno生成
+# 风格:Cinematic
+# 描述:Epic fantasy adventure theme
+# 结构:Intro -> Build -> Climax -> Outro
+```
+
+## 快速开始
+
+### 步骤一:选择平台
+
+根据需求选择合适的AI音乐平台:
+
+- 需要完整歌曲(含人声) -> Suno / Udio
+- 需要背景音乐(器乐) -> Stable Audio / Mubert
+- 需要可编辑结构 -> Soundraw
+- 需要本地运行 -> MusicGen
+
+### 步骤二:准备提示词
+
+```bash
+# 音乐生成提示词结构
+# [风格] + [乐器] + [情感] + [BPM] + [时长] + [类型]
+
+# 示例
+"upbeat electronic pop, synthesizer and drums, happy energetic,
+ 128 BPM, instrumental, 2 minutes"
+
+"melancholic piano ballad, solo piano, sad reflective,
+ 70 BPM, instrumental, 3 minutes"
+```
+
+### 步骤三:生成与迭代
+
+```bash
+# 生成音乐
+# 1. 在选定的平台上输入提示词
+# 2. 生成多个候选版本
+# 3. 选择最佳版本
+# 4. 如需调整,修改提示词后重新生成
+# 5. 确认后下载使用
+```
+
+## 配置示例
+
+### 歌词创作配置
+
+```yaml
+# lyrics-config.yml
+song:
+  title: "歌曲标题"
+  theme: "主题描述"
+  language: "zh"
+  
+structure:
+  - section: "verse"
+    count: 2
+    lines_per_section: 4
+  - section: "chorus"
+    count: 3
+    lines_per_section: 4
+  - section: "bridge"
+    count: 1
+    lines_per_section: 4
+  - section: "outro"
+    count: 1
+    lines_per_section: 2
+    
+style:
+  genre: "pop"
+  mood: "uplifting"
+  keywords: ["梦想", "希望", "前进"]
+```
+
+### 音乐风格配置
+
+```python
+# 音乐风格匹配
+style_config = {
+    "genre": "lo-fi hip hop",
+    "mood": "relaxed, study focus",
+    "instruments": ["piano", "soft drums", "bass"],
+    "bpm": 80,
+    "duration": "2-3 minutes",
+    "type": "instrumental",
+    "reference": "Lo-fi study beats"
+}
+```
+
+### 平台选择决策
+
+```text
+决策流程:
+
+需要人声?
+├─ 是 -> 需要高品质?
+│   ├─ 是 -> Udio
+│   └─ 否 -> Suno
+└─ 否 -> 需要实时生成?
+    ├─ 是 -> Mubert
+    └─ 否 -> 需要可编辑结构?
+        ├─ 是 -> Soundraw
+        └─ 否 -> Stable Audio / MusicGen
+```
+
+## 最佳实践
+
+### 提示词编写技巧
+
+| 技巧 | 说明 | 示例 |
+|------|------|------|
+| 明确风格 | 指定具体音乐风格 | "lo-fi hip hop"而非"放松音乐" |
+| 列出乐器 | 明确使用的乐器 | "piano, soft drums, bass" |
+| 描述情感 | 说明情绪基调 | "melancholic, reflective" |
+| 指定BPM | 给出节奏速度 | "80 BPM" |
+| 设定时长 | 明确音乐长度 | "2-3 minutes" |
+| 标明类型 | 人声或器乐 | "instrumental"或"with vocals" |
+
+### 歌词创作原则
+
+1. **结构清晰**: 使用标准歌曲结构(主歌-副歌-桥段)
+2. **押韵规律**: 保持韵脚一致,增强记忆点
+3. **情感真实**: 表达真实情感,避免空洞
+4. **记忆点突出**: 副歌要有朗朗上口的旋律与歌词
+5. **故事性**: 歌词应有叙事脉络
+
+### 版权注意事项
+
+| 使用场景 | 注意事项 |
+|---------|---------|
+| 个人欣赏 | 大多数平台允许 |
+| 社交媒体分享 | 需标注来源,部分平台限制 |
+| 商业用途 | 需购买商用许可 |
+| 平台 monetization | 需确认平台政策 |
+| 影视/游戏配乐 | 需购买相应授权 |
+
+**重要**: 各平台政策可能变化,使用前请查阅最新条款。免费版生成的音乐可能限制商用。
+
+## 常见问题
+
+### Q1: 生成的音乐质量不高怎么办?
+
+A: 尝试以下方法:1)优化提示词,更具体描述风格与乐器;2)生成多个版本从中选择;3)调整BPM与情感描述;4)尝试不同平台,各平台擅长风格不同。
+
+### Q2: 免费版支持多少次生成?
+
+A: 免费版受限于各AI音乐平台的免费额度。Suno每天有限免费额度,Udio每周有限免费额度。建议合理规划使用。
+
+### Q3: 生成的音乐可以商用吗?
+
+A: 取决于所用平台与订阅级别。大多数平台免费版生成的音乐不可商用,需购买付费订阅。使用前务必查阅平台最新条款。
+
+### Q4: 歌词创作有什么技巧?
+
+A: 1)先确定主题与情感;2)使用标准歌曲结构;3)保持押韵规律;4)副歌突出记忆点;5)主歌讲述故事,副歌表达核心。
+
+### Q5: 如何选择合适的BPM?
+
+A: 参考风格惯例:慢歌60-80 BPM,流行100-130 BPM,舞曲120-140 BPM。也可根据情感选择:悲伤60-80,快乐120-130,激动130+。
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent平台**: 支持SKILL.md规范的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **操作系统**: Windows / macOS / Linux
+- **浏览器**: 用于访问AI音乐平台
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+| AI音乐平台账户 | 服务 | 必需 | Suno/Udio/Stable Audio等 |
+| 音频播放器 | 工具 | 必需 | 系统自带 |
+
+### API Key 配置
+
+- 本Skill基于Markdown指令驱动,无需额外API Key
+- AI音乐平台需各自注册账户
+- 部分平台提供API接入,需按平台文档配置
+- 本地运行MusicGen需要相应Python环境与模型
+
+### 可用性分类
+
+- **分类**: MD+EXEC(纯Markdown指令+部分执行能力)
+- **说明**: 基于Markdown指令驱动Agent执行音乐生成指导任务,通过AI音乐平台实现音乐输出
+- **免费版限制**: 基础平台聚合、歌词创作模板、无批量生成、无版权管理、无团队协作

@@ -1,0 +1,236 @@
+---
+slug: okx-dex-token-tool-free
+name: okx-dex-token-tool-free
+version: "1.0.0"
+displayName: DEX代币数据入门
+summary: 通过OKX DEX API查询链上代币信息，支持价格、流动性与基础交易数据获取。
+license: MIT
+edition: free
+description: |-
+  面向个人加密货币投资者的DEX代币数据查询工具。通过OKX DEX聚合器
+  API获取多链代币的实时价格、流动性池信息和基础交易数据。适合个人
+  用户进行DeFi代币的研究与追踪。
+
+  核心能力:
+  - 多链代币实时价格查询
+  - 流动性池信息获取
+  - 代币基础信息（合约地址/精度/总量）
+  - 支持以太坊/BSC/Polygon等主流链
+
+  适用场景:
+  - 个人DeFi代币研究
+  - DEX代币价格追踪
+  - 流动性池信息查询
+  - 链上代币基础尽调
+
+  差异化:
+  - 免费版聚焦基础数据查询
+  - 适合个人用户低频使用
+  - 不支持交易执行与批量操作
+  - 不支持高级链上分析
+
+  触发关键词: DEX, 代币, 链上数据, 流动性, DeFi, OKX, token, on-chain, liquidity
+tags:
+- Finance
+- 加密货币
+- DEX
+tools:
+- read
+- exec
+---
+
+# DEX代币数据入门（免费版）
+
+## 概述
+
+本工具为个人加密货币投资者提供DEX（去中心化交易所）代币数据查询能力。通过OKX DEX聚合器API，用户可以获取多链代币的实时价格、流动性池信息和基础链上数据。适合DeFi代币研究与投资决策辅助。
+
+## 核心能力
+
+### 数据查询功能
+
+| 功能 | 说明 | 免费版支持 |
+| --- | --- | --- |
+| 代币价格 | 实时价格与24h变化 | 支持 |
+| 流动性池 | 池子规模与组成 | 支持 |
+| 代币信息 | 合约地址/精度/总量 | 支持 |
+| 交易历史 | 最近交易记录 | 基础查询 |
+| 多链支持 | 支持的区块链 | 主流5条链 |
+| 批量查询 | 多代币并行 | 不支持 |
+| 价格告警 | 阈值通知 | 不支持 |
+| 链上分析 | 深度分析 | 不支持 |
+
+### 支持的区块链
+
+| 链名称 | Chain ID | 支持状态 |
+| --- | --- | --- |
+| Ethereum | 1 | 支持 |
+| BSC | 56 | 支持 |
+| Polygon | 137 | 支持 |
+| Arbitrum | 42161 | 支持 |
+| Optimism | 10 | 支持 |
+
+## 使用场景
+
+### 场景一：查询代币价格
+
+用户输入："查一下Uniswap代币的价格"
+
+```bash
+# 查询代币价格
+python3 scripts/token_info.py --token UNIS --chain ethereum
+
+# 输出：
+# === UNIS 代币信息 ===
+# 链: Ethereum
+# 合约地址: 0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984
+# 当前价格: $6.85 (+2.3%)
+# 24h交易量: $45,230,000
+# 流动性: $120,500,000
+```
+
+### 场景二：流动性池查询
+
+用户输入："看看USDC/WETH池子的流动性"
+
+```bash
+# 查询流动性池
+python3 scripts/liquidity_pool.py \
+  --token-a USDC \
+  --token-b WETH \
+  --chain ethereum
+
+# 输出池子信息
+```
+
+### 场景三：代币基础尽调
+
+用户输入："这个代币合约地址是0x...，帮我查查"
+
+```bash
+# 通过合约地址查询
+python3 scripts/token_info.py \
+  --address 0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984 \
+  --chain ethereum
+
+# 输出代币完整信息
+```
+
+## 快速开始
+
+### 环境准备
+
+```bash
+# 安装依赖
+pip install requests web3
+
+# 配置API（可选，免费版无需API Key）
+# 如有OKX API Key可获得更高频率
+export OKX_API_KEY="your_api_key"  # 可选
+```
+
+### 常用命令
+
+```bash
+# 查询代币
+python3 scripts/token_info.py --token UNIS --chain ethereum
+python3 scripts/token_info.py --token CAKE --chain bsc
+
+# 流动性池
+python3 scripts/liquidity_pool.py --token-a USDC --token-b WETH --chain ethereum
+
+# 代币列表
+python3 scripts/token_list.py --chain ethereum --top 20
+
+# 价格历史
+python3 scripts/price_history.py --token UNIS --days 7
+```
+
+## 配置示例
+
+### 查询配置
+
+```yaml
+query_config:
+  api:
+    endpoint: "https://www.okx.com/dex-api"
+    api_key: "${OKX_API_KEY}"      # 可选，无Key使用公共接口
+    timeout: 30
+    rate_limit: 10                 # 每分钟请求上限
+
+  chains:
+    supported:
+      - ethereum
+      - bsc
+      - polygon
+      - arbitrum
+      - optimism
+
+  cache:
+    ttl: 60                        # 价格缓存60秒
+    storage: "./cache/"
+```
+
+## 最佳实践
+
+1. **合约地址优先**：使用合约地址查询比代币符号更准确
+2. **多链验证**：同一代币可能在不同链上有不同合约
+3. **流动性关注**：低流动性代币滑点大，交易需谨慎
+4. **安全第一**：投资前验证合约地址，防范假冒代币
+
+| 实践要点 | 说明 |
+| --- | --- |
+| 数据时效 | DEX价格实时变化，查询结果仅供参考 |
+| 合约验证 | 务必通过官方渠道核实合约地址 |
+| 流动性风险 | 流动性低于100万美元的池子风险较高 |
+| 免责声明 | 数据仅供参考，不构成投资建议 |
+
+## 常见问题
+
+### Q1：免费版需要OKX API Key吗？
+
+免费版使用公共接口，无需API Key。如有OKX API Key可获得更高请求频率和更多数据维度。
+
+### Q2：支持哪些区块链？
+
+免费版支持以太坊、BSC、Polygon、Arbitrum和Optimism五条主流链。如需更多链支持，建议升级PRO版。
+
+### Q3：可以执行交易吗？
+
+免费版仅提供数据查询，不支持交易执行。如需通过DEX进行代币兑换，建议使用OKX DEX前端或其他DEX界面。
+
+### Q4：数据更新频率如何？
+
+价格数据通过公共接口获取，延迟约1-5分钟。启用缓存后，相同代币的重复查询会命中缓存。
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
+- **Python版本**: 3.8+
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+| Python | 运行时 | 必需 | 系统安装或conda环境 |
+| requests | Python库 | 必需 | `pip install requests` |
+| web3 | Python库 | 可选 | `pip install web3`（链上交互） |
+
+### API Key 配置
+
+| 服务 | 环境变量 | 是否必需 | 用途 |
+|:-------|:---------|:---------|:-----|
+| OKX API | `OKX_API_KEY` | 可选 | 提高请求频率，获取更多数据 |
+
+- 未配置API Key时使用公共接口，频率较低
+- API Key存储在本地环境变量，不会上传
+
+### 可用性分类
+
+- **分类**: MD+EXEC（Markdown指令+Python脚本执行）
+- **说明**: 通过OKX DEX API查询多链代币数据
+- **免费版限制**: 基础数据查询、5条链支持、不支持批量与交易执行

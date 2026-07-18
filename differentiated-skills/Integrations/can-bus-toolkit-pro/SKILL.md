@@ -1,0 +1,334 @@
+---
+slug: can-bus-toolkit-pro
+name: can-bus-toolkit-pro
+version: "1.0.0"
+displayName: CAN总线工具包专业版
+summary: 企业级数据溯源平台，支持OTS时间戳同步、并行索引、篡改检测告警、多传输协议适配与审计报表
+license: MIT
+edition: pro
+description: |-
+  CAN总线工具包专业版是一款面向团队与企业的数据溯源平台，在免费版三列协议基础上，新增OTS外部时间戳同步、并行索引构建、篡改检测告警、多传输协议适配器与审计报表导出等高级能力。
+
+  核心能力：
+  - OTS（OpenTimestamps）外部时间戳同步，提升时间戳可信度
+  - 并行索引构建与批量验证，支持百万级记录快速检索
+  - 篡改检测告警，发现哈希不匹配时自动通知
+  - 多传输协议适配器：MCP工具、A2A、HTTP、消息队列
+  - 审计报表导出（CSV/JSON/HTML），支持按时间与名称筛选
+  - 增量同步与版本对比，追溯数据演变历程
+
+  适用场景：
+  - 企业数据治理需要可审计、可追溯的数据流转记录
+  - 合规场景要求时间戳由第三方信任源背书
+  - 大规模数据集需要按内容哈希快速查找与验证
+
+  差异化：相比免费版新增6项企业级能力，提供完整多角色场景指南与故障排查表。
+
+  触发关键词：数据溯源、OTS时间戳、篡改检测、并行索引、审计报表
+tags:
+- 集成工具
+- 数据溯源
+- 企业审计
+tools:
+- read
+- exec
+---
+
+# CAN总线工具包专业版
+
+企业级数据溯源平台，在三列协议基础上提供OTS时间戳同步、并行索引、篡改检测与审计报表能力。
+
+## 概述
+
+当数据溯源需求从个人验证扩展到企业合规场景时，本地时钟的可信度受到挑战：如何证明时间戳不是事后伪造的？如何在百万级记录中快速查找？如何在数据被篡改时及时告警？专业版针对这些痛点，提供OTS外部时间戳背书、并行索引引擎与自动化篡改检测能力。
+
+专业版向后兼容免费版的所有日志格式，可直接升级替换。
+
+## 核心能力
+
+### OTS外部时间戳同步
+- 与OpenTimestamps服务集成，将本地时间戳锚定到比特币区块链
+- 时间戳由第三方信任源背书，无法事后伪造
+- 支持离线提交与异步确认，不阻塞主流程
+- 提供时间戳验证工具，任何人可独立验证
+
+### 并行索引与批量验证
+- 构建哈希到记录的倒排索引，查找时间从O(n)降至O(1)
+- 支持多线程并行验证，百万级记录全量校验可在分钟内完成
+- 增量索引更新，新增记录无需重建全量索引
+- 索引持久化存储，重启后无需重建
+
+### 篡改检测告警
+- 定时全量校验日志中所有条目的哈希一致性
+- 发现哈希不匹配时自动触发告警（邮件、webhook）
+- 记录篡改事件的详细信息：哪条记录、何时发现、原哈希与新哈希
+- 支持自动回滚到最近一次验证通过的快照
+
+### 多传输协议适配器
+- MCP工具适配器：为MCP工具流转的数据自动打戳
+- A2A适配器：Agent间通信数据自动溯源
+- HTTP适配器：API响应数据自动打戳
+- 消息队列适配器：Kafka、RabbitMQ消息自动溯源
+- 每种适配器可独立启用，按需配置
+
+### 审计报表与可视化
+- 导出审计报表：CSV、JSON、HTML三种格式
+- 按时间范围、名称模式、哈希前缀筛选记录
+- 统计报表：CAN/NOT比例、篡改事件数、索引命中率
+- HTML报表包含可视化图表，便于向非技术人员展示
+
+### 增量同步与版本对比
+- 记录数据的版本演变：同一名称的不同版本按时间排列
+- 版本对比：两个版本的哈希差异定位变更内容
+- 支持按名称查询完整版本历史
+- 合并多个日志文件，统一索引
+
+## 使用场景
+
+### 场景一：合规场景的第三方时间戳背书
+金融场景要求每笔交易记录的时间戳由可信第三方背书。专业版将每条记录的WHEN提交到OTS服务，锚定到比特币区块链。审计时任何人可通过OTS验证工具独立确认时间戳的真实性。
+
+### 场景二：大规模数据集快速查找
+数据湖中存储了数百万份文件，需要按内容查找特定版本。专业版构建哈希倒排索引后，查找时间从分钟级降至毫秒级。新增文件时增量更新索引，无需停机重建。
+
+### 场景三：数据篡改自动告警
+关键数据被意外或恶意修改后，业务方希望第一时间感知。专业版定时全量校验哈希一致性，发现不匹配立即通过webhook推送告警到企业微信或Slack，并记录篡改详情供事后追溯。
+
+### 场景四：多Agent协作的数据溯源
+多个Agent通过MCP工具协议协作处理数据。专业版的MCP工具适配器为每次流转的数据自动打戳，形成完整的溯源链条。事后可通过日志追溯任意一段数据在哪个Agent、何时、以什么内容流转。
+
+### 场景五：审计报表生成
+季度审计时需要向审计团队提交数据流转记录。专业版导出HTML格式审计报表，包含CAN/NOT统计、时间线图表与异常事件列表，审计团队无需理解协议细节即可审阅。
+
+## 快速开始
+
+预计上手时间：约120秒。
+
+### 第一步：初始化索引与配置
+
+```bash
+# 初始化索引数据库
+python scripts/init_index.py --db can_index.db
+
+# 创建配置文件
+cat > config.yaml << 'EOF'
+ots:
+  enabled: true
+  server: "https://a.pool.opentimestamps.org"
+  timeout: 30000
+
+index:
+  dbPath: "can_index.db"
+  parallel: 4
+  increment: true
+
+tamper:
+  checkInterval: 3600
+  alertWebhook: "${ALERT_WEBHOOK_URL}"
+  autoSnapshot: true
+
+adapters:
+  - type: mcp
+    enabled: true
+  - type: http
+    enabled: true
+    port: 9100
+
+report:
+  outputDir: "./reports"
+  formats: ["csv", "json", "html"]
+EOF
+```
+
+### 第二步：启动专业版服务
+
+```bash
+python scripts/can_service.py --config config.yaml
+```
+
+### 第三步：提交OTS时间戳（可选）
+
+```bash
+# 为某条记录提交OTS时间戳
+python scripts/ots_stamp.py --when 1742428800000 --where a7f3b2c1d4e5
+
+# 验证OTS时间戳
+python scripts/ots_verify.py --when 1742428800000 --where a7f3b2c1d4e5
+```
+
+### 第四步：构建并行索引
+
+```bash
+# 全量构建索引
+python scripts/build_index.py --log can.log --db can_index.db --parallel 4
+
+# 按哈希查找
+python scripts/lookup.py --where a7f3b2c1d4e5
+```
+
+### 第五步：导出审计报表
+
+```bash
+# 导出HTML报表
+python scripts/export_report.py --format html --range 2024-01-01:2024-03-31 --output ./reports/q1_audit.html
+```
+
+## 配置示例
+
+### OTS时间戳配置
+
+```yaml
+ots:
+  enabled: true
+  server: "https://a.pool.opentimestamps.org"
+  fallback: "https://b.pool.opentimestamps.org"
+  timeout: 30000
+  retry: 3
+  batchSize: 100
+```
+
+### 篡改检测配置
+
+```yaml
+tamper:
+  checkInterval: 3600
+  alertWebhook: "${ALERT_WEBHOOK_URL}"
+  alertEmail: "security@example.com"
+  autoSnapshot: true
+  snapshotDir: "./snapshots"
+  maxSnapshots: 30
+```
+
+### 多传输适配器配置
+
+```yaml
+adapters:
+  - type: mcp
+    enabled: true
+    autoStamp: true
+  - type: a2a
+    enabled: true
+    autoStamp: true
+  - type: http
+    enabled: true
+    port: 9100
+    endpoints: ["/api/v1/data"]
+  - type: mq
+    enabled: false
+    broker: "kafka://localhost:9092"
+    topic: "data-events"
+```
+
+### 索引配置
+
+| 参数 | 默认值 | 说明 |
+|------|--------|------|
+| `index.dbPath` | `can_index.db` | 索引数据库路径 |
+| `index.parallel` | `4` | 并行构建线程数 |
+| `index.increment` | `true` | 是否增量更新 |
+| `index.cacheSize` | `10000` | 内存缓存条目数 |
+
+## 最佳实践
+
+### OTS时间戳策略
+- 关键数据（交易、合同、决策记录）必须提交OTS
+- 非关键数据可跳过OTS，避免不必要的网络开销
+- 批量提交：将多条记录的哈希合并为一个OTS请求
+- 定期验证OTS时间戳的有效性
+
+### 索引管理建议
+- 索引数据库定期备份，避免单点故障
+- 百万级记录建议parallel设为CPU核心数
+- 增量更新优先于全量重建
+- 索引文件大小约为日志文件的1.5倍，预留磁盘空间
+
+### 篡改检测策略
+- 检查间隔建议1小时，平衡及时性与开销
+- 告警webhook接入企业即时通讯工具
+- 保留至少30天的快照，便于回滚
+- 篡改事件单独记录到安全日志，防止被清除
+
+### 适配器使用建议
+- 按需启用适配器，避免不必要的性能开销
+- MCP工具适配器适合多Agent协作场景
+- HTTP适配器适合API响应数据溯源
+- 消息队列适配器适合事件驱动架构
+
+### 审计报表建议
+- 定期生成月度/季度审计报表
+- HTML报表适合向非技术人员展示
+- CSV/JSON报表适合程序化分析
+- 报表中重点关注NOT记录与篡改事件
+
+## 常见问题
+
+### Q1：OTS时间戳提交失败怎么办？
+OTS服务偶尔不可用。配置中设置了fallback服务器与重试机制。若所有OTS服务器都不可用，记录会标记为"OTS待提交"，后续可批量补提交。
+
+### Q2：并行索引构建占用资源过大？
+调整`index.parallel`参数降低并行度。百万级记录建议parallel设为4-8，避免内存溢出。构建期间建议在低峰期执行。
+
+### Q3：篡改检测发现不匹配如何处理？
+首先确认是真篡改还是误报（如文件被正常更新但未重新打戳）。真篡改时查看快照回滚，误报时为更新后的数据重新打戳。
+
+### Q4：MCP工具适配器如何工作？
+适配器拦截MCP工具协议的数据流转，在数据从一个MCP工具传递到另一个时自动计算哈希、记录时间戳并追加到日志，无需修改现有MCP工具代码。
+
+### Q5：多个日志文件如何合并？
+使用`scripts/merge_logs.py`工具，按WHEN列排序合并多个日志文件，并重建索引。合并时自动去重（相同WHEN+WHERE视为重复）。
+
+### Q6：OTS时间戳验证需要比特币全节点吗？
+不需要。OTS验证只需下载对应的区块链头信息（约50MB），无需运行全节点。验证工具会自动从可信节点获取所需信息。
+
+### Q7：审计报表中NOT比例过高怎么办？
+NOT比例高说明打戳流程不完整。检查数据生产环节，确认是否所有数据都经过三列打戳。可能是某条流水线遗漏了哈希计算或命名步骤。
+
+### Q8：能否与现有日志系统集成？
+可以。HTTP适配器可接收现有日志系统的webhook推送，自动为每条日志打戳。也可通过消息队列适配器消费现有日志流。
+
+## 专业版特性
+
+本专业版相比免费版新增以下能力：
+- OTS外部时间戳同步：锚定到比特币区块链，第三方信任背书
+- 并行索引与批量验证：百万级记录毫秒级查找
+- 篡改检测告警：哈希不匹配时自动通知，支持自动回滚
+- 多传输协议适配器：MCP工具、A2A、HTTP、消息队列
+- 审计报表导出：CSV/JSON/HTML三种格式，支持筛选与统计
+- 增量同步与版本对比：追溯数据演变历程
+
+## 定价
+
+| 版本 | 价格 | 功能 | 适用场景 |
+|------|------|------|----------|
+| 免费体验版 | 0元 | 三列协议+本地日志+基础验证 | 个人试用 |
+| 收费专业版 | 49.9元/月 | 全功能+OTS+并行索引+篡改检测 | 团队/企业 |
+
+专业版通过SkillHub SkillPay发布。
+
+## 依赖说明
+
+### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
+- **Python**: 3.8+（用于索引与OTS脚本）
+- **网络**: OTS同步需可访问OpenTimestamps服务
+
+### 第三方依赖
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| Python | 运行时 | 必需 | python.org官方下载 |
+| sha256sum | 系统命令 | 必需 | 操作系统内置 |
+| OpenTimestamps | Python库 | 可选 | `pip install opentimestamps-client` |
+| SQLite | 数据库 | 必需 | Python内置sqlite3模块 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+> 核心协议零外部依赖。OTS同步与并行索引为可选功能，按需安装依赖。
+
+### API Key 配置
+- **告警Webhook URL**: 通过`ALERT_WEBHOOK_URL`环境变量注入
+- **OTS服务**: 无需API Key，公共服务免费使用
+- **禁止**: 在配置文件中硬编码webhook URL等敏感信息
+
+### 可用性分类
+- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行任务

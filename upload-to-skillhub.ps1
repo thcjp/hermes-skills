@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Batch upload 600 optimized ClawHub skills to SkillHub via clawhub CLI.
 .DESCRIPTION
@@ -74,16 +74,18 @@ function Write-Log {
 
 function Test-ClawhubLogin {
     Write-Host "Checking clawhub login status..." -ForegroundColor Cyan
-    $result = clawhub whoami 2>&1
+    $result = clawhub --registry https://clawhub.ai whoami 2>&1
     if ($LASTEXITCODE -ne 0 -or $result -match "not.*logged|error|fail") {
         Write-Host "Not logged in to ClawHub. Starting login..." -ForegroundColor Yellow
-        clawhub login 2>&1
+        $clawhubToken = Get-Content "d:\skills\.skillhub-credentials\clawhub-token.txt" -Raw
+        $clawhubToken = $clawhubToken.Trim()
+        clawhub --registry https://clawhub.ai login --token $clawhubToken 2>&1
         if ($LASTEXITCODE -ne 0) {
             Write-Host "Login failed. Please run 'clawhub login' manually." -ForegroundColor Red
             return $false
         }
     }
-    Write-Host "Logged in successfully." -ForegroundColor Green
+    Write-Host "Logged in successfully as $result." -ForegroundColor Green
     return $true
 }
 
@@ -101,7 +103,7 @@ function Publish-Skill {
     $displayName = (Get-Culture).TextInfo.ToTitleCase($displayName)
     $changelog = "深度优化版：修复代码块、清除外部引用、移除风险代码、增强元数据，${CategoryCN}分类"
     
-    $args = @("publish", $SkillDir, "--slug", $Slug, "--name", $displayName, "--changelog", $changelog, "--categories", $CategorySlug, "--json")
+    $args = @("--registry", "https://clawhub.ai", "publish", $SkillDir, "--slug", $Slug, "--name", $displayName, "--changelog", $changelog, "--categories", $CategorySlug, "--json")
     
     if ($IsDryRun) {
         $args += "--dry-run"
@@ -126,7 +128,7 @@ function Publish-Skill {
                     # Slug conflict - try with suffix
                     $newSlug = "$Slug-pro"
                     Write-Host "  [CONFLICT] $Slug -> trying $newSlug" -ForegroundColor Yellow
-                    $args = @("publish", $SkillDir, "--slug", $newSlug, "--name", $displayName, "--changelog", $changelog, "--categories", $CategorySlug, "--json")
+                    $args = @("--registry", "https://clawhub.ai", "publish", $SkillDir, "--slug", $newSlug, "--name", $displayName, "--changelog", $changelog, "--categories", $CategorySlug, "--json")
                     if ($IsDryRun) { $args += "--dry-run" }
                     $output = & clawhub @args 2>&1
                     $exitCode = $LASTEXITCODE

@@ -1,0 +1,387 @@
+---
+slug: auto-updater-tool-pro
+name: auto-updater-tool-pro
+version: "1.0.0"
+displayName: 自动更新工具-专业版
+summary: 企业级更新管理平台,支持批量更新、灰度发布、蓝绿部署与全面审计日志
+license: MIT
+edition: pro
+description: |-
+  企业级自动更新管理工具专业版,面向团队与生产环境。
+
+  核心能力:
+  - 多节点批量更新管理
+  - 灰度发布与金丝雀部署
+  - 蓝绿部署与零停机更新
+  - 自动化回滚与健康检查
+  - 更新策略与窗口管理
+  - 审计日志与合规报告
+  - 多环境管理(开发/测试/生产)
+  - API 接口与 CI/CD 集成
+
+  适用场景:
+  - 生产环境多服务器批量更新
+  - 微服务集群滚动更新
+  - 企业级灰度发布管理
+  - 合规审计与变更管理
+
+  差异化:专业版在免费版基础上扩展批量更新、灰度发布、蓝绿部署与审计日志,兼容免费版更新配置。
+
+  触发关键词: update, canary, blue-green, rolling, enterprise, 批量更新, 灰度发布, 蓝绿部署, 滚动更新, 审计日志
+tags:
+- 自动更新
+- 企业级
+- 灰度发布
+- 蓝绿部署
+- 变更管理
+tools:
+- read
+- exec
+---
+
+# 自动更新工具 - 专业版
+
+## 概述
+
+自动更新工具专业版是企业级更新管理平台,在免费版版本检查与差异更新能力之上扩展多节点批量更新、灰度发布、蓝绿部署、自动化回滚与审计日志。适合生产环境多服务器更新、微服务集群滚动发布与企业级变更管理。
+
+专业版兼容免费版更新配置,支持平滑升级。
+
+## 核心能力
+
+### 1. 多节点批量更新
+
+统一管理多个服务器/节点的更新,支持并行执行、进度监控与失败重试。
+
+### 2. 灰度发布
+
+按比例逐步推送更新(如先 1% -> 10% -> 50% -> 100%),观察指标后决定继续或回滚。
+
+### 3. 蓝绿部署
+
+维护两套环境(蓝/绿),更新在备用环境完成验证后切换流量,实现零停机更新。
+
+### 4. 滚动更新
+
+逐个节点更新,每次保持部分节点在线,确保服务不中断。
+
+### 5. 自动化回滚
+
+集成健康检查,更新后自动验证,异常时自动回滚。
+
+### 6. 更新策略
+
+按环境配置更新策略(立即更新/窗口更新/审批更新),支持维护窗口管理。
+
+### 7. 审计日志
+
+所有更新操作全程记录,包含操作者、时间、版本变更、健康状态,满足合规审计。
+
+### 8. CI/CD 集成
+
+提供 API 与 CI/CD 流水线集成,实现代码合并自动触发更新。
+
+## 使用场景
+
+### 场景一:微服务集群滚动更新
+
+对包含多个实例的微服务进行滚动更新。
+
+```bash
+# 配置集群更新
+cat > cluster-update.json << 'EOF'
+{
+  "service": "api-gateway",
+  "strategy": "rolling",
+  "instances": [
+    "node-01.internal",
+    "node-02.internal",
+    "node-03.internal",
+    "node-04.internal",
+    "node-05.internal"
+  ],
+  "maxUnavailable": 1,
+  "maxSurge": 1,
+  "healthCheck": {
+    "url": "http://localhost:8080/health",
+    "timeout": "30s",
+    "retries": 3
+  },
+  "version": "2.1.0",
+  "autoRollback": true
+}
+EOF
+
+# 执行滚动更新
+./updater-pro deploy --config cluster-update.json
+
+# 输出:
+# === 滚动更新: api-gateway ===
+# 目标版本: 2.1.0 (当前: 2.0.0)
+# 策略: 滚动更新 (最大不可用: 1, 最大 surge: 1)
+#
+# [1/5] 更新 node-01.internal...
+#   健康检查... 通过
+# [2/5] 更新 node-02.internal...
+#   健康检查... 通过
+# [3/5] 更新 node-03.internal...
+#   健康检查... 通过
+# [4/5] 更新 node-04.internal...
+#   健康检查... 通过
+# [5/5] 更新 node-05.internal...
+#   健康检查... 通过
+#
+# 更新完成: 5/5 节点已更新至 2.1.0
+# 总耗时: 4分32秒
+```
+
+### 场景二:灰度发布
+
+逐步推送新版本,监控指标后决定是否继续。
+
+```bash
+# 配置灰度发布
+./updater-pro canary \
+  --service "payment-service" \
+  --version "3.0.0" \
+  --stages "1%,10%,50%,100%" \
+  --monitor-interval "5m" \
+  --success-rate 99.5 \
+  --auto-rollback
+
+# 输出:
+# === 灰度发布: payment-service ===
+# 版本: 3.0.0 (当前: 2.9.0)
+#
+# [阶段 1] 灰度 1% (1/100 节点)
+#   部署到: node-03.internal
+#   监控中... (5分钟)
+#   成功率: 99.8% (目标: 99.5%) -> 通过
+#
+# [阶段 2] 灰度 10% (10/100 节点)
+#   部署到: node-01,02,04,05...
+#   监控中... (5分钟)
+#   成功率: 99.7% -> 通过
+#
+# [阶段 3] 灰度 50% (50/100 节点)
+#   监控中... (5分钟)
+#   成功率: 99.9% -> 通过
+#
+# [阶段 4] 全量部署 100%
+#   部署到所有节点
+#   监控中... (5分钟)
+#   成功率: 99.8% -> 通过
+#
+# 灰度发布完成!
+```
+
+### 场景三:蓝绿部署
+
+零停机更新,通过环境切换实现。
+
+```bash
+# 当前活跃环境: 蓝
+# 备用环境: 绿
+
+# 1. 在绿环境部署新版本
+./updater-pro blue-green \
+  --service "web-app" \
+  --version "5.0.0" \
+  --inactive-env "green" \
+  --deploy
+
+# 2. 在绿环境验证
+./updater-pro blue-green \
+  --service "web-app" \
+  --env "green" \
+  --health-check \
+  --smoke-test
+
+# 3. 切换流量到绿环境
+./updater-pro blue-green \
+  --service "web-app" \
+  --switch-to "green" \
+  --drain-timeout "60s"
+
+# 输出:
+# 正在排空蓝环境流量...
+# 蓝环境流量: 100% -> 50% -> 0%
+# 正在将流量导入绿环境...
+# 绿环境流量: 0% -> 50% -> 100%
+# 切换完成! 当前活跃环境: 绿
+# 蓝环境保留为回滚备份
+```
+
+### 场景四:审计日志与合规报告
+
+```bash
+# 查看更新审计日志
+./updater-pro audit log \
+  --from 2025-01-01 --to 2025-01-31 \
+  --service "all"
+
+# 输出:
+# === 更新审计日志 ===
+# 时间         服务          版本         策略     操作者    结果
+# 01-15 10:30  api-gateway   2.0->2.1     滚动     alice     成功
+# 01-16 14:00  payment       2.9->3.0     灰度     bob       成功
+# 01-18 09:15  web-app       4.9->5.0     蓝绿     alice     成功
+# 01-20 16:30  auth-service  1.5->1.6     滚动     charlie   失败(已回滚)
+
+# 生成合规报告
+./updater-pro audit report \
+  --period 2025-01 \
+  --format pdf \
+  --output compliance-2025-01.pdf
+```
+
+## 快速开始
+
+### 从免费版升级
+
+```bash
+# 免费版配置自动兼容
+# 安装专业版
+./updater-pro upgrade --from free
+
+# 配置多节点
+./updater-pro nodes add --file nodes.json
+```
+
+### 配置更新策略
+
+```bash
+# 按环境配置策略
+./updater-pro policy set \
+  --env "production" \
+  --strategy "canary" \
+  --approval-required true \
+  --maintenance-window "02:00-06:00" \
+  --auto-rollback true \
+  --health-check "http://localhost:8080/health"
+```
+
+## 配置示例
+
+### 企业级配置
+
+```json
+{
+  "version": "2.0",
+  "environments": {
+    "development": {
+      "strategy": "immediate",
+      "approvalRequired": false,
+      "autoRollback": true
+    },
+    "staging": {
+      "strategy": "rolling",
+      "approvalRequired": false,
+      "autoRollback": true
+    },
+    "production": {
+      "strategy": "canary",
+      "approvalRequired": true,
+      "maintenanceWindow": "02:00-06:00",
+      "autoRollback": true,
+      "canaryStages": ["1%", "10%", "50%", "100%"],
+      "monitorInterval": "5m",
+      "successRate": 99.5
+    }
+  },
+  "healthCheck": {
+    "timeout": "30s",
+    "retries": 3,
+    "endpoints": ["/health", "/ready"]
+  },
+  "audit": {
+    "enabled": true,
+    "retention": "365d",
+    "storage": "postgresql://audit:***@db/audit"
+  },
+  "api": {
+    "enabled": true,
+    "port": 8443,
+    "auth": "oauth2"
+  }
+}
+```
+
+### 免费版与专业版能力对比
+
+| 能力 | 免费版 | 专业版 |
+|------|--------|--------|
+| 节点数 | 单节点 | 多节点批量 |
+| 更新策略 | 手动 | 滚动/灰度/蓝绿 |
+| 健康检查 | 手动 | 自动验证 |
+| 自动回滚 | 手动 | 自动触发 |
+| 更新窗口 | 无 | 维护窗口管理 |
+| 审批流程 | 无 | 多级审批 |
+| 审计日志 | 基础 | 全程合规审计 |
+| 多环境 | 不支持 | 开发/测试/生产 |
+| CI/CD 集成 | 不支持 | API + 流水线 |
+| 技术支持 | 社区 | 优先工单 + SLA |
+
+## 最佳实践
+
+1. **生产环境必灰度**:生产环境更新必须使用灰度或蓝绿策略,不要直接全量更新
+2. **健康检查必配置**:每次更新后自动健康检查,异常立即回滚
+3. **维护窗口**:生产更新在业务低峰期执行,减少影响
+4. **审批流程**:生产环境更新需审批,避免误操作
+5. **监控指标**:灰度发布期间监控错误率、延迟、成功率等核心指标
+6. **回滚预案**:每次更新前确认回滚方案,确保可快速恢复
+7. **审计留痕**:所有更新操作记录审计日志,满足合规要求
+
+## 常见问题
+
+### Q: 灰度发布中指标异常怎么处理?
+
+A: 专业版支持自动回滚。当灰度阶段监控到成功率低于阈值(如 99.5%),自动回滚已更新的节点。也可手动执行 `./updater-pro canary rollback` 立即回滚。
+
+### Q: 蓝绿部署需要双倍资源吗?
+
+A: 是的,蓝绿部署需要维护两套完整环境。可以通过容器化(如 Kubernetes)动态调度资源,在非更新期间缩减备用环境资源,降低成本。
+
+### Q: 滚动更新的速度如何控制?
+
+A: 通过 `maxUnavailable` 和 `maxSurge` 参数控制。`maxUnavailable=1` 表示每次最多 1 个节点不可用,`maxSurge=1` 表示可以多启动 1 个临时节点。值越小更新越慢但越安全。
+
+### Q: 如何与 Kubernetes 集成?
+
+A: 专业版支持 Kubernetes 原生部署策略。通过 K8s Deployment 的 `RollingUpdate` 策略实现滚动更新,或使用 ArgoCD/Flux 实现 GitOps 模式的自动更新。API 接口可触发 K8s 滚动更新。
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
+- **操作系统**: Windows / macOS / Linux
+- **数据库**: PostgreSQL/MySQL(审计日志)
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| curl | CLI工具 | 必需 | 系统自带 |
+| jq | CLI工具 | JSON处理推荐 | 包管理器安装 |
+| Ansible | 配置管理 | 多节点推荐 | pip install ansible |
+| Kubernetes CLI | K8s管理 | K8s环境必需 | 官方安装 |
+| PostgreSQL | 数据库 | 审计日志必需 | 官方网站下载 |
+| Redis | 缓存 | 大规模推荐 | 官方网站下载 |
+| Node.js | API服务 | API接口必需 | 官方网站下载 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+
+- 多节点 SSH:配置 SSH 密钥认证,或通过 `SSH_PASSWORD` 环境变量
+- 数据库:配置 `AUDIT_DB_URL` 审计日志数据库连接
+- API 接口:通过 `UPDATER_API_KEY` 配置访问密钥
+- Kubernetes:配置 `KUBECONFIG` 或 Service Account Token
+- OAuth2:配置 `OAUTH_CLIENT_ID` 和 `OAUTH_CLIENT_SECRET`
+
+### 可用性分类
+
+- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **说明**: 通过自然语言指令驱动 Agent 执行企业级更新管理,包含批量更新、灰度发布与审计日志
+- **兼容性**: 完全兼容免费版更新配置
+- **支持**: 优先工单支持,SLA 保障响应时间

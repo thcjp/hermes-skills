@@ -1,0 +1,318 @@
+---
+slug: javascript-skills-tool-free
+name: javascript-skills-tool-free
+version: "1.0.0"
+displayName: JavaScript规范工具(免费版)
+summary: 面向个人开发者的JavaScript代码风格指南,涵盖核心规则与基础代码审查能力。
+license: MIT
+edition: free
+description: |-
+  JavaScript规范工具(免费版)为个人开发者提供基础而实用的JavaScript代码风格指导。
+
+  核心能力:
+  - 涵盖对象、数组、函数、字符串等核心语法规范
+  - 提供基础代码审查与风格纠正建议
+  - 输出符合主流规范的JavaScript代码片段
+
+  适用场景:
+  - 个人项目日常编码与自查
+  - 学习现代JavaScript风格惯例
+  - 快速生成规范代码片段
+
+  差异化:
+  - 免费版聚焦核心语法与个人使用场景
+  - 移除所有原始平台与作者引用,纯净适配SkillHub
+  - 中文本地化讲解,降低使用门槛
+
+  触发关键词: javascript, js, style, guide, 代码规范, 风格, lint, es6, 前端
+tags:
+- Development
+- Frontend
+- JavaScript
+- 代码规范
+tools:
+- read
+- exec
+---
+
+# JavaScript规范工具(免费版)
+
+## 概述
+
+JavaScript规范工具(免费版)面向个人开发者,提供经过提炼的JavaScript代码风格指南。当你在请求中提及 JavaScript 或前端编码相关内容时,本工具会自动激活,为你输出符合业界主流规范的代码、给出风格纠正建议,并解释每条规则背后的原因。
+
+本版本聚焦于日常编码中最常用的核心规则集,适合个人项目、学习场景与快速自查。如需团队级规范、性能优化与自动化集成能力,请升级至 PRO 版本。
+
+## 核心能力
+
+| 能力 | 说明 |
+| --- | --- |
+| 风格规则指导 | 覆盖引用、对象、数组、函数、箭头函数、字符串等核心规则 |
+| 代码生成 | 输出符合规范的JavaScript代码片段 |
+| 基础代码审查 | 识别常见风格问题并给出修正建议 |
+| 命名约定 | 提供camelCase / PascalCase / 常量命名指引 |
+
+## 使用场景
+
+### 场景一:个人项目快速编写工具函数
+
+用户希望生成一个深拷贝对象的工具函数,工具会输出符合规范的实现。
+
+```javascript
+/**
+ * 深拷贝一个普通对象或数组,优先使用结构化克隆。
+ * 在不支持 structuredClone 的环境中回退到 JSON 序列化。
+ *
+ * @param {Object|Array} source - 待克隆的值。
+ * @returns {Object|Array} source 的深拷贝。
+ */
+function deepClone(source) {
+  if (typeof structuredClone === 'function') {
+    return structuredClone(source);
+  }
+
+  return JSON.parse(JSON.stringify(source));
+}
+
+export default deepClone;
+```
+
+### 场景二:代码风格自查与修正
+
+用户粘贴一段使用 `var` 和函数声明的旧代码,工具指出问题并给出符合规范的版本。
+
+```javascript
+// 修正前
+var count = 1;
+var items = new Array();
+
+// 修正后
+const count = 1;
+const items = [];
+```
+
+### 场景三:学习ES模块与解构语法
+
+用户询问如何正确使用解构与模块导入,工具给出标准示例。
+
+```javascript
+// 对象解构
+function getFullName({ firstName, lastName }) {
+  return `${firstName} ${lastName}`;
+}
+
+// 数组解构
+const [first, , third] = [1, 2, 3];
+
+// ES 模块
+import { fetchData } from './utils';
+export default fetchData;
+```
+
+## 快速开始
+
+本工具为基于Markdown指令的Prompt Skill,无需安装额外依赖。
+
+1. 在请求中提及 JavaScript 即可自动激活。
+2. 直接描述需求,例如:"写一个处理表单校验的 JavaScript 模块"。
+3. 粘贴代码请求审查,例如:"审查这段 JavaScript 代码的风格问题"。
+
+```text
+用户: 如何在 JavaScript 中正确声明变量?
+工具: 使用 const 声明不会被重新赋值的引用,使用 let 声明需要重新赋值的引用,避免使用 var。
+```
+
+## 配置示例
+
+### 基础ESLint配置(个人项目)
+
+```javascript
+// .eslintrc.js
+module.exports = {
+  env: {
+    browser: true,
+    es2022: true,
+  },
+  extends: ['eslint:recommended'],
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
+  rules: {
+    'no-var': 'error',
+    'prefer-const': 'error',
+    'eqeqeq': ['error', 'always'],
+    'no-unused-vars': 'warn',
+  },
+};
+```
+
+### Prettier基础格式化
+
+```json
+{
+  "singleQuote": true,
+  "semi": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "printWidth": 80
+}
+```
+
+## 最佳实践
+
+### 1. 引用声明
+
+使用 `const` 为主,`let` 为辅,杜绝 `var`。
+
+```javascript
+// 推荐
+const count = 1;
+let mutableValue = 1;
+mutableValue += 1;
+
+// 不推荐
+var count = 1;
+```
+
+### 2. 对象与数组字面量
+
+使用字面量语法创建对象与数组,避免使用构造函数。
+
+```javascript
+// 推荐
+const item = {};
+const items = [];
+
+// 不推荐
+const item = new Object();
+const items = new Array();
+```
+
+### 3. 箭头函数
+
+匿名函数优先使用箭头函数,单表达式可省略大括号与 `return`。
+
+```javascript
+// 推荐
+[1, 2, 3].map((x) => x * 2);
+
+[1, 2, 3].map((x) => {
+  const y = x + 1;
+  return x * y;
+});
+```
+
+### 4. 字符串
+
+单引号 `''` 用于普通字符串,模板字符串用于插值与多行。
+
+```javascript
+// 推荐
+const name = 'Alice';
+const greeting = `Hello, ${name}!`;
+```
+
+### 5. 解构
+
+访问对象多个属性或函数多返回值时使用解构。
+
+```javascript
+// 推荐
+function getFullName({ firstName, lastName }) {
+  return `${firstName} ${lastName}`;
+}
+
+const { left, top } = processInput(input);
+```
+
+### 6. 命名约定
+
+| 类型 | 约定 | 示例 |
+| --- | --- | --- |
+| 变量与函数 | camelCase | `calculateTotal` |
+| 类与构造函数 | PascalCase | `class User {}` |
+| 常量 | UPPERCASE_SNAKE_CASE | `MAX_RETRY_COUNT` |
+
+### 7. 比较运算
+
+使用 `===` 与 `!==`,避免隐式类型转换。
+
+```javascript
+// 推荐
+if (name !== '') { /* ... */ }
+if (collection.length > 0) { /* ... */ }
+
+// 不推荐
+if (name != '') { /* ... */ }
+```
+
+### 8. 模块导入
+
+统一使用 ES 模块,导入语句置于文件顶部。
+
+```javascript
+// 推荐
+import { fetchData } from './utils';
+import {
+  longNameA,
+  longNameB,
+} from 'path/to/module';
+
+export default fetchData;
+```
+
+## 常见问题
+
+### Q1:免费版支持哪些规则?
+
+免费版涵盖引用、对象、数组、解构、字符串、函数、箭头函数、类与构造函数、模块、命名约定、比较运算、块与控制语句、注释与空白、逗号与分号、类型转换、可选链与空值合并等核心规则集。
+
+### Q2:免费版是否支持TypeScript?
+
+本工具主要面向 JavaScript 规范,对 TypeScript 提供基础兼容建议,深度 TypeScript 规范请使用 PRO 版本或专用工具。
+
+### Q3:如何让工具审查我粘贴的代码?
+
+直接在请求中粘贴代码并说明"审查这段 JavaScript 代码的风格问题",工具会逐项给出修正建议。
+
+### Q4:免费版与PRO版的主要差异?
+
+| 维度 | 免费版 | PRO版 |
+| --- | --- | --- |
+| 规则覆盖 | 核心规则集 | 全量规则 + 性能优化 + 安全审查 |
+| 适用对象 | 个人开发者 | 团队与企业 |
+| 自动化集成 | 基础配置示例 | CI/CD + 预提交钩子 + 自定义规则 |
+| 异步最佳实践 | 基础 async/await | 完整并发模型与错误链路 |
+| 支持 | 社区支持 | 优先支持 |
+
+### Q5:工具是否会自动修改我的文件?
+
+本工具基于Markdown指令驱动Agent,实际文件修改由Agent执行。工具仅提供建议与代码片段,是否落盘由用户与Agent配置决定。
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **操作系统**: Windows / macOS / Linux
+- **Node.js版本**: 建议 18 LTS 及以上(用于运行ESLint/Prettier等配套工具)
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+| ESLint | npm包 | 可选 | `npm i -D eslint` |
+| Prettier | npm包 | 可选 | `npm i -D prettier` |
+| Node.js | 运行时 | 可选 | nodejs.org 下载 |
+
+### API Key 配置
+
+- 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)。
+- 若需对接外部Lint服务,请按对应服务文档配置对应环境变量。
+
+### 可用性分类
+
+- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。免费版聚焦个人开发场景的核心规则指导。

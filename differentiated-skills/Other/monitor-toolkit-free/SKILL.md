@@ -1,0 +1,258 @@
+---
+slug: monitor-toolkit-free
+name: monitor-toolkit-free
+version: "1.0.0"
+displayName: 监控工具包-免费版
+summary: 轻量级服务监控工具,支持HTTP/SSL/进程/磁盘检查,状态变更告警,适合个人项目
+license: MIT
+edition: free
+description: |-
+  轻量级服务监控工具免费版,面向个人开发者与小型项目。
+
+  核心能力:
+  - HTTP 接口可用性监控
+  - SSL 证书过期检测
+  - 进程与端口状态检查
+  - 磁盘空间监控
+  - 状态变更邮件/通知告警
+
+  适用场景:
+  - 个人项目 API 健康监控
+  - 网站 SSL 证书到期提醒
+  - 服务器进程存活检查
+
+  差异化:免费版提供基础监控能力,适合个人项目。PRO版扩展多目标批量监控、告警升级、历史趋势分析与团队协作。
+
+  触发关键词: monitor, 监控, http check, ssl, 健康检查, alert, 告警, 磁盘空间
+tags:
+- 监控
+- 运维
+- 告警
+- 健康检查
+tools:
+- read
+- exec
+---
+
+# 监控工具包 - 免费版
+
+## 概述
+
+监控工具包免费版是面向个人开发者与小型项目的轻量级监控方案。用户定义需要监控的目标和检查方式,工具负责按设定间隔执行检查,并在状态发生变化时发出告警通知。
+
+采用「用户定义检查内容,工具负责调度与告警」的模型,灵活适配各种监控需求。
+
+## 核心能力
+
+### 1. HTTP 接口监控
+
+通过 `curl` 检查 URL 的 HTTP 状态码与响应延迟,适合 API 健康检查。
+
+### 2. SSL 证书检测
+
+使用 `openssl` 检查 SSL/TLS 证书的过期时间,提前预警证书到期。
+
+### 3. 进程与端口检查
+
+通过 `pgrep` 检查进程是否运行,通过 `nc` 检查端口是否开放。
+
+### 4. 磁盘空间监控
+
+使用 `df` 检查磁盘剩余空间,防止磁盘写满导致服务中断。
+
+### 5. 状态变更告警
+
+仅在状态发生变化时发出告警(ok 变 fail、fail 变 ok),避免重复通知。
+
+## 使用场景
+
+### 场景一:API 健康监控
+
+监控个人项目的 API 接口,每 5 分钟检查一次。
+
+```bash
+# 创建监控配置
+cat > ~/monitor/monitors.json << 'EOF'
+{
+  "api_prod": {
+    "description": "生产 API 健康检查",
+    "checks": [
+      {"type": "http", "target": "https://api.example.com/health"}
+    ],
+    "interval": "5m",
+    "alert_on": "change",
+    "requires": [],
+    "created": "2025-01-15"
+  }
+}
+EOF
+
+# 手动执行检查
+curl -s -o /dev/null -w "%{http_code} %{time_total}s" https://api.example.com/health
+```
+
+### 场景二:SSL 证书到期提醒
+
+监控域名 SSL 证书,提前 30 天告警。
+
+```bash
+# 检查证书过期时间
+echo | openssl s_client -connect example.com:443 2>/dev/null \
+  | openssl x509 -noout -enddate
+
+# 批量检查多个域名
+for domain in example.com api.example.com cdn.example.com; do
+  echo -n "$domain: "
+  echo | openssl s_client -connect $domain:443 2>/dev/null \
+    | openssl x509 -noout -enddate 2>/dev/null || echo "检查失败"
+done
+```
+
+### 场景三:服务器磁盘与进程监控
+
+检查关键服务进程是否存活,监控磁盘空间。
+
+```bash
+# 进程检查
+pgrep -x "nginx" > /dev/null && echo "nginx: 运行中" || echo "nginx: 未运行"
+pgrep -x "redis" > /dev/null && echo "redis: 运行中" || echo "redis: 未运行"
+
+# 磁盘空间检查(低于 20% 告警)
+df -h / | awk 'NR==2 {gsub(/%/,"",$5); if($5 > 80) print "警告: 根分区使用率 "$5"%"}'
+```
+
+## 快速开始
+
+### 初始化
+
+```bash
+# 创建监控目录
+mkdir -p ~/monitor/logs
+
+# 查看已有监控
+cat ~/monitor/monitors.json 2>/dev/null || echo "暂无监控配置"
+```
+
+### 添加第一个监控
+
+```bash
+# 添加 HTTP 监控
+cat > ~/monitor/monitors.json << 'EOF'
+{
+  "my_website": {
+    "description": "个人网站监控",
+    "checks": [
+      {"type": "http", "target": "https://myblog.example.com"},
+      {"type": "ssl", "target": "myblog.example.com"}
+    ],
+    "interval": "10m",
+    "alert_on": "change"
+  }
+}
+EOF
+```
+
+## 配置示例
+
+### 监控定义格式
+
+```json
+{
+  "monitor_name": {
+    "description": "监控描述",
+    "checks": [
+      {"type": "http", "target": "URL"},
+      {"type": "ssl", "target": "domain"},
+      {"type": "process", "target": "process_name"},
+      {"type": "disk", "target": "/"},
+      {"type": "port", "target": "host:port"}
+    ],
+    "interval": "5m",
+    "alert_on": "change",
+    "requires": []
+  }
+}
+```
+
+### 检查类型一览
+
+| 类型 | 检查内容 | 所需工具 |
+|------|----------|----------|
+| http | URL 状态码 + 延迟 | curl |
+| ssl | 证书过期时间 | openssl |
+| process | 进程是否运行 | pgrep |
+| disk | 磁盘剩余空间 | df |
+| port | 端口是否开放 | nc |
+| custom | 自定义命令 | 用户指定 |
+
+### 告警通知配置
+
+```bash
+# Webhook 告警示例
+curl -X POST https://hooks.example.com/alert \
+  -H "Content-Type: application/json" \
+  -d '{
+    "monitor": "my_website",
+    "status": "fail",
+    "message": "HTTP check failed: 503",
+    "timestamp": "2025-01-15T10:30:00Z"
+  }'
+```
+
+## 最佳实践
+
+1. **仅在变更时告警**:设置 `alert_on: "change"`,避免每 5 分钟收到相同状态通知
+2. **组合检查**:对同一目标配置多种检查(HTTP + SSL),全方位监控
+3. **合理间隔**:个人项目 5-10 分钟足够,避免过于频繁的检查
+4. **日志保留**:检查结果按月归档,便于排查历史问题
+5. **权限最小化**:`requires` 字段仅声明实际需要的权限,不假设有额外访问
+
+## 常见问题
+
+### Q: 如何收到告警通知?
+
+A: 免费版支持 Webhook 方式发送告警。配置一个接收 URL,状态变更时会向该 URL 发送 POST 请求。也可通过环境变量配置 Pushover 等推送服务。
+
+### Q: 检查频率怎么设置合适?
+
+A: 个人项目建议 5-10 分钟。HTTP 检查可短至 1 分钟,SSL 证书检查可长至 1 小时(因为证书到期是以天为单位)。
+
+### Q: 可以监控需要认证的接口吗?
+
+A: 可以。在 HTTP 检查中添加 Authorization 头,通过 curl 的 `-H` 参数传入。注意不要在配置文件中硬编码密码,使用环境变量引用。
+
+### Q: 磁盘空间告警阈值怎么设?
+
+A: 建议设置两级阈值:80% 警告(提醒清理),95% 紧急(可能导致服务异常)。免费版支持在 `custom` 类型中用脚本实现阈值判断。
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
+- **操作系统**: Windows / macOS / Linux
+- **Shell 环境**: Bash 或兼容 Shell
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| curl | CLI工具 | 必需 | 系统自带或包管理器安装 |
+| openssl | CLI工具 | SSL检查必需 | 系统自带 |
+| pgrep | CLI工具 | 进程检查必需 | procps 包 |
+| df | CLI工具 | 磁盘检查必需 | 系统自带 |
+| nc(netcat) | CLI工具 | 端口检查必需 | 包管理器安装 |
+| jq | CLI工具 | JSON处理推荐 | 包管理器安装 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+
+- Webhook 告警:配置接收 URL,无需 API Key
+- Pushover 推送(可选):设置 `PUSHOVER_TOKEN` 和 `PUSHOVER_USER` 环境变量
+- 本 Skill 核心功能无需额外 API Key
+
+### 可用性分类
+
+- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **说明**: 通过自然语言指令驱动 Agent 执行监控检查与告警,依赖系统命令行工具
+- **限制**: 免费版支持单机监控,最多 10 个监控目标,不支持分布式监控与历史趋势分析

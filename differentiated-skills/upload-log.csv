@@ -1,0 +1,100 @@
+﻿timestamp,platform,category,slug,status,http_code,error
+2026-07-18 05:29:10,clawhub,智能代理,ad-insight-hub,success,200,
+2026-07-18 05:29:11,skillhub,智能代理,ad-insight-hub,success,200,
+2026-07-18 05:29:22,clawhub,智能代理,agent-copilot-pro,success,200,
+2026-07-18 05:29:24,skillhub,智能代理,agent-copilot-pro,success,200,
+2026-07-18 05:29:35,clawhub,智能代理,aws-cloud-architect,success,200,
+2026-07-18 05:29:36,skillhub,智能代理,aws-cloud-architect,success,200,
+2026-07-18 05:29:47,clawhub,智能代理,aws-graph-agent,success,200,
+2026-07-18 05:31:19,skillhub,智能代理,aws-graph-agent,success,200,
+2026-07-18 05:31:31,clawhub,智能代理,azure-cloud-architect,success,200,
+2026-07-18 05:31:32,skillhub,智能代理,azure-cloud-architect,success,200,
+2026-07-18 05:31:44,clawhub,智能代理,decision-architect,success,200,
+2026-07-18 05:31:45,skillhub,智能代理,decision-architect,success,200,
+2026-07-18 05:31:57,clawhub,智能代理,evolution-engine,success,200,
+2026-07-18 05:33:29,skillhub,智能代理,evolution-engine,conflict,409,{"success": false, "status": 409, "error": "slug 冲突: slug 'evolution-engine' 已被其他用户占用", "body": {"error": "slug 'evolution-engine' 已被其他用户占用"}}
+
+[EXIT_CODE:1]
+
+2026-07-18 05:33:41,clawhub,智能代理,knowledge-ontology,success,200,
+2026-07-18 05:33:42,skillhub,智能代理,knowledge-ontology,success,200,
+2026-07-18 05:33:53,clawhub,智能代理,llm-assistant-hub,success,200,
+2026-07-18 05:33:54,skillhub,智能代理,llm-assistant-hub,success,200,
+2026-07-18 05:34:05,clawhub,智能代理,localmemo-pro,success,200,
+2026-07-18 05:35:38,skillhub,智能代理,localmemo-pro,success,200,
+2026-07-18 05:35:49,clawhub,智能代理,longmemo-elite,success,200,
+2026-07-18 05:35:50,skillhub,智能代理,longmemo-elite,success,200,
+2026-07-18 05:36:02,clawhub,智能代理,memo-quickstart,success,200,
+2026-07-18 05:36:03,skillhub,智能代理,memo-quickstart,success,200,
+2026-07-18 05:36:14,clawhub,智能代理,memory-distiller,success,200,
+2026-07-18 05:37:46,skillhub,智能代理,memory-distiller,conflict,409,{"success": false, "status": 409, "error": "slug 冲突: slug 'memory-distiller' 已被 clawhub 来源占用", "body": {"error": "slug 'memory-distiller' 已被 clawhub 来源占用"}}
+
+[EXIT_CODE:1]
+
+2026-07-18 05:37:57,clawhub,智能代理,memory-orchestrator,success,200,
+2026-07-18 05:37:58,skillhub,智能代理,memory-orchestrator,conflict,409,{"success": false, "status": 409, "error": "slug 冲突: slug 'memory-orchestrator' 已被 clawhub 来源占用", "body": {"error": "slug 'memory-orchestrator' 已被 clawhub 来源占用"}}
+
+[EXIT_CODE:1]
+
+2026-07-18 05:38:09,clawhub,智能代理,memory-radar,success,200,
+2026-07-18 05:38:11,skillhub,智能代理,memory-radar,success,200,
+2026-07-18 05:38:22,clawhub,智能代理,multi-agent-dev,success,200,
+2026-07-18 05:39:54,skillhub,智能代理,multi-agent-dev,conflict,409,{"success": false, "status": 409, "error": "slug 冲突: slug 'multi-agent-dev' 已被 clawhub 来源占用", "body": {"error": "slug 'multi-agent-dev' 已被 clawhub 来源占用"}}
+
+[EXIT_CODE:1]
+
+2026-07-18 05:40:05,clawhub,智能代理,netdisk-sync-pro,success,200,
+2026-07-18 05:40:07,skillhub,智能代理,netdisk-sync-pro,success,200,
+2026-07-18 05:40:18,clawhub,智能代理,neurocache-pro,success,200,
+2026-07-18 05:40:19,skillhub,智能代理,neurocache-pro,success,200,
+2026-07-18 05:40:30,clawhub,智能代理,persistent-memory-engine,success,200,
+2026-07-18 05:42:02,skillhub,智能代理,persistent-memory-engine,success,200,
+2026-07-18 05:42:13,clawhub,智能代理,productivity-boost,success,200,
+2026-07-18 05:42:15,skillhub,智能代理,productivity-boost,success,200,
+2026-07-18 05:42:26,clawhub,智能代理,redis-cache-master,success,200,
+2026-07-18 05:42:27,skillhub,智能代理,redis-cache-master,success,200,
+2026-07-18 05:42:39,clawhub,智能代理,self-evolving-ai,success,200,
+2026-07-18 05:44:11,skillhub,智能代理,self-evolving-ai,success,200,
+2026-07-18 05:44:23,clawhub,智能代理,token-guard-pro,success,200,
+2026-07-18 05:44:24,skillhub,智能代理,token-guard-pro,success,200,
+2026-07-18 05:44:36,clawhub,智能代理,tool-orchestrator,success,200,
+2026-07-18 05:44:37,skillhub,智能代理,tool-orchestrator,success,200,
+2026-07-18 05:44:49,clawhub,效率工具,autopilot-flow,success,200,
+2026-07-18 05:46:21,skillhub,效率工具,autopilot-flow,success,200,
+2026-07-18 05:46:32,clawhub,效率工具,batch-processor-pro,success,200,
+2026-07-18 05:46:34,skillhub,效率工具,batch-processor-pro,success,200,
+2026-07-18 05:46:45,clawhub,效率工具,biz-auto-hub,success,200,
+2026-07-18 05:46:46,skillhub,效率工具,biz-auto-hub,success,200,
+2026-07-18 05:46:57,clawhub,效率工具,cad-insight-pro,success,200,
+2026-07-18 05:51:42,clawhub,效率工具,cdp-browser-master,success,200,
+2026-07-18 05:51:43,skillhub,效率工具,cdp-browser-master,fail,1,{"success": false, "status": 566, "error": "服务端错误，请稍后重试 (566): <!doctype html><html lang=zh-CN><meta charset=UTF-8><meta content=\"width=device-width,initial-scale=1\" name=viewport><title></title><st
+2026-07-18 05:51:49,skillhub,效率工具,cdp-browser-master,fail,1,{"success": false, "status": 566, "error": "服务端错误，请稍后重试 (566): <!doctype html><html lang=zh-CN><meta charset=UTF-8><meta content=\"width=device-width,initial-scale=1\" name=viewport><title></title><st
+2026-07-18 05:51:55,skillhub,效率工具,cdp-browser-master,fail,1,{"success": false, "status": 566, "error": "服务端错误，请稍后重试 (566): <!doctype html><html lang=zh-CN><meta charset=UTF-8><meta content=\"width=device-width,initial-scale=1\" name=viewport><title></title><st
+2026-07-18 05:52:12,clawhub,效率工具,cloud-ops-orchestrator,success,200,
+2026-07-18 05:56:56,clawhub,效率工具,cron-assist,success,200,
+2026-07-18 06:01:41,clawhub,效率工具,cron-guard,success,200,
+2026-07-18 06:01:42,skillhub,效率工具,cron-guard,fail,1,{"success": false, "status": 566, "error": "服务端错误，请稍后重试 (566): <!doctype html><html lang=zh-CN><meta charset=UTF-8><meta content=\"width=device-width,initial-scale=1\" name=viewport><title></title><st
+2026-07-18 06:01:48,skillhub,效率工具,cron-guard,fail,1,{"success": false, "status": 566, "error": "服务端错误，请稍后重试 (566): <!doctype html><html lang=zh-CN><meta charset=UTF-8><meta content=\"width=device-width,initial-scale=1\" name=viewport><title></title><st
+2026-07-18 06:01:54,skillhub,效率工具,cron-guard,fail,1,{"success": false, "status": 566, "error": "服务端错误，请稍后重试 (566): <!doctype html><html lang=zh-CN><meta charset=UTF-8><meta content=\"width=device-width,initial-scale=1\" name=viewport><title></title><st
+2026-07-18 06:02:10,clawhub,效率工具,cron-master-pro,success,200,
+2026-07-18 06:06:56,clawhub,效率工具,cron-scheduler-pro,success,200,
+2026-07-18 06:11:41,clawhub,效率工具,desktop-autopilot,success,200,
+2026-07-18 06:16:27,clawhub,效率工具,excel-maestro,success,200,
+2026-07-18 06:21:20,clawhub,效率工具,flow-architect,success,200,
+2026-07-18 06:26:18,clawhub,效率工具,flow-editor-pro,success,200,
+2026-07-18 06:31:11,clawhub,效率工具,linear-cli-pro,success,200,
+2026-07-18 06:36:08,clawhub,效率工具,linear-workflow-bot,success,200,
+2026-07-18 06:36:09,skillhub,效率工具,linear-workflow-bot,fail,1,{"success": false, "status": 566, "error": "服务端错误，请稍后重试 (566): <!doctype html><html lang=zh-CN><meta charset=UTF-8><meta content=\"width=device-width,initial-scale=1\" name=viewport><title></title><st
+2026-07-18 06:36:15,skillhub,效率工具,linear-workflow-bot,fail,1,{"success": false, "status": 566, "error": "服务端错误，请稍后重试 (566): <!doctype html><html lang=zh-CN><meta charset=UTF-8><meta content=\"width=device-width,initial-scale=1\" name=viewport><title></title><st
+2026-07-18 06:36:21,skillhub,效率工具,linear-workflow-bot,fail,1,{"success": false, "status": 566, "error": "服务端错误，请稍后重试 (566): <!doctype html><html lang=zh-CN><meta charset=UTF-8><meta content=\"width=device-width,initial-scale=1\" name=viewport><title></title><st
+2026-07-18 06:36:42,clawhub,效率工具,macro-pulse,success,200,
+2026-07-18 06:41:45,clawhub,效率工具,notes-cli-toolkit,success,200,
+2026-07-18 06:46:39,clawhub,效率工具,office-productivity-hub,success,200,
+2026-07-18 06:51:36,clawhub,效率工具,pcb-design-assistant,success,200,
+2026-07-18 06:56:33,clawhub,效率工具,security-radar,success,200,
+2026-07-18 07:01:41,clawhub,效率工具,system-controller,success,200,
+2026-07-18 07:06:42,clawhub,效率工具,update-guardian,success,200,
+2026-07-18 07:11:45,clawhub,效率工具,vault-master-pro,success,200,
+2026-07-18 07:16:43,clawhub,效率工具,vault-sync-engine,success,200,
+2026-07-18 07:21:42,clawhub,效率工具,workflow-lite,success,200,
+2026-07-18 07:26:47,clawhub,效率工具,workflow-symphony,success,200,
