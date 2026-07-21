@@ -48,12 +48,27 @@ WHAT    人类可读名称        你的称呼            trust find-fast
 
 ## 依赖说明
 
-| 依赖项 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
-| LLM API | 外部服务 | 是 | 用于AI推理和内容生成 |
-| Python 3.8+ | 运行环境 | 否 | 如需运行辅助脚本 |
+### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
+
+### 依赖项
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
+
+### 可用性分类
+- **分类**: MD+EXEC（）
 
 
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力（免费版）
 
 ### 1. 三列协议记录

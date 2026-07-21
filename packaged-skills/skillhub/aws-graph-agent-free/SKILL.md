@@ -27,24 +27,26 @@ tools:
 ## 依赖说明
 
 ### 运行环境
-- **Python**: 3.9+（bedrock-agentcore 最低要求）
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| bedrock-agentcore | Python 包 | 必需 | `pip install bedrock-agentcore` |
-| bedrock-agentcore-starter-toolkit | Python 包 | 必需 | `pip install bedrock-agentcore-starter-toolkit` |
-| langgraph | Python 包 | 必需 | `pip install langgraph` |
-| AWS 账户 | 账户 | 必需 | 需 AWS 账户和 Bedrock 访问权限 |
-| Bedrock 模型审批 | 平台配置 | 必需 | 在 Bedrock Console 填写 Anthropic 表单 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
 
-### 凭据安全规范
-代理绝不能读取或日志记录 `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` 明文。凭据只通过环境变量或 IAM Role 注入，禁止硬编码到源码。验证身份用 `aws sts get-caller-identity`（返回角色 ARN，不暴露密钥）。
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯 Markdown 指令，需要命令行执行能力进行部署）
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### 1. StateGraph 状态图编排
@@ -59,10 +61,21 @@ tools:
 **输入**: 用户提供AgentCore Runtime HTTP 封装所需的指令和必要参数。
 **输出**: 返回AgentCore Runtime HTTP 封装的执行结果,包含操作状态和输出数据。
 
+- 执行`AgentCore Runtime HTTP 封装`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`AgentCore Runtime HTTP 封装`相关配置参数进行设置
 ### 3. agentcore CLI 基础管理
 `configure`（配置）→ `launch`（部署）→ `dev`（本地开发）→ `invoke`（测试调用）→ `destroy`（清理资源）。
 
 > **升级提示**: 跨会话持久记忆（STM/LTM）、Gateway 外部 API/Lambda 工具集成、多代理协调（编排器+专家模式）、记忆一致性验证逻辑等高级功能仅在 [aws-graph-agent 付费版] 中提供。
+
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: Bedrock、基础代理编排、状态图与容器部署、基础代理编排工具、免费版、状态图编排与、容器部署两大基础、自动路由与、可将代理封装为、适用于单一代理的、快速部署和工具调、用场景、如需持久记忆、多代理协调等高级、请升级至。这些能力在上述核心功能中均有对应处理逻辑。
+
+### 输出格式
+
+执行结果以Markdown格式返回,包含操作状态(成功/失败)、处理摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。
 
 ## 适用场景
 

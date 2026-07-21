@@ -21,11 +21,27 @@ tools:
 
 ## 依赖说明
 
-| 依赖项 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
-| Shell环境 (用于执行命令行操作) | 运行环境 | 是 | 见核心能力章节 |
-| Node.js运行环境 | 运行环境 | 否 | 见核心能力章节 |
+### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
 
+### 依赖项
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
+
+### 可用性分类
+- **分类**: MD+EXEC（）
+
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### 1. API目录浏览
@@ -45,6 +61,9 @@ node scripts/atlas-api.mjs catalog
 node scripts/atlas-api.mjs detail --category "Clusters" --endpoint "Create Cluster"
 ```
 
+- 执行`端点详情获取`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`端点详情获取`相关配置参数进行设置
 ### 3. Schema定义查询
 查看API端点的请求和响应Schema定义，了解参数类型、是否必填和默认值。
 
@@ -52,6 +71,9 @@ node scripts/atlas-api.mjs detail --category "Clusters" --endpoint "Create Clust
 node scripts/atlas-api.mjs detail --category "Database Users" --endpoint "Create Database User" --schema
 ```
 
+- 执行`Schema定义查询`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`Schema定义查询`相关配置参数进行设置
 ### 4. 实时API调用
 通过 `atlas-call.mjs` 直接调用API端点，支持 `--dry-run` 预检和 `--yes` 自动确认。
 
@@ -83,6 +105,17 @@ export ATLAS_CLIENT_SECRET="your_client_secret"
 
 **输入**: 用户提供凭证管理所需的指令和必要参数。
 **处理**: 按照skill规范执行凭证管理操作,遵循单一意图原则。
+
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 浏览和调用文档数、据库云管理平台、支持目录浏览、端点详情和实时调、定义查询和实时、分类的完整、预检和自动确认模、适用于独立开发者、企业团队和自动化、工作流场景、不适用于直接数据、库查询操作。这些能力在上述核心功能中均有对应处理逻辑。
+## 使用流程
+
+1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求
+2. **指令输入**: 向Agent描述需要执行的任务，引用`mongodb-atlas-admin`的相关能力
+3. **执行处理**: Agent按照核心能力章节的指令执行任务
+4. **结果验证**: 检查输出结果是否符合预期，参考错误处理章节处理异常
+
 ## 真实示例
 
 ### 示例1：列出所有API分类

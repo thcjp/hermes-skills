@@ -26,23 +26,26 @@ AgentVibes 是多 Provider 文本转语音（TTS）客户端,为 AI Agent 提供
 ## 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
-- **操作系统**: Windows / macOS / Linux（部分 Provider 平台受限,见下表）
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| Piper TTS | 离线 TTS 引擎 | 可选（推荐） | 自动下载安装 |
-| Piper 声音文件 | 离线声音数据 | 可选（推荐） | HuggingFace 下载,首次使用时自动拉取 |
-| macOS Say | 系统内置 TTS | 可选（仅 macOS） | macOS 自带 |
-| Windows SAPI | 系统内置 TTS | 可选（仅 Windows） | Windows 自带,零配置 |
-| Soprano | 神经 TTS 引擎 | 可选 | 自动安装 |
-| bash / sh | 脚本运行环境 | 必需 | 执行封装脚本 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（Markdown 指令驱动,需 exec 执行 TTS 命令与脚本）
-- **说明**: 基于自然语言指令驱动 Agent 调用 TTS 引擎,完成语音合成与播放
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## Provider 概览
 
 | Provider | 平台 | 成本 | 声音数量 | 特点 |

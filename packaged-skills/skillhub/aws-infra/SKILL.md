@@ -25,33 +25,26 @@ tools:
 ## 依赖说明
 
 ### 运行环境
-- **AWS CLI**: v2.0+ (安装命令: `pip install awscli` 或下载官方安装包)
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **Python**: 3.8+ (AWS CLI依赖)
 
-### 凭证配置
+### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| AWS Access Key | 凭证 | 必需 | AWS IAM控制台创建用户并生成AccessKey |
-| AWS Secret Key | 凭证 | 必需 | 与AccessKey一同生成,仅创建时显示 |
-| AWS Region | 配置 | 必需 | `aws configure set region us-east-1` |
-| IAM权限 | 授权 | 必需 | 至少附加AmazonEC2ReadOnlyAccess、AmazonS3ReadOnlyAccess、CloudWatchReadOnlyAccess策略 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
 
-### 凭证配置流程
-```bash
-# 交互式配置 (推荐)
-aws configure
-# 输入 Access Key ID, Secret Access Key, Default region, Default output format
-
-# 验证身份
-aws sts get-caller-identity
-# 预期输出: {"UserId": "AIDAXXXXXXXX", "Account": "123456789012", "Arn": "arn:aws:iam::123456789012:user/username"}
-```
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC(Markdown指令驱动Agent执行AWS CLI命令)
-- **说明**: 基于AWS CLI的只读查询工具,通过自然语言指令驱动Agent执行运维任务
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### 1. 资源清单查询 (Inventory)
@@ -106,6 +99,17 @@ aws sts get-caller-identity
 - **CloudFormation变更集**: 查看CloudFormation堆栈的待执行变更
   `aws cloudformation describe-change-set --change-set-name CHANGESET_NAME --stack-name STACK_NAME`
 
+### 技术细节
+
+| 组件 | 说明 | 关键参数 |
+|:-----|:-----|:---------|
+| `parser` | 解析输入指令 | `format`, `encoding` |
+| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
+| `output` | 格式化输出结果 | `format`, `encoding` |
+
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: CLI、执行只读基础设施、覆盖实例清单、变更追踪五大场景、基础设施只读检查、read、only、帮助开发者和管理、员快速了解云资源、覆盖五大场景、实例健康检查与、用户与安全组审计、Explorer、默认只读模式、所有变更操作需显、式确认并使用、dry、适用于日常运维、成本优化和故障排、查场景。这些能力在上述核心功能中均有对应处理逻辑。
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |

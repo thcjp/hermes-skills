@@ -30,7 +30,20 @@ tools:
 
 ## 依赖说明
 
-无！仅使用Python标准库（csv模块）。
+### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
+
+### 依赖项
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+本Skill无需额外API Key（LLM能力由Agent平台内置提供）
+
+### 可用性分类
+- **分类**: MD+EXEC（）
 
 ## 核心能力（免费版）
 

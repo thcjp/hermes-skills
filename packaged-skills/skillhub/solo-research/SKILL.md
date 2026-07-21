@@ -24,21 +24,24 @@ tools:
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **网络访问**: 需要互联网连接进行搜索与内容获取
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
-| WebFetch | 工具 | 必需 | Agent内置工具 |
-| MCP web_search | MCP服务 | 可选 | 配置MCP web_search服务器 |
-| GitHub API | API | 可选 | https://docs.github.com/api |
-| Product Hunt API | API | 可选 | https://www.producthunt.com/api |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯Markdown指令，需要exec与WebFetch工具进行搜索与内容获取）
-- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行多策略研究任务
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### GitHub Library Discovery
@@ -112,6 +115,17 @@ tools:
 - **Citation Table**：引用表格（来源、URL、访问日期）
 - **Gaps & Limitations**：知识差距与研究局限性
 
+### 技术细节
+
+| 组件 | 说明 | 关键参数 |
+|:-----|:-----|:---------|
+| `parser` | 解析输入指令 | `format`, `encoding` |
+| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
+| `output` | 格式化输出结果 | `format`, `encoding` |
+
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 多策略研究工具、库发现、内容回退与、独立研究工具、通过多搜索策略获、取全面准确的研究、技术选型、库发现等多种研究、提供来源验证、交叉验证与结构化、适用于深度研究与、决策支持。这些能力在上述核心功能中均有对应处理逻辑。
 ## 使用流程
 
 1. 确认运行环境满足依赖说明中的要求

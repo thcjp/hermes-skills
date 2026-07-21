@@ -26,26 +26,26 @@ tools:
 ## 依赖说明
 
 ### 运行环境
-- **Python**: 3.9+（bedrock-agentcore 最低要求）
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **uv**: 可选，用于安装 agentcore CLI（`uv tool install bedrock-agentcore-starter-toolkit`）
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| bedrock-agentcore | Python 包 | 必需 | `pip install bedrock-agentcore` |
-| bedrock-agentcore-starter-toolkit | Python 包 | 必需 | `pip install bedrock-agentcore-starter-toolkit` |
-| langgraph | Python 包 | 必需 | `pip install langgraph` |
-| AWS CLI | 工具 | 推荐 | 从 aws.amazon.com 安装 |
-| AWS 账户 | 账户 | 必需 | 需 AWS 账户和 Bedrock 访问权限 |
-| Bedrock 模型审批 | 平台配置 | 必需 | 在 Bedrock Console 填写 Anthropic 表单 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
 
-### 凭据安全规范
-代理绝不能读取、打印或日志记录 `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` 明文。凭据只通过环境变量或 IAM Role 注入，禁止硬编码到源码或 Dockerfile ARG。`agentcore configure` 所需凭据从 AWS CLI 命名配置文件（`--profile`）获取。验证身份用 `aws sts get-caller-identity`（返回角色 ARN，不暴露密钥）。
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯 Markdown 指令，需要命令行执行能力进行部署与管理）
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### 1. StateGraph 状态图编排
@@ -60,12 +60,18 @@ tools:
 **输入**: 用户提供AgentCore Runtime HTTP 封装所需的指令和必要参数。
 **输出**: 返回AgentCore Runtime HTTP 封装的执行结果,包含操作状态和输出数据。
 
+- 执行`AgentCore Runtime HTTP 封装`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`AgentCore Runtime HTTP 封装`相关配置参数进行设置
 ### 3. AgentCore Memory 持久记忆
 管理跨会话/跨代理的 STM（短期记忆，会话内逐轮）与 LTM（长期记忆，跨会话/跨代理），配套一致性处理模式（写入后约 10s 最终一致，含等待+验证+重试逻辑）。
 
 **输入**: 用户提供AgentCore Memory 持久记忆所需的指令和必要参数。
 **输出**: 返回AgentCore Memory 持久记忆的执行结果,包含操作状态和输出数据。
 
+- 执行`AgentCore Memory 持久记忆`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`AgentCore Memory 持久记忆`相关配置参数进行设置
 ### 4. AgentCore Gateway 工具集成
 将 API/Lambda 转化为带认证的 Agent 工具接口，支持 Fallback Mock（本地开发）、Local 工具协议、Production Gateway（生产）三种传输模式。
 
@@ -73,11 +79,23 @@ tools:
 **处理**: 按照skill规范执行AgentCore Gateway 工具集成操作,遵循单一意图原则。
 **输出**: 返回AgentCore Gateway 工具集成的执行结果,包含操作状态和输出数据。
 
+- 执行`AgentCore Gateway 工具集成`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`AgentCore Gateway 工具集成`相关配置参数进行设置
 ### 5. agentcore CLI 全生命周期管理
 `configure`（交互式/脚本化配置）→ `launch`（容器部署）→ `dev`（热重载本地开发）→ `invoke`（测试调用）→ `destroy`（清理资源避免持续计费）。
 
 **输入**: 用户提供agentcore CLI 全生命周期管理所需的指令和必要参数。
 **输出**: 返回agentcore CLI 全生命周期管理的执行结果,包含操作状态和输出数据。
+
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: Bedrock、多代理编排、覆盖状态图、AWS、多代理部署编排工、全生命周期管理五、大核心能力、适用于多代理协调、的复杂业务系统、跨会话持久记忆代、集成到代理工具链、生产级、代理部署。这些能力在上述核心功能中均有对应处理逻辑。
+
+### 输出格式
+
+执行结果以Markdown格式返回,包含操作状态(成功/失败)、处理摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。
+
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |

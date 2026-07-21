@@ -38,11 +38,27 @@ skill-platform config set skills.entries.alibaba-quark-scan.env.SCAN_WEBSERVICE_
 
 ## 依赖说明
 
-| 依赖项 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
-| Shell环境 (用于执行命令行操作) | 运行环境 | 是 | 见核心能力章节 |
-| Python 3.8+ | 运行环境 | 否 | 见核心能力章节 |
+### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
 
+### 依赖项
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
+
+### 可用性分类
+- **分类**: MD+EXEC（）
+
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### 1. 考试增强（exam-enhance）
@@ -153,6 +169,9 @@ skill-platform config set skills.entries.alibaba-quark-scan.env.SCAN_WEBSERVICE_
 - scene标识：`scan-document`
 - 示例指令："优化一下这张文档图片，让它看起来更专业"
 
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 文档高清扫描增强、支持画质优化、去阴影等、种场景、通过扫描服务、API、对图片进行画质优、瑕疵去除和视觉增、适用于独立开发者、企业团队和自动化、工作流场景、不适用于视频处理、和实时摄像头流。这些能力在上述核心功能中均有对应处理逻辑。
 ## 使用流程
 
 ### 第一步：输入处理

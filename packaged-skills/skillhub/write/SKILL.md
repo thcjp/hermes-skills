@@ -114,6 +114,9 @@ Request → Plan → Draft → Audit → Refine → Deliver
 - **Version管理**：每次通过edit.sh编辑自动创建version备份，通过`./scripts/list.sh`查看所有versions，通过`./scripts/restore.sh`恢复任意version
 - **Cleanup流程**：仅在用户确认piece最终后运行`./scripts/cleanup.sh`清除旧versions
 
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 带强制版本控制与、质量审计的写作工、脚本管理草稿版本、质量审计的版本化、写作工具、脚本强制版本备份、配置与、自动审计、等八份参考文档、覆盖规划、版本管理与质量审、计全流程、适用于长篇内容创、技术文档撰写与需、要版本追溯的写作。这些能力在上述核心功能中均有对应处理逻辑。
 ## 使用流程
 
 1. **初始化工作空间**：首次使用运行`./scripts/init-workspace.sh ~/writing`创建项目结构

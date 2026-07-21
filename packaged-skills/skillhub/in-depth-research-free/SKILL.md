@@ -24,21 +24,26 @@ tools:
 ## 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **网络**: 需可访问搜索引擎与信息源
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| Agent 平台 | 运行环境 | 必需 | 任意支持 SKILL.md 的 AI Agent |
-| 网络访问 | 信息源 | 必需 | 可访问搜索引擎与公开网页 |
-| WebSearch/WebFetch 工具 | 搜索工具 | 可选 | Agent 平台内置或插件提供 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（Markdown 指令驱动，部分搜索需 exec 执行命令）
-- **说明**: 基于自然语言指令驱动 Agent 执行多源调研、来源评估与综合交付
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### 1. 研究范围界定
@@ -90,6 +95,23 @@ tools:
 **输入**: 用户提供迭代深化所需的指令和必要参数。
 **处理**: 按照skill规范执行迭代深化操作,遵循单一意图原则。
 **输出**: 返回迭代深化的执行结果,包含操作状态和输出数据。
+
+### 技术细节
+
+| 组件 | 说明 | 关键参数 |
+|:-----|:-----|:---------|
+| `parser` | 解析输入指令 | `format`, `encoding` |
+| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
+| `output` | 格式化输出结果 | `format`, `encoding` |
+
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 多源深度调研、覆盖范围界定、迭代深化与结构化、免费版、系统化深度研究方、通过七步协议、Scope、Search、Evaluate、Deepen、Synthesize、Document、Deliver、实现多源调研、核心能力、研究范围界定与问、多向量搜索与引用、链追踪、迭代深化与停止条、件判断。这些能力在上述核心功能中均有对应处理逻辑。
+
+### 输出格式
+
+执行结果以Markdown格式返回,包含操作状态(成功/失败)、处理摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。
+
 ## 深度级别
 
 | 级别 | 时间投入 | 来源数量 | 适用场景 |

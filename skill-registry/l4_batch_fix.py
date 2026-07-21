@@ -33,7 +33,7 @@ sys.path.insert(0, str(SKILL_REGISTRY_DIR))
 
 from config import PACKAGED_SKILLS_DIR
 from skill_core.parser import parse_frontmatter as _parse_fm
-from l4_task_gate import extract_h3_titles
+from l4_task_gate import extract_h3_titles, NON_CAPABILITY_HEADINGS
 
 # 模糊错误处理短语 -> 具体操作替换
 VAGUE_TO_ACTION = {
@@ -85,17 +85,19 @@ def fix_l4_1_task_mapping(content: str, fm_data: dict) -> Tuple[str, str]:
     
     cap_body = cap_match.group(2)
     
-    # 解析每个###标题及其内容
+    # 解析每个###标题及其内容 (只处理能力点标题,跳过元信息标题)
     h3_matches = list(re.finditer(r'^###\s+(.+)$', cap_body, re.MULTILINE))
+    capability_matches = [m for m in h3_matches 
+                         if not any(nc in m.group(1) for nc in NON_CAPABILITY_HEADINGS)]
     new_cap_body = cap_body
     
     # 从后往前修改,避免位置偏移
     modifications = []
     
-    for i, match in enumerate(h3_matches):
+    for i, match in enumerate(capability_matches):
         title = match.group(1).strip()
         start = match.end()
-        end = h3_matches[i + 1].start() if i + 1 < len(h3_matches) else len(cap_body)
+        end = capability_matches[i + 1].start() if i + 1 < len(capability_matches) else len(cap_body)
         section = cap_body[start:end].strip()
         
         # 检查是否有输入/输出/处理描述
@@ -149,8 +151,11 @@ def fix_l4_1_add_h3_headings(content: str, fm_data: dict = None) -> Tuple[str, s
         return content, ''
 
     h3_titles = extract_h3_titles(cap_section)
-    if len(h3_titles) >= 3:
-        return content, ''  # 已有足够的###标题
+    # 只计算能力点标题,排除元信息标题
+    capability_titles = [t for t in h3_titles 
+                        if not any(nc in t for nc in NON_CAPABILITY_HEADINGS)]
+    if len(capability_titles) >= 3:
+        return content, ''  # 已有足够的能力点标题
 
     # 找到核心能力章节的完整位置 (支持章节名变体)
     cap_pattern = r'(##\s+核心(?:能力|功能|规则|概念|原则|工作流|操作)\s*\n)(.*?)(?=\n## |\Z)'
@@ -160,7 +165,7 @@ def fix_l4_1_add_h3_headings(content: str, fm_data: dict = None) -> Tuple[str, s
 
     cap_header = cap_match.group(1)
     cap_body = cap_match.group(2)
-    needed = 3 - len(h3_titles)
+    needed = 3 - len(capability_titles)
 
     # 策略1: 提升 #### 为 ###
     if needed > 0:

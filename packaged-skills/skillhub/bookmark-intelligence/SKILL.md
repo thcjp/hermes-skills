@@ -27,36 +27,26 @@ tools:
 ## 依赖说明
 
 ### 运行环境
-- **Agent平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **Node.js**: v16+ (运行 monitor.js / analyzer.js 主脚本)
-- **PM2**: 推荐用于后台守护进程管理
 
-### 依赖说明
+### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| Node.js v16+ | 运行时 | 必需 | nodejs.org 下载安装 |
-| bird CLI | X/Twitter 命令行工具 | 必需 | `npm install -g bird` |
-| PM2 | 进程管理器 | 推荐 | `npm install -g pm2`(用于守护进程) |
-| X 凭证(auth_token + ct0) | Cookie | 必需 | 浏览器开发者工具从 x.com 提取 |
-| AI 分析后端 | LLM | 推荐 | Agent 内置 LLM,无则降级为关键词分析 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
 
-### 凭证配置流程
-```bash
-cd skills/bookmark-intelligence
-npm run setup   # 交互式向导:检测工具、引导取 cookie、配置项目上下文、测试凭证
-```
-向导生成的 `.env` 形如:
-```bash
-AUTH_TOKEN=your_long_token_here
-CT0=your_other_token_here
-```
-`.env` 文件权限为 600(仅所有者可读写),已加入 `.gitignore`。
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC(Markdown 指令驱动 Agent 调用 Node 脚本)
-- **说明**: 本地运行的 X 书签监控与 AI 分析 Skill,凭证与数据均不离开本机(除 AI 分析 API 调用)
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### 1. 自动监控与轮询
@@ -73,6 +63,9 @@ pm2 logs bookmark-intelligence     # 查看分析日志
 
 **输出**: 返回链接文章正文抓取的执行结果,包含操作状态和输出数据。
 
+- 执行`链接文章正文抓取`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`链接文章正文抓取`相关配置参数进行设置
 ### 3. AI 深度分析
 对每条书签产出结构化分析:
 - **内容摘要**: 文章核心观点的一句话总结
@@ -100,9 +93,18 @@ pm2 logs bookmark-intelligence     # 查看分析日志
 ### 5. Telegram 高价值洞察推送
 当分析结果为 `priority: "high"` 且 `hasActionableInsights: true` 时,自动推送 Telegram 通知,包含摘要、行动项、关键概念、实现建议与原文链接。
 
+- 执行`Telegram 高价值洞察推送`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`Telegram 高价值洞察推送`相关配置参数进行设置
 ### 6. 本地知识库沉淀
 每条分析结果以 JSON 落盘到 `life/resources/bookmarks/bookmark-<id>.json`,包含原推文(作者、正文、互动数据)、完整分析、实现建议、优先级与时间戳,可被后续检索与导出。
 
+- 执行`本地知识库沉淀`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`本地知识库沉淀`相关配置参数进行设置
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 抓取链接文章、提取关键概念与行、关联个人项目并推、送高价值洞察、Twitter、书签自动化分析与、知识萃取专业版、持续监控你的、提取关键概念、可执行行动项与实、并关联你在、中声明的活跃项目、核心能力、后台守护进程自动、无限制书签处理、非关键词匹配、本地可检索知识库、适用于独立开发者、研究者和内容工作、者把收藏夹从、信息坟墓、行动清单。这些能力在上述核心功能中均有对应处理逻辑。
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |

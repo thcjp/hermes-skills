@@ -25,21 +25,26 @@ AgentVibes 基础版,基于 Piper TTS 提供文本转语音能力。免费、离
 ## 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **网络**: 首次下载 Piper 声音文件时需要
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| Piper TTS | 离线 TTS 引擎 | 必需 | 自动下载安装 |
-| Piper 声音文件 | 离线声音数据 | 必需 | HuggingFace 下载,首次使用时自动拉取 |
-| bash / sh | 脚本运行环境 | 必需 | 执行封装脚本 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（Markdown 指令驱动,需 exec 执行 TTS 命令）
-- **说明**: 基于自然语言指令驱动 Agent 调用 Piper TTS,完成基础语音合成
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## Provider
 
 免费版仅支持 Piper TTS:

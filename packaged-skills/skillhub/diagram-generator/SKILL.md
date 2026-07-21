@@ -27,21 +27,26 @@ tools:
 ## 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **Node.js**: >= 18(运行 MCP 服务器)
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| mcp-diagram-generator MCP 服务器 | MCP 服务器 | 必需 | `npx -y mcp-diagram-generator` 远程拉取 |
-| Node.js 运行时 | 命令行工具 | 必需 | 系统包管理器安装 |
-| LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC(Markdown 指令驱动,部分功能需 exec 验证 MCP 配置)
-- **说明**: 基于自然语言指令驱动 Agent 调用 MCP 服务器生成图表
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 必需 MCP 工具
 
 生成图表前,验证以下 MCP 工具可用:

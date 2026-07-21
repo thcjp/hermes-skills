@@ -24,21 +24,26 @@ tools:
 ## 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **网络**: 需可访问 `https://api.dlazy.com` 与 `https://files.dlazy.com`
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| dlazy CLI | 命令行工具 | 必需 | `npx @dlazy/cli@latest` |
-| DLAZY_API_KEY | 环境变量 | 必需 | dlazy.com 控制台创建 |
-| Node.js 运行时 | 命令行工具 | 必需 | 运行 npx |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC(Markdown 指令驱动,需 exec 执行 dlazy CLI 命令)
-- **说明**: 基于自然语言指令驱动 Agent 调用 dlazy API,完成基础 TTS 生成
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 认证
 
 所有请求需 dLazy API Key。推荐:

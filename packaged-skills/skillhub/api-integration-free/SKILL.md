@@ -25,18 +25,26 @@ tools:
 ## 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
-| Python `requests` | Python 包 | 推荐 | `pip install requests` |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯 Markdown 指令,部分功能需 exec 命令行执行能力）
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 - **RESTful 调用**: GET/POST/PUT/DELETE 方法封装,支持 JSON 请求与响应处理
@@ -61,6 +69,10 @@ tools:
 **输入**: 用户提供RESTful 调用所需的参数和指令。
 
 **输出**: 返回RESTful 调用的处理结果。
+
+- 执行`RESTful 调用`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`RESTful 调用`相关配置参数进行设置
 ### API Key 认证
 
 执行API Key 认证操作,处理用户输入并返回结果。
@@ -69,7 +81,12 @@ tools:
 
 **输出**: 返回API Key 认证的处理结果。
 
+- 执行`API Key 认证`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`API Key 认证`相关配置参数进行设置
+### 能力覆盖范围
 
+本skill还覆盖以下能力场景: 调用与、含基础错误处理、快速接入第三方服、集成开发助手免费、认证管理、Python、requests、调用模板、与基础错误处理、令牌管理、完整错误处理等高、级功能需升级付费。这些能力在上述核心功能中均有对应处理逻辑。
 ## 核心知识
 
 ### 1. RESTful API

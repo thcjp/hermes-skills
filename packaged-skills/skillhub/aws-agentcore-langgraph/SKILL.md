@@ -73,6 +73,10 @@ app.run()
 **输入**: 用户提供AgentCore Runtime所需的参数和指令。
 
 **输出**: 返回AgentCore Runtime的处理结果。
+
+- 执行`AgentCore Runtime`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`AgentCore Runtime`相关配置参数进行设置
 ### AgentCore Memory
 
 执行AgentCore Memory操作,处理用户输入并返回结果。
@@ -80,6 +84,10 @@ app.run()
 **输入**: 用户提供AgentCore Memory所需的参数和指令。
 
 **输出**: 返回AgentCore Memory的处理结果。
+
+- 执行`AgentCore Memory`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`AgentCore Memory`相关配置参数进行设置
 ### LangGraph Routing
 
 执行LangGraph Routing操作,处理用户输入并返回结果。
@@ -88,7 +96,12 @@ app.run()
 
 **输出**: 返回LangGraph Routing的处理结果。
 
+- 执行`LangGraph Routing`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`LangGraph Routing`相关配置参数进行设置
+### 能力覆盖范围
 
+本skill还覆盖以下能力场景: AWS、Bedrock、多智能体编排部署、的多智能体系统构、建与部署助手、覆盖智能体编排、Orchestrator、Specialists、跨会话记忆、工具集成、REST、容器化部署全流程、适用于需要在、上构建可扩展多智、能体应用的开发团、支持客户服务、金融等领域的专家、智能体协同、提供从本地开发到、生产部署的完整、CLI、工作流、含状态图设计、StateGraph、工具路由、记忆持久化、工具转换等核心模、不适用于需要、确定性的关键决策。这些能力在上述核心功能中均有对应处理逻辑。
 ## CLI 命令
 
 | 命令 | 用途 |

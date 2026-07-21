@@ -28,13 +28,19 @@ tools:
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
-| GoPlus CLI | CLI工具 | 必需 | `go install github.com/Qianjiachang/goplus@latest` |
-| Go | 运行时 | 可选 | https://go.dev/dl/ |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯Markdown指令，需要exec命令行执行能力运行GoPlus CLI）
-- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行安全扫描任务
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### 安全扫描（Security Scan）
@@ -69,7 +75,20 @@ tools:
 
 **输出**: 返回代码扫描的处理结果。
 
+- 执行`代码扫描`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`代码扫描`相关配置参数进行设置
+### 技术细节
 
+| 组件 | 说明 | 关键参数 |
+|:-----|:-----|:---------|
+| `parser` | 解析输入指令 | `format`, `encoding` |
+| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
+| `output` | 格式化输出结果 | `format`, `encoding` |
+
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 免费版、GoPlus、支持基础安全扫描、与漏洞发现查看、安全扫描免费版、提供基础代码安全、检查功能、支持一次性安全扫、描与漏洞发现详情、适用于个人项目的、安全自检与漏洞发。这些能力在上述核心功能中均有对应处理逻辑。
 ## 使用流程
 
 1. 安装GoPlus CLI：`go install github.com/Qianjiachang/goplus@latest`

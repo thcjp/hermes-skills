@@ -26,20 +26,26 @@ tools:
 ## 依赖说明
 
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **Telegram**: 已配置AnthroVision桥接工具的Bot环境
 
-### 依赖说明
+### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| AnthroVision桥接工具 | MCP工具 | 必需 | `anthrovision_bridge_submit_scan` / `anthrovision_bridge_check_scan` |
-| LLM API | API | 必需 | 由Agent平台内置LLM提供 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC
-- **说明**: 基于Markdown指令的AI Skill,通过桥接工具驱动基础身体扫描流程
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### 1. 输入校验(基础)
@@ -61,7 +67,12 @@ tools:
 
 **输出**: 返回操作执行的结果。
 
+- 执行`指令解析与执行`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`指令解析与执行`相关配置参数进行设置
+### 能力覆盖范围
 
+本skill还覆盖以下能力场景: Telegram、中运行基础身体扫、描流程、提交视频并轮询测、描测量流程、提交视频至、桥接工具、轮询状态并输出基、基础版覆盖输入校、扫描提交与状态轮、适用场景、基础体型测量、健身追踪、不适用于腰臀比汇、超时处理、确定性格式化等高、级场景。这些能力在上述核心功能中均有对应处理逻辑。
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

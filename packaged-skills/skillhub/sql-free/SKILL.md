@@ -24,21 +24,26 @@ SQL查询与数据库操作辅助引擎，支持MySQL、PostgreSQL、SQLite、SQ
 ## 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **数据库**: 用户本地或远程数据库实例
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| Agent 平台 | 运行环境 | 必需 | 任意支持 SKILL.md 的 AI Agent |
-| 数据库客户端 | 命令行工具 | 可选 | mysql/psql/sqlite3/sqlcmd 按目标数据库安装 |
-| 数据库连接信息 | 连接配置 | 可选 | 用户提供的host/port/user/password/database |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（Markdown 指令驱动，需 exec 执行 SQL 命令）
-- **说明**: 基于自然语言指令驱动 Agent 执行 SQL 查询生成、优化与数据库操作
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### 1. 自然语言转SQL
@@ -85,6 +90,15 @@ HAVING total_spent > 1000;
 
 **输入**: 用户提供复杂分析查询所需的指令和必要参数。
 **输出**: 返回复杂分析查询的执行结果,包含操作状态和输出数据。
+
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 多数据库、设计与数据分析、PostgreSQL、SQLite、SQLServer、免费版、查询与数据库操作、辅助引擎、核心能力、种数据库方言、查询性能分析与索、引优化建议、设计与、递归查询。这些能力在上述核心功能中均有对应处理逻辑。
+
+### 输出格式
+
+执行结果以Markdown格式返回,包含操作状态(成功/失败)、处理摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

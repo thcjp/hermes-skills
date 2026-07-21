@@ -87,6 +87,9 @@ skill-name/
 - **References（`references/`）**：按需加载的文档与参考材料，大文件（>10k words）在SKILL.md中包含grep search patterns
 - **Assets（`assets/`）**：用于输出而非加载入context的文件（templates、icons、fonts等）
 
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 免费版、创建指南、支持基础、创建有效、的基础指南、结构设计与、基础概念、免费版不含完整、Creation、Process、脚本集成与不应包、含内容指南。这些能力在上述核心功能中均有对应处理逻辑。
 ## 使用流程
 
 1. **理解需求**：通过concrete examples明确skill应支持的功能与触发场景

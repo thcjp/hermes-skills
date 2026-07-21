@@ -32,23 +32,26 @@ AI 图像生成基础版,通过执行 `scripts/generate_image.py` 调用 Gemini 
 ## 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **运行时**: Python 3.8+
-- **网络**: 需可访问 `IMAGE_GEN_BASE_URL` 指向的 Gemini Image 服务
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| IMAGE_GEN_API_KEY | 环境变量 | 必需 | Gemini Image 服务渠道申请 |
-| IMAGE_GEN_BASE_URL | 环境变量 | 可选 | 默认 https://code.newcli.com/gemini |
-| Python 3.8+ | 运行时 | 必需 | 官方安装 |
-| requests | Python 库 | 必需 | pip install requests |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC(Markdown 指令驱动,核心功能需 exec 执行 Python 脚本)
-- **说明**: 基于自然语言指令驱动 Agent 调用 Gemini Flash Image API 完成基础文生图
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 认证与配置
 
 脚本通过环境变量读取 API 配置,永不硬编码 Key 到脚本文件。

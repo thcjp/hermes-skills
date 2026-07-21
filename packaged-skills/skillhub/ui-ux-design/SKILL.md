@@ -24,21 +24,24 @@ tools:
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **开发环境**: Node.js 18+（如使用Shadcn/ui + Tailwind项目）
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
-| Node.js | 运行时 | 可选 | https://nodejs.org/ |
-| Tailwind CSS | CSS框架 | 可选 | `npm install tailwindcss` |
-| Shadcn/ui | 组件库 | 可选 | `npx shadcn@latest init` |
-| Figma | 设计工具 | 可选 | https://figma.com |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯Markdown指令，项目初始化需要exec命令行执行能力）
-- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent提供设计指导与代码生成
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### 核心设计原则（Core Design Principles）
@@ -190,6 +193,10 @@ WCAG 2.2无障碍标准合规：
 **输入**: 用户提供Size（大小）所需的参数和指令。
 
 **输出**: 返回Size（大小）的处理结果。
+
+- 执行`Size（大小）`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`Size（大小）`相关配置参数进行设置
 ### Color（颜色）
 
 执行Color（颜色）操作,处理用户输入并返回结果。
@@ -198,6 +205,16 @@ WCAG 2.2无障碍标准合规：
 
 **输出**: 返回Color（颜色）的处理结果。
 
+- 执行`Color（颜色）`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`Color（颜色）`相关配置参数进行设置
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 涵盖设计原则、响应式设计与、无障碍的完整指南、模式与最佳实践指、技术栈集成与微交、适用于、Web、与移动应用的界面、布局选择与设计审。这些能力在上述核心功能中均有对应处理逻辑。
+
+### 输出格式
+
+执行结果以Markdown格式返回,包含操作状态(成功/失败)、处理摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。
 
 ## 使用流程
 

@@ -27,21 +27,26 @@ tools:
 ## 依赖说明
 
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **Telegram**: 已配置AnthroVision桥接工具的Bot环境
 
-### 依赖说明
+### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| AnthroVision桥接工具 | MCP工具 | 必需 | `anthrovision_bridge_submit_scan` / `anthrovision_bridge_check_scan` |
-| Telegram Bot | 运行环境 | 必需 | 通过BotFather创建并配置 |
-| LLM API | API | 必需 | 由Agent平台内置LLM提供 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC
-- **说明**: 基于Markdown指令的AI Skill,通过桥接工具驱动身体扫描测量流程
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### 1. 输入校验与同意流程
@@ -74,9 +79,18 @@ tools:
 - 输出确定性分组测量数据(胸围、腰围、臀围、肩宽等)
 - 提供腰臀比(waist-to-hip ratio)汇总
 
+- 参考`测量结果与腰臀比`相关配置参数进行设置
 ### 6. 超时处理
 - 处理超过3分钟仍为 `processing` 时,发送一条简洁延迟消息
 - 询问用户是否继续等待
+
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: Telegram、中运行端到端身体、扫描测量流程、含同意、轮询与确定性输出、桥接工具提交视频、执行同意流程、轮询状态检查与确、定性测量结果输出、核心能力覆盖输入、腰臀比汇总与超时、适用场景、健身追踪、体型测量、运动表现分析、身体成分变化监测、不适用于医疗诊断、未成年人扫描、非本人视频处理。这些能力在上述核心功能中均有对应处理逻辑。
+
+### 输出格式
+
+执行结果以Markdown格式返回,包含操作状态(成功/失败)、处理摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。
 
 ## 适用场景
 

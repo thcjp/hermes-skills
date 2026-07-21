@@ -24,32 +24,19 @@ tools:
 ## 依赖说明
 
 ### 运行环境
-- **Agent平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **Node.js**: v16+ (运行主脚本)
 
-### 依赖说明
+### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| Node.js v16+ | 运行时 | 必需 | nodejs.org 下载安装 |
-| bird CLI | X/Twitter 命令行工具 | 必需 | `npm install -g bird` |
-| X 凭证(auth_token + ct0) | Cookie | 必需 | 浏览器开发者工具从 x.com 提取 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
 
-### 凭证配置流程
-```bash
-cd skills/bookmark-intelligence
-npm run setup   # 交互式向导:检测工具、引导取 cookie、测试凭证
-```
-向导生成的 `.env` 形如:
-```bash
-AUTH_TOKEN=your_long_token_here
-CT0=your_other_token_here
-```
-`.env` 文件权限为 600(仅所有者可读写),已加入 `.gitignore`。
+### API Key 配置
+本Skill无需额外API Key（LLM能力由Agent平台内置提供）
 
 ### 可用性分类
-- **分类**: MD+EXEC(Markdown 指令驱动 Agent 调用 Node 脚本)
-- **说明**: 本地运行的 X 书签基础监控 Skill,凭证与数据均不离开本机
+- **分类**: MD+EXEC（）
 
 ## 核心能力
 
@@ -65,11 +52,20 @@ npm start
 **输入**: 用户提供关键词启发式分析所需的指令和必要参数。
 **输出**: 返回关键词启发式分析的执行结果,包含操作状态和输出数据。
 
+- 执行`关键词启发式分析`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`关键词启发式分析`相关配置参数进行设置
 ### 3. 本地 JSON 沉淀
 每条分析结果以 JSON 落盘到 `life/resources/bookmarks/bookmark-<id>.json`,包含原推文(作者、正文、互动数据)与基础分析,可被后续检索。
 
 > **升级提示**: 无限制书签处理、AI 深度分析(关键概念+行动项+项目关联)、后台守护进程自动监控与 Telegram 高价值洞察推送仅在 [bookmark-intelligence 付费版](#) 中提供。
 
+- 执行`本地 JSON 沉淀`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`本地 JSON 沉淀`相关配置参数进行设置
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 书签基础监控版、基于关键词启发式、与推送、Twitter、书签分析与知识萃、取基础版、手动运行抓取最近、用关键词启发式提、取摘要并落盘为本、核心能力、条书签处理、手动触发运行、适用于先体验产品、如需无限制书签处、请升级至。这些能力在上述核心功能中均有对应处理逻辑。
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |

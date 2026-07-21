@@ -28,21 +28,26 @@ tools:
 ## 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **浏览器**: 现代浏览器(Chrome/Firefox/Safari/Edge)用于预览
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
-| 文本编辑器 | 工具 | 必需 | VS Code / Sublime / 任意编辑器 |
-| 浏览器 | 预览工具 | 必需 | 系统自带 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC(Markdown 指令驱动,需 exec 执行代码文件创建与预览)
-- **说明**: 基于自然语言指令驱动 Agent 生成生产级前端代码,涵盖设计决策与实现细节
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 设计思维
 
 在编写代码之前,先理解上下文并确定一个鲜明的美学方向:

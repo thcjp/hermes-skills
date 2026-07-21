@@ -31,6 +31,10 @@ tools:
 **输入**: 用户提供Sparkline trend charts所需的参数和指令。
 
 **输出**: 返回Sparkline trend charts的处理结果。
+
+- 执行`Sparkline trend charts`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`Sparkline trend charts`相关配置参数进行设置
 ### Forecast markers
 
 执行Forecast markers操作,处理用户输入并返回结果。
@@ -38,6 +42,10 @@ tools:
 **输入**: 用户提供Forecast markers所需的参数和指令。
 
 **输出**: 返回Forecast markers的处理结果。
+
+- 执行`Forecast markers`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`Forecast markers`相关配置参数进行设置
 ### Color coding
 
 执行Color coding操作,处理用户输入并返回结果。
@@ -46,7 +54,20 @@ tools:
 
 **输出**: 返回Color coding的处理结果。
 
+- 执行`Color coding`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`Color coding`相关配置参数进行设置
+### 技术细节
 
+| 组件 | 说明 | 关键参数 |
+|:-----|:-----|:---------|
+| `parser` | 解析输入指令 | `format`, `encoding` |
+| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
+| `output` | 格式化输出结果 | `format`, `encoding` |
+
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: Analyze、financial、data、uploaded、Excel、PDF、files、generate、interactive、reports、Use、需要文件处理、文档转换、格式互转、内容提取时使用、不适用于加密文件、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

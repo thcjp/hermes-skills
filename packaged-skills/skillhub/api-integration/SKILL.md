@@ -27,19 +27,26 @@ tools:
 ## 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
-| Python `requests` | Python 包 | 推荐 | `pip install requests` |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯 Markdown 指令,部分功能需 exec 命令行执行能力）
-- **说明**: 基于自然语言指令驱动 Agent 完成 API 集成开发
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 - **RESTful 调用**: GET/POST/PUT/DELETE 方法封装,支持 JSON 请求与响应处理
@@ -55,6 +62,10 @@ tools:
 **输入**: 用户提供RESTful 调用所需的参数和指令。
 
 **输出**: 返回RESTful 调用的处理结果。
+
+- 执行`RESTful 调用`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`RESTful 调用`相关配置参数进行设置
 ### 认证管理
 
 执行认证管理操作,处理用户输入并返回结果。
@@ -62,6 +73,10 @@ tools:
 **输入**: 用户提供认证管理所需的参数和指令。
 
 **输出**: 返回认证管理的处理结果。
+
+- 执行`认证管理`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`认证管理`相关配置参数进行设置
 ### GraphQL 查询
 
 执行GraphQL 查询操作,处理用户输入并返回结果。
@@ -70,7 +85,12 @@ tools:
 
 **输出**: 返回GraphQL 查询的处理结果。
 
+- 执行`GraphQL 查询`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`GraphQL 查询`相关配置参数进行设置
+### 能力覆盖范围
 
+本skill还覆盖以下能力场景: 认证管理与错误处、连接第三方服务扩、展能力、集成开发助手、查询支持、与错误处理等核心、Python、requests、调用模板、令牌获取、按需查询与实时订、阅等知识、Agent、快速接入第三方服、扩展能力边界、适用于第三方、平台对接、数据同步场景。这些能力在上述核心功能中均有对应处理逻辑。
 ## 核心知识
 
 ### 1. RESTful API

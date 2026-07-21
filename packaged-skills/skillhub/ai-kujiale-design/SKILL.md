@@ -36,22 +36,26 @@ tools:
 ## 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **运行时**: Node.js(执行 ./scripts/*.js 脚本)
-- **网络**: 需可访问酷家乐开放接口
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| 酷家乐 access_token | 凭证 | 必需 | https://www.kujiale.com/skills 生成 |
-| Node.js | 运行时 | 必需 | 官方安装 |
-| .kjlconfig.json | 配置文件 | 必需 | 参考 .kjlconfig-example.json 创建 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC(Markdown 指令驱动,核心功能需 exec 执行 Node 脚本)
-- **说明**: 基于自然语言指令驱动 Agent 调用酷家乐开放接口完成室内设计全流程
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 初始化配置
 
 首次使用需在项目根目录创建 `.kjlconfig.json`(参考 `.kjlconfig-example.json`),配置 access_token:

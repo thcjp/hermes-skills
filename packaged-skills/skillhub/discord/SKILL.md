@@ -80,6 +80,10 @@ tools:
 **输入**: 用户提供审核(默认关闭)所需的指令和必要参数。
 **处理**: 按照skill规范执行审核(默认关闭)操作,遵循单一意图原则。
 **输出**: 返回审核(默认关闭)的执行结果,包含操作状态和输出数据。
+
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 工具控制机器人、管理消息、审核等、全功能、工具控制、覆盖消息收发与编、表情回应与统计、贴纸发送与上传、自定义表情包上传、消息置顶、成员与角色查询、频道信息、审核操作、等全套能力、支持通过、对各操作组进行细、粒度门控、角色与审核默认关、适用于社区运营自、发布通知、团队协作跟进和内、容审核场景。这些能力在上述核心功能中均有对应处理逻辑。
 ## 适用场景
 
 ### 场景一:发布通知自动化
@@ -214,15 +218,23 @@ tools:
 ## 依赖说明
 
 ### 运行环境
-- **Agent 平台**:支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
-- **操作系统**:Windows / macOS / Linux
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| Discord Bot Token | 凭证 | 必需 | 在 Discord Developer Portal 创建应用并获取 bot token,配置到 Clawdbot |
-| LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**:MD+EXEC(基于 Markdown 指令,消息与媒体操作需 Agent 具备文件读取与执行能力)
-- **说明**:通过自然语言指令驱动 Agent 调用 discord 工具的 JSON action 完成 Discord 平台操作
+- **分类**: MD+EXEC（）
+
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。

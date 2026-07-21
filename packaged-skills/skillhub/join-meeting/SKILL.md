@@ -24,20 +24,24 @@ tools:
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **会议平台**: 支持会议API的在线会议平台（如Zoom、Google Meet、Microsoft Teams）
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
-| 会议平台API | API | 必需 | 会议平台开发者文档获取 |
-| TTS引擎 | API | 必需 | OpenAI TTS / Azure TTS / 本地TTS |
-| 网络访问 | 网络 | 必需 | 用于连接会议平台 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（调用API）
-- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行会议机器人任务
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### 会议感知（Meeting Awareness）
@@ -133,6 +137,15 @@ tools:
 
 **输入**: 用户提供会议转写与记录（Transcription）所需的指令和必要参数。
 **处理**: 按照skill规范执行会议转写与记录（Transcription）操作,遵循单一意图原则。
+
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 支持会议感知、语音状态与、智能会议机器人、主动感知并参与在、线会议、覆盖语音状态变化、事件处理与会议转、适用于会议助理、自动记录、实时翻译等会议增、强场景。这些能力在上述核心功能中均有对应处理逻辑。
+
+### 输出格式
+
+执行结果以Markdown格式返回,包含操作状态(成功/失败)、处理摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。
+
 ## 使用流程
 
 1. 配置会议平台API凭证与TTS引擎

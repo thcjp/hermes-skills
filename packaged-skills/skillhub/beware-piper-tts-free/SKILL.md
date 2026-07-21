@@ -25,22 +25,26 @@ tools:
 ## 依赖说明
 
 ### 运行环境
-- **Agent平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
-- **操作系统**: macOS(Apple Silicon + Intel) / Linux / Windows(经 WSL)
-- **Python**: 3.9+ (Piper 运行时依赖)
-- **espeak-ng**: 音素化器,Piper 拼读所必需
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| piper-tts | Python 包 | 必需 | `pip install piper-tts` 或运行 `scripts/setup-piper.sh` |
-| espeak-ng | 系统库 | 必需 | macOS `brew install espeak-ng`,Linux `apt install espeak-ng` |
-| onnxruntime | 推理后端 | 必需 | 随 piper-tts 自动安装 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC(Markdown 指令驱动 Agent 调用本地 Piper 脚本)
-- **说明**: 纯本地推理的语音合成基础 Skill,通过 shell 脚本封装 Piper 调用
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### 1. 单段语音合成
@@ -69,6 +73,16 @@ MEDIA:/tmp/piper/out_20260720_103045.mp3
 
 **输出**: 返回操作执行的结果。
 
+- 执行`指令解析与执行`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`指令解析与执行`相关配置参数进行设置
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 的本地语音合成基、使用默认音色将文、本转为、零云端零密钥、神经网络引擎的本、地语音合成基础版、全部推理在本地完、零云端调用、API、核心能力、单段文本转语音、输出与语音消息封、适用于偶发的语音、消息投递与短文本、如需多音色切换、批量生成与风格控、请升级至。这些能力在上述核心功能中均有对应处理逻辑。
+
+### 输出格式
+
+执行结果以Markdown格式返回,包含操作状态(成功/失败)、处理摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。
 
 ## 适用场景
 

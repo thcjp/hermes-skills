@@ -26,23 +26,26 @@ ACE Music 是基于 ACE-Step 1.5 模型的 AI 音乐生成客户端,通过 ACE M
 ## 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **网络**: 需可访问 `https://api.acemusic.ai`
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| ACE Music API | 远程 HTTP API | 必需 | https://acemusic.ai/playground/api-key 注册获取 |
-| ACE_MUSIC_API_KEY | 环境变量 | 必需 | 控制台创建;仅作认证头使用 |
-| curl 或等价 HTTP 客户端 | 命令行工具 | 必需 | 系统自带或包管理器安装 |
-| base64 解码工具 | 命令行工具 | 必需 | 系统自带（coreutils / base64） |
-| bash / sh | 脚本运行环境 | 必需 | 执行 scripts/generate.sh 封装脚本 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（Markdown 指令驱动,需 exec 执行脚本与 curl 命令）
-- **说明**: 基于自然语言指令驱动 Agent 调用 ACE Music API,完成音乐生成与本地 MP3 落盘
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 认证
 
 使用 `ACE_MUSIC_API_KEY` 环境变量。永不打印或暴露 Key。

@@ -43,6 +43,10 @@ tools:
 **输入**: 用户提供weiyun.list所需的参数和指令。
 
 **输出**: 返回weiyun.list的处理结果。
+
+- 执行`weiyun.list`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`weiyun.list`相关配置参数进行设置
 ### weiyun.list_by_category
 
 执行weiyun.list_by_category操作,处理用户输入并返回结果。
@@ -50,6 +54,10 @@ tools:
 **输入**: 用户提供weiyun.list_by_category所需的参数和指令。
 
 **输出**: 返回weiyun.list_by_category的处理结果。
+
+- 执行`weiyun.list_by_category`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`weiyun.list_by_category`相关配置参数进行设置
 ### weiyun.download
 
 执行weiyun.download操作,处理用户输入并返回结果。
@@ -58,7 +66,12 @@ tools:
 
 **输出**: 返回weiyun.download的处理结果。
 
+- 执行`weiyun.download`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`weiyun.download`相关配置参数进行设置
+### 能力覆盖范围
 
+本skill还覆盖以下能力场景: 微云网盘全功能版、类操作、分类查询、移动重命名与版本、微云工具箱、专业版、面向团队与企业用、提供微云网盘的全、MCP、工具能力、目录浏览、目录与版本检查、配套一键脚本、错误码全表、数据上报披露与多、角色工作流、Use、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数、据处理。这些能力在上述核心功能中均有对应处理逻辑。
 ## 适用场景
 
 ### 场景一：批量清理过期文档（运维视角）

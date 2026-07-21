@@ -110,25 +110,48 @@ mysql -h localhost -u root -p mydb < backup.sql
 
 **处理**: 按照skill规范执行Backup & Restore（备份与恢复）操作,遵循单一意图原则。
 **输出**: 返回Backup & Restore（备份与恢复）的执行结果,包含操作状态和输出数据。
+
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 关系型数据库操作、工具箱、的查询、迁移与优化、Toolkit、是关系型数据库命、令行操作的完整工、三大数据库、核心能力包括、查询优化、适用于数据库开发、性能调优场景。这些能力在上述核心功能中均有对应处理逻辑。
+## 示例
+
+### 基本用法
+
+向Agent发送指令:
+
+```
+使用 SQL Toolkit 处理以下任务:
+[具体任务描述]
+```
+
+### 输出说明
+
+Agent将根据指令执行操作，返回处理结果。结果格式取决于具体能力点的输出定义。
+
 ## 依赖说明
 
 ### 运行环境
-- **Agent平台**: 支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **数据库客户端**: `sqlite3`（Python 内置）、`psql`（PostgreSQL）、`mysql`（MySQL），按需安装
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| sqlite3 | 命令行工具 | 必需 | Python 内置 / 系统包管理器 |
-| psql | 命令行工具 | PostgreSQL 场景必需 | 安装 PostgreSQL 客户端 |
-| mysql | 命令行工具 | MySQL 场景必需 | 安装 MySQL 客户端 |
-| LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（Markdown 指令 + 命令行执行）
-- **说明**: 基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行数据库操作
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

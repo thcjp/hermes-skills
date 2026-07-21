@@ -24,20 +24,26 @@ tools:
 ## 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| Agent 平台 | 运行环境 | 必需 | 任意支持 SKILL.md 的 AI Agent |
-| 网络访问 | 信息源 | 可选 | 选题研究和SEO关键词分析需访问搜索引擎 |
-| WebSearch 工具 | 搜索工具 | 可选 | Agent 平台内置或插件提供 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD（Markdown 指令驱动，纯文本交互输出文章内容）
-- **说明**: 基于自然语言指令驱动 Agent 执行选题、大纲、撰写与优化
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### 1. 选题分析与内容规划
@@ -76,6 +82,18 @@ tools:
 **输入**: 用户提供SEO优化与多平台适配所需的指令和必要参数。
 **处理**: 按照skill规范执行SEO优化与多平台适配操作,遵循单一意图原则。
 **输出**: 返回SEO优化与多平台适配的执行结果,包含操作状态和输出数据。
+
+### 技术细节
+
+| 组件 | 说明 | 关键参数 |
+|:-----|:-----|:---------|
+| `parser` | 解析输入指令 | `format`, `encoding` |
+| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
+| `output` | 格式化输出结果 | `format`, `encoding` |
+
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 博客文章创作、覆盖选题分析、免费版、博客文章创作引擎、覆盖从选题到发布、全流程、支持技术博客、思想领导力文章等、多种类型、核心能力、Body、Conclusion、故事风格。这些能力在上述核心功能中均有对应处理逻辑。
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

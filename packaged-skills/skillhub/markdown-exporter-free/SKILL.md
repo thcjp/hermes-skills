@@ -24,20 +24,19 @@ Markdown文本多格式导出引擎，支持将Markdown转换为DOCX、PDF、HTM
 ## 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **Python**: 需安装 Python 3.8+
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| Python 3.8+ | 运行环境 | 必需 | https://www.python.org/downloads/ 安装 |
-| md-exporter | Python 包 | 必需 | `pip install md-exporter` 安装 |
-| 中文字体包 | 系统字体 | 可选 | PDF中文导出需安装 Noto Sans CJK |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+本Skill无需额外API Key（LLM能力由Agent平台内置提供）
 
 ### 可用性分类
-- **分类**: MD+EXEC（Markdown 指令驱动，需 exec 执行 markdown-exporter 命令）
-- **说明**: 基于自然语言指令驱动 Agent 执行 Markdown 格式转换
+- **分类**: MD+EXEC（）
 
 ## 核心能力
 
@@ -50,6 +49,9 @@ markdown-exporter md_to_html_text /path/input.md
 markdown-exporter md_to_md /path/input.md /path/output.md
 ```
 
+- 执行`文档格式转换`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`文档格式转换`相关配置参数进行设置
 ### 2. 表格数据导出
 将Markdown表格转换为结构化数据格式：
 ```bash
@@ -74,6 +76,9 @@ markdown-exporter md_to_codeblock /path/input.md /path/output.zip --compress
 ```
 从Markdown中提取所有代码块，按语言保存为独立文件（`.py`/`.js`/`.sh`等）。
 
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: IPYNB、多格式导出引擎、免费版、文本多格式导出引、支持将、等常用格式、核心能力。这些能力在上述核心功能中均有对应处理逻辑。
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

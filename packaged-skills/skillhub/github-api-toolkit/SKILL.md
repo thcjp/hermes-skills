@@ -114,6 +114,9 @@ gh-api-toolkit batch-archive-repos \
 - **回滚支持**: 生成反向操作脚本,支持撤销
 - **进度报告**: 实时显示进度与成功/失败计数
 
+- 执行`GitHub Actions API`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`GitHub Actions API`相关配置参数进行设置
 ### Webhook管理
 ```bash
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
@@ -214,6 +217,9 @@ curl -H "Authorization: Bearer $GITHUB_TOKEN" \
   "https://api.github.com/search/users?q=language:python+location:china"
 ```
 
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 全功能、集成工具、与组织管理、适合企业级集成场、工具包、专业版、是企业级、在免费版、基础能力上、组织与团队管理等、高级能力、核心能力、高效关联查询、支持复杂分页、批量创建、删除资源、含速率控制与回滚、订阅事件、配置回调、测试与调试、工作流管理、运行控制、产物下载、成员管理。这些能力在上述核心功能中均有对应处理逻辑。
 ## 适用场景
 
 ### 场景1 -企业级仓库群批量管理

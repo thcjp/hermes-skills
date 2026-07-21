@@ -67,6 +67,18 @@ REQUIRED_SECTIONS = {
 }
 
 
+def extract_section(content: str, section_name: str) -> str:
+    """提取##章节内容 (支持章节名变体匹配)"""
+    if section_name == '核心能力':
+        pattern = r'##\s+核心(?:能力|功能|规则|概念|原则|工作流|操作)\s*\n(.*?)(?=\n## |\Z)'
+    elif section_name == '错误处理':
+        pattern = r'##\s+(?:错误|异常)处理\s*\n(.*?)(?=\n## |\Z)'
+    else:
+        pattern = rf'## {re.escape(section_name)}\s*\n(.*?)(?=\n## |\Z)'
+    match = re.search(pattern, content, re.DOTALL)
+    return match.group(1).strip() if match else ''
+
+
 def check_l3_structure(content: str, fm_data: dict) -> Tuple[str, List[str]]:
     """L3-1: 结构完整性检查"""
     errors = []
@@ -105,12 +117,16 @@ def check_l3_actionable(content: str) -> Tuple[str, List[str]]:
     """L3-2: 能力可执行性检查 - 每个###能力点是否有足够详细的操作指令"""
     errors = []
     
-    # 提取核心能力章节
-    cap_match = re.search(r'## 核心能力\s*\n(.*?)(?=\n## |\Z)', content, re.DOTALL)
-    if not cap_match:
-        return (FAIL, ["无法找到## 核心能力章节"])
+    # 非能力点标题(元信息/补充说明),不检查可执行性
+    NON_CAPABILITY_HEADINGS = [
+        '能力覆盖范围', '技术细节', '处理流程', '输入输出规范',
+        '能力参数', '适用场景', '能力概览', '功能概览',
+    ]
     
-    cap_content = cap_match.group(1)
+    # 提取核心能力章节
+    cap_content = extract_section(content, '核心能力')
+    if not cap_content:
+        return (FAIL, ["无法找到## 核心能力章节"])
     
     # 移除代码块（避免代码块内的###被误计）
     cap_no_code = re.sub(r'```[\s\S]*?```', '', cap_content)
@@ -121,11 +137,19 @@ def check_l3_actionable(content: str) -> Tuple[str, List[str]]:
         errors.append(f"核心能力仅{len(h3_matches)}个###标题,需要>=3")
         return (FAIL, errors)
     
-    # 检查每个###标题下的内容是否足够详细
-    for i, match in enumerate(h3_matches):
+    # 过滤掉非能力点标题
+    capability_matches = [m for m in h3_matches 
+                         if not any(nc in m.group(1) for nc in NON_CAPABILITY_HEADINGS)]
+    
+    if len(capability_matches) < 3:
+        errors.append(f"核心能力仅{len(capability_matches)}个能力点###标题(排除元信息后),需要>=3")
+        return (FAIL, errors)
+    
+    # 检查每个能力点标题下的内容是否足够详细
+    for i, match in enumerate(capability_matches):
         title = match.group(1).strip()
         start = match.end()
-        end = h3_matches[i + 1].start() if i + 1 < len(h3_matches) else len(cap_no_code)
+        end = capability_matches[i + 1].start() if i + 1 < len(capability_matches) else len(cap_no_code)
         section_content = cap_no_code[start:end].strip()
         
         # 每个能力点至少要有50字符的描述
@@ -166,11 +190,10 @@ def check_l3_scenario_coverage(content: str, fm_data: dict) -> Tuple[str, List[s
     combined = f"{summary} {description}"
     
     # 提取核心能力标题
-    cap_match = re.search(r'## 核心能力\s*\n(.*?)(?=\n## |\Z)', content, re.DOTALL)
-    if not cap_match:
+    cap_content = extract_section(content, '核心能力')
+    if not cap_content:
         return (WARN, ["无法检查场景覆盖率: 缺少核心能力章节"])
     
-    cap_content = cap_match.group(1)
     cap_no_code = re.sub(r'```[\s\S]*?```', '', cap_content)
     h3_titles = re.findall(r'^###\s+(.+)$', cap_no_code, re.MULTILINE)
     
@@ -212,9 +235,8 @@ def check_l3_instruction_clarity(content: str) -> Tuple[str, List[str]]:
         errors.append("缺少已知限制章节,用户可能误用skill")
     
     # 检查核心能力章节是否有代码示例或命令
-    cap_match = re.search(r'## 核心能力\s*\n(.*?)(?=\n## |\Z)', content, re.DOTALL)
-    if cap_match:
-        cap_content = cap_match.group(1)
+    cap_content = extract_section(content, '核心能力')
+    if cap_content:
         has_code_in_cap = '```' in cap_content or bool(re.search(r'`[a-zA-Z_]', cap_content))
         has_table_in_cap = '|' in cap_content and '---' in cap_content
         if not has_code_in_cap and not has_table_in_cap:
@@ -338,9 +360,8 @@ def check_l3_substance(content: str) -> Tuple[str, List[str]]:
         errors.append(f"内容过短({len(body)}字符),可能不够充实(需要>=1000)")
     
     # 检查核心能力章节的实质性
-    cap_match = re.search(r'## 核心能力\s*\n(.*?)(?=\n## |\Z)', content, re.DOTALL)
-    if cap_match:
-        cap_content = cap_match.group(1)
+    cap_content = extract_section(content, '核心能力')
+    if cap_content:
         # 核心能力章节应至少300字符
         if len(cap_content) < 300:
             errors.append(f"核心能力章节内容过短({len(cap_content)}字符),需要>=300")

@@ -33,6 +33,10 @@ tools:
 **输入**: 用户提供增量抓取 / Incremental Fetching所需的参数和指令。
 
 **输出**: 返回增量抓取 / Incremental Fetching的处理结果。
+
+- 执行`增量抓取 / Incremental Fetching`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`增量抓取 / Incremental Fetching`相关配置参数进行设置
 ### 自动标签 / Auto-tagging
 
 执行自动标签 / Auto-tagging操作,处理用户输入并返回结果。
@@ -40,6 +44,10 @@ tools:
 **输入**: 用户提供自动标签 / Auto-tagging所需的参数和指令。
 
 **输出**: 返回自动标签 / Auto-tagging的处理结果。
+
+- 执行`自动标签 / Auto-tagging`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`自动标签 / Auto-tagging`相关配置参数进行设置
 ### HTML报告 / HTML Reports
 
 执行HTML报告 / HTML Reports操作,处理用户输入并返回结果。
@@ -48,7 +56,12 @@ tools:
 
 **输出**: 返回HTML报告 / HTML Reports的处理结果。
 
+- 执行`HTML报告 / HTML Reports`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`HTML报告 / HTML Reports`相关配置参数进行设置
+### 能力覆盖范围
 
+本skill还覆盖以下能力场景: 统一的、采集与管理系统、Unified、Feed、Fetcher、Manager、支持增量抓取、报告生成、Use、需要项目管理、任务规划、进度跟踪、团队协作时使用、不适用于实际人员、绩效评估。这些能力在上述核心功能中均有对应处理逻辑。
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

@@ -22,10 +22,20 @@ tools:
 
 ## 依赖说明
 
-| 依赖项 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
-| Shell环境 (用于执行命令行操作) | 运行环境 | 是 | 见核心能力章节 |
-| Python 3.8+ | 运行环境 | 否 | 见核心能力章节 |
+### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
+
+### 依赖项
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+本Skill无需额外API Key（LLM能力由Agent平台内置提供）
+
+### 可用性分类
+- **分类**: MD+EXEC（）
 
 ## 核心能力
 
@@ -38,6 +48,9 @@ markdown-exporter md_to_html_text /path/input.md
 markdown-exporter md_to_md /path/input.md /path/output.md
 ```
 
+- 执行`文档格式转换`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`文档格式转换`相关配置参数进行设置
 ### 2. 表格数据导出
 将Markdown表格转换为结构化数据格式：
 ```bash
@@ -69,6 +82,9 @@ markdown-exporter md_to_ipynb /path/input.md /path/output.ipynb --strip-wrapper
 ```
 `--strip-wrapper` 选项移除代码块外层```包裹后再处理。
 
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 多格式导出引擎、文本多格式导出引、支持将、PNG、JSONL、种专业格式、核心能力、支持模板和分栏布、学术格式导出。这些能力在上述核心功能中均有对应处理逻辑。
 ## 支持格式总览
 
 | 工具 | 输入 | 输出格式 |

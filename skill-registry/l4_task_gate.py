@@ -47,6 +47,12 @@ PASS = 'PASS'
 FAIL = 'FAIL'
 WARN = 'WARN'
 
+# 非能力点标题(元信息/补充说明),不检查任务映射和输出标准
+NON_CAPABILITY_HEADINGS = [
+    '能力覆盖范围', '技术细节', '处理流程', '输入输出规范',
+    '能力参数', '适用场景', '能力概览', '功能概览',
+]
+
 
 def parse_frontmatter(content: str) -> dict:
     """解析frontmatter - 使用skill_core.parser统一解析"""
@@ -90,22 +96,28 @@ def check_l4_task_mapping(content: str, fm_data: dict) -> Tuple[str, List[str]]:
         return (FAIL, ["无法找到## 核心能力章节"])
     
     h3_titles = extract_h3_titles(cap_content)
-    if len(h3_titles) < 3:
-        return (FAIL, [f"核心能力仅{len(h3_titles)}个###标题,需要>=3个用户任务"])
+    # 过滤掉非能力点标题(元信息/补充说明)
+    capability_titles = [t for t in h3_titles 
+                        if not any(nc in t for nc in NON_CAPABILITY_HEADINGS)]
+    if len(capability_titles) < 3:
+        return (FAIL, [f"核心能力仅{len(capability_titles)}个能力点###标题,需要>=3个用户任务"])
     
     # 检查标题是否是有效任务（非"概述"、"简介"等非任务标题）
     non_task_keywords = ['概述', '简介', '总结', '说明', '备注', '注意', '概览', 'Overview', 'Summary']
-    for title in h3_titles:
+    for title in capability_titles:
         is_non_task = any(kw.lower() in title.lower() for kw in non_task_keywords)
         if is_non_task:
             errors.append(f"核心能力标题'{title}'不是可执行任务(含'概述/简介'等)")
     
-    # 检查每个能力是否有输入输出描述
+    # 检查每个能力是否有输入输出描述 (只检查能力点标题,跳过元信息标题)
     h3_matches = list(re.finditer(r'^###\s+(.+)$', cap_content, re.MULTILINE))
-    for i, match in enumerate(h3_matches):
+    capability_matches = [m for m in h3_matches 
+                         if not any(nc in m.group(1) for nc in NON_CAPABILITY_HEADINGS)]
+    
+    for i, match in enumerate(capability_matches):
         title = match.group(1).strip()
         start = match.end()
-        end = h3_matches[i + 1].start() if i + 1 < len(h3_matches) else len(cap_content)
+        end = capability_matches[i + 1].start() if i + 1 < len(capability_matches) else len(cap_content)
         section = cap_content[start:end].strip()
         
         # 检查是否有输入/触发条件描述
@@ -395,15 +407,17 @@ def check_l4_output_clarity(content: str, fm_data: dict) -> Tuple[str, List[str]
         if not has_result_handling:
             errors.append("使用流程中未说明结果处理方式,用户不知道执行后会得到什么")
     
-    # 检查核心能力中是否有成功标准
+    # 检查核心能力中是否有成功标准 (只检查能力点标题,跳过元信息标题)
     h3_titles = extract_h3_titles(cap_content)
     h3_matches = list(re.finditer(r'^###\s+(.+)$', cap_content, re.MULTILINE))
+    capability_matches = [m for m in h3_matches 
+                         if not any(nc in m.group(1) for nc in NON_CAPABILITY_HEADINGS)]
     
     no_output_count = 0
-    for i, match in enumerate(h3_matches):
+    for i, match in enumerate(capability_matches):
         title = match.group(1).strip()
         start = match.end()
-        end = h3_matches[i + 1].start() if i + 1 < len(h3_matches) else len(cap_content)
+        end = capability_matches[i + 1].start() if i + 1 < len(capability_matches) else len(cap_content)
         section = cap_content[start:end].strip()
         
         # 检查该能力是否有输出描述
@@ -415,10 +429,11 @@ def check_l4_output_clarity(content: str, fm_data: dict) -> Tuple[str, List[str]
         if not has_output:
             no_output_count += 1
     
-    if no_output_count > 0 and len(h3_titles) > 0:
-        ratio = no_output_count / len(h3_titles)
+    capability_count = len(capability_matches)
+    if no_output_count > 0 and capability_count > 0:
+        ratio = no_output_count / capability_count
         if ratio > 0.5:
-            errors.append(f"{no_output_count}/{len(h3_titles)}个核心能力缺少输出描述,Agent无法判断任务是否完成")
+            errors.append(f"{no_output_count}/{capability_count}个核心能力缺少输出描述,Agent无法判断任务是否完成")
     
     return (FAIL if errors else PASS, errors)
 

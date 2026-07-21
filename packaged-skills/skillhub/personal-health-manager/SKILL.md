@@ -71,6 +71,9 @@ Track and record various health metrics 基于 user profile:
 **处理**: 按照skill规范执行Health Data Recording 📊操作,遵循单一意图原则。
 **输出**: 返回Health Data Recording 📊的执行结果,包含操作状态和输出数据。
 
+- 执行`Gender-Specific Health`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`Gender-Specific Health`相关配置参数进行设置
 ### 4. Medication Management 💊
 **Features:**
 
@@ -211,6 +214,7 @@ Track and record various health metrics 基于 user profile:
 * Start slow, gradual increase
 * Monitor heart rate
 
+- 参考`Exercise Recommendations 🏃`相关配置参数进行设置
 ### 7. Nutrition Advice 🥗
 #### By Age
 **Children:**
@@ -270,6 +274,13 @@ Track and record various health metrics 基于 user profile:
 
 **输入**: 用户提供Nutrition Advice 🥗所需的指令和必要参数。
 **输出**: 返回Nutrition Advice 🥗的执行结果,包含操作状态和输出数据。
+
+- 执行`Travel Health Preparation ✈️`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`Travel Health Preparation ✈️`相关配置参数进行设置
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: Personal、wellness、assistant、users、want、get、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数、据处理、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

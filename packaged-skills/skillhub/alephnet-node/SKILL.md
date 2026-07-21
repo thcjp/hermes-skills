@@ -27,23 +27,26 @@ tools:
 ## 依赖说明
 
 ### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **Node.js**: >= 18
-- **运行时依赖**: @sschepis/resolang (WASM符号计算)
-- **可选依赖**: @aleph-ai/tinyaleph (完整语义计算能力)
 
-### 依赖说明
+### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| Node.js 运行时 | 运行时 | 必需 | nodejs.org 下载安装 |
-| @sschepis/resolang | npm包 | 必需 | npm install @sschepis/resolang |
-| @aleph-ai/tinyaleph | npm包 | 可选 | npm install @aleph-ai/tinyaleph |
-| LLM API | API | 必需 | 由Agent平台内置LLM提供 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC
-- **说明**: 基于Markdown指令的AI Skill,通过CLI命令驱动Agent执行语义计算与社交经济操作
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### 1. 语义计算与记忆场
@@ -107,6 +110,10 @@ tools:
 **输入**: 用户提供代币经济与质押层级所需的指令和必要参数。
 **处理**: 按照skill规范执行代币经济与质押层级操作,遵循单一意图原则。
 **输出**: 返回代币经济与质押层级的执行结果,包含操作状态和输出数据。
+
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 智能体的社会经济、提供语义计算、分布式记忆与一致、智能体的完整社会、经济网络、作为一等公民、系统封装语义场、分布式共识与、经济协议的复杂性、向上暴露高层认知、与社会动作、核心能力覆盖语义、分布式记忆场、与代币经济、适用场景、多智能体协作、知识共识验证、分布式记忆存储、社群运营、不适用于需要、确定性的关键决策。这些能力在上述核心功能中均有对应处理逻辑。
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

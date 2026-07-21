@@ -93,21 +93,47 @@ tools:
 - 时间序列的 correlation 可能是 spurious（伪相关）
 - 结果依赖于特定时间段或特定子集（Cherry-picking 风险）
 
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 数据分析方法论框、覆盖统计严谨性、方法选择与输出规、数据分析理调是数、据分析的方法论守、护框架。这些能力在上述核心功能中均有对应处理逻辑。
+## 使用流程
+
+1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求
+2. **指令输入**: 向Agent描述需要执行的任务，引用`data-analysis-litiao`的相关能力
+3. **执行处理**: Agent按照核心能力章节的指令执行任务
+4. **结果验证**: 检查输出结果是否符合预期，参考错误处理章节处理异常
+
+## 示例
+
+### 基本用法
+
+向Agent发送指令:
+
+```
+使用 数据分析理调 处理以下任务:
+[具体任务描述]
+```
+
+### 输出说明
+
+Agent将根据指令执行操作，返回处理结果。结果格式取决于具体能力点的输出定义。
+
 ## 依赖说明
 
 ### 运行环境
-- **Agent平台**: 支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
-| 统计软件 | 软件 | 可选 | Python(pandas/scipy) / R / Excel |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+KNOW（Markdown 知识 + 无外部依赖）
-- **说明**: 数据分析方法论知识库，Agent 读取后审查分析方案和结果的统计严谨性
+- **分类**: MD（纯Markdown指令，无需exec命令行能力）
 
 ## 错误处理
 

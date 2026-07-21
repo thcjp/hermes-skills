@@ -27,19 +27,26 @@ tools:
 ## 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **运行时**: Node.js（建议 18+）
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| Node.js | 运行时 | 必需 | 系统包管理器或官网安装 |
-| `config.json` | 配置文件 | 必需 | 从 `config.example.json` 复制并自定义 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（Markdown 指令驱动,需 exec 执行 Node.js 脚本）
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 - **Bot 核心**: 在线状态、模型名称、运行时间
@@ -72,6 +79,10 @@ tools:
 **输入**: 用户提供Bot 核心所需的参数和指令。
 
 **输出**: 返回Bot 核心的处理结果。
+
+- 执行`Bot 核心`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`Bot 核心`相关配置参数进行设置
 ### HTTP 服务健康检查
 
 执行HTTP 服务健康检查操作,处理用户输入并返回结果。
@@ -80,7 +91,12 @@ tools:
 
 **输出**: 返回HTTP 服务健康检查的处理结果。
 
+- 执行`HTTP 服务健康检查`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`HTTP 服务健康检查`相关配置参数进行设置
+### 能力覆盖范围
 
+本skill还覆盖以下能力场景: 可配置、核心运行状态为、健康检查与基础端、状态监控、服务免费版、可配置的、的核心运行状态暴、系统指标等高级功、能需升级付费版、非阻塞异步架构、配置驱动。这些能力在上述核心功能中均有对应处理逻辑。
 ## 配置文件
 
 从 `config.example.json` 复制为 `config.json` 并自定义:

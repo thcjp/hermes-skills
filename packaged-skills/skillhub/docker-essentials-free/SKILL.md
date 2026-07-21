@@ -23,19 +23,24 @@ tools:
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **Docker环境**: Docker Engine 20.10+
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| Docker Engine | 运行时 | 必需 | https://docs.docker.com/engine/install/ |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
-| 终端/Shell | CLI | 必需 | 操作系统自带 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯Markdown指令，需要exec命令行执行能力运行Docker命令）
-- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent生成与执行Docker命令
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### 容器生命周期管理（Container Lifecycle）
@@ -98,6 +103,16 @@ docker run -d --name postgres -e POSTGRES_PASSWORD=secret -v postgres-data:/var/
 
 **输出**: 返回操作执行的结果。
 
+- 执行`指令解析与执行`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`指令解析与执行`相关配置参数进行设置
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 免费版、操作指南、涵盖容器管理、镜像操作与基础调、试命令、核心操作指南免费、提供容器生命周期、管理基础命令、包含镜像管理、容器调试与常用工、适用于个人开发与、学习场景的、容器化操作。这些能力在上述核心功能中均有对应处理逻辑。
+
+### 输出格式
+
+执行结果以Markdown格式返回,包含操作状态(成功/失败)、处理摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。
 
 ## 使用流程
 

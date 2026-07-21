@@ -113,6 +113,10 @@ Google Fonts CDN 在部分地区（如欧盟 GDPR 场景）可能有隐私问题
 **输入**: 用户提供配对方案所需的参数和指令。
 
 **输出**: 返回配对方案的处理结果。
+
+- 执行`配对方案`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`配对方案`相关配置参数进行设置
 ### Playfair Display（heading）+ Source Sans Pro（body）
 
 执行Playfair Display（heading）+ Source Sans Pro（body）操作,处理用户输入并返回结果。
@@ -121,6 +125,33 @@ Google Fonts CDN 在部分地区（如欧盟 GDPR 场景）可能有隐私问题
 
 **输出**: 返回Playfair Display（heading）+ Source Sans Pro（body）的处理结果。
 
+- 执行`Playfair Display（heading）+ Source Sans Pro（body）`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`Playfair Display（heading）+ Source Sans Pro（body）`相关配置参数进行设置
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 字体选择与配对指、覆盖加载优化、子集化与自托管、涵盖加载优化、组经验证的字体配、覆盖正文、代码场景。这些能力在上述核心功能中均有对应处理逻辑。
+## 使用流程
+
+1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求
+2. **指令输入**: 向Agent描述需要执行的任务，引用`google-fonts`的相关能力
+3. **执行处理**: Agent按照核心能力章节的指令执行任务
+4. **结果验证**: 检查输出结果是否符合预期，参考错误处理章节处理异常
+
+## 示例
+
+### 基本用法
+
+向Agent发送指令:
+
+```
+使用 Google Fonts指南 处理以下任务:
+[具体任务描述]
+```
+
+### 输出说明
+
+Agent将根据指令执行操作，返回处理结果。结果格式取决于具体能力点的输出定义。
 
 ## 依赖说明
 

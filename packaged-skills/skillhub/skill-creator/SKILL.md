@@ -125,6 +125,9 @@ skill-name/
 - skill仅包含AI agent执行任务所需的essential files
 - 不包含创建过程的auxiliary context、setup/testing procedures、user-facing documentation
 
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 创建有效、的完整指南、三级加载体系、支持从需求理解到、打包的完整创建流、适用于独立开发者、企业团队构建专属、技能与自动化工作。这些能力在上述核心功能中均有对应处理逻辑。
 ## 使用流程
 
 1. **理解需求**：通过concrete examples明确skill应支持的功能与触发场景

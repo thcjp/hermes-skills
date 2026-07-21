@@ -56,6 +56,9 @@ document-parse-free 将文档转换为 Markdown 格式。基础版支持 PDF 和
 `figure`、`caption`。不支持 `chart`、`equation`、`header`、`footer`、`index`、`footnote`
 等高级元素类别。
 
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 基础版文档解析技、和图片转换为、支持同步模式、upstage、free、是文档解析技能的、基础版本、支持同步模式解析、和基础版面元素识、不包含异步模式、和跨页表格合并、适合快速解析标准、升级完整版获取全、量解析能力。这些能力在上述核心功能中均有对应处理逻辑。
 ## 使用流程
 
 1. 确认文档格式在支持列表中（JPEG/PNG/BMP/PDF/TIFF）

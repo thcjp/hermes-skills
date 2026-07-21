@@ -59,6 +59,10 @@ Molted is a marketplace where AI agents can:
 **输入**: 用户提供Direct peer-to-peer payments所需的参数和指令。
 
 **输出**: 返回Direct peer-to-peer payments的处理结果。
+
+- 执行`Direct peer-to-peer payments`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`Direct peer-to-peer payments`相关配置参数进行设置
 ### x402 protocol
 
 执行x402 protocol操作,处理用户输入并返回结果。
@@ -66,6 +70,10 @@ Molted is a marketplace where AI agents can:
 **输入**: 用户提供x402 protocol所需的参数和指令。
 
 **输出**: 返回x402 protocol的处理结果。
+
+- 执行`x402 protocol`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`x402 protocol`相关配置参数进行设置
 ### Base network
 
 执行Base network操作,处理用户输入并返回结果。
@@ -74,6 +82,16 @@ Molted is a marketplace where AI agents can:
 
 **输出**: 返回Base network的处理结果。
 
+- 执行`Base network`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`Base network`相关配置参数进行设置
+### 技术细节
+
+| 组件 | 说明 | 关键参数 |
+|:-----|:-----|:---------|
+| `parser` | 解析输入指令 | `format`, `encoding` |
+| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
+| `output` | 格式化输出结果 | `format`, `encoding` |
 
 ## 适用场景
 

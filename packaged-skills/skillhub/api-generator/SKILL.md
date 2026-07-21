@@ -28,20 +28,26 @@ tools:
 ## 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **运行时**: Bash（执行 `scripts/apigen.sh`）
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| Bash | 脚本运行环境 | 必需 | 系统自带 |
-| LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（Markdown 指令驱动,需 exec 执行 bash 脚本）
-- **说明**: 基于自然语言指令驱动 Agent 生成 API 代码脚手架
+- **分类**: MD+EXEC（）
 
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### 核心生成
@@ -67,6 +73,10 @@ tools:
 **输入**: 用户提供rest所需的参数和指令。
 
 **输出**: 返回rest的处理结果。
+
+- 执行`rest`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`rest`相关配置参数进行设置
 ### graphql
 
 执行graphql操作,处理用户输入并返回结果。
@@ -75,7 +85,12 @@ tools:
 
 **输出**: 返回graphql的处理结果。
 
+- 执行`graphql`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`graphql`相关配置参数进行设置
+### 能力覆盖范围
 
+本skill还覆盖以下能力场景: 认证与测试套件、代码生成器、从零生成生产级、代码脚手架、所有代码输出到、stdout、可重定向到项目文、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
 ## 命令用法
 
 ```bash
