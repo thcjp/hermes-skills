@@ -10,14 +10,17 @@ P1-1变更: 从skill_core导入parser/rules/checks, 不再自带重复实现
 检查项:
   1. 去标识化检测 (复用check_debranding.check_skill_md)
   2. slug==name==folder 一致性 (skill_core.checks)
-  3. SKILL.md行数 <= 500 (skill_core.checks)
-  4. frontmatter 8必需字段齐全 (skill_core.checks)
-  5. displayName <= 20字符 (skill_core.checks)
-  6. summary <= 100字符 (skill_core.checks)
-  7. tools为YAML数组格式 (skill_core.checks)
-  8. frontmatter无XML尖括号 (skill_core.checks)
-  9. 无占位符 (skill_core.checks)
- 10. 无夸大词 (skill_core.checks)
+  3. slug为kebab-case格式 (skill_core.checks)
+  4. SKILL.md行数 <= 500 (skill_core.checks)
+  5. frontmatter 8必需字段齐全 (skill_core.checks)
+  6. displayName <= 20字符 (skill_core.checks)
+  7. summary <= 100字符 (skill_core.checks)
+  8. description长度 50-300字符 (skill_core.checks)
+  9. version为x.y.z格式 (skill_core.checks)
+ 10. tools为YAML数组格式 (skill_core.checks)
+ 11. frontmatter无XML尖括号 (skill_core.checks)
+ 12. 无占位符 (skill_core.checks)
+ 13. 无夸大词 (skill_core.checks)
 
 用法:
   python quality_gate.py <SKILL.md路径>
@@ -47,6 +50,9 @@ from skill_core.checks import (
     check_no_xml_brackets,
     check_no_placeholders,
     check_no_exaggeration,
+    check_slug_kebab_case,
+    check_version_format,
+    check_description_length,
 )
 
 # 复用现有去标识检测(依赖外部check_debranding.py)
@@ -107,10 +113,13 @@ def run_quality_gate(skill_md_path: Path) -> dict:
     checks = [
         check_debranding(skill_md_path),
         check_slug_name_folder_consistency(skill_md_path, fm),
+        check_slug_kebab_case(fm),
         check_line_count(skill_md_path),
         check_required_frontmatter(fm),
         check_display_name_length(fm),
         check_summary_length(fm),
+        check_description_length(fm),
+        check_version_format(fm),
         check_tools_format(fm),
         check_no_xml_brackets(fm),
         check_no_placeholders(content),

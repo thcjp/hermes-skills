@@ -20,8 +20,10 @@ from pathlib import Path
 from .parser import parse_frontmatter
 from .rules import (
     MAX_SKILL_MD_LINES, MAX_DISPLAY_NAME_LEN, MAX_SUMMARY_LEN,
+    MIN_DESCRIPTION_LEN, MAX_DESCRIPTION_LEN,
     REQUIRED_FRONTMATTER_FIELDS,
     PLACEHOLDER_PATTERNS, EXAGGERATION_WORDS,
+    SLUG_KEBAB_PATTERN, VERSION_PATTERN,
 )
 
 
@@ -196,4 +198,68 @@ def check_no_exaggeration(content: str) -> dict:
         'severity': 'medium',
         'details': issues if issues else ['无夸大词'],
         'issue_count': len(issues)
+    }
+
+
+def check_slug_kebab_case(fm: dict) -> dict:
+    """检查: slug必须为kebab-case格式"""
+    fields = fm['fields']
+    slug = fields.get('slug', '')
+    if not slug:
+        return {
+            'name': 'slug为kebab-case',
+            'passed': False, 'severity': 'high',
+            'details': ['slug缺失'], 'issue_count': 1
+        }
+
+    passed = bool(re.match(SLUG_KEBAB_PATTERN, slug))
+    return {
+        'name': 'slug为kebab-case',
+        'passed': passed,
+        'severity': 'high',
+        'details': [f"slug='{slug}'"] if passed else [f"slug='{slug}'不符合kebab-case"],
+        'issue_count': 0 if passed else 1
+    }
+
+
+def check_version_format(fm: dict) -> dict:
+    """检查: version必须为x.y.z格式"""
+    fields = fm['fields']
+    version = fields.get('version', '')
+    if not version:
+        return {
+            'name': 'version格式',
+            'passed': False, 'severity': 'high',
+            'details': ['version缺失'], 'issue_count': 1
+        }
+
+    passed = bool(re.match(VERSION_PATTERN, version))
+    return {
+        'name': 'version格式',
+        'passed': passed,
+        'severity': 'high',
+        'details': [f"version='{version}'"] if passed else [f"version='{version}'不符合x.y.z格式"],
+        'issue_count': 0 if passed else 1
+    }
+
+
+def check_description_length(fm: dict) -> dict:
+    """检查: description长度在MIN_DESCRIPTION_LEN~MAX_DESCRIPTION_LEN之间"""
+    fields = fm['fields']
+    desc = fields.get('description', '')
+    if not desc:
+        return {
+            'name': 'description长度',
+            'passed': False, 'severity': 'high',
+            'details': ['description缺失'], 'issue_count': 1
+        }
+
+    desc_len = len(desc)
+    passed = MIN_DESCRIPTION_LEN <= desc_len <= MAX_DESCRIPTION_LEN
+    return {
+        'name': 'description长度',
+        'passed': passed,
+        'severity': 'medium',
+        'details': [f"当前{desc_len}字符 (建议{MIN_DESCRIPTION_LEN}-{MAX_DESCRIPTION_LEN})"],
+        'issue_count': 0 if passed else 1
     }

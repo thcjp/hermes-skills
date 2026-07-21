@@ -27,6 +27,7 @@ from config import (
     DB_PATH, PACKAGED_SKILLS_DIR, OPENSOURCE_SKILLS_DIR, REPORT_DIR,
     is_paid_skill, TRACE_PASS_THRESHOLD
 )
+from skill_core.parser import parse_frontmatter as _parse_fm
 
 # ============ 企业版配置 ============
 ORG_ID = 862
@@ -123,40 +124,13 @@ def find_skill_md(slug: str) -> Path:
 
 
 def parse_frontmatter(content: str) -> dict:
-    """解析SKILL.md的frontmatter"""
-    if content.startswith('\ufeff'):
-        content = content[1:]
-    
-    if not content.startswith('---'):
-        return {}
-    
-    parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
-    if len(parts) < 3:
-        return {}
-    
-    fm = parts[1]
-    body = parts[2].strip()
-    
-    result = {}
-    # 简单YAML解析
-    for line in fm.split('\n'):
-        match = re.match(r'^(\w+):\s*["\']?(.+?)["\']?\s*$', line)
-        if match:
-            result[match.group(1)] = match.group(2)
-    
-    # 解析多行description
-    desc_match = re.search(r'description:\s*\|-\s*\n((?:\s+.+\n?)+)', fm)
-    if desc_match:
-        result['description'] = desc_match.group(1).strip()
-    
-    # 解析tools列表
-    tools_match = re.findall(r'^\s+-\s+(.+)$', fm, re.MULTILINE)
-    if tools_match:
-        result['tools'] = tools_match
-    
-    result['_body'] = body
-    result['_full_content'] = content
-    return result
+    """解析SKILL.md的frontmatter - 使用skill_core.parser统一解析"""
+    result = _parse_fm(content)
+    fields = result.get('fields', {})
+    # 保持向后兼容: 添加_body和_full_content
+    fields['_body'] = result.get('body', '')
+    fields['_full_content'] = result.get('raw', content)
+    return fields
 
 
 def upload_skill(slug: str, dry_run: bool = False) -> dict:

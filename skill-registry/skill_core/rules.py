@@ -41,6 +41,14 @@ EXAGGERATION_WORDS = [
     '全球首发', '业界第一', '独一无二', '绝无仅有',
 ]
 
+# ============ 格式正则 ============
+
+# slug必须为kebab-case
+SLUG_KEBAB_PATTERN = r'^[a-z0-9]+(-[a-z0-9]+)*$'
+
+# version必须为x.y.z格式
+VERSION_PATTERN = r'^\d+\.\d+\.\d+'
+
 # ============ 不可重试的上传错误模式 ============
 # (用于update_mechanism.py upload_free_via_cli判断是否重试)
 

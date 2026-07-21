@@ -9,9 +9,16 @@
 import sqlite3
 import hashlib
 import os
+import sys
 from pathlib import Path
 from datetime import datetime
 import re
+
+# 导入统一解析层
+_sys_path = os.path.dirname(os.path.abspath(__file__))
+if _sys_path not in sys.path:
+    sys.path.insert(0, _sys_path)
+from skill_core.parser import parse_frontmatter as _parse_fm
 
 DB_PATH = r"d:\skills\skill-registry.db"
 SKILLS_ROOT = Path(r"d:\skills")
@@ -24,24 +31,9 @@ def compute_file_hash(file_path):
     return h.hexdigest()
 
 def parse_frontmatter(content):
-    """解析YAML frontmatter"""
-    if content.startswith('\ufeff'):
-        content = content[1:]
-    if not content.startswith('---'):
-        return {}
-    parts = content.split('---', 2)
-    if len(parts) < 3:
-        return {}
-    fm_text = parts[1].strip()
-    metadata = {}
-    for line in fm_text.split('\n'):
-        if ':' in line and not line.startswith('  '):
-            key, _, val = line.partition(':')
-            key = key.strip()
-            val = val.strip().strip('"').strip("'")
-            if val and val != '|-' and val != '|':
-                metadata[key] = val
-    return metadata
+    """解析YAML frontmatter - 使用skill_core.parser统一解析"""
+    result = _parse_fm(content)
+    return result.get('fields', {})
 
 def import_packaged_skills():
     """导入packaged-skills/skillhub中的JueJin原创skill"""

@@ -28,6 +28,12 @@ from pathlib import Path
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Set
 
+# 导入统一解析层
+_sys_path = os.path.dirname(os.path.abspath(__file__))
+if _sys_path not in sys.path:
+    sys.path.insert(0, _sys_path)
+from skill_core.parser import parse_frontmatter as _parse_fm
+
 # ============================================================
 # 配置
 # ============================================================
@@ -302,26 +308,9 @@ def deduplicate(discovered_skills: List[Dict[str, Any]]) -> Dict[str, Any]:
 # ============================================================
 
 def parse_frontmatter(content: str) -> Dict[str, Any]:
-    """解析YAML frontmatter"""
-    if content.startswith('\ufeff'):
-        content = content[1:]
-    if not content.startswith('---'):
-        return {}
-
-    parts = content.split('---', 2)
-    if len(parts) < 3:
-        return {}
-
-    fm_text = parts[1].strip()
-    metadata = {}
-    for line in fm_text.split('\n'):
-        if ':' in line and not line.startswith('  '):
-            key, _, val = line.partition(':')
-            key = key.strip()
-            val = val.strip().strip('"').strip("'")
-            if val and val != '|-' and val != '|':
-                metadata[key] = val
-    return metadata
+    """解析YAML frontmatter - 使用skill_core.parser统一解析"""
+    result = _parse_fm(content)
+    return result.get('fields', {})
 
 def ensure_dir():
     """确保发现目录存在"""
