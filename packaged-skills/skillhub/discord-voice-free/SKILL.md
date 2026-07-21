@@ -92,7 +92,7 @@ Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD（纯Markdown指令，无需exec命令行能力）
+- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 
 ## 使用流程
 
@@ -102,6 +102,13 @@ Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`
 4. 用斜杠命令 `/discord_voice join <channel>` 或 CLI `agent-cli discord_voice join <channelId>` 加入频道
 5. 用户说话 → VAD 检测 → 本地 Whisper 转写 → Agent 处理 → TTS 播放
 6. 退出时调用 `/discord_voice leave` 释放频道资源
+
+### 命令参数说明
+
+- `--guild`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
 
 ## 核心配置(免费版固定值)
 

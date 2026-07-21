@@ -91,7 +91,6 @@ export API_KEY="your_api_key_here"
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: Bedrock、多代理编排、覆盖状态图、AWS、多代理部署编排工、全生命周期管理五、大核心能力、适用于多代理协调、的复杂业务系统、跨会话持久记忆代、集成到代理工具链、生产级、代理部署。这些能力在上述核心功能中均有对应处理逻辑。
-
 ### 输出格式
 
 执行结果以Markdown格式返回,包含操作状态(成功/失败)、处理摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。
@@ -184,6 +183,13 @@ agentcore invoke '{"prompt": "Hello"}'    # 测试调用
 ```bash
 agentcore destroy
 ```
+
+### 命令参数说明
+
+- `--deployment-type`: 命令参数,用于指定操作选项
+- `--non-interactive`: 命令参数,用于指定操作选项
+- `--region`: 命令参数,用于指定操作选项
+- `-agentcore-starter-toolkit`: 命令参数,用于指定操作选项
 
 ## 案例展示
 

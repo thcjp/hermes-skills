@@ -1,0 +1,4465 @@
+{
+  "summary": {
+    "total": 100,
+    "pass": 57,
+    "warn": 25,
+    "fail": 18,
+    "pass_rate": "57%",
+    "dim_fail_counts": {
+      "L4-1": 23,
+      "L4-2": 20,
+      "L4-3": 8,
+      "L4-4": 0,
+      "L4-5": 13,
+      "L4-6": 0
+    }
+  },
+  "results": [
+    {
+      "slug": "accounting-and-finance",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "accounting-and-finance-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "accounting-finance",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "ace-music",
+      "verdict": "FAIL",
+      "overall_score": 66,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "无法找到## 核心能力章节",
+        "无法找到## 核心能力章节"
+      ],
+      "rejection_report": [
+        "[L4-1 任务可映射性] 无法找到## 核心能力章节",
+        "[L4-5 输出标准明确性] 无法找到## 核心能力章节"
+      ]
+    },
+    {
+      "slug": "ace-music-free",
+      "verdict": "FAIL",
+      "overall_score": 66,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "无法找到## 核心能力章节",
+        "无法找到## 核心能力章节"
+      ],
+      "rejection_report": [
+        "[L4-1 任务可映射性] 无法找到## 核心能力章节",
+        "[L4-5 输出标准明确性] 无法找到## 核心能力章节"
+      ]
+    },
+    {
+      "slug": "ace-music-paid",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "actor-identifier",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "FAIL",
+          "errors": [
+            "命令参数'-cE'在代码块中使用但未在skill中解释",
+            "命令参数'-C'在代码块中使用但未在skill中解释",
+            "命令参数'-cE'在代码块中使用但未在skill中解释",
+            "命令参数'-E'在代码块中使用但未在skill中解释"
+          ]
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "命令参数'-cE'在代码块中使用但未在skill中解释",
+        "命令参数'-C'在代码块中使用但未在skill中解释",
+        "命令参数'-cE'在代码块中使用但未在skill中解释",
+        "命令参数'-E'在代码块中使用但未在skill中解释"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "ad-insight-hub",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "ad-insight-hub-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "admapix",
+      "verdict": "FAIL",
+      "overall_score": 66,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "无法找到## 核心能力章节",
+        "无法找到## 核心能力章节"
+      ],
+      "rejection_report": [
+        "[L4-1 任务可映射性] 无法找到## 核心能力章节",
+        "[L4-5 输出标准明确性] 无法找到## 核心能力章节"
+      ]
+    },
+    {
+      "slug": "admapix-free",
+      "verdict": "FAIL",
+      "overall_score": 66,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "无法找到## 核心能力章节",
+        "无法找到## 核心能力章节"
+      ],
+      "rejection_report": [
+        "[L4-1 任务可映射性] 无法找到## 核心能力章节",
+        "[L4-5 输出标准明确性] 无法找到## 核心能力章节"
+      ]
+    },
+    {
+      "slug": "aegis-security",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "FAIL",
+          "errors": [
+            "2个错误处理条目仅有空话(如'重试')无具体可执行操作"
+          ]
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "2个错误处理条目仅有空话(如'重试')无具体可执行操作"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "aegis-security-free",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "FAIL",
+          "errors": [
+            "1个错误处理条目仅有空话(如'重试')无具体可执行操作"
+          ]
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "1个错误处理条目仅有空话(如'重试')无具体可执行操作"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "afrexai-cybersecurity-engine",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "afrexai-cybersecurity-engine-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "afrexai-knowledge-management",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "能力'8. 知识驱动自动化'缺少处理/执行描述,Agent不知道如何完成任务"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "能力'8. 知识驱动自动化'缺少处理/执行描述,Agent不知道如何完成任务"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "afrexai-knowledge-management-free",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "FAIL",
+          "errors": [
+            "tools声明exec但skill中无任何命令/脚本引用"
+          ]
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "tools声明exec但skill中无任何命令/脚本引用"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "agent",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "agent-bom-vulnerability-intel",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "agent-browser-assistant",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "agent-browser-clawdbot",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "agent-browser-cli",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "agent-browser-stagehand",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "agent-chat",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "agent-commercial-contract",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "agent-framework-azure-ai-py",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "agent-group",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "agent-knowledge",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "agent-telegram",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "FAIL",
+          "errors": [
+            "tools声明exec但skill中无任何命令/脚本引用"
+          ]
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "tools声明exec但skill中无任何命令/脚本引用"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "agent-telegram-free",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "FAIL",
+          "errors": [
+            "tools声明exec但skill中无任何命令/脚本引用"
+          ]
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "tools声明exec但skill中无任何命令/脚本引用"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "agentic-security-audit",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "agentvibes-content-skill",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "agentvibes-skill",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "agentvibes-voice-skill",
+      "verdict": "FAIL",
+      "overall_score": 66,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "无法找到## 核心能力章节",
+        "无法找到## 核心能力章节"
+      ],
+      "rejection_report": [
+        "[L4-1 任务可映射性] 无法找到## 核心能力章节",
+        "[L4-5 输出标准明确性] 无法找到## 核心能力章节"
+      ]
+    },
+    {
+      "slug": "agentvibes-voice-skill-free",
+      "verdict": "FAIL",
+      "overall_score": 66,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "无法找到## 核心能力章节",
+        "无法找到## 核心能力章节"
+      ],
+      "rejection_report": [
+        "[L4-1 任务可映射性] 无法找到## 核心能力章节",
+        "[L4-5 输出标准明确性] 无法找到## 核心能力章节"
+      ]
+    },
+    {
+      "slug": "ai-agent-helper",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "FAIL",
+          "errors": [
+            "命令参数'-and-Execute有什么区别'在代码块中使用但未在skill中解释",
+            "命令参数'-of-Thought断裂'在代码块中使用但未在skill中解释",
+            "命令参数'-and-Execute是先规划完整步骤再逐步执行'在代码块中使用但未在skill中解释"
+          ]
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "命令参数'-and-Execute有什么区别'在代码块中使用但未在skill中解释",
+        "命令参数'-of-Thought断裂'在代码块中使用但未在skill中解释",
+        "命令参数'-and-Execute是先规划完整步骤再逐步执行'在代码块中使用但未在skill中解释"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "ai-agent-helper-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "ai-artist-workstation",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "FAIL",
+          "errors": [
+            "tools声明exec但skill中无任何命令/脚本引用"
+          ]
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "tools声明exec但skill中无任何命令/脚本引用"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "ai-assistant",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "FAIL",
+          "errors": [
+            "tools声明exec但skill中无任何命令/脚本引用"
+          ]
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "tools声明exec但skill中无任何命令/脚本引用"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "ai-assistant-free",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "FAIL",
+          "errors": [
+            "tools声明exec但skill中无任何命令/脚本引用"
+          ]
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "tools声明exec但skill中无任何命令/脚本引用"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "ai-image-gen",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "ai-image-gen-free",
+      "verdict": "FAIL",
+      "overall_score": 66,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "无法找到## 核心能力章节",
+        "无法找到## 核心能力章节"
+      ],
+      "rejection_report": [
+        "[L4-1 任务可映射性] 无法找到## 核心能力章节",
+        "[L4-5 输出标准明确性] 无法找到## 核心能力章节"
+      ]
+    },
+    {
+      "slug": "ai-kujiale-design",
+      "verdict": "FAIL",
+      "overall_score": 50,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "FAIL",
+          "errors": [
+            "命令参数'--areaId'在代码块中使用但未在skill中解释",
+            "命令参数'--planId'在代码块中使用但未在skill中解释",
+            "命令参数'--taskId'在代码块中使用但未在skill中解释",
+            "命令参数'--planId'在代码块中使用但未在skill中解释",
+            "命令参数'--tagItemIds'在代码块中使用但未在skill中解释",
+            "命令参数'--designId'在代码块中使用但未在skill中解释",
+            "命令参数'--buildCeiling'在代码块中使用但未在skill中解释",
+            "命令参数'--autoDesign'在代码块中使用但未在skill中解释",
+            "命令参数'--styleId'在代码块中使用但未在skill中解释",
+            "命令参数'--tagIds'在代码块中使用但未在skill中解释",
+            "命令参数'--applyDecorationStyle'在代码块中使用但未在skill中解释",
+            "命令参数'--designId'在代码块中使用但未在skill中解释",
+            "命令参数'--obsDesignId'在代码块中使用但未在skill中解释",
+            "命令参数'--xToken'在代码块中使用但未在skill中解释",
+            "命令参数'--designId'在代码块中使用但未在skill中解释",
+            "命令参数'--designId'在代码块中使用但未在skill中解释",
+            "命令参数'--buildCeiling'在代码块中使用但未在skill中解释",
+            "命令参数'--tagItemIds'在代码块中使用但未在skill中解释",
+            "命令参数'--autoDesign'在代码块中使用但未在skill中解释",
+            "命令参数'--styleId'在代码块中使用但未在skill中解释",
+            "命令参数'--tagIds'在代码块中使用但未在skill中解释",
+            "命令参数'--obsDesignId'在代码块中使用但未在skill中解释",
+            "命令参数'--applyDecorationStyle'在代码块中使用但未在skill中解释",
+            "命令参数'--xToken'在代码块中使用但未在skill中解释",
+            "命令参数'--areaId'在代码块中使用但未在skill中解释",
+            "命令参数'--planId'在代码块中使用但未在skill中解释",
+            "命令参数'--taskId'在代码块中使用但未在skill中解释",
+            "命令参数'--planId'在代码块中使用但未在skill中解释",
+            "命令参数'--tagItemIds'在代码块中使用但未在skill中解释"
+          ]
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "无法找到## 核心能力章节",
+        "命令参数'--areaId'在代码块中使用但未在skill中解释",
+        "命令参数'--planId'在代码块中使用但未在skill中解释",
+        "命令参数'--taskId'在代码块中使用但未在skill中解释",
+        "命令参数'--planId'在代码块中使用但未在skill中解释",
+        "命令参数'--tagItemIds'在代码块中使用但未在skill中解释",
+        "命令参数'--designId'在代码块中使用但未在skill中解释",
+        "命令参数'--buildCeiling'在代码块中使用但未在skill中解释",
+        "命令参数'--autoDesign'在代码块中使用但未在skill中解释",
+        "命令参数'--styleId'在代码块中使用但未在skill中解释",
+        "命令参数'--tagIds'在代码块中使用但未在skill中解释",
+        "命令参数'--applyDecorationStyle'在代码块中使用但未在skill中解释",
+        "命令参数'--designId'在代码块中使用但未在skill中解释",
+        "命令参数'--obsDesignId'在代码块中使用但未在skill中解释",
+        "命令参数'--xToken'在代码块中使用但未在skill中解释",
+        "命令参数'--designId'在代码块中使用但未在skill中解释",
+        "命令参数'--designId'在代码块中使用但未在skill中解释",
+        "命令参数'--buildCeiling'在代码块中使用但未在skill中解释",
+        "命令参数'--tagItemIds'在代码块中使用但未在skill中解释",
+        "命令参数'--autoDesign'在代码块中使用但未在skill中解释",
+        "命令参数'--styleId'在代码块中使用但未在skill中解释",
+        "命令参数'--tagIds'在代码块中使用但未在skill中解释",
+        "命令参数'--obsDesignId'在代码块中使用但未在skill中解释",
+        "命令参数'--applyDecorationStyle'在代码块中使用但未在skill中解释",
+        "命令参数'--xToken'在代码块中使用但未在skill中解释",
+        "命令参数'--areaId'在代码块中使用但未在skill中解释",
+        "命令参数'--planId'在代码块中使用但未在skill中解释",
+        "命令参数'--taskId'在代码块中使用但未在skill中解释",
+        "命令参数'--planId'在代码块中使用但未在skill中解释",
+        "命令参数'--tagItemIds'在代码块中使用但未在skill中解释",
+        "无法找到## 核心能力章节"
+      ],
+      "rejection_report": [
+        "[L4-1 任务可映射性] 无法找到## 核心能力章节",
+        "[L4-2 命令可执行性] 命令参数'--areaId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--planId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--taskId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--planId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--tagItemIds'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--designId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--buildCeiling'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--autoDesign'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--styleId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--tagIds'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--applyDecorationStyle'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--designId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--obsDesignId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--xToken'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--designId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--designId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--buildCeiling'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--tagItemIds'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--autoDesign'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--styleId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--tagIds'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--obsDesignId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--applyDecorationStyle'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--xToken'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--areaId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--planId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--taskId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--planId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--tagItemIds'在代码块中使用但未在skill中解释",
+        "[L4-5 输出标准明确性] 无法找到## 核心能力章节"
+      ]
+    },
+    {
+      "slug": "ai-kujiale-design-free",
+      "verdict": "FAIL",
+      "overall_score": 50,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "FAIL",
+          "errors": [
+            "命令参数'--areaId'在代码块中使用但未在skill中解释",
+            "命令参数'--planId'在代码块中使用但未在skill中解释",
+            "命令参数'--planId'在代码块中使用但未在skill中解释",
+            "命令参数'--tagItemIds'在代码块中使用但未在skill中解释",
+            "命令参数'--designId'在代码块中使用但未在skill中解释",
+            "命令参数'--buildCeiling'在代码块中使用但未在skill中解释",
+            "命令参数'--autoDesign'在代码块中使用但未在skill中解释",
+            "命令参数'--styleId'在代码块中使用但未在skill中解释",
+            "命令参数'--tagIds'在代码块中使用但未在skill中解释",
+            "命令参数'--applyDecorationStyle'在代码块中使用但未在skill中解释",
+            "命令参数'--designId'在代码块中使用但未在skill中解释",
+            "命令参数'--obsDesignId'在代码块中使用但未在skill中解释",
+            "命令参数'--xToken'在代码块中使用但未在skill中解释",
+            "命令参数'--designId'在代码块中使用但未在skill中解释",
+            "命令参数'--designId'在代码块中使用但未在skill中解释",
+            "命令参数'--buildCeiling'在代码块中使用但未在skill中解释",
+            "命令参数'--tagItemIds'在代码块中使用但未在skill中解释",
+            "命令参数'--autoDesign'在代码块中使用但未在skill中解释",
+            "命令参数'--styleId'在代码块中使用但未在skill中解释",
+            "命令参数'--tagIds'在代码块中使用但未在skill中解释",
+            "命令参数'--obsDesignId'在代码块中使用但未在skill中解释",
+            "命令参数'--applyDecorationStyle'在代码块中使用但未在skill中解释",
+            "命令参数'--xToken'在代码块中使用但未在skill中解释",
+            "命令参数'--areaId'在代码块中使用但未在skill中解释",
+            "命令参数'--planId'在代码块中使用但未在skill中解释"
+          ]
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "无法找到## 核心能力章节",
+        "命令参数'--areaId'在代码块中使用但未在skill中解释",
+        "命令参数'--planId'在代码块中使用但未在skill中解释",
+        "命令参数'--planId'在代码块中使用但未在skill中解释",
+        "命令参数'--tagItemIds'在代码块中使用但未在skill中解释",
+        "命令参数'--designId'在代码块中使用但未在skill中解释",
+        "命令参数'--buildCeiling'在代码块中使用但未在skill中解释",
+        "命令参数'--autoDesign'在代码块中使用但未在skill中解释",
+        "命令参数'--styleId'在代码块中使用但未在skill中解释",
+        "命令参数'--tagIds'在代码块中使用但未在skill中解释",
+        "命令参数'--applyDecorationStyle'在代码块中使用但未在skill中解释",
+        "命令参数'--designId'在代码块中使用但未在skill中解释",
+        "命令参数'--obsDesignId'在代码块中使用但未在skill中解释",
+        "命令参数'--xToken'在代码块中使用但未在skill中解释",
+        "命令参数'--designId'在代码块中使用但未在skill中解释",
+        "命令参数'--designId'在代码块中使用但未在skill中解释",
+        "命令参数'--buildCeiling'在代码块中使用但未在skill中解释",
+        "命令参数'--tagItemIds'在代码块中使用但未在skill中解释",
+        "命令参数'--autoDesign'在代码块中使用但未在skill中解释",
+        "命令参数'--styleId'在代码块中使用但未在skill中解释",
+        "命令参数'--tagIds'在代码块中使用但未在skill中解释",
+        "命令参数'--obsDesignId'在代码块中使用但未在skill中解释",
+        "命令参数'--applyDecorationStyle'在代码块中使用但未在skill中解释",
+        "命令参数'--xToken'在代码块中使用但未在skill中解释",
+        "命令参数'--areaId'在代码块中使用但未在skill中解释",
+        "命令参数'--planId'在代码块中使用但未在skill中解释",
+        "无法找到## 核心能力章节"
+      ],
+      "rejection_report": [
+        "[L4-1 任务可映射性] 无法找到## 核心能力章节",
+        "[L4-2 命令可执行性] 命令参数'--areaId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--planId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--planId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--tagItemIds'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--designId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--buildCeiling'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--autoDesign'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--styleId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--tagIds'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--applyDecorationStyle'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--designId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--obsDesignId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--xToken'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--designId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--designId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--buildCeiling'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--tagItemIds'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--autoDesign'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--styleId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--tagIds'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--obsDesignId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--applyDecorationStyle'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--xToken'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--areaId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--planId'在代码块中使用但未在skill中解释",
+        "[L4-5 输出标准明确性] 无法找到## 核心能力章节"
+      ]
+    },
+    {
+      "slug": "ai-news",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "ai-podcast",
+      "verdict": "FAIL",
+      "overall_score": 66,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "FAIL",
+          "errors": [
+            "命令参数'-H'在代码块中使用但未在skill中解释",
+            "命令参数'-Type'在代码块中使用但未在skill中解释",
+            "命令参数'-X'在代码块中使用但未在skill中解释",
+            "命令参数'-H'在代码块中使用但未在skill中解释",
+            "命令参数'-Type'在代码块中使用但未在skill中解释",
+            "命令参数'-X'在代码块中使用但未在skill中解释",
+            "命令参数'-H'在代码块中使用但未在skill中解释"
+          ]
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "FAIL",
+          "errors": [
+            "错误条目'返回结果缺少分享链接'缺少处理方式描述"
+          ]
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "命令参数'-H'在代码块中使用但未在skill中解释",
+        "命令参数'-Type'在代码块中使用但未在skill中解释",
+        "命令参数'-X'在代码块中使用但未在skill中解释",
+        "命令参数'-H'在代码块中使用但未在skill中解释",
+        "命令参数'-Type'在代码块中使用但未在skill中解释",
+        "命令参数'-X'在代码块中使用但未在skill中解释",
+        "命令参数'-H'在代码块中使用但未在skill中解释",
+        "错误条目'返回结果缺少分享链接'缺少处理方式描述"
+      ],
+      "rejection_report": [
+        "[L4-2 命令可执行性] 命令参数'-H'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'-Type'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'-X'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'-H'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'-Type'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'-X'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'-H'在代码块中使用但未在skill中解释",
+        "[L4-3 错误恢复可操作性] 错误条目'返回结果缺少分享链接'缺少处理方式描述"
+      ]
+    },
+    {
+      "slug": "ai-podcast-free",
+      "verdict": "FAIL",
+      "overall_score": 66,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "FAIL",
+          "errors": [
+            "命令参数'-H'在代码块中使用但未在skill中解释",
+            "命令参数'-Type'在代码块中使用但未在skill中解释",
+            "命令参数'-X'在代码块中使用但未在skill中解释",
+            "命令参数'-H'在代码块中使用但未在skill中解释"
+          ]
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "FAIL",
+          "errors": [
+            "错误条目'任务状态查询失败'缺少处理方式描述"
+          ]
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "命令参数'-H'在代码块中使用但未在skill中解释",
+        "命令参数'-Type'在代码块中使用但未在skill中解释",
+        "命令参数'-X'在代码块中使用但未在skill中解释",
+        "命令参数'-H'在代码块中使用但未在skill中解释",
+        "错误条目'任务状态查询失败'缺少处理方式描述"
+      ],
+      "rejection_report": [
+        "[L4-2 命令可执行性] 命令参数'-H'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'-Type'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'-X'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'-H'在代码块中使用但未在skill中解释",
+        "[L4-3 错误恢复可操作性] 错误条目'任务状态查询失败'缺少处理方式描述"
+      ]
+    },
+    {
+      "slug": "ai-video-director",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "FAIL",
+          "errors": [
+            "tools声明exec但skill中无任何命令/脚本引用"
+          ]
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "tools声明exec但skill中无任何命令/脚本引用"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "ai-writing-style-cloner",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "FAIL",
+          "errors": [
+            "tools声明exec但skill中无任何命令/脚本引用"
+          ]
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "tools声明exec但skill中无任何命令/脚本引用"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "aic-dashboard",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "aic-dashboard-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "alephnet-node",
+      "verdict": "FAIL",
+      "overall_score": 66,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "能力'5. 一致性验证网络'缺少处理/执行描述,Agent不知道如何完成任务"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "FAIL",
+          "errors": [
+            "命令参数'--groupId'在代码块中使用但未在skill中解释",
+            "命令参数'--displayName'在代码块中使用但未在skill中解释",
+            "命令参数'--edgeType'在代码块中使用但未在skill中解释",
+            "命令参数'--taskId'在代码块中使用但未在skill中解释",
+            "命令参数'--toClaimId'在代码块中使用但未在skill中解释",
+            "命令参数'--fromClaimId'在代码块中使用但未在skill中解释"
+          ]
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "能力'5. 一致性验证网络'缺少处理/执行描述,Agent不知道如何完成任务",
+        "命令参数'--groupId'在代码块中使用但未在skill中解释",
+        "命令参数'--displayName'在代码块中使用但未在skill中解释",
+        "命令参数'--edgeType'在代码块中使用但未在skill中解释",
+        "命令参数'--taskId'在代码块中使用但未在skill中解释",
+        "命令参数'--toClaimId'在代码块中使用但未在skill中解释",
+        "命令参数'--fromClaimId'在代码块中使用但未在skill中解释"
+      ],
+      "rejection_report": [
+        "[L4-1 任务可映射性] 能力'5. 一致性验证网络'缺少处理/执行描述,Agent不知道如何完成任务",
+        "[L4-2 命令可执行性] 命令参数'--groupId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--displayName'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--edgeType'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--taskId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--toClaimId'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'--fromClaimId'在代码块中使用但未在skill中解释"
+      ]
+    },
+    {
+      "slug": "alephnet-node-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "alephnet-node-manager",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "FAIL",
+          "errors": [
+            "命令参数'--consensusThreshold'在代码块中使用但未在skill中解释",
+            "命令参数'--targetFieldId'在代码块中使用但未在skill中解释",
+            "命令参数'--conversationId'在代码块中使用但未在skill中解释",
+            "命令参数'--verifiedOnly'在代码块中使用但未在skill中解释",
+            "命令参数'--minConsensus'在代码块中使用但未在skill中解释",
+            "命令参数'--fieldId'在代码块中使用但未在skill中解释",
+            "命令参数'--agentIds'在代码块中使用但未在skill中解释",
+            "命令参数'--toClaimId'在代码块中使用但未在skill中解释",
+            "命令参数'--userId'在代码块中使用但未在skill中解释",
+            "命令参数'--fromClaimId'在代码块中使用但未在skill中解释",
+            "命令参数'--lockDays'在代码块中使用但未在skill中解释",
+            "命令参数'--claimId'在代码块中使用但未在skill中解释",
+            "命令参数'-Pro'在代码块中使用但未在skill中解释",
+            "命令参数'--acceptedClaimIds'在代码块中使用但未在skill中解释"
+          ]
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "命令参数'--consensusThreshold'在代码块中使用但未在skill中解释",
+        "命令参数'--targetFieldId'在代码块中使用但未在skill中解释",
+        "命令参数'--conversationId'在代码块中使用但未在skill中解释",
+        "命令参数'--verifiedOnly'在代码块中使用但未在skill中解释",
+        "命令参数'--minConsensus'在代码块中使用但未在skill中解释",
+        "命令参数'--fieldId'在代码块中使用但未在skill中解释",
+        "命令参数'--agentIds'在代码块中使用但未在skill中解释",
+        "命令参数'--toClaimId'在代码块中使用但未在skill中解释",
+        "命令参数'--userId'在代码块中使用但未在skill中解释",
+        "命令参数'--fromClaimId'在代码块中使用但未在skill中解释",
+        "命令参数'--lockDays'在代码块中使用但未在skill中解释",
+        "命令参数'--claimId'在代码块中使用但未在skill中解释",
+        "命令参数'-Pro'在代码块中使用但未在skill中解释",
+        "命令参数'--acceptedClaimIds'在代码块中使用但未在skill中解释"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "alibaba-quark-scan",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "alibaba-quark-scan-free",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "FAIL",
+          "errors": [
+            "错误条目'网络连接超时'缺少处理方式描述"
+          ]
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "错误条目'网络连接超时'缺少处理方式描述"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "alpha-feed-creator",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "amap-jsapi-skill",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "analytics-dashboard",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "analyze",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "analyze-video-by-qwen",
+      "verdict": "FAIL",
+      "overall_score": 66,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "无法找到## 核心能力章节",
+        "无法找到## 核心能力章节"
+      ],
+      "rejection_report": [
+        "[L4-1 任务可映射性] 无法找到## 核心能力章节",
+        "[L4-5 输出标准明确性] 无法找到## 核心能力章节"
+      ]
+    },
+    {
+      "slug": "analyze-video-by-qwen-free",
+      "verdict": "FAIL",
+      "overall_score": 66,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "无法找到## 核心能力章节",
+        "无法找到## 核心能力章节"
+      ],
+      "rejection_report": [
+        "[L4-1 任务可映射性] 无法找到## 核心能力章节",
+        "[L4-5 输出标准明确性] 无法找到## 核心能力章节"
+      ]
+    },
+    {
+      "slug": "anthropics-frontend-design",
+      "verdict": "FAIL",
+      "overall_score": 66,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "无法找到## 核心能力章节",
+        "无法找到## 核心能力章节"
+      ],
+      "rejection_report": [
+        "[L4-1 任务可映射性] 无法找到## 核心能力章节",
+        "[L4-5 输出标准明确性] 无法找到## 核心能力章节"
+      ]
+    },
+    {
+      "slug": "anthropics-frontend-design-free",
+      "verdict": "FAIL",
+      "overall_score": 66,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "FAIL",
+          "errors": [
+            "无法找到## 核心能力章节"
+          ]
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "无法找到## 核心能力章节",
+        "无法找到## 核心能力章节"
+      ],
+      "rejection_report": [
+        "[L4-1 任务可映射性] 无法找到## 核心能力章节",
+        "[L4-5 输出标准明确性] 无法找到## 核心能力章节"
+      ]
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan",
+      "verdict": "FAIL",
+      "overall_score": 66,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "能力'5. 测量结果与腰臀比'缺少处理/执行描述,Agent不知道如何完成任务"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "FAIL",
+          "errors": [
+            "1个错误处理条目仅有空话(如'重试')无具体可执行操作"
+          ]
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "能力'5. 测量结果与腰臀比'缺少处理/执行描述,Agent不知道如何完成任务",
+        "1个错误处理条目仅有空话(如'重试')无具体可执行操作"
+      ],
+      "rejection_report": [
+        "[L4-1 任务可映射性] 能力'5. 测量结果与腰臀比'缺少处理/执行描述,Agent不知道如何完成任务",
+        "[L4-3 错误恢复可操作性] 1个错误处理条目仅有空话(如'重试')无具体可执行操作"
+      ]
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "anygen-diagram",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "FAIL",
+          "errors": [
+            "命令参数'-H'在代码块中使用但未在skill中解释",
+            "命令参数'-Type'在代码块中使用但未在skill中解释",
+            "命令参数'-X'在代码块中使用但未在skill中解释"
+          ]
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "命令参数'-H'在代码块中使用但未在skill中解释",
+        "命令参数'-Type'在代码块中使用但未在skill中解释",
+        "命令参数'-X'在代码块中使用但未在skill中解释"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "anygen-diagram-generator",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "anygen-diagram-generator-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "api",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "api-connect-hub",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "api-development",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "api-doc-generator",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "能力'功能1：代码仓库自动扫描'缺少处理/执行描述,Agent不知道如何完成任务"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "能力'功能1：代码仓库自动扫描'缺少处理/执行描述,Agent不知道如何完成任务"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "api-doc-writer",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "api-doc-writer-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "api-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "api-gateway",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "FAIL",
+          "errors": [
+            "命令参数'-X'在代码块中使用但未在skill中解释",
+            "命令参数'-Type'在代码块中使用但未在skill中解释"
+          ]
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "命令参数'-X'在代码块中使用但未在skill中解释",
+        "命令参数'-Type'在代码块中使用但未在skill中解释"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "api-gateway-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "api-generator",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "api-generator-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "api-integration",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "api-integration-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "api-magic-gen",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "FAIL",
+          "errors": [
+            "1个错误处理条目仅有空话(如'重试')无具体可执行操作"
+          ]
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "1个错误处理条目仅有空话(如'重试')无具体可执行操作"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "api-scaffold-gen",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "能力'功能7：自定义模板引擎'缺少处理/执行描述,Agent不知道如何完成任务"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "能力'功能7：自定义模板引擎'缺少处理/执行描述,Agent不知道如何完成任务"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "api-test-runner",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "api-toolkit",
+      "verdict": "FAIL",
+      "overall_score": 50,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "能力'功能2：本地Mock服务器'缺少处理/执行描述,Agent不知道如何完成任务",
+            "能力'功能4：OpenAPI契约校验'缺少处理/执行描述,Agent不知道如何完成任务"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "FAIL",
+          "errors": [
+            "命令参数'-Type'在代码块中使用但未在skill中解释",
+            "命令参数'-X'在代码块中使用但未在skill中解释"
+          ]
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "FAIL",
+          "errors": [
+            "错误条目'测试集云端仓库：Git版本化，支持分支与PR评审'缺少处理方式描述"
+          ]
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "能力'功能2：本地Mock服务器'缺少处理/执行描述,Agent不知道如何完成任务",
+        "能力'功能4：OpenAPI契约校验'缺少处理/执行描述,Agent不知道如何完成任务",
+        "命令参数'-Type'在代码块中使用但未在skill中解释",
+        "命令参数'-X'在代码块中使用但未在skill中解释",
+        "错误条目'测试集云端仓库：Git版本化，支持分支与PR评审'缺少处理方式描述"
+      ],
+      "rejection_report": [
+        "[L4-1 任务可映射性] 能力'功能2：本地Mock服务器'缺少处理/执行描述,Agent不知道如何完成任务",
+        "[L4-1 任务可映射性] 能力'功能4：OpenAPI契约校验'缺少处理/执行描述,Agent不知道如何完成任务",
+        "[L4-2 命令可执行性] 命令参数'-Type'在代码块中使用但未在skill中解释",
+        "[L4-2 命令可执行性] 命令参数'-X'在代码块中使用但未在skill中解释",
+        "[L4-3 错误恢复可操作性] 错误条目'测试集云端仓库：Git版本化，支持分支与PR评审'缺少处理方式描述"
+      ]
+    },
+    {
+      "slug": "apple-health-skill",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "apple-health-skill-free",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "能力'2. 获取训练记录'缺少处理/执行描述,Agent不知道如何完成任务"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "能力'2. 获取训练记录'缺少处理/执行描述,Agent不知道如何完成任务"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "archive",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "能力'全文内容提取'缺少处理/执行描述,Agent不知道如何完成任务",
+            "能力'语义标签分配'缺少处理/执行描述,Agent不知道如何完成任务"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "能力'全文内容提取'缺少处理/执行描述,Agent不知道如何完成任务",
+        "能力'语义标签分配'缺少处理/执行描述,Agent不知道如何完成任务"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "archive-free",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "能力'全文内容提取'缺少处理/执行描述,Agent不知道如何完成任务"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "能力'全文内容提取'缺少处理/执行描述,Agent不知道如何完成任务"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "art",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "assistant",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "atlas-admin-console",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "audio-stream-upload",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "FAIL",
+          "errors": [
+            "命令参数'-Type'在代码块中使用但未在skill中解释",
+            "命令参数'-Type'在代码块中使用但未在skill中解释",
+            "命令参数'-Type'在代码块中使用但未在skill中解释",
+            "命令参数'-Type'在代码块中使用但未在skill中解释"
+          ]
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "命令参数'-Type'在代码块中使用但未在skill中解释",
+        "命令参数'-Type'在代码块中使用但未在skill中解释",
+        "命令参数'-Type'在代码块中使用但未在skill中解释",
+        "命令参数'-Type'在代码块中使用但未在skill中解释"
+      ],
+      "rejection_report": []
+    },
+    {
+      "slug": "audio-upload-aioz-stream",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "audio-upload-aioz-stream-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "audit",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "auto-monitor",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "auto-workflow",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [],
+      "rejection_report": []
+    },
+    {
+      "slug": "automation-recipe-book",
+      "verdict": "WARN",
+      "overall_score": 83,
+      "checks": {
+        "L4-1": {
+          "name": "任务可映射性",
+          "status": "FAIL",
+          "errors": [
+            "能力'功能二：配方生成器框架'缺少处理/执行描述,Agent不知道如何完成任务"
+          ]
+        },
+        "L4-2": {
+          "name": "命令可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-3": {
+          "name": "错误恢复可操作性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-4": {
+          "name": "依赖闭环性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-5": {
+          "name": "输出标准明确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L4-6": {
+          "name": "用户体验完整性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "能力'功能二：配方生成器框架'缺少处理/执行描述,Agent不知道如何完成任务"
+      ],
+      "rejection_report": []
+    }
+  ]
+}

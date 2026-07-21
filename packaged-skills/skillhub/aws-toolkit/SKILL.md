@@ -177,6 +177,34 @@ python3 scripts/security.py scan --output security_report.pdf
 python3 scripts/regions.py deploy --template web_app --regions "us-east-1,eu-west-1,ap-southeast-1"
 ```
 
+### 命令参数说明
+
+1. `--template`: 命令参数,用于指定操作选项
+2. `--standards`: 命令参数,用于指定操作选项
+3. `--output`: 命令参数,用于指定操作选项
+4. `--regions`: 命令参数,用于指定操作选项
+5. `-east-1`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-west-1`: 命令参数,用于指定操作选项
+- `-tf-state`: 命令参数,用于指定操作选项
+- `-DSS`: 命令参数,用于指定操作选项
+- `-southeast-1`: 命令参数,用于指定操作选项
+- `-west-2`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--apply-recommendations`: 命令参数,用于指定操作选项
+- `--auto-approve`: 命令参数,用于指定操作选项
+- `--period`: 命令参数,用于指定操作选项
+- `--dry-run`: 命令参数,用于指定操作选项
+- `-DSS`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-DSS`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

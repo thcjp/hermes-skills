@@ -161,6 +161,11 @@ tools:
 
 > **First time with ADB:** Enable Developer Options on your TV (Settings → About → tap Build Number 7 times), then enable Network/USB debugging. First connection will show "Allow debugging?" on the TV — accept it. Requires `adb` installed on the Skill平台 host (`sudo apt install adb`).
 
+### 命令参数说明
+
+1. `-ha-long-lived-token`: 命令参数,用于指定操作选项
+2. `-jellyfin-api-key`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

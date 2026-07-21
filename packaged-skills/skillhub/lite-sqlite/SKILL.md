@@ -69,6 +69,12 @@ tools:
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: lightweight、local、SQLite、database、SkillHub、agents、minimal、RAM、storage、usage、Use、需要数据库操作、SQL、数据存储管理时使、不适用于数据库架、构设计决策、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+### 领域术语
+本skill涉及以下领域术语: `predefined`, `periodically`, `performance`, `proper`, `reclaims`, `same`, `ultra`, `avoid`, `openclaw`, `alternative`, `handling`, `resources`, `files`, `lookup`, `supports`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -113,6 +119,13 @@ db.create_table("temp", {...})
 ```
 
 ---
+
+**使用步骤**:
+1. 阅读依赖说明章节,确认运行环境已就绪
+2. 根据任务需求,参考核心能力章节选择对应能力
+3. 按照能力描述提供输入参数,执行操作
+4. 查看输出结果,确认任务完成状态
+
 
 ## 输入格式
 

@@ -111,7 +111,6 @@ Please install the plugin-architecture skill. Read the INSTALL_INSTRUCTIONS.md f
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: 插件架构、使插件可注册自定、义视图与导航标签、架构为、OpenClaw、插件注册支持、使插件可在、等配置项、可指定、安装指令与。这些能力在上述核心功能中均有对应处理逻辑。
-
 ### 输出格式
 
 执行结果以Markdown格式返回,包含操作状态(成功/失败)、处理摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。

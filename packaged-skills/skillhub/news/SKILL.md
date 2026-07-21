@@ -77,6 +77,25 @@ tools:
 | `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
 | `output` | 格式化输出结果 | `format`, `encoding` |
 
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Update Memory from Engagement | 支持 | 通过核心功能实现对应能力 |
+| Facts First, Analysis Second | 支持 | 通过核心功能实现对应能力 |
+| Build Profile Before Delivering | 支持 | 通过核心功能实现对应能力 |
+| Check Memory First | 支持 | 通过核心功能实现对应能力 |
+| Never Fabricate | 支持 | 通过核心功能实现对应能力 |
+
+**输入**: 用户提供源能力映射所需的指令和必要参数。
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `generic`, `tailor`, `track`, `memory-template.md`, `summarizer`, `contested`, `periodically`, `lead`, `reading`, `scrape`, `增强元数据和触发`, `trusted`, `presenting`, `past`, `cite`
+
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

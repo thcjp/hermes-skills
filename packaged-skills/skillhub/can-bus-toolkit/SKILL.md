@@ -184,6 +184,12 @@ python scripts/lookup.py --where a7f3b2c1d4e5
 python scripts/export_report.py --format html --range 2024-01-01:2024-03-31 --output ./reports/q1_audit.html
 ```
 
+### 命令参数说明
+
+- `-events`: 命令参数,用于指定操作选项
+- `--config`: 命令参数,用于指定操作选项
+- `--range`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

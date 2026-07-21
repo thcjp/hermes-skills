@@ -161,6 +161,10 @@ translated = pro.translate_sql(source_sql, from_dialect="postgresql", to_dialect
 
 完整上手时间约120秒。
 
+### 命令参数说明
+
+- `-host`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

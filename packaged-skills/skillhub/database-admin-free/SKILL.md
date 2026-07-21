@@ -32,13 +32,13 @@ tools:
 ## 核心功能
 
 ### 基础表结构设计
-
 - 自动设计表结构（主键、`NOT NULL`、`DEFAULT`）
 - 支持常用数据类型：`TEXT`、`VARCHAR(n)`、`INT`、`SERIAL`、`TIMESTAMP`、`DECIMAL(p,s)`
 - 创建基础索引（`CREATE INDEX`）
 
 > **升级提示**：`BIGINT`、`UUID`、`JSONB`、`ENUM` 等高级数据类型，外键约束（`FOREIGN KEY`）、检查约束（`CHECK`）为付费版专享功能。
 
+**输入**: 用户提供基础表结构设计所需的指令和必要参数。
 ### 数据插入
 ```sql
 -- 单条插入
@@ -101,10 +101,10 @@ COMMIT;
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
-本Skill无需额外API Key（LLM能力由Agent平台内置提供）
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD（纯Markdown指令，无需exec命令行能力）
+- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 
 ## 使用流程
 

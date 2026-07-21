@@ -262,11 +262,11 @@ def embed_metadata(mp3_path, title, artist, album, cover_path=None):
 ### 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
-- **操作系统**: Windows / macOS / Linux
-- **Shell**: Bash(Windows 建议使用 WSL 或 Git Bash)
-- **Python**: 3.9 及以上(订阅与同步功能)
-- **网络**: 需访问播客平台
+1. **Agent 平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+2. **操作系统**: Windows / macOS / Linux
+3. **Shell**: Bash(Windows 建议使用 WSL 或 Git Bash)
+4. **Python**: 3.9 及以上(订阅与同步功能)
+5. **网络**: 需访问播客平台
 
 ### 第三方依赖
 
@@ -281,14 +281,30 @@ def embed_metadata(mp3_path, title, artist, album, cover_path=None):
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
-- 核心下载功能**无需任何 API Key**
-- 部分平台可能需要登录 Cookie(配置在环境变量)
-- API 服务化建议配置鉴权 Token
-- 企业部署建议通过密钥管理服务统一托管
+6. 核心下载功能**无需任何 API Key**
+7. 部分平台可能需要登录 Cookie(配置在环境变量)
+8. API 服务化建议配置鉴权 Token
+9. 企业部署建议通过密钥管理服务统一托管
 
 ### 可用性分类
-- **分类**: MD+EXEC()
-- **说明**: 基于Markdown的AI Skill,。专业版支持批量下载、订阅同步与多平台扩展,适合企业级播客内容归档与自动化管理。
+10. **分类**: MD+EXEC()
+11. **说明**: 基于Markdown的AI Skill,。专业版支持批量下载、订阅同步与多平台扩展,适合企业级播客内容归档与自动化管理。
+
+### 命令参数说明
+
+12. `-config`: 命令参数,用于指定操作选项
+13. `-delete`: 命令参数,用于指定操作选项
+14. `-map`: 命令参数,用于指定操作选项
+15. `-mtime`: 命令参数,用于指定操作选项
+16. `-codec`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+### 命令参数说明
+
+- `-sync`: 命令参数,用于指定操作选项
+- `-disposition`: 命令参数,用于指定操作选项
+- `-metadata`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

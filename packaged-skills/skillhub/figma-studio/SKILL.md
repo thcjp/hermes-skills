@@ -80,6 +80,7 @@ def get_webhook_requests(webhook_id: str):
 
 **支持的事件类型**：`FILE_UPDATE`（文件更新）、`FILE_COMMENT`（评论）、`FILE_DELETE`（文件删除）、`FILE_VERSION_UPDATE`（版本更新）、`LIBRARY_PUBLISH`（库发布）、`LIBRARY_DELETE`（库删除）。
 
+**处理**: 按照skill规范执行能力2：Webhook全生命周期管理操作,遵循单一意图原则。
 ### 能力3：设计变更监控
 ```python
 import hashlib, json, time
@@ -146,6 +147,7 @@ def generate_team_asset_report(team_id: str) -> dict:
     return report
 ```
 
+**处理**: 按照skill规范执行能力4：团队资源治理操作,遵循单一意图原则。
 ### 能力5：设计令牌转Tailwind
 ```python
 def tokens_to_tailwind_config(file_key: str) -> str:
@@ -186,6 +188,7 @@ def tokens_to_tailwind_config(file_key: str) -> str:
     return config
 ```
 
+**处理**: 按照skill规范执行能力5：设计令牌转Tailwind操作,遵循单一意图原则。
 ### 能力6：设计版本对比
 ```python
 def compare_versions(file_key: str, old_version: str, new_version: str) -> dict:
@@ -353,6 +356,27 @@ webhook = create_figma_webhook(
 )
 print(f"Webhook已创建，ID: {webhook['id']}")
 ```
+
+### 命令参数说明
+
+1. `-Type`: 命令参数,用于指定操作选项
+2. `-Figma-Token`: 命令参数,用于指定操作选项
+3. `-server`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+- `-Figma-Token`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+- `-Figma-Token`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+- `-Figma-Token`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

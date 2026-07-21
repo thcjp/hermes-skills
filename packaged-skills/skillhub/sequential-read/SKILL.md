@@ -79,7 +79,24 @@ tools:
 - 参考`数据处理与转换`相关配置参数进行设置
 ### 能力覆盖范围
 
-本skill还覆盖以下能力场景: Read、prose、sequentially、structured、reflections、simulate、reading、experience。这些能力在上述核心功能中均有对应处理逻辑。
+本skill还覆盖以下能力场景: prose、sequentially、structured、reflections、simulate、reading、experience。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Otherwise it creates a new session | 支持 | 通过核心功能实现对应能力 |
+| A brief note: how many chunks, whether a lens was used | 支持 | 通过核心功能实现对应能力 |
+
+**输入**: 用户提供源能力映射所需的指令和必要参数。
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+### 领域术语
+本skill涉及以下领域术语: `before`, `list`, `print`, `novella`, `lighter`, `confusion`, `sustained`, `post`, `preread`, `model`, `persist`, `length`, `revise`, `action`, `invocation`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 使用流程
 
 1. 确认运行环境满足依赖说明中的要求

@@ -172,18 +172,18 @@ ollama run my-assistant "解释微服务架构"
 
 ### 前置条件
 
-- 已安装Ollama（从官网下载安装包）
-- Ollama服务正在运行
-- 建议配备独立GPU（NVIDIA 8GB+显存或Apple Silicon）
+1. 已安装Ollama（从官网下载安装包）
+2. Ollama服务正在运行
+3. 建议配备独立GPU（NVIDIA 8GB+显存或Apple Silicon）
 
 ### 依赖说明
 
 ### 运行环境
 
-- **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
-- **操作系统**：Windows / macOS / Linux
-- **硬件要求**：8GB+内存（3b模型），16GB+内存（7b模型），推荐独立GPU
-- **GPU驱动**：NVIDIA CUDA 11+（NVIDIA显卡）/ Metal（Apple Silicon）
+4. **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+5. **操作系统**：Windows / macOS / Linux
+6. **硬件要求**：8GB+内存（3b模型），16GB+内存（7b模型），推荐独立GPU
+7. **GPU驱动**：NVIDIA CUDA 11+（NVIDIA显卡）/ Metal（Apple Silicon）
 
 ### 第三方依赖
 
@@ -197,15 +197,47 @@ ollama run my-assistant "解释微服务架构"
 
 ### API Key 配置
 
-- 本Skill基于Ollama本地运行，无需任何API Key
-- Ollama服务默认监听`localhost:11434`，无需认证
-- 局域网部署时建议通过防火墙限制访问来源，Ollama本身不提供内置认证机制
-- 如需认证层，建议在反向代理（如Nginx）中配置API Key验证
+8. 本Skill基于Ollama本地运行，无需任何API Key
+9. Ollama服务默认监听`localhost:11434`，无需认证
+10. 局域网部署时建议通过防火墙限制访问来源，Ollama本身不提供内置认证机制
+11. 如需认证层，建议在反向代理（如Nginx）中配置API Key验证
 
 ### 可用性分类
 
-- **分类**：MD+EXEC（纯Markdown指令，需要exec命令行执行能力）
-- **说明**：基于Markdown的AI Skill，通过自然语言指令驱动Agent执行Ollama全量命令行和API操作
+12. **分类**：MD+EXEC（纯Markdown指令，需要exec命令行执行能力）
+13. **说明**：基于Markdown的AI Skill，通过自然语言指令驱动Agent执行Ollama全量命令行和API操作
+
+### 命令参数说明
+
+14. `--num-ctx`: 命令参数,用于指定操作选项
+15. `--top-p`: 命令参数,用于指定操作选项
+16. `-X`: 命令参数,用于指定操作选项
+17. `-I`: 命令参数,用于指定操作选项
+18. `-smi`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+### 命令参数说明
+
+- `--num-predict`: 命令参数,用于指定操作选项
+- `-X`: 命令参数,用于指定操作选项
+- `--repeat-penalty`: 命令参数,用于指定操作选项
+- `-assistant`: 命令参数,用于指定操作选项
+- `-P`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-P`: 命令参数,用于指定操作选项
+- `-I`: 命令参数,用于指定操作选项
+- `--top-k`: 命令参数,用于指定操作选项
+- `-reviewer`: 命令参数,用于指定操作选项
+- `-X`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-P`: 命令参数,用于指定操作选项
+- `-I`: 命令参数,用于指定操作选项
+- `-X`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

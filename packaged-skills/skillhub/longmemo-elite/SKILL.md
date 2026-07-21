@@ -109,6 +109,26 @@ tools:
 会话结束时：更新SESSION-STATE.md最终状态 → 重要内容迁移到MEMORY.md → 创建/更新memory/YYYY-MM-DD.md日志。
 每周执行：memory_dedup去重 → memory_forget清理低重要性向量（importance<0.3且超过30天）→ memory_compact压缩旧日志 → memory_export导出备份。
 
+### 命令参数说明
+
+- `-STATE`: 命令参数,用于指定操作选项
+- `-Notes`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-STATE`: 命令参数,用于指定操作选项
+- `-Notes`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Notes`: 命令参数,用于指定操作选项
+- `-STATE`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Notes`: 命令参数,用于指定操作选项
+- `-STATE`: 命令参数,用于指定操作选项
+
 ## 错误处理
 
 | 错误类型 | 原因 | 处理方式 |

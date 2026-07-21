@@ -130,18 +130,18 @@ obsidian template:insert name=任务清单
 ## 使用流程
 
 ### 前置条件
-- Obsidian 1.12及以上版本，需Catalyst许可证
-- 在Obsidian中开启命令行接口：设置 → 通用 → 命令行接口 → 启用
-- 注册`obsidian`命令后重启终端
-- Obsidian应用必须处于运行状态
+1. Obsidian 1.12及以上版本，需Catalyst许可证
+2. 在Obsidian中开启命令行接口：设置 → 通用 → 命令行接口 → 启用
+3. 注册`obsidian`命令后重启终端
+4. Obsidian应用必须处于运行状态
 
 ### 依赖说明
 
 ### 运行环境
-- **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
-- **操作系统**：Windows / macOS / Linux
-- **Obsidian版本**：1.12及以上，需Catalyst许可证
-- **Obsidian Sync**：同步功能需要Obsidian Sync订阅
+5. **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+6. **操作系统**：Windows / macOS / Linux
+7. **Obsidian版本**：1.12及以上，需Catalyst许可证
+8. **Obsidian Sync**：同步功能需要Obsidian Sync订阅
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
@@ -152,13 +152,23 @@ obsidian template:insert name=任务清单
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 
 ### API Key 配置
-- 本Skill基于Obsidian本地命令行接口，无需额外API Key
-- Obsidian Sync功能需要Obsidian账户登录，在应用内配置
-- 开发者工具中的eval执行无需额外认证
+9. 本Skill基于Obsidian本地命令行接口，无需额外API Key
+10. Obsidian Sync功能需要Obsidian账户登录，在应用内配置
+11. 开发者工具中的eval执行无需额外认证
 
 ### 可用性分类
-- **分类**：MD+EXEC（纯Markdown指令，需要exec命令行执行能力）
-- **说明**：基于Markdown的AI Skill，通过自然语言指令驱动Agent执行Obsidian全量命令行操作
+12. **分类**：MD+EXEC（纯Markdown指令，需要exec命令行执行能力）
+13. **说明**：基于Markdown的AI Skill，通过自然语言指令驱动Agent执行Obsidian全量命令行操作
+
+### 命令参数说明
+
+14. `-bold`: 命令参数,用于指定操作选项
+15. `-leaf`: 命令参数,用于指定操作选项
+16. `-report`: 命令参数,用于指定操作选项
+17. `-snippet`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
 
 ## 输入格式
 

@@ -45,7 +45,6 @@ tools:
 - **Confidence interval reporting**：是否报告了 confidence interval 而非仅点估计？
 
 ### Analytical Pitfalls（分析陷阱识别）
-
 7 个常见分析陷阱及其识别方法：
 
 | 陷阱 | 英文 | 识别方法 |
@@ -58,8 +57,8 @@ tools:
 | 百分比聚合错误 | Aggregating percentages | 各组百分比不能直接平均，需用加权平均或回到原始计数 |
 | 摘樱桃 | Cherry-picking | 是否只展示有利数据？检查完整时间范围和所有分组 |
 
+**输出**: 返回Analytical Pitfalls（分析陷阱识别）的执行结果,包含操作状态和输出数据。
 ### Approach Selection（分析方法选择）
-
 根据分析目标选择正确的分析方法：
 
 - **描述性分析（Descriptive）**：均值、中位数、分布 — 回答"发生了什么"
@@ -70,8 +69,8 @@ tools:
 
 选择原则：correlation 不等于 causation。观察数据只能发现关联，因果需实验或准实验方法。
 
+**输出**: 返回Approach Selection（分析方法选择）的执行结果,包含操作状态和输出数据。
 ### Output Standards（输出规范）
-
 分析输出的标准化要求：
 
 - **结论先行**：1-2 句话总结核心发现，附 confidence level（高/中/低）
@@ -81,6 +80,7 @@ tools:
 - **方法论说明**：使用的统计方法、假设检验类型、校正方法
 - **局限性声明**：数据局限性、未控制的 confounder、generalizability 限制
 
+**输入**: 用户提供Output Standards（输出规范）所需的指令和必要参数。
 ### Red Flags to Escalate（风险升级机制）
 
 遇到以下情况时必须升级到资深分析师或暂停分析：

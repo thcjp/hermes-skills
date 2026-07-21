@@ -113,8 +113,8 @@ aws configure set region us-west-2
 
 ### 3. 执行资源查询
 根据运维需求选择对应能力:
-- **盘点资源** → 执行Inventory类命令(如`describe-instances`)
-- **检查健康** → 执行Health类命令(如`describe-instance-status`)
+1. **盘点资源** → 执行Inventory类命令(如`describe-instances`)
+2. **检查健康** → 执行Health类命令(如`describe-instance-status`)
 
 ### 4. 格式化输出
 ```bash
@@ -124,6 +124,21 @@ aws configure set region us-west-2
 # JSON格式 (适合程序处理)
 --output json
 ```
+
+### 命令参数说明
+
+3. `-east-1c`: 命令参数,用于指定操作选项
+4. `-east-1a`: 命令参数,用于指定操作选项
+5. `-state-name`: 命令参数,用于指定操作选项
+6. `-data`: 命令参数,用于指定操作选项
+7. `-app-uploads`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-east-1b`: 命令参数,用于指定操作选项
+- `-west-2`: 命令参数,用于指定操作选项
+- `-logs`: 命令参数,用于指定操作选项
+- `-caller-identity`: 命令参数,用于指定操作选项
 
 ## 案例展示
 

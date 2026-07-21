@@ -67,7 +67,30 @@ tools:
 
 ### 能力覆盖范围
 
-本skill还覆盖以下能力场景: Unified、web、dashboard、managing、task、queues、monitoring、system、metrics、viewing、ZeroTier、statu、Use、需要项目管理、任务规划、进度跟踪、团队协作时使用、不适用于实际人员、绩效评估、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+本skill还覆盖以下能力场景: Unified、web、dashboard、managing、queues、monitoring、metrics、viewing、statu、Use、需要项目管理、任务规划、进度跟踪、团队协作时使用、不适用于实际人员、绩效评估、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Source filtering | 支持 | 通过核心功能实现对应能力 |
+| Auto-refresh every 3 seconds | 支持 | 通过核心功能实现对应能力 |
+| Network info | 支持 | 通过核心功能实现对应能力 |
+| Memory usage with progress bar | 支持 | 通过核心功能实现对应能力 |
+| Recent log entries | 支持 | 通过核心功能实现对应能力 |
+| CPU usage with progress bar | 支持 | 通过核心功能实现对应能力 |
+| Load average | 支持 | 通过核心功能实现对应能力 |
+
+**输入**: 用户提供源能力映射所需的指令和必要参数。
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `cases`, `post`, `main`, `clear`, `stream`, `real`, `zerotier-deploy`, `system-monitor`, `author`, `overview`, `combines`, `integration`, `task-queue`, `commands`, `uptime`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 1. **Operations Dashboard** - Monitor all systems in one view
@@ -82,6 +105,15 @@ dashboard start 3853
 ```
 
 Then open: <http://localhost:3853>
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+**使用步骤**:
+1. 阅读依赖说明章节,确认运行环境已就绪
+2. 根据任务需求,参考核心能力章节选择对应能力
+3. 按照能力描述提供输入参数,执行操作
+4. 查看输出结果,确认任务完成状态
+
 
 ## 输入格式
 

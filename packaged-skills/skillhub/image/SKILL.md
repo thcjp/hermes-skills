@@ -64,7 +64,30 @@ tools:
 
 ### 能力覆盖范围
 
-本skill还覆盖以下能力场景: Use、需要文件处理、文档转换、格式互转、内容提取时使用、不适用于加密文件、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+本skill还覆盖以下能力场景: 需要文件处理、文档转换、格式互转、内容提取时使用、不适用于加密文件、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Situation | 支持 | 通过核心功能实现对应能力 |
+| Social images need safe composition because feeds crop previews differently across platforms. | 支持 | 通过核心功能实现对应能力 |
+| Batch safely and keep the original reversible | 支持 | 通过核心功能实现对应能力 |
+| Stripping or changing ICC profiles can shift colors even when the pixels themselves did not change. | 支持 | 通过核心功能实现对应能力 |
+| Transparency changes the decision: JPEG drops alpha, while PNG, WebP, and AVIF can preserve it. | 支持 | 通过核心功能实现对应能力 |
+| Resize, crop, and compress in the right order | 支持 | 通过核心功能实现对应能力 |
+| Logos, icons, and simple illustrations should stay vector (.svg) when the target supports it. | 支持 | 通过核心功能实现对应能力 |
+| Repeated lossy saves compound damage, so keep a clean source and minimize recompression loops. | 支持 | 通过核心功能实现对应能力 |
+| Preserve color, transparency, and detail deliberately | 支持 | 通过核心功能实现对应能力 |
+| Treat metadata and orientation as real delivery concerns | 支持 | 通过核心功能实现对应能力 |
+
+### 领域术语
+本skill涉及以下领域术语: `marketplace`, `treating`, `transparent`, `commands.md`, `screenshot`, `html`, `assuming`, `make`, `retina`, `white`, `avoid`, `like`, `diagram`, `identify`, `screenshots.md`
+
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

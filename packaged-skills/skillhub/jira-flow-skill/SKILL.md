@@ -190,6 +190,20 @@ bash {baseDir}/scripts/jira.sh cache warm
 - **分类**：MD+EXEC（纯 Markdown 指令，功能需要 exec 命令行执行能力）
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 调用脚本完成任务
 
+### 命令参数说明
+
+- `-domain`: 命令参数,用于指定操作选项
+- `--format`: 命令参数,用于指定操作选项
+- `--projects`: 命令参数,用于指定操作选项
+- `--event`: 命令参数,用于指定操作选项
+- `-webhook-secret`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--group-by`: 命令参数,用于指定操作选项
+- `-im-bot`: 命令参数,用于指定操作选项
+- `--include`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

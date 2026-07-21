@@ -40,7 +40,7 @@ tools:
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD（纯Markdown指令，无需exec命令行能力）
+- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 
 ## 核心能力
 
@@ -82,6 +82,9 @@ tools:
 3. 浏览指定相册照片：`python3 scripts/qzone_photos.py --action photos --album-id "ALBUM_ID" --cookies cookies.json`
 4. 如需上传、下载或创建相册功能，升级至完整版
 5. 如遇Cookie过期，重新执行 `login` action获取新Cookie
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
 
 ## 示例
 

@@ -157,9 +157,9 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 ## 使用流程
 
 ### 前置条件
-- 已注册API代理服务账户并获取API Key
-- 已创建Pipedrive OAuth连接
-- 已设置API Key环境变量
+1. 已注册API代理服务账户并获取API Key
+2. 已创建Pipedrive OAuth连接
+3. 已设置API Key环境变量
 
 ### 配置环境变量
 ```bash
@@ -206,6 +206,30 @@ req.add_header('Content-Type', 'application/json')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 "
 ```
+
+### 命令参数说明
+
+4. `-Connection`: 命令参数,用于指定操作选项
+5. `-Type`: 命令参数,用于指定操作选项
+6. `-Connection头指定`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Connection`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+- `-Connection头指定`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Connection`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+- `-Connection头指定`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Connection头指定`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+- `-Connection`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

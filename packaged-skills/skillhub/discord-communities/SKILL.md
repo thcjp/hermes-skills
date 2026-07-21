@@ -64,7 +64,6 @@ clawlink_list_tools({ integration: "discord" });
 调用 `discord_modify_current_user`、`discord_update_user_application_role_connection` 等变更类工具必须使用 Bearer Token,Bot Token 会返回 `401 Unauthorized`。
 
 ### 3. 风险分级执行策略
-
 | 风险等级 | 典型工具 | 执行策略 |
 |---------|---------|---------|
 | safe | `discord_get_my_user`、`discord_list_my_guilds` | 直接执行 |

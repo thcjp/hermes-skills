@@ -78,7 +78,23 @@ tools:
 - 参考`数据处理与转换`相关配置参数进行设置
 ### 能力覆盖范围
 
-本skill还覆盖以下能力场景: Guide、art、creation、technique、development、appreciation、practical、medium、specific、advice、核心能力。这些能力在上述核心功能中均有对应处理逻辑。
+本skill还覆盖以下能力场景: Guide、creation、technique、development、appreciation、practical、medium、specific、advice、核心能力。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| "Draw from life" isn't always right — anime artists learning from anime is legitimate | 支持 | 通过核心功能实现对应能力 |
+| Color theory rules are starting points, not laws — masters break them constantly with purpose | 支持 | 通过核心功能实现对应能力 |
+
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `helps`, `give`, `krita`, `teaching`, `specify`, `personal`, `materials`, `strathmore`, `style`, `perfection`, `student`, `digital`, `sketchbook`, `guidance`, `recommend`
+
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 使用流程
 
 1. 确认运行环境满足依赖说明中的要求

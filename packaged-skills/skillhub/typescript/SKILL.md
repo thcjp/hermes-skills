@@ -70,6 +70,23 @@ tools:
 - 验证执行结果，确认输出符合预期格式
 - 参考`能力覆盖范围`相关配置参数进行设置
 
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Declaration files | 支持 | 通过核心功能实现对应能力 |
+| Migration from JS | 支持 | 通过核心功能实现对应能力 |
+
+**输入**: 用户提供源能力映射所需的指令和必要参数。
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `exhaustive`, `generic`, `failures`, `string`, `const`, `unknown`, `discriminated`, `utility`, `nested`, `satisfies`, `array`, `utility-types.md`, `migration.md`, `callbacks`, `boundaries`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

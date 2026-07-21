@@ -153,6 +153,26 @@ python3 scripts/auto_monitor.py --watchlist "AAPL,MSFT" --notify "telegram"
 python3 scripts/optimize.py --strategy "vegas" --ticker AAPL --period "3y"
 ```
 
+### 命令参数说明
+
+1. `--export`: 命令参数,用于指定操作选项
+2. `--notify`: 命令参数,用于指定操作选项
+3. `--watchlist`: 命令参数,用于指定操作选项
+4. `--strategy`: 命令参数,用于指定操作选项
+5. `--initial-capital`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--strategies`: 命令参数,用于指定操作选项
+- `--ticker`: 命令参数,用于指定操作选项
+- `--period`: 命令参数,用于指定操作选项
+- `--interval`: 命令参数,用于指定操作选项
+- `--sector`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--signal-type`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

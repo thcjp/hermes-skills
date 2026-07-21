@@ -116,10 +116,10 @@ markdown-exporter-pro diff v1.2.md v1.3.md --output changelog.pdf
 ### 依赖说明
 
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
-- **操作系统**: Windows / macOS / Linux
-- **Python**: 3.8+
-- **Docker**: 可选（API服务容器化部署）
+1. **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+2. **操作系统**: Windows / macOS / Linux
+3. **Python**: 3.8+
+4. **Docker**: 可选（API服务容器化部署）
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
@@ -132,14 +132,46 @@ markdown-exporter-pro diff v1.2.md v1.3.md --output changelog.pdf
 | 中文字体 | 字体包 | 可选 | 系统包管理器安装 |
 
 ### API Key 配置
-- **API_TOKEN**: REST API服务的鉴权Token，通过环境变量注入，禁止硬编码
-- **PDF_PASSWORD**: PDF加密密码，通过环境变量注入
-- **ALERT_WEBHOOK_URL**: 监控告警Webhook地址，通过环境变量配置
-- **Redis密码**: 通过REDIS_PASSWORD环境变量配置
+5. **API_TOKEN**: REST API服务的鉴权Token，通过环境变量注入，禁止硬编码
+6. **PDF_PASSWORD**: PDF加密密码，通过环境变量注入
+7. **ALERT_WEBHOOK_URL**: 监控告警Webhook地址，通过环境变量配置
+8. **Redis密码**: 通过REDIS_PASSWORD环境变量配置
 
 ### 可用性分类
-- **分类**: MD+EXEC（）
-- **说明**: 基于Markdown的AI Skill，
+9. **分类**: MD+EXEC（）
+10. **说明**: 基于Markdown的AI Skill，
+
+### 命令参数说明
+
+11. `--parallel`: 命令参数,用于指定操作选项
+12. `-family`: 命令参数,用于指定操作选项
+13. `--no-copy`: 命令参数,用于指定操作选项
+14. `--no-modify`: 命令参数,用于指定操作选项
+15. `--watermark`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--highlight-changes`: 命令参数,用于指定操作选项
+- `--output-dir`: 命令参数,用于指定操作选项
+- `-X`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+- `-v2`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-height`: 命令参数,用于指定操作选项
+- `-align`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+- `-radius`: 命令参数,用于指定操作选项
+- `--permissions`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--formats`: 命令参数,用于指定操作选项
+- `--format`: 命令参数,用于指定操作选项
+- `-F`: 命令参数,用于指定操作选项
+- `-color`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

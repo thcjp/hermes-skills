@@ -45,7 +45,6 @@ export API_KEY="your_api_key_here"
 ## 核心能力
 
 ### 容器生命周期管理（Container Lifecycle）
-
 完整的容器创建、启动、停止、删除管理：
 
 **运行容器（Running containers）：**
@@ -74,6 +73,7 @@ docker rm -f container_name   # 强制删除容器
 docker container prune        # 清理所有已停止容器
 ```
 
+**输入**: 用户提供容器生命周期管理（Container Lifecycle）所需的指令和必要参数。
 ### 容器检查与调试（Container Inspection & Debugging）
 查看日志、执行命令、检查容器状态：
 
@@ -250,7 +250,6 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: 涵盖容器生命周期、系统管理等、核心操作、核心操作指南、覆盖容器生命周期、的完整管理流程、包含容器调试、镜像构建与管理、多容器编排、涵盖网络配置、系统管理与常见工、适用于开发、生产环境的、容器化部署与运维。这些能力在上述核心功能中均有对应处理逻辑。
-
 ### 输出格式
 
 执行结果以Markdown格式返回,包含操作状态(成功/失败)、处理摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。
@@ -262,6 +261,18 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 3. 使用自然语言描述需求，Agent生成对应的Docker命令
 4. Agent执行命令并检查输出结果
 5. 如遇错误，参考错误处理章节进行排查
+
+### 命令参数说明
+
+- `--tail`: 命令参数,用于指定操作选项
+- `--from`: 命令参数,用于指定操作选项
+- `--scale`: 命令参数,用于指定操作选项
+- `-compose启动一个web`: 命令参数,用于指定操作选项
+- `--no-cache`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--build-arg`: 命令参数,用于指定操作选项
 
 ## 示例
 

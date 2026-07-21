@@ -34,6 +34,7 @@ tools:
 - `deleteMessage`:按 `channelId` + `messageId` 删除消息。
 - `readMessages`:按 `channelId` 拉取最近消息,支持 `limit` 控制条数。
 
+**输出**: 返回消息管理的执行结果,包含操作状态和输出数据。
 ### 表情回应
 - `react`:对指定消息添加 emoji(如 `✅`、`⚠️`)。
 - `reactions`:列出某条消息的回应及对应用户列表,支持 `limit`。
@@ -109,6 +110,10 @@ tools:
 3. **准备内容**:消息文本遵循 Discord 写作风格(短句、避免 markdown 表格、链接用 `<>` 抑制预览);媒体走 `mediaUrl`,`file:///` 本地或 `https://` 远程;表情包/贴纸确认大小与格式限制。
 4. **执行 action**:以 JSON 调用对应 action,记录返回的 `messageId`、`threadId` 供后续编辑/回复/置顶复用。
 5. **跟进与归档**:按需 `pinMessage`、`threadReply`、`searchMessages` 回溯;审核类操作在日志频道留痕。
+
+### 命令参数说明
+
+- `-log-111-广告`: 命令参数,用于指定操作选项
 
 ## 案例展示
 

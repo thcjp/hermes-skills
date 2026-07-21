@@ -78,6 +78,29 @@ tools:
 | `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
 | `output` | 格式化输出结果 | `format`, `encoding` |
 
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Tagging Strategy | 支持 | 通过核心功能实现对应能力 |
+| Growth (1-10k) | 支持 | 通过核心功能实现对应能力 |
+| Account type (personal/startup/enterprise) | 支持 | 通过核心功能实现对应能力 |
+| Stage | 支持 | 通过核心功能实现对应能力 |
+| CPU/Memory thresholds | 支持 | 通过核心功能实现对应能力 |
+| Principle of least privilege IAM | 支持 | 通过核心功能实现对应能力 |
+| VPC isolation (no public subnets for databases) | 支持 | 通过核心功能实现对应能力 |
+| Verify Account Context First | 支持 | 通过核心功能实现对应能力 |
+| Scale (10k+) | 支持 | 通过核心功能实现对应能力 |
+
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `cidr`, `memory-template.md`, `performance`, `setup.md`, `aurora`, `dbinstanceidentifier`, `acls`, `albs`, `cloud`, `terraform`, `pennies`, `initialize`, `gateway`, `existing`, `container`
+
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

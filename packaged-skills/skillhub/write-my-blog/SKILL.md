@@ -87,11 +87,11 @@ bash ../scripts/setup.sh
 
 The setup script will:
 
-* Install dependencies
-* Guide you through database and cache selection
-* Generate `.env.local` configuration
-* Run database migrations
-* Create an admin user
+1. Install dependencies
+2. Guide you through database and cache selection
+3. Generate `.env.local` configuration
+4. Run database migrations
+5. Create an admin user
 
 ### 2. Starting the Dev Server
 
@@ -217,6 +217,40 @@ bash <skill-directory>/scripts/deploy-vercel.sh
 ```bash
 bash <skill-directory>/scripts/deploy-cloudflare.sh
 ```
+
+### 命令参数说明
+
+6. `-first-post`: 命令参数,用于指定操作选项
+7. `-H`: 命令参数,用于指定操作选项
+8. `-X`: 命令参数,用于指定操作选项
+9. `-Type`: 命令参数,用于指定操作选项
+10. `-F`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+- `-F`: 命令参数,用于指定操作选项
+- `-X`: 命令参数,用于指定操作选项
+- `-API-Key`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-API-Key`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+- `-F`: 命令参数,用于指定操作选项
+- `-X`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-F`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+- `-X`: 命令参数,用于指定操作选项
+- `-API-Key`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

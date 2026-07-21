@@ -67,6 +67,7 @@ export API_KEY="your_api_key_here"
 - **ELB目标健康**: 检查负载均衡器目标组的健康状态
   `aws elbv2 describe-target-health --target-group-arn arn:aws:elasticloadbalancing:REGION:ACCOUNT:targetgroup/TG_NAME/TG_ID`
 
+**输入**: 用户提供健康检查 (Health)所需的指令和必要参数。
 ### 3. 安全审计 (Security)
 - **IAM用户列表**: 查询所有IAM用户及其最后登录时间
   `aws iam list-users --query 'Users[].[UserName,CreateDate,PasswordLastUsed]' --output table`
@@ -169,6 +170,30 @@ aws configure set region us-west-2
 2. 列出可能影响的资源
 3. 建议使用 `--dry-run` 参数预检
 4. 等待用户显式确认后才执行
+
+### 命令参数说明
+
+- `--expression`: 命令参数,用于指定操作选项
+- `--configuration-aggregator-name`: 命令参数,用于指定操作选项
+- `-east-1c`: 命令参数,用于指定操作选项
+- `--token-code`: 命令参数,用于指定操作选项
+- `-east-1`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-east-1b`: 命令参数,用于指定操作选项
+- `-west-1`: 命令参数,用于指定操作选项
+- `-aggregate-resource-config`: 命令参数,用于指定操作选项
+- `--serial-number`: 命令参数,用于指定操作选项
+- `-state-name`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--filters`: 命令参数,用于指定操作选项
+- `-west-2`: 命令参数,用于指定操作选项
+- `-east-1a`: 命令参数,用于指定操作选项
+- `-northeast-1`: 命令参数,用于指定操作选项
+- `-caller-identity`: 命令参数,用于指定操作选项
 
 ## 案例展示
 

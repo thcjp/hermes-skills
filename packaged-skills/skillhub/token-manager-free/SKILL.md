@@ -41,6 +41,7 @@ node scripts/manager.js report
 node scripts/scheduler.js check --interval 300
 ```
 
+**输出**: 返回定时提醒的执行结果,包含操作状态和输出数据。
 ### 3. 工具集成
 通过 `session-tracker.js record` 记录每次API调用的Token消耗，自动分类和统计。
 
@@ -86,6 +87,14 @@ node scripts/manager.js report --range 7d --format table
 3. 用 `manager.js report` 查看使用报告
 4. 用 `scheduler.js check --interval 300` 设置定时检查
 5. 用 `manager.js report --range 7d` 查看跨会话趋势
+
+### 命令参数说明
+
+- `--format`: 命令参数,用于指定操作选项
+- `--output`: 命令参数,用于指定操作选项
+- `-v1-8k`: 命令参数,用于指定操作选项
+- `--model`: 命令参数,用于指定操作选项
+- `--input`: 命令参数,用于指定操作选项
 
 ## 示例
 

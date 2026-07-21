@@ -66,6 +66,27 @@ tools:
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: 需要系统监控、日志分析、运维告警、部署管理时使用、不适用于物理硬件、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Analysis patterns | 支持 | 通过核心功能实现对应能力 |
+| ssl | 支持 | 通过核心功能实现对应能力 |
+| http | 支持 | 通过核心功能实现对应能力 |
+| Recovery message when back to OK | 支持 | 通过核心功能实现对应能力 |
+| Never spam repeated same-status | 支持 | 通过核心功能实现对应能力 |
+| custom | 支持 | 通过核心功能实现对应能力 |
+| disk | 支持 | 通过核心功能实现对应能力 |
+| HOW | 支持 | 通过核心功能实现对应能力 |
+
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `requires`, `confirmation`, `types`, `permissions`, `webhook`, `execution`, `scope`, `pgrep`, `yyyy`, `free`, `runs`, `openssl`, `pushover_user`, `insights.md`, `definition`
+
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

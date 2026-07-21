@@ -388,6 +388,29 @@ async def main():
 asyncio.run(main())
 ```
 
+### 命令参数说明
+
+1. `-brand-voice`: 命令参数,用于指定操作选项
+2. `-voice-endpoint`: 命令参数,用于指定操作选项
+3. `-exclusive-voice`: 命令参数,用于指定操作选项
+4. `-CN-XiaoxiaoNeural`: 命令参数,用于指定操作选项
+5. `-realtime-preview`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-CN-YunxiNeural`: 命令参数,用于指定操作选项
+- `-CN-XiaoxiaoNeural`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-CN-XiaoxiaoNeural`: 命令参数,用于指定操作选项
+- `-CN-YunxiNeural`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-CN-XiaoxiaoNeural`: 命令参数,用于指定操作选项
+- `-CN-YunxiNeural`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

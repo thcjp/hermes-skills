@@ -120,6 +120,7 @@ router.模板化内容生成('/（根据实际场景填充）', async (req, res)
 });
 ```
 
+**处理**: 按照skill规范执行功能7：自定义模板引擎操作,遵循单一意图原则。
 ### 功能9：WebSocket端点生成
 **解决痛点**：实时通信API（聊天/通知/协作）的WebSocket代码与REST不同，手写易错。
 
@@ -218,6 +219,26 @@ api-scaffold-gen deploy order-service \
   --ci github-actions \
   --cd argocd
 ```
+
+### 命令参数说明
+
+1. `--service-registry`: 命令参数,用于指定操作选项
+2. `-cloud-config`: 命令参数,用于指定操作选项
+3. `--db`: 命令参数,用于指定操作选项
+4. `--communication`: 命令参数,用于指定操作选项
+5. `-cloud-gateway`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-springboot`: 命令参数,用于指定操作选项
+- `--stack`: 命令参数,用于指定操作选项
+- `--path`: 命令参数,用于指定操作选项
+- `--config-server`: 命令参数,用于指定操作选项
+- `--lang`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--tracing`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

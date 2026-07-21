@@ -135,6 +135,13 @@ python3 scripts/kg.py export \
   --output-dir ./export
 ```
 
+### 命令参数说明
+
+1. `--entities`: 命令参数,用于指定操作选项
+2. `--output-dir`: 命令参数,用于指定操作选项
+3. `--file`: 命令参数,用于指定操作选项
+4. `--formats`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

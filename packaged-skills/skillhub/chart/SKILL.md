@@ -99,7 +99,6 @@ python3 {baseDir}/scripts/suggest_chart.py --labels "Q1,Q2,Q3,Q4" --values "10,2
 **处理**: 按照skill规范执行智能图表类型推荐操作,遵循单一意图原则。
 
 ### 2. 内联数据生成图表
-
 使用 `make_chart.py` 直接从命令行参数生成图表图片：
 
 ```bash
@@ -117,6 +116,7 @@ python3 {baseDir}/scripts/make_chart.py \
 
 输出PNG文件落地到 `~/.skill-platform/workspace/memory/chart/output/`。
 
+**处理**: 按照skill规范执行内联数据生成图表操作,遵循单一意图原则。
 ### 3. 历史图表查看
 使用 `list_charts.py` 查看历史生成记录：
 
@@ -130,13 +130,13 @@ python3 {baseDir}/scripts/list_charts.py
 **处理**: 按照skill规范执行历史图表查看操作,遵循单一意图原则。
 
 ### 4. 存储初始化
-
 首次使用前运行 `init_storage.py` 创建目录结构与索引文件：
 
 ```bash
 python3 {baseDir}/scripts/init_storage.py
 ```
 
+**输入**: 用户提供存储初始化所需的指令和必要参数。
 ### 5. 多类型组合工作流
 典型组合流程：先用 `suggest_chart.py` 选型，再用 `make_chart.py` 生成，最后用 `list_charts.py` 回溯历史。
 

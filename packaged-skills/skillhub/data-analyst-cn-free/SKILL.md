@@ -134,7 +134,7 @@ plt.rcParams['axes.unicode_minus'] = False
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD（纯Markdown指令，无需exec命令行能力）
+- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 
 ## 使用流程
 
@@ -143,6 +143,9 @@ plt.rcParams['axes.unicode_minus'] = False
 3. **数据清洗**：处理缺失值（`fillna`）、去重（`drop_duplicates`）、类型转换（`astype`）
 4. **统计分析**：计算均值、中位数、标准差等描述统计量
 5. **可视化**：配置SimHei字体后生成基础图表代码
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
 
 ## 示例
 

@@ -168,6 +168,16 @@ curl http://localhost:18790/cache/stats
 curl http://localhost:18790/tenants/team-a/cost
 ```
 
+### 命令参数说明
+
+- `-reload`: 命令参数,用于指定操作选项
+- `-preview`: 命令参数,用于指定操作选项
+- `-resource-primary`: 命令参数,用于指定操作选项
+- `-resource-backup`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

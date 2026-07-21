@@ -57,6 +57,7 @@ python3 scripts/message action=reply --message-id "msg-abc123" --content "收到
 python3 scripts/message action=group-create --name "项目讨论组" --participants "user1@s.whatsapp.net" "user2@s.whatsapp.net"
 ```
 
+**处理**: 按照skill规范执行群组管理操作,遵循单一意图原则。
 ### 4. 历史搜索
 搜索聊天历史记录，支持关键词和日期范围。
 
@@ -92,6 +93,23 @@ python3 scripts/message action=search --chat "contact-id@s.whatsapp.net" --query
 3. 如需媒体消息,先用ffmpeg转换格式
 4. 执行发送命令
 5. 如需搜索历史,使用 `action=search`
+
+### 命令参数说明
+
+- `--limit`: 命令参数,用于指定操作选项
+- `--emoji`: 命令参数,用于指定操作选项
+- `-abc123def456`: 命令参数,用于指定操作选项
+- `--message-id`: 命令参数,用于指定操作选项
+- `--chat`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+### 命令参数说明
+
+- `-create`: 命令参数,用于指定操作选项
+- `--query`: 命令参数,用于指定操作选项
+- `--participants`: 命令参数,用于指定操作选项
+- `--content`: 命令参数,用于指定操作选项
 
 ## 示例
 

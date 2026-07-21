@@ -165,6 +165,7 @@ Track and record various health metrics 基于 user profile:
 * Severe vomiting + unable to keep fluids down
 * Overdose symptoms
 
+**输出**: 返回Symptom Analysis 🩺的执行结果,包含操作状态和输出数据。
 ### 6. Exercise Recommendations 🏃
 #### By Age & Fitness Level
 **Beginner (Any Age):**
@@ -215,6 +216,8 @@ Track and record various health metrics 基于 user profile:
 * Monitor heart rate
 
 - 参考`Exercise Recommendations 🏃`相关配置参数进行设置
+
+**输出**: 返回Exercise Recommendations 🏃的执行结果,包含操作状态和输出数据。
 ### 7. Nutrition Advice 🥗
 #### By Age
 **Children:**

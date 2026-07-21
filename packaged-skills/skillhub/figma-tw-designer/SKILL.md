@@ -124,6 +124,20 @@ python scripts/figma_tool.py analyze-comments <file_key> \
   --report markdown
 ```
 
+### 命令参数说明
+
+1. `--ids-file`: 命令参数,用于指定操作选项
+2. `--template`: 命令参数,用于指定操作选项
+3. `-config`: 命令参数,用于指定操作选项
+4. `-batch`: 命令参数,用于指定操作选项
+5. `-comments`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--sentiment`: 命令参数,用于指定操作选项
+- `--report`: 命令参数,用于指定操作选项
+- `--checkpoint`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

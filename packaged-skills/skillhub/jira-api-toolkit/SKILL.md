@@ -106,10 +106,10 @@ CI/CD 流水线在部署成功后自动流转关联议题为"已上线"，部署
 ### 依赖说明
 
 ### 运行环境
-- **Agent 平台**：支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
-- **操作系统**：Windows / macOS / Linux
-- **Node.js**：16+（用于运行 CLI）
-- **cron / 任务计划**：用于自动化触发（Linux 用 cron，Windows 用任务计划程序）
+1. **Agent 平台**：支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+2. **操作系统**：Windows / macOS / Linux
+3. **Node.js**：16+（用于运行 CLI）
+4. **cron / 任务计划**：用于自动化触发（Linux 用 cron，Windows 用任务计划程序）
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
@@ -121,14 +121,18 @@ CI/CD 流水线在部署成功后自动流转关联议题为"已上线"，部署
 | jq（可选） | 命令行工具 | 可选 | 用于 JSON 结果处理与管道 |
 
 ### API Key 配置
-- **maton API Key**：通过 `maton login` 获取，存储于环境变量 `MATON_API_KEY`，禁止硬编码
-- **Jira OAuth 连接**：通过 `maton connection create jira` 在浏览器完成授权
-- **默认连接**：可选设置环境变量 `MATON_DEFAULT_CONNECTION` 指定默认连接
-- **禁止**：在 SKILL.md 或脚本中硬编码 API Key 与 OAuth 令牌
+5. **maton API Key**：通过 `maton login` 获取，存储于环境变量 `MATON_API_KEY`，禁止硬编码
+6. **Jira OAuth 连接**：通过 `maton connection create jira` 在浏览器完成授权
+7. **默认连接**：可选设置环境变量 `MATON_DEFAULT_CONNECTION` 指定默认连接
+8. **禁止**：在 SKILL.md 或脚本中硬编码 API Key 与 OAuth 令牌
 
 ### 可用性分类
-- **分类**：MD+EXEC（纯 Markdown 指令，部分功能需要 exec 命令行执行能力）
-- **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务，支持读写操作与自动化工作流
+9. **分类**：MD+EXEC（纯 Markdown 指令，部分功能需要 exec 命令行执行能力）
+10. **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务，支持读写操作与自动化工作流
+
+### 命令参数说明
+
+11. `-f44ec481e5e7`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

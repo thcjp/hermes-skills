@@ -77,6 +77,25 @@ tools:
 | `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
 | `output` | 格式化输出结果 | `format`, `encoding` |
 
+### 源能力映射
+
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Generate 5 questions covering concept | 支持 | 通过核心功能实现对应能力 |
+| Verification methods | 支持 | 通过核心功能实现对应能力 |
+| Incorrect → reset to 1 day | 支持 | 通过核心功能实现对应能力 |
+| Then show correct answer | 支持 | 通过核心功能实现对应能力 |
+| Cognitive principles | 支持 | 通过核心功能实现对应能力 |
+| Starting a Topic | 支持 | 通过核心功能实现对应能力 |
+| Verification | 支持 | 通过核心功能实现对应能力 |
+| Correct → increase interval (×ease_factor) | 支持 | 通过核心功能实现对应能力 |
+
+### 领域术语
+
+本skill涉及以下领域术语: `before`, `scope`, `generates`, `verify`, `verification.md`, `preferences`, `tracks`, `concepts`, `break`, `study`, `增强元数据和触发`, `retention.md`, `reminds`, `practice`, `mastery`
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

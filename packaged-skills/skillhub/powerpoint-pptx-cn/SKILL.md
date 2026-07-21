@@ -77,7 +77,14 @@ tools:
 
 ### 能力覆盖范围
 
-本skill还覆盖以下能力场景: Create、edit、presentations、decks、reliable、layouts、Use、用户需要、相关功能时使用、不适用于超出本技、能能力范围的复杂。这些能力在上述核心功能中均有对应处理逻辑。
+本skill还覆盖以下能力场景: Create、presentations、decks、reliable、layouts、Use、用户需要、相关功能时使用、不适用于超出本技、能能力范围的复杂。这些能力在上述核心功能中均有对应处理逻辑。
+### 领域术语
+本skill涉及以下领域术语: `count`, `placeholder`, `concise`, `quote`, `charts`, `thumbnail`, `libreoffice`, `choosing`, `master`, `editing`, `combining`, `visual`, `theme`, `template`, `inventory`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

@@ -95,6 +95,9 @@ Telegram Bot API 集成免费版。支持发送文本消息与图片、获取机
 3. **读操作优先**：对于不熟悉的聊天，先调用 `telegram_get_chat` 确认聊天存在且机器人为成员
 4. **写操作预览确认**：发送消息前向用户预览内容与目标聊天，确认后执行
 
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+
 ## 认证配置
 
 Bot Token 通过 @BotFather 创建获取，配置在 `~/.skill-platform/skill-platform.json` 的 `channels.telegram.accounts.default.token` 字段。所有 API 调用自动注入 Bot Token，无需在调用参数中传递。

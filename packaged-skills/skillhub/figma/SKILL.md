@@ -99,6 +99,22 @@ python scripts/style_auditor.py audit-file "file-key" --generate-html
 python scripts/accessibility_checker.py "file-key" --level AA --format html
 ```
 
+### 命令参数说明
+
+1. `--template`: 命令参数,用于指定操作选项
+2. `--brand-colors`: 命令参数,用于指定操作选项
+3. `-package`: 命令参数,用于指定操作选项
+4. `--generate-html`: 命令参数,用于指定操作选项
+5. `-tokens`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-handoff`: 命令参数,用于指定操作选项
+- `-frames`: 命令参数,用于指定操作选项
+- `--include-specs`: 命令参数,用于指定操作选项
+- `--level`: 命令参数,用于指定操作选项
+- `-file-key`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

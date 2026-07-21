@@ -43,7 +43,6 @@ tools:
 - 验证执行结果，确认输出符合预期格式
 - 参考`批量分析与导出`相关配置参数进行设置
 ### 批量分析与导出
-
 ```bash
 # 批量分析多只标的
 python3 scripts/batch.py --tickers AAPL,GOOG,MSFT,AMZN,TSLA
@@ -52,8 +51,8 @@ python3 scripts/batch.py --tickers AAPL,GOOG,MSFT,AMZN,TSLA
 python3 scripts/batch.py --tickers AAPL,GOOG,MSFT --export --output comparison.csv
 ```
 
+**输入**: 用户提供批量分析与导出所需的指令和必要参数。
 ### 投资组合追踪
-
 ```bash
 # 导入组合
 python3 scripts/portfolio.py import --file holdings.csv
@@ -154,6 +153,28 @@ python3 scripts/watchlist.py monitor
 python3 scripts/rumor.py --scan
 python3 scripts/hot_scan.py --viral
 ```
+
+### 命令参数说明
+
+1. `--export`: 命令参数,用于指定操作选项
+2. `--alert-below`: 命令参数,用于指定操作选项
+3. `--output`: 命令参数,用于指定操作选项
+4. `--descending`: 命令参数,用于指定操作选项
+5. `-analysis`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--alert-above`: 命令参数,用于指定操作选项
+- `--tickers`: 命令参数,用于指定操作选项
+- `--scan`: 命令参数,用于指定操作选项
+- `--sort-by`: 命令参数,用于指定操作选项
+- `--viral`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--file`: 命令参数,用于指定操作选项
+- `-dimension`: 命令参数,用于指定操作选项
+- `--skills`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

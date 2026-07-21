@@ -42,6 +42,7 @@ tools:
 | 响应式 | 基础 | 多断点策略 + 一致性保障 |
 | 可访问性 | 基础 | WCAG 合规检查 |
 
+**输入**: 用户提供能力对比所需的指令和必要参数。
 ### 核心能力
 ```text
 多页面应用:
@@ -207,6 +208,29 @@ generate-components --framework react --typescript --tokens tokens.json
 
 generate-components --framework vue --typescript --tokens tokens.json
 ```
+
+### 命令参数说明
+
+- `-fit`: 命令参数,用于指定操作选项
+- `--delay`: 命令参数,用于指定操作选项
+- `--color-bg-secondary`: 命令参数,用于指定操作选项
+- `-components`: 命令参数,用于指定操作选项
+- `-design-system`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-grid`: 命令参数,用于指定操作选项
+- `--tokens`: 命令参数,用于指定操作选项
+- `-enter-from`: 命令参数,用于指定操作选项
+- `--framework`: 命令参数,用于指定操作选项
+- `-template-columns`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-for`: 命令参数,用于指定操作选项
+- `-enter-active`: 命令参数,用于指定操作选项
+- `--brand`: 命令参数,用于指定操作选项
+- `-radius`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

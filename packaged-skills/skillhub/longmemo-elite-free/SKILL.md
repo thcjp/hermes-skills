@@ -78,6 +78,9 @@ tools:
 ```markdown
 # 会话状态
 
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+
 ## 当前任务
 - [ ] 实现用户认证模块
 
@@ -149,15 +152,20 @@ A：基础版不支持成本预算控制与自动降级。如需配置日/月预
 
 ## 依赖说明
 
+### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
+
+### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:---|:---|:---|:---|
-| Agent平台 | 运行环境 | 必需 | 安装支持SKILL.md的AI Agent |
-| LLM API | API | 必需 | 由Agent平台内置LLM提供 |
-| 操作系统 | 运行环境 | 必需 | Windows / macOS / Linux |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
 
-**API Key配置：** 本技能基于Markdown指令，无需额外API Key。
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
 
-**可用性分类：** MD（纯Markdown指令，无需命令行执行能力）。核心记忆协议纯Markdown即可工作。
+### 可用性分类
+- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 
 ## 已知限制
 

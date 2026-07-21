@@ -185,18 +185,52 @@ solo-dev execute
 
 ```bash
 cat > docs/workflow.md << 'EOF'
-- Level: strict  # strict / moderate / none
-- Format: conventional commits
-- Scope: per-task atomic
+1. Level: strict  # strict / moderate / none
+2. Format: conventional commits
+3. Scope: per-task atomic
 
-- Run after each phase
-- Include: tests, linter, type-check, build
+4. Run after each phase
+5. Include: tests, linter, type-check, build
 
-- Paths: src/api/**, src/pipeline/**
-- Command: make integration
+6. Paths: src/api/**, src/pipeline/**
+7. Command: make integration
 EOF
 
 ```
+
+### 命令参数说明
+
+8. `--recursive`: 命令参数,用于指定操作选项
+9. `-dev-companion-pro`: 命令参数,用于指定操作选项
+10. `--style`: 命令参数,用于指定操作选项
+11. `--timeout`: 命令参数,用于指定操作选项
+12. `-report`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+### 命令参数说明
+
+- `-tracker`: 命令参数,用于指定操作选项
+- `-format`: 命令参数,用于指定操作选项
+- `--project`: 命令参数,用于指定操作选项
+- `--in-place`: 命令参数,用于指定操作选项
+- `--hypothesis-show-statistics`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--phase`: 命令参数,用于指定操作选项
+- `-check`: 命令参数,用于指定操作选项
+- `--output`: 命令参数,用于指定操作选项
+- `--status`: 命令参数,用于指定操作选项
+- `-scheme`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-task`: 命令参数,用于指定操作选项
+- `--noEmit`: 命令参数,用于指定操作选项
+- `-debug`: 命令参数,用于指定操作选项
+- `--fix`: 命令参数,用于指定操作选项
+- `--task`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

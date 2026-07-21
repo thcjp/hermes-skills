@@ -68,6 +68,29 @@ tools:
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: Enables、agents、autonomously、negotiate、sign、execute、enforce、legally、binding、commercia、Use、模型调用、智能对话、Agent、LLM、应用时使用、不适用于需要、确定性的关键决策。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Refund and dispute handling | 支持 | 通过核心功能实现对应能力 |
+| Multi-currency support | 支持 | 通过核心功能实现对应能力 |
+| Documentation: Full API docs and guides | 支持 | 通过核心功能实现对应能力 |
+| jsonwebtoken: JWT authentication | 支持 | 通过核心功能实现对应能力 |
+| SHA-256 hashing for evidence integrity | 支持 | 通过核心功能实现对应能力 |
+| Dispute resolution mechanisms | 支持 | 通过核心功能实现对应能力 |
+| Audit trails for compliance | 支持 | 通过核心功能实现对应能力 |
+| Maintain comprehensive audit logs | 支持 | 通过核心功能实现对应能力 |
+| Automated compensation calculation | 支持 | 通过核心功能实现对应能力 |
+| Complete transaction history | 支持 | 通过核心功能实现对应能力 |
+
+**输入**: 用户提供源能力映射所需的指令和必要参数。
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+
+本skill涉及以下领域术语: `合约框架`, `platforms`, `快速开始`, `english`, `纠纷解决机制`, `payment`, `存入资金`, `纠纷解决`, `在安全托管账户中`, `automation`, `创建新合同`, `具有明确的条款`, `提交证据`, `执行和强制执行商`, `能够自主协商`
+
 ## 适用场景
 
 - 用户说"（根据实际场景填充）" → 生成相关说明

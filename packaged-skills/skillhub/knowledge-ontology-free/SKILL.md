@@ -114,6 +114,14 @@ python3 scripts/ontology.py traverse --id task_001 --rel depends_on --direction 
 python3 scripts/ontology.py validate
 ```
 
+### 命令参数说明
+
+- `--data`: 命令参数,用于指定操作选项
+- `--props`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+
 ## 错误处理
 
 | 错误类型 | 原因 | 处理方式 |

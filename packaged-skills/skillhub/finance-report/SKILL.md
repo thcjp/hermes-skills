@@ -151,6 +151,27 @@ python3 scripts/generate_report.py data.xlsx \
   --forecast-years 3
 ```
 
+### 命令参数说明
+
+1. `--colors`: 命令参数,用于指定操作选项
+2. `--forecast-years`: 命令参数,用于指定操作选项
+3. `--format`: 命令参数,用于指定操作选项
+4. `--company`: 命令参数,用于指定操作选项
+5. `--forecast-model`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--logo`: 命令参数,用于指定操作选项
+- `--output-dir`: 命令参数,用于指定操作选项
+- `--metrics`: 命令参数,用于指定操作选项
+- `--input-dir`: 命令参数,用于指定操作选项
+- `--industry`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--benchmark`: 命令参数,用于指定操作选项
+- `--parallel`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

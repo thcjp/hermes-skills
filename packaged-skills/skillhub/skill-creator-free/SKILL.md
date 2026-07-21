@@ -50,7 +50,6 @@ tools:
 - **Anatomy of a Skill**：每个skill由required的SKILL.md与optional的Bundled Resources组成
 
 ### SKILL.md结构设计
-
 提供SKILL.md的标准结构与编写规范：
 
 ```text
@@ -69,8 +68,8 @@ skill-name/
 - **Frontmatter（YAML）**：包含`name`和`description`字段。这是Claude读取以判断何时使用skill的唯一依据，必须清晰全面地描述skill是什么以及何时使用。`description`是primary triggering mechanism，应包含skill做什么与具体触发场景。
 - **Body（Markdown）**：使用skill的instructions和guidance。仅在skill触发后加载。
 
+**处理**: 按照skill规范执行SKILL.md结构设计操作,遵循单一意图原则。
 ### Progressive Disclosure设计
-
 提供三级加载系统的设计原则：
 
 - **Level 1 - Metadata（name + description）**：始终在context中（约100 words）
@@ -79,6 +78,7 @@ skill-name/
 
 保持SKILL.md body在essentials以内且<500 lines，接近限制时拆分内容。重要准则：references保持一级深度；长reference文件（>100 lines）顶部包含table of contents。
 
+**输出**: 返回Progressive Disclosure设计的执行结果,包含操作状态和输出数据。
 ### Bundled Resources基础组织
 
 提供三类bundled resources的基础说明：
@@ -97,6 +97,9 @@ skill-name/
 3. **编辑SKILL.md**：编写frontmatter（name + description）与body
 4. **应用Progressive Disclosure**：保持SKILL.md <500 lines，detailed info移至references
 5. **迭代优化**：实际使用后识别改进点并更新
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
 
 ## 示例
 

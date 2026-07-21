@@ -97,9 +97,9 @@ Agent根据业务事件自动执行Slack操作：如CI构建失败时，Agent搜
 ### 依赖说明
 
 ### 运行环境
-- **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
-- **操作系统**：Windows / macOS / Linux
-- **网络**：可访问Slack网关与Slack API
+1. **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+2. **操作系统**：Windows / macOS / Linux
+3. **网络**：可访问Slack网关与Slack API
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
@@ -111,13 +111,33 @@ Agent根据业务事件自动执行Slack操作：如CI构建失败时，Agent搜
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 
 ### API Key 配置
-- **网关API Key**：存储于环境变量`SGW_API_KEY`或通过`sgw login`保存
-- **Slack OAuth Token**：由网关托管，通过OAuth授权建立连接
-- **禁止**：在代码或脚本中硬编码API Key或Slack Token
+4. **网关API Key**：存储于环境变量`SGW_API_KEY`或通过`sgw login`保存
+5. **Slack OAuth Token**：由网关托管，通过OAuth授权建立连接
+6. **禁止**：在代码或脚本中硬编码API Key或Slack Token
 
 ### 可用性分类
-- **分类**：MD+EXEC（）
-- **说明**：基于Markdown的AI Skill，
+7. **分类**：MD+EXEC（）
+8. **说明**：基于Markdown的AI Skill，
+
+### 命令参数说明
+
+9. `--title`: 命令参数,用于指定操作选项
+10. `--bookmark-id`: 命令参数,用于指定操作选项
+11. `--emoji`: 命令参数,用于指定操作选项
+12. `--post-at`: 命令参数,用于指定操作选项
+13. `--ts`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--link`: 命令参数,用于指定操作选项
+- `--count`: 命令参数,用于指定操作选项
+- `--type`: 命令参数,用于指定操作选项
+- `-gateway`: 命令参数,用于指定操作选项
+- `--text`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--types`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

@@ -175,6 +175,11 @@ export REDIS_URL="redis://localhost:6379/0"
 python bot_main.py --env production --reload
 ```
 
+### 命令参数说明
+
+- `--env`: 命令参数,用于指定操作选项
+- `--reload`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

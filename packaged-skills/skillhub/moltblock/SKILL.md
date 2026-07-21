@@ -66,6 +66,22 @@ tools:
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: Use、模型调用、智能对话、Agent、LLM、应用时使用、不适用于需要、确定性的关键决策。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Usage | 支持 | 通过核心功能实现对应能力 |
+| Environment Variables | 支持 | 通过核心功能实现对应能力 |
+| Parameters | 支持 | 通过核心功能实现对应能力 |
+| Example | 支持 | 通过核心功能实现对应能力 |
+
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+
+本skill涉及以下领域术语: `id_rsa`, `google_api_key`, `optionally`, `model`, `repository`, `generates`, `anthropic_api_key`, `fetch`, `verify`, `google`, `network`, `moltblock.json`, `consider`, `anthropic`, `disclaimer`
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

@@ -51,21 +51,21 @@ tools:
 ## 核心能力
 
 ### 1. 快速统计（stats）
-
 ```bash
 python3 {baseDir}/scripts/csv_analyze.py stats data.csv
 ```
 
 返回行数、列类型、数值列的min/max/mean、文本列的unique计数。
 
+**输入**: 用户提供快速统计（stats）所需的指令和必要参数。
 ### 2. 灵活筛选（filter）
-
 ```bash
 python3 {baseDir}/scripts/csv_analyze.py filter data.csv --where "amount>1000" --output big_orders.csv
 ```
 
 支持比较运算符（`>`、`<`、`>=`、`<=`、`==`、`!=`），可将筛选结果导出为CSV。
 
+**输入**: 用户提供灵活筛选（filter）所需的指令和必要参数。
 ### 3. Top/Bottom N
 ```bash
 python3 {baseDir}/scripts/csv_analyze.py top data.csv --column revenue --n 10
@@ -131,6 +131,10 @@ pandas很强大，但：
 4. **导出结果**：用 `--output` 参数将筛选/处理结果导出为CSV。
 5. **验证输出**：检查导出文件的行数与内容是否符合预期。
 6. **大数据集建议**：若文件接近100MB或分析慢，考虑安装pandas。
+
+### 命令参数说明
+
+- `--by`: 命令参数,用于指定操作选项
 
 ## 示例
 

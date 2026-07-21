@@ -27,6 +27,7 @@ tools:
 - 任务分片：按目录或文件大小分片，负载均衡
 - 进度可观测：实时输出处理进度
 
+**输入**: 用户提供并行扫描引擎所需的指令和必要参数。
 ### JSON Schema验证
 - 支持JSON Schema Draft 7/2019-09/2020-12
 - 类型校验：string/number/integer/boolean/array/object/null

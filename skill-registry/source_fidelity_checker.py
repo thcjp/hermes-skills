@@ -986,11 +986,30 @@ def compute_capability_coverage(source_points: List[str], gen_content: str) -> T
     return coverage, covered, missing
 
 
+def _load_original_registry() -> set:
+    """加载原创skill注册表"""
+    registry_path = SKILL_REGISTRY_DIR / 'original_skills_registry.json'
+    if registry_path.exists():
+        data = json.loads(registry_path.read_text(encoding='utf-8'))
+        return set(data.get('skills', []))
+    return set()
+
+
 def check_source_fidelity(slug: str) -> Dict[str, Any]:
     """检查单个skill的源保真度"""
     # 加载源skill
     source_path, source_content = load_source_skill(slug)
     if not source_content:
+        # 检查是否是原创skill
+        original_skills = _load_original_registry()
+        if slug in original_skills:
+            return {
+                'slug': slug,
+                'fidelity_score': 100,
+                'fidelity_grade': 'A',
+                'is_original': True,
+                'note': '原创skill,无源skill,跳过SF检查',
+            }
         return {
             'slug': slug,
             'error': 'Source skill not found',
@@ -1160,12 +1179,17 @@ def run_batch(limit: int = 0) -> List[Dict]:
             marker = ' ** LOW FIDELITY **'
             low_fidelity.append(r)
 
+        # 原创skill只显示基本信息
+        if r.get('is_original'):
+            print(slug + ': ' + str(r['fidelity_score']) + '/100 (' + r['fidelity_grade'] + ') [ORIGINAL]')
+            continue
+
         missing = r.get('missing_capabilities', [])
         missing_str = ', '.join(missing[:3]) if missing else ''
         print(slug + ': ' + str(r['fidelity_score']) + '/100 (' + r['fidelity_grade'] + ')'
-              + ' cov=' + str(r['capability_coverage']) + '%'
-              + ' term=' + str(r['term_retention']) + '%'
-              + ' err=' + str(r['error_count'])
+              + ' cov=' + str(r.get('capability_coverage', 0)) + '%'
+              + ' term=' + str(r.get('term_retention', 0)) + '%'
+              + ' err=' + str(r.get('error_count', 0))
               + marker)
         if missing_str:
             print('  Missing: ' + missing_str)

@@ -188,10 +188,10 @@ cat ~/workspace/schedule/preferences.json | grep edition
 ### 依赖说明
 
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
-- **操作系统**: Windows / macOS / Linux
-- **Python**: 3.8+（用于监控仪表盘与日历同步脚本）
-- **Node.js**: 14+（用于webhook告警脚本，可选）
+1. **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+2. **操作系统**: Windows / macOS / Linux
+3. **Python**: 3.8+（用于监控仪表盘与日历同步脚本）
+4. **Node.js**: 14+（用于webhook告警脚本，可选）
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
@@ -203,16 +203,23 @@ cat ~/workspace/schedule/preferences.json | grep edition
 | Requests | 库 | 告警必需 | `pip install requests` |
 
 ### API Key 配置
-- 钉钉/飞书webhook：通过环境变量`DINGTALK_WEBHOOK`/`FEISHU_WEBHOOK`配置
-- Telegram bot：通过环境变量`TELEGRAM_BOT_TOKEN`配置
-- Google Calendar：OAuth凭证存储在`~/.credentials/google.json`
-- Outlook Calendar：OAuth凭证存储在`~/.credentials/outlook.json`
-- 仪表盘token：每次启动自动生成，或通过`DASHBOARD_TOKEN`环境变量指定
-- 所有敏感信息通过环境变量传入，禁止硬编码在配置文件中
+5. 钉钉/飞书webhook：通过环境变量`DINGTALK_WEBHOOK`/`FEISHU_WEBHOOK`配置
+6. Telegram bot：通过环境变量`TELEGRAM_BOT_TOKEN`配置
+7. Google Calendar：OAuth凭证存储在`~/.credentials/google.json`
+8. Outlook Calendar：OAuth凭证存储在`~/.credentials/outlook.json`
+9. 仪表盘token：每次启动自动生成，或通过`DASHBOARD_TOKEN`环境变量指定
+10. 所有敏感信息通过环境变量传入，禁止硬编码在配置文件中
 
 ### 可用性分类
-- **分类**: MD+EXEC（）
-- **说明**: 基于Markdown的AI Skill，
+11. **分类**: MD+EXEC（）
+12. **说明**: 基于Markdown的AI Skill，
+
+### 命令参数说明
+
+13. `--port`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
 
 ## 输入格式
 

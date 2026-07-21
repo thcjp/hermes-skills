@@ -93,6 +93,7 @@ pipeline = [
 results = run_pipeline(pipeline, max_concurrent=2)
 ```
 
+**输入**: 用户提供并发管理与任务编排所需的指令和必要参数。
 ### 3. 执行日志审计
 ```python
 # 审计配置
@@ -317,6 +318,26 @@ results = run_batch_tasks(tasks, max_concurrent=3)
 # 查看最新审计报告
 cat .code-runner/logs/latest-audit.log
 ```
+
+### 命令参数说明
+
+- `-service`: 命令参数,用于指定操作选项
+- `--prompt`: 命令参数,用于指定操作选项
+- `--workdir`: 命令参数,用于指定操作选项
+- `-tests`: 命令参数,用于指定操作选项
+- `-api-key`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-execution`: 命令参数,用于指定操作选项
+- `-runner-pro`: 命令参数,用于指定操作选项
+- `--timeout`: 命令参数,用于指定操作选项
+- `-development`: 命令参数,用于指定操作选项
+- `--user`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-app`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

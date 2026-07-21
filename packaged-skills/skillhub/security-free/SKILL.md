@@ -44,13 +44,13 @@ export API_KEY="your_api_key_here"
 ## 核心能力
 
 ### 安全扫描（Security Scan）
-
 执行一次性安全扫描，检测代码中的安全漏洞：
 
 - **代码扫描**：扫描Go源代码中的安全问题
 - **依赖检查**：检查项目依赖中的已知漏洞
 - **扫描结果**：按严重程度分类（Critical / High / Medium / Low / Info）
 
+**输入**: 用户提供安全扫描（Security Scan）所需的指令和必要参数。
 ### 漏洞发现详情（Findings Detail）
 查看每个安全发现的详细信息：
 

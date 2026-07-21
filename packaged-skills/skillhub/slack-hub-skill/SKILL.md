@@ -53,6 +53,7 @@ export API_KEY="your_api_key_here"
 ### 1. 消息发送与线程回复
 向指定频道或用户发送文本消息，支持以 `thread_ts` 参数回复指定消息的线程。频道参数接受频道ID（`C0123456789`）或频道名（`#general`）；用户消息需使用用户ID或DM频道ID。支持Slack消息格式化语法：`*bold*`、`_italic_`、`~strike~`、`` `code` ``、` ```code block``` `、`>quote`。
 
+**输出**: 返回消息发送与线程回复的执行结果,包含操作状态和输出数据。
 ### 2. 工作区内容搜索
 按关键词检索工作区内的消息和文件。搜索范围包括所有可访问的公共频道及Bot已加入的私有频道。支持Slack搜索修饰符：`from:@user`、`in:#channel`、`has:link`、`has:file`、`before:YYYY-MM-DD`、`after:YYYY-MM-DD`。搜索结果包含匹配片段、来源频道、作者、时间戳与永久链接。
 
@@ -125,14 +126,40 @@ Slack Web API 对不同端点有独立速率限制：`chat.postMessage` 约1次/
 频道名需先调 `conversations.list` 解析为频道ID。用户DM需先调 `conversations.list` 过滤 `is_im: true` 的频道。
 
 ### 执行操作
-- 发送消息：`POST chat.postMessage`，传 `channel`、`text`、可选 `thread_ts`
-- 搜索内容：`GET search.messages`，传 `query`、可选 `count`、`page`
-- 列出频道：`GET conversations.list`，传 `types=public_channel`
+1. 发送消息：`POST chat.postMessage`，传 `channel`、`text`、可选 `thread_ts`
+2. 搜索内容：`GET search.messages`，传 `query`、可选 `count`、`page`
+3. 列出频道：`GET conversations.list`，传 `types=public_channel`
 
 ### 透传结果
-- 原始结构化 JSON 透传，不重命名、不丢弃
-- 发送成功返回 `{ok: true, channel, ts, message}`
-- 搜索返回 `{ok: true, messages: {matches, total, paging}}`
+4. 原始结构化 JSON 透传，不重命名、不丢弃
+5. 发送成功返回 `{ok: true, channel, ts, message}`
+6. 搜索返回 `{ok: true, messages: {matches, total, paging}}`
+
+### 命令参数说明
+
+7. `-east-1`: 命令参数,用于指定操作选项
+8. `-platform频道`: 命令参数,用于指定操作选项
+9. `-verify做增量迁移`: 命令参数,用于指定操作选项
+10. `-H`: 命令参数,用于指定操作选项
+11. `-X`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+- `-X`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-X`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+- `-X`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
 
 ## 案例展示
 

@@ -120,6 +120,7 @@ CREATE INDEX idx_products_attrs ON products USING GIN(attributes);
 SELECT * FROM products WHERE attributes @> '{"color": "red"}';
 ```
 
+**处理**: 按照skill规范执行索引策略操作,遵循单一意图原则。
 ### 3. Schema设计与规范化
 ```sql
 -- 1NF：消除重复组（每列原子值）
@@ -149,6 +150,7 @@ CREATE TABLE events_2026_01 PARTITION OF events
   FOR VALUES FROM ('2026-01-01') TO ('2026-02-01');
 ```
 
+**处理**: 按照skill规范执行Schema设计与规范化操作,遵循单一意图原则。
 ### 4. 事务与并发控制
 ```sql
 -- 隔离级别
@@ -203,6 +205,7 @@ FROM monthly_spending
 GROUP BY user_id;
 ```
 
+**处理**: 按照skill规范执行高级查询模式操作,遵循单一意图原则。
 ### 6. 数据库运维
 ```sql
 -- VACUUM ANALYZE（回收空间+更新统计信息）
@@ -227,6 +230,26 @@ SELECT pg_reload_conf();
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: 性能优化、设计与事务管理的、全栈指导、全栈能力引擎、覆盖查询编写、事务管理与、MySQL、SQLite、等主流数据库、核心能力、GiST、死锁处理、窗口函数与。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Always Parameterize Queries | 支持 | 通过核心功能实现对应能力 |
+| Operations | 支持 | 通过核心功能实现对应能力 |
+| Local/embedded | 支持 | 通过核心功能实现对应能力 |
+| Enterprise/.NET | 支持 | 通过核心功能实现对应能力 |
+| Legacy/hosting | 支持 | 通过核心功能实现对应能力 |
+
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `patterns.md`, `filters`, `list`, `functions`, `operations.md`, `wide`, `killers`, `actual`, `cartesian`, `portability`, `master`, `prisma`, `year`, `pragma`, `duplicate`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -246,6 +269,22 @@ SELECT pg_reload_conf();
 3. 使用 `EXPLAIN ANALYZE` 诊断查询性能
 4. 根据诊断结果选择优化策略（索引/重写/分区/反规范化）
 5. 验证优化效果并评估副作用
+
+### 命令参数说明
+
+- `-Tree索引`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Tree索引`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Tree索引`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Tree索引`: 命令参数,用于指定操作选项
 
 ## 示例
 

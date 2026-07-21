@@ -110,6 +110,9 @@ message action=react channel=discord messageId="1234567890" emoji="👍"
 3. **发送与回复**:`action=send` 发新消息;需关联某条消息用 `replyTo`;纯确认用 `action=react` 优于回复。
 4. **读取历史**:答疑前先 `action=read limit=N` 查看近期上下文,避免重复。
 
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+
 ## 案例展示
 
 ### 案例 1:发送通知并标记

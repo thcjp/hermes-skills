@@ -67,6 +67,7 @@ export API_KEY="your_api_key_here"
 - 含引用的结构体需要 `<'a>`:`struct Foo<'a> { bar: &'a str }`
 - 返回引用的函数必须绑定输入:`fn get<'a>(s: &'a str) -> &'a str`
 
+**处理**: 按照skill规范执行生命周期操作,遵循单一意图原则。
 ### 4. 字符串UTF-8陷阱
 - `s[0]` 不编译:用 `.chars().nth(0)` 或 `.bytes()`
 - `.len()` 返回字节数非字符数:用 `.chars().count()` 获取字符数
@@ -117,6 +118,7 @@ export API_KEY="your_api_key_here"
 | `type annotations needed` | 无法推断 | turbofish或显式类型 |
 | `cannot move out of borrowed content` | 解引用移动 | `clone()` 或模式匹配 |
 
+**输出**: 返回常见编译错误处理的执行结果,包含操作状态和输出数据。
 ### 10. Cargo包管理陷阱
 - `cargo update` 更新 Cargo.lock 而非 Cargo.toml:版本号需手动提升
 - features是加性的:无法禁用依赖已启用的feature
@@ -156,6 +158,9 @@ export API_KEY="your_api_key_here"
 3. 按编译错误表匹配修复方案
 4. 优先借用而非clone,优先 `?` 而非 `unwrap()`
 5. 并发场景验证 `Send`/`Sync` trait bound
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
 
 ## 示例
 

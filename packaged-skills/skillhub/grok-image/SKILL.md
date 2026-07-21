@@ -335,6 +335,28 @@ prompts = [
 python3 batch_workflow.py --queue prompts.json --output ./generated-images --interval 15
 ```
 
+### 命令参数说明
+
+- `-click`: 命令参数,用于指定操作选项
+- `-media-images`: 命令参数,用于指定操作选项
+- `-city`: 命令参数,用于指定操作选项
+- `-landscape`: 命令参数,用于指定操作选项
+- `-shot`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-composite`: 命令参数,用于指定操作选项
+- `-portrait`: 命令参数,用于指定操作选项
+- `-forest`: 命令参数,用于指定操作选项
+- `-beach`: 命令参数,用于指定操作选项
+- `-art`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--queue`: 命令参数,用于指定操作选项
+- `-gravity`: 命令参数,用于指定操作选项
+- `--interval`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

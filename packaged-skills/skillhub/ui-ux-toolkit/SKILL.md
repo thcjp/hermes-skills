@@ -54,7 +54,6 @@ tools:
 - 验证执行结果，确认输出符合预期格式
 - 参考`批量搜索与多格式输出`相关配置参数进行设置
 ### 2. 全技术栈支持
-
 | 技术栈 | 聚焦领域 |
 |--------|----------|
 | `html-tailwind` | Tailwind工具类, 响应式, 无障碍(默认) |
@@ -68,8 +67,8 @@ tools:
 | `shadcn` | shadcn/ui组件, 主题, 表单 |
 | `jetpack-compose` | Composables, Modifiers, State Hoisting |
 
+**输出**: 返回全技术栈支持的执行结果,包含操作状态和输出数据。
 ### 3. 设计系统持久化(核心高级功能)
-
 通过 `--persist` 标志将设计系统保存为文件,实现跨会话一致性:
 
 ```bash
@@ -93,8 +92,8 @@ design-system/
 
 **层级检索机制**:构建特定页面时,优先检查 `pages/<page>.md`。若存在,其规则覆盖MASTER文件;若不存在,则使用MASTER规则。
 
+**输入**: 用户提供设计系统持久化(核心高级功能)所需的指令和必要参数。
 ### 4. 推理规则引擎
-
 专业版集成 `ui-reasoning.csv` 推理规则,在设计系统生成时自动应用:
 
 ```bash
@@ -107,6 +106,7 @@ python3 scripts/search.py "healthcare SaaS" --design-system --persist -p "MedApp
 - 配色方案及适用原因
 - 反模式警示(应避免的设计决策)
 
+**输入**: 用户提供推理规则引擎所需的指令和必要参数。
 ### 5. 批量搜索与多格式输出
 
 ```bash
@@ -226,6 +226,15 @@ python3 scripts/search.py "hero testimonial pricing" --domain landing
 # 第5步:获取技术栈指引
 python3 scripts/search.py "layout responsive form" --stack html-tailwind
 ```
+
+### 命令参数说明
+
+1. `-pip`: 命令参数,用于指定操作选项
+2. `-time`: 命令参数,用于指定操作选项
+3. `--stack`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
 
 ## 输入格式
 

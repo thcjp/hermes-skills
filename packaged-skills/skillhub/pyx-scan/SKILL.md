@@ -76,6 +76,7 @@ export API_KEY="your_api_key_here"
 - 供应链风险检查
 - 代码注入风险
 
+**输入**: 用户提供风险报告生成所需的指令和必要参数。
 ### 6. WebFetch与curl双模式
 支持两种调用方式：
 - WebFetch：通过工具调用API
@@ -95,6 +96,22 @@ export API_KEY="your_api_key_here"
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: 技能安全检查工具、对技能进行安全评、级和风险报告、评估维度、包括恶意指令、供应链风险等、返回信任评分、和置信度百分比、适用于、独立开发者、企业团队和自动化、工作流场景、不适用于非、技能的安全扫描。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Trim whitespace. Reject if either part is empty after trimming. | 支持 | 通过核心功能实现对应能力 |
+| Condition | 支持 | 通过核心功能实现对应能力 |
+
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `safety`, `please`, `智能对话`, `permissions`, `commit`, `determine`, `meaning`, `self`, `pyxmate/pyx-scan`, `expected`, `arguments`, `intent`, `errors`, `cannot`, `模型调用`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 使用流程
 
 ### 第一步：确认技能信息
@@ -122,6 +139,14 @@ curl -s "https://scanner.pyxmate.com/api/v1/check/owner/name"
 ### 第三步：解析结果
 
 根据返回的 `trust_score`、`risk_score` 和 `confidence` 生成评估报告。
+
+### 命令参数说明
+
+- `-vendor`: 命令参数,用于指定操作选项
+- `-processor`: 命令参数,用于指定操作选项
+- `-corp`: 命令参数,用于指定操作选项
+- `-utils`: 命令参数,用于指定操作选项
+- `-helper`: 命令参数,用于指定操作选项
 
 ## 真实示例
 

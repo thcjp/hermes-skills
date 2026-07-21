@@ -325,6 +325,24 @@ python3 scripts/compliance_report.py
 cat .github/workflows/taxrate-sync.yml
 ```
 
+### 命令参数说明
+
+- `-rates`: 命令参数,用于指定操作选项
+- `-sync`: 命令参数,用于指定操作选项
+- `-API-KEY`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-API-KEY`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-API-KEY`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-API-KEY`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

@@ -64,6 +64,27 @@ tools:
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: Use、SEO、关键词分析、排名提升、搜索流量优化时使、不适用于黑帽、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Add -fast suffix for speed over depth: ultra-fast, pro-fast, etc. | 支持 | 通过核心功能实现对应能力 |
+| Synthesis Checkpoints | 支持 | 通过核心功能实现对应能力 |
+| Link to sources whenever possible | 支持 | 通过核心功能实现对应能力 |
+| Or create a project directly based on findings | 支持 | 通过核心功能实现对应能力 |
+| Reorganize if unwieldy | 支持 | 通过核心功能实现对应能力 |
+| Prompt next direction | 支持 | 通过核心功能实现对应能力 |
+| Update existing sections over creating new ones | 支持 | 通过核心功能实现对应能力 |
+| <initial questions to explore> | 支持 | 通过核心功能实现对应能力 |
+| Prune redundant findings | 支持 | 通过核心功能实现对应能力 |
+| Manual Check (if needed) | 支持 | 通过核心功能实现对应能力 |
+
+### 领域术语
+
+本skill涉及以下领域术语: `ultra2x`, `setup.md`, `parallel-research`, `atomic`, `ultra8x`, `done`, `openclaw`, `initialize`, `resources`, `approaches`, `ongoing`, `auto`, `trigger`, `export-pdf`, `technical`
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

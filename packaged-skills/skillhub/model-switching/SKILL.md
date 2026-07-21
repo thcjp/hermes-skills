@@ -263,6 +263,28 @@ node scripts/cost-dashboard.mjs --period month --group-by team
 node scripts/cost-dashboard.mjs --period month --format csv > reports/month.csv
 ```
 
+### 命令参数说明
+
+1. `-rules`: 命令参数,用于指定操作选项
+2. `--format`: 命令参数,用于指定操作选项
+3. `-cost-alerts`: 命令参数,用于指定操作选项
+4. `--output`: 命令参数,用于指定操作选项
+5. `-anomaly`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--cost-cap`: 命令参数,用于指定操作选项
+- `--input`: 命令参数,用于指定操作选项
+- `-lead`: 命令参数,用于指定操作选项
+- `--period`: 命令参数,用于指定操作选项
+- `--group-by`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--report`: 命令参数,用于指定操作选项
+- `-dashboard`: 命令参数,用于指定操作选项
+- `-policy`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

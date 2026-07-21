@@ -75,6 +75,25 @@ tools:
 | `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
 | `output` | 格式化输出结果 | `format`, `encoding` |
 
+### 源能力映射
+
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Cookies are stored ONLY in memory during runtime | 支持 | 通过核心功能实现对应能力 |
+| Language Evaluation | 支持 | 通过核心功能实现对应能力 |
+| Preparation | 支持 | 通过核心功能实现对应能力 |
+| Cookie Management | 支持 | 通过核心功能实现对应能力 |
+| Retry Mechanism | 支持 | 通过核心功能实现对应能力 |
+| Result Aggregation | 支持 | 通过核心功能实现对应能力 |
+
+### 领域术语
+本skill涉及以下领域术语: `bing`, `lifecycle`, `math`, `urls`, `strictly`, `wikipedia`, `shenma`, `startpage`, `acquisition`, `overflow`, `stocks`, `include`, `handling`, `平台规范`, `references/advanced-search.md`
+
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -89,6 +108,10 @@ tools:
 2. 根据适用场景选择合适的使用方式
 3. 执行操作并检查输出结果
 4. 如遇错误，参考错误处理章节
+
+### 命令参数说明
+
+- `-specific`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

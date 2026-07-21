@@ -250,6 +250,28 @@ csv-insight correlate sample.csv --method pearson
 - **分类**：MD+EXEC（纯 Markdown 指令，功能需要 exec 命令行执行能力）
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 调用 Python 脚本完成任务
 
+### 命令参数说明
+
+- `-config`: 命令参数,用于指定操作选项
+- `--format`: 命令参数,用于指定操作选项
+- `--min-samples`: 命令参数,用于指定操作选项
+- `--output`: 命令参数,用于指定操作选项
+- `--threshold`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--resume-on-failure`: 命令参数,用于指定操作选项
+- `--factor`: 命令参数,用于指定操作选项
+- `--column`: 命令参数,用于指定操作选项
+- `--by`: 命令参数,用于指定操作选项
+- `-quality-report`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--columns`: 命令参数,用于指定操作选项
+- `--heatmap`: 命令参数,用于指定操作选项
+- `--chunk-size`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

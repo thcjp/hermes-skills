@@ -38,7 +38,6 @@ tools:
 - 验证执行结果，确认输出符合预期格式
 - 参考`核心能力`相关配置参数进行设置
 ### 核心能力
-
 ```text
 图片生成（19个模型）:
   - 高质量: seedream-4.5, qwen-image-2-pro, recraft-v4-pro
@@ -65,6 +64,8 @@ tools:
   - 风格复刻（image-replicate, video-replicate）
   - 矢量图输出（SVG）
 ```
+
+**输入**: 用户提供核心能力所需的指令和必要参数。
 ### 基础文生图
 
 执行基础文生图操作,处理用户输入并返回结果。
@@ -235,9 +236,9 @@ dlazy recraft-v4-pro-vector \
 ### 依赖说明
 
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
-- **操作系统**: Windows / macOS / Linux
-- **Node.js**: 16+（dlazy CLI 运行需要）
+1. **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+2. **操作系统**: Windows / macOS / Linux
+3. **Node.js**: 16+（dlazy CLI 运行需要）
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
@@ -249,17 +250,51 @@ dlazy recraft-v4-pro-vector \
 | FFmpeg（可选） | 工具 | 推荐 | 视频拼接与格式转换 |
 
 ### API Key 配置
-- **必需**: dlazy API Key（与免费版共用）
-- **获取方式**: 访问 dlazy.com/dashboard/organization/api-key
-- **配置方式**: `dlazy auth set YOUR_API_KEY` 或环境变量 `DLAZY_API_KEY`
-- **安全说明**: Key 可随时轮换或撤销；配置文件权限限制为当前用户
-- **余额说明**: 视频生成消耗较高，建议定期检查余额
+4. **必需**: dlazy API Key（与免费版共用）
+5. **获取方式**: 访问 dlazy.com/dashboard/organization/api-key
+6. **配置方式**: `dlazy auth set YOUR_API_KEY` 或环境变量 `DLAZY_API_KEY`
+7. **安全说明**: Key 可随时轮换或撤销；配置文件权限限制为当前用户
+8. **余额说明**: 视频生成消耗较高，建议定期检查余额
 
 ### 可用性分类
-- **分类**: MD+EXEC+API（Markdown指令 + 命令行 + 外部API调用）
-- **说明**: 企业级AI Skill，支持全模态40+模型、管道链接与批量处理
-- **适用规模**: 专业内容团队，多媒体批量生产
-- **兼容性**: 与免费版完全兼容，API Key 和配置无缝共用
+9. **分类**: MD+EXEC+API（Markdown指令 + 命令行 + 外部API调用）
+10. **说明**: 企业级AI Skill，支持全模态40+模型、管道链接与批量处理
+11. **适用规模**: 专业内容团队，多媒体批量生产
+12. **兼容性**: 与免费版完全兼容，API Key 和配置无缝共用
+
+### 命令参数说明
+
+13. `--prompt`: 命令参数,用于指定操作选项
+14. `-image-o1`: 命令参数,用于指定操作选项
+15. `--style`: 命令参数,用于指定操作选项
+16. `--resolution`: 命令参数,用于指定操作选项
+17. `-illustration`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+### 命令参数说明
+
+- `--last-frame`: 命令参数,用于指定操作选项
+- `--instrumental`: 命令参数,用于指定操作选项
+- `-t2i`: 命令参数,用于指定操作选项
+- `-v3-omni`: 命令参数,用于指定操作选项
+- `--ref-images`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--voice`: 命令参数,用于指定操作选项
+- `-i2v-first-tail`: 命令参数,用于指定操作选项
+- `-i2v-first`: 命令参数,用于指定操作选项
+- `--output`: 命令参数,用于指定操作选项
+- `-dream-actor`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-omnihuman-1`: 命令参数,用于指定操作选项
+- `--first-frame`: 命令参数,用于指定操作选项
+- `-lipsync-speed`: 命令参数,用于指定操作选项
+- `--ref-video`: 命令参数,用于指定操作选项
+- `--quality`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

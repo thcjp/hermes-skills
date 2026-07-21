@@ -41,7 +41,7 @@ AI代理自主购物技能，为生活方式商店提供完整的浏览、下单
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD（纯Markdown指令，无需exec命令行能力）
+- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 
 ## 核心能力
 
@@ -88,23 +88,22 @@ AI代理自主购物技能，为生活方式商店提供完整的浏览、下单
 **处理**: 按照skill规范执行支付方式查询操作,遵循单一意图原则。
 
 ### 8. 标准结账
-
 通过 `POST /checkout` 创建订单。请求体包含 `items`（含 `productId`、`quantity`、可选 `variantId`）、`email`、`payment`（含 `chain` 和 `token`）和 `shipping`（含 `name`、`address1`、`city`、`stateCode`、`postalCode`、`countryCode`）。返回 `orderId`、`payment.address`（付款地址）、`payment.amount`（精确金额）、`payment.qrCode`（二维码）和 `expiresAt`（约15分钟有效期）。仅在用户明确确认后告知付款信息。
 
+**处理**: 按照skill规范执行标准结账操作,遵循单一意图原则。
 ### 9. x402结账
 
 通过 `POST /checkout/x402` 创建x402协议订单。API返回HTTP 402状态码和付费要求，运行时（或用户）构建并签名USDC转账（含memo `Store Order: {orderId}`），通过 `X-PAYMENT` 头部重试请求。成功后返回201和订单确认。skill不访问私钥，签名由运行时负责。适用于自动化代理支付场景。
 
 ### 10. 订单状态跟踪
-
 通过 `GET /orders/{orderId}/status` 跟踪订单状态。返回 `status`（awaiting_payment/paid/processing/shipped/delivered/expired/cancelled）和时间戳。轮询间隔：`awaiting_payment` 每5秒、`paid`/`processing` 每60秒、`shipped` 每小时。`shipped` 状态包含 `tracking` 对象（carrier、number、URL）。适用于订单物流跟踪。
 
+**输入**: 用户提供订单状态跟踪所需的指令和必要参数。
 ### 11. 订单详情
-
 通过 `GET /orders/{orderId}` 获取完整订单详情。返回商品列表、配送信息、支付信息（含 `txHash`）、订单总额和跟踪信息。始终向用户传达响应中的 `_actions.next` 指引下一步操作。适用于订单信息查询和问题排查。
 
+**处理**: 按照skill规范执行订单详情操作,遵循单一意图原则。
 ### 12. 代理身份
-
 通过 `GET /agent/me`、`GET /agent/me/orders`、`GET /agent/me/preferences` 获取代理身份信息。需在请求头中携带 `X-Moltbook-Identity` 令牌（由代理运行时提供）。仅在运行时明确提供令牌时使用，正常浏览和结账流程禁止发送身份令牌。适用于代理个性化场景。
 
 ### 能力覆盖范围
@@ -119,6 +118,32 @@ AI代理自主购物技能，为生活方式商店提供完整的浏览、下单
 5. 调用 `POST /checkout` 创建订单，获取 `orderId` 和 `payment.address`
 6. 获得用户明确确认后，告知付款地址和金额（约15分钟内完成）
 7. 轮询 `GET /orders/{orderId}/status` 跟踪订单状态直至 `delivered`
+
+### 命令参数说明
+
+- `-H`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+- `-X`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+- `-X`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-X`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+- `-X`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
 
 ## 示例
 

@@ -133,8 +133,30 @@ skill-platform cron add \
 ```
 
 关键差异：
-- `--webhook`：投递到HTTP端点（替代 `--announce`）
-- `--webhook-signing-secret`：签名密钥，端点可验证请求来源
+1. `--webhook`：投递到HTTP端点（替代 `--announce`）
+2. `--webhook-signing-secret`：签名密钥，端点可验证请求来源
+
+### 命令参数说明
+
+3. `--channel`: 命令参数,用于指定操作选项
+4. `-secret-key`: 命令参数,用于指定操作选项
+5. `-Archive-Type`: 命令参数,用于指定操作选项
+6. `--webhook-header`: 命令参数,用于指定操作选项
+7. `-notify-job-id`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Archive-Type`: 命令参数,用于指定操作选项
+- `--delete-after-run`: 命令参数,用于指定操作选项
+- `--message`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Archive-Type`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Archive-Type`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

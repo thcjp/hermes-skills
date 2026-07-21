@@ -52,7 +52,6 @@ PRO版支持四种会议模式,适应不同场景需求:
 - 验证执行结果，确认输出符合预期格式
 - 参考`批量会议调度`相关配置参数进行设置
 ### 协作式语音策略
-
 PRO版支持`collaborative`语音策略,实现更自然的多人会议交互:
 
 ```python
@@ -73,8 +72,8 @@ collaborative_config = {
 3. 语音智能层 -> 在自然停顿处播报结果
 4. 参会者追问 -> 基于上下文即时回答
 
+**输入**: 用户提供协作式语音策略所需的指令和必要参数。
 ### 屏幕共享与实时演示
-
 ```bash
 # 启动屏幕共享(会议中动态控制)
 # 共享本地内容
@@ -109,8 +108,8 @@ with open("/tmp/screenshare/state.json", "w") as f:
 # 页面每2秒轮询,自动更新显示
 ```
 
+**输入**: 用户提供屏幕共享与实时演示所需的指令和必要参数。
 ### 批量会议调度
-
 ```python
 # 批量调度多个会议
 meetings = [
@@ -134,6 +133,7 @@ for meeting in meetings:
 scheduler.run()  # 按计划执行
 ```
 
+**输入**: 用户提供批量会议调度所需的指令和必要参数。
 ### 团队管理与多租户
 ```python
 # 多团队配置
@@ -267,10 +267,10 @@ scheduler.start()
 
 ### 运行环境
 
-- **Agent平台**: 支持SKILL.md规范的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
-- **操作系统**: Windows / macOS / Linux
-- **Python**: 3.10+ 或 **Node.js**: 18+
-- **本地HTTP服务**: 用于网页模式(可选,使用模板时自动启动)
+1. **Agent平台**: 支持SKILL.md规范的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+2. **操作系统**: Windows / macOS / Linux
+3. **Python**: 3.10+ 或 **Node.js**: 18+
+4. **本地HTTP服务**: 用于网页模式(可选,使用模板时自动启动)
 
 ### 第三方依赖
 
@@ -284,15 +284,45 @@ scheduler.start()
 
 ### API Key 配置
 
-- 通过 `~/.agentcall/config.json` 或 `AGENTCALL_API_KEY` 环境变量配置
-- 企业版支持API Key池与负载均衡
-- 隧道认证使用独立的 `tunnel_access_key`(非API Key)
+5. 通过 `~/.agentcall/config.json` 或 `AGENTCALL_API_KEY` 环境变量配置
+6. 企业版支持API Key池与负载均衡
+7. 隧道认证使用独立的 `tunnel_access_key`(非API Key)
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令+脚本执行能力)
-- **说明**: 专业版基于Markdown指令驱动Agent执行企业级会议任务,通过Python/Node.js脚本实现多模式接入、屏幕共享、批量调度与团队管理
-- **PRO版增强**: 四种会议模式、可视化头像、屏幕共享、协作式语音、批量会议、团队管理、CI/CD集成、数据分析
+8. **分类**: MD+EXEC(纯Markdown指令+脚本执行能力)
+9. **说明**: 专业版基于Markdown指令驱动Agent执行企业级会议任务,通过Python/Node.js脚本实现多模式接入、屏幕共享、批量调度与团队管理
+10. **PRO版增强**: 四种会议模式、可视化头像、屏幕共享、协作式语音、批量会议、团队管理、CI/CD集成、数据分析
+
+### 命令参数说明
+
+11. `-demo`: 命令参数,用于指定操作选项
+12. `--template`: 命令参数,用于指定操作选项
+13. `--directory`: 命令参数,用于指定操作选项
+14. `--port`: 命令参数,用于指定操作选项
+15. `--max-duration`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+### 命令参数说明
+
+- `--voice-strategy`: 命令参数,用于指定操作选项
+- `--mode`: 命令参数,用于指定操作选项
+- `--screenshare-port`: 命令参数,用于指定操作选项
+- `--bot-name`: 命令参数,用于指定操作选项
+- `--context`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--screenshare-url`: 命令参数,用于指定操作选项
+- `-site`: 命令参数,用于指定操作选项
+- `--trigger-words`: 命令参数,用于指定操作选项
+- `--webpage-url`: 命令参数,用于指定操作选项
+- `-friday`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-defg-hij`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

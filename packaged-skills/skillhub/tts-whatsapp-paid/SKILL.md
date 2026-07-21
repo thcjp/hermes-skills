@@ -323,10 +323,10 @@ async def schedule_send(
 ### 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
-- **操作系统**: Windows / macOS / Linux
-- **Python**: 3.9 及以上
-- **网络**: 需访问 WhatsApp(发送消息时)
+1. **Agent 平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+2. **操作系统**: Windows / macOS / Linux
+3. **Python**: 3.9 及以上
+4. **网络**: 需访问 WhatsApp(发送消息时)
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
@@ -341,14 +341,29 @@ async def schedule_send(
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
-- TTS 合成**无需任何 API Key**(Piper 本地运行)
-- WhatsApp 发送需配置连接(通过本地桥接服务)
-- API 服务化建议配置鉴权 Token 保护接口
-- 企业部署建议通过密钥管理服务统一托管认证凭据
+5. TTS 合成**无需任何 API Key**(Piper 本地运行)
+6. WhatsApp 发送需配置连接(通过本地桥接服务)
+7. API 服务化建议配置鉴权 Token 保护接口
+8. 企业部署建议通过密钥管理服务统一托管认证凭据
 
 ### 可用性分类
-- **分类**: MD+EXEC()
-- **说明**: 基于Markdown的AI Skill,。专业版支持群发广播、定时发送与 API 服务化,适合企业级语音消息触达场景。
+9. **分类**: MD+EXEC()
+10. **说明**: 基于Markdown的AI Skill,。专业版支持群发广播、定时发送与 API 服务化,适合企业级语音消息触达场景。
+
+### 命令参数说明
+
+11. `-huayan-medium`: 命令参数,用于指定操作选项
+12. `--port`: 命令参数,用于指定操作选项
+13. `-config`: 命令参数,用于指定操作选项
+14. `--speed`: 命令参数,用于指定操作选项
+15. `--target`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+### 命令参数说明
+
+- `--host`: 命令参数,用于指定操作选项
+- `--quality`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

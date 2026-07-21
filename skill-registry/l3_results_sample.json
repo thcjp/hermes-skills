@@ -1,0 +1,4338 @@
+{
+  "results": [
+    {
+      "slug": "accounting-and-finance",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "accounting-and-finance-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "accounting-finance",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "ace-music",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "ace-music-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "ace-music-paid",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "actor-identifier",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "ad-insight-hub",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "ad-insight-hub-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "admapix",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "admapix-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "aegis-security",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "aegis-security-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "afrexai-cybersecurity-engine",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "afrexai-cybersecurity-engine-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "afrexai-knowledge-management",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "afrexai-knowledge-management-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "agent",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "agent-bom-vulnerability-intel",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "agent-browser-assistant",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "agent-browser-clawdbot",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "agent-browser-cli",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "agent-browser-stagehand",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "agent-chat",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "agent-commercial-contract",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "agent-framework-azure-ai-py",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "agent-group",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "agent-knowledge",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "agent-telegram",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "agent-telegram-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "agentic-security-audit",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "agentvibes-content-skill",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "agentvibes-skill",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "agentvibes-voice-skill",
+      "verdict": "FAIL",
+      "overall_score": 85,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "FAIL",
+          "errors": [
+            "能力点'语速控制（0.5x - 3.0x）'缺乏具体操作指令(代码/表格/列表/动词),仅有1个指示符",
+            "能力点'设置母语'缺乏具体操作指令(代码/表格/列表/动词),仅有1个指示符"
+          ]
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "能力点'语速控制（0.5x - 3.0x）'缺乏具体操作指令(代码/表格/列表/动词),仅有1个指示符",
+        "能力点'设置母语'缺乏具体操作指令(代码/表格/列表/动词),仅有1个指示符"
+      ]
+    },
+    {
+      "slug": "agentvibes-voice-skill-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "ai-agent-helper",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "ai-agent-helper-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "ai-artist-workstation",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "ai-assistant",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "ai-assistant-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "ai-image-gen",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "ai-image-gen-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "ai-kujiale-design",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "ai-kujiale-design-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "ai-news",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "ai-podcast",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "ai-podcast-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "ai-video-director",
+      "verdict": "FAIL",
+      "overall_score": 85,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "FAIL",
+          "errors": [
+            "slug(ai-video-studio-pro) != name(ai-video-director)"
+          ]
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "slug(ai-video-studio-pro) != name(ai-video-director)"
+      ]
+    },
+    {
+      "slug": "ai-writing-style-cloner",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "aic-dashboard",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "aic-dashboard-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "alephnet-node",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "alephnet-node-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "alephnet-node-manager",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "alibaba-quark-scan",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "alibaba-quark-scan-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "alpha-feed-creator",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "amap-jsapi-skill",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "analytics-dashboard",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "analyze",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "analyze-video-by-qwen",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "analyze-video-by-qwen-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "anthropics-frontend-design",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "anthropics-frontend-design-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "anygen-diagram",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "anygen-diagram-generator",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "anygen-diagram-generator-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "api",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "api-connect-hub",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "api-development",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "api-doc-generator",
+      "verdict": "FAIL",
+      "overall_score": 71,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "FAIL",
+          "errors": [
+            "能力点'功能3：文档版本管理与diff'缺乏具体操作指令(代码/表格/列表/动词),仅有1个指示符"
+          ]
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "FAIL",
+          "errors": [
+            "包含占位符: ['[ADDED]']"
+          ]
+        }
+      },
+      "errors": [
+        "能力点'功能3：文档版本管理与diff'缺乏具体操作指令(代码/表格/列表/动词),仅有1个指示符",
+        "包含占位符: ['[ADDED]']"
+      ]
+    },
+    {
+      "slug": "api-doc-writer",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "api-doc-writer-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "api-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "api-gateway",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "api-gateway-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "api-generator",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "api-generator-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "api-integration",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "api-integration-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "api-magic-gen",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "api-scaffold-gen",
+      "verdict": "FAIL",
+      "overall_score": 85,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "FAIL",
+          "errors": [
+            "能力点'功能7：自定义模板引擎'缺乏具体操作指令(代码/表格/列表/动词),仅有1个指示符"
+          ]
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "能力点'功能7：自定义模板引擎'缺乏具体操作指令(代码/表格/列表/动词),仅有1个指示符"
+      ]
+    },
+    {
+      "slug": "api-test-runner",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "api-toolkit",
+      "verdict": "FAIL",
+      "overall_score": 71,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "FAIL",
+          "errors": [
+            "能力点'错误处理'缺乏具体操作指令(代码/表格/列表/动词),仅有1个指示符"
+          ]
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "FAIL",
+          "errors": [
+            "错误处理仅2个###标题,需要>=3个错误场景"
+          ]
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "能力点'错误处理'缺乏具体操作指令(代码/表格/列表/动词),仅有1个指示符",
+        "错误处理仅2个###标题,需要>=3个错误场景"
+      ]
+    },
+    {
+      "slug": "apple-health-skill",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "apple-health-skill-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "archive",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "archive-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "art",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "assistant",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "atlas-admin-console",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "audio-stream-upload",
+      "verdict": "FAIL",
+      "overall_score": 85,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "FAIL",
+          "errors": [
+            "能力点'2. 自定义编码配置'缺乏具体操作指令(代码/表格/列表/动词),仅有1个指示符",
+            "能力点'3. 分片上传大文件'缺乏具体操作指令(代码/表格/列表/动词),仅有1个指示符"
+          ]
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": [
+        "能力点'2. 自定义编码配置'缺乏具体操作指令(代码/表格/列表/动词),仅有1个指示符",
+        "能力点'3. 分片上传大文件'缺乏具体操作指令(代码/表格/列表/动词),仅有1个指示符"
+      ]
+    },
+    {
+      "slug": "audio-upload-aioz-stream",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "audio-upload-aioz-stream-free",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "audit",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "auto-monitor",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "auto-workflow",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    },
+    {
+      "slug": "automation-recipe-book",
+      "verdict": "PASS",
+      "overall_score": 100,
+      "checks": {
+        "L3-1": {
+          "name": "结构完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-2": {
+          "name": "能力可执行性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-3": {
+          "name": "场景覆盖率",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-4": {
+          "name": "指令清晰度",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-5": {
+          "name": "错误处理完整性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-6": {
+          "name": "依赖准确性",
+          "status": "PASS",
+          "errors": []
+        },
+        "L3-7": {
+          "name": "内容实质性",
+          "status": "PASS",
+          "errors": []
+        }
+      },
+      "errors": []
+    }
+  ]
+}

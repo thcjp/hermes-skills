@@ -50,6 +50,7 @@ tools:
 ### 1. 频道消息发送
 向指定频道发送文本消息。频道参数需使用频道ID（`C0123456789`）。支持基础Slack消息格式化：`*bold*`、`_italic_`、`` `code` ``、emoji语法 `:name:`。
 
+**输出**: 返回频道消息发送的执行结果,包含操作状态和输出数据。
 ### 2. 频道列表
 列出工作区内全部频道，返回频道ID、名称、成员数、是否私有等。可用于频道发现与ID解析。
 
@@ -91,14 +92,18 @@ clawlink_list_integrations
 大部分Slack工具需要频道ID。使用 `slack_list_all_channels` 列出频道后按 `name` 字段匹配。
 
 ### 发送消息或查询数据
-- 发送消息：`clawlink_call_tool --tool "slack_send_message"`，传 `channel`、`text`
-- 列出频道：`clawlink_call_tool --tool "slack_list_all_channels"`
-- 列出用户：`clawlink_call_tool --tool "slack_list_all_users"`
+1. 发送消息：`clawlink_call_tool --tool "slack_send_message"`，传 `channel`、`text`
+2. 列出频道：`clawlink_call_tool --tool "slack_list_all_channels"`
+3. 列出用户：`clawlink_call_tool --tool "slack_list_all_users"`
 
 ### 透传结果
-- 发送成功返回 `{ok: true, channel, ts, message}`
-- 频道列表返回 `{ok: true, channels: [{id, name, num_members, ...}]}`
-- 用户列表返回 `{ok: true, members: [{id, name, profile, ...}]}`
+4. 发送成功返回 `{ok: true, channel, ts, message}`
+5. 频道列表返回 `{ok: true, channels: [{id, name, num_members, ...}]}`
+6. 用户列表返回 `{ok: true, members: [{id, name, profile, ...}]}`
+
+### 命令参数说明
+
+7. `--params`: 命令参数,用于指定操作选项
 
 ## 案例展示
 

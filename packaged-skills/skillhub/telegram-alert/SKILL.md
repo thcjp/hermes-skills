@@ -23,7 +23,6 @@ tools:
 ## 核心能力
 
 ### PRO版功能增强对比
-
 | 功能 | 免费版 | PRO版 |
 | --- | --- | --- |
 | 目标群组 | 单一 | 多群组同步 |
@@ -35,6 +34,7 @@ tools:
 | 优先级 | 不支持 | 3级优先级 |
 | 历史分析 | 基础记录 | 统计与分析 |
 
+**输出**: 返回PRO版功能增强对比的执行结果,包含操作状态和输出数据。
 ### 复合触发条件
 ```yaml
 # PRO版支持复合逻辑
@@ -162,6 +162,33 @@ python3 scripts/schedule.py add --times "09:00,15:00" --message-type market_summ
 python3 scripts/history.py stats --period 30d
 python3 scripts/history.py export --format excel
 ```
+
+### 命令参数说明
+
+1. `--channels`: 命令参数,用于指定操作选项
+2. `--format`: 命令参数,用于指定操作选项
+3. `--multi-channel`: 命令参数,用于指定操作选项
+4. `--priority`: 命令参数,用于指定操作选项
+5. `--message`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--chat-ids`: 命令参数,用于指定操作选项
+- `--conditions`: 命令参数,用于指定操作选项
+- `--include-watchlist`: 命令参数,用于指定操作选项
+- `--logic`: 命令参数,用于指定操作选项
+- `--include-chart`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--times`: 命令参数,用于指定操作选项
+- `--period`: 命令参数,用于指定操作选项
+- `--message-type`: 命令参数,用于指定操作选项
+- `-USD`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-USD`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

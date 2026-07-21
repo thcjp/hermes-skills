@@ -357,6 +357,38 @@ python3 audit_brand.py \
   --report ./audit/
 ```
 
+### 命令参数说明
+
+1. `--current-brand`: 命令参数,用于指定操作选项
+2. `--parallel`: 命令参数,用于指定操作选项
+3. `-primary`: 命令参数,用于指定操作选项
+4. `-h6明确的字号与字重规范`: 命令参数,用于指定操作选项
+5. `--target-personality`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--brand-config`: 命令参数,用于指定操作选项
+- `-report`: 命令参数,用于指定操作选项
+- `--scan-assets`: 命令参数,用于指定操作选项
+- `-system`: 命令参数,用于指定操作选项
+- `-rules`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-analysis`: 命令参数,用于指定操作选项
+- `--guidelines`: 命令参数,用于指定操作选项
+- `-check`: 命令参数,用于指定操作选项
+- `--stakeholder-presentation`: 命令参数,用于指定操作选项
+- `--strategy-analysis`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--quality-check`: 命令参数,用于指定操作选项
+- `-and-donts`: 命令参数,用于指定操作选项
+- `--formats`: 命令参数,用于指定操作选项
+- `--competitors`: 命令参数,用于指定操作选项
+- `--preserve-equity`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

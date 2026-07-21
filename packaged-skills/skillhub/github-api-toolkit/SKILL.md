@@ -178,6 +178,7 @@ curl -L -H "Authorization: Bearer $GITHUB_TOKEN" \
   https://api.github.com/repos/owner/repo/actions/artifacts/123/zip
 ```
 
+**输出**: 返回GitHub Actions API的执行结果,包含操作状态和输出数据。
 ### 组织与团队管理
 ```bash
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
@@ -303,6 +304,38 @@ gh-api-toolkit webhook add \
 
 gh-api-toolkit webhook test --repo owner/repo --event "issues"
 ```
+
+### 命令参数说明
+
+1. `--template`: 命令参数,用于指定操作选项
+2. `-L`: 命令参数,用于指定操作选项
+3. `--permission`: 命令参数,用于指定操作选项
+4. `--rate-limit`: 命令参数,用于指定操作选项
+5. `-failed-jobs`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+- `-L`: 命令参数,用于指定操作选项
+- `--fields`: 命令参数,用于指定操作选项
+- `--vars`: 命令参数,用于指定操作选项
+- `--settings`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-H`: 命令参数,用于指定操作选项
+- `--users`: 命令参数,用于指定操作选项
+- `--events`: 命令参数,用于指定操作选项
+- `--event`: 命令参数,用于指定操作选项
+- `-L`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-L`: 命令参数,用于指定操作选项
+- `--query`: 命令参数,用于指定操作选项
+- `--filter`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

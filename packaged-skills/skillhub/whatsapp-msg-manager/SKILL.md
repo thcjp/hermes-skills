@@ -79,6 +79,7 @@ connector_call_tool --tool "whatsapp_send_media" --params '{
 
 > 详细代码示例已移至 `references/detail.md`
 
+**输出**: 返回交互式按钮消息的执行结果,包含操作状态和输出数据。
 ### 3. 位置与联系人消息
 ```bash
 connector_call_tool --tool "whatsapp_send_location" --params '{
@@ -103,6 +104,7 @@ connector_call_tool --tool "whatsapp_send_contacts" --params '{
 }'
 ```
 
+**输出**: 返回位置与联系人消息的执行结果,包含操作状态和输出数据。
 ### 4. 消息模板全生命周期管理
 > 详细代码示例已移至 `references/detail.md`
 
@@ -130,6 +132,7 @@ connector_call_tool --tool "whatsapp_get_media_info" --params '{
 }'
 ```
 
+**输出**: 返回媒体上传与复用的执行结果,包含操作状态和输出数据。
 ### 6. 业务资料与多账号管理
 ```bash
 connector_call_tool --tool "whatsapp_get_business_profile" --params '{}'
@@ -218,11 +221,11 @@ sender.send_batch(recipients, template)
 ### 依赖说明
 
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
-- **操作系统**: Windows / macOS / Linux
-- **网络环境**: 需可访问WhatsApp Cloud API服务端点
-- **浏览器**: 用于OAuth授权流程的现代浏览器
-- **Python**: 3.8+(批量发送和模板管理脚本需要)
+1. **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+2. **操作系统**: Windows / macOS / Linux
+3. **网络环境**: 需可访问WhatsApp Cloud API服务端点
+4. **浏览器**: 用于OAuth授权流程的现代浏览器
+5. **Python**: 3.8+(批量发送和模板管理脚本需要)
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
@@ -235,17 +238,25 @@ sender.send_batch(recipients, template)
 | requests库 | Python库 | 可选 | `pip install requests` |
 
 ### API Key 配置
-- 本Skill通过连接器服务自动管理OAuth令牌,无需手动配置API Key
-- WhatsApp Business API凭证由连接器服务安全存储并自动注入
-- 批量发送脚本的连接器调用使用本地已认证的会话,无需额外Key
-- 如需直接调用WhatsApp Cloud API,需在Meta开发者平台获取Access Token和Phone Number ID
+6. 本Skill通过连接器服务自动管理OAuth令牌,无需手动配置API Key
+7. WhatsApp Business API凭证由连接器服务安全存储并自动注入
+8. 批量发送脚本的连接器调用使用本地已认证的会话,无需额外Key
+9. 如需直接调用WhatsApp Cloud API,需在Meta开发者平台获取Access Token和Phone Number ID
 
 ### 可用性分类
-- **分类**: MD+EXEC()
-- **说明**: 基于Markdown的AI Skill,
-- **连接模式**: 通过连接器服务代理WhatsApp Cloud API请求,支持多账号并发
-- **安全等级**: 所有写操作需用户显式确认;批量发送支持操作日志审计;OAuth令牌由连接器安全管理
-- **兼容性**: 与免费版(whatsapp-msg-manager-free)完全兼容,支持无缝升级
+10. **分类**: MD+EXEC()
+11. **说明**: 基于Markdown的AI Skill,
+12. **连接模式**: 通过连接器服务代理WhatsApp Cloud API请求,支持多账号并发
+13. **安全等级**: 所有写操作需用户显式确认;批量发送支持操作日志审计;OAuth令牌由连接器安全管理
+14. **兼容性**: 与免费版(whatsapp-msg-manager-free)完全兼容,支持无缝升级
+
+### 命令参数说明
+
+15. `-demo`: 命令参数,用于指定操作选项
+16. `--params`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
 
 ## 输入格式
 

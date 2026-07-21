@@ -23,7 +23,6 @@ tools:
 ## 核心能力
 
 ### PRO版功能增强对比
-
 | 功能 | 免费版 | PRO版 |
 | --- | --- | --- |
 | 市场覆盖 | 仅A股 | A股/美股/港股/ETF |
@@ -35,6 +34,7 @@ tools:
 | 智能推荐 | 不支持 | 基于历史表现 |
 | 实时监控 | 不支持 | 策略自动触发 |
 
+**处理**: 按照skill规范执行PRO版功能增强对比操作,遵循单一意图原则。
 ### 示例
 ```yaml
 # PRO版支持复杂逻辑组合
@@ -160,6 +160,28 @@ python3 scripts/benchmark.py --industry "白酒" --metric "roe,pe,pb"
 # 智能推荐
 python3 scripts/recommend.py --risk-tolerance moderate --count 20
 ```
+
+### 命令参数说明
+
+1. `--export`: 命令参数,用于指定操作选项
+2. `--count`: 命令参数,用于指定操作选项
+3. `--strategy`: 命令参数,用于指定操作选项
+4. `--output`: 命令参数,用于指定操作选项
+5. `--risk-tolerance`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--formula`: 命令参数,用于指定操作选项
+- `--metric`: 命令参数,用于指定操作选项
+- `--conditions`: 命令参数,用于指定操作选项
+- `--markets`: 命令参数,用于指定操作选项
+- `--industry`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--rebalance`: 命令参数,用于指定操作选项
+- `--benchmark`: 命令参数,用于指定操作选项
+- `--period`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

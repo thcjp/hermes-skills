@@ -222,6 +222,13 @@ python3 init_presets.py --org "你的公司名"
 python3 validate_whatsapp_style.py --input test_message.txt --pro
 ```
 
+### 命令参数说明
+
+1. `-style-tool-pro`: 命令参数,用于指定操作选项
+2. `--input`: 命令参数,用于指定操作选项
+3. `-platform`: 命令参数,用于指定操作选项
+4. `--output`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

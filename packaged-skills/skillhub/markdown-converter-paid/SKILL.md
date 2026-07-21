@@ -98,6 +98,7 @@ template:
     frontmatter: true
 ```
 
+**输入**: 用户提供自定义输出模板所需的指令和必要参数。
 ### 元数据提取
 ```python
 # 元数据提取与管理
@@ -283,6 +284,38 @@ python3 audit_conversion.py \
   --input ./output/ \
   --report ./audit/
 ```
+
+### 命令参数说明
+
+1. `-config`: 命令参数,用于指定操作选项
+2. `--recursive`: 命令参数,用于指定操作选项
+3. `--parallel`: 命令参数,用于指定操作选项
+4. `-latest`: 命令参数,用于指定操作选项
+5. `-base`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-base-template`: 命令参数,用于指定操作选项
+- `--generate-search-index`: 命令参数,用于指定操作选项
+- `--input`: 命令参数,用于指定操作选项
+- `-report`: 命令参数,用于指定操作选项
+- `-q2-report`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-conversion`: 命令参数,用于指定操作选项
+- `--validate`: 命令参数,用于指定操作选项
+- `--format`: 命令参数,用于指定操作选项
+- `-docs`: 命令参数,用于指定操作选项
+- `--searchable`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-artifact`: 命令参数,用于指定操作选项
+- `--quality-check`: 命令参数,用于指定操作选项
+- `--formats`: 命令参数,用于指定操作选项
+- `--extract-metadata`: 命令参数,用于指定操作选项
+- `--generate-index`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

@@ -70,6 +70,12 @@ tools:
 - 验证执行结果，确认输出符合预期格式
 - 参考`能力覆盖范围`相关配置参数进行设置
 
+### 领域术语
+本skill涉及以下领域术语: `livenessprobe`, `timeoutseconds`, `clusterip`, `controller`, `clusterrolebinding`, `readinessprobe`, `persistent`, `create`, `labels`, `clusterrole`, `oomkilled`, `probes`, `always`, `role`, `envfrom`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

@@ -74,6 +74,27 @@ tools:
 | `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
 | `output` | 格式化输出结果 | `format`, `encoding` |
 
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Quote strings starting with @,   , , &, !, |, >, {, , % | 支持 | 通过核心功能实现对应能力 |
+| Document separator --- starts new document; ... ends document—useful in streams | 支持 | 通过核心功能实现对应能力 |
+| Leading/trailing spaces stripped from unquoted strings—quote to preserve | 支持 | 通过核心功能实现对应能力 |
+| No inline comments after multiline block scalars—comment applies to next line | 支持 | 通过核心功能实现对应能力 |
+| No multi-line comment syntax—each line needs # | 支持 | 通过核心功能实现对应能力 |
+| Consistent indent width required within document—2 spaces conventional | 支持 | 通过核心功能实现对应能力 |
+
+**输入**: 用户提供源能力映射所需的指令和必要参数。
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `yes`, `indentation`, `duplicate`, `norway`, `完全适配`, `empty`, `compatibility`, `anchors`, `sequence`, `colon`, `增强元数据和触发`, `coercion`, `off`, `平台规范`
+
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

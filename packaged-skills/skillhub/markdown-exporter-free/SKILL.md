@@ -69,6 +69,7 @@ markdown-exporter md_to_pptx /path/input.md /path/output.pptx --template /path/t
 ```
 支持Pandoc风格的幻灯片语法：分栏布局（`::::: columns`）、演讲者备注（`::: notes`）、增量列表（`::: incremental`）、背景图片。
 
+**处理**: 按照skill规范执行演示文稿生成操作,遵循单一意图原则。
 ### 4. 代码块提取
 ```bash
 markdown-exporter md_to_codeblock /path/input.md /path/output_dir

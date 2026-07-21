@@ -64,7 +64,25 @@ tools:
 
 ### 能力覆盖范围
 
-本skill还覆盖以下能力场景: Use、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求。这些能力在上述核心功能中均有对应处理逻辑。
+本skill还覆盖以下能力场景: 需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Applying CloudBase constraints before confirming the project actually uses CloudBase. | 支持 | 通过核心功能实现对应能力 |
+| Web auth flows or Web SDK-specific frontend implementation. | 支持 | 通过核心功能实现对应能力 |
+| Common mistakes / gotchas | 支持 | 通过核心功能实现对应能力 |
+| Mixing Web SDK assumptions into wx.cloud projects. | 支持 | 通过核心功能实现对应能力 |
+
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `miniprogram-ci`, `switch`, `references/...`, `page`, `route`, `tdesign`, `standalone`, `cloudrun-development`, `auth-tool`, `handle`, `minimal`, `index.json`, `pages/index/index.wxml`, `handling`, `cloudbase-platform/references/protocols/deployment-gate.md`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

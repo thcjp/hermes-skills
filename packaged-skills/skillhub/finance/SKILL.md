@@ -65,6 +65,26 @@ tools:
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: Use、需要安全检测、合规审计、漏洞扫描、加密防护时使用、不适用于渗透测试、未授权目标、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| For series: confirm date range, number of points, and show a small preview (first/last few rows). | 支持 | 通过核心功能实现对应能力 |
+| If rate-limited: explain what happened and retry with backoff OR advise to reduce frequency. | 支持 | 通过核心功能实现对应能力 |
+| Latest FX rate | 支持 | 通过核心功能实现对应能力 |
+| Historical series (CSV to stdout) | 支持 | 通过核心功能实现对应能力 |
+| For quotes: price, change %, timestamp/source, and any caveats (like “FX updates daily”). | 支持 | 通过核心功能实现对应能力 |
+
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `providers.md`, `give`, `maintain`, `eurusd`, `msft`, `yfinance`, `aapl`, `yahoo`, `open`, `commands`, `watchlist`, `exchangerate`, `examples`, `gspc`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

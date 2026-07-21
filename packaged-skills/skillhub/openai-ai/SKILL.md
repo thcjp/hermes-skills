@@ -65,6 +65,10 @@ tools:
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: Use、模型调用、智能对话、Agent、应用时使用、不适用于需要、确定性的关键决策。这些能力在上述核心功能中均有对应处理逻辑。
+### 领域术语
+
+本skill涉及以下领域术语: `english`, `asynchronous`, `jsonl`, `permissions`, `openai_create_fine_tuning_job`, `safedefaults`, `pair`, `openai_get_eval`, `openai_list_vector_stores`, `openai_list_run_steps`, `edit`, `responses`, `openai_delete_assistant`, `overview`, `openai_create_embeddings`
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -82,6 +86,16 @@ clawlink_call_tool --tool "openai_create_chat_completion" --params '{"model": "g
 
 clawlink_call_tool --tool "openai_list_files" --params '{"purpose": "batch"}'
 ```
+
+### 命令参数说明
+
+1. `-e-3`: 命令参数,用于指定操作选项
+2. `--strict-json`: 命令参数,用于指定操作选项
+3. `--params`: 命令参数,用于指定操作选项
+4. `-platform`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
 
 ## 输入格式
 

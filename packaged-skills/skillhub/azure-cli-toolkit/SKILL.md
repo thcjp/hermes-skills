@@ -40,7 +40,6 @@ tools:
 ## 核心能力
 
 ### 1. 自动化认证方式
-
 | 认证方式 | 适用场景 | 命令 |
 |:---------|:---------|:-----|
 | 服务主体 | CI/CD、自动化脚本 | `az login --service-principal` |
@@ -62,6 +61,7 @@ echo "$AZURE_ACCESS_TOKEN" | az login --service-principal \
   -u $AZURE_CLIENT_ID --password-stdin --tenant $AZURE_TENANT_ID
 ```
 
+**输出**: 返回自动化认证方式的执行结果,包含操作状态和输出数据。
 ### 2. 批量资源操作
 ```bash
 # 批量删除资源组下所有虚拟机
@@ -282,6 +282,38 @@ EOF
 # 执行部署脚本
 ./.azure-toolkit/scripts/deploy.sh prod
 ```
+
+### 命令参数说明
+
+- `-analytics`: 命令参数,用于指定操作选项
+- `--subscription`: 命令参数,用于指定操作选项
+- `--protocol`: 命令参数,用于指定操作选项
+- `--resource`: 命令参数,用于指定操作选项
+- `--template-file`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--priority`: 命令参数,用于指定操作选项
+- `-dev-rg`: 命令参数,用于指定操作选项
+- `-client-secret`: 命令参数,用于指定操作选项
+- `--username`: 命令参数,用于指定操作选项
+- `-vm`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-client-id`: 命令参数,用于指定操作选项
+- `-resource-id`: 命令参数,用于指定操作选项
+- `--yes`: 命令参数,用于指定操作选项
+- `-nsg`: 命令参数,用于指定操作选项
+- `--account-name`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--access`: 命令参数,用于指定操作选项
+- `--tenant`: 命令参数,用于指定操作选项
+- `--vault-name`: 命令参数,用于指定操作选项
+- `-tenant-id`: 命令参数,用于指定操作选项
+- `--image`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

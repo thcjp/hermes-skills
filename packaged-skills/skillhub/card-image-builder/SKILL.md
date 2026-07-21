@@ -82,6 +82,7 @@ python3 render_x_like_posts.py \
 - Twitter风格蓝白灰配色(默认)
 - 帖子过多时自动分页(Part 1 / Part 2)
 
+**处理**: 按照skill规范执行X风格帖子分享长图(x-like-posts)操作,遵循单一意图原则。
 ### 2. 自定义模板创建
 PRO版支持创建和管理自定义模板,满足品牌个性化需求。
 
@@ -217,6 +218,31 @@ python3 init_brand.py --name "你的品牌名"
 
 python3 render_x_like_posts.py --input sample.json --out tmp/test.png
 ```
+
+### 命令参数说明
+
+1. `-right`: 命令参数,用于指定操作选项
+2. `--watermark`: 命令参数,用于指定操作选项
+3. `--footer`: 命令参数,用于指定操作选项
+4. `--watermark-opacity`: 命令参数,用于指定操作选项
+5. `--bg`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+### 命令参数说明
+
+- `--highlight-words`: 命令参数,用于指定操作选项
+- `-image-builder-pro`: 命令参数,用于指定操作选项
+- `--hl1`: 命令参数,用于指定操作选项
+- `-platform`: 命令参数,用于指定操作选项
+- `--platform`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--hl2`: 命令参数,用于指定操作选项
+- `--input`: 命令参数,用于指定操作选项
+- `--output-dir`: 命令参数,用于指定操作选项
+- `--watermark-position`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

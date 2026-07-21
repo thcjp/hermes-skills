@@ -59,6 +59,7 @@ def validate_xsd(xml_path: str, xsd_path: str) -> dict:
 
 **支持的校验规范**：XSD 1.0、XSD 1.1、DTD、RelaxNG。XSD最常用，专业版默认XSD。
 
+**输入**: 用户提供能力2：XSD Schema校验所需的指令和必要参数。
 ### 能力3：XPath字段映射DSL
 ```yaml
 # xpath-mapping.yaml
@@ -104,6 +105,7 @@ mapping:
 
 **Agent执行规则**：读取 `xpath-mapping.yaml` 后按映射规则提取；支持单值、多值、嵌套、条件、命名空间感知五种提取模式；类型转换按 `type` 字段执行。
 
+**输入**: 用户提供能力3：XPath字段映射DSL所需的指令和必要参数。
 ### 能力4：流式转换
 ```python
 from lxml import etree
@@ -312,6 +314,13 @@ mapping = {
 data = extract_by_xpath('order.xml', mapping)
 print(json.dumps(data, ensure_ascii=False, indent=2))
 ```
+
+**使用步骤**:
+1. 阅读依赖说明章节,确认运行环境已就绪
+2. 根据任务需求,参考核心能力章节选择对应能力
+3. 按照能力描述提供输入参数,执行操作
+4. 查看输出结果,确认任务完成状态
+
 
 ## 输入格式
 

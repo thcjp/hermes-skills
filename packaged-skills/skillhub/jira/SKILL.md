@@ -75,6 +75,7 @@ export API_KEY="your_api_key_here"
 - 子任务继承父任务的字段默认值
 - 子任务状态转换独立于父任务,但父任务状态由子任务聚合
 
+**输入**: 用户提供子任务管理所需的指令和必要参数。
 ### 5. 冲刺管理
 - `create_sprint` 创建冲刺:name、startDate、endDate、goal
 - 标准冲刺周期30天,可配置为14天或7天
@@ -115,6 +116,7 @@ export API_KEY="your_api_key_here"
 - 转换需符合工作流定义,非法转换被拒绝
 - 转换可触发事件:自动指派、发送通知、更新字段
 
+**输出**: 返回状态转换的执行结果,包含操作状态和输出数据。
 ### 10. 用户与项目管理
 - `get_user` 查询用户信息:username、displayName、email
 - `get_project` 查询项目信息:key、name、lead、issue types
@@ -133,6 +135,25 @@ export API_KEY="your_api_key_here"
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: 通过工具操作史诗、冲刺与看板、覆盖创建搜索转换、全流程、通过项目管理工具、集成操作工作项全、生命周期、状态转换与用户管、工作流转换与字段、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Unassign | 支持 | 通过核心功能实现对应能力 |
+| Draft ticket content | 支持 | 通过核心功能实现对应能力 |
+| Who am I | 支持 | 通过核心功能实现对应能力 |
+| Intent | 支持 | 通过核心功能实现对应能力 |
+
+**输入**: 用户提供源能力映射所需的指令和必要参数。
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `mcp__atlassian__gettransitionsforjiraissue`, `不适用于超出本技`, `backend`, `triggers`, `before`, `workflows`, `list`, `safety`, `相关功能时使用`, `mcp__atlassian__getvisiblejiraprojects`, `mcp__atlassian__addcommenttojiraissue`, `supports`, `operation`, `mcp__atlassian__lookupjiraaccountid`, `atlassian`
+
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -154,6 +175,24 @@ export API_KEY="your_api_key_here"
 5. 用 `create_sprint` + `add_to_sprint` 规划冲刺
 6. 用 `search_issues` 配合 JQL 跟踪进度
 7. 用 `transition_issue` 推进工作流状态
+
+### 命令参数说明
+
+- `-W30`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+### 命令参数说明
+
+- `-W30`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-W30`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-W30`: 命令参数,用于指定操作选项
 
 ## 示例
 

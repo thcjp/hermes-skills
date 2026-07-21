@@ -111,7 +111,6 @@ products_structure = """
 **输出**: 返回业务资料库集成的执行结果,包含操作状态和输出数据。
 
 ### 3. 完整发布流程
-
 ```yaml
 # publish_method 配置选项
 # draft: 定稿后写入公众号草稿箱（默认）
@@ -133,6 +132,7 @@ python3 publish.py full \
   --publish
 ```
 
+**输入**: 用户提供完整发布流程所需的指令和必要参数。
 ### 4. 智能配图管理
 
 ```python
@@ -313,6 +313,23 @@ python3 write.py strip-citations draft.md -o article_temp.md
 # 步骤4：发布
 python3 publish.py full --article article.md --method draft
 ```
+
+### 命令参数说明
+
+1. `--publish`: 命令参数,用于指定操作选项
+2. `-time-management`: 命令参数,用于指定操作选项
+3. `-citations`: 命令参数,用于指定操作选项
+4. `--draft-dir`: 命令参数,用于指定操作选项
+5. `--input`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+### 命令参数说明
+
+- `--instruction`: 命令参数,用于指定操作选项
+- `-fitness-tips`: 命令参数,用于指定操作选项
+- `-card`: 命令参数,用于指定操作选项
+- `--method`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

@@ -189,7 +189,7 @@ result = gateway.call("tool_name", param1=value1, param2=value2)
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD（纯Markdown指令，无需exec命令行能力）
+- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 
 ## 使用流程
 
@@ -199,6 +199,13 @@ result = gateway.call("tool_name", param1=value1, param2=value2)
 4. 运行 `agentcore configure` 初始化部署配置(注意命名规则)
 5. 运行 `agentcore launch --deployment-type container` 部署
 6. 使用 `agentcore invoke` 测试,完成后 `agentcore destroy` 清理
+
+### 命令参数说明
+
+- `--stack-name`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
 
 ## 案例展示
 

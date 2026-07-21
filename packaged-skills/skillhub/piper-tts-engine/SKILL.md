@@ -266,6 +266,38 @@ scripts/piper-speak.sh "专业版语音合成已就绪" zh_CN-huayan-medium
 piper-speak-pro --batch input_texts.json --voice zh_CN-huayan-medium --output-dir batch_output/
 ```
 
+### 命令参数说明
+
+- `-huayan-medium`: 命令参数,用于指定操作选项
+- `--language`: 命令参数,用于指定操作选项
+- `-piper-pro`: 命令参数,用于指定操作选项
+- `--post-process`: 命令参数,用于指定操作选项
+- `--host`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+- `-Aria`: 命令参数,用于指定操作选项
+- `-train-pro`: 命令参数,用于指定操作选项
+- `--port`: 命令参数,用于指定操作选项
+- `--output-dir`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--install-all`: 命令参数,用于指定操作选项
+- `-BrandVoice-Aria-high`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+- `--speed`: 命令参数,用于指定操作选项
+- `-safe`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--transcript-dir`: 命令参数,用于指定操作选项
+- `--audio-dir`: 命令参数,用于指定操作选项
+- `--quality`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

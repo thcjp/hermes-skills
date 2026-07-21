@@ -58,6 +58,7 @@ xxd -l 64 file.bin       # 前64字节
 echo "48656c6c6f" | xxd -r -p   # Hex转文本: Hello
 ```
 
+**输入**: 用户提供Hex查看与转换所需的指令和必要参数。
 ### 4. JWT解码
 解码JWT令牌的header和payload（JWT是签名而非加密，任何人可解码）。
 
@@ -87,6 +88,10 @@ echo "$TOKEN" | cut -d. -f2 | tr '-_' '+/' | base64 -d 2>/dev/null | jq
 2. 选择对应的命令行工具(base64/url编码/hex/JWT)
 3. 执行编码或解码操作
 4. 验证结果正确性
+
+### 命令参数说明
+
+- `-f2`: 命令参数,用于指定操作选项
 
 ## 示例
 

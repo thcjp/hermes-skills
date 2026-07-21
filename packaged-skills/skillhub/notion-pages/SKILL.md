@@ -84,6 +84,15 @@ clawlink_call_tool --tool "notion_search" --params '{"query": "project notes"}'
 clawlink_call_tool --tool "notion_get_page" --params '{"page_id": "PAGE_ID"}'
 ```
 
+### 命令参数说明
+
+1. `--strict-json`: 命令参数,用于指定操作选项
+2. `--params`: 命令参数,用于指定操作选项
+3. `-platform`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

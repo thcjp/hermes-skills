@@ -68,6 +68,7 @@ markdown-exporter md_to_pptx /path/input.md /path/output.pptx --template /path/t
 ```
 支持Pandoc风格的幻灯片语法：分栏布局（`::::: columns`）、演讲者备注（`::: notes`）、增量列表（`::: incremental`）、背景图片。
 
+**处理**: 按照skill规范执行演示文稿生成操作,遵循单一意图原则。
 ### 4. 代码块提取
 ```bash
 markdown-exporter md_to_codeblock /path/input.md /path/output_dir
@@ -75,6 +76,7 @@ markdown-exporter md_to_codeblock /path/input.md /path/output.zip --compress
 ```
 从Markdown中提取所有代码块，按语言保存为独立文件（`.py`/`.js`/`.sh`等）。
 
+**处理**: 按照skill规范执行代码块提取操作,遵循单一意图原则。
 ### 5. Jupyter Notebook转换
 ```bash
 markdown-exporter md_to_ipynb /path/input.md /path/output.ipynb
@@ -85,6 +87,23 @@ markdown-exporter md_to_ipynb /path/input.md /path/output.ipynb --strip-wrapper
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: 多格式导出引擎、文本多格式导出引、支持将、PNG、JSONL、种专业格式、核心能力、支持模板和分栏布、学术格式导出。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Basic conversion | 支持 | 通过核心功能实现对应能力 |
+
+**输入**: 用户提供源能力映射所需的指令和必要参数。
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `list`, `arguments`, `content`, `comparison`, `pypi`, `github`, `remember`, `详细内容已移至`, `overview`, `formats`, `image`, `files`, `converts`, `liang`, `layout`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 支持格式总览
 
 | 工具 | 输入 | 输出格式 |

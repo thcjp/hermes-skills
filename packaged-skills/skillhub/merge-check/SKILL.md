@@ -65,6 +65,32 @@ tools:
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: Use、用户需要、Check、相关功能时使用、不适用于超出本技、能能力范围的复杂。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Scope creep: Does it touch things outside its stated purpose? | 支持 | 通过核心功能实现对应能力 |
+| Single concern: Does it do one thing, or is it a kitchen-sink PR? | 支持 | 通过核心功能实现对应能力 |
+| File spread: Concentrated in one area or scattered across directories? | 支持 | 通过核心功能实现对应能力 |
+| Commit hygiene: Clean messages? Reasonable count? Squash-ready? | 支持 | 通过核心功能实现对应能力 |
+| Reviewer assignment: Are required reviewers assigned? | 支持 | 通过核心功能实现对应能力 |
+| Linked issue: Does it reference an issue? (Signals intentionality) | 支持 | 通过核心功能实现对应能力 |
+| PR Hygiene | 支持 | 通过核心功能实现对应能力 |
+| Approvals: Any already? How many required? | 支持 | 通过核心功能实现对应能力 |
+| Social/Meta Signals | 支持 | 通过核心功能实现对应能力 |
+| Staleness: How long has it been open? (>2 weeks = concern, >30 days = likely abandoned) | 支持 | 通过核心功能实现对应能力 |
+
+**输入**: 用户提供源能力映射所需的指令和必要参数。
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `list`, `commits`, `strong`, `coverage`, `author_history`, `bullet`, `consider`, `gates`, `handling`, `files`, `architectural`, `blocking`, `codeowners`, `higher`, `inline`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

@@ -27,6 +27,7 @@ tools:
 - 路径订阅：仅提取订阅路径的数据，跳过无关部分
 - 断点续传：大文件解析中断后可恢复
 
+**输入**: 用户提供流式解析引擎所需的指令和必要参数。
 ### 批量目录处理
 - 递归扫描指定目录的所有JSON文件
 - 并行解析（默认8线程，可配置）
@@ -61,6 +62,7 @@ tools:
 - 解析结果缓存，避免重复计算
 - 增量日志记录变更历史
 
+**输入**: 用户提供增量解析所需的指令和必要参数。
 ### 性能基准
 - 解析吞吐量（MB/s）
 - 内存占用峰值
@@ -136,6 +138,11 @@ parser = IncrementalParser(cache_dir=".parse-cache")
 result = parser.parse_incremental("./data")
 print(f"新增 {result.new_count}，更新 {result.updated_count}，跳过 {result.skipped_count}")
 ```
+
+### 命令参数说明
+
+1. `-log`: 命令参数,用于指定操作选项
+2. `-cache`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

@@ -103,32 +103,35 @@ tools:
 
 ### 🎯 Decision Tree
 
-* **"How do I set up X?"** → Check `providers/` or `start/`
+1. **"How do I set up X?"** → Check `providers/` or `start/`
 
   + Discord, Telegram, WhatsApp, etc. → `providers/<name>`
   + First time? → `start/getting-started`, `start/setup`
-* **"Why isn't X working?"** → Check troubleshooting
+2. **"Why isn't X working?"** → Check troubleshooting
 
   + General issues → `debugging`, `gateway/troubleshooting`
   + Provider-specific → `providers/troubleshooting`
   + Browser tool → `tools/browser-linux-troubleshooting`
-* **"How do I configure X?"** → Check `gateway/` or `concepts/`
+3. **"How do I configure X?"** → Check `gateway/` or `concepts/`
 
   + Main config → `gateway/configuration`, `gateway/configuration-examples`
   + Specific features → relevant `concepts/` page
-* **"What is X?"** → Check `concepts/`
+4. **"What is X?"** → Check `concepts/`
 
   + Architecture, sessions, queues, models, etc.
-* **"How do I automate X?"** → Check `automation/`
+5. **"How do I automate X?"** → Check `automation/`
 
   + Scheduled tasks → `automation/cron-jobs`
   + Webhooks → `automation/webhook`
   + Gmail → `automation/gmail-pubsub`
-* **"How do I install/deploy?"** → Check `install/` or `platforms/`
+6. **"How do I install/deploy?"** → Check `install/` or `platforms/`
 
   + Docker → `install/docker`
   + Linux server → `platforms/linux`
   + macOS app → `platforms/macos`
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
 
 ## 输入格式
 

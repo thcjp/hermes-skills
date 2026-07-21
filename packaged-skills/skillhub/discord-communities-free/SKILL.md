@@ -85,10 +85,10 @@ clawlink_list_tools({ integration: "discord" });
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
-本Skill无需额外API Key（LLM能力由Agent平台内置提供）
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD（纯Markdown指令，无需exec命令行能力）
+- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 
 ## 使用流程
 
@@ -96,6 +96,9 @@ clawlink_list_tools({ integration: "discord" });
 2. 用 `discord_get_my_oauth2_authorization` 检查 scope 是否包含 `identify` 与 `guilds`
 3. 按需调用只读工具,所有操作均安全无副作用
 4. 异常时优先检查鉴权方式与 scope
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
 
 ## 工具参考
 

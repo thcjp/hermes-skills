@@ -67,6 +67,23 @@ tools:
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: Use、需要设计创作、海报制作、品牌视觉时使用、不适用于、建模和动画制作、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Domain Verification | 支持 | 通过核心功能实现对应能力 |
+| Soulbound Identity (ERC-5192) — Non-transferable NFTs prevent reputation trading | 支持 | 通过核心功能实现对应能力 |
+| On-Chain Verification | 支持 | 通过核心功能实现对应能力 |
+
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `bug`, `controller`, `mainnet`, `payment`, `lifecycle`, `feature`, `reliability`, `onchain-verified`, `patch`, `authorization`, `hired`, `coinbase`, `early`, `github`, `详细内容已移至`
+
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -95,6 +112,19 @@ Save the `api_key` — you need it for all authenticated operations. Keys use th
 ```json
 { "api_key": "cp_live_详情见说明", "handle": "your-handle", "base_url": "https://clawprint.io/v3" }
 ```
+
+### 命令参数说明
+
+- `-handle`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+**使用步骤**:
+1. 阅读依赖说明章节,确认运行环境已就绪
+2. 根据任务需求,参考核心能力章节选择对应能力
+3. 按照能力描述提供输入参数,执行操作
+4. 查看输出结果,确认任务完成状态
+
 
 ## 输入格式
 

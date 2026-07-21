@@ -132,11 +132,11 @@ open data/index.html  # Mac
 
 **HTML报告功能 / HTML Report Features**:
 
-* 📅 **日期筛选 / Date Filter** - 起止日期选择 | Start/end date selection
-* 🏷️ **分类筛选 / Category Filter** - 按文章分类筛选 | Filter by article category
-* 🔍 **关键词搜索 / Keyword Search** - 实时搜索标题 | Real-time title search
-* ☑️ **标签多选 / Multi-tag Selection** - 多标签组合筛选（AND逻辑）| Multi-tag combo filter (AND logic)
-* 📊 **实时统计 / Real-time Stats** - 显示筛选结果数量 | Show filtered results count
+1. 📅 **日期筛选 / Date Filter** - 起止日期选择 | Start/end date selection
+2. 🏷️ **分类筛选 / Category Filter** - 按文章分类筛选 | Filter by article category
+3. 🔍 **关键词搜索 / Keyword Search** - 实时搜索标题 | Real-time title search
+4. ☑️ **标签多选 / Multi-tag Selection** - 多标签组合筛选（AND逻辑）| Multi-tag combo filter (AND logic)
+5. 📊 **实时统计 / Real-time Stats** - 显示筛选结果数量 | Show filtered results count
 
 ### 5. 源管理 | Source Management
 
@@ -165,6 +165,11 @@ python3 scripts/list.py --json
 ```
 
 ---
+
+### 命令参数说明
+
+6. `--hours`: 命令参数,用于指定操作选项
+7. `--workers`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

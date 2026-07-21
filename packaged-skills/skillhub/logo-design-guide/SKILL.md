@@ -85,6 +85,7 @@ export API_KEY="your_api_key_here"
 - 色彩无障碍:前景与背景对比度 ≥ 4.5:1(WCAG AA)
 - 渐变处理:提供明暗两端HEX值与渐变方向
 
+**输出**: 返回色彩系统的执行结果,包含操作状态和输出数据。
 ### 5. 布局变体
 - 横版:图标在左,文字在右(默认)
 - 竖版:图标在上,文字在下
@@ -146,6 +147,25 @@ export API_KEY="your_api_key_here"
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: 覆盖辨识度设计、色彩字体系统与一、致性规范、从辨识度设计到多、平台交付的、设计全流程、三大辨识要素、Social、色彩与字体系统、矢量优先与一致性、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Keywords That Work | 支持 | 通过核心功能实现对应能力 |
+| No thin lines that vanish when shrunk | 支持 | 通过核心功能实现对应能力 |
+| Consider color psychology: | 支持 | 通过核心功能实现对应能力 |
+| Prompt Structure | 支持 | 通过核心功能实现对应能力 |
+| Scalability Checklist | 支持 | 通过核心功能实现对应能力 |
+
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `adidas`, `figma`, `strong`, `iteration`, `king`, `initials`, `google`, `garbled`, `nike`, `documents`, `maximum`, `asymmetric`, `text`, `hard`, `logos`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -167,6 +187,10 @@ export API_KEY="your_api_key_here"
 5. 制作布局变体:横版、竖版、图标版、文字版
 6. 撰写一致性指南:clear space、minimum size、误用示例
 7. 打包交付:SVG源 + 各格式位图 + 指南文档
+
+### 命令参数说明
+
+- `-touch-icon`: 命令参数,用于指定操作选项
 
 ## 示例
 

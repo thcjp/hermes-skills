@@ -66,6 +66,29 @@ tools:
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: Use、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Inspect and debug | 支持 | 通过核心功能实现对应能力 |
+| Delete by alias + filter | 支持 | 通过核心功能实现对应能力 |
+| File Uploads | 支持 | 通过核心功能实现对应能力 |
+| Comments | 支持 | 通过核心功能实现对应能力 |
+| Create a new entry | 支持 | 通过核心功能实现对应能力 |
+| Collaborate with comments | 支持 | 通过核心功能实现对应能力 |
+| Update an existing entry (zero UUIDs) | 支持 | 通过核心功能实现对应能力 |
+| Search | 支持 | 通过核心功能实现对应能力 |
+
+**输入**: 用户提供源能力映射所需的指令和必要参数。
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+### 领域术语
+本skill涉及以下领域术语: `yes`, `url`, `switch`, `list`, `number`, `rich_text`, `found`, `launch`, `edit`, `appending`, `aliases`, `make`, `profiles`, `done`, `numeric`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

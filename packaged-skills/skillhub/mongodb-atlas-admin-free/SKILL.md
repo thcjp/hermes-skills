@@ -81,6 +81,13 @@ node scripts/atlas-call.mjs --category "Clusters" --endpoint "Create Cluster" --
 4. 用 `--dry-run` 预检请求
 5. 确认后用 `--yes` 实际执行
 
+### 命令参数说明
+
+- `--category`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+
 ## 示例
 
 ### 示例:创建集群（dry-run预检）

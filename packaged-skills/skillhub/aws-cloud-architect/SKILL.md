@@ -78,6 +78,10 @@ tools:
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: AWS、架构设计、成本优化、安全加固与迁移部、署全流程助手、云架构师助手、覆盖架构设计、服务选型、安全加固、性能调优与迁移部、署全流程、Well、Architected、Framework、迁移框架、零信任安全设计、FinOps、成本治理实践、NAT、Gateway、EBS、CloudWatch、等成本陷阱识别、RDS、IAM、等安全漏洞排查、Lambda、性能模式库、MVP、Growth、Scale、三阶段架构演进、Terraform、CloudFormation、IaC、模板与、CLI、命令参考、适用于独立开发者、企业团队与自动化、运维工作流、不适用于无明确技、术栈的模糊需求与、平台架构。这些能力在上述核心功能中均有对应处理逻辑。
+### 领域术语
+
+本skill涉及以下领域术语: `缓存策略`, `破坏性操作未确认`, `策略是否包含所需`, `blockpublicacls`, `allocationid`, `策略附着`, `升级到最新版`, `输出含密钥值`, `坏性操作`, `变更操作返回预演`, `网络或服务问题`, `直接执行`, `成本查询返回空`, `任何情况下都不在`, `blockpublicpolicy`
+
 ## 核心规则
 
 ### 1. 先验证账户上下文
@@ -264,7 +268,7 @@ aws ce get-cost-forecast --time-period Start=$(date +%Y-%m-01),End=$(date -v+1m 
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD（纯Markdown指令，无需exec命令行能力）
+- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 
 ## 使用流程
 
@@ -276,6 +280,40 @@ aws ce get-cost-forecast --time-period Start=$(date +%Y-%m-01),End=$(date -v+1m 
 6. 生成 Terraform/CloudFormation IaC 模板并打标签
 7. 部署 CloudWatch 告警(账单/CPU/错误率)
 8. 变更类操作需显式确认,优先使用 `--dry-run`
+
+### 命令参数说明
+
+- `--min-size`: 命令参数,用于指定操作选项
+- `--retention-in-days`: 命令参数,用于指定操作选项
+- `--max-size`: 命令参数,用于指定操作选项
+- `--db-instance-class`: 命令参数,用于指定操作选项
+- `-yyy`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+### 命令参数说明
+
+- `--engine`: 命令参数,用于指定操作选项
+- `--apply-immediately`: 命令参数,用于指定操作选项
+- `-auto-scaling-group`: 命令参数,用于指定操作选项
+- `-xxx`: 命令参数,用于指定操作选项
+- `--launch-template`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--time-period`: 命令参数,用于指定操作选项
+- `--subnets`: 命令参数,用于指定操作选项
+- `--security-groups`: 命令参数,用于指定操作选项
+- `--vpc-id`: 命令参数,用于指定操作选项
+- `--auto-scaling-group-name`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-load-balancer`: 命令参数,用于指定操作选项
+- `--log-group-name`: 命令参数,用于指定操作选项
+- `-vpcs`: 命令参数,用于指定操作选项
+- `--service-name`: 命令参数,用于指定操作选项
+- `--query`: 命令参数,用于指定操作选项
 
 ## 案例展示
 

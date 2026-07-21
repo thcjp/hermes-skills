@@ -99,7 +99,6 @@ python main.py publisher edit '{
 - 验证执行结果，确认输出符合预期格式
 - 参考`视频发布管理`相关配置参数进行设置
 ### 2. 批量下载与队列管理
-
 ```python
 async def batch_download():
     # 批量下载多个视频
@@ -120,8 +119,8 @@ async def batch_download():
 asyncio.run(batch_download())
 ```
 
+**输入**: 用户提供批量下载与队列管理所需的指令和必要参数。
 ### 3. 数据追踪与对比分析
-
 ```python
 async def track_and_compare():
     # 追踪视频数据（每30分钟采集一次，持续12小时）
@@ -141,6 +140,7 @@ async def track_and_compare():
 asyncio.run(track_and_compare())
 ```
 
+**输入**: 用户提供数据追踪与对比分析所需的指令和必要参数。
 ### 4. 凭证安全管理
 ```python
 # 方式一：环境变量（推荐）
@@ -283,10 +283,10 @@ asyncio.run(batch_archive())
 
 ### 运行环境
 
-- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
-- **操作系统**: Windows / macOS / Linux
-- **Python版本**: 3.8及以上
-- **可选工具**: ffmpeg（用于合并音视频流）
+1. **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+2. **操作系统**: Windows / macOS / Linux
+3. **Python版本**: 3.8及以上
+4. **可选工具**: ffmpeg（用于合并音视频流）
 
 ### 第三方依赖
 
@@ -304,16 +304,16 @@ asyncio.run(batch_archive())
 
 ### API Key 配置
 
-- `BILIBILI_SESSDATA`：B站会话凭证（发布与高清下载必需）
-- `BILIBILI_BILI_JCT`：B站CSRF Token（写操作必需）
-- `BILIBILI_BUVID3`：B站设备标识（辅助验证）
-- `BILIBILI_PERSIST`：是否启用凭证持久化（设为1启用）
-- 与免费版完全兼容，免费版的无登录功能可直接使用
+5. `BILIBILI_SESSDATA`：B站会话凭证（发布与高清下载必需）
+6. `BILIBILI_BILI_JCT`：B站CSRF Token（写操作必需）
+7. `BILIBILI_BUVID3`：B站设备标识（辅助验证）
+8. `BILIBILI_PERSIST`：是否启用凭证持久化（设为1启用）
+9. 与免费版完全兼容，免费版的无登录功能可直接使用
 
 ### 可用性分类
 
-- **分类**: MD+EXEC（纯Markdown指令，核心功能需要exec命令行执行能力）
-- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行专业B站运营任务。支持视频发布、高清下载、批量操作、数据追踪等全功能能力，通过Python脚本调用B站API实现。与免费版完全兼容，可直接复用免费版的无登录功能。
+10. **分类**: MD+EXEC（纯Markdown指令，核心功能需要exec命令行执行能力）
+11. **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行专业B站运营任务。支持视频发布、高清下载、批量操作、数据追踪等全功能能力，通过Python脚本调用B站API实现。与免费版完全兼容，可直接复用免费版的无登录功能。
 
 
 **API Key配置方式**:
@@ -321,6 +321,23 @@ asyncio.run(batch_archive())
 export API_KEY="your_api_key_here"
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+
+### 命令参数说明
+
+12. `-CN`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-CN`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-CN`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-CN`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

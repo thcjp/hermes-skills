@@ -40,7 +40,7 @@ tools:
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD（纯Markdown指令，无需exec命令行能力）
+- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 
 ## 核心能力
 
@@ -71,9 +71,9 @@ tools:
 - 验证执行结果，确认输出符合预期格式
 - 参考`上传照片`相关配置参数进行设置
 ### 5. 下载单张照片
-
 通过 `python3 scripts/qzone_photos.py --action download --url "PHOTO_URL" --cookies cookies.json` 下载单张照片。必填参数 `--url` 指定照片URL（从 `photos` action获取），可选参数 `--output` 指定下载目录。适用于选择性下载特定照片。
 
+**处理**: 按照skill规范执行下载单张照片操作,遵循单一意图原则。
 ### 6. 下载整个相册
 
 通过 `python3 scripts/qzone_photos.py --action download-album --album-id "ALBUM_ID" --output ./downloads --cookies cookies.json` 下载整个相册的所有照片。必填参数 `--album-id` 指定目标相册，可选参数 `--output` 指定下载目录（默认当前目录）。适用于相册全量备份场景。
@@ -96,6 +96,9 @@ tools:
 4. 上传照片时指定本地图片路径和目标相册ID
 5. 下载照片时先通过 `photos` action获取照片URL，再执行下载
 6. 如遇Cookie过期，重新执行 `login` action获取新Cookie
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
 
 ## 示例
 

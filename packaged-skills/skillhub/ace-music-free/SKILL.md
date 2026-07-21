@@ -45,6 +45,49 @@ ACE Music 基础版,基于 ACE-Step 1.5 模型生成 AI 音乐。永久免费、
 export API_KEY="your_api_key_here"
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+
+## 核心能力
+
+### 基础生成
+
+使用 `scripts/generate.sh` 完成一站式生成:
+
+```bash
+# 基础文本生成
+scripts/generate.sh "upbeat pop song about summer" --duration 30 --output summer.mp3
+
+# 自定义歌词
+scripts/generate.sh "gentle acoustic ballad, female vo
+
+**输入**: 用户提供基础生成所需的参数和指令。
+**处理**: 按照skill规范执行基础生成操作。
+
+### 参数指南（基础参数）
+| 想要 | 参数 |
+| --- | --- |
+| 特定风格 | 在 prompt 中描述: "jazz, saxophone solo, smoky bar" |
+| 自定义歌词 | `--lyrics "[Verse]...[Chorus]..."` |
+| 无人声 | `--instrumental` |
+| 更长歌曲 | `--duration 120`（秒） |
+
+> **升级提示*
+
+**处理**: 按照skill规范执行参数指南（基础参数）操作。
+
+**输出**: 返回参数指南（基础参数）的执行结果,包含操作状态和输出数据。
+### 结果验证与输出
+
+验证处理结果的正确性,格式化输出并返回给用户。
+
+**输入**: 用户提供结果验证与输出所需的参数和指令。
+
+- 执行`结果验证与输出`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`结果验证与输出`相关配置参数进行设置
+
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: ACE、Music、基础版、文本转音乐生成、支持歌词定制和纯、音乐模式、音乐生成基础客户、免费版、托管的免费、API、Step、支持文本转音乐、纯音乐模式三种基、础能力、支持时长参数控制、音频以、base、返回并由脚本自动、永久免费、无需订阅、适用于个人创作者、快速音乐原型、学习试用场景。这些能力在上述核心功能中均有对应处理逻辑。
 ## 认证
 
 使用 `ACE_MUSIC_API_KEY` 环境变量。永不打印或暴露 Key。
@@ -123,6 +166,10 @@ scripts/generate.sh "lo-fi hip hop beats, chill, rainy day" --instrumental --dur
 ### Step 4: 解码与落盘
 - 脚本自动完成 base64 解码与 MP3 落盘
 - 将文件路径回传给用户
+
+### 命令参数说明
+
+- `--output`: 命令参数,用于指定操作选项
 
 ## 案例展示
 

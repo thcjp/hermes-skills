@@ -23,7 +23,6 @@ tools:
 ## 核心能力
 
 ### Professional Communication（专业沟通）
-
 处理日常沟通任务，包括邮件起草、会议准备和状态汇报。
 
 **邮件起草（Email drafts）**：根据收件人级别和紧急程度调整语气。高管邮件先给执行摘要，细节放在下方。状态标记：DONE（已完成）、IN PROGRESS（进行中）、BLOCKED（被阻塞，附原因）。
@@ -35,8 +34,8 @@ tools:
 
 **状态汇报（Status updates）**：主动汇报，不等被问。格式：本周完成 → 下周计划 → 风险/阻塞。用书面记录贡献，邮件先发再开会。
 
+**输出**: 返回Professional Communication（专业沟通）的执行结果,包含操作状态和输出数据。
 ### Workplace Dynamics（职场动态）
-
 识别和处理办公室政治与人际动态。
 
 - **被抢功（When someone takes credit）**：Document contributions in writing before meetings. 会前用邮件记录你的贡献。会后跟进 "as I mentioned in my email about X..."
@@ -44,6 +43,7 @@ tools:
 - **建立联盟（Building alliances）**：Visibility comes from being useful to the right people. 找到你的工作与有影响力的人的交集。
 - **读懂氛围（Reading the room）**：观察谁发言、谁被打断、谁做最终决定 — 那才是真正的组织架构图。
 
+**输出**: 返回Workplace Dynamics（职场动态）的执行结果,包含操作状态和输出数据。
 ### First 90 Days（入职90天）
 新角色适应的分阶段策略：
 

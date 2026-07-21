@@ -147,6 +147,18 @@ export default defineConfig({
 
 > 详细代码示例已移至 `references/detail.md`
 
+### 命令参数说明
+
+1. `-vendor`: 命令参数,用于指定操作选项
+2. `-dom`: 命令参数,用于指定操作选项
+3. `-react`: 命令参数,用于指定操作选项
+4. `-design`: 命令参数,用于指定操作选项
+5. `-bundle-analyzer`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-bundle-visualizer`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

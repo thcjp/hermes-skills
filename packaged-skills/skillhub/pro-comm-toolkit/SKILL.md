@@ -270,6 +270,26 @@ python template_manager.py list --category "report"
 python template_manager.py share --template-id 12 --team "engineering"
 ```
 
+### 命令参数说明
+
+1. `--template`: 命令参数,用于指定操作选项
+2. `--role`: 命令参数,用于指定操作选项
+3. `--input`: 命令参数,用于指定操作选项
+4. `--data`: 命令参数,用于指定操作选项
+5. `--template-id`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-comm-toolkit-pro`: 命令参数,用于指定操作选项
+- `--team`: 命令参数,用于指定操作选项
+- `--stats`: 命令参数,用于指定操作选项
+- `--category`: 命令参数,用于指定操作选项
+- `-permission`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--languages`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

@@ -42,10 +42,10 @@ tools:
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
-本Skill无需额外API Key（LLM能力由Agent平台内置提供）
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD（纯Markdown指令，无需exec命令行能力）
+- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 
 ## 核心能力
 
@@ -103,7 +103,6 @@ json_str = json.dumps(data, ensure_ascii=False, indent=2)
 ```
 
 ### XML与JSON互转
-
 **XML转JSON**：使用 `xmltodict.parse()` 将XML解析为有序字典，属性以 `@` 前缀标记。
 
 ```python
@@ -127,8 +126,8 @@ with open('data.json', 'r', encoding='utf-8') as f:
 xml_str = xmltodict.unparse(data, pretty=True)
 ```
 
+**输入**: 用户提供XML与JSON互转所需的指令和必要参数。
 ### TOML与JSON互转
-
 **TOML转JSON**：使用 `toml.load()` 解析TOML文件，支持表数组和嵌套表。
 
 ```python
@@ -151,6 +150,7 @@ with open('data.json', 'r', encoding='utf-8') as f:
 toml_str = toml.dumps(data)
 ```
 
+**输入**: 用户提供TOML与JSON互转所需的指令和必要参数。
 ### 批量转换
 
 支持目录级批量处理，遍历源格式文件并批量转换为目标格式：

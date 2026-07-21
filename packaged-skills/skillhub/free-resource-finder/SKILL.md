@@ -81,6 +81,7 @@ tools:
 }
 ```
 
+**处理**: 按照skill规范执行自动fallback链操作,遵循单一意图原则。
 ### 后台守护进程
 实时探测模型可用性,限速中断时自动重建链路:
 
@@ -108,6 +109,7 @@ free-finder daemon --stop
 4. 选出最优可用模型作为新主模型
 5. 通知Agent应用新配置
 
+**输出**: 返回后台守护进程的执行结果,包含操作状态和输出数据。
 ### 多API Key负载均衡
 聚合多账号额度,突破单账号限速:
 
@@ -246,11 +248,11 @@ free-finder monitor report --format html --output quality.html
 ### 依赖说明
 
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
-- **操作系统**: Windows / macOS / Linux
-- **Python**: 3.8+(运行free-finder CLI)
-- **网络**: 可访问聚合平台API
-- **可选**: systemd/supervisor(守护进程管理)
+1. **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+2. **操作系统**: Windows / macOS / Linux
+3. **Python**: 3.8+(运行free-finder CLI)
+4. **网络**: 可访问聚合平台API
+5. **可选**: systemd/supervisor(守护进程管理)
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
@@ -263,15 +265,38 @@ free-finder monitor report --format html --output quality.html
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 
 ### API Key 配置
-- **聚合平台Key**: 通过环境变量或加密配置文件存储,禁止硬编码
-- **多Key管理**: 使用`free-finder keys add`命令添加,自动加密存储
-- **Key存储位置**: `~/.free-finder/keys.enc`(AES-256加密)
-- **Key轮换**: 建议每90天轮换,使用`free-finder keys rotate`命令
-- **禁止**: 在SKILL.md或脚本中硬编码任何API Key
+6. **聚合平台Key**: 通过环境变量或加密配置文件存储,禁止硬编码
+7. **多Key管理**: 使用`free-finder keys add`命令添加,自动加密存储
+8. **Key存储位置**: `~/.free-finder/keys.enc`(AES-256加密)
+9. **Key轮换**: 建议每90天轮换,使用`free-finder keys rotate`命令
+10. **禁止**: 在SKILL.md或脚本中硬编码任何API Key
 
 ### 可用性分类
-- **分类**: MD+EXEC+CLI+DAEMON(Markdown指令+命令行工具+后台守护进程)
-- **说明**: 基于Markdown的AI Skill,,高级功能需要free-finder CLI与守护进程
+11. **分类**: MD+EXEC+CLI+DAEMON(Markdown指令+命令行工具+后台守护进程)
+12. **说明**: 基于Markdown的AI Skill,,高级功能需要free-finder CLI与守护进程
+
+### 命令参数说明
+
+13. `-or-v1-key3`: 命令参数,用于指定操作选项
+14. `--days`: 命令参数,用于指定操作选项
+15. `-coder`: 命令参数,用于指定操作选项
+16. `-or-v1-key1`: 命令参数,用于指定操作选项
+17. `--from`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--provider`: 命令参数,用于指定操作选项
+- `--status`: 命令参数,用于指定操作选项
+- `-llama`: 命令参数,用于指定操作选项
+- `--stop`: 命令参数,用于指定操作选项
+- `--once`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--group-by`: 命令参数,用于指定操作选项
+- `-or-v1-key2`: 命令参数,用于指定操作选项
+- `--today`: 命令参数,用于指定操作选项
+- `-instruct`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

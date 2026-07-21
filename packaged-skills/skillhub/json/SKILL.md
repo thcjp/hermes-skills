@@ -74,6 +74,12 @@ tools:
 | `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
 | `output` | 格式化输出结果 | `format`, `encoding` |
 
+### 领域术语
+本skill涉及以下领域术语: `safety`, `unicode`, `reviver`, `circular`, `ruby`, `flatted`, `errors`, `validation`, `consistency`, `best`, `emoji`, `完全适配`, `omit`, `distinguish`, `return`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

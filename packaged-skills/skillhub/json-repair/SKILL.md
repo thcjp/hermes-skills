@@ -150,6 +150,10 @@ node repair.js --file broken.json --preview
 + {"a":1, "b":"hello"}
 ```
 
+### 命令参数说明
+
+- `-log`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

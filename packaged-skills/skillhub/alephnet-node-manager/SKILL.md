@@ -196,6 +196,40 @@ alephnet-node agent.create --name "助手A" --template "data-analyst"
 alephnet-node agent.summon --agentId "agent_001" --context "开始数据分析任务"
 ```
 
+### 命令参数说明
+
+- `--edgeType`: 命令参数,用于指定操作选项
+- `--significance`: 命令参数,用于指定操作选项
+- `--teamId`: 命令参数,用于指定操作选项
+- `--agentId`: 命令参数,用于指定操作选项
+- `--taskId`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+### 命令参数说明
+
+- `-analyst`: 命令参数,用于指定操作选项
+- `--agentId`: 命令参数,用于指定操作选项
+- `--template`: 命令参数,用于指定操作选项
+- `--taskId`: 命令参数,用于指定操作选项
+- `--context`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--limit`: 命令参数,用于指定操作选项
+- `--observation`: 命令参数,用于指定操作选项
+- `--consensusThreshold`: 命令参数,用于指定操作选项
+- `--verifiedOnly`: 命令参数,用于指定操作选项
+- `--teamId`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--evidence`: 命令参数,用于指定操作选项
+- `--title`: 命令参数,用于指定操作选项
+- `--teamId`: 命令参数,用于指定操作选项
+- `--consensusThreshold`: 命令参数,用于指定操作选项
+- `--userId`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

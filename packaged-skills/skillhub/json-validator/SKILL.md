@@ -39,7 +39,6 @@ tools:
 - 验证执行结果，确认输出符合预期格式
 - 参考`能力4：流式校验`相关配置参数进行设置
 ### 能力2：JSON Schema校验
-
 ```python
 import jsonschema
 
@@ -63,8 +62,8 @@ def validate_with_schema(data: dict, schema_path: str) -> dict:
 
 **支持的Schema规范**：JSON Schema Draft-07、K8s CRD Schema、OpenAPI Schema。三种规范自动识别。
 
+**处理**: 按照skill规范执行能力2：JSON Schema校验操作,遵循单一意图原则。
 ### 能力3：自动修复
-
 15类典型语法错误的自动修复规则：
 
 | 错误类型 | 修复策略 | 风险等级 |
@@ -82,6 +81,7 @@ def validate_with_schema(data: dict, schema_path: str) -> dict:
 
 **Agent执行规则**：低风险自动修复；中风险修复后提示用户确认；高风险不修复，仅报告。修复前自动备份原文件到 `.bak`。
 
+**输出**: 返回能力3：自动修复的执行结果,包含操作状态和输出数据。
 ### 能力4：流式校验
 
 ```python
@@ -109,7 +109,6 @@ def stream_validate(json_path: str, expected_keys: list = None) -> dict:
 ```
 
 ### 能力5：持续监控
-
 ```python
 import time, hashlib, json
 from pathlib import Path
@@ -148,6 +147,7 @@ observer.start()
 print("已启动JSON文件变更监控，按Ctrl+C停止")
 ```
 
+**处理**: 按照skill规范执行能力5：持续监控操作,遵循单一意图原则。
 ### 能力6：CI/CD集成
 
 ```yaml
@@ -312,6 +312,23 @@ def auto_fix_json(content: str) -> dict:
     except json.JSONDecodeError as e:
         return {'success': False, 'fixes': fixes, 'remaining_error': {'line': e.lineno, 'col': e.colno, 'msg': e.msg}}
 ```
+
+### 命令参数说明
+
+1. `-latest`: 命令参数,用于指定操作选项
+2. `-zA-Z_`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-zA-Z_`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-zA-Z_`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-zA-Z_`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

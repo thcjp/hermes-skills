@@ -44,7 +44,6 @@ export API_KEY="your_api_key_here"
 ## 核心能力
 
 ### 容器生命周期管理（Container Lifecycle）
-
 创建、启动、停止、删除容器：
 
 ```bash
@@ -57,6 +56,7 @@ docker rm container_name     # 删除容器
 docker container prune       # 清理已停止容器
 ```
 
+**输入**: 用户提供容器生命周期管理（Container Lifecycle）所需的指令和必要参数。
 ### 镜像管理（Image Management）
 构建与管理Docker镜像：
 
@@ -108,8 +108,7 @@ docker run -d --name postgres -e POSTGRES_PASSWORD=secret -v postgres-data:/var/
 - 参考`指令解析与执行`相关配置参数进行设置
 ### 能力覆盖范围
 
-本skill还覆盖以下能力场景: 免费版、操作指南、涵盖容器管理、镜像操作与基础调、试命令、核心操作指南、提供容器生命周期、管理基础命令、包含镜像管理、容器调试与常用工、适用于个人开发与、学习场景的、容器化操作。这些能力在上述核心功能中均有对应处理逻辑。
-
+本skill还覆盖以下能力场景: 免费版、操作指南、涵盖容器管理、镜像操作与基础调、试命令、核心操作指南、管理基础命令、包含镜像管理、容器调试与常用工、适用于个人开发与、学习场景的、容器化操作。这些能力在上述核心功能中均有对应处理逻辑。
 ### 输出格式
 
 执行结果以Markdown格式返回,包含操作状态(成功/失败)、处理摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。
@@ -120,6 +119,13 @@ docker run -d --name postgres -e POSTGRES_PASSWORD=secret -v postgres-data:/var/
 2. 使用自然语言描述需求，Agent生成对应的Docker命令
 3. Agent执行命令并检查输出结果
 4. 如遇错误，参考错误处理章节进行排查
+
+### 命令参数说明
+
+- `-data`: 命令参数,用于指定操作选项
+- `-nginx`: 命令参数,用于指定操作选项
+- `--rm`: 命令参数,用于指定操作选项
+- `-app`: 命令参数,用于指定操作选项
 
 ## 示例
 

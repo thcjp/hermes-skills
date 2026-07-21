@@ -45,7 +45,7 @@ tools:
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD（纯Markdown指令，无需exec命令行能力）
+- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 
 ## 核心能力
 
@@ -181,7 +181,6 @@ result.plot()
 ```
 
 ### 可视化代码生成
-
 **中文字体配置**（必须先执行）：
 
 ```python
@@ -224,6 +223,7 @@ ax.fill_between(df.index, df['lower'], df['upper'], alpha=0.2)
 ax.legend()
 ```
 
+**输出**: 返回可视化代码生成的执行结果,包含操作状态和输出数据。
 ### 分析报告自动生成
 ```python
 def generate_report(df):

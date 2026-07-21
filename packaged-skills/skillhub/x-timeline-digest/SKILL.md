@@ -78,10 +78,10 @@ tools:
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
-本Skill无需额外API Key（LLM能力由Agent平台内置提供）
+需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD（纯Markdown指令，无需exec命令行能力）
+- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 
 ## 核心能力
 
@@ -168,6 +168,23 @@ tools:
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: Twitter、增量去重后生成中、文分类简报与结构、命令行工具读取、对推文进行增量过、近重复文本合并与、排序修剪、负载与中文分类简、简报按、其他四个类别分组、自动剔除广告、早安帖与短文本噪、状态持久化到本地、适用于需要定期追、动态并生成可读摘、要的自动化工作流。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Language: Simplified Chinese | 支持 | 通过核心功能实现对应能力 |
+| Categories: 🤖 AI & Tech, 💰 Crypto & Markets, 💡 Insights, 🗞️ Other | 支持 | 通过核心功能实现对应能力 |
+| Rank and trim | 支持 | 通过核心功能实现对应能力 |
+
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `delivery`, `upstream`, `denoising`, `tweets`, `outputs`, `deduplicate`, `需要设计创作`, `denoised`, `intelligent`, `overview`, `commands`, `categorized`, `hard`, `summarized`, `brief`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

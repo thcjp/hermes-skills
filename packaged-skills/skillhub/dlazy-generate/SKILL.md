@@ -65,6 +65,13 @@ tools:
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: Use、需要视频处理、音频编辑、媒体转换、配音生成时使用、不适用于版权受保、护的媒体内容处理。这些能力在上述核心功能中均有对应处理逻辑。
+### 领域术语
+本skill涉及以下领域术语: `english`, `between`, `asynchronous`, `determine`, `urls`, `maintainer`, `seedream`, `alibaba`, `github`, `minimalist`, `happy`, `provenance`, `videoretalk`, `alternative`, `message`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

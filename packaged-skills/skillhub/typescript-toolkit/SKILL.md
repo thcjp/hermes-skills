@@ -195,6 +195,38 @@ npx type-coverage --detail --strict --at-least 95 --ignore-catch
 npx type-coverage --detail --strict | grep -E "^[^|]+\\| +[0-9]+%" | sort -t'|' -k2 -n
 ```
 
+### 命令参数说明
+
+- `-non-null-assertion`: 命令参数,用于指定操作选项
+- `-unused-vars`: 命令参数,用于指定操作选项
+- `--outDir`: 命令参数,用于指定操作选项
+- `-latest`: 命令参数,用于指定操作选项
+- `-E`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--emitDeclarationOnly`: 命令参数,用于指定操作选项
+- `-nullish-coalescing`: 命令参数,用于指定操作选项
+- `-complexity`: 命令参数,用于指定操作选项
+- `-k2`: 命令参数,用于指定操作选项
+- `-type-imports`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-requiring-type-checking`: 命令参数,用于指定操作选项
+- `--detail`: 命令参数,用于指定操作选项
+- `-boolean-expressions`: 命令参数,用于指定操作选项
+- `-convention`: 命令参数,用于指定操作选项
+- `--init`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--allowJs`: 命令参数,用于指定操作选项
+- `--at-least`: 命令参数,用于指定操作选项
+- `--pretty`: 命令参数,用于指定操作选项
+- `--checkJs`: 命令参数,用于指定操作选项
+- `--max-warnings`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

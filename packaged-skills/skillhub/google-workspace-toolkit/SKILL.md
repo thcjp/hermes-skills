@@ -236,11 +236,11 @@ print(f"\n汇总完成,共 {len(all_data)} 条记录")
 ### 依赖说明
 
 ### 运行环境
-- **Agent平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
-- **操作系统**: Windows / macOS / Linux
-- **Node.js**: 建议 18.0+(运行工具接口)
-- **Python**: 建议 3.8+(运行自动化脚本模板)
-- **网络环境**: 需可访问 Google API 服务
+1. **Agent平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
+2. **操作系统**: Windows / macOS / Linux
+3. **Node.js**: 建议 18.0+(运行工具接口)
+4. **Python**: 建议 3.8+(运行自动化脚本模板)
+5. **网络环境**: 需可访问 Google API 服务
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
@@ -255,15 +255,25 @@ print(f"\n汇总完成,共 {len(all_data)} 条记录")
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 
 ### API Key 配置
-- 无需创建 Google Cloud 项目
-- 无需创建 OAuth 凭据或下载 client_secret.json
-- 首次使用时通过浏览器完成 Google OAuth 授权
-- 授权范围覆盖 Gmail、Calendar、Drive、Docs、Sheets、Slides、Chat、People 全部服务
-- 凭据自动存储于 `~/.config/google-workspace-toolkit/` 目录
+6. 无需创建 Google Cloud 项目
+7. 无需创建 OAuth 凭据或下载 client_secret.json
+8. 首次使用时通过浏览器完成 Google OAuth 授权
+9. 授权范围覆盖 Gmail、Calendar、Drive、Docs、Sheets、Slides、Chat、People 全部服务
+10. 凭据自动存储于 `~/.config/google-workspace-toolkit/` 目录
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯 Markdown 指令,核心功能通过工具协议调用需要 exec 命令行执行能力)
-- **说明**: 基于工具接口的企业级 AI Skill,通过工具协议统一调用 Google Workspace 全部十大服务共 49 个工具。专业版完全兼容免费版的零云控制台配置与 OAuth 登录体验,额外解锁 Docs、Sheets、Slides、Chat、People 等高级服务,并提供企业级批量操作模板与多账户管理能力,适合团队协作与规模化办公场景。
+11. **分类**: MD+EXEC(纯 Markdown 指令,核心功能通过工具协议调用需要 exec 命令行执行能力)
+12. **说明**: 基于工具接口的企业级 AI Skill,通过工具协议统一调用 Google Workspace 全部十大服务共 49 个工具。专业版完全兼容免费版的零云控制台配置与 OAuth 登录体验,额外解锁 Docs、Sheets、Slides、Chat、People 等高级服务,并提供企业级批量操作模板与多账户管理能力,适合团队协作与规模化办公场景。
+
+### 命令参数说明
+
+13. `--command`: 命令参数,用于指定操作选项
+14. `--server`: 命令参数,用于指定操作选项
+15. `--scope`: 命令参数,用于指定操作选项
+16. `--arg`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
 
 ## 输入格式
 

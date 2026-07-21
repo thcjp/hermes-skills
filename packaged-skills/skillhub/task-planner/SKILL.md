@@ -82,9 +82,16 @@ bash scripts/script.sh done 1
 
 Just ask your AI assistant: / 直接告诉 AI 助手：
 
-* "Add a high priority task: Finish report by Friday" (添加高优先级任务：周五前完成报告)
-* "Show all tasks due today" (显示今日待办任务)
-* "Mark task #1 as completed" (标记任务1为已完成)
+1. "Add a high priority task: Finish report by Friday" (添加高优先级任务：周五前完成报告)
+2. "Show all tasks due today" (显示今日待办任务)
+3. "Mark task #1 as completed" (标记任务1为已完成)
+
+### 命令参数说明
+
+4. `--status`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
 
 ## 输入格式
 

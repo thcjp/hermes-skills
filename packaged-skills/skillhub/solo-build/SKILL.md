@@ -49,6 +49,7 @@ export API_KEY="your_api_key_here"
 - 通过 `--task X.Y` 跳转到指定任务
 - 无参数时:搜索 `docs/plan/` 下所有 `plan.md`,列出有未完成任务的轨道,多个时询问用户
 
+**输出**: 返回轨道选择的执行结果,包含操作状态和输出数据。
 ### 2. 上下文加载
 并行读取必要文档,不读源码:
 - `docs/plan/{trackId}/plan.md` — 任务列表(必需)
@@ -85,6 +86,7 @@ export API_KEY="your_api_key_here"
 6. 完成任务:`[~]` → `[x]`,提交
 7. 阶段完成检查
 
+**输入**: 用户提供任务执行循环所需的指令和必要参数。
 ### 6. 智能研究
 - MCP可用:`project_code_search(query="{task keywords}")` 找相关代码
 - MCP可用:`session_search("{task keywords}")` 查历史解决方案
@@ -160,6 +162,7 @@ export API_KEY="your_api_key_here"
 - 输出完成信号 `<solo:done/>`(仅当 `.solo/states/` 存在时)
 - 汇总:任务数、提交数、测试通过率、耗时
 
+**处理**: 按照skill规范执行轨道完成操作,遵循单一意图原则。
 ### 15. 进度跟踪
 - 会话开始:读 `plan.md`,为每个阶段创建任务列表
 - 工作中:`in_progress` 开始任务,`completed` 完成
@@ -202,6 +205,22 @@ export API_KEY="your_api_key_here"
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: 执行实现计划任务、自动提交、阶段门检查、的引擎、错误处理与进度、多栈质量工具与理、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Research (smart, before coding) | 支持 | 通过核心功能实现对应能力 |
+
+**输入**: 用户提供源能力映射所需的指令和必要参数。
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `reverting`, `imports`, `automation`, `arguments`, `shas`, `verify`, `visual`, `rationalizations`, `reality`, `详细内容已移至`, `catalog`, `restart`, `taskupdate`, `continue`, `handling`
+
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

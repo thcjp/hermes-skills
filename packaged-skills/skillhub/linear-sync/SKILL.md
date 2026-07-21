@@ -165,18 +165,18 @@ linear document delete <slug> -y
 
 ### 前置条件
 
-- 已安装`linear`命令行工具
-- 已在Linear设置中创建API Key
-- 已完成认证和项目配置
+1. 已安装`linear`命令行工具
+2. 已在Linear设置中创建API Key
+3. 已完成认证和项目配置
 
 ### 依赖说明
 
 ### 运行环境
 
-- **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
-- **操作系统**：Windows / macOS / Linux
-- **linear CLI**：已安装并通过认证
-- **Git**：已配置（Git集成功能需要）
+4. **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+5. **操作系统**：Windows / macOS / Linux
+6. **linear CLI**：已安装并通过认证
+7. **Git**：已配置（Git集成功能需要）
 
 ### 第三方依赖
 
@@ -191,16 +191,48 @@ linear document delete <slug> -y
 
 ### API Key 配置
 
-- **Linear API Key**：在Linear网页端设置 → 账户 → 安全中创建
-- **存储方式**：通过`linear auth login`命令安全存储，或通过环境变量`LINEAR_API_KEY`配置
-- **Token获取**：通过`linear auth token`命令获取当前认证Token（用于curl直接调用）
-- **禁止**：在代码或配置文件中明文写入API Key或Token
-- **权限管理**：API Key的权限范围在Linear设置中控制，建议遵循最小权限原则
+8. **Linear API Key**：在Linear网页端设置 → 账户 → 安全中创建
+9. **存储方式**：通过`linear auth login`命令安全存储，或通过环境变量`LINEAR_API_KEY`配置
+10. **Token获取**：通过`linear auth token`命令获取当前认证Token（用于curl直接调用）
+11. **禁止**：在代码或配置文件中明文写入API Key或Token
+12. **权限管理**：API Key的权限范围在Linear设置中控制，建议遵循最小权限原则
 
 ### 可用性分类
 
-- **分类**：MD+EXEC（纯Markdown指令，需要exec命令行执行能力）
-- **说明**：基于Markdown的AI Skill，通过自然语言指令驱动Agent执行Linear全量命令行操作
+13. **分类**：MD+EXEC（纯Markdown指令，需要exec命令行执行能力）
+14. **说明**：基于Markdown的AI Skill，通过自然语言指令驱动Agent执行Linear全量命令行操作
+
+### 命令参数说明
+
+15. `--title`: 命令参数,用于指定操作选项
+16. `--variables-json`: 命令参数,用于指定操作选项
+17. `--variable`: 命令参数,用于指定操作选项
+18. `-oP`: 命令参数,用于指定操作选项
+19. `-spec`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-A`: 命令参数,用于指定操作选项
+- `--target-date`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+- `-fix-login-bug`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-H`: 命令参数,用于指定操作选项
+- `-update`: 命令参数,用于指定操作选项
+- `-X`: 命令参数,用于指定操作选项
+- `-A`: 命令参数,用于指定操作选项
+- `-state-id`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-oP`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+- `-X`: 命令参数,用于指定操作选项
+- `-A`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

@@ -54,7 +54,6 @@ tools:
 - **Anatomy of a Skill**：每个skill由required的SKILL.md与optional的Bundled Resources组成
 
 ### SKILL.md结构设计
-
 提供SKILL.md的标准结构与编写规范：
 
 ```text
@@ -73,6 +72,7 @@ skill-name/
 - **Frontmatter（YAML）**：包含`name`和`description`字段。这是Claude读取以判断何时使用skill的唯一依据，必须清晰全面地描述skill是什么以及何时使用。`description`是primary triggering mechanism，应包含skill做什么与具体触发场景。
 - **Body（Markdown）**：使用skill的instructions和guidance。仅在skill触发后加载。
 
+**处理**: 按照skill规范执行SKILL.md结构设计操作,遵循单一意图原则。
 ### Bundled Resources组织
 
 提供三类bundled resources的组织规范：
@@ -91,7 +91,6 @@ skill-name/
   - 示例：`assets/logo.png`、`assets/slides.pptx`、`assets/frontend-template/`
 
 ### Progressive Disclosure设计
-
 提供三级加载系统的设计原则与三种Patterns：
 
 - **Level 1 - Metadata（name + description）**：始终在context中（约100 words）
@@ -106,6 +105,7 @@ skill-name/
 
 重要准则：references保持一级深度；长reference文件（>100 lines）顶部包含table of contents。
 
+**输出**: 返回Progressive Disclosure设计的执行结果,包含操作状态和输出数据。
 ### Skill Creation Process
 
 提供从理解到迭代的六步创建流程：
@@ -137,6 +137,10 @@ skill-name/
 5. **测试脚本**：实际运行添加的scripts，确保无bug且输出符合预期
 6. **打包skill**：运行`scripts/package_skill.py`自动验证并打包为.skill文件
 7. **迭代优化**：实际使用后识别改进点并更新
+
+### 命令参数说明
+
+- `-query-skill`: 命令参数,用于指定操作选项
 
 ## 示例
 

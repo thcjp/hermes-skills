@@ -45,7 +45,6 @@ export API_KEY="your_api_key_here"
 ## 核心能力
 
 ### 安全扫描（Security Scan）
-
 执行一次性安全扫描，检测代码中的安全漏洞：
 
 - **代码扫描**：扫描Go源代码中的安全问题（SQL注入、命令注入、路径遍历等）
@@ -54,6 +53,7 @@ export API_KEY="your_api_key_here"
 - **扫描范围**：支持指定目录、文件或整个项目
 - **扫描结果**：按严重程度分类（Critical / High / Medium / Low / Info）
 
+**输入**: 用户提供安全扫描（Security Scan）所需的指令和必要参数。
 ### 定时巡逻（Schedule Patrol）
 配置定时安全巡逻，实现持续安全监控：
 
@@ -76,7 +76,6 @@ export API_KEY="your_api_key_here"
 - **状态管理**：Open（未处理）、Fixed（已修复）、Ignored（已忽略）
 
 ### Chat ID / Webhook通知
-
 通过Chat ID或Webhook发送安全通知：
 
 - **Chat ID通知**：将扫描结果发送到指定聊天会话
@@ -85,6 +84,7 @@ export API_KEY="your_api_key_here"
 - **通知时机**：扫描完成、发现Critical/High漏洞、巡逻告警
 - **通知配置**：可配置通知阈值（如仅通知High以上漏洞）
 
+**输入**: 用户提供Chat ID / Webhook通知所需的指令和必要参数。
 ### 按文件路径定位漏洞（Finding with File Path）
 根据文件路径快速定位相关漏洞：
 
@@ -127,6 +127,22 @@ export API_KEY="your_api_key_here"
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: 支持定时巡逻、通知与结果检查、驱动的安全扫描工、提供代码与依赖安、全检查、一次性扫描、漏洞发现详情管理、支持按文件路径定、适用于项目安全审、持续安全监控与漏、洞管理流程。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Recommendations | 支持 | 通过核心功能实现对应能力 |
+
+**输入**: 用户提供源能力映射所需的指令和必要参数。
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `europe`, `quote`, `evaluate`, `list`, `evaluation`, `desktop`, `route`, `forceattest`, `resolving`, `arguments`, `discord`, `verify`, `warn`, `view`, `unregistered`
+
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 使用流程
 
 1. 安装GoPlus CLI：`go install github.com/Qianjiachang/goplus@latest`
@@ -136,6 +152,10 @@ export API_KEY="your_api_key_here"
 5. 配置Chat ID或Webhook接收安全通知
 6. 修复漏洞后再次扫描验证
 7. 检查扫描结果，导出报告
+
+### 命令参数说明
+
+- `-apis`: 命令参数,用于指定操作选项
 
 ## 示例
 

@@ -200,6 +200,8 @@ def fix_l3_2_actionability(content: str, fm_data: dict) -> Tuple[str, str]:
     NON_CAPABILITY_HEADINGS = [
         '能力覆盖范围', '技术细节', '处理流程', '输入输出规范',
         '能力参数', '适用场景', '能力概览', '功能概览',
+        '输出格式', '脚本获取', '命令参数说明', '输出说明', '输入说明',
+        '源能力映射', '领域术语',
     ]
 
     cap_content = extract_section(content, '核心能力')
@@ -598,10 +600,15 @@ def fix_dependency_section(content: str, fm_data: dict) -> tuple:
         if not has_llm:
             missing.append('llm')
 
+        # 检查exec/MD矛盾: tools包含exec但依赖说明说纯MD
+        tools = fm_data.get('tools', [])
+        has_exec_tool = 'exec' in str(tools).lower() if tools else False
+        if has_exec_tool and 'MD（纯Markdown' in dep_content and 'EXEC' not in dep_content:
+            missing.append('exec_contradiction')
+
         if not missing:
             return content, 0
 
-        tools = fm_data.get('tools', [])
         has_api = 'API' in content or 'api' in content.lower() or '密钥' in content or 'key' in content.lower()
         new_dep = generate_dependency_section(tools, has_api)
 

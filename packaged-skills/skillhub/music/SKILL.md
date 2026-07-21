@@ -79,6 +79,13 @@ tools:
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: Build、personal、music、system、tracking、discoveries、favorites、concerts、listening、memories、核心能力。这些能力在上述核心功能中均有对应处理逻辑。
+### 领域术语
+本skill涉及以下领域术语: `focus`, `miles`, `rumours`, `blonde`, `khruangbin`, `rainbows`, `place`, `moon`, `fleetwood`, `paranoid`, `collection`, `impala`, `standout`, `cooking`, `ocean`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 使用流程
 
 1. 确认运行环境满足依赖说明中的要求

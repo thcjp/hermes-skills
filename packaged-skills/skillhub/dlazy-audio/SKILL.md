@@ -41,7 +41,6 @@ tools:
 - 验证执行结果，确认输出符合预期格式
 - 参考`核心能力`相关配置参数进行设置
 ### 核心能力
-
 ```text
 语音克隆:
   - ElevenLabs IVC（即时语音克隆）
@@ -70,6 +69,8 @@ tools:
   - 步骤间自动传递输出
   - 支持管道引用: -, @N, @N.path, @*, @stdin
 ```
+
+**输入**: 用户提供核心能力所需的指令和必要参数。
 ### 模型类别
 
 执行模型类别操作,处理用户输入并返回结果。
@@ -169,9 +170,9 @@ dlazy elevenlabs-search \
 ### 依赖说明
 
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
-- **操作系统**: Windows / macOS / Linux
-- **Node.js**: 16+（dlazy CLI 运行需要）
+1. **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+2. **操作系统**: Windows / macOS / Linux
+3. **Node.js**: 16+（dlazy CLI 运行需要）
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
@@ -183,17 +184,47 @@ dlazy elevenlabs-search \
 | FFmpeg（可选） | 工具 | 推荐 | 用于音频拼接与格式转换 |
 
 ### API Key 配置
-- **必需**: dlazy API Key（与免费版共用）
-- **获取方式**: 访问 dlazy.com/dashboard/organization/api-key
-- **配置方式**: `dlazy auth set YOUR_API_KEY` 或环境变量 `DLAZY_API_KEY`
-- **安全说明**: 配置文件权限限制为当前用户；Key 可随时轮换或撤销
-- **余额说明**: 专业版模型消耗较高，建议定期检查余额
+4. **必需**: dlazy API Key（与免费版共用）
+5. **获取方式**: 访问 dlazy.com/dashboard/organization/api-key
+6. **配置方式**: `dlazy auth set YOUR_API_KEY` 或环境变量 `DLAZY_API_KEY`
+7. **安全说明**: 配置文件权限限制为当前用户；Key 可随时轮换或撤销
+8. **余额说明**: 专业版模型消耗较高，建议定期检查余额
 
 ### 可用性分类
-- **分类**: MD+EXEC+API（Markdown指令 + 命令行 + 外部API调用）
-- **说明**: 企业级AI Skill，支持全模型音频生成、管道链接与批量处理
-- **适用规模**: 专业内容团队，批量音频生产
-- **兼容性**: 与免费版完全兼容，API Key 和配置无缝共用
+9. **分类**: MD+EXEC+API（Markdown指令 + 命令行 + 外部API调用）
+10. **说明**: 企业级AI Skill，支持全模型音频生成、管道链接与批量处理
+11. **适用规模**: 专业内容团队，批量音频生产
+12. **兼容性**: 与免费版完全兼容，API Key 和配置无缝共用
+
+### 命令参数说明
+
+13. `-voice-sample`: 命令参数,用于指定操作选项
+14. `--prompt`: 命令参数,用于指定操作选项
+15. `--similarity`: 命令参数,用于指定操作选项
+16. `--title`: 命令参数,用于指定操作选项
+17. `--stability`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+### 命令参数说明
+
+- `--duration`: 命令参数,用于指定操作选项
+- `-fi`: 命令参数,用于指定操作选项
+- `--instrumental`: 命令参数,用于指定操作选项
+- `--mode`: 命令参数,用于指定操作选项
+- `--image`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--keyword`: 命令参数,用于指定操作选项
+- `--images`: 命令参数,用于指定操作选项
+- `--category`: 命令参数,用于指定操作选项
+- `-TTS`: 命令参数,用于指定操作选项
+- `--audio-file`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-TTS`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

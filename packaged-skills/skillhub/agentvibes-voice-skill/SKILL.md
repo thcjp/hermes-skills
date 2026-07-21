@@ -46,6 +46,168 @@ AgentVibes 是多 Provider 文本转语音（TTS）客户端,为 AI Agent 提供
 export API_KEY="your_api_key_here"
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+
+## 核心能力
+
+### 声音命令
+
+
+**输入**: 用户提供声音命令所需的指令和必要参数。
+**处理**: 按照skill规范执行声音命令操作,遵循单一意图原则。
+**输出**: 返回声音命令的执行结果,包含操作状态和输出数据。
+
+- 执行`声音命令`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`声音命令`相关配置参数进行设置
+### 切换声音
+```bash
+/agent-vibes:switch en_US-amy-medium
+/agent-vibes:switch en_GB-alan-medium
+/agent-vibes:switch fr_FR-siwis-medium
+```
+
+**输入**: 用户提供切换声音所需的指令和必要参数。
+**处理**: 按照skill规范执行切换声音操作,遵循单一意图原则。
+**输出**: 返回切换声音的执行结果,包含操作状态和输出数据。
+### 列出声音
+```bash
+/agent-vibes:list                    # 列出全部声音
+/
+
+**输入**: 用户提供声音命令所需的参数和指令。
+**处理**: 按照skill规范执行声音命令操作。
+**输出**: 返回声音命令的执行结果,包含操作状态和输出数据。
+
+### 个性与风格
+
+
+**输入**: 用户提供个性与风格所需的指令和必要参数。
+**处理**: 按照skill规范执行个性与风格操作,遵循单一意图原则。
+**输出**: 返回个性与风格的执行结果,包含操作状态和输出数据。
+
+- 执行`个性与风格`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`个性与风格`相关配置参数进行设置
+### 个性风格
+```bash
+/agent-vibes:personality list          # 列出可用个性
+/agent-vibes:personality sarcastic     # 切换讽刺风格
+/agent-vibes:personality dramatic      # 切换戏剧风格
+/agent-vibes:personality reset         
+
+**输入**: 用户提供个性与风格所需的参数和指令。
+**处理**: 按照skill规范执行个性与风格操作。
+**输出**: 返回个性与风格的执行结果,包含操作状态和输出数据。
+
+### 语速与效果
+
+
+**输入**: 用户提供语速与效果所需的指令和必要参数。
+**处理**: 按照skill规范执行语速与效果操作,遵循单一意图原则。
+**输出**: 返回语速与效果的执行结果,包含操作状态和输出数据。
+
+- 执行`语速与效果`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`语速与效果`相关配置参数进行设置
+### 语速控制（0.5x - 3.0x）
+```bash
+/agent-vibes:set-speed 1.0             # 正常
+/agent-vibes:set-speed 1.5             # 加速 50%
+/agent-vibes:set-speed 0.8             # 减速
+```
+
+**输入**: 用户提供语速控制（0.5x - 3.0x）所需的指令和必要参数。
+**处理**: 按照skill规范执行语速控制（0.5x - 3.0x）操作,遵循单一意图原则。
+**输出**: 返回语速控制（0.5x - 3.0x）的执行结果,包含操作状态和输出数据。
+### 语音效果
+```bash
+/agent-vibes
+
+**输入**: 用户提供语速与效果所需的参数和指令。
+**处理**: 按照skill规范执行语速与效果操作。
+**输出**: 返回语速与效果的执行结果,包含操作状态和输出数据。
+
+### 背景音乐
+
+```bash
+/agent-vibes:background-music on       # 启用
+/agent-vibes:background-music off      # 关闭
+/agent-vibes:background-music list     # 列出可用曲目
+/agent-vibes:background-music switch jazz  # 切换到爵士曲目
+```
+
+**输入**: 用户提供背景音乐所需的参数和指令。
+**处理**: 按照skill规范执行背景音乐操作。
+**输出**: 返回背景音乐的执行结果,包含操作状态和输出数据。
+
+### Verbosity 控制
+
+控制 AI Agent 工作时的播报详尽度:
+```bash
+/agent-vibes:verbosity low             # 简短确认
+/agent-vibes:verbosity medium          # 关键决策（默认）
+/agent-vibes:verbosity high            # 完整推理过程
+```
+
+**输入**: 用户提供Verbosity 控制所需的参数和指令。
+**处理**: 按照skill规范执行Verbosity 控制操作。
+**输出**: 返回Verbosity 控制的执行结果,包含操作状态和输出数据。
+
+### 静音与回放
+
+```bash
+/agent-vibes:mute                      # 静音（跨会话持久）
+/agent-vibes:unmute                    # 取消静音
+/agent-vibes:replay                    # 回放最近一次
+/agent-vibes:replay 2                  # 回放倒数第二
+
+**输入**: 用户提供静音与回放所需的参数和指令。
+**处理**: 按照skill规范执行静音与回放操作。
+**输出**: 返回静音与回放的执行结果,包含操作状态和输出数据。
+
+### 语言与学习
+
+
+**输入**: 用户提供语言与学习所需的指令和必要参数。
+**处理**: 按照skill规范执行语言与学习操作,遵循单一意图原则。
+**输出**: 返回语言与学习的执行结果,包含操作状态和输出数据。
+
+- 执行`语言与学习`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`语言与学习`相关配置参数进行设置
+### 设置母语
+```bash
+/agent-vibes:language english
+/agent-vibes:language japanese
+```
+
+**输入**: 用户提供设置母语所需的指令和必要参数。
+**处理**: 按照skill规范执行设置母语操作,遵循单一意图原则。
+**输出**: 返回设置母语的执行结果,包含操作状态和输出数据。
+### 语言学习模式
+```bash
+/agent-vibes:learn on                  # 启用双语播报（母语 + 目标语言）
+/agent-vibes:learn off                 
+
+**输入**: 用户提供语言与学习所需的参数和指令。
+**处理**: 按照skill规范执行语言与学习操作。
+**输出**: 返回语言与学习的执行结果,包含操作状态和输出数据。
+
+### Provider 管理
+
+```bash
+/agent-vibes:provider list             # 列出可用 Provider
+/agent-vibes:provider switch piper     # 切换到 Piper（免费、离线、914+ 声音）
+/agent-vibes:provider switch macos     # 切换到 macOS Say（仅 Mac）
+/agent-vi
+
+**输入**: 用户提供Provider 管理所需的参数和指令。
+**处理**: 按照skill规范执行Provider 管理操作。
+**输出**: 返回Provider 管理的执行结果,包含操作状态和输出数据。
+
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: TTS、语音合成、AgentVibes、语音合成客户端、Windows、SAPI、Soprano、支持声音切换、reverb、echo、pitch、语言学习双语播报、翻译播放、前缀文本等能力、免费离线、无需账号、声音需下载、适用于、语音播报、内容创作配音、语言学习辅助等场。这些能力在上述核心功能中均有对应处理逻辑。
 ## Provider 概览
 
 | Provider | 平台 | 成本 | 声音数量 | 特点 |
@@ -247,6 +409,14 @@ export API_KEY="your_api_key_here"
 - 背景音乐: `/agent-vibes:background-music on`
 - 语言学习: `/agent-vibes:learn on`
 - 翻译播放: `/agent-vibes:translate "text"`
+
+### 命令参数说明
+
+- `-pretext`: 命令参数,用于指定操作选项
+- `-favorite-voice`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
 
 ## 案例展示
 

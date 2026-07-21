@@ -83,18 +83,18 @@ tools:
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD（纯Markdown指令，无需exec命令行能力）
+- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 
 ## 核心能力
 
 ### 1. 事务搜索
-
 ```bash
 {baseDir}/scripts/jira.sh search "payment failure" [maxResults]
 ```
 
 在 `JIRA_BOARD` 项目范围内按 summary 或 key 模糊搜索。`maxResults` 可选，控制返回条数。
 
+**输入**: 用户提供事务搜索所需的指令和必要参数。
 ### 2. 事务链接与详情
 ```bash
 {baseDir}/scripts/jira.sh link ABC-321       # 浏览器链接
@@ -106,7 +106,6 @@ tools:
 **输出**: 返回事务链接与详情的执行结果,包含操作状态和输出数据。
 
 ### 3. 状态流转
-
 ```bash
 {baseDir}/scripts/jira.sh transitions ABC-321        # 列出可用流转
 {baseDir}/scripts/jira.sh status ABC-321 "Done"      # 变更状态
@@ -114,8 +113,8 @@ tools:
 
 状态变更前先调用 `transitions` 获取服务端提供的可用流转列表，校验通过后才应用，避免无效流转。
 
+**输出**: 返回状态流转的执行结果,包含操作状态和输出数据。
 ### 4. 指派
-
 ```bash
 {baseDir}/scripts/jira.sh assign ABC-321 "Jane Doe"  # 按姓名/邮箱搜索后指派
 {baseDir}/scripts/jira.sh assign-me ABC-321          # 指派给自己
@@ -123,8 +122,8 @@ tools:
 
 `assign` 会先按姓名或邮箱搜索用户，解析到 accountId 后再指派。
 
+**输出**: 返回指派的执行结果,包含操作状态和输出数据。
 ### 5. 评论与创建
-
 ```bash
 {baseDir}/scripts/jira.sh comment ABC-321 "Deployed to staging"
 {baseDir}/scripts/jira.sh create "Fix auth timeout" "Users being logged out after 5m"
@@ -132,6 +131,7 @@ tools:
 
 `create` 在 `JIRA_BOARD` 项目创建 Task 类型事务，描述可选。
 
+**处理**: 按照skill规范执行评论与创建操作,遵循单一意图原则。
 ### 6. 工时记录
 ```bash
 {baseDir}/scripts/jira.sh log PB-321 1.5 2025-01-18

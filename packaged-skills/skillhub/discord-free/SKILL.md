@@ -32,6 +32,7 @@ tools:
 - `deleteMessage`:按 `channelId` + `messageId` 删除消息。
 - `readMessages`:按 `channelId` 拉取最近消息,支持 `limit`。
 
+**输出**: 返回消息收发的执行结果,包含操作状态和输出数据。
 ### 表情回应
 - `react`:对指定消息添加 emoji(如 `✅`、`👍`)。
 - `reactions`:列出某条消息的回应及对应用户列表。

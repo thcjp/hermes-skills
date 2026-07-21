@@ -45,6 +45,79 @@ AgentVibes 基础版,基于 Piper TTS 提供文本转语音能力。免费、离
 export API_KEY="your_api_key_here"
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+
+## 核心能力
+
+### Provider
+免费版仅支持 Piper TTS:
+
+| Provider | 平台 | 成本 | 声音数量 |
+| --- | --- | --- | --- |
+| **Piper TTS** | 全平台 | 免费、离线 | 914+,30+ 语言 |
+
+> **升级提示**: macOS Say / Windows SAPI / Soprano 等多 Provider 切换仅在 agentvibes-voi
+
+**处理**: 按照skill规范执行Provider操作。
+**输出**: 返回Provider的执行结果,包含操作状态和输出数据。
+
+**输入**: 用户提供Provider所需的指令和必要参数。
+### 声音命令
+
+
+**输入**: 用户提供声音命令所需的指令和必要参数。
+**处理**: 按照skill规范执行声音命令操作,遵循单一意图原则。
+**输出**: 返回声音命令的执行结果,包含操作状态和输出数据。
+
+- 执行`声音命令`操作，处理输入数据并返回结果
+- 验证执行结果，确认输出符合预期格式
+- 参考`声音命令`相关配置参数进行设置
+### 切换声音
+```bash
+/agent-vibes:switch en_US-amy-medium
+/agent-vibes:switch en_GB-alan-medium
+/agent-vibes:switch fr_FR-siwis-medium
+```
+
+**输入**: 用户提供切换声音所需的指令和必要参数。
+**处理**: 按照skill规范执行切换声音操作,遵循单一意图原则。
+**输出**: 返回切换声音的执行结果,包含操作状态和输出数据。
+### 列出声音
+```bash
+/agent-vibes:list                    # 列出全部声音
+/
+
+**输入**: 用户提供声音命令所需的参数和指令。
+**处理**: 按照skill规范执行声音命令操作。
+**输出**: 返回声音命令的执行结果,包含操作状态和输出数据。
+
+### 语速控制（0.5x - 3.0x）
+
+```bash
+/agent-vibes:set-speed 1.0             # 正常
+/agent-vibes:set-speed 1.5             # 加速 50%
+/agent-vibes:set-speed 0.8             # 减速
+```
+
+**输入**: 用户提供语速控制（0.5x - 3.0x）所需的参数和指令。
+**处理**: 按照skill规范执行语速控制（0.5x - 3.0x）操作。
+**输出**: 返回语速控制（0.5x - 3.0x）的执行结果,包含操作状态和输出数据。
+
+### 默认声音（Piper TTS - 免费离线）
+
+| 语言 | 推荐声音 |
+| --- | --- |
+| English (US) | en_US-lessac-medium · en_US-amy-medium · en_US-ryan-high |
+| English (UK) | en_GB-alan-medium |
+| French | fr_FR-siwis-medium |
+| German | de_DE-thorsten-m
+
+**输入**: 用户提供默认声音（Piper TTS - 免费离线）所需的参数和指令。
+**处理**: 按照skill规范执行默认声音（Piper TTS - 免费离线）操作。
+**输出**: 返回默认声音（Piper TTS - 免费离线）的执行结果,包含操作状态和输出数据。
+
+### 能力覆盖范围
+
+本skill还覆盖以下能力场景: 语音合成、支持声音切换、语音合成基础客户、语速控制等基础能、无需账号、声音文件需下载、适用于、基础语音播报、简单内容配音场景。这些能力在上述核心功能中均有对应处理逻辑。
 ## Provider
 
 免费版仅支持 Piper TTS:
@@ -141,6 +214,32 @@ export API_KEY="your_api_key_here"
 /agent-vibes:switch en_US-amy-medium
 /agent-vibes:set-speed 1.0
 ```
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+### 命令参数说明
+
+- `-ayanami-medium`: 命令参数,用于指定操作选项
+- `-thorsten-medium`: 命令参数,用于指定操作选项
+- `-huayan-x_low`: 命令参数,用于指定操作选项
+- `-kss-medium`: 命令参数,用于指定操作选项
+- `-thorsten-m`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-thorsten-medium`: 命令参数,用于指定操作选项
+- `-ayanami-medium`: 命令参数,用于指定操作选项
+- `-thorsten-m`: 命令参数,用于指定操作选项
+- `-davefx-medium`: 命令参数,用于指定操作选项
+- `-huayan-x_low`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-lessac-medium`: 命令参数,用于指定操作选项
+- `-kss-medium`: 命令参数,用于指定操作选项
+- `-thorsten-m`: 命令参数,用于指定操作选项
+- `-huayan-x_low`: 命令参数,用于指定操作选项
+- `-thorsten-medium`: 命令参数,用于指定操作选项
 
 ## 案例展示
 

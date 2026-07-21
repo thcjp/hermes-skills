@@ -133,6 +133,7 @@ ffmpeg -i output_2x.mp4 -c:v libx264 -crf 18 -preset slow -c:a copy final.mp4
 | 720p | 2x | 1440p | realesr-animevideov3 |
 | 1080p | 2x | 4K | realesr-animevideov3 |
 
+**处理**: 按照skill规范执行AI超分辨率(Real-ESRGAN)操作,遵循单一意图原则。
 ### 3. 智能重构图
 通过AI分析视频内容,自动选择优秀裁剪区域:
 
@@ -176,6 +177,7 @@ echo "  主播放列表: $OUTPUT_DIR/master.m3u8"
 echo "  分辨率: 1080p/720p/480p/360p"
 ```
 
+**处理**: 按照skill规范执行多码率自适应流(HLS)操作,遵循单一意图原则。
 ### 5. 自动化工作流
 ```bash
 #!/bin/bash
@@ -360,6 +362,38 @@ bash scripts/video-workflow.sh input.mp4 "my_project"
 # 批量处理
 bash scripts/batch-process.sh input_folder/ output_folder/ tiktok
 ```
+
+### 命令参数说明
+
+1. `--output_format`: 命令参数,用于指定操作选项
+2. `-process`: 命令参数,用于指定操作选项
+3. `-encode`: 命令参数,用于指定操作选项
+4. `-movflags`: 命令参数,用于指定操作选项
+5. `-vf`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-preset`: 命令参数,用于指定操作选项
+- `-hls_segment_filename`: 命令参数,用于指定操作选项
+- `-workflow`: 命令参数,用于指定操作选项
+- `-hls_time`: 命令参数,用于指定操作选项
+- `-lavfi`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--output_dir`: 命令参数,用于指定操作选项
+- `--model`: 命令参数,用于指定操作选项
+- `-filter`: 命令参数,用于指定操作选项
+- `-type`: 命令参数,用于指定操作选项
+- `-show_entries`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-hls_playlist_type`: 命令参数,用于指定操作选项
+- `-ESRGAN`: 命令参数,用于指定操作选项
+- `-of`: 命令参数,用于指定操作选项
+- `-ESRGAN提升视频画质`: 命令参数,用于指定操作选项
+- `-master_pl_name`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

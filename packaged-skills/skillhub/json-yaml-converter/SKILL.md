@@ -35,7 +35,6 @@ tools:
 - 验证执行结果，确认输出符合预期格式
 - 参考`能力5：注释迁移`相关配置参数进行设置
 ### 能力2：JSON Schema校验
-
 ```python
 import jsonschema
 
@@ -54,6 +53,7 @@ def validate_config(data: dict, schema_path: str) -> dict:
 
 **支持的Schema规范**：JSON Schema Draft-07、K8s CRD Schema、OpenAPI Schema。三种规范自动识别。
 
+**处理**: 按照skill规范执行能力2：JSON Schema校验操作,遵循单一意图原则。
 ### 能力3：YAML模板渲染
 ```yaml
 # config-template.yaml.j2
@@ -300,6 +300,24 @@ config = render_template(TEMPLATE, {
 })
 print(config)
 ```
+
+### 命令参数说明
+
+1. `-len`: 命令参数,用于指定操作选项
+2. `-Type`: 命令参数,用于指定操作选项
+3. `-server`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

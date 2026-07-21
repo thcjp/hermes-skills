@@ -66,7 +66,25 @@ tools:
 
 ### 能力覆盖范围
 
-本skill还覆盖以下能力场景: Professional、Excel、spreadsheet、generator、Use、user、needs、create、data、tables、reports、cha、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+本skill还覆盖以下能力场景: Professional、Excel、spreadsheet、generator、Use、user、needs、create、data、tables、reports、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| 🌍 Multi-Language: Chinese, English, Japanese, etc. | 支持 | 通过核心功能实现对应能力 |
+| 📈 Charts & Graphs: Bar, line, pie, scatter charts | 支持 | 通过核心功能实现对应能力 |
+
+**输入**: 用户提供源能力映射所需的指令和必要参数。
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `库存管理`, `包含内容`, `pyeof`, `销售数据`, `跨平台兼容`, `销售报表`, `现金流量表`, `document`, `年第一季度销售报`, `platform`, `formatting`, `formats`, `制作财务报表`, `patternfill`, `workbook`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

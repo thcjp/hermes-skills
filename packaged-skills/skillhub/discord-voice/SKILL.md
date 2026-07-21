@@ -54,7 +54,6 @@ Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`
 **输入**: 用户提供先验证系统依赖与 Bot 权限所需的指令和必要参数。
 **输出**: 返回先验证系统依赖与 Bot 权限的执行结果,包含操作状态和输出数据。
 ### 2. STT/TTS 引擎必须配置 API Key
-
 | 引擎 | 类型 | 必需环境变量 |
 |------|------|-------------|
 | Whisper API | STT | `OPENAI_API_KEY` |
@@ -66,6 +65,7 @@ Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`
 
 未配置 Key 的引擎会在调用时返回 `provider_api_key_missing`。
 
+**输入**: 用户提供STT/TTS 引擎必须配置 API Key所需的指令和必要参数。
 ### 3. 单公会单频道约束
 
 每个公会同一时间仅允许 Bot 加入 1 个语音频道。重复调用 `join` 会返回 `already_in_voice_channel`,需先 `leave` 再切换。
@@ -99,7 +99,7 @@ Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD（纯Markdown指令，无需exec命令行能力）
+- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 
 ## 使用流程
 
@@ -109,6 +109,13 @@ Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`
 4. 用斜杠命令 `/discord_voice join <channel>` 或 CLI `agent-cli discord_voice join <channelId>` 加入频道
 5. 监听 VAD 事件 → 录音缓冲 → 静默触发 STT → Agent 处理 → TTS 播放
 6. 退出时调用 `/discord_voice leave` 释放频道资源
+
+### 命令参数说明
+
+- `--guild`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
 
 ## 核心配置
 

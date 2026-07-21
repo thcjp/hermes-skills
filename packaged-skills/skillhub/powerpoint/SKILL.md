@@ -70,6 +70,29 @@ tools:
 - 验证执行结果，确认输出符合预期格式
 - 参考`能力覆盖范围`相关配置参数进行设置
 
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Separate reversible view actions from destructive deck cleanup | 支持 | 通过核心功能实现对应能力 |
+| Never assume the frontmost deck is the intended one. | 支持 | 通过核心功能实现对应能力 |
+| Keep provenance explicit | 支持 | 通过核心功能实现对应能力 |
+| Destructive action guardrails | 支持 | 通过核心功能实现对应能力 |
+| Interface selection | 支持 | 通过核心功能实现对应能力 |
+| Setup guide | 支持 | 通过核心功能实现对应能力 |
+| Debug and recovery | 支持 | 通过核心功能实现对应能力 |
+
+**输入**: 用户提供源能力映射所需的指令和必要参数。
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `bypass`, `powerpoint-pptx`, `live-control-patterns.md`, `oauth`, `moving`, `ignoring`, `treating`, `execution-matrix.md`, `reusable`, `memory-template.md`, `environment`, `editing`, `setup.md`, `broader`, `confirm`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

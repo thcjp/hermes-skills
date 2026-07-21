@@ -74,7 +74,7 @@ clawlink_call_tool --tool "whatsapp_send_media" --params '{"phone_number": "+155
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD（纯Markdown指令，无需exec命令行能力）
+- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 
 ## 核心能力
 

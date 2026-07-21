@@ -47,7 +47,6 @@ export API_KEY="your_api_key_here"
 ## 核心能力
 
 ### 项目教程（Project Tutorials）
-
 通过实战项目驱动学习，从零到一构建完整应用：
 
 - **逐步引导**：将复杂项目拆解为可执行的步骤，每步附带代码示例
@@ -61,6 +60,7 @@ export API_KEY="your_api_key_here"
 > "Walk me through building a REST API step by step"
 > "Teach me React hooks: My level is I know basic JavaScript, never used React"
 
+**输出**: 返回项目教程（Project Tutorials）的执行结果,包含操作状态和输出数据。
 ### 语言学习（Language Learning）
 系统化掌握新语言，覆盖听说读写全方位训练：
 
@@ -133,6 +133,9 @@ export API_KEY="your_api_key_here"
 4. 选择学习风格：Visual、Examples、Analogies、Step-by-Step、Big Picture或Hands-On
 5. 使用自然语言描述学习需求，Agent生成个性化学习内容
 6. 通过主动回忆（Active Recall）与练习巩固学习成果
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
 
 ## 示例
 

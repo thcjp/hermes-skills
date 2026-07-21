@@ -35,7 +35,7 @@ document-parse 将文档转换为结构化的 HTML/Markdown。识别表格、图
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD（纯Markdown指令，无需exec命令行能力）
+- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 
 ## 核心能力
 
@@ -65,6 +65,7 @@ document-parse 将文档转换为结构化的 HTML/Markdown。识别表格、图
 `figure`、`chart`、`equation`、`caption`、`header`、`footer`、`index`、`footnote`。
 坐标为归一化值（0-1 范围），表示元素在页面中的相对位置。
 
+**输入**: 用户提供版面元素识别与坐标输出所需的指令和必要参数。
 ### 5. 增强模式与 OCR 控制
 `mode=enhanced` 用于复杂表格、图表和图片的精确解析，支持 `merge_multipage_tables=true`
 合并跨页表格（enhanced 模式下最多 20 页）。`mode=auto` 让 API 逐页自动决定最佳模式。
@@ -95,6 +96,10 @@ document-parse 将文档转换为结构化的 HTML/Markdown。识别表格、图
 6. 同步模式直接解析响应 JSON；异步模式轮询 `request_id` 直到完成
 7. 将结果写入输出文件（默认 `<system-temp>/<input-stem>.parsed.<ext>`）
 8. 打印输出文件的绝对路径
+
+### 命令参数说明
+
+- `-over-year`: 命令参数,用于指定操作选项
 
 ## 示例
 

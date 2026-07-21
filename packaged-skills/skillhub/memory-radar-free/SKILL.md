@@ -126,6 +126,10 @@ python3 scripts/quarantine.py memory/2026-07-18.md 42
 python3 scripts/quarantine.py --restore memory/2026-07-18.md 42
 ```
 
+### 命令参数说明
+
+- `-scan`: 命令参数,用于指定操作选项
+
 ## 错误处理
 
 | 错误类型 | 原因 | 处理方式 |

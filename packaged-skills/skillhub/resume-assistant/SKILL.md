@@ -89,7 +89,6 @@ export API_KEY="your_api_key_here"
 | `language` | string | 否 | `en` | `en`英文 / `zh`中文 |
 
 ### Score - 简历评分
-
 100分制专业评估，含具体改进建议：
 
 **评分维度（100分）：**
@@ -110,6 +109,7 @@ export API_KEY="your_api_key_here"
 | `target_role` | string | 否 | - | 目标职位（用于匹配度评估） |
 | `language` | string | 否 | `en` | `en`英文 / `zh`中文 |
 
+**输出**: 返回Score - 简历评分的执行结果,包含操作状态和输出数据。
 ### Export - 多格式导出
 
 将简历转换为Word、Markdown、HTML、LaTeX或PDF格式：

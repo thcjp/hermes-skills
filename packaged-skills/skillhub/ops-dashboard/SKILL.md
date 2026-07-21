@@ -155,9 +155,9 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 ## 使用流程
 
 ### 前置条件
-- Node.js 18+ 已安装
-- 运维看板服务已部署并运行
-- 已设置`OPS_DASHBOARD_AUTH_TOKEN`环境变量
+1. Node.js 18+ 已安装
+2. 运维看板服务已部署并运行
+3. 已设置`OPS_DASHBOARD_AUTH_TOKEN`环境变量
 
 ### 环境配置
 创建`.env`文件配置完整运行参数：
@@ -190,10 +190,10 @@ OPS_DASHBOARD_ALLOW_ATTACHMENT_COPY_FROM_HOME=0
 ### 依赖说明
 
 ### 运行环境
-- **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
-- **操作系统**：Windows / macOS / Linux（系统级操作需Linux）
-- **Node.js**：18.0及以上版本
-- **运行时**：运维看板服务需持续运行
+4. **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+5. **操作系统**：Windows / macOS / Linux（系统级操作需Linux）
+6. **Node.js**：18.0及以上版本
+7. **运行时**：运维看板服务需持续运行
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
@@ -207,15 +207,46 @@ OPS_DASHBOARD_ALLOW_ATTACHMENT_COPY_FROM_HOME=0
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 
 ### API Key 配置
-- **运维看板Token**：通过`OPS_DASHBOARD_AUTH_TOKEN`环境变量配置
-- **服务商API Key**：存储在`keys.env`文件中，需设置`OPS_DASHBOARD_LOAD_KEYS_ENV=1`加载
-- **存储位置**：所有密钥文件存储在项目根目录（已加入.gitignore）
-- **禁止**：在代码或配置文件中硬编码任何API Key或Token
-- **安全建议**：生产环境使用反向代理（如Nginx）添加额外的认证层
+8. **运维看板Token**：通过`OPS_DASHBOARD_AUTH_TOKEN`环境变量配置
+9. **服务商API Key**：存储在`keys.env`文件中，需设置`OPS_DASHBOARD_LOAD_KEYS_ENV=1`加载
+10. **存储位置**：所有密钥文件存储在项目根目录（已加入.gitignore）
+11. **禁止**：在代码或配置文件中硬编码任何API Key或Token
+12. **安全建议**：生产环境使用反向代理（如Nginx）添加额外的认证层
 
 ### 可用性分类
-- **分类**：MD+EXEC（纯Markdown指令，需要exec命令行执行能力）
-- **说明**：基于Markdown的AI Skill，通过自然语言指令驱动Agent执行运维看板全量API操作
+13. **分类**：MD+EXEC（纯Markdown指令，需要exec命令行执行能力）
+14. **说明**：基于Markdown的AI Skill，通过自然语言指令驱动Agent执行运维看板全量API操作
+
+### 命令参数说明
+
+15. `-service`: 命令参数,用于指定操作选项
+16. `-now`: 命令参数,用于指定操作选项
+17. `-config`: 命令参数,用于指定操作选项
+18. `-status`: 命令参数,用于指定操作选项
+19. `-H`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+### 命令参数说明
+
+- `-session`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+- `-X`: 命令参数,用于指定操作选项
+- `-model`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-X`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+- `-report`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+- `-X`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

@@ -91,6 +91,24 @@ tools:
 
 第五步：定期维护。执行 `node bin/memory.js stats` 检查记忆统计，`node bin/memory.js search "*" --limit 50` 全量检索检查质量，`node bin/memory.js dedup` 去重，`node bin/memory.js compact` 压缩向量数据库，`node bin/memory.js cleanup --before 30d` 清理 30 天前旧记忆，`node bin/memory.js backup ./backups/memory-$(date +%Y%m%d).zip` 定期备份。
 
+### 命令参数说明
+
+- `-STATE`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+### 命令参数说明
+
+- `-STATE`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-STATE`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-STATE`: 命令参数,用于指定操作选项
+
 ## 错误处理
 
 | 错误类型 | 原因 | 处理方式 |

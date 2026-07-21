@@ -257,6 +257,19 @@ bash scripts/batch-translate.sh
 cat reports/translation-$(date +%Y%m%d).md
 ```
 
+### 命令参数说明
+
+- `-forbidden`: 命令参数,用于指定操作选项
+- `-latest`: 命令参数,用于指定操作选项
+- `-f`: 命令参数,用于指定操作选项
+- `-type`: 命令参数,用于指定操作选项
+- `-euo`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-node`: 命令参数,用于指定操作选项
+- `-glossary`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

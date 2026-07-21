@@ -80,8 +80,8 @@ tools:
 ### 依赖说明
 
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
-- **操作系统**: Windows / macOS / Linux
+1. **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+2. **操作系统**: Windows / macOS / Linux
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
@@ -89,11 +89,9 @@ tools:
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
-- 
-
-### 可用性分类
-- **分类**: MD+EXEC()
-- **说明**: 基于Markdown的AI Skill,
+3. ### 可用性分类
+4. **分类**: MD+EXEC()
+5. **说明**: 基于Markdown的AI Skill,
 
 
 **API Key配置方式**:

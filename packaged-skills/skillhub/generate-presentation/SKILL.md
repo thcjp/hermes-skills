@@ -65,6 +65,29 @@ tools:
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: Creates、Use、需要生成营销文案、写作内容、标题优化、内容创作时使用、不适用于纯技术文、档撰写、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Are visual elements (shapes, gradients) similar? | 支持 | 通过核心功能实现对应能力 |
+| Short sentences, not paragraphs | 支持 | 通过核心功能实现对应能力 |
+| Typography style: Font weight, size hierarchy, letter spacing feel | 支持 | 通过核心功能实现对应能力 |
+| Any specific points to emphasize? | 支持 | 通过核心功能实现对应能力 |
+| Visual elements: Shapes, gradients, borders, shadows, decorative elements | 支持 | 通过核心功能实现对应能力 |
+| Include navigation: arrow keys to move between slides, slide counter | 支持 | 通过核心功能实现对应能力 |
+| Closing slides | 支持 | 通过核心功能实现对应能力 |
+| Slides should be stacked vertically, with JS handling viewport snapping | 支持 | 通过核心功能实现对应能力 |
+| Title/hero slides | 支持 | 通过核心功能实现对应能力 |
+| Each slide is a full-viewport section (100vw x 100vh) | 支持 | 通过核心功能实现对应能力 |
+
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `presentation/content.md`, `please`, `sorts`, `arguments`, `outputs`, `google`, `screenshot`, `edit`, `compare`, `presentation/images/slide_3_illustration.png`, `regular`, `bullet`, `fonts`, `consider`, `minimal`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

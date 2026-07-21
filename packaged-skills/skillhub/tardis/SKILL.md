@@ -65,6 +65,29 @@ tools:
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: Use、需要营销推广、广告投放、获客转化、增长裂变时使用、不适用于非法营销、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Milestone Messages | 支持 | 通过核心功能实现对应能力 |
+| 20 characters with dashes, easy to copy | 支持 | 通过核心功能实现对应能力 |
+| Opens your email client with pre-filled subject and body | 支持 | 通过核心功能实现对应能力 |
+| ⚠️ Cost warning: Cron at 1-minute intervals = 1,440 API calls/day = expensive! | 支持 | 通过核心功能实现对应能力 |
+| Keep in wallet, safe, or taped to equipment | 支持 | 通过核心功能实现对应能力 |
+| Visual backup, no typing required | 支持 | 通过核心功能实现对应能力 |
+| Requires a verified sender in SendGrid (see SendGrid docs) | 支持 | 通过核心功能实现对应能力 |
+| SendGrid Setup | 支持 | 通过核心功能实现对应能力 |
+| Four Ways to Save (Non-Technical) | 支持 | 通过核心功能实现对应能力 |
+| In your Discord channel, go to Settings > Integrations > Webhooks | 支持 | 通过核心功能实现对应能力 |
+
+### 领域术语
+本skill涉及以下领域术语: `unsubscribes`, `between`, `discord_webhook_url`, `witness`, `receive`, `hour-meter`, `career`, `verify`, `google`, `unsubscribed`, `resubscribes`, `emoji`, `screenshot`, `html`, `reports`
+
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

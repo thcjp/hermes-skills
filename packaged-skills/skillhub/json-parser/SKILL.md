@@ -104,6 +104,13 @@ flat = parser.flatten_json(result.data)
 elements = parser.extract_elements(result.data, "project.building.floors")
 ```
 
+**使用步骤**:
+1. 阅读依赖说明章节,确认运行环境已就绪
+2. 根据任务需求,参考核心能力章节选择对应能力
+3. 按照能力描述提供输入参数,执行操作
+4. 查看输出结果,确认任务完成状态
+
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

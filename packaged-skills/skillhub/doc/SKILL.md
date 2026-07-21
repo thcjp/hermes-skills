@@ -66,6 +66,23 @@ tools:
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: 需要营销推广、广告投放、获客转化、增长裂变时使用、不适用于非法营销、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| After each meaningful change, re-render and inspect the pages. | 支持 | 通过核心功能实现对应能力 |
+| Prefer visual review (layout, tables, diagrams). | 支持 | 通过核心功能实现对应能力 |
+
+**输入**: 用户提供源能力映射所需的指令和必要参数。
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `tmp/docs/`, `unicode`, `charts`, `pdftoppm`, `deliver`, `ascii`, `bundled`, `pdf2image`, `environment`, `rendering`, `output/doc/`, `confirm`, `soffice`, `pngs`, `temp`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

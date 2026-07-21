@@ -50,6 +50,7 @@ PRO版支持cron式定时调度,自动执行摘要生成流程。
 
 > 详细代码示例已移至 `references/detail.md`
 
+**输入**: 用户提供定时自动调度所需的指令和必要参数。
 ### 3. 多源信息聚合
 除X/Twitter时间线外,PRO版支持聚合RSS源和自定义信息源。
 
@@ -158,6 +159,31 @@ python3 setup_notifications.py --telegram --email
 
 python3 start_scheduler.py --config config.json
 ```
+
+### 命令参数说明
+
+1. `-Crypto`: 命令参数,用于指定操作选项
+2. `--config`: 命令参数,用于指定操作选项
+3. `-Trending`: 命令参数,用于指定操作选项
+4. `-digest-tool-pro`: 命令参数,用于指定操作选项
+5. `--email`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-platform`: 命令参数,用于指定操作选项
+- `-Trending`: 命令参数,用于指定操作选项
+- `--interval`: 命令参数,用于指定操作选项
+- `-Crypto`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Trending`: 命令参数,用于指定操作选项
+- `-Crypto`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Crypto`: 命令参数,用于指定操作选项
+- `-Trending`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

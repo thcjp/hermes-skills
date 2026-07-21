@@ -34,7 +34,7 @@ document-parse-free 将文档转换为 Markdown 格式。基础版支持 PDF 和
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD（纯Markdown指令，无需exec命令行能力）
+- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 
 ## 核心能力
 
@@ -67,6 +67,10 @@ document-parse-free 将文档转换为 Markdown 格式。基础版支持 PDF 和
 4. 发送同步请求到 `/v1/document-digitization`，参数 `model=document-parse`
 5. 解析响应 JSON，提取 `content.markdown`
 6. 将结果写入输出文件，打印绝对路径
+
+### 命令参数说明
+
+- `-over-year`: 命令参数,用于指定操作选项
 
 ## 示例
 

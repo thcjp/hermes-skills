@@ -53,7 +53,6 @@ gh-manager issue batch-reopen --repo owner/repo --issues 30,32,35
 - **速率控制**: 自动遵守API限速,避免触发429
 
 ### GraphQL高级查询
-
 ```bash
 # 跨仓库查询某作者的所有PR
 gh-manager graphql query --file queries/cross_repo_prs.graphql --vars '{"author":"alice"}'
@@ -89,6 +88,7 @@ query teamContributions($logins: [String!]!, $since: DateTime!) {
 }
 ```
 
+**输出**: 返回GraphQL高级查询的执行结果,包含操作状态和输出数据。
 ### 自动化工作流
 
 ```bash
@@ -276,6 +276,38 @@ gh-manager dashboard weekly --format pdf --output weekly-report.pdf
 # 查看实时仪表盘
 gh-manager dashboard live --port 8080
 ```
+
+### 命令参数说明
+
+1. `-label`: 命令参数,用于指定操作选项
+2. `--notify`: 命令参数,用于指定操作选项
+3. `--labels`: 命令参数,用于指定操作选项
+4. `--event`: 命令参数,用于指定操作选项
+5. `--members`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-reopen`: 命令参数,用于指定操作选项
+- `--action`: 命令参数,用于指定操作选项
+- `--period`: 命令参数,用于指定操作选项
+- `-assign-by-label`: 命令参数,用于指定操作选项
+- `--milestone`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--repos`: 命令参数,用于指定操作选项
+- `--last`: 命令参数,用于指定操作选项
+- `--depth`: 命令参数,用于指定操作选项
+- `--events`: 命令参数,用于指定操作选项
+- `-close`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--team`: 命令参数,用于指定操作选项
+- `-review-sla`: 命令参数,用于指定操作选项
+- `--enabled`: 命令参数,用于指定操作选项
+- `-reviews`: 命令参数,用于指定操作选项
+- `--trigger`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

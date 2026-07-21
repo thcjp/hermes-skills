@@ -62,7 +62,6 @@ tools:
 **处理**: 按照skill规范执行复杂重试策略（专业版）操作,遵循单一意图原则。
 
 ### 3. DAG并行执行（专业版）
-
 > 详细代码示例已移至 `references/detail.md`
 
 **DAG执行示例**：
@@ -79,6 +78,7 @@ T2: transform执行
 T3: output执行
 ```
 
+**输入**: 用户提供DAG并行执行（专业版）所需的指令和必要参数。
 ### 4. 监控告警（专业版）
 > 详细代码示例已移至 `references/detail.md`
 
@@ -135,6 +135,7 @@ workflow version tag --flow my-flow --tag "stable"
 workflow version export --flow my-flow --version "v1.0" --output "flow-v1.0.tar.gz"
 ```
 
+**处理**: 按照skill规范执行版本管理（专业版）操作,遵循单一意图原则。
 ### 7. 可视化编排（专业版）
 ```bash
 workflow visualize --port 8080
@@ -254,6 +255,40 @@ mkdir -p workflows/flows/my-flow/{state,data,logs}
 > 详细代码示例已移至 `references/detail.md`
 
 > 详细内容已移至 `references/detail.md` - ### 完整搭建（<300秒）
+
+### 命令参数说明
+
+1. `--max-attempts`: 命令参数,用于指定操作选项
+2. `-customer`: 命令参数,用于指定操作选项
+3. `--fallback-flow`: 命令参数,用于指定操作选项
+4. `-a-pipeline`: 命令参数,用于指定操作选项
+5. `--event`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
+### 命令参数说明
+
+- `--run-id`: 命令参数,用于指定操作选项
+- `-b-pipeline`: 命令参数,用于指定操作选项
+- `--integration-key`: 命令参数,用于指定操作选项
+- `--period`: 命令参数,用于指定操作选项
+- `-orchestrator-pro`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-v1`: 命令参数,用于指定操作选项
+- `--capacity`: 命令参数,用于指定操作选项
+- `--channels`: 命令参数,用于指定操作选项
+- `--channel`: 命令参数,用于指定操作选项
+- `--import`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-process`: 命令参数,用于指定操作选项
+- `--host`: 命令参数,用于指定操作选项
+- `-fulfillment`: 命令参数,用于指定操作选项
+- `--from`: 命令参数,用于指定操作选项
+- `-process-safe`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

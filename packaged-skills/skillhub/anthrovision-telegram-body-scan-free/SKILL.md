@@ -59,6 +59,8 @@ export API_KEY="your_api_key_here"
 - 调用 `anthrovision_bridge_submit_scan` 提交
 - 调用 `anthrovision_bridge_check_scan` 轮询状态
 - 状态complete时输出基础测量结果
+
+**输入**: 用户提供扫描提交与轮询(基础)所需的指令和必要参数。
 ### 指令解析与执行
 
 解析用户指令,执行核心操作并返回处理结果。

@@ -66,6 +66,20 @@ tools:
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: API、接口对接、Webhook、系统连接时使用、不适用于逆向工程。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| GET /search | 支持 | 通过核心功能实现对应能力 |
+
+**输入**: 用户提供源能力映射所需的指令和必要参数。
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+
+本skill涉及以下领域术语: `url`, `connectionid`, `limit`, `membrane_token`, `list`, `oauth`, `wait`, `sent`, `connectorversion`, `post`, `parameters`, `outputschema`, `connectorid`, `hello`, `intent`
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

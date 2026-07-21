@@ -234,6 +234,29 @@ gateway-manager observe enable --alerting --rules ./alert-rules.yaml
 gateway-manager dry-run --config gateway-pro.yaml --traffic replay --recording ./traffic-sample.json
 ```
 
+### 命令参数说明
+
+1. `-service`: 命令参数,用于指定操作选项
+2. `-rules`: 命令参数,用于指定操作选项
+3. `--endpoint`: 命令参数,用于指定操作选项
+4. `--rules`: 命令参数,用于指定操作选项
+5. `--control-plane`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--recording`: 命令参数,用于指定操作选项
+- `--alerting`: 命令参数,用于指定操作选项
+- `--logging`: 命令参数,用于指定操作选项
+- `--config`: 命令参数,用于指定操作选项
+- `--traffic`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--tracing`: 命令参数,用于指定操作选项
+- `--exporter`: 命令参数,用于指定操作选项
+- `-cp`: 命令参数,用于指定操作选项
+- `-sample`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

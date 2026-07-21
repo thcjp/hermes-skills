@@ -40,7 +40,6 @@ tools:
 ## 核心能力
 
 ### 版本化写作工作流
-
 遵循六阶段标准工作流：
 
 ```text
@@ -53,6 +52,7 @@ Request → Plan → Draft → Audit → Refine → Deliver
 - **Run quality audit before delivering**：交付前运行quality audit
 - **Offer cleanup only after user confirms**：仅在用户确认piece最终后提供cleanup
 
+**输出**: 返回版本化写作工作流的执行结果,包含操作状态和输出数据。
 ### 基础Scripts工具集
 
 提供核心shell脚本：
@@ -99,6 +99,13 @@ Request → Plan → Draft → Audit → Refine → Deliver
 6. **Refine阶段**：通过`./scripts/edit.sh`修订（自动版本备份）
 7. **Deliver阶段**：交付最终内容
 8. **Cleanup阶段**：用户确认最终后运行`./scripts/cleanup.sh`清除旧versions
+
+### 命令参数说明
+
+- `-v1`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
 
 ## 示例
 

@@ -78,7 +78,6 @@ tools:
 6. **Moral Hazard**（道德风险）：带保险的协议冒险、bailout预期、anonymous teams rug；解决方案含Monitoring、Incentive alignment、Reputation systems
 
 ### Common Crypto Games分析
-
 针对五种crypto原生博弈提供专门分析能力：
 
 - **MEV Game**：玩家为Users、searchers、builders、validators；核心洞察为transaction ordering是博弈，users常为输家
@@ -87,16 +86,16 @@ tools:
 - **Staking Game**：玩家为stakers、validators、delegators；核心洞察为security budget必须超过attack profit
 - **Oracle Game**：玩家为data providers、consumers、attackers；核心洞察为操纵收益必须小于操纵成本
 
+**输出**: 返回Common Crypto Games分析的执行结果,包含操作状态和输出数据。
 ### Red Flags检测
-
 提供三维度协议设计风险检测：
 
 - **Tokenomics Red Flags**：insiders vesting不对称、inflation稀释、无sink机制、reward无risk
 - **Governance Red Flags**：quorum过低、无timelock（flash loan攻击）、token voting only（plutocracy）、delegates无skin in game
 - **Mechanism Red Flags**：first-come-first-served（bot优势）、sealed bid无commitment（frontrunning）、rebates（MEV提取）、复杂公式（隐藏漏洞）
 
+**输出**: 返回Red Flags检测的执行结果,包含操作状态和输出数据。
 ### 高级分析能力
-
 支持四类高级博弈论主题的深入分析：
 
 - **Repeated Games and Reputation**：单次博弈均衡差，重复博弈通过Trigger strategies、Reputation building、Future value促成合作；解释anonymous actors行为更差
@@ -116,6 +115,23 @@ tools:
 5. **运行Red Flags检测**：对Tokenomics、Governance、Mechanism三维度进行风险扫描
 6. **进行高级分析**：按需调用Repeated Games、Bayesian Games等高级分析能力
 7. **输出Recommendations**：给出mechanism改进、monitoring建议、parameter bounds
+
+### 命令参数说明
+
+- `-Agent`: 命令参数,用于指定操作选项
+- `-come-first-served清算`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Agent`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Agent`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Agent`: 命令参数,用于指定操作选项
 
 ## 示例
 

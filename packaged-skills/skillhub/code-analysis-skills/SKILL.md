@@ -89,6 +89,25 @@ tools:
 | `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
 | `output` | 格式化输出结果 | `format`, `encoding` |
 
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| State the indicator and what it literally measures. | 支持 | 通过核心功能实现对应能力 |
+| Phrase weaknesses as points to consider with context, never as | 支持 | 通过核心功能实现对应能力 |
+| Phrase suggestions as discussion prompts, never as directives. | 支持 | 通过核心功能实现对应能力 |
+| ⏰ Work Habits | 支持 | 通过核心功能实现对应能力 |
+
+**输入**: 用户提供源能力映射所需的指令和必要参数。
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `commits`, `many`, `ranking`, `src/analyzers/cadence_signal_analyzer.py`, `density`, `performance`, `consistency`, `inverse`, `caveat`, `frame`, `compare`, `verdicts`, `html`, `github`, `documents`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 - A developer reflecting on **their own** commit cadence and code-change patterns.
@@ -103,8 +122,8 @@ tools:
 ### 依赖说明
 
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
-- **操作系统**: Windows / macOS / Linux
+1. **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+2. **操作系统**: Windows / macOS / Linux
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
@@ -112,11 +131,9 @@ tools:
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
-- 
-
-### 可用性分类
-- **分类**: MD+EXEC()
-- **说明**: 基于Markdown的AI Skill,
+3. ### 可用性分类
+4. **分类**: MD+EXEC()
+5. **说明**: 基于Markdown的AI Skill,
 
 
 **API Key配置方式**:

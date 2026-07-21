@@ -78,6 +78,13 @@ tools:
 | `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
 | `output` | 格式化输出结果 | `format`, `encoding` |
 
+### 领域术语
+本skill涉及以下领域术语: `tasks_dir`, `lock_stale_minutes`, `print`, `jsonl`, `prerequisites`, `delivery_mode`, `batch_size`, `cron_expr`, `clear`, `layout`, `done.jsonl`, `real`, `onboarding`, `smoke`, `config.env.example`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

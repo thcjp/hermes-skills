@@ -92,6 +92,7 @@ scripts/piper-speak-long.sh "$(cat article.txt)" en_US-ryan-high --max-chars 500
 scripts/piper-batch.sh prompts.txt en_US-kusal-medium ./outputs/
 ```
 
+**输入**: 用户提供批量生成所需的指令和必要参数。
 ### 5. 风格控制(SSML 子集)
 通过标记控制语速、停顿时长与段落边界:
 ```text
@@ -148,6 +149,28 @@ scripts/setup-piper.sh --voice zh_CN-huayan-medium
 
 ### 第四步:风格调优(可选)
 对语速/停顿不满意时,在文本中嵌入 SSML 子集标记重新合成,无需更换音色。
+
+### 命令参数说明
+
+- `-routing-article`: 命令参数,用于指定操作选项
+- `--A`: 命令参数,用于指定操作选项
+- `--B`: 命令参数,用于指定操作选项
+- `-routing`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--A`: 命令参数,用于指定操作选项
+- `--B`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--A`: 命令参数,用于指定操作选项
+- `--B`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--A`: 命令参数,用于指定操作选项
+- `--B`: 命令参数,用于指定操作选项
 
 ## 案例展示
 

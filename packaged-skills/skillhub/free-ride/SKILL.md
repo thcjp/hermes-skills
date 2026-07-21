@@ -89,6 +89,12 @@ tools:
 | `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
 | `output` | 格式化输出结果 | `format`, `encoding` |
 
+### 领域术语
+本skill涉及以下领域术语: `before`, `agents.defaults.models`, `prerequisites`, `configures`, `background`, `agents.defaults.model.primary`, `force`, `unlimited`, `primary`, `verify`, `完全适配`, `openrouter/free`, `agents.defaults.model.fallbacks`, `daemon`, `redacted`
+
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

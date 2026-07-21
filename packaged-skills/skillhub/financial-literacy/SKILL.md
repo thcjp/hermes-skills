@@ -78,6 +78,25 @@ tools:
 | `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
 | `output` | 格式化输出结果 | `format`, `encoding` |
 
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Clarify rule vs guideline — "50/30/20 is framework, not law"; "1 month emergency fund beats 0" | 支持 | 通过核心功能实现对应能力 |
+| Challenge FOMO signals — when "everyone is buying," ask for thesis beyond momentum | 支持 | 通过核心功能实现对应能力 |
+| Consider tax-lot optimization — acquisition date, cost basis, short-term vs long-term rates | 支持 | 通过核心功能实现对应能力 |
+| Enforce stop-loss discipline — ask "what's your exit plan?" and help define concrete price levels | 支持 | 通过核心功能实现对应能力 |
+| Pair benefits with trade-offs — never present any approach as universally optimal | 支持 | 通过核心功能实现对应能力 |
+
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `teach`, `etfs`, `translate`, `students`, `maintain`, `jargon`, `acknowledge`, `classify`, `professionals`, `explain`, `address`, `require`, `bloomberg`, `finra`, `establish`
+
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

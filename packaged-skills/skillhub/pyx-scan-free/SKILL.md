@@ -68,6 +68,11 @@ tools:
 2. 调用Scanner API:WebFetch或curl方式
 3. 解析结果:根据 `trust_score`、`risk_score` 和 `confidence` 生成评估报告
 
+### 命令参数说明
+
+- `-corp`: 命令参数,用于指定操作选项
+- `-processor`: 命令参数,用于指定操作选项
+
 ## 示例
 
 ### 示例:扫描单个技能

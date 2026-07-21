@@ -95,11 +95,11 @@ tools:
 ### 依赖说明
 
 ### 运行环境
-- **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
-- **操作系统**：Windows / macOS / Linux
-- **Node.js**：v16及以上（CLI与TypeScript SDK）
-- **Python**：3.8及以上（Python SDK，可选）
-- **网络**：可访问代理服务、对象存储与目标API
+1. **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+2. **操作系统**：Windows / macOS / Linux
+3. **Node.js**：v16及以上（CLI与TypeScript SDK）
+4. **Python**：3.8及以上（Python SDK，可选）
+5. **网络**：可访问代理服务、对象存储与目标API
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
@@ -111,14 +111,18 @@ tools:
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 
 ### API Key 配置
-- **代理机器密钥**：首次运行自动生成于`~/.secure-proxy/`，权限0600
-- **团队金库凭据**：存储于代理服务端加密金库，本地不保存
-- **委托Token**：Client SDK使用，存储于环境变量`DELEGATED_TOKEN`
-- **禁止**：在代码、脚本或版本库中硬编码任何真实API密钥
+6. **代理机器密钥**：首次运行自动生成于`~/.secure-proxy/`，权限0600
+7. **团队金库凭据**：存储于代理服务端加密金库，本地不保存
+8. **委托Token**：Client SDK使用，存储于环境变量`DELEGATED_TOKEN`
+9. **禁止**：在代码、脚本或版本库中硬编码任何真实API密钥
 
 ### 可用性分类
-- **分类**：MD+EXEC（）
-- **说明**：基于Markdown的AI Skill，
+10. **分类**：MD+EXEC（）
+11. **说明**：基于Markdown的AI Skill，
+
+### 命令参数说明
+
+12. `-team`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

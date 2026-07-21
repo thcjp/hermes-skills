@@ -142,6 +142,28 @@ bash scripts/merge-check-trend.sh owner/repo --months 6 --format csv > trend.csv
 bash scripts/merge-check-trend.sh owner/repo --months 6 --format chart > trend.html
 ```
 
+### 命令参数说明
+
+- `--limit`: 命令参数,用于指定操作选项
+
+**使用步骤**:
+1. 阅读依赖说明章节,确认运行环境已就绪
+2. 根据任务需求,参考核心能力章节选择对应能力
+3. 按照能力描述提供输入参数,执行操作
+4. 查看输出结果,确认任务完成状态
+
+### 命令参数说明
+
+- `--limit`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--limit`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--limit`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

@@ -246,6 +246,38 @@ npx type-coverage --strict --at-least 95
 bash scripts/lint-report.sh
 ```
 
+### 命令参数说明
+
+- `-non-null-assertion`: 命令参数,用于指定操作选项
+- `-unused-vars`: 命令参数,用于指定操作选项
+- `-latest`: 命令参数,用于指定操作选项
+- `-artifact`: 命令参数,用于指定操作选项
+- `--strict`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-config-base`: 命令参数,用于指定操作选项
+- `-default-export`: 命令参数,用于指定操作选项
+- `-nullish-coalescing`: 命令参数,用于指定操作选项
+- `-complexity`: 命令参数,用于指定操作选项
+- `-report`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-requiring-type-checking`: 命令参数,用于指定操作选项
+- `-files-`: 命令参数,用于指定操作选项
+- `--detail`: 命令参数,用于指定操作选项
+- `-boolean-expressions`: 命令参数,用于指定操作选项
+- `-convention`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-euo`: 命令参数,用于指定操作选项
+- `-imports`: 命令参数,用于指定操作选项
+- `-coverage-`: 命令参数,用于指定操作选项
+- `-duplicate-string`: 命令参数,用于指定操作选项
+- `-F`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

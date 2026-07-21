@@ -40,6 +40,7 @@ tools:
 - 标签管理:列出标签、批量打标
 - 附件下载:按邮件 ID 下载附件
 
+**输入**: 用户提供一、Gmail 高级邮件管理所需的指令和必要参数。
 ### 二、Calendar 高级日程管理
 - 事件查询:按日历 ID 与时间范围查询
 - 事件创建:支持完整事件字段( attendees / 提醒 / 视频会议)
@@ -195,10 +196,10 @@ echo "归档完成,共 ${#doc_ids[@]} 份文档,存储于 $ARCHIVE_DIR"
 ### 依赖说明
 
 ### 运行环境
-- **Agent平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
-- **操作系统**: Windows / macOS / Linux
-- **网络环境**: 需可访问 Google API 服务
-- **Python 环境**: 建议 3.8+(运行自动化脚本模板)
+1. **Agent平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
+2. **操作系统**: Windows / macOS / Linux
+3. **网络环境**: 需可访问 Google API 服务
+4. **Python 环境**: 建议 3.8+(运行自动化脚本模板)
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
@@ -210,14 +211,14 @@ echo "归档完成,共 ${#doc_ids[@]} 份文档,存储于 $ARCHIVE_DIR"
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 
 ### API Key 配置
-- 需在 Google Cloud Console 创建 OAuth 2.0 客户端 ID,下载 `client_secret.json`
-- 通过 `gog auth credentials /path/to/client_secret.json` 导入凭据
-- 需启用以下 API:Gmail API、Google Calendar API、Google Drive API、Google Sheets API、Google Docs API、Google People API(Contacts)
-- 首次使用打开浏览器完成 OAuth 授权,凭据本地加密存储
+5. 需在 Google Cloud Console 创建 OAuth 2.0 客户端 ID,下载 `client_secret.json`
+6. 通过 `gog auth credentials /path/to/client_secret.json` 导入凭据
+7. 需启用以下 API:Gmail API、Google Calendar API、Google Drive API、Google Sheets API、Google Docs API、Google People API(Contacts)
+8. 首次使用打开浏览器完成 OAuth 授权,凭据本地加密存储
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
-- **说明**: 基于命令行的企业级 AI Skill,通过自然语言指令驱动 Agent 执行 Google Workspace 六大服务的深度操作。专业版完全兼容免费版命令体系,额外提供 Sheets/Docs/Contacts 高级操作、批量处理能力与企业级自动化工作流模板,适合团队协作与规模化办公场景。
+9. **分类**: MD+EXEC(纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
+10. **说明**: 基于命令行的企业级 AI Skill,通过自然语言指令驱动 Agent 执行 Google Workspace 六大服务的深度操作。专业版完全兼容免费版命令体系,额外提供 Sheets/Docs/Contacts 高级操作、批量处理能力与企业级自动化工作流模板,适合团队协作与规模化办公场景。
 
 
 **API Key配置方式**:
@@ -225,6 +226,20 @@ echo "归档完成,共 ${#doc_ids[@]} 份文档,存储于 $ARCHIVE_DIR"
 export API_KEY="your_api_key_here"
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+
+### 命令参数说明
+
+11. `--from`: 命令参数,用于指定操作选项
+12. `--body`: 命令参数,用于指定操作选项
+13. `--max`: 命令参数,用于指定操作选项
+14. `--no-input`: 命令参数,用于指定操作选项
+15. `--insert`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--values-json`: 命令参数,用于指定操作选项
+- `--subject`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

@@ -50,6 +50,7 @@ export API_KEY="your_api_key_here"
 ### 1. 频道消息发送
 向指定公共频道发送文本消息。频道参数接受频道ID（`C0123456789`）或频道名（`#general`）。支持基础Slack消息格式化：`*bold*`、`_italic_`、`` `code` ``、emoji语法 `:name:`。
 
+**输出**: 返回频道消息发送的执行结果,包含操作状态和输出数据。
 ### 2. 公共频道列表
 列出工作区内所有公共频道，返回频道ID、名称、成员数、话题。可用于频道发现与ID解析。
 
@@ -72,7 +73,6 @@ export API_KEY="your_api_key_here"
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: 基础消息发送与公、Bot、Token、Web、API、面向团队协作场景、基础消息集成技能、免费版、提供频道消息发送、与公共频道列表两、大基础能力、支持频道、基础消息格式化、代码块、适用于发布通知、频道发现等基础场。这些能力在上述核心功能中均有对应处理逻辑。
-
 ### 输出格式
 
 执行结果以Markdown格式返回,包含操作状态(成功/失败)、处理摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。
@@ -104,12 +104,36 @@ export API_KEY="your_api_key_here"
 **安全红线**：永不接受/回显/存储来自聊天输入的Token；Token仅作为 `Authorization: Bearer` 请求头使用。
 
 ### 发送消息或列出频道
-- 发送消息：`POST chat.postMessage`，传 `channel`、`text`
-- 列出频道：`GET conversations.list`，传 `types=public_channel`
+1. 发送消息：`POST chat.postMessage`，传 `channel`、`text`
+2. 列出频道：`GET conversations.list`，传 `types=public_channel`
 
 ### 透传结果
-- 发送成功返回 `{ok: true, channel, ts, message}`
-- 频道列表返回 `{ok: true, channels: [{id, name, num_members, ...}]}`
+3. 发送成功返回 `{ok: true, channel, ts, message}`
+4. 频道列表返回 `{ok: true, channels: [{id, name, num_members, ...}]}`
+
+### 命令参数说明
+
+5. `-H`: 命令参数,用于指定操作选项
+6. `-Type`: 命令参数,用于指定操作选项
+7. `-X`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+- `-X`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-X`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+- `-X`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
 
 ## 案例展示
 

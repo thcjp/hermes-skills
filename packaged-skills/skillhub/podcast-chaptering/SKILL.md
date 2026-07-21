@@ -286,10 +286,10 @@ async def batch_process(
 ### 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
-- **操作系统**: Windows / macOS / Linux
-- **Python**: 3.9 及以上
-- **网络**: AI 功能需访问 OpenAI API
+1. **Agent 平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+2. **操作系统**: Windows / macOS / Linux
+3. **Python**: 3.9 及以上
+4. **网络**: AI 功能需访问 OpenAI API
 
 ### 第三方依赖
 
@@ -302,14 +302,14 @@ async def batch_process(
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
-- AI 智能章节功能需配置 `OPENAI_API_KEY`
-- API 服务化建议配置鉴权 Token 保护接口
-- 企业部署建议通过密钥管理服务统一托管
-- 批量处理建议监控 API 配额用量
+5. AI 智能章节功能需配置 `OPENAI_API_KEY`
+6. API 服务化建议配置鉴权 Token 保护接口
+7. 企业部署建议通过密钥管理服务统一托管
+8. 批量处理建议监控 API 配额用量
 
 ### 可用性分类
-- **分类**: MD+EXEC()
-- **说明**: 基于Markdown的AI Skill,。专业版支持批量处理、社媒切片生成、多格式输出与 API 集成,适合企业级播客内容生产流水线。
+9. **分类**: MD+EXEC()
+10. **说明**: 基于Markdown的AI Skill,。专业版支持批量处理、社媒切片生成、多格式输出与 API 集成,适合企业级播客内容生产流水线。
 
 
 **API Key配置方式**:
@@ -317,6 +317,14 @@ async def batch_process(
 export API_KEY="your_api_key_here"
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+
+### 命令参数说明
+
+11. `-config`: 命令参数,用于指定操作选项
+12. `--host`: 命令参数,用于指定操作选项
+13. `--port`: 命令参数,用于指定操作选项
+14. `-captions`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

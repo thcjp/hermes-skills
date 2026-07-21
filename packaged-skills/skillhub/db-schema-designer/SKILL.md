@@ -63,7 +63,6 @@ tools:
 | 全表扫描 | EXPLAIN输出 | 建立合适索引或分区 |
 
 ### Schema版本管理
-
 ```bash
 # 初始化版本库
 schema-designer init --db data/flexible.db
@@ -84,6 +83,7 @@ schema-designer rollback --to v1.2.0 --backup-dir data/backups/
 - 灰度发布:按比例逐步应用变更,降低风险
 - 变更审计:记录操作人、时间、影响范围
 
+**处理**: 按照skill规范执行Schema版本管理操作,遵循单一意图原则。
 ### 自定义抽取器
 
 支持通过模板定义字段抽取逻辑,可集成LLM实现智能提取:
@@ -109,7 +109,6 @@ def extract_with_llm(raw_content: str, schema: dict) -> dict:
 ```
 
 ### 团队协作模式
-
 | 角色 | 权限 | 典型操作 |
 | --- | --- | --- |
 | Owner | 全部权限 | 审批变更、管理成员 |
@@ -210,6 +209,20 @@ schema-designer baseline --workload scripts/workload.yaml
 # 归档测试数据
 schema-designer archive --source manual --content "测试数据" --extractor extract_policy
 ```
+
+### 命令参数说明
+
+1. `--template`: 命令参数,用于指定操作选项
+2. `--strategy`: 命令参数,用于指定操作选项
+3. `--target`: 命令参数,用于指定操作选项
+4. `--backup-dir`: 命令参数,用于指定操作选项
+5. `--source`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--engine`: 命令参数,用于指定操作选项
+- `-knowledge-base`: 命令参数,用于指定操作选项
+- `--workload`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

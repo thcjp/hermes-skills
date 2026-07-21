@@ -67,7 +67,29 @@ tools:
 
 ### 能力覆盖范围
 
-本skill还覆盖以下能力场景: This、skill、fits、job、application、automation、purpose、gives、agent、authority、submit、Use、需要提升效率、自动化流程、批量处理、工作流优化时使用、不适用于需要人工、创意判断的任务。这些能力在上述核心功能中均有对应处理逻辑。
+本skill还覆盖以下能力场景: This、fits、application、automation、purpose、gives、agent、authority、submit、需要提升效率、自动化流程、批量处理、工作流优化时使用、不适用于需要人工、创意判断的任务。这些能力在上述核心功能中均有对应处理逻辑。
+### 源能力映射
+本skill覆盖源skill的以下能力点:
+
+| 源能力点 | 支持状态 | 实现方式 |
+|:---------|:---------|:---------|
+| Smart Matching | 支持 | 通过核心功能实现对应能力 |
+| Skills and certifications | 支持 | 通过核心功能实现对应能力 |
+| Education and experience | 支持 | 通过核心功能实现对应能力 |
+| Uses official APIs when available | 支持 | 通过核心功能实现对应能力 |
+| Personal information | 支持 | 通过核心功能实现对应能力 |
+| Calculates compatibility scores | 支持 | 通过核心功能实现对应能力 |
+| Filters jobs based on minimum match threshold | 支持 | 通过核心功能实现对应能力 |
+
+**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
+**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
+### 领域术语
+本skill涉及以下领域术语: `screening`, `documents`, `tracks`, `genuine`, `hiring`, `consider`, `overview`, `wellfound`, `letter`, `resources`, `handles`, `templates`, `define`, `falls`, `safety`
+
+**输入**: 用户提供领域术语所需的指令和必要参数。
+**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
+**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -109,6 +131,14 @@ python job_search_apply.py \
   --no-dry-run \
   --require-confirmation
 ```
+
+### 命令参数说明
+
+1. `--require-confirmation`: 命令参数,用于指定操作选项
+2. `--no-dry-run`: 命令参数,用于指定操作选项
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+
 
 ## 输入格式
 
