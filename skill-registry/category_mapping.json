@@ -1,0 +1,62 @@
+{
+  "mapping": {
+    "Agents": 11040,
+    "Automation": 11041,
+    "Communication": 11039,
+    "Creative": 11043,
+    "Development": 11040,
+    "Finance": 11046,
+    "Integrations": 11039,
+    "Knowledge": 11044,
+    "Lifestyle": 11039,
+    "Operations": 11045,
+    "Other": 11048,
+    "Productivity": 11039,
+    "Research": 11044,
+    "Security": 11047
+  },
+  "skillhub_categories": {
+    "11039": "通用办公",
+    "11040": "研发工具",
+    "11041": "系统运维",
+    "11042": "质量测试",
+    "11043": "需求设计",
+    "11044": "信息检索",
+    "11045": "项目管理",
+    "11046": "数据分析",
+    "11047": "安全合规",
+    "11048": "其他"
+  },
+  "differentiated_counts": {
+    "Agents": 73,
+    "Automation": 106,
+    "Communication": 76,
+    "Creative": 130,
+    "Development": 100,
+    "Finance": 24,
+    "Integrations": 192,
+    "Knowledge": 64,
+    "Lifestyle": 36,
+    "Operations": 28,
+    "Other": 180,
+    "Productivity": 78,
+    "Research": 116,
+    "Security": 48
+  },
+  "packaged_counts": {
+    "Agents": 8,
+    "Automation": 2,
+    "Communication": 68,
+    "Creative": 43,
+    "Development": 1,
+    "Finance": 2,
+    "Integrations": 41,
+    "Knowledge": 0,
+    "Lifestyle": 1,
+    "Operations": 0,
+    "Other": 845,
+    "Productivity": 2,
+    "Research": 0,
+    "Security": 1
+  }
+}

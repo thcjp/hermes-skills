@@ -1,7 +1,7 @@
----
+﻿---
 slug: baidu-netdisk-skills-free
 name: baidu-netdisk-skills-free
-version: "2.0.0-free"
+version: "2.0.0"
 displayName: 百度网盘 Free
 summary: 百度网盘基础文件管理，限 /apps/bdpan/，支持查看列表与上传下载。
 license: MIT

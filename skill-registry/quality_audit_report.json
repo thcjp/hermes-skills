@@ -1,0 +1,856 @@
+{
+  "timestamp": "2026-07-22",
+  "total": 2268,
+  "clean": 2181,
+  "problematic": 87,
+  "issue_counts": {
+    "MISSING_SECTION_使用流程": 1,
+    "TODO_PLACEHOLDER": 83,
+    "TEST_DEMO_SKILL": 3
+  },
+  "packaged_count": 1017,
+  "differentiated_count": 1251,
+  "problematic_skills": [
+    {
+      "slug": "alibaba-quark-scan-free",
+      "name": "alibaba-quark-scan-free",
+      "version": "1.0.0",
+      "size": 9951,
+      "issues": [
+        "MISSING_SECTION_使用流程"
+      ]
+    },
+    {
+      "slug": "automation-recipe-book",
+      "name": "automation-recipe-book",
+      "version": "1.0.0",
+      "size": 16080,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "aws-wechat-article-writing",
+      "name": "aws-wechat-article-writing",
+      "version": "1.0.0",
+      "size": 25176,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "feishu-doc-write",
+      "name": "feishu-doc-write",
+      "version": "1.0.0",
+      "size": 9548,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "figma-design-paid",
+      "name": "figma-design-paid",
+      "version": "1.0.0",
+      "size": 16715,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "frontend-design",
+      "name": "frontend-design",
+      "version": "1.1.0",
+      "size": 7138,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "git-workflows",
+      "name": "git-workflows",
+      "version": "1.0.0",
+      "size": 7120,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "javascript-skills",
+      "name": "javascript-skills",
+      "version": "1.0.2",
+      "size": 7771,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "learn-cog",
+      "name": "learn-cog",
+      "version": "1.0.0",
+      "size": 11221,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "linear",
+      "name": "linear",
+      "version": "1.0.0",
+      "size": 7584,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "linear-api",
+      "name": "linear-api",
+      "version": "1.0.0",
+      "size": 13364,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "memory-compress",
+      "name": "memory-compress",
+      "version": "1.0.0",
+      "size": 14311,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "memory-distiller",
+      "name": "memory-distiller",
+      "version": "1.0.0",
+      "size": 19774,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "multi-agent-dev",
+      "name": "multi-agent-dev",
+      "version": "1.0.0",
+      "size": 16789,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "multi-agent-dev-free",
+      "name": "multi-agent-dev-free",
+      "version": "1.0.0",
+      "size": 10952,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "neural-memory-enhanced",
+      "name": "neural-memory-enhanced",
+      "version": "1.0.0",
+      "size": 19592,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "neural-memory-enhanced-free",
+      "name": "neural-memory-enhanced-free",
+      "version": "1.0.0",
+      "size": 10301,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "notion",
+      "name": "notion",
+      "version": "1.0.0",
+      "size": 5825,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "powerpoint-pptx",
+      "name": "powerpoint-pptx",
+      "version": "1.0.1",
+      "size": 7153,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "powerpoint-pptx-1-0-1",
+      "name": "powerpoint-pptx-1-0-1",
+      "version": "1.0.0",
+      "size": 7198,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "powerpoint-pptx-cn",
+      "name": "powerpoint-pptx-cn",
+      "version": "1.0.0",
+      "size": 7593,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "solo-dev-companion",
+      "name": "solo-dev-companion",
+      "version": "1.0.0",
+      "size": 17765,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "test",
+      "name": "test",
+      "version": "0.0.1",
+      "size": 6940,
+      "issues": [
+        "TEST_DEMO_SKILL"
+      ]
+    },
+    {
+      "slug": "test-wa",
+      "name": "test-wa",
+      "version": "1.0.0",
+      "size": 13214,
+      "issues": [
+        "TEST_DEMO_SKILL"
+      ]
+    },
+    {
+      "slug": "test-wa-free",
+      "name": "test-wa-free",
+      "version": "1.0.0",
+      "size": 9246,
+      "issues": [
+        "TEST_DEMO_SKILL"
+      ]
+    },
+    {
+      "slug": "ui-audit",
+      "name": "ui-audit",
+      "version": "1.0.1",
+      "size": 17267,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "ui-audit-free",
+      "name": "ui-audit-free",
+      "version": "1.0.1",
+      "size": 8465,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "viral-prophet",
+      "name": "viral-prophet",
+      "version": "1.1.0",
+      "size": 34048,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "wechat-article-writer",
+      "name": "wechat-article-writer",
+      "version": "1.0.0",
+      "size": 15780,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ]
+    },
+    {
+      "slug": "context-compressor-free",
+      "name": "context-compressor-free",
+      "version": "1.0.0",
+      "size": 14385,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Agents"
+    },
+    {
+      "slug": "context-compressor-pro",
+      "name": "context-compressor-pro",
+      "version": "1.0.0",
+      "size": 33788,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Agents"
+    },
+    {
+      "slug": "focus-flow-optimizer-free",
+      "name": "focus-flow-optimizer-free",
+      "version": "1.0.0",
+      "size": 17025,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Agents"
+    },
+    {
+      "slug": "focus-flow-optimizer-pro",
+      "name": "focus-flow-optimizer-pro",
+      "version": "1.0.0",
+      "size": 38852,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Agents"
+    },
+    {
+      "slug": "memory-distiller-v2",
+      "name": "memory-distiller-v2",
+      "version": "1.0.0",
+      "size": 17329,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Agents"
+    },
+    {
+      "slug": "multi-agent-dev-v2",
+      "name": "multi-agent-dev-v2",
+      "version": "1.0.0",
+      "size": 16694,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Agents"
+    },
+    {
+      "slug": "neural-context-engine-free",
+      "name": "neural-context-engine-free",
+      "version": "1.0.0",
+      "size": 17614,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Agents"
+    },
+    {
+      "slug": "neural-context-engine-pro",
+      "name": "neural-context-engine-pro",
+      "version": "1.0.0",
+      "size": 33770,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Agents"
+    },
+    {
+      "slug": "neurocache-pro",
+      "name": "neurocache-pro",
+      "version": "2.0.0",
+      "size": 14324,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Agents"
+    },
+    {
+      "slug": "productivity-boost",
+      "name": "productivity-boost",
+      "version": "2.0.0",
+      "size": 12800,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Agents"
+    },
+    {
+      "slug": "swarm-coder-free",
+      "name": "swarm-coder-free",
+      "version": "1.0.0",
+      "size": 18363,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Agents"
+    },
+    {
+      "slug": "swarm-coder-pro",
+      "name": "swarm-coder-pro",
+      "version": "1.0.0",
+      "size": 36268,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Agents"
+    },
+    {
+      "slug": "automation-recipe-book-pro",
+      "name": "automation-recipe-book-pro",
+      "version": "1.0.0",
+      "size": 21898,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Automation"
+    },
+    {
+      "slug": "linear-flow-cli-free",
+      "name": "linear-flow-cli-free",
+      "version": "1.0.0",
+      "size": 15369,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Automation"
+    },
+    {
+      "slug": "linear-flow-cli-pro",
+      "name": "linear-flow-cli-pro",
+      "version": "1.0.0",
+      "size": 35526,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Automation"
+    },
+    {
+      "slug": "linear-pilot-ai-free",
+      "name": "linear-pilot-ai-free",
+      "version": "1.0.0",
+      "size": 15566,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Automation"
+    },
+    {
+      "slug": "linear-pilot-ai-pro",
+      "name": "linear-pilot-ai-pro",
+      "version": "1.0.0",
+      "size": 37373,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Automation"
+    },
+    {
+      "slug": "linear-workflow-bot",
+      "name": "linear-workflow-bot",
+      "version": "1.0.0",
+      "size": 14236,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Automation"
+    },
+    {
+      "slug": "notes-sync-cli-free",
+      "name": "notes-sync-cli-free",
+      "version": "1.0.0",
+      "size": 13609,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Automation"
+    },
+    {
+      "slug": "notes-sync-cli-pro",
+      "name": "notes-sync-cli-pro",
+      "version": "1.0.0",
+      "size": 29064,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Automation"
+    },
+    {
+      "slug": "solo-dev-companion-free",
+      "name": "solo-dev-companion-free",
+      "version": "1.0.0",
+      "size": 11549,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Automation"
+    },
+    {
+      "slug": "solo-dev-companion-pro",
+      "name": "solo-dev-companion-pro",
+      "version": "1.0.0",
+      "size": 19177,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Automation"
+    },
+    {
+      "slug": "telegram-agent-comm-free",
+      "name": "telegram-agent-comm-free",
+      "version": "1.0.0",
+      "size": 11537,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Communication"
+    },
+    {
+      "slug": "figma-design-tool-pro",
+      "name": "figma-design-tool-pro",
+      "version": "1.0.0",
+      "size": 15714,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Creative"
+    },
+    {
+      "slug": "html-coder-tool-free",
+      "name": "html-coder-tool-free",
+      "version": "1.0.0",
+      "size": 12837,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Creative"
+    },
+    {
+      "slug": "tailwindcss-toolkit-free",
+      "name": "tailwindcss-toolkit-free",
+      "version": "1.0.0",
+      "size": 13621,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Creative"
+    },
+    {
+      "slug": "ui-design-toolkit-free",
+      "name": "ui-design-toolkit-free",
+      "version": "1.0.0",
+      "size": 15690,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Creative"
+    },
+    {
+      "slug": "ux-design-tool-free",
+      "name": "ux-design-tool-free",
+      "version": "1.0.0",
+      "size": 15117,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Creative"
+    },
+    {
+      "slug": "wechat-article-writer-pro",
+      "name": "wechat-article-writer-pro",
+      "version": "1.0.0",
+      "size": 16335,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Creative"
+    },
+    {
+      "slug": "git-toolkit-pro",
+      "name": "git-toolkit-pro",
+      "version": "1.0.0",
+      "size": 11746,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Development"
+    },
+    {
+      "slug": "git-workflows-tool-free",
+      "name": "git-workflows-tool-free",
+      "version": "1.0.0",
+      "size": 12764,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Development"
+    },
+    {
+      "slug": "git-workflows-tool-pro",
+      "name": "git-workflows-tool-pro",
+      "version": "1.0.0",
+      "size": 14006,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Development"
+    },
+    {
+      "slug": "ui-component-tool-pro",
+      "name": "ui-component-tool-pro",
+      "version": "1.0.0",
+      "size": 15197,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Development"
+    },
+    {
+      "slug": "vue-component-gen-tool-free",
+      "name": "vue-component-gen-tool-free",
+      "version": "1.0.0",
+      "size": 11501,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Development"
+    },
+    {
+      "slug": "vue-component-gen-tool-pro",
+      "name": "vue-component-gen-tool-pro",
+      "version": "1.0.0",
+      "size": 16120,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Development"
+    },
+    {
+      "slug": "api-scaffold-gen-pro",
+      "name": "api-scaffold-gen-pro",
+      "version": "1.0.0",
+      "size": 25020,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Integrations"
+    },
+    {
+      "slug": "github-api-toolkit-pro",
+      "name": "github-api-toolkit-pro",
+      "version": "1.0.0",
+      "size": 20082,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Integrations"
+    },
+    {
+      "slug": "notion-cli-tool-free",
+      "name": "notion-cli-tool-free",
+      "version": "1.0.0",
+      "size": 13397,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Integrations"
+    },
+    {
+      "slug": "obsidian-cli-tool-free",
+      "name": "obsidian-cli-tool-free",
+      "version": "1.0.0",
+      "size": 11785,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Integrations"
+    },
+    {
+      "slug": "obsidian-cli-tool-pro",
+      "name": "obsidian-cli-tool-pro",
+      "version": "1.0.0",
+      "size": 17576,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Integrations"
+    },
+    {
+      "slug": "secure-api-toolkit-pro",
+      "name": "secure-api-toolkit-pro",
+      "version": "1.0.0",
+      "size": 15600,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Integrations"
+    },
+    {
+      "slug": "web-notepad-free",
+      "name": "web-notepad-free",
+      "version": "1.0.0",
+      "size": 11812,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Integrations"
+    },
+    {
+      "slug": "presentation-gen-tool-pro",
+      "name": "presentation-gen-tool-pro",
+      "version": "1.0.0",
+      "size": 14267,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Knowledge"
+    },
+    {
+      "slug": "word-docx-tool-pro",
+      "name": "word-docx-tool-pro",
+      "version": "1.0.0",
+      "size": 16444,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Knowledge"
+    },
+    {
+      "slug": "doc-toolkit-pro",
+      "name": "doc-toolkit-pro",
+      "version": "1.0.0",
+      "size": 16124,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Other"
+    },
+    {
+      "slug": "port-transfer-tool-free",
+      "name": "port-transfer-tool-free",
+      "version": "1.0.0",
+      "size": 8922,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Other"
+    },
+    {
+      "slug": "shadcn-ui-tool-free",
+      "name": "shadcn-ui-tool-free",
+      "version": "1.0.0",
+      "size": 13740,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Other"
+    },
+    {
+      "slug": "meeting-note-tool-free",
+      "name": "meeting-note-tool-free",
+      "version": "1.0.0",
+      "size": 11620,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Productivity"
+    },
+    {
+      "slug": "meeting-note-tool-pro",
+      "name": "meeting-note-tool-pro",
+      "version": "1.0.0",
+      "size": 13359,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Productivity"
+    },
+    {
+      "slug": "note-taker-tool-free",
+      "name": "note-taker-tool-free",
+      "version": "1.0.0",
+      "size": 11317,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Productivity"
+    },
+    {
+      "slug": "note-taker-tool-pro",
+      "name": "note-taker-tool-pro",
+      "version": "1.0.0",
+      "size": 13101,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Productivity"
+    },
+    {
+      "slug": "smart-weekly-report-tool-free",
+      "name": "smart-weekly-report-tool-free",
+      "version": "1.0.0",
+      "size": 11711,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Productivity"
+    },
+    {
+      "slug": "smart-weekly-report-tool-pro",
+      "name": "smart-weekly-report-tool-pro",
+      "version": "1.0.0",
+      "size": 13651,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Productivity"
+    },
+    {
+      "slug": "browser-cli-tool-free",
+      "name": "browser-cli-tool-free",
+      "version": "1.0.0",
+      "size": 11199,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Research"
+    },
+    {
+      "slug": "file-browser-tool-free",
+      "name": "file-browser-tool-free",
+      "version": "1.0.0",
+      "size": 15951,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Research"
+    },
+    {
+      "slug": "solo-validate-tool-free",
+      "name": "solo-validate-tool-free",
+      "version": "1.0.0",
+      "size": 16988,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Research"
+    },
+    {
+      "slug": "solo-validate-tool-pro",
+      "name": "solo-validate-tool-pro",
+      "version": "1.0.0",
+      "size": 20000,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Research"
+    },
+    {
+      "slug": "amap-jsapi-tool-free",
+      "name": "amap-jsapi-tool-free",
+      "version": "1.0.0",
+      "size": 17892,
+      "issues": [
+        "TODO_PLACEHOLDER"
+      ],
+      "category": "Security"
+    }
+  ]
+}

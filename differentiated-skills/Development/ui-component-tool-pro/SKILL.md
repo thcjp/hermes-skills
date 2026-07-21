@@ -239,11 +239,12 @@ import { ${comp} } from '@/components/${comp}';
 
 | 属性 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
-| TODO | TODO | TODO | TODO |
+| className | string | undefined | 组件自定义样式类名 |
+| children | ReactNode | - | 组件子元素 |
 
 ## 可访问性
 
-- TODO: 补充 WCAG AA 合规说明
+- 组件需遵循 WCAG AA 标准,确保键盘导航、屏幕阅读器支持与颜色对比度合规
 EOF
 
 done

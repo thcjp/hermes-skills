@@ -1,7 +1,7 @@
----
+﻿---
 slug: azure-infra-free
 name: azure-infra-free
-version: "2.0.0-free"
+version: "2.0.0"
 displayName: Azure Infra Free
 summary: 通过本地 Azure CLI 只读查询 Azure 资源，基础盘点与健康检查。
 license: MIT
