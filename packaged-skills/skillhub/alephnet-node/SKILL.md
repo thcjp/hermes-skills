@@ -184,9 +184,10 @@ alephnet-node coherence.createEdge --fromClaimId "claim_1" --toClaimId "claim_2"
 
 ## 异常处理
 
+
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
-| 质押层级不足 | Neophyte层级尝试执行 `coherence.createSynthesis`(需Magus) | 通过 `alephnet-node wallet` 查询余额,质押至1000ℵ升级Magus层级后重试 |
+| 质押层级不足 | Neophyte层级尝试执行 `coherence.createSynthesis`(需Magus) | 通过 `alephnet-node wallet` 查询余额,质押至1000ℵ升级Magus层级后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | 好友请求重复 | `friends.add` 目标userId已有pending请求 | 调用 `friends.requests` 查看待处理列表,等待对方响应或撤回后重新发送 |
 | 验证证据格式错误 | `coherence.verifyClaim` 的evidence非合法JSON | 检查evidence参数JSON结构,确保为 `{"method": "...", "steps": N}` 格式后重新提交 |
 | HQE记忆重建失败 | DFT投影数据损坏或语义向量维度不匹配 | 检查HQE模块16维语义轴对齐,重新执行DFT投影;若跨节点同步中断,触发network模块重新同步 |

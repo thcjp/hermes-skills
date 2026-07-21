@@ -180,13 +180,14 @@ python3 scripts/generate_image.py \
 
 ## 异常处理
 
+
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
 |---------|---------|---------|---------|
 | missing_api_key | `IMAGE_GEN_API_KEY missing` | 环境变量未设置 | 不调 API,引导用户申请并配置 Key |
-| 401 unauthorized | `{"error":"invalid_api_key"}` | Key 失效或格式错误 | 不重试,引导用户重新获取 Key |
-| 429 rate_limited | `{"error":"rate_limited"}` | 短时间请求过多 | 等待 2 秒后重试,最多 3 次 |
-| 400 unsupported_model | `{"error":"model_not_found"}` | 模型 ID 拼写错误 | 不重试,核对可用模型列表 |
-| 5xx server_error | HTTP 500/502/503 | Gemini Image 服务端错误 | 等待后重试,最多 2 次 |
+| 401 unauthorized | `{"error":"invalid_api_key"}` | Key 失效或格式错误 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令,引导用户重新获取 Key |
+| 429 rate_limited | `{"error":"rate_limited"}` | 短时间请求过多 | 等待 2 秒后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令,最多 3 次 |
+| 400 unsupported_model | `{"error":"model_not_found"}` | 模型 ID 拼写错误 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令,核对可用模型列表 |
+| 5xx server_error | HTTP 500/502/503 | Gemini Image 服务端错误 | 等待后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令,最多 2 次 |
 
 ## 常见问题
 

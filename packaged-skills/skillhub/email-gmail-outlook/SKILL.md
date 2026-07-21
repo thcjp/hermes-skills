@@ -59,6 +59,28 @@ go install github.com/porteden/cli/cmd/porteden@latest
 - **修改与删除**:`modify` 支持 `--mark-read`、`--mark-unread`、`--add-labels`、`--remove-labels`;`delete` 删除邮件
 - **自动分页**:`--all` 自动拉取所有分页,通过 `hasMore` 与 `nextPageToken` 控制
 - **JSON 紧凑输出**:`-jc` 针对AI场景优化,降低上下文 token 占用
+### 多账号 profile 隔离
+
+执行多账号 profile 隔离操作,处理用户输入并返回结果。
+
+**输入**: 用户提供多账号 profile 隔离所需的参数和指令。
+
+**输出**: 返回多账号 profile 隔离的处理结果。
+### 安全凭证存储
+
+执行安全凭证存储操作,处理用户输入并返回结果。
+
+**输入**: 用户提供安全凭证存储所需的参数和指令。
+
+**输出**: 返回安全凭证存储的处理结果。
+### 邮件列表与筛选
+
+执行邮件列表与筛选操作,处理用户输入并返回结果。
+
+**输入**: 用户提供邮件列表与筛选所需的参数和指令。
+
+**输出**: 返回邮件列表与筛选的处理结果。
+
 
 ## 安全规范
 
@@ -198,6 +220,7 @@ porteden email messages --profile personal -q "Q3 财报" --week -jc
 
 ## 异常处理
 
+
 ### 1. porteden CLI 未安装
 
 - **现象**:执行 `porteden` 报 `command not found`
@@ -221,7 +244,7 @@ porteden email messages --profile personal -q "Q3 财报" --week -jc
 ### 5. API 限流(429)
 
 - **现象**:批量操作时返回 429 Too Many Requests
-- **处理**:指数退避重试,单次批量不超过 50 封;对 `--all` 自动分页设置合理间隔
+- **处理**:指数退避执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令,单次批量不超过 50 封;对 `--all` 自动分页设置合理间隔
 
 ### 6. keyring 不可用
 

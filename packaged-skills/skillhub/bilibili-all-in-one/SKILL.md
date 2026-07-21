@@ -52,6 +52,28 @@ tools:
 - **视频投稿 (publisher)**: 视频上传、定时发布、草稿编辑与管理,需要 `SESSDATA` + `bili_jct` 凭据,通过 `member.bilibili.com` 与 `upos-sz-upcdnbda2.bilivideo.com` CDN完成
 - **统一调用接口**: 所有模块通过 `app.execute(module, action, **params)` 异步调用,返回 `{"success": bool, ...}` 统一JSON结构,CLI支持 `python main.py <module> <action> <params_json>`
 - **凭据三态管理**: 环境变量(`BILIBILI_SESSDATA`/`BILIBILI_BILI_JCT`/`BILIBILI_BUVID3`)、JSON文件、直接参数三种注入方式;默认内存存储,`BILIBILI_PERSIST=1` 启用0600权限文件持久化,支持运行时 `auth.persist` 切换与 `auth.clear_persisted()` 清理
+### 热门监控 (hot_monitor)
+
+执行热门监控 (hot_monitor)操作,处理用户输入并返回结果。
+
+**输入**: 用户提供热门监控 (hot_monitor)所需的参数和指令。
+
+**输出**: 返回热门监控 (hot_monitor)的处理结果。
+### 视频下载 (downloader)
+
+执行视频下载 (downloader)操作,处理用户输入并返回结果。
+
+**输入**: 用户提供视频下载 (downloader)所需的参数和指令。
+
+**输出**: 返回视频下载 (downloader)的处理结果。
+### 数据追踪 (watcher)
+
+执行数据追踪 (watcher)操作,处理用户输入并返回结果。
+
+**输入**: 用户提供数据追踪 (watcher)所需的参数和指令。
+
+**输出**: 返回数据追踪 (watcher)的处理结果。
+
 
 ## 适用场景
 
@@ -183,6 +205,7 @@ playlist = await app.execute("player", "get_playlist", url="BV1xx411c7mD")
 
 ## 异常处理
 
+
 ### 凭据无效或过期
 现象: Publisher操作返回 `{"success": false, "message": "login required"}`;Downloader返回1080p+清晰度不可用。
 原因: `SESSDATA`/`bili_jct` 过期或被B站风控,`buvid3` 缺失导致WBI签名失败。
@@ -211,7 +234,7 @@ playlist = await app.execute("player", "get_playlist", url="BV1xx411c7mD")
 ### 投稿上传中断
 现象: `publisher` 上传过程中断,文件未完整到达CDN。
 原因: 大文件分片上传网络抖动,`upos-sz-upcdnbda2.bilivideo.com` 连接超时。
-处理: 检查上行带宽,单文件建议小于8GB;启用断点续传需在代码层捕获异常后重试分片;投稿前先用 `get_info` 确认视频元数据完整。
+处理: 检查上行带宽,单文件建议小于8GB;启用断点续传需在代码层捕获异常后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令分片;投稿前先用 `get_info` 确认视频元数据完整。
 
 ### 字幕获取为空
 现象: `subtitle` 模块返回空列表。

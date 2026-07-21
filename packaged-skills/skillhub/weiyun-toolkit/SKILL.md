@@ -36,6 +36,28 @@ tools:
 | `weiyun.move_dir` | 移动文件夹 | src_pdir_key、dst_pdir_key |
 | `weiyun.move_file` | 移动文件 | file_id、src_pdir_key、dst_pdir_key |
 | `check_skill_update` | 版本检查 | version |
+### weiyun.list
+
+执行weiyun.list操作,处理用户输入并返回结果。
+
+**输入**: 用户提供weiyun.list所需的参数和指令。
+
+**输出**: 返回weiyun.list的处理结果。
+### weiyun.list_by_category
+
+执行weiyun.list_by_category操作,处理用户输入并返回结果。
+
+**输入**: 用户提供weiyun.list_by_category所需的参数和指令。
+
+**输出**: 返回weiyun.list_by_category的处理结果。
+### weiyun.download
+
+执行weiyun.download操作,处理用户输入并返回结果。
+
+**输入**: 用户提供weiyun.download所需的参数和指令。
+
+**输出**: 返回weiyun.download的处理结果。
+
 
 ## 适用场景
 
@@ -108,11 +130,12 @@ tools:
 
 ## 异常处理
 
+
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 依赖说明
 

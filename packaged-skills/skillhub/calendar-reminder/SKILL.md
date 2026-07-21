@@ -198,17 +198,18 @@ skill-platform cron list
 
 ## 异常处理
 
+
 ### 1. owa_calendar.py 调用失败
 
 **原因**: `owa-outlook` skill 未安装、Outlook 凭据过期、或网络无法访问 Exchange 服务。
 
-**处理**: 先执行 `python3 -c "import owa_calendar; owa_calendar.list_events()"` 验证 skill 可用;若凭据过期,重新运行 owa-outlook 的登录流程刷新 token;若网络问题,检查代理配置后重试。脚本应在调用失败时跳过当日扫描并发飞书告警"日历扫描失败,请检查 owa-outlook"。
+**处理**: 先执行 `python3 -c "import owa_calendar; owa_calendar.list_events()"` 验证 skill 可用;若凭据过期,重新运行 owa-outlook 的登录流程刷新 token;若网络问题,检查代理配置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令。脚本应在调用失败时跳过当日扫描并发飞书告警"日历扫描失败,请检查 owa-outlook"。
 
 ### 2. 飞书消息推送失败(HTTP 4xx)
 
 **原因**: open_id 格式错误、机器人未加入目标群、或 app_access_token 过期。
 
-**处理**: 检查 target 是否以 `user:` 或 `chat:` 前缀开头;若是群提醒,确认机器人已被群管理员加入;若返回 99991663 等 token 错误码,重新获取 tenant_access_token。建议脚本对飞书 API 失败做 3 次指数退避重试。
+**处理**: 检查 target 是否以 `user:` 或 `chat:` 前缀开头;若是群提醒,确认机器人已被群管理员加入;若返回 99991663 等 token 错误码,重新获取 tenant_access_token。建议脚本对飞书 API 失败做 3 次指数退避执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令。
 
 ### 3. zoneinfo 时区数据缺失
 

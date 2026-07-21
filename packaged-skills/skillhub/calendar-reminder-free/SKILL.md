@@ -135,17 +135,18 @@ python3 ~/.skill-platform/workspace/skills/calendar-reminder/calendar_reminder.p
 
 ## 异常处理
 
+
 ### 1. owa_calendar.py 调用失败
 
 **原因**: `owa-outlook` skill 未安装或 Outlook 凭据过期。
 
-**处理**: 执行 `python3 -c "import owa_calendar; owa_calendar.list_events()"` 验证 skill 可用;若凭据过期,重新运行 owa-outlook 登录流程刷新 token;网络问题检查代理配置后重试。
+**处理**: 执行 `python3 -c "import owa_calendar; owa_calendar.list_events()"` 验证 skill 可用;若凭据过期,重新运行 owa-outlook 登录流程刷新 token;网络问题检查代理配置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令。
 
 ### 2. 飞书消息推送失败
 
 **原因**: open_id 格式错误或机器人 token 过期。
 
-**处理**: 检查 target 是否以 `user:` 前缀开头;若返回 token 错误码,重新获取 tenant_access_token;建议对飞书 API 失败做 3 次重试。
+**处理**: 检查 target 是否以 `user:` 前缀开头;若返回 token 错误码,重新获取 tenant_access_token;建议对飞书 API 失败做 3 次执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令。
 
 ### 3. zoneinfo 模块导入失败
 

@@ -47,6 +47,28 @@ tools:
 - **播放信息 (player)**: `play` 获取完整播放信息、`get_playurl` 获取标准清晰度直链、`get_danmaku` 获取弹幕(支持滚动/底部固定/顶部固定三种模式)、`get_playlist` 获取分P列表
 - **统一调用接口**: 所有模块通过 `app.execute(module, action, **params)` 异步调用,返回 `{"success": bool, ...}` 统一JSON结构,CLI支持 `python main.py <module> <action> <params_json>`
 - **无需凭据**: 全部功能基于B站公共API,无需 `SESSDATA`/`bili_jct`/`buvid3` 等会话Cookie
+### 热门监控 (hot_monitor)
+
+执行热门监控 (hot_monitor)操作,处理用户输入并返回结果。
+
+**输入**: 用户提供热门监控 (hot_monitor)所需的参数和指令。
+
+**输出**: 返回热门监控 (hot_monitor)的处理结果。
+### 视频下载 (downloader)
+
+执行视频下载 (downloader)操作,处理用户输入并返回结果。
+
+**输入**: 用户提供视频下载 (downloader)所需的参数和指令。
+
+**输出**: 返回视频下载 (downloader)的处理结果。
+### 数据追踪 (watcher)
+
+执行数据追踪 (watcher)操作,处理用户输入并返回结果。
+
+**输入**: 用户提供数据追踪 (watcher)所需的参数和指令。
+
+**输出**: 返回数据追踪 (watcher)的处理结果。
+
 
 ## 适用场景
 

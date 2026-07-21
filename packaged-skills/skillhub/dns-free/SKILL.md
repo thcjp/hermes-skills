@@ -54,6 +54,28 @@ tools:
 - **DMARC基础配置**: 配置 `_dmarc.example.com TXT "v=DMARC1; p=quarantine; rua=mailto:dmarc@example.com"`
 - **dig基础诊断**: 使用 `dig example.com`、`dig TXT example.com`、`dig MX example.com` 查询记录
 - **www规范化**: apex与www需同时配置或互转,HTTPS重定向需双域名证书
+### TTL迁移提示
+
+执行TTL迁移提示操作,处理用户输入并返回结果。
+
+**输入**: 用户提供TTL迁移提示所需的参数和指令。
+
+**输出**: 返回TTL迁移提示的处理结果。
+### SPF基础检查
+
+执行SPF基础检查操作,处理用户输入并返回结果。
+
+**输入**: 用户提供SPF基础检查所需的参数和指令。
+
+**输出**: 返回SPF基础检查的处理结果。
+### DMARC基础配置
+
+执行DMARC基础配置操作,处理用户输入并返回结果。
+
+**输入**: 用户提供DMARC基础配置所需的参数和指令。
+
+**输出**: 返回DMARC基础配置的处理结果。
+
 
 ## 适用场景
 

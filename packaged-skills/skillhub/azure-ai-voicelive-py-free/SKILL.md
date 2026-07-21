@@ -46,6 +46,28 @@ tools:
 - 内置 `alloy`、`echo`、`shimmer` 三种基础OpenAI音色,默认音频格式 `pcm16` (24kHz)
 - 监听 `response.audio.delta` 接收base64 PCM音频,`response.audio_transcript.done` 接收完整文字转写
 - 支持服务端VAD (`server_vad`) 自动检测话音起止,默认 `threshold` 0.5、`silence_duration_ms` 500ms
+### 指令解析与执行
+
+解析用户指令,执行核心操作并返回处理结果。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+### 数据处理与转换
+
+处理输入数据,执行转换操作并输出结果。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+### 结果验证与输出
+
+验证处理结果的正确性,格式化输出并返回给用户。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+
 
 ## 适用场景
 
@@ -123,10 +145,11 @@ await conn.input_audio_buffer.append(audio=b64_audio)
 
 ## 异常处理
 
+
 ### WebSocket连接中断
 现象: 抛出 `ConnectionClosed` 异常,带 `code` 与 `reason`。
 原因: 网络抖动、服务端超时、长时间无音频收发。
-处理: 捕获异常后重新调用 `connect()` 建立连接并重新 `session.update`,简单场景可外层 `while True` 重试3次。
+处理: 捕获异常后重新调用 `connect()` 建立连接并重新 `session.update`,简单场景可外层 `while True` 执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令3次。
 
 ### 鉴权失败 (401)
 现象: 事件流收到 `error` 事件,`code` 为 `unauthorized`。

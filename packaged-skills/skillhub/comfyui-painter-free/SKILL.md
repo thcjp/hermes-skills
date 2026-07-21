@@ -197,11 +197,12 @@ result = generate(
 
 ## 异常处理
 
+
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
 |---------|---------|---------|---------|
-| comfyui_not_running | `Connection refused: 127.0.0.1:8188` | ComfyUI 未启动或启动中 | 调用 `mgr.start()` 启动,等待 10 秒后重试 |
+| comfyui_not_running | `Connection refused: 127.0.0.1:8188` | ComfyUI 未启动或启动中 | 调用 `mgr.start()` 启动,等待 10 秒后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | model_alias_not_found | `Unknown model alias: xxx` | config.json 中无此别名 | 列出可用别名（noobv6/sdxlv8/flux）,引导用户选择 |
-| generate_timeout | `ComfyUI generation timeout` | 生成耗时超过 120 秒 | 降低 batch_size 或 steps 后重试 |
+| generate_timeout | `ComfyUI generation timeout` | 生成耗时超过 120 秒 | 降低 batch_size 或 steps 后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | oom_error | `CUDA out of memory` | 显存不足 | 降低分辨率或 batch_size,关闭其他占用显存的进程 |
 | invalid_params | `Invalid parameter: cfg must be > 0` | 参数值非法 | 检查 steps/cfg/width/height 是否在合理范围 |
 

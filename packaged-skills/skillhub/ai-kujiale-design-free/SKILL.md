@@ -208,12 +208,13 @@ node ./scripts/getRenderResult.js --token=$TOKEN --designId=$DESIGN_ID
 
 ## 异常处理
 
+
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
 |---------|---------|---------|---------|
 | missing_token | `.kjlconfig.json` 缺失或无 access_token | 未完成初始化配置 | 引导用户访问 kujiale.com/skills 生成 token 并写入配置 |
 | floorplan_empty | `floorplanInfos` 为空数组 | 户型图获取失败或小区搜不到 | 提示重新选择小区,基础版不支持上传户型图 |
 | layout_pending | `getLayoutResult` 返回 c!=0 | 布局仍在生成 | 每 10 秒轮询,直至 c=0 |
-| render_empty | 渲染结果 img 为空 | 渲染仍在进行 | 每分钟重试,超 5 分钟反馈失败 |
+| render_empty | 渲染结果 img 为空 | 渲染仍在进行 | 每分钟执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令,超 5 分钟反馈失败 |
 | quota_insufficient | 智能布局额度/核豆不足 | 账号额度耗尽 | 提示用户充值或更换账号,不在未确认时扣费 |
 
 ## 常见问题

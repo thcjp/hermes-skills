@@ -187,13 +187,14 @@ scripts/piper-dialog.sh ./dialogue.txt --A en_US-ryan-high --B en_US-hfc_female-
 
 ## 异常处理
 
+
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
 |---------|---------|---------|---------|
 | Piper 未安装 | `piper: command not found` | 未运行 setup 脚本或 pip 安装失败 | 执行 `scripts/setup-piper.sh`,确认 Python 3.9+ 可用 |
 | espeak-ng 缺失 | `espeak-ng not found, phonemize failed` | 系统未安装音素化器 | macOS `brew install espeak-ng`,Linux `apt install espeak-ng` |
 | 音色文件缺失 | `voice model not found: en_US-ryan-high` | 指定音色未下载 | 运行 `scripts/setup-piper.sh --voice en_US-ryan-high` 下载 |
 | 显存/内存不足 | `onnxruntime Run failed: Memory` | 单段文本过长或 high 质量音色显存占用高 | 降低单段字符数(`--max-chars 300`),或改用 medium 质量音色 |
-| ffmpeg 未安装 | `ffmpeg: command not found`(拼接阶段) | 系统缺少 ffmpeg | 安装 ffmpeg 后重试,或改用 `--format wav` 跳过转码 |
+| ffmpeg 未安装 | `ffmpeg: command not found`(拼接阶段) | 系统缺少 ffmpeg | 安装 ffmpeg 后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令,或改用 `--format wav` 跳过转码 |
 | 文本含非法字符 | `phonemize error: invalid character` | 文本含 Piper 不支持的 emoji 或控制字符 | 调用前用 `sed` 剔除 emoji 与控制字符 |
 | 输出目录不可写 | `permission denied: /tmp/piper/out.mp3` | 输出路径无写权限 | 显式指定 `--output` 到有权限的目录,如 `~/.piper-out/` |
 | 音色与语言不匹配 | 中文文本用 `en_US-*` 音色出现乱码朗读 | 音色语言与文本语言不一致 | 中文文本使用 `zh_CN-huayan-medium`,英文文本用 `en_*` 音色 |

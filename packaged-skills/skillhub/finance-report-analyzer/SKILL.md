@@ -24,6 +24,28 @@ tools:
 * **Color coding**: Green=positive, Red=negative
 * **Responsive**: Works on mobile and desktop
 * **Print-ready**: CSS print styles included
+### Sparkline trend charts
+
+执行Sparkline trend charts操作,处理用户输入并返回结果。
+
+**输入**: 用户提供Sparkline trend charts所需的参数和指令。
+
+**输出**: 返回Sparkline trend charts的处理结果。
+### Forecast markers
+
+执行Forecast markers操作,处理用户输入并返回结果。
+
+**输入**: 用户提供Forecast markers所需的参数和指令。
+
+**输出**: 返回Forecast markers的处理结果。
+### Color coding
+
+执行Color coding操作,处理用户输入并返回结果。
+
+**输入**: 用户提供Color coding所需的参数和指令。
+
+**输出**: 返回Color coding的处理结果。
+
 
 ## 适用场景
 
@@ -102,11 +124,12 @@ python3 scripts/generate_report.py input.xlsx -o pdf --company "公司名" --tic
 
 ## 异常处理
 
+
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 依赖说明
 

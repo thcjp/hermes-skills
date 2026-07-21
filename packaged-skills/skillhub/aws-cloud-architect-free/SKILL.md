@@ -27,7 +27,6 @@ tools:
 ## 核心规则
 
 ### 1. 先验证账户上下文
-
 ```bash
 aws sts get-caller-identity
 aws ec2 describe-vpcs --query 'Vpcs[].{ID:VpcId,CIDR:CidrBlock,Default:IsDefault}'
@@ -35,8 +34,9 @@ aws ec2 describe-vpcs --query 'Vpcs[].{ID:VpcId,CIDR:CidrBlock,Default:IsDefault
 
 确认: Region(默认 us-east-1)、账户类型、现有基础设施。
 
+**输入**: 用户提供先验证账户上下文所需的指令和必要参数。
+**输出**: 返回先验证账户上下文的执行结果,包含操作状态和输出数据。
 ### 2. 成本优先架构
-
 | 阶段 | 推荐技术栈 | 月成本 |
 | --- | --- | --- |
 | MVP(<1k 用户) | 单 EC2 + RDS | ~$50 |
@@ -44,12 +44,17 @@ aws ec2 describe-vpcs --query 'Vpcs[].{ID:VpcId,CIDR:CidrBlock,Default:IsDefault
 
 **默认使用最小可行实例。** 扩容容易,缩容浪费钱。
 
+**处理**: 按照skill规范执行成本优先架构操作,遵循单一意图原则。
+**输出**: 返回成本优先架构的执行结果,包含操作状态和输出数据。
 ### 3. 默认安全
-
 - 最小权限 IAM
 - 静态加密(KMS 默认密钥起)
 - VPC 隔离(数据库不入公有子网)
 - 安全组入站默认全拒绝
+
+**输入**: 用户提供默认安全所需的指令和必要参数。
+**处理**: 按照skill规范执行默认安全操作,遵循单一意图原则。
+**输出**: 返回默认安全的执行结果,包含操作状态和输出数据。
 
 ## 服务选型(基础)
 

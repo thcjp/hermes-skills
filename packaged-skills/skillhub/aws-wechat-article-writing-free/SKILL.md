@@ -59,6 +59,28 @@ tools:
 - 文风字段驱动:`target_reader` 控深度与用词,`tone` 控语气,`writing_style` 控结构表达
 - 多模型切换:`writing_model` 段配 `provider` / `base_url` / `model`,兼容 Chat Completions 协议
 - 降级机制:模型未配置(退出码 2)自动取 prompt 由 Agent 代写
+### 指令解析与执行
+
+解析用户指令,执行核心操作并返回处理结果。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+### 数据处理与转换
+
+处理输入数据,执行转换操作并输出结果。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+### 结果验证与输出
+
+验证处理结果的正确性,格式化输出并返回给用户。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+
 
 ## 配置检查
 
@@ -125,11 +147,12 @@ tools:
 
 ## 异常处理
 
+
 ### write.py 退出码 2(模型未配置)
 stderr 含 `[NO_MODEL]`。自动降级:运行 `write.py prompt <mode> <input>` 取提示词 JSON,Agent 按该 `system_prompt` 和 `user_prompt` 写文章输出到 `-o` 指定路径。无须用户确认。
 
 ### write.py 退出码 1 网络类失败
-stderr 含超时、连接失败、`URLError`。必须自动再试 1 次并告知正在重试;第二次仍失败则改用 `write.py prompt` 取提示词后由 Agent 按相同约束代写,必须明确告知第三方 API 网络不可用本次由对话模型代写。
+stderr 含超时、连接失败、`URLError`。必须自动再试 1 次并告知正在执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令;第二次仍失败则改用 `write.py prompt` 取提示词后由 Agent 按相同约束代写,必须明确告知第三方 API 网络不可用本次由对话模型代写。
 
 ### write.py 退出码 1 配置/凭证类失败
 stderr 含 401/403、Key 无效、YAML 解析失败。不要自动降级掩盖问题。列出须检查项(`config.yaml` 的 `writing_model`、`aws.env` 的 `WRITING_MODEL_API_KEY`、本篇目录是否有 `article.yaml`),请用户修正后重跑 `write.py`。

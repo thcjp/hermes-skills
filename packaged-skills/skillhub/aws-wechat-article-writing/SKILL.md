@@ -64,6 +64,28 @@ tools:
 - 配图占位生成:按 `image_density`(默认每节一图)产出 `![类型名:画面内容](placeholder)`,封面占位置于标题前
 - 发布意图管理:`publish_method` 取 `draft` / `published` / `none`,默认 `draft`
 - 降级机制:模型未配置(退出码 2)自动取 prompt 由 Agent 代写;网络类失败自动重试一次
+### 指令解析与执行
+
+解析用户指令,执行核心操作并返回处理结果。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+### 数据处理与转换
+
+处理输入数据,执行转换操作并输出结果。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+### 结果验证与输出
+
+验证处理结果的正确性,格式化输出并返回给用户。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+
 
 ## 配置检查
 
@@ -197,11 +219,12 @@ tools:
 
 ## 异常处理
 
+
 ### write.py 退出码 2(模型未配置)
 stderr 含 `[NO_MODEL]`。自动降级:运行 `write.py prompt <mode> <input>` 取提示词 JSON,Agent 按该 `system_prompt` 和 `user_prompt` 写文章输出到 `-o` 指定路径。无须用户确认或本次例外。
 
 ### write.py 退出码 1 网络类失败
-stderr 含超时、连接失败、`URLError`、临时性 502/503。必须自动再试 1 次并告知正在重试;第二次仍为网络类失败则改用 `write.py prompt` 取提示词后由 Agent 按相同约束代写,必须明确告知第三方 API 网络不可用本次由对话模型代写。
+stderr 含超时、连接失败、`URLError`、临时性 502/503。必须自动再试 1 次并告知正在执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令;第二次仍为网络类失败则改用 `write.py prompt` 取提示词后由 Agent 按相同约束代写,必须明确告知第三方 API 网络不可用本次由对话模型代写。
 
 ### write.py 退出码 1 配置/凭证类失败
 stderr 含 401/403、Key 无效、`未找到写作约束`、YAML 解析失败。不要为省事自动降级掩盖问题。列出须检查项(`config.yaml` 的 `writing_model`、`aws.env` 的 `WRITING_MODEL_API_KEY`、本篇目录是否有 `article.yaml`),请用户修正后重跑 `write.py`。用户明确打字愿意本次改由 Agent 代写,再按本次例外处理并留痕。
@@ -216,7 +239,7 @@ stderr 含 401/403、Key 无效、`未找到写作约束`、YAML 解析失败。
 `image_source: user` 但本篇未落盘 `img_analysis.md`。不得调用 `write.py`,否则脚本报错退出。先用 `user_image_prepare.py` 生成模板并填写,确保推荐用途为封面处必须且只能 1 处,再调用 `write.py`。
 
 ### --reference 篇数过多导致 token 超限
-写作 API 因上下文/token 超限失败。减少 `--reference` 篇数(如从 5 个降到 2 个)或换更短文档后重试;仍失败则与用户商定是否由 Agent 代写。
+写作 API 因上下文/token 超限失败。减少 `--reference` 篇数(如从 5 个降到 2 个)或换更短文档后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令;仍失败则与用户商定是否由 Agent 代写。
 
 ### 跨 skill 引用文件未找到(单独安装)
 单独安装本 skill 时,跨 skill 引用(如 `../aws-wechat-article-main/references/*.md`)的步骤在读取阶段遇到 file not found。本 skill 内的纯本地步骤仍可用;需要跨 skill 引用的步骤建议装齐一条龙套件到同一 `skills/` 根目录。

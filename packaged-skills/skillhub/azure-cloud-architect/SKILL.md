@@ -180,6 +180,7 @@ shared-rg            2156.43 USD
 
 ## 异常处理
 
+
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
 |---------|---------|---------|---------|
 | 未登录 | `Please run az login` | 会话过期或未登录 | 运行 `az login --use-device-code` 重新登录 |
@@ -187,7 +188,7 @@ shared-rg            2156.43 USD
 | 权限不足 | `Access denied` / 403 | RBAC 角色权限不足 | 检查 `az account show` 确认身份，只读至少需 Reader 角色 |
 | 未选择订阅 | `No subscription selected` | 未设置活跃订阅 | 运行 `az account set --subscription <名称或ID>` |
 | 命令未找到 | `command not found` | Azure CLI 版本过旧 | 运行 `az version`，升级到最新版 `az upgrade` |
-| 操作超时 | `Operation timeout` | 网络或服务问题 | 重试，检查网络连接，确认 Azure 服务状态 |
+| 操作超时 | `Operation timeout` | 网络或服务问题 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，执行ping命令测试网络连通性,检查防火墙和代理设置连接，确认 Azure 服务状态 |
 | 密钥泄露风险 | 输出含密钥/令牌 | 命令输出意外包含敏感信息 | 立即停止，绝不在聊天/日志中输出密钥值，必要时轮换密钥 |
 | 多订阅遗漏 | 部分订阅未检查 | 未遍历所有订阅 | 使用跨订阅批量操作模板遍历所有订阅 |
 | 成本查询为空 | Cost Management 返回空 | 未配置或订阅类型不支持 | 确认 CSP 等订阅类型是否支持 Cost Management |

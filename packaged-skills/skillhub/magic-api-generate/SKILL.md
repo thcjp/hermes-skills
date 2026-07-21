@@ -23,6 +23,28 @@ tools:
 * **[语法参考](/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)** - 完整语法、内置函数、模块导入
 * **[数据库操作](/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)** - 多数据源、分页、事务
 * **[业务示例](/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)** - 登录认证、文件上传、导出等
+### 语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)
+
+执行语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)操作,处理用户输入并返回结果。
+
+**输入**: 用户提供语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)所需的参数和指令。
+
+**输出**: 返回语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)的处理结果。
+### 数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)
+
+执行数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)操作,处理用户输入并返回结果。
+
+**输入**: 用户提供数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)所需的参数和指令。
+
+**输出**: 返回数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)的处理结果。
+### 业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)
+
+执行业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)操作,处理用户输入并返回结果。
+
+**输入**: 用户提供业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)所需的参数和指令。
+
+**输出**: 返回业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)的处理结果。
+
 
 ## 适用场景
 
@@ -90,11 +112,12 @@ export API_KEY="your_api_key_here"
 
 ## 异常处理
 
+
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 依赖说明
 

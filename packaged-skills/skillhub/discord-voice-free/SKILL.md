@@ -36,7 +36,6 @@ tools:
 ## 核心规则
 
 ### 1. 先验证系统依赖与 Bot 权限
-
 ```bash
 # 必需系统依赖
 ffmpeg -version          # 音频处理
@@ -45,13 +44,19 @@ node -e "require('@discordjs/opus')"  # Opus 编解码
 
 Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`Use Voice Activity`(检测语音活动)。在 Discord Developer Portal > OAuth2 > Permissions 中勾选。
 
+**输入**: 用户提供先验证系统依赖与 Bot 权限所需的指令和必要参数。
+**输出**: 返回先验证系统依赖与 Bot 权限的执行结果,包含操作状态和输出数据。
 ### 2. 仅支持本地 Whisper STT
-
 免费版仅支持 `sttProvider: "local-whisper"`,无需外部 API Key。Deepgram 流式 STT 与 Whisper API 需升级付费版。本地模型首次加载需下载(数百 MB)。
 
+**输入**: 用户提供仅支持本地 Whisper STT所需的指令和必要参数。
+**处理**: 按照skill规范执行仅支持本地 Whisper STT操作,遵循单一意图原则。
+**输出**: 返回仅支持本地 Whisper STT的执行结果,包含操作状态和输出数据。
 ### 3. 仅支持默认配置
-
 免费版使用固定默认配置:`vadSensitivity: "medium"`、`silenceThresholdMs: 1500`、`maxRecordingMs: 30000`。不可调整 Barge-in 与 allowedUsers 等高级选项。
+
+**处理**: 按照skill规范执行仅支持默认配置操作,遵循单一意图原则。
+**输出**: 返回仅支持默认配置的执行结果,包含操作状态和输出数据。
 
 ## 适用场景
 

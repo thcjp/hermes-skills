@@ -25,6 +25,28 @@ tools:
 - **类型化实体与关系系统**：内置 Person/Organization/Project/Task/Goal/Event/Location/Document/Note 共9种基础实体类型。每个实体遵循标准结构 `{"id":"ent_001","type":"Project","properties":{...},"relations":[...],"created":"2026-01-15T10:00:00Z","updated":"2026-01-15T10:00:00Z"}`。支持 has_owner/has_task/depends_on/relates_to 等基础关系类型，关系建立前校验类型兼容性。
 - **约束校验引擎**：支持3类基础约束规则——required（必填属性，如 Task 必须有 title 和 status）、enum（枚举值，如 status 只能是 open/in_progress/done/blocked）、defaults（默认值，如 status 默认 open）。执行 `python3 scripts/ontology.py validate` 输出校验报告，标记通过与失败的实体。
 - **图遍历查询**：按类型与条件查询实体（`query --type Task --where '{"status":"open"}'`），执行关联查询（`related --id proj_001 --rel has_task`），遍历依赖关系链（`traverse --id task_001 --rel depends_on --direction outgoing`），支持正向与反向遍历。
+### 类型化实体与关系系统
+
+执行类型化实体与关系系统操作,处理用户输入并返回结果。
+
+**输入**: 用户提供类型化实体与关系系统所需的参数和指令。
+
+**输出**: 返回类型化实体与关系系统的处理结果。
+### 约束校验引擎
+
+执行约束校验引擎操作,处理用户输入并返回结果。
+
+**输入**: 用户提供约束校验引擎所需的参数和指令。
+
+**输出**: 返回约束校验引擎的处理结果。
+### 图遍历查询
+
+执行图遍历查询操作,处理用户输入并返回结果。
+
+**输入**: 用户提供图遍历查询所需的参数和指令。
+
+**输出**: 返回图遍历查询的处理结果。
+
 
 ## 使用流程
 

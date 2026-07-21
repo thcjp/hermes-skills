@@ -96,7 +96,7 @@ tools:
 **输入**: 用户提供类型断言与守卫（Type Assertions & Guards）所需的指令和必要参数。
 **处理**: 按照skill规范执行类型断言与守卫（Type Assertions & Guards）操作,遵循单一意图原则。
 **输出**: 返回类型断言与守卫（Type Assertions & Guards）的执行结果,包含操作状态和输出数据。### 工具配置（Tooling & Configuration）
-#### Recommended `tsconfig.json` (Baseline)
+### Recommended `tsconfig.json` (Baseline)
 
 启用 `"strict": true`（含 `noImplicitAny`、`strictNullChecks`、`strictFunctionTypes`）。2空格缩进、单引号、分号、尾逗号、100字符行宽。
 
@@ -118,6 +118,7 @@ tools:
 
 **输入**: 用户提供工具配置（Tooling & Configuration）所需的指令和必要参数。
 **处理**: 按照skill规范执行工具配置（Tooling & Configuration）操作,遵循单一意图原则。
+
 ## 使用方式
 
 在对话中提及 **TypeScript** 即可自动激活。支持自然语言激活与内联规则引用。

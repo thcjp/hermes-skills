@@ -49,6 +49,28 @@ tools:
 - 支持中断处理: 监听 `input_audio_buffer.speech_started` 事件后调用 `response.cancel` 与 `output_audio_buffer.clear` 实现用户打断响应
 - 兼容 `pcm16` (24kHz默认)、`pcm16-8000hz`、`pcm16-16000hz`、`g711_ulaw`、`g711_alaw` 多种音频格式,适配电话、语音助手、高保真等场景
 - 双重认证: `DefaultAzureCredential`(托管身份/AAD令牌)与 `AzureKeyCredential`(API密钥),前者通过 `credential_scopes` 指定作用域
+### 指令解析与执行
+
+解析用户指令,执行核心操作并返回处理结果。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+### 数据处理与转换
+
+处理输入数据,执行转换操作并输出结果。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+### 结果验证与输出
+
+验证处理结果的正确性,格式化输出并返回给用户。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+
 
 ## 适用场景
 
@@ -218,10 +240,11 @@ async for event in conn:
 
 ## 异常处理
 
+
 ### WebSocket连接中断
 现象: 抛出 `ConnectionClosed`,带 `code` 与 `reason`。
 原因: 网络抖动、服务端超时、鉴权令牌过期。
-处理: 捕获 `ConnectionClosed` 后重新 `connect()` 并恢复 `session.update`,长连接场景建议外层 `while True` 重试并指数退避。
+处理: 捕获 `ConnectionClosed` 后重新 `connect()` 并恢复 `session.update`,长连接场景建议外层 `while True` 执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令并指数退避。
 
 ### 鉴权失败 (401/403)
 现象: 事件流中收到 `error`, `code` 为 `unauthorized` 或 `forbidden`。

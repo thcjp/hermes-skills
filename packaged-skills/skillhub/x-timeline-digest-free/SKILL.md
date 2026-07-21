@@ -92,6 +92,22 @@ tools:
 **输入**: 用户提供去重所需的指令和必要参数。
 **处理**: 按照skill规范执行去重操作,遵循单一意图原则。
 **输出**: 返回去重的执行结果,包含操作状态和输出数据。
+### 指令解析与执行
+
+解析用户指令,执行核心操作并返回处理结果。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+### 数据处理与转换
+
+处理输入数据,执行转换操作并输出结果。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+
+
 ## 使用方式
 
 执行摘要生成脚本,获得去重后的 JSON:
@@ -152,6 +168,7 @@ node skills/x-timeline-digest-free/digest.js
 
 ## 异常处理
 
+
 ### bird 未安装
 
 执行报 command not found。
@@ -160,7 +177,7 @@ node skills/x-timeline-digest-free/digest.js
 ### bird 登录态过期
 
 返回认证失败或空结果。
-执行 bird 登录子命令重新完成 cookie 认证后重试。
+执行 bird 登录子命令重新完成 cookie 认证后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令。
 
 ### statePath 不可写
 
@@ -170,8 +187,8 @@ node skills/x-timeline-digest-free/digest.js
 ### 拉取条数为 0
 
 forYouFetched 与 followingFetched 均为 0。
-确认 bird 登录态有效,检查网络连通性,
-账号被限流时拉长 intervalHours 后重试。
+确认 bird 登录态有效,执行ping命令测试网络连通性,检查防火墙和代理设置连通性,
+账号被限流时拉长 intervalHours 后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令。
 
 ### 近重复阈值过高
 

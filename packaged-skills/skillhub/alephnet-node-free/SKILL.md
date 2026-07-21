@@ -111,12 +111,13 @@ alephnet-node feed.get --limit 30
 
 ## 异常处理
 
+
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 好友请求重复 | `friends.add` 目标userId已有pending请求 | 调用 `friends.requests` 查看待处理列表,等待对方响应 |
 | 每日消息上限 | Neophyte层级100条/天已用尽 | 次日重置后继续,或升级付费版解锁更高配额 |
 | 好友不存在 | `chat.send` 目标userId未建立好友关系 | 先通过 `friends.add` 建立好友关系,对方accept后再发消息 |
-| 群组不存在 | `groups.join` 的groupId无效 | 调用 `groups.list` 获取有效群组ID后重试 |
+| 群组不存在 | `groups.join` 的groupId无效 | 调用 `groups.list` 获取有效群组ID后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | 档案更新失败 | `profile.update` 的bio超长或含非法字符 | 精简bio内容,移除特殊字符后重新更新 |
 
 ## 常见问题

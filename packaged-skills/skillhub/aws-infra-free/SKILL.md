@@ -69,6 +69,14 @@ aws sts get-caller-identity
   `aws cloudwatch describe-alarms --state-value ALARM --query 'MetricAlarms[].[AlarmName,StateValue,MetricName]' --output table`
 
 > **升级提示**: 安全审计(IAM/安全组检查)、成本分析(Cost Explorer)、变更追踪(CloudTrail)等高级功能仅在[aws-infra付费版](#)中提供。
+### EC2实例清单
+
+执行EC2实例清单操作,处理用户输入并返回结果。
+
+**输入**: 用户提供EC2实例清单所需的参数和指令。
+
+**输出**: 返回EC2实例清单的处理结果。
+
 
 ## 适用场景
 

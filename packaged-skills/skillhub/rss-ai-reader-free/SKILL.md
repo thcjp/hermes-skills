@@ -201,9 +201,10 @@ python main.py --config my_config.yaml --once
 
 ## 异常处理
 
+
 | 错误场景 | 错误现象 | 原因分析 | 处理方式 |
 |---------|---------|---------|---------|
-| Feed URL 无法访问 | 抓取报 `ConnectionError` 或超时 | 网络不通或 feed URL 已失效 | 检查网络连通性,在浏览器中打开 feed URL 确认是否可访问 |
+| Feed URL 无法访问 | 抓取报 `ConnectionError` 或超时 | 网络不通或 feed URL 已失效 | 执行ping命令测试网络连通性,检查防火墙和代理设置连通性,在浏览器中打开 feed URL 确认是否可访问 |
 | LLM API 调用失败 | 报 `401 Unauthorized` 或 `429 Too Many Requests` | API Key 无效或额度耗尽 | 核对环境变量中的 ANTHROPIC_API_KEY 是否正确;429 时降低执行频率 |
 | 摘要内容为空 | LLM 返回空字符串或仅含标点 | feed 条目正文为空或 LLM 判断无有效内容 | 检查 feed 条目是否含 summary 或 content 字段;在 prompt 中加入兜底逻辑 |
 | 飞书 Webhook 返回错误 | HTTP 状态码 400 或 `{"code": 19021}` | Webhook URL 失效或消息体格式不符飞书规范 | 在飞书群设置中重新获取 Webhook URL;检查消息体是否含必填字段(msg_type) |

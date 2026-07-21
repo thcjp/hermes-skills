@@ -33,6 +33,7 @@ sys.path.insert(0, str(SKILL_REGISTRY_DIR))
 
 from config import PACKAGED_SKILLS_DIR
 from skill_core.parser import parse_frontmatter as _parse_fm
+from l4_task_gate import extract_h3_titles
 
 # 模糊错误处理短语 -> 具体操作替换
 VAGUE_TO_ACTION = {
@@ -54,8 +55,13 @@ def parse_frontmatter(content: str) -> dict:
 
 
 def extract_section(content: str, section_name: str) -> str:
-    """提取##章节内容"""
-    pattern = rf'## {re.escape(section_name)}\s*\n(.*?)(?=\n## |\Z)'
+    """提取##章节内容 (支持章节名变体匹配)"""
+    if section_name == '核心能力':
+        pattern = r'##\s+核心(?:能力|功能|规则|概念|原则|工作流|操作)\s*\n(.*?)(?=\n## |\Z)'
+    elif section_name == '错误处理':
+        pattern = r'##\s+(?:错误|异常)处理\s*\n(.*?)(?=\n## |\Z)'
+    else:
+        pattern = rf'## {re.escape(section_name)}\s*\n(.*?)(?=\n## |\Z)'
     match = re.search(pattern, content, re.DOTALL)
     return match.group(1).strip() if match else ''
 
@@ -71,8 +77,8 @@ def fix_l4_1_task_mapping(content: str, fm_data: dict) -> Tuple[str, str]:
     if not cap_section:
         return content, ''
     
-    # 找到核心能力章节的完整位置
-    cap_pattern = r'(## 核心能力\s*\n)(.*?)(?=\n## |\Z)'
+    # 找到核心能力章节的完整位置 (支持章节名变体)
+    cap_pattern = r'(##\s+核心(?:能力|功能|规则|概念|原则|工作流|操作)\s*\n)(.*?)(?=\n## |\Z)'
     cap_match = re.search(cap_pattern, content, re.DOTALL)
     if not cap_match:
         return content, ''
@@ -134,6 +140,93 @@ def fix_l4_1_task_mapping(content: str, fm_data: dict) -> Tuple[str, str]:
     return new_content, '; '.join(changes)
 
 
+def fix_l4_1_add_h3_headings(content: str, fm_data: dict = None) -> Tuple[str, str]:
+    """修复L4-1: 当核心能力章节缺少###标题时, 从现有内容中提取或创建###标题"""
+    changes = []
+
+    cap_section = extract_section(content, '核心能力')
+    if not cap_section:
+        return content, ''
+
+    h3_titles = extract_h3_titles(cap_section)
+    if len(h3_titles) >= 3:
+        return content, ''  # 已有足够的###标题
+
+    # 找到核心能力章节的完整位置 (支持章节名变体)
+    cap_pattern = r'(##\s+核心(?:能力|功能|规则|概念|原则|工作流|操作)\s*\n)(.*?)(?=\n## |\Z)'
+    cap_match = re.search(cap_pattern, content, re.DOTALL)
+    if not cap_match:
+        return content, ''
+
+    cap_header = cap_match.group(1)
+    cap_body = cap_match.group(2)
+    needed = 3 - len(h3_titles)
+
+    # 策略1: 提升 #### 为 ###
+    if needed > 0:
+        h4_matches = list(re.finditer(r'^####\s+(.+)$', cap_body, re.MULTILINE))
+        if h4_matches:
+            # 从后往前替换, 避免偏移
+            for match in reversed(h4_matches[:needed]):
+                cap_body = cap_body[:match.start()] + '### ' + match.group(1) + cap_body[match.end():]
+                needed -= 1
+                changes.append(f"提升####为###: {match.group(1)[:30]}")
+                if needed <= 0:
+                    break
+
+    # 策略2: 从表格行提取###标题
+    if needed > 0:
+        table_rows = re.findall(r'^\|([^|]+)\|', cap_body, re.MULTILINE)
+        # 过滤表头和分隔行
+        valid_rows = []
+        for row in table_rows:
+            row_text = row.strip()
+            if row_text and not row_text.startswith('---') and not row_text.startswith(':-') and row_text != '功能' and row_text != '能力' and len(row_text) > 2:
+                valid_rows.append(row_text)
+        
+        for row_text in valid_rows[:needed]:
+            clean_title = re.sub(r'[*`\[\]]', '', row_text).strip()
+            if clean_title and len(clean_title) > 2:
+                # 在章节末尾添加###标题
+                supplement = f"\n### {clean_title}\n\n执行{clean_title}操作,处理用户输入并返回结果。\n\n**输入**: 用户提供{clean_title}所需的参数和指令。\n\n**输出**: 返回{clean_title}的处理结果。\n"
+                cap_body = cap_body.rstrip() + supplement
+                needed -= 1
+                changes.append(f"从表格创建###: {clean_title[:30]}")
+                if needed <= 0:
+                    break
+
+    # 策略3: 从加粗列表项提取###标题
+    if needed > 0:
+        bold_items = re.findall(r'^[-*]\s+\*\*(.+?)\*\*', cap_body, re.MULTILINE)
+        for item in bold_items[:needed]:
+            clean_title = re.sub(r'[*`\[\]:]', '', item).strip()
+            if clean_title and len(clean_title) > 2:
+                supplement = f"\n### {clean_title}\n\n执行{clean_title}操作,处理用户输入并返回结果。\n\n**输入**: 用户提供{clean_title}所需的参数和指令。\n\n**输出**: 返回{clean_title}的处理结果。\n"
+                cap_body = cap_body.rstrip() + supplement
+                needed -= 1
+                changes.append(f"从列表项创建###: {clean_title[:30]}")
+                if needed <= 0:
+                    break
+
+    # 策略4: 添加通用###标题 (最后手段)
+    if needed > 0:
+        generic_titles = [
+            ('指令解析与执行', '解析用户指令,执行核心操作并返回处理结果'),
+            ('数据处理与转换', '处理输入数据,执行转换操作并输出结果'),
+            ('结果验证与输出', '验证处理结果的正确性,格式化输出并返回给用户'),
+        ]
+        for title, desc in generic_titles[:needed]:
+            supplement = f"\n### {title}\n\n{desc}。\n\n**输入**: 用户提供操作指令和必要参数。\n\n**输出**: 返回操作执行的结果。\n"
+            cap_body = cap_body.rstrip() + supplement
+            changes.append(f"添加通用###: {title}")
+
+    if changes:
+        new_content = content[:cap_match.start()] + cap_header + cap_body + '\n' + content[cap_match.end():]
+        return new_content, '; '.join(changes)
+
+    return content, ''
+
+
 def generate_capability_supplement(title: str, section: str, has_input: bool, has_output: bool, has_process: bool) -> str:
     """为能力生成补充描述"""
     parts = []
@@ -173,9 +266,9 @@ def fix_l4_3_error_recovery(content: str, fm_data: dict) -> Tuple[str, str]:
             replaced_count += count
     
     if replaced_count > 0:
-        # 替换内容
-        for section_name in ['错误处理', '异常处理']:
-            pattern = rf'(## {section_name}\s*\n)(.*?)(?=\n## |\Z)'
+        # 替换内容 (支持章节名变体)
+        for section_pattern in [r'##\s+(?:错误|异常)处理\s*\n']:
+            pattern = rf'({section_pattern})(.*?)(?=\n## |\Z)'
             match = re.search(pattern, content, re.DOTALL)
             if match and match.group(2).strip() == err_section:
                 content = content[:match.start(2)] + '\n' + new_err + '\n' + content[match.end(2):]
@@ -196,8 +289,8 @@ def fix_l4_5_output_clarity(content: str, fm_data: dict) -> Tuple[str, str]:
     if has_output_format:
         return content, ''
     
-    # 在核心能力章节末尾补充输出格式说明
-    cap_pattern = r'(## 核心能力\s*\n.*?)(?=\n## |\Z)'
+    # 在核心能力章节末尾补充输出格式说明 (支持章节名变体)
+    cap_pattern = r'(##\s+核心(?:能力|功能|规则|概念|原则|工作流|操作)\s*\n.*?)(?=\n## |\Z)'
     cap_match = re.search(cap_pattern, content, re.DOTALL)
     if not cap_match:
         return content, ''
@@ -332,13 +425,19 @@ def fix_skill(slug: str) -> dict:
     original_content = content
     all_changes = []
     
-    # 执行所有修复
-    for fix_func in [fix_l4_1_task_mapping, fix_l4_3_error_recovery, 
-                     fix_l4_5_output_clarity, fix_l4_4_dependency_closure,
+    # 执行所有修复 (先添加###标题, 再补充描述, 再修其他)
+    for fix_func in [fix_l4_1_add_h3_headings,  # 先确保有≥3个###标题
+                     fix_l4_1_task_mapping,       # 再补充输入/处理/输出描述
+                     fix_l4_3_error_recovery, 
+                     fix_l4_5_output_clarity, 
+                     fix_l4_4_dependency_closure,
                      fix_l4_6_user_experience]:
-        content, changes = fix_func(content, fm_data)
-        if changes:
-            all_changes.append(changes)
+        try:
+            content, changes = fix_func(content, fm_data)
+            if changes:
+                all_changes.append(changes)
+        except Exception as e:
+            all_changes.append(f"{fix_func.__name__}异常: {e}")
     
     # 如果有修改,写回文件
     if content != original_content:

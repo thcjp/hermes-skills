@@ -66,6 +66,28 @@ app.run()
 - **AgentCore Memory**: 托管式跨会话/跨智能体记忆,支持 STM 与 LTM
 - **LangGraph Routing**: `tools_condition` 负责智能体到工具的路由,`ToolNode` 负责执行
 - **AgentCore Gateway**: 将 API/Lambda 转换为带鉴权的 MCP 工具
+### AgentCore Runtime
+
+执行AgentCore Runtime操作,处理用户输入并返回结果。
+
+**输入**: 用户提供AgentCore Runtime所需的参数和指令。
+
+**输出**: 返回AgentCore Runtime的处理结果。
+### AgentCore Memory
+
+执行AgentCore Memory操作,处理用户输入并返回结果。
+
+**输入**: 用户提供AgentCore Memory所需的参数和指令。
+
+**输出**: 返回AgentCore Memory的处理结果。
+### LangGraph Routing
+
+执行LangGraph Routing操作,处理用户输入并返回结果。
+
+**输入**: 用户提供LangGraph Routing所需的参数和指令。
+
+**输出**: 返回LangGraph Routing的处理结果。
+
 
 ## CLI 命令
 

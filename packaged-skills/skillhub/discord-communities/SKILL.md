@@ -43,7 +43,6 @@ tools:
 ## 核心规则
 
 ### 1. 先验证 ClawLink 集成可用
-
 ```javascript
 // 确认 Discord 集成已连接
 clawlink_list_integrations();
@@ -53,6 +52,8 @@ clawlink_list_tools({ integration: "discord" });
 
 未连接时返回 `integration_not_found`,需先完成 OAuth 配对流程。
 
+**输入**: 用户提供先验证 ClawLink 集成可用所需的指令和必要参数。
+**处理**: 按照skill规范执行先验证 ClawLink 集成可用操作,遵循单一意图原则。
 ### 2. 鉴权方式必须匹配
 
 | 鉴权方式 | 适用工具 | 限制 |

@@ -34,7 +34,6 @@ tools:
 ## 核心规则
 
 ### 1. 先验证 ClawLink 集成可用
-
 ```javascript
 // 确认 Discord 集成已连接
 clawlink_list_integrations();
@@ -44,13 +43,18 @@ clawlink_list_tools({ integration: "discord" });
 
 未连接时返回 `integration_not_found`,需先完成 OAuth 配对流程。
 
+**输入**: 用户提供先验证 ClawLink 集成可用所需的指令和必要参数。
+**处理**: 按照skill规范执行先验证 ClawLink 集成可用操作,遵循单一意图原则。
 ### 2. 仅使用 OAuth2 Bearer Token
-
 免费版仅支持只读操作,所有调用均使用 Bearer Token。Bot Token 不适用本 skill 任何工具。
 
+**输入**: 用户提供仅使用 OAuth2 Bearer Token所需的指令和必要参数。
+**输出**: 返回仅使用 OAuth2 Bearer Token的执行结果,包含操作状态和输出数据。
 ### 3. 仅执行 safe 级别操作
-
 免费版不包含 `confirm` 与 `high_impact` 级别工具(如退出公会、修改用户名、删除测试权益)。变更类操作请升级付费版。
+
+**处理**: 按照skill规范执行仅执行 safe 级别操作操作,遵循单一意图原则。
+**输出**: 返回仅执行 safe 级别操作的执行结果,包含操作状态和输出数据。
 
 ## 适用场景
 

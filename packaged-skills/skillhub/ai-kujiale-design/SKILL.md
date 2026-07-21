@@ -311,6 +311,7 @@ node ./scripts/getStyles.js --token=$TOKEN --tagItemIds=$TAG_IDS
 
 ## 异常处理
 
+
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
 |---------|---------|---------|---------|
 | missing_token | `.kjlconfig.json` 缺失或无 access_token | 未完成初始化配置 | 引导用户访问 kujiale.com/skills 生成 token 并写入配置 |
@@ -318,9 +319,9 @@ node ./scripts/getStyles.js --token=$TOKEN --tagItemIds=$TAG_IDS
 | floorplan_empty | `floorplanInfos` 为空数组 | 户型图获取/识别失败 | 提示重新选择或上传,返回搜索/上传步骤 |
 | bitmap_task_failed | 临摹任务超时或失败 | 户型图质量差或不清晰 | 引导重新上传清晰户型图或改用文字搜索 |
 | layout_pending | `getLayoutResult` 返回 c!=0 | 布局仍在生成 | 每 10 秒轮询,直至 c=0 |
-| render_empty | 渲染结果 img/panoLink 为空 | 渲染仍在进行 | 每分钟重试,超 5 分钟反馈失败 |
+| render_empty | 渲染结果 img/panoLink 为空 | 渲染仍在进行 | 每分钟执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令,超 5 分钟反馈失败 |
 | quota_insufficient | 智能布局额度/核豆不足 | 账号额度耗尽 | 提示用户充值或更换账号,不在未确认时扣费 |
-| network_error | 接口超时或不可达 | 网络问题 | 检查网络后重试 |
+| network_error | 接口超时或不可达 | 网络问题 | 执行ping命令测试网络连通性,检查防火墙和代理设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 
 ## 常见问题
 

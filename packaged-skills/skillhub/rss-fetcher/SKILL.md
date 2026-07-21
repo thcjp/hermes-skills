@@ -26,6 +26,28 @@ tools:
 * **超时设置 / Timeout Setting** - 单源30秒超时，避免长时间阻塞 | 30-second timeout per source to avoid blocking
 
 ---
+### 增量抓取 / Incremental Fetching
+
+执行增量抓取 / Incremental Fetching操作,处理用户输入并返回结果。
+
+**输入**: 用户提供增量抓取 / Incremental Fetching所需的参数和指令。
+
+**输出**: 返回增量抓取 / Incremental Fetching的处理结果。
+### 自动标签 / Auto-tagging
+
+执行自动标签 / Auto-tagging操作,处理用户输入并返回结果。
+
+**输入**: 用户提供自动标签 / Auto-tagging所需的参数和指令。
+
+**输出**: 返回自动标签 / Auto-tagging的处理结果。
+### HTML报告 / HTML Reports
+
+执行HTML报告 / HTML Reports操作,处理用户输入并返回结果。
+
+**输入**: 用户提供HTML报告 / HTML Reports所需的参数和指令。
+
+**输出**: 返回HTML报告 / HTML Reports的处理结果。
+
 
 ## 适用场景
 
@@ -163,11 +185,12 @@ python3 scripts/list.py --json
 
 ## 异常处理
 
+
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 依赖说明
 

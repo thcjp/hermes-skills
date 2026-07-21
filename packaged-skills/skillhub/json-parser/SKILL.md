@@ -20,6 +20,28 @@ tools:
 ## 核心能力
 
 Construction systems increasingly use JSON for data exchange - from IoT sensors to BIM metadata exports. This skill handles parsing, validation, and flattening of JSON structures.
+### 指令解析与执行
+
+解析用户指令,执行核心操作并返回处理结果。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+### 数据处理与转换
+
+处理输入数据,执行转换操作并输出结果。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+### 结果验证与输出
+
+验证处理结果的正确性,格式化输出并返回给用户。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+
 
 ## 适用场景
 
@@ -82,6 +104,7 @@ elements = parser.extract_elements(result.data, "project.building.floors")
 ```
 
 ## 异常处理
+
 - 边界输入处理: 空输入返回提示信息, 超长输入自动截断
 - 降级策略: 异常时返回默认值, 确保流程不中断
 
@@ -89,7 +112,7 @@ elements = parser.extract_elements(result.data, "project.building.floors")
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 依赖说明
 

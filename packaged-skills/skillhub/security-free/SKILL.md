@@ -61,6 +61,15 @@ tools:
 
 **输入**: 用户提供检查结果（Check Results）所需的指令和必要参数。
 **处理**: 按照skill规范执行检查结果（Check Results）操作,遵循单一意图原则。
+### 代码扫描
+
+执行代码扫描操作,处理用户输入并返回结果。
+
+**输入**: 用户提供代码扫描所需的参数和指令。
+
+**输出**: 返回代码扫描的处理结果。
+
+
 ## 使用流程
 
 1. 安装GoPlus CLI：`go install github.com/Qianjiachang/goplus@latest`

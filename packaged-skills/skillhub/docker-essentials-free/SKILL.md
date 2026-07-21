@@ -90,6 +90,15 @@ docker run -d --name postgres -e POSTGRES_PASSWORD=secret -v postgres-data:/var/
 
 **输入**: 用户提供常用工作流（Common Workflows）所需的指令和必要参数。
 **输出**: 返回常用工作流（Common Workflows）的执行结果,包含操作状态和输出数据。
+### 指令解析与执行
+
+解析用户指令,执行核心操作并返回处理结果。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+
+
 ## 使用流程
 
 1. 确认Docker Engine已安装并运行

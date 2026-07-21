@@ -56,6 +56,15 @@ tools:
 **输入**: 用户提供消息写作风格所需的指令和必要参数。
 **处理**: 按照skill规范执行消息写作风格操作,遵循单一意图原则。
 **输出**: 返回消息写作风格的执行结果,包含操作状态和输出数据。
+### 指令解析与执行
+
+解析用户指令,执行核心操作并返回处理结果。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+
+
 ## 适用场景
 
 ### 场景一:通知推送
@@ -109,13 +118,14 @@ tools:
 
 ## 异常处理
 
+
 | 错误场景 | 触发原因 | 处理方式 |
 |---------|---------|---------|
 | `Missing Access` / `50001` | 机器人缺少该频道查看或发送权限 | 先 `permissions` 核对权限位,联系服务器管理员补齐频道权限 |
 | `to` 与 `channelId` 混用 | `sendMessage` 误传 `channelId` 而 `react` 误传 `to` | `sendMessage` 用 `to: "channel:<id>"`;`react/readMessages/editMessage/deleteMessage` 用 `channelId` |
 | `Unknown Message` / `10008` | `editMessage`/`deleteMessage`/`react` 指向已删除消息 | 先 `readMessages` 确认消息存在,已删除则跳过 |
 | emoji 不存在 | `react` 传入了服务器没有的自定义表情 | 改用标准 unicode emoji(如 ✅、👍),或确认自定义表情 ID 正确 |
-| 频道不存在 | `channelId` 或 `to` 中的 ID 拼写错误 | 通过 `listPins` 或服务器界面核对频道 ID 后重试 |
+| 频道不存在 | `channelId` 或 `to` 中的 ID 拼写错误 | 通过 `listPins` 或服务器界面核对频道 ID 后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 
 ## 常见问题
 

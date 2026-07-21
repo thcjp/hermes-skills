@@ -40,7 +40,6 @@ tools:
 > **升级提示**：`BIGINT`、`UUID`、`JSONB`、`ENUM` 等高级数据类型，外键约束（`FOREIGN KEY`）、检查约束（`CHECK`）为付费版专享功能。
 
 ### 数据插入
-
 ```sql
 -- 单条插入
 INSERT INTO stock_info (product_name, quantity, price) VALUES ('苹果', 100, 8.50);
@@ -56,8 +55,9 @@ COMMIT;
 
 > **升级提示**：`COPY` 命令高性能批量导入（10万条以上）、`ON CONFLICT` 冲突处理为付费版专享功能。
 
+**输入**: 用户提供数据插入所需的指令和必要参数。
+**输出**: 返回数据插入的执行结果,包含操作状态和输出数据。
 ### 基础查询
-
 ```sql
 -- 条件查询
 SELECT * FROM stock_info WHERE quantity > 50;
@@ -71,8 +71,9 @@ ORDER BY avg_price DESC;
 
 > **升级提示**：CTE（`WITH` 子句）复杂查询、`EXPLAIN ANALYZE` 执行计划分析、多表 `JOIN` 优化为付费版专享功能。
 
+**输入**: 用户提供基础查询所需的指令和必要参数。
+**输出**: 返回基础查询的执行结果,包含操作状态和输出数据。
 ### 事务操作
-
 ```sql
 BEGIN;
 INSERT INTO stock_info (product_name, quantity, price) VALUES ('橙子', 80, 5.00);
@@ -81,6 +82,9 @@ COMMIT;
 ```
 
 > **升级提示**：连接池（`pgpool`）管理、`VACUUM ANALYZE` 维护操作、`TRUNCATE`、`pg_dump` 备份恢复为付费版专享功能。
+
+**输入**: 用户提供事务操作所需的指令和必要参数。
+**输出**: 返回事务操作的执行结果,包含操作状态和输出数据。
 
 ## 依赖说明
 

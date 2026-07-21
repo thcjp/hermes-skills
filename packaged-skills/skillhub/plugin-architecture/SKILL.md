@@ -86,6 +86,15 @@ Please install the plugin-architecture skill. Read the INSTALL_INSTRUCTIONS.md f
 **输入**: 用户提供参考代码文件（Reference Files）所需的指令和必要参数。
 **处理**: 按照skill规范执行参考代码文件（Reference Files）操作,遵循单一意图原则。
 **输出**: 返回参考代码文件（Reference Files）的执行结果,包含操作状态和输出数据。
+### 指令解析与执行
+
+解析用户指令,执行核心操作并返回处理结果。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+
+
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

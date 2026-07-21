@@ -35,6 +35,28 @@ tools:
 - **记忆管理工具**：完整的 CLI 记忆管理命令。参数：node bin/memory.js stats（统计）、node bin/memory.js search "*" --limit 50（全量检索）、node bin/memory.js dedup（去重）、node bin/memory.js export --format json（导出）、node bin/memory.js backup ./backups/memory-20260130.zip（备份）、node bin/memory.js compact（压缩向量）、node bin/memory.js cleanup --before 30d（清理旧记忆）。输出：结构化的记忆管理结果。
 
 - **自动召回与捕获**：智能注入相关上下文与自动存储重要信息。参数：autoRecall=true（会话开始自动搜索相关记忆）、autoCapture=false（默认关闭自动捕获，避免噪音）、captureCategories=["preference","decision","fact"]、minImportance=0.7。输出：会话开始时自动召回与当前任务相关的历史记忆，对话中按类别与重要性自动存储。
+### 纯本地向量搜索（LanceDB）
+
+执行纯本地向量搜索（LanceDB）操作,处理用户输入并返回结果。
+
+**输入**: 用户提供纯本地向量搜索（LanceDB）所需的参数和指令。
+
+**输出**: 返回纯本地向量搜索（LanceDB）的处理结果。
+### 本地 Embedding（Ollama）
+
+执行本地 Embedding（Ollama）操作,处理用户输入并返回结果。
+
+**输入**: 用户提供本地 Embedding（Ollama）所需的参数和指令。
+
+**输出**: 返回本地 Embedding（Ollama）的处理结果。
+### 热内存（SESSION-STATE.md）
+
+执行热内存（SESSION-STATE.md）操作,处理用户输入并返回结果。
+
+**输入**: 用户提供热内存（SESSION-STATE.md）所需的参数和指令。
+
+**输出**: 返回热内存（SESSION-STATE.md）的处理结果。
+
 
 ## 使用流程
 

@@ -217,6 +217,7 @@ Few-shot示例(引导正确选择顺序):
 
 ## 异常处理
 
+
 | 错误场景 | 错误信息/现象 | 原因分析 | 处理方式 |
 |---------|-------------|---------|---------|
 | ReAct循环不收敛 | Agent反复调用同一工具超过5次 | Observation未提供有效信息或终止条件缺失 | 在Prompt中设置最大循环次数(如max_steps=10),并在Final Answer前要求Agent总结已尝试方案 |
@@ -225,7 +226,7 @@ Few-shot示例(引导正确选择顺序):
 | Token溢出 | `context_length_exceeded`错误 | System Prompt + 对话历史 + few-shot超过模型上下文窗口 | 裁剪对话历史(保留最近N轮);精简few-shot至2-3个;将长文档摘要后传入而非全文 |
 | Prompt注入攻击 | Agent执行了用户输入中的恶意指令(如"忽略以上所有指令") | System Prompt缺少输入隔离,用户输入与系统指令混淆 | 在System Prompt中加入明确隔离指令;对用户输入做sanitization(过滤"忽略指令"类短语);将用户输入包裹在XML标签内 |
 | Chain-of-Thought断裂 | 推理步骤跳跃导致结论错误 | CoT步骤间逻辑断层,LLM跳过关键中间步骤 | 在Prompt中要求"逐步推理,每步不超过一个逻辑跳转";用few-shot示范完整的推理链;添加自检步骤要求Agent验证每步结论 |
-| 工具参数schema不匹配 | 工具调用报`TypeError: argument 'order_id' must be str, got int` | Agent传入错误类型的参数 | 在工具描述中明确参数类型;在调用前加参数校验层;解析失败时将参数转为正确类型后重试 |
+| 工具参数schema不匹配 | 工具调用报`TypeError: argument 'order_id' must be str, got int` | Agent传入错误类型的参数 | 在工具描述中明确参数类型;在调用前加参数校验层;解析失败时将参数转为正确类型后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | 输出格式漂移 | 多轮对话后Agent输出逐渐偏离JSON格式 | 长对话中格式约束被稀释 | 每轮在user message末尾追加格式提醒;定期重置对话上下文;用结构化输出模式(如OpenAI structured output)强制约束 |
 | Few-shot示例污染 | Agent输出风格与few-shot示例过度相似,失去泛化能力 | few-shot示例与实际任务场景差异过大 | 确保few-shot覆盖多种输入模式;用2-3个高代表性示例替代大量相似示例;定期验证Agent在非示例输入上的表现 |
 | 角色定义冲突 | Agent行为矛盾(如既承诺赔偿又说不能承诺) | System Prompt中多个角色指令互相矛盾 | 审查Prompt消除矛盾指令;用优先级标注(如"约束1优先于约束2");冲突场景明确转人工 |

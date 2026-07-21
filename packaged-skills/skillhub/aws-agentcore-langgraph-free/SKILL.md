@@ -63,6 +63,28 @@ app.run()
 - **AgentCore Runtime**: 端口 8080 的 HTTP 服务,处理 `/invocations` 与 `/ping` 端点
 - **LangGraph Routing**: `tools_condition` 负责智能体到工具的路由,`ToolNode` 负责执行
 - **AgentCore Memory**: 托管式跨会话记忆(免费版仅支持基础 STM,不含 LTM)
+### AgentCore Runtime
+
+执行AgentCore Runtime操作,处理用户输入并返回结果。
+
+**输入**: 用户提供AgentCore Runtime所需的参数和指令。
+
+**输出**: 返回AgentCore Runtime的处理结果。
+### LangGraph Routing
+
+执行LangGraph Routing操作,处理用户输入并返回结果。
+
+**输入**: 用户提供LangGraph Routing所需的参数和指令。
+
+**输出**: 返回LangGraph Routing的处理结果。
+### AgentCore Memory
+
+执行AgentCore Memory操作,处理用户输入并返回结果。
+
+**输入**: 用户提供AgentCore Memory所需的参数和指令。
+
+**输出**: 返回AgentCore Memory的处理结果。
+
 
 ## CLI 命令
 

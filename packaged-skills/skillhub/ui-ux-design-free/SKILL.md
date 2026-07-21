@@ -79,6 +79,22 @@ WCAG基础要求：
 **输入**: 用户提供基础无障碍（Accessibility）所需的指令和必要参数。
 **处理**: 按照skill规范执行基础无障碍（Accessibility）操作,遵循单一意图原则。
 **输出**: 返回基础无障碍（Accessibility）的执行结果,包含操作状态和输出数据。
+### Mobile-First
+
+执行Mobile-First操作,处理用户输入并返回结果。
+
+**输入**: 用户提供Mobile-First所需的参数和指令。
+
+**输出**: 返回Mobile-First的处理结果。
+### Visual Hierarchy
+
+执行Visual Hierarchy操作,处理用户输入并返回结果。
+
+**输入**: 用户提供Visual Hierarchy所需的参数和指令。
+
+**输出**: 返回Visual Hierarchy的处理结果。
+
+
 ## 使用流程
 
 1. 确认运行环境满足依赖说明中的要求

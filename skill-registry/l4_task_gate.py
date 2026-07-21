@@ -55,8 +55,16 @@ def parse_frontmatter(content: str) -> dict:
 
 
 def extract_section(content: str, section_name: str) -> str:
-    """提取## 级别章节内容"""
-    pattern = rf'## {re.escape(section_name)}\s*\n(.*?)(?=\n## |\Z)'
+    """提取## 级别章节内容 (支持章节名变体匹配)"""
+    # 核心能力章节的变体匹配
+    if section_name == '核心能力':
+        # 匹配 "核心能力", "核心功能", "核心规则", "核心概念", "核心原则", "核心工作流", "核心操作"
+        pattern = r'##\s+核心(?:能力|功能|规则|概念|原则|工作流|操作)\s*\n(.*?)(?=\n## |\Z)'
+    elif section_name == '错误处理':
+        # 匹配 "错误处理", "异常处理"
+        pattern = r'##\s+(?:错误|异常)处理\s*\n(.*?)(?=\n## |\Z)'
+    else:
+        pattern = rf'## {re.escape(section_name)}\s*\n(.*?)(?=\n## |\Z)'
     match = re.search(pattern, content, re.DOTALL)
     return match.group(1).strip() if match else ''
 
@@ -232,11 +240,15 @@ def check_l4_error_recovery(content: str, fm_data: dict) -> Tuple[str, List[str]
             errors.append("错误处理表格缺少'处理方式'列")
         
         # 检查每个错误处理条目是否有具体可执行的恢复步骤
-        vague_solutions = ['重试', '稍后', '联系', '检查', '确认', '确保', '建议', 'retry', 'try again']
+        # 注意: "检查"和"确认"在中文中是动作动词(如"检查输入格式"),不是空话
+        # 真正的空话是仅有"重试"/"稍后"等无具体对象的词
+        vague_solutions = ['重试', '稍后', '联系', '确保', '建议', 'retry', 'try again']
         action_verbs = ['执行', '运行', '配置', '安装', '修改', '删除', '创建', '重启', '切换',
                        '压缩', '转换', '清理', '更新', '替换', '导入', '导出', '设置',
+                       '检查', '确认', '提供', '补充', '参考', '验证', '排查', '恢复',
                        'execute', 'run', 'config', 'install', 'modify', 'delete', 'create',
-                       'restart', 'switch', 'compress', 'convert', 'clean', 'update', 'replace']
+                       'restart', 'switch', 'compress', 'convert', 'clean', 'update', 'replace',
+                       'check', 'verify', 'provide', 'validate']
         
         data_rows = lines[1:]  # 跳过表头
         vague_count = 0

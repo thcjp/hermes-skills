@@ -63,6 +63,15 @@ tools:
 
 **输入**: 用户提供会议转写（Transcription）所需的指令和必要参数。
 **处理**: 按照skill规范执行会议转写（Transcription）操作,遵循单一意图原则。
+### 加入会议（Join Meeting）
+
+执行加入会议（Join Meeting）操作,处理用户输入并返回结果。
+
+**输入**: 用户提供加入会议（Join Meeting）所需的参数和指令。
+
+**输出**: 返回加入会议（Join Meeting）的处理结果。
+
+
 ## 使用流程
 
 1. 配置会议平台API凭证

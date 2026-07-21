@@ -78,6 +78,28 @@ client = TranscriptionClient(
 - 语言指定:通过 `locale` 指定识别语言(如 `en-US`、`zh-CN`),提升识别准确率
 - 流式背压处理:实时转写时处理发送速率与识别速率不匹配,避免缓冲堆积
 - 会话管理:转写完成后关闭会话,释放服务端资源
+### 指令解析与执行
+
+解析用户指令,执行核心操作并返回处理结果。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+### 数据处理与转换
+
+处理输入数据,执行转换操作并输出结果。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+### 结果验证与输出
+
+验证处理结果的正确性,格式化输出并返回给用户。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+
 
 ## 批量转写
 
@@ -162,8 +184,9 @@ for event in stream:
 
 ## 异常处理
 
+
 ### TRANSCRIPTION_ENDPOINT 未设置
-实例化 `TranscriptionClient` 时 `os.environ["TRANSCRIPTION_ENDPOINT"]` 抛 `KeyError`。检查环境变量是否已导出(常见为 `https://<resource>.cognitiveservices.azure.com`),在 shell 或 `.env` 中配置后重试。不要把 endpoint 硬编码进源码。
+实例化 `TranscriptionClient` 时 `os.environ["TRANSCRIPTION_ENDPOINT"]` 抛 `KeyError`。检查环境变量是否已导出(常见为 `https://<resource>.cognitiveservices.azure.com`),在 shell 或 `.env` 中配置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令。不要把 endpoint 硬编码进源码。
 
 ### TRANSCRIPTION_KEY 无效(401/403)
 调用转写接口返回 401 或 403。核对 `TRANSCRIPTION_KEY` 是否为该资源的有效订阅密钥(primary 或 secondary 均可),确认 endpoint 与 key 属于同一资源同一区域。密钥泄漏或轮换后旧 key 会失效,需更新环境变量。
@@ -184,7 +207,7 @@ for event in stream:
 实时转写结束后未关闭会话,服务端连接与配额未释放。转写完成后显式关闭会话(如 `stream.close()` 或使用 `with` 上下文管理),避免连接配额耗尽影响后续转写。
 
 ### 限流(429)
-短时间内提交过多批量作业或并发流式会话触发服务限流。收到 429 时按 `Retry-After` 头退避后重试;对批量作业做队列化与并发上限控制;实时会话控制同时在线数。
+短时间内提交过多批量作业或并发流式会话触发服务限流。收到 429 时按 `Retry-After` 头退避后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令;对批量作业做队列化与并发上限控制;实时会话控制同时在线数。
 
 ## 常见问题
 

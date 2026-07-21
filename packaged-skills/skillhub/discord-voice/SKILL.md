@@ -42,7 +42,6 @@ tools:
 ## 核心规则
 
 ### 1. 先验证系统依赖与 Bot 权限
-
 ```bash
 # 必需系统依赖
 ffmpeg -version          # 音频处理
@@ -52,6 +51,8 @@ node -e "require('sodium-native')"    # 加密
 
 Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`Use Voice Activity`(检测语音活动)。在 Discord Developer Portal > OAuth2 > Permissions 中勾选。
 
+**输入**: 用户提供先验证系统依赖与 Bot 权限所需的指令和必要参数。
+**输出**: 返回先验证系统依赖与 Bot 权限的执行结果,包含操作状态和输出数据。
 ### 2. STT/TTS 引擎必须配置 API Key
 
 | 引擎 | 类型 | 必需环境变量 |

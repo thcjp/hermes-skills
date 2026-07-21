@@ -358,13 +358,14 @@ python3 scripts/auto_tune.py update-all
 
 ## 异常处理
 
+
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
 |---------|---------|---------|---------|
-| comfyui_not_running | `Connection refused: 127.0.0.1:8188` | ComfyUI 未启动或启动中 | 调用 `mgr.start()` 启动,等待 10 秒后重试 |
+| comfyui_not_running | `Connection refused: 127.0.0.1:8188` | ComfyUI 未启动或启动中 | 调用 `mgr.start()` 启动,等待 10 秒后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | model_alias_not_found | `Unknown model alias: xxx` | config.json 中无此别名 | 列出可用别名,引导用户选择或通过 civitai.py download 添加 |
 | civitai_api_key_missing | `CivitAI API Key not found` | credentials/civitai.md 缺失 | 不调 CivitAI API,引导用户前往 civitai.com 注册并配置 Key |
-| civitai_rate_limited | `429 Too Many Requests` | CivitAI API 请求频率过高 | 指数退避重试（5s/10s/20s）,最多 3 次 |
-| generate_timeout | `ComfyUI generation timeout` | 生成耗时超过 120 秒 | 检查 GPU 负载,降低 batch_size 或 steps 后重试 |
+| civitai_rate_limited | `429 Too Many Requests` | CivitAI API 请求频率过高 | 指数退避执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令（5s/10s/20s）,最多 3 次 |
+| generate_timeout | `ComfyUI generation timeout` | 生成耗时超过 120 秒 | 检查 GPU 负载,降低 batch_size 或 steps 后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | oom_error | `CUDA out of memory` | 显存不足 | 降低分辨率或 batch_size,关闭其他占用显存的进程 |
 | sha256_timeout | `SHA256 computation timeout` | 模型文件过大导致计算超时 | 跳过该文件,建议手动检查或分批执行 check-updates |
 | download_failed | `Download failed: HTTP 403` | CivitAI 下载链接过期或需登录 | 引导用户检查 API Key 权限,或手动获取下载链接 |

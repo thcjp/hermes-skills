@@ -26,6 +26,28 @@ tools:
 * **Smart Defaults**: Optimized settings for each conversion path
 * **Metadata Preservation**: Keep titles, authors, dates across formats
 * **Error Recovery**: Validation and helpful error messages
+### 40+ Format Support
+
+执行40+ Format Support操作,处理用户输入并返回结果。
+
+**输入**: 用户提供40+ Format Support所需的参数和指令。
+
+**输出**: 返回40+ Format Support的处理结果。
+### Dual Toolset
+
+执行Dual Toolset操作,处理用户输入并返回结果。
+
+**输入**: 用户提供Dual Toolset所需的参数和指令。
+
+**输出**: 返回Dual Toolset的处理结果。
+### Professional Templates
+
+执行Professional Templates操作,处理用户输入并返回结果。
+
+**输入**: 用户提供Professional Templates所需的参数和指令。
+
+**输出**: 返回Professional Templates的处理结果。
+
 
 ## 适用场景
 

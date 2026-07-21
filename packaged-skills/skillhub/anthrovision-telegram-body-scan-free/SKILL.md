@@ -53,6 +53,14 @@ tools:
 - 调用 `anthrovision_bridge_submit_scan` 提交
 - 调用 `anthrovision_bridge_check_scan` 轮询状态
 - 状态complete时输出基础测量结果
+### 指令解析与执行
+
+解析用户指令,执行核心操作并返回处理结果。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+
 
 ## 适用场景
 

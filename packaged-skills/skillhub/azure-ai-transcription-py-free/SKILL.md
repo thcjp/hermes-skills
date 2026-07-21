@@ -74,6 +74,28 @@ client = TranscriptionClient(
 - 语言指定:通过 `locale` 指定识别语言(如 `en-US`、`zh-CN`),提升识别准确率
 - 订阅密钥认证:通过环境变量配置资源,实例化时传入密钥
 - 作业结果查询:`job.result()` 阻塞等待作业完成并返回结果
+### 指令解析与执行
+
+解析用户指令,执行核心操作并返回处理结果。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+### 数据处理与转换
+
+处理输入数据,执行转换操作并输出结果。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+### 结果验证与输出
+
+验证处理结果的正确性,格式化输出并返回给用户。
+
+**输入**: 用户提供操作指令和必要参数。
+
+**输出**: 返回操作执行的结果。
+
 
 ## 批量转写
 
@@ -126,8 +148,9 @@ print(result.status)
 
 ## 异常处理
 
+
 ### TRANSCRIPTION_ENDPOINT 未设置
-实例化 `TranscriptionClient` 时 `os.environ["TRANSCRIPTION_ENDPOINT"]` 抛 `KeyError`。检查环境变量是否已导出(常见为 `https://<resource>.cognitiveservices.azure.com`),在 shell 或 `.env` 中配置后重试。不要把 endpoint 硬编码进源码。
+实例化 `TranscriptionClient` 时 `os.environ["TRANSCRIPTION_ENDPOINT"]` 抛 `KeyError`。检查环境变量是否已导出(常见为 `https://<resource>.cognitiveservices.azure.com`),在 shell 或 `.env` 中配置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令。不要把 endpoint 硬编码进源码。
 
 ### TRANSCRIPTION_KEY 无效(401/403)
 调用转写接口返回 401 或 403。核对 `TRANSCRIPTION_KEY` 是否为该资源的有效订阅密钥,确认 endpoint 与 key 属于同一资源同一区域。密钥轮换后旧 key 会失效,需更新环境变量。

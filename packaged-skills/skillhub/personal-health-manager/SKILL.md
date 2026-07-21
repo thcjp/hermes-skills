@@ -56,12 +56,16 @@ Track and record various health metrics 基于 user profile:
 | Overweight | 25-29.9 |
 | Obese | ≥30 |
 
-> 详细内容已移至 `references/detail.md` - 
+> 详细内容已移至 `references/detail.md` -
 
+**处理**: 按照skill规范执行Health Data Recording 📊操作,遵循单一意图原则。
+**输出**: 返回Health Data Recording 📊的执行结果,包含操作状态和输出数据。
 ### 2. Age-Specific Health Guidance
+> 详细内容已移至 `references/detail.md` -
 
-> 详细内容已移至 `references/detail.md` - 
-
+**输入**: 用户提供Age-Specific Health Guidance所需的指令和必要参数。
+**处理**: 按照skill规范执行Age-Specific Health Guidance操作,遵循单一意图原则。
+**输出**: 返回Age-Specific Health Guidance的执行结果,包含操作状态和输出数据。
 ### 3. Gender-Specific Health
 
 **处理**: 按照skill规范执行Health Data Recording 📊操作,遵循单一意图原则。
@@ -258,8 +262,10 @@ Track and record various health metrics 基于 user profile:
 * Limit added sugars
 * Drink water before meals
 
-> 详细内容已移至 `references/detail.md` - 
+> 详细内容已移至 `references/detail.md` -
 
+**输入**: 用户提供Nutrition Advice 🥗所需的指令和必要参数。
+**输出**: 返回Nutrition Advice 🥗的执行结果,包含操作状态和输出数据。
 ### 8. Travel Health Preparation ✈️
 
 **输入**: 用户提供Nutrition Advice 🥗所需的指令和必要参数。
@@ -311,11 +317,12 @@ Track and record various health metrics 基于 user profile:
 
 ## 异常处理
 
+
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 依赖说明
 
