@@ -997,19 +997,20 @@ def _load_original_registry() -> set:
 
 def check_source_fidelity(slug: str) -> Dict[str, Any]:
     """检查单个skill的源保真度"""
+    # 先检查是否是原创skill(优先于源skill加载,避免无效源导致SF=0)
+    original_skills = _load_original_registry()
+    if slug in original_skills:
+        return {
+            'slug': slug,
+            'fidelity_score': 100,
+            'fidelity_grade': 'A',
+            'is_original': True,
+            'note': '原创skill,无源skill,跳过SF检查',
+        }
+    
     # 加载源skill
     source_path, source_content = load_source_skill(slug)
     if not source_content:
-        # 检查是否是原创skill
-        original_skills = _load_original_registry()
-        if slug in original_skills:
-            return {
-                'slug': slug,
-                'fidelity_score': 100,
-                'fidelity_grade': 'A',
-                'is_original': True,
-                'note': '原创skill,无源skill,跳过SF检查',
-            }
         return {
             'slug': slug,
             'error': 'Source skill not found',

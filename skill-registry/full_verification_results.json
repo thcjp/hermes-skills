@@ -380,8 +380,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 69,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "afrexai-knowledge-management-free",
@@ -596,8 +596,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 65,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "agent-framework-azure-ai-py",
@@ -2516,8 +2516,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 67,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "aws-cloud-architect-free",
@@ -3620,8 +3620,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 61,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "browser-automation",
@@ -3716,8 +3716,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 68,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "calendar",
@@ -4244,8 +4244,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 38,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "chief-creative-officer-free",
@@ -5060,8 +5060,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 50,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "communication-skill-free",
@@ -5516,8 +5516,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 62,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "csv-handler-free",
@@ -6179,10 +6179,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -6260,8 +6260,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 61,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "design",
@@ -6836,8 +6836,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 61,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "dlazy-audio",
@@ -9308,8 +9308,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 69,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "fonts",
@@ -9644,8 +9644,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 38,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "game-ai",
@@ -9995,10 +9995,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -10523,10 +10523,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -11156,8 +11156,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 66,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "html-designer-paid",
@@ -11276,8 +11276,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 69,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "image",
@@ -11435,11 +11435,11 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
-      "L4-3": "FAIL",
+      "L4-2": "PASS",
+      "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
@@ -11579,10 +11579,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -11708,8 +11708,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 68,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "javascript-skills-paid",
@@ -12092,8 +12092,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 69,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "join-meeting-free",
@@ -12683,10 +12683,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -13172,8 +13172,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 61,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "llm-assistant-hub",
@@ -14075,10 +14075,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -14132,8 +14132,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 60,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "memory-scan",
@@ -15716,8 +15716,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 67,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "okx-dex-token",
@@ -16355,11 +16355,11 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
-      "L4-1": "FAIL",
+      "L4-1": "PASS",
       "L4-2": "PASS",
-      "L4-3": "FAIL",
+      "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
@@ -16676,8 +16676,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 62,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "podcast-downloader",
@@ -16988,8 +16988,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 39,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "proactive-agent-free",
@@ -17219,10 +17219,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -17795,10 +17795,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -18611,10 +18611,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -18635,10 +18635,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -18803,10 +18803,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -18875,10 +18875,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -18971,10 +18971,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -19388,8 +19388,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 69,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "social-free",
@@ -19508,8 +19508,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 61,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "solo-audit",
@@ -20132,8 +20132,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 67,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "story-long-write",
@@ -20780,8 +20780,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 59,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "test-wa-free",
@@ -20852,8 +20852,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 69,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "text-to-speech-heygen",
@@ -21059,14 +21059,14 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
       "L4-4": "PASS",
-      "L4-5": "FAIL",
-      "L4-6": "FAIL"
+      "L4-5": "PASS",
+      "L4-6": "PASS"
     },
     "sf": 82,
     "sf_original": false
@@ -21107,14 +21107,14 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
       "L4-4": "PASS",
-      "L4-5": "FAIL",
-      "L4-6": "FAIL"
+      "L4-5": "PASS",
+      "L4-6": "PASS"
     },
     "sf": 100,
     "sf_original": true
@@ -21212,8 +21212,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 69,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "token-manager-free",
@@ -21323,10 +21323,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -22052,8 +22052,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 67,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "upstage-document-parse",
@@ -22115,10 +22115,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -22139,10 +22139,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -22316,8 +22316,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 58,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "video-editing-paid",
@@ -22523,10 +22523,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -22547,10 +22547,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -23108,8 +23108,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 61,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "weiyun-skills",
@@ -23267,14 +23267,14 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
       "L4-4": "PASS",
-      "L4-5": "FAIL",
-      "L4-6": "FAIL"
+      "L4-5": "PASS",
+      "L4-6": "PASS"
     },
     "sf": 88,
     "sf_original": false
@@ -23291,14 +23291,14 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
       "L4-4": "PASS",
-      "L4-5": "FAIL",
-      "L4-6": "FAIL"
+      "L4-5": "PASS",
+      "L4-6": "PASS"
     },
     "sf": 100,
     "sf_original": true
@@ -23411,10 +23411,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -24356,8 +24356,8 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 60,
-    "sf_original": false
+    "sf": 100,
+    "sf_original": true
   },
   {
     "slug": "ziptax",
