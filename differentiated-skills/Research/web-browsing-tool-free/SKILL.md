@@ -47,7 +47,7 @@ web-browsing fetch "https://docs.example.com" --format markdown
 **输出**: 返回直接 URL 访问的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-### 2. 网页内容智能总结
+### 2. 网页内容智能分析
 
 自动提取网页主要内容并生成摘要。
 

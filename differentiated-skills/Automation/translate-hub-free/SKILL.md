@@ -83,6 +83,8 @@ def calculate_total(items):
 
 ### 4. Markdown格式保留
 
+**输入**：用户提供Markdown格式的文档内容作为翻译源。**输出**：返回翻译后的Markdown文档,完整保留原始格式结构。**处理流程**：解析Markdown AST树,逐节点翻译文本内容,保留代码块和链接结构。
+
 翻译Markdown文档时完整保留格式结构：
 
 | 格式元素 | 处理方式 |

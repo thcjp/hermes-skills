@@ -377,6 +377,8 @@ class VectorMemorySearch:
 
 ### 功能4：记忆策展与归档（专业版核心）
 
+**处理流程**：执行记忆归档命令,系统解析记忆标签并按重要性排序,自动清理过期记忆,返回归档统计报告。
+
 ```python
 # 记忆策展器
 class MemoryCurator:

@@ -1,26 +1,27 @@
 ---
-slug: clawhub-jira-pat-skill
-name: clawhub-jira-pat-skill
-version: "0.0.1"
-displayName: SkillHub Jira Pat Sk
-summary: Manage Jira issues on self-hosted or enterprise Jira instances using Personal
-  Access Tokens in SS...
+slug: agent-browser-automation
+name: agent-browser-automation
+version: "0.1.0"
+displayName: Agent Browser
+summary: Headless browser automation CLI optimized for AI agents with accessibility
+  tree snapshots and ref...
 license: MIT
 description: |-
-  Manage Jira issues on self-hosted or enterprise Jira instances using
-  Personal Access Tokens in SS。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
+  Headless browser automation CLI optimized for AI agents with accessibility
+  tree snapshots and ref。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- Productivity
+- Research
+- Automation
 tools:
-  - - read
-- exec
+  - read
+  - exec
 ---
-# SkillHub Jira Pat Ski
+# Agent Browser
 
 ## 核心能力
 
-- Manage Jira issues on self-hosted or enterprise Jira instances using
-  Personal Access Tokens in SS
+- Headless browser automation CLI optimized for AI agents with accessibility
+  tree snapshots and ref
 ### 指令解析与执行
 
 解析用户指令,执行核心操作并返回处理结果。
@@ -64,19 +65,28 @@ tools:
 
 ### 能力覆盖范围
 
-本skill还覆盖以下能力场景: Use、需要项目管理、任务规划、进度跟踪、团队协作时使用、不适用于实际人员、绩效评估、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+本skill还覆盖以下能力场景: Use、模型调用、智能对话、LLM、应用时使用、不适用于需要、确定性的关键决策。这些能力在上述核心功能中均有对应处理逻辑。
 ### 源能力映射
 本skill覆盖源skill的以下能力点:
 
 | 源能力点 | 支持状态 | 实现方式 |
 |:---------|:---------|:---------|
-| Get Available Transitions | 支持 | 通过核心功能实现对应能力 |
+| Need session isolation | 支持 | 通过核心功能实现对应能力 |
+| Need screenshots/PDFs for analysis | 支持 | 通过核心功能实现对应能力 |
+| Performance is critical | 支持 | 通过核心功能实现对应能力 |
+| Navigation | 支持 | 通过核心功能实现对应能力 |
+| State Persistence | 支持 | 通过核心功能实现对应能力 |
+| Visual inspection required | 支持 | 通过核心功能实现对应能力 |
+| Tabs & Frames | 支持 | 通过核心功能实现对应能力 |
+| Screenshots & PDFs | 支持 | 通过核心功能实现对应能力 |
+| Check State | 支持 | 通过核心功能实现对应能力 |
+| Need deterministic element selection | 支持 | 通过核心功能实现对应能力 |
 
 **输入**: 用户提供源能力映射所需的指令和必要参数。
 **处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
 **输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
 ### 领域术语
-本skill涉及以下领域术语: `before`, `closed`, `filters`, `post`, `prerequisites`, `epic`, `project`, `saml`, `atlassian`, `variables`, `authorization`, `fetch`, `child`, `environment`, `close`
+本skill涉及以下领域术语: `switch`, `browsers`, `over`, `sessions`, `matrixy`, `vercel`, `focus`, `scope`, `isolate`, `testing`, `yossi`, `best`, `interactions`, `view`, `information`
 
 **输入**: 用户提供领域术语所需的指令和必要参数。
 **处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
@@ -97,13 +107,19 @@ tools:
 3. 执行操作并检查输出结果
 4. 如遇错误，参考错误处理章节
 
+### 命令参数说明
+
+- `--load`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
 | content | string | 是 | 相关说明 |
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| content | string | 否 | 相关说明, 默认: 默认值 |
+| mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
+| max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
+| skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |
 
 ## 输出格式
 
@@ -111,51 +127,59 @@ tools:
 {
   "success": true,
   "data": {
-    "overall_grade": "A",
-    "total_score": 92,
-    "max_score": 100,
-    "summary": "处理完成",
-    "details": [
+    "final_result": {
+      （根据实际场景填充）: "相关说明",
+      （根据实际场景填充）: "相关说明",
+      （根据实际场景填充）: "相关说明"
+    },
+    "execution_log": [
       {
-        "item": "代码风格",
-        "status": "pass",
-        "score": 95,
-        "comment": "符合规范"
+        "step": 1,
+        "name": "按流程执行",
+        "status": "completed",
+        "duration_ms": 1200,
+        "output_summary": "按流程执行"
       },
       {
-        "item": "安全合规",
-        "status": "warn",
-        "score": 80,
-        "comment": "符合规范"
+        "step": 2,
+        "name": "按流程执行",
+        "status": "completed",
+        "duration_ms": 3500,
+        "output_summary": "按流程执行"
+      },
+      {
+        "step": 3,
+        "name": "按流程执行",
+        "status": "completed",
+        "duration_ms": 2100,
+        "output_summary": "按流程执行"
+      },
+      {
+        "step": 4,
+        "name": "按流程执行",
+        "status": "completed",
+        "duration_ms": 800,
+        "output_summary": "按流程执行"
       }
     ],
-    "improvements": [
-      {
-        "priority": "high",
-        "suggestion": "建议优化",
-        "expected_gain": "+5分"
-      },
-      {
-        "priority": "medium",
-        "suggestion": "建议优化",
-        "expected_gain": "+3分"
-      }
-    ]
+    "total_duration_ms": 7600,
+    "gates_passed": 3,
+    "gates_total": 3
   },
   "error": null
 }
 ```
+
+中间产物模板参考: `assets/（根据实际场景填充）`
 
 ## 异常处理
 
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
-| 待审查内容为空 | 用户未提供内容 | 提示用户提供待审查的代码 |
-| 内容格式不识别 | 传入不支持的内容格式 | 列出支持的格式, 建议转换后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
-| 检查项超出范围 | 传入了不存在的检查维度 | 列出可用检查维度, 使用默认全部检查 |
-| 审查超时 | 内容过长导致处理超时 | 建议分段审查, 每段不超过5000字 |
-| 其他异常 | 内部处理异常 | 检查输入后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 依赖说明
 
@@ -183,23 +207,26 @@ export API_KEY="your_api_key_here"
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 案例展示
 
-### 示例1：基础用法
-
-```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+```bash
+agent-browser open https://www.google.com
+agent-browser snapshot -i --json
+agent-browser fill @e1 "AI agents"
+agent-browser press Enter
+agent-browser wait --load networkidle
+agent-browser snapshot -i --json
+agent-browser get text @e3 --json
+agent-browser get attr @e4 "href" --json
 ```
 
 ## 常见问题
 
-### Q1: 如何开始使用Clawhub Jira Pat Ski？
+### Q1: 如何开始使用Agent Browser？
 A: 
 
 ### Q2: 遇到错误怎么办？
 A: 
 
-### Q3: SkillHub Jira Pat Ski有什么限制？
+### Q3: Agent Browser有什么限制？
 A: 
 
 ## 错误处理

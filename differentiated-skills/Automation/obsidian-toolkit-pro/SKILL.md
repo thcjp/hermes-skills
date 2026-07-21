@@ -700,6 +700,8 @@ recent.forEach(f => {
 
 ### 插件深度集成
 
+**处理流程**：调用Obsidian插件API执行操作,处理插件配置和状态管理,返回插件执行结果。支持Dataview查询、Templater模板渲染等。
+
 #### Dataview查询语法
 
 **TABLE查询**：

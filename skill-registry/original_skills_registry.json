@@ -524,5 +524,15 @@
     "video-editing",
     "weekly-report-writer",
     "zhuchenggong-doubao-image-gen"
-  ]
+  ],
+  "blog-writer-tool-free": {
+    "reason": "Original differentiated skill - no clawhub source",
+    "added_date": "2026-07-21",
+    "category": "differentiated"
+  },
+  "blog-writer-tool-pro": {
+    "reason": "Original differentiated skill - no clawhub source",
+    "added_date": "2026-07-21",
+    "category": "differentiated"
+  }
 }

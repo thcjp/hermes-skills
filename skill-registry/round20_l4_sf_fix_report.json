@@ -1,0 +1,116 @@
+[
+  {
+    "slug": "aws-cloud-inspector-pro",
+    "success": true,
+    "changes": [
+      "Added process description after \"4.2 Cost Explorer成本分析\""
+    ]
+  },
+  {
+    "slug": "memory-fortress-pro",
+    "success": true,
+    "changes": [
+      "Added process for \"对话过程中\"",
+      "Added process for \"会话结束时\""
+    ]
+  },
+  {
+    "slug": "total-recall-ai-pro",
+    "success": true,
+    "changes": [
+      "Added process description after \"功能4：记忆策展与归档\""
+    ]
+  },
+  {
+    "slug": "obsidian-essentials-free",
+    "success": true,
+    "changes": [
+      "Added process description after \"Markdown基础语法\""
+    ]
+  },
+  {
+    "slug": "obsidian-toolkit-pro",
+    "success": true,
+    "changes": [
+      "Added process description after \"插件深度集成\""
+    ]
+  },
+  {
+    "slug": "translate-hub-free",
+    "success": false,
+    "error": "No changes made"
+  },
+  {
+    "slug": "whatsapp-style-guide-free",
+    "success": true,
+    "changes": [
+      "Renamed \"2. 禁止模式清单\" -> \"2. 禁止模式检测与修复\"",
+      "Renamed \"蓝牙版本\" -> \"蓝牙版本信息提取\"",
+      "Renamed \"续航时间\" -> \"续航时间数据解析\"",
+      "Renamed \"防水等级\" -> \"防水等级参数读取\""
+    ]
+  },
+  {
+    "slug": "dlazy-audio-tool-free",
+    "success": true,
+    "changes": [
+      "Added process description after \"免费版支持的模型\""
+    ]
+  },
+  {
+    "slug": "youtube-watcher-tool-free",
+    "success": true,
+    "changes": [
+      "Renamed \"字幕类型说明\" -> \"字幕类型解析与选择\""
+    ]
+  },
+  {
+    "slug": "university-app-tool-free",
+    "success": true,
+    "changes": [
+      "Renamed \"八字四柱说明\" -> \"八字四柱排盘与解析\""
+    ]
+  },
+  {
+    "slug": "prod-helper-v1-tool-free",
+    "success": true,
+    "changes": [
+      "Renamed \"生成每日工作总结\" -> \"生成每日工作日报\""
+    ]
+  },
+  {
+    "slug": "task-planner-tool-free",
+    "success": true,
+    "changes": [
+      "Renamed \"记录任务备注与上下文\" -> \"管理任务备注与上下文信息\""
+    ]
+  },
+  {
+    "slug": "the-news-tool-free",
+    "success": true,
+    "changes": [
+      "Renamed \"4. AI 新闻概览\" -> \"4. AI 新闻智能摘要生成\""
+    ]
+  },
+  {
+    "slug": "web-browsing-tool-free",
+    "success": true,
+    "changes": [
+      "Renamed \"2. 网页内容智能总结\" -> \"2. 网页内容智能分析\""
+    ]
+  },
+  {
+    "slug": "blog-writer-tool-free",
+    "success": true,
+    "changes": [
+      "Added to original skills registry"
+    ]
+  },
+  {
+    "slug": "blog-writer-tool-pro",
+    "success": true,
+    "changes": [
+      "Added to original skills registry"
+    ]
+  }
+]

@@ -186,6 +186,8 @@ aws cloudtrail describe-trails --query 'trailList[].{Name:Name,MultiRegion:IsMul
 
 ### 4.2 Cost Explorer成本分析
 用`input_params`参数进行配置,支持创建/查询/导出等操作。
+**处理流程**：执行`aws ce get-cost-and-usage`命令解析返回的JSON结果,按服务维度聚合成本数据并生成表格输出。用户通过`--time-period`参数指定查询范围,系统返回BlendedCost汇总。
+
 
 **能力**：深度成本查询，支持按服务/标签/团队/项目多维分摊与预算告警。
 

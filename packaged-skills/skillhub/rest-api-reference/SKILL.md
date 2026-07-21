@@ -1,6 +1,6 @@
 ---
-slug: api
-name: api
+slug: rest-api-reference
+name: rest-api-reference
 version: "1.0.0"
 displayName: REST API参考手册
 summary: 147个第三方服务的REST API参考,含认证模式、端点、速率限制、分页与Webhook模式
