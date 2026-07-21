@@ -4,12 +4,10 @@ name: azure-cli-toolkit-pro
 version: "1.0.0"
 displayName: Azure命令行工具专业版
 summary: 企业级Azure云管理,支持批量操作、自动化脚本、多订阅管理与成本优化分析
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  面向企业团队的高级 Azure 云平台管理工具,在免费版基础上扩展自动化、批量操作与成本治理能力。
-
-  核心能力:
+  面向企业团队的高级 Azure 云平台管理工具,在免费版基础上扩展自动化、批量操作与成本治理能力。核心能力:
   - 服务主体与托管身份认证(自动化场景)
   - 批量资源操作与脚本化部署
   - 多订阅跨租户统一管理
@@ -25,9 +23,7 @@ description: |-
   - 兼容免费版全部命令,无缝升级
   - 支持自动化脚本与 CI/CD 集成
   - 提供成本优化与合规审计能力
-  - 优先技术支持与更新通道
-
-  触发关键词: azure, cli, automation, batch, enterprise, cost, policy, ak, aks, terraform, 自动化, 批量, 成本, 合规
+  -...
 tags:
 - 云平台
 - Azure
@@ -36,10 +32,9 @@ tags:
 - 企业级
 - 成本治理
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Azure 命令行工具专业版
 
 ## 概述
@@ -232,6 +227,20 @@ az storage container list \
     --account-name mystorage -n {}
 ```
 
+## 不适用场景
+
+以下场景Azure命令行工具专业版不适合处理：
+
+- 需要人工创意判断的任务
+- 非结构化头脑风暴
+- 人际沟通协调
+
+
+## 触发条件
+
+需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 第一步: 配置服务主体
@@ -240,7 +249,7 @@ az storage container list \
 # 创建服务主体
 az ad sp create-for-rbac --name my-automation-sp
 
-# 输出示例:
+# 示例
 # {
 #   "appId": "xxxxx-xxxx-xxxx",
 #   "password": "xxxxx-xxxx-xxxx",
@@ -332,7 +341,7 @@ steps:
 
 ## 最佳实践
 
-### 1. 错误处理与重试
+### 错误处理
 
 ```bash
 #!/bin/bash
@@ -422,7 +431,7 @@ az policy state trigger-scan
 - **Azure CLI**: v2.50 或更高版本
 - **Bash**: 4.0+(自动化脚本执行)
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -457,3 +466,7 @@ az keyvault secret show --vault-name myVault -n azure-client-secret \
 - **分类**: MD+EXEC+SCRIPT(Markdown 指令 + 命令行执行 + 自动化脚本)
 - **说明**: 通过自然语言指令驱动 Agent 执行 `az` 命令,支持脚本化批量操作与 CI/CD 集成
 - **离线可用**: 否,所有操作需要连接 Azure 云平台
+
+## 已知限制
+
+- 依赖云服务，需要网络连接

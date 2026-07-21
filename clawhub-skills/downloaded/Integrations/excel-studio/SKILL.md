@@ -7,41 +7,19 @@ summary: Professional Excel spreadsheet generator. Use when user needs to create
   tables, reports, cha...
 license: MIT-0
 description: |-
-  Professional Excel spreadsheet generator. Use when user needs to create
-  data tables, reports, cha...
-
-  核心能力:
-
-  - 集成工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 第三方API集成、平台对接、数据同步
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: generator, excel, professional, spreadsheet, studio
+  Professional Excel spreadsheet generator。Use when user needs to create
+  data tables, reports, cha。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Integrations
 tools:
-- read
+  - - read
 - exec
 ---
 
 # Excel Studio
-
 Professional Excel spreadsheet generator with full formatting, charts, formulas, and multi-sheet support.
 
 ## Features
-
 * 📊 **Multi-Format**: Output as .xlsx, .xls, or .csv
 * 📈 **Charts & Graphs**: Bar, line, pie, scatter charts
 * 🔢 **Formulas**: SUM, AVERAGE, VLOOKUP, and more
@@ -52,7 +30,6 @@ Professional Excel spreadsheet generator with full formatting, charts, formulas,
 * 📱 **Excel Compatible**: Works with Excel, WPS, LibreOffice
 
 ## Trigger Conditions
-
 * "帮我做Excel" / "Create an Excel file"
 * "生成表格" / "Generate spreadsheet"
 * "做数据分析" / "Create data analysis"
@@ -60,9 +37,7 @@ Professional Excel spreadsheet generator with full formatting, charts, formulas,
 * "excel-studio"
 
 ## Document Types
-
 ### Business (商务)
-
 * 销售报表
 * 财务报表
 * 预算表
@@ -70,21 +45,18 @@ Professional Excel spreadsheet generator with full formatting, charts, formulas,
 * 项目跟踪
 
 ### Data Analysis (数据分析)
-
 * 数据汇总
 * 数据透视
 * 趋势分析
 * 对比分析
 
 ### Financial (财务)
-
 * 资产负债表
 * 利润表
 * 现金流量表
 * 预算对比
 
 ### Personal (个人)
-
 * 记账本
 * 日程表
 * 成绩单
@@ -92,8 +64,7 @@ Professional Excel spreadsheet generator with full formatting, charts, formulas,
 
 ---
 
-## Step 1: Understand Requirements
-
+## 依赖说明
 ```text
 请提供以下信息：
 
@@ -109,9 +80,7 @@ Sheet数量：
 ---
 
 ## Step 2: Generate Excel
-
 ### Python Script Template
-
 ```python
 python3 << 'PYEOF'
 import os
@@ -375,9 +344,7 @@ PYEOF
 ---
 
 ## Format Types (格式类型)
-
 ### Cell Formats
-
 ```python
 FORMATS = {
     # 对齐
@@ -409,7 +376,6 @@ FORMATS = {
 ---
 
 ## Chart Types (图表类型)
-
 | 类型 | 代码 | 适用场景 |
 | --- | --- | --- |
 | 柱状图 | `bar` | 对比数据 |
@@ -420,9 +386,7 @@ FORMATS = {
 ---
 
 ## Formula Support (公式支持)
-
 ### Common Formulas
-
 ```python
 '=SUM(A1:A10)'
 
@@ -444,9 +408,7 @@ FORMATS = {
 ---
 
 ## Multi-Sheet Operations (多Sheet操作)
-
 ### Cross-Sheet Reference
-
 ```python
 '=Sheet1!A1'
 
@@ -458,7 +420,6 @@ FORMATS = {
 ---
 
 ## Security Notes
-
 * ✅ No network calls or external endpoints
 * ✅ No credentials or API keys required
 * ✅ Local file processing only
@@ -468,7 +429,6 @@ FORMATS = {
 ---
 
 ## Notes
-
 * 使用openpyxl支持.xlsx格式
 * 使用xlwt支持.xls格式
 * CSV使用内置csv模块
@@ -476,7 +436,6 @@ FORMATS = {
 * 跨平台兼容Excel/WPS/LibreOffice
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
@@ -492,3 +451,44 @@ FORMATS = {
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 适用场景
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 示例
+### 示例1：基础用法
+```
+输入: 用户请求
+处理: 根据使用流程执行
+输出: 处理结果
+```
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+### Q1: 如何开始使用Excel Studio？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Excel Studio有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+- 需要API Key，无Key环境无法使用

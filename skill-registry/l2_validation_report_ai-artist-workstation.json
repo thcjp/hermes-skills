@@ -1,0 +1,74 @@
+{
+  "slug": "ai-artist-workstation",
+  "validated_at": "2026-07-20T21:27:43.725972",
+  "l2_version": "1.0",
+  "status": "pending_llm_eval",
+  "skill_md_path": "d:\\skills\\packaged-skills\\skillhub\\ai-artist-workstation\\SKILL.md",
+  "static_check": {
+    "issues": [],
+    "static_scores": {
+      "trust_static": 10,
+      "convention_static": 10
+    },
+    "body_line_count": 402,
+    "description_length": 224
+  },
+  "trigger_test_cases": [
+    {
+      "id": "tc1",
+      "user_input": "帮我画图订单",
+      "expected_trigger": true,
+      "reason": "从description触发关键词提取: 画图订单"
+    },
+    {
+      "id": "tc2",
+      "user_input": "帮我AI绘画需求",
+      "expected_trigger": true,
+      "reason": "从description触发关键词提取: AI绘画需求"
+    },
+    {
+      "id": "tc3",
+      "user_input": "帮我图片定制",
+      "expected_trigger": true,
+      "reason": "从description触发关键词提取: 图片定制"
+    }
+  ],
+  "external_dependencies": [
+    {
+      "type": "ai_model",
+      "name": "Claude",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "ai_model",
+      "name": "文心",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "ai_model",
+      "name": "通义",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "ai_model",
+      "name": "DeepSeek",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    }
+  ],
+  "llm_eval_prompt": "# L2验证: LLM模拟评估任务\n\n## 被评估Skill: ai-artist-workstation\n\n## SKILL.md内容\n---\nslug: ai-artist-workstation\nname: ai-artist-workstation\nversion: \"1.0.1\"\ndisplayName: \"AI接单画师工作站\"\nsummary: \"一个人开AI画师工作室,双引擎路由+98%面部保持+接单SOP全闭环\"\nlicense: Proprietary\ndescription: |-\n  AI接单画师工作站——一个人就能开AI画师工作室的全流程变现工具。核心功能:双引擎智能路由(写实风格走鹧应AI写真保证98%面部保持,艺术风格走通用绘画引擎)、8种风格模板、接单SOP从接单到交付全流程闭环、敏感词审核合规、电商订单自动交付。适用场景:电商AI头像定制接单变现、商业画图批量生产、内容矩阵引流、AI写真定制服务。触发关键词:画图订单、AI绘画需求、图片定制、AI头像、商业画图、AI写真、头像定制、商品图生成、接单画图、艺术风格图。\nhomepage: \"https://skillhub.cn\"\ntags: [AI绘画, 接单变现, 商业画图, AI写真, 副业变现]\ntools:\n  - read\n  - exec\nsuggested_price: \"19.00\"\npricing_tier: \"business\"\npricing_rationale: \"电商类, medium市场, enterprise复杂度, weekly频次, business层 → 直接关联收入,付费意愿强\"\n---\n# AI接单画师工作站\n\n> 定位: 多引擎AI绘画+接单SOP全流程工作站\n> 设计: 双引擎路由(写实→鹧应AI写真98%面部保持 / 艺术风格→通用绘画引擎)+接单交付闭环\n\n## 核心能力\n\n1. **双引擎智能路由**:写实风格自动走鹧应AI写真引擎(98%面部保持,0.08元/张),艺术风格走通用绘画引擎(免费),按风格参数自动选择最优引擎\n2. **8种风格模板全覆盖**:二次元/写实/水彩/国风/赛博朋克/像素/油画/3D卡通,每种风格预设引擎路由策略和面部保持参数\n3. **接单SOP全流程闭环**:从订单接收→需求提取→引擎路由→图片生成→敏感词审核→网盘交付,5步标准化流程,支持电商订单自动交付\n4. **多级引擎降级链**:首选引擎不可用时自动降级(鹧应AI写真→通用绘画T2I),全部失败返回明确错误码,保证服务可用性\n5. **敏感词审核与合规**:自动审核prompt和生成结果描述,替换违禁内容,含违禁内容时拒绝生成并支持退款流程\n\n## 适用场景\n\n| 场景 | 输入 | 输出 | 是否适用 |\n|:-----|:-----|:-----|:---------|\n| 电商AI头像定制接单 | 客户自拍+写实风格+1:1尺寸 | 98%面部保持的写实头像+网盘交付链接 | 适用 |\n| 商业商品图批量生产 | 商品描述+商品图风格+数量1-10 | 多张商品图+预览图打包 | 适用 |\n| 内容矩阵引流作品 | 风格图描述+古风/二次元风格 | 艺术风格图+社交展示帖文案 | 适用 |\n| AI写真定制服务 | 参考图+写实/国风+面部保持需求 | 高保真面部保持写真图 | 适用 |\n| 壁纸/头像批量生成 | 壁纸描述+尺寸+数量 | 多张壁纸图打包下载 | 适用 |\n| 专业插画师级商业插画 | 高精度分层PSD源文件需求 | 不适用(仅输出PNG/JPG位图) | 不适用 |\n| 矢量图形Logo设计 | 矢量SVG格式输出需求 | 不适用(仅支持位图输出) | 不适用 |\n| 视频内容生成 | 视频生成需求 | 不适用(本Skill仅处理静态图片) | 不适用 |\n\n## 使用流程\n\n### Step 1: 接收画图请求\n- 解析输入参数:style(头像/商业图/风格图/壁纸/商品图)、prompt(描述)、count(数量,1-10)、size(尺寸)\n- 参数校验:style在允许范围内、prompt非空、count≤10\n- 校验失败处理:参数缺失→提示补全;count超限→截断为10\n\n### Step 2: 选择生成引擎\n- 按style+是否有参考图路由:\n  - 头像/人像+有参考图→写实引擎(鹧应AI写真,98%面部保持)\n  - 头像/人像+无参考图→通用绘画引擎T2I\n  - 商品图/通用→通用绘画引擎(商品图模式)\n  - 风格图/古风→通用绘画引擎(古风插画模式)\n- 引擎不可用时按降级链切换\n\n### Step 3: 风格参数选择(仅style=头像时)\n- 根据avatar_style参数(二次元/写实/水彩/国风/赛博朋克/像素/油画/3D卡通)选择引擎路由\n- 有参考图(face_image/agent_id)→调用一致性写真生成\n- 无参考图→调用通用绘画引擎纯text-to-image\n\n| 风格 | style参数值 | 面部ID保持 | 推荐引擎 |\n|:-----|:----------|:----------|:---------|\n| 二次元 | anime | 否(艺术风格) | 通用绘画 T2I |\n| 写实 | realistic | 是(98%,鹧应) | 鹧应AI写真→通用绘画 |\n| 水彩 | watercolor | 否(艺术风格) | 通用绘画 T2I |\n| 国风 | chinese_ink | 是(98%,鹧应) | 鹧应AI写真→通用绘画 |\n| 赛博朋克 | cyberpunk | 否(艺术风格) | 通用绘画 T2I |\n| 像素 | pixel | 否(艺术风格) | 通用绘画 T2I |\n| 油画 | oil_painting | 否(艺术风格) | 通用绘画 T2I |\n| 3D卡通 | 3d_cartoon | 否(艺术风格) | 通用绘画 T2I |\n\n### Step 4: 生成图片\n- 调用对应绘画引擎生成图片\n- 等待生成完成(超时180秒)\n- 下载图片到本地\n- 异常处理:生成失败→重试1次→仍失败则换引擎→全部失败返回错误\n\n### Step 5: 敏感词审核\n- 审核prompt和生成结果描述\n- 替换敏感词,确保合规\n- prompt含违禁内容→拒绝生成并退款\n\n### Step 6: 交付\n- 电商订单:发送预览图+发送高清原图网盘链接\n- 内容矩阵:生成作品展示帖用于社交平台发布\n- 发送失败→记录待发送队列\n\n## 输入格式\n```json\n{\n  \"style\": \"头像\",\n  \"prompt\": \"一个戴眼镜的程序员,赛博朋克风格,蓝色调\",\n  \"face_image\": \"d:/photos/selfie.jpg\",\n  \"avatar_style\": \"cyberpunk\",\n  \"template_id\": \"25f62a71-8255-431f-b0be-4e56f6b41921\",\n  \"count\": 1,\n  \"size\": \"1:1\",\n  \"channel\": \"ecommerce\",\n  \"order_id\": \"EC20240115002\"\n}\n```...(截断)\n\n## 评估任务\n\n请作为Skill质量评估专家, 完成以下4项评估:\n\n### 检查1: 触发精准度\n对以下3个测试用例, 判断SKILL.md的description是否能精准触发:\n- tc1: 用户输入「帮我画图订单」 → 预期触发: True\n- tc2: 用户输入「帮我AI绘画需求」 → 预期触发: True\n- tc3: 用户输入「帮我图片定制」 → 预期触发: True\n\n评估标准:\n- PASS: 3/3个用例的触发判断与预期一致\n- WARN: 2/3一致\n- FAIL: ≤1/3一致\n\n### 检查2: 输出完整性\n模拟skill执行, 评估输出是否包含SKILL.md承诺的核心能力:\n- 读取\"核心能力\"章节\n- 模拟1个典型输入的执行\n- 判断输出是否覆盖承诺的能力点\n\n评估标准:\n- PASS: 输出覆盖所有核心能力\n- WARN: 覆盖大部分但有遗漏\n- FAIL: 输出与承诺严重不符\n\n### 检查3: 依赖可达性\n检查SKILL.md引用的外部依赖是否真实可用:\n- API endpoint是否可达\n- npm/PyPI包是否存在\n- AI模型是否为已知模型\n\n评估标准:\n- PASS: 所有依赖可达/存在\n- WARN: 部分依赖未验证\n- FAIL: 依赖不存在或不可达\n\n### 检查4: TRACE快评\n按TRACE五维度评分(每维度0-10分):\n\n- T (Trust 可信任度): 安全性、国内可用性、中文支持\n- R (Reliability 可靠性): 异常处理、边界输入、失败反馈\n- A (Adaptability 适用性): description精准、能力边界清晰\n- C (Convention 规范性): 信息架构、文档充分性\n- E (Effectiveness 有效性): 解决问题、输出可用\n\n通过标准: 总分≥35/50\n\n## 输出格式(严格JSON)\n\n```json\n{\n  \"slug\": \"ai-artist-workstation\",\n  \"validated_at\": \"<ISO时间>\",\n  \"checks\": {\n    \"trigger_accuracy\": {\n      \"status\": \"PASS|WARN|FAIL\",\n      \"score\": \"3/3\",\n      \"details\": \"评估说明\"\n    },\n    \"output_completeness\": {\n      \"status\": \"PASS|WARN|FAIL\",\n      \"covered_capabilities\": [\"能力1\", \"能力2\"],\n      \"missing_capabilities\": [],\n      \"details\": \"评估说明\"\n    },\n    \"dependency_reachability\": {\n      \"status\": \"PASS|WARN|FAIL\",\n      \"total_deps\": 0,\n      \"verified_deps\": 0,\n      \"failed_deps\": [],\n      \"details\": \"评估说明\"\n    },\n    \"trace_quick_score\": {\n      \"trust\": 0,\n      \"reliability\": 0,\n      \"adaptability\": 0,\n      \"convention\": 0,\n      \"effectiveness\": 0,\n      \"total\": 0,\n      \"grade\": \"A|B|C|D\",\n      \"passed\": true,\n      \"details\": \"评估说明\"\n    }\n  },\n  \"overall_passed\": false,\n  \"overall_summary\": \"总结\"\n}\n```\n",
+  "llm_eval_prompt_length": 4750,
+  "static_pre_eval": {
+    "trust_static": 10,
+    "convention_static": 10,
+    "static_total": 20,
+    "note": "T+C维度静态分, R+A+E维度需LLM评估"
+  }
+}

@@ -4,29 +4,15 @@ name: azure-transcription-tool-pro
 version: "1.0.0"
 displayName: Azure语音转写专业版
 summary: 企业级语音转写工具，支持实时流式转写、说话人分离、批量处理与自定义模型。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  Azure语音转写专业版 —— 面向企业团队与专业用户的高级语音转写工具。
-
-  核心能力:
+  Azure语音转写专业版 —— 面向企业团队与专业用户的高级语音转写工具。核心能力:
   - 实时流式语音转写，支持麦克风输入与流式音频
   - 说话人分离（Diarization），自动识别不同说话人
   - 批量转写队列管理，支持大规模音频文件处理
   - 自定义语音模型集成，提升专业领域识别准确率
-  - 多语言混合转写，支持中英文混合识别
-  - 转写结果后处理：标点恢复、敏感词过滤、格式化输出
-  - 支持多种输出格式：纯文本、SRT、VTT、JSON
-
-  适用场景:
-  - 企业会议系统实时字幕与会议纪要生成
-  - 客服中心通话录音批量转写与分析
-  - 医疗/法律等专业领域语音文档化
-  - 多语言视频字幕批量生成
-
-  差异化:专业版在免费版批量转写基础上，增加实时流式转写、说话人分离、批量队列、自定义模型等企业级能力。与免费版API完全兼容，可直接复用免费版的认证配置。
-
-  触发关键词: 实时转写, 说话人分离, 批量转写, 自定义模型, speech-to-text, transcription, diarization, real-time, Azure, 会议纪要, 字幕生成
+  - 多语言混合转写...
 tags:
 - 语音识别
 - Azure
@@ -34,10 +20,9 @@ tags:
 - 实时转写
 - 说话人分离
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Azure语音转写专业版
 
 ## 概述
@@ -283,12 +268,26 @@ video_manager.batch_transcribe(english_videos, locale="en-US", diarization=False
 video_manager.export_results(format='vtt', output_dir='./subtitles/en-US')
 ```
 
+## 不适用场景
+
+以下场景Azure语音转写专业版不适合处理：
+
+- 专业医学法律翻译认证
+- 同声传译
+- 文学创作翻译
+
+
+## 触发条件
+
+需要文本翻译、多语言转换、本地化处理时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 1. 环境准备
 
 ```bash
-# 安装SDK
+# 依赖说明
 pip install azure-ai-transcription
 
 # 配置环境变量
@@ -332,7 +331,7 @@ results = manager.batch_transcribe(
 manager.export_results(format='srt')
 ```
 
-## 配置示例
+## 示例
 
 ### 转写参数配置
 
@@ -414,3 +413,16 @@ manager.export_results(format='srt')
 
 - **分类**: MD+EXEC（纯Markdown指令，核心功能需要exec命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行专业语音转写任务。支持实时流式转写、说话人分离、批量队列等企业级功能，通过Python SDK调用Azure AI服务。与免费版完全兼容，可直接复用免费版的认证配置与基础转写流程。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用
+- 依赖云服务，需要网络连接

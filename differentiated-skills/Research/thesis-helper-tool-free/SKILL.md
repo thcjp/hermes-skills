@@ -4,38 +4,16 @@ name: thesis-helper-tool-free
 version: "1.0.0"
 displayName: 论文写作助手免费版
 summary: 面向学生和研究者的论文辅助工具,提供大纲生成、文献综述框架、摘要撰写与引用格式转换
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  论文写作助手免费版,面向学生和个人研究者提供基础的论文写作辅助能力。
-  支持论文大纲生成、文献综述框架搭建、摘要撰写、引用格式转换等核心功能。
-
-  核心能力:
-  - 论文大纲生成,支持多级结构
-  - 文献综述框架,按时间线或主题分类
-  - 中英文摘要撰写,符合学术规范
-  - 主流引用格式转换(APA/MLA/Chicago/GB-T7714)
-  - 格式规范基础检查
-  - 答辩准备要点梳理
-
-  适用场景:
-  - 本科生和研究生论文写作
-  - 学术新人学习论文结构
-  - 个人研究者整理研究思路
-
-  差异化:
-  - 免费版聚焦个人学术场景,功能精炼实用
-  - 移除外部平台依赖,纯净本地运行
-  - 增强中文学术触发关键词
-  - 完全适配 SkillHub 平台规范
-
-  触发关键词: 论文, 大纲, 文献综述, 摘要, 引用格式, 答辩, thesis, outline, literature review, abstract, citation
+  论文写作助手免费版,面向学生和个人研究者提供基础的论文写作辅助能力。支持论文大纲生成、文献综述框架搭建、摘要撰写、引用格式转换等核心功能。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。
 tags:
 - 研究工具
 - 论文写作
 - 学术辅助
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -134,7 +112,7 @@ thesis-helper format --file my_thesis.docx --check headings,references,tables
 # 生成答辩准备要点
 thesis-helper defense --file my_thesis.docx
 
-# 生成答辩常见问题
+# 常见问题
 thesis-helper defense --file my_thesis.docx --questions
 ```
 
@@ -240,7 +218,7 @@ thesis-helper abstract --topic "智能教育系统的设计与实现" --lang zh
 thesis-helper abstract --topic "Design and Implementation of Intelligent Education System" --lang en
 ```
 
-## 配置示例
+## 示例
 
 ### 个人偏好配置
 
@@ -345,7 +323,7 @@ thesis-helper outline \
 - 摘要字数规范
 - 关键词数量
 
-### Q4: 免费版有哪些限制?
+### 已知限制
 
 **A:** 免费版主要面向个人学术使用,具备完整的写作辅助能力。如需团队协作、批量处理、查重检测、多文档管理等高级功能,请考虑升级到 PRO 版本。
 
@@ -356,7 +334,7 @@ thesis-helper outline \
 - **Agent 平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -373,3 +351,11 @@ thesis-helper outline \
 - **分类**: MD+EXEC(纯 Markdown 指令,通过 exec 执行命令行工具)
 - **说明**: 基于命令行的论文写作辅助工具,通过自然语言指令驱动 Agent 生成论文结构化内容
 - **适用规模**: 单用户、单文档、本地运行
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

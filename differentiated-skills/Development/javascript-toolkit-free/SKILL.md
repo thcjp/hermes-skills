@@ -3,13 +3,11 @@ slug: javascript-toolkit-free
 name: javascript-toolkit-free
 version: "1.0.0"
 displayName: JavaScript工具包免费版
-summary: JavaScript 陷阱防范与最佳实践指南，覆盖异步、类型转换、闭包等核心场景。
-license: MIT
+summary: JavaScript 陷阱防范与优选实践指南，覆盖异步、类型转换、闭包等核心场景。
+license: Proprietary
 edition: free
 description: |-
-  面向 JavaScript 开发者的代码陷阱防范工具，帮助编写健壮的 JS 代码。
-
-  核心能力:
+  面向 JavaScript 开发者的代码陷阱防范工具，帮助编写健壮的 JS 代码。核心能力:
   - 相等性比较陷阱（== vs ===）识别与规避
   - this 绑定问题分析与修复
   - 闭包陷阱与变量捕获防范
@@ -22,27 +20,21 @@ description: |-
   - 异步编程的错误排查
   - 类型转换与比较的边界情况处理
 
-  差异化: 免费版聚焦 JavaScript 核心陷阱的识别与防范，提供简明速查表与代码示例，开箱即用。
-
-  触发关键词: javascript, js陷阱, 类型转换, this绑定, 闭包, 异步编程, promise, async await, 数组变异, 严格模式
+  差异化: 免费版聚焦 JavaScript 核心陷阱的识别与防范...
 tags:
 - 开发工具
 - JavaScript
 - 代码质量
 - 异步编程
 tools:
-- read
+  - - read
 - exec
----
-
 # JavaScript 工具包（免费版）
-
 ## 概述
-
-本工具为 JavaScript 开发者提供代码陷阱防范与最佳实践指引，覆盖相等性比较、this 绑定、闭包、数组变异、异步编程、类型转换、严格模式等核心场景。通过自然语言指令驱动，帮助开发者识别和规避 JavaScript 中常见的陷阱，编写更加健壮、可靠的代码。免费版聚焦个人开发者高频遇到的语言陷阱，提供简明速查表与代码示例。
+---
+本工具为 JavaScript 开发者提供代码陷阱防范与优选实践指引，覆盖相等性比较、this 绑定、闭包、数组变异、异步编程、类型转换、严格模式等核心场景。通过自然语言指令驱动，帮助开发者识别和规避 JavaScript 中常见的陷阱，编写更加健壮、可靠的代码。免费版聚焦个人开发者高频遇到的语言陷阱，提供简明速查表与代码示例。
 
 ## 核心能力
-
 | 能力模块 | 描述 | 典型陷阱 |
 | --- | --- | --- |
 | 相等性比较 | == 与 === 的区别 | `"0" == false` 为 true |
@@ -55,141 +47,37 @@ tools:
 | 迭代 | for...in vs for...of | 遍历键还是值 |
 
 ## 使用场景
-
 ### 场景一：异步编程陷阱排查
-
 开发者遇到异步代码不按预期执行的问题。
 
-```text
-用户：我的 forEach 里的 async 函数没有等待，怎么办
-
-助手：forEach 不会等待 async 函数完成
-
-// 错误：forEach 不等待
-async function processItems(items) {
-    items.forEach(async (item) => {
-        await process(item);  // 不会被等待
-    });
-    console.log('完成');  // 在 process 完成前就执行
-}
-
-// 正确方式一：for...of（顺序执行）
-async function processItems(items) {
-    for (const item of items) {
-        await process(item);
-    }
-    console.log('完成');
-}
-
-// 正确方式二：Promise.all（并行执行）
-async function processItems(items) {
-    await Promise.all(items.map(item => process(item)));
-    console.log('完成');
-}
-
-// 正确方式三：需要部分失败容错用 allSettled
-async function processItems(items) {
-    const results = await Promise.allSettled(
-        items.map(item => process(item))
-    );
-    const failed = results.filter(r => r.status === 'rejected');
-    if (failed.length > 0) {
-        console.warn(`${failed.length} 个处理失败`);
-    }
-}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 场景二：this 绑定问题修复
-
 开发者的事件回调中 this 指向错误。
 
-```text
-用户：我的事件回调里 this 是 undefined
-
-助手：这是 this 绑定丢失的典型问题
-
-class Counter {
-    constructor() {
-        this.count = 0;
-    }
-    
-    // 错误：普通函数在事件回调中丢失 this
-    startBad() {
-        document.addEventListener('click', function() {
-            this.count++;  // this 是 undefined（严格模式）
-        });
-    }
-    
-    // 正确方式一：箭头函数（继承外层 this）
-    startGood1() {
-        document.addEventListener('click', () => {
-            this.count++;  // this 指向 Counter 实例
-        });
-    }
-    
-    // 正确方式二：bind 绑定
-    startGood2() {
-        document.addEventListener('click', this.handleClick.bind(this));
-    }
-    
-    handleClick() {
-        this.count++;
-    }
-    
-    // 正确方式三：类字段语法
-    handleClick = () => {
-        this.count++;
-    }
-}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 场景三：数组不可变操作
-
 开发者修改数组后发现原始数据被意外修改。
 
-```javascript
-// 陷阱：数组方法原地修改
-const original = [3, 1, 2];
+> 详细代码示例已移至 `references/detail.md`
 
-// sort 修改原数组
-const sorted = original.sort();
-console.log(original);  // [1, 2, 3]  被修改了！
-console.log(sorted);    // [1, 2, 3]
-console.log(original === sorted);  // true（同一引用）
+## 不适用场景
 
-// 正确：使用不可变方法（ES2023+）
-const original2 = [3, 1, 2];
-const sorted2 = original2.toSorted();
-console.log(original2);  // [3, 1, 2]  不变
-console.log(sorted2);    // [1, 2, 3]
+以下场景JavaScript工具包免费版不适合处理：
 
-// 常用不可变方法对照
-// 修改型 → 不可变型
-// sort()     → toSorted()
-// reverse()  → toReversed()
-// splice()   → toSpliced()
-// push()     → [...arr, item]
-// pop()      → arr.slice(0, -1)
-// shift()    → arr.slice(1)
-// unshift()  → [item, ...arr]
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 运维部署管理
 
-// 添加元素（不可变）
-const arr = [1, 2, 3];
-const added = [...arr, 4];        // 末尾添加
-const prepended = [0, ...arr];    // 开头添加
 
-// 删除元素（不可变）
-const removed = arr.filter((_, i) => i !== 1);  // 删除索引1
-const sliced = arr.slice(0, 2);                  // 取前两个
+## 触发条件
 
-// 修改元素（不可变）
-const modified = arr.map((v, i) => i === 1 ? 99 : v);
-```
+需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
+
 
 ## 快速开始
-
 ### 相等性比较速查
-
 ```javascript
 // 始终使用 === 而非 ==
 0 == false       // true（不安全）
@@ -216,43 +104,9 @@ null === undefined // false
 
 ### 闭包陷阱速查
 
-```javascript
-// 陷阱：var 在循环中共享变量
-for (var i = 0; i < 3; i++) {
-    setTimeout(() => console.log(i), 100);
-}
-// 输出: 3, 3, 3（共享同一个 i）
-
-// 修复方式一：let（每次迭代创建新绑定）
-for (let i = 0; i < 3; i++) {
-    setTimeout(() => console.log(i), 100);
-}
-// 输出: 0, 1, 2
-
-// 修复方式二：IIFE 立即执行函数
-for (var i = 0; i < 3; i++) {
-    (function(j) {
-        setTimeout(() => console.log(j), 100);
-    })(i);
-}
-// 输出: 0, 1, 2
-
-// 陷阱：闭包捕获引用
-function createFunctions() {
-    const funcs = [];
-    for (let i = 0; i < 3; i++) {
-        funcs.push(() => i);
-    }
-    return funcs;
-}
-const fns = createFunctions();
-console.log(fns[0]());  // 0
-console.log(fns[1]());  // 1
-console.log(fns[2]());  // 2
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 数字精度速查
-
 ```javascript
 // 浮点数精度问题
 0.1 + 0.2          // 0.30000000000000004
@@ -278,10 +132,8 @@ Number.MAX_SAFE_INTEGER  // 9007199254740991
 9007199254740992n === 9007199254740993n  // false
 ```
 
-## 配置示例
-
+## 示例
 ### 隐式类型转换速查
-
 ```javascript
 // 加法：字符串优先
 "5" + 1      // "51"（数字转字符串）
@@ -312,7 +164,6 @@ parseFloat("1.5em")  // 1.5
 ```
 
 ### 迭代速查
-
 ```javascript
 // for...in：遍历键（包括继承的）
 const obj = { a: 1, b: 2 };
@@ -343,7 +194,6 @@ Reflect.ownKeys(obj)  // 包括 Symbol 和不可枚举属性
 ```
 
 ### 严格模式速查
-
 ```javascript
 // 文件顶部启用严格模式
 "use strict";
@@ -373,8 +223,7 @@ export function test() {
 }
 ```
 
-## 最佳实践
-
+## 优选实践
 1. **始终使用 ===**：避免隐式类型转换的坑
 
 2. **回调用箭头函数**：自动继承外层 this
@@ -392,9 +241,7 @@ export function test() {
 8. **显式类型转换**：不要依赖隐式转换
 
 ## 常见问题
-
 ### Q1：为什么 forEach 不能 await？
-
 ```javascript
 // forEach 的回调返回值被忽略，不会等待 Promise
 async function bad() {
@@ -413,7 +260,6 @@ async function good() {
 ```
 
 ### Q2：Promise.all 和 Promise.allSettled 的区别？
-
 ```javascript
 // all：一个失败就全部失败
 const results = await Promise.all([
@@ -430,7 +276,6 @@ const results = await Promise.allSettled([
 ```
 
 ### Q3：深拷贝怎么做？
-
 ```javascript
 // 浅拷贝
 const shallow = { ...obj };
@@ -458,7 +303,6 @@ function deepClone(obj) {
 ```
 
 ### Q4：如何正确判断数组？
-
 ```javascript
 // 错误：typeof
 typeof []  // "object"
@@ -472,7 +316,6 @@ Array.isArray(document.querySelectorAll('div'))  // false（NodeList）
 ```
 
 ### Q5：如何处理可选链和空值合并？
-
 ```javascript
 // 可选链 ?.
 const name = user?.profile?.name;  // 不会报错，返回 undefined
@@ -489,7 +332,6 @@ const result = obj?.method?.();  // 安全调用
 ```
 
 ### Q6：如何避免内存泄漏？
-
 ```javascript
 // 1. 清除定时器
 const timer = setInterval(() => {}, 1000);
@@ -513,15 +355,13 @@ cache.set(element, data);  // element 被回收时自动清理
 ```
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent 平台**: 支持读取 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
 - **操作系统**: Windows / macOS / Linux
 - **Node.js 版本**: 建议 18 及以上（需支持 ES2023+）
 - **浏览器**: 现代浏览器（Chrome 90+ / Firefox 88+ / Safari 14+）
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Node.js | 运行时 | 推荐 | nodejs.org 下载 |
@@ -534,3 +374,15 @@ cache.set(element, data);  // element 被回收时自动清理
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 命令行执行）
 - **说明**: 通过自然语言指令驱动 Agent 提供 JavaScript 代码建议，代码验证需要 Node.js 执行能力
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

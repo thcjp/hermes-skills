@@ -8,60 +8,19 @@ summary: This is a disclosed GitHub integration that uses Maton-managed OAuth/AP
 license: MIT-0
 description: |-
   This is a disclosed GitHub integration that uses Maton-managed OAuth/API
-  access and includes appr...
-
-  核心能力:
-
-  - 集成工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 第三方API集成、平台对接、数据同步
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: integration, api, disclosed, github
+  access and includes appr。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
 tags: '[''Integrations'', ''Development'']'
-tools: '[read, exec]'
----
-
+tools:
+  - read
+  - exec
 # GitHub
-
+---
 Access the GitHub REST API with managed OAuth authentication. Manage repositories, issues, pull requests, commits, branches, users, and more.
 
 ## Quick Start
-
-**CLI:**
-
-```bash
-maton github repo list --sort updated
-```
-
-```bash
-maton api '/github/user/repos?sort=updated&per_page=10'
-```
-
-**Python:**
-
-```bash
-python <<'EOF'
-import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/github/user/repos?sort=updated&per_page=10')
-req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
-print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-EOF
-```
+> 详细内容已移至 `references/detail.md`
 
 ## Base URL
-
 ```text
 https://api.maton.ai/github/{native-api-path}
 ```
@@ -69,7 +28,6 @@ https://api.maton.ai/github/{native-api-path}
 Maton proxies requests to `api.github.com` and automatically injects your OAuth token.
 
 ## Installation
-
 **NPM:**
 
 ```bash
@@ -83,156 +41,27 @@ brew install maton-ai/cli/maton
 ```
 
 ## Authentication
-
-**CLI:**
-
-```bash
-maton login                          # Opens browser for API key
-maton login --interactive            # Skip browser, paste API key directly
-maton whoami                         # Show current auth state
-```
-
-**Manual:**
-
-1. Sign in or create an account at [maton.ai](https://maton.ai)
-2. Go to [maton.ai/settings](https://maton.ai/settings)
-3. Copy your API key
-4. Set your API key as `MATON_API_KEY`:
-
-```bash
-export MATON_API_KEY="[REDACTED]"
-```
+> 详细内容已移至 `references/detail.md`
 
 ## Connection Management
-
 Manage your GitHub OAuth connections at `https://api.maton.ai`.
 
 ### List Connections
-
-**CLI:**
-
-```bash
-maton connection list github --status ACTIVE
-```
-
-```bash
-maton api -X GET /connections -f app=github -f status=ACTIVE
-```
-
-**Python:**
-
-```bash
-python <<'EOF'
-import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/connections?app=github&status=ACTIVE')
-req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
-print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-EOF
-```
+> 详细内容已移至 `references/detail.md`
 
 ### Create Connection
-
-**CLI:**
-
-```bash
-maton connection create github
-```
-
-```bash
-maton api /connections -f app=github
-```
-
-**Python:**
-
-```bash
-python <<'EOF'
-import urllib.request, os, json
-data = json.dumps({'app': 'github'}).encode()
-req = urllib.request.Request('https://api.maton.ai/connections', data=data, method='POST')
-req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
-req.add_header('Content-Type', 'application/json')
-print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-EOF
-```
+> 详细内容已移至 `references/detail.md`
 
 ### Get Connection
-
-**CLI:**
-
-```bash
-maton connection view {connection_id}
-```
-
-```bash
-maton api /connections/{connection_id}
-```
-
-**Python:**
-
-```bash
-python <<'EOF'
-import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/connections/{connection_id}')
-req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
-print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-EOF
-```
-
-Open the returned `url` in a browser to complete OAuth authorization.
+> 详细内容已移至 `references/detail.md`
 
 ### Delete Connection
-
-**CLI:**
-
-```bash
-maton connection delete {connection_id}
-```
-
-```bash
-maton api -X DELETE /connections/{connection_id}
-```
-
-**Python:**
-
-```bash
-python <<'EOF'
-import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/connections/{connection_id}', method='DELETE')
-req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
-print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-EOF
-```
+> 详细内容已移至 `references/detail.md`
 
 ### Specifying Connection
-
-If you have multiple GitHub connections, specify which one to use:
-
-**CLI:**
-
-```bash
-maton github user --connection {connection_id}
-```
-
-```bash
-maton api /github/user --connection {connection_id}
-```
-
-**Python:**
-
-```bash
-python <<'EOF'
-import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/github/user')
-req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
-req.add_header('Maton-Connection', '{connection_id}')
-print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-EOF
-```
-
-If you have multiple connections, always specify the connection to ensure requests go to the intended account.
+> 详细内容已移至 `references/detail.md`
 
 ## Security & Permissions
-
 * Access is scoped to repositories, issues, pull requests, commits, branches, and users within the connected GitHub account.
 * **All write operations require explicit user approval.** Before executing any create, update, or delete call:
   1. Confirm the exact target (owner/repo, issue number, branch name) with the user.
@@ -251,213 +80,16 @@ If you have multiple connections, always specify the connection to ensure reques
 ## API Reference
 
 ### Users
-
-#### Get Authenticated User
-
-```bash
-GET /github/user
-```
-
-Example:
-
-```bash
-maton github whoami
-```
-
-#### Get User by Username
-
-```bash
-GET /github/users/{username}
-```
-
-#### List Users
-
-```bash
-GET /github/users?since={user_id}&per_page=30
-```
-
-### Repositories
-
-#### List User Repositories
-
-```bash
-GET /github/user/repos?per_page=30&sort=updated
-```
-
-Query parameters: `type` (all, owner, public, private, member), `sort` (created, updated, pushed, full_name), `direction` (asc, desc), `per_page`, `page`
-
-Example:
-
-```bash
-maton github repo list --sort updated
-```
-
-#### List Organization Repositories
-
-```bash
-GET /github/orgs/{org}/repos?per_page=30
-```
-
-Example:
-
-```bash
-maton github repo list {org}
-```
-
-#### Get Repository
-
-```bash
-GET /github/repos/{owner}/{repo}
-```
-
-Example:
-
-```bash
-maton github repo view --repo {owner}/{repo}
-```
-
-#### Create Repository (User)
-
-```bash
-POST /github/user/repos
-Content-Type: application/json
-
-{
-  "name": "my-new-repo",
-  "description": "A new repository",
-  "private": true,
-  "auto_init": true
-}
-```
-
-Example:
-
-```bash
-maton github repo create my-new-repo --description "A new repository" --visibility private
-```
-
-#### Create Repository (Organization)
-
-```bash
-POST /github/orgs/{org}/repos
-Content-Type: application/json
-
-{
-  "name": "my-new-repo",
-  "description": "A new repository",
-  "private": true
-}
-```
-
-Example:
-
-```bash
-maton github repo create {org}/my-new-repo --visibility private
-```
-
-#### Update Repository
-
-```bash
-PATCH /github/repos/{owner}/{repo}
-Content-Type: application/json
-
-{
-  "description": "Updated description",
-  "has_issues": true,
-  "has_wiki": false
-}
-```
-
-Example:
-
-```bash
-maton github repo edit --repo {owner}/{repo} --description "Updated description" --enable-issues --enable-wiki=false
-```
+> 详细内容已移至 `references/detail.md`
 
 ### Repository Contents
-
-#### List Contents
-
-```bash
-GET /github/repos/{owner}/{repo}/contents/{path}
-```
-
-#### Get File Contents
-
-```bash
-GET /github/repos/{owner}/{repo}/contents/{path}?ref={branch}
-```
-
-#### Create or Update File
-
-```bash
-PUT /github/repos/{owner}/{repo}/contents/{path}
-Content-Type: application/json
-
-{
-  "message": "Create new file",
-  "content": "SGVsbG8gV29ybGQh",
-  "branch": "main"
-}
-```
-
-Note: `content` must be Base64 encoded.
-
-#### Delete File
-
-```bash
-DELETE /github/repos/{owner}/{repo}/contents/{path}
-Content-Type: application/json
-
-{
-  "message": "Delete file",
-  "sha": "{file_sha}",
-  "branch": "main"
-}
-```
+> 详细内容已移至 `references/detail.md`
 
 ### Branches
-
-#### List Branches
-
-```bash
-GET /github/repos/{owner}/{repo}/branches?per_page=30
-```
-
-#### Get Branch
-
-```bash
-GET /github/repos/{owner}/{repo}/branches/{branch}
-```
-
-#### Rename Branch
-
-```bash
-POST /github/repos/{owner}/{repo}/branches/{branch}/rename
-Content-Type: application/json
-
-{
-  "new_name": "new-branch-name"
-}
-```
-
-#### Merge Branches
-
-```bash
-POST /github/repos/{owner}/{repo}/merges
-Content-Type: application/json
-
-{
-  "base": "main",
-  "head": "feature-branch",
-  "commit_message": "Merge feature branch"
-}
-```
+> 详细内容已移至 `references/detail.md`
 
 ### Commits
-
 #### List Commits
-
 ```bash
 GET /github/repos/{owner}/{repo}/commits?per_page=30
 ```
@@ -465,203 +97,28 @@ GET /github/repos/{owner}/{repo}/commits?per_page=30
 Query parameters: `sha` (branch name or commit SHA), `path` (file path), `author`, `committer`, `since`, `until`, `per_page`, `page`
 
 #### Get Commit
-
 ```bash
 GET /github/repos/{owner}/{repo}/commits/{ref}
 ```
 
 #### Compare Two Commits
-
 ```bash
 GET /github/repos/{owner}/{repo}/compare/{base}...{head}
 ```
 
-### Issues
-
-#### List Repository Issues
-
-```bash
-GET /github/repos/{owner}/{repo}/issues?state=open&per_page=30
-```
-
-Query parameters: `state` (open, closed, all), `labels`, `assignee`, `creator`, `mentioned`, `sort`, `direction`, `since`, `per_page`, `page`
-
-Example:
-
-```bash
-maton github issue list --repo {owner}/{repo} --state open
-```
-
-#### Get Issue
-
-```bash
-GET /github/repos/{owner}/{repo}/issues/{issue_number}
-```
-
-Example:
-
-```bash
-maton github issue view {issue_number} --repo {owner}/{repo}
-```
-
-#### Create Issue
-
-```bash
-POST /github/repos/{owner}/{repo}/issues
-Content-Type: application/json
-
-{
-  "title": "Found a bug",
-  "body": "Bug description here",
-  "labels": ["bug"],
-  "assignees": ["username"]
-}
-```
-
-Example:
-
-```bash
-maton github issue create --repo {owner}/{repo} --title "Found a bug" --body "Bug description here" --label bug --assignee username
-```
-
-#### Update Issue
-
-```bash
-PATCH /github/repos/{owner}/{repo}/issues/{issue_number}
-Content-Type: application/json
-
-{
-  "state": "closed",
-  "state_reason": "completed"
-}
-```
-
-Example:
-
-```bash
-maton github issue close {issue_number} --repo {owner}/{repo} --reason completed
-```
-
-#### Lock Issue
-
-```bash
-PUT /github/repos/{owner}/{repo}/issues/{issue_number}/lock
-Content-Type: application/json
-
-{
-  "lock_reason": "resolved"
-}
-```
-
-Example:
-
-```bash
-maton github issue lock {issue_number} --repo {owner}/{repo} --reason resolved
-```
-
-#### Unlock Issue
-
-```bash
-DELETE /github/repos/{owner}/{repo}/issues/{issue_number}/lock
-```
-
-Example:
-
-```bash
-maton github issue unlock {issue_number} --repo {owner}/{repo}
-```
-
 ### Issue Comments
-
-#### List Issue Comments
-
-```bash
-GET /github/repos/{owner}/{repo}/issues/{issue_number}/comments?per_page=30
-```
-
-Example:
-
-```bash
-maton github issue view {issue_number} --repo {owner}/{repo} --comments
-```
-
-#### Create Issue Comment
-
-```bash
-POST /github/repos/{owner}/{repo}/issues/{issue_number}/comments
-Content-Type: application/json
-
-{
-  "body": "This is a comment"
-}
-```
-
-Example:
-
-```bash
-maton github issue comment {issue_number} --repo {owner}/{repo} --body "This is a comment"
-```
-
-#### Update Issue Comment
-
-```bash
-PATCH /github/repos/{owner}/{repo}/issues/comments/{comment_id}
-Content-Type: application/json
-
-{
-  "body": "Updated comment"
-}
-```
-
-#### Delete Issue Comment
-
-```bash
-DELETE /github/repos/{owner}/{repo}/issues/comments/{comment_id}
-```
+> 详细内容已移至 `references/detail.md`
 
 ### Labels
-
-#### List Labels
-
-```bash
-GET /github/repos/{owner}/{repo}/labels?per_page=30
-```
-
-Example:
-
-```bash
-maton github label list --repo {owner}/{repo}
-```
-
-#### Create Label
-
-```bash
-POST /github/repos/{owner}/{repo}/labels
-Content-Type: application/json
-
-{
-  "name": "priority:high",
-  "color": "ff0000",
-  "description": "High priority issues"
-}
-```
-
-Example:
-
-```bash
-maton github label create "priority:high" --repo {owner}/{repo} --color ff0000 --description "High priority issues"
-```
+> 详细内容已移至 `references/detail.md`
 
 ### Milestones
-
 #### List Milestones
-
 ```bash
 GET /github/repos/{owner}/{repo}/milestones?state=open&per_page=30
 ```
 
 #### Create Milestone
-
 ```bash
 POST /github/repos/{owner}/{repo}/milestones
 Content-Type: application/json
@@ -674,206 +131,11 @@ Content-Type: application/json
 }
 ```
 
-### Pull Requests
-
-#### List Pull Requests
-
-```bash
-GET /github/repos/{owner}/{repo}/pulls?state=open&per_page=30
-```
-
-Query parameters: `state` (open, closed, all), `head`, `base`, `sort`, `direction`, `per_page`, `page`
-
-Example:
-
-```bash
-maton github pr list --repo {owner}/{repo} --state open
-```
-
-#### Get Pull Request
-
-```bash
-GET /github/repos/{owner}/{repo}/pulls/{pull_number}
-```
-
-Example:
-
-```bash
-maton github pr view {pull_number} --repo {owner}/{repo}
-```
-
-#### Create Pull Request
-
-```bash
-POST /github/repos/{owner}/{repo}/pulls
-Content-Type: application/json
-
-{
-  "title": "New feature",
-  "body": "Description of changes",
-  "head": "feature-branch",
-  "base": "main",
-  "draft": false
-}
-```
-
-Example:
-
-```bash
-maton github pr create --repo {owner}/{repo} --base main --head feature-branch --title "New feature" --body "Description of changes"
-```
-
-#### Update Pull Request
-
-```bash
-PATCH /github/repos/{owner}/{repo}/pulls/{pull_number}
-Content-Type: application/json
-
-{
-  "title": "Updated title",
-  "state": "closed"
-}
-```
-
-Example:
-
-```bash
-maton github pr edit {pull_number} --repo {owner}/{repo} --title "Updated title"
-```
-
-#### List Pull Request Commits
-
-```bash
-GET /github/repos/{owner}/{repo}/pulls/{pull_number}/commits?per_page=30
-```
-
-#### List Pull Request Files
-
-```bash
-GET /github/repos/{owner}/{repo}/pulls/{pull_number}/files?per_page=30
-```
-
-Example:
-
-```bash
-maton github pr diff {pull_number} --repo {owner}/{repo}
-```
-
-#### Check If Merged
-
-```bash
-GET /github/repos/{owner}/{repo}/pulls/{pull_number}/merge
-```
-
-#### Merge Pull Request
-
-```bash
-PUT /github/repos/{owner}/{repo}/pulls/{pull_number}/merge
-Content-Type: application/json
-
-{
-  "commit_title": "Merge pull request",
-  "merge_method": "squash"
-}
-```
-
-Merge methods: `merge`, `squash`, `rebase`
-
-Example:
-
-```bash
-maton github pr merge {pull_number} --repo {owner}/{repo} --squash --delete-branch
-```
-
 ### Pull Request Reviews
-
-#### List Reviews
-
-```bash
-GET /github/repos/{owner}/{repo}/pulls/{pull_number}/reviews?per_page=30
-```
-
-#### Create Review
-
-```bash
-POST /github/repos/{owner}/{repo}/pulls/{pull_number}/reviews
-Content-Type: application/json
-
-{
-  "body": "Looks good!",
-  "event": "APPROVE"
-}
-```
-
-Events: `APPROVE`, `REQUEST_CHANGES`, `COMMENT`
-
-Example:
-
-```bash
-maton github pr review {pull_number} --repo {owner}/{repo} --approve --body "Looks good!"
-```
-
-Note: GitHub does not allow approving your own pull requests; `--approve` returns `422 Can not approve your own pull request` in that case. Use `--comment` or `--request-changes` instead.
-
-### Search
-
-#### Search Repositories
-
-```bash
-GET /github/search/repositories?q={query}&per_page=30
-```
-
-Example queries:
-
-* `tetris+language:python` - Repositories with "tetris" in Python
-* `react+stars:>10000` - Repositories with "react" and 10k+ stars
-
-Example:
-
-```bash
-maton github repo search tetris --language python
-```
-
-#### Search Issues
-
-```bash
-GET /github/search/issues?q={query}&per_page=30
-```
-
-Example queries:
-
-* `bug+is:open+is:issue` - Open issues containing "bug"
-* `author:username+is:pr` - Pull requests by author
-
-Example:
-
-```bash
-maton github issue search "bug" --state open
-```
-
-#### Search Code
-
-```bash
-GET /github/search/code?q={query}&per_page=30
-```
-
-Example queries:
-
-* `addClass+repo:facebook/react` - Search for "addClass" in a specific repo
-* `function+extension:js` - JavaScript functions
-
-Note: Code search may timeout on broad queries.
-
-#### Search Users
-
-```bash
-GET /github/search/users?q={query}&per_page=30
-```
+> 详细内容已移至 `references/detail.md`
 
 ### Organizations
-
 #### List User Organizations
-
 ```bash
 GET /github/user/orgs?per_page=30
 ```
@@ -881,27 +143,22 @@ GET /github/user/orgs?per_page=30
 Note: Requires `read:org` scope.
 
 #### Get Organization
-
 ```bash
 GET /github/orgs/{org}
 ```
 
 #### List Organization Members
-
 ```bash
 GET /github/orgs/{org}/members?per_page=30
 ```
 
 ### Rate Limit
-
 #### Get Rate Limit
-
 ```bash
 GET /github/rate_limit
 ```
 
 ## Pagination
-
 GitHub uses page-based pagination. The CLI automatically paginates with '--paginate'.
 
 Example:
@@ -910,10 +167,8 @@ Example:
 maton github repo list --paginate
 ```
 
-## Code Examples
-
+## 示例
 ### CLI
-
 ```bash
 maton github repo list --json
 
@@ -925,7 +180,6 @@ maton github issue list --repo owner/repo --json --jq '.[].title'
 ```
 
 ### JavaScript
-
 ```javascript
 const response = await fetch(
   'https://api.maton.ai/github/repos/owner/repo/issues?state=open&per_page=10',
@@ -939,7 +193,6 @@ const issues = await response.json();
 ```
 
 ### Python
-
 ```python
 import os
 import requests
@@ -953,7 +206,6 @@ issues = response.json()
 ```
 
 ## Notes
-
 * Repository names are case-insensitive but the API preserves case
 * Issue numbers and PR numbers share the same sequence per repository
 * Content must be Base64 encoded when creating/updating files
@@ -964,7 +216,6 @@ issues = response.json()
 * IMPORTANT: When piping curl output to `jq` or other commands, environment variables like `$MATON_API_KEY` may not expand correctly in some shell environments
 
 ## Error Handling
-
 | Status | Meaning |
 | --- | --- |
 | 400 | Missing GitHub connection |
@@ -976,8 +227,7 @@ issues = response.json()
 | 429 | Rate limited |
 | 4xx/5xx | Passthrough error from GitHub API |
 
-### Troubleshooting: API Key Issues
-
+### 错误处理
 **CLI:**
 
 1. Check your auth state:
@@ -1012,14 +262,12 @@ EOF
 ```
 
 ### Troubleshooting: Invalid App Name
-
 1. Ensure your URL path starts with `github`. For example:
 
 * Correct: `https://api.maton.ai/github/user`
 * Incorrect: `https://api.maton.ai/api.github.com/user`
 
 ## Resources
-
 * [GitHub REST API Documentation](https://docs.github.com/en/rest)
 * [Repositories API](https://docs.github.com/en/rest/repos/repos)
 * [Issues API](https://docs.github.com/en/rest/issues/issues)
@@ -1031,12 +279,11 @@ EOF
 * [Maton Support](mailto:support@maton.ai)
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -1047,3 +294,28 @@ EOF
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+- This is a disclosed GitHub integration that uses Maton-managed OAuth/API
+  access and includes appr
+- 触发关键词: integration, api, disclosed, github
+
+## 适用场景
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 常见问题
+### Q1: 如何开始使用GitHub？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: GitHub有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+- 需要API Key，无Key环境无法使用

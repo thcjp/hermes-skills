@@ -4,12 +4,10 @@ name: sonos-cli-tool-pro
 version: "1.0.0"
 displayName: Sonos控制工具-专业版
 summary: 企业级Sonos控制平台,支持多区域编排、语音集成、场景管理与API接口,适合商业空间
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  企业级 Sonos 控制工具专业版,面向商业空间与智能建筑。
-
-  核心能力:
+  企业级 Sonos 控制工具专业版,面向商业空间与智能建筑。核心能力:
   - 多区域编排与场景预设
   - 语音助手集成(Alexa/Google)
   - 定时场景自动化
@@ -25,9 +23,7 @@ description: |-
   - 智能建筑音频系统
   - 活动现场多音箱协调
 
-  差异化:专业版在免费版基础上扩展多区域编排、语音集成与场景管理,兼容免费版命令。
-
-  触发关键词: sonos, commercial, multi-zone, scene, 商业空间, 多区域, 场景管理, 背景音乐, 智能建筑
+  差异化:专业版在免费版基础上扩展多区域编排、语音集成与场景管理,兼容免费版命令
 tags:
 - Sonos
 - 企业级
@@ -35,10 +31,9 @@ tags:
 - 智能建筑
 - 场景管理
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Sonos 控制工具 - 专业版
 
 ## 概述
@@ -107,7 +102,7 @@ cat > venue-config.json << 'EOF'
 }
 EOF
 
-# 应用场景:午餐时段
+# 适用场景
 ./sonos-pro scene apply --venue "阳光餐厅" --scene "午餐"
 
 # 输出:
@@ -204,13 +199,27 @@ EOF
   --notify "email:admin@restaurant.com"
 ```
 
+## 不适用场景
+
+以下场景Sonos控制工具-专业版不适合处理：
+
+- 逆向工程闭源API
+- API安全渗透测试
+- 非标准协议集成
+
+
+## 触发条件
+
+需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 从免费版升级
 
 ```bash
 # 免费版命令完全兼容
-# 安装专业版
+# 依赖说明
 npm install -g sonos-pro-cli
 
 # 导入免费版设备配置
@@ -231,7 +240,7 @@ npm install -g sonos-pro-cli
 ./sonos-pro device assign --venue "阳光餐厅" --zone "大厅" --devices "speaker-01,speaker-02"
 ```
 
-## 配置示例
+## 示例
 
 ### 企业级配置
 
@@ -344,3 +353,15 @@ A: 专业版支持多场所管理,在一个控制台中管理多个餐厅/门店
 - **说明**: 通过自然语言指令驱动 Agent 执行企业级 Sonos 音频管理
 - **兼容性**: 完全兼容免费版命令
 - **支持**: 优先工单支持,SLA 保障响应时间
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用

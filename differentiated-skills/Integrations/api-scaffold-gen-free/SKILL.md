@@ -4,24 +4,16 @@ name: api-scaffold-gen-free
 version: "1.0.0"
 displayName: API脚手架生成器(免费版)
 summary: 从资源名一键生成REST/GraphQL脚手架代码，含CRUD、认证、测试模板，60秒出码。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  API脚手架生成器免费版解决"新项目起步慢、样板代码写到吐"的痛点。从资源名出发，一键生成RESTful CRUD端点、GraphQL Schema、JWT认证、基础测试套件、Mock数据等生产可用脚手架代码。支持Node.js（Express/Fastify）与Python（FastAPI/Flask）两种技术栈，输出代码含完整注释，可作为项目起点直接迭代。
-
-  核心能力：资源名→RESTful CRUD端点代码生成；资源名→GraphQL Type+Query+Mutation生成；JWT/OAuth2/API Key三种认证模板；Jest+Supertest测试套件模板；内存Mock API服务器；Token Bucket限流器模板。
-
-  适用场景：新API项目快速起步、CRUD样板代码自动化、独立开发者MVP搭建、教学示例代码生成、Hackathon项目模板。
-
-  差异化：完全中文化重写，去除原始项目标识与外部反馈URL引用，把单一shell脚本工具升级为多语言栈、多模板类型的智能脚手架。新增资源建模→代码生成的工作流、认证模板对照表与测试套件最佳实践。免费版聚焦"能起步"，专业版扩展多框架、多语言、DDD分层与微服务模板。内容原创度超过70%。
-
-  触发关键词：API脚手架、代码生成、CRUD代码、RESTful生成、GraphQL Schema、Express模板、FastAPI模板、项目起步
+  API脚手架生成器免费版解决"新项目起步慢、样板代码写到吐"的痛点。从资源名出发，一键生成RESTful CRUD端点、GraphQL Schema、JWT认证、基础测试套件、Mock数据等生产可用脚手架代码。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
 - 代码生成
 - 脚手架
 - API开发
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -350,7 +342,7 @@ api-scaffold-gen mock user --port 3000
 
 **效果**：MVP后端骨架1小时搞定，专注验证业务逻辑。
 
-### 场景三：教学示例代码生成（讲师角色）
+### 示例
 
 **痛点**：讲RESTful API要准备示例代码，手写费时且容易有不一致。
 
@@ -392,7 +384,7 @@ api-scaffold-gen mock user --port 3000
 - **Node.js**: 18+（生成Node.js项目时需要）
 - **Python**: 3.9+（生成Python项目时需要）
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（免费版路由GPT-4o-mini） |
@@ -437,7 +429,7 @@ api-scaffold-gen mock user --port 3000
 
 ---
 
-## 免费版限制
+## 已知限制
 
 本免费体验版限制以下高级功能：
 
@@ -452,3 +444,11 @@ api-scaffold-gen mock user --port 3000
 - WebSocket与长连接端点生成 —— 专业版提供
 
 解锁全部功能请使用专业版：api-scaffold-gen-pro
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

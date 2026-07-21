@@ -4,25 +4,17 @@ name: jira-flow-skill-pro
 version: "1.0.0"
 displayName: Jira Flow 专业版
 summary: 全功能Jira任务管理与团队工时分析，支持批量操作、自定义报表与自动化集成。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  Jira Flow Skill 专业版面向团队负责人与项目经理，在免费版基础上解锁批量任务操作、多项目工时对比、自定义报表模板与团队工时聚合视图。
-
-  核心能力：单条命令完成批量状态流转、跨项目工时对比报表、自定义工时模板导出（Markdown/CSV/JSON）、团队成员工时聚合、Webhook 自动化触发、并发请求与缓存优化。
-
-  适用场景：项目经理周报自动生成、Sprint 复盘工时分析、团队成员工时对比、跨项目资源投入洞察、自动化 CI/CD 与 Jira 状态联动。
-
-  差异化：相比免费版，专业版提供完整的团队视角与自动化能力，内置并发请求与多级缓存策略，处理大型项目工时统计耗时降低 60% 以上；支持自定义报表模板，满足不同团队的周报/月报格式需求。
-
-  触发关键词：jira、批量流转、团队工时、sprint复盘、工时报表、自动化、webhook
+  Jira Flow Skill 专业版面向团队负责人与项目经理，在免费版基础上解锁批量任务操作、多项目工时对比、自定义报表模板与团队工时聚合视图。核心能力：单条命令完成批量状态流转、跨项目工时对比报表、自定义工时模板导出（Markdown/CSV/JSON）、团队成员工时聚合、Webhook 自动化触发、并发请求与缓存优化
 tags:
 - 集成工具
 - 任务管理
 - 团队协作
 - 自动化
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -146,14 +138,14 @@ bash {baseDir}/scripts/jira.sh hours-team 2025-01-01 2025-01-07
 bash {baseDir}/scripts/jira.sh cache warm
 ```
 
-### 运行环境要求
+### 依赖说明
 
 - 命令行工具：`curl`、`jq`、`bc`、`python3`
 - 操作系统：Windows（需 WSL 或 Git Bash）/ macOS / Linux
 - 网络：可访问 `atlassian.net` 域名
 - 磁盘：缓存目录建议预留 50MB
 
-## 配置示例
+## 示例
 
 ### 环境变量配置表
 
@@ -255,7 +247,7 @@ bash {baseDir}/scripts/jira.sh hours-team 2025-01-01 2025-01-31 --incremental
 
 跨项目查询需要遍历多个项目的 worklog，建议先 `cache warm` 预热，并使用 `--concurrency 8` 提升并发。对于超过 3 个项目的对比，建议分批执行后本地合并。
 
-### Q7：429 速率限制错误如何处理？
+### 已知限制
 
 专业版内置自动退避重试，默认重试 3 次，每次间隔指数退避（1s、2s、4s）。如果仍失败，建议降低并发数或避开高峰时段。
 
@@ -300,7 +292,7 @@ bash {baseDir}/scripts/jira.sh batch-status --file tasks.csv "Done" --checkpoint
 bash {baseDir}/scripts/jira.sh batch-status --file tasks.csv "Done" --resume
 ```
 
-## 故障排查表
+## 错误处理
 
 | 现象 | 可能原因 | 解决步骤 | 优先级 |
 |------|----------|----------|--------|

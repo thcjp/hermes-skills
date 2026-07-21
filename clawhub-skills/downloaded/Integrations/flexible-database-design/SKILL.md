@@ -2,17 +2,18 @@
 slug: flexible-database-design
 name: flexible-database-design
 version: "1.0.0"
-displayName: "Flexible Database Design â\x80\x93 SQLite flexible schema & knowledge\
+displayName: Flexible Database De
   \ base skill"
 summary: Guide agents and users to design and implement a \
 license: MIT-0
 description: |-
   Guide agents and users to design and implement a \\\n\n核心能力:\n- 集成工具领域的专业化AI辅助工具\n\
   - 基于高人气开源Skill深度优化升级\n- 移除风险代码,增强安全性和稳定性\n\n适用场景:\n- 第三方API集成、平台对接、数据同步\n- 独立开发者与一人公司效率提升\n\
-  - 自动化工作流与智能决策辅助\n\n差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。\n\n\
-  触发关键词: â\x80\x93, knowledge, users, base, guide, implement, sqlite, design
+  - 自动化工作流与智能决策辅助\n\n差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范
 tags: '[''Integrations'', ''Knowledge'']'
-tools: '[read, exec]'
+tools:
+  - read
+  - exec
 ---
 
 # Flexible Database Design â SQLite flexible schema & knowledge base skill
@@ -184,7 +185,7 @@ allowed-tools:
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -195,3 +196,61 @@ allowed-tools:
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+
+- \n\n\
+  触发关键词: â\x80\x93, knowledge, users, base, guide, implement, sqlite, design
+
+## 适用场景
+
+根据用户描述，选择最接近的场景并适配：
+
+| 场景 | 主干字段建议 | 软字段典型 key |
+| --- | --- | --- |
+| **个人知识库 / 碎片收集** | id, created_at, source, content_type, raw_content | title, tags, url, project, deadline |
+| **政策信息收集** | id, created_at, source, source_type | title, release_date, issuing_org, policy_type, url, policy_no, industry, subsidy_amount |
+| **财务报表收集** | id, created_at, source, source_type | company, report_type, report_date, revenue, net_income, total_assets, roa, roe |
+| **表单/问卷** | id, created_at, form_id, respondent_id, raw_response | 各题目 id 或题目名 |
+| **PDF/报告知识库** | id, created_at, source, content_type, raw_content | report_title, report_type, period_start, period_end, file_path |
+| **多源异构（如群消息聚合）** | id, created_at, source, sender, raw_content | data_type, items[], trend, 各业务字段 |
+
+## 使用流程
+
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 示例
+
+### 示例1：基础用法
+
+```
+输入: 用户请求
+处理: 根据使用流程执行
+输出: 处理结果
+```
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+
+### Q1: 如何开始使用Flexible Database De？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Flexible Database De有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用

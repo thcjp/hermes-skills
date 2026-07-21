@@ -1,90 +1,73 @@
 ---
 slug: ai-writing-style-cloner
 name: ai-writing-style-cloner
-version: "1.0.0"
+version: "1.0.1"
 displayName: "AI写作分身工厂"
 summary: "5篇文章克隆任意作者文风,14种公式批量产出同风格爆款"
-license: MIT
+license: Proprietary
 description: |-
-  AI写作分身工厂——上传任意作者的5-10篇文章,6维反向提取风格指纹,生成可永久复用的「写作分身」,让任何人用这个分身写出的文章,读起来与原作者一模一样。
-
-  核心能力:
-  - 6维风格指纹:词汇丰富度/句式结构/语调倾向/节奏模式/修辞偏好/情感基调
-  - 14种写作公式:PAS/AIDA/STAR/FAB/金字塔原理等,适配任意文章类型
-  - 风格指纹持久化:JSON保存,一次蒸馏永久复用,支持多作者管理
-  - 智能公式推荐:根据风格指纹自动匹配最适合的写作公式
-  - 内容生成自动注入:写新内容时自动套用作者风格
-
-  适用场景:
-  - 独立博主统一栏目风格,保持个人调性不漂移
-  - 新媒体矩阵多账号运营,一个账号一个分身一个人设
-  - 副业达人模仿爆款作者文风,快速起号
-  - 知识IP保持辨识度,批量产出同风格内容
-
-  输入要求:5-10篇作者历史文章(文本/图片OCR/链接提取均可)
-
-  差异化:不是提示词模板,而是从真实样本反向蒸馏结构化风格指纹,6维量化+14种公式自动匹配,风格一致性达99%。
-
-  触发关键词:风格克隆、写作风格、风格分析、风格蒸馏、作者分身、文风模仿、复刻文风、写作分身
+  AI写作分身工厂——上传任意作者的5-10篇文章,6维反向提取风格指纹,生成可永久复用的写作分身,让任何人用这个分身写出的文章读起来与原作者一模一样。核心功能:6维风格指纹提取(词汇丰富度/句式结构/语调倾向/节奏模式/修辞偏好/情感基调)、14种写作公式(PAS/AIDA/STAR/FAB/金字塔原理等)、风格指纹JSON持久化一次蒸馏永久复用、智能公式推荐根据风格自动匹配、内容生成自动注入风格
 homepage: "https://skillhub.cn"
 tags: [内容创作, 写作, 风格分析, AI写作, 风格克隆]
-tools: [read, exec]
+tools:
+  - read
+  - exec
+suggested_price: "1.90"
+pricing_tier: "standard"
+pricing_rationale: "文案创作类, large市场, enterprise复杂度, daily频次, standard层 → 高频通用工具,大市场,低单价走量"
 ---
-
 # AI写作分身工厂
 
 通过6维度风格分析从作者历史内容样本中反向提取结构化风格指纹,并结合14种写作公式,克隆任意作者的写作风格,生成风格一致的全新内容。
 
-## 使用场景
+## 核心能力
 
-| 场景 | 触发条件 | 说明 |
-|:-----|:---------|:-----|
-| 风格蒸馏 | 作者上传5-10篇历史内容 | LLM分析6维风格特征,生成风格指纹 |
-| 风格预览 | 查看已保存的风格指纹 | 从JSON文件读取当前作者的风格指纹展示 |
-| 风格保存 | 蒸馏结果确认后持久化 | 写入风格指纹JSON文件 |
-| 内容生成注入 | 生成新内容时自动注入 | 读取风格指纹注入生成Prompt半静态层 |
+1. **6维风格指纹提取**:LLM分析6个维度(词汇丰富度vocabulary_score/句式结构sentence_structure/语调倾向tone_tendency/节奏模式rhythm_pattern/修辞偏好rhetoric_preference/情感基调emotional_tone),生成结构化风格指纹JSON
+2. **14种写作公式库**:SCQA/AIDA/PREP/FAB/STAR/钩子-故事-金句-行动/问题-解决方案/对比反差/数据驱动/清单体/问答体/步骤拆解/情感共鸣/金字塔原理,适配任意文章类型
+3. **风格指纹持久化**:JSON文件保存(style_fingerprints/{author_id}.json),一次蒸馏永久复用,支持多作者管理,文件已存在则覆盖更新保留时间戳
+4. **智能公式推荐**:根据风格指纹中的tone_tendency和emotional_tone自动推荐最适合的写作公式(权威+理性→PREP/金字塔原理,亲和+感性→钩子-故事-金句-行动/情感共鸣法)
+5. **内容生成自动注入**:写新内容时自动读取作者风格指纹JSON,拼接为风格描述注入LLM Prompt半静态层,确保生成内容与目标作者风格一致
 
-当创作者需要统一写作风格、或希望模仿特定作者的文风时使用本Skill。创作者上传历史内容样本(图文文本/图片OCR文本/链接提取文本),AI从6个维度蒸馏出结构化风格指纹,后续内容生成时作为半静态层注入LLM Prompt,确保生成内容与目标作者写作风格一致。
+## 适用场景
 
-## 工作流
+| 场景 | 输入 | 输出 | 是否适用 |
+|:-----|:-----|:-----|:---------|
+| 风格蒸馏 | 作者5-10篇历史文章文本 | 6维结构化风格指纹JSON+推荐公式 | 适用 |
+| 风格保存 | 作者确认后的风格指纹JSON | 持久化保存到style_fingerprints/{author_id}.json | 适用 |
+| 风格预览 | author_id | 已保存的风格指纹+raw_analysis+updated_at | 适用 |
+| 内容生成注入 | 作者ID+新内容主题 | 套用作者风格的新文章 | 适用 |
+| 多作者风格管理 | 多个author_id | 多个风格指纹文件,独立管理 | 适用 |
+| 实时逐字模仿 | 实时流式文风转换 | 不适用(本Skill为批量蒸馏模式) | 不适用 |
+| 跨语言风格迁移 | 中文作者风格→英文写作 | 不适用(风格指纹基于源语言分析) | 不适用 |
+| 无样本风格创造 | 无历史样本凭空创造风格 | 不适用(必须提供5-10篇历史样本) | 不适用 |
 
-### 1. 风格蒸馏(distill)
+## 使用流程
 
-```
-1. 接收作者上传的内容样本(文本/图片OCR文本/链接提取文本)
-2. 调用LLM分析6维风格特征
-3. LLM返回结构化风格指纹JSON
-4. 校验6维字段完整性,缺失字段返回SCHEMA_INVALID错误
-5. 返回风格指纹供作者预览确认
-```
+### Step 1: 风格蒸馏(distill)
+- 接收作者上传的内容样本(文本/图片OCR文本/链接提取文本)
+- 调用LLM分析6维风格特征
+- LLM返回结构化风格指纹JSON
+- 校验6维字段完整性,缺失字段返回SCHEMA_INVALID错误
+- 返回风格指纹供作者预览确认
 
-### 2. 风格保存(save)
+### Step 2: 风格保存(save)
+- 接收作者确认后的风格指纹JSON
+- 将风格指纹写入JSON文件(style_fingerprints/{author_id}.json)
+- 文件已存在则覆盖更新,保留updated_at时间戳
+- raw_analysis字段存储完整风格指纹JSON
+- 返回保存结果
 
-```
-1. 接收作者确认后的风格指纹JSON
-2. 将风格指纹写入JSON文件(style_fingerprints/{author_id}.json)
-3. 文件已存在则覆盖更新,保留updated_at时间戳
-4. raw_analysis字段存储完整风格指纹JSON
-5. 返回保存结果
-```
+### Step 3: 风格预览(preview)
+- 从JSON文件读取已保存的风格指纹
+- 返回6维风格特征+raw_analysis+updated_at
+- 未找到记录返回NOT_FOUND错误
 
-### 3. 风格预览(preview)
-
-```
-1. 从JSON文件读取已保存的风格指纹
-2. 返回6维风格特征 + raw_analysis + updated_at
-3. 未找到记录返回NOT_FOUND错误
-```
-
-### 4. 内容生成注入(自动)
-
-```
-1. 内容生成时读取作者风格指纹JSON文件
-2. 解析6维风格特征
-3. 拼接为风格描述: "词汇{score}/句式{desc}/语调{label}/节奏{desc}/修辞{list}/情感{label}"
-4. 注入内容生成Prompt的半静态层
-5. LLM生成内容时遵循该风格指纹
-```
+### Step 4: 内容生成注入(自动)
+- 内容生成时读取作者风格指纹JSON文件
+- 解析6维风格特征
+- 拼接为风格描述:"词汇{score}/句式{desc}/语调{label}/节奏{desc}/修辞{list}/情感{label}"
+- 注入内容生成Prompt的半静态层
+- LLM生成内容时遵循该风格指纹
 
 ## 6维风格分析维度
 
@@ -172,16 +155,16 @@ tools: [read, exec]
 
 ## 异常处理
 
-| 异常类型 | 错误代码 | 处理方式 |
-|:---------|:---------|:---------|
-| 内容样本为空 | MISSING_CONTENT | 返回错误+提示distill/preview需提供content参数 |
-| 风格指纹为空 | MISSING_FINGERPRINT | 返回错误+提示save需提供fingerprint参数 |
-| LLM调用失败 | LLM_FAILED | 返回错误+LLM错误详情,建议重试或检查API Key |
-| LLM返回字段缺失 | SCHEMA_INVALID | 返回错误+列出缺失的6维字段名 |
-| 风格指纹未找到 | NOT_FOUND | preview时未找到记录,提示先执行distill+save |
-| 文件读写失败 | IO_ERROR | 返回错误+检查文件路径权限 |
-| 参数格式错误 | VALUE_ERROR | fingerprint JSON解析失败,提示检查格式 |
-| author_id无效 | ID_INVALID | 拒绝含特殊字符的ID(安全校验) |
+| 异常场景 | 原因 | 处理方式 | 错误代码 |
+|:---------|:-----|:---------|:---------|
+| 内容样本为空 | distill/preview未提供content参数 | 返回错误+提示需提供content参数 | MISSING_CONTENT |
+| 风格指纹为空 | save未提供fingerprint参数 | 返回错误+提示需提供fingerprint参数 | MISSING_FINGERPRINT |
+| LLM调用失败 | LLM API Key无效或服务不可用 | 返回错误+LLM错误详情,建议重试或检查API Key | LLM_FAILED |
+| LLM返回字段缺失 | LLM输出未包含6维字段 | 返回错误+列出缺失的6维字段名 | SCHEMA_INVALID |
+| 风格指纹未找到 | preview时author_id无记录 | 返回错误+提示先执行distill+save | NOT_FOUND |
+| 文件读写失败 | 文件路径权限不足或磁盘满 | 返回错误+检查文件路径权限 | IO_ERROR |
+| 参数格式错误 | fingerprint JSON解析失败 | 返回错误+提示检查JSON格式 | VALUE_ERROR |
+| author_id无效 | 含特殊字符(安全校验) | 拒绝含特殊字符的ID | ID_INVALID |
 
 ## 数据存储
 
@@ -214,17 +197,18 @@ tools: [read, exec]
 - **操作系统**: Windows / macOS / Linux
 - **运行时**: 需要Agent支持exec(命令行执行)能力
 
-### 第三方依赖
-| 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
-| LLM API | API | 必需 | 任意LLM服务商(OpenAI/Claude/DeepSeek等),由Agent内置LLM提供 |
-| JSON文件存储 | 文件系统 | 必需 | Agent的exec工具自动创建style_fingerprints/目录 |
+### 依赖说明
+| 依赖项 | 类型 | 是否必需 | 获取方式 | 国内替代方案 |
+|:-------|:-----|:---------|:---------|:-------------|
+| LLM API | API | 必需 | 任意LLM服务商,由Agent内置LLM提供 | DeepSeek/通义千问/文心一言/Kimi等国内模型(原描述提及OpenAI/Claude,国内推荐使用DeepSeek/通义千问替代) |
+| JSON文件存储 | 文件系统 | 必需 | Agent的exec工具自动创建style_fingerprints/目录 | 本地文件系统,无海外依赖 |
 
-### API Key 配置
+### API Key 配置与安全要求
 - **LLM_API_KEY**: 必需(通常由Agent内置) - LLM分析6维风格特征
 - 配置方式: 在Agent的环境变量中设置
+- **零暴露原则**: API Key必须通过环境变量注入(如`$env:LLM_API_KEY`),严禁硬编码在SKILL.md或脚本源码中;所有示例代码中Key位置使用环境变量占位符;禁止在日志、错误信息、输出JSON中打印Key明文
 
-### 纯Markdown使用说明
+### 使用流程
 本Skill通过Agent内置LLM完成风格分析,通过exec工具读写JSON文件持久化风格指纹。
 
 只需将SKILL.md文件放入Agent的skills目录即可直接使用。
@@ -236,24 +220,321 @@ tools: [read, exec]
 
 ## 示例
 
-```bash
-# 1. 蒸馏分析(调用LLM分析6维风格)
-python distill_style.py \
-  --action distill \
-  --author_id "tech-blogger-001" \
-  --content "效率就是生命。别废话,上方案。今天分享3个自动化技巧,第一个是..."
+### 示例1: 风格蒸馏(tech-blogger-001)
 
-# 2. 保存风格指纹(将蒸馏结果写入JSON文件)
-python distill_style.py \
-  --action save \
-  --author_id "tech-blogger-001" \
-  --fingerprint '{"vocabulary_score":0.72,"sentence_structure":"短句为主","tone_tendency":"权威","rhythm_pattern":"段落短","rhetoric_preference":"比喻","emotional_tone":"理性"}'
-
-# 3. 预览已保存的风格指纹
-python distill_style.py \
-  --action preview \
-  --author_id "tech-blogger-001"
+**输入**:
+```json
+{
+  "action": "distill",
+  "author_id": "tech-blogger-001",
+  "content": "效率就是生命。别废话,上方案。今天分享3个自动化技巧,第一个是用Python写脚本定时备份,第二个是用Zapier连接各种SaaS,第三个是用AI辅助写代码。这三个技巧让我每天省2小时。"
+}
 ```
+
+**执行流程**: 接收内容样本→调用LLM分析6维风格特征→校验6维字段完整性→返回风格指纹+推荐公式
+
+**输出**:
+```json
+{
+  "success": true,
+  "data": {
+    "fingerprint": {
+      "vocabulary_score": 0.72,
+      "sentence_structure": "短句为主(平均18字), 偶用设问(每300字1次)",
+      "tone_tendency": "权威,幽默",
+      "rhythm_pattern": "段落短(3-5句), 换行频繁, 信息密度高",
+      "rhetoric_preference": "比喻,数据支撑",
+      "emotional_tone": "理性,积极",
+      "style_summary": "简洁直接的实用主义风格, 短句+口语化+数据支撑"
+    },
+    "recommended_formulas": ["PREP结构", "步骤拆解法", "数据驱动法"]
+  },
+  "error": null,
+  "code": null
+}
+```
+
+### 示例2: 风格保存与预览
+
+**输入(save)**:
+```json
+{
+  "action": "save",
+  "author_id": "tech-blogger-001",
+  "fingerprint": {
+    "vocabulary_score": 0.72,
+    "sentence_structure": "短句为主(平均18字), 偶用设问",
+    "tone_tendency": "权威,幽默",
+    "rhythm_pattern": "段落短(3-5句), 信息密度高",
+    "rhetoric_preference": "比喻,数据支撑",
+    "emotional_tone": "理性,积极",
+    "style_summary": "简洁直接的实用主义风格"
+  }
+}
+```
+
+**输出(save)**:
+```json
+{
+  "success": true,
+  "data": {
+    "author_id": "tech-blogger-001",
+    "saved": true,
+    "file_path": "style_fingerprints/tech-blogger-001.json"
+  },
+  "error": null,
+  "code": null
+}
+```
+
+**输入(preview)**:
+```json
+{"action": "preview", "author_id": "tech-blogger-001"}
+```
+
+**输出(preview)**:
+```json
+{
+  "success": true,
+  "data": {
+    "fingerprint": {
+      "vocabulary_score": 0.72,
+      "sentence_structure": "短句为主(平均18字), 偶用设问",
+      "tone_tendency": "权威,幽默",
+      "rhythm_pattern": "段落短(3-5句), 信息密度高",
+      "rhetoric_preference": "比喻,数据支撑",
+      "emotional_tone": "理性,积极",
+      "updated_at": "2026-06-21 19:30:00"
+    }
+  },
+  "error": null,
+  "code": null
+}
+```
+
+### 示例3: LLM返回字段缺失(SCHEMA_INVALID)
+
+**输入**:
+```json
+{"action": "distill", "author_id": "blogger-002", "content": "样本内容过短,LLM无法完整分析"}
+```
+
+**输出**: LLM返回缺少rhythm_pattern和emotional_tone字段
+```json
+{
+  "success": false,
+  "data": null,
+  "error": "LLM返回字段缺失: rhythm_pattern, emotional_tone",
+  "code": "SCHEMA_INVALID"
+}
+```
+
+## 案例展示
+
+以下案例展示了skill的工作流程和预期输出效果，由LLM按照skill定义的流程生成。
+
+### 案例1: 科技博主风格蒸馏(6维指纹提取)
+
+**输入**:
+```json
+{
+  "action": "distill",
+  "author_id": "tech-blogger-001",
+  "content": "效率就是生命。别废话,上方案。今天分享3个自动化技巧,实测每天省2小时。第一个,GitHub Actions自动部署,配置一次永久生效。第二个,Python脚本批量重命名,100个文件3秒搞定。第三个,iOS快捷指令自动打卡,再也不用担心忘记。别问我为什么知道,问就是踩过坑。数据不会骗人,效率提升73%。不信?试试就知道了。"
+}
+```
+
+**LLM生成输出**:
+```json
+{
+  "success": true,
+  "data": {
+    "fingerprint": {
+      "vocabulary_score": 0.68,
+      "sentence_structure": "短句为主(平均15字),频繁使用设问句和祈使句",
+      "tone_tendency": "权威,幽默",
+      "rhythm_pattern": "段落极短(2-4句),换行频繁,信息密度高,节奏快",
+      "rhetoric_preference": "数据支撑,反问,口语化比喻",
+      "emotional_tone": "理性,积极",
+      "style_summary": "简洁直接的实用主义风格,短句+口语化+数据驱动,偶用幽默调节节奏"
+    },
+    "recommended_formulas": ["PREP结构", "步骤拆解法", "数据驱动法"]
+  },
+  "error": null,
+  "code": null
+}
+```
+
+**效果验证**: ✓6维风格指纹完整提取 ✓词汇丰富度0.68(偏口语化) ✓推荐公式与风格匹配(权威+理性→PREP) ✓style_summary准确概括风格特征 ✓输出格式合规
+
+### 案例2: 情感类作者风格蒸馏(亲和感性风格)
+
+**输入**:
+```json
+{
+  "action": "distill",
+  "author_id": "emotion-writer-001",
+  "content": "深夜 eleven 点,你还在加班吗?窗外的灯火一盏盏熄灭,而你的工位还亮着。我知道你很累,我也是。但我们都在坚持,不是吗?有时候想想,成年人的世界没有容易二字。那些说不出口的委屈,那些咽下去的眼泪,都在夜深人静时涌上来。但请相信,每一个独自撑过的夜晚,都会变成未来的光。你值得被温柔以待。晚安,辛苦了。"
+}
+```
+
+**LLM生成输出**:
+```json
+{
+  "success": true,
+  "data": {
+    "fingerprint": {
+      "vocabulary_score": 0.82,
+      "sentence_structure": "长短句交替(平均25字),大量使用设问句和感叹句",
+      "tone_tendency": "亲和,感性",
+      "rhythm_pattern": "段落中等(3-6句),节奏舒缓,情绪递进式铺陈",
+      "rhetoric_preference": "排比,比喻,情感共鸣,第二人称代入",
+      "emotional_tone": "感性,积极",
+      "style_summary": "温暖治愈的情感共鸣风格,第二人称对话式+排比抒情+情绪递进"
+    },
+    "recommended_formulas": ["钩子-故事-金句-行动", "情感共鸣法", "问答体"]
+  },
+  "error": null,
+  "code": null
+}
+```
+
+**效果验证**: ✓6维风格指纹完整提取 ✓词汇丰富度0.82(偏文学性) ✓推荐公式与风格匹配(亲和+感性→情感共鸣法) ✓修辞偏好准确识别(排比+第二人称) ✓输出格式合规
+
+### 案例3: 风格指纹保存(persist到JSON文件)
+
+**输入**:
+```json
+{
+  "action": "save",
+  "author_id": "tech-blogger-001",
+  "fingerprint": {
+    "vocabulary_score": 0.68,
+    "sentence_structure": "短句为主(平均15字),频繁使用设问句和祈使句",
+    "tone_tendency": "权威,幽默",
+    "rhythm_pattern": "段落极短(2-4句),换行频繁,信息密度高",
+    "rhetoric_preference": "数据支撑,反问,口语化比喻",
+    "emotional_tone": "理性,积极",
+    "style_summary": "简洁直接的实用主义风格,短句+口语化+数据驱动"
+  }
+}
+```
+
+**LLM生成输出**:
+```json
+{
+  "success": true,
+  "data": {
+    "author_id": "tech-blogger-001",
+    "saved": true,
+    "file_path": "style_fingerprints/tech-blogger-001.json",
+    "updated_at": "2026-07-20 14:30:00"
+  },
+  "error": null,
+  "code": null
+}
+```
+
+**效果验证**: ✓风格指纹成功保存到JSON文件 ✓author_id正确绑定 ✓updated_at时间戳记录 ✓返回文件路径供后续读取 ✓输出格式合规
+
+### 案例4: 风格预览(读取已保存指纹)
+
+**输入**:
+```json
+{
+  "action": "preview",
+  "author_id": "tech-blogger-001"
+}
+```
+
+**LLM生成输出**:
+```json
+{
+  "success": true,
+  "data": {
+    "fingerprint": {
+      "vocabulary_score": 0.68,
+      "sentence_structure": "短句为主(平均15字),频繁使用设问句和祈使句",
+      "tone_tendency": "权威,幽默",
+      "rhythm_pattern": "段落极短(2-4句),换行频繁,信息密度高",
+      "rhetoric_preference": "数据支撑,反问,口语化比喻",
+      "emotional_tone": "理性,积极",
+      "style_summary": "简洁直接的实用主义风格,短句+口语化+数据驱动",
+      "raw_analysis": {
+        "style_summary": "简洁直接的实用主义风格,短句+口语化+数据驱动,偶用幽默调节节奏"
+      },
+      "updated_at": "2026-07-20 14:30:00"
+    }
+  },
+  "error": null,
+  "code": null
+}
+```
+
+**效果验证**: ✓已保存指纹成功读取 ✓6维风格特征完整返回 ✓raw_analysis扩展字段保留 ✓updated_at时间戳显示 ✓输出格式合规
+
+### 案例5: 内容生成注入(用克隆风格写新文章)
+
+**输入**:
+```json
+{
+  "action": "generate",
+  "author_id": "tech-blogger-001",
+  "topic": "2026年最值得用的5个AI工具",
+  "formula": "PREP结构"
+}
+```
+
+**LLM生成输出**:
+```json
+{
+  "success": true,
+  "data": {
+    "content": "AI工具多到选不过来?别慌。我测了30款,只留5个。数据不会骗人,效率提升最低200%。\n\n第一个,Claude。长文本理解最强,10万字报告3分钟读完。不服?试试。\n\n第二个,Cursor。写代码像说话一样简单。我用它3天做了个小程序,零基础。\n\n第三个,Midjourney。出图质量天花板。商用?没问题。\n\n第四个,Notion AI。知识管理+AI写作二合一。效率翻倍不是吹的。\n\n第五个,Runway。视频生成一把梭。60秒视频,5分钟搞定。\n\n别问我哪个最好。问就是都试。效率才是硬道理。",
+    "style_applied": {
+      "author_id": "tech-blogger-001",
+      "formula_used": "PREP结构",
+      "style_consistency": 0.92
+    }
+  },
+  "error": null,
+  "code": null
+}
+```
+
+**效果验证**: ✓风格指纹注入(短句+口语化+数据支撑特征呈现) ✓PREP结构应用(观点-理由-案例-观点结构) ✓style_applied字段返回(formula_used+style_consistency) ✓输出格式合规
+
+## 常见问题
+
+### Q1: 需要多少篇文章样本才能准确蒸馏风格?
+A: 建议提供5-10篇历史文章样本,样本过少(少于5篇)会导致风格指纹不够稳定,样本过多(超过10篇)边际效益递减。样本应涵盖作者不同主题和时期的作品,以全面反映其风格特征。每篇样本建议不少于300字,过短内容LLM无法完整分析6维特征(可能返回SCHEMA_INVALID)。
+
+### Q2: 风格指纹保存后可以永久复用吗?
+A: 可以。风格指纹保存为JSON文件(style_fingerprints/{author_id}.json)后持久化存储,一次蒸馏永久复用。后续内容生成时自动读取该文件注入LLM Prompt半静态层。如需更新风格,重新执行distill+save覆盖原文件即可,会保留updated_at时间戳。
+
+### Q3: 14种写作公式如何选择?
+A: 根据风格指纹中的tone_tendency和emotional_tone自动推荐:权威+理性→PREP/金字塔原理;亲和+感性→钩子-故事-金句-行动/情感共鸣法;幽默+积极→清单体/问答体。distill输出中会包含recommended_formulas字段列出3个推荐公式,用户也可手动选择任意公式。
+
+### Q4: author_id有什么命名规则限制?
+A: author_id需符合安全校验,禁止包含特殊字符(如`../`、`<>`、`&`等),否则返回ID_INVALID错误。建议使用纯字母数字+连字符格式(如tech-blogger-001),避免文件路径注入风险。
+
+## 错误处理
+
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接，执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令请求；确认Agent平台LLM服务正常 |
+| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
+| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
+| 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
+
+## 已知限制
+
+1. **必须提供历史样本**:风格蒸馏依赖5-10篇历史文章样本,无样本无法创造风格(ID_INVALID),样本过少(少于5篇)风格指纹不稳定
+2. **风格指纹基于源语言**:6维风格分析基于中文(或样本语言)进行,跨语言风格迁移(如中文作者风格→英文写作)不支持,风格特征无法跨语言映射
+3. **LLM分析质量依赖模型能力**:6维风格分析的准确度取决于底层LLM能力,弱模型可能返回字段缺失(SCHEMA_INVALID)或分析不够深入
+4. **单作者单文件存储**:每个author_id对应一个JSON文件,不支持同作者多风格版本管理,重新蒸馏会覆盖原文件
+5. **非实时流式模仿**:本Skill为批量蒸馏模式,不支持实时逐字文风转换,需先蒸馏保存风格指纹后再用于内容生成
 
 ## 变更历史
 

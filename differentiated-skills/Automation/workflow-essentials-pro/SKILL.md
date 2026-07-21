@@ -2,9 +2,9 @@
 slug: workflow-essentials-pro
 name: workflow-essentials-pro
 version: "1.0.0"
-displayName: 工作流精要(专业版)
+displayName: Workflow Essentials
 summary: 完整自动化方法论，六步框架、六种设计模式、四种进阶场景、维护策略与故障排查。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   工作流精要专业版是在免费版基础上的全功能升级，为AI Agent提供完整的自动化工作流方法论。不同于面向特定角色或特定工具的指南，工作流精要聚焦自动化的通用原理与系统方法。专业版解锁六步完整框架、六种设计模式、四种进阶场景、维护策略和完整故障排查表。

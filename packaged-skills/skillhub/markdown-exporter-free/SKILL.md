@@ -1,0 +1,133 @@
+---
+slug: markdown-exporter-free
+name: markdown-exporter-free
+version: "1.0.0"
+displayName: Markdown导出工具(免费版)
+summary: Markdown转DOCX/PPTX/XLSX/PDF/HTML/IPYNB/CSV/JSON/XML多格式导出引擎。免费版
+license: MIT
+description: |-
+  Markdown文本多格式导出引擎（免费版），支持将Markdown转换为DOCX、PDF、HTML、
+  XLSX、CSV、JSON等常用格式。核心能力：
+  - 文档格式转换（md_to_docx/md_to_pdf/md_to_html）
+  - 表格数据导出（md_to_xlsx/md_to_csv/md_to_json）
+  - 演示文稿生成（md_to_pptx）
+  - 代码块提取（md_to_codeblock，支持ZIP压缩）
+tools:
+  - read
+  - exec
+---
+
+# Markdown导出工具(免费版)
+
+Markdown文本多格式导出引擎，支持将Markdown转换为DOCX、PDF、HTML、XLSX、CSV、JSON等格式。
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
+- **操作系统**: Windows / macOS / Linux
+- **Python**: 需安装 Python 3.8+
+
+### 依赖项
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| Python 3.8+ | 运行环境 | 必需 | https://www.python.org/downloads/ 安装 |
+| md-exporter | Python 包 | 必需 | `pip install md-exporter` 安装 |
+| 中文字体包 | 系统字体 | 可选 | PDF中文导出需安装 Noto Sans CJK |
+
+### 可用性分类
+- **分类**: MD+EXEC（Markdown 指令驱动，需 exec 执行 markdown-exporter 命令）
+- **说明**: 基于自然语言指令驱动 Agent 执行 Markdown 格式转换
+
+## 核心能力
+
+### 1. 文档格式转换
+```bash
+markdown-exporter md_to_docx /path/input.md /path/output.docx
+markdown-exporter md_to_pdf /path/input.md /path/output.pdf
+markdown-exporter md_to_html /path/input.md /path/output.html
+markdown-exporter md_to_html_text /path/input.md
+markdown-exporter md_to_md /path/input.md /path/output.md
+```
+
+### 2. 表格数据导出
+将Markdown表格转换为结构化数据格式：
+```bash
+markdown-exporter md_to_xlsx /path/input.md /path/output.xlsx
+markdown-exporter md_to_csv /path/input.md /path/output.csv
+markdown-exporter md_to_json /path/input.md /path/output.json
+markdown-exporter md_to_xml /path/input.md /path/output.xml
+markdown-exporter md_to_latex /path/input.md /path/output.tex
+```
+
+### 3. 演示文稿生成
+```bash
+markdown-exporter md_to_pptx /path/input.md /path/output.pptx
+markdown-exporter md_to_pptx /path/input.md /path/output.pptx --template /path/template.pptx
+```
+支持Pandoc风格的幻灯片语法：分栏布局（`::::: columns`）、演讲者备注（`::: notes`）、增量列表（`::: incremental`）、背景图片。
+
+### 4. 代码块提取
+```bash
+markdown-exporter md_to_codeblock /path/input.md /path/output_dir
+markdown-exporter md_to_codeblock /path/input.md /path/output.zip --compress
+```
+从Markdown中提取所有代码块，按语言保存为独立文件（`.py`/`.js`/`.sh`等）。
+
+## 适用场景
+
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 技术文档导出 | Markdown文档 | `.docx` Word文档 |
+| 数据表导出 | Markdown表格 | `.xlsx`/`.csv`/`.json` |
+| 演示文稿制作 | Pandoc风格Markdown | `.pptx` PowerPoint |
+| 代码提取 | 含代码块的Markdown | 独立代码文件或ZIP |
+
+**不适用于**：加密文件破解、二进制文件转换、非Markdown格式间互转。
+
+## 使用流程
+
+1. 安装：`pip install md-exporter`
+2. 准备Markdown输入文件（所有命令仅支持文件路径输入）
+3. 选择目标格式对应的子命令
+4. 执行转换：`markdown-exporter <subcommand> <input> <output> [options]`
+5. 验证输出文件
+
+## 示例
+
+### 示例1：Markdown转Word
+```bash
+markdown-exporter md_to_docx /home/user/report.md /home/user/report.docx
+```
+输入 `report.md` 包含标题、段落、列表和表格，输出 `report.docx` 保留格式结构。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| `md_to_pptx` 输出幻灯片格式错乱 | Markdown未使用Pandoc幻灯片语法 | 确保每个 `##` 标题作为新幻灯片起始，分栏用 `::::: columns`，备注用 `::: notes` |
+| `md_to_xlsx` 报 "no tables found" | 输入Markdown中无标准表格 | 确保表格使用 `| col |` 管道符格式，表头分隔行 `|---|---|` 必须存在 |
+| `md_to_codeblock` 文件名冲突 | 多个代码块语言相同 | 输出文件自动编号：`block_1.py`、`block_2.py`，避免覆盖 |
+| `md_to_pdf` 中文字体缺失 | PDF生成引擎未安装中文字体 | 安装中文字体包（如Noto Sans CJK），或使用 `md_to_html` 后通过浏览器打印为PDF |
+
+## 常见问题
+
+### Q1: 所有命令为什么只支持文件路径输入而不支持管道？
+设计上要求所有输入为文件路径，确保大文件处理的稳定性和可重现性。如果需要处理管道输入的Markdown文本，先写入临时文件再调用命令：`echo "$markdown" > /tmp/input.md && markdown-exporter md_to_docx /tmp/input.md /tmp/output.docx`。
+
+### Q2: `md_to_pptx` 支持哪些幻灯片布局？
+支持Pandoc风格的幻灯片语法：标题+内容布局（`##` 标题后跟内容）、两栏布局（`::::: columns` + `::: column`）、比较布局（含图片的栏触发）、内容带说明（图片+caption）、增量列表（`::: incremental`）、空白布局（仅背景图+备注）。通过 `--template` 可使用自定义PPTX模板控制视觉风格。
+
+### Q3: `md_to_codeblock` 如何处理代码块语言识别？
+代码块的语言标注（如 ` ```python `）决定输出文件扩展名：`python`→`.py`，`javascript`→`.js`，`bash`→`.sh`，`sql`→`.sql`等。未标注语言的代码块默认输出为 `.txt`。使用 `--compress` 将所有代码块打包为ZIP，适合教程场景一次性分发所有示例代码。
+
+## 已知限制
+
+- 所有命令仅支持文件路径输入，不支持stdin管道
+- 多表格/多代码块场景下输出文件自动编号
+- PDF生成依赖系统字体配置，中文需额外安装字体
+
+
+## 升级提示
+
+本免费版提供基础功能。升级到完整版 markdown-exporter 获取全部能力和高级特性。

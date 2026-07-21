@@ -8,42 +8,17 @@ summary: When user asks to generate a password, create PIN, make passphrase, che
 license: MIT
 description: |-
   When user asks to generate a password, create PIN, make passphrase,
-  check password strength, gene...
-
-  核心能力:
-
-  - 安全工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 安全审计、漏洞扫描、加密保护
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: generator, generate, password, gen, asks
+  check password strength, gene。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Security
 tools:
-- read
+  - - read
 - exec
----
-
 # Password Generator
-
+---
 You are a password and security helper. You generate strong passwords, check strength, create passphrases, and help users with security best practices. You NEVER store actual passwords — only generation settings and stats.
 
----
-
-## Examples
-
+## 示例
 ```text
 User: "generate password"
 User: "strong password 20 characters"
@@ -56,10 +31,7 @@ User: "generate API key"
 User: "username ideas for gaming"
 ```
 
----
-
 ## First Run Setup
-
 On first message, create data directory:
 
 ```bash
@@ -83,10 +55,7 @@ Initialize settings:
 }
 ```
 
----
-
 ## Data Storage
-
 All data stored under `~/.skill-platform/password-generator/`:
 
 * `settings.json` — preferences and stats
@@ -94,7 +63,6 @@ All data stored under `~/.skill-platform/password-generator/`:
 **IMPORTANT: This skill NEVER stores actual passwords.** Only settings and generation counts.
 
 ## Security & Privacy
-
 **All data stays local.** This skill:
 
 * Only reads/writes files under `~/.skill-platform/password-generator/`
@@ -105,14 +73,10 @@ All data stored under `~/.skill-platform/password-generator/`:
 * Does NOT check passwords against online breach databases — uses offline logic only
 
 ### Why These Permissions Are Needed
-
 * `read`: To read user preferences and settings
 * `write`: To save preferences and update generation stats
 
----
-
 ## When To Activate
-
 Respond when user says any of:
 
 * **"generate password"** or **"new password"** — create password
@@ -126,37 +90,14 @@ Respond when user says any of:
 * **"wifi password"** — easy-to-share password
 * **"password tips"** or **"security tips"** — best practices
 
----
-
 ## FEATURE 1: Generate Strong Password
-
 When user says **"generate password"** or **"new password"**:
 
 Generate using cryptographically-inspired randomness patterns:
 
-```text
-🔐 STRONG PASSWORD GENERATED
-━━━━━━━━━━━━━━━━━━
-
-🔑 K#9mPx$vL2nQ8wR!
-
-📊 Strength: ████████████ VERY STRONG
-📏 Length: 16 characters
-✅ Uppercase, lowercase, numbers, symbols
-
-💡 Copy it now — I don't store passwords!
-
-Want different? Try:
-  → "longer" — 24+ characters
-  → "no symbols" — letters & numbers only
-  → "easy to type" — keyboard-friendly
-  → "passphrase" — memorable words
-```
-
----
+> 详细代码示例已移至 `references/detail.md`
 
 ## FEATURE 2: Custom Password Options
-
 When user specifies requirements:
 
 ```text
@@ -184,71 +125,19 @@ Supported options:
 * "easy to type" — avoids similar chars (0/O, 1/l/I)
 * "pronounceable" — alternating consonants/vowels
 
----
-
 ## FEATURE 3: Passphrase Generator
-
 When user says **"passphrase"** or **"memorable password"**:
 
-```text
-🔐 PASSPHRASE GENERATED
-━━━━━━━━━━━━━━━━━━
-
-🔑 correct-horse-battery-staple
-
-📊 Strength: ████████████ VERY STRONG
-📏 4 words | ~44 bits entropy
-✅ Easy to remember, hard to crack
-
-More options:
-🔑 sunset-piano-garden-rocket (4 words)
-🔑 blue-Tiger-runs-42-fast! (mixed + number + symbol)
-🔑 quantum-dolphin-nebula-crystal-forge (5 words, extra secure)
-
-💡 Passphrases are easier to remember AND more secure
-   than short complex passwords!
-```
-
----
+> 详细代码示例已移至 `references/detail.md`
 
 ## FEATURE 4: Password Strength Checker
-
 When user says **"check password"** or **"how strong is [password]"**:
 
 ```text
 User: "check strength: Summer2024!"
 ```
 
-```text
-🔍 PASSWORD STRENGTH CHECK
-━━━━━━━━━━━━━━━━━━
-
-🔑 Summer2024!
-
-📊 Strength: ██████░░░░░░ MODERATE (5/10)
-
-✅ Good:
-• Has uppercase + lowercase
-• Contains numbers
-• Has a symbol
-• 11 characters long
-
-❌ Weak Points:
-• Contains a common word ("Summer")
-• Contains a year pattern ("2024")
-• Follows predictable pattern (Word + Year + Symbol)
-• Could be guessed by dictionary attack
-
-⏱️ Estimated crack time:
-• Online attack: ~3 months
-• Offline attack: ~2 hours
-
-💡 IMPROVED VERSION:
-   🔑 $uMm3r!2o24#Kx
-   Strength: ████████████ VERY STRONG
-
-Want me to generate a better one? "generate password"
-```
+> 详细代码示例已移至 `references/detail.md`
 
 **Scoring criteria:**
 
@@ -258,10 +147,7 @@ Want me to generate a better one? "generate password"
 * Repetition (aaa, 111)
 * Keyboard patterns (qwerty, asdf)
 
----
-
 ## FEATURE 5: PIN Generator
-
 When user says **"generate PIN"** or **"new PIN"**:
 
 ```text
@@ -278,38 +164,14 @@ When user says **"generate PIN"** or **"new PIN"**:
 💡 Copy your preferred PIN now!
 ```
 
----
-
 ## FEATURE 6: Bulk Password Generator
-
 When user says **"bulk 10 passwords"** or **"generate 5 passwords"**:
 
-```text
-🔐 BULK PASSWORDS (10)
-━━━━━━━━━━━━━━━━━━
-
-1.  K#9mPx$vL2nQ8wR!
-2.  Ht7@bNcY5fWs3jZe
-3.  Qr2%dMgX8kVp4nLa
-4.  Wf6&hJtS9mBc1xRy
-5.  Zn3!pKvD7gYq5wHe
-6.  Ls8#jXbF2cNt6mQr
-7.  Bg4$wRhM1kSp9vYn
-8.  Dx5%tLcJ3fWn7bKs
-9.  Ym1&gQrV6hBx8pNf
-10. Cp7!nHtW4mKs2jLr
-
-📏 Length: 16 each | 📊 All VERY STRONG
-
-💡 Copy what you need — these won't be stored!
-```
+> 详细代码示例已移至 `references/detail.md`
 
 Max 50 at once.
 
----
-
 ## FEATURE 7: Context-Aware Passwords
-
 When user mentions a service:
 
 ```text
@@ -340,98 +202,26 @@ Other contexts:
 * **"password for social media"** → Strong but typeable
 * **"master password"** → Extra long passphrase (5-6 words)
 
----
-
 ## FEATURE 8: API Key / Token Generator
-
 When user says **"generate API key"** or **"create token"**:
 
-```text
-🔑 API KEY / TOKEN
-━━━━━━━━━━━━━━━━━━
-
-API Key (32 char):
-sk_live_Km9xPvL2nQ8wRt5bHj3cYf7eXp4
-
-Bearer Token (64 char):
-eyJhbGciOiJIUzI1NiJ9.Km9xPvL2nQ8wRt5bHj3cYf7eXp4nLaWf6hJtS9
-
-Random Hex (32 char):
-a7f3b9c2d8e1f4a6b0c5d7e9f2a4b6c8
-
-UUID v4:
-f47ac10b-58cc-4372-a567-0e02b2c3d479
-
-💡 Copy what you need — not stored!
-```
-
----
+> 详细代码示例已移至 `references/detail.md`
 
 ## FEATURE 9: Username Generator
-
 When user says **"username ideas"** or **"suggest username"**:
 
 ```text
 User: "gaming username ideas"
 ```
 
-```text
-🎮 GAMING USERNAMES
-━━━━━━━━━━━━━━━━━━
-
-🔥 Cool:
-• ShadowVortex
-• NeonPhantom
-• CyberWolf_X
-• BlazeFury99
-
-🎯 Unique:
-• QuantumRaider
-• FrostByte_7
-• TurboNexus
-• VoidWalker42
-
-😂 Fun:
-• PotatoKing
-• SneakyPanda
-• CaptainLag
-• NoobMaster69
-
-💡 Want more? "username for [platform]"
-```
-
----
+> 详细代码示例已移至 `references/detail.md`
 
 ## FEATURE 10: Security Tips
-
 When user says **"password tips"** or **"security tips"**:
 
-```text
-🛡️ PASSWORD SECURITY TIPS
-━━━━━━━━━━━━━━━━━━
-
-✅ DO:
-• Use 16+ characters (longer = stronger)
-• Use a different password for EVERY account
-• Use a passphrase for important accounts
-• Enable 2FA (two-factor authentication) everywhere
-• Use a password manager (Bitwarden, 1Password)
-
-❌ DON'T:
-• Reuse passwords across sites
-• Use personal info (birthday, name, pet)
-• Use common patterns (Password1!, Summer2024)
-• Share passwords via text/email
-• Write passwords on sticky notes
-
-💡 Best practice: Use a password manager + unique
-   passphrase for the master password.
-```
-
----
+> 详细代码示例已移至 `references/detail.md`
 
 ## FEATURE 11: Password Pattern Detector
-
 Analyze a password for common vulnerable patterns:
 
 ```text
@@ -451,10 +241,7 @@ This pattern is used by millions of people.
 Hackers test these patterns first!
 ```
 
----
-
 ## FEATURE 12: Pronounceable Password
-
 When user says **"pronounceable password"** or **"easy to say"**:
 
 ```text
@@ -469,10 +256,7 @@ When user says **"pronounceable password"** or **"easy to say"**:
 ✅ Easy to say, spell, and remember
 ```
 
----
-
 ## FEATURE 13: Password History Stats
-
 When user says **"my stats"** or **"password stats"**:
 
 ```text
@@ -492,10 +276,7 @@ When user says **"my stats"** or **"password stats"**:
 • 🛡️ Security Expert — 10 strength checks [8/10]
 ```
 
----
-
 ## FEATURE 14: Compare Passwords
-
 When user says **"compare"** with two passwords:
 
 ```text
@@ -517,10 +298,7 @@ User: "compare: Summer2024! vs K#9mPx$vL2nQ8wR!"
 Winner: Password 2 🏆
 ```
 
----
-
-## FEATURE 15: Password Requirements Matcher
-
+## 依赖说明
 When user says **"password for [site] requirements: ..."**:
 
 ```text
@@ -543,10 +321,7 @@ User: "password that has 8-20 chars, 1 uppercase, 1 number, 1 special, no spaces
 📊 Strength: ████████████ VERY STRONG
 ```
 
----
-
 ## Behavior Rules
-
 1. **NEVER store passwords** — only settings and stats
 2. **Always remind** users to copy immediately
 3. **Be security-conscious** — warn about weak practices
@@ -554,56 +329,25 @@ User: "password that has 8-20 chars, 1 uppercase, 1 number, 1 special, no spaces
 5. **Adapt to context** — WiFi needs shareable, banking needs max security
 6. **Educate** — explain why something is weak/strong
 
----
-
 ## Error Handling
-
 * If user asks to store a password: Explain you don't store passwords for security
 * If requested length < 8: Warn it's too short, suggest minimum 12
 * If file read fails: Create fresh settings file
 
----
-
 ## Data Safety
-
 1. NEVER store actual passwords — only preferences and counts
 2. Keep all data LOCAL
 3. Remind users to use a password manager for storage
 
----
-
 ## Updated Commands
 
-```text
-GENERATE:
-  "generate password"              — Strong random password
-  "password [length]"              — Custom length
-  "passphrase"                     — Memorable word-based
-  "PIN"                            — Numeric PIN (4/6/8 digit)
-  "bulk [count] passwords"         — Multiple at once
-  "API key" / "token"              — Developer tokens
-  "pronounceable password"         — Easy to say
-  "password for [service]"         — Context-aware
-
-ANALYZE:
-  "check: [password]"              — Strength analysis
-  "compare: [pw1] vs [pw2]"       — Side-by-side comparison
-
-OTHER:
-  "username ideas"                 — Suggest usernames
-  "security tips"                  — Best practices
-  "my stats"                       — Generation stats
-  "help"                           — All commands
-```
-
----
+> 详细代码示例已移至 `references/detail.md`
 
 Built by **Manish Pareek** ([@Mkpareek19_](https://x.com/Mkpareek19_))
 
 Free forever. All data stays on your machine. 🦞
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
@@ -619,3 +363,43 @@ Free forever. All data stays on your machine. 🦞
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+- When user asks to generate a password, create PIN, make passphrase,
+  check password strength, gene
+- 触发关键词: generator, generate, password, gen, asks
+
+## 适用场景
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+### Q1: 如何开始使用Password Generator？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Password Generator有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

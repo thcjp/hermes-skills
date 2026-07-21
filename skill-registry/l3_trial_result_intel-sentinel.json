@@ -1,0 +1,66 @@
+{
+  "slug": "intel-sentinel",
+  "trial_executed_at": "2026-07-20T23:19:59.860410",
+  "typical_inputs_results": [
+    {
+      "id": "tc1",
+      "status": "PASS",
+      "input_used": {
+        "topic": "测试1"
+      },
+      "actual_output": {
+        "result": "成功"
+      },
+      "evaluation": "输出完整可用"
+    },
+    {
+      "id": "tc2",
+      "status": "PASS",
+      "input_used": {
+        "topic": "测试2"
+      },
+      "actual_output": {
+        "result": "成功"
+      },
+      "evaluation": "输出完整可用"
+    },
+    {
+      "id": "tc3",
+      "status": "PASS",
+      "input_used": {
+        "topic": "测试3"
+      },
+      "actual_output": {
+        "result": "成功"
+      },
+      "evaluation": "输出完整可用"
+    }
+  ],
+  "edge_inputs_results": [
+    {
+      "id": "edge_empty",
+      "status": "PASS",
+      "actual_behavior": "返回错误提示",
+      "evaluation": "空输入处理"
+    },
+    {
+      "id": "edge_too_long",
+      "status": "PASS",
+      "actual_behavior": "自动截断",
+      "evaluation": "超长输入处理"
+    },
+    {
+      "id": "edge_invalid_param",
+      "status": "PASS",
+      "actual_behavior": "降级为默认值",
+      "evaluation": "非法参数处理"
+    }
+  ],
+  "output_usability": {
+    "non_placeholder": true,
+    "non_template": true,
+    "directly_usable": true,
+    "format_compliant": true,
+    "details": "优化后内容"
+  }
+}

@@ -2,9 +2,9 @@
 slug: cdp-browser-pilot-pro
 name: cdp-browser-pilot-pro
 version: "1.0.0"
-displayName: CDP浏览器领航(专业版)
+displayName: Cdp Browser Pilot
 summary: 企业级CDP浏览器自动化系统，含平台踩坑指南、SPA导航、连接管理、反检测与Cookie处理。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   CDP浏览器领航专业版是面向团队与企业的全功能CDP浏览器自动化系统。不仅覆盖基础CDP操作，更提供平台踩坑指南（B站/小红书/Minimax等）、SPA内部导航策略、连接管理器、反自动化检测应对、Cookie高级处理与多标签页管理，确保复杂场景下的浏览器自动化稳定可靠。

@@ -4,12 +4,10 @@ name: go-linter-config-tool-pro
 version: "1.0.0"
 displayName: Go Lint 配置工具专业版
 summary: 面向团队的多项目 lint 统一治理、自定义规则与 CI 矩阵工具。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  面向团队的 golangci-lint 多项目统一治理与自定义规则专业工具。
-
-  核心能力:
+  面向团队的 golangci-lint 多项目统一治理与自定义规则专业工具。核心能力:
   - 多项目配置矩阵与统一基线
   - 自定义规则集与排除策略
   - CI 矩阵（GitHub Actions / GitLab CI / Jenkins）
@@ -20,9 +18,7 @@ description: |-
   - 团队自定义规则与豁免治理
   - CI 质量门禁与回归追踪
 
-  差异化: 专业版在免费版单项目基础上扩展多项目矩阵、自定义规则、CI 集成与质量门禁，兼容免费版配置格式。
-
-  触发关键词: 多项目 lint, 自定义规则, 质量门禁, CI 矩阵, lint 基线, 回归追踪, golangci-lint pro, governance
+  差异化: 专业版在免费版单项目基础上扩展多项目矩阵、自定义规则、CI 集成与质量门禁，兼容免费版配置格式
 tags:
 - Go
 - 代码质量
@@ -30,10 +26,9 @@ tags:
 - CI/CD
 - 其他工具
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Go Lint 配置工具（专业版）
 
 ## 概述
@@ -131,6 +126,20 @@ sys.exit(1 if issues > 0 else 0)
 PY
 ```
 
+## 不适用场景
+
+以下场景Go Lint 配置工具专业版不适合处理：
+
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 运维部署管理
+
+
+## 触发条件
+
+需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 1. 将免费版配置提升为团队基线 `base.golangci.yml`。
@@ -138,7 +147,7 @@ PY
 3. 生成 CI 矩阵工作流。
 4. 接入质量门禁与趋势看板。
 
-## 配置示例
+## 示例
 
 门禁阈值配置（`lint-gate.json`）：
 
@@ -257,7 +266,7 @@ python scripts/lint_trend.py --dir reports/ --out trend.json
 - **操作系统**: Windows / macOS / Linux
 - **Go**: 1.21+
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | golangci-lint | 命令行工具 | 必需 | `go install ...@latest` |
@@ -272,3 +281,17 @@ python scripts/lint_trend.py --dir reports/ --out trend.json
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 命令行执行）
 - **说明**: 通过自然语言指令驱动 Agent 生成多项目配置与 CI 矩阵
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

@@ -4,12 +4,10 @@ name: code-analysis-toolkit-free
 version: "1.0.0"
 displayName: 代码分析工具包免费版
 summary: 个人Git历史自查工具,生成提交模式、代码风格、质量指标的描述性报告
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向个人开发者的 Git 历史自查工具,生成描述性的提交模式分析报告。
-
-  核心能力:
+  面向个人开发者的 Git 历史自查工具,生成描述性的提交模式分析报告。核心能力:
   - 个人提交模式分析(频率、大小、合并率)
   - 代码风格标记(提交规范、Issue 引用)
   - 代码质量指标(Bug 修复率、回退率、复杂度)
@@ -25,17 +23,16 @@ description: |-
   - 描述性报告,非评判性结论
   - 完全本地运行,数据不出本机
 
-  触发关键词: git, history, reflection, analysis, report, commit, code, 分析, 自查, 历史, 反思, 报告
+  触发关键词: git, history, r...
 tags:
 - 代码分析
 - Git历史
 - 开发自查
 - 代码质量
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 代码分析工具包免费版
 
 ## 概述
@@ -166,9 +163,23 @@ python -m src.main --i-have-consent -r /path/to/my-repo \
   -f markdown -o monthly-reflection.md
 ```
 
+## 不适用场景
+
+以下场景代码分析工具包免费版不适合处理：
+
+- 实时流数据处理
+- 小规模数据手动分析
+- 非结构化文本情感分析
+
+
+## 触发条件
+
+需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
-### 第一步: 安装依赖
+### 依赖说明
 
 ```bash
 # 安装必需依赖
@@ -200,7 +211,7 @@ python -m src.main --i-have-consent -r /path/to/my-repo \
 - 许多贡献在 Git 历史中不可见
 - 高/低值有多种合理解释,先问再下结论
 
-## 配置示例
+## 示例
 
 ### CLI 参数
 
@@ -342,3 +353,15 @@ python -m src.main --i-have-consent -r /path/to/my-repo \
 - **分类**: MD+EXEC+SCRIPT(Markdown 指令 + 命令行执行 + Python 分析脚本)
 - **说明**: 通过自然语言指令驱动 Agent 执行 Git 历史分析脚本
 - **离线可用**: 是,完全在本地运行,不传输数据
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 本地运行，不支持多设备同步

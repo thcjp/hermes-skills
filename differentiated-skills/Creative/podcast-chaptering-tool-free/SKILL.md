@@ -4,12 +4,10 @@ name: podcast-chaptering-tool-free
 version: "1.0.0"
 displayName: 播客章节工具免费版
 summary: 从播客音频或文字稿生成章节标记与高光片段建议,适合个人创作者快速制作节目笔记。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向个人创作者的播客章节标记工具(免费版)。
-
-  核心能力:
+  面向个人创作者的播客章节标记工具(免费版)。核心能力:
   - 从音频或文字稿生成章节标记(时间戳+标题)
   - 高光片段建议与时间定位
   - 节目笔记(Show Notes)草稿生成
@@ -28,7 +26,7 @@ description: |-
   - 隐私优先,仅生成草稿不发布
   - 适配个人创作者快速出稿
 
-  触发关键词: podcast, chaptering, highlights, 章节, 高光, show notes, 节目笔记, 时间戳, timestamp, free
+  触发关键词: po...
 tags:
 - 创意设计
 - 播客
@@ -36,7 +34,7 @@ tags:
 - 节目笔记
 - 个人创作
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -108,7 +106,7 @@ def generate_chapters(transcript, min_chapter_length=120):
 
     return chapters
 
-# 使用示例
+# 示例
 import json
 with open("transcript.json", "r", encoding="utf-8") as f:
     transcript = json.load(f)
@@ -315,7 +313,7 @@ whisper audio.mp3 --model small --output_format json --output_dir .
 - **Agent 平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -332,3 +330,17 @@ whisper audio.mp3 --model small --output_format json --output_dir .
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。免费版聚焦单文件章节生成,隐私优先,适合个人创作者快速制作节目笔记。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

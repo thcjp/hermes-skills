@@ -2,9 +2,9 @@
 slug: solo-workflow-engine-pro
 name: solo-workflow-engine-pro
 version: "1.0.0"
-displayName: 独立者引擎(专业版)
+displayName: Solo Workflow Engine
 summary: 完整七步无代码自动化框架，含高级场景、维护监控、ROI计算与故障排查。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   独立者引擎专业版是在免费版基础上的全功能升级，为独立开发者、一人公司、自由职业者提供完整的七步无代码自动化方法论。从识别机会到计算ROI，全流程覆盖自动化工作流的构建、维护与优化。专业版解锁维护监控、高级自动化场景、ROI计算工具和完整故障排查表。

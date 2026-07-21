@@ -4,7 +4,7 @@ name: cron-guard-pro
 version: "1.0.0"
 displayName: 定时任务安全防护(专业版)
 summary: 企业级cron任务安全防护专业版，含沙箱隔离、POSIX兼容、git安全、端口检测、分布式锁。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   定时任务安全防护专业版是面向企业级场景的完整cron任务安全防护解决方案。在免费版四层防护体系之上，专业版新增沙箱隔离与资源限制、POSIX深度兼容、git自动化安全、端口冲突检测、分布式锁与多节点协调五大高级防护能力，满足生产环境对定时任务安全性和可靠性的严苛要求。

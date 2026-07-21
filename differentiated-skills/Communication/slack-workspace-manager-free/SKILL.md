@@ -4,12 +4,10 @@ name: slack-workspace-manager-free
 version: "1.0.0"
 displayName: Slack工作区管理免费版
 summary: Slack工作区基础管理工具，支持消息发送、频道管理、文件处理与提醒创建，适合个人与小型团队。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  Slack工作区管理器（免费版）—— 面向个人与小型团队的Slack工作区管理工具。
-
-  核心能力:
+  Slack工作区管理器（免费版）—— 面向个人与小型团队的Slack工作区管理工具。核心能力:
   - 消息发送、线程回复与定时消息
   - 频道创建、查找与列表查看
   - 文件上传与列表查看
@@ -22,18 +20,15 @@ description: |-
   - 文件分享与查看
   - 个人提醒设置
 
-  差异化: 聚焦个人与小型团队核心需求，提供基础的Slack工作区管理能力，通过OAuth安全认证。
-
-  触发关键词: Slack工作区, 频道管理, 文件上传, 提醒创建, 消息发送, slack, workspace, channel, reminder
+  差异化: 聚焦个人与小型团队核心需求，提供基础的Slack工作区管理能力，通过OAuth安全认证
 tags:
 - 沟通协作
 - Slack
 - 工作区管理
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Slack工作区管理器（免费版）
 
 ## 概述
@@ -120,9 +115,23 @@ slack-workspace-manager send-message \
   --text "你好，关于昨天的设计文档有几个问题想讨论"
 ```
 
+## 不适用场景
+
+以下场景Slack工作区管理免费版不适合处理：
+
+- 实际人员绩效评估
+- 财务预算审批
+- 合同法务审核
+
+
+## 触发条件
+
+需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
-### 安装与连接
+### 依赖说明
 
 ```bash
 # 安装工具
@@ -154,7 +163,7 @@ slack-workspace-manager send-thread-reply \
   --text "收到，我来跟进"
 ```
 
-## 配置示例
+## 示例
 
 ```yaml
 # config.yaml
@@ -274,7 +283,7 @@ slack-workspace-manager find-channels --query "general"
 - 自然语言：`"in 15 minutes"`、`"every thursday at 2pm"`、`"tomorrow at 9am"`
 - Unix时间戳：`1712023032`
 
-### Q: 文件上传有大小限制吗？
+### 已知限制
 
 受Slack API限制，单文件最大不超过1GB。大文件建议先上传到文件托管服务，再分享链接。
 
@@ -287,7 +296,7 @@ slack-workspace-manager list-connections
 # 重新连接
 slack-workspace-manager connect
 
-# 常见问题:
+# 常见问题
 # 1. Token过期 - 重新授权
 # 2. 权限不足 - 在Slack管理页面调整App权限
 # 3. 网络问题 - 检查网络连接
@@ -334,3 +343,11 @@ slack-workspace-manager connect
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行任务，通过OAuth认证调用Slack Web API管理工作区
 - **适用人群**: 个人用户、小型团队、Slack工作区管理员
 - **版本限制**: 免费版支持基础工作区管理，PRO版本提供企业Grid、审计日志与批量操作能力
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

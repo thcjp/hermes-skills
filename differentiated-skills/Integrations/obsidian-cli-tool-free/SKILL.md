@@ -4,25 +4,17 @@ name: obsidian-cli-tool-free
 version: "1.0.0"
 displayName: Obsidian CLI(免费版)
 summary: 通过命令行管理Obsidian笔记库的免费工具，支持文件操作、搜索、标签与日常笔记
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  Obsidian CLI工具免费版是一款面向个人知识管理场景的命令行辅助Skill，让AI Agent能够直接通过命令行操作Obsidian笔记库，实现笔记的创建、读取、搜索和基础管理。
-
-  核心能力：文件读写与列表、全文搜索与标签查询、Daily Notes日常笔记、基础任务管理、属性读写。覆盖个人用户日常知识管理的80%高频操作。
-
-  适用场景：个人笔记快速检索与整理、每日日志自动生成、读书笔记归档管理、项目文档快速创建、知识库结构巡检。
-
-  差异化：相比图形界面操作，命令行方式可被AI Agent直接调用，实现批量自动化处理。免费版聚焦核心文件操作与检索能力，满足个人用户基础需求。
-
-  触发关键词：obsidian、笔记管理、命令行、知识库、cli、vault、笔记搜索
+  Obsidian CLI工具免费版是一款面向个人知识管理场景的命令行辅助Skill，让AI Agent能够直接通过命令行操作Obsidian笔记库，实现笔记的创建、读取、搜索和基础管理。核心能力：文件读写与列表、全文搜索与标签查询、Daily Notes日常笔记、基础任务管理、属性读写。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
 tags:
 - 笔记管理
 - 命令行工具
 - 知识库
 - 集成工具
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -74,7 +66,7 @@ Obsidian是一款流行的本地优先知识管理工具，但其图形界面操
 - 按提示注册`obsidian`命令后重启终端
 - Obsidian应用必须处于运行状态
 
-### 验证安装
+### 依赖说明
 
 ```bash
 obsidian version
@@ -99,7 +91,7 @@ obsidian search query="会议记录"
 obsidian read file="我的第一篇笔记"
 ```
 
-## 配置示例
+## 示例
 
 ### 命令结构
 
@@ -147,7 +139,7 @@ obsidian search query="TODO" matches
 # 按路径范围搜索
 obsidian search query="项目" path="项目/"
 
-# 限制搜索结果数量并区分大小写
+# 已知限制
 obsidian search query="API" limit=10 case
 
 # 以JSON格式输出搜索结果
@@ -279,3 +271,11 @@ Obsidian应用必须处于运行状态，CLI通过内部API与应用通信。请
 - TUI交互模式（专业版支持带自动补全的终端交互界面）
 
 解锁全部功能请使用专业版：obsidian-cli-tool-pro
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

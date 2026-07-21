@@ -7,9 +7,7 @@ summary: Assist job seekers by polishing, customizing, scoring, and exporting re
 license: MIT
 description: |-
   Assist job seekers by polishing, customizing, scoring, and exporting
-  resumes.
-
-  核心能力:
+  resumes。核心能力:
 
   - 开发工具领域的专业化AI辅助工具
 
@@ -25,36 +23,24 @@ description: |-
 
   - 自动化工作流与智能决策辅助
 
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: seekers, polishing, scoring, assistant, resume, customizing, assist
+  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub...
 tags:
 - Development
 tools:
-- read
+  - - read
 - exec
----
-
 # 📝 Resume / CV Assistant
-
+---
 > AI-powered clawbot skill for resume & CV polishing, job customization, multi-format export, and professional scoring.
 **Version:** 1.0.0 · **License:** MIT · **Repository:** [github.com/Wscats/resume-assistant](https://github.com/Wscats/resume-assistant)
----
-
 ## Overview
-
 Resume / CV Assistant is a clawbot skill that helps job seekers create, refine, and optimize their resumes and CVs, while adding comprehensive checklist review, scoring, and multi-format export that neither project offers alone.
 
----
-
 ## Usage in AI Agent
-
 ### Quick Start
-
 Resume / CV Assistant is a standard clawbot skill that can be loaded and invoked by any compatible AI Agent. Here are different integration approaches.
 
 ### 💬 Natural Language (Recommended)
-
 You don't need to memorize any commands — simply describe what you need:
 
 ```
@@ -80,8 +66,7 @@ The assistant understands your intent and automatically routes to the right work
 | "Score / Rate / Evaluate my resume" | 100-point scoring → strengths & improvement plan |
 | "Here's my resume, help?" | Scores first → suggests next steps |
 
-#### Example Conversations
-
+#### 示例
 **Creating a new resume:**
 ```
 You:   Create a resume for a frontend engineer position at a startup
@@ -130,7 +115,6 @@ Bot:   🎯 Job Analysis Complete
 ```
 
 ### Option 1: Slash Commands via clawbot
-
 For more precise control, use slash commands directly in a clawbot conversation:
 
 ```
@@ -144,9 +128,7 @@ Skills: JavaScript, React, Vue, Node.js
 ```
 
 ### Option 2: Integration in AI Agent Frameworks
-
 #### 1. Register the Skill
-
 Register this project as a skill in your AI Agent:
 
 ```json
@@ -162,7 +144,6 @@ Register this project as a skill in your AI Agent:
 ```
 
 #### 2. Load Prompts
-
 When handling resume-related requests, prompt files are loaded in this order:
 
 ```
@@ -172,144 +153,40 @@ When handling resume-related requests, prompt files are loaded in this order:
 ```
 
 #### 3. Build the Complete Prompt
-
 Example for `/resume polish` — here's how an AI Agent should construct the prompt:
 
 ```python
 ROLE_SYS = "system"    # LLM message role constant
 ROLE_USR = "user"      # LLM message role constant
-
 def build_prompt(command, args):
-    # Step 1: Load the skill persona prompt
     persona_prompt = load_file("prompts/system.md")
 
-    # Step 2: Load command-specific prompt
     command_prompt = load_file(f"prompts/{command}.md")
 
-    # Step 3: Combine prompts into LLM messages
     combined = persona_prompt + "\n\n" + command_prompt
     messages = [
         {"role": ROLE_SYS, "content": combined},
         {"role": ROLE_USR, "content": args["resume_content"]}
     ]
 
-    # Step 4: Add optional parameters to user message
     if args.get("language"):
         messages[1]["content"] += f"\n\nLanguage: {args['language']}"
 
     return messages
 ```
 
-```javascript
-// JavaScript pseudocode
-const ROLE_SYS = 'system';  // LLM message role constant
-const ROLE_USR = 'user';    // LLM message role constant
-
-async function buildPrompt(command, args) {
-  // Step 1: Load the skill persona prompt
-  const personaPrompt = await loadFile('prompts/system.md');
-
-  // Step 2: Load command-specific prompt
-  const commandPrompt = await loadFile(`prompts/${command}.md`);
-
-  // Step 3: Combine prompts into LLM messages
-  const combined = `${personaPrompt}\n\n${commandPrompt}`;
-  const messages = [
-    { role: ROLE_SYS, content: combined },
-    { role: ROLE_USR, content: args.resume_content }
-  ];
-
-  // Step 4: Add optional parameters
-  if (args.language) {
-    messages[1].content += `\n\nLanguage: ${args.language}`;
-  }
-
-  return messages;
-}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### Option 3: REST API
-
 If your AI Agent exposes an HTTP API, invoke via RESTful endpoints:
 
-```bash
-curl -X POST https://your-agent-api.com/skills/resume-assistant/polish \
-  -H "Content-Type: application/json" \
-  -d '{
-    "resume_content": "Your resume content...",
-    "language": "en"
-  }'
-
-curl -X POST https://your-agent-api.com/skills/resume-assistant/score \
-  -H "Content-Type: application/json" \
-  -d '{
-    "resume_content": "Your resume content...",
-    "target_role": "Senior Frontend Engineer",
-    "language": "en"
-  }'
-
-curl -X POST https://your-agent-api.com/skills/resume-assistant/customize \
-  -H "Content-Type: application/json" \
-  -d '{
-    "resume_content": "Your resume content...",
-    "job_description": "Job description...",
-    "language": "en"
-  }'
-
-curl -X POST https://your-agent-api.com/skills/resume-assistant/export \
-  -H "Content-Type: application/json" \
-  -d '{
-    "resume_content": "Your resume content...",
-    "format": "html",
-    "template": "modern"
-  }'
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### Option 4: LangChain / LlamaIndex Integration
 
-```python
-from langchain.tools import Tool
-
-resume_tools = [
-    Tool(
-        name="resume_polish",
-        description="Polish and improve resume with 40+ checklist items",
-        func=lambda input: agent.run_skill(
-            "resume-assistant", "polish",
-            {"resume_content": input, "language": "en"}
-        )
-    ),
-    Tool(
-        name="resume_score",
-        description="Score a resume on 100-point scale with improvement suggestions",
-        func=lambda input: agent.run_skill(
-            "resume-assistant", "score",
-            {"resume_content": input, "language": "en"}
-        )
-    ),
-    Tool(
-        name="resume_customize",
-        description="Customize resume for a specific job position",
-        func=lambda input: agent.run_skill(
-            "resume-assistant", "customize",
-            {"resume_content": input.split("---JD---")[0],
-             "job_description": input.split("---JD---")[1],
-             "language": "en"}
-        )
-    ),
-    Tool(
-        name="resume_export",
-        description="Export resume to Word/Markdown/HTML/LaTeX/PDF",
-        func=lambda input: agent.run_skill(
-            "resume-assistant", "export",
-            {"resume_content": input, "format": "html", "template": "modern"}
-        )
-    ),
-]
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### Command Routing
-
 The AI Agent should route user requests to the correct command:
 
 ```mermaid
@@ -333,46 +210,12 @@ graph TD
 ```
 
 ### Argument Validation
-
 The AI Agent should validate arguments before invocation, referencing `skill.json`:
 
-```python
-def validate_args(command, args):
-    """Validate arguments against skill.json schema."""
-    schema = load_skill_json()
-    cmd_schema = next(c for c in schema["commands"] if c["name"] == command)
-
-    for arg in cmd_schema["arguments"]:
-        # Check required fields
-        if arg["required"] and arg["name"] not in args:
-            raise ValueError(f"Missing required argument: {arg['name']}")
-
-        # Check enum constraints
-        if "enum" in arg and arg["name"] in args:
-            if args[arg["name"]] not in arg["enum"]:
-                raise ValueError(
-                    f"Invalid value for {arg['name']}: {args[arg['name']]}. "
-                    f"Must be one of: {arg['enum']}"
-                )
-
-        # Apply defaults
-        if arg["name"] not in args and "default" in arg:
-            args[arg["name"]] = arg["default"]
-
-    # Check max resume length
-    max_len = schema["config"]["max_resume_length"]
-    if len(args.get("resume_content", "")) > max_len:
-        raise ValueError(f"Resume exceeds {max_len} character limit")
-
-    return args
-```
-
----
+> 详细代码示例已移至 `references/detail.md`
 
 ## Commands
-
 ### `/resume polish`
-
 Run a **40+ item checklist** across 8 categories and get a fully improved resume.
 
 **Arguments:**
@@ -388,10 +231,7 @@ Run a **40+ item checklist** across 8 categories and get a fully improved resume
 - Change summary categorized by priority: 🔴 Critical → 🟡 Major → 🟢 Minor → 💡 Suggestion
 - Action verb reference table and quantification guide
 
----
-
 ### `/resume customize`
-
 Tailor your resume for a **specific job posting** with gap analysis and keyword optimization.
 
 **Arguments:**
@@ -409,10 +249,7 @@ Tailor your resume for a **specific job posting** with gap analysis and keyword 
 - Keyword coverage report: before vs. after
 - Bonus: cover letter talking points + interview prep notes
 
----
-
 ### `/resume export`
-
 Convert your resume to **Word, Markdown, HTML, LaTeX, or PDF** with professional templates.
 
 **Arguments:**
@@ -439,10 +276,7 @@ Convert your resume to **Word, Markdown, HTML, LaTeX, or PDF** with professional
 - **PDF**: Print-optimized HTML with A4 page dimensions + multiple conversion methods
 - **Markdown**: Clean, structured, version-control friendly
 
----
-
 ### `/resume score`
-
 Get a **100-point professional evaluation** with specific improvement suggestions.
 
 **Arguments:**
@@ -472,36 +306,9 @@ Get a **100-point professional evaluation** with specific improvement suggestion
 - Role fit assessment (if target_role provided): fit score, competitive percentile, strengths, gaps
 - 5-step action plan with effort estimates
 
----
-
 ## Recommended Workflow
 
-```
-┌──────────────────────────────────────────────────────┐
-│                  Recommended Workflow                 │
-├──────────────────────────────────────────────────────┤
-│                                                      │
-│  1. /resume score     ← Know where you stand         │
-│     💬 "Score my resume"                             │
-│          │                                           │
-│          ▼                                           │
-│  2. /resume polish    ← Fix all issues               │
-│     💬 "Polish my resume"                            │
-│          │                                           │
-│          ▼                                           │
-│  3. /resume customize ← Tailor per application       │
-│     💬 "Tailor for this JD: ..."                     │
-│          │                                           │
-│          ▼                                           │
-│  4. /resume export    ← Generate final files         │
-│     💬 "Convert to PDF"                              │
-│          │                                           │
-│          ▼                                           │
-│  5. /resume score     ← Verify improvement           │
-│     💬 "Score my resume again"                       │
-│                                                      │
-└──────────────────────────────────────────────────────┘
-```
+> 详细代码示例已移至 `references/detail.md`
 
 **Tips:**
 1. Start with **score** if you have an existing resume — understand your baseline
@@ -511,49 +318,17 @@ Get a **100-point professional evaluation** with specific improvement suggestion
 5. Use **Markdown** as your working format — it converts cleanly to all others
 6. **Score again** after polish + customize to measure improvement
 
----
-
 ## Project Structure
 
-```
-resume-assistant/
-├── skill.json                    # Skill manifest (JSON)
-├── skill.yaml                    # Skill manifest (YAML)
-├── SKILL.md                      # This documentation
-├── prompts/
-│   ├── system.md                 # Persona definition & quality standards
-│   ├── polish.md                 # Polish prompt: 40+ item checklist
-│   ├── customize.md              # Customize prompt: gap analysis & keywords
-│   ├── export.md                 # Export prompt: 5 formats × 4 templates
-│   └── score.md                  # Score prompt: 100-point rubric
-├── templates/
-│   ├── professional.md           # Classic corporate template
-│   ├── modern.md                 # Contemporary tech/startup template
-│   ├── minimal.md                # Ultra-clean senior template
-│   ├── academic.md               # Formal academic CV template
-│   └── export/
-│       ├── resume.html           # HTML template (4 CSS themes)
-│       └── resume.tex            # LaTeX template (XeLaTeX + CJK)
-└── examples/
-    ├── sample-resume-en.md       # English sample (high quality)
-    ├── sample-resume-zh.md       # Chinese sample (high quality)
-    ├── sample-resume-weak.md     # Weak sample (for scoring demo)
-    └── usage.md                  # Usage examples & workflow guide
-```
-
----
+> 详细代码示例已移至 `references/detail.md`
 
 ## Language Support
-
 | Language | Code | Features |
 |----------|------|----------|
 | English | `en` | Full support, US/UK conventions |
 | Chinese | `zh` | Full support, 中英文混排规范, CJK export |
 
----
-
 ## Configuration
-
 | Key | Value | Description |
 |-----|-------|-------------|
 | `max_resume_length` | 10,000 chars | Maximum input length |
@@ -562,12 +337,11 @@ resume-assistant/
 scats
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -578,3 +352,35 @@ scats
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+Resume / CV Assistant is a clawbot skill that helps job seekers create, refine, and optimize their resumes and CVs, while adding comprehensive checklist review, scoring, and multi-format export that neither project offers alone.
+
+## 适用场景
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+### Q1: 如何开始使用Resume Assistant？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Resume Assistant有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

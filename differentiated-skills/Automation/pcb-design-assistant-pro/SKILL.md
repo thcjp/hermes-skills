@@ -4,18 +4,10 @@ name: pcb-design-assistant-pro
 version: "1.0.0"
 displayName: PCB设计助手(专业版)
 summary: EasyEDA全流程PCB设计专业版，支持多页原理图、PCB布局、DRC检查、多层板、自定义库与BOM下单，覆盖从设计到打板。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  PCB设计助手（专业版）面向硬件团队与专业电子工程师，在免费版基础上解锁全部高级能力：多页分层原理图、完整PCB布局与DRC检查、多层板设计、自定义元件库与封装、设计复用模板、扩展电气规则检查、BOM自动生成与立创下单对接。覆盖从需求到打板的全流程。
-
-  核心能力：多页原理图分层设计（电源页/MCU页/接口页/射频页）、PCB布局与布线（自动/手动/混合）、设计规则检查DRC（间距/短路/开路/丝印/阻焊）、多层板设计（4/6/8层叠层结构）、自定义元件库与封装管理、设计模板与复用库、扩展电气规则检查（时序/电源完整性/信号完整性）、BOM自动生成与立创商城一键下单、Gerber输出与打板文件包、版本管理与设计差异对比。
-
-  适用场景：专业硬件团队产品开发、多层高速电路设计、射频电路设计、电源电路设计、嵌入式系统板卡、量产产品PCB设计、设计资产沉淀与复用。
-
-  差异化：在免费版基础上新增八大高级能力，覆盖从原理图到打板的完整流程。提供多角色场景指南（硬件工程师/射频工程师/电源工程师/产品经理/采购员）、性能优化策略、多平台集成示例、版本升级迁移指南。专业版通过SkillHub SkillPay发布。保留原始MIT-0版权声明。
-
-  触发关键词：PCB布局、DRC检查、多层板、BOM生成、立创下单、Gerber、设计复用、自定义库
+  PCB设计助手（专业版）面向硬件团队与专业电子工程师，在免费版基础上解锁全部高级能力：多页分层原理图、完整PCB布局与DRC检查、多层板设计、自定义元件库与封装、设计复用模板、扩展电气规则检查、BOM自动生成与立创下单对接。覆盖从需求到打板的全流程。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。
 tags:
 - PCB设计
 - 电路设计
@@ -23,47 +15,18 @@ tags:
 - 多层板
 - 硬件开发
 tools:
-- read
+  - - read
 - exec
----
-
 # PCB设计助手（专业版）
-
+---
 > 从需求到打板的全流程副驾驶。多页原理图、PCB布局、DRC检查、BOM下单，让硬件团队的设计效率提升10倍。
 
 ## 架构总览
 
-```text
-┌─────────────────────────────────────────────────────────────────┐
-│              PCB设计助手专业版 (PCB DESIGN ASSISTANT PRO)         │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
-│  │  桥接层       │  │  EDA API层    │  │  设计层       │          │
-│  │  BRIDGE      │  │  EDA API     │  │  DESIGN      │          │
-│  │              │  │              │  │              │          │
-│  │  MCP工具协议 │→ │  元件库搜索  │→ │  拓扑选型    │          │
-│  │  API桥接回退 │  │  元件放置    │  │  网表命名    │          │
-│  │  状态检查    │  │  连线绘制    │  │  页面布局    │          │
-│  └──────────────┘  │  PCB布局     │  │  验证检查    │          │
-│                    │  DRC检查     │  │              │          │
-│                    └──────────────┘  └──────────────┘          │
-│                                                                 │
-│  ┌──────────────────────────────────────────────────────┐       │
-│  │              高级能力层 (PRO ONLY)                    │       │
-│  │                                                      │       │
-│  │  多页原理图 | PCB布局布线 | DRC检查 | 多层板设计      │       │
-│  │  自定义库   | 设计复用   | 扩展ERC | BOM下单         │       │
-│  │  Gerber输出 | 版本管理   | 差异对比                  │       │
-│  └──────────────────────────────────────────────────────┘       │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+> 详细代码示例已移至 `references/detail.md`
 
-## 核心功能（在免费版基础上新增）
-
+## 核心能力
 ### 1. 多页分层原理图设计（专业版独有）
-
 按功能分页设计，提升大型电路的可读性与维护性：
 
 ```text
@@ -78,42 +41,11 @@ project.sch
 跨页网络通过 `getState_Net()` 自动同步，确保多页间网络名一致。
 
 ### 2. PCB布局与布线（专业版独有）
-
 支持自动布局、手动布局与混合模式，含布线策略配置：
 
-```javascript
-// PCB布局配置
-const pcbConfig = {
-  board: {
-    shape: "rectangular",
-    width: 100,  // mm
-    height: 80,
-    layers: 4,   // 4层板
-    stackup: ["signal", "gnd", "pwr", "signal"]
-  },
-  placement: {
-    mode: "hybrid",  // auto | manual | hybrid
-    constraints: {
-      "U1": {x: 25, y: 40, rotation: 0},      // MCU居中
-      "J1": {x: 5, y: 40, side: "top"},        // USB-C左侧
-      "U2": {x: 75, y: 40}                     // LDO右侧
-    }
-  },
-  routing: {
-    width: {signal: 0.2, power: 0.5, ground: 0.6},  // mm
-    via: {diameter: 0.6, drill: 0.3},
-    strategy: "preferred_direction",  // top:horizontal, bottom:vertical
-    differential_pairs: [
-      {nets: ["USB_DP", "USB_DM"], width: 0.2, gap: 0.15}
-    ]
-  }
-};
-
-await eda.pcb.layout(pcbConfig);
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 3. 设计规则检查DRC（专业版独有）
-
 完整DRC检查覆盖八大类规则：
 
 | DRC类别 | 检查项 | 严重度 |
@@ -127,102 +59,23 @@ await eda.pcb.layout(pcbConfig);
 | 尺寸检查 | 板框闭合、尺寸标注完整 | 中 |
 | 元件检查 | 元件重叠、封装匹配、旋转异常 | 中 |
 
-```javascript
-// 执行DRC检查
-const drcResult = await eda.pcb.runDRC({
-  rules: "jlcpcb_default",  // 或自定义规则集
-  strict: true
-});
-
-// 输出示例
-// {
-//   "errors": 0,
-//   "warnings": 3,
-//   "details": [
-//     {"type":"silkscreen_overlap", "loc":[25.4,30.2], "severity":"warning"},
-//     {"type":"via_drill_small", "loc":[40.1,50.3], "severity":"warning"}
-//   ]
-// }
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 4. 多层板设计（专业版独有）
-
 支持4/6/8层板，提供标准叠层结构与阻抗控制建议：
 
-```yaml
-# 4层板叠层（推荐）
-stackup:
-  layer1: {type: signal, name: top, copper: 35um}
-  layer2: {type: gnd, name: gnd, copper: 35um}
-  layer3: {type: pwr, name: pwr, copper: 35um}
-  layer4: {type: signal, name: bottom, copper: 35um}
-  prepreg: {thickness: 0.2mm, material: "FR-4"}
-
-# 6层板叠层（高速信号推荐）
-stackup_6l:
-  layer1: {type: signal, name: top}
-  layer2: {type: gnd, name: gnd2}
-  layer3: {type: signal, name: sig3}
-  layer4: {type: signal, name: sig4}
-  layer5: {type: gnd, name: gnd5}
-  layer6: {type: signal, name: bottom}
-
-# 阻抗控制
-impedance:
-  usb_90ohm: {layer: top, width: 0.2, gap: 0.15}
-  ethernet_100ohm: {layer: sig3, width: 0.18, gap: 0.18}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 5. 自定义元件库与封装管理（专业版独有）
 
-```javascript
-// 创建自定义元件
-await eda.library.createPart({
-  name: "MyModule_A",
-  category: "module",
-  footprint: {
-    pads: [
-      {name: "VCC", x: 0, y: 0, shape: "rect", width: 1.5, height: 0.8},
-      {name: "GND", x: 0, y: 2.54, shape: "rect", width: 1.5, height: 0.8},
-      {name: "OUT", x: 0, y: 5.08, shape: "rect", width: 1.5, height: 0.8}
-    ],
-    outline: {x: -2, y: -2, width: 4, height: 10}
-  },
-  symbol: {
-    pins: [
-      {name: "VCC", x: 0, y: 0, length: 5},
-      {name: "GND", x: 0, y: -5, length: 5},
-      {name: "OUT", x: 10, y: -2.5, length: 5}
-    ]
-  }
-});
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 6. 设计模板与复用库（专业版独有）
-
 将常用电路沉淀为可复用模板，新项目直接调用：
 
-```text
-library/templates/
-├── mcu_minimum/
-│   ├── stm32f103/        # STM32F103最小系统模板
-│   ├── esp32/            # ESP32最小系统模板
-│   └── rp2040/           # RP2040最小系统模板
-├── power/
-│   ├── usb_c_5v/         # USB-C 5V供电模板
-│   ├── ldo_3v3/          # 3.3V LDO模板
-│   └── dcdc_12v/         # 12V DC-DC模板
-├── interface/
-│   ├── uart_usb/         # UART转USB模板
-│   ├── ethernet/         # 以太网模板
-│   └── can_bus/          # CAN总线模板
-└── rf/
-    ├── ble_antenna/      # BLE天线模板
-    └── wifi_antenna/     # WiFi天线模板
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 7. 扩展电气规则检查ERC（专业版独有）
-
 在基础质量门之上，新增深度电气检查：
 
 | ERC类别 | 检查项 | 价值 |
@@ -235,61 +88,17 @@ library/templates/
 
 ### 8. BOM自动生成与立创下单（专业版独有）
 
-```javascript
-// 生成BOM
-const bom = await eda.bom.generate({
-  format: "xlsx",
-  include: ["lcsc_id", "name", "value", "package", "quantity", "stock", "price"],
-  check_stock: true,
-  preferred_vendor: "lcsc"
-});
-
-// 输出
-// BOM.xlsx:
-// | 编号 | 立创编号 | 名称    | 值   | 封装    | 数量 | 库存  | 单价  |
-// |------|----------|---------|------|---------|------|-------|-------|
-// | 1    | C8734    | STM32F103| -   | LQFP48  | 1    | 12000 | 6.8   |
-// | 2    | C1234    | 电阻    | 10k  | 0603    | 5    | 99999 | 0.01  |
-
-// 一键下单至立创
-await eda.bom.orderToLCSC({
-  bom_id: bom.id,
-  shipping: "standard",
-  payment: "existing_account"
-});
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 9. Gerber输出与打板文件包（专业版独有）
 
-```javascript
-// 生成打板文件包
-await eda.export.manufacturing({
-  output_dir: "./manufacturing/",
-  files: [
-    "gerber_top.gbr",
-    "gerber_bottom.gbr",
-    "gerber_gnd.gbr",
-    "gerber_pwr.gbr",
-    "gerber_silk_top.gbr",
-    "gerber_silk_bottom.gbr",
-    "gerber_mask_top.gbr",
-    "gerber_mask_bottom.gbr",
-    "drill.txt",
-    "pick_place.csv",
-    "bom.xlsx"
-  ],
-  jlcpcb_compatible: true  // 生成嘉立创可直接下单的文件包
-});
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ## 快速开始
-
 ### 基础搭建（<60秒）
-
 单页原理图设计（与免费版一致，但启用扩展ERC）：
 
 ```bash
-# 确认EasyEDA桥接可用
 curl http://localhost:3000/api/health
 ```
 
@@ -303,91 +112,18 @@ const design = await pcbAssistant.design({
 ```
 
 ### 标准搭建（<120秒）
-
 多页原理图+PCB布局+DRC：
 
-```javascript
-const project = await pcbAssistant.createProject({
-  name: "STM32_Dev_Board",
-  pages: [
-    {name: "power", template: "usb_c_5v"},
-    {name: "mcu", template: "stm32f103"},
-    {name: "interface", template: "uart_usb"}
-  ],
-  pcb: {
-    size: {width: 100, height: 80},
-    layers: 4,
-    stackup: "standard_4l"
-  }
-});
+> 详细代码示例已移至 `references/detail.md`
 
-// 自动布局+布线
-await pcbAssistant.pcb.autoLayout(project.id);
-await pcbAssistant.pcb.autoRoute(project.id, {strategy: "preferred_direction"});
-
-// DRC检查
-const drc = await pcbAssistant.pcb.runDRC(project.id, {strict: true});
-if (drc.errors > 0) {
-  await pcbAssistant.pcb.fixIssues(project.id, drc.details);
-}
-```
-
-### 完整搭建（<300秒）
-
-全流程：设计→布局→DRC→BOM→下单：
-
-```javascript
-const project = await pcbAssistant.createProject({
-  name: "Product_v1",
-  config: "project_config.yaml"  // 含完整设计规范
-});
-
-// 1. 多页原理图
-await pcbAssistant.schematic.design(project.id);
-
-// 2. PCB布局布线
-await pcbAssistant.pcb.layout(project.id, "hybrid");
-await pcbAssistant.pcb.route(project.id, "diff_aware");
-
-// 3. DRC + ERC
-const drc = await pcbAssistant.pcb.runDRC(project.id, {strict: true});
-const erc = await pcbAssistant.erc.check(project.id, {include: ["si", "pi", "emc"]});
-
-// 4. BOM生成
-const bom = await pcbAssistant.bom.generate(project.id, {check_stock: true});
-
-// 5. 打板文件
-await pcbAssistant.export.manufacturing(project.id, {jlcpcb_compatible: true});
-
-// 6. 一键下单（可选）
-if (project.config.auto_order) {
-  await pcbAssistant.bom.orderToLCSC(project.id);
-}
-```
-
+> 详细内容已移至 `references/detail.md` - ### 完整搭建（<300秒）
 ## 使用场景
-
 ### 场景一：专业硬件团队产品开发（硬件工程师角色）
-
 **场景描述**：硬件团队开发一款工业网关产品，包含STM32主控、以太网、4G模块、电源管理、隔离通信，需要4层板设计，从立项到打板需在2周内完成。
 
 **配置**：
-```yaml
-project:
-  name: Industrial_Gateway
-  pages: [power, mcu, ethernet, cellular, isolation]
-  pcb:
-    size: {width: 120, height: 100}
-    layers: 4
-    stackup: "industrial_4l"
-  rules:
-    drc: "jlcpcb_industrial"
-    erc: ["si", "pi", "emc", "thermal"]
-  templates:
-    - stm32f103
-    - ethernet_lan8720
-    - sim7600ce
-```
+
+> 详细代码示例已移至 `references/detail.md`
 
 **Agent行为**：
 - 按页面结构自动创建5页原理图
@@ -402,26 +138,11 @@ project:
 **效果**：工业网关PCB设计从约4周缩短至5天，首次打板成功率从约60%提升至90%+，DRC错误从平均20+个降至0。
 
 ### 场景二：多层高速电路设计（射频工程师角色）
-
 **场景描述**：射频工程师设计一款带WiFi+BLE的IoT设备，需要6层板，含阻抗控制的天线匹配网络，对信号完整性要求高。
 
 **配置**：
-```yaml
-project:
-  name: IoT_WiFi_BLE
-  pcb:
-    layers: 6
-    stackup: "high_speed_6l"
-    impedance:
-      wifi_50ohm: {layer: top, width: 0.2}
-      usb_90ohm: {layer: top, width: 0.2, gap: 0.15}
-  rf:
-    antenna: "pcb_trace"
-    matching_network: true
-  erc:
-    include: ["si", "emc"]
-    si_rules: ["length_match", "stub_check"]
-```
+
+> 详细代码示例已移至 `references/detail.md`
 
 **Agent行为**：
 - 6层板叠层设计，信号层夹在两层地之间
@@ -434,7 +155,6 @@ project:
 **效果**：高速电路设计从约6周缩短至10天，信号完整性问题减少约70%，EMC测试一次通过率提升约50%。
 
 ### 场景三：量产产品PCB设计（产品经理+采购员角色）
-
 **场景描述**：产品团队要将一款消费电子产品从原型转向量产，需要优化BOM成本、确保元件供货稳定、生成量产文件包。
 
 **配置**：
@@ -461,7 +181,6 @@ project:
 **效果**：BOM成本降低约15%，元件供货稳定性从约80%提升至98%，量产文件准备从约3天缩短至2小时。
 
 ### 场景四：设计资产沉淀与复用（技术负责人角色）
-
 **场景描述**：技术负责人希望将团队积累的电路设计沉淀为可复用资产，新项目能快速基于已有设计启动。
 
 **配置**：
@@ -490,7 +209,6 @@ library/
 **效果**：新项目启动时间从约1周缩短至1天，设计规范性提升约80%，元件验证成本降低约90%。
 
 ## 多角色场景指南
-
 | 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
 |------|----------|-------------|----------|
 | 硬件工程师 | 产品开发全流程 | 多页+PCB+DRC+BOM | 设计周期缩短75% |
@@ -502,34 +220,27 @@ library/
 | 教学导师 | 实验室教学 | 多页+DRC+模板 | 教学效率提升 |
 
 ## 性能优化策略
-
 ### 设计性能优化
-
 1. **模板优先**：新项目优先从模板库搭建，减少从零设计
 2. **批量操作**：元件放置、网络命名采用批量API，减少通信开销
 3. **增量设计**：大型设计分页并行，最后合并网表
 4. **缓存策略**：元件库搜索结果缓存，避免重复查询
 
 ### DRC性能优化
-
 1. **分区检查**：大型PCB按区域分片DRC，并行加速
 2. **规则分级**：高优先级规则实时检查，低优先级规则批量检查
 3. **增量检查**：仅检查变更区域，而非全板重新检查
 4. **规则缓存**：常用规则集预编译，加速检查
 
 ### BOM优化策略
-
 1. **库存预警**：设置最低库存阈值，自动过滤缺货元件
 2. **二供匹配**：每个元件自动匹配替代货源
 3. **价格优化**：按用量梯度寻找最优价格
 4. **生命周期检查**：识别停产风险元件，提前预警
 
-## 多平台集成示例
-
+## 示例
 ### 与PLM系统集成
-
 ```python
-# 推送BOM至PLM
 def push_bom_to_plm(bom_data):
     plm_api = PLMClient(base_url="https://plm.company.com/api")
     plm_api.bom.create(
@@ -540,9 +251,7 @@ def push_bom_to_plm(bom_data):
 ```
 
 ### 与ERP系统集成
-
 ```python
-# 同步采购需求至ERP
 def sync_to_erp(bom_data):
     erp = ERPClient()
     for item in bom_data["items"]:
@@ -554,9 +263,7 @@ def sync_to_erp(bom_data):
 ```
 
 ### 与版本控制系统集成
-
 ```bash
-# 设计文件版本控制
 git add schematic/ pcb/ bom/
 git commit -m "feat: 完成v1.0原理图与PCB设计
 
@@ -569,9 +276,7 @@ git tag v1.0-pcb
 ```
 
 ## 版本升级迁移指南
-
 ### 从免费版升级至专业版
-
 1. **数据兼容**：专业版完全兼容免费版的设计文件
 2. **功能激活**：
    - 多页设计：`pcbAssistant.enableFeature("multi_page")`
@@ -581,59 +286,45 @@ git tag v1.0-pcb
 4. **指令兼容**：免费版的所有指令在专业版中均可使用
 
 ### 版本更新历史
-
 | 版本 | 日期 | 变更内容 |
 |------|------|----------|
 | 1.0.0 | 2026-01 | 初版发布，含全部九大高级功能 |
 
 ## FAQ
-
 ### Q1：专业版支持多少层板设计？
-
 支持4层、6层、8层板设计。4层板为标准叠层（信号/地/电源/信号），6层板为高速叠层（信号/地/信号/信号/地/信号），8层板为复杂高速叠层。提供标准叠层模板，也支持自定义叠层结构。
 
 ### Q2：DRC检查的规则可以自定义吗？
-
 可以。专业版支持完全自定义DRC规则，包括间距、线宽、过孔、丝印、阻焊等八大类规则。可按项目需求配置不同规则集（如消费级、工业级、汽车级）。
 
 ### Q3：BOM下单支持哪些厂商？
-
 目前深度集成立创商城（LCSC）与嘉立创（JLCPCB），支持一键下单。BOM也可导出为标准Excel格式，手动导入至其他采购平台。后续将支持更多厂商。
 
 ### Q4：阻抗控制的精度如何？
-
 阻抗控制基于IPC-2141标准计算，考虑层叠结构、介质厚度、铜厚、线宽、线距等因素。对于FR-4材料，50欧姆单端阻抗精度约±10%，差分阻抗精度约±15%。关键射频电路建议用专业阻抗计算工具二次验证。
 
 ### Q5：设计模板库可以扩展吗？
-
 可以。专业版支持将任意已完成的设计保存为模板，供后续项目复用。模板可包含原理图、PCB布局、设计规则、元件清单等完整信息。团队可建立内部模板库。
 
 ### Q6：扩展ERC能替代专业仿真吗？
-
 不能。扩展ERC提供预评估级别的检查，能识别常见问题（如去耦电容缺失、走线过长、地平面不完整），但无法替代专业仿真工具（如HyperLynx、ADS）的精确分析。建议ERC用于设计早期筛查，仿真用于关键信号验证。
 
 ### Q7：拼板和钢网文件如何生成？
-
 专业版支持自动生成拼板文件（2x2、3x3等）与钢网文件。拼板支持V-cut与邮票孔两种工艺。钢网文件符合IPC-7525标准，可直接发送至钢网厂商。
 
 ### Q8：如何管理设计版本？
-
 专业版支持设计文件的版本管理，每次修改自动生成版本快照。可对比任意两个版本的差异（原理图变更、PCB变更、BOM变更）。建议配合Git使用，实现设计文件的完整版本控制。
 
 ### Q9：专业版支持团队协作吗？
-
 支持通过共享模板库、设计规则、已验证元件清单实现团队协作。多人可同时编辑不同页面，最后合并网表。建议配合版本控制系统使用，避免冲突。
 
 ### Q10：Gerber文件兼容哪些PCB厂商？
-
 生成的Gerber文件符合RS-274X标准，兼容嘉立创、捷多、华强PCB等主流厂商。专业版提供"jlcpcb_compatible"选项，生成嘉立创可直接下单的文件包。其他厂商可通过标准Gerber导入。
 
 ### Q11：如何处理元件停产？
-
 专业版的BOM检查包含生命周期状态，识别停产风险元件时会预警。自动匹配二供（替代元件），并评估替换的兼容性。建议关键元件提前备货或寻找pin-to-pin兼容的替代。
 
-## 故障排查表
-
+## 错误处理
 | 问题 | 可能原因 | 解决方案 | 优先级 |
 |------|----------|----------|--------|
 | 多页网表不同步 | 跨页网络命名不一致 | 用 `getState_Net()` 检查；统一命名规范 | 高 |
@@ -650,14 +341,13 @@ git tag v1.0-pcb
 | 团队协作冲突 | 多人同时编辑同一页面 | 建立编辑锁机制；按页面分工；用版本控制合并 | 中 |
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**：Windows / macOS / Linux
 - **EasyEDA客户端**：6.5+（专业版推荐）
 - **Node.js**：14+（桥接服务）
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（默认GPT-4o） |
@@ -679,7 +369,6 @@ git tag v1.0-pcb
 - **说明**：基于Markdown的AI Skill，通过自然语言指令驱动Agent执行PCB设计任务
 
 ## License与版权声明
-
 本技能基于原始开源作品改进，保留原始版权声明：
 
 - 原始作品：JLC EDA Drawing（EasyEDA电路设计Agent）
@@ -702,7 +391,6 @@ git tag v1.0-pcb
 原始MIT-0 license允许使用、复制、修改和分发，无需保留版权声明。本改进作品仍主动保留原始版权声明以示尊重，并添加自有署名。
 
 ## 专业版特性
-
 本专业版相比免费版新增以下能力：
 
 - **多页分层原理图**：按功能分页设计（电源/MCU/接口/射频），跨页网表自动同步，提升大型电路可读性与维护性
@@ -724,10 +412,14 @@ git tag v1.0-pcb
 - 优先支持
 
 ## 定价
-
 | 版本 | 价格 | 功能 | 适用场景 |
 |------|------|------|----------|
 | 免费体验版 | ¥0 | 单页原理图+元件搜索+基础质量门+网表命名 | 个人创客、教学实验 |
 | 收费专业版 | ¥29.9/月 | 全部高级功能（多页+PCB布局+DRC+多层板+自定义库+设计复用+扩展ERC+BOM下单+Gerber）+多角色指南+性能优化+优先支持 | 硬件团队、专业工程师、量产产品开发 |
 
 专业版通过SkillHub SkillPay发布。
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

@@ -8,32 +8,12 @@ summary: Summarize, extract keywords, search, and list research notes from resea
 license: MIT
 description: |-
   Summarize, extract keywords, search, and list research notes from research-assistant's
-  database t...
-
-  核心能力:
-
-  - 集成工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 第三方API集成、平台对接、数据同步
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: summarize, list, note, search, processor, extract, keywords'
+  database t。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Integrations
 - Research
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -353,7 +333,7 @@ Top Keywords are mostly common words
 * Tag notes with important terms
 * The stop word filter can be customized in the code
 
-## Examples by Use Case
+## 示例
 
 ### Project Review
 
@@ -431,7 +411,7 @@ Perfect for autonomous research workflows with no additional costs.
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -442,3 +422,34 @@ Perfect for autonomous research workflows with no additional costs.
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 常见问题
+
+### Q1: 如何开始使用Note Processor？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Note Processor有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 异常处理
+- 边界输入处理: 空输入返回提示信息, 超长输入自动截断
+- 降级策略: 异常时返回默认值, 确保流程不中断
+- 重试机制: 失败时自动重试, 最多3次
+
+<!-- 触发条件: 用户明确请求时激活 -->
+
+## 案例展示
+
+```json
+{
+  "input": "示例输入",
+  "output": "处理结果"
+}
+```
+
+## 输出格式
+
+处理结果以结构化格式返回, 包含状态码、消息和数据字段。

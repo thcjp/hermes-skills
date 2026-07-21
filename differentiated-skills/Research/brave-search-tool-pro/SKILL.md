@@ -4,13 +4,11 @@ name: brave-search-tool-pro
 version: "1.0.0"
 displayName: Brave搜索工具-专业版
 summary: 企业级Brave搜索,支持批量查询、并发搜索、结果缓存与搜索分析,面向团队生产场景
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   企业级 Brave Search 网页搜索工具,在免费版核心能力之上,提供批量查询、
-  并发搜索、结果缓存、搜索历史、内容聚合与 API 访问能力。
-
-  核心能力:
+  并发搜索、结果缓存、搜索历史、内容聚合与 API 访问能力。核心能力:
   - 免费版全部能力(完全兼容)
   - 批量查询与并发搜索
   - 智能结果缓存与去重
@@ -24,16 +22,14 @@ description: |-
   - 竞品动态监控
   - 团队共享搜索
 
-  差异化:专业版面向团队与企业,提供批量、并发、缓存、分析等高阶能力,并保持与免费版完全兼容。
-
-  触发关键词: 网页搜索, 批量搜索, 并发查询, 结果缓存, 搜索分析, Brave, brave-search
+  差异化:专业版面向团队与企业,提供批量、并发、缓存、分析等高阶能力,并保持与免费版完全兼容
 tags:
 - 研究工具
 - 网页搜索
 - 企业级
 - 批量操作
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -125,7 +121,7 @@ brave-pro extract-batch --file urls.txt --format markdown
 # 启用 API 服务
 brave-pro api start --port 8080
 
-# API 查询示例
+# 示例
 curl -s "http://localhost:8080/api/search?q=AI智能体&count=10"
 curl -s -X POST "http://localhost:8080/api/batch" -d '{"queries":["AI","大模型"]}'
 curl -s "http://localhost:8080/api/extract?url=https://example.com/article"
@@ -288,7 +284,7 @@ brave-pro history --shared --stats
 
 ## 快速开始
 
-### 1. 安装与初始化
+### 依赖说明
 
 ```bash
 cd /path/to/brave-search-tool
@@ -488,3 +484,15 @@ curl "http://localhost:8080/api/extract?url=https://example.com"
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
 - **版本**: 专业版(兼容免费版全部能力)
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用

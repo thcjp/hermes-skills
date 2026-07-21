@@ -1,0 +1,255 @@
+---
+slug: finance-accounting
+name: finance-accounting
+version: "1.0.0"
+displayName: Finance Accounting
+summary: 财务会计文书处理综合技能包 - 包含记账、对账、税务、报表等核心功能
+license: MIT
+description: |-
+  财务会计文书处理综合技能包 - 包含记账、对账、税务、报表等核心功能
+
+  核心能力:
+
+  - 金融工具领域的专业化AI辅助工具
+
+  - 基于高人气开源Skill深度优化升级
+
+  - 移除风险代码,增强安全性和稳定性
+
+  适用场景:
+
+  - 交易分析、投资决策、财务计算
+
+  - 独立开发者与一人公司效率提升
+
+  - 自动化工作流与智能决策辅助
+
+tags:
+- Finance
+tools:
+  - - read
+- exec
+---
+# Finance Accounting
+
+## 核心能力
+
+### 1. 基础记账模块
+* **流水账记录**: 收入、支出、转账记录
+* **科目管理**: 会计科目设置和分类
+* **凭证生成**: 自动生成会计凭证
+* **余额计算**: 实时计算账户余额
+
+**输入**: 用户提供基础记账模块所需的指令和必要参数。
+**处理**: 按照skill规范执行基础记账模块操作,遵循单一意图原则。
+
+### 2. 对账模块
+
+* **银行对账**: 自动匹配银行流水
+* **往来对账**: 客户/供应商对账
+* **差异处理**: 自动识别和处理差异
+* **对账报告**: 生成对账报告
+
+### 3. 税务模块
+* **增值税计算**: 自动计算增值税
+* **所得税预缴**: 个人所得税/企业所得税
+* **税务申报**: 生成税务申报表
+* **税务规划**: 税务优化建议
+
+**输入**: 用户提供税务模块所需的指令和必要参数。
+**处理**: 按照skill规范执行税务模块操作,遵循单一意图原则。
+
+### 4. 报表模块
+
+* **资产负债表**: 自动生成资产负债表
+* **利润表**: 生成利润表
+* **现金流量表**: 现金流量分析
+* **自定义报表**: 按需生成报表
+
+### 5. 文档生成
+* **发票生成**: 自动生成电子发票
+* **对账单**: 客户对账单
+* **税务报告**: 税务申报文档
+* **审计报告**: 审计所需文档
+
+**输入**: 用户提供文档生成所需的指令和必要参数。
+**处理**: 按照skill规范执行文档生成操作,遵循单一意图原则。
+## 适用场景
+
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+
+### 基本记账
+
+```bash
+python finance.py record --type income --amount 1000 --category "销售收入" --date "2026-02-28"
+
+python finance.py record --type expense --amount 500 --category "办公用品" --date "2026-02-28"
+
+python finance.py balance
+```
+
+### 对账处理
+
+```bash
+python finance.py reconcile import --file bank_statement.csv
+
+python finance.py reconcile auto
+
+python finance.py reconcile report --output reconciliation_report.pdf
+```
+
+### 税务计算
+
+```bash
+python finance.py tax vat --period 2026-02
+
+python finance.py tax report --type vat --period 2026-02 --output vat_report.xlsx
+
+python finance.py tax plan --year 2026
+```
+
+### 报表生成
+
+```bash
+python finance.py report balance-sheet --period 2026-02 --output balance_sheet.pdf
+
+python finance.py report income-statement --period 2026-02 --output income_statement.pdf
+
+python finance.py report cash-flow --period 2026-02 --output cash_flow.pdf
+```
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| content | string | 是 | 相关说明 |
+| content | string | 否 | 相关说明, 默认: 默认值 |
+| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| style | string | 否 | 输出风格, 参考 `references/style.md` |
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    result: "相关说明",
+    result: "相关说明",
+    result: "相关说明",
+    "metadata": {
+      "template_used": "reviewer",
+      "word_count": 0,
+      "style": "专业"
+    }
+  },
+  "error": null
+}
+```
+
+输出模板参考: `assets/output.json`
+
+## 异常处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 依赖说明
+
+### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **操作系统**: Windows / macOS / Linux
+
+### 依赖说明
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+- 
+
+### 可用性分类
+- **分类**: MD+EXEC()
+- **说明**: 基于Markdown的AI Skill,
+
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+## 案例展示
+
+### 示例1：基础用法
+
+```
+### 基本记账
+
+```bash
+python finance.py record --type income --amount 1000 --category "销售收入" --date "2026-02-28"
+
+python finance.py record --type expense --amount 500 --category "办公用品" --date "2026-02-28"
+
+python finance.py balance
+```
+
+### 对账处理
+
+```bash
+python finance.py reconcile import --file bank_statement.csv
+
+python finance.py reconcile auto
+
+python finance.py reconcile report --output reconciliation_report.pdf
+```
+
+### 税务计算
+
+```bash
+python finance.py tax vat --period 2026-02
+
+python finance.p
+```
+
+## 常见问题
+
+### Q: 如何使用此Skill?
+A: 请参考使用流程章节
+
+### Q: 如何使用此Skill?
+A: 请参考使用流程章节
+
+### Q: 如何使用此Skill?
+A: 请参考使用流程章节
+
+## 错误处理
+
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接，执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令请求；确认Agent平台LLM服务正常 |
+| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
+| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
+| 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
+
+## 已知限制
+
+### 数据安全
+
+* 财务数据加密存储
+* 访问权限控制
+* 操作日志记录
+
+### 合规性
+
+* 符合会计准则
+* 遵守税务法规
+* 审计追踪

@@ -4,12 +4,10 @@ name: golang-toolkit-pro
 version: "1.0.0"
 displayName: Go语言工具包专业版
 summary: 企业级 Go 开发方案，含性能优化、并发模式库、内存治理与构建工具链集成。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  面向企业级 Go 开发团队的专业工具包，提供性能优化、并发模式与工程化能力。
-
-  核心能力:
+  面向企业级 Go 开发团队的专业工具包，提供性能优化、并发模式与工程化能力。核心能力:
   - 并发模式库（Worker Pool、Fan-In/Fan-Out、Pipeline、ErrGroup）
   - 性能优化（内存对齐、逃逸分析、GC 调优）
   - 内存治理与资源泄漏检测
@@ -22,9 +20,7 @@ description: |-
   - 内存泄漏排查与治理
   - 多平台交叉编译与发布
 
-  差异化: 专业版兼容免费版所有陷阱防范能力，额外提供企业级并发模式库、性能调优工具、内存分析能力，支持生产级 Go 服务开发。
-
-  触发关键词: go性能优化, 并发模式, worker pool, fan-in fan-out, pipeline, errgroup, 逃逸分析, 内存对齐, gc调优, 交叉编译, 内存泄漏检测
+  差异化: 专业版兼容免费版所有陷阱防范能力...
 tags:
 - 开发工具
 - Go语言
@@ -32,20 +28,16 @@ tags:
 - 性能优化
 - 企业开发
 tools:
-- read
+  - - read
 - exec
----
-
 # Go 语言工具包（专业版）
-
 ## 概述
-
+---
 本工具面向企业级 Go 开发团队，提供性能优化、并发模式库、内存治理与工程化构建方案。在免费版陷阱防范能力之上，专业版新增 Worker Pool、Fan-In/Fan-Out、Pipeline 等生产级并发模式，内存对齐与逃逸分析等性能调优能力，以及交叉编译、pprof 性能分析等工具链集成。通过结构化的模式库与分析工具，帮助团队构建高性能、高可靠的 Go 服务。
 
 **版本兼容性说明**：专业版完全兼容免费版（`golang-toolkit-free`）的所有陷阱防范与最佳实践，可无缝升级。
 
 ## 核心能力
-
 | 能力模块 | 免费版 | 专业版新增 |
 | --- | --- | --- |
 | 陷阱防范 | Goroutine/Channel/Defer 陷阱 | 生产级陷阱检测脚本 |
@@ -57,9 +49,7 @@ tools:
 | 性能分析 | - | pprof CPU/内存/goroutine 分析 |
 
 ## 使用场景
-
 ### 场景一：高并发 Worker Pool 实现
-
 服务需要处理大量并发任务，需要控制 goroutine 数量避免资源耗尽。
 
 ```go
@@ -126,7 +116,6 @@ func main() {
 ```
 
 ### 场景二：Pipeline 模式处理数据流
-
 需要处理大量数据，每个阶段并行执行。
 
 ```go
@@ -203,16 +192,11 @@ func main() {
 ```
 
 ### 场景三：逃逸分析与内存优化
-
 分析变量逃逸情况，优化内存分配。
 
 ```bash
-# 逃逸分析
 go build -gcflags="-m" main.go
 go build -gcflags="-m -m" main.go  # 更详细
-
-# 常见逃逸场景
-# 1. 返回局部变量指针
 type User struct{ Name string }
 
 func newUser() *User {
@@ -220,11 +204,9 @@ func newUser() *User {
     return &u
 }
 
-# 2. 接口类型赋值
 func process(v interface{}) {}
 process(42)  // 42 逃逸到堆
 
-# 3. 闭包引用
 func counter() func() int {
     n := 0
     return func() int {  // n 逃逸
@@ -233,7 +215,6 @@ func counter() func() int {
     }
 }
 
-# 4. 大小不确定的 slice
 func makeSlice(n int) []int {
     return make([]int, n)  // n 不确定时逃逸
 }
@@ -261,9 +242,7 @@ fmt.Println(unsafe.Sizeof(GoodStruct{}))  // 16
 ```
 
 ## 快速开始
-
-### ErrGroup 批量错误处理
-
+### 错误处理
 ```go
 import "golang.org/x/sync/errgroup"
 
@@ -293,7 +272,6 @@ func processAll(ctx context.Context, urls []string) error {
 ```
 
 ### sync.Pool 对象复用
-
 ```go
 var bufPool = sync.Pool{
     New: func() interface{} {
@@ -314,35 +292,23 @@ func processData(data []byte) string {
 }
 ```
 
-## 配置示例
-
+## 示例
 ### 交叉编译配置
-
 ```bash
-# 编译到 Linux amd64
 GOOS=linux GOARCH=amd64 go build -o bin/app-linux-amd64
 
-# 编译到 macOS arm64
 GOOS=darwin GOARCH=arm64 go build -o bin/app-darwin-arm64
 
-# 编译到 Windows
 GOOS=windows GOARCH=amd64 go build -o bin/app-windows-amd64.exe
 
-# 缩小二进制体积
 go build -ldflags="-s -w" -o bin/app
 
-# 嵌入静态资源（Go 1.16+）
-# embed.go
 //go:embed static/*
 var staticFS embed.FS
 
-# 条件编译
-# 文件命名：file_linux.go / file_darwin.go / file_windows.go
-# 构建标签：//go:build linux
 ```
 
 ### pprof 性能分析
-
 ```go
 import _ "net/http/pprof"
 
@@ -353,36 +319,21 @@ func init() {
 }
 
 // 命令行分析
-# go tool pprof http://localhost:6060/debug/pprof/profile?seconds=30
-# go tool pprof http://localhost:6060/debug/pprof/heap
-# go tool pprof http://localhost:6060/debug/pprof/goroutine
-
 // 基准测试
-# go test -bench=. -benchmem
-# go test -bench=. -benchmem -count=5
-
 // 竞争检测
-# go test -race ./...
-# go run -race main.go
 ```
 
 ### GC 调优
-
 ```bash
-# 设置 GOGC（默认 100，值越小 GC 越频繁）
 GOGC=200 go run main.go  # 减少 GC 频率，增加内存使用
 GOGC=50 go run main.go   # 增加 GC 频率，减少内存使用
-
-# 关闭 GC（仅特殊场景）
 GOGC=off go run main.go
 
-# Go 1.19+ 软内存限制
 import "runtime/debug"
 debug.SetMemoryLimit(1 << 30)  # 1GB 软限制
 ```
 
 ## 最佳实践
-
 1. **控制 goroutine 数量**：使用 Worker Pool 避免无限制创建
 
 2. **使用 ErrGroup 管理并发**：自动处理错误传播和取消
@@ -407,27 +358,19 @@ debug.SetMemoryLimit(1 << 30)  # 1GB 软限制
 8. **基准测试驱动优化**：优化前后用 bench 对比
 
 ## 常见问题
-
 ### Q1：如何排查内存泄漏？
-
 ```bash
-# 1. 使用 pprof 查看堆
 go tool pprof http://localhost:6060/debug/pprof/heap
 
-# 2. 在 pprof 交互模式
 (pprof) top 10        # 查看内存占用最多的函数
 (pprof) list FuncName # 查看函数的内存分配
 (pprof) web           # 生成可视化图
-
-# 3. 连续采样对比
 curl http://localhost:6060/debug/pprof/heap > heap1.out
-# 等待一段时间
 curl http://localhost:6060/debug/pprof/heap > heap2.out
 go tool pprof -base heap1.out heap2.out
 ```
 
 ### Q2：如何选择 Worker Pool 大小？
-
 ```go
 // CPU 密集型：等于 CPU 核心数
 workers := runtime.NumCPU()
@@ -446,7 +389,6 @@ func dynamicWorkers(target int) int {
 ```
 
 ### Q3：如何避免接口导致的逃逸？
-
 ```go
 // 逃逸：interface{} 导致分配
 func log(args ...interface{}) {}
@@ -462,29 +404,27 @@ logInt(42)  // 不逃逸
 ```
 
 ### Q4：Pipeline 中如何处理错误？
-
 ```go
 // 使用 errgroup + channel 传递错误
 func Pipeline(ctx context.Context) error {
     g, ctx := errgroup.WithContext(ctx)
-    
+
     ch1 := generate(ctx, g)
     ch2 := process(ctx, g, ch1)
     ch3 := filter(ctx, g, ch2)
-    
+
     g.Go(func() error {
         for range ch3 {
             // 消费结果
         }
         return nil
     })
-    
+
     return g.Wait()
 }
 ```
 
 ### Q5：如何优化 JSON 序列化性能？
-
 ```go
 // 使用 sync.Pool 复用 buffer
 var jsonBufPool = sync.Pool{
@@ -499,7 +439,7 @@ func MarshalJSON(v interface{}) ([]byte, error) {
         buf.Reset()
         jsonBufPool.Put(buf)
     }()
-    
+
     encoder := json.NewEncoder(buf)
     if err := encoder.Encode(v); err != nil {
         return nil, err
@@ -512,15 +452,11 @@ func MarshalJSON(v interface{}) ([]byte, error) {
 ```
 
 ### Q6：如何做交叉编译的测试？
-
 ```bash
-# 本地测试不同平台编译
 GOOS=linux GOARCH=amd64 go build -o /dev/null
 GOOS=darwin GOARCH=arm64 go build -o /dev/null
 GOOS=windows GOARCH=amd64 go build -o /dev/null
 
-# 使用 GoReleaser 自动化多平台构建
-# .goreleaser.yml
 builds:
   - env: [CGO_ENABLED=0]
     goos: [linux, darwin, windows]
@@ -528,14 +464,12 @@ builds:
 ```
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent 平台**: 支持读取 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
 - **操作系统**: Windows / macOS / Linux
 - **Go 版本**: 建议 1.19 及以上（需支持泛型、SetMemoryLimit）
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Go | 编译器/运行时 | 必需 | golang.org 下载 |

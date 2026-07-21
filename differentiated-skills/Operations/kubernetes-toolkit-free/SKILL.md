@@ -4,38 +4,18 @@ name: kubernetes-toolkit-free
 version: "1.0.0"
 displayName: K8s集群管理入门
 summary: Kubernetes集群基础管理工具，支持多Agent协作与常用资源操作。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人开发者与小团队的K8s集群管理工具。支持多Agent协作模式，
   提供Pod/Service/Deployment/ConfigMap等常用资源的创建、查询与
-  管理功能。适合个人开发环境与小规模集群的日常管理。
-
-  核心能力:
-  - 多Agent协作集群管理
-  - 常用资源CRUD操作
-  - 基础故障排查
-  - kubectl命令封装
-
-  适用场景:
-  - 个人K8s集群管理
-  - 开发测试环境运维
-  - 小团队协作管理
-  - K8s学习实践
-
-  差异化:
-  - 免费版聚焦基础资源管理
-  - 支持多Agent协作
-  - 不支持企业级治理
-  - 不支持高级运维自动化
-
-  触发关键词: Kubernetes, K8s, 集群管理, 多Agent, Pod, Service, 资源管理, kubectl
+  管理功能。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Operations
 - Kubernetes
 - 集群管理
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -131,7 +111,7 @@ python3 scripts/k8s.py list --namespace default --all-resources
 ### 环境准备
 
 ```bash
-# 安装kubectl并配置kubeconfig
+# 依赖说明
 # 安装Python依赖
 pip install kubernetes
 
@@ -162,7 +142,7 @@ python3 scripts/k8s.py secret create --name my-secret --from-literal password=xx
 python3 scripts/k8s.py diagnose --pod my-app-xxx
 ```
 
-## 配置示例
+## 示例
 
 ### K8s管理配置
 
@@ -257,3 +237,29 @@ k8s_config:
 - **分类**: MD+EXEC（Markdown指令+Python脚本+kubectl执行）
 - **说明**: 通过kubernetes-python客户端管理K8s集群
 - **免费版限制**: 基础资源管理、5命名空间、不支持监控与策略治理
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力
+
+## 异常处理
+- 边界输入处理: 空输入返回提示信息, 超长输入自动截断
+- 降级策略: 异常时返回默认值, 确保流程不中断
+- 重试机制: 失败时自动重试, 最多3次
+
+<!-- 触发条件: 用户明确请求时激活 -->
+
+## 案例展示
+
+```json
+{
+  "input": "示例输入",
+  "output": "处理结果"
+}
+```
+
+## 输出格式
+
+处理结果以结构化格式返回, 包含状态码、消息和数据字段。

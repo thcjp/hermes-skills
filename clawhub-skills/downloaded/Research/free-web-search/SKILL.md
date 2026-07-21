@@ -6,31 +6,11 @@ displayName: Free Web Search
 summary: 基于 Bing 国内版 / DuckDuckGo 的联网搜索工具，中文环境优化，可按需抓取目标网页正文，返回结构化结果。仅在用户明确请求联网搜索时调用。
 license: MIT-0
 description: |-
-  基于 Bing 国内版 / DuckDuckGo 的联网搜索工具，中文环境优化，可按需抓取目标网页正文，返回结构化结果。仅在用户明确请求联网搜索时调用。
-
-  核心能力:
-
-  - 研究工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 数据研究、文献分析、信息收集
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: web, bing, 可按需抓取目, duckduckgo, 基于, search, 的联网搜索工, 中文环境优化
+  基于 Bing 国内版 / DuckDuckGo 的联网搜索工具，中文环境优化，可按需抓取目标网页正文，返回结构化结果。仅在用户明确请求联网搜索时调用。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。
 tags:
 - Research
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -59,7 +39,7 @@ trigger_keywords 已经收窄到只识别 `free-web-search`、`联网搜索`、`
 
 **所有依赖必须在使用前手动安装。脚本运行时不会自动安装任何 npm/pip 包，也不会修改宿主环境。**
 
-### 前置依赖
+### 依赖说明
 
 | 依赖 | 用途 | 备注 |
 | --- | --- | --- |
@@ -80,7 +60,7 @@ pip install playwright
 playwright install chromium
 ```
 
-## 使用示例
+## 示例
 
 ```bash
 python scripts/web_search.py "Python 异步编程 最佳实践 2026" --max=10
@@ -207,3 +187,44 @@ playwright install chromium
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 适用场景
+
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+
+**所有依赖必须在使用前手动安装。脚本运行时不会自动安装任何 npm/pip 包，也不会修改宿主环境。**
+
+### 依赖说明
+
+| 依赖 | 用途 | 备注 |
+| --- | --- | --- |
+| Python 3.8+ | 运行时 | — |
+| playwright | 浏览器自动化 | `pip install playwright` |
+| Chromium | Playwright 浏览器引擎 | `playwright install chromium`（约 150 MB） |
+
+### 一键安装
+
+```bash
+bash scripts/setup.sh
+```
+
+### 手动安装
+
+```bash
+pip install playwright
+playwright install chromium
+```
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

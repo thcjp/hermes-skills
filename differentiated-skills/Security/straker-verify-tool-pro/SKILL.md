@@ -4,7 +4,7 @@ name: straker-verify-tool-pro
 version: "1.0.0"
 displayName: AI翻译验证(专业版)
 summary: 企业级翻译平台,含AI质量增强、人工审核、翻译记忆、术语库与Webhook回调
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   核心能力:
@@ -28,7 +28,7 @@ description: |-
   - Webhook自动化翻译流水线
   - 与免费版兼容,API接口统一
 
-  触发关键词: 企业翻译, 人工审核, 翻译记忆, 术语库, 本地化, i18n, quality boost, human verify, translation memory
+  触发...
 tags:
 - 翻译
 - 本地化
@@ -36,20 +36,15 @@ tags:
 - 人工审核
 - 翻译记忆
 tools:
-- read
+  - - read
 - exec
----
-
 # AI翻译验证(专业版)
-
 ## 概述
-
+---
 AI翻译验证专业版是一款面向企业用户的翻译与本地化平台。在免费版基础翻译功能上,增加AI质量增强、专业人工审核、翻译记忆库(TM)与术语表管理、批量并行翻译、Webhook翻译完成回调等企业级功能。支持无限API调用,提供HTML/JSON专业翻译报告。与免费版完全兼容,API接口和项目格式可无缝迁移。
 
 ## 核心能力
-
 ### 功能矩阵
-
 | 功能模块 | 描述 | 免费版 | 专业版 |
 |----------|------|--------|--------|
 | AI翻译 | 基础翻译 | 100+语言 | 100+语言+质量增强 |
@@ -62,7 +57,6 @@ AI翻译验证专业版是一款面向企业用户的翻译与本地化平台。
 | 项目协作 | 团队功能 | 不支持 | 多用户协作 |
 
 ### 翻译质量层次
-
 ```text
 ┌──────────────────────────────────────────────────┐
 │           专业版翻译质量层次                      │
@@ -75,9 +69,7 @@ AI翻译验证专业版是一款面向企业用户的翻译与本地化平台。
 ```
 
 ## 使用场景
-
 ### 场景一:企业内容本地化
-
 对产品文档进行多语言本地化,使用翻译记忆库保持一致性。
 
 ```bash
@@ -93,11 +85,9 @@ python scripts/translate.py \
 ```
 
 ### 场景二:专业人工审核翻译
-
 对关键内容(法律/医疗)进行AI翻译+人工审核。
 
 ```bash
-# 创建需要人工审核的翻译项目
 python scripts/translate.py \
   --file legal_document.pdf \
   --target-lang ja \
@@ -107,9 +97,7 @@ python scripts/translate.py \
 ```
 
 ### 场景三:批量翻译与并行处理
-
 ```bash
-# 批量翻译100个文件到5种语言
 python scripts/translate.py \
   --batch translations/ \
   --languages fr,de,es,ja,zh \
@@ -120,9 +108,7 @@ python scripts/translate.py \
 ```
 
 ### 场景四:Webhook自动化流水线
-
 ```python
-# 配置Webhook,翻译完成后自动回调
 client = TranslationClientPro(api_key=os.environ["TRANSLATE_API_KEY"])
 
 result = client.create_project(
@@ -136,9 +122,7 @@ result = client.create_project(
 ```
 
 ## 快速开始
-
 ### 专业版翻译引擎
-
 ```python
 import os
 import requests
@@ -167,23 +151,19 @@ class TranslationClientPro:
                 "confirmation_required": str(options.get("confirm", True)).lower(),
             }
 
-            # 质量增强
             if options.get("quality_boost"):
                 data["quality_boost"] = "true"
 
-            # 人工审核
             if options.get("human_verify"):
                 data["human_verify"] = "true"
                 data["priority"] = options.get("priority", "normal")
 
-            # Webhook
             if options.get("webhook_url"):
                 data["webhook_url"] = options["webhook_url"]
                 data["webhook_events"] = json.dumps(
                     options.get("webhook_events", ["project.completed"])
                 )
 
-            # 翻译记忆
             if options.get("use_tm"):
                 data["use_translation_memory"] = "true"
                 if options.get("tm_file"):
@@ -202,7 +182,6 @@ class TranslationClientPro:
                         data=data
                     )
             else:
-                # 多语言
                 lang_uuids = [self._get_lang_uuid(lang) for lang in target_langs]
                 data["languages"] = ",".join(filter(None, lang_uuids))
 
@@ -342,10 +321,8 @@ class TranslationClientPro:
         return None
 ```
 
-## 配置示例
-
+## 示例
 ### 企业翻译配置
-
 ```json
 {
   "translation_config": {
@@ -387,7 +364,6 @@ class TranslationClientPro:
 ```
 
 ### 翻译记忆库格式(TMX)
-
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <tmx version="1.4">
@@ -413,7 +389,6 @@ class TranslationClientPro:
 ```
 
 ### 术语表格式(CSV)
-
 ```csv
 source_term,target_lang,target_term,context
 Product,zh,产品,通用
@@ -423,11 +398,8 @@ Cloud,zh,云,技术
 ```
 
 ## 最佳实践
-
 ### 1. 翻译记忆库维护
-
 ```bash
-# 定期更新翻译记忆库
 python scripts/translate.py \
   --update-tm \
   --tm-file company_tm.tmx \
@@ -435,9 +407,7 @@ python scripts/translate.py \
 ```
 
 ### 2. 质量分层策略
-
 ```python
-# 根据内容重要性选择翻译质量层次
 content_types = {
     "marketing": {"quality_boost": True, "human_verify": False},
     "legal": {"quality_boost": True, "human_verify": True, "priority": "high"},
@@ -450,9 +420,7 @@ for content_type, config in content_types.items():
 ```
 
 ### 3. CI/CD集成
-
 ```yaml
-# .github/workflows/translate.yml
 name: Translate Documentation
 on:
   push:
@@ -475,32 +443,25 @@ jobs:
 ```
 
 ## 常见问题
-
 ### Q1: 专业版与免费版兼容吗?
-
 A: 完全兼容。专业版包含免费版所有功能,并增加质量增强、人工审核、翻译记忆等。免费版创建的项目可在专业版中管理。
 
 ### Q2: 翻译记忆库如何降低成本?
-
 A: TM库存储已翻译的内容片段。当新内容与TM中的片段匹配时(75%+相似度),直接复用翻译,减少API调用和人工翻译成本。
 
 ### Q3: 人工审核需要多长时间?
-
 A: 取决于内容长度和译员可用性。普通内容24-48小时,高优先级内容4-8小时。
 
 ### Q4: Webhook如何配置?
-
 A: 在创建项目时指定 `webhook_url` 和 `webhook_events`。翻译完成后,API会向指定URL发送POST请求,包含项目状态和下载链接。
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 - **Python版本**: 3.8+
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Python | 运行时 | 必需 | 系统自带 |
@@ -515,3 +476,14 @@ A: 在创建项目时指定 `webhook_url` 和 `webhook_events`。翻译完成后
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent调用翻译API完成企业级翻译任务
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 需要API Key，无Key环境无法使用
+- 本地运行，不支持多设备同步

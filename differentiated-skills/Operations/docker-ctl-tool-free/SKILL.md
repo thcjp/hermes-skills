@@ -4,39 +4,17 @@ name: docker-ctl-tool-free
 version: "1.0.0"
 displayName: 容器检查入门工具
 summary: Podman/Docker容器检查工具，支持容器状态查询与日志分析。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人开发者的容器检查工具，兼容Podman与Docker。支持容器状态
-  查询、日志分析、资源使用监控与配置检查。适合个人开发环境快速
-  排查容器问题。
-
-  核心能力:
-  - 容器状态检查（运行/停止/异常）
-  - 日志查看与过滤
-  - 资源使用监控（CPU/内存/网络）
-  - 容器配置检查
-  - 兼容Podman与Docker
-
-  适用场景:
-  - 个人开发环境容器排查
-  - 容器日志快速查看
-  - 资源使用检查
-  - 容器配置验证
-
-  差异化:
-  - 免费版聚焦基础检查功能
-  - 兼容Podman与Docker双引擎
-  - 不支持批量检查与历史分析
-  - 不支持高级诊断
-
-  触发关键词: 容器检查, Podman, Docker, 日志, 状态, 资源, 排查, inspect, logs, stats
+  查询、日志分析、资源使用监控与配置检查。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。
 tags:
 - Operations
 - 容器检查
 - 运维
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -121,7 +99,7 @@ python3 scripts/ctl.py stats --sort memory
 ### 环境准备
 
 ```bash
-# 安装Podman或Docker（任选其一）
+# 依赖说明
 # Podman: brew install podman (macOS)
 # Docker: 见docker-toolkit安装
 
@@ -157,7 +135,7 @@ python3 scripts/ctl.py volumes --name web-app
 python3 scripts/ctl.py health --name web-app
 ```
 
-## 配置示例
+## 示例
 
 ### 检查工具配置
 
@@ -237,3 +215,17 @@ Podman无需守护进程（daemonless），更安全；Docker需要dockerd守护
 - **分类**: MD+EXEC（Markdown指令+Python脚本+CLI执行）
 - **说明**: 兼容Podman/Docker的容器检查工具
 - **免费版限制**: 单容器检查、不支持批量与历史分析
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

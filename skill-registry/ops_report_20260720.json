@@ -1,0 +1,302 @@
+{
+  "report_time": "2026-07-20T23:22:02.260614",
+  "overall_status": "healthy",
+  "issues": [],
+  "health_check": {
+    "error": "health_check执行失败: \n\n\n"
+  },
+  "quality_dashboard": {
+    "1": {
+      "dimension": "验证覆盖率",
+      "total_skills": 1866,
+      "l1": {
+        "covered": 1672,
+        "coverage_rate": 89.6
+      },
+      "l2": {
+        "covered": 1866,
+        "coverage_rate": 100.0,
+        "passed": 1866,
+        "pass_rate": 100.0
+      },
+      "l3": {
+        "covered": 23,
+        "coverage_rate": 1.2,
+        "passed": 23,
+        "pass_rate": 100.0
+      }
+    },
+    "2": {
+      "dimension": "质量分布",
+      "l2_grade_distribution": {
+        "A": {
+          "count": 1866,
+          "avg_score": 46.8,
+          "min_score": 45,
+          "max_score": 49.5
+        }
+      },
+      "l2_dimension_averages": {
+        "T_Trust": 10.0,
+        "R_Reliability": 8.9,
+        "A_Adaptability": 8.9,
+        "C_Convention": 9.6,
+        "E_Effectiveness": 9.4,
+        "Total": 46.8
+      },
+      "l3_grade_distribution": {
+        "A": 23
+      },
+      "pass_threshold": 42
+    },
+    "3": {
+      "dimension": "模板使用",
+      "total_generated": 791,
+      "templates": {
+        "tool_wrapper_template": {
+          "generated_count": 90,
+          "verified_slug": "aws-toolkit",
+          "l2_score": 44,
+          "verified_round": "R09"
+        },
+        "generator_template": {
+          "generated_count": 334,
+          "verified_slug": "daily-report-writer",
+          "l2_score": 47,
+          "verified_round": "R06"
+        },
+        "reviewer_template": {
+          "generated_count": 209,
+          "verified_slug": "code-quality",
+          "l2_score": 38,
+          "verified_round": "R06"
+        },
+        "inversion_template": {
+          "generated_count": 1,
+          "verified_slug": "doc-parse",
+          "l2_score": 47,
+          "verified_round": "R09"
+        },
+        "pipeline_template": {
+          "generated_count": 157,
+          "verified_slug": "auto-workflow",
+          "l2_score": 37,
+          "verified_round": "R06"
+        }
+      },
+      "avg_verified_l2_score": 42.6,
+      "all_templates_verified": true
+    },
+    "4": {
+      "dimension": "推广进度",
+      "total_skills": 1866,
+      "completion_rate": 3.3,
+      "workflow_step_distribution": [
+        {
+          "step": 1,
+          "name": "read_original",
+          "completed": 1866
+        },
+        {
+          "step": 2,
+          "name": "parse_metadata",
+          "completed": 1848
+        },
+        {
+          "step": 3,
+          "name": "analyze_content",
+          "completed": 1848
+        },
+        {
+          "step": 4,
+          "name": "select_template",
+          "completed": 1848
+        },
+        {
+          "step": 5,
+          "name": "add_deps",
+          "completed": 1848
+        },
+        {
+          "step": 6,
+          "name": "generate_skill",
+          "completed": 1671
+        },
+        {
+          "step": 7,
+          "name": "validate",
+          "completed": 1671
+        },
+        {
+          "step": 8,
+          "name": "upload_free",
+          "completed": 163
+        },
+        {
+          "step": 9,
+          "name": "upload_paid",
+          "completed": 61
+        },
+        {
+          "step": 10,
+          "name": "completed",
+          "completed": 61
+        }
+      ],
+      "current_state_distribution": {
+        "step7_validate": 1509,
+        "step5_add_deps": 177,
+        "step8_upload_free": 101,
+        "completed": 61,
+        "step1_read_original": 18
+      }
+    },
+    "5": {
+      "dimension": "平台状态",
+      "platforms": {
+        "clawhub": {
+          "total": 161,
+          "success": 159,
+          "pending": 0,
+          "failed": 0,
+          "success_rate": 98.8
+        },
+        "skillhub": {
+          "total": 45,
+          "success": 29,
+          "pending": 0,
+          "failed": 1,
+          "success_rate": 64.4
+        }
+      },
+      "price_distribution": {
+        "unspecified": 188
+      }
+    }
+  },
+  "low_score_annotation": {
+    "low_score_count": 0,
+    "low_score_skills": [],
+    "grade_distribution": {
+      "A": 1866
+    }
+  },
+  "l3_coverage": {
+    "l3_count": 23,
+    "total_skills": 1866,
+    "l3_coverage": 1.23,
+    "l3_skills": [
+      {
+        "slug": "feishu-card-builder",
+        "score": 100
+      },
+      {
+        "slug": "bilibili-all-in-one",
+        "score": 100
+      },
+      {
+        "slug": "api-toolkit",
+        "score": 100
+      },
+      {
+        "slug": "learn-cog",
+        "score": 100
+      },
+      {
+        "slug": "text-game-arcade-universe-v3",
+        "score": 100
+      },
+      {
+        "slug": "aws-toolkit",
+        "score": 100
+      },
+      {
+        "slug": "free-web-search",
+        "score": 100
+      },
+      {
+        "slug": "amap-jsapi-skill",
+        "score": 100
+      },
+      {
+        "slug": "reminder-engine",
+        "score": 100
+      },
+      {
+        "slug": "calendar-reminder",
+        "score": 100
+      },
+      {
+        "slug": "frontend-design-v3",
+        "score": 100
+      },
+      {
+        "slug": "finance-accounting",
+        "score": 100
+      },
+      {
+        "slug": "skill-production-standards",
+        "score": 100
+      },
+      {
+        "slug": "batch-processor-pro",
+        "score": 100
+      },
+      {
+        "slug": "accounting-finance-free",
+        "score": 100
+      },
+      {
+        "slug": "data-toolkit-free",
+        "score": 100
+      },
+      {
+        "slug": "memory-scan",
+        "score": 100
+      },
+      {
+        "slug": "pptx-presentation-pro",
+        "score": 100
+      },
+      {
+        "slug": "code-quality-free",
+        "score": 100
+      },
+      {
+        "slug": "intel-sentinel",
+        "score": 100
+      },
+      {
+        "slug": "daily-report-writer",
+        "score": 90
+      },
+      {
+        "slug": "code-quality",
+        "score": 90
+      },
+      {
+        "slug": "auto-workflow",
+        "score": 90
+      }
+    ]
+  },
+  "coverage": {
+    "total_skills": 1866,
+    "l1_count": 1671,
+    "l1_coverage": 89.5,
+    "l2_count": 1866,
+    "l2_coverage": 100.0,
+    "completed": 61,
+    "completion_rate": 3.3
+  },
+  "summary": {
+    "total_skills": 1866,
+    "l1_coverage": 89.5,
+    "l2_coverage": 100.0,
+    "l2_a_ratio": 100.0,
+    "l3_coverage": 1.23,
+    "low_score_count": 0,
+    "completion_rate": 3.3,
+    "issues_count": 0
+  }
+}

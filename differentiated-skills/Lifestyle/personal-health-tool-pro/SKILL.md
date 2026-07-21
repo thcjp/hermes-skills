@@ -4,7 +4,7 @@ name: personal-health-tool-pro
 version: "1.0.0"
 displayName: 个人健康管家专业版
 summary: 企业级健康管家,支持慢病管理、医生共享、AI诊断与穿戴设备同步
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   面向家庭、慢病患者与健康机构的企业级健康管家平台。
@@ -20,20 +20,16 @@ tags:
 - 穿戴设备
 - 医疗协作
 tools:
-- read
+  - - read
 - exec
----
-
 # 个人健康管家 (专业版)
-
 ## 概述
-
+---
 专业版面向家庭、慢病患者与健康机构,在免费版个人健康管理之上,扩展慢病管理、医生数据共享、AI 辅助诊断、穿戴设备同步、家庭多成员管理等企业级能力。支持构建完整的个人健康档案,与医疗系统协作,适合慢病管理、术后康复、家庭健康关怀等专业场景。
 
 专业版与免费版数据格式完全兼容,个人用户升级后历史数据无缝迁移。
 
 ## 核心能力
-
 | 能力模块 | 描述 | 免费版 | 专业版 |
 |:--------|:-----|:------:|:------:|
 | 健康数据记录 | 运动、睡眠、饮食 | 支持 | 支持 |
@@ -50,169 +46,17 @@ tools:
 | 优先支持 | 专属支持 | 不支持 | 支持 |
 
 ## 使用场景
-
 ### 场景一: 慢病管理
-
 为慢病患者提供完整管理方案。
 
-```python
-import os
-import requests
-from datetime import datetime
-
-API_BASE = "https://api.health-pro.local/v1"
-ADMIN_KEY = os.environ["HEALTH_ADMIN_KEY"]
-
-class ChronicDiseaseManager:
-    def __init__(self, admin_key):
-        self.headers = {"X-API-Key": admin_key, "X-Edition": "pro"}
-
-    def setup_diabetes_management(self, patient_id, baseline):
-        """配置糖尿病管理"""
-        payload = {
-            "patient_id": patient_id,
-            "condition": "diabetes",
-            "type": "type_2",
-            "baseline": baseline,
-            "tracking": {
-                "fasting_glucose": "daily_morning",
-                "postprandial_glucose": "after_each_meal",
-                "hba1c": "quarterly",
-                "weight": "weekly",
-                "blood_pressure": "daily",
-            },
-            "targets": {
-                "fasting_glucose_mmol": [4.4, 7.0],
-                "postprandial_glucose_mmol": [4.4, 10.0],
-                "hba1c_pct": 7.0,
-                "blood_pressure": "130/80",
-            },
-            "medications": [
-                {"name": "二甲双胍", "dose": "500mg", "schedule": "每日两次,饭后"},
-            ],
-            "alerts": {
-                "glucose_high": 10.0,
-                "glucose_low": 3.9,
-                "bp_high": "140/90",
-            },
-        }
-        resp = requests.post(
-            f"{API_BASE}/chronic/setup",
-            headers=self.headers,
-            json=payload,
-            timeout=60,
-        )
-        return resp.json()
-
-    def log_glucose(self, patient_id, value, measurement_type, meal_context):
-        """记录血糖"""
-        payload = {
-            "patient_id": patient_id,
-            "value": value,
-            "type": measurement_type,  # fasting, postprandial
-            "meal_context": meal_context,
-            "timestamp": datetime.now().isoformat(),
-        }
-        resp = requests.post(
-            f"{API_BASE}/chronic/glucose/log",
-            headers=self.headers,
-            json=payload,
-            timeout=30,
-        )
-        return resp.json()
-
-    def trend_analysis(self, patient_id, metric, period="month"):
-        """趋势分析"""
-        resp = requests.get(
-            f"{API_BASE}/chronic/{patient_id}/trend",
-            headers=self.headers,
-            params={"metric": metric, "period": period},
-            timeout=60,
-        )
-        return resp.json()
-
-
-cdm = ChronicDiseaseManager(ADMIN_KEY)
-# 配置糖尿病管理
-cdm.setup_diabetes_management("p001", {
-    "age": 55,
-    "weight_kg": 75,
-    "hba1c": 8.2,
-    "fasting_glucose": 8.5,
-})
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 场景二: 医生协作
-
 与主治医生共享健康数据,远程协作管理。
 
-```python
-class DoctorCollaboration:
-    def share_with_doctor(self, patient_id, doctor_email, data_range):
-        """与医生共享数据"""
-        payload = {
-            "patient_id": patient_id,
-            "doctor_email": doctor_email,
-            "data_range": data_range,
-            "data_types": [
-                "glucose_logs", "blood_pressure", "weight",
-                "medication_adherence", "lab_reports",
-            ],
-            "format": "hl7_fhir",  # 医疗标准格式
-            "expiry": "30_days",
-        }
-        resp = requests.post(
-            f"{API_BASE}/sharing/doctor",
-            headers=self.headers,
-            json=payload,
-            timeout=60,
-        )
-        return resp.json()
-
-    def generate_doctor_report(self, patient_id, period):
-        """生成医生报告"""
-        payload = {
-            "patient_id": patient_id,
-            "period": period,
-            "format": "medical_pdf",
-            "sections": [
-                "patient_summary",
-                "vital_signs_trends",
-                "lab_results",
-                "medication_adherence",
-                "symptom_diary",
-                "risk_assessment",
-                "recommendations_for_doctor",
-            ],
-            "hl7_compliant": True,
-        }
-        resp = requests.post(
-            f"{API_BASE}/reports/doctor",
-            headers=self.headers,
-            json=payload,
-            timeout=300,
-        )
-        return resp.json()
-
-    def doctor_feedback(self, patient_id, doctor_id, feedback):
-        """医生反馈"""
-        payload = {
-            "patient_id": patient_id,
-            "doctor_id": doctor_id,
-            "feedback": feedback,
-            "timestamp": datetime.now().isoformat(),
-        }
-        resp = requests.post(
-            f"{API_BASE}/sharing/doctor-feedback",
-            headers=self.headers,
-            json=payload,
-            timeout=30,
-        )
-        return resp.json()
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 场景三: AI 辅助诊断
-
 基于健康数据进行 AI 辅助诊断。
 
 ```python
@@ -244,26 +88,27 @@ def ai_diagnosis(patient_id, symptoms):
     )
     return resp.json()
 
-# 输出示例
-# {
-#   "possible_conditions": [
-#     {"name": "2型糖尿病", "probability": 0.65, "icd10": "E11"},
-#     {"name": "高血压", "probability": 0.45, "icd10": "I10"},
-#   ],
-#   "risk_stratification": {"level": "medium", "factors": [...]},
-#   "recommended_tests": ["糖化血红蛋白", "动态血压监测"],
-#   "urgency": "建议 2 周内就诊",
-# }
 ```
 
+## 不适用场景
+
+以下场景个人健康管家专业版不适合处理：
+
+- 实时流数据处理
+- 小规模数据手动分析
+- 非结构化文本情感分析
+
+
+## 触发条件
+
+需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
-
 ### 步骤 1: 申请专业版账户
-
 联系销售开通专业版,获取管理员凭证与租户 ID。
 
 ### 步骤 2: 配置凭证
-
 ```bash
 export HEALTH_ADMIN_KEY="sk_pro_admin_xxx"
 export HEALTH_ORG_ID="org_your_id"
@@ -271,7 +116,6 @@ export HEALTH_EDITION="pro"
 ```
 
 ### 步骤 3: 配置慢病管理
-
 ```bash
 curl -X POST -H "X-API-Key: $HEALTH_ADMIN_KEY" \
   -H "Content-Type: application/json" \
@@ -280,7 +124,6 @@ curl -X POST -H "X-API-Key: $HEALTH_ADMIN_KEY" \
 ```
 
 ### 步骤 4: 连接穿戴设备
-
 ```bash
 curl -X POST -H "X-API-Key: $HEALTH_ADMIN_KEY" \
   -H "Content-Type: application/json" \
@@ -289,11 +132,8 @@ curl -X POST -H "X-API-Key: $HEALTH_ADMIN_KEY" \
 ```
 
 ## 配置示例
-
 ### 企业级配置
-
 ```yaml
-# /etc/health-pro/pro.yaml
 edition: pro
 api:
   base_url: https://api.health-pro.local/v1
@@ -345,7 +185,6 @@ data_security:
 ```
 
 ### 慢病管理配置
-
 ```python
 CHRONIC_DISEASE_TEMPLATES = {
     "diabetes": {
@@ -364,7 +203,6 @@ CHRONIC_DISEASE_TEMPLATES = {
 ```
 
 ### 异常预警
-
 ```python
 def configure_emergency_alerts(patient_id):
     """配置紧急预警"""
@@ -405,9 +243,7 @@ def configure_emergency_alerts(patient_id):
 ```
 
 ## 最佳实践
-
 ### 1. 用药管理
-
 ```python
 def medication_reminder(patient_id, medication):
     """用药提醒"""
@@ -428,7 +264,6 @@ def medication_reminder(patient_id, medication):
 ```
 
 ### 2. 数据安全
-
 ```python
 def secure_health_data_sharing(patient_id, recipient, scope):
     """安全健康数据共享"""
@@ -451,7 +286,6 @@ def secure_health_data_sharing(patient_id, recipient, scope):
 ```
 
 ### 3. 家庭健康管理
-
 ```python
 def setup_family_health(family_members):
     """配置家庭健康管理"""
@@ -474,38 +308,29 @@ def setup_family_health(family_members):
 ```
 
 ## 常见问题
-
 ### Q1: 专业版与免费版数据兼容吗?
-
 完全兼容。专业版在免费版数据格式上扩展,升级后历史数据无缝迁移。
 
 ### Q2: 慢病管理支持哪些疾病?
-
 糖尿病、高血压、高血脂、COPD、哮喘等常见慢性病。
 
 ### Q3: AI 诊断可信吗?
-
 AI 诊断提供参考,准确度约 80%,但不能替代医生诊断。请咨询专业医生。
 
 ### Q4: 医生共享数据安全吗?
-
 使用 HL7 FHIR 医疗标准、AES-256 加密、权限控制、审计日志,符合 HIPAA 等合规要求。
 
 ### Q5: 穿戴设备支持哪些?
-
 Apple Watch、Fitbit、Garmin、华为手环、小米手环、欧姆龙血压计等主流设备。
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent 平台**: 支持 SKILL.md 规范的任意 AI Agent (Claude Code、Cursor、Codex、Gemini CLI 等)
 - **操作系统**: Windows / macOS / Linux (生产环境推荐 Linux)
 - **网络**: 需访问专业版服务
 - **Python**: 3.9+ (用于脚本化操作)
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Health Pro API | 在线 API | 必需 | 联系销售开通专业版 |
@@ -516,29 +341,35 @@ Apple Watch、Fitbit、Garmin、华为手环、小米手环、欧姆龙血压计
 | 数据库 | 持久化 | 可选 | 兼容主流关系型数据库 (使用 `数据库` 上下文) |
 
 ### API Key 配置
-
 ```bash
-# 专业版凭证
 export HEALTH_ADMIN_KEY="sk_pro_admin_xxx"
 export HEALTH_ORG_ID="org_your_id"
 export HEALTH_EDITION="pro"
 
-# 可选: 穿戴设备
 export APPLE_HEALTH_TOKEN="..."
 export FITBIT_TOKEN="..."
 export OMRON_DEVICE_ID="..."
 
-# 可选: 医疗系统对接
 export HL7_FHIR_ENDPOINT="https://fhir.hospital.com"
 export EMR_API_KEY="..."
 
-# 可选: 紧急通知
 export EMERGENCY_SMS_API="https://sms-api.example.com"
 ```
 
 ### 可用性分类
-
 - **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 面向家庭、慢病患者与医疗场景,通过自然语言指令驱动 Agent 调用 Pro API,完成慢病管理、医疗协作等企业级场景
 - **专业版特性**: 慢病管理、医生共享、AI 诊断、穿戴设备、家庭管理、医疗报告、异常预警、用药管理
 - **兼容性**: 与免费版数据格式完全兼容,支持平滑升级
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

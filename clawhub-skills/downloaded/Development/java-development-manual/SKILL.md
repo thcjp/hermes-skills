@@ -2,37 +2,16 @@
 slug: java-development-manual
 name: java-development-manual
 version: "0.1.0"
-displayName: Java Development Manual
+displayName: Java Development Man
 summary: Java开发手册规约集合，基于阿里巴巴Java开发手册（嵩山版）。 涵盖7大维度：编程规约、异常日志、单元测试、安全规约、MySQL数据库、工程结构、设计规约。
   当用户需要：(1) 编写或审查J...
 license: MIT-0
 description: |-
-  Java开发手册规约集合，基于阿里巴巴Java开发手册（嵩山版）。 涵盖7大维度：编程规约、异常日志、单元测试、安全规约、MySQL数据库、工程结构、设计规约。
-  当用户需要：(1) 编写或审查J...
-
-  核心能力:
-
-  - 开发工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 代码审查、开发规范、项目管理
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: 嵩山版, 开发手册规约, development, 集合, 基于阿里巴巴, mysql, 开发手册, java
+  Java开发手册规约集合，基于阿里巴巴Java开发手册（嵩山版）。涵盖7大维度：编程规约、异常日志、单元测试、安全规约、MySQL数据库、工程结构、设计规约。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Development
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -105,7 +84,7 @@ package com.company.project.service;
 | ThreadLocal回收 | 避免内存泄漏 |
 | 日志用占位符 | 性能优化 |
 
-### 异常处理速查
+### 错误处理
 
 ```java
 // 正确的异常处理
@@ -192,7 +171,7 @@ try {
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -203,3 +182,50 @@ try {
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+
+本手册基于阿里巴巴Java开发手册（嵩山版），将规约分为7个维度。规约按约束力强弱分为：
+
+| 级别 | 含义 | 说明 |
+| --- | --- | --- |
+| **【强制】** | 必须遵守 | 违反可能导致严重问题 |
+| **【推荐】** | 建议遵守 | 提升代码质量和可维护性 |
+| **【参考】** | 可选择性采纳 | 根据实际情况判断 |
+
+## 适用场景
+
+1. **命名检查** → 查看 [coding-convention.md](/api/v1/skills/java-development-manual/file?path=references%2Fcoding-convention.md&ownerHandle=shinelon) 的"命名风格"章节
+2. **并发问题** → 查看 [coding-convention.md](/api/v1/skills/java-development-manual/file?path=references%2Fcoding-convention.md&ownerHandle=shinelon) 的"并发处理"章节
+3. **异常处理** → 查看 [exception-log.md](/api/v1/skills/java-development-manual/file?path=references%2Fexception-log.md&ownerHandle=shinelon)
+4. **安全问题** → 查看 [security.md](/api/v1/skills/java-development-manual/file?path=references%2Fsecurity.md&ownerHandle=shinelon)
+
+## 示例
+
+### 示例1：基础用法
+
+```
+### 代码审查场景
+
+1. **命名检查** → 查看 [coding-convention.md](/api/v1/skills/java-development-manual/file?path=references%2Fcoding-convention.md&ownerHandle=shinelon) 的"命名风格"章节
+2. **并发问题** → 查看 [coding-convention.md](/api/v1/skills/java-development-manual/file?path=references%2Fcoding-convention.md&ownerHandle=shinelon) 的"并发处理"章节
+3. **异常处理** → 查看 [exception-log.md](/api/v1/skills/java-development-manual/file?path=references%2Fexception-log.md&ownerHandle=shinelon)
+4. **安全问题** → 查看 [security.md](/api/v1/sk
+```
+
+## 常见问题
+
+### Q1: 如何开始使用Java Development Man？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Java Development Man有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

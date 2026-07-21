@@ -4,7 +4,7 @@ name: cdn-toolkit-free
 version: "1.0.0"
 displayName: CDN配置工具包免费版
 summary: CDN配置与优化助手,支持缓存策略设置、基础安全加固与性能诊断,适合个人开发者快速部署CDN。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   CDN配置工具包免费版,为个人开发者提供CDN部署与优化核心能力。
@@ -18,10 +18,9 @@ tags:
 - 缓存
 - 免费版
 tools:
-- read
+  - - read
 - exec
 ---
-
 # CDN配置工具包免费版
 
 ## 概述
@@ -297,6 +296,20 @@ if [ "$HIT_RATE" -lt 80 ] 2>/dev/null; then
 fi
 ```
 
+## 不适用场景
+
+以下场景CDN配置工具包免费版不适合处理：
+
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 运维部署管理
+
+
+## 触发条件
+
+需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 第一步:选择CDN服务商
@@ -312,7 +325,7 @@ fi
 
 ```bash
 # 添加CNAME记录指向CDN
-# example.com -> xxx.cloudflare.net 或 xxx.cdn.aliyuncs.com
+# 示例
 ```
 
 ### 第三步:验证CDN生效
@@ -394,7 +407,7 @@ iptables -A INPUT -p tcp --dport 443 -j DROP
 - **操作系统**: Windows / macOS / Linux
 - **网络**: 需可访问CDN管理API
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -412,3 +425,17 @@ iptables -A INPUT -p tcp --dport 443 -j DROP
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行CDN配置与优化任务
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

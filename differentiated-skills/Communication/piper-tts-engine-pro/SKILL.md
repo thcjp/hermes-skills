@@ -4,7 +4,7 @@ name: piper-tts-engine-pro
 version: "1.0.0"
 displayName: 本地语音合成专业版
 summary: 企业级本地 TTS 引擎，支持批量合成、自定义音色训练、多语言、SSML 标记与 API 服务化。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   面向团队与企业的本地离线文字转语音引擎。
@@ -20,10 +20,9 @@ tags:
 - 企业级
 - 有声书
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 本地语音合成 专业版
 
 ## 概述
@@ -213,11 +212,25 @@ def run_synthesis(cmd):
 # 启动 API 服务
 uvicorn tts_api_server:app --host 0.0.0.0 --port 8100
 
-# 调用示例
+# 示例
 curl -X POST http://localhost:8100/api/tts \
   -H "Content-Type: application/json" \
   -d '{"text":"您好，这是一条测试语音","voice":"zh_CN-huayan-medium"}'
 ```
+
+## 不适用场景
+
+以下场景本地语音合成专业版不适合处理：
+
+- 专业医学法律翻译认证
+- 同声传译
+- 文学创作翻译
+
+
+## 触发条件
+
+需要文本翻译、多语言转换、本地化处理时使用。不适用于非本工具能力范围的需求。
+
 
 ## 快速开始
 
@@ -358,7 +371,7 @@ piper-speak-pro --batch input_texts.json --voice zh_CN-huayan-medium --output-di
 - **运行时**：Python 3.9+
 - **GPU（可选）**：NVIDIA GPU + CUDA（音色训练推荐）
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 | :------- | :----- | :--------- | :--------- |
@@ -387,3 +400,16 @@ export CUDA_HOME="/usr/local/cuda"  # GPU训练需要
 
 - **分类**：MD+EXEC（纯 Markdown 指令，部分功能需要 exec 命令行执行能力）
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务。专业版在免费版基础上新增批量合成、音色训练与 API 服务化，合成命令与音色模型向后兼容免费版。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用
+- 本地运行，不支持多设备同步

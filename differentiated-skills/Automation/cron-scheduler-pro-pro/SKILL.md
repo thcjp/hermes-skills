@@ -2,9 +2,9 @@
 slug: cron-scheduler-pro-pro
 name: cron-scheduler-pro-pro
 version: "1.0.0"
-displayName: 定时调度引擎(专业版)
+displayName: Cron Scheduler Pro
 summary: 企业级定时任务调度引擎专业版，含cron表达式、任务依赖、失败重试、执行统计、优先级控制。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   定时调度引擎专业版是面向企业级场景的完整定时任务调度解决方案。在免费版四种调度模式之上，专业版新增cron表达式精确调度、任务依赖编排、失败自动重试与熔断、执行统计分析、任务优先级与并发控制五大高级引擎能力，满足复杂业务场景的调度需求。

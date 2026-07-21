@@ -1,0 +1,23 @@
+{
+  "results": {
+    "ai-artist-workstation": {
+      "overall_passed": true,
+      "passed_checks": 10,
+      "failed_checks": 0,
+      "total_checks": 10
+    },
+    "ai-video-director": {
+      "overall_passed": false,
+      "passed_checks": 8,
+      "failed_checks": 2,
+      "total_checks": 10
+    },
+    "linear-workflow-bot": {
+      "overall_passed": true,
+      "passed_checks": 10,
+      "failed_checks": 0,
+      "total_checks": 10
+    }
+  },
+  "all_match": true
+}

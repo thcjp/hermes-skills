@@ -6,9 +6,7 @@ displayName: Who Is Actor
 summary: Git repository actor identification skill.
 license: MIT
 description: |-
-  Git repository actor identification skill.
-
-  核心能力:
+  Git repository actor identification skill。核心能力:
 
   - 开发工具领域的专业化AI辅助工具
 
@@ -24,49 +22,23 @@ description: |-
 
   - 自动化工作流与智能决策辅助
 
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: who, identification, repository, actor, skill
+  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范
 tags:
 - Development
 tools:
-- read
+  - - read
 - exec
----
-
 # Who Is Actor — Git Repository Collaboration-Pattern Analysis Skill
-
+---
 > 🔗 **Project Repository:** [https://github.com/wscats/who-is-actor](https://github.com/wscats/who-is-actor)
 
 Zero *install* dependencies, zero scripts. Collects data purely through native read-only `git` commands and standard Unix text utilities (`cut`, `sort`, `awk`, `grep`, etc. — already present on most systems). The AI is responsible only for interpreting **already-aggregated, locally-redacted statistical metrics** to generate a collaboration-pattern report.
 
-> ⚠️ **READ THIS BEFORE USING — Privacy, Consent & Scope Notice**
->
-> 1. **Other people's data may be involved.** A Git repository typically contains commit metadata (display names, timestamps, commit message subjects, file paths) authored by people other than the user invoking this skill. Before running, the user MUST confirm they have authority to analyze the repository and that doing so does not violate workplace, contractual, or local-law obligations. The agent SHOULD remind the user to inform analyzed contributors when used in a team context.
-> 2. **Not for HR / personnel decisions.** The output, including the repository-wide visible-activity index, MUST NOT be used as the basis for performance reviews, hiring/firing decisions, compensation, layoffs, ranking, or any personnel-style judgment of individuals. The agent MUST refuse such requests and respond only with non-personalized, aggregate observations. This skill produces no per-contributor breakdown, scoring, or ranking of any kind.
-> 3. **Sensitive content may exist in commit metadata.** Commit messages and filenames can contain ticket IDs, incident references, secrets, customer names, URLs, or other confidential information. This skill mandates that such raw text remain **local-only** and that only aggregate, redacted metrics ever reach the AI model. See "Sensitive Data Filtering Rules" for binding enforcement.
-> 4. **Read-only, scoped, no network.** The skill executes only the read-only git subcommands enumerated in the Command Whitelist, against the single user-supplied repository path. No writes, no network, no traversal outside the repo root.
-
-> **"Zero dependency" clarification:** This skill installs nothing — no pip packages, no npm modules, no custom scripts. However, it **does require** the following standard system binaries to be available on the host: `git`, `cut`, `sort`, `uniq`, `awk`, `grep`, `sed`, `wc`, `head`. These are pre-installed on virtually all Unix-like systems (macOS, Linux). On Windows, use Git Bash or WSL.
-
----
-
-## 💬 Natural Language Examples (For Reference Only — A Repository Path Is ALWAYS Required)
-
-> ⚠️ **Hard activation constraint (binding on the agent):** The phrasings below are reference templates for expressing intent. The agent **MUST NOT** start collection merely because the user mentioned topics like "analyze repository", "profile developers", "commit habits", "developer report card", "code quality", "engagement", "研发效率", or "开发者画像". Collection may begin **only** after ALL of the following are satisfied:
->
-> 1. The user has explicitly stated an intent to analyze a specific Git repository;
-> 2. The user has supplied a concrete repository path (absolute) or an unambiguous repo reference;
-> 3. The user has confirmed they have authority to analyze that repository, and (in team contexts) has informed or will inform the analyzed contributors;
-> 4. The user has acknowledged the privacy notice and that the report MUST NOT be used for personnel decisions;
-> 5. Dry-Run preview is recommended before actual execution.
->
-> If the user uses any of the phrasings below **without supplying a repository path**, the agent MUST first ask for the repository path and authority confirmation, and only then proceed.
+## 示例
 
 You don't need to memorize any commands or parameters — simply describe what you need in any language (please supply an absolute repository path along with the request):
 
 ### English
-
 ```
 💬 "Analyze the repository at /path/to/my-project"
 💬 "Generate a repository-level collaboration-pattern report for /path/to/my-project"
@@ -74,11 +46,9 @@ You don't need to memorize any commands or parameters — simply describe what y
 💬 "What does the commit-time distribution look like on branch main in /path/to/my-project?"
 💬 "Is there a bus-factor risk in /path/to/my-project?"
 
-> The agent MUST refuse phrasings that ask for individualized judgments, comparisons between named people, "best/worst contributor" rankings, performance verdicts, or personnel-style assessments — even if a repository path is provided. In such cases the agent MUST decline and offer instead to describe repository-level workflow patterns.
 ```
 
 ### 中文
-
 ```
 💬 "分析一下 /path/to/my-project 这个仓库的协作模式"
 💬 "生成 /path/to/my-project 的仓库级提交节奏与流失率报告"
@@ -86,11 +56,9 @@ You don't need to memorize any commands or parameters — simply describe what y
 💬 "看看这个仓库有没有巴士因子风险"
 💬 "统计 /path/to/my-project 中提交消息的约定式合规率"
 
-> 代理必须拒绝任何要求对具名个人作出评判、对比、排名、"谁最好/最差"或任何人事性评估的措辞——即便仓库路径已经提供。这种情况下，代理应说明本技能不做个人评估，并改为提供仓库级别的工作流程模式描述。
 ```
 
 ### 日本語
-
 ```
 💬 "このリポジトリの協作パターンを分析してください /path/to/my-project"
 💬 "このリポジトリのコミット時間分布とチャーン率レポートを作成してください"
@@ -98,7 +66,6 @@ You don't need to memorize any commands or parameters — simply describe what y
 ```
 
 ### 한국어
-
 ```
 💬 "이 저장소의 협업 패턴을 분석해 주세요 /path/to/my-project"
 💬 "이 저장소의 커밋 케이던스와 churn 지표 보고서를 만들어 주세요"
@@ -106,7 +73,6 @@ You don't need to memorize any commands or parameters — simply describe what y
 ```
 
 ### Español
-
 ```
 💬 "Analiza los patrones de colaboración del repositorio en /path/to/my-project"
 💬 "Genera un informe a nivel de repositorio sobre cadencia de commits y churn"
@@ -114,7 +80,6 @@ You don't need to memorize any commands or parameters — simply describe what y
 ```
 
 ### Français
-
 ```
 💬 "Analyse les motifs de collaboration du dépôt à /path/to/my-project"
 💬 "Génère un rapport au niveau du dépôt sur la cadence des commits et le churn"
@@ -122,17 +87,13 @@ You don't need to memorize any commands or parameters — simply describe what y
 ```
 
 ### Deutsch
-
 ```
 💬 "Analysiere die Kollaborationsmuster des Repositories unter /path/to/my-project"
 💬 "Erstelle einen Repository-Level-Bericht zu Commit-Kadenz und Churn"
 💬 "Gibt es ein Bus-Factor-Risiko in /path/to/my-project?"
 ```
 
----
-
 ## ⚙️ Parameters
-
 | Parameter | Description | Required | Default |
 |-----------|-------------|----------|---------|
 | `repo_path` | Absolute path to the target Git repository | ✅ Yes | — |
@@ -140,18 +101,11 @@ You don't need to memorize any commands or parameters — simply describe what y
 | `until` | End date in ISO format (`YYYY-MM-DD`) | No | Full history |
 | `branch` | Target branch to analyze | No | Active branch |
 
-> **No `authors` parameter.** This skill is intentionally repository-scoped and does NOT support per-contributor filtering or per-contributor analysis. Earlier versions exposed an `authors` parameter; it has been removed because per-contributor filtering enables individualized profiling, which is out of scope.
-
 **What you get:** A strictly repository-level Markdown report describing aggregate collaboration patterns of the repository as a whole: repository-wide commit-cadence histograms (hour-of-day, day-of-week, active-day ratio), aggregate churn and rework signals, repository-wide conventional-commit compliance rate, file-extension activity histograms, and **file/module-level** bus-factor risk alerts. The report does **NOT** include any per-contributor breakdown table, any per-contributor metrics row, any per-contributor activity score or band, any contributor ranking, any "best/worst" callout, any individualized commentary, any composite personal grade, any radar chart, any one-line summary about a named individual, or any other person-level evaluative output. Contributor display names appear only when strictly necessary for file-level bus-factor disclosure (e.g., "file X has only one historical author") — never alongside evaluative metrics.
-
----
 
 ## Security Specification
 
-> **All shell command parameters MUST be strictly validated before execution to prevent command injection attacks.**
-
 ### Dry-Run Mode (Recommended for First Use)
-
 Before executing any commands, the agent SHOULD offer a **dry-run mode** that:
 
 1. Collects and validates all parameters per the rules below
@@ -166,10 +120,7 @@ To trigger dry-run mode, the user can say:
 💬 "先列出要执行的命令，不要运行"
 ```
 
-> This allows the user to verify that every command strictly matches the whitelist below.
-
 ### Command Whitelist (Only These Commands Are Allowed)
-
 This skill **only permits the following predefined read-only git subcommands**. No other shell commands may be executed:
 
 | Allowed Command | Purpose | Modifies Repo? |
@@ -180,18 +131,13 @@ This skill **only permits the following predefined read-only git subcommands**. 
 | `git -C <path> log ...` | Get commit history details (read-only flags only) | ❌ Read-only |
 | `git -C <path> diff --stat ...` | Get change statistics | ❌ Read-only |
 
-> Any git invocation that is not represented by one of the rows above MUST be rejected, even if it appears read-only. Adding a new command to the whitelist is a deliberate change to the skill's safety contract and requires updating both this table and the dry-run verification checklist.
-
 **Strictly Prohibited Command Types:**
 - ❌ Any write operations: `git push`, `git commit`, `git merge`, `git rebase`, `git reset`, `git checkout`, `git branch -d`
 - ❌ Any non-git commands: `curl`, `wget`, `python`, `node`, `bash -c`, `sh`, `eval`, `rm`, `cp`, `mv`
 - ❌ Any file writes or redirections: `>`, `>>`, `tee` (pipe `|` is only allowed to connect read-only text-processing tools: `cut`, `sort`, `uniq`, `awk`, `grep`, `wc`, `sed`, `head`)
 - ❌ Any network operations: `git fetch`, `git pull`, `git clone`, `git remote`
 
-> **If the AI agent attempts to execute a command outside the whitelist, the user should immediately reject execution.**
-
 ### Input Validation Rules (Must Be Completed Before Any Git Command)
-
 1. **`repo_path` (Repository Path) Validation:**
    - Must be an absolute path (starting with `/`)
    - Must NOT contain any of these dangerous characters or substrings: `;`, `|`, `&`, `$`, `` ` ``, `(`, `)`, `>`, `<`, `\n`, `\r`, `$()`, `..`
@@ -214,7 +160,6 @@ This skill **only permits the following predefined read-only git subcommands**. 
    - If validation fails, use the default branch and warn the user
 
 ### Privacy Protection Rules
-
 - **Developer email addresses are NOT collected.** All git commands use only `%an` (author name) to identify developers, never `%ae` (author email). Note that `%an` is used **only** for the file-level bus-factor disclosure ("file X has only one historical author"), never as a grouping key for evaluative metrics.
 - **`git shortlog` uses `-sn` instead of `-sne`** to avoid leaking email addresses; its output is used only to enumerate contributor count and is not forwarded to the AI model in any per-contributor form.
 - **No `--author=` filtering.** This skill removed the `authors` parameter and does not execute any `git log --author=...` invocation. All commands operate at repository scope.
@@ -222,13 +167,6 @@ This skill **only permits the following predefined read-only git subcommands**. 
 - **Commit subjects (`%s`) and full file paths emitted by `--name-only` are local-only data.** Some whitelisted git commands touch this raw text — for example `git log --name-only` (which emits full paths) and pipelines that immediately consume `%s` in the same pipe via local tools such as `awk '{print length}'` (used for repository-wide message-length and conventional-commit statistics). The agent MUST collapse them into numeric aggregates locally and discard the raw text immediately; raw subjects and full paths MUST NOT enter any AI prompt or tool argument. The agent MUST NOT construct any command that emits `%s` together with per-commit structured fields (hash, numstat, file names, etc.) in a single output, to avoid raw subjects being captured alongside structured data. The opt-in exceptions in "Sensitive Data Filtering Rules" remain the only way to surface (already-redacted, truncated) commit subjects in the user-facing report.
 
 ### Sensitive Data Filtering Rules (Mandatory)
-
-> **Local-Only vs. Model-Bound data — definitions:**
->
-> - **Local-only data** is the raw output of whitelisted git commands, including commit subjects (`%s`) and file paths produced by `--name-only`. It is read into the agent's local execution environment **for the sole purpose of computing aggregate metrics**, and MUST be discarded immediately afterward.
-> - **Model-bound data** is the only category of data permitted in any prompt sent to the AI model. It consists exclusively of numeric counts, averages, ratios, percentages, file-extension histograms, hour/weekday histograms, and bucketed enumerations (e.g., `bug_fix_commits=12`).
->
-> Raw commit message text, full commit subjects, full file paths, branch names containing free-form text, and any unredacted strings derived from commit history are **strictly local-only**. The agent MUST NOT place such strings in any AI prompt, system message, tool argument, or other off-host context.
 
 Before sending **any** data to the AI model for analysis, the agent MUST apply the following filtering pipeline. Each step is mandatory and non-skippable:
 
@@ -262,14 +200,12 @@ Before sending **any** data to the AI model for analysis, the agent MUST apply t
    - Author display names are NOT forwarded to the AI model as grouping keys for evaluative metrics. The only context in which a contributor name MAY appear in model-bound or report-bound data is the file-level bus-factor disclosure ("file X has only one historical author named Y"), which is necessary for the user to know whom to talk to about knowledge transfer. Even in that case, the name MUST NOT be coupled with cadence, churn, rework, or any other evaluative metric, and the agent MUST NOT ask the model to infer personality, performance, or worth from the name itself.
 
 ### Repository Path Scope Rules
-
 - The agent MUST only access the specific repository path provided by the user.
 - The agent MUST NOT traverse parent directories (`..`) or access files outside the repository root.
 - The agent MUST NOT list or read arbitrary files from the filesystem — only the whitelisted `git` commands targeting the validated repository are permitted.
 - If the user provides a path to a subdirectory within a repository, the agent MUST resolve the repository root using the whitelisted command `git -C <path> rev-parse --show-toplevel`, inform the user of the resolved root, and obtain confirmation before proceeding.
 
 ### Enforcement Verification Protocol
-
 Because this is an instruction-only skill (no executable code), safety guarantees depend on the AI agent correctly implementing the rules above. **Users SHOULD verify enforcement before trusting the skill on sensitive repositories.**
 
 **Verification steps (run on a safe test repository first):**
@@ -305,32 +241,31 @@ Because this is an instruction-only skill (no executable code), safety guarantee
    - Patterns like `API_KEY=xxx` appear as `[REDACTED]`
    - Messages appear only in the final report, not in intermediate processing
 
-> **If any verification step fails, do NOT use the skill on sensitive repositories.** Report the failure to the skill maintainer.
-
 ## Use Cases
-
 - When users need an aggregate, repository-level view of commit cadence, churn, and rework signals to surface collaboration-process improvement areas
 - When users want to compare team-wide patterns (not individuals) such as commit-message conventionality, weekend/late-night ratios, and bus-factor risk
 - When users want to understand the visible-engagement distribution across the repository as a starting point for conversation, **not** as a verdict on individuals
 - When users need a structured, data-driven artifact to facilitate retrospective discussions about workflow
 
-### Out-of-Scope Use Cases (the agent MUST refuse)
-
+### 适用场景
 - Performance reviews, calibration, ranking, hiring, firing, layoffs, compensation, or any HR action
 - Producing rankings or judgments of individuals' worth, intelligence, or commitment
 - Surveillance of specific employees without their knowledge or consent
 - Analyzing repositories the user has not confirmed they have authority to inspect
 
+## 不适用场景
+
+以下场景Who Is Actor不适合处理：
+
+- 实时流数据处理
+- 小规模数据手动分析
+- 非结构化文本情感分析
+
+
 ## Core Principles
 
-> **Install nothing, run no scripts.** All data collection is done exclusively through native git commands (`git log`, `git shortlog`, `git diff --stat`, etc.). The AI is responsible for interpretation and evaluation.
-
-> **Security first.** All user inputs must pass the validation rules above before being incorporated into shell commands. Any validation failure must result in termination or graceful degradation — never skip validation.
-
 ## Workflow
-
 ### Step 1: Confirm Analysis Parameters
-
 Confirm the following with the user (use defaults if not specified):
 
 | Parameter | Description | Default |
@@ -339,26 +274,15 @@ Confirm the following with the user (use defaults if not specified):
 | **Date Range** | Start/end dates in ISO format | Full repository history |
 | **Branch** | Target branch for analysis | Current active branch |
 
-> **Per-contributor filtering is NOT a parameter.** If the user asks to "analyze just Alice" or to compare named individuals, the agent MUST decline that scoping and offer instead a repository-level aggregate analysis. This skill has no `authors` parameter and the command set has no `--author=...` filter.
-
-> **⚠️ Before executing Step 2, ALL parameters MUST be validated according to the "Security Specification" above. Parameters that fail validation MUST NOT be used in command construction.**
-
 ### Step 2: Data Collection (Pure Git Commands)
-
 Execute the following git commands in sequence to collect raw data. **All commands run against the target repository directory — no dependencies need to be installed.**
 
-> In the examples below, `<repo_path>`, `<author>`, etc. are placeholders for validated safe values from Step 1.
-
-> 🔐 **Local-only boundary reminder.** Every command in this section emits raw text (commit subjects, file paths, etc.) that is classified as **local-only** under the Sensitive Data Filtering Rules. The pipes shown below (`| awk '{ print length }'`, `| grep -oE '\.[^./]+$'`, `| wc -l`, etc.) are mandatory: their job is to collapse raw text into aggregate numeric output **before** anything is forwarded to the AI model. The agent MUST NOT capture the raw upstream text into any model-bound variable, prompt, or tool argument. If a step's natural output would still contain raw text (e.g., the rework-detection log below), the agent MUST hash, bucket, or otherwise anonymize it locally before any further processing.
-
 #### 2.1 Contributor Count Only (no per-contributor metrics)
-
 ```bash
 git -C <repo_path> shortlog -sn --all | wc -l
 ```
 
 #### 2.2 Repository-Wide Commit Cadence
-
 All commands below are repository-scoped and aggregate (no `--author=` filter). Append `--since`, `--until`, and `<branch>` if the user specified a date range or branch.
 
 ```bash
@@ -372,7 +296,6 @@ git -C <repo_path> log --pretty=format:"%ad" --date=short | sort | sed -n '1p;$p
 ```
 
 #### 2.3 Repository-Wide Churn & Size Aggregates
-
 ```bash
 git -C <repo_path> log --pretty=tformat: --numstat | awk '{ add += $1; subs += $2 } END { printf "added: %s, deleted: %s\n", add, subs }'
 
@@ -384,7 +307,6 @@ git -C <repo_path> log --merges --oneline | wc -l
 ```
 
 #### 2.4 Repository-Wide Commit-Message Aggregates
-
 ```bash
 git -C <repo_path> log --pretty=format:"%s" | awk '{ print length }'
 
@@ -398,29 +320,19 @@ git -C <repo_path> log --pretty=format:"%H" | wc -l
 ```
 
 #### 2.5 Repository-Wide Rework Signal (no contributor grouping)
-
 ```bash
 git -C <repo_path> log --pretty=format:"%ad" --date=short --name-only | head -500
 ```
 
-> Note: the rework-detection command intentionally drops `%s` (commit subject) and `%an` (author name) compared to a naive implementation, because subjects must remain local-only and the rework metric is repository-wide — it is a count of how often a file is touched within a sliding window, not a per-author signal.
-
 #### 2.6 File-Level Bus-Factor (the only place contributor names may appear)
-
 ```bash
 git -C <repo_path> log --pretty=format:"%an" --name-only | sort | uniq -c | sort -rn | head -30
 ```
 
 ### Step 3: Repository-Level Pattern Description (No Per-Contributor Output)
-
 Based on the collected aggregate metrics, the agent MUST describe the **repository-level workflow patterns** observed across the following **six aggregate dimensions**. Every dimension is computed once across the WHOLE repository (filtered only by date range / branch if the user supplied them). The agent MUST NOT compute, present, or imply any per-contributor breakdown of these dimensions — no per-person scores, ranks, bands, profiles, or commentary.
 
-> **Hard rule (binding on the agent):** Per-individual numeric scoring, ranking, comparative "who is better" framing, performance verdicts, character/competence judgments, per-contributor activity bands, and "improvement suggestions targeted at named individuals" are OUT OF SCOPE and MUST be refused. Suggestions, when they appear, MUST be framed as repository-level or workflow-level discussion starters (e.g., "the repository shows a high weekend-commit ratio — worth a team-process conversation"), never as personal action items for a named person. Contributor display names MUST NOT appear in any of the six dimensions below; the only place a contributor name MAY appear in the report is the file-level bus-factor section (see Step 4.3).
-
----
-
 #### 📝 Dimension 1: Repository-Wide Commit Habits
-
 **Aggregate signals to describe (repository-level only, no per-person grading):**
 - Total commit count and average commits per active day across the whole repository in the analyzed span
 - Average lines changed per commit (additions + deletions) across all commits
@@ -430,10 +342,7 @@ Based on the collected aggregate metrics, the agent MUST describe the **reposito
 
 Report these as observed repository patterns (e.g., "the repository shows a low average commit-message length"). Do NOT translate them into a 1–10 score, and do NOT split them by contributor.
 
----
-
 #### ⏰ Dimension 2: Repository-Wide Time-of-Day Distribution
-
 **Aggregate signals to describe:**
 - Hour-of-day commit histogram across the whole repository (peak hours)
 - Repository-wide weekend commit percentage
@@ -441,12 +350,7 @@ Report these as observed repository patterns (e.g., "the repository shows a low 
 - Longest consecutive day-streak with commits in the repository
 - Active days / total span days for the repository as a whole
 
-> Late-night or weekend commits are NOT inherently "bad." They may reflect daytime meetings, time-zone differences, deployment windows, on-call duty, or scheduling. Patterns are discussion starters about team workflow, not verdicts about individuals.
-
----
-
 #### 🚀 Dimension 3: Repository-Wide Churn & Rework Signals
-
 **Aggregate signals to describe:**
 - Repository-wide net code growth rate: (additions − deletions) / additions
 - Repository-wide code churn rate: deletions / additions
@@ -455,20 +359,14 @@ Report these as observed repository patterns (e.g., "the repository shows a low 
 
 A high churn or rework rate is a *workflow signal* — it may indicate evolving requirements, an ongoing refactor, or exploratory work. It is not evidence about any person's competence and MUST NOT be split per contributor.
 
----
-
 #### 🎨 Dimension 4: Repository-Wide Commit-Message Conventions
-
 **Aggregate signals to describe:**
 - Repository-wide file-extension distribution
 - Repository-wide Conventional Commits compliance rate
 - Whether commit messages reference issue/ticket IDs (presence ratio only — raw IDs remain local-only)
 - Whether modifications cluster on a few file extensions vs. are spread out
 
----
-
 #### 🔍 Dimension 5: Repository-Wide Quality-Related Signals
-
 **Aggregate signals to describe:**
 - Repository-wide bug-fix commit ratio (based on message keyword matching)
 - Repository-wide revert commit frequency
@@ -477,13 +375,7 @@ A high churn or rework rate is a *workflow signal* — it may indicate evolving 
 
 A high bug-fix ratio may simply mean the repository was in a stabilization phase, or that maintenance work dominated the analyzed window. Do NOT use this as a quality verdict about any contributor, and do NOT split it per contributor.
 
----
-
 #### 📊 Dimension 6: Repository-Wide Visible-Activity Index
-
-> **⚠️ Hard Usage Restriction — binding on the agent.** This index is a coarse macro-level signal of *visible Git activity for the repository as a whole*. It is computed ONCE per repository and is **not** decomposed per contributor. It is **NOT** a measure of engagement, dedication, productivity, or value, and the agent MUST refuse to characterize it as such. The agent MUST NOT use, present, or allow the user to use this index — alone or combined with other dimensions — as a basis for performance reviews, calibration, layoff or hiring decisions, compensation adjustments, ranking, or any other HR / personnel decision. If the user requests a per-contributor version of this index, the agent MUST decline and explain that this skill does not produce per-contributor activity scores.
-
-> Note: This index reflects only what Git history makes visible (commit metadata at the repository level). It is blind to design work, code review, mentoring, on-call duty, customer escalations, documentation, paired work attributed to a co-author, work pushed under a different identity, or any contribution that does not produce commits on the analyzed branch.
 
 **Calculation Method (composite of repository-wide signals, 0–100 scale, lower = higher visible Git activity for the repository overall; this is a workflow-pattern signal, not a performance signal):**
 
@@ -502,18 +394,10 @@ A high bug-fix ratio may simply mean the repository was in a stabilization phase
 - 61–80: The repository shows low visible Git activity — may indicate that significant work is happening off-branch, in code review, in design, in mentoring, in on-call, or in docs that Git on this branch cannot see
 - 81–100: The repository shows very low visible Git activity — many possible explanations (project paused, work on other branches/repos, work attributed under different identities, primarily non-code work); the agent MUST NOT translate this into any judgment about any individual contributor
 
-> **Binding restriction on the agent:** These bands describe the *repository*, not any person. The agent MUST NOT compute or present a per-contributor version of this index, MUST NOT translate the band into an evaluative label about any contributor (e.g., "slacking", "underperforming"), MUST NOT recommend HR-style conversations or interventions targeting a named person, and MUST NOT use the band as input to any ranking, calibration, or comparative judgment.
-
-> **Important:** This index is calculated solely from Git commit records and cannot reflect code reviews, architecture design, technical discussions, team mentoring, or other work that doesn't produce commits. A high-activity repository score does NOT equal "healthy team," and a low score does NOT equal "unhealthy team." Please make judgments only after understanding the full context.
-
 ### Step 4: Generate Report (Repository-Level, Non-Evaluative)
-
 The final report MUST be repository-scoped and non-evaluative. It MUST include a header with the limitation disclaimers (Git-only visibility, no non-code contributions, not an HR signal, not for personnel decisions). It MUST follow the structure below.
 
-> **Hard prohibitions (binding):** The agent MUST NOT include any of the following: per-contributor breakdown table, per-contributor metrics row, per-contributor activity score or band, contributor ranking, "best/worst performer" callouts, per-individual 1–10 scores, radar charts, composite/overall personal scores, sharp/memorable one-line judgments about a named person, individualized strengths/weaknesses verdicts, or improvement suggestions targeted at a named contributor. Any commentary MUST critique the workflow signals at the repository level, not any person.
-
 #### 4.1 Repository Activity Summary (single-row, repository-wide)
-
 A single-row summary table describing the repository as a whole:
 
 | Repository | Total Commits | Lines +/− | Avg Daily Commits | Active-Day % | Weekend % | Late-Night % | Bug-Fix % | Churn Rate | Visible-Activity Band |
@@ -523,7 +407,6 @@ A single-row summary table describing the repository as a whole:
 **No** per-contributor row, **no** "Overall Score," **no** composite grade column. The table MUST be accompanied by a note clarifying that it is descriptive of the repository (not of any individual), and that the visible-activity band is a property of the repository, not of any person.
 
 #### 4.2 Repository-Wide Workflow Observations
-
 - Aggregate observations across the whole repository (e.g., share of weekend commits across the analyzed span, conventional-commit compliance rate, file hotspots by extension, hour-of-day peak)
 - Multiple plausible workflow-level interpretations of any unusual signal (do not pick one verdict)
 - Suggested *team-process* discussion starters tied to repository-wide signals
@@ -531,20 +414,17 @@ A single-row summary table describing the repository as a whole:
 The agent MUST NOT produce a "team ranking", "top/bottom contributors", or any comparable comparative judgment of named individuals, and MUST NOT split any of the above signals per contributor.
 
 #### 4.3 File-Level Bus-Factor Disclosure
-
 - List of files (or file modules) whose entire history is attributed to a single author display name. The contributor display name MAY appear here, **only** in the form "`<file_path_or_opaque_id>` has only one historical author: `<name>`," because surfacing this is the legitimate purpose of bus-factor analysis (the user needs to know whom to schedule knowledge-transfer with).
 - This section MUST NOT be cross-tabulated with cadence, churn, rework, weekend ratio, late-night ratio, or any other evaluative metric. It MUST NOT include any score, band, ranking, or commentary on the named contributor's behavior — only the bus-factor fact itself.
 - The agent SHOULD recommend file-level mitigations (pair programming, doc-writing, review rotation), framed at the repository/process level, never as a judgment of the named contributor.
 
-## Commentary Style Requirements
-
+## 依赖说明
 - **Describe the repository, not any person.** Commentary MUST be about workflow signals visible in the commit history at the repository level (e.g., "the repository shows a 78% weekend-commit ratio in this span"), and MUST NOT be split per contributor or attached to any contributor's character, ability, or worth.
 - **Multiple readings, not verdicts.** When a signal is ambiguous, present several plausible workflow-level explanations rather than picking one. Avoid "sharp", "memorable", or labeling-style sentences — about anyone.
 - **No personal scoring, ranking, or per-contributor breakdown.** Do not produce 1–10 personal scores, composite grades, "best/worst" callouts, comparative one-liners, or any per-contributor row of the metrics. Per-contributor analysis is out of scope for this skill.
 - **Data-bounded.** Every observation MUST be backed by aggregate, repository-level data already in the report. Do NOT extrapolate from incomplete Git visibility to personal traits.
 
 ## Important Notes
-
 - All data collection uses only native `git` commands — **no pip packages, no Python/Node scripts installed or executed**
 - **Required system binaries:** `git`, `cut`, `sort`, `uniq`, `awk`, `grep`, `sed`, `wc`, `head` — these must be available on the host (pre-installed on most Unix-like systems)
 - **All user inputs MUST be validated per the "Security Specification" rules before execution** to prevent command injection attacks
@@ -559,7 +439,6 @@ The agent MUST NOT produce a "team ranking", "top/bottom contributors", or any c
 - The Repository-Wide Visible-Activity Index is based solely on Git commit data and **does NOT reflect non-code contributions** (design, reviews, mentoring, etc.) — it MUST NOT be used for performance evaluation, ranking, or HR decisions, and MUST NOT be decomposed per contributor
 
 ## Ethical Use Policy (binding on the agent)
-
 Reports generated by this skill MUST adhere to the following principles. The agent MUST refuse requests that violate them:
 
 1. **Workflow reference, NOT a decision-making basis.** Reports describe repository-level workflow patterns. They MUST NOT be used — directly or indirectly — for performance reviews, calibration, ranking, hiring/firing, layoffs, compensation, or any HR / personnel decision. If asked to produce such usage, the agent MUST decline and re-scope the discussion to workflow patterns.
@@ -569,7 +448,6 @@ Reports generated by this skill MUST adhere to the following principles. The age
 5. **Refuse weaponization.** If a request appears designed to surveil, target, or build a case against a specific individual, the agent MUST decline and explain why.
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
@@ -585,3 +463,35 @@ Reports generated by this skill MUST adhere to the following principles. The age
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+- Git repository actor identification skill
+- 触发关键词: who, identification, repository, actor, skill
+
+## 使用流程
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+### Q1: 如何开始使用Who Is Actor？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Who Is Actor有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

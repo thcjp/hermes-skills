@@ -4,7 +4,7 @@ name: drawing-insight-pro
 version: "1.0.0"
 displayName: 图纸解析(专业版)
 summary: 建筑施工图纸深度解析专业版，支持PDF/DWG批量处理、OCR预处理、跨图纸索引、中文注释分类与自定义模板。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   图纸解析（专业版）面向工程团队与造价咨询机构，在免费版基础上解锁全部高级能力：无上限批量处理、DWG原生解析、扫描件OCR预处理、跨图纸索引生成、中文注释智能分类、自定义正则模板、版本差异分析。覆盖从单图纸解析到项目级图纸资产管理的完整工作流。

@@ -4,12 +4,10 @@ name: code-analysis-toolkit-pro
 version: "1.0.0"
 displayName: 代码分析工具包专业版
 summary: 企业级Git历史分析,支持团队复盘、同意管理、趋势追踪与多格式报告
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  面向团队与企业的高级 Git 历史分析工具,在免费版基础上扩展团队复盘、同意管理、趋势追踪等能力。
-
-  核心能力:
+  面向团队与企业的高级 Git 历史分析工具,在免费版基础上扩展团队复盘、同意管理、趋势追踪等能力。核心能力:
   - 团队复盘分析(需全员同意)
   - 同意管理与审计追踪
   - 多仓库批量扫描与聚合报告
@@ -27,7 +25,7 @@ description: |-
   - 提供趋势追踪与基线对比
   - 优先技术支持与更新通道
 
-  触发关键词: git, history, team, retro, consent, batch, trend, baseline, 团队, 复盘, 同意, 趋势, 基线, 多仓库
+  触发关键词: git, hi...
 tags:
 - 代码分析
 - Git历史
@@ -35,22 +33,17 @@ tags:
 - 团队复盘
 - 趋势追踪
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 代码分析工具包专业版
-
 ## 概述
-
 代码分析工具包专业版为企业团队提供高级 Git 历史分析能力。在免费版个人自查基础上,扩展了团队复盘、同意管理、多仓库扫描、趋势追踪等功能,满足企业级代码质量治理的需求。
 
 专业版完全兼容免费版的报告格式与分析维度,已有工作流可无缝升级。
 
 ## 核心能力
-
 ### 1. 团队复盘分析(需全员同意)
-
 支持全员同意的团队复盘,输出匿名化/聚合结果:
 
 ```bash
@@ -75,7 +68,6 @@ python -m src.main --i-have-consent \
 | 审计追踪 | 记录同意时间与范围 |
 
 ### 2. 同意管理
-
 ```json
 {
   "consent_management": {
@@ -99,7 +91,6 @@ python -m src.main --i-have-consent \
 | 撤回状态 | 是否已撤回同意 |
 
 ### 3. 多仓库批量扫描
-
 ```bash
 # 批量扫描多个仓库
 python -m src.main --i-have-consent \
@@ -111,7 +102,6 @@ python -m src.main --i-have-consent \
 ```
 
 ### 4. 历史趋势追踪
-
 ```bash
 # 对比历史基线
 python -m src.main --i-have-consent \
@@ -130,7 +120,6 @@ python -m src.main --i-have-consent \
 | 提交规范 | 规范符合度变化 | 规范采纳趋势 |
 
 ### 5. 匿名化输出
-
 ```bash
 # 匿名化团队报告
 python -m src.main --i-have-consent \
@@ -152,9 +141,7 @@ python -m src.main --i-have-consent \
 | 文件路径 | 保留(技术分析需要) |
 
 ## 使用场景
-
 ### 场景一: 团队迭代复盘
-
 迭代结束后,团队全员同意做复盘分析。
 
 ```bash
@@ -205,7 +192,6 @@ python -m src.main --i-have-consent \
 ```
 
 ### 场景二: 多仓库代码质量审计
-
 对企业多个仓库做批量质量审计。
 
 ```bash
@@ -224,7 +210,6 @@ python -m src.main --i-have-consent \
 ```
 
 ### 场景三: 代码质量趋势追踪
-
 建立质量基线,定期追踪改进趋势。
 
 ```bash
@@ -262,10 +247,22 @@ python -m src.main --i-have-consent \
 建议: 继续保持提交规范,进一步提升测试覆盖
 ```
 
+## 不适用场景
+
+以下场景代码分析工具包专业版不适合处理：
+
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 运维部署管理
+
+
+## 触发条件
+
+需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
-
 ### 第一步: 初始化配置
-
 ```bash
 mkdir -p .code-analysis/{baselines,reports,consent}
 
@@ -295,7 +292,6 @@ EOF
 ```
 
 ### 第二步: 记录团队同意
-
 ```bash
 # 记录同意(团队复盘前)
 请记录以下成员的分析同意:
@@ -306,7 +302,6 @@ EOF
 ```
 
 ### 第三步: 执行团队复盘
-
 ```bash
 # 团队复盘分析
 python -m src.main --i-have-consent \
@@ -319,10 +314,8 @@ python -m src.main --i-have-consent \
   -f markdown -o team-retro.md
 ```
 
-## 配置示例
-
+## 示例
 ### 企业级配置
-
 ```json
 {
   "edition": "pro",
@@ -364,7 +357,6 @@ python -m src.main --i-have-consent \
 ```
 
 ### 同意管理配置
-
 ```json
 {
   "consent_log": {
@@ -383,9 +375,7 @@ python -m src.main --i-have-consent \
 ```
 
 ## 最佳实践
-
 ### 1. 团队复盘流程
-
 ```text
 步骤1: 征求全员同意(书面记录)
 步骤2: 记录同意到 consent-log
@@ -397,7 +387,6 @@ python -m src.main --i-have-consent \
 ```
 
 ### 2. 同意管理原则
-
 | 原则 | 说明 |
 |:-----|:-----|
 | 明确同意 | 每个被分析者必须明确同意 |
@@ -407,7 +396,6 @@ python -m src.main --i-have-consent \
 | 范围限定 | 同意仅限指定范围 |
 
 ### 3. 免费版与专业版能力对比
-
 | 能力 | 免费版 | 专业版 |
 |:-----|:-------|:-------|
 | 分析范围 | 自我分析 | 团队复盘(需同意) |
@@ -420,7 +408,6 @@ python -m src.main --i-have-consent \
 | 优先支持 | 社区 | 专属通道 |
 
 ### 4. 隐私保护措施
-
 ```text
 数据安全:
 - 工具完全在本地运行
@@ -442,42 +429,32 @@ python -m src.main --i-have-consent \
 ```
 
 ## 常见问题
-
 ### Q1: 专业版是否兼容免费版的报告格式?
-
 完全兼容。专业版使用相同的分析维度与报告格式,免费版的报告可直接在专业版中对比。
 
 ### Q2: 团队复盘需要每个人的同意吗?
-
 是的。每个被分析的 Git 作者都必须明确同意。缺少任何一人的同意,该作者的数据不会被分析。
 
 ### Q3: 同意记录如何管理?
-
 同意记录存储在 `.code-analysis/consent/consent-log.json` 中,包含同意时间、范围、有效期等。支持随时撤回。
 
 ### Q4: 匿名化报告还能用于技术分析吗?
-
 可以。匿名化只替换作者名和邮箱,保留提交哈希和文件路径,技术分析不受影响。
 
 ### Q5: 趋势对比的基线如何建立?
-
 在首次分析时使用 `--save-baseline` 参数保存基线,之后可使用 `--compare-baseline` 与基线对比。
 
 ### Q6: 如何获得优先技术支持?
-
 专业版用户可通过专属通道提交问题,通常 1 个工作日内响应。
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent 平台**: 支持读取 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
 - **操作系统**: Windows / macOS / Linux
 - **Python**: 3.8 或更高版本
 - **Git**: 已安装且待分析仓库存在
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
@@ -492,12 +469,22 @@ python -m src.main --i-have-consent \
 | concurrent-futures | Python 标准库 | 批量扫描 | Python 自带 |
 
 ### API Key 配置
-
 - 本工具完全在本地运行,无需外部 API Key
 - 分析过程不传输数据到外部服务器
 
 ### 可用性分类
-
 - **分类**: MD+EXEC+SCRIPT+AUDIT(Markdown 指令 + 命令行执行 + Python 分析脚本 + 审计日志)
 - **说明**: 通过自然语言指令驱动 Agent 执行 Git 历史分析,支持团队复盘与趋势追踪
 - **离线可用**: 是,完全在本地运行,不传输数据
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

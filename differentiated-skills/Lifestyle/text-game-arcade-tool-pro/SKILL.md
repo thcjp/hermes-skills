@@ -4,7 +4,7 @@ name: text-game-arcade-tool-pro
 version: "1.0.0"
 displayName: 文字游戏机专业版
 summary: 企业级文字游戏平台,支持AI剧情、多人协作、图形界面与商业发布
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   面向游戏工作室、内容平台与教育机构的企业级文字游戏平台。
@@ -20,20 +20,16 @@ tags:
 - 商业发布
 - 多人协作
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 文字游戏机 (专业版)
-
 ## 概述
-
 专业版面向游戏工作室、内容平台与教育机构,在免费版文字游戏生成之上,扩展 AI 剧情生成、多人协作、图形界面、游戏编辑器、商业发布、多语言等企业级能力。支持构建接近商业品质的文字游戏,适合 IP 衍生、教育互动、内容平台运营等专业场景。
 
 专业版与免费版游戏格式完全兼容,个人创作者升级后现有游戏无缝迁移。
 
 ## 核心能力
-
 | 能力模块 | 描述 | 免费版 | 专业版 |
 |:--------|:-----|:------:|:------:|
 | 多类型游戏 | 冒险、悬疑等 | 支持 | 支持 |
@@ -50,9 +46,7 @@ tools:
 | 优先支持 | 专属支持 | 不支持 | 支持 |
 
 ## 使用场景
-
 ### 场景一: AI 动态剧情
-
 AI 实时生成剧情,玩家自由探索。
 
 ```python
@@ -115,7 +109,6 @@ class AIDynamicStory:
         )
         return resp.json()
 
-
 story = AIDynamicStory(ADMIN_KEY)
 # 玩家自由输入,AI 实时响应
 scene = story.generate_dynamic_scene(
@@ -125,7 +118,6 @@ scene = story.generate_dynamic_scene(
 ```
 
 ### 场景二: 多人协作创作
-
 多人共同创作一个大型文字游戏。
 
 ```python
@@ -172,7 +164,6 @@ class CollaborativeGameProject:
 ```
 
 ### 场景三: 商业发布
-
 将文字游戏发布到商业平台。
 
 ```python
@@ -201,14 +192,25 @@ def publish_game(game_id, platforms, metadata):
     return resp.json()
 ```
 
+## 不适用场景
+
+以下场景文字游戏机专业版不适合处理：
+
+- 专业医学法律翻译认证
+- 同声传译
+- 文学创作翻译
+
+
+## 触发条件
+
+需要文本翻译、多语言转换、本地化处理时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
-
 ### 步骤 1: 申请专业版账户
-
 联系销售开通专业版,获取管理员凭证与租户 ID。
 
 ### 步骤 2: 配置凭证
-
 ```bash
 export TEXT_GAME_ADMIN_KEY="sk_pro_admin_xxx"
 export TEXT_GAME_ORG_ID="org_your_id"
@@ -216,7 +218,6 @@ export TEXT_GAME_EDITION="pro"
 ```
 
 ### 步骤 3: 创建游戏项目
-
 ```bash
 curl -X POST -H "X-API-Key: $TEXT_GAME_ADMIN_KEY" \
   -H "Content-Type: application/json" \
@@ -225,7 +226,6 @@ curl -X POST -H "X-API-Key: $TEXT_GAME_ADMIN_KEY" \
 ```
 
 ### 步骤 4: 启用 AI 剧情
-
 ```bash
 curl -X POST -H "X-API-Key: $TEXT_GAME_ADMIN_KEY" \
   -H "Content-Type: application/json" \
@@ -233,10 +233,8 @@ curl -X POST -H "X-API-Key: $TEXT_GAME_ADMIN_KEY" \
   "https://api.text-game-pro.local/v1/ai/enable"
 ```
 
-## 配置示例
-
+## 示例
 ### 企业级配置
-
 ```yaml
 # /etc/text-game/pro.yaml
 edition: pro
@@ -290,7 +288,6 @@ analytics:
 ```
 
 ### AI NPC 系统
-
 ```python
 def create_ai_npc(npc_config):
     """创建 AI 驱动的 NPC"""
@@ -325,7 +322,6 @@ def create_ai_npc(npc_config):
 ```
 
 ### 玩家行为分析
-
 ```python
 def analyze_player_behavior(game_id, period):
     """分析玩家行为"""
@@ -353,9 +349,7 @@ def analyze_player_behavior(game_id, period):
 ```
 
 ## 最佳实践
-
 ### 1. AI 剧情一致性
-
 ```python
 def maintain_story_consistency(story_context, new_content):
     """保持剧情一致性"""
@@ -381,7 +375,6 @@ def maintain_story_consistency(story_context, new_content):
 ```
 
 ### 2. 协作工作流
-
 ```python
 def create_writing_workflow(project_id):
     """创作工作流"""
@@ -400,7 +393,6 @@ def create_writing_workflow(project_id):
 ```
 
 ### 3. 多语言本地化
-
 ```python
 def localize_game(game_id, target_languages):
     """游戏多语言本地化"""
@@ -421,38 +413,29 @@ def localize_game(game_id, target_languages):
 ```
 
 ## 常见问题
-
 ### Q1: 专业版与免费版游戏格式兼容吗?
-
 完全兼容。专业版在免费版基础上扩展,现有游戏可直接迁移。
 
 ### Q2: AI 剧情质量如何?
-
 AI 实时生成剧情接近人工创作水准,但建议关键节点人工把关。
 
 ### Q3: 商业发布的版权归属?
-
 专业版生成的游戏版权归用户所有,可用于商业发布。
 
 ### Q4: 多人协作支持多少人?
-
 支持 20 人同时协作,实时同步编辑。
 
 ### Q5: 发布到哪些平台?
-
 Steam、itch.io、App Store、Google Play、Web 等主流平台。
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent 平台**: 支持 SKILL.md 规范的任意 AI Agent (Claude Code、Cursor、Codex、Gemini CLI 等)
 - **操作系统**: Windows / macOS / Linux (生产环境推荐 Linux)
 - **网络**: 需访问专业版服务
 - **Python**: 3.9+ (用于脚本化操作)
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Text Game Pro API | 在线 API | 必需 | 联系销售开通专业版 |
@@ -462,7 +445,6 @@ Steam、itch.io、App Store、Google Play、Web 等主流平台。
 | 数据库 | 数据存储 | 可选 | 兼容主流关系型数据库 (使用 `数据库` 上下文) |
 
 ### API Key 配置
-
 ```bash
 # 专业版凭证
 export TEXT_GAME_ADMIN_KEY="sk_pro_admin_xxx"
@@ -480,8 +462,19 @@ export ANTHROPIC_API_KEY="..."
 ```
 
 ### 可用性分类
-
 - **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 面向游戏工作室与内容平台,通过自然语言指令驱动 Agent 调用 Pro API,完成 AI 剧情、协作创作、商业发布
 - **专业版特性**: AI 剧情、多人协作、图形界面、游戏编辑器、商业发布、多语言、数据分析
 - **兼容性**: 与免费版游戏格式完全兼容,支持平滑升级
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

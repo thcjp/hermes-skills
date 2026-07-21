@@ -2,9 +2,9 @@
 slug: soul-decision-engine-pro
 name: soul-decision-engine-pro
 version: "1.0.0"
-displayName: 灵魂决策引擎(专业版)
+displayName: Soul Decision Engine
 summary: AI Agent全功能决策引擎，决策质量评分+偏见深度检测+决策树可视化+跨设备云同步。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   灵魂决策引擎专业版是在免费版基础上的全功能升级，为AI Agent提供从决策分析到决策优化的完整闭环。专业版解锁决策质量评分、偏见深度检测、决策树可视化、多领域权重学习、跨设备云同步、决策回溯六大高级功能，实现决策能力的量化与持续优化。

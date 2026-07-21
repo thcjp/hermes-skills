@@ -4,7 +4,7 @@ name: obsidian-toolkit-pro
 version: "1.0.0"
 displayName: Obsidian工具箱(专业版)
 summary: Obsidian综合工具箱专业版，含批量操作、高级模板、插件深度集成、Canvas管理与多vault高级管理。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   Obsidian工具箱专业版是在免费版基础上的全功能升级，为AI Agent提供企业级Obsidian综合管理能力。专业版解锁批量笔记操作、高级模板系统（Templater脚本）、插件深度集成（Dataview/Obsidian Git/Tasks）、Canvas画布管理、多vault高级管理等高级特性，实现复杂知识库的高效管理。

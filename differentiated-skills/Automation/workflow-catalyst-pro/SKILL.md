@@ -2,9 +2,9 @@
 slug: workflow-catalyst-pro
 name: workflow-catalyst-pro
 version: "1.0.0"
-displayName: 工作流催化器(专业版)
+displayName: Workflow Catalyst
 summary: 六步完整自动化框架，含模式库、ROI计算、6个进阶模板、多角色场景与故障排查。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   工作流催化器专业版是在免费版基础上的全功能升级，为AI Agent提供完整的六步自动化框架。从识别重复任务到测试优化，全流程覆盖自动化工作流的构建与维护。专业版解锁模式库、ROI计算工具、6个进阶模板、多角色场景指南和完整故障排查表。

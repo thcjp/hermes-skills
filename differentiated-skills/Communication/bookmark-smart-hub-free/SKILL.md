@@ -4,7 +4,7 @@ name: bookmark-smart-hub-free
 version: "1.0.0"
 displayName: 书签智能中心免费版
 summary: 手动抓取社交书签并提取链接内容，基于关键词进行基础分析，适合个人单次处理。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人用户的社交书签内容提取与基础分析工具。
@@ -19,7 +19,7 @@ tags:
 - 个人效率
 - 阅读清单
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -149,7 +149,7 @@ ls ~/knowledge/bookmarks/
 # bookmark-001.json  bookmark-002.json  ...
 ```
 
-## 配置示例
+## 示例
 
 免费版配置文件位于工具目录下的 `config.json`。
 
@@ -252,7 +252,7 @@ npm install -g bird
 - **操作系统**：Windows / macOS / Linux
 - **运行时**：Node.js v16+
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 | :------- | :----- | :--------- | :--------- |
@@ -271,3 +271,15 @@ npm install -g bird
 
 - **分类**：MD+EXEC（纯 Markdown 指令，部分功能需要 exec 命令行执行能力）
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务。免费版为手动处理与关键词分析功能子集，书签抓取接口与存储格式与专业版完全兼容。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 本地运行，不支持多设备同步

@@ -4,7 +4,7 @@ name: calendar-reminder-tool-pro
 version: "1.0.0"
 displayName: 日历提醒工具专业版
 summary: 企业级多日历智能提醒平台，支持多日历聚合、智能调度、团队同步、递进提醒与日程分析。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   面向团队与企业的多日历智能提醒与调度平台。
@@ -20,10 +20,9 @@ tags:
 - 日程分析
 - 企业级
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 日历提醒工具 专业版
 
 ## 概述
@@ -287,6 +286,20 @@ with open("weekly_calendar_report.csv", "w", encoding="utf-8-sig", newline="") a
         ])
 ```
 
+## 不适用场景
+
+以下场景日历提醒工具专业版不适合处理：
+
+- 实时流数据处理
+- 小规模数据手动分析
+- 非结构化文本情感分析
+
+
+## 触发条件
+
+需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 1. 安装专业版依赖。
@@ -320,7 +333,7 @@ skill-platform cron add \
 python3 calendar_reminder_pro.py
 ```
 
-## 配置示例
+## 示例
 
 专业版配置支持多日历、递进提醒与团队同步。
 
@@ -423,7 +436,7 @@ python3 calendar_reminder_pro.py
 - **运行时**：Python 3.9+（需要 `zoneinfo` 模块）
 - **定时调度**：skill-platform cron 或系统 cron
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 | :------- | :----- | :--------- | :--------- |
@@ -456,3 +469,17 @@ export TG_BOT_TOKEN="your_telegram_bot_token"
 
 - **分类**：MD+EXEC（纯 Markdown 指令，部分功能需要 exec 命令行执行能力）
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务。专业版在免费版基础上新增多日历聚合、递进提醒与团队同步，扫描脚本与提醒格式向后兼容免费版。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

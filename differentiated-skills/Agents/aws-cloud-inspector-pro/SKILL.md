@@ -4,7 +4,7 @@ name: aws-cloud-inspector-pro
 version: "1.0.0"
 displayName: AWS云巡检专业版
 summary: 完整的AWS云巡检能力，含跨服务安全审计、Cost Explorer成本分析与CloudTrail变更管理，面向团队与企业云治理场景。
-license: MIT
+license: Proprietary
 description: |-
   AWS云巡检专业版（aws-cloud-inspector-pro）面向团队与企业云治理场景，在免费版只读巡检能力之上，解锁跨服务安全审计、Cost Explorer成本分析与CloudTrail变更管理三大高级能力。它让企业能够在统一会话中完成安全态势扫描、成本分摊分析与资源变更追踪回滚。
 

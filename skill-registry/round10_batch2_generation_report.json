@@ -1,0 +1,2419 @@
+{
+  "batch_date": "2026-07-20T23:04:56.159104",
+  "total_candidates": 300,
+  "passed": 296,
+  "failed": 4,
+  "pass_rate": 98.7,
+  "total_duration_sec": 29.1,
+  "avg_duration_sec": 0.1,
+  "results": [
+    {
+      "slug": "automation-recipe-book",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "automation-recipe-pack",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "cron-scheduler-setup",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "cron-setup-guide",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "news-daily-digest",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "pcb-design-assistant-paid",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "productivity-bot",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "queue-task",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "reminder",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "reminder-engine",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "schedule",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "schedule-manager",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "smart-reminder",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "smart-reminder-system",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "solo-build",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "solo-dev-companion",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "task-bot-orchestrator",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "task-queue-manager",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "translate-en-zh",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "translate-hub",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "workflow",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "workflow-decomposer",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "workflow-orchestrator",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "workflow-splitter",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "ws-agent-browser",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "x-news-daily",
+      "category": "Automation",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "agent-telegram",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "alephnet-node",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "alephnet-node-manager",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "alpha-feed-creator",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "beware-piper-tts",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "bookmark-intelligence",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "bookmark-smart-hub",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "calendar-reminder",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "calendar-reminder-paid",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "card-image-builder",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "creator-alpha-feed",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "discord",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "discord-chat",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "discord-chat-manager",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "discord-communities",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "discord-community-hub",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "discord-toolkit",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "discord-voice",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "discord-voice-paid",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "dns",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "dns-config",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "email-163",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "email-163-com",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "email-daily-summary",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "email-digest",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "email-gmail-outlook",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "email-skill",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "email-toolkit",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "feishu-card",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "feishu-card-builder",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "feishu-file-sender",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "feishu-send-file",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "gog",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "google-workspace-cli",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "google-workspace-mcp",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "google-workspace-toolkit",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "news-sentiment",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "news-sentiment-scan",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "photo-caption",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "photo-captions",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "piper-tts-engine",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "pro-comm-toolkit",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "professional-communication",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "rss-ai-reader",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "rss-reader-ai",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "slack",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "slack-hub",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "slack-hub-skill",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "slack-toolkit",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "slack-workspace",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "slack-workspace-manager",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "social",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "social-media-scheduler",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "social-media-toolkit",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "telegram-agent-comm",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "telegram-chat",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "telegram-chat-manager",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "telegram-messaging",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "telegram-msg-toolkit",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "test-wa",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "tg-body-scan",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "timeline-digest",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "timer",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "timer-alert",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "whatsapp-messaging",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "whatsapp-msg",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "whatsapp-msg-manager",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "whatsapp-style",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "whatsapp-style-guide",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "whatsapp-styler",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "whatsapp-styling-guide",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "x-timeline-digest",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "z-card-image",
+      "category": "Communication",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "ace-music",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "ace-music-paid",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "agentvibes-openclaw-skill",
+      "category": "Creative",
+      "l1_passed": false,
+      "l1_score": "9/10",
+      "template": "reviewer_template",
+      "errors": [
+        "L1检查未通过: 9/10"
+      ]
+    },
+    {
+      "slug": "agentvibes-skill",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "ai-image-gen",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "ai-image-gen-paid",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "ai-kujiale-design",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "ai-podcast",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "ai-podcast-paid",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "alibaba-quark-scan",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "analyze-video-by-qwen",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "anthropics-frontend-design",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "anygen-diagram",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "anygen-diagram-generator",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "audio-stream-upload",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "audio-upload-aioz-stream",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "aws-wechat-article-writing",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "azure-ai-transcription-py",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "azure-ai-voicelive-py",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "azure-transcription",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "azure-voicelive",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "bilibili-all-in-one",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "bilibili-helper",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "bilibili-helper-paid",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "bilibili-toolkit",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "chief-creative-officer",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "chromecast-control",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "chromecast-control-paid",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "cloud-architect",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "cloud-architect-design",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "comfyui-painter",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "comfyui-painter-paid",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "creative-officer",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "design",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "design-toolkit",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "diagram-gen",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "diagram-generator",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "dlazy-audio",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "dlazy-audio-generate",
+      "category": "Creative",
+      "l1_passed": false,
+      "l1_score": "9/10",
+      "template": "generator_template",
+      "errors": [
+        "L1检查未通过: 9/10"
+      ]
+    },
+    {
+      "slug": "dlazy-gen",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "dlazy-generate",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "doubao-image-gen",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "elite-frontend",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "elite-frontend-design",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "figma-2",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "figma-design-paid",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "frontend-design-3",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "frontend-design-anthropic",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "frontend-design-v3",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "game-asset-gen",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "game-asset-generation-cellcog",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "grok-image",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "grok-image-generate",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "heygen-tts",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "html-coder",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "html-coder-paid",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "html-designer",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "html-designer-paid",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "join-meeting",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "kujiale-design",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "lh-video-gen",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "lh-video-gen-paid",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "logo",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "logo-brand-identity",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "logo-brand-identity-cellcog",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "logo-design",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "logo-design-guide",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "logo-design-guide-paid",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "markdown-converter",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "markdown-converter-paid",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "meeting-join",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "minimalist-design",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "minimalist-design-system",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "music-gen",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "music-gen-cellcog",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "music-generation",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "music-generation-cellcog",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "openai-ai",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "openai-ai-paid",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "openai-whisper",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "openai-whisper-1-0-0",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "openai-whisper-paid",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "openai-whisper-v1",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "podcast",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "podcast-chaptering",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "podcast-chaptering-highlights",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "podcast-downloader",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "podcast-downloader-paid",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "podcast-toolkit",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "quark-scan",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "qwen-video-analyzer",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "tailwindcss",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "tailwindcss-toolkit",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "text-to-speech-heygen",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "tts-whatsapp",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "tts-whatsapp-paid",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "ui",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "ui-design-toolkit",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "ui-ux",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "ui-ux-design",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "ui-ux-design-paid",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "ui-ux-dev",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "ui-ux-dev-paid",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "ui-ux-toolkit",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "ux",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "ux-design",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "video",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "video-editing",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "video-editing-paid",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "video-frames",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "video-frames-paid",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "video-stream-upload",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "video-toolkit",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "video-translator",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "video-translator-paid",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "video-upload-aioz-stream",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "wechat-article-writer",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "whatsapp-image",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "whatsapp-image-send",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "youtube-watcher",
+      "category": "Creative",
+      "l1_passed": false,
+      "l1_score": "9/10",
+      "template": "generator_template",
+      "errors": [
+        "L1检查未通过: 9/10"
+      ]
+    },
+    {
+      "slug": "youtube-watcher-paid",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "zhuchenggong-doubao-image-gen",
+      "category": "Creative",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "actor-identifier",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "analyze",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "azure-cli",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "azure-cli-toolkit",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "baoyu-format-markdown",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "cheat-code",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "cheat-code-paid",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "claude-code-delegate",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "claude-code-runner",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "claude-tmux",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "code",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "code-1-0-4",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "code-analysis-skills",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "code-analysis-toolkit",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "code-analyze",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "code-delegate",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "code-dev-toolkit",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "code-dev-v1",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "code-quality",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "code-quality-paid",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "code-runner",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "dns-networking",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "dns-networking-paid",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "docker-essentials",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "docker-essentials-1-0-0",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "docker-essentials-paid",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "docker-essentials-v1",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "encryption",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "encryption-paid",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "explain-code",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "explain-code-paid",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "git",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "git-cli",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "git-cli-paid",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "git-essentials",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "git-essentials-paid",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "git-helper",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "git-helper-paid",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "git-toolkit",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "git-workflow-cn",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "git-workflow-cn-paid",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "git-workflows",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "git-workflows-paid",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "github-dev-standard",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "github-development-standard",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "go",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "golang-toolkit",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "hugo-blog",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "hugo-blog-publisher",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "iris-code-formatter",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "iris-formatter",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "java-code-reviewer",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "java-dev-manual",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "java-development-manual",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "java-reviewer",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "javascript",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "javascript-sdk",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "javascript-sdk-paid",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "javascript-skills",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "javascript-skills-paid",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "javascript-toolkit",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "knowledge-graph-paid",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "knowledge-graph-skill",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "markdown-format",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "merge-check",
+      "category": "Development",
+      "l1_passed": false,
+      "l1_score": "9/10",
+      "template": "reviewer_template",
+      "errors": [
+        "L1检查未通过: 9/10"
+      ]
+    },
+    {
+      "slug": "merge-check-paid",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "mermaid-diagram",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "mermaid-diagram-paid",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "model-routing",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "model-switching",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "node-connect",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "node-connect-paid",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "python",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "python-toolkit",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "resume-assistant",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "resume-assistant-paid",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "smart-model-routing-for-zai",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "smart-model-switching",
+      "category": "Development",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    }
+  ]
+}

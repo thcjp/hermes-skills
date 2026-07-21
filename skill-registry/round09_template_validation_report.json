@@ -1,0 +1,75 @@
+{
+  "report_date": "2026-07-20T22:44:26.147751",
+  "templates_validated": 2,
+  "results": [
+    {
+      "slug": "aws-toolkit",
+      "template": "tool_wrapper_template",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "l2_total": 44.0,
+      "l2_grade": "B",
+      "l2_pass": true,
+      "l2_scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "doc-parse",
+      "template": "inversion_template",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "l2_total": 47,
+      "l2_grade": "A",
+      "l2_pass": true,
+      "l2_scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    }
+  ],
+  "all_templates_coverage": [
+    {
+      "template": "generator_template",
+      "slug": "daily-report-writer",
+      "l2_total": 47,
+      "l2_grade": "A",
+      "round": "Round 06"
+    },
+    {
+      "template": "reviewer_template",
+      "slug": "code-quality",
+      "l2_total": 38,
+      "l2_grade": "B",
+      "round": "Round 06"
+    },
+    {
+      "template": "pipeline_template",
+      "slug": "auto-workflow",
+      "l2_total": 37,
+      "l2_grade": "B",
+      "round": "Round 06"
+    },
+    {
+      "template": "tool_wrapper_template",
+      "slug": "aws-toolkit",
+      "l2_total": 44.0,
+      "l2_grade": "B",
+      "round": "Round 09"
+    },
+    {
+      "template": "inversion_template",
+      "slug": "doc-parse",
+      "l2_total": 47,
+      "l2_grade": "A",
+      "round": "Round 09"
+    }
+  ]
+}

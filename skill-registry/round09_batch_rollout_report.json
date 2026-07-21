@@ -1,0 +1,140 @@
+{
+  "batch_date": "2026-07-20T22:41:57.757300",
+  "total_candidates": 16,
+  "passed": 15,
+  "failed": 1,
+  "total_duration_sec": 1.6,
+  "avg_duration_sec": 0.1,
+  "results": [
+    {
+      "slug": "alephnet-node-manager",
+      "template": "reviewer_template",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "output_path": "d:\\skills\\packaged-skills\\skillhub\\alephnet-node-manager\\SKILL.md",
+      "errors": []
+    },
+    {
+      "slug": "alpha-feed-creator",
+      "template": "reviewer_template",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "output_path": "d:\\skills\\packaged-skills\\skillhub\\alpha-feed-creator\\SKILL.md",
+      "errors": []
+    },
+    {
+      "slug": "bookmark-smart-hub",
+      "template": "generator_template",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "output_path": "d:\\skills\\packaged-skills\\skillhub\\bookmark-smart-hub\\SKILL.md",
+      "errors": []
+    },
+    {
+      "slug": "calendar-reminder-paid",
+      "template": "generator_template",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "output_path": "d:\\skills\\packaged-skills\\skillhub\\calendar-reminder-paid\\SKILL.md",
+      "errors": []
+    },
+    {
+      "slug": "card-image-builder",
+      "template": "generator_template",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "output_path": "d:\\skills\\packaged-skills\\skillhub\\card-image-builder\\SKILL.md",
+      "errors": []
+    },
+    {
+      "slug": "discord-chat-manager",
+      "template": "generator_template",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "output_path": "d:\\skills\\packaged-skills\\skillhub\\discord-chat-manager\\SKILL.md",
+      "errors": []
+    },
+    {
+      "slug": "discord-community-hub",
+      "template": "reviewer_template",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "output_path": "d:\\skills\\packaged-skills\\skillhub\\discord-community-hub\\SKILL.md",
+      "errors": []
+    },
+    {
+      "slug": "discord-toolkit",
+      "template": "reviewer_template",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "output_path": "d:\\skills\\packaged-skills\\skillhub\\discord-toolkit\\SKILL.md",
+      "errors": []
+    },
+    {
+      "slug": "discord-voice-paid",
+      "template": "reviewer_template",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "output_path": "d:\\skills\\packaged-skills\\skillhub\\discord-voice-paid\\SKILL.md",
+      "errors": []
+    },
+    {
+      "slug": "dns-config",
+      "template": "reviewer_template",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "output_path": "d:\\skills\\packaged-skills\\skillhub\\dns-config\\SKILL.md",
+      "errors": []
+    },
+    {
+      "slug": "email-163",
+      "template": "reviewer_template",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "output_path": "d:\\skills\\packaged-skills\\skillhub\\email-163\\SKILL.md",
+      "errors": []
+    },
+    {
+      "slug": "email-digest",
+      "template": "generator_template",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "output_path": "d:\\skills\\packaged-skills\\skillhub\\email-digest\\SKILL.md",
+      "errors": []
+    },
+    {
+      "slug": "email-toolkit",
+      "template": "generator_template",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "output_path": "d:\\skills\\packaged-skills\\skillhub\\email-toolkit\\SKILL.md",
+      "errors": []
+    },
+    {
+      "slug": "feishu-card-builder",
+      "template": "generator_template",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "output_path": "d:\\skills\\packaged-skills\\skillhub\\feishu-card-builder\\SKILL.md",
+      "errors": []
+    },
+    {
+      "slug": "feishu-file-sender",
+      "template": "generator_template",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "output_path": "d:\\skills\\packaged-skills\\skillhub\\feishu-file-sender\\SKILL.md",
+      "errors": []
+    },
+    {
+      "slug": "google-workspace-cli",
+      "template": "generator_template",
+      "l1_passed": false,
+      "l1_score": "9/10",
+      "output_path": "d:\\skills\\packaged-skills\\skillhub\\google-workspace-cli\\SKILL.md",
+      "errors": [
+        "L1检查未通过: 9/10"
+      ]
+    }
+  ]
+}

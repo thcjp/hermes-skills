@@ -4,38 +4,17 @@ name: okx-dex-token-tool-free
 version: "1.0.0"
 displayName: DEX代币数据入门
 summary: 通过OKX DEX API查询链上代币信息，支持价格、流动性与基础交易数据获取。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人加密货币投资者的DEX代币数据查询工具。通过OKX DEX聚合器
-  API获取多链代币的实时价格、流动性池信息和基础交易数据。适合个人
-  用户进行DeFi代币的研究与追踪。
-
-  核心能力:
-  - 多链代币实时价格查询
-  - 流动性池信息获取
-  - 代币基础信息（合约地址/精度/总量）
-  - 支持以太坊/BSC/Polygon等主流链
-
-  适用场景:
-  - 个人DeFi代币研究
-  - DEX代币价格追踪
-  - 流动性池信息查询
-  - 链上代币基础尽调
-
-  差异化:
-  - 免费版聚焦基础数据查询
-  - 适合个人用户低频使用
-  - 不支持交易执行与批量操作
-  - 不支持高级链上分析
-
-  触发关键词: DEX, 代币, 链上数据, 流动性, DeFi, OKX, token, on-chain, liquidity
+  API获取多链代币的实时价格、流动性池信息和基础交易数据。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
 - Finance
 - 加密货币
 - DEX
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -121,7 +100,7 @@ python3 scripts/token_info.py \
 ### 环境准备
 
 ```bash
-# 安装依赖
+# 依赖说明
 pip install requests web3
 
 # 配置API（可选，免费版无需API Key）
@@ -146,7 +125,7 @@ python3 scripts/token_list.py --chain ethereum --top 20
 python3 scripts/price_history.py --token UNIS --days 7
 ```
 
-## 配置示例
+## 示例
 
 ### 查询配置
 
@@ -234,3 +213,15 @@ query_config:
 - **分类**: MD+EXEC（Markdown指令+Python脚本执行）
 - **说明**: 通过OKX DEX API查询多链代币数据
 - **免费版限制**: 基础数据查询、5条链支持、不支持批量与交易执行
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用

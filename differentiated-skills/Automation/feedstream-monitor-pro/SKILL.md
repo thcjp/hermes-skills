@@ -2,9 +2,9 @@
 slug: feedstream-monitor-pro
 name: feedstream-monitor-pro
 version: "1.0.0"
-displayName: 安全公告流监控(专业版)
+displayName: Feedstream Monitor
 summary: 企业级安全公告监控专业版，含CVE关联分析、可利用性评分、状态追踪、速率限制、完整性校验。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   安全公告流监控专业版是面向企业级场景的完整安全公告监控解决方案。在免费版基础监控之上，专业版新增CVE关联分析、可利用性评分、状态追踪管理、速率限制与礼貌抓取、数据完整性校验、Webhook通知集成六大高级能力，满足安全团队对漏洞情报的深度分析和响应需求。

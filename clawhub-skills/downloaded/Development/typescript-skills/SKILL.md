@@ -8,9 +8,7 @@ summary: Provide best-practice coding conventions and generate standards-complia
 license: MIT-0
 description: |-
   Provide best-practice coding conventions and generate standards-compliant
-  TypeScript code.
-
-  核心能力:
+  TypeScript code。核心能力:
 
   - 开发工具领域的专业化AI辅助工具
 
@@ -26,48 +24,21 @@ description: |-
 
   - 自动化工作流与智能决策辅助
 
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: conventions, typescript, provide, skills, practice, coding, best
+  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词...
 tags:
 - Development
 tools:
-- read
+  - - read
 - exec
----
-
 # TypeScript
-
+---
 > **Activation**: This skill activates whenever the user says or implies **TypeScript**. It responds
 > with standards-compliant TypeScript code and can explain any rule on demand.
 
----
-
 ## Table of Contents
-
-1. [General Principles](#1-general-principles)
-2. [Naming Conventions](#2-naming-conventions)
-3. [Types & Interfaces](#3-types--interfaces)
-4. [Enums](#4-enums)
-5. [Variables & Constants](#5-variables--constants)
-6. [Functions](#6-functions)
-7. [Classes](#7-classes)
-8. [Modules & Imports](#8-modules--imports)
-9. [Generics](#9-generics)
-10. [Error Handling](#10-error-handling)
-11. [Async / Await & Promises](#11-async--await--promises)
-12. [Comments & Documentation](#12-comments--documentation)
-13. [Formatting & Style](#13-formatting--style)
-14. [Null & Undefined Handling](#14-null--undefined-handling)
-15. [Type Assertions & Guards](#15-type-assertions--guards)
-16. [React & JSX (when applicable)](#16-react--jsx-when-applicable)
-17. [Testing Conventions](#17-testing-conventions)
-18. [Tooling & Configuration](#18-tooling--configuration)
-
----
+> 详细内容已移至 `references/detail.md`
 
 ## 1. General Principles
-
 * **Strict mode always**: Enable `"strict": true` in `tsconfig.json`. This turns on `noImplicitAny`,
   `strictNullChecks`, `strictFunctionTypes`, and more.
 * **Prefer readability over cleverness**: Code is read far more often than written. Favour explicit,
@@ -80,10 +51,7 @@ tools:
 * **Keep files small**: A file should ideally stay under 400 lines. If it grows larger, consider
   splitting it.
 
----
-
 ## 2. Naming Conventions
-
 | Construct | Convention | Example |
 | --- | --- | --- |
 | **Variable / Function** | `camelCase` | `getUserName`, `isActive` |
@@ -102,7 +70,6 @@ tools:
 | **Private field** | `camelCase` (no `_` prefix) | `private count: number` |
 
 ### Additional Naming Rules
-
 * **Do NOT** prefix interfaces with `I` (e.g., ~~`IUser`~~ → `User`).
 * **Do NOT** suffix types/interfaces with `Type` or `Interface`.
 * Use descriptive names. Avoid single-letter variables except for conventional usages like loop
@@ -110,12 +77,8 @@ tools:
 * Acronyms of 2 characters stay uppercase (`IO`, `ID`); 3+ characters use PascalCase
   (`Http`, `Xml`, `Api`).
 
----
-
 ## 3. Types & Interfaces
-
 ### Prefer `interface` for Object Shapes
-
 ```typescript
 // ✅ Good — use interface for object shapes
 interface User {
@@ -130,7 +93,6 @@ type Result<T> = Success<T> | Failure;
 ```
 
 ### When to Use `type` vs `interface`
-
 | Use `interface` when … | Use `type` when … |
 | --- | --- |
 | Defining the shape of an object or class | Creating union or intersection types |
@@ -138,7 +100,6 @@ type Result<T> = Success<T> | Failure;
 | Extending other interfaces | Aliasing primitive or tuple types |
 
 ### Rules
-
 * Always annotate function return types explicitly for public APIs.
 * Let TypeScript infer types for local variables when the type is obvious.
 * Prefer `type` over `interface` for function signatures:
@@ -153,12 +114,8 @@ type Result<T> = Success<T> | Failure;
 * Use utility types (`Partial<T>`, `Pick<T, K>`, `Omit<T, K>`, `Required<T>`) to derive types
   rather than duplicating.
 
----
-
 ## 4. Enums
-
 ### Prefer String Enums
-
 ```typescript
 // ✅ Good — string enum for readability and debuggability
 enum Direction {
@@ -170,7 +127,6 @@ enum Direction {
 ```
 
 ### When to Use `const` Enum or Union Types
-
 ```typescript
 // ✅ Good — const enum for zero-runtime-cost enums (no reverse mapping needed)
 const enum HttpMethod {
@@ -185,16 +141,12 @@ type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE';
 ```
 
 ### Rules
-
 * **Do NOT** use numeric enums without explicit values (auto-increment is fragile).
 * Prefer **string literal union types** over enums when the set is small and no namespace features
   are needed.
 * Never mix string and numeric members in the same enum.
 
----
-
 ## 5. Variables & Constants
-
 ```typescript
 // ✅ Good
 const maxRetries = 3;
@@ -209,41 +161,10 @@ let neverReassigned = 42;
 ```
 
 ### Rules
-
-* **Always use `const`** unless the variable needs reassignment; then use `let`.
-* **Never use `var`**.
-* Declare variables as close to their first usage as possible.
-* One variable declaration per statement.
-* Prefer destructuring for extracting properties:
-
-  typescript
-
-  ```
-  // ✅ Good
-  const { name, age } = user;
-
-  // ❌ Bad
-  const name = user.name;
-  const age = user.age;
-  ```
-* Use `as const` for immutable literal objects / arrays:
-
-  typescript
-
-  ```
-  const ROUTES = {
-    home: '/',
-    about: '/about',
-    contact: '/contact',
-  } as const;
-  ```
-
----
+> 详细内容已移至 `references/detail.md`
 
 ## 6. Functions
-
 ### Function Declarations
-
 ```typescript
 // ✅ Good — explicit return type for public functions
 function calculateTotal(items: CartItem[]): number {
@@ -260,49 +181,9 @@ function createUser(name: string, role: Role = Role.Viewer): User {
 ```
 
 ### Rules
-
-* **Annotate return types** for all exported / public functions.
-* Prefer **arrow functions** for callbacks and inline functions.
-* Prefer **function declarations** for top-level named functions (they are hoisted and more
-  readable in stack traces).
-* **Maximum parameters**: 3. If more are needed, group them into an options object:
-
-  typescript
-
-  ```
-  // ✅ Good
-  interface CreateUserOptions {
-    name: string;
-    email: string;
-    role?: Role;
-    department?: string;
-  }
-  function createUser(options: CreateUserOptions): User { ... }
-
-  // ❌ Bad — too many positional parameters
-  function createUser(name: string, email: string, role: Role, dept: string): User { ... }
-  ```
-* Do **not** use `arguments`; use rest parameters (`...args`) instead.
-* Avoid `Function` type. Use specific function signatures.
-* Keep functions small — ideally under 30 lines of logic.
-* Functions should **do one thing**.
-* Prefer **early returns** to reduce nesting:
-
-  typescript
-
-  ```
-  // ✅ Good
-  function getDiscount(user: User): number {
-    if (!user.isPremium) return 0;
-    if (user.yearsActive < 2) return 5;
-    return 10;
-  }
-  ```
-
----
+> 详细内容已移至 `references/detail.md`
 
 ## 7. Classes
-
 ```typescript
 // ✅ Good
 class UserService {
@@ -319,42 +200,9 @@ class UserService {
 ```
 
 ### Rules
-
-* Prefer **composition over inheritance**.
-* Use `readonly` for properties that should not change after construction.
-* Member ordering:
-  1. Static fields
-  2. Instance fields
-  3. Constructor
-  4. Static methods
-  5. Public methods
-  6. Protected methods
-  7. Private methods
-* Use **explicit access modifiers** (`public`, `protected`, `private`) on every member.
-* **Do NOT** prefix private members with `_`. TypeScript's `private` keyword is sufficient.
-* Use `#` (ES private fields) when true runtime privacy is required.
-* Prefer **parameter properties** for simple constructor-only assignments:
-
-  typescript
-
-  ```
-  class Logger {
-    constructor(private readonly prefix: string) {}
-  }
-  ```
-* Avoid classes with only static methods — use plain functions in a module instead.
-* Implement interfaces explicitly:
-
-  typescript
-
-  ```
-  class UserRepositoryImpl implements UserRepository { ... }
-  ```
-
----
+> 详细内容已移至 `references/detail.md`
 
 ## 8. Modules & Imports
-
 ```typescript
 // ✅ Good — named exports
 export function parseConfig(raw: string): Config { ... }
@@ -366,49 +214,11 @@ export type { Config } from './parse-config';
 ```
 
 ### Rules
-
-* **Prefer named exports** over default exports (better refactoring, auto-import support).
-* Use default exports only for React components if the project convention requires it.
-* Use `import type` / `export type` for type-only imports to help bundlers tree-shake:
-
-  typescript
-
-  ```
-  import type { User } from './user';
-  ```
-* Group and order imports:
-  1. Node built-ins (`node:fs`, `node:path`)
-  2. External packages (`react`, `lodash`)
-  3. Internal aliases (`@/utils`, `@/components`)
-  4. Relative parent (`../`)
-  5. Relative sibling (`./`)
-* Separate each group with a blank line.
-* **Do NOT** use wildcard imports (`import * as`) unless re-exporting a module namespace.
-* Keep barrel files (`index.ts`) thin — do not add logic.
-
----
+> 详细内容已移至 `references/detail.md`
 
 ## 9. Generics
 
-```typescript
-// ✅ Good — descriptive when intent is ambiguous
-function merge<TTarget, TSource>(target: TTarget, source: TSource): TTarget & TSource {
-  return { ...target, ...source };
-}
-
-// ✅ Good — single-letter when intent is obvious
-function identity<T>(value: T): T {
-  return value;
-}
-
-// ✅ Good — constrained generics
-function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
-  return obj[key];
-}
-```
-
 ### Rules
-
 * Use a **single uppercase letter** (`T`, `U`, `K`, `V`) for simple generics.
 * Use **descriptive PascalCase prefixed with `T`** (`TKey`, `TValue`, `TResult`) when there are
   multiple type parameters or the purpose is not obvious.
@@ -417,39 +227,9 @@ function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
 * Prefer generic utility types (`Array<T>`, `Promise<T>`, `Map<K, V>`) over their shorthand where
   readability benefits.
 
----
-
 ## 10. Error Handling
 
-```typescript
-// ✅ Good — custom error class
-class AppError extends Error {
-  constructor(
-    message: string,
-    public readonly code: string,
-    public readonly statusCode: number = 500,
-  ) {
-    super(message);
-    this.name = 'AppError';
-  }
-}
-
-// ✅ Good — typed error handling
-function parseJson<T>(raw: string): T {
-  try {
-    return JSON.parse(raw) as T;
-  } catch (error) {
-    throw new AppError(
-      `Failed to parse JSON: ${error instanceof Error ? error.message : String(error)}`,
-      'PARSE_ERROR',
-      400,
-    );
-  }
-}
-```
-
 ### Rules
-
 * **Never** swallow errors silently (empty `catch` blocks).
 * Use **custom error classes** that extend `Error` for domain-specific errors.
 * Type the `catch` variable as `unknown` (default in TS 4.4+) and narrow before use.
@@ -463,30 +243,9 @@ function parseJson<T>(raw: string): T {
 * Always clean up resources in `finally` blocks or use disposable patterns.
 * Log errors with sufficient context (operation name, input summary, stack trace).
 
----
-
 ## 11. Async / Await & Promises
 
-```typescript
-// ✅ Good — async/await
-async function fetchUser(id: string): Promise<User> {
-  const response = await httpClient.get<User>(`/users/${id}`);
-  return response.data;
-}
-
-// ✅ Good — parallel execution
-async function fetchDashboard(userId: string): Promise<Dashboard> {
-  const [user, posts, notifications] = await Promise.all([
-    fetchUser(userId),
-    fetchPosts(userId),
-    fetchNotifications(userId),
-  ]);
-  return { user, posts, notifications };
-}
-```
-
 ### Rules
-
 * **Prefer `async/await`** over `.then()` chains for readability.
 * Always annotate return types as `Promise<T>`.
 * Use `Promise.all()` for independent concurrent operations.
@@ -497,38 +256,10 @@ async function fetchDashboard(userId: string): Promise<Dashboard> {
   Exception: event handlers where the framework requires `void`.
 * Prefer `for...of` with `await` for sequential async iteration, not `forEach`.
 
----
-
 ## 12. Comments & Documentation
-
-```typescript
-/**
- * Calculate the compound interest for a principal amount.
- *
- * @param principal - The initial amount of money.
- * @param rate - The annual interest rate (decimal, e.g. 0.05 for 5%).
- * @param times - Number of times interest is compounded per year.
- * @param years - Number of years the money is invested.
- * @returns The total amount after compound interest.
- *
- * @example
- * ```typescript
- * const total = compoundInterest(1000, 0.05, 12, 10);
- * // total ≈ 1647.01
- * ```
- */
-function compoundInterest(
-  principal: number,
-  rate: number,
-  times: number,
-  years: number,
-): number {
-  return principal * Math.pow(1 + rate / times, times * years);
-}
-```
+> 详细内容已移至 `references/detail.md`
 
 ### Rules
-
 * Use **TSDoc** (`/** */`) for all public APIs, exported functions, classes, interfaces, and types.
 * Include `@param`, `@returns`, `@throws`, and `@example` tags where applicable.
 * **Do NOT** comment obvious code. The code should be self-documenting.
@@ -539,12 +270,8 @@ function compoundInterest(
 * Place file-level comments at the top if the module's purpose is not obvious from its name.
 * Keep comments up-to-date with code changes.
 
----
-
 ## 13. Formatting & Style
-
 ### General
-
 * **Indentation**: 2 spaces (no tabs).
 * **Semicolons**: Required at the end of every statement.
 * **Quotes**: Single quotes (`'`) for strings; backticks (`` ` ``) for template literals.
@@ -555,29 +282,7 @@ function compoundInterest(
 
 ### Specific Patterns
 
-```typescript
-// ✅ Good — braces always, even for single-line if
-if (isValid) {
-  process();
-}
-
-// ❌ Bad
-if (isValid) process();
-
-// ✅ Good — trailing comma
-const config = {
-  host: 'localhost',
-  port: 3000,
-  debug: true,
-};
-
-// ✅ Good — consistent object shorthand
-const name = 'Alice';
-const user = { name, age: 30 };
-```
-
 ### Tooling
-
 * Use **Prettier** for auto-formatting with the following baseline config:
 
   json
@@ -595,29 +300,9 @@ const user = { name, age: 30 };
 * Use **ESLint** with `@typescript-eslint/eslint-plugin` and
   `@typescript-eslint/parser` for linting.
 
----
-
 ## 14. Null & Undefined Handling
 
-```typescript
-// ✅ Good — optional chaining
-const city = user?.address?.city;
-
-// ✅ Good — nullish coalescing
-const displayName = user.nickname ?? user.name ?? 'Anonymous';
-
-// ✅ Good — explicit null checks for critical paths
-function getUser(id: string): User {
-  const user = repository.findById(id);
-  if (user === undefined) {
-    throw new AppError(`User not found: ${id}`, 'USER_NOT_FOUND', 404);
-  }
-  return user;
-}
-```
-
 ### Rules
-
 * **Enable `strictNullChecks`** (included in `strict` mode).
 * Prefer `undefined` over `null` as the "absence of value" indicator, unless interacting with
   external APIs that use `null`.
@@ -626,44 +311,9 @@ function getUser(id: string): User {
   comment explaining why).
 * Prefer the `satisfies` operator (TS 5.0+) to validate types without widening.
 
----
-
 ## 15. Type Assertions & Guards
 
-```typescript
-// ✅ Good — type guard function
-function isUser(value: unknown): value is User {
-  return (
-    typeof value === 'object' &&
-    value !== null &&
-    'id' in value &&
-    'name' in value
-  );
-}
-
-// ✅ Good — discriminated union
-interface Success<T> {
-  kind: 'success';
-  data: T;
-}
-interface Failure {
-  kind: 'failure';
-  error: Error;
-}
-type Result<T> = Success<T> | Failure;
-
-function handleResult<T>(result: Result<T>): T {
-  switch (result.kind) {
-    case 'success':
-      return result.data;
-    case 'failure':
-      throw result.error;
-  }
-}
-```
-
 ### Rules
-
 * **Prefer type guards** (`is` keyword) over type assertions (`as`).
 * Use `as const` for literal narrowing, not `as SpecificType`.
 * Use **discriminated unions** with a `kind` / `type` field for state machines and result types.
@@ -680,33 +330,9 @@ function handleResult<T>(result: Result<T>): T {
   } satisfies Record<string, string | number[]>;
   ```
 
----
-
 ## 16. React & JSX (when applicable)
 
-```tsx
-// ✅ Good — functional component with explicit props type
-interface UserCardProps {
-  readonly user: User;
-  readonly onSelect?: (userId: string) => void;
-}
-
-export function UserCard({ user, onSelect }: UserCardProps): React.ReactElement {
-  const handleClick = useCallback(() => {
-    onSelect?.(user.id);
-  }, [onSelect, user.id]);
-
-  return (
-    <div className="user-card" onClick={handleClick} role="button" tabIndex={0}>
-      <h3>{user.name}</h3>
-      <p>{user.email}</p>
-    </div>
-  );
-}
-```
-
 ### Rules
-
 * Use **function declarations** or **named function expressions** for components (not anonymous).
 * Define props as an `interface` (e.g., `UserCardProps`), not inline.
 * Mark all props as `readonly`.
@@ -723,29 +349,9 @@ export function UserCard({ user, onSelect }: UserCardProps): React.ReactElement 
   4. Component function
   5. Helper functions (private to the module)
 
----
-
 ## 17. Testing Conventions
 
-```typescript
-// ✅ Good — descriptive test structure
-describe('UserService', () => {
-  describe('findById', () => {
-    it('should return the user when the id exists', async () => {
-      const user = await service.findById('user-1');
-      expect(user).toEqual(expect.objectContaining({ id: 'user-1' }));
-    });
-
-    it('should return undefined when the id does not exist', async () => {
-      const user = await service.findById('non-existent');
-      expect(user).toBeUndefined();
-    });
-  });
-});
-```
-
 ### Rules
-
 * Test files are colocated or in a `__tests__` directory.
 * Name test files `*.test.ts` or `*.spec.ts`.
 * Follow the **Arrange → Act → Assert** pattern.
@@ -763,41 +369,11 @@ describe('UserService', () => {
   const mockFetch = jest.fn<Promise<User>, [string]>();
   ```
 
----
-
 ## 18. Tooling & Configuration
-
 ### Recommended `tsconfig.json` (Baseline)
-
 jsonc
 
-```
-{
-  "compilerOptions": {
-    "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "lib": ["ES2022"],
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true
-  }
-}
-```
-
 ### Recommended ESLint Rules
-
 | Rule | Setting |
 | --- | --- |
 | `@typescript-eslint/no-explicit-any` | `error` |
@@ -810,12 +386,8 @@ jsonc
 | `@typescript-eslint/strict-boolean-expressions` | `warn` |
 | `@typescript-eslint/naming-convention` | `error` (configured per construct) |
 
----
-
 ## Usage
-
 ### Natural Language Activation
-
 Simply mention **TypeScript** in your conversation — the skill activates automatically.
 
 **Example prompts:**
@@ -830,7 +402,6 @@ Simply mention **TypeScript** in your conversation — the skill activates autom
 | "Set up a new TypeScript project" | Provides `tsconfig.json`, ESLint config, Prettier config, and project structure following §18. |
 
 ### Inline Rule References
-
 You can ask about any specific section:
 
 * *"Explain TypeScript naming conventions"* → References §2
@@ -838,12 +409,11 @@ You can ask about any specific section:
 * *"Show me TypeScript generic best practices"* → References §9
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -854,3 +424,51 @@ You can ask about any specific section:
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+- Provide best-practice coding conventions and generate standards-compliant
+  TypeScript code
+- 触发关键词: conventions, typescript, provide, skills, practice, coding, best
+
+## 适用场景
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 示例
+### 示例1：基础用法
+```
+输入: 用户请求
+处理: 根据使用流程执行
+输出: 处理结果
+```
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+### Q1: 如何开始使用TypeScript？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: TypeScript有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

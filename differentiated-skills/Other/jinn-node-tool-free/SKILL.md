@@ -4,7 +4,7 @@ name: jinn-node-tool-free
 version: "1.0.0"
 displayName: 节点工作工具
 summary: 面向个人用户的闲置节点工作工具，运行任务赚取代币奖励。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人用户的闲置节点工作与代币奖励工具。
@@ -29,7 +29,7 @@ tags:
 - 个人效率
 - 其他工具
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -53,7 +53,7 @@ tools:
 ### 场景一：初始化节点
 
 ```bash
-# 安装依赖
+# 依赖说明
 corepack enable
 yarn install
 
@@ -92,7 +92,7 @@ yarn wallet:backup
 3. 运行 `yarn setup` 完成初始化与质押。
 4. 运行 `yarn worker` 开始接任务。
 
-## 配置示例
+## 示例
 
 环境变量（`.env`）：
 
@@ -221,3 +221,17 @@ yarn wallet:restore --from wallet-backup.tar.gz
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 命令行执行）
 - **说明**: 通过自然语言指令驱动 Agent 完成节点初始化与任务执行
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

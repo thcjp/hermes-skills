@@ -2,9 +2,9 @@
 slug: meta-agent-optimizer-pro
 name: meta-agent-optimizer-pro
 version: "1.0.0"
-displayName: 元代理优化器(专业版)
+displayName: Meta Agent Optimizer
 summary: AI Agent全功能优化引擎，性能指标采集+瓶颈诊断+技能自动提取+多平台Hook集成。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   元代理优化器专业版是在免费版基础上的全功能升级，为AI Agent提供从日志记录到性能优化的完整闭环。专业版解锁性能指标采集、自动瓶颈诊断、优化建议生成、多平台Hook集成、技能自动提取五大高级功能，实现Agent自我进化的全自动闭环。

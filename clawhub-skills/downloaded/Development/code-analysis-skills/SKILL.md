@@ -1,14 +1,12 @@
 ---
 slug: code-analysis-skills
-name: code-analysis
+name: code-analysis-skills
 version: "1.0.0"
 displayName: Code Analysis Skills
 summary: Produces a DESCRIPTIVE Git-history reflection report.
 license: MIT
 description: |-
-  Produces a DESCRIPTIVE Git-history reflection report.
-
-  核心能力:
+  Produces a DESCRIPTIVE Git-history reflection report。核心能力:
 
   - 开发工具领域的专业化AI辅助工具
 
@@ -24,16 +22,13 @@ description: |-
 
   - 自动化工作流与智能决策辅助
 
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: reflection, history, report, skills, analysis, code, descriptive, produces
+  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范
 tags:
 - Development
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Git-History Reflection Skill
 
 📦 **GitHub**: [https://[SkillHub仓库]](https://[SkillHub仓库])
@@ -74,7 +69,7 @@ Git user only); analysing other developers requires both
 
 ---
 
-## ✅ Acceptable invocations (examples)
+## 示例
 
 ```
 💬 "Run a Git-history reflection report on my own repo at /path/to/repo."
@@ -105,9 +100,9 @@ aggregated output).
 
 ---
 
-## 🚀 Quick Start (CLI)
+## 使用流程
 
-### Install Dependencies
+### 依赖说明
 
 ```bash
 pip install gitpython pydriller radon tabulate jinja2 click reportlab
@@ -161,7 +156,7 @@ python -m src.main --i-have-consent -r /path/to/repo -o report.md
 
 ---
 
-## Acceptable Use Cases
+## 适用场景
 
 - A developer reflecting on **their own** commit cadence and code-change patterns.
 - A team running an **opt-in retrospective** where every member has consented to
@@ -169,6 +164,15 @@ python -m src.main --i-have-consent -r /path/to/repo -o report.md
 - Open-source maintainers analyzing **public** contribution patterns on a project
   they maintain.
 - Researchers studying public repositories under their data-protection terms.
+
+## 不适用场景
+
+以下场景Code Analysis Skills不适合处理：
+
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 运维部署管理
+
 
 ## Unacceptable Use Cases (the skill must refuse these)
 
@@ -395,3 +399,33 @@ values are reported individually so they cannot be repurposed as a
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+
+- Produces a DESCRIPTIVE Git-history reflection report
+- 触发关键词: reflection, history, report, skills, analysis, code, descriptive, produces
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+
+### Q1: 如何开始使用Code Analysis Skills？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Code Analysis Skills有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

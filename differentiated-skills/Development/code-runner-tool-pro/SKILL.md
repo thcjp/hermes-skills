@@ -4,12 +4,10 @@ name: code-runner-tool-pro
 version: "1.0.0"
 displayName: 代码执行工具专业版
 summary: 企业级PTY代码执行,支持批量任务、并发执行、执行审计与CI/CD集成
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  面向团队与企业的高级代码执行工具,在免费版基础上扩展批量执行、并发管理、执行审计等能力。
-
-  核心能力:
+  面向团队与企业的高级代码执行工具,在免费版基础上扩展批量执行、并发管理、执行审计等能力。核心能力:
   - 批量任务执行与并发管理
   - 执行日志审计与结果追踪
   - CI/CD 流水线集成
@@ -27,7 +25,7 @@ description: |-
   - 提供执行审计与日志追踪
   - 优先技术支持与更新通道
 
-  触发关键词: runner, code, pty, batch, concurrent, cicd, enterprise, audit, 批量, 并发, 流水线, 审计
+  触发关键词: runner,...
 tags:
 - 开发工具
 - 代码执行
@@ -35,22 +33,18 @@ tags:
 - 批量处理
 - CI/CD集成
 tools:
-- read
+  - - read
 - exec
 ---
 
 # 代码执行工具专业版
-
 ## 概述
-
 代码执行工具专业版为企业团队提供高级 PTY 代码执行能力。在免费版单任务执行基础上,扩展了批量并发、执行审计、CI/CD 集成、多用户隔离等功能,满足企业级自动化开发的需求。
 
 专业版完全兼容免费版的 API 与执行流程,已有工作流可无缝升级。
 
 ## 核心能力
-
 ### 1. 批量任务执行
-
 ```python
 from code_runner import run_batch_tasks
 
@@ -76,7 +70,6 @@ results = run_batch_tasks(tasks, max_concurrent=3)
 ```
 
 ### 2. 并发管理与任务编排
-
 | 功能 | 说明 |
 |:-----|:-----|
 | 并发控制 | 可配置最大并发数(默认 3) |
@@ -86,7 +79,7 @@ results = run_batch_tasks(tasks, max_concurrent=3)
 | 超时管理 | 每个任务独立超时配置 |
 
 ```python
-# 带依赖的任务编排
+# 依赖说明
 pipeline = [
     {"id": "schema", "prompt": "创建数据库 Schema", "depends_on": []},
     {"id": "dal", "prompt": "实现数据访问层", "depends_on": ["schema"]},
@@ -99,7 +92,6 @@ results = run_pipeline(pipeline, max_concurrent=2)
 ```
 
 ### 3. 执行日志审计
-
 ```python
 # 审计配置
 audit_config = {
@@ -126,9 +118,8 @@ audit_config = {
 | 执行耗时 | 总耗时(秒) |
 
 ### 4. CI/CD 集成
-
 ```yaml
-# CI/CD 流水线集成示例
+# 示例
 pipeline:
   - stage: code-execution
     jobs:
@@ -151,7 +142,6 @@ pipeline:
 ```
 
 ### 5. 自定义应答规则
-
 ```python
 # 扩展自动应答规则
 custom_responses = {
@@ -165,9 +155,7 @@ custom_responses = {
 ```
 
 ## 使用场景
-
 ### 场景一: 企业级批量代码处理
-
 对多个微服务模块批量执行开发任务。
 
 ```python
@@ -214,13 +202,11 @@ user-service:        失败 (超时,建议增加超时或拆分任务)
 ```
 
 ### 场景二: CI/CD 流水线自动化
-
 在 CI/CD 流水线中自动执行代码任务。
 
 ```bash
 #!/bin/bash
 # CI/CD 流水线脚本
-
 # 1. 执行开发任务
 python3 -m code_runner \
   --workdir $CI_PROJECT_DIR \
@@ -245,7 +231,6 @@ python3 -m code_runner \
 ```
 
 ### 场景三: 多项目并行开发
-
 多个项目同步开发,统一管理与追踪。
 
 ```python
@@ -275,9 +260,7 @@ for p in projects:
 ```
 
 ## 快速开始
-
 ### 第一步: 安装与配置
-
 ```bash
 # 安装依赖
 pip install code-runner-pro
@@ -306,7 +289,6 @@ EOF
 ```
 
 ### 第二步: 执行批量任务
-
 ```python
 from code_runner import run_batch_tasks
 
@@ -320,16 +302,13 @@ results = run_batch_tasks(tasks, max_concurrent=3)
 ```
 
 ### 第三步: 查看审计报告
-
 ```bash
 # 查看最新审计报告
 cat .code-runner/logs/latest-audit.log
 ```
 
 ## 配置示例
-
 ### 企业级配置
-
 ```json
 {
   "edition": "pro",
@@ -366,7 +345,6 @@ cat .code-runner/logs/latest-audit.log
 ```
 
 ### CI/CD 集成配置
-
 ```yaml
 # CI/CD 配置示例
 code_runner:
@@ -387,9 +365,7 @@ code_runner:
 ```
 
 ## 最佳实践
-
 ### 1. 任务拆分与编排
-
 | 原则 | 说明 |
 |:-----|:-----|
 | 单一职责 | 每个任务只做一件事 |
@@ -398,7 +374,6 @@ code_runner:
 | 优先级 | 关键路径高优先级 |
 
 ### 2. 并发度配置
-
 | 场景 | 建议并发度 | 说明 |
 |:-----|:-----------|:-----|
 | 开发环境 | 2-3 | 避免资源争抢 |
@@ -406,7 +381,6 @@ code_runner:
 | 专用服务器 | 5-10 | 充分利用资源 |
 
 ### 3. 免费版与专业版能力对比
-
 | 能力 | 免费版 | 专业版 |
 |:-----|:-------|:-------|
 | 执行方式 | 单任务 | 批量并发 |
@@ -418,7 +392,6 @@ code_runner:
 | 优先支持 | 社区 | 专属通道 |
 
 ### 4. 审计日志分析
-
 ```bash
 # 分析执行日志
 请分析 .code-runner/logs/ 下最近 7 天的执行日志
@@ -427,13 +400,10 @@ code_runner:
 ```
 
 ## 常见问题
-
 ### Q1: 专业版是否兼容免费版的 API?
-
 完全兼容。专业版的 `run_code_task` 函数与免费版签名一致,免费版代码无需修改即可运行。
 
 ### Q2: 并发执行时资源不够怎么办?
-
 降低并发度或增加超时时间。监控 CPU 和内存使用,避免资源耗尽:
 
 ```python
@@ -444,7 +414,6 @@ max_concurrent = 5 if cpu_usage < 70 else 2
 ```
 
 ### Q3: CI/CD 中如何安全存储凭据?
-
 使用 CI/CD 平台的密钥管理功能,不要在代码中硬编码:
 
 ```yaml
@@ -453,7 +422,6 @@ variables:
 ```
 
 ### Q4: 审计日志占用空间太大怎么办?
-
 配置日志保留策略与压缩:
 
 ```json
@@ -467,7 +435,6 @@ variables:
 ```
 
 ### Q5: 任务失败后如何自动重试?
-
 在配置中启用自动重试:
 
 ```json
@@ -480,20 +447,16 @@ variables:
 ```
 
 ### Q6: 如何获得优先技术支持?
-
 专业版用户可通过专属通道提交问题,通常 1 个工作日内响应。
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent 平台**: 支持读取 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
 - **操作系统**: Linux / macOS(Unix-like 环境)
 - **Python**: 3.8 或更高版本
 - **权限**: root 或 sudo(用户切换需要)
 
 ### 第三方依赖
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Python 3.8+ | 运行时 | 必需 | python.org |
@@ -503,7 +466,6 @@ variables:
 | psutil(可选) | Python 库 | 资源监控推荐 | `pip install psutil` |
 
 ### API Key 配置
-
 ```bash
 # 代码 CLI 认证
 export ANTHROPIC_API_KEY="your-api-key"
@@ -515,7 +477,18 @@ export CODE_RUNNER_AUDIT="true"
 ```
 
 ### 可用性分类
-
 - **分类**: MD+EXEC+SCRIPT+AUDIT(Markdown 指令 + 命令行执行 + Python 脚本 + 审计日志)
 - **说明**: 通过自然语言指令驱动 Agent 批量执行编程任务,支持 CI/CD 集成与执行审计
 - **离线可用**: 否,代码 CLI 需要连接 LLM API
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

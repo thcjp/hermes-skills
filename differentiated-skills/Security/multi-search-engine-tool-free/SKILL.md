@@ -4,7 +4,7 @@ name: multi-search-engine-tool-free
 version: "1.0.0"
 displayName: 多搜索引擎免费版
 summary: 多搜索引擎聚合查询工具,支持主流中文与国际搜索引擎,适合个人开发者快速信息检索。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   多搜索引擎免费版,为个人用户提供多搜索引擎聚合查询能力。
@@ -17,10 +17,9 @@ tags:
 - 信息检索
 - 免费版
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 多搜索引擎免费版
 
 ## 概述
@@ -209,7 +208,7 @@ generate_search_links() {
     echo "  Yandex:   https://yandex.com/search/?text=${encoded}"
 }
 
-# 使用示例
+# 示例
 generate_search_links "人工智能最新进展"
 ```
 
@@ -329,6 +328,20 @@ elif command -v xdg-open &> /dev/null; then
 fi
 ```
 
+## 不适用场景
+
+以下场景多搜索引擎免费版不适合处理：
+
+- 黑帽SEO手段
+- 搜索引擎作弊
+- 付费广告投放管理
+
+
+## 触发条件
+
+需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 第一步:生成搜索链接
@@ -415,7 +428,7 @@ QUERY='"exact match" site:stackoverflow.com'
 
 免费版支持网页搜索。图片、视频等垂直搜索需要专业版支持。
 
-### Q5: 搜索有频率限制吗?
+### 已知限制
 
 免费版为链接生成模式,无频率限制。如使用搜索API,需遵守各引擎的限速策略。
 
@@ -426,7 +439,7 @@ QUERY='"exact match" site:stackoverflow.com'
 - **操作系统**: Windows / macOS / Linux
 - **浏览器**: 需要浏览器打开搜索链接
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -441,3 +454,11 @@ QUERY='"exact match" site:stackoverflow.com'
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行多搜索引擎聚合查询任务
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

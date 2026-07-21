@@ -4,38 +4,16 @@ name: tool-finder-tool-free
 version: "1.0.0"
 displayName: 工具发现引擎免费版
 summary: 统一搜索 SkillHub 技能和 MCP server的智能发现工具,支持评分排序与推荐等级
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  工具发现引擎免费版,面向个人用户提供智能的技能和工具搜索能力。
-  统一搜索 SkillHub 平台技能和 MCP server,支持评分排序、推荐等级、来源标识等功能。
-
-  核心能力:
-  - 统一搜索 SkillHub 技能与 MCP server
-  - 名称匹配优先,精准定位目标工具
-  - 评分排序与推荐等级(五星制)
-  - 来源标识,区分技能与 MCP server
-  - 自动限流处理与回退机制
-  - 一键安装发现的工具
-
-  适用场景:
-  - 个人开发者寻找合适的技能或工具
-  - 用户探索 SkillHub 平台可用资源
-  - 快速安装所需的技能或 MCP server
-
-  差异化:
-  - 免费版聚焦个人搜索场景,功能完整实用
-  - 移除外部平台依赖,纯净调用
-  - 增强中文触发关键词,提升中文环境识别率
-  - 完全适配 SkillHub 平台规范
-
-  触发关键词: 找工具, 搜索技能, 推荐 MCP服务, 安装技能, SkillHub, 工具发现, tool finder, search skills, mcp search
+  工具发现引擎免费版,面向个人用户提供智能的技能和工具搜索能力。统一搜索 SkillHub 平台技能和 MCP server,支持评分排序、推荐等级、来源标识等功能。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - 研究工具
 - 工具发现
 - 搜索引擎
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -106,12 +84,12 @@ tools:
 # 搜索结果显示来源
 ~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "search" --verbose
 
-# 输出示例:
+# 示例
 # tavily-search [SkillHub] ⭐⭐⭐⭐⭐ - Web search skill
 # brave-search [MCP服务] ⭐⭐⭐⭐ - Brave search MCP service
 ```
 
-### 5. 一键安装
+### 依赖说明
 
 直接安装发现的工具。
 
@@ -316,7 +294,7 @@ tools:
 
 **A:** MCP server 安装需要指定客户端(如 claude-code/cursor/vscode)。工具会输出指引,帮助您完成安装。
 
-### Q5: 免费版有哪些限制?
+### 已知限制
 
 **A:** 免费版主要面向个人搜索场景,具备完整的搜索和安装能力。如需批量搜索、团队推荐、工具评估报告等高级功能,请考虑升级到 PRO 版本。
 
@@ -352,3 +330,11 @@ npx @anthropic-ai/skillhub@latest login
 - **分类**: MD+EXEC(纯 Markdown 指令,通过 exec 执行 Shell 脚本)
 - **说明**: 基于命令行的工具发现引擎,通过自然语言指令驱动 Agent 搜索和安装技能与 MCP server
 - **适用规模**: 个人用户、单次搜索、本地运行
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

@@ -7,8 +7,7 @@ summary: Control the user's REAL Chrome browser via Tampermonkey injection. Trig
   when user says \
 license: MIT-0
 description: |-
-  Control the user's REAL Chrome browser via Tampermonkey injection.
-  Trigger when user says \
+  Control the user's REAL Chrome browser via Tampermonkey injection。Trigger when user says \
 
   核心能力:
 
@@ -26,11 +25,11 @@ description: |-
 
   - 自动化工作流与智能决策辅助
 
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: use, chrome, browser, real, control'
+  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关...
 tags: '[''Research'']'
-tools: '[read, exec]'
+tools:
+  - read
+  - exec
 ---
 
 # Use My Browser
@@ -160,7 +159,7 @@ Built-in browser uses CDP which bypasses CSP, but runs in a separate instance (n
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -171,3 +170,48 @@ Built-in browser uses CDP which bypasses CSP, but runs in a separate instance (n
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+
+- Control the user's REAL Chrome browser via Tampermonkey injection
+- 触发关键词: use, chrome, browser, real, control'
+
+## 适用场景
+
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 示例
+
+### 示例1：基础用法
+
+```
+输入: 用户请求
+处理: 根据使用流程执行
+输出: 处理结果
+```
+
+## 常见问题
+
+### Q1: 如何开始使用Use My Browser？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Use My Browser有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用

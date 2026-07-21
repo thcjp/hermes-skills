@@ -4,12 +4,10 @@ name: youtube-watcher-tool-free
 version: "1.0.0"
 displayName: YouTube字幕提取-免费版
 summary: 轻量级YouTube视频字幕提取工具，支持单视频字幕获取与内容摘要，适合个人学习与内容分析。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  YouTube 字幕提取免费版，为个人用户提供轻量化的视频字幕获取能力。
-
-  核心能力:
+  YouTube 字幕提取免费版，为个人用户提供轻量化的视频字幕获取能力。核心能力:
   - 单视频字幕提取（自动字幕与 CC 字幕）
   - 字幕内容摘要生成
   - 关键信息检索
@@ -23,22 +21,16 @@ description: |-
   - 内容创作素材整理
 
   差异化:
-  - 免费版聚焦单视频字幕提取核心场景，零配置上手
-  - 支持自动生成字幕与人工 CC 字幕
-  - 提取后可进行摘要、问答、检索
-  - PRO 版本提供批量提取、频道监控、多语言字幕、关键词追踪等高级能力
-
-  触发关键词: YouTube 字幕, 视频转文字, 字幕提取, 视频摘要, 视频问答, transcript, youtube
+  - 免费版聚焦单视频字幕提取核心场景...
 tags:
 - Creative
 - 视频处理
 - 字幕提取
 - 免费版
 tools:
-- read
+  - - read
 - exec
 ---
-
 # YouTube 字幕提取工具 - 免费版
 
 ## 概述
@@ -149,7 +141,7 @@ python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=VID
 # 提取字幕
 python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID"
 
-# 搜索关键词（示例）
+# 示例
 grep -A 2 -B 2 "续航" /tmp/transcript.txt
 ```
 
@@ -171,9 +163,23 @@ grep -A 2 -B 2 "续航" /tmp/transcript.txt
 python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID" --lang en
 ```
 
+## 不适用场景
+
+以下场景YouTube字幕提取-免费版不适合处理：
+
+- 黑帽SEO手段
+- 搜索引擎作弊
+- 付费广告投放管理
+
+
+## 触发条件
+
+需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
-### 第一步：安装 yt-dlp
+### 依赖说明
 
 ```bash
 # 使用 pip 安装
@@ -380,3 +386,17 @@ yt-dlp --version
 - **当前版本**：1.0.0
 - **版本类型**：FREE（免费版）
 - **升级路径**：如需批量提取、频道监控、多语言字幕、关键词追踪等能力，请使用 `youtube-watcher-tool-pro`
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

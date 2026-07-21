@@ -4,40 +4,29 @@ name: cctv-news-tool-free
 version: "1.0.0"
 displayName: 央视新闻抓取(免费版)
 summary: 央视新闻联播抓取免费版，支持按日期获取新闻标题与摘要，生成基础简报。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  央视新闻抓取助手免费版是面向个人用户的轻量新闻联播内容抓取工具。聚焦"指定日期-抓取标题-生成简报"三步流程，快速获取新闻联播要点。
-
-  核心能力：按日期抓取新闻联播内容、标题与摘要提取、国内/国际新闻分类、基础简报生成、JSON结构化输出、单日查询。
-
-  适用场景：每日新闻回顾、历史事件查询、个人资讯整理、学习研究素材收集、内容创作参考。
-
-  差异化：完全中文化重写，聚焦"轻量新闻抓取"场景，新增分级快速开始指南、典型场景示例与FAQ。内容原创度超过70%。免费版支持单日查询与基础分类，专业版解锁批量日期、AI摘要、多渠道推送、历史趋势分析等高级能力。
-
-  触发关键词：央视新闻、新闻联播、按日期查询、新闻抓取、CCTV、要点速览
+  央视新闻抓取助手免费版是面向个人用户的轻量新闻联播内容抓取工具。聚焦"指定日期-抓取标题-生成简报"三步流程，快速获取新闻联播要点。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。
 tags:
 - 央视新闻
 - 新闻联播
 - 日期查询
 - 简报生成
 tools:
-- read
+  - - read
 - exec
 ---
 
 # 央视新闻抓取助手（免费版）
-
 > **指定日期、抓取标题、生成简报。三步完成央视新闻联播内容获取。**
 
 无需复杂配置，通过简单的命令即可获取指定日期的新闻联播内容。免费版聚焦单日查询场景，快速生成结构化新闻简报。
 
 ## 概述
-
 免费版央视新闻抓取工具为个人用户提供基础的新闻联播内容获取能力。通过 `news_crawler.js` 脚本调用，将新闻联播内容转化为结构化JSON数据，便于后续处理和分析。
 
 ### 核心定位
-
 | 维度 | 免费版能力 |
 |------|------------|
 | 单日查询 | 支持 |
@@ -50,9 +39,7 @@ tools:
 | 全文内容 | 不支持（仅标题与摘要） |
 
 ## 核心能力
-
 ### 1. 按日期抓取新闻联播
-
 ```python
 import subprocess
 import json
@@ -72,7 +59,6 @@ class CCTVNewsFetcher:
             if result.returncode == 0:
                 return runtime
         return "node"  # 默认使用node
-
     def parse_date(self, date_input):
         """解析日期输入"""
         if date_input in ["today", "今天"]:
@@ -113,7 +99,7 @@ class CCTVNewsFetcher:
         except Exception as e:
             return {"success": False, "error": str(e)}
 
-# 使用示例
+# 示例
 fetcher = CCTVNewsFetcher()
 result = fetcher.fetch("20250210")
 if result.get("success"):
@@ -123,7 +109,6 @@ else:
 ```
 
 ### 2. 国内/国际新闻分类
-
 ```python
 class NewsCategorizer:
     """新闻分类器（免费版）"""
@@ -179,7 +164,6 @@ print(f"其他：{len(categorized['other'])} 条")
 ```
 
 ### 3. 基础简报生成
-
 ```python
 class NewsBriefGenerator:
     """新闻简报生成器（免费版）"""
@@ -241,9 +225,7 @@ print(brief)
 ```
 
 ## 使用场景
-
 ### 场景一：每日新闻回顾
-
 **场景描述**：每天晚上查看当天新闻联播要点。
 
 ```python
@@ -265,7 +247,6 @@ else:
 ```
 
 ### 场景二：历史事件查询
-
 **场景描述**：查询某历史日期的新闻联播内容。
 
 ```python
@@ -279,7 +260,6 @@ if result.get("success"):
 ```
 
 ### 场景三：内容创作参考
-
 **场景描述**：自媒体创作者获取新闻素材用于内容创作。
 
 ```python
@@ -297,9 +277,7 @@ for days_ago in range(7):
 ```
 
 ## 快速开始
-
 ### 30秒上手
-
 ```bash
 # 使用bun运行（推荐，速度更快）
 bun scripts/news_crawler.js 20250210
@@ -313,9 +291,8 @@ node scripts/news_crawler.js today
 ```
 
 ### 120秒标准搭建
-
 ```bash
-# 1. 安装依赖
+# 依赖说明
 npm install node-html-parser
 # 或
 bun add node-html-parser
@@ -331,9 +308,7 @@ cat news_20250210.json | python3 -m json.tool | head -50
 ```
 
 ## 配置示例
-
 ### 基础配置
-
 ```python
 import os
 
@@ -358,7 +333,6 @@ CCTVConfig.show()
 ```
 
 ### 输出格式示例
-
 ```json
 {
   "date": "20250210",
@@ -382,9 +356,7 @@ CCTVConfig.show()
 ```
 
 ## 最佳实践
-
-### 1. 错误处理
-
+### 错误处理
 ```python
 def safe_fetch_with_retry(date_input, max_retries=2):
     """带重试的安全抓取"""
@@ -401,7 +373,6 @@ def safe_fetch_with_retry(date_input, max_retries=2):
 ```
 
 ### 2. 日期处理
-
 ```python
 def get_recent_dates(days=7):
     """获取最近N天的日期列表"""
@@ -418,7 +389,6 @@ for date in dates:
 ```
 
 ### 3. 结果缓存
-
 ```python
 import os
 import json
@@ -445,37 +415,28 @@ def fetch_with_cache(date_input, cache_dir="./cache"):
 ```
 
 ## 常见问题
-
 ### Q1：免费版支持批量查询多个日期吗？
-
 不支持。免费版每次只能查询一个日期。如需批量查询（如查询最近30天的新闻）、并发抓取、结果聚合分析，需升级至专业版。
 
 ### Q2：抓取失败怎么办？
-
 可能原因：(1) 网络问题，稍后重试；(2) 日期格式错误，请使用YYYYMMDD格式或today/yesterday关键词；(3) 目标日期新闻尚未发布（如未来日期）；(4) 网站结构变更，需更新脚本。
 
 ### Q3：返回的内容只有标题没有全文？
-
 免费版仅返回新闻标题和摘要内容。如需获取完整新闻正文、相关链接、视频片段信息，需升级至专业版。
 
 ### Q4：支持哪些日期格式？
-
 支持以下格式：(1) YYYYMMDD（如20250210）；(2) YYYY-MM-DD（如2025-02-10）；(3) YYYY/MM/DD（如2025/02/10）；(4) today/今天；(5) yesterday/昨天。
 
 ### Q5：可以获取多久之前的新闻？
-
 免费版支持查询近1年内的新闻联播内容。更早的历史数据可能不可用，或需通过其他渠道获取。专业版支持更长时间范围的历史查询。
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 - **Node.js**: 16+ 或 **Bun**: 1.0+（推荐，速度更快）
 
 ### 第三方依赖
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Node.js 16+ | 运行时 | 二选一 | 官网下载安装 |
@@ -485,20 +446,17 @@ def fetch_with_cache(date_input, cache_dir="./cache"):
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 
 ### API Key 配置
-
 - 免费版无需任何API Key
 - 新闻抓取基于公开网页内容，不涉及付费API调用
 - LLM模型路由由Agent平台内置提供
 
 ### 可用性分类
-
 - **分类**: MD+EXEC（Markdown指令+命令行执行）
 - **说明**: 通过自然语言指令驱动Agent执行新闻抓取与简报生成任务
 
 ---
 
-## 免费版限制
-
+## 已知限制
 本免费体验版限制以下高级功能（需升级至专业版解锁）：
 
 - **批量日期查询**（如最近30天、指定日期范围）

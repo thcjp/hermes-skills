@@ -2,9 +2,9 @@
 slug: knowledge-graph-builder-pro
 name: knowledge-graph-builder-pro
 version: "1.0.0"
-displayName: 知识图谱构建器(专业版)
+displayName: Knowledge Graph Buil
 summary: AI Agent全功能知识图谱引擎，SQLite迁移+图可视化+SPARQL查询+版本追踪+跨技能通信。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   知识图谱构建器专业版是在免费版基础上的全功能升级，为AI Agent提供从类型化图谱到可视化的完整知识管理引擎。专业版解锁SQLite迁移、图可视化、SPARQL-like高级查询、版本追踪与差异对比、跨技能通信增强、多平台集成六大高级功能，实现大规模图谱的高性能管理与可视化。

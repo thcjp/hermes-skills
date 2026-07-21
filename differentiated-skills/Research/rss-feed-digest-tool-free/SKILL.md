@@ -4,12 +4,10 @@ name: rss-feed-digest-tool-free
 version: "1.0.0"
 displayName: RSS聚合摘要免费版
 summary: 轻量级RSS/Atom聚合摘要工具,支持关键词过滤与Markdown输出,适合个人用户生成每日资讯摘要
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  RSS聚合摘要免费版为个人用户提供轻量级的RSS/Atom订阅聚合与摘要生成能力。
-
-  核心能力:
+  RSS聚合摘要免费版为个人用户提供轻量级的RSS/Atom订阅聚合与摘要生成能力。核心能力:
   - 多源RSS/Atom订阅抓取
   - 关键词包含/排除过滤
   - 跨源自动去重
@@ -21,9 +19,7 @@ description: |-
   - 兴趣主题内容聚合
   - 简单的订阅源监控
 
-  差异化:免费版聚焦核心聚合与过滤流程,通过Python脚本实现轻量部署,适合个人用户快速生成每日摘要,无需数据库或复杂配置。
-
-  触发关键词: RSS, Atom, 聚合, 摘要, digest, 过滤, 关键词, Markdown, feed
+  差异化:免费版聚焦核心聚合与过滤流程,通过Python脚本实现轻量部署,适合个人用户快速生成每日摘要,无需数据库或复杂配置
 tags:
 - 研究工具
 - RSS
@@ -31,10 +27,9 @@ tags:
 - 内容摘要
 - 个人效率
 tools:
-- read
+  - - read
 - exec
 ---
-
 # RSS聚合摘要免费版
 
 ## 概述
@@ -58,7 +53,7 @@ RSS聚合摘要免费版是一款基于Python的轻量级RSS/Atom订阅聚合工
 | HTML报告 | 生成可交互HTML页面 | 不支持 |
 | 邮件分发 | 自动发送摘要邮件 | 不支持 |
 
-### 免费版限制
+### 已知限制
 
 - 建议订阅源数量:不超过5个
 - 不支持定时自动化调度
@@ -89,6 +84,20 @@ python3 scripts/rss_digest.py fetch \
 
 ```markdown
 # 每日AI资讯摘要 | 2026-07-18
+
+## 不适用场景
+
+以下场景RSS聚合摘要免费版不适合处理：
+
+- 实时流数据处理
+- 小规模数据手动分析
+- 非结构化文本情感分析
+
+
+## 触发条件
+
+需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求。
+
 
 ## 来源: Hacker News
 - **[GPT-5多模态推理能力实测](https://example.com/post1)** (3h ago)
@@ -141,7 +150,7 @@ python3 scripts/rss_digest.py fetch \
 
 ## 快速开始
 
-### 第一步:安装依赖
+### 依赖说明
 
 ```bash
 pip3 install feedparser
@@ -187,7 +196,7 @@ python3 scripts/rss_digest.py fetch \
   --output daily-digest.md
 ```
 
-## 配置示例
+## 示例
 
 ### 命令行参数详解
 
@@ -310,3 +319,11 @@ A: 确认Python版本≥3.8。网络问题可使用国内镜像源安装:`pip3 i
 
 - **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行Python脚本)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent调用Python脚本完成RSS聚合摘要任务。免费版聚焦个人用户的多源抓取、关键词过滤与Markdown输出,适合每日资讯摘要与兴趣主题聚合场景。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

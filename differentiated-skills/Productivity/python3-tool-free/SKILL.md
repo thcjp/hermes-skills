@@ -4,7 +4,7 @@ name: python3-tool-free
 version: "1.0.0"
 displayName: Python 环境工具基础版
 summary: 管理 Python 项目环境,支持虚拟环境创建、依赖安装与环境诊断
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   核心能力: 开发工具领域的专业化 AI 辅助工具,提供核心基础功能支持。
@@ -20,10 +20,9 @@ tags:
 - 依赖管理
 - pip
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Python 环境工具基础版
 
 ## 概述
@@ -88,7 +87,7 @@ python3 --version
 python3 -c "import sys; print(sys.executable)"
 # 创建虚拟环境
 python3 -m venv .venv
-# 安装依赖
+# 依赖说明
 .venv/bin/pip install -r requirements.txt
 ```
 
@@ -105,6 +104,20 @@ python3 -m venv .venv
 .venv/bin/python -m pip list --outdated
 ```
 
+
+
+## 不适用场景
+
+以下场景Python 环境工具基础版不适合处理：
+
+- 实时流数据处理
+- 小规模数据手动分析
+- 非结构化文本情感分析
+
+
+## 触发条件
+
+需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求。
 
 
 ## 快速开始
@@ -157,7 +170,7 @@ Agent 将自动:
 4. 返回执行结果供你确认
 
 
-## 配置示例
+## 示例
 
 ### 基础配置
 
@@ -228,7 +241,7 @@ A: 升级到 PRO 版本非常简单:
 3. 原有配置自动迁移,无需额外操作
 4. 即可使用批量操作、团队协作等高级功能
 
-### Q: FREE 版本有什么限制?
+### 已知限制
 
 A: FREE 版本主要限制:
 - 不支持批量操作(每次只能处理一个任务)
@@ -286,3 +299,11 @@ FREE 版本支持单一 API Key 配置,满足个人使用需求:
 | 版本类型 | FREE |
 | 许可证 | MIT |
 | 兼容性 | 可升级至 PRO 版本 |
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

@@ -4,7 +4,7 @@ name: security-scanner-tool-free
 version: "1.0.0"
 displayName: 安全扫描器(免费版)
 summary: 自动化安全扫描工具包,含端口扫描、漏洞检测、SSL分析,适合安全测试与评估
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   核心能力:
@@ -26,17 +26,16 @@ description: |-
   - Markdown格式扫描报告
   - 包含道德使用准则
 
-  触发关键词: 安全扫描, 端口扫描, 漏洞检测, SSL检查, nmap, nuclei, sslscan, nikto, security scanner
+  触发关键词: 安全扫描, 端口扫描, 漏洞检测, SSL检查, nmap,...
 tags:
 - 安全
 - 漏洞扫描
 - 渗透测试
 - 网络安全
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 安全扫描器(免费版)
 
 ## 概述
@@ -112,6 +111,20 @@ sslscan target.com
 # 检查证书有效期、协议版本、加密套件
 sslscan target.com | grep -E "SSLv|TLS|Certificate"
 ```
+
+## 不适用场景
+
+以下场景安全扫描器(免费版)不适合处理：
+
+- 渗透测试未授权目标
+- 物理安全防护
+- 社会工程学攻击
+
+
+## 触发条件
+
+需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于非本工具能力范围的需求。
+
 
 ## 快速开始
 
@@ -230,7 +243,7 @@ class SecurityScanner:
             return f"错误: {str(e)}"
 
 
-# 使用示例
+# 示例
 if __name__ == "__main__":
     scanner = SecurityScanner("192.168.1.1")
 
@@ -343,7 +356,7 @@ A: 免费版集成4个核心工具。专业版增加masscan、ffuf、gobuster、
 - **操作系统**: Linux(推荐Kali Linux) / macOS / Windows(WSL)
 - **Python版本**: 3.8+
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -359,3 +372,17 @@ A: 免费版集成4个核心工具。专业版增加masscan、ffuf、gobuster、
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行安全扫描任务
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

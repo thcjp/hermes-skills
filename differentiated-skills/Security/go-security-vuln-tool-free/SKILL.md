@@ -4,7 +4,7 @@ name: go-security-vuln-tool-free
 version: "1.0.0"
 displayName: Go安全漏洞扫描免费版
 summary: Go模块安全漏洞检测工具,使用govulncheck扫描已知漏洞、评估影响并提供修复建议,适合个人Go开发者使用。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   Go安全漏洞扫描免费版,为个人Go开发者提供依赖漏洞检测与修复指导能力。
@@ -18,10 +18,9 @@ tags:
 - 漏洞扫描
 - 免费版
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Go安全漏洞扫描免费版
 
 ## 概述
@@ -53,7 +52,7 @@ echo "项目: $(basename "$(pwd)")"
 echo "时间: $(date '+%Y-%m-%d %H:%M:%S')"
 echo ""
 
-# 检查govulncheck是否安装
+# 依赖说明
 if ! command -v govulncheck &> /dev/null; then
     echo "安装govulncheck..."
     go install golang.org/x/vuln/cmd/govulncheck@latest
@@ -314,6 +313,20 @@ jobs:
         run: go vet ./...
 ```
 
+## 不适用场景
+
+以下场景Go安全漏洞扫描免费版不适合处理：
+
+- 渗透测试未授权目标
+- 物理安全防护
+- 社会工程学攻击
+
+
+## 触发条件
+
+需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 第一步:安装govulncheck
@@ -347,7 +360,7 @@ go get affected-module@latest
 go mod tidy
 ```
 
-## 配置示例
+## 示例
 
 ### govulncheck输出格式
 
@@ -468,3 +481,17 @@ govulncheck需要分析调用图,大型项目可能较慢。可以使用 `-mode 
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行Go项目安全漏洞扫描与修复任务
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

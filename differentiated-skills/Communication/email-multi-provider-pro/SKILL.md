@@ -4,34 +4,10 @@ name: email-multi-provider-pro
 version: "1.0.0"
 displayName: 多邮箱管理专业版
 summary: 企业级Gmail与Outlook统一管理，批量操作与多账户隔离
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  多邮箱管理专业版面向企业用户与高效能个人用户，在免费版跨邮箱管理能力之上扩展批量
-  邮件处理、多账户 Profile 隔离、企业级审计日志、高级过滤策略、邮件模板系统与团队
-  协作共享等高级特性。
-
-  核心能力:
-  - Gmail、Outlook、Exchange 多邮箱企业级统一管理
-  - 批量邮件发送、回复、转发与删除
-  - 多账户 Profile 隔离与租户管理
-  - 高级过滤策略（多条件组合、正则匹配、智能规则）
-  - 邮件模板系统与变量插值
-  - 操作审计日志与合规报告
-  - 团队协作与邮件共享
-  - 优先技术支持与 SLA 保障
-
-  适用场景:
-  - 企业多邮箱统一管理与批量处理
-  - 团队邮件协作与任务分配
-  - 客户服务邮件的批量响应
-  - 邮件合规审计与归档
-  - 多部门多账户统一监控
-
-  差异化: 专业版在免费版全部能力基础上向下兼容，额外提供批量操作引擎、多账户隔离、
-  审计日志、模板系统与团队协作，面向企业级邮件管理场景深度优化。
-
-  触发关键词: Gmail, Outlook, Exchange, 批量邮件, 多账户, Profile隔离, 邮件审计, 邮件模板, 团队协作, 企业邮件
+  多邮箱管理专业版面向企业用户与高效能个人用户。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
 tags:
 - 沟通协作
 - 邮件管理
@@ -39,12 +15,11 @@ tags:
 - 企业效率
 - 批量操作
 tools:
-- read
+  - - read
 - exec
 ---
 
 # 多邮箱管理专业版
-
 **版本**: 1.0.0
 **适用对象**: 企业用户、团队管理者、客服与运营人员
 **核心定位**: 企业级跨邮箱平台统一管理与批量处理平台
@@ -53,7 +28,6 @@ tools:
 ---
 
 ## 概述
-
 多邮箱管理专业版是一款面向企业级场景的跨邮箱平台深度管理工具。在免费版提供的 Gmail、Outlook 与 Exchange 邮箱读取、搜索、发送等基础能力之上，专业版引入批量邮件处理引擎、多账户 Profile 隔离、高级过滤策略、邮件模板系统、操作审计日志与团队协作共享等高级特性，满足企业在批量响应、合规审计、团队协作与多部门管理等复杂场景下的需求。
 
 专业版向下完全兼容免费版，现有 `porteden email` 命令与配置无需修改即可平滑升级。新增的企业级功能通过扩展命令与 Profile 机制实现，不影响既有工作流。
@@ -61,9 +35,7 @@ tools:
 ---
 
 ## 核心能力
-
 ### 批量操作引擎
-
 - **批量发送**: 一次性向多个收件人发送邮件，支持收件人列表
 - **批量回复**: 对搜索结果批量回复
 - **批量转发**: 批量转发邮件到指定地址
@@ -71,7 +43,6 @@ tools:
 - **批量标记**: 批量标记已读、添加标签、设置重要性
 
 ### 多账户 Profile 隔离
-
 - 每个账户独立 Profile，凭证隔离存储
 - 租户级别配置管理
 - 账户间快速切换
@@ -79,7 +50,6 @@ tools:
 - 账户权限与作用域管理
 
 ### 高级过滤策略
-
 - 多维度组合条件（发件人、主题、正文、日期、大小、标签）
 - 正则表达式匹配
 - 智能规则引擎（条件触发自动操作）
@@ -87,14 +57,12 @@ tools:
 - 规则模板复用
 
 ### 邮件模板系统
-
 - 内置企业常用模板（通知、报告、邀请、审批）
 - 自定义模板管理
 - 变量插值与条件渲染
 - 模板共享与版本控制
 
 ### 审计与合规
-
 - 全操作审计日志记录
 - 邮件访问追踪
 - 合规导出报告
@@ -102,7 +70,6 @@ tools:
 - 数据保留策略
 
 ### 团队协作
-
 - 邮件共享与分配
 - 团队邮件池管理
 - 任务状态跟踪
@@ -111,9 +78,7 @@ tools:
 ---
 
 ## 使用场景
-
 ### 场景一：客服团队批量响应邮件
-
 客服团队需要批量回复100封咨询邮件，使用模板进行个性化响应。
 
 **准备收件人列表** `customers.csv`:
@@ -171,7 +136,6 @@ porteden email batch-send \
 ```
 
 ### 场景二：多账户邮件统一监控
-
 管理者需要查看工作邮箱与个人邮箱的今日邮件概览。
 
 ```bash
@@ -190,7 +154,6 @@ porteden email search-all \
 ```
 
 ### 场景三：邮件合规审计与归档
-
 财务部门需要导出所有与合同相关的邮件用于合规审计。
 
 ```bash
@@ -225,9 +188,7 @@ porteden email audit-log \
 ---
 
 ## 快速开始
-
 ### 从免费版升级
-
 专业版完全兼容免费版，现有命令与配置无需修改：
 
 ```bash
@@ -241,7 +202,6 @@ porteden email audit-log --since "2026-07-01"
 ```
 
 ### 配置多账户 Profile
-
 ```bash
 # 添加工作账户
 porteden profile add --name work --login
@@ -260,7 +220,6 @@ porteden profile health-check --all
 ```
 
 ### 配置审计日志
-
 ```json
 {
   "audit": {
@@ -275,10 +234,8 @@ porteden profile health-check --all
 
 ---
 
-## 配置示例
-
+## 示例
 ### 批量操作配置
-
 ```json
 {
   "batch": {
@@ -294,7 +251,6 @@ porteden profile health-check --all
 ```
 
 ### 智能规则配置
-
 ```json
 {
   "rules": [
@@ -319,7 +275,6 @@ porteden profile health-check --all
 ```
 
 ### 团队协作配置
-
 ```json
 {
   "team": {
@@ -335,9 +290,7 @@ porteden profile health-check --all
 ---
 
 ## 最佳实践
-
 ### 批量操作安全
-
 ```bash
 # 始终先试运行
 porteden email batch-send --recipients list.csv --template tpl.html --dry-run
@@ -352,7 +305,6 @@ porteden email batch-send --recipients list.csv --template tpl.html \
 ```
 
 ### 多账户安全隔离
-
 ```bash
 # 为每个部门使用独立 Profile
 porteden profile add --name finance --login
@@ -367,7 +319,6 @@ porteden profile health-check --all
 ```
 
 ### 审计合规
-
 - 开启全操作审计日志
 - 定期导出合规报告
 - 设置合理的保留期限
@@ -384,7 +335,6 @@ porteden email audit-export \
 ---
 
 ## 免费版与专业版对比
-
 | 能力 | 免费版 | 专业版 |
 |:-----|:------:|:------:|
 | 基础邮件收发 | ✅ | ✅ |
@@ -402,9 +352,7 @@ porteden email audit-export \
 ---
 
 ## 常见问题
-
-### 问题1：批量发送触发邮箱限制
-
+### 已知限制
 ```text
 Error: Rate limit exceeded
 ```
@@ -417,7 +365,6 @@ porteden email batch-send --recipients list.csv --template tpl.html --rate-limit
 ```
 
 ### 问题2：Profile 切换失败
-
 **解决**: 确认 Profile 凭证有效：
 
 ```bash
@@ -429,7 +376,6 @@ porteden profile login --name work
 ```
 
 ### 问题3：审计日志占用空间过大
-
 **解决**: 配置日志轮转与压缩：
 
 ```bash
@@ -441,7 +387,6 @@ porteden audit clean --older-than 365
 ```
 
 ### 问题4：模板变量未替换
-
 **解决**: 确保变量名与 CSV 列名一致：
 
 ```bash
@@ -450,7 +395,6 @@ porteden email template validate --name "回复" --data sample.json
 ```
 
 ### 问题5：团队协作权限冲突
-
 **解决**: 检查成员权限配置：
 
 ```bash
@@ -464,7 +408,6 @@ porteden team update --member agent1@company.com --role editor
 ---
 
 ## 命令参考速查
-
 | 命令 | 功能 | 专业版独有 |
 |:-----|:-----|:----------:|
 | `messages` | 列出邮件 | - |
@@ -485,16 +428,13 @@ porteden team update --member agent1@company.com --role editor
 ---
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 - **网络环境**: 需可访问 Gmail/Outlook/Exchange 邮箱服务
 - **磁盘空间**: 审计日志建议预留 500MB 以上
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -505,13 +445,18 @@ porteden team update --member agent1@company.com --role editor
 | 数据库 | 存储引擎 | 可选 | 用于审计日志（可选 SQLite 文件存储） |
 
 ### API Key 配置
-
 - 通过 `porteden auth login` 完成浏览器 OAuth 认证，凭证存储在系统密钥环
 - 多账户场景下每个 Profile 使用独立凭证
 - 支持环境变量 `PE_API_KEY` 自动认证
 - 企业用户建议使用密钥管理服务统一管理凭证
 
 ### 可用性分类
-
 - **分类**: MD+EXEC（纯Markdown指令，部分功能需要 exec 命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行 porteden CLI 命令，支持批量处理、多账户隔离与审计合规
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

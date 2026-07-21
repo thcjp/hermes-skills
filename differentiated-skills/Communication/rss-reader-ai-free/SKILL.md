@@ -4,7 +4,7 @@ name: rss-reader-ai-free
 version: "1.0.0"
 displayName: RSS智能阅读器免费版
 summary: 自动抓取RSS订阅源，使用AI生成中文摘要，支持单渠道推送，适合个人用户信息聚合。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   RSS智能阅读器（免费版）—— 面向个人用户的自动化信息聚合工具。
@@ -29,10 +29,9 @@ tags:
 - RSS
 - AI摘要
 tools:
-- read
+  - - read
 - exec
 ---
-
 # RSS智能阅读器（免费版）
 
 ## 概述
@@ -138,12 +137,26 @@ notify:
     chat_id: "${TELEGRAM_CHAT_ID}"
 ```
 
+## 不适用场景
+
+以下场景RSS智能阅读器免费版不适合处理：
+
+- 需要100%确定性的关键决策
+- 医疗诊断
+- 法律判决
+
+
+## 触发条件
+
+需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 安装
 
 ```bash
-# 克隆项目并安装依赖
+# 依赖说明
 mkdir ~/rss-reader && cd ~/rss-reader
 pip install -r requirements.txt
 
@@ -179,7 +192,7 @@ python main.py [options]
 --verbose       详细日志输出
 ```
 
-## 配置示例
+## 示例
 
 ```yaml
 # config.yaml - 免费版配置
@@ -343,3 +356,17 @@ export EMAIL_PASSWORD="your_app_password"
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行任务，配合Python脚本实现RSS抓取与摘要生成
 - **适用人群**: 个人用户、信息工作者、技术爱好者
 - **版本限制**: 免费版支持单渠道推送、20个以内订阅源，PRO 版本提供多渠道、多源聚合与高级分析
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

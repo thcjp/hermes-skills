@@ -7,32 +7,12 @@ summary: Generate vertical short videos (9:16) from a Markdown script. Parses sc
   sections, generates T...
 license: MIT
 description: |-
-  Generate vertical short videos (9:16) from a Markdown script. Parses
-  script sections, generates T...
-
-  核心能力:
-
-  - 创意设计领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 内容创作、设计生成、多媒体制作
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: generate, short, vertical, video, gen, videos
+  Generate vertical short videos (9:16) from a Markdown script。Parses
+  script sections, generates T。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。
 tags:
 - Creative
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -87,7 +67,7 @@ python3 generate.py <脚本路径> [选项]
 
 ## 依赖
 
-### 系统依赖
+### 依赖说明
 
 * **FFmpeg**：视频合成（`brew install ffmpeg`）
 * **Chrome**：HTML 截图（仅在未使用 `--images-dir` 时需要）
@@ -148,3 +128,69 @@ python3 generate.py <脚本路径> [选项]
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+
+- Generate vertical short videos (9:16) from a Markdown script
+- Parses
+  script sections, generates T
+- 触发关键词: generate, short, vertical, video, gen, videos
+
+## 适用场景
+
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 示例
+
+### 示例1：基础用法
+
+```
+```bash
+python3 generate.py script.md -o output.mp4
+```
+
+### 使用预制图片（跳过 Chrome 截图）
+
+```bash
+python3 generate.py script.md --images-dir ./my-slides -o output.mp4
+```
+
+图片命名规则：`slide_01.png`, `slide_02.png`...，与脚本分段一一对应。
+
+### 自定义 TTS 命令
+
+```bash
+python3 generate.py script.md --tts-command "my-tts {text} -o {output} -v {voice} -r {rate}"
+```
+
+占位符：`{text}` 口播文案、`{output}` 输出路径、`{voice}` 音色、`{rate}` 语速。
+```
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+
+### Q1: 如何开始使用LH Video Gen？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: LH Video Gen有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

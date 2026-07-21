@@ -4,40 +4,28 @@ name: feed-to-md-tool-free
 version: "1.0.0"
 displayName: RSS转MD(免费版)
 summary: RSS转Markdown免费版，支持单个订阅源转换、基础元素提取与文件保存。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  RSS转Markdown助手免费版是面向个人用户的轻量RSS内容转换工具。聚焦"获取-解析-转换-保存"四步流程，将RSS订阅内容转换为结构化Markdown文档。
-
-  核心能力：单个订阅源获取、XML解析、基础元素提取（标题/链接/描述/日期）、Markdown格式转换、文件保存、命令行调用。
-
-  适用场景：订阅内容归档、博客文章备份、学习资料整理、内容迁移、个人知识库构建。
-
-  差异化：完全中文化重写，聚焦"轻量RSS转换"场景，新增分级快速开始指南、典型场景示例与FAQ。内容原创度超过70%。免费版支持单源转换与基础格式，专业版解锁批量转换、自定义模板、内容增强、定时归档等高级能力。
-
-  触发关键词：RSS转Markdown、订阅转换、Feed转MD、内容归档、博客备份
+  RSS转Markdown助手免费版是面向个人用户的轻量RSS内容转换工具。聚焦"获取-解析-转换-保存"四步流程，将RSS订阅内容转换为结构化Markdown文档。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - RSS转换
 - Markdown
 - 内容归档
 - 订阅备份
 tools:
-- read
+  - - read
 - exec
----
-
 # RSS转Markdown助手（免费版）
-
+---
 > **获取、解析、转换、保存。四步完成RSS到Markdown的转换。**
 
 无需复杂配置，通过简单的脚本即可将RSS订阅内容转换为结构化的Markdown文档。免费版聚焦轻量场景，提供基础的转换能力。
 
 ## 概述
-
 免费版RSS转Markdown工具为个人用户提供基础的RSS内容转换能力。通过Python脚本解析XML，提取核心元素（标题、链接、描述、发布日期），转换为Markdown格式并保存到本地文件。
 
 ### 核心定位
-
 | 维度 | 免费版能力 |
 |------|------------|
 | 单源转换 | 支持 |
@@ -50,127 +38,11 @@ tools:
 | 文件保存 | 支持 |
 
 ## 核心能力
-
 ### 1. RSS获取与解析
 
-```python
-import requests
-import xml.etree.ElementTree as ET
-from datetime import datetime
-
-class RSSParser:
-    """RSS解析器（免费版）"""
-
-    def __init__(self):
-        self.headers = {'User-Agent': 'Mozilla/5.0'}
-
-    def fetch(self, url, timeout=10):
-        """获取RSS源"""
-        try:
-            response = requests.get(url, timeout=timeout, headers=self.headers)
-            if response.status_code == 200:
-                return response.content
-            return None
-        except Exception as e:
-            print(f"获取失败：{e}")
-            return None
-
-    def parse(self, xml_content):
-        """解析RSS XML"""
-        try:
-            root = ET.fromstring(xml_content)
-            channel = root.find('channel')
-
-            if channel is None:
-                # Atom格式
-                return self._parse_atom(root)
-
-            return self._parse_rss(channel)
-        except ET.ParseError as e:
-            print(f"解析失败：{e}")
-            return None
-
-    def _parse_rss(self, channel):
-        """解析RSS 2.0格式"""
-        feed_info = {
-            'title': self._get_text(channel, 'title'),
-            'description': self._get_text(channel, 'description'),
-            'link': self._get_text(channel, 'link'),
-            'last_build_date': self._get_text(channel, 'lastBuildDate'),
-            'items': []
-        }
-
-        for item in channel.findall('item'):
-            entry = {
-                'title': self._get_text(item, 'title'),
-                'link': self._get_text(item, 'link'),
-                'description': self._get_text(item, 'description'),
-                'pub_date': self._get_text(item, 'pubDate'),
-                'guid': self._get_text(item, 'guid'),
-                'author': self._get_text(item, 'author') or self._get_text(item, '{http://purl.org/dc/elements/1.1/}creator')
-            }
-            feed_info['items'].append(entry)
-
-        return feed_info
-
-    def _parse_atom(self, root):
-        """解析Atom格式"""
-        ns = {'atom': 'http://www.w3.org/2005/Atom'}
-
-        feed_info = {
-            'title': self._get_text(root, 'atom:title', ns),
-            'description': self._get_text(root, 'atom:subtitle', ns),
-            'link': '',
-            'last_build_date': self._get_text(root, 'atom:updated', ns),
-            'items': []
-        }
-
-        # 获取link
-        link_elem = root.find('atom:link', ns)
-        if link_elem is not None:
-            feed_info['link'] = link_elem.get('href', '')
-
-        for entry in root.findall('atom:entry', ns):
-            item = {
-                'title': self._get_text(entry, 'atom:title', ns),
-                'link': '',
-                'description': self._get_text(entry, 'atom:summary', ns) or self._get_text(entry, 'atom:content', ns),
-                'pub_date': self._get_text(entry, 'atom:updated', ns) or self._get_text(entry, 'atom:published', ns),
-                'guid': self._get_text(entry, 'atom:id', ns),
-                'author': ''
-            }
-
-            # 获取link
-            link_elem = entry.find('atom:link', ns)
-            if link_elem is not None:
-                item['link'] = link_elem.get('href', '')
-
-            # 获取author
-            author_elem = entry.find('atom:author', ns)
-            if author_elem is not None:
-                item['author'] = self._get_text(author_elem, 'atom:name', ns)
-
-            feed_info['items'].append(item)
-
-        return feed_info
-
-    def _get_text(self, parent, tag, ns=None):
-        """安全获取元素文本"""
-        elem = parent.find(tag, ns) if ns else parent.find(tag)
-        return elem.text.strip() if elem is not None and elem.text else ''
-
-# 使用示例
-parser = RSSParser()
-xml_content = parser.fetch("https://example.com/feed.xml")
-if xml_content:
-    feed = parser.parse(xml_content)
-    if feed:
-        print(f"订阅源：{feed['title']}")
-        print(f"条目数：{len(feed['items'])}")
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 2. Markdown转换
-
 ```python
 class MarkdownConverter:
     """Markdown转换器（免费版）"""
@@ -179,7 +51,6 @@ class MarkdownConverter:
         """转换为Markdown"""
         lines = []
 
-        # 文档头部
         lines.append(f"# {feed_info.get('title', '未知订阅源')}")
         lines.append("")
         if feed_info.get('description'):
@@ -193,7 +64,6 @@ class MarkdownConverter:
         lines.append("---")
         lines.append("")
 
-        # 条目列表
         items = feed_info.get('items', [])
         if max_items:
             items = items[:max_items]
@@ -214,7 +84,6 @@ class MarkdownConverter:
             lines.append("")
 
             if item.get('description'):
-                # 清理HTML标签（简化版）
                 desc = self._strip_html(item['description'])
                 lines.append(desc[:500])
                 if len(desc) > 500:
@@ -233,14 +102,12 @@ class MarkdownConverter:
         clean = re.compile('<.*?>')
         return re.sub(clean, '', text).strip()
 
-# 使用示例
 converter = MarkdownConverter()
 markdown = converter.convert(feed, max_items=10)
 print(markdown[:500])
 ```
 
 ### 3. 文件保存
-
 ```python
 import os
 from datetime import datetime
@@ -255,9 +122,7 @@ class FileSaver:
     def save(self, content, filename=None, feed_title=None):
         """保存Markdown文件"""
         if filename is None:
-            # 自动生成文件名
             if feed_title:
-                # 清理标题作为文件名
                 safe_title = "".join(c for c in feed_title if c.isalnum() or c in (' ', '-', '_')).strip()
                 filename = f"{safe_title}_{datetime.now().strftime('%Y%m%d')}.md"
             else:
@@ -289,16 +154,13 @@ class FileSaver:
 
         return info_file
 
-# 使用示例
 saver = FileSaver("./output")
 filepath = saver.save(markdown, feed_title=feed.get('title'))
 saver.save_batch_info(feed)
 ```
 
 ## 使用场景
-
 ### 场景一：订阅内容归档
-
 **场景描述**：将RSS订阅内容转换为Markdown归档保存。
 
 ```python
@@ -306,21 +168,16 @@ parser = RSSParser()
 converter = MarkdownConverter()
 saver = FileSaver("./archives")
 
-# 1. 获取RSS
 xml = parser.fetch("https://example.com/feed.xml")
 
-# 2. 解析
 feed = parser.parse(xml)
 
-# 3. 转换
 markdown = converter.convert(feed)
 
-# 4. 保存
 saver.save(markdown, feed_title=feed['title'])
 ```
 
 ### 场景二：博客文章备份
-
 **场景描述**：备份自己博客的RSS内容为Markdown。
 
 ```python
@@ -328,16 +185,13 @@ parser = RSSParser()
 converter = MarkdownConverter()
 saver = FileSaver("./blog_backup")
 
-# 备份博客
 blog_feed = "https://myblog.com/rss.xml"
 xml = parser.fetch(blog_feed)
 feed = parser.parse(xml)
 
-# 转换所有条目
 markdown = converter.convert(feed, max_items=None)  # 全部条目
 saver.save(markdown, feed_title="blog_backup")
 
-# 每条单独保存
 for item in feed['items']:
     single_feed = {'title': item['title'], 'items': [item]}
     single_md = converter.convert(single_feed)
@@ -345,7 +199,6 @@ for item in feed['items']:
 ```
 
 ### 场景三：学习资料整理
-
 **场景描述**：将技术博客的RSS转为Markdown方便阅读。
 
 ```python
@@ -368,11 +221,8 @@ for url in tech_feeds:
 ```
 
 ## 快速开始
-
 ### 30秒上手
-
 ```bash
-# 使用Python快速转换
 python3 << 'PYEOF'
 import requests
 import xml.etree.ElementTree as ET
@@ -391,79 +241,10 @@ PYEOF
 
 ### 120秒标准搭建
 
-```bash
-# 1. 安装依赖
-pip install requests
-
-# 2. 创建转换脚本
-cat > feed_to_md.py << 'PYEOF'
-import requests
-import xml.etree.ElementTree as ET
-from datetime import datetime
-import os
-
-def fetch_rss(url):
-    r = requests.get(url, timeout=10, headers={'User-Agent': 'Mozilla/5.0'})
-    return r.content
-
-def parse_rss(xml):
-    root = ET.fromstring(xml)
-    channel = root.find('channel')
-    return {
-        'title': channel.find('title').text,
-        'description': channel.find('description').text,
-        'link': channel.find('link').text,
-        'items': [
-            {
-                'title': item.find('title').text,
-                'link': item.find('link').text,
-                'description': item.find('description').text if item.find('description') is not None else '',
-                'pub_date': item.find('pubDate').text if item.find('pubDate') is not None else ''
-            }
-            for item in channel.findall('item')
-        ]
-    }
-
-def to_markdown(feed):
-    lines = [f"# {feed['title']}\n"]
-    if feed.get('description'):
-        lines.append(f"> {feed['description']}\n")
-    lines.append(f"**链接**：{feed.get('link', '')}\n---\n")
-
-    for i, item in enumerate(feed['items'], 1):
-        lines.append(f"## {i}. {item['title']}")
-        if item.get('pub_date'):
-            lines.append(f"**日期**：{item['pub_date']}")
-        if item.get('link'):
-            lines.append(f"**链接**：{item['link']}")
-        if item.get('description'):
-            lines.append(f"\n{item['description'][:500]}")
-        lines.append("\n---\n")
-
-    return "\n".join(lines)
-
-if __name__ == "__main__":
-    import sys
-    url = sys.argv[1] if len(sys.argv) > 1 else "https://example.com/feed.xml"
-    xml = fetch_rss(url)
-    feed = parse_rss(xml)
-    md = to_markdown(feed)
-
-    os.makedirs("./output", exist_ok=True)
-    filename = f"feed_{datetime.now().strftime('%Y%m%d')}.md"
-    with open(f"./output/{filename}", "w", encoding="utf-8") as f:
-        f.write(md)
-    print(f"已保存：./output/{filename}")
-PYEOF
-
-# 3. 运行
-python3 feed_to_md.py "https://example.com/feed.xml"
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ## 配置示例
-
 ### 基础配置
-
 ```python
 import os
 
@@ -474,7 +255,6 @@ class FeedToMdConfig:
     MAX_ITEMS = int(os.getenv("F2M_MAX_ITEMS", "0"))  # 0表示全部
     USER_AGENT = os.getenv("F2M_USER_AGENT", "Mozilla/5.0")
 
-    # 输出格式
     INCLUDE_AUTHOR = True
     INCLUDE_DATE = True
     INCLUDE_DESCRIPTION = True
@@ -491,42 +271,28 @@ FeedToMdConfig.show()
 ```
 
 ### 输出格式模板
-
 ```python
 OUTPUT_TEMPLATE = """# {title}
-
-> {description}
-
 **订阅源链接**：{link}
 **最后更新**：{last_build_date}
 
----
-
-## 条目列表（共 {item_count} 条）
-
 {items_content}
-
----
 
 *转换时间：{converted_at}*
 """
 
 ITEM_TEMPLATE = """### {index}. {title}
-
 **发布日期**：{pub_date}
 **作者**：{author}
 **原文链接**：[{link}]({link})
 
 {description}
 
----
 """
 ```
 
 ## 最佳实践
-
-### 1. 错误处理
-
+### 错误处理
 ```python
 def safe_fetch_and_convert(url):
     """安全的获取与转换"""
@@ -548,7 +314,6 @@ def safe_fetch_and_convert(url):
 ```
 
 ### 2. 增量保存
-
 ```python
 def save_incremental(feed, output_dir):
     """增量保存（按条目）"""
@@ -560,7 +325,6 @@ def save_incremental(feed, output_dir):
 ```
 
 ### 3. 文件命名规范
-
 ```python
 def generate_filename(feed_title, item_title=None):
     """生成规范文件名"""
@@ -568,48 +332,37 @@ def generate_filename(feed_title, item_title=None):
     date_str = datetime.now().strftime('%Y%m%d')
 
     if item_title:
-        # 单条目：标题_日期.md
         safe_title = "".join(c for c in item_title if c.isalnum() or c in (' ', '-', '_')).strip()
         return f"{safe_title[:50]}_{date_str}.md"
     else:
-        # 整个订阅：订阅源名_日期.md
         safe_name = "".join(c for c in feed_title if c.isalnum() or c in (' ', '-', '_')).strip()
         return f"{safe_name}_{date_str}.md"
 ```
 
 ## 常见问题
-
 ### Q1：免费版支持批量转换多个订阅源吗？
-
 不支持。免费版每次只能转换一个订阅源。如需批量转换多个RSS源、并发处理、结果聚合，需升级至专业版。
 
 ### Q2：RSS获取失败怎么办？
-
 可能原因：(1) 网络问题，稍后重试；(2) URL错误，检查格式；(3) User-Agent被屏蔽，尝试更换UA；(4) 源站临时不可用。免费版会跳过失败源并报告错误。
 
 ### Q3：转换后的Markdown格式不规范？
-
 免费版使用固定模板转换。如需自定义模板（如添加自定义字段、调整格式、添加目录等），需升级专业版。当前模板包含：标题、描述、链接、更新时间、条目列表。
 
 ### Q4：可以转换Atom格式吗？
-
 可以。免费版同时支持RSS 2.0和Atom 1.0格式。解析器会自动识别格式并使用对应的解析逻辑。
 
 ### Q5：支持哪些输出格式？
-
 免费版仅支持Markdown格式输出。如需HTML、PDF、EPUB等其他格式，需升级专业版。
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 - **Python**: 3.8+
 - **Node.js**: 16+（可选，用于JavaScript实现）
 
 ### 第三方依赖
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Python 3.8+ | 运行时 | 必需 | 官网下载安装 |
@@ -619,20 +372,15 @@ def generate_filename(feed_title, item_title=None):
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 
 ### API Key 配置
-
 - 免费版无需任何API Key
 - RSS获取基于公开订阅源，不涉及付费API调用
 - LLM模型路由由Agent平台内置提供
 
 ### 可用性分类
-
 - **分类**: MD+EXEC（Markdown指令+命令行执行）
 - **说明**: 通过自然语言指令驱动Agent执行RSS到Markdown转换任务
 
----
-
-## 免费版限制
-
+## 已知限制
 本免费体验版限制以下高级功能（需升级至专业版解锁）：
 
 - **批量转换**（多个订阅源并发处理）

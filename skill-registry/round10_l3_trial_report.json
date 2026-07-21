@@ -1,0 +1,149 @@
+{
+  "total": 20,
+  "passed": 12,
+  "failed": 1,
+  "errors": 7,
+  "pass_rate": 60.0,
+  "duration_sec": 0.1,
+  "results": [
+    {
+      "slug": "skill-production-standards",
+      "status": "error",
+      "error": "SKILL.md not found"
+    },
+    {
+      "slug": "batch-processor-pro",
+      "status": "error",
+      "error": "SKILL.md not found"
+    },
+    {
+      "slug": "feishu-card-builder",
+      "category": "Communication",
+      "l2_score": 49,
+      "l3_score": 100.0,
+      "l3_grade": "A",
+      "l3_passed": true
+    },
+    {
+      "slug": "bilibili-all-in-one",
+      "category": "Creative",
+      "l2_score": 49,
+      "l3_score": 100.0,
+      "l3_grade": "A",
+      "l3_passed": true
+    },
+    {
+      "slug": "code-quality-free",
+      "status": "error",
+      "error": "SKILL.md not found"
+    },
+    {
+      "slug": "accounting-finance-free",
+      "status": "error",
+      "error": "SKILL.md not found"
+    },
+    {
+      "slug": "api-toolkit",
+      "category": "Integrations",
+      "l2_score": 49,
+      "l3_score": 100.0,
+      "l3_grade": "A",
+      "l3_passed": true
+    },
+    {
+      "slug": "learn-cog",
+      "category": "Knowledge",
+      "l2_score": 49,
+      "l3_score": 100.0,
+      "l3_grade": "A",
+      "l3_passed": true
+    },
+    {
+      "slug": "text-game-arcade-universe-v3",
+      "category": "Lifestyle",
+      "l2_score": 48,
+      "l3_score": 100.0,
+      "l3_grade": "A",
+      "l3_passed": true
+    },
+    {
+      "slug": "aws-toolkit",
+      "category": "Operations",
+      "l2_score": 49,
+      "l3_score": 100.0,
+      "l3_grade": "A",
+      "l3_passed": true
+    },
+    {
+      "slug": "data-toolkit-free",
+      "status": "error",
+      "error": "SKILL.md not found"
+    },
+    {
+      "slug": "intel-sentinel",
+      "category": "Productivity",
+      "l2_score": 49.5,
+      "l3_score": 37.5,
+      "l3_grade": "D",
+      "l3_passed": false
+    },
+    {
+      "slug": "free-web-search",
+      "category": "Research",
+      "l2_score": 49.5,
+      "l3_score": 100.0,
+      "l3_grade": "A",
+      "l3_passed": true
+    },
+    {
+      "slug": "amap-jsapi-skill",
+      "category": "Security",
+      "l2_score": 49,
+      "l3_score": 100.0,
+      "l3_grade": "A",
+      "l3_passed": true
+    },
+    {
+      "slug": "memory-scan",
+      "status": "error",
+      "error": "SKILL.md not found"
+    },
+    {
+      "slug": "reminder-engine",
+      "category": "Automation",
+      "l2_score": 49,
+      "l3_score": 100.0,
+      "l3_grade": "A",
+      "l3_passed": true
+    },
+    {
+      "slug": "calendar-reminder",
+      "category": "Communication",
+      "l2_score": 49,
+      "l3_score": 100.0,
+      "l3_grade": "A",
+      "l3_passed": true
+    },
+    {
+      "slug": "frontend-design-v3",
+      "category": "Creative",
+      "l2_score": 49,
+      "l3_score": 100.0,
+      "l3_grade": "A",
+      "l3_passed": true
+    },
+    {
+      "slug": "pptx-presentation-pro",
+      "status": "error",
+      "error": "SKILL.md not found"
+    },
+    {
+      "slug": "finance-accounting",
+      "category": "Finance",
+      "l2_score": 48,
+      "l3_score": 100.0,
+      "l3_grade": "A",
+      "l3_passed": true
+    }
+  ]
+}

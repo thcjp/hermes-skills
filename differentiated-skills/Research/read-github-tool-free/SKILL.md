@@ -4,36 +4,22 @@ name: read-github-tool-free
 version: "1.0.0"
 displayName: 代码仓库阅读免费版
 summary: 通过MCP server读取代码仓库文档与代码，支持文档搜索与代码检索
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  代码仓库阅读工具免费版，通过MCP server读取代码仓库的文档和代码，帮助用户快速理解开源项目。
-
-  核心能力:
+  代码仓库阅读工具免费版，通过MCP server读取代码仓库的文档和代码，帮助用户快速理解开源项目。核心能力:
   - 获取仓库完整文档（README等）
   - 文档语义搜索
   - 代码搜索（精确匹配）
   - 获取文档中引用的外部URL内容
-  - URL自动转换（github.com → gitmcp.io）
-
-  适用场景:
-  - 个人开发者学习开源项目
-  - 技术选型时阅读项目文档
-  - 查找特定函数或API用法
-
-  差异化:
-  - 免费版聚焦单仓库文档与代码阅读
-  - 通过MCP工具访问，无需克隆代码
-  - 与PRO版本完全兼容，可平滑升级
-
-  触发关键词: 读仓库, 仓库文档, 代码搜索, 开源项目, README, github阅读, read github
+  - URL自动转换（github。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。
 tags:
 - 开发
 - 代码阅读
 - 文档
 - 开源
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -117,7 +103,7 @@ React 是一个用于构建用户界面的 JavaScript 库...
 - 单向数据流
 - JSX语法
 
-### 安装方式
+### 依赖说明
 npm install react react-dom
 
 ### 快速开始
@@ -198,7 +184,7 @@ python3 scripts/gitmcp.py search-code facebook/react "useState"
 python3 scripts/gitmcp.py list-tools owner/repo
 ```
 
-## 配置示例
+## 示例
 
 ### 脚本使用配置
 
@@ -267,7 +253,7 @@ defaults:
   search_code_exact: true     # 代码精确匹配
   respect_robots_txt: true    # 遵守robots.txt
 
-# 搜索限制
+# 已知限制
 limits:
   max_search_results: 20
   max_url_fetch_size: "1MB"
@@ -393,3 +379,11 @@ curl -s -o /dev/null -w "%{http_code}" https://gitmcp.io
 - **说明**: 通过 MCP server访问代码仓库的文档与代码，支持获取、搜索和内容提取
 - **适用规模**: 个人开发者、轻量级代码阅读场景
 - **升级路径**: 可无缝升级至 read-github-tool-pro 获取批量仓库分析与代码审计能力
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

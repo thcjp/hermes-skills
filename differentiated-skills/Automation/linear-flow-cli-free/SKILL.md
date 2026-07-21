@@ -4,25 +4,17 @@ name: linear-flow-cli-free
 version: "1.0.0"
 displayName: Linear流程CLI(免费版)
 summary: 通过命令行读写Linear任务管理系统，支持任务查询、创建、更新与团队管理，提供稳定的JSON输出与基础工作流。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  Linear流程CLI（免费版）面向使用Linear进行项目管理的开发团队，提供通过命令行读写Linear数据的Agent原生能力。基于稳定的JSON契约设计，让AI Agent能够以机器可读的方式查询任务、创建Issue、更新状态、管理团队与项目，无需通过Web界面手动操作。
-
-  核心能力：Linear认证与配置管理、任务（Issue）查询与基础创建、团队（Team）与项目（Project）信息读取、工作流状态（Workflow State）查询、标签（Label）管理、JSON格式稳定输出、Markdown内容文件化处理（避免shell转义问题）、命令发现与帮助系统。
-
-  适用场景：AI Agent自动化任务管理、开发团队Daily Standup数据汇总、个人任务批量查询与更新、项目管理仪表盘数据拉取、CI/CD流水线中的任务状态同步。
-
-  差异化：完全中文化文档与示例，针对国内开发团队习惯优化命令示例，新增五类典型使用场景、五问基础FAQ与故障排查表。免费版聚焦读取与基础写入操作，适合个人与小型团队。保留原始MIT-0版权声明。
-
-  触发关键词：Linear CLI、任务管理、Issue查询、命令行工具、JSON输出、Agent原生
+  Linear流程CLI（免费版）面向使用Linear进行项目管理的开发团队，提供通过命令行读写Linear数据的Agent原生能力。基于稳定的JSON契约设计，让AI Agent能够以机器可读的方式查询任务、创建Issue、更新状态、管理团队与项目，无需通过Web界面手动操作。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
 tags:
 - Linear
 - 任务管理
 - 命令行工具
 - Agent原生
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -114,7 +106,7 @@ linear project get "用户中心重构"
 # 列出团队的工作流状态
 linear workflow-state list --team ENG
 
-# 输出示例（JSON）
+# 示例
 # [
 #   {"id": "abc123", "name": "Backlog", "type": "backlog"},
 #   {"id": "def456", "name": "Todo", "type": "unstarted"},
@@ -169,9 +161,9 @@ linear issue list --fields "identifier,title,state,assignee"
 - 便于脚本与流水线中复用内容文件
 - 与版本控制系统配合，追踪描述变更
 
-## 快速开始（<60秒）
+## 使用流程
 
-### 步骤一：安装与认证
+### 依赖说明
 
 ```bash
 # 确认linear命令可用
@@ -307,11 +299,11 @@ linear resolve            # 解析引用（不修改Linear）
 
 可以。通过 `linear api` 命令可发起原生GraphQL请求，作为CLI未覆盖场景的兜底方案。但推荐优先使用CLI命令，更简洁且自带校验。
 
-### Q5：免费版有调用限制吗？
+### 已知限制
 
 免费版本身不限制CLI调用次数。但Linear API有速率限制（基于API Key等级），建议合理控制调用频率。
 
-## 故障排查表
+## 错误处理
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
 |------|----------|----------|--------|

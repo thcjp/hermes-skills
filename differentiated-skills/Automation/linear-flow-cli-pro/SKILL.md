@@ -4,7 +4,7 @@ name: linear-flow-cli-pro
 version: "1.0.0"
 displayName: Linear流程CLI(专业版)
 summary: Linear命令行Agent原生运行时专业版，支持批量操作、dry-run预览、自动化策略、Slack集成与Git工作流联动。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   Linear流程CLI（专业版）面向使用Linear进行复杂项目管理的工程团队与AI Agent运行时，在免费版基础上解锁全部高级能力：批量操作、dry-run预览、自动化策略、Slack/Ticket上下文集成、Git/JJ工作流联动、高级GraphQL查询模板、Webhook管理、跨团队Initiative管理。让AI Agent成为真正的Linear自动化中枢。

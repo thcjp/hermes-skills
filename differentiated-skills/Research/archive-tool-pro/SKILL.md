@@ -4,13 +4,11 @@ name: archive-tool-pro
 version: "1.0.0"
 displayName: 内容归档工具-专业版
 summary: 企业级内容归档,支持团队共享、自动摘要、版本控制、全文检索与API访问
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   企业级内容归档工具,在免费版核心能力之上,提供团队共享归档库、AI 自动摘要、
-  版本控制、全文检索、API 访问、权限管理与监控统计能力。
-
-  核心能力:
+  版本控制、全文检索、API 访问、权限管理与监控统计能力。核心能力:
   - 免费版全部能力(完全兼容)
   - 团队共享归档库与协作
   - AI 自动摘要与关键词提取
@@ -25,16 +23,14 @@ description: |-
   - 合规性内容留存
   - 团队协作与知识共享
 
-  差异化:专业版面向团队与企业,提供共享、版本控制、API、权限等高阶能力,并保持与免费版完全兼容。
-
-  触发关键词: 内容归档, 团队归档, 版本控制, 全文检索, 合规留存, 自动摘要, archive
+  差异化:专业版面向团队与企业,提供共享、版本控制...
 tags:
 - 研究工具
 - 内容归档
 - 企业级
 - 知识管理
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -134,7 +130,7 @@ archive pro search --project my-project --sort relevance
 # 启用 API 服务
 archive pro api start --port 8080
 
-# API 查询示例
+# 示例
 curl -s http://localhost:8080/api/search?q=定价
 curl -s http://localhost:8080/api/items/2026-02-16-pricing-strategy
 curl -s -X POST http://localhost:8080/api/items -d '{"url":"...","tags":["..."]}'
@@ -155,6 +151,7 @@ archive pro audit log --limit 50 --member alice
 ```
 
 ## 使用场景
+- 不适用: 需要人工判断的复杂决策场景
 
 ### 场景一:企业合规性内容留存
 
@@ -286,7 +283,7 @@ for item in results["items"]:
 
 ## 快速开始
 
-### 1. 安装与初始化
+### 依赖说明
 
 ```bash
 # 专业版初始化(保留免费版数据)
@@ -489,3 +486,13 @@ curl -H "Authorization: Bearer <token>" http://localhost:8080/api/search?q=test
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
 - **版本**: 专业版(兼容免费版全部能力)
+
+## 错误处理
+- 边界输入处理: 空输入返回提示信息, 超长输入自动截断
+- 降级策略: 异常时返回默认值, 确保流程不中断
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

@@ -4,38 +4,17 @@ name: stock-filter-tool-free
 version: "1.0.0"
 displayName: 股票筛选入门工具
 summary: A股股票筛选工具，支持基本面与技术面过滤，单策略逐只分析。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人投资者的A股股票筛选工具。支持按基本面（PE/PB/ROE等）和
-  技术面（均线/RSI等）条件筛选股票。适合个人投资者进行简单的选股
-  分析与初步筛选。
-
-  核心能力:
-  - 基本面筛选（PE/PB/ROE/营收增长等）
-  - 技术面筛选（均线/RSI/MACD等）
-  - 单策略逐只分析
-  - 结果列表展示
-
-  适用场景:
-  - 个人投资者选股
-  - 基本面初步筛选
-  - 技术面信号扫描
-  - 学习研究用途
-
-  差异化:
-  - 免费版聚焦单策略筛选
-  - 适合个人用户低频使用
-  - 不支持多策略组合
-  - 不支持批量导出
-
-  触发关键词: 股票筛选, 选股, 基本面, 技术面, PE, PB, ROE, 均线, RSI, stock filter, screener
+  技术面（均线/RSI等）条件筛选股票。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
 - Finance
 - 股票筛选
 - 选股工具
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -123,7 +102,7 @@ python3 scripts/filter.py \
 ### 环境准备
 
 ```bash
-# 安装依赖
+# 依赖说明
 pip install akshare pandas
 
 # 运行筛选
@@ -146,7 +125,7 @@ python3 scripts/filter.py --industry "白酒" --conditions "pe<30,roe>20"
 python3 scripts/filter.py --market-cap "100亿-1000亿" --conditions "pe<25"
 ```
 
-## 配置示例
+## 示例
 
 ### 筛选配置
 
@@ -236,3 +215,17 @@ filter_config:
 - **分类**: MD+EXEC（Markdown指令+Python脚本执行）
 - **说明**: 通过AkShare获取A股数据进行筛选
 - **免费版限制**: 单策略、不支持导出、主要支持A股
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

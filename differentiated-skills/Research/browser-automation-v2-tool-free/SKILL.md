@@ -4,25 +4,17 @@ name: browser-automation-v2-tool-free
 version: "1.0.0"
 displayName: 浏览器自动化(免费版)
 summary: 浏览器自动化免费版，支持标签页自动清理、超时重试、智能等待与基础表单填写。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  浏览器自动化助手免费版是面向个人开发者和轻量任务场景的浏览器自动化工具。聚焦"打开页面-等待加载-提取数据-关闭标签"四步基础流程，让重复的网页操作自动化。
-
-  核心能力：单页面自动打开与导航、智能等待（waitForLoadState/waitForSelector）、基础表单字段填写、超时与重试（指数退避）、标签页自动清理、DEBUG结构化日志输出。
-
-  适用场景：单页面信息采集、简单表单自动填写、定时数据抓取、网页内容摘要、个人效率脚本、学习浏览器自动化。
-
-  差异化：完全中文化重写，聚焦"轻量浏览器自动化"场景，新增分级快速开始指南、中文错误码说明、典型场景示例与FAQ。内容原创度超过70%。免费版支持单页面操作与基础表单，专业版解锁批量处理、并发锁、Cloudflare绕过、企业级集成等高级能力。
-
-  触发关键词：浏览器自动化、网页抓取、自动填表、Playwright、页面等待、标签清理
+  浏览器自动化助手免费版是面向个人开发者和轻量任务场景的浏览器自动化工具。聚焦"打开页面-等待加载-提取数据-关闭标签"四步基础流程，让重复的网页操作自动化。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - 浏览器自动化
 - 网页抓取
 - 表单填写
 - 单页面
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -69,7 +61,7 @@ def open_page(url, timeout=30):
         return {"success": False, "error": result.stderr}
     return json.loads(result.stdout)
 
-# 使用示例
+# 示例
 page = open_page("https://example.com")
 print(page.get("title", "未获取到标题"))
 ```
@@ -246,7 +238,7 @@ node fetch-summary.js "https://example.com"
 ### 120秒标准搭建
 
 ```bash
-# 1. 安装依赖
+# 依赖说明
 npm install playwright
 
 # 2. 配置浏览器
@@ -307,7 +299,7 @@ Config.show()
 
 ## 最佳实践
 
-### 1. 错误处理
+### 错误处理
 
 ```python
 def safe_fetch(url):
@@ -406,7 +398,7 @@ os.environ["DEBUG"] = "1"
 
 ---
 
-## 免费版限制
+## 已知限制
 
 本免费体验版限制以下高级功能（需升级至专业版解锁）：
 

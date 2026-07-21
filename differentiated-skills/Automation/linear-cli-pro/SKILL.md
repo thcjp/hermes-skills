@@ -4,37 +4,15 @@ name: linear-cli-pro
 version: "1.0.0"
 displayName: Linear CLI专家
 summary: 解决JSON解析难、内联转义炸、批量操作慢、鉴权易失效痛点，让Linear CLI在Agent中稳跑
-license: MIT
+license: Proprietary
 description: |-
-  面向在 Agent（Claude Code / Codex / Cursor 等）中调用 `linear` CLI 的开发者。
-  聚焦 v3 执行模型下的稳定 JSON 契约、预演式写入、Markdown 安全传参、批量操作与鉴权自愈。
-
-  核心能力:
-  - Agent 优先执行循环：capabilities 发现 → 读 → dry-run 预览 → 写 → 校验 receipt/error.details
-  - Markdown 内容强制走 `--*-file` 或 stdin，杜绝 `\n` 字面量与 shell 转义炸裂
-  - 批量操作模板（issue 批量创建/状态流转/标签同步），含并发与限速策略
-  - 鉴权自愈：token 过期自动触发 `linear auth refresh`，失败时降级到环境变量
-  - Schema 检索工作流：先 grep 本地转储，再决定是否拉取线上 schema，节省 80% 流量
-
-  适用场景:
-  - AI Agent 自动化处理 Linear 任务（创建、流转、批量整理）
-  - 把 Slack/邮件/PR 信封转化为 Linear issue 的 source-adjacent 接入
-  - 大规模 backlog 清理、跨团队标签/状态同步
-  - git/jj 工作流与 Linear 双向联动（提交信息回写、PR 关联）
-
-  差异化:
-  - 原版只列命令清单；本版给出"读→预览→写→校验"的 Agent 闭环
-  - 内置 Markdown 安全传参决策表，原版散落在示例中
-  - 批量操作模板 + 并发限速策略，原版无批量场景指引
-  - 鉴权自愈流程，原版仅给安装链接
-
-  触发关键词: linear, cli, issue, cycle, project, graphql, agent, backlog, 看板, 任务追踪
+  面向在 Agent（Claude Code / Codex / Cursor 等）中调用 `linear` CLI 的开发者。聚焦 v3 执行模型下的稳定 JSON 契约、预演式写入、Markdown 安全传参、批量操作与鉴权自愈。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
 - 自动化
 - 项目管理
 - 开发者工具
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -123,7 +101,7 @@ linear issue comment add ENG-123 --body-file /tmp/comment.md
 
 ```bash
 # issues.csv: title,team,description
-# 用 xargs 控制并发为 4，避免触发速率限制
+# 已知限制
 tail -n +2 issues.csv | xargs -P 4 -I {} bash -c '
   IFS=, read -r title team desc <<< "{}"
   echo "$desc" > /tmp/desc_$$.md
@@ -207,7 +185,7 @@ curl -s -X POST https://api.linear.app/graphql \
   -d '{"query": "{ viewer { id } }"}'
 ```
 
-## 真实场景示例
+## 示例
 
 ### 场景1：把 Slack 工单信封转成 Linear issue
 
@@ -279,7 +257,7 @@ A: `linear auth login` 交互式登录后存于 `~/.config/linear/credentials.js
 - **操作系统**: Windows / macOS / Linux（Windows 下避免 heredoc，用文件传参）
 - **Shell**: bash / zsh 推荐；PowerShell 需用文件传参替代 heredoc
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | `linear` CLI（v3） | 命令行工具 | 必需 | 官方仓库安装 |
@@ -295,3 +273,21 @@ A: `linear auth login` 交互式登录后存于 `~/.config/linear/credentials.js
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 必须通过 exec 执行 `linear` CLI 命令）
 - **说明**: 基于自然语言指令驱动 Agent 通过 CLI 操作 Linear，所有写操作走预演-执行-校验闭环
+
+## 核心能力
+
+- 面向在 Agent（Claude Code / Codex / Cursor 等）中调用 `linear` CLI 的开发者
+- 聚焦 v3 执行模型下的稳定 JSON 契约、预演式写入、Markdown 安全传参、批量操作与鉴权自愈
+- 核心能力:
+  - Agent 优先执行循环：capabilities 发现 → 读 → dry-run 预览 → 写 → 校验 receipt/error
+
+## 适用场景
+
+```bash
+
+## 使用流程
+
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节

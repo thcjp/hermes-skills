@@ -4,12 +4,10 @@ name: jellyfin-control-tool-pro
 version: "1.0.0"
 displayName: 媒体控制专业版
 summary: 企业级 Jellyfin 媒体服务器管理工具，支持多设备、多用户、定时播放、媒体库自动化与播放统计，适合家庭影院与小型机构。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  企业级 Jellyfin 媒体服务器管理工具，支持多设备、多用户、定时播放、媒体库自动化与播放统计，适合家庭影院与小型机构。
-
-  核心能力:
+  企业级 Jellyfin 媒体服务器管理工具，支持多设备、多用户、定时播放、媒体库自动化与播放统计，适合家庭影院与小型机构。核心能力:
   - 多设备同时管理与控制
   - 多用户配置与权限管理
   - 定时播放与就寝模式
@@ -24,12 +22,7 @@ description: |-
   - 媒体库整理与维护
 
   差异化:
-  - PRO 版支持多设备管理，覆盖全屋影音
-  - 内置定时播放与就寝模式
-  - 支持媒体库自动扫描整理
-  - 与免费版完全兼容，无缝升级
-
-  触发关键词: 多设备控制, 媒体管理, 定时播放, 多用户, 媒体库扫描, 影音专业版
+  - PRO 版支持多设备管理...
 tags:
 - 媒体
 - 企业工具
@@ -37,20 +30,15 @@ tags:
 - 自动化管理
 - 家庭影院
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 媒体控制专业版
-
 ## 概述
-
 媒体控制专业版是面向多设备家庭和小型机构的进阶 Jellyfin 管理工具。在免费版基础控制能力之上，新增多设备管理、多用户配置、定时播放、媒体库自动化与播放统计等高级功能，支持复杂的家庭影院场景。与免费版完全兼容，已有配置可无缝升级。
 
 ## 核心能力
-
 ### 功能对比
-
 | 能力 | 免费版 | PRO 版 |
 | --- | --- | --- |
 | 一键播放 | 是 | 是 |
@@ -69,9 +57,7 @@ tools:
 | 优先支持 | 社区 | 优先响应 |
 
 ### PRO 版独有功能
-
 #### 1. 多设备管理
-
 ```bash
 # 同时控制多个设备
 node skills/jellyfin-control/cli.js multi-device \
@@ -86,7 +72,6 @@ node skills/jellyfin-control/cli.js sync-play \
 ```
 
 #### 2. 多用户配置
-
 ```bash
 # 添加用户
 python scripts/user_manager.py add \
@@ -99,7 +84,6 @@ node skills/jellyfin-control/cli.js switch-user "Alice"
 ```
 
 #### 3. 定时播放
-
 ```bash
 # 定时播放（闹钟模式）
 python scripts/scheduled_play.py \
@@ -119,7 +103,6 @@ python scripts/scheduled_play.py \
 ```
 
 #### 4. 媒体库自动扫描
-
 ```bash
 # 配置自动扫描
 python scripts/library_scanner.py \
@@ -129,9 +112,7 @@ python scripts/library_scanner.py \
 ```
 
 ## 使用场景
-
 ### 场景一：多房间同步播放
-
 家庭聚会时，需要多个房间同步播放音乐。
 
 ```bash
@@ -149,7 +130,6 @@ node skills/jellyfin-control/cli.js multi-volume \
 系统自动同步多个设备的播放进度，支持各房间独立音量控制。
 
 ### 场景二：定时播放闹钟
-
 工作日早晨自动播放音乐唤醒。
 
 ```bash
@@ -172,7 +152,6 @@ python scripts/scheduled_play.py \
 ```
 
 ### 场景三：媒体库自动整理
-
 定期扫描整理媒体库，保持元数据更新。
 
 ```bash
@@ -192,12 +171,24 @@ python scripts/library_report.py \
   --include-duplicates
 ```
 
+## 不适用场景
+
+以下场景媒体控制专业版不适合处理：
+
+- 实时流数据处理
+- 小规模数据手动分析
+- 非结构化文本情感分析
+
+
+## 触发条件
+
+需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
-
 ### 从免费版升级
-
 ```bash
-# 安装 PRO 版扩展依赖
+# 依赖说明
 npm install node-cron winston
 pip install apscheduler
 
@@ -207,7 +198,6 @@ node skills/jellyfin-control/cli.js --version
 ```
 
 ### 配置多设备
-
 ```json
 {
   "skills": {
@@ -242,7 +232,6 @@ node skills/jellyfin-control/cli.js --version
 ```
 
 ### 首次多设备控制
-
 ```bash
 # 列出所有设备
 node skills/jellyfin-control/cli.js devices list
@@ -251,10 +240,8 @@ node skills/jellyfin-control/cli.js devices list
 node skills/jellyfin-control/cli.js tv play "Movie" --device "living_room"
 ```
 
-## 配置示例
-
+## 示例
 ### 企业级配置文件
-
 ```yaml
 # config.yaml - PRO 版配置
 jellyfin:
@@ -305,7 +292,6 @@ analytics:
 ```
 
 ### API 服务模式
-
 ```bash
 # 启动 REST API 服务
 python scripts/api_server.py --port 8000
@@ -320,7 +306,6 @@ curl -X POST http://localhost:8000/schedule \
 ```
 
 ### 参数说明
-
 | 参数 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
 | `--device` | 字符串 | 默认设备 | 设备名称 |
@@ -333,9 +318,7 @@ curl -X POST http://localhost:8000/schedule \
 | `--cron` | 字符串 | 无 | 定时表达式 |
 
 ## 最佳实践
-
 ### 多设备同步优化
-
 ```bash
 # 使用精确同步模式
 node skills/jellyfin-control/cli.js sync-play \
@@ -349,7 +332,6 @@ node skills/jellyfin-control/cli.js multi-volume \
 ```
 
 ### 定时播放配置
-
 ```bash
 # 工作日闹钟
 python scripts/scheduled_play.py \
@@ -370,7 +352,6 @@ python scripts/scheduled_play.py \
 ```
 
 ### 媒体库管理
-
 ```bash
 # 扫描并修复元数据
 python scripts/library_scanner.py \
@@ -386,9 +367,7 @@ python scripts/library_report.py \
 ```
 
 ## 常见问题
-
 ### 多设备同步延迟
-
 ```bash
 # 使用精确同步模式
 node skills/jellyfin-control/cli.js sync-play --sync-mode precise
@@ -401,7 +380,6 @@ ping each_device_ip
 ```
 
 ### 定时播放不执行
-
 ```bash
 # 检查定时任务
 python scripts/scheduled_play.py --list
@@ -414,7 +392,6 @@ python scripts/scheduled_play.py --run-now --task-id=task_001
 ```
 
 ### 媒体库扫描失败
-
 ```bash
 # 检查权限
 ls -la /media/library
@@ -427,7 +404,6 @@ cat ./logs/library_scan.log
 ```
 
 ### 多用户权限问题
-
 ```bash
 # 检查用户配置
 python scripts/user_manager.py list
@@ -440,9 +416,7 @@ python scripts/user_manager.py reset --user=Alice
 ```
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent 平台**：支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
 - **操作系统**：Windows / macOS / Linux
 - **Node.js**：14.0 及以上
@@ -451,7 +425,6 @@ python scripts/user_manager.py reset --user=Alice
 - **推荐配置**：4 核 CPU、8GB 内存
 
 ### 第三方依赖
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 | --- | --- | --- | --- |
 | Node.js 14+ | 运行时 | 是 | `nodejs.org` 下载 |
@@ -466,7 +439,6 @@ python scripts/user_manager.py reset --user=Alice
 | LLM API | API | 是 | 由 Agent 内置 LLM 提供 |
 
 ### API Key 配置
-
 ```bash
 # Jellyfin API Key（必需）
 JF_API_KEY=your_jellyfin_api_key
@@ -485,9 +457,20 @@ export SMTP_PASSWORD=your_password
 ```
 
 ### 可用性分类
-
 - **分类**：MD+EXEC（纯 Markdown 指令，部分功能需要 exec 命令行执行能力）
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务
 - **适用人群**：多设备家庭用户、小型机构、家庭影院爱好者
 - **兼容性**：与免费版完全兼容，配置可无缝迁移
 - **支持方式**：优先响应技术工单
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

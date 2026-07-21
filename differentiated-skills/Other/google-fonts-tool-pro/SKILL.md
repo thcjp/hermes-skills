@@ -4,12 +4,10 @@ name: google-fonts-tool-pro
 version: "1.0.0"
 displayName: 谷歌字体工具专业版
 summary: 面向团队的自托管、子集化、合规与多字体系统治理工具。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  面向团队与企业的 Google Fonts 自托管、子集化与字体系统治理专业工具。
-
-  核心能力:
+  面向团队与企业的 Google Fonts 自托管、子集化与字体系统治理专业工具。核心能力:
   - GDPR 合规自托管与子集化
   - 字体系统（令牌、字阶、多语言）治理
   - 字体性能预算与 LCP 优化
@@ -20,9 +18,7 @@ description: |-
   - 多语言站点字体系统统一治理
   - 字体性能预算与 LCP 优化
 
-  差异化: 专业版在免费版加载优化上扩展自托管、子集化、字体系统治理与合规审计，兼容免费版搭配方案。
-
-  触发关键词: 字体自托管, 子集化, GDPR 合规, 字体系统, 字阶, 性能预算, LCP, 字体许可, font pro, self-host
+  差异化: 专业版在免费版加载优化上扩展自托管、子集化、字体系统治理与合规审计，兼容免费版搭配方案
 tags:
 - 字体
 - 企业级
@@ -30,10 +26,9 @@ tags:
 - 合规
 - 其他工具
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 谷歌字体工具（专业版）
 
 ## 概述
@@ -106,6 +101,20 @@ curl -o inter.woff2 "https://gwfh.mranftl.com/api/fonts/inter?download=zip&subse
 <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
 ```
 
+## 不适用场景
+
+以下场景谷歌字体工具专业版不适合处理：
+
+- 渗透测试未授权目标
+- 物理安全防护
+- 社会工程学攻击
+
+
+## 触发条件
+
+需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 1. 将免费版搭配纳入字体系统令牌。
@@ -113,7 +122,7 @@ curl -o inter.woff2 "https://gwfh.mranftl.com/api/fonts/inter?download=zip&subse
 3. 自托管字体并配置 `@font-face`。
 4. 接入性能预算与合规审计。
 
-## 配置示例
+## 示例
 
 子集化流水线（`font-pipeline.json`）：
 
@@ -242,7 +251,7 @@ glyphhanger --spider https://example.com --subset=font.woff2
 - **操作系统**: Windows / macOS / Linux
 - **Node.js**: 18+（子集化工具）
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | google-webfonts-helper | 子集化工具 | 自托管时必需 | gwfh.mranftl.com |
@@ -256,3 +265,17 @@ glyphhanger --spider https://example.com --subset=font.woff2
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 命令行执行）
 - **说明**: 通过自然语言指令驱动 Agent 完成自托管、子集化与合规审计
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

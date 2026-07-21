@@ -2,53 +2,30 @@
 slug: netpad
 name: netpad
 version: "1.0.0"
-displayName: NetPad - Build forms, workflows and manage MongoDB data
+displayName: Netpad
 summary: The skill appears to be a legitimate NetPad management tool, but it gives
   an agent powerful delet...
 license: MIT
 description: |-
   The skill appears to be a legitimate NetPad management tool, but it
-  gives an agent powerful delet...
-
-  核心能力:
-
-  - 集成工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 第三方API集成、平台对接、数据同步
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: legitimate, workflows, appears, build, mongodb, manage, data, forms,
+  gives an agent powerful delet。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Integrations
 tools:
-- read
+  - - read
 - exec
 ---
 
 # NetPad - Build forms, workflows and manage MongoDB data
-
 Manage forms, submissions, users, and RBAC via CLI and REST API.
 
 ## Two Tools
-
 | Tool | Install | Purpose |
 | --- | --- | --- |
 | `netpad` CLI | `npm i -g @netpad/cli` | RBAC, marketplace, packages |
 | REST API | curl + API key | Forms, submissions, data |
 
 ## Authentication
-
 ```bash
 export NETPAD_API_KEY="[REDACTED]"  # Production
 export NETPAD_API_KEY="[REDACTED]"  # Test (can submit to drafts)
@@ -64,7 +41,6 @@ curl -H "Authorization: Bearer $NETPAD_API_KEY" \
 ---
 
 ## Quick Reference
-
 | Task | Endpoint | Method |
 | --- | --- | --- |
 | List projects | `/projects` | GET |
@@ -81,7 +57,6 @@ curl -H "Authorization: Bearer $NETPAD_API_KEY" \
 ---
 
 ## Projects
-
 Forms belong to projects. Get project ID before creating forms.
 
 ```bash
@@ -92,16 +67,13 @@ curl -H "Authorization: Bearer $NETPAD_API_KEY" \
 ---
 
 ## Forms
-
 ### List Forms
-
 ```bash
 curl -H "Authorization: Bearer $NETPAD_API_KEY" \
   "https://www.netpad.io/api/v1/forms?status=published&pageSize=50"
 ```
 
 ### Create Form
-
 ```bash
 curl -X POST -H "Authorization: Bearer $NETPAD_API_KEY" \
   -H "Content-Type: application/json" \
@@ -120,14 +92,12 @@ curl -X POST -H "Authorization: Bearer $NETPAD_API_KEY" \
 ```
 
 ### Get Form Details
-
 ```bash
 curl -H "Authorization: Bearer $NETPAD_API_KEY" \
   "https://www.netpad.io/api/v1/forms/{formId}"
 ```
 
 ### Publish Form
-
 ```bash
 curl -X PATCH -H "Authorization: Bearer $NETPAD_API_KEY" \
   -H "Content-Type: application/json" \
@@ -136,7 +106,6 @@ curl -X PATCH -H "Authorization: Bearer $NETPAD_API_KEY" \
 ```
 
 ### Update Form Fields
-
 ```bash
 curl -X PATCH -H "Authorization: Bearer $NETPAD_API_KEY" \
   -H "Content-Type: application/json" \
@@ -156,7 +125,6 @@ curl -X PATCH -H "Authorization: Bearer $NETPAD_API_KEY" \
 ```
 
 ### Delete Form
-
 ```bash
 curl -X DELETE -H "Authorization: Bearer $NETPAD_API_KEY" \
   "https://www.netpad.io/api/v1/forms/{formId}"
@@ -165,9 +133,7 @@ curl -X DELETE -H "Authorization: Bearer $NETPAD_API_KEY" \
 ---
 
 ## Submissions
-
 ### Submit Data
-
 ```bash
 curl -X POST -H "Authorization: Bearer $NETPAD_API_KEY" \
   -H "Content-Type: application/json" \
@@ -182,7 +148,6 @@ curl -X POST -H "Authorization: Bearer $NETPAD_API_KEY" \
 ```
 
 ### List Submissions
-
 ```bash
 curl -H "Authorization: Bearer $NETPAD_API_KEY" \
   "https://www.netpad.io/api/v1/forms/{formId}/submissions?pageSize=50"
@@ -195,14 +160,12 @@ curl -H "Authorization: Bearer $NETPAD_API_KEY" \
 ```
 
 ### Get Single Submission
-
 ```bash
 curl -H "Authorization: Bearer $NETPAD_API_KEY" \
   "https://www.netpad.io/api/v1/forms/{formId}/submissions/{submissionId}"
 ```
 
 ### Delete Submission
-
 ```bash
 curl -X DELETE -H "Authorization: Bearer $NETPAD_API_KEY" \
   "https://www.netpad.io/api/v1/forms/{formId}/submissions/{submissionId}"
@@ -211,7 +174,6 @@ curl -X DELETE -H "Authorization: Bearer $NETPAD_API_KEY" \
 ---
 
 ## Field Types
-
 | Type | Description | Validation |
 | --- | --- | --- |
 | `text` | Single line text | minLength, maxLength, pattern |
@@ -225,7 +187,6 @@ curl -X DELETE -H "Authorization: Bearer $NETPAD_API_KEY" \
 | `file` | File upload | - |
 
 ### Field Schema
-
 ```json
 {
   "path": "fieldName",
@@ -248,9 +209,7 @@ curl -X DELETE -H "Authorization: Bearer $NETPAD_API_KEY" \
 ---
 
 ## Common Patterns
-
 ### Create and Publish Form
-
 ```bash
 RESULT=$(curl -s -X POST -H "Authorization: Bearer $NETPAD_API_KEY" \
   -H "Content-Type: application/json" \
@@ -265,7 +224,6 @@ curl -X PATCH -H "Authorization: Bearer $NETPAD_API_KEY" \
 ```
 
 ### Export All Submissions
-
 ```bash
 curl -H "Authorization: Bearer $NETPAD_API_KEY" \
   "https://www.netpad.io/api/v1/forms/{formId}/submissions?pageSize=1000" \
@@ -273,7 +231,6 @@ curl -H "Authorization: Bearer $NETPAD_API_KEY" \
 ```
 
 ### Bulk Submit
-
 ```bash
 for row in $(cat data.json | jq -c '.[]'); do
   curl -s -X POST -H "Authorization: Bearer $NETPAD_API_KEY" \
@@ -284,7 +241,6 @@ done
 ```
 
 ### Search Forms
-
 ```bash
 curl -H "Authorization: Bearer $NETPAD_API_KEY" \
   "https://www.netpad.io/api/v1/forms?search=contact&status=published"
@@ -293,7 +249,6 @@ curl -H "Authorization: Bearer $NETPAD_API_KEY" \
 ---
 
 ## Helper Script
-
 Use `scripts/netpad.sh` for common operations:
 
 ```bash
@@ -312,7 +267,6 @@ chmod +x scripts/netpad.sh
 ---
 
 ## Rate Limits
-
 | Limit | Value |
 | --- | --- |
 | Requests/hour | 1,000 |
@@ -323,9 +277,7 @@ Headers: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset`
 ---
 
 ## Response Format
-
 ### Success
-
 ```json
 {
   "success": true,
@@ -336,7 +288,6 @@ Headers: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset`
 ```
 
 ### Error
-
 ```json
 {
   "success": false,
@@ -352,7 +303,6 @@ Headers: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset`
 ---
 
 ## Environment Variables
-
 ```bash
 export NETPAD_API_KEY="[REDACTED]"
 
@@ -362,11 +312,9 @@ export NETPAD_BASE_URL="https://staging.netpad.io/api/v1"
 ---
 
 ## NetPad CLI (@netpad/cli)
-
 Install: `npm i -g @netpad/cli`
 
 ### Authentication
-
 ```bash
 netpad login              # Opens browser
 netpad whoami             # Check auth status
@@ -374,7 +322,6 @@ netpad logout             # Clear credentials
 ```
 
 ### Marketplace & Packages
-
 ```bash
 netpad search "helpdesk"
 
@@ -388,7 +335,6 @@ netpad submit ./my-app
 ```
 
 ### RBAC - Users
-
 ```bash
 netpad users list -o org_xxx
 
@@ -400,7 +346,6 @@ netpad users remove user@example.com -o org_xxx
 ```
 
 ### RBAC - Groups
-
 ```bash
 netpad groups list -o org_xxx
 
@@ -412,7 +357,6 @@ netpad groups delete grp_xxx -o org_xxx
 ```
 
 ### RBAC - Roles
-
 ```bash
 netpad roles list -o org_xxx
 
@@ -424,7 +368,6 @@ netpad roles delete role_xxx -o org_xxx
 ```
 
 ### RBAC - Assignments
-
 ```bash
 netpad assign user user@example.com role_xxx -o org_xxx
 
@@ -434,7 +377,6 @@ netpad unassign user user@example.com role_xxx -o org_xxx
 ```
 
 ### RBAC - Permissions
-
 ```bash
 netpad permissions list -o org_xxx
 
@@ -444,14 +386,12 @@ netpad permissions check user@example.com -o org_xxx
 ---
 
 ## References
-
 * `references/api-endpoints.md` — Complete REST API endpoint docs
 * `references/cli-commands.md` — Full CLI command reference
 
 ---
 
 ## Author
-
 **Michael Lynn** — Principal Staff Developer Advocate at MongoDB
 
 * 🌐 Website: [mlynn.org](https://mlynn.org)
@@ -459,12 +399,11 @@ netpad permissions check user@example.com -o org_xxx
 * 💼 LinkedIn: [linkedin.com/in/mlynn](https://linkedin.com/in/mlynn)
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -475,3 +414,49 @@ netpad permissions check user@example.com -o org_xxx
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+- The skill appears to be a legitimate NetPad management tool, but it
+  gives an agent powerful delet
+- 触发关键词: legitimate, workflows, appears, build, mongodb, manage, data, forms,
+
+## 适用场景
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 示例
+### 示例1：基础用法
+```
+输入: 用户请求
+处理: 根据使用流程执行
+输出: 处理结果
+```
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+### Q1: 如何开始使用Netpad？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Netpad有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+- 需要API Key，无Key环境无法使用

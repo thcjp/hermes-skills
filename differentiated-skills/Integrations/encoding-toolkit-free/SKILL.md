@@ -4,36 +4,16 @@ name: encoding-toolkit-free
 version: "1.0.0"
 displayName: 编解码工具箱免费版
 summary: 覆盖Base64、URL、Hex、Unicode、JWT等主流编解码场景，命令行与代码示例兼备，适合日常开发调试。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  编解码工具箱免费版面向开发者与运维人员，提供主流数据格式的快速编码、解码与转换能力。核心覆盖 Base64、URL 编码、Hex、Unicode、JWT 解析与哈希校验六大场景，配套命令行与多语言代码片段，帮助用户在 60 秒内完成常见任务。
-
-  核心能力：
-
-  - 提供 Base64 / Base64url 标准与 URL 安全变体的双向转换
-  - 提供 URL 编码、查询字符串拼装与反解析
-  - 提供 Hex 视图、字节序检查与字符串互转
-  - 提供 Unicode 字符检视、BOM 处理与编码归一化
-  - 提供 JWT 结构解析与有效期校验
-  - 提供 MD5 / SHA-256 / SHA-512 等常用哈希与文件校验和计算
-
-  适用场景：
-
-  - API 调试：解析接口返回的 Base64、JWT，排查签名与过期问题
-  - 数据清洗：修复乱码、规整字符编码、统一 UTF-8 输出
-  - 文件校验：生成与比对 SHA-256，确保传输完整性
-  - 安全审计：解码 Token、检查敏感信息是否被泄露在 Payload 中
-
-  差异化：相较通用编解码工具，本 Skill 强调"诊断先行"的工作流，先识别输入类型再选择解码路径，避免暴力 Base64 解码造成误判；同时提供跨语言代码片段，方便直接复制到工程中。
-
-  触发关键词：编码、解码、Base64、URL编码、Hex、Unicode、JWT、哈希、校验和、字符编码
+  编解码工具箱免费版面向开发者与运维人员，提供主流数据格式的快速编码、解码与转换能力。核心覆盖 Base64、URL 编码、Hex、Unicode、JWT 解析与哈希校验六大场景，配套命令行与多语言代码片段，帮助用户在 60 秒内完成常见任务。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
 - 集成工具
 - 编解码
 - 开发者工具
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -93,7 +73,7 @@ echo -n "Hello" | sha256sum
 echo "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjMifQ.signature" | cut -d. -f2 | tr '-_' '+/' | base64 -d 2>/dev/null
 ```
 
-## 配置示例
+## 示例
 
 ### Python 一键解码多种格式
 
@@ -173,7 +153,7 @@ A：UTF-8 BOM 为 `EF BB BF`，使用 `sed -i '1s/^\xEF\xBB\xBF//' file.txt` 移
 - **Python**：3.8+（部分示例需要 Python3）
 - **Node.js**：16+（若使用 JavaScript 示例）
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由 Agent 平台内置 LLM 提供 |
@@ -189,7 +169,7 @@ A：UTF-8 BOM 为 `EF BB BF`，使用 `sed -i '1s/^\xEF\xBB\xBF//' file.txt` 移
 - **分类**：MD+EXEC（纯 Markdown 指令，部分功能需要 exec 命令行执行能力）
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务
 
-## 免费版限制
+## 已知限制
 
 本免费体验版限制以下高级功能：
 - 批量文件哈希校验（一次仅支持单文件处理）
@@ -199,3 +179,11 @@ A：UTF-8 BOM 为 `EF BB BF`，使用 `sed -i '1s/^\xEF\xBB\xBF//' file.txt` 移
 - 跨文件哈希比对与差异报告
 
 解锁全部功能请使用专业版：encoding-toolkit-pro
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

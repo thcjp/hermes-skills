@@ -4,7 +4,7 @@ name: aws-agent-orchestrator-pro
 version: "1.0.0"
 displayName: AWS智能体编排专业版
 summary: 完整的AWS多智能体编排能力，含Orchestrator协作、Gateway工具链与跨会话LTM长期记忆，面向团队与企业生产环境。
-license: MIT
+license: Proprietary
 description: |-
   AWS智能体编排专业版（aws-agent-orchestrator-pro）面向团队与企业生产环境，在免费版单智能体能力之上，解锁多智能体编排、Gateway工具链与跨会话长期记忆（LTM）三大高级能力。它让企业能够在统一session上下文中协调多个Specialist Agent，将Lambda/API网关转化为MCP工具，并跨会话沉淀事实与决策。
 

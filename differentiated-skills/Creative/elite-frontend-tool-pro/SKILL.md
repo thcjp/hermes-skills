@@ -4,51 +4,34 @@ name: elite-frontend-tool-pro
 version: "1.0.0"
 displayName: 精英前端设计-专业版
 summary: 企业级前端设计系统，支持多页面应用、React/Vue组件、品牌一致性与高级动效编排。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  精英前端设计工具专业版，面向团队的企业级前端设计系统。
-
-  核心能力：
+  精英前端设计工具专业版，面向团队的企业级前端设计系统。核心能力：
   - 多页面应用设计，统一视觉语言贯穿全站
   - React/Vue 组件库生成，含 TypeScript 类型定义
   - 高级动效编排，Framer Motion / Vue Transition 深度集成
   - 品牌设计系统，色彩/字体/间距/组件规范化
   - 设计令牌（Design Token）自动生成与管理
   - 响应式适配策略，多断点一致体验
-  - 可访问性合规，WCAG 标准遵循
-
-  适用场景：
-  - 企业级 Web 应用全站设计
-  - 设计系统与组件库构建
-  - 品牌官网与营销页面
-  - SaaS 产品界面体系
-
-  差异化：专业版在免费版基础上扩展至多页面应用、组件库、设计系统与品牌管理。与免费版设计规范完全兼容。
-
-  触发关键词: landing, 界面设计, 网页, dashboard, 前端, page, design, UI, React, Vue, 组件库, 设计系统, 品牌一致性, Design Token
+  - 可访问性合规...
 tags:
 - Creative
 - Frontend
 - Enterprise
 - DesignSystem
 tools:
-- read
+  - - read
 - exec
----
-
 # 精英前端设计工具（专业版）
-
 ## 概述
-
+---
 精英前端设计工具专业版是企业级前端设计系统平台。它不仅生成单页面代码，更将设计规范扩展至多页面应用、React/Vue 组件库、品牌设计系统和高级动效编排。通过设计令牌（Design Token）管理，确保全站视觉语言的一致性与可维护性。
 
 本版本与免费版完全兼容——免费版的字体、色彩和动效规则在专业版中完整保留。专业版新增多页面应用、组件库、设计系统、品牌管理和高级动效等能力。
 
 ## 核心能力
-
 ### 能力对比
-
 | 能力维度 | 免费版 | 专业版 |
 |:---------|:-------|:-------|
 | 输出格式 | HTML/CSS | HTML/CSS + React + Vue + TypeScript |
@@ -60,8 +43,7 @@ tools:
 | 响应式 | 基础 | 多断点策略 + 一致性保障 |
 | 可访问性 | 基础 | WCAG 合规检查 |
 
-### 专业版核心能力
-
+### 核心能力
 ```text
 多页面应用:
   - 统一视觉语言贯穿全站
@@ -107,219 +89,17 @@ tools:
 ```
 
 ## 使用场景
-
 ### 场景一：企业级 Web 应用全站设计
-
 为 SaaS 产品设计完整的多页面应用界面。
 
-```tsx
-// React + TypeScript + Framer Motion 组件示例
-import { motion } from 'framer-motion';
-import { DesignToken } from './design-system';
-
-// 设计令牌
-export const token: DesignToken = {
-  color: {
-    bgPrimary: '#1a1a2e',
-    bgSecondary: '#16213e',
-    accent: '#e94560',
-    accentAlt: '#0f3460',
-    text: '#eeeeee',
-    textMuted: '#8892b0',
-  },
-  typography: {
-    heading: { family: 'Playfair Display', weights: [400, 900] },
-    body: { family: 'IBM Plex Sans', weights: [300, 400, 600] },
-    mono: { family: 'JetBrains Mono', weights: [400] },
-  },
-  spacing: { base: 4, scale: [0, 4, 8, 12, 16, 24, 32, 48, 64] },
-  radius: { sm: 4, md: 8, lg: 12, full: 9999 },
-};
-
-// 带交错动效的卡片组件
-interface CardProps {
-  title: string;
-  children: React.ReactNode;
-  delay?: number;
-}
-
-export function Card({ title, children, delay = 0 }: CardProps) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={{ y: -4 }}
-      style={{
-        background: token.color.bgSecondary,
-        border: `1px solid ${token.color.accent}33`,
-        borderRadius: token.radius.lg,
-        padding: token.spacing.scale[5],
-      }}
-    >
-      <h3 style={{
-        fontFamily: token.typography.heading.family,
-        fontWeight: 900,
-        fontSize: '1.5rem',
-        marginBottom: token.spacing.scale[3],
-      }}>{title}</h3>
-      <div style={{ color: token.color.textMuted }}>{children}</div>
-    </motion.div>
-  );
-}
-
-// 页面级交错动效容器
-export function StaggerContainer({ children }: { children: React.ReactNode }) {
-  return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={{
-        hidden: {},
-        visible: { transition: { staggerChildren: 0.1 } },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 场景二：设计系统与 Design Token 生成
-
 自动生成完整的设计系统配置。
 
-```python
-# 设计系统自动生成脚本
-import json
-from pathlib import Path
-
-class DesignSystemGenerator:
-    """设计系统生成器"""
-
-    def __init__(self, brand_config):
-        self.brand = brand_config
-
-    def generate_tokens(self):
-        """生成完整 Design Token"""
-        return {
-            "color": self._generate_color_tokens(),
-            "typography": self._generate_typography_tokens(),
-            "spacing": self._generate_spacing_tokens(),
-            "radius": self._generate_radius_tokens(),
-            "shadow": self._generate_shadow_tokens(),
-            "motion": self._generate_motion_tokens(),
-        }
-
-    def _generate_color_tokens(self):
-        return {
-            "primary": {
-                "bg": self.brand["colors"]["primary"],
-                "bgSecondary": self.brand["colors"]["secondary"],
-                "accent": self.brand["colors"]["accent"],
-            },
-            "text": {
-                "primary": "#eeeeee",
-                "muted": "#8892b0",
-                "inverse": "#1a1a2e",
-            },
-            "semantic": {
-                "success": "#50fa7b",
-                "warning": "#f1fa8c",
-                "error": "#ff5555",
-                "info": "#8be9fd",
-            }
-        }
-
-    def _generate_typography_tokens(self):
-        return {
-            "fontFamily": {
-                "heading": self.brand["typography"]["heading"],
-                "body": self.brand["typography"]["body"],
-                "mono": self.brand["typography"]["mono"],
-            },
-            "fontSize": {
-                "xs": "0.75rem", "sm": "0.875rem",
-                "base": "1rem", "lg": "1.125rem",
-                "xl": "1.25rem", "2xl": "1.5rem",
-                "3xl": "2rem", "4xl": "2.5rem",
-                "5xl": "3.5rem", "6xl": "4.5rem",
-            },
-            "fontWeight": {
-                "thin": 100, "light": 300,
-                "normal": 400, "medium": 500,
-                "semibold": 600, "bold": 700,
-                "extrabold": 800, "black": 900,
-            },
-            "lineHeight": {
-                "tight": 1.1, "snug": 1.3,
-                "normal": 1.5, "relaxed": 1.7,
-            }
-        }
-
-    def _generate_spacing_tokens(self):
-        base = 4
-        return {f"s{i}": f"{base * i}px" for i in range(17)}
-
-    def _generate_radius_tokens(self):
-        return {"none": "0", "sm": "4px", "md": "8px",
-                "lg": "12px", "xl": "16px", "full": "9999px"}
-
-    def _generate_shadow_tokens(self):
-        return {
-            "sm": "0 1px 2px rgba(0,0,0,0.1)",
-            "md": "0 4px 6px rgba(0,0,0,0.15)",
-            "lg": "0 10px 25px rgba(0,0,0,0.2)",
-            "glow": f"0 0 20px {self.brand['colors']['accent']}40",
-        }
-
-    def _generate_motion_tokens(self):
-        return {
-            "duration": {"fast": "0.2s", "normal": "0.4s", "slow": "0.6s"},
-            "easing": {
-                "easeOut": "cubic-bezier(0.22, 1, 0.36, 1)",
-                "spring": "cubic-bezier(0.34, 1.56, 0.64, 1)",
-            },
-            "stagger": {"fast": 0.05, "normal": 0.1, "slow": 0.15},
-        }
-
-    def export(self, format="json"):
-        """导出设计系统"""
-        tokens = self.generate_tokens()
-        if format == "json":
-            return json.dumps(tokens, indent=2, ensure_ascii=False)
-        elif format == "css":
-            return self._to_css_variables(tokens)
-
-    def _to_css_variables(self, tokens):
-        lines = [":root {"]
-        for category, values in tokens.items():
-            for name, value in self._flatten(values).items():
-                lines.append(f"  --{category}-{name}: {value};")
-        lines.append("}")
-        return "\n".join(lines)
-
-    def _flatten(self, d, parent=""):
-        items = {}
-        for k, v in d.items():
-            key = f"{parent}-{k}" if parent else k
-            if isinstance(v, dict):
-                items.update(self._flatten(v, key))
-            else:
-                items[key] = v
-        return items
-
-# 使用示例
-brand = {
-    "colors": {"primary": "#1a1a2e", "secondary": "#16213e", "accent": "#e94560"},
-    "typography": {"heading": "Playfair Display", "body": "IBM Plex Sans", "mono": "JetBrains Mono"},
-}
-generator = DesignSystemGenerator(brand)
-print(generator.export("css"))
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 场景三：Vue 组件库生成
-
 ```vue
 <!-- Vue 3 + Composition API 组件示例 -->
 <template>
@@ -378,10 +158,22 @@ const cards = ref<Card[]>([
 </style>
 ```
 
+## 不适用场景
+
+以下场景精英前端设计-专业版不适合处理：
+
+- 3D建模和动画制作
+- 照片级写实渲染
+- 手绘原创插画
+
+
+## 触发条件
+
+需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
-
 ### 第一步：定义品牌配置
-
 ```json
 {
   "brand": {
@@ -401,28 +193,20 @@ const cards = ref<Card[]>([
 ```
 
 ### 第二步：生成设计系统
-
 ```bash
-# 生成 Design Token
 python3 generate-design-system.py --brand brand.json --output tokens.css
 
-# 输出: tokens.css, tokens.json, tokens.ts
 ```
 
 ### 第三步：生成组件库
-
 ```bash
-# 生成 React 组件库
 generate-components --framework react --typescript --tokens tokens.json
 
-# 生成 Vue 组件库
 generate-components --framework vue --typescript --tokens tokens.json
 ```
 
 ## 配置示例
-
 ### Design Token CSS 变量
-
 ```css
 :root {
   /* 色彩系统 */
@@ -473,7 +257,6 @@ generate-components --framework vue --typescript --tokens tokens.json
 ```
 
 ### 响应式断点配置
-
 ```css
 /* 响应式断点策略 */
  breakpoints: {
@@ -500,7 +283,6 @@ generate-components --framework vue --typescript --tokens tokens.json
 ```
 
 ## 最佳实践
-
 1. **设计系统先行**：先定义 Design Token，再基于 Token 构建组件，确保一致性。
 2. **组件粒度合理**：原子组件 → 分子组件 → 页面模板，分层管理。
 3. **动效有节制**：一次精心编排的页面加载交错入场，优于散乱微交互。
@@ -520,35 +302,28 @@ generate-components --framework vue --typescript --tokens tokens.json
 ```
 
 ## 常见问题
-
 ### Q: 如何从免费版升级到专业版？
-
 A: 免费版的字体、色彩和动效规则在专业版中完整保留。专业版新增设计系统生成、组件库和品牌管理能力，无需迁移已有代码。
 
 ### Q: 支持 React 和 Vue 吗？
-
 A: 专业版同时支持 React（含 TypeScript + Framer Motion）和 Vue 3（含 Composition API + Transition），可根据项目需求选择。
 
 ### Q: Design Token 支持哪些输出格式？
-
 A: 支持 CSS 变量、JSON、TypeScript 类型定义三种格式，可同时导出供不同消费端使用。
 
 ### Q: 组件库生成后如何维护？
-
 A: Design Token 变更后，组件样式自动同步更新。建议将 Token 文件纳入版本控制，变更时运行同步脚本。
 
 ### Q: 响应式策略如何保证一致性？
-
 A: 采用移动优先策略，通过 Design Token 统一间距和字号，各断点按比例缩放，确保视觉一致性。
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 - **Node.js**: 16+（组件构建工具需要）
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -567,3 +342,15 @@ A: 采用移动优先策略，通过 Design Token 统一间距和字号，各断
 - **说明**: 企业级AI Skill，支持多页面应用、组件库与设计系统管理
 - **适用规模**: 团队与企业级，多页面应用全站设计
 - **兼容性**: 与免费版设计规范完全兼容，支持无缝升级
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

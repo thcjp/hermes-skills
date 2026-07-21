@@ -4,7 +4,7 @@ name: free-weather-skill-tool-pro
 version: "1.0.0"
 displayName: 免费天气技能专业版
 summary: 高可靠天气查询平台,支持多源冗余、企业集成、自定义数据源与监控告警
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   面向企业、运维与生产环境的高可靠天气查询平台。
@@ -20,20 +20,16 @@ tags:
 - 监控告警
 - 集成方案
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 免费天气技能 (专业版)
-
 ## 概述
-
 专业版在免费版零配置查询能力之上,扩展多数据源冗余、企业集成、缓存加速、监控告警等生产能力。支持同时对接 wttr.in、Open-Meteo、OpenWeather 等多个数据源,自动故障切换,提供 99.9% 可用性 SLA。适合需要将天气数据深度集成到生产系统的企业、IoT 平台、商业应用等场景。
 
 专业版与免费版命令行格式完全兼容,现有调用代码无需修改,可直接获得企业级能力。
 
 ## 核心能力
-
 | 能力模块 | 描述 | 免费版 | 专业版 |
 |:--------|:-----|:------:|:------:|
 | 单城市查询 | 全球天气查询 | 支持 | 支持 |
@@ -49,9 +45,7 @@ tools:
 | 并发限额 | API 调用 | 有限 | 高并发 |
 
 ## 使用场景
-
 ### 场景一: 生产系统天气集成
-
 将天气数据深度集成到企业业务系统。
 
 ```python
@@ -76,7 +70,6 @@ class ProWeatherService:
     def __init__(self):
         self.redis = redis.Redis.from_url(os.environ.get("REDIS_URL"))
         self.cache_ttl = 300  # 5 分钟
-
     def query(self, city, force_refresh=False):
         """查询天气 (带缓存与故障转移)"""
         cache_key = f"weather:{city}"
@@ -154,7 +147,6 @@ class ProWeatherService:
 ```
 
 ### 场景二: IoT 设备天气联动
-
 为 IoT 平台提供天气数据,联动智能设备。
 
 ```python
@@ -172,7 +164,6 @@ def iot_weather_pipeline(devices):
 ```
 
 ### 场景三: 运维监控告警
-
 监控天气数据源可用性,异常时告警。
 
 ```python
@@ -210,10 +201,22 @@ def setup_weather_monitoring():
     return resp.json()
 ```
 
+## 不适用场景
+
+以下场景免费天气技能专业版不适合处理：
+
+- 物理硬件维修
+- 网络物理布线
+- 数据中心选址
+
+
+## 触发条件
+
+需要系统监控、日志分析、运维告警、部署管理时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
-
 ### 步骤 1: 部署缓存层
-
 ```bash
 # 启动 Redis
 docker run -d --name weather-redis -p 6379:6379 redis:alpine
@@ -225,7 +228,6 @@ export WEATHER_SOURCES="wttr.in,open-meteo,openweather"
 ```
 
 ### 步骤 2: 配置多数据源
-
 ```yaml
 # /etc/weather-pro/sources.yaml
 sources:
@@ -274,7 +276,6 @@ monitoring:
 ```
 
 ### 步骤 3: 启动服务
-
 ```bash
 # 启动天气服务守护进程
 weather-service --config /etc/weather-pro/sources.yaml --daemon
@@ -284,17 +285,14 @@ curl http://localhost:8080/health
 ```
 
 ### 步骤 4: 接入业务系统
-
 ```bash
 # 业务系统调用本地代理
 curl "http://localhost:8080/weather/Beijing"
 curl "http://localhost:8080/batch/weather" -d '{"cities":["北京","上海"]}'
 ```
 
-## 配置示例
-
+## 示例
 ### 数据归档配置
-
 ```python
 def archive_weather(cities, interval_minutes=30):
     """定期归档天气数据"""
@@ -321,7 +319,6 @@ def archive_to_db(city, data):
 ```
 
 ### 自定义数据源接入
-
 ```python
 class CustomWeatherSource:
     """自定义数据源适配器"""
@@ -358,7 +355,6 @@ class CustomWeatherSource:
 ```
 
 ### 监控仪表盘
-
 ```python
 def render_dashboard():
     """渲染监控仪表盘"""
@@ -381,9 +377,7 @@ def render_dashboard():
 ```
 
 ## 最佳实践
-
 ### 1. 多源策略
-
 ```python
 # 按优先级与延迟动态选择数据源
 def select_best_source(sources):
@@ -393,7 +387,6 @@ def select_best_source(sources):
 ```
 
 ### 2. 智能缓存
-
 ```python
 def adaptive_cache_ttl(weather):
     """根据天气状况动态调整缓存时间"""
@@ -405,7 +398,6 @@ def adaptive_cache_ttl(weather):
 ```
 
 ### 3. 限流保护
-
 ```python
 from functools import wraps
 import time
@@ -430,38 +422,29 @@ def rate_limit(calls, period):
 ```
 
 ## 常见问题
-
 ### Q1: 专业版与免费版调用方式是否兼容?
-
 完全兼容。专业版在内部提供多源冗余、缓存、监控,对外接口与免费版一致,现有代码无需修改。
 
 ### Q2: 多数据源如何选择?
-
 按优先级配置,主源故障自动切换到次源。可基于延迟动态调整优先级。
 
 ### Q3: 缓存策略如何配置?
-
 默认 5 分钟 TTL,可根据天气状况动态调整。极端天气缩短至 1 分钟,稳定天气延长至 10 分钟。
 
 ### Q4: SLA 如何保障?
-
 99.9% 月度可用性。多源冗余 + 缓存使得单源故障不影响整体可用性。
 
 ### Q5: 支持私有化部署吗?
-
 支持。可将全部组件部署在企业内网,数据不出域。
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent 平台**: 支持 SKILL.md 规范的任意 AI Agent (Claude Code、Cursor、Codex、Gemini CLI 等)
 - **操作系统**: Windows / macOS / Linux (生产环境推荐 Linux)
 - **网络**: 需访问多个天气数据源
 - **Python**: 3.9+ (用于服务端)
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | 多天气数据源 | 在线 API | 必需 | wttr.in (免费)、Open-Meteo (免费)、其他可选 |
@@ -472,7 +455,6 @@ def rate_limit(calls, period):
 | 数据库 | 持久化 | 可选 | 兼容主流关系型数据库 (使用 `数据库` 上下文) |
 
 ### API Key 配置
-
 ```bash
 # 专业版基础配置
 export WEATHER_EDITION="pro"
@@ -492,8 +474,17 @@ export ARCHIVE_DB_URL="db://user:pass@host:5432/weather_archive"
 ```
 
 ### 可用性分类
-
 - **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 面向企业与生产环境,通过自然语言指令驱动 Agent 调用多数据源天气服务,提供高可用、可监控的企业级天气能力
 - **专业版特性**: 多源冗余、批量查询、Redis 缓存、监控告警、自定义数据源、SLA 保障
 - **兼容性**: 与免费版命令行格式完全兼容,现有调用代码无需修改
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 需要API Key，无Key环境无法使用

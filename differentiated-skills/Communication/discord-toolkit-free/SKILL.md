@@ -4,12 +4,10 @@ name: discord-toolkit-free
 version: "1.0.0"
 displayName: Discord工具箱免费版
 summary: 基础 Discord 消息管理工具,支持发送、回复、表情反应与简单投票,适合个人用户。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向个人用户的轻量 Discord 消息与互动管理工具。
-
-  核心能力:
+  面向个人用户的轻量 Discord 消息与互动管理工具。核心能力:
   - 发送、编辑、删除频道消息与私信
   - 对消息添加表情反应与查看反应列表
   - 创建简单投票(Poll)与频道置顶
@@ -20,19 +18,16 @@ description: |-
   - 小型团队的通知发送与状态标记
   - 个人机器人快速回复与表态
 
-  差异化: 免费版聚焦高频基础操作,零配置即用;Pro 版提供批量操作、审核管理与角色权限等企业级能力。
-
-  触发关键词: discord, 消息, 表情, 投票, 置顶, 话题, message, react, poll, pin, thread
+  差异化: 免费版聚焦高频基础操作,零配置即用;Pro 版提供批量操作、审核管理与角色权限等企业级能力
 tags:
 - Discord
 - 消息管理
 - Communication
 - 社交互动
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Discord 工具箱(免费版)
 
 ## 概述
@@ -112,6 +107,20 @@ Agent 会调用 `discord` 工具完成发送。`to` 字段使用 `channel:<id>` 
 
 投票支持 2-10 个选项,`durationHours` 默认 24 小时,最大 768 小时(32 天)。
 
+## 不适用场景
+
+以下场景Discord工具箱免费版不适合处理：
+
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 运维部署管理
+
+
+## 触发条件
+
+需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 第一步:配置机器人令牌
@@ -134,7 +143,7 @@ Agent 会调用 `discord` 工具完成发送。`to` 字段使用 `channel:<id>` 
 
 向 Agent 描述你的需求,例如「在 #announcements 频道发布今日构建结果,并加个 ✅ 反应」。
 
-## 配置示例
+## 示例
 
 ### 消息发送(带媒体附件)
 
@@ -231,7 +240,7 @@ Agent 会调用 `discord` 工具完成发送。`to` 字段使用 `channel:<id>` 
 
 `sendMessage` 使用 `to: "channel:<id>"` 或 `user:<id>` 格式(支持频道和私信);而 `react`、`readMessages`、`editMessage`、`deleteMessage` 等操作直接使用 `channelId` 数字 ID。这是设计上的区别,使用时请注意区分。
 
-### Q3: 媒体附件大小有限制吗?
+### 已知限制
 
 通过 `mediaUrl` 上传的媒体文件,Discord 平台限制单文件 25MB(普通服务器)或 500MB(服务器提升等级足够时)。自定义表情上传限制 256KB(PNG/JPG/GIF),贴纸上传限制 512KB(PNG/APNG/Lottie JSON)。
 
@@ -256,7 +265,7 @@ Agent 会调用 `discord` 工具完成发送。`to` 字段使用 `channel:<id>` 
 - **网络**: 需可访问 Discord API
 - **机器人**: 已在 Discord Developer Portal 创建并配置的机器人
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -277,3 +286,11 @@ Agent 会调用 `discord` 工具完成发送。`to` 字段使用 `channel:<id>` 
 - **说明**: 以自然语言指令驱动 Agent 调用 Discord 工具完成消息与互动操作
 - **适用规模**: 单服务器、个人/小团队,日操作量 100 次以内
 - **升级建议**: 如需批量操作、审核管理、角色权限管理,请升级至 `discord-toolkit-pro`
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

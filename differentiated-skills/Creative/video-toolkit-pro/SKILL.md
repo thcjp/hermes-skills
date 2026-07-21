@@ -4,14 +4,12 @@ name: video-toolkit-pro
 version: "1.0.0"
 displayName: 视频工具箱专业版
 summary: 批量视频处理+AI超分+智能重构图+多码率+自动化工作流,面向内容团队的专业视频引擎
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   面向内容团队和机构的专业级视频处理引擎,在免费版核心功能之上,新增批量
   文件处理、AI超分辨率、智能重构图、多码率自适应、自动化工作流和全平台
-  规格支持。
-
-  核心能力:
+  规格支持。核心能力:
   - 批量视频处理(文件夹级一键处理)
   - AI超分辨率(Real-ESRGAN画质提升)
   - 智能重构图(AI驱动的内容感知裁剪)
@@ -22,15 +20,7 @@ description: |-
   - 视频质量评估(SSIM/PSNR)
 
   适用场景:
-  - 内容团队批量视频适配
-  - 专业视频后期处理
-  - 多平台同时发布
-  - 自动化视频处理流水线
-
-  差异化:专业版在免费版基础上扩展至批量处理、AI增强、自动化工作流。
-  完全兼容免费版单文件处理命令,可无缝升级。
-
-  触发关键词: 批量视频处理, AI超分辨率, 智能重构图, 多码率流, HLS/DASH, 视频工作流, 自动化处理, Real-ESRGAN, 视频质量评估, 多平台发布, 批量字幕, 视频后期处理
+  -...
 tags:
 - 视频
 - FFmpeg
@@ -42,29 +32,24 @@ tags:
 - 批量处理
 - AI增强
 tools:
-- read
+  - - read
 - exec
 ---
 
 # 视频工具箱 - 专业版
-
 ## 概述
-
 视频工具箱专业版是一款面向内容团队和机构的专业级视频处理引擎。在免费版单文件处理能力之上,扩展至批量文件处理、AI超分辨率(Real-ESRGAN)、智能重构图、多码率自适应流(HLS/DASH)、自动化工作流和高级字幕定制。
 
 专业版支持文件夹级批量处理,一键适配多平台发布,是内容团队提升视频处理效率的理想选择。完全兼容免费版单文件处理命令,可无缝升级。
 
 ## 核心能力
-
 ### 1. 批量视频处理
-
 ```bash
 #!/bin/bash
 # batch-process.sh - 批量处理文件夹内所有视频
 INPUT_DIR=$1
 OUTPUT_DIR=$2
 PLATFORM=${3:-tiktok}  # 默认TikTok
-
 mkdir -p "$OUTPUT_DIR"
 
 # 平台参数配置
@@ -117,7 +102,6 @@ echo "批量处理完成: $count/$total"
 ```
 
 ### 2. AI超分辨率(Real-ESRGAN)
-
 ```bash
 # 使用Real-ESRGAN提升视频画质
 # 2x超分(适合720p->1440p)
@@ -139,7 +123,6 @@ ffmpeg -i output_2x.mp4 -c:v libx264 -crf 18 -preset slow -c:a copy final.mp4
 | 1080p | 2x | 4K | realesr-animevideov3 |
 
 ### 3. 智能重构图
-
 通过AI分析视频内容,自动选择最佳裁剪区域:
 
 ```bash
@@ -156,7 +139,6 @@ ffmpeg -i input.mp4 -vf "crop=w='ih*9/16':h='ih':x='(iw-w)/2':y=0" -c:a copy out
 ```
 
 ### 4. 多码率自适应流(HLS)
-
 ```bash
 #!/bin/bash
 # hls-encode.sh - 生成HLS自适应多码率流
@@ -184,7 +166,6 @@ echo "  分辨率: 1080p/720p/480p/360p"
 ```
 
 ### 5. 自动化工作流
-
 ```bash
 #!/bin/bash
 # video-workflow.sh - 自动化视频处理工作流
@@ -246,7 +227,6 @@ echo "输出目录: $WORK_DIR/"
 ```
 
 ### 6. 高级字幕定制
-
 ```bash
 # ASS字幕(样式化字幕)
 ffmpeg -i input.mp4 -vf "ass=subtitle.ass" -c:a copy output.mp4
@@ -276,7 +256,6 @@ EOF
 ```
 
 ### 7. 视频质量评估
-
 ```bash
 # PSNR(峰值信噪比) - 越高越好(>30dB为好)
 ffmpeg -i original.mp4 -i compressed.mp4 -lavfi psnr -f null - 2>&1 | grep "average"
@@ -284,14 +263,12 @@ ffmpeg -i original.mp4 -i compressed.mp4 -lavfi psnr -f null - 2>&1 | grep "aver
 # SSIM(结构相似性) - 越接近1越好(>0.95为优秀)
 ffmpeg -i original.mp4 -i compressed.mp4 -lavfi ssim -f null - 2>&1 | grep "All"
 
-# VMAF(视频质量多方法评估) - 需要额外安装
+# 依赖说明
 ffmpeg -i distorted.mp4 -i reference.mp4 -lavfi libvmaf="model_path=vmaf_v0.6.1.pkl" -f null - 2>&1 | grep "VMAF"
 ```
 
 ## 使用场景
-
 ### 场景一:内容团队批量多平台发布
-
 内容团队有10个视频,需要同时适配TikTok、Instagram、YouTube Shorts和WhatsApp发布。
 
 ```bash
@@ -308,7 +285,6 @@ bash scripts/video-workflow.sh batch_input/ team_project
 ```
 
 ### 场景二:低清视频AI增强
-
 用户有一段480p的老视频,需要提升到1080p并增强画质。
 
 ```bash
@@ -323,7 +299,6 @@ ffmpeg -i old_video.mp4 -i output_1080p.mp4 -lavfi ssim -f null - 2>&1 | grep "A
 ```
 
 ### 场景三:多码率流媒体服务
-
 为视频平台生成HLS自适应多码率流,支持不同网络环境自动切换画质。
 
 ```bash
@@ -341,9 +316,7 @@ bash scripts/hls-encode.sh source_video.mp4 ./hls_output
 ```
 
 ## 快速开始
-
 ### 专业版环境检查
-
 ```bash
 # 检查核心工具
 ffmpeg -version
@@ -357,7 +330,6 @@ whisper --version 2>/dev/null && echo "Whisper: 可用" || echo "Whisper: 未安
 ```
 
 ### 自动化工作流一键启动
-
 ```bash
 # 单视频多平台处理
 bash scripts/video-workflow.sh input.mp4 "my_project"
@@ -366,10 +338,8 @@ bash scripts/video-workflow.sh input.mp4 "my_project"
 bash scripts/batch-process.sh input_folder/ output_folder/ tiktok
 ```
 
-## 配置示例
-
+## 示例
 ### 专业版平台规格配置
-
 ```json
 {
   "platforms": {
@@ -401,7 +371,6 @@ bash scripts/batch-process.sh input_folder/ output_folder/ tiktok
 ```
 
 ### 专业版与免费版完整对比
-
 | 功能维度 | 免费版 | 专业版 |
 |----------|--------|--------|
 | 文件处理 | 单文件 | 批量文件夹 |
@@ -418,9 +387,7 @@ bash scripts/batch-process.sh input_folder/ output_folder/ tiktok
 | 兼容性 | - | 完全兼容免费版命令 |
 
 ## 最佳实践
-
 ### 1. 批量处理效率优化
-
 ```bash
 # 按文件大小排序,小文件先处理(快速反馈)
 ls -lS -r input_folder/*.mp4 | head -5
@@ -435,7 +402,6 @@ wait
 ```
 
 ### 2. 质量与大小平衡
-
 | 用途 | CRF | preset | 音频 | 说明 |
 |------|-----|--------|------|------|
 | 高质量存档 | 18 | slow | 192k | 最高质量,文件大 |
@@ -444,7 +410,6 @@ wait
 | 流媒体 | - | veryfast | 128k | 编码速度优先 |
 
 ### 3. 交付前验证矩阵
-
 | 检查项 | 命令 | 标准 |
 |--------|------|------|
 | 文件存在 | `ls -la output.mp4` | 文件存在且非空 |
@@ -455,7 +420,6 @@ wait
 | 可播放性 | `ffmpeg -i output.mp4 -f null -` | 无错误 |
 
 ### 4. 自动化工作流最佳实践
-
 - 每步操作输出日志,便于追踪
 - 处理完成后生成汇总报告
 - 失败时记录错误并继续下一个文件
@@ -463,41 +427,31 @@ wait
 - 使用-y参数避免交互式确认
 
 ## 常见问题
-
 ### Q1: 专业版兼容免费版命令吗?
-
 完全兼容。专业版支持免费版的所有FFmpeg命令和参数。专业版新增批量脚本、AI增强和自动化工作流。
 
 ### Q2: Real-ESRGAN需要什么硬件?
-
 Real-ESRGAN支持NVIDIA GPU(CUDA)、AMD GPU和CPU运行。GPU运行速度更快,CPU运行较慢但兼容性更好。1080p视频2x超分在GPU上约需5-10分钟。
 
 ### Q3: 批量处理支持哪些视频格式?
-
 支持MP4、MOV、AVI、MKV、WebM、FLV等FFmpeg支持的所有格式。通过配置文件的formats参数可自定义。
 
 ### Q4: HLS流如何部署到服务器?
-
 将HLS输出目录(hls_output/)上传到任意Web服务器或CDN,通过master.m3u8地址播放。播放器(Safari/Video.js/HLS.js)会自动根据网络选择最佳画质。
 
 ### Q5: 智能重构图如何工作?
-
 智能重构图通过场景检测分析视频内容,识别画面中的主体位置,动态调整裁剪区域确保主体始终在画面中。避免简单居中裁剪导致主体被切掉。
 
 ### Q6: 多语言字幕如何实现?
-
 通过软字幕方式嵌入多个语言的SRT文件,播放器可切换语言。使用`-map`映射多个字幕流,`-metadata:s:s:N language=xxx`标记语言。
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 - **GPU(可选)**: NVIDIA/AMD GPU用于AI超分加速
 
 ### 第三方依赖
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | FFmpeg/FFprobe | 核心工具 | 必需 | 系统包管理器或官网 |
@@ -514,19 +468,27 @@ Real-ESRGAN支持NVIDIA GPU(CUDA)、AMD GPU和CPU运行。GPU运行速度更快,
 brew install ffmpeg          # macOS
 sudo apt install ffmpeg      # Ubuntu
 winget install Gyan.FFmpeg   # Windows
-
 # Real-ESRGAN(从GitHub下载)
 # https://github.com/xinntao/Real-ESRGAN/releases
-
 # Whisper
 pip install openai-whisper
 ```
 
 ### API Key 配置
-
 本Skill基于本地工具运行,无需额外API Key。FFmpeg、Real-ESRGAN和Whisper均为本地执行,不依赖外部API。视频处理完全在本地完成,不上传至外部服务。
 
 ### 可用性分类
-
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。核心视频处理依赖FFmpeg/FFprobe,AI超分依赖Real-ESRGAN,字幕依赖Whisper,批量处理依赖Bash脚本。仅处理用户明确提供的视频文件,不自动访问其他文件,不上传至外部服务。
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

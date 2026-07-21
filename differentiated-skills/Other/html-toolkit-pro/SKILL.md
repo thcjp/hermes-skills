@@ -4,25 +4,12 @@ name: html-toolkit-pro
 version: "1.0.0"
 displayName: HTML 工具箱专业版
 summary: 面向团队的全站 HTML 审计、WCAG 合规与组件库治理工具。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  面向团队的全站 HTML 审计与 WCAG 合规治理专业工具。
-
-  核心能力:
+  面向团队的全站 HTML 审计与 WCAG 合规治理专业工具。核心能力:
   - 全站批量 HTML 审计与回归
-  - WCAG 2.1 AA/AAA 合规检查
-  - 组件库 HTML 规范治理
-  - 结构化数据（Schema.org）与国际化
-
-  适用场景:
-  - 企业站点全站可访问性合规
-  - 组件库 HTML 规范统一
-  - 结构化数据与多语言治理
-
-  差异化: 专业版在免费版单页自检上扩展全站审计、WCAG 合规、组件库治理与结构化数据，兼容免费版清单。
-
-  触发关键词: 全站审计, WCAG 合规, 组件库规范, 结构化数据, schema.org, 国际化, html pro, audit, compliance
+  - WCAG 2。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。
 tags:
 - HTML
 - 企业级
@@ -30,7 +17,7 @@ tags:
 - 合规
 - 其他工具
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -109,7 +96,7 @@ npx @axe-core/cli http://localhost:8000 \
 3. 定义组件库 HTML 规范并接入构建。
 4. 添加结构化数据与 hreflang 标记。
 
-## 配置示例
+## 示例
 
 全站审计配置（`html-audit.json`）：
 
@@ -233,7 +220,7 @@ curl -X POST https://validator.schema.org/validate \
 - **操作系统**: Windows / macOS / Linux
 - **Node.js**: 18+（审计 CLI）
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | axe-core | 审计工具 | 审计时必需 | `npm install -D @axe-core/cli` |
@@ -247,3 +234,17 @@ curl -X POST https://validator.schema.org/validate \
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 命令行审计）
 - **说明**: 通过自然语言指令驱动 Agent 完成全站审计与合规治理
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

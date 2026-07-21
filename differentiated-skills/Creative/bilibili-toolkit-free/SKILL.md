@@ -4,12 +4,10 @@ name: bilibili-toolkit-free
 version: "1.0.0"
 displayName: B站工具箱免费版
 summary: B站热门监控、视频下载、数据查看与字幕获取，免登录使用核心功能，适合个人用户。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  B站工具箱免费版 —— 面向个人用户的轻量级B站内容工具。
-
-  核心能力:
+  B站工具箱免费版 —— 面向个人用户的轻量级B站内容工具。核心能力:
   - 热门视频监控：实时查看B站热门、热搜、排行榜、必看榜
   - 标准画质视频下载：支持360p至1080p视频下载
   - 视频数据查看：查看播放量、点赞数等基础统计数据
@@ -23,19 +21,16 @@ description: |-
   - 查看视频数据与弹幕
   - 获取视频字幕用于学习
 
-  差异化:免费版提供无需登录的核心功能，适合个人用户日常使用。PRO版本增加高清下载、视频发布、批量操作、数据追踪等高级能力。
-
-  触发关键词: B站, bilibili, 热门视频, 视频下载, 字幕, 弹幕, 排行榜, 必看榜, 热搜
+  差异化:免费版提供无需登录的核心功能...
 tags:
 - B站
 - 视频下载
 - 内容监控
 - 个人创作
 tools:
-- read
+  - - read
 - exec
 ---
-
 # B站工具箱免费版
 
 ## 概述
@@ -166,9 +161,23 @@ async def get_subtitles_and_danmaku():
 asyncio.run(get_subtitles_and_danmaku())
 ```
 
+## 不适用场景
+
+以下场景B站工具箱免费版不适合处理：
+
+- 实时流数据处理
+- 小规模数据手动分析
+- 非结构化文本情感分析
+
+
+## 触发条件
+
+需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
-### 1. 安装依赖
+### 依赖说明
 
 ```bash
 pip install httpx aiohttp beautifulsoup4 lxml requests
@@ -186,7 +195,7 @@ python main.py hot_monitor get_hot '{"page_size": 5}'
 python main.py downloader download '{"url": "BV1xx411c7mD", "quality": "1080p"}'
 ```
 
-## 配置示例
+## 示例
 
 ### 支持的分区
 
@@ -254,7 +263,7 @@ python main.py downloader download '{"url": "BV1xx411c7mD", "quality": "1080p"}'
 
 默认下载MP4格式。也可选择FLV格式或仅提取MP3音频。
 
-### Q5：免费版有使用限制吗？
+### 已知限制
 
 免费版无需登录，受B站公开API的频率限制。建议合理使用，避免短时间内大量请求。
 
@@ -290,3 +299,11 @@ python main.py downloader download '{"url": "BV1xx411c7mD", "quality": "1080p"}'
 
 - **分类**: MD+EXEC（纯Markdown指令，核心功能需要exec命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行B站内容操作任务。核心功能通过Python脚本调用B站公开API实现，无需登录凭证。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

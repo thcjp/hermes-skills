@@ -4,7 +4,7 @@ name: amap-jsapi-tool-free
 version: "1.0.0"
 displayName: 高德地图JSAPI免费版
 summary: 高德地图JSAPI v2.0开发助手,支持地图展示、标注点、地理编码与基础路径规划,适合个人开发者快速集成地图功能。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   高德地图JSAPI v2.0开发助手免费版,为个人开发者提供地图开发核心能力。
@@ -18,10 +18,9 @@ tags:
 - JSAPI
 - 免费版
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 高德地图JSAPI v2.0 开发助手免费版
 
 ## 概述
@@ -315,6 +314,20 @@ function searchAddress() {
 </script>
 ```
 
+## 不适用场景
+
+以下场景高德地图JSAPI免费版不适合处理：
+
+- 逆向工程闭源API
+- API安全渗透测试
+- 非标准协议集成
+
+
+## 触发条件
+
+需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 第一步:申请API Key
@@ -341,7 +354,7 @@ const map = new AMap.Map('container', {
 });
 ```
 
-## 配置示例
+## 示例
 
 ### 地图样式选项
 
@@ -441,7 +454,7 @@ function initMap(containerId, options = {}) {
 - **浏览器**: Chrome 70+ / Firefox 65+ / Safari 12+ / Edge 79+
 - **网络**: 需可访问 `https://webapi.amap.com`
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -458,3 +471,15 @@ function initMap(containerId, options = {}) {
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,需要exec能力生成HTML文件)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent生成高德地图JSAPI开发代码
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用

@@ -4,32 +4,10 @@ name: gif-whatsapp-tool-pro
 version: "1.0.0"
 displayName: WhatsApp表情专业版
 summary: 企业级 WhatsApp GIF 管理工具，支持批量发送、定时任务、GIF 库管理、多账号与营销分析，适合团队协作与营销场景。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  企业级 WhatsApp GIF 管理工具，支持批量发送、定时任务、GIF 库管理、多账号与营销分析，适合团队协作与营销场景。
-
-  核心能力:
-  - 批量搜索与发送 GIF 到多个联系人
-  - 自定义 GIF 字幕与品牌水印
-  - 定时任务与营销活动调度
-  - GIF 收藏库分类管理与标签系统
-  - 多 WhatsApp 账号同时管理
-  - 发送效果统计与分析报告
-
-  适用场景:
-  - 企业 WhatsApp 营销活动
-  - 客户关系维护与节日关怀
-  - 团队内部沟通表情管理
-  - 社交媒体内容批量制作
-
-  差异化:
-  - PRO 版支持批量群发，效率提升 20 倍
-  - 内置 GIF 库管理系统，支持标签分类
-  - 支持定时发送与营销活动调度
-  - 与免费版完全兼容，无缝升级
-
-  触发关键词: 批量GIF发送, WhatsApp营销, GIF库管理, 定时表情, 群发工具, GIF专业版
+  企业级 WhatsApp GIF 管理工具，支持批量发送、定时任务、GIF 库管理、多账号与营销分析。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
 tags:
 - WhatsApp
 - GIF
@@ -37,7 +15,7 @@ tags:
 - 批量发送
 - 企业通讯
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -196,7 +174,7 @@ python scripts/batch_send.py \
 ### 从免费版升级
 
 ```bash
-# 安装 PRO 版扩展依赖
+# 依赖说明
 pip install pandas schedule pillow
 
 # 初始化 GIF 库
@@ -223,7 +201,7 @@ python scripts/batch_send.py \
   --delay 5
 ```
 
-## 配置示例
+## 示例
 
 ### 企业级配置文件
 
@@ -347,7 +325,7 @@ python scripts/analytics.py export \
 
 ## 常见问题
 
-### 批量发送被 WhatsApp 限制
+### 已知限制
 
 ```bash
 # 增加发送间隔
@@ -432,3 +410,11 @@ export DB_PASSWORD=your_password
 - **适用人群**：企业营销团队、客服团队、社交媒体运营人员
 - **兼容性**：与免费版完全兼容，配置可无缝迁移
 - **支持方式**：优先响应技术工单
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

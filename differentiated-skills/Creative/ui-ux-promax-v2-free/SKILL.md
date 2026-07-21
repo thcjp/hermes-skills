@@ -4,13 +4,11 @@ name: ui-ux-promax-v2-free
 version: "1.0.0"
 displayName: UI/UX ProMax V2免费版
 summary: 优先级驱动的设计指南数据库,含50+风格、97配色、57字体配对,适合个人快速查询
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人开发者的优先级驱动UI/UX设计指南,内置50+种界面风格、97套配色方案、
-  57组字体配对、99条UX规则和25种图表类型,通过Python CLI按关键词查询。
-
-  核心能力:
+  57组字体配对、99条UX规则和25种图表类型,通过Python CLI按关键词查询。核心能力:
   - 优先级分层的设计规则体系(8级优先级)
   - 基础设计域搜索(style/color/typography/ux)
   - 设计系统一键生成
@@ -22,10 +20,7 @@ description: |-
   - 独立开发者配色和字体查询
   - 小型项目UX规则自查
 
-  差异化:免费版聚焦核心设计域查询和基础设计系统生成,提供优先级分层规则,
-  适合个人快速决策。去除持久化、多技术栈和批量操作等高级功能。
-
-  触发关键词: 设计风格查询, 配色方案搜索, 字体配对, UX规则, 优先级分层, 设计系统生成, 界面风格, 质量检查
+  差异化:免费...
 tags:
 - 设计
 - UI
@@ -35,10 +30,9 @@ tags:
 - 前端
 - 规则
 tools:
-- read
+  - - read
 - exec
 ---
-
 # UI/UX ProMax V2 - 免费版
 
 ## 概述
@@ -152,6 +146,20 @@ python3 scripts/search.py "image-optimization viewport z-index" --domain ux
 python3 scripts/search.py "line-height animation duration" --domain ux
 ```
 
+## 不适用场景
+
+以下场景UI/UX ProMax V2免费版不适合处理：
+
+- 3D建模和动画制作
+- 照片级写实渲染
+- 手绘原创插画
+
+
+## 触发条件
+
+需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 环境验证
@@ -179,7 +187,7 @@ python3 scripts/search.py "elegant luxury serif" --domain typography
 python3 scripts/search.py "layout responsive form" --stack html-tailwind
 ```
 
-## 配置示例
+## 示例
 
 ### 设计决策记录文件
 
@@ -301,7 +309,7 @@ python3 scripts/search.py "healthcare SaaS dashboard clean minimal" --design-sys
 - **操作系统**: Windows / macOS / Linux
 - **Python版本**: 3.8及以上
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -329,3 +337,17 @@ winget install Python.Python.3.12
 
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。核心查询功能依赖Python CLI脚本,需确保exec工具可用。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

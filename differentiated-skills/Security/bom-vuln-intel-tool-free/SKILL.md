@@ -4,7 +4,7 @@ name: bom-vuln-intel-tool-free
 version: "1.0.0"
 displayName: 物料清单漏洞情报免费版
 summary: 软件物料清单(SBOM)生成与依赖漏洞检查工具,支持基础包扫描与OSV/GHSA查询,适合个人开发者日常使用。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   物料清单漏洞情报免费版,为个人开发者提供软件物料清单生成与依赖漏洞检测能力。
@@ -18,10 +18,9 @@ tags:
 - 依赖管理
 - 免费版
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 物料清单漏洞情报免费版
 
 ## 概述
@@ -74,7 +73,7 @@ query_pip_package() {
     }'
 }
 
-# 使用示例
+# 示例
 query_npm_package "express"
 query_pip_package "flask"
 ```
@@ -164,7 +163,7 @@ check_osv "axios" "0.21.0" "npm"
 check_osv "requests" "2.25.0" "PyPI"
 ```
 
-### 4. 依赖树可视化
+### 依赖说明
 
 ```bash
 #!/bin/bash
@@ -325,6 +324,20 @@ echo "3. npm审计:"
 npm audit --package-name="$PACKAGE" 2>/dev/null || echo "(需要安装后审计)"
 ```
 
+## 不适用场景
+
+以下场景物料清单漏洞情报免费版不适合处理：
+
+- 数据库架构设计决策
+- NoSQL选型
+- 数据仓库ETL设计
+
+
+## 触发条件
+
+需要数据库操作、SQL查询、数据存储管理时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 第一步:确认项目类型
@@ -463,3 +476,17 @@ OSV匹配基于包名和版本号,可能存在误报。建议结合npm audit或p
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行SBOM生成与依赖漏洞检查任务
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

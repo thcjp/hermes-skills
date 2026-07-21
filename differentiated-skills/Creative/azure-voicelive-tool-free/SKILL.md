@@ -4,12 +4,10 @@ name: azure-voicelive-tool-free
 version: "1.0.0"
 displayName: Azure语音交互免费版
 summary: 使用Azure VoiceLive构建基础实时语音AI应用，支持文本/音频输出与基本会话管理。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  Azure语音交互免费版 —— 面向个人开发者的轻量级实时语音AI工具。
-
-  核心能力:
+  Azure语音交互免费版 —— 面向个人开发者的轻量级实时语音AI工具。核心能力:
   - 通过WebSocket建立双向实时语音通信
   - 支持文本与音频双模态输出
   - 基本会话配置：指令、语音、模态设置
@@ -22,19 +20,16 @@ description: |-
   - 学习实时语音AI应用开发
   - 简单的语音问答交互应用
 
-  差异化:免费版提供核心实时语音通信能力，适合个人开发者快速原型验证。PRO版本增加函数调用、自定义语音、电话音频格式、高级会话管理等专业能力。
-
-  触发关键词: 语音AI, 实时语音, VoiceLive, voice, realtime, WebSocket, 语音助手, Azure, 语音交互
+  差异化:免费版提供核心实时语音通信能力，适合个人开发者快速原型验证
 tags:
 - 语音AI
 - Azure
 - 实时通信
 - 个人开发
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Azure语音交互免费版
 
 ## 概述
@@ -169,9 +164,23 @@ async def voice_transcription():
 asyncio.run(voice_transcription())
 ```
 
+## 不适用场景
+
+以下场景Azure语音交互免费版不适合处理：
+
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 运维部署管理
+
+
+## 触发条件
+
+需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
-### 1. 安装SDK
+### 依赖说明
 
 ```bash
 pip install azure-ai-voicelive aiohttp azure-identity
@@ -213,7 +222,7 @@ async def main():
 asyncio.run(main())
 ```
 
-## 配置示例
+## 示例
 
 ### 环境变量配置
 
@@ -303,3 +312,16 @@ AZURE_COGNITIVE_SERVICES_KEY=your_api_key_here
 
 - **分类**: MD+EXEC（纯Markdown指令，核心功能需要exec命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行实时语音交互任务。核心功能通过Python异步SDK调用Azure VoiceLive服务实现。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用
+- 依赖云服务，需要网络连接

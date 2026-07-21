@@ -7,32 +7,12 @@ summary: Manage tasks, set priorities, and track deadlines locally. Supports bil
   (EN/CN) documentati...
 license: MIT-0
 description: |-
-  Manage tasks, set priorities, and track deadlines locally. Supports
-  bilingual (EN/CN) documentati...
-
-  核心能力:
-
-  - 商业工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 日程管理、效率提升、团队协作
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: track, planner, priorities, tasks, deadlines, manage, task
+  Manage tasks, set priorities, and track deadlines locally。Supports
+  bilingual (EN/CN) documentati。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Productivity
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -40,7 +20,7 @@ tools:
 
 Your professional local task manager. All data stays on your machine.
 
-## Quick Start / 快速开始
+## 使用流程
 
 Just ask your AI assistant: / 直接告诉 AI 助手：
 
@@ -48,13 +28,13 @@ Just ask your AI assistant: / 直接告诉 AI 助手：
 * "Show all tasks due today" (显示今日待办任务)
 * "Mark task #1 as completed" (标记任务1为已完成)
 
-## When to Use / 使用场景
+## 适用场景
 
 * **Daily Workflow**: Organizing your immediate to-do list and staying productive.
 * **Deadline Tracking**: Keeping an eye on upcoming project milestones and due dates.
 * **Privacy First**: When you need a task manager that doesn't upload your data to the cloud.
 
-## Requirements / 要求
+## 依赖说明
 
 * bash 4+
 * python3 (standard library)
@@ -113,3 +93,64 @@ Powered by BytesAgain | bytesagain.com
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+
+### add
+
+Add a new task with optional priority and due date.
+
+```bash
+bash scripts/script.sh add "Task description" --priority high --due 2026-12-31
+```
+
+### list
+
+Display pending or all tasks.
+
+```bash
+bash scripts/script.sh list --status pending
+```
+
+### done
+
+Complete a task by ID.
+
+```bash
+bash scripts/script.sh done 1
+```
+
+## 示例
+
+### 示例1：基础用法
+
+```
+Just ask your AI assistant: / 直接告诉 AI 助手：
+
+* "Add a high priority task: Finish report by Friday" (添加高优先级任务：周五前完成报告)
+* "Show all tasks due today" (显示今日待办任务)
+* "Mark task #1 as completed" (标记任务1为已完成)
+```
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+
+### Q1: 如何开始使用Task Planner？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Task Planner有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+
+- 本地运行，不支持多设备同步

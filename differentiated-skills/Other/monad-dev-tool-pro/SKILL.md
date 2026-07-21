@@ -4,12 +4,10 @@ name: monad-dev-tool-pro
 version: "1.0.0"
 displayName: Monad开发工具-专业版
 summary: 企业级Monad DApp开发平台,支持主网部署、批量合约管理、安全审计与CI/CD集成
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  Monad区块链DApp开发工具专业版,面向团队与企业级区块链应用开发。
-
-  核心能力:
+  Monad区块链DApp开发工具专业版,面向团队与企业级区块链应用开发。核心能力:
   - 主网与测试网双环境部署管理
   - 批量合约部署与升级管理
   - 智能合约安全审计辅助
@@ -25,9 +23,7 @@ description: |-
   - DAO治理合约开发
   - 跨链应用部署与维护
 
-  差异化:专业版在免费版基础上扩展主网部署、批量管理、安全审计与企业级CI/CD集成,兼容免费版项目结构,支持无缝升级。
-
-  触发关键词: monad, dapp, enterprise, mainnet, audit, ci/cd, batch deploy, 企业级, 主网部署, 合约审计
+  差异化:专业版在免费版基础上扩展主网部署、批...
 tags:
 - 区块链
 - 智能合约
@@ -36,10 +32,9 @@ tags:
 - 主网部署
 - 安全审计
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Monad 开发工具 - 专业版
 
 ## 概述
@@ -113,7 +108,7 @@ cat > deploy.config.json << 'EOF'
 }
 EOF
 
-# 2. 批量部署到测试网(自动处理依赖)
+# 依赖说明
 ./deploy.sh --env testnet --batch --verify
 
 # 3. 安全审计
@@ -175,7 +170,7 @@ forge test --gas-report --json > gas-report.json
 # 安全审计扫描
 ./audit.sh --contracts src/ --output audit-report.md
 
-# 审计报告示例输出
+# 示例
 # === Monad 合约安全审计报告 ===
 # 扫描合约: 5 个
 # 发现问题: 2 中危, 0 高危
@@ -183,6 +178,20 @@ forge test --gas-report --json > gas-report.json
 # [中危] src/Token.sol:78 - 建议使用 SafeERC20
 # Gas 优化建议: 3 项,预计节省 15% Gas
 ```
+
+## 不适用场景
+
+以下场景Monad开发工具-专业版不适合处理：
+
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 运维部署管理
+
+
+## 触发条件
+
+需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
+
 
 ## 快速开始
 
@@ -356,3 +365,17 @@ A: 1) 开启 `via_ir` 进行深度优化;2) 调高 `optimizer_runs`(主网推荐
 - **说明**: 通过自然语言指令驱动 Agent 执行企业级 Monad 区块链开发任务,包含主网部署、批量管理、安全审计与 CI/CD 集成
 - **兼容性**: 完全兼容免费版项目结构,支持无缝升级
 - **支持**: 优先工单支持,SLA 保障响应时间
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

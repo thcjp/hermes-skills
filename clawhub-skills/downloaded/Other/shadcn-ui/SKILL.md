@@ -8,44 +8,20 @@ summary: Use when building UI with shadcn/ui components, Tailwind CSS layouts, f
 license: MIT
 description: |-
   Use when building UI with shadcn/ui components, Tailwind CSS layouts,
-  form patterns with react-ho...
-
-  核心能力:
-
-  - 其他工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 通用工具、辅助功能、扩展能力
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: building, shadcn, components
+  form patterns with react-ho。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Other
 tools:
-- read
+  - - read
 - exec
----
-
 # Shadcn Ui
-
+---
 Comprehensive guide for building production UIs with shadcn/ui, Tailwind CSS, react-hook-form, and zod.
 
 ## Core Concepts
-
 shadcn/ui is **not** a component library — it's a collection of copy-paste components built on Radix UI primitives. You own the code. Components are added to your project, not installed as dependencies.
 
 ## Installation
-
 ```bash
 npx shadcn@latest init
 
@@ -65,12 +41,8 @@ npx shadcn@latest add sidebar
 npx shadcn@latest add button card input label textarea select checkbox
 ```
 
----
-
 ## Component Categories & When to Use
-
 ### Layout & Navigation
-
 | Component | Use When |
 | --- | --- |
 | `sidebar` | App-level navigation with collapsible sections |
@@ -82,7 +54,6 @@ npx shadcn@latest add button card input label textarea select checkbox
 | `resizable` | Adjustable panel layouts |
 
 ### Forms & Input
-
 | Component | Use When |
 | --- | --- |
 | `form` | Any form with validation (wraps react-hook-form) |
@@ -98,7 +69,6 @@ npx shadcn@latest add button card input label textarea select checkbox
 | `toggle` | Pressed/unpressed state (toolbar buttons) |
 
 ### Feedback & Overlay
-
 | Component | Use When |
 | --- | --- |
 | `dialog` | Modal confirmation, forms, or detail views |
@@ -113,7 +83,6 @@ npx shadcn@latest add button card input label textarea select checkbox
 | `progress` | Task completion indicators |
 
 ### Data Display
-
 | Component | Use When |
 | --- | --- |
 | `table` | Tabular data display |
@@ -126,7 +95,6 @@ npx shadcn@latest add button card input label textarea select checkbox
 | `scroll-area` | Custom scrollable containers |
 
 ### Actions
-
 | Component | Use When |
 | --- | --- |
 | `button` | Primary actions, form submissions |
@@ -135,171 +103,15 @@ npx shadcn@latest add button card input label textarea select checkbox
 | `menubar` | Application menu bars |
 | `command` | Command palette / search (⌘K) |
 
----
-
 ## Form Patterns (react-hook-form + zod)
-
-### Complete Form Example
-
+### 示例
 ```bash
 npx shadcn@latest add form input select textarea checkbox button
 ```
 
-```tsx
-'use client'
-
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
-import { z } from 'zod'
-import { Button } from '@/components/ui/button'
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
-import { Checkbox } from '@/components/ui/checkbox'
-import { toast } from 'sonner'
-
-const formSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Invalid email address'),
-  role: z.enum(['admin', 'user', 'editor'], { required_error: 'Select a role' }),
-  bio: z.string().max(500).optional(),
-  notifications: z.boolean().default(false),
-})
-
-type FormValues = z.infer<typeof formSchema>
-
-export function UserForm() {
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: '',
-      email: '',
-      bio: '',
-      notifications: false,
-    },
-  })
-
-  async function onSubmit(values: FormValues) {
-    try {
-      await createUser(values)
-      toast.success('User created successfully')
-      form.reset()
-    } catch (error) {
-      toast.error('Failed to create user')
-    }
-  }
-
-  return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Name</FormLabel>
-              <FormControl>
-                <Input placeholder="John Doe" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
-                <Input type="email" placeholder="john@example.com" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="role"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Role</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
-                <FormControl>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select a role" />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent>
-                  <SelectItem value="admin">Admin</SelectItem>
-                  <SelectItem value="editor">Editor</SelectItem>
-                  <SelectItem value="user">User</SelectItem>
-                </SelectContent>
-              </Select>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="bio"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Bio</FormLabel>
-              <FormControl>
-                <Textarea placeholder="Tell us about yourself..." {...field} />
-              </FormControl>
-              <FormDescription>Max 500 characters</FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="notifications"
-          render={({ field }) => (
-            <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-              <FormControl>
-                <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-              </FormControl>
-              <div className="space-y-1 leading-none">
-                <FormLabel>Email notifications</FormLabel>
-                <FormDescription>Receive emails about account activity</FormDescription>
-              </div>
-            </FormItem>
-          )}
-        />
-
-        <Button type="submit" disabled={form.formState.isSubmitting}>
-          {form.formState.isSubmitting ? 'Creating...' : 'Create User'}
-        </Button>
-      </form>
-    </Form>
-  )
-}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### Form with Server Action
-
 ```tsx
 'use client'
 
@@ -328,12 +140,8 @@ export function ContactForm() {
 }
 ```
 
----
-
 ## Theming & Dark Mode
-
 ### Setup with next-themes
-
 ```bash
 npm install next-themes
 npx shadcn@latest add dropdown-menu
@@ -353,42 +161,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
 }
 ```
 
-```tsx
-// components/theme-toggle.tsx
-'use client'
-import { Moon, Sun } from 'lucide-react'
-import { useTheme } from 'next-themes'
-import { Button } from '@/components/ui/button'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-
-export function ThemeToggle() {
-  const { setTheme } = useTheme()
-  return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme('light')}>Light</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('dark')}>Dark</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('system')}>System</DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  )
-}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### Custom Colors in `globals.css`
-
 ```css
 @layer base {
   :root {
@@ -419,12 +194,8 @@ export function ThemeToggle() {
 }
 ```
 
----
-
 ## Common Layouts
-
 ### App Shell with Sidebar
-
 ```tsx
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
 import { AppSidebar } from '@/components/app-sidebar'
@@ -447,50 +218,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
 ### Responsive Header with Mobile Nav
 
-```tsx
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
-import { Button } from '@/components/ui/button'
-import { Menu } from 'lucide-react'
-
-export function Header() {
-  return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
-      <div className="container flex h-14 items-center">
-        <div className="mr-4 hidden md:flex">
-          <Logo />
-          <nav className="flex items-center gap-6 text-sm ml-6">
-            <Link href="/dashboard">Dashboard</Link>
-            <Link href="/settings">Settings</Link>
-          </nav>
-        </div>
-
-        {/* Mobile hamburger */}
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button variant="outline" size="icon" className="md:hidden">
-              <Menu className="h-5 w-5" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="left" className="w-[300px]">
-            <nav className="flex flex-col gap-4 mt-8">
-              <Link href="/dashboard">Dashboard</Link>
-              <Link href="/settings">Settings</Link>
-            </nav>
-          </SheetContent>
-        </Sheet>
-
-        <div className="flex flex-1 items-center justify-end gap-2">
-          <ThemeToggle />
-          <UserMenu />
-        </div>
-      </div>
-    </header>
-  )
-}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### Card Grid
-
 ```tsx
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
@@ -514,12 +244,8 @@ export function StatsGrid({ stats }: { stats: Stat[] }) {
 }
 ```
 
----
-
 ## Tailwind CSS Patterns
-
 ### Common Utility Patterns
-
 ```tsx
 // Centering
 <div className="flex items-center justify-center min-h-screen">
@@ -549,7 +275,6 @@ export function StatsGrid({ stats }: { stats: Stat[] }) {
 ```
 
 ### Button Variants
-
 ```tsx
 <Button>Default</Button>
 <Button variant="secondary">Secondary</Button>
@@ -564,10 +289,7 @@ export function StatsGrid({ stats }: { stats: Stat[] }) {
 <Button asChild><Link href="/page">As Link</Link></Button>
 ```
 
----
-
 ## Toast Notifications
-
 ```bash
 npx shadcn@latest add sonner
 ```
@@ -596,64 +318,16 @@ toast.promise(asyncAction(), {
 })
 ```
 
----
-
 ## Command Palette (⌘K)
 
-```tsx
-'use client'
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
-import {
-  CommandDialog,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from '@/components/ui/command'
-
-export function CommandPalette() {
-  const [open, setOpen] = useState(false)
-  const router = useRouter()
-
-  useEffect(() => {
-    const down = (e: KeyboardEvent) => {
-      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault()
-        setOpen((open) => !open)
-      }
-    }
-    document.addEventListener('keydown', down)
-    return () => document.removeEventListener('keydown', down)
-  }, [])
-
-  return (
-    <CommandDialog open={open} onOpenChange={setOpen}>
-      <CommandInput placeholder="Type a command or search..." />
-      <CommandList>
-        <CommandEmpty>No results found.</CommandEmpty>
-        <CommandGroup heading="Navigation">
-          <CommandItem onSelect={() => { router.push('/dashboard'); setOpen(false) }}>
-            Dashboard
-          </CommandItem>
-          <CommandItem onSelect={() => { router.push('/settings'); setOpen(false) }}>
-            Settings
-          </CommandItem>
-        </CommandGroup>
-      </CommandList>
-    </CommandDialog>
-  )
-}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -664,3 +338,43 @@ export function CommandPalette() {
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+- Use when building UI with shadcn/ui components, Tailwind CSS layouts,
+  form patterns with react-ho
+- 触发关键词: building, shadcn, components
+
+## 适用场景
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+### Q1: 如何开始使用Shadcn Ui？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Shadcn Ui有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

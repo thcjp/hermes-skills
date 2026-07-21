@@ -4,7 +4,7 @@ name: paper-parse-tool-pro
 version: "1.0.0"
 displayName: 论文解析工具（专业版）
 summary: 解析学术论文PDF，提取标题、摘要、章节、引用、图表等结构化信息。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   论文解析工具 - （专业版）
@@ -22,7 +22,7 @@ tags:
 - 学术文献
 - 引用分析
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -90,7 +90,7 @@ tools:
 # 确保Python环境可用
 python3 --version
 
-# 安装基础依赖（如需要）
+# 依赖说明
 pip install requests
 ```
 
@@ -268,7 +268,7 @@ print(f"引用: {result['stats']['total_references']}")
 
 执行上述代码后，将根据输入参数返回结构化结果。专业版支持批量操作和并行处理，可同时处理多个文件或任务。
 
-## 配置示例
+## 示例
 
 ```yaml
 paper_parse:
@@ -396,3 +396,17 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 - **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行任务
 - **版本**: 专业版（v1.0.0 专业版，完整功能+企业级支持）
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

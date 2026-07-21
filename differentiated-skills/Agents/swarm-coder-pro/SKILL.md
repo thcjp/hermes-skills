@@ -4,7 +4,7 @@ name: swarm-coder-pro
 version: "1.0.0"
 displayName: 集群编码器(专业版)
 summary: AI Agent全功能集群开发引擎，并行调度+多层review+成本控制+失败回滚+多角色协作。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   集群编码器专业版是在免费版基础上的全功能升级，为AI Agent提供从任务分派到集群协作的完整开发引擎。专业版解锁并行任务调度、成本预估与控制、多层review、自动修复循环、多角色协作、失败回滚六大高级功能，实现开发效率与质量的双重飞跃。

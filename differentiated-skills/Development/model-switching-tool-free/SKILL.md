@@ -4,12 +4,10 @@ name: model-switching-tool-free
 version: "1.0.0"
 displayName: 模型切换工具(免费版)
 summary: 个人开发者的三层Claude模型切换指南,Haiku→Sonnet→Opus节省50-90%成本。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  模型切换工具(免费版)为个人开发者提供三层Claude模型切换指南,从最便宜的Haiku起步,仅在必要时升级,帮助节省50-90%的API成本。
-
-  核心能力:
+  模型切换工具(免费版)为个人开发者提供三层Claude模型切换指南,从最便宜的Haiku起步,仅在必要时升级,帮助节省50-90%的API成本。核心能力:
   - 三层切换:Haiku → Sonnet → Opus
   - 黄金规则:30秒人类思考阈值
   - 成本对比:Haiku 1x → Sonnet 12x → Opus 60x
@@ -22,11 +20,7 @@ description: |-
   - 定时任务模型选择
 
   差异化:
-  - 免费版聚焦三层切换决策与个人使用
-  - 移除原始平台与作者引用,纯净适配SkillHub
-  - 提供中文友好的决策树与参考卡
-
-  触发关键词: 模型, 切换, switching, claude, haiku, sonnet, opus, 成本, 优化, 子Agent, 定时任务
+  - 免费版聚焦三层切...
 tags:
 - Development
 - AI
@@ -34,10 +28,9 @@ tags:
 - 成本优化
 - Claude
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 模型切换工具(免费版)
 
 ## 概述
@@ -107,6 +100,20 @@ sessions_spawn(task="设计多租户数据库schema", model="opus")
 
 定时任务默认用Haiku,除非任务确实需要推理能力。
 
+## 不适用场景
+
+以下场景模型切换工具(免费版)不适合处理：
+
+- 需要100%确定性的关键决策
+- 医疗诊断
+- 法律判决
+
+
+## 触发条件
+
+需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 1. 掌握黄金规则
@@ -140,9 +147,9 @@ sessions_spawn(task="设计多租户数据库schema", model="opus")
   否 → 默认SONNET,卡住再升级
 ```
 
-## 配置示例
+## 示例
 
-### Haiku适用场景(默认)
+### 适用场景
 
 - 事实问答:"什么是X"、"谁是Y"、"什么时候Z"
 - 快速查询:定义、单位换算、短翻译
@@ -307,7 +314,7 @@ sessions_spawn(task="设计微服务拆分方案", model="opus")
 - **操作系统**: Windows / macOS / Linux
 - **API供应商**: 提供三层Claude模型选择的API权限
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -324,3 +331,15 @@ sessions_spawn(task="设计微服务拆分方案", model="opus")
 
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。免费版聚焦个人开发者的三层Claude模型切换决策。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用

@@ -1,0 +1,7759 @@
+{
+  "total": 1017,
+  "modified": 959,
+  "results": [
+    {
+      "slug": "accounting-and-finance",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "accounting-and-finance-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "accounting-finance",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ace-music",
+      "modified": true,
+      "changes": [
+        "替换16处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ace-music-free",
+      "modified": true,
+      "changes": [
+        "替换10处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ace-music-paid",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "actor-identifier",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ad-insight-hub",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换10处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ad-insight-hub-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换8处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "admapix",
+      "modified": true,
+      "changes": [
+        "替换12处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "admapix-free",
+      "modified": true,
+      "changes": [
+        "替换8处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "aegis-security",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "aegis-security-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "afrexai-cybersecurity-engine",
+      "modified": true,
+      "changes": [
+        "补充7个核心能力的输入/处理/输出描述",
+        "补充输出格式说明"
+      ]
+    },
+    {
+      "slug": "afrexai-cybersecurity-engine-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "afrexai-knowledge-management",
+      "modified": true,
+      "changes": [
+        "补充8个核心能力的输入/处理/输出描述",
+        "补充输出格式说明"
+      ]
+    },
+    {
+      "slug": "afrexai-knowledge-management-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "agent",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "agent-bom-vulnerability-intel",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "agent-browser-assistant",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "agent-browser-clawdbot",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "agent-browser-cli",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "agent-browser-stagehand",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "agent-chat",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "agent-commercial-contract",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "agent-framework-azure-ai-py",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "agent-group",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "agent-knowledge",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "agent-telegram",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "agent-telegram-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "agentic-security-audit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "agentvibes-content-skill",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "agentvibes-skill",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "agentvibes-voice-skill",
+      "modified": true,
+      "changes": [
+        "替换14处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "agentvibes-voice-skill-free",
+      "modified": true,
+      "changes": [
+        "替换7处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ai-agent-helper",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ai-agent-helper-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ai-artist-workstation",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ai-assistant",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ai-assistant-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ai-image-gen",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ai-image-gen-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ai-kujiale-design",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ai-kujiale-design-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ai-news",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "ai-podcast",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ai-podcast-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ai-video-director",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ai-writing-style-cloner",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "aic-dashboard",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "aic-dashboard-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "alephnet-node",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "alephnet-node-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "alephnet-node-manager",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "alibaba-quark-scan",
+      "modified": true,
+      "changes": [
+        "补充12个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "alibaba-quark-scan-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "alpha-feed-creator",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "amap-jsapi-skill",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "analytics-dashboard",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "analyze",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "analyze-video-by-qwen",
+      "modified": true,
+      "changes": [
+        "替换9处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "analyze-video-by-qwen-free",
+      "modified": true,
+      "changes": [
+        "替换7处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "anthropics-frontend-design",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "anthropics-frontend-design-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "anygen-diagram",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "anygen-diagram-generator",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "anygen-diagram-generator-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "api",
+      "modified": true,
+      "changes": [
+        "替换4处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "api-connect-hub",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "api-development",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "api-doc-generator",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "api-doc-writer",
+      "modified": true,
+      "changes": [
+        "替换4处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "api-doc-writer-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "api-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "api-gateway",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "api-gateway-free",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "api-generator",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "api-generator-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "api-integration",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "api-integration-free",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "api-magic-gen",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "api-scaffold-gen",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "api-test-runner",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "api-toolkit",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "apple-health-skill",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "apple-health-skill-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "archive",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "archive-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "art",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "assistant",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "atlas-admin-console",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "audio-stream-upload",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "audio-upload-aioz-stream",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "audio-upload-aioz-stream-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "audit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "auto-monitor",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "auto-workflow",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "automation-recipe-book",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "automation-recipe-pack",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "aws",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "aws-agentcore-langgraph",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "aws-agentcore-langgraph-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "aws-cloud-architect",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "aws-cloud-architect-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "aws-graph-agent",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "aws-graph-agent-free",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "aws-infra",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "aws-infra-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "aws-toolkit",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "aws-wechat-article-writing",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "aws-wechat-article-writing-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "azure",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "azure-ai-transcription-py",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "azure-ai-transcription-py-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "azure-ai-voicelive-py",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "azure-ai-voicelive-py-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "azure-cli",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "azure-cli-toolkit",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "azure-cloud-architect",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "azure-cloud-architect-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "azure-devops",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "azure-gateway-cli",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "azure-infra",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "azure-infra-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "azure-transcription",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "azure-voicelive",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充已知限制章节"
+      ]
+    },
+    {
+      "slug": "baidu-netdisk-skills",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "baidu-netdisk-skills-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "bailian-web-search",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "baoyu-diagram",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "baoyu-format-markdown",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "beware-piper-tts",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "beware-piper-tts-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "bilibili-all-in-one",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "bilibili-all-in-one-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "bilibili-helper",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "bilibili-helper-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "bilibili-toolkit",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "blog-seo-writer",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "blog-writer",
+      "modified": true,
+      "changes": [
+        "补充7个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "blog-writer-free",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "book-painter",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "bookmark-intelligence",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "bookmark-intelligence-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "bookmark-smart-hub",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "bot-status-api-test",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "bot-status-api-test-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "brainz-calendar",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "brave-search",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "browser-automation",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "browser-automation-v2",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "bsession",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "build-game",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "calendar",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "calendar-reminder",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "calendar-reminder-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充输出格式说明"
+      ]
+    },
+    {
+      "slug": "calendar-reminder-paid",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "calendar-skill",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "call-bridge",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "can",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "补充输出格式说明"
+      ]
+    },
+    {
+      "slug": "can-bus-toolkit",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "can-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "canvas-json-handler",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "card-image-builder",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "cashu-emoji",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "cctv-news-fetcher",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "cdn",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "chart",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "chart-craft",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "chart-free",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "chart-generator-2-0-0",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "chat",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "cheat-code",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "cheat-code-paid",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "chief-creative-officer",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "补充输出格式说明"
+      ]
+    },
+    {
+      "slug": "chief-creative-officer-free",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "china-news",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "chromecast-control",
+      "modified": true,
+      "changes": [
+        "补充8个核心能力的输入/处理/输出描述",
+        "补充输出格式说明"
+      ]
+    },
+    {
+      "slug": "chromecast-control-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "补充输出格式说明"
+      ]
+    },
+    {
+      "slug": "claude-code-delegate",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "claude-code-delegate-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "claude-code-runner",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "claude-tmux",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "clawcall",
+      "modified": true,
+      "changes": [
+        "替换7处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "clawcall-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "clawddocs",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "clawhub-jira-pat-skill",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "clawprint",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "cloud",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述",
+        "替换1处空话为具体操作",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "cloud-architect",
+      "modified": true,
+      "changes": [
+        "补充7个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "cloud-architect-design",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "cloud-architect-free",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充输出格式说明"
+      ]
+    },
+    {
+      "slug": "cloud-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "cloud-manager",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "cloud-storage",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "code",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "code-1-0-4",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "code-analysis-skills",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "code-analysis-toolkit",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "code-analyze",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "code-delegate",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "code-dev-toolkit",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "code-dev-v1",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "code-quality",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "code-quality-paid",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "code-runner",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充已知限制章节"
+      ]
+    },
+    {
+      "slug": "comfyui-painter",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "comfyui-painter-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "communication-skill",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "communication-skill-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "company-search-fengniao",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "compress",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "compress-pdf",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "content-refiner",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "context-driven-development",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "control-ikea-lightbulb",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "creative-officer",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "creator-alpha-feed",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "creator-alpha-feed-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充输出格式说明"
+      ]
+    },
+    {
+      "slug": "cron-scheduler-setup",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "cron-setup-guide",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "css",
+      "modified": true,
+      "changes": [
+        "补充11个核心能力的输入/处理/输出描述",
+        "补充输出格式说明"
+      ]
+    },
+    {
+      "slug": "css-free",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "csv",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "csv-analyzer",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "csv-analyzer-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "csv-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "csv-handler",
+      "modified": true,
+      "changes": [
+        "补充8个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "csv-handler-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "csv-insight",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "csv-json-converter",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "csv-toolkit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ctxly-chat",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "cyber-fortune-teller",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "daily-news-brief",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "daily-report-writer",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "dashboard",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "dashboard-analytics-tool",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "data",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "data-analysis-hub",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "data-analysis-litiao",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "data-analysis-litiao-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "data-analyst-chinese",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "data-analyst-cn",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "data-analyst-cn-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "data-analyst-expert",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "data-format-converter",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "data-format-converter-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "database-admin",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "database-admin-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "db",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述",
+        "替换4处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "db-admin-console",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "db-connector",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "db-free",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "db-schema-designer",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "decision-architect",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "decision-architect-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "deepseek-assistant",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "deepseek-chat",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "design",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "design-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "design-toolkit",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "diagram",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "diagram-gen",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "diagram-generator",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "diagram-generator-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "diagram-tools",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "dingtalk-calendar",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "discord",
+      "modified": true,
+      "changes": [
+        "补充7个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "discord-chat",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "discord-chat-free",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "discord-chat-manager",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "discord-communities",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "discord-communities-free",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "discord-community-hub",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "discord-free",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "discord-hub",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "discord-master",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "discord-toolkit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "discord-voice",
+      "modified": true,
+      "changes": [
+        "替换1处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "discord-voice-free",
+      "modified": true,
+      "changes": [
+        "替换1处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "discord-voice-paid",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "discrawl",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "dlazy-audio",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "dlazy-audio-generate",
+      "modified": true,
+      "changes": [
+        "替换4处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "dlazy-audio-generate-free",
+      "modified": true,
+      "changes": [
+        "替换4处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "dlazy-gen",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "dlazy-generate",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "dns",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "dns-config",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "dns-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "dns-lookup",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "dns-networking",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "dns-networking-paid",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "doc",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "doc-guard",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "doc-parse",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "docker",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "docker-ctl",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "docker-essentials",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "docker-essentials-1-0-0",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "docker-essentials-1-0-0-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "docker-essentials-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "docker-essentials-paid",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "docker-essentials-v1",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "docker-sandbox",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "document-pdf",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "dogecoin-node",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "domain-dns-ops",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "doubao-assistant",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "doubao-chat",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "doubao-image-gen",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "drama-hit-producer",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ebook-factory",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ecommerce-pricing-strategist",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "elite-frontend",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "elite-frontend-design",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "elite-longterm-memory",
+      "modified": true,
+      "changes": [
+        "补充9个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "elite-longterm-memory-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "elite-longterm-memory-local",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "elite-longterm-memory-local-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "email-163",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "email-163-com",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "email-163-com-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "email-daily-summary",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "email-daily-summary-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "email-digest",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "email-gmail-outlook",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "email-gmail-outlook-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "email-skill",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "email-skill-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "email-toolkit",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "encoding-formats",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "encoding-formats-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "encoding-toolkit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "encrypted-docs",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "encryption",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "encryption-paid",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "evolution-engine",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "evolution-engine-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "excel-craft",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "excel-expert",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "excel-formula",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "excel-studio",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "excel-xlsx",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "expanso-csv-to-json",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "expanso-json-to-yaml",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "expanso-json-validate",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "expanso-log-sanitize",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "expanso-xml-to-json",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "explain-code",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "explain-code-paid",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "feed-digest",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "feed-to-md",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "feishu-calendar",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "feishu-card",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "feishu-card-builder",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "feishu-card-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "feishu-doc",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "feishu-doc-write",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "feishu-file-sender",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "feishu-send-file",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "feishu-send-file-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "figma",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "figma-2",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "figma-design",
+      "modified": true,
+      "changes": [
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "figma-design-paid",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "figma-studio",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "figma-tw-designer",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "file",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "file-auto-organizer",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "file-browser",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "file-organizer-zh",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "finance",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "finance-accounting",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "finance-acct",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "finance-radar",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "finance-radar-paid",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "finance-report",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "finance-report-analyzer",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "finance-test",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "finance-toolkit",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "financial-literacy",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "financial-literacy-paid",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "firewall",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "flexible-database-design",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "fonts",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "format-converter",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "free-google-search-with-browser",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "free-resource-finder",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "free-ride",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "free-weather-api",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "free-weather-skill",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "free-web-search",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "frontend-design",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "frontend-design-3",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "frontend-design-3-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "frontend-design-anthropic",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "frontend-design-v3",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "game",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "game-ai",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "game-asset-gen",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "game-asset-generation-cellcog",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "game-developer-skill",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "game-theory",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "game-theory-free",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "gateway-manager",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "generate-mindmap",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "generate-presentation",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "gif-whatsapp",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "git",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "git-cli",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "git-cli-paid",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "git-essentials",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "git-essentials-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "git-essentials-paid",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "git-helper",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "git-helper-paid",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "git-toolkit",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "git-workflow-cn",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "git-workflow-cn-paid",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "git-workflows",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "git-workflows-paid",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "gitcrawl",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "github",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "github-api",
+      "modified": true,
+      "changes": [
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "github-api-toolkit",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "github-dev-standard",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "github-development-standard",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "github-manager",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "github-repos",
+      "modified": true,
+      "changes": [
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "github-trending-feed",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "glitch-dashboard",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "go",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "go-linter-configuration",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "go-security-vulnerability",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "go-security-vulnerability-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "go-to-market",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述",
+        "补充输出格式说明"
+      ]
+    },
+    {
+      "slug": "go-to-market-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "gog",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "gog-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "golang-toolkit",
+      "modified": true,
+      "changes": [
+        "补充已知限制章节"
+      ]
+    },
+    {
+      "slug": "google-fonts",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "google-search",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "google-workspace-cli",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "google-workspace-mcp",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "google-workspace-mcp-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "google-workspace-toolkit",
+      "modified": true,
+      "changes": [
+        "补充8个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "grain-crawler",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "graincrawl",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "graph-advocate",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "graph-knowledge-base",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "graph-query",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "grok-image",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "grok-image-generate",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "health",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "heygen-tts",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "hook-retention-master",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "hot-news-aggregator",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "html",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "html-coder",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "html-coder-paid",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "html-designer",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "html-designer-paid",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "hugo-blog",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "hugo-blog-publisher",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "hugo-blog-publisher-free",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "humanizer",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "image",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "in-depth-research",
+      "modified": true,
+      "changes": [
+        "补充7个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "in-depth-research-free",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "intel-sentinel",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充FAQ章节; 补充已知限制章节"
+      ]
+    },
+    {
+      "slug": "internet-search",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "interview-simulator",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "iris-code-formatter",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "iris-formatter",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充已知限制章节"
+      ]
+    },
+    {
+      "slug": "java",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "java-code-reviewer",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "java-dev-manual",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "java-development-manual",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "java-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "java-reviewer",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充已知限制章节"
+      ]
+    },
+    {
+      "slug": "javascript",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "javascript-sdk",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "javascript-sdk-paid",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "javascript-skills",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "javascript-skills-paid",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "javascript-toolkit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "jellyfin-control",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "jinn-node",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "jinn-node-free",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "jira",
+      "modified": true,
+      "changes": [
+        "补充7个核心能力的输入/处理/输出描述",
+        "补充输出格式说明"
+      ]
+    },
+    {
+      "slug": "jira-api",
+      "modified": true,
+      "changes": [
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "jira-api-toolkit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "jira-flow-skill",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "jira-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "jira-integration-skill",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "jira-pat-manager",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "jira-skill",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换6处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "jira-skill-free",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "job-auto-apply",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "join-meeting",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "join-meeting-free",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "json",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "json-beautifier",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "json-canvas",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "json-formatter",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "json-lint",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "json-linter",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "json-parse-engine",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "json-parser",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "json-repair",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "json-repair-kit",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "json-toolkit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "json-validator",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "json-yaml-converter",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "juejin-skills",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "k8s",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "kai-tw-figma",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "key-guard",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "key-vault-manager",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "knowledge",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "knowledge-capture",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "knowledge-graph",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "knowledge-graph-paid",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "knowledge-graph-skill",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "knowledge-graph-skill-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "knowledge-ontology",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "knowledge-ontology-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "kubernetes",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "kubernetes-devops",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "kujiale-design",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "learn",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "learn-cog",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "learn-cog-free",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "lh-video-gen",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "lh-video-gen-paid",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "linear",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "linear-api",
+      "modified": true,
+      "changes": [
+        "补充9个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "linear-api-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "补充API Key配置方式",
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "linear-api-toolkit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "linear-project-manager",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "linear-skill",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "linear-sync",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "linear-workflow-skill",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "lite-sqlite",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "live-stream-script",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "llm-assistant-hub",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "llm-assistant-hub-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "local-file-rag-basic",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "logo",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "logo-brand-identity",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "logo-brand-identity-cellcog",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "logo-design",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "logo-design-guide",
+      "modified": true,
+      "changes": [
+        "补充8个核心能力的输入/处理/输出描述",
+        "补充输出格式说明"
+      ]
+    },
+    {
+      "slug": "logo-design-guide-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "补充输出格式说明",
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "logo-design-guide-paid",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "longmemo-elite",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "longmemo-elite-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "mac-node-snapshot",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "mac-system-control",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "magic-api-generate",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "manage-liquidity",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "markdown",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "markdown-converter",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "markdown-converter-compdf",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "markdown-converter-paid",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "markdown-exporter",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "markdown-exporter-free",
+      "modified": true,
+      "changes": [
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "markdown-format",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "market-news",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "mcporter",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "md-export",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "meeting-join",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "meeting-note",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "memo-quickstart",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换4处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "memo-quickstart-free",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "memory",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "memory-compress",
+      "modified": true,
+      "changes": [
+        "替换4处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "memory-compress-free",
+      "modified": true,
+      "changes": [
+        "替换4处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "memory-distiller",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "memory-distiller-free",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "memory-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "memory-orchestrator",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "memory-orchestrator-free",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "memory-radar",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "memory-radar-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "memory-scan",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "memory-scan-free",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "merge-check",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "merge-check-paid",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "merge-pdf",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "mermaid-diagram",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "mermaid-diagram-paid",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "minimalist-design",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "minimalist-design-system",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "miniprogram-development",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "model-routing",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "model-switching",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "molt-board-art",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换7处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "molt-board-art-free",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "moltblock",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "moltbook-filter",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "moltbook-filter-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "moltbook-firewall",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "molted-work",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "monad-development",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "mongo-manager",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "mongodb",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "mongodb-atlas-admin",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "mongodb-atlas-admin-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "monitor",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "multi-agent-dev",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "multi-agent-dev-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "multi-search-engine",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "multi-search-engine-simple",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "multi-source-research",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "music",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "music-gen",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "music-gen-cellcog",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "music-generation",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "music-generation-cellcog",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "namecheap-dns",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "nano-pdf",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "neosoul-decision-agent",
+      "modified": true,
+      "changes": [
+        "补充输出格式说明"
+      ]
+    },
+    {
+      "slug": "neosoul-decision-agent-free",
+      "modified": true,
+      "changes": [
+        "补充输出格式说明"
+      ]
+    },
+    {
+      "slug": "netpad",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "neural-memory-enhanced",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "neural-memory-enhanced-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "news",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "news-aggregator",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "news-aggregator-free",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "news-daily-digest",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "news-feed",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "news-sentiment",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "news-sentiment-scan",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "news-sentiment-scan-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "node-connect",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "node-connect-paid",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "notcrawl",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "note",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "note-taker",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "notion",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "notion-api-skill",
+      "modified": true,
+      "changes": [
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "notion-api-toolkit",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "notion-cli",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "notion-pages",
+      "modified": true,
+      "changes": [
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "notion-skill",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "notioncli",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "novel-autopilot",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "obsidian-cli",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "obsidian-official-cli",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "ocean-chat",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "okx-dex-token",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "okx-dex-token-paid",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ollama-integration",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "ollama-toolkit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ontology",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "ontology-free",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "openai-ai",
+      "modified": true,
+      "changes": [
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "openai-ai-paid",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "openai-whisper",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "openai-whisper-1-0-0",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "openai-whisper-paid",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "openai-whisper-v1",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "openclaw-dashboard",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "openclaw-linear",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "ops-dashboard",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "pandoc-convert-openclaw",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "pandoc-document-converter",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "paper-parse",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "parallel-ai-research",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "password-generator",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "pcb-design-assistant-paid",
+      "modified": true,
+      "changes": [
+        "补充9个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "pdf",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "pentest-commands",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "persistent-memory-engine",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "persistent-memory-engine-free",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "personal-health-manager",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "pg-job-queue",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "pg-mcp-skills",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "photo-caption",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "photo-captions",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "photo-captions-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "photo-webcam",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "ping-monitor",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "pipedrive-api",
+      "modified": true,
+      "changes": [
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "pipedrive-toolkit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充已知限制章节"
+      ]
+    },
+    {
+      "slug": "piper-tts-engine",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "plugin-architecture",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "podcast",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "podcast-chaptering",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "podcast-chaptering-highlights",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "podcast-downloader",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "podcast-downloader-paid",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "podcast-toolkit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "poetry-craftsman",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "postgres-job-queue",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "postgres-mcp-skills",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "powerpoint",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "powerpoint-pptx",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "powerpoint-pptx-1-0-1",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "powerpoint-pptx-cn",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "pptx-pdf-font-fix",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "pro-comm-toolkit",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "proactive-agent",
+      "modified": true,
+      "changes": [
+        "补充10个核心能力的输入/处理/输出描述",
+        "补充输出格式说明"
+      ]
+    },
+    {
+      "slug": "proactive-agent-free",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "补充输出格式说明",
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "productivity",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "productivity-bot",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "productivity-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "productivity-improving",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "professional-communication",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "professional-communication-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "py",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "py-data-analyzer",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "py-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "python",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "python-data-analysis",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "python-dataviz",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "python-toolkit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "python3",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "pyx-scan",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换5处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "pyx-scan-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换5处空话为具体操作",
+        "补充输出格式说明",
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "pyx-scanner",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "qq-zone-photo",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "qq-zone-photo-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "quant-data-quality",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "quark-scan",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "queue-task",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "qwen-video-analyzer",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "read-github",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "reddit-research",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "reddit-research-paid",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "reminder",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "reminder-engine",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "remix-api-key-auth",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "remix-auth",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "repo-manager",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "report",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "report-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "report-summary-builder",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "research-agent",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "resume-assistant",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "resume-assistant-free",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "resume-assistant-paid",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "rho-telegram-alerts",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "rss-aggregator",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "rss-ai-reader",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "rss-ai-reader-free",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "rss-digest",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "rss-feed-digest",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "rss-fetcher",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "rss-reader",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "rss-reader-ai",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "rust",
+      "modified": true,
+      "changes": [
+        "补充8个核心能力的输入/处理/输出描述",
+        "补充输出格式说明"
+      ]
+    },
+    {
+      "slug": "rust-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "补充输出格式说明",
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "safe-encryption-skill",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "sales-copy-writer",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "schedule",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "schedule-manager",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "scrape-web",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "screen-monitor",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "search-2",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "searching-assistant",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "secure-api-calls",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "secure-api-toolkit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "security",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换5处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "security-audit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "security-auditor",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "security-free",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "security-scanner",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "self-integration",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "self-integration-paid",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "seo-doctor",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "seo-rank-monopolizer",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "sequential-read",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "shadcn-ui",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "shop-culture",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "shop-culture-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "shopify-helper",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "skill-creator",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "skill-creator-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "skill-vetter",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "skill-vetter-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "slack",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "slack-api",
+      "modified": true,
+      "changes": [
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "slack-api-toolkit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "slack-crawler",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "slack-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "slack-hub",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "slack-hub-skill",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换4处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "slack-hub-skill-free",
+      "modified": true,
+      "changes": [
+        "替换4处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "slack-toolkit",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "slack-workspace",
+      "modified": true,
+      "changes": [
+        "补充8个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "slack-workspace-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "slack-workspace-manager",
+      "modified": true,
+      "changes": [
+        "补充7个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "slacrawl",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "smart-auto-updater",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "smart-cache",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "smart-crawler",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "smart-model-routing-for-zai",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "smart-model-switching",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "smart-reminder",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "smart-reminder-system",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "smart-weekly-report",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "social",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "social-free",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "social-media-scheduler",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "social-media-scheduler-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "social-media-toolkit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "social-sentiment",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "solo-audit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "solo-build",
+      "modified": true,
+      "changes": [
+        "补充12个核心能力的输入/处理/输出描述",
+        "补充输出格式说明"
+      ]
+    },
+    {
+      "slug": "solo-build-free",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "补充输出格式说明",
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "solo-dev-companion",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "solo-research",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "solo-research-free",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "solo-validate",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "sonoscli",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "sovereign-aws-cost-optimizer",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "sql",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "sql-free",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "sql-gen",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "sql-generator",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "sql-master",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "sql-query",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "sql-toolkit",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "sqlite",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "sqlite-lite-manager",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "sqlite-manager",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ssl",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "ssl-toolkit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "stagehand-browser-cli",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "stealth-browser-assistant",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "stock-filter",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "stock-filter-skills",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "story-long-analyze",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "story-long-write",
+      "modified": true,
+      "changes": [
+        "补充13个核心能力的输入/处理/输出描述",
+        "补充输出格式说明"
+      ]
+    },
+    {
+      "slug": "story-long-write-free",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "补充输出格式说明",
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "story-short-write",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "straker-verify",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "t-trading",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "tailwindcss",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "tailwindcss-toolkit",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "tardis",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "tarot",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "tarot-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "tarot-reader",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "task",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "task-bot-orchestrator",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "task-planner",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "task-queue-manager",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "telegram",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "telegram-agent-comm",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "telegram-alert",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "telegram-bot-builder",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "telegram-chat",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "telegram-chat-manager",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "telegram-messaging",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "telegram-messaging-free",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "telegram-msg-toolkit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "telegram-toolkit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "test",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "test-wa",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "test-wa-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "text",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "text-game-arcade-universe-v3",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "text-to-speech-heygen",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "text-to-sql",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "text2sql-engine",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "tg-body-scan",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "tg-bot-builder",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "the-news",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "thesis-helper",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "timeline-digest",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "timer",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "timer-alert",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "timer-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "title-hook-factory",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "tmux-session",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "token-layer",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "token-manager",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "token-manager-free",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作",
+        "补充输出格式说明",
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "tool",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "tool-call-retry",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "tool-finder",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "topic-hunter",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "trade-with-taro",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "trading",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "translate",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "translate-en-zh",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "translate-hub",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "travel-assistant",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "trending-feed-skill",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "tts-whatsapp",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "tts-whatsapp-paid",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "typescript",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "typescript-skills",
+      "modified": true,
+      "changes": [
+        "补充7个核心能力的输入/处理/输出描述",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "typescript-skills-paid",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "typescript-toolkit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ui",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "ui-audit",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "ui-audit-free",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "ui-component",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "ui-component-paid",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ui-design-toolkit",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ui-ux",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "ui-ux-design",
+      "modified": true,
+      "changes": [
+        "补充9个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "ui-ux-design-free",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "ui-ux-design-paid",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ui-ux-dev",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "ui-ux-dev-paid",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "ui-ux-toolkit",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "universal-translate",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "universal-translate-paid",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "university-app",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "university-applications",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "upstage-document-parse",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "upstage-document-parse-free",
+      "modified": false,
+      "changes": []
+    },
+    {
+      "slug": "use-my-browser",
+      "modified": true,
+      "changes": [
+        "补充7个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "use-my-browser-free",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "补充输出格式说明",
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "ux",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "ux-design",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "vector-control",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "vector-db-manager",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "verify-claims",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "video",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "video-editing",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "video-editing-paid",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "video-frames",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "video-frames-paid",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "video-stream-upload",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "video-toolkit",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "video-translator",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "video-translator-paid",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "video-upload-aioz-stream",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "viral-decoder",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "viral-prophet",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "visual-file-sorter",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "volcengine-network-dns",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "vpn",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "vpn-rotate-skill",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "vpn-rotator",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "vscode-node",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "vscode-node-paid",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "vue",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "vue-component-gen",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "vue-component-generator",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "vue-toolkit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "vulnerability-scanner",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "weather",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "web",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "web-browsing",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "web-content-fetcher",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "web-crawler-engine",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充已知限制章节"
+      ]
+    },
+    {
+      "slug": "web-dev-toolkit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "web-learner",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "web-notepad",
+      "modified": true,
+      "changes": [
+        "补充1个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "web-vulnerability-assessment",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "wechat-article-writer",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "weekly-report-writer",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "weiyun-skills",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "weiyun-toolkit",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "wenxiang-2d5-banner",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "whatsapp-image",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "whatsapp-image-send",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "whatsapp-master",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "whatsapp-messaging",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "whatsapp-messaging-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "whatsapp-msg",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "whatsapp-msg-manager",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "whatsapp-style",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "whatsapp-style-guide",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "whatsapp-styler",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "whatsapp-styler-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "whatsapp-styling-guide",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "whatsapp-styling-guide-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "whatsapp-ultimate",
+      "modified": true,
+      "changes": [
+        "补充5个核心能力的输入/处理/输出描述",
+        "替换5处空话为具体操作",
+        "补充输出格式说明"
+      ]
+    },
+    {
+      "slug": "whatsapp-ultimate-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作",
+        "补充输出格式说明",
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "who-is-actor",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "word",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "word-docx",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "word-docx-1",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "word-docx-1-02",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "work",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "workflow",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "workflow-decomposer",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "workflow-orchestrator",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "workflow-splitter",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "write",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "write-a-skill",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述"
+      ]
+    },
+    {
+      "slug": "write-a-skill-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "补充升级提示"
+      ]
+    },
+    {
+      "slug": "write-free",
+      "modified": true,
+      "changes": [
+        "补充2个核心能力的输入/处理/输出描述",
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "write-my-blog",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "writing-assistant",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "ws-agent-browser",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "ws-calendar",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "ws-excel",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "ws-excel-paid",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "x-news-daily",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "x-news-daily-free",
+      "modified": true,
+      "changes": [
+        "替换2处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "x-timeline-digest",
+      "modified": true,
+      "changes": [
+        "补充6个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "x-timeline-digest-free",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "xlsx-handler",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "xml",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "xml-json-converter",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "xml-reader",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "yaml",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式",
+        "补充FAQ章节"
+      ]
+    },
+    {
+      "slug": "youtube-watcher",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "youtube-watcher-paid",
+      "modified": true,
+      "changes": [
+        "补充4个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "z-card-image",
+      "modified": true,
+      "changes": [
+        "补充3个核心能力的输入/处理/输出描述",
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "z-card-image-free",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    },
+    {
+      "slug": "zhuchenggong-doubao-image-gen",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "ziptax",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作",
+        "补充API Key配置方式"
+      ]
+    },
+    {
+      "slug": "ziptax-paid",
+      "modified": true,
+      "changes": [
+        "替换3处空话为具体操作"
+      ]
+    }
+  ]
+}

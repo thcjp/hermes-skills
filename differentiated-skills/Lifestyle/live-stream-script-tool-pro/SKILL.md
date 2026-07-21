@@ -4,7 +4,7 @@ name: live-stream-script-tool-pro
 version: "1.0.0"
 displayName: 直播脚本生成专业版
 summary: 企业级直播运营平台,支持团队协作、数据分析、A/B测试与多语言
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   面向直播机构、MCN 与品牌方的企业级直播运营平台。
@@ -20,20 +20,16 @@ tags:
 - A/B测试
 - MCN运营
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 直播脚本生成 (专业版)
-
 ## 概述
-
 专业版面向直播机构、MCN、品牌方与内容工厂,在免费版脚本生成之上,扩展团队协作、数据分析、A/B 测试、模板库、多语言、批量生成等企业级能力。支持多人共创脚本、数据驱动优化、跨语言内容生产,适合规模化直播运营场景。
 
 专业版与免费版脚本格式完全兼容,个人主播升级后现有脚本无缝迁移。
 
 ## 核心能力
-
 | 能力模块 | 描述 | 免费版 | 专业版 |
 |:--------|:-----|:------:|:------:|
 | 脚本结构 | 完整直播流程 | 支持 | 支持 |
@@ -50,9 +46,7 @@ tools:
 | 商业授权 | 商业用途 | 个人 | 商业 |
 
 ## 使用场景
-
 ### 场景一: MCN 多主播管理
-
 为 MCN 机构管理多个主播的脚本与排期。
 
 ```python
@@ -112,7 +106,6 @@ class MCNManager:
         )
         return resp.json()
 
-
 mcn = MCNManager(ADMIN_KEY)
 # 批量为 10 个主播生成脚本
 scripts = mcn.batch_generate_scripts(
@@ -123,7 +116,6 @@ scripts = mcn.batch_generate_scripts(
 ```
 
 ### 场景二: 数据驱动优化
-
 基于直播数据优化脚本效果。
 
 ```python
@@ -150,7 +142,7 @@ def analyze_script_performance(script_id, live_data):
     )
     return resp.json()
 
-# 输出示例
+# 示例
 # {
 #   "overall_performance": {
 #     "viewer_retention": 0.65,
@@ -170,7 +162,6 @@ def analyze_script_performance(script_id, live_data):
 ```
 
 ### 场景三: A/B 测试
-
 对比不同脚本版本的效果。
 
 ```python
@@ -211,14 +202,25 @@ test = create_ab_test(
 )
 ```
 
+## 不适用场景
+
+以下场景直播脚本生成专业版不适合处理：
+
+- 实时流数据处理
+- 小规模数据手动分析
+- 非结构化文本情感分析
+
+
+## 触发条件
+
+需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
-
 ### 步骤 1: 申请专业版账户
-
 联系销售开通专业版,获取管理员凭证与租户 ID。
 
 ### 步骤 2: 配置凭证
-
 ```bash
 export LIVE_STREAM_ADMIN_KEY="sk_pro_admin_xxx"
 export LIVE_STREAM_ORG_ID="org_your_id"
@@ -226,7 +228,6 @@ export LIVE_STREAM_EDITION="pro"
 ```
 
 ### 步骤 3: 导入主播矩阵
-
 ```bash
 curl -X POST -H "X-API-Key: $LIVE_STREAM_ADMIN_KEY" \
   -F "file=@streamers.csv" \
@@ -234,7 +235,6 @@ curl -X POST -H "X-API-Key: $LIVE_STREAM_ADMIN_KEY" \
 ```
 
 ### 步骤 4: 批量生成脚本
-
 ```bash
 curl -X POST -H "X-API-Key: $LIVE_STREAM_ADMIN_KEY" \
   -H "Content-Type: application/json" \
@@ -247,9 +247,7 @@ curl -X POST -H "X-API-Key: $LIVE_STREAM_ADMIN_KEY" \
 ```
 
 ## 配置示例
-
 ### 企业级配置
-
 ```yaml
 # /etc/live-stream/pro.yaml
 edition: pro
@@ -294,7 +292,6 @@ automation:
 ```
 
 ### 多语言脚本生成
-
 ```python
 def generate_multilingual_scripts(script_id, target_languages):
     """生成多语言脚本"""
@@ -318,7 +315,6 @@ def generate_multilingual_scripts(script_id, target_languages):
 ```
 
 ### 数据分析仪表盘
-
 ```python
 def render_analytics_dashboard(period="week"):
     """渲染数据分析仪表盘"""
@@ -341,9 +337,7 @@ def render_analytics_dashboard(period="week"):
 ```
 
 ## 最佳实践
-
 ### 1. 团队协作工作流
-
 ```python
 def create_collaboration_workflow(project_id):
     """脚本团队协作工作流"""
@@ -372,7 +366,6 @@ def create_collaboration_workflow(project_id):
 ```
 
 ### 2. 智能优化建议
-
 ```python
 def smart_optimization(streamer_id, historical_data):
     """基于历史数据的智能优化"""
@@ -397,7 +390,6 @@ def smart_optimization(streamer_id, historical_data):
 ```
 
 ### 3. 跨平台脚本适配
-
 ```python
 def adapt_to_platform(script_id, target_platform):
     """适配不同直播平台"""
@@ -421,38 +413,29 @@ def adapt_to_platform(script_id, target_platform):
 ```
 
 ## 常见问题
-
 ### Q1: 专业版与免费版脚本格式兼容吗?
-
 完全兼容。专业版在免费版脚本基础上扩展协作与分析能力,基础格式一致。
 
 ### Q2: 团队协作支持多少人?
-
 标准版支持 100 人团队,企业版可扩展至 500+ 人。
 
 ### Q3: A/B 测试如何确定统计显著?
-
 使用假设检验 (t 检验或卡方检验),显著性水平默认 0.05,达到自动得出结论。
 
 ### Q4: 多语言脚本质量如何保证?
-
 机器翻译 + 母语者审核双重保障。重要场景建议人工最终校对。
 
 ### Q5: 数据分析需要接入哪些数据?
-
 直播平台数据 (观众数、互动、GMV 等) + 脚本标记 (分段、话术、产品)。
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent 平台**: 支持 SKILL.md 规范的任意 AI Agent (Claude Code、Cursor、Codex、Gemini CLI 等)
 - **操作系统**: Windows / macOS / Linux (生产环境推荐 Linux)
 - **网络**: 需访问专业版服务
 - **Python**: 3.9+ (用于脚本化操作)
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Live Stream Pro API | 在线 API | 必需 | 联系销售开通专业版 |
@@ -462,7 +445,6 @@ def adapt_to_platform(script_id, target_platform):
 | 数据库 | 数据分析 | 可选 | 兼容主流关系型数据库 (使用 `数据库` 上下文) |
 
 ### API Key 配置
-
 ```bash
 # 专业版凭证
 export LIVE_STREAM_ADMIN_KEY="sk_pro_admin_xxx"
@@ -479,8 +461,19 @@ export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
 ```
 
 ### 可用性分类
-
 - **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 面向直播机构、MCN 与品牌方,通过自然语言指令驱动 Agent 调用 Pro API,完成团队协作、数据分析、A/B 测试等企业级场景
 - **专业版特性**: 团队协作、数据分析、A/B 测试、模板库、多语言、批量生成、多主播管理、商业授权
 - **兼容性**: 与免费版脚本格式完全兼容,支持平滑升级
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

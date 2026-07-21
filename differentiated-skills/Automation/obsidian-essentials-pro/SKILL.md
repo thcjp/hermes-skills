@@ -4,7 +4,7 @@ name: obsidian-essentials-pro
 version: "1.0.0"
 displayName: Obsidian基础入门(专业版)
 summary: Obsidian新手入门与核心配置专业版，含高级配置、完整工作流体系、多设备同步、插件选型与性能调优。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   Obsidian基础入门专业版是在免费版基础上的全功能升级，为AI Agent提供完整的Obsidian新手引导能力。专业版解锁高级外观配置、完整工作流体系、多设备同步完整指南、插件选型完整指南、性能调优建议等高级特性，帮助用户从新手快速进阶为高效使用者。

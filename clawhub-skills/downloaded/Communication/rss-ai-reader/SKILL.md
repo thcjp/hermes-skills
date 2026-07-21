@@ -3,49 +3,30 @@ slug: rss-ai-reader
 name: rss-ai-reader
 version: "1.0.0"
 displayName: Rss Ai Reader
-summary: "📰 RSS AI 阅读器 — 自动抓取订阅、LLM生成摘要、多渠道推送！ 支持 Claude/OpenAI 生成中文摘要，推送到飞书/Telegram/Email。
+summary: "📰 RSS AI 阅读器 — 自动抓取订阅、LLM生成摘要、多渠道推送！ 支持 ai-assistant/llm-provider 生成中文摘要，推送到飞书/Telegram/Email。
   触发条件: 用户要求订阅RS"
 license: MIT
 description: |-
-  📰 RSS AI 阅读器 — 自动抓取订阅、LLM生成摘要、多渠道推送！ 支持 Claude/OpenAI 生成中文摘要，推送到飞书/Telegram/Email。
-  触发条件: 用户要求订阅RS...
-
-  核心能力:
-
-  - 沟通协作领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 消息发送、社交管理、通知提醒
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: 阅读器, reader, 多渠道推送, 自动抓取订阅, 支持, 生成摘要, telegram, rss
+  📰 RSS AI 阅读器 — 自动抓取订阅、LLM生成摘要、多渠道推送！ 支持 ai-assistant/llm-provider 生成中文摘要，推送到飞书/Telegram/Email。触发条件: 用户要求订阅RS。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags: '[''Communication'', ''Research'']'
-tools: '[read, exec]'
+tools:
+  - read
+  - exec
 ---
 
 # Rss Ai Reader
 
 自动抓取 RSS 订阅 → LLM 生成中文摘要 → 推送到 IM
 
-## ✨ 核心功能
+## 核心能力
 
 * 📡 自动抓取 RSS/Atom feeds
-* 🤖 Claude/OpenAI 生成中文摘要
+* 🤖 ai-assistant/llm-provider 生成中文摘要
 * 📬 多渠道推送：飞书、Telegram、Email
 * 💾 SQLite 去重，不重复推送
 * ⏰ 支持定时任务
 
-## 🚀 快速开始
+## 使用流程
 
 ```bash
 git clone https://github.com/BENZEMA216/rss-reader.git ~/rss-reader
@@ -58,7 +39,7 @@ python main.py                     # 启动定时任务
 python main.py --stats             # 查看统计
 ```
 
-## 📝 配置示例
+## 示例
 
 ```yaml
 feeds:
@@ -70,8 +51,8 @@ feeds:
     category: "tech"
 
 llm:
-  provider: "claude"  # 或 "openai"
-  model: "claude-sonnet-4-20250514"
+  provider: "ai-assistant"  # 或 "llm-provider"
+  model: "ai-assistant-sonnet-4-20250514"
   api_key: "${ANTHROPIC_API_KEY}"
 
 notify:
@@ -99,7 +80,7 @@ python main.py [options]
 --db          数据库路径 (默认: rss_reader.db)
 ```
 
-## 💡 使用场景
+## 适用场景
 
 1. **技术博客监控** — 订阅 HN、阮一峰、V2EX 等
 2. **新闻早报** — 每天定时推送摘要到飞书群
@@ -131,10 +112,10 @@ python main.py [options]
 ## 依赖说明
 
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **Agent平台**: 支持SKILL.md的任意AI Agent(ai-assistant Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -145,3 +126,27 @@ python main.py [options]
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+
+### Q1: 如何开始使用Rss Ai Reader？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Rss Ai Reader有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用
+- 性能取决于底层模型能力

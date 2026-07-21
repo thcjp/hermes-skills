@@ -7,42 +7,19 @@ summary: Pipedrive API integration with managed OAuth. Manage deals, persons, or
   activities, a...
 license: MIT-0
 description: |-
-  Pipedrive API integration with managed OAuth. Manage deals, persons,
-  organizations, activities, a...
-
-  核心能力:
-
-  - 集成工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 第三方API集成、平台对接、数据同步
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: api, managed, integration, oauth, pipedrive
+  Pipedrive API integration with managed OAuth。Manage deals, persons,
+  organizations, activities, a。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
 tags:
 - Integrations
 - Productivity
 tools:
-- read
+  - - read
 - exec
----
-
 # Pipedrive
-
+---
 Access the Pipedrive API with managed OAuth authentication. Manage deals, persons, organizations, activities, pipelines, and more for sales CRM workflows.
 
 ## Quick Start
-
 ```bash
 python <<'EOF'
 import urllib.request, os, json
@@ -53,7 +30,6 @@ EOF
 ```
 
 ## Base URL
-
 ```text
 https://api.maton.ai/pipedrive/{native-api-path}
 ```
@@ -61,7 +37,6 @@ https://api.maton.ai/pipedrive/{native-api-path}
 Maton proxies requests to `api.pipedrive.com` and automatically injects your OAuth token.
 
 ## Authentication
-
 All requests require the Maton API key in the Authorization header:
 
 ```text
@@ -75,17 +50,14 @@ export MATON_API_KEY="[REDACTED]"
 ```
 
 ### Getting Your API Key
-
 1. Sign in or create an account at [maton.ai](https://maton.ai)
 2. Go to [maton.ai/settings](https://maton.ai/settings)
 3. Copy your API key
 
 ## Connection Management
-
 Manage your Pipedrive OAuth connections at `https://api.maton.ai`.
 
 ### List Connections
-
 ```bash
 python <<'EOF'
 import urllib.request, os, json
@@ -96,7 +68,6 @@ EOF
 ```
 
 ### Create Connection
-
 ```bash
 python <<'EOF'
 import urllib.request, os, json
@@ -109,7 +80,6 @@ EOF
 ```
 
 ### Get Connection
-
 ```bash
 python <<'EOF'
 import urllib.request, os, json
@@ -138,7 +108,6 @@ EOF
 Open the returned `url` in a browser to complete OAuth authorization.
 
 ### Delete Connection
-
 ```bash
 python <<'EOF'
 import urllib.request, os, json
@@ -149,7 +118,6 @@ EOF
 ```
 
 ### Specifying Connection
-
 If you have multiple Pipedrive connections, specify which one to use with the `Maton-Connection` header:
 
 ```bash
@@ -165,165 +133,26 @@ EOF
 If you have multiple connections, always include this header to ensure requests go to the intended account.
 
 ## Security & Permissions
-
 * Access is scoped to deals, persons, organizations, activities, and pipelines within the connected Pipedrive account.
 * **All write operations require explicit user approval.** Before executing any create, update, or delete call, confirm the target resource and intended effect with the user.
 
 ## API Reference
 
-### Deals
+> 详细内容已移至 `references/detail.md` - ### Deals
 
-#### List Deals
-
-```bash
-GET /pipedrive/api/v1/deals
-```
-
-Query parameters:
-
-* `status` - Filter by status: `open`, `won`, `lost`, `deleted`, `all_not_deleted`
-* `filter_id` - Filter ID to use
-* `stage_id` - Filter by stage
-* `user_id` - Filter by user
-* `start` - Pagination start (default 0)
-* `limit` - Items per page (default 100)
-* `sort` - Sort field and order (e.g., `add_time DESC`)
-
-**Example:**
-
-```bash
-python <<'EOF'
-import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/deals?status=open&limit=50')
-req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
-print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-EOF
-```
-
-#### Get Deal
-
-```bash
-GET /pipedrive/api/v1/deals/{id}
-```
-
-#### Create Deal
-
-```bash
-POST /pipedrive/api/v1/deals
-Content-Type: application/json
-
-{
-  "title": "New Enterprise Deal",
-  "value": 50000,
-  "currency": "USD",
-  "person_id": 123,
-  "org_id": 456,
-  "stage_id": 1,
-  "expected_close_date": "2025-06-30"
-}
-```
-
-#### Update Deal
-
-```bash
-PUT /pipedrive/api/v1/deals/{id}
-Content-Type: application/json
-
-{
-  "title": "Updated Deal Title",
-  "value": 75000,
-  "status": "won"
-}
-```
-
-#### Delete Deal
-
-```bash
-DELETE /pipedrive/api/v1/deals/{id}
-```
-
-#### Search Deals
-
-```bash
-GET /pipedrive/api/v1/deals/search?term=enterprise
-```
-
-### Persons (Contacts)
-
-#### List Persons
-
-```bash
-GET /pipedrive/api/v1/persons
-```
-
-Query parameters:
-
-* `filter_id` - Filter ID
-* `start` - Pagination start
-* `limit` - Items per page
-* `sort` - Sort field and order
-
-#### Get Person
-
-```bash
-GET /pipedrive/api/v1/persons/{id}
-```
-
-#### Create Person
-
-```bash
-POST /pipedrive/api/v1/persons
-Content-Type: application/json
-
-{
-  "name": "John Doe",
-  "email": ["john@example.com"],
-  "phone": ["+1234567890"],
-  "org_id": 456,
-  "visible_to": 3
-}
-```
-
-#### Update Person
-
-```bash
-PUT /pipedrive/api/v1/persons/{id}
-Content-Type: application/json
-
-{
-  "name": "John Smith",
-  "email": ["john.smith@example.com"]
-}
-```
-
-#### Delete Person
-
-```bash
-DELETE /pipedrive/api/v1/persons/{id}
-```
-
-#### Search Persons
-
-```bash
-GET /pipedrive/api/v1/persons/search?term=john
-```
-
+> 详细内容已移至 `references/detail.md` - ### Persons (Contacts)
 ### Organizations
-
 #### List Organizations
-
 ```bash
 GET /pipedrive/api/v1/organizations
 ```
 
 #### Get Organization
-
 ```bash
 GET /pipedrive/api/v1/organizations/{id}
 ```
 
 #### Create Organization
-
 ```bash
 POST /pipedrive/api/v1/organizations
 Content-Type: application/json
@@ -336,7 +165,6 @@ Content-Type: application/json
 ```
 
 #### Update Organization
-
 ```bash
 PUT /pipedrive/api/v1/organizations/{id}
 Content-Type: application/json
@@ -347,15 +175,12 @@ Content-Type: application/json
 ```
 
 #### Delete Organization
-
 ```bash
 DELETE /pipedrive/api/v1/organizations/{id}
 ```
 
 ### Activities
-
 #### List Activities
-
 ```bash
 GET /pipedrive/api/v1/activities
 ```
@@ -369,13 +194,11 @@ Query parameters:
 * `end_date` - Filter by end date
 
 #### Get Activity
-
 ```bash
 GET /pipedrive/api/v1/activities/{id}
 ```
 
 #### Create Activity
-
 ```bash
 POST /pipedrive/api/v1/activities
 Content-Type: application/json
@@ -393,7 +216,6 @@ Content-Type: application/json
 ```
 
 #### Update Activity
-
 ```bash
 PUT /pipedrive/api/v1/activities/{id}
 Content-Type: application/json
@@ -405,29 +227,23 @@ Content-Type: application/json
 ```
 
 #### Delete Activity
-
 ```bash
 DELETE /pipedrive/api/v1/activities/{id}
 ```
 
 ### Pipelines
-
 #### List Pipelines
-
 ```bash
 GET /pipedrive/api/v1/pipelines
 ```
 
 #### Get Pipeline
-
 ```bash
 GET /pipedrive/api/v1/pipelines/{id}
 ```
 
 ### Stages
-
 #### List Stages
-
 ```bash
 GET /pipedrive/api/v1/stages
 ```
@@ -437,15 +253,12 @@ Query parameters:
 * `pipeline_id` - Filter by pipeline
 
 #### Get Stage
-
 ```bash
 GET /pipedrive/api/v1/stages/{id}
 ```
 
 ### Notes
-
 #### List Notes
-
 ```bash
 GET /pipedrive/api/v1/notes
 ```
@@ -457,7 +270,6 @@ Query parameters:
 * `org_id` - Filter by organization
 
 #### Create Note
-
 ```bash
 POST /pipedrive/api/v1/notes
 Content-Type: application/json
@@ -470,76 +282,26 @@ Content-Type: application/json
 ```
 
 ### Users
-
 #### List Users
-
 ```bash
 GET /pipedrive/api/v1/users
 ```
 
 #### Get Current User
-
 ```bash
 GET /pipedrive/api/v1/users/me
 ```
 
-## Code Examples
-
+## 示例
 ### JavaScript
 
-```javascript
-const headers = {
-  'Authorization': `Bearer ${process.env.MATON_API_KEY}`
-};
-
-// List open deals
-const deals = await fetch(
-  'https://api.maton.ai/pipedrive/api/v1/deals?status=open',
-  { headers }
-).then(r => r.json());
-
-// Create a deal
-await fetch(
-  'https://api.maton.ai/pipedrive/api/v1/deals',
-  {
-    method: 'POST',
-    headers: { ...headers, 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      title: 'New Deal',
-      value: 10000,
-      currency: 'USD'
-    })
-  }
-);
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### Python
 
-```python
-import os
-import requests
-
-headers = {'Authorization': f'Bearer {os.environ["MATON_API_KEY"]}'}
-
-deals = requests.get(
-    'https://api.maton.ai/pipedrive/api/v1/deals',
-    headers=headers,
-    params={'status': 'open'}
-).json()
-
-response = requests.post(
-    'https://api.maton.ai/pipedrive/api/v1/deals',
-    headers=headers,
-    json={
-        'title': 'New Deal',
-        'value': 10000,
-        'currency': 'USD'
-    }
-)
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ## Notes
-
 * IDs are integers
 * Email and phone fields accept arrays for multiple values
 * `visible_to` values: 1 (owner only), 3 (entire company), 5 (owner's visibility group), 7 (entire company and visibility group)
@@ -550,7 +312,6 @@ response = requests.post(
 * IMPORTANT: When piping curl output to `jq` or other commands, environment variables like `$MATON_API_KEY` may not expand correctly in some shell environments. You may get "Invalid API key" errors when piping.
 
 ## Error Handling
-
 | Status | Meaning |
 | --- | --- |
 | 400 | Missing Pipedrive connection |
@@ -559,8 +320,7 @@ response = requests.post(
 | 429 | Rate limited (10 req/sec per account) |
 | 4xx/5xx | Passthrough error from Pipedrive API |
 
-### Troubleshooting: API Key Issues
-
+### 错误处理
 1. Check that the `MATON_API_KEY` environment variable is set:
 
 ```bash
@@ -579,14 +339,12 @@ EOF
 ```
 
 ### Troubleshooting: Invalid App Name
-
 1. Ensure your URL path starts with `pipedrive`. For example:
 
 * Correct: `https://api.maton.ai/pipedrive/api/v1/deals`
 * Incorrect: `https://api.maton.ai/api/v1/deals`
 
 ## Resources
-
 * [Pipedrive API Overview](https://developers.pipedrive.com/docs/api/v1)
 * [Deals](https://developers.pipedrive.com/docs/api/v1/Deals)
 * [Persons](https://developers.pipedrive.com/docs/api/v1/Persons)
@@ -599,12 +357,11 @@ EOF
 * [Maton Support](mailto:support@maton.ai)
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -615,3 +372,29 @@ EOF
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+- Pipedrive API integration with managed OAuth
+- Manage deals, persons,
+  organizations, activities, a
+- 触发关键词: api, managed, integration, oauth, pipedrive
+
+## 适用场景
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 常见问题
+### Q1: 如何开始使用Pipedrive？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Pipedrive有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+- 需要API Key，无Key环境无法使用

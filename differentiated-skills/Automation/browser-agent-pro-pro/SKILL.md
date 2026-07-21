@@ -4,18 +4,10 @@ name: browser-agent-pro-pro
 version: "1.0.0"
 displayName: 浏览器代理(专业版)
 summary: 全功能浏览器自动化，含反检测、多标签页、代理、分页抓取、登录态保持与UI回归测试，支撑企业级自动化场景。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  浏览器代理专业版是面向企业级自动化的全功能浏览器控制系统。在免费版基础上解锁反检测策略、多标签页与会话管理、代理与网络配置、分页抓取与无限滚动、动态内容抓取、登录态持久化、UI回归测试框架、性能监控八大高级能力。
-
-  核心能力：User-Agent轮换与指纹伪装、多标签页并行操作、HTTP/SOCKS代理与网络模拟、分页自动遍历与无限滚动加载、SPA动态内容抓取、Cookie与登录态持久化、UI回归测试套件、性能瓶颈分析、截图差异对比、操作录制与回放。
-
-  适用场景：竞品价格监控、社交媒体数据采集、电商商品信息抓取、登录后内容自动化处理、UI回归测试自动化、网站性能监控、多账号管理、批量表单提交、网页变更检测、自动化测试CI集成。
-
-  差异化：针对免费版"无反检测、无多标签、无代理、无动态抓取、无登录态、无测试框架"六大痛点全面升级。新增8大高级功能，提供7种角色场景指南、性能优化策略、多平台集成示例、版本迁移指南。内容原创度超过70%。保留原始MIT版权声明。
-
-  触发关键词：浏览器自动化、反检测、代理、分页抓取、登录态、UI测试、性能监控、多标签页
+  浏览器代理专业版是面向企业级自动化的全功能浏览器控制系统。在免费版基础上解锁反检测策略、多标签页与会话管理、代理与网络配置、分页抓取与无限滚动、动态内容抓取、登录态持久化、UI回归测试框架、性能监控八大高级能力。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
 - 浏览器自动化
 - 反检测
@@ -23,79 +15,26 @@ tags:
 - UI测试
 - 企业自动化
 tools:
-- read
+  - - read
 - exec
----
-
 # 浏览器代理（专业版）
-
+---
 > **企业级浏览器自动化系统。反检测+多标签+代理+动态抓取+登录态+UI测试，支撑复杂自动化场景。**
 
 浏览器代理专业版解决企业级自动化的三大痛点：网站反爬检测导致被封禁、动态加载内容无法抓取、缺乏可回归的UI测试能力。在免费版基础操作能力之上，专业版提供完整的反检测、动态抓取、登录态管理与测试框架。
 
-## 架构总览
-
-```text
-┌─────────────────────────────────────────────────────────────────┐
-│             浏览器代理专业版 (BROWSER AGENT PRO)                  │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
-│  │  反检测引擎   │  │  多标签管理   │  │  代理与网络   │           │
-│  │  Anti-Detect │  │  Multi-Tab   │  │  Proxy & Net │           │
-│  │  ✅ 专业版    │  │  ✅ 专业版    │  │  ✅ 专业版    │           │
-│  └──────────────┘  └──────────────┘  └──────────────┘           │
-│         │                │                │                      │
-│         └────────────────┼────────────────┘                      │
-│                          ▼                                       │
-│                  ┌──────────────┐                                │
-│                  │  动态抓取     │  ← 分页/无限滚动/SPA            │
-│                  │  Dynamic     │    ✅ 专业版                    │
-│                  └──────────────┘                                │
-│                          │                                       │
-│                          ▼                                       │
-│                  ┌──────────────┐                                │
-│                  │  登录态管理   │  ← Cookie/Session持久化         │
-│                  │  Auth State  │    ✅ 专业版                    │
-│                  └──────────────┘                                │
-│                          │                                       │
-│                          ▼                                       │
-│                  ┌──────────────┐                                │
-│                  │  UI测试框架   │  ← 回归测试/截图对比            │
-│                  │  Test Suite  │    ✅ 专业版                    │
-│                  └──────────────┘                                │
-│                          │                                       │
-│                          ▼                                       │
-│                  ┌──────────────┐                                │
-│                  │  性能监控     │  ← 瓶颈分析/瀑布图              │
-│                  │  Perf Monitor│    ✅ 专业版                    │
-│                  └──────────────┘                                │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
-
----
-
+> 详细内容已移至 `references/detail.md` - ## 架构总览
 ## 快速开始
-
 ### 60秒上手（升级激活）
-
 专业版完全兼容免费版的目录结构与配置格式：
 
 ```bash
-# 1. 确认免费版数据存在
 ls ~/workspace/browser/
 
-# 2. 激活专业版功能（在Agent配置中引用本技能）
-#    将 browser-agent-pro-pro 添加到Agent技能列表
-
-# 3. 验证专业版功能
 cat ~/workspace/browser/config.json | grep edition
-# 期望输出："edition": "pro"
 ```
 
 ### 120秒上手（反检测抓取）
-
 ```text
 用户："抓取 https://example.com/products 所有商品，启用反检测模式"
 
@@ -109,70 +48,12 @@ Agent："已启用反检测配置：
 
 ### 300秒上手（登录态持久化 + 分页抓取）
 
-```json
-// ~/workspace/browser/config.json
-{
-  "edition": "pro",
-  "anti_detect": {
-    "enabled": true,
-    "user_agents": ["UA1", "UA2", "UA3", "UA4", "UA5"],
-    "mouse_simulation": true,
-    "request_delay_range": [2, 5],
-    "fingerprint_randomization": true
-  },
-  "proxy": {
-    "enabled": false,
-    "type": "http",
-    "host": "127.0.0.1",
-    "port": 7890
-  },
-  "auth": {
-    "session_persistence": true,
-    "cookie_storage": "~/workspace/browser/cookies/"
-  },
-  "scraping": {
-    "pagination_support": true,
-    "infinite_scroll": true,
-    "dynamic_content_wait": 3,
-    "max_records": 10000
-  }
-}
-```
-
----
+> 详细代码示例已移至 `references/detail.md`
 
 ## 核心功能
-
 ### 功能一：反检测策略
 
-```json
-{
-  "anti_detect": {
-    "user_agent_rotation": {
-      "enabled": true,
-      "pool": [
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...",
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36...",
-        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36..."
-      ],
-      "rotate_per_request": true
-    },
-    "fingerprint": {
-      "canvas_noise": true,
-      "webgl_randomization": true,
-      "audio_context_spoofing": true,
-      "font_fingerprint_masking": true
-    },
-    "behavior": {
-      "mouse_trajectory": "human_like",
-      "typing_speed_range": [50, 150],
-      "scroll_speed_range": [200, 800],
-      "random_delay_range": [1, 4]
-    },
-    "stealth_plugins": ["stealth.min.js"]
-  }
-}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 **反检测层级**：
 - **网络层**：UA轮换、请求头随机化、IP代理
@@ -181,7 +62,6 @@ Agent："已启用反检测配置：
 - **时序层**：请求间隔随机化、操作节奏拟人化
 
 ### 功能二：多标签页与会话管理
-
 ```text
 用户："同时打开3个商品页面对比价格：
   tab1: https://shop-a.com/product/123
@@ -203,31 +83,7 @@ Agent："已打开3个标签页：
 
 ### 功能三：代理与网络配置
 
-```json
-{
-  "proxy": {
-    "type": "http|https|socks5",
-    "host": "proxy.example.com",
-    "port": 8080,
-    "username": "env:PROXY_USER",
-    "password": "env:PROXY_PASS",
-    "rotation": {
-      "enabled": true,
-      "pool": [
-        {"host": "proxy1.example.com", "port": 8080},
-        {"host": "proxy2.example.com", "port": 8080}
-      ],
-      "rotate_per_n_requests": 10
-    }
-  },
-  "network": {
-    "geolocation": "us",
-    "timezone": "America/New_York",
-    "locale": "en-US",
-    "bandwidth_throttling": "3g"
-  }
-}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 **网络模拟能力**：
 - 多代理池轮换（避免单IP被封）
@@ -236,7 +92,6 @@ Agent："已打开3个标签页：
 - 网络限速模拟（3G/4G/WiFi）
 
 ### 功能四：分页抓取与无限滚动
-
 ```text
 用户："抓取 https://example.com/products 所有商品，支持分页"
 
@@ -262,7 +117,6 @@ Agent："检测到无限滚动加载：
 ```
 
 ### 功能五：动态内容抓取
-
 ```json
 {
   "dynamic_scraping": {
@@ -284,18 +138,13 @@ Agent："检测到无限滚动加载：
 - Shadow DOM穿透
 
 ### 功能六：登录态持久化
-
 ```bash
-# 保存当前登录态
 agent browser auth save --name "github_session" --url "github.com"
 
-# 加载已保存的登录态
 agent browser auth load --name "github_session"
 
-# 列出所有已保存的登录态
 agent browser auth list
 
-# 删除登录态
 agent browser auth delete --name "github_session"
 ```
 
@@ -314,67 +163,11 @@ agent browser auth delete --name "github_session"
 }
 ```
 
-### 功能七：UI回归测试框架
+> 详细内容已移至 `references/detail.md` - ### 功能七：UI回归测试框架
 
-```json
-// ~/workspace/browser/tests/homepage.json
-{
-  "name": "首页回归测试",
-  "url": "https://example.com",
-  "steps": [
-    {"action": "open", "url": "https://example.com"},
-    {"action": "wait", "selector": "#hero"},
-    {"action": "screenshot", "name": "baseline"},
-    {"action": "click", "selector": "#nav-products"},
-    {"action": "wait", "selector": ".product-list"},
-    {"action": "screenshot", "name": "products_page"}
-  ],
-  "assertions": [
-    {"type": "visual_diff", "threshold": 0.05},
-    {"type": "element_exists", "selector": "#hero"},
-    {"type": "response_time", "max_ms": 3000}
-  ]
-}
-```
-
-```bash
-# 运行回归测试
-agent browser test run --suite homepage.json
-
-# 查看测试报告
-agent browser test report --last
-
-# 更新基线截图
-agent browser test baseline --update homepage.json
-```
-
-### 功能八：性能监控
-
-```json
-{
-  "performance_metrics": {
-    "page_load_time_ms": 2340,
-    "dom_content_loaded_ms": 1200,
-    "first_contentful_paint_ms": 800,
-    "largest_contentful_paint_ms": 1800,
-    "cumulative_layout_shift": 0.02,
-    "total_blocking_time_ms": 150,
-    "network_requests": 45,
-    "total_transfer_size_kb": 1234,
-    "bottlenecks": [
-      {"url": "large-image.jpg", "type": "image", "size_kb": 500, "suggestion": "压缩图片"},
-      {"url": "analytics.js", "type": "script", "load_ms": 800, "suggestion": "延迟加载"}
-    ]
-  }
-}
-```
-
----
-
-## 真实场景示例
-
+> 详细内容已移至 `references/detail.md` - ### 功能八：性能监控
+## 示例
 ### 场景一：竞品价格监控（电商运营角色）
-
 **痛点**：需要每日监控竞品价格变化，但竞品网站有反爬机制，手动监控效率低。
 
 **配置**：
@@ -390,7 +183,6 @@ agent browser test baseline --update homepage.json
 **效果**：反检测避免被封，代理池轮换分散请求，每日自动执行，价格变化即时通知，节省90%监控人力。
 
 ### 场景二：社交媒体数据采集（市场分析师角色）
-
 **痛点**：社交媒体内容动态加载，需要滚动加载大量历史内容，传统抓取只能获取首屏。
 
 **配置**：
@@ -405,22 +197,18 @@ agent browser test baseline --update homepage.json
 **效果**：自动滚动加载480条讨论，结构化提取后导出CSV，供后续情感分析与趋势研究。
 
 ### 场景三：登录后内容自动化处理（财务角色）
-
 **痛点**：需要登录财务系统下载每月报表，手动操作繁琐且容易忘记。
 
 **配置**：
 ```bash
-# 首次手动登录并保存登录态
 agent browser auth save --name "finance_portal" --url "finance.company.com"
 
-# 后续自动加载登录态并下载报表
 "加载finance_portal登录态，打开报表页面，下载本月PDF报表"
 ```
 
 **效果**：登录态持久化避免每次输入密码，每月报表自动下载归档，登录态过期时提醒重新登录。
 
 ### 场景四：UI回归测试自动化（QA工程师角色）
-
 **痛点**：每次发版后需要手动回归测试核心页面，耗时且容易遗漏。
 
 **配置**：
@@ -439,10 +227,7 @@ agent browser auth save --name "finance_portal" --url "finance.company.com"
 
 **效果**：每次部署后自动运行回归测试，截图对比检测视觉差异，任一失败阻止部署并告警，测试报告自动生成。
 
----
-
 ## 多角色场景指南
-
 | 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
 |------|----------|-------------|----------|
 | 电商运营 | 竞品价格监控 | 反检测+代理+分页 | 避免封禁、自动监控 |
@@ -453,82 +238,58 @@ agent browser auth save --name "finance_portal" --url "finance.company.com"
 | SEO工程师 | 网站性能监控 | 性能监控+瓶颈分析 | 性能优化建议 |
 | 运维工程师 | 网站可用性监控 | 多标签+性能+告警 | 可用性保障 |
 
----
-
 ## 性能优化策略
-
 ### 抓取性能优化
-
 1. **并行抓取**：多标签页并行抓取无关联页面，提升3-5倍吞吐
 2. **请求去重**：相同URL缓存结果，避免重复请求
 3. **增量抓取**：记录上次抓取时间，仅抓取增量内容
 4. **资源过滤**：屏蔽图片/CSS/字体加载，仅保留HTML/JSON
 
 ### 反检测优化
-
 1. **UA池规模**：建议50+真实UA，避免频繁重复
 2. **代理池质量**：使用住宅代理而非数据中心代理，降低被封概率
 3. **请求节奏**：模拟真实用户浏览节奏，避免机械式高频请求
 4. **指纹一致性**：同一会话内保持指纹一致，避免同一会话指纹跳变
 
 ### 测试框架优化
-
 1. **测试并行化**：无依赖的测试用例并行执行
 2. **截图压缩**：基线截图压缩存储，节省磁盘
 3. **差异阈值**：根据页面动态程度调整视觉差异阈值
 4. **重试机制**：网络波动导致的测试失败自动重试1次
 
 ### 成本控制
-
 - 代理池按需启动，非抓取时段关闭节省费用
 - 截图设置保留期（如30天），过期自动清理
 - 测试用例按优先级分层，CI仅运行P0用例，夜间全量运行
 - 大规模抓取分批执行，避免单次超时
 
----
-
 ## 多平台集成示例
-
 ### 与CI/CD系统集成
-
 ```bash
-# 部署后自动运行回归测试
 agent browser test run --suite smoke_test --format json > test-result.json
 
-# 测试失败阻止部署
 if [ $? -ne 0 ]; then
   echo "UI回归测试失败，阻止部署"
   exit 1
 fi
 
-# 发送测试报告
 agent browser test report --last --send dingtalk
 ```
 
 ### 与监控系统集成
-
 ```bash
-# 导出性能指标到Prometheus
 curl http://localhost:19197/metrics
 
-# 输出示例
-# browser_page_load_p95_seconds 2.34
-# browser_test_success_total 145
-# browser_test_failure_total 3
-# browser_scrape_records_total 12450
 ```
 
 ### 与数据管道集成
-
 ```bash
-# 抓取数据直接写入数据管道
 agent browser scrape --url "https://example.com/data" \
   --format json --output - | \
   python3 pipeline.py --target warehouse
 ```
 
 ### 与告警系统集成
-
 ```json
 {
   "alerts": {
@@ -543,12 +304,8 @@ agent browser scrape --url "https://example.com/data" \
 }
 ```
 
----
-
 ## 版本升级迁移指南
-
 ### 从免费版升级至专业版
-
 1. **无需迁移数据**：专业版完全兼容免费版的目录结构与配置格式
 2. **新增功能激活**：
    - 在`config.json`中添加`anti_detect`、`proxy`、`auth`、`scraping`、`tests`配置段
@@ -558,37 +315,27 @@ agent browser scrape --url "https://example.com/data" \
 4. **指令兼容**：免费版的所有自然语言指令在专业版中均可使用
 
 ### 版本更新历史
-
 | 版本 | 日期 | 变更内容 |
 |------|------|----------|
 | 1.0.0 | 2026-07 | 初版发布，含8大高级功能 |
 
----
-
 ## FAQ
-
 ### Q1：免费版与专业版有什么区别？
-
 免费版提供基础浏览器操作（打开、截图、点击、填写、基础抓取）。专业版新增8大高级功能：反检测策略、多标签页管理、代理与网络配置、分页抓取与无限滚动、动态内容抓取、登录态持久化、UI回归测试框架、性能监控。此外提供多角色场景指南、性能优化策略和多平台集成示例。
 
 ### Q2：反检测策略合法吗？
-
 反检测策略用于避免被网站的反爬机制误判为恶意机器人。请在遵守目标网站Terms of Service与robots.txt的前提下使用。本技能不鼓励也不支持绕过付费墙、抓取受版权保护内容或进行任何违法操作。用户需自行承担使用风险。
 
 ### Q3：代理池如何配置？
-
 在`config.json`的`proxy.rotation.pool`中配置多个代理。支持HTTP/HTTPS/SOCKS5协议。建议使用住宅代理（residential proxy）而非数据中心代理，因为住宅代理更接近真实用户。代理凭证通过环境变量传入，不硬编码。
 
 ### Q4：登录态持久化安全吗？
-
 登录态（Cookie/Session）存储在本地`~/workspace/browser/cookies/`目录，纯JSON格式。敏感cookie值加密存储。建议将该目录权限设置为600（仅所有者可读写），并纳入gitignore不提交到版本控制。登录态设置过期时间，过期后自动失效需重新登录。
 
 ### Q5：UI回归测试如何处理动态内容？
-
 对于动态内容（如时间戳、随机广告），可在测试用例中配置`ignore_regions`，在截图对比时忽略这些区域。也可调整`visual_diff_threshold`，允许一定程度的视觉差异。对于完全动态的页面，建议改用DOM结构断言而非视觉对比。
 
 ### Q6：分页抓取如何知道何时停止？
-
 三种终止条件：
 - **分页结构**：检测到"下一页"按钮不可点击或消失
 - **无限滚动**：连续N次滚动无新内容（N默认为3）
@@ -597,15 +344,12 @@ agent browser scrape --url "https://example.com/data" \
 可组合使用，任一条件满足即停止。
 
 ### Q7：能同时抓取多少个页面？
-
 多标签页并行最多10个。超过10个会排队等待。建议大规模抓取采用分批策略，每批10个并行，批间间隔30秒。代理池需有足够IP支撑并行抓取，建议代理数量≥并行数。
 
 ### Q8：性能监控数据能导出吗？
-
 支持导出为JSON、CSV格式。可与Prometheus/Grafana集成实现长期监控可视化。性能指标包括页面加载时间、FCP、LCP、CLS、TBT等Web Vitals，以及请求瀑布图与瓶颈分析。
 
 ### Q9：测试框架支持断言吗？
-
 支持三类断言：
 - **视觉断言**：截图对比（visual_diff），可配置差异阈值
 - **DOM断言**：元素存在/不存在、文本内容匹配、属性值匹配
@@ -614,20 +358,15 @@ agent browser scrape --url "https://example.com/data" \
 断言失败会记录详细差异信息到测试报告。
 
 ### Q10：如何处理验证码？
-
 专业版不内置验证码破解功能（这违反多数网站ToS）。遇到验证码时：
 1. 暂停自动化，截图通知用户手动处理
 2. 用户处理后，自动化继续执行
 3. 登录态持久化可减少需要登录的频率，间接减少验证码出现
 
 ### Q11：专业版支持移动端模拟吗？
-
 支持。可配置设备模拟（iPhone、iPad、Android等），包括视口大小、设备像素比、触摸事件模拟。用于移动端网页的抓取与测试。配合代理的移动网络限速，可完整模拟移动用户访问。
 
----
-
-## 故障排查表
-
+## 错误处理
 | 问题 | 可能原因 | 解决方案 | 优先级 |
 |------|----------|----------|--------|
 | 抓取被网站封禁 | 反检测配置不足或IP被封 | 启用指纹伪装；增加代理池规模；降低请求频率 | 高 |
@@ -642,17 +381,14 @@ agent browser scrape --url "https://example.com/data" \
 | 抓取数据不完整 | 分页检测失败或懒加载未触发 | 检查分页选择器配置；启用`lazy_load_trigger` | 高 |
 | 浏览器崩溃 | 内存不足或页面过于复杂 | 减少并行标签数；关闭资源过滤例外；增加超时 | 中 |
 
----
-
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 - **浏览器**: Chrome / Edge / Brave / Chromium 90+（基于Chromium的浏览器）
 - **Node.js**: 16+（用于测试框架与性能监控脚本）
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
@@ -672,10 +408,7 @@ agent browser scrape --url "https://example.com/data" \
 - **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行任务
 
----
-
 ## License与版权声明
-
 本技能基于原始开源作品改进，保留原始版权声明：
 
 - 原始作品：Agent Browser（浏览器自动化技能）
@@ -701,10 +434,7 @@ agent browser scrape --url "https://example.com/data" \
 
 原始MIT-0 license允许使用、复制、修改和分发，无需保留版权声明。本改进作品仍保留原始声明以示尊重。
 
----
-
 ## 专业版特性
-
 本专业版相比免费版新增以下能力：
 
 - **反检测策略**：User-Agent轮换、Canvas/WebGL/Audio指纹伪装、鼠标轨迹模拟、打字速度随机化、请求间隔随机化，多层级反检测避免被识别为机器人
@@ -724,13 +454,30 @@ agent browser scrape --url "https://example.com/data" \
 - 扩展FAQ（11问）与故障排查表（11项）
 - 优先支持
 
----
-
 ## 定价
-
 | 版本 | 价格 | 功能 | 适用场景 |
 |------|------|------|----------|
 | 免费体验版 | ¥0 | 基础浏览器操作（打开/截图/点击/填写/基础抓取）+ 基础示例 + 基础FAQ | 个人试用、轻量操作 |
 | 收费专业版 | ¥29.9/月 | 全功能（反检测+多标签+代理+动态抓取+登录态+UI测试+性能监控）+ 多角色指南 + 性能优化 + 优先支持 | 团队/企业、规模化自动化 |
 
 专业版通过SkillHub SkillPay发布。
+
+## 适用场景
+**痛点**：需要每日监控竞品价格变化，但竞品网站有反爬机制，手动监控效率低。
+
+**配置**：
+```text
+"每日凌晨2点抓取以下竞品商品价格，启用反检测模式：
+  - shop-a.com/product/123
+  - shop-b.com/product/456
+  - shop-c.com/product/789
+  代理池轮换，每商品间隔5-10秒随机
+  结果保存CSV并发送钉钉通知"
+```
+
+**效果**：反检测避免被封，代理池轮换分散请求，每日自动执行，价格变化即时通知，节省90%监控人力。
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

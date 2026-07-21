@@ -1,0 +1,55 @@
+timestamp,platform,source,slug,status,http_code,error,version
+2026-07-20 13:04:55,skillhub,juejin,ai-artist-workstation,success,200,,1.0.1
+2026-07-20 13:05:09,skillhub,juejin,ai-video-director,rate_limited,429,,1.0.1
+2026-07-20 13:07:09,skillhub,juejin,ai-video-director,success,200,,1.0.1
+2026-07-20 13:07:23,skillhub,juejin,ai-writing-style-cloner,success,200,,1.0.1
+2026-07-20 13:07:34,skillhub,juejin,content-refiner,rate_limited,429,,1.0.0
+2026-07-20 13:08:37,skillhub,juejin,content-refiner,success,200,,1.0.1
+2026-07-20 13:08:51,skillhub,juejin,cyber-fortune-teller,rate_limited,429,,1.0.1
+2026-07-20 13:10:52,skillhub,juejin,cyber-fortune-teller,success,200,,1.0.1
+2026-07-20 13:11:06,skillhub,juejin,drama-hit-producer,success,200,,1.0.1
+2026-07-20 13:11:16,skillhub,juejin,ebook-factory,rate_limited,429,,1.0.0
+2026-07-20 13:12:20,skillhub,juejin,ebook-factory,success,200,,1.0.1
+2026-07-20 13:12:34,skillhub,juejin,ecommerce-pricing-strategist,rate_limited,429,,1.0.1
+2026-07-20 13:14:35,skillhub,juejin,ecommerce-pricing-strategist,success,200,,1.0.1
+2026-07-20 13:14:48,skillhub,juejin,hook-retention-master,success,200,,1.0.1
+2026-07-20 13:14:59,skillhub,juejin,intel-sentinel,rate_limited,429,,1.0.0
+2026-07-20 13:16:03,skillhub,juejin,intel-sentinel,success,200,,1.0.1
+2026-07-20 13:16:14,skillhub,juejin,novel-autopilot,success,200,,1.1.0
+2026-07-20 13:16:25,skillhub,juejin,poetry-craftsman,rate_limited,429,,1.1.0
+2026-07-20 13:17:26,skillhub,juejin,poetry-craftsman,success,200,,1.1.0
+2026-07-20 13:17:37,skillhub,juejin,sales-copy-writer,success,200,,1.1.0
+2026-07-20 13:17:48,skillhub,juejin,seo-doctor,success,200,,1.1.0
+2026-07-20 13:17:59,skillhub,juejin,seo-rank-monopolizer,rate_limited,429,,1.1.0
+2026-07-20 13:18:59,skillhub,juejin,seo-rank-monopolizer,success,200,,1.1.0
+2026-07-20 13:19:10,skillhub,juejin,stealth-browser-assistant,success,200,,1.1.0
+2026-07-20 13:19:21,skillhub,juejin,title-hook-factory,success,200,,1.1.0
+2026-07-20 13:19:33,skillhub,juejin,topic-hunter,rate_limited,429,,1.1.0
+2026-07-20 13:20:34,skillhub,juejin,topic-hunter,success,200,,1.1.0
+2026-07-20 13:20:45,skillhub,juejin,viral-decoder,slug_conflict,409,"{""success"": false, ""status"": 409, ""error"": ""slug 冲突: slug 'viral-decoder' 已被 clawhub 来源占用"", ""body"": {""error"": ""slug 'viral-decoder' 已被 clawhub 来源占用""}}
+",1.1.0
+2026-07-20 13:20:56,skillhub,juejin,viral-prophet,success,200,,1.1.0
+2026-07-20 13:21:07,skillhub,opensource,api-design-architect,rate_limited,429,,1.1.0
+2026-07-20 13:22:08,skillhub,opensource,api-design-architect,success,200,,1.1.0
+2026-07-20 13:22:19,skillhub,opensource,auth-security-architect,success,200,,1.1.0
+2026-07-20 13:22:30,skillhub,opensource,azure-cloud-automator,success,200,,1.1.0
+2026-07-20 13:22:40,skillhub,opensource,brainstorm-facilitator,rate_limited,429,,1.1.0
+2026-07-20 13:23:42,skillhub,opensource,brainstorm-facilitator,success,200,,1.1.0
+2026-07-20 13:23:52,skillhub,opensource,brand-identity-creator,success,200,,1.1.0
+2026-07-20 13:24:03,skillhub,opensource,c-suite-advisor,success,200,,1.1.0
+2026-07-20 13:24:14,skillhub,opensource,canvas-art-designer,rate_limited,429,,1.1.0
+2026-07-20 13:25:15,skillhub,opensource,canvas-art-designer,success,200,,1.1.0
+2026-07-20 13:25:26,skillhub,opensource,clickhouse-analytics,success,200,,1.1.0
+2026-07-20 13:25:37,skillhub,opensource,cloudflare-edge-developer,success,200,,1.1.0
+2026-07-20 13:25:48,skillhub,opensource,code-review-sentinel,rate_limited,429,,1.1.0
+2026-07-20 13:26:48,skillhub,opensource,code-review-sentinel,success,200,,1.1.0
+2026-07-20 13:27:02,skillhub,opensource,competitive-ad-spy,success,200,,1.0.1
+2026-07-20 13:27:13,skillhub,opensource,compliance-manager,rate_limited,429,,1.0.0
+2026-07-20 13:28:17,skillhub,opensource,compliance-manager,success,200,,1.0.1
+2026-07-20 13:28:32,skillhub,opensource,content-cms-architect,rate_limited,429,,1.0.1
+2026-07-20 13:30:33,skillhub,opensource,content-cms-architect,success,200,,1.0.1
+2026-07-20 13:30:44,skillhub,opensource,copywriting-master,slug_conflict,409,"{""success"": false, ""status"": 409, ""error"": ""slug 冲突: slug 'copywriting-master' 已被 clawhub 来源占用"", ""body"": {""error"": ""slug 'copywriting-master' 已被 clawhub 来源占用""}}
+",1.0.0
+2026-07-20 13:30:57,skillhub,opensource,csv-insight-miner,rate_limited,429,,1.0.1
+2026-07-20 13:32:58,skillhub,opensource,csv-insight-miner,success,200,,1.0.1
+2026-07-20 13:33:12,skillhub,opensource,debug-doctor,success,200,,1.0.1

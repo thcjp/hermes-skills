@@ -4,13 +4,11 @@ name: azure-agent-framework-tool-pro
 version: "1.0.0"
 displayName: Azure智能体框架工具-专业版
 summary: 企业级Azure AI智能体编排,支持批量管理、MCP工具集成、监控告警与多租户隔离
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   企业级 Azure AI Foundry 智能体编排工具,在免费版核心能力之上,提供智能体批量管理、
-  MCP工具深度集成、监控告警、多租户隔离、CI/CD 集成与团队协作能力。
-
-  核心能力:
+  MCP工具深度集成、监控告警、多租户隔离、CI/CD 集成与团队协作能力。核心能力:
   - 免费版全部能力(完全兼容)
   - 智能体批量管理与版本控制
   - MCP工具深度集成(托管与客户端模式)
@@ -24,27 +22,21 @@ description: |-
   - 生产环境监控与运维
   - 团队协作与版本管理
 
-  差异化:专业版面向团队与企业,提供批量管理、监控、多租户等高阶能力,并保持与免费版完全兼容。
-
-  触发关键词: Azure, AI Foundry, 智能体编排, MCP工具, 批量管理, 监控告警, 多租户
+  差异...
 tags:
 - 研究工具
 - AI开发
 - 智能体
 - 企业级
 tools:
-- read
+  - - read
 - exec
----
-
 # Azure智能体框架工具(专业版)
-
 ## 概述
-
+---
 本工具是企业级 Azure AI Foundry 智能体编排工具,在免费版核心能力之上,扩展了智能体批量管理、MCP工具深度集成、监控告警、多租户隔离、CI/CD 集成与团队协作能力,适合企业级智能体编排、多智能体协作工作流、生产环境监控与运维场景。专业版与免费版完全兼容:免费版的所有代码、工作流均可直接在专业版中使用。
 
 ### 免费版 vs 专业版对比
-
 | 能力 | 免费版 | 专业版 |
 |:-----|:------|:------|
 | 基础智能体创建 | 支持 | 支持 |
@@ -61,9 +53,7 @@ tools:
 | 优先技术支持 | 不支持 | 支持 |
 
 ## 核心能力
-
 ### 1. 智能体批量管理(专业版新增)
-
 ```python
 import asyncio
 from agent_framework.azure import AzureAIAgentsProvider
@@ -74,7 +64,6 @@ async def manage_agents():
         DefaultAzureCredential() as credential,
         AzureAIAgentsProvider(credential=credential) as provider,
     ):
-        # 批量创建智能体
         agent_configs = [
             {"name": "客服助手", "instructions": "处理客户咨询...", "tools": [faq_tool]},
             {"name": "数据分析助手", "instructions": "分析业务数据...", "tools": [query_tool, chart_tool]},
@@ -87,7 +76,6 @@ async def manage_agents():
             agents.append(agent)
             print(f"已创建: {agent.id} - {config['name']}")
 
-        # 批量查询
         all_agents = await provider.list_agents()
         for a in all_agents:
             print(f"ID: {a.id}, 名称: {a.name}")
@@ -96,7 +84,6 @@ asyncio.run(manage_agents())
 ```
 
 ### 2. MCP工具深度集成(专业版增强)
-
 ```python
 import asyncio
 from agent_framework import (
@@ -134,7 +121,6 @@ asyncio.run(main())
 ```
 
 ### 3. 监控指标采集(专业版新增)
-
 ```python
 import asyncio
 from agent_framework.azure import AzureAIAgentsProvider
@@ -154,29 +140,20 @@ async def monitored_agent():
             instructions="你是一个乐于助人的助手。",
         )
 
-        # 执行任务(自动采集指标)
         result = await agent.run("分析最近一周的销售数据")
 
-        # 导出指标
         metrics = await provider.export_metrics(format="prometheus")
         print(metrics)
-        # 指标示例:
-        # agent_requests_total{agent="MonitoredAgent",status="success"} 1
-        # agent_response_time_p95{agent="MonitoredAgent"} 2.5
-        # agent_tool_calls_total{tool="query_tool"} 3
-
 asyncio.run(monitored_agent())
 ```
 
 ### 4. 多租户隔离(专业版新增)
-
 ```python
 import asyncio
 from agent_framework.azure import AzureAIAgentsProvider
 from azure.identity.aio import DefaultAzureCredential
 
 async def multi_tenant():
-    # 为不同租户(团队/客户)创建隔离的智能体空间
     tenants = ["acme", "globex", "initech"]
 
     for tenant in tenants:
@@ -197,9 +174,8 @@ asyncio.run(multi_tenant())
 ```
 
 ## 使用场景
-
+- 不适用: 需要人工判断的复杂决策场景
 ### 场景一:多智能体协作工作流
-
 编排多个智能体协作完成复杂任务。
 
 ```python
@@ -222,43 +198,36 @@ async def collaborative_workflow():
         DefaultAzureCredential() as credential,
         AzureAIAgentsProvider(credential=credential) as provider,
     ):
-        # 研究员智能体:负责信息收集
         researcher = await provider.create_agent(
             name="Researcher",
             instructions="你负责收集和整理信息。使用Web搜索获取最新数据。",
             tools=[HostedWebSearchTool(name="Bing")],
         )
 
-        # 分析师智能体:负责数据分析
         analyst = await provider.create_agent(
             name="Analyst",
             instructions="你负责数据分析。使用代码解释器进行计算。",
             tools=[HostedCodeInterpreterTool()],
         )
 
-        # 写手智能体:负责报告撰写
         writer = await provider.create_agent(
             name="Writer",
             instructions="你负责将研究和分析结果整理成报告。",
             response_format=ResearchResult,
         )
 
-        # 协作流程
         thread = researcher.get_new_thread()
 
-        # 步骤1:研究员收集信息
         research = await researcher.run(
             "研究 2026 年 AI 智能体市场趋势", thread=thread
         )
         print(f"[研究] {research.text[:200]}...")
 
-        # 步骤2:分析师分析数据
         analysis = await analyst.run(
             f"基于以下研究结果进行数据分析: {research.text}", thread=thread
         )
         print(f"[分析] {analysis.text[:200]}...")
 
-        # 步骤3:写手生成报告
         report = await writer.run(
             f"基于以下研究和分析生成报告: 研究={research.text}, 分析={analysis.text}",
             thread=thread,
@@ -272,7 +241,6 @@ asyncio.run(collaborative_workflow())
 ```
 
 ### 场景二:生产环境监控与告警
-
 部署智能体到生产环境,实时监控并告警。
 
 ```python
@@ -295,14 +263,12 @@ async def production_monitor():
             alert_on_error_rate=5.0,        # 错误率超5%告警
         ) as provider,
     ):
-        # 部署生产智能体
         agent = await provider.create_agent(
             name="ProductionAgent",
             instructions="你是生产环境的客户服务助手。",
             tools=[faq_tool, search_tool],
         )
 
-        # 模拟生产流量
         queries = [
             "如何重置密码?",
             "查询订单状态",
@@ -315,9 +281,6 @@ async def production_monitor():
                 print(f"[OK] {query} -> {result.text[:50]}...")
             except Exception as e:
                 print(f"[FAIL] {query} -> {e}")
-                # 告警自动触发
-
-        # 导出监控指标
         metrics = await provider.export_metrics(format="json")
         with open("metrics.json", "w") as f:
             json.dump(metrics, f, indent=2)
@@ -327,12 +290,10 @@ asyncio.run(production_monitor())
 ```
 
 ### 场景三:CI/CD 集成与自动化部署
-
 将智能体部署嵌入 CI/CD 流水线,实现自动化测试与发布。
 
 ```bash
 #!/bin/bash
-# deploy-agent.sh - CI/CD 智能体部署
 set -e
 
 ENVIRONMENT="${1:-staging}"
@@ -340,23 +301,18 @@ AGENT_CONFIG="agents/production.yaml"
 
 echo "部署智能体到 ${ENVIRONMENT} 环境..."
 
-# 1. 运行测试
 python tests/test_agent.py
 
-# 2. 部署智能体
 python deploy.py --config "$AGENT_CONFIG" --env "$ENVIRONMENT"
 
-# 3. 健康检查
 python healthcheck.py --env "$ENVIRONMENT" --timeout 60
 
-# 4. 导出指标基线
 python export_metrics.py --env "$ENVIRONMENT" --output "baselines/${ENVIRONMENT}_$(date +%Y%m%d).json"
 
 echo "部署完成: ${ENVIRONMENT}"
 ```
 
 ```python
-# deploy.py 核心逻辑示例
 import asyncio
 import yaml
 from agent_framework.azure import AzureAIAgentsProvider
@@ -374,7 +330,6 @@ async def deploy(config_path, environment):
             metrics_enabled=True,
         ) as provider,
     ):
-        # 版本化创建(支持回滚)
         agent = await provider.create_agent(
             name=config["name"],
             instructions=config["instructions"],
@@ -388,23 +343,18 @@ asyncio.run(deploy("agents/production.yaml", "staging"))
 ```
 
 ## 快速开始
-
-### 1. 安装与初始化
-
+### 依赖说明
 ```bash
 pip install agent-framework --pre
 pip install agent-framework-azure-ai --pre
 
-# 专业版初始化(可选)
 python -m agent_framework pro init
 python -m agent_framework config set metrics.enabled true
 python -m agent_framework config set alerts.webhook "https://hooks.example.com/alerts"
 ```
 
 ### 2. 企业级配置
-
 ```bash
-# 配置环境变量
 export AZURE_AI_PROJECT_ENDPOINT="https://<project>.services.ai.azure.com/api/projects/<project-id>"
 export AZURE_AI_MODEL_DEPLOYMENT_NAME="gpt-4o-mini"
 export AGENT_FRAMEWORK_EDITION="pro"
@@ -413,11 +363,8 @@ export AGENT_FRAMEWORK_ALERT_WEBHOOK="https://hooks.example.com/alerts"
 ```
 
 ## 配置示例
-
 ### 企业级配置文件
-
 ```yaml
-# ~/.agent-framework/config.yaml
 edition: pro
 metrics:
   enabled: true
@@ -442,21 +389,12 @@ agents:
 ```
 
 ### 监控指标示例
-
 ```bash
-# 导出 Prometheus 格式指标
 python -m agent_framework metrics export --format prometheus
 
-# 指标示例:
-# agent_requests_total{agent="ProductionAgent",status="success"} 1024
-# agent_requests_total{agent="ProductionAgent",status="failed"} 12
-# agent_response_time_p95{agent="ProductionAgent"} 2.3
-# agent_tool_calls_total{agent="ProductionAgent",tool="search"} 256
-# agent_active_threads 18
 ```
 
 ## 最佳实践
-
 ### 智能体编排
 1. **单一职责**:每个智能体专注一个领域,通过多智能体协作处理复杂任务。
 2. **版本控制**:为智能体配置版本号,便于回滚与灰度发布。
@@ -476,7 +414,6 @@ python -m agent_framework metrics export --format prometheus
 4. **数据脱敏**:智能体处理的数据及时脱敏存储。
 
 ## 常见问题
-
 ### Q1: 专业版是否兼容免费版代码?
 完全兼容。免费版的所有代码、SDK 调用、工作流均可直接在专业版中运行。专业版仅在原有能力之上扩展高阶特性。
 
@@ -502,7 +439,6 @@ python -m agent_framework pro init --migrate
 4. 异常时通过 `rollback` 快速回滚
 
 ## 与免费版的兼容性
-
 | 维度 | 兼容性 |
 |:-----|:------|
 | SDK 调用 | 100% 兼容 |
@@ -512,14 +448,12 @@ python -m agent_framework pro init --migrate
 | 升级路径 | 平滑升级(保留全部历史数据) |
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent 平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 - **Python**: >= 3.10
 
 ### 第三方依赖
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | agent-framework(pro) | Python 包 | 必需 | `pip install agent-framework --pre` |
@@ -542,3 +476,21 @@ python -m agent_framework pro init --migrate
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
 - **版本**: 专业版(兼容免费版全部能力)
+
+## 错误处理
+- 边界输入处理: 空输入返回提示信息, 超长输入自动截断
+- 降级策略: 异常时返回默认值, 确保流程不中断
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 依赖云服务，需要网络连接
+
+<!-- 触发条件: 用户明确请求时激活 -->
+
+## 输出格式
+
+处理结果以结构化格式返回, 包含状态码、消息和数据字段。

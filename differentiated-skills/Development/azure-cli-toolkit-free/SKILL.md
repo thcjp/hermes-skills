@@ -4,12 +4,10 @@ name: azure-cli-toolkit-free
 version: "1.0.0"
 displayName: Azure命令行工具免费版
 summary: Azure云平台命令行管理工具,支持虚拟机、存储、网络等核心资源的基本操作
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向个人开发者的 Azure 云平台命令行管理工具,提供核心资源管理能力。
-
-  核心能力:
+  面向个人开发者的 Azure 云平台命令行管理工具,提供核心资源管理能力。核心能力:
   - Azure 订阅与资源组管理
   - 虚拟机、存储账户、网络资源基本操作
   - 输出格式化与查询语法(JMESPath)
@@ -25,14 +23,14 @@ description: |-
   - 交互式操作,适合手动执行
   - 无需复杂配置,开箱即用
 
-  触发关键词: azure, cli, cloud, vm, storage, network, az, 虚拟机, 存储, 云资源
+  触发关键词: azure, cli, cloud, vm, storage,...
 tags:
 - 云平台
 - Azure
 - 命令行工具
 - 云资源管理
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -191,7 +189,7 @@ az vm create -n new-vm --image UbuntuLTS
 
 ## 快速开始
 
-### 第一步: 安装 Azure CLI
+### 依赖说明
 
 **macOS:**
 
@@ -233,7 +231,7 @@ az group create -g my-first-rg -l eastus
 az vm create -g my-first-rg -n my-vm --image UbuntuLTS
 ```
 
-## 配置示例
+## 示例
 
 ### 常用全局参数
 
@@ -326,7 +324,7 @@ az login --tenant <tenant_id>
 
 检查当前账户是否有所需角色权限。可用 `az role assignment list` 查看当前角色分配。
 
-### Q5: 免费版有命令调用次数限制吗?
+### 已知限制
 
 免费版本身不限制命令调用次数,但 Azure 平台本身的 API 限流策略仍然适用。
 
@@ -363,3 +361,11 @@ export AZURE_TENANT_ID="your-tenant-id"
 - **分类**: MD+EXEC(Markdown 指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 执行 `az` 命令管理 Azure 资源
 - **离线可用**: 否,所有操作需要连接 Azure 云平台
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

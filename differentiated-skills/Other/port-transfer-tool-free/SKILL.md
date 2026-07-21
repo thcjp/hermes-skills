@@ -4,7 +4,7 @@ name: port-transfer-tool-free
 version: "1.0.0"
 displayName: 工具移植工具
 summary: 面向个人的 MCP工具配置跨环境移植工具，支持导入导出。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人用户的 MCP工具配置跨环境移植工具。
@@ -29,7 +29,7 @@ tags:
 - 个人效率
 - 其他工具
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -78,7 +78,7 @@ tools:
 ### 场景三：配置校验
 
 ```bash
-# 校验配置格式与依赖
+# 依赖说明
 {baseDir}/scripts/port.sh validate --bundle bundle.json
 ```
 
@@ -89,7 +89,7 @@ tools:
 3. 在目标环境执行 `import`。
 4. 填入真实凭证并校验。
 
-## 配置示例
+## 示例
 
 凭证占位符约定：
 
@@ -229,3 +229,17 @@ SEARCH_API_KEY=sk-real-key-xxx
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 命令行执行）
 - **说明**: 通过自然语言指令驱动 Agent 完成 MCP工具配置移植
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

@@ -4,36 +4,23 @@ name: github-manager-pro
 version: "1.0.0"
 displayName: GitHub管理器(专业版)
 summary: 全功能GitHub管理工具,含批量操作、GraphQL高级查询、自动化工作流、团队仪表盘与Webhook管理,适合团队企业级协作。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  GitHub管理器(专业版)是企业级GitHub协作管理工具,在免费版基础查询能力上,扩展批量操作、GraphQL高级查询、自动化工作流、团队仪表盘与Webhook管理等高级能力。
-
-  核心能力:
+  GitHub管理器(专业版)是企业级GitHub协作管理工具,在免费版基础查询能力上,扩展批量操作、GraphQL高级查询、自动化工作流、团队仪表盘与Webhook管理等高级能力。核心能力:
   - 批量Issue/PR操作: 批量关闭、打标签、分配负责人、迁移
   - GraphQL高级查询: 复杂关联查询、跨仓库聚合、深度分页
   - 自动化工作流: 定时检查、自动分配、状态流转、通知告警
   - 团队仪表盘: 多仓库汇总、成员贡献统计、燃尽图
   - Webhook管理: 事件订阅、自动触发、回调配置
-  - 安全审计: 权限审查、敏感信息扫描、合规报告
-
-  适用场景:
-  - 中大型团队的GitHub仓库群管理
-  - 开源项目的Issue triage自动化
-  - CI/CD工作流的集中监控与告警
-  - 团队绩效与贡献度分析
-  - 安全合规审计与权限治理
-
-  差异化: 相比免费版,新增自动化与分析能力,适合需要高效协作与治理的团队/企业长期使用。
-
-  触发关键词: GitHub管理、批量操作、GraphQL、自动化工作流、团队仪表盘、Webhook、安全审计、Issue triage
+  - 安全审计: 权限审查、敏感信息扫...
 tags:
 - GitHub
 - 团队协作
 - 自动化
 - 企业版
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -80,7 +67,7 @@ gh-manager issue batch-reopen --repo owner/repo --issues 30,32,35
 # 跨仓库查询某作者的所有PR
 gh-manager graphql query --file queries/cross_repo_prs.graphql --vars '{"author":"alice"}'
 
-# 查询仓库的依赖关系图
+# 依赖说明
 gh-manager graphql query --file queries/dependency_graph.graphql --vars '{"repo":"owner/repo"}'
 
 # 深度分页查询(自动处理cursor)
@@ -293,7 +280,7 @@ gh-manager dashboard weekly --format pdf --output weekly-report.pdf
 gh-manager dashboard live --port 8080
 ```
 
-## 配置示例
+## 示例
 
 ### 完整专业版配置
 
@@ -411,7 +398,7 @@ gh-manager dashboard live --port 8080
 
 A: 专业版自动遵守API限速(5000请求/小时),超限时自动排队等待。大批量操作(>100条)建议在低峰期执行,并启用`--rate-limit wait`模式。
 
-### Q2: GraphQL查询复杂度有限制吗?
+### 已知限制
 
 A: GitHub GraphQL API有复杂度评分限制(单次查询≤500000点)。专业版会自动计算复杂度,超限时建议拆分查询或使用分页。
 
@@ -496,3 +483,11 @@ A: 支持。配置`GITHUB_ENTERPRISE_HOST`环境变量即可连接Enterprise Ser
 ### 可用性分类
 - **分类**: MD+EXEC+CLI+DAEMON(Markdown指令+命令行工具+自动化守护)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务,高级功能需要gh-manager CLI与自动化守护进程
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

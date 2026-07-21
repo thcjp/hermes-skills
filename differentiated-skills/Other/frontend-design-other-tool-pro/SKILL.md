@@ -4,12 +4,10 @@ name: frontend-design-other-tool-pro
 version: "1.0.0"
 displayName: 前端设计工具专业版
 summary: 面向团队的设计系统、多页站点与企业级视觉治理工具。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  面向团队与企业的前端设计系统与视觉治理专业工具。
-
-  核心能力:
+  面向团队与企业的前端设计系统与视觉治理专业工具。核心能力:
   - 完整设计系统（令牌、组件库、多主题、暗色模式）
   - 多页站点架构与一致性巡检
   - 品牌识别矩阵与签名元素库
@@ -20,9 +18,7 @@ description: |-
   - 跨团队设计系统沉淀与复用
   - 品牌视觉一致性巡检与合规审计
 
-  差异化: 专业版在免费版单页能力上扩展设计系统、组件库、多主题、一致性巡检与可访问性合规，兼容免费版令牌格式，支持团队协作。
-
-  触发关键词: 设计系统, 组件库, 多主题, 暗色模式, 一致性巡检, 可访问性审计, 品牌识别, design system, theme, audit, pro
+  差异化: 专业版在免费版单页能力上扩展设计系统、组件库、多主题、一致性巡检与可访问性合规，兼容免费版令牌格式，支持团队协作
 tags:
 - 前端设计
 - 设计系统
@@ -30,10 +26,9 @@ tags:
 - 可访问性
 - 其他工具
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 前端设计工具（专业版）
 
 ## 概述
@@ -109,6 +104,20 @@ npx @axe-core/cli http://localhost:8000 --tags wcag2a,wcag2aa --save a11y-report
   提示: 焦点对比度不足（1 处）
 ```
 
+## 不适用场景
+
+以下场景前端设计工具专业版不适合处理：
+
+- 3D建模和动画制作
+- 照片级写实渲染
+- 手绘原创插画
+
+
+## 触发条件
+
+需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 1. 将免费版令牌纳入 `tokens/` 目录作为基础。
@@ -117,7 +126,7 @@ npx @axe-core/cli http://localhost:8000 --tags wcag2a,wcag2aa --save a11y-report
 4. 构建期接入可访问性审计与性能预算。
 
 ```bash
-# 主题切换示例
+# 示例
 <button onclick="document.documentElement.dataset.theme='dark'">暗色</button>
 ```
 
@@ -243,7 +252,7 @@ python scripts/consistency_check.py --src templates/ --report report.json
 - **操作系统**: Windows / macOS / Linux
 - **Node.js**: 18+（用于审计 CLI 与构建工具）
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Google Fonts | 字体资源 | 推荐 | fonts.google.com |
@@ -257,3 +266,17 @@ python scripts/consistency_check.py --src templates/ --report report.json
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 命令行审计）
 - **说明**: 通过自然语言指令驱动 Agent 产出设计系统并完成合规审计
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

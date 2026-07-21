@@ -1,0 +1,53 @@
+{
+  "slug": "auto-workflow",
+  "validated_at": "2026-07-20T22:08:16.126659",
+  "l2_version": "1.0",
+  "status": "pending_llm_eval",
+  "skill_md_path": "d:\\skills\\packaged-skills\\skillhub\\auto-workflow\\SKILL.md",
+  "static_check": {
+    "issues": [],
+    "static_scores": {
+      "trust_static": 10,
+      "convention_static": 10
+    },
+    "body_line_count": 110,
+    "description_length": 280
+  },
+  "trigger_test_cases": [
+    {
+      "id": "tc1",
+      "user_input": "使用auto-workflow处理一个任务",
+      "expected_trigger": true,
+      "reason": "通用fallback用例"
+    },
+    {
+      "id": "tc2",
+      "user_input": "我需要auto-workflow的功能",
+      "expected_trigger": true,
+      "reason": "通用fallback用例"
+    },
+    {
+      "id": "tc3",
+      "user_input": "请执行auto-workflow",
+      "expected_trigger": true,
+      "reason": "通用fallback用例"
+    }
+  ],
+  "external_dependencies": [
+    {
+      "type": "ai_model",
+      "name": "Claude",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    }
+  ],
+  "llm_eval_prompt": "# L2验证: LLM模拟评估任务\n\n## 被评估Skill: auto-workflow\n\n## SKILL.md内容\n---\nslug: auto-workflow\nname: auto-workflow\nversion: \"1.0.0\"\ndisplayName: Auto Workflow\nsummary: Builds automation workflows from repetitive tasks. Use when user mentions\n  \\\nlicense: MIT\ndescription: |-\n  Builds automation workflows from repetitive tasks。Use when user mentions\n  \\\n\n  核心能力:\n\n  - 效率工具领域的专业化AI辅助工具\n\n  - 基于高人气开源Skill深度优化升级\n\n  - 移除风险代码,增强安全性和稳定性\n\n  适用场景:\n\n  - 工作流自动化、任务调度、批处理\n\n  - 独立开发者与一人公司效率提升\n\n  - 自动化工作流与智能决策辅助\n\n  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillH...\ntags: '[''Automation'']'\ntools:\n  - read\n  - exec\n---\n\n# Auto Workflow\n\n## 核心能力\n\n- Builds automation workflows from repetitive tasks\n- 触发关键词: workflows, repetitive, auto, automation, workflow, builds\n\n## 适用场景\n\n| 场景 | 输入 | 输出 |\n|------|------|------|\n| 基础使用 | 用户请求 | 处理结果 |\n\n**不适用于**：需要人工判断的复杂决策场景\n\n## 使用流程\n\n1. 确认运行环境满足依赖说明中的要求\n2. 根据适用场景选择合适的使用方式\n3. 执行操作并检查输出结果\n4. 如遇错误，参考错误处理章节\n\n## 输入格式\n\n| 参数名 | 类型 | 必填 | 说明 |\n|--------|------|------|------|\n| content | string | 是 | 相关说明 |\n| content | string | 否 | 相关说明, 默认: 默认值 |\n| mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |\n| max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |\n| skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |\n\n## 输出格式\n\n```json\n{\n  \"success\": true,\n  \"data\": {\n    \"final_result\": {\n      （根据实际场景填充）: \"相关说明\",\n      （根据实际场景填充）: \"相关说明\",\n      （根据实际场景填充）: \"相关说明\"\n    },\n    \"execution_log\": [\n      {\n        \"step\": 1,\n        \"name\": \"按流程执行\",\n        \"status\": \"completed\",\n        \"duration_ms\": 1200,\n        \"output_summary\": \"按流程执行\"\n      },\n      {\n        \"step\": 2,\n        \"name\": \"按流程执行\",\n        \"status\": \"completed\",\n        \"duration_ms\": 3500,\n        \"output_summary\": \"按流程执行\"\n      },\n      {\n        \"step\": 3,\n        \"name\": \"按流程执行\",\n        \"status\": \"completed\",\n        \"duration_ms\": 2100,\n        \"output_summary\": \"按流程执行\"\n      },\n      {\n        \"step\": 4,\n        \"name\": \"按流程执行\",\n        \"status\": \"completed\",\n        \"duration_ms\": 800,\n        \"output_summary\": \"按流程执行\"\n      }\n    ],\n    \"total_duration_ms\": 7600,\n    \"gates_passed\": 3,\n    \"gates_total\": 3\n  },\n  \"error\": null\n}\n```\n\n中间产物模板参考: `assets/（根据实际场景填充）`\n\n## 异常处理\n\n| 错误场景 | 原因 | 处理方式 |\n|---------|------|---------|\n| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |\n| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |\n| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |\n\n## 依赖说明\n\n### 运行环境\n- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)\n- **操作系统**: Windows / macOS / Linux\n\n### 依赖说明\n| 依赖项 | 类型 | 是否必需 | 获取方式 |\n|:-------|:-----|:---------|:---------|\n| LLM API | API | 必需 | 由Agent内置LLM提供 |\n\n### API Key 配置\n- 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)\n\n### 可用性分类\n- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)\n- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务\n\n## 案例展示\n\n用户每周手动发周报：\n\n1. 收集数据（系统状态）\n2. 整理成模板\n3. 发送邮件\n\n自动化后：\n\n* 每周五自动执行\n* 收集本周数据\n* 生成报告\n* 自动发送\n\n## 常见问题\n\n### Q1: 如何开始使用Auto Workflow？\nA: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。\n\n### Q2: 遇到错误怎么办？\nA: 请参考错误处理章节，按照表格中的处理方式操作。\n\n### Q3: Auto Workflow有什么限制？\nA: 请参考已知限制章节了解具体限制。\n\n## 已知限制\n\n- 需要LLM支持，无LLM环境无法使用\n- 复杂场景可能需...(截断)\n\n## 评估任务\n\n请作为Skill质量评估专家, 完成以下4项评估:\n\n### 检查1: 触发精准度\n对以下3个测试用例, 判断SKILL.md的description是否能精准触发:\n- tc1: 用户输入「使用auto-workflow处理一个任务」 → 预期触发: True\n- tc2: 用户输入「我需要auto-workflow的功能」 → 预期触发: True\n- tc3: 用户输入「请执行auto-workflow」 → 预期触发: True\n\n评估标准:\n- PASS: 3/3个用例的触发判断与预期一致\n- WARN: 2/3一致\n- FAIL: ≤1/3一致\n\n### 检查2: 输出完整性\n模拟skill执行, 评估输出是否包含SKILL.md承诺的核心能力:\n- 读取\"核心能力\"章节\n- 模拟1个典型输入的执行\n- 判断输出是否覆盖承诺的能力点\n\n评估标准:\n- PASS: 输出覆盖所有核心能力\n- WARN: 覆盖大部分但有遗漏\n- FAIL: 输出与承诺严重不符\n\n### 检查3: 依赖可达性\n检查SKILL.md引用的外部依赖是否真实可用:\n- API endpoint是否可达\n- npm/PyPI包是否存在\n- AI模型是否为已知模型\n\n评估标准:\n- PASS: 所有依赖可达/存在\n- WARN: 部分依赖未验证\n- FAIL: 依赖不存在或不可达\n\n### 检查4: TRACE快评\n按TRACE五维度评分(每维度0-10分):\n\n- T (Trust 可信任度): 安全性、国内可用性、中文支持\n- R (Reliability 可靠性): 异常处理、边界输入、失败反馈\n- A (Adaptability 适用性): description精准、能力边界清晰\n- C (Convention 规范性): 信息架构、文档充分性\n- E (Effectiveness 有效性): 解决问题、输出可用\n\n通过标准: 总分≥35/50\n\n## 输出格式(严格JSON)\n\n```json\n{\n  \"slug\": \"auto-workflow\",\n  \"validated_at\": \"<ISO时间>\",\n  \"checks\": {\n    \"trigger_accuracy\": {\n      \"status\": \"PASS|WARN|FAIL\",\n      \"score\": \"3/3\",\n      \"details\": \"评估说明\"\n    },\n    \"output_completeness\": {\n      \"status\": \"PASS|WARN|FAIL\",\n      \"covered_capabilities\": [\"能力1\", \"能力2\"],\n      \"missing_capabilities\": [],\n      \"details\": \"评估说明\"\n    },\n    \"dependency_reachability\": {\n      \"status\": \"PASS|WARN|FAIL\",\n      \"total_deps\": 0,\n      \"verified_deps\": 0,\n      \"failed_deps\": [],\n      \"details\": \"评估说明\"\n    },\n    \"trace_quick_score\": {\n      \"trust\": 0,\n      \"reliability\": 0,\n      \"adaptability\": 0,\n      \"convention\": 0,\n      \"effectiveness\": 0,\n      \"total\": 0,\n      \"grade\": \"A|B|C|D\",\n      \"passed\": true,\n      \"details\": \"评估说明\"\n    }\n  },\n  \"overall_passed\": false,\n  \"overall_summary\": \"总结\"\n}\n```\n",
+  "llm_eval_prompt_length": 4770,
+  "static_pre_eval": {
+    "trust_static": 10,
+    "convention_static": 10,
+    "static_total": 20,
+    "note": "T+C维度静态分, R+A+E维度需LLM评估"
+  }
+}

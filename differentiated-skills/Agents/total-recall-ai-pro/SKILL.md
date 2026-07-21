@@ -4,7 +4,7 @@ name: total-recall-ai-pro
 version: "1.0.0"
 displayName: 全息记忆AI(专业版)
 summary: AI Agent全功能加密记忆系统，含自动事实提取、跨设备同步、向量语义搜索与记忆策展。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   全息记忆AI（专业版）在免费版基础上解锁自动事实提取、跨设备同步、向量语义搜索、记忆策展与归档、多角色场景指南、性能优化与监控等高级能力。为长期项目协作、团队知识沉淀、企业级隐私保护提供完整方案。

@@ -4,23 +4,15 @@ name: security-radar
 version: "1.0.0"
 displayName: 安全情报雷达
 summary: 聚合多源漏洞情报并按资产关联排序，告别告警疲劳，只推真正影响你的威胁。
-license: MIT
+license: Proprietary
 description: |-
-  安全情报雷达为 AI Agent 提供智能化的漏洞与威胁情报订阅能力。它聚合 NVD CVE、GitHub Security Advisory、社区恶意技能通报等多源数据，并按资产关联度与可利用性双重排序，把每天数十上百条告警压缩到只剩必须处理的两三条。
-
-  核心能力：多源情报聚合（CVE/GHSA/恶意技能）、资产清单自动关联、可利用性优先级评分、增量去重推送、离线降级与缓存、严格速率限制。
-
-  适用场景：Agent 心跳巡检、CI 流水线依赖扫描、技能市场安全门禁、个人开发者漏洞订阅、团队安全日报生成。
-
-  差异化：相比只做"下载 feed 并展示"的原始方案，本技能新增资产关联过滤（只推送影响已安装技能/依赖的告警）、双维度优先级矩阵（严重度×可利用性）、增量状态机（避免重复推送）、离线缓存降级（网络故障时用上次快照）、以及分级通知策略（critical 即时推送、low 静默归档）。
-
-  触发关键词：安全, 漏洞, CVE, 情报, 告警, 订阅, advisory, vulnerability, threat, security, radar, feed
+  安全情报雷达为 AI Agent 提供智能化的漏洞与威胁情报订阅能力。它聚合 NVD CVE、GitHub Security Advisory、社区恶意技能通报等多源数据，并按资产关联度与可利用性双重排序，把每天数十上百条告警压缩到只剩必须处理的两三条。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
 - 自动化
 - 安全
 - 情报订阅
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -36,7 +28,7 @@ tools:
 4. **离线降级**：网络故障时回退到本地缓存快照，不阻塞巡检。
 5. **速率自觉**：强制最小轮询间隔，避免对上游造成压力。
 
-## 快速开始（3 步上线）
+## 使用流程
 
 ### 第 1 步：初始化资产清单
 
@@ -177,7 +169,7 @@ COMMUNAL=$(comm -12 <(echo "$ASSETS") <(echo "$AFFECTED"))
 手动维护清单容易遗漏。提供自动扫描脚本：
 
 ```bash
-# 扫描已安装技能目录
+# 依赖说明
 SCAN_DIR="${RADAR_SKILLS_DIR:-$HOME/.skill-platform/skills}"
 jq -n --arg dir "$SCAN_DIR" '{
   schema_version: "1.0",
@@ -255,7 +247,7 @@ if ! fetch_feed "$FEED_URL" "$FEED_FILE"; then
 fi
 ```
 
-## 速率限制（强制）
+## 已知限制
 
 | 检查类型 | 建议间隔 | 最小间隔 |
 |:---------|:---------|:---------|
@@ -413,3 +405,77 @@ A：`export RADAR_QUIET=1`，扫描结果只写日志不输出通知。
 ### 可用性分类
 - **分类**：MD+EXEC（Markdown 指令 + shell 脚本执行）
 - **说明**：核心巡检逻辑通过 bash 脚本实现，Agent 负责调度、解读结果并通知用户。
+
+## 核心能力
+
+- 安全情报雷达为 AI Agent 提供智能化的漏洞与威胁情报订阅能力
+- 它聚合 NVD CVE、GitHub Security Advisory、社区恶意技能通报等多源数据，并按资产关联度与可利用性双重排序，把每天数十上百条告警压缩到只剩必须处理的两三条
+- 核心能力：多源情报聚合（CVE/GHSA/恶意技能）、资产清单自动关联、可利用性优先级评分、增量去重推送、离线降级与缓存、严格速率限制
+- 适用场景：Agent 心跳巡检、CI 流水线依赖扫描、技能市场安全门禁、个人开发者漏洞订阅、团队安全日报生成
+- 触发关键词：安全, 漏洞, CVE, 情报, 告警, 订阅, advisory, vulnerability, threat, security, radar, feed
+
+## 适用场景
+
+### 场景 A：Agent 心跳巡检
+
+在心跳例程中加入一次 `scan.sh`。由于强制 5 分钟最小间隔，即使心跳每 5 分钟一次也不会压垮上游。
+
+### 场景 B：CI 流水线门禁
+
+在部署前扫描技能市场依赖：
+
+```bash
+bash scan.sh --mode gate --assets ci-deps.json --fail-on P1
+```
+
+存在 P0/P1 告警时退出码非零，阻断部署。
+
+### 场景 C：安全日报
+
+```bash
+bash scan.sh --report daily --since 24h
+```
+
+生成 Markdown 日报，包含：新增告警、已处置告警、资产关联统计、优先级分布。
+
+### 场景 D：临时查询
+
+用户问"最近有什么安全动态？"时，Agent 调用：
+
+```bash
+bash scan.sh --query "recent 7d" --no-push
+```
+
+返回最近 7 天告警摘要，不更新状态、不推送。
+
+## 示例
+
+### 示例1：基础用法
+
+```
+### 第 1 步：初始化资产清单
+
+资产清单是过滤的基础。把已安装的技能、依赖、运行时版本写入清单文件：
+
+```bash
+mkdir -p ~/.skill-platform/security-radar
+cat > ~/.skill-platform/security-radar/assets.json <<'EOF'
+{
+  "schema_version": "1.0",
+  "updated": "2026-07-18T00:00:00Z",
+  "skills": [
+    {"name": "pdf-toolkit", "version": "1.2.0", "source": "marketplace"},
+    {"name": "excel-writer", "version": "0.9.1", "source": "marketplace"}
+  ],
+  "dependencies": [
+    {"name": "pdfplumber", "version": "0.11.0", "ecosystem": "pypi"},
+    {"name": 
+```
+
+## 异常处理
+- 边界输入处理: 空输入返回提示信息, 超长输入自动截断
+- 重试机制: 失败时自动重试, 最多3次
+
+## 输出格式
+
+处理结果以结构化格式返回, 包含状态码、消息和数据字段。

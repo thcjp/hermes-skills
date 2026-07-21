@@ -4,12 +4,10 @@ name: docker-essentials-v1-tool-free
 version: "1.0.0"
 displayName: Docker V1基础工具免费版
 summary: 提供Docker V1经典命令集与基础容器管理,适合维护旧版Docker环境的开发者。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向旧版Docker环境的容器管理工具,涵盖V1经典命令集、基础容器生命周期与镜像管理。
-
-  核心能力:
+  面向旧版Docker环境的容器管理工具,涵盖V1经典命令集、基础容器生命周期与镜像管理。核心能力:
   - Docker V1经典命令支持
   - 容器生命周期管理
   - 镜像构建与标签管理
@@ -26,28 +24,23 @@ description: |-
   - 提供旧版环境兼容性检测
   - 与专业版命令兼容,支持后续升级
 
-  触发关键词: Docker V1, 旧版Docker, 经典命令, docker-compose v1, 容器管理, 兼容性, legacy docker
+  触发关键词: Docker V1, 旧版D...
 tags:
 - 开发工具
 - Docker
 - 遗留系统
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Docker V1基础工具 - 免费版
-
 ## 概述
-
 Docker V1基础工具免费版为维护旧版Docker环境的开发者提供经典命令集支持。工具涵盖V1版本的容器生命周期管理、镜像构建管理、基础Compose编排和旧版环境兼容性检查,帮助开发者在V1环境中高效进行容器管理。
 
 本版本适合旧版Docker环境维护、遗留系统容器管理和V1到V2迁移准备。所有命令均兼容Docker V1 API。
 
 ## 核心能力
-
 ### 1. V1容器生命周期管理
-
 使用V1经典命令管理容器。
 
 ```bash
@@ -56,7 +49,6 @@ docker run nginx                           # 前台运行
 docker run -d nginx                        # 后台运行
 docker run --name my-nginx -d nginx        # 命名运行
 docker run -p 8080:80 -d nginx             # 端口映射
-
 # V1容器管理
 docker ps                                  # 查看运行中容器
 docker ps -a                               # 查看所有容器
@@ -65,20 +57,17 @@ docker start container_name                # 启动容器
 docker restart container_name              # 重启容器
 docker rm container_name                   # 删除容器
 docker rm -f container_name                # 强制删除
-
 # V1容器清理
 docker container prune                     # 清理已停止容器
 ```
 
 ### 2. V1镜像管理
-
 ```bash
 # V1镜像构建
 docker build -t myapp:1.0 .                       # 基础构建
 docker build -f Dockerfile.dev -t myapp:dev .     # 指定Dockerfile
 docker build --build-arg VERSION=1.0 -t myapp .   # 构建参数
 docker build --no-cache -t myapp .                # 无缓存构建
-
 # V1镜像操作
 docker images                                     # 列出镜像
 docker pull nginx:latest                          # 拉取镜像
@@ -90,18 +79,15 @@ docker image prune -a                             # 清理所有未使用镜像
 ```
 
 ### 3. V1容器调试
-
 ```bash
 # V1日志查看
 docker logs container_name                        # 全部日志
 docker logs -f container_name                     # 跟踪日志
 docker logs --tail 100 container_name             # 最后100行
-
 # V1执行命令
 docker exec container_name ls -la                 # 执行命令
 docker exec -it container_name bash               # 交互式进入
 docker exec -u root -it container_name bash       # 以root进入
-
 # V1容器检查
 docker inspect container_name                     # 详细信息
 docker inspect -f '{{.NetworkSettings.IPAddress}}' container_name
@@ -110,7 +96,6 @@ docker top container_name                         # 进程信息
 ```
 
 ### 4. V1 Compose编排
-
 使用V1格式docker-compose命令进行编排。
 
 ```bash
@@ -122,7 +107,6 @@ docker-compose down -v                           # 同时删除卷
 docker-compose logs                              # 查看日志
 docker-compose logs -f web                       # 跟踪指定服务
 docker-compose up -d --scale web=3               # 扩展服务实例
-
 # V1 Compose服务管理
 docker-compose ps                                # 查看服务状态
 docker-compose exec web bash                     # 进入服务容器
@@ -132,7 +116,6 @@ docker-compose up -d --build                     # 重建并启动
 ```
 
 ### 5. V1兼容性检查
-
 ```bash
 #!/bin/bash
 # V1环境兼容性检查脚本
@@ -174,9 +157,7 @@ fi
 ```
 
 ## 使用场景
-
 ### 场景一:旧版环境容器管理
-
 在旧版Docker环境中管理容器。
 
 ```bash
@@ -202,7 +183,6 @@ docker system df
 ```
 
 ### 场景二:V1 Compose服务管理
-
 使用V1格式Compose文件管理服务。
 
 ```yaml
@@ -240,7 +220,6 @@ docker-compose down                     # 停止服务
 ```
 
 ### 场景三:迁移前环境评估
-
 评估V1环境,为迁移到V2做准备。
 
 ```bash
@@ -287,10 +266,22 @@ find . -name "Dockerfile*" -exec grep -l "MAINTAINER " {} \; | \
 echo -e "\n评估完成"
 ```
 
+## 不适用场景
+
+以下场景Docker V1基础工具免费版不适合处理：
+
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 运维部署管理
+
+
+## 触发条件
+
+需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
-
 ### 步骤一:检查环境兼容性
-
 ```bash
 # 验证Docker V1环境
 docker version
@@ -298,7 +289,6 @@ docker-compose version
 ```
 
 ### 步骤二:触发容器操作
-
 在 AI Agent 中输入:
 
 ```
@@ -306,13 +296,10 @@ docker-compose version
 ```
 
 ### 步骤三:执行操作
-
 Agent 会使用V1兼容命令执行容器管理操作。
 
-## 配置示例
-
+## 示例
 ### V1环境配置
-
 ```yaml
 # .docker-v1.yml - V1环境配置
 version: "1.0"
@@ -323,7 +310,6 @@ compatibility:
   api_version: "1.39"      # V1 API版本
   compose_version: "2"      # Compose文件版本
   use_v1_compose: true      # 使用docker-compose(V1)命令
-
 # 容器默认配置
 defaults:
   restart_policy: always
@@ -337,7 +323,6 @@ images:
 ```
 
 ### V1 Dockerfile示例
-
 ```dockerfile
 # V1兼容Dockerfile
 FROM node:14
@@ -355,7 +340,6 @@ CMD ["npm", "start"]
 ```
 
 ## 最佳实践
-
 1. **版本固定**:在V1环境中固定镜像版本,避免自动更新
 
 ```dockerfile
@@ -391,9 +375,7 @@ tar -czf docker-v1-backup-$(date +%Y%m%d).tar.gz \
 5. **文档化**:记录V1环境的特殊配置和已知问题
 
 ## 常见问题
-
 ### Q1:如何判断当前是否为V1环境?
-
 ```bash
 # 检查API版本
 API_VERSION=$(docker version --format '{{.Server.APIVersion}}' 2>/dev/null)
@@ -401,14 +383,12 @@ echo "API版本: $API_VERSION"
 
 # V1 API版本范围: 1.0 - 1.39
 # V2 API版本范围: 1.40+
-
 # 检查docker-compose vs docker compose
 which docker-compose   # V1命令
 docker compose version # V2命令
 ```
 
-### Q2:V1环境有哪些限制?
-
+### 已知限制
 | 特性 | V1支持 | V2支持 |
 |:-----|:-------|:-------|
 | Compose v3格式 | 部分支持 | 完全支持 |
@@ -418,39 +398,32 @@ docker compose version # V2命令
 | rootless模式 | 不支持 | 支持 |
 
 ### Q3:如何从V1迁移到V2?
-
 ```bash
-# 1. 安装Docker V2
+# 依赖说明
 # 参考 docs.docker.com 安装最新版
-
 # 2. 安装Compose V2插件
 sudo apt install docker-compose-plugin  # Debian/Ubuntu
-
 # 3. 验证V2
 docker compose version
 
 # 4. 测试V1配置兼容性
 docker compose config  # 验证V1的compose文件
-
 # 5. 逐步替换命令
 # 旧: docker-compose up -d
 # 新: docker compose up -d
 ```
 
 ### Q4:V1环境镜像构建注意事项?
-
 ```dockerfile
 # V1兼容Dockerfile注意事项:
 # 1. 不使用BuildKit特性(如--mount)
 # 2. 不使用多平台构建(如--platform)
 # 3. LABEL替代MAINTAINER(虽然V1支持MAINTAINER)
 # 4. 确保基础镜像版本兼容
-
 FROM node:14  # 使用V1兼容的版本
 ```
 
 ### Q5:免费版与专业版有何区别?
-
 | 能力维度 | 免费版 | 专业版 |
 |:---------|:-------|:-------|
 | V1命令支持 | 基础命令 | 全部V1命令 |
@@ -460,16 +433,13 @@ FROM node:14  # 使用V1兼容的版本
 | 回滚支持 | 不支持 | 自动回滚 |
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent 平台**:支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
 - **操作系统**:Windows / macOS / Linux
 - **运行时**:Docker Engine 1.0+ (V1 API)
 - **可选**:docker-compose V1
 
 ### 第三方依赖
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Docker Engine V1 | 运行时 | 必需 | 历史版本归档下载 |
@@ -477,7 +447,6 @@ FROM node:14  # 使用V1兼容的版本
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 
 ### API Key 配置
-
 - 本 Skill 基于 Markdown 指令,无需额外 API Key
 - 如需访问私有仓库,需配置认证:
 
@@ -487,8 +456,14 @@ docker login registry.example.com
 ```
 
 ### 可用性分类
-
 - **分类**:MD+EXEC(纯 Markdown 指令,需要 exec 命令行执行能力)
 - **说明**:基于 Markdown 的 AI Skill,通过自然语言指令驱动 Agent 执行V1 Docker管理任务
 - **适用规模**:单机环境,适合旧版Docker维护场景
 - **兼容性**:兼容Docker V1 API,可后续升级到V2工具
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

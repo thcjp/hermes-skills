@@ -4,12 +4,10 @@ name: code-runner-tool-free
 version: "1.0.0"
 displayName: 代码执行工具免费版
 summary: 通过PTY方式在非交互环境中执行编程任务,支持自动应答与文件同步
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向个人开发者的代码执行工具,在非交互环境中以 PTY 方式运行编程任务。
-
-  核心能力:
+  面向个人开发者的代码执行工具,在非交互环境中以 PTY 方式运行编程任务。核心能力:
   - PTY 伪终端执行,适配非 TTY 环境
   - 自动应答确认提示
   - 项目文件同步与结果回传
@@ -25,14 +23,14 @@ description: |-
   - 适配容器、CI/CD 等非交互环境
   - 自动处理确认提示,无需人工干预
 
-  触发关键词: runner, code, pty, execute, non-interactive, automation, 执行, 自动化, 非交互
+  触发关键词: runner, code, pty, execute, non-in...
 tags:
 - 开发工具
 - 代码执行
 - 自动化
 - PTY
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -71,7 +69,7 @@ tools:
 工具自动识别并应答常见确认提示:
 
 ```python
-# 自动应答逻辑示例
+# 示例
 if b'Do you want to' in output:
     os.write(master_fd, b'y\n')
 if b'Are you sure' in output:
@@ -139,7 +137,7 @@ result = run_code_task(
 # 确认 Python 版本
 python3 --version  # 需要 3.8+
 
-# 确认代码 CLI 已安装
+# 依赖说明
 which claude
 
 # 赋予脚本执行权限
@@ -264,7 +262,7 @@ prompt='修复登录问题'
 # 创建专用执行用户(推荐)
 sudo useradd -m -s /bin/bash code-runner
 
-# 限制该用户权限
+# 已知限制
 sudo chown -R code-runner:code-runner /path/to/projects
 
 # 使用该用户执行
@@ -363,3 +361,11 @@ export ANTHROPIC_API_KEY="your-api-key"
 - **分类**: MD+EXEC+SCRIPT(Markdown 指令 + 命令行执行 + Python 脚本)
 - **说明**: 通过自然语言指令驱动 Agent 调用 Python 脚本执行编程任务
 - **离线可用**: 否,代码 CLI 需要连接 LLM API
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

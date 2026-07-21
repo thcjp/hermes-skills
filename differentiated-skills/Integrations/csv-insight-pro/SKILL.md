@@ -4,28 +4,19 @@ name: csv-insight-pro
 version: "1.0.0"
 displayName: CSV洞察 专业版
 summary: 全功能CSV分析，支持流式大文件、相关性分析、分布可视化与高级异常检测。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  CSV Insight 专业版面向专业数据分析师与数据科学家，在免费版基础上解锁流式大文件处理、相关性分析、分布可视化与高级异常检测算法。
-
-  核心能力：GB 级 CSV 流式分析、列间相关系数矩阵、分布可视化（直方图/箱线图/散点图）、高级聚合（median/std/percentile）、多异常检测算法（IQR/DBSCAN/Z-Score）、多文件对比分析、Schema 配置与列类型强制、报表导出（Markdown/HTML）。
-
-  适用场景：大数据量探查分析、特征相关性挖掘、数据分布可视化、复杂异常检测、多数据集对比、数据质量评估报告、生产环境数据分析。
-
-  差异化：相比免费版，专业版提供流式处理能力，可分析 GB 级 CSV 而内存占用稳定；内置相关系数矩阵与分布可视化，支撑探索性数据分析（EDA）；支持 IQR 与 DBSCAN 等高级异常检测算法，满足复杂场景；可导出 Markdown/HTML 报表，便于团队协作。
-
-  触发关键词：大数据分析、相关性、分布可视化、异常检测、IQR、DBSCAN、数据报表、EDA
+  CSV Insight 专业版面向专业数据分析师与数据科学家，在免费版基础上解锁流式大文件处理、相关性分析、分布可视化与高级异常检测算法。核心能力：GB 级 CSV 流式分析、列间相关系数矩阵、分布可视化（直方图/箱线图/散点图）、高级聚合（median/std/percentile）、多异常检测算法（IQR/DBSCAN/Z-Score）、多文件对比分析、Schema 配置与列类型强制、报表导出（Markdown/HTML）
 tags:
 - 集成工具
 - 数据分析
 - 数据科学
 - 可视化
 tools:
-- read
+  - - read
 - exec
 ---
-
 # CSV Insight（专业版）
 
 面向专业数据分析师与数据科学家的全功能 CSV 分析平台，在免费版基础上解锁流式处理、相关性分析、分布可视化与高级异常检测。
@@ -181,6 +172,20 @@ csv-insight report data.csv \
   --output data-quality-report.html
 ```
 
+## 不适用场景
+
+以下场景CSV洞察 专业版不适合处理：
+
+- 实时流数据处理
+- 小规模数据手动分析
+- 非结构化文本情感分析
+
+
+## 触发条件
+
+需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 前置准备（约 60 秒）
@@ -208,13 +213,13 @@ csv-insight stream stats large.csv --chunk-size 10MB
 csv-insight correlate sample.csv --method pearson
 ```
 
-### 运行环境要求
+### 依赖说明
 
 - Python：3.8+
 - 内存：建议 4GB+（流式处理可低于 2GB）
 - 操作系统：Windows / macOS / Linux
 
-## 配置示例
+## 示例
 
 ### Schema 配置（列类型强制）
 
@@ -358,7 +363,7 @@ csv-insight stream stats large.csv --checkpoint --resume-on-failure
 
 > 流式处理在 5GB 文件下内存峰值仅 400MB，适合生产环境。
 
-## 故障排查表
+## 错误处理
 
 | 现象 | 可能原因 | 解决步骤 | 优先级 |
 |------|----------|----------|--------|
@@ -439,3 +444,9 @@ csv-insight stream stats large.csv --checkpoint --resume-on-failure
 - 新增流式处理、相关性分析、分布可视化、多算法异常检测等高级能力
 - 完善性能基准与故障排查表
 - 增加免费版/专业版分层策略与定价
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

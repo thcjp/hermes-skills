@@ -4,7 +4,7 @@ name: flow-control-hub-pro
 version: "1.0.0"
 displayName: 桌面流程控制中枢(专业版)
 summary: 桌面自动化全功能专业版，含图像识别、多显示器、审批模式、操作回放，覆盖企业级RPA需求。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   桌面流程控制中枢专业版是面向企业级RPA场景的完整桌面自动化解决方案。在免费版核心能力之上，专业版解锁图像识别定位、多显示器支持、审批模式、操作日志回放、自定义移动曲线五大高级功能，满足高精度、高安全、高可靠的自动化需求。

@@ -4,33 +4,19 @@ name: linear-api-toolkit-free
 version: "1.0.0"
 displayName: Linear工具箱(免费版)
 summary: 通过GraphQL查询管理Linear任务、项目与团队，支持问题查看与基础操作
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  Linear工具箱(免费版)是一款通过GraphQL API与Linear交互的任务管理工具，支持问题查询、项目浏览、团队管理与评论查看等核心能力。
-
-  核心能力：
+  Linear工具箱(免费版)是一款通过GraphQL API与Linear交互的任务管理工具，支持问题查询、项目浏览、团队管理与评论查看等核心能力。核心能力：
   - 通过GraphQL查询Linear问题、项目、团队、周期与标签
   - 查看当前用户与组织信息
-  - 创建与更新问题，添加评论
-  - 支持过滤器与全文搜索
-  - 游标分页与自动翻页
-
-  适用场景：
-  - 开发者查询分配给自己的问题
-  - 项目经理浏览项目状态与团队进度
-  - 团队成员查看问题详情与评论
-  - 自动化脚本查询待办任务
-
-  差异化：本工具将Linear的GraphQL API封装为简洁的CLI命令与Python示例，降低使用门槛。免费版提供完整的查询与基础写入能力，不限制使用次数。专业版额外提供批量操作、Webhook集成与高级分析能力。
-
-  触发关键词：Linear、任务管理、GraphQL、问题跟踪、项目管理
+  - 创建与更新问题。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
 tags:
 - 集成工具
 - 项目管理
 - Linear
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -76,7 +62,7 @@ Linear是现代软件开发团队青睐的任务管理工具，其GraphQL API提
 
 本工具属于中等复杂度工具，预计120秒内可完成首次查询。
 
-### 步骤1：安装CLI工具
+### 依赖说明
 ```bash
 # 通过NPM安装
 npm install -g @maton/cli
@@ -114,7 +100,7 @@ maton linear issue list -c ABC -L 10
 maton linear issue view ABC-123
 ```
 
-## 配置示例
+## 示例
 
 ### 环境变量配置
 ```bash
@@ -191,10 +177,10 @@ A：某些操作(如删除、创建标签)需要额外的OAuth权限。联系API
 ### Q4：问题标识符ABC-123如何使用？
 A：Linear的问题标识符(如ABC-123)可在命令中替代UUID使用。ABC是团队key，123是问题序号。`maton linear issue view ABC-123`即可查看对应问题。
 
-### Q5：免费版有使用次数限制吗？
+### 已知限制
 A：免费版不限制使用次数，但批量操作、Webhook集成与高级分析功能需使用专业版。
 
-## 故障排查表
+## 错误处理
 
 | 现象 | 可能原因 | 解决方案 |
 |------|----------|----------|

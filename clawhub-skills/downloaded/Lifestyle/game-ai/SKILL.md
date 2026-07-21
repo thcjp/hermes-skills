@@ -8,40 +8,16 @@ summary: Game AI development guide covering behavior trees, state machines, path
 license: MIT
 description: |-
   Game AI development guide covering behavior trees, state machines, pathfinding,
-  and decision-maki...
-
-  核心能力:
-
-  - 生活工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 个人健康、生活管理、习惯养成
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: systems, development, guide, behavior, covering, game
+  and decision-maki。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
 - Lifestyle
 tools:
-- read
+  - - read
 - exec
----
-
 # Game AI Systems
-
 ## AI 架构选择
-
 ### 架构对比
-
+---
 ```yaml
 有限状态机 (FSM):
   优点: 简单、直观、易于调试
@@ -65,113 +41,12 @@ GOAP:
 ```
 
 ## 有限状态机 (FSM)
-
 ### 基础实现
 
-```csharp
-public enum EnemyState
-{
-    Idle,
-    Patrol,
-    Chase,
-    Attack,
-    Flee
-}
-
-public class EnemyFSM : Node
-{
-    private EnemyState _currentState;
-    private Dictionary<EnemyState, IState> _states;
-
-    public override void _Ready()
-    {
-        _states = new Dictionary<EnemyState, IState>
-        {
-            [EnemyState.Idle] = new IdleState(this),
-            [EnemyState.Patrol] = new PatrolState(this),
-            [EnemyState.Chase] = new ChaseState(this),
-            [EnemyState.Attack] = new AttackState(this),
-            [EnemyState.Flee] = new FleeState(this)
-        };
-
-        ChangeState(EnemyState.Idle);
-    }
-
-    public void ChangeState(EnemyState newState)
-    {
-        _states[_currentState]?.Exit();
-        _currentState = newState;
-        _states[_currentState]?.Enter();
-    }
-
-    public override void _Process(double delta)
-    {
-        _states[_currentState]?.Update(delta);
-    }
-}
-
-public interface IState
-{
-    void Enter();
-    void Update(double delta);
-    void Exit();
-}
-
-public class ChaseState : IState
-{
-    private readonly EnemyFSM _fsm;
-    private readonly CharacterBody2D _owner;
-    private NavigationAgent2D _navAgent;
-
-    public ChaseState(EnemyFSM fsm)
-    {
-        _fsm = fsm;
-        _owner = fsm.GetParent<CharacterBody2D>();
-        _navAgent = _owner.GetNode<NavigationAgent2D>("NavigationAgent2D");
-    }
-
-    public void Enter()
-    {
-        // 开始追逐动画
-        _owner.GetNode<AnimationPlayer>("AnimationPlayer").Play("run");
-    }
-
-    public void Update(double delta)
-    {
-        var player = GetTree().GetFirstNodeInGroup("player") as Node2D;
-        if (player == null) return;
-
-        // 更新目标位置
-        _navAgent.TargetPosition = player.GlobalPosition;
-
-        // 移动向玩家
-        var direction = _owner.ToLocal(_navAgent.GetNextPathPosition()).Normalized();
-        _owner.Velocity = direction * _owner.Speed;
-        _owner.MoveAndSlide();
-
-        // 检查距离
-        float distance = _owner.GlobalPosition.DistanceTo(player.GlobalPosition);
-        if (distance < 50)
-        {
-            _fsm.ChangeState(EnemyState.Attack);
-        }
-        else if (distance > 500)
-        {
-            _fsm.ChangeState(EnemyState.Patrol);
-        }
-    }
-
-    public void Exit()
-    {
-        _owner.Velocity = Vector2.Zero;
-    }
-}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ## 行为树 (Behavior Tree)
-
 ### 节点类型
-
 ```yaml
 复合节点:
   Sequence: 顺序执行（一个失败则失败）
@@ -190,120 +65,10 @@ public class ChaseState : IState
 
 ### 行为树实现
 
-```csharp
-public enum NodeStatus
-{
-    Running,
-    Success,
-    Failure
-}
-
-public abstract class BTNode
-{
-    public abstract NodeStatus Execute();
-}
-
-public class Sequence : BTNode
-{
-    private readonly List<BTNode> _children = new();
-    private int _currentChild = 0;
-
-    public Sequence(params BTNode[] children)
-    {
-        _children.AddRange(children);
-    }
-
-    public override NodeStatus Execute()
-    {
-        while (_currentChild < _children.Count)
-        {
-            var status = _children[_currentChild].Execute();
-
-            if (status == NodeStatus.Running)
-                return NodeStatus.Running;
-
-            if (status == NodeStatus.Failure)
-            {
-                _currentChild = 0;
-                return NodeStatus.Failure;
-            }
-
-            _currentChild++;
-        }
-
-        _currentChild = 0;
-        return NodeStatus.Success;
-    }
-}
-
-public class Selector : BTNode
-{
-    private readonly List<BTNode> _children = new();
-    private int _currentChild = 0;
-
-    public Selector(params BTNode[] children)
-    {
-        _children.AddRange(children);
-    }
-
-    public override NodeStatus Execute()
-    {
-        while (_currentChild < _children.Count)
-        {
-            var status = _children[_currentChild].Execute();
-
-            if (status == NodeStatus.Running)
-                return NodeStatus.Running;
-
-            if (status == NodeStatus.Success)
-            {
-                _currentChild = 0;
-                return NodeStatus.Success;
-            }
-
-            _currentChild++;
-        }
-
-        _currentChild = 0;
-        return NodeStatus.Failure;
-    }
-}
-
-// 使用示例
-public class EnemyAI : Node
-{
-    private BTNode _behaviorTree;
-
-    public override void _Ready()
-    {
-        _behaviorTree = new Selector(
-            // 优先攻击
-            new Sequence(
-                new Condition(IsPlayerInRange),
-                new Condition(HasAmmo),
-                new Action(Attack)
-            ),
-            // 追逐玩家
-            new Sequence(
-                new Condition(CanSeePlayer),
-                new Action(ChasePlayer)
-            ),
-            // 巡逻
-            new Action(Patrol)
-        );
-    }
-
-    public override void _Process(double delta)
-    {
-        _behaviorTree.Execute();
-    }
-}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ## 寻路算法
-
 ### A* 算法
-
 ```csharp
 public class AStar
 {
@@ -368,7 +133,6 @@ public class AStar
 ```
 
 ### Godot NavigationAgent2D
-
 ```csharp
 public class EnemyNavigation : CharacterBody2D
 {
@@ -425,187 +189,17 @@ public class EnemyNavigation : CharacterBody2D
 ```
 
 ## 群体行为
-
 ### Boids 算法
 
-```csharp
-public class Boid : Node2D
-{
-    private Vector2 _velocity;
-    private List<Boid> _neighbors = new();
-
-    public override void _Process(double delta)
-    {
-        // 更新邻居列表
-        UpdateNeighbors();
-
-        // 计算三个力
-        var separation = CalculateSeparation();
-        var alignment = CalculateAlignment();
-        var cohesion = CalculateCohesion();
-
-        // 合并力
-        var acceleration = separation * 1.5f + alignment * 1.0f + cohesion * 1.0f;
-
-        // 更新速度和位置
-        _velocity += acceleration * (float)delta;
-        _velocity = _velocity.LimitLength(MaxSpeed);
-
-        Position += _velocity * (float)delta;
-    }
-
-    private Vector2 CalculateSeparation()
-    {
-        var steer = Vector2.Zero;
-        int count = 0;
-
-        foreach (var neighbor in _neighbors)
-        {
-            float distance = Position.DistanceTo(neighbor.Position);
-            if (distance > 0 && distance < SeparationRadius)
-            {
-                var diff = Position - neighbor.Position;
-                diff = diff.Normalized() / distance;
-                steer += diff;
-                count++;
-            }
-        }
-
-        if (count > 0)
-            steer /= count;
-
-        return steer;
-    }
-
-    private Vector2 CalculateAlignment()
-    {
-        var avgVelocity = Vector2.Zero;
-        int count = 0;
-
-        foreach (var neighbor in _neighbors)
-        {
-            if (Position.DistanceTo(neighbor.Position) < AlignmentRadius)
-            {
-                avgVelocity += neighbor._velocity;
-                count++;
-            }
-        }
-
-        if (count > 0)
-        {
-            avgVelocity /= count;
-            avgVelocity = avgVelocity.Normalized() * MaxSpeed;
-            return avgVelocity - _velocity;
-        }
-
-        return Vector2.Zero;
-    }
-
-    private Vector2 CalculateCohesion()
-    {
-        var center = Vector2.Zero;
-        int count = 0;
-
-        foreach (var neighbor in _neighbors)
-        {
-            if (Position.DistanceTo(neighbor.Position) < CohesionRadius)
-            {
-                center += neighbor.Position;
-                count++;
-            }
-        }
-
-        if (count > 0)
-        {
-            center /= count;
-            return (center - Position).Normalized() * MaxSpeed - _velocity;
-        }
-
-        return Vector2.Zero;
-    }
-}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ## 决策系统
-
 ### 效用 AI
 
-```csharp
-public class UtilityAI
-{
-    private readonly List<UtilityAction> _actions = new();
-
-    public void AddAction(UtilityAction action)
-    {
-        _actions.Add(action);
-    }
-
-    public UtilityAction ChooseBestAction()
-    {
-        float bestScore = float.MinValue;
-        UtilityAction bestAction = null;
-
-        foreach (var action in _actions)
-        {
-            float score = action.CalculateScore();
-
-            // 添加随机性
-            score += GD.Randf() * 0.1f;
-
-            if (score > bestScore)
-            {
-                bestScore = score;
-                bestAction = action;
-            }
-        }
-
-        return bestAction;
-    }
-}
-
-public abstract class UtilityAction
-{
-    public abstract float CalculateScore();
-    public abstract void Execute();
-}
-
-public class AttackAction : UtilityAction
-{
-    private readonly Enemy _enemy;
-
-    public AttackAction(Enemy enemy)
-    {
-        _enemy = enemy;
-    }
-
-    public override float CalculateScore()
-    {
-        float score = 0f;
-
-        // 玩家距离近，分数高
-        float distance = _enemy.DistanceToPlayer();
-        score += Mathf.Clamp(1.0f - distance / 200.0f, 0, 1) * 0.5f;
-
-        // 有弹药，分数高
-        score += _enemy.HasAmmo ? 0.3f : 0.0f;
-
-        // 生命值高，更倾向于攻击
-        score += _enemy.HealthPercent * 0.2f;
-
-        return score;
-    }
-
-    public override void Execute()
-    {
-        _enemy.Attack();
-    }
-}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ## 感知系统
-
 ### 视觉感知
-
 ```csharp
 public class VisionSensor : Node2D
 {
@@ -674,18 +268,16 @@ public class VisionSensor : Node2D
 ```
 
 ## 参考资源
-
 * **行为树模式**: [references/behavior-trees.md](/api/v1/skills/game-ai/file?path=references%2Fbehavior-trees.md&ownerHandle=thb32133451)
 * **寻路算法**: [references/pathfinding.md](/api/v1/skills/game-ai/file?path=references%2Fpathfinding.md&ownerHandle=thb32133451)
 * **高级技术**: [references/advanced-ai.md](/api/v1/skills/game-ai/file?path=references%2Fadvanced-ai.md&ownerHandle=thb32133451)
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -696,3 +288,51 @@ public class VisionSensor : Node2D
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+- Game AI development guide covering behavior trees, state machines, pathfinding,
+  and decision-maki
+- 触发关键词: systems, development, guide, behavior, covering, game
+
+## 适用场景
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 示例
+### 示例1：基础用法
+```
+输入: 用户请求
+处理: 根据使用流程执行
+输出: 处理结果
+```
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+### Q1: 如何开始使用Game AI Systems？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Game AI Systems有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

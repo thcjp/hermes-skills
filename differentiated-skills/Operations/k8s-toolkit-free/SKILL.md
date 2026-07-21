@@ -3,40 +3,19 @@ slug: k8s-toolkit-free
 name: k8s-toolkit-free
 version: "1.0.0"
 displayName: K8s避坑入门工具
-summary: Kubernetes常见问题避坑指南，提供基础排查与最佳实践建议。
-license: MIT
+summary: Kubernetes常见问题避坑指南，提供基础排查与优选实践建议。
+license: Proprietary
 edition: free
 description: |-
   面向K8s初学者与个人开发者的常见问题避坑工具。总结Kubernetes
-  使用中的高频问题与陷阱，提供排查思路与解决方案。适合K8s入门
-  学习与日常问题排查。
-
-  核心能力:
-  - 常见问题避坑指南
-  - Pod/Service/Deployment基础排查
-  - 资源配置最佳实践
-  - 常用kubectl命令速查
-
-  适用场景:
-  - K8s初学者学习
-  - 日常问题排查
-  - 配置优化参考
-  - 命令速查手册
-
-  差异化:
-  - 免费版聚焦基础知识与避坑
-  - 适合个人开发者学习
-  - 不支持集群级管理
-  - 不支持高级运维自动化
-
-  触发关键词: K8s, Kubernetes, 避坑, 排查, Pod, Service, Deployment, kubectl, 问题诊断
+  使用中的高频问题与陷阱，提供排查思路与解决方案。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
 - Operations
 - Kubernetes
 - 运维
 - 学习
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -44,7 +23,7 @@ tools:
 
 ## 概述
 
-本工具为K8s初学者和个人开发者提供常见问题避坑指南。总结Kubernetes使用中的高频问题与陷阱，提供排查思路、解决方案和最佳实践建议，帮助用户快速解决日常K8s问题。
+本工具为K8s初学者和个人开发者提供常见问题避坑指南。总结Kubernetes使用中的高频问题与陷阱，提供排查思路、解决方案和优选实践建议，帮助用户快速解决日常K8s问题。
 
 ## 核心能力
 
@@ -74,7 +53,10 @@ tools:
 
 ## 使用场景
 
-### 场景一：Pod问题排查
+### 错误处理
+- 边界输入处理: 空输入返回提示信息, 超长输入自动截断
+- 降级策略: 异常时返回默认值, 确保流程不中断
+- 重试机制: 失败时自动重试, 最多3次
 
 用户输入："我的Pod一直处于CrashLoopBackOff状态"
 
@@ -111,7 +93,7 @@ tools:
 # 4. 常见原因：标签不匹配、端口不一致
 ```
 
-### 场景三：最佳实践检查
+### 场景三：优选实践检查
 
 用户输入："检查我的Deployment配置是否有问题"
 
@@ -120,7 +102,7 @@ tools:
 /k8s check deployment --name my-app
 
 # 输出建议：
-# [警告] 未设置resources限制
+# 已知限制
 # [建议] 添加liveness/readiness探针
 # [建议] 使用具体镜像版本而非latest
 # [建议] 配置PodDisruptionBudget
@@ -172,7 +154,7 @@ kubectl scale deployment <name> --replicas=3
 kubectl rollout status deployment/<name>
 ```
 
-## 配置示例
+## 示例
 
 ### 安全Deployment模板
 
@@ -218,7 +200,7 @@ spec:
           readOnlyRootFilesystem: true
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **资源限制必设**：所有容器必须设置requests和limits
 2. **镜像版本固定**：使用具体版本号，避免latest
@@ -258,7 +240,7 @@ spec:
 - **操作系统**: Windows / macOS / Linux
 - **kubectl**: 已配置集群访问（排查时需要）
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -275,3 +257,18 @@ spec:
 - **分类**: MD（纯Markdown指令知识库）
 - **说明**: K8s常见问题避坑指南与排查建议
 - **免费版限制**: 基础问题覆盖、不支持集群级诊断与自动修复
+
+<!-- 触发条件: 用户明确请求时激活 -->
+
+## 案例展示
+
+```json
+{
+  "input": "示例输入",
+  "output": "处理结果"
+}
+```
+
+## 输出格式
+
+处理结果以结构化格式返回, 包含状态码、消息和数据字段。

@@ -1,0 +1,1128 @@
+{
+  "timestamp": "2026-07-20T14:59:10.988335",
+  "total": 60,
+  "passed": 60,
+  "blocked": 0,
+  "results": [
+    {
+      "slug": "ai-artist-workstation",
+      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\ai-artist-workstation\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 2,
+      "score": "49/50 (A+)",
+      "price": "19.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        },
+        {
+          "severity": "WARN",
+          "category": "content",
+          "message": "缺少章节: 错误处理"
+        }
+      ],
+      "summary": "通过 | 0阻断 2警告 | 评分:49/50 (A+) | 定价:19.00元"
+    },
+    {
+      "slug": "ai-video-studio-pro",
+      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\ai-video-director\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 2,
+      "score": "44/50 (A)",
+      "price": "19.90元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        },
+        {
+          "severity": "WARN",
+          "category": "content",
+          "message": "缺少章节: 错误处理"
+        }
+      ],
+      "summary": "通过 | 0阻断 2警告 | 评分:44/50 (A) | 定价:19.90元"
+    },
+    {
+      "slug": "ai-writing-style-cloner",
+      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\ai-writing-style-cloner\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 2,
+      "score": "48/50 (A+)",
+      "price": "1.90元 (standard)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        },
+        {
+          "severity": "WARN",
+          "category": "content",
+          "message": "缺少章节: 错误处理"
+        }
+      ],
+      "summary": "通过 | 0阻断 2警告 | 评分:48/50 (A+) | 定价:1.90元"
+    },
+    {
+      "slug": "content-refiner",
+      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\content-refiner\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 2,
+      "score": "49/50 (A+)",
+      "price": "19.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        },
+        {
+          "severity": "WARN",
+          "category": "content",
+          "message": "缺少章节: 错误处理"
+        }
+      ],
+      "summary": "通过 | 0阻断 2警告 | 评分:49/50 (A+) | 定价:19.00元"
+    },
+    {
+      "slug": "fortune-reading-studio",
+      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\cyber-fortune-teller\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 2,
+      "score": "44/50 (A)",
+      "price": "50.00元 (enterprise)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        },
+        {
+          "severity": "WARN",
+          "category": "content",
+          "message": "缺少章节: 错误处理"
+        }
+      ],
+      "summary": "通过 | 0阻断 2警告 | 评分:44/50 (A) | 定价:50.00元"
+    },
+    {
+      "slug": "drama-hit-producer",
+      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\drama-hit-producer\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 2,
+      "score": "47.5/50 (A+)",
+      "price": "1.90元 (standard)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        },
+        {
+          "severity": "WARN",
+          "category": "content",
+          "message": "缺少章节: 错误处理"
+        }
+      ],
+      "summary": "通过 | 0阻断 2警告 | 评分:47.5/50 (A+) | 定价:1.90元"
+    },
+    {
+      "slug": "ebook-factory",
+      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\ebook-factory\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 2,
+      "score": "48/50 (A+)",
+      "price": "1.90元 (standard)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        },
+        {
+          "severity": "WARN",
+          "category": "content",
+          "message": "缺少章节: 错误处理"
+        }
+      ],
+      "summary": "通过 | 0阻断 2警告 | 评分:48/50 (A+) | 定价:1.90元"
+    },
+    {
+      "slug": "ecommerce-pricing-strategist",
+      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\ecommerce-pricing-strategist\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 2,
+      "score": "48.5/50 (A+)",
+      "price": "19.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        },
+        {
+          "severity": "WARN",
+          "category": "content",
+          "message": "缺少章节: 错误处理"
+        }
+      ],
+      "summary": "通过 | 0阻断 2警告 | 评分:48.5/50 (A+) | 定价:19.00元"
+    },
+    {
+      "slug": "hook-retention-master",
+      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\hook-retention-master\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 2,
+      "score": "49/50 (A+)",
+      "price": "1.90元 (standard)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        },
+        {
+          "severity": "WARN",
+          "category": "content",
+          "message": "缺少章节: 错误处理"
+        }
+      ],
+      "summary": "通过 | 0阻断 2警告 | 评分:49/50 (A+) | 定价:1.90元"
+    },
+    {
+      "slug": "intel-sentinel",
+      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\intel-sentinel\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 2,
+      "score": "49.5/50 (A+)",
+      "price": "15.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        },
+        {
+          "severity": "WARN",
+          "category": "content",
+          "message": "缺少章节: 错误处理"
+        }
+      ],
+      "summary": "通过 | 0阻断 2警告 | 评分:49.5/50 (A+) | 定价:15.00元"
+    },
+    {
+      "slug": "novel-autopilot",
+      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\novel-autopilot\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 2,
+      "score": "49.5/50 (A+)",
+      "price": "1.90元 (standard)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        },
+        {
+          "severity": "WARN",
+          "category": "content",
+          "message": "缺少章节: 错误处理"
+        }
+      ],
+      "summary": "通过 | 0阻断 2警告 | 评分:49.5/50 (A+) | 定价:1.90元"
+    },
+    {
+      "slug": "poetry-craftsman",
+      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\poetry-craftsman\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 2,
+      "score": "49/50 (A+)",
+      "price": "19.90元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        },
+        {
+          "severity": "WARN",
+          "category": "content",
+          "message": "缺少章节: 错误处理"
+        }
+      ],
+      "summary": "通过 | 0阻断 2警告 | 评分:49/50 (A+) | 定价:19.90元"
+    },
+    {
+      "slug": "sales-copy-writer",
+      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\sales-copy-writer\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 2,
+      "score": "49/50 (A+)",
+      "price": "19.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        },
+        {
+          "severity": "WARN",
+          "category": "content",
+          "message": "缺少章节: 错误处理"
+        }
+      ],
+      "summary": "通过 | 0阻断 2警告 | 评分:49/50 (A+) | 定价:19.00元"
+    },
+    {
+      "slug": "seo-doctor",
+      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\seo-doctor\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 2,
+      "score": "49.5/50 (A+)",
+      "price": "19.90元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        },
+        {
+          "severity": "WARN",
+          "category": "content",
+          "message": "缺少章节: 错误处理"
+        }
+      ],
+      "summary": "通过 | 0阻断 2警告 | 评分:49.5/50 (A+) | 定价:19.90元"
+    },
+    {
+      "slug": "seo-rank-monopolizer",
+      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\seo-rank-monopolizer\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 2,
+      "score": "48/50 (A+)",
+      "price": "19.90元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        },
+        {
+          "severity": "WARN",
+          "category": "content",
+          "message": "缺少章节: 错误处理"
+        }
+      ],
+      "summary": "通过 | 0阻断 2警告 | 评分:48/50 (A+) | 定价:19.90元"
+    },
+    {
+      "slug": "stealth-browser-assistant",
+      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\stealth-browser-assistant\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 2,
+      "score": "49/50 (A+)",
+      "price": "50.00元 (enterprise)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        },
+        {
+          "severity": "WARN",
+          "category": "content",
+          "message": "缺少章节: 错误处理"
+        }
+      ],
+      "summary": "通过 | 0阻断 2警告 | 评分:49/50 (A+) | 定价:50.00元"
+    },
+    {
+      "slug": "title-hook-factory",
+      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\title-hook-factory\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 2,
+      "score": "49.5/50 (A+)",
+      "price": "1.90元 (standard)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        },
+        {
+          "severity": "WARN",
+          "category": "content",
+          "message": "缺少章节: 错误处理"
+        }
+      ],
+      "summary": "通过 | 0阻断 2警告 | 评分:49.5/50 (A+) | 定价:1.90元"
+    },
+    {
+      "slug": "topic-hunter",
+      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\topic-hunter\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 2,
+      "score": "48.5/50 (A+)",
+      "price": "1.90元 (standard)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        },
+        {
+          "severity": "WARN",
+          "category": "content",
+          "message": "缺少章节: 错误处理"
+        }
+      ],
+      "summary": "通过 | 0阻断 2警告 | 评分:48.5/50 (A+) | 定价:1.90元"
+    },
+    {
+      "slug": "viral-decoder",
+      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\viral-decoder\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 2,
+      "score": "49.5/50 (A+)",
+      "price": "1.90元 (standard)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        },
+        {
+          "severity": "WARN",
+          "category": "content",
+          "message": "缺少章节: 错误处理"
+        }
+      ],
+      "summary": "通过 | 0阻断 2警告 | 评分:49.5/50 (A+) | 定价:1.90元"
+    },
+    {
+      "slug": "viral-prophet",
+      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\viral-prophet\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 2,
+      "score": "49/50 (A+)",
+      "price": "1.90元 (standard)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        },
+        {
+          "severity": "WARN",
+          "category": "content",
+          "message": "缺少章节: 错误处理"
+        }
+      ],
+      "summary": "通过 | 0阻断 2警告 | 评分:49/50 (A+) | 定价:1.90元"
+    },
+    {
+      "slug": "api-design-architect",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\api-design-architect\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "49.5/50 (A+)",
+      "price": "12.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:49.5/50 (A+) | 定价:12.00元"
+    },
+    {
+      "slug": "auth-security-architect",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\auth-security-architect\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "49/50 (A+)",
+      "price": "50.00元 (enterprise)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:49/50 (A+) | 定价:50.00元"
+    },
+    {
+      "slug": "azure-cloud-automator",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\azure-cloud-automator\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "48/50 (A+)",
+      "price": "29.00元 (premium)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:48/50 (A+) | 定价:29.00元"
+    },
+    {
+      "slug": "requirement-explorer-pro",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\brainstorm-facilitator\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "43.8/50 (A)",
+      "price": "12.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:43.8/50 (A) | 定价:12.00元"
+    },
+    {
+      "slug": "brand-identity-creator",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\brand-identity-creator\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "47/50 (A+)",
+      "price": "12.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:47/50 (A+) | 定价:12.00元"
+    },
+    {
+      "slug": "c-suite-advisor",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\c-suite-advisor\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "47/50 (A+)",
+      "price": "19.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:47/50 (A+) | 定价:19.00元"
+    },
+    {
+      "slug": "canvas-art-designer",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\canvas-art-designer\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "48/50 (A+)",
+      "price": "12.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:48/50 (A+) | 定价:12.00元"
+    },
+    {
+      "slug": "clickhouse-olap-expert",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\clickhouse-analytics\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "44.4/50 (A)",
+      "price": "19.90元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:44.4/50 (A) | 定价:19.90元"
+    },
+    {
+      "slug": "cloudflare-edge-developer",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\cloudflare-edge-developer\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "49.5/50 (A+)",
+      "price": "12.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:49.5/50 (A+) | 定价:12.00元"
+    },
+    {
+      "slug": "code-review-sentinel",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\code-review-sentinel\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "49/50 (A+)",
+      "price": "12.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:49/50 (A+) | 定价:12.00元"
+    },
+    {
+      "slug": "competitive-ad-spy",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\competitive-ad-spy\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "47.5/50 (A+)",
+      "price": "19.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:47.5/50 (A+) | 定价:19.00元"
+    },
+    {
+      "slug": "compliance-manager",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\compliance-manager\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "46/50 (A+)",
+      "price": "50.00元 (enterprise)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:46/50 (A+) | 定价:50.00元"
+    },
+    {
+      "slug": "content-cms-architect",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\content-cms-architect\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "46.5/50 (A+)",
+      "price": "1.90元 (standard)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:46.5/50 (A+) | 定价:1.90元"
+    },
+    {
+      "slug": "copywriting-master",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\copywriting-master\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "46.5/50 (A+)",
+      "price": "1.90元 (standard)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:46.5/50 (A+) | 定价:1.90元"
+    },
+    {
+      "slug": "csv-insight-miner",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\csv-insight-miner\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "47/50 (A+)",
+      "price": "15.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:47/50 (A+) | 定价:15.00元"
+    },
+    {
+      "slug": "debug-doctor",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\debug-doctor\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "49/50 (A+)",
+      "price": "8.90元 (professional)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:49/50 (A+) | 定价:8.90元"
+    },
+    {
+      "slug": "deep-research-engine",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\deep-research-engine\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "48/50 (A+)",
+      "price": "19.90元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:48/50 (A+) | 定价:19.90元"
+    },
+    {
+      "slug": "docx-document-master",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\docx-document-master\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "46/50 (A+)",
+      "price": "1.90元 (standard)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:46/50 (A+) | 定价:1.90元"
+    },
+    {
+      "slug": "duckdb-analytics-engine",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\duckdb-analytics-engine\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "48/50 (A+)",
+      "price": "15.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:48/50 (A+) | 定价:15.00元"
+    },
+    {
+      "slug": "lead-research-hunter",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\lead-research-hunter\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "48/50 (A+)",
+      "price": "19.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:48/50 (A+) | 定价:19.00元"
+    },
+    {
+      "slug": "legal-doc-reviewer",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\legal-assistant-pro\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "45.6/50 (A+)",
+      "price": "15.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:45.6/50 (A+) | 定价:15.00元"
+    },
+    {
+      "slug": "mcp-toolkit-builder",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\mcp-server-builder\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "44/50 (A)",
+      "price": "19.90元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:44/50 (A) | 定价:19.90元"
+    },
+    {
+      "slug": "nextjs-fullstack-guide",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\nextjs-fullstack-guide\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "47.5/50 (A+)",
+      "price": "12.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:47.5/50 (A+) | 定价:12.00元"
+    },
+    {
+      "slug": "pdf-workflow-suite",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\pdf-toolkit-pro\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "42/50 (A)",
+      "price": "0元 (free)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:42/50 (A) | 定价:0元"
+    },
+    {
+      "slug": "performance-optimizer-pro",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\performance-optimizer-pro\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "47.5/50 (A+)",
+      "price": "12.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:47.5/50 (A+) | 定价:12.00元"
+    },
+    {
+      "slug": "plan-architect",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\plan-architect\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "46.5/50 (A+)",
+      "price": "19.90元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:46.5/50 (A+) | 定价:19.90元"
+    },
+    {
+      "slug": "pptx-presentation-pro",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\pptx-presentation-pro\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "49/50 (A+)",
+      "price": "15.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:49/50 (A+) | 定价:15.00元"
+    },
+    {
+      "slug": "react-video-composer",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\remotion-video-studio\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "44/50 (A)",
+      "price": "19.90元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:44/50 (A) | 定价:19.90元"
+    },
+    {
+      "slug": "research-article-crafter",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\research-article-crafter\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "46.5/50 (A+)",
+      "price": "1.90元 (standard)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:46.5/50 (A+) | 定价:1.90元"
+    },
+    {
+      "slug": "scientific-research-assistant",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\scientific-research-assistant\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "47/50 (A+)",
+      "price": "15.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:47/50 (A+) | 定价:15.00元"
+    },
+    {
+      "slug": "security-hardening-shield",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\security-hardening-shield\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "47.5/50 (A+)",
+      "price": "50.00元 (enterprise)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:47.5/50 (A+) | 定价:50.00元"
+    },
+    {
+      "slug": "seo-audit-master",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\seo-audit-master\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "49.5/50 (A+)",
+      "price": "19.90元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:49.5/50 (A+) | 定价:19.90元"
+    },
+    {
+      "slug": "stripe-payment-integrator",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\stripe-payment-integrator\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "49.5/50 (A+)",
+      "price": "19.90元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:49.5/50 (A+) | 定价:19.90元"
+    },
+    {
+      "slug": "terraform-iac-architect",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\terraform-iac-architect\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "47.5/50 (A+)",
+      "price": "12.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:47.5/50 (A+) | 定价:12.00元"
+    },
+    {
+      "slug": "test-driven-coder",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\test-driven-coder\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "47/50 (A+)",
+      "price": "12.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:47/50 (A+) | 定价:12.00元"
+    },
+    {
+      "slug": "theme-stylist",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\theme-stylist\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "48.5/50 (A+)",
+      "price": "12.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:48.5/50 (A+) | 定价:12.00元"
+    },
+    {
+      "slug": "twitter-viral-optimizer",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\twitter-viral-optimizer\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "48/50 (A+)",
+      "price": "1.90元 (standard)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:48/50 (A+) | 定价:1.90元"
+    },
+    {
+      "slug": "web-artifact-studio",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\web-artifact-studio\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "48.5/50 (A+)",
+      "price": "29.00元 (premium)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:48.5/50 (A+) | 定价:29.00元"
+    },
+    {
+      "slug": "web-scraper-engine",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\web-scraper-engine\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "48/50 (A+)",
+      "price": "15.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:48/50 (A+) | 定价:15.00元"
+    },
+    {
+      "slug": "xlsx-data-wizard",
+      "skill_md": "d:\\skills\\opensource-skills\\packaged\\xlsx-data-wizard\\SKILL.md",
+      "passed": true,
+      "blocker_count": 0,
+      "warning_count": 1,
+      "score": "47/50 (A+)",
+      "price": "15.00元 (business)",
+      "issues": [
+        {
+          "severity": "WARN",
+          "category": "frontmatter",
+          "message": "description过短: 2字符(建议150+)"
+        }
+      ],
+      "summary": "通过 | 0阻断 1警告 | 评分:47/50 (A+) | 定价:15.00元"
+    }
+  ]
+}

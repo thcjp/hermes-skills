@@ -1,0 +1,74 @@
+{
+  "slug": "youtube-watcher",
+  "verified_at": "2026-07-20T23:08:35.967192",
+  "verifier_version": "1.0",
+  "skill_md_path": "d:\\skills\\packaged-skills\\skillhub\\youtube-watcher\\SKILL.md",
+  "total_deps": 3,
+  "dependencies_extracted": [
+    {
+      "type": "ai_model",
+      "name": "Claude",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "chinese_api_service",
+      "name": "无需额外API",
+      "verification_method": "需人工验证(无URL无法自动检查)",
+      "verified": false,
+      "status": "manual_review",
+      "is_paid": false,
+      "context": "ent内置LLM提供 |  ### API Key 配置 - 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)  ### 可用性分类 - **分类**: MD+EXEC("
+    },
+    {
+      "type": "chinese_api_service",
+      "name": "除内容中明确标注的外部API",
+      "verification_method": "需人工验证(无URL无法自动检查)",
+      "verified": false,
+      "status": "manual_review",
+      "is_paid": false,
+      "context": "### API Key 配置 - 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)  ### 可用性分类 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要e"
+    }
+  ],
+  "verification_results": [
+    {
+      "type": "ai_model",
+      "name": "Claude",
+      "verification_method": "已知模型列表比对",
+      "verified_at": "2026-07-20T23:08:35.969711",
+      "verified": true,
+      "status": "known_model",
+      "details": "已知AI模型: Claude"
+    },
+    {
+      "type": "chinese_api_service",
+      "name": "无需额外API",
+      "verification_method": "需人工验证(无URL无法自动检查)",
+      "verified_at": "2026-07-20T23:08:35.969711",
+      "verified": false,
+      "status": "manual_review_required",
+      "is_paid": false,
+      "context": "ent内置LLM提供 |  ### API Key 配置 - 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)  ### 可用性分类 - **分类**: MD+EXEC(",
+      "details": "中文名称外部API服务\"无需额外API\"无法自动验证, 需人工确认:\n  1. 搜索该服务是否真实存在\n  2. 检查API文档和定价是否与SKILL.md描述一致\n  3. 确认国内可用性和访问方式\n  上下文: ent内置LLM提供 |  ### API Key 配置 - 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)  ### 可用性分类 - **分类**: MD+EXEC("
+    },
+    {
+      "type": "chinese_api_service",
+      "name": "除内容中明确标注的外部API",
+      "verification_method": "需人工验证(无URL无法自动检查)",
+      "verified_at": "2026-07-20T23:08:35.969711",
+      "verified": false,
+      "status": "manual_review_required",
+      "is_paid": false,
+      "context": "### API Key 配置 - 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)  ### 可用性分类 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要e",
+      "details": "中文名称外部API服务\"除内容中明确标注的外部API\"无法自动验证, 需人工确认:\n  1. 搜索该服务是否真实存在\n  2. 检查API文档和定价是否与SKILL.md描述一致\n  3. 确认国内可用性和访问方式\n  上下文: ### API Key 配置 - 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)  ### 可用性分类 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要e"
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "verified": 1,
+    "manual_review_required": 2,
+    "failed": 0,
+    "overall_status": "PASS"
+  }
+}

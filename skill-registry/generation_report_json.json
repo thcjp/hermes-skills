@@ -1,0 +1,123 @@
+{
+  "slug": "json",
+  "started_at": "2026-07-20T23:09:27.512287",
+  "template_used": "pipeline_template",
+  "l1_result": {
+    "status": "PASS",
+    "passed": true,
+    "score": "10/10",
+    "details": {
+      "skill": "json",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\json\\SKILL.md",
+      "overall_passed": true,
+      "total_checks": 10,
+      "passed_checks": 10,
+      "failed_checks": 0,
+      "checks": [
+        {
+          "name": "去标识化",
+          "passed": true,
+          "severity": "low",
+          "details": [
+            "无标识残留"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "slug==name==folder一致性",
+          "passed": true,
+          "severity": "high",
+          "details": [
+            "slug=name=folder='json'"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "行数≤500",
+          "passed": true,
+          "severity": "high",
+          "details": [
+            "当前165行 (上限500)"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "frontmatter 8必需字段",
+          "passed": true,
+          "severity": "high",
+          "details": [
+            "8字段齐全: ['slug', 'name', 'version', 'displayName', 'summary', 'license', 'description', 'tools']"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "displayName≤20字符",
+          "passed": true,
+          "severity": "medium",
+          "details": [
+            "当前4字符: 'JSON' (上限20)"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "summary≤100字符",
+          "passed": true,
+          "severity": "medium",
+          "details": [
+            "当前68字符 (上限100)"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "tools为YAML数组",
+          "passed": true,
+          "severity": "low",
+          "details": [
+            "数组格式: ['- read']"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "frontmatter无XML尖括号",
+          "passed": true,
+          "severity": "low",
+          "details": [
+            "无尖括号"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "无占位符",
+          "passed": true,
+          "severity": "medium",
+          "details": [
+            "无占位符"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "无夸大词",
+          "passed": true,
+          "severity": "medium",
+          "details": [
+            "无夸大词"
+          ],
+          "issue_count": 0
+        }
+      ],
+      "checked_at": "2026-07-20T23:09:27.576676"
+    },
+    "duration_sec": 0.07
+  },
+  "dep_verify_result": {
+    "status": "SKIPPED"
+  },
+  "l2_result": {
+    "status": "SKIPPED"
+  },
+  "overall_passed": true,
+  "output_path": "d:\\skills\\packaged-skills\\skillhub\\json\\SKILL.md",
+  "errors": [],
+  "completed_at": "2026-07-20T23:09:27.581702",
+  "total_duration_sec": 0.07
+}

@@ -4,12 +4,10 @@ name: go-linter-config-tool-free
 version: "1.0.0"
 displayName: Go Lint 配置工具
 summary: 面向个人 Go 项目的 golangci-lint 配置与排障工具，快速起步。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向个人 Go 开发者的 golangci-lint 配置与排障工具。
-
-  核心能力:
+  面向个人 Go 开发者的 golangci-lint 配置与排障工具。核心能力:
   - 最小与标准两套配置模板
   - 常见导入解析、类型检查、CI 排障
   - 基础 linter 选用指南
@@ -20,9 +18,7 @@ description: |-
   - CI 环境导入解析报错快速修复
   - 本地开发期格式与静态检查
 
-  差异化: 免费版聚焦单项目本地与基础 CI 场景，提供最小/标准模板与排障清单，零成本接入。
-
-  触发关键词: golangci-lint, lint 配置, go 静态检查, 排障, gofmt, govet, linter, ci
+  差异化: 免费版聚焦单项目本地与基础 CI 场景，提供最小/标准模板与排障清单，零成本接入
 tags:
 - Go
 - 代码质量
@@ -30,10 +26,9 @@ tags:
 - 个人效率
 - 其他工具
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Go Lint 配置工具（免费版）
 
 ## 概述
@@ -54,7 +49,7 @@ tools:
 ### 场景一：个人项目接入 lint
 
 ```bash
-# 安装（任选其一）
+# 依赖说明
 # macOS / Linux (Homebrew)
 brew install golangci-lint
 # 通用 (Go 工具链)
@@ -112,6 +107,20 @@ linters-settings:
     checks: ["all"]
 ```
 
+## 不适用场景
+
+以下场景Go Lint 配置工具不适合处理：
+
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 运维部署管理
+
+
+## 触发条件
+
+需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 1. 安装 golangci-lint。
@@ -124,7 +133,7 @@ linters-settings:
 golangci-lint run --config .golangci.yml ./...
 ```
 
-## 配置示例
+## 示例
 
 基础 linter 选用：
 
@@ -240,3 +249,15 @@ CI lint 报错
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 命令行执行）
 - **说明**: 通过自然语言指令驱动 Agent 生成配置并运行 lint
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 本地运行，不支持多设备同步

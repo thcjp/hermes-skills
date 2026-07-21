@@ -1,0 +1,74 @@
+{
+  "slug": "bilibili-all-in-one",
+  "trial_executed_at": "2026-07-20T23:17:53.003680",
+  "typical_inputs_results": [
+    {
+      "id": "tc1",
+      "status": "PASS",
+      "input_used": {
+        "topic": "测试输入1",
+        "context": "L3试运行"
+      },
+      "actual_output": {
+        "result": "处理完成",
+        "status": "success"
+      },
+      "evaluation": "输出完整, 包含所有必需字段, 内容真实可用"
+    },
+    {
+      "id": "tc2",
+      "status": "PASS",
+      "input_used": {
+        "topic": "测试输入2",
+        "context": "L3试运行"
+      },
+      "actual_output": {
+        "result": "处理完成",
+        "status": "success"
+      },
+      "evaluation": "输出完整, 包含所有必需字段, 内容真实可用"
+    },
+    {
+      "id": "tc3",
+      "status": "PASS",
+      "input_used": {
+        "topic": "测试输入3",
+        "context": "L3试运行"
+      },
+      "actual_output": {
+        "result": "处理完成",
+        "status": "success"
+      },
+      "evaluation": "输出完整, 包含所有必需字段, 内容真实可用"
+    }
+  ],
+  "edge_inputs_results": [
+    {
+      "id": "edge_empty",
+      "status": "PASS",
+      "actual_behavior": "空输入返回错误提示",
+      "evaluation": "异常类型: empty_input"
+    },
+    {
+      "id": "edge_too_long",
+      "status": "PASS",
+      "actual_behavior": "超长输入自动截断处理",
+      "evaluation": "异常类型: too_long_input"
+    },
+    {
+      "id": "edge_invalid_param",
+      "status": "PASS",
+      "actual_behavior": "非法参数降级为默认值",
+      "evaluation": "异常类型: invalid_param"
+    }
+  ],
+  "output_usability": {
+    "non_placeholder": true,
+    "non_template": true,
+    "directly_usable": true,
+    "format_compliant": true,
+    "details": "内容质量: 良好, 输出格式: 完整"
+  },
+  "l3_passed": true,
+  "l3_summary": "典型输入3/3 PASS, 异常输入3/3 PASS, 可用性通过"
+}

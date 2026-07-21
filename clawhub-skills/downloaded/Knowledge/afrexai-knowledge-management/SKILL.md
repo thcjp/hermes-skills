@@ -2,49 +2,24 @@
 slug: afrexai-knowledge-management
 name: afrexai-knowledge-management
 version: "1.0.0"
-displayName: Knowledge Management System
+displayName: Afrexai Knowledge Ma
 summary: Organize, document, and maintain critical organizational knowledge with audits,
   taxonomy, templat...
 license: MIT
 description: |-
   Organize, document, and maintain critical organizational knowledge with
-  audits, taxonomy, templat...
-
-  核心能力:
-
-  - 知识管理领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 知识捕获、文档管理、信息整理
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: organizational, knowledge, organize, system, document, critical, afrexai,
-  management
+  audits, taxonomy, templat。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Knowledge
 tools:
-- read
+  - - read
 - exec
----
-
 # Knowledge Management System
-
+---
 > Turn tribal knowledge into searchable, maintained organizational intelligence. Stop losing expertise when people leave.
 
 ## Phase 1: Knowledge Audit
-
 ### Current State Assessment
-
 Score each dimension 1-5 (1=nonexistent, 5=excellent):
 
 | Dimension | Score | Evidence |
@@ -68,31 +43,9 @@ Interpretation:
 
 ### Knowledge Risk Register
 
-```yaml
-knowledge_risk:
-  single_points_of_failure:
-    - person: "[Name]"
-      unique_knowledge: "[What only they know]"
-      risk_if_leaves: "high|medium|low"
-      extraction_priority: 1
-      extraction_method: "interview|shadowing|recording|pair-work"
-
-  undocumented_processes:
-    - process: "[Name]"
-      frequency: "daily|weekly|monthly|quarterly"
-      complexity: "high|medium|low"
-      current_owner: "[Name]"
-      documentation_priority: 1
-
-  tribal_knowledge:
-    - topic: "[What people 'just know']"
-      holders: ["[Name1]", "[Name2]"]
-      impact_area: "[What breaks without it]"
-      capture_method: "interview|workshop|write-up"
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### Knowledge Extraction Interview Guide
-
 For each single-point-of-failure person:
 
 1. **Context**: "I'm documenting [X] so the team isn't dependent on any one person. This protects you too — less interruptions."
@@ -105,68 +58,10 @@ For each single-point-of-failure person:
 
 **Output format**: Write up as a runbook (see Phase 3 templates).
 
----
-
 ## Phase 2: Knowledge Architecture
 
-### Taxonomy Design
-
-```yaml
-knowledge_taxonomy:
-  # Level 1: Knowledge Types
-  types:
-    how_to:
-      description: "Step-by-step procedures and guides"
-      examples: ["Deploy to production", "Process a refund", "Set up dev environment"]
-      template: "runbook"
-
-    reference:
-      description: "Facts, specs, configurations to look up"
-      examples: ["API endpoints", "Config values", "Vendor contacts", "Pricing tables"]
-      template: "reference_doc"
-
-    explanation:
-      description: "Why things work the way they do"
-      examples: ["Architecture decisions", "Policy rationale", "Historical context"]
-      template: "explainer"
-
-    decision:
-      description: "How to make specific judgment calls"
-      examples: ["Escalation criteria", "Approval thresholds", "Priority frameworks"]
-      template: "decision_tree"
-
-    troubleshooting:
-      description: "Diagnosis and fix for known problems"
-      examples: ["Error codes", "Common failures", "Debug procedures"]
-      template: "troubleshooting_guide"
-
-  # Level 2: Domains (customize per org)
-  domains:
-    - engineering
-    - product
-    - sales
-    - operations
-    - finance
-    - hr_people
-    - customer_success
-    - security
-    - legal_compliance
-
-  # Level 3: Topics (within each domain)
-  # Example for engineering:
-  engineering_topics:
-    - architecture
-    - deployment
-    - monitoring
-    - incident_response
-    - development_workflow
-    - testing
-    - security
-    - infrastructure
-```
-
+> 详细内容已移至 `references/detail.md` - ### Taxonomy Design
 ### Information Architecture Rules
-
 1. **Maximum 3 levels deep** — if deeper, reorganize
 2. **One canonical location per topic** — link, don't duplicate
 3. **Every page has an owner** — no orphan docs
@@ -175,7 +70,6 @@ knowledge_taxonomy:
 6. **Search-first design** — assume people search, not browse
 
 ### Naming Conventions
-
 ```text
 [DOMAIN]-[TYPE]-[TOPIC]-[SPECIFICS]
 
@@ -188,14 +82,12 @@ product-explain-auth-architecture
 ```
 
 ### Navigation Structure
-
 ```yaml
 knowledge_base:
   homepage:
     - quick_links:  # Top 10 most-accessed pages
     - recently_updated:  # Last 10 changes
     - needs_review:  # Stale docs flagged
-
   by_audience:
     new_hire: "[Onboarding path → essential reading list]"
     engineer: "[Dev setup → architecture → deployment → debugging]"
@@ -206,114 +98,25 @@ knowledge_base:
   by_type: "[How-to | Reference | Explanations | Decisions | Troubleshooting]"
 ```
 
----
-
 ## Phase 3: Document Templates
-
 ### Runbook Template (How-To)
 
-```markdown
-
-**Owner:** [Name]
-**Last verified:** [YYYY-MM-DD]
-**Estimated time:** [X minutes]
-**Difficulty:** Easy | Medium | Advanced
-
-## Prerequisites
-- [ ] [Access/tool/permission needed]
-- [ ] [Knowledge assumed]
-
-## Steps
-
-### 1. [First action]
-[Specific instruction with exact commands, clicks, or actions]
-
-> ⚠️ [Warning about common mistake at this step]
-
-### 2. [Second action]
-[Instructions]
-
-**Expected result:** [What you should see/get]
-
-### 3. [Continue...]
-
-## Verification
-- [ ] [How to confirm it worked]
-- [ ] [What to check]
-
-## Troubleshooting
-| Problem | Likely Cause | Fix |
-|---------|-------------|-----|
-| [Symptom] | [Why] | [Steps] |
-
-## Related
-- [Link to related runbook]
-- [Link to reference doc]
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### Reference Document Template
 
-```markdown
-
-**Owner:** [Name]
-**Last verified:** [YYYY-MM-DD]
-**Scope:** [What this covers and doesn't cover]
-
-## Overview
-[1-2 sentence summary of what this reference contains]
-
-## [Main content organized as tables, lists, or structured data]
-
-| Item | Value | Notes |
-|------|-------|-------|
-| | | |
-
-## Quick Lookup
-[Most frequently needed items at the top]
-
-## Change Log
-| Date | Change | By |
-|------|--------|-----|
-| | | |
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### Architecture Decision Record (ADR)
 
-```markdown
+> 详细代码示例已移至 `references/detail.md`
 
-**Status:** Proposed | Accepted | Deprecated | Superseded by ADR-[NNN]
-**Date:** [YYYY-MM-DD]
-**Deciders:** [Names]
-
-## Context
-[What situation or problem prompted this decision?]
-
-## Decision
-[What was decided and why?]
-
-## Alternatives Considered
-| Option | Pros | Cons | Why rejected |
-|--------|------|------|-------------|
-| [A] | | | |
-| [B] | | | |
-
-## Consequences
-- **Positive:** [Benefits]
-- **Negative:** [Tradeoffs accepted]
-- **Risks:** [What could go wrong]
-
-## Review Date
-[When should this be revisited?]
-```
-
-### Troubleshooting Guide Template
-
+### 错误处理
 ```markdown
 
 **Owner:** [Name]
 **Last verified:** [YYYY-MM-DD]
 
-## Quick Diagnostic
 ```
 
 [Flowchart as text]
@@ -323,61 +126,14 @@ Is [X] happening?
 → YES: Go to Problem B
 → NO: Go to Problem C
 
-```text
-## Problem A: [Symptom Description]
-
-**Likely causes (in order of probability):**
-1. [Most common cause]
-2. [Second most common]
-3. [Rare but possible]
-
-**Fix for Cause 1:**
-[Step-by-step resolution]
-
-**Fix for Cause 2:**
-[Step-by-step resolution]
-
-**Escalation:** If none of the above work → [who to contact, what info to provide]
-
-## Problem B: [Next symptom]
-[Same structure]
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### Decision Tree Template
 
-```markdown
-
-**Owner:** [Name]
-**Last verified:** [YYYY-MM-DD]
-
-## When to use this guide
-[Situation that triggers this decision]
-
-## Decision Flow
-
-### Step 1: [First question]
-- **If [condition A]** → [Action/next step]
-- **If [condition B]** → [Action/next step]
-- **If unsure** → [Default action or escalation]
-
-### Step 2: [Second question based on Step 1 answer]
-[Continue branching]
-
-## Override conditions
-[When to ignore this guide and escalate instead]
-
-## Examples
-| Scenario | Decision | Reasoning |
-|----------|----------|-----------|
-| [Real example] | [What was decided] | [Why] |
-```
-
----
+> 详细代码示例已移至 `references/detail.md`
 
 ## Phase 4: Contribution System
-
 ### Writing Standards
-
 **The 4C Test** (every document must pass all four):
 
 1. **Clear** — Would a new hire understand this? No jargon without definitions.
@@ -396,37 +152,9 @@ Is [X] happening?
 
 ### Contribution Workflow
 
-```yaml
-contribution_workflow:
-  create:
-    trigger: "New knowledge identified (incident learnings, process change, new tool)"
-    steps:
-      - choose_template: "Match content type to template"
-      - draft: "Write using template structure"
-      - self_review: "Run 4C Test checklist"
-      - peer_review: "SME validates accuracy"
-      - publish: "Add to knowledge base in correct location"
-      - announce: "Notify relevant teams/channels"
-
-  update:
-    trigger: "Existing doc is wrong, incomplete, or stale"
-    steps:
-      - flag: "Mark as needs-update with reason"
-      - update: "Make changes, update 'Last verified' date"
-      - review: "If significant change, get peer review"
-      - publish: "Update in place"
-      - notify: "If behavioral change, announce"
-
-  retire:
-    trigger: "Doc no longer relevant (deprecated system, changed process)"
-    steps:
-      - mark: "Status: Deprecated, add redirect to replacement"
-      - archive: "Move to archive after 30 days"
-      - redirect: "Ensure all links point to replacement"
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### Incentivizing Contributions
-
 **Making it easy (remove friction):**
 
 * Templates pre-filled with structure
@@ -449,12 +177,8 @@ contribution_workflow:
 * Incident postmortem includes "Docs to create/update"
 * Onboarding feedback includes "What couldn't you find?"
 
----
-
 ## Phase 5: Search & Discovery
-
 ### Search Optimization
-
 **Every document should be findable by:**
 
 1. **Title** — descriptive, includes key terms
@@ -475,7 +199,6 @@ document_tags:
 ```
 
 ### Discovery Mechanisms
-
 1. **Contextual links** — Related docs linked at bottom of every page
 2. **FAQ collections** — Per-domain "frequently asked" with links to full docs
 3. **Onboarding paths** — Curated reading lists by role
@@ -484,7 +207,6 @@ document_tags:
 6. **Error-page links** — Application errors link to troubleshooting docs
 
 ### Quality Signals
-
 Prioritize search results by:
 
 * **Freshness** — Recently updated > stale
@@ -492,12 +214,8 @@ Prioritize search results by:
 * **Usage** — Frequently accessed > rarely accessed
 * **Completeness** — Fully structured > quick notes
 
----
-
 ## Phase 6: Knowledge Capture Workflows
-
 ### Post-Incident Knowledge Capture
-
 After every incident:
 
 1. **Immediate** (within 24h): Raw timeline and resolution steps
@@ -510,7 +228,6 @@ After every incident:
    * Monitoring gap? → Document what to monitor
 
 ### Post-Meeting Knowledge Capture
-
 Meeting types that MUST produce knowledge artifacts:
 
 * **Architecture review** → ADR
@@ -520,7 +237,6 @@ Meeting types that MUST produce knowledge artifacts:
 * **Retrospective** → Process improvement doc
 
 ### New Employee Knowledge Capture
-
 **First 30 days — new hire documents:**
 
 * What was confusing during onboarding
@@ -545,7 +261,6 @@ onboarding_feedback:
 ```
 
 ### Exit Knowledge Transfer
-
 When someone is leaving:
 
 1. **Identify unique knowledge** — What do they know that no one else does?
@@ -555,76 +270,16 @@ When someone is leaving:
 5. **Review their authored docs** — Are they complete? Assign new owners
 6. **Document tribal knowledge** — "Why" questions only they can answer
 
----
-
 ## Phase 7: Maintenance & Freshness
-
 ### Freshness Policy
 
-```yaml
-freshness_policy:
-  review_frequency:
-    critical_operations: "quarterly"  # Deployment, incident response, security
-    standard_processes: "semi-annually"  # Regular workflows
-    reference_docs: "annually"  # Specs, contacts, architecture
-    explanations: "annually"  # Background, history, rationale
-
-  review_process:
-    - owner_notified: "2 weeks before due date"
-    - review_actions:
-        - verify: "Is this still accurate? Test/confirm."
-        - update: "Fix any outdated information"
-        - stamp: "Update 'Last verified' date"
-        - skip: "If can't review, reassign or flag"
-    - escalation: "Unreviewed after 30 days → manager notified"
-    - stale_threshold: "2x review period without update → flagged as stale"
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### Content Health Dashboard
 
-```yaml
-kb_health:
-  date: "[YYYY-MM-DD]"
-
-  coverage:
-    total_documents: 0
-    by_type:
-      howto: 0
-      reference: 0
-      explanation: 0
-      decision: 0
-      troubleshooting: 0
-    by_domain: {}
-    gaps_identified: []
-
-  freshness:
-    current: 0  # Reviewed within policy
-    needs_review: 0  # Due for review
-    stale: 0  # Past review deadline
-    deprecated: 0
-    freshness_rate: "0%"  # current / (current + needs_review + stale)
-
-  quality:
-    peer_reviewed: "0%"
-    using_templates: "0%"
-    has_owner: "0%"
-    has_tags: "0%"
-
-  usage:
-    searches_per_week: 0
-    failed_searches: 0  # Searches with no results
-    top_10_pages: []
-    pages_never_accessed: 0
-
-  contribution:
-    docs_created_this_month: 0
-    docs_updated_this_month: 0
-    unique_contributors: 0
-    contribution_rate: "0%"  # contributors / total team size
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### Quarterly Knowledge Review
-
 **Agenda (60 min):**
 
 1. Dashboard review (10 min) — health metrics trend
@@ -633,65 +288,17 @@ kb_health:
 4. Failed searches review (10 min) — what are people searching for and not finding?
 5. Process improvements (10 min) — what's working, what isn't?
 
----
-
 ## Phase 8: Knowledge-Driven Automation
-
 ### Automated Knowledge Triggers
 
-```yaml
-automation_triggers:
-  incident_resolved:
-    action: "Create task: 'Write troubleshooting guide for [incident title]'"
-    assignee: "Incident commander"
-    due: "+10 days"
-
-  new_hire_started:
-    action: "Generate personalized onboarding reading list from KB by role"
-
-  doc_stale:
-    action: "Notify owner, CC manager if unreviewed after 14 days"
-
-  repeated_question:
-    threshold: "Same question asked 3+ times in support/Slack"
-    action: "Create task: 'Document answer to [question]'"
-
-  process_changed:
-    trigger: "PR merged that changes workflow/process"
-    action: "Check if related docs need updating, create task if yes"
-
-  failed_search:
-    threshold: "Same search term fails 5+ times/week"
-    action: "Flag as gap, create task to write missing doc"
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### Knowledge-Powered Chatbot Design
 
-```yaml
-kb_chatbot:
-  flow:
-    1_receive_question: "User asks in designated channel"
-    2_search: "Semantic search across KB"
-    3_respond:
-      found_match: "Return relevant doc link + summary"
-      partial_match: "Return closest docs + 'Did you mean...?'"
-      no_match: "Log as gap, route to human expert, create doc task"
-    4_feedback: "Was this helpful? 👍/👎"
-    5_improve: "Use feedback to tune search, identify doc improvements"
-
-  sources:
-    - knowledge_base_docs
-    - slack_saved_answers  # Curated from Slack threads
-    - incident_postmortems
-    - meeting_notes_tagged_as_knowledge
-```
-
----
+> 详细代码示例已移至 `references/detail.md`
 
 ## Phase 9: Cross-Team Knowledge Sharing
-
 ### Knowledge Sharing Mechanisms
-
 | Mechanism | Frequency | Format | Audience |
 | --- | --- | --- | --- |
 | "TIL" channel | Daily | Short post (1-3 sentences + link) | All |
@@ -704,42 +311,10 @@ kb_chatbot:
 
 ### Cross-Team Knowledge Map
 
-```yaml
-knowledge_map:
-  engineering:
-    produces: ["Architecture docs", "Runbooks", "API specs", "ADRs"]
-    consumes_from:
-      product: ["PRDs", "User research", "Roadmap"]
-      customer_success: ["Bug patterns", "Feature requests", "Usage data"]
-      sales: ["Technical requirements", "Integration needs"]
-
-  product:
-    produces: ["PRDs", "User research", "Roadmap", "Release notes"]
-    consumes_from:
-      engineering: ["Technical feasibility", "Architecture constraints"]
-      customer_success: ["Feature requests", "Churn reasons"]
-      sales: ["Deal requirements", "Competitive intel"]
-
-  customer_success:
-    produces: ["FAQ", "Troubleshooting guides", "Best practices"]
-    consumes_from:
-      engineering: ["Release notes", "Known issues"]
-      product: ["Feature docs", "Roadmap"]
-
-  sales:
-    produces: ["Battlecards", "Competitive intel", "Use case docs"]
-    consumes_from:
-      product: ["Feature docs", "Roadmap", "Pricing"]
-      customer_success: ["Case studies", "Success metrics"]
-      engineering: ["Technical capabilities", "Integration docs"]
-```
-
----
+> 详细代码示例已移至 `references/detail.md`
 
 ## Phase 10: Metrics & ROI
-
 ### Knowledge Management KPIs
-
 | Metric | Target | Measurement |
 | --- | --- | --- |
 | Time to answer | <5 min for documented topics | Sample timing tests |
@@ -754,33 +329,10 @@ knowledge_map:
 
 ### ROI Calculation
 
-```text
-Knowledge Management ROI:
-
-Time Saved:
-  Reduced question-answering = [hours/week] × [avg hourly cost] × 52
-  Faster onboarding = [weeks saved] × [new hires/year] × [weekly cost]
-  Faster incident resolution = [hours saved/incident] × [incidents/year] × [hourly cost]
-
-Risk Reduced:
-  Key person dependency = [probability of departure] × [knowledge reconstruction cost]
-  Compliance documentation = [audit prep hours saved] × [hourly cost]
-
-Quality Improved:
-  Fewer repeated mistakes = [error rate reduction] × [cost per error]
-  Consistent processes = [variance reduction] × [rework cost]
-
-Total Annual Value = Time Saved + Risk Reduced + Quality Improved
-Investment = Tool cost + Time spent maintaining KB + Training
-ROI = (Total Annual Value - Investment) / Investment × 100
-```
-
----
+> 详细代码示例已移至 `references/detail.md`
 
 ## Phase 11: Scoring & Quality
-
 ### Document Quality Rubric (0-100)
-
 | Dimension | Weight | 0-2 (Poor) | 3-5 (Adequate) | 6-8 (Good) | 9-10 (Excellent) |
 | --- | --- | --- | --- | --- | --- |
 | Accuracy | 20% | Unverified, possibly wrong | Mostly correct | Verified, accurate | Tested, peer-reviewed |
@@ -801,7 +353,6 @@ ROI = (Total Annual Value - Investment) / Investment × 100
 * 0-39: Critical — rewrite from scratch
 
 ### Knowledge Base Health Score (0-100)
-
 | Dimension | Weight | Metric |
 | --- | --- | --- |
 | Coverage | 20% | % of critical processes documented |
@@ -811,57 +362,45 @@ ROI = (Total Annual Value - Investment) / Investment × 100
 | Contribution | 15% | % of team contributing monthly |
 | Search effectiveness | 15% | % of searches finding results |
 
----
-
 ## Edge Cases
-
 ### Small Team (<10 people)
-
 * Start with a single shared doc/wiki, not a full KB platform
 * Focus on: runbooks for critical processes, onboarding guide, decision log
 * One person owns KB health (part-time, not full-time)
 * Review quarterly, not monthly
 
 ### Remote/Distributed Teams
-
 * Default to written over verbal knowledge sharing
 * Record important meetings/decisions (not all meetings)
 * Async-first: every decision documented, not just discussed
 * Time zone coverage: ensure docs cover "what to do when the expert is asleep"
 
 ### Rapid Growth (Doubling in 6 months)
-
 * Prioritize onboarding docs above all else
 * Implement "new hire documents what they learn" from day 1
 * Assign knowledge buddies — each new person paired with a doc mentor
 * Weekly new-hire cohort Q&A → captured and documented
 
 ### Regulated Industry
-
 * Map compliance requirements to documentation requirements
 * Version control with audit trail (who changed what, when)
 * Approval workflows for regulated content
 * Retention policies aligned with regulations
 
 ### Post-Merger/Acquisition
-
 * Map both organizations' knowledge structures
 * Identify overlaps and gaps
 * Prioritize: "how do we work NOW" docs over historical
 * Freeze archives of legacy systems/processes
 
 ### Migrating from Scattered Docs
-
 * Don't try to migrate everything — start fresh with new structure
 * Import only: still-accurate, frequently-used docs
 * Redirect old locations to new ones
 * Set a sunset date for old system
 * "If it's not in the new KB, it doesn't exist" (after migration period)
 
----
-
 ## Natural Language Commands
-
 | Command | Action |
 | --- | --- |
 | "Audit our knowledge management" | Run Phase 1 assessment, generate risk register |
@@ -878,12 +417,11 @@ ROI = (Total Annual Value - Investment) / Investment × 100
 | "Plan KB migration from [source]" | Create migration plan with prioritization |
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -894,3 +432,34 @@ ROI = (Total Annual Value - Investment) / Investment × 100
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+[1-2 sentence summary of what this reference contains]
+
+## 适用场景
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 常见问题
+### Q1: 如何开始使用Afrexai Knowledge Ma？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Afrexai Knowledge Ma有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

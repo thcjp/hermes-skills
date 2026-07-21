@@ -4,33 +4,10 @@ name: weather-toolkit-free
 version: "1.0.0"
 displayName: 天气查询工具包免费版
 summary: 基于wttr.in与Open-Meteo的免费天气查询,无需API Key,支持当前天气与预报
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向个人用户的免费天气查询工具包,基于wttr.in与Open-Meteo公开API,无需API Key即可获取当前天气与预报。
-
-  核心能力:
-  - 当前天气快速查询(一行命令)
-  - 多格式天气输出(紧凑/完整/PNG)
-  - 城市坐标查询与JSON结构化数据
-  - 温度、湿度、风速、天气状况、月相
-  - 公制与美制单位切换
-  - 历史天气基础查询
-
-  适用场景:
-  - 个人出行前快速查看天气
-  - 脚本中集成天气数据
-  - 终端/命令行环境天气查询
-  - 开发调试与API验证
-
-  差异化:
-  - 完全免费,无需注册与API Key
-  - 聚焦核心天气查询功能,轻量高效
-  - 支持命令行与脚本两种使用方式
-  - 中文优先的天气描述输出
-  - 双数据源互为备份,提升可用性
-
-  触发关键词: 天气查询, 实时天气, 天气预报, wttr.in, open-meteo, 免费天气, 当前天气, weather, forecast, 天气工具
+  面向个人用户的免费天气查询工具包,基于wttr。in与Open-Meteo公开API,无需API Key即可获取当前天气与预报。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。
 tags:
 - Lifestyle
 - 天气
@@ -38,7 +15,7 @@ tags:
 - 命令行工具
 - 免费API
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -74,7 +51,7 @@ tools:
 # 最简洁的一行查询
 curl -s "wttr.in/Beijing?format=3"
 
-# 输出示例: Beijing: ⛅️ +28°C
+# 示例
 
 # 紧凑格式(位置+天气+温度+湿度+风速)
 curl -s "wttr.in/Beijing?format=%l:+%c+%t+%h+%w"
@@ -181,7 +158,7 @@ export WEATHER_DEFAULT_FORMAT="3"          # 默认输出格式
 
 ## 常见问题
 
-### Q1: 真的完全免费吗?有什么限制?
+### 已知限制
 
 完全免费,无需注册与API Key。wttr.in 与 Open-Meteo 均为公开免费服务。高频请求(每分钟数十次)可能被限流,正常使用不会触发。
 
@@ -201,7 +178,7 @@ export WEATHER_DEFAULT_FORMAT="3"          # 默认输出格式
 ### Q5: 网络异常时如何处理?
 
 ```bash
-# 带错误处理的查询脚本
+# 错误处理
 #!/bin/bash
 CITY=${1:-Beijing}
 
@@ -254,7 +231,7 @@ def describe_weather(code):
 - **操作系统**: Windows / macOS / Linux
 - **网络连接**: 需要访问公网(wttr.in 与 Open-Meteo)
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|

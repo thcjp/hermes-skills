@@ -4,12 +4,10 @@ name: merge-check-tool-free
 version: "1.0.0"
 displayName: 合并检查工具(免费版)
 summary: 预测单个PR能否被合并,基于技术信号与PR卫生维度的拒绝向量分析。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  合并检查工具(免费版)为个人开发者预测单个Pull Request能否被合并,基于技术信号与PR卫生维度的拒绝向量分类体系。
-
-  核心能力:
+  合并检查工具(免费版)为个人开发者预测单个Pull Request能否被合并,基于技术信号与PR卫生维度的拒绝向量分类体系。核心能力:
   - 单个PR数据采集与解析
   - 技术信号分析:CI状态、构建、覆盖率
   - PR卫生分析:规模、文件分布、单一职责、提交卫生
@@ -23,19 +21,16 @@ description: |-
   差异化:
   - 免费版聚焦单个PR的核心维度分析
   - 移除原始平台引用,纯净适配SkillHub
-  - 提供中文友好的评分与建议输出
-
-  触发关键词: PR, merge, 合并, pull request, github, 代码审查, mergeability, 检查
+  - 提供中文友好的评分与建...
 tags:
 - Development
 - 代码审查
 - GitHub
 - PR
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 合并检查工具(免费版)
 
 ## 概述
@@ -73,6 +68,20 @@ bash scripts/merge-check.sh https://github.com/owner/repo/pull/123
 工具解析JSON输出后,生成结构化报告:
 
 ```text
+## 不适用场景
+
+以下场景合并检查工具(免费版)不适合处理：
+
+- 实时流数据处理
+- 小规模数据手动分析
+- 非结构化文本情感分析
+
+
+## 触发条件
+
+需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求。
+
+
 ## PR 合并性报告: owner/repo#123
 
 **评分: 中 (~55%)**
@@ -125,7 +134,7 @@ bash scripts/merge-check.sh owner/repo#100
 ### 1. 前置准备
 
 ```bash
-# 确认 gh CLI 已安装并登录
+# 依赖说明
 gh auth status
 
 # 若未登录
@@ -163,7 +172,7 @@ bash scripts/merge-check.sh https://github.com/owner/repo/pull/123
 
 Agent 读取JSON后,按维度分析并产出报告。
 
-## 配置示例
+## 示例
 
 ### 规模阈值参考
 
@@ -300,3 +309,17 @@ Fixes #123
 
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。免费版聚焦单个PR的核心维度合并性分析。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

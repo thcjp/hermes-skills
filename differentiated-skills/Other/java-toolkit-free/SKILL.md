@@ -4,12 +4,10 @@ name: java-toolkit-free
 version: "1.0.0"
 displayName: Java 工具箱
 summary: 面向个人 Java 开发者的健壮编码避坑工具，覆盖空值与并发。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向个人 Java 开发者的健壮编码避坑工具。
-
-  核心能力:
+  面向个人 Java 开发者的健壮编码避坑工具。核心能力:
   - 空值/Optional/自动装箱陷阱速查
   - 集合、泛型、并发关键规则
   - equals/hashCode、try-with-resources 等关键规则
@@ -20,19 +18,16 @@ description: |-
   - 单模块空值与并发避坑
   - 代码评审前的快速规则核对
 
-  差异化: 免费版聚焦个人单模块自检，提供关键规则速查与避坑清单，零成本核对。
-
-  触发关键词: java, 空值, optional, 并发, equals, hashcode, try-with-resources, autoboxing, robust
+  差异化: 免费版聚焦个人单模块自检，提供关键规则速查与避坑清单，零成本核对
 tags:
 - Java
 - 代码质量
 - 个人效率
 - 其他工具
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Java 工具箱（免费版）
 
 ## 概述
@@ -104,6 +99,20 @@ while (it.hasNext()) {
 14. serialVersionUID 不匹配破坏反序列化
 ```
 
+## 不适用场景
+
+以下场景Java 工具箱不适合处理：
+
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 运维部署管理
+
+
+## 触发条件
+
+需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 1. 把待检代码贴给工具。
@@ -111,7 +120,7 @@ while (it.hasNext()) {
 3. 标注命中陷阱与修复建议。
 4. 逐项修复并复检。
 
-## 配置示例
+## 示例
 
 规则对照表（节选）：
 
@@ -225,7 +234,7 @@ try (BufferedReader br = new BufferedReader(new FileReader("f.txt"));
 - **操作系统**: Windows / macOS / Linux
 - **JDK**: 11+
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | JDK | 工具链 | 必需 | adoptium.net 下载 |
@@ -237,3 +246,17 @@ try (BufferedReader br = new BufferedReader(new FileReader("f.txt"));
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 命令行执行）
 - **说明**: 通过自然语言指令驱动 Agent 核对 Java 编码规则
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

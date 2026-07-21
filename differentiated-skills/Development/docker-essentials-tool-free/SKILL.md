@@ -4,12 +4,10 @@ name: docker-essentials-tool-free
 version: "1.0.0"
 displayName: Docker基础工具免费版
 summary: 提供Docker容器生命周期、镜像管理、Compose编排与网络卷管理,适合开发者日常使用。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向开发者的Docker容器管理辅助工具,涵盖容器生命周期、镜像构建管理、Compose编排与网络卷操作。
-
-  核心能力:
+  面向开发者的Docker容器管理辅助工具,涵盖容器生命周期、镜像构建管理、Compose编排与网络卷操作。核心能力:
   - 容器生命周期管理(run/stop/rm)
   - 镜像构建与标签管理
   - Docker Compose多容器编排
@@ -26,28 +24,23 @@ description: |-
   - 覆盖日常90%容器操作需求
   - 与专业版命令兼容,可平滑升级
 
-  触发关键词: Docker, 容器, 镜像, Compose, docker run, docker build, 容器管理, docker-compose
+  触发关键词:...
 tags:
 - 开发工具
 - Docker
 - 容器化
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Docker基础工具 - 免费版
-
 ## 概述
-
 Docker基础工具免费版为开发者提供日常容器管理能力。工具涵盖容器生命周期管理、镜像构建与标签管理、Docker Compose多容器编排以及网络与卷管理,帮助开发者高效进行本地容器化开发。
 
 本版本适合本地开发环境容器化、单机多容器应用部署和容器问题排查调试。所有命令通过 Docker CLI 执行,无需安装额外插件。
 
 ## 核心能力
-
 ### 1. 容器生命周期管理
-
 覆盖容器从创建到销毁的完整生命周期。
 
 ```bash
@@ -60,7 +53,6 @@ docker run -e MY_VAR=value -d app          # 环境变量
 docker run -v /host/path:/container/path -d app  # 卷挂载
 docker run --rm alpine echo "Hello"        # 运行后自动删除
 docker run -it ubuntu bash                 # 交互式运行
-
 # 管理容器
 docker ps                                  # 查看运行中容器
 docker ps -a                               # 查看所有容器
@@ -73,14 +65,12 @@ docker container prune                     # 清理已停止容器
 ```
 
 ### 2. 镜像构建与管理
-
 ```bash
 # 构建镜像
 docker build -t myapp:1.0 .                       # 基础构建
 docker build -f Dockerfile.dev -t myapp:dev .     # 指定Dockerfile
 docker build --build-arg VERSION=1.0 -t myapp .   # 构建参数
 docker build --no-cache -t myapp .                # 无缓存构建
-
 # 管理镜像
 docker images                                     # 列出镜像
 docker pull nginx:latest                          # 拉取镜像
@@ -92,19 +82,16 @@ docker image prune -a                             # 清理所有未使用镜像
 ```
 
 ### 3. 容器检查与调试
-
 ```bash
 # 查看日志
 docker logs container_name                        # 全部日志
 docker logs -f container_name                     # 跟踪日志
 docker logs --tail 100 container_name             # 最后100行
 docker logs -t container_name                     # 显示时间戳
-
 # 执行命令
 docker exec container_name ls -la                 # 执行命令
 docker exec -it container_name bash               # 交互式进入
 docker exec -u root -it container_name bash       # 以root进入
-
 # 容器检查
 docker inspect container_name                     # 详细信息
 docker inspect -f '{{.NetworkSettings.IPAddress}}' container_name  # 提取IP
@@ -113,7 +100,6 @@ docker top container_name                         # 进程信息
 ```
 
 ### 4. Docker Compose 编排
-
 ```bash
 # 基础操作
 docker-compose up                                # 启动服务
@@ -123,7 +109,6 @@ docker-compose down -v                           # 同时删除卷
 docker-compose logs                              # 查看日志
 docker-compose logs -f web                       # 跟踪指定服务日志
 docker-compose up -d --scale web=3               # 扩展服务实例
-
 # 服务管理
 docker-compose ps                                # 查看服务状态
 docker-compose exec web bash                     # 进入服务容器
@@ -133,7 +118,6 @@ docker-compose up -d --build                     # 重新构建并启动
 ```
 
 ### 5. 网络与卷管理
-
 ```bash
 # 网络管理
 docker network ls                                # 列出网络
@@ -142,7 +126,6 @@ docker network connect mynetwork container_name  # 连接网络
 docker network disconnect mynetwork container_name  # 断开网络
 docker network inspect mynetwork                 # 查看网络详情
 docker network rm mynetwork                      # 删除网络
-
 # 卷管理
 docker volume ls                                 # 列出卷
 docker volume create myvolume                    # 创建卷
@@ -153,9 +136,7 @@ docker run -v myvolume:/data -d app              # 使用命名卷
 ```
 
 ## 使用场景
-
 ### 场景一:本地开发环境搭建
-
 使用Docker快速搭建本地开发环境。
 
 ```bash
@@ -184,7 +165,6 @@ docker run -d \
 ```
 
 ### 场景二:多容器应用编排
-
 使用Docker Compose编排多容器应用。
 
 ```yaml
@@ -241,8 +221,7 @@ docker-compose up -d --scale web=3
 docker-compose down -v
 ```
 
-### 场景三:容器问题排查
-
+### 错误处理
 快速排查容器运行问题。
 
 ```bash
@@ -273,10 +252,22 @@ echo -e "\n--- 挂载卷 ---"
 docker inspect -f '{{range .Mounts}}{{.Source}} -> {{.Destination}}{{"\n"}}{{end}}' "$CONTAINER"
 ```
 
+## 不适用场景
+
+以下场景Docker基础工具免费版不适合处理：
+
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 运维部署管理
+
+
+## 触发条件
+
+需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
-
 ### 步骤一:验证Docker环境
-
 ```bash
 docker version
 docker info
@@ -284,7 +275,6 @@ docker run hello-world
 ```
 
 ### 步骤二:触发容器操作
-
 在 AI Agent 中输入指令:
 
 ```
@@ -292,13 +282,10 @@ docker run hello-world
 ```
 
 ### 步骤三:管理容器
-
 Agent 会生成并执行相应的 Docker 命令,提供容器管理建议。
 
-## 配置示例
-
+## 示例
 ### 开发环境Docker配置
-
 ```yaml
 # .docker-dev.yml - 开发环境配置
 version: "1.0"
@@ -335,7 +322,6 @@ cleanup:
 ```
 
 ### 多阶段Dockerfile示例
-
 ```dockerfile
 # 开发用Dockerfile
 FROM node:18 AS builder
@@ -352,7 +338,6 @@ CMD ["nginx", "-g", "daemon off;"]
 ```
 
 ## 最佳实践
-
 1. **使用.dockerignore**:减少构建上下文体积
 
 ```dockerignore
@@ -413,9 +398,7 @@ docker system prune --volumes       # 同时清理卷
 ```
 
 ## 常见问题
-
 ### Q1:容器启动后立即退出怎么办?
-
 ```bash
 # 查看退出原因
 docker logs container_name
@@ -425,39 +408,32 @@ docker inspect -f '{{.State.ExitCode}}' container_name
 # 1. 前台进程退出 -> 使用 -d 或确保有前台进程
 # 2. 命令执行完成 -> 使用 -it 交互模式
 # 3. 配置错误 -> 检查环境变量和配置文件
-
 # 调试模式启动
 docker run -it --entrypoint bash myapp
 ```
 
 ### Q2:如何进入运行中的容器?
-
 ```bash
 # 使用exec进入(推荐)
 docker exec -it container_name bash
 docker exec -it container_name sh    # alpine镜像
-
 # 使用attach连接到主进程
 docker attach container_name
 # Ctrl+P, Ctrl+Q 分离(不停止容器)
 ```
 
 ### Q3:端口冲突怎么办?
-
 ```bash
 # 查找占用端口的进程
 lsof -i :8080            # macOS/Linux
 netstat -ano | findstr 8080  # Windows
-
 # 修改端口映射
 docker run -p 9080:80 -d nginx    # 改用9080端口
-
 # 查看容器端口映射
 docker ps --format "table {{.Names}}\t{{.Ports}}"
 ```
 
 ### Q4:免费版与专业版有何区别?
-
 | 能力维度 | 免费版 | 专业版 |
 |:---------|:-------|:-------|
 | 容器编排 | 单机Compose | 多机Swarm/K8s |
@@ -468,7 +444,6 @@ docker ps --format "table {{.Names}}\t{{.Ports}}"
 | CI/CD集成 | 手动 | 流水线集成 |
 
 ### Q5:Docker Compose版本如何选择?
-
 ```bash
 # 使用docker compose(v2,推荐)
 docker compose up -d
@@ -481,15 +456,12 @@ docker compose version
 ```
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent 平台**:支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
 - **操作系统**:Windows / macOS / Linux
 - **运行时**:Docker Engine 20.10+ / Docker Compose v2+
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Docker Engine | 运行时 | 必需 | docker.com 下载安装 |
@@ -497,7 +469,6 @@ docker compose version
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 
 ### API Key 配置
-
 - 本 Skill 基于 Markdown 指令,无需额外 API Key
 - 如需推送镜像到私有仓库,需配置仓库凭证:
 
@@ -505,13 +476,14 @@ docker compose version
 # 登录私有镜像仓库
 docker login registry.example.com
 # 输入用户名和密码
-
 # 或使用配置文件
 # ~/.docker/config.json
 ```
 
 ### 可用性分类
-
 - **分类**:MD+EXEC(纯 Markdown 指令,需要 exec 命令行执行能力)
 - **说明**:基于 Markdown 的 AI Skill,通过自然语言指令驱动 Agent 执行 Docker 管理任务
 - **适用规模**:单机环境,适合开发和测试场景
+
+## 已知限制
+- 本地运行，不支持多设备同步

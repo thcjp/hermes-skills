@@ -4,32 +4,14 @@ name: ui-ux-promax-v2-pro
 version: "1.0.0"
 displayName: UI/UX ProMax V2专业版
 summary: 全域设计数据库+持久化+推理引擎+多技术栈+层级检索,面向企业的综合设计决策引擎
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   面向设计团队和企业的综合UI/UX设计决策引擎,涵盖50+风格、97配色、57字体、
   99条UX规则、25种图表类型,支持全部10个设计域、10种技术栈、设计系统
-  持久化与页面级覆盖、推理规则引擎和批量搜索。
-
-  核心能力:
+  持久化与页面级覆盖、推理规则引擎和批量搜索。核心能力:
   - 全部10个设计域深度搜索
-  - 10种技术栈实现指引(React/Vue/Next.js/Svelte/SwiftUI等)
-  - 设计系统持久化:MASTER全局规则+页面级覆盖
-  - 推理规则引擎(ui-reasoning.csv)智能推荐
-  - 层级检索与跨会话设计一致性
-  - 8级优先级深度审计与反模式检测
-  - 批量搜索与多格式输出
-
-  适用场景:
-  - 企业级多页面应用设计系统管理
-  - 跨技术栈团队统一设计规范
-  - 设计系统版本化与页面级定制
-  - 深度UX审计与反模式检测
-
-  差异化:专业版在免费版基础上扩展全部设计域和技术栈,新增持久化、推理引擎、
-  层级检索和批量操作。完全兼容免费版查询语法,可无缝升级。
-
-  触发关键词: 设计系统持久化, 页面级覆盖, 推理规则引擎, 多技术栈适配, 层级检索, MASTER设计规范, 全域搜索, 反模式检测, 企业设计系统, 跨会话一致性, 批量设计搜索
+  - 10种技术栈实现指引(React/Vue/Next
 tags:
 - 设计
 - UI
@@ -42,10 +24,9 @@ tags:
 - 技术栈
 - 规则引擎
 tools:
-- read
+  - - read
 - exec
 ---
-
 # UI/UX ProMax V2 - 专业版
 
 ## 概述
@@ -183,6 +164,20 @@ python3 scripts/search.py "rerender waterfall bundle memo suspense" --domain rea
 python3 scripts/search.py "semantic virtualize aria focus" --domain web -n 10
 ```
 
+## 不适用场景
+
+以下场景UI/UX ProMax V2专业版不适合处理：
+
+- 3D建模和动画制作
+- 照片级写实渲染
+- 手绘原创插画
+
+
+## 触发条件
+
+需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 企业设计系统五步流程
@@ -206,7 +201,7 @@ python3 scripts/search.py "real-time trend" --domain chart
 python3 scripts/search.py "layout form" --stack html-tailwind
 ```
 
-## 配置示例
+## 示例
 
 ### 企业设计系统配置
 
@@ -327,7 +322,7 @@ python3 scripts/search.py "data table" --design-system --persist -p "MyApp" --pa
 - **操作系统**: Windows / macOS / Linux
 - **Python版本**: 3.10及以上(推荐3.12)
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -355,3 +350,17 @@ CLI搜索工具基于本地数据文件运行,无需额外API Key。推理引擎
 
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 核心查询、持久化和批量搜索依赖Python CLI脚本,需确保exec和Python环境可用。持久化文件建议纳入版本控制。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

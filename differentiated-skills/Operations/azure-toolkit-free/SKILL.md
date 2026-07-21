@@ -4,40 +4,18 @@ name: azure-toolkit-free
 version: "1.0.0"
 displayName: Azure管理入门工具
 summary: 微软Azure基础资源管理工具，支持虚拟机/存储/网络常用资源操作。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人开发者与初创团队的Azure基础管理工具。支持虚拟机、存储
-  账户、虚拟网络等常用资源的创建与管理。通过命令行简化Azure操作，
-  适合个人项目与小型应用的云端部署。
-
-  核心能力:
-  - 虚拟机创建与管理
-  - 存储账户操作
-  - 虚拟网络配置
-  - 网络安全组管理
-  - 基础身份管理
-
-  适用场景:
-  - 个人项目云端部署
-  - 初创团队基础设施
-  - Azure学习与实验
-  - 简单应用部署
-
-  差异化:
-  - 免费版聚焦基础资源管理
-  - 适合个人与小型项目
-  - 不支持多区域批量部署
-  - 不支持企业级合规治理
-
-  触发关键词: Azure, 虚拟机, 存储, 虚拟网络, 微软云, 云部署, microsoft azure
+  账户、虚拟网络等常用资源的创建与管理。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
 - Operations
 - Azure
 - 云计算
 - 部署
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -121,7 +99,7 @@ python3 scripts/azure.py vnet subnet create \
 ### 环境准备
 
 ```bash
-# 安装Azure CLI
+# 依赖说明
 # macOS: brew install azure-cli
 # Windows: 下载官方安装包
 
@@ -149,7 +127,7 @@ python3 scripts/azure.py storage upload --account mystorage --container data --f
 python3 scripts/azure.py vnet create --name my-vnet --resource-group my-rg --address-prefix 10.0.0.0/16
 ```
 
-## 配置示例
+## 示例
 
 ### Azure配置
 
@@ -246,3 +224,15 @@ azure_config:
 - **分类**: MD+EXEC（Markdown指令+Python脚本执行）
 - **说明**: 通过Azure SDK管理基础云资源
 - **免费版限制**: 基础资源管理、单区域、不支持数据库与无服务器
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 依赖云服务，需要网络连接

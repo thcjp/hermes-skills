@@ -2,9 +2,9 @@
 slug: smart-update-agent-pro
 name: smart-update-agent-pro
 version: "1.0.0"
-displayName: 智能更新管家(专业版)
+displayName: Smart Update Agent
 summary: 企业级更新编排系统，含多环境策略、回滚备份、金丝雀发布、依赖分析、Breaking Change检测与合规审计。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   智能更新管家专业版是面向团队与企业的全功能更新编排系统。不仅自动保持Agent运行时与技能最新，更提供多环境更新策略、回滚备份、金丝雀发布、依赖冲突分析、Breaking Change检测与合规审计报告，确保更新安全可控、可追溯、可回滚。

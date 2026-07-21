@@ -4,28 +4,19 @@ name: linear-pilot-ai-free
 version: "1.0.0"
 displayName: Linear自动驾驶(免费版)
 summary: Linear任务自动化处理流水线，通过Webhook接收任务、更新状态、发送通知与Git同步，基础单工作流配置。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  Linear自动驾驶（免费版）面向使用Linear进行任务管理的个人开发者与小团队，提供从Linear任务创建到自动处理再到结果同步的端到端流水线。当Linear中创建新任务时，自动触发Webhook通知，Agent接收后执行任务处理、状态更新、结果通知与Git同步，让任务管理从手动操作变为自动流转。
-
-  核心能力：Linear API配置与认证、团队与工作流状态ID获取、Webhook服务接入（支持Make.com免费方案）、任务接收与确认、Linear状态自动更新（Todo→In Progress→Done）、任务结果评论、Git自动提交与同步、基础任务处理工作流（研究/内容/代码/数据处理）。
-
-  适用场景：个人开发者任务自动化、小型团队任务流转、研究型任务自动执行、内容创作任务流水线、代码任务自动提交、数据处理任务自动运行。
-
-  差异化：完全中文化文档与配置示例，将原项目标识全部替换为通用Agent名称，针对国内开发者习惯优化Make.com免费方案配置，新增五类典型使用场景、五问基础FAQ与故障排查表。免费版聚焦单工作流基础配置，适合个人与小型团队。保留原始MIT版权声明。
-
-  触发关键词：Linear自动化、任务流水线、Webhook、状态更新、Git同步、任务处理、自动驾驶
+  Linear自动驾驶（免费版）面向使用Linear进行任务管理的个人开发者与小团队，提供从Linear任务创建到自动处理再到结果同步的端到端流水线。当Linear中创建新任务时，自动触发Webhook通知，Agent接收后执行任务处理、状态更新、结果通知与Git同步，让任务管理从手动操作变为自动流转
 tags:
 - Linear
 - 任务自动化
 - Webhook
 - 工作流
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Linear自动驾驶（免费版）
 
 > Linear任务一键流转：创建即触发，Agent自动处理，状态自动更新，结果自动同步至Git。
@@ -144,7 +135,7 @@ git commit -m "task: ENG-123 - 用户行为分析研究"
 git push
 ```
 
-## 快速开始（<120秒）
+## 使用流程
 
 ### 步骤一：配置Linear API
 
@@ -215,7 +206,21 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 
 **效果**：任务收尾工作从5分钟/任务缩短至自动完成，状态与代码一致性100%。
 
-## 免费方案限制说明
+## 不适用场景
+
+以下场景Linear自动驾驶(免费版)不适合处理：
+
+- 逆向工程闭源API
+- API安全渗透测试
+- 非标准协议集成
+
+
+## 触发条件
+
+需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于非本工具能力范围的需求。
+
+
+## 已知限制
 
 在使用免费方案前，了解各服务的免费额度：
 
@@ -250,7 +255,7 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 
 不支持。免费版仅支持单一工作流（Todo→In Progress→Done）。多工作流、条件路由、多团队分发请使用专业版。
 
-## 故障排查表
+## 错误处理
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
 |------|----------|----------|--------|
@@ -269,7 +274,7 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 - **操作系统**：Windows / macOS / Linux
 - **Git**：已安装（用于Git同步功能）
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（默认GPT-4o-mini） |
@@ -325,3 +330,40 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 - ❌ 处理指标与报表（专业版提供任务处理统计与可视化）
 
 解锁全部功能请使用专业版：linear-pilot-ai-pro
+
+## 示例
+
+### 示例1：基础用法
+
+```
+### 步骤一：配置Linear API
+
+```bash
+mkdir -p ~/.linear-pilot
+echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
+```
+
+### 步骤二：获取团队与状态ID
+
+```bash
+./scripts/linear-api.sh teams
+./scripts/linear-api.sh states
+```
+
+将获取的ID填入 `~/.linear-pilot/linear-config.json`。
+
+### 步骤三：配置Webhook
+
+在Make.com创建Scenario：
+1. 触发器：Linear → Watch Issues
+2. 过滤器：state.name = "Todo"
+3. 动作：HTTP POST → 你的Agent端点
+
+### 步骤四：测试任务流转
+
+在Linear中创建一个Todo状态的任务，观察：
+- Agent是否收到通知
+- 状态是否自动更新为 In Progress
+- 任务完成后状态是否更新为 Done
+-
+```

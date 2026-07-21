@@ -4,40 +4,18 @@ name: docker-toolkit-free
 version: "1.0.0"
 displayName: Docker容器入门工具
 summary: Docker容器管理工具，支持镜像/容器/卷/网络基础操作与简单编排。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人开发者的Docker容器管理工具。支持镜像构建与拉取、容器
-  生命周期管理、数据卷与网络配置。通过命令行简化Docker操作，适合
-  个人开发环境与小型应用的容器化部署。
-
-  核心能力:
-  - 镜像管理（构建/拉取/推送）
-  - 容器生命周期（创建/启动/停止/删除）
-  - 数据卷管理
-  - 网络配置
-  - Docker Compose基础编排
-
-  适用场景:
-  - 个人开发环境容器化
-  - 单机应用部署
-  - Docker学习与实验
-  - 简单微服务编排
-
-  差异化:
-  - 免费版聚焦单机Docker管理
-  - 适合个人开发者
-  - 不支持多节点集群
-  - 不支持企业级镜像仓库
-
-  触发关键词: Docker, 容器, 镜像, Docker Compose, 数据卷, 网络, container, image
+  生命周期管理、数据卷与网络配置。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
 - Operations
 - Docker
 - 容器化
 - 部署
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -123,7 +101,7 @@ python3 scripts/docker.py container run \
 ### 环境准备
 
 ```bash
-# 安装Docker
+# 依赖说明
 # macOS: brew install --cask docker
 # Linux: curl -fsSL https://get.docker.com | sh
 # Windows: 下载Docker Desktop
@@ -163,7 +141,7 @@ python3 scripts/docker.py compose up --detach
 python3 scripts/docker.py compose down
 ```
 
-## 配置示例
+## 示例
 
 ### Docker配置
 
@@ -250,3 +228,17 @@ docker_config:
 - **分类**: MD+EXEC（Markdown指令+Python脚本执行）
 - **说明**: 通过Docker SDK管理本地容器资源
 - **免费版限制**: 单机管理、不支持集群与私有仓库管理
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

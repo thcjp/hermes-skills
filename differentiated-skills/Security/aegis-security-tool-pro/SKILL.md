@@ -4,7 +4,7 @@ name: aegis-security-tool-pro
 version: "1.0.0"
 displayName: 区块链安全扫描专业版
 summary: 企业级区块链安全工具,支持交易模拟、批量地址检查、多链覆盖、风险报告导出与告警推送,适合DeFi团队与机构用户。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   区块链安全扫描专业版,为DeFi团队与机构用户提供全方位链上安全防护。
@@ -19,18 +19,15 @@ tags:
 - 企业版
 - 交易模拟
 tools:
-- read
+  - - read
 - exec
 ---
 
 # 区块链安全扫描专业版
-
 ## 概述
-
 专业版为DeFi团队、机构交易者和安全审计人员提供企业级区块链安全检查能力。在免费版地址检查与代币检测的基础上,新增交易模拟、批量地址筛查、多链深度扫描、SARIF/HTML报告导出、Webhook实时告警等高级功能。专业版完全兼容免费版接口,已有免费版集成可无缝升级。
 
 ### 专业版核心优势
-
 | 优势 | 说明 |
 |:-----|:-----|
 | 交易模拟 | 在链上执行前模拟交易,检测revert、滑点、授权风险 |
@@ -43,9 +40,7 @@ tools:
 | 优先支持 | 专属技术支持通道,SLA保障 |
 
 ## 核心能力
-
 ### 1. 交易模拟(专业版独有)
-
 在发送真实交易前,模拟交易执行过程,检测潜在revert、异常滑点、恶意授权等风险。
 
 ```bash
@@ -70,13 +65,11 @@ curl -s -X POST "https://aegis402.xyz/v1/simulate-tx" \
 - 潜在风险标记
 
 ### 2. 批量地址检查(专业版独有)
-
 通过CSV文件批量导入地址,一次检查数百个地址,适合机构级筛查。
 
 ```bash
 #!/bin/bash
 # 专业版批量地址检查
-
 CHAIN_ID=1
 INPUT_FILE="addresses.csv"
 OUTPUT_FILE="batch_results.json"
@@ -86,21 +79,21 @@ FIRST=true
 
 while IFS=',' read -r address label; do
     [ -z "$address" ] && continue
-    
+
     RESULT=$(curl -s -H "X-Client-Fingerprint: pro-batch" \
         "https://aegis402.xyz/v1/check-address/${address}?chain_id=${CHAIN_ID}")
-    
+
     RISK=$(echo "$RESULT" | jq -r '.risk_level')
     echo "${label} (${address}): ${RISK}"
-    
+
     if [ "$FIRST" = true ]; then
         FIRST=false
     else
         echo "," >> "$OUTPUT_FILE"
     fi
-    
+
     echo "$RESULT" | jq --arg label "$label" '{address: .address, risk: .risk_level, label: $label}' >> "$OUTPUT_FILE"
-    
+
 done < "$INPUT_FILE"
 
 echo "]" >> "$OUTPUT_FILE"
@@ -108,7 +101,6 @@ echo "批量检查完成,结果已保存至 ${OUTPUT_FILE}"
 ```
 
 ### 3. 地址信誉查询(兼容免费版)
-
 ```bash
 # 专业版地址查询(带高级参数)
 curl -s -H "X-Client-Fingerprint: pro-agent" \
@@ -116,7 +108,6 @@ curl -s -H "X-Client-Fingerprint: pro-agent" \
 ```
 
 ### 4. 代币深度检测(兼容免费版增强)
-
 ```bash
 # 专业版代币检测(包含合约源码分析)
 curl -s -H "X-Client-Fingerprint: pro-agent" \
@@ -124,7 +115,6 @@ curl -s -H "X-Client-Fingerprint: pro-agent" \
 ```
 
 ### 5. SARIF报告导出(专业版独有)
-
 生成符合SARIF标准的报告,可直接集成到GitHub代码扫描与CI/CD流水线。
 
 ```bash
@@ -144,15 +134,12 @@ echo "SARIF报告已生成: security_report.sarif"
 ```
 
 ## 使用场景
-
 ### 场景一:DeFi协议安全审计
-
 DeFi协议上线前,对涉及的所有合约地址与代币进行全面安全扫描。
 
 ```bash
 #!/bin/bash
 # DeFi协议安全审计脚本(专业版)
-
 PROTOCOL_NAME="MyDeFiProtocol"
 CHAIN_ID=1
 CONTRACTS=(
@@ -172,22 +159,22 @@ HIGH_COUNT=0
 
 for entry in "${CONTRACTS[@]}"; do
     IFS='|' read -r addr label <<< "$entry"
-    
+
     # 地址检查
     ADDR_RESULT=$(curl -s -H "X-Client-Fingerprint: pro-audit" \
         "https://aegis402.xyz/v1/check-address/${addr}?chain_id=${CHAIN_ID}")
     ADDR_RISK=$(echo "$ADDR_RESULT" | jq -r '.risk_level')
-    
+
     # 代币检查(如果是代币合约)
     TOKEN_RESULT=$(curl -s -H "X-Client-Fingerprint: pro-audit" \
         "https://aegis402.xyz/v1/check-token/${addr}?chain_id=${CHAIN_ID}")
     TOKEN_RISK=$(echo "$TOKEN_RESULT" | jq -r '.risk_level // "N/A"')
-    
+
     echo ""
     echo "--- ${label} (${addr}) ---"
     echo "地址风险: ${ADDR_RISK}"
     echo "代币风险: ${TOKEN_RISK}"
-    
+
     case $ADDR_RISK in
         CRITICAL) ((CRITICAL_COUNT++)) ;;
         HIGH) ((HIGH_COUNT++)) ;;
@@ -208,7 +195,6 @@ fi
 ```
 
 ### 场景二:机构级交易风控
-
 机构在执行大额交易前,通过交易模拟与多重检查确保资金安全。
 
 ```python
@@ -221,7 +207,7 @@ from datetime import datetime
 
 class BlockchainRiskControl:
     BASE_URL = "https://aegis402.xyz/v1"
-    
+
     def __init__(self, fingerprint="institutional-pro"):
         self.headers = {
             "X-Client-Fingerprint": fingerprint,
@@ -229,7 +215,7 @@ class BlockchainRiskControl:
         }
         self.blocked = False
         self.warnings = []
-    
+
     def check_address(self, address, chain_id=1):
         """地址信誉检查"""
         resp = requests.get(
@@ -238,7 +224,7 @@ class BlockchainRiskControl:
             headers=self.headers
         )
         return resp.json()
-    
+
     def check_token(self, token_address, chain_id=1):
         """代币安全检测"""
         resp = requests.get(
@@ -247,7 +233,7 @@ class BlockchainRiskControl:
             headers=self.headers
         )
         return resp.json()
-    
+
     def simulate_transaction(self, from_addr, to_addr, value, data="0x", chain_id=1):
         """交易模拟(专业版独有)"""
         payload = {
@@ -263,14 +249,14 @@ class BlockchainRiskControl:
             headers=self.headers
         )
         return resp.json()
-    
+
     def pre_trade_check(self, from_addr, to_addr, token_addr, value, chain_id=1):
         """交易前全面风控检查"""
         report = {
             "timestamp": datetime.utcnow().isoformat(),
             "checks": []
         }
-        
+
         # 1. 地址检查
         addr_result = self.check_address(to_addr, chain_id)
         report["checks"].append({
@@ -278,12 +264,12 @@ class BlockchainRiskControl:
             "risk": addr_result.get("risk_level", "UNKNOWN"),
             "safe": addr_result.get("is_safe", False)
         })
-        
+
         if addr_result.get("risk_level") in ["HIGH", "CRITICAL"]:
             self.blocked = True
             report["decision"] = "BLOCKED"
             return report
-        
+
         # 2. 代币检查
         if token_addr:
             token_result = self.check_token(token_addr, chain_id)
@@ -292,12 +278,12 @@ class BlockchainRiskControl:
                 "risk": token_result.get("risk_level", "UNKNOWN"),
                 "honeypot": token_result.get("is_honeypot", False)
             })
-            
+
             if token_result.get("is_honeypot"):
                 self.blocked = True
                 report["decision"] = "BLOCKED"
                 return report
-        
+
         # 3. 交易模拟(专业版核心)
         sim_result = self.simulate_transaction(from_addr, to_addr, value, chain_id=chain_id)
         report["checks"].append({
@@ -306,17 +292,16 @@ class BlockchainRiskControl:
             "gas_estimate": sim_result.get("gas_estimate", 0),
             "revert_reason": sim_result.get("revert_reason", None)
         })
-        
+
         if not sim_result.get("success"):
             self.blocked = True
             report["decision"] = "BLOCKED"
             return report
-        
+
         report["decision"] = "ALLOWED"
         return report
 
-
-# 使用示例
+# 示例
 if __name__ == "__main__":
     rc = BlockchainRiskControl()
     report = rc.pre_trade_check(
@@ -330,7 +315,6 @@ if __name__ == "__main__":
 ```
 
 ### 场景三:CI/CD安全门禁
-
 将区块链安全检查集成到CI/CD流水线,作为部署前的安全门禁。
 
 ```yaml
@@ -343,7 +327,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Check contract addresses
         run: |
           CRITICAL=0
@@ -363,9 +347,7 @@ jobs:
 ```
 
 ## 快速开始
-
 ### 从免费版升级
-
 专业版完全兼容免费版接口,仅需更换指纹标识即可启用专业版能力:
 
 ```bash
@@ -378,7 +360,6 @@ curl -s -H "X-Client-Fingerprint: pro-agent" \
 ```
 
 ### 首次交易模拟
-
 ```bash
 curl -s -X POST "https://aegis402.xyz/v1/simulate-tx" \
   -H "Content-Type: application/json" \
@@ -393,9 +374,7 @@ curl -s -X POST "https://aegis402.xyz/v1/simulate-tx" \
 ```
 
 ## 配置示例
-
 ### Webhook告警配置
-
 ```json
 {
   "webhook": {
@@ -408,7 +387,6 @@ curl -s -X POST "https://aegis402.xyz/v1/simulate-tx" \
 ```
 
 ### 批量检查CSV格式
-
 ```csv
 address,label,chain_id
 0x742d35Cc6634C0532925a3b844Bc454e4438f44e,主要合约,1
@@ -417,7 +395,6 @@ address,label,chain_id
 ```
 
 ### 专业版支持的链(15条)
-
 | 链名称 | Chain ID | 地址检查 | 代币检查 | 交易模拟 |
 |:-------|:---------|:---------|:---------|:---------|
 | Ethereum | 1 | 支持 | 支持 | 支持 |
@@ -437,7 +414,6 @@ address,label,chain_id
 | Holesky(测试网) | 17000 | 支持 | 支持 | 支持 |
 
 ## 最佳实践
-
 1. **三层检查**:对每笔交易执行地址检查、代币检查、交易模拟三层验证。
 2. **批量筛查**:使用CSV批量检查功能,定期筛查协议涉及的全部地址。
 3. **CI/CD集成**:将SARIF报告集成到代码扫描流水线,实现自动化安全门禁。
@@ -446,37 +422,29 @@ address,label,chain_id
 6. **报告归档**:定期导出HTML/PDF报告,满足合规审计要求。
 
 ## 常见问题
-
 ### Q1: 专业版与免费版接口是否兼容?
-
 完全兼容。专业版使用相同的API端点,仅需在请求头中使用专业版指纹标识即可启用高级功能。已有免费版集成代码无需修改。
 
 ### Q2: 交易模拟会消耗Gas吗?
-
 不会。交易模拟在沙盒环境中执行,不会广播到链上,不消耗真实Gas费用。
 
-### Q3: 批量检查有数量限制吗?
-
+### 已知限制
 专业版单次批量检查建议不超过500个地址,超过时可分批执行。API并发限制为10 QPS。
 
 ### Q4: SARIF报告如何集成到GitHub?
-
 将生成的 `.sarif` 文件上传为GitHub Actions的代码扫描结果,GitHub会自动在PR中展示安全发现。参考CI/CD集成示例。
 
 ### Q5: Webhook告警支持哪些事件?
-
 支持 `CRITICAL`、`HIGH`、`MEDIUM` 等风险等级事件,可在配置中自定义订阅的事件类型。
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 - **网络**: 需可访问 `https://aegis402.xyz`
 - **Python**: 3.8+(使用Python风控脚本时需要)
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | curl | 命令行工具 | 必需 | 系统自带或包管理器安装 |
@@ -493,3 +461,10 @@ address,label,chain_id
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行企业级区块链安全检查与交易模拟任务
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

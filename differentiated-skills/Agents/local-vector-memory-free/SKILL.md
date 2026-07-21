@@ -4,24 +4,16 @@ name: local-vector-memory-free
 version: "1.0.0"
 displayName: 本地向量记忆(免费版)
 summary: 零API零云依赖的本地向量记忆免费版：离线可用、隐私不出域，核心存储与检索开箱即用。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向隐私敏感与离线场景的本地向量记忆系统免费体验版。基于 LanceDB + 纯本地 embedding（Ollama/nomic-embed-text），实现零外部 API 调用、零数据出域、完全离线可用的语义记忆检索。免费版提供核心存储、热内存持久化、WAL 写前日志等基础能力，适合个人开发者快速体验本地向量记忆的价值。
-
-  核心能力包括本地 embedding 引擎（Ollama nomic-embed-text，毫秒级延迟）、LanceDB 向量库基础检索、SESSION-STATE.md 热内存持久化（抗压缩/重启）、WAL 写前日志协议（防数据丢失）、三层冷热分层存储架构、一键初始化与维护命令。免费版限制 LanceDB 高级向量搜索、自动召回与捕获、Git-Notes 知识图谱三项高级功能。
-
-  适用场景：隐私敏感行业（医疗/金融/法律）个人试用、离线/弱网环境记忆管理、个人知识库构建、合规要求数据不出域的 Agent 记忆试用、希望零 API 成本运行的独立开发者体验。
-
-  差异化：相比云端 embedding 方案，本系统完全本地运行零 API 费用、数据永不离开本机、离线可用；相比简单文件记忆，提供向量语义检索召回更准。免费版保留核心存储与基础检索能力，让用户零成本验证本地向量记忆的价值，专业版解锁高级向量搜索、自动召回捕获与知识图谱。
-
-  触发关键词：本地记忆、向量记忆、离线记忆、隐私记忆、embedding、LanceDB、Ollama、nomic、本地向量、local memory、免费记忆
+  面向隐私敏感与离线场景的本地向量记忆系统免费体验版。基于 LanceDB + 纯本地 embedding（Ollama/nomic-embed-text），实现零外部 API 调用、零数据出域、完全离线可用的语义记忆检索。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。
 tags:
 - 智能代理
 - 记忆管理
 - 本地存储
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -89,14 +81,14 @@ tools:
 | L2 温向量 | LanceDB Vectors | 语义检索 | 本地向量库 | ✅ 基础检索 |
 | L3 冷归档 | MEMORY.md + daily/ | 人类可读长期记忆 | 文件持久化 | ✅ 完整支持 |
 
-## 快速开始（分级时间）
+## 使用流程
 
 > 本工具属中等复杂度，基础上手 < 120 秒，完整初始化 < 300 秒。
 
 ### 60 秒极速体验（已有 Ollama）
 
 ```bash
-# 前提：已安装 Ollama 并拉取模型
+# 依赖说明
 ollama pull nomic-embed-text
 
 # 初始化记忆系统
@@ -171,7 +163,7 @@ node bin/init.js
 | `memory_store` | 存储重要信息 | ✅ 完整支持 |
 | `memory_forget` | 删除记忆 | ✅ 完整支持 |
 
-## 真实场景示例
+## 示例
 
 ### 场景 1：个人开发者偏好记忆
 
@@ -303,7 +295,7 @@ node bin/memory.js backup ./backups/memory-$(date +%Y%m%d).zip
 node bin/memory.js cleanup --before 30d
 ```
 
-## 故障排查表
+## 错误处理
 
 | 序号 | 问题 | 可能原因 | 解决方案 | 优先级 |
 |:---|:---|:---|:---|:---|
@@ -315,7 +307,7 @@ node bin/memory.js cleanup --before 30d
 | 6 | init.js 报权限错误 | 文件系统权限不足 | 确认对目标目录有读写权限；Linux/macOS 运行 `chmod -R 755 ./memory/` | 中 |
 | 7 | 检索结果不相关 | embedding 模型不匹配 | 确认使用 `nomic-embed-text`；重新初始化向量库 | 低 |
 
-## FAQ（常见问题）
+## 常见问题
 
 ### Q1: 免费版能存储多少条记忆？
 
@@ -345,7 +337,7 @@ node bin/memory.js cleanup --before 30d
 
 **A**: 支持 Windows、macOS、Linux。Ollama 在三大平台均有官方安装包。Node.js 需 18+ 版本。
 
-## 免费版限制
+## 已知限制
 
 本免费体验版限制以下高级功能：
 
@@ -409,3 +401,18 @@ node bin/memory.js cleanup --before 30d
 ---
 
 *本地优先，隐私至上。免费体验，专业解锁。*
+
+## 核心能力
+
+- 面向隐私敏感与离线场景的本地向量记忆系统免费体验版
+- 基于 LanceDB + 纯本地 embedding（Ollama/nomic-embed-text），实现零外部 API 调用、零数据出域、完全离线可用的语义记忆检索
+- 免费版提供核心存储、热内存持久化、WAL 写前日志等基础能力，适合个人开发者快速体验本地向量记忆的价值
+- 核心能力包括本地 embedding 引擎（Ollama nomic-embed-text，毫秒级延迟）、LanceDB 向量库基础检索、SESSION-STATE
+- md 热内存持久化（抗压缩/重启）、WAL 写前日志协议（防数据丢失）、三层冷热分层存储架构、一键初始化与维护命令
+
+## 适用场景
+
+**角色**：独立开发者，使用 Agent 辅助编码
+**痛点**：每次新会话都要重新说明偏好（深色模式、Tab 宽度、命名风格）
+
+```bash

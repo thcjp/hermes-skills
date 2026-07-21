@@ -2,13 +2,11 @@
 slug: browser-automation-cdp
 name: browser-automation-cdp
 version: "1.0.0"
-displayName: Browser Automation (CDP)
+displayName: Browser Automation C
 summary: 通过已登录的Edge或Chrome浏览器，利用Chrome DevTools Protocol执行JS渲染页面的导航、点击、截图及数据提取等自动化操作。
 license: MIT-0
 description: |-
-  通过已登录的Edge或Chrome浏览器，利用Chrome DevTools Protocol执行JS渲染页面的导航、点击、截图及数据提取等自动化操作。
-
-  核心能力:
+  通过已登录的Edge或Chrome浏览器，利用Chrome DevTools Protocol执行JS渲染页面的导航、点击、截图及数据提取等自动化操作。核心能力:
 
   - 效率工具领域的专业化AI辅助工具
 
@@ -24,16 +22,22 @@ description: |-
 
   - 自动化工作流与智能决策辅助
 
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: (cdp), chrome, 通过已登录的, devtools, 执行, automation, browser, 渲染页面的导
+  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范
 tags:
 - Automation
 - Research
 tools:
-- read
+  - - read
 - exec
 ---
+## 不适用场景
+
+以下场景Browser Automation C不适合处理：
+
+- 需要人工创意判断的任务
+- 非结构化头脑风暴
+- 人际沟通协调
+
 
 # Browser Automation (CDP)
 
@@ -338,7 +342,7 @@ const { edge, chrome } = require('~/.skill-platform/browser-automation/cdp-autom
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -349,3 +353,50 @@ const { edge, chrome } = require('~/.skill-platform/browser-automation/cdp-autom
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+
+- 通过已登录的Edge或Chrome浏览器，利用Chrome DevTools Protocol执行JS渲染页面的导航、点击、截图及数据提取等自动化操作
+- 触发关键词: (cdp), chrome, 通过已登录的, devtools, 执行, automation, browser, 渲染页面的导
+
+## 示例
+
+### 示例1：基础用法
+
+```
+### 1. 确保浏览器 remote debugging 已开启
+
+**Edge（端口 9222）：**
+
+```powershell
+taskkill /F /IM msedge.exe /T
+Start-Sleep 3
+Start-Process "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --remote-debugging-port=9222
+
+Start-Process "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --remote-debugging-port=9222 --user-data-dir="C:\Skill平台Browser\Edge"
+```
+
+**Chrome（端口 9223）：**
+
+```powershell
+Start-Process "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-por
+```
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+
+### Q1: 如何开始使用Browser Automation C？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Browser Automation C有什么限制？
+A: 请参考已知限制章节了解具体限制。

@@ -6,29 +6,11 @@ displayName: Tool Finder
 summary: 统一搜索 ClawHub skills 和 Smithery MCP servers 的工具发现引擎。支持评分排序、推荐规则、来源标识。优先原词搜索，扩展补充。**自动触发：看到\
 license: MIT
 description: |-
-  统一搜索 ClawHub skills 和 Smithery MCP servers 的工具发现引擎。支持评分排序、推荐规则、来源标识。优先原词搜索，扩展补充。**自动触发：看到\
-
-  核心能力:
-
-  - 研究工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 数据研究、文献分析、信息收集
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: 支持评分排序, clawhub, smithery, 来源标识, servers, tool, 统一搜索, finder
+  统一搜索 ClawHub skills 和 Smithery MCP servers 的工具发现引擎。支持评分排序、推荐规则、来源标识。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。
 tags: '[''Research'']'
-tools: '[read, exec]'
+tools:
+  - read
+  - exec
 ---
 
 # Tool Finder
@@ -69,7 +51,7 @@ tools: '[read, exec]'
 
 ---
 
-## 🎯 何时使用（AI 必读）
+## 适用场景
 
 **看到以下关键词 → 立即调用 tool-finder：**
 
@@ -143,7 +125,7 @@ tools: '[read, exec]'
 
 ---
 
-## 📝 使用示例（完整对话）
+## 示例
 
 ### 配置自动触发（让 AI 默认使用 tool-finder）
 
@@ -212,7 +194,7 @@ AI：找到 GitHub 相关 MCP：
 需要我帮你安装吗？
 
 ```text
-### 示例 3：直接安装
+### 依赖说明
 ```
 
 用户：安装 tavily-search
@@ -249,7 +231,7 @@ npx @smithery/cli@latest skill search "<query>" --json
 
 ---
 
-## ⚠️ 注意事项
+## 已知限制
 
 ### 0. 自动触发配置 ✅ 新增
 
@@ -408,3 +390,35 @@ Smithery MCP 安装需指定客户端（claude-code/cursor/vscode 等）。
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+
+- 统一搜索 ClawHub skills 和 Smithery MCP servers 的工具发现引擎
+- 支持评分排序、推荐规则、来源标识
+- 优先原词搜索，扩展补充
+- 触发关键词: 支持评分排序, clawhub, smithery, 来源标识, servers, tool, 统一搜索, finder
+
+## 使用流程
+
+Smithery MCP 安装需指定客户端（claude-code/cursor/vscode 等）。
+
+**解决**：输出指引让用户手动安装。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+
+### Q1: 如何开始使用Tool Finder？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Tool Finder有什么限制？
+A: 请参考已知限制章节了解具体限制。

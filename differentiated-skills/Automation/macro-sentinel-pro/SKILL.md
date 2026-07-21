@@ -4,7 +4,7 @@ name: macro-sentinel-pro
 version: "1.0.0"
 displayName: 宏观哨兵(专业版)
 summary: 全功能宏观监控，含深度解读、高频采集、多渠道推送、可视化图表与告警，支持6种角色场景。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   宏观哨兵（专业版）是在免费版基础上的全功能升级，为AI Agent提供完整的宏观经济监控与分析能力。在核心数据采集与整理能力之上，解锁指标深度解读、历史趋势对比、高频实时监控、多渠道推送、可视化图表生成、阈值告警、专业报告输出七大高级功能。

@@ -2,9 +2,9 @@
 slug: focus-flow-optimizer-pro
 name: focus-flow-optimizer-pro
 version: "1.0.0"
-displayName: 专注流优化器(专业版)
+displayName: Focus Flow Optimizer
 summary: AI Agent全功能生产力操作系统，七角色场景指南、团队协作、深度性能分析与多平台集成。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   专注流优化器（专业版）在免费版五层架构基础上，解锁团队协作模式、深度性能分析、多角色场景指南、多平台集成与版本迁移指南。为长期项目、团队负责人、独立创业者、远程工作者、ADHD/育儿/倦怠期等真实处境提供针对性方案。

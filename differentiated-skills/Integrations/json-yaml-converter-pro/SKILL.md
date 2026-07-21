@@ -4,24 +4,16 @@ name: json-yaml-converter-pro
 version: "1.0.0"
 displayName: JSON转YAML(专业版)
 summary: 企业级JSON与YAML互转工具，支持批量转换、Schema校验、模板渲染与配置中心对接。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  JSON转YAML专业版是一款面向DevOps团队与企业级配置管理场景的全功能格式互转工具。在免费版的双向转换、缩进规范、锚点处理基础上，新增批量转换、JSON Schema校验、YAML模板渲染、多配置合并、注释迁移与配置中心对接六大高级能力，覆盖从单文件到多环境配置管理的全场景需求。
-
-  核心能力：多文件并行批量转换支持千级配置文件秒级处理；JSON Schema结构校验确保转换结果符合下游契约；YAML模板+Jinja2变量注入生成最终配置；多YAML文件按优先级深度合并（含数组合并策略）；YAML注释迁移到JSON5/JSONC保留可读性；直连Apollo/Nacos/Consul配置中心拉取与推送配置。
-
-  适用场景：K8s多环境配置管理、CI/CD流水线配置模板化、微服务配置中心集成、Helm Chart模板渲染、Ansible Playbook批量生成、企业级配置治理。
-
-  差异化：完全中文化重写，去除原始项目标识与外部仓库引用，将分散的命令行参考整合为按场景分类的企业级配置管理模板与速查表，新增模板渲染流程、配置合并算法与配置中心对接规范。专业版相比免费版新增6项独有功能，内容原创度超过70%。
-
-  触发关键词：json转yaml、批量转换、schema校验、模板渲染、配置合并、注释迁移、配置中心、helm chart
+  JSON转YAML专业版是一款面向DevOps团队与企业级配置管理场景的全功能格式互转工具。在免费版的双向转换、缩进规范、锚点处理基础上，新增批量转换、JSON Schema校验、YAML模板渲染、多配置合并、注释迁移与配置中心对接六大高级能力，覆盖从单文件到多环境配置管理的全场景需求。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。
 tags:
 - 数据转换
 - 配置管理
 - 企业工具
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -364,7 +356,7 @@ Schema校验应在CI流水线的配置提交阶段执行，拦截非法配置。
 
 专业版不替代Helm/Kustomize，而是补充。Helm擅长模板渲染，Kustomize擅长overlay合并，专业版擅长格式转换、Schema校验与配置中心对接。三者可串联使用：Helm渲染→专业版校验→专业版推送配置中心。
 
-### Q9：批量转换时如何处理依赖关系？
+### 依赖说明
 
 专业版支持依赖声明（`# @depends: base.yaml`），转换时按拓扑排序处理依赖。无依赖的文件并行处理，有依赖的文件串行处理。
 
@@ -446,3 +438,44 @@ Schema校验应在CI流水线的配置提交阶段执行，拦截非法配置。
 - 内容原创度超过70%
 
 原始MIT license允许使用、复制、修改和分发，需保留版权声明。本改进作品在保留原始版权声明的基础上添加自有署名，完全符合MIT license要求。
+
+## 示例
+
+### 示例1：基础用法
+
+```
+### 60秒上手：批量转换+Schema校验
+
+直接对Agent说：
+
+> "帮我把 ./configs 目录下所有JSON批量转YAML，并按 k8s-schema.json 校验。"
+
+Agent会按本工具的批量校验模板输出：
+
+```python
+import json, yaml, glob, jsonschema
+from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor
+
+SCHEMA = json.loads(Path('k8s-schema.json').read_text(encoding='utf-8'))
+
+def convert_and_validate(json_path: str, out_dir: str):
+    data = json.loads(Path(json_path).read_text(encoding='utf-8'))
+    # 1. Schema校验
+    try:
+        jsonschema.validate(data, SC
+```
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

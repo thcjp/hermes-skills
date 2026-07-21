@@ -4,40 +4,28 @@ name: china-news-tool-free
 version: "1.0.0"
 displayName: 中国新闻聚合(免费版)
 summary: 中国新闻聚合免费版，支持RSS订阅获取主流媒体新闻，智能分类生成简报。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  中国新闻聚合助手免费版是面向个人用户的轻量新闻聚合工具。通过RSS订阅模式获取新浪、搜狐、网易等主流媒体内容，智能分类生成新闻简报。
-
-  核心能力：RSS订阅获取新闻、主流媒体聚合（新浪/搜狐/网易）、智能分类（时事/财经/科技/体育/娱乐/社会）、新闻简报生成、Markdown输出、单次手动触发。
-
-  适用场景：每日新闻浏览、个人资讯整理、分类新闻速览、轻量新闻聚合、学习研究素材收集。
-
-  差异化：完全中文化重写，聚焦"轻量新闻聚合"场景，新增分级快速开始指南、典型场景示例与FAQ。内容原创度超过70%。免费版支持RSS模式与基础分类，专业版解锁浏览器模式、AI摘要、定时推送、多渠道分发等高级能力。
-
-  触发关键词：中国新闻、新闻聚合、RSS订阅、分类新闻、新闻简报、主流媒体
+  中国新闻聚合助手免费版是面向个人用户的轻量新闻聚合工具。通过RSS订阅模式获取新浪、搜狐、网易等主流媒体内容，智能分类生成新闻简报。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
 - 中国新闻
 - RSS聚合
 - 智能分类
 - 新闻简报
 tools:
-- read
+  - - read
 - exec
----
-
 # 中国新闻聚合助手（免费版）
-
+---
 > **RSS订阅、智能分类、生成简报。三步完成中国主流媒体新闻聚合。**
 
 无需复杂配置，通过RSS订阅即可获取主流媒体的最新新闻。免费版聚焦轻量场景，提供基础的新闻聚合与分类能力。
 
 ## 概述
-
 免费版中国新闻聚合工具为个人用户提供基础的新闻获取与分类能力。通过RSS订阅模式（无需浏览器）即可获取新浪、搜狐、网易等主流媒体内容，按主题智能分类，生成结构化新闻简报。
 
 ### 核心定位
-
 | 维度 | 免费版能力 |
 |------|------------|
 | RSS订阅模式 | 支持 |
@@ -50,9 +38,7 @@ tools:
 | 多语言输出 | 支持（中英文） |
 
 ## 核心能力
-
 ### 1. RSS订阅获取新闻
-
 ```python
 import requests
 import xml.etree.ElementTree as ET
@@ -109,14 +95,12 @@ class RSSFetcher:
             print(f"    获取失败：{e}")
             return []
 
-# 使用示例
 fetcher = RSSFetcher()
 news = fetcher.fetch_all()
 print(f"\n共获取 {len(news)} 条新闻")
 ```
 
 ### 2. 智能分类
-
 ```python
 class NewsCategorizer:
     """新闻分类器（免费版）"""
@@ -146,7 +130,6 @@ class NewsCategorizer:
             if not matched:
                 categorized['其他'].append(news)
 
-        # 移除空分类
         return {k: v for k, v in categorized.items() if v}
 
     def get_stats(self, categorized):
@@ -156,7 +139,6 @@ class NewsCategorizer:
             stats[cat] = len(news_list)
         return stats
 
-# 使用示例
 categorizer = NewsCategorizer()
 categorized = categorizer.categorize(news)
 stats = categorizer.get_stats(categorized)
@@ -166,7 +148,6 @@ for cat, count in stats.items():
 ```
 
 ### 3. 新闻简报生成
-
 ```python
 class NewsBriefGenerator:
     """新闻简报生成器（免费版）"""
@@ -183,7 +164,6 @@ class NewsBriefGenerator:
         lines.append("---")
         lines.append("")
 
-        # 热点速递（每个分类的第一条）
         lines.append("## 热点速递")
         lines.append("")
         for category, news_list in categorized_news.items():
@@ -194,7 +174,6 @@ class NewsBriefGenerator:
         lines.append("---")
         lines.append("")
 
-        # 分类详情
         for category, news_list in categorized_news.items():
             if news_list:
                 lines.append(f"## {category}新闻（{len(news_list)}条）")
@@ -227,7 +206,6 @@ class NewsBriefGenerator:
         print(f"简报已保存：{output_path}")
         return output_path
 
-# 使用示例
 generator = NewsBriefGenerator()
 brief = generator.generate(categorized)
 print(brief[:500])
@@ -235,9 +213,7 @@ generator.save_to_file(brief)
 ```
 
 ## 使用场景
-
 ### 场景一：每日新闻浏览
-
 **场景描述**：每天早上获取最新新闻，按分类快速浏览。
 
 ```python
@@ -245,23 +221,18 @@ fetcher = RSSFetcher()
 categorizer = NewsCategorizer()
 generator = NewsBriefGenerator()
 
-# 1. 获取新闻
 print("正在获取新闻...")
 news = fetcher.fetch_all()
 
-# 2. 分类
 categorized = categorizer.categorize(news)
 
-# 3. 生成简报
 brief = generator.generate(categorized)
 print(brief)
 
-# 4. 保存
 generator.save_to_file(brief)
 ```
 
 ### 场景二：分类新闻速览
-
 **场景描述**：只关注科技和财经类新闻。
 
 ```python
@@ -271,7 +242,6 @@ categorizer = NewsCategorizer()
 news = fetcher.fetch_all()
 categorized = categorizer.categorize(news)
 
-# 只查看科技和财经
 for category in ['科技', '财经']:
     if category in categorized:
         print(f"\n=== {category}新闻 ===")
@@ -281,7 +251,6 @@ for category in ['科技', '财经']:
 ```
 
 ### 场景三：英文新闻输出
-
 **场景描述**：生成英文版新闻简报。
 
 ```python
@@ -307,17 +276,13 @@ class EnglishBriefGenerator:
             lines.append("")
         return "\n".join(lines)
 
-# 使用
 en_generator = EnglishBriefGenerator()
 print(en_generator.generate(categorized))
 ```
 
 ## 快速开始
-
 ### 30秒上手
-
 ```bash
-# 使用Python获取新闻
 python3 << 'PYEOF'
 import requests
 import xml.etree.ElementTree as ET
@@ -335,18 +300,14 @@ PYEOF
 ```
 
 ### 120秒标准搭建
-
 ```bash
-# 1. 安装依赖
 pip install requests
 
-# 2. 创建聚合脚本
 cat > news_aggregator.py << 'PYEOF'
 import requests
 import xml.etree.ElementTree as ET
 from datetime import datetime
 
-# 获取新闻
 sources = {
     '新浪国内': 'https://rss.sina.com.cn/news/china/roll.xml',
     '新浪科技': 'https://rss.sina.com.cn/tech/roll.xml',
@@ -363,36 +324,27 @@ for name, url in sources.items():
     except Exception as e:
         print(f"{name} 获取失败：{e}")
 
-# 输出
 print(f"\n共获取 {len(all_news)} 条新闻\n")
 for i, news in enumerate(all_news, 1):
     print(f"{i}. [{news['source']}] {news['title']}")
 PYEOF
 
-# 3. 运行
 python3 news_aggregator.py
 ```
 
 ## 配置示例
-
 ### RSS源配置
-
 ```python
 RSS_SOURCES = {
-    # 新浪
     '新浪国内': 'https://rss.sina.com.cn/news/china/roll.xml',
     '新浪国际': 'https://rss.sina.com.cn/news/world/roll.xml',
     '新浪财经': 'https://rss.sina.com.cn/finance/roll.xml',
     '新浪科技': 'https://rss.sina.com.cn/tech/roll.xml',
-    # 搜狐
     '搜狐新闻': 'https://news.sohu.com/rss/',
-    # 36氪
     '36氪': 'https://36kr.com/feed',
-    # 凤凰
     '凤凰资讯': 'https://news.ifeng.com/rss/',
 }
 
-# 分类关键词
 CATEGORIES = {
     '时事': ['政治', '国际', '外交', '政策', '政府'],
     '财经': ['股市', '基金', '经济', '金融', '投资'],
@@ -404,7 +356,6 @@ CATEGORIES = {
 ```
 
 ### 输出格式配置
-
 ```python
 OUTPUT_CONFIG = {
     'format': 'markdown',  # markdown / json / text
@@ -417,9 +368,7 @@ OUTPUT_CONFIG = {
 ```
 
 ## 最佳实践
-
-### 1. 错误处理
-
+### 错误处理
 ```python
 def safe_fetch_all(fetcher):
     """安全的批量获取"""
@@ -444,7 +393,6 @@ def safe_fetch_all(fetcher):
 ```
 
 ### 2. 去重处理
-
 ```python
 def deduplicate(news_list):
     """去重（基于标题相似度）"""
@@ -452,19 +400,16 @@ def deduplicate(news_list):
     unique = []
     for news in news_list:
         title = news.get('title', '')
-        # 简单去重：完全相同的标题
         if title not in seen:
             seen.add(title)
             unique.append(news)
     return unique
 
-# 使用
 unique_news = deduplicate(news)
 print(f"去重前：{len(news)} 条，去重后：{len(unique_news)} 条")
 ```
 
 ### 3. 缓存机制
-
 ```python
 import os
 import json
@@ -490,37 +435,28 @@ class NewsCache:
 ```
 
 ## 常见问题
-
 ### Q1：免费版支持浏览器自动化模式吗？
-
 不支持。免费版仅支持RSS订阅模式（轻量快速，无需浏览器）。如需使用浏览器模式获取更丰富的新闻内容（如网易、腾讯等无RSS源的站点），需升级至专业版。
 
 ### Q2：RSS获取失败怎么办？
-
 可能原因：(1) 网络问题，稍后重试；(2) RSS源地址变更，需更新配置；(3) User-Agent被屏蔽，尝试更换UA；(4) 源站临时不可用。免费版会跳过失败源，继续获取其他源。
 
 ### Q3：分类不准确怎么办？
-
 免费版使用基于关键词的简单分类。如遇分类不准的情况：(1) 检查关键词配置是否覆盖；(2) 调整关键词列表；(3) 升级专业版使用AI辅助分类（基于LLM的智能分类）。
 
 ### Q4：可以定时自动执行吗？
-
 不支持。免费版需手动触发执行。如需定时自动执行（如每天早上8点自动获取并推送），需升级至专业版。
 
 ### Q5：支持哪些媒体源？
-
 免费版默认支持：新浪（国内/国际/财经/科技）、搜狐、36氪、凤凰资讯。可通过修改配置文件添加其他支持RSS的媒体源。
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 - **Python**: 3.8+
 
 ### 第三方依赖
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Python 3.8+ | 运行时 | 必需 | 官网下载安装 |
@@ -529,20 +465,15 @@ class NewsCache:
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 
 ### API Key 配置
-
 - 免费版无需任何API Key
 - RSS订阅基于公开网页内容，不涉及付费API调用
 - LLM模型路由由Agent平台内置提供
 
 ### 可用性分类
-
 - **分类**: MD+EXEC（Markdown指令+命令行执行）
 - **说明**: 通过自然语言指令驱动Agent执行新闻聚合与简报生成任务
 
----
-
-## 免费版限制
-
+## 已知限制
 本免费体验版限制以下高级功能（需升级至专业版解锁）：
 
 - **浏览器自动化模式**（获取无RSS源站点内容）

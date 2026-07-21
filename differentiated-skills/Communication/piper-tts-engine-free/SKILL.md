@@ -4,7 +4,7 @@ name: piper-tts-engine-free
 version: "1.0.0"
 displayName: 本地语音合成免费版
 summary: 基于 Piper 的本地离线文字转语音工具，零云端调用、零 API 费用，适合个人单条语音生成。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人用户的本地离线文字转语音工具。
@@ -19,10 +19,9 @@ tags:
 - 文字转语音
 - 个人效率
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 本地语音合成 免费版
 
 ## 概述
@@ -52,7 +51,7 @@ tools:
 # 生成语音
 scripts/piper-speak.sh "嘿，今天天气不错，要不要一起出去走走？"
 
-# 输出示例
+# 示例
 # MP3 路径: ~/.piper/output/20260718_153000.mp3
 ```
 
@@ -83,6 +82,20 @@ scripts/piper-speak.sh "Welcome to my channel. Today we will explore the future 
 # 朗读一段文章摘要
 scripts/piper-speak.sh "本文介绍了向量数据库的核心原理与典型应用场景，包括相似度检索、推荐系统与语义搜索。"
 ```
+
+## 不适用场景
+
+以下场景本地语音合成免费版不适合处理：
+
+- 加密文件破解
+- 损坏文件修复
+- 物理介质数据恢复
+
+
+## 触发条件
+
+需要文件处理、文档转换、格式互转、内容提取时使用。不适用于非本工具能力范围的需求。
+
 
 ## 快速开始
 
@@ -149,7 +162,7 @@ scripts/setup-piper.sh --voice en_GB-northern_english_male-medium
 
 ## 常见问题
 
-### Q1：安装脚本报错，提示 Python 版本不兼容？
+### 依赖说明
 
 Piper 需要 Python 3.9+。运行 `python3 --version` 检查版本，若低于 3.9 请先升级 Python。
 
@@ -171,7 +184,7 @@ Piper 需要 Python 3.9+。运行 `python3 --version` 检查版本，若低于 3
 
 在 Agent 回复中使用 `[[audio_as_voice]]` 标记加上 `MEDIA:<MP3路径>`，即可作为原生语音消息投递至 Telegram 等渠道。
 
-### Q6：免费版有使用次数限制吗？
+### 已知限制
 
 没有。免费版完全本地运行，无任何使用次数或频率限制。合成速度取决于本地硬件性能。
 
@@ -212,3 +225,11 @@ scripts/piper-speak.sh "这是一段加速语音"
 
 - **分类**：MD+EXEC（纯 Markdown 指令，部分功能需要 exec 命令行执行能力）
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务。免费版为单条合成功能子集，核心合成命令与专业版完全兼容。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

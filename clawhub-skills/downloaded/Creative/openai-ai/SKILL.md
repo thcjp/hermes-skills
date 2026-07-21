@@ -1,71 +1,51 @@
 ---
-slug: openai-ai
+slug: llm-provider-ai
 name: openai-ai
 version: "1.0.6"
-displayName: OpenAI
-summary: Manage OpenAI files, assistants, vector stores, batches, fine-tuning jobs,
+displayName: llm-provider
+summary: Manage llm-provider files, assistants, vector stores, batches, fine-tuning jobs,
   and model resources vi...
 license: MIT-0
 description: |-
-  Manage OpenAI files, assistants, vector stores, batches, fine-tuning
-  jobs, and model resources vi...
-
-  核心能力:
-
-  - 创意设计领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 内容创作、设计生成、多媒体制作
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: files, manage, vector, assistants, openai
+  Manage llm-provider files, assistants, vector stores, batches, fine-tuning
+  jobs, and model resources vi。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
 - Creative
 tools:
-- read
+  - - read
 - exec
 ---
 
-# OpenAI
+# llm-provider
 
-Access OpenAI's platform API with API key authentication. Manage files, assistants, vector stores, batches, fine-tuning jobs, and model resources. Generate chat completions, images, audio, and video.
+Access llm-provider's platform API with API key authentication. Manage files, assistants, vector stores, batches, fine-tuning jobs, and model resources. Generate chat completions, images, audio, and video.
 
-This skill uses [ClawLink](https://claw-link.dev/?utm_source=SkillHub&utm_medium=referral&utm_content=openai-ai) for hosted connection flows and credentials so you do not need to configure OpenAI API access yourself.
+This skill uses [ClawLink](https://claw-link.dev/?utm_source=SkillHub&utm_medium=referral&utm_content=llm-provider-ai) for hosted connection flows and credentials so you do not need to configure llm-provider API access yourself.
 
 ### Setup in 3 Steps
 
-| Step 1: Install | Step 2: Pair Account | Step 3: Connect OpenAI |
+| Step 1: Install | Step 2: Pair Account | Step 3: Connect llm-provider |
 | --- | --- | --- |
 |  |  | *App-specific connection GIF coming soon* |
-| Run the install command in Skill平台 | Sign in and approve the device | Open the dashboard and connect OpenAI |
+| Run the install command in Skill平台 | Sign in and approve the device | Open the dashboard and connect llm-provider |
 
 ## How It Works
 
 ```text
 ┌─────────────────┐     ┌──────────────┐     ┌──────────────────┐
-│   Skill平台      │────▶│   ClawLink   │────▶│   OpenAI API     │
+│   Skill平台      │────▶│   ClawLink   │────▶│   llm-provider API     │
 │   (User Chat)   │     │   (API Key)  │     │                  │
 └─────────────────┘     └──────────────┘     └──────────────────┘
           │                       │                       │
           │  1. Install Plugin   │                       │
           │  2. Pair Device      │                       │
-          │3. Connect OpenAI   │                       │
+          │3. Connect llm-provider   │                       │
           │                      │  4. Secure Proxy      │
           │                      │  5. API Requests      │
           │                      │                       │
           ▼                      ▼                       ▼
     ┌──────────┐           ┌──────────┐           ┌──────────┐
-    │  SKILL   │           │ Dashboard│           │  OpenAI  │
+    │  SKILL   │           │ Dashboard│           │  llm-provider  │
     │  File    │           │ Auth     │           │ Platform │
     └──────────┘           └──────────┘           └──────────┘
 ```
@@ -80,7 +60,7 @@ skill-platform config set tools.alsoAllow '["clawlink-plugin"]' --strict-json
 skill-platform gateway restart
 ```
 
-Then tell the user: "Skill平台 has been restarted. Send `/new` as a standalone message to start a fresh chat, then ask for OpenAI again."
+Then tell the user: "Skill平台 has been restarted. Send `/new` as a standalone message to start a fresh chat, then ask for llm-provider again."
 
 ## Quick Start
 
@@ -94,15 +74,15 @@ clawlink_call_tool --tool "openai_list_files" --params '{"purpose": "batch"}'
 
 ## Authentication
 
-All OpenAI tool calls are authenticated automatically by ClawLink using the user's OpenAI API key.
+All llm-provider tool calls are authenticated automatically by ClawLink using the user's llm-provider API key.
 
-**No API key is required in chat.** ClawLink stores the API key securely and injects it into every OpenAI API request on the user's behalf.
+**No API key is required in chat.** ClawLink stores the API key securely and injects it into every llm-provider API request on the user's behalf.
 
 ### Getting Connected
 
 1. Install the ClawLink plugin (see Install above).
 2. Pair the plugin with `clawlink_begin_pairing` if it is not configured yet.
-3. Open <https://claw-link.dev/dashboard?add=openai> and connect OpenAI.
+3. Open <https://claw-link.dev/dashboard?add=llm-provider> and connect llm-provider.
 4. Call `clawlink_list_integrations` to verify the connection is active.
 
 ## Connection Management
@@ -113,27 +93,27 @@ All OpenAI tool calls are authenticated automatically by ClawLink using the user
 clawlink_list_integrations
 ```
 
-**Response:** Returns all connected integrations. Look for `openai` in the list.
+**Response:** Returns all connected integrations. Look for `llm-provider` in the list.
 
 ### Verify Connection
 
 ```bash
-clawlink_list_tools --integration openai
+clawlink_list_tools --integration llm-provider
 ```
 
-**Response:** Returns the live tool catalog for OpenAI.
+**Response:** Returns the live tool catalog for llm-provider.
 
 ### Reconnect
 
-If OpenAI tools are missing or the connection shows an error:
+If llm-provider tools are missing or the connection shows an error:
 
-1. Direct the user to <https://claw-link.dev/dashboard?add=openai>
+1. Direct the user to <https://claw-link.dev/dashboard?add=llm-provider>
 2. After they confirm, call `clawlink_list_integrations` to verify
-3. Then call `clawlink_list_tools --integration openai`
+3. Then call `clawlink_list_tools --integration llm-provider`
 
 ## Security& Permissions
 
-* Access is scoped to resources within the connected OpenAI organization and account.
+* Access is scoped to resources within the connected llm-provider organization and account.
 * **All write operations require explicit user confirmation.** Before executing any create, update, or delete call, confirm the target resource and intended effect with the user.
 * Destructive actions (delete file, delete assistant, cancel batch) must be confirmed.
 * Fine-tuning, batch jobs, and video generation are asynchronous — poll for completion.
@@ -162,7 +142,7 @@ If OpenAI tools are missing or the connection shows an error:
 | Tool | Description | Mode |
 | --- | --- | --- |
 | `openai_list_files` | List uploaded files | Read |
-| `openai_upload_file` | Upload a file to OpenAI | Write |
+| `openai_upload_file` | Upload a file to llm-provider | Write |
 | `openai_delete_file` | Delete an uploaded file | Write |
 | `openai_download_file` | Download file content | Read |
 | `openai_create_vector_store` | Create a vector store | Write |
@@ -232,7 +212,7 @@ If OpenAI tools are missing or the connection shows an error:
 | `openai_list_containers` | List containers | Read |
 | `openai_delete_container` | Delete a container | Write |
 
-## Code Examples
+## 示例
 
 ### Create a chat completion
 
@@ -302,11 +282,11 @@ clawlink_call_tool --tool "openai_create_image" \
 
 ## Discovery Workflow
 
-1. Call `clawlink_list_integrations` to confirm OpenAI is connected.
-2. Call `clawlink_list_tools --integration openai` to see the live catalog.
+1. Call `clawlink_list_integrations` to confirm llm-provider is connected.
+2. Call `clawlink_list_tools --integration llm-provider` to see the live catalog.
 3. Treat the returned list as the source of truth. Do not guess or assume what tools exist.
-4. If the user describes a capability but the exact tool is unclear, call `clawlink_search_tools` with a short query and integration `openai`.
-5. If no OpenAI tools appear, direct the user to <https://claw-link.dev/dashboard?add=openai>.
+4. If the user describes a capability but the exact tool is unclear, call `clawlink_search_tools` with a short query and integration `llm-provider`.
+5. If no llm-provider tools appear, direct the user to <https://claw-link.dev/dashboard?add=llm-provider>.
 
 ## Execution Workflow
 
@@ -347,14 +327,14 @@ clawlink_call_tool --tool "openai_create_image" \
 
 | Status / Error | Meaning |
 | --- | --- |
-| Tool not found | The tool name does not exist in the current catalog. Verify with `clawlink_list_tools --integration openai`. |
-| Missing connection | OpenAI is not connected. Direct the user to <https://claw-link.dev/dashboard?add=openai>. |
+| Tool not found | The tool name does not exist in the current catalog. Verify with `clawlink_list_tools --integration llm-provider`. |
+| Missing connection | llm-provider is not connected. Direct the user to <https://claw-link.dev/dashboard?add=llm-provider>. |
 | `invalid_request_error` | Invalid parameter or model not available. Verify model ID with `openai_list_models`. |
 | `RateLimitError` | Too many requests. Wait and retry with exponential backoff. |
-| `authentication_error` | Invalid API key. Reconnect OpenAI at the dashboard. |
+| `authentication_error` | Invalid API key. Reconnect llm-provider at the dashboard. |
 | Write rejected | User did not confirm a write action. Always confirm before executing writes. |
 
-### Troubleshooting: Tools Not Visible
+### 错误处理
 
 1. Check that the ClawLink plugin is installed:
 
@@ -376,35 +356,35 @@ clawlink_call_tool --tool "openai_create_image" \
 
 ### Troubleshooting: Invalid Tool Call
 
-1. Ensure the integration slug is exactly `openai`.
+1. Ensure the integration slug is exactly `llm-provider`.
 2. Use `clawlink_describe_tool` to verify parameter names and types before calling.
 3. For write operations, always call `clawlink_preview_tool` first.
 
 ## Resources
 
-* [OpenAI API Reference](https://platform.openai.com/docs/api-reference)
-* [Assistants API Overview](https://platform.openai.com/docs/assistants/overview)
-* [Fine-tuning Documentation](https://platform.openai.com/docs/guides/fine-tuning)
-* [Batch API](https://platform.openai.com/docs/guides/batch)
-* ClawLink: <https://claw-link.dev/?utm_source=SkillHub&utm_medium=referral&utm_content=openai-ai>
+* [llm-provider API Reference](https://platform.llm-provider.com/docs/api-reference)
+* [Assistants API Overview](https://platform.llm-provider.com/docs/assistants/overview)
+* [Fine-tuning Documentation](https://platform.llm-provider.com/docs/guides/fine-tuning)
+* [Batch API](https://platform.llm-provider.com/docs/guides/batch)
+* ClawLink: <https://claw-link.dev/?utm_source=SkillHub&utm_medium=referral&utm_content=llm-provider-ai>
 * ClawLink Docs: <https://docs.claw-link.dev/skill-platform>
 * ClawLink Verification: <https://claw-link.dev/verify>
 
 ## Related Skills
 
-* [OpenAI](https://SkillHub.ai/hith3sh/openai-ai) — For this skill's native documentation
+* [llm-provider](https://SkillHub.ai/hith3sh/llm-provider-ai) — For this skill's native documentation
 
 ---
 
-**Powered by [ClawLink](https://claw-link.dev/?utm_source=SkillHub&utm_medium=referral&utm_content=openai-ai)** — an integration hub for Skill平台
+**Powered by [ClawLink](https://claw-link.dev/?utm_source=SkillHub&utm_medium=referral&utm_content=llm-provider-ai)** — an integration hub for Skill平台
 
 ## 依赖说明
 
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **Agent平台**: 支持SKILL.md的任意AI Agent(ai-assistant Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -415,3 +395,33 @@ clawlink_call_tool --tool "openai_create_image" \
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+
+- Manage llm-provider files, assistants, vector stores, batches, fine-tuning
+  jobs, and model resources vi
+- 触发关键词: files, manage, vector, assistants, llm-provider
+
+## 适用场景
+
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 常见问题
+
+### Q1: 如何开始使用OpenAI？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: OpenAI有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用
+- 性能取决于底层模型能力

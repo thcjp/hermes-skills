@@ -4,31 +4,15 @@ name: comfyui-painter-tool-pro
 version: "1.0.0"
 displayName: ComfyUI绘画专业版
 summary: 专业AI绘画工具，支持自动调参、CivitAI模型管理、批量生成、图生图与ControlNet。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  ComfyUI绘画专业版 —— 面向专业创作者与设计团队的高级本地AI绘画工具。
-
-  核心能力:
+  ComfyUI绘画专业版 —— 面向专业创作者与设计团队的高级本地AI绘画工具。核心能力:
   - 自动调参：根据提示词自动优化采样器、步数、CFG等参数
   - CivitAI模型管理：搜索、下载、管理CivitAI平台模型与LoRA
   - 图生图（Image-to-Image）：基于参考图生成变体
   - ControlNet集成：姿态控制、边缘检测、深度图等专业控制
-  - 批量生成：队列管理，批量生成不同参数的图像
-  - 高清放大：Tiled Upscale高清放大工作流
-  - 工作流模板库：预设多种专业工作流模板
-  - 提示词工程：高级提示词模板与权重调整
-  - 图像后处理：放大、修复、风格迁移
-
-  适用场景:
-  - 专业插画师与设计师创作
-  - 电商产品图批量生成
-  - 游戏美术资产生成
-  - 建筑可视化与概念设计
-
-  差异化:专业版在免费版基础上，增加自动调参、CivitAI模型管理、图生图、ControlNet、批量生成等高级能力。与免费版工作流兼容，免费版的基础文生图可直接在专业版中使用。
-
-  触发关键词: 自动调参, CivitAI, 图生图, ControlNet, 批量生成, 高清放大, LoRA, 工作流模板, comfyui, stable diffusion, AI绘画
+  - 批量生成：队列管理...
 tags:
 - AI绘画
 - 图像生成
@@ -36,7 +20,7 @@ tags:
 - ControlNet
 - CivitAI
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -399,7 +383,7 @@ print("ControlNet生成已提交")
 ## 快速开始
 
 ```bash
-# 安装依赖并配置
+# 依赖说明
 pip install torch torchvision requests
 export CIVITAI_API_KEY="your_api_key"
 ```
@@ -413,7 +397,7 @@ generator.generate_with_auto_tune(prompt="dragon over mountains", style="artisti
 generator.img2img(input_image_path="./input.jpg", prompt="oil painting", denoise=0.5)
 ```
 
-## 配置示例
+## 示例
 
 ### 自动调参预设
 
@@ -497,3 +481,15 @@ ControlNet额外需要1-2GB显存。建议8GB以上显存使用ControlNet。
 
 - **分类**: MD+EXEC（纯Markdown指令，核心功能需要exec命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行专业AI图像生成任务。支持自动调参、CivitAI模型管理、图生图、ControlNet等高级功能，通过Python脚本调用本地ComfyUI API与CivitAI API实现。与免费版完全兼容，可直接复用免费版的基础文生图工作流与默认模型配置。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 本地运行，不支持多设备同步

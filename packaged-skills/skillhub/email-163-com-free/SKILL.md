@@ -1,0 +1,203 @@
+---
+slug: email-163-com-free
+name: email-163-com-free
+version: "1.0.0"
+displayName: 163邮箱基础版
+summary: 163邮箱CLI基础工具,支持发送邮件、读取邮件与简单搜索
+license: MIT
+description: |-
+  163邮箱基础版Skill,基于Python CLI实现,覆盖发送、读取与简单搜索核心功能。
+
+  核心能力:
+  - 发送邮件(纯文本/单附件)
+  - 读取邮件(IMAP ID扩展RFC 2971)
+  - 按发件人/主题简单搜索
+  - 基础配置管理(JSON配置文件)
+
+  适用场景:
+  - 日常工作邮件发送
+  - 未读邮件快速查阅
+  - 按发件人简单搜索历史邮件
+tags:
+  - Communication
+  - Productivity
+tools:
+  - read
+  - exec
+---
+
+# 163邮箱基础版
+
+## 依赖说明
+
+### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
+
+### 依赖项
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+本Skill无需额外API Key（LLM能力由Agent平台内置提供）
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，无需exec命令行能力）
+
+## 核心能力
+
+本Skill提供163邮箱基础邮件管理能力:
+
+- **发送邮件**: 支持纯文本(`--body`)与单附件(`--attach`)
+- **读取邮件**: 支持 `--count`、`--folder` 基础筛选,内置IMAP ID认证(RFC 2971)
+- **简单搜索**: 按发件人(`--from`)或主题(`--subject`)查询
+- **配置管理**: JSON配置文件,包含email、password(授权码)、服务器地址
+
+## 适用场景
+
+### 场景一： 发送工作邮件
+- **输入**: 收件人 colleague@example.com,主题"项目进度",正文"本周进度如下",附件 progress.pdf
+- **处理**: 执行 `email-163-com send --to colleague@example.com --subject "项目进度" --body "本周进度如下" --attach progress.pdf`
+- **输出**: 发送成功确认,显示收件人、主题、附件名
+
+### 场景二： 查看未读邮件
+- **输入**: 查看最近10封未读邮件
+- **处理**: 执行 `email-163-com read --count 10 --unread`
+- **输出**: 未读邮件列表,含发件人、主题、日期、ID、Flags
+
+### 场景三： 按发件人简单搜索
+- **输入**: 搜索阿里云发来的通知邮件
+- **处理**: 执行 `email-163-com search --from "阿里云" --count 5`
+- **输出**: 匹配邮件列表,含发件人、主题、日期、ID
+
+## 配置说明
+
+### 配置文件位置
+`~/.config/email-163-com/config.json`
+
+### 配置文件格式
+```json
+{
+  "email": "your_email@163.com",
+  "password": "your_auth_code",
+  "imap_server": "imap.163.com",
+  "imap_port": 993,
+  "smtp_server": "smtp.163.com",
+  "smtp_port": 465
+}
+```
+
+### 授权码获取
+登录163网页版 → 设置 → POP3/SMTP/IMAP → 开启IMAP/SMTP服务 → 生成客户端授权码。授权码仅显示一次,请妥善保存,不要使用邮箱登录密码。
+
+### 安全建议
+```bash
+chmod 600 ~/.config/email-163-com/config.json
+```
+
+## 案例展示
+
+### 案例1: 发送带附件的周报
+**背景**: 向同事发送项目周报,正文为简短文本,附带 progress.pdf。
+
+**操作**:
+```bash
+email-163-com send \
+  --to colleague@example.com \
+  --subject "项目周报" \
+  --body "本周进度详见附件" \
+  --attach progress.pdf
+```
+
+**输出**:
+```text
+✅ Message sent successfully!
+   To: colleague@example.com
+   Subject: 项目周报
+   Attachments: progress.pdf (1.2 MB)
+```
+
+### 案例2: 搜索Cloudflare验证邮件
+**背景**: 需要找到Cloudflare发来的验证邮件。
+
+**操作**:
+```bash
+email-163-com search --from "Cloudflare" --count 5
+```
+
+**输出**:
+```text
+📧 From: "Cloudflare" <noreply@notify.cloudflare.com>
+   Subject: [Action required] Verify your email address
+   Date: Wed, 18 Feb 2026 14:17:02
+   ID: 15
+   Flags:
+--------------------------------------------------
+```
+
+## 异常处理
+
+### 1. IMAP连接失败: SELECT Unsafe Login
+**原因**: 163邮箱强制要求IMAP ID扩展(RFC 2971),未配置IMAP ID信息会拒绝登录
+**处理**: 确认配置文件中已配置 `imap_id` 字段;默认配置已内置,自定义时需保留该字段
+
+### 2. 认证失败: LOGIN failed
+**原因**: 使用了邮箱登录密码而非客户端授权码
+**处理**: 登录163网页版 → 设置 → POP3/SMTP/IMAP,生成客户端授权码;将授权码填入配置文件 `password` 字段
+
+### 3. 附件发送失败: Cannot attach file
+**原因**: 文件路径错误或无读取权限
+**处理**: 确认文件路径正确;检查文件权限;附件大小不超过163邮箱限制(50MB)
+
+### 4. 中文文件夹名操作失败
+**原因**: 终端编码非UTF-8导致中文文件夹名传输异常
+**处理**: 确保终端使用UTF-8编码;Windows PowerShell执行 `chcp 65001` 切换编码
+
+### 5. 搜索结果为空但邮件存在
+**原因**: 163邮箱IMAP搜索对中文支持有限,或搜索条件过严
+**处理**: 放宽搜索条件,先只用 `--from` 或 `--subject`;确认搜索文件夹正确
+
+## FAQ
+
+### Q1: 为什么必须使用客户端授权码?
+A: 163邮箱IMAP/SMTP登录必须使用客户端授权码而非登录密码。获取方式:登录网页版 → 设置 → POP3/SMTP/IMAP → 开启服务并生成授权码。
+
+### Q2: 配置文件应该放在哪里?
+A: 默认路径 `~/.config/email-163-com/config.json`,包含 `email`、`password`(授权码)、`imap_server`(imap.163.com)、`imap_port`(993)、`smtp_server`(smtp.163.com)、`smtp_port`(465)。建议执行 `chmod 600` 设置权限。
+
+### Q3: 如何发送HTML格式邮件?
+A: 基础版支持纯文本(`--body`)与单附件,不支持HTML格式发送。如需HTML邮件、多附件、文件正文等功能,请升级付费版。
+
+### Q4: IMAP ID是什么?为什么163邮箱必需?
+A: IMAP ID是RFC 2971定义的IMAP4 ID扩展,163邮箱强制要求。未配置会返回 `SELECT Unsafe Login` 错误。本Skill默认已内置IMAP ID配置。
+
+## 错误处理
+
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接，执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令请求；确认Agent平台LLM服务正常 |
+| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
+| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
+| 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
+
+## 已知限制
+
+- 仅支持163邮箱,不兼容其他邮箱服务商
+- 仅支持纯文本邮件与单附件发送(多附件需升级付费版)
+- 不支持邮件操作(删除/移动/标记)与文件夹管理(需升级付费版)
+- 不支持附件下载(需升级付费版)
+- IMAP搜索对中文支持有限,复杂搜索需结合 `read` 浏览
+- 配置文件明文存储授权码,需手动设置文件权限
+
+## 升级提示
+
+以上为基础版能力,如需以下进阶功能,请升级到付费版 `email-163-com`:
+
+- HTML邮件发送与多附件批量发送
+- 邮件操作(删除/移动/标记已读未读)
+- 文件夹管理(列出/创建/删除)
+- 附件查看与批量下载
+- 邮件组合搜索(发件人+主题+文件夹+数量)
+- 8个领域特定异常处理与6个深度FAQ

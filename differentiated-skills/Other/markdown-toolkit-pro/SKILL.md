@@ -4,12 +4,10 @@ name: markdown-toolkit-pro
 version: "1.0.0"
 displayName: Markdown 工具箱专业版
 summary: 面向团队的多文件站点、目录生成与文档规范治理工具。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  面向团队的多文件 Markdown 站点与文档规范治理专业工具。
-
-  核心能力:
+  面向团队的多文件 Markdown 站点与文档规范治理专业工具。核心能力:
   - 多文件站点与目录（TOC）自动生成
   - 文档规范 lint 与团队规则集
   - 链接校验与死链检测
@@ -20,19 +18,16 @@ description: |-
   - 文档规范 lint 与 CI 集成
   - 死链检测与多格式导出
 
-  差异化: 专业版在免费版单文件基础上扩展多文件站点、规范 lint、死链检测与多格式导出，兼容免费版规则。
-
-  触发关键词: 多文件站点, 目录生成, 文档 lint, 死链检测, 多格式导出, markdown pro, docbook, pdf
+  差异化: 专业版在免费版单文件基础上扩展多文件站点、规范 lint、死链检测与多格式导出，兼容免费版规则
 tags:
 - Markdown
 - 企业级
 - 文档治理
 - 其他工具
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Markdown 工具箱（专业版）
 
 ## 概述
@@ -94,6 +89,20 @@ markdownlint docs/**/*.md --config .markdownlint.json
 {baseDir}/scripts/md-site.sh export --to pdf --src docs/ --out build/
 ```
 
+## 不适用场景
+
+以下场景Markdown 工具箱专业版不适合处理：
+
+- 加密文件破解
+- 损坏文件修复
+- 物理介质数据恢复
+
+
+## 触发条件
+
+需要文件处理、文档转换、格式互转、内容提取时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 1. 将免费版规则纳入团队 lint 规则集。
@@ -101,7 +110,7 @@ markdownlint docs/**/*.md --config .markdownlint.json
 3. 接入 CI lint 与死链检测。
 4. 配置多格式导出。
 
-## 配置示例
+## 示例
 
 站点配置（`md-site.json`）：
 
@@ -248,7 +257,7 @@ pandoc docs/*.md -o build/manual.xml -t docbook
 - **操作系统**: Windows / macOS / Linux
 - **Node.js**: 18+（lint 工具）
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | markdownlint-cli | lint 工具 | 必需 | `npm install -g markdownlint-cli` |
@@ -261,3 +270,17 @@ pandoc docs/*.md -o build/manual.xml -t docbook
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 命令行执行）
 - **说明**: 通过自然语言指令驱动 Agent 完成多文件站点与文档治理
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

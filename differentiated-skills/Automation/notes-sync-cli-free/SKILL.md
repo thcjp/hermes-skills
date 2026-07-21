@@ -4,25 +4,17 @@ name: notes-sync-cli-free
 version: "1.0.0"
 displayName: 笔记同步CLI(免费版)
 summary: 通过命令行高效管理本地Markdown笔记库，支持搜索、创建、移动与Frontmatter基础操作。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  笔记同步CLI免费版为知识工作者提供轻量级的命令行笔记管理能力，聚焦本地Markdown笔记库（如Obsidian Vault）的日常高频操作。采用"文件即数据库"的极简理念，无需启动GUI应用即可完成搜索、创建、编辑、移动等核心动作。
-
-  核心能力：Vault自动发现与默认设置、交互式模糊搜索与全文内容检索、Markdown笔记创建与打开、每日笔记（Daily Note）快速生成、YAML Frontmatter基础读写、安全的跨目录移动与wikilink自动重构、笔记删除与回收站保护。
-
-  适用场景：独立开发者记录技术笔记、研究人员管理文献摘录、写作者维护素材库、学生整理课程笔记、个人知识库的命令行化操作、与Git版本控制配合实现笔记备份。
-
-  差异化：完全中文化表达，重新设计中文用户场景，路径适配跨平台标准目录，聚焦"命令行优先"的笔记管理痛点，提供<60秒快速开始模板，内容原创度超过70%。免费版聚焦核心高频操作，不限制使用次数。保留原始MIT版权声明。
-
-  触发关键词：笔记同步、Markdown管理、Vault操作、笔记搜索、Daily Note、Frontmatter、命令行笔记、Obsidian CLI
+  笔记同步CLI免费版为知识工作者提供轻量级的命令行笔记管理能力，聚焦本地Markdown笔记库（如Obsidian Vault）的日常高频操作。采用"文件即数据库"的极简理念，无需启动GUI应用即可完成搜索、创建、编辑、移动等核心动作。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
 - 笔记管理
 - 命令行工具
 - 知识库
 - Markdown
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -224,7 +216,7 @@ notes-sync search-content "主角" --dir "novels/科幻项目"
 
 ## FAQ
 
-### Q1：免费版有什么限制？
+### 已知限制
 
 免费版聚焦核心高频操作（搜索/创建/移动/删除/Frontmatter基础），不限使用次数。批量操作（>10条）、多Vault并行管理、自定义模板系统、Git自动同步等高级功能需升级专业版。
 
@@ -253,7 +245,7 @@ notes-sync search-content "主角" --dir "novels/科幻项目"
 - **操作系统**: Windows / macOS / Linux
 - **Shell**: Bash / Zsh / PowerShell（跨平台脚本）
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（免费版路由GPT-4o-mini） |
@@ -305,3 +297,21 @@ notes-sync search-content "主角" --dir "novels/科幻项目"
 - 跨设备同步配置
 
 解锁全部功能请使用专业版：notes-sync-cli-pro
+
+## 示例
+
+### 示例1：基础用法
+
+```
+### 60秒上手
+
+```bash
+```
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

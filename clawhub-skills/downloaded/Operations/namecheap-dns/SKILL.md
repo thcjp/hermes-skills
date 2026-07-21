@@ -8,31 +8,11 @@ summary: Manage Namecheap DNS records safely by fetching existing entries, mergi
 license: MIT
 description: |-
   Manage Namecheap DNS records safely by fetching existing entries, merging
-  changes, auto-backing u...
-
-  核心能力:
-
-  - 运维工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 系统运维、监控告警、资源管理
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: dns, records, fetching, manage, namecheap, safely
+  changes, auto-backing u。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Operations
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -53,7 +33,7 @@ The Namecheap API's `setHosts` method **replaces ALL DNS records** for a domain.
 
 ## Setup
 
-### 1. Install dependencies
+### 依赖说明
 
 ```bash
 cd ~/.skill-platform/workspace/skills/namecheap-dns
@@ -194,7 +174,7 @@ Each backup includes:
 
 This allows you to see what was ACTUALLY live in DNS, not just what the API knew about.
 
-## Safety Features
+## 核心能力
 
 1. **Ghost record detection** — automatic check for records invisible to API
 2. **Auto-backup before changes** — every `add` or `remove` creates a timestamped backup (includes DNS snapshot)
@@ -205,7 +185,7 @@ This allows you to see what was ACTUALLY live in DNS, not just what the API knew
 7. **Rollback** — one command to restore from backup
 8. **Safety override** — `--force` flag for when you need to bypass ghost record warnings
 
-## Examples
+## 示例
 
 ### Mailgun Setup
 
@@ -222,7 +202,7 @@ This allows you to see what was ACTUALLY live in DNS, not just what the API knew
 
 Review the diff, then run without `--dry-run` to apply.
 
-## Known Limitations
+## 已知限制
 
 ### ⚠️ The Namecheap API is Destructive
 
@@ -311,3 +291,29 @@ Namecheap API docs: <https://www.namecheap.com/support/api/methods/domains-dns/>
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 适用场景
+
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 常见问题
+
+### Q1: 如何开始使用Namecheap DNS？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Namecheap DNS有什么限制？
+A: 请参考已知限制章节了解具体限制。

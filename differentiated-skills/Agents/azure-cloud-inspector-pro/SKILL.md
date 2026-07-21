@@ -4,7 +4,7 @@ name: azure-cloud-inspector-pro
 version: "1.0.0"
 displayName: Azure巡检员专业版
 summary: 全维度Azure巡检,含RBAC审计、成本管理、NSG暴露矩阵、跨订阅批量、定时调度、趋势对比。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   Azure巡检员专业版是一个以"日常巡检"为核心视角的Azure CLI辅助工具,面向运维工程师、云架构师、安全工程师、FinOps专员、合规审计员五类角色。针对云上资源"配置漂移无人察觉、公网暴露面长期敞开、RBAC过度授权难发现、成本失控无预警、NSG端口暴露无矩阵、跨订阅巡检低效、巡检结论难分享、历史趋势无对比"八大痛点,构建了风险评分模型、暴露面发现、配置漂移检测、巡检任务模板、巡检报告生成、RBAC深度审计、Cost Management成本管理、NSG暴露矩阵、跨订阅批量巡检、定时巡检调度与历史趋势对比十一大核心能力。

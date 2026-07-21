@@ -4,7 +4,7 @@ name: firewall-toolkit-free
 version: "1.0.0"
 displayName: 防火墙配置工具包免费版
 summary: 服务器防火墙配置助手,支持iptables/uffw基础规则、端口管理与安全基线检查,适合个人开发者服务器安全防护。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   防火墙配置工具包免费版,为个人开发者提供服务器防火墙配置与安全加固能力。
@@ -18,7 +18,7 @@ tags:
 - iptables
 - 免费版
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -64,7 +64,7 @@ ufw allow 22/tcp comment 'SSH'
 ufw allow 80/tcp comment 'HTTP'
 ufw allow 443/tcp comment 'HTTPS'
 
-# 限制SSH连接(防暴力破解)
+# 已知限制
 ufw limit 22/tcp comment 'SSH限速'
 
 # 启用防火墙
@@ -223,6 +223,7 @@ echo "========================================="
 ```
 
 ## 使用场景
+- 不适用: 需要人工判断的复杂决策场景
 
 ### 场景一:新服务器初始加固
 
@@ -270,7 +271,7 @@ if [ -f "$SSH_CONFIG" ]; then
     echo "SSH配置已加固"
 fi
 
-# 4. 安装Fail2Ban
+# 依赖说明
 echo ""
 echo "--- 4. 安装Fail2Ban ---"
 if ! command -v fail2ban-client &> /dev/null; then
@@ -381,7 +382,7 @@ sudo ufw status numbered
 curl -s -o /dev/null -w "%{http_code}" http://localhost
 ```
 
-## 配置示例
+## 示例
 
 ### 常用端口参考
 
@@ -486,3 +487,13 @@ UFW是iptables的前端工具,提供更简单的配置接口。底层仍使用ip
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行服务器防火墙配置与安全加固任务
+
+## 错误处理
+- 边界输入处理: 空输入返回提示信息, 超长输入自动截断
+- 降级策略: 异常时返回默认值, 确保流程不中断
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

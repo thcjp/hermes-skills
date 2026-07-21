@@ -4,12 +4,10 @@ name: news-feed-tool-free
 version: "1.0.0"
 displayName: RSS新闻订阅免费版
 summary: 从主流国际RSS源获取最新新闻标题与摘要，零API密钥零依赖
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  RSS新闻订阅免费版，从BBC、Reuters、AP等主流国际媒体RSS源获取最新新闻标题与摘要。
-
-  核心能力:
+  RSS新闻订阅免费版，从BBC、Reuters、AP等主流国际媒体RSS源获取最新新闻标题与摘要。核心能力:
   - 从7个国际主流媒体RSS源获取新闻
   - 支持按来源、主题、数量筛选
   - 零API密钥、零外部依赖
@@ -23,19 +21,16 @@ description: |-
   差异化:
   - 免费版零成本使用，纯Python标准库实现
   - 覆盖7个主流国际RSS源
-  - 与PRO版本完全兼容，可平滑升级
-
-  触发关键词: RSS新闻, 新闻订阅, BBC, Reuters, 国际新闻, news feed, headlines
+  - 与PRO版本完全兼容...
 tags:
 - 新闻
 - RSS
 - 国际新闻
 - 订阅
 tools:
-- read
+  - - read
 - exec
 ---
-
 # RSS新闻订阅工具（免费版）
 
 ## 概述
@@ -97,6 +92,20 @@ python3 {baseDir}/scripts/news.py
 示例输出：
 
 ```markdown
+## 不适用场景
+
+以下场景RSS新闻订阅免费版不适合处理：
+
+- 纯技术文档撰写
+- 学术论文写作
+- 法律文书起草
+
+
+## 触发条件
+
+需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于非本工具能力范围的需求。
+
+
 ## BBC News
 
 1. **Global Climate Summit Reaches Historic Agreement**
@@ -199,7 +208,7 @@ python3 {baseDir}/scripts/news.py --source bbc --topic "ukraine"
 python3 {baseDir}/scripts/news.py --source guardian --topic "tech" --limit 15
 ```
 
-## 配置示例
+## 示例
 
 ### RSS源配置
 
@@ -327,7 +336,7 @@ python3 {baseDir}/scripts/news.py --source aljazeera --topic "ukraine"
 
 ## 常见问题
 
-### Q1：免费版需要安装额外的 Python 包吗？
+### 依赖说明
 
 不需要。免费版仅使用 Python 标准库（urllib、xml.etree、html.parser 等），无需 pip install 任何第三方包。
 
@@ -403,3 +412,15 @@ curl -s -o /dev/null -w "%{http_code}" http://feeds.bbci.co.uk/news/rss.xml
 - **适用规模**: 个人用户、轻量级国际新闻浏览场景
 - **特殊优势**: 零成本、零依赖、零配置，开箱即用
 - **升级路径**: 可无缝升级至 news-feed-tool-pro 获取国内外源与定时获取能力
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用

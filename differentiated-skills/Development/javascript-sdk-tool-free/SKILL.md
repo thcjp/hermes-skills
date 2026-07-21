@@ -4,12 +4,10 @@ name: javascript-sdk-tool-free
 version: "1.0.0"
 displayName: JS SDK工具免费版
 summary: JavaScript AI 应用 SDK 入门工具，支持模型调用、文件上传与基础代理配置。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向个人开发者的 JavaScript AI 应用 SDK 工具，提供基础的模型调用与文件处理能力。
-
-  核心能力:
+  面向个人开发者的 JavaScript AI 应用 SDK 工具，提供基础的模型调用与文件处理能力。核心能力:
   - AI 应用调用与结果获取
   - 文件自动上传与手动上传
   - 环境变量认证配置
@@ -21,19 +19,16 @@ description: |-
   - 模型调用的基础封装
   - 文件上传与处理场景
 
-  差异化: 免费版聚焦个人开发者的基础 AI 应用调用场景，提供简洁的 API 与示例，开箱即用。
-
-  触发关键词: javascript sdk, ai应用调用, 模型调用, 文件上传, api key配置, inference sdk, typescript sdk
+  差异化: 免费版聚焦个人开发者的基础 AI 应用调用场景，提供简洁的 API 与示例，开箱即用
 tags:
 - 开发工具
 - JavaScript
 - AI应用
 - SDK
 tools:
-- read
+  - - read
 - exec
 ---
-
 # JavaScript SDK 工具（免费版）
 
 ## 概述
@@ -157,6 +152,20 @@ if (status.status === 'completed') {
 }
 ```
 
+## 不适用场景
+
+以下场景JS SDK工具免费版不适合处理：
+
+- 逆向工程闭源API
+- API安全渗透测试
+- 非标准协议集成
+
+
+## 触发条件
+
+需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 安装
@@ -216,7 +225,7 @@ async function main() {
 main();
 ```
 
-## 配置示例
+## 示例
 
 ### 运行参数说明
 
@@ -400,7 +409,7 @@ for (const prompt of prompts) {
 - **Node.js 版本**: 18.0.0+（或支持 fetch 的现代浏览器）
 - **包管理器**: npm / yarn / pnpm
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -417,3 +426,15 @@ for (const prompt of prompts) {
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 命令行执行）
 - **说明**: 通过自然语言指令驱动 Agent 提供 SDK 集成建议，代码运行需要 Node.js 和 npm 执行能力
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用

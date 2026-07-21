@@ -4,12 +4,10 @@ name: google-workspace-toolkit-free
 version: "1.0.0"
 displayName: 谷歌办公工具接口免费版
 summary: 免配置云控制台的Google办公工具接口,OAuth登录即用,支持Gmail、日历、Drive核心工具调用。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  谷歌办公工具接口免费版,通过工具协议直接调用 Google Workspace 服务,无需创建云控制台项目,OAuth 登录即可使用。
-
-  核心能力:
+  谷歌办公工具接口免费版,通过工具协议直接调用 Google Workspace 服务,无需创建云控制台项目,OAuth 登录即可使用。核心能力:
   - 零云控制台配置,Google 账号登录即用
   - Gmail 邮件搜索、读取、发送、草稿
   - Google 日历事件列表、创建、查询
@@ -19,11 +17,7 @@ description: |-
   适用场景:
   - 个人用户快速访问 Google 邮件与日历
   - 无云控制台配置经验的轻量用户
-  - 需要命令行驱动 Google 服务的自动化场景
-
-  差异化:免费版主打"零配置即用"体验,跳过传统云控制台项目创建流程,OAuth 授权后直接通过工具协议调用核心服务,大幅降低上手门槛。
-
-  触发关键词: gmail, google, workspace, 邮件, 日历, drive, 工具接口, 工具协议, oauth, 免配置
+  - 需要命令行驱动 Google 服务的自动化...
 tags:
 - 沟通协作
 - 谷歌办公
@@ -31,10 +25,9 @@ tags:
 - OAuth认证
 - 个人效率
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 谷歌办公工具接口 - 免费版
 
 ## 概述
@@ -86,7 +79,7 @@ tools:
 用户无需任何云控制台配置,安装后直接登录 Google 账号即可搜索邮件。
 
 ```bash
-# 第一步:安装工具接口(仅需一次)
+# 依赖说明
 npm install -g @presto-ai/google-workspace-toolkit
 
 # 第二步:注册工具服务(仅需一次)
@@ -135,6 +128,20 @@ gwtool call --server google-workspace \
     localPath="/tmp/report.pdf"
 ```
 
+## 不适用场景
+
+以下场景谷歌办公工具接口免费版不适合处理：
+
+- 黑帽SEO手段
+- 搜索引擎作弊
+- 付费广告投放管理
+
+
+## 触发条件
+
+需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 第一步:安装与注册
@@ -175,7 +182,7 @@ gwtool call --server google-workspace --tool "calendar.list"
 gwtool call --server google-workspace --tool "drive.search" query="报告"
 ```
 
-## 配置示例
+## 示例
 
 ### 工具服务注册配置
 
@@ -342,3 +349,17 @@ gwtool call --server google-workspace --tool "gmail.search" query="is:unread" ma
 
 - **分类**: MD+EXEC(纯 Markdown 指令,核心功能通过工具协议调用需要 exec 命令行执行能力)
 - **说明**: 基于工具接口的 AI Skill,通过工具协议统一调用 Google Workspace 服务。免费版主打零云控制台配置,OAuth 登录即用,支持 Gmail、Calendar、Drive 三大核心服务共 10 个工具,适合个人轻量办公场景。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

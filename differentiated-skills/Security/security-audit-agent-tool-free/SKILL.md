@@ -4,7 +4,7 @@ name: security-audit-agent-tool-free
 version: "1.0.0"
 displayName: Agent安全审计免费版
 summary: AI Agent系统安全审计工具,支持代码库安全检查、提示注入检测与基础配置审计,适合个人开发者快速安全自查。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   Agent安全审计免费版,为AI Agent开发者提供基础安全审计能力。
@@ -18,7 +18,7 @@ tags:
 - Agent审计
 - 免费版
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -377,7 +377,7 @@ bash injection_detect.sh
 bash config_audit.sh
 ```
 
-## 配置示例
+## 示例
 
 ### Agent安全配置检查清单
 
@@ -462,7 +462,7 @@ EOF
 - **操作系统**: Windows / macOS / Linux
 - **Shell**: Bash(脚本示例使用Bash语法)
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -479,3 +479,17 @@ EOF
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行AI Agent系统安全审计任务
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

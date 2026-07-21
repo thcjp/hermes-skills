@@ -4,32 +4,19 @@ name: trending-feed-skill-free
 version: "1.0.0"
 displayName: 热榜订阅(免费版)
 summary: 获取 GitHub Trending 热门仓库列表，支持语言过滤，返回结构化 JSON 数据。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  获取 GitHub Trending 热门仓库列表，支持语言过滤，返回结构化 JSON 数据。
-
-  核心能力：
+  获取 GitHub Trending 热门仓库列表，支持语言过滤，返回结构化 JSON 数据。核心能力：
   - 抓取 GitHub Trending 页面并解析仓库元信息
   - 调用 GitHub REST API 补全描述、星标数、主语言
-  - 支持按编程语言过滤，返回结构化 JSON
-  - 适配飞书、Discord、Telegram 等多平台消息格式
-
-  适用场景：
-  - 每日技术动态聚合与推送
-  - 关注特定语言生态的流行项目
-  - 团队周会技术分享素材准备
-  - 个人开发者发现新工具与框架
-
-  差异化：采用结构化输出与多平台格式化模板，配合本地缓存降低 API 速率限制影响，针对免费用户提供核心能力与可扩展的接入点。
-
-  触发关键词：github trending、热榜、热门仓库、trending、每日热门
+  - 支持按编程语言过滤。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
 - 集成工具
 - 数据聚合
 - 开发者效率
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -115,7 +102,7 @@ GitHub Trending 今日热榜
    https://github.com/owner/repo
 ```
 
-## 配置示例
+## 示例
 
 ### 语言过滤参数
 
@@ -147,7 +134,7 @@ GitHub Trending 今日热榜
 
 A：请检查网络连接与 GitHub 站点可达性。若在公司网络下，可能需要配置代理。可尝试在脚本中设置 `HTTPS_PROXY` 环境变量。
 
-### Q2：API 报 403 速率限制错误怎么办？
+### 已知限制
 
 A：GitHub 未认证请求限制为 60 次/小时。建议：(1) 降低抓取频率；(2) 使用本地缓存复用结果；(3) 升级到专业版使用 GitHub Token 认证提升到 5000 次/小时。
 
@@ -189,7 +176,7 @@ A：免费版可将 JSON 输出重定向到本地文件，例如 `fetch_trending
 - **操作系统**：Windows / macOS / Linux
 - **Python**：3.8+（用于运行抓取脚本）
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由 Agent 平台内置 LLM 提供 |
@@ -204,3 +191,11 @@ A：免费版可将 JSON 输出重定向到本地文件，例如 `fetch_trending
 ### 可用性分类
 - **分类**：MD+EXEC（纯 Markdown 指令，部分功能需要 exec 命令行执行能力）
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

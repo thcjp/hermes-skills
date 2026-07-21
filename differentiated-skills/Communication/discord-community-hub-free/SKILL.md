@@ -4,12 +4,10 @@ name: discord-community-hub-free
 version: "1.0.0"
 displayName: Discord社区中心免费版
 summary: 基础 Discord 社区管理工具,支持用户信息、服务器列表与基础集成查询。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向个人社区管理者的 Discord 社区基础管理工具。
-
-  核心能力:
+  面向个人社区管理者的 Discord 社区基础管理工具。核心能力:
   - 查询当前用户资料与已加入服务器列表
   - 获取服务器成员信息与角色概况
   - 查询服务器小组件(widget)与邀请详情
@@ -20,19 +18,16 @@ description: |-
   - 小型服务器成员与角色概览
   - 集成工具的连接与发现
 
-  差异化: 免费版聚焦只读查询与基础集成,安全低风险;Pro 版提供应用命令、权益管理与角色连接等高级能力。
-
-  触发关键词: discord, 社区, 服务器, 成员, 角色, 集成, guild, member, role, widget, community
+  差异化: 免费版聚焦只读查询与基础集成,安全低风险;Pro 版提供应用命令、权益管理与角色连接等高级能力
 tags:
 - Discord
 - 社区管理
 - Communication
 - 服务器管理
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Discord 社区中心(免费版)
 
 ## 概述
@@ -127,9 +122,23 @@ const found = await integration.search_tools({
 });
 ```
 
+## 不适用场景
+
+以下场景Discord社区中心免费版不适合处理：
+
+- 逆向工程闭源API
+- API安全渗透测试
+- 非标准协议集成
+
+
+## 触发条件
+
+需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
-### 第一步:安装集成网关插件
+### 依赖说明
 
 在 Agent 平台安装集成网关插件:
 
@@ -163,7 +172,7 @@ const connected = await integration.list_integrations();
 const tools = await integration.list_tools({ integration: "discord" });
 ```
 
-## 配置示例
+## 示例
 
 ### 用户资料查询
 
@@ -309,3 +318,17 @@ Discord 限制用户名每小时最多修改 2 次。频繁修改会触发此限
 - **说明**: 以自然语言指令驱动 Agent 通过集成网关调用 Discord 工具完成社区查询
 - **适用规模**: 个人/小团队,只读查询为主,无写操作风险
 - **升级建议**: 如需应用命令管理、权益管理、角色连接、用户修改等写操作,请升级至 `discord-community-hub-pro`
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

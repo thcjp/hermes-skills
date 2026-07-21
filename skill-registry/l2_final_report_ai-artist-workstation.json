@@ -1,0 +1,24 @@
+{
+  "slug": "ai-artist-workstation",
+  "skill_id": 1849,
+  "imported_at": "2026-07-20T21:28:34.047844",
+  "trace_total": 42,
+  "trace_grade": "B",
+  "l2_passed": true,
+  "db_result": {
+    "total": 46,
+    "grade": "B",
+    "trust": 10,
+    "reliability": 9,
+    "adaptability": 9,
+    "convention": 10,
+    "effectiveness": 8,
+    "is_llm_evaluated": true
+  },
+  "checks_summary": {
+    "trigger_accuracy": "PASS",
+    "output_completeness": "PASS",
+    "dependency_reachability": "WARN",
+    "trace_score": "42/50"
+  }
+}

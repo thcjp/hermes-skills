@@ -1,0 +1,74 @@
+{
+  "slug": "sales-copy-writer",
+  "validated_at": "2026-07-20T21:39:24.561599",
+  "l2_version": "1.0",
+  "status": "pending_llm_eval",
+  "skill_md_path": "d:\\skills\\packaged-skills\\skillhub\\sales-copy-writer\\SKILL.md",
+  "static_check": {
+    "issues": [],
+    "static_scores": {
+      "trust_static": 10,
+      "convention_static": 10
+    },
+    "body_line_count": 427,
+    "description_length": 225
+  },
+  "trigger_test_cases": [
+    {
+      "id": "tc1",
+      "user_input": "帮我卖货文案",
+      "expected_trigger": true,
+      "reason": "从description触发关键词提取: 卖货文案"
+    },
+    {
+      "id": "tc2",
+      "user_input": "帮我营销文案",
+      "expected_trigger": true,
+      "reason": "从description触发关键词提取: 营销文案"
+    },
+    {
+      "id": "tc3",
+      "user_input": "帮我卖点提炼",
+      "expected_trigger": true,
+      "reason": "从description触发关键词提取: 卖点提炼"
+    }
+  ],
+  "external_dependencies": [
+    {
+      "type": "ai_model",
+      "name": "Claude",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "ai_model",
+      "name": "文心",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "ai_model",
+      "name": "通义",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "ai_model",
+      "name": "DeepSeek",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    }
+  ],
+  "llm_eval_prompt": "# L2验证: LLM模拟评估任务\n\n## 被评估Skill: sales-copy-writer\n\n## SKILL.md内容\n---\nslug: sales-copy-writer\nname: sales-copy-writer\nversion: \"1.1.0\"\ndisplayName: \"卖货文案手\"\nsummary: \"文案干瘪没转化?FAB卖点+6种情绪钩子+4种CTA,一键生成高转化卖货文案\"\nlicense: Proprietary\ndescription: |-\n  卖货文案手——解决文案干瘪无转化痛点,FAB法则(特性/优势/利益)结构化提炼卖点,6种情绪钩子(痛点/好奇/紧迫/社交证明/对比/权威)按场景选择,4种CTA话术(关注/私信/下单/加群)匹配转化目标,5平台风格自动适配(小红书/抖音/公众号/微博/电商)。适用于电商店主写详情页、直播带货预热话术、社交媒体种草营销、新品上市推广、副业达人做种草带货。触发关键词:卖货文案、营销文案、卖点提炼、种草文案、CTA话术、转化率优化、营销钩子、带货文案。\nhomepage: \"https://skillhub.cn\"\ntags: [卖货文案, 营销转化, 电商带货, 副业工具]\ntools:\n  - read\n  - exec\nsuggested_price: \"19.00\"\npricing_tier: \"business\"\npricing_rationale: \"营销推广类, medium市场, enterprise复杂度, weekly频次, business层 → 直接关联收入,付费意愿强\"\n---\n# 卖货文案手 v1.1.0\n\n解决内容营销中\"文案干瘪无转化\"的核心痛点,基于FAB法则+情绪钩子+CTA话术生成高转化卖货文案。\n\n## 核心能力\n\n1. **FAB法则卖点提炼**: Feature(特性)+Advantage(优势)+Benefit(利益)三段式结构化提炼3-5个核心卖点,逻辑清晰有说服力\n2. **6种情绪钩子生成**: 痛点共鸣(pain_resonance)/好奇悬念(curiosity_suspense)/紧迫感(urgency)/社交证明(social_proof)/对比反差(contrast)/权威背书(authority),按场景智能选择\n3. **4种CTA话术注入**: follow(关注)/dm(私信)/order(下单)/group(加群),匹配不同转化目标\n4. **5平台风格自动适配**: 小红书活泼种草/抖音口语化/公众号深度种草/微博简洁观点/电商促转化,自动调整字数与风格\n5. **活动促销文案**: 结合紧迫感和社交证明,生成限时活动文案\n\n## 适用场景\n\n| 场景 | 输入 | 输出 |\n|:-----|:-----|:-----|\n| 新品上市推广 | topic主题+brand_info品牌信息+platform平台 | FAB卖点+情绪钩子+平台适配文案+CTA话术 |\n| 直播带货预热 | topic+platform=douyin+hook_type=urgency | 抖音口语化文案+紧迫感钩子+下单CTA |\n| 电商详情页优化 | topic+platform=ecommerce+cta_type=order | 卖点突出文案+促转化CTA |\n| 社交媒体种草 | topic+platform=xiaohongshu+hook_type | 小红书活泼种草文案(含emoji)+私信/关注CTA |\n| 活动促销文案 | topic+hook_type=urgency+cta_type=order | 限时活动文案+紧迫感+社交证明+下单CTA |\n\n**不适用于**: 品牌长文PR稿件(字数>2000)、B2B白皮书/行业报告、纯品牌故事(无产品卖点)、海外平台(如Instagram/TikTok国际版,仅支持国内5平台风格)、负面营销/竞品攻击文案。\n\n## 使用流程\n\n### Step 1: 环境准备\n- 确认Agent已加载本SKILL.md,且支持exec工具\n- 在Agent环境变量中配置 `LLM_API_KEY`(必需)\n- 本Skill纯LLM驱动,无额外API依赖\n\n### Step 2: 卖点提炼(FAB法则)\n- 接收 `topic`(主题)和 `brand_info`(品牌信息,可选)\n- 用LLM提炼3-5个FAB结构化卖点(Feature特性+Advantage优势+Benefit利益)\n- 异常处理: 品牌信息缺失→生成无品牌版本,标注warning\n\n### Step 3: 情绪钩子生成\n- 根据 `hook_type` 选择钩子类型,生成营销文案框架\n- 6种钩子类型: pain_resonance(痛点共鸣)/curiosity_suspense(好奇悬念)/urgency(紧迫感)/social_proof(社交证明)/contrast(对比反差)/authority(权威背书)\n- 异常处理: 钩子类型无效→默认使用pain_resonance,标注warning\n\n### Step 4: 平台适配+CTA注入\n- 根据 `platform` 调整文案风格和字数(小红书300-500字/抖音50-100字/公众号800-1500字/微博140字内/电商200-400字)\n- 根据 `cta_type` 注入对应CTA话术(follow关注/dm私信/order下单/group加群)\n- 异常处理: 平台不支持→降级为通用文案,标注warning;CTA类型无效→默认使用follow\n\n### Step 5: 输出完整营销文案\n- 整合卖点、情绪钩子、平台适配文案和CTA\n- 输出结构化结果: selling_points[]+hook+adapted_content+cta\n\n## 输入格式\n\n```json\n{\n  \"topic\": \"AI代写文案服务\",\n  \"brand_info\": \"品牌名:XX, slogan:让AI帮你写\",\n  \"platform\": \"xiaohongshu\",\n  \"hook_type\": \"pain_resonance\",\n  \"cta_type\": \"order\"\n}\n```\n\n| 字段 | 类型 | 必填 | 说明 |\n|:-----|:-----|:----:|:-----|\n| topic | string | 是 | 内容主题/产品名称 |\n| brand_info | string | 否 | 品牌信息(品牌名+slogan) |\n| platform | string | 是 | 目标平台(xiaohongshu/douyin/wechat/weibo/ecommerce) |\n| hook_type | string | 否 | 情绪钩子类型,默认pain_resonance |\n| cta_type | string | 否 | CTA类型,默认follow |\n\n## 输出格式\n\n```json\n{\n  \"success\": true,\n  \"data\": {\n    \"selling_points\": [\n      {\n        \"feature\": \"AI...(截断)\n\n## 评估任务\n\n请作为Skill质量评估专家, 完成以下4项评估:\n\n### 检查1: 触发精准度\n对以下3个测试用例, 判断SKILL.md的description是否能精准触发:\n- tc1: 用户输入「帮我卖货文案」 → 预期触发: True\n- tc2: 用户输入「帮我营销文案」 → 预期触发: True\n- tc3: 用户输入「帮我卖点提炼」 → 预期触发: True\n\n评估标准:\n- PASS: 3/3个用例的触发判断与预期一致\n- WARN: 2/3一致\n- FAIL: ≤1/3一致\n\n### 检查2: 输出完整性\n模拟skill执行, 评估输出是否包含SKILL.md承诺的核心能力:\n- 读取\"核心能力\"章节\n- 模拟1个典型输入的执行\n- 判断输出是否覆盖承诺的能力点\n\n评估标准:\n- PASS: 输出覆盖所有核心能力\n- WARN: 覆盖大部分但有遗漏\n- FAIL: 输出与承诺严重不符\n\n### 检查3: 依赖可达性\n检查SKILL.md引用的外部依赖是否真实可用:\n- API endpoint是否可达\n- npm/PyPI包是否存在\n- AI模型是否为已知模型\n\n评估标准:\n- PASS: 所有依赖可达/存在\n- WARN: 部分依赖未验证\n- FAIL: 依赖不存在或不可达\n\n### 检查4: TRACE快评\n按TRACE五维度评分(每维度0-10分):\n\n- T (Trust 可信任度): 安全性、国内可用性、中文支持\n- R (Reliability 可靠性): 异常处理、边界输入、失败反馈\n- A (Adaptability 适用性): description精准、能力边界清晰\n- C (Convention 规范性): 信息架构、文档充分性\n- E (Effectiveness 有效性): 解决问题、输出可用\n\n通过标准: 总分≥35/50\n\n## 输出格式(严格JSON)\n\n```json\n{\n  \"slug\": \"sales-copy-writer\",\n  \"validated_at\": \"<ISO时间>\",\n  \"checks\": {\n    \"trigger_accuracy\": {\n      \"status\": \"PASS|WARN|FAIL\",\n      \"score\": \"3/3\",\n      \"details\": \"评估说明\"\n    },\n    \"output_completeness\": {\n      \"status\": \"PASS|WARN|FAIL\",\n      \"covered_capabilities\": [\"能力1\", \"能力2\"],\n      \"missing_capabilities\": [],\n      \"details\": \"评估说明\"\n    },\n    \"dependency_reachability\": {\n      \"status\": \"PASS|WARN|FAIL\",\n      \"total_deps\": 0,\n      \"verified_deps\": 0,\n      \"failed_deps\": [],\n      \"details\": \"评估说明\"\n    },\n    \"trace_quick_score\": {\n      \"trust\": 0,\n      \"reliability\": 0,\n      \"adaptability\": 0,\n      \"convention\": 0,\n      \"effectiveness\": 0,\n      \"total\": 0,\n      \"grade\": \"A|B|C|D\",\n      \"passed\": true,\n      \"details\": \"评估说明\"\n    }\n  },\n  \"overall_passed\": false,\n  \"overall_summary\": \"总结\"\n}\n```\n",
+  "llm_eval_prompt_length": 4740,
+  "static_pre_eval": {
+    "trust_static": 10,
+    "convention_static": 10,
+    "static_total": 20,
+    "note": "T+C维度静态分, R+A+E维度需LLM评估"
+  }
+}

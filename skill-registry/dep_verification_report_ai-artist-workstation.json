@@ -1,0 +1,222 @@
+{
+  "slug": "ai-artist-workstation",
+  "verified_at": "2026-07-20T21:31:26.165487",
+  "verifier_version": "1.0",
+  "skill_md_path": "d:\\skills\\packaged-skills\\skillhub\\ai-artist-workstation\\SKILL.md",
+  "total_deps": 12,
+  "dependencies_extracted": [
+    {
+      "type": "ai_model",
+      "name": "Claude",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "ai_model",
+      "name": "文心",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "ai_model",
+      "name": "通义",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "ai_model",
+      "name": "DeepSeek",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "ai_model",
+      "name": "通义千问",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "ai_model",
+      "name": "文心一言",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "ai_model",
+      "name": "Kimi",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "ai_model",
+      "name": "通义万相",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "ai_model",
+      "name": "文心一格",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "chinese_api_service",
+      "name": "鹧应AI写真",
+      "verification_method": "需人工验证(无URL无法自动检查)",
+      "verified": false,
+      "status": "manual_review",
+      "is_paid": true,
+      "context": "I接单画师工作站——一个人就能开AI画师工作室的全流程变现工具。核心功能:双引擎智能路由(写实风格走鹧应AI写真保证98%面部保持,艺术风格走通用绘画引擎)、8种风格模板、接单SOP从接单到交付全流程闭环、敏感词"
+    },
+    {
+      "type": "chinese_api_service",
+      "name": "即时AI等国内绘画API",
+      "verification_method": "需人工验证(无URL无法自动检查)",
+      "verified": false,
+      "status": "manual_review",
+      "is_paid": false,
+      "context": "| API | 必需 | 通用绘画引擎(免费)/鹧应AI写真(面部保持) | 通义万相/文心一格/即时AI等国内绘画API | | 图像生成API | API | 可选 | 视频生成/角色一致性引擎 | 可灵AI/即梦AI"
+    },
+    {
+      "type": "chinese_api_service",
+      "name": "即梦AI等国内视频生成服务",
+      "verification_method": "需人工验证(无URL无法自动检查)",
+      "verified": false,
+      "status": "manual_review",
+      "is_paid": false,
+      "context": "画API | | 图像生成API | API | 可选 | 视频生成/角色一致性引擎 | 可灵AI/即梦AI等国内视频生成服务 |  ### API Key 配置与安全要求 - **LLM_API_KEY**: 必需(通常由A"
+    }
+  ],
+  "verification_results": [
+    {
+      "type": "ai_model",
+      "name": "Claude",
+      "verification_method": "已知模型列表比对",
+      "verified_at": "2026-07-20T21:31:26.168998",
+      "verified": true,
+      "status": "known_model",
+      "details": "已知AI模型: Claude"
+    },
+    {
+      "type": "ai_model",
+      "name": "文心",
+      "verification_method": "已知模型列表比对",
+      "verified_at": "2026-07-20T21:31:26.168998",
+      "verified": true,
+      "status": "known_model",
+      "details": "已知AI模型: 文心"
+    },
+    {
+      "type": "ai_model",
+      "name": "通义",
+      "verification_method": "已知模型列表比对",
+      "verified_at": "2026-07-20T21:31:26.168998",
+      "verified": true,
+      "status": "known_model",
+      "details": "已知AI模型: 通义"
+    },
+    {
+      "type": "ai_model",
+      "name": "DeepSeek",
+      "verification_method": "已知模型列表比对",
+      "verified_at": "2026-07-20T21:31:26.168998",
+      "verified": true,
+      "status": "known_model",
+      "details": "已知AI模型: DeepSeek"
+    },
+    {
+      "type": "ai_model",
+      "name": "通义千问",
+      "verification_method": "已知模型列表比对",
+      "verified_at": "2026-07-20T21:31:26.168998",
+      "verified": true,
+      "status": "known_model",
+      "details": "已知AI模型: 通义千问"
+    },
+    {
+      "type": "ai_model",
+      "name": "文心一言",
+      "verification_method": "已知模型列表比对",
+      "verified_at": "2026-07-20T21:31:26.168998",
+      "verified": true,
+      "status": "known_model",
+      "details": "已知AI模型: 文心一言"
+    },
+    {
+      "type": "ai_model",
+      "name": "Kimi",
+      "verification_method": "已知模型列表比对",
+      "verified_at": "2026-07-20T21:31:26.168998",
+      "verified": true,
+      "status": "known_model",
+      "details": "已知AI模型: Kimi"
+    },
+    {
+      "type": "ai_model",
+      "name": "通义万相",
+      "verification_method": "已知模型列表比对",
+      "verified_at": "2026-07-20T21:31:26.168998",
+      "verified": true,
+      "status": "known_model",
+      "details": "已知AI模型: 通义万相"
+    },
+    {
+      "type": "ai_model",
+      "name": "文心一格",
+      "verification_method": "已知模型列表比对",
+      "verified_at": "2026-07-20T21:31:26.168998",
+      "verified": true,
+      "status": "known_model",
+      "details": "已知AI模型: 文心一格"
+    },
+    {
+      "type": "chinese_api_service",
+      "name": "鹧应AI写真",
+      "verification_method": "需人工验证(无URL无法自动检查)",
+      "verified_at": "2026-07-20T21:31:26.168998",
+      "verified": false,
+      "status": "manual_review_required",
+      "is_paid": true,
+      "context": "I接单画师工作站——一个人就能开AI画师工作室的全流程变现工具。核心功能:双引擎智能路由(写实风格走鹧应AI写真保证98%面部保持,艺术风格走通用绘画引擎)、8种风格模板、接单SOP从接单到交付全流程闭环、敏感词",
+      "details": "中文名称外部API服务\"鹧应AI写真\"无法自动验证, 需人工确认:\n  1. 搜索该服务是否真实存在\n  2. 检查API文档和定价是否与SKILL.md描述一致\n  3. 确认国内可用性和访问方式\n  上下文: I接单画师工作站——一个人就能开AI画师工作室的全流程变现工具。核心功能:双引擎智能路由(写实风格走鹧应AI写真保证98%面部保持,艺术风格走通用绘画引擎)、8种风格模板、接单SOP从接单到交付全流程闭环、敏感词"
+    },
+    {
+      "type": "chinese_api_service",
+      "name": "即时AI等国内绘画API",
+      "verification_method": "需人工验证(无URL无法自动检查)",
+      "verified_at": "2026-07-20T21:31:26.168998",
+      "verified": false,
+      "status": "manual_review_required",
+      "is_paid": false,
+      "context": "| API | 必需 | 通用绘画引擎(免费)/鹧应AI写真(面部保持) | 通义万相/文心一格/即时AI等国内绘画API | | 图像生成API | API | 可选 | 视频生成/角色一致性引擎 | 可灵AI/即梦AI",
+      "details": "中文名称外部API服务\"即时AI等国内绘画API\"无法自动验证, 需人工确认:\n  1. 搜索该服务是否真实存在\n  2. 检查API文档和定价是否与SKILL.md描述一致\n  3. 确认国内可用性和访问方式\n  上下文: | API | 必需 | 通用绘画引擎(免费)/鹧应AI写真(面部保持) | 通义万相/文心一格/即时AI等国内绘画API | | 图像生成API | API | 可选 | 视频生成/角色一致性引擎 | 可灵AI/即梦AI"
+    },
+    {
+      "type": "chinese_api_service",
+      "name": "即梦AI等国内视频生成服务",
+      "verification_method": "需人工验证(无URL无法自动检查)",
+      "verified_at": "2026-07-20T21:31:26.168998",
+      "verified": false,
+      "status": "manual_review_required",
+      "is_paid": false,
+      "context": "画API | | 图像生成API | API | 可选 | 视频生成/角色一致性引擎 | 可灵AI/即梦AI等国内视频生成服务 |  ### API Key 配置与安全要求 - **LLM_API_KEY**: 必需(通常由A",
+      "details": "中文名称外部API服务\"即梦AI等国内视频生成服务\"无法自动验证, 需人工确认:\n  1. 搜索该服务是否真实存在\n  2. 检查API文档和定价是否与SKILL.md描述一致\n  3. 确认国内可用性和访问方式\n  上下文: 画API | | 图像生成API | API | 可选 | 视频生成/角色一致性引擎 | 可灵AI/即梦AI等国内视频生成服务 |  ### API Key 配置与安全要求 - **LLM_API_KEY**: 必需(通常由A"
+    }
+  ],
+  "summary": {
+    "total": 12,
+    "verified": 9,
+    "manual_review_required": 3,
+    "failed": 0,
+    "overall_status": "PASS"
+  }
+}

@@ -4,12 +4,10 @@ name: rust-toolkit-pro
 version: "1.0.0"
 displayName: Rust工具包-专业版
 summary: 企业级Rust开发平台,支持unsafe安全审计、性能优化、嵌入式开发与CI/CD集成
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  企业级 Rust 开发工具专业版,面向团队与生产环境。
-
-  核心能力:
+  企业级 Rust 开发工具专业版,面向团队与生产环境。核心能力:
   - unsafe 代码安全审计与沙箱化
   - 性能分析与零成本抽象优化
   - 宏编程(声明宏与过程宏)
@@ -25,9 +23,7 @@ description: |-
   - 嵌入式与 IoT 设备开发
   - WebAssembly 模块开发
 
-  差异化:专业版在免费版基础上扩展 unsafe 审计、性能优化、宏编程与企业级 CI/CD,兼容免费版知识体系。
-
-  触发关键词: rust, unsafe, performance, macro, ffi, embedded, no_std, wasm, 性能优化, 安全审计, 交叉编译
+ ...
 tags:
 - Rust
 - 企业级
@@ -35,10 +31,9 @@ tags:
 - 安全审计
 - 嵌入式
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Rust 工具包 - 专业版
 
 ## 概述
@@ -243,6 +238,20 @@ fn derive_builder(input: TokenStream) -> TokenStream {
 }
 ```
 
+## 不适用场景
+
+以下场景Rust工具包-专业版不适合处理：
+
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 运维部署管理
+
+
+## 触发条件
+
+需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 企业项目初始化
@@ -266,7 +275,7 @@ EOF
 ### 性能分析工具链
 
 ```bash
-# 安装分析工具
+# 依赖说明
 cargo install cargo-flamegraph
 rustup component add llvm-tools-preview
 
@@ -280,7 +289,7 @@ cargo flamegraph --bin my-app
 cargo install cargo-diagnostics
 ```
 
-## 配置示例
+## 示例
 
 ### 企业级 Cargo.toml
 
@@ -451,3 +460,17 @@ A: 过程宏调试较困难。推荐方法:1) 使用 `cargo expand` 查看宏展
 - **说明**: 通过自然语言指令驱动 Agent 执行企业级 Rust 开发任务
 - **兼容性**: 完全兼容免费版知识体系
 - **支持**: 优先工单支持,SLA 保障响应时间
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

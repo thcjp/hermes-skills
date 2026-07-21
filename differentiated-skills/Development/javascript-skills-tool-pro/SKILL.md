@@ -4,12 +4,10 @@ name: javascript-skills-tool-pro
 version: "1.0.0"
 displayName: JavaScript规范工具(专业版)
 summary: 面向团队与企业的全量JavaScript规范套件,含性能优化、安全审查与CI/CD集成。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  JavaScript规范工具(专业版)面向团队与企业,提供全量JavaScript代码风格规范、性能优化策略、安全审查清单与CI/CD自动化集成方案。
-
-  核心能力:
+  JavaScript规范工具(专业版)面向团队与企业,提供全量JavaScript代码风格规范、性能优化策略、安全审查清单与CI/CD自动化集成方案。核心能力:
   - 覆盖28+全量风格规则,含迭代器、生成器、标准库等进阶主题
   - 完整异步并发模型与错误链路最佳实践
   - 团队级Lint规则定制与预提交钩子集成
@@ -22,13 +20,7 @@ description: |-
   - 性能敏感场景的代码优化
   - 安全合规要求的项目交付
 
-  差异化:
-  - 完全兼容免费版核心规则,可平滑升级
-  - 新增团队治理、性能分析、安全审计三大进阶模块
-  - 提供CI/CD流水线集成模板与自定义规则开发指南
-  - 中英双语规范讲解,适配国际化团队
-
-  触发关键词: javascript, js, style, guide, 代码规范, 性能, 安全, CI, lint, prettier, typescript, 团队, enterprise
+...
 tags:
 - Development
 - Frontend
@@ -38,10 +30,9 @@ tags:
 - 性能优化
 - 安全审查
 tools:
-- read
+  - - read
 - exec
 ---
-
 # JavaScript规范工具(专业版)
 
 ## 概述
@@ -155,6 +146,20 @@ const safeMerge = (target, ...sources) => {
 export { escapeHtml, safeMerge };
 ```
 
+## 不适用场景
+
+以下场景JavaScript规范工具(专业版)不适合处理：
+
+- 实际人员绩效评估
+- 财务预算审批
+- 合同法务审核
+
+
+## 触发条件
+
+需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 1. 平滑升级
@@ -227,7 +232,7 @@ module.exports = {
 };
 ```
 
-## 配置示例
+## 示例
 
 ### 全量Prettier企业配置
 
@@ -430,7 +435,7 @@ function parseResponse(raw: unknown): UserDTO {
 - **Node.js版本**: 建议 20 LTS 及以上(用于支持最新ESLint与原生ES模块)
 - **包管理器**: npm / pnpm / yarn 任一(推荐 pnpm 用于Monorepo)
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -454,3 +459,17 @@ function parseResponse(raw: unknown): UserDTO {
 
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。PRO版面向团队与企业,提供全量规则、性能优化、安全审查与CI/CD集成方案,完全兼容免费版核心规则。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

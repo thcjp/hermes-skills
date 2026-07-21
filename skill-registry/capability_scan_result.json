@@ -1,0 +1,5705 @@
+{
+  "scan_time": "2026-07-20T23:52:44.222773",
+  "total_sources": 634,
+  "already_good": 3,
+  "need_regen": 519,
+  "no_packaged": 112,
+  "to_process": 631,
+  "by_category": {
+    "Automation": 58,
+    "Communication": 38,
+    "Creative": 65,
+    "Development": 50,
+    "Finance": 11,
+    "Integrations": 94,
+    "Knowledge": 32,
+    "Lifestyle": 18,
+    "Operations": 14,
+    "Other": 90,
+    "Productivity": 38,
+    "Research": 57,
+    "Security": 23,
+    "Agents": 43
+  },
+  "skills_to_process": [
+    {
+      "slug": "auto-workflow",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\auto-workflow\\SKILL.md",
+      "original_lines": 144,
+      "source": "clawhub_downloaded",
+      "paid_score": 66,
+      "free_score": null
+    },
+    {
+      "slug": "productivity-bot",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\productivity-bot\\SKILL.md",
+      "original_lines": 128,
+      "source": "clawhub_downloaded",
+      "paid_score": 52,
+      "free_score": null
+    },
+    {
+      "slug": "queue-task",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\queue-task\\SKILL.md",
+      "original_lines": 192,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "reminder",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\reminder\\SKILL.md",
+      "original_lines": 163,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "schedule",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\schedule\\SKILL.md",
+      "original_lines": 206,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "solo-build",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\solo-build\\SKILL.md",
+      "original_lines": 335,
+      "source": "clawhub_downloaded",
+      "paid_score": 48,
+      "free_score": null
+    },
+    {
+      "slug": "translate-en-zh",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\translate-en-zh\\SKILL.md",
+      "original_lines": 171,
+      "source": "clawhub_downloaded",
+      "paid_score": 78,
+      "free_score": null
+    },
+    {
+      "slug": "workflow",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\workflow\\SKILL.md",
+      "original_lines": 210,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "workflow-decomposer",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\workflow-decomposer\\SKILL.md",
+      "original_lines": 229,
+      "source": "clawhub_downloaded",
+      "paid_score": 58,
+      "free_score": null
+    },
+    {
+      "slug": "ws-agent-browser",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\ws-agent-browser\\SKILL.md",
+      "original_lines": 199,
+      "source": "clawhub_downloaded",
+      "paid_score": 60,
+      "free_score": null
+    },
+    {
+      "slug": "x-news-daily",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\x-news-daily\\SKILL.md",
+      "original_lines": 228,
+      "source": "clawhub_downloaded",
+      "paid_score": 49,
+      "free_score": null
+    },
+    {
+      "slug": "agent-telegram",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\agent-telegram\\SKILL.md",
+      "original_lines": 181,
+      "source": "clawhub_downloaded",
+      "paid_score": 69,
+      "free_score": null
+    },
+    {
+      "slug": "alephnet-node",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\alephnet-node\\SKILL.md",
+      "original_lines": 460,
+      "source": "clawhub_downloaded",
+      "paid_score": 70,
+      "free_score": null
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\anthrovision-telegram-body-scan\\SKILL.md",
+      "original_lines": 142,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "beware-piper-tts",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\beware-piper-tts\\SKILL.md",
+      "original_lines": 147,
+      "source": "clawhub_downloaded",
+      "paid_score": 66,
+      "free_score": null
+    },
+    {
+      "slug": "bookmark-intelligence",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\bookmark-intelligence\\SKILL.md",
+      "original_lines": 251,
+      "source": "clawhub_downloaded",
+      "paid_score": 85,
+      "free_score": null
+    },
+    {
+      "slug": "calendar-reminder",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\calendar-reminder\\SKILL.md",
+      "original_lines": 137,
+      "source": "clawhub_downloaded",
+      "paid_score": 63,
+      "free_score": null
+    },
+    {
+      "slug": "creator-alpha-feed",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\creator-alpha-feed\\SKILL.md",
+      "original_lines": 124,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "discord",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\discord\\SKILL.md",
+      "original_lines": 452,
+      "source": "clawhub_downloaded",
+      "paid_score": 55,
+      "free_score": null
+    },
+    {
+      "slug": "discord-chat",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\discord-chat\\SKILL.md",
+      "original_lines": 212,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "discord-communities",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\discord-communities\\SKILL.md",
+      "original_lines": 324,
+      "source": "clawhub_downloaded",
+      "paid_score": 72,
+      "free_score": null
+    },
+    {
+      "slug": "discord-voice",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\discord-voice\\SKILL.md",
+      "original_lines": 396,
+      "source": "clawhub_downloaded",
+      "paid_score": 66,
+      "free_score": null
+    },
+    {
+      "slug": "dns",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\dns\\SKILL.md",
+      "original_lines": 160,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "email-163-com",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\email-163-com\\SKILL.md",
+      "original_lines": 389,
+      "source": "clawhub_downloaded",
+      "paid_score": 86,
+      "free_score": null
+    },
+    {
+      "slug": "email-daily-summary",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\email-daily-summary\\SKILL.md",
+      "original_lines": 374,
+      "source": "clawhub_downloaded",
+      "paid_score": 78,
+      "free_score": null
+    },
+    {
+      "slug": "email-gmail-outlook",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\email-gmail-outlook\\SKILL.md",
+      "original_lines": 139,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "email-skill",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\email-skill\\SKILL.md",
+      "original_lines": 210,
+      "source": "clawhub_downloaded",
+      "paid_score": 67,
+      "free_score": null
+    },
+    {
+      "slug": "feishu-card",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\feishu-card\\SKILL.md",
+      "original_lines": 161,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "feishu-send-file",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\feishu-send-file\\SKILL.md",
+      "original_lines": 225,
+      "source": "clawhub_downloaded",
+      "paid_score": 61,
+      "free_score": null
+    },
+    {
+      "slug": "gog",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\gog\\SKILL.md",
+      "original_lines": 140,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "google-workspace-mcp",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\google-workspace-mcp\\SKILL.md",
+      "original_lines": 194,
+      "source": "clawhub_downloaded",
+      "paid_score": 66,
+      "free_score": null
+    },
+    {
+      "slug": "news-sentiment-scan",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\news-sentiment-scan\\SKILL.md",
+      "original_lines": 222,
+      "source": "clawhub_downloaded",
+      "paid_score": 58,
+      "free_score": null
+    },
+    {
+      "slug": "photo-captions",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\photo-captions\\SKILL.md",
+      "original_lines": 214,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "professional-communication",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\professional-communication\\SKILL.md",
+      "original_lines": 163,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "rss-ai-reader",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\rss-ai-reader\\SKILL.md",
+      "original_lines": 153,
+      "source": "clawhub_downloaded",
+      "paid_score": 80,
+      "free_score": null
+    },
+    {
+      "slug": "slack",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\slack\\SKILL.md",
+      "original_lines": 229,
+      "source": "clawhub_downloaded",
+      "paid_score": 53,
+      "free_score": null
+    },
+    {
+      "slug": "slack-hub-skill",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\slack-hub-skill\\SKILL.md",
+      "original_lines": 126,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "slack-workspace",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\slack-workspace\\SKILL.md",
+      "original_lines": 464,
+      "source": "clawhub_downloaded",
+      "paid_score": 86,
+      "free_score": null
+    },
+    {
+      "slug": "social",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\social\\SKILL.md",
+      "original_lines": 486,
+      "source": "clawhub_downloaded",
+      "paid_score": 56,
+      "free_score": null
+    },
+    {
+      "slug": "social-media-scheduler",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\social-media-scheduler\\SKILL.md",
+      "original_lines": 148,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "telegram-messaging",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\telegram-messaging\\SKILL.md",
+      "original_lines": 388,
+      "source": "clawhub_downloaded",
+      "paid_score": 86,
+      "free_score": null
+    },
+    {
+      "slug": "test-wa",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\test-wa\\SKILL.md",
+      "original_lines": 134,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "timer",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\timer\\SKILL.md",
+      "original_lines": 182,
+      "source": "clawhub_downloaded",
+      "paid_score": 82,
+      "free_score": null
+    },
+    {
+      "slug": "whatsapp-messaging",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\whatsapp-messaging\\SKILL.md",
+      "original_lines": 392,
+      "source": "clawhub_downloaded",
+      "paid_score": 91,
+      "free_score": null
+    },
+    {
+      "slug": "whatsapp-styler",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\whatsapp-styler\\SKILL.md",
+      "original_lines": 117,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "whatsapp-styling-guide",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\whatsapp-styling-guide\\SKILL.md",
+      "original_lines": 117,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "x-timeline-digest",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\x-timeline-digest\\SKILL.md",
+      "original_lines": 244,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "z-card-image",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\z-card-image\\SKILL.md",
+      "original_lines": 168,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "ace-music",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\ace-music\\SKILL.md",
+      "original_lines": 162,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "agentvibes-openclaw-skill",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\agentvibes-openclaw-skill\\SKILL.md",
+      "original_lines": 345,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "ai-image-gen",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\ai-image-gen\\SKILL.md",
+      "original_lines": 180,
+      "source": "clawhub_downloaded",
+      "paid_score": 80,
+      "free_score": null
+    },
+    {
+      "slug": "ai-kujiale-design",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\ai-kujiale-design\\SKILL.md",
+      "original_lines": 404,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "ai-podcast",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\ai-podcast\\SKILL.md",
+      "original_lines": 206,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "alibaba-quark-scan",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\alibaba-quark-scan\\SKILL.md",
+      "original_lines": 304,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "analyze-video-by-qwen",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\analyze-video-by-qwen\\SKILL.md",
+      "original_lines": 176,
+      "source": "clawhub_downloaded",
+      "paid_score": 52,
+      "free_score": null
+    },
+    {
+      "slug": "anthropics-frontend-design",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\anthropics-frontend-design\\SKILL.md",
+      "original_lines": 135,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "anygen-diagram-generator",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\anygen-diagram-generator\\SKILL.md",
+      "original_lines": 118,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "audio-upload-aioz-stream",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\audio-upload-aioz-stream\\SKILL.md",
+      "original_lines": 313,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "aws-wechat-article-writing",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\aws-wechat-article-writing\\SKILL.md",
+      "original_lines": 345,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "azure-ai-transcription-py",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\azure-ai-transcription-py\\SKILL.md",
+      "original_lines": 152,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "azure-ai-voicelive-py",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\azure-ai-voicelive-py\\SKILL.md",
+      "original_lines": 394,
+      "source": "clawhub_downloaded",
+      "paid_score": 77,
+      "free_score": null
+    },
+    {
+      "slug": "bilibili-all-in-one",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\bilibili-all-in-one\\SKILL.md",
+      "original_lines": 407,
+      "source": "clawhub_downloaded",
+      "paid_score": 55,
+      "free_score": null
+    },
+    {
+      "slug": "bilibili-helper",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\bilibili-helper\\SKILL.md",
+      "original_lines": 137,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "chief-creative-officer",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\chief-creative-officer\\SKILL.md",
+      "original_lines": 121,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "chromecast-control",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\chromecast-control\\SKILL.md",
+      "original_lines": 231,
+      "source": "clawhub_downloaded",
+      "paid_score": 52,
+      "free_score": null
+    },
+    {
+      "slug": "cloud-architect",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\cloud-architect\\SKILL.md",
+      "original_lines": 168,
+      "source": "clawhub_downloaded",
+      "paid_score": 52,
+      "free_score": null
+    },
+    {
+      "slug": "comfyui-painter",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\comfyui-painter\\SKILL.md",
+      "original_lines": 255,
+      "source": "clawhub_downloaded",
+      "paid_score": 78,
+      "free_score": null
+    },
+    {
+      "slug": "design",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\design\\SKILL.md",
+      "original_lines": 121,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "diagram-generator",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\diagram-generator\\SKILL.md",
+      "original_lines": 369,
+      "source": "clawhub_downloaded",
+      "paid_score": 66,
+      "free_score": null
+    },
+    {
+      "slug": "dlazy-audio-generate",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\dlazy-audio-generate\\SKILL.md",
+      "original_lines": 217,
+      "source": "clawhub_downloaded",
+      "paid_score": 60,
+      "free_score": null
+    },
+    {
+      "slug": "dlazy-generate",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\dlazy-generate\\SKILL.md",
+      "original_lines": 265,
+      "source": "clawhub_downloaded",
+      "paid_score": 62,
+      "free_score": null
+    },
+    {
+      "slug": "elite-frontend-design",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\elite-frontend-design\\SKILL.md",
+      "original_lines": 193,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "figma-2",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\figma-2\\SKILL.md",
+      "original_lines": 350,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "frontend-design-3",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\frontend-design-3\\SKILL.md",
+      "original_lines": 165,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "game-asset-generation-cellcog",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\game-asset-generation-cellcog\\SKILL.md",
+      "original_lines": 336,
+      "source": "clawhub_downloaded",
+      "paid_score": 70,
+      "free_score": null
+    },
+    {
+      "slug": "grok-image-generate",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\grok-image-generate\\SKILL.md",
+      "original_lines": 266,
+      "source": "clawhub_downloaded",
+      "paid_score": 80,
+      "free_score": null
+    },
+    {
+      "slug": "html-coder",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\html-coder\\SKILL.md",
+      "original_lines": 188,
+      "source": "clawhub_downloaded",
+      "paid_score": 63,
+      "free_score": null
+    },
+    {
+      "slug": "html-designer",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\html-designer\\SKILL.md",
+      "original_lines": 424,
+      "source": "clawhub_downloaded",
+      "paid_score": 77,
+      "free_score": null
+    },
+    {
+      "slug": "join-meeting",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\join-meeting\\SKILL.md",
+      "original_lines": 432,
+      "source": "clawhub_downloaded",
+      "paid_score": 70,
+      "free_score": null
+    },
+    {
+      "slug": "lh-video-gen",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\lh-video-gen\\SKILL.md",
+      "original_lines": 197,
+      "source": "clawhub_downloaded",
+      "paid_score": 82,
+      "free_score": null
+    },
+    {
+      "slug": "logo",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\logo\\SKILL.md",
+      "original_lines": 189,
+      "source": "clawhub_downloaded",
+      "paid_score": 74,
+      "free_score": null
+    },
+    {
+      "slug": "logo-brand-identity-cellcog",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\logo-brand-identity-cellcog\\SKILL.md",
+      "original_lines": 336,
+      "source": "clawhub_downloaded",
+      "paid_score": 70,
+      "free_score": null
+    },
+    {
+      "slug": "logo-design-guide",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\logo-design-guide\\SKILL.md",
+      "original_lines": 250,
+      "source": "clawhub_downloaded",
+      "paid_score": 69,
+      "free_score": null
+    },
+    {
+      "slug": "markdown-converter",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\markdown-converter\\SKILL.md",
+      "original_lines": 137,
+      "source": "clawhub_downloaded",
+      "paid_score": 61,
+      "free_score": null
+    },
+    {
+      "slug": "minimalist-design-system",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\minimalist-design-system\\SKILL.md",
+      "original_lines": 209,
+      "source": "clawhub_downloaded",
+      "paid_score": 82,
+      "free_score": null
+    },
+    {
+      "slug": "music-generation",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\music-generation\\SKILL.md",
+      "original_lines": 215,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "music-generation-cellcog",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\music-generation-cellcog\\SKILL.md",
+      "original_lines": 233,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "podcast",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\podcast\\SKILL.md",
+      "original_lines": 154,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "podcast-chaptering-highlights",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\podcast-chaptering-highlights\\SKILL.md",
+      "original_lines": 153,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "podcast-downloader",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\podcast-downloader\\SKILL.md",
+      "original_lines": 146,
+      "source": "clawhub_downloaded",
+      "paid_score": 77,
+      "free_score": null
+    },
+    {
+      "slug": "tailwindcss",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\tailwindcss\\SKILL.md",
+      "original_lines": 180,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "text-to-speech-heygen",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\text-to-speech-heygen\\SKILL.md",
+      "original_lines": 487,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "tts-whatsapp",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\tts-whatsapp\\SKILL.md",
+      "original_lines": 227,
+      "source": "clawhub_downloaded",
+      "paid_score": 82,
+      "free_score": null
+    },
+    {
+      "slug": "ui",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\ui\\SKILL.md",
+      "original_lines": 204,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "ui-ux",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\ui-ux\\SKILL.md",
+      "original_lines": 421,
+      "source": "clawhub_downloaded",
+      "paid_score": 70,
+      "free_score": null
+    },
+    {
+      "slug": "ui-ux-design",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\ui-ux-design\\SKILL.md",
+      "original_lines": 269,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "ui-ux-dev",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\ui-ux-dev\\SKILL.md",
+      "original_lines": 301,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "ux",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\ux\\SKILL.md",
+      "original_lines": 186,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "video",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\video\\SKILL.md",
+      "original_lines": 169,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "video-editing",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\video-editing\\SKILL.md",
+      "original_lines": 166,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "video-frames",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\video-frames\\SKILL.md",
+      "original_lines": 129,
+      "source": "clawhub_downloaded",
+      "paid_score": 73,
+      "free_score": null
+    },
+    {
+      "slug": "video-translator",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\video-translator\\SKILL.md",
+      "original_lines": 173,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "video-upload-aioz-stream",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\video-upload-aioz-stream\\SKILL.md",
+      "original_lines": 440,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "whatsapp-image-send",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\whatsapp-image-send\\SKILL.md",
+      "original_lines": 130,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "youtube-watcher",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\youtube-watcher\\SKILL.md",
+      "original_lines": 133,
+      "source": "clawhub_downloaded",
+      "paid_score": 66,
+      "free_score": null
+    },
+    {
+      "slug": "zhuchenggong-doubao-image-gen",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\zhuchenggong-doubao-image-gen\\SKILL.md",
+      "original_lines": 130,
+      "source": "clawhub_downloaded",
+      "paid_score": 49,
+      "free_score": null
+    },
+    {
+      "slug": "analyze",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\analyze\\SKILL.md",
+      "original_lines": 162,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "azure-cli",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\azure-cli\\SKILL.md",
+      "original_lines": 453,
+      "source": "clawhub_downloaded",
+      "paid_score": 75,
+      "free_score": null
+    },
+    {
+      "slug": "baoyu-format-markdown",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\baoyu-format-markdown\\SKILL.md",
+      "original_lines": 439,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "cheat-code",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\cheat-code\\SKILL.md",
+      "original_lines": 124,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "code",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\code\\SKILL.md",
+      "original_lines": 215,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "code-1-0-4",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\code-1-0-4\\SKILL.md",
+      "original_lines": 215,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "code-analysis-skills",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\code-analysis-skills\\SKILL.md",
+      "original_lines": 432,
+      "source": "clawhub_downloaded",
+      "paid_score": 80,
+      "free_score": null
+    },
+    {
+      "slug": "code-quality",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\code-quality\\SKILL.md",
+      "original_lines": 122,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "dns-networking",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\dns-networking\\SKILL.md",
+      "original_lines": 410,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "docker-essentials",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\docker-essentials\\SKILL.md",
+      "original_lines": 393,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "docker-essentials-1-0-0",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\docker-essentials-1-0-0\\SKILL.md",
+      "original_lines": 393,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "encryption",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\encryption\\SKILL.md",
+      "original_lines": 184,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "explain-code",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\explain-code\\SKILL.md",
+      "original_lines": 118,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "git",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\git\\SKILL.md",
+      "original_lines": 230,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "git-cli",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\git-cli\\SKILL.md",
+      "original_lines": 149,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "git-essentials",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\git-essentials\\SKILL.md",
+      "original_lines": 469,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "git-helper",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\git-helper\\SKILL.md",
+      "original_lines": 128,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "git-workflow-cn",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\git-workflow-cn\\SKILL.md",
+      "original_lines": 369,
+      "source": "clawhub_downloaded",
+      "paid_score": 82,
+      "free_score": null
+    },
+    {
+      "slug": "git-workflows",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\git-workflows\\SKILL.md",
+      "original_lines": 495,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "github-development-standard",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\github-development-standard\\SKILL.md",
+      "original_lines": 211,
+      "source": "clawhub_downloaded",
+      "paid_score": 56,
+      "free_score": null
+    },
+    {
+      "slug": "go",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\go\\SKILL.md",
+      "original_lines": 199,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "hugo-blog-publisher",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\hugo-blog-publisher\\SKILL.md",
+      "original_lines": 266,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "iris-code-formatter",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\iris-code-formatter\\SKILL.md",
+      "original_lines": 447,
+      "source": "clawhub_downloaded",
+      "paid_score": 88,
+      "free_score": null
+    },
+    {
+      "slug": "java-code-reviewer",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\java-code-reviewer\\SKILL.md",
+      "original_lines": 228,
+      "source": "clawhub_downloaded",
+      "paid_score": 75,
+      "free_score": null
+    },
+    {
+      "slug": "java-development-manual",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\java-development-manual\\SKILL.md",
+      "original_lines": 232,
+      "source": "clawhub_downloaded",
+      "paid_score": 83,
+      "free_score": null
+    },
+    {
+      "slug": "javascript",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\javascript\\SKILL.md",
+      "original_lines": 184,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "javascript-sdk",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\javascript-sdk\\SKILL.md",
+      "original_lines": 408,
+      "source": "clawhub_downloaded",
+      "paid_score": 75,
+      "free_score": null
+    },
+    {
+      "slug": "javascript-skills",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\javascript-skills\\SKILL.md",
+      "original_lines": 465,
+      "source": "clawhub_downloaded",
+      "paid_score": 62,
+      "free_score": null
+    },
+    {
+      "slug": "knowledge-graph-skill",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\knowledge-graph-skill\\SKILL.md",
+      "original_lines": 267,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "merge-check",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\merge-check\\SKILL.md",
+      "original_lines": 214,
+      "source": "clawhub_downloaded",
+      "paid_score": 74,
+      "free_score": null
+    },
+    {
+      "slug": "mermaid-diagram",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\mermaid-diagram\\SKILL.md",
+      "original_lines": 153,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "node-connect",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\node-connect\\SKILL.md",
+      "original_lines": 230,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "python",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\python\\SKILL.md",
+      "original_lines": 227,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "resume-assistant",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\resume-assistant\\SKILL.md",
+      "original_lines": 387,
+      "source": "clawhub_downloaded",
+      "paid_score": 71,
+      "free_score": null
+    },
+    {
+      "slug": "smart-model-routing-for-zai",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\smart-model-routing-for-zai\\SKILL.md",
+      "original_lines": 263,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "smart-model-switching",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\smart-model-switching\\SKILL.md",
+      "original_lines": 269,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "ssl",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\ssl\\SKILL.md",
+      "original_lines": 196,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "typescript",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\typescript\\SKILL.md",
+      "original_lines": 155,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "typescript-skills",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\typescript-skills\\SKILL.md",
+      "original_lines": 475,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "ui-component",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\ui-component\\SKILL.md",
+      "original_lines": 129,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "universal-translate",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\universal-translate\\SKILL.md",
+      "original_lines": 209,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "vscode-node",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\vscode-node\\SKILL.md",
+      "original_lines": 191,
+      "source": "clawhub_downloaded",
+      "paid_score": 70,
+      "free_score": null
+    },
+    {
+      "slug": "vue-component-generator",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\vue-component-generator\\SKILL.md",
+      "original_lines": 182,
+      "source": "clawhub_downloaded",
+      "paid_score": 72,
+      "free_score": null
+    },
+    {
+      "slug": "web",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\web\\SKILL.md",
+      "original_lines": 133,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "who-is-actor",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\who-is-actor\\SKILL.md",
+      "original_lines": 498,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "ziptax",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\ziptax\\SKILL.md",
+      "original_lines": 153,
+      "source": "clawhub_downloaded",
+      "paid_score": 80,
+      "free_score": null
+    },
+    {
+      "slug": "finance",
+      "category": "Finance",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Finance\\finance\\SKILL.md",
+      "original_lines": 180,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "finance-accounting",
+      "category": "Finance",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Finance\\finance-accounting\\SKILL.md",
+      "original_lines": 357,
+      "source": "clawhub_downloaded",
+      "paid_score": 81,
+      "free_score": null
+    },
+    {
+      "slug": "finance-radar",
+      "category": "Finance",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Finance\\finance-radar\\SKILL.md",
+      "original_lines": 131,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "finance-report-analyzer",
+      "category": "Finance",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Finance\\finance-report-analyzer\\SKILL.md",
+      "original_lines": 172,
+      "source": "clawhub_downloaded",
+      "paid_score": 72,
+      "free_score": null
+    },
+    {
+      "slug": "financial-literacy",
+      "category": "Finance",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Finance\\financial-literacy\\SKILL.md",
+      "original_lines": 189,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "okx-dex-token",
+      "category": "Finance",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Finance\\okx-dex-token\\SKILL.md",
+      "original_lines": 252,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "rho-telegram-alerts",
+      "category": "Finance",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Finance\\rho-telegram-alerts\\SKILL.md",
+      "original_lines": 120,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "stock-filter-skills",
+      "category": "Finance",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Finance\\stock-filter-skills\\SKILL.md",
+      "original_lines": 277,
+      "source": "clawhub_downloaded",
+      "paid_score": 85,
+      "free_score": null
+    },
+    {
+      "slug": "t-trading",
+      "category": "Finance",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Finance\\t-trading\\SKILL.md",
+      "original_lines": 234,
+      "source": "clawhub_downloaded",
+      "paid_score": 66,
+      "free_score": null
+    },
+    {
+      "slug": "test",
+      "category": "Finance",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Finance\\test\\SKILL.md",
+      "original_lines": 224,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "university-applications",
+      "category": "Finance",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Finance\\university-applications\\SKILL.md",
+      "original_lines": 475,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "aic-dashboard",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\aic-dashboard\\SKILL.md",
+      "original_lines": 168,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "api",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\api\\SKILL.md",
+      "original_lines": 215,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "api-doc-writer",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\api-doc-writer\\SKILL.md",
+      "original_lines": 333,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "api-gateway",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\api-gateway\\SKILL.md",
+      "original_lines": 387,
+      "source": "clawhub_downloaded",
+      "paid_score": 82,
+      "free_score": null
+    },
+    {
+      "slug": "api-generator",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\api-generator\\SKILL.md",
+      "original_lines": 123,
+      "source": "clawhub_downloaded",
+      "paid_score": 66,
+      "free_score": null
+    },
+    {
+      "slug": "api-integration",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\api-integration\\SKILL.md",
+      "original_lines": 202,
+      "source": "clawhub_downloaded",
+      "paid_score": 58,
+      "free_score": null
+    },
+    {
+      "slug": "bot-status-api-test",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\bot-status-api-test\\SKILL.md",
+      "original_lines": 203,
+      "source": "clawhub_downloaded",
+      "paid_score": 52,
+      "free_score": null
+    },
+    {
+      "slug": "can",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\can\\SKILL.md",
+      "original_lines": 218,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "chart",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\chart\\SKILL.md",
+      "original_lines": 140,
+      "source": "clawhub_downloaded",
+      "paid_score": 52,
+      "free_score": null
+    },
+    {
+      "slug": "clawcall",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\clawcall\\SKILL.md",
+      "original_lines": 401,
+      "source": "clawhub_downloaded",
+      "paid_score": 52,
+      "free_score": null
+    },
+    {
+      "slug": "clawdbot-jira-skill",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\clawdbot-jira-skill\\SKILL.md",
+      "original_lines": 263,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "cloud",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\cloud\\SKILL.md",
+      "original_lines": 156,
+      "source": "clawhub_downloaded",
+      "paid_score": 52,
+      "free_score": null
+    },
+    {
+      "slug": "csv",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\csv\\SKILL.md",
+      "original_lines": 143,
+      "source": "clawhub_downloaded",
+      "paid_score": 55,
+      "free_score": null
+    },
+    {
+      "slug": "csv-analyzer",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\csv-analyzer\\SKILL.md",
+      "original_lines": 148,
+      "source": "clawhub_downloaded",
+      "paid_score": 52,
+      "free_score": null
+    },
+    {
+      "slug": "csv-handler",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\csv-handler\\SKILL.md",
+      "original_lines": 360,
+      "source": "clawhub_downloaded",
+      "paid_score": 76,
+      "free_score": null
+    },
+    {
+      "slug": "data-analysis-litiao",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\data-analysis-litiao\\SKILL.md",
+      "original_lines": 156,
+      "source": "clawhub_downloaded",
+      "paid_score": 52,
+      "free_score": null
+    },
+    {
+      "slug": "data-analyst-cn",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\data-analyst-cn\\SKILL.md",
+      "original_lines": 341,
+      "source": "clawhub_downloaded",
+      "paid_score": 69,
+      "free_score": null
+    },
+    {
+      "slug": "data-format-converter",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\data-format-converter\\SKILL.md",
+      "original_lines": 126,
+      "source": "clawhub_downloaded",
+      "paid_score": 63,
+      "free_score": null
+    },
+    {
+      "slug": "database-admin",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\database-admin\\SKILL.md",
+      "original_lines": 195,
+      "source": "clawhub_downloaded",
+      "paid_score": 65,
+      "free_score": null
+    },
+    {
+      "slug": "db",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\db\\SKILL.md",
+      "original_lines": 170,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "deepseek-chat",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\deepseek-chat\\SKILL.md",
+      "original_lines": 126,
+      "source": "clawhub_downloaded",
+      "paid_score": 70,
+      "free_score": null
+    },
+    {
+      "slug": "discord-hub",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\discord-hub\\SKILL.md",
+      "original_lines": 141,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "discrawl",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\discrawl\\SKILL.md",
+      "original_lines": 132,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "doubao-chat",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\doubao-chat\\SKILL.md",
+      "original_lines": 119,
+      "source": "clawhub_downloaded",
+      "paid_score": 70,
+      "free_score": null
+    },
+    {
+      "slug": "encoding-formats",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\encoding-formats\\SKILL.md",
+      "original_lines": 460,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "encrypted-docs",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\encrypted-docs\\SKILL.md",
+      "original_lines": 486,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "excel-studio",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\excel-studio\\SKILL.md",
+      "original_lines": 495,
+      "source": "clawhub_downloaded",
+      "paid_score": 50,
+      "free_score": null
+    },
+    {
+      "slug": "excel-xlsx",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\excel-xlsx\\SKILL.md",
+      "original_lines": 188,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "expanso-csv-to-json",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\expanso-csv-to-json\\SKILL.md",
+      "original_lines": 143,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "expanso-json-to-yaml",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\expanso-json-to-yaml\\SKILL.md",
+      "original_lines": 141,
+      "source": "clawhub_downloaded",
+      "paid_score": 42,
+      "free_score": null
+    },
+    {
+      "slug": "expanso-json-validate",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\expanso-json-validate\\SKILL.md",
+      "original_lines": 143,
+      "source": "clawhub_downloaded",
+      "paid_score": 52,
+      "free_score": null
+    },
+    {
+      "slug": "expanso-xml-to-json",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\expanso-xml-to-json\\SKILL.md",
+      "original_lines": 128,
+      "source": "clawhub_downloaded",
+      "paid_score": 52,
+      "free_score": null
+    },
+    {
+      "slug": "figma-design",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\figma-design\\SKILL.md",
+      "original_lines": 395,
+      "source": "clawhub_downloaded",
+      "paid_score": 89,
+      "free_score": null
+    },
+    {
+      "slug": "flexible-database-design",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\flexible-database-design\\SKILL.md",
+      "original_lines": 257,
+      "source": "clawhub_downloaded",
+      "paid_score": 52,
+      "free_score": null
+    },
+    {
+      "slug": "free-ride",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\free-ride\\SKILL.md",
+      "original_lines": 198,
+      "source": "clawhub_downloaded",
+      "paid_score": 64,
+      "free_score": null
+    },
+    {
+      "slug": "github",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\github\\SKILL.md",
+      "original_lines": 139,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "github-api",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\github-api\\SKILL.md",
+      "original_lines": 322,
+      "source": "clawhub_downloaded",
+      "paid_score": 82,
+      "free_score": null
+    },
+    {
+      "slug": "github-repos",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\github-repos\\SKILL.md",
+      "original_lines": 377,
+      "source": "clawhub_downloaded",
+      "paid_score": 84,
+      "free_score": null
+    },
+    {
+      "slug": "github-trending-feed",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\github-trending-feed\\SKILL.md",
+      "original_lines": 150,
+      "source": "clawhub_downloaded",
+      "paid_score": 82,
+      "free_score": null
+    },
+    {
+      "slug": "graincrawl",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\graincrawl\\SKILL.md",
+      "original_lines": 134,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "graph-advocate",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\graph-advocate\\SKILL.md",
+      "original_lines": 323,
+      "source": "clawhub_downloaded",
+      "paid_score": 70,
+      "free_score": null
+    },
+    {
+      "slug": "jira-api",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\jira-api\\SKILL.md",
+      "original_lines": 232,
+      "source": "clawhub_downloaded",
+      "paid_score": 85,
+      "free_score": null
+    },
+    {
+      "slug": "json",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\json\\SKILL.md",
+      "original_lines": 166,
+      "source": "clawhub_downloaded",
+      "paid_score": 55,
+      "free_score": null
+    },
+    {
+      "slug": "json-canvas",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\json-canvas\\SKILL.md",
+      "original_lines": 321,
+      "source": "clawhub_downloaded",
+      "paid_score": 66,
+      "free_score": null
+    },
+    {
+      "slug": "json-formatter",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\json-formatter\\SKILL.md",
+      "original_lines": 120,
+      "source": "clawhub_downloaded",
+      "paid_score": 60,
+      "free_score": null
+    },
+    {
+      "slug": "json-linter",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\json-linter\\SKILL.md",
+      "original_lines": 122,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "json-parser",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\json-parser\\SKILL.md",
+      "original_lines": 305,
+      "source": "clawhub_downloaded",
+      "paid_score": 76,
+      "free_score": null
+    },
+    {
+      "slug": "json-repair-kit",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\json-repair-kit\\SKILL.md",
+      "original_lines": 118,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "kai-tw-figma",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\kai-tw-figma\\SKILL.md",
+      "original_lines": 120,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "key-guard",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\key-guard\\SKILL.md",
+      "original_lines": 220,
+      "source": "clawhub_downloaded",
+      "paid_score": 67,
+      "free_score": null
+    },
+    {
+      "slug": "knowledge-graph",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\knowledge-graph\\SKILL.md",
+      "original_lines": 129,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "linear-api",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\linear-api\\SKILL.md",
+      "original_lines": 318,
+      "source": "clawhub_downloaded",
+      "paid_score": 80,
+      "free_score": null
+    },
+    {
+      "slug": "linear-skill",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\linear-skill\\SKILL.md",
+      "original_lines": 165,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "lite-sqlite",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\lite-sqlite\\SKILL.md",
+      "original_lines": 487,
+      "source": "clawhub_downloaded",
+      "paid_score": 84,
+      "free_score": null
+    },
+    {
+      "slug": "magic-api-generate",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\magic-api-generate\\SKILL.md",
+      "original_lines": 330,
+      "source": "clawhub_downloaded",
+      "paid_score": 79,
+      "free_score": null
+    },
+    {
+      "slug": "markdown-exporter",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\markdown-exporter\\SKILL.md",
+      "original_lines": 403,
+      "source": "clawhub_downloaded",
+      "paid_score": 56,
+      "free_score": null
+    },
+    {
+      "slug": "mongodb",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\mongodb\\SKILL.md",
+      "original_lines": 197,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "mongodb-atlas-admin",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\mongodb-atlas-admin\\SKILL.md",
+      "original_lines": 183,
+      "source": "clawhub_downloaded",
+      "paid_score": 63,
+      "free_score": null
+    },
+    {
+      "slug": "netpad",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\netpad\\SKILL.md",
+      "original_lines": 463,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "notcrawl",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\notcrawl\\SKILL.md",
+      "original_lines": 131,
+      "source": "clawhub_downloaded",
+      "paid_score": 55,
+      "free_score": null
+    },
+    {
+      "slug": "notion-api-skill",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\notion-api-skill\\SKILL.md",
+      "original_lines": 275,
+      "source": "clawhub_downloaded",
+      "paid_score": 85,
+      "free_score": null
+    },
+    {
+      "slug": "notioncli",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\notioncli\\SKILL.md",
+      "original_lines": 429,
+      "source": "clawhub_downloaded",
+      "paid_score": 61,
+      "free_score": null
+    },
+    {
+      "slug": "obsidian-official-cli",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\obsidian-official-cli\\SKILL.md",
+      "original_lines": 368,
+      "source": "clawhub_downloaded",
+      "paid_score": 55,
+      "free_score": null
+    },
+    {
+      "slug": "ollama-integration",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\ollama-integration\\SKILL.md",
+      "original_lines": 96,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "openclaw-dashboard",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\openclaw-dashboard\\SKILL.md",
+      "original_lines": 207,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "openclaw-linear",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\openclaw-linear\\SKILL.md",
+      "original_lines": 274,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "pipedrive-api",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\pipedrive-api\\SKILL.md",
+      "original_lines": 401,
+      "source": "clawhub_downloaded",
+      "paid_score": 87,
+      "free_score": null
+    },
+    {
+      "slug": "postgres-job-queue",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\postgres-job-queue\\SKILL.md",
+      "original_lines": 299,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "postgres-mcp-skills",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\postgres-mcp-skills\\SKILL.md",
+      "original_lines": 119,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "python-data-analysis",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\python-data-analysis\\SKILL.md",
+      "original_lines": 112,
+      "source": "clawhub_downloaded",
+      "paid_score": 79,
+      "free_score": null
+    },
+    {
+      "slug": "pyx-scan",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\pyx-scan\\SKILL.md",
+      "original_lines": 264,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "reddit-research",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\reddit-research\\SKILL.md",
+      "original_lines": 199,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "remix-api-key-auth",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\remix-api-key-auth\\SKILL.md",
+      "original_lines": 124,
+      "source": "clawhub_downloaded",
+      "paid_score": 63,
+      "free_score": null
+    },
+    {
+      "slug": "secure-api-calls",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\secure-api-calls\\SKILL.md",
+      "original_lines": 174,
+      "source": "clawhub_downloaded",
+      "paid_score": 84,
+      "free_score": null
+    },
+    {
+      "slug": "self-integration",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\self-integration\\SKILL.md",
+      "original_lines": 419,
+      "source": "clawhub_downloaded",
+      "paid_score": 52,
+      "free_score": null
+    },
+    {
+      "slug": "slack-api",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\slack-api\\SKILL.md",
+      "original_lines": 284,
+      "source": "clawhub_downloaded",
+      "paid_score": 85,
+      "free_score": null
+    },
+    {
+      "slug": "slacrawl",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\slacrawl\\SKILL.md",
+      "original_lines": 129,
+      "source": "clawhub_downloaded",
+      "paid_score": 55,
+      "free_score": null
+    },
+    {
+      "slug": "sql",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\sql\\SKILL.md",
+      "original_lines": 273,
+      "source": "clawhub_downloaded",
+      "paid_score": 77,
+      "free_score": null
+    },
+    {
+      "slug": "sql-generator",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\sql-generator\\SKILL.md",
+      "original_lines": 118,
+      "source": "clawhub_downloaded",
+      "paid_score": 73,
+      "free_score": null
+    },
+    {
+      "slug": "sql-toolkit",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\sql-toolkit\\SKILL.md",
+      "original_lines": 500,
+      "source": "clawhub_downloaded",
+      "paid_score": 73,
+      "free_score": null
+    },
+    {
+      "slug": "sqlite",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\sqlite\\SKILL.md",
+      "original_lines": 177,
+      "source": "clawhub_downloaded",
+      "paid_score": 55,
+      "free_score": null
+    },
+    {
+      "slug": "telegram",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\telegram\\SKILL.md",
+      "original_lines": 137,
+      "source": "clawhub_downloaded",
+      "paid_score": 52,
+      "free_score": null
+    },
+    {
+      "slug": "telegram-bot-builder",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\telegram-bot-builder\\SKILL.md",
+      "original_lines": 145,
+      "source": "clawhub_downloaded",
+      "paid_score": 61,
+      "free_score": null
+    },
+    {
+      "slug": "text-to-sql",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\text-to-sql\\SKILL.md",
+      "original_lines": 231,
+      "source": "clawhub_downloaded",
+      "paid_score": 58,
+      "free_score": null
+    },
+    {
+      "slug": "vector-control",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\vector-control\\SKILL.md",
+      "original_lines": 192,
+      "source": "clawhub_downloaded",
+      "paid_score": 74,
+      "free_score": null
+    },
+    {
+      "slug": "vpn-rotate-skill",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\vpn-rotate-skill\\SKILL.md",
+      "original_lines": 257,
+      "source": "clawhub_downloaded",
+      "paid_score": 66,
+      "free_score": null
+    },
+    {
+      "slug": "vue",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\vue\\SKILL.md",
+      "original_lines": 179,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "weiyun-skills",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\weiyun-skills\\SKILL.md",
+      "original_lines": 466,
+      "source": "clawhub_downloaded",
+      "paid_score": 69,
+      "free_score": null
+    },
+    {
+      "slug": "whatsapp-ultimate",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\whatsapp-ultimate\\SKILL.md",
+      "original_lines": 474,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "write-my-blog",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\write-my-blog\\SKILL.md",
+      "original_lines": 296,
+      "source": "clawhub_downloaded",
+      "paid_score": 82,
+      "free_score": null
+    },
+    {
+      "slug": "ws-excel",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\ws-excel\\SKILL.md",
+      "original_lines": 127,
+      "source": "clawhub_downloaded",
+      "paid_score": 60,
+      "free_score": null
+    },
+    {
+      "slug": "afrexai-knowledge-management",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\afrexai-knowledge-management\\SKILL.md",
+      "original_lines": 466,
+      "source": "clawhub_downloaded",
+      "paid_score": 61,
+      "free_score": null
+    },
+    {
+      "slug": "api-development",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\api-development\\SKILL.md",
+      "original_lines": 274,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "clawddocs",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\clawddocs\\SKILL.md",
+      "original_lines": 272,
+      "source": "clawhub_downloaded",
+      "paid_score": 78,
+      "free_score": null
+    },
+    {
+      "slug": "compress-pdf",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\compress-pdf\\SKILL.md",
+      "original_lines": 173,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "context-driven-development",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\context-driven-development\\SKILL.md",
+      "original_lines": 402,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "document-pdf",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\document-pdf\\SKILL.md",
+      "original_lines": 368,
+      "source": "clawhub_downloaded",
+      "paid_score": 67,
+      "free_score": null
+    },
+    {
+      "slug": "excel-formula",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\excel-formula\\SKILL.md",
+      "original_lines": 112,
+      "source": "clawhub_downloaded",
+      "paid_score": 80,
+      "free_score": null
+    },
+    {
+      "slug": "feishu-doc",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\feishu-doc\\SKILL.md",
+      "original_lines": 147,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "feishu-doc-write",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\feishu-doc-write\\SKILL.md",
+      "original_lines": 373,
+      "source": "clawhub_downloaded",
+      "paid_score": 63,
+      "free_score": null
+    },
+    {
+      "slug": "figma",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\figma\\SKILL.md",
+      "original_lines": 248,
+      "source": "clawhub_downloaded",
+      "paid_score": 76,
+      "free_score": null
+    },
+    {
+      "slug": "generate-mindmap",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\generate-mindmap\\SKILL.md",
+      "original_lines": 174,
+      "source": "clawhub_downloaded",
+      "paid_score": 78,
+      "free_score": null
+    },
+    {
+      "slug": "generate-presentation",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\generate-presentation\\SKILL.md",
+      "original_lines": 363,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "knowledge",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\knowledge\\SKILL.md",
+      "original_lines": 118,
+      "source": "clawhub_downloaded",
+      "paid_score": 73,
+      "free_score": null
+    },
+    {
+      "slug": "knowledge-capture",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\knowledge-capture\\SKILL.md",
+      "original_lines": 200,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "learn",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\learn\\SKILL.md",
+      "original_lines": 209,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "learn-cog",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\learn-cog\\SKILL.md",
+      "original_lines": 367,
+      "source": "clawhub_downloaded",
+      "paid_score": 62,
+      "free_score": null
+    },
+    {
+      "slug": "local-file-rag-basic",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\local-file-rag-basic\\SKILL.md",
+      "original_lines": 129,
+      "source": "clawhub_downloaded",
+      "paid_score": 55,
+      "free_score": null
+    },
+    {
+      "slug": "markdown-converter-compdf",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\markdown-converter-compdf\\SKILL.md",
+      "original_lines": 265,
+      "source": "clawhub_downloaded",
+      "paid_score": 52,
+      "free_score": null
+    },
+    {
+      "slug": "merge-pdf",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\merge-pdf\\SKILL.md",
+      "original_lines": 169,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "nano-pdf",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\nano-pdf\\SKILL.md",
+      "original_lines": 118,
+      "source": "clawhub_downloaded",
+      "paid_score": 78,
+      "free_score": null
+    },
+    {
+      "slug": "pandoc-convert-openclaw",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\pandoc-convert-openclaw\\SKILL.md",
+      "original_lines": 329,
+      "source": "clawhub_downloaded",
+      "paid_score": 86,
+      "free_score": null
+    },
+    {
+      "slug": "paper-parse",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\paper-parse\\SKILL.md",
+      "original_lines": 175,
+      "source": "clawhub_downloaded",
+      "paid_score": 78,
+      "free_score": null
+    },
+    {
+      "slug": "pdf",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\pdf\\SKILL.md",
+      "original_lines": 368,
+      "source": "clawhub_downloaded",
+      "paid_score": 64,
+      "free_score": null
+    },
+    {
+      "slug": "pptx-pdf-font-fix",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\pptx-pdf-font-fix\\SKILL.md",
+      "original_lines": 132,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "skill-creator",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\skill-creator\\SKILL.md",
+      "original_lines": 431,
+      "source": "clawhub_downloaded",
+      "paid_score": 71,
+      "free_score": null
+    },
+    {
+      "slug": "solo-audit",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\solo-audit\\SKILL.md",
+      "original_lines": 187,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "upstage-document-parse",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\upstage-document-parse\\SKILL.md",
+      "original_lines": 199,
+      "source": "clawhub_downloaded",
+      "paid_score": 80,
+      "free_score": null
+    },
+    {
+      "slug": "word-docx",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\word-docx\\SKILL.md",
+      "original_lines": 191,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "word-docx-1",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\word-docx-1\\SKILL.md",
+      "original_lines": 191,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "word-docx-1-02",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\word-docx-1-02\\SKILL.md",
+      "original_lines": 191,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "apple-health-skill",
+      "category": "Lifestyle",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Lifestyle\\apple-health-skill\\SKILL.md",
+      "original_lines": 206,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "assistant",
+      "category": "Lifestyle",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Lifestyle\\assistant\\SKILL.md",
+      "original_lines": 190,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "build-game",
+      "category": "Lifestyle",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Lifestyle\\build-game\\SKILL.md",
+      "original_lines": 496,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "free-weather-api",
+      "category": "Lifestyle",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Lifestyle\\free-weather-api\\SKILL.md",
+      "original_lines": 316,
+      "source": "clawhub_downloaded",
+      "paid_score": 60,
+      "free_score": null
+    },
+    {
+      "slug": "free-weather-skill",
+      "category": "Lifestyle",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Lifestyle\\free-weather-skill\\SKILL.md",
+      "original_lines": 149,
+      "source": "clawhub_downloaded",
+      "paid_score": 55,
+      "free_score": null
+    },
+    {
+      "slug": "game",
+      "category": "Lifestyle",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Lifestyle\\game\\SKILL.md",
+      "original_lines": 215,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "game-ai",
+      "category": "Lifestyle",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Lifestyle\\game-ai\\SKILL.md",
+      "original_lines": 339,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "game-developer-skill",
+      "category": "Lifestyle",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Lifestyle\\game-developer-skill\\SKILL.md",
+      "original_lines": 164,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "game-theory",
+      "category": "Lifestyle",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Lifestyle\\game-theory\\SKILL.md",
+      "original_lines": 421,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "health",
+      "category": "Lifestyle",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Lifestyle\\health\\SKILL.md",
+      "original_lines": 163,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "live-stream-script",
+      "category": "Lifestyle",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Lifestyle\\live-stream-script\\SKILL.md",
+      "original_lines": 143,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "music",
+      "category": "Lifestyle",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Lifestyle\\music\\SKILL.md",
+      "original_lines": 266,
+      "source": "clawhub_downloaded",
+      "paid_score": 48,
+      "free_score": null
+    },
+    {
+      "slug": "personal-health-manager",
+      "category": "Lifestyle",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Lifestyle\\personal-health-manager\\SKILL.md",
+      "original_lines": 384,
+      "source": "clawhub_downloaded",
+      "paid_score": 60,
+      "free_score": null
+    },
+    {
+      "slug": "ping-monitor",
+      "category": "Lifestyle",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Lifestyle\\ping-monitor\\SKILL.md",
+      "original_lines": 122,
+      "source": "clawhub_downloaded",
+      "paid_score": 51,
+      "free_score": null
+    },
+    {
+      "slug": "shop-culture",
+      "category": "Lifestyle",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Lifestyle\\shop-culture\\SKILL.md",
+      "original_lines": 494,
+      "source": "clawhub_downloaded",
+      "paid_score": 51,
+      "free_score": null
+    },
+    {
+      "slug": "text-game-arcade-universe-v3",
+      "category": "Lifestyle",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Lifestyle\\text-game-arcade-universe-v3\\SKILL.md",
+      "original_lines": 314,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "travel-assistant",
+      "category": "Lifestyle",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Lifestyle\\travel-assistant\\SKILL.md",
+      "original_lines": 154,
+      "source": "clawhub_downloaded",
+      "paid_score": 63,
+      "free_score": null
+    },
+    {
+      "slug": "weather",
+      "category": "Lifestyle",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Lifestyle\\weather\\SKILL.md",
+      "original_lines": 149,
+      "source": "clawhub_downloaded",
+      "paid_score": 55,
+      "free_score": null
+    },
+    {
+      "slug": "auto-monitor",
+      "category": "Operations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Operations\\auto-monitor\\SKILL.md",
+      "original_lines": 128,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "aws",
+      "category": "Operations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Operations\\aws\\SKILL.md",
+      "original_lines": 327,
+      "source": "clawhub_downloaded",
+      "paid_score": 52,
+      "free_score": null
+    },
+    {
+      "slug": "azure",
+      "category": "Operations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Operations\\azure\\SKILL.md",
+      "original_lines": 160,
+      "source": "clawhub_downloaded",
+      "paid_score": 55,
+      "free_score": null
+    },
+    {
+      "slug": "docker",
+      "category": "Operations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Operations\\docker\\SKILL.md",
+      "original_lines": 204,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "docker-ctl",
+      "category": "Operations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Operations\\docker-ctl\\SKILL.md",
+      "original_lines": 126,
+      "source": "clawhub_downloaded",
+      "paid_score": 51,
+      "free_score": null
+    },
+    {
+      "slug": "docker-sandbox",
+      "category": "Operations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Operations\\docker-sandbox\\SKILL.md",
+      "original_lines": 313,
+      "source": "clawhub_downloaded",
+      "paid_score": 89,
+      "free_score": null
+    },
+    {
+      "slug": "k8s",
+      "category": "Operations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Operations\\k8s\\SKILL.md",
+      "original_lines": 165,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "kubernetes",
+      "category": "Operations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Operations\\kubernetes\\SKILL.md",
+      "original_lines": 227,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "kubernetes-devops",
+      "category": "Operations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Operations\\kubernetes-devops\\SKILL.md",
+      "original_lines": 477,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "namecheap-dns",
+      "category": "Operations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Operations\\namecheap-dns\\SKILL.md",
+      "original_lines": 320,
+      "source": "clawhub_downloaded",
+      "paid_score": 78,
+      "free_score": null
+    },
+    {
+      "slug": "ocean-chat",
+      "category": "Operations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Operations\\ocean-chat\\SKILL.md",
+      "original_lines": 455,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "qq-zone-photo",
+      "category": "Operations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Operations\\qq-zone-photo\\SKILL.md",
+      "original_lines": 178,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "sovereign-aws-cost-optimizer",
+      "category": "Operations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Operations\\sovereign-aws-cost-optimizer\\SKILL.md",
+      "original_lines": 97,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "token-layer",
+      "category": "Operations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Operations\\token-layer\\SKILL.md",
+      "original_lines": 337,
+      "source": "clawhub_downloaded",
+      "paid_score": 70,
+      "free_score": null
+    },
+    {
+      "slug": "agent",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\agent\\SKILL.md",
+      "original_lines": 159,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "agent-chat",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\agent-chat\\SKILL.md",
+      "original_lines": 176,
+      "source": "clawhub_downloaded",
+      "paid_score": 56,
+      "free_score": null
+    },
+    {
+      "slug": "agent-commercial-contract",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\agent-commercial-contract\\SKILL.md",
+      "original_lines": 468,
+      "source": "clawhub_downloaded",
+      "paid_score": 70,
+      "free_score": null
+    },
+    {
+      "slug": "agent-group",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\agent-group\\SKILL.md",
+      "original_lines": 115,
+      "source": "clawhub_downloaded",
+      "paid_score": 51,
+      "free_score": null
+    },
+    {
+      "slug": "art",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\art\\SKILL.md",
+      "original_lines": 147,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "audit",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\audit\\SKILL.md",
+      "original_lines": 118,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "baoyu-diagram",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\baoyu-diagram\\SKILL.md",
+      "original_lines": 376,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "book-painter",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\book-painter\\SKILL.md",
+      "original_lines": 157,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "cashu-emoji",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\cashu-emoji\\SKILL.md",
+      "original_lines": 220,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "chart-generator-2-0-0",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\chart-generator-2-0-0\\SKILL.md",
+      "original_lines": 174,
+      "source": "clawhub_downloaded",
+      "paid_score": 63,
+      "free_score": null
+    },
+    {
+      "slug": "chat",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\chat\\SKILL.md",
+      "original_lines": 166,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "clawprint",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\clawprint\\SKILL.md",
+      "original_lines": 410,
+      "source": "clawhub_downloaded",
+      "paid_score": 72,
+      "free_score": null
+    },
+    {
+      "slug": "cloud-storage",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\cloud-storage\\SKILL.md",
+      "original_lines": 146,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "compress",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\compress\\SKILL.md",
+      "original_lines": 178,
+      "source": "clawhub_downloaded",
+      "paid_score": 61,
+      "free_score": null
+    },
+    {
+      "slug": "control-ikea-lightbulb",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\control-ikea-lightbulb\\SKILL.md",
+      "original_lines": 145,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "css",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\css\\SKILL.md",
+      "original_lines": 203,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "ctxly-chat",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\ctxly-chat\\SKILL.md",
+      "original_lines": 263,
+      "source": "clawhub_downloaded",
+      "paid_score": 82,
+      "free_score": null
+    },
+    {
+      "slug": "dashboard",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\dashboard\\SKILL.md",
+      "original_lines": 207,
+      "source": "clawhub_downloaded",
+      "paid_score": 52,
+      "free_score": null
+    },
+    {
+      "slug": "data",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\data\\SKILL.md",
+      "original_lines": 151,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "diagram",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\diagram\\SKILL.md",
+      "original_lines": 174,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "dns-lookup",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\dns-lookup\\SKILL.md",
+      "original_lines": 147,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "doc",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\doc\\SKILL.md",
+      "original_lines": 182,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "dogecoin-node",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\dogecoin-node\\SKILL.md",
+      "original_lines": 411,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "domain-dns-ops",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\domain-dns-ops\\SKILL.md",
+      "original_lines": 142,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "expanso-log-sanitize",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\expanso-log-sanitize\\SKILL.md",
+      "original_lines": 129,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "file",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\file\\SKILL.md",
+      "original_lines": 174,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "file-auto-organizer",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\file-auto-organizer\\SKILL.md",
+      "original_lines": 132,
+      "source": "clawhub_downloaded",
+      "paid_score": 77,
+      "free_score": null
+    },
+    {
+      "slug": "file-organizer-zh",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\file-organizer-zh\\SKILL.md",
+      "original_lines": 132,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "fonts",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\fonts\\SKILL.md",
+      "original_lines": 176,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "frontend-design",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\frontend-design\\SKILL.md",
+      "original_lines": 167,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "go-linter-configuration",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\go-linter-configuration\\SKILL.md",
+      "original_lines": 254,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "go-to-market",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\go-to-market\\SKILL.md",
+      "original_lines": 345,
+      "source": "clawhub_downloaded",
+      "paid_score": 51,
+      "free_score": null
+    },
+    {
+      "slug": "google-fonts",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\google-fonts\\SKILL.md",
+      "original_lines": 176,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "html",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\html\\SKILL.md",
+      "original_lines": 146,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "humanizer",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\humanizer\\SKILL.md",
+      "original_lines": 461,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "interview-simulator",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\interview-simulator\\SKILL.md",
+      "original_lines": 310,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "java",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\java\\SKILL.md",
+      "original_lines": 139,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "jinn-node",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\jinn-node\\SKILL.md",
+      "original_lines": 186,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "juejin-skills",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\juejin-skills\\SKILL.md",
+      "original_lines": 379,
+      "source": "clawhub_downloaded",
+      "paid_score": 67,
+      "free_score": null
+    },
+    {
+      "slug": "linear",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\linear\\SKILL.md",
+      "original_lines": 250,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "mac-system-control",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\mac-system-control\\SKILL.md",
+      "original_lines": 228,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "manage-liquidity",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\manage-liquidity\\SKILL.md",
+      "original_lines": 334,
+      "source": "clawhub_downloaded",
+      "paid_score": 58,
+      "free_score": null
+    },
+    {
+      "slug": "markdown",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\markdown\\SKILL.md",
+      "original_lines": 146,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "mcporter",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\mcporter\\SKILL.md",
+      "original_lines": 143,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "miniprogram-development",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\miniprogram-development\\SKILL.md",
+      "original_lines": 291,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "molt-board-art",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\molt-board-art\\SKILL.md",
+      "original_lines": 336,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "moltbook-filter",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\moltbook-filter\\SKILL.md",
+      "original_lines": 290,
+      "source": "clawhub_downloaded",
+      "paid_score": 51,
+      "free_score": null
+    },
+    {
+      "slug": "molted-work",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\molted-work\\SKILL.md",
+      "original_lines": 482,
+      "source": "clawhub_downloaded",
+      "paid_score": 74,
+      "free_score": null
+    },
+    {
+      "slug": "monad-development",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\monad-development\\SKILL.md",
+      "original_lines": 392,
+      "source": "clawhub_downloaded",
+      "paid_score": 70,
+      "free_score": null
+    },
+    {
+      "slug": "monitor",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\monitor\\SKILL.md",
+      "original_lines": 233,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "photo-webcam",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\photo-webcam\\SKILL.md",
+      "original_lines": 289,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "plugin-architecture",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\plugin-architecture\\SKILL.md",
+      "original_lines": 135,
+      "source": "clawhub_downloaded",
+      "paid_score": 51,
+      "free_score": null
+    },
+    {
+      "slug": "powerpoint",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\powerpoint\\SKILL.md",
+      "original_lines": 215,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "py",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\py\\SKILL.md",
+      "original_lines": 138,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "python-dataviz",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\python-dataviz\\SKILL.md",
+      "original_lines": 300,
+      "source": "clawhub_downloaded",
+      "paid_score": 91,
+      "free_score": null
+    },
+    {
+      "slug": "report",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\report\\SKILL.md",
+      "original_lines": 217,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "rust",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\rust\\SKILL.md",
+      "original_lines": 178,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "safe-encryption-skill",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\safe-encryption-skill\\SKILL.md",
+      "original_lines": 232,
+      "source": "clawhub_downloaded",
+      "paid_score": 79,
+      "free_score": null
+    },
+    {
+      "slug": "screen-monitor",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\screen-monitor\\SKILL.md",
+      "original_lines": 136,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "sequential-read",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\sequential-read\\SKILL.md",
+      "original_lines": 318,
+      "source": "clawhub_downloaded",
+      "paid_score": 46,
+      "free_score": null
+    },
+    {
+      "slug": "shadcn-ui",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\shadcn-ui\\SKILL.md",
+      "original_lines": 381,
+      "source": "clawhub_downloaded",
+      "paid_score": 62,
+      "free_score": null
+    },
+    {
+      "slug": "shopify-helper",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\shopify-helper\\SKILL.md",
+      "original_lines": 134,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "smart-auto-updater",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\smart-auto-updater\\SKILL.md",
+      "original_lines": 280,
+      "source": "clawhub_downloaded",
+      "paid_score": 86,
+      "free_score": null
+    },
+    {
+      "slug": "smart-cache",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\smart-cache\\SKILL.md",
+      "original_lines": 266,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "sonoscli",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\sonoscli\\SKILL.md",
+      "original_lines": 128,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "story-long-analyze",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\story-long-analyze\\SKILL.md",
+      "original_lines": 411,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "story-long-write",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\story-long-write\\SKILL.md",
+      "original_lines": 376,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "story-short-write",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\story-short-write\\SKILL.md",
+      "original_lines": 398,
+      "source": "clawhub_downloaded",
+      "paid_score": 63,
+      "free_score": null
+    },
+    {
+      "slug": "tardis",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\tardis\\SKILL.md",
+      "original_lines": 320,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "tarot",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\tarot\\SKILL.md",
+      "original_lines": 324,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "tarot-reader",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\tarot-reader\\SKILL.md",
+      "original_lines": 205,
+      "source": "clawhub_downloaded",
+      "paid_score": 82,
+      "free_score": null
+    },
+    {
+      "slug": "text",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\text\\SKILL.md",
+      "original_lines": 160,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "token-manager",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\token-manager\\SKILL.md",
+      "original_lines": 487,
+      "source": "clawhub_downloaded",
+      "paid_score": 71,
+      "free_score": null
+    },
+    {
+      "slug": "tool",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\tool\\SKILL.md",
+      "original_lines": 146,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "tool-call-retry",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\tool-call-retry\\SKILL.md",
+      "original_lines": 154,
+      "source": "clawhub_downloaded",
+      "paid_score": 65,
+      "free_score": null
+    },
+    {
+      "slug": "trade-with-taro",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\trade-with-taro\\SKILL.md",
+      "original_lines": 305,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "translate",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\translate\\SKILL.md",
+      "original_lines": 152,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "ui-audit",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\ui-audit\\SKILL.md",
+      "original_lines": 275,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "visual-file-sorter",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\visual-file-sorter\\SKILL.md",
+      "original_lines": 158,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "volcengine-network-dns",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\volcengine-network-dns\\SKILL.md",
+      "original_lines": 114,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "web-content-fetcher",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\web-content-fetcher\\SKILL.md",
+      "original_lines": 131,
+      "source": "clawhub_downloaded",
+      "paid_score": 78,
+      "free_score": null
+    },
+    {
+      "slug": "wenxiang-2d5-banner",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\wenxiang-2d5-banner\\SKILL.md",
+      "original_lines": 218,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "word",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\word\\SKILL.md",
+      "original_lines": 215,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "write",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\write\\SKILL.md",
+      "original_lines": 162,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "write-a-skill",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\write-a-skill\\SKILL.md",
+      "original_lines": 189,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "xml",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\xml\\SKILL.md",
+      "original_lines": 155,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "xml-reader",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\xml-reader\\SKILL.md",
+      "original_lines": 332,
+      "source": "clawhub_downloaded",
+      "paid_score": 74,
+      "free_score": null
+    },
+    {
+      "slug": "yaml",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\yaml\\SKILL.md",
+      "original_lines": 154,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "azure-devops",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\azure-devops\\SKILL.md",
+      "original_lines": 196,
+      "source": "clawhub_downloaded",
+      "paid_score": 67,
+      "free_score": null
+    },
+    {
+      "slug": "blog-seo-writer",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\blog-seo-writer\\SKILL.md",
+      "original_lines": 143,
+      "source": "clawhub_downloaded",
+      "paid_score": 67,
+      "free_score": null
+    },
+    {
+      "slug": "blog-writer",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\blog-writer\\SKILL.md",
+      "original_lines": 250,
+      "source": "clawhub_downloaded",
+      "paid_score": 52,
+      "free_score": null
+    },
+    {
+      "slug": "brainz-calendar",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\brainz-calendar\\SKILL.md",
+      "original_lines": 127,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "calendar",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\calendar\\SKILL.md",
+      "original_lines": 103,
+      "source": "clawhub_downloaded",
+      "paid_score": 58,
+      "free_score": null
+    },
+    {
+      "slug": "calendar-skill",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\calendar-skill\\SKILL.md",
+      "original_lines": 149,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "clawhub-jira-pat-skill",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\clawhub-jira-pat-skill\\SKILL.md",
+      "original_lines": 245,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "daily-report-writer",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\daily-report-writer\\SKILL.md",
+      "original_lines": 130,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "diagram-tools",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\diagram-tools\\SKILL.md",
+      "original_lines": 196,
+      "source": "clawhub_downloaded",
+      "paid_score": 65,
+      "free_score": null
+    },
+    {
+      "slug": "dingtalk-calendar",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\dingtalk-calendar\\SKILL.md",
+      "original_lines": 293,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "feishu-calendar",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\feishu-calendar\\SKILL.md",
+      "original_lines": 157,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "glitch-dashboard",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\glitch-dashboard\\SKILL.md",
+      "original_lines": 158,
+      "source": "clawhub_downloaded",
+      "paid_score": 73,
+      "free_score": null
+    },
+    {
+      "slug": "image",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\image\\SKILL.md",
+      "original_lines": 268,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "jira",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\jira\\SKILL.md",
+      "original_lines": 277,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "meeting-note",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\meeting-note\\SKILL.md",
+      "original_lines": 224,
+      "source": "clawhub_downloaded",
+      "paid_score": 80,
+      "free_score": null
+    },
+    {
+      "slug": "note",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\note\\SKILL.md",
+      "original_lines": 181,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "note-taker",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\note-taker\\SKILL.md",
+      "original_lines": 190,
+      "source": "clawhub_downloaded",
+      "paid_score": 70,
+      "free_score": null
+    },
+    {
+      "slug": "notion",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\notion\\SKILL.md",
+      "original_lines": 265,
+      "source": "clawhub_downloaded",
+      "paid_score": 55,
+      "free_score": null
+    },
+    {
+      "slug": "notion-pages",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\notion-pages\\SKILL.md",
+      "original_lines": 338,
+      "source": "clawhub_downloaded",
+      "paid_score": 89,
+      "free_score": null
+    },
+    {
+      "slug": "notion-skill",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\notion-skill\\SKILL.md",
+      "original_lines": 202,
+      "source": "clawhub_downloaded",
+      "paid_score": 55,
+      "free_score": null
+    },
+    {
+      "slug": "powerpoint-pptx",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\powerpoint-pptx\\SKILL.md",
+      "original_lines": 187,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "powerpoint-pptx-1-0-1",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\powerpoint-pptx-1-0-1\\SKILL.md",
+      "original_lines": 188,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "powerpoint-pptx-cn",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\powerpoint-pptx-cn\\SKILL.md",
+      "original_lines": 185,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "proactive-agent",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\proactive-agent\\SKILL.md",
+      "original_lines": 265,
+      "source": "clawhub_downloaded",
+      "paid_score": 64,
+      "free_score": null
+    },
+    {
+      "slug": "productivity-improving",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\productivity-improving\\SKILL.md",
+      "original_lines": 258,
+      "source": "clawhub_downloaded",
+      "paid_score": 64,
+      "free_score": null
+    },
+    {
+      "slug": "python3",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\python3\\SKILL.md",
+      "original_lines": 150,
+      "source": "clawhub_downloaded",
+      "paid_score": 63,
+      "free_score": null
+    },
+    {
+      "slug": "quant-data-quality",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\quant-data-quality\\SKILL.md",
+      "original_lines": 437,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "report-summary-builder",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\report-summary-builder\\SKILL.md",
+      "original_lines": 223,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "smart-weekly-report",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\smart-weekly-report\\SKILL.md",
+      "original_lines": 499,
+      "source": "clawhub_downloaded",
+      "paid_score": 73,
+      "free_score": null
+    },
+    {
+      "slug": "task",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\task\\SKILL.md",
+      "original_lines": 120,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "task-planner",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\task-planner\\SKILL.md",
+      "original_lines": 157,
+      "source": "clawhub_downloaded",
+      "paid_score": 74,
+      "free_score": null
+    },
+    {
+      "slug": "weekly-report-writer",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\weekly-report-writer\\SKILL.md",
+      "original_lines": 143,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "work",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\work\\SKILL.md",
+      "original_lines": 178,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "writing-assistant",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\writing-assistant\\SKILL.md",
+      "original_lines": 105,
+      "source": "clawhub_downloaded",
+      "paid_score": 49,
+      "free_score": null
+    },
+    {
+      "slug": "ws-calendar",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\ws-calendar\\SKILL.md",
+      "original_lines": 124,
+      "source": "clawhub_downloaded",
+      "paid_score": 62,
+      "free_score": null
+    },
+    {
+      "slug": "agent-browser-clawdbot",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\agent-browser-clawdbot\\SKILL.md",
+      "original_lines": 290,
+      "source": "clawhub_downloaded",
+      "paid_score": 63,
+      "free_score": null
+    },
+    {
+      "slug": "agent-browser-cli",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\agent-browser-cli\\SKILL.md",
+      "original_lines": 202,
+      "source": "clawhub_downloaded",
+      "paid_score": 74,
+      "free_score": null
+    },
+    {
+      "slug": "agent-browser-stagehand",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\agent-browser-stagehand\\SKILL.md",
+      "original_lines": 143,
+      "source": "clawhub_downloaded",
+      "paid_score": 75,
+      "free_score": null
+    },
+    {
+      "slug": "agent-framework-azure-ai-py",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\agent-framework-azure-ai-py\\SKILL.md",
+      "original_lines": 401,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "agent-knowledge",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\agent-knowledge\\SKILL.md",
+      "original_lines": 184,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "ai-news",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\ai-news\\SKILL.md",
+      "original_lines": 328,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "archive",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\archive\\SKILL.md",
+      "original_lines": 217,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "bailian-web-search",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\bailian-web-search\\SKILL.md",
+      "original_lines": 108,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "brave-search",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\brave-search\\SKILL.md",
+      "original_lines": 156,
+      "source": "clawhub_downloaded",
+      "paid_score": 55,
+      "free_score": null
+    },
+    {
+      "slug": "browser-automation",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\browser-automation\\SKILL.md",
+      "original_lines": 143,
+      "source": "clawhub_downloaded",
+      "paid_score": 75,
+      "free_score": null
+    },
+    {
+      "slug": "browser-automation-v2",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\browser-automation-v2\\SKILL.md",
+      "original_lines": 149,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "bsession",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\bsession\\SKILL.md",
+      "original_lines": 347,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "cctv-news-fetcher",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\cctv-news-fetcher\\SKILL.md",
+      "original_lines": 133,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "china-news",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\china-news\\SKILL.md",
+      "original_lines": 488,
+      "source": "clawhub_downloaded",
+      "paid_score": 49,
+      "free_score": null
+    },
+    {
+      "slug": "company-search-fengniao",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\company-search-fengniao\\SKILL.md",
+      "original_lines": 165,
+      "source": "clawhub_downloaded",
+      "paid_score": 80,
+      "free_score": null
+    },
+    {
+      "slug": "daily-news-brief",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\daily-news-brief\\SKILL.md",
+      "original_lines": 319,
+      "source": "clawhub_downloaded",
+      "paid_score": 79,
+      "free_score": null
+    },
+    {
+      "slug": "feed-digest",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\feed-digest\\SKILL.md",
+      "original_lines": 124,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "feed-to-md",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\feed-to-md\\SKILL.md",
+      "original_lines": 162,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "file-browser",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\file-browser\\SKILL.md",
+      "original_lines": 119,
+      "source": "clawhub_downloaded",
+      "paid_score": 80,
+      "free_score": null
+    },
+    {
+      "slug": "free-google-search-with-browser",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\free-google-search-with-browser\\SKILL.md",
+      "original_lines": 134,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "free-web-search",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\free-web-search\\SKILL.md",
+      "original_lines": 231,
+      "source": "clawhub_downloaded",
+      "paid_score": 81,
+      "free_score": null
+    },
+    {
+      "slug": "gif-whatsapp",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\gif-whatsapp\\SKILL.md",
+      "original_lines": 188,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "gitcrawl",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\gitcrawl\\SKILL.md",
+      "original_lines": 140,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "google-search",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\google-search\\SKILL.md",
+      "original_lines": 111,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "hot-news-aggregator",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\hot-news-aggregator\\SKILL.md",
+      "original_lines": 159,
+      "source": "clawhub_downloaded",
+      "paid_score": 56,
+      "free_score": null
+    },
+    {
+      "slug": "in-depth-research",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\in-depth-research\\SKILL.md",
+      "original_lines": 221,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "internet-search",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\internet-search\\SKILL.md",
+      "original_lines": 171,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "jellyfin-control",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\jellyfin-control\\SKILL.md",
+      "original_lines": 352,
+      "source": "clawhub_downloaded",
+      "paid_score": 73,
+      "free_score": null
+    },
+    {
+      "slug": "job-auto-apply",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\job-auto-apply\\SKILL.md",
+      "original_lines": 340,
+      "source": "clawhub_downloaded",
+      "paid_score": 75,
+      "free_score": null
+    },
+    {
+      "slug": "market-news",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\market-news\\SKILL.md",
+      "original_lines": 120,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "multi-search-engine-simple",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\multi-search-engine-simple\\SKILL.md",
+      "original_lines": 112,
+      "source": "clawhub_downloaded",
+      "paid_score": 53,
+      "free_score": null
+    },
+    {
+      "slug": "multi-source-research",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\multi-source-research\\SKILL.md",
+      "original_lines": 184,
+      "source": "clawhub_downloaded",
+      "paid_score": 73,
+      "free_score": null
+    },
+    {
+      "slug": "news",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\news\\SKILL.md",
+      "original_lines": 195,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "news-aggregator",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\news-aggregator\\SKILL.md",
+      "original_lines": 158,
+      "source": "clawhub_downloaded",
+      "paid_score": 56,
+      "free_score": null
+    },
+    {
+      "slug": "news-feed",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\news-feed\\SKILL.md",
+      "original_lines": 171,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "parallel-ai-research",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\parallel-ai-research\\SKILL.md",
+      "original_lines": 340,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "read-github",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\read-github\\SKILL.md",
+      "original_lines": 179,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "research-agent",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\research-agent\\SKILL.md",
+      "original_lines": 340,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "rss-aggregator",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\rss-aggregator\\SKILL.md",
+      "original_lines": 157,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "rss-digest",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\rss-digest\\SKILL.md",
+      "original_lines": 124,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "rss-feed-digest",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\rss-feed-digest\\SKILL.md",
+      "original_lines": 143,
+      "source": "clawhub_downloaded",
+      "paid_score": 65,
+      "free_score": null
+    },
+    {
+      "slug": "rss-fetcher",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\rss-fetcher\\SKILL.md",
+      "original_lines": 342,
+      "source": "clawhub_downloaded",
+      "paid_score": 81,
+      "free_score": null
+    },
+    {
+      "slug": "rss-reader",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\rss-reader\\SKILL.md",
+      "original_lines": 238,
+      "source": "clawhub_downloaded",
+      "paid_score": 79,
+      "free_score": null
+    },
+    {
+      "slug": "scrape-web",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\scrape-web\\SKILL.md",
+      "original_lines": 138,
+      "source": "clawhub_downloaded",
+      "paid_score": 51,
+      "free_score": null
+    },
+    {
+      "slug": "search-2",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\search-2\\SKILL.md",
+      "original_lines": 273,
+      "source": "clawhub_downloaded",
+      "paid_score": 80,
+      "free_score": null
+    },
+    {
+      "slug": "searching-assistant",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\searching-assistant\\SKILL.md",
+      "original_lines": 106,
+      "source": "clawhub_downloaded",
+      "paid_score": 46,
+      "free_score": null
+    },
+    {
+      "slug": "social-sentiment",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\social-sentiment\\SKILL.md",
+      "original_lines": 157,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "solo-research",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\solo-research\\SKILL.md",
+      "original_lines": 328,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "solo-validate",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\solo-validate\\SKILL.md",
+      "original_lines": 319,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "stagehand-browser-cli",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\stagehand-browser-cli\\SKILL.md",
+      "original_lines": 143,
+      "source": "clawhub_downloaded",
+      "paid_score": 75,
+      "free_score": null
+    },
+    {
+      "slug": "the-news",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\the-news\\SKILL.md",
+      "original_lines": 138,
+      "source": "clawhub_downloaded",
+      "paid_score": 63,
+      "free_score": null
+    },
+    {
+      "slug": "thesis-helper",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\thesis-helper\\SKILL.md",
+      "original_lines": 135,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "tool-finder",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\tool-finder\\SKILL.md",
+      "original_lines": 425,
+      "source": "clawhub_downloaded",
+      "paid_score": 82,
+      "free_score": null
+    },
+    {
+      "slug": "use-my-browser",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\use-my-browser\\SKILL.md",
+      "original_lines": 218,
+      "source": "clawhub_downloaded",
+      "paid_score": 62,
+      "free_score": null
+    },
+    {
+      "slug": "verify-claims",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\verify-claims\\SKILL.md",
+      "original_lines": 420,
+      "source": "clawhub_downloaded",
+      "paid_score": 66,
+      "free_score": null
+    },
+    {
+      "slug": "web-browsing",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\web-browsing\\SKILL.md",
+      "original_lines": 156,
+      "source": "clawhub_downloaded",
+      "paid_score": 63,
+      "free_score": null
+    },
+    {
+      "slug": "web-learner",
+      "category": "Research",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Research\\web-learner\\SKILL.md",
+      "original_lines": 200,
+      "source": "clawhub_downloaded",
+      "paid_score": 63,
+      "free_score": null
+    },
+    {
+      "slug": "aegis-security",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\aegis-security\\SKILL.md",
+      "original_lines": 481,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "afrexai-cybersecurity-engine",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\afrexai-cybersecurity-engine\\SKILL.md",
+      "original_lines": 299,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "agent-bom-vulnerability-intel",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\agent-bom-vulnerability-intel\\SKILL.md",
+      "original_lines": 183,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "agentic-security-audit",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\agentic-security-audit\\SKILL.md",
+      "original_lines": 405,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "amap-jsapi-skill",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\amap-jsapi-skill\\SKILL.md",
+      "original_lines": 268,
+      "source": "clawhub_downloaded",
+      "paid_score": 80,
+      "free_score": null
+    },
+    {
+      "slug": "cdn",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\cdn\\SKILL.md",
+      "original_lines": 155,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "firewall",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\firewall\\SKILL.md",
+      "original_lines": 177,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "go-security-vulnerability",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\go-security-vulnerability\\SKILL.md",
+      "original_lines": 180,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "mac-node-snapshot",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\mac-node-snapshot\\SKILL.md",
+      "original_lines": 116,
+      "source": "clawhub_downloaded",
+      "paid_score": 81,
+      "free_score": null
+    },
+    {
+      "slug": "moltblock",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\moltblock\\SKILL.md",
+      "original_lines": 202,
+      "source": "clawhub_downloaded",
+      "paid_score": 65,
+      "free_score": null
+    },
+    {
+      "slug": "moltbook-firewall",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\moltbook-firewall\\SKILL.md",
+      "original_lines": 205,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "multi-search-engine",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\multi-search-engine\\SKILL.md",
+      "original_lines": 248,
+      "source": "clawhub_downloaded",
+      "paid_score": 68,
+      "free_score": null
+    },
+    {
+      "slug": "password-generator",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\password-generator\\SKILL.md",
+      "original_lines": 122,
+      "source": "clawhub_downloaded",
+      "paid_score": 52,
+      "free_score": null
+    },
+    {
+      "slug": "pentest-commands",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\pentest-commands\\SKILL.md",
+      "original_lines": 411,
+      "source": "clawhub_downloaded",
+      "paid_score": 77,
+      "free_score": null
+    },
+    {
+      "slug": "security",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\security\\SKILL.md",
+      "original_lines": 417,
+      "source": "clawhub_downloaded",
+      "paid_score": 59,
+      "free_score": null
+    },
+    {
+      "slug": "security-audit",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\security-audit\\SKILL.md",
+      "original_lines": 197,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "security-auditor",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\security-auditor\\SKILL.md",
+      "original_lines": 468,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "security-scanner",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\security-scanner\\SKILL.md",
+      "original_lines": 172,
+      "source": "clawhub_downloaded",
+      "paid_score": 80,
+      "free_score": null
+    },
+    {
+      "slug": "skill-vetter",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\skill-vetter\\SKILL.md",
+      "original_lines": 223,
+      "source": "clawhub_downloaded",
+      "paid_score": 54,
+      "free_score": null
+    },
+    {
+      "slug": "straker-verify",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\straker-verify\\SKILL.md",
+      "original_lines": 220,
+      "source": "clawhub_downloaded",
+      "paid_score": 75,
+      "free_score": null
+    },
+    {
+      "slug": "vpn",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\vpn\\SKILL.md",
+      "original_lines": 157,
+      "source": "clawhub_downloaded",
+      "paid_score": 57,
+      "free_score": null
+    },
+    {
+      "slug": "vulnerability-scanner",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\vulnerability-scanner\\SKILL.md",
+      "original_lines": 387,
+      "source": "clawhub_downloaded",
+      "paid_score": 79,
+      "free_score": null
+    },
+    {
+      "slug": "web-vulnerability-assessment",
+      "category": "Security",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Security\\web-vulnerability-assessment\\SKILL.md",
+      "original_lines": 301,
+      "source": "clawhub_downloaded",
+      "paid_score": 72,
+      "free_score": null
+    },
+    {
+      "slug": "admapix",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\admapix\\SKILL.md",
+      "original_lines": 264,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "ai-agent-helper",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\ai-agent-helper\\SKILL.md",
+      "original_lines": 142,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "aws-agentcore-langgraph",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\aws-agentcore-langgraph\\SKILL.md",
+      "original_lines": 216,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "azure-infra",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\azure-infra\\SKILL.md",
+      "original_lines": 141,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "baidu-netdisk-skills",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\baidu-netdisk-skills\\SKILL.md",
+      "original_lines": 432,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "ai-assistant",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\claude\\SKILL.md",
+      "original_lines": 295,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "elite-longterm-memory",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\elite-longterm-memory\\SKILL.md",
+      "original_lines": 499,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "elite-longterm-memory-local",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\elite-longterm-memory-local\\SKILL.md",
+      "original_lines": 318,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "memory",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\memory\\SKILL.md",
+      "original_lines": 369,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "memory-compress",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\memory-compress\\SKILL.md",
+      "original_lines": 230,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "memory-scan",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\memory-scan\\SKILL.md",
+      "original_lines": 291,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "neosoul-decision-agent",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\neosoul-decision-agent\\SKILL.md",
+      "original_lines": 389,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "neural-memory-enhanced",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\neural-memory-enhanced\\SKILL.md",
+      "original_lines": 244,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "ontology",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\ontology\\SKILL.md",
+      "original_lines": 329,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "productivity",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\productivity\\SKILL.md",
+      "original_lines": 354,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "redis-store",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\redis-store\\SKILL.md",
+      "original_lines": 160,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "self-improving",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\self-improving\\SKILL.md",
+      "original_lines": 361,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "self-improving-agent",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\self-improving-agent\\SKILL.md",
+      "original_lines": 456,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "simple-memory-skill",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\simple-memory-skill\\SKILL.md",
+      "original_lines": 469,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "smart-memory-manager",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\smart-memory-manager\\SKILL.md",
+      "original_lines": 161,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "subagent-driven-development",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\subagent-driven-development\\SKILL.md",
+      "original_lines": 353,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "token-saver-skill",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\token-saver-skill\\SKILL.md",
+      "original_lines": 392,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "totalreclaw",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\totalreclaw\\SKILL.md",
+      "original_lines": 172,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "afrexai-business-automation",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\afrexai-business-automation\\SKILL.md",
+      "original_lines": 408,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "auto-updater",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\auto-updater\\SKILL.md",
+      "original_lines": 255,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "automate-excel",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\automate-excel\\SKILL.md",
+      "original_lines": 269,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "automation-workflow-builder",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\automation-workflow-builder\\SKILL.md",
+      "original_lines": 210,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "automation-workflows",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\automation-workflows\\SKILL.md",
+      "original_lines": 392,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "automation-workflows-0-1-0",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\automation-workflows-0-1-0\\SKILL.md",
+      "original_lines": 395,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "batch",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\batch\\SKILL.md",
+      "original_lines": 146,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "browser-automation-cdp",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\browser-automation-cdp\\SKILL.md",
+      "original_lines": 403,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "clawsec-feed",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\clawsec-feed\\SKILL.md",
+      "original_lines": 449,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "cloud-infra-automation",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\cloud-infra-automation\\SKILL.md",
+      "original_lines": 149,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "control",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\control\\SKILL.md",
+      "original_lines": 380,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "cron",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\cron\\SKILL.md",
+      "original_lines": 137,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "cron-helper",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\cron-helper\\SKILL.md",
+      "original_lines": 161,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "cron-mastery",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\cron-mastery\\SKILL.md",
+      "original_lines": 204,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "cron-worker-guardrails",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\cron-worker-guardrails\\SKILL.md",
+      "original_lines": 196,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "desktop-control",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\desktop-control\\SKILL.md",
+      "original_lines": 380,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "drawing-analyzer",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\drawing-analyzer\\SKILL.md",
+      "original_lines": 132,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "jlc-eda-drawing",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\jlc-eda-drawing\\SKILL.md",
+      "original_lines": 187,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "kyaukyuai-linear-cli",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\kyaukyuai-linear-cli\\SKILL.md",
+      "original_lines": 289,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "linear-autopilot",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\linear-autopilot\\SKILL.md",
+      "original_lines": 291,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "macro-monitor",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\macro-monitor\\SKILL.md",
+      "original_lines": 279,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "node-red-manager",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\node-red-manager\\SKILL.md",
+      "original_lines": 190,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "obsidian",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\obsidian\\SKILL.md",
+      "original_lines": 168,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "obsidian-1-0-0",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\obsidian-1-0-0\\SKILL.md",
+      "original_lines": 168,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "obsidian-notesmd-cli",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\obsidian-notesmd-cli\\SKILL.md",
+      "original_lines": 172,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "openclaw-automation-recipes",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\openclaw-automation-recipes\\SKILL.md",
+      "original_lines": 278,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "openclaw-cron-setup",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\openclaw-cron-setup\\SKILL.md",
+      "original_lines": 276,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "openclaw-reminder",
+      "category": "Automation",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Automation\\openclaw-reminder\\SKILL.md",
+      "original_lines": 183,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "openclaw-telegram-chat",
+      "category": "Communication",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Communication\\openclaw-telegram-chat\\SKILL.md",
+      "original_lines": 269,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "ai-image-generation-prompts-9142af54",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\ai-image-generation-prompts-9142af54\\SKILL.md",
+      "original_lines": 124,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "llm-provider-ai",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\openai-ai\\SKILL.md",
+      "original_lines": 428,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "llm-provider-whisper",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\openai-whisper\\SKILL.md",
+      "original_lines": 119,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "llm-provider-whisper-1-0-0",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\openai-whisper-1-0-0\\SKILL.md",
+      "original_lines": 119,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "ui-ux-pro-max-2",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\ui-ux-pro-max-2\\SKILL.md",
+      "original_lines": 479,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "ui-ux-pro-max-plus",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\ui-ux-pro-max-plus\\SKILL.md",
+      "original_lines": 249,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "video-producer",
+      "category": "Creative",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Creative\\video-producer\\SKILL.md",
+      "original_lines": 258,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "ai-assistant-code-delegate",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\claude-code-delegate\\SKILL.md",
+      "original_lines": 273,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "ai-assistant-code-runner",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\claude-code-runner\\SKILL.md",
+      "original_lines": 288,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "ai-assistant-tmux",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\claude-tmux\\SKILL.md",
+      "original_lines": 155,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "ui-ux-pro-max",
+      "category": "Development",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Development\\ui-ux-pro-max\\SKILL.md",
+      "original_lines": 137,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "azure-proxy",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\azure-proxy\\SKILL.md",
+      "original_lines": 205,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "note-processor",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\note-processor\\SKILL.md",
+      "original_lines": 456,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "tpn-proxy",
+      "category": "Integrations",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Integrations\\tpn-proxy\\SKILL.md",
+      "original_lines": 472,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "pdf-processor-cn",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\pdf-processor-cn\\SKILL.md",
+      "original_lines": 386,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "popeye-productivity",
+      "category": "Knowledge",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Knowledge\\popeye-productivity\\SKILL.md",
+      "original_lines": 231,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "anyone-proxy",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\anyone-proxy\\SKILL.md",
+      "original_lines": 157,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "v2ray-proxy",
+      "category": "Other",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Other\\v2ray-proxy\\SKILL.md",
+      "original_lines": 146,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "personal-productivity",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\personal-productivity\\SKILL.md",
+      "original_lines": 240,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "toby-productivity-helper-1",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\toby-productivity-helper-1\\SKILL.md",
+      "original_lines": 109,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "toby-productivity-helper-4",
+      "category": "Productivity",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\toby-productivity-helper-4\\SKILL.md",
+      "original_lines": 109,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "ad-insight-hub",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\ad-insight-hub\\SKILL.md",
+      "original_lines": 209,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "aws-cloud-architect",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\aws-cloud-architect\\SKILL.md",
+      "original_lines": 202,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "aws-graph-agent",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\aws-graph-agent\\SKILL.md",
+      "original_lines": 288,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "azure-cloud-architect",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\azure-cloud-architect\\SKILL.md",
+      "original_lines": 177,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "decision-architect",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\decision-architect\\SKILL.md",
+      "original_lines": 217,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "evolution-engine",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\evolution-engine\\SKILL.md",
+      "original_lines": 486,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "knowledge-ontology",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\knowledge-ontology\\SKILL.md",
+      "original_lines": 273,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "llm-assistant-hub",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\llm-assistant-hub\\SKILL.md",
+      "original_lines": 289,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "longmemo-elite",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\longmemo-elite\\SKILL.md",
+      "original_lines": 201,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "memo-quickstart",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\memo-quickstart\\SKILL.md",
+      "original_lines": 207,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "memory-distiller",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\memory-distiller\\SKILL.md",
+      "original_lines": 394,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "memory-orchestrator",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\memory-orchestrator\\SKILL.md",
+      "original_lines": 472,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "memory-radar",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\memory-radar\\SKILL.md",
+      "original_lines": 201,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "multi-agent-dev",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\multi-agent-dev\\SKILL.md",
+      "original_lines": 388,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "persistent-memory-engine",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\persistent-memory-engine\\SKILL.md",
+      "original_lines": 226,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "productivity-boost",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\productivity-boost\\SKILL.md",
+      "original_lines": 176,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "redis-cache-master",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\redis-cache-master\\SKILL.md",
+      "original_lines": 200,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "self-evolving-ai",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\self-evolving-ai\\SKILL.md",
+      "original_lines": 224,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "skill-production-standards",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\skill-production-standards\\SKILL.md",
+      "original_lines": 459,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "tool-orchestrator",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\tool-orchestrator\\SKILL.md",
+      "original_lines": 201,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "autopilot-flow",
+      "category": "Automation",
+      "original_path": "D:\\skills\\differentiated-skills\\Automation\\autopilot-flow\\SKILL.md",
+      "original_lines": 218,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "biz-auto-hub",
+      "category": "Automation",
+      "original_path": "D:\\skills\\differentiated-skills\\Automation\\biz-auto-hub\\SKILL.md",
+      "original_lines": 174,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "cdp-browser-master",
+      "category": "Automation",
+      "original_path": "D:\\skills\\differentiated-skills\\Automation\\cdp-browser-master\\SKILL.md",
+      "original_lines": 215,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "cloud-ops-orchestrator",
+      "category": "Automation",
+      "original_path": "D:\\skills\\differentiated-skills\\Automation\\cloud-ops-orchestrator\\SKILL.md",
+      "original_lines": 493,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "cron-assist",
+      "category": "Automation",
+      "original_path": "D:\\skills\\differentiated-skills\\Automation\\cron-assist\\SKILL.md",
+      "original_lines": 404,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "cron-guard",
+      "category": "Automation",
+      "original_path": "D:\\skills\\differentiated-skills\\Automation\\cron-guard\\SKILL.md",
+      "original_lines": 231,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "desktop-autopilot",
+      "category": "Automation",
+      "original_path": "D:\\skills\\differentiated-skills\\Automation\\desktop-autopilot\\SKILL.md",
+      "original_lines": 499,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "excel-maestro",
+      "category": "Automation",
+      "original_path": "D:\\skills\\differentiated-skills\\Automation\\excel-maestro\\SKILL.md",
+      "original_lines": 451,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "flow-architect",
+      "category": "Automation",
+      "original_path": "D:\\skills\\differentiated-skills\\Automation\\flow-architect\\SKILL.md",
+      "original_lines": 497,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "linear-workflow-bot",
+      "category": "Automation",
+      "original_path": "D:\\skills\\differentiated-skills\\Automation\\linear-workflow-bot\\SKILL.md",
+      "original_lines": 258,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "macro-pulse",
+      "category": "Automation",
+      "original_path": "D:\\skills\\differentiated-skills\\Automation\\macro-pulse\\SKILL.md",
+      "original_lines": 294,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "notes-cli-toolkit",
+      "category": "Automation",
+      "original_path": "D:\\skills\\differentiated-skills\\Automation\\notes-cli-toolkit\\SKILL.md",
+      "original_lines": 402,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "office-productivity-hub",
+      "category": "Automation",
+      "original_path": "D:\\skills\\differentiated-skills\\Automation\\office-productivity-hub\\SKILL.md",
+      "original_lines": 466,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "security-radar",
+      "category": "Automation",
+      "original_path": "D:\\skills\\differentiated-skills\\Automation\\security-radar\\SKILL.md",
+      "original_lines": 482,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "system-controller",
+      "category": "Automation",
+      "original_path": "D:\\skills\\differentiated-skills\\Automation\\system-controller\\SKILL.md",
+      "original_lines": 450,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "update-guardian",
+      "category": "Automation",
+      "original_path": "D:\\skills\\differentiated-skills\\Automation\\update-guardian\\SKILL.md",
+      "original_lines": 450,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "vault-sync-engine",
+      "category": "Automation",
+      "original_path": "D:\\skills\\differentiated-skills\\Automation\\vault-sync-engine\\SKILL.md",
+      "original_lines": 333,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "workflow-lite",
+      "category": "Automation",
+      "original_path": "D:\\skills\\differentiated-skills\\Automation\\workflow-lite\\SKILL.md",
+      "original_lines": 245,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "workflow-symphony",
+      "category": "Automation",
+      "original_path": "D:\\skills\\differentiated-skills\\Automation\\workflow-symphony\\SKILL.md",
+      "original_lines": 479,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    }
+  ]
+}

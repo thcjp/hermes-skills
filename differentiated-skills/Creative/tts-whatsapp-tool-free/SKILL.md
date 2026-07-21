@@ -4,12 +4,10 @@ name: tts-whatsapp-tool-free
 version: "1.0.0"
 displayName: WhatsApp语音消息免费版
 summary: 基于 Piper TTS 的 WhatsApp 语音消息发送工具,支持 40+ 语言,适合个人用户发送语音消息。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向个人用户的 WhatsApp 语音消息工具(免费版)。
-
-  核心能力:
+  面向个人用户的 WhatsApp 语音消息工具(免费版)。核心能力:
   - 基于 Piper TTS 的高质量语音合成(40+ 语言)
   - 文字转 OGG/Opus 格式(WhatsApp 兼容)
   - 自动发送语音消息到指定联系人
@@ -25,11 +23,7 @@ description: |-
 
   差异化:
   - 免费版聚焦单条消息发送核心能力
-  - 完全本地 TTS 合成,无需 API Key
-  - 支持 40+ 语言,覆盖主流语种
-  - 适配个人用户日常沟通
-
-  触发关键词: whatsapp, tts, piper, voice message, 语音消息, 文字转语音, ogg, opus, free
+  - 完...
 tags:
 - 创意设计
 - 语音合成
@@ -37,10 +31,9 @@ tags:
 - 消息发送
 - 多语言
 tools:
-- read
+  - - read
 - exec
 ---
-
 # WhatsApp 语音消息工具 - 免费版
 
 ## 概述
@@ -121,9 +114,23 @@ tts-whatsapp "收到,谢谢!" \
     --target "+8613800138000"
 ```
 
+## 不适用场景
+
+以下场景WhatsApp语音消息免费版不适合处理：
+
+- 专业医学法律翻译认证
+- 同声传译
+- 文学创作翻译
+
+
+## 触发条件
+
+需要文本翻译、多语言转换、本地化处理时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
-### 1. 安装 Piper TTS
+### 依赖说明
 
 ```bash
 # 安装 Piper TTS
@@ -167,7 +174,7 @@ export PIPER_DEFAULT_QUALITY="medium"
 tts-whatsapp "你好,这是第一条语音消息!" --target "+8613800138000"
 ```
 
-## 配置示例
+## 示例
 
 ### 配置文件
 
@@ -310,3 +317,16 @@ tts-whatsapp "你好,这是第一条语音消息!" --target "+8613800138000"
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。免费版聚焦单条语音消息发送,适合个人用户多语言沟通。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用
+- 本地运行，不支持多设备同步

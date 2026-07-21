@@ -1,0 +1,24 @@
+{
+  "slug": "auto-workflow",
+  "skill_id": 27,
+  "imported_at": "2026-07-20T22:08:49.776182",
+  "trace_total": 35,
+  "trace_grade": "B",
+  "l2_passed": false,
+  "db_result": {
+    "total": 39,
+    "grade": "B",
+    "trust": 10,
+    "reliability": 7,
+    "adaptability": 6,
+    "convention": 10,
+    "effectiveness": 6,
+    "is_llm_evaluated": true
+  },
+  "checks_summary": {
+    "trigger_accuracy": "PASS",
+    "output_completeness": "WARN",
+    "dependency_reachability": "PASS",
+    "trace_score": "35/50"
+  }
+}

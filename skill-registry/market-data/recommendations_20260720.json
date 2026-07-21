@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-07-20T14:07:44.295281",
+  "overpriced": [
+    [
+      "fortune-reading-studio",
+      50.0,
+      25.0,
+      100.0
+    ]
+  ],
+  "underpriced": [],
+  "category_stats": {
+    "其他": {
+      "count": 24,
+      "downloads": 3368500,
+      "calls": 18769500,
+      "paid": 23
+    },
+    "设计创作": {
+      "count": 1,
+      "downloads": 100000,
+      "calls": 0,
+      "paid": 0
+    },
+    "编程开发": {
+      "count": 1,
+      "downloads": 200000,
+      "calls": 0,
+      "paid": 0
+    },
+    "安全合规": {
+      "count": 1,
+      "downloads": 50000,
+      "calls": 0,
+      "paid": 1
+    }
+  }
+}

@@ -4,12 +4,10 @@ name: shopify-helper-tool-pro
 version: "1.0.0"
 displayName: Shopify助手-专业版
 summary: 企业级Shopify开发平台,支持多店铺管理、自定义App开发、Headless电商与高级SEO
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  企业级 Shopify 开发工具专业版,面向电商团队与代运营机构。
-
-  核心能力:
+  企业级 Shopify 开发工具专业版,面向电商团队与代运营机构。核心能力:
   - 多店铺统一管理与部署
   - Shopify App 自定义开发
   - Headless 电商(Storefront API)
@@ -23,11 +21,7 @@ description: |-
   - 多品牌电商矩阵管理
   - 企业级 Shopify Plus 运营
   - Headless 电商开发
-  - 代运营团队多客户管理
-
-  差异化:专业版在免费版基础上扩展多店铺管理、App 开发、Headless 电商与企业级 SEO,兼容免费版主题代码。
-
-  触发关键词: shopify, headless, app development, multi-store, storefront api, 多店铺, 自定义App, Headless电商, 转化率优化
+  - 代运营团队多客...
 tags:
 - Shopify
 - 企业级
@@ -35,10 +29,9 @@ tags:
 - App开发
 - 多店铺管理
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Shopify 助手 - 专业版
 
 ## 概述
@@ -261,13 +254,27 @@ app.post("/api/products/batch-update", async (req, res) => {
   --defer-scripts
 ```
 
+## 不适用场景
+
+以下场景Shopify助手-专业版不适合处理：
+
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 运维部署管理
+
+
+## 触发条件
+
+需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 从免费版升级
 
 ```bash
 # 免费版主题代码完全兼容
-# 安装专业版工具
+# 依赖说明
 npm install -g @shopify-pro/cli
 
 # 配置多店铺
@@ -292,7 +299,7 @@ npm install -g @shopify-pro/cli
 # └── .env.local        # 环境变量
 ```
 
-## 配置示例
+## 示例
 
 ### 企业级配置
 
@@ -413,3 +420,15 @@ A: 1) 使用 Lighthouse CI 在每次部署时检测;2) 接入真实用户监控(
 - **说明**: 通过自然语言指令驱动 Agent 执行企业级 Shopify 开发与管理
 - **兼容性**: 完全兼容免费版主题代码
 - **支持**: 优先工单支持,SLA 保障响应时间
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用

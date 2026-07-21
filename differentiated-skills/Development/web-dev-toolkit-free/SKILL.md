@@ -4,12 +4,10 @@ name: web-dev-toolkit-free
 version: "1.0.0"
 displayName: Web开发工具集(免费版)
 summary: 面向个人开发者的Web开发辅助工具,覆盖HTML/CSS、JavaScript模式、框架选择与部署基础。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  Web开发工具集免费版为个人开发者提供Web开发全流程辅助,涵盖HTML/CSS问题、JavaScript模式、框架选择、性能与SEO基础与部署基础。
-
-  核心能力:
+  Web开发工具集免费版为个人开发者提供Web开发全流程辅助,涵盖HTML/CSS问题、JavaScript模式、框架选择、性能与SEO基础与部署基础。核心能力:
   - HTML/CSS问题诊断与修复
   - JavaScript常见模式指导
   - 框架选择决策树(静态/SSR/SPA)
@@ -21,9 +19,7 @@ description: |-
   - 学习Web开发基础概念
   - 快速选择技术栈与部署方案
 
-  差异化:免费版聚焦个人开发者的基础Web开发需求。Pro版扩展性能优化、SEO工程化、可访问性审查与企业级部署能力。
-
-  触发关键词: web, html, css, javascript, 框架, 响应式, 部署, vercel, netlify, 性能, seo
+  差异化:免费版聚焦个人开发者的基础Web开发需求
 tags:
 - Web开发
 - HTML
@@ -31,10 +27,9 @@ tags:
 - JavaScript
 - 个人开发
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Web 开发工具集(免费版)
 
 ## 概述
@@ -94,7 +89,7 @@ tools:
 </html>
 ```
 
-### 场景 2:CORS 错误处理
+### 错误处理
 
 ```
 我的前端调用后端API报CORS错误,怎么办?
@@ -133,6 +128,20 @@ app.listen(3000, () => console.log('Server running on :3000'));
 | 完整 SSR/ISR 控制 | Next.js | App Router 功能最全 |
 | 简单 SPA,无 SEO 需求 | Vite + React/Vue | 配置简单,启动快 |
 
+## 不适用场景
+
+以下场景Web开发工具集(免费版)不适合处理：
+
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 运维部署管理
+
+
+## 触发条件
+
+需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 第一步:描述问题
@@ -157,7 +166,7 @@ npm run dev
 python3 -m http.server 8000
 ```
 
-## 配置示例
+## 示例
 
 ### 个人项目 HTML 基础模板
 
@@ -240,7 +249,7 @@ python3 -m http.server 8000
 - **浏览器**:任意现代浏览器(Chrome / Firefox / Safari / Edge)
 - **Node.js**:建议 18+(用于本地开发服务器)
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -258,3 +267,9 @@ python3 -m http.server 8000
 
 - **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于自然语言指令驱动 Agent 输出 Web 开发建议与代码片段;用户通过本地浏览器与开发服务器验证
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

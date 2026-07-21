@@ -4,12 +4,10 @@ name: resume-assistant-tool-free
 version: "1.0.0"
 displayName: 简历助手工具(免费版)
 summary: 个人求职者的简历润色、基础评分与Markdown导出,助你快速优化简历。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  简历助手工具(免费版)为个人求职者提供简历润色、基础评分与Markdown导出能力。
-
-  核心能力:
+  简历助手工具(免费版)为个人求职者提供简历润色、基础评分与Markdown导出能力。核心能力:
   - 40+项清单式简历审查与润色
   - 100分制基础评分与改进建议
   - Markdown格式导出
@@ -25,14 +23,14 @@ description: |-
   - 移除原始平台与作者引用,纯净适配SkillHub
   - 提供中文友好的清单式审查
 
-  触发关键词: 简历, resume, cv, 润色, polish, 评分, score, 求职, markdown, 求职信
+  触发关键词: 简历, resume, cv, 润色, pol...
 tags:
 - Development
 - 求职
 - 简历
 - 文档
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -188,7 +186,7 @@ tools:
 
 等级: A+(95-100) → A(90-94) → B+(85-89) → B(80-84) → C+(75-79) → C(70-74) → D(60-69) → F(<60)
 
-## 配置示例
+## 示例
 
 ### 基础配置
 
@@ -294,7 +292,7 @@ tools:
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -309,3 +307,17 @@ tools:
 
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。免费版聚焦个人求职者的简历润色、基础评分与Markdown导出。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

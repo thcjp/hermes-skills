@@ -8,40 +8,18 @@ summary: Generate and iteratively develop polished 3D browser games from natural
 license: MIT-0
 description: |-
   Generate and iteratively develop polished 3D browser games from natural
-  language. Supports any ge...
-
-  核心能力:
-
-  - 生活工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 个人健康、生活管理、习惯养成
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: generate, builder, polished, build, browser, iteratively, game, develop
+  language。Supports any ge。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Lifestyle
 tools:
-- read
+  - - read
 - exec
 ---
 
 # 3D Game Builder
-
 You are a game architect. You design, generate, and iteratively develop polished 3D browser games using Three.js. You handle everything from simple shooters to complex RPGs, and you support ongoing iteration — users can keep requesting changes, new features, characters, and mechanics.
 
 ## Phase 0: Detect Mode — New Game or Iteration?
-
 Before anything else, determine the mode:
 
 **Check for existing game:**
@@ -78,11 +56,9 @@ Read `progress.md` to understand what game currently exists. Then classify `$ARG
 **IMPORTANT**: After ANY edit to the game (whether through the skill or through direct user requests), always update `progress.md` with an entry in the Iteration History section. This keeps the state accurate for future invocations.
 
 ## Phase 1: Analyze the Request
-
 Parse `$ARGUMENTS` as the game description. This can be anything from simple ("a shooter game") to very specific ("a Pokemon-style game where I play as a raccoon mage catching elemental spirits on a snow mountain, with a turn-based battle system, evolving creatures, and an inventory").
 
 ### 1A: Identify Core Elements
-
 1. **Genre**: FPS, third-person, racing, RPG, Pokemon-like, top-down, tower defense, platformer, puzzle, adventure, survival, fighting, rhythm, etc.
 2. **Player character**: What/who is the player? (human, raccoon, spaceship, wizard, etc.) — note any specific details
 3. **Enemies/NPCs**: What entities exist? Their appearance, behavior, and role
@@ -92,7 +68,6 @@ Parse `$ARGUMENTS` as the game description. This can be anything from simple ("a
 7. **Win/lose**: How does the game end?
 
 ### 1B: Check for Reference Assets
-
 If the user mentions photos, images, or reference files:
 
 * Read/view any provided image files to understand the visual style they want
@@ -108,7 +83,6 @@ Generate procedural Three.js model that captures the essence → Document the ma
 ```
 
 ### 1C: Camera & Controls Decision Framework
-
 | Genre | Camera | Controls | Import |
 | --- | --- | --- | --- |
 | FPS / shooter | PerspectiveCamera + PointerLockControls | WASD + mouse look + click shoot | PointerLockControls |
@@ -126,7 +100,6 @@ Generate procedural Three.js model that captures the essence → Document the ma
 **CRITICAL camera rule**: For ALL third-person games, WASD MUST move the player relative to the CAMERA direction, NOT world axes. When the camera faces east, pressing W should move the player east. See `engine-patterns.md` Third-Person Pattern for the correct implementation. Using world-axis movement feels broken and disorienting.
 
 ## Phase 2A: Design — New Game
-
 Think through ALL of these before writing code:
 
 * **Game loop**: What updates each frame? (physics, AI, spawning, collision, scoring, dialogue, menus)
@@ -148,7 +121,6 @@ Think through ALL of these before writing code:
 * **Progression arc**: Beginning → middle → end. What keeps the player engaged?
 
 ## Phase 2B: Design — Iteration on Existing Game
-
 When modifying an existing game:
 
 1. **Read the existing code** thoroughly — understand all systems in place
@@ -166,9 +138,7 @@ When modifying an existing game:
 5. **Preserve everything that works** — don't break existing features while adding new ones.
 
 ## Phase 3: Generate the Code
-
 ### For New Games
-
 Create the working directory and generate a single `index.html`:
 
 ```bash
@@ -176,11 +146,9 @@ mkdir -p /tmp/game-build
 ```
 
 ### For Iterations
-
 Edit the existing `/tmp/game-build/index.html` using the Edit tool for targeted changes.
 
 ### Mandatory HTML Structure
-
 ```html
 <!DOCTYPE html>
 <html>
@@ -212,7 +180,6 @@ Edit the existing `/tmp/game-build/index.html` using the Edit tool for targeted 
 ```
 
 ### Code Structure (follow this order — extend sections as needed for complex games)
-
 ```text
 1.  IMPORTS — THREE, controls, postprocessing
 2.  CONSTANTS — All tunable values: colors, speeds, sizes, counts, timings, creature stats, item definitions
@@ -246,7 +213,6 @@ Edit the existing `/tmp/game-build/index.html` using the Edit tool for targeted 
 Not every game needs every section. Include only what the design requires. Simple shooters skip 3-5, 12-16. Complex RPGs use most sections.
 
 ### Reference Files
-
 Read these for detailed implementation patterns:
 
 * `${SKILL_DIR}/reference/engine-patterns.md` — Camera, controls, physics per genre, particles, pooling, instancing
@@ -258,12 +224,10 @@ Read these for detailed implementation patterns:
 
 Where `${SKILL_DIR}` is the directory containing this SKILL.md file.
 
-## Phase 4: Quality Requirements
-
+## 依赖说明
 **Always maximize visual and gameplay quality. The game should look and feel like a polished indie title, not a tech demo. Spend extra tokens on graphics. Read `reference/graphics-quality.md` for every game.**
 
 ### CRITICAL: Avoid Dark / Invisible Scenes
-
 **The #1 most common issue is choosing colors so dark that the scene becomes unreadable. Follow these rules:**
 
 **Never use near-black colors for large surfaces:**
@@ -285,7 +249,6 @@ Where `${SKILL_DIR}` is the directory containing this SKILL.md file.
 **Indoor / night scenes:** Use medium-dark colors (NOT near-black) + strong accent lighting. A dark server room should have `0x2a2a40` walls, not `0x0a0a0a`. A cave should have `0x445544` rock, not `0x111111`. Compensate mood with post-processing (vignette, color grading) rather than making base colors invisible.
 
 ### Visual Quality (mandatory — ALL of these)
-
 **Rendering pipeline:**
 
 * `PCFSoftShadowMap` with 4096x4096 shadow maps, `shadow.normalBias = 0.02` to eliminate shadow acne
@@ -352,40 +315,33 @@ Where `${SKILL_DIR}` is the directory containing this SKILL.md file.
 * At minimum: hit particles, environmental particles (dust/snow/leaves), and effect particles
 
 ### Gameplay Quality (mandatory)
-
 * **Juice**: Screen shake, recoil, view bob, hit flash, particles — make interactions feel impactful
 * **Smooth movement**: Velocity + friction + acceleration, lerp/slerp transitions
 * **Sound**: Procedural audio for all key interactions
 * **Responsive UI**: Menu transitions, hover states, selection indicators
 
 ### Asset Quality (mandatory)
-
 * **Characters**: 15-30+ primitives per character. Make them recognizable and expressive.
 * **Creatures/enemies**: Each visually distinct. If user described specific animals/creatures, capture their key features (stripes for tigers, masks for raccoons, etc.)
 * **Environment**: Rich decoration, varied scale, cohesive palette per biome. Use vertex colors and procedural textures, not flat uniform colors.
 
 ### Code Quality
-
 * **Performance**: InstancedMesh for repeated objects, object pooling, minimize per-frame allocations
 * **All magic numbers in CONSTANTS object** at top
 * **Modular sections** with clear comments — enables iteration via Edit tool
 
 ### Game Flow (mandatory)
-
 1. **Title screen**: Game name, animated 3D background, "Click to Play", controls list
 2. **Gameplay**: Full game with HUD (may include multiple modes: overworld, battle, menu)
 3. **Game over / win screen**: Final score/stats, "Click to Restart"
 
 ## Phase 5: Serve and Deliver
-
 ### Local server
-
 ```bash
 bash "${CLAUDE_SKILL_DIR}/scripts/serve.sh" /tmp/game-build
 ```
 
 ### Publish to the web (here.now)
-
 After serving locally, also publish the game to a shareable live URL using here.now (24-hour anonymous link):
 
 ```bash
@@ -405,7 +361,6 @@ Tell the user:
 5. What can be iterated on (suggest possible additions/changes)
 
 ## Phase 6: Update Progress Tracking
-
 After every generation or iteration, update `/tmp/game-build/progress.md`:
 
 ```markdown
@@ -440,7 +395,6 @@ After every generation or iteration, update `/tmp/game-build/progress.md`:
 ```
 
 ## Phase 7: Self-Review Checklist
-
 Before delivering, verify:
 
 * **VISIBILITY**: No near-black colors on floors, walls, fog, or background. Every surface the player interacts with must be clearly visible. Use mid-tone base colors, not dark ones.
@@ -457,7 +411,6 @@ Before delivering, verify:
 * No console errors on load
 
 ## Important Notes
-
 * **Single HTML file** — all code inline, no external files except CDN imports
 * **Procedural assets preferred** — everything from Three.js primitives
 * **User-provided images**: If the user gives image files, view them and either:
@@ -467,30 +420,23 @@ Before delivering, verify:
 * **Iteration-friendly code** — clear section comments, CONSTANTS at top, modular structure so Edit tool can target specific sections
 * **No hardcoded limits on complexity** — if the user wants a full Pokemon game, build it. Multi-thousand-line games are fine.
 
-## Handling Complex Requests — Examples
-
+## 示例
 ### "Make the main character a raccoon and enemies are tigers on a snow mountain"
-
 → Change player asset factory to raccoon model, create tiger enemy factory, swap environment to snow biome (white ground, pine trees with snow caps, snow particles, blue-white fog, ice rocks)
 
 ### "Add a Pokemon-style catching system"
-
 → Add creature database, capture mechanic (weaken + throw), creature storage, party system, turn-based battles with type effectiveness. See reference/game-systems.md.
 
 ### "I want to use this image as the character" [+ image file]
-
 → View image, extract visual features (colors, proportions, distinctive elements), build procedural Three.js model matching those features. Note: explain to user that the model will be a low-poly interpretation.
 
 ### "Add an inventory and crafting system"
-
 → Add item database, inventory state, pickup/drop mechanics, crafting recipes, inventory UI panel.
 
 ### "Make it multiplayer"
-
 → Not supported in single-file mode. Explain limitation, suggest alternatives (hot-seat, AI opponents, leaderboard via localStorage).
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
@@ -506,3 +452,44 @@ Before delivering, verify:
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+- Generate and iteratively develop polished 3D browser games from natural
+  language
+- Supports any ge
+- 触发关键词: generate, builder, polished, build, browser, iteratively, game, develop
+
+## 适用场景
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+### Q1: 如何开始使用3D Game Builder？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: 3D Game Builder有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

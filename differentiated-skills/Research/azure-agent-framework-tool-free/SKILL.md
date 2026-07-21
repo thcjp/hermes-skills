@@ -4,13 +4,11 @@ name: azure-agent-framework-tool-free
 version: "1.0.0"
 displayName: Azure智能体框架工具-免费版
 summary: 基于Azure AI Foundry构建持久化智能体,支持函数工具、托管工具与会话线程
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   文档型技能,指导开发者使用 Microsoft Agent Framework Python SDK 在 Azure AI Foundry 上
-  构建持久化智能体,支持函数工具、托管工具(代码解释器/文件搜索/Web搜索)与会话线程。
-
-  核心能力:
+  构建持久化智能体,支持函数工具、托管工具(代码解释器/文件搜索/Web搜索)与会话线程。核心能力:
   - 创建持久化 Azure AI 智能体
   - 函数工具与托管工具集成
   - 流式响应与会话线程管理
@@ -21,18 +19,15 @@ description: |-
   - 原型验证与功能演示
   - 学习 Azure AI Foundry 智能体开发
 
-  差异化:免费版提供核心智能体构建能力,适合个人开发者与原型验证,无企业级编排与监控特性。
-
-  触发关键词: Azure, AI Foundry, 智能体, agent-framework, Python SDK, 函数工具, 托管工具
+  差...
 tags:
 - 研究工具
 - AI开发
 - 智能体
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Azure智能体框架工具(免费版)
 
 ## 概述
@@ -166,9 +161,23 @@ async def main():
 asyncio.run(main())
 ```
 
+## 不适用场景
+
+以下场景Azure智能体框架工具-免费版不适合处理：
+
+- 需要100%确定性的关键决策
+- 医疗诊断
+- 法律判决
+
+
+## 触发条件
+
+需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
-### 1. 安装 SDK
+### 依赖说明
 
 ```bash
 pip install agent-framework --pre
@@ -195,7 +204,7 @@ credential = AzureCliCredential()
 credential = DefaultAzureCredential()
 ```
 
-## 配置示例
+## 示例
 
 ### 托管工具使用
 
@@ -317,7 +326,7 @@ az account show
 - 用 `Annotated` 为参数添加 `Field(description=...)`
 - 在 instructions 中明确指示何时使用工具
 
-### Q4: 免费版的限制?
+### 已知限制
 免费版提供核心智能体构建能力,适合个人开发与原型验证。如需企业级编排、批量智能体管理、监控告警、多租户隔离等高阶能力,请升级至专业版。
 
 ### Q5: 如何调试智能体?
@@ -352,3 +361,11 @@ az account show
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

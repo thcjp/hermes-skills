@@ -4,39 +4,18 @@ name: ocean-chat-tool-free
 version: "1.0.0"
 displayName: P2P通讯入门工具
 summary: 基于WASM的P2P消息通讯工具，支持点对点文本消息与基础文件传输。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人开发者的P2P消息通讯工具。基于WASM技术实现浏览器端的
-  点对点通讯，支持文本消息与基础文件传输。无需中心服务器中转，
-  适合个人用户的安全通讯需求。
-
-  核心能力:
-  - P2P点对点文本消息
-  - 基础文件传输（小文件）
-  - WebRTC信令交换
-  - 端到端加密通讯
-
-  适用场景:
-  - 个人安全通讯
-  - 开发测试P2P连接
-  - 局域网文件分享
-  - 学习WebRTC技术
-
-  差异化:
-  - 免费版聚焦基础P2P通讯
-  - 适合个人用户点对点
-  - 不支持群组与多设备
-  - 不支持企业级管理
-
-  触发关键词: P2P, 通讯, 消息, 文件传输, WebRTC, WASM, 加密, peer, chat
+  点对点通讯，支持文本消息与基础文件传输。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
 - Operations
 - 通讯
 - P2P
 - WebRTC
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -119,7 +98,7 @@ python3 scripts/ocean.py keys share --peer OCEAN-7K9M-2X4P
 ### 环境准备
 
 ```bash
-# 安装依赖
+# 依赖说明
 pip install aiohttp cryptography
 
 # 启动信令服务器（用于连接建立）
@@ -150,7 +129,7 @@ python3 scripts/ocean.py keys generate
 python3 scripts/ocean.py keys share --peer OCEAN-XXXX
 ```
 
-## 配置示例
+## 示例
 
 ### 通讯配置
 
@@ -240,3 +219,17 @@ ocean_config:
 - **分类**: MD+EXEC（Markdown指令+Python脚本+WebRTC执行）
 - **说明**: 基于WASM和WebRTC的P2P通讯工具
 - **免费版限制**: 点对点通讯、小文件传输、不支持群组与多设备
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

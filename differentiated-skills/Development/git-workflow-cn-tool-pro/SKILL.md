@@ -4,26 +4,10 @@ name: git-workflow-cn-tool-pro
 version: "1.0.0"
 displayName: Git工作流专业版
 summary: 企业级 Git 工作流方案，支持 Git Flow、团队协作、冲突工具集成与批量分支管理。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  面向团队协作与企业研发场景的 Git 工作流专业工具，提供完整的工作流模型与高级冲突处理能力。
-
-  核心能力:
-  - Git Flow / GitHub Flow / GitLab Flow 三大工作流模型落地
-  - 多分支并行管理与批量分支清理
-  - 冲突工具集成与 rerere 自动记忆解决方案
-  - 提交规范与企业级 CHANGELOG 自动生成
-  - 发布分支管理与版本标签策略
-
-  适用场景:
-  - 中大型团队协作开发与发布流程管控
-  - 多环境部署（开发/预发/生产）分支策略
-  - 紧急修复与版本回滚的标准化流程
-
-  差异化: 专业版兼容免费版所有能力，额外提供企业级工作流模型、批量操作脚本、冲突自动记忆、发布管理策略，支持团队级 Git 治理。
-
-  触发关键词: git flow, 企业工作流, 团队协作, 发布管理, 紧急修复, changelog, 版本标签, 批量分支管理, rerere, 多环境部署
+  面向团队协作与企业研发场景的 Git 工作流专业工具。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
 tags:
 - 开发工具
 - 版本控制
@@ -31,7 +15,7 @@ tags:
 - 企业协作
 - DevOps
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -148,7 +132,7 @@ git branch -r --merged origin/main | grep -v "main\|develop" | sed 's/origin\///
 ### Git Flow 初始化配置
 
 ```bash
-# 安装 git-flow（macOS）
+# 依赖说明
 brew install git-flow
 
 # 安装 git-flow（Ubuntu/Debian）
@@ -188,7 +172,7 @@ git config --global push.default current
 git config --global feature.experimental true
 ```
 
-## 配置示例
+## 示例
 
 ### 保护分支策略建议
 
@@ -374,3 +358,17 @@ git checkout -b feature/complex-v2
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 命令行执行）
 - **说明**: 通过自然语言指令驱动 Agent 执行 Git 操作，专业版功能依赖 git-flow 扩展和命令行执行能力
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

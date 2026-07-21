@@ -4,12 +4,10 @@ name: whatsapp-style-tool-free
 version: "1.0.0"
 displayName: WhatsApp样式工具-免费版
 summary: WhatsApp消息格式化工具,支持加粗/斜体/删除线等基础样式,确保消息干净美观
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  WhatsApp样式工具免费版,确保发送到WhatsApp的消息遵循平台专属格式语法。
-
-  核心能力:
+  WhatsApp样式工具免费版,确保发送到WhatsApp的消息遵循平台专属格式语法。核心能力:
   - WhatsApp基础文本样式格式化(加粗/斜体/删除线/等宽体)
   - 列表与引用格式转换
   - 禁用Markdown符号自动清理
@@ -23,16 +21,14 @@ description: |-
   差异化:
   - 免费版聚焦基础样式格式化,操作直观
   - 自动识别并修正错误的Markdown符号
-  - 与PRO版完全兼容,可随时升级获得高级样式预设
-
-  触发关键词: whatsapp, 样式, 格式, 加粗, 斜体, 删除线, 等宽, 列表, 引用, styler, format, bold, italic
+  - 与PRO版完全兼容,可随时...
 tags:
 - 沟通协作
 - 消息样式
 - WhatsApp
 - 格式化
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -79,7 +75,7 @@ WhatsApp支持以下文本格式,均使用单层符号包裹:
 标准Markdown的某些语法在WhatsApp中不被支持,会导致原始符号暴露。本工具自动检测并修正这些问题。
 
 ```python
-# Python示例:Markdown符号清理器
+# 示例
 class WhatsAppStyleCleaner:
     """WhatsApp格式清理器 - 将Markdown转换为WhatsApp格式"""
 
@@ -403,7 +399,7 @@ message = "验证码: `836491`,5分钟内有效。"
 - **操作系统**: Windows / macOS / Linux
 - **Python**: 3.6+(仅命令行校验脚本需要)
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -421,3 +417,17 @@ message = "验证码: `836491`,5分钟内有效。"
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行文本格式化任务
 - **运行模式**: 纯本地处理,无网络请求
 - **安全等级**: 不涉及敏感数据,所有文本处理在本地完成
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

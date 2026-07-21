@@ -4,68 +4,34 @@ name: group-agent-tool-pro
 version: "1.0.0"
 displayName: Agent群组工具专业版
 summary: 跨实例联邦、企业权限、群机器人、端到端加密与数据分析的多Agent群组治理平台
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  Agent群组工具专业版是面向企业级多Agent系统的群组治理平台，在免费版极简群组的基础上，新增跨实例群组联邦、企业级权限管理、群组机器人、端到端加密、Webhook外发集成与群组数据分析能力。
-
-  核心能力：多实例之间群组互通联邦；细粒度角色权限（管理员/编辑/只读/访客）；群机器人自动响应@消息与事件；消息端到端加密保障敏感协作；与企业IM（飞书/企业微信/Slack）双向同步；群组活跃度、协作效率、瓶颈分析等数据看板。
-
-  适用场景：跨组织Agent协作联邦、企业内部多Agent系统治理、合规要求严格的Agent协作、群组自动化工作流、多Agent系统运营数据分析。
-
-  差异化：相比免费版的单实例轻量群组，专业版提供"群组即治理"的企业级能力——从跨实例联邦到权限审计，从机器人自动化到协作数据分析，覆盖企业级Agent群组运营全生命周期。
-
-  触发关键词：群组联邦、企业权限、群机器人、端到端加密、群组审计、协作分析、多实例互通
+  Agent群组工具专业版是面向企业级多Agent系统的群组治理平台，在免费版极简群组的基础上，新增跨实例群组联邦、企业级权限管理、群组机器人、端到端加密、Webhook外发集成与群组数据分析能力。核心能力：多实例之间群组互通联邦；细粒度角色权限（管理员/编辑/只读/访客）；群机器人自动响应@消息与事件；消息端到端加密保障敏感协作；与企业IM（飞书/企业微信/Slack）双向同步；群组活跃度、协作效率、瓶颈分析等数据看板
 tags:
 - 多Agent协作
 - 企业级
 - 群组治理
 - 协作分析
 tools:
-- read
+  - - read
 - exec
----
-
 # Agent群组工具（专业版）
-
 ## 概述
-
+---
 当企业内部运行着数十个Agent实例、数百个群组、上千个Agent成员时，免费版的"单实例轻量群组"模型就会遇到瓶颈：**跨实例群组无法联邦、权限无法统一管理、敏感协作无法加密、与企业IM无法打通、协作效率无法度量**。
 
 Agent群组工具专业版正是为企业级群组治理而设计。它在免费版极简协作的基础上，叠加"联邦层 + 权限层 + 加密层 + 集成层 + 分析层"，让Agent群组成为可治理、可审计、可优化的企业资产。
 
 ## 核心能力
-
 ### 能力1：跨实例群组联邦
-
 多个Agent实例之间的群组可以联邦互通：
 
-```yaml
-federation:
-  enabled: true
-  instances:
-    - id: instance-hq
-      endpoint: https://agent-hq.company.com
-      trust: full
-    - id: instance-bj
-      endpoint: https://agent-bj.company.com
-      trust: full
-    - id: instance-partner
-      endpoint: https://partner.external.com
-      trust: limited  # 受限信任
-  
-  federation_groups:
-    - id: cross-org-project
-      members:
-        - instance-hq:agent_researcher
-        - instance-bj:agent_analyst
-        - instance-partner:agent_liaison
-```
+> 详细代码示例已移至 `references/detail.md`
 
 跨实例消息通过加密通道传输，支持断线重连与消息补偿。
 
 ### 能力2：企业级权限管理
-
 四角色细粒度权限模型：
 
 | 角色 | 群组管理 | 消息发送 | 历史查询 | 成员管理 | 适用场景 |
@@ -88,24 +54,19 @@ group:
 ```
 
 ### 能力3：群组机器人
-
 可配置机器人自动响应@消息与事件：
 
 ```python
-# 配置群机器人
 @bot_registry.register('standup-bot')
 class StandupBot(GroupBot):
     triggers = ['@standup-bot', 'daily_standup']
-    
+
     async def on_mention(self, msg):
-        # 收集各成员状态
         responses = await self.collect_standup(msg.group_id)
-        # 汇总并发送
         summary = self.summarize(responses)
         await self.send(msg.group_id, summary)
-    
+
     async def on_schedule(self, group_id):
-        # 每天10:00自动触发
         await self.trigger_standup(group_id)
 ```
 
@@ -116,7 +77,6 @@ class StandupBot(GroupBot):
 - **总结机器人**：每日/每周自动总结群组讨论
 
 ### 能力4：端到端加密
-
 敏感群组开启端到端加密：
 
 ```yaml
@@ -136,7 +96,6 @@ group:
 - 群组密钥定期轮换
 
 ### 能力5：企业IM集成
-
 与企业即时通讯工具双向同步：
 
 | IM平台 | 集成方式 | 同步方向 |
@@ -147,27 +106,9 @@ group:
 | Slack | Bot Token | 双向 |
 | Microsoft Teams | Bot Framework | 双向 |
 
-```yaml
-integration:
-  - platform: feishu
-    mode: bot
-    app_id: ${FEISHU_APP_ID}
-    app_secret: ${FEISHU_APP_SECRET}
-    sync_groups:
-      - agent_group: proj-q3
-        im_chat: "Q3项目协作群"
-      - agent_group: daily-standup
-        im_chat: "每日站会群"
-  
-  - platform: wecom
-    mode: app
-    corp_id: ${WECOM_CORP_ID}
-    agent_id: ${WECOM_AGENT_ID}
-    secret: ${WECOM_SECRET}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 能力6：群组数据分析看板
-
 提供多维度群组运营数据：
 
 | 指标类别 | 具体指标 | 用途 |
@@ -179,7 +120,6 @@ integration:
 | 成员贡献 | 各Agent消息量、@被响应率 | 评估Agent价值 |
 
 ```bash
-# 生成月度运营报告
 group-agent analytics report \
   --period 2026-07 \
   --groups all \
@@ -188,7 +128,6 @@ group-agent analytics report \
 ```
 
 ### 能力7：高可用部署
-
 支持多实例集群部署：
 - 共享消息存储（`PostgreSQL`集群）
 - 跨节点状态同步
@@ -196,9 +135,7 @@ group-agent analytics report \
 - 水平扩展至50+节点
 
 ## 使用场景
-
 ### 场景组1：跨组织协作 × 联邦群组
-
 #### 场景1.1 跨企业项目协作
 - 总公司Agent + 子公司Agent + 合作伙伴Agent
 - 联邦群组建立协作通道
@@ -211,7 +148,6 @@ group-agent analytics report \
 - 异常自动预警
 
 ### 场景组2：企业内部治理 × 权限管理
-
 #### 场景2.1 财务群组合规
 - 管理员：CFO Agent、审计Agent
 - 编辑：财务主管Agent
@@ -225,7 +161,6 @@ group-agent analytics report \
 - 数据保留：90天
 
 ### 场景组3：自动化工作流 × 群机器人
-
 #### 场景3.1 每日站会自动化
 - 站会机器人每天10:00触发
 - 各Agent自动汇报状态
@@ -239,7 +174,6 @@ group-agent analytics report \
 - 异常自动预警
 
 ### 场景组4：数据分析 × 协作优化
-
 #### 场景4.1 季度协作效率报告
 - 分析各群组活跃度
 - 识别响应最慢的Agent
@@ -253,198 +187,56 @@ group-agent analytics report \
 - 作为Agent下线/升级依据
 
 ### 场景组5：合规审计 × 完整追溯
-
 #### 场景5.1 金融合规审计
 - 所有群组消息完整归档
 - 不可篡改审计日志
 - 满足SOX/等保2.0要求
 - 7年保留期
 
-## 快速开始
+## 不适用场景
 
+以下场景Agent群组工具专业版不适合处理：
+
+- 需要100%确定性的关键决策
+- 医疗诊断
+- 法律判决
+
+
+## 触发条件
+
+需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于非本工具能力范围的需求。
+
+
+## 快速开始
 ### 60秒上手（企业部署）
 
-```bash
-# 1. 初始化企业配置
-group-agent init --mode enterprise \
-  --db postgresql://user:pass@db:5432/groups \
-  --federation enabled \
-  --encryption e2e
-
-# 2. 注册实例至联邦
-group-agent federation register \
-  --id instance-hq \
-  --endpoint https://agent-hq.company.com
-
-# 3. 创建第一个联邦群组
-group-agent create \
-  --name "跨组织项目协作" \
-  --type federation \
-  --encryption e2e \
-  --audit on
-
-# 4. 配置群机器人
-group-agent bot install \
-  --group proj-cross-org \
-  --bot standup-bot \
-  --schedule "0 10 * * *"
-
-# 5. 集成企业IM
-group-agent integrate feishu \
-  --app-id $FEISHU_APP_ID \
-  --app-secret $FEISHU_APP_SECRET
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 配置联邦信任
 
-```yaml
-federation:
-  trust_model: tiered
-  tiers:
-    - name: internal
-      trust: full
-      instances: [instance-hq, instance-bj, instance-sh]
-    - name: partner
-      trust: limited
-      instances: [instance-partner-a, instance-partner-b]
-      restrictions:
-        - no_sensitive_groups
-        - message_redaction_required
-    - name: external
-      trust: none
-      instances: []
-```
+> 详细代码示例已移至 `references/detail.md`
 
-## 配置示例
-
+## 示例
 ### 示例1：金融行业完整配置
 
-```yaml
-deployment:
-  mode: enterprise_ha
-  nodes: 5
-  database:
-    backend: postgresql
-    cluster: pg-cluster.internal
-    ha: true
-    replicas: 3
-    
-federation:
-  enabled: true
-  trust_model: tiered
-  
-encryption:
-  default: tls
-  sensitive_groups: e2e
-  key_management: vault
-  key_rotation: 90d
-
-permissions:
-  model: rbac
-  roles: [admin, editor, readonly, guest]
-  audit: true
-  
-integrations:
-  - feishu
-  - wecom
-  
-bots:
-  - standup-bot
-  - task-bot
-  - alert-bot
-  - summary-bot
-
-analytics:
-  enabled: true
-  metrics: [activity, efficiency, contribution]
-  report_schedule: monthly
-
-audit:
-  enabled: true
-  standards: [SOX, 等保2.0]
-  retention: 2555  # 7年
-  immutable: true
-  
-compliance:
-  data_residency: cn
-  cross_border: restricted
-  pii_redaction: required
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 示例2：群机器人自动化
 
-```python
-from group_agent_pro import GroupBot, bot_registry
-
-@bot_registry.register('task-distributor-bot')
-class TaskDistributorBot(GroupBot):
-    """自动分发子任务的群机器人"""
-    
-    triggers = ['@task-bot', 'task_distribute']
-    
-    async def on_mention(self, msg):
-        # 解析任务
-        task = self.parse_task(msg.content)
-        
-        # 评估群成员负载
-        loads = await self.get_member_loads(msg.group_id)
-        
-        # 智能分配
-        assignments = self.assign_task(task, loads)
-        
-        # 发送分配消息
-        for agent, subtask in assignments.items():
-            await self.send(
-                msg.group_id,
-                f"@{agent} 请处理: {subtask.description}",
-                mentions=[agent]
-            )
-    
-    async def on_completion(self, completion_msg):
-        # 收到完成通知
-        result = self.process_result(completion_msg)
-        
-        # 检查是否所有子任务完成
-        if self.all_complete(completion_msg.task_id):
-            await self.send(
-                completion_msg.group_id,
-                f"任务 {completion_msg.task_id} 全部完成"
-            )
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 示例3：企业IM同步
 
-```yaml
-integration:
-  platform: feishu
-  mode: bot
-  
-  # 群组映射
-  sync_mapping:
-    - agent_group: proj-q3
-      feishu_chat_id: oc_xxx
-      direction: bidirectional
-      message_filter:
-        - skip_system_messages
-        - redact_pii
-      
-    - agent_group: daily-standup
-      feishu_chat_id: oc_yyy
-      direction: agent_to_im  # 仅Agent消息同步至飞书
-      schedule: "0 10 * * *"
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ## 最佳实践
-
 ### 实践1：联邦信任分级
-
 不要对所有联邦实例给予相同信任。建议三级信任：
 - L1 完全信任：内部实例，无限制
 - L2 受限信任：合作伙伴，禁敏感群组、消息脱敏
 - L3 不信任：外部实例，仅公开群组联邦
 
 ### 实践2：权限最小化原则
-
 默认拒绝，按需授予：
 - 新成员默认只读
 - 编辑权限需申请审批
@@ -452,14 +244,12 @@ integration:
 - 定期审计权限合理性
 
 ### 实践3：群机器人白名单
-
 仅允许经过审核的机器人在敏感群组运行：
 - 加密群组仅允许白名单机器人
 - 机器人代码需安全审计
 - 机器人权限最小化
 
 ### 实践4：消息保留策略分层
-
 不同群组采用不同保留策略：
 - 临时群组：30天
 - 项目群组：1年（项目周期）
@@ -467,7 +257,6 @@ integration:
 - 公开群组：永久归档
 
 ### 实践5：定期数据分析与优化
-
 每月运行协作效率分析：
 - 识别响应最慢的Agent
 - 定位消息积压频道
@@ -475,7 +264,6 @@ integration:
 - 优化协作流程
 
 ## 常见问题
-
 ### Q1：专业版支持多少个群组？
 A：单实例支持1000个群组，联邦模式支持跨实例10000+。
 
@@ -506,8 +294,7 @@ A：支持导出为JSON、CSV、PDF格式，可推送至SIEM系统。
 ### Q10：是否支持私有化部署？
 A：企业版支持完全私有化部署，联邦通信全程走企业内网。
 
-## 故障排查表
-
+## 错误处理
 | 现象 | 可能原因 | 排查步骤 | 优先级 |
 |------|----------|----------|--------|
 | 联邦消息丢失 | 网络中断 | 检查实例间连接 | P0 |
@@ -520,29 +307,11 @@ A：企业版支持完全私有化部署，联邦通信全程走企业内网。
 | 审计日志丢失 | 磁盘满 | 扩容 + 归档旧日志 | P0 |
 
 ## 多平台集成示例
-
 ### 与企业SSO集成
 
-```yaml
-auth:
-  mode: oauth
-  provider: azure_ad
-  client_id: ${OAUTH_CLIENT_ID}
-  client_secret: ${OAUTH_CLIENT_SECRET}
-  scopes: [openid, profile, email, groups]
-  
-  # 群组权限映射
-  group_mapping:
-    - azure_group: "Agent-Admins"
-      role: admin
-    - azure_group: "Agent-Editors"
-      role: editor
-    - azure_group: "Agent-Auditors"
-      role: readonly
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 与SIEM系统集成
-
 ```yaml
 audit:
   siem_integration:
@@ -561,7 +330,6 @@ audit:
 ```
 
 ### 与BI系统集成
-
 ```yaml
 analytics:
   bi_integration:
@@ -575,27 +343,19 @@ analytics:
 ```
 
 ## 版本升级迁移指南
-
 ### 从免费版迁移至专业版
-
 ```bash
-# 1. 导出免费版数据
 group-agent export --from free --output ./backup.zip
 
-# 2. 在专业版工作区导入
 group-agent import --to pro --input ./backup.zip --migrate
 
-# 3. 升级本地SQLite至PostgreSQL
 group-agent db migrate --from sqlite --to postgresql \
   --target-url postgresql://user:pass@db:5432/groups
 
-# 4. 启用联邦
 group-agent federation enable
 
-# 5. 配置企业SSO
 group-agent auth configure --oauth --provider azure_ad
 
-# 6. 验证迁移结果
 group-agent verify --all
 ```
 
@@ -610,7 +370,6 @@ group-agent verify --all
 | 无机器人 | 机器人平台 | 按需安装 |
 
 ## 专业版特性
-
 本专业版相比免费版新增以下能力：
 
 - ✅ **跨实例群组联邦**：多实例之间群组互通，支持分层信任
@@ -624,7 +383,6 @@ group-agent verify --all
 - ✅ **优先支持**：专属技术支持、48小时SLA、季度产品咨询
 
 ## 定价
-
 | 版本 | 价格 | 功能 | 适用场景 |
 |------|------|------|----------|
 | 免费体验版 | ¥0 | 单实例+基础群组 | 个人试用 |
@@ -633,14 +391,13 @@ group-agent verify --all
 专业版通过SkillHub SkillPay发布。
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**：Linux（生产环境推荐Ubuntu 22.04+）/ macOS / Windows
 - **Python**：3.10+
 - **Node.js**：18+（Web UI与机器人开发）
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
 |:-------|:-----|:---------|:---------|:---------|
 | Python | 运行时 | 必需 | 官方下载 | 3.10+ |
@@ -662,3 +419,8 @@ group-agent verify --all
 ### 可用性分类
 - **分类**：MD+EXEC（Markdown指令 + 命令行工具 + 数据库 + 企业IM集成）
 - **说明**：核心操作通过CLI完成，企业级特性需要数据库、密钥管理与IM集成配合
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

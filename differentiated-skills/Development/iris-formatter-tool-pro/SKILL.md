@@ -4,12 +4,10 @@ name: iris-formatter-tool-pro
 version: "1.0.0"
 displayName: IRIS代码格式化专业版
 summary: 企业级 IRIS ObjectScript 代码审查方案，含批量处理、自定义规则与报告导出。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  面向企业级 IRIS 开发团队的 ObjectScript 代码审查与治理工具。
-
-  核心能力:
+  面向企业级 IRIS 开发团队的 ObjectScript 代码审查与治理工具。核心能力:
   - 批量代码审查与格式化（多文件/多类）
   - 自定义规范规则与团队级配置
   - 结构化审查报告导出（Markdown/HTML）
@@ -23,9 +21,7 @@ description: |-
   - 遗留系统的代码重构与规范化
   - 上线前的安全审计与合规检查
 
-  差异化: 专业版兼容免费版所有规范与检查能力，额外提供批量处理、自定义规则、报告导出、安全审计，支持企业级 IRIS 代码治理。
-
-  触发关键词: iris批量审查, objectscript规范, 自定义规则, 审查报告, sql格式化, 陷阱分析, 安全审计, 代码复杂度, 重复代码检测
+  差异化: 专业版兼容免费版所有规...
 tags:
 - 开发工具
 - IRIS
@@ -33,20 +29,17 @@ tags:
 - 企业协作
 - 代码质量
 tools:
-- read
+  - - read
 - exec
 ---
 
 # IRIS 代码格式化工具（专业版）
-
 ## 概述
-
 本工具面向企业级 IRIS 开发团队，提供 ObjectScript 代码的批量审查与治理方案。在免费版基础规范检查能力之上，专业版新增批量多文件审查、自定义规范规则配置、结构化审查报告导出、SQL 格式与性能检查、陷阱深度分析与安全审计、代码复杂度与重复度分析等能力。通过可配置的规则引擎与自动化报告，帮助团队建立统一的代码质量标准。
 
 **版本兼容性说明**：专业版完全兼容免费版（`iris-formatter-tool-free`）的所有规范规则与检查项，可无缝升级。
 
 ## 核心能力
-
 | 能力模块 | 免费版 | 专业版新增 |
 | --- | --- | --- |
 | 代码审查 | 单文件审查 | 批量多文件/多类审查 |
@@ -58,15 +51,12 @@ tools:
 | 格式化 | 单文件格式化 | 批量格式化 + 自动修正 |
 
 ## 使用场景
-
 ### 场景一：批量代码审查
-
 团队需要对整个模块的代码进行批量审查。
 
 ```bash
 #!/bin/bash
 # scripts/batch-iris-review.sh - 批量审查 IRIS 代码
-
 MODULE_DIR=$1
 REPORT_FILE="iris-review-report-$(date +%Y%m%d).md"
 
@@ -89,19 +79,19 @@ WARNING_COUNT=0
 
 find "$MODULE_DIR" -name "*.cls" -o -name "*.mac" | while read file; do
   echo "审查: $file"
-  
+
   # 检查命名规范
   ISSUES=$(grep -n "yonghu\|dingdan\|zhifu" "$file" | wc -l)
   if [ "$ISSUES" -gt 0 ]; then
     echo "- [严重] $file: 发现拼音命名" >> "$REPORT_FILE"
   fi
-  
+
   # 检查锁规范
   LOCK_ISSUES=$(grep -n "l +\^" "$file" | grep -v ":3\|:5\|:10" | wc -l)
   if [ "$LOCK_ISSUES" -gt 0 ]; then
     echo "- [警告] $file: 锁未设置超时" >> "$REPORT_FILE"
   fi
-  
+
   # 检查事务规范
   TS_COUNT=$(grep -c "ts\b" "$file")
   TC_COUNT=$(grep -c "tc\b" "$file")
@@ -109,7 +99,7 @@ find "$MODULE_DIR" -name "*.cls" -o -name "*.mac" | while read file; do
   if [ "$TS_COUNT" -ne "$((TC_COUNT + TRO_COUNT))" ]; then
     echo "- [严重] $file: 事务不闭合 (ts:$TS_COUNT tc:$TC_COUNT tro:$TRO_COUNT)" >> "$REPORT_FILE"
   fi
-  
+
   # 检查后置表达式格式
   POSTFIX_ISSUES=$(grep -n ") && (\|) || (" "$file" | wc -l)
   if [ "$POSTFIX_ISSUES" -gt 0 ]; then
@@ -123,7 +113,6 @@ echo "详细报告: $REPORT_FILE"
 ```
 
 ### 场景二：自定义规范规则配置
-
 团队需要根据项目特点自定义规范规则。
 
 ```yaml
@@ -138,7 +127,7 @@ rules:
     max_method_length: 30
     forbidden_prefixes: ["is", "arr", "str"]
     required_boolean_suffix: "Flag"
-    
+
   # 锁规范
   lock:
     require_timeout: true
@@ -146,14 +135,13 @@ rules:
     require_paired: true
     forbid_table_global_lock: true
     require_subscript: true
-    
+
   # 事务规范
   transaction:
     require_closure: true
     forbid_cross_method: true
     require_blank_line: true
     max_distance: 20  # ts/tc/tro 之间最大行数
-    
   # 格式规范
   format:
     indent: "tab"
@@ -163,14 +151,14 @@ rules:
     full_spell_commands: ["for", "while", "if", "elseif", "else", "continue"]
     max_line_length: 120
     max_method_lines: 50
-    
+
   # SQL 规范
   sql:
     fields_per_line: 5
     indent_after_newline: 3
     comma_at_end: true
     command_case: "lower"
-    
+
   # 陷阱规范
   trap:
     require_error_handler: true
@@ -192,13 +180,11 @@ severity:
 ```
 
 ### 场景三：代码复杂度分析
-
 团队需要分析代码的复杂度和重复度，识别需要重构的代码。
 
 ```bash
 #!/bin/bash
 # scripts/iris-complexity.sh - 代码复杂度分析
-
 TARGET=$1
 
 echo "=== IRIS 代码复杂度分析 ==="
@@ -252,9 +238,7 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
 ```
 
 ## 快速开始
-
 ### HTML 报告模板
-
 ```html
 <!-- 生成结构化 HTML 审查报告 -->
 <!DOCTYPE html>
@@ -293,7 +277,7 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
             <td>{{total_issues}}</td>
         </tr>
     </table>
-    
+
     <h2>问题详情</h2>
     <table>
         <tr>
@@ -320,7 +304,6 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
 ```
 
 ### SQL 格式规范检查
-
 ```objectscript
 // SQL 格式规范
 // 1. 每行 5 个字段
@@ -342,10 +325,8 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
 // 问题：字段过多、命令大写、单行过长
 ```
 
-## 配置示例
-
+## 示例
 ### 审查规则配置文件
-
 ```yaml
 # team-iris-standards.yml
 version: "2.0"
@@ -362,11 +343,10 @@ overrides:
     service_prefix: "Svc"
     controller_prefix: "Ctrl"
     dao_prefix: "DAO"
-    
+
   format:
     # 团队约定的方法最大行数
     max_method_lines: 40  # 比默认 50 更严格
-    
   sql:
     # 禁止在循环内写 SQL
     forbid_sql_in_loop: true
@@ -378,7 +358,6 @@ excludes:
   - "**/test/**"
   - "**/legacy/**"
   - "**/*.inc"  # include 文件单独审查
-
 # 报告配置
 report:
   format: ["markdown", "html"]
@@ -388,7 +367,6 @@ report:
 ```
 
 ## 最佳实践
-
 1. **批量审查定期执行**：每周对整个模块执行批量审查
 
 2. **自定义规则版本管理**：规则配置纳入 Git 版本控制
@@ -406,9 +384,7 @@ report:
 8. **规则渐进式引入**：新规则先以警告级别运行，稳定后提升为严重
 
 ## 常见问题
-
 ### Q1：如何处理遗留代码的大量违规？
-
 ```text
 策略：
 1. 先生成完整审查报告，评估违规规模
@@ -419,7 +395,6 @@ report:
 ```
 
 ### Q2：自定义规则和内置规则冲突怎么办？
-
 ```yaml
 # 自定义规则会覆盖同名的内置规则
 # 使用 extends 继承基础规则后，用 overrides 覆盖
@@ -430,7 +405,6 @@ overrides:
 ```
 
 ### Q3：如何排除特定文件不被审查？
-
 ```yaml
 # 在规则配置中设置排除
 excludes:
@@ -440,7 +414,6 @@ excludes:
 ```
 
 ### Q4：如何将审查集成到 CI/CD？
-
 ```yaml
 # .gitlab-ci.yml
 iris-code-review:
@@ -460,7 +433,6 @@ iris-code-review:
 ```
 
 ### Q5：如何统计代码质量趋势？
-
 ```bash
 # 从历史报告中提取统计数据
 for report in reports/iris-review-report-*.md; do
@@ -472,7 +444,6 @@ done | sort
 ```
 
 ### Q6：如何处理跨文件的代码重复？
-
 ```bash
 # 检测跨文件重复代码
 find src/ -name "*.cls" -exec cat {} \; | \
@@ -486,15 +457,13 @@ find src/ -name "*.cls" -exec cat {} \; | \
 ```
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent 平台**: 支持读取 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
 - **操作系统**: Windows / macOS / Linux
 - **IRIS/Cache 版本**: 建议 2018 及以上
 - **CI/CD 平台**: GitLab CI / GitHub Actions / Jenkins 等
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | InterSystems IRIS | 运行时 | 推荐 | InterSystems 官方获取 |
@@ -510,3 +479,15 @@ find src/ -name "*.cls" -exec cat {} \; | \
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 命令行执行）
 - **说明**: 通过自然语言指令驱动 Agent 执行批量代码审查与格式化，专业版功能依赖命令行脚本和 CI/CD 平台
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

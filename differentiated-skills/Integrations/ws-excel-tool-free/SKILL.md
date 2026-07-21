@@ -4,34 +4,17 @@ name: ws-excel-tool-free
 version: "1.0.0"
 displayName: Excel工具(免费版)
 summary: Excel 文件处理免费版：读写、数据清洗、公式计算与基础统计，支持 xlsx 格式。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  Excel 工具（免费版）面向个人用户与独立开发者，提供 Excel 文件的基础处理能力：读取、写入、数据清洗、公式计算与基础统计。通过 openpyxl 与 pandas 等标准库操作 xlsx 文件，无需安装 Microsoft Excel。
-
-  核心能力：
-  - 读取 xlsx/xls 文件，支持多 sheet 与表头识别
-  - 写入数据并保留格式（字体、颜色、边框）
-  - 数据清洗：去重、空值处理、类型转换
-  - 公式计算：SUM/AVERAGE/COUNT 等基础公式
-  - 基础统计：总和、均值、最大最小、计数
-
-  适用场景：
-  - 个人财务记录与预算统计
-  - 小型项目的数据整理与报表生成
-  - 学生作业与课程数据处理
-  - 独立开发者快速处理 xlsx 文件
-
-  差异化：以"任务 × 模板 × 示例"三段式组织，每类操作均附可直接运行的 Python 代码片段，原创内容占比超过 70%。免费版覆盖基础读写与统计，专业版额外提供多表合并、透视表、图表生成、大数据处理与自动化流水线。
-
-  触发关键词：excel、xlsx、数据清洗、公式、统计、表格处理
+  Excel 工具（免费版）面向个人用户与独立开发者，提供 Excel 文件的基础处理能力：读取、写入、数据清洗、公式计算与基础统计。通过 openpyxl 与 pandas 等标准库操作 xlsx 文件，无需安装 Microsoft Excel。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
 - 数据处理
 - Excel
 - 数据清洗
 - 公式计算
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -109,7 +92,7 @@ df['总额'] = df['销量'] * df['单价']
 df.to_excel('output.xlsx', index=False)
 ```
 
-## 配置示例
+## 示例
 
 ### 数据清洗模板
 
@@ -246,7 +229,7 @@ A：用 `openpyxl.load_workbook()` 读取（保留格式），修改后 `save()`
 ### Q7：多 sheet 怎么处理？
 A：`pd.read_excel(..., sheet_name=None)` 返回字典，key 是 sheet 名，value 是 DataFrame。可遍历处理每个 sheet。
 
-## 免费版限制
+## 已知限制
 
 本免费体验版限制以下高级功能：
 - 多表合并（多文件 xlsx 合并与 JOIN 操作）
@@ -267,7 +250,7 @@ A：`pd.read_excel(..., sheet_name=None)` 返回字典，key 是 sheet 名，val
 - **Python**：3.8+
 - **内存**：建议 ≥ 4GB（处理大文件时）
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由 Agent 平台内置 LLM 提供 |
@@ -286,3 +269,11 @@ A：`pd.read_excel(..., sheet_name=None)` 返回字典，key 是 sheet 名，val
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务
 - **模型路由建议**：免费版使用低成本模型（如 GPT-4o-mini / Claude Haiku）
 - **数据位置建议**：处理后的文件默认存放在用户指定目录或工作区 `data/` 子目录
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

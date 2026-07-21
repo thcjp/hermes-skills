@@ -4,7 +4,7 @@ name: token-economist-pro
 version: "1.0.0"
 displayName: Token经济学家(专业版)
 summary: AI Agent全功能Token优化系统，含多级向量缓存、成本预估、预算控制、团队分析与多模型路由。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   Token经济学家（专业版）在免费版基础上解锁多级向量语义缓存、Token成本预估与月度预算控制、团队成本分析、基于LLM的智能摘要与上下文图压缩、缓存命中率优化、多模型智能路由等高级能力。

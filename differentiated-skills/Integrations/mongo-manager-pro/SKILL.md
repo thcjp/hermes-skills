@@ -4,34 +4,17 @@ name: mongo-manager-pro
 version: "1.0.0"
 displayName: Mongo管理工具专业版
 summary: MongoDB企业级管理与优化全功能版，含分片集群、副本集高可用、Atlas Search、Change Stream与基准测试。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  面向MongoDB运维与架构师的企业级全功能专业版。在免费版基础上新增分片集群配置、副本集高可用、Atlas Search全文搜索、Change Stream实时同步、性能基准测试套件、容量规划模型等高级能力，配套面向DBA、架构师、SRE的多角色场景指南。
-
-  核心能力：
-  - 全功能解锁：分片集群、副本集、Atlas Search、Change Stream
-  - 高可用：副本集自动故障切换、读写分离、跨机房部署
-  - 水平扩展：分片键设计、Chunk迁移、均衡器调优
-  - 实时同步：Change Stream监听变更、ETL管道
-  - 性能基准：YSBench压测、容量规划、慢查询根因分析
-
-  适用场景：
-  - 大规模MongoDB集群运维与扩容
-  - 高可用架构设计与故障切换演练
-  - 实时数据同步与ETL管道
-  - 容量规划与性能基准测试
-
-  差异化：原创中文深度指南，提供DBA/架构师/SRE三角色专属场景，覆盖分片键选择、故障切换、性能调优等高级主题，原创度>70%。
-
-  触发关键词：mongodb专业版、分片集群、副本集、Atlas Search、Change Stream
+  面向MongoDB运维与架构师的企业级全功能专业版。在免费版基础上新增分片集群配置、副本集高可用、Atlas Search全文搜索、Change Stream实时同步、性能基准测试套件、容量规划模型等高级能力，配套面向DBA、架构师、SRE的多角色场景指南。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。
 tags:
 - 集成工具
 - 数据库
 - NoSQL
 - 企业级
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -177,7 +160,7 @@ db.articles.createSearchIndex({
 
 完整上手时间约300秒（含集群配置）。
 
-## 配置示例
+## 示例
 
 ### 分片键设计决策表
 
@@ -359,7 +342,7 @@ A：(1) 同构MongoDB使用Atlas Live Migration；(2) 异构系统使用Change S
 - **MongoDB**: 5.0+（推荐6.0+以使用Atlas Search等特性）
 - **mongosh**: 1.5+
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | MongoDB | 数据库 | 必需 | mongodb.com 官方下载 |
@@ -380,3 +363,17 @@ A：(1) 同构MongoDB使用Atlas Live Migration；(2) 异构系统使用Change S
 ### 可用性分类
 - **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行任务
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

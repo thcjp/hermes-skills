@@ -4,25 +4,17 @@ name: drawing-insight-free
 version: "1.0.0"
 displayName: 图纸解析(免费版)
 summary: 从建筑施工PDF图纸中提取标题栏、尺寸、注释与符号，生成质量检查报告，单文件快速解析。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  图纸解析（免费版）面向建筑、结构、机电工程师与造价人员，提供从PDF施工图纸中自动提取标题栏、尺寸标注、注释说明、构件符号以及质量问题的能力。基于正则模式与表格解析的双通道抽取，结合英制/公制单位自动识别，让原本需要人工逐张阅读的图纸在数秒内转为结构化数据。
-
-  核心能力：PDF图纸文本抽取、标题栏八要素识别（项目名/图号/比例/版本/绘制人等）、英制与公制尺寸解析、注释分类（keynote/room_tag/door_tag/grid_line/elevation/detail_ref）、明细表解析为构件符号、图纸质量自动检查（缺项预警）、单文件分析报告生成（Markdown格式）。
-
-  适用场景：施工图审图前的完整性自查、造价算量前的尺寸数据抽取、BIM建模前的图纸信息归集、跨专业协同时的图纸信息共享、个人设计复盘与图纸对比。
-
-  差异化：完全中文化界面与输出，针对国内施工图常见的双语标题栏与公制单位场景进行优化，新增五类典型使用场景、五问基础FAQ与故障排查表。免费版聚焦单文件快速解析，适合个人试用与轻量需求。保留原始MIT版权声明。
-
-  触发关键词：图纸分析、施工图、标题栏、尺寸提取、注释识别、PDF图纸、算量、审图
+  图纸解析（免费版）面向建筑、结构、机电工程师与造价人员，提供从PDF施工图纸中自动提取标题栏、尺寸标注、注释说明、构件符号以及质量问题的能力。基于正则模式与表格解析的双通道抽取，结合英制/公制单位自动识别，让原本需要人工逐张阅读的图纸在数秒内转为结构化数据。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。
 tags:
 - 图纸解析
 - 建筑工程
 - PDF处理
 - 数据抽取
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -120,9 +112,9 @@ def parse_schedule_table(table):
 - 未发现通用说明（NOTE/SEE/REFER TO）
 - 比例标注缺失或为 NTS（Not To Scale）
 
-## 快速开始（<60秒）
+## 使用流程
 
-### 步骤一：安装依赖
+### 依赖说明
 
 ```bash
 pip install pdfplumber
@@ -209,7 +201,7 @@ Path("A101_report.md").write_text(report, encoding="utf-8")
 
 包含：文件名、标题栏八要素、内容统计（尺寸数/注释数/符号数）、质量问题清单、前20个构件符号列表。均为Markdown格式，可直接在GitHub/Obsidian中查看。
 
-## 故障排查表
+## 错误处理
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
 |------|----------|----------|--------|
@@ -264,7 +256,7 @@ Path("A101_report.md").write_text(report, encoding="utf-8")
 
 原始MIT license允许使用、复制、修改和分发，需保留版权声明。本改进作品在保留原始版权声明的基础上添加自有署名，完全符合MIT license要求。
 
-## 免费版限制
+## 已知限制
 
 本免费体验版限制以下高级功能：
 - ❌ 批量处理 > 5张图纸（专业版支持无上限批量）
@@ -276,3 +268,23 @@ Path("A101_report.md").write_text(report, encoding="utf-8")
 - ❌ 图纸对比与版本差异分析（专业版独有）
 
 解锁全部功能请使用专业版：drawing-insight-pro
+
+## 示例
+
+### 示例1：基础用法
+
+```
+### 依赖说明
+
+```bash
+pip install pdfplumber
+```
+
+### 步骤二：单文件解析
+
+```python
+from drawing_insight import DrawingAnalyzer
+
+analyzer = DrawingAnalyzer()
+result = analyzer.analyze_pdf("A101_Floor_Plan.pdf")
+```

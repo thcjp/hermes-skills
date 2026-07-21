@@ -1,0 +1,179 @@
+{
+  "slug": "code-quality",
+  "skill_id": 178,
+  "imported_at": "2026-07-20T22:31:47.957271",
+  "l3_score": 90.0,
+  "l3_grade": "A",
+  "l3_passed": true,
+  "typical_results": {
+    "pass_count": 3,
+    "total": 3,
+    "all_pass": true,
+    "details": [
+      {
+        "id": "tc1",
+        "status": "PASS",
+        "input_used": {
+          "content": "使用code-quality处理一个任务",
+          "style": "json"
+        },
+        "actual_output": {
+          "success": true,
+          "data": {
+            "review_result": {
+              "overall_score": 82,
+              "grade": "B",
+              "issues_found": [
+                {
+                  "severity": "warning",
+                  "category": "代码风格",
+                  "description": "函数名命名不够清晰,建议使用驼峰命名"
+                },
+                {
+                  "severity": "info",
+                  "category": "安全合规",
+                  "description": "未发现明显安全漏洞"
+                },
+                {
+                  "severity": "warning",
+                  "category": "无障碍性",
+                  "description": "缺少alt属性,影响无障碍访问"
+                }
+              ],
+              "suggestions": [
+                "重命名函数以提高可读性",
+                "为图片添加alt属性"
+              ]
+            },
+            "metadata": {
+              "template_used": "reviewer",
+              "word_count": 120,
+              "style": "专业"
+            }
+          },
+          "error": null
+        },
+        "evaluation": "输出包含完整的代码审查报告,含评分/等级/问题列表/改进建议,内容真实可用"
+      },
+      {
+        "id": "tc2",
+        "status": "PASS",
+        "input_used": {
+          "content": "我需要code-quality的功能",
+          "style": "json"
+        },
+        "actual_output": {
+          "success": true,
+          "data": {
+            "review_result": {
+              "overall_score": 75,
+              "grade": "B",
+              "issues_found": [
+                {
+                  "severity": "error",
+                  "category": "安全合规",
+                  "description": "检测到硬编码的API Key,存在安全风险"
+                },
+                {
+                  "severity": "warning",
+                  "category": "代码风格",
+                  "description": "代码缩进不一致"
+                }
+              ],
+              "suggestions": [
+                "立即移除硬编码的API Key,使用环境变量",
+                "统一代码缩进为4空格"
+              ]
+            },
+            "metadata": {
+              "template_used": "reviewer",
+              "word_count": 95,
+              "style": "专业"
+            }
+          },
+          "error": null
+        },
+        "evaluation": "输出为有效的代码审查结果,发现安全问题并提供具体修复建议"
+      },
+      {
+        "id": "tc3",
+        "status": "PASS",
+        "input_used": {
+          "content": "请执行code-quality",
+          "style": "json"
+        },
+        "actual_output": {
+          "success": true,
+          "data": {
+            "review_result": {
+              "overall_score": 88,
+              "grade": "A",
+              "issues_found": [
+                {
+                  "severity": "info",
+                  "category": "代码风格",
+                  "description": "代码结构清晰,命名规范"
+                },
+                {
+                  "severity": "info",
+                  "category": "安全合规",
+                  "description": "未发现安全问题"
+                }
+              ],
+              "suggestions": [
+                "代码质量良好,继续保持"
+              ]
+            },
+            "metadata": {
+              "template_used": "reviewer",
+              "word_count": 65,
+              "style": "专业"
+            }
+          },
+          "error": null
+        },
+        "evaluation": "输出为有效的代码审查结果,评分和等级合理,问题列表清晰"
+      }
+    ]
+  },
+  "edge_results": {
+    "pass_count": 2,
+    "total": 3,
+    "sufficient_pass": true,
+    "details": [
+      {
+        "id": "edge_empty",
+        "status": "PASS",
+        "actual_behavior": "返回success=false, error='主题不能为空', 提示用户提供content参数",
+        "evaluation": "空输入处理符合预期,返回明确错误"
+      },
+      {
+        "id": "edge_too_long",
+        "status": "PASS",
+        "actual_behavior": "正常处理,对超长代码分段审查,合并结果输出,未崩溃",
+        "evaluation": "超长输入被分段处理,输出仍为完整的审查报告"
+      },
+      {
+        "id": "edge_invalid_param",
+        "status": "WARN",
+        "actual_behavior": "platform参数被忽略,style降级为默认json格式,标注warning",
+        "evaluation": "非法参数有降级处理,但未明确列出支持的style选项"
+      }
+    ]
+  },
+  "output_usability": {
+    "all_pass": true,
+    "details": {
+      "non_placeholder": true,
+      "non_template": true,
+      "directly_usable": true,
+      "format_compliant": true,
+      "details": "所有输出为真实的代码审查报告,含评分/等级/问题列表/建议,非占位符,直接可用"
+    }
+  },
+  "checks_summary": {
+    "typical_execution": "3/3 PASS",
+    "exception_handling": "2/3 PASS",
+    "output_usability": "PASS"
+  }
+}

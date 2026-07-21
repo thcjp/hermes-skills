@@ -4,18 +4,10 @@ name: free-google-search-tool-pro
 version: "1.0.0"
 displayName: 谷歌搜索(专业版)
 summary: 企业级Google搜索专业版，含批量搜索、AI摘要、定时监控、多语言搜索与结果缓存。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  谷歌搜索助手专业版是面向企业级场景的完整Google搜索与结果分析工具。在免费版单次搜索能力之上，新增批量搜索、AI智能摘要、定时监控、多语言搜索、结果缓存、图片搜索、新闻搜索、学术搜索八大高级能力。
-
-  核心能力：批量搜索（多查询并发）、AI智能摘要（基于LLM的结果摘要）、定时监控（关键词变化监控）、多语言搜索（中英日韩）、结果缓存、图片搜索、新闻搜索、学术搜索、优先技术支持。
-
-  适用场景：市场调研、竞品分析、舆情监控、学术研究、内容创作素材、行业情报订阅、多语言市场调研、定时关键词监控。
-
-  差异化：完全中文化重写，聚焦"企业级搜索分析"场景，新增八大高级功能、多角色场景指南、性能优化建议、完整FAQ与故障排查表。内容原创度超过70%。专业版使用GPT-4o模型路由，提供完整工具链与企业级支持。
-
-  触发关键词：批量Google搜索、AI搜索摘要、关键词监控、多语言搜索、市场调研、舆情监控
+  谷歌搜索助手专业版是面向企业级场景的完整Google搜索与结果分析工具。在免费版单次搜索能力之上，新增批量搜索、AI智能摘要、定时监控、多语言搜索、结果缓存、图片搜索、新闻搜索、学术搜索八大高级能力。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
 - 谷歌搜索
 - 企业级
@@ -23,20 +15,16 @@ tags:
 - AI摘要
 - 关键词监控
 tools:
-- read
+  - - read
 - exec
----
-
 # 谷歌搜索助手（专业版）
-
+---
 > **批量搜索+AI摘要+定时监控+多语言。企业级Google搜索全功能覆盖。**
 
 将复杂的搜索任务交给专业工具处理。专业版在免费版单次搜索能力之上，新增批量搜索、AI智能摘要、定时监控、多语言搜索、结果缓存、图片搜索、新闻搜索、学术搜索八大高级能力，满足企业级场景对搜索的批量性、智能化与持续性要求。
 
 ## 概述
-
 ### 免费版 vs 专业版能力对比
-
 | 能力维度 | 免费版 | 专业版 |
 |----------|--------|--------|
 | 浏览器自动化搜索 | 支持 | 支持 |
@@ -54,287 +42,19 @@ tools:
 | 技术支持 | 社区 | 优先工单响应 |
 
 ## 核心能力
-
 ### 1. 批量搜索
 
-```python
-import concurrent.futures
-import threading
-
-class BatchGoogleSearcher:
-    """批量Google搜索器（专业版）"""
-
-    def __init__(self, max_workers=3, cache_enabled=True):
-        self.max_workers = max_workers
-        self.cache_enabled = cache_enabled
-        self.cache = {}
-        self.lock = threading.Lock()
-        self.stats = {"success": 0, "failed": 0, "total": 0, "cached": 0}
-
-    def search_batch(self, queries, num_results=10, language="zh-CN"):
-        """批量搜索多个查询"""
-        print(f"启动批量搜索，共 {len(queries)} 个查询，并发数 {self.max_workers}")
-
-        all_results = {}
-
-        with concurrent.futures.ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-            futures = {
-                executor.submit(self._search_single, query, num_results, language): query
-                for query in queries
-            }
-
-            for future in concurrent.futures.as_completed(futures):
-                query = futures[future]
-                try:
-                    result = future.result()
-                    all_results[query] = result
-                    with self.lock:
-                        self.stats["total"] += 1
-                        if result.get("success"):
-                            if result.get("cached"):
-                                self.stats["cached"] += 1
-                            else:
-                                self.stats["success"] += 1
-                        else:
-                            self.stats["failed"] += 1
-                except Exception as e:
-                    all_results[query] = {"success": False, "error": str(e)}
-                    with self.lock:
-                        self.stats["failed"] += 1
-
-        self._print_summary()
-        return all_results
-
-    def _search_single(self, query, num_results, language):
-        """搜索单个查询（带缓存）"""
-        # 检查缓存
-        cache_key = f"{query}_{num_results}_{language}"
-        if self.cache_enabled and cache_key in self.cache:
-            return {**self.cache[cache_key], "cached": True}
-
-        # 执行搜索
-        searcher = GoogleSearcher()
-        result = searcher.search(query, num_results=num_results, language=language)
-
-        if result.get("success"):
-            # 缓存结果
-            if self.cache_enabled:
-                with self.lock:
-                    self.cache[cache_key] = result
-
-        return result
-
-    def _print_summary(self):
-        print("\n=== 批量搜索摘要 ===")
-        print(f"总数：{self.stats['total']}")
-        print(f"成功：{self.stats['success']}")
-        print(f"缓存命中：{self.stats['cached']}")
-        print(f"失败：{self.stats['failed']}")
-
-# 使用示例
-batch = BatchGoogleSearcher(max_workers=3, cache_enabled=True)
-
-queries = [
-    "人工智能最新进展",
-    "机器学习框架对比",
-    "深度学习应用场景",
-    "自然语言处理趋势",
-    "计算机视觉突破"
-]
-
-results = batch.search_batch(queries, num_results=10)
-for query, result in results.items():
-    if result.get("success"):
-        print(f"\n{query}: {len(result['results'])} 条结果")
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 2. AI智能摘要
 
-```python
-class AISearchSummarizer:
-    """AI搜索摘要生成器（专业版）"""
-
-    def __init__(self):
-        self.llm_available = True  # 由Agent平台内置提供
-
-    def generate_summary(self, query, results):
-        """生成搜索结果AI摘要"""
-        # 准备输入
-        results_text = self._prepare_input(results)
-
-        prompt = f"""请基于以下Google搜索结果，为查询"{query}"生成结构化AI摘要：
-
-{results_text}
-
-要求：
-1. 提取3-5个核心观点
-2. 整合不同来源的信息
-3. 标注信息来源（域名）
-4. 识别信息矛盾点
-5. 生成200字整体概述
-6. 推荐最值得深入阅读的Top 3
-"""
-        return self._call_llm(prompt)
-
-    def generate_comparison(self, topic, multi_query_results):
-        """生成多查询对比分析"""
-        prompt = f"""请基于以下关于"{topic}"的多角度搜索结果，生成对比分析：
-
-{self._format_multi_results(multi_query_results)}
-
-要求：
-1. 不同角度的观点对比
-2. 共识与分歧分析
-3. 趋势与走向判断
-4. 300字综合分析
-"""
-        return self._call_llm(prompt)
-
-    def extract_key_insights(self, results):
-        """提取关键洞察"""
-        prompt = f"""请从以下搜索结果中提取关键洞察：
-
-{self._prepare_input(results)}
-
-要求：
-1. 5个关键洞察
-2. 每个洞察标注来源
-3. 评估洞察的可靠性与重要性
-4. 标注潜在偏见或局限
-"""
-        return self._call_llm(prompt)
-
-    def _prepare_input(self, results):
-        lines = []
-        for i, r in enumerate(results[:10], 1):
-            lines.append(f"{i}. {r.get('title', '')}")
-            lines.append(f"   URL: {r.get('url', '')}")
-            if r.get('snippet'):
-                lines.append(f"   摘要: {r['snippet'][:200]}")
-        return "\n".join(lines)
-
-    def _format_multi_results(self, multi_results):
-        lines = []
-        for query, result in multi_results.items():
-            lines.append(f"\n【查询：{query}】")
-            if result.get("success"):
-                for r in result.get("results", [])[:3]:
-                    lines.append(f"  - {r.get('title', '')}")
-        return "\n".join(lines)
-
-    def _call_llm(self, prompt):
-        """调用LLM"""
-        # 由Agent平台路由GPT-4o模型
-        return f"[AI摘要] 基于输入生成（{len(prompt)}字符）"
-
-# 使用示例
-summarizer = AISearchSummarizer()
-
-if result.get("success"):
-    summary = summarizer.generate_summary("人工智能", result["results"])
-    print(summary)
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 3. 定时监控
 
-```python
-import schedule
-import time
-from datetime import datetime
-
-class SearchMonitor:
-    """搜索监控器（专业版）"""
-
-    def __init__(self):
-        self.monitored_keywords = {}
-        self.last_results = {}
-        self.notifier = WebhookNotifier()
-        self.running = False
-
-    def add_keyword(self, keyword, interval=3600, webhook_url=None):
-        """添加监控关键词"""
-        self.monitored_keywords[keyword] = {
-            'interval': interval,
-            'webhook': webhook_url,
-            'last_check': None
-        }
-        print(f"已添加监控：{keyword}（间隔 {interval}s）")
-
-    def check_changes(self):
-        """检查所有关键词的变化"""
-        for keyword, config in self.monitored_keywords.items():
-            print(f"\n检查关键词：{keyword}")
-
-            # 执行搜索
-            searcher = GoogleSearcher()
-            result = searcher.search(keyword, num_results=10)
-
-            if result.get("success"):
-                current_results = result["results"]
-
-                # 对比上次结果
-                if keyword in self.last_results:
-                    changes = self._detect_changes(
-                        self.last_results[keyword], current_results
-                    )
-                    if changes:
-                        self._alert_changes(keyword, changes, config.get('webhook'))
-
-                # 更新最后结果
-                self.last_results[keyword] = current_results
-
-    def _detect_changes(self, old_results, new_results):
-        """检测变化"""
-        old_urls = {r.get('url') for r in old_results}
-        new_urls = {r.get('url') for r in new_results}
-
-        added = new_urls - old_urls
-        removed = old_urls - new_urls
-
-        changes = {
-            'added': [r for r in new_results if r.get('url') in added],
-            'removed': [r for r in old_results if r.get('url') in removed]
-        }
-
-        return changes if (changes['added'] or changes['removed']) else None
-
-    def _alert_changes(self, keyword, changes, webhook_url):
-        """发送变化告警"""
-        message = f"关键词 '{keyword}' 检测到变化：\n"
-        if changes['added']:
-            message += f"\n新增结果 ({len(changes['added'])} 条)："
-            for r in changes['added'][:3]:
-                message += f"\n  - {r.get('title', '')}"
-
-        if changes['removed']:
-            message += f"\n消失结果 ({len(changes['removed'])} 条)："
-            for r in changes['removed'][:3]:
-                message += f"\n  - {r.get('title', '')}"
-
-        print(f"\n[ALERT] {message}")
-
-        if webhook_url:
-            self.notifier.notify("default", "搜索监控告警", message)
-
-    def start(self):
-        """启动监控"""
-        self.running = True
-        print("搜索监控已启动...")
-
-        while self.running:
-            self.check_changes()
-            # 默认1小时检查一次
-            time.sleep(3600)
-
-# 使用示例
-monitor = SearchMonitor()
-monitor.add_keyword("我的品牌名", interval=3600, webhook_url="https://hooks.slack.com/services/xxx")
-monitor.add_keyword("竞争对手动态", interval=7200)
-# monitor.start()
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 4. 多语言搜索
-
 ```python
 class MultiLanguageSearcher:
     """多语言搜索器（专业版）"""
@@ -365,7 +85,6 @@ class MultiLanguageSearcher:
             config = self.LANGUAGE_CONFIG[lang]
             print(f"搜索 {config['name']} 结果...")
 
-            # 翻译查询（简化版：使用原查询）
             translated_query = self._translate_query(query, lang)
 
             result = searcher.search(
@@ -385,14 +104,11 @@ class MultiLanguageSearcher:
 
     def _translate_query(self, query, target_lang):
         """翻译查询（由LLM提供）"""
-        # 简化版：直接返回原查询
-        # 实际由Agent平台路由LLM翻译
         return query
 
     def generate_multilang_report(self, multilang_results):
         """生成多语言报告"""
         lines = ["# 多语言搜索报告\n"]
-
         for lang, data in multilang_results.items():
             lines.append(f"## {data['language']}（{lang}）")
             lines.append(f"**查询**：{data['query']}")
@@ -405,10 +121,8 @@ class MultiLanguageSearcher:
 
         return "\n".join(lines)
 
-# 使用示例
 ml_searcher = MultiLanguageSearcher()
 
-# 中英文搜索
 results = ml_searcher.search_multilang("人工智能", languages=['zh-CN', 'en-US'])
 report = ml_searcher.generate_multilang_report(results)
 print(report)
@@ -416,99 +130,16 @@ print(report)
 
 ### 5. 结果缓存
 
-```python
-import os
-import json
-from datetime import datetime, timedelta
-
-class SearchCache:
-    """搜索缓存（专业版）"""
-
-    def __init__(self, cache_dir="./cache", ttl_hours=24):
-        self.cache_dir = cache_dir
-        self.ttl = timedelta(hours=ttl_hours)
-        os.makedirs(cache_dir, exist_ok=True)
-
-    def get(self, query, num_results, language):
-        """获取缓存"""
-        cache_key = self._generate_key(query, num_results, language)
-        cache_file = os.path.join(self.cache_dir, f"{cache_key}.json")
-
-        if os.path.exists(cache_file):
-            # 检查是否过期
-            mtime = datetime.fromtimestamp(os.path.getmtime(cache_file))
-            if datetime.now() - mtime < self.ttl:
-                with open(cache_file, 'r', encoding='utf-8') as f:
-                    data = json.load(f)
-                    data['cached'] = True
-                    return data
-            else:
-                # 过期，删除
-                os.remove(cache_file)
-
-        return None
-
-    def set(self, query, num_results, language, results):
-        """设置缓存"""
-        cache_key = self._generate_key(query, num_results, language)
-        cache_file = os.path.join(self.cache_dir, f"{cache_key}.json")
-
-        data = {
-            'query': query,
-            'num_results': num_results,
-            'language': language,
-            'cached_at': datetime.now().isoformat(),
-            'results': results
-        }
-
-        with open(cache_file, 'w', encoding='utf-8') as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-
-    def _generate_key(self, query, num_results, language):
-        """生成缓存键"""
-        import hashlib
-        key = f"{query}_{num_results}_{language}"
-        return hashlib.md5(key.encode()).hexdigest()
-
-    def clear_expired(self):
-        """清理过期缓存"""
-        cleared = 0
-        for filename in os.listdir(self.cache_dir):
-            if not filename.endswith('.json'):
-                continue
-            filepath = os.path.join(self.cache_dir, filename)
-            mtime = datetime.fromtimestamp(os.path.getmtime(filepath))
-            if datetime.now() - mtime > self.ttl:
-                os.remove(filepath)
-                cleared += 1
-        print(f"已清理 {cleared} 个过期缓存")
-
-# 使用示例
-cache = SearchCache("./cache", ttl_hours=24)
-
-# 检查缓存
-cached = cache.get("人工智能", 10, "zh-CN")
-if cached:
-    print(f"命中缓存：{len(cached['results'])} 条结果")
-else:
-    # 执行搜索
-    searcher = GoogleSearcher()
-    result = searcher.search("人工智能", num_results=10)
-    if result.get("success"):
-        cache.set("人工智能", 10, "zh-CN", result["results"])
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ## 使用场景
-
 ### 场景一：市场调研（市场研究团队）
-
 **场景描述**：批量搜索行业关键词，AI摘要后生成市场报告。
 
 ```python
 batch = BatchGoogleSearcher(max_workers=3)
 summarizer = AISearchSummarizer()
 
-# 批量搜索行业关键词
 queries = [
     "AI芯片市场2025",
     "新能源车销量预测",
@@ -517,7 +148,6 @@ queries = [
 
 results = batch.search_batch(queries, num_results=10)
 
-# 为每个查询生成AI摘要
 for query, result in results.items():
     if result.get("success"):
         summary = summarizer.generate_summary(query, result["results"])
@@ -526,27 +156,23 @@ for query, result in results.items():
 ```
 
 ### 场景二：竞品分析（产品团队）
-
 **场景描述**：搜索竞争对手信息，对比分析。
 
 ```python
 ml_searcher = MultiLanguageSearcher()
 summarizer = AISearchSummarizer()
 
-# 多语言搜索竞争对手
 competitors = ["CompetitorA", "CompetitorB", "CompetitorC"]
 for competitor in competitors:
     results = ml_searcher.search_multilang(
         f"{competitor} 产品评测",
         languages=['zh-CN', 'en-US']
     )
-    # 生成对比报告
     report = ml_searcher.generate_multilang_report(results)
     print(report)
 ```
 
 ### 场景三：舆情监控（公关团队）
-
 **场景描述**：监控品牌相关关键词变化，发现负面立即告警。
 
 ```python
@@ -554,31 +180,22 @@ monitor = SearchMonitor()
 monitor.add_keyword("我的品牌", interval=3600, webhook_url="https://hooks.slack.com/services/xxx")
 monitor.add_keyword("我的品牌 投诉", interval=1800)
 monitor.add_keyword("我的品牌 评测", interval=3600)
-# monitor.start()
-# 每小时检查，发现变化自动告警
 ```
 
 ## 快速开始
-
 ### 30秒上手
-
 ```bash
-# 批量搜索
 python3 batch_search.py --queries queries.txt --output results.json
 
-# AI摘要
 python3 ai_summary.py --input results.json --output summaries.md
 ```
 
 ### 120秒标准搭建
-
 ```bash
-# 1. 安装依赖
 npm install playwright
 npx playwright install chromium
 pip install requests schedule
 
-# 2. 配置
 cat > search_config.yaml <<EOF
 batch:
   max_workers: 3
@@ -610,16 +227,12 @@ export:
   output_dir: ./output
 EOF
 
-# 3. 启动服务
 python3 search_service.py --config search_config.yaml
 ```
 
 ## 配置示例
-
 ### 企业级配置
-
 ```yaml
-# enterprise-google-search.yaml
 batch:
   max_workers: 3
   retry_failed: true
@@ -665,20 +278,13 @@ export:
 ```
 
 ## 最佳实践
-
 ### 1. 批量搜索优化
-
 ```python
-# 控制并发避免触发反爬
 batch = BatchGoogleSearcher(max_workers=3)  # 建议3-5
-# 搜索间隔2-3秒
-# 使用缓存避免重复搜索
 ```
 
 ### 2. AI摘要优化
-
 ```python
-# 使用不同的prompt模板生成不同风格
 SUMMARY_TEMPLATES = {
     'formal': '正式报告风格',
     'brief': '简洁要点风格',
@@ -688,9 +294,7 @@ SUMMARY_TEMPLATES = {
 ```
 
 ### 3. 监控频率控制
-
 ```python
-# 不同关键词设置不同频率
 MONITOR_INTERVALS = {
     '品牌负面': 1800,       # 30分钟
     '竞品动态': 3600,       # 1小时
@@ -699,39 +303,29 @@ MONITOR_INTERVALS = {
 ```
 
 ## 常见问题
-
 ### Q1：专业版如何与免费版兼容？
-
 专业版完全兼容免费版的所有功能。浏览器自动化搜索、结果解析、基础筛选在专业版中均可直接使用。升级后原有脚本无需修改，仅新增高级能力可用。
 
 ### Q2：批量搜索的最大并发数应该设多少？
-
 建议根据Google反爬能力设置：(1) 建议并发数3-5；(2) 单次批量建议不超过20个查询；(3) 搜索间隔2-3秒；(4) 使用代理IP池可提升到10并发。专业版自动控制请求间隔。
 
 ### Q3：AI摘要使用什么模型？
-
 专业版使用GPT-4o模型路由，提供更强的内容理解与摘要生成能力。支持自定义prompt模板，可生成不同风格的摘要（正式/简洁/分析/口语化）。
 
 ### Q4：定时监控如何避免误报？
-
 专业版采用"结果变化检测"策略：记录上次搜索结果，对比URL变化。仅当新增/消失结果时才触发告警。支持告警抑制（同一关键词24小时内不重复告警）。
 
 ### Q5：多语言搜索如何工作？
-
 专业版支持中、英、日、韩、西、法、德七种语言。可自动翻译查询（由LLM提供），分别执行搜索，生成多语言对比报告。适合跨国市场调研。
 
 ### Q6：结果缓存的有效期是多久？
-
 默认24小时。可配置为1-168小时（1周）。过期后自动重新搜索。缓存基于查询+结果数+语言生成唯一键，相同查询不重复搜索。
 
 ### Q7：图片/新闻/学术搜索如何使用？
-
 专业版提供三种特殊搜索：(1) 图片搜索（Google Images）返回图片URL与缩略图；(2) 新闻搜索（Google News）返回最近新闻；(3) 学术搜索（Google Scholar）返回论文与引用信息。
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 - **Node.js**: 16+ 或 **Bun**: 1.0+
@@ -739,7 +333,6 @@ MONITOR_INTERVALS = {
 - **网络**: 需能访问Google（可能需要代理）
 
 ### 第三方依赖
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Node.js 16+ | 运行时 | 二选一 | 官网下载安装 |
@@ -753,26 +346,20 @@ MONITOR_INTERVALS = {
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 
 ### LLM模型路由
-
 - 专业版使用 **GPT-4o** 模型路由，提供更强的搜索结果理解、摘要生成与多语言翻译能力
 - 支持自定义prompt模板、多风格摘要生成、智能查询翻译
 
 ### API Key 配置
-
 - 搜索基于浏览器自动化执行，无需Google API Key
 - 告警推送需配置对应平台（Slack/飞书/钉钉）的Webhook URL
 - LLM模型路由由Agent平台内置提供
 - 如需使用代理，配置 `HTTP_PROXY` 与 `HTTPS_PROXY` 环境变量
 
 ### 可用性分类
-
 - **分类**: MD+EXEC（Markdown指令+命令行执行）
 - **说明**: 通过自然语言指令驱动Agent执行企业级Google搜索与分析任务
 
----
-
 ## 专业版特性
-
 本专业版相比免费版新增以下能力：
 
 - **批量搜索**：多查询并发执行，结果聚合输出，支持3-5并发
@@ -790,13 +377,20 @@ MONITOR_INTERVALS = {
 - 性能优化建议与最佳实践
 - GPT-4o模型路由与优先支持
 
----
-
 ## 定价
-
 | 版本 | 价格 | 功能 | 适用场景 |
 |------|------|------|----------|
 | 免费体验版 | ¥0 | 浏览器搜索+结果解析+基础筛选+单次搜索+JSON导出 | 个人试用、单次搜索 |
 | 收费专业版 | ¥39/月 | 批量搜索+AI摘要+定时监控+多语言+缓存+图片/新闻/学术搜索+优先支持 | 团队/企业、市场调研 |
 
 专业版通过SkillHub SkillPay发布。
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 性能取决于底层模型能力

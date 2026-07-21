@@ -4,12 +4,10 @@ name: javascript-skills-tool-free
 version: "1.0.0"
 displayName: JavaScript规范工具(免费版)
 summary: 面向个人开发者的JavaScript代码风格指南,涵盖核心规则与基础代码审查能力。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  JavaScript规范工具(免费版)为个人开发者提供基础而实用的JavaScript代码风格指导。
-
-  核心能力:
+  JavaScript规范工具(免费版)为个人开发者提供基础而实用的JavaScript代码风格指导。核心能力:
   - 涵盖对象、数组、函数、字符串等核心语法规范
   - 提供基础代码审查与风格纠正建议
   - 输出符合主流规范的JavaScript代码片段
@@ -24,17 +22,16 @@ description: |-
   - 移除所有原始平台与作者引用,纯净适配SkillHub
   - 中文本地化讲解,降低使用门槛
 
-  触发关键词: javascript, js, style, guide, 代码规范, 风格, lint, es6, 前端
+  触发...
 tags:
 - Development
 - Frontend
 - JavaScript
 - 代码规范
 tools:
-- read
+  - - read
 - exec
 ---
-
 # JavaScript规范工具(免费版)
 
 ## 概述
@@ -109,6 +106,20 @@ import { fetchData } from './utils';
 export default fetchData;
 ```
 
+## 不适用场景
+
+以下场景JavaScript规范工具(免费版)不适合处理：
+
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 运维部署管理
+
+
+## 触发条件
+
+需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 本工具为基于Markdown指令的Prompt Skill,无需安装额外依赖。
@@ -122,7 +133,7 @@ export default fetchData;
 工具: 使用 const 声明不会被重新赋值的引用,使用 let 声明需要重新赋值的引用,避免使用 var。
 ```
 
-## 配置示例
+## 示例
 
 ### 基础ESLint配置(个人项目)
 
@@ -298,7 +309,7 @@ export default fetchData;
 - **操作系统**: Windows / macOS / Linux
 - **Node.js版本**: 建议 18 LTS 及以上(用于运行ESLint/Prettier等配套工具)
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -316,3 +327,15 @@ export default fetchData;
 
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。免费版聚焦个人开发场景的核心规则指导。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 本地运行，不支持多设备同步

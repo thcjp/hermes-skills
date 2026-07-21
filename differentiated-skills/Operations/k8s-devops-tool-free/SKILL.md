@@ -4,39 +4,18 @@ name: k8s-devops-tool-free
 version: "1.0.0"
 displayName: K8s清单生成入门
 summary: Kubernetes YAML清单生成工具，支持常用资源模板与基础校验。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人开发者的K8s YAML清单生成工具。支持Deployment/Service/
-  ConfigMap等常用资源的清单生成与基础校验。通过模板化方式简化
-  K8s配置编写，适合个人项目与小团队的CI/CD流水线。
-
-  核心能力:
-  - 常用资源YAML清单生成
-  - 基础模板库（Web应用/数据库等）
-  - 清单语法校验
-  - kubectl dry-run验证
-
-  适用场景:
-  - 个人项目K8s部署
-  - YAML清单编写辅助
-  - CI/CD流水线集成
-  - K8s学习实践
-
-  差异化:
-  - 免费版聚焦基础清单生成
-  - 适合个人开发者
-  - 不支持Helm/Kustomize
-  - 不支持企业级模板治理
-
-  触发关键词: K8s, YAML, 清单, 模板, Deployment, Service, 生成, manifest, generate
+  ConfigMap等常用资源的清单生成与基础校验。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
 - Operations
 - Kubernetes
 - DevOps
 - 清单生成
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -116,7 +95,7 @@ python3 scripts/generate.py validate \
 # 输出：
 # [OK] 语法正确
 # [OK] 必填字段完整
-# [警告] 未设置resources限制
+# 已知限制
 # [建议] 添加livenessProbe
 ```
 
@@ -125,7 +104,7 @@ python3 scripts/generate.py validate \
 ### 环境准备
 
 ```bash
-# 安装依赖
+# 依赖说明
 pip install pyyaml jsonschema
 
 # 生成清单
@@ -150,7 +129,7 @@ python3 scripts/generate.py validate --file deployment.yaml --dry-run
 python3 scripts/generate.py templates list
 ```
 
-## 配置示例
+## 示例
 
 ### 生成模板配置
 
@@ -244,3 +223,11 @@ generate_config:
 - **分类**: MD+EXEC（Markdown指令+Python脚本执行）
 - **说明**: K8s YAML清单生成与校验工具
 - **免费版限制**: 基础资源生成、不支持Helm/Kustomize与自定义模板
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

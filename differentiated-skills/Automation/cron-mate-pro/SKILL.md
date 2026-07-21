@@ -4,7 +4,7 @@ name: cron-mate-pro
 version: "1.0.0"
 displayName: cron表达式助手(专业版)
 summary: 企业级cron表达式工具专业版，含高级语法L/W/#、时区转换、冲突检测、优化建议、执行预览。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   cron表达式助手专业版是面向企业级场景的完整cron表达式工具。在免费版基础语法之上，专业版新增高级特殊字符（L/W/#）、时区转换与对比、表达式冲突检测、智能优化建议、执行时间预计算五大高级能力，满足复杂调度场景的表达式编写需求。

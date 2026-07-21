@@ -4,7 +4,7 @@ name: python3-tool-pro
 version: "1.0.0"
 displayName: Python 环境工具专业版
 summary: 企业级 Python 环境管理系统,支持多版本管理、依赖审计、CI/CD 集成与安全扫描
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   核心能力: 开发工具领域的专业化 AI 辅助工具,提供企业级高级功能支持。
@@ -20,7 +20,7 @@ tags:
 - 依赖管理
 - pip
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -80,7 +80,7 @@ python3 --version
 python3 -c "import sys; print(sys.executable)"
 # 创建虚拟环境
 python3 -m venv .venv
-# 安装依赖
+# 依赖说明
 .venv/bin/pip install -r requirements.txt
 ```
 
@@ -102,7 +102,7 @@ python3 -m venv .venv
 PRO 版本支持批量执行操作,适合企业级规模化管理需求。以下示例展示如何批量处理多个目标:
 
 ```bash
-# 批量操作示例: 遍历多个目标并执行
+# 示例
 targets=("target1" "target2" "target3" "target4" "target5")
 for target in "${targets[@]}"; do
   echo "Processing: $target"
@@ -264,7 +264,7 @@ A: 停止全局安装尝试,使用虚拟环境管理依赖。
 
 A: PRO 版本完全兼容 FREE 版本的所有功能。卸载 PRO 版本后可自动回退至 FREE 版本,数据与配置保持不变。升级时只需安装 PRO 版本即可,原有配置自动迁移,无需额外操作。
 
-### Q: PRO 版本的批量操作有什么限制?
+### 已知限制
 
 A: 批量操作受以下因素限制:
 - 最大并发数:默认 10,可通过配置调整
@@ -326,3 +326,11 @@ PRO 版本支持以下 API Key 管理方式:
 | 版本类型 | PRO |
 | 许可证 | MIT |
 | 兼容性 | 兼容 FREE 版本,支持无缝升级 |
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

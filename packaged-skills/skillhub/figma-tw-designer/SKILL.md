@@ -1,0 +1,280 @@
+---
+slug: figma-tw-designer
+name: figma-tw-designer
+version: "1.0.0"
+displayName: Figma设计助手(专业版)
+summary: 全功能Figma交互工具，支持批量导出、高级缓存、团队协作分析与自定义模板
+license: Proprietary
+edition: pro
+description: |-
+  Figma设计助手(专业版)是面向团队与重度用户的Figma全功能交互工具，在免费版基础上新增批量导出、高级缓存、团队协作分析与自定义模板等高级能力。核心能力：
+  - 完整的文件结构读取与增量缓存更新
+  - 批量图层导出，支持自定义命名规则与模板
+  - 团队评论聚合分析。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。
+tags:
+- 集成工具
+- 设计协作
+- Figma
+- 专业版
+tools:
+  - - read
+- exec
+---
+# Figma设计助手(专业版)
+
+## 核心能力
+
+| 能力 | 说明 | 专业版增强 |
+|------|------|-----------|
+| 文件结构读取 | 获取页面、画板、图层层级 | 增量缓存与版本对比 |
+| 批量图层导出 | 一次导出数百个图层 | 并行引擎+检查点恢复 |
+| 多格式导出 | PNG/JPG/SVG/PDF | 同一图层多格式并行输出 |
+| 团队评论分析 | 评论聚合与主题识别 | 情感分析与决策洞察 |
+| 自定义模板 | 导出命名与目录规则 | 变量引用与条件逻辑 |
+| 设计变更追踪 | 版本对比与差异高亮 | 自动化变更报告 |
+| 优先支持 | SLA保障 | 专属技术支持通道 |
+
+## 适用场景
+
+### 场景一：设计系统组件批量交付
+设计系统管理员需要定期将组件库中的所有图标导出为多格式素材，分发给前端与移动端团队。通过批量导出命令配合自定义命名模板，可一次性导出全部图标为SVG与PNG双格式，按组件类别自动归档到对应目录。
+
+### 场景二：跨团队设计审查评论汇总
+大型项目涉及多个团队协作，设计稿评论分散且数量庞大。管理者使用团队评论分析功能，对数百条评论进行主题聚类，识别出"交互逻辑""视觉规范""技术可行性"等核心议题，并通过情感分析定位争议点，辅助决策。
+
+### 场景三：前端团队自动化素材同步
+前端团队将设计交付集成到CI/CD流水线，每次设计稿更新后自动触发增量导出。通过高级缓存的版本对比能力，仅导出发生变更的图层，显著降低构建时间与存储占用。
+
+### 场景四：设计变更审计与追溯
+企业合规要求对设计变更进行审计。专业版的设计变更追踪功能可对比两个版本的设计文件，高亮差异图层并生成结构化变更报告，满足审计追溯需求。
+
+## 使用流程
+
+本工具属于复杂工具，预计180秒内可完成首次批量调用。
+
+### 步骤1：配置访问令牌
+```bash
+# macOS / Linux
+export FIGMA_TOKEN="你的个人访问令牌"
+
+# Windows PowerShell
+$env:FIGMA_TOKEN="你的个人访问令牌"
+```
+
+### 步骤2：启用高级缓存(推荐)
+```bash
+# 初始化缓存目录
+python scripts/figma_tool.py cache init --dir ~/.figma-cache
+
+# 首次读取并缓存结构
+python scripts/figma_tool.py get-file <file_key> --cache
+```
+
+### 步骤3：批量导出图层
+```bash
+python scripts/figma_tool.py export-batch <file_key> \
+  --ids-file layers.txt \
+  --format png,svg \
+  --scale 2 \
+  --template "{team}/{component}/{name}@{scale}x.{format}" \
+  --parallel 4 \
+  --checkpoint
+```
+
+### 步骤4：团队评论分析
+```bash
+python scripts/figma_tool.py analyze-comments <file_key> \
+  --cluster-themes \
+  --sentiment \
+  --report markdown
+```
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| content | string | 是 | 相关说明 |
+| content | string | 否 | 相关说明, 默认: 全部维度 |
+| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "overall_grade": "A",
+    "total_score": 92,
+    "max_score": 100,
+    "summary": "处理完成",
+    "details": [
+      {
+        "item": "代码风格",
+        "status": "pass",
+        "score": 95,
+        "comment": "符合规范"
+      },
+      {
+        "item": "安全合规",
+        "status": "warn",
+        "score": 80,
+        "comment": "符合规范"
+      }
+    ],
+    "improvements": [
+      {
+        "priority": "high",
+        "suggestion": "建议优化",
+        "expected_gain": "+5分"
+      },
+      {
+        "priority": "medium",
+        "suggestion": "建议优化",
+        "expected_gain": "+3分"
+      }
+    ]
+  },
+  "error": null
+}
+```
+
+## 异常处理
+
+| 现象 | 可能原因 | 解决方案 | 优先级 |
+|------|----------|----------|--------|
+| 批量导出部分失败 | 个别图层过大或损坏 | 查看失败日志，单独重试失败图层 | 中 |
+| 缓存不一致 | 增量更新未触发 | 手动执行cache refresh强制刷新 | 中 |
+| 评论分析超时 | 评论数量过大 | 分批分析或提高cluster阈值 | 低 |
+| 并行导出429 | 速率限制 | 降低parallel值，启用retry | 高 |
+| 模板渲染失败 | 变量缺失 | 检查图层元数据，补充默认值 | 中 |
+| 变更对比无结果 | 版本无差异或file_key错误 | 确认两个file_key属于同项目 | 低 |
+| 检查点恢复失效 | 缓存目录被清理 | 重新执行全量导出 | 高 |
+| SSO令牌认证失败 | 令牌权限不足 | 联系管理员调整令牌权限范围 | 高 |
+
+## 依赖说明
+
+### 运行环境
+- **Agent平台**：支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **操作系统**：Windows / macOS / Linux
+- **Python**：3.9+(用于运行figma_tool.py脚本及分析模块)
+
+### 依赖说明
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent平台内置LLM提供 |
+| Python | 运行时 | 必需 | python.org官方下载 |
+| requests库 | Python包 | 必需 | `pip install requests` |
+| PyYAML | Python包 | 必需 | `pip install pyyaml` |
+| scikit-learn | Python包 | 推荐 | `pip install scikit-learn`(评论分析) |
+| Figma REST API | 外部API | 必需 | 需Figma账户与个人/团队访问令牌 |
+
+### API Key 配置
+- **Figma Personal Access Token**：通过环境变量`FIGMA_TOKEN`配置
+- **团队令牌**：通过Figma企业版管理后台创建，权限范围按需配置
+- **生成路径**：Figma → Settings → Security → Personal access tokens
+- **安全要求**：禁止在SKILL.md或脚本中硬编码令牌，禁止提交到版本控制
+- **团队令牌管理**：建议使用密钥管理服务统一分发与轮换
+
+### 可用性分类
+- **分类**：MD+EXEC()
+- **说明**：基于Markdown的AI Skill，通过自然语言指令驱动Agent执行Figma文件交互与团队协作分析任务
+
+## 案例展示
+
+### 批量导出配置文件
+```yaml
+# export-config.yaml
+file_key: abc123
+layers:
+  - id: "1:2"
+    name: "Button/Primary"
+  - id: "1:3"
+    name: "Button/Secondary"
+formats: [png, svg]
+scales: [1, 2, 3]
+template: "{category}/{name}@{scale}x.{format}"
+parallel: 4
+checkpoint: true
+retry: 3
+```
+
+### 自定义模板变量
+
+| 变量 | 说明 | 示例 |
+|------|------|------|
+| {team} | 团队名 | Design |
+| {component} | 组件名 | Button |
+| {name} | 图层名 | Primary |
+| {scale} | 倍率 | 2 |
+| {format} | 格式 | png |
+| {date} | 日期 | 20260718 |
+
+### 高级缓存参数
+
+| 参数 | 类型 | 默认值 | 说明 |
+|------|------|--------|------|
+| --cache | bool | true | 启用缓存 |
+| --cache-dir | path | ~/.figma-cache | 缓存目录 |
+| --cache-ttl | int | 3600 | 缓存有效期(秒) |
+| --incremental | bool | true | 增量更新模式 |
+| --max-age | int | 86400 | 最大缓存时长 |
+
+## 常见问题
+
+### Q1：批量导出中途中断怎么办？
+A：专业版支持检查点恢复。重新执行相同命令并添加`--resume`参数，将从上次中断处继续，已完成的图层不会重复导出。
+
+### 错误处理
+
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接，执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令请求；确认Agent平台LLM服务正常 |
+| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
+| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
+| 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
+
+## 已知限制
+A：降低`--parallel`参数值(建议4)，并添加`--retry`参数启用自动重试。专业版的速率限制处理策略会在收到429后自动退避并重试。
+
+### Q3：缓存数据过期如何更新？
+A：启用`--incremental`参数后，缓存会自动检测文件变更并增量更新。也可手动执行`cache refresh <file_key>`强制刷新。
+
+### Q4：评论分析的主题不准确？
+A：主题聚类质量依赖评论数量与质量。建议对评论数超过20条的文件进行分析，并通过`--cluster-themes`参数预设主题类别以提升准确性。
+
+### Q5：自定义模板中的变量不存在？
+A：模板变量来源于图层元数据。若图层缺少对应字段，该部分将留空。建议在导出前通过`get-file`确认图层的元数据完整性。
+
+### Q6：如何对比两个版本的设计文件？
+A：使用`diff <file_key_v1> <file_key_v2>`命令，专业版会高亮差异图层并生成结构化报告。需确保两个文件属于同一项目的不同版本。
+
+### Q7：专业版是否支持团队令牌？
+A：支持。团队管理员可创建团队级令牌并配置权限范围，多个成员共享同一令牌时，专业版提供调用日志与用量统计。
+
+### Q8：如何获取优先技术支持？
+A：专业版用户可通过专属支持通道提交工单，享受SLA保障的响应时效。紧急问题建议附带完整的错误日志与复现步骤。
+
+### Q9：导出的SVG文件体积过大？
+A：在导出配置中启用`--svg-optimize`参数，可自动清理冗余节点与未使用定义， typically可减小30%-50%体积。
+
+### Q10：是否支持Figma企业版的SSO令牌？
+A：支持。专业版兼容Figma企业版的SSO认证流程，配置方式与个人令牌一致，但需确保令牌具有目标文件的访问权限。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接，重试请求；确认Agent平台LLM服务正常 |
+| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
+| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
+| 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
+
+## 已知限制
+
+- 需要LLM支持
+- 需要LLM支持
+- 需要LLM支持
+- 需要LLM支持
+

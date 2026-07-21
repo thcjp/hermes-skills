@@ -4,7 +4,7 @@ name: desktop-automation-hub-pro
 version: "1.0.0"
 displayName: 桌面自动化中枢(专业版)
 summary: 全功能桌面自动化，含图像识别、多显示器、窗口状态控制、审批模式与性能优化，支持7种角色场景。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   桌面自动化中枢（专业版）是AI Agent的终极桌面操控方案，在免费版五大核心模块基础上解锁图像识别定位、高级多显示器管理、窗口状态控制、审批模式、性能优化编排五大高级能力。支持基于OpenCV的模板匹配，让Agent能"看见"屏幕元素并精准点击。

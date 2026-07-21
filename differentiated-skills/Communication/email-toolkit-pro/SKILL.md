@@ -4,34 +4,10 @@ name: email-toolkit-pro
 version: "1.0.0"
 displayName: 邮件工具箱专业版
 summary: 企业邮件自动化与批量发送方案，支持模板与定时调度
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  邮件工具箱专业版面向企业用户与高效能个人用户，在免费版邮件发送能力之上扩展批量
-  发送、邮件模板系统、定时调度、多服务商负载均衡、发送队列管理、退信处理与详细
-  分析报告等企业级自动化特性。
-
-  核心能力:
-  - 批量邮件发送（支持收件人列表与变量替换）
-  - 邮件模板系统（内置与自定义模板）
-  - 定时发送与周期性任务调度
-  - 多 SMTP 服务商负载均衡与故障切换
-  - 发送队列与重试机制
-  - 退信检测与自动清理
-  - 发送统计与分析报告
-  - 优先技术支持与 SLA 保障
-
-  适用场景:
-  - 企业批量通知与营销邮件
-  - 定时报告自动发送
-  - 多团队邮件自动化流水线
-  - 客户服务批量响应
-  - 邮件发送效能监控与优化
-
-  差异化: 专业版在免费版全部能力基础上向下兼容，额外提供批量发送引擎、模板系统、
-  定时调度、负载均衡与发送分析，面向企业级邮件自动化场景深度优化。
-
-  触发关键词: 邮件发送, 批量发送, 群发邮件, 邮件模板, 定时发送, 负载均衡, 发送队列, 退信处理, 邮件自动化, 企业邮件
+  邮件工具箱专业版面向企业用户与高效能个人用户。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
 tags:
 - 沟通协作
 - 邮件管理
@@ -39,12 +15,11 @@ tags:
 - 企业效率
 - 批量操作
 tools:
-- read
+  - - read
 - exec
 ---
 
 # 邮件工具箱专业版
-
 **版本**: 1.0.0
 **适用对象**: 企业用户、运营与营销人员、运维工程师
 **核心定位**: 企业级邮件自动化与批量发送平台
@@ -53,7 +28,6 @@ tools:
 ---
 
 ## 概述
-
 邮件工具箱专业版是一款面向企业级场景的邮件自动化与批量发送工具。在免费版提供的跨平台邮件发送、附件管理与多服务商支持能力之上，专业版引入批量发送引擎、邮件模板系统、定时任务调度、多 SMTP 负载均衡、发送队列管理、退信检测与发送分析报告等高级特性，满足企业在批量通知、营销邮件、定时报告与自动化流水线等复杂场景下的需求。
 
 专业版向下完全兼容免费版，现有配置文件与 Python API 无需修改即可平滑升级。新增的企业级功能通过扩展 API 与命令行参数实现，不影响既有工作流。
@@ -61,9 +35,7 @@ tools:
 ---
 
 ## 核心能力
-
 ### 批量发送引擎
-
 - **收件人列表**: 支持 CSV/JSON 收件人列表文件
 - **变量替换**: 模板中支持 `{{name}}`、`{{date}}` 等变量插值
 - **速率控制**: 可配置发送速率与并发数
@@ -71,7 +43,6 @@ tools:
 - **发送日志**: 完整记录发送结果
 
 ### 邮件模板系统
-
 - **内置模板**: 通知、报告、邀请、提醒、审批等常用模板
 - **自定义模板**: 创建、编辑、删除自定义模板
 - **变量插值**: 支持 `{{variable}}` 语法
@@ -79,34 +50,29 @@ tools:
 - **模板预览**: 渲染效果预览
 
 ### 定时调度
-
 - **一次性定时**: 指定时间发送
 - **周期性任务**: 每日/每周/每月/自定义 cron
 - **任务队列**: 管理待发送任务
 - **状态监控**: 实时查看任务执行状态
 
 ### 多服务商负载均衡
-
 - **多 SMTP 池**: 配置多个 SMTP 服务商
 - **负载分配**: 按权重或轮询分配发送
 - **故障切换**: 自动切换到可用服务商
 - **用量监控**: 各服务商发送量统计
 
 ### 发送队列与重试
-
 - **异步队列**: 非阻塞发送，提升吞吐量
 - **优先级队列**: 支持邮件优先级
 - **自动重试**: 可配置重试次数与间隔
 - **死信处理**: 失败邮件单独存储
 
 ### 退信处理
-
 - **退信检测**: 自动识别退信邮件
 - **地址清理**: 自动清理无效地址
 - **退信报告**: 退信统计与分析
 
 ### 分析报告
-
 - **发送统计**: 成功/失败/退信统计
 - **趋势分析**: 发送量趋势图表
 - **服务商效能**: 各 SMTP 服务商性能对比
@@ -115,9 +81,7 @@ tools:
 ---
 
 ## 使用场景
-
 ### 场景一：批量发送个性化营销邮件
-
 市场部需要向2000名客户发送个性化的促销邮件，每封邮件包含客户姓名与专属优惠码。
 
 **准备收件人列表** `customers.csv`:
@@ -178,7 +142,6 @@ python email_sender.py batch-send \
 ```
 
 ### 场景二：定时发送每日报告
-
 运维团队需要每天早上8点自动发送系统监控日报给管理层。
 
 ```bash
@@ -200,7 +163,6 @@ python email_sender.py schedule history --name "daily-report"
 ```
 
 ### 场景三：多 SMTP 负载均衡发送
-
 企业有3个邮箱账户用于发送，需要负载均衡分配发送量。
 
 ```python
@@ -234,9 +196,7 @@ print(f"服务商分配: {results.provider_stats}")
 ---
 
 ## 快速开始
-
 ### 从免费版升级
-
 专业版完全兼容免费版，现有配置与 API 无需修改：
 
 ```python
@@ -250,7 +210,6 @@ sender.batch_send(recipients="list.csv", template="tpl.html", subject="通知")
 ```
 
 ### 配置多 SMTP 池
-
 创建 `smtp_pool.json`：
 
 ```json
@@ -281,7 +240,6 @@ sender.batch_send(recipients="list.csv", template="tpl.html", subject="通知")
 ```
 
 ### 专业版扩展配置
-
 ```json
 {
   "smtp_server": "smtp.gmail.com",
@@ -323,10 +281,8 @@ sender.batch_send(recipients="list.csv", template="tpl.html", subject="通知")
 
 ---
 
-## 配置示例
-
+## 示例
 ### 模板系统配置
-
 ```json
 {
   "templates": {
@@ -344,7 +300,6 @@ sender.batch_send(recipients="list.csv", template="tpl.html", subject="通知")
 ```
 
 ### 定时任务配置
-
 ```json
 {
   "schedules": [
@@ -363,9 +318,7 @@ sender.batch_send(recipients="list.csv", template="tpl.html", subject="通知")
 ---
 
 ## 最佳实践
-
 ### 批量发送安全
-
 ```bash
 # 始终先试运行
 python email_sender.py batch-send --recipients list.csv --template tpl.html --dry-run
@@ -386,7 +339,6 @@ python email_sender.py batch-send \
 ```
 
 ### 模板管理
-
 ```bash
 # 创建模板
 python email_sender.py template create --name "通知" --file templates/notice.html
@@ -399,7 +351,6 @@ python email_sender.py template validate --name "通知" --data recipients.csv
 ```
 
 ### 退信处理
-
 ```bash
 # 检查退信
 python email_sender.py bounce check --since "2026-07-01"
@@ -412,7 +363,6 @@ python email_sender.py bounce report --month 2026-07
 ```
 
 ### 发送分析
-
 ```bash
 # 查看发送统计
 python email_sender.py analytics stats --since "2026-07-01"
@@ -427,7 +377,6 @@ python email_sender.py analytics providers --since "2026-07-01"
 ---
 
 ## 免费版与专业版对比
-
 | 能力 | 免费版 | 专业版 |
 |:-----|:------:|:------:|
 | 基础邮件发送 | ✅ | ✅ |
@@ -447,9 +396,7 @@ python email_sender.py analytics providers --since "2026-07-01"
 ---
 
 ## 常见问题
-
-### 问题1：批量发送触发服务商限制
-
+### 已知限制
 **解决**: 使用多 SMTP 负载均衡分散发送量：
 
 ```bash
@@ -458,7 +405,6 @@ python email_sender.py batch-send --recipients list.csv --pool gmail,outlook,yah
 ```
 
 ### 问题2：模板变量未替换
-
 **解决**: 确保变量名与 CSV 列名一致：
 
 ```bash
@@ -467,7 +413,6 @@ python email_sender.py template validate --name "通知" --data sample.json
 ```
 
 ### 问题3：定时任务未执行
-
 **解决**: 检查 cron 表达式与时区：
 
 ```bash
@@ -479,7 +424,6 @@ python email_sender.py schedule status --name "daily-report"
 ```
 
 ### 问题4：SMTP 池故障切换失败
-
 **解决**: 检查各服务商凭证有效性：
 
 ```bash
@@ -491,7 +435,6 @@ python email_sender.py pool status
 ```
 
 ### 问题5：退信率过高
-
 **解决**: 定期清理无效地址，优化收件人列表：
 
 ```bash
@@ -505,7 +448,6 @@ python email_sender.py bounce clean --recipients customers.csv --output cleaned.
 ---
 
 ## 命令参考速查
-
 | 命令 | 功能 | 专业版独有 |
 |:-----|:-----|:----------:|
 | `send` | 发送邮件 | - |
@@ -520,17 +462,14 @@ python email_sender.py bounce clean --recipients customers.csv --output cleaned.
 ---
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 - **Python版本**: 3.8 及以上
 - **网络环境**: 需可访问各邮箱 SMTP 服务器
 - **磁盘空间**: 队列与日志建议预留 1GB 以上
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -542,13 +481,18 @@ python email_sender.py bounce clean --recipients customers.csv --output cleaned.
 | 数据库 | 存储引擎 | 可选 | 用于队列与日志（可选 SQLite 文件存储） |
 
 ### API Key 配置
-
 - 本工具使用邮箱 SMTP 认证，无需额外 API Key
 - 多 SMTP 池场景下每个服务商使用独立凭证
 - 凭证通过配置文件或环境变量提供，支持加密存储
 - 企业用户建议使用密钥管理服务统一管理凭证
 
 ### 可用性分类
-
 - **分类**: MD+EXEC（纯Markdown指令，部分功能需要 exec 命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行 Python 脚本，支持批量发送、模板渲染、定时调度与负载均衡等企业级自动化功能
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

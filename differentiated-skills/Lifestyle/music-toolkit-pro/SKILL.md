@@ -4,7 +4,7 @@ name: music-toolkit-pro
 version: "1.0.0"
 displayName: 音乐工具箱专业版
 summary: 专业音乐制作平台,支持AI编曲、多轨录音、母带处理与商业授权
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   面向音乐工作室、独立音乐人与商业项目的专业音乐制作平台。
@@ -20,20 +20,16 @@ tags:
 - 商业授权
 - 影视配乐
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 音乐工具箱 (专业版)
-
 ## 概述
-
 专业版面向音乐工作室、独立音乐人与商业项目,在免费版音乐生成之上,扩展 AI 编曲、多轨录音、母带处理、专业音色库、商业授权、协作创作等企业级能力。支持构建接近商业品质的音乐作品,适合影视配乐、游戏音效、专辑制作、广告音乐等专业场景。
 
 专业版与免费版文件格式完全兼容,个人创作者升级后现有作品无缝迁移。
 
 ## 核心能力
-
 | 能力模块 | 描述 | 免费版 | 专业版 |
 |:--------|:-----|:------:|:------:|
 | MIDI 生成 | 程序化生成 | 支持 | 支持 |
@@ -50,9 +46,7 @@ tools:
 | 发行支持 | 流媒体发行 | 不支持 | 支持 |
 
 ## 使用场景
-
 ### 场景一: 影视配乐制作
-
 为影视项目制作完整配乐。
 
 ```python
@@ -109,7 +103,6 @@ class FilmScoringStudio:
         )
         return resp.json()
 
-
 studio = FilmScoringStudio(ADMIN_KEY)
 # 为电影创建配乐
 score = studio.create_score(
@@ -123,7 +116,6 @@ score = studio.create_score(
 ```
 
 ### 场景二: 多轨录音与混音
-
 多轨录音与专业混音。
 
 ```python
@@ -169,7 +161,6 @@ def professional_mixing(project_id, settings):
 ```
 
 ### 场景三: 母带处理与发行
-
 专业母带处理与流媒体发行。
 
 ```python
@@ -218,14 +209,25 @@ def distribute_to_platforms(project_id, metadata):
     return resp.json()
 ```
 
+## 不适用场景
+
+以下场景音乐工具箱专业版不适合处理：
+
+- 版权受保护的媒体内容处理
+- 实时直播推流
+- 专业影视后期
+
+
+## 触发条件
+
+需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
-
 ### 步骤 1: 申请专业版账户
-
 联系销售开通专业版,获取管理员凭证与租户 ID。
 
 ### 步骤 2: 配置凭证
-
 ```bash
 export MUSIC_ADMIN_KEY="sk_pro_admin_xxx"
 export MUSIC_ORG_ID="org_your_id"
@@ -233,7 +235,6 @@ export MUSIC_EDITION="pro"
 ```
 
 ### 步骤 3: 创建音乐项目
-
 ```bash
 curl -X POST -H "X-API-Key: $MUSIC_ADMIN_KEY" \
   -H "Content-Type: application/json" \
@@ -242,7 +243,6 @@ curl -X POST -H "X-API-Key: $MUSIC_ADMIN_KEY" \
 ```
 
 ### 步骤 4: 上传音色库
-
 ```bash
 # 上传专业音色库
 curl -X POST -H "X-API-Key: $MUSIC_ADMIN_KEY" \
@@ -250,10 +250,8 @@ curl -X POST -H "X-API-Key: $MUSIC_ADMIN_KEY" \
   "https://api.music-toolkit-pro.local/v1/soundlibraries/upload"
 ```
 
-## 配置示例
-
+## 示例
 ### 企业级配置
-
 ```yaml
 # /etc/music-toolkit/pro.yaml
 edition: pro
@@ -311,7 +309,6 @@ licensing:
 ```
 
 ### AI 编曲示例
-
 ```python
 def ai_arrangement_workflow(melody_midi, brief):
     """AI 编曲完整工作流"""
@@ -348,7 +345,6 @@ def analyze_melody(midi_file):
 ```
 
 ### 协作创作
-
 ```python
 def create_collaboration_session(project_id, collaborators):
     """创建协作会话"""
@@ -373,9 +369,7 @@ def create_collaboration_session(project_id, collaborators):
 ```
 
 ## 最佳实践
-
 ### 1. 母带处理规范
-
 ```python
 MASTERING_STANDARDS = {
     "spotify": {"loudness_lufs": -14, "true_peak_db": -1, "format": "wav_24bit"},
@@ -387,7 +381,6 @@ MASTERING_STANDARDS = {
 ```
 
 ### 2. 音色库管理
-
 ```python
 def organize_sound_library():
     """组织音色库"""
@@ -401,7 +394,6 @@ def organize_sound_library():
 ```
 
 ### 3. 版本管理
-
 ```python
 def create_version(project_id, description):
     """创建项目版本"""
@@ -430,39 +422,30 @@ def compare_versions(project_id, v1, v2):
 ```
 
 ## 常见问题
-
 ### Q1: 专业版与免费版文件兼容吗?
-
 完全兼容。专业版在免费版文件格式上扩展,升级后现有作品无缝迁移。
 
 ### Q2: AI 编曲质量如何?
-
 专业版 AI 编曲接近商业编曲水准,但仍建议人工最终调整以达到最佳效果。
 
 ### Q3: 商业授权范围?
-
 专业版允许商业用途,包括影视配乐、游戏音效、广告音乐、专辑发行等。
 
 ### Q4: 支持哪些发行平台?
-
 支持 Spotify、Apple Music、YouTube Music、网易云音乐、QQ 音乐等全球主流平台。
 
 ### Q5: 协作创作支持多少人?
-
 支持最多 20 人同时协作,实时同步编辑。
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent 平台**: 支持 SKILL.md 规范的任意 AI Agent (Claude Code、Cursor、Codex、Gemini CLI 等)
 - **操作系统**: Windows / macOS / Linux (生产环境推荐 Linux)
 - **网络**: 需访问专业版服务
 - **存储**: 大型音色库建议 100GB+ 空间
 - **Python**: 3.9+ (用于脚本化操作)
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Music Toolkit Pro API | 在线 API | 必需 | 联系销售开通专业版 |
@@ -473,7 +456,6 @@ def compare_versions(project_id, v1, v2):
 | 云存储 | 音色存储 | 可选 | S3/OSS |
 
 ### API Key 配置
-
 ```bash
 # 专业版凭证
 export MUSIC_ADMIN_KEY="sk_pro_admin_xxx"
@@ -491,8 +473,19 @@ export APPLE_MUSIC_API_KEY="..."
 ```
 
 ### 可用性分类
-
 - **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 面向音乐工作室与商业项目,通过自然语言指令驱动 Agent 调用 Pro API,完成专业音乐制作
 - **专业版特性**: AI 编曲、多轨录音、母带处理、专业音色库、商业授权、协作创作、发行支持
 - **兼容性**: 与免费版文件格式完全兼容,支持平滑升级
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

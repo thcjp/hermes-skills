@@ -4,12 +4,10 @@ name: parallel-research-tool-free
 version: "1.0.0"
 displayName: 并行研究助手免费版
 summary: 开放式主题研究工具，构建可持续维护的研究文档，支持交互式探索
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  并行研究助手免费版，帮助用户围绕特定主题开展开放式研究，构建可持续维护的Markdown研究文档。
-
-  核心能力:
+  并行研究助手免费版，帮助用户围绕特定主题开展开放式研究，构建可持续维护的Markdown研究文档。核心能力:
   - 交互式研究模式，实时搜索与综合
   - 为每个研究主题创建独立文件夹
   - 结构化研究文档（问题、发现、资源、后续步骤）
@@ -24,16 +22,14 @@ description: |-
   差异化:
   - 免费版聚焦交互式研究，文档驱动而非对话驱动
   - 研究成果持久化保存，可持续维护
-  - 与PRO版本完全兼容，可平滑升级
-
-  触发关键词: 开放研究, 研究文档, 主题调研, 技术调研, 方案探索, parallel research
+  - 与PRO版本完全兼容...
 tags:
 - 研究
 - 文档
 - 调研
 - 知识管理
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -230,7 +226,7 @@ archive
 export pdf
 ```
 
-## 配置示例
+## 示例
 
 ### 研究工作区配置
 
@@ -385,7 +381,7 @@ summarize
 PDF 导出需要安装 pandoc 和 PyMuPDF。可通过系统包管理器安装。
 
 ```bash
-# 安装pandoc
+# 依赖说明
 # Ubuntu: sudo apt install pandoc
 # macOS: brew install pandoc
 # Windows: choco install pandoc
@@ -442,3 +438,17 @@ pandoc --version 2>/dev/null && echo "pandoc就绪" || echo "pandoc未安装（P
 - **说明**: 基于自然语言指令驱动 Agent 进行交互式研究，研究结果持久化保存为 Markdown 文档
 - **适用规模**: 个人研究者、学生、独立开发者
 - **升级路径**: 可无缝升级至 parallel-research-tool-pro 获取深度异步研究与多主题并行能力
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

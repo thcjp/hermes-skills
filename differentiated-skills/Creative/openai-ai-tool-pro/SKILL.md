@@ -1,15 +1,13 @@
 ---
-slug: openai-ai-tool-pro
+slug: llm-provider-ai-tool-pro
 name: openai-ai-tool-pro
 version: "1.0.0"
 displayName: OpenAI助手专业版
 summary: 企业级OpenAI API管理工具,支持批量任务、微调、评估与向量存储,适配团队协作与自动化流水线。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  面向团队与企业用户的 OpenAI API 全功能管理工具。
-
-  核心能力:
+  面向团队与企业用户的 llm-provider API 全功能管理工具。核心能力:
   - 涵盖免费版全部能力(对话补全、图像生成、助手管理)
   - 批量任务(Batch API)大规模异步处理
   - 模型微调(Fine-tuning)定制化训练
@@ -21,19 +19,7 @@ description: |-
 
   适用场景:
   - 企业级内容生产与自动化流水线
-  - 定制化模型微调与领域适配
-  - 大规模知识库检索与 RAG 系统
-  - 多租户场景下的权限隔离与配额管理
-  - 质量评估与模型回归测试
-
-  差异化:
-  - 专业版完整覆盖 OpenAI 平台全部资源类型
-  - 支持批量与异步任务,适合高吞吐场景
-  - 提供微调与评估能力,支持模型定制化闭环
-  - 与免费版 API 完全兼容,可平滑升级
-  - 内置企业级安全规范与审计能力
-
-  触发关键词: openai, batch, fine-tune, finetune, evaluation, vector, store, rag, assistant, video, container, enterprise, pro
+  - ...
 tags:
 - 创意设计
 - AI助手
@@ -43,15 +29,14 @@ tags:
 - 批量处理
 - 向量检索
 tools:
-- read
+  - - read
 - exec
 ---
-
-# OpenAI 助手工具 - 专业版
+# llm-provider 助手工具 - 专业版
 
 ## 概述
 
-OpenAI 助手工具(专业版)为团队与企业用户提供 OpenAI 平台全资源类型的管理能力。在免费版(`openai-ai-tool-free`)核心能力之上,专业版新增批量任务、模型微调、质量评估、向量存储高级管理、视频生成与容器隔离等企业级能力,适配自动化流水线、多租户场景与大规模内容生产。
+llm-provider 助手工具(专业版)为团队与企业用户提供 llm-provider 平台全资源类型的管理能力。在免费版(`llm-provider-ai-tool-free`)核心能力之上,专业版新增批量任务、模型微调、质量评估、向量存储高级管理、视频生成与容器隔离等企业级能力,适配自动化流水线、多租户场景与大规模内容生产。
 
 专业版与免费版 API 完全兼容,已使用免费版的代码无需任何修改即可在专业版环境中运行。
 
@@ -83,9 +68,9 @@ OpenAI 助手工具(专业版)为团队与企业用户提供 OpenAI 平台全资
 ```python
 import os
 import json
-from openai import OpenAI
+from llm-provider import llm-provider
 
-client = OpenAI()
+client = llm-provider()
 
 # 1. 准备批量请求文件(JSONL 格式)
 requests = []
@@ -132,13 +117,13 @@ while batch.status not in ("completed", "failed", "cancelled"):
 
 ```bash
 # 1. 上传训练数据(JSONL 格式)
-curl -X POST "https://api.openai.com/v1/files" \
+curl -X POST "https://api.llm-provider.com/v1/files" \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
   -F "purpose=fine-tune" \
   -F "file=@./training_data.jsonl"
 
 # 2. 创建微调任务
-curl -X POST "https://api.openai.com/v1/fine_tuning/jobs" \
+curl -X POST "https://api.llm-provider.com/v1/fine_tuning/jobs" \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -150,7 +135,7 @@ curl -X POST "https://api.openai.com/v1/fine_tuning/jobs" \
   }'
 
 # 3. 查询检查点
-curl "https://api.openai.com/v1/fine_tuning/jobs/ftjob-abc/checkpoints" \
+curl "https://api.llm-provider.com/v1/fine_tuning/jobs/ftjob-abc/checkpoints" \
   -H "Authorization: Bearer $OPENAI_API_KEY"
 ```
 
@@ -159,9 +144,9 @@ curl "https://api.openai.com/v1/fine_tuning/jobs/ftjob-abc/checkpoints" \
 构建生产级检索增强生成系统。
 
 ```python
-from openai import OpenAI
+from llm-provider import llm-provider
 
-client = OpenAI()
+client = llm-provider()
 
 # 1. 创建向量存储
 vs = client.vector_stores.create(name="企业知识库-2026")
@@ -185,7 +170,7 @@ assistant = client.beta.assistants.create(
     }
 )
 
-# 4. 发起检索问答
+# 常见问题
 thread = client.beta.threads.create()
 client.beta.threads.messages.create(
     thread_id=thread.id,
@@ -197,6 +182,20 @@ run = client.beta.threads.runs.create(
     assistant_id=assistant.id
 )
 ```
+
+## 不适用场景
+
+以下场景OpenAI助手专业版不适合处理：
+
+- 需要100%确定性的关键决策
+- 医疗诊断
+- 法律判决
+
+
+## 触发条件
+
+需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于非本工具能力范围的需求。
+
 
 ## 快速开始
 
@@ -211,16 +210,16 @@ export OPENAI_PROJECT_ID="proj-your-proj-id" # 项目级隔离
 ### 2. 验证企业权限
 
 ```bash
-curl https://api.openai.com/v1/models \
+curl https://api.llm-provider.com/v1/models \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
-  -H "OpenAI-Organization: $OPENAI_ORG_ID" \
-  -H "OpenAI-Project: $OPENAI_PROJECT_ID" | jq '.data | length'
+  -H "llm-provider-Organization: $OPENAI_ORG_ID" \
+  -H "llm-provider-Project: $OPENAI_PROJECT_ID" | jq '.data | length'
 ```
 
 ### 3. 创建第一个批量任务
 
 ```bash
-curl -X POST "https://api.openai.com/v1/batches" \
+curl -X POST "https://api.llm-provider.com/v1/batches" \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -230,15 +229,15 @@ curl -X POST "https://api.openai.com/v1/batches" \
   }'
 ```
 
-## 配置示例
+## 示例
 
 ### 企业级 SDK 配置
 
 ```python
 import os
-from openai import OpenAI
+from llm-provider import llm-provider
 
-client = OpenAI(
+client = llm-provider(
     api_key=os.environ["OPENAI_API_KEY"],
     organization=os.environ["OPENAI_ORG_ID"],
     project=os.environ["OPENAI_PROJECT_ID"],
@@ -256,9 +255,9 @@ client.with_options(
 
 ```python
 import time
-from openai import OpenAI
+from llm-provider import llm-provider
 
-client = OpenAI()
+client = llm-provider()
 
 class AsyncTaskManager:
     """异步任务统一管理器,支持 batch / fine-tune / video"""
@@ -355,7 +354,7 @@ run = client.evals.runs.create(
 
 ### Q5: 如何实现多租户隔离?
 
-通过 `OpenAI-Project` 请求头实现项目级隔离。每个项目独立计费、独立配额、独立 API Key。专业版建议为每个租户创建独立 Project。
+通过 `llm-provider-Project` 请求头实现项目级隔离。每个项目独立计费、独立配额、独立 API Key。专业版建议为每个租户创建独立 Project。
 
 ### Q6: 容器(Containers)用于什么场景?
 
@@ -368,17 +367,17 @@ run = client.evals.runs.create(
 ## 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **Agent 平台**: 支持SKILL.md的任意AI Agent(ai-assistant Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
-- **网络**: 需稳定访问 `api.openai.com`,建议配置代理与超时
+- **网络**: 需稳定访问 `api.llm-provider.com`,建议配置代理与超时
 - **存储**: 批量任务与微调需要本地 JSONL 文件读写能力
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| OpenAI Python SDK | Python 库 | 必需 | `pip install openai>=1.50` |
-| OpenAI Node SDK | npm 库 | 必需(Node 场景) | `npm install openai` |
+| llm-provider Python SDK | Python 库 | 必需 | `pip install llm-provider>=1.50` |
+| llm-provider Node SDK | npm 库 | 必需(Node 场景) | `npm install llm-provider` |
 | curl | 命令行工具 | 推荐 | 系统自带 |
 | jq | JSON 处理工具 | 推荐 | `apt install jq` / `brew install jq` |
 | Python 3.9+ | 运行时 | 必需(Python 场景) | `python.org` 下载 |
@@ -395,4 +394,16 @@ run = client.evals.runs.create(
 
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
-- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。专业版完整覆盖 OpenAI 平台资源,适合企业级自动化流水线、模型微调与质量评估场景。
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。专业版完整覆盖 llm-provider 平台资源,适合企业级自动化流水线、模型微调与质量评估场景。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用

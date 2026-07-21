@@ -4,40 +4,18 @@ name: aws-toolkit-free
 version: "1.0.0"
 displayName: AWS部署入门工具
 summary: AWS基础架构部署工具，支持EC2/S3/VPC常用资源创建与管理。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人开发者与初创团队的AWS基础部署工具。支持EC2实例、S3存储、
-  VPC网络等常用资源的创建与管理。通过命令行简化AWS操作，适合个人
-  项目与小型应用的云端部署。
-
-  核心能力:
-  - EC2实例创建与管理
-  - S3存储桶操作
-  - VPC网络配置
-  - 安全组管理
-  - 基础IAM用户管理
-
-  适用场景:
-  - 个人项目云端部署
-  - 初创团队基础设施搭建
-  - AWS学习与实验
-  - 简单Web应用部署
-
-  差异化:
-  - 免费版聚焦基础资源管理
-  - 适合个人与小型项目
-  - 不支持多区域批量部署
-  - 不支持企业级合规与审计
-
-  触发关键词: AWS, EC2, S3, VPC, 云部署, 云服务器, 亚马逊云, amazon web services
+  VPC网络等常用资源的创建与管理。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
 - Operations
 - AWS
 - 云计算
 - 部署
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -112,7 +90,7 @@ python3 scripts/aws.py vpc create-subnet --vpc-id vpc-xxx --cidr 10.0.1.0/24
 ### 环境准备
 
 ```bash
-# 安装AWS CLI
+# 依赖说明
 # macOS: brew install awscli
 # Windows: 下载官方安装包
 
@@ -143,7 +121,7 @@ python3 scripts/aws.py vpc create --cidr 10.0.0.0/16
 python3 scripts/aws.py vpc list
 ```
 
-## 配置示例
+## 示例
 
 ### AWS配置
 
@@ -236,3 +214,15 @@ aws_config:
 - **分类**: MD+EXEC（Markdown指令+Python脚本执行）
 - **说明**: 通过boto3 SDK管理AWS基础资源
 - **免费版限制**: 基础资源管理、单区域、不支持RDS/Lambda/CloudWatch
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 依赖云服务，需要网络连接

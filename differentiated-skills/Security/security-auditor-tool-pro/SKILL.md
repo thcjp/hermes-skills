@@ -4,14 +4,14 @@ name: security-auditor-tool-pro
 version: "1.0.0"
 displayName: 代码安全审计员(专业版)
 summary: 企业级代码安全审计,OWASP Top 10全覆盖、AST自动扫描、多语言支持、ASVS合规映射
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   核心能力:
   - OWASP Top 10:2021全覆盖审计(10大类别)
   - AST静态分析自动漏洞检测
   - TypeScript/Python/Go/Java多语言支持
-  - 10+框架安全规则(Next.js/Express/Django/FastAPI等)
+  - 10+框架安全规则(Next。js/Express/Django/FastAPI等)
   - OWASP ASVS合规等级映射(L1/L2/L3)
   - HTML/PDF/SARIF专业审计报告
   - Git Hook持续安全监控
@@ -19,16 +19,7 @@ description: |-
   适用场景:
   - 企业级代码安全审计项目
   - 安全合规认证(ASVS/PCI-DSS)
-  - DevSecOps代码安全门禁
-  - 多语言项目安全统一管理
-
-  差异化:
-  - AST精确分析,极低误报率
-  - 多语言多框架统一审计
-  - ASVS合规等级自动映射
-  - 与免费版兼容,检查清单可复用
-
-  触发关键词: 代码审计, 企业安全, AST分析, OWASP ASVS, 多语言审计, 安全门禁, DevSecOps, SAST, 静态分析
+  - DevSecOp...
 tags:
 - 安全
 - 代码审计
@@ -37,20 +28,15 @@ tags:
 - OWASP
 - DevSecOps
 tools:
-- read
+  - - read
 - exec
----
-
 # 代码安全审计员(专业版)
-
 ## 概述
-
+---
 代码安全审计员专业版是一款面向企业用户的代码安全审计与SAST(静态应用安全测试)平台。在免费版Top 5 OWASP检查基础上,扩展至Top 10全覆盖,增加AST静态分析自动扫描、TypeScript/Python/Go/Java多语言支持、10+框架安全规则、OWASP ASVS合规等级映射等企业级功能。提供HTML/PDF/SARIF专业审计报告,支持Git Hook持续安全监控。与免费版完全兼容,检查清单和代码示例可无缝复用。
 
 ## 核心能力
-
 ### 功能矩阵
-
 | 功能模块 | 描述 | 免费版 | 专业版 |
 |----------|------|--------|--------|
 | OWASP覆盖 | 安全类别 | Top 5 | Top 10全覆盖 |
@@ -63,7 +49,6 @@ tools:
 | 误报抑制 | 精确度 | 模式匹配 | AST语义分析 |
 
 ### OWASP Top 10全覆盖
-
 ```text
 ┌──────────────────────────────────────────────────────────┐
 │              专业版OWASP Top 10审计                      │
@@ -82,9 +67,8 @@ tools:
 ```
 
 ## 使用场景
-
+- 不适用: 需要人工判断的复杂决策场景
 ### 场景一:企业级代码安全审计
-
 对整个代码仓库执行自动化安全审计。
 
 ```bash
@@ -123,9 +107,7 @@ ASVS合规等级:
 ```
 
 ### 场景二:多语言项目审计
-
 ```bash
-# 同时审计多种语言
 python scripts/code_audit.py \
   --target /path/to/monorepo \
   --languages typescript,python,go,java \
@@ -137,13 +119,9 @@ python scripts/code_audit.py \
 ```
 
 ### 场景三:Git Hook持续监控
-
 ```bash
-# 安装pre-commit Hook
 python scripts/code_audit.py --install-hook
 
-# 每次提交时自动扫描变更文件
-# .git/hooks/pre-commit
 #!/bin/bash
 python scripts/code_audit.py \
   --files $(git diff --cached --name-only) \
@@ -152,9 +130,7 @@ python scripts/code_audit.py \
 ```
 
 ### 场景四:CI/CD安全门禁
-
 ```yaml
-# GitLab CI配置
 security-audit:
   stage: test
   script:
@@ -172,9 +148,7 @@ security-audit:
 ```
 
 ## 快速开始
-
 ### AST静态分析引擎
-
 ```python
 import ast
 import re
@@ -268,7 +242,6 @@ class ASTSecurityAnalyzer:
             tree = ast.parse(source, filename=str(filepath))
 
             for node in ast.walk(tree):
-                # 检测SQL注入
                 if isinstance(node, ast.Call):
                     if self._is_sql_concat(node, source):
                         self._add_finding(
@@ -278,7 +251,6 @@ class ASTSecurityAnalyzer:
                             "使用参数化查询: cursor.execute('SELECT * FROM users WHERE id = %s', (user_id,))"
                         )
 
-                    # 检测eval
                     if isinstance(node.func, ast.Name) and node.func.id == "eval":
                         self._add_finding(
                             "A03", "代码注入", "CRITICAL",
@@ -287,7 +259,6 @@ class ASTSecurityAnalyzer:
                             "移除eval(),使用安全的替代方案"
                         )
 
-                    # 检测pickle反序列化
                     if isinstance(node.func, ast.Attribute) and node.func.attr == "loads":
                         if "pickle" in source:
                             self._add_finding(
@@ -297,7 +268,6 @@ class ASTSecurityAnalyzer:
                                 "使用JSON替代pickle,或验证数据来源"
                             )
 
-                # 检测硬编码密码
                 if isinstance(node, ast.Assign):
                     for target_node in node.targets:
                         if isinstance(target_node, ast.Name):
@@ -406,10 +376,8 @@ class ASTSecurityAnalyzer:
         }
 ```
 
-## 配置示例
-
+## 示例
 ### 审计配置
-
 ```json
 {
   "audit_config": {
@@ -443,7 +411,6 @@ class ASTSecurityAnalyzer:
 ```
 
 ### ASVS合规等级
-
 | 等级 | 描述 | 适用场景 |
 |------|------|----------|
 | L1 | 基础安全验证 | 小型应用、低风险 |
@@ -451,22 +418,16 @@ class ASTSecurityAnalyzer:
 | L3 | 高级安全验证 | 高风险应用、金融/医疗 |
 
 ## 最佳实践
-
 ### 1. 分阶段审计策略
-
 ```bash
-# 开发阶段:快速扫描变更文件
 python scripts/code_audit.py --files $(git diff --name-only) --format text
 
-# 合并前:全面扫描
 python scripts/code_audit.py --target . --owasp top10 --format html
 
-# 发布前:合规审计
 python scripts/code_audit.py --target . --owasp top10 --asvs L2 --format pdf
 ```
 
 ### 2. 误报抑制
-
 ```json
 {
   "suppressions": [
@@ -485,42 +446,32 @@ python scripts/code_audit.py --target . --owasp top10 --asvs L2 --format pdf
 ```
 
 ### 3. 持续监控
-
 ```bash
-# 安装Git Hook
 python scripts/code_audit.py --install-hook --fail-on HIGH
 
-# CI/CD集成
 python scripts/code_audit.py --target . --format sarif --output results.sarif
 ```
 
 ## 常见问题
-
 ### Q1: 专业版与免费版兼容吗?
-
 A: 完全兼容。专业版包含免费版所有OWASP检查清单和代码示例,并在此基础上增加AST自动扫描、多语言支持和ASVS合规映射。
 
 ### Q2: AST分析比正则匹配好在哪里?
-
 A: AST分析理解代码结构,能精确识别变量类型、函数调用关系和数据流,误报率显著低于纯正则匹配。例如,能区分字符串中的SQL关键字和实际SQL查询。
 
 ### Q3: 支持哪些框架?
-
 A: 支持 Next.js、Express、Django、FastAPI、Flask、Spring Boot、Gin、Echo 等10+主流框架,每种框架有专属安全规则。
 
 ### Q4: SARIF报告如何使用?
-
 A: SARIF是OASIS标准格式,可上传到GitHub Code Scanning、GitLab SAST、Azure DevOps等平台,在代码审查中直接展示安全发现。
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 - **Python版本**: 3.8+
 
 ### 第三方依赖
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Python | 运行时 | 必需 | 系统自带 |
@@ -537,3 +488,12 @@ A: SARIF是OASIS标准格式,可上传到GitHub Code Scanning、GitLab SAST、Az
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行企业级代码安全审计任务
+
+## 错误处理
+- 边界输入处理: 空输入返回提示信息, 超长输入自动截断
+- 降级策略: 异常时返回默认值, 确保流程不中断
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

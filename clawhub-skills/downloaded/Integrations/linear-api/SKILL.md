@@ -8,62 +8,19 @@ summary: This skill is a disclosed Linear integration that uses Maton authentica
 license: MIT-0
 description: |-
   This skill is a disclosed Linear integration that uses Maton authentication
-  to read and manage Li...
-
-  核心能力:
-
-  - 集成工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 第三方API集成、平台对接、数据同步
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: api, linear, disclosed, integration, skill
+  to read and manage Li。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
 tags: '[''Integrations'']'
-tools: '[read, exec]'
----
-
+tools:
+  - read
+  - exec
 # Linear
-
+---
 Access the Linear API with managed OAuth authentication. Query and manage issues, projects, teams, cycles, labels, and comments using GraphQL.
 
 ## Quick Start
-
-**CLI:**
-
-```bash
-maton linear issue list -c ABC -L 10
-```
-
-```bash
-maton api '/linear/graphql'
-```
-
-**Python:**
-
-```bash
-python <<'EOF'
-import urllib.request, os, json
-data = json.dumps({'query': '{ viewer { id name email } }'}).encode()
-req = urllib.request.Request('https://api.maton.ai/linear/graphql', data=data, method='POST')
-req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
-req.add_header('Content-Type', 'application/json')
-print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-EOF
-```
+> 详细内容已移至 `references/detail.md`
 
 ## Base URL
-
 ```text
 https://api.maton.ai/linear/graphql
 ```
@@ -71,7 +28,6 @@ https://api.maton.ai/linear/graphql
 All requests use POST to the GraphQL endpoint. Maton proxies requests to `api.linear.app` and automatically injects your OAuth token.
 
 ## Installation
-
 **NPM:**
 
 ```bash
@@ -85,183 +41,34 @@ brew install maton-ai/cli/maton
 ```
 
 ## Authentication
-
-**CLI:**
-
-```bash
-maton login                          # Opens browser for API key
-maton login --interactive            # Skip browser, paste API key directly
-maton whoami                         # Show current auth state
-```
-
-**Manual:**
-
-1. Sign in or create an account at [maton.ai](https://maton.ai)
-2. Go to [maton.ai/settings](https://maton.ai/settings)
-3. Copy your API key
-4. Set your API key as `MATON_API_KEY`:
-
-```bash
-export MATON_API_KEY="[REDACTED]"
-```
+> 详细内容已移至 `references/detail.md`
 
 ## Connection Management
-
 Manage your Linear OAuth connections at `https://api.maton.ai`.
 
 ### List Connections
-
-**CLI:**
-
-```bash
-maton connection list linear --status ACTIVE
-```
-
-```bash
-maton api -X GET /connections -f app=linear -f status=ACTIVE
-```
-
-**Python:**
-
-```bash
-python <<'EOF'
-import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/connections?app=linear&status=ACTIVE')
-req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
-print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-EOF
-```
+> 详细内容已移至 `references/detail.md`
 
 ### Create Connection
-
-**CLI:**
-
-```bash
-maton connection create linear
-```
-
-```bash
-maton api /connections -f app=linear
-```
-
-**Python:**
-
-```bash
-python <<'EOF'
-import urllib.request, os, json
-data = json.dumps({'app': 'linear'}).encode()
-req = urllib.request.Request('https://api.maton.ai/connections', data=data, method='POST')
-req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
-req.add_header('Content-Type', 'application/json')
-print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-EOF
-```
+> 详细内容已移至 `references/detail.md`
 
 ### Get Connection
-
-**CLI:**
-
-```bash
-maton connection view {connection_id}
-```
-
-```bash
-maton api /connections/{connection_id}
-```
-
-**Python:**
-
-```bash
-python <<'EOF'
-import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/connections/{connection_id}')
-req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
-print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-EOF
-```
-
-**Response:**
-
-```json
-{
-  "connection": {
-    "connection_id": "{connection_id}",
-    "status": "ACTIVE",
-    "creation_time": "2026-02-04T23:03:22.676001Z",
-    "last_updated_time": "2026-02-04T23:03:51.239577Z",
-    "url": "https://connect.maton.ai/?session_token=...",
-    "app": "linear",
-    "metadata": {}
-  }
-}
-```
-
-Open the returned `url` in a browser to complete OAuth authorization.
+> 详细内容已移至 `references/detail.md`
 
 ### Delete Connection
-
-**CLI:**
-
-```bash
-maton connection delete {connection_id}
-```
-
-```bash
-maton api -X DELETE /connections/{connection_id}
-```
-
-**Python:**
-
-```bash
-python <<'EOF'
-import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/connections/{connection_id}', method='DELETE')
-req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
-print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-EOF
-```
+> 详细内容已移至 `references/detail.md`
 
 ### Specifying Connection
-
-If you have multiple Linear connections, specify which one to use:
-
-**CLI:**
-
-```bash
-maton linear issue list -c ABC --connection {connection_id}
-```
-
-```bash
-maton api /linear/graphql --connection {connection_id}
-```
-
-**Python:**
-
-```bash
-python <<'EOF'
-import urllib.request, os, json
-data = json.dumps({'query': '{ viewer { id name } }'}).encode()
-req = urllib.request.Request('https://api.maton.ai/linear/graphql', data=data, method='POST')
-req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
-req.add_header('Content-Type', 'application/json')
-req.add_header('Maton-Connection', '{connection_id}')
-print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-EOF
-```
-
-If you have multiple connections, always specify the connection to ensure requests go to the intended account.
+> 详细内容已移至 `references/detail.md`
 
 ## Security & Permissions
-
 * Access is scoped to issues, projects, teams, cycles, and comments within the connected Linear account.
 * **All write operations require explicit user approval.** Before executing any create, update, or delete call, confirm the target resource and intended effect with the user.
 
 ## API Reference
-
 Linear uses a GraphQL API. All operations are sent as POST requests with a JSON body containing the `query` field.
 
 ### Viewer (Current User)
-
 ```bash
 POST /linear/graphql
 Content-Type: application/json
@@ -276,7 +83,6 @@ maton linear whoami
 ```
 
 ### Organization
-
 ```bash
 POST /linear/graphql
 Content-Type: application/json
@@ -291,150 +97,10 @@ maton linear org view
 ```
 
 ### Teams
-
-#### List Teams
-
-```bash
-POST /linear/graphql
-Content-Type: application/json
-
-{"query": "{ teams { nodes { id name key } } }"}
-```
-
-Example:
-
-```bash
-maton linear team list
-```
-
-#### Get Team
-
-```bash
-POST /linear/graphql
-Content-Type: application/json
-
-{"query": "{ team(id: \"ABC\") { id name key issues { nodes { id identifier title } } } }"}
-```
-
-Example:
-
-```bash
-maton linear team view ABC
-```
-
-### Issues
-
-#### List Issues
-
-```bash
-POST /linear/graphql
-Content-Type: application/json
-
-{"query": "{ issues(first: 10, filter: { team: { key: { eq: \"ABC\" } } }) { nodes { id identifier title state { name } priority createdAt } pageInfo { hasNextPage endCursor } } }"}
-```
-
-Example:
-
-```bash
-maton linear issue list -c ABC -L 10
-```
-
-#### Get Issue by ID or Identifier
-
-```bash
-POST /linear/graphql
-Content-Type: application/json
-
-{"query": "{ issue(id: \"ABC-123\") { id identifier title description state { name } priority assignee { name } team { key name } createdAt updatedAt } }"}
-```
-
-Example:
-
-```bash
-maton linear issue view ABC-123
-```
-
-#### Filter Issues
-
-Filter by state type:
-
-```bash
-POST /linear/graphql
-Content-Type: application/json
-
-{"query": "{ issues(first: 10, filter: { state: { type: { eq: \"started\" } } }) { nodes { id identifier title state { name type } } } }"}
-```
-
-Example:
-
-```bash
-maton linear issue list --state started -L 10
-```
-
-Filter by title:
-
-```bash
-POST /linear/graphql
-Content-Type: application/json
-
-{"query": "{ issues(first: 10, filter: { title: { containsIgnoreCase: \"bug\" } }) { nodes { id identifier title } } }"}
-```
-
-Example:
-
-```bash
-maton linear issue list --title bug -L 10
-```
-
-#### Search Issues
-
-```bash
-POST /linear/graphql
-Content-Type: application/json
-
-{"query": "{ searchIssues(first: 10, term: \"shopify\") { nodes { id identifier title } } }"}
-```
-
-Example:
-
-```bash
-maton linear issue search shopify -L 10
-```
-
-#### Create Issue
-
-```bash
-POST /linear/graphql
-Content-Type: application/json
-
-{"query": "mutation { issueCreate(input: { teamId: \"TEAM_ID\", title: \"New issue title\" }) { success issue { id identifier title state { name } } } }"}
-```
-
-Example:
-
-```bash
-maton linear issue create --team-id TEAM_ID -t 'New issue title'
-```
-
-#### Update Issue
-
-```bash
-POST /linear/graphql
-Content-Type: application/json
-
-{"query": "mutation { issueUpdate(id: \"ABC-123\", input: { title: \"Updated title\", priority: 2 }) { success issue { id identifier title priority } } }"}
-```
-
-Example:
-
-```bash
-maton linear issue update ABC-123 -t 'Updated title' --priority 2
-```
+> 详细内容已移至 `references/detail.md`
 
 ### Projects
-
 #### List Projects
-
 ```bash
 POST /linear/graphql
 Content-Type: application/json
@@ -449,9 +115,7 @@ maton linear project list
 ```
 
 ### Cycles
-
 #### List Cycles
-
 ```bash
 POST /linear/graphql
 Content-Type: application/json
@@ -466,9 +130,7 @@ maton linear cycle list
 ```
 
 ### Labels
-
 #### List Labels
-
 ```bash
 POST /linear/graphql
 Content-Type: application/json
@@ -483,7 +145,6 @@ maton linear label list
 ```
 
 ### Workflow States
-
 ```bash
 POST /linear/graphql
 Content-Type: application/json
@@ -498,7 +159,6 @@ maton linear state list
 ```
 
 ### Users
-
 ```bash
 POST /linear/graphql
 Content-Type: application/json
@@ -513,39 +173,9 @@ maton linear user list
 ```
 
 ### Comments
-
-#### List Comments
-
-```bash
-POST /linear/graphql
-Content-Type: application/json
-
-{"query": "{ issue(id: \"ABC-123\") { comments(first: 10) { nodes { id body createdAt user { name } } } } }"}
-```
-
-Example:
-
-```bash
-maton linear comment list --issue ABC-123 -L 10
-```
-
-#### Create Comment
-
-```bash
-POST /linear/graphql
-Content-Type: application/json
-
-{"query": "mutation { commentCreate(input: { issueId: \"ABC-123\", body: \"Looking into this\" }) { success comment { id body } } }"}
-```
-
-Example:
-
-```bash
-maton linear comment create --issue ABC-123 -b 'Looking into this'
-```
+> 详细内容已移至 `references/detail.md`
 
 ## Pagination
-
 Linear uses Relay-style cursor-based pagination. The CLI automatically paginates with '--paginate'.
 
 Example:
@@ -554,10 +184,8 @@ Example:
 maton linear issue list -c ABC --paginate
 ```
 
-## Code Examples
-
+## 示例
 ### CLI
-
 ```bash
 maton linear issue list -c ABC -L 10
 
@@ -569,7 +197,6 @@ maton linear comment create --issue ABC-123 -b 'Looking into this'
 ```
 
 ### JavaScript
-
 ```javascript
 const response = await fetch('https://api.maton.ai/linear/graphql', {
   method: 'POST',
@@ -586,25 +213,7 @@ const data = await response.json();
 
 ### Python
 
-```python
-import os
-import requests
-
-response = requests.post(
-    'https://api.maton.ai/linear/graphql',
-    headers={
-        'Authorization': f'Bearer {os.environ["MATON_API_KEY"]}',
-        'Content-Type': 'application/json'
-    },
-    json={
-        'query': '{ issues(first: 10) { nodes { id identifier title state { name } } } }'
-    }
-)
-data = response.json()
-```
-
 ## Notes
-
 * Linear uses GraphQL exclusively (no REST API)
 * Issue identifiers like `ABC-123` can be used in place of UUIDs for the `id` parameter
 * Priority values: 0 = No priority, 1 = Urgent, 2 = High, 3 = Medium, 4 = Low
@@ -614,34 +223,9 @@ data = response.json()
 * Some mutations (delete, create labels/projects) may require additional OAuth scopes. If you receive a scope error, contact Maton support at [support@maton.ai](mailto:support@maton.ai) with the specific operations/APIs you need and your use-case
 
 ## Error Handling
+> 详细内容已移至 `references/detail.md`
 
-| Status | Meaning |
-| --- | --- |
-| 400 | Missing Linear connection or GraphQL validation error |
-| 401 | Invalid or missing Maton API key |
-| 403 | Insufficient OAuth scope for the operation |
-| 429 | Rate limited |
-| 4xx/5xx | Passthrough error from Linear API |
-
-GraphQL errors are returned in the `errors` array:
-
-```json
-{
-  "errors": [
-    {
-      "message": "Invalid scope: `write` required",
-      "extensions": {
-        "type": "forbidden",
-        "code": "FORBIDDEN",
-        "statusCode": 403
-      }
-    }
-  ]
-}
-```
-
-### Troubleshooting: API Key Issues
-
+### 错误处理
 **CLI:**
 
 1. Check your auth state:
@@ -676,14 +260,12 @@ EOF
 ```
 
 ### Troubleshooting: Invalid App Name
-
 1. Ensure your URL path starts with `linear`. For example:
 
 * Correct: `https://api.maton.ai/linear/graphql`
 * Incorrect: `https://api.maton.ai/graphql`
 
 ## Resources
-
 * [Linear API Overview](https://linear.app/developers)
 * [Linear GraphQL Getting Started](https://linear.app/developers/graphql)
 * [Linear GraphQL Schema (Apollo Studio)](https://studio.apollographql.com/public/Linear-API/schema/reference?variant=current)
@@ -693,12 +275,11 @@ EOF
 * [Maton Support](mailto:support@maton.ai)
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -709,3 +290,28 @@ EOF
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+- This skill is a disclosed Linear integration that uses Maton authentication
+  to read and manage Li
+- 触发关键词: api, linear, disclosed, integration, skill
+
+## 适用场景
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 常见问题
+### Q1: 如何开始使用Linear？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Linear有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+- 需要API Key，无Key环境无法使用

@@ -4,25 +4,17 @@ name: excel-ninja-free
 version: "1.0.0"
 displayName: Excel忍者(免费版)
 summary: 一键完成Excel合并、拆分、筛选、去重、聚合、校验等高频操作，告别手工处理表格的繁琐。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  Excel忍者为AI Agent提供专业的Excel文件自动化处理能力。免费版开放8个核心脚本，覆盖合并、转换、筛选、拆分、去重、聚合、校验、列选择等高频场景，让Agent像Excel高手一样批量处理表格。
-
-  核心能力：多文件合并、CSV与Excel互转、按条件筛选行、按行数或列值拆分、按键列去重、按列分组聚合、必填校验、列选择与重命名。所有脚本通过命令行参数驱动，支持目录批量处理。
-
-  适用场景：周报汇总、数据清洗、报表拆分、跨系统数据对齐、批量格式转换、字段标准化、初步数据质检。
-
-  差异化：完全中文化的脚本说明与参数示例，针对中文办公场景重写使用流程，新增批量处理目录约定与错误汇总机制。免费版聚焦8个最高频脚本，专业版解锁全部16个脚本与高级特性。
-
-  触发关键词：Excel、xlsx、合并、拆分、筛选、去重、聚合、CSV、表格、批量处理
+  Excel忍者为AI Agent提供专业的Excel文件自动化处理能力。免费版开放8个核心脚本，覆盖合并、转换、筛选、拆分、去重、聚合、校验、列选择等高频场景，让Agent像Excel高手一样批量处理表格。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Excel自动化
 - 表格处理
 - 数据清洗
 - 批量操作
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -37,7 +29,7 @@ Excel是办公中最常见的数据载体，但手工处理大量表格既耗时
 ### 环境准备（<60秒）
 
 ```bash
-# 安装依赖
+# 依赖说明
 pip install openpyxl pandas xlrd
 
 # 或使用自带依赖文件
@@ -50,7 +42,7 @@ python scripts/merge_sheets.py --help
 ### 首次使用（<120秒）
 
 ```bash
-# 示例：将3个分公司的销售表合并为一张总表
+# 示例
 python scripts/merge_sheets.py --inputs 北京.xlsx 上海.xlsx 深圳.xlsx --output 全国汇总.xlsx
 
 # 示例：按地区列拆分成多个文件
@@ -346,7 +338,7 @@ with pd.ExcelWriter("output.xlsx", engine="openpyxl") as writer:
 
 ---
 
-## 免费版限制
+## 已知限制
 
 本免费体验版限制以下高级功能：
 
@@ -362,3 +354,11 @@ with pd.ExcelWriter("output.xlsx", engine="openpyxl") as writer:
 - 不含完整故障排查表（仅含基础FAQ）
 
 解锁全部16个脚本与高级特性请使用专业版：excel-ninja-pro
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

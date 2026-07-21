@@ -4,12 +4,10 @@ name: video-stream-upload-free
 version: "1.0.0"
 displayName: 视频上传-免费版
 summary: 轻量级视频上传工具，支持快速上传视频至流媒体平台并获取播放链接，适合个人创作者分发内容。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  视频上传免费版，为个人用户提供轻量化的视频上传与流媒体分发能力。
-
-  核心能力:
+  视频上传免费版，为个人用户提供轻量化的视频上传与流媒体分发能力。核心能力:
   - 默认快速上传（仅需标题）
   - 三步上传流程（创建 → 上传 → 完成）
   - HLS 流媒体链接获取
@@ -24,21 +22,16 @@ description: |-
 
   差异化:
   - 免费版聚焦默认上传流程，零配置快速出链接
-  - 三步上传流程清晰，开箱即用
-  - 支持基础 HLS 流媒体播放
-  - PRO 版本提供自定义编码、批量上传、多分辨率、缩略图等高级能力
-
-  触发关键词: 视频上传, 流媒体分发, HLS 链接, 视频托管, 快速上传, video upload, streaming
+  - 三步上传流程清晰...
 tags:
 - Creative
 - 视频上传
 - 流媒体
 - 免费版
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 视频上传工具 - 免费版
 
 ## 概述
@@ -166,6 +159,20 @@ curl -s -X GET "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/complete"
   -H 'stream-secret-key: SECRET_KEY'
 ```
 
+## 不适用场景
+
+以下场景视频上传-免费版不适合处理：
+
+- 版权受保护的媒体内容处理
+- 实时直播推流
+- 专业影视后期
+
+
+## 触发条件
+
+需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 第一步：获取 API Key
@@ -224,7 +231,7 @@ curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID' \
   -H 'stream-secret-key: SECRET_KEY'
 ```
 
-## 配置示例
+## 示例
 
 ### 上传参数说明
 
@@ -256,7 +263,7 @@ Step 3: GET /api/videos/VIDEO_ID/complete
    响应: 包含 HLS/DASH 流媒体链接
 ```
 
-### 错误码说明
+### 错误处理
 
 | 错误码 | 含义 | 处理建议 |
 |:-------|:-----|:---------|
@@ -382,7 +389,7 @@ done
 - **网络**：需要稳定网络连接（上传视频至流媒体平台）
 - **Shell**：Bash 或兼容 Shell（需要 curl、md5sum、stat 命令）
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
 |:-------|:-----|:---------|:---------|:---------|
@@ -443,3 +450,9 @@ curl -s 'https://api-w3stream.attoaioz.cyou/api/videos' \
 - **当前版本**：1.0.0
 - **版本类型**：FREE（免费版）
 - **升级路径**：如需自定义编码、多分辨率输出、缩略图、批量上传、视频管理等能力，请使用 `video-stream-upload-pro`
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

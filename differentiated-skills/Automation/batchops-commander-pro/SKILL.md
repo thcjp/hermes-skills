@@ -2,9 +2,9 @@
 slug: batchops-commander-pro
 name: batchops-commander-pro
 version: "1.0.0"
-displayName: 批处理指挥官(专业版)
+displayName: Batchops Commander
 summary: 企业级批处理编排系统，含并行决策、高级检查点恢复、回滚模式、子Agent委派与幂等性设计。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   批处理指挥官专业版是面向团队与企业的大规模批处理编排系统。不仅覆盖批处理全生命周期，更提供并行vs串行自动决策、高级检查点恢复、回滚模式、多策略错误处理、子Agent委派与幂等性设计，确保大规模批量处理高效、安全、可恢复。

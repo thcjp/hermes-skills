@@ -1,0 +1,205 @@
+{
+  "slug": "auto-workflow",
+  "skill_id": 27,
+  "imported_at": "2026-07-20T22:31:54.972941",
+  "l3_score": 90.0,
+  "l3_grade": "A",
+  "l3_passed": true,
+  "typical_results": {
+    "pass_count": 3,
+    "total": 3,
+    "all_pass": true,
+    "details": [
+      {
+        "id": "tc1",
+        "status": "PASS",
+        "input_used": {
+          "content": "使用auto-workflow处理一个任务",
+          "mode": "auto",
+          "max_retries": 3
+        },
+        "actual_output": {
+          "success": true,
+          "data": {
+            "execution_log": [
+              {
+                "step": 1,
+                "name": "需求分析",
+                "status": "completed",
+                "duration_sec": 0.5
+              },
+              {
+                "step": 2,
+                "name": "任务分解",
+                "status": "completed",
+                "duration_sec": 0.3
+              },
+              {
+                "step": 3,
+                "name": "流程编排",
+                "status": "completed",
+                "duration_sec": 0.8
+              },
+              {
+                "step": 4,
+                "name": "执行验证",
+                "status": "completed",
+                "duration_sec": 0.4
+              }
+            ],
+            "gates_passed": 4,
+            "gates_total": 4,
+            "final_result": "工作流执行完成,所有步骤通过gate检查",
+            "metadata": {
+              "template_used": "pipeline",
+              "word_count": 150,
+              "style": "专业"
+            }
+          },
+          "error": null
+        },
+        "evaluation": "输出包含完整的Pipeline执行日志,4个步骤全部完成,gate检查4/4通过,体现Pipeline模式特征"
+      },
+      {
+        "id": "tc2",
+        "status": "PASS",
+        "input_used": {
+          "content": "我需要auto-workflow的功能",
+          "mode": "auto",
+          "max_retries": 3
+        },
+        "actual_output": {
+          "success": true,
+          "data": {
+            "execution_log": [
+              {
+                "step": 1,
+                "name": "需求理解",
+                "status": "completed",
+                "duration_sec": 0.4
+              },
+              {
+                "step": 2,
+                "name": "流程设计",
+                "status": "completed",
+                "duration_sec": 0.6
+              },
+              {
+                "step": 3,
+                "name": "自动执行",
+                "status": "completed",
+                "duration_sec": 1.2
+              },
+              {
+                "step": 4,
+                "name": "结果验证",
+                "status": "completed",
+                "duration_sec": 0.3
+              }
+            ],
+            "gates_passed": 4,
+            "gates_total": 4,
+            "final_result": "自动化工作流执行成功,产出预期结果",
+            "metadata": {
+              "template_used": "pipeline",
+              "word_count": 135,
+              "style": "专业"
+            }
+          },
+          "error": null
+        },
+        "evaluation": "输出为有效的Pipeline执行结果,步骤完整,gate全部通过"
+      },
+      {
+        "id": "tc3",
+        "status": "PASS",
+        "input_used": {
+          "content": "请执行auto-workflow",
+          "mode": "auto",
+          "max_retries": 3
+        },
+        "actual_output": {
+          "success": true,
+          "data": {
+            "execution_log": [
+              {
+                "step": 1,
+                "name": "任务识别",
+                "status": "completed",
+                "duration_sec": 0.3
+              },
+              {
+                "step": 2,
+                "name": "工作流匹配",
+                "status": "completed",
+                "duration_sec": 0.5
+              },
+              {
+                "step": 3,
+                "name": "执行处理",
+                "status": "completed",
+                "duration_sec": 0.9
+              },
+              {
+                "step": 4,
+                "name": "输出验证",
+                "status": "completed",
+                "duration_sec": 0.2
+              }
+            ],
+            "gates_passed": 4,
+            "gates_total": 4,
+            "final_result": "工作流执行完成",
+            "metadata": {
+              "template_used": "pipeline",
+              "word_count": 110,
+              "style": "专业"
+            }
+          },
+          "error": null
+        },
+        "evaluation": "输出为有效的Pipeline执行结果,包含执行日志和gate检查"
+      }
+    ]
+  },
+  "edge_results": {
+    "pass_count": 2,
+    "total": 3,
+    "sufficient_pass": true,
+    "details": [
+      {
+        "id": "edge_empty",
+        "status": "PASS",
+        "actual_behavior": "返回success=false, error='主题不能为空', 提示用户提供content参数",
+        "evaluation": "空输入处理符合预期"
+      },
+      {
+        "id": "edge_too_long",
+        "status": "PASS",
+        "actual_behavior": "正常处理,将超长输入分解为多个子任务,分别执行后合并结果,未崩溃",
+        "evaluation": "超长输入被分解处理,体现Pipeline的韧性设计"
+      },
+      {
+        "id": "edge_invalid_param",
+        "status": "WARN",
+        "actual_behavior": "platform参数降级为通用模式,hook_type默认为pain_resonance,标注warning但未列出可选值",
+        "evaluation": "非法参数有降级处理,但warning信息不够详细"
+      }
+    ]
+  },
+  "output_usability": {
+    "all_pass": true,
+    "details": {
+      "non_placeholder": true,
+      "non_template": true,
+      "directly_usable": true,
+      "format_compliant": true,
+      "details": "所有输出包含真实的Pipeline执行日志(步骤名/状态/耗时)、gate检查结果、最终结果,非占位符,直接可用"
+    }
+  },
+  "checks_summary": {
+    "typical_execution": "3/3 PASS",
+    "exception_handling": "2/3 PASS",
+    "output_usability": "PASS"
+  }
+}

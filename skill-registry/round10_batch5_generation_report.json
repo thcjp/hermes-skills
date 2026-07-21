@@ -1,0 +1,2395 @@
+{
+  "batch_date": "2026-07-20T23:12:23.475907",
+  "total_candidates": 297,
+  "passed": 293,
+  "failed": 4,
+  "pass_rate": 98.7,
+  "total_duration_sec": 26.2,
+  "avg_duration_sec": 0.1,
+  "results": [
+    {
+      "slug": "dashboard-analytics-tool",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "jira-integration-skill",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "postgres-job-queue",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "sql",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "sqlite",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "sqlite-lite-manager",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "sqlite-manager",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "telegram",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "telegram-bot-builder",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "telegram-toolkit",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "text-to-sql",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "text2sql-engine",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "tg-bot-builder",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "trending-feed-skill",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "vector-control",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "vector-db-manager",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "vpn-rotate-skill",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "vpn-rotator",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "vue",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "vue-toolkit",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "web-crawler-engine",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "web-notepad",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "weiyun-skills",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "weiyun-toolkit",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "whatsapp-master",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "whatsapp-ultimate",
+      "category": "Integrations",
+      "l1_passed": false,
+      "l1_score": "4/10",
+      "template": "reviewer_template",
+      "errors": [
+        "L1检查未通过: 4/10"
+      ]
+    },
+    {
+      "slug": "write-my-blog",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "ws-excel",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "ws-excel-paid",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "xlsx-handler",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "xml-json-converter",
+      "category": "Integrations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "afrexai-knowledge-management",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "api-development",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "clawddocs",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "compress-pdf",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "context-driven-development",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "document-pdf",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "excel-formula",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "feishu-doc",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "feishu-doc-write",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "figma",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "generate-mindmap",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "generate-presentation",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "knowledge",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "knowledge-capture",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "learn",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "learn-cog",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "local-file-rag-basic",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "markdown-converter-compdf",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "merge-pdf",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "nano-pdf",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "pandoc-convert-openclaw",
+      "category": "Knowledge",
+      "l1_passed": false,
+      "l1_score": "9/10",
+      "template": "pipeline_template",
+      "errors": [
+        "L1检查未通过: 9/10"
+      ]
+    },
+    {
+      "slug": "paper-parse",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "pdf",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "pptx-pdf-font-fix",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "skill-creator",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "solo-audit",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "upstage-document-parse",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "word-docx",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "word-docx-1",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "word-docx-1-02",
+      "category": "Knowledge",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "apple-health-skill",
+      "category": "Lifestyle",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "assistant",
+      "category": "Lifestyle",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "build-game",
+      "category": "Lifestyle",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "free-weather-api",
+      "category": "Lifestyle",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "free-weather-skill",
+      "category": "Lifestyle",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "game",
+      "category": "Lifestyle",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "game-ai",
+      "category": "Lifestyle",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "game-developer-skill",
+      "category": "Lifestyle",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "game-theory",
+      "category": "Lifestyle",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "health",
+      "category": "Lifestyle",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "live-stream-script",
+      "category": "Lifestyle",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "music",
+      "category": "Lifestyle",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "personal-health-manager",
+      "category": "Lifestyle",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "ping-monitor",
+      "category": "Lifestyle",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "shop-culture",
+      "category": "Lifestyle",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "text-game-arcade-universe-v3",
+      "category": "Lifestyle",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "travel-assistant",
+      "category": "Lifestyle",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "weather",
+      "category": "Lifestyle",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "auto-monitor",
+      "category": "Operations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "aws",
+      "category": "Operations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "azure",
+      "category": "Operations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "docker",
+      "category": "Operations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "docker-ctl",
+      "category": "Operations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "docker-sandbox",
+      "category": "Operations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "k8s",
+      "category": "Operations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "kubernetes",
+      "category": "Operations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "kubernetes-devops",
+      "category": "Operations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "namecheap-dns",
+      "category": "Operations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "ocean-chat",
+      "category": "Operations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "qq-zone-photo",
+      "category": "Operations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "sovereign-aws-cost-optimizer",
+      "category": "Operations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "token-layer",
+      "category": "Operations",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "agent",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "agent-chat",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "agent-commercial-contract",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "agent-group",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "art",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "audit",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "baoyu-diagram",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "book-painter",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "cashu-emoji",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "chart-generator-2-0-0",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "chat",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "clawprint",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "cloud-storage",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "compress",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "control-ikea-lightbulb",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "css",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "ctxly-chat",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "dashboard",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "data",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "diagram",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "dns-lookup",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "doc",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "dogecoin-node",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "domain-dns-ops",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "expanso-log-sanitize",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "file",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "file-auto-organizer",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "file-organizer-zh",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "fonts",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "frontend-design",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "go-linter-configuration",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "go-to-market",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "google-fonts",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "html",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "humanizer",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "interview-simulator",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "java",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "jinn-node",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "juejin-skills",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "linear",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "mac-system-control",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "manage-liquidity",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "markdown",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "mcporter",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "miniprogram-development",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "molt-board-art",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "moltbook-filter",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "molted-work",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "monad-development",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "monitor",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "photo-webcam",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "plugin-architecture",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "powerpoint",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "py",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "python-dataviz",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "report",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "rust",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "safe-encryption-skill",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "screen-monitor",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "sequential-read",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "shadcn-ui",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "shopify-helper",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "smart-auto-updater",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "smart-cache",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "sonoscli",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "story-long-analyze",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "story-long-write",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "story-short-write",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "tardis",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "tarot",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "tarot-reader",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "text",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "token-manager",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "tool",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "tool-call-retry",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "trade-with-taro",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "translate",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "ui-audit",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "visual-file-sorter",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "volcengine-network-dns",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "web-content-fetcher",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "wenxiang-2d5-banner",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "word",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "write",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "write-a-skill",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "xml",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "xml-reader",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "yaml",
+      "category": "Other",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "azure-devops",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "blog-seo-writer",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "blog-writer",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "brainz-calendar",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "calendar",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "calendar-skill",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "clawhub-jira-pat-skill",
+      "category": "Productivity",
+      "l1_passed": false,
+      "l1_score": "8/10",
+      "template": "reviewer_template",
+      "errors": [
+        "L1检查未通过: 8/10"
+      ]
+    },
+    {
+      "slug": "communication-skill",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "daily-report-writer",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "diagram-tools",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "dingtalk-calendar",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "feishu-calendar",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "glitch-dashboard",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "image",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "jira",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "meeting-note",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "note",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "note-taker",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "notion",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "notion-pages",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "notion-skill",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "powerpoint-pptx",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "powerpoint-pptx-1-0-1",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "powerpoint-pptx-cn",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "proactive-agent",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "productivity-improving",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "python3",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "quant-data-quality",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "report-summary-builder",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "smart-weekly-report",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "task",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "task-planner",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "weekly-report-writer",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "work",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "writing-assistant",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "ws-calendar",
+      "category": "Productivity",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "agent-browser-clawdbot",
+      "category": "Research",
+      "l1_passed": false,
+      "l1_score": "9/10",
+      "template": "pipeline_template",
+      "errors": [
+        "L1检查未通过: 9/10"
+      ]
+    },
+    {
+      "slug": "agent-browser-cli",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "agent-browser-stagehand",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "agent-framework-azure-ai-py",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "agent-knowledge",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "ai-news",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "archive",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "bailian-web-search",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "brave-search",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "browser-automation",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "browser-automation-v2",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "bsession",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "cctv-news-fetcher",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "china-news",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "company-search-fengniao",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "daily-news-brief",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "feed-digest",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "feed-to-md",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "file-browser",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "free-google-search-with-browser",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "free-web-search",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "gif-whatsapp",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "gitcrawl",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "google-search",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "hot-news-aggregator",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "in-depth-research",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "internet-search",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "jellyfin-control",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "job-auto-apply",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "market-news",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "multi-search-engine-simple",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "multi-source-research",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "news",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "news-aggregator",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "news-feed",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "parallel-ai-research",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "read-github",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "research-agent",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "rss-aggregator",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "rss-digest",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "rss-feed-digest",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "rss-fetcher",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "rss-reader",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "scrape-web",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "search-2",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "searching-assistant",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "tool_wrapper_template",
+      "errors": []
+    },
+    {
+      "slug": "social-sentiment",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "solo-research",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "solo-validate",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "stagehand-browser-cli",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "the-news",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "thesis-helper",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "tool-finder",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "use-my-browser",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "verify-claims",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "web-browsing",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "web-learner",
+      "category": "Research",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "aegis-security",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "afrexai-cybersecurity-engine",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "agent-bom-vulnerability-intel",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "agentic-security-audit",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "amap-jsapi-skill",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "cdn",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "firewall",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "go-security-vulnerability",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "mac-node-snapshot",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "moltblock",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "moltbook-firewall",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "generator_template",
+      "errors": []
+    },
+    {
+      "slug": "multi-search-engine",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "password-generator",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "pentest-commands",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "security",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "security-audit",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "security-auditor",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "security-scanner",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "skill-vetter",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "pipeline_template",
+      "errors": []
+    },
+    {
+      "slug": "straker-verify",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "vpn",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "vulnerability-scanner",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    },
+    {
+      "slug": "web-vulnerability-assessment",
+      "category": "Security",
+      "l1_passed": true,
+      "l1_score": "10/10",
+      "template": "reviewer_template",
+      "errors": []
+    }
+  ]
+}

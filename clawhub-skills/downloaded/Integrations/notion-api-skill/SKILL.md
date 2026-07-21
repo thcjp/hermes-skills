@@ -7,68 +7,22 @@ summary: Notion API integration with managed OAuth. Query databases, search page
   and read workspace cont...
 license: MIT-0
 description: |-
-  Notion API integration with managed OAuth. Query databases, search pages,
-  and read workspace cont...
-
-  核心能力:
-
-  - 集成工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 第三方API集成、平台对接、数据同步
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: api, notion, managed, integration, oauth, skill
+  Notion API integration with managed OAuth。Query databases, search pages,
+  and read workspace cont。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Integrations
 - Productivity
 tools:
-- read
+  - - read
 - exec
----
-
 # Notion
-
+---
 Access the Notion API with managed OAuth authentication. Query databases, search pages, and read workspace content. All write operations (creating, updating, or deleting pages, blocks, and databases) require explicit user confirmation specifying the target resource and connection before execution.
 
 ## Quick Start
-
-**CLI:**
-
-```bash
-maton notion search 'meeting notes'
-```
-
-```bash
-maton api '/notion/v1/search'
-```
-
-**Python:**
-
-```bash
-python <<'EOF'
-import urllib.request, os, json
-data = json.dumps({'query': 'meeting notes'}).encode()
-req = urllib.request.Request('https://api.maton.ai/notion/v1/search', data=data, method='POST')
-req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
-req.add_header('Content-Type', 'application/json')
-req.add_header('Notion-Version', '2025-09-03')
-print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-EOF
-```
+> 详细内容已移至 `references/detail.md`
 
 ## Base URL
-
 ```text
 https://api.maton.ai/notion/{native-api-path}
 ```
@@ -76,7 +30,6 @@ https://api.maton.ai/notion/{native-api-path}
 Maton proxies requests to `api.notion.com` and automatically injects your OAuth token. Write operations (POST, PATCH, DELETE) must only be executed after the user confirms the target page/database ID and intended connection.
 
 ## Required Headers
-
 All Notion API requests require the version header:
 
 ```text
@@ -84,7 +37,6 @@ Notion-Version: 2025-09-03
 ```
 
 ## Installation
-
 **NPM:**
 
 ```bash
@@ -98,197 +50,30 @@ brew install maton-ai/cli/maton
 ```
 
 ## Authentication
-
-**CLI:**
-
-```bash
-maton login                          # Opens browser for API key
-maton login --interactive            # Skip browser, paste API key directly
-maton whoami                         # Show current auth state
-```
-
-**Manual:**
-
-1. Sign in or create an account at [maton.ai](https://maton.ai)
-2. Go to [maton.ai/settings](https://maton.ai/settings)
-3. Copy your API key
-4. Set your API key as `MATON_API_KEY`:
-
-```bash
-export MATON_API_KEY="[REDACTED]"
-```
+> 详细内容已移至 `references/detail.md`
 
 ## Connection Management
-
 Manage your Notion OAuth connections at `https://api.maton.ai`.
 
 ### List Connections
-
-**CLI:**
-
-```bash
-maton connection list notion --status ACTIVE
-```
-
-```bash
-maton api -X GET /connections -f app=notion -f status=ACTIVE
-```
-
-**Python:**
-
-```bash
-python <<'EOF'
-import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/connections?app=notion&status=ACTIVE')
-req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
-print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-EOF
-```
+> 详细内容已移至 `references/detail.md`
 
 ### Create Connection
-
-**CLI:**
-
-```bash
-maton connection create notion
-```
-
-```bash
-maton api /connections -f app=notion
-```
-
-**Python:**
-
-```bash
-python <<'EOF'
-import urllib.request, os, json
-data = json.dumps({'app': 'notion'}).encode()
-req = urllib.request.Request('https://api.maton.ai/connections', data=data, method='POST')
-req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
-req.add_header('Content-Type', 'application/json')
-print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-EOF
-```
+> 详细内容已移至 `references/detail.md`
 
 ### Get Connection
-
-**CLI:**
-
-```bash
-maton connection view {connection_id}
-```
-
-```bash
-maton api /connections/{connection_id}
-```
-
-**Python:**
-
-```bash
-python <<'EOF'
-import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/connections/{connection_id}')
-req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
-print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-EOF
-```
-
-**Response:**
-
-```json
-{
-  "connection": {
-    "connection_id": "{connection_id}",
-    "status": "ACTIVE",
-    "creation_time": "2025-12-08T07:20:53.488460Z",
-    "last_updated_time": "2026-01-31T20:03:32.593153Z",
-    "url": "https://connect.maton.ai/?session_token=...",
-    "app": "notion",
-    "method": "OAUTH2",
-    "metadata": {}
-  }
-}
-```
-
-Open the returned `url` in a browser to complete OAuth authorization.
+> 详细内容已移至 `references/detail.md`
 
 ### Delete Connection
-
-**CLI:**
-
-```bash
-maton connection delete {connection_id}
-```
-
-```bash
-maton api -X DELETE /connections/{connection_id}
-```
-
-**Python:**
-
-```bash
-python <<'EOF'
-import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/connections/{connection_id}', method='DELETE')
-req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
-print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-EOF
-```
+> 详细内容已移至 `references/detail.md`
 
 ### Specifying Connection
-
-If you have multiple Notion connections, specify which one to use:
-
-**CLI:**
-
-```bash
-maton notion search 'meeting notes' --connection {connection_id}
-```
-
-```bash
-maton api /notion/v1/search --connection {connection_id}
-```
-
-**Python:**
-
-```bash
-python <<'EOF'
-import urllib.request, os, json
-data = json.dumps({'query': 'meeting notes'}).encode()
-req = urllib.request.Request('https://api.maton.ai/notion/v1/search', data=data, method='POST')
-req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
-req.add_header('Content-Type', 'application/json')
-req.add_header('Notion-Version', '2025-09-03')
-req.add_header('Maton-Connection', '{connection_id}')
-print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-EOF
-```
-
-If you have multiple connections, always specify the connection to ensure requests go to the intended account.
+> 详细内容已移至 `references/detail.md`
 
 ## Key Concept: Databases vs Data Sources
-
-In API version 2025-09-03, databases and data sources are separate:
-
-| Concept | Use For |
-| --- | --- |
-| **Database** | Creating databases, getting data source IDs |
-| **Data Source** | Querying, updating schema, updating properties |
-
-Use `GET /databases/{id}` to get the `data_sources` array, then use `/data_sources/` endpoints:
-
-```json
-{
-  "object": "database",
-  "id": "abc123",
-  "data_sources": [
-    {"id": "def456", "name": "My Database"}
-  ]
-}
-```
+> 详细内容已移至 `references/detail.md`
 
 ## Security & Permissions
-
 * Access is scoped to pages, databases, blocks, users, and search within the connected Notion account.
 * **All write operations require explicit user approval.** Before executing any create, update, or delete call:
   1. Confirm the exact target (page ID, database ID, block ID) with the user.
@@ -306,354 +91,15 @@ Use `GET /databases/{id}` to get the `data_sources` array, then use `/data_sourc
 ## API Reference
 
 ### Search
-
-Search for pages:
-
-```bash
-POST /notion/v1/search
-Content-Type: application/json
-Notion-Version: 2025-09-03
-
-{
-  "query": "meeting notes",
-  "filter": {"property": "object", "value": "page"}
-}
-```
-
-Example:
-
-```bash
-maton notion search 'meeting notes' --filter page
-```
-
-Search for data sources:
-
-```bash
-POST /notion/v1/search
-Content-Type: application/json
-Notion-Version: 2025-09-03
-
-{
-  "filter": {"property": "object", "value": "data_source"}
-}
-```
-
-Example:
-
-```bash
-maton notion search --filter data_source
-```
-
-### Data Sources
-
-#### Get Data Source
-
-```bash
-GET /notion/v1/data_sources/{dataSourceId}
-Notion-Version: 2025-09-03
-```
-
-Example:
-
-```bash
-maton notion data-source view <dataSourceId>
-```
-
-#### Query Data Source
-
-```bash
-POST /notion/v1/data_sources/{dataSourceId}/query
-Content-Type: application/json
-Notion-Version: 2025-09-03
-
-{
-  "filter": {
-    "property": "Status",
-    "select": {"equals": "Active"}
-  },
-  "sorts": [
-    {"property": "Created", "direction": "descending"}
-  ],
-  "page_size": 100
-}
-```
-
-Example:
-
-```bash
-maton notion data-source query <dataSourceId> \
-  --filter '{"property":"Status","select":{"equals":"Active"}}' \
-  --sorts '[{"property":"Created","direction":"descending"}]' \
-  --page-size 100
-```
-
-#### Update Data Source
-
-```bash
-PATCH /notion/v1/data_sources/{dataSourceId}
-Content-Type: application/json
-Notion-Version: 2025-09-03
-
-{
-  "title": [{"type": "text", "text": {"content": "Updated Title"}}],
-  "properties": {
-    "NewColumn": {"rich_text": {}}
-  }
-}
-```
-
-Example:
-
-```bash
-maton notion data-source update <dataSourceId> \
-  --body '{"title":[{"type":"text","text":{"content":"Updated Title"}}],"properties":{"NewColumn":{"rich_text":{}}}}'
-```
+> 详细内容已移至 `references/detail.md`
 
 ### Databases
-
-#### Get Database
-
-```bash
-GET /notion/v1/databases/{databaseId}
-Notion-Version: 2025-09-03
-```
-
-Example:
-
-```bash
-maton notion database view <databaseId>
-```
-
-#### Create Database
-
-```bash
-POST /notion/v1/databases
-Content-Type: application/json
-Notion-Version: 2025-09-03
-
-{
-  "parent": {"type": "page_id", "page_id": "PARENT_PAGE_ID"},
-  "title": [{"type": "text", "text": {"content": "New Database"}}],
-  "properties": {
-    "Name": {"title": {}}
-  }
-}
-```
-
-Example:
-
-```bash
-maton notion database create --parent-page PARENT_PAGE_ID --title 'New Database'
-```
-
-In API version 2025-09-03, `POST /databases` only accepts the title property — any other entries in `properties` are silently dropped. To define a schema, follow up with `PATCH /data_sources/{dataSourceId}` (see [Update Data Source](#update-data-source)) using the `data_sources[0].id` returned by the create call.
-
-### Pages
-
-#### Get Page
-
-```bash
-GET /notion/v1/pages/{pageId}
-Notion-Version: 2025-09-03
-```
-
-Example:
-
-```bash
-maton notion page view <pageId>
-```
-
-#### Create Page
-
-```bash
-POST /notion/v1/pages
-Content-Type: application/json
-Notion-Version: 2025-09-03
-
-{
-  "parent": {"page_id": "PARENT_PAGE_ID"},
-  "properties": {
-    "title": {"title": [{"text": {"content": "New Page"}}]}
-  }
-}
-```
-
-Example:
-
-```bash
-maton notion page create --parent-page PARENT_PAGE_ID --title 'New Page'
-```
-
-#### Create Page in Data Source
-
-```bash
-POST /notion/v1/pages
-Content-Type: application/json
-Notion-Version: 2025-09-03
-
-{
-  "parent": {"data_source_id": "DATA_SOURCE_ID"},
-  "properties": {
-    "Name": {"title": [{"text": {"content": "New Page"}}]},
-    "Status": {"select": {"name": "Active"}}
-  }
-}
-```
-
-Example:
-
-```bash
-maton notion page create --data-source DATA_SOURCE_ID --title 'New Page' \
-  --properties '{"Status":{"select":{"name":"Active"}}}'
-```
-
-#### Update Page Properties
-
-```bash
-PATCH /notion/v1/pages/{pageId}
-Content-Type: application/json
-Notion-Version: 2025-09-03
-
-{
-  "properties": {
-    "Status": {"select": {"name": "Done"}}
-  }
-}
-```
-
-Example:
-
-```bash
-maton notion page update {pageId} --properties '{"Status":{"select":{"name":"Done"}}}'
-```
-
-#### Update Page Icon
-
-```bash
-PATCH /notion/v1/pages/{pageId}
-Content-Type: application/json
-Notion-Version: 2025-09-03
-
-{
-  "icon": {"type": "emoji", "emoji": "🚀"}
-}
-```
-
-Example:
-
-```bash
-maton notion page update {pageId} --icon 🚀
-```
-
-Or with an image URL:
-
-```bash
-maton notion page update {pageId} --icon https://example.com/icon.png
-```
-
-#### Archive Page
-
-```bash
-PATCH /notion/v1/pages/{pageId}
-Content-Type: application/json
-Notion-Version: 2025-09-03
-
-{
-  "archived": true
-}
-```
-
-Example:
-
-```bash
-maton notion page archive {pageId}
-```
-
-### Blocks
-
-#### Get Block Children
-
-```bash
-GET /notion/v1/blocks/{blockId}/children
-Notion-Version: 2025-09-03
-```
-
-Example:
-
-```bash
-maton notion block children <blockId>
-```
-
-#### Append Block Children
-
-```bash
-PATCH /notion/v1/blocks/{blockId}/children
-Content-Type: application/json
-Notion-Version: 2025-09-03
-
-{
-  "children": [
-    {
-      "object": "block",
-      "type": "paragraph",
-      "paragraph": {
-        "rich_text": [{"type": "text", "text": {"content": "New paragraph"}}]
-      }
-    }
-  ]
-}
-```
-
-Example:
-
-```bash
-maton notion block append <blockId> \
-  --children '[{"object":"block","type":"paragraph","paragraph":{"rich_text":[{"type":"text","text":{"content":"New paragraph"}}]}}]'
-```
-
-#### Delete Block
-
-```bash
-DELETE /notion/v1/blocks/{blockId}
-Notion-Version: 2025-09-03
-```
-
-Example:
-
-```bash
-maton notion block delete <blockId>
-```
+> 详细内容已移至 `references/detail.md`
 
 ### Users
-
-#### List Users
-
-```bash
-GET /notion/v1/users
-Notion-Version: 2025-09-03
-```
-
-Example:
-
-```bash
-maton notion user list
-```
-
-#### Get Current User
-
-```bash
-GET /notion/v1/users/me
-Notion-Version: 2025-09-03
-```
-
-Example:
-
-```bash
-maton notion whoami
-```
+> 详细内容已移至 `references/detail.md`
 
 ## Filter Operators
-
 * `equals`, `does_not_equal`
 * `contains`, `does_not_contain`
 * `starts_with`, `ends_with`
@@ -661,13 +107,11 @@ maton notion whoami
 * `greater_than`, `less_than`
 
 ## Block Types
-
 * `paragraph`, `heading_1`, `heading_2`, `heading_3`
 * `bulleted_list_item`, `numbered_list_item`
 * `to_do`, `code`, `quote`, `divider`
 
 ## Pagination
-
 Notion uses cursor-based pagination. The CLI automatically paginates with '--paginate'.
 
 Example:
@@ -676,10 +120,8 @@ Example:
 maton notion data-source query <dataSourceId> --paginate
 ```
 
-## Code Examples
-
+## 示例
 ### CLI
-
 ```bash
 maton notion search 'roadmap'
 
@@ -691,7 +133,6 @@ maton notion search 'roadmap' --json --jq '.results | map(select(.object == "pag
 ```
 
 ### JavaScript
-
 ```javascript
 const response = await fetch('https://api.maton.ai/notion/v1/search', {
   method: 'POST',
@@ -705,7 +146,6 @@ const response = await fetch('https://api.maton.ai/notion/v1/search', {
 ```
 
 ### Python
-
 ```python
 import os
 import requests
@@ -721,7 +161,6 @@ response = requests.post(
 ```
 
 ## Notes
-
 * All IDs are UUIDs (with or without hyphens)
 * Use `GET /databases/{id}` to get the `data_sources` array containing data source IDs
 * Creating databases requires `POST /databases` endpoint
@@ -730,7 +169,6 @@ response = requests.post(
 * IMPORTANT: When piping curl output to `jq` or other commands, environment variables like `$MATON_API_KEY` may not expand correctly in some shell environments. You may get "Invalid API key" errors when piping.
 
 ## Error Handling
-
 | Status | Meaning |
 | --- | --- |
 | 400 | Missing Notion connection |
@@ -738,8 +176,7 @@ response = requests.post(
 | 429 | Rate limited (10 req/sec per account) |
 | 4xx/5xx | Passthrough error from Notion API |
 
-### Troubleshooting: API Key Issues
-
+### 错误处理
 **CLI:**
 
 1. Check your auth state:
@@ -774,14 +211,12 @@ EOF
 ```
 
 ### Troubleshooting: Invalid App Name
-
 1. Ensure your URL path starts with `notion`. For example:
 
 * Correct: `https://api.maton.ai/notion/v1/search`
 * Incorrect: `https://api.maton.ai/v1/search`
 
 ## Resources
-
 * [Notion API Introduction](https://developers.notion.com/reference/intro)
 * [Search](https://developers.notion.com/reference/post-search.md)
 * [Query Database](https://developers.notion.com/reference/post-database-query.md)
@@ -796,12 +231,11 @@ EOF
 * [Maton Support](mailto:support@maton.ai)
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -812,3 +246,29 @@ EOF
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+- Notion API integration with managed OAuth
+- Query databases, search pages,
+  and read workspace cont
+- 触发关键词: api, notion, managed, integration, oauth, skill
+
+## 适用场景
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 常见问题
+### Q1: 如何开始使用Notion？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Notion有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+- 需要API Key，无Key环境无法使用

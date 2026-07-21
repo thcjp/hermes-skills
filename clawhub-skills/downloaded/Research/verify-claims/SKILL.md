@@ -8,50 +8,24 @@ summary: This fact-checking skill is mostly coherent, but it can automatically c
 license: MIT
 description: |-
   This fact-checking skill is mostly coherent, but it can automatically
-  create delayed follow-up ch...
-
-  核心能力:
-
-  - 研究工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 数据研究、文献分析、信息收集
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: checking, claims, skill, verify, mostly, fact
+  create delayed follow-up ch。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
 - Research
 tools:
-- read
+  - - read
 - exec
----
-
 # Verify Claims
-
+---
 Verify claims and information using professional fact-checking services from around the world.
 
 ## Core Principles
-
 1. **Multiple sources** - Cross-reference findings from several fact-checking organizations
 2. **Regional relevance** - Prioritize fact-checkers appropriate to the content's context
 3. **Language matching** - Use fact-checkers in the native language of the content when possible
 4. **Credible sources only** - Never use fraudulent or unreliable fact-checking services
 5. **Balanced presentation** - Present both confirming and contradicting findings fairly
 
----
-
 ## When to Use This Skill
-
 Trigger this skill when the user:
 
 * Explicitly asks to fact-check, verify, or validate information
@@ -68,12 +42,8 @@ Do NOT trigger for:
 * Verifying code functionality or technical documentation
 * Questions about opinions rather than factual claims
 
----
-
 ## Workflow
-
 ### Step 1: Understand the Content
-
 Before beginning verification, analyze what needs to be checked:
 
 1. **Identify specific claims** - Extract concrete, verifiable statements from the content
@@ -95,7 +65,6 @@ Before beginning verification, analyze what needs to be checked:
 * Key entities: Andrew Wakefield, MMR vaccine, UK medical establishment
 
 ### Step 2: Select Fact-Checking Services
-
 **CRITICAL**: Begin by fetching the current list of fact-checking services:
 
 ```text
@@ -105,7 +74,6 @@ Fetch: https://en.wikipedia.org/wiki/List_of_fact-checking_websites
 From this list, select 3-7 relevant fact-checking services based on:
 
 #### Selection Criteria
-
 1. **User's language/location** - Always include fact-checkers in the user's native language
 2. **Content language/location** - If different from user's language, also include fact-checkers in the content's language and region
 3. **Geographic relevance** - If content mentions specific countries/regions:
@@ -123,11 +91,9 @@ From this list, select 3-7 relevant fact-checking services based on:
    * Example: Claims about a US politician → include US fact-checkers
 
 #### Exclusion Rule
-
 **NEVER use services listed under "Fraudulent fact-checking websites"** on the Wikipedia page, regardless of how well they match other criteria.
 
 #### Prioritization
-
 When you must limit selections:
 
 * Prioritize: User's language > Content's language > Geographic relevance
@@ -146,11 +112,9 @@ When you must limit selections:
   5. Full Fact (UK, English-speaking, general)
 
 ### Step 3: Search Each Fact-Checking Service
-
 For each selected service, conduct targeted searches:
 
 #### Search Strategy
-
 1. **Extract 2-4 search terms** from the content:
 
    * Key person names
@@ -174,7 +138,6 @@ For each selected service, conduct targeted searches:
 4. **Execute 1-3 searches per fact-checker** (depending on content complexity)
 
 #### Search Best Practices
-
 * Keep queries concise (2-4 words typically)
 * Start broad, then narrow if needed
 * Don't repeat very similar queries
@@ -182,7 +145,6 @@ For each selected service, conduct targeted searches:
 * If first search yields poor results, try alternative terms
 
 ### Step 4: Analyze Search Results
-
 For each fact-checking service:
 
 1. **Review search results** - Examine the first 5-10 results from each search
@@ -199,100 +161,9 @@ For each fact-checking service:
    * **Context** - Any important nuance or context
    * **Relevance** - How directly does this address the user's claim?
 
-### Step 5: Synthesize and Present Results
-
-Organize findings into a clear, user-friendly format:
-
-#### Handle Fresh Content First
-
-Before presenting results, check if the content is very recent (3 days old or less):
-
-1. **If fact-checks found**: Proceed normally with presentation
-2. **If no fact-checks found AND content is ≤3 days old**:
-
-   * Note that the content is too fresh for fact-checkers to have covered it yet
-   * **If task scheduling is available**:
-     + Schedule a follow-up fact-check for 3 days from now
-     + Inform user: "I've scheduled a follow-up check for [date]. I'll notify you if fact-checkers have published verification by then."
-   * **If task scheduling is NOT available**:
-     + Suggest: "This content is very recent (published [date]). Fact-checkers typically need a few days to verify claims. I recommend checking back in 3 days for updated verification."
-   * Offer preliminary analysis using general web search
-   * Proceed with any available information from general sources
-3. **If no fact-checks found AND content is older**:
-
-   * Note that fact-checkers haven't specifically covered this
-   * Offer general web research instead
-
-#### Structure Your Response
-
-1. **Opening summary** (2-3 sentences)
-
-   * Overall consensus from fact-checkers
-   * Brief answer to the user's question
-2. **Key findings by claim** (if multiple claims)
-
-   * Group related findings together
-   * Present contradicting evidence if it exists
-3. **Detailed evidence** (organized by fact-checker or by claim)
-
-   * Include specific verdicts
-   * Cite evidence fact-checkers used
-   * Note any disagreements between fact-checkers
-4. **Important context** (if relevant)
-
-   * Historical background
-   * Why the claim persists
-   * Common misconceptions
-5. **Source citations**
-
-   * Provide direct links to all fact-checking articles referenced
-   * Format: `[Fact-Checker Name]: Article Title (Date if available) - [URL]`
-
-#### Presentation Guidelines
-
-* **Be objective** - Present findings without inserting personal judgment
-* **Be nuanced** - Avoid oversimplifying complex issues
-* **Be clear about uncertainty** - If fact-checkers disagree or evidence is inconclusive, say so
-* **Be balanced** - If some evidence supports and some contradicts, present both
-* **Use accessible language** - Avoid jargon, explain technical terms
-* **Highlight consensus** - When multiple fact-checkers agree, emphasize this
-
-#### Formatting
-
-* Use clear headers to organize different claims or themes
-* Use natural prose, not bullet points, for the main findings
-* Only use lists for: multiple similar items, source citations, or when explicitly helpful
-* Include clickable citations throughout (not just at the end)
-
-#### Example Response Structure
-
-```text
-Based on verification from five established fact-checking organizations, the claim that vaccines cause autism has been thoroughly debunked. Multiple independent reviews of the evidence have found no causal link between vaccination and autism spectrum disorder.
-
-The origins of this claim trace back to a fraudulent 1998 study by Andrew Wakefield, which was later retracted by The Lancet. Fact-checkers consistently note that Wakefield lost his medical license, and subsequent large-scale studies involving millions of children have found no connection.
-
-[Full Fact reviewed the evidence in 2023](link), concluding "There is no link between the MMR vaccine and autism." Their analysis examined 12 major studies and found consistent results across different populations and methodologies.
-
-[FactCheck.org's comprehensive analysis](link) explains that "The myth persists despite overwhelming scientific consensus against it" and details how the original study was not only retracted but shown to involve falsified data.
-
-However, [Demagog.pl](link) notes that while the vaccine-autism link is false, concerns about vaccine safety in general are legitimate and should be addressed through proper scientific channels rather than dismissed.
-
-**Important context**: The persistence of this myth has real public health consequences, as fact-checkers note declining vaccination rates in some communities. Understanding why the claim was debunked helps address ongoing concerns.
-
-**Sources consulted:**
-- Full Fact: "MMR vaccine does not cause autism" - [link]
-- FactCheck.org: "Wakefield's Fraudulent Research" - [link]
-- Snopes: "Vaccines and Autism" - [link]
-- Demagog.pl: "Szczepionki i autyzm - mit czy prawda?" - [link]
-- Health Feedback: "Scientific consensus on vaccine safety" - [link]
-```
-
----
-
+> 详细内容已移至 `references/detail.md` - ### Step 5: Synthesize and Present Results
 ## Common Scenarios
-
 ### Scenario 1: Single Specific Claim
-
 **User request:** "Is it true that 5G causes COVID-19?"
 
 **Approach:**
@@ -304,7 +175,6 @@ However, [Demagog.pl](link) notes that while the vaccine-autism link is false, c
 * Present: Clear consensus with explanation of why the claim is false
 
 ### Scenario 2: Article with Multiple Claims
-
 **User request:** "Can you fact-check this article about climate change?"
 
 **Approach:**
@@ -315,7 +185,6 @@ However, [Demagog.pl](link) notes that while the vaccine-autism link is false, c
 * Present: Findings organized by claim, with overall assessment
 
 ### Scenario 3: Complex Political Claim
-
 **User request:** "Did [politician] really say/do [thing]?"
 
 **Approach:**
@@ -326,7 +195,6 @@ However, [Demagog.pl](link) notes that while the vaccine-autism link is false, c
 * Present: Direct answer with context, including if statement was taken out of context
 
 ### Scenario 4: Viral Social Media Content
-
 **User request:** "I saw this video on TikTok claiming [X], is it real?"
 
 **Approach:**
@@ -337,7 +205,6 @@ However, [Demagog.pl](link) notes that while the vaccine-autism link is false, c
 * Present: Whether it's been debunked, original context if misrepresented
 
 ### Scenario 5: Historical Claim
-
 **User request:** "Did [historical event] really happen this way?"
 
 **Approach:**
@@ -347,7 +214,6 @@ However, [Demagog.pl](link) notes that while the vaccine-autism link is false, c
 * Present: What fact-checkers say if available, acknowledge if claim is outside typical fact-checking scope
 
 ### Scenario 6: Very Fresh Content (Breaking News)
-
 **User request:** "I just saw this article published today claiming [X]. Is it true?"
 
 **Approach:**
@@ -377,12 +243,8 @@ Note: These are preliminary findings only. Professional fact-checkers may provid
 thorough verification in the coming days.
 ```
 
----
-
-## Edge Cases and Limitations
-
+## 已知限制
 ### When Fact-Checkers Haven't Covered the Topic
-
 If searches return no relevant results:
 
 1. Try broader search terms
@@ -398,7 +260,6 @@ If searches return no relevant results:
 7. Consider if the claim is too obscure or too local for major fact-checkers
 
 ### Contradicting Fact-Checkers
-
 If fact-checkers disagree:
 
 1. Present all perspectives fairly
@@ -408,7 +269,6 @@ If fact-checkers disagree:
 5. Don't force a conclusion if the evidence is genuinely mixed
 
 ### Outdated Information
-
 If fact-checks are old but the claim is current:
 
 1. Note the publication dates
@@ -417,7 +277,6 @@ If fact-checks are old but the claim is current:
 4. Acknowledge if using older sources due to lack of recent coverage
 
 ### Language Barriers
-
 If key fact-checkers are in languages you don't fully understand:
 
 1. Use web_fetch to retrieve the content
@@ -426,7 +285,6 @@ If key fact-checkers are in languages you don't fully understand:
 4. Acknowledge limitations if language creates uncertainty
 
 ### Bias Concerns
-
 Users may question fact-checker reliability:
 
 1. Stick to well-established, internationally recognized services
@@ -434,10 +292,7 @@ Users may question fact-checker reliability:
 3. Note if you're using fact-checkers from multiple countries/perspectives
 4. Acknowledge that no source is perfect, but these are professional verification services
 
----
-
 ## Quality Checklist
-
 Before presenting results, verify:
 
 * Checked at least 3 different fact-checking services
@@ -453,10 +308,7 @@ Before presenting results, verify:
 * **If content is ≤3 days old with no fact-checks**: Noted this and scheduled follow-up OR suggested user return in 3 days
 * **If providing preliminary analysis**: Clearly distinguished it from professional fact-checking
 
----
-
 ## Examples of Good Fact-Checking Services
-
 **International/English:**
 
 * FactCheck.org (US, general)
@@ -483,12 +335,8 @@ Before presenting results, verify:
 
 **Note:** This is not exhaustive. Always fetch the current list from Wikipedia to see all available services.
 
----
-
 ## Final Notes
-
 ### Task Scheduling for Fresh Content
-
 When content is very recent (≤3 days old) and hasn't been fact-checked yet:
 
 **If task scheduling tools are available:**
@@ -509,7 +357,6 @@ When content is very recent (≤3 days old) and hasn't been fact-checked yet:
 * Make it clear that preliminary findings are not from professional fact-checkers
 
 ### Core Approach
-
 This skill focuses on using professional fact-checking organizations rather than doing original research. These organizations employ journalists and researchers who specialize in verification. Your role is to:
 
 1. Find what they've already published
@@ -520,12 +367,11 @@ This skill focuses on using professional fact-checking organizations rather than
 If a topic hasn't been covered by fact-checkers, acknowledge this and offer to do general research instead. Don't try to replace professional fact-checking with web searches alone, but do provide preliminary information when users need it for fresh content.
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -536,3 +382,38 @@ If a topic hasn't been covered by fact-checkers, acknowledge this and offer to d
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+- This fact-checking skill is mostly coherent, but it can automatically
+  create delayed follow-up ch
+- 触发关键词: checking, claims, skill, verify, mostly, fact
+
+## 适用场景
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+### Q1: 如何开始使用Verify Claims？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Verify Claims有什么限制？
+A: 请参考已知限制章节了解具体限制。

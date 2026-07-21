@@ -4,13 +4,11 @@ name: browser-agent-tool-pro
 version: "1.0.0"
 displayName: 浏览器智能代理工具-专业版
 summary: 企业级无头浏览器自动化,支持批量调度、网络拦截、代理池与监控告警,面向团队生产场景
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   企业级无头浏览器自动化命令行工具,在免费版核心能力之上,提供网络拦截与Mock、
-  批量任务调度、代理池管理、监控告警、多租户隔离与团队协作能力。
-
-  核心能力:
+  批量任务调度、代理池管理、监控告警、多租户隔离与团队协作能力。核心能力:
   - 免费版全部能力(完全兼容)
   - 网络拦截、Mock 与请求重放
   - Cookies/Storage 精细化管理
@@ -24,19 +22,16 @@ description: |-
   - 多账号矩阵运营与批量操作
   - 团队协作与任务编排
 
-  差异化:专业版面向团队与企业,提供批量、并发、监控、代理等高阶能力,并保持与免费版完全兼容。
-
-  触发关键词: 浏览器自动化, 无头浏览器, 批量采集, 网络拦截, 代理池, 企业自动化, agent-browser
+  差异化:专业...
 tags:
 - 研究工具
 - 浏览器自动化
 - 企业级
 - 批量操作
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 浏览器智能代理工具(专业版)
 
 ## 概述
@@ -93,7 +88,7 @@ agent-browser storage local set key val
 
 ```bash
 #!/bin/bash
-# batch-checkin.sh - 批量签到编排示例
+# 示例
 ACCOUNTS=("user1" "user2" "user3" "user4" "user5")
 for account in "${ACCOUNTS[@]}"; do
   agent-browser --session "$account" open https://example.com/checkin &
@@ -245,9 +240,23 @@ with ThreadPoolExecutor(max_workers=3) as executor:
             print(f"[FAIL] {name} 失败: {e}")
 ```
 
+## 不适用场景
+
+以下场景浏览器智能代理工具-专业版不适合处理：
+
+- 需要人工创意判断的任务
+- 非结构化头脑风暴
+- 人际沟通协调
+
+
+## 触发条件
+
+需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
-### 1. 安装与初始化
+### 依赖说明
 
 ```bash
 npm install -g agent-browser
@@ -418,3 +427,17 @@ agent-browser --proxy-pool open https://example.com
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
 - **版本**: 专业版(兼容免费版全部能力)
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

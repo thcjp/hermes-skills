@@ -4,12 +4,10 @@ name: code-delegate-tool-free
 version: "1.0.0"
 displayName: 代码委派工具免费版
 summary: 将编程任务委派给本地代码CLI执行,支持异步流程与单任务调试迭代
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向个人开发者的代码委派工具,将编程任务委派给本地代码 CLI 执行,保持主 Agent 响应性。
-
-  核心能力:
+  面向个人开发者的代码委派工具,将编程任务委派给本地代码 CLI 执行,保持主 Agent 响应性。核心能力:
   - 异步委派编程任务,不阻塞主 Agent
   - 单任务执行与调试迭代
   - 会话上下文保持(continue 模式)
@@ -25,17 +23,16 @@ description: |-
   - 异步流程,主 Agent 始终响应用户
   - 独立测试会话验证代码质量
 
-  触发关键词: delegate, code, programming, task, async, debug, 委派, 编程, 任务, 异步, 调试
+  触发关键词: delegate, code...
 tags:
 - 开发工具
 - 代码委派
 - 异步执行
 - 编程辅助
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 代码委派工具免费版
 
 ## 概述
@@ -72,7 +69,7 @@ tools:
 步骤2: 委派测试代码     → 测试会话(全新,不带 --continue)
 ```
 
-### 4. 错误处理
+### 错误处理
 
 | 错误类型 | 处理方式 |
 |:---------|:---------|
@@ -129,6 +126,20 @@ cd "projects/my-project" && claude -p \
 注意: 使用全新会话,不带 continue
 ```
 
+## 不适用场景
+
+以下场景代码委派工具免费版不适合处理：
+
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 运维部署管理
+
+
+## 触发条件
+
+需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 第一步: 环境检查
@@ -136,7 +147,7 @@ cd "projects/my-project" && claude -p \
 委派前确认环境就绪:
 
 ```bash
-# 1. 检查代码 CLI 是否安装
+# 依赖说明
 which claude
 
 # 2. 检查认证状态
@@ -172,7 +183,7 @@ exec "process poll <session-id> --timeout 1000"
 使用全新会话
 ```
 
-## 配置示例
+## 示例
 
 ### 基础命令模板
 
@@ -296,3 +307,7 @@ claude --version
 - **分类**: MD+EXEC(Markdown 指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 委派编程任务到代码 CLI
 - **离线可用**: 否,代码 CLI 需要连接 LLM API
+
+## 已知限制
+
+- 本地运行，不支持多设备同步

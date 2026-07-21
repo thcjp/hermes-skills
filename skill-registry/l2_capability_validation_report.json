@@ -1,0 +1,553 @@
+{
+  "results": [
+    {
+      "slug": "aws-infra",
+      "capability_score": 47,
+      "capability_grade": "D",
+      "cap_pass": false,
+      "checks": {
+        "C1": {
+          "name": "描述完整性",
+          "score": 10,
+          "detail": "完整"
+        },
+        "C2": {
+          "name": "核心能力具体性",
+          "score": 7,
+          "detail": "核心能力仅0条(应≥3条)"
+        },
+        "C3": {
+          "name": "流程具体性",
+          "score": 3,
+          "detail": "无使用流程章节"
+        },
+        "C4": {
+          "name": "异常处理具体性",
+          "score": 0,
+          "detail": "异常处理为通用模板(9/9关键词匹配); 含通用边界处理; 含通用降级策略"
+        },
+        "C5": {
+          "name": "示例真实性",
+          "score": 0,
+          "detail": "含占位符: 示例输入; 含占位符: 处理结果; 含通用JSON示例(示例输入/处理结果); 所有代码块都是占位符"
+        },
+        "C6": {
+          "name": "FAQ相关性",
+          "score": 3,
+          "detail": "FAQ为通用模板(6/6模式匹配)"
+        },
+        "C7": {
+          "name": "领域关键词覆盖",
+          "score": 2,
+          "detail": "领域关键词覆盖率极低(22%, 2/9)"
+        },
+        "C8": {
+          "name": "内容独特性",
+          "score": 8,
+          "detail": "通用内容占比低(15%)"
+        },
+        "C9": {
+          "name": "章节深度",
+          "score": 6,
+          "detail": "核心能力章节过浅(1行); 已知限制章节过浅(2行)"
+        },
+        "C10": {
+          "name": "信息密度",
+          "score": 8,
+          "detail": "填充词较多(14个)"
+        }
+      },
+      "file_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\aws-infra\\SKILL.md",
+      "line_count": 142,
+      "version": "原始(clawhub下载)"
+    },
+    {
+      "slug": "aws-infra",
+      "capability_score": 100,
+      "capability_grade": "A",
+      "cap_pass": true,
+      "checks": {
+        "C1": {
+          "name": "描述完整性",
+          "score": 10,
+          "detail": "完整"
+        },
+        "C2": {
+          "name": "核心能力具体性",
+          "score": 10,
+          "detail": "具体"
+        },
+        "C3": {
+          "name": "流程具体性",
+          "score": 10,
+          "detail": "具体"
+        },
+        "C4": {
+          "name": "异常处理具体性",
+          "score": 10,
+          "detail": "具体"
+        },
+        "C5": {
+          "name": "示例真实性",
+          "score": 10,
+          "detail": "真实"
+        },
+        "C6": {
+          "name": "FAQ相关性",
+          "score": 10,
+          "detail": "相关"
+        },
+        "C7": {
+          "name": "领域关键词覆盖",
+          "score": 10,
+          "detail": "覆盖良好(86%)"
+        },
+        "C8": {
+          "name": "内容独特性",
+          "score": 10,
+          "detail": "独特性良好"
+        },
+        "C9": {
+          "name": "章节深度",
+          "score": 10,
+          "detail": "章节深度良好"
+        },
+        "C10": {
+          "name": "信息密度",
+          "score": 10,
+          "detail": "信息密度良好(50.0)"
+        }
+      },
+      "file_path": "D:\\skills\\packaged-skills\\skillhub\\aws-infra\\SKILL.md",
+      "line_count": 343,
+      "version": "LLM生成(付费版)"
+    },
+    {
+      "slug": "aws-infra-free",
+      "capability_score": 100,
+      "capability_grade": "A",
+      "cap_pass": true,
+      "checks": {
+        "C1": {
+          "name": "描述完整性",
+          "score": 10,
+          "detail": "完整"
+        },
+        "C2": {
+          "name": "核心能力具体性",
+          "score": 10,
+          "detail": "具体"
+        },
+        "C3": {
+          "name": "流程具体性",
+          "score": 10,
+          "detail": "具体"
+        },
+        "C4": {
+          "name": "异常处理具体性",
+          "score": 10,
+          "detail": "具体"
+        },
+        "C5": {
+          "name": "示例真实性",
+          "score": 10,
+          "detail": "真实"
+        },
+        "C6": {
+          "name": "FAQ相关性",
+          "score": 10,
+          "detail": "相关"
+        },
+        "C7": {
+          "name": "领域关键词覆盖",
+          "score": 10,
+          "detail": "覆盖良好(91%)"
+        },
+        "C8": {
+          "name": "内容独特性",
+          "score": 10,
+          "detail": "独特性良好"
+        },
+        "C9": {
+          "name": "章节深度",
+          "score": 10,
+          "detail": "章节深度良好"
+        },
+        "C10": {
+          "name": "信息密度",
+          "score": 10,
+          "detail": "信息密度良好(56.4)"
+        }
+      },
+      "file_path": "D:\\skills\\packaged-skills\\skillhub\\aws-infra-free\\SKILL.md",
+      "line_count": 200,
+      "version": "LLM生成(免费版)"
+    },
+    {
+      "slug": "accounting-and-finance",
+      "capability_score": 75,
+      "capability_grade": "B",
+      "cap_pass": true,
+      "checks": {
+        "C1": {
+          "name": "描述完整性",
+          "score": 10,
+          "detail": "完整"
+        },
+        "C2": {
+          "name": "核心能力具体性",
+          "score": 10,
+          "detail": "具体"
+        },
+        "C3": {
+          "name": "流程具体性",
+          "score": 3,
+          "detail": "无使用流程章节"
+        },
+        "C4": {
+          "name": "异常处理具体性",
+          "score": 3,
+          "detail": "异常处理为通用模板(9/9关键词匹配)"
+        },
+        "C5": {
+          "name": "示例真实性",
+          "score": 10,
+          "detail": "真实"
+        },
+        "C6": {
+          "name": "FAQ相关性",
+          "score": 3,
+          "detail": "FAQ为通用模板(6/6模式匹配)"
+        },
+        "C7": {
+          "name": "领域关键词覆盖",
+          "score": 10,
+          "detail": "覆盖良好(100%)"
+        },
+        "C8": {
+          "name": "内容独特性",
+          "score": 10,
+          "detail": "独特性良好"
+        },
+        "C9": {
+          "name": "章节深度",
+          "score": 8,
+          "detail": "核心能力章节过浅(2行)"
+        },
+        "C10": {
+          "name": "信息密度",
+          "score": 8,
+          "detail": "填充词较多(14个)"
+        }
+      },
+      "file_path": "D:\\skills\\clawhub-skills\\downloaded\\Finance\\accounting-and-finance\\SKILL.md",
+      "line_count": 341,
+      "version": "原始(clawhub下载)"
+    },
+    {
+      "slug": "accounting-and-finance",
+      "capability_score": 100,
+      "capability_grade": "A",
+      "cap_pass": true,
+      "checks": {
+        "C1": {
+          "name": "描述完整性",
+          "score": 10,
+          "detail": "完整"
+        },
+        "C2": {
+          "name": "核心能力具体性",
+          "score": 10,
+          "detail": "具体"
+        },
+        "C3": {
+          "name": "流程具体性",
+          "score": 10,
+          "detail": "具体"
+        },
+        "C4": {
+          "name": "异常处理具体性",
+          "score": 10,
+          "detail": "具体"
+        },
+        "C5": {
+          "name": "示例真实性",
+          "score": 10,
+          "detail": "真实"
+        },
+        "C6": {
+          "name": "FAQ相关性",
+          "score": 10,
+          "detail": "相关"
+        },
+        "C7": {
+          "name": "领域关键词覆盖",
+          "score": 10,
+          "detail": "覆盖良好(75%)"
+        },
+        "C8": {
+          "name": "内容独特性",
+          "score": 10,
+          "detail": "独特性良好"
+        },
+        "C9": {
+          "name": "章节深度",
+          "score": 10,
+          "detail": "章节深度良好"
+        },
+        "C10": {
+          "name": "信息密度",
+          "score": 10,
+          "detail": "信息密度良好(78.4)"
+        }
+      },
+      "file_path": "D:\\skills\\packaged-skills\\skillhub\\accounting-and-finance\\SKILL.md",
+      "line_count": 363,
+      "version": "LLM生成(付费版)"
+    },
+    {
+      "slug": "accounting-and-finance-free",
+      "capability_score": 100,
+      "capability_grade": "A",
+      "cap_pass": true,
+      "checks": {
+        "C1": {
+          "name": "描述完整性",
+          "score": 10,
+          "detail": "完整"
+        },
+        "C2": {
+          "name": "核心能力具体性",
+          "score": 10,
+          "detail": "具体"
+        },
+        "C3": {
+          "name": "流程具体性",
+          "score": 10,
+          "detail": "具体"
+        },
+        "C4": {
+          "name": "异常处理具体性",
+          "score": 10,
+          "detail": "具体"
+        },
+        "C5": {
+          "name": "示例真实性",
+          "score": 10,
+          "detail": "真实"
+        },
+        "C6": {
+          "name": "FAQ相关性",
+          "score": 10,
+          "detail": "相关"
+        },
+        "C7": {
+          "name": "领域关键词覆盖",
+          "score": 10,
+          "detail": "覆盖良好(100%)"
+        },
+        "C8": {
+          "name": "内容独特性",
+          "score": 10,
+          "detail": "独特性良好"
+        },
+        "C9": {
+          "name": "章节深度",
+          "score": 10,
+          "detail": "章节深度良好"
+        },
+        "C10": {
+          "name": "信息密度",
+          "score": 10,
+          "detail": "信息密度良好(87.8)"
+        }
+      },
+      "file_path": "D:\\skills\\packaged-skills\\skillhub\\accounting-and-finance-free\\SKILL.md",
+      "line_count": 211,
+      "version": "LLM生成(免费版)"
+    },
+    {
+      "slug": "communication-skill",
+      "capability_score": 55,
+      "capability_grade": "C",
+      "cap_pass": false,
+      "checks": {
+        "C1": {
+          "name": "描述完整性",
+          "score": 5,
+          "detail": "检测到截断: emotional\\s+cu"
+        },
+        "C2": {
+          "name": "核心能力具体性",
+          "score": 5,
+          "detail": "核心能力重复summary"
+        },
+        "C3": {
+          "name": "流程具体性",
+          "score": 0,
+          "detail": "使用流程为通用模板(4/4步匹配); 所有流程步骤都是通用的"
+        },
+        "C4": {
+          "name": "异常处理具体性",
+          "score": 3,
+          "detail": "异常处理为通用模板(9/9关键词匹配)"
+        },
+        "C5": {
+          "name": "示例真实性",
+          "score": 1,
+          "detail": "含占位符: 处理结果; 含占位符: 用户请求; 所有代码块都是占位符"
+        },
+        "C6": {
+          "name": "FAQ相关性",
+          "score": 3,
+          "detail": "FAQ为通用模板(6/6模式匹配)"
+        },
+        "C7": {
+          "name": "领域关键词覆盖",
+          "score": 10,
+          "detail": "覆盖良好(100%)"
+        },
+        "C8": {
+          "name": "内容独特性",
+          "score": 10,
+          "detail": "独特性良好"
+        },
+        "C9": {
+          "name": "章节深度",
+          "score": 10,
+          "detail": "章节深度良好"
+        },
+        "C10": {
+          "name": "信息密度",
+          "score": 8,
+          "detail": "填充词较多(20个)"
+        }
+      },
+      "file_path": "D:\\skills\\clawhub-skills\\downloaded\\Productivity\\communication-skill\\SKILL.md",
+      "line_count": 269,
+      "version": "原始(clawhub下载)"
+    },
+    {
+      "slug": "communication-skill",
+      "capability_score": 94,
+      "capability_grade": "A",
+      "cap_pass": true,
+      "checks": {
+        "C1": {
+          "name": "描述完整性",
+          "score": 10,
+          "detail": "完整"
+        },
+        "C2": {
+          "name": "核心能力具体性",
+          "score": 7,
+          "detail": "核心能力仅0条(应≥3条)"
+        },
+        "C3": {
+          "name": "流程具体性",
+          "score": 10,
+          "detail": "具体"
+        },
+        "C4": {
+          "name": "异常处理具体性",
+          "score": 10,
+          "detail": "具体"
+        },
+        "C5": {
+          "name": "示例真实性",
+          "score": 10,
+          "detail": "真实"
+        },
+        "C6": {
+          "name": "FAQ相关性",
+          "score": 10,
+          "detail": "相关"
+        },
+        "C7": {
+          "name": "领域关键词覆盖",
+          "score": 7,
+          "detail": "领域关键词覆盖率中等(62%)"
+        },
+        "C8": {
+          "name": "内容独特性",
+          "score": 10,
+          "detail": "独特性良好"
+        },
+        "C9": {
+          "name": "章节深度",
+          "score": 10,
+          "detail": "章节深度良好"
+        },
+        "C10": {
+          "name": "信息密度",
+          "score": 10,
+          "detail": "信息密度良好(74.0)"
+        }
+      },
+      "file_path": "D:\\skills\\packaged-skills\\skillhub\\communication-skill\\SKILL.md",
+      "line_count": 304,
+      "version": "LLM生成(付费版)"
+    },
+    {
+      "slug": "communication-skill-free",
+      "capability_score": 100,
+      "capability_grade": "A",
+      "cap_pass": true,
+      "checks": {
+        "C1": {
+          "name": "描述完整性",
+          "score": 10,
+          "detail": "完整"
+        },
+        "C2": {
+          "name": "核心能力具体性",
+          "score": 10,
+          "detail": "具体"
+        },
+        "C3": {
+          "name": "流程具体性",
+          "score": 10,
+          "detail": "具体"
+        },
+        "C4": {
+          "name": "异常处理具体性",
+          "score": 10,
+          "detail": "具体"
+        },
+        "C5": {
+          "name": "示例真实性",
+          "score": 10,
+          "detail": "真实"
+        },
+        "C6": {
+          "name": "FAQ相关性",
+          "score": 10,
+          "detail": "相关"
+        },
+        "C7": {
+          "name": "领域关键词覆盖",
+          "score": 10,
+          "detail": "覆盖良好(85%)"
+        },
+        "C8": {
+          "name": "内容独特性",
+          "score": 10,
+          "detail": "独特性良好"
+        },
+        "C9": {
+          "name": "章节深度",
+          "score": 10,
+          "detail": "章节深度良好"
+        },
+        "C10": {
+          "name": "信息密度",
+          "score": 10,
+          "detail": "信息密度良好(66.7)"
+        }
+      },
+      "file_path": "D:\\skills\\packaged-skills\\skillhub\\communication-skill-free\\SKILL.md",
+      "line_count": 169,
+      "version": "LLM生成(免费版)"
+    }
+  ]
+}

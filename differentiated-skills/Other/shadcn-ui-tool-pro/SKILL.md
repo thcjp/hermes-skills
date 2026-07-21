@@ -4,12 +4,10 @@ name: shadcn-ui-tool-pro
 version: "1.0.0"
 displayName: shadcn UI工具-专业版
 summary: 企业级React设计系统平台,支持自定义组件库、设计令牌管理与团队协作开发
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  企业级 shadcn/ui 开发工具专业版,面向团队与商业应用。
-
-  核心能力:
+  企业级 shadcn/ui 开发工具专业版,面向团队与商业应用。核心能力:
   - 企业设计系统与令牌管理
   - 自定义组件库开发与发布
   - 组件文档与 Storybook 集成
@@ -25,9 +23,7 @@ description: |-
   - 多品牌/多主题 SaaS 平台
   - 组件库开源与内部共享
 
-  差异化:专业版在免费版基础上扩展设计系统、企业组件库与团队协作,兼容免费版组件代码。
-
-  触发关键词: shadcn, design system, component library, design tokens, 设计系统, 组件库, 品牌主题, a11y, i18n
+  差异化:专业版在免费版基础上扩展设计系统、企业组...
 tags:
 - shadcn/ui
 - 企业级
@@ -35,10 +31,9 @@ tags:
 - 组件库
 - 团队协作
 tools:
-- read
+  - - read
 - exec
 ---
-
 # shadcn UI 工具 - 专业版
 
 ## 概述
@@ -219,13 +214,27 @@ export const useBrand = () => useContext(BrandContext)
 # 查看 diff: ./visual-test/diff/
 ```
 
+## 不适用场景
+
+以下场景shadcn UI工具-专业版不适合处理：
+
+- 专业医学法律翻译认证
+- 同声传译
+- 文学创作翻译
+
+
+## 触发条件
+
+需要文本翻译、多语言转换、本地化处理时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 从免费版升级
 
 ```bash
 # 免费版组件代码完全兼容
-# 安装专业版工具
+# 依赖说明
 npm install -g @shadcn-pro/cli
 
 # 升级项目
@@ -258,7 +267,7 @@ npm install -g @shadcn-pro/cli
 # └── .github/workflows/ci.yml
 ```
 
-## 配置示例
+## 示例
 
 ### 企业级配置
 
@@ -379,3 +388,17 @@ A: 在 Storybook 中为组件定义固定状态(避免随机数据),视觉回归
 - **说明**: 通过自然语言指令驱动 Agent 执行企业级 React 设计系统开发
 - **兼容性**: 完全兼容免费版组件代码
 - **支持**: 优先工单支持,SLA 保障响应时间
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

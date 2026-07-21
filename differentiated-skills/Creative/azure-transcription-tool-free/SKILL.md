@@ -4,12 +4,10 @@ name: azure-transcription-tool-free
 version: "1.0.0"
 displayName: Azure语音转写免费版
 summary: 使用Azure AI进行批量语音转文字，支持基础转写与时间戳，适合个人用户处理音频。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  Azure语音转写免费版 —— 面向个人用户的轻量级语音转文字工具。
-
-  核心能力:
+  Azure语音转写免费版 —— 面向个人用户的轻量级语音转文字工具。核心能力:
   - 批量语音转文字，支持存储在Blob中的音频文件
   - 自动语言识别，支持中文、英文等多种语言
   - 生成带时间戳的转写结果，便于字幕制作
@@ -21,19 +19,16 @@ description: |-
   - 视频字幕生成与翻译
   - 语音笔记整理与归档
 
-  差异化:免费版提供核心批量转写能力，适合个人用户处理单个或少量音频文件。PRO版本增加实时流式转写、说话人分离、批量处理等高级功能。
-
-  触发关键词: 语音转文字, 语音识别, 转写, transcription, speech-to-text, Azure, 字幕生成, 音频转写
+  差异化:免费版提供核心批量转写能力，适合个人用户处理单个或少量音频文件
 tags:
 - 语音识别
 - Azure
 - 转写工具
 - 个人创作
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Azure语音转写免费版
 
 ## 概述
@@ -131,9 +126,23 @@ generate_srt(result.segments, "subtitle.srt")
 print("字幕文件已生成: subtitle.srt")
 ```
 
+## 不适用场景
+
+以下场景Azure语音转写免费版不适合处理：
+
+- 专业医学法律翻译认证
+- 同声传译
+- 文学创作翻译
+
+
+## 触发条件
+
+需要文本翻译、多语言转换、本地化处理时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
-### 1. 安装SDK
+### 依赖说明
 
 ```bash
 pip install azure-ai-transcription
@@ -168,7 +177,7 @@ result = job.result()
 print(result.transcript)
 ```
 
-## 配置示例
+## 示例
 
 ### 环境变量配置
 
@@ -222,7 +231,7 @@ TRANSCRIPTION_KEY=your_subscription_key_here
 
 转写时间取决于音频时长。通常处理速度约为音频时长的0.5-1倍。
 
-### Q4：免费版有使用量限制吗？
+### 已知限制
 
 免费版受Azure免费层级限制，每月有固定的转写时长额度。如需更大用量，建议升级至PRO版本。
 
@@ -257,3 +266,11 @@ TRANSCRIPTION_KEY=your_subscription_key_here
 
 - **分类**: MD+EXEC（纯Markdown指令，核心功能需要exec命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行语音转写任务。核心转写功能通过Python SDK调用Azure AI服务实现。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

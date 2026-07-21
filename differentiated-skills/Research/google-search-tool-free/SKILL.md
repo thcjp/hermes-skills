@@ -4,12 +4,10 @@ name: google-search-tool-free
 version: "1.0.0"
 displayName: 谷歌搜索工具
 summary: 基于 Google Custom Search Engine 的联网搜索工具，支持实时信息检索与结果结构化输出，适合个人研究与学习使用。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  基于 Google Custom Search Engine 的联网搜索工具，支持实时信息检索与结果结构化输出，适合个人研究与学习使用。
-
-  核心能力:
+  基于 Google Custom Search Engine 的联网搜索工具，支持实时信息检索与结果结构化输出，适合个人研究与学习使用。核心能力:
   - 通过 Google Custom Search API 进行精准搜索
   - 返回结构化的搜索结果，包含标题、链接、摘要
   - 支持中英文关键词搜索
@@ -21,21 +19,16 @@ description: |-
   - 实时新闻与动态获取
 
   差异化:
-  - 免费版聚焦单次搜索，结果清晰
-  - 基于 Google 官方 API，结果权威准确
-  - 配置简单，适合个人使用
-
-  触发关键词: 谷歌搜索, Google搜索, CSE搜索, 实时搜索, 学术搜索
+  - 免费版聚焦单次搜索...
 tags:
 - 搜索
 - Google
 - 研究工具
 - 信息检索
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 谷歌搜索工具（免费版）
 
 ## 概述
@@ -54,7 +47,7 @@ tools:
 | 自定义搜索引擎 | 配置特定站点搜索 | 否 |
 | 搜索历史 | 保存搜索记录 | 否 |
 
-### 免费版限制说明
+### 已知限制
 
 - 每日搜索配额限制（Google API 免费额度）
 - 单次查询最多返回 10 条结果
@@ -94,6 +87,20 @@ python3 scripts/search.py "Docker compose networking best practices"
 # 搜索最新动态
 python3 scripts/search.py "2026年 人工智能 最新进展"
 ```
+
+## 不适用场景
+
+以下场景谷歌搜索工具不适合处理：
+
+- 黑帽SEO手段
+- 搜索引擎作弊
+- 付费广告投放管理
+
+
+## 触发条件
+
+需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于非本工具能力范围的需求。
+
 
 ## 快速开始
 
@@ -144,7 +151,7 @@ python3 scripts/search.py "test" --max 1
 # 如果返回结果，说明配置成功
 ```
 
-## 配置示例
+## 示例
 
 ### 基础搜索配置
 
@@ -260,7 +267,7 @@ python3 scripts/search.py "query"
 - **Python 版本**：3.7 及以上
 - **网络环境**：需可访问 Google API 服务
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 | --- | --- | --- | --- |
@@ -292,3 +299,11 @@ GOOGLE_CSE_ID=your_cx_id_here         # 自定义搜索引擎 ID
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务
 - **适用人群**：个人研究者、学生、开发者
 - **升级建议**：如需批量搜索、结果导出、自定义站点搜索等高级功能，请使用 PRO 版本
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

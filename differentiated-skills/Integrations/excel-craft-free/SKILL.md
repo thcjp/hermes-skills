@@ -4,36 +4,16 @@ name: excel-craft-free
 version: "1.0.0"
 displayName: Excel工艺免费版
 summary: 专业 Excel 文件生成器，支持多 Sheet、公式、图表与基础格式，适合日常表格生成需求。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  Excel 工艺免费版面向需要程序化生成 Excel 文件的开发者与运营人员，提供多 Sheet、公式、图表与基础格式化能力。基于 openpyxl 与 Python，输出兼容 Excel / WPS / LibreOffice 的 .xlsx 文件，覆盖日常 80% 的报表生成场景。
-
-  核心能力：
-
-  - 多 Sheet 工作簿生成与跨 Sheet 引用
-  - 单元格格式化（字体、填充、边框、对齐、数字格式）
-  - 公式支持（SUM / AVERAGE / VLOOKUP / IF 等）
-  - 基础图表（柱状图、折线图、饼图）
-  - 自动列宽与合并单元格
-  - 中英文与 Unicode 字符支持
-
-  适用场景：
-
-  - 销售报表、财务报表、预算表生成
-  - 数据汇总与简单透视
-  - 项目跟踪与库存管理
-  - 个人记账本与日程表
-
-  差异化：相比手工 Excel 操作，本 Skill 通过 Python 脚本化生成，支持批量、可复用、可版本控制；相比通用 Excel 库教程，本 Skill 提供"诊断—模板—生成"工作流，让 Agent 直接产出可运行的代码。
-
-  触发关键词：生成 Excel、报表生成、openpyxl、xlsx 创建、Python 表格
+  Excel 工艺免费版面向需要程序化生成 Excel 文件的开发者与运营人员，提供多 Sheet、公式、图表与基础格式化能力。基于 openpyxl 与 Python，输出兼容 Excel / WPS / LibreOffice 的。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。
 tags:
 - 集成工具
 - 表格生成
 - 开发者工具
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -73,10 +53,10 @@ tools:
 ## 快速开始
 
 ```bash
-# 安装依赖
+# 依赖说明
 pip install openpyxl
 
-# 运行示例脚本
+# 示例
 python3 sales_report.py
 ```
 
@@ -204,7 +184,7 @@ A：这是 Excel 的设计——合并范围内只有左上角单元格保留值
 - **分类**：MD+EXEC（纯 Markdown 指令，部分功能需要 exec 命令行执行能力）
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 生成 Python 脚本并执行
 
-## 免费版限制
+## 已知限制
 
 本免费体验版限制以下高级功能：
 - 批量生成（一次仅生成单个文件）
@@ -217,3 +197,11 @@ A：这是 Excel 的设计——合并范围内只有左上角单元格保留值
 - 优先技术支持
 
 解锁全部功能请使用专业版：excel-craft-pro
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

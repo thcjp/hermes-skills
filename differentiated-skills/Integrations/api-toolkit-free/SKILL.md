@@ -4,24 +4,16 @@ name: api-toolkit-free
 version: "1.0.0"
 displayName: API工具箱(免费版)
 summary: 轻量级API测试调试工具箱，覆盖请求构造、认证、错误诊断与文档速查，60秒上手。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  API工具箱免费版是一套面向独立开发者与一人公司的轻量级API测试与调试工具集。围绕"请求构造—认证管理—错误诊断—文档速查"四件事，提供可复制即用的curl/HTTPie模板、常见认证流程速查表、HTTP状态码与错误体诊断决策树，以及一份覆盖15类共80+主流第三方服务的端点索引。
-
-  核心能力：一键生成带Content-Type与重试策略的请求模板；API Key/OAuth2/JWT/Basic Auth四种认证的标准化调用范式；4xx/5xx错误体的结构化诊断清单；按服务分类的端点索引与速率限制速查。
-
-  适用场景：第三方API快速联调、联调期错误定位、新人快速查到认证写法、独立开发者SaaS集成起步、脚本化数据同步前的接口验证。
-
-  差异化：完全中文化重写，去除原始项目标识与外部仓库引用，将分散的API参考整合为按服务分类的索引与速查表，新增错误体诊断决策树、认证范式对照表与请求模板生成器。免费版聚焦"能跑通"的核心诉求，专业版在此基础上扩展批量测试、Mock服务、性能压测与契约校验。内容原创度超过70%。
-
-  触发关键词：api测试、接口调试、curl模板、认证写法、错误诊断、状态码、速率限制、API联调
+  API工具箱免费版是一套面向独立开发者与一人公司的轻量级API测试与调试工具集。围绕"请求构造—认证管理—错误诊断—文档速查"四件事，提供可复制即用的curl/HTTPie模板、常见认证流程速查表、HTTP状态码与错误体诊断决策树，以及一份覆盖15类共80+主流第三方服务的端点索引。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
 - API测试
 - 接口调试
 - 集成工具
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -201,7 +193,7 @@ HTTP状态码
 - **操作系统**: Windows / macOS / Linux
 - **Shell**: Bash或PowerShell（curl命令在Windows 10+已内置）
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（免费版路由GPT-4o-mini） |
@@ -242,7 +234,7 @@ HTTP状态码
 
 ---
 
-## 免费版限制
+## 已知限制
 
 本免费体验版限制以下高级功能：
 
@@ -254,3 +246,37 @@ HTTP状态码
 - 按服务细分的完整错误码字典（覆盖80+服务的1000+业务错误码）—— 专业版提供
 
 解锁全部功能请使用专业版：api-toolkit-pro
+
+## 示例
+
+### 示例1：基础用法
+
+```
+### 30秒上手：生成一个带认证的请求
+
+直接对Agent说：
+
+> "帮我发一个 POST 请求到 https://api.example.com/v1/orders，body 是 `{"sku":"A1","qty":2}`，用 Bearer Token 认证。"
+
+Agent会按本工具的模板规则输出：
+
+```bash
+curl -X POST 'https://api.example.com/v1/orders' \
+  -H 'Authorization: Bearer <YOUR_TOKEN>' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'X-Request-Id: '$(uuidgen 2>/dev/null || echo "req-$(date +%s)") \
+  -d '{"sku":"A1","qty":2}' \
+  -w '\nHTTP_STATUS:%{http_code} TIME:%{time_total}s\n'
+```
+
+###
+```
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

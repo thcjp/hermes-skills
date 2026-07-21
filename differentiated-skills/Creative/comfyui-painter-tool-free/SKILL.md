@@ -4,35 +4,20 @@ name: comfyui-painter-tool-free
 version: "1.0.0"
 displayName: ComfyUI绘画免费版
 summary: 本地ComfyUI图像生成工具，支持文生图基础工作流与默认模型，适合个人创作。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  ComfyUI绘画免费版 —— 面向个人用户的轻量级本地AI图像生成工具。
-
-  核心能力:
+  ComfyUI绘画免费版 —— 面向个人用户的轻量级本地AI图像生成工具。核心能力:
   - 文生图（Text-to-Image）：根据文字描述生成图像
   - 基础工作流：内置默认文生图工作流，开箱即用
-  - 默认模型支持：使用SD1.5/SDXL等基础模型
-  - 图像保存：自动保存生成结果到本地
-  - 参数调整：调整采样步数、CFG、种子等基础参数
-  - 提示词优化：基础提示词建议与优化
-
-  适用场景:
-  - 个人创作者AI绘画探索
-  - 设计师快速生成灵感图
-  - 学习AI图像生成技术
-  - 社交媒体配图生成
-
-  差异化:免费版提供核心文生图能力与基础工作流，适合个人用户快速上手。PRO版本增加自动调参、CivitAI模型管理、批量生成、图生图、ControlNet等高级能力。
-
-  触发关键词: AI绘画, 图像生成, ComfyUI, 文生图, Stable Diffusion, SD, 提示词, 采样, text-to-image
+  - 默认模型支持：使用SD1。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
 - AI绘画
 - 图像生成
 - ComfyUI
 - 个人创作
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -186,7 +171,7 @@ python generate.py \
 
 ## 快速开始
 
-### 1. 安装ComfyUI
+### 依赖说明
 
 ```bash
 # 克隆ComfyUI
@@ -215,7 +200,7 @@ python main.py --listen 0.0.0.0 --port 8188
 python generate.py --prompt "a cat sitting on a windowsill" --output ./output/cat.png
 ```
 
-## 配置示例
+## 示例
 
 ### 基础生成参数
 
@@ -305,3 +290,15 @@ python generate.py --prompt "a cat sitting on a windowsill" --output ./output/ca
 
 - **分类**: MD+EXEC（纯Markdown指令，核心功能需要exec命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行AI图像生成任务。核心功能通过Python脚本调用本地ComfyUI API实现，无需云端服务。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 本地运行，不支持多设备同步

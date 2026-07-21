@@ -4,12 +4,10 @@ name: xml-toolkit-free
 version: "1.0.0"
 displayName: XML处理工具免费版
 summary: 解析、生成与转换XML，正确处理命名空间与编码，适合个人开发者日常XML任务。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  XML处理工具免费版，面向个人开发者的轻量级XML解析与生成工具。
-
-  核心能力:
+  XML处理工具免费版，面向个人开发者的轻量级XML解析与生成工具。核心能力:
   - XML解析与命名空间处理
   - XML生成与编码规范
   - 转义与CDATA处理
@@ -20,16 +18,14 @@ description: |-
   - API 响应的XML处理
   - 数据格式转换
 
-  差异化: 免费版聚焦核心解析与生成能力，去除所有外部平台与作者引用，强化中文本地化与触发关键词，适合个人用户零成本上手。
-
-  触发关键词: XML处理, 解析, 生成, 命名空间, 编码, 转义, CDATA, XPath, 格式转换
+  差异化: 免费版聚焦核心解析与生成能力，去除所有外部平台与作者引用，强化中文本地化与触发关键词，适合个人用户零成本上手
 tags:
 - XML
 - 数据解析
 - 格式转换
 - 免费版
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -134,7 +130,7 @@ tree = ET.ElementTree(root)
 tree.write('output.xml', encoding='utf-8', xml_declaration=True)
 ```
 
-## 配置示例
+## 示例
 
 ```text
 # XML 规范要点
@@ -196,7 +192,7 @@ A：UTF-8 BOM 在 XML 声明前是允许的。但建议生成时不写 BOM，避
 - **操作系统**: Windows / macOS / Linux
 - **Python**: 3.9+
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -209,3 +205,16 @@ A：UTF-8 BOM 在 XML 声明前是允许的。但建议生成时不写 BOM，避
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown指令 + Python脚本执行）
 - **说明**: 基于Markdown的AI Skill，通过 Python 标准库处理 XML
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用
+- 本地运行，不支持多设备同步

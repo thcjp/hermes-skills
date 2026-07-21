@@ -52,9 +52,14 @@ ALLOWED_CONTEXTS = [
     '工具协议',  # MCP作为工具协议标准术语时合法
     'Agent工具协议',
     'MCP工具',  # MCP工具/MCP工具链是合法技术术语
+    'MCP 工具',  # 带空格变体
     'MCP端点',
     'MCP server',
+    'MCP 服务器',  # 中文变体
     'MCP生态',
+    'MCP 配置',  # MCP配置是合法技术术语
+    'MCP 环境',  # MCP环境是合法技术术语
+    'MCP服务',  # MCP服务是合法技术术语
     'transport',  # Gateway transport类型中MCP合法
     'Transport',
     'Gateway',

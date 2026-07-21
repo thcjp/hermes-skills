@@ -4,7 +4,7 @@ name: music-toolkit-free
 version: "1.0.0"
 displayName: 音乐工具箱免费版
 summary: 音乐生成与编辑工具,支持MIDI生成、音频处理与基础乐理分析
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人音乐爱好者与学习者的音乐生成与编辑工具箱。
@@ -20,10 +20,9 @@ tags:
 - 创作工具
 - 音乐学习
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 音乐工具箱 (免费版)
 
 ## 概述
@@ -202,14 +201,28 @@ class AudioProcessor:
         return output_path
 
 
-# 使用示例
+# 示例
 processor = AudioProcessor("input.wav")
 processor.normalize().fade_in_out().export("output.mp3", format="mp3")
 ```
 
+## 不适用场景
+
+以下场景音乐工具箱免费版不适合处理：
+
+- 版权受保护的媒体内容处理
+- 实时直播推流
+- 专业影视后期
+
+
+## 触发条件
+
+需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
-### 步骤 1: 安装依赖
+### 依赖说明
 
 ```bash
 # Python 音乐处理库
@@ -410,3 +423,15 @@ export MUSIC_OUTPUT_FORMAT="mp3"
 - **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 通过自然语言指令驱动 Agent 生成与处理音乐
 - **免费版限制**: 个人使用、基础音色、无 AI 编曲、无多轨录音、无母带处理、无商业授权
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 本地运行，不支持多设备同步

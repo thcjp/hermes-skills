@@ -4,28 +4,15 @@ name: javascript-sdk-tool-pro
 version: "1.0.0"
 displayName: JS SDK工具专业版
 summary: 企业级 AI 应用 SDK 方案，支持智能体构建、流式响应、会话管理与服务器代理集成。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  面向企业级 AI 应用开发的 JavaScript SDK 专业工具，提供智能体构建与高级调用能力。
-
-  核心能力:
+  面向企业级 AI 应用开发的 JavaScript SDK 专业工具，提供智能体构建与高级调用能力。核心能力:
   - 智能体（Agent）构建与多轮对话
   - 流式响应与实时进度更新
   - 会话管理与有状态执行
   - 工具构建器 API（自定义工具/应用工具/代理工具）
-  - 服务器代理集成（Next.js/Express/Hono 等）
-  - 人工审批工作流与文件附件处理
-
-  适用场景:
-  - 企业级 AI 智能体应用开发
-  - 多轮对话与会话保持场景
-  - 流式响应的实时交互应用
-  - 前后端分离的 AI 应用架构
-
-  差异化: 专业版兼容免费版所有基础调用能力，额外提供智能体构建、流式响应、会话管理、工具构建器、服务器代理集成，支持企业级 AI 应用开发。
-
-  触发关键词: ai智能体, agent sdk, 流式响应, sse, 会话管理, 工具构建器, 自定义工具, 服务器代理, 人工审批, 多轮对话, 有状态执行
+  - 服务器代理集成（Next
 tags:
 - 开发工具
 - JavaScript
@@ -33,20 +20,16 @@ tags:
 - 智能体
 - 企业开发
 tools:
-- read
+  - - read
 - exec
----
-
 # JavaScript SDK 工具（专业版）
-
 ## 概述
-
+---
 本工具面向企业级 AI 应用开发团队，提供智能体构建、流式响应、会话管理、工具构建器与服务器代理集成的完整方案。在免费版基础应用调用与文件上传能力之上，专业版新增 Agent SDK、流式响应处理、有状态会话、自定义工具构建、多框架代理集成、人工审批工作流等能力。通过丰富的 API 与类型安全支持，帮助团队构建生产级 AI 智能体应用。
 
 **版本兼容性说明**：专业版完全兼容免费版（`javascript-sdk-tool-free`）的所有基础调用、认证配置与文件上传能力，可无缝升级。
 
 ## 核心能力
-
 | 能力模块 | 免费版 | 专业版新增 |
 | --- | --- | --- |
 | 应用调用 | 基础 run/getTask | 流式响应 + 进度回调 |
@@ -59,55 +42,12 @@ tools:
 | 类型安全 | 基础类型 | 完整类型定义 + 类型守卫 |
 
 ## 使用场景
-
 ### 场景一：构建自定义智能体
-
 团队需要构建一个带有自定义工具的 AI 智能体。
 
-```typescript
-import { createClient, tool, appTool, string, number } from '@ai/sdk';
-
-const client = createClient({ apiKey: process.env.AI_API_KEY });
-
-// 1. 定义自定义工具
-const calculator = tool('calculate')
-    .describe('执行数学计算')
-    .param('expression', string('数学表达式'))
-    .build();
-
-// 2. 定义应用工具（调用其他 AI 应用）
-const imageGenerator = appTool('generate_image', 'image-gen@latest')
-    .describe('根据文字生成图片')
-    .param('prompt', string('图片描述'))
-    .setup({ model: 'schnell' })
-    .build();
-
-// 3. 创建智能体
-const agent = client.agent({
-    core_app: { ref: 'claude-sonnet@latest' },
-    system_prompt: '你是一个有用的助手，可以计算数学问题和生成图片。',
-    tools: [calculator, imageGenerator],
-    temperature: 0.7,
-    max_tokens: 4096
-});
-
-// 4. 多轮对话
-const response1 = await agent.sendMessage('25 乘以 4 是多少？');
-console.log(response1.text);
-
-const response2 = await agent.sendMessage('帮我把这个数字生成一张图片');
-console.log(response2.text);
-
-// 5. 重置对话
-agent.reset();
-
-// 6. 获取聊天历史
-const chat = await agent.getChat();
-console.log('历史记录:', chat.messages);
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 场景二：流式响应处理
-
 应用需要实时显示 AI 响应的生成过程。
 
 ```typescript
@@ -128,7 +68,7 @@ const response = await agent.sendMessage('解释量子计算的基本原理', {
         // 工具调用回调
         console.log(`\n[工具调用: ${call.name}]`);
         console.log('参数:', call.args);
-        
+
         // 执行工具并返回结果
         const result = await executeTool(call.name, call.args);
         agent.submitToolResult(call.id, result);
@@ -147,12 +87,12 @@ const stream = await client.run({
 
 for await (const update of stream) {
     console.log(`状态: ${update.status}`);
-    
+
     if (update.logs?.length) {
         const lastLog = update.logs[update.logs.length - 1];
         console.log('日志:', lastLog);
     }
-    
+
     if (update.status === 'completed') {
         console.log('输出:', update.output);
     }
@@ -160,7 +100,6 @@ for await (const update of stream) {
 ```
 
 ### 场景三：有状态会话管理
-
 应用需要在多次调用间保持会话状态。
 
 ```typescript
@@ -193,177 +132,35 @@ const result3 = await client.run({
 // session_timeout 控制空闲超时时间（1-3600 秒）
 ```
 
-## 快速开始
+## 不适用场景
 
+以下场景JS SDK工具专业版不适合处理：
+
+- 需要100%确定性的关键决策
+- 医疗诊断
+- 法律判决
+
+
+## 触发条件
+
+需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于非本工具能力范围的需求。
+
+
+## 快速开始
 ### 工具构建器 API
 
-```typescript
-import {
-    tool, appTool, agentTool, webhookTool,
-    string, number, integer, boolean,
-    enumOf, array, obj, optional
-} from '@ai/sdk';
-
-// 1. 参数类型定义
-const name = string('用户名');
-const age = integer('年龄');
-const score = number('分数 0-1');
-const active = boolean('是否活跃');
-const priority = enumOf(['low', 'medium', 'high'], '优先级');
-const tags = array(string('标签'), '标签列表');
-const address = obj({
-    street: string('街道'),
-    city: string('城市'),
-    zip: optional(string('邮编'))
-}, '地址');
-
-// 2. 客户端工具（在本地代码中执行）
-const greet = tool('greet')
-    .display('问候用户')
-    .describe('根据名字问候用户')
-    .param('name', string('要问候的名字'))
-    .requireApproval()  // 需要人工审批
-    .build();
-
-// 3. 应用工具（调用其他 AI 应用）
-const generate = appTool('generate_image', 'image-gen@latest')
-    .describe('根据文字生成图片')
-    .param('prompt', string('图片描述'))
-    .setup({ model: 'schnell' })
-    .input({ steps: 20 })
-    .requireApproval()
-    .build();
-
-// 4. 代理工具（委托给子智能体）
-const researcher = agentTool('research', 'researcher@v1')
-    .describe('研究指定主题')
-    .param('topic', string('研究主题'))
-    .build();
-
-// 5. Webhook 工具（调用外部 API）
-const notify = webhookTool('slack', 'https://hooks.slack.com/...')
-    .describe('发送 Slack 通知')
-    .secret('SLACK_SECRET')
-    .param('channel', string('频道'))
-    .param('message', string('消息内容'))
-    .build();
-
-// 6. 内置工具配置
-import { internalTools } from '@ai/sdk';
-
-const config = internalTools()
-    .plan()                    // 规划能力
-    .memory()                  // 记忆能力
-    .webSearch(true)           // 网页搜索
-    .codeExecution(true)       // 代码执行
-    .imageGeneration({
-        enabled: true,
-        appRef: 'image-gen@latest'
-    })
-    .build();
-
-const agent = client.agent({
-    core_app: { ref: 'claude-sonnet@latest' },
-    internal_tools: config
-});
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 人工审批工作流
 
-```typescript
-const agent = client.agent({
-    core_app: { ref: 'claude-sonnet@latest' },
-    tools: [dangerousTool],
-    system_prompt: '你是一个系统管理助手。'
-});
+> 详细代码示例已移至 `references/detail.md`
 
-const response = await agent.sendMessage('删除所有临时文件', {
-    onToolCall: async (call) => {
-        // 检查是否需要审批
-        if (call.requiresApproval) {
-            // 向用户展示工具调用详情
-            const approved = await promptUser(
-                `是否允许执行 "${call.name}"？\n参数: ${JSON.stringify(call.args, null, 2)}`
-            );
-            
-            if (approved) {
-                // 执行工具
-                const result = await executeTool(call.name, call.args);
-                agent.submitToolResult(call.id, result);
-            } else {
-                // 拒绝执行
-                agent.submitToolResult(call.id, { error: '用户拒绝执行' });
-            }
-        } else {
-            // 不需要审批的直接执行
-            const result = await executeTool(call.name, call.args);
-            agent.submitToolResult(call.id, result);
-        }
-    }
-});
-
-// 用户审批交互函数
-async function promptUser(message: string): Promise<boolean> {
-    return new Promise((resolve) => {
-        // 实际应用中可以连接 UI 组件
-        const readline = require('readline').createInterface({
-            input: process.stdin,
-            output: process.stdout
-        });
-        readline.question(`${message} (y/n): `, (answer) => {
-            readline.close();
-            resolve(answer.toLowerCase() === 'y');
-        });
-    });
-}
-```
-
-## 配置示例
-
+## 示例
 ### 服务器代理集成
 
-```typescript
-// ============ Next.js 代理（App Router）============
-// app/api/proxy/route.ts
-import { createRouteHandler } from '@ai/sdk/proxy/nextjs';
-
-const route = createRouteHandler({
-    apiKey: process.env.AI_API_KEY
-});
-
-export const POST = route.POST;
-
-// ============ Express 代理 ============
-import express from 'express';
-import { createProxyMiddleware } from '@ai/sdk/proxy/express';
-
-const app = express();
-app.use('/api/proxy', createProxyMiddleware({
-    apiKey: process.env.AI_API_KEY
-}));
-
-app.listen(3000);
-
-// ============ Hono 代理 ============
-import { Hono } from 'hono';
-import { createHonoProxy } from '@ai/sdk/proxy/hono';
-
-const app = new Hono();
-app.use('/api/proxy', createHonoProxy({
-    apiKey: process.env.AI_API_KEY
-}));
-
-// ============ 前端客户端配置 ============
-import { createClient } from '@ai/sdk';
-
-const client = createClient({
-    proxyUrl: '/api/proxy'
-    // 前端不需要 apiKey
-});
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 文件附件处理
-
 ```typescript
 import { readFileSync } from 'fs';
 
@@ -390,7 +187,6 @@ const response4 = await agent.sendMessage('比较这两张图片', {
 ```
 
 ### 技能（Skills）配置
-
 ```typescript
 const agent = client.agent({
     core_app: { ref: 'claude-sonnet@latest' },
@@ -417,45 +213,9 @@ const response = await agent.sendMessage('帮我审查这段代码');
 
 ### 完整类型定义
 
-```typescript
-import type {
-    TaskDTO,
-    ChatDTO,
-    ChatMessageDTO,
-    AgentTool,
-    TaskStatusCompleted,
-    TaskStatusFailed,
-    TaskStatusRunning
-} from '@ai/sdk';
-
-// 类型守卫
-function isCompleted(task: TaskDTO): task is TaskStatusCompleted {
-    return task.status === 'completed';
-}
-
-function isFailed(task: TaskDTO): task is TaskStatusFailed {
-    return task.status === 'failed';
-}
-
-// 使用类型安全的处理
-async function processTask(taskId: string) {
-    const task = await client.getTask(taskId);
-    
-    if (isCompleted(task)) {
-        // task.output 类型安全
-        console.log('完成:', task.output);
-    } else if (isFailed(task)) {
-        // task.error 类型安全
-        console.log('失败:', task.error);
-    } else {
-        // TaskStatusRunning
-        console.log('运行中...');
-    }
-}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ## 最佳实践
-
 1. **前端用代理模式**：永远不要在前端暴露 API Key
 
 2. **流式响应用 SSE**：提升用户体验
@@ -476,9 +236,7 @@ async function processTask(taskId: string) {
 8. **错误处理要完整**：覆盖网络、API、工具执行错误
 
 ## 常见问题
-
 ### Q1：如何在 React 中使用？
-
 ```typescript
 // React Hook 封装
 import { useState, useCallback } from 'react';
@@ -489,14 +247,14 @@ const client = createClient({ proxyUrl: '/api/proxy' });
 function useAgent() {
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(false);
-    
+
     const send = useCallback(async (text: string) => {
         setLoading(true);
         try {
             const agent = client.agent({
                 core_app: { ref: 'claude-sonnet@latest' }
             });
-            
+
             const response = await agent.sendMessage(text, {
                 onMessage: (msg) => {
                     if (msg.content) {
@@ -511,13 +269,12 @@ function useAgent() {
             setLoading(false);
         }
     }, []);
-    
+
     return { messages, send, loading };
 }
 ```
 
 ### Q2：如何处理工具执行错误？
-
 ```typescript
 const response = await agent.sendMessage('执行任务', {
     onToolCall: async (call) => {
@@ -535,7 +292,6 @@ const response = await agent.sendMessage('执行任务', {
 ```
 
 ### Q3：如何实现多智能体协作？
-
 ```typescript
 import { agentTool } from '@ai/sdk';
 
@@ -562,7 +318,6 @@ const response = await coordinator.sendMessage(
 ```
 
 ### Q4：如何控制会话超时？
-
 ```typescript
 // 创建会话时指定超时（秒）
 const result = await client.run({
@@ -576,15 +331,14 @@ const result = await client.run({
 // 超时后会话自动清理
 ```
 
-### Q5：如何做速率限制？
-
+### 已知限制
 ```typescript
 // 简单的速率限制器
 class RateLimiter {
     private queue: Array<() => void> = [];
     private running = 0;
     constructor(private maxConcurrent: number = 5) {}
-    
+
     async execute<T>(fn: () => Promise<T>): Promise<T> {
         if (this.running >= this.maxConcurrent) {
             await new Promise<void>(resolve => this.queue.push(resolve));
@@ -604,13 +358,12 @@ class RateLimiter {
 const limiter = new RateLimiter(5);
 
 // 使用
-const result = await limiter.execute(() => 
+const result = await limiter.execute(() =>
     client.run({ app: 'my-app', input: {...} })
 );
 ```
 
 ### Q6：支持哪些框架的代理？
-
 | 框架 | 支持 | 配置方式 |
 | --- | --- | --- |
 | Next.js (App Router) | 完整支持 | `createRouteHandler` |
@@ -621,15 +374,13 @@ const result = await limiter.execute(() =>
 | SvelteKit | 完整支持 | Endpoint 配置 |
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent 平台**: 支持读取 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
 - **操作系统**: Windows / macOS / Linux
 - **Node.js 版本**: 18.0.0+（或支持 fetch 的现代浏览器）
 - **包管理器**: npm / yarn / pnpm
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Node.js | 运行时 | 必需 | nodejs.org 下载 |
@@ -649,3 +400,10 @@ const result = await limiter.execute(() =>
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 命令行执行）
 - **说明**: 通过自然语言指令驱动 Agent 提供 SDK 集成建议，专业版功能依赖 Node.js、框架环境和命令行执行能力
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

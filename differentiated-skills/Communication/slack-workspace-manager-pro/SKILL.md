@@ -4,12 +4,10 @@ name: slack-workspace-manager-pro
 version: "1.0.0"
 displayName: Slack工作区管理专业版
 summary: 企业级Slack工作区管理平台，支持企业Grid、审计日志、Canvas文档、用户组管理与批量操作。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  Slack工作区管理器（专业版）—— 面向企业的全功能Slack工作区管理平台。
-
-  核心能力:
+  Slack工作区管理器（专业版）—— 面向企业的全功能Slack工作区管理平台。核心能力:
   - 企业Grid多团队管理与审计日志
   - Canvas文档创建与编辑
   - 用户组管理与权限控制
@@ -23,9 +21,7 @@ description: |-
   - 审计合规与安全监控
   - 批量工作区配置与迁移
 
-  差异化: 在免费版基础上增加企业Grid、审计日志、Canvas、用户组、批量操作等企业级能力，完全兼容免费版操作格式。
-
-  触发关键词: Slack企业管理, 审计日志, 用户组, Canvas文档, 批量操作, Enterprise Grid, slack, workspace, admin
+  差异化: 在免费版基础上增加企业Grid、审计日志、Canvas、用户组、批量操作等企业级能力...
 tags:
 - 沟通协作
 - 企业级
@@ -33,52 +29,40 @@ tags:
 - 工作区管理
 - 安全审计
 tools:
-- read
+  - - read
 - exec
 ---
 
 # Slack工作区管理器（专业版）
-
 ## 概述
-
 Slack工作区管理器专业版是一款面向企业的高级Slack工作区管理平台。在免费版的消息、频道、文件、提醒、用户管理能力之上，专业版新增企业Grid多团队管理、审计日志读取、Canvas文档管理、用户组管理、批量操作、自定义表情管理、通话控制等企业级功能，帮助IT管理员实现Slack工作区的全面治理。
 
 专业版完全兼容免费版的操作格式与配置，免费版用户可无缝升级。
 
 ## 核心能力
-
 ### 1. 企业Grid多团队管理
-
 支持Enterprise Grid组织下的多团队管理，列出所有团队、跨团队用户管理。
 
 ### 2. 审计日志读取
-
 读取企业Grid审计日志，追踪用户操作、频道变更、权限修改等安全事件。
 
 ### 3. Canvas文档管理
-
 创建、编辑、删除Slack Canvas文档，支持分区编辑与内容查找。
 
 ### 4. 用户组管理
-
 创建、启用、禁用用户组（子团队），管理组成员与权限。
 
 ### 5. 批量频道操作
-
 批量创建频道、批量邀请成员、批量归档、批量设置主题。
 
 ### 6. 自定义表情管理
-
 添加、列出、删除工作区自定义表情。
 
 ### 7. 通话控制
-
 查看通话详情、结束通话、添加/移除通话参与者。
 
 ## 使用场景
-
 ### 场景一：批量创建项目频道并邀请成员
-
 ```python
 # batch_channel_setup.py
 class BatchChannelSetup:
@@ -135,7 +119,7 @@ class BatchChannelSetup:
 
         return results
 
-# 使用示例
+# 示例
 setup = BatchChannelSetup(slack_client)
 results = setup.setup_project_channels({
     'channels': [
@@ -158,7 +142,6 @@ results = setup.setup_project_channels({
 ```
 
 ### 场景二：审计日志安全监控
-
 ```python
 # audit_monitor.py
 class AuditMonitor:
@@ -204,7 +187,6 @@ class AuditMonitor:
         # 检测异常IP地址
         # 检测权限变更
         # 检测频道批量删除
-
         return anomalies
 
 # 使用示例
@@ -214,7 +196,6 @@ anomalies = monitor.check_anomalies(events)
 ```
 
 ### 场景三：用户组与权限管理
-
 ```bash
 # 创建用户组
 slack-workspace-manager-pro create-user-group \
@@ -233,7 +214,6 @@ slack-workspace-manager-pro list-user-groups
 slack-workspace-manager-pro create-canvas \
   --title "工程团队协作规范" \
   --content "## 团队规范\n1. 代码提交前需通过CI\n2. PR需至少2人评审\n3...."
-
 # 编辑Canvas分区
 slack-workspace-manager-pro edit-canvas \
   --canvas-id "F0123456789" \
@@ -242,15 +222,12 @@ slack-workspace-manager-pro edit-canvas \
 ```
 
 ## 快速开始
-
 ### 安装
-
 ```bash
 npx skillhub@latest install slack-workspace-manager-pro
 ```
 
 ### 配置与连接
-
 ```bash
 # 连接Slack工作区（需要企业Grid管理员权限）
 slack-workspace-manager-pro connect --enterprise-grid
@@ -260,7 +237,6 @@ slack-workspace-manager-pro list-enterprise-teams
 ```
 
 ### 基本使用
-
 ```bash
 # 企业Grid - 列出所有团队
 slack-workspace-manager-pro list-enterprise-teams
@@ -284,7 +260,6 @@ slack-workspace-manager-pro create-canvas \
 ```
 
 ## 配置示例
-
 ```yaml
 # config.yaml - 专业版配置
 slack:
@@ -299,30 +274,24 @@ pro:
     audit_logs: true            # 审计日志
     team_management: true       # 团队管理
     audit_retention_days: 365   # 审计日志保留天数
-
   canvas:
     enabled: true               # Canvas文档
     auto_backup: true           # 自动备份
     section_editing: true       # 分区编辑
-
   user_groups:
     enabled: true               # 用户组管理
     auto_sync: true             # 自动同步成员
-
   batch:
     enabled: true               # 批量操作
     max_channels: 100           # 单次最大频道数
     max_members: 1000           # 单次最大成员数
     rate_limit: 1.0             # 发送频率限制
-
   emoji:
     management: true            # 表情管理
     auto_resize: true           # 自动调整大小
-
   calls:
     control: true               # 通话控制
     auto_log: true              # 自动记录
-
   security:
     confirm_writes: true        # 写操作确认
     confirm_deletes: true       # 删除确认
@@ -331,9 +300,7 @@ pro:
 ```
 
 ## 最佳实践
-
 ### 免费版 vs 专业版能力对比
-
 | 能力 | 免费版 | 专业版 |
 |:-----|:------:|:------:|
 | 消息管理 | 是 | 是 |
@@ -353,7 +320,6 @@ pro:
 | 优先技术支持 | 否 | 是 |
 
 ### 企业级安全规范
-
 ```python
 # 企业级操作安全检查清单
 security_checklist = {
@@ -371,13 +337,11 @@ for item, desc in security_checklist.items():
 ```
 
 ### 批量操作最佳实践
-
 ```bash
 # 批量创建频道（从配置文件）
 slack-workspace-manager-pro batch-create-channels \
   --config channels_config.yaml \
   --dry-run                    # 先预览不执行
-
 # 确认无误后执行
 slack-workspace-manager-pro batch-create-channels \
   --config channels_config.yaml \
@@ -395,7 +359,6 @@ slack-workspace-manager-pro batch-archive \
 ```
 
 ### 审计日志分析
-
 ```bash
 # 读取审计日志
 slack-workspace-manager-pro read-audit-logs \
@@ -410,23 +373,18 @@ slack-workspace-manager-pro audit-anomaly \
 ```
 
 ## 常见问题
-
 ### Q: 专业版与免费版如何兼容？
-
 专业版完全兼容免费版的所有操作格式与配置。免费版的命令行参数可直接在专业版中使用，升级无需修改现有配置或重新授权。
 
 ### Q: 企业Grid功能需要什么权限？
-
 企业Grid管理功能需要Organization Owner或Admin权限。普通工作区管理员无法访问跨团队管理功能。
 
 ### Q: 审计日志能追溯多久？
-
 审计日志可追溯的时间取决于企业Slack套餐：
 - Enterprise Grid: 最多可追溯365天
 - 专业版通过本地存储可延长保留时间
 
 ### Q: Canvas文档支持哪些操作？
-
 ```bash
 # 创建Canvas
 slack-workspace-manager-pro create-canvas --title "文档标题" --content "内容"
@@ -442,7 +400,6 @@ slack-workspace-manager-pro delete-canvas --canvas-id "F001" --confirm
 ```
 
 ### Q: 用户组与频道有什么区别？
-
 | 特性 | 用户组 | 频道 |
 |:-----|:-------|:-----|
 | 用途 | 角色与权限管理 | 消息沟通 |
@@ -451,7 +408,6 @@ slack-workspace-manager-pro delete-canvas --canvas-id "F001" --confirm
 | 管理 | 管理员创建 | 任何成员可创建 |
 
 ### Q: 批量操作有风险吗？
-
 批量操作（特别是删除、归档）具有较高风险。专业版提供以下保护措施：
 1. `--dry-run` 预览模式，不实际执行
 2. `--confirm` 确认参数，防止误操作
@@ -459,7 +415,6 @@ slack-workspace-manager-pro delete-canvas --canvas-id "F001" --confirm
 4. 审计日志可追溯
 
 ### Q: 如何管理多个工作区？
-
 ```bash
 # 列出企业Grid下所有团队
 slack-workspace-manager-pro list-enterprise-teams
@@ -474,17 +429,14 @@ slack-workspace-manager-pro invite-user-to-workspace \
 ```
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent 平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 - **Python 版本**: 3.8+
 - **网络环境**: 需能访问Slack API端点
 - **Slack套餐**: 企业Grid功能需要Enterprise Grid套餐
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -498,7 +450,6 @@ slack-workspace-manager-pro invite-user-to-workspace \
 | pyyaml | Python库 | 推荐 | `pip install pyyaml`（配置解析） |
 
 ### API Key 配置
-
 ```bash
 # 通过OAuth流程自动配置（推荐）
 slack-workspace-manager-pro connect --enterprise-grid
@@ -522,10 +473,21 @@ slack-workspace-manager-pro connect --enterprise-grid
 ```
 
 ### 可用性分类
-
 - **分类**: MD+EXEC+SCRIPT+API+ADMIN（Markdown指令 + 命令行执行 + Python脚本 + Slack API + 企业管理）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行任务，专业版支持企业Grid管理、审计日志与批量操作
 - **适用人群**: 企业IT管理员、安全团队、Slack工作区管理员、合规团队
 - **兼容性**: 完全兼容免费版操作格式与配置，支持无缝升级
 - **支持级别**: 优先技术支持，工作日24小时内响应
 - **合规说明**: 审计日志功能满足企业合规要求，支持操作追溯与安全监控
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

@@ -4,12 +4,10 @@ name: card-image-builder-free
 version: "1.0.0"
 displayName: 卡片图生成器-免费版
 summary: 将文案渲染为PNG卡片图,支持海报和文章封面,适合个人创作者快速出图
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  卡片图生成器免费版,将文字文案渲染为精美的PNG卡片图片。
-
-  核心能力:
+  卡片图生成器免费版,将文字文案渲染为精美的PNG卡片图片。核心能力:
   - 文字海报生成(3:4比例,900x1200)
   - 长文分页卡片生成
   - 公众号文章封面图生成
@@ -25,29 +23,23 @@ description: |-
   差异化:
   - 免费版聚焦基础卡片图生成,操作直观
   - 内置公众号和小红书配色预设
-  - 与PRO版完全兼容,可升级获得全部模板和高级功能
-
-  触发关键词: 卡片图, 封面图, 海报, 文字海报, 配图, 渲染, PNG, poster, card, cover, image, render
+  - 与PRO版完全兼容,可升级获得全部模板和高级功能...
 tags:
 - 沟通协作
 - 图片生成
 - 卡片图
 - 创意设计
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 卡片图生成器(免费版)
-
 ## 概述
-
 卡片图生成器免费版是一款将文字文案渲染为PNG格式卡片图片的工具。支持文字海报(金句/大字报)、长文分页卡片和公众号文章封面图三种基础模板,内置公众号和小红书配色预设,帮助个人创作者快速生成社交媒体配图。
 
 本版本覆盖最常用的卡片图生成场景,操作流程简洁。如需X风格帖子分享长图、自定义模板、批量生成或企业品牌定制等高级功能,请升级至PRO版。
 
 ### 免费版与PRO版能力对比
-
 | 能力维度 | 免费版 | PRO版 |
 |:---------|:-------|:------|
 | 文字海报(3:4) | 支持 | 支持 |
@@ -62,9 +54,7 @@ tools:
 | 水印与版权 | 不支持 | 支持 |
 
 ## 核心能力
-
 ### 1. 文字海报生成(poster-3-4)
-
 将短文案渲染为3:4比例(900x1200)的文字海报,适合金句、大字报和封面图。
 
 ```bash
@@ -105,7 +95,6 @@ python3 render_card.py \
 | `--out` | 输出路径 | `tmp/poster.png` |
 
 ### 2. 长文分页卡片(article-3-4)
-
 将长文内容拆分为多页3:4卡片,适合文章摘要、步骤说明等。
 
 ```bash
@@ -132,7 +121,6 @@ python3 render_article.py \
 ```
 
 ### 3. 公众号文章封面图(wechat-cover-split)
-
 生成335:100比例(1340x400)的公众号文章封面长条图,左侧标题右侧icon。
 
 ```bash
@@ -149,7 +137,6 @@ python3 render_card.py \
 **注意:** 公众号封面标题过长时,系统会自动压缩为2-3行短标题再渲染。
 
 ### 4. 平台配色预设
-
 ```python
 # 平台预设配置
 PLATFORM_PRESETS = {
@@ -172,9 +159,7 @@ PLATFORM_PRESETS = {
 ```
 
 ## 使用场景
-
 ### 场景一:金句海报制作
-
 将名人名言或原创金句制作成精美的文字海报。
 
 ```bash
@@ -197,7 +182,6 @@ python3 render_card.py \
 5. 执行渲染,生成PNG
 
 ### 场景二:公众号文章封面
-
 为公众号文章生成吸引人的封面图。
 
 ```bash
@@ -210,7 +194,6 @@ python3 render_card.py \
 ```
 
 ### 场景三:步骤说明卡片
-
 将操作步骤渲染为分页卡片,便于分享。
 
 ```bash
@@ -223,15 +206,26 @@ python3 render_article.py \
   --out tmp/step_1.png
 ```
 
+## 不适用场景
+
+以下场景卡片图生成器-免费版不适合处理：
+
+- 3D建模和动画制作
+- 照片级写实渲染
+- 手绘原创插画
+
+
+## 触发条件
+
+需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
-
 ### 环境准备
-
 ```bash
 # 1. 检查Python环境
 python3 --version
 # 需要 Python 3+
-
 # 2. 检查Chrome浏览器
 # macOS:
 ls "/Applications/Google Chrome.app"
@@ -242,7 +236,6 @@ which chromium
 ```
 
 ### 首次使用
-
 ```bash
 # 生成第一张卡片图
 python3 render_card.py \
@@ -255,7 +248,6 @@ ls -la tmp/hello.png
 ```
 
 ### 环境检测脚本
-
 ```python
 import subprocess
 import os
@@ -318,16 +310,13 @@ class EnvironmentChecker:
             "hint": "未检测到Chrome浏览器,请安装Google Chrome"
         }
 
-
 # 运行检测
 checker = EnvironmentChecker()
 checker.check_all()
 ```
 
-## 配置示例
-
+## 示例
 ### 基础配置
-
 ```yaml
 # config.yaml - 卡片图生成器免费版配置
 card_image:
@@ -353,7 +342,6 @@ card_image:
 ```
 
 ### 模板参数说明
-
 ```yaml
 # templates.yaml - 模板参数说明
 templates:
@@ -392,9 +380,7 @@ templates:
 ```
 
 ## 最佳实践
-
 ### 1. 文案长度控制
-
 不同模板有不同的字数上限,超出时系统会自动拆分或缩写。
 
 ```text
@@ -405,7 +391,6 @@ templates:
 ```
 
 ### 2. 高亮使用技巧
-
 ```bash
 # 整行高亮:使用 --hl1, --hl2, --hl3
 python3 render_card.py \
@@ -417,7 +402,6 @@ python3 render_card.py \
 ```
 
 ### 3. 配色选择
-
 ```python
 # 配色建议
 COLOR_GUIDE = {
@@ -435,7 +419,6 @@ COLOR_GUIDE = {
 ```
 
 ### 4. 输出路径管理
-
 ```bash
 # 推荐使用项目内tmp目录,避免写入系统/tmp
 python3 render_card.py \
@@ -451,45 +434,35 @@ python3 render_card.py \
 ```
 
 ## 常见问题
-
 ### Q1: 提示"未检测到Python 3"怎么办?
-
 **A:** 请安装Python 3.6或更高版本。访问 python.org 下载安装。安装后重新运行环境检测确认。
 
 ### Q2: 提示Chrome未找到怎么办?
-
 **A:** 卡片图渲染需要Chrome浏览器。macOS请安装Google Chrome到 `/Applications/`。Linux请安装chromium并确保在PATH中可用。
 
 ### Q3: 文案太长怎么办?
-
 **A:** 不同模板有字数上限。文案超出时系统会自动拆分(长文卡片)或缩写(封面标题)。建议:
 - 海报文案控制在200字以内
 - 封面标题控制在30字以内
 - 长文卡片每页控制在500字以内
 
 ### Q4: 可以自定义背景色和高亮色吗?
-
 **A:** 可以。通过 `--bg` 和 `--highlight` 参数指定十六进制颜色值。免费版也支持自定义颜色。
 
 ### Q5: 免费版支持X/Twitter风格的长图吗?
-
 **A:** 不支持。X风格帖子分享长图是PRO版独有功能。免费版支持海报、长文卡片和公众号封面三种模板。
 
 ### Q6: 如何升级到PRO版?
-
 **A:** PRO版与免费版完全兼容,升级后获得X风格长图、自定义模板、批量生成、全平台预设和企业品牌定制等高级功能。直接安装PRO版Skill即可完成升级。
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 - **Python**: 3.6+
 - **浏览器**: Google Chrome(渲染引擎依赖)
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Python 3.6+ | 运行时 | 必需 | python.org 下载 |
@@ -498,14 +471,24 @@ python3 render_card.py \
 | Pillow | Python库 | 可选 | `pip install Pillow` |
 
 ### API Key 配置
-
 - 本Skill为本地渲染工具,无需额外API Key
 - 所有图片渲染在本地通过Chrome完成
 - 不依赖外部图片生成服务
 
 ### 可用性分类
-
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行卡片图渲染任务
 - **运行模式**: 本地渲染,依赖Python和Chrome
 - **安全等级**: 本地处理,不涉及网络请求;输出文件存储在本地
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

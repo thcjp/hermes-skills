@@ -4,7 +4,7 @@ name: tg-body-scan-tool-free
 version: "1.0.0"
 displayName: 体测扫描工具免费版
 summary: 通过 Telegram 提交视频进行人体测量，返回基础围度数据与腰臀比，适合个人单次使用。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人用户的 Telegram 人体体测测量工具。
@@ -18,7 +18,7 @@ tags:
 - 电报机器人
 - 个人健康
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -115,7 +115,7 @@ tools:
 | `video` | 体测视频 | 视频附件或可下载的 https URL |
 | `phone_model` | 手机型号 | 如 `iPhone 15 Pro` |
 
-## 配置示例
+## 示例
 
 免费版无需额外配置，直接通过 Telegram 对话使用。若需在 Agent 脚本中集成，参考以下调用方式。
 
@@ -195,7 +195,7 @@ print(f"腰臀比: {result.get('waist_hip_ratio', 'N/A')}")
 - **操作系统**：Windows / macOS / Linux
 - **通信渠道**：Telegram（需可访问 Telegram 服务）
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 | :------- | :----- | :--------- | :--------- |
@@ -214,3 +214,17 @@ print(f"腰臀比: {result.get('waist_hip_ratio', 'N/A')}")
 
 - **分类**：MD+EXEC（纯 Markdown 指令，部分功能需要 exec 命令行执行能力）
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务。免费版为单次扫描功能子集，提交接口与返回格式与专业版完全兼容。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

@@ -4,7 +4,7 @@ name: slack-hub-tool-free
 version: "1.0.0"
 displayName: Slack Hub工具免费版
 summary: Slack消息发送与搜索基础工具，支持频道列表查看、消息发送与线程回复，适合个人日常使用。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   Slack Hub工具（免费版）—— 面向个人用户的Slack消息发送与搜索工具。
@@ -29,10 +29,9 @@ tags:
 - Slack
 - 消息搜索
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Slack Hub工具（免费版）
 
 ## 概述
@@ -93,6 +92,20 @@ slack-hub-tool search --query "部署文档"
 slack-hub-tool search --query "bug修复" --channel "C0123456789"
 ```
 
+## 不适用场景
+
+以下场景Slack Hub工具免费版不适合处理：
+
+- 垃圾信息群发
+- 通信协议逆向
+- 电话语音交互
+
+
+## 触发条件
+
+需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 安装
@@ -128,7 +141,7 @@ slack-hub-tool send --target "C0123456789" \
 slack-hub-tool search --query "项目计划"
 ```
 
-## 配置示例
+## 示例
 
 ```yaml
 # config.yaml
@@ -243,7 +256,7 @@ slack-hub-tool list-channels --exclude-archived
 - **操作系统**: Windows / macOS / Linux
 - **网络环境**: 需能访问Slack API端点 `https://slack.com/api/`
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -277,3 +290,17 @@ export SLACK_BOT_TOKEN="xoxb-your-bot-token-here"
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行任务，调用Slack Web API实现消息发送与搜索
 - **适用人群**: 个人用户、团队成员、Slack日常使用者
 - **版本限制**: 免费版支持基础发送与搜索，PRO版本提供高级搜索、批量操作与限流处理
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

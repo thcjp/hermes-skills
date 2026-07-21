@@ -4,12 +4,10 @@ name: discord-voice-tool-free
 version: "1.0.0"
 displayName: Discord语音工具免费版
 summary: 基础 Discord 语音频道 AI 对话工具,支持加入/离开与本地语音识别合成。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向个人用户的 Discord 语音频道 AI 实时对话工具。
-
-  核心能力:
+  面向个人用户的 Discord 语音频道 AI 实时对话工具。核心能力:
   - 加入/离开 Discord 语音频道
   - 语音活动检测(VAD)自动识别用户说话
   - 本地 Whisper 离线语音转文字
@@ -21,19 +19,16 @@ description: |-
   - 小型语音社群的 AI 互动
   - 本地化离线语音处理体验
 
-  差异化: 免费版聚焦本地离线方案,零 API 成本;Pro 版提供多服务商、流式 STT与企业级能力。
-
-  触发关键词: discord, 语音, 通话, 识别, 合成, voice, whisper, tts, stt, vad, join
+  差异化: 免费版聚焦本地离线方案,零 API 成本;Pro 版提供多服务商、流式 STT与企业级能力
 tags:
 - Discord
 - 语音对话
 - Communication
 - 语音识别
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Discord 语音工具(免费版)
 
 ## 概述
@@ -106,9 +101,23 @@ discord_voice join 1234567890
 }
 ```
 
+## 不适用场景
+
+以下场景Discord语音工具免费版不适合处理：
+
+- 需要100%确定性的关键决策
+- 医疗诊断
+- 法律判决
+
+
+## 触发条件
+
+需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
-### 第一步:安装系统依赖
+### 依赖说明
 
 语音处理需要 `ffmpeg` 和构建工具:
 
@@ -177,7 +186,7 @@ npm install
 discord_voice join <channelId>
 ```
 
-## 配置示例
+## 示例
 
 ### 最小可用配置
 
@@ -326,3 +335,16 @@ DEBUG=discord-voice agent gateway start
 - **说明**: 以自然语言指令驱动 Agent 调用语音工具,本地模型处理音频
 - **适用规模**: 单服务器、个人/小团队,本地离线处理
 - **升级建议**: 如需多服务商、流式 STT、自动重连、企业级稳定性,请升级至 `discord-voice-tool-pro`
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用
+- 本地运行，不支持多设备同步

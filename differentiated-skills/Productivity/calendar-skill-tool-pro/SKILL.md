@@ -4,7 +4,7 @@ name: calendar-skill-tool-pro
 version: "1.0.0"
 displayName: 日历管理技能专业版
 summary: 企业级日历安全管理系统,支持多配置文件、权限隔离、审计日志与合规策略
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   核心能力: 日程管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
@@ -20,7 +20,7 @@ tags:
 - Outlook
 - Google Calendar
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -91,7 +91,7 @@ porteden calendar create --calendar <id> --summary "Meeting" --from "2026-02-01T
 PRO 版本支持批量执行操作,适合企业级规模化管理需求。以下示例展示如何批量处理多个目标:
 
 ```bash
-# 批量操作示例: 遍历多个目标并执行
+# 示例
 targets=("target1" "target2" "target3" "target4" "target5")
 for target in "${targets[@]}"; do
   echo "Processing: $target"
@@ -140,7 +140,7 @@ for r in results:
 ### 2. 配置参数
 
 ```bash
-# 安装 porteden
+# 依赖说明
 brew install porteden/tap/porteden
 # 登录
 porteden auth login
@@ -257,7 +257,7 @@ A: 通过 --profile 参数或设置 PE_PROFILE 环境变量切换。
 
 A: PRO 版本完全兼容 FREE 版本的所有功能。卸载 PRO 版本后可自动回退至 FREE 版本,数据与配置保持不变。升级时只需安装 PRO 版本即可,原有配置自动迁移,无需额外操作。
 
-### Q: PRO 版本的批量操作有什么限制?
+### 已知限制
 
 A: 批量操作受以下因素限制:
 - 最大并发数:默认 10,可通过配置调整
@@ -319,3 +319,11 @@ PRO 版本支持以下 API Key 管理方式:
 | 版本类型 | PRO |
 | 许可证 | MIT |
 | 兼容性 | 兼容 FREE 版本,支持无缝升级 |
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

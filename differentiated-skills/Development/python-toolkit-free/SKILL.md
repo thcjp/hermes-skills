@@ -4,12 +4,10 @@ name: python-toolkit-free
 version: "1.0.0"
 displayName: Python工具箱(免费版)
 summary: 个人开发者的Python编码规范,涵盖PEP8、Pythonic模式与基础依赖管理。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  Python工具箱(免费版)为个人开发者提供实用的Python编码规范与最佳实践指导。
-
-  核心能力:
+  Python工具箱(免费版)为个人开发者提供实用的Python编码规范与最佳实践指导。核心能力:
   - PEP 8代码风格规范
   - Pythonic编码模式与惯用法
   - 基础依赖管理(uv/pip)
@@ -25,17 +23,16 @@ description: |-
   - 移除原始平台与作者引用,纯净适配SkillHub
   - 提供中文友好的规范讲解
 
-  触发关键词: python, py, pep8, 编码规范, pythonic, 风格, lint, ruff, black, 脚本
+  触发关键词: python, py, pep8, 编码规范, ...
 tags:
 - Development
 - Python
 - 代码规范
 - 脚本
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Python工具箱(免费版)
 
 ## 概述
@@ -156,6 +153,20 @@ for a, b in zip(list1, list2, strict=True):
     ...
 ```
 
+## 不适用场景
+
+以下场景Python工具箱(免费版)不适合处理：
+
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 运维部署管理
+
+
+## 触发条件
+
+需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 1. Python版本选择
@@ -165,7 +176,7 @@ for a, b in zip(list1, list2, strict=True):
 - 永不使用Python 2语法或模式
 - 善用现代特性:match语句、海象运算符、类型注解
 
-### 2. 依赖管理
+### 依赖说明
 
 优先检查uv,回退pip:
 
@@ -194,7 +205,7 @@ python -m pytest -v
 ruff check . --fix
 ```
 
-## 配置示例
+## 示例
 
 ### 基础ruff配置
 
@@ -357,3 +368,17 @@ except Exception:
 
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。免费版聚焦个人开发者的PEP 8规范与Pythonic模式指导。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

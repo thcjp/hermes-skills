@@ -4,28 +4,19 @@ name: csv-toolkit-pro
 version: "1.0.0"
 displayName: CSV工具箱 专业版
 summary: 全功能CSV处理工具，支持流式解析、自定义方言、Schema校验与多格式互转。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  CSV Toolkit 专业版面向数据工程师与后端开发者，在免费版基础上解锁流式大文件处理、自定义方言、Schema 校验与多格式互转能力。
-
-  核心能力：流式分块解析（支持 GB 级文件）、自定义 CSV 方言配置、Schema 校验与列类型推断、多文件合并与拆分、CSV 与 JSON/Parquet/Arrow 互转、性能基准测试与优化建议、增量更新与检查点恢复。
-
-  适用场景：大数据量 ETL 处理、非标准 CSV 方言兼容、数据质量校验、多源数据合并、跨格式数据迁移、生产环境性能优化。
-
-  差异化：相比免费版，专业版提供流式处理能力，可处理 GB 级 CSV 文件而内存占用稳定在百 MB 以内；内置 Schema 校验引擎，支持列类型、约束、正则规则；提供 CSV 与主流列式格式（Parquet/Arrow）互转，便于接入数据分析管道。
-
-  触发关键词：流式CSV、大文件解析、CSV方言、Schema校验、CSV转Parquet、CSV合并、CSV拆分、性能优化
+  CSV Toolkit 专业版面向数据工程师与后端开发者，在免费版基础上解锁流式大文件处理、自定义方言、Schema 校验与多格式互转能力。核心能力：流式分块解析（支持 GB 级文件）、自定义 CSV 方言配置、Schema 校验与列类型推断、多文件合并与拆分、CSV 与 JSON/Parquet/Arrow 互转、性能基准测试与优化建议、增量更新与检查点恢复
 tags:
 - 集成工具
 - 数据处理
 - 数据工程
 - 开发者工具
 tools:
-- read
+  - - read
 - exec
 ---
-
 # CSV Toolkit（专业版）
 
 面向数据工程师与后端开发者的全功能 CSV 处理工具，在免费版基础上解锁流式处理、自定义方言、Schema 校验与多格式互转。
@@ -179,6 +170,20 @@ csv-toolkit split national.csv --by region --output-dir ./regions/
 csv-toolkit split large.csv --rows 100000 --output-dir ./chunks/
 ```
 
+## 不适用场景
+
+以下场景CSV工具箱 专业版不适合处理：
+
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 运维部署管理
+
+
+## 触发条件
+
+需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 前置准备（约 60 秒）
@@ -206,14 +211,14 @@ csv-toolkit stream parse sample.csv --chunk-size 10MB
 csv-toolkit schema infer sample.csv
 ```
 
-### 运行环境要求
+### 依赖说明
 
 - 操作系统：Windows / macOS / Linux
 - Python：3.8+
 - 内存：建议 2GB+（流式处理可低于 1GB）
 - 磁盘：临时目录建议预留文件大小的 2 倍
 
-## 配置示例
+## 示例
 
 ### 自定义方言配置
 
@@ -398,7 +403,7 @@ csv-toolkit incremental cleanup --older-than 7d
 
 > 流式处理在 5GB 文件下内存峰值仅 400MB，适合生产环境。
 
-## 故障排查表
+## 错误处理
 
 | 现象 | 可能原因 | 解决步骤 | 优先级 |
 |------|----------|----------|--------|
@@ -479,3 +484,9 @@ csv-toolkit incremental cleanup --older-than 7d
 - 新增流式处理、自定义方言、Schema 校验、多格式互转等高级能力
 - 完善性能基准与故障排查表
 - 增加免费版/专业版分层策略与定价
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

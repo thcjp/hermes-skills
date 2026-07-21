@@ -4,40 +4,29 @@ name: ops-dashboard-pro
 version: "1.0.0"
 displayName: 运维看板(专业版)
 summary: 全功能实时运维监控看板，支持成本分析、变更操作、告警通知与审计日志
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  运维看板专业版是面向团队和企业的完整运维监控方案，在免费版基础上解锁成本分析与用量统计、变更操作与备份管理、告警通知与自动响应、批量会话管理、审计日志与操作追踪、服务商审计集成和系统级运维操作等全部高级能力。
-
-  核心能力：会话全生命周期管理、Token成本追踪与预算告警、定时任务执行与重试、网关健康监控与自动恢复、批量操作与检查点、变更审计链、敏感数据深度扫描、多环境配置管理、系统级重启控制。
-
-  适用场景：企业AI平台运维、多团队成本分摊、自动化故障恢复、合规审计追踪、生产环境变更管理、服务商用量分析。
-
-  差异化：专业版提供完整的运维生命周期管理能力，从监控到操作到审计形成闭环。包含3+角色场景指南、完整故障排查表和性能优化策略。安全防护体系覆盖认证、CORS、敏感数据和操作权限四个层面。
-
-  触发关键词：运维看板、成本分析、告警通知、变更管理、审计日志、批量操作、系统运维、dashboard
+  运维看板专业版是面向团队和企业的完整运维监控方案，在免费版基础上解锁成本分析与用量统计、变更操作与备份管理、告警通知与自动响应、批量会话管理、审计日志与操作追踪、服务商审计集成和系统级运维操作等全部高级能力。核心能力：会话全生命周期管理、Token成本追踪与预算告警、定时任务执行与重试、网关健康监控与自动恢复、批量操作与检查点、变更审计链、敏感数据深度扫描、多环境配置管理、系统级重启控制
 tags:
 - 运维监控
 - 成本分析
 - 变更管理
 - 高级集成
 tools:
-- read
+  - - read
 - exec
 ---
 
 # 运维看板（专业版）
-
 全功能实时运维监控看板，覆盖会话管理、成本分析、变更操作、告警通知和审计日志。专业版面向需要深度运维能力的团队和企业用户。
 
 ## 概述
-
 在企业级AI Agent部署中，运维不仅需要"看到"系统状态，更需要"操作"和"追溯"。运维看板专业版在免费版的只读监控基础上，新增变更操作（任务执行、备份创建、模型切换）、成本追踪（Token用量、API费用、预算告警）、自动响应（阈值告警、故障恢复）和审计日志（操作追踪、合规审查）四大能力模块，形成从监控到操作到审计的完整闭环。
 
 专业版同时提供多层安全防护体系，覆盖认证授权、CORS策略、敏感数据扫描和操作权限控制四个层面，确保运维操作的安全性和合规性。
 
 ## 核心能力
-
 | 能力模块 | 专业版支持 | 说明 |
 |:---------|:-----------|:-----|
 | 会话管理 | 全量 | 查看、终止、归档、批量清理 |
@@ -53,9 +42,7 @@ tools:
 | 系统操作 | 支持 | 用户级systemctl重启控制 |
 
 ## 使用场景
-
 ### 运维场景：成本监控与预算告警
-
 追踪AI Agent的Token消耗和API费用，设置预算阈值，超支时自动告警：
 
 ```bash
@@ -79,7 +66,6 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 ```
 
 ### 管理场景：批量会话清理
-
 定期清理过期会话，释放系统资源：
 
 ```bash
@@ -101,7 +87,6 @@ curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 ```
 
 ### 故障恢复场景：定时任务重试
-
 定时任务执行失败时，通过看板触发重试并检查结果：
 
 ```bash
@@ -121,7 +106,6 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 ```
 
 ### 合规场景：审计日志导出
-
 导出完整操作审计日志，用于合规审查：
 
 ```bash
@@ -139,15 +123,12 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 ```
 
 ## 快速开始
-
 ### 前置条件
-
 - Node.js 18+ 已安装
 - 运维看板服务已部署并运行
 - 已设置`OPS_DASHBOARD_AUTH_TOKEN`环境变量
 
 ### 环境配置
-
 创建`.env`文件配置完整运行参数：
 
 ```bash
@@ -175,8 +156,7 @@ OPS_DASHBOARD_ALLOW_ATTACHMENT_COPY_FROM_WORKSPACE=0
 OPS_DASHBOARD_ALLOW_ATTACHMENT_COPY_FROM_HOME=0
 ```
 
-### 验证安装
-
+### 依赖说明
 ```bash
 # 检查服务健康
 curl http://localhost:3000/api/health
@@ -186,8 +166,7 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      http://localhost:3000/api/config
 ```
 
-### 快速上手（120秒）
-
+### 使用流程
 ```bash
 # 1. 查看系统概览
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
@@ -214,10 +193,8 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      http://localhost:3000/api/audit/logs
 ```
 
-## 配置示例
-
+## 示例
 ### 安全防护体系
-
 专业版提供四层安全防护，所有高敏感功能默认关闭，需通过环境变量显式启用：
 
 ```bash
@@ -235,7 +212,6 @@ OPS_DASHBOARD_ENABLE_PROVIDER_AUDIT=1    # 允许调用AI服务商API
 OPS_DASHBOARD_ENABLE_CONFIG_ENDPOINT=1   # 暴露配置端点
 OPS_DASHBOARD_ENABLE_MUTATING_OPS=1      # 允许变更操作
 OPS_DASHBOARD_ENABLE_SYSTEMCTL_RESTART=1 # 允许系统重启
-
 # 第四层：附件权限
 # 附件文件操作需逐项启用
 OPS_DASHBOARD_ALLOW_ATTACHMENT_FILEPATH_COPY=1
@@ -245,7 +221,6 @@ OPS_DASHBOARD_ALLOW_ATTACHMENT_COPY_FROM_HOME=1
 ```
 
 ### 成本分析与预算管理
-
 ```bash
 # 查看成本概览（总费用、日均、趋势）
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
@@ -275,7 +250,6 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 ```
 
 ### 变更操作与备份
-
 ```bash
 # 创建系统备份
 curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
@@ -307,7 +281,6 @@ curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 ```
 
 ### 告警通知配置
-
 ```bash
 # 查看告警规则
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
@@ -338,7 +311,6 @@ curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 ```
 
 ### 审计日志与合规
-
 ```bash
 # 查看所有操作日志
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
@@ -362,7 +334,6 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 ```
 
 ### 服务商审计集成
-
 ```bash
 # 启用服务商审计功能
 export OPS_DASHBOARD_ENABLE_PROVIDER_AUDIT=1
@@ -381,7 +352,6 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 ```
 
 ### 系统级操作
-
 ```bash
 # 启用系统重启功能
 export OPS_DASHBOARD_ENABLE_SYSTEMCTL_RESTART=1
@@ -398,7 +368,6 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 ```
 
 ### 敏感数据深度扫描
-
 ```bash
 # 执行全量安全扫描
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
@@ -419,7 +388,6 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 ```
 
 ## 最佳实践
-
 1. **最小权限原则**：高敏感功能默认全部关闭，仅在实际需要时通过环境变量逐项启用，用后及时关闭。
 2. **变更前先备份**：执行任何变更操作（模型切换、配置更新）前，先通过`/api/backup/create`创建备份点。
 3. **预算告警前置**：在月初设置月度预算和告警阈值（建议80%），避免月底超支。
@@ -429,49 +397,37 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 7. **附件权限分层控制**：按实际需求逐项启用附件操作权限，避免一次性全部开放。
 
 ## 常见问题
-
 ### Q1: 变更操作返回403禁止访问？
-
 变更操作需启用`OPS_DASHBOARD_ENABLE_MUTATING_OPS=1`环境变量。该功能默认关闭以防误操作。启用后还需在请求中携带有效的认证Token。
 
 ### Q2: 成本数据为空或不准确？
-
 成本追踪依赖于Agent会话的Token使用记录。确保Agent正确上报Token用量。服务商审计数据需启用`OPS_DASHBOARD_ENABLE_PROVIDER_AUDIT=1`并配置服务商API Key。
 
 ### Q3: 告警Webhook未收到通知？
-
 检查Webhook URL是否可从服务端访问。测试网络连通性，确认Webhook服务正常响应。查看`/api/alerts/history`中告警记录的状态。
 
 ### Q4: 服务商审计调用报错？
-
 确保已设置`OPS_DASHBOARD_ENABLE_PROVIDER_AUDIT=1`，且在`keys.env`文件中配置了服务商API Key。使用`OPS_DASHBOARD_LOAD_KEYS_ENV=1`加载密钥文件。
 
 ### Q5: systemctl重启失败？
-
 系统重启功能仅支持用户级服务（非root）。确保`OPS_DASHBOARD_ENABLE_SYSTEMCTL_RESTART=1`已启用，且目标服务配置为用户级systemd服务。
 
 ### Q6: 批量操作超时？
-
 批量操作涉及大量会话时可能超时。建议分批执行，每批不超过100条。检查`/api/audit/logs`确认已完成的操作数量。
 
 ### Q7: 审计日志占用磁盘过大？
-
 配置日志保留策略，定期清理过期日志。通过`/api/audit/export`导出后归档，再清理服务端日志。
 
 ### Q8: 备份恢复后配置不一致？
-
 备份恢复会覆盖当前配置。建议在非高峰期执行恢复操作，并在恢复后验证关键配置项。恢复前先创建当前状态的备份。
 
 ### Q9: 安全扫描误报如何处理？
-
 安全扫描基于模式匹配，可能产生误报。将误报项添加到白名单配置中，后续扫描将跳过这些项。
 
 ### Q10: 多人同时操作导致冲突？
-
 专业版通过审计日志记录所有操作。建议团队制定操作规范，高峰期避免并发变更操作。关键操作使用检查点机制。
 
-## 故障排查表
-
+## 错误处理
 | 症状 | 可能原因 | 解决方案 | 优先级 |
 |:-----|:---------|:---------|:-------|
 | API返回403 | 功能开关未启用 | 设置对应环境变量为1 | 高 |
@@ -486,7 +442,6 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 | systemctl失败 | 权限不足 | 使用用户级服务，非root | 中 |
 
 ## 专业版特性
-
 本专业版相比免费版新增以下能力：
 - 成本分析与预算管理：Token用量追踪、API费用统计、月度预算设置和超支告警
 - 变更操作与备份管理：系统备份创建与恢复、模型切换、配置更新等变更操作
@@ -499,7 +454,6 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 - 敏感数据深度扫描：自定义扫描模式、多路径扫描、扫描历史追踪
 
 ## 定价
-
 | 版本 | 价格 | 功能 | 适用场景 |
 |------|------|------|----------|
 | 免费体验版 | 0元 | 只读监控+基础安全扫描 | 个人试用 |
@@ -508,16 +462,13 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 专业版通过SkillHub SkillPay发布。
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**：Windows / macOS / Linux（系统级操作需Linux）
 - **Node.js**：18.0及以上版本
 - **运行时**：运维看板服务需持续运行
 
 ### 第三方依赖
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Node.js | 运行时 | 必需 | 从Node.js官网下载安装 |
@@ -529,7 +480,6 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 
 ### API Key 配置
-
 - **运维看板Token**：通过`OPS_DASHBOARD_AUTH_TOKEN`环境变量配置
 - **服务商API Key**：存储在`keys.env`文件中，需设置`OPS_DASHBOARD_LOAD_KEYS_ENV=1`加载
 - **存储位置**：所有密钥文件存储在项目根目录（已加入.gitignore）
@@ -537,6 +487,10 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 - **安全建议**：生产环境使用反向代理（如Nginx）添加额外的认证层
 
 ### 可用性分类
-
 - **分类**：MD+EXEC（纯Markdown指令，需要exec命令行执行能力）
 - **说明**：基于Markdown的AI Skill，通过自然语言指令驱动Agent执行运维看板全量API操作
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

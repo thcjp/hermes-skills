@@ -4,12 +4,10 @@ name: py-toolkit-pro
 version: "1.0.0"
 displayName: Python工具包-专业版
 summary: 企业级Python开发平台,支持性能优化、异步编程、代码规范与CI/CD集成
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  企业级 Python 开发工具专业版,面向团队与生产环境。
-
-  核心能力:
+  企业级 Python 开发工具专业版,面向团队与生产环境。核心能力:
   - 性能分析与优化深度指导
   - asyncio 异步编程完整方案
   - 多进程与分布式计算最佳实践
@@ -25,9 +23,7 @@ description: |-
   - 数据处理管道优化
   - 企业级 Python 项目规范建设
 
-  差异化:专业版在免费版基础上扩展性能优化、异步编程、安全编码与企业级 CI/CD 集成,兼容免费版知识体系。
-
-  触发关键词: python, performance, asyncio, profiling, enterprise, 性能优化, 异步编程, 安全编码, CI/CD, 内存分析
+ ...
 tags:
 - Python
 - 性能优化
@@ -36,10 +32,9 @@ tags:
 - 安全编码
 - CI/CD
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Python 工具包 - 专业版
 
 ## 概述
@@ -217,6 +212,20 @@ jobs:
           twine upload dist/* -u __token__ -p ${{ secrets.PYPI_TOKEN }}
 ```
 
+## 不适用场景
+
+以下场景Python工具包-专业版不适合处理：
+
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 运维部署管理
+
+
+## 触发条件
+
+需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 企业项目初始化
@@ -240,10 +249,10 @@ jobs:
 # └── Makefile
 ```
 
-### 性能分析快速开始
+### 使用流程
 
 ```bash
-# 安装分析工具
+# 依赖说明
 pip install py-spy line_profiler memory_profiler
 
 # 采样分析(无需修改代码)
@@ -256,7 +265,7 @@ python -m line_profiler my_script.py.lprof
 python -m memory_profiler my_script.py
 ```
 
-## 配置示例
+## 示例
 
 ### 企业级 pyproject.toml
 
@@ -415,3 +424,15 @@ A: pyproject.toml 是现代 Python 项目的标准配置文件(PEP 621),替代 s
 - **说明**: 通过自然语言指令驱动 Agent 执行企业级 Python 开发任务,包含性能优化、异步编程、安全编码与 CI/CD 集成
 - **兼容性**: 完全兼容免费版知识体系
 - **支持**: 优先工单支持,SLA 保障响应时间
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用

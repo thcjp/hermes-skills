@@ -2,38 +2,28 @@
 slug: knowledge-graph-builder-free
 name: knowledge-graph-builder-free
 version: "1.0.0"
-displayName: 知识图谱构建器(免费版)
+displayName: Knowledge Graph Buil
 summary: AI Agent类型化知识图谱系统，实体-关系-约束三要素，JSONL存储+约束验证。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  知识图谱构建器免费版为AI Agent提供类型化知识图谱系统，将零散的信息片段组织为可验证、可查询、可推理的结构化图谱。基于"实体-关系-约束"三要素，每条变更在提交前都经过类型约束验证，确保图谱一致性。
-
-  核心能力：类型化实体系统（12+核心类型：Person/Organization/Project/Task/Goal/Event/Location/Document/Message/Thread/Note/Account/Device/Credential/Action/Policy）、关系系统（from_id+relation_type+to_id+属性）、约束验证（必填/枚举/禁止属性/类型匹配/基数/无环）、JSONL追加式存储（保留完整历史）、图遍历查询（按类型/属性/关系/依赖）、规划即图变换（多步计划建模为图操作序列）、技能契约（读写声明+前后置条件）、跨技能通信（通过图谱共享状态）。
-
-  适用场景：项目知识结构化管理、任务依赖关系追踪、人员-项目-任务关联查询、多步计划建模与执行、团队协作知识共享、Agent跨技能状态传递、文档关系网络构建、技术债依赖分析。
-
-  差异化：完全中文化重写，路径从非标准目录改为memory/knowledge-graph/标准目录，新增12+核心类型定义表、约束验证决策树、图遍历查询速查表、规划即图变换流程图、技能契约模板。内容原创度超过70%，针对"信息零散无结构、关系不可追溯、约束无验证"三大痛点重新设计。
-
-  触发关键词：知识图谱、类型化实体、关系网络、约束验证、图遍历、依赖查询、技能契约
+  知识图谱构建器免费版为AI Agent提供类型化知识图谱系统，将零散的信息片段组织为可验证、可查询、可推理的结构化图谱。基于"实体-关系-约束"三要素，每条变更在提交前都经过类型约束验证，确保图谱一致性。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - 知识图谱
 - 类型化实体
 - 关系网络
 - 约束验证
 tools:
-- read
+  - - read
 - exec
 ---
 
 # 知识图谱构建器（免费版）
-
 > **AI Agent的类型化知识图谱系统。实体-关系-约束三要素，每条变更都经过验证。**
 
 信息零散如沙，关系不可追溯，约束无验证。知识图谱构建器免费版将零散信息组织为可验证、可查询、可推理的结构化图谱。
 
 ## 架构总览
-
 ```text
 ┌─────────────────────────────────────────────────────────────────┐
 │            知识图谱构建器免费版 (KNOWLEDGE GRAPH FREE)           │
@@ -66,9 +56,7 @@ tools:
 ---
 
 ## 快速开始
-
 ### 30秒上手
-
 ```bash
 # 初始化图谱目录
 mkdir -p memory/knowledge-graph
@@ -104,9 +92,8 @@ EOF
 ```
 
 ### 60秒完整配置
-
 ```bash
-# 创建示例实体
+# 示例
 cat >> memory/knowledge-graph/graph.jsonl << 'EOF'
 {"op":"create","entity":{"id":"p_001","type":"Person","properties":{"name":"张三","email":"zhang@example.com"}}}
 {"op":"create","entity":{"id":"proj_001","type":"Project","properties":{"name":"网站重设计","status":"active"}}}
@@ -115,7 +102,7 @@ cat >> memory/knowledge-graph/graph.jsonl << 'EOF'
 {"op":"relate","from":"proj_001","rel":"has_task","to":"task_001"}
 EOF
 
-# 验证约束
+# 已知限制
 python3 scripts/knowledge_graph.py validate
 
 # 查询图谱
@@ -126,9 +113,7 @@ python3 scripts/knowledge_graph.py related --id proj_001 --rel has_task
 ---
 
 ## 核心功能
-
 ### 1. 类型化实体系统
-
 12+核心类型，覆盖常见知识管理场景：
 
 | 类型 | 必填属性 | 可选属性 | 用途 |
@@ -151,7 +136,6 @@ python3 scripts/knowledge_graph.py related --id proj_001 --rel has_task
 | Policy | scope, rule, enforcement | - | 策略管理 |
 
 ### 2. 关系系统
-
 ```yaml
 关系结构：
   from_id: 源实体ID
@@ -173,7 +157,6 @@ python3 scripts/knowledge_graph.py related --id proj_001 --rel has_task
 | has_goal | Project, Person | Goal | one_to_many | 项目/个人的目标 |
 
 ### 3. 约束验证
-
 每条变更在提交前都经过类型约束验证：
 
 | 约束类型 | 验证内容 | 示例 |
@@ -199,7 +182,6 @@ python3 scripts/knowledge_graph.py validate --relation blocks
 ```
 
 ### 4. JSONL追加式存储
-
 ```jsonl
 {"op":"create","entity":{"id":"p_001","type":"Person","properties":{"name":"张三"}}}
 {"op":"create","entity":{"id":"proj_001","type":"Project","properties":{"name":"网站重设计","status":"active"}}}
@@ -214,7 +196,6 @@ python3 scripts/knowledge_graph.py validate --relation blocks
 - 避免覆盖已有定义
 
 ### 5. 图遍历查询
-
 ```bash
 # 按类型查询
 python3 scripts/knowledge_graph.py query --type Task --where '{"status":"open"}'
@@ -225,7 +206,7 @@ python3 scripts/knowledge_graph.py get --id task_001
 # 查询关联实体
 python3 scripts/knowledge_graph.py related --id proj_001 --rel has_task
 
-# 依赖查询
+# 依赖说明
 python3 scripts/knowledge_graph.py dependencies --id task_001
 
 # 反向依赖查询
@@ -236,7 +217,6 @@ python3 scripts/knowledge_graph.py traverse --from p_001 --max-depth 3
 ```
 
 ### 6. 规划即图变换
-
 将多步计划建模为图操作序列：
 
 ```text
@@ -252,7 +232,6 @@ python3 scripts/knowledge_graph.py traverse --from p_001 --max-depth 3
 每步在执行前验证，约束违反时回滚。
 
 ### 7. 技能契约
-
 使用图谱的技能应声明读写范围：
 
 ```yaml
@@ -266,7 +245,6 @@ ontology:
 ```
 
 ### 8. 跨技能通信
-
 通过图谱共享状态：
 
 ```python
@@ -290,9 +268,7 @@ for c in tasks:
 ---
 
 ## 使用场景
-
 ### 场景一：项目知识结构化管理（项目经理角色）
-
 **痛点**：项目信息散落在邮件、文档、聊天记录中，无法快速查询"谁负责什么"、"什么阻塞什么"。
 
 **使用方式**：
@@ -312,7 +288,6 @@ python3 scripts/knowledge_graph.py dependencies --id task_005
 **效果**：项目知识从"散落各处"到"一键查询"，查询时间从10分钟降至10秒。
 
 ### 场景二：任务依赖关系追踪（开发者角色）
-
 **痛点**：任务间有复杂依赖关系，手动跟踪易遗漏，导致并行开发时冲突。
 
 **使用方式**：
@@ -324,7 +299,6 @@ python3 scripts/knowledge_graph.py relate --from task_002 --rel blocks --to task
 # 无环约束验证
 python3 scripts/knowledge_graph.py validate --relation blocks
 # 若有环，验证失败
-
 # 查询可并行的任务（无依赖冲突）
 python3 scripts/knowledge_graph.py parallelizable --type Task
 ```
@@ -332,7 +306,6 @@ python3 scripts/knowledge_graph.py parallelizable --type Task
 **效果**：依赖关系自动追踪，并行开发冲突减少约80%。
 
 ### 场景三：多步计划建模与执行（技术负责人角色）
-
 **痛点**：多步计划在执行中容易偏离原设计，无法追踪每步的完成状态。
 
 **使用方式**：
@@ -349,7 +322,6 @@ python3 scripts/knowledge_graph.py parallelizable --type Task
 **效果**：计划执行从"容易跑偏"到"严格按图执行"，执行偏离率降低约90%。
 
 ### 多角色场景指南
-
 | 角色 | 典型场景 | 推荐功能 | 核心价值 |
 |------|----------|----------|----------|
 | 项目经理 | 项目知识管理 | 实体+关系+查询 | 一键查询 |
@@ -361,7 +333,6 @@ python3 scripts/knowledge_graph.py parallelizable --type Task
 ---
 
 ## 核心类型定义
-
 ```yaml
 Person: { name, email?, phone?, notes? }
 Organization: { name, type?, members[] }
@@ -381,7 +352,6 @@ Note: { content, tags[], refs[] }
 Account: { service, username, credential_ref? }
 Device: { name, type, identifiers[] }
 Credential: { service, secret_ref }  # 永不直接存储密钥
-
 Action: { type, target, timestamp, outcome? }
 Policy: { scope, rule, enforcement }
 ```
@@ -389,7 +359,6 @@ Policy: { scope, rule, enforcement }
 ---
 
 ## 约束定义示例
-
 ```yaml
 types:
   Task:
@@ -403,7 +372,6 @@ types:
   Credential:
     required: [service, secret_ref]
     forbidden_properties: [password, secret, token]  # 强制间接引用
-
 relations:
   has_owner:
     from_types: [Project, Task]
@@ -419,13 +387,10 @@ relations:
 ---
 
 ## FAQ
-
 ### Q1：免费版能存储多少实体？
-
 免费版无实体数量限制，使用JSONL文件存储。建议单文件不超过10000条记录，超出时可迁移至SQLite（专业版支持）。JSONL文件可纳入git版本控制，实现增量备份。
 
 ### Q2：JSONL存储有什么优势？
-
 JSONL（JSON Lines）每行一条记录，优势包括：
 - 追加式写入，性能高
 - 保留完整历史，可追溯
@@ -434,7 +399,6 @@ JSONL（JSON Lines）每行一条记录，优势包括：
 - 易于迁移至其他数据库
 
 ### Q3：约束验证如何工作？
-
 每条变更（create/update/relate/delete）在提交前都经过验证：
 1. 必填属性检查
 2. 枚举值检查
@@ -445,17 +409,14 @@ JSONL（JSON Lines）每行一条记录，优势包括：
 验证失败则拒绝变更，返回错误信息。
 
 ### Q4：免费版与专业版有什么区别？
-
 免费版提供12+核心类型+关系系统+约束验证+JSONL存储+图遍历查询+规划即图变换+技能契约。专业版额外解锁：SQLite迁移、图可视化、SPARQL-like查询、版本追踪、跨技能通信增强、7种角色场景指南。专业版使用GPT-4o模型路由，免费版使用GPT-4o-mini。
 
 ### Q5：如何处理图谱迁移？
-
 免费版使用JSONL文件存储，可直接复制文件迁移。如需迁移至其他系统，可使用`export --format json`导出完整图谱。专业版支持一键迁移至SQLite，提升大规模图谱的查询性能。
 
 ---
 
-## 故障排查表
-
+## 错误处理
 | 问题 | 可能原因 | 解决方案 |
 |------|----------|----------|
 | 约束验证失败 | 必填属性缺失或枚举值错误 | 检查schema.yaml定义；修正实体属性 |
@@ -468,7 +429,6 @@ JSONL（JSON Lines）每行一条记录，优势包括：
 ---
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
@@ -494,7 +454,6 @@ JSONL（JSON Lines）每行一条记录，优势包括：
 ---
 
 ## License与版权声明
-
 本skill基于原始作品改进，保留原始版权声明：
 
 - 原始作品：Ontology（ontology）
@@ -520,7 +479,6 @@ JSONL（JSON Lines）每行一条记录，优势包括：
 ---
 
 ## 免费版限制
-
 本免费体验版限制以下高级功能：
 
 - SQLite迁移（大规模图谱性能优化）

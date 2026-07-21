@@ -4,12 +4,10 @@ name: slack-toolkit-pro
 version: "1.0.0"
 displayName: Slack工具箱专业版
 summary: 企业级Slack管理工具，支持批量消息操作、定时发送、消息模板、频道分析与团队协作场景。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  Slack工具箱（专业版）—— 面向团队和企业的全功能Slack管理工具。
-
-  核心能力:
+  Slack工具箱（专业版）—— 面向团队和企业的全功能Slack管理工具。核心能力:
   - 批量消息发送、编辑与删除
   - 定时消息调度与计划管理
   - 消息模板库与变量替换
@@ -23,9 +21,7 @@ description: |-
   - 定时提醒与周期通知
   - 团队沟通数据分析与优化
 
-  差异化: 在免费版基础上增加批量操作、定时调度、模板管理、数据分析等企业级能力，完全兼容免费版操作格式。
-
-  触发关键词: Slack批量操作, 定时消息, 消息模板, 频道分析, 多频道广播, slack, batch, schedule, broadcast
+  差异化: 在免费版基础上增加批量操作、定时调度、模板管理、数据分析等企业级能力，完全兼容免费版操作格式
 tags:
 - 沟通协作
 - 企业级
@@ -33,7 +29,7 @@ tags:
 - 自动化
 - 批量处理
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -119,7 +115,7 @@ class BroadcastSender:
             template = template.replace(f"{{{key}}}", str(value))
         return template
 
-# 使用示例
+# 示例
 sender = BroadcastSender(slack_client)
 results = sender.broadcast(
     message="【公告】{event} 将于 {date} 举行，请各位安排好时间参加。",
@@ -394,7 +390,7 @@ slack-toolkit-pro schedule cancel --id "Q1234567890"
 
 专业版完全兼容免费版的所有操作格式。免费版的JSON参数格式可直接在专业版中使用，升级无需修改现有配置。
 
-### Q: 批量广播有数量限制吗？
+### 已知限制
 
 专业版单次广播最大支持50个频道，发送频率限制为每秒1条，避免触发Slack API限流。如需更大规模广播，建议分批次执行。
 
@@ -441,7 +437,7 @@ variables = {
 - **Python 版本**: 3.8+
 - **网络环境**: 需能访问 `https://slack.com/api/` 端点
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -484,3 +480,11 @@ export SLACK_APP_TOKEN="xapp-your-app-token-here"
 - **适用人群**: 企业团队、项目经理、运营团队、Slack管理员
 - **兼容性**: 完全兼容免费版操作格式与配置，支持无缝升级
 - **支持级别**: 优先技术支持，工作日24小时内响应
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

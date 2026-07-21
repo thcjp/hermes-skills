@@ -4,7 +4,7 @@ name: bizauto-flow-pro
 version: "1.0.0"
 displayName: 业务自动化师(专业版)
 summary: 全流程业务自动化架构师，含事件驱动、人机协同、多系统同步、ROI仪表盘与五级容错降级。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   业务自动化师专业版是面向团队与企业的全功能业务自动化架构系统。采用"审计-设计-实现-监控-优化"五阶段方法论，从识别瓶颈到高级容错，覆盖自动化全生命周期。专业版解锁事件驱动架构、人机协同审批门、五级容错降级、多系统同步策略与ROI仪表盘五大高级能力。

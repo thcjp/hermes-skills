@@ -1,15 +1,13 @@
 ---
-slug: openai-whisper-tool-pro
+slug: llm-provider-whisper-tool-pro
 name: openai-whisper-tool-pro
 version: "1.0.0"
 displayName: Whisper语音转文字专业版
 summary: 企业级Whisper语音转文字工具,支持批量处理、GPU加速、说话人分离与API服务化,适配生产环境。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  面向团队与企业用户的 Whisper 语音转文字工具(专业版)。
-
-  核心能力:
+  面向团队与企业用户的 Whisper 语音转文字工具(专业版)。核心能力:
   - 涵盖免费版全部能力(本地转录、翻译、多格式输出)
   - 批量处理:目录级递归转录,支持任务队列
   - GPU 加速:CUDA / Metal / MPS 全面支持
@@ -21,20 +19,7 @@ description: |-
 
   适用场景:
   - 企业会议纪要自动化流水线
-  - 播客/视频批量字幕生成
-  - 多人访谈录音转录与说话人标注
-  - 法律/医疗等专业领域高精度转录
-  - 客服录音质检与归档
-
-  差异化:
-  - 专业版支持批量与自动化,适合生产环境
-  - GPU 加速可将转录速度提升 10-50 倍
-  - 说话人分离解决多人对话场景痛点
-  - 自定义词典显著提升专业领域准确度
-  - API 服务化便于集成到企业系统
-  - 与免费版命令兼容,可平滑升级
-
-  触发关键词: whisper, transcription, batch, gpu, diarization, speaker, 语音转文字, 批量, 说话人分离, 自定义词典, api, pro
+  ...
 tags:
 - 创意设计
 - 语音转文字
@@ -44,15 +29,14 @@ tags:
 - 说话人分离
 - Whisper
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Whisper 语音转文字工具 - 专业版
 
 ## 概述
 
-Whisper 语音转文字工具(专业版)在免费版(`openai-whisper-tool-free`)本地转录能力之上,新增批量处理、GPU 加速、说话人分离、自定义词典与 API 服务化等企业级能力。适合需要高吞吐、高精度与自动化的生产场景。
+Whisper 语音转文字工具(专业版)在免费版(`llm-provider-whisper-tool-free`)本地转录能力之上,新增批量处理、GPU 加速、说话人分离、自定义词典与 API 服务化等企业级能力。适合需要高吞吐、高精度与自动化的生产场景。
 
 专业版与免费版命令行完全兼容,已使用免费版的脚本无需修改即可运行。升级后可启用高级特性。
 
@@ -213,13 +197,27 @@ async def transcribe(
 # 启动: uvicorn server:app --host 0.0.0.0 --port 8000
 ```
 
+## 不适用场景
+
+以下场景Whisper语音转文字专业版不适合处理：
+
+- 需要人工创意判断的任务
+- 非结构化头脑风暴
+- 人际沟通协调
+
+
+## 触发条件
+
+需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
-### 1. 安装专业版依赖
+### 依赖说明
 
 ```bash
 # 基础依赖(同免费版)
-pip install -U openai-whisper
+pip install -U llm-provider-whisper
 
 # GPU 加速(根据硬件选择)
 pip install torch --index-url https://download.pytorch.org/whl/cu121  # NVIDIA CUDA
@@ -252,7 +250,7 @@ for f in ./audios/*.{mp3,m4a,wav}; do
 done
 ```
 
-## 配置示例
+## 示例
 
 ### 自定义词典
 
@@ -416,7 +414,7 @@ def assess_quality(result):
 ## 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **Agent 平台**: 支持SKILL.md的任意AI Agent(ai-assistant Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 - **Python**: 3.9 及以上
 - **硬件**: 推荐 NVIDIA GPU(8GB+ 显存)或 Apple Silicon;CPU 可用但较慢
@@ -426,7 +424,7 @@ def assess_quality(result):
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| openai-whisper | Python 库 | 必需 | `pip install -U openai-whisper` |
+| llm-provider-whisper | Python 库 | 必需 | `pip install -U llm-provider-whisper` |
 | ffmpeg | 系统工具 | 必需 | `brew install ffmpeg` / `apt install ffmpeg` |
 | PyTorch (CUDA) | Python 库 | 推荐(GPU) | `pip install torch --index-url .../cu121` |
 | pyannote.audio | Python 库 | 可选(说话人分离) | `pip install pyannote.audio` |
@@ -444,3 +442,16 @@ def assess_quality(result):
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。专业版支持批量处理、GPU 加速与 API 服务化,适合企业级语音转文字生产环境。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用
+- 本地运行，不支持多设备同步

@@ -4,12 +4,10 @@ name: google-fonts-tool-free
 version: "1.0.0"
 displayName: 谷歌字体工具
 summary: 面向个人开发者的 Google Fonts 加载、子集与经典搭配工具。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向个人开发者的 Google Fonts 性能加载与字体搭配工具。
-
-  核心能力:
+  面向个人开发者的 Google Fonts 性能加载与字体搭配工具。核心能力:
   - display=swap 与 preconnect 最佳加载
   - 变量字体与按需字重加载
   - 经典衬线/无衬线/科技风搭配推荐
@@ -20,19 +18,16 @@ description: |-
   - 单项目字体搭配选择
   - 避免字体加载常见性能坑
 
-  差异化: 免费版聚焦单项目加载优化与经典搭配，提供按用途选字体清单，零成本上手。
-
-  触发关键词: google fonts, 字体加载, 字体搭配, display swap, preconnect, 变量字体, 子集, font pairing
+  差异化: 免费版聚焦单项目加载优化与经典搭配，提供按用途选字体清单，零成本上手
 tags:
 - 字体
 - 前端性能
 - 个人效率
 - 其他工具
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 谷歌字体工具（免费版）
 
 ## 概述
@@ -86,6 +81,20 @@ font-family: 'Inter', system-ui, sans-serif;
   Montserrat（标题）+ Hind（正文）
 ```
 
+## 不适用场景
+
+以下场景谷歌字体工具不适合处理：
+
+- 纯技术文档撰写
+- 学术论文写作
+- 法律文书起草
+
+
+## 触发条件
+
+需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 1. 确定标题与正文字体。
@@ -98,7 +107,7 @@ font-family: 'Inter', system-ui, sans-serif;
 python -m http.server 8000
 ```
 
-## 配置示例
+## 示例
 
 变量字体单文件加载：
 
@@ -202,7 +211,7 @@ font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
 - **操作系统**: Windows / macOS / Linux
 - **浏览器**: 任意现代浏览器
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Google Fonts CDN | 字体资源 | 必需 | fonts.googleapis.com |
@@ -215,3 +224,17 @@ font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 命令行预览）
 - **说明**: 通过自然语言指令驱动 Agent 产出字体加载代码与搭配方案
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

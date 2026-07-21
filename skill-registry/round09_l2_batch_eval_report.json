@@ -1,0 +1,225 @@
+{
+  "evaluation_date": "2026-07-20T22:43:27.495755",
+  "total_evaluated": 16,
+  "passed": 16,
+  "failed": 0,
+  "avg_score": 47.0,
+  "grade_distribution": {
+    "A": 16,
+    "B": 0,
+    "C": 0,
+    "D": 0
+  },
+  "pass_threshold": 42,
+  "duration_sec": 0.2,
+  "results": [
+    {
+      "slug": "alephnet-node-manager",
+      "total_score": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "alpha-feed-creator",
+      "total_score": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "bookmark-smart-hub",
+      "total_score": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "calendar-reminder-paid",
+      "total_score": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "card-image-builder",
+      "total_score": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "discord-chat-manager",
+      "total_score": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "discord-community-hub",
+      "total_score": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "discord-toolkit",
+      "total_score": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "discord-voice-paid",
+      "total_score": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "dns-config",
+      "total_score": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "email-163",
+      "total_score": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "email-digest",
+      "total_score": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "email-toolkit",
+      "total_score": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "feishu-card-builder",
+      "total_score": 49,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "feishu-file-sender",
+      "total_score": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "google-workspace-cli",
+      "total_score": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    }
+  ]
+}

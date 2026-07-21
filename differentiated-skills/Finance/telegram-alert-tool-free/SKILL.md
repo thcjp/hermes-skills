@@ -4,38 +4,17 @@ name: telegram-alert-tool-free
 version: "1.0.0"
 displayName: Telegram告警入门
 summary: 通过Telegram Bot发送基础交易告警，支持单一群组与简单价格触发。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人交易者的Telegram告警通知工具。通过Telegram Bot将交易信号、
-  价格变动等信息推送到指定群组。适合个人用户接收简单的交易提醒与
-  市场通知。
-
-  核心能力:
-  - Telegram Bot消息推送
-  - 基础价格触发告警
-  - 单一群组通知
-  - 简单格式化消息
-
-  适用场景:
-  - 个人交易信号通知
-  - 价格突破提醒
-  - 日常市场提醒
-  - 简单工作流通知
-
-  差异化:
-  - 免费版聚焦基础告警推送
-  - 适合个人用户单一群组
-  - 不支持多群组与多通道
-  - 不支持复杂触发条件
-
-  触发关键词: Telegram, 告警, 通知, 交易信号, 价格提醒, Bot, alert, notification
+  价格变动等信息推送到指定群组。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。
 tags:
 - Finance
 - 告警通知
 - Telegram
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -107,7 +86,7 @@ python3 scripts/alert.py schedule \
 ### 环境准备
 
 ```bash
-# 安装依赖
+# 依赖说明
 pip install python-telegram-bot requests
 
 # 配置Bot Token
@@ -133,7 +112,7 @@ python3 scripts/alert.py list
 python3 scripts/alert.py monitor
 ```
 
-## 配置示例
+## 示例
 
 ### 告警配置
 
@@ -228,3 +207,17 @@ alert_config:
 - **分类**: MD+EXEC（Markdown指令+Python脚本执行）
 - **说明**: 通过Telegram Bot推送告警通知
 - **免费版限制**: 单一群组、基础触发条件、不支持多通道与复杂逻辑
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

@@ -2,9 +2,9 @@
 slug: flowforge-builder-pro
 name: flowforge-builder-pro
 version: "1.0.0"
-displayName: 流程锻造器(专业版)
+displayName: Flowforge Builder
 summary: 全功能JSON工作流构建，四种触发器、多条件组合、数据处理、通知发送、六模板库。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   流程锻造器专业版是在免费版基础上的全功能升级，为AI Agent提供代码化的工作流构建能力。通过JSON定义触发器、操作步骤、条件判断和错误处理，将跨平台自动化流程转化为可版本控制、可复用的工作流配置。专业版解锁API Webhook触发、多条件组合、数据处理转换、通知发送四大高级能力。

@@ -4,33 +4,19 @@ name: linear-workflow-skill-free
 version: "1.0.0"
 displayName: Linear工作流(免费版)
 summary: 通过Node CLI管理Linear问题与项目，支持问题查看、创建与状态更新
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  Linear工作流(免费版)是一款通过内置Node CLI与Linear官方API交互的工作流管理工具，支持问题查看、创建、更新与项目管理等核心能力。
-
-  核心能力：
+  Linear工作流(免费版)是一款通过内置Node CLI与Linear官方API交互的工作流管理工具，支持问题查看、创建、更新与项目管理等核心能力。核心能力：
   - 通过Node CLI查询团队、项目与问题
   - 创建与更新问题，支持优先级与状态设置
-  - 添加协作评论，记录上下文信息
-  - 查看工作流状态与标签
-  - 遵循"先读后写"的安全工作流
-
-  适用场景：
-  - 开发者管理分配给自己的问题
-  - 团队负责人创建与分配任务
-  - 敏捷团队的日常问题维护
-  - 个人开发者的任务跟踪
-
-  差异化：本工具采用"先读后写"的安全工作流设计，所有写入操作前先确认当前状态，避免误操作。内置Node CLI直接调用Linear官方SDK，无需第三方代理。免费版提供完整的问题管理能力，专业版额外提供冲刺规划自动化、高级工作流与报告生成能力。
-
-  触发关键词：Linear、工作流、问题管理、任务跟踪、Node CLI
+  - 添加协作评论。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
 tags:
 - 集成工具
 - 项目管理
 - Linear
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -77,7 +63,7 @@ Linear工作流管理的核心在于"有序操作"：先了解当前状态，再
 
 本工具属于中等复杂度工具，预计120秒内可完成首次查询。
 
-### 步骤1：安装依赖
+### 依赖说明
 ```bash
 # 进入脚本目录安装依赖
 cd {baseDir}/scripts && npm install
@@ -111,7 +97,7 @@ node {baseDir}/scripts/linear-cli.js issue ENG-123
 node {baseDir}/scripts/linear-cli.js createIssue "修复登录页样式" "Safari下按钮错位" "team-id" '{"priority":2}'
 ```
 
-## 配置示例
+## 示例
 
 ### 环境变量配置
 ```bash
@@ -187,10 +173,10 @@ A：先执行`teams`命令列出所有团队，从返回结果中获取目标团
 ### Q4：更新问题状态需要状态ID？
 A：是的。先执行`states`命令列出所有工作流状态，获取目标状态的ID。状态ID是UUID格式，传入`updateIssue`的`stateId`参数。
 
-### Q5：免费版有使用次数限制吗？
+### 已知限制
 A：免费版不限制使用次数，但冲刺规划自动化、高级工作流与报告生成功能需使用专业版。
 
-## 故障排查表
+## 错误处理
 
 | 现象 | 可能原因 | 解决方案 |
 |------|----------|----------|

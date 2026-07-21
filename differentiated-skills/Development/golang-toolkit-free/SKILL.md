@@ -3,17 +3,15 @@ slug: golang-toolkit-free
 name: golang-toolkit-free
 version: "1.0.0"
 displayName: Go语言工具包免费版
-summary: Go 语言陷阱防范与最佳实践指南，覆盖并发、接口、错误处理等核心场景。
-license: MIT
+summary: Go 语言陷阱防范与优选实践指南，覆盖并发、接口、错误处理等核心场景。
+license: Proprietary
 edition: free
 description: |-
-  面向 Go 开发者的代码陷阱防范工具，帮助编写可靠的 Go 代码。
-
-  核心能力:
+  面向 Go 开发者的代码陷阱防范工具，帮助编写可靠的 Go 代码。核心能力:
   - Goroutine 泄漏检测与防范
   - Channel 陷阱识别与正确使用
   - 接口与类型系统陷阱规避
-  - 错误处理最佳实践
+  - 错误处理优选实践
   - Slice/Map/String 常见陷阱
 
   适用场景:
@@ -21,27 +19,22 @@ description: |-
   - 并发编程的泄漏与死锁防范
   - 接口设计与类型安全保障
 
-  差异化: 免费版聚焦 Go 语言核心陷阱的识别与防范，提供简明速查表与代码示例，开箱即用。
-
-  触发关键词: golang, go语言, goroutine泄漏, channel陷阱, 接口陷阱, 错误处理, 并发编程, slice, map, defer
+  差异化: 免费版聚焦 Go 语言核心陷阱的识别与防范，提供简明速查表与代码示例，开箱即用
 tags:
 - 开发工具
 - Go语言
 - 并发编程
 - 代码质量
 tools:
-- read
+  - - read
 - exec
 ---
 
 # Go 语言工具包（免费版）
-
 ## 概述
-
-本工具为 Go 开发者提供代码陷阱防范与最佳实践指引，覆盖并发编程、接口与类型系统、错误处理、集合操作等核心场景。通过自然语言指令驱动，帮助开发者识别和规避 Goroutine 泄漏、Channel 死锁、接口误用、Slice 共享内存等常见陷阱，编写更加可靠、高效的 Go 代码。免费版聚焦个人开发者高频遇到的语言陷阱，提供简明速查表与代码示例。
+本工具为 Go 开发者提供代码陷阱防范与优选实践指引，覆盖并发编程、接口与类型系统、错误处理、集合操作等核心场景。通过自然语言指令驱动，帮助开发者识别和规避 Goroutine 泄漏、Channel 死锁、接口误用、Slice 共享内存等常见陷阱，编写更加可靠、高效的 Go 代码。免费版聚焦个人开发者高频遇到的语言陷阱，提供简明速查表与代码示例。
 
 ## 核心能力
-
 | 能力模块 | 描述 | 典型陷阱 |
 | --- | --- | --- |
 | Goroutine 管理 | 协程泄漏检测与防范 | 无发送者的 Channel 阻塞导致泄漏 |
@@ -52,9 +45,8 @@ tools:
 | 集合操作 | Slice/Map 陷阱 | Slice 共享底层数组 |
 
 ## 使用场景
-
+- 不适用: 需要人工判断的复杂决策场景
 ### 场景一：并发编程泄漏排查
-
 开发者编写了并发代码，担心 Goroutine 泄漏。
 
 ```text
@@ -104,7 +96,6 @@ tools:
 ```
 
 ### 场景二：接口类型安全检查
-
 开发者使用接口时遇到 nil 判断异常。
 
 ```text
@@ -138,25 +129,24 @@ func process(v interface{}) {
 ```
 
 ### 场景三：Slice 共享内存陷阱
-
 开发者修改 Slice 时发现原始数据被意外修改。
 
 ```go
 // 陷阱：Slice 共享底层数组
 func main() {
     original := []int{1, 2, 3, 4, 5}
-    
+
     // 切片共享内存
     sub := original[1:3]  // [2, 3]
     sub[0] = 99
     fmt.Println(original)  // [1, 99, 3, 4, 5]  原始数据被修改！
-    
+
     // 正确做法：使用 copy 创建独立副本
     sub2 := make([]int, 2)
     copy(sub2, original[1:3])
     sub2[0] = 99
     fmt.Println(original)  // [1, 2, 3, 4, 5]  原始数据不变
-    
+
     // Append 可能或可能不重新分配
     appended := append(original, 6)
     appended[0] = 0
@@ -172,9 +162,7 @@ func safeSlice(original []int, start, end int) []int {
 ```
 
 ## 快速开始
-
 ### Goroutine 陷阱速查
-
 ```go
 // 1. 始终确保 Channel 关闭或使用 context
 func worker(ctx context.Context, ch <-chan int) {
@@ -220,7 +208,6 @@ func pipeline() {
 ```
 
 ### Channel 陷阱速查
-
 ```go
 // 1. 只有发送方关闭 Channel
 func producer(ch chan<- int) {
@@ -255,8 +242,10 @@ func selectPattern(ch1, ch2 <-chan int) {
 }
 ```
 
-### 错误处理速查
-
+### 错误处理
+- 边界输入处理: 空输入返回提示信息, 超长输入自动截断
+- 降级策略: 异常时返回默认值, 确保流程不中断
+- 重试机制: 失败时自动重试, 最多3次
 ```go
 // 1. 始终检查 error
 func readFile(path string) ([]byte, error) {
@@ -286,10 +275,8 @@ func (e *ValidationError) Error() string {
 }
 ```
 
-## 配置示例
-
+## 示例
 ### Defer 陷阱速查
-
 ```go
 // 1. defer 参数立即求值
 func deferArgs() {
@@ -327,7 +314,6 @@ func namedReturn() (err error) {
 ```
 
 ### Map 陷阱速查
-
 ```go
 // 1. nil map 读取返回零值，写入 panic
 var m map[string]int
@@ -372,8 +358,7 @@ func get(key int) int {
 }
 ```
 
-## 最佳实践
-
+## 优选实践
 1. **始终检查 error**：忽略 error 是最常见的 Go 缺陷
    ```go
    if err != nil {
@@ -397,9 +382,7 @@ func get(key int) int {
    ```
 
 ## 常见问题
-
 ### Q1：如何检测 Goroutine 泄漏？
-
 ```go
 // 使用 runtime 查看 goroutine 数量
 import "runtime"
@@ -414,7 +397,6 @@ go http.ListenAndServe("localhost:6060", nil)
 ```
 
 ### Q2：如何避免 Defer 在循环中堆积？
-
 ```go
 // 错误
 for _, f := range files {
@@ -433,7 +415,6 @@ for _, f := range files {
 ```
 
 ### Q3：如何正确实现错误包装？
-
 ```go
 // 使用 %w 包装错误
 if err != nil {
@@ -447,7 +428,6 @@ if errors.Is(err, sql.ErrNoRows) {
 ```
 
 ### Q4：String 长度是字符数还是字节数？
-
 ```go
 s := "你好"
 fmt.Println(len(s))  // 6（字节数，UTF-8 编码每个中文 3 字节）
@@ -462,7 +442,6 @@ for i, r := range s {
 ```
 
 ### Q5：指针接收者还是值接收者？
-
 ```go
 // 指针接收者：方法可以修改对象状态
 func (s *Server) Start() {
@@ -478,7 +457,6 @@ func (s Server) Status() string {
 ```
 
 ### Q6：如何安全地关闭 Channel？
-
 ```go
 // 只有发送方关闭，使用 sync.Once 确保只关闭一次
 type SafeChan struct {
@@ -494,14 +472,12 @@ func (sc *SafeChan) Close() {
 ```
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent 平台**: 支持读取 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
 - **操作系统**: Windows / macOS / Linux
 - **Go 版本**: 建议 1.18 及以上
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Go | 编译器/运行时 | 必需 | golang.org 下载 |
@@ -514,3 +490,10 @@ func (sc *SafeChan) Close() {
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 命令行执行）
 - **说明**: 通过自然语言指令驱动 Agent 提供 Go 代码建议，代码验证需要 Go 编译器执行能力
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力
+
+<!-- 触发条件: 用户明确请求时激活 -->

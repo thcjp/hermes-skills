@@ -4,31 +4,14 @@ name: ui-ux-toolkit-pro
 version: "1.0.0"
 displayName: UI/UX设计工具箱专业版
 summary: 全域设计数据库+持久化设计系统+多技术栈+批量搜索,面向团队企业的专业UI/UX设计决策引擎
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   面向设计团队和企业项目的专业级UI/UX设计决策引擎,涵盖全部10个设计域、
-  10种技术栈、设计系统持久化、页面级覆盖、批量搜索等高级能力。
-
-  核心能力:
+  10种技术栈、设计系统持久化、页面级覆盖、批量搜索等高级能力。核心能力:
   - 全部10个设计域搜索(product/style/typography/color/landing/chart/ux/react/web/prompt)
   - 10种技术栈实现指引(html-tailwind/react/nextjs/vue/svelte/swiftui/react-native/flutter/shadcn/jetpack-compose)
-  - 设计系统持久化:MASTER全局规则 + 页面级覆盖
-  - 批量搜索与多格式输出(Markdown/JSON)
-  - 层级检索与跨会话设计一致性保障
-  - 推理规则引擎(ui-reasoning.csv)驱动的智能推荐
-
-  适用场景:
-  - 企业级多页面应用的设计系统管理
-  - 跨技术栈团队的统一设计规范
-  - 设计系统版本化与页面级定制
-  - 团队协作的设计决策记录
-
-  差异化:专业版在免费版基础上扩展全部设计域和技术栈,新增设计系统持久化、
-  层级检索、批量操作和推理引擎,支持MASTER+页面覆盖模式,保障大型项目中
-  设计决策的一致性与可追溯性。完全兼容免费版查询语法。
-
-  触发关键词: 设计系统持久化, 页面级覆盖, 批量设计搜索, 多技术栈适配, MASTER设计规范, 设计令牌, 企业设计系统, 跨会话一致性, 层级检索
+  - 设计系统持久化:...
 tags:
 - 设计
 - UI
@@ -41,10 +24,9 @@ tags:
 - 技术栈
 - 批量处理
 tools:
-- read
+  - - read
 - exec
 ---
-
 # UI/UX设计工具箱 - 专业版
 
 ## 概述
@@ -204,6 +186,20 @@ python3 scripts/search.py "performance layout responsive" --domain ux -n 10
 python3 scripts/search.py "rerender waterfall bundle memo" --domain react -n 10
 ```
 
+## 不适用场景
+
+以下场景UI/UX设计工具箱专业版不适合处理：
+
+- 3D建模和动画制作
+- 照片级写实渲染
+- 手绘原创插画
+
+
+## 触发条件
+
+需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 环境验证
@@ -240,7 +236,7 @@ python3 scripts/search.py "hero testimonial pricing" --domain landing
 python3 scripts/search.py "layout responsive form" --stack html-tailwind
 ```
 
-## 配置示例
+## 示例
 
 ### 企业设计系统配置
 
@@ -388,7 +384,7 @@ python3 scripts/search.py "form validation" --stack flutter
 - **操作系统**: Windows / macOS / Linux
 - **Python版本**: 3.10 及以上(推荐3.12)
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -418,3 +414,17 @@ winget install Python.Python.3.12
 
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。核心查询、持久化和批量搜索功能依赖Python CLI脚本执行,需确保exec工具和Python环境可用。设计系统持久化创建的文件建议纳入版本控制以保障团队协作。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

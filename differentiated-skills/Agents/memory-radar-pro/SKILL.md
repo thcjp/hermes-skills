@@ -4,7 +4,7 @@ name: memory-radar-pro
 version: "1.0.0"
 displayName: 记忆雷达(专业版)
 summary: Agent记忆安全终极方案，含LLM增强扫描、批量监控、自动隔离、威胁情报、合规报告，准确率95%+。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   记忆雷达专业版是Agent记忆安全的终极解决方案。在免费版基础上解锁LLM增强扫描（语义理解检测复杂威胁，准确率95%+）、批量定时监控（cron自动化）、自动隔离（检测即隔离）、威胁情报更新（规则库持续更新）、合规报告生成（PDF/HTML导出）、多维度深度检测（行为模式分析）、告警通道集成七大高级功能。

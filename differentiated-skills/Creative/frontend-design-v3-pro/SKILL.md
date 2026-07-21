@@ -4,51 +4,27 @@ name: frontend-design-v3-pro
 version: "1.0.0"
 displayName: 前端设计V3-专业版
 summary: 生产级前端设计引擎，支持多框架输出、高级动效编排与可访问性合规。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  前端设计工具V3专业版，面向团队的生产级前端界面生成平台。
-
-  核心能力：
-  - 多框架生产级代码输出（HTML/CSS/JS, React, Vue）
-  - 高级动效编排（Framer Motion, GSAP, CSS组合方案）
-  - 可访问性 WCAG 合规检查与修复
-  - 性能优化策略（懒加载、代码分割、资源优化）
-  - 组件化架构设计
-  - 响应式多断点策略
-  - 设计令牌自动注入
-
-  适用场景：
-  - 生产级 Web 应用界面
-  - 企业级 SaaS 产品前端
-  - 高性能营销页面
-  - 多框架技术栈项目
-
-  差异化：专业版在免费版基础上扩展至多框架输出、高级动效、可访问性合规与性能优化。与免费版美学规范完全兼容。
-
-  触发关键词: distinctive, create, design, frontend, production, React, Vue, TypeScript, 动效, 可访问性, WCAG, 性能优化, 生产级
+  前端设计工具V3专业版。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Creative
 - Frontend
 - Enterprise
 - Production
 tools:
-- read
+  - - read
 - exec
----
-
 # 前端设计工具V3（专业版）
-
 ## 概述
-
+---
 前端设计工具V3专业版是生产级前端界面生成平台。它不仅保持免费版的独特美学追求，更将输出扩展至 React、Vue 等多框架生产级代码，集成高级动效编排、可访问性合规检查和性能优化策略，确保生成的界面既美观又可投入生产。
 
 本版本与免费版完全兼容——免费版的美学方向选择、字体指导和反模式检查在专业版中完整保留。专业版新增多框架输出、高级动效、可访问性和性能优化等能力。
 
 ## 核心能力
-
 ### 能力对比
-
 | 能力维度 | 免费版 | 专业版 |
 |:---------|:-------|:-------|
 | 输出框架 | HTML/CSS/JS | HTML/CSS/JS + React + Vue + TypeScript |
@@ -60,8 +36,7 @@ tools:
 | 响应式 | 基础 | 多断点策略 + 一致性 |
 | 设计令牌 | CSS变量 | 自动注入 + 多格式导出 |
 
-### 专业版核心能力
-
+### 核心能力
 ```text
 多框架输出:
   - HTML/CSS/JS: 单文件或分离文件
@@ -99,259 +74,17 @@ tools:
 ```
 
 ## 使用场景
-
 ### 场景一：生产级 React 应用界面
-
 生成带有 TypeScript 类型和高级动效的生产级 React 组件。
 
-```tsx
-// React + TypeScript + Framer Motion 生产级组件
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { lazy, Suspense } from 'react';
-import type { FC } from 'react';
-
-// 设计令牌
-const tokens = {
-  color: {
-    bgPrimary: '#0a0a0a',
-    bgSecondary: '#1a1a2e',
-    accent: '#c8553d',
-    text: '#f5f1e8',
-    textMuted: '#8b8378',
-  },
-  font: {
-    heading: "'Playfair Display', serif",
-    body: "'IBM Plex Sans', sans-serif",
-    mono: "'JetBrains Mono', monospace",
-  },
-  space: { sm: '0.5rem', md: '1rem', lg: '2rem', xl: '4rem' },
-} as const;
-
-// 可访问性: 语义化 + ARIA
-interface HeroSectionProps {
-  title: string;
-  subtitle: string;
-  onCTAClick?: () => void;
-}
-
-export const HeroSection: FC<HeroSectionProps> = ({
-  title,
-  subtitle,
-  onCTAClick,
-}) => {
-  const { scrollY } = useScroll();
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
-  const y = useTransform(scrollY, [0, 300], [0, -50]);
-
-  return (
-    <section
-      aria-labelledby="hero-title"
-      style={{
-        background: tokens.color.bgPrimary,
-        minHeight: '90vh',
-        display: 'flex',
-        alignItems: 'center',
-        padding: tokens.space.xl,
-      }}
-    >
-      <motion.div
-        style={{ opacity, y }}
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: {},
-          visible: { transition: { staggerChildren: 0.15 } },
-        }}
-      >
-        <motion.h1
-          id="hero-title"
-          variants={{
-            hidden: { opacity: 0, y: 40 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          style={{
-            fontFamily: tokens.font.heading,
-            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
-            fontWeight: 900,
-            lineHeight: 1.05,
-            color: tokens.color.text,
-          }}
-        >
-          {title}
-        </motion.h1>
-
-        <motion.p
-          variants={{
-            hidden: { opacity: 0, y: 30 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          style={{
-            fontFamily: tokens.font.body,
-            fontSize: '1.125rem',
-            color: tokens.color.textMuted,
-            maxWidth: '32rem',
-            marginTop: tokens.space.md,
-          }}
-        >
-          {subtitle}
-        </motion.p>
-
-        <motion.button
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.98 }}
-          onClick={onCTAClick}
-          aria-label="主要操作按钮"
-          style={{
-            marginTop: tokens.space.lg,
-            padding: `${tokens.space.md} ${tokens.space.lg}`,
-            background: tokens.color.accent,
-            color: tokens.color.text,
-            border: 'none',
-            borderRadius: '8px',
-            fontFamily: tokens.font.body,
-            fontSize: '1rem',
-            fontWeight: 600,
-            cursor: 'pointer',
-          }}
-        >
-          开始探索
-        </motion.button>
-      </motion.div>
-    </section>
-  );
-};
-
-// 懒加载的次屏组件
-const LazyGallery = lazy(() => import('./Gallery'));
-
-export const Page: FC = () => {
-  return (
-    <>
-      <HeroSection
-        title="设计的可能性"
-        subtitle="用独特的审美拒绝平庸的AI风格"
-      />
-      <Suspense fallback={<div aria-busy="true">加载中...</div>}>
-        <LazyGallery />
-      </Suspense>
-    </>
-  );
-};
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 场景二：Vue 3 生产级组件
 
-```vue
-<!-- Vue 3 + Composition API + TypeScript -->
-<template>
-  <section
-    ref="sectionRef"
-    aria-labelledby="feature-title"
-    class="feature-section"
-  >
-    <TransitionGroup name="stagger" tag="div" class="feature-grid">
-      <article
-        v-for="(feature, index) in features"
-        :key="feature.id"
-        class="feature-card"
-        :style="{ '--stagger-delay': `${index * 0.1}s` }"
-      >
-        <h3 :id="feature.id">{{ feature.title }}</h3>
-        <p>{{ feature.description }}</p>
-      </article>
-    </TransitionGroup>
-  </section>
-</template>
-
-<script setup lang="ts">
-import { ref, onMounted } from 'vue';
-
-interface Feature {
-  id: string;
-  title: string;
-  description: string;
-}
-
-const sectionRef = ref<HTMLElement>();
-const features = ref<Feature[]>([
-  { id: 'f1', title: '独特美学', description: '拒绝通用AI风格' },
-  { id: 'f2', title: '生产级代码', description: 'TypeScript类型安全' },
-  { id: 'f3', title: '可访问性', description: 'WCAG 2.1 AA合规' },
-]);
-
-// 滚动驱动动效
-onMounted(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
-
-  if (sectionRef.value) {
-    observer.observe(sectionRef.value);
-  }
-});
-</script>
-
-<style scoped>
-.feature-section {
-  background: #0a0a0a;
-  padding: 4rem 2rem;
-}
-
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.feature-card {
-  background: #1a1a2e;
-  border: 1px solid rgba(200, 85, 61, 0.2);
-  border-radius: 12px;
-  padding: 2rem;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.visible .feature-card {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: var(--stagger-delay, 0s);
-}
-
-.feature-card h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  color: #f5f1e8;
-  margin-bottom: 0.5rem;
-}
-
-.feature-card p {
-  font-family: 'IBM Plex Sans', sans-serif;
-  color: #8b8378;
-  font-size: 0.9rem;
-}
-</style>
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 场景三：可访问性合规检查
-
 ```python
-# 可访问性合规检查脚本
 class AccessibilityChecker:
     """WCAG 2.1 AA 合规检查器"""
 
@@ -433,16 +166,13 @@ class AccessibilityChecker:
             "details": self.issues
         }
 
-# 执行检查
 checker = AccessibilityChecker()
 report = checker.check_html("<html><body><header></header><main></main></body></html>")
 print(f"合规: {report['compliant']}, 错误: {report['errors']}, 警告: {report['warnings']}")
 ```
 
 ## 快速开始
-
 ### 第一步：选择框架与美学方向
-
 ```text
 配置选项:
   框架: html | react | vue
@@ -453,9 +183,7 @@ print(f"合规: {report['compliant']}, 错误: {report['errors']}, 警告: {repo
 ```
 
 ### 第二步：生成生产级代码
-
 ```bash
-# 生成 React + TypeScript 组件
 generate-frontend \
   --framework react \
   --typescript \
@@ -466,19 +194,14 @@ generate-frontend \
 ```
 
 ### 第三步：验证可访问性
-
 ```bash
-# 运行可访问性检查
 check-a11y ./src/components/ --standard wcag-2.1-aa
 
-# 性能审计
 audit-performance ./src/ --lighthouse
 ```
 
-## 配置示例
-
+## 示例
 ### 性能优化配置
-
 ```html
 <!-- 字体加载优化 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -499,7 +222,6 @@ audit-performance ./src/ --lighthouse
 ```
 
 ### React 代码分割配置
-
 ```tsx
 // 路由级代码分割
 import { lazy, Suspense } from 'react';
@@ -519,7 +241,6 @@ const ContactPage = lazy(() => import('./pages/Contact'));
 ```
 
 ## 最佳实践
-
 1. **生产级标准**：所有输出代码包含类型定义、错误处理和可访问性支持。
 2. **动效分层**：页面加载用交错入场，交互用微动效，滚动用驱动动效。
 3. **性能内建**：懒加载、代码分割、资源优化从设计阶段就考虑。
@@ -539,35 +260,28 @@ const ContactPage = lazy(() => import('./pages/Contact'));
 ```
 
 ## 常见问题
-
 ### Q: 如何从免费版升级到专业版？
-
 A: 免费版的美学方向、字体指导和反模式检查在专业版中完整保留。专业版新增多框架输出、高级动效和可访问性检查，无需迁移已有代码。
 
 ### Q: React 和 Vue 可以同时使用吗？
-
 A: 可以。设计令牌跨框架一致，同一设计可以用 React 和 Vue 分别实现，视觉表现统一。
 
 ### Q: 可访问性检查覆盖哪些标准？
-
 A: 覆盖 WCAG 2.1 AA 标准，包括语义化结构、ARIA 标签、标题层级、颜色对比度、键盘导航和图片 alt 属性。
 
 ### Q: 性能优化包含哪些策略？
-
 A: 包含图片懒加载、响应式图片、代码分割、字体加载优化、CSS 关键路径优化和资源预加载。
 
 ### Q: Framer Motion 和 GSAP 如何选择？
-
 A: React 项目优先用 Framer Motion（声明式集成更好），复杂动画序列用 GSAP（Timeline 更强大），简单动效用纯 CSS。
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 - **Node.js**: 16+（框架构建工具需要）
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -588,3 +302,15 @@ A: React 项目优先用 Framer Motion（声明式集成更好），复杂动画
 - **说明**: 企业级AI Skill，支持多框架生产级代码输出与可访问性合规
 - **适用规模**: 团队与企业级，生产级 Web 应用
 - **兼容性**: 与免费版美学规范完全兼容，支持无缝升级
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

@@ -4,7 +4,7 @@ name: tg-body-scan-tool-pro
 version: "1.0.0"
 displayName: 体测扫描工具专业版
 summary: 企业级 Telegram 体测测量平台，支持批量扫描、历史趋势、团队管理与高级分析报表。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   面向健身工作室、运动队与健康管理团队的批量体测测量平台。
@@ -20,10 +20,9 @@ tags:
 - 健康报表
 - 企业级
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 体测扫描工具 专业版
 
 ## 概述
@@ -186,6 +185,20 @@ print(f"  腰围平均变化: {summary['avg_waist_delta']:+.1f} cm")
 print(f"  达标率: {summary['healthy_ratio']:.0%}")
 ```
 
+## 不适用场景
+
+以下场景体测扫描工具专业版不适合处理：
+
+- 实时流数据处理
+- 小规模数据手动分析
+- 非结构化文本情感分析
+
+
+## 触发条件
+
+需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 1. 创建团队并添加成员。
@@ -217,7 +230,7 @@ report = anthrovision_bridge_get_team_report(team_id=team["team_id"], month="202
 print(report["summary"])
 ```
 
-## 配置示例
+## 示例
 
 专业版配置支持团队管理与批量调度。
 
@@ -305,7 +318,7 @@ print(report["summary"])
 - **操作系统**：Windows / macOS / Linux
 - **通信渠道**：Telegram（需可访问 Telegram 服务）
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 | :------- | :----- | :--------- | :--------- |
@@ -333,3 +346,15 @@ export TG_BOT_TOKEN="your_telegram_bot_token"
 
 - **分类**：MD+EXEC（纯 Markdown 指令，部分功能需要 exec 命令行执行能力）
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务。专业版在免费版基础上新增批量处理、团队管理与趋势分析，提交接口与返回格式向后兼容免费版。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用

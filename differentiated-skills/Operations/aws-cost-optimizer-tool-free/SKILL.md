@@ -4,39 +4,18 @@ name: aws-cost-optimizer-tool-free
 version: "1.0.0"
 displayName: AWS成本优化入门
 summary: AWS成本分析工具，支持支出概览与基础优化建议。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人开发者与初创团队的AWS成本分析工具。支持月度支出概览、
-  按服务/区域分解成本、识别闲置资源与基础优化建议。适合个人
-  用户控制AWS支出。
-
-  核心能力:
-  - 月度成本概览与趋势
-  - 按服务/区域成本分解
-  - 闲置资源识别
-  - 基础优化建议
-
-  适用场景:
-  - 个人AWS成本管理
-  - 初创团队支出控制
-  - 闲置资源清理
-  - 成本趋势分析
-
-  差异化:
-  - 免费版聚焦基础成本分析
-  - 适合个人与小团队
-  - 不支持企业级成本治理
-  - 不支持自动化优化
-
-  触发关键词: AWS, 成本, 优化, 支出, 闲置资源, 账单, cost, optimize, billing
+  按服务/区域分解成本、识别闲置资源与基础优化建议。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
 - Operations
 - AWS
 - 成本优化
 - 云财务
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -124,7 +103,7 @@ python3 scripts/cost.py recommendations
 ### 环境准备
 
 ```bash
-# 安装依赖
+# 依赖说明
 pip install boto3
 
 # 配置AWS凭证
@@ -155,7 +134,7 @@ python3 scripts/cost.py recommendations
 python3 scripts/cost.py export --month 2026-07 --format csv --output cost_report.csv
 ```
 
-## 配置示例
+## 示例
 
 ### 成本分析配置
 
@@ -249,3 +228,15 @@ cost_config:
 - **分类**: MD+EXEC（Markdown指令+Python脚本执行）
 - **说明**: 通过AWS Cost Explorer API分析成本
 - **免费版限制**: 单账户、基础建议、不支持预算告警与自动优化
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 依赖云服务，需要网络连接

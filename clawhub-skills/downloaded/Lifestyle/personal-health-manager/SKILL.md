@@ -2,46 +2,23 @@
 slug: personal-health-manager
 name: personal-health-manager
 version: "1.0.0"
-displayName: personal health manager
+displayName: Personal Health Mana
 summary: Personal health management and wellness assistant. Use when users want to
   track health data, get ...
 license: MIT-0
 description: |-
-  Personal health management and wellness assistant. Use when users want
-  to track health data, get ...
-
-  核心能力:
-
-  - 生活工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 个人健康、生活管理、习惯养成
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: wellness, personal, health, manager, assistant, management
+  Personal health management and wellness assistant。Use when users want
+  to track health data, get。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Lifestyle
 tools:
-- read
+  - - read
 - exec
----
-
 # personal health manager
-
+---
 Your comprehensive personal health companion for daily wellness management.
 
 ## When to Use
-
 Use this skill whenever the user mentions:
 
 * Health tracking, records, or data
@@ -53,14 +30,10 @@ Use this skill whenever the user mentions:
 * First aid or emergency health advice
 * General wellness questions
 
----
-
 ## User Profile Setup
-
 Before providing personalized advice, always check or ask for:
 
 ### Basic Information
-
 * **Age**: Required for exercise/diet recommendations
 * **Gender**: Important for certain health considerations
 * **Weight & Height**: For BMI calculation
@@ -70,7 +43,6 @@ Before providing personalized advice, always check or ask for:
 * **Lifestyle**: Sedentary, active, smoking, alcohol
 
 ### Health Profile Template
-
 ```text
 👤 Profile:
 - Name: [optional]
@@ -86,16 +58,11 @@ Before providing personalized advice, always check or ask for:
 - Emergency Contact: ___
 ```
 
----
-
-## Core Features
-
+## 核心能力
 ### 1. Health Data Recording 📊
-
 Track and record various health metrics based on user profile:
 
 #### Blood Pressure 💉
-
 | Category | Systolic | Diastolic |
 | --- | --- | --- |
 | Normal | <120 | <80 |
@@ -105,7 +72,6 @@ Track and record various health metrics based on user profile:
 | Crisis | >180 | >120 ⚠️ |
 
 #### Blood Glucose 🍬
-
 | Status | Fasting | 2h Post-Meal |
 | --- | --- | --- |
 | Normal | <100 | <140 |
@@ -113,7 +79,6 @@ Track and record various health metrics based on user profile:
 | Diabetes | ≥126 | ≥200 |
 
 #### Heart Rate ❤️
-
 | Age Group | Normal Resting | Max Heart Rate |
 | --- | --- | --- |
 | 20-29 | 60-100 | 190-200 |
@@ -123,7 +88,6 @@ Track and record various health metrics based on user profile:
 | 60+ | 60-100 | 150-160 |
 
 #### BMI Calculator ⚖️
-
 | Category | BMI Range |
 | --- | --- |
 | Underweight | <18.5 |
@@ -131,201 +95,10 @@ Track and record various health metrics based on user profile:
 | Overweight | 25-29.9 |
 | Obese | ≥30 |
 
----
+> 详细内容已移至 `references/detail.md` - ### 2. Age-Specific Health Guidance
 
-### 2. Age-Specific Health Guidance
-
-#### 👶 Children (0-12 years)
-
-**Common Concerns:**
-
-* Growth and development tracking
-* Vaccination schedule
-* Common childhood illnesses
-* Screen time guidelines
-* Sleep requirements by age
-
-**Exercise:**
-
-* Active play 60+ minutes/day
-* Limit sedentary time
-
-**Sleep:**
-
-| Age | Hours |
-| --- | --- |
-| 0-3 months | 14-17 |
-| 4-12 months | 12-16 |
-| 1-2 years | 11-14 |
-| 3-5 years | 10-13 |
-| 6-12 years | 9-12 |
-
-#### 👦 Teenagers (13-19 years)
-
-**Common Concerns:**
-
-* Puberty and development
-* Mental health
-* Academic stress
-* Screen time balance
-* Sports nutrition
-
-**Exercise:**
-
-* 60 min moderate-vigorous daily
-* Muscle-strengthening 3x/week
-
-**Nutrition Focus:**
-
-* Calcium (bone growth)
-* Iron (especially females)
-* Protein for development
-
-#### � adults (20-39 years)
-
-**Common Concerns:**
-
-* Work-life balance
-* Stress management
-* Preventive care
-* Sexual health
-* Building healthy habits
-
-**Exercise:**
-
-* 150 min moderate or 75 min vigorous/week
-* Muscle-strengthening 2x/week
-
-**Screenings:**
-
-* Annual physical
-* Blood pressure
-* BMI
-* Mental health check
-
-#### 👨 Middle-Aged (40-59 years)
-
-**Common Concerns:**
-
-* Metabolic changes
-* Heart health
-* Bone density
-* Vision changes
-* Hormonal changes (menopause/andropause)
-
-**Exercise:**
-
-* 150 min moderate + 2 strength sessions/week
-* Balance exercises to prevent falls
-
-**Additional Screenings:**
-
-* Cholesterol (every 5 years)
-* Blood glucose (every 3 years)
-* Colon cancer screening (45+)
-* Bone density (women 65+, men 70+)
-
-#### 👴 Seniors (60+ years)
-
-**Common Concerns:**
-
-* Fall prevention
-* Cognitive health
-* Medication management
-* Chronic disease management
-* Nutrition for aging
-
-**Exercise:**
-
-* 150 min moderate (spread out)
-* Balance exercises 3x/week
-* Strength training 2x/week
-
-**Fall Prevention:**
-
-* Home safety check
-* Regular vision/hearing checks
-* Review medications that cause dizziness
-
-**Nutrition Focus:**
-
-* Protein (prevent muscle loss)
-* Vitamin D + Calcium
-* Hydration (thirst decreases with age)
-* Fiber (prevent constipation)
-
----
-
-### 3. Gender-Specific Health
-
-#### 🩺 Women's Health
-
-**Reproductive Health:**
-
-* Menstrual cycle tracking
-* Pregnancy planning
-* Menopause management
-* PCOS/Endometriosis awareness
-
-**Screening Schedule:**
-
-| Age | Screening |
-| --- | --- |
-| 21-29 | Pap smear every 3 years |
-| 30-65 | Pap + HPV every 5 years |
-| 40+ | Mammogram annually |
-| 65+ | Bone density scan |
-
-**Common Concerns:**
-
-* Iron deficiency (especially during menstruation)
-* Thyroid (women 5x more likely)
-* Osteoporosis risk
-* Mental health (postpartum, menopause)
-
-**Pregnancy Considerations:**
-
-* Pre-conception care
-* Prenatal vitamins (folic acid)
-* Weight gain guidelines
-* Exercise during pregnancy
-
-**Menopause:**
-
-* Symptoms management
-* Hormone therapy considerations
-* Heart health post-menopause
-* Bone health
-
-#### 🩹 Men's Health
-
-**Screening Schedule:**
-
-| Age | Screening |
-| --- | --- |
-| 30+ | Blood pressure |
-| 35+ | Cholesterol |
-| 45+ | Colon cancer |
-| 50+ | Prostate discussion |
-| 65+ | Abdominal aortic aneurysm (smokers) |
-
-**Common Concerns:**
-
-* Prostate health
-* Testosterone changes
-* Heart disease (men 2x higher risk before 65)
-* Mental health stigma
-
-**Testosterone:**
-
-* Symptoms of low T: fatigue, low libido, mood changes
-* Not always need treatment
-* Discuss with doctor
-
----
-
+> 详细内容已移至 `references/detail.md` - ### 3. Gender-Specific Health
 ### 4. Medication Management 💊
-
 **Features:**
 
 * Add/edit/delete medications
@@ -336,7 +109,6 @@ Track and record various health metrics based on user profile:
 * Medication history
 
 #### Common Medications by Condition
-
 **Hypertension:**
 
 * ACE inhibitors (enalapril, lisinopril)
@@ -372,10 +144,7 @@ Track and record various health metrics based on user profile:
 | Statins | Grapefruit | Increased side effects |
 | ACE inhibitors | Potassium | High potassium |
 
----
-
 ### 5. Symptom Analysis 🩺
-
 **Process:**
 
 1. Collect symptom details (location, duration, severity)
@@ -385,7 +154,6 @@ Track and record various health metrics based on user profile:
 5. Suggest self-care measures if appropriate
 
 #### Age-Specific Symptom Considerations
-
 **Children:**
 
 * Temperature thresholds lower
@@ -407,7 +175,6 @@ Track and record various health metrics based on user profile:
 * Medication side effects more common
 
 #### Red Flags - Seek Immediate Care 🚨
-
 * Chest pain + sweating + pain in arm/jaw
 * Difficulty breathing
 * Severe bleeding
@@ -418,12 +185,8 @@ Track and record various health metrics based on user profile:
 * Severe vomiting + unable to keep fluids down
 * Overdose symptoms
 
----
-
 ### 6. Exercise Recommendations 🏃
-
 #### By Age & Fitness Level
-
 **Beginner (Any Age):**
 
 * Start with 10-minute walks
@@ -446,7 +209,6 @@ Track and record various health metrics based on user profile:
 * Sports
 
 #### By Health Condition
-
 **High Blood Pressure:**
 
 * Walking, swimming, cycling
@@ -472,12 +234,8 @@ Track and record various health metrics based on user profile:
 * Start slow, gradual increase
 * Monitor heart rate
 
----
-
 ### 7. Nutrition Advice 🥗
-
 #### By Age
-
 **Children:**
 
 * Make food fun
@@ -500,7 +258,6 @@ Track and record various health metrics based on user profile:
 * Small, frequent meals
 
 #### By Condition
-
 **High Blood Pressure:**
 
 * Low sodium (<1500mg/day)
@@ -528,72 +285,8 @@ Track and record various health metrics based on user profile:
 * Limit added sugars
 * Drink water before meals
 
----
-
-### 8. Travel Health Preparation ✈️
-
-#### Pre-Trip Planning
-
-**🧳 Clothing Checklist:**
-
-* Weather-appropriate attire
-* Comfortable shoes
-* Extra layers
-* Rain gear
-* Sun protection
-
-**💊 Medications:**
-
-* Regular meds (extra supply)
-* Pain relievers
-* Anti-diarrheal
-* Antihistamines
-* Motion sickness pills
-* First aid basics
-* Destination-specific needs
-
-**🏥 Health Documents:**
-
-* Travel insurance
-* Emergency contacts
-* Medical history
-* Prescription copies
-* Vaccination records
-
-#### By Destination
-
-**Tropical:**
-
-* Mosquito protection
-* Sun protection
-* Water safety
-* Food safety
-
-**Cold Climate:**
-
-* Layer clothing
-* Protect extremities
-* Indoor air dryness
-* Frostbite awareness
-
-**High Altitude:**
-
-* Acclimatization days
-* Altitude sickness meds
-* Extra hydration
-* Limited exertion
-
-**Long Flights:**
-
-* Compression socks
-* Move every 2 hours
-* Stay hydrated
-* Avoid alcohol/caffeine
-
----
-
+> 详细内容已移至 `references/detail.md` - ### 8. Travel Health Preparation ✈️
 ## Data Storage
-
 **Local Storage:**
 
 * JSON files in workspace
@@ -605,36 +298,11 @@ Track and record various health metrics based on user profile:
 * No external servers by default
 * Easy export/deletion
 
----
-
 ## Emergency Information Template
 
-```text
-🚨 EMERGENCY HEALTH CARD
-─────────────────────────────────
-Name: _________________
-Blood Type: ___
-Allergies: _________________
-Medical Conditions: _________________
-Current Medications: _________________
-
-Emergency Contact:
-Name: _________________
-Phone: _________________
-
-Doctor:
-Name: _________________
-Phone: _________________
-
-Insurance: _________________
-Policy #: _________________
-─────────────────────────────────
-```
-
----
+> 详细代码示例已移至 `references/detail.md`
 
 ## Disclaimer
-
 ⚠️ This provides health INFORMATION only, not medical advice. Always:
 
 * Recommend professional medical consultation
@@ -643,10 +311,7 @@ Policy #: _________________
 * Encourage regular health checkups
 * Respect user privacy with health data
 
----
-
 ## Best Practices
-
 1. **Personalize**: Ask age, gender, conditions before advice
 2. **Clarify**: Ask follow-up questions
 3. **Context**: Remember conversation history
@@ -655,17 +320,14 @@ Policy #: _________________
 6. **Empower**: Teach, don't just give answers
 7. **Follow Up**: Check on previous concerns
 
----
-
 *Your health is your wealth. Take care of it!* 💚
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -676,3 +338,46 @@ Policy #: _________________
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 适用场景
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 示例
+### 示例1：基础用法
+```
+输入: 用户请求
+处理: 根据使用流程执行
+输出: 处理结果
+```
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+### Q1: 如何开始使用Personal Health Mana？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Personal Health Mana有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

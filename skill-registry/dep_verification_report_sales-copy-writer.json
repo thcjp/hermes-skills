@@ -1,0 +1,162 @@
+{
+  "slug": "sales-copy-writer",
+  "verified_at": "2026-07-20T21:31:18.655162",
+  "verifier_version": "1.0",
+  "skill_md_path": "d:\\skills\\packaged-skills\\skillhub\\sales-copy-writer\\SKILL.md",
+  "total_deps": 9,
+  "dependencies_extracted": [
+    {
+      "type": "ai_model",
+      "name": "Claude",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "ai_model",
+      "name": "文心",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "ai_model",
+      "name": "通义",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "ai_model",
+      "name": "DeepSeek",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "ai_model",
+      "name": "通义千问",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "ai_model",
+      "name": "文心一言",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "ai_model",
+      "name": "智谱GLM",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "ai_model",
+      "name": "Kimi",
+      "verification_method": "已知模型列表比对",
+      "verified": true,
+      "status": "known_model"
+    },
+    {
+      "type": "api_key_env",
+      "name": "LLM_API_KEY",
+      "verification_method": "环境变量存在性检查",
+      "verified": false,
+      "status": "manual_review"
+    }
+  ],
+  "verification_results": [
+    {
+      "type": "ai_model",
+      "name": "Claude",
+      "verification_method": "已知模型列表比对",
+      "verified_at": "2026-07-20T21:31:18.660688",
+      "verified": true,
+      "status": "known_model",
+      "details": "已知AI模型: Claude"
+    },
+    {
+      "type": "ai_model",
+      "name": "文心",
+      "verification_method": "已知模型列表比对",
+      "verified_at": "2026-07-20T21:31:18.660688",
+      "verified": true,
+      "status": "known_model",
+      "details": "已知AI模型: 文心"
+    },
+    {
+      "type": "ai_model",
+      "name": "通义",
+      "verification_method": "已知模型列表比对",
+      "verified_at": "2026-07-20T21:31:18.660688",
+      "verified": true,
+      "status": "known_model",
+      "details": "已知AI模型: 通义"
+    },
+    {
+      "type": "ai_model",
+      "name": "DeepSeek",
+      "verification_method": "已知模型列表比对",
+      "verified_at": "2026-07-20T21:31:18.660688",
+      "verified": true,
+      "status": "known_model",
+      "details": "已知AI模型: DeepSeek"
+    },
+    {
+      "type": "ai_model",
+      "name": "通义千问",
+      "verification_method": "已知模型列表比对",
+      "verified_at": "2026-07-20T21:31:18.660688",
+      "verified": true,
+      "status": "known_model",
+      "details": "已知AI模型: 通义千问"
+    },
+    {
+      "type": "ai_model",
+      "name": "文心一言",
+      "verification_method": "已知模型列表比对",
+      "verified_at": "2026-07-20T21:31:18.660688",
+      "verified": true,
+      "status": "known_model",
+      "details": "已知AI模型: 文心一言"
+    },
+    {
+      "type": "ai_model",
+      "name": "智谱GLM",
+      "verification_method": "已知模型列表比对",
+      "verified_at": "2026-07-20T21:31:18.660688",
+      "verified": true,
+      "status": "known_model",
+      "details": "已知AI模型: 智谱GLM"
+    },
+    {
+      "type": "ai_model",
+      "name": "Kimi",
+      "verification_method": "已知模型列表比对",
+      "verified_at": "2026-07-20T21:31:18.660688",
+      "verified": true,
+      "status": "known_model",
+      "details": "已知AI模型: Kimi"
+    },
+    {
+      "type": "api_key_env",
+      "name": "LLM_API_KEY",
+      "verification_method": "环境变量存在性检查",
+      "verified_at": "2026-07-20T21:31:18.660688",
+      "verified": false,
+      "status": "manual_review_required",
+      "details": "API Key环境变量\"LLM_API_KEY\"需在运行时由用户配置, 无法静态验证"
+    }
+  ],
+  "summary": {
+    "total": 9,
+    "verified": 8,
+    "manual_review_required": 1,
+    "failed": 0,
+    "overall_status": "PASS"
+  }
+}

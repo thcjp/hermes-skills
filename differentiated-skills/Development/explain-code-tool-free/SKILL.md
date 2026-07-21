@@ -4,12 +4,10 @@ name: explain-code-tool-free
 version: "1.0.0"
 displayName: 代码解释工具免费版
 summary: 用可视化图表和类比解释代码,帮助开发者快速理解代码逻辑与结构。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向开发者的代码理解辅助工具,通过类比、ASCII图表和逐步遍历帮助理解代码逻辑。
-
-  核心能力:
+  面向开发者的代码理解辅助工具,通过类比、ASCII图表和逐步遍历帮助理解代码逻辑。核心能力:
   - 日常类比解释代码概念
   - ASCII流程图展示执行逻辑
   - 逐行代码遍历解读
@@ -27,28 +25,23 @@ description: |-
   - 使用类比和图表降低理解门槛
   - 与专业版命令兼容,可平滑升级
 
-  触发关键词: 解释代码, 代码说明, 代码逻辑, 这个函数做什么, 代码怎么工作, explain code, code walkthrough
+  触发关键词: 解释代...
 tags:
 - 开发工具
 - 代码理解
 - 技术学习
 tools:
-- read
+  - - read
 - exec
----
-
 # 代码解释工具 - 免费版
-
 ## 概述
-
+---
 代码解释工具免费版为开发者提供直观的代码理解辅助能力。工具通过日常类比、ASCII可视化图表、逐行遍历解读和常见误区提示,帮助开发者快速理解不熟悉的代码逻辑。
 
 本版本适合学习新代码库、新成员入门和技术学习场景。所有解释均以自然语言配合图表呈现,降低代码理解门槛。
 
 ## 核心能力
-
 ### 1. 类比解释法
-
 将代码概念与日常生活中的事物进行比较,降低理解难度。
 
 **解释原则:**
@@ -73,7 +66,6 @@ tools:
 | 闭包 | 背包,函数随身带着自己的变量 |
 
 ### 2. ASCII 可视化图表
-
 使用 ASCII art 展示代码执行流程和数据结构。
 
 **流程图示例:**
@@ -123,11 +115,9 @@ tools:
 ```
 
 ### 3. 逐行代码遍历
-
 逐步解释代码执行过程。
 
 ```python
-# 示例:解释一个二分查找函数
 def binary_search(arr, target):
     """
     类比:在字典里找单词
@@ -136,88 +126,25 @@ def binary_search(arr, target):
     - 不断缩小范围直到找到
     """
     left, right = 0, len(arr) - 1
-    # left=0(第一页), right=最后页
-
     while left <= right:
-        # 只要还有页可翻
         mid = (left + right) // 2
-        # 翻到中间页
-
         if arr[mid] == target:
-            # 中间页就是我们要找的!
             return mid
 
         elif arr[mid] < target:
-            # 中间页的值太小了,目标在后半部分
             left = mid + 1
-            # 从中间页往后找
-
         else:
-            # 中间页的值太大了,目标在前半部分
             right = mid - 1
-            # 从中间页往前找
-
     return -1  # 翻完了都没找到
-
-
-# 执行过程可视化:
-# arr = [1, 3, 5, 7, 9, 11, 13], target = 7
-#
-# 第1轮: left=0, right=6, mid=3
-#        arr[3]=7 == 7 ✓ 找到了!
-#
-# 执行流程:
-# [1, 3, 5, 7, 9, 11, 13]
-#  ↑        ↑         ↑
-# left     mid      right
-#           ↓
-#      arr[mid]=7 == target=7
-#           ↓
-#      返回 mid=3
 ```
 
-### 4. 常见问题与误区提示
-
+### 常见问题
 指出代码中容易出错的地方。
 
-```javascript
-// 常见误区示例
-
-// 误区1: == vs ===
-console.log(0 == false)   // true (发生了类型转换)
-console.log(0 === false)  // false (严格比较)
-// 提示:永远使用 === 避免隐式类型转换
-
-// 误区2: this 指向问题
-const obj = {
-    name: "张三",
-    greet: function() {
-        // 这里的 this 指向 obj
-        console.log(this.name)
-    }
-}
-
-const fn = obj.greet
-fn()  // undefined! this 不再指向 obj
-// 提示:this 的值取决于函数如何被调用,不是定义在哪
-
-// 误区3: 异步循环
-for (var i = 0; i < 3; i++) {
-    setTimeout(() => console.log(i), 0)
-}
-// 输出: 3, 3, 3 (不是 0, 1, 2)
-// 原因: var 是函数作用域,循环结束时 i=3
-// 修复: 使用 let (块作用域)
-for (let i = 0; i < 3; i++) {
-    setTimeout(() => console.log(i), 0)
-}
-// 输出: 0, 1, 2
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ## 使用场景
-
 ### 场景一:理解不熟悉的代码
-
 遇到不理解的代码时获取解释。
 
 ```
@@ -236,43 +163,9 @@ const memoize = (fn) => {
 
 **解释输出:**
 
-```
-类比:这个函数像一个有记忆力的助手
-
-- memoize 是一个"包装器",给任何函数加上记忆功能
-- 就像你问助手一个问题:
-  1. 助手先检查"记忆本"(cache)里有没有记过
-  2. 如果有 → 直接告诉你答案(不用重新算)
-  3. 如果没有 → 去算一遍,然后记在记忆本里
-
-执行流程:
-┌─────────────────────────────────────┐
-│ memoize(expensiveFn)                │
-│   ↓                                 │
-│ 创建空缓存 cache = {}               │
-│   ↓                                 │
-│ 返回新函数(带记忆的版本)           │
-└─────────────────────────────────────┘
-
-调用时:
-┌─────────────────────────────────────┐
-│ memoizedFn(1, 2)                    │
-│   ↓                                 │
-│ key = "[1,2]"                       │
-│   ↓                                 │
-│ key 在 cache 里?                    │
-│   ├─ 是 → 返回 cache["[1,2]"]      │
-│   └─ 否 → 计算fn(1,2),存入cache   │
-└─────────────────────────────────────┘
-
-常见误区:
-- 只对纯函数有效(相同输入相同输出)
-- 缓存会占用内存,不适合大量不同参数
-- JSON.stringify 不处理函数和循环引用
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 场景二:代码审查理解
-
 在代码审查时理解他人代码意图。
 
 ```
@@ -321,7 +214,6 @@ async function fetchWithRetry(url, maxRetries = 3) {
 ```
 
 ### 场景三:学习设计模式
-
 通过代码解释学习设计模式。
 
 ```
@@ -351,68 +243,10 @@ async function fetchWithRetry(url, maxRetries = 3) {
 代码实现:
 ```
 
-```javascript
-// 观察者模式实现
-
-class YouTubeChannel {
-  constructor(name) {
-    this.name = name
-    this.subscribers = []  // 订阅者列表
-  }
-
-  // 订阅(注册观察者)
-  subscribe(observer) {
-    this.subscribers.push(observer)
-    console.log(`${observer.name} 订阅了 ${this.name}`)
-  }
-
-  // 取消订阅
-  unsubscribe(observer) {
-    this.subscribers = this.subscribers.filter(sub => sub !== observer)
-    console.log(`${observer.name} 取消订阅了 ${this.name}`)
-  }
-
-  // 发布视频(通知所有观察者)
-  publishVideo(title) {
-    console.log(`\n${this.name} 发布了新视频: ${title}`)
-    this.subscribers.forEach(sub => sub.update(this.name, title))
-  }
-}
-
-// 观察者(订阅者)
-class Subscriber {
-  constructor(name) {
-    this.name = name
-  }
-
-  update(channel, videoTitle) {
-    console.log(`  ${this.name} 收到通知: ${channel} 发布了 "${videoTitle}"`)
-  }
-}
-
-// 使用
-const channel = new YouTubeChannel("技术频道")
-
-const alice = new Subscriber("Alice")
-const bob = new Subscriber("Bob")
-
-channel.subscribe(alice)  // Alice 订阅了 技术频道
-channel.subscribe(bob)    // Bob 订阅了 技术频道
-
-channel.publishVideo("观察者模式教程")
-// 技术频道 发布了新视频: 观察者模式教程
-//   Alice 收到通知
-//   Bob 收到通知
-
-channel.unsubscribe(alice)  // Alice 取消订阅
-channel.publishVideo("策略模式教程")
-// 只有 Bob 收到通知
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ## 快速开始
-
 ### 步骤一:触发代码解释
-
 在 AI Agent 中输入:
 
 ```
@@ -427,7 +261,6 @@ channel.publishVideo("策略模式教程")
 ```
 
 ### 步骤二:获取解释
-
 Agent 会按照以下结构输出解释:
 1. 一句话总结代码功能
 2. 日常类比帮助理解
@@ -436,7 +269,6 @@ Agent 会按照以下结构输出解释:
 5. 常见误区提示
 
 ### 步骤三:追问细节
-
 可以针对不理解的部分追问:
 
 ```
@@ -444,28 +276,21 @@ Agent 会按照以下结构输出解释:
 ```
 
 ## 配置示例
-
 ### 代码解释配置
-
 ```yaml
-# .explain-code.yml
 version: "1.0"
 
-# 解释风格
 style:
   use_analogy: true           # 使用类比
   use_diagrams: true          # 使用图表
   detail_level: moderate      # simple | moderate | detailed
   language: zh-CN             # 解释语言
-
-# 输出格式
 output:
   include_line_numbers: true
   include_execution_flow: true
   include_common_pitfalls: true
   max_diagram_width: 80
 
-# 文件支持
 supported_extensions:
   - .js
   - .ts
@@ -477,7 +302,6 @@ supported_extensions:
 ```
 
 ## 最佳实践
-
 1. **提供上下文**:解释代码时提供业务背景,帮助理解意图
 
 ```
@@ -505,13 +329,10 @@ supported_extensions:
 5. **动手验证**:在理解后修改代码验证理解是否正确
 
 ## 常见问题
-
 ### Q1:免费版支持哪些编程语言?
-
 免费版支持主流编程语言的代码解释,包括 JavaScript、TypeScript、Python、Java、Go、Rust、C++ 等。对于小众语言可能解释质量稍降。
 
 ### Q2:代码太长怎么办?
-
 建议将长代码拆分为函数级别逐个解释:
 
 ```
@@ -519,7 +340,6 @@ supported_extensions:
 ```
 
 ### Q3:免费版与专业版有何区别?
-
 | 能力维度 | 免费版 | 专业版 |
 |:---------|:-------|:-------|
 | 代码范围 | 单文件 | 整个项目 |
@@ -530,7 +350,6 @@ supported_extensions:
 | API文档生成 | 不支持 | 自动生成 |
 
 ### Q4:解释不够详细怎么办?
-
 可以要求更详细的解释:
 
 ```
@@ -538,25 +357,32 @@ supported_extensions:
 ```
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent 平台**:支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
 - **操作系统**:Windows / macOS / Linux
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 
 ### API Key 配置
-
 - 本 Skill 基于 Markdown 指令,无需额外 API Key
 - 所有代码分析在 Agent 本地完成
 
 ### 可用性分类
-
 - **分类**:MD+EXEC(纯 Markdown 指令,部分功能需要 exec 读取文件)
 - **说明**:基于 Markdown 的 AI Skill,通过自然语言指令驱动 Agent 解释代码
 - **适用规模**:单文件到中等规模代码片段
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

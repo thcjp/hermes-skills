@@ -4,12 +4,10 @@ name: git-workflows-tool-free
 version: "1.0.0"
 displayName: Git高级操作免费版
 summary: Git 进阶操作助手，涵盖交互式变基、二分查找、工作树与引用日志恢复。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向进阶开发者的 Git 高级操作工具，覆盖 add/commit/push 之外的核心进阶场景。
-
-  核心能力:
+  面向进阶开发者的 Git 高级操作工具，覆盖 add/commit/push 之外的核心进阶场景。核心能力:
   - 交互式变基（rebase）整理提交历史
   - 二分查找（bisect）定位引入缺陷的提交
   - 工作树（worktree）并行多分支开发
@@ -21,18 +19,15 @@ description: |-
   - 同时处理多个分支任务
   - 误操作后的提交恢复
 
-  差异化: 免费版聚焦开发者日常高频的进阶操作，提供交互式变基与二分查找的完整指引，开箱即用。
-
-  触发关键词: 交互式变基, rebase, 二分查找, bisect, 工作树, worktree, 引用日志, reflog, 提交恢复, 樱桃挑选
+  差异化: 免费版聚焦开发者日常高频的进阶操作，提供交互式变基与二分查找的完整指引，开箱即用
 tags:
 - 开发工具
 - 版本控制
 - Git进阶
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Git 高级操作助手（免费版）
 
 ## 概述
@@ -138,6 +133,20 @@ git worktree remove ../project-hotfix
 git worktree prune
 ```
 
+## 不适用场景
+
+以下场景Git高级操作免费版不适合处理：
+
+- 需要100%确定性的关键决策
+- 医疗诊断
+- 法律判决
+
+
+## 触发条件
+
+需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 交互式变基命令速查
@@ -184,7 +193,7 @@ git bisect good v1.2.0
 git bisect start HEAD v1.2.0
 git bisect run ./test-for-bug.sh
 
-# 测试脚本示例
+# 示例
 cat > /tmp/test-for-bug.sh << 'EOF'
 #!/bin/bash
 npm test -- --grep "login should redirect" 2>/dev/null
@@ -341,7 +350,7 @@ git cherry-pick --abort
 - **操作系统**: Windows / macOS / Linux
 - **Git 版本**: 建议 2.20 及以上
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -355,3 +364,17 @@ git cherry-pick --abort
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 命令行执行）
 - **说明**: 通过自然语言指令驱动 Agent 执行 Git 高级操作，所有功能依赖命令行执行能力
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

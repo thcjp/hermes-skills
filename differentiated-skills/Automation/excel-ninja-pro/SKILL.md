@@ -4,7 +4,7 @@ name: excel-ninja-pro
 version: "1.0.0"
 displayName: Excel忍者(专业版)
 summary: 全功能Excel自动化处理，16个脚本覆盖合并、VLOOKUP、模板填充、条件格式等全部场景。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   Excel忍者专业版是在免费版基础上的全功能升级，为AI Agent提供终极Excel自动化处理能力。开放全部16个命令行脚本，从基础的合并、筛选、拆分，到高级的多表VLOOKUP、模板填充、条件格式、文本格式化，全面覆盖表格处理需求。

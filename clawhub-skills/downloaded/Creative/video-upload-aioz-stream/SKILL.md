@@ -2,37 +2,17 @@
 slug: video-upload-aioz-stream
 name: video-upload-aioz-stream
 version: "1.0.1"
-displayName: Upload video to AIOZ Stream
+displayName: Video Upload Aioz St
 summary: Quick upload video to AIOZ Stream API. Create video objects with default
   or custom encoding confi...
 license: MIT
 description: |-
-  Quick upload video to AIOZ Stream API. Create video objects with default
-  or custom encoding confi...
-
-  核心能力:
-
-  - 创意设计领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 内容创作、设计生成、多媒体制作
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: stream, aioz, video, quick, upload
+  Quick upload video to AIOZ Stream API。Create video objects with default
+  or custom encoding confi。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Creative
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -319,7 +299,7 @@ Specify only `audio_config` without `video_config`:
 * **400**: Bad request — check the request body format, ensure resolutions don't exceed source resolution
 * **500**: Server error — suggest retrying
 
-## Example Interaction Flow
+## 示例
 
 1. User: "Upload my video to AIOZ Stream"
 2. Ask for API keys (public + secret) if not known
@@ -332,7 +312,7 @@ Specify only `audio_config` without `video_config`:
 7. **Step 3:** Call complete endpoint
 8. Fetch video detail → return streaming URL to user
 
-## Additional Features
+## 核心能力
 
 ### Calculate Transcode Price
 
@@ -408,7 +388,7 @@ curl -s -X DELETE "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID" \
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -419,3 +399,41 @@ curl -s -X DELETE "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID" \
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 适用场景
+
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+
+### Q1: 如何开始使用Video Upload Aioz St？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Video Upload Aioz St有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用

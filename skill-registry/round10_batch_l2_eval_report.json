@@ -1,0 +1,9818 @@
+{
+  "batch_date": "2026-07-20T23:13:47.520972",
+  "total_evaluated": 700,
+  "passed": 700,
+  "failed": 0,
+  "errors": 0,
+  "avg_score": 46.6,
+  "grade_distribution": {
+    "A": 658,
+    "B": 42,
+    "C": 0,
+    "D": 0
+  },
+  "pass_threshold": 42,
+  "duration_sec": 6.5,
+  "results": [
+    {
+      "slug": "ad-insight-hub",
+      "category": "Agents",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "admapix",
+      "category": "Agents",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "ai-agent-helper",
+      "category": "Agents",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "aws-agentcore-langgraph",
+      "category": "Agents",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "aws-cloud-architect",
+      "category": "Agents",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "aws-graph-agent",
+      "category": "Agents",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "aws-infra",
+      "category": "Agents",
+      "total": 44,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "azure-cloud-architect",
+      "category": "Agents",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "azure-infra",
+      "category": "Agents",
+      "total": 44,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "baidu-netdisk-skills",
+      "category": "Agents",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "claude",
+      "category": "Agents",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "decision-architect",
+      "category": "Agents",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "elite-longterm-memory",
+      "category": "Agents",
+      "total": 44,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 8,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "elite-longterm-memory-local",
+      "category": "Agents",
+      "total": 44.0,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "evolution-engine-v2",
+      "category": "Agents",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "knowledge-ontology",
+      "category": "Agents",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "llm-assistant-hub",
+      "category": "Agents",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "longmemo-elite",
+      "category": "Agents",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "memo-quickstart",
+      "category": "Agents",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "memory",
+      "category": "Agents",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "memory-compress",
+      "category": "Agents",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "memory-distiller-v2",
+      "category": "Agents",
+      "total": 44,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 6,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "memory-orchestrator-v2",
+      "category": "Agents",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "memory-radar",
+      "category": "Agents",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "memory-scan",
+      "category": "Agents",
+      "total": 43,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 6
+      }
+    },
+    {
+      "slug": "multi-agent-dev-v2",
+      "category": "Agents",
+      "total": 44,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "neosoul-decision-agent",
+      "category": "Agents",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "neural-memory-enhanced",
+      "category": "Agents",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "ontology",
+      "category": "Agents",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "persistent-memory-engine",
+      "category": "Agents",
+      "total": 44,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "productivity",
+      "category": "Agents",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "productivity-boost",
+      "category": "Agents",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "redis-cache-master",
+      "category": "Agents",
+      "total": 44,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "redis-store",
+      "category": "Agents",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "self-evolving-ai",
+      "category": "Agents",
+      "total": 44,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "self-improving",
+      "category": "Agents",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "self-improving-agent",
+      "category": "Agents",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "simple-memory-skill",
+      "category": "Agents",
+      "total": 44,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 8,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "smart-memory-manager",
+      "category": "Agents",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "subagent-driven-development",
+      "category": "Agents",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "token-saver-skill",
+      "category": "Agents",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "tool-orchestrator",
+      "category": "Agents",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "totalreclaw",
+      "category": "Agents",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "afrexai-business-automation",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "auto-updater",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "auto-workflow",
+      "category": "Automation",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "automate-excel",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "automation-recipe-book",
+      "category": "Automation",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "automation-recipe-pack",
+      "category": "Automation",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "automation-workflow-builder",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "automation-workflows",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "automation-workflows-0-1-0",
+      "category": "Automation",
+      "total": 44,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "autopilot-flow",
+      "category": "Automation",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "batch",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "biz-auto-hub",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "browser-automation-cdp",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "cdp-browser-master",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "clawsec-feed",
+      "category": "Automation",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "cloud-infra-automation",
+      "category": "Automation",
+      "total": 43.0,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 9.0,
+        "E": 8
+      }
+    },
+    {
+      "slug": "cloud-ops-orchestrator",
+      "category": "Automation",
+      "total": 44,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 6,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "control",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "cron",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "cron-assist",
+      "category": "Automation",
+      "total": 44,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "cron-guard",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "cron-helper",
+      "category": "Automation",
+      "total": 43.0,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 9.0,
+        "E": 8
+      }
+    },
+    {
+      "slug": "cron-mastery",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "cron-scheduler-setup",
+      "category": "Automation",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "cron-setup-guide",
+      "category": "Automation",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "cron-worker-guardrails",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "desktop-autopilot",
+      "category": "Automation",
+      "total": 44,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 6,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "desktop-control",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "drawing-analyzer",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "excel-maestro",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "flow-architect",
+      "category": "Automation",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "jlc-eda-drawing",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "kyaukyuai-linear-cli",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "linear-autopilot",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "linear-workflow-bot",
+      "category": "Automation",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "macro-monitor",
+      "category": "Automation",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "macro-pulse",
+      "category": "Automation",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "news-daily-digest",
+      "category": "Automation",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "node-red-manager",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "notes-cli-toolkit",
+      "category": "Automation",
+      "total": 43,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 5,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "obsidian",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "obsidian-1-0-0",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "obsidian-notesmd-cli",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "pcb-design-assistant-paid",
+      "category": "Automation",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "productivity-bot",
+      "category": "Automation",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "queue-task",
+      "category": "Automation",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "reminder",
+      "category": "Automation",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "reminder-engine",
+      "category": "Automation",
+      "total": 49,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "schedule",
+      "category": "Automation",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "schedule-manager",
+      "category": "Automation",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "security-radar",
+      "category": "Automation",
+      "total": 44,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 6,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "smart-reminder",
+      "category": "Automation",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "smart-reminder-system",
+      "category": "Automation",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "solo-build",
+      "category": "Automation",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "solo-dev-companion",
+      "category": "Automation",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "system-controller",
+      "category": "Automation",
+      "total": 43,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 6,
+        "A": 8,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "task-bot-orchestrator",
+      "category": "Automation",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "task-queue-manager",
+      "category": "Automation",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "translate-en-zh",
+      "category": "Automation",
+      "total": 44.0,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "translate-hub",
+      "category": "Automation",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "update-guardian",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "vault-sync-engine",
+      "category": "Automation",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "workflow",
+      "category": "Automation",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "workflow-decomposer",
+      "category": "Automation",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "workflow-lite",
+      "category": "Automation",
+      "total": 44,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "workflow-orchestrator",
+      "category": "Automation",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "workflow-splitter",
+      "category": "Automation",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "workflow-symphony",
+      "category": "Automation",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "ws-agent-browser",
+      "category": "Automation",
+      "total": 44.0,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "x-news-daily",
+      "category": "Automation",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "agent-telegram",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "alephnet-node",
+      "category": "Communication",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "alephnet-node-manager",
+      "category": "Communication",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "alpha-feed-creator",
+      "category": "Communication",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "beware-piper-tts",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "bookmark-intelligence",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "bookmark-smart-hub",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "calendar-reminder",
+      "category": "Communication",
+      "total": 44.0,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "calendar-reminder-paid",
+      "category": "Communication",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "card-image-builder",
+      "category": "Communication",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "creator-alpha-feed",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "discord",
+      "category": "Communication",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "discord-chat",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "discord-chat-manager",
+      "category": "Communication",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "discord-communities",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "discord-community-hub",
+      "category": "Communication",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "discord-toolkit",
+      "category": "Communication",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "discord-voice",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "discord-voice-paid",
+      "category": "Communication",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "dns",
+      "category": "Communication",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "dns-config",
+      "category": "Communication",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "email-163",
+      "category": "Communication",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "email-163-com",
+      "category": "Communication",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "email-daily-summary",
+      "category": "Communication",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "email-digest",
+      "category": "Communication",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "email-gmail-outlook",
+      "category": "Communication",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "email-skill",
+      "category": "Communication",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "email-toolkit",
+      "category": "Communication",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "feishu-card",
+      "category": "Communication",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "feishu-card-builder",
+      "category": "Communication",
+      "total": 49,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "feishu-file-sender",
+      "category": "Communication",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "feishu-send-file",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "gog",
+      "category": "Communication",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "google-workspace-cli",
+      "category": "Communication",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "google-workspace-mcp",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "google-workspace-toolkit",
+      "category": "Communication",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "news-sentiment",
+      "category": "Communication",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "news-sentiment-scan",
+      "category": "Communication",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "photo-caption",
+      "category": "Communication",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "photo-captions",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "piper-tts-engine",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "pro-comm-toolkit",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "professional-communication",
+      "category": "Communication",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "rss-ai-reader",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "rss-reader-ai",
+      "category": "Communication",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "slack",
+      "category": "Communication",
+      "total": 44.0,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "slack-hub",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "slack-hub-skill",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "slack-toolkit",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "slack-workspace",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "slack-workspace-manager",
+      "category": "Communication",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "social",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "social-media-scheduler",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "social-media-toolkit",
+      "category": "Communication",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "telegram-agent-comm",
+      "category": "Communication",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "telegram-chat",
+      "category": "Communication",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "telegram-chat-manager",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "telegram-messaging",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "telegram-msg-toolkit",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "test-wa",
+      "category": "Communication",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "tg-body-scan",
+      "category": "Communication",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "timeline-digest",
+      "category": "Communication",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "timer",
+      "category": "Communication",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "timer-alert",
+      "category": "Communication",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "whatsapp-messaging",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "whatsapp-msg",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "whatsapp-msg-manager",
+      "category": "Communication",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "whatsapp-style",
+      "category": "Communication",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "whatsapp-style-guide",
+      "category": "Communication",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "whatsapp-styler",
+      "category": "Communication",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "whatsapp-styling-guide",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "x-timeline-digest",
+      "category": "Communication",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "z-card-image",
+      "category": "Communication",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ace-music",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ace-music-paid",
+      "category": "Creative",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "agentvibes-content-skill",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "agentvibes-skill",
+      "category": "Creative",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ai-image-gen",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ai-image-gen-paid",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ai-kujiale-design",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ai-podcast",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ai-podcast-paid",
+      "category": "Creative",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "alibaba-quark-scan",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "analyze-video-by-qwen",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "anthropics-frontend-design",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "anygen-diagram",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "anygen-diagram-generator",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "audio-stream-upload",
+      "category": "Creative",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "audio-upload-aioz-stream",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "aws-wechat-article-writing",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "azure-ai-transcription-py",
+      "category": "Creative",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "azure-ai-voicelive-py",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "azure-transcription",
+      "category": "Creative",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "azure-voicelive",
+      "category": "Creative",
+      "total": 46.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 10
+      }
+    },
+    {
+      "slug": "bilibili-all-in-one",
+      "category": "Creative",
+      "total": 49,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "bilibili-helper",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "bilibili-helper-paid",
+      "category": "Creative",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "bilibili-toolkit",
+      "category": "Creative",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "chief-creative-officer",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "chromecast-control",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "chromecast-control-paid",
+      "category": "Creative",
+      "total": 44.0,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "cloud-architect",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "cloud-architect-design",
+      "category": "Creative",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "comfyui-painter",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "comfyui-painter-paid",
+      "category": "Creative",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "creative-officer",
+      "category": "Creative",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "design",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "design-toolkit",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "diagram-gen",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "diagram-generator",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "dlazy-audio",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "dlazy-audio-generate",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "dlazy-gen",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "dlazy-generate",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "doubao-image-gen",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "elite-frontend",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "elite-frontend-design",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "figma-2",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "figma-design-paid",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "frontend-design-3",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "frontend-design-anthropic",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "frontend-design-v3",
+      "category": "Creative",
+      "total": 49,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "game-asset-gen",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "game-asset-generation-cellcog",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "grok-image",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "grok-image-generate",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "heygen-tts",
+      "category": "Creative",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "html-coder",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "html-coder-paid",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "html-designer",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "html-designer-paid",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "join-meeting",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "kujiale-design",
+      "category": "Creative",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "lh-video-gen",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "lh-video-gen-paid",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "logo",
+      "category": "Creative",
+      "total": 49,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "logo-brand-identity",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "logo-brand-identity-cellcog",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "logo-design",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "logo-design-guide",
+      "category": "Creative",
+      "total": 49,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "logo-design-guide-paid",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "markdown-converter",
+      "category": "Creative",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "markdown-converter-paid",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "meeting-join",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "minimalist-design",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "minimalist-design-system",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "music-gen",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "music-gen-cellcog",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "music-generation",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "music-generation-cellcog",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "openai-ai",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "openai-ai-paid",
+      "category": "Creative",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "openai-whisper",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "openai-whisper-1-0-0",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "openai-whisper-paid",
+      "category": "Creative",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "openai-whisper-v1",
+      "category": "Creative",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "podcast",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "podcast-chaptering",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "podcast-chaptering-highlights",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "podcast-downloader",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "podcast-downloader-paid",
+      "category": "Creative",
+      "total": 44.0,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "podcast-toolkit",
+      "category": "Creative",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "quark-scan",
+      "category": "Creative",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "qwen-video-analyzer",
+      "category": "Creative",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "tailwindcss",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "tailwindcss-toolkit",
+      "category": "Creative",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "text-to-speech-heygen",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "tts-whatsapp",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "tts-whatsapp-paid",
+      "category": "Creative",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ui",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ui-design-toolkit",
+      "category": "Creative",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ui-ux",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ui-ux-design",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ui-ux-design-paid",
+      "category": "Creative",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ui-ux-dev",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ui-ux-dev-paid",
+      "category": "Creative",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ui-ux-toolkit",
+      "category": "Creative",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ux",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ux-design",
+      "category": "Creative",
+      "total": 49,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "video",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "video-editing",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "video-editing-paid",
+      "category": "Creative",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "video-frames",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "video-frames-paid",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "video-stream-upload",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "video-toolkit",
+      "category": "Creative",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "video-translator",
+      "category": "Creative",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "video-translator-paid",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "video-upload-aioz-stream",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "wechat-article-writer",
+      "category": "Creative",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "whatsapp-image",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "whatsapp-image-send",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "youtube-watcher",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "youtube-watcher-paid",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "zhuchenggong-doubao-image-gen",
+      "category": "Creative",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "actor-identifier",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "analyze",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "api-design-architect",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "auth-security-architect",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "azure-cli",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "azure-cli-toolkit",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "azure-cloud-automator",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "baoyu-format-markdown",
+      "category": "Development",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "brainstorm-facilitator",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "brand-identity-creator",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "c-suite-advisor",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "canvas-art-designer",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "cheat-code",
+      "category": "Development",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "cheat-code-paid",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "claude-code-delegate",
+      "category": "Development",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "claude-code-runner",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "claude-tmux",
+      "category": "Development",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "clickhouse-analytics",
+      "category": "Development",
+      "total": 44,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "cloudflare-edge-developer",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "code",
+      "category": "Development",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "code-1-0-4",
+      "category": "Development",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "code-analysis-skills",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "code-analysis-toolkit",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "code-analyze",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "code-delegate",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "code-dev-toolkit",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "code-dev-v1",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "code-quality",
+      "category": "Development",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "code-quality-paid",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "code-review-sentinel",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "code-runner",
+      "category": "Development",
+      "total": 46.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 9.0,
+        "E": 10
+      }
+    },
+    {
+      "slug": "competitive-ad-spy",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "compliance-manager",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "content-cms-architect",
+      "category": "Development",
+      "total": 44,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "copywriting-master",
+      "category": "Development",
+      "total": 43,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 8,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "csv-insight-miner",
+      "category": "Development",
+      "total": 44,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 8,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "debug-doctor",
+      "category": "Development",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "deep-research-engine",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "dns-networking",
+      "category": "Development",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "dns-networking-paid",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "docker-essentials",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "docker-essentials-1-0-0",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "docker-essentials-paid",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "docker-essentials-v1",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "docx-document-master",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "duckdb-analytics-engine",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "encryption",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "encryption-paid",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "explain-code",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "explain-code-paid",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "git",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "git-cli",
+      "category": "Development",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "git-cli-paid",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "git-essentials",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "git-essentials-paid",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "git-helper",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "git-helper-paid",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "git-toolkit",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "git-workflow-cn",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "git-workflow-cn-paid",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "git-workflows",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "git-workflows-paid",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "github-dev-standard",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "github-development-standard",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "go",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "golang-toolkit",
+      "category": "Development",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 9.0,
+        "E": 10
+      }
+    },
+    {
+      "slug": "hugo-blog",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "hugo-blog-publisher",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "iris-code-formatter",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "iris-formatter",
+      "category": "Development",
+      "total": 44.0,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 9.0,
+        "E": 10
+      }
+    },
+    {
+      "slug": "java-code-reviewer",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "java-dev-manual",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "java-development-manual",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "java-reviewer",
+      "category": "Development",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 9.0,
+        "E": 10
+      }
+    },
+    {
+      "slug": "javascript",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "javascript-sdk",
+      "category": "Development",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "javascript-sdk-paid",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "javascript-skills",
+      "category": "Development",
+      "total": 49,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "javascript-skills-paid",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "javascript-toolkit",
+      "category": "Development",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "knowledge-graph-paid",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "knowledge-graph-skill",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "lead-research-hunter",
+      "category": "Development",
+      "total": 44,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "markdown-format",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "mcp-server-builder",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "merge-check",
+      "category": "Development",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "merge-check-paid",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "mermaid-diagram",
+      "category": "Development",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "mermaid-diagram-paid",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "model-routing",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "model-switching",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "nextjs-fullstack-guide",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "node-connect",
+      "category": "Development",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "node-connect-paid",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "plan-architect",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "python",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "python-toolkit",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "remotion-video-studio",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "research-article-crafter",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "resume-assistant",
+      "category": "Development",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "resume-assistant-paid",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "scientific-research-assistant",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "security-hardening-shield",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "seo-audit-master",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "smart-model-routing-for-zai",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "smart-model-switching",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ssl",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ssl-toolkit",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "stripe-payment-integrator",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "terraform-iac-architect",
+      "category": "Development",
+      "total": 44,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "test-driven-coder",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "theme-stylist",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "tmux-session",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "twitter-viral-optimizer",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "typescript",
+      "category": "Development",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "typescript-skills",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "typescript-skills-paid",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "typescript-toolkit",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ui-component",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ui-component-paid",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "universal-translate",
+      "category": "Development",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "universal-translate-paid",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "vscode-node",
+      "category": "Development",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "vscode-node-paid",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "vue-component-gen",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "vue-component-generator",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "web",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "web-artifact-studio",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 8
+      }
+    },
+    {
+      "slug": "web-dev-toolkit",
+      "category": "Development",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "web-scraper-engine",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "who-is-actor",
+      "category": "Development",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "xlsx-data-wizard",
+      "category": "Development",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 9
+      }
+    },
+    {
+      "slug": "ziptax",
+      "category": "Development",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ziptax-paid",
+      "category": "Development",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "accounting-and-finance",
+      "category": "Finance",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "accounting-finance",
+      "category": "Finance",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "finance",
+      "category": "Finance",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "finance-accounting",
+      "category": "Finance",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "finance-acct",
+      "category": "Finance",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "finance-radar",
+      "category": "Finance",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "finance-radar-paid",
+      "category": "Finance",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "finance-report",
+      "category": "Finance",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "finance-report-analyzer",
+      "category": "Finance",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "finance-test",
+      "category": "Finance",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "finance-toolkit",
+      "category": "Finance",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "financial-literacy",
+      "category": "Finance",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "financial-literacy-paid",
+      "category": "Finance",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "okx-dex-token",
+      "category": "Finance",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "okx-dex-token-paid",
+      "category": "Finance",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "rho-telegram-alerts",
+      "category": "Finance",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "stock-filter",
+      "category": "Finance",
+      "total": 46.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "stock-filter-skills",
+      "category": "Finance",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "t-trading",
+      "category": "Finance",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "telegram-alert",
+      "category": "Finance",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "test",
+      "category": "Finance",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "trading",
+      "category": "Finance",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "university-app",
+      "category": "Finance",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "university-applications",
+      "category": "Finance",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "aic-dashboard",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "analytics-dashboard",
+      "category": "Integrations",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "api",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "api-connect-hub",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "api-doc-generator",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "api-doc-writer",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "api-gateway",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "api-generator",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "api-integration",
+      "category": "Integrations",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "api-magic-gen",
+      "category": "Integrations",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "api-scaffold-gen",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "api-test-runner",
+      "category": "Integrations",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "api-toolkit",
+      "category": "Integrations",
+      "total": 49,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "atlas-admin-console",
+      "category": "Integrations",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "azure-gateway-cli",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "bot-status-api-test",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "call-bridge",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "can",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "can-bus-toolkit",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "canvas-json-handler",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "chart",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "chart-craft",
+      "category": "Integrations",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "clawcall",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "cloud",
+      "category": "Integrations",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "cloud-manager",
+      "category": "Integrations",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "csv",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "csv-analyzer",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "csv-handler",
+      "category": "Integrations",
+      "total": 44.0,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "csv-insight",
+      "category": "Integrations",
+      "total": 44,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "csv-json-converter",
+      "category": "Integrations",
+      "total": 49,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "csv-toolkit",
+      "category": "Integrations",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "dashboard-analytics-tool",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "data-analysis-hub",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "data-analysis-litiao",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "data-analyst-chinese",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "data-analyst-cn",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "data-analyst-expert",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "data-format-converter",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "database-admin",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "db",
+      "category": "Integrations",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "db-admin-console",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "db-connector",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "db-schema-designer",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "deepseek-assistant",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "deepseek-chat",
+      "category": "Integrations",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "discord-hub",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "discord-master",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "discrawl",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "doc-guard",
+      "category": "Integrations",
+      "total": 49,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "doubao-assistant",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "doubao-chat",
+      "category": "Integrations",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "encoding-formats",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "encoding-toolkit",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "encrypted-docs",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "excel-craft",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "excel-expert",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "excel-studio",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "excel-xlsx",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "expanso-csv-to-json",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "expanso-json-to-yaml",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "expanso-json-validate",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "expanso-xml-to-json",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "figma-design",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "figma-studio",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "figma-tw-designer",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "flexible-database-design",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "format-converter",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "free-resource-finder",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "free-ride",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "gateway-manager",
+      "category": "Integrations",
+      "total": 49,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "github",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "github-api",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "github-api-toolkit",
+      "category": "Integrations",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "github-manager",
+      "category": "Integrations",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "github-repos",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "github-trending-feed",
+      "category": "Integrations",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "grain-crawler",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "graincrawl",
+      "category": "Integrations",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "graph-advocate",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "graph-knowledge-base",
+      "category": "Integrations",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "graph-query",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "jira-api",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "jira-api-toolkit",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "jira-flow-skill",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "jira-integration-skill",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "json",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "json-beautifier",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "json-canvas",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "json-formatter",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "json-lint",
+      "category": "Integrations",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "json-linter",
+      "category": "Integrations",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "json-parse-engine",
+      "category": "Integrations",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "json-parser",
+      "category": "Integrations",
+      "total": 44.0,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "json-repair",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "json-repair-kit",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "json-toolkit",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "json-validator",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "json-yaml-converter",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "kai-tw-figma",
+      "category": "Integrations",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "key-guard",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "key-vault-manager",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "knowledge-graph",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "linear-api",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "linear-api-toolkit",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "linear-skill",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "linear-sync",
+      "category": "Integrations",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "linear-workflow-skill",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "lite-sqlite",
+      "category": "Integrations",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "magic-api-generate",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "markdown-exporter",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "md-export",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "mongo-manager",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "mongodb",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "mongodb-atlas-admin",
+      "category": "Integrations",
+      "total": 46.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "netpad",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "notcrawl",
+      "category": "Integrations",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "notion-api-skill",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "notion-api-toolkit",
+      "category": "Integrations",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "notion-cli",
+      "category": "Integrations",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "notioncli",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "obsidian-cli",
+      "category": "Integrations",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "obsidian-official-cli",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ollama-integration",
+      "category": "Integrations",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "ollama-toolkit",
+      "category": "Integrations",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ops-dashboard",
+      "category": "Integrations",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "pg-job-queue",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "pg-mcp-skills",
+      "category": "Integrations",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "pipedrive-api",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "pipedrive-toolkit",
+      "category": "Integrations",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 9.0,
+        "E": 10
+      }
+    },
+    {
+      "slug": "postgres-job-queue",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "postgres-mcp-skills",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "py-data-analyzer",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "python-data-analysis",
+      "category": "Integrations",
+      "total": 44.0,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "pyx-scan",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "pyx-scanner",
+      "category": "Integrations",
+      "total": 45,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "reddit-research",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "reddit-research-paid",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "remix-api-key-auth",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "remix-auth",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "repo-manager",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "secure-api-calls",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "secure-api-toolkit",
+      "category": "Integrations",
+      "total": 44,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "self-integration",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "self-integration-paid",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "slack-api",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "slack-api-toolkit",
+      "category": "Integrations",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "slack-crawler",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "slacrawl",
+      "category": "Integrations",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "smart-crawler",
+      "category": "Integrations",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "sql",
+      "category": "Integrations",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "sql-gen",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "sql-generator",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "sql-master",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "sql-query",
+      "category": "Integrations",
+      "total": 49,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "sql-toolkit",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "sqlite",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "sqlite-lite-manager",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "sqlite-manager",
+      "category": "Integrations",
+      "total": 44.0,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "telegram",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "telegram-bot-builder",
+      "category": "Integrations",
+      "total": 44.0,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "telegram-toolkit",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "text-to-sql",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "text2sql-engine",
+      "category": "Integrations",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "tg-bot-builder",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "trending-feed-skill",
+      "category": "Integrations",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 7,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "vector-control",
+      "category": "Integrations",
+      "total": 44.0,
+      "grade": "B",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "vector-db-manager",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "vpn-rotate-skill",
+      "category": "Integrations",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "vpn-rotator",
+      "category": "Integrations",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 7,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "vue",
+      "category": "Integrations",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "vue-toolkit",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "web-crawler-engine",
+      "category": "Integrations",
+      "total": 46.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 9.0,
+        "E": 10
+      }
+    },
+    {
+      "slug": "web-notepad",
+      "category": "Integrations",
+      "total": 46,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "weiyun-skills",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "weiyun-toolkit",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "whatsapp-master",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "write-my-blog",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "ws-excel",
+      "category": "Integrations",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "ws-excel-paid",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "xlsx-handler",
+      "category": "Integrations",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "xml-json-converter",
+      "category": "Integrations",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "afrexai-knowledge-management",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "api-dev",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "api-development",
+      "category": "Knowledge",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "clawddocs",
+      "category": "Knowledge",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "compress-pdf",
+      "category": "Knowledge",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "compress-pdf-paid",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "context-driven-dev",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "context-driven-development",
+      "category": "Knowledge",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "doc-parse",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "docs-toolkit",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "document-pdf",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "document-pdf-paid",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "excel-formula",
+      "category": "Knowledge",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "excel-formula-paid",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "feishu-doc",
+      "category": "Knowledge",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "feishu-doc-paid",
+      "category": "Knowledge",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "feishu-doc-write",
+      "category": "Knowledge",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "feishu-doc-write-paid",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "figma",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "figma-toolkit",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "generate-mindmap",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "generate-presentation",
+      "category": "Knowledge",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "knowledge",
+      "category": "Knowledge",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "knowledge-capture",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "knowledge-capture-paid",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "knowledge-mgmt",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "knowledge-toolkit",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "learn",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "learn-cog",
+      "category": "Knowledge",
+      "total": 49,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "learn-cog-paid",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "learn-paid",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "local-file-rag-basic",
+      "category": "Knowledge",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "local-rag",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "markdown-converter-compdf",
+      "category": "Knowledge",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "md-converter-pdf",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "merge-pdf",
+      "category": "Knowledge",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "merge-pdf-paid",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "mindmap-gen",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "nano-pdf",
+      "category": "Knowledge",
+      "total": 45.0,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 9.0,
+        "E": 9
+      }
+    },
+    {
+      "slug": "nano-pdf-paid",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "pandoc-convert",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "paper-parse",
+      "category": "Knowledge",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "paper-parse-paid",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "pdf",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "pdf-toolkit",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "pptx-pdf-font-fix",
+      "category": "Knowledge",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "pptx-pdf-font-fix-paid",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "presentation-gen",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "skill-creator",
+      "category": "Knowledge",
+      "total": 49,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 10,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "skill-creator-paid",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 8,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "solo-audit",
+      "category": "Knowledge",
+      "total": 47,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 8,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    },
+    {
+      "slug": "solo-audit-paid",
+      "category": "Knowledge",
+      "total": 48,
+      "grade": "A",
+      "is_pass": true,
+      "scores": {
+        "T": 10,
+        "R": 9,
+        "A": 9,
+        "C": 10,
+        "E": 10
+      }
+    }
+  ]
+}

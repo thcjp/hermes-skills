@@ -4,39 +4,19 @@ name: email-multi-provider-free
 version: "1.0.0"
 displayName: 多邮箱管理免费版
 summary: Gmail与Outlook多账户邮件管理，支持收发搜索与安全认证
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   多邮箱管理免费版是一款面向个人用户的跨邮箱平台管理工具，统一管理 Gmail、Outlook
   与 Exchange 邮箱，支持邮件读取、搜索、发送、回复与转发等核心操作，通过系统密钥环
-  安全存储凭证，无需反复登录。
-
-  核心能力:
-  - Gmail、Outlook、Exchange 多邮箱统一管理
-  - 邮件读取、搜索、过滤与排序
-  - 邮件发送、回复、转发（支持 CC/BCC）
-  - 邮件标记与标签管理
-  - 系统密钥环安全存储凭证
-  - AI 优化的紧凑输出格式
-
-  适用场景:
-  - 个人用户多邮箱统一管理
-  - 工作邮箱与个人邮箱切换使用
-  - 邮件快速搜索与分类
-  - 独立开发者与一人公司效率提升
-
-  差异化: 免费版聚焦个人多邮箱日常管理，通过系统密钥环实现一次登录持久认证，
-  提供紧凑输出格式优化 AI 处理。专业版在此基础上增加批量操作、多账户 Profile、
-  企业级审计与高级过滤。
-
-  触发关键词: Gmail, Outlook, Exchange, 多邮箱, 邮件管理, 邮件搜索, 邮件发送, 邮件回复, 密钥环
+  安全存储凭证。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - 沟通协作
 - 邮件管理
 - 多邮箱
 - 个人效率
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -172,7 +152,7 @@ porteden email send \
 
 ## 快速开始
 
-### 第一步：安装命令行工具
+### 依赖说明
 
 ```bash
 # macOS (Homebrew)
@@ -222,7 +202,7 @@ porteden email messages --today -jc
 
 ---
 
-## 配置示例
+## 示例
 
 ### 常用环境变量
 
@@ -274,7 +254,7 @@ fi
 
 ```bash
 # -jc 是 --json --compact 的简写
-# 适合 AI 处理：去除附件详情、截断正文预览、限制标签
+# 已知限制
 porteden email messages --today -jc
 
 # 需要完整正文时使用单封邮件获取
@@ -424,3 +404,11 @@ porteden auth status
 
 - **分类**: MD+EXEC（纯Markdown指令，部分功能需要 exec 命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行 porteden CLI 命令，完成跨邮箱平台的邮件管理任务
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

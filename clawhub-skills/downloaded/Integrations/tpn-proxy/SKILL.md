@@ -8,33 +8,13 @@ summary: Make web requests through decentralized SOCKS5 proxies via the Tao Priv
 license: MIT
 description: |-
   Make web requests through decentralized SOCKS5 proxies via the Tao Private
-  Network (TPN). This sk...
-
-  核心能力:
-
-  - 集成工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 第三方API集成、平台对接、数据同步
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: through, requests, proxy, decentralized, socks, tpn
+  Network (TPN)。This sk。Use when 用户需要TPN Proxy相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。
 tags: '[''Integrations'']'
-tools: '[read, exec]'
----
-
+tools:
+  - read
+  - exec
 # TPN Proxy
-
+---
 Route web traffic through Tao Private Network's decentralized SOCKS5 proxies — a Bittensor subnet (SN65) with commercial and residential exit nodes across 80+ countries.
 
 Ask this skill things like:
@@ -44,10 +24,7 @@ Ask this skill things like:
 * I need a socks5 proxy in Japan for 30 minutes
 * Which countries are available on TPN for proxies?
 
----
-
 ## Security Posture
-
 | Aspect | Detail |
 | --- | --- |
 | Environment variables | `TPN_API_KEY` — existence-checked only (`[ -n "$TPN_API_KEY" ]`), never echoed or logged |
@@ -56,10 +33,7 @@ Ask this skill things like:
 | Network destinations | `api.taoprivatenetwork.com` (API calls) + user-specified URLs (validated per Step 5) |
 | x402 signing | Handled entirely by external libraries (`@x402/*`); this skill provides endpoint URLs only |
 
----
-
 ## This is an action skill
-
 This skill executes API calls and returns results directly — it does not output documentation or instructions for the user to follow.
 
 **Expected behaviour:**
@@ -72,14 +46,10 @@ This skill executes API calls and returns results directly — it does not outpu
 
 **A good check:** if your response contains "you can run this command to…" or "use this curl to generate…", reconsider — the user invoked this skill expecting you to run the command and hand them the output.
 
----
-
 ## Step-by-Step Procedure
-
 Follow this procedure every time the user requests a proxy or asks you to fetch something through a proxy.
 
 ### Security: Input validation (mandatory)
-
 Before constructing any shell command, **validate every user-provided value**. Never interpolate raw user input into shell commands.
 
 | Input | Validation rule |
@@ -98,14 +68,12 @@ Before constructing any shell command, **validate every user-provided value**. N
 * Prefer using the agent's built-in HTTP tools (e.g. `WebFetch`) for fetching user-specified URLs rather than constructing `curl` commands.
 
 ### Step 1: Resolve the API key
-
 Check whether `$TPN_API_KEY` is set in the environment (Skill平台 injects this automatically from your config):
 
 1. Test the variable: `[ -n "$TPN_API_KEY" ] && echo "API key is set" || echo "API key is not set"` — **never** echo, log, or display the key value itself.
 2. If not set → check if the user can pay via [x402](https://www.x402.org) (no API key needed), otherwise guide them through account setup (see the "Set up TPN" example)
 
 ### Step 2: Choose response format
-
 | Situation | Use `format` | Why |
 | --- | --- | --- |
 | Just need a working proxy URI | `text` (default) | No parsing needed |
@@ -123,7 +91,6 @@ If `jq` is not available, use `format=text` instead — it returns a plain `sock
 > **Do not** use `python -c`, `grep`, `cut`, or other shell-based JSON parsing fallbacks. These patterns risk shell injection when combined with dynamic inputs. Stick to `jq` or `format=text`.
 
 ### Step 3: Generate the proxy
-
 ```bash
 curl -s -X POST https://api.taoprivatenetwork.com/api/v1/proxy/generate \
   -H "Content-Type: application/json" \
@@ -143,7 +110,6 @@ Map the user's request to these parameters:
 > **Safe JSON body construction:** Always build the `-d` JSON payload as a static single-quoted string with only validated values inserted. Validate `geo` (2 uppercase letters), `minutes` (integer 1–1440), `connection_type` (enum), and `format` (enum) per the validation rules above **before** constructing the curl command. Never concatenate raw user input into the JSON body or any part of the command.
 
 ### Step 4: Present the result
-
 Show the **full proxy credentials** so the user can immediately connect. These are temporary (scoped to the lease duration) and safe to display in context. Use the `socks5h://` scheme (with `h`) to ensure DNS resolves through the proxy — this protects user DNS privacy. (When the agent fetches URLs in Step 5, it uses `socks5://` instead — see Step 5.) Include:
 
 * Structured config block (host, port, username, password, scheme, expiry)
@@ -151,7 +117,6 @@ Show the **full proxy credentials** so the user can immediately connect. These a
 * A ready-to-paste `curl` example when relevant
 
 ### Step 5: If the user asked you to fetch a URL
-
 After generating the proxy, make the request yourself. Use `socks5://` (not `socks5h://`) so DNS resolves locally — the validated IP is the connected IP.
 
 **Use the agent's built-in HTTP tools** (e.g. `WebFetch`) to fetch the URL through the proxy. This is the preferred method — it avoids shell command construction entirely.
@@ -175,13 +140,8 @@ curl --proxy "socks5://username:password@ip:port" \
 
 Return the response content to the user — the goal is a complete answer, not a proxy they still need to use themselves.
 
----
-
-## Examples
-
+## 示例
 These show exactly what users ask and what you should respond. Study these — they are the gold standard.
-
----
 
 **User:** "Give me a socks5 config for Belgium"
 
@@ -214,8 +174,6 @@ These show exactly what users ask and what you should respond. Study these — t
 >
 > This should return a Belgian IP. The proxy expires in 60 minutes — let me know if you need a longer lease.
 
----
-
 **User:** "Show me a curl command that proxies over Germany"
 
 **You:** *(generate a DE proxy yourself, then respond:)*
@@ -232,8 +190,6 @@ These show exactly what users ask and what you should respond. Study these — t
 >
 > Replace `https://example.com` with your target URL. This proxy expires at 2026-02-16T14:47:20Z.
 
----
-
 **User:** "Call icanhazip.com from the Netherlands"
 
 **You:** *(generate an NL proxy yourself, fetch icanhazip.com through it, then respond:)*
@@ -247,8 +203,6 @@ These show exactly what users ask and what you should respond. Study these — t
 > ```
 >
 > That's the exit IP in the Netherlands. The proxy is still active until 2026-02-16T15:12:00Z if you need more requests.
-
----
 
 **User:** "I need a residential US proxy for 2 hours"
 
@@ -272,8 +226,6 @@ These show exactly what users ask and what you should respond. Study these — t
 >
 > Residential IPs are less likely to be blocked. Let me know if you need a different country.
 
----
-
 **User:** "How many credits do I have left?"
 
 **You:** *(call `GET /api/v1/user/balance` yourself, then respond:)*
@@ -281,8 +233,6 @@ These show exactly what users ask and what you should respond. Study these — t
 > You have **74 credits** remaining.
 >
 > For reference, a 60-minute proxy costs 20 credits and a 10-minute proxy costs 10 credits. You can buy more at <https://api.taoprivatenetwork.com> — packages start at 1,000 credits for $9.99.
-
----
 
 **User:** "Use a proxy to check if my site looks right from Germany"
 
@@ -296,8 +246,6 @@ These show exactly what users ask and what you should respond. Study these — t
 >
 > Everything seems to be working correctly for German visitors. Want me to check from another country?
 
----
-
 **User:** "Set up TPN" / "How do I get started with TPN?"
 
 **You:** *(check if a key already exists — if yes, tell them they're set up; if no:)*
@@ -310,20 +258,14 @@ These show exactly what users ask and what you should respond. Study these — t
 >
 > Once you have the key, share it with me and I'll save it for future sessions. Then I can generate proxies for you anytime.
 
----
-
 The pattern: **the user asks, you act, you return results.** You never tell the user how to call the API — you call it yourself and hand them the output.
 
----
-
 ## API Reference
-
 **Base URL:** `https://api.taoprivatenetwork.com`
 
 **Authentication:** Pass `X-API-Key: <your-key>` as a request header. Not `Authorization: Bearer`.
 
 ### Endpoints
-
 | Method | Path | Auth | Description |
 | --- | --- | --- | --- |
 | POST | `/api/v1/proxy/generate` | API key | Generate SOCKS5 proxy |
@@ -337,7 +279,6 @@ The pattern: **the user asks, you act, you return results.** You never tell the 
 | POST | `/api/v1/x402/vpn/generate` | x402 | Generate WireGuard VPN (x402) |
 
 ### Response shapes
-
 **`/proxy/generate` with `format=text`:**
 
 ```json
@@ -372,7 +313,6 @@ The pattern: **the user asks, you act, you return results.** You never tell the 
 ```
 
 ### `/vpn/countries` query parameters
-
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | `format` | string | `json` | `"json"` for array, `"text"` for newline-separated |
@@ -380,7 +320,6 @@ The pattern: **the user asks, you act, you return results.** You never tell the 
 | `connection_type` | string | `any` | `"any"`, `"datacenter"`, or `"residential"` |
 
 ### Using the proxy (for user-facing code examples)
-
 Only show these if the user explicitly asks "how do I use this in my code?" — otherwise just hand them the config.
 
 > **User-facing code should always use `socks5h://`** (with `h`) to resolve DNS through the proxy, preserving DNS privacy. (The agent uses `socks5://` for its own fetching in Step 5, where local DNS resolution is a security feature — see Step 5.)
@@ -426,10 +365,7 @@ print( response.text )
 
 See `{baseDir}/references/api-examples.md` for end-to-end examples (generate + use) in curl, JS, Node.js, and Python.
 
----
-
 ## Credit Costs
-
 Formula: `credits = ceil( 4.1 × minutes ^ 0.375 )`
 
 | Duration | Credits |
@@ -447,10 +383,7 @@ Use `POST /api/v1/vpn/cost` with `{"minutes": N}` to calculate before purchasing
 
 Credit packages: Starter 1,000/$9.99 · Pro 5,000/$49.99 · Premium 20,000/$199.99
 
----
-
-## Troubleshooting & Operational Notes
-
+## 错误处理
 | Problem | Solution |
 | --- | --- |
 | `401 Unauthorized` | Verify API key is valid — use `X-API-Key` header, not Bearer |
@@ -468,10 +401,7 @@ Credit packages: Starter 1,000/$9.99 · Pro 5,000/$49.99 · Premium 20,000/$199.
 * Proxy leases expire at `expiresAt` — never cache or reuse credentials beyond that time
 * If a `503` occurs, credits are refunded automatically — retry after a short delay
 
----
-
 ## x402 Payment Flow (Advanced)
-
 The [x402 protocol](https://www.x402.org) enables pay-per-request access using USDC on Base. No account or API key needed — ideal for autonomous agents that already support x402.
 
 If you are an x402-capable agent, you already know how to handle the payment handshake. The TPN x402 endpoints follow the standard protocol:
@@ -484,10 +414,7 @@ Same request body as the centralised endpoint. No `X-API-Key` needed.
 
 See `{baseDir}/references/x402-examples.md` for curl and browser JS examples, and the [x402 spec](https://www.x402.org) for full protocol details. Signing is handled entirely by external libraries — this skill provides endpoint URLs only.
 
----
-
 ## Links
-
 * Dashboard & Account: <https://api.taoprivatenetwork.com>
 * API Docs: <https://api.taoprivatenetwork.com/docs/getting-started/>
 * Swagger UI: <https://api.taoprivatenetwork.com/api-docs/>
@@ -496,12 +423,11 @@ See `{baseDir}/references/x402-examples.md` for curl and browser JS examples, an
 * x402 Protocol: <https://www.x402.org>
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -512,3 +438,34 @@ See `{baseDir}/references/x402-examples.md` for curl and browser JS examples, an
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+- Make web requests through decentralized SOCKS5 proxies via the Tao Private
+  Network (TPN)
+- 触发关键词: through, requests, proxy, decentralized, socks, tpn
+
+## 适用场景
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 常见问题
+### Q1: 如何开始使用TPN Proxy？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: TPN Proxy有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+- 需要API Key，无Key环境无法使用

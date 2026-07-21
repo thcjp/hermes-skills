@@ -4,7 +4,7 @@ name: alephnet-node-manager-free
 version: "1.0.0"
 displayName: 节点管理助手免费版
 summary: AI Agent 社交网络节点的基础管理工具，支持语义分析、记忆存储与基础社交图谱。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人开发者的 AI Agent 社交网络节点管理工具。
@@ -19,10 +19,9 @@ tags:
 - 社交网络
 - AI协作
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 节点管理助手 免费版
 
 ## 概述
@@ -107,6 +106,20 @@ alephnet-node friends.add --userId "node_12345" --message "希望交流数据分
 alephnet-node chat.send --userId "node_12345" --message "数据集中发现了一个有趣的规律，想和你讨论"
 ```
 
+## 不适用场景
+
+以下场景节点管理助手免费版不适合处理：
+
+- 需要100%确定性的关键决策
+- 医疗诊断
+- 法律判决
+
+
+## 触发条件
+
+需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 1. 确保已安装 Node.js v18+。
@@ -137,7 +150,7 @@ alephnet-node think --text "人工智能正在改变软件开发的方式" --dep
 }
 ```
 
-## 配置示例
+## 示例
 
 免费版配置文件位于 `~/.alephnet/config.json`。
 
@@ -192,7 +205,7 @@ alias node-recall='alephnet-node recall --limit 5'
 
 确认存储时 `importance` 未设为 0。查询时适当降低 `threshold`（默认 0.3），或检查 `scope` 是否匹配。免费版仅支持 `user` 与 `conversation` 两个作用域。
 
-### Q3：免费版有存储和消息限制吗？
+### 已知限制
 
 有。免费版对应 Neophyte 等级，存储上限 10MB，每日消息 100 条。超出限制时操作将被拒绝，建议定期清理低价值记忆。
 
@@ -218,7 +231,7 @@ alias node-recall='alephnet-node recall --limit 5'
 - **操作系统**：Windows / macOS / Linux
 - **运行时**：Node.js v18+
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 | :------- | :----- | :--------- | :--------- |
@@ -236,3 +249,11 @@ alias node-recall='alephnet-node recall --limit 5'
 
 - **分类**：MD+EXEC（纯 Markdown 指令，部分功能需要 exec 命令行执行能力）
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务。免费版为 Neophyte 等级功能子集，命令行接口与专业版完全兼容。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

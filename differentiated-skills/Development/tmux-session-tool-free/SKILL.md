@@ -4,12 +4,10 @@ name: tmux-session-tool-free
 version: "1.0.0"
 displayName: Tmux会话工具免费版
 summary: 纯tmux指令操作终端会话,支持会话定位、内容查看、指令发送与调试
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向个人开发者的 tmux 会话管理工具,通过纯 tmux 指令操作终端会话。
-
-  核心能力:
+  面向个人开发者的 tmux 会话管理工具,通过纯 tmux 指令操作终端会话。核心能力:
   - 定位目标 tmux 会话与窗格
   - 查看会话最新交互内容
   - 向指定窗格发送指令
@@ -26,14 +24,14 @@ description: |-
   - 纯 tmux 指令,无需额外脚本
   - 操作简单,开箱即用
 
-  触发关键词: tmux, session, pane, terminal, send-keys, capture, 会话, 终端, 窗格
+  触发关键词: tmux, session, pan...
 tags:
 - 终端工具
 - tmux
 - 会话管理
 - 开发辅助
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -186,7 +184,7 @@ sleep 0.1
 tmux send-keys -t myproject:0.1 Enter
 ```
 
-## 配置示例
+## 示例
 
 ### 会话命名规范
 
@@ -319,7 +317,7 @@ tmux -S /path/to/socket capture-pane -p -J -t $TARGET -S -200
 - **操作系统**: Linux / macOS(Windows 需通过 WSL 或类似工具)
 - **tmux**: 已安装并运行
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -336,3 +334,15 @@ tmux -S /path/to/socket capture-pane -p -J -t $TARGET -S -200
 - **分类**: MD+EXEC(Markdown 指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 执行 tmux 命令管理终端会话
 - **离线可用**: 是,tmux 操作在本地完成
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用

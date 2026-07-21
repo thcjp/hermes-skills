@@ -299,18 +299,23 @@ def parse_skill_md(skill_md_path):
 def register_skill(slug, name, display_name, version, category, source, local_path,
                    source_slug=None, source_url=None, source_author=None,
                    source_license=None, skill_type=None, pricing_model=None,
-                   is_differentiated=0, notes=None, edition=None, parent_slug=None):
+                   is_differentiated=0, notes=None, edition=None, parent_slug=None,
+                   workflow_state=None):
     """注册或更新一个skill
 
     v1.1新增参数：
         edition: 版本类型 'free' 或 'pro'
         parent_slug: 关联的父skill slug（免费版和专业版共享）
+    v1.2新增参数：
+        workflow_state: 工作流状态 (默认'step1_read_original')
+                       可选值: step1_read_original...completed, deprecated
     """
     conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
     c.execute("PRAGMA foreign_keys = ON")
 
     now = datetime.now().isoformat()
+    wf_state = workflow_state or 'step1_read_original'
 
     # 检查是否已存在
     c.execute("SELECT id FROM skills WHERE slug = ?", (slug,))
@@ -325,12 +330,13 @@ def register_skill(slug, name, display_name, version, category, source, local_pa
                 source_slug = ?, source_url = ?, source_author = ?, source_license = ?,
                 skill_type = ?, pricing_model = ?, is_differentiated = ?,
                 edition = ?, parent_slug = ?,
+                workflow_state = ?,
                 updated_at = ?, notes = ?
             WHERE id = ?
         """, (name, display_name, version, category, source, local_path,
               source_slug, source_url, source_author, source_license,
               skill_type, pricing_model, is_differentiated,
-              edition, parent_slug, now, notes, skill_id))
+              edition, parent_slug, wf_state, now, notes, skill_id))
     else:
         c.execute("""
             INSERT INTO skills (
@@ -338,12 +344,12 @@ def register_skill(slug, name, display_name, version, category, source, local_pa
                 category, source, source_slug, source_url, source_author, source_license,
                 local_path, created_at, updated_at, current_status,
                 is_differentiated, pricing_model, skill_type, notes,
-                edition, parent_slug
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                edition, parent_slug, workflow_state
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (slug, name, display_name, version, category, source,
               source_slug, source_url, source_author, source_license,
               local_path, now, now, 'registered', is_differentiated,
-              pricing_model, skill_type, notes, edition, parent_slug))
+              pricing_model, skill_type, notes, edition, parent_slug, wf_state))
         skill_id = c.lastrowid
 
     # 记录版本

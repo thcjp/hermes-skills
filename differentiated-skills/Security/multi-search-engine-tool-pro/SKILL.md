@@ -4,7 +4,7 @@ name: multi-search-engine-tool-pro
 version: "1.0.0"
 displayName: 多搜索引擎专业版
 summary: 企业级多搜索引擎聚合平台,支持16个引擎、结果去重排序、批量搜索、API访问与本地缓存,适合专业信息检索团队。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   多搜索引擎专业版,为专业用户提供全方位多搜索引擎聚合与检索能力。
@@ -18,18 +18,14 @@ tags:
 - 企业版
 - API
 tools:
-- read
+  - - read
 - exec
----
-
 # 多搜索引擎专业版
-
 ## 概述
-
+---
 专业版为专业用户提供完整的多搜索引擎聚合与检索平台,在免费版链接生成能力之上,新增16引擎结果聚合、智能去重与相关性排序、批量关键词搜索、搜索结果API、本地结果缓存与JSON/CSV导出。专业版完全兼容免费版搜索引擎配置,已有搜索脚本可无缝升级,适合专业信息检索与市场调研场景。
 
 ### 专业版核心优势
-
 | 优势 | 说明 |
 |:-----|:-----|
 | 16引擎覆盖 | 7中文+9国际搜索引擎 |
@@ -42,181 +38,15 @@ tools:
 | 定时搜索 | 定时执行搜索任务 |
 
 ## 核心能力
-
 ### 1. 16引擎聚合搜索(专业版独有)
 
-```python
-#!/usr/bin/env python3
-"""专业版16引擎搜索聚合器"""
-
-import urllib.parse
-import json
-from datetime import datetime
-
-class ProSearchAggregator:
-    """专业版搜索引擎聚合器"""
-    
-    ENGINES = {
-        # 中文搜索引擎 (7个)
-        "baidu": {"name": "百度", "url": "https://www.baidu.com/s?wd={}", "type": "cn"},
-        "sogou": {"name": "搜狗", "url": "https://www.sogou.com/web?query={}", "type": "cn"},
-        "360": {"name": "360搜索", "url": "https://www.so.com/s?q={}", "type": "cn"},
-        "bing_cn": {"name": "必应中国", "url": "https://cn.bing.com/search?q={}", "type": "cn"},
-        "toutiao": {"name": "头条搜索", "url": "https://so.toutiao.com/search?keyword={}", "type": "cn"},
-        "zhihu": {"name": "知乎搜索", "url": "https://www.zhihu.com/search?q={}", "type": "cn"},
-        "weibo": {"name": "微博搜索", "url": "https://s.weibo.com/weibo?q={}", "type": "cn"},
-        
-        # 国际搜索引擎 (9个)
-        "google": {"name": "Google", "url": "https://www.google.com/search?q={}", "type": "global"},
-        "bing": {"name": "Bing", "url": "https://www.bing.com/search?q={}", "type": "global"},
-        "duckduckgo": {"name": "DuckDuckGo", "url": "https://duckduckgo.com/?q={}", "type": "global"},
-        "yandex": {"name": "Yandex", "url": "https://yandex.com/search/?text={}", "type": "global"},
-        "yahoo": {"name": "Yahoo", "url": "https://search.yahoo.com/search?p={}", "type": "global"},
-        "startpage": {"name": "Startpage", "url": "https://www.startpage.com/sp/search?query={}", "type": "global"},
-        "ecosia": {"name": "Ecosia", "url": "https://www.ecosia.org/search?q={}", "type": "global"},
-        "brave": {"name": "Brave Search", "url": "https://search.brave.com/search?q={}", "type": "global"},
-        "swisscows": {"name": "Swisscows", "url": "https://swisscows.com/web?query={}", "type": "global"},
-    }
-    
-    def __init__(self):
-        self.cache = {}
-        self.search_history = []
-    
-    def search_all(self, query):
-        """在所有16个引擎中搜索"""
-        encoded = urllib.parse.quote(query)
-        
-        result = {
-            "query": query,
-            "timestamp": datetime.utcnow().isoformat() + "Z",
-            "engine_count": len(self.ENGINES),
-            "engines": {}
-        }
-        
-        for engine_id, config in self.ENGINES.items():
-            result["engines"][engine_id] = {
-                "name": config["name"],
-                "type": config["type"],
-                "url": config["url"].format(encoded)
-            }
-        
-        self.search_history.append({
-            "query": query,
-            "timestamp": result["timestamp"],
-            "engines": len(self.ENGINES)
-        })
-        
-        return result
-    
-    def search_by_type(self, query, engine_type="cn"):
-        """按类型搜索"""
-        engines = {k: v for k, v in self.ENGINES.items() if v["type"] == engine_type}
-        encoded = urllib.parse.quote(query)
-        
-        return {
-            "query": query,
-            "type": engine_type,
-            "engine_count": len(engines),
-            "engines": {
-                k: {
-                    "name": v["name"],
-                    "url": v["url"].format(encoded)
-                }
-                for k, v in engines.items()
-            }
-        }
-    
-    def get_engine_list(self):
-        """获取引擎列表"""
-        return {
-            "cn": [{"id": k, "name": v["name"]} for k, v in self.ENGINES.items() if v["type"] == "cn"],
-            "global": [{"id": k, "name": v["name"]} for k, v in self.ENGINES.items() if v["type"] == "global"],
-            "total": len(self.ENGINES)
-        }
-
-
-if __name__ == "__main__":
-    agg = ProSearchAggregator()
-    result = agg.search_all("人工智能")
-    print(json.dumps(result, indent=2, ensure_ascii=False))
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 2. 批量关键词搜索(专业版独有)
 
-```python
-#!/usr/bin/env python3
-"""专业版批量关键词搜索"""
-
-import json
-from datetime import datetime
-from concurrent.futures import ThreadPoolExecutor
-from pro_search import ProSearchAggregator
-
-class BatchSearchEngine:
-    """批量搜索引擎"""
-    
-    def __init__(self, max_workers=5):
-        self.aggregator = ProSearchAggregator()
-        self.max_workers = max_workers
-    
-    def batch_search(self, keywords, engines=None):
-        """批量搜索多个关键词"""
-        results = []
-        
-        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-            futures = {}
-            for keyword in keywords:
-                if engines:
-                    future = executor.submit(self._search_engines, keyword, engines)
-                else:
-                    future = executor.submit(self.aggregator.search_all, keyword)
-                futures[future] = keyword
-            
-            for future in futures:
-                keyword = futures[future]
-                try:
-                    result = future.result()
-                    results.append(result)
-                except Exception as e:
-                    results.append({
-                        "query": keyword,
-                        "error": str(e)
-                    })
-        
-        return {
-            "batch_id": datetime.utcnow().strftime("%Y%m%d%H%M%S"),
-            "timestamp": datetime.utcnow().isoformat() + "Z",
-            "total_keywords": len(keywords),
-            "successful": sum(1 for r in results if "error" not in r),
-            "failed": sum(1 for r in results if "error" in r),
-            "results": results
-        }
-    
-    def _search_engines(self, keyword, engine_ids):
-        """在指定引擎中搜索"""
-        encoded = urllib.parse.quote(keyword)
-        return {
-            "query": keyword,
-            "engines": {
-                eid: {
-                    "name": self.aggregator.ENGINES[eid]["name"],
-                    "url": self.aggregator.ENGINES[eid]["url"].format(encoded)
-                }
-                for eid in engine_ids if eid in self.aggregator.ENGINES
-            }
-        }
-
-
-if __name__ == "__main__":
-    batch = BatchSearchEngine()
-    
-    keywords = ["人工智能", "机器学习", "深度学习", "自然语言处理"]
-    result = batch.batch_search(keywords)
-    print(f"批量搜索完成: {result['successful']}/{result['total_keywords']}")
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 3. 搜索结果缓存(专业版独有)
-
 ```python
 #!/usr/bin/env python3
 """专业版搜索结果缓存"""
@@ -228,53 +58,52 @@ from datetime import datetime, timedelta
 
 class SearchCache:
     """搜索结果缓存"""
-    
+
     def __init__(self, cache_dir="./search_cache", ttl_hours=24):
         self.cache_dir = cache_dir
         self.ttl = timedelta(hours=ttl_hours)
         os.makedirs(cache_dir, exist_ok=True)
-    
+
     def _get_cache_key(self, query, engine=None):
         """生成缓存键"""
         key = f"{query}_{engine or 'all'}"
         return hashlib.md5(key.encode()).hexdigest()
-    
+
     def get(self, query, engine=None):
         """获取缓存"""
         key = self._get_cache_key(query, engine)
         cache_file = os.path.join(self.cache_dir, f"{key}.json")
-        
+
         if not os.path.exists(cache_file):
             return None
-        
+
         with open(cache_file, "r", encoding="utf-8") as f:
             cached = json.load(f)
-        
-        # 检查是否过期
+
         cached_time = datetime.fromisoformat(cached["timestamp"].replace("Z", "+00:00"))
         if datetime.utcnow() - cached_time > self.ttl:
             os.remove(cache_file)
             return None
-        
+
         cached["from_cache"] = True
         return cached
-    
+
     def set(self, query, result, engine=None):
         """设置缓存"""
         key = self._get_cache_key(query, engine)
         cache_file = os.path.join(self.cache_dir, f"{key}.json")
-        
+
         result["timestamp"] = datetime.utcnow().isoformat() + "Z"
-        
+
         with open(cache_file, "w", encoding="utf-8") as f:
             json.dump(result, f, ensure_ascii=False, indent=2)
-    
+
     def clear(self):
         """清空缓存"""
         for f in os.listdir(self.cache_dir):
             if f.endswith(".json"):
                 os.remove(os.path.join(self.cache_dir, f))
-    
+
     def stats(self):
         """缓存统计"""
         files = [f for f in os.listdir(self.cache_dir) if f.endswith(".json")]
@@ -290,7 +119,6 @@ class SearchCache:
 ```
 
 ### 4. REST API服务(专业版独有)
-
 ```python
 #!/usr/bin/env python3
 """专业版搜索REST API"""
@@ -311,26 +139,22 @@ def search():
     query = request.args.get("q", "")
     engine = request.args.get("engine")
     engine_type = request.args.get("type")  # cn or global
-    
     if not query:
         return jsonify({"error": "缺少参数 q"}), 400
-    
-    # 检查缓存
+
     cached = cache.get(query, engine)
     if cached:
         return jsonify(cached)
-    
-    # 执行搜索
+
     if engine:
         result = aggregator._search_engines(query, [engine])
     elif engine_type:
         result = aggregator.search_by_type(query, engine_type)
     else:
         result = aggregator.search_all(query)
-    
-    # 缓存结果
+
     cache.set(query, result, engine)
-    
+
     return jsonify(result)
 
 @app.route('/api/v1/search/batch', methods=['POST'])
@@ -338,10 +162,10 @@ def batch_search():
     """批量搜索"""
     data = request.json
     keywords = data.get("keywords", [])
-    
+
     if not keywords:
         return jsonify({"error": "缺少 keywords"}), 400
-    
+
     result = batch_engine.batch_search(keywords)
     return jsonify(result)
 
@@ -365,9 +189,7 @@ if __name__ == '__main__':
 ```
 
 ## 使用场景
-
 ### 场景一:市场调研多源搜索
-
 ```python
 #!/usr/bin/env python3
 """市场调研多源搜索"""
@@ -378,14 +200,12 @@ from pro_search import ProSearchAggregator
 def market_research(topic):
     """市场调研:同一主题在多引擎搜索"""
     agg = ProSearchAggregator()
-    
-    # 中文市场搜索
+
     cn_results = agg.search_by_type(topic, "cn")
     print(f"中文搜索引擎: {cn_results['engine_count']}个")
     for eid, info in cn_results["engines"].items():
         print(f"  {info['name']}: {info['url']}")
-    
-    # 国际市场搜索
+
     global_results = agg.search_by_type(topic, "global")
     print(f"\n国际搜索引擎: {global_results['engine_count']}个")
     for eid, info in global_results["engines"].items():
@@ -395,11 +215,8 @@ market_research("新能源汽车市场分析")
 ```
 
 ### 场景二:批量关键词搜索
-
 ```bash
 #!/bin/bash
-# 批量关键词搜索
-
 echo "=== 批量关键词搜索 ==="
 
 KEYWORDS=("AI安全" "区块链应用" "云计算趋势" "物联网发展")
@@ -424,14 +241,8 @@ for r in result['results']:
 ```
 
 ### 场景三:定时搜索任务
-
 ```bash
 #!/bin/bash
-# 定时搜索任务(cron)
-
-# 添加到crontab: 0 9 * * 1 /path/to/scheduled_search.sh
-# 每周一上午9点执行
-
 QUERY="行业最新动态"
 OUTPUT_DIR="./search-reports"
 mkdir -p "$OUTPUT_DIR"
@@ -456,24 +267,32 @@ print(f'引擎数量: {result[\"engine_count\"]}')
 "
 ```
 
+## 不适用场景
+
+以下场景多搜索引擎专业版不适合处理：
+
+- 黑帽SEO手段
+- 搜索引擎作弊
+- 付费广告投放管理
+
+
+## 触发条件
+
+需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
-
 ### 从免费版升级
-
 ```python
-# 免费版:8引擎链接生成
 agg = MultiSearchAggregator()
 result = agg.search("关键词")
 
-# 专业版:16引擎+缓存+API
 agg = ProSearchAggregator()
 result = agg.search_all("关键词")
 ```
 
-## 配置示例
-
+## 示例
 ### 专业版功能矩阵
-
 | 功能 | 免费版 | 专业版 | 说明 |
 |:-----|:-------|:-------|:-----|
 | 引擎数量 | 8个 | 16个 | 7中文+9国际 |
@@ -484,14 +303,12 @@ result = agg.search_all("关键词")
 | 定时搜索 | 不支持 | 支持 | Cron任务 |
 
 ### 支持的16个搜索引擎
-
 | 类型 | 引擎 | 数量 |
 |:-----|:-----|:-----|
 | 中文 | 百度/搜狗/360/必应中国/头条/知乎/微博 | 7 |
 | 国际 | Google/Bing/DDG/Yandex/Yahoo/Startpage/Ecosia/Brave/Swisscows | 9 |
 
 ## 最佳实践
-
 1. **缓存优先**:使用缓存减少重复搜索请求。
 2. **批量处理**:多个关键词使用批量搜索接口。
 3. **类型筛选**:根据需求选择中文或国际引擎。
@@ -499,36 +316,28 @@ result = agg.search_all("关键词")
 5. **结果导出**:将搜索结果导出为JSON/CSV便于分析。
 
 ## 常见问题
-
 ### Q1: 专业版与免费版引擎是否兼容?
-
 完全兼容。专业版在免费版8个引擎基础上新增8个引擎,已有配置可直接使用。
 
 ### Q2: 缓存TTL可以调整吗?
-
 可以,在SearchCache初始化时设置ttl_hours参数,默认24小时。
 
-### Q3: 批量搜索有数量限制吗?
-
+### 已知限制
 建议单次批量不超过50个关键词,并发度默认5,可根据需要调整。
 
 ### Q4: API服务如何部署?
-
 使用Flask启动API服务,建议配合gunicorn部署到生产环境。
 
 ### Q5: 搜索结果能直接获取网页内容吗?
-
 专业版生成搜索链接并缓存。直接抓取网页内容需要配合爬虫工具使用。
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 - **Python**: 3.8+(使用API和缓存功能时需要)
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | python3 | 运行时 | 必需 | python.org 下载 |
@@ -544,3 +353,10 @@ result = agg.search_all("关键词")
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行专业级多搜索引擎聚合与检索任务
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

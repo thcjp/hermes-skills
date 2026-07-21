@@ -4,7 +4,7 @@ name: mac-node-snapshot-tool-pro
 version: "1.0.0"
 displayName: macOS截图工具专业版
 summary: 企业级macOS屏幕捕获平台,支持多屏截图、音频录屏、定时批量截图、OCR文字识别与自动上传,适合专业内容创作与文档制作。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   macOS截图工具专业版,为专业用户提供全方位屏幕捕获与处理能力。
@@ -18,18 +18,14 @@ tags:
 - 企业版
 - OCR
 tools:
-- read
+  - - read
 - exec
 ---
-
 # macOS截图工具专业版
-
 ## 概述
-
 专业版为专业用户提供完整的macOS屏幕捕获与处理平台,在免费版基础截图能力之上,新增多显示器截图、音频屏幕录制、定时批量截图、OCR文字识别、图片编辑标注、云端自动上传与GIF动图制作等专业功能。专业版完全兼容免费版截图命令,已有截图脚本可无缝升级,适合专业内容创作与文档制作场景。
 
 ### 专业版核心优势
-
 | 优势 | 说明 |
 |:-----|:-----|
 | 多屏支持 | 精确选择指定显示器截图 |
@@ -42,13 +38,10 @@ tools:
 | 格式转换 | PNG/JPG/HEIC/TIFF/WEBP |
 
 ## 核心能力
-
 ### 1. 多显示器截图(专业版独有)
-
 ```bash
 #!/bin/bash
 # 多显示器截图
-
 OUTPUT_DIR="${HOME}/Desktop/screenshots"
 mkdir -p "$OUTPUT_DIR"
 TIMESTAMP=$(date '+%Y%m%d_%H%M%S')
@@ -75,19 +68,16 @@ echo "  screencapture -D 2 display2.png  # 第二显示器"
 ```
 
 ### 2. 音频屏幕录制(专业版独有)
-
 ```bash
 #!/bin/bash
 # 带音频的屏幕录制
-
 OUTPUT_DIR="${HOME}/Desktop/recordings"
 mkdir -p "$OUTPUT_DIR"
 TIMESTAMP=$(date '+%Y%m%d_%H%M%S')
 
 # 方式1: 使用screencapture(基础视频+无音频)
 # screencapture -v "${OUTPUT_DIR}/basic_${TIMESTAMP}.mov"
-
-# 方式2: 使用ffmpeg录制屏幕+系统音频(需安装BlackHole虚拟音频)
+# 依赖说明
 echo "=== 屏幕录制(带音频) ==="
 echo "录制模式: 屏幕 + 系统音频"
 echo "按 Ctrl+C 停止录制"
@@ -118,18 +108,15 @@ echo "文件大小: $(du -h "$OUTPUT_FILE" | cut -f1)"
 ```
 
 ### 3. 定时批量截图(专业版独有)
-
 ```bash
 #!/bin/bash
 # 专业版定时批量截图(无人值守)
-
 OUTPUT_DIR="${HOME}/Desktop/batch-screenshots"
 mkdir -p "$OUTPUT_DIR"
 
 INTERVAL="${1:-30}"       # 截图间隔(秒)
 DURATION="${2:-3600}"     # 总时长(秒),默认1小时
 FORMAT="${3:-png}"        # 图片格式
-
 echo "=== 专业版定时批量截图 ==="
 echo "间隔: ${INTERVAL}秒"
 echo "总时长: ${DURATION}秒 ($((DURATION/60))分钟)"
@@ -145,14 +132,14 @@ while [ "$(date +%s)" -lt "$END_TIME" ]; do
     COUNT=$((COUNT + 1))
     TIMESTAMP=$(date '+%Y%m%d_%H%M%S')
     FILENAME="${OUTPUT_DIR}/batch_${COUNT}_${TIMESTAMP}.${FORMAT}"
-    
+
     # 截图(可添加 -C 包含光标)
     screencapture -t "$FORMAT" "$FILENAME"
-    
+
     # 记录日志
     SIZE=$(du -h "$FILENAME" | cut -f1)
     echo "[$(date '+%H:%M:%S')] #${COUNT} ${SIZE} ${FILENAME}"
-    
+
     # 检查是否到达结束时间
     NOW=$(date +%s)
     REMAINING=$((END_TIME - NOW))
@@ -160,7 +147,7 @@ while [ "$(date +%s)" -lt "$END_TIME" ]; do
         echo "剩余时间不足一次间隔,结束截图"
         break
     fi
-    
+
     sleep "$INTERVAL"
 done
 
@@ -172,11 +159,9 @@ echo "时间跨度: $(date -r "$START_TIME" '+%H:%M:%S') - $(date '+%H:%M:%S')"
 ```
 
 ### 4. OCR文字识别(专业版独有)
-
 ```bash
 #!/bin/bash
 # 截图OCR文字识别
-
 OUTPUT_DIR="${HOME}/Desktop/ocr-results"
 mkdir -p "$OUTPUT_DIR"
 
@@ -200,7 +185,6 @@ echo ""
 # OCR识别(使用macOS Vision框架)
 # 方法1: 使用 shortcuts(快捷指令) - 需预先创建OCR快捷指令
 # 方法2: 使用Python + Vision框架
-
 python3 << 'PYTHON'
 import subprocess
 import json
@@ -224,7 +208,6 @@ image_url = Cocoa.NSURL.fileURLWithPath_(image_path)
 request = Vision.VNRecognizeTextRequest.alloc().init()
 request.setRecognitionLanguages_(["zh-Hans", "zh-Hant", "en-US"])
 request.setRecognitionLevel_(1)  # accurate
-
 handler = Vision.VNImageRequestHandler.alloc().initWithURL_options_(image_url, None)
 success = handler.performRequests_error_([request], None)
 
@@ -249,7 +232,7 @@ result = subprocess.run(
 if result.stdout:
     print("=== OCR识别结果 ===")
     print(result.stdout)
-    
+
     # 保存结果
     output_file = image_path.replace(".png", "_ocr.txt")
     with open(output_file, "w") as f:
@@ -268,11 +251,9 @@ fi
 ```
 
 ### 5. GIF动图制作(专业版独有)
-
 ```bash
 #!/bin/bash
 # 录屏转GIF动图
-
 OUTPUT_DIR="${HOME}/Desktop/gifs"
 mkdir -p "$OUTPUT_DIR"
 
@@ -314,13 +295,10 @@ echo "文件大小: $(du -h "$OUTPUT_GIF" | cut -f1)"
 ```
 
 ## 使用场景
-
 ### 场景一:专业教程制作
-
 ```bash
 #!/bin/bash
 # 专业教程制作流程
-
 echo "=== 专业教程制作 ==="
 
 PROJECT_NAME="${1:-tutorial}"
@@ -332,11 +310,9 @@ echo "1. 开始录制(带音频)..."
 echo "   按 Ctrl+C 停止"
 RECORDING="${OUTPUT_DIR}/raw_recording.mov"
 # 使用ffmpeg录制(参考音频录屏部分)
-
 # 2. 转换为GIF
 echo "2. 转换GIF预览..."
 # (使用GIF制作脚本)
-
 # 3. 截取关键帧
 echo "3. 截取关键帧..."
 for i in 1 2 3; do
@@ -352,11 +328,9 @@ ls -la "$OUTPUT_DIR"
 ```
 
 ### 场景二:自动化测试截图
-
 ```bash
 #!/bin/bash
 # 自动化测试截图(定时捕获应用状态)
-
 OUTPUT_DIR="${HOME}/Desktop/test-screenshots"
 mkdir -p "$OUTPUT_DIR"
 
@@ -372,14 +346,14 @@ COUNT=0
 while true; do
     ELAPSED=$(( $(date +%s) - START ))
     [ "$ELAPSED" -ge "$DURATION" ] && break
-    
+
     COUNT=$((COUNT + 1))
     TIMESTAMP=$(date '+%Y%m%d_%H%M%S')
     FILE="${OUTPUT_DIR}/test_${COUNT}_${TIMESTAMP}.png"
-    
+
     screencapture "$FILE"
     echo "  [${COUNT}] ${FILE} ($(du -h "$FILE" | cut -f1))"
-    
+
     sleep "$INTERVAL"
 done
 
@@ -389,11 +363,9 @@ echo "总大小: $(du -sh "$OUTPUT_DIR" | cut -f1)"
 ```
 
 ### 场景三:截图OCR文档化
-
 ```bash
 #!/bin/bash
 # 截图并OCR转换为文本文档
-
 OUTPUT_DIR="${HOME}/Desktop/ocr-docs"
 mkdir -p "$OUTPUT_DIR"
 
@@ -411,17 +383,28 @@ screencapture -i "$IMAGE"
 # OCR处理
 echo "正在识别文字..."
 # (调用OCR识别功能)
-
 echo ""
 echo "文档已生成:"
 echo "  图片: ${IMAGE}"
 echo "  文本: ${IMAGE%.png}.txt"
 ```
 
+## 不适用场景
+
+以下场景macOS截图工具专业版不适合处理：
+
+- 加密文件破解
+- 损坏文件修复
+- 物理介质数据恢复
+
+
+## 触发条件
+
+需要文件处理、文档转换、格式互转、内容提取时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
-
 ### 从免费版升级
-
 ```bash
 # 免费版:基础截图
 screencapture output.png
@@ -430,10 +413,8 @@ screencapture output.png
 screencapture -i output.png && python3 ocr.py output.png
 ```
 
-## 配置示例
-
+## 示例
 ### 专业版功能矩阵
-
 | 功能 | 免费版 | 专业版 | 说明 |
 |:-----|:-------|:-------|:-----|
 | 全屏截图 | 支持 | 支持 | 基础功能 |
@@ -448,7 +429,6 @@ screencapture -i output.png && python3 ocr.py output.png
 | 云端上传 | 不支持 | 支持 | 自动上传 |
 
 ### 支持的图片格式
-
 | 格式 | 扩展名 | 特点 | 适用场景 |
 |:-----|:-------|:-----|:---------|
 | PNG | .png | 无损压缩,文件大 | 截图默认格式 |
@@ -458,7 +438,6 @@ screencapture -i output.png && python3 ocr.py output.png
 | GIF | .gif | 动图格式 | 操作演示 |
 
 ## 最佳实践
-
 1. **批量管理**:使用定时截图功能进行自动化测试,减少人工操作。
 2. **OCR辅助**:对包含文字的截图执行OCR,便于搜索和编辑。
 3. **GIF优化**:教程使用GIF格式,控制帧率(10fps)和尺寸(800px宽)平衡质量与大小。
@@ -466,36 +445,28 @@ screencapture -i output.png && python3 ocr.py output.png
 5. **云端同步**:启用自动上传,确保截图不丢失,便于团队共享。
 
 ## 常见问题
-
 ### Q1: 专业版与免费版命令是否兼容?
-
 完全兼容。专业版使用相同的screencapture命令,新增功能通过额外工具(ffmpeg/Python)实现。
 
 ### Q2: OCR支持哪些语言?
-
 支持简体中文、繁体中文和英文。可通过Vision框架配置更多语言。
 
 ### Q3: 音频录屏需要什么前提?
-
 需要安装BlackHole虚拟音频驱动(免费),用于捕获系统音频。麦克风音频可直接录制。
 
 ### Q4: GIF文件太大怎么办?
-
 降低帧率(如5fps)、减小尺寸(如600px宽)、减少颜色数量。使用ffmpeg的paletteuse优化。
 
 ### Q5: 定时截图如何停止?
-
 按Ctrl+C中断脚本,或设置总时长参数自动结束。截图文件会保留已生成的部分。
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: macOS 10.15+(Catalina)推荐
 - **Python**: 3.8+(使用OCR和高级功能时需要)
 
 ### 第三方依赖
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | screencapture | 截图工具 | 必需 | macOS系统自带 |
@@ -513,3 +484,15 @@ screencapture -i output.png && python3 ocr.py output.png
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行专业级macOS屏幕捕获与处理任务
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

@@ -2,9 +2,9 @@
 slug: redis-context-cache-pro
 name: redis-context-cache-pro
 version: "1.0.0"
-displayName: Redis上下文缓存(专业版)
+displayName: Redis Context Cache
 summary: AI Agent的Redis全功能缓存方案，含集群分片、性能调优、监控指标、高级限流与Redlock算法。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   Redis上下文缓存（专业版）在免费版基础上解锁Redis Cluster集群方案、性能调优（管道化/连接池/批量处理）、完整监控指标（INFO/慢查询/命中率）、高级持久化（RDB+AOF混合）、令牌桶/漏桶限流、Redlock多节点分布式锁、Pub/Sub与Streams高级用法。

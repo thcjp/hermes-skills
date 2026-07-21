@@ -7,49 +7,24 @@ summary: Security advisory feed package for OpenClaw-related threats and vulnera
   The upstream fee...
 license: MIT-0
 description: |-
-  Security advisory feed package for OpenClaw-related threats and vulnerabilities.
-  The upstream fee...
-
-  核心能力:
-
-  - 效率工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 工作流自动化、任务调度、批处理
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: advisory, clawsec-feed, feed, clawsec, package, openclaw, security
+  Security advisory feed package for OpenClaw-related threats and vulnerabilities。The upstream fee。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Automation
 tools:
-- read
+  - - read
 - exec
----
-
 # clawsec-feed
-
+---
 Security advisory feed monitoring for AI agents. Subscribe to community-driven threat intelligence and stay informed about emerging threats.
 
 The default `feed.json` is the consolidated agent feed. It includes NVD CVEs, approved community advisories, and provisional GitHub Security Advisories that do not have CVE IDs yet.
 
 ## Vercel Skills Installation
-
 Install with the Vercel Skills CLI for this harness:
 
 > 安装此Skill请参考SkillHub平台指南
 
 ## Operational Notes
-
 * Required runtime for standalone installation: `bash`, `curl`, `jq`, `shasum`, `unzip`
 * Side effects: standalone install only writes local skill files
 * Network behavior: downloads release metadata/artifacts and, if you choose to poll manually, fetches the advisory feed
@@ -57,14 +32,10 @@ Install with the Vercel Skills CLI for this harness:
 
 **An open source project by [Prompt Security](https://prompt.security)**
 
----
-
 ## Installation Options
-
 You can get clawsec-feed in two ways:
 
 ### Option A: Bundled with ClawSec Suite (Recommended)
-
 **If you've installed clawsec-suite, you may already have this!**
 
 ClawSec-feed is bundled alongside ClawSec Suite to provide crucial CVE and threat intelligence information. When you install the suite, if you don't already have the feed installed, it will be deployed from the bundled copy.
@@ -77,7 +48,6 @@ ClawSec-feed is bundled alongside ClawSec Suite to provide crucial CVE and threa
 * Single verification - integrity checked as part of suite package
 
 ### Option B: Standalone Installation (This Page)
-
 Install clawsec-feed independently without the full suite.
 
 **When to use standalone:**
@@ -96,8 +66,6 @@ Continue below for standalone installation instructions.
 
 Standalone installation is a network download workflow. Verify the release source and the provided checksums before installing it on production hosts.
 
----
-
 Installation Steps:
 Agents should review scripts before execution!
 
@@ -111,274 +79,32 @@ curl -sSL --fail --show-error "$SKILL_URL"
 
 Once you have this skill file, proceed to **[Deploy ClawSec Feed](#deploy-clawsec-feed)** below.
 
----
-
 ## Release Artifact Verification
-
 For standalone installs, verify the signed release manifest before trusting `SKILL.md`, `skill.json`, or the archive. The `skill.json` file is the package metadata/SBOM source, and the release pipeline signs `checksums.json` with the ClawSec release key.
 
-```bash
-set -euo pipefail
-
-SKILL_NAME="clawsec-feed"
-VERSION="0.0.11"
-REPO="prompt-security/clawsec"
-TAG="${SKILL_NAME}-v${VERSION}"
-BASE="https://github.com/${REPO}/releases/download/${TAG}"
-ZIP_NAME="${SKILL_NAME}-v${VERSION}.zip"
-TMP_DIR="$(mktemp -d)"
-trap 'rm -rf "$TMP_DIR"' EXIT
-
-RELEASE_PUBKEY_SHA256="711424e4535f84093fefb024cd1ca4ec87439e53907b305b79a631d5befba9c8"
-
-curl -fsSL "$BASE/checksums.json" -o "$TMP_DIR/checksums.json"
-curl -fsSL "$BASE/checksums.sig" -o "$TMP_DIR/checksums.sig"
-curl -fsSL "$BASE/signing-public.pem" -o "$TMP_DIR/signing-public.pem"
-curl -fsSL "$BASE/$ZIP_NAME" -o "$TMP_DIR/$ZIP_NAME"
-curl -fsSL "$BASE/SKILL.md" -o "$TMP_DIR/SKILL.md"
-curl -fsSL "$BASE/skill.json" -o "$TMP_DIR/skill.json"
-
-ACTUAL_PUBKEY_SHA256="$(openssl pkey -pubin -in "$TMP_DIR/signing-public.pem" -outform DER | shasum -a 256 | awk '{print $1}')"
-if [ "$ACTUAL_PUBKEY_SHA256" != "$RELEASE_PUBKEY_SHA256" ]; then
-  echo "ERROR: signing-public.pem fingerprint mismatch" >&2
-  exit 1
-fi
-
-openssl base64 -d -A -in "$TMP_DIR/checksums.sig" -out "$TMP_DIR/checksums.sig.bin"
-openssl pkeyutl -verify -rawin -pubin \
-  -inkey "$TMP_DIR/signing-public.pem" \
-  -sigfile "$TMP_DIR/checksums.sig.bin" \
-  -in "$TMP_DIR/checksums.json" >/dev/null
-
-hash_file() {
-  if command -v shasum >/dev/null 2>&1; then
-    shasum -a 256 "$1" | awk '{print $1}'
-  else
-    sha256sum "$1" | awk '{print $1}'
-  fi
-}
-
-verify_manifest_file() {
-  asset="$1"
-  path="$2"
-  expected="$(jq -r --arg asset "$asset" '.files[$asset].sha256 // empty' "$TMP_DIR/checksums.json")"
-  if [ -z "$expected" ]; then
-    echo "ERROR: checksums.json missing $asset" >&2
-    exit 1
-  fi
-  actual="$(hash_file "$path")"
-  if [ "$actual" != "$expected" ]; then
-    echo "ERROR: checksum mismatch for $asset" >&2
-    exit 1
-  fi
-}
-
-expected_archive="$(jq -r '.archive.sha256 // empty' "$TMP_DIR/checksums.json")"
-if [ -z "$expected_archive" ]; then
-  echo "ERROR: checksums.json missing archive.sha256" >&2
-  exit 1
-fi
-actual_archive="$(hash_file "$TMP_DIR/$ZIP_NAME")"
-if [ "$actual_archive" != "$expected_archive" ]; then
-  echo "ERROR: archive checksum mismatch" >&2
-  exit 1
-fi
-
-verify_manifest_file "SKILL.md" "$TMP_DIR/SKILL.md"
-verify_manifest_file "skill.json" "$TMP_DIR/skill.json"
-
-echo "Signed release manifest, archive, SKILL.md, and skill.json verified."
-```
+> 详细代码示例已移至 `references/detail.md`
 
 Only install or extract the archive after this verification succeeds.
 
 ## Deploy ClawSec Feed
-
 Installation steps:
 
 ### Step 1: Create skill directory and save this file
-
 ```bash
 mkdir -p ~/.skill-platform/skills/clawsec-feed
 ```
 
-### Step 2: Install skill files
-
-```bash
-LATEST_TAG=$(curl -sSL --retry 3 --retry-delay 1 \
-  https://api.github.com/repos/prompt-security/ClawSec/releases | \
-  jq -r '[.[] | select(.tag_name | startswith("clawsec-feed-v"))][0].tag_name')
-
-BASE_URL="https://github.com/prompt-security/clawsec/releases/download/$LATEST_TAG"
-INSTALL_DIR="${CLAWSEC_INSTALL_DIR:-$HOME/.skill-platform/skills/clawsec-feed}"
-TEMP_DIR=$(mktemp -d)
-trap "rm -rf '$TEMP_DIR'" EXIT
-
-echo "Downloading checksums..."
-if ! curl -sSL --fail --show-error --retry 3 --retry-delay 1 \
-     "$BASE_URL/checksums.json" -o "$TEMP_DIR/checksums.json"; then
-  echo "ERROR: Failed to download checksums.json"
-  exit 1
-fi
-
-if ! jq -e '.skill and .version and .files' "$TEMP_DIR/checksums.json" >/dev/null 2>&1; then
-  echo "ERROR: Invalid checksums.json structure"
-  exit 1
-fi
-
-echo "Attempting .skill artifact installation..."
-if curl -sSL --fail --show-error --retry 3 --retry-delay 1 \
-   "$BASE_URL/clawsec-feed.skill" -o "$TEMP_DIR/clawsec-feed.skill" 2>/dev/null; then
-
-  # Security: Check artifact size (prevent DoS)
-  ARTIFACT_SIZE=$(stat -c%s "$TEMP_DIR/clawsec-feed.skill" 2>/dev/null || stat -f%z "$TEMP_DIR/clawsec-feed.skill")
-  MAX_SIZE=$((50 * 1024 * 1024))  # 50MB
-
-  if [ "$ARTIFACT_SIZE" -gt "$MAX_SIZE" ]; then
-    echo "WARNING: Artifact too large ($(( ARTIFACT_SIZE / 1024 / 1024 ))MB), falling back to individual files"
-  else
-    echo "Extracting artifact ($(( ARTIFACT_SIZE / 1024 ))KB)..."
-
-    # Security: Check for path traversal before extraction
-    if unzip -l "$TEMP_DIR/clawsec-feed.skill" | grep -qE '\.\./|^/|~/'; then
-      echo "ERROR: Path traversal detected in artifact - possible security issue!"
-      exit 1
-    fi
-
-    # Security: Check file count (prevent zip bomb)
-    FILE_COUNT=$(unzip -l "$TEMP_DIR/clawsec-feed.skill" | grep -c "^[[:space:]]*[0-9]" || echo 0)
-    if [ "$FILE_COUNT" -gt 100 ]; then
-      echo "ERROR: Artifact contains too many files ($FILE_COUNT) - possible zip bomb"
-      exit 1
-    fi
-
-    # Extract to temp directory
-    unzip -q "$TEMP_DIR/clawsec-feed.skill" -d "$TEMP_DIR/extracted"
-
-    # Verify skill.json exists
-    if [ ! -f "$TEMP_DIR/extracted/clawsec-feed/skill.json" ]; then
-      echo "ERROR: skill.json not found in artifact"
-      exit 1
-    fi
-
-    # Verify checksums for all extracted files
-    echo "Verifying checksums..."
-    CHECKSUM_FAILED=0
-    for file in $(jq -r '.files | keys[]' "$TEMP_DIR/checksums.json"); do
-      EXPECTED=$(jq -r --arg f "$file" '.files[$f].sha256' "$TEMP_DIR/checksums.json")
-      FILE_PATH=$(jq -r --arg f "$file" '.files[$f].path' "$TEMP_DIR/checksums.json")
-
-      # Try nested path first, then flat filename
-      if [ -f "$TEMP_DIR/extracted/clawsec-feed/$FILE_PATH" ]; then
-        ACTUAL=$(shasum -a 256 "$TEMP_DIR/extracted/clawsec-feed/$FILE_PATH" | cut -d' ' -f1)
-      elif [ -f "$TEMP_DIR/extracted/clawsec-feed/$file" ]; then
-        ACTUAL=$(shasum -a 256 "$TEMP_DIR/extracted/clawsec-feed/$file" | cut -d' ' -f1)
-      else
-        echo "  ✗ $file (not found in artifact)"
-        CHECKSUM_FAILED=1
-        continue
-      fi
-
-      if [ "$EXPECTED" != "$ACTUAL" ]; then
-        echo "  ✗ $file (checksum mismatch)"
-        CHECKSUM_FAILED=1
-      else
-        echo "  ✓ $file"
-      fi
-    done
-
-    if [ "$CHECKSUM_FAILED" -eq 0 ]; then
-      # Validate feed.json structure (skill-specific)
-      if [ -f "$TEMP_DIR/extracted/clawsec-feed/advisories/feed.json" ]; then
-        FEED_FILE="$TEMP_DIR/extracted/clawsec-feed/advisories/feed.json"
-      elif [ -f "$TEMP_DIR/extracted/clawsec-feed/feed.json" ]; then
-        FEED_FILE="$TEMP_DIR/extracted/clawsec-feed/feed.json"
-      else
-        echo "ERROR: feed.json not found in artifact"
-        exit 1
-      fi
-
-      if ! jq -e '.version and .advisories' "$FEED_FILE" >/dev/null 2>&1; then
-        echo "ERROR: feed.json missing required fields (version, advisories)"
-        exit 1
-      fi
-
-      # SUCCESS: Install from artifact
-      echo "Installing from artifact..."
-      mkdir -p "$INSTALL_DIR"
-      cp -r "$TEMP_DIR/extracted/clawsec-feed"/* "$INSTALL_DIR/"
-      chmod 600 "$INSTALL_DIR/skill.json"
-      find "$INSTALL_DIR" -type f ! -name "skill.json" -exec chmod 644 {} \;
-      echo "SUCCESS: Skill installed from .skill artifact"
-      exit 0
-    else
-      echo "WARNING: Checksum verification failed, falling back to individual files"
-    fi
-  fi
-fi
-
-echo "Downloading individual files from checksums.json manifest..."
-mkdir -p "$TEMP_DIR/downloads"
-
-DOWNLOAD_FAILED=0
-for file in $(jq -r '.files | keys[]' "$TEMP_DIR/checksums.json"); do
-  FILE_URL=$(jq -r --arg f "$file" '.files[$f].url' "$TEMP_DIR/checksums.json")
-  EXPECTED=$(jq -r --arg f "$file" '.files[$f].sha256' "$TEMP_DIR/checksums.json")
-
-  echo "Downloading: $file"
-  if ! curl -sSL --fail --show-error --retry 3 --retry-delay 1 \
-       "$FILE_URL" -o "$TEMP_DIR/downloads/$file"; then
-    echo "ERROR: Failed to download $file"
-    DOWNLOAD_FAILED=1
-    continue
-  fi
-
-  # Verify checksum immediately
-  ACTUAL=$(shasum -a 256 "$TEMP_DIR/downloads/$file" | cut -d' ' -f1)
-  if [ "$EXPECTED" != "$ACTUAL" ]; then
-    echo "ERROR: Checksum mismatch for $file"
-    DOWNLOAD_FAILED=1
-  else
-    echo "  ✓ Verified: $file"
-  fi
-done
-
-if [ "$DOWNLOAD_FAILED" -eq 1 ]; then
-  echo "ERROR: Individual file download failed"
-  exit 1
-fi
-
-if ! jq -e '.name and .version' "$TEMP_DIR/downloads/skill.json" >/dev/null 2>&1; then
-  echo "ERROR: skill.json missing required fields (name, version)"
-  exit 1
-fi
-
-if ! jq -e '.version and .advisories' "$TEMP_DIR/downloads/feed.json" >/dev/null 2>&1; then
-  echo "ERROR: feed.json missing required fields (version, advisories)"
-  exit 1
-fi
-
-echo "Installing from individual files..."
-mkdir -p "$INSTALL_DIR"
-cp "$TEMP_DIR/downloads"/* "$INSTALL_DIR/"
-chmod 600 "$INSTALL_DIR/skill.json"
-find "$INSTALL_DIR" -type f ! -name "skill.json" -exec chmod 644 {} \;
-echo "SUCCESS: Skill installed from individual files"
-```
-
+> 详细内容已移至 `references/detail.md` - ### Step 2: Install skill files
 ### Step 3: Add to your heartbeat
-
 Add ClawSec Feed to your heartbeat routine:
 
 ```markdown
-## ClawSec Feed (every heartbeat)
 1. Check advisory feed for new security alerts
 2. Cross-reference with installed skills
 3. Notify user if action is required
 ```
 
 ### Step 4: Confirm deployment
-
 Tell your user:
 
 ```text
@@ -388,12 +114,8 @@ ClawSec Feed deployed successfully. I will now:
 - Keep you informed of emerging attack patterns
 ```
 
----
-
 ## What ClawSec Feed Does
-
 ### Advisory Feed Monitoring
-
 Subscribes to the community advisory feed for:
 
 * **Known malicious skills/plugins** - Skills that have been identified as harmful
@@ -403,10 +125,7 @@ Subscribes to the community advisory feed for:
 
 When a relevant advisory is published, your agent will notify you.
 
----
-
 ## Checking the Advisory Feed
-
 ```bash
 DEFAULT_FEED_URL="https://raw.githubusercontent.com/prompt-security/ClawSec/main/advisories/feed.json"
 FEED_URL="${CLAWSEC_FEED_URL:-$DEFAULT_FEED_URL}"
@@ -416,62 +135,14 @@ curl -sSL --fail --show-error --retry 3 --retry-delay 1 "$FEED_URL"
 
 **Feed structure:**
 
-```json
-{
-  "version": "1.0",
-  "updated": "2026-02-02T12:00:00Z",
-  "advisories": [
-    {
-      "id": "GA-2026-001",
-      "severity": "critical",
-      "type": "malicious_skill",
-      "title": "Malicious data exfiltration in skill 'helper-plus'",
-      "description": "Skill sends user data to external server",
-      "affected": ["helper-plus@1.0.0", "helper-plus@1.0.1"],
-      "action": "Remove immediately",
-      "published": "2026-02-01T10:00:00Z",
-      "exploitability_score": "critical",
-      "exploitability_rationale": "Trivially exploitable through normal skill usage; no special conditions required. Active exploitation observed in the wild."
-    }
-  ]
-}
-```
-
----
+> 详细代码示例已移至 `references/detail.md`
 
 ## Parsing the Feed
-
 ### Get advisory count
 
-```bash
-DEFAULT_FEED_URL="https://raw.githubusercontent.com/prompt-security/ClawSec/main/advisories/feed.json"
-FEED_URL="${CLAWSEC_FEED_URL:-$DEFAULT_FEED_URL}"
-
-TEMP_FEED=$(mktemp)
-trap "rm -f '$TEMP_FEED'" EXIT
-
-if ! curl -sSL --fail --show-error --retry 3 --retry-delay 1 "$FEED_URL" -o "$TEMP_FEED"; then
-  echo "Error: Failed to fetch advisory feed"
-  exit 1
-fi
-
-if ! jq empty "$TEMP_FEED" 2>/dev/null; then
-  echo "Error: Invalid JSON in feed"
-  exit 1
-fi
-
-FEED=$(cat "$TEMP_FEED")
-
-COUNT=$(echo "$FEED" | jq '.advisories | length')
-if [ $? -ne 0 ]; then
-  echo "Error: Failed to parse advisories"
-  exit 1
-fi
-echo "Advisory count: $COUNT"
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### Get critical advisories
-
 ```bash
 CRITICAL=$(echo "$FEED" | jq '.advisories[] | select(.severity == "critical")')
 if [ $? -ne 0 ]; then
@@ -482,7 +153,6 @@ echo "$CRITICAL"
 ```
 
 ### Get advisories from the last 7 days
-
 ```bash
 WEEK_AGO=$(TZ=UTC date -v-7d +%Y-%m-%dT00:00:00Z 2>/dev/null || TZ=UTC date -d '7 days ago' +%Y-%m-%dT00:00:00Z)
 RECENT=$(echo "$FEED" | jq --arg since "$WEEK_AGO" '.advisories[] | select(.published > $since)')
@@ -494,14 +164,12 @@ echo "$RECENT"
 ```
 
 ### Filter by exploitability score
-
 Shared exploitability prioritization guidance is maintained in:
 
 * `wiki/exploitability-scoring.md`
 * `skills/clawsec-suite/SKILL.md` ("Quick feed check")
 
 ### Get exploitability context for an advisory
-
 ```bash
 CVE_ID="CVE-2026-27488"
 echo "$FEED" | jq --arg cve "$CVE_ID" '.advisories[] | select(.id == $cve) | {
@@ -514,7 +182,6 @@ echo "$FEED" | jq --arg cve "$CVE_ID" '.advisories[] | select(.id == $cve) | {
 ```
 
 ### Prioritize advisories by exploitability
-
 ```bash
 echo "$FEED" | jq '[.advisories[] | select(.exploitability_score != null)] |
   sort_by(
@@ -526,59 +193,10 @@ echo "$FEED" | jq '[.advisories[] | select(.exploitability_score != null)] |
   )'
 ```
 
----
-
 ## Cross-Reference Installed Skills
-
 Check if any of your installed skills are affected by advisories:
 
-```bash
-INSTALL_DIR="${CLAWSEC_INSTALL_DIR:-$HOME/.skill-platform/skills}"
-
-DEFAULT_FEED_URL="https://raw.githubusercontent.com/prompt-security/ClawSec/main/advisories/feed.json"
-FEED_URL="${CLAWSEC_FEED_URL:-$DEFAULT_FEED_URL}"
-
-TEMP_FEED=$(mktemp)
-trap "rm -f '$TEMP_FEED'" EXIT
-
-if ! curl -sSL --fail --show-error --retry 3 --retry-delay 1 "$FEED_URL" -o "$TEMP_FEED"; then
-  echo "Error: Failed to fetch advisory feed"
-  exit 1
-fi
-
-if ! jq empty "$TEMP_FEED" 2>/dev/null; then
-  echo "Error: Invalid JSON in feed"
-  exit 1
-fi
-
-FEED=$(cat "$TEMP_FEED")
-AFFECTED=$(echo "$FEED" | jq -r '.advisories[].affected[]?' 2>/dev/null | sort -u)
-if [ $? -ne 0 ]; then
-  echo "Error: Failed to parse affected skills from feed"
-  exit 1
-fi
-
-VALIDATED_SKILLS=()
-while IFS= read -r -d '' skill_path; do
-  skill=$(basename "$skill_path")
-
-  # Validate skill name BEFORE adding to array (prevents injection)
-  if [[ "$skill" =~ ^[a-zA-Z0-9_-]+$ ]]; then
-    VALIDATED_SKILLS+=("$skill")
-  else
-    echo "Warning: Skipping invalid skill name: $skill" >&2
-  fi
-done < <(find "$INSTALL_DIR" -mindepth 1 -maxdepth 1 -type d -print0 2>/dev/null)
-
-for skill in "${VALIDATED_SKILLS[@]}"; do
-  # At this point, $skill is guaranteed to match ^[a-zA-Z0-9_-]+$
-  if echo "$AFFECTED" | grep -qF "$skill"; then
-    echo "WARNING: Installed skill '$skill' has a security advisory!"
-    # Get advisory details for this skill
-    echo "$FEED" | jq --arg s "$skill" '.advisories[] | select(.affected[] | contains($s))'
-  fi
-done
-```
+> 详细代码示例已移至 `references/detail.md`
 
 **If you find affected skills:**
 
@@ -586,10 +204,7 @@ done
 2. Notify your user immediately for critical/high severity
 3. Include the recommended action from the advisory
 
----
-
 ## Advisory Types
-
 | Type | Description |
 | --- | --- |
 | `malicious_skill` | Skill identified as intentionally harmful |
@@ -598,10 +213,7 @@ done
 | `attack_pattern` | Observed attack technique |
 | `best_practice` | Security recommendation |
 
----
-
 ## Severity Levels
-
 | Severity | Action Required |
 | --- | --- |
 | `critical` | Notify user immediately, take action |
@@ -609,14 +221,10 @@ done
 | `medium` | Notify at next interaction |
 | `low` | Log for reference |
 
----
-
 ## Prioritizing High-Exploitability Threats
-
 **IMPORTANT:** When reviewing advisories, always prioritize by **exploitability score** in addition to severity. The exploitability score indicates how easily a vulnerability can be exploited in practice, helping you focus on the most actionable threats.
 
 ### Exploitability Priority Levels
-
 | Exploitability | Meaning | Action Priority |
 | --- | --- | --- |
 | `high` | Trivially or easily exploitable with public tooling | **Immediate notification** |
@@ -624,13 +232,11 @@ done
 | `low` | Difficult to exploit or theoretical | **Low priority notification** |
 
 ### How to Use Exploitability in Notifications
-
 1. **Filter for high-exploitability first:**
 
    bash
 
    ```
-   # Get high exploitability advisories
    echo "$FEED" | jq '.advisories[] | select(.exploitability_score == "high")'
    ```
 2. **Include exploitability in notifications:**
@@ -651,8 +257,7 @@ done
    * Focus user attention on threats that are both severe and easily exploitable
    * Include the exploitability rationale to help users understand the risk context
 
-### Example Notification Priority Order
-
+### 示例
 When multiple advisories exist, present them in this order:
 
 1. **Critical severity + High exploitability** - most urgent
@@ -663,10 +268,7 @@ When multiple advisories exist, present them in this order:
 
 This ensures you alert users to the most actionable, immediately dangerous threats first.
 
----
-
 ## When to Notify Your User
-
 **Notify Immediately (Critical):**
 
 * New critical advisory affecting an installed skill
@@ -691,12 +293,8 @@ This ensures you alert users to the most actionable, immediately dangerous threa
 * Feed checked, no new advisories
 * Theoretical vulnerabilities (low exploitability, low severity)
 
----
-
 ## Response Format
-
 ### If there are new advisories:
-
 ```text
 📡 ClawSec Feed: 2 new advisories since last check
 
@@ -710,15 +308,11 @@ HIGH - GA-2026-016: Vulnerable skill "data-helper" v1.2.0 (Exploitability: MEDIU
 ```
 
 ### If nothing new:
-
 ```text
 FEED_OK - Advisory feed checked, no new alerts. 📡
 ```
 
----
-
 ## State Tracking
-
 Track the last feed check to identify new advisories:
 
 ```json
@@ -734,40 +328,9 @@ Save to: `~/.skill-platform/clawsec-feed-state.json`
 
 ### State File Operations
 
-```bash
-STATE_FILE="$HOME/.skill-platform/clawsec-feed-state.json"
-
-if [ ! -f "$STATE_FILE" ]; then
-  echo '{"schema_version":"1.0","last_feed_check":null,"last_feed_updated":null,"known_advisories":[]}' > "$STATE_FILE"
-  chmod 600 "$STATE_FILE"
-fi
-
-if ! jq -e '.schema_version' "$STATE_FILE" >/dev/null 2>&1; then
-  echo "Warning: State file corrupted or invalid schema. Creating backup and resetting."
-  cp "$STATE_FILE" "${STATE_FILE}.bak.$(TZ=UTC date +%Y%m%d%H%M%S)"
-  echo '{"schema_version":"1.0","last_feed_check":null,"last_feed_updated":null,"known_advisories":[]}' > "$STATE_FILE"
-  chmod 600 "$STATE_FILE"
-fi
-
-SCHEMA_VER=$(jq -r '.schema_version // "0"' "$STATE_FILE")
-if [[ "${SCHEMA_VER%%.*}" != "1" ]]; then
-  echo "Warning: State file schema version $SCHEMA_VER may not be compatible with this version"
-fi
-
-TEMP_STATE=$(mktemp)
-if jq --arg t "$(TZ=UTC date +%Y-%m-%dT%H:%M:%SZ)" '.last_feed_check = $t' "$STATE_FILE" > "$TEMP_STATE"; then
-  mv "$TEMP_STATE" "$STATE_FILE"
-  chmod 600 "$STATE_FILE"
-else
-  echo "Error: Failed to update state file"
-  rm -f "$TEMP_STATE"
-fi
-```
-
----
+> 详细代码示例已移至 `references/detail.md`
 
 ## Rate Limiting
-
 **Important:** To avoid excessive requests to the feed server, follow these guidelines:
 
 | Check Type | Recommended Interval | Minimum Interval |
@@ -779,7 +342,6 @@ fi
 ```bash
 STATE_FILE="$HOME/.skill-platform/clawsec-feed-state.json"
 MIN_INTERVAL_SECONDS=300  # 5 minutes
-
 LAST_CHECK=$(jq -r '.last_feed_check // "1970-01-01T00:00:00Z"' "$STATE_FILE" 2>/dev/null)
 LAST_EPOCH=$(TZ=UTC date -j -f "%Y-%m-%dT%H:%M:%SZ" "$LAST_CHECK" +%s 2>/dev/null || date -d "$LAST_CHECK" +%s 2>/dev/null || echo 0)
 NOW_EPOCH=$(TZ=UTC date +%s)
@@ -790,48 +352,18 @@ if [ $((NOW_EPOCH - LAST_EPOCH)) -lt $MIN_INTERVAL_SECONDS ]; then
 fi
 ```
 
----
-
 ## Environment Variables (Optional)
-
 | Variable | Description | Default |
 | --- | --- | --- |
 | `CLAWSEC_FEED_URL` | Custom advisory feed URL | Consolidated signed feed |
 | `CLAWSEC_INSTALL_DIR` | Installation directory | `~/.skill-platform/skills/clawsec-feed` |
 
----
-
 ## Updating ClawSec Feed
-
 Check for and install newer versions:
 
-```bash
-INSTALL_DIR="${CLAWSEC_INSTALL_DIR:-$HOME/.skill-platform/skills/clawsec-feed}"
-CURRENT_VERSION=$(jq -r '.version' "$INSTALL_DIR/skill.json" 2>/dev/null || echo "unknown")
-echo "Installed version: $CURRENT_VERSION"
-
-LATEST_URL="https://api.github.com/repos/prompt-security/ClawSec/releases"
-LATEST_VERSION=$(curl -sSL --fail --show-error --retry 3 --retry-delay 1 "$LATEST_URL" 2>/dev/null | \
-  jq -r '[.[] | select(.tag_name | startswith("clawsec-feed-v"))][0].tag_name // empty' | \
-  sed 's/clawsec-feed-v//')
-
-if [ -z "$LATEST_VERSION" ]; then
-  echo "Warning: Could not determine latest version"
-else
-  echo "Latest version: $LATEST_VERSION"
-
-  if [ "$CURRENT_VERSION" != "$LATEST_VERSION" ]; then
-    echo "Update available! Run the deployment steps with the new version."
-  else
-    echo "You are running the latest version."
-  fi
-fi
-```
-
----
+> 详细代码示例已移至 `references/detail.md`
 
 ## Initial Download Integrity
-
 **Bootstrap Trust Problem:** The initial download of this skill cannot be verified by the skill itself. To establish trust:
 
 1. **Verify the source URL** - Ensure you are downloading from `https://clawsec.prompt.security`
@@ -851,28 +383,21 @@ fi
 
 **Note:** For maximum security, verify checksums.json via a separate trusted channel (e.g., direct from GitHub release page UI, not via curl).
 
----
-
 ## Related Skills
-
 * **skill-platform-audit-watchdog** - Automated daily security audits
 * **clawtributor** - Report vulnerabilities to the community
 
----
-
 ## License
-
 GNU AGPL v3.0 or later - See repository for details.
 
 Built with 📡 by the [Prompt Security](https://prompt.security) team and the agent community.
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -883,3 +408,41 @@ Built with 📡 by the [Prompt Security](https://prompt.security) team and the a
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+- Security advisory feed package for OpenClaw-related threats and vulnerabilities
+- The upstream fee
+- 触发关键词: advisory, clawsec-feed, feed, clawsec, package, openclaw, security
+
+## 适用场景
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+### Q1: 如何开始使用clawsec-feed？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: clawsec-feed有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+- 依赖云服务，需要网络连接

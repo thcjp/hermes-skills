@@ -1,14 +1,12 @@
 ---
 slug: self-improving-agent
-name: self-improvement
+name: self-improving-agent
 version: "1.0.0"
 displayName: Self-Improving Agent
 summary: Captures learnings, errors, and corrections to enable continuous improvement.
 license: MIT
 description: |-
-  Captures learnings, errors, and corrections to enable continuous improvement.
-
-  核心能力:
+  Captures learnings, errors, and corrections to enable continuous improvement。核心能力:
 
   - 智能代理领域的专业化AI辅助工具
 
@@ -24,29 +22,20 @@ description: |-
 
   - 自动化工作流与智能决策辅助
 
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: corrections, self-improving, errors, enable, self, agent, learnings, improving
+  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub...
 tags:
 - Agents
 tools:
-- read
+  - - read
 - exec
----
-
 # Self-Improvement Skill
-
 ## Install
-
-> 安装此Skill请参考SkillHub平台指南
-
+---
 For CI-only execution, use:
 
 > 安装此Skill请参考SkillHub平台指南
 
-
 ## Quick Reference
-
 | Situation | Action |
 |-----------|--------|
 | Active failure mid-task — agent needs to fix it now | **Use `self-healing` instead** (files verified HEAL- to `.learnings/HEALS.md`) |
@@ -63,7 +52,6 @@ For CI-only execution, use:
 | 工作空间 targets (SOUL.md, TOOLS.md) | See `references/skill-platform-integration.md` |
 
 ## Setup
-
 Create `.learnings/` directory in project root if it doesn't exist:
 
 ```bash
@@ -73,110 +61,16 @@ mkdir -p .learnings
 Copy the file templates from `assets/` (`LEARNINGS.md`, `ERRORS.md`, `FEATURE_REQUESTS.md`) or create files with headers.
 
 ## Logging Format
-
 ### Learning Entry
-
 Append to `.learnings/LEARNINGS.md`:
 
-```markdown
-## [LRN-YYYYMMDD-XXX] category
-
-**Logged**: ISO-8601 timestamp
-**Priority**: low | medium | high | critical
-**Status**: pending
-**Area**: frontend | backend | infra | tests | docs | config
-
-### Summary
-One-line description of what was learned
-
-### Details
-Full context: what happened, what was wrong, what's correct
-
-### Suggested Action
-Specific fix or improvement to make
-
-### Metadata
-- Source: conversation | error | user_feedback
-- Related Files: path/to/file.ext
-- Tags: tag1, tag2
-- See Also: LRN-20250110-001 (if related to existing entry)
-- Pattern-Key: simplify.dead_code | harden.input_validation (optional, for recurring-pattern tracking)
-- Recurrence-Count: 1 (optional)
-- First-Seen: 2025-01-15 (optional)
-- Last-Seen: 2025-01-15 (optional)
-
----
-```
-
 ### Error Entry
-
-Append to `.learnings/ERRORS.md`:
-
-```markdown
-## [ERR-YYYYMMDD-XXX] skill_or_command_name
-
-**Logged**: ISO-8601 timestamp
-**Priority**: high
-**Status**: pending
-**Area**: frontend | backend | infra | tests | docs | config
-
-### Summary
-Brief description of what failed
-
-### Error
-```
-Actual error message or output
-```
-
-### Context
-- Command/operation attempted
-- Input or parameters used
-- Environment details if relevant
-
-### Suggested Fix
-If identifiable, what might resolve this
-
-### Metadata
-- Reproducible: yes | no | unknown
-- Related Files: path/to/file.ext
-- See Also: ERR-20250110-001 (if recurring)
-
----
-```
+> 详细内容已移至 `references/detail.md`
 
 ### Feature Request Entry
-
 Append to `.learnings/FEATURE_REQUESTS.md`:
 
-```markdown
-## [FEAT-YYYYMMDD-XXX] capability_name
-
-**Logged**: ISO-8601 timestamp
-**Priority**: medium
-**Status**: pending
-**Area**: frontend | backend | infra | tests | docs | config
-
-### Requested Capability
-What the user wanted to do
-
-### User Context
-Why they needed it, what problem they're solving
-
-### Complexity Estimate
-simple | medium | complex
-
-### Suggested Implementation
-How this could be built, what it might extend
-
-### Metadata
-- Frequency: first_time | recurring
-- Related Features: existing_feature_name
-
----
-```
-
 ## ID Generation
-
 Format: `TYPE-YYYYMMDD-XXX`
 - TYPE: `LRN` (learning), `ERR` (error), `FEAT` (feature)
 - YYYYMMDD: Current date
@@ -185,14 +79,12 @@ Format: `TYPE-YYYYMMDD-XXX`
 Examples: `LRN-20250115-001`, `ERR-20250115-A3F`, `FEAT-20250115-002`
 
 ## Resolving Entries
-
 When an issue is fixed, update the entry:
 
 1. Change `**Status**: pending` → `**Status**: resolved`
 2. Add resolution block after Metadata:
 
 ```markdown
-### Resolution
 - **Resolved**: 2025-01-16T09:00:00Z
 - **Commit/PR**: abc123 or #42
 - **Notes**: Brief description of what was done
@@ -205,18 +97,15 @@ Other status values:
 - `promoted_to_skill` - Extracted as a reusable skill (see Automatic Skill Extraction)
 
 ## Promoting to Project Memory
-
 When a learning is broadly applicable (not a one-off fix), promote it to permanent project memory.
 
 ### When to Promote
-
 - Learning applies across multiple files/features
 - Knowledge any contributor (human or AI) should know
 - Prevents recurring mistakes
 - Documents project-specific conventions
 
 ### Promotion Targets
-
 | Target | What Belongs There |
 |--------|-------------------|
 | `CLAUDE.md` | Project facts, conventions, gotchas for all Claude interactions |
@@ -226,38 +115,29 @@ When a learning is broadly applicable (not a one-off fix), promote it to permane
 工作空间 targets (`SOUL.md`, `TOOLS.md`) are covered in `references/skill-platform-integration.md`.
 
 ### How to Promote
-
 1. **Distill** the learning into a concise rule or fact
 2. **Add** to appropriate section in target file (create file if needed)
 3. **Update** original entry:
    - Change `**Status**: pending` → `**Status**: promoted`
    - Add `**Promoted**: CLAUDE.md`, `AGENTS.md`, or `.github/copilot-instructions.md`
 
-### Promotion Examples
-
+### 示例
 **Learning** (verbose):
-> Project uses pnpm workspaces. Attempted `npm install` but failed.
-> Lock file is `pnpm-lock.yaml`. Must use `pnpm install`.
 
 **In CLAUDE.md** (concise):
 ```markdown
-## Build & Dependencies
 - Package manager: pnpm (not npm) - use `pnpm install`
 ```
 
 **Learning** (verbose):
-> When modifying API endpoints, must regenerate TypeScript client.
-> Forgetting this causes type mismatches at runtime.
 
 **In AGENTS.md** (actionable):
 ```markdown
-## After API Changes
 1. Regenerate client: `pnpm run generate:api`
 2. Check for type errors: `pnpm tsc --noEmit`
 ```
 
 ## Recurring Pattern Detection
-
 If logging something similar to an existing entry:
 
 1. **Search first**: `grep -r "keyword" .learnings/`
@@ -269,12 +149,10 @@ If logging something similar to an existing entry:
    - Architectural problem (→ create tech debt ticket)
 
 ## Simplify & Harden Feed
-
 Use this workflow to ingest recurring patterns from the `simplify-and-harden`
 skill and turn them into durable prompt guidance.
 
 ### Ingestion Workflow
-
 1. Read `simplify_and_harden.learning_loop.candidates` from the task summary.
 2. For each candidate, use `pattern_key` as the stable dedupe key.
 3. Search `.learnings/LEARNINGS.md` for an existing entry with that key:
@@ -289,7 +167,6 @@ skill and turn them into durable prompt guidance.
    - Set `Pattern-Key`, `Recurrence-Count: 1`, and `First-Seen`/`Last-Seen`
 
 ### Promotion Rule (System Prompt Feedback)
-
 Promote recurring patterns into agent context/system prompt files when all are true:
 
 - `Recurrence-Count >= 3`
@@ -308,7 +185,6 @@ Write promoted rules as short prevention rules (what to do before/while coding),
 not long incident write-ups.
 
 ## Periodic Review
-
 Review `.learnings/` at natural breakpoints:
 
 ### When to Review
@@ -322,7 +198,6 @@ Review `.learnings/` at natural breakpoints:
 grep -h "Status**: pending" .learnings/*.md | wc -l
 
 grep -B5 "Priority**: high" .learnings/*.md | grep "^## ["
-
 grep -l "Area**: backend" .learnings/*.md
 ```
 
@@ -333,34 +208,9 @@ grep -l "Area**: backend" .learnings/*.md
 - Escalate recurring issues
 
 ## Detection Triggers
-
-Automatically log when you notice:
-
-**Corrections** (→ learning with `correction` category):
-- "No, that's not right..."
-- "Actually, it should be..."
-- "You're wrong about..."
-- "That's outdated..."
-
-**Feature Requests** (→ feature request):
-- "Can you also..."
-- "I wish you could..."
-- "Is there a way to..."
-- "Why can't you..."
-
-**Knowledge Gaps** (→ learning with `knowledge_gap` category):
-- User provides information you didn't know
-- Documentation you referenced is outdated
-- API behavior differs from your understanding
-
-**Errors** (→ error entry):
-- Command returns non-zero exit code
-- Exception or stack trace
-- Unexpected output or behavior
-- Timeout or connection failure
+> 详细内容已移至 `references/detail.md`
 
 ## Priority Guidelines
-
 | Priority | When to Use |
 |----------|-------------|
 | `critical` | Blocks core functionality, data loss risk, security issue |
@@ -369,7 +219,6 @@ Automatically log when you notice:
 | `low` | Minor inconvenience, edge case, nice-to-have |
 
 ## Area Tags
-
 Use to filter learnings by codebase region:
 
 | Area | Scope |
@@ -382,7 +231,6 @@ Use to filter learnings by codebase region:
 | `config` | Configuration files, environment, settings |
 
 ## Best Practices
-
 1. **Log immediately** - context is freshest right after the issue
 2. **Be specific** - future agents need to understand quickly
 3. **Include reproduction steps** - especially for errors
@@ -393,7 +241,6 @@ Use to filter learnings by codebase region:
 8. **Review regularly** - stale learnings lose value
 
 ## Gitignore Options
-
 **Keep learnings local** (per-developer):
 ```gitignore
 .learnings/
@@ -409,11 +256,9 @@ Don't add to .gitignore - learnings become shared knowledge.
 ```
 
 ## Hook Integration
-
 Enable automatic reminders through agent hooks. This is **opt-in** - you must explicitly configure hooks. The same two scripts work across Claude Code and Codex CLI (both deliver JSON on stdin and accept the same `additionalContext` output shape); Copilot hooks can log but not inject context, so Copilot uses the instructions-file channel. Full per-agent setup including Codex and Copilot: `references/hooks-setup.md`.
 
 ### Quick Setup (Claude Code)
-
 Create `.claude/settings.json` in your project. The command path must point to where the skill is actually installed: `.claude/skills/self-improvement/` or `skills/self-improvement/` if this repo is vendored into the project. Relative paths resolve from the project root.
 
 ```json
@@ -433,30 +278,9 @@ This injects a learning evaluation reminder after each prompt (~50-100 tokens ov
 
 ### Full Setup (With Error Detection)
 
-```json
-{
-  "hooks": {
-    "UserPromptSubmit": [{
-      "hooks": [{
-        "type": "command",
-        "command": "${CLAUDE_PROJECT_DIR}/.claude/skills/self-improvement/scripts/activator.sh"
-      }]
-    }],
-    "PostToolUse": [{
-      "matcher": "Bash",
-      "hooks": [{
-        "type": "command",
-        "command": "${CLAUDE_PROJECT_DIR}/.claude/skills/self-improvement/scripts/error-detector.sh"
-      }]
-    }]
-  }
-}
-```
-
 Hooks receive the event payload as JSON on stdin. The error detector parses `tool_response` from that JSON and returns its reminder as `additionalContext` JSON output, which is required for PostToolUse output to reach the model.
 
 ### Available Hook Scripts
-
 | Script | Hook Type | Purpose |
 |--------|-----------|---------|
 | `scripts/activator.sh` | UserPromptSubmit (Claude Code, Codex) | Reminds to evaluate learnings after tasks (plain stdout is added to context for this event on both agents) |
@@ -465,11 +289,9 @@ Hooks receive the event payload as JSON on stdin. The error detector parses `too
 See `references/hooks-setup.md` for detailed configuration and troubleshooting.
 
 ## Automatic Skill Extraction
-
 When a learning is valuable enough to become a reusable skill, extract it using the provided helper.
 
 ### Skill Extraction Criteria
-
 A learning qualifies for skill extraction when ANY of these apply:
 
 | Criterion | Description |
@@ -481,7 +303,6 @@ A learning qualifies for skill extraction when ANY of these apply:
 | **User-flagged** | User says "save this as a skill" or similar |
 
 ### Extraction Workflow
-
 1. **Identify candidate**: Learning meets extraction criteria
 2. **Run helper** (or create manually):
    ```bash
@@ -493,7 +314,6 @@ A learning qualifies for skill extraction when ANY of these apply:
 5. **Verify**: Read skill in fresh session to ensure it's self-contained
 
 ### Manual Extraction
-
 If you prefer manual creation:
 
 1. Create `skills/<skill-name>/SKILL.md`
@@ -504,7 +324,6 @@ If you prefer manual creation:
    - No README.md inside skill folder
 
 ### Extraction Detection Triggers
-
 Watch for these signals that a learning should become a skill:
 
 **In conversation:**
@@ -520,7 +339,6 @@ Watch for these signals that a learning should become a skill:
 - User feedback praising the solution
 
 ### Skill Quality Gates
-
 Before extraction, verify:
 
 - [ ] Solution is tested and working
@@ -530,30 +348,24 @@ Before extraction, verify:
 - [ ] Follows skill naming conventions (lowercase, hyphens)
 
 ## Multi-Agent Support
-
 This skill works across different AI coding agents with agent-specific activation.
 
 ### Claude Code
-
 **Activation**: Hooks (UserPromptSubmit, PostToolUse)
 **Setup**: `.claude/settings.json` with hook configuration
 **Detection**: Automatic via hook scripts
 
 ### Codex CLI
-
 **Activation**: Hooks (`UserPromptSubmit`, `PostToolUse`) — experimental, behind `codex_hooks = true` in `config.toml`
 **Setup**: `<repo>/.codex/hooks.json` or `~/.codex/hooks.json`; same scripts, same payload/output shapes as Claude Code
 **Detection**: Automatic via hook scripts; see `references/hooks-setup.md` for the config
 **Fallback**: Add the self-improvement guidance to `AGENTS.md` if hooks are unavailable
 
 ### GitHub Copilot
-
 **Activation**: Instructions file (Copilot hooks exist in `.github/hooks/*.json` but their output is ignored for prompt/tool events — they can log, not inject context)
 **Setup**: Add to `.github/copilot-instructions.md`:
 
 ```markdown
-## Self-Improvement
-
 After solving non-obvious issues, consider logging to `.learnings/`:
 1. Use format from self-improvement skill
 2. Link related entries with See Also
@@ -565,13 +377,11 @@ Ask in chat: "Should I log this as a learning?"
 **Detection**: Manual review at session end
 
 ### Skill平台 (Optional)
-
 Skill平台-specific setup, promotion targets, and hybrid usage details are kept in
 `references/skill-platform-integration.md` so this main skill stays focused on the core
 self-improvement workflow for coding agents.
 
 ### Agent-Agnostic Guidance
-
 Regardless of agent, apply self-improvement when you:
 
 1. **Discover something non-obvious** - solution wasn't immediate
@@ -581,10 +391,7 @@ Regardless of agent, apply self-improvement when you:
 5. **Find better approaches** - improved on your original solution
 
 ### Copilot Chat Integration
-
 For Copilot users, add this to your prompts when relevant:
-
-> After completing this task, evaluate if any learnings should be logged to `.learnings/` using the self-improvement skill format.
 
 Or use quick prompts:
 - "Log this to learnings"
@@ -592,7 +399,6 @@ Or use quick prompts:
 - "Check .learnings/ for related issues"
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
@@ -608,3 +414,42 @@ Or use quick prompts:
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+- Captures learnings, errors, and corrections to enable continuous improvement
+- 触发关键词: corrections, self-improving, errors, enable, self, agent, learnings, improving
+
+## 适用场景
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+### Q1: 如何开始使用Self-Improving Agent？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Self-Improving Agent有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

@@ -2,9 +2,9 @@
 slug: quick-context-saver-pro
 name: quick-context-saver-pro
 version: "1.0.0"
-displayName: 快速上下文记忆(专业版)
+displayName: Quick Context Saver
 summary: 零依赖本地记忆专业版，含关系图谱、置信度评分、过期机制、加密存储、高级搜索，企业级隐私保护。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   快速上下文记忆专业版是零依赖本地记忆系统的终极形态。在免费版基础上解锁记忆关系图谱（记忆间关联关系，支持关联检索）、置信度评分（来源标注与验证次数追踪）、过期机制（自动归档过期记忆）、加密存储（AES加密敏感记忆）、高级搜索算法（语义+模糊+关联三模式）、记忆压缩（自动压缩旧记忆）、多设备同步（Git Gist同步）七大高级功能。

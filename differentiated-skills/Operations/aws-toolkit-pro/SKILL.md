@@ -4,45 +4,19 @@ name: aws-toolkit-pro
 version: "1.0.0"
 displayName: AWS部署专业版
 summary: 企业级AWS全服务管理平台，支持多区域、IaC、合规审计与成本优化。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   面向企业运维团队的AWS全服务管理平台。支持EC2/S3/VPC/RDS/Lambda/
   CloudWatch等全量AWS服务，提供基础设施即代码（IaC）、多区域批量
-  部署、合规审计、成本优化与安全扫描功能。
-
-  核心能力:
-  - 全量AWS服务管理（30+服务）
-  - 基础设施即代码（Terraform/CloudFormation）
-  - 多区域批量部署与灾备
-  - 合规审计与安全扫描
-  - 成本优化分析与建议
-  - CloudWatch监控与告警
-  - Lambda无服务器函数管理
-  - RDS数据库运维
-
-  适用场景:
-  - 企业AWS基础设施管理
-  - 多区域高可用部署
-  - 合规与安全审计
-  - 成本优化与治理
-  - DevOps自动化流水线
-
-  差异化:
-  - 兼容免费版全部功能，无缝升级
-  - 新增全量服务与IaC支持
-  - 多区域批量部署与灾备
-  - 合规审计与安全扫描
-  - 成本优化分析
-
-  触发关键词: AWS, EC2, S3, RDS, Lambda, IaC, Terraform, 多区域, 合规, 成本优化, audit, cost
+  部署、合规审计、成本优化与安全扫描功能。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。
 tags:
 - Operations
 - AWS
 - 企业级
 - 基础设施
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -153,7 +127,7 @@ python3 scripts/cost.py optimize \
 ### PRO版初始化
 
 ```bash
-# 安装PRO版依赖
+# 依赖说明
 pip install -r requirements_pro.txt
 
 # 安装Terraform
@@ -185,7 +159,7 @@ python3 scripts/security.py scan --output security_report.pdf
 python3 scripts/regions.py deploy --template web_app --regions "us-east-1,eu-west-1,ap-southeast-1"
 ```
 
-## 配置示例
+## 示例
 
 ### PRO企业级配置
 
@@ -314,3 +288,15 @@ Terraform跨云通用、语法简洁、社区活跃；CloudFormation为AWS原生
 - **说明**: 企业级AWS全服务管理平台，支持IaC与合规审计
 - **PRO版特性**: 全量服务、IaC部署、多区域、合规审计、成本优化、安全扫描
 - **兼容性**: 完全兼容免费版命令与配置
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 依赖云服务，需要网络连接

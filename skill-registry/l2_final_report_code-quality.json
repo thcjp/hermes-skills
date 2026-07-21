@@ -1,0 +1,24 @@
+{
+  "slug": "code-quality",
+  "skill_id": 178,
+  "imported_at": "2026-07-20T22:07:49.832197",
+  "trace_total": 38,
+  "trace_grade": "B",
+  "l2_passed": false,
+  "db_result": {
+    "total": 41,
+    "grade": "B",
+    "trust": 10,
+    "reliability": 7,
+    "adaptability": 7,
+    "convention": 10,
+    "effectiveness": 7,
+    "is_llm_evaluated": true
+  },
+  "checks_summary": {
+    "trigger_accuracy": "PASS",
+    "output_completeness": "WARN",
+    "dependency_reachability": "PASS",
+    "trace_score": "38/50"
+  }
+}

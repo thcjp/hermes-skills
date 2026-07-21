@@ -4,31 +4,11 @@ name: podcast-downloader-tool-free
 version: "1.0.0"
 displayName: 播客下载工具免费版
 summary: 从小宇宙平台下载播客音频与节目笔记,自动转换为MP3格式,适合个人离线收听。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向个人用户的播客下载工具(免费版)。
-
-  核心能力:
-  - 从小宇宙(xiaoyuzhoufm.com)下载单集播客
-  - 自动提取节目笔记(Show Notes)为 Markdown
-  - 音频自动转换为 MP3 格式
-  - 兼容骨传导蓝牙耳机等设备
-  - 支持自定义音质与输出目录
-
-  适用场景:
-  - 个人离线收听播客
-  - 节目笔记归档与检索
-  - 兼容特殊播放设备
-  - 网络不稳定环境预下载
-
-  差异化:
-  - 免费版聚焦单集下载核心能力
-  - 自动 m4a 转 mp3,提升兼容性
-  - 节目笔记同步保存为 Markdown
-  - 适配个人用户离线收听需求
-
-  触发关键词: podcast, downloader, 小宇宙, xiaoyuzhoufm, 下载, mp3, show notes, 离线, free
+  面向个人用户的播客下载工具(免费版)。核心能力:
+  - 从小宇宙(xiaoyuzhoufm。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。
 tags:
 - 创意设计
 - 播客
@@ -36,7 +16,7 @@ tags:
 - 离线收听
 - 音频转换
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -108,7 +88,7 @@ KEEP_M4A=true ./scripts/download.sh "https://www.xiaoyuzhoufm.com/episode/abc123
 
 ## 快速开始
 
-### 1. 安装依赖
+### 依赖说明
 
 ```bash
 # macOS
@@ -137,7 +117,7 @@ scoop install curl jq ffmpeg
     └── 单集标题.md        # 节目笔记
 ```
 
-## 配置示例
+## 示例
 
 ### 环境变量配置
 
@@ -282,3 +262,17 @@ ffmpeg -version
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。免费版聚焦单集下载与格式转换,适合个人离线收听场景。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

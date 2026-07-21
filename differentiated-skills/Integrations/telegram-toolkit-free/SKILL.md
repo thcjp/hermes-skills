@@ -4,33 +4,17 @@ name: telegram-toolkit-free
 version: "1.0.0"
 displayName: TG机器人工具(免费版)
 summary: 面向AI Agent的Telegram Bot工作流设计工具免费版，覆盖命令路由、更新处理、安全配置核心能力。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向独立开发者与AI Agent的Telegram Bot工作流设计工具免费版。聚焦命令优先的机器人交互设计、更新处理（webhook或长轮询）、HTTP请求模板与安全配置，提供生产可用的命令路由规范与更新归一化处理模式，帮助用户快速构建专业、可靠的Telegram机器人。
-
-  核心能力：
-  - 命令优先的机器人交互设计（/start、/help、/settings、/status）
-  - 更新处理策略选择（webhook或长轮询）与配置
-  - HTTP请求模板与payload结构
-  - 更新归一化与路由分发
-  - 安全配置（Token保护、Webhook密钥、速率限制）
-
-  适用场景：
-  - 独立开发者构建命令式Telegram机器人
-  - AI Agent通过Telegram Bot与用户交互
-  - 自动化通知与指令响应工作流
-
-  差异化：原创中文使用指南，按角色拆分场景示例，配套命令UX规范与更新处理决策树，原创度>70%。
-
-  触发关键词：telegram机器人、bot api、命令路由、webhook、长轮询、更新处理
+  面向独立开发者与AI Agent的Telegram Bot工作流设计工具免费版。聚焦命令优先的机器人交互设计、更新处理（webhook或长轮询）、HTTP请求模板与安全配置，提供生产可用的命令路由规范与更新归一化处理模式，帮助用户快速构建专业、可靠的Telegram机器人。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
 - 集成工具
 - 即时通讯
 - 机器人
 - Telegram
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -128,7 +112,7 @@ def handle_update(update):
 
 完整上手时间约60秒。
 
-## 配置示例
+## 示例
 
 ### Webhook安全配置
 
@@ -159,7 +143,7 @@ curl -X POST "https://api.telegram.org/bot${TG_BOT_TOKEN}/setMyCommands" \
   }'
 ```
 
-### 速率限制与退避
+### 已知限制
 
 ```python
 import time
@@ -257,7 +241,7 @@ A：在群中默认机器人不接收所有消息。需通过`setWebhook`的`all
 - **网络**: 需能访问 api.telegram.org
 - **Python**: 3.8+（用于示例代码）
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | requests | Python包 | 必需 | `pip install requests` |
@@ -271,3 +255,11 @@ A：在群中默认机器人不接收所有消息。需通过`setWebhook`的`all
 ### 可用性分类
 - **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行任务
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

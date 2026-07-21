@@ -4,12 +4,10 @@ name: python-toolkit-pro
 version: "1.0.0"
 displayName: Python工具箱(专业版)
 summary: 团队级Python规范套件,含类型系统、异步、测试金字塔、性能优化与CI治理。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  Python工具箱(专业版)面向团队与企业,提供完整的Python编码规范、类型系统、异步最佳实践、测试金字塔、性能优化策略与CI/CD治理方案。
-
-  核心能力:
+  Python工具箱(专业版)面向团队与企业,提供完整的Python编码规范、类型系统、异步最佳实践、测试金字塔、性能优化策略与CI/CD治理方案。核心能力:
   - 全规范覆盖:PEP 8 + 类型系统 + 异步 + 性能 + 安全
   - 完整类型注解:泛型、Protocol、TypedDict、overload
   - asyncio异步最佳实践与并发控制
@@ -18,18 +16,7 @@ description: |-
   - CI/CD门禁与团队规则治理
 
   适用场景:
-  - 企业级Python服务规范统一
-  - 异步服务并发与性能调优
-  - 高覆盖率要求的测试治理
-  - 安全合规的项目交付
-
-  差异化:
-  - 完全兼容免费版PEP 8与Pythonic模式
-  - 新增类型、异步、测试、性能、CI五大模块
-  - 提供团队规则分级与迁移指南
-  - 中英双语规范讲解
-
-  触发关键词: python, py, pep8, 类型注解, async, asyncio, 测试, pytest, 性能, profiling, CI, lint, mypy, 团队, enterprise
+  - 企业级Pytho...
 tags:
 - Development
 - Python
@@ -39,14 +26,12 @@ tags:
 - 性能优化
 - 测试
 tools:
-- read
+  - - read
 - exec
 ---
 
 # Python工具箱(专业版)
-
 ## 概述
-
 Python工具箱(专业版)面向团队与企业,在兼容免费版PEP 8与Pythonic模式的基础上,扩展了完整类型系统、asyncio异步最佳实践、测试金字塔、性能优化策略与CI/CD治理方案。
 
 当你在请求中提及 Python规范、类型注解、asyncio、测试覆盖率、性能调优、CI门禁 等关键词时,本工具会自动激活,为团队提供企业级的Python工程规范与治理方案。
@@ -54,7 +39,6 @@ Python工具箱(专业版)面向团队与企业,在兼容免费版PEP 8与Python
 本版本完全兼容 `python-toolkit-free` 的核心规范与提交前清单,可平滑升级,已有代码无需重构。
 
 ## 核心能力
-
 | 能力模块 | 说明 | 与免费版差异 |
 | --- | --- | --- |
 | PEP 8 + Pythonic | 核心风格规范 | 与免费版一致 |
@@ -67,9 +51,7 @@ Python工具箱(专业版)面向团队与企业,在兼容免费版PEP 8与Python
 | 团队治理 | 规则分级、豁免、迁移指南 | 免费版无 |
 
 ## 使用场景
-
 ### 场景一:企业级异步服务规范统一
-
 团队需要为多个异步服务统一规范,并接入CI门禁。
 
 ```yaml
@@ -98,13 +80,11 @@ jobs:
 ```
 
 ### 场景二:异步服务并发与性能调优
-
 某异步服务在高并发下响应变慢,工具分析后给出符合规范的优化方案。
 
 ```python
 import asyncio
 from collections.abc import AsyncIterator
-
 
 async def fetch_batch(
     ids: list[int],
@@ -135,26 +115,22 @@ async def fetch_batch(
     for result in results:
         yield result
 
-
 async def _do_fetch(item_id: int) -> dict:
     # 实际的异步获取逻辑
     ...
 ```
 
 ### 场景三:完整类型系统的API设计
-
 团队需要设计类型安全的公共API,工具输出符合规范的类型注解。
 
 ```python
 from typing import Protocol, TypedDict, overload, runtime_checkable
 from collections.abc import Sequence
 
-
 class UserDTO(TypedDict):
     id: str
     name: str
     active: bool
-
 
 @runtime_checkable
 class UserRepository(Protocol):
@@ -165,7 +141,6 @@ class UserRepository(Protocol):
 
     def list(self, *, offset: int = 0, limit: int = 20) -> Sequence[UserDTO]:
         ...
-
 
 class InMemoryUserRepository:
     """内存实现,用于测试与本地开发。"""
@@ -179,7 +154,6 @@ class InMemoryUserRepository:
     def list(self, *, offset: int = 0, limit: int = 20) -> Sequence[UserDTO]:
         items = list(self._store.values())
         return items[offset : offset + limit]
-
 
 class UserService:
     def __init__(self, repo: UserRepository) -> None:
@@ -197,18 +171,15 @@ class UserService:
 ```
 
 ## 快速开始
-
 ### 1. 平滑升级
-
 已使用免费版的项目直接替换Skill文件即可,核心规范完全兼容。
 
 ```bash
-# 安装团队级工具链
+# 依赖说明
 pip install uv ruff mypy pytest pytest-cov bandit pytest-asyncio
 ```
 
 ### 2. 接入预提交钩子
-
 ```bash
 pip install pre-commit
 pre-commit init
@@ -236,7 +207,6 @@ repos:
 ```
 
 ### 3. 团队规则分级
-
 ```toml
 # pyproject.toml 企业级配置
 [tool.ruff]
@@ -260,7 +230,6 @@ ignore = [
 
 [tool.ruff.lint.per-file-ignores]
 "tests/*" = ["S101"]  # 测试允许assert
-
 [tool.mypy]
 python_version = "3.12"
 strict = true
@@ -278,10 +247,8 @@ testpaths = ["tests"]
 asyncio_mode = "auto"
 ```
 
-## 配置示例
-
+## 示例
 ### 性能profiling脚本
-
 ```python
 """性能分析脚本:定位热点函数。"""
 
@@ -289,7 +256,6 @@ import cProfile
 import pstats
 from io import StringIO
 from pathlib import Path
-
 
 def profile_function(func, *args, **kwargs) -> str:
     """分析函数性能并返回报告。"""
@@ -304,7 +270,6 @@ def profile_function(func, *args, **kwargs) -> str:
     stats.print_stats(20)
     return stream.getvalue()
 
-
 # 使用示例
 if __name__ == "__main__":
     from myapp.batch_processor import process_large_dataset
@@ -314,10 +279,8 @@ if __name__ == "__main__":
 ```
 
 ### 异步测试fixture
-
 ```python
 import pytest
-
 
 @pytest.fixture
 async def db_session():
@@ -328,7 +291,6 @@ async def db_session():
     finally:
         await session.close()
 
-
 @pytest.mark.asyncio
 async def test_concurrent_fetch(db_session):
     """测试并发获取,验证并发安全。"""
@@ -337,9 +299,7 @@ async def test_concurrent_fetch(db_session):
 ```
 
 ## 最佳实践
-
 ### 1. 类型系统进阶
-
 ```python
 from typing import TypedDict, NotRequired, ParamSpec, TypeVar
 from collections.abc import Callable, Awaitable
@@ -347,12 +307,9 @@ from collections.abc import Callable, Awaitable
 P = ParamSpec("P")
 R = TypeVar("R")
 
-
 class UpdatePayload(TypedDict):
     name: str
     email: NotRequired[str]  # 可选字段
-
-
 def async_decorator(
     func: Callable[P, Awaitable[R]],
 ) -> Callable[P, Awaitable[R]]:
@@ -365,7 +322,6 @@ def async_decorator(
 ```
 
 ### 2. asyncio并发控制
-
 | 场景 | 工具 | 说明 |
 | --- | --- | --- |
 | 限并发 | `Semaphore` | 控制同时进行数 |
@@ -380,8 +336,6 @@ async def producer(queue: asyncio.Queue, items: list):
     for item in items:
         await queue.put(item)  # 队列满时阻塞
     await queue.put(None)  # 哨兵
-
-
 async def consumer(queue: asyncio.Queue):
     while True:
         item = await queue.get()
@@ -392,7 +346,6 @@ async def consumer(queue: asyncio.Queue):
 ```
 
 ### 3. 测试金字塔
-
 | 层级 | 占比 | 工具 | 说明 |
 | --- | --- | --- | --- |
 | 单元测试 | 70% | pytest | 纯函数、业务逻辑,mock外部 |
@@ -400,7 +353,6 @@ async def consumer(queue: asyncio.Queue):
 | E2E测试 | 10% | pytest + httpx | 完整流程 |
 
 ### 4. 性能优化清单
-
 | 场景 | 反模式 | 推荐做法 |
 | --- | --- | --- |
 | CPU密集 | 同步阻塞 | 多进程 `ProcessPoolExecutor` |
@@ -411,14 +363,11 @@ async def consumer(queue: asyncio.Queue):
 | 函数调用 | 热点频繁调用 | `lru_cache` 缓存 |
 
 ### 5. 安全审查
-
 ```python
 # 禁止:eval/exec用户输入
 # eval(user_input)  # ❌
-
 # 输入校验
 from pydantic import BaseModel, field_validator
-
 
 class UserInput(BaseModel):
     name: str
@@ -431,14 +380,12 @@ class UserInput(BaseModel):
             raise ValueError("名称只能包含字母")
         return v
 
-
 # 密钥从环境变量读取,不硬编码
 import os
 api_key = os.environ["API_KEY"]  # ✅
 ```
 
 ### 6. 团队迁移指南
-
 | 阶段 | 动作 | 验收标准 |
 | --- | --- | --- |
 | 1. 基线评估 | `ruff check . --statistics` | 输出问题分布 |
@@ -448,42 +395,32 @@ api_key = os.environ["API_KEY"]  # ✅
 | 5. 持续治理 | 月度复盘告警与豁免 | 豁免清单收敛 |
 
 ## 常见问题
-
 ### Q1:PRO版与免费版如何共存?
-
 两者核心规范完全兼容,PRO版包含免费版全部能力。团队统一使用PRO版,个人项目可继续使用免费版。迁移时直接替换Skill文件,无需改动业务代码。
 
 ### Q2:mypy strict太严格怎么办?
-
 建议渐进式开启:先在CI跑非strict的mypy,统计错误;再逐模块在 `[[tool.mypy.overrides]]` 中开启strict,避免一次性阻塞所有提交。参考"团队迁移指南"。
 
 ### Q3:PRO版是否支持异步框架?
-
 支持asyncio原生与主流框架(FastAPI、aiohttp等)。工具提供asyncio并发模型、取消传播、背压等最佳实践。深度框架调优建议结合对应框架专用工具。
 
 ### Q4:覆盖率门禁设多少合理?
-
 新项目建议85%,成熟项目可逐步提升至90%以上。关键路径(支付、鉴权)建议95%+。`--cov-fail-under` 在CI中强制执行,未达标则阻断合并。
 
 ### Q5:支持Monorepo吗?
-
 支持。建议用uv workspace或pdm workspace管理多包,ruff/mypy在根目录配置,各子包通过 `tool.ruff.extend` 继承。
 
 ### Q6:性能优化建议是否覆盖GIL场景?
-
 覆盖。CPU密集型用多进程绕开GIL,I/O密集型用asyncio或线程池。工具会分析瓶颈类型给出对应方案,并提供cProfile profiling脚本模板。
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 - **Python版本**: 建议 3.12 及以上(用于match、类型语法、asyncio改进)
 - **包管理器**: uv(推荐) / pip / pdm
 
 ### 第三方依赖
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -498,11 +435,21 @@ api_key = os.environ["API_KEY"]  # ✅
 | uv | 包管理器 | 可选 | astral.sh 下载 |
 
 ### API Key 配置
-
 - 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)。
 - CI/CD流水线若需上传覆盖率或安全扫描结果,按对应服务(Codecov / Snyk 等)文档配置令牌环境变量。
 
 ### 可用性分类
-
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。PRO版面向团队与企业,提供类型系统、异步、测试金字塔、性能优化与CI治理能力,完全兼容免费版核心规范。
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

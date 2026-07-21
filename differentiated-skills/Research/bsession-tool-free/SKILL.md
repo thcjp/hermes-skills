@@ -4,40 +4,29 @@ name: bsession-tool-free
 version: "1.0.0"
 displayName: 浏览器会话(免费版)
 summary: 浏览器会话管理免费版，支持一次性页面抓取、基础会话列表与简易调试。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  浏览器会话助手免费版是面向个人开发者的轻量浏览器会话管理工具。聚焦"打开URL-提取信息-返回结果"三步流程，无需编写完整脚本即可完成单次页面抓取任务。
-
-  核心能力：单次页面抓取（fetch模式）、基础会话列表查看、简易调试模式、Docker容器内Chrome启动、基础元素交互（click/fill/snapshot）、临时profile管理。
-
-  适用场景：单次页面信息提取、临时数据抓取、学习浏览器自动化、个人脚本调试、轻量网页交互测试。
-
-  差异化：完全中文化重写，聚焦"轻量会话管理"场景，新增分级快速开始指南、典型场景示例与FAQ。内容原创度超过70%。免费版支持单次抓取与基础交互，专业版解锁定时任务、webhook通知、批量会话管理、企业级监控等高级能力。
-
-  触发关键词：浏览器会话、单次抓取、页面提取、临时会话、Docker Chrome、bsession
+  浏览器会话助手免费版是面向个人开发者的轻量浏览器会话管理工具。聚焦"打开URL-提取信息-返回结果"三步流程，无需编写完整脚本即可完成单次页面抓取任务。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
 - 浏览器会话
 - 单次抓取
 - Docker
 - 轻量级
 tools:
-- read
+  - - read
 - exec
 ---
 
 # 浏览器会话助手（免费版）
-
 > **打开URL、提取信息、返回结果。三步完成单次浏览器会话。**
 
 无需编写完整自动化脚本，通过简单的fetch命令即可完成单次页面抓取任务。免费版聚焦轻量场景，让浏览器自动化触手可及。
 
 ## 概述
-
 免费版浏览器会话工具为个人开发者提供基础的浏览器会话管理能力。通过Docker容器化的Chrome实例，在隔离环境中执行页面操作，保障本地系统安全。
 
 ### 核心定位
-
 | 维度 | 免费版能力 |
 |------|------------|
 | 单次抓取（fetch） | 支持 |
@@ -50,9 +39,7 @@ tools:
 | 调试模式 | 支持（基础） |
 
 ## 核心能力
-
 ### 1. 单次页面抓取（fetch模式）
-
 ```python
 import subprocess
 import json
@@ -139,14 +126,13 @@ class BsessionFetcher:
                 capture_output=True, text=True, timeout=5
             )
 
-# 使用示例
+# 示例
 fetcher = BsessionFetcher()
 result = fetcher.fetch_url("https://example.com", wait_seconds=3)
 print(result.get("content", "")[:500] if result.get("success") else result.get("error"))
 ```
 
 ### 2. 基础元素交互
-
 ```python
 class BsessionInteraction:
     """基础元素交互（免费版）"""
@@ -185,7 +171,6 @@ content = interaction.take_snapshot()
 ```
 
 ### 3. 会话列表查看
-
 ```python
 class SessionLister:
     """会话列表查看器（免费版）"""
@@ -217,9 +202,7 @@ class SessionLister:
 ```
 
 ## 使用场景
-
 ### 场景一：单次页面信息提取
-
 **场景描述**：需要快速提取某网页的标题和正文内容。
 
 ```python
@@ -237,7 +220,6 @@ else:
 ```
 
 ### 场景二：简易登录测试
-
 **场景描述**：测试某网站的登录流程是否正常。
 
 ```python
@@ -253,14 +235,12 @@ snapshot = interaction.take_snapshot()
 # interaction.fill_field("ref_email", "test@user.com")
 # interaction.fill_field("ref_password", "password123")
 # interaction.click_element("ref_login_button")
-
 # 4. 验证登录结果
 # final_snapshot = interaction.take_snapshot()
 # print("登录成功" if "dashboard" in final_snapshot else "登录失败")
 ```
 
 ### 场景三：学习浏览器自动化
-
 **场景描述**：初学者通过单次抓取学习浏览器自动化基础。
 
 ```python
@@ -288,9 +268,7 @@ if result.get("success"):
 ```
 
 ## 快速开始
-
 ### 30秒上手
-
 ```bash
 # 1. 检查Docker容器
 docker exec agent-browser echo ok
@@ -302,7 +280,6 @@ docker exec agent-browser agent-browser --cdp 9222 snapshot
 ```
 
 ### 120秒标准搭建
-
 ```bash
 # 1. 启动容器（如果未运行）
 cd ~/.bsession/
@@ -329,9 +306,7 @@ stop_chrome(9222)
 ```
 
 ## 配置示例
-
 ### 基础配置
-
 ```python
 import os
 
@@ -356,7 +331,6 @@ BsessionConfig.show()
 ```
 
 ### 容器路径解析
-
 ```python
 import os
 from pathlib import Path
@@ -402,9 +376,7 @@ for k, v in paths.items():
 ```
 
 ## 最佳实践
-
 ### 1. 资源清理
-
 ```python
 # 使用try/finally确保Chrome进程被清理
 def safe_fetch(url):
@@ -421,8 +393,7 @@ def safe_fetch(url):
         )
 ```
 
-### 2. 错误处理
-
+### 错误处理
 ```python
 def robust_fetch(url, max_retries=2):
     """带错误恢复的抓取"""
@@ -439,7 +410,6 @@ def robust_fetch(url, max_retries=2):
 ```
 
 ### 3. 端口管理
-
 ```python
 # 避免端口冲突
 class PortManager:
@@ -460,38 +430,29 @@ class PortManager:
 ```
 
 ## 常见问题
-
 ### Q1：免费版支持定时任务吗？
-
 不支持。免费版仅支持单次（one-shot）抓取任务。如需定时执行（如每30分钟检查一次）、循环监控、状态变化检测等场景，需升级至专业版。
 
 ### Q2：Docker容器未运行怎么办？
-
 请按以下步骤排查：(1) 检查Docker是否安装并运行：`docker ps`；(2) 启动bsession容器：`cd ~/.bsession && docker compose up -d`；(3) 验证容器状态：`docker exec agent-browser echo ok`。如首次使用，需执行 `setup` 命令初始化环境。
 
 ### Q3：抓取的页面内容为空？
-
 可能原因：(1) 页面加载未完成，增加 `wait_seconds` 参数；(2) 页面使用JavaScript动态渲染，需等待更长；(3) 触发反爬机制，建议降低抓取频率；(4) 容器内Chrome版本过旧，更新镜像。
 
 ### Q4：如何保存抓取结果以便复用？
-
 免费版不持久化会话状态。可通过 `>` 重定向输出到文件，或使用Python脚本保存为JSON。如需将会话保存为可复用的脚本（conf+py文件），需升级专业版。
 
 ### Q5：多个URL抓取会冲突吗？
-
 免费版单次只处理一个URL。如需同时抓取多个URL，建议串行执行并合理设置间隔（建议2-5秒），避免触发反爬。专业版支持并发批量处理。
 
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 - **Docker**: 20+（运行bsession容器）
 - **Python**: 3.8+（容器内执行）
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Docker | 运行时 | 必需 | 官网下载安装 |
@@ -502,20 +463,17 @@ class PortManager:
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 
 ### API Key 配置
-
 - 免费版无需任何API Key
 - 浏览器自动化基于本地Docker容器执行，不涉及云端调用
 - LLM模型路由由Agent平台内置提供
 
 ### 可用性分类
-
 - **分类**: MD+EXEC（Markdown指令+命令行执行）
 - **说明**: 通过自然语言指令驱动Agent执行浏览器会话管理任务
 
 ---
 
-## 免费版限制
-
+## 已知限制
 本免费体验版限制以下高级功能（需升级至专业版解锁）：
 
 - **定时任务（recurring）**：循环执行、状态变化检测

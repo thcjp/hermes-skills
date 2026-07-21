@@ -4,7 +4,7 @@ name: local-vector-memory-pro
 version: "1.0.0"
 displayName: 本地向量记忆(专业版)
 summary: 零API零云依赖的本地向量记忆专业版：LanceDB高级搜索+自动召回+知识图谱，全功能解锁。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   面向隐私敏感与离线场景的本地向量记忆系统专业版。基于 LanceDB + 纯本地 embedding（Ollama/nomic-embed-text），实现零外部 API 调用、零数据出域、完全离线可用的语义记忆检索。专业版解锁全部高级功能，包括 LanceDB 高级向量搜索、自动召回与捕获、Git-Notes 知识图谱，适合团队/企业级生产环境使用。

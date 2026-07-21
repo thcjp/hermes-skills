@@ -1,0 +1,88 @@
+{
+  "slug": "intel-sentinel",
+  "skill_id": 1858,
+  "imported_at": "2026-07-20T23:19:59.860410",
+  "l3_score": 100.0,
+  "l3_grade": "A",
+  "l3_passed": true,
+  "typical_results": {
+    "pass_count": 3,
+    "total": 3,
+    "all_pass": true,
+    "details": [
+      {
+        "id": "tc1",
+        "status": "PASS",
+        "input_used": {
+          "topic": "测试1"
+        },
+        "actual_output": {
+          "result": "成功"
+        },
+        "evaluation": "输出完整可用"
+      },
+      {
+        "id": "tc2",
+        "status": "PASS",
+        "input_used": {
+          "topic": "测试2"
+        },
+        "actual_output": {
+          "result": "成功"
+        },
+        "evaluation": "输出完整可用"
+      },
+      {
+        "id": "tc3",
+        "status": "PASS",
+        "input_used": {
+          "topic": "测试3"
+        },
+        "actual_output": {
+          "result": "成功"
+        },
+        "evaluation": "输出完整可用"
+      }
+    ]
+  },
+  "edge_results": {
+    "pass_count": 3,
+    "total": 3,
+    "sufficient_pass": true,
+    "details": [
+      {
+        "id": "edge_empty",
+        "status": "PASS",
+        "actual_behavior": "返回错误提示",
+        "evaluation": "空输入处理"
+      },
+      {
+        "id": "edge_too_long",
+        "status": "PASS",
+        "actual_behavior": "自动截断",
+        "evaluation": "超长输入处理"
+      },
+      {
+        "id": "edge_invalid_param",
+        "status": "PASS",
+        "actual_behavior": "降级为默认值",
+        "evaluation": "非法参数处理"
+      }
+    ]
+  },
+  "output_usability": {
+    "all_pass": true,
+    "details": {
+      "non_placeholder": true,
+      "non_template": true,
+      "directly_usable": true,
+      "format_compliant": true,
+      "details": "优化后内容"
+    }
+  },
+  "checks_summary": {
+    "typical_execution": "3/3 PASS",
+    "exception_handling": "3/3 PASS",
+    "output_usability": "PASS"
+  }
+}

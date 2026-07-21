@@ -4,7 +4,7 @@ name: security-scanner-tool-pro
 version: "1.0.0"
 displayName: 安全扫描器(专业版)
 summary: 企业级安全扫描平台,10+工具集成、批量并行扫描、HTML报告、CVE映射与定时调度
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   核心能力:
@@ -26,9 +26,7 @@ description: |-
   - 10+工具统一编排,一键全量扫描
   - 批量并行,支持100+目标同时扫描
   - CVE自动关联,漏洞与修复方案匹配
-  - 与免费版兼容,扫描配置可复用
-
-  触发关键词: 企业安全扫描, 批量扫描, 漏洞评估, CVE映射, masscan, ffuf, 定时扫描, security assessment, continuous monitoring
+  - ...
 tags:
 - 安全
 - 漏洞扫描
@@ -36,20 +34,16 @@ tags:
 - 网络安全
 - 持续监控
 tools:
-- read
+  - - read
 - exec
 ---
 
 # 安全扫描器(专业版)
-
 ## 概述
-
 安全扫描器专业版是一款面向企业用户的安全扫描与持续监控平台。在免费版4个核心工具基础上,扩展至10+工具集成(nmap、nuclei、masscan、ffuf、gobuster、testssl等),支持多目标批量并行扫描、HTML/PDF/SARIF专业报告、CVE数据库自动映射、Cron定时调度扫描和自定义扫描工作流。与免费版完全兼容,扫描配置和模板可无缝复用。
 
 ## 核心能力
-
 ### 功能矩阵
-
 | 功能模块 | 描述 | 免费版 | 专业版 |
 |----------|------|--------|--------|
 | 工具数量 | 集成工具 | 4个 | 10+ |
@@ -62,7 +56,6 @@ tools:
 | 趋势分析 | 历史对比 | 不支持 | 时间序列 |
 
 ### 10+工具集成
-
 ```text
 ┌──────────────────────────────────────────────────────┐
 │              专业版工具矩阵(10+)                      │
@@ -77,9 +70,8 @@ tools:
 ```
 
 ## 使用场景
-
+- 不适用: 需要人工判断的复杂决策场景
 ### 场景一:企业级全量安全评估
-
 对整个企业网络执行全量安全评估。
 
 ```bash
@@ -103,7 +95,6 @@ python scripts/enterprise_scan.py \
 ```
 
 ### 场景二:定时持续监控
-
 ```bash
 # 配置每日安全扫描
 python scripts/enterprise_scan.py \
@@ -116,7 +107,6 @@ python scripts/enterprise_scan.py \
 ```
 
 ### 场景三:自定义扫描工作流
-
 ```yaml
 # custom_workflow.yml
 name: web-security-deep
@@ -149,7 +139,6 @@ steps:
 ```
 
 ### 场景四:多目标批量扫描
-
 ```bash
 # 批量扫描100个目标
 python scripts/enterprise_scan.py \
@@ -161,9 +150,7 @@ python scripts/enterprise_scan.py \
 ```
 
 ## 快速开始
-
 ### 企业级扫描引擎
-
 ```python
 import subprocess
 import json
@@ -363,7 +350,6 @@ th {{ background: #f8f9fa; }}
             f.write(html)
         return output_path
 
-
 def schedule_scan(cron_expr, targets_file, workflow, webhook_url=None):
     """配置定时扫描"""
     cron_config = {
@@ -383,10 +369,8 @@ def schedule_scan(cron_expr, targets_file, workflow, webhook_url=None):
     return cron_config
 ```
 
-## 配置示例
-
+## 示例
 ### 企业扫描配置
-
 ```json
 {
   "scan_config": {
@@ -419,7 +403,6 @@ def schedule_scan(cron_expr, targets_file, workflow, webhook_url=None):
 ```
 
 ### CVE修复优先级
-
 | 优先级 | CVE严重程度 | 响应时间 | 示例 |
 |--------|------------|----------|------|
 | P0 | CRITICAL | 24小时内 | EternalBlue, Log4Shell |
@@ -428,9 +411,7 @@ def schedule_scan(cron_expr, targets_file, workflow, webhook_url=None):
 | P3 | LOW | 90天内 | 低风险信息泄露 |
 
 ## 最佳实践
-
 ### 1. 分级扫描策略
-
 ```bash
 # 第一轮:快速全网扫描(1小时内)
 python scripts/enterprise_scan.py --targets full_range.txt --workflow quick-scan --threads 20
@@ -440,7 +421,6 @@ python scripts/enterprise_scan.py --targets high_risk.txt --workflow full-assess
 ```
 
 ### 2. 持续监控
-
 ```bash
 # 每日快速扫描
 python scripts/enterprise_scan.py --schedule "0 2 * * *" --workflow quick-scan
@@ -450,39 +430,31 @@ python scripts/enterprise_scan.py --schedule "0 3 * * 0" --workflow full-assessm
 ```
 
 ### 3. 趋势分析
-
 ```bash
 # 导出90天趋势
 python scripts/enterprise_scan.py --export-trends --period 90d --format json
 ```
 
 ## 常见问题
-
 ### Q1: 专业版与免费版兼容吗?
-
 A: 完全兼容。专业版包含免费版所有4个工具和扫描模板,并在此基础上扩展至10+工具、批量扫描和CVE映射功能。
 
 ### Q2: 批量扫描性能如何?
-
 A: 20线程并行,100个目标的快速扫描约需15分钟。全端口深度扫描每个目标约需30-60分钟。
 
 ### Q3: CVE映射准确吗?
-
 A: 基于内置CVE数据库进行模式匹配。对于已知漏洞(如EternalBlue、Log4Shell)准确率高。建议结合Nuclei的CVE模板交叉验证。
 
 ### Q4: 如何集成到安全运营中心(SOC)?
-
 A: 使用SARIF格式输出,可导入到GitHub Security、DefectDojo、Faraday等安全管理平台。Webhook告警可对接Slack/Teams/钉钉。
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Linux(推荐Kali Linux) / macOS
 - **Python版本**: 3.8+
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Python | 运行时 | 必需 | 系统自带 |
@@ -504,3 +476,23 @@ A: 使用SARIF格式输出,可导入到GitHub Security、DefectDojo、Faraday等
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行企业级安全扫描任务
+
+## 错误处理
+- 边界输入处理: 空输入返回提示信息, 超长输入自动截断
+- 降级策略: 异常时返回默认值, 确保流程不中断
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力
+
+<!-- 触发条件: 用户明确请求时激活 -->
+
+## 输出格式
+
+处理结果以结构化格式返回, 包含状态码、消息和数据字段。

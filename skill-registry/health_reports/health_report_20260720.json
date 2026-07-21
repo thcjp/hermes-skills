@@ -1,0 +1,74 @@
+{
+  "checked_at": "2026-07-20T22:21:51.424565",
+  "db_path": "d:\\skills\\skill-registry.db",
+  "overall_status": "healthy",
+  "db_health": {
+    "total_skills": 1917,
+    "active": 1866,
+    "deprecated": 51,
+    "null_state": 0,
+    "workflow_state_coverage": "100.0%",
+    "orphan_records": 0,
+    "duplicate_slugs": 0,
+    "trace_score_coverage": "100.0%",
+    "state_distribution": {
+      "step7_validate": 879,
+      "step5_add_deps": 807,
+      "step8_upload_free": 101,
+      "completed": 61,
+      "deprecated": 51,
+      "step1_read_original": 18
+    },
+    "issues": [],
+    "scored_skills": 1866
+  },
+  "file_health": {
+    "checked_count": 50,
+    "valid_paths": 50,
+    "invalid_paths": 0,
+    "skill_md_exists": 50,
+    "skill_md_missing": 0,
+    "line_count_compliant": 50,
+    "line_count_violations": 0,
+    "frontmatter_complete": 50,
+    "frontmatter_incomplete": 0,
+    "issues": []
+  },
+  "platform_health": {
+    "total_uploads": 206,
+    "success_count": 188,
+    "fail_count": 12,
+    "upload_success_rate": "91.3%",
+    "platform_distribution": {
+      "clawhub": 161,
+      "skillhub": 45
+    },
+    "pending_review": 23,
+    "free_count": 1,
+    "paid_count": 59,
+    "upload_pipeline": {
+      "step8_upload_free": 101,
+      "completed": 61
+    },
+    "issues": [
+      {
+        "severity": "info",
+        "message": "23 个 skill 已上传 SkillHub 但未完成审核"
+      }
+    ],
+    "upload_status_distribution": {
+      "success": 188,
+      "fail": 11,
+      "mock_success": 2,
+      "blocked_by_l1_quality_gate": 2,
+      "failed": 1,
+      "blocked_by_quality_gate": 1,
+      "blocked_by_l2_pending": 1
+    },
+    "unspecified_paid": 1806
+  },
+  "recommendations": [
+    "排查 12 个上传失败记录",
+    "跟踪 23 个待审核 skill 的审核状态"
+  ]
+}

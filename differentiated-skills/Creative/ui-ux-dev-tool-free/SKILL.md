@@ -4,13 +4,11 @@ name: ui-ux-dev-tool-free
 version: "1.0.0"
 displayName: UI/UX开发工具免费版
 summary: 自然语言生成React页面,CDN零构建,含截图审查循环,适合个人快速原型开发
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人开发者的自然语言驱动React页面生成工具,通过CDN方式零构建运行,
-  内置截图视觉审查循环,支持快速原型迭代。
-
-  核心能力:
+  内置截图视觉审查循环,支持快速原型迭代。核心能力:
   - 自然语言描述生成React页面(CDN零构建)
   - 项目配置与偏好管理
   - 截图视觉审查与迭代修复
@@ -24,9 +22,7 @@ description: |-
   - 设计概念验证与视觉迭代
 
   差异化:免费版聚焦单页面快速生成与视觉审查,使用CDN方式零构建,
-  适合个人快速原型。去除多页面项目管理和批量导出等企业级功能。
-
-  触发关键词: React页面生成, 自然语言开发, CDN零构建, 截图审查, 原型迭代, 落地页生成, WebP转换, 静态导出
+  适合个人快速原型
 tags:
 - 设计
 - UI
@@ -36,10 +32,9 @@ tags:
 - 原型
 - 开发
 tools:
-- read
+  - - read
 - exec
 ---
-
 # UI/UX开发工具 - 免费版
 
 ## 概述
@@ -224,6 +219,20 @@ bash scripts/screenshot.sh "http://localhost:5174/ProductLaunch/landing/" /tmp/r
 </script>
 ```
 
+## 不适用场景
+
+以下场景UI/UX开发工具免费版不适合处理：
+
+- 3D建模和动画制作
+- 照片级写实渲染
+- 手绘原创插画
+
+
+## 触发条件
+
+需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 首次设置
@@ -266,7 +275,7 @@ bash scripts/screenshot.sh "http://localhost:5174/my-project/landing/" /tmp/revi
 bash scripts/screenshot.sh "http://localhost:5174/my-project/landing/" /tmp/mobile.png 390 844
 ```
 
-## 配置示例
+## 示例
 
 ### 项目目录结构
 
@@ -325,7 +334,7 @@ bash scripts/screenshot.sh "<url>" /tmp/desktop.png 1400 900
 bash scripts/screenshot.sh "<url>" /tmp/mobile.png 390 844
 ```
 
-### 3. 常见错误避免清单
+### 错误处理
 
 | 错误 | 正确做法 |
 |------|----------|
@@ -355,7 +364,7 @@ bash scripts/screenshot.sh "<url>" /tmp/mobile.png 390 844
 
 免费版支持在项目目录下创建多个页面文件夹,但缺少专业版的多页面设计系统持久化和批量管理功能。每个页面需独立生成和审查。
 
-### Q2: CDN方式有什么限制?
+### 已知限制
 
 CDN方式无需构建步骤,直接在浏览器中运行。限制包括:无法使用npm包、Babel转译有性能开销、不适合生产环境大规模部署。适合原型开发和概念验证。
 
@@ -380,7 +389,7 @@ CDN方式无需构建步骤,直接在浏览器中运行。限制包括:无法使
 - **浏览器**: Chrome/Chromium(用于截图审查)
 - **本地服务器**: Python http.server或Node.js静态服务器
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|

@@ -4,7 +4,7 @@ name: flow-manager-pro-pro
 version: "1.0.0"
 displayName: 流程管理器(专业版)
 summary: 全功能Node-RED实例管理，含多实例、完整备份、Docker编排、性能监控与审计日志。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   流程管理器专业版是在免费版基础上的全功能升级，为IoT团队与自动化运维提供企业级Node-RED实例管理能力。除核心流程操作外，解锁多实例管理、完整备份恢复、Docker容器编排、性能监控告警、批量节点操作、流程版本对比回滚、审计日志七大高级功能。

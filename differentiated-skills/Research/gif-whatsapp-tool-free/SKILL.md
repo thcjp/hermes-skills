@@ -4,12 +4,10 @@ name: gif-whatsapp-tool-free
 version: "1.0.0"
 displayName: WhatsApp表情搜索
 summary: WhatsApp GIF 表情搜索发送工具，支持 Tenor/Giphy 搜索并自动转换为 MP4 格式发送，适合个人日常聊天使用。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  WhatsApp GIF 表情搜索发送工具，支持 Tenor/Giphy 搜索并自动转换为 MP4 格式发送，适合个人日常聊天使用。
-
-  核心能力:
+  WhatsApp GIF 表情搜索发送工具，支持 Tenor/Giphy 搜索并自动转换为 MP4 格式发送，适合个人日常聊天使用。核心能力:
   - 搜索 Tenor 和 Giphy 平台的 GIF 表情
   - 自动将 GIF 转换为 WhatsApp 兼容的 MP4 格式
   - 一键发送到指定 WhatsApp 联系人
@@ -21,11 +19,7 @@ description: |-
   - 情感表达与趣味互动
 
   差异化:
-  - 免费版聚焦单次搜索发送，操作简单
-  - 自动处理 Tenor 到 MP4 的格式转换
-  - 无需复杂配置，开箱即用
-
-  触发关键词: GIF搜索, WhatsApp表情, gif发送, 表情包, 动图发送
+  - 免费版聚焦单次搜索发送...
 tags:
 - WhatsApp
 - GIF
@@ -33,10 +27,9 @@ tags:
 - 聊天工具
 - 表情搜索
 tools:
-- read
+  - - read
 - exec
 ---
-
 # WhatsApp 表情搜索（免费版）
 
 ## 概述
@@ -55,7 +48,7 @@ WhatsApp 表情搜索免费版是一款面向个人用户的 GIF 表情搜索与
 | 定时发送 | 定时发送 GIF | 否 |
 | GIF 库管理 | 收藏常用 GIF | 否 |
 
-### 免费版限制说明
+### 已知限制
 
 - 单次搜索最多返回 5 个结果
 - 一次只能发送给 1 个联系人
@@ -118,9 +111,23 @@ ffmpeg -i /tmp/g.gif -movflags faststart -pix_fmt yuv420p \
 cp /tmp/g.mp4 /root/.skill-platform/workspace/g.mp4
 ```
 
+## 不适用场景
+
+以下场景WhatsApp表情搜索不适合处理：
+
+- 黑帽SEO手段
+- 搜索引擎作弊
+- 付费广告投放管理
+
+
+## 触发条件
+
+需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
-### 安装依赖
+### 依赖说明
 
 ```bash
 # 安装 gifgrep（GIF 搜索工具）
@@ -159,7 +166,7 @@ message action=send to=CONTACT_NUMBER message=" " \
   filePath=/root/.skill-platform/workspace/gif.mp4 gifPlayback=true
 ```
 
-## 配置示例
+## 示例
 
 ### 常用搜索关键词
 
@@ -298,3 +305,11 @@ ffmpeg -i /tmp/gif.gif -movflags faststart -pix_fmt yuv420p \
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务
 - **适用人群**：个人 WhatsApp 用户、社交活跃用户
 - **升级建议**：如需批量发送、定时发送、GIF 库管理等高级功能，请使用 PRO 版本
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

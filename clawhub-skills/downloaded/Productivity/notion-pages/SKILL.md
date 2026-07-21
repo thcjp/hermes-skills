@@ -8,32 +8,12 @@ summary: Search pages and databases, update content, and manage Notion workspace
 license: MIT-0
 description: |-
   Search pages and databases, update content, and manage Notion workspace
-  data from chat. Use this ...
-
-  核心能力:
-
-  - 商业工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 日程管理、效率提升、团队协作
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: pages, databases, content, notion, update, search
+  data from chat。Use this。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Productivity
 - Automation
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -173,7 +153,7 @@ If Notion tools are missing or the connection shows an error:
 5. Execute with `clawlink_call_tool`. Pass confirmation only after the preview matches the user's intent.
 6. If the tool call fails, report the real error. Do not invent results or restate the failure as a missing capability unless the live catalog supports that conclusion.
 
-## Code Examples
+## 示例
 
 ### Search pages
 
@@ -264,7 +244,7 @@ clawlink_call_tool --tool "notion_create_page" \
 | `conflict_error` | Resource was modified concurrently. Retry or re-fetch the latest state. |
 | Write rejected | User did not confirm a write action. Always confirm before executing writes. |
 
-### Troubleshooting: Tools Not Visible
+### 错误处理
 
 1. Check that the ClawLink plugin is installed:
 
@@ -313,7 +293,7 @@ clawlink_call_tool --tool "notion_create_page" \
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -324,3 +304,34 @@ clawlink_call_tool --tool "notion_create_page" \
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+
+- Search pages and databases, update content, and manage Notion workspace
+  data from chat
+- 触发关键词: pages, databases, content, notion, update, search
+
+## 适用场景
+
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 常见问题
+
+### Q1: 如何开始使用Notion？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Notion有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

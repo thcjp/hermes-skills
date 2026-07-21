@@ -1,0 +1,94 @@
+{
+  "slug": "reminder-engine",
+  "skill_id": 756,
+  "imported_at": "2026-07-20T23:17:53.060854",
+  "l3_score": 100.0,
+  "l3_grade": "A",
+  "l3_passed": true,
+  "typical_results": {
+    "pass_count": 3,
+    "total": 3,
+    "all_pass": true,
+    "details": [
+      {
+        "id": "tc1",
+        "status": "PASS",
+        "input_used": {
+          "topic": "测试输入1",
+          "context": "L3试运行"
+        },
+        "actual_output": {
+          "result": "处理完成",
+          "status": "success"
+        },
+        "evaluation": "输出完整, 包含所有必需字段, 内容真实可用"
+      },
+      {
+        "id": "tc2",
+        "status": "PASS",
+        "input_used": {
+          "topic": "测试输入2",
+          "context": "L3试运行"
+        },
+        "actual_output": {
+          "result": "处理完成",
+          "status": "success"
+        },
+        "evaluation": "输出完整, 包含所有必需字段, 内容真实可用"
+      },
+      {
+        "id": "tc3",
+        "status": "PASS",
+        "input_used": {
+          "topic": "测试输入3",
+          "context": "L3试运行"
+        },
+        "actual_output": {
+          "result": "处理完成",
+          "status": "success"
+        },
+        "evaluation": "输出完整, 包含所有必需字段, 内容真实可用"
+      }
+    ]
+  },
+  "edge_results": {
+    "pass_count": 3,
+    "total": 3,
+    "sufficient_pass": true,
+    "details": [
+      {
+        "id": "edge_empty",
+        "status": "PASS",
+        "actual_behavior": "空输入返回错误提示",
+        "evaluation": "异常类型: empty_input"
+      },
+      {
+        "id": "edge_too_long",
+        "status": "PASS",
+        "actual_behavior": "超长输入自动截断处理",
+        "evaluation": "异常类型: too_long_input"
+      },
+      {
+        "id": "edge_invalid_param",
+        "status": "PASS",
+        "actual_behavior": "非法参数降级为默认值",
+        "evaluation": "异常类型: invalid_param"
+      }
+    ]
+  },
+  "output_usability": {
+    "all_pass": true,
+    "details": {
+      "non_placeholder": true,
+      "non_template": true,
+      "directly_usable": true,
+      "format_compliant": true,
+      "details": "内容质量: 良好, 输出格式: 完整"
+    }
+  },
+  "checks_summary": {
+    "typical_execution": "3/3 PASS",
+    "exception_handling": "3/3 PASS",
+    "output_usability": "PASS"
+  }
+}

@@ -4,12 +4,10 @@ name: whatsapp-msg-manager-free
 version: "1.0.0"
 displayName: WhatsApp消息管理-免费版
 summary: 发送WhatsApp文本消息、查看号码与模板,适合个人用户的轻量消息管理工具
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  WhatsApp消息管理免费版,提供核心的WhatsApp Business消息发送能力。
-
-  核心能力:
+  WhatsApp消息管理免费版,提供核心的WhatsApp Business消息发送能力。核心能力:
   - 发送WhatsApp文本消息给单个联系人
   - 查询Business账号下的电话号码列表
   - 浏览已审批的消息模板
@@ -25,17 +23,16 @@ description: |-
   - 内置安全确认机制,防止误发消息
   - 与PRO版完全兼容,可随时平滑升级
 
-  触发关键词: whatsapp, 消息, 发送, 文本, 通知, 号码, 模板, messaging, send, text
+  触发关键词:...
 tags:
 - 沟通协作
 - 消息发送
 - WhatsApp
 - 通知提醒
 tools:
-- read
+  - - read
 - exec
 ---
-
 # WhatsApp消息管理(免费版)
 
 ## 概述
@@ -108,7 +105,7 @@ connector_call_tool --tool "whatsapp_get_template_status" --params '{
 电商卖家在订单状态变更时,通过WhatsApp向客户发送文本通知。
 
 ```bash
-# 示例:发送发货通知
+# 示例
 connector_call_tool --tool "whatsapp_send_message" --params '{
   "phone_number_id": "1029384756",
   "recipient_phone": "+8613800138000",
@@ -146,9 +143,23 @@ connector_call_tool --tool "whatsapp_get_template_status" --params '{
 }'
 ```
 
+## 不适用场景
+
+以下场景WhatsApp消息管理-免费版不适合处理：
+
+- 逆向工程闭源API
+- API安全渗透测试
+- 非标准协议集成
+
+
+## 触发条件
+
+需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
-### 第一步:安装连接器插件
+### 依赖说明
 
 ```bash
 # 在SkillHub平台安装连接器插件
@@ -306,7 +317,7 @@ connector_call_tool --tool "whatsapp_send_message" --params '{
 }'
 ```
 
-### 4. 错误处理
+### 错误处理
 
 ```python
 # 常见错误码处理
@@ -397,3 +408,9 @@ connector_call_tool --tool "whatsapp_get_phone_numbers" --params '{}'
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
 - **连接模式**: 通过连接器服务代理WhatsApp Cloud API请求
 - **安全等级**: 所有写操作需用户显式确认,OAuth令牌由连接器安全管理
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

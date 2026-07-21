@@ -4,7 +4,7 @@ name: apple-health-tool-free
 version: "1.0.0"
 displayName: 健康数据助手免费版
 summary: 个人用户与Apple健康数据对话查询,支持运动、心率、活动圆环等基础问答
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人用户的健康数据查询助手,通过自然语言与 Apple Health 数据交互。
@@ -19,10 +19,9 @@ tags:
 - 运动追踪
 - 数据查询
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 健康数据助手 (免费版)
 
 ## 概述
@@ -80,9 +79,23 @@ curl -X POST -H "X-API-Key: $TRANSITION_API_KEY" \
   "https://api.transition.fun/api/v1/coach/chat"
 ```
 
+## 不适用场景
+
+以下场景健康数据助手免费版不适合处理：
+
+- 实时流数据处理
+- 小规模数据手动分析
+- 非结构化文本情感分析
+
+
+## 触发条件
+
+需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
-### 步骤 1: 安装 Transition 同步应用
+### 依赖说明
 
 在 iPhone 上下载 Transition 应用,授予 Apple Health 数据访问权限。
 
@@ -109,7 +122,7 @@ curl -s -H "X-API-Key: $TRANSITION_API_KEY" \
   "https://api.transition.fun/api/v1/profile"
 ```
 
-## 配置示例
+## 示例
 
 ### 基础配置文件
 
@@ -185,7 +198,7 @@ curl -H "X-API-Key: $TRANSITION_API_KEY" \
 
 所有日期参数使用 `YYYY-MM-DD` 格式,避免歧义。查询区间最大跨度为 90 天。
 
-### 4. 速率限制管理
+### 已知限制
 
 免费版每日读取接口 100 次、AI 教练 3 次。建议将常用查询结果缓存到本地。
 
@@ -208,7 +221,7 @@ def cache_response(key, data):
 
 在 iPhone 的 Transition 应用中,**Settings > API Keys > Generate New Key** 生成。Key 只显示一次,请妥善保存。
 
-### Q2: 免费版 AI 教练问答次数用完了怎么办?
+### 常见问题
 
 每日 0 点 UTC 重置。如需更多次数,可升级至 PRO 版本,每日 AI 教练额度提升至 100 次。
 
@@ -264,3 +277,11 @@ source ~/.apple-health.env
 - **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 通过自然语言指令驱动 Agent 调用 Transition API,完成 Apple Health 数据查询与分析
 - **免费版限制**: AI 教练每日 3 次,读取接口每日 100 次,仅支持单用户使用
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

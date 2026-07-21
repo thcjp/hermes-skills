@@ -4,26 +4,10 @@ name: vue-toolkit-pro
 version: "1.0.0"
 displayName: Vue工具箱(专业版)
 summary: Vue 3 全栈实战：响应式、性能优化、SSR、Pinia、Composable 架构与团队规范。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  Vue 工具箱（专业版）面向中高级 Vue 3 开发者与团队，在免费版陷阱清单的基础上新增性能优化、SSR/SSG、Pinia 状态管理、Composable 架构、可访问性、测试与团队规范六大模块。目标是让 Agent 能够输出"架构级"建议而不仅是单点修复。
-
-  核心能力：
-  - 覆盖 11 类主题：响应式、组件设计、性能、SSR、Pinia、Composable、a11y、测试、路由、TypeScript、团队规范
-  - 提供 12+ 真实场景示例（含架构师、性能工程师、QA 三种角色视角）
-  - 内置性能基线指标与瓶颈定位流程
-  - 提供 Pinia setup store 模式与模块化拆分模板
-
-  适用场景：
-  - 中大型 Vue 3 项目架构评审与重构
-- 团队级代码规范沉淀与 onboarding 文档
-  - SSR/SSG 项目落地前的可行性评估
-  - 性能瓶颈定位与优化方案输出
-
-  差异化：以"指标 → 诊断 → 方案 → 验证"四段式组织进阶内容，每条建议均附量化指标或基线数据，原创内容占比超过 70%。专业版相比免费版新增 6 大模块、9 个进阶场景与完整的故障排查表。
-
-  触发关键词：vue、性能优化、SSR、Pinia、Composable、a11y、Vitest、架构、团队规范
+  Vue 工具箱（专业版）面向中高级 Vue 3 开发者与团队，在免费版陷阱清单的基础上新增性能优化、SSR/SSG、Pinia 状态管理、Composable 架构、可访问性、测试与团队规范六大模块。目标是让 Agent 能够输出"架构级"建议而不仅是单点修复。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
 - 前端架构
 - Vue
@@ -31,7 +15,7 @@ tags:
 - SSR
 - 状态管理
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -110,7 +94,7 @@ const HeavyChart = defineAsyncComponent(() => import('./HeavyChart.vue'))
 </template>
 ```
 
-## 配置示例
+## 示例
 
 ### Pinia Setup Store 模板
 
@@ -254,7 +238,7 @@ A：当数据量大且结构深、但你只关心整体替换时用 `shallowRef`
 ### Q2：SSR 项目里 window 未定义怎么办？
 A：使用 `import.meta.env.SSR`（Vite）或 `process.server`（Nuxt）做环境判断，把客户端 only 的逻辑放到 `onMounted` 中执行，或用 `<ClientOnly>` 组件包裹。
 
-### Q3：Pinia 跨 store 调用会循环依赖吗？
+### 依赖说明
 A：不会。Pinia 在 `defineStore` 工厂函数内调用 `useOtherStore()` 是惰性求值，只要不在模块顶层直接调用即可避免循环。
 
 ### Q4：Composable 里发请求怎么取消？
@@ -328,3 +312,17 @@ A：用 `flushPromises` from `@vue/test-utils`，或 `await nextTick()`。涉及
 - **分类**：MD+EXEC（纯 Markdown 指令，部分功能需要 exec 命令行执行能力）
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务
 - **模型路由建议**：专业版推荐使用 GPT-4o / Claude Sonnet 以获得更高质量的架构建议
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

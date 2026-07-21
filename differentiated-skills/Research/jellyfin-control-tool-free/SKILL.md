@@ -4,12 +4,10 @@ name: jellyfin-control-tool-free
 version: "1.0.0"
 displayName: 媒体服务器控制
 summary: 轻量级 Jellyfin 媒体服务器控制工具，支持内容搜索、播放控制与设备管理，适合个人家庭影音娱乐使用。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  轻量级 Jellyfin 媒体服务器控制工具，支持内容搜索、播放控制与设备管理，适合个人家庭影音娱乐使用。
-
-  核心能力:
+  轻量级 Jellyfin 媒体服务器控制工具，支持内容搜索、播放控制与设备管理，适合个人家庭影音娱乐使用。核心能力:
   - 一键播放：搜索内容并自动开始播放
   - 智能续播：自动定位上次观看位置
   - 设备发现：自动检测可控设备
@@ -23,19 +21,16 @@ description: |-
   差异化:
   - 免费版聚焦单设备控制，操作简单
   - 一键播放，无需手动操作电视
-  - 智能续播，记忆观看进度
-
-  触发关键词: 媒体控制, Jellyfin, 播放控制, 电视控制, 影音管理
+  - 智能续播...
 tags:
 - 媒体
 - Jellyfin
 - 智能家居
 - 播放控制
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 媒体服务器控制（免费版）
 
 ## 概述
@@ -57,7 +52,7 @@ tools:
 | 定时播放 | 定时播放功能 | 否 |
 | 媒体库扫描 | 自动扫描整理 | 否 |
 
-### 免费版限制说明
+### 已知限制
 
 - 仅支持控制单台电视设备
 - 不支持多用户配置管理
@@ -98,6 +93,20 @@ node skills/jellyfin-control/cli.js resume "Breaking Bad"
 # 指定设备续播
 node skills/jellyfin-control/cli.js resume "Matrix" --device "Chromecast"
 ```
+
+## 不适用场景
+
+以下场景媒体服务器控制不适合处理：
+
+- 实时流数据处理
+- 小规模数据手动分析
+- 非结构化文本情感分析
+
+
+## 触发条件
+
+需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求。
+
 
 ## 快速开始
 
@@ -151,7 +160,7 @@ node skills/jellyfin-control/cli.js search "Star Wars"
 node skills/jellyfin-control/cli.js stats
 ```
 
-## 配置示例
+## 示例
 
 ### 环境变量说明
 
@@ -288,7 +297,7 @@ curl -H "Authorization: Bearer YOUR_TOKEN" http://HA_URL/api/states
 - **Node.js**：14.0 及以上
 - **网络环境**：需可访问 Jellyfin 服务器和电视设备
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 | --- | --- | --- | --- |
@@ -317,3 +326,11 @@ HA_TOKEN=your_ha_long_lived_token
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务
 - **适用人群**：个人家庭用户、影音爱好者
 - **升级建议**：如需多设备管理、多用户、定时播放等高级功能，请使用 PRO 版本
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

@@ -8,31 +8,11 @@ summary: Read files, manage comments, extract design tokens, download images, an
 license: MIT-0
 description: |-
   Read files, manage comments, extract design tokens, download images,
-  and create webhooks in Figma...
-
-  核心能力:
-
-  - 集成工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 第三方API集成、平台对接、数据同步
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: read, files, figma, design, manage, comments, extract
+  and create webhooks in Figma。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Integrations
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -205,7 +185,7 @@ If Figma tools are missing or the connection shows an error:
 | `figma_get_team_styles` | List published styles from a team's library | Read |
 | `figma_get_team_component_sets` | List published component sets from a team's library | Read |
 
-## Code Examples
+## 示例
 
 ### Discover resources from a Figma URL
 
@@ -322,7 +302,7 @@ clawlink_call_tool --tool "figma_design_tokens_to_tailwind" \
 | `403 Forbidden` | Insufficient permissions for the requested operation (e.g., team admin required for team webhooks). |
 | Write rejected | User did not confirm a write action. Always confirm before executing writes. |
 
-### Troubleshooting: Tools Not Visible
+### 错误处理
 
 1. Check that the ClawLink plugin is installed:
 
@@ -372,7 +352,7 @@ clawlink_call_tool --tool "figma_design_tokens_to_tailwind" \
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -383,3 +363,32 @@ clawlink_call_tool --tool "figma_design_tokens_to_tailwind" \
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+
+- Read files, manage comments, extract design tokens, download images,
+  and create webhooks in Figma
+- 触发关键词: read, files, figma, design, manage, comments, extract
+
+## 适用场景
+
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 常见问题
+
+### Q1: 如何开始使用Figma？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Figma有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用

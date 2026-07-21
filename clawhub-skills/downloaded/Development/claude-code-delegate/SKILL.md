@@ -1,12 +1,12 @@
 ---
-slug: claude-code-delegate
+slug: ai-assistant-code-delegate
 name: claude-code-delegate
 version: "0.1.1"
-displayName: Claude Code Delegate
-summary: Delegate programming tasks to Claude Code CLI
+displayName: ai-assistant Code De
+summary: Delegate programming tasks to ai-assistant Code CLI
 license: MIT
 description: |-
-  Delegate programming tasks to Claude Code CLI
+  Delegate programming tasks to ai-assistant Code CLI
 
   核心能力:
 
@@ -24,28 +24,26 @@ description: |-
 
   - 自动化工作流与智能决策辅助
 
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: programming, tasks, code, claude, delegate
+  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范
 tags:
 - Development
 tools:
-- read
+  - - read
 - exec
 ---
 
-# Claude Code Delegate
+# ai-assistant Code Delegate
 
-Delegate programming tasks to local Claude Code CLI.
+Delegate programming tasks to local ai-assistant Code CLI.
 
-**RULE: You NEVER write code directly. ALL programming goes through `claude -p`.**
+**RULE: You NEVER write code directly. ALL programming goes through `ai-assistant -p`.**
 
 ## Prerequisites Check (Run Before First Use)
 
 Before delegating any task, verify the environment is ready:
 
-1. **Claude Code CLI installed**: Run `which claude` — if not found, tell user: `npm install -g @anthropic-ai/claude-code`
-2. **API key configured**: Run `claude --version` — if it errors about auth, tell user to run `claude` and complete login
+1. **ai-assistant Code CLI installed**: Run `which ai-assistant` — if not found, tell user: `npm install -g @ai-provider-ai/ai-assistant-code`
+2. **API key configured**: Run `ai-assistant --version` — if it errors about auth, tell user to run `ai-assistant` and complete login
 3. **Write-guard active (STRONGLY RECOMMENDED)**: Check if a write-guard plugin exists at `.skill-platform/extensions/write-guard/`. If not, warn the user:
    > ⚠️ No write-guard detected. The delegate uses `--permission-mode bypassPermissions` which grants full filesystem read/write access. It is strongly recommended to set up a write-guard plugin before running tasks. See README.md for setup instructions.
 
@@ -68,7 +66,7 @@ Do NOT trigger: chat, emotional interaction, information lookup.
 ## Command Template
 
 ```bash
-cd "<project_dir>" && claude -p "<task_description>" --output-format text --max-turns 10 --permission-mode bypassPermissions
+cd "<project_dir>" && ai-assistant -p "<task_description>" --output-format text --max-turns 10 --permission-mode bypassPermissions
 ```
 
 ### Parameters
@@ -95,7 +93,7 @@ Set exec timeout to `300` (5 minutes). The delegate needs time to write code.
 ### Correct Flow
 
 ```text
-Step 1: exec claude -p "..."          → get session ID (e.g. "marine-sage")
+Step 1: exec ai-assistant -p "..."          → get session ID (e.g. "marine-sage")
 Step 2: IMMEDIATELY reply to user     → "On it! Working on that now."
 Step 3: END your turn                 → do NOT use any more tools
 Step 4: When user sends next message  → check with: exec "process poll marine-sage --timeout 1000"
@@ -105,15 +103,15 @@ Step 5: If done → relay results. If not done → tell user "still working", co
 ### WRONG (causes blocking)
 
 ```text
-exec claude -p "..." → process poll → (BLOCKED! user waits with no response)
+exec ai-assistant -p "..." → process poll → (BLOCKED! user waits with no response)
 ```
 
 ### Rules
 
-1. After `exec claude -p`, you MUST reply to user and END your turn. No more tool calls.
+1. After `exec ai-assistant -p`, you MUST reply to user and END your turn. No more tool calls.
 2. NEVER use `process` tool directly. Use `exec "process poll <id> --timeout 1000"` on next user message.
 3. Only check the delegate's status when the user sends a NEW message.
-4. You can run multiple `claude -p` tasks in parallel.
+4. You can run multiple `ai-assistant -p` tasks in parallel.
 
 ## Task Description Rules
 
@@ -139,8 +137,8 @@ Why: The author has context bias. A fresh session reads the source code independ
 ### Flow
 
 ```text
-Step 1: claude -p "Write X in projects/X/"              → Author session (can use --continue to iterate)
-Step 2: claude -p "Run and test projects/X/, report bugs" → Tester session (ALWAYS fresh, NO --continue)
+Step 1: ai-assistant -p "Write X in projects/X/"              → Author session (can use --continue to iterate)
+Step 2: ai-assistant -p "Run and test projects/X/, report bugs" → Tester session (ALWAYS fresh, NO --continue)
 ```
 
 ### Rules
@@ -181,11 +179,11 @@ Keep technical summary concise. Do not copy the delegate's full output verbatim.
 
 | Error | Action |
 | --- | --- |
-| `command not found` | Tell user to install: `npm install -g @anthropic-ai/claude-code` |
+| `command not found` | Tell user to install: `npm install -g @ai-provider-ai/ai-assistant-code` |
 | Empty output | Ask user to clarify the task |
 | Timeout | Suggest breaking into smaller tasks |
 | Permission error | Ask user to check file path |
-| API error | Ask user to run `claude` to check login status |
+| API error | Ask user to run `ai-assistant` to check login status |
 
 ## Failure Rule
 
@@ -206,10 +204,10 @@ Retry with longer timeout or simpler task description. Only write code yourself 
 ## 依赖说明
 
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **Agent平台**: 支持SKILL.md的任意AI Agent(ai-assistant Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -220,3 +218,55 @@ Retry with longer timeout or simpler task description. Only write code yourself 
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+
+- 触发关键词: programming, tasks, code, ai-assistant, delegate
+
+## 适用场景
+
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 示例
+
+### 示例1：基础用法
+
+```
+输入: 用户请求
+处理: 根据使用流程执行
+输出: 处理结果
+```
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+
+### Q1: 如何开始使用Claude Code Delegate？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: ai-assistant Code Delegate有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用

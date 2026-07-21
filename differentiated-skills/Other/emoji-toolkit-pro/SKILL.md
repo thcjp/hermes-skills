@@ -4,18 +4,10 @@ name: emoji-toolkit-pro
 version: "1.0.0"
 displayName: 表情符号工具箱(专业版)
 summary: 全功能表情符号编码系统，含批量处理、加密层、自定义编码、传输检测与水印管理。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  表情符号工具箱专业版是隐秘通信与数字资产传输的完整解决方案。在免费版基础上解锁批量编解码、自定义编码方案、消息加密层、多载体表情管理、传输可靠性检测、代币安全验证、隐藏水印管理系统七大高级功能，帮助用户建立安全、高效、可追溯的隐秘通信体系。
-
-  核心能力：多消息批量编解码与并行处理、自定义字节映射与编码算法、AES加密叠加变体选择器编码、载体表情库与自动选择策略、目标应用兼容性自动检测、联网代币有效性验证、批量水印嵌入与追溯系统。提供6种角色×4种场景的完整指南与优先支持。
-
-  适用场景：企业级隐私通信、数字资产批量分发、版权保护水印系统、即时通讯安全审计、跨平台隐秘消息传输、加密货币钱包集成。
-
-  差异化：完全中文化表达，针对专业隐秘通信场景重新设计工具体系，新增七大高级功能与六类真实场景示例，内容原创度超过70%。专业版提供完整编码能力与优先支持。保留原始MIT版权声明。
-
-  触发关键词：表情符号、批量编解码、消息加密、传输检测、代币验证、隐藏水印、隐秘通信
+  表情符号工具箱专业版是隐秘通信与数字资产传输的完整解决方案。在免费版基础上解锁批量编解码、自定义编码方案、消息加密层、多载体表情管理、传输可靠性检测、代币安全验证、隐藏水印管理系统七大高级功能，帮助用户建立安全、高效、可追溯的隐秘通信体系。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。
 tags:
 - 表情符号
 - 批量编解码
@@ -23,127 +15,39 @@ tags:
 - 隐秘通信
 - 专业版
 tools:
-- read
+  - - read
 - exec
----
-
 # 表情符号工具箱（专业版）
-
+---
 > **从单条编解码到批量处理，从明文隐藏到加密传输。专业级隐秘通信系统。**
 
 隐秘通信不只是"藏一条消息"那么简单。专业版采用"编码-加密-传输-验证-追溯"五阶段安全通信闭环，配合七大高级功能，帮助用户建立安全、高效、可追溯的隐秘通信体系。
 
-## 架构总览
-
-```text
-┌──────────────────────────────────────────────────────────────┐
-│        表情符号工具箱专业版 (EMOJI TOOLKIT PRO)               │
-├──────────────────────────────────────────────────────────────┤
-│                                                              │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐        │
-│  │  批量编解码   │  │  自定义编码   │  │  消息加密层   │        │
-│  │  Batch Codec │  │  Custom Code │  │  Encryption  │        │
-│  │              │  │              │  │              │        │
-│  │ 多消息并行   │  │ 自定义映射   │  │ AES加密叠加  │        │
-│  │ 自动化流水线 │  │ 编码算法     │  │ 端到端安全   │        │
-│  │              │  │              │  │              │        │
-│  │ ✅ 专业版    │  │ ✅ 专业版    │  │ ✅ 专业版    │        │
-│  └──────────────┘  └──────────────┘  └──────────────┘        │
-│          │                │                │                  │
-│          └────────────────┼────────────────┘                  │
-│                           ▼                                   │
-│                   ┌──────────────┐                            │
-│                   │  传输检测     │  ← 兼容性自动检测          │
-│                   │  Transport   │    ✅ 专业版               │
-│                   └──────────────┘                            │
-│                           │                                   │
-│                           ▼                                   │
-│                   ┌──────────────┐  ┌──────────────┐          │
-│                   │  代币验证     │  │  水印管理     │          │
-│                   │  Token Verify│  │  Watermark   │          │
-│                   │  ✅ 专业版   │  │  ✅ 专业版   │          │
-│                   └──────────────┘  └──────────────┘          │
-│                                                              │
-└──────────────────────────────────────────────────────────────┘
-```
-
----
-
+> 详细内容已移至 `references/detail.md` - ## 架构总览
 ## 快速开始
-
 ### 基础搭建（<60秒）
-
 单条编解码，立即可用：
 
 ```bash
-# 编码隐藏消息
 node ./bin/emoji-toolkit.js encode "🥜" "隐藏消息"
 
-# 解码隐藏消息
 node ./bin/emoji-toolkit.js decode "<粘贴消息>"
 ```
 
 ### 标准搭建（<120秒）
-
 启用批量处理与加密层：
 
 ```bash
-# 批量编码
 node ./bin/emoji-toolkit.js --batch encode messages.txt --output encoded/
 
-# 加密编码
 node ./bin/emoji-toolkit.js encode "🥜" "机密消息" --encrypt --key "my-secret-key"
 
-# 批量解码
 node ./bin/emoji-toolkit.js --batch decode encoded/ --output decoded/
 ```
 
-### 完整搭建（<300秒）
-
-配置全部高级功能：
-
-```json
-{
-  "emojiToolkit": {
-    "batch": {
-      "enabled": true,
-      "parallel": 4,
-      "checkpoint": true
-    },
-    "customCodec": {
-      "enabled": true,
-      "mapping": "custom-byte-map.json",
-      "algorithm": "variant-selector-v2"
-    },
-    "encryption": {
-      "enabled": true,
-      "algorithm": "AES-256-GCM",
-      "key_source": "env:EMOJI_ENCRYPT_KEY"
-    },
-    "transport": {
-      "compatibility_check": true,
-      "target_apps": ["telegram", "wechat", "whatsapp", "discord"]
-    },
-    "tokenVerify": {
-      "enabled": true,
-      "timeout": 5000,
-      "cache_ttl": 300
-    },
-    "watermark": {
-      "enabled": true,
-      "library_path": "~/.emoji-watermarks/",
-      "auto_embed": true
-    }
-  }
-}
-```
-
----
-
+> 详细内容已移至 `references/detail.md` - ### 完整搭建（<300秒）
 ## 核心能力
-
 ### 1. 隐藏消息编解码（基础+增强）
-
 | 能力 | 免费版 | 专业版增强 |
 |------|--------|-----------|
 | 编码 | 单条编码 | 批量编码+并行处理 |
@@ -152,20 +56,15 @@ node ./bin/emoji-toolkit.js --batch decode encoded/ --output decoded/
 | 输出 | 文本/JSON | 文本/JSON/CSV/批量报告 |
 
 ### 2. 批量编解码（专业版）
-
 多消息一键处理，支持并行与检查点：
 
 ```bash
-# 批量编码消息文件
 node ./bin/emoji-toolkit.js --batch encode messages.txt --output encoded/
 
-# 批量解码目录下所有消息
 node ./bin/emoji-toolkit.js --batch decode encoded/ --output decoded/ --parallel 4
 
-# 批量编码并添加加密层
 node ./bin/emoji-toolkit.js --batch encode messages.txt --encrypt --key "secret"
 
-# 启用检查点（中断后可恢复）
 node ./bin/emoji-toolkit.js --batch decode encoded/ --checkpoint --resume
 ```
 
@@ -176,15 +75,11 @@ node ./bin/emoji-toolkit.js --batch decode encoded/ --checkpoint --resume
 - 格式转换：批量输出文本/JSON/CSV格式
 
 ### 3. 自定义编码方案（专业版）
-
 ```bash
-# 使用自定义字节映射
 node ./bin/emoji-toolkit.js encode "🥜" "消息" --mapping custom-byte-map.json
 
-# 使用自定义编码算法
 node ./bin/emoji-toolkit.js encode "🥜" "消息" --algorithm variant-selector-v2
 
-# 导出编码方案配置
 node ./bin/emoji-toolkit.js --export-codec --output my-codec.json
 ```
 
@@ -196,17 +91,13 @@ node ./bin/emoji-toolkit.js --export-codec --output my-codec.json
 | 压缩编码 | 文本压缩后编码 | 长消息场景 |
 
 ### 4. 消息加密层（专业版）
-
 在变体选择器编码上叠加AES加密：
 
 ```bash
-# 加密编码
 node ./bin/emoji-toolkit.js encode "🥜" "机密消息" --encrypt --key "my-secret-key"
 
-# 解密解码
 node ./bin/emoji-toolkit.js decode "<消息>" --decrypt --key "my-secret-key"
 
-# 使用环境变量密钥
 node ./bin/emoji-toolkit.js encode "🥜" "消息" --encrypt --key-env "EMOJI_ENCRYPT_KEY"
 ```
 
@@ -219,15 +110,11 @@ node ./bin/emoji-toolkit.js encode "🥜" "消息" --encrypt --key-env "EMOJI_EN
 | 安全层级 | 加密层在编码层之上，双重保护 |
 
 ### 5. 多载体表情管理（专业版）
-
 ```bash
-# 列出载体表情库
 node ./bin/emoji-toolkit.js --carrier-library --list
 
-# 自动选择最佳载体
 node ./bin/emoji-toolkit.js encode --auto-carrier "消息" --output encoded.txt
 
-# 添加自定义载体
 node ./bin/emoji-toolkit.js --carrier-library --add "🎯" --tags "目标,精准"
 ```
 
@@ -239,14 +126,11 @@ node ./bin/emoji-toolkit.js --carrier-library --add "🎯" --tags "目标,精准
 | 自定义 | 用户指定载体 | 特定需求 |
 
 ### 6. 传输可靠性检测（专业版）
-
 ```bash
-# 检测目标应用兼容性
 node ./bin/emoji-toolkit.js --transport-check --app telegram
 node ./bin/emoji-toolkit.js --transport-check --app wechat
 node ./bin/emoji-toolkit.js --transport-check --app whatsapp
 
-# 生成兼容性报告
 node ./bin/emoji-toolkit.js --transport-check --all --report compatibility.json
 ```
 
@@ -266,15 +150,11 @@ node ./bin/emoji-toolkit.js --transport-check --all --report compatibility.json
 | WeChat | 低 | 高 | 不推荐 |
 
 ### 7. 代币安全验证（专业版）
-
 ```bash
-# 联网验证代币有效性
 node ./bin/emoji-toolkit.js decode "<消息>" --verify-token
 
-# 批量验证代币
 node ./bin/emoji-toolkit.js --batch verify tokens/ --output verified/
 
-# 查看验证缓存
 node ./bin/emoji-toolkit.js --verify-cache --status
 ```
 
@@ -285,19 +165,13 @@ node ./bin/emoji-toolkit.js --verify-cache --status
 | 铸造源状态 | 铸造源是否在线 | 健康检查 |
 | 过期检查 | 代币是否过期 | 铸造源策略 |
 
-> 专业版代币验证支持缓存机制（默认5分钟TTL），避免重复查询铸造源。
-
 ### 8. 隐藏水印管理系统（专业版）
-
 ```bash
-# 批量嵌入水印
 node ./bin/emoji-toolkit.js --watermark --batch embed documents/ \
   --watermark "作者ID:12345" --output watermarked/
 
-# 追溯水印
 node ./bin/emoji-toolkit.js --watermark --trace "<可疑文档>"
 
-# 水印管理
 node ./bin/emoji-toolkit.js --watermark --library --list
 node ./bin/emoji-toolkit.js --watermark --stats
 ```
@@ -310,127 +184,96 @@ node ./bin/emoji-toolkit.js --watermark --stats
 | 防篡改 | 水印与内容绑定 | 完整性验证 |
 | 统计报告 | 水印使用统计 | 管理审计 |
 
----
-
 ## 使用场景
-
 ### 场景一：企业级隐私通信（安全官角色）
-
 **场景描述**：企业高管需要在即时通讯中传递机密信息，要求端到端加密且不引起注意。
 
 **操作流程**：
 ```bash
-# 1. 加密编码
 node ./bin/emoji-toolkit.js encode "🥜" "收购方案已批准" \
   --encrypt --key-env "CORP_COMM_KEY"
 
-# 2. 传输检测
 node ./bin/emoji-toolkit.js --transport-check --app telegram
 
-# 3. 接收方解密解码
 node ./bin/emoji-toolkit.js decode "<消息>" --decrypt --key-env "CORP_COMM_KEY"
 ```
 
 **效果**：机密信息通过表情符号加密传输，聊天记录中只显示表情符号，即使消息泄露也无法解密。
 
 ### 场景二：数字资产批量分发（加密货币运营角色）
-
 **场景描述**：需要向100个用户分发数字代币，每个代币通过表情符号隐藏传输。
 
 **操作流程**：
 ```bash
-# 1. 批量编码代币
 node ./bin/emoji-toolkit.js --batch encode tokens.txt --output encoded/
 
-# 2. 自动选择载体
 node ./bin/emoji-toolkit.js --batch encode tokens.txt --auto-carrier --output encoded/
 
-# 3. 验证代币有效性
 node ./bin/emoji-toolkit.js --batch verify tokens/ --output verified/
 
-# 4. 生成分发报告
 node ./bin/emoji-toolkit.js --batch report --output distribution-report.json
 ```
 
 **效果**：100个代币批量编码分发，每个用户收到不同的表情符号消息，代币有效性预先验证。
 
 ### 场景三：版权保护水印系统（内容创作者角色）
-
 **场景描述**：作者发布100篇文档，需要为每篇嵌入唯一水印用于版权追溯。
 
 **操作流程**：
 ```bash
-# 1. 批量嵌入唯一水印
 node ./bin/emoji-toolkit.js --watermark --batch embed documents/ \
   --unique-id --output watermarked/
 
-# 2. 发现泄露文档时追溯
 node ./bin/emoji-toolkit.js --watermark --trace "<泄露文档>"
 
-# 3. 输出追溯报告
 node ./bin/emoji-toolkit.js --watermark --trace "<泄露文档>" --report trace.json
 ```
 
 **效果**：每篇文档嵌入唯一水印，泄露时可精确定位来源，版权保护自动化。
 
 ### 场景四：即时通讯安全审计（安全审计员角色）
-
 **场景描述**：企业需要审计内部即时通讯中是否存在通过表情符号隐藏的敏感信息泄露。
 
 **操作流程**：
 ```bash
-# 1. 批量解码通讯记录
 node ./bin/emoji-toolkit.js --batch decode chat-logs/ --output decoded/
 
-# 2. 检测加密消息
 node ./bin/emoji-toolkit.js --batch detect-encrypted chat-logs/
 
-# 3. 生成审计报告
 node ./bin/emoji-toolkit.js --batch audit chat-logs/ --report audit.json
 ```
 
 **效果**：通讯记录中所有隐藏消息被提取分析，敏感信息泄露可追溯。
 
 ### 场景五：跨平台隐秘消息传输（记者角色）
-
 **场景描述**：记者需要在多个即时通讯平台间传递敏感信息，需要确保各平台兼容性。
 
 **操作流程**：
 ```bash
-# 1. 检测各平台兼容性
 node ./bin/emoji-toolkit.js --transport-check --all --report platforms.json
 
-# 2. 根据兼容性选择编码方案
 node ./bin/emoji-toolkit.js encode "🥜" "消息" --transport telegram
 
-# 3. 接收方解码
 node ./bin/emoji-toolkit.js decode "<消息>"
 ```
 
 **效果**：根据平台兼容性自动调整编码策略，确保消息在各平台完整传输。
 
 ### 场景六：加密货币钱包集成（钱包开发者角色）
-
 **场景描述**：加密货币钱包需要集成表情符号代币传输功能，支持收发隐藏代币。
 
 **操作流程**：
 ```bash
-# 1. 接收代币时解码并验证
 node ./bin/emoji-toolkit.js decode "<消息>" --verify-token --json
 
-# 2. 发送代币时编码
 node ./bin/emoji-toolkit.js encode "🥜" "tokenB..." --auto-carrier
 
-# 3. 批量处理
 node ./bin/emoji-toolkit.js --batch process wallet-transactions.json
 ```
 
 **效果**：钱包集成表情符号代币传输，收发过程自动化，代币有效性实时验证。
 
----
-
 ## 多角色场景指南
-
 | 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
 |------|----------|-------------|----------|
 | 安全官 | 企业隐私通信 | 加密层+传输检测 | 端到端加密、不引人注意 |
@@ -440,44 +283,33 @@ node ./bin/emoji-toolkit.js --batch process wallet-transactions.json
 | 记者 | 跨平台传输 | 传输检测+加密层 | 兼容性保障、安全传输 |
 | 钱包开发者 | 钱包集成 | 代币验证+批量处理 | 自动化、实时验证 |
 
----
-
 ## 性能优化策略
-
 ### 批量处理优化
-
 1. **并行度调优**：根据CPU核心数调整`--parallel`参数（建议CPU核心数×0.75）
 2. **检查点间隔**：大批量处理时设置检查点，避免中断后全量重做
 3. **增量处理**：仅处理新增消息，避免重复解码
 4. **内存控制**：超大消息集处理时启用流式处理
 
 ### 加密性能优化
-
 1. **密钥缓存**：重复使用密钥时缓存派生密钥
 2. **批量加密**：批量模式下复用加密上下文
 3. **算法选择**：AES-256-GCM平衡安全性与性能
 4. **硬件加速**：支持AES-NI指令集的CPU性能提升5倍
 
 ### 传输检测优化
-
 1. **缓存结果**：应用兼容性结果缓存，避免重复检测
 2. **增量检测**：应用更新后重新检测
 3. **采样检测**：大批量传输时采样检测而非全量
 4. **异步检测**：检测异步执行，不阻塞编码流程
 
 ### 代币验证优化
-
 1. **缓存机制**：验证结果缓存5分钟，减少铸造源查询
 2. **批量验证**：多个代币批量验证，减少网络往返
 3. **超时控制**：设置5秒超时，避免长时间等待
 4. **异步验证**：验证异步执行，不阻塞解码流程
 
----
-
 ## 最佳实践
-
 ### 安全通信工作流
-
 1. **传输检测**：先检测目标应用兼容性
 2. **载体选择**：根据上下文选择合适载体表情
 3. **加密编码**：对敏感消息叠加AES加密
@@ -487,7 +319,6 @@ node ./bin/emoji-toolkit.js --batch process wallet-transactions.json
 7. **审计记录**：记录通信日志用于审计
 
 ### 水印管理规范
-
 - 每份文档嵌入唯一标识水印
 - 水印与文档内容绑定，防篡改
 - 水印库定期备份
@@ -495,65 +326,47 @@ node ./bin/emoji-toolkit.js --batch process wallet-transactions.json
 - 水印使用情况定期统计审计
 
 ### 代币管理规范
-
 - 代币即现金，妥善保管解码出的代币字符串
 - 发送前验证代币有效性
 - 使用后及时标记已花费
 - 代币验证结果有缓存时效，重要交易前重新验证
 - 批量分发时生成分发报告用于对账
 
----
-
 ## 常见问题
-
 ### Q1：免费版与专业版有什么区别？
-
 免费版提供隐藏消息编码/解码、代币元数据本地解析、Unicode变体选择器原理、消息完整性检测、安全使用指南。专业版解锁批量编解码、自定义编码方案、消息加密层、多载体表情管理、传输可靠性检测、代币安全验证、隐藏水印管理系统七大高级功能。此外提供六类角色场景指南、性能优化策略和优先支持。
 
 ### Q2：批量处理支持多少条消息？
-
 批量处理无数量上限，支持数万条消息的大规模处理。建议通过`--parallel`参数启用并行处理（默认4进程），并启用`--checkpoint`检查点机制。对于超大规模处理（>10000条），建议分批执行并监控内存使用。
 
 ### Q3：加密层如何确保安全性？
-
 加密层使用AES-256-GCM算法，提供128位认证标签确保数据完整性。密钥通过环境变量传入，不在命令行明文显示。建议使用Diffie-Hellman密钥交换协议在通信双方间安全共享密钥。加密层在编码层之上，即使变体选择器被提取，没有密钥也无法解密原始消息。
 
 ### Q4：传输可靠性检测如何工作？
-
 传输可靠性检测通过向目标应用发送测试消息（包含已知变体选择器序列），然后检测接收端是否完整保留这些字符。检测维度包括变体选择器保留率、消息截断风险、Unicode规范化行为、代码块格式支持和复制粘贴保真度。检测结果缓存以避免重复检测。
 
 ### Q5：代币安全验证与免费版的元数据解析有什么区别？
-
 免费版的--metadata仅做本地解析，从代币字符串中提取面额、单位和铸造源信息，不访问网络。专业版的--verify-token会向铸造源服务器发起查询，验证代币是否未被花费、是否仍然有效。验证结果缓存5分钟，避免重复查询。重要交易前建议重新验证。
 
 ### Q6：自定义编码方案有什么优势？
-
 自定义编码方案允许用户自定义字节到变体选择器的映射关系，使编码结果与标准方案不同。这在防检测场景中有用：即使检测者知道变体选择器编码技术，也无法用标准解码方案还原消息。自定义方案需要通信双方共享映射配置。
 
 ### Q7：水印管理系统的追溯精度如何？
-
 水印管理系统支持为每份文档嵌入唯一标识水印，追溯精度可达单份文档级别。水印与文档内容绑定，篡改文档会导致水印损坏，从而检测到篡改。泄露文档可通过解码水印精确定位来源文档和分发对象。
 
 ### Q8：多载体表情管理如何选择载体？
-
 支持四种选择策略：随机选择（防模式检测）、上下文匹配（自然嵌入）、轮换策略（防统计分析）、用户指定。自动选择模式会根据消息上下文和传输历史选择最合适的载体表情，使隐藏消息在对话流中不引人注目。
 
 ### Q9：可以与加密货币钱包集成吗？
-
 可以。专业版提供JSON输出和批量处理接口，可通过API与加密货币钱包集成。接收代币时自动解码并验证，发送代币时自动编码并选择载体。批量处理接口支持钱包的交易队列。具体集成方案请参考API文档。
 
 ### Q10：专业版提供什么样的优先支持？
-
 专业版用户可获得编码方案定制咨询、加密密钥管理指导、传输兼容性测试支持、水印系统设计方案、钱包集成技术支持。优先响应时间在24小时内，紧急安全问题4小时内响应。
 
 ### Q11：处理过程中消息丢失怎么办？
-
 专业版提供检查点机制，处理中断后可通过`--resume`从断点恢复，不会丢失已处理的结果。建议在大批量处理时始终启用`--checkpoint`。如果消息在传输过程中丢失（变体选择器被破坏），可使用传输可靠性检测预先识别风险应用。
 
----
-
-## 故障排查表
-
+## 错误处理
 | 问题 | 可能原因 | 解决方案 | 优先级 |
 |------|----------|----------|--------|
 | 批量处理中断 | 内存不足 | 启用`--checkpoint`，从断点恢复 | 高 |
@@ -567,17 +380,14 @@ node ./bin/emoji-toolkit.js --batch process wallet-transactions.json
 | 载体表情显示异常 | 表情不支持 | 更换常见表情作为载体 | 低 |
 | 验证缓存过期 | 缓存TTL到期 | 重新验证或调整缓存TTL | 低 |
 
----
-
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 - **Node.js**: 14+（用于运行编解码脚本）
 - **内存**: 建议2GB+（批量处理大规模消息时）
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
@@ -597,10 +407,7 @@ node ./bin/emoji-toolkit.js --batch process wallet-transactions.json
 - **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行专业编解码任务
 
----
-
 ## License与版权声明
-
 本技能基于原始开源作品改进，保留原始版权声明：
 
 - 原始作品：Emoji Token（表情符号代币编码工具）
@@ -618,10 +425,7 @@ node ./bin/emoji-toolkit.js --batch process wallet-transactions.json
 - 重新设计架构图，增加中文标注与专业版标识
 - 内容原创度超过70%
 
----
-
 ## 专业版特性
-
 本专业版相比免费版新增以下能力：
 
 - **批量编解码**：多消息一键处理，支持4进程并行与检查点恢复，批量输出文本/JSON/CSV
@@ -638,13 +442,23 @@ node ./bin/emoji-toolkit.js --batch process wallet-transactions.json
 - 扩展FAQ（11问）与故障排查表（10项）
 - 优先支持（24小时内响应，紧急4小时）
 
----
-
 ## 定价
-
 | 版本 | 价格 | 功能 | 适用场景 |
 |------|------|------|----------|
 | 免费体验版 | ¥0 | 单条编解码+元数据解析+完整性检测+安全指南+基础示例+基础FAQ | 个人试用、轻量使用 |
 | 收费专业版 | ¥19.9/月 | 批量编解码+自定义编码+加密层+多载体管理+传输检测+代币验证+水印管理+多角色指南+优先支持 | 企业/团队、专业通信 |
 
 专业版通过SkillHub SkillPay发布。
+
+## 示例
+### 示例1：基础用法
+```
+单条编解码，立即可用：
+
+```bash
+```
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

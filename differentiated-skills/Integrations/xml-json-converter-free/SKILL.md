@@ -4,24 +4,16 @@ name: xml-json-converter-free
 version: "1.0.0"
 displayName: XML转JSON(免费版)
 summary: 轻量级XML与JSON互转工具，覆盖属性处理、命名空间与单文件转换，60秒上手。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  XML转JSON免费版是一款面向独立开发者与后端工程师的轻量级结构化数据格式互转工具。围绕"双向转换—属性处理—命名空间—单文件处理"四件事，提供可复制即用的Python/Node.js脚本模板、XML属性与文本节点的转换规则、命名空间处理策略，以及一份覆盖12类常见XML结构（含CDATA、注释、处理指令、DTD）的转换速查表。
-
-  核心能力：XML与JSON双向转换；属性转 `@attr` 前缀、文本转 `#text` 键的BadgerFish约定；命名空间前缀保留或剥离；CDATA与注释处理；转换结果即时校验与可视化预览。
-
-  适用场景：SOAP/WebService响应转JSON给前端消费、Sitemap与RSS解析、旧系统XML接口适配现代JSON API、配置文件格式迁移、Office文档（docx/xlsx）的XML结构解析、独立开发者脚本化数据处理。
-
-  差异化：完全中文化重写，去除原始项目标识与外部仓库引用，将分散的命令行参考整合为按场景分类的脚本模板与速查表，新增属性处理约定、命名空间策略与CDATA处理规则。免费版聚焦"能跑通"的单文件互转核心诉求，专业版在此基础上扩展批量转换、XSD校验、XPath映射与流式处理。内容原创度超过70%。
-
-  触发关键词：xml转json、json转xml、soap解析、命名空间、属性处理、cdata、sitemap解析
+  XML转JSON免费版是一款面向独立开发者与后端工程师的轻量级结构化数据格式互转工具。围绕"双向转换—属性处理—命名空间—单文件处理"四件事，提供可复制即用的Python/Node。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - 数据转换
 - 格式适配
 - 集成工具
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -235,7 +227,7 @@ XML允许属性和子元素同名（如 `<a id="1"><id>2</id></a>`）。BadgerFi
 - **Python**: 3.8+（推荐3.10+）
 - **Node.js**: 16+（若使用Node.js模板，推荐 `fast-xml-parser`）
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（免费版路由GPT-4o-mini） |
@@ -277,7 +269,7 @@ XML允许属性和子元素同名（如 `<a id="1"><id>2</id></a>`）。BadgerFi
 
 ---
 
-## 免费版限制
+## 已知限制
 
 本免费体验版限制以下高级功能：
 
@@ -289,3 +281,40 @@ XML允许属性和子元素同名（如 `<a id="1"><id>2</id></a>`）。BadgerFi
 - 数据库直写（转换后直接写入 `PostgreSQL`/MySQL）—— 专业版提供 `db-sink` 模块
 
 解锁全部功能请使用专业版：xml-json-converter-pro
+
+## 示例
+
+### 示例1：基础用法
+
+```
+### 30秒上手：XML转JSON
+
+直接对Agent说：
+
+> "帮我把 response.xml 转成 JSON，属性用 @ 前缀。"
+
+Agent会按本工具的模板规则输出：
+
+```python
+import xmltodict, json
+
+def xml_to_json(xml_path: str, json_path: str, attr_prefix: str = '@'):
+    """XML转JSON（BadgerFish约定）"""
+    with open(xml_path, 'r', encoding='utf-8') as f:
+        xml_content = f.read()
+    # xmltodict 默认用 @ 作为属性前缀，#text 作为文本键
+    data = xmltodict.parse(
+        xml_content,
+        attr_prefix=attr_prefix,
+        cdata_key='#text',
+        process_namespaces=False
+  
+```
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

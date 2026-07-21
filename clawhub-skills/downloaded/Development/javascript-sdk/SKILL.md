@@ -7,41 +7,18 @@ summary: JavaScript/TypeScript SDK for inference.sh - run AI apps, build agents,
   150+ models. Pa...
 license: MIT
 description: |-
-  JavaScript/TypeScript SDK for inference.sh - run AI apps, build agents,
-  integrate 150+ models. Pa...
-
-  核心能力:
-
-  - 开发工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 代码审查、开发规范、项目管理
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: apps, inference, typescript, sdk, build, javascript
+  JavaScript/TypeScript SDK for inference。sh - run AI apps, build agents,
+  integrate 150+ models。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
 - Development
 tools:
-- read
+  - - read
 - exec
----
-
 # Javascript Sdk
-
+---
 Build AI applications with the [inference.sh](https://inference.sh) JavaScript/TypeScript SDK.
 
 ## Quick Start
-
 ```bash
 npm install @inferencesh/sdk
 ```
@@ -60,7 +37,6 @@ console.log(result.output);
 ```
 
 ## Installation
-
 ```bash
 npm install @inferencesh/sdk
 yarn add @inferencesh/sdk
@@ -70,7 +46,6 @@ pnpm add @inferencesh/sdk
 **Requirements:** Node.js 18.0.0+ (or modern browser with fetch)
 
 ## Authentication
-
 ```typescript
 import { inference } from '@inferencesh/sdk';
 
@@ -87,9 +62,7 @@ const client = inference({ proxyUrl: '/api/inference/proxy' });
 Get your API key: Settings → API Keys → Create API Key
 
 ## Running Apps
-
 ### Basic Execution
-
 ```typescript
 const result = await client.run({
   app: 'infsh/flux-schnell',
@@ -101,7 +74,6 @@ console.log(result.output);  // Output data
 ```
 
 ### Fire and Forget
-
 ```typescript
 const task = await client.run({
   app: 'google/veo-3-1-fast',
@@ -113,7 +85,6 @@ console.log(`Task ID: ${task.id}`);
 ```
 
 ### Streaming Progress
-
 ```typescript
 const stream = await client.run({
   app: 'google/veo-3-1-fast',
@@ -129,7 +100,6 @@ for await (const update of stream) {
 ```
 
 ### Run Parameters
-
 | Parameter | Type | Description |
 | --- | --- | --- |
 | `app` | string | App ID (namespace/name@version) |
@@ -140,9 +110,7 @@ for await (const update of stream) {
 | `session_timeout` | number | Idle timeout (1-3600 seconds) |
 
 ## File Handling
-
 ### Automatic Upload
-
 ```typescript
 const result = await client.run({
   app: 'image-processor',
@@ -154,107 +122,31 @@ const result = await client.run({
 
 ### Manual Upload
 
-```typescript
-// Basic upload
-const file = await client.uploadFile('/path/to/image.png');
-
-// With options
-const file = await client.uploadFile('/path/to/image.png', {
-  filename: 'custom_name.png',
-  contentType: 'image/png',
-  public: true
-});
-
-const result = await client.run({
-  app: 'image-processor',
-  input: { image: file.uri }
-});
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### Browser File Upload
-
 ```typescript
 const input = document.querySelector('input[type="file"]');
 const file = await client.uploadFile(input.files[0]);
 ```
 
 ## Sessions (Stateful Execution)
-
 Keep workers warm across multiple calls:
 
-```typescript
-// Start new session
-const result = await client.run({
-  app: 'my-app',
-  input: { action: 'init' },
-  session: 'new',
-  session_timeout: 300  // 5 minutes
-});
-const sessionId = result.session_id;
-
-// Continue in same session
-const result2 = await client.run({
-  app: 'my-app',
-  input: { action: 'process' },
-  session: sessionId
-});
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ## Agent SDK
-
 ### Template Agents
-
 Use pre-built agents from your workspace:
 
-```typescript
-const agent = client.agent('my-team/support-agent@latest');
-
-// Send message
-const response = await agent.sendMessage('Hello!');
-console.log(response.text);
-
-// Multi-turn conversation
-const response2 = await agent.sendMessage('Tell me more');
-
-// Reset conversation
-agent.reset();
-
-// Get chat history
-const chat = await agent.getChat();
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### Ad-hoc Agents
-
 Create custom agents programmatically:
 
-```typescript
-import { tool, string, number, appTool } from '@inferencesh/sdk';
-
-// Define tools
-const calculator = tool('calculate')
-  .describe('Perform a calculation')
-  .param('expression', string('Math expression'))
-  .build();
-
-const imageGen = appTool('generate_image', 'infsh/flux-schnell@latest')
-  .describe('Generate an image')
-  .param('prompt', string('Image description'))
-  .build();
-
-// Create agent
-const agent = client.agent({
-  core_app: { ref: 'infsh/claude-sonnet-4@latest' },
-  system_prompt: 'You are a helpful assistant.',
-  tools: [calculator, imageGen],
-  temperature: 0.7,
-  max_tokens: 4096
-});
-
-const response = await agent.sendMessage('What is 25 * 4?');
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### Available Core Apps
-
 | Model | App Reference |
 | --- | --- |
 | Claude Sonnet 4 | `infsh/claude-sonnet-4@latest` |
@@ -263,30 +155,11 @@ const response = await agent.sendMessage('What is 25 * 4?');
 | GPT-4o Mini | `infsh/gpt-4o-mini@latest` |
 
 ## Tool Builder API
-
 ### Parameter Types
 
-```typescript
-import {
-  string, number, integer, boolean,
-  enumOf, array, obj, optional
-} from '@inferencesh/sdk';
-
-const name = string('User\'s name');
-const age = integer('Age in years');
-const score = number('Score 0-1');
-const active = boolean('Is active');
-const priority = enumOf(['low', 'medium', 'high'], 'Priority');
-const tags = array(string('Tag'), 'List of tags');
-const address = obj({
-  street: string('Street'),
-  city: string('City'),
-  zip: optional(string('ZIP'))
-}, 'Address');
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### Client Tools (Run in Your Code)
-
 ```typescript
 const greet = tool('greet')
   .display('Greet User')
@@ -297,7 +170,6 @@ const greet = tool('greet')
 ```
 
 ### App Tools (Call AI Apps)
-
 ```typescript
 const generate = appTool('generate_image', 'infsh/flux-schnell@latest')
   .describe('Generate an image from text')
@@ -309,7 +181,6 @@ const generate = appTool('generate_image', 'infsh/flux-schnell@latest')
 ```
 
 ### Agent Tools (Delegate to Sub-agents)
-
 ```typescript
 import { agentTool } from '@inferencesh/sdk';
 
@@ -320,7 +191,6 @@ const researcher = agentTool('research', 'my-org/researcher@v1')
 ```
 
 ### Webhook Tools (Call External APIs)
-
 ```typescript
 import { webhookTool } from '@inferencesh/sdk';
 
@@ -334,28 +204,9 @@ const notify = webhookTool('slack', 'https://hooks.slack.com/...')
 
 ### Internal Tools (Built-in Capabilities)
 
-```typescript
-import { internalTools } from '@inferencesh/sdk';
-
-const config = internalTools()
-  .plan()
-  .memory()
-  .webSearch(true)
-  .codeExecution(true)
-  .imageGeneration({
-    enabled: true,
-    appRef: 'infsh/flux@latest'
-  })
-  .build();
-
-const agent = client.agent({
-  core_app: { ref: 'infsh/claude-sonnet-4@latest' },
-  internal_tools: config
-});
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ## Streaming Agent Responses
-
 ```typescript
 const response = await agent.sendMessage('Explain quantum computing', {
   onMessage: (msg) => {
@@ -373,51 +224,16 @@ const response = await agent.sendMessage('Explain quantum computing', {
 
 ## File Attachments
 
-```typescript
-// From file path (Node.js)
-import { readFileSync } from 'fs';
-const response = await agent.sendMessage('What\'s in this image?', {
-  files: [readFileSync('image.png')]
-});
-
-// From base64
-const response = await agent.sendMessage('Analyze this', {
-  files: ['data:image/png;base64,iVBORw0KGgo...']
-});
-
-// From browser File object
-const input = document.querySelector('input[type="file"]');
-const response = await agent.sendMessage('Describe this', {
-  files: [input.files[0]]
-});
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ## Skills (Reusable Context)
 
-```typescript
-const agent = client.agent({
-  core_app: { ref: 'infsh/claude-sonnet-4@latest' },
-  skills: [
-    {
-      name: 'code-review',
-      description: 'Code review guidelines',
-      content: '# Code Review\n\n1. Check security\n2. Check performance...'
-    },
-    {
-      name: 'api-docs',
-      description: 'API documentation',
-      url: 'https://example.com/skills/api-docs.md'
-    }
-  ]
-});
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ## Server Proxy (Frontend Apps)
-
 For browser apps, proxy through your backend to keep API keys secure:
 
 ### Client Setup
-
 ```typescript
 const client = inference({
   proxyUrl: '/api/inference/proxy'
@@ -426,7 +242,6 @@ const client = inference({
 ```
 
 ### Next.js Proxy (App Router)
-
 ```typescript
 // app/api/inference/proxy/route.ts
 import { createRouteHandler } from '@inferencesh/sdk/proxy/nextjs';
@@ -439,7 +254,6 @@ export const POST = route.POST;
 ```
 
 ### Express Proxy
-
 ```typescript
 import express from 'express';
 import { createProxyMiddleware } from '@inferencesh/sdk/proxy/express';
@@ -451,7 +265,6 @@ app.use('/api/inference/proxy', createProxyMiddleware({
 ```
 
 ### Supported Frameworks
-
 * Next.js (App Router & Pages Router)
 * Express
 * Hono
@@ -459,47 +272,15 @@ app.use('/api/inference/proxy', createProxyMiddleware({
 * SvelteKit
 
 ## TypeScript Support
-
 Full type definitions included:
 
-```typescript
-import type {
-  TaskDTO,
-  ChatDTO,
-  ChatMessageDTO,
-  AgentTool,
-  TaskStatusCompleted,
-  TaskStatusFailed
-} from '@inferencesh/sdk';
-
-if (result.status === TaskStatusCompleted) {
-  console.log('Done!');
-} else if (result.status === TaskStatusFailed) {
-  console.log('Failed:', result.error);
-}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ## Error Handling
 
-```typescript
-import { RequirementsNotMetException, InferenceError } from '@inferencesh/sdk';
-
-try {
-  const result = await client.run({ app: 'my-app', input: {...} });
-} catch (e) {
-  if (e instanceof RequirementsNotMetException) {
-    console.log('Missing requirements:');
-    for (const err of e.errors) {
-      console.log(`  - ${err.type}: ${err.key}`);
-    }
-  } else if (e instanceof InferenceError) {
-    console.log('API error:', e.message);
-  }
-}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ## Human Approval Workflows
-
 ```typescript
 const response = await agent.sendMessage('Delete all temp files', {
   onToolCall: async (call) => {
@@ -517,7 +298,6 @@ const response = await agent.sendMessage('Delete all temp files', {
 ```
 
 ## CommonJS Support
-
 ```javascript
 const { inference, tool, string } = require('@inferencesh/sdk');
 
@@ -526,7 +306,6 @@ const result = await client.run({...});
 ```
 
 ## Reference Files
-
 * [Agent Patterns](/api/v1/skills/javascript-sdk/file?path=references%2Fagent-patterns.md&ownerHandle=okaris) - Multi-agent, RAG, batch processing patterns
 * [Tool Builder](/api/v1/skills/javascript-sdk/file?path=references%2Ftool-builder.md&ownerHandle=okaris) - Complete tool builder API reference
 * [Server Proxy](/api/v1/skills/javascript-sdk/file?path=references%2Fserver-proxy.md&ownerHandle=okaris) - Next.js, Express, Hono, Remix, SvelteKit setup
@@ -537,7 +316,6 @@ const result = await client.run({...});
 * [React Integration](/api/v1/skills/javascript-sdk/file?path=references%2Freact-integration.md&ownerHandle=okaris) - Hooks, components, and patterns
 
 ## Related Skills
-
 ```bash
 * 安装此Skill请参考SkillHub平台指南
 
@@ -549,7 +327,6 @@ const result = await client.run({...});
 ```
 
 ## Documentation
-
 * [JavaScript SDK Reference](https://inference.sh/docs/api/sdk-javascript) - Full API documentation
 * [Agent SDK Overview](https://inference.sh/docs/api/agent-sdk) - Building agents
 * [Tool Builder Reference](https://inference.sh/docs/api/agent-tools) - Creating tools
@@ -559,12 +336,11 @@ const result = await client.run({...});
 * [File Uploads](https://inference.sh/docs/api/sdk/files) - File handling
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -575,3 +351,57 @@ const result = await client.run({...});
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+- JavaScript/TypeScript SDK for inference
+- sh - run AI apps, build agents,
+  integrate 150+ models
+- 触发关键词: apps, inference, typescript, sdk, build, javascript
+
+## 适用场景
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 示例
+### 示例1：基础用法
+```
+```bash
+npm install @inferencesh/sdk
+```
+
+```typescript
+import { inference } from '@inferencesh/sdk';
+
+const client = inference({ apiKey: 'inf_your_key' });
+
+// Run an AI app
+const result = await client.run({
+  app: 'infsh/flux-schnell',
+  input: { prompt: 'A sunset over mountains' }
+});
+console.log(result.output);
+```
+```
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+### Q1: 如何开始使用Javascript Sdk？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Javascript Sdk有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+- 性能取决于底层模型能力

@@ -4,7 +4,7 @@ name: ping-monitor-tool-free
 version: "1.0.0"
 displayName: 网络监控免费版
 summary: 网站可用性监控,支持ICMP/HTTP检测、告警通知与基础可视化
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人开发者与小团队的网站可用性监控工具。
@@ -19,10 +19,9 @@ tags:
 - 告警通知
 - 网站健康
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 网络监控 (免费版)
 
 ## 概述
@@ -189,7 +188,7 @@ class PingMonitor:
         }
 
 
-# 使用示例
+# 示例
 monitor = PingMonitor()
 monitor.config["targets"] = [
     {"name": "我的博客", "type": "http", "url": "https://example.com"},
@@ -249,6 +248,20 @@ OnUnitActiveSec=1min
 WantedBy=timers.target
 EOF
 ```
+
+## 不适用场景
+
+以下场景网络监控免费版不适合处理：
+
+- 实时流数据处理
+- 小规模数据手动分析
+- 非结构化文本情感分析
+
+
+## 触发条件
+
+需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求。
+
 
 ## 快速开始
 
@@ -444,7 +457,7 @@ def cleanup_old_data(data_dir, retention_days=30):
 - **操作系统**: Windows / macOS / Linux
 - **网络**: 需访问监控目标
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -471,3 +484,15 @@ export ALERT_EMAIL="you@example.com"
 - **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 通过自然语言指令驱动 Agent 执行网络监控,数据本地存储
 - **免费版限制**: 单用户、30 天数据、邮件告警、单地区检测、无 API 性能监控
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkillHub企业版 - Skill验证与测试报告</title>
+<style>
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --border: #334155;
+    --text: #e2e8f0;
+    --text-dim: #94a3b8;
+    --accent: #3b82f6;
+    --green: #10b981;
+    --red: #ef4444;
+    --yellow: #f59e0b;
+    --orange: #f97316;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    background: var(--bg); color: var(--text); 
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6; padding: 24px;
+}
+.container { max-width: 1200px; margin: 0 auto; }
+h1 { font-size: 28px; margin-bottom: 8px; }
+h2 { font-size: 22px; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+h3 { font-size: 17px; margin: 20px 0 12px; color: var(--accent); }
+.subtitle { color: var(--text-dim); font-size: 14px; margin-bottom: 32px; }
+.card { 
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px; margin-bottom: 16px;
+}
+.grid { display: grid; gap: 16px; }
+.grid-2 { grid-template-columns: 1fr 1fr; }
+.grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 768px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+.stat { text-align: center; padding: 20px; }
+.stat-num { font-size: 36px; font-weight: 700; }
+.stat-label { color: var(--text-dim); font-size: 13px; margin-top: 4px; }
+.green { color: var(--green); }
+.red { color: var(--red); }
+.yellow { color: var(--yellow); }
+.orange { color: var(--orange); }
+.blue { color: var(--accent); }
+table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); font-size: 13px; }
+th { color: var(--text-dim); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+tr:hover { background: rgba(255,255,255,0.03); }
+.badge { 
+    display: inline-block; padding: 2px 10px; border-radius: 20px; 
+    font-size: 12px; font-weight: 600;
+}
+.badge-green { background: rgba(16,185,129,0.15); color: var(--green); }
+.badge-red { background: rgba(239,68,68,0.15); color: var(--red); }
+.badge-yellow { background: rgba(245,158,11,0.15); color: var(--yellow); }
+.badge-blue { background: rgba(59,130,246,0.15); color: var(--accent); }
+code { 
+    background: rgba(59,130,246,0.1); padding: 2px 6px; border-radius: 4px; 
+    font-family: 'Consolas', monospace; font-size: 13px; color: var(--accent);
+}
+pre {
+    background: #0d1117; border: 1px solid var(--border); border-radius: 8px;
+    padding: 14px; overflow-x: auto; margin: 12px 0; font-size: 13px;
+}
+pre code { background: none; color: var(--text); }
+.warning-box {
+    background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3);
+    border-radius: 8px; padding: 16px; margin: 16px 0;
+}
+.error-box {
+    background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3);
+    border-radius: 8px; padding: 16px; margin: 16px 0;
+}
+.success-box {
+    background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3);
+    border-radius: 8px; padding: 16px; margin: 16px 0;
+}
+ul { padding-left: 20px; margin: 8px 0; }
+li { margin: 4px 0; }
+.footer { text-align: center; color: var(--text-dim); margin-top: 40px; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>SkillHub企业版 - Skill验证与测试报告</h1>
+<p class="subtitle">生成时间: 2026-07-20 | 组织ID: 862 | 报告类型: 实事求是分析</p>
+
+<!-- 核心数据 -->
+<h2>核心数据概览</h2>
+<div class="grid grid-4">
+    <div class="card stat">
+        <div class="stat-num blue">60</div>
+        <div class="stat-label">企业版Skill总数</div>
+    </div>
+    <div class="card stat">
+        <div class="stat-num green">271</div>
+        <div class="stat-label">案例展示总数</div>
+    </div>
+    <div class="card stat">
+        <div class="stat-num orange">44</div>
+        <div class="stat-label">发现问题并修复</div>
+    </div>
+    <div class="card stat">
+        <div class="stat-num red">0</div>
+        <div class="stat-label">已审核通过数</div>
+    </div>
+</div>
+
+<!-- 实事求是评估 -->
+<h2>实事求是评估</h2>
+<div class="card">
+<h3>关于"真实测试"的诚实回答</h3>
+<div class="warning-box">
+<strong>结论: 没有通过Skill执行管道进行端到端真实测试。</strong>
+</div>
+<p><strong>已完成的验证:</strong></p>
+<ul>
+    <li><strong>代码执行测试</strong>: 对14个代码类skill的33个案例,提取其中的Python/JavaScript代码并实际运行,验证代码可正确执行并产生预期输出。32/33通过(97%),5个bug已修复。</li>
+    <li><strong>格式合规审计</strong>: 对全部60个skill的271个案例,逐一对比案例输出结构与SKILL.md中声明的"## 输出格式",确保案例展示的JSON结构、字段名、字段类型与声明一致。39个格式问题已修复。</li>
+    <li><strong>声明文本修正</strong>: 原文"以下案例均经过LLM真实调用测试"不准确(案例由LLM按skill流程生成,非通过skill执行管道调用),已修正为"以下案例展示了skill的工作流程和预期输出效果,由LLM按照skill定义的流程生成"。60/60已修正。</li>
+</ul>
+<p><strong>未完成的验证:</strong></p>
+<ul>
+    <li>未通过SkillHub平台的skill执行管道进行端到端调用测试(平台无公开的skill测试API)</li>
+    <li>非代码类skill(文案/钩子/选题等)的案例质量为LLM一次性生成,未进行多轮迭代优化</li>
+    <li>未进行真实用户场景测试(实际Agent调用skill处理真实需求)</li>
+</ul>
+</div>
+
+<!-- 工作完成情况 -->
+<h2>工作完成情况</h2>
+<div class="grid grid-2">
+<div class="card">
+<h3>案例展示新增</h3>
+<table>
+<tr><th>分类</th><th>Skill数</th><th>案例数</th></tr>
+<tr><td>SkillHub原创</td><td>20</td><td>94</td></tr>
+<tr><td>开源改造</td><td>40</td><td>177</td></tr>
+<tr><td><strong>合计</strong></td><td><strong>60</strong></td><td><strong>271</strong></td></tr>
+</table>
+<p style="margin-top:8px;color:var(--text-dim);font-size:13px;">每个skill含3-5个案例,覆盖不同输入场景和输出类型</p>
+</div>
+<div class="card">
+<h3>问题修复统计</h3>
+<table>
+<tr><th>问题类型</th><th>数量</th><th>状态</th></tr>
+<tr><td>代码执行bug</td><td>5</td><td><span class="badge badge-green">全部修复</span></td></tr>
+<tr><td>格式不合规</td><td>21</td><td><span class="badge badge-green">全部修复</span></td></tr>
+<tr><td>数据不准确</td><td>10</td><td><span class="badge badge-green">全部修复</span></td></tr>
+<tr><td>声明文本错误</td><td>60</td><td><span class="badge badge-green">全部修复</span></td></tr>
+<tr><td>自夸标记</td><td>3</td><td><span class="badge badge-green">全部修复</span></td></tr>
+</table>
+</div>
+</div>
+
+<!-- 代码执行bug详情 -->
+<h2>代码执行Bug修复详情</h2>
+<div class="card">
+<table>
+<tr><th>Skill</th><th>案例</th><th>Bug描述</th><th>修复方式</th></tr>
+<tr>
+    <td><code>csv-insight-miner</code></td>
+    <td>案例2</td>
+    <td>NameError: <code>invalid_ts</code>变量仅在except块定义,全有效时触发未定义</td>
+    <td>移除try/except,直接用<code>errors='coerce'</code></td>
+</tr>
+<tr>
+    <td><code>duckdb-analytics-engine</code></td>
+    <td>案例1</td>
+    <td>CTE <code>rfm_score</code>跨COPY语句引用,超出作用域报错</td>
+    <td>CTE改为<code>CREATE TABLE AS</code></td>
+</tr>
+<tr>
+    <td><code>duckdb-analytics-engine</code></td>
+    <td>案例5</td>
+    <td>CTE <code>temp_stats</code>同样跨查询引用报错</td>
+    <td>CTE改为<code>CREATE TABLE AS</code></td>
+</tr>
+<tr>
+    <td><code>debug-doctor</code></td>
+    <td>案例5</td>
+    <td>Redux reducer使用<code>case</code>关键字但无<code>switch</code>语句</td>
+    <td>添加<code>switch (action.type)</code>包裹</td>
+</tr>
+<tr>
+    <td><code>canvas-art-designer</code></td>
+    <td>案例3</td>
+    <td><code>rgb</code>函数未从pdf-lib导入</td>
+    <td>改为<code>const { PDFDocument, rgb } = require('pdf-lib')</code></td>
+</tr>
+</table>
+</div>
+
+<!-- 格式合规修复详情 -->
+<h2>格式合规修复详情</h2>
+<div class="grid grid-2">
+<div class="card">
+<h3>SkillHub原创 (20个)</h3>
+<table>
+<tr><th>Skill</th><th>问题数</th><th>主要问题</th></tr>
+<tr><td>hook-retention-master</td><td>7</td><td>5案例输出结构不匹配+2标签错误</td></tr>
+<tr><td>ecommerce-pricing-strategist</td><td>2</td><td>嵌套结构缺失</td></tr>
+<tr><td>intel-sentinel</td><td>1</td><td>STIX格式多了wrapper</td></tr>
+<tr><td>ai-writing-style-cloner</td><td>1</td><td>自夸✓标记</td></tr>
+<tr><td>novel-autopilot</td><td>1</td><td>audit_report结构</td></tr>
+<tr><td>seo-doctor</td><td>2</td><td>字段不存在+✓引用</td></tr>
+<tr><td>viral-prophet</td><td>1</td><td>ranking结构</td></tr>
+<tr><td>sales-copy-writer</td><td>1</td><td>字数声明与实际不符</td></tr>
+<tr><td>全部20个</td><td>20</td><td>声明文本修正</td></tr>
+</table>
+</div>
+<div class="card">
+<h3>开源改造 (40个)</h3>
+<table>
+<tr><th>Skill</th><th>问题数</th><th>主要问题</th></tr>
+<tr><td>auth-security-architect</td><td>1</td><td>备份码6→8字节</td></tr>
+<tr><td>azure-cloud-automator</td><td>2</td><td>优化数量+告警级别</td></tr>
+<tr><td>c-suite-advisor</td><td>1</td><td>估值方法声明</td></tr>
+<tr><td>clickhouse-analytics</td><td>1</td><td>markdown格式</td></tr>
+<tr><td>competitive-ad-spy</td><td>1</td><td>竞品数量6→3</td></tr>
+<tr><td>copywriting-master</td><td>3</td><td>模板数量错误</td></tr>
+<tr><td>deep-research-engine</td><td>3</td><td>数据准确性</td></tr>
+<tr><td>plan-architect</td><td>1</td><td>时间估算</td></tr>
+<tr><td>research-article-crafter</td><td>1</td><td>年数5→4</td></tr>
+<tr><td>stripe-payment-integrator</td><td>1</td><td>适配器数量</td></tr>
+<tr><td>web-artifact-studio</td><td>1</td><td>useReducer→useState</td></tr>
+<tr><td>全部40个</td><td>40</td><td>声明文本修正</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 平台状态 -->
+<h2>平台审核状态</h2>
+<div class="card">
+<table>
+<tr><th>状态</th><th>数量</th><th>说明</th></tr>
+<tr>
+    <td><span class="badge badge-green">published/approved</span></td>
+    <td>6</td>
+    <td>个人账号免费skill(slug含"1"后缀),已审核通过</td>
+</tr>
+<tr>
+    <td><span class="badge badge-yellow">pending/platform_review</span></td>
+    <td>61</td>
+    <td>60个企业版skill + 1个geo-rank-architect,等待平台审核</td>
+</tr>
+<tr>
+    <td><span class="badge badge-yellow">pending/admin_review</span></td>
+    <td>3</td>
+    <td>3个测试skill(test-paid-skill, test-file-type, ai-artist-workstation)</td>
+</tr>
+<tr>
+    <td><strong>合计</strong></td>
+    <td><strong>70</strong></td>
+    <td>企业版dashboard全部skill</td>
+</tr>
+</table>
+<div class="warning-box">
+<strong>关键发现: 60个企业版skill全部仍在platform_review状态,无一个审核通过。</strong><br>
+上传时间: 2026-07-20 13:00-15:00 | 检查时间: 2026-07-20 23:00 | 等待时长: 约8-10小时
+</div>
+</div>
+
+<!-- 平台限制 -->
+<h2>平台限制发现</h2>
+<div class="card">
+<h3>版本更新限制</h3>
+<div class="error-box">
+<p><strong>POST</strong> <code>/api/v1/orgs/862/skills/{slug}/versions</code></p>
+<p>返回 <strong>409</strong>: "当前有版本正在审核中，请等审核结束后再提交"</p>
+<p style="margin-top:8px;">结论: skill在platform_review状态下<strong>无法上传新版本</strong>。必须等待当前版本审核通过后才能提交更新。</p>
+</div>
+
+<h3>下架限制</h3>
+<div class="error-box">
+<p><strong>POST</strong> <code>/api/v1/orgs/862/skills/{slug}/offline</code></p>
+<p>返回 <strong>400</strong>: "no matching skill in published status"</p>
+<p style="margin-top:8px;">结论: 只有published状态的skill才能下架。pending状态的skill<strong>无法下架</strong>。</p>
+</div>
+
+<h3>删除限制</h3>
+<div class="error-box">
+<p><strong>DELETE</strong> <code>/api/v1/orgs/862/skills/{slug}</code></p>
+<p>返回 <strong>409</strong>: "只能删除已下架的技能，请先下架"</p>
+<p style="margin-top:8px;">结论: 只有offline状态的skill才能删除。pending状态的skill<strong>无法删除</strong>。</p>
+</div>
+
+<h3>PUT/PATCH限制</h3>
+<div class="error-box">
+<p><strong>PUT</strong> <code>/api/v1/orgs/862/skills/{slug}</code></p>
+<p>返回 <strong>CORS错误</strong>: "Failed to fetch"</p>
+<p style="margin-top:8px;">结论: 平台CORS策略<strong>不允许PUT/PATCH方法</strong>。</p>
+</div>
+
+<div class="warning-box">
+<strong>总结: 60个企业版skill被锁定在platform_review状态,无法进行任何修改(更新/下架/删除),直到平台审核完成。</strong>
+</div>
+</div>
+
+<!-- 验证方法说明 -->
+<h2>验证方法说明</h2>
+<div class="card">
+<h3>1. 代码执行测试 (33个案例 / 14个skill)</h3>
+<p>对含可执行代码(Python/JavaScript)的案例,提取代码到临时文件并实际运行,验证:</p>
+<ul>
+    <li>代码无语法错误,可正常执行</li>
+    <li>生成预期的输出文件(xlsx/docx/pptx/json/csv等)</li>
+    <li>输出文件结构正确(行数/列数/sheet数/图表数等)</li>
+    <li>格式化设置正确(字体/填充/公式/条件格式等)</li>
+</ul>
+<p>测试的skill: <code>xlsx-data-wizard</code>, <code>docx-document-master</code>, <code>pptx-presentation-pro</code>, <code>csv-insight-miner</code>, <code>duckdb-analytics-engine</code>, <code>debug-doctor</code>, <code>test-driven-coder</code>, <code>code-review-sentinel</code>, <code>canvas-art-designer</code>, <code>mcp-server-builder</code>, <code>api-design-architect</code>, <code>nextjs-fullstack-guide</code>, <code>performance-optimizer-pro</code>, <code>security-hardening-shield</code></p>
+
+<h3>2. 格式合规审计 (271个案例 / 60个skill)</h3>
+<p>对每个案例的输出JSON,逐一对比SKILL.md中"## 输出格式"声明的结构:</p>
+<ul>
+    <li>字段名是否匹配声明</li>
+    <li>字段类型是否正确(string/number/array/object)</li>
+    <li>嵌套结构是否一致</li>
+    <li>数组元素结构是否匹配</li>
+    <li>无自夸性✓标记(如对自身输出的赞美)</li>
+    <li>数据声明与实际一致(数量/时间/方法等)</li>
+</ul>
+
+<h3>3. 声明文本审查 (60个skill)</h3>
+<p>原声明"以下案例均经过LLM真实调用测试"不准确,已全部修正为"以下案例展示了skill的工作流程和预期输出效果,由LLM按照skill定义的流程生成"。</p>
+</div>
+
+<!-- 待处理事项 -->
+<h2>待处理事项</h2>
+<div class="card">
+<table>
+<tr><th>事项</th><th>状态</th><th>阻塞原因</th><th>解锁条件</th></tr>
+<tr>
+    <td>重新上传60个更新后的skill(含案例+修复)</td>
+    <td><span class="badge badge-yellow">阻塞</span></td>
+    <td>平台返回409: 审核中无法上传新版本</td>
+    <td>当前版本审核通过</td>
+</tr>
+<tr>
+    <td>清理3个测试skill</td>
+    <td><span class="badge badge-yellow">阻塞</span></td>
+    <td>平台返回409: 只能删除已下架的技能</td>
+    <td>admin_review完成 → 下架 → 删除</td>
+</tr>
+<tr>
+    <td>更新pptx-presentation-pro完整内容</td>
+    <td><span class="badge badge-yellow">阻塞</span></td>
+    <td>简化版仍在platform_review</td>
+    <td>简化版审核通过 → 上传完整版</td>
+</tr>
+</table>
+</div>
+
+<!-- 已准备好的工具 -->
+<h2>已准备好的工具</h2>
+<div class="card">
+<h3>批量版本更新脚本 (审核通过后执行)</h3>
+<table>
+<tr><th>文件</th><th>类型</th><th>说明</th></tr>
+<tr>
+    <td><code>browser_batch_update.js</code></td>
+    <td>浏览器脚本</td>
+    <td>在浏览器控制台执行,自动检查状态并上传已审核通过的skill新版本</td>
+</tr>
+<tr>
+    <td><code>batch_version_update.py</code></td>
+    <td>Python脚本</td>
+    <td>命令行执行,需要浏览器cookie</td>
+</tr>
+</table>
+<div class="success-box">
+<strong>使用方法:</strong> 当skill审核通过后,在浏览器中打开skillhub.cn/enterprise/dashboard,按F12打开控制台,粘贴<code>browser_batch_update.js</code>内容并执行。脚本会自动检查每个skill状态,对已通过的skill上传包含案例展示和bug修复的新版本。
+</div>
+</div>
+
+<!-- 下一步建议 -->
+<h2>下一步建议</h2>
+<div class="card">
+<ol>
+    <li><strong>等待平台审核</strong>: 60个skill上传已约8-10小时,持续监控审核状态。如24小时内未通过,联系平台支持。</li>
+    <li><strong>审核通过后执行批量更新</strong>: 使用准备好的<code>browser_batch_update.js</code>脚本,一键上传包含271个案例展示和44个修复的新版本。</li>
+    <li><strong>清理测试skill</strong>: 3个测试skill(test-paid-skill, test-file-type, ai-artist-workstation)等待admin_review完成后下架并删除。</li>
+    <li><strong>pptx-presentation-pro完整版</strong>: 简化版审核通过后,上传完整版作为新版本。</li>
+    <li><strong>持续质量监控</strong>: 定期运行格式合规审计和代码执行测试,确保新增案例的质量。</li>
+</ol>
+</div>
+
+<div class="footer">
+<p>本报告基于2026-07-20的验证数据生成,实事求是分析,不包含夸大或不准确的声明。</p>
+</div>
+
+</div>
+</body>
+</html>

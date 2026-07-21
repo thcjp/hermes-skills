@@ -4,7 +4,7 @@ name: linear-toolkit-free
 version: "1.0.0"
 displayName: Linear 工具箱
 summary: 面向个人的 Linear 任务查询与基础管理工具，含站会摘要。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人开发者的 Linear 任务查询与基础管理工具。
@@ -29,10 +29,9 @@ tags:
 - 个人效率
 - 其他工具
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Linear 工具箱（免费版）
 
 ## 概述
@@ -80,6 +79,20 @@ cd .worktrees/team-212
 git push -u origin "$BRANCH"
 ```
 
+## 不适用场景
+
+以下场景Linear 工具箱不适合处理：
+
+- 实际人员绩效评估
+- 财务预算审批
+- 合同法务审核
+
+
+## 触发条件
+
+需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 1. 设置 `LINEAR_API_KEY` 与 `LINEAR_DEFAULT_TEAM`。
@@ -93,7 +106,7 @@ git push -u origin "$BRANCH"
 {baseDir}/scripts/linear.sh urgent             # 紧急/高优
 ```
 
-## 配置示例
+## 示例
 
 优先级对照：
 
@@ -208,7 +221,7 @@ A：你的待办、团队阻塞项、评审中、近期完成。
 - **操作系统**: Windows / macOS / Linux
 - **网络**: 可访问 api.linear.app
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | curl | 命令行工具 | 必需 | 系统包管理器 |
@@ -223,3 +236,17 @@ A：你的待办、团队阻塞项、评审中、近期完成。
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 命令行执行）
 - **说明**: 通过自然语言指令驱动 Agent 调用 Linear GraphQL API 管理任务
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

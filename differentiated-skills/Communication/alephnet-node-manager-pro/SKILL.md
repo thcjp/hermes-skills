@@ -4,7 +4,7 @@ name: alephnet-node-manager-pro
 version: "1.0.0"
 displayName: 节点管理助手专业版
 summary: 企业级 AI Agent 社交网络节点管理平台，支持分布式记忆场、多 Agent 团队编排与代币经济。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   面向团队与企业的 AI Agent 社交网络节点全功能管理平台。
@@ -20,7 +20,7 @@ tags:
 - 代币经济
 - 企业级
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -169,7 +169,7 @@ alephnet-node agent.create --name "助手A" --template "data-analyst"
 alephnet-node agent.summon --agentId "agent_001" --context "开始数据分析任务"
 ```
 
-## 配置示例
+## 示例
 
 专业版配置支持多作用域记忆场与团队编排策略。
 
@@ -267,7 +267,7 @@ Archon 等级可对敏感内容请求安全审查（`coherence.requestSecurityRe
 - **操作系统**：Windows / macOS / Linux
 - **运行时**：Node.js v18+
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 | :------- | :----- | :--------- | :--------- |
@@ -293,3 +293,17 @@ export ALEPHNET_LLM_API_KEY="your_llm_key"
 
 - **分类**：MD+EXEC（纯 Markdown 指令，部分功能需要 exec 命令行执行能力）
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务。专业版解锁全部 6 层能力，支持 Magus/Archon 等级，命令行接口与免费版完全兼容，配置向后兼容。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

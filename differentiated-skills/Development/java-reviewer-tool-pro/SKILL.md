@@ -4,28 +4,10 @@ name: java-reviewer-tool-pro
 version: "1.0.0"
 displayName: Java代码审查专业版
 summary: 企业级 Java 代码审查方案，支持批量审查、自定义规则、HTML 报告与 CI 集成。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  面向企业级 Java 开发团队的代码审查治理工具，提供批量审查与规则定制能力。
-
-  核心能力:
-  - 批量代码审查（多文件/多模块/全项目）
-  - 自定义审查规则与团队级配置
-  - HTML 结构化报告导出与趋势分析
-  - 需求一致性检查（对照需求/设计文档）
-  - 代码安全审计（OWASP Top 10）
-  - CI/CD 集成与合并请求质量门禁
-
-  适用场景:
-  - 企业级 Java 项目的代码质量管控
-  - 团队协作中的合并请求自动化审查
-  - 安全合规审计与上线前检查
-  - 代码质量趋势追踪与改进
-
-  差异化: 专业版兼容免费版所有审查维度与规则，额外提供批量处理、自定义规则、HTML 报告、安全审计与 CI 集成，支持企业级代码治理。
-
-  触发关键词: java批量审查, 自定义规则, html报告, 需求一致性, 安全审计, owasp, ci集成, 质量门禁, 趋势分析, 合并请求审查
+  面向企业级 Java 开发团队的代码审查治理工具。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - 开发工具
 - Java
@@ -33,20 +15,16 @@ tags:
 - 企业协作
 - 安全审计
 tools:
-- read
+  - - read
 - exec
----
-
 # Java 代码审查工具（专业版）
-
 ## 概述
-
+---
 本工具面向企业级 Java 开发团队，提供代码审查的完整治理方案。在免费版 6 大维度审查、4 级严重程度、修复建议能力之上，专业版新增批量多文件审查、自定义规则引擎、HTML 结构化报告、需求一致性检查、OWASP 安全审计、CI/CD 质量门禁等能力。通过可配置的规则引擎与数据驱动的质量度量，帮助团队建立可量化、可追踪的代码质量体系。
 
 **版本兼容性说明**：专业版完全兼容免费版（`java-reviewer-tool-free`）的所有审查维度、规则与报告格式，可无缝升级。
 
 ## 核心能力
-
 | 能力模块 | 免费版 | 专业版新增 |
 | --- | --- | --- |
 | 审查范围 | 单文件/diff | 批量多文件/多模块/全项目 |
@@ -59,15 +37,11 @@ tools:
 | 修复建议 | 代码片段 | 批量自动修复脚本 |
 
 ## 使用场景
-
 ### 场景一：全项目批量审查
-
 团队需要对整个项目进行全面的代码审查。
 
 ```bash
 #!/bin/bash
-# scripts/batch-java-review.sh - 批量审查 Java 代码
-
 PROJECT_DIR=$1
 REPORT_DIR="reports/java-review-$(date +%Y%m%d)"
 mkdir -p "$REPORT_DIR"
@@ -77,23 +51,17 @@ echo "项目目录: $PROJECT_DIR"
 echo "报告目录: $REPORT_DIR"
 echo ""
 
-# 统计 Java 文件
 JAVA_FILES=$(find "$PROJECT_DIR" -name "*.java" -not -path "*/test/*")
 FILE_COUNT=$(echo "$JAVA_FILES" | wc -l)
 echo "审查文件数: $FILE_COUNT"
 
-# 初始化统计
 TOTAL_ISSUES=0
 CRITICAL=0
 MAJOR=0
 MINOR=0
 SUGGESTION=0
 
-# 生成报告头
 cat > "$REPORT_DIR/summary.md" << 'EOF'
-# Java 代码批量审查报告
-
-## 概述
 EOF
 
 echo "| 指标 | 数值 |" >> "$REPORT_DIR/summary.md"
@@ -102,39 +70,33 @@ echo "| 审查日期 | $(date) |" >> "$REPORT_DIR/summary.md"
 echo "| 审查范围 | $PROJECT_DIR |" >> "$REPORT_DIR/summary.md"
 echo "| 文件数量 | $FILE_COUNT |" >> "$REPORT_DIR/summary.md"
 
-# 批量检查常见问题
 echo "$JAVA_FILES" | while read file; do
   REL_PATH=${file#$PROJECT_DIR/}
-  
-  # SQL 注入检查
+
   SQL_INJECTION=$(grep -n "String sql.*+.*\"" "$file" | head -5)
   if [ -n "$SQL_INJECTION" ]; then
     echo "[Critical] $REL_PATH: 可能的 SQL 注入" >> "$REPORT_DIR/issues.md"
     echo "$SQL_INJECTION" >> "$REPORT_DIR/issues.md"
   fi
-  
-  # 硬编码密码检查
+
   HARDCODED_PWD=$(grep -in "password.*=.*\"\|secret.*=.*\"" "$file" | head -5)
   if [ -n "$HARDCODED_PWD" ]; then
     echo "[Critical] $REL_PATH: 硬编码密码/密钥" >> "$REPORT_DIR/issues.md"
     echo "$HARDCODED_PWD" >> "$REPORT_DIR/issues.md"
   fi
-  
-  # 空 catch 块检查
+
   EMPTY_CATCH=$(awk '/catch.*\{/{flag=1;next}/\}/{if(flag && NR-prev<3) print FILENAME":"prev; flag=0}flag{prev=NR}' "$file")
   if [ -n "$EMPTY_CATCH" ]; then
     echo "[Major] $REL_PATH: 空 catch 块" >> "$REPORT_DIR/issues.md"
     echo "$EMPTY_CATCH" >> "$REPORT_DIR/issues.md"
   fi
-  
-  # 未关闭资源检查
+
   UNCLOSED=$(grep -n "new FileInputStream\|new FileOutputStream\|getConnection" "$file" | grep -v "try.*(" | head -5)
   if [ -n "$UNCLOSED" ]; then
     echo "[Major] $REL_PATH: 资源可能未正确关闭" >> "$REPORT_DIR/issues.md"
     echo "$UNCLOSED" >> "$REPORT_DIR/issues.md"
   fi
-  
-  # 方法过长检查
+
   LONG_METHODS=$(awk '/public|private|protected.*\(/{start=NR;name=$0}/^\}/{if(NR-start>50) print FILENAME":"start"-"NR" ("NR-start"行) "name; start=0}' "$file")
   if [ -n "$LONG_METHODS" ]; then
     echo "[Minor] $REL_PATH: 方法过长" >> "$REPORT_DIR/issues.md"
@@ -148,21 +110,16 @@ echo "报告位置: $REPORT_DIR/"
 ```
 
 ### 场景二：自定义审查规则配置
-
 团队需要根据项目特点自定义审查规则。
 
 ```yaml
-# .java-review-rules.yml - 自定义审查规则
 version: "2.0"
 team: "后端开发组"
 updated: "2026-07-18"
 
-# 继承基础规则
 extends: "default"
 
-# 规则覆盖
 rules:
-  # 命名规范
   naming:
     max_method_length: 40        # 比默认 50 更严格
     max_parameter_count: 4       # 方法参数上限
@@ -171,8 +128,7 @@ rules:
       service: "Service"
       repository: "Repository"
       dto: "DTO"
-      
-  # 安全规则
+
   security:
     owasp_top_10: true           # 启用 OWASP Top 10 检查
     forbidden_apis:              # 禁止使用的 API
@@ -183,32 +139,23 @@ rules:
       - "RequestMapping"
       - "PostMapping"
       - "GetMapping"
-      
-  # 性能规则
+
   performance:
     warn_collection_init: true   # 集合未指定初始容量时告警
     warn_string_concat: true     # 循环内字符串拼接告警
     max_query_count: 5           # 单个请求最大查询数
-    
-  # 设计规则
   design:
     max_cyclomatic_complexity: 10  # 最大圈复杂度
     max_class_length: 500          # 最大类行数
     require_di_pattern: true       # 依赖注入模式
-
-# 排除规则
 excludes:
   - "**/test/**"
   - "**/generated/**"
   - "**/legacy/**"
   - "**/dto/**"       # DTO 类只检查命名
-
-# 严重程度自定义
 severity_override:
   empty_catch: critical           # 空 catch 提升为 Critical
   magic_number: minor             # 魔法值降为 Minor
-
-# 报告配置
 report:
   formats: ["markdown", "html", "json"]
   output_dir: "reports/"
@@ -217,11 +164,9 @@ report:
 ```
 
 ### 场景三：CI/CD 质量门禁
-
 合并请求需要通过代码审查才能合并。
 
 ```yaml
-# .github/workflows/java-quality-gate.yml
 name: Java 代码质量门禁
 on:
   pull_request:
@@ -234,7 +179,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # 获取完整历史用于 diff
-
       - name: 安装 Java
         uses: actions/setup-java@v4
         with:
@@ -244,7 +188,7 @@ jobs:
       - name: 执行代码审查
         run: |
           ./scripts/batch-java-review.sh src/
-          
+
       - name: 检查 Critical 问题数
         run: |
           CRITICAL_COUNT=$(grep -c "\[Critical\]" reports/java-review-*/issues.md || echo 0)
@@ -253,7 +197,7 @@ jobs:
             echo "::error::发现 $CRITICAL_COUNT 个 Critical 问题，阻止合并"
             exit 1
           fi
-          
+
       - name: 检查 Major 问题数
         run: |
           MAJOR_COUNT=$(grep -c "\[Major\]" reports/java-review-*/issues.md || echo 0)
@@ -261,14 +205,14 @@ jobs:
           if [ "$MAJOR_COUNT" -gt 5 ]; then
             echo "::warning::Major 问题数超过 5 个，建议修复后再合并"
           fi
-          
+
       - name: 上传审查报告
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: java-review-report
           path: reports/
-          
+
       - name: 评论审查结果
         if: always()
         uses: actions/github-script@v7
@@ -285,9 +229,7 @@ jobs:
 ```
 
 ## 快速开始
-
 ### OWASP 安全审计检查清单
-
 | OWASP 类别 | 检查项 | 检测方法 |
 | --- | --- | --- |
 | 注入 | SQL 注入 | 检查字符串拼接 SQL |
@@ -302,7 +244,6 @@ jobs:
 | 已知漏洞组件 | 依赖漏洞 | 扫描依赖版本 |
 
 ### HTML 报告模板
-
 ```html
 <!DOCTYPE html>
 <html>
@@ -337,12 +278,12 @@ jobs:
             <li class="suggestion">Suggestion: {{suggestion_count}}</li>
         </ul>
     </div>
-    
+
     <h2>问题趋势</h2>
     <div class="chart">
         <!-- 历史趋势图表 -->
     </div>
-    
+
     <h2>问题详情</h2>
     <table>
         <tr>
@@ -370,10 +311,8 @@ jobs:
 </html>
 ```
 
-## 配置示例
-
+## 示例
 ### 需求一致性检查
-
 ```text
 审查时提供需求文档，工具会检查代码实现与需求的一致性
 
@@ -389,7 +328,6 @@ jobs:
 - 数据结构是否与设计匹配
 
 输出：
-## 一致性检查
 - [已实现] 用户注册接口（需求 3.1）
 - [已实现] 邮箱验证功能（需求 3.2）
 - [未实现] 手机号注册（需求 3.3）← 需关注
@@ -397,22 +335,19 @@ jobs:
 ```
 
 ### 质量趋势统计
-
 ```bash
 #!/bin/bash
-# 统历历史报告生成趋势数据
-
 echo "日期,Critical,Major,Minor,Suggestion,总文件数" > quality-trend.csv
 
 for report in reports/java-review-*/summary.md; do
   date=$(echo $report | grep -o '[0-9]*' | head -1)
-  
+
   critical=$(grep -c "Critical:" "$report" 2>/dev/null || echo 0)
   major=$(grep -c "Major:" "$report" 2>/dev/null || echo 0)
   minor=$(grep -c "Minor:" "$report" 2>/dev/null || echo 0)
   suggestion=$(grep -c "Suggestion:" "$report" 2>/dev/null || echo 0)
   files=$(grep "文件数量" "$report" | grep -o '[0-9]*')
-  
+
   echo "$date,$critical,$major,$minor,$suggestion,$files" >> quality-trend.csv
 done
 
@@ -420,7 +355,6 @@ echo "趋势数据已保存到 quality-trend.csv"
 ```
 
 ## 最佳实践
-
 1. **CI 强制门禁**：Critical 问题数为 0 才允许合并
 
 2. **规则版本管理**：规则配置纳入 Git 版本控制
@@ -438,23 +372,17 @@ echo "趋势数据已保存到 quality-trend.csv"
 8. **规则渐进引入**：新规则先警告后强制
 
 ## 常见问题
-
 ### Q1：如何减少误报？
-
 ```yaml
-# 配置排除规则
 excludes:
   - "**/test/**"          # 排除测试代码
   - "**/generated/**"     # 排除生成代码
   - "**/migration/**"     # 排除迁移脚本
-
-# 降低特定规则的严重程度
 severity_override:
   magic_number: suggestion  # 魔法值降为建议
 ```
 
 ### Q2：如何处理大量历史问题？
-
 ```text
 策略：
 1. 先生成完整报告，评估问题规模
@@ -465,12 +393,9 @@ severity_override:
 ```
 
 ### Q3：如何集成到 SonarQube？
-
 ```bash
-# 导出为 SonarQube 兼容格式
 ./scripts/export-sonarqube.sh reports/java-review-latest/ > sonar-issues.json
 
-# sonar-issues.json 格式
 [
   {
     "rule": "java:S2077",
@@ -483,7 +408,6 @@ severity_override:
 ```
 
 ### Q4：如何统计代码质量指标？
-
 | 指标 | 计算方式 | 目标值 |
 | --- | --- | --- |
 | Critical 密度 | Critical 数 / 千行 | 0 |
@@ -493,43 +417,32 @@ severity_override:
 | 重复代码率 | 重复行数 / 总行数 | < 5% |
 
 ### Q5：如何做安全审计？
-
 ```bash
-# OWASP Top 10 自动检查脚本
 echo "=== OWASP 安全审计 ==="
 
-# A1: 注入
 echo "检查 SQL 注入..."
 grep -rn "String sql.*+.*\"" src/ --include="*.java"
 
-# A2: 认证失效
 echo "检查硬编码凭据..."
 grep -rn "password.*=.*\"\|secret.*=.*\"" src/ --include="*.java"
 
-# A3: 敏感数据暴露
 echo "检查明文传输..."
 grep -rn "http://" src/ --include="*.java" | grep -v "https://"
 
-# A8: 不安全反序列化
 echo "检查反序列化..."
 grep -rn "ObjectInputStream\|readObject" src/ --include="*.java"
 
-# A9: 已知漏洞组件
 echo "检查依赖漏洞..."
 mvn dependency-check:check 2>/dev/null || echo "需要安装 dependency-check 插件"
 ```
 
 ### Q6：如何生成批量修复脚本？
-
 ```bash
-# 批量修复常见问题
 #!/bin/bash
 
-# 修复：System.out.println 替换为 logger
 find src/ -name "*.java" -exec sed -i \
   's/System\.out\.println(\(.*\))/logger.info(\1)/g' {} \;
 
-# 修复：魔法值 0/1 提取为常量（需手动确认）
 find src/ -name "*.java" -exec grep -l "status == 1\|status == 0" {} \; | \
   while read f; do
     echo "建议在 $f 中提取状态常量"
@@ -537,15 +450,13 @@ find src/ -name "*.java" -exec grep -l "status == 1\|status == 0" {} \; | \
 ```
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent 平台**: 支持读取 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
 - **操作系统**: Windows / macOS / Linux
 - **JDK 版本**: 建议 11 及以上
 - **CI/CD 平台**: GitHub Actions / GitLab CI / Jenkins 等
 
-### 第三方依赖
-
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | JDK | 编译器/运行时 | 推荐 | oracle.com 或 openjdk.net 下载 |
@@ -563,3 +474,15 @@ find src/ -name "*.java" -exec grep -l "status == 1\|status == 0" {} \; | \
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 命令行执行）
 - **说明**: 通过自然语言指令驱动 Agent 执行代码审查，专业版功能依赖构建工具和 CI/CD 平台
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

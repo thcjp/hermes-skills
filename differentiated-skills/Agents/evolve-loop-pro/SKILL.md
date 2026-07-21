@@ -4,7 +4,7 @@ name: evolve-loop-pro
 version: "1.0.0"
 displayName: 进化循环(专业版)
 summary: AI Agent全功能PDCA自改进引擎，六西格玛质量度量+跨设备云同步+决策回溯+多项目并行。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   进化循环专业版是在免费版基础上的全功能升级，为AI Agent提供终极自改进引擎。在PDCA闭环之上叠加六西格玛质量度量体系，实现可量化的持续进化。专业版解锁跨设备云同步、多项目并行记忆隔离、决策回溯与历史版本对比三大高级功能。

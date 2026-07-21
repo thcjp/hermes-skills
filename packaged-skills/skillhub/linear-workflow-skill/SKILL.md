@@ -1,0 +1,284 @@
+---
+slug: linear-workflow-skill
+name: linear-workflow-skill
+version: "1.0.0"
+displayName: Linear工作流(专业版)
+summary: 全功能Linear工作流工具，支持冲刺规划、依赖链管理、批量操作与迭代报告
+license: Proprietary
+edition: pro
+description: |-
+  Linear工作流(专业版)是面向敏捷团队的全功能工作流管理工具，在免费版基础上新增冲刺规划自动化、依赖链管理、批量操作与迭代报告等高级能力。核心能力：
+  - 完整的问题管理、团队查询与项目管理能力
+  - 冲刺规划自动化，智能创建迭代问题与分配
+  - 依赖链管理与阻塞检测，可视化依赖关系
+  - 批量操作引擎，支持批量创建/更新/迁移
+  - 迭代报告生成...
+tags:
+- 集成工具
+- 项目管理
+- Linear
+- 专业版
+tools:
+  - - read
+- exec
+---
+# Linear工作流(专业版)
+
+## 核心能力
+
+| 能力 | 说明 | 专业版增强 |
+|------|------|-----------|
+| 问题管理 | 查询/创建/更新问题 | 批量操作与模板化 |
+| 冲刺规划 | 迭代任务分配 | 智能分配与负载均衡 |
+| 依赖链管理 | 问题依赖关系 | DAG可视化与阻塞检测 |
+| 批量操作 | 批量创建/更新/迁移 | 并行引擎+检查点恢复 |
+| 迭代报告 | 迭代总结 | 燃尽图+效率趋势+导出 |
+| 自定义工作流 | 工作流模板 | 自动化规则与触发器 |
+| 优先支持 | SLA保障 | 专属技术支持通道 |
+
+## 适用场景
+
+### 场景一：敏捷教练的迭代规划
+敏捷教练在迭代规划会议后需要创建数十个问题并分配。通过冲刺规划自动化，输入迭代目标与问题列表，工具基于团队成员的历史速率与当前负载智能分配任务，生成建议方案供确认后一键创建。
+
+### 依赖说明
+
+### 运行环境
+- **Agent平台**：支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **操作系统**：Windows / macOS / Linux
+- **Node.js**：16+(用于运行CLI脚本)
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent平台内置LLM提供 |
+| Node.js | 运行时 | 必需 | nodejs.org官方下载 |
+| @linear/sdk | Node包 | 必需 | `npm install`(随脚本安装) |
+| Linear API | 外部API | 必需 | 需Linear账户与API密钥 |
+| 代码仓库 webhook | 外部系统 | 可选 | 自定义工作流触发源 |
+
+### API Key 配置
+- **Linear API Key**：通过环境变量`LINEAR_API_KEY`配置
+- **获取路径**：Linear → Settings → API → Personal API keys
+- **权限建议**：使用最小权限原则，为自动化创建专用密钥
+- **安全要求**：禁止在SKILL.md或脚本中硬编码API密钥，禁止提交到版本控制
+- **团队部署**：建议为不同环境(开发/测试/生产)创建独立密钥，定期轮换
+
+### 可用性分类
+- **分类**：MD+EXEC()
+- **说明**：基于Markdown的AI Skill，通过Node CLI驱动Agent执行Linear敏捷工作流管理与迭代分析任务
+
+## 使用流程
+
+本工具属于复杂工具，预计180秒内可完成冲刺规划配置。
+
+### 步骤1：安装与配置
+```bash
+# 安装依赖
+cd {baseDir}/scripts && npm install
+
+# 配置API密钥
+export LINEAR_API_KEY="你的Linear API密钥"
+```
+
+### 步骤2：冲刺规划
+```bash
+node {baseDir}/scripts/linear-cli.js sprint-plan \
+  --team-id TEAM_ID \
+  --cycle-id CYCLE_ID \
+  --input sprint-backlog.csv \
+  --auto-assign \
+  --balance-load
+```
+
+### 步骤3：依赖链分析
+```bash
+node {baseDir}/scripts/linear-cli.js dependency-graph \
+  --team-id TEAM_ID \
+  --cycle-id CYCLE_ID \
+  --detect-blockers \
+  --highlight-critical-path
+```
+
+### 步骤4：生成迭代报告
+```bash
+node {baseDir}/scripts/linear-cli.js sprint-report \
+  --team-id TEAM_ID \
+  --cycle-id CYCLE_ID \
+  --format html \
+  --output sprint-report.html
+```
+
+### 步骤5：批量操作
+```bash
+node {baseDir}/scripts/linear-cli.js bulk-update \
+  --input updates.csv \
+  --checkpoint \
+  --parallel 4
+```
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| content | string | 是 | 相关说明 |
+| content | string | 否 | 相关说明, 默认: 全部维度 |
+| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "overall_grade": "A",
+    "total_score": 92,
+    "max_score": 100,
+    "summary": "处理完成",
+    "details": [
+      {
+        "item": "代码风格",
+        "status": "pass",
+        "score": 95,
+        "comment": "符合规范"
+      },
+      {
+        "item": "安全合规",
+        "status": "warn",
+        "score": 80,
+        "comment": "符合规范"
+      }
+    ],
+    "improvements": [
+      {
+        "priority": "high",
+        "suggestion": "建议优化",
+        "expected_gain": "+5分"
+      },
+      {
+        "priority": "medium",
+        "suggestion": "建议优化",
+        "expected_gain": "+3分"
+      }
+    ]
+  },
+  "error": null
+}
+```
+
+## 异常处理
+
+| 现象 | 可能原因 | 解决方案 | 优先级 |
+|------|----------|----------|--------|
+| 冲刺规划分配不均 | 缺少历史数据 | 积累2-3个迭代数据后重新规划 | 中 |
+| 依赖链分析超时 | 问题数量过大 | 缩小范围或降低depth值 | 中 |
+| 批量操作部分失败 | 个别数据格式错误 | 查看失败日志，修正后单独重试 | 中 |
+| 燃尽图数据缺失 | 状态变更未记录时间 | 确保通过API规范更新状态 | 中 |
+| 工作流规则未触发 | 触发条件配置错误 | 检查条件配置，使用调试模式验证 | 高 |
+| 检查点恢复失效 | 缓存被清理 | 重新执行全量操作 | 高 |
+| 跨团队依赖未检测 | 未启用cross-team | 添加--cross-team参数 | 低 |
+| 报告导出失败 | 格式参数不支持 | 确认格式在支持列表中 | 低 |
+
+## 依赖说明
+
+| 依赖项 | 类型 | 必需 | 说明 |
+|--------|------|------|------|
+| LLM | 模型 | 是 | 需要LLM进行智能审查, 推荐GPT-4/智谱GLM-4/DeepSeek |
+| `references/checklist.md` | 文件 | 是 | 相关说明 |
+| `references/scoring.md` | 文件 | 否 | 相关说明 |
+| API Key | 凭证 | 否 | 使用云端LLM时需要 |
+
+**国内替代方案**:
+- OpenAI GPT → 智谱GLM-4 / 百度文心一言 / 通义千问 / DeepSeek
+
+## 案例展示
+
+### 冲刺规划输入文件
+```csv
+title,description,priority,estimate,labels
+用户登录优化,简化登录流程减少步骤,2,3,frontend,ux
+API速率限制,为公开API添加速率限制,1,5,backend,security
+数据导出功能,支持CSV与JSON格式导出,3,3,feature,backend
+性能监控面板,实时展示系统性能指标,2,8,feature,devops
+```
+
+### 依赖链参数
+
+| 参数 | 类型 | 默认值 | 说明 |
+|------|------|--------|------|
+| --team-id | string | - | 团队ID |
+| --cycle-id | string | - | 周期ID |
+| --detect-blockers | bool | true | 检测阻塞点 |
+| --highlight-critical-path | bool | true | 高亮关键路径 |
+| --format | enum | json | 输出格式(json/dot/html) |
+| --depth | int | 5 | 依赖遍历深度 |
+
+### 迭代报告参数
+
+| 参数 | 类型 | 默认值 | 说明 |
+|------|------|--------|------|
+| --team-id | string | - | 团队ID |
+| --cycle-id | string | - | 周期ID |
+| --format | enum | html | 报告格式(html/markdown/pdf) |
+| --include-burndown | bool | true | 包含燃尽图 |
+| --include-velocity | bool | true | 包含速率趋势 |
+| --compare-last | int | 3 | 与最近N个迭代对比 |
+
+### 批量操作参数
+
+| 参数 | 类型 | 默认值 | 说明 |
+|------|------|--------|------|
+| --input | path | - | 输入CSV文件 |
+| --checkpoint | bool | true | 启用检查点 |
+| --parallel | int | 4 | 并行度 |
+| --retry | int | 3 | 重试次数 |
+| --dry-run | bool | false | 预览不执行 |
+
+## 常见问题
+
+### Q1：冲刺规划的智能分配依据什么？
+A：专业版基于团队成员的历史完成量(故事点)、当前未完成任务量与技能标签进行智能分配。`--balance-load`参数确保负载在成员间均衡，避免某人过载而某人空闲。
+
+### Q2：依赖链如何检测循环依赖？
+A：依赖链管理通过构建有向无环图(DAG)分析问题间的依赖关系。若检测到环路(如A依赖B，B依赖C，C依赖A)，会标记为循环依赖并告警，因为循环依赖会导致无法交付。
+
+### Q3：批量操作中途中断怎么办？
+A：启用`--checkpoint`后，操作进度会定期保存。中断后重新执行相同命令并添加`--resume`参数，将从断点继续，已成功的问题不会重复操作。
+
+### Q4：迭代报告的燃尽图如何生成？
+A：燃尽图基于问题状态变更的时间戳绘制。横轴为迭代天数，纵轴为剩余工作量(故事点或问题数)。理想燃尽线为直线下降，实际曲线偏离理想线的情况能揭示迭代中的问题。
+
+### Q5：自定义工作流支持哪些触发条件？
+A：支持代码仓库事件(分支创建/合并/标签)、Linear事件(状态变更/评论添加)、时间事件(到期提醒/定期检查)三类触发条件。可组合多个条件实现复杂自动化。
+
+### Q6：批量迁移会保留问题历史吗？
+A：会。批量操作(如团队迁移)仅更新指定字段，问题的创建历史、评论、状态变更记录等完整保留。迁移后可通过审计日志追溯操作。
+
+### Q7：依赖链分析支持跨团队依赖吗？
+A：支持。通过`--cross-team`参数启用跨团队依赖检测。这在大型项目中尤为重要，一个团队的阻塞可能影响多个团队的交付。
+
+### Q8：迭代报告可以导出为哪些格式？
+A：支持HTML(交互式图表)、Markdown(文档归档)、PDF(正式报告)三种格式。HTML格式包含可交互的燃尽图与依赖图；PDF适合向管理层汇报。
+
+### Q9：如何获取优先技术支持？
+A：专业版用户可通过专属支持通道提交工单，享受SLA保障的响应时效。冲刺规划与依赖分析相关问题建议附带团队规模与迭代数据。
+
+### Q10：自定义工作流规则如何调试？
+A：专业版提供规则调试模式，可模拟触发条件并预览执行结果，不实际执行操作。建议新规则先在调试模式验证逻辑正确性，再启用正式执行。
+
+## 错误处理
+
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接，执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令请求；确认Agent平台LLM服务正常 |
+| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
+| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
+| 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
+
+## 已知限制
+
+- 
+- 
+- 

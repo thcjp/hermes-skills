@@ -6,9 +6,7 @@ displayName: 掘金技能集
 summary: 掘金技术社区一站式操作技能，支持热门文章排行榜查询。
 license: MIT
 description: |-
-  掘金技术社区一站式操作技能，支持热门文章排行榜查询。
-
-  核心能力:
+  掘金技术社区一站式操作技能，支持热门文章排行榜查询。核心能力:
 
   - 其他工具领域的专业化AI辅助工具
 
@@ -24,13 +22,11 @@ description: |-
 
   - 自动化工作流与智能决策辅助
 
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: 掘金技能集, 排行榜查询, 掘金技术社区, skills, juejin, 支持热门文章, 一站式操作技
+  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范
 tags:
 - Other
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -214,7 +210,7 @@ juejin/
 * Playwright（用于浏览器登录）
 * 网络可访问 <https://juejin.cn/>
 
-## Prompt 示例
+## 示例
 
 ```text
 用户：帮我获取掘金前端分类的热门文章排行榜
@@ -227,7 +223,7 @@ AI：正在登录掘金账号并发布文章...
 AI：正在下载文章并转换为 Markdown 格式...
 ```
 
-## 🔒 安全限制与风险警告
+## 已知限制
 
 ### 本地文件写入安全限制（`filesystem_write`）
 
@@ -284,7 +280,7 @@ AI：正在下载文章并转换为 Markdown 格式...
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -295,3 +291,88 @@ AI：正在下载文章并转换为 Markdown 格式...
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+
+### 📊 功能一：热门文章排行榜
+
+| 子功能 | 说明 |
+| --- | --- |
+| 获取分类列表 | 获取掘金所有文章分类（前端、后端、Android、iOS、人工智能等） |
+| 热门文章排行 | 获取指定分类或全部分类的热门文章排行榜 |
+| 文章趋势分析 | 按时间维度（3天/7天/30天/历史）查看文章热度趋势 |
+| 排行榜筛选 | 支持按分类、时间范围、排序方式筛选 |
+
+**API 接口**：
+
+* 分类列表：`GET https://api.juejin.cn/tag_api/v1/query_category_briefs`
+* 热门文章：`POST https://api.juejin.cn/recommend_api/v1/article/recommend_all_feed`
+* 分类文章：`POST https://api.juejin.cn/recommend_api/v1/article/recommend_cate_feed`
+* 标签列表：`POST https://api.juejin.cn/tag_api/v1/query_category_tags`
+
+### 📝 功能二：文章自动发布
+
+| 子功能 | 说明 |
+| --- | --- |
+| 浏览器登录 | 通过 Playwright 打开掘金登录页面，用户扫码或密码登录后自动获取 Cookie |
+| Cookie 管理 | 保存、加载、验证 Cookie 状态 |
+| Markdown 解析 | 读取本地 Markdown 文件，提取标题、正文内容 |
+| 文章发布 | 通过掘金 API 创建草稿并发布，支持设置分类、标签、摘要、封面图 |
+| 草稿管理 | 支持保存为草稿而不立即发布 |
+
+**API 接口**：
+
+* 创建草稿：`POST https://api.juejin.cn/content_api/v1/article_draft/create`
+* 发布文章：`POST https://api.juejin.cn/content_api/v1/article/publish`
+* 获取标签：`POST https://api.juejin.cn/tag_api/v1/query_category_tags`
+
+**鉴权方式**：Cookie 鉴权（通过 Playwright 浏览器登录获取）
+
+### 📥 功能三：文章下载
+
+| 子功能 | 说明 |
+| --- | --- |
+| 单篇下载 | 通过文章 URL 下载单篇文章，保存为 Markdown |
+| 批量下载 | 下载指定作者的所有/部分文章 |
+| 格式转换 | 将掘金文章 HTML 内容转换为标准 Markdown |
+| 图片处理 | 可选下载文章中的图片到本地 |
+| 元数据保留 | 保留文章标题、作者、发布时间、标签等元信息 |
+
+**API 接口**：
+
+* 文章详情：`POST https://api.juejin.cn/content_api/v1/article/detail`
+* 用户文章列表：`POST https://api.juejin.cn/content_api/v1/article/query_list`
+
+## 适用场景
+
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+
+### Q1: 如何开始使用掘金技能集？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: 掘金技能集有什么限制？
+A: 请参考已知限制章节了解具体限制。

@@ -4,13 +4,11 @@ name: ui-ux-toolkit-free
 version: "1.0.0"
 displayName: UI/UX设计工具箱免费版
 summary: 可搜索的UI/UX设计数据库,提供风格、配色、字体、UX规则的基础查询,适合个人开发者快速生成设计系统
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人开发者的轻量级UI/UX设计查询工具,内置丰富的设计资源数据库,
-  通过自然语言关键词即可获取专业设计建议。
-
-  核心能力:
+  通过自然语言关键词即可获取专业设计建议。核心能力:
   - 可搜索的设计资源数据库(风格、配色、字体、UX规则)
   - 自然语言驱动的CLI查询工具
   - 基础设计系统一键生成
@@ -22,9 +20,7 @@ description: |-
   - 小型SaaS或落地页的UI风格决策
 
   差异化:免费版聚焦核心查询能力,提供基础设计域搜索和默认技术栈指引,
-  去除企业级持久化和批量操作功能,降低使用门槛,适合个人快速上手。
-
-  触发关键词: 设计系统, 配色方案, 字体配对, UX规则, UI风格, 落地页设计, 响应式布局
+  去除企业级持久化和批量操作功能,降低使用门槛,...
 tags:
 - 设计
 - UI
@@ -33,10 +29,9 @@ tags:
 - 字体
 - 前端
 tools:
-- read
+  - - read
 - exec
 ---
-
 # UI/UX设计工具箱 - 免费版
 
 ## 概述
@@ -144,9 +139,23 @@ python3 scripts/search.py "animation accessibility" --domain ux
 python3 scripts/search.py "responsive viewport" --domain ux
 ```
 
+## 不适用场景
+
+以下场景UI/UX设计工具箱免费版不适合处理：
+
+- 3D建模和动画制作
+- 照片级写实渲染
+- 手绘原创插画
+
+
+## 触发条件
+
+需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
-### 安装与验证
+### 依赖说明
 
 ```bash
 # 验证Python环境
@@ -171,7 +180,7 @@ python3 scripts/search.py "soft pastel" --domain color
 python3 scripts/search.py "layout responsive" --stack html-tailwind
 ```
 
-## 配置示例
+## 示例
 
 ### 项目设计配置文件
 
@@ -308,3 +317,17 @@ winget install Python.Python.3.12
 
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。核心查询功能依赖Python CLI脚本执行,需确保exec工具可用。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

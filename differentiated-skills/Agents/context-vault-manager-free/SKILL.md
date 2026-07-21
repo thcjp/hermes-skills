@@ -2,27 +2,19 @@
 slug: context-vault-manager-free
 name: context-vault-manager-free
 version: "1.0.0"
-displayName: 上下文保险库
+displayName: Context Vault Manage
 summary: 智能分层记忆管理，短期/长期/重要三层架构，关键词检索，自动清理，Token占用降低70%。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  上下文保险库免费版解决长会话Agent"上下文溢出、记忆混乱、Token浪费"的核心痛点。采用短期/长期/重要三层记忆分层架构，自动清理过期短期记忆，避免上下文窗口被无效信息占满。配合关键词检索与手动摘要，实现Token占用降低70%。
-
-  核心能力：三层记忆分层（短期/长期/重要）、关键词检索、手动摘要生成、内存/磁盘持久化、自动清理过期短期记忆（最多保留100条）、全链路类型安全参数校验。轻量无外部依赖，开箱即用，支持自定义扩展。
-
-  适用场景：长会话Agent上下文管理、聊天机器人记忆层、任务型Agent长期记忆、客服助理类上下文管理、RAG应用记忆层、个人AI助手记忆管理。
-
-  差异化：完全中文化表达，针对中文场景重新设计分层策略与清理机制，新增结构化参数说明与真实使用示例，内容原创度超过70%。保留原始MIT版权声明。
-
-  触发关键词：记忆管理、分层记忆、上下文保险库、Token优化、短期记忆、长期记忆
+  上下文保险库免费版解决长会话Agent"上下文溢出、记忆混乱、Token浪费"的核心痛点。采用短期/长期/重要三层记忆分层架构，自动清理过期短期记忆，避免上下文窗口被无效信息占满。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - 记忆管理
 - 分层架构
 - 上下文管理
 - Token优化
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -67,7 +59,7 @@ tools:
 
 ---
 
-## 快速开始（<60秒上手）
+## 使用流程
 
 ### 一分钟上手你的分层记忆
 
@@ -302,7 +294,7 @@ await skills.contextVaultManager({
 
 使用`action="summarize"`操作生成摘要。可指定`typeFilter`过滤特定类型的记忆，`maxTokens`限制摘要长度。摘要会提取记忆的关键信息，压缩为简短文本，适合注入上下文窗口。专业版支持自动摘要生成。
 
-### Q5：免费版有什么限制？
+### 已知限制
 
 免费版支持三层记忆分层、关键词检索、手动摘要、持久化存储。不支持语义检索、混合检索、自动摘要、向量数据库集成、多项目隔离、智能清理策略等高级功能。解锁全部功能请使用专业版：context-vault-manager-pro。
 
@@ -315,7 +307,7 @@ await skills.contextVaultManager({
 - **操作系统**: Windows / macOS / Linux
 - **运行时**: 支持async/await的JavaScript运行时（Node.js 14+或浏览器）
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
@@ -368,3 +360,40 @@ await skills.contextVaultManager({
 - 记忆关系网络（记忆间关联关系与关联检索）
 
 解锁全部功能请使用专业版：context-vault-manager-pro
+
+## 示例
+
+### 示例1：基础用法
+
+```
+### 一分钟上手你的分层记忆
+
+```typescript
+// 添加长期记忆
+await skills.contextVaultManager({
+  action: "add",
+  content: "用户喜欢喝咖啡，不加糖，每周三下午喝奶茶",
+  type: "long-term",
+  persist: true
+});
+
+// 搜索记忆
+const result = await skills.contextVaultManager({
+  action: "search",
+  query: "用户喜好",
+  limit: 3
+});
+```
+
+### 可复制模板
+
+```markdown
+```
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

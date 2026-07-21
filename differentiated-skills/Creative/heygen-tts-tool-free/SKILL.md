@@ -4,32 +4,13 @@ name: heygen-tts-tool-free
 version: "1.0.0"
 displayName: HeyGen TTS免费版
 summary: 基于HeyGen Starfish模型的文字转语音工具,支持多语言语音合成与基础语速控制,适合个人使用。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向个人用户的 HeyGen 文字转语音工具(免费版)。
-
-  核心能力:
+  面向个人用户的 HeyGen 文字转语音工具(免费版)。核心能力:
   - 基于 HeyGen Starfish TTS 模型的语音合成
   - 支持 40+ 语言的语音选择
-  - 基础语速控制(0.5-2.0 倍速)
-  - 语音列表查询与筛选
-  - 音频文件下载与播放
-  - 停顿标签(break tags)支持
-
-  适用场景:
-  - 个人项目语音合成
-  - 视频配音与旁白
-  - 多语言内容生成
-  - 有声读物制作
-
-  差异化:
-  - 免费版聚焦基础 TTS 合成能力
-  - 支持通过 API Key 直接调用
-  - 提供 curl / Python 多语言示例
-  - 适配个人开发者快速集成
-
-  触发关键词: heygen, tts, text-to-speech, starfish, 语音合成, 文字转语音, 配音, free
+  - 基础语速控制(0。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - 创意设计
 - 语音合成
@@ -37,7 +18,7 @@ tags:
 - HeyGen
 - 多语言
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -187,7 +168,7 @@ curl -X POST "https://api.heygen.com/v3/voices/speech" \
 curl -o output.wav "https://resource2.heygen.ai/text_to_speech/..."
 ```
 
-## 配置示例
+## 示例
 
 ### Python 封装
 
@@ -335,7 +316,7 @@ ffmpeg -i input.wav -codec:a libmp3lame -qscale:a 2 output.mp3
 - **操作系统**: Windows / macOS / Linux
 - **网络**: 需访问 `api.heygen.com`
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -355,3 +336,15 @@ ffmpeg -i input.wav -codec:a libmp3lame -qscale:a 2 output.mp3
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。免费版聚焦基础 TTS 合成,适合个人开发者快速集成语音能力。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用

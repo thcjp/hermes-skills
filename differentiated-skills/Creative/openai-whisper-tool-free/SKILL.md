@@ -1,15 +1,13 @@
 ---
-slug: openai-whisper-tool-free
+slug: llm-provider-whisper-tool-free
 name: openai-whisper-tool-free
 version: "1.0.0"
 displayName: Whisper语音转文字免费版
 summary: 本地Whisper CLI语音转文字工具,支持常见音频格式转录与翻译,无需API Key,适合个人使用。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  基于 Whisper CLI 的本地语音转文字工具(免费版)。
-
-  核心能力:
+  基于 Whisper CLI 的本地语音转文字工具(免费版)。核心能力:
   - 本地音频转文字(transcription),无需 API Key
   - 支持 mp3 / m4a / wav / flac 等常见格式
   - 多种输出格式:txt / srt / vtt / json
@@ -24,11 +22,7 @@ description: |-
 
   差异化:
   - 免费版聚焦单文件转录核心能力
-  - 完全本地运行,数据不上传,保护隐私
-  - 无需 API Key,零成本使用
-  - 适配个人开发者与内容创作者
-
-  触发关键词: whisper, transcription, speech-to-text, 语音转文字, 转录, 字幕, srt, 本地, local, free
+  - 完全本...
 tags:
 - 创意设计
 - 语音转文字
@@ -36,17 +30,16 @@ tags:
 - 字幕生成
 - Whisper
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Whisper 语音转文字工具 - 免费版
 
 ## 概述
 
-Whisper 语音转文字工具(免费版)基于 OpenAI 开源的 Whisper 模型,提供完全本地化的语音转文字能力。无需 API Key、无需联网(首次下载模型后),适合个人用户处理播客录音、会议纪要、视频字幕等场景。
+Whisper 语音转文字工具(免费版)基于 llm-provider 开源的 Whisper 模型,提供完全本地化的语音转文字能力。无需 API Key、无需联网(首次下载模型后),适合个人用户处理播客录音、会议纪要、视频字幕等场景。
 
-免费版聚焦单文件转录的核心能力,专业版(`openai-whisper-tool-pro`)在此基础上提供批量处理、多模型管理、GPU 加速与自定义词典等高级能力。
+免费版聚焦单文件转录的核心能力,专业版(`llm-provider-whisper-tool-pro`)在此基础上提供批量处理、多模型管理、GPU 加速与自定义词典等高级能力。
 
 ## 核心能力
 
@@ -96,16 +89,30 @@ whisper audio.wav --model small --language zh --output_format srt --output_dir .
 whisper interview_french.m4a --task translate --model base --output_format txt
 ```
 
+## 不适用场景
+
+以下场景Whisper语音转文字免费版不适合处理：
+
+- 版权受保护的媒体内容处理
+- 实时直播推流
+- 专业影视后期
+
+
+## 触发条件
+
+需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
-### 1. 安装 Whisper
+### 依赖说明
 
 ```bash
 # 方式一:pip 安装(推荐)
-pip install -U openai-whisper
+pip install -U llm-provider-whisper
 
 # 方式二:conda 安装
-conda install -c conda-forge openai-whisper
+conda install -c conda-forge llm-provider-whisper
 ```
 
 ### 2. 安装 FFmpeg(依赖)
@@ -131,7 +138,7 @@ whisper audio.mp3 --model tiny --output_format txt --output_dir .
 
 首次运行会自动下载模型到 `~/.cache/whisper/`。
 
-## 配置示例
+## 示例
 
 ### 常用命令参数
 
@@ -220,7 +227,7 @@ whisper normalized.wav --model small --language zh
 ## 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **Agent 平台**: 支持SKILL.md的任意AI Agent(ai-assistant Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 - **Python**: 3.9 及以上
 - **硬件**: CPU 即可运行(GPU 可选,显著加速)
@@ -229,7 +236,7 @@ whisper normalized.wav --model small --language zh
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| openai-whisper | Python 库 | 必需 | `pip install -U openai-whisper` |
+| llm-provider-whisper | Python 库 | 必需 | `pip install -U llm-provider-whisper` |
 | ffmpeg | 系统工具 | 必需 | `brew install ffmpeg` / `apt install ffmpeg` |
 | PyTorch | Python 库 | 必需 | `pip install torch`(自动随 whisper 安装) |
 | Python 3.9+ | 运行时 | 必需 | `python.org` 下载 |
@@ -238,8 +245,21 @@ whisper normalized.wav --model small --language zh
 ### API Key 配置
 - 本 Skill 完全本地运行,**无需任何 API Key**
 - 模型文件首次使用时自动下载,后续离线可用
-- 不依赖 OpenAI API 或其他云服务
+- 不依赖 llm-provider API 或其他云服务
 
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。免费版为纯本地工具,数据不出本机,适合隐私敏感的个人转录场景。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用
+- 本地运行，不支持多设备同步

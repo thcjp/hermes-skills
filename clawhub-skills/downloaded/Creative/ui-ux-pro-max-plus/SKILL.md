@@ -8,31 +8,11 @@ summary: Professional UI/UX design resource library with searchable design patte
 license: MIT
 description: |-
   Professional UI/UX design resource library with searchable design patterns,
-  color palettes, font ...
-
-  核心能力:
-
-  - 创意设计领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 内容创作、设计生成、多媒体制作
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: professional, design, library, resource
+  color palettes, font 。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Creative
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -40,7 +20,7 @@ tools:
 
 完整的 UI/UX 设计资源库，让 AI 生成的界面像专业设计师作品一样精美。
 
-## 何时使用此 Skill
+## 适用场景
 
 * 设计任何用户界面时需要专业参考
 * 选择配色方案（品牌色、功能色、中性色）
@@ -190,7 +170,7 @@ space-16: 64px
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -201,3 +181,68 @@ space-16: 64px
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+
+- Professional UI/UX design resource library with searchable design patterns,
+  color palettes, font
+- 触发关键词: professional, design, library, resource
+
+## 示例
+
+### 示例1：基础用法
+
+```
+### 1. 确定设计风格
+
+先读取 `references/ui-styles.md`，选择适合项目的设计风格：
+
+* SaaS/企业应用 → Minimalist / Corporate
+* 电商 → Modern E-commerce / Luxury
+* 创意作品 → Brutalist / Glassmorphism
+* 社交应用 → Neumorphism / Soft UI
+
+### 2. 选择配色
+
+读取 `references/color-palettes.md`，根据品牌调性选择：
+
+* 科技/专业 → Blue/Cyan 系列
+* 自然/健康 → Green/Earth 系列
+* 时尚/美妆 → Purple/Pink 系列
+* 金融/法律 → Navy/Gray 系列
+
+### 3. 搭配字体
+
+读取 `references/typography.md`：
+
+* 现代科技感 → Inter + JetBrains Mono
+* 优雅精致 → Playfair Display + Inter
+* 友好亲和 → Nunito + Open Sans
+
+### 4. 
+```
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+
+### Q1: 如何开始使用UI UX Pro Max？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: UI UX Pro Max有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

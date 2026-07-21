@@ -4,12 +4,10 @@ name: tmux-session-tool-pro
 version: "1.0.0"
 displayName: Tmux会话工具专业版
 summary: 企业级多会话管理,支持批量会话操作、会话编排、监控告警与日志审计
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
-  面向团队与企业的高级 tmux 会话管理工具,在免费版基础上扩展多会话、编排、监控等能力。
-
-  核心能力:
+  面向团队与企业的高级 tmux 会话管理工具,在免费版基础上扩展多会话、编排、监控等能力。核心能力:
   - 多会话批量管理与并行操作
   - 会话编排与任务流水线
   - 实时监控与告警通知
@@ -27,7 +25,7 @@ description: |-
   - 提供监控告警与日志审计
   - 优先技术支持与更新通道
 
-  触发关键词: tmux, session, batch, orchestration, monitor, audit, multi, 批量, 编排, 监控, 审计, 多会话
+  触发关键词: tmux, ses...
 tags:
 - 终端工具
 - tmux
@@ -35,7 +33,7 @@ tags:
 - 多会话管理
 - 监控告警
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -87,7 +85,7 @@ done
 ### 3. 实时监控与告警
 
 ```python
-# 监控脚本示例
+# 示例
 import subprocess
 import time
 
@@ -452,7 +450,7 @@ python3 .tmux-toolkit/status.py
 - **tmux**: 3.0 或更高版本
 - **Python**: 3.8+(监控与模板脚本)
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -476,3 +474,17 @@ export TMUX_ALERT_EMAIL="team@example.com"
 - **分类**: MD+EXEC+SCRIPT+MONITOR(Markdown 指令 + 命令行执行 + 管理脚本 + 监控)
 - **说明**: 通过自然语言指令驱动 Agent 管理 tmux 会话,支持批量操作与监控告警
 - **离线可用**: 核心功能完全离线;告警通知需要网络连接
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

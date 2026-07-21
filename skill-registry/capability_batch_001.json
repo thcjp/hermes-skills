@@ -1,0 +1,130 @@
+{
+  "batch_num": 1,
+  "total_batches": 64,
+  "batch_size": 10,
+  "skills": [
+    {
+      "slug": "ad-insight-hub",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\ad-insight-hub\\SKILL.md",
+      "original_lines": 209,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "admapix",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\admapix\\SKILL.md",
+      "original_lines": 264,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "ai-agent-helper",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\ai-agent-helper\\SKILL.md",
+      "original_lines": 142,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "ai-assistant",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\claude\\SKILL.md",
+      "original_lines": 295,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "aws-agentcore-langgraph",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\aws-agentcore-langgraph\\SKILL.md",
+      "original_lines": 216,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "aws-cloud-architect",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\aws-cloud-architect\\SKILL.md",
+      "original_lines": 202,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "aws-graph-agent",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\aws-graph-agent\\SKILL.md",
+      "original_lines": 288,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "azure-cloud-architect",
+      "category": "Agents",
+      "original_path": "D:\\skills\\differentiated-skills\\Agents\\azure-cloud-architect\\SKILL.md",
+      "original_lines": 177,
+      "source": "differentiated",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "azure-infra",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\azure-infra\\SKILL.md",
+      "original_lines": 141,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    },
+    {
+      "slug": "baidu-netdisk-skills",
+      "category": "Agents",
+      "original_path": "D:\\skills\\clawhub-skills\\downloaded\\Agents\\baidu-netdisk-skills\\SKILL.md",
+      "original_lines": 432,
+      "source": "clawhub_downloaded",
+      "paid_score": null,
+      "free_score": null
+    }
+  ],
+  "generation_guidelines": {
+    "requirements": [
+      "必须基于源skill的原始内容生成,保留真实领域知识",
+      "所有章节内容必须领域具体化,不得使用通用模板填充",
+      "异常处理表必须包含领域特定错误,不得使用通用3行模板",
+      "FAQ必须包含领域特定问题,不得使用通用Q1/Q2/Q3",
+      "适用场景表必须有具体输入输出,不得使用\"基础使用|用户请求|处理结果\"",
+      "案例展示必须有真实数据,不得使用\"示例数据\"占位符",
+      "使用流程必须是领域特定步骤,不得使用通用4步模板",
+      "付费版:完整功能,200-400行,3个案例,8+异常,5+FAQ",
+      "免费版:基础功能,150-250行,1-2个案例,5+异常,3+FAQ,含升级提示"
+    ],
+    "forbidden_patterns": [
+      "配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求",
+      "运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明",
+      "网络错误 | 连接超时或不可达 | 检查网络连接后重试",
+      "Q1: 如何开始使用",
+      "Q2: 遇到错误怎么办",
+      "Q3:.*有什么限制",
+      "基础使用 | 用户请求 | 处理结果",
+      "确认运行环境满足依赖说明中的要求",
+      "根据适用场景选择合适的使用方式",
+      "执行操作并检查输出结果",
+      "如遇错误，参考错误处理章节",
+      "示例数据",
+      "示例输入",
+      "示例内容",
+      "示例输出",
+      "待补充",
+      "待填充",
+      "（根据实际场景填充）"
+    ]
+  }
+}

@@ -8,31 +8,11 @@ summary: Read and parse XML from construction systems - P6 schedules, BSDD expor
 license: MIT
 description: |-
   Read and parse XML from construction systems - P6 schedules, BSDD exports,
-  IFC-XML, COBie-XML. Co...
-
-  核心能力:
-
-  - 其他工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 通用工具、辅助功能、扩展能力
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: read, systems, reader, parse, construction, xml
+  IFC-XML, COBie-XML。Co。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Other
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -249,7 +229,7 @@ print(f"Found {len(activities)} activities")
 df = reader.elements_to_dataframe(activities)
 ```
 
-## Common Use Cases
+## 适用场景
 
 ### 1. P6 Schedule Import
 
@@ -292,7 +272,7 @@ for entity_type, count in sorted(types.items(), key=lambda x: -x[1])[:10]:
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -303,3 +283,49 @@ for entity_type, count in sorted(types.items(), key=lambda x: -x[1])[:10]:
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+
+XML is used in construction for P6 schedules (XER), IFC-XML, COBie-XML, and buildingSMART Data Dictionary exports. This skill parses XML and converts to structured DataFrames.
+
+## 示例
+
+### 示例1：基础用法
+
+```
+```python
+reader = ConstructionXMLReader()
+
+root = reader.parse_file("schedule.xml")
+
+activities = reader.find_elements(root, "Activity")
+print(f"Found {len(activities)} activities")
+
+df = reader.elements_to_dataframe(activities)
+```
+```
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+
+### Q1: 如何开始使用Xml Reader？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Xml Reader有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

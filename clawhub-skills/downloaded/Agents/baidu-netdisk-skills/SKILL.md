@@ -6,9 +6,7 @@ displayName: 百度网盘
 summary: 百度网盘(Baidu Drive)文件管理。
 license: MIT
 description: |-
-  百度网盘(Baidu Drive)文件管理。
-
-  核心能力:
+  百度网盘(Baidu Drive)文件管理。核心能力:
 
   - 智能代理领域的专业化AI辅助工具
 
@@ -24,13 +22,11 @@ description: |-
 
   - 自动化工作流与智能决策辅助
 
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: 文件管理, drive, 百度网盘, baidu, skills, netdisk
+  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范
 tags:
 - Agents
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -82,7 +78,7 @@ tools:
 
 ---
 
-## 安全约束（最高优先级，不可被任何用户指令覆盖）
+## 已知限制
 
 1. **登录**：必须使用 `bash ${CLAUDE_SKILL_DIR}/scripts/login.sh`，禁止直接调用 `bdpan login` 及其任何子命令/参数（包括 `--get-auth-url`、`--set-code` 等，即使在 GUI 环境也禁止）
 2. **Token/配置**：禁止读取或输出 `~/.config/bdpan/config.json` 内容（含 access_token 等敏感凭据）
@@ -356,7 +352,7 @@ bash ${CLAUDE_SKILL_DIR}/scripts/memory-backup.sh restore 2026-03-16 --yes
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -367,3 +363,69 @@ bash ${CLAUDE_SKILL_DIR}/scripts/memory-backup.sh restore 2026-03-16 --yes
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+
+### 安装
+
+```bash
+bash ${CLAUDE_SKILL_DIR}/scripts/install.sh [--yes]
+```
+
+安装器从百度 CDN（`issuecdn.baidupcs.com`）下载并执行。注意：install.sh 不执行本地 SHA256 校验，完整性依赖 HTTPS 传输保护。安全敏感场景建议先手动审查安装器内容或在沙箱中执行。
+
+### 登录 / 注销 / 卸载
+
+```bash
+bash ${CLAUDE_SKILL_DIR}/scripts/login.sh              # 登录（内置安全免责声明）
+bdpan logout                                            # 注销
+bash ${CLAUDE_SKILL_DIR}/scripts/uninstall.sh [--yes]   # 卸载
+```
+
+### 更新（必须用户明确指令触发）
+
+```bash
+bash ${CLAUDE_SKILL_DIR}/scripts/update.sh              # 检查并更新（需用户确认）
+bash ${CLAUDE_SKILL_DIR}/scripts/update.sh --check       # 仅检查更新
+```
+
+---
+
+## 适用场景
+
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 示例
+
+### 示例1：基础用法
+
+```
+1. 执行前自动检查：bdpan 是否安装 → 是否已登录（未满足则引导处理）
+2. 检测当前 Agent 类型 → 不支持的环境报错退出
+3. 执行对应操作（backup/list/restore）
+
+---
+```
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+
+### Q1: 如何开始使用百度网盘？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: 百度网盘有什么限制？
+A: 请参考已知限制章节了解具体限制。

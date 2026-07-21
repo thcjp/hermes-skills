@@ -4,12 +4,10 @@ name: python-dataviz-tool-free
 version: "1.0.0"
 displayName: Python数据可视化-免费版
 summary: 使用matplotlib/seaborn/plotly创建专业图表,支持柱状图、折线图、散点图与热力图
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  Python 数据可视化工具免费版,面向个人开发者与数据分析师。
-
-  核心能力:
+  Python 数据可视化工具免费版,面向个人开发者与数据分析师。核心能力:
   - matplotlib 静态图表(柱状/折线/散点/饼图)
   - seaborn 统计可视化(箱线/小提琴/KDE)
   - plotly 交互式图表
@@ -22,19 +20,16 @@ description: |-
   - 学术论文图表绘制
   - 个人项目数据可视化
 
-  差异化:免费版提供核心图表能力。PRO版扩展交互式仪表盘、大数据可视化、实时数据流图表与企业级报告模板。
-
-  触发关键词: matplotlib, seaborn, plotly, 可视化, 图表, dataviz, 数据图, 统计图
+  差异化:免费版提供核心图表能力
 tags:
 - 数据可视化
 - Python
 - 图表
 - matplotlib
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Python 数据可视化 - 免费版
 
 ## 概述
@@ -97,7 +92,7 @@ import matplotlib.pyplot as plt
 sns.set_theme(style="whitegrid")
 sns.set_palette("husl")
 
-# 加载示例数据
+# 示例
 tips = sns.load_dataset("tips")
 
 # 创建箱线图
@@ -127,6 +122,20 @@ fig.update_traces(textposition='top center')
 fig.write_html('product_scatter.html')
 ```
 
+## 不适用场景
+
+以下场景Python数据可视化-免费版不适合处理：
+
+- 实时流数据处理
+- 小规模数据手动分析
+- 非结构化文本情感分析
+
+
+## 触发条件
+
+需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 环境搭建
@@ -137,7 +146,7 @@ python3 -m venv .venv
 source .venv/bin/activate  # Linux/macOS
 # .venv\Scripts\activate   # Windows
 
-# 安装依赖
+# 依赖说明
 pip install matplotlib seaborn plotly pandas numpy
 ```
 
@@ -269,3 +278,17 @@ A: 使用 `plt.subplots(rows, cols)` 创建多子图。例如 `fig, axes = plt.s
 - **分类**: MD+EXEC(Markdown指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 生成 Python 可视化代码并执行
 - **限制**: 免费版不支持交互式仪表盘、大数据可视化与实时数据流图表
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

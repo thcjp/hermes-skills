@@ -4,7 +4,7 @@ name: free-weather-skill-tool-free
 version: "1.0.0"
 displayName: 免费天气技能免费版
 summary: 通过wttr.in和Open-Meteo免费API查询全球天气,无需API Key
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人用户的轻量天气查询工具,完全免费且无需 API Key。
@@ -19,10 +19,9 @@ tags:
 - 开发者工具
 - 全球天气
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 免费天气技能 (免费版)
 
 ## 概述
@@ -112,12 +111,26 @@ curl -s "wttr.in/Shanghai?0&lang=zh"
 curl -s "wttr.in/Berlin.png" -o /tmp/weather.png
 ```
 
+## 不适用场景
+
+以下场景免费天气技能免费版不适合处理：
+
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 运维部署管理
+
+
+## 触发条件
+
+需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 ### 步骤 1: 直接使用
 
 ```bash
-# 任何终端都可直接使用,无需安装
+# 依赖说明
 curl -s "wttr.in/your_city"
 ```
 
@@ -140,7 +153,7 @@ weather-json 上海
 curl -s "https://api.open-meteo.com/v1/forecast?latitude=39.9&longitude=116.4&current_weather=true"
 ```
 
-## 配置示例
+## 示例
 
 ### 格式代码速查
 
@@ -326,7 +339,7 @@ def robust_weather(city):
 
 是的,wttr.in 与 Open-Meteo 均为免费公共服务,无需注册与 API Key。
 
-### Q2: 有调用频率限制吗?
+### 已知限制
 
 wttr.in 建议不超过每分钟 10 次以避免被限流。Open-Meteo 限制为每天 10000 次。
 
@@ -377,3 +390,11 @@ export WEATHER_LANG="zh"
 - **说明**: 本 Skill 通过自然语言指令驱动 Agent 调用免费天气 API,完全零配置
 - **免费版特性**: 无需 API Key、命令行优先、多格式输出、双服务冗余
 - **限制**: 单城市查询、3 天预报、无 SLA、可能被限流
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |

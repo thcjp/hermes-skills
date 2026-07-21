@@ -4,12 +4,10 @@ name: ssl-toolkit-free
 version: "1.0.0"
 displayName: SSL工具箱(免费版)
 summary: 个人用户的HTTPS配置、TLS证书管理与基础连接排障工具。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  SSL工具箱(免费版)为个人用户提供HTTPS配置、TLS证书管理与基础连接排障能力。
-
-  核心能力:
+  SSL工具箱(免费版)为个人用户提供HTTPS配置、TLS证书管理与基础连接排障能力。核心能力:
   - Let's Encrypt免费证书申请与续期
   - 证书状态检查与详情查看
   - 常见错误诊断与修复
@@ -26,17 +24,16 @@ description: |-
   - 移除原始平台与作者引用,纯净适配SkillHub
   - 提供中文友好的错误诊断表
 
-  触发关键词: ssl, https, tls, 证书, certificate, certbot, let's encrypt, 加密, 安全连接, nginx, apache
+  ...
 tags:
 - Development
 - 安全
 - SSL
 - 运维
 tools:
-- read
+  - - read
 - exec
 ---
-
 # SSL工具箱(免费版)
 
 ## 概述
@@ -96,7 +93,7 @@ server {
 # 查看远程证书有效期
 echo | openssl s_client -connect example.com:443 2>/dev/null | openssl x509 -noout -dates
 
-# 输出示例
+# 示例
 # notBefore=Jun 19 00:00:00 2026 GMT
 # notAfter=Sep 17 00:00:00 2026 GMT
 
@@ -115,6 +112,20 @@ openssl s_client -connect example.com:443 -servername example.com
 | `hostname mismatch` | 证书不覆盖该域名 | 为正确域名申请证书或加SAN |
 | `mixed content` | HTTPS页面引用HTTP资源 | 把所有URL改为HTTPS或用 `//` |
 | `ERR_CERT_AUTHORITY_INVALID` | 自签名或不受信任的CA | 使用Let's Encrypt或安装CA证书 |
+
+## 不适用场景
+
+以下场景SSL工具箱(免费版)不适合处理：
+
+- 实际人员绩效评估
+- 财务预算审批
+- 合同法务审核
+
+
+## 触发条件
+
+需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于非本工具能力范围的需求。
+
 
 ## 快速开始
 
@@ -313,7 +324,7 @@ HTTPS页面引用HTTP资源会触发混合内容警告:
 - **操作系统**: Windows / macOS / Linux
 - **Web服务器**: Nginx / Apache(配置HTTPS需要)
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -333,3 +344,17 @@ HTTPS页面引用HTTP资源会触发混合内容警告:
 
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。免费版聚焦个人站点的HTTPS配置、证书管理与基础连接排障。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

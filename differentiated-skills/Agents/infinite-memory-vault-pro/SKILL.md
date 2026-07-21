@@ -4,7 +4,7 @@ name: infinite-memory-vault-pro
 version: "1.0.0"
 displayName: 无限记忆库(专业版)
 summary: 与Agent内置记忆并行的无限组织化记忆专业版：语义搜索+自动同步+大规模索引，全功能解锁。
-license: MIT
+license: Proprietary
 edition: pro
 description: |-
   面向需要超越 Agent 内置记忆的长期结构化存储场景的无限记忆库专业版。与 Agent 内置记忆并行工作，互不冲突，提供无限分类、语义搜索、自动同步、大规模索引能力。专业版解锁全部高级功能，适合团队/企业级知识管理与长期记忆需求。

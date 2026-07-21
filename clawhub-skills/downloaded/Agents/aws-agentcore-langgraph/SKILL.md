@@ -2,38 +2,18 @@
 slug: aws-agentcore-langgraph
 name: aws-agentcore-langgraph
 version: "1.0.2"
-displayName: aws-agentcore-langgraph
+displayName: Aws Agentcore Langgr
 summary: This skill is a coherent AWS AgentCore/LangGraph deployment aid, but users
   should treat its cloud...
 license: MIT
 description: |-
   This skill is a coherent AWS AgentCore/LangGraph deployment aid, but
-  users should treat its cloud...
-
-  核心能力:
-
-  - 智能代理领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - AI代理增强、记忆管理、自主决策
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: aws-agentcore-langgraph, aws, coherent, agentcore, langgraph, skill
+  users should treat its cloud。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
 - Agents
 - Operations
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -172,7 +152,7 @@ Complex multi-step logic? → StateGraph + tools_condition + ToolNode
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -183,3 +163,53 @@ Complex multi-step logic? → StateGraph + tools_condition + ToolNode
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+
+- This skill is a coherent AWS AgentCore/LangGraph deployment aid, but
+  users should treat its cloud
+- 触发关键词: aws-agentcore-langgraph, aws, coherent, agentcore, langgraph, skill
+
+## 适用场景
+
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 示例
+
+### 示例1：基础用法
+
+```
+```python
+from langgraph.graph import StateGraph, START
+from langgraph.graph.message import add_messages
+from langgraph.prebuilt import ToolNode, tools_condition  # routing + tool execution
+from bedrock_agentcore.runtime import BedrockAgentCoreApp
+from typing import Annotated
+from typing_extensions import TypedDict
+
+class State(TypedDict):
+    messages: Annotated[list, add_messages]
+
+builder = StateGraph(State)
+builder.add_node("agent", agent_node)
+builder.add_node("tools", ToolNode(tools))  # p
+```
+
+## 常见问题
+
+### Q1: 如何开始使用Aws Agentcore Langgr？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Aws Agentcore Langgr有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+
+- 依赖云服务，需要网络连接

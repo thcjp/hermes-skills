@@ -7,51 +7,24 @@ summary: A comprehensive JavaScript style guide skill. When activated, it provid
   best-practice JavaScrip...
 license: MIT-0
 description: |-
-  A comprehensive JavaScript style guide skill. When activated, it provides
-  best-practice JavaScrip...
-
-  核心能力:
-
-  - 开发工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 代码审查、开发规范、项目管理
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: style, comprehensive, guide, skills, javascript, skill
+  A comprehensive JavaScript style guide skill。When activated, it provides
+  best-practice JavaScrip。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Development
 tools:
-- read
+  - - read
 - exec
----
-
 # JavaScript
-
 ## Activation
-
+---
 This skill activates when the user mentions or implies **JavaScript** in their request. Once activated, it:
 
 * Responds with best-practice guidance
 * Generates JavaScript code that strictly conforms to the style guide
 * Provides explanations for why each convention is recommended
 
----
-
 ## Complete Style Rules
-
 ### 1. References
-
 * Use `const` for all references; avoid `var`.
 * If you must reassign references, use `let` instead of `var`.
 * Both `const` and `let` are block-scoped, whereas `var` is function-scoped.
@@ -67,7 +40,6 @@ mutableValue += 1;
 ```
 
 ### 2. Objects
-
 * Use literal syntax for object creation.
 * Use computed property names when creating objects with dynamic property names.
 * Use object method shorthand and property value shorthand.
@@ -75,90 +47,24 @@ mutableValue += 1;
 * Only quote properties that are invalid identifiers.
 * Prefer the object spread syntax (`...`) over `Object.assign` to shallow-copy objects.
 
-```javascript
-// bad
-const item = new Object();
-
-// good
-const item = {};
-
-// computed property names
-const key = 'name';
-const obj = { [key]: 'value' };
-
-// method & property shorthand
-const name = 'Alice';
-const atom = {
-  name,
-  value: 1,
-  addValue(val) {
-    return atom.value + val;
-  },
-};
-
-// shallow copy
-const original = { a: 1, b: 2 };
-const copy = { ...original, c: 3 };
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 3. Arrays
-
 * Use literal syntax for array creation.
 * Use `Array.from` or the spread operator to convert array-like objects.
 * Use `return` statements in array method callbacks.
 * Use line breaks after the opening bracket and before the closing bracket if the array has multiple lines.
 
-```javascript
-// bad
-const items = new Array();
-
-// good
-const items = [];
-
-// convert iterable
-const nodes = Array.from(document.querySelectorAll('.item'));
-const uniqueValues = [...new Set(arr)];
-
-// array methods
-[1, 2, 3].map((x) => x + 1);
-
-[1, 2, 3].map((x) => {
-  const y = x + 1;
-  return x * y;
-});
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 4. Destructuring
-
 * Use object destructuring when accessing multiple properties of an object.
 * Use array destructuring.
 * Use object destructuring for multiple return values, not array destructuring.
 
-```javascript
-// bad
-function getFullName(user) {
-  const firstName = user.firstName;
-  const lastName = user.lastName;
-  return `${firstName} ${lastName}`;
-}
-
-// good
-function getFullName({ firstName, lastName }) {
-  return `${firstName} ${lastName}`;
-}
-
-// array destructuring
-const [first, , third] = [1, 2, 3];
-
-// multiple return values — use object destructuring
-function processInput(input) {
-  return { left, right, top, bottom };
-}
-const { left, top } = processInput(input);
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 5. Strings
-
 * Use single quotes `''` for strings.
 * Use template literals for string interpolation and multi-line strings.
 * Never use `/* REMOVED: eval */ ()` on a string.
@@ -175,7 +81,6 @@ const greeting = `Hello, ${name}!`;
 ```
 
 ### 6. Functions
-
 * Use named function expressions instead of function declarations.
 * Wrap immediately invoked function expressions (IIFE) in parentheses.
 * Never declare a function in a non-function block (`if`, `while`, etc.).
@@ -186,94 +91,26 @@ const greeting = `Hello, ${name}!`;
 * Use the spread operator `...` to call variadic functions.
 * Use rest parameters (`...args`) instead of `arguments`.
 
-```javascript
-// named function expression
-const short = function longUniqueMoreDescriptiveLexicalFoo() {
-  // ...
-};
-
-// default parameters last
-function handleThings(name, opts = {}) {
-  // ...
-}
-
-// rest parameters
-function concatenateAll(...args) {
-  return args.join('');
-}
-
-// spread to call
-const values = [1, 2, 3];
-console.log(Math.max(...values));
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 7. Arrow Functions
-
 * Use arrow function notation for anonymous functions (callbacks).
 * If the function body consists of a single expression, omit the braces and use the implicit return.
 * If the expression spans multiple lines, wrap it in parentheses for readability.
 * Always include parentheses around arguments for clarity and consistency.
 
-```javascript
-// bad
-[1, 2, 3].map(function (x) {
-  const y = x + 1;
-  return x * y;
-});
-
-// good
-[1, 2, 3].map((x) => {
-  const y = x + 1;
-  return x * y;
-});
-
-// implicit return
-[1, 2, 3].map((x) => x * 2);
-
-// multiline implicit return
-[1, 2, 3].map((number) => (
-  `A long string with the ${number}. It's so long that we don't want it to take up space on the .map line!`
-));
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 8. Classes & Constructors
-
 * Always use `class`; avoid manipulating `prototype` directly.
 * Use `extends` for inheritance.
 * Methods can return `this` to enable method chaining.
 * Classes have a default constructor if no constructor is specified; an empty constructor or one that just delegates to a parent is unnecessary.
 * Avoid duplicate class members.
 
-```javascript
-// bad
-function Queue(contents = []) {
-  this.queue = [...contents];
-}
-Queue.prototype.pop = function () {
-  return this.queue.pop();
-};
-
-// good
-class Queue {
-  constructor(contents = []) {
-    this.queue = [...contents];
-  }
-
-  pop() {
-    return this.queue.pop();
-  }
-}
-
-// inheritance
-class PeekableQueue extends Queue {
-  peek() {
-    return this.queue[0];
-  }
-}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 9. Modules
-
 * Always use ES modules (`import`/`export`) over a non-standard module system.
 * Do not use wildcard imports.
 * Do not export directly from an import.
@@ -283,28 +120,9 @@ class PeekableQueue extends Queue {
 * Put all `import`s above non-import statements.
 * Multi-line imports should be indented like multi-line array and object literals.
 
-```javascript
-// bad
-const utils = require('./utils');
-module.exports = utils.fetchData;
-
-// good
-import { fetchData } from './utils';
-export default fetchData;
-
-// single place import
-import { named1, named2 } from 'module';
-
-// multiline
-import {
-  longNameA,
-  longNameB,
-  longNameC,
-} from 'path/to/module';
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 10. Iterators and Generators
-
 * Prefer JavaScript's higher-order functions over `for-in` or `for-of` loops.
 * Use `map`, `filter`, `reduce`, `find`, `findIndex`, `every`, `some`, etc.
 * Don't use generators for now (if targeting ES5 environments).
@@ -326,7 +144,6 @@ const evens = numbers.filter((num) => num % 2 === 0);
 ```
 
 ### 11. Properties
-
 * Use dot notation when accessing properties.
 * Use bracket notation `[]` when accessing properties with a variable.
 * Use the exponentiation operator `**` instead of `Math.pow`.
@@ -346,7 +163,6 @@ const result = 2 ** 10;
 ```
 
 ### 12. Variables
-
 * Always use `const` or `let`; never use `var`.
 * Use one `const` or `let` declaration per variable or assignment.
 * Group all `const`s and then group all `let`s.
@@ -355,36 +171,14 @@ const result = 2 ** 10;
 * Avoid using unary increments (`++`, `--`); use `+= 1` / `-= 1` instead.
 * Avoid linebreaks before or after `=` in an assignment.
 
-```javascript
-// bad
-const items = getItems(),
-  goSportsTeam = true,
-  dragonball = 'z';
-
-// good
-const items = getItems();
-const goSportsTeam = true;
-const dragonball = 'z';
-
-// group const then let
-const a = 1;
-const b = 2;
-let c = 3;
-let d = 4;
-
-// avoid unary
-let count = 0;
-count += 1;
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 13. Hoisting
-
 * `var` declarations get hoisted; `const` and `let` are in Temporal Dead Zone.
 * Named function expressions hoist the variable name but not the function body.
 * Function declarations hoist the name and the function body.
 
 ### 14. Comparison Operators & Equality
-
 * Use `===` and `!==` over `==` and `!=`.
 * Use shortcuts for booleans, but explicit comparisons for strings and numbers.
 * Use braces to create blocks in `case` and `default` clauses that contain lexical declarations.
@@ -407,33 +201,13 @@ const thing = foo === 123 ? bar : foobar;
 ```
 
 ### 15. Blocks
-
 * Use braces with all multiline blocks.
 * Put `else` on the same line as the `if` block's closing brace.
 * If an `if` block always executes a `return`, the subsequent `else` block is unnecessary.
 
-```javascript
-// bad
-if (test)
-  return false;
-
-// good
-if (test) return false;
-
-if (test) {
-  return false;
-}
-
-// if/else
-if (test) {
-  thing1();
-} else {
-  thing2();
-}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 16. Control Statements
-
 * If a control statement (`if`, `while`, etc.) gets too long, each grouped condition should be on a new line, with the logical operator at the beginning of the line.
 * Don't use selection operators in place of control statements.
 
@@ -447,32 +221,14 @@ if (
 ```
 
 ### 17. Comments
-
 * Use `/** ... */` for multiline comments.
 * Use `//` for single-line comments. Place them on a new line above the subject.
 * Start all comments with a space for readability.
 * Prefix comments with `FIXME:` or `TODO:` to annotate problems or suggest actions.
 
-```javascript
-// good single line
-// This is a comment
-const active = true;
-
-/**
- * Multiline comment explaining the function.
- * @param {string} tag - The tag name.
- * @returns {Element} The created element.
- */
-function make(tag) {
-  return document.createElement(tag);
-}
-
-// TODO: implement caching
-// FIXME: should not use global state
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 18. Whitespace
-
 * Use soft tabs (spaces) set to 2 spaces.
 * Place 1 space before the leading brace.
 * Place 1 space before the opening parenthesis in control statements.
@@ -485,52 +241,15 @@ function make(tag) {
 * Do not add spaces inside parentheses, brackets.
 * Add spaces inside curly braces.
 
-```javascript
-// bad
-function foo(){
-  const name='Alice';
-}
-
-// good
-function foo() {
-  const name = 'Alice';
-}
-
-// method chaining
-$('#items')
-  .find('.selected')
-  .highlight()
-  .end()
-  .find('.open')
-  .updateCount();
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 19. Commas
-
 * Do **not** use leading commas.
 * Use trailing commas (dangling commas) for multiline structures.
 
-```javascript
-// bad — leading commas
-const hero = {
-    firstName: 'Ada'
-  , lastName: 'Lovelace'
-};
-
-// good — trailing commas
-const hero = {
-  firstName: 'Ada',
-  lastName: 'Lovelace',
-};
-
-const heroes = [
-  'Batman',
-  'Superman',
-];
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 20. Semicolons
-
 * **Always** use semicolons.
 
 ```javascript
@@ -542,7 +261,6 @@ const name = 'Alice';
 ```
 
 ### 21. Type Casting & Coercion
-
 * Perform type coercion at the beginning of the statement.
 * Use `String()` for strings, `Number()` for numbers, `Boolean()` or `!!` for booleans.
 * Use `parseInt` always with a radix.
@@ -562,7 +280,6 @@ const count = parseInt(inputValue, 10);
 ```
 
 ### 22. Naming Conventions
-
 * Avoid single-letter names; be descriptive.
 * Use **camelCase** for objects, functions, and instances.
 * Use **PascalCase** for classes and constructors.
@@ -572,28 +289,9 @@ const count = parseInt(inputValue, 10);
 * Use **camelCase** when exporting a function; use **PascalCase** when exporting a class / constructor / singleton / function library / bare object.
 * Acronyms and initialisms should always be all uppercased or all lowercased.
 
-```javascript
-// bad
-const OBJEcttsssss = {};
-function c() {}
-const u = new user();
-
-// good
-const thisIsMyObject = {};
-function calculateTotal() {}
-const user = new User();
-
-// constants
-export const API_BASE_URL = 'https://api.example.com';
-export const MAX_RETRY_COUNT = 3;
-
-// filename examples
-// file: makeStyleGuide.js → export default function makeStyleGuide() {}
-// file: User.js              → export default class User {}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 23. Accessors
-
 * Accessor functions for properties are not required.
 * Do not use JavaScript getters/setters as they cause unexpected side effects.
 * If you do make accessor functions, use `getVal()` and `setVal('value')`.
@@ -611,7 +309,6 @@ dragon.hasWings();
 ```
 
 ### 24. Events
-
 * When attaching data payloads to events, pass an object (hash) instead of a raw value.
 
 ```javascript
@@ -623,72 +320,22 @@ emitter.emit('itemUpdate', { itemId: item.id });
 ```
 
 ### 25. Promises & Async/Await
-
 * Prefer `async`/`await` over chaining `.then()` and `.catch()`.
 * Always handle errors with `try...catch` in `async` functions.
 * Avoid mixing callbacks and promises.
 * Use `Promise.all` for concurrent independent async operations.
 * Use `Promise.allSettled` when you need results of all promises regardless of rejection.
 
-```javascript
-// bad
-function fetchData() {
-  return getData()
-    .then((data) => parseData(data))
-    .then((parsed) => validate(parsed))
-    .catch((err) => console.error(err));
-}
-
-// good
-async function fetchData() {
-  try {
-    const data = await getData();
-    const parsed = await parseData(data);
-    return validate(parsed);
-  } catch (err) {
-    console.error(err);
-    throw err;
-  }
-}
-
-// concurrent operations
-async function loadDashboard() {
-  const [user, posts, notifications] = await Promise.all([
-    fetchUser(),
-    fetchPosts(),
-    fetchNotifications(),
-  ]);
-  return { user, posts, notifications };
-}
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 26. Error Handling
-
 * Only throw `Error` objects (or subclasses of `Error`).
 * Always catch errors where they can be meaningfully handled.
 * Use custom error classes for domain-specific errors.
 
-```javascript
-// bad
-throw 'Something went wrong';
-throw { message: 'error' };
-
-// good
-throw new Error('Something went wrong');
-
-class ValidationError extends Error {
-  constructor(message, field) {
-    super(message);
-    this.name = 'ValidationError';
-    this.field = field;
-  }
-}
-
-throw new ValidationError('Invalid email', 'email');
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ### 27. Optional Chaining & Nullish Coalescing
-
 * Use optional chaining (`?.`) to access nested properties that may not exist.
 * Use nullish coalescing (`??`) instead of `||` when you want to allow falsy values like `0` or `''`.
 
@@ -703,7 +350,6 @@ const port = config.port ?? 3000;
 ```
 
 ### 28. Standard Library
-
 * Use `Number.isNaN` instead of global `isNaN`.
 * Use `Number.isFinite` instead of global `isFinite`.
 
@@ -717,14 +363,10 @@ Number.isNaN('1.2');
 Number.isFinite('2e3');
 ```
 
----
-
 ## Usage
-
 This is a **Prompt-based Skill** (natural language activation).
 
 ### How to Use
-
 1. **Automatic Activation**: Simply mention "JavaScript" in your request. The skill will be activated automatically.
 2. **Ask for Style Guidance**:
 
@@ -756,38 +398,19 @@ This is a **Prompt-based Skill** (natural language activation).
    "How should I handle async errors in JavaScript?"
    ```
 
-### Examples
-
+### 示例
 **User**: Write a JavaScript utility function to deep clone an object.
 
 **Skill Response**: Generates clean, style-guide-compliant code:
 
-```javascript
-/**
- * Deep clones a plain object or array using structured cloning.
- * Falls back to JSON serialization for environments without structuredClone.
- *
- * @param {Object|Array} source - The value to clone.
- * @returns {Object|Array} A deep copy of the source.
- */
-function deepClone(source) {
-  if (typeof structuredClone === 'function') {
-    return structuredClone(source);
-  }
-
-  return JSON.parse(JSON.stringify(source));
-}
-
-export default deepClone;
-```
+> 详细代码示例已移至 `references/detail.md`
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -798,3 +421,44 @@ export default deepClone;
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+- A comprehensive JavaScript style guide skill
+- When activated, it provides
+  best-practice JavaScrip
+- 触发关键词: style, comprehensive, guide, skills, javascript, skill
+
+## 适用场景
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+### Q1: 如何开始使用JavaScript？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: JavaScript有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

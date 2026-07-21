@@ -4,7 +4,7 @@ name: calendar-reminder-tool-free
 version: "1.0.0"
 displayName: 日历提醒工具免费版
 summary: 每晚自动扫描明日日历并通过飞书发送提醒，上午提前2小时、下午统一12点通知，适合个人单日历。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
   面向个人用户的日历日程自动提醒工具。
@@ -19,10 +19,9 @@ tags:
 - 个人效率
 - 定时任务
 tools:
-- read
+  - - read
 - exec
 ---
-
 # 日历提醒工具 免费版
 
 ## 概述
@@ -89,6 +88,20 @@ tools:
 共 2 项下午日程，请合理安排时间
 ```
 
+## 不适用场景
+
+以下场景日历提醒工具免费版不适合处理：
+
+- 实时流数据处理
+- 小规模数据手动分析
+- 非结构化文本情感分析
+
+
+## 触发条件
+
+需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求。
+
+
 ## 快速开始
 
 1. 确保已安装依赖（owa-outlook skill、Python 3.9+、skill-platform CLI）。
@@ -118,7 +131,7 @@ skill-platform cron add \
 python3 ~/.skill-platform/workspace/skills/calendar-reminder/calendar_reminder.py
 ```
 
-## 配置示例
+## 示例
 
 免费版配置通过脚本参数与环境变量控制。
 
@@ -228,7 +241,7 @@ python3 ~/.skill-platform/workspace/skills/calendar-reminder/calendar_reminder.p
 - **运行时**：Python 3.9+（需要 `zoneinfo` 模块）
 - **定时调度**：skill-platform cron 或系统 cron
 
-### 第三方依赖
+### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 | :------- | :----- | :--------- | :--------- |
@@ -256,3 +269,17 @@ export OUTLOOK_EMAIL="your_work_email@company.com"
 
 - **分类**：MD+EXEC（纯 Markdown 指令，部分功能需要 exec 命令行执行能力）
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务。免费版为单日历扫描功能子集，扫描脚本与提醒格式与专业版完全兼容。
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

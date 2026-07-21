@@ -7,32 +7,12 @@ summary: Query, design, migrate, and optimize SQL databases. Use when working wi
   SQLite, PostgreSQL, or ...
 license: MIT
 description: |-
-  Query, design, migrate, and optimize SQL databases. Use when working
-  with SQLite, PostgreSQL, or ...
-
-  核心能力:
-
-  - 集成工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 第三方API集成、平台对接、数据同步
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范。
-
-  触发关键词: migrate, databases, optimize, design, toolkit, query, sql
+  Query, design, migrate, and optimize SQL databases。Use when working
+  with SQLite, PostgreSQL, or。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Integrations
 tools:
-- read
+  - - read
 - exec
 ---
 
@@ -450,7 +430,7 @@ mysql -h localhost -u root -p mydb < backup.sql
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -461,3 +441,59 @@ mysql -h localhost -u root -p mydb < backup.sql
 ### 可用性分类
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+
+- Query, design, migrate, and optimize SQL databases
+- Use when working
+  with SQLite, PostgreSQL, or
+- 触发关键词: migrate, databases, optimize, design, toolkit, query, sql
+
+## 适用场景
+
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 示例
+
+### 示例1：基础用法
+
+```
+```bash
+sqlite3 mydb.sqlite
+
+sqlite3 mydb.sqlite ".mode csv" ".import data.csv mytable" "SELECT COUNT(*) FROM mytable;"
+
+sqlite3 mydb.sqlite "SELECT * FROM users WHERE created_at > '2026-01-01' LIMIT 10;"
+
+sqlite3 -header -csv mydb.sqlite "SELECT * FROM orders;" > orders.csv
+
+sqlite3 -header -column mydb.sqlite
+```
+```
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+
+### Q1: 如何开始使用SQL Toolkit？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: SQL Toolkit有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+
+- 需要API Key，无Key环境无法使用

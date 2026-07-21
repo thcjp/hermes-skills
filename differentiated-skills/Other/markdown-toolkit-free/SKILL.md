@@ -4,12 +4,10 @@ name: markdown-toolkit-free
 version: "1.0.0"
 displayName: Markdown 工具箱
 summary: 面向个人的干净可移植 Markdown 生成工具，兼容多平台。
-license: MIT
+license: Proprietary
 edition: free
 description: |-
-  面向个人用户的干净可移植 Markdown 生成工具。
-
-  核心能力:
+  面向个人用户的干净可移植 Markdown 生成工具。核心能力:
   - 避免平台专有语法，保证可移植
   - 代码块语言标注与表格语法规范
   - 单文件 Markdown 输出与基础校验
@@ -20,19 +18,16 @@ description: |-
   - 单文件技术文档撰写
   - 跨平台发布的 Markdown 校验
 
-  差异化: 免费版聚焦个人单文件 Markdown 生成与校验，提供可移植性规则，零成本使用。
-
-  触发关键词: markdown, 可移植, 文档生成, 代码块, 表格, 标题层级, portable, commonmark
+  差异化: 免费版聚焦个人单文件 Markdown 生成与校验，提供可移植性规则，零成本使用
 tags:
 - Markdown
 - 文档
 - 个人效率
 - 其他工具
 tools:
-- read
+  - - read
 - exec
 ---
-
 # Markdown 工具箱（免费版）
 
 ## 概述
@@ -74,6 +69,20 @@ def hello(name: str) -> str:
 ```markdown
 # 文档标题（唯一 H1）
 
+## 不适用场景
+
+以下场景Markdown 工具箱不适合处理：
+
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 运维部署管理
+
+
+## 触发条件
+
+需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
+
+
 ## 章节
 
 ### 子章节
@@ -89,7 +98,7 @@ def hello(name: str) -> str:
 3. 校验标题层级与代码块语言。
 4. 输出单文件。
 
-## 配置示例
+## 示例
 
 可移植性规则速查：
 
@@ -207,7 +216,7 @@ A：尽量避免，HTML 在部分 Markdown 渲染器不显示。
 - **Agent 平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
 - **操作系统**: Windows / macOS / Linux
 
-### 第三方依赖
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | markdownlint | 校验工具 | 推荐 | `npm install -g markdownlint-cli` |
@@ -219,3 +228,17 @@ A：尽量避免，HTML 在部分 Markdown 渲染器不显示。
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 命令行校验）
 - **说明**: 通过自然语言指令驱动 Agent 生成并校验 Markdown
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力
