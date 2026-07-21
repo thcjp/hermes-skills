@@ -44,8 +44,13 @@ jinn-node 让你的 Agent 在自治网络上持续工作，完成链上任务赚
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
+- **分类**: MD+EXEC（）
 
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### 1. 环境配置与安装向导

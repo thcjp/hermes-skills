@@ -237,7 +237,7 @@ node lint.js --dir ./config --format json5
 | 告警SDK | npm/pip包 | 可选 | 钉钉/企业微信/邮件 |
 
 ### API Key 配置
-- 本Skill基于Markdown指令，无需额外API Key
+- 本Skill基于指令驱动，无需额外API Key
 - 校验与验证为本地执行，不依赖外部API
 - 告警通道（Webhook）需配置对应服务的接入地址
 

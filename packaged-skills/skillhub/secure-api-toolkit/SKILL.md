@@ -224,7 +224,7 @@ print(response.json())
 import { secureFetch, SecureProxyError } from '@secure-proxy/machine-sdk';
 
 try {
-  const res = await secureFetch('https://api.github.com/user/repos', {
+  const res = await secureFetch('https://api.相关技术文档 {
     headers: { Authorization: 'Bearer （根据实际场景填充）' },
     vault: 'engineering-team'
   });

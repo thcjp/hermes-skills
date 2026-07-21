@@ -296,6 +296,33 @@ node scripts/cost-dashboard.mjs --period month --format csv > reports/month.csv
 - `-route`: 命令参数,用于指定操作选项
 - `--group-by`: 命令参数,用于指定操作选项
 
+### 命令参数说明
+
+- `-Plus`: 命令参数,用于指定操作选项
+- `--period`: 命令参数,用于指定操作选项
+- `-Flash`: 命令参数,用于指定操作选项
+- `-policy`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Flash`: 命令参数,用于指定操作选项
+- `-Plus`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Flash`: 命令参数,用于指定操作选项
+- `-Plus`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Plus`: 命令参数,用于指定操作选项
+- `-Flash`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Flash`: 命令参数,用于指定操作选项
+- `-Plus`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -375,7 +402,7 @@ node scripts/cost-dashboard.mjs --period month --format csv > reports/month.csv
 
 ### API Key 配置
 
-- 本Skill基于Markdown指令,无需额外API Key。
+- 本Skill基于指令驱动,无需额外API Key。
 - 各模型API供应商需配置独立Key,建议通过环境变量(如 `PROVIDER_A_KEY`、`PROVIDER_B_KEY`)注入,不入库。
 - 通知渠道的webhook URL需配置为环境变量或密钥管理器。
 - 审计日志若存数据库,数据库凭据按对应服务文档配置。

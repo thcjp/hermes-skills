@@ -79,7 +79,7 @@ tools:
 **输入**: 用户提供源能力映射所需的指令和必要参数。
 **输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
 ### 领域术语
-本skill涉及以下领域术语: `list`, `urls`, `fetch_llm_council_documentation`, `scripts/gitmcp.py`, `semantic`, `fetch_my_repo_documentation`, `facebook/react`, `github.com/owner/repo`, `conversion`, `returns`, `readme`, `gitmcp.io/owner/repo`, `my-org/my-repo`, `retrieves`, `fetch_react_documentation`
+本skill涉及以下领域术语: `list`, `urls`, `fetch_llm_council_documentation`, `scripts/gitmcp.py`, `semantic`, `fetch_my_repo_documentation`, `facebook/react`, `相关技术文档 `conversion`, `returns`, `readme`, `gitmcp.io/owner/repo`, `my-org/my-repo`, `retrieves`, `fetch_react_documentation`
 
 **输入**: 用户提供领域术语所需的指令和必要参数。
 **处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。

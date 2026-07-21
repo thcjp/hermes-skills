@@ -65,6 +65,12 @@ python3 {baseDir}/scripts/csv_analyze.py stats data.csv
 返回行数、列类型、数值列的min/max/mean、文本列的unique计数。
 
 **输入**: 用户提供快速统计（stats）所需的指令和必要参数。
+
+- 执行`快速统计（stats）`操作,处理输入数据并返回结果
+- 验证执行结果,确认输出符合预期格式
+- 异常时参考错误处理章节进行恢复
+- 关键参数: `快速统计（stats）` 选项
+
 ### 2. 基础筛选（filter）
 ```bash
 python3 {baseDir}/scripts/csv_analyze.py 

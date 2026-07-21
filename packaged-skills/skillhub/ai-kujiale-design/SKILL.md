@@ -126,6 +126,26 @@ node ./scripts/searchPlan.js --token=$TOKEN --query="
 3. **执行处理**: Agent按照核心能力章节的指令执行任务
 4. **结果验证**: 检查输出结果是否符合预期，参考错误处理章节处理异常
 
+### 命令参数说明
+
+- `-platform`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-platform`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-platform`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-platform`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-platform`: 命令参数,用于指定操作选项
+
 ## 初始化配置
 
 首次使用需在项目根目录创建 `.kjlconfig.json`(参考 `.kjlconfig-example.json`),配置 access_token:

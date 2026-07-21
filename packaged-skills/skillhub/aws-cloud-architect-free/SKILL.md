@@ -24,8 +24,7 @@ tools:
 
 基础 AWS 架构设计、服务选型与只读资源查询助手。遵循 Well-Architected Framework 基本原则。
 
-## 核心规则
-
+## 核心能力
 ### 1. 先验证账户上下文
 ```bash
 aws sts get-caller-identity
@@ -124,8 +123,13 @@ ALB 零流量也计费。删除未使用的负载均衡器。
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
+- **分类**: MD+EXEC（）
 
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 使用流程
 
 1. 用 `aws sts get-caller-identity` 确认账户与 Region

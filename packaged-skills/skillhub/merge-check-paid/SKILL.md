@@ -164,6 +164,26 @@ bash scripts/merge-check-trend.sh owner/repo --months 6 --format chart > trend.h
 
 - `--limit`: 命令参数,用于指定操作选项
 
+### 命令参数说明
+
+- `--limit`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--limit`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--limit`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--limit`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--limit`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -236,7 +256,7 @@ bash scripts/merge-check-trend.sh owner/repo --months 6 --format chart > trend.h
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
-| gh CLI | 命令行工具 | 必需 | github.com/cli/cli 下载 |
+| gh CLI | 命令行工具 | 必需 | 相关技术文档 下载 |
 | jq | JSON处理 | 必需 | 系统包管理器安装 |
 | Python | 运行时 | 推荐 | python.org 下载 |
 | matplotlib | Python包 | 可选 | `pip install matplotlib`(趋势图) |
@@ -244,7 +264,7 @@ bash scripts/merge-check-trend.sh owner/repo --months 6 --format chart > trend.h
 
 ### API Key 配置
 
-- 本Skill基于Markdown指令,无需额外API Key。
+- 本Skill基于指令驱动,无需额外API Key。
 - `gh` CLI 通过 `gh auth login` 或环境变量 `GITHUB_TOKEN` 认证。
 - CI/CD门禁需在仓库Secrets配置 `GITHUB_TOKEN`(自动提供)或 PAT(私有仓库批量分析)。
 - 通知渠道(Slack/飞书)的 webhook URL 需配置为仓库Secret。

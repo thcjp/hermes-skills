@@ -212,6 +212,41 @@ bash scripts/run-tests.sh "UserService"
 - `--invokeTimeoutMs`: 命令参数,用于指定操作选项
 - `--invokeParamsJson`: 命令参数,用于指定操作选项
 
+### 命令参数说明
+
+- `--invokeCommand`: 命令参数,用于指定操作选项
+- `--invokeParamsJson`: 命令参数,用于指定操作选项
+- `--invokeTimeoutMs`: 命令参数,用于指定操作选项
+- `--timeoutMs`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--invokeTimeoutMs`: 命令参数,用于指定操作选项
+- `--invokeParamsJson`: 命令参数,用于指定操作选项
+- `--invokeCommand`: 命令参数,用于指定操作选项
+- `--timeoutMs`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--invokeCommand`: 命令参数,用于指定操作选项
+- `--timeoutMs`: 命令参数,用于指定操作选项
+- `--invokeTimeoutMs`: 命令参数,用于指定操作选项
+- `--invokeParamsJson`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--invokeCommand`: 命令参数,用于指定操作选项
+- `--invokeParamsJson`: 命令参数,用于指定操作选项
+- `--timeoutMs`: 命令参数,用于指定操作选项
+- `--invokeTimeoutMs`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--invokeParamsJson`: 命令参数,用于指定操作选项
+- `--invokeTimeoutMs`: 命令参数,用于指定操作选项
+- `--timeoutMs`: 命令参数,用于指定操作选项
+- `--invokeCommand`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

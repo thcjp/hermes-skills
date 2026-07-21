@@ -60,8 +60,7 @@ def invoke(payload, context):
 app.run()
 ```
 
-## 核心概念
-
+## 核心能力
 - **AgentCore Runtime**: 端口 8080 的 HTTP 服务,处理 `/invocations` 与 `/ping` 端点
 - **AgentCore Memory**: 托管式跨会话/跨智能体记忆,支持 STM 与 LTM
 - **LangGraph Routing**: `tools_condition` 负责智能体到工具的路由,`ToolNode` 负责执行
@@ -189,8 +188,13 @@ result = gateway.call("tool_name", param1=value1, param2=value2)
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
+- **分类**: MD+EXEC（）
 
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 使用流程
 
 1. 安装 `bedrock-agentcore`、`bedrock-agentcore`、`langgraph`

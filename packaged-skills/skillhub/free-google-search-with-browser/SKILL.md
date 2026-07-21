@@ -104,6 +104,7 @@ tools:
 
 ## 异常处理
 
+
 ### Browser Environment (Headless=False)
 
 This skill is configured to run with **`headless=False`** (see `google_search.py`). This means:
@@ -119,6 +120,13 @@ If you encounter issues or want to test if the setup is working:
 2. This script will execute several test queries (e.g., "python tutorial", mixed English/Chinese).
 3. Watch the browser window to see if it opens and loads Google results.
 4. Check the console output for success messages or error logs.
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令;确认Agent平台LLM服务正常 |
+| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 对照使用流程章节检查输入格式;参考示例章节修正输入 |
+| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述,补充必要的上下文信息 |
+| 命令执行失败 | 运行环境不满足要求或权限不足 | 对照依赖说明章节确认环境配置;检查命令权限设置 |
 
 ## 依赖说明
 

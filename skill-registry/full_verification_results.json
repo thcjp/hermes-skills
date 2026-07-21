@@ -275,12 +275,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -299,12 +299,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -793,10 +793,10 @@
   },
   {
     "slug": "agentvibes-voice-skill",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -1043,10 +1043,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -1091,12 +1091,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -1115,12 +1115,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -1129,9 +1129,9 @@
   },
   {
     "slug": "ai-video-director",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
-      "L3-1": "FAIL",
+      "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
@@ -1235,10 +1235,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -1508,7 +1508,7 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 53,
+    "sf": 88,
     "sf_original": false
   },
   {
@@ -1619,12 +1619,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -1643,12 +1643,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -1729,15 +1729,15 @@
   },
   {
     "slug": "api-doc-generator",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -1993,10 +1993,10 @@
   },
   {
     "slug": "api-scaffold-gen",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -2041,13 +2041,13 @@
   },
   {
     "slug": "api-toolkit",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
-      "L3-5": "FAIL",
+      "L3-5": "PASS",
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
@@ -2075,12 +2075,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -2099,12 +2099,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -2233,10 +2233,10 @@
   },
   {
     "slug": "audio-stream-upload",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -2267,12 +2267,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -2291,12 +2291,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -2449,9 +2449,9 @@
   },
   {
     "slug": "aws-agentcore-langgraph",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
-      "L3-1": "FAIL",
+      "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
@@ -2459,12 +2459,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -2473,9 +2473,9 @@
   },
   {
     "slug": "aws-agentcore-langgraph-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
-      "L3-1": "FAIL",
+      "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
@@ -2483,12 +2483,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -2497,9 +2497,9 @@
   },
   {
     "slug": "aws-cloud-architect",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
-      "L3-1": "FAIL",
+      "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
@@ -2507,12 +2507,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -2521,9 +2521,9 @@
   },
   {
     "slug": "aws-cloud-architect-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
-      "L3-1": "FAIL",
+      "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
@@ -2531,12 +2531,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -2675,12 +2675,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -2699,12 +2699,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -2737,7 +2737,7 @@
   },
   {
     "slug": "azure-ai-transcription-py",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -2745,14 +2745,14 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -2761,7 +2761,7 @@
   },
   {
     "slug": "azure-ai-transcription-py-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -2769,14 +2769,14 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -2795,12 +2795,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -2819,12 +2819,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -2857,20 +2857,20 @@
   },
   {
     "slug": "azure-cli-toolkit",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -2987,12 +2987,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -3011,12 +3011,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -3025,15 +3025,15 @@
   },
   {
     "slug": "azure-transcription",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -3049,10 +3049,10 @@
   },
   {
     "slug": "azure-voicelive",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -3073,22 +3073,22 @@
   },
   {
     "slug": "baidu-netdisk-skills",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
-      "L3-1": "FAIL",
-      "L3-2": "FAIL",
+      "L3-1": "PASS",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -3107,12 +3107,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -3193,10 +3193,10 @@
   },
   {
     "slug": "beware-piper-tts",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -3251,12 +3251,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -3275,12 +3275,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -3289,7 +3289,7 @@
   },
   {
     "slug": "bilibili-helper",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -3297,7 +3297,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "WARN",
     "l4_checks": {
@@ -3337,10 +3337,10 @@
   },
   {
     "slug": "bilibili-toolkit",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -3755,12 +3755,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -3937,7 +3937,7 @@
   },
   {
     "slug": "canvas-json-handler",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -3945,7 +3945,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "WARN",
     "l4_checks": {
@@ -3961,10 +3961,10 @@
   },
   {
     "slug": "card-image-builder",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -4201,10 +4201,10 @@
   },
   {
     "slug": "cheat-code-paid",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -4355,12 +4355,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -4369,7 +4369,7 @@
   },
   {
     "slug": "claude-code-delegate-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -4377,7 +4377,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "WARN",
     "l4_checks": {
@@ -4441,9 +4441,9 @@
   },
   {
     "slug": "clawcall",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
-      "L3-1": "FAIL",
+      "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
@@ -4451,12 +4451,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -4475,12 +4475,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -4513,9 +4513,9 @@
   },
   {
     "slug": "clawhub-jira-pat-skill",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
-      "L3-1": "FAIL",
+      "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
@@ -4609,10 +4609,10 @@
   },
   {
     "slug": "cloud-architect-design",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -4667,12 +4667,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -4801,10 +4801,10 @@
   },
   {
     "slug": "code-analysis-toolkit",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -4825,10 +4825,10 @@
   },
   {
     "slug": "code-analyze",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -4849,10 +4849,10 @@
   },
   {
     "slug": "code-delegate",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -4873,10 +4873,10 @@
   },
   {
     "slug": "code-dev-toolkit",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -4897,10 +4897,10 @@
   },
   {
     "slug": "code-dev-v1",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -4945,10 +4945,10 @@
   },
   {
     "slug": "code-quality-paid",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -4969,10 +4969,10 @@
   },
   {
     "slug": "code-runner",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -4993,10 +4993,10 @@
   },
   {
     "slug": "comfyui-painter",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -5065,7 +5065,7 @@
   },
   {
     "slug": "communication-skill-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -5073,7 +5073,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -5233,10 +5233,10 @@
   },
   {
     "slug": "creative-officer",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -5267,12 +5267,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -5377,10 +5377,10 @@
   },
   {
     "slug": "css-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -5411,12 +5411,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -5425,10 +5425,10 @@
   },
   {
     "slug": "csv-analyzer",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -5449,10 +5449,10 @@
   },
   {
     "slug": "csv-analyzer-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -5483,12 +5483,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -5507,12 +5507,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -5521,9 +5521,9 @@
   },
   {
     "slug": "csv-handler-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
-      "L3-1": "FAIL",
+      "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
@@ -5531,12 +5531,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -5569,10 +5569,10 @@
   },
   {
     "slug": "csv-json-converter",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -5641,9 +5641,9 @@
   },
   {
     "slug": "cyber-fortune-teller",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
-      "L3-1": "FAIL",
+      "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
@@ -5833,9 +5833,9 @@
   },
   {
     "slug": "data-analysis-litiao-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
-      "L3-1": "FAIL",
+      "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
@@ -5843,12 +5843,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -5891,12 +5891,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -5905,22 +5905,22 @@
   },
   {
     "slug": "data-analyst-cn-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
-      "L3-1": "FAIL",
-      "L3-2": "FAIL",
+      "L3-1": "PASS",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -5953,22 +5953,22 @@
   },
   {
     "slug": "data-format-converter",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -5977,9 +5977,9 @@
   },
   {
     "slug": "data-format-converter-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
-      "L3-1": "FAIL",
+      "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
@@ -5987,12 +5987,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -6011,12 +6011,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -6025,9 +6025,9 @@
   },
   {
     "slug": "database-admin-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
-      "L3-1": "FAIL",
+      "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
@@ -6035,12 +6035,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -6059,12 +6059,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -6121,9 +6121,9 @@
   },
   {
     "slug": "db-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
-      "L3-1": "FAIL",
+      "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
@@ -6131,12 +6131,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -6145,10 +6145,10 @@
   },
   {
     "slug": "db-schema-designer",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -6217,10 +6217,10 @@
   },
   {
     "slug": "deepseek-assistant",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -6577,9 +6577,9 @@
   },
   {
     "slug": "discord-communities",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
-      "L3-1": "FAIL",
+      "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
@@ -6601,9 +6601,9 @@
   },
   {
     "slug": "discord-communities-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
-      "L3-1": "FAIL",
+      "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
@@ -6611,12 +6611,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -6745,9 +6745,9 @@
   },
   {
     "slug": "discord-voice",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
-      "L3-1": "FAIL",
+      "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
@@ -6755,12 +6755,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -6769,9 +6769,9 @@
   },
   {
     "slug": "discord-voice-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
-      "L3-1": "FAIL",
+      "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
@@ -6779,12 +6779,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -6841,10 +6841,10 @@
   },
   {
     "slug": "dlazy-audio",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -6884,7 +6884,7 @@
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
-    "sf": 69,
+    "sf": 84,
     "sf_original": false
   },
   {
@@ -6913,10 +6913,10 @@
   },
   {
     "slug": "dlazy-gen",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -6971,12 +6971,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -7019,12 +7019,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -7067,11 +7067,11 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
-      "L4-3": "FAIL",
+      "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
@@ -7081,10 +7081,10 @@
   },
   {
     "slug": "dns-networking-paid",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -7139,11 +7139,11 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "PASS",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
-      "L4-3": "PASS",
+      "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
@@ -7321,15 +7321,15 @@
   },
   {
     "slug": "docker-essentials-paid",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -7345,10 +7345,10 @@
   },
   {
     "slug": "docker-essentials-v1",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -7465,10 +7465,10 @@
   },
   {
     "slug": "doubao-assistant",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -7513,10 +7513,10 @@
   },
   {
     "slug": "doubao-image-gen",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -7787,12 +7787,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -7811,12 +7811,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -7835,12 +7835,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -7859,12 +7859,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -7897,7 +7897,7 @@
   },
   {
     "slug": "email-gmail-outlook",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -7905,14 +7905,14 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -7931,12 +7931,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -7955,12 +7955,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -7979,12 +7979,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -8017,10 +8017,10 @@
   },
   {
     "slug": "encoding-formats",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -8041,10 +8041,10 @@
   },
   {
     "slug": "encoding-formats-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -8075,11 +8075,11 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "PASS",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
-      "L4-3": "PASS",
+      "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
@@ -8147,10 +8147,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -8219,11 +8219,11 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "PASS",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
-      "L4-3": "PASS",
+      "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
@@ -8243,11 +8243,11 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "PASS",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
-      "L4-3": "PASS",
+      "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
@@ -8579,12 +8579,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -8627,12 +8627,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -8723,12 +8723,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -8747,12 +8747,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -8809,13 +8809,13 @@
   },
   {
     "slug": "figma-design",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
-      "L3-5": "FAIL",
+      "L3-5": "PASS",
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
@@ -8857,10 +8857,10 @@
   },
   {
     "slug": "figma-studio",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -9097,10 +9097,10 @@
   },
   {
     "slug": "finance-radar-paid",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -9337,10 +9337,10 @@
   },
   {
     "slug": "format-converter",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -9371,11 +9371,11 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
-      "L4-3": "FAIL",
+      "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
@@ -9539,12 +9539,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -9563,12 +9563,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -9601,10 +9601,10 @@
   },
   {
     "slug": "frontend-design-v3",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -9745,7 +9745,7 @@
   },
   {
     "slug": "game-theory",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -9753,7 +9753,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -9769,7 +9769,7 @@
   },
   {
     "slug": "game-theory-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -9777,7 +9777,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "WARN",
     "l4_checks": {
@@ -9971,12 +9971,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -9985,7 +9985,7 @@
   },
   {
     "slug": "git-essentials-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -9993,7 +9993,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "FAIL",
     "l4_checks": {
@@ -10009,10 +10009,10 @@
   },
   {
     "slug": "git-essentials-paid",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -10057,10 +10057,10 @@
   },
   {
     "slug": "git-helper-paid",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -10187,10 +10187,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -10249,15 +10249,15 @@
   },
   {
     "slug": "github-api",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
-      "L3-5": "FAIL",
+      "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "WARN",
     "l4_checks": {
@@ -10273,20 +10273,20 @@
   },
   {
     "slug": "github-api-toolkit",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -10345,10 +10345,10 @@
   },
   {
     "slug": "github-manager",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -10369,13 +10369,13 @@
   },
   {
     "slug": "github-repos",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
-      "L3-5": "FAIL",
+      "L3-5": "PASS",
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
@@ -10499,12 +10499,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -10513,7 +10513,7 @@
   },
   {
     "slug": "go-security-vulnerability-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -10521,7 +10521,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "FAIL",
     "l4_checks": {
@@ -10537,10 +10537,10 @@
   },
   {
     "slug": "go-to-market",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -10595,12 +10595,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -10619,12 +10619,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -10643,11 +10643,11 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
-      "L4-3": "FAIL",
+      "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
@@ -10739,12 +10739,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -10763,12 +10763,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -10897,7 +10897,7 @@
   },
   {
     "slug": "graph-query",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -10905,7 +10905,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "WARN",
     "l4_checks": {
@@ -10921,10 +10921,10 @@
   },
   {
     "slug": "grok-image",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -11147,11 +11147,11 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
-      "L4-3": "FAIL",
+      "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
@@ -11161,15 +11161,15 @@
   },
   {
     "slug": "html-designer-paid",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -11209,10 +11209,10 @@
   },
   {
     "slug": "hugo-blog-publisher",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -11483,12 +11483,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -11569,7 +11569,7 @@
   },
   {
     "slug": "java-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -11577,7 +11577,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "FAIL",
     "l4_checks": {
@@ -11795,12 +11795,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -11819,12 +11819,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -11857,13 +11857,13 @@
   },
   {
     "slug": "jira-api",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
-      "L3-5": "FAIL",
+      "L3-5": "PASS",
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
@@ -11929,10 +11929,10 @@
   },
   {
     "slug": "jira-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -12011,12 +12011,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -12035,12 +12035,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -12145,7 +12145,7 @@
   },
   {
     "slug": "json-beautifier",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -12153,7 +12153,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "WARN",
     "l4_checks": {
@@ -12217,7 +12217,7 @@
   },
   {
     "slug": "json-lint",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -12225,7 +12225,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "WARN",
     "l4_checks": {
@@ -12265,7 +12265,7 @@
   },
   {
     "slug": "json-parse-engine",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -12273,7 +12273,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "WARN",
     "l4_checks": {
@@ -12313,7 +12313,7 @@
   },
   {
     "slug": "json-repair",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -12321,7 +12321,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "WARN",
     "l4_checks": {
@@ -12385,10 +12385,10 @@
   },
   {
     "slug": "json-validator",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -12409,10 +12409,10 @@
   },
   {
     "slug": "json-yaml-converter",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -12659,12 +12659,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -12673,7 +12673,7 @@
   },
   {
     "slug": "knowledge-graph-skill-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -12681,7 +12681,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "FAIL",
     "l4_checks": {
@@ -12913,20 +12913,20 @@
   },
   {
     "slug": "lh-video-gen-paid",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -12985,10 +12985,10 @@
   },
   {
     "slug": "linear-api-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -13139,11 +13139,11 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
-      "L4-3": "FAIL",
+      "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
@@ -13187,12 +13187,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -13211,12 +13211,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -13273,7 +13273,7 @@
   },
   {
     "slug": "logo-brand-identity",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -13281,7 +13281,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -13321,15 +13321,15 @@
   },
   {
     "slug": "logo-design",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -13393,15 +13393,15 @@
   },
   {
     "slug": "logo-design-guide-paid",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -13451,12 +13451,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -13633,15 +13633,15 @@
   },
   {
     "slug": "markdown-converter-paid",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -13657,10 +13657,10 @@
   },
   {
     "slug": "markdown-exporter",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -13681,10 +13681,10 @@
   },
   {
     "slug": "markdown-exporter-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -13705,10 +13705,10 @@
   },
   {
     "slug": "markdown-format",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -13801,10 +13801,10 @@
   },
   {
     "slug": "meeting-join",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -13897,10 +13897,10 @@
   },
   {
     "slug": "memory",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -14209,7 +14209,7 @@
   },
   {
     "slug": "merge-check-paid",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -14217,7 +14217,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -14281,7 +14281,7 @@
   },
   {
     "slug": "mermaid-diagram-paid",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -14289,7 +14289,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -14305,7 +14305,7 @@
   },
   {
     "slug": "minimalist-design",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -14313,7 +14313,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -14377,7 +14377,7 @@
   },
   {
     "slug": "model-routing",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -14385,12 +14385,12 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -14401,7 +14401,7 @@
   },
   {
     "slug": "model-switching",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -14409,7 +14409,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -14435,12 +14435,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -14459,12 +14459,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -14881,15 +14881,15 @@
   },
   {
     "slug": "music-gen",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -15299,12 +15299,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -15323,12 +15323,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -15361,7 +15361,7 @@
   },
   {
     "slug": "node-connect-paid",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -15369,7 +15369,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -15481,13 +15481,13 @@
   },
   {
     "slug": "notion-api-skill",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
-      "L3-5": "FAIL",
+      "L3-5": "PASS",
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
@@ -15553,13 +15553,13 @@
   },
   {
     "slug": "notion-pages",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
-      "L3-5": "FAIL",
+      "L3-5": "PASS",
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
@@ -15817,10 +15817,10 @@
   },
   {
     "slug": "ontology",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -15865,13 +15865,13 @@
   },
   {
     "slug": "openai-ai",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
-      "L3-5": "FAIL",
+      "L3-5": "PASS",
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
@@ -16091,11 +16091,11 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
-      "L4-3": "FAIL",
+      "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
@@ -16427,12 +16427,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -16451,12 +16451,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -16513,13 +16513,13 @@
   },
   {
     "slug": "pipedrive-api",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
-      "L3-5": "FAIL",
+      "L3-5": "PASS",
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
@@ -16571,10 +16571,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -17113,9 +17113,9 @@
   },
   {
     "slug": "professional-communication",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
-      "L3-1": "FAIL",
+      "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
@@ -17123,12 +17123,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -17137,9 +17137,9 @@
   },
   {
     "slug": "professional-communication-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
-      "L3-1": "FAIL",
+      "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
@@ -17147,12 +17147,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -17171,12 +17171,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -17209,7 +17209,7 @@
   },
   {
     "slug": "py-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -17217,7 +17217,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "FAIL",
     "l4_checks": {
@@ -17339,11 +17339,11 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
-      "L4-3": "FAIL",
+      "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
@@ -17435,12 +17435,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -17459,12 +17459,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -17569,7 +17569,7 @@
   },
   {
     "slug": "read-github",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -17577,7 +17577,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -17699,11 +17699,11 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
-      "L4-3": "FAIL",
+      "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
@@ -17771,12 +17771,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -17785,7 +17785,7 @@
   },
   {
     "slug": "report-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -17793,7 +17793,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "FAIL",
     "l4_checks": {
@@ -18385,7 +18385,7 @@
   },
   {
     "slug": "secure-api-calls",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -18393,7 +18393,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "WARN",
     "l4_checks": {
@@ -18409,7 +18409,7 @@
   },
   {
     "slug": "secure-api-toolkit",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -18417,7 +18417,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "WARN",
     "l4_checks": {
@@ -18433,7 +18433,7 @@
   },
   {
     "slug": "security",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -18441,7 +18441,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -18505,7 +18505,7 @@
   },
   {
     "slug": "security-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -18513,7 +18513,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -18707,12 +18707,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -18731,12 +18731,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -18769,7 +18769,7 @@
   },
   {
     "slug": "skill-creator",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -18777,7 +18777,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "WARN",
     "l4_checks": {
@@ -18793,7 +18793,7 @@
   },
   {
     "slug": "skill-creator-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -18801,7 +18801,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "FAIL",
     "l4_checks": {
@@ -18817,7 +18817,7 @@
   },
   {
     "slug": "skill-vetter",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -18825,14 +18825,14 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -18841,7 +18841,7 @@
   },
   {
     "slug": "skill-vetter-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -18849,14 +18849,14 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -18889,13 +18889,13 @@
   },
   {
     "slug": "slack-api",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
-      "L3-5": "FAIL",
+      "L3-5": "PASS",
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
@@ -19297,10 +19297,10 @@
   },
   {
     "slug": "smart-reminder",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -19369,7 +19369,7 @@
   },
   {
     "slug": "social",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -19377,7 +19377,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -19393,7 +19393,7 @@
   },
   {
     "slug": "social-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -19401,7 +19401,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -19609,7 +19609,7 @@
   },
   {
     "slug": "solo-research",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -19617,7 +19617,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -19633,7 +19633,7 @@
   },
   {
     "slug": "solo-research-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -19641,7 +19641,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -19729,10 +19729,10 @@
   },
   {
     "slug": "sql",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -19993,7 +19993,7 @@
   },
   {
     "slug": "ssl-toolkit",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -20001,7 +20001,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "WARN",
     "l4_checks": {
@@ -20099,11 +20099,11 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
-      "L4-3": "FAIL",
+      "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
@@ -20339,12 +20339,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -20363,12 +20363,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -21064,7 +21064,7 @@
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "FAIL",
       "L4-6": "FAIL"
     },
@@ -21112,7 +21112,7 @@
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "FAIL",
       "L4-6": "FAIL"
     },
@@ -21145,10 +21145,10 @@
   },
   {
     "slug": "tmux-session",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -21433,10 +21433,10 @@
   },
   {
     "slug": "translate-hub",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -21611,10 +21611,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -21635,10 +21635,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -21683,12 +21683,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -21707,12 +21707,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -21913,15 +21913,15 @@
   },
   {
     "slug": "ui-ux-dev-paid",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -22067,12 +22067,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -22091,12 +22091,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -22177,10 +22177,10 @@
   },
   {
     "slug": "ux-design",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -22321,10 +22321,10 @@
   },
   {
     "slug": "video-editing-paid",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -22369,10 +22369,10 @@
   },
   {
     "slug": "video-frames-paid",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -22393,10 +22393,10 @@
   },
   {
     "slug": "video-stream-upload",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -22417,10 +22417,10 @@
   },
   {
     "slug": "video-toolkit",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -22451,11 +22451,11 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
-      "L4-3": "FAIL",
+      "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
@@ -22465,10 +22465,10 @@
   },
   {
     "slug": "video-translator-paid",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -22945,10 +22945,10 @@
   },
   {
     "slug": "web-crawler-engine",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -22979,10 +22979,10 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
-      "L4-2": "FAIL",
+      "L4-2": "PASS",
       "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
@@ -23003,11 +23003,11 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "WARN",
+    "l4": "PASS",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
-      "L4-3": "FAIL",
+      "L4-3": "PASS",
       "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
@@ -23065,10 +23065,10 @@
   },
   {
     "slug": "wechat-article-writer",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -23185,10 +23185,10 @@
   },
   {
     "slug": "whatsapp-image",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -23272,7 +23272,7 @@
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "FAIL",
       "L4-6": "FAIL"
     },
@@ -23296,7 +23296,7 @@
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "FAIL",
       "L4-6": "FAIL"
     },
@@ -23329,10 +23329,10 @@
   },
   {
     "slug": "whatsapp-msg-manager",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -23401,7 +23401,7 @@
   },
   {
     "slug": "whatsapp-styler",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -23409,7 +23409,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "FAIL",
     "l4_checks": {
@@ -23425,7 +23425,7 @@
   },
   {
     "slug": "whatsapp-styler-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -23433,7 +23433,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -23449,7 +23449,7 @@
   },
   {
     "slug": "whatsapp-styling-guide",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -23457,7 +23457,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "WARN",
     "l4_checks": {
@@ -23473,7 +23473,7 @@
   },
   {
     "slug": "whatsapp-styling-guide-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -23481,7 +23481,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "WARN",
     "l4_checks": {
@@ -23497,10 +23497,10 @@
   },
   {
     "slug": "whatsapp-ultimate",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -23737,10 +23737,10 @@
   },
   {
     "slug": "workflow-orchestrator",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -23785,7 +23785,7 @@
   },
   {
     "slug": "write",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -23793,7 +23793,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -23809,10 +23809,10 @@
   },
   {
     "slug": "write-a-skill",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -23857,7 +23857,7 @@
   },
   {
     "slug": "write-free",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
       "L3-2": "PASS",
@@ -23865,7 +23865,7 @@
       "L3-4": "PASS",
       "L3-5": "PASS",
       "L3-6": "PASS",
-      "L3-7": "FAIL"
+      "L3-7": "PASS"
     },
     "l4": "PASS",
     "l4_checks": {
@@ -24083,12 +24083,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -24107,12 +24107,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -24131,11 +24131,11 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "PASS",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
-      "L4-3": "PASS",
+      "L4-3": "FAIL",
       "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
@@ -24169,10 +24169,10 @@
   },
   {
     "slug": "xml-json-converter",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -24265,10 +24265,10 @@
   },
   {
     "slug": "youtube-watcher-paid",
-    "l3": "FAIL",
+    "l3": "PASS",
     "l3_checks": {
       "L3-1": "PASS",
-      "L3-2": "FAIL",
+      "L3-2": "PASS",
       "L3-3": "PASS",
       "L3-4": "PASS",
       "L3-5": "PASS",
@@ -24299,12 +24299,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "PASS",
       "L4-2": "PASS",
       "L4-3": "FAIL",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },
@@ -24323,12 +24323,12 @@
       "L3-6": "PASS",
       "L3-7": "PASS"
     },
-    "l4": "FAIL",
+    "l4": "WARN",
     "l4_checks": {
       "L4-1": "FAIL",
       "L4-2": "PASS",
       "L4-3": "PASS",
-      "L4-4": "FAIL",
+      "L4-4": "PASS",
       "L4-5": "PASS",
       "L4-6": "PASS"
     },

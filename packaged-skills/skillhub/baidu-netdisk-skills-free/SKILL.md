@@ -221,8 +221,13 @@ A：安全限制。所有操作限定在 `/apps/bdpan/` 范围内，禁止路径
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
+- **分类**: MD+EXEC（）
 
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### 触发规则

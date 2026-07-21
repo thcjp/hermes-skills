@@ -170,6 +170,26 @@ export API_KEY="your_api_key_here"
 
 - `-Engines排名`: 命令参数,用于指定操作选项
 
+### 命令参数说明
+
+- `-Engines排名`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Engines排名`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Engines排名`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Engines排名`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Engines排名`: 命令参数,用于指定操作选项
+
 ## 示例
 
 ### 示例1：发现React状态管理库
@@ -196,7 +216,7 @@ Agent: 研究完成
 ## Citation Table
 | 来源 | URL | 访问日期 |
 |------|-----|---------|
-| GitHub | github.com/pmndrs/zustand | 2026-02-16 |
+| GitHub | 相关技术文档 | 2026-02-16 |
 | npm trends | npmtrends.com/zustand-vs-jotai | 2026-02-16 |
 ```
 

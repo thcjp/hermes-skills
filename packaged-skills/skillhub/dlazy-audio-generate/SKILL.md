@@ -99,6 +99,10 @@ export API_KEY="your_api_key_here"
 ### 能力覆盖范围
 
 本skill还覆盖以下能力场景: CLI、语音克隆、支持管道串联、音频生成客户端、托管音频模型、涵盖文本转语音、音乐生成、音效生成、语音克隆四大类别、模型包括、music、sfx、voice、clone、kling、audio、suno、vidu、根据提示词自动选、择最匹配的模型、支持多语言人声、秒音乐、秒音效、即时语音克隆、通过管道引用、stdin、串联多步骤工作流、适用于配音。这些能力在上述核心功能中均有对应处理逻辑。
+### 领域术语
+
+本skill涉及以下领域术语: `不适用于版权受保`, `homepage`, `trigger`, `before`, `resolves`, `upload`, `择最佳的`, `bailian`, `generates`, `critical`, `models`, `github`, `bytedance`, `urls`, `copy`
+
 ## 认证
 
 所有请求需 dLazy API Key。推荐设备码流程:

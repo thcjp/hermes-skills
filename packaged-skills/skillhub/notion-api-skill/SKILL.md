@@ -105,6 +105,31 @@ tools:
 - `-Version`: 命令参数,用于指定操作选项
 - `-Type`: 命令参数,用于指定操作选项
 
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+- `-Version`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Version`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+- `-Version`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Version`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Version`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -166,8 +191,7 @@ tools:
 
 中间产物模板参考: `assets/（根据实际场景填充）`
 
-## 异常处理
-
+## 错误处理
 | Status | Meaning |
 | --- | --- |
 | 400 | Missing Notion connection |
@@ -175,7 +199,7 @@ tools:
 | 429 | Rate limited (10 req/sec per account) |
 | 4xx/5xx | Passthrough error from Notion API |
 
-### 错误处理
+### 错误恢复步骤
 **CLI:**
 
 1. Check your auth state:
@@ -214,6 +238,7 @@ EOF
 
 * Correct: `https://api.maton.ai/notion/v1/search`
 * Incorrect: `https://api.maton.ai/v1/search`
+> **处理方式**: 参考上表中的错误场景说明,按照对应建议进行处理和恢复。
 
 ## 依赖说明
 

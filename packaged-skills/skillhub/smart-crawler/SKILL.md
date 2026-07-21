@@ -206,6 +206,13 @@ smart-crawler search "你的关键词" --mode fulltext --highlight
 - `-app`: 命令参数,用于指定操作选项
 - `--l1-ttl`: 命令参数,用于指定操作选项
 
+### 命令参数说明
+
+- `-notes`: 命令参数,用于指定操作选项
+- `--concurrency`: 命令参数,用于指定操作选项
+- `--checkpoint`: 命令参数,用于指定操作选项
+- `--l2-backend`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

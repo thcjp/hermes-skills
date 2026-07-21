@@ -145,7 +145,7 @@ export API_KEY="your_api_key_here"
 
 ## 使用流程
 
-1. 安装GoPlus CLI：`go install github.com/Qianjiachang/goplus@latest`
+1. 安装GoPlus CLI：`go install 相关技术文档
 2. 执行健康检查，确认服务正常运行
 3. 执行一次性安全扫描或配置定时巡逻
 4. 查看漏洞发现详情，按文件路径定位问题
@@ -215,7 +215,7 @@ Agent: cmd/handler/ 目录安全发现：
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
-| GoPlus CLI未安装 | 未执行go install | 运行 `go install github.com/Qianjiachang/goplus@latest` 安装 |
+| GoPlus CLI未安装 | 未执行go install | 运行 `go install 相关技术文档 安装 |
 | 健康检查失败 | GoPlus服务未运行 | 重启GoPlus服务；对照依赖说明章节逐项验证配置项,确认环境变量已正确设置文件 |
 | 扫描超时 | 项目过大或网络问题 | 缩小扫描范围；增加超时时间；执行ping命令测试网络连通性,检查防火墙和代理设置连接 |
 | Webhook推送失败 | URL无效或网络问题 | 验证Webhook URL；执行ping命令测试网络连通性,检查防火墙和代理设置；执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令推送 |

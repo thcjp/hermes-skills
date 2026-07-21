@@ -28,7 +28,7 @@ tools:
 ```bash
 brew install porteden/tap/porteden
 # 或
-go install github.com/porteden/cli/cmd/porteden@latest
+go install 相关技术文档
 ```
 
 ## 依赖说明
@@ -46,8 +46,13 @@ go install github.com/porteden/cli/cmd/porteden@latest
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
+- **分类**: MD+EXEC（）
 
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 - **多账号 profile 隔离**:通过 `--profile`(或 `PE_PROFILE` 环境变量)隔离 work/personal 等多账号,任务只触及指定邮箱
@@ -244,7 +249,7 @@ porteden email messages --profile personal -q "Q3 财报" --week -jc
 ### 1. porteden CLI 未安装
 
 - **现象**:执行 `porteden` 报 `command not found`
-- **处理**:`brew install porteden/tap/porteden`(macOS/Linux)或 `go install github.com/porteden/cli/cmd/porteden@latest`(需 Go 环境)
+- **处理**:`brew install porteden/tap/porteden`(macOS/Linux)或 `go install 相关技术文档 Go 环境)
 
 ### 2. token 过期或凭证失效
 

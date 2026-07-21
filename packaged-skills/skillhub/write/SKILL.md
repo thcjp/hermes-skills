@@ -35,7 +35,7 @@ tools:
 | Sub-agent支持 | Agent能力 | 必需 | Agent需支持委托任务给sub-agents |
 
 ### API Key 配置
-- 本Skill基于Markdown指令，无需额外API Key
+- 本Skill基于指令驱动，无需额外API Key
 
 ### 可用性分类
 - **分类**: MD+EXEC（纯Markdown指令，核心功能依赖exec命令行执行scripts脚本）

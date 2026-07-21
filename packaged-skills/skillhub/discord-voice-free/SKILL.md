@@ -33,8 +33,7 @@ tools:
 
 在 Discord 语音频道中提供基础的语音对话能力:VAD 检测 → 本地 Whisper 转写 → OpenAI TTS 播放。仅支持 `medium` 灵敏度与默认配置,适合个人开发者快速验证原型。
 
-## 核心规则
-
+## 核心能力
 ### 1. 先验证系统依赖与 Bot 权限
 ```bash
 # 必需系统依赖
@@ -92,8 +91,13 @@ Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
+- **分类**: MD+EXEC（）
 
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 使用流程
 
 1. 安装系统依赖:`ffmpeg`、`build-essential`、`python3`

@@ -89,7 +89,7 @@ npm install -g keychains@0.0.13
 
 ### Basic usage:
 ```
-keychains curl https://api.github.com/user/repos \
+keychains curl https://api.相关技术文档 \
   -H "Authorization: Bearer （根据实际场景填充）"
 ```
 
@@ -104,6 +104,26 @@ keychains curl https://api.github.com/user/repos \
 2. 根据任务需求,参考核心能力章节选择对应能力
 3. 按照能力描述提供输入参数,执行操作
 4. 查看输出结果,确认任务完成状态
+
+### 命令参数说明
+
+- `-H`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-H`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-H`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-H`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-H`: 命令参数,用于指定操作选项
 
 ### 命令参数说明
 
@@ -184,7 +204,7 @@ export API_KEY="your_api_key_here"
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 案例展示
 
-- "List GitHub repos: `keychains curl https://api.github.com/user/repos -H 'Authorization: Bearer （根据实际场景填充）'`"
+- "List GitHub repos: `keychains curl https://api.相关技术文档 -H 'Authorization: Bearer （根据实际场景填充）'`"
 - "Send Slack message: `keychains curl https://slack.com/api/chat.postMessage -X POST -H 'Authorization: Bearer （根据实际场景填充）' -H 'Content-Type: application/json' -d '{\"channel\":\"#general\",\"text\":\"Hello!\"}'`"
 - "List Stripe customers: `keychains curl https://api.stripe.com/v1/customers?limit=5 -H 'Authorization: Bearer （根据实际场景填充）'`"
 - "Read Gmail: `keychains curl 'https://gmail.googleapis.com/gmail/v1/users/me/messages?maxResults=10' -H 'Authorization: Bearer （根据实际场景填充）'`"

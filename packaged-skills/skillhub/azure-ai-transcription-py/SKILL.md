@@ -33,7 +33,7 @@ pip install azure-ai-transcription
 
 ```bash
 TRANSCRIPTION_ENDPOINT=https://<resource>.cognitiveservices.azure.com
-TRANSCRIPTION_KEY=<your-key>
+TRANSCRIPTION_KEY=API_KEY
 ```
 
 `TRANSCRIPTION_ENDPOINT` 为 Azure AI 资源的终结点 URL,形如 `https://<resource>.cognitiveservices.azure.com`,与资源所在区域一致。`TRANSCRIPTION_KEY` 为该资源的订阅密钥(primary 或 secondary 均可),用于鉴权。两个变量都不要硬编码进源码,建议放入 `.env` 或系统环境变量;密钥泄漏后须在门户轮换并更新变量。
@@ -67,8 +67,13 @@ client = TranscriptionClient(
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
+- **分类**: MD+EXEC（）
 
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 - 批量转写:对存储在 Blob 中的长音频文件提交转写作业,支持说话人分离与多通道
@@ -136,6 +141,26 @@ client = TranscriptionClient(
 2. **指令输入**: 向Agent描述需要执行的任务，引用`azure-ai-transcription-py`的相关能力
 3. **执行处理**: Agent按照核心能力章节的指令执行任务
 4. **结果验证**: 检查输出结果是否符合预期，参考错误处理章节处理异常
+
+### 命令参数说明
+
+- `-US`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-US`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-US`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-US`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-US`: 命令参数,用于指定操作选项
 
 ### 命令参数说明
 

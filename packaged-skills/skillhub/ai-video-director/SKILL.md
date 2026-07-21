@@ -1,6 +1,6 @@
 ---
 slug: ai-video-studio-pro
-name: ai-video-director
+name: ai-video-studio-pro
 version: "1.0.1"
 displayName: "AI视频导演"
 summary: "一个人就是一支视频团队,脚本到成片一站式+智能路由+营销策略注入"

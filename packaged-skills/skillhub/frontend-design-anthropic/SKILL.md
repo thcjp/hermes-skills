@@ -264,6 +264,35 @@ python3 scripts/generate_components.py \
 - `--font-display`: 命令参数,用于指定操作选项
 - `--fix-suggestions`: 命令参数,用于指定操作选项
 
+### 命令参数说明
+
+- `--radius-lg`: 命令参数,用于指定操作选项
+- `--space-1`: 命令参数,用于指定操作选项
+- `--breakpoint-xl`: 命令参数,用于指定操作选项
+- `--radius-sm`: 命令参数,用于指定操作选项
+- `--duration-fast`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--space-2`: 命令参数,用于指定操作选项
+- `--color-surface`: 命令参数,用于指定操作选项
+- `--format`: 命令参数,用于指定操作选项
+- `--color-primary-900`: 命令参数,用于指定操作选项
+- `--breakpoint-sm`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--standard`: 命令参数,用于指定操作选项
+- `-color-scheme`: 命令参数,用于指定操作选项
+- `-bezier`: 命令参数,用于指定操作选项
+- `--font-mono`: 命令参数,用于指定操作选项
+- `--breakpoint-lg`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--color-bg`: 命令参数,用于指定操作选项
+- `--color-text`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

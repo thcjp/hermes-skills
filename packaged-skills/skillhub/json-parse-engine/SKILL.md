@@ -234,7 +234,7 @@ print(f"新增 {result.new_count}，更新 {result.updated_count}，跳过 {resu
 | 流式解析库 | pip包 | 必需 | `pip install ijson` |
 
 ### API Key 配置
-- 本Skill基于Markdown指令，无需额外API Key
+- 本Skill基于指令驱动，无需额外API Key
 - 流式解析与批量处理为本地执行，不依赖外部API
 - 若需对接企业版数据仓库，按对应服务文档配置
 

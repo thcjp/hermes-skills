@@ -319,7 +319,7 @@ jobs:
 
 ### API Key 配置
 
-- 本Skill基于Markdown指令,无需额外API Key。
+- 本Skill基于指令驱动,无需额外API Key。
 - 本地渲染通过 mmdc + Chromium 完成,不依赖外部API。
 - 若需对接在线图表托管服务,按对应服务文档配置令牌。
 

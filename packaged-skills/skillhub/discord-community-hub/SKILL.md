@@ -436,9 +436,7 @@ await integration.call_tool({
 
 确认:查询的 `application_id` 正确;用户确实有该应用的付费订阅;OAuth2 授权包含 `applications.entitlements` scope。测试权益需通过 `discord_delete_test_entitlement` 单独管理,不在正式权益列表中返回。
 
-### 错误处理
-
-
+### 错误恢复步骤
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接，执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令请求；确认Agent平台LLM服务正常 |

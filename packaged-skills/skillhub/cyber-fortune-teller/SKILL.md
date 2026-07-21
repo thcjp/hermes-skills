@@ -1,6 +1,6 @@
 ---
 slug: fortune-reading-studio
-name: cyber-fortune-teller
+name: fortune-reading-studio
 version: "1.0.1"
 displayName: "赛博命理师"
 summary: "一人开命理工作室,8种命理体系排盘+AI深度解读,9.9到99元全价位变现"

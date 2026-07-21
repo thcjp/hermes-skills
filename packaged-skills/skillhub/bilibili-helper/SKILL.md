@@ -216,7 +216,7 @@ B站投稿标签数量上限为10个，生成结果可能输出超过10个标签
 | Python 3.8+ | 运行时 | 推荐 | 执行 bili.sh 脚本时需要 |
 | Bash shell | 运行时 | 推荐 | 执行 bili.sh 命令行指令时需要 |
 
-本Skill基于Markdown指令驱动Agent执行，核心内容生成由Agent内置LLM完成，无需额外API Key。bili.sh 脚本为可选执行方式，不安装时Agent仍可通过自然语言指令完成内容生成。
+本Skill基于指令驱动驱动Agent执行，核心内容生成由Agent内置LLM完成，无需额外API Key。bili.sh 脚本为可选执行方式，不安装时Agent仍可通过自然语言指令完成内容生成。
 
 ### 可用性分类
 

@@ -376,9 +376,7 @@ message action=analytics channel=discord \
 
 Pro 版高级搜索支持:关键词(`query`)、作者(`authorId`)、频道列表(`channelIds`)、时间范围(`after`/`before`)、内容类型(`has`: attachment/embed/link)、排序(`sort`)、输出格式(`format`)和导出格式(`export`)。各条件可任意组合。
 
-### 错误处理
-
-
+### 错误恢复步骤
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接，执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令请求；确认Agent平台LLM服务正常 |

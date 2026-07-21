@@ -153,8 +153,7 @@ clawlink_call_tool --tool "figma_get_file_json" --params '{"file_key": "ABC123xy
 
 中间产物模板参考: `assets/（根据实际场景填充）`
 
-## 异常处理
-
+## 错误处理
 | Status / Error | Meaning |
 | --- | --- |
 | Tool not found | The tool name does not exist in the current catalog. Verify with `clawlink_list_tools --integration figma`. |
@@ -164,8 +163,7 @@ clawlink_call_tool --tool "figma_get_file_json" --params '{"file_key": "ABC123xy
 | `403 Forbidden` | Insufficient permissions for the requested operation (e.g., team admin required for team webhooks). |
 | Write rejected | User did not confirm a write action. Always confirm before executing writes. |
 
-### 错误处理
-
+### 错误恢复步骤
 1. Check that the ClawLink plugin is installed:
 
    bash
@@ -189,6 +187,7 @@ clawlink_call_tool --tool "figma_get_file_json" --params '{"file_key": "ABC123xy
 1. Ensure the integration slug is exactly `figma`.
 2. Use `clawlink_describe_tool` to verify parameter names and types before calling.
 3. For write operations, always call `clawlink_preview_tool` first.
+> **处理方式**: 参考上表中的错误场景说明,按照对应建议进行处理和恢复。
 
 ## 依赖说明
 

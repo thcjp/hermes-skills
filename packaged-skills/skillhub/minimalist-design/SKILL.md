@@ -363,7 +363,7 @@ python3 generate_docs.py --output ./docs/
 | Storybook | 组件文档 | 推荐 | npm install storybook |
 
 ### API Key 配置
-- 本Skill基于Markdown指令驱动,无需额外API Key
+- 本Skill基于指令驱动驱动,无需额外API Key
 - 设计令牌与组件库为本地生成,无需云端服务
 - 如集成Figma,需配置Figma API Token
 

@@ -154,8 +154,7 @@ tools:
 
 中间产物模板参考: `assets/（根据实际场景填充）`
 
-## 异常处理
-
+## 错误处理
 | Status | Meaning |
 | --- | --- |
 | 400 | Missing Jira connection or invalid JQL |
@@ -163,7 +162,7 @@ tools:
 | 429 | Rate limited (10 req/sec per account) |
 | 4xx/5xx | Passthrough error from Jira API |
 
-### 错误处理
+### 错误恢复步骤
 **CLI:**
 
 1. Check your auth state:
@@ -202,6 +201,7 @@ EOF
 
 * Correct: `https://api.maton.ai/jira/ex/jira/{cloudId}/rest/api/3/project`
 * Incorrect: `https://api.maton.ai/ex/jira/{cloudId}/rest/api/3/project`
+> **处理方式**: 参考上表中的错误场景说明,按照对应建议进行处理和恢复。
 
 ## 依赖说明
 

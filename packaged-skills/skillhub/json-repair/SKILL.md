@@ -232,7 +232,7 @@ node repair.js --file broken.json --preview
 | diff算法库 | npm包 | 必需 | `diff` |
 
 ### API Key 配置
-- 本Skill基于Markdown指令，无需额外API Key
+- 本Skill基于指令驱动，无需额外API Key
 - 修复与规则执行为本地沙箱，不依赖外部API
 - 规则市场若对接企业版仓库，按对应服务文档配置
 

@@ -345,6 +345,10 @@ slack-workspace-manager-pro create-canvas \
 - `-audit-logs`: 命令参数,用于指定操作选项
 - `--team-id`: 命令参数,用于指定操作选项
 
+### 命令参数说明
+
+- `-user-groups`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

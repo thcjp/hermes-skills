@@ -201,6 +201,13 @@ notion-toolkit database query <databaseId> --paginate --page-size 100
 - `--filter`: 命令参数,用于指定操作选项
 - `-app`: 命令参数,用于指定操作选项
 
+### 命令参数说明
+
+- `--sorts`: 命令参数,用于指定操作选项
+- `--checkpoint`: 命令参数,用于指定操作选项
+- `-archive`: 命令参数,用于指定操作选项
+- `--page-size`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

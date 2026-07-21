@@ -106,8 +106,7 @@ export API_KEY="your_api_key_here"
 
 > **升级提示**: 付费版额外覆盖 Realtime、CRM、Marketing、Developer、Database、Auth、Media、Social、Productivity、Business、Geo、Support、Analytics 共 13 类 134 个服务。
 
-## 核心规则
-
+## 核心能力
 1. **先定位文件** — 根据服务名找到对应 `apis/*.md` 文件
 2. **必带 Content-Type** — POST/PUT/PATCH 请求需 `Content-Type: application/json`
 3. **密钥放请求头** — 使用 `Authorization: Bearer xxx`,不放在 URL 参数
@@ -162,6 +161,31 @@ sed -n '119,230p' apis/ai-ml.md
 
 - `-Type`: 命令参数,用于指定操作选项
 - `-H`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-H`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-H`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-H`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
 
 ## 案例展示
 

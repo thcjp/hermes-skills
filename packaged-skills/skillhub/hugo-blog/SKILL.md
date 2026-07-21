@@ -334,6 +334,37 @@ echo "=== 优化完成 ==="
 - `-context-usage`: 命令参数,用于指定操作选项
 - `-gravity`: 命令参数,用于指定操作选项
 
+### 命令参数说明
+
+- `-get`: 命令参数,用于指定操作选项
+- `-extent`: 命令参数,用于指定操作选项
+- `--minify`: 命令参数,用于指定操作选项
+- `--renderToMemory`: 命令参数,用于指定操作选项
+- `-message`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--templateMetrics`: 命令参数,用于指定操作选项
+- `--strip-all`: 命令参数,用于指定操作选项
+- `-goroutine-basics`: 命令参数,用于指定操作选项
+- `--renderToMemory`: 命令参数,用于指定操作选项
+- `-nav`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--templateMetrics`: 命令参数,用于指定操作选项
+- `--renderToMemory`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--templateMetrics`: 命令参数,用于指定操作选项
+- `--renderToMemory`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--renderToMemory`: 命令参数,用于指定操作选项
+- `--templateMetrics`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

@@ -62,6 +62,14 @@ markdown-exporter md_to_xml /path/input.md /path/output.xml
 markdown-exporter md_to_latex /path/input.md /path/output.tex
 ```
 
+- 执行`表格数据导出`操作,处理输入数据并返回结果
+- 验证执行结果,确认输出符合预期格式
+- 异常时参考错误处理章节进行恢复
+- 关键参数: `表格数据导出` 选项
+- 处理流程: 接收输入 -> 执行表格数据导出 -> 返回结果
+- 输入: 用户提供表格数据导出所需的参数和指令
+- 输出: 返回表格数据导出的执行结果,包含操作状态和输出数据
+
 ### 3. 演示文稿生成
 ```bash
 markdown-exporter md_to_pptx /path/input.md /path/output.pptx
@@ -70,12 +78,23 @@ markdown-exporter md_to_pptx /path/input.md /path/output.pptx --template /path/t
 支持Pandoc风格的幻灯片语法：分栏布局（`::::: columns`）、演讲者备注（`::: notes`）、增量列表（`::: incremental`）、背景图片。
 
 **处理**: 按照skill规范执行演示文稿生成操作,遵循单一意图原则。
+
+- 执行`演示文稿生成`操作,处理输入数据并返回结果
+- 验证执行结果,确认输出符合预期格式
+- 异常时参考错误处理章节进行恢复
+- 关键参数: `演示文稿生成` 选项
+
 ### 4. 代码块提取
 ```bash
 markdown-exporter md_to_codeblock /path/input.md /path/output_dir
 markdown-exporter md_to_codeblock /path/input.md /path/output.zip --compress
 ```
 从Markdown中提取所有代码块，按语言保存为独立文件（`.py`/`.js`/`.sh`等）。
+
+- 执行`代码块提取`操作,处理输入数据并返回结果
+- 验证执行结果,确认输出符合预期格式
+- 异常时参考错误处理章节进行恢复
+- 关键参数: `代码块提取` 选项
 
 ### 能力覆盖范围
 

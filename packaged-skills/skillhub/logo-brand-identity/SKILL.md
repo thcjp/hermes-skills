@@ -389,6 +389,19 @@ python3 audit_brand.py \
 - `--competitors`: 命令参数,用于指定操作选项
 - `--preserve-equity`: 命令参数,用于指定操作选项
 
+### 命令参数说明
+
+- `-brand-system`: 命令参数,用于指定操作选项
+- `-serif`: 命令参数,用于指定操作选项
+- `-brands`: 命令参数,用于指定操作选项
+- `--industry`: 命令参数,用于指定操作选项
+- `--generate-migration-guide`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--audit`: 命令参数,用于指定操作选项
+- `--company`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -446,7 +459,7 @@ python3 audit_brand.py \
 | 设计工具 | 工具 | 推荐 | Figma / Illustrator |
 
 ### API Key 配置
-- 本Skill基于Markdown指令驱动,无需额外API Key
+- 本Skill基于指令驱动驱动,无需额外API Key
 - AI图像生成服务需按各自平台文档配置
 - 批量生成支持API Key池与负载均衡
 - 企业版支持多账户管理与并发控制

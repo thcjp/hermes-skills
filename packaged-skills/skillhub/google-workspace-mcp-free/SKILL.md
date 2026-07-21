@@ -37,8 +37,13 @@ tools:
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
+- **分类**: MD+EXEC（）
 
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 免费版开放以下读取类工具,均通过 `mcporter call --server google-workspace --tool "<tool>"` 调用。
@@ -181,11 +186,19 @@ mcporter call --server google-workspace --tool "time.getCurrentDate"
 
 ## 异常处理
 
+
 - **OAuth令牌过期**: 工具返回401或未授权时,调用 `auth.refreshToken` 刷新; 仍失败则 `auth.clear` 后重新触发浏览器授权。
 - **首次授权浏览器未弹出**: 确认系统默认浏览器已设置且非headless环境; 远程SSH场景需本地授权后复制 `~/.config/google-workspace-mcp/` 目录。
 - **gmail.search 返回空**: 校验查询语法(如 `is:unread`、`from:`、`after:`),放宽时间或标签条件; Gmail查询不支持正则,仅支持其原生搜索运算符。
 - **drive.downloadFile 写入失败**: `localPath` 所在目录无写权限时更换到 `/tmp` 或用户目录; 文件过大受Google导出配额限制。
 - **sheets.getRange 范围超界**: 工作表名需与实际一致(默认 `Sheet1`),区域引用如 `Sheet1!A1:B10`; 超出已用区域返回空值而非报错。
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令;确认Agent平台LLM服务正常 |
+| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 对照使用流程章节检查输入格式;参考示例章节修正输入 |
+| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述,补充必要的上下文信息 |
+| 命令执行失败 | 运行环境不满足要求或权限不足 | 对照依赖说明章节确认环境配置;检查命令权限设置 |
 
 ## 常见问题
 

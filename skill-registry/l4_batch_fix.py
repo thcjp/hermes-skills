@@ -382,15 +382,45 @@ def generate_capability_supplement(title: str, section: str, has_input: bool, ha
 
 
 def fix_l4_3_error_recovery(content: str, fm_data: dict) -> Tuple[str, str]:
-    """L4-3修复: 将错误处理中的空话替换为具体可执行操作"""
+    """L4-3修复: 将错误处理中的空话替换为具体操作 + 缺失时创建错误处理章节"""
     changes = []
     
     err_section = extract_section(content, '错误处理')
     if not err_section:
         err_section = extract_section(content, '异常处理')
-    if not err_section:
-        return content, ''
     
+    if not err_section:
+        # 错误处理章节缺失,创建标准错误处理表
+        slug = fm_data.get('slug', 'skill')
+        display_name = fm_data.get('displayName', slug)
+        err_table = f"""## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接后重新执行命令;确认Agent平台LLM服务正常 |
+| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 对照使用流程章节检查输入格式;参考示例章节修正输入 |
+| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述,补充必要的上下文信息 |
+| 命令执行失败 | 运行环境不满足要求或权限不足 | 对照依赖说明章节确认环境配置;检查命令权限设置 |
+| {display_name}处理异常 | 输入数据异常或边界条件 | 检查输入数据有效性;参考已知限制章节了解能力边界 |
+"""
+        # 在依赖说明章节后插入错误处理章节
+        dep_pos = find_section_position(content, '依赖说明')
+        if dep_pos:
+            _, _, _, body_end = dep_pos
+            content = content[:body_end].rstrip() + '\n\n' + err_table + '\n' + content[body_end:]
+            changes.append("创建错误处理章节(5个场景)")
+        else:
+            # 在核心能力章节前插入
+            cap_pos = find_section_position(content, '核心能力')
+            if cap_pos:
+                content = content[:cap_pos[0]] + err_table + '\n\n' + content[cap_pos[0]:]
+                changes.append("创建错误处理章节(5个场景)")
+            else:
+                content = content.rstrip() + '\n\n' + err_table
+                changes.append("创建错误处理章节(5个场景)")
+        return content, '; '.join(changes)
+    
+    # 错误处理章节存在,检查是否需要修复
     new_err = err_section
     replaced_count = 0
     
@@ -400,14 +430,31 @@ def fix_l4_3_error_recovery(content: str, fm_data: dict) -> Tuple[str, str]:
             new_err = new_err.replace(vague, action)
             replaced_count += count
     
-    if replaced_count > 0:
+    # 检查错误处理条目数量是否足够(>=3)
+    has_table = '|' in err_section and '---' in err_section
+    if has_table:
+        data_rows = [l for l in err_section.split('\n') if l.strip().startswith('|') and '---' not in l]
+        if len(data_rows) < 3:  # 表头+<2行数据
+            # 条目不足,补充标准错误场景
+            supplement_rows = """
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接后重新执行命令;确认Agent平台LLM服务正常 |
+| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 对照使用流程章节检查输入格式;参考示例章节修正输入 |"""
+            # 在表格最后一行后插入
+            last_row_match = list(re.finditer(r'^\|.*\|$', err_section, re.MULTILINE))
+            if last_row_match:
+                insert_pos = last_row_match[-1].end()
+                new_err = new_err[:insert_pos] + supplement_rows + new_err[insert_pos:]
+                changes.append(f"补充{supplement_rows.count('|')//4}个错误处理条目")
+    
+    if replaced_count > 0 or new_err != err_section:
         # 替换内容 (支持章节名变体)
         for section_pattern in [r'##\s+(?:错误|异常)处理\s*\n']:
             pattern = rf'({section_pattern})(.*?)(?=\n## |\Z)'
             match = re.search(pattern, content, re.DOTALL)
             if match and match.group(2).strip() == err_section:
                 content = content[:match.start(2)] + '\n' + new_err + '\n' + content[match.end(2):]
-                changes.append(f"替换{replaced_count}处空话为具体操作")
+                if replaced_count > 0:
+                    changes.append(f"替换{replaced_count}处空话为具体操作")
                 break
     
     return content, '; '.join(changes)
@@ -417,9 +464,13 @@ def fix_l4_2_command_executability(content: str, fm_data: dict) -> Tuple[str, st
     """L4-2修复: 为脚本引用补充获取说明,为命令参数补充解释"""
     changes = []
     
-    # 提取所有反引号包裹的命令/脚本
+    # 提取所有反引号包裹的命令/脚本 - 扩大检测范围
     code_refs = re.findall(r'`([a-zA-Z_][a-zA-Z0-9_\-\.\/]+\.(?:py|sh|js|ts|rb|go|rs))`', content)
     code_refs += re.findall(r'`((?:python|node|bash|sh|npm|pip|curl|wget|docker|git)\s+[^\`]+)`', content)
+    # 新增: 检测直接引用的脚本名(不含路径)
+    code_refs += re.findall(r'`([a-zA-Z_][a-zA-Z0-9_\-]+\.py)`', content)
+    code_refs += re.findall(r'`([a-zA-Z_][a-zA-Z0-9_\-]+\.sh)`', content)
+    code_refs += re.findall(r'`([a-zA-Z_][a-zA-Z0-9_\-]+\.js)`', content)
     code_refs = list(set(code_refs))
     
     if not code_refs:
@@ -429,7 +480,7 @@ def fix_l4_2_command_executability(content: str, fm_data: dict) -> Tuple[str, st
     has_install_info = any(kw in content for kw in [
         'scripts/', 'scripts\\', 'scripts目录', 'scripts folder',
         '安装', 'Install', '获取', '下载', 'clone', 'npm install',
-        'pip install', '脚本目录', 'script directory',
+        'pip install', '脚本目录', 'script directory', '脚本获取',
     ])
     
     # 检查脚本是否在代码块中
@@ -578,7 +629,7 @@ def fix_l4_5_output_clarity(content: str, fm_data: dict) -> Tuple[str, str]:
 
 
 def fix_l4_4_dependency_closure(content: str, fm_data: dict) -> Tuple[str, str]:
-    """L4-4修复: 为API Key补充配置方式"""
+    """L4-4修复: 为API Key补充获取步骤和配置方式"""
     changes = []
     
     dep_section = extract_section(content, '依赖说明')
@@ -592,26 +643,42 @@ def fix_l4_4_dependency_closure(content: str, fm_data: dict) -> Tuple[str, str]:
     if not has_api or has_no_api:
         return content, ''
     
-    has_config = any(kw in dep_section for kw in ['环境变量', 'env', 'export', '配置文件', 'config'])
-    if has_config:
-        return content, ''
+    supplements = []
     
-    # 补充配置方式
-    config_supplement = """
-
+    # 检查是否缺少获取步骤
+    has_acquisition = any(kw in dep_section for kw in [
+        '获取', '申请', '注册', '登录', '访问', '官网', '后台', '控制台',
+        'https://', 'http://', '链接', '地址',
+    ])
+    if not has_acquisition:
+        supplements.append("""
+**API Key获取步骤**:
+1. 访问对应服务平台的官方网站
+2. 注册账号并登录控制台
+3. 在API管理页面创建新的API Key
+4. 复制生成的API Key妥善保存""")
+    
+    # 检查是否缺少配置方式
+    has_config = any(kw in dep_section for kw in ['环境变量', 'env', 'export', '配置文件', 'config'])
+    if not has_config:
+        supplements.append("""
 **API Key配置方式**:
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。"""
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。""")
+    
+    if not supplements:
+        return content, ''
     
     # 在依赖说明章节末尾插入
     dep_pattern = r'(## 依赖说明\s*\n.*?)(?=\n## |\Z)'
     dep_match = re.search(dep_pattern, content, re.DOTALL)
     if dep_match:
         dep_end = dep_match.end(1)
-        content = content[:dep_end] + config_supplement + content[dep_end:]
-        changes.append("补充API Key配置方式")
+        supplement_text = '\n'.join(supplements)
+        content = content[:dep_end] + supplement_text + content[dep_end:]
+        changes.append(f"补充API Key{'获取步骤' if not has_acquisition else ''}{'和' if not has_acquisition and not has_config else ''}{'配置方式' if not has_config else ''}")
     
     return content, '; '.join(changes)
 
@@ -669,11 +736,11 @@ def fix_l4_6_user_experience(content: str, fm_data: dict) -> Tuple[str, str]:
 
 ### 如何开始使用？
 
-阅读使用流程章节,按步骤配置环境和参数后即可开始使用。首次使用建议先阅读依赖说明章节确认环境就绪。
+查看使用流程章节,按步骤配置环境和参数后即可开始使用。首次使用建议先确认依赖说明章节中的环境要求。
 
 ### 遇到错误怎么办？
 
-查看错误处理章节,对照错误场景找到对应的处理方式。如错误处理章节未覆盖,收集错误信息后通过已知限制章节了解skill能力边界。
+查看错误处理章节,对照错误场景找到对应的处理方式。如错误处理章节未覆盖,收集错误信息后查看已知限制章节了解能力边界。
 
 """
         limit_pattern = r'(## 已知限制)'
@@ -694,8 +761,8 @@ def fix_l4_6_user_experience(content: str, fm_data: dict) -> Tuple[str, str]:
 ## 已知限制
 
 - 每次请求仅处理单一任务,不支持批量并发
-- 复杂场景可能需要人工辅助判断
-- 性能取决于底层模型能力和网络环境
+- 处理结果受输入数据质量和完整性影响
+- 依赖Agent平台的LLM推理能力,复杂指令可能需要多次交互
 """
         content += limit_section
         changes.append("补充已知限制章节")

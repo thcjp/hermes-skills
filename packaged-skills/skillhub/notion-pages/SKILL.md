@@ -154,8 +154,7 @@ clawlink_call_tool --tool "notion_get_page" --params '{"page_id": "PAGE_ID"}'
 
 中间产物模板参考: `assets/（根据实际场景填充）`
 
-## 异常处理
-
+## 错误处理
 | Status / Error | Meaning |
 | --- | --- |
 | Tool not found | The tool name does not exist in the current catalog. Verify with `clawlink_list_tools --integration notion`. |
@@ -165,8 +164,7 @@ clawlink_call_tool --tool "notion_get_page" --params '{"page_id": "PAGE_ID"}'
 | `conflict_error` | Resource was modified concurrently. Retry or re-fetch the latest state. |
 | Write rejected | User did not confirm a write action. Always confirm before executing writes. |
 
-### 错误处理
-
+### 错误恢复步骤
 1. Check that the ClawLink plugin is installed:
 
    bash
@@ -190,6 +188,7 @@ clawlink_call_tool --tool "notion_get_page" --params '{"page_id": "PAGE_ID"}'
 1. Ensure the integration slug is exactly `notion`.
 2. Use `clawlink_describe_tool` to verify parameter names and types before calling.
 3. For write operations, always call `clawlink_preview_tool` first.
+> **处理方式**: 参考上表中的错误场景说明,按照对应建议进行处理和恢复。
 
 ## 依赖说明
 

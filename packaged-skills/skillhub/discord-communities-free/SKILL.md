@@ -31,8 +31,7 @@ tools:
 
 基于 ClawLink OAuth 的 Discord 只读查询助手,提供用户身份、公会列表与邀请解析基础能力。所有操作均为 `safe` 风险等级,无需额外确认。
 
-## 核心规则
-
+## 核心能力
 ### 1. 先验证 ClawLink 集成可用
 ```javascript
 // 确认 Discord 集成已连接
@@ -88,8 +87,13 @@ clawlink_list_tools({ integration: "discord" });
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
+- **分类**: MD+EXEC（）
 
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 使用流程
 
 1. 调用 `clawlink_list_integrations` 确认 Discord 集成已配对

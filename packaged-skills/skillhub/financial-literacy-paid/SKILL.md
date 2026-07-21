@@ -205,6 +205,10 @@ python3 scripts/corporate_training.py --create --company "公司名" --employees
 - `-literacy-pro`: 命令参数,用于指定操作选项
 - `--count`: 命令参数,用于指定操作选项
 
+### 命令参数说明
+
+- `--create`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

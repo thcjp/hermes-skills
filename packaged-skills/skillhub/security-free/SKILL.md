@@ -91,7 +91,7 @@ export API_KEY="your_api_key_here"
 本skill还覆盖以下能力场景: 免费版、GoPlus、支持基础安全扫描、与漏洞发现查看、安全扫描免费版、提供基础代码安全、检查功能、支持一次性安全扫、描与漏洞发现详情、适用于个人项目的、安全自检与漏洞发。这些能力在上述核心功能中均有对应处理逻辑。
 ## 使用流程
 
-1. 安装GoPlus CLI：`go install github.com/Qianjiachang/goplus@latest`
+1. 安装GoPlus CLI：`go install 相关技术文档
 2. 执行一次性安全扫描
 3. 查看漏洞发现详情
 4. 修复漏洞后再次扫描验证
@@ -122,7 +122,7 @@ Critical漏洞详情:
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
-| GoPlus CLI未安装 | 未执行go install | 运行 `go install github.com/Qianjiachang/goplus@latest` 安装 |
+| GoPlus CLI未安装 | 未执行go install | 运行 `go install 相关技术文档 安装 |
 | 扫描超时 | 项目过大 | 缩小扫描范围；增加超时时间 |
 | 扫描结果为空 | 无Go源代码 | 确认扫描路径包含Go文件 |
 

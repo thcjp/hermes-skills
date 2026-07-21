@@ -44,8 +44,13 @@ tools:
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
+- **分类**: MD+EXEC（）
 
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 - **数据源用户驱动配置**: 用户指定追踪的数据内容,如需外部API则由用户提供凭证,凭证以环境变量引用存储而非明文值
@@ -148,8 +153,7 @@ export ANALYTICS_API_KEY="[REDACTED]"
 * 用户负责信任投递目标
 * `file` 投递保持在本地(`~/report/{name}/generated/`)
 
-## 核心规则
-
+## 核心能力
 ### 1. 用户定义数据源
 
 创建报表时:

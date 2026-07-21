@@ -60,6 +60,12 @@ def validate_xsd(xml_path: str, xsd_path: str) -> dict:
 **支持的校验规范**：XSD 1.0、XSD 1.1、DTD、RelaxNG。XSD最常用，专业版默认XSD。
 
 **输入**: 用户提供能力2：XSD Schema校验所需的指令和必要参数。
+
+- 执行`能力2：XSD Schema校验`操作,处理输入数据并返回结果
+- 验证执行结果,确认输出符合预期格式
+- 异常时参考错误处理章节进行恢复
+- 关键参数: `能力2：xsd_schema校验` 选项
+
 ### 能力3：XPath字段映射DSL
 ```yaml
 # xpath-mapping.yaml
@@ -132,6 +138,14 @@ def stream_xml_to_json(xml_path: str, json_path: str, item_xpath: str = '//Item'
 
 **关键特性**：常量内存占用（不随文件大小增长）；按元素标签流式解析；解析完的元素立即释放内存。
 
+- 执行`能力4：流式转换`操作,处理输入数据并返回结果
+- 验证执行结果,确认输出符合预期格式
+- 异常时参考错误处理章节进行恢复
+- 关键参数: `能力4：流式转换` 选项
+- 处理流程: 接收输入 -> 执行能力4：流式转换 -> 返回结果
+- 输入: 用户提供能力4：流式转换所需的参数和指令
+- 输出: 返回能力4：流式转换的执行结果,包含操作状态和输出数据
+
 ### 能力5：SOAP协议封装
 ```python
 from lxml import etree
@@ -173,6 +187,14 @@ def build_soap_request(operation: str, namespace: str, payload: dict) -> str:
 </soap:Envelope>"""
 ```
 
+- 执行`能力5：SOAP协议封装`操作,处理输入数据并返回结果
+- 验证执行结果,确认输出符合预期格式
+- 异常时参考错误处理章节进行恢复
+- 关键参数: `能力5：soap协议封装` 选项
+- 处理流程: 接收输入 -> 执行能力5：SOAP协议封装 -> 返回结果
+- 输入: 用户提供能力5：SOAP协议封装所需的参数和指令
+- 输出: 返回能力5：SOAP协议封装的执行结果,包含操作状态和输出数据
+
 ### 能力6：数据库直写
 ```python
 import psycopg2, json
@@ -201,6 +223,11 @@ def xml_to_postgres(xml_path: str, table: str, mapping: dict, dsn: str):
 ```
 
 **支持的数据库**：`关系型数据库`、MySQL、SQLite。每种数据库提供独立的连接模板与批量写入策略。
+
+- 执行`能力6：数据库直写`操作,处理输入数据并返回结果
+- 验证执行结果,确认输出符合预期格式
+- 异常时参考错误处理章节进行恢复
+- 关键参数: `能力6：数据库直写` 选项
 
 ### 能力覆盖范围
 

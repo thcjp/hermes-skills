@@ -227,6 +227,46 @@ npx type-coverage --detail --strict | grep -E "^[^|]+\\| +[0-9]+%" | sort -t'|' 
 - `--checkJs`: 命令参数,用于指定操作选项
 - `--max-warnings`: 命令参数,用于指定操作选项
 
+### 命令参数说明
+
+- `--checkJs`: 命令参数,用于指定操作选项
+- `--strictNullChecks`: 命令参数,用于指定操作选项
+- `-function-return-type`: 命令参数,用于指定操作选项
+- `--outDir`: 命令参数,用于指定操作选项
+- `--allowJs`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--emitDeclarationOnly`: 命令参数,用于指定操作选项
+- `--noEmit`: 命令参数,用于指定操作选项
+- `--noImplicitAny`: 命令参数,用于指定操作选项
+- `-E`: 命令参数,用于指定操作选项
+- `--ignore-catch`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-E`: 命令参数,用于指定操作选项
+- `-explicit-any`: 命令参数,用于指定操作选项
+- `--noEmit`: 命令参数,用于指定操作选项
+- `-optional-chain`: 命令参数,用于指定操作选项
+- `--allowJs`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `--emitDeclarationOnly`: 命令参数,用于指定操作选项
+- `--checkJs`: 命令参数,用于指定操作选项
+- `--strictNullChecks`: 命令参数,用于指定操作选项
+- `--noEmit`: 命令参数,用于指定操作选项
+- `--noImplicitAny`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-E`: 命令参数,用于指定操作选项
+- `--noImplicitAny`: 命令参数,用于指定操作选项
+- `--noEmit`: 命令参数,用于指定操作选项
+- `--emitDeclarationOnly`: 命令参数,用于指定操作选项
+- `--checkJs`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

@@ -155,8 +155,7 @@ clawlink_call_tool --tool "github_list_issues_for_a_repository" --params '{"owne
 
 中间产物模板参考: `assets/（根据实际场景填充）`
 
-## 异常处理
-
+## 错误处理
 | Status / Error | Meaning |
 | --- | --- |
 | Tool not found | The tool name does not exist in the current catalog. Verify with `clawlink_list_tools --integration github`. |
@@ -166,8 +165,7 @@ clawlink_call_tool --tool "github_list_issues_for_a_repository" --params '{"owne
 | `422 Unprocessable` | Invalid request body or missing required fields. Verify tool schema. |
 | Write rejected | User did not confirm a write action. Always confirm before executing writes. |
 
-### 错误处理
-
+### 错误恢复步骤
 1. Check that the ClawLink plugin is installed:
 
    bash
@@ -191,6 +189,7 @@ clawlink_call_tool --tool "github_list_issues_for_a_repository" --params '{"owne
 1. Ensure the integration slug is exactly `github`.
 2. Use `clawlink_describe_tool` to verify parameter names and types before calling.
 3. For write operations, always call `clawlink_preview_tool` first.
+> **处理方式**: 参考上表中的错误场景说明,按照对应建议进行处理和恢复。
 
 ## 依赖说明
 

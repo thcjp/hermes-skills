@@ -29,8 +29,7 @@ tools:
 
 在CSV、JSON、YAML等常用数据格式间进行基础转换，支持中文输出与UTF-8编码处理。
 
-## 核心功能
-
+## 核心能力
 ### CSV转JSON
 使用 `csv.DictReader()` 逐行读取为字典，通过 `json.dumps(ensure_ascii=False, indent=2)` 输出UTF-8中文JSON。
 
@@ -113,8 +112,13 @@ json_str = json.dumps(data, ensure_ascii=False, indent=2)
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
+- **分类**: MD+EXEC（）
 
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 使用流程
 
 1. **识别源格式**：根据文件扩展名（`.csv`/`.json`/`.yaml`）确定输入格式

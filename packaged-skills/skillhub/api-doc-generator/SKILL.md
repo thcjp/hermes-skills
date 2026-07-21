@@ -90,7 +90,7 @@ api-doc diff v1.2.0 v1.3.0
 
 DIFF: v1.2.0 → v1.3.0
 =====================
-[ADDED]   POST /api/v1/orders/search - 订单搜索接口
+待补充   POST /api/v1/orders/search - 订单搜索接口
 [MODIFIED] GET /api/v1/users/{id}
   - response.data.phone: type string → string|null (允许空)
   - response.data.avatar: NEW FIELD
@@ -99,6 +99,12 @@ DIFF: v1.2.0 → v1.3.0
 ```
 
 **输出**: 返回功能3：文档版本管理与diff的执行结果,包含操作状态和输出数据。
+
+- 执行`功能3：文档版本管理与diff`操作,处理输入数据并返回结果
+- 验证执行结果,确认输出符合预期格式
+- 异常时参考错误处理章节进行恢复
+- 关键参数: `功能3：文档版本管理与diff` 选项
+
 ### 功能4：Mock服务器联动
 **解决痛点**：文档写完了，Mock还得另起一套，两边不同步。
 

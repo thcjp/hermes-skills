@@ -180,8 +180,7 @@ EOF
 
 中间产物模板参考: `assets/（根据实际场景填充）`
 
-## 异常处理
-
+## 错误处理
 | Status | Meaning |
 | --- | --- |
 | 400 | Missing Pipedrive connection |
@@ -190,7 +189,7 @@ EOF
 | 429 | Rate limited (10 req/sec per account) |
 | 4xx/5xx | Passthrough error from Pipedrive API |
 
-### 错误处理
+### 错误恢复步骤
 1. Check that the `MATON_API_KEY` environment variable is set:
 
 ```bash
@@ -213,6 +212,7 @@ EOF
 
 * Correct: `https://api.maton.ai/pipedrive/api/v1/deals`
 * Incorrect: `https://api.maton.ai/api/v1/deals`
+> **处理方式**: 参考上表中的错误场景说明,按照对应建议进行处理和恢复。
 
 ## 依赖说明
 

@@ -36,7 +36,7 @@ curl -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
   -d '{
     "query": "query { repository(owner: \"owner\", name: \"repo\") { issues(first: 10, states: OPEN) { totalCount nodes { number title labels(first: 5) { nodes { name } } } } pullRequests(first: 10, states: OPEN) { totalCount } releases(first: 3) { nodes { tagName publishedAt } } } }"
   }' \
-  https://api.github.com/graphql
+  https://api.相关技术文档
 ```
 
 GraphQL查询模板库:
@@ -120,7 +120,7 @@ gh-api-toolkit batch-archive-repos \
 ### Webhook管理
 ```bash
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
-  https://api.github.com/repos/owner/repo/hooks
+  https://api.相关技术文档
 
 curl -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
   -H "Content-Type: application/json" \
@@ -133,13 +133,13 @@ curl -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
     "events": ["issues", "pull_request", "push", "release"],
     "active": true
   }' \
-  https://api.github.com/repos/owner/repo/hooks
+  https://api.相关技术文档
 
 curl -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
-  https://api.github.com/repos/owner/repo/hooks/123/pings
+  https://api.相关技术文档
 
 curl -X DELETE -H "Authorization: Bearer $GITHUB_TOKEN" \
-  https://api.github.com/repos/owner/repo/hooks/123
+  https://api.相关技术文档
 ```
 
 支持的事件类型:
@@ -157,48 +157,57 @@ curl -X DELETE -H "Authorization: Bearer $GITHUB_TOKEN" \
 ### GitHub Actions API
 ```bash
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
-  https://api.github.com/repos/owner/repo/actions/workflows
+  https://api.相关技术文档
 
 curl -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"ref":"main","inputs":{"environment":"staging"}}' \
-  https://api.github.com/repos/owner/repo/actions/workflows/123/dispatches
+  https://api.相关技术文档
 
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
-  "https://api.github.com/repos/owner/repo/actions/runs?status=in_progress"
+  "https://api.相关技术文档
 
 curl -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
-  https://api.github.com/repos/owner/repo/actions/runs/123/cancel
+  https://api.相关技术文档
 
 curl -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
-  https://api.github.com/repos/owner/repo/actions/runs/123/rerun-failed-jobs
+  https://api.相关技术文档
 
 curl -L -H "Authorization: Bearer $GITHUB_TOKEN" \
   -o artifact.zip \
-  https://api.github.com/repos/owner/repo/actions/artifacts/123/zip
+  https://api.相关技术文档
 ```
 
 **输出**: 返回GitHub Actions API的执行结果,包含操作状态和输出数据。
+
+- 执行`GitHub Actions API`操作,处理输入数据并返回结果
+- 验证执行结果,确认输出符合预期格式
+- 异常时参考错误处理章节进行恢复
+- 关键参数: `github_actions_api` 选项
+- 处理流程: 接收输入 -> 执行GitHub Actions API -> 返回结果
+- 输入: 用户提供GitHub Actions API所需的参数和指令
+- 输出: 返回GitHub Actions API的执行结果,包含操作状态和输出数据
+
 ### 组织与团队管理
 ```bash
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
-  "https://api.github.com/orgs/my-org/members?per_page=100"
+  "https://api.相关技术文档
 
 curl -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"name":"backend-team","description":"后端团队","privacy":"closed"}' \
-  https://api.github.com/orgs/my-org/teams
+  https://api.相关技术文档
 
 curl -X PUT -H "Authorization: Bearer $GITHUB_TOKEN" \
   -d '{"role":"member"}' \
-  https://api.github.com/orgs/my-org/teams/123/members/alice
+  https://api.相关技术文档
 
 curl -X PUT -H "Authorization: Bearer $GITHUB_TOKEN" \
   -d '{"permission":"push"}' \
-  https://api.github.com/orgs/my-org/teams/123/repos/my-org/repo
+  https://api.相关技术文档
 
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
-  https://api.github.com/orgs/my-org/teams/123/repos
+  https://api.相关技术文档
 ```
 
 **输入**: 用户提供组织与团队管理所需的指令和必要参数。
@@ -206,17 +215,22 @@ curl -H "Authorization: Bearer $GITHUB_TOKEN" \
 **输出**: 返回组织与团队管理的执行结果,包含操作状态和输出数据。### 高级搜索
 ```bash
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
-  "https://api.github.com/search/issues?q=bug+is:issue+is:open+org:my-org&sort=created&order=desc"
+  "https://api.相关技术文档
 
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
-  "https://api.github.com/search/code?q=详情见说明+language:python+org:my-org"
+  "https://api.相关技术文档
 
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
-  "https://api.github.com/search/repositories?q=topic:microservices+org:my-org&sort=stars"
+  "https://api.相关技术文档
 
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
-  "https://api.github.com/search/users?q=language:python+location:china"
+  "https://api.相关技术文档
 ```
+
+- 执行`组织与团队管理`操作,处理输入数据并返回结果
+- 验证执行结果,确认输出符合预期格式
+- 异常时参考错误处理章节进行恢复
+- 关键参数: `组织与团队管理` 选项
 
 ### 能力覆盖范围
 
@@ -337,6 +351,43 @@ gh-api-toolkit webhook test --repo owner/repo --event "issues"
 - `-Type`: 命令参数,用于指定操作选项
 - `-H`: 命令参数,用于指定操作选项
 
+### 命令参数说明
+
+- `-H`: 命令参数,用于指定操作选项
+- `-L`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+- `-archive-repos`: 命令参数,用于指定操作选项
+- `-X`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-X`: 命令参数,用于指定操作选项
+- `-create-issues`: 命令参数,用于指定操作选项
+- `-L`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+- `-L`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+- `-X`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+- `-X`: 命令参数,用于指定操作选项
+- `-L`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-H`: 命令参数,用于指定操作选项
+- `-X`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+- `-L`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -436,7 +487,7 @@ gh-api-toolkit webhook test --repo owner/repo --event "issues"
     "default_scope": ["repo", "workflow", "read:org", "admin:org_hook", "admin:repo_hook"]
   },
   "graphql": {
-    "endpoint": "https://api.github.com/graphql",
+    "endpoint": "https://api.相关技术文档
     "timeout": 30,
     "complexity_limit": 500000,
     "cache_ttl": 300

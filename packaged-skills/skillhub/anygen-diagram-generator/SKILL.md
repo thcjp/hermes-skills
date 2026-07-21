@@ -75,8 +75,13 @@ anygen skill install --platform claude-code -y
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
+- **分类**: MD+EXEC（）
 
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 - **文本到图表智能转换**：将自然语言描述的需求、流程、结构转换为标准可视化图表，无需手动编写 Mermaid 或 PlantUML 语法

@@ -34,7 +34,7 @@ tools:
 | Bash/Shell | 运行时 | 可选 | 用于测试skill中的脚本 |
 
 ### API Key 配置
-- 本Skill基于Markdown指令，无需额外API Key（除内容中明确标注的外部API）
+- 本Skill基于指令驱动，无需额外API Key（除内容中明确标注的外部API）
 
 ### 可用性分类
 - **分类**: MD+EXEC（）

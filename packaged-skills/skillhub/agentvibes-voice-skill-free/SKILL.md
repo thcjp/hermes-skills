@@ -241,6 +241,46 @@ export API_KEY="your_api_key_here"
 - `-huayan-x_low`: 命令参数,用于指定操作选项
 - `-thorsten-medium`: 命令参数,用于指定操作选项
 
+### 命令参数说明
+
+- `-kss-medium`: 命令参数,用于指定操作选项
+- `-lessac-medium`: 命令参数,用于指定操作选项
+- `-thorsten-m`: 命令参数,用于指定操作选项
+- `-davefx-medium`: 命令参数,用于指定操作选项
+- `-ayanami-medium`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-davefx-medium`: 命令参数,用于指定操作选项
+- `-lessac-medium`: 命令参数,用于指定操作选项
+- `-kss-medium`: 命令参数,用于指定操作选项
+- `-thorsten-medium`: 命令参数,用于指定操作选项
+- `-ayanami-medium`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-thorsten-m`: 命令参数,用于指定操作选项
+- `-lessac-medium`: 命令参数,用于指定操作选项
+- `-thorsten-medium`: 命令参数,用于指定操作选项
+- `-davefx-medium`: 命令参数,用于指定操作选项
+- `-huayan-x_low`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-kss-medium`: 命令参数,用于指定操作选项
+- `-lessac-medium`: 命令参数,用于指定操作选项
+- `-ayanami-medium`: 命令参数,用于指定操作选项
+- `-davefx-medium`: 命令参数,用于指定操作选项
+- `-huayan-x_low`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-thorsten-m`: 命令参数,用于指定操作选项
+- `-davefx-medium`: 命令参数,用于指定操作选项
+- `-huayan-x_low`: 命令参数,用于指定操作选项
+- `-lessac-medium`: 命令参数,用于指定操作选项
+- `-thorsten-medium`: 命令参数,用于指定操作选项
+
 ## 案例展示
 
 ### 案例1: 切换英语女声

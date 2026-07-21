@@ -126,6 +126,26 @@ tools:
 
 - `-Type`: 命令参数,用于指定操作选项
 
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-Type`: 命令参数,用于指定操作选项
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -187,8 +207,7 @@ tools:
 
 中间产物模板参考: `assets/（根据实际场景填充）`
 
-## 异常处理
-
+## 错误处理
 | Status | Meaning |
 | --- | --- |
 | 400 | Missing Slack connection |
@@ -198,7 +217,7 @@ tools:
 
 **Missing Scope Errors:** If you encounter `missing_scope` errors, contact [Maton Support](mailto:support@maton.ai) to request additional scopes for your connection.
 
-### 错误处理
+### 错误恢复步骤
 **CLI:**
 
 1. Check your auth state:
@@ -237,6 +256,7 @@ EOF
 
 * Correct: `https://api.maton.ai/slack/api/chat.postMessage`
 * Incorrect: `https://api.maton.ai/api/chat.postMessage`
+> **处理方式**: 参考上表中的错误场景说明,按照对应建议进行处理和恢复。
 
 ## 依赖说明
 

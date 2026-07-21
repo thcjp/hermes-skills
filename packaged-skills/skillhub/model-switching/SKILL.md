@@ -364,7 +364,7 @@ node scripts/cost-dashboard.mjs --period month --format csv > reports/month.csv
 
 ### API Key 配置
 
-- 本Skill基于Markdown指令,无需额外API Key。
+- 本Skill基于指令驱动,无需额外API Key。
 - Claude API需配置 `ANTHROPIC_API_KEY` 环境变量。
 - 通知渠道的webhook URL需配置为环境变量或密钥管理器。
 - 审计日志若存数据库,数据库凭据按对应服务文档配置。

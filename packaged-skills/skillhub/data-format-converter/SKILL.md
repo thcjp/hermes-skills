@@ -45,8 +45,13 @@ tools:
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
+- **分类**: MD+EXEC（）
 
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### CSV与JSON互转
@@ -127,6 +132,12 @@ xml_str = xmltodict.unparse(data, pretty=True)
 ```
 
 **输入**: 用户提供XML与JSON互转所需的指令和必要参数。
+
+- 执行`XML与JSON互转`操作,处理输入数据并返回结果
+- 验证执行结果,确认输出符合预期格式
+- 异常时参考错误处理章节进行恢复
+- 关键参数: `xml与json互转` 选项
+
 ### TOML与JSON互转
 **TOML转JSON**：使用 `toml.load()` 解析TOML文件，支持表数组和嵌套表。
 
@@ -151,6 +162,12 @@ toml_str = toml.dumps(data)
 ```
 
 **输入**: 用户提供TOML与JSON互转所需的指令和必要参数。
+
+- 执行`TOML与JSON互转`操作,处理输入数据并返回结果
+- 验证执行结果,确认输出符合预期格式
+- 异常时参考错误处理章节进行恢复
+- 关键参数: `toml与json互转` 选项
+
 ### 批量转换
 
 支持目录级批量处理，遍历源格式文件并批量转换为目标格式：

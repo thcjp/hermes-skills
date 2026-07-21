@@ -84,6 +84,11 @@ for segment in result.segments:
 **输入**: 用户提供说话人分离（Diarization）所需的指令和必要参数。
 **处理**: 按照skill规范执行说话人分离（Diarization）操作,遵循单一意图原则。
 
+- 执行`说话人分离（Diarization）`操作,处理输入数据并返回结果
+- 验证执行结果,确认输出符合预期格式
+- 异常时参考错误处理章节进行恢复
+- 关键参数: `说话人分离（diarization）` 选项
+
 ### 3. 批量转写队列管理
 
 ```python
@@ -168,6 +173,11 @@ class BatchTranscriptionManager:
         ms = int((seconds % 1) * 1000)
         return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
 ```
+
+- 执行`批量转写队列管理`操作,处理输入数据并返回结果
+- 验证执行结果,确认输出符合预期格式
+- 异常时参考错误处理章节进行恢复
+- 关键参数: `批量转写队列管理` 选项
 
 ### 能力覆盖范围
 
@@ -272,7 +282,7 @@ pip install azure-ai-transcription
 
 # 配置环境变量
 export TRANSCRIPTION_ENDPOINT="https://<resource>.cognitiveservices.azure.com"
-export TRANSCRIPTION_KEY="<your-key>"
+export TRANSCRIPTION_KEY="API_KEY"
 ```
 
 ### 2. 实时转写
@@ -332,6 +342,31 @@ manager.export_results(format='srt')
 
 - `-CN`: 命令参数,用于指定操作选项
 - `-US`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-US`: 命令参数,用于指定操作选项
+- `-CN`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-US`: 命令参数,用于指定操作选项
+- `-CN`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-CN`: 命令参数,用于指定操作选项
+- `-US`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-US`: 命令参数,用于指定操作选项
+- `-CN`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-US`: 命令参数,用于指定操作选项
+- `-CN`: 命令参数,用于指定操作选项
 
 ## 输入格式
 

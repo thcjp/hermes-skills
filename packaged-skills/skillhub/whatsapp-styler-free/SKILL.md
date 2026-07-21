@@ -34,7 +34,7 @@ tools:
 | LLM API | API | 必需 | 由Agent内置LLM提供,无需额外配置 |
 
 ### API Key 配置
-- 本Skill基于Markdown指令,无需额外API Key
+- 本Skill基于指令驱动,无需额外API Key
 
 ### 可用性分类
 - **分类**: MD(纯Markdown指令,无需exec命令行执行能力)

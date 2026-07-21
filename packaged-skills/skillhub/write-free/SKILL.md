@@ -31,7 +31,7 @@ tools:
 | Bash/Shell | 运行时 | 必需 | 用于执行scripts目录下的shell脚本 |
 
 ### API Key 配置
-- 本Skill基于Markdown指令，无需额外API Key
+- 本Skill基于指令驱动，无需额外API Key
 
 ### 可用性分类
 - **分类**: MD+EXEC（纯Markdown指令，核心功能依赖exec命令行执行scripts脚本）

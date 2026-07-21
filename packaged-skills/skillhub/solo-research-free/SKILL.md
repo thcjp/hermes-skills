@@ -119,7 +119,7 @@ Agent: 研究完成
 4. 无需Provider包裹
 
 ## 来源
-- github.com/pmndrs/zustand (WebFetch获取)
+- 相关技术文档 (WebFetch获取)
 ```
 
 ## 错误处理

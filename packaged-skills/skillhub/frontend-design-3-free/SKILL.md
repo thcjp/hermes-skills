@@ -35,8 +35,13 @@ frontend-design-3-free 创建独特的生产级前端界面，避免通用"AI sl
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
+- **分类**: MD+EXEC（）
 
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
 ### 1. 设计思维与美学方向选择
@@ -92,6 +97,22 @@ Motion 库（React）集成。
 6. 实现 CSS-only 动效，聚焦页面加载的 staggered reveals
 7. 检查反模式：确认无 Inter/Roboto/Arial、无紫色渐变白底
 8. 输出生产级 HTML/CSS 代码
+
+### 命令参数说明
+
+- `-family`: 命令参数,用于指定操作选项
+- `-spacing`: 命令参数,用于指定操作选项
+- `-weight`: 命令参数,用于指定操作选项
+- `-height`: 命令参数,用于指定操作选项
+- `-style`: 命令参数,用于指定操作选项
+
+### 命令参数说明
+
+- `-size`: 命令参数,用于指定操作选项
+- `-out`: 命令参数,用于指定操作选项
+- `--body-font`: 命令参数,用于指定操作选项
+- `--display-font`: 命令参数,用于指定操作选项
+- `-serif`: 命令参数,用于指定操作选项
 
 ## 示例
 

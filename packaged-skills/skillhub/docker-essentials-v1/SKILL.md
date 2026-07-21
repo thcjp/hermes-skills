@@ -117,6 +117,14 @@ class DockerfileModernizer:
             f.writelines(self.modernized)
 ```
 
+- 执行`Dockerfile现代化重构`操作,处理输入数据并返回结果
+- 验证执行结果,确认输出符合预期格式
+- 异常时参考错误处理章节进行恢复
+- 关键参数: `dockerfile现代化重构` 选项
+- 处理流程: 接收输入 -> 执行Dockerfile现代化重构 -> 返回结果
+- 输入: 用户提供Dockerfile现代化重构所需的参数和指令
+- 输出: 返回Dockerfile现代化重构的执行结果,包含操作状态和输出数据
+
 ### 4. 渐进式迁移与回滚
 > 详细代码示例已移至 `references/detail.md`
 

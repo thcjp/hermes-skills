@@ -39,8 +39,7 @@ tools:
 
 在 Discord 语音频道中实现端到端语音对话:VAD 检测说话 → 录音缓冲 → STT 转写 → Agent 处理 → TTS 合成 → 频道播放。支持打断响应与自动重连,提供斜杠命令、CLI、Agent Tool 三种入口。
 
-## 核心规则
-
+## 核心能力
 ### 1. 先验证系统依赖与 Bot 权限
 ```bash
 # 必需系统依赖
@@ -99,8 +98,13 @@ Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`
 需要配置对应API Key，详见上文环境配置章节
 
 ### 可用性分类
-- **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
+- **分类**: MD+EXEC（）
 
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 使用流程
 
 1. 安装系统依赖:`ffmpeg`、`build-essential`、`python3`
