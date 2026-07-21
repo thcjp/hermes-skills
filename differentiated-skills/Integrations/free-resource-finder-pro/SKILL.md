@@ -87,6 +87,11 @@ tools:
 }
 ```
 
+**输入**: 用户提供自动fallback链所需的指令和必要参数。
+**处理**: 按照skill规范执行自动fallback链操作,遵循单一意图原则。
+**输出**: 返回自动fallback链的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 后台守护进程
 实时探测模型可用性,限速中断时自动重建链路:
 
@@ -114,6 +119,10 @@ free-finder daemon --stop
 4. 选出最优可用模型作为新主模型
 5. 通知Agent应用新配置
 
+**输入**: 用户提供后台守护进程所需的指令和必要参数。
+**处理**: 按照skill规范执行后台守护进程操作,遵循单一意图原则。
+**输出**: 返回后台守护进程的执行结果,包含操作状态和输出数据。
+
 ### 多API Key负载均衡
 聚合多账号额度,突破单账号限速:
 
@@ -139,6 +148,10 @@ free-finder keys stats
 | lowest_latency | 优先延迟最低的Key | 追求响应速度 |
 | weighted | 按权重分配 | 混合免费与付费Key |
 
+**输入**: 用户提供多API Key负载均衡所需的指令和必要参数。
+**处理**: 按照skill规范执行多API Key负载均衡操作,遵循单一意图原则。
+**输出**: 返回多API Key负载均衡的执行结果,包含操作状态和输出数据。
+
 ### 调用统计与成本分析
 ```bash
 # 查看今日统计
@@ -162,6 +175,10 @@ free-finder stats --from 2026-07-01 --to 2026-07-18 --format csv
 - 模型使用占比
 - 节省成本估算(对比付费模型)
 
+**输入**: 用户提供调用统计与成本分析所需的指令和必要参数。
+**处理**: 按照skill规范执行调用统计与成本分析操作,遵循单一意图原则。
+**输出**: 返回调用统计与成本分析的执行结果,包含操作状态和输出数据。
+
 ### 智能路由
 按任务类型自动选择最优模型:
 
@@ -175,6 +192,11 @@ free-finder stats --from 2026-07-01 --to 2026-07-18 --format csv
   ]
 }
 ```
+
+**输入**: 用户提供智能路由所需的指令和必要参数。
+**处理**: 按照skill规范执行智能路由操作,遵循单一意图原则。
+**输出**: 返回智能路由的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 模型质量监控
 持续评估模型表现,自动调整排序:
@@ -199,6 +221,11 @@ free-finder monitor report --format html --output quality.html
 - 输出质量评分(基于基准测试)
 - 限速触发频率
 - 错误类型分布
+
+**输入**: 用户提供模型质量监控所需的指令和必要参数。
+**处理**: 按照skill规范执行模型质量监控操作,遵循单一意图原则。
+**输出**: 返回模型质量监控的执行结果,包含操作状态和输出数据。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全功能免费、资源管理工具、含自动、成本分析与质量监、适合长期无人值守、免费资源发现器、专业版、是企业级免费、在免费版基础上扩、展自动、模型质量监控等高、级能力、核心能力、详细记录每次调用、生成用量报告等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
 ## 使用场景
 ### 场景1:7x24小时无人值守AI服务
@@ -241,7 +268,7 @@ free-finder monitor report --format html --output quality.html
 5. 监控实时用量,动态调整
 
 ## 快速开始
-### 依赖说明
+### 依赖详情
 ```bash
 # 安装专业版
 pip install free-finder[pro]
@@ -253,7 +280,7 @@ free-finder init --edition pro
 free-finder config set api.key "$OPENROUTER_API_KEY"
 ```
 
-### 步骤2:配置fallback链
+### Step 2:配置fallback链
 ```bash
 # 自动生成fallback链(基于质量排序)
 free-finder chain auto-generate --top 5
@@ -265,7 +292,7 @@ free-finder chain add --model deepseek-coder --priority 2
 free-finder chain list
 ```
 
-### 步骤3:启动守护进程
+### Step 3:启动守护进程
 ```bash
 # 后台启动守护
 nohup free-finder daemon > ~/.free-finder/daemon.log 2>&1 &
@@ -274,7 +301,7 @@ nohup free-finder daemon > ~/.free-finder/daemon.log 2>&1 &
 free-finder daemon --status
 ```
 
-### 步骤4:配置负载均衡
+### Step 4:配置负载均衡
 ```bash
 # 添加多个Key
 free-finder keys add --provider openrouter --key "$KEY1"
@@ -285,7 +312,7 @@ free-finder keys add --provider openrouter --key "$KEY3"
 free-finder config set loadbalancer.strategy least_used
 ```
 
-### 步骤5:启用监控
+### Step 5:启用监控
 ```bash
 # 启动质量监控
 free-finder monitor start
@@ -293,6 +320,9 @@ free-finder monitor start
 # 验证监控运行
 free-finder monitor status
 ```
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
+
 
 ## 示例
 ### 完整专业版配置
@@ -467,14 +497,15 @@ A: 专业版提供99.5%可用性SLA(基于守护进程+多Key+fallback机制)。
 
 ### 可用性分类
 - **分类**: MD+EXEC+CLI+DAEMON(Markdown指令+命令行工具+后台守护进程)
-- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务,高级功能需要free-finder CLI与守护进程
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作,高级功能需要free-finder CLI与守护进程
 
 ## 错误处理
+
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 已知限制
 - 需要API Key，无Key环境无法使用

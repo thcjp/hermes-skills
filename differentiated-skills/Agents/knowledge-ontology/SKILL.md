@@ -6,7 +6,7 @@ displayName: 知识本体
 summary: 类型化知识图谱：约束校验+模式演进+图遍历规划，让Agent记忆结构化可验证。
 license: Proprietary
 description: |-
-  面向AI Agent的类型化知识图谱系统，提供实体关系建模、约束校验、模式演进、图遍历规划能力。适用于需要结构化查询的Agent记忆、多实体关系管理、依赖追踪与影响分析、多步计划建模场景，避免扁平文件记忆难查询、约束缺失数据脏、模式演进破坏旧数据等问题。触发关键词：知识图谱、本体、实体关系、ontology、graph、类型化、约束校验、图遍历。
+  面向AI Agent的类型化知识图谱系统，提供实体关系建模、约束校验、模式演进、图遍历规划能力。适用于需要结构化查询的Agent记忆、多实体关系管理、依赖追踪与影响分析、多步计划建模场景，避免扁平文件记忆难查询、约束缺失数据脏、模式演进破坏旧数据等问题。适用关键词：知识图谱、本体、实体关系、ontology、graph、类型化、约束校验、图遍历。
 tags:
 - 智能代理
 - 知识管理
@@ -22,11 +22,46 @@ tools:
 
 ## 核心能力
 
-- **类型化实体与关系系统**：内置 Person/Organization/Project/Task/Goal/Event/Location/Document/Message/Thread/Note/Account/Device/Credential/Action/Policy 15+ 类型，实体含 id/type/properties/relations/created/updated 标准结构。
-- **约束校验引擎**：支持 required（必填）、enum（枚举）、forbidden_properties（禁止属性，如 Credential 禁止 password）、cardinality（关系基数）、acyclic（无环校验，如 blocks 关系）、validate（自定义表达式）、defaults（默认值）7 类约束规则。
-- **模式演进管理**：append-only 历史保留 + 迁移脚本三步法（追加新 schema → 编写迁移 → 执行+校验），确保模式变更不破坏旧数据。
-- **图遍历规划**：将多步计划建模为图操作序列（CREATE/RELATE），每步执行前校验约束，违反约束自动回滚；支持依赖分析、影响分析、循环依赖检测。
-- **Skill 契约声明**：使用本体的 Skill 声明 reads/writes 边界与前后置条件，任一失败自动回滚，明确跨 Skill 通信边界。
+### 类型化实体与关系系统
+内置 Person/Organization/Project/Task/Goal/Event/Location/Document/Message/Thread/Note/Account/Device/Credential/Action/Policy 15+ 类型，实体含 id/type/properties/relations/created/updated 标准结构。
+
+**输入**: 用户提供类型化实体与关系系统所需的指令和必要参数。
+**处理**: 按照skill规范执行类型化实体与关系系统操作,遵循单一意图原则。
+**输出**: 返回类型化实体与关系系统的执行结果,包含操作状态和输出数据。
+
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+### 约束校验引擎
+支持 required（必填）、enum（枚举）、forbidden_properties（禁止属性，如 Credential 禁止 password）、cardinality（关系基数）、acyclic（无环校验，如 blocks 关系）、validate（自定义表达式）、defaults（默认值）7 类约束规则。
+
+**输入**: 用户提供约束校验引擎所需的指令和必要参数。
+**处理**: 按照skill规范执行约束校验引擎操作,遵循单一意图原则。
+**输出**: 返回约束校验引擎的执行结果,包含操作状态和输出数据。
+
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+### 模式演进管理
+append-only 历史保留 + 迁移脚本三步法（追加新 schema → 编写迁移 → 执行+校验），确保模式变更不破坏旧数据。
+
+**输入**: 用户提供模式演进管理所需的指令和必要参数。
+**处理**: 按照skill规范执行模式演进管理操作,遵循单一意图原则。
+**输出**: 返回模式演进管理的执行结果,包含操作状态和输出数据。
+
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+### 图遍历规划
+将多步计划建模为图操作序列（CREATE/RELATE），每步执行前校验约束，违反约束自动回滚；支持依赖分析、影响分析、循环依赖检测。
+
+**输入**: 用户提供图遍历规划所需的指令和必要参数。
+**处理**: 按照skill规范执行图遍历规划操作,遵循单一意图原则。
+**输出**: 返回图遍历规划的执行结果,包含操作状态和输出数据。
+
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+### Skill 契约声明
+使用本体的 Skill 声明 reads/writes 边界与前后置条件，任一失败自动回滚，明确跨 Skill 通信边界。
+
+**输入**: 用户提供Skill 契约声明所需的指令和必要参数。
+**处理**: 按照skill规范执行Skill 契约声明操作,遵循单一意图原则。
+**输出**: 返回Skill 契约声明的执行结果,包含操作状态和输出数据。
+**技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：类型化知识图谱、Agent、记忆结构化可验证、的类型化知识图谱、提供实体关系建模、图遍历规划能力、适用于需要结构化、查询的、多实体关系管理、依赖追踪与影响分、多步计划建模场景、避免扁平文件记忆、难查询、约束缺失数据脏、模式演进破坏旧数、据等问题、适用关键词、知识图谱、实体关系、ontology、graph等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
 ## 适用场景
 

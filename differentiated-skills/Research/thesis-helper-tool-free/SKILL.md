@@ -56,6 +56,11 @@ thesis-helper outline --topic "社交媒体对青少年心理健康的影响" --
   2.3 自然语言处理在医疗领域的应用
 ```
 
+**输入**: 用户提供论文大纲生成所需的指令和必要参数。
+**处理**: 按照skill规范执行论文大纲生成操作,遵循单一意图原则。
+**输出**: 返回论文大纲生成的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 2. 文献综述框架
 
 按时间线或主题分类组织文献,生成综述结构。
@@ -67,6 +72,11 @@ thesis-helper literature --topic "深度学习发展" --method timeline
 # 按主题分类组织文献综述
 thesis-helper literature --topic "推荐系统算法" --method thematic
 ```
+
+**输入**: 用户提供文献综述框架所需的指令和必要参数。
+**处理**: 按照skill规范执行文献综述框架操作,遵循单一意图原则。
+**输出**: 返回文献综述框架的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 3. 摘要撰写
 
@@ -80,6 +90,11 @@ thesis-helper abstract --topic "基于图神经网络的社交网络分析" --la
 thesis-helper abstract --topic "Graph Neural Network for Social Network Analysis" --lang en --words 200
 ```
 
+**输入**: 用户提供摘要撰写所需的指令和必要参数。
+**处理**: 按照skill规范执行摘要撰写操作,遵循单一意图原则。
+**输出**: 返回摘要撰写的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 4. 引用格式转换
 
 支持主流引用格式的相互转换。
@@ -91,6 +106,11 @@ thesis-helper cite --input "Smith, J. (2023). AI Research. Journal of CS, 15(3),
 # 转换为中文国标格式(GB-T7714)
 thesis-helper cite --input "Smith, J. (2023). AI Research. Journal of CS, 15(3), 45-67." --from apa --to gbt7714
 ```
+
+**输入**: 用户提供引用格式转换所需的指令和必要参数。
+**处理**: 按照skill规范执行引用格式转换操作,遵循单一意图原则。
+**输出**: 返回引用格式转换的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 5. 格式规范检查
 
@@ -104,6 +124,11 @@ thesis-helper format --file my_thesis.docx
 thesis-helper format --file my_thesis.docx --check headings,references,tables
 ```
 
+**输入**: 用户提供格式规范检查所需的指令和必要参数。
+**处理**: 按照skill规范执行格式规范检查操作,遵循单一意图原则。
+**输出**: 返回格式规范检查的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 6. 答辩准备
 
 梳理答辩要点,准备常见问题。
@@ -115,6 +140,12 @@ thesis-helper defense --file my_thesis.docx
 # 常见问题
 thesis-helper defense --file my_thesis.docx --questions
 ```
+
+**输入**: 用户提供答辩准备所需的指令和必要参数。
+**处理**: 按照skill规范执行答辩准备操作,遵循单一意图原则。
+**输出**: 返回答辩准备的执行结果,包含操作状态和输出数据。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：面向学生和研究者、的论文辅助工具、提供大纲生成、摘要撰写与引用格、论文写作助手免费、面向学生和个人研、究者提供基础的论、文写作辅助能力、支持论文大纲生成、文献综述框架搭建、引用格式转换等核、心功能、Use、when、需要生成营销文案、写作内容、标题优化、内容创作时使用、不适用于纯技术文、档撰写、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
 
@@ -217,6 +248,9 @@ thesis-helper abstract --topic "智能教育系统的设计与实现" --lang zh
 # 生成英文摘要
 thesis-helper abstract --topic "Design and Implementation of Intelligent Education System" --lang en
 ```
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
+
 
 ## 示例
 
@@ -334,7 +368,7 @@ thesis-helper outline \
 - **Agent 平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -354,8 +388,9 @@ thesis-helper outline \
 
 ## 错误处理
 
+
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

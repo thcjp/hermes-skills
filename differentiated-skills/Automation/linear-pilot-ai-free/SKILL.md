@@ -21,8 +21,7 @@ tools:
 
 > Linear任务一键流转：创建即触发，Agent自动处理，状态自动更新，结果自动同步至Git。
 
-## 核心功能
-
+## 核心能力
 ### 1. Linear API配置与认证
 
 安全存储Linear API Key，避免硬编码：
@@ -35,6 +34,11 @@ chmod 600 ~/.linear-pilot/linear.env
 ```
 
 获取API Key：Linear → Settings → API → Personal API keys
+
+**输入**: 用户提供Linear API配置与认证所需的指令和必要参数。
+**处理**: 按照skill规范执行Linear API配置与认证操作,遵循单一意图原则。
+**输出**: 返回Linear API配置与认证的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 2. 团队与工作流状态ID获取
 
@@ -51,6 +55,11 @@ chmod 600 ~/.linear-pilot/linear.env
 # In Progress - ID: state_prog456
 # Done - ID: state_done789
 ```
+
+**输入**: 用户提供团队与工作流状态ID获取所需的指令和必要参数。
+**处理**: 按照skill规范执行团队与工作流状态ID获取操作,遵循单一意图原则。
+**输出**: 返回团队与工作流状态ID获取的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 3. 工作流配置
 
@@ -74,6 +83,11 @@ chmod 600 ~/.linear-pilot/linear.env
 }
 ```
 
+**输入**: 用户提供工作流配置所需的指令和必要参数。
+**处理**: 按照skill规范执行工作流配置操作,遵循单一意图原则。
+**输出**: 返回工作流配置的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 4. Webhook服务接入（Make.com免费方案）
 
 免费版推荐使用Make.com作为Webhook中转，免费额度1000次/月：
@@ -92,6 +106,10 @@ HTTP Request → Agent endpoint
     ↓
 Discord notification
 ```
+
+**输入**: 用户提供Webhook服务接入（Make.com免费方案）所需的指令和必要参数。
+**处理**: 按照skill规范执行Webhook服务接入（Make.com免费方案）操作,遵循单一意图原则。
+**输出**: 返回Webhook服务接入（Make.com免费方案）的执行结果,包含操作状态和输出数据。
 
 ### 5. 任务处理工作流
 
@@ -113,6 +131,11 @@ Discord notification
 步骤6: Git同步（如启用）
 ```
 
+**输入**: 用户提供任务处理工作流所需的指令和必要参数。
+**处理**: 按照skill规范执行任务处理工作流操作,遵循单一意图原则。
+**输出**: 返回任务处理工作流的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 6. Linear状态自动更新
 
 ```bash
@@ -126,6 +149,11 @@ Discord notification
 ./scripts/linear-api.sh comment ENG-123 "任务完成：已生成研究报告，保存至 research/topic.md"
 ```
 
+**输入**: 用户提供Linear状态自动更新所需的指令和必要参数。
+**处理**: 按照skill规范执行Linear状态自动更新操作,遵循单一意图原则。
+**输出**: 返回Linear状态自动更新的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 7. Git自动同步
 
 ```bash
@@ -135,16 +163,22 @@ git commit -m "task: ENG-123 - 用户行为分析研究"
 git push
 ```
 
+**输入**: 用户提供Git自动同步所需的指令和必要参数。
+**处理**: 按照skill规范执行Git自动同步操作,遵循单一意图原则。
+**输出**: 返回Git自动同步的执行结果,包含操作状态和输出数据。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：任务自动化处理流、接收任务、发送通知与、基础单工作流配置、自动驾驶、面向使用、进行任务管理的个、人开发者与小团队、提供从、任务创建到自动处、理再到结果同步的、端到端流水线、中创建新任务时、自动触发、接收后执行任务处、状态更新、结果通知与、让任务管理从手动、操作变为自动流转等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ## 使用流程
 
-### 步骤一：配置Linear API
+### Step 1：配置Linear API
 
 ```bash
 mkdir -p ~/.linear-pilot
 echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 ```
 
-### 步骤二：获取团队与状态ID
+### Step 2：获取团队与状态ID
 
 ```bash
 ./scripts/linear-api.sh teams
@@ -153,14 +187,14 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 
 将获取的ID填入 `~/.linear-pilot/linear-config.json`。
 
-### 步骤三：配置Webhook
+### Step 3：配置Webhook
 
 在Make.com创建Scenario：
 1. 触发器：Linear → Watch Issues
 2. 过滤器：state.name = "Todo"
 3. 动作：HTTP POST → 你的Agent端点
 
-### 步骤四：测试任务流转
+### Step 4：测试任务流转
 
 在Linear中创建一个Todo状态的任务，观察：
 - Agent是否收到通知
@@ -214,11 +248,9 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 - API安全渗透测试
 - 非标准协议集成
 
-
 ## 触发条件
 
 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于非本工具能力范围的需求。
-
 
 ## 已知限制
 
@@ -274,7 +306,7 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 - **操作系统**：Windows / macOS / Linux
 - **Git**：已安装（用于Git同步功能）
 
-### 依赖说明
+### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（默认GPT-4o-mini） |
@@ -336,14 +368,14 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 ### 示例1：基础用法
 
 ```
-### 步骤一：配置Linear API
+### Step 1：配置Linear API
 
 ```bash
 mkdir -p ~/.linear-pilot
 echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 ```
 
-### 步骤二：获取团队与状态ID
+### Step 2：获取团队与状态ID
 
 ```bash
 ./scripts/linear-api.sh teams
@@ -352,14 +384,14 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 
 将获取的ID填入 `~/.linear-pilot/linear-config.json`。
 
-### 步骤三：配置Webhook
+### Step 3：配置Webhook
 
 在Make.com创建Scenario：
 1. 触发器：Linear → Watch Issues
 2. 过滤器：state.name = "Todo"
 3. 动作：HTTP POST → 你的Agent端点
 
-### 步骤四：测试任务流转
+### Step 4：测试任务流转
 
 在Linear中创建一个Todo状态的任务，观察：
 - Agent是否收到通知

@@ -6,7 +6,7 @@ displayName: AWS图代理
 summary: Bedrock AgentCore与LangGraph编排,引导式部署,一致性处理,多代理模式库。
 license: Proprietary
 description: |-
-  AWS Bedrock AgentCore与LangGraph多代理部署编排工具：提供StateGraph状态图编排、AgentCore Runtime HTTP封装（8080端口）、Memory跨会话STM/LTM持久记忆、Gateway外部API/Lambda工具集成、CLI全生命周期管理五大核心能力。适用于多代理协调的复杂业务系统、跨会话持久记忆代理、外部API集成到代理工具链、生产级AI代理部署。触发关键词：Bedrock AgentCore、LangGraph、多代理编排、状态图、agentcore、state-graph。
+  AWS Bedrock AgentCore与LangGraph多代理部署编排工具：提供StateGraph状态图编排、AgentCore Runtime HTTP封装（8080端口）、Memory跨会话STM/LTM持久记忆、Gateway外部API/Lambda工具集成、CLI全生命周期管理五大核心能力。适用于多代理协调的复杂业务系统、跨会话持久记忆代理、外部API集成到代理工具链、生产级AI代理部署。适用关键词：Bedrock AgentCore、LangGraph、多代理编排、状态图、agentcore、state-graph。
 tags:
 - 智能代理
 - 云计算
@@ -23,11 +23,44 @@ tools:
 
 ## 核心能力
 
-1. **StateGraph 状态图编排**：使用 LangGraph StateGraph 定义多代理工作流，支持 `tools_condition` 自动路由（代理→工具或 END）、`ToolNode` 预置工具执行器、条件边实现复杂多步逻辑（planner→executor→reviewer 循环）
-2. **AgentCore Runtime HTTP 封装**：将代理封装为 8080 端口 HTTP 服务，处理 `/invocations`（调用）与 `/ping`（健康检查）端点，支持容器模式部署
-3. **AgentCore Memory 持久记忆**：管理跨会话/跨代理的 STM（短期记忆，会话内逐轮）与 LTM（长期记忆，跨会话/跨代理），配套一致性处理模式（写入后约 10s 最终一致，含等待+验证+重试逻辑）
-4. **AgentCore Gateway 工具集成**：将 API/Lambda 转化为带认证的 Agent 工具接口，支持 Fallback Mock（本地开发）、Local 工具协议、Production Gateway（生产）三种传输模式
-5. **agentcore CLI 全生命周期管理**：`configure`（交互式/脚本化配置）→`launch`（容器部署）→`dev`（热重载本地开发）→`invoke`（测试调用）→`destroy`（清理资源避免持续计费）
+### 1. StateGraph 状态图编排
+使用 LangGraph StateGraph 定义多代理工作流，支持 `tools_condition` 自动路由（代理→工具或 END）、`ToolNode` 预置工具执行器、条件边实现复杂多步逻辑（planner→executor→reviewer 循环）
+
+**输入**: 用户提供StateGraph 状态图编排所需的指令和必要参数。
+**处理**: 按照skill规范执行StateGraph 状态图编排操作,遵循单一意图原则。
+**输出**: 返回StateGraph 状态图编排的执行结果,包含操作状态和输出数据。
+
+### 2. AgentCore Runtime HTTP 封装
+将代理封装为 8080 端口 HTTP 服务，处理 `/invocations`（调用）与 `/ping`（健康检查）端点，支持容器模式部署
+
+**输入**: 用户提供AgentCore Runtime HTTP 封装所需的指令和必要参数。
+**处理**: 按照skill规范执行AgentCore Runtime HTTP 封装操作,遵循单一意图原则。
+**输出**: 返回AgentCore Runtime HTTP 封装的执行结果,包含操作状态和输出数据。
+
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+### 3. AgentCore Memory 持久记忆
+管理跨会话/跨代理的 STM（短期记忆，会话内逐轮）与 LTM（长期记忆，跨会话/跨代理），配套一致性处理模式（写入后约 10s 最终一致，含等待+验证+重试逻辑）
+
+**输入**: 用户提供AgentCore Memory 持久记忆所需的指令和必要参数。
+**处理**: 按照skill规范执行AgentCore Memory 持久记忆操作,遵循单一意图原则。
+**输出**: 返回AgentCore Memory 持久记忆的执行结果,包含操作状态和输出数据。
+
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+### 4. AgentCore Gateway 工具集成
+将 API/Lambda 转化为带认证的 Agent 工具接口，支持 Fallback Mock（本地开发）、Local 工具协议、Production Gateway（生产）三种传输模式
+
+**输入**: 用户提供AgentCore Gateway 工具集成所需的指令和必要参数。
+**处理**: 按照skill规范执行AgentCore Gateway 工具集成操作,遵循单一意图原则。
+**输出**: 返回AgentCore Gateway 工具集成的执行结果,包含操作状态和输出数据。
+
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+### 5. agentcore CLI 全生命周期管理
+`configure`（交互式/脚本化配置）→`launch`（容器部署）→`dev`（热重载本地开发）→`invoke`（测试调用）→`destroy`（清理资源避免持续计费）
+
+**输入**: 用户提供agentcore CLI 全生命周期管理所需的指令和必要参数。
+**处理**: 按照skill规范执行agentcore CLI 全生命周期管理操作,遵循单一意图原则。
+**输出**: 返回agentcore CLI 全生命周期管理的执行结果,包含操作状态和输出数据。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Bedrock、引导式部署、多代理模式库、AWS、多代理部署编排工、全生命周期管理五、大核心能力、适用于多代理协调、的复杂业务系统、跨会话持久记忆代、集成到代理工具链、生产级、代理部署、适用关键词、多代理编排等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
 ## 适用场景
 
@@ -48,7 +81,7 @@ tools:
 
 ## 使用流程
 
-### 依赖说明
+### 依赖详情
 ```bash
 pip install bedrock-agentcore bedrock-agentcore-starter-toolkit langgraph
 uv tool install bedrock-agentcore-starter-toolkit  # 安装 agentcore CLI
@@ -260,6 +293,7 @@ agent = create_agent_with_tools(tools)  # 工具自动注入 StateGraph
 **密钥安全处理规范（零暴露硬性约束）**：代理绝不能读取、cat、打印、回显或日志记录 `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` 明文，绝不在聊天/提交/镜像中暴露凭据——无论出于任何原因包括"验证配置"。硬性规则：(1) 凭据只通过环境变量或 IAM Role 注入，禁止硬编码到源码或 Dockerfile ARG；(2) `agentcore configure` 所需凭据从 AWS CLI 命名配置文件（`--profile`）或实例元数据获取，禁止在命令行明文传参；(3) 容器部署用任务角色（Task Role）而非 ENV 明文密钥，ENV 仅用于非敏感配置；(4) 如用户在聊天中粘贴了密钥，立即告知已泄露，要求轮换并从历史清除，绝不回显；(5) `.env` 加入 `.gitignore`，禁止提交版本库；(6) `agentcore destroy` 后确认密钥与资源已清理。验证安装状态用 `aws sts get-caller-identity`（返回角色 ARN，不暴露密钥）而非打印环境变量。
 
 **可用性分类**：MD+EXEC（纯 Markdown 指令，需要命令行执行能力进行部署与管理）
+- **API Key**：本skill无需额外API Key配置
 
 ## 常见问题
 

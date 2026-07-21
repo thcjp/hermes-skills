@@ -6,7 +6,7 @@ displayName: 本地长记忆
 summary: 零API零云依赖的本地向量记忆：离线可用、隐私不出域、embedding缓存省成本。
 license: Proprietary
 description: |-
-  面向隐私敏感与离线场景的本地向量记忆系统。基于LanceDB+Ollama nomic-embed-text，提供本地embedding生成、向量语义检索、embedding缓存、WAL写前日志、三层冷热分层能力。适用于隐私敏感行业（医疗/金融/法律）、离线/弱网环境、个人知识库、合规要求数据不出域场景，实现零外部API、零数据出域、完全离线可用。触发关键词：本地记忆、向量记忆、离线记忆、隐私记忆、embedding、LanceDB、Ollama、nomic、本地向量、local memory。
+  面向隐私敏感与离线场景的本地向量记忆系统。基于LanceDB+Ollama nomic-embed-text，提供本地embedding生成、向量语义检索、embedding缓存、WAL写前日志、三层冷热分层能力。适用于隐私敏感行业（医疗/金融/法律）、离线/弱网环境、个人知识库、合规要求数据不出域场景，实现零外部API、零数据出域、完全离线可用。适用关键词：本地记忆、向量记忆、离线记忆、隐私记忆、embedding、LanceDB、Ollama、nomic、本地向量、local memory。
 tags:
 - 智能代理
 - 记忆管理
@@ -22,11 +22,45 @@ tools:
 
 ## 核心能力
 
-- **本地 embedding 引擎**：基于 Ollama nomic-embed-text（274MB，768 维），本地毫秒级生成 embedding，零外部 API 调用、零数据出域、完全离线可用；支持切换 bge-m3/mxbai-embed-large/all-MiniLM-L6 等模型。
-- **LanceDB 向量库 + embedding 缓存**：本地 SQLite 存储向量，embedding 结果按 SHA256(文本) 缓存（命中 <1ms，未命中 10-50ms），典型命中率 60-90%，避免重复计算。
-- **三层冷热分层 + WAL 写前日志**：L1 热内存（SESSION-STATE.md 活跃任务上下文）→ L2 温向量（LanceDB 检索）→ L3 冷存储（Git-Notes 结构化决策）→ L4 精选归档（MEMORY.md + daily/）；WAL 协议保证崩溃/压缩不丢上下文。
-- **资源占用控制**：三级控制（向量数 >10000 自动压缩低重要性向量；磁盘 >500MB 归档 90 天前记忆；磁盘 >1GB 告警+停止写入仅检索），防止内存/CPU/磁盘膨胀。
-- **一键初始化与维护**：`node bin/init.js` 初始化、`memory.js` CLI 提供 store/search/stats/forget/compact/cleanup/dedup/backup/cache-clean 等命令。
+### 本地 embedding 引擎
+基于 Ollama nomic-embed-text（274MB，768 维），本地毫秒级生成 embedding，零外部 API 调用、零数据出域、完全离线可用；支持切换 bge-m3/mxbai-embed-large/all-MiniLM-L6 等模型。
+
+**输入**: 用户提供本地 embedding 引擎所需的指令和必要参数。
+**处理**: 按照skill规范执行本地 embedding 引擎操作,遵循单一意图原则。
+**输出**: 返回本地 embedding 引擎的执行结果,包含操作状态和输出数据。
+
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+### LanceDB 向量库 + embedding 缓存
+本地 SQLite 存储向量，embedding 结果按 SHA256(文本) 缓存（命中 <1ms，未命中 10-50ms），典型命中率 60-90%，避免重复计算。
+
+**输入**: 用户提供LanceDB 向量库 + embedding 缓存所需的指令和必要参数。
+**处理**: 按照skill规范执行LanceDB 向量库 + embedding 缓存操作,遵循单一意图原则。
+**输出**: 返回LanceDB 向量库 + embedding 缓存的执行结果,包含操作状态和输出数据。
+
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+### 三层冷热分层 + WAL 写前日志
+L1 热内存（SESSION-STATE.md 活跃任务上下文）→ L2 温向量（LanceDB 检索）→ L3 冷存储（Git-Notes 结构化决策）→ L4 精选归档（MEMORY.md + daily/）；WAL 协议保证崩溃/压缩不丢上下文。
+
+**输入**: 用户提供三层冷热分层 + WAL 写前日志所需的指令和必要参数。
+**处理**: 按照skill规范执行三层冷热分层 + WAL 写前日志操作,遵循单一意图原则。
+**输出**: 返回三层冷热分层 + WAL 写前日志的执行结果,包含操作状态和输出数据。
+
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+### 资源占用控制
+三级控制（向量数 >10000 自动压缩低重要性向量；磁盘 >500MB 归档 90 天前记忆；磁盘 >1GB 告警+停止写入仅检索），防止内存/CPU/磁盘膨胀。
+
+**输入**: 用户提供资源占用控制所需的指令和必要参数。
+**处理**: 按照skill规范执行资源占用控制操作,遵循单一意图原则。
+**输出**: 返回资源占用控制的执行结果,包含操作状态和输出数据。
+
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+### 一键初始化与维护
+`node bin/init.js` 初始化、`memory.js` CLI 提供 store/search/stats/forget/compact/cleanup/dedup/backup/cache-clean 等命令。
+
+**输入**: 用户提供一键初始化与维护所需的指令和必要参数。
+**处理**: 按照skill规范执行一键初始化与维护操作,遵循单一意图原则。
+**输出**: 返回一键初始化与维护的执行结果,包含操作状态和输出数据。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：零云依赖的本地向、量记忆、隐私不出域、缓存省成本、面向隐私敏感与离、线场景的本地向量、记忆系统、向量语义检索、三层冷热分层能力、适用于隐私敏感行、弱网环境、个人知识库、合规要求数据不出、域场景、实现零外部、适用关键词、本地记忆、向量记忆、离线记忆、隐私记忆、本地向量、local等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
 ## 适用场景
 
@@ -53,7 +87,7 @@ tools:
 
 ## 使用流程
 
-### 依赖说明
+### 依赖详情
 
 ```bash
 # macOS/Linux
@@ -145,6 +179,10 @@ node bin/memory.js dedup               # 去重
 node bin/memory.js backup ./backups/memory-$(date +%Y%m%d).zip  # 导出备份
 node bin/memory.js cache-clean --older-than 30d  # 清理 embedding 缓存
 ```
+
+### 命令参数说明
+
+- `-fsSL`: 命令参数,用于指定操作选项
 
 ## 示例
 

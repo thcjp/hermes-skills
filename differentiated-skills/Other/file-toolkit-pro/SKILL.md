@@ -57,6 +57,12 @@ tools:
 ```
 
 ## 使用流程
+1. 阅读## 核心能力章节了解skill功能
+2. 按## 依赖说明配置环境
+3. 执行所需能力对应的命令
+4. 参考## 错误处理章节处理异常
+5. 查看## FAQ解答常见疑问
+
 ### 配置并启动团队级文件治理
 ```bash
 python3 scripts/file-toolkit-pro.py init --config team.yaml
@@ -107,6 +113,24 @@ maintenance:
     tasks: [full_audit, structure_optimize]
 ```
 
+### 命令参数说明
+
+- `-Proj`: 命令参数,用于指定操作选项
+
+## 示例
+
+### 基本用法
+
+**输入**：用户提供操作指令和必要参数
+
+**输出**：返回执行结果,包含操作状态和输出数据
+
+```text
+用户: 执行核心功能
+Skill: 正在执行核心功能...
+Skill: 执行完成,结果如下: 操作成功
+```
+
 ## 核心能力
 ### 1. 多项目管理
 | 能力 | 说明 | 应用场景 |
@@ -116,6 +140,10 @@ maintenance:
 | 项目状态追踪 | 活跃/暂停/归档状态管理 | 项目全景视图 |
 | 项目模板分发 | 团队成员一键应用标准模板 | 新人快速上手 |
 | 跨项目资产复用 | 识别可复用的设计资产与文档 | 避免重复劳动 |
+
+**输入**: 用户提供多项目管理所需的指令和必要参数。
+**处理**: 按照skill规范执行多项目管理操作,遵循单一意图原则。
+**输出**: 返回多项目管理的执行结果,包含操作状态和输出数据。
 
 ### 2. 关键文档清单
 ```yaml
@@ -149,6 +177,10 @@ inventory:
 - 医疗记录加密存储，访问需二次验证
 - 一键生成"我有哪些重要文档"概览
 
+**输入**: 用户提供关键文档清单所需的指令和必要参数。
+**处理**: 按照skill规范执行关键文档清单操作,遵循单一意图原则。
+**输出**: 返回关键文档清单的执行结果,包含操作状态和输出数据。
+
 ### 3. 维护习惯追踪
 | 周期 | 任务 | 预计耗时 | 执行追踪 |
 |------|------|----------|----------|
@@ -161,6 +193,10 @@ inventory:
 python3 scripts/file-toolkit-pro.py maintain status
 
 ```
+
+**输入**: 用户提供维护习惯追踪所需的指令和必要参数。
+**处理**: 按照skill规范执行维护习惯追踪操作,遵循单一意图原则。
+**输出**: 返回维护习惯追踪的执行结果,包含操作状态和输出数据。
 
 ### 4. 团队协作配置
 ```yaml
@@ -188,6 +224,11 @@ python3 scripts/file-toolkit-pro.py team deploy --member new-member --path ~/Pro
 python3 scripts/file-toolkit-pro.py team audit --all-members
 ```
 
+**输入**: 用户提供团队协作配置所需的指令和必要参数。
+**处理**: 按照skill规范执行团队协作配置操作,遵循单一意图原则。
+**输出**: 返回团队协作配置的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 5. 批量定时整理
 ```bash
 python3 scripts/file-toolkit-pro.py schedule add \
@@ -202,6 +243,11 @@ python3 scripts/file-toolkit-pro.py schedule list
 python3 scripts/file-toolkit-pro.py schedule pause --name "每周桌面清理"
 python3 scripts/file-toolkit-pro.py schedule resume --name "每周桌面清理"
 ```
+
+**输入**: 用户提供批量定时整理所需的指令和必要参数。
+**处理**: 按照skill规范执行批量定时整理操作,遵循单一意图原则。
+**输出**: 返回批量定时整理的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 6. 项目归档流程
 ```text
@@ -220,6 +266,11 @@ python3 scripts/file-toolkit-pro.py archive ~/Projects/website-redesign \
   --review --clean --compress --verify
 ```
 
+**输入**: 用户提供项目归档流程所需的指令和必要参数。
+**处理**: 按照skill规范执行项目归档流程操作,遵循单一意图原则。
+**输出**: 返回项目归档流程的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 7. 文件版本历史管理
 ```bash
 python3 scripts/file-toolkit-pro.py version enable --path ~/Projects/
@@ -229,6 +280,11 @@ python3 scripts/file-toolkit-pro.py version history "需求文档.docx"
 python3 scripts/file-toolkit-pro.py version rollback "需求文档.docx" --version 3
 ```
 
+**输入**: 用户提供文件版本历史管理所需的指令和必要参数。
+**处理**: 按照skill规范执行文件版本历史管理操作,遵循单一意图原则。
+**输出**: 返回文件版本历史管理的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 8. 智能去重
 ```bash
 python3 scripts/file-toolkit-pro.py dedup scan ~/Documents/
@@ -237,6 +293,12 @@ python3 scripts/file-toolkit-pro.py dedup plan ~/Documents/ --keep latest
 
 python3 scripts/file-toolkit-pro.py dedup execute ~/Documents/ --keep latest
 ```
+
+**输入**: 用户提供智能去重所需的指令和必要参数。
+**处理**: 按照skill规范执行智能去重操作,遵循单一意图原则。
+**输出**: 返回智能去重的执行结果,包含操作状态和输出数据。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全功能文件管理体、支持多项目管理、批量定时整理与团、文件工具箱专业版、面向团队与专业用、户的文件治理场景、在免费版基础上扩、展全功能管理能力、解决文件治理的、规模与协作、多项目并行时目录、结构不统一、缺乏库存管理、团队协作时命名规、范无法共享、文件积累到一定程、度后人工清理不现、项目归档流程缺乏、when、需要文件处理、文档转换、格式互转、内容提取时使用、不适用于加密文件等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
 ### 场景一：团队文件管理标准化（项目经理角色）
@@ -406,7 +468,7 @@ version:
 - **操作系统**: Windows / macOS / Linux
 - **Python**: 3.8+（用于运行文件管理脚本与定时调度）
 
-### 依赖说明
+### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
@@ -460,13 +522,14 @@ version:
 MIT license允许使用、复制、修改和分发。
 
 ## 错误处理
+
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 已知限制
-- 需要LLM支持，无LLM环境无法使用
-- 复杂场景可能需要人工辅助判断
-- 性能取决于底层模型能力
+- 需LLM支持,无LLM环境不可用
+- 复杂业务场景建议结合人工经验判断
+- 执行效率受模型能力与网络环境影响

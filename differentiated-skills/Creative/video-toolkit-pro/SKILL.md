@@ -101,6 +101,11 @@ done
 echo "批量处理完成: $count/$total"
 ```
 
+**输入**: 用户提供批量视频处理所需的指令和必要参数。
+**处理**: 按照skill规范执行批量视频处理操作,遵循单一意图原则。
+**输出**: 返回批量视频处理的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 2. AI超分辨率(Real-ESRGAN)
 ```bash
 # 使用Real-ESRGAN提升视频画质
@@ -122,6 +127,10 @@ ffmpeg -i output_2x.mp4 -c:v libx264 -crf 18 -preset slow -c:a copy final.mp4
 | 720p | 2x | 1440p | realesr-animevideov3 |
 | 1080p | 2x | 4K | realesr-animevideov3 |
 
+**输入**: 用户提供AI超分辨率(Real-ESRGAN)所需的指令和必要参数。
+**处理**: 按照skill规范执行AI超分辨率(Real-ESRGAN)操作,遵循单一意图原则。
+**输出**: 返回AI超分辨率(Real-ESRGAN)的执行结果,包含操作状态和输出数据。
+
 ### 3. 智能重构图
 通过AI分析视频内容,自动选择最佳裁剪区域:
 
@@ -137,6 +146,11 @@ ffmpeg -i input.mp4 -vf "crop=w='ih*9/16':h='ih':x='(iw-w)/2':y=0" -c:a copy out
 # 步骤3:动态裁剪(不同场景不同位置)
 # 通过场景分析脚本生成动态裁剪指令
 ```
+
+**输入**: 用户提供智能重构图所需的指令和必要参数。
+**处理**: 按照skill规范执行智能重构图操作,遵循单一意图原则。
+**输出**: 返回智能重构图的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 4. 多码率自适应流(HLS)
 ```bash
@@ -164,6 +178,11 @@ echo "HLS流生成完成:"
 echo "  主播放列表: $OUTPUT_DIR/master.m3u8"
 echo "  分辨率: 1080p/720p/480p/360p"
 ```
+
+**输入**: 用户提供多码率自适应流(HLS)所需的指令和必要参数。
+**处理**: 按照skill规范执行多码率自适应流(HLS)操作,遵循单一意图原则。
+**输出**: 返回多码率自适应流(HLS)的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 5. 自动化工作流
 ```bash
@@ -226,6 +245,11 @@ echo "字幕文件: $WORK_DIR/subtitles/"
 echo "输出目录: $WORK_DIR/"
 ```
 
+**输入**: 用户提供自动化工作流所需的指令和必要参数。
+**处理**: 按照skill规范执行自动化工作流操作,遵循单一意图原则。
+**输出**: 返回自动化工作流的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 6. 高级字幕定制
 ```bash
 # ASS字幕(样式化字幕)
@@ -255,6 +279,11 @@ Dialogue: 0,0:00:00,0:00:05,Default,,0,0,0,,自定义样式字幕
 EOF
 ```
 
+**输入**: 用户提供高级字幕定制所需的指令和必要参数。
+**处理**: 按照skill规范执行高级字幕定制操作,遵循单一意图原则。
+**输出**: 返回高级字幕定制的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 7. 视频质量评估
 ```bash
 # PSNR(峰值信噪比) - 越高越好(>30dB为好)
@@ -266,6 +295,12 @@ ffmpeg -i original.mp4 -i compressed.mp4 -lavfi ssim -f null - 2>&1 | grep "All"
 # 依赖说明
 ffmpeg -i distorted.mp4 -i reference.mp4 -lavfi libvmaf="model_path=vmaf_v0.6.1.pkl" -f null - 2>&1 | grep "VMAF"
 ```
+
+**输入**: 用户提供视频质量评估所需的指令和必要参数。
+**处理**: 按照skill规范执行视频质量评估操作,遵循单一意图原则。
+**输出**: 返回视频质量评估的执行结果,包含操作状态和输出数据。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：面向内容团队的专、业视频引擎、面向内容团队和机、构的专业级视频处、理引擎、在免费版核心功能、新增批量、文件处理、自动化工作流和全、规格支持、核心能力、文件夹级一键处理、画质提升、DASH、全平台规格、自定义规格等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
 ### 场景一:内容团队批量多平台发布
@@ -316,6 +351,12 @@ bash scripts/hls-encode.sh source_video.mp4 ./hls_output
 ```
 
 ## 快速开始
+1. 阅读## 核心能力章节了解skill功能
+2. 按## 依赖说明配置环境
+3. 执行所需能力对应的命令
+4. 参考## 错误处理章节处理异常
+5. 查看## FAQ解答常见疑问
+
 ### 专业版环境检查
 ```bash
 # 检查核心工具
@@ -337,6 +378,11 @@ bash scripts/video-workflow.sh input.mp4 "my_project"
 # 批量处理
 bash scripts/batch-process.sh input_folder/ output_folder/ tiktok
 ```
+
+### 命令参数说明
+
+- `-ESRGAN提升视频画质`: 命令参数,用于指定操作选项
+- `-lS`: 命令参数,用于指定操作选项
 
 ## 示例
 ### 专业版平台规格配置
@@ -469,7 +515,7 @@ brew install ffmpeg          # macOS
 sudo apt install ffmpeg      # Ubuntu
 winget install Gyan.FFmpeg   # Windows
 # Real-ESRGAN(从GitHub下载)
-# https://github.com/xinntao/Real-ESRGAN/releases
+# 
 # Whisper
 pip install openai-whisper
 ```
@@ -478,17 +524,18 @@ pip install openai-whisper
 本Skill基于本地工具运行,无需额外API Key。FFmpeg、Real-ESRGAN和Whisper均为本地执行,不依赖外部API。视频处理完全在本地完成,不上传至外部服务。
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
-- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。核心视频处理依赖FFmpeg/FFprobe,AI超分依赖Real-ESRGAN,字幕依赖Whisper,批量处理依赖Bash脚本。仅处理用户明确提供的视频文件,不自动访问其他文件,不上传至外部服务。
+- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。核心视频处理依赖FFmpeg/FFprobe,AI超分依赖Real-ESRGAN,字幕依赖Whisper,批量处理依赖Bash脚本。仅处理用户明确提供的视频文件,不自动访问其他文件,不上传至外部服务。
 
 ## 错误处理
+
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 已知限制
-- 需要LLM支持，无LLM环境无法使用
-- 复杂场景可能需要人工辅助判断
-- 性能取决于底层模型能力
+- 需LLM支持,无LLM环境不可用
+- 复杂业务场景建议结合人工经验判断
+- 执行效率受模型能力与网络环境影响

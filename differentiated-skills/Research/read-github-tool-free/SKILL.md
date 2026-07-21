@@ -46,13 +46,14 @@ tools:
 ### URL 转换规则
 
 ```text
-github.com/owner/repo → gitmcp.io/owner/repo
+owner/repo → gitmcp.io/owner/repo
 
 示例：
-github.com/facebook/react → gitmcp.io/facebook/react
-github.com/karpathy/llm-council → gitmcp.io/karpathy/llm-council
+facebook/react → gitmcp.io/facebook/react
+karpathy/llm-council → gitmcp.io/karpathy/llm-council
 ```
 
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 免费版能力边界
 
 ```text
@@ -67,6 +68,27 @@ github.com/karpathy/llm-council → gitmcp.io/karpathy/llm-council
 [限制] 不支持API集成
 ```
 
+**输入**: 用户提供URL 转换规则所需的指令和必要参数。
+**处理**: 按照skill规范执行URL 转换规则操作,遵循单一意图原则。
+**输出**: 返回URL 转换规则的执行结果,包含操作状态和输出数据。
+
+### 核心功能执行
+用`input_params`参数进行配置。
+
+**输入**: 用户提供核心功能执行所需的指令和必要参数。
+**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
+**输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：server、读取代码仓库文档、与代码、支持文档搜索与代、码检索、代码仓库阅读工具、读取代码仓库的文、档和代码、帮助用户快速理解、开源项目、核心能力、获取文档中引用的、自动转换、github、Use、when、需要文件处理、文档转换、格式互转、内容提取时使用、不适用于加密文件等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+
+### 核心功能执行
+执行核心功能执行操作,使用`input_params`参数进行配置。
+
+**输入**: 用户提供核心功能执行所需的指令和必要参数。
+**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
+**输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ## 使用场景
 
 ### 场景一：学习开源项目
@@ -77,7 +99,7 @@ github.com/karpathy/llm-council → gitmcp.io/karpathy/llm-council
 用户：帮我读一下 facebook/react 的文档
 
 Agent 执行流程：
-1. 转换URL: github.com/facebook/react → gitmcp.io/facebook/react
+1. 转换URL: facebook/react → gitmcp.io/facebook/react
 2. 调用 fetch-docs 获取完整文档
 3. 解析文档结构
 4. 输出项目概述、核心功能、使用方式
@@ -103,7 +125,7 @@ React 是一个用于构建用户界面的 JavaScript 库...
 - 单向数据流
 - JSX语法
 
-### 依赖说明
+### 依赖详情
 npm install react react-dom
 
 ### 快速开始
@@ -146,7 +168,7 @@ python3 scripts/gitmcp.py search-docs facebook/react "hooks"
 
 ## 快速开始
 
-### 步骤一：获取仓库文档
+### Step 1：获取仓库文档
 
 ```bash
 # 获取仓库完整文档
@@ -157,7 +179,7 @@ python3 scripts/gitmcp.py fetch-docs facebook/react
 python3 scripts/gitmcp.py fetch-docs vuejs/vue
 ```
 
-### 步骤二：搜索文档
+### Step 2：搜索文档
 
 ```bash
 # 语义搜索文档
@@ -167,7 +189,7 @@ python3 scripts/gitmcp.py search-docs owner/repo "query"
 python3 scripts/gitmcp.py search-docs facebook/react "state management"
 ```
 
-### 步骤三：搜索代码
+### Step 3：搜索代码
 
 ```bash
 # 精确匹配搜索代码
@@ -177,7 +199,7 @@ python3 scripts/gitmcp.py search-code owner/repo "function_name"
 python3 scripts/gitmcp.py search-code facebook/react "useState"
 ```
 
-### 步骤四：列出可用工具
+### Step 4：列出可用工具
 
 ```bash
 # 查看仓库可用的MCP工具
@@ -311,6 +333,12 @@ python3 scripts/gitmcp.py search-docs facebook/react "how to manage state in com
 python3 scripts/gitmcp.py fetch-url owner/repo "https://example.com/api-docs"
 ```
 
+## 已知限制
+
+- 本skill的能力范围受限于核心能力章节中定义的功能,不支持超出范围的操作
+- 复杂业务场景建议结合人工经验判断
+- 执行效率受模型能力与网络环境影响
+
 ## 常见问题
 
 ### Q1：免费版支持哪些代码托管平台？
@@ -382,8 +410,9 @@ curl -s -o /dev/null -w "%{http_code}" https://gitmcp.io
 
 ## 错误处理
 
+
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

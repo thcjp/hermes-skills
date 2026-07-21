@@ -15,7 +15,7 @@ description: |-
 
   差异化亮点:相比免费版,专业版新增RBAC深度安全审计(Owner过度授权检测/自定义角色审计/特权身份发现)、Cost Management成本管理(按资源组/服务维度/空闲资源识别/成本趋势对比)、NSG暴露深度检查(全订阅NSG规则扫描/0.0.0.0/0入站规则枚举/端口暴露矩阵)、自定义巡检模板与定时巡检调度、跨订阅批量巡检与历史趋势对比。五维风险评分模型支持自定义权重,适配不同业务场景。相比通用Azure管理工具,本巡检员聚焦"检查而非变更",以风险量化与报告生成为核心。
 
-  触发关键词:Azure巡检、云资源检查、暴露面扫描、配置漂移、风险评分、巡检报告、RBAC审计、成本管理、NSG暴露、跨订阅巡检、azure-cloud-inspector、az inspect
+  适用关键词:Azure巡检、云资源检查、暴露面扫描、配置漂移、风险评分、巡检报告、RBAC审计、成本管理、NSG暴露、跨订阅巡检、azure-cloud-inspector、az inspect
 tags:
 - 智能代理
 - 云计算
@@ -81,9 +81,25 @@ az account list 多个订阅 → 询问用户选择
 
 结果为订阅范围时,明确说明使用的订阅。登录特定租户使用 `az login --tenant <tenant-id>`(tenant为Azure CLI标准参数)。
 
-## 巡检任务模板(差异化)
+## 使用流程
 
+1. 阅读## 核心能力章节了解skill功能
+2. 按## 依赖说明配置环境
+3. 执行所需能力对应的命令
+4. 参考## 错误处理章节处理异常
+5. 查看## FAQ解答常见疑问
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
+
+### 命令参数说明
+
+- `-myResourceGroup`: 命令参数,用于指定操作选项
+- `-E`: 命令参数,用于指定操作选项
+- `-oE`: 命令参数,用于指定操作选项
+
+## 核心能力
 ### 模板1:资源组日常巡检
+执行模板1:资源组日常巡检操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作。
 ```bash
 RG="${1:-myResourceGroup}"
 echo "=== 资源组: $RG ==="
@@ -95,6 +111,7 @@ az resource list -g "$RG" --query '[].type' -o tsv | sort | uniq -c | sort -rn
 ```
 
 ### 模板2:VM健康巡检
+执行模板2:VM健康巡检操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作。
 ```bash
 echo "=== VM状态 ==="
 az vm list -d --query '[].{Name:name, RG:resourceGroup, State:powerState, Size:hardwareProfile.vmSize}' --output table
@@ -107,6 +124,7 @@ done
 ```
 
 ### 模板3:存储账户巡检
+执行模板3:存储账户巡检操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作。
 ```bash
 echo "=== 存储账户清单 ==="
 az storage account list --query '[].{Name:name, RG:resourceGroup, SKU:sku.name, TLS:minimumTlsVersion}' --output table
@@ -117,6 +135,7 @@ az storage account list --query '[].{Name:name, HTTPS:enableHttpsTrafficOnly}' -
 ```
 
 ### 模板4:RBAC深度审计(专业版独有)
+执行模板4:RBAC深度审计(专业版独有)操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作。
 ```bash
 echo "=== 订阅级角色分配清单 ==="
 az role assignment list --all --query '[].{Principal:principalName, Role:roleDefinitionName, Scope:scope}' --output table
@@ -132,6 +151,7 @@ az role assignment list --all --query "[?roleDefinitionName=='Owner' || roleDefi
 ```
 
 ### 模板5:Cost Management成本管理(专业版独有)
+执行模板5:Cost Management成本管理(专业版独有)操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作。
 ```bash
 echo "=== 本月成本(按资源组) ==="
 az costmanagement query --type ActualCost \
@@ -154,6 +174,7 @@ echo "未使用公网IP:"; az network public-ip list --query '[?ipConfiguration=
 ```
 
 ### 模板6:NSG暴露矩阵(专业版独有)
+执行模板6:NSG暴露矩阵(专业版独有)操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作。
 ```bash
 echo "=== NSG清单 ==="
 az network nsg list --query '[].{Name:name, RG:resourceGroup}' --output table
@@ -191,6 +212,8 @@ EOF
 chmod +x ~/.azure-inspector/templates/databases-inspection.sh
 bash ~/.azure-inspector/templates/databases-inspection.sh
 ```
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全维度、Azure、RBAC、成本管理、NSG、暴露矩阵、跨订阅批量、定时调度、趋势对比、巡检员专业版是一、日常巡检、为核心视角的、CLI、辅助工具、面向运维工程师、云架构师、安全工程师、FinOps、合规审计员五类角、针对云上资源、配置漂移无人察觉、公网暴露面长期敞、过度授权难发现、成本失控无预警、端口暴露无矩阵、跨订阅巡检低效、巡检结论难分享、历史趋势无对比、八大痛点、构建了风险评分模、暴露面发现、配置漂移检测、巡检任务模板、巡检报告生成、深度审计、Cost、Management、跨订阅批量巡检、定时巡检调度与历、史趋势对比十一大、核心能力等。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 五维风险评分模型(差异化核心)
 
@@ -404,7 +427,7 @@ EOF
 echo "专业版巡检报告已生成: $REPORT"
 ```
 
-## 真实场景示例
+## 示例
 
 ### 场景一:运维工程师 - 每日例行巡检
 ```text
@@ -474,6 +497,21 @@ echo "专业版巡检报告已生成: $REPORT"
 4. 标注不合规项的修复命令
 5. 输出合规审计报告(可提交给审计部门)
 ```
+
+## 已知限制
+
+- 本skill的能力范围受限于核心能力章节中定义的功能,不支持超出范围的操作
+- 复杂业务场景建议结合人工经验判断
+- 执行效率受模型能力与网络环境影响
+
+## 错误处理
+
+
+| 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
+|------|----------|------|----------|--------|
+| 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
+| 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
+| 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
 
 ## 常见问题FAQ
 

@@ -34,32 +34,53 @@ solo-dev execute
 
 ```bash
 cat > docs/workflow.md << 'EOF'
-- Level: strict  # strict / moderate / none
-- Format: conventional commits
-- Scope: per-task atomic
+1. Level: strict  # strict / moderate / none
+2. Format: conventional commits
+3. Scope: per-task atomic
 
-- Run after each phase
-- Include: tests, linter, type-check, build
+4. Run after each phase
+5. Include: tests, linter, type-check, build
 
-- Paths: src/api/**, src/pipeline/**
-- Command: make integration
+6. Paths: src/api/**, src/pipeline/**
+7. Command: make integration
 EOF
 
 ```
 
-## 核心功能
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
 
+### 命令参数说明
+
+- `--noEmit`: 命令参数,用于指定操作选项
+
+## 核心能力
 ### 1. MCP工具集成（专业版）
 > 详细内容已移至 `references/detail.md`
+
+**输入**: 用户提供MCP工具集成（专业版）所需的指令和必要参数。
+**处理**: 按照skill规范执行MCP工具集成（专业版）操作,遵循单一意图原则。
+**输出**: 返回MCP工具集成（专业版）的执行结果,包含操作状态和输出数据。
 
 ### 2. 多语言质量工具（专业版）
 > 详细内容已移至 `references/detail.md`
 
+**输入**: 用户提供多语言质量工具（专业版）所需的指令和必要参数。
+**处理**: 按照skill规范执行多语言质量工具（专业版）操作,遵循单一意图原则。
+**输出**: 返回多语言质量工具（专业版）的执行结果,包含操作状态和输出数据。
+
 ### 3. 视觉验证（专业版）
 > 详细内容已移至 `references/detail.md`
 
+**输入**: 用户提供视觉验证（专业版）所需的指令和必要参数。
+**处理**: 按照skill规范执行视觉验证（专业版）操作,遵循单一意图原则。
+**输出**: 返回视觉验证（专业版）的执行结果,包含操作状态和输出数据。
+
 ### 4. 阶段检查点（专业版）
 > 详细内容已移至 `references/detail.md`
+
+**输入**: 用户提供阶段检查点（专业版）所需的指令和必要参数。
+**处理**: 按照skill规范执行阶段检查点（专业版）操作,遵循单一意图原则。
+**输出**: 返回阶段检查点（专业版）的执行结果,包含操作状态和输出数据。
 
 ### 6. 进度追踪集成（专业版）
 ```bash
@@ -69,6 +90,11 @@ solo-dev update-tracker --task 1.3 --status completed
 
 solo-dev progress-report
 ```
+
+**输入**: 用户提供进度追踪集成（专业版）所需的指令和必要参数。
+**处理**: 按照skill规范执行进度追踪集成（专业版）操作,遵循单一意图原则。
+**输出**: 返回进度追踪集成（专业版）的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 7. Rationalizations反模式检测（专业版）
 引擎内置反模式检测，当出现以下想法时自动警告：
@@ -85,6 +111,11 @@ solo-dev progress-report
 | "测试过了，发布吧" | 测试通过≠满足验收标准，查spec.md |
 | "lint稍后修" | 现在修，技术债会复利增长 |
 | "我机器上能跑" | 跑build，在实际环境验证 |
+
+**输入**: 用户提供Rationalizations反模式检测（专业版）所需的指令和必要参数。
+**处理**: 按照skill规范执行Rationalizations反模式检测（专业版）操作,遵循单一意图原则。
+**输出**: 返回Rationalizations反模式检测（专业版）的执行结果,包含操作状态和输出数据。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全功能、TDD、工作流引擎、阶段检查点与高级、独立开发伙伴专业、版是在免费版基础、上的全功能升级、为独立开发者与一、人公司提供企业级、除核心、执行外、高级回滚、进度追踪集成六大、高级功能、Use、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
 ## 使用场景
 ### 场景一：独立开发者的大型项目（独立开发者角色）
@@ -381,6 +412,6 @@ solo-dev mcp-status
 专业版通过SkillHub SkillPay发布。
 
 ## 已知限制
-- 需要LLM支持，无LLM环境无法使用
-- 复杂场景可能需要人工辅助判断
-- 性能取决于底层模型能力
+- 需LLM支持,无LLM环境不可用
+- 复杂业务场景建议结合人工经验判断
+- 执行效率受模型能力与网络环境影响

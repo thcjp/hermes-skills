@@ -1,0 +1,602 @@
+{
+  "total": 1251,
+  "modified": 95,
+  "unmodified": 1156,
+  "errors": 0,
+  "errors_list": [],
+  "fix_counts": {
+    "section_names": 0,
+    "missing_core": 0,
+    "slug_name": 0,
+    "template_phrases": 0,
+    "placeholders": 0,
+    "error_table": 0,
+    "short_desc": 0,
+    "indicators": 0,
+    "keyword_alignment": 95
+  },
+  "details": [
+    {
+      "slug": "azure-cloud-inspector-pro",
+      "changes": [
+        "更新能力覆盖范围(注入41个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "context-compressor-free",
+      "changes": [
+        "更新能力覆盖范围(注入29个关键词,含4个新增)"
+      ]
+    },
+    {
+      "slug": "focus-flow-optimizer-free",
+      "changes": [
+        "更新能力覆盖范围(注入29个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "memory-radar",
+      "changes": [
+        "更新能力覆盖范围(注入36个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "pan-file-commander-free",
+      "changes": [
+        "更新能力覆盖范围(注入27个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "pan-file-commander-pro",
+      "changes": [
+        "更新能力覆盖范围(注入42个关键词,含29个新增)"
+      ]
+    },
+    {
+      "slug": "cdp-browser-pilot-free",
+      "changes": [
+        "更新能力覆盖范围(注入28个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "cron-guard-free",
+      "changes": [
+        "更新能力覆盖范围(注入29个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "cron-setup-guide-free",
+      "changes": [
+        "更新能力覆盖范围(注入29个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "desktop-automation-hub-free",
+      "changes": [
+        "更新能力覆盖范围(注入30个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "drawing-insight-free",
+      "changes": [
+        "更新能力覆盖范围(注入31个关键词,含3个新增)"
+      ]
+    },
+    {
+      "slug": "feedstream-monitor-free",
+      "changes": [
+        "更新能力覆盖范围(注入27个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "flow-control-hub-free",
+      "changes": [
+        "更新能力覆盖范围(注入30个关键词,含3个新增)"
+      ]
+    },
+    {
+      "slug": "linear-flow-cli-free",
+      "changes": [
+        "更新能力覆盖范围(注入35个关键词,含7个新增)"
+      ]
+    },
+    {
+      "slug": "pcb-design-assistant-free",
+      "changes": [
+        "更新能力覆盖范围(注入37个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "solo-workflow-engine-free",
+      "changes": [
+        "更新能力覆盖范围(注入28个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "task-bot-orchestrator-free",
+      "changes": [
+        "更新能力覆盖范围(注入30个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "task-queue-manager-free",
+      "changes": [
+        "更新能力覆盖范围(注入28个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "workflow-essentials-free",
+      "changes": [
+        "更新能力覆盖范围(注入26个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "workflow-orchestrator-free",
+      "changes": [
+        "更新能力覆盖范围(注入27个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "workflow-splitter-free",
+      "changes": [
+        "更新能力覆盖范围(注入27个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "calendar-reminder-tool-free",
+      "changes": [
+        "更新能力覆盖范围(注入29个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "calendar-reminder-tool-pro",
+      "changes": [
+        "更新能力覆盖范围(注入36个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "piper-tts-engine-pro",
+      "changes": [
+        "更新能力覆盖范围(注入35个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "social-scheduler-pro-free",
+      "changes": [
+        "更新能力覆盖范围(注入29个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "tg-body-scan-tool-pro",
+      "changes": [
+        "更新能力覆盖范围(注入36个关键词,含3个新增)"
+      ]
+    },
+    {
+      "slug": "bilibili-helper-tool-pro",
+      "changes": [
+        "更新能力覆盖范围(注入35个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "cloud-architect-design-pro",
+      "changes": [
+        "更新能力覆盖范围(注入43个关键词,含6个新增)"
+      ]
+    },
+    {
+      "slug": "meeting-join-tool-pro",
+      "changes": [
+        "更新能力覆盖范围(注入30个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "music-gen-cellcog-tool-pro",
+      "changes": [
+        "更新能力覆盖范围(注入29个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "music-gen-tool-pro",
+      "changes": [
+        "更新能力覆盖范围(注入28个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "openai-ai-tool-pro",
+      "changes": [
+        "更新能力覆盖范围(注入37个关键词,含6个新增)"
+      ]
+    },
+    {
+      "slug": "wechat-article-writer-pro",
+      "changes": [
+        "更新能力覆盖范围(注入36个关键词,含3个新增)"
+      ]
+    },
+    {
+      "slug": "accounting-finance-tool-pro",
+      "changes": [
+        "更新能力覆盖范围(注入27个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "finance-radar-tool-free",
+      "changes": [
+        "更新能力覆盖范围(注入28个关键词,含3个新增)"
+      ]
+    },
+    {
+      "slug": "api-test-runner-free",
+      "changes": [
+        "更新能力覆盖范围(注入32个关键词,含5个新增)"
+      ]
+    },
+    {
+      "slug": "api-toolkit-free",
+      "changes": [
+        "更新能力覆盖范围(注入33个关键词,含4个新增)"
+      ]
+    },
+    {
+      "slug": "azure-gateway-cli-free",
+      "changes": [
+        "更新能力覆盖范围(注入31个关键词,含3个新增)"
+      ]
+    },
+    {
+      "slug": "azure-gateway-cli-pro",
+      "changes": [
+        "更新能力覆盖范围(注入38个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "cloud-manager-free",
+      "changes": [
+        "更新能力覆盖范围(注入29个关键词,含3个新增)"
+      ]
+    },
+    {
+      "slug": "cloud-manager-pro",
+      "changes": [
+        "更新能力覆盖范围(注入28个关键词,含3个新增)"
+      ]
+    },
+    {
+      "slug": "db-connector-free",
+      "changes": [
+        "更新能力覆盖范围(注入28个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "db-schema-designer-free",
+      "changes": [
+        "更新能力覆盖范围(注入36个关键词,含7个新增)"
+      ]
+    },
+    {
+      "slug": "doubao-assistant-free",
+      "changes": [
+        "更新能力覆盖范围(注入28个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "encoding-toolkit-pro",
+      "changes": [
+        "更新能力覆盖范围(注入30个关键词,含4个新增)"
+      ]
+    },
+    {
+      "slug": "gateway-manager-free",
+      "changes": [
+        "更新能力覆盖范围(注入34个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "jira-flow-skill-free",
+      "changes": [
+        "更新能力覆盖范围(注入30个关键词,含4个新增)"
+      ]
+    },
+    {
+      "slug": "json-beautifier-free",
+      "changes": [
+        "更新能力覆盖范围(注入32个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "json-repair-tool-free",
+      "changes": [
+        "更新能力覆盖范围(注入31个关键词,含4个新增)"
+      ]
+    },
+    {
+      "slug": "json-repair-tool-pro",
+      "changes": [
+        "更新能力覆盖范围(注入29个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "json-validator-free",
+      "changes": [
+        "更新能力覆盖范围(注入29个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "linear-sync-tool-free",
+      "changes": [
+        "更新能力覆盖范围(注入31个关键词,含5个新增)"
+      ]
+    },
+    {
+      "slug": "obsidian-cli-tool-free",
+      "changes": [
+        "更新能力覆盖范围(注入32个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "obsidian-cli-tool-pro",
+      "changes": [
+        "更新能力覆盖范围(注入35个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "ollama-toolkit-free",
+      "changes": [
+        "更新能力覆盖范围(注入30个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "ops-dashboard-free",
+      "changes": [
+        "更新能力覆盖范围(注入29个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "pipedrive-toolkit-free",
+      "changes": [
+        "更新能力覆盖范围(注入31个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "pipedrive-toolkit-pro",
+      "changes": [
+        "更新能力覆盖范围(注入31个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "reddit-research-tool-free",
+      "changes": [
+        "更新能力覆盖范围(注入28个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "remix-auth-tool-pro",
+      "changes": [
+        "更新能力覆盖范围(注入34个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "sql-master-tool-pro",
+      "changes": [
+        "更新能力覆盖范围(注入28个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "sql-query-tool-free",
+      "changes": [
+        "更新能力覆盖范围(注入33个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "sql-query-tool-pro",
+      "changes": [
+        "更新能力覆盖范围(注入29个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "sqlite-lite-manager-free",
+      "changes": [
+        "更新能力覆盖范围(注入27个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "sqlite-manager-pro",
+      "changes": [
+        "更新能力覆盖范围(注入31个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "telegram-toolkit-pro",
+      "changes": [
+        "更新能力覆盖范围(注入31个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "weiyun-toolkit-free",
+      "changes": [
+        "更新能力覆盖范围(注入30个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "xlsx-handler-free",
+      "changes": [
+        "更新能力覆盖范围(注入30个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "game-builder-tool-free",
+      "changes": [
+        "更新能力覆盖范围(注入30个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "lifestyle-assistant-tool-free",
+      "changes": [
+        "更新能力覆盖范围(注入29个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "art-creator-free",
+      "changes": [
+        "更新能力覆盖范围(注入28个关键词,含3个新增)"
+      ]
+    },
+    {
+      "slug": "auto-file-organizer-pro",
+      "changes": [
+        "更新能力覆盖范围(注入30个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "book-illustrator-free",
+      "changes": [
+        "更新能力覆盖范围(注入31个关键词,含5个新增)"
+      ]
+    },
+    {
+      "slug": "dashboard-builder-pro",
+      "changes": [
+        "更新能力覆盖范围(注入29个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "diagram-master-free",
+      "changes": [
+        "更新能力覆盖范围(注入29个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "file-toolkit-free",
+      "changes": [
+        "更新能力覆盖范围(注入27个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "font-manager-free",
+      "changes": [
+        "更新能力覆盖范围(注入31个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "log-sanitizer-free",
+      "changes": [
+        "更新能力覆盖范围(注入31个关键词,含4个新增)"
+      ]
+    },
+    {
+      "slug": "log-sanitizer-pro",
+      "changes": [
+        "更新能力覆盖范围(注入31个关键词,含4个新增)"
+      ]
+    },
+    {
+      "slug": "rust-toolkit-free",
+      "changes": [
+        "更新能力覆盖范围(注入26个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "smart-light-controller-pro",
+      "changes": [
+        "更新能力覆盖范围(注入32个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "zh-file-organizer-pro",
+      "changes": [
+        "更新能力覆盖范围(注入30个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "aegis-security-tool-free",
+      "changes": [
+        "更新能力覆盖范围(注入34个关键词,含3个新增)"
+      ]
+    },
+    {
+      "slug": "aegis-security-tool-pro",
+      "changes": [
+        "更新能力覆盖范围(注入37个关键词,含4个新增)"
+      ]
+    },
+    {
+      "slug": "amap-jsapi-tool-pro",
+      "changes": [
+        "更新能力覆盖范围(注入37个关键词,含3个新增)"
+      ]
+    },
+    {
+      "slug": "block-monitor-tool-pro",
+      "changes": [
+        "更新能力覆盖范围(注入41个关键词,含4个新增)"
+      ]
+    },
+    {
+      "slug": "bom-vuln-intel-tool-free",
+      "changes": [
+        "更新能力覆盖范围(注入35个关键词,含2个新增)"
+      ]
+    },
+    {
+      "slug": "cdn-toolkit-pro",
+      "changes": [
+        "更新能力覆盖范围(注入34个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "cybersecurity-engine-tool-free",
+      "changes": [
+        "更新能力覆盖范围(注入35个关键词,含4个新增)"
+      ]
+    },
+    {
+      "slug": "cybersecurity-engine-tool-pro",
+      "changes": [
+        "更新能力覆盖范围(注入43个关键词,含4个新增)"
+      ]
+    },
+    {
+      "slug": "firewall-toolkit-free",
+      "changes": [
+        "更新能力覆盖范围(注入36个关键词,含3个新增)"
+      ]
+    },
+    {
+      "slug": "firewall-toolkit-pro",
+      "changes": [
+        "更新能力覆盖范围(注入38个关键词,含5个新增)"
+      ]
+    },
+    {
+      "slug": "mac-node-snapshot-tool-pro",
+      "changes": [
+        "更新能力覆盖范围(注入37个关键词,含1个新增)"
+      ]
+    },
+    {
+      "slug": "multi-search-engine-tool-pro",
+      "changes": [
+        "更新能力覆盖范围(注入37个关键词,含3个新增)"
+      ]
+    },
+    {
+      "slug": "password-gen-pro-tool-pro",
+      "changes": [
+        "更新能力覆盖范围(注入41个关键词,含4个新增)"
+      ]
+    }
+  ],
+  "timestamp": "2026-07-21T20:08:56.451343",
+  "fix_counts_labels": {
+    "section_names": "章节名标准化 (L3-1/L3-2)",
+    "missing_core": "添加核心能力章节 (L3-1/L3-2)",
+    "slug_name": "slug=name对齐 (L3-1)",
+    "template_phrases": "模板套话清除 (L3-7)",
+    "placeholders": "占位符清除 (L3-7)",
+    "error_table": "错误处理表格补充 (L3-5)",
+    "short_desc": "能力点描述补充 (L3-2)",
+    "indicators": "能力点指示符补充 (L3-2)",
+    "keyword_alignment": "关键词对齐 (L3-3)"
+  }
+}

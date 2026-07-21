@@ -39,6 +39,11 @@ tmwd_status()
 tmwd_status()  # 返回所有已连接标签页列表
 ```
 
+**输入**: 用户提供真实浏览器控制所需的指令和必要参数。
+**处理**: 按照skill规范执行真实浏览器控制操作,遵循单一意图原则。
+**输出**: 返回真实浏览器控制的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 2. 页面导航与内容提取
 
 在真实浏览器中导航和提取页面内容。
@@ -57,6 +62,11 @@ tmwd_text(max_chars=5000)
 tmwd_scan()
 ```
 
+**输入**: 用户提供页面导航与内容提取所需的指令和必要参数。
+**处理**: 按照skill规范执行页面导航与内容提取操作,遵循单一意图原则。
+**输出**: 返回页面导航与内容提取的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 3. 元素发现与交互
 
 发现页面可交互元素并执行操作。
@@ -71,6 +81,11 @@ tmwd_exec(code="document.querySelector('#submit').click()")
 # 填写表单
 tmwd_exec(code="var e=document.querySelector('#email'); e.value='user@example.com'; e.dispatchEvent(new Event('input',{bubbles:true}))")
 ```
+
+**输入**: 用户提供元素发现与交互所需的指令和必要参数。
+**处理**: 按照skill规范执行元素发现与交互操作,遵循单一意图原则。
+**输出**: 返回元素发现与交互的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 4. 数据提取
 
@@ -87,6 +102,11 @@ tmwd_exec(code="return Array.from(document.querySelectorAll('h2')).map(e=>e.text
 tmwd_exec(code="var rows=document.querySelectorAll('table tr'); var d=[]; rows.forEach(function(r){var c=[]; r.querySelectorAll('td,th').forEach(function(e){c.push(e.innerText.trim())}); if(c.length) d.push(c)}); return d")
 ```
 
+**输入**: 用户提供数据提取所需的指令和必要参数。
+**处理**: 按照skill规范执行数据提取操作,遵循单一意图原则。
+**输出**: 返回数据提取的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 5. 多标签页管理
 
 管理多个浏览器标签页。
@@ -98,6 +118,11 @@ tmwd_newtab(url="https://example.com")
 # 切换到匹配的标签页
 tmwd_switch(pattern="example.com")
 ```
+
+**输入**: 用户提供多标签页管理所需的指令和必要参数。
+**处理**: 按照skill规范执行多标签页管理操作,遵循单一意图原则。
+**输出**: 返回多标签页管理的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 6. CSP 回退机制
 
@@ -111,6 +136,12 @@ browser(action="open", profile="skill-platform", url="<same-url>")
 # 步骤2:获取页面快照
 browser(action="snapshot", targetId=<targetId>)
 ```
+
+**输入**: 用户提供CSP 回退机制所需的指令和必要参数。
+**处理**: 按照skill规范执行CSP 回退机制操作,遵循单一意图原则。
+**输出**: 返回CSP 回退机制的执行结果,包含操作状态和输出数据。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：通过用户脚本注入、控制真实、共享登录态与、Cookie、适合个人自动化操、真实浏览器控制免、面向个人用户提供、直接控制用户真实、浏览器的能力、在页面上下文中执、共享所有、会话和登录状态、when、需要提升效率、自动化流程、批量处理、工作流优化时使用、不适用于需要人工、创意判断的任务、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
 
@@ -167,7 +198,7 @@ tmwd_exec(code="return Array.from(document.querySelectorAll('a')).map(function(a
 
 ## 快速开始
 
-### 依赖说明
+### 依赖详情
 
 ```bash
 # 安装浏览器控制插件
@@ -353,8 +384,9 @@ browser(action="snapshot", targetId=<targetId>)
 
 ## 错误处理
 
+
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

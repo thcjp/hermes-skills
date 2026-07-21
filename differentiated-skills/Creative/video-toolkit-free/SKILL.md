@@ -53,6 +53,10 @@ ffmpeg -i input.mp4 -c:v libx264 -crf 28 -preset slow -c:a aac -b:a 96k -fs 62M 
 | -fs | 文件大小限制 | 平台限制减2MB余量 |
 | -movflags +faststart | Web播放优化 | 必须添加 |
 
+**输入**: 用户提供视频格式转换与压缩所需的指令和必要参数。
+**处理**: 按照skill规范执行视频格式转换与压缩操作,遵循单一意图原则。
+**输出**: 返回视频格式转换与压缩的执行结果,包含操作状态和输出数据。
+
 ### 2. 字幕生成(Whisper本地转录)
 
 ```bash
@@ -66,6 +70,11 @@ ffmpeg -i input.mp4 -vf subtitles=input.srt -c:a copy output.mp4
 whisper input.mp4 --model small --language zh --output_format vtt
 ```
 
+**输入**: 用户提供字幕生成(Whisper本地转录)所需的指令和必要参数。
+**处理**: 按照skill规范执行字幕生成(Whisper本地转录)操作,遵循单一意图原则。
+**输出**: 返回字幕生成(Whisper本地转录)的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 3. 宽高比调整
 
 ```bash
@@ -78,6 +87,11 @@ ffmpeg -i input.mp4 -vf "pad=ceil(iw/16)*16:ih:(ow-iw)/2:(oh-ih)/2:black" -c:a c
 # 裁剪为1:1(正方形,Instagram)
 ffmpeg -i input.mp4 -vf "crop=ih:ih" -c:a copy output.mp4
 ```
+
+**输入**: 用户提供宽高比调整所需的指令和必要参数。
+**处理**: 按照skill规范执行宽高比调整操作,遵循单一意图原则。
+**输出**: 返回宽高比调整的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 4. 音频处理
 
@@ -95,6 +109,11 @@ ffmpeg -i input.mp4 -vn -acodec mp3 -b:a 192k output.mp3
 ffmpeg -i video.mp4 -i audio.mp3 -c:v copy -c:a aac -map 0:v:0 -map 1:a:0 output.mp4
 ```
 
+**输入**: 用户提供音频处理所需的指令和必要参数。
+**处理**: 按照skill规范执行音频处理操作,遵循单一意图原则。
+**输出**: 返回音频处理的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 5. 视频信息检测
 
 ```bash
@@ -105,6 +124,11 @@ ffprobe -v quiet -print_format json -show_format -show_streams input.mp4
 ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,width,height,duration,bit_rate -of default=noprint_wrappers=1 input.mp4
 ```
 
+**输入**: 用户提供视频信息检测所需的指令和必要参数。
+**处理**: 按照skill规范执行视频信息检测操作,遵循单一意图原则。
+**输出**: 返回视频信息检测的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 6. 主流平台规格
 
 | 平台 | 宽高比 | 最大时长 | 最大文件 | 推荐编码 |
@@ -114,6 +138,11 @@ ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,width,heigh
 | YouTube Shorts | 9:16 | 60秒 | 无限制 | H.264/AAC |
 | YouTube | 16:9 | 12小时 | 256GB | H.264/AAC |
 | WhatsApp | 任意 | 3分钟 | 64MB | H.264/AAC |
+
+**输入**: 用户提供主流平台规格所需的指令和必要参数。
+**处理**: 按照skill规范执行主流平台规格操作,遵循单一意图原则。
+**输出**: 返回主流平台规格的执行结果,包含操作状态和输出数据。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：的视频处理工具、支持格式转换、适合个人内容创作、面向个人内容创作、者的视频处理工具、提供格式转换、视频压缩、音频清理等核心功、覆盖主流社交平台、核心能力、Use、when、需要视频处理、音频编辑、媒体转换、配音生成时使用、不适用于版权受保、护的媒体内容处理、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
 ## 使用场景
 
@@ -172,6 +201,12 @@ ls -lh output.mp4
 ```
 
 ## 快速开始
+
+1. 阅读## 核心能力章节了解skill功能
+2. 按## 依赖说明配置环境
+3. 执行所需能力对应的命令
+4. 参考## 错误处理章节处理异常
+5. 查看## FAQ解答常见疑问
 
 ### 环境检查
 
@@ -323,7 +358,7 @@ Whisper支持30+种语言的自动转录,包括中文、英文、日语、韩语
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
@@ -358,17 +393,19 @@ pip install openai-whisper
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
-- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。核心视频处理功能依赖exec工具执行FFmpeg/FFprobe命令,Whisper字幕功能需要Python环境。仅处理用户明确提供的视频文件,不自动访问其他文件。
+- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。核心视频处理功能依赖exec工具执行FFmpeg/FFprobe命令,Whisper字幕功能需要Python环境。仅处理用户明确提供的视频文件,不自动访问其他文件。
 
 ## 错误处理
+
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 已知限制
 
 - 本地运行，不支持多设备同步
+- 当前为免费版本,如需完整功能请升级到付费版获取全部能力

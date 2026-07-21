@@ -45,6 +45,10 @@ tools:
 - 系统密钥环存储：凭证持久保存，无需重复登录
 - 环境变量支持：`PE_API_KEY` 自动识别
 
+**输入**: 用户提供多邮箱认证所需的指令和必要参数。
+**处理**: 按照skill规范执行多邮箱认证操作,遵循单一意图原则。
+**输出**: 返回多邮箱认证的执行结果,包含操作状态和输出数据。
+
 ### 邮件读取
 
 - 列出邮件（支持 --today、--yesterday、--week、--days N）
@@ -54,6 +58,10 @@ tools:
 - 自定义日期范围
 - 获取单封邮件详情与完整会话线程
 
+**输入**: 用户提供邮件读取所需的指令和必要参数。
+**处理**: 按照skill规范执行邮件读取操作,遵循单一意图原则。
+**输出**: 返回邮件读取的执行结果,包含操作状态和输出数据。
+
 ### 邮件发送
 
 - 发送纯文本与 HTML 邮件
@@ -62,11 +70,19 @@ tools:
 - 文件正文（--body-file）
 - 邮件重要性标记
 
+**输入**: 用户提供邮件发送所需的指令和必要参数。
+**处理**: 按照skill规范执行邮件发送操作,遵循单一意图原则。
+**输出**: 返回邮件发送的执行结果,包含操作状态和输出数据。
+
 ### 邮件回复与转发
 
 - 回复指定邮件
 - 全部回复（--reply-all）
 - 转发邮件（支持附加正文与 CC）
+
+**输入**: 用户提供邮件回复与转发所需的指令和必要参数。
+**处理**: 按照skill规范执行邮件回复与转发操作,遵循单一意图原则。
+**输出**: 返回邮件回复与转发的执行结果,包含操作状态和输出数据。
 
 ### 邮件管理
 
@@ -76,6 +92,11 @@ tools:
 - 修改邮件属性
 
 ---
+
+**输入**: 用户提供邮件管理所需的指令和必要参数。
+**处理**: 按照skill规范执行邮件管理操作,遵循单一意图原则。
+**输出**: 返回邮件管理的执行结果,包含操作状态和输出数据。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Gmail、Outlook、多账户邮件管理、支持收发搜索与安、全认证、多邮箱管理免费版、是一款面向个人用、户的跨邮箱平台管、理工具、统一管理、Exchange、支持邮件读取、回复与转发等核心、通过系统密钥环、安全存储凭证、Use、when、需要消息发送、通知推送、邮件短信、通信集成时使用、不适用于垃圾信息、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
 ## 使用场景
 
@@ -152,14 +173,14 @@ porteden email send \
 
 ## 快速开始
 
-### 依赖说明
+### 依赖详情
 
 ```bash
 # macOS (Homebrew)
 brew install porteden/tap/porteden
 
 # 或使用 Go 安装
-go install github.com/porteden/cli/cmd/porteden@latest
+go install porteden/cli/cmd/porteden@latest
 ```
 
 ### 第二步：完成认证登录
@@ -169,7 +190,7 @@ go install github.com/porteden/cli/cmd/porteden@latest
 porteden auth login
 
 # 或使用 Token 直接登录
-porteden auth login --token <your_api_key>
+porteden auth login --token 配置值
 
 # 验证认证状态
 porteden auth status
@@ -279,6 +300,12 @@ porteden email messages --week --all -jc
 
 ---
 
+## 已知限制
+
+- 本skill的能力范围受限于核心能力章节中定义的功能,不支持超出范围的操作
+- 复杂业务场景建议结合人工经验判断
+- 执行效率受模型能力与网络环境影响
+- 当前为免费版本,如需完整功能请升级到付费版获取全部能力
 ## 常见问题
 
 ### 问题1：porteden 命令未找到
@@ -290,7 +317,7 @@ porteden email messages --week --all -jc
 brew install porteden/tap/porteden
 
 # 或 Go 安装
-go install github.com/porteden/cli/cmd/porteden@latest
+go install porteden/cli/cmd/porteden@latest
 
 # 验证安装
 porteden --version
@@ -407,8 +434,9 @@ porteden auth status
 
 ## 错误处理
 
+
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

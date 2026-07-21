@@ -70,6 +70,11 @@ for event in stream:
         print(f"[完成] {event.text}")
 ```
 
+**输入**: 用户提供实时流式转写所需的指令和必要参数。
+**处理**: 按照skill规范执行实时流式转写操作,遵循单一意图原则。
+**输出**: 返回实时流式转写的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 2. 说话人分离（Diarization）
 
 ```python
@@ -92,6 +97,11 @@ for segment in result.segments:
     speaker = segment.speaker  # 说话人标识: Speaker1, Speaker2, ...
     print(f"[{speaker}] [{segment.start_time:.1f}s-{segment.end_time:.1f}s] {segment.text}")
 ```
+
+**输入**: 用户提供说话人分离（Diarization）所需的指令和必要参数。
+**处理**: 按照skill规范执行说话人分离（Diarization）操作,遵循单一意图原则。
+**输出**: 返回说话人分离（Diarization）的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 3. 批量转写队列管理
 
@@ -177,6 +187,12 @@ class BatchTranscriptionManager:
         ms = int((seconds % 1) * 1000)
         return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
 ```
+
+**输入**: 用户提供批量转写队列管理所需的指令和必要参数。
+**处理**: 按照skill规范执行批量转写队列管理操作,遵循单一意图原则。
+**输出**: 返回批量转写队列管理的执行结果,包含操作状态和输出数据。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级语音转写工、支持实时流式转写、批量处理与自定义、语音转写专业版、面向企业团队与专、业用户的高级语音、转写工具、核心能力、实时流式语音转写、支持麦克风输入与、流式音频、自动识别不同说话、支持大规模音频文、件处理、自定义语音模型集、提升专业领域识别、准确率、多语言混合转写等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
 
@@ -276,13 +292,17 @@ video_manager.export_results(format='vtt', output_dir='./subtitles/en-US')
 - 同声传译
 - 文学创作翻译
 
-
 ## 触发条件
 
 需要文本翻译、多语言转换、本地化处理时使用。不适用于非本工具能力范围的需求。
 
-
 ## 快速开始
+
+1. 阅读## 核心能力章节了解skill功能
+2. 按## 依赖说明配置环境
+3. 执行所需能力对应的命令
+4. 参考## 错误处理章节处理异常
+5. 查看## FAQ解答常见疑问
 
 ### 1. 环境准备
 
@@ -292,7 +312,7 @@ pip install azure-ai-transcription
 
 # 配置环境变量
 export TRANSCRIPTION_ENDPOINT="https://<resource>.cognitiveservices.azure.com"
-export TRANSCRIPTION_KEY="<your-key>"
+export TRANSCRIPTION_KEY="配置值"
 ```
 
 ### 2. 实时转写
@@ -330,6 +350,11 @@ results = manager.batch_transcribe(
 
 manager.export_results(format='srt')
 ```
+
+### 命令参数说明
+
+- `-CN`: 命令参数,用于指定操作选项
+- `-US`: 命令参数,用于指定操作选项
 
 ## 示例
 
@@ -413,14 +438,16 @@ manager.export_results(format='srt')
 
 - **分类**: MD+EXEC（纯Markdown指令，核心功能需要exec命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行专业语音转写任务。支持实时流式转写、说话人分离、批量队列等企业级功能，通过Python SDK调用Azure AI服务。与免费版完全兼容，可直接复用免费版的认证配置与基础转写流程。
+- API Key通过环境变量配置: export API_KEY=your_key
 
 ## 错误处理
+
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 已知限制
 

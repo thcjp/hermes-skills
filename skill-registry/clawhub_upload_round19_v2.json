@@ -1,0 +1,98 @@
+﻿┌  ClawHub sync
+Roots with skills: D:\skills\packaged-skills\skillhub
+
+To sync
+- afrexai-knowledge-management  NEW (publish 1.0.0)  (1 files)
+- agent-browser-clawdbot  NEW (publish 1.0.0)  (1 files)
+- agent-commercial-contract  NEW (publish 1.0.0)  (1 files)
+- api  NEW (publish 1.0.0)  (1 files)
+- beware-piper-tts-free  NEW (publish 1.0.0)  (1 files)
+- bilibili-all-in-one  NEW (publish 1.0.0)  (1 files)
+- bilibili-all-in-one-free  NEW (publish 1.0.0)  (1 files)
+- bilibili-helper  NEW (publish 1.0.0)  (1 files)
+- bilibili-helper-free  NEW (publish 1.0.0)  (1 files)
+- bilibili-toolkit  NEW (publish 1.0.0)  (1 files)
+- blog-seo-writer  NEW (publish 1.0.0)  (1 files)
+- blog-writer  NEW (publish 1.0.0)  (1 files)
+- blog-writer-free  NEW (publish 1.0.0)  (1 files)
+- book-painter  NEW (publish 1.0.0)  (1 files)
+- bookmark-intelligence  NEW (publish 1.0.0)  (1 files)
+- bookmark-intelligence-free  NEW (publish 1.0.0)  (1 files)
+- bookmark-smart-hub  NEW (publish 1.0.0)  (1 files)
+- bot-status-api-test  NEW (publish 1.0.0)  (1 files)
+- bot-status-api-test-free  NEW (publish 1.0.0)  (1 files)
+- brainz-calendar  NEW (publish 1.0.0)  (1 files)
+- ... +850 more
+Already synced: accounting-and-finance@1.0.0, accounting-and-finance-free@1.0.0, accounting-finance@1.0.0, ace-music@1.0.0, ace-music-free@1.0.0, ace-music-paid@1.0.0, actor-identifier@1.0.0, ad-insight-hub@1.0.1, ad-insight-hub-free@1.0.0, admapix@1.0.1, admapix-free@1.0.0, aegis-security@1.0.0, aegis-security-free@1.0.0, afrexai-cybersecurity-engine@1.0.0, afrexai-cybersecurity-engine-free@1.0.0, afrexai-knowledge-management-free@1.0.0, agent@1.0.0, agent-bom-vulnerability-intel@1.0.0, agent-browser-assistant@1.0.0, agent-browser-cli@1.0.0, agent-browser-stagehand@1.0.0, agent-chat@1.0.0, agent-framework-azure-ai-py@1.0.0, ... +124 more
+node.exe : Rate limit: max 200 new skills per 24 hours. Please wait before publishing more.
+At C:\Users\thcd\AppData\Roaming\TRAE SOLO CN\ModularData\ai-agent\vm\tools\node\npx.ps1:16 char:5
++     & "$basedir/node$exe"  "$basedir/node_modules/npm/bin/npx-cli.js" ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Rate limit: max...ublishing more.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+    at enforceNewSkillRateLimit (../../convex/skills.ts:1592:6)
+    at handler (../../convex/skills.ts:12730:6)
+    at async handler (../../node_modules/convex-helpers/server/customFunctions.js:268:27) (reset in 34s)
+"agent-browser-clawdbot" uses the protected "clawdbot" slug namespace. Choose a slug that does not start with "clawdbot
+-" or end with "-clawdbot". (reset in 29s)
+Rate limit: max 200 new skills per 24 hours. Please wait before publishing more.
+    at enforceNewSkillRateLimit (../../convex/skills.ts:1592:6)
+    at handler (../../convex/skills.ts:12730:6)
+    at async handler (../../node_modules/convex-helpers/server/customFunctions.js:268:27) (reset in 24s)
+"api" is reserved and cannot be used as a slug. (reset in 19s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 15s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 10s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 6s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 2s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 58s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 54s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 50s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 45s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 41s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 37s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 33s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 29s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 25s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 20s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 16s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 12s)
+Rate limit: max 200 new skills per 24 hours. Please wait before publishing more.
+    at enforceNewSkillRateLimit (../../convex/skills.ts:1592:6)
+    at handler (../../convex/skills.ts:12730:6)
+    at async handler (../../node_modules/convex-helpers/server/customFunctions.js:268:27) (reset in 8s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 3s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 59s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 54s)
+Rate limit: max 200 new skills per 24 hours. Please wait before publishing more.
+    at enforceNewSkillRateLimit (../../convex/skills.ts:1592:6)
+    at handler (../../convex/skills.ts:12730:6)
+    at async handler (../../node_modules/convex-helpers/server/customFunctions.js:268:27) (reset in 50s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 45s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 39s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 35s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 30s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 26s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 22s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 18s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 13s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 9s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 5s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 1s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 55s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 51s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 47s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 43s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 39s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 34s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 30s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 26s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 21s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 17s)
+Rate limit: max 200 new skills per 24 hours. Please wait before publishing more.
+    at enforceNewSkillRateLimit (../../convex/skills.ts:1592:6)
+    at handler (../../convex/skills.ts:12730:6)
+    at async handler (../../node_modules/convex-helpers/server/customFunctions.js:268:27) (reset in 13s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 9s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 5s)
+Version 1.0.0 already exists. Increment the version number and try again. (reset in 1s)

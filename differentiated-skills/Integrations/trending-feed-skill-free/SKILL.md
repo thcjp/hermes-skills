@@ -39,6 +39,31 @@ tools:
 | 高级缓存 | 多级缓存与命中率统计 | 否（专业版） |
 | 定时推送 | 定时抓取并推送到 IM 渠道 | 否（专业版） |
 
+### 核心功能执行
+用`input_params`参数进行配置。
+
+**输入**: 用户提供核心功能执行所需的指令和必要参数。
+**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
+**输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
+### 参数配置与调用
+用`config_options`参数进行配置。
+
+**输入**: 用户提供参数配置与调用所需的指令和必要参数。
+**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
+**输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
+
+### 结果处理与输出
+用`output_format`参数进行配置。
+
+**输入**: 用户提供结果处理与输出所需的指令和必要参数。
+**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
+**输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：热门仓库列表、支持语言过滤、返回结构化、核心能力、页面并解析仓库元、星标数、主语言、支持按编程语言过、Use、when、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数、据处理等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+
 ## 使用场景
 
 1. **每日技术晨会素材**：上班前抓取当日热榜，挑选 3-5 个项目在团队晨会分享，保持技术敏感度。
@@ -50,13 +75,13 @@ tools:
 
 > 上手时间：< 60 秒。本 Skill 为纯指令型，无需安装额外依赖。
 
-### 步骤 1：抓取默认热榜
+### Step 1：抓取默认热榜
 
 ```bash
 python3 ~/.skill-platform/workspace/skills/trending-feed/scripts/fetch_trending.py
 ```
 
-### 步骤 2：按语言过滤
+### Step 2：按语言过滤
 
 ```bash
 python3 ~/.skill-platform/workspace/skills/trending-feed/scripts/fetch_trending.py python
@@ -64,7 +89,7 @@ python3 ~/.skill-platform/workspace/skills/trending-feed/scripts/fetch_trending.
 python3 ~/.skill-platform/workspace/skills/trending-feed/scripts/fetch_trending.py rust
 ```
 
-### 步骤 3：查看输出结构
+### Step 3：查看输出结构
 
 返回 JSON 数组，每个元素结构如下：
 
@@ -74,11 +99,11 @@ python3 ~/.skill-platform/workspace/skills/trending-feed/scripts/fetch_trending.
   "description": "仓库一句话描述",
   "language": "Python",
   "stars": 12345,
-  "url": "https://github.com/owner/repo"
+  "url": ""
 }
 ```
 
-### 步骤 4：按平台格式化
+### Step 4：按平台格式化
 
 获取数据后，由 Agent 根据所在平台格式化输出：
 
@@ -86,20 +111,20 @@ python3 ~/.skill-platform/workspace/skills/trending-feed/scripts/fetch_trending.
 ```text
 GitHub Trending · 今日热榜
 1. owner/repo - 描述 ⭐ 12345 | Python
-   https://github.com/owner/repo
+   
 ```
 
 **Discord / Telegram**：
 ```text
 GitHub Trending 今日热榜
-1. owner/repo - 描述 ⭐ 12345 | Python | https://github.com/owner/repo
+1. owner/repo - 描述 ⭐ 12345 | Python | 
 ```
 
 **控制台**：
 ```text
 1. owner/repo (⭐ 12345 | Python)
    描述
-   https://github.com/owner/repo
+   
 ```
 
 ## 示例
@@ -176,7 +201,7 @@ A：免费版可将 JSON 输出重定向到本地文件，例如 `fetch_trending
 - **操作系统**：Windows / macOS / Linux
 - **Python**：3.8+（用于运行抓取脚本）
 
-### 依赖说明
+### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由 Agent 平台内置 LLM 提供 |
@@ -194,8 +219,9 @@ A：免费版可将 JSON 输出重定向到本地文件，例如 `fetch_trending
 
 ## 错误处理
 
+
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

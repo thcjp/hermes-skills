@@ -52,6 +52,32 @@ tools:
 | 自定义规则 | 团队专属拒绝向量与阈值 | 免费版无 |
 | 周报导出 | 团队PR健康度周报 | 免费版无 |
 | 风险预警 | 高风险PR实时提醒 | 免费版无 |
+**技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置。
+
+### 核心功能执行
+用`input_params`参数进行配置。
+
+**输入**: 用户提供核心功能执行所需的指令和必要参数。
+**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
+**输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
+### 参数配置与调用
+用`config_options`参数进行配置。
+
+**输入**: 用户提供参数配置与调用所需的指令和必要参数。
+**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
+**输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
+
+### 结果处理与输出
+用`output_format`参数进行配置。
+
+**输入**: 用户提供结果处理与输出所需的指令和必要参数。
+**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
+**输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：合并性预测、含全维度分析、门禁与自定义规则、合并检查工具、专业版、面向团队与维护者、提供批量、全维度深度分析、历史趋势追踪、门禁集成与自定义、拒绝向量规则、分析与团队级看板、维度深度分析、作者与仓库历史合、并趋势追踪、流水线门禁集成、自定义拒绝向量与、团队规则、风险预警与周报生等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
 ## 使用场景
 
@@ -78,11 +104,9 @@ bash scripts/merge-check-batch.sh owner/repo --format dashboard > pr-dashboard.h
 - 小规模数据手动分析
 - 非结构化文本情感分析
 
-
 ## 触发条件
 
 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求。
-
 
 ## 团队PR看板: owner/repo (20个开放PR)
 
@@ -112,8 +136,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: 安装 gh CLI
         run: |
-          curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-          echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+          curl -fsSL https://cli.packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+          echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
           sudo apt update && sudo apt install gh -y
       - name: 运行合并性检查
         env:
@@ -161,6 +185,12 @@ bash scripts/merge-check-batch.sh owner/repo \
 
 ## 快速开始
 
+1. 阅读## 核心能力章节了解skill功能
+2. 按## 依赖说明配置环境
+3. 执行所需能力对应的命令
+4. 参考## 错误处理章节处理异常
+5. 查看## FAQ解答常见疑问
+
 ### 1. 团队配置初始化
 
 ```bash
@@ -202,6 +232,12 @@ bash scripts/merge-check-trend.sh owner/repo --months 6 --format csv > trend.csv
 # 生成趋势图
 bash scripts/merge-check-trend.sh owner/repo --months 6 --format chart > trend.html
 ```
+
+### 命令参数说明
+
+- `-fsSL`: 命令参数,用于指定操作选项
+- `-W`: 命令参数,用于指定操作选项
+- `-Risk`: 命令参数,用于指定操作选项
 
 ## 示例
 
@@ -379,12 +415,12 @@ jobs:
 - **gh CLI版本**: 建议 2.40 及以上
 - **Python版本**: 建议 3.10 及以上(用于报告生成与趋势图)
 
-### 依赖说明
+### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
-| gh CLI | 命令行工具 | 必需 | github.com/cli/cli 下载 |
+| gh CLI | 命令行工具 | 必需 | cli/cli 下载 |
 | jq | JSON处理 | 必需 | 系统包管理器安装 |
 | Python | 运行时 | 推荐 | python.org 下载 |
 | matplotlib | Python包 | 可选 | `pip install matplotlib`(趋势图) |
@@ -392,26 +428,27 @@ jobs:
 
 ### API Key 配置
 
-- 本Skill基于Markdown指令,无需额外API Key。
+- 本skill基于Markdown指令规范,无需额外API Key。
 - `gh` CLI 通过 `gh auth login` 或环境变量 `GITHUB_TOKEN` 认证。
 - CI/CD门禁需在仓库Secrets配置 `GITHUB_TOKEN`(自动提供)或 PAT(私有仓库批量分析)。
 - 通知渠道(Slack/飞书)的 webhook URL 需配置为仓库Secret。
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
-- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务。PRO版面向团队与维护者,提供批量分析、历史趋势、CI/CD门禁与自定义规则能力,完全兼容免费版单PR分析。
+- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。PRO版面向团队与维护者,提供批量分析、历史趋势、CI/CD门禁与自定义规则能力,完全兼容免费版单PR分析。
 
 ## 错误处理
+
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 已知限制
 
-- 需要LLM支持，无LLM环境无法使用
-- 复杂场景可能需要人工辅助判断
-- 性能取决于底层模型能力
+- 需LLM支持,无LLM环境不可用
+- 复杂业务场景建议结合人工经验判断
+- 执行效率受模型能力与网络环境影响

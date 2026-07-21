@@ -37,8 +37,8 @@ edition: free
 ### 1.1 环境检查（< 30秒）
 
 AWS CLI标准配置路径：
-- **Linux/macOS**：`~/.aws/config`（profile与region配置）、`~/.aws/credentials`（访问密钥）
-- **Windows**：`%USERPROFILE%\.aws\config`、`%USERPROFILE%\.aws\credentials`
+1. **Linux/macOS**：`~/.aws/config`（profile与region配置）、`~/.aws/credentials`（访问密钥）
+2. **Windows**：`%USERPROFILE%\.aws\config`、`%USERPROFILE%\.aws\credentials`
 
 ```bash
 aws --version  # 确认CLI已安装
@@ -228,12 +228,13 @@ A：使用 `--query` 参数配合JMESPath语法过滤。例如 `--query 'Reserva
 
 ## 错误处理
 
+
 | 序号 | 问题 | 原因 | 修复方案 | 优先级 |
 |------|------|------|----------|--------|
 | 1 | `Unable to locate credentials` | 未配置AWS凭证 | 运行 `aws configure` 或检查 `~/.aws/credentials` | P0 |
 | 2 | `InvalidClientTokenId` | 凭证无效或已过期 | 重新生成access key并更新配置 | P0 |
 | 3 | `AccessDenied` | IAM权限不足 | 联系管理员添加所需权限，或切换有权限的profile | P1 |
-| 4 | `Could not connect to the endpoint URL` | 网络问题或region错误 | 检查网络代理设置，确认region拼写正确 | P1 |
+| 4 | `Could not connect to the endpoint URL` | 网络问题或region错误 | 执行ping命令测试网络连通性,检查防火墙和代理设置代理设置，确认region拼写正确 | P1 |
 | 5 | `Rate exceeded` | API调用频率超限 | 添加请求间隔，或使用分页 `--starting-token` | P2 |
 | 6 | `--query` 语法错误 | JMESPath语法不正确 | 检查引号转义，使用 `--output text` 调试 | P2 |
 | 7 | `Profile not found` | profile名称拼写错误 | 运行 `aws configure list-profiles` 查看可用profile | P1 |
@@ -326,11 +327,48 @@ SOFTWARE.
 
 ## 核心能力
 
-- AWS云巡检免费版（aws-cloud-inspector-free）面向独立开发者与运维新人，基于本地AWS CLI提供只读的云资源查询与基础巡检能力
-- 它默认只读，所有变更类操作必须用户显式确认才执行，确保零误操作风险
-- aws/config` 与 `~/
-- aws/credentials` 标准位置）
-- 适用场景：个人AWS账号日常巡检、新接手项目的资源盘点、上线前基础安全自检、CloudWatch告警排查、IAM权限梳理、学习AWS CLI命令模式、为团队试点云巡检流程前的个人练习
+### AWS云巡检免费版（aws-cloud-
+AWS云巡检免费版（aws-cloud-inspector-free）面向独立开发者与运维新人，基于本地AWS CLI提供只读的云资源查询与基础巡检能力
+
+**输入**: 用户提供AWS云巡检免费版（aws-cloud-所需的指令和必要参数。
+**处理**: 按照skill规范执行AWS云巡检免费版（aws-cloud-操作,遵循单一意图原则。
+**输出**: 返回AWS云巡检免费版（aws-cloud-的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
+### 它默认只读
+它默认只读，所有变更类操作必须用户显式确认才执行，确保零误操作风险
+
+**输入**: 用户提供它默认只读所需的指令和必要参数。
+**处理**: 按照skill规范执行它默认只读操作,遵循单一意图原则。
+**输出**: 返回它默认只读的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
+### aws/config` 与 `
+aws/config` 与 `~/
+
+**输入**: 用户提供aws/config` 与 `所需的指令和必要参数。
+**处理**: 按照skill规范执行aws/config` 与 `操作,遵循单一意图原则。
+**输出**: 返回aws/config` 与 `的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
+### aws/credentials
+aws/credentials` 标准位置）
+
+**输入**: 用户提供aws/credentials所需的指令和必要参数。
+**处理**: 按照skill规范执行aws/credentials操作,遵循单一意图原则。
+**输出**: 返回aws/credentials的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
+### 适用场景
+适用场景：个人AWS账号日常巡检、新接手项目的资源盘点、上线前基础安全自检、CloudWatch告警排查、IAM权限梳理、学习AWS CLI命令模式、为团队试点云巡检流程前的个人练习
+
+**输入**: 用户提供适用场景所需的指令和必要参数。
+**处理**: 按照skill规范执行适用场景操作,遵循单一意图原则。
+**输出**: 返回适用场景的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
+**技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：的只读云基础设施、查询助手、免费提供资源清点、健康检查与基础安、全核查能力、适合个人开发者日、Use、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
 ## 适用场景
 

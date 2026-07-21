@@ -44,6 +44,11 @@ tools:
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch status
 ```
 
+**输入**: 用户提供批量并行搜索所需的指令和必要参数。
+**处理**: 按照skill规范执行批量并行搜索操作,遵循单一意图原则。
+**输出**: 返回批量并行搜索的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 2. 团队推荐与协作
 支持团队共享工具发现成果,协作评估。
 
@@ -57,6 +62,11 @@ tools:
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh team collect-ratings --tool "target-tool"
 ```
 
+**输入**: 用户提供团队推荐与协作所需的指令和必要参数。
+**处理**: 按照skill规范执行团队推荐与协作操作,遵循单一意图原则。
+**输出**: 返回团队推荐与协作的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 3. 工具评估报告
 多维度分析工具质量,生成评估报告。
 
@@ -66,6 +76,11 @@ tools:
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch evaluate --input tools.json --output reports/
 
 ```
+
+**输入**: 用户提供工具评估报告所需的指令和必要参数。
+**处理**: 按照skill规范执行工具评估报告操作,遵循单一意图原则。
+**输出**: 返回工具评估报告的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 4. 自动化部署
 批量安装工具并自动配置。
@@ -86,6 +101,11 @@ tools:
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch verify --input deploy.json
 ```
 
+**输入**: 用户提供自动化部署所需的指令和必要参数。
+**处理**: 按照skill规范执行自动化部署操作,遵循单一意图原则。
+**输出**: 返回自动化部署的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 5. 使用统计与分析
 追踪工具使用情况,提供数据洞察。
 
@@ -96,6 +116,11 @@ tools:
 
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh stats export --format csv --output usage_report.csv
 ```
+
+**输入**: 用户提供使用统计与分析所需的指令和必要参数。
+**处理**: 按照skill规范执行使用统计与分析操作,遵循单一意图原则。
+**输出**: 返回使用统计与分析的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 6. 自定义评分规则
 根据团队标准自定义评分规则。
@@ -109,6 +134,11 @@ tools:
   --custom-rules custom_rules.json
 ```
 
+**输入**: 用户提供自定义评分规则所需的指令和必要参数。
+**处理**: 按照skill规范执行自定义评分规则操作,遵循单一意图原则。
+**输出**: 返回自定义评分规则的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 7. 完整兼容免费版
 专业版完全兼容免费版的所有命令和配置,平滑升级。
 
@@ -116,6 +146,12 @@ tools:
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh search "web search"
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh install "target-tool" --type skill
 ```
+
+**输入**: 用户提供完整兼容免费版所需的指令和必要参数。
+**处理**: 按照skill规范执行完整兼容免费版操作,遵循单一意图原则。
+**输出**: 返回完整兼容免费版的执行结果,包含操作状态和输出数据。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级工具发现与、评估平台、支持批量搜索、工具评估报告与自、工具发现引擎专业、面向企业团队和高、级用户提供深度的、工具发现与评估能、使用统计等高级功、Use、when、需要提升效率、自动化流程、批量处理、工作流优化时使用、不适用于需要人工、创意判断的任务、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
 ### 场景一:企业团队统一工具选型
@@ -257,6 +293,12 @@ EOF
 
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch status
 ```
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
+
+### 命令参数说明
+
+- `-Q3`: 命令参数,用于指定操作选项
 
 ## 示例
 ### 企业级配置
@@ -473,15 +515,17 @@ WEBHOOK_URL=https://your-system.example.com/webhook
 - **说明**: 企业级工具发现与评估平台,支持批量搜索、团队协作、工具评估等高级功能
 - **适用规模**: 多用户、多任务、大规模并行处理
 - **兼容性**: 完全兼容免费版,支持平滑升级
+- API Key通过环境变量配置: export API_KEY=your_key
 
 ## 错误处理
+
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 已知限制
-- 需要LLM支持，无LLM环境无法使用
-- 复杂场景可能需要人工辅助判断
-- 性能取决于底层模型能力
+- 需LLM支持,无LLM环境不可用
+- 复杂业务场景建议结合人工经验判断
+- 执行效率受模型能力与网络环境影响

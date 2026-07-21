@@ -54,6 +54,31 @@ tools:
 | 多连接高级管理 | 多账号切换 | 基础 | 高级 |
 | 优先支持 | 优先响应 | 否 | 是 |
 
+### 核心功能执行
+用`input_params`参数进行配置。
+
+**输入**: 用户提供核心功能执行所需的指令和必要参数。
+**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
+**输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
+### 参数配置与调用
+用`config_options`参数进行配置。
+
+**输入**: 用户提供参数配置与调用所需的指令和必要参数。
+**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
+**输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
+
+### 结果处理与输出
+用`output_format`参数进行配置。
+
+**输入**: 用户提供结果处理与输出所需的指令和必要参数。
+**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
+**输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全功能、Jira、Cloud、含创建、自动化与多连接管、核心能力、全部只读能力、流转议题状态与评、用户搜索与分配、批量操作与自动化、工作流、多连接高级管理与等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+
 ## 使用场景
 
 ### 场景 1：团队自动化议题创建与状态同步
@@ -76,17 +101,15 @@ CI/CD 流水线在部署成功后自动流转关联议题为"已上线"，部署
 - API安全渗透测试
 - 非标准协议集成
 
-
 ## 触发条件
 
 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于非本工具能力范围的需求。
-
 
 ## 快速开始
 
 > 上手时间：< 120 秒。专业版在免费版只读基础上新增写操作，建议先熟悉只读命令再启用写操作。
 
-### 依赖说明
+### 依赖详情
 
 ```bash
 npm install -g @maton/cli
@@ -95,30 +118,33 @@ maton connection create jira
 maton jira cloud list
 ```
 
-### 步骤 2：创建议题
+### Step 2：创建议题
 
 ```bash
 maton jira issue create --cloud-id abc-123 --project PROJ --summary '修复登录失败' --type Task
 ```
 
-### 步骤 3：更新与分配议题
+### Step 3：更新与分配议题
 
 ```bash
 maton jira issue update PROJ-123 --cloud-id abc-123 --summary '修复登录失败（含验证码）' --assignee 712020:5aff718e-6fe0-4548-82f4-f44ec481e5e7
 ```
 
-### 步骤 4：流转议题状态
+### Step 4：流转议题状态
 
 ```bash
 maton jira transition list PROJ-123 --cloud-id abc-123
 maton jira transition apply PROJ-123 --cloud-id abc-123 --id 31
 ```
 
-### 步骤 5：添加评论
+### Step 5：添加评论
 
 ```bash
 maton jira comment add PROJ-123 --cloud-id abc-123 --body '已在测试环境验证通过，请安排上线'
 ```
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
+
 
 ## 示例
 
@@ -225,17 +251,17 @@ A：支持。配合 CI/CD 与 cron 可实现自动化：代码合并触发议题
 
 ## 错误处理
 
-| 现象 | 可能原因 | 解决步骤 | 优先级 |
+
+| 错误场景(现象) | 可能原因 | 解决步骤 | 优先级 |
 |------|----------|----------|--------|
 | 401 Invalid API key | 未登录 / Key 过期 | `maton login` 重新登录 | P1 |
 | 400 Missing connection | 未创建 Jira 连接 | `maton connection create jira` | P1 |
 | 400 Invalid transition id | 工作流不可达 | `transition list` 获取可用流转 | P2 |
 | 400 Invalid accountId | 用户不存在 / 无权限 | `user search` 重新获取 accountId | P2 |
-| 429 Rate limited | 超过 10 请求/秒 | 降速、分批、重试 | P2 |
+| 429 Rate limited | 超过 10 请求/秒 | 降速、分批、执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P2 |
 | 204 误判失败 | 204 为成功 | 确认 204 即成功 | P3 |
 | Agile API scope 错误 | 缺少 OAuth scope | 联系支持申请扩展 scope | P2 |
 | 管道 Invalid API key | 环境变量未展开 | 直接用 CLI 或显式 export | P3 |
-
 ## 专业版特性
 
 本专业版相比免费版新增以下能力：

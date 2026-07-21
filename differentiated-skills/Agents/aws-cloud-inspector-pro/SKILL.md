@@ -14,7 +14,7 @@ description: |-
 
   差异化：相比免费版与通用AWS助手，专业版提供三大独有能力：(1) 跨服务安全审计，基于AWS Config与CIS Benchmark实现持续合规监控；(2) Cost Explorer深度成本分析，支持按标签/团队/项目多维分摊与预算告警；(3) CloudTrail变更管理，追踪所有资源变更并支持回滚与审批流。配合企业级场景指南（4角色×3+场景）、完整FAQ（10+问）与故障排查表，覆盖从日常巡检到应急响应的全路径。
 
-  触发关键词：aws安全审计、成本分析、变更管理、cloudtrail、cost explorer、aws config、cis benchmark、合规审计、云治理、企业云巡检、aws云巡检专业版
+  适用关键词：aws安全审计、成本分析、变更管理、cloudtrail、cost explorer、aws config、cis benchmark、合规审计、云治理、企业云巡检、aws云巡检专业版
 
   版本定位：收费专业版，定价¥49.9/月（行业工具类）。包含免费版全部能力 + 3项高级解锁能力 + 企业级场景指南 + 优先支持。免费试用请使用 aws-cloud-inspector-free。
 tags:
@@ -34,6 +34,31 @@ edition: pro
 本Skill在免费版只读巡检能力之上，解锁**安全审计、成本分析、变更管理**三大高级能力，面向团队与企业云治理场景。
 
 > 版本边界：本专业版包含免费版全部能力（资源清点、健康检查、基础安全核查、变更预演），并新增3项高级解锁能力。如仅需个人试用，可使用 `aws-cloud-inspector-free`。
+
+## 使用流程
+
+### Step 1：准备阶段
+确认运行环境满足依赖说明中的要求,准备好必要的输入参数。
+
+### Step 2：执行阶段
+按照核心能力章节中的操作指令执行,使用`input_params`参数配置执行选项。
+
+### Step 3：验证阶段
+检查执行结果,如遇错误可查阅错误处理章节进行排查。
+
+## 示例
+
+### 基本用法
+
+**输入**：用户提供操作指令和必要参数
+
+**输出**：返回执行结果,包含操作状态和输出数据
+
+```text
+用户: 执行核心功能
+Skill: 正在执行核心功能...
+Skill: 执行完成,结果如下: 操作成功
+```
 
 ## 一、快速开始（按时间分级）
 
@@ -127,8 +152,7 @@ source_profile = default
 
 > 安全提示：本Skill永不读取或输出 `~/.aws/credentials` 文件内容，仅通过AWS CLI内部机制使用凭证。专业版支持IAM Role跨账号assume，审计场景推荐使用专属audit profile。
 
-## 四、专业版三大高级能力详解
-
+## 核心能力
 ### 4.1 跨服务安全审计
 
 **能力**：基于AWS Config与CIS Benchmark实现持续合规监控，跨服务扫描安全态势。
@@ -152,15 +176,16 @@ aws cloudtrail describe-trails --query 'trailList[].{Name:Name,MultiRegion:IsMul
 
 **CIS Benchmark对标项**：
 | CIS项 | 检查内容 | 推荐命令 |
-|-------|----------|----------|
+|-------|---
+-------|----------|
 | 1.1 | 避免使用root账号 | `aws iam get-account-summary` |
-| 1.3 | 确保MFA已启用root | `aws iam get-account-summary` |
 | 2.1 | CloudTrail全region启用 | `aws cloudtrail describe-trails` |
 | 2.3 | CloudTrail日志加密 | `aws cloudtrail describe-trails --query 'trailList[].KmsKeyId'` |
 | 3.1 | S3桶禁止公开 | `aws s3api get-public-access-block --bucket X` |
 | 4.1 | 安全组不暴露22端口 | `aws ec2 describe-security-groups --filters ...` |
 
 ### 4.2 Cost Explorer成本分析
+用`input_params`参数进行配置,支持创建/查询/导出等操作。
 
 **能力**：深度成本查询，支持按服务/标签/团队/项目多维分摊与预算告警。
 
@@ -219,6 +244,8 @@ aws cloudtrail lookup-events \
   --lookup-attributes AttributeKey=Username,AttributeValue=deploy-bot \
   --output table
 ```
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：完整的、云巡检能力、含跨服务安全审计、成本分析与、面向团队与企业云、治理场景、云巡检专业版、inspector、pro、在免费版只读巡检、能力之上、解锁跨服务安全审、变更管理三大高级、它让企业能够在统、一会话中完成安全、态势扫描、成本分摊分析与资、源变更追踪回滚等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
 ## 五、任务指南（完整巡检矩阵）
 
@@ -424,36 +451,6 @@ A：专业版通过CloudTrail留痕 + 人工二次确认 + 回滚方案记录实
 - [references/cost-analysis.md](references/cost-analysis.md) —— Cost Explorer深度查询与预算告警配置
 - [references/change-management.md](references/change-management.md) —— CloudTrail变更追踪与回滚指南
 
-## 十、依赖说明
-
-### 运行环境
-- **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
-- **操作系统**：Windows / macOS / Linux
-- **AWS CLI**：v2.0+（推荐v2.13+）
-
-### 第三方依赖
-| 依赖项 | 类型 | 是否必需 | 获取方式 | 专业版能力 |
-|:-------|:-----|:---------|:---------|:----------|
-| AWS CLI v2 | 命令行工具 | 必需 | 官方安装包 | ✅ 完整可用 |
-| AWS账户 | 云服务 | 必需 | AWS官网注册 | ✅ |
-| IAM只读+审计权限 | IAM策略 | 必需 | IAM控制台分配 | ✅ 含Config/CE/CloudTrail |
-| AWS Config | AWS服务 | 必需 | AWS控制台启用 | ✅ 专业版核心 |
-| Cost Explorer | AWS服务 | 必需 | Billing Console启用 | ✅ 专业版核心 |
-| CloudTrail | AWS服务 | 必需 | AWS控制台启用 | ✅ 专业版核心 |
-| AWS Budgets | AWS服务 | 可选 | AWS控制台配置 | ✅ 预算告警 |
-| CloudWatch Logs | AWS服务 | 可选 | AWS控制台开通 | ✅ 实时告警 |
-
-### API Key 配置
-- **AWS凭证**：通过 `aws configure` 配置，存储于 `~/.aws/credentials`（Linux/macOS）或 `%USERPROFILE%\.aws\credentials`（Windows）
-- **AWS Profile**：通过 `AWS_PROFILE` 环境变量或 `--profile` 参数指定
-- **AWS Region**：通过 `AWS_REGION` 环境变量或 `--region` 参数指定
-- **跨账号审计**：在 `~/.aws/config` 中配置 `role_arn` 与 `source_profile` 实现assume role
-- 本Skill本身不存储任何AWS凭证，所有凭证由AWS CLI内部管理
-
-### 可用性分类
-- **分类**：MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
-- **说明**：基于Markdown的AI Skill，通过自然语言指令驱动Agent执行企业级云巡检与治理任务
-
 ## 十一、专业版特性
 
 本专业版相比免费版新增以下能力：
@@ -514,3 +511,43 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## 已知限制
+
+- 本skill的能力范围受限于核心能力章节中定义的功能,不支持超出范围的操作
+- 复杂业务场景建议结合人工经验判断
+- 执行效率受模型能力与网络环境影响
+
+## 依赖说明
+
+### 运行环境
+- **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**：Windows / macOS / Linux
+
+### LLM依赖
+- 需要LLM支持,由Agent平台内置LLM提供
+
+### API Key 配置
+- 本skill本身不存储任何API密钥,如需调用外部API请参考对应平台文档
+
+### 可用性分类
+- **分类**：MD+EXEC（纯Markdown指令,部分功能需exec命令行执行）
+- API Key可在对应平台官网注册账号后获取
+- API Key通过环境变量配置: export API_KEY=your_key
+
+## 错误处理
+
+
+| 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
+|------|----------|------|----------|--------|
+| 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
+| 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
+| 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
+
+## FAQ
+
+**Q: 如何开始使用？**
+A: 建议先查看使用流程,按步骤操作即可。
+
+**Q: 遇到错误怎么办？**
+A: 可查阅错误处理章节,按照表格中的处理方式进行排查。

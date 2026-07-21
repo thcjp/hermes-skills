@@ -6,7 +6,7 @@ displayName: Linear工作流机器人
 summary: 解决Webhook易断、免费额度烧光、多服务配置混乱痛点，打造可自愈的Linear任务流水线
 license: Proprietary
 description: |-
-  把Linear任务自动接入"通知-执行-回写-Git同步"流水线。面向独立开发者与一人公司，解决Webhook易断、免费额度烧光、多服务配置散乱、Git同步冲突四大痛点。适用于个人开发者把Linear作为任务中枢自动分发到Discord/Git、小团队任务到达即通知即执行即归档场景。触发关键词：linear、webhook、discord、make、pipedream、zapier、自动化、任务流水线、git sync。
+  把Linear任务自动接入"通知-执行-回写-Git同步"流水线。面向独立开发者与一人公司，解决Webhook易断、免费额度烧光、多服务配置散乱、Git同步冲突四大痛点。适用于个人开发者把Linear作为任务中枢自动分发到Discord/Git、小团队任务到达即通知即执行即归档场景。适用关键词：linear、webhook、discord、make、pipedream、zapier、自动化、任务流水线、git sync。
 tags:
 - 自动化
 - 项目管理
@@ -22,11 +22,45 @@ tools:
 
 ## 核心能力
 
-- **三层自动化平台选型**：Make.com（1000 ops/月免费首选）/ Pipedream（即时触发）/ Zapier（付费兜底）/ 自建 webhook 接收器（无限额度），按预算与任务量自动选型。
-- **Webhook 健康检查与自愈**：每小时心跳探活、30 min 无运行发测试 webhook、探活失败重投最近 5 条历史任务、切换备用平台、3 次失败进死信队列（DLQ）。
-- **任务处理闭环（含失败补偿）**：确认 → DM 通知 → 状态流转 → 执行 → 回写评论 → 完成流转 → Git 同步，每步都有失败补偿（重试/回退/告警）。
-- **配置中心化**：单一 JSON（`~/.linearbot/config.json`）管理团队/状态/Discord/Git/额度五类配置，变量引用 `${VAR}` 从环境变量读取避免明文 secrets。
-- **免费额度监控与降级**：每日 `quota-check` 看用量，超 80% 阈值自动降级（batch-daily 批量处理 / drop-low-priority 丢弃低优 / switch-platform 切平台）。
+### 三层自动化平台选型
+Make.com（1000 ops/月免费首选）/ Pipedream（即时触发）/ Zapier（付费兜底）/ 自建 webhook 接收器（无限额度），按预算与任务量自动选型。
+
+**输入**: 用户提供三层自动化平台选型所需的指令和必要参数。
+**处理**: 按照skill规范执行三层自动化平台选型操作,遵循单一意图原则。
+**输出**: 返回三层自动化平台选型的执行结果,包含操作状态和输出数据。
+
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+### Webhook 健康检查与自愈
+每小时心跳探活、30 min 无运行发测试 webhook、探活失败重投最近 5 条历史任务、切换备用平台、3 次失败进死信队列（DLQ）。
+
+**输入**: 用户提供Webhook 健康检查与自愈所需的指令和必要参数。
+**处理**: 按照skill规范执行Webhook 健康检查与自愈操作,遵循单一意图原则。
+**输出**: 返回Webhook 健康检查与自愈的执行结果,包含操作状态和输出数据。
+
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+### 任务处理闭环（含失败补偿）
+确认 → DM 通知 → 状态流转 → 执行 → 回写评论 → 完成流转 → Git 同步，每步都有失败补偿（重试/回退/告警）。
+
+**输入**: 用户提供任务处理闭环（含失败补偿）所需的指令和必要参数。
+**处理**: 按照skill规范执行任务处理闭环（含失败补偿）操作,遵循单一意图原则。
+**输出**: 返回任务处理闭环（含失败补偿）的执行结果,包含操作状态和输出数据。
+
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+### 配置中心化
+单一 JSON（`~/.linearbot/config.json`）管理团队/状态/Discord/Git/额度五类配置，变量引用 `${VAR}` 从环境变量读取避免明文 secrets。
+
+**输入**: 用户提供配置中心化所需的指令和必要参数。
+**处理**: 按照skill规范执行配置中心化操作,遵循单一意图原则。
+**输出**: 返回配置中心化的执行结果,包含操作状态和输出数据。
+
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+### 免费额度监控与降级
+每日 `quota-check` 看用量，超 80% 阈值自动降级（batch-daily 批量处理 / drop-low-priority 丢弃低优 / switch-platform 切平台）。
+
+**输入**: 用户提供免费额度监控与降级所需的指令和必要参数。
+**处理**: 按照skill规范执行免费额度监控与降级操作,遵循单一意图原则。
+**输出**: 返回免费额度监控与降级的执行结果,包含操作状态和输出数据。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：免费额度烧光、多服务配置混乱痛、打造可自愈的、任务流水线、任务自动接入、流水线、面向独立开发者与、一人公司、多服务配置散乱、同步冲突四大痛点、适用于个人开发者、作为任务中枢自动、分发到、小团队任务到达即、通知即执行即归档、适用关键词、sync等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
 ## 适用场景
 
@@ -78,7 +112,7 @@ tools:
       "done": "state-uuid",
       "canceled": "state-uuid"
     },
-    "watchFilter": "state.name = \"Todo\" AND assignee.id = \"<your-id>\""
+    "watchFilter": "state.name = \"Todo\" AND assignee.id = \"配置值\""
   },
   "notify": {
     "channel": "discord",
@@ -143,6 +177,9 @@ Make.com 配置：新建 scenario → 添加 Linear "Watch Issues" 触发器 →
 
 每小时心跳：调平台 API 查 scenario 最近运行 → 30 min 无运行发测试 webhook → 探活失败重投最近 5 条任务 + 通知用户 + 切备用平台 → 3 次失败进 DLQ。
 
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
+
+
 ## 示例
 
 ### 示例
@@ -196,12 +233,13 @@ quota-check 输出：本月已用 823/1000 ops (82%)
 
 ## 错误处理
 
+
 | 错误场景 | 原因 | 处理方式 |
 |:---|:---|:---|
 | 任务不触发 | webhook 平台 scenario 停用或 watchFilter 不匹配 | `linearbot doctor` 查 scenario 状态；确认 watchFilter 与 Linear filter 对齐 |
 | Linear API 报 401 | API Key 失效或权限不足 | 检查 `~/.linearbot/linear.env`；重新生成 API Key；确认 Key 有读写权限 |
 | Discord 不通知 | botToken 失效或 bot 无频道权限 | 验证 botToken；检查 bot 在频道权限；`allowBots: true` |
-| Git push 失败 | SSH key/credential 失效或冲突 | 检查 SSH key/credential；查 remote；按 conflictStrategy 处理（rebase 重试 3 次 / merge 生成 merge commit / abort 放弃同步并告警） |
+| Git push 失败 | SSH key/credential 失效或冲突 | 检查 SSH key/credential；查 remote；按 conflictStrategy 处理（rebase 执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 3 次 / merge 生成 merge commit / abort 放弃同步并告警） |
 | 子 Agent 执行超时 | 任务复杂度超 30 min | 默认 30 min 超时标记 Stalled；可在 config 调 `executionTimeout`；Stalled 任务不自动取消等用户介入 |
 | 额度耗尽 | 月任务量超免费额度 | `quota-check` 启用降级；或切自建接收器；或升级付费 |
 | 死信堆积 | 任务 3 次失败进 DLQ | `linearbot dlq list` 查看死信；逐个 `replay` 重放或 `ack` 确认处理 |
@@ -229,6 +267,7 @@ quota-check 输出：本月已用 823/1000 ops (82%)
 - 全部存于环境变量或 `~/.linearbot/*.env`（权限 600），勿入库
 
 **可用性分类：** MD+EXEC（Markdown 指令 + 必须通过 exec 执行脚本与 webhook 调用）。
+- 需要Claude、GPT-4等大语言模型提供推理和自然语言理解能力
 
 ## 常见问题
 

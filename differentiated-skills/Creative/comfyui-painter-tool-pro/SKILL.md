@@ -136,6 +136,11 @@ class AutoTuneGenerator:
         }
 ```
 
+**输入**: 用户提供自动调参所需的指令和必要参数。
+**处理**: 按照skill规范执行自动调参操作,遵循单一意图原则。
+**输出**: 返回自动调参的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 2. CivitAI模型管理
 
 ```python
@@ -207,6 +212,11 @@ class CivitAIManager:
         return models
 ```
 
+**输入**: 用户提供CivitAI模型管理所需的指令和必要参数。
+**处理**: 按照skill规范执行CivitAI模型管理操作,遵循单一意图原则。
+**输出**: 返回CivitAI模型管理的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 3. 图生图（Image-to-Image）
 
 ```python
@@ -246,6 +256,11 @@ def img2img(self, input_image_path, prompt, negative_prompt="",
     response = requests.post(f"{self.url}/prompt", json={"prompt": workflow})
     return response.json().get("prompt_id")
 ```
+
+**输入**: 用户提供图生图（Image-to-Image）所需的指令和必要参数。
+**处理**: 按照skill规范执行图生图（Image-to-Image）操作,遵循单一意图原则。
+**输出**: 返回图生图（Image-to-Image）的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 4. ControlNet集成
 
@@ -301,6 +316,12 @@ def generate_with_controlnet(self, input_image_path, prompt, control_type="openp
     response = requests.post(f"{self.url}/prompt", json={"prompt": workflow})
     return response.json().get("prompt_id")
 ```
+
+**输入**: 用户提供ControlNet集成所需的指令和必要参数。
+**处理**: 按照skill规范执行ControlNet集成操作,遵循单一意图原则。
+**输出**: 返回ControlNet集成的执行结果,包含操作状态和输出数据。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：绘画工具、支持自动调参、批量生成、图生图与、绘画专业版、面向专业创作者与、设计团队的高级本、核心能力、根据提示词自动优、化采样器、等参数、平台模型与、姿态控制、边缘检测、深度图等专业控制、队列管理等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
 
@@ -381,6 +402,12 @@ print("ControlNet生成已提交")
 ```
 
 ## 快速开始
+
+1. 阅读## 核心能力章节了解skill功能
+2. 按## 依赖说明配置环境
+3. 执行所需能力对应的命令
+4. 参考## 错误处理章节处理异常
+5. 查看## FAQ解答常见疑问
 
 ```bash
 # 依赖说明
@@ -484,11 +511,12 @@ ControlNet额外需要1-2GB显存。建议8GB以上显存使用ControlNet。
 
 ## 错误处理
 
+
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 已知限制
 

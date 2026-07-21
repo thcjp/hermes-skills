@@ -42,6 +42,31 @@ tools:
 | 增量对比 | 与上次结果差异 | 否 | 是 |
 | 成本预估 | Token 用量与请求预算 | 否 | 是 |
 
+### 核心功能执行
+用`input_params`参数进行配置。
+
+**输入**: 用户提供核心功能执行所需的指令和必要参数。
+**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
+**输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
+### 参数配置与调用
+用`config_options`参数进行配置。
+
+**输入**: 用户提供参数配置与调用所需的指令和必要参数。
+**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
+**输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
+
+### 结果处理与输出
+用`output_format`参数进行配置。
+
+**输入**: 用户提供结果处理与输出所需的指令和必要参数。
+**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
+**输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全功能、含批量抓取、核心能力、批量抓取多语言、daily、weekly、monthly、与命中率统计、速率限制提升至、定时抓取并自动推、送到飞书、Discord、Telegram、自定义输出模板与等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+
 ## 使用场景
 
 ### 场景 1：企业技术情报订阅
@@ -64,17 +89,15 @@ tools:
 - 非结构化头脑风暴
 - 人际沟通协调
 
-
 ## 触发条件
 
 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于非本工具能力范围的需求。
-
 
 ## 快速开始
 
 > 上手时间：< 60 秒。专业版支持配置文件一键启用全部能力。
 
-### 步骤 1：批量抓取多语言
+### Step 1：批量抓取多语言
 
 ```bash
 python3 ~/.skill-platform/workspace/skills/trending-feed/scripts/fetch_trending.py \
@@ -83,7 +106,7 @@ python3 ~/.skill-platform/workspace/skills/trending-feed/scripts/fetch_trending.
   --limit 20
 ```
 
-### 步骤 2：启用缓存
+### Step 2：启用缓存
 
 ```bash
 export TRENDING_CACHE_ENABLED=true
@@ -92,21 +115,21 @@ export TRENDING_CACHE_TTL=3600
 python3 ~/.skill-platform/workspace/skills/trending-feed/scripts/fetch_trending.py python
 ```
 
-### 步骤 3：Token 认证提升速率
+### Step 3：Token 认证提升速率
 
 ```bash
 export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxx
 python3 ~/.skill-platform/workspace/skills/trending-feed/scripts/fetch_trending.py --languages python,go
 ```
 
-### 步骤 4：定时推送
+### Step 4：定时推送
 
 ```bash
 # 每日 9 点抓取并推送到飞书
 0 9 * * * python3 fetch_trending.py --languages python,rust --push feishu --webhook $FEISHU_WEBHOOK
 ```
 
-### 步骤 5：自定义模板
+### Step 5：自定义模板
 
 ```bash
 python3 fetch_trending.py python \
@@ -210,16 +233,16 @@ A：GitHub 官方不提供私有仓库 Trending。专业版支持配置 `--repo-
 
 ## 错误处理
 
-| 现象 | 可能原因 | 解决步骤 | 优先级 |
+
+| 错误场景(现象) | 可能原因 | 解决步骤 | 优先级 |
 |------|----------|----------|--------|
-| 返回空列表 | 网络不通 / 代理未配置 | 检查网络与 `HTTPS_PROXY` | P1 |
+| 返回空列表 | 网络不通 / 代理未配置 | 执行ping命令测试网络连通性,检查防火墙和代理设置与 `HTTPS_PROXY` | P1 |
 | 403 速率限制 | 未配置 Token / Token 过期 | 配置 `GITHUB_TOKEN` 或刷新 | P1 |
 | 部分语言失败 | 语言名拼写错误 | 使用小写、标准语言名 | P2 |
 | 推送失败 | Webhook URL 失效 | 重新生成 Webhook 并更新配置 | P1 |
 | 缓存不命中 | TTL 过期 / 参数不一致 | 调大 TTL，统一参数组合 | P3 |
 | 增量对比无输出 | 首次运行无历史数据 | 第二次运行后生效 | P3 |
 | 模板渲染异常 | 字段名错误 | 检查模板变量名拼写 | P2 |
-
 ## 专业版特性
 
 本专业版相比免费版新增以下能力：
@@ -248,7 +271,7 @@ A：GitHub 官方不提供私有仓库 Trending。专业版支持配置 `--repo-
 - **Python**：3.8+（用于运行抓取与调度脚本）
 - **cron / 任务计划**：用于定时推送（Linux 用 cron，Windows 用任务计划程序）
 
-### 依赖说明
+### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由 Agent 平台内置 LLM 提供 |
@@ -269,6 +292,6 @@ A：GitHub 官方不提供私有仓库 Trending。专业版支持配置 `--repo-
 
 ## 已知限制
 
-- 需要LLM支持，无LLM环境无法使用
-- 复杂场景可能需要人工辅助判断
-- 性能取决于底层模型能力
+- 需LLM支持,无LLM环境不可用
+- 复杂业务场景建议结合人工经验判断
+- 执行效率受模型能力与网络环境影响

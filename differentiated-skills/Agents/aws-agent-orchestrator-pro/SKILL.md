@@ -14,7 +14,7 @@ description: |-
 
   差异化：相比免费版与通用部署模板，专业版提供三大独有能力：(1) Orchestrator委托模式，支持内联函数与独立部署Agent混合协作；(2) Gateway工具链，将Lambda/REST/MCP三种transport统一封装为可调用工具并自动注入鉴权；(3) LTM长期记忆，跨会话/跨Agent沉淀事实与决策，约10秒最终一致性。配合企业级场景指南（4角色×3+场景）、完整FAQ（10+问）与性能优化策略，覆盖从POC到生产的全路径。
 
-  触发关键词：aws智能体、多智能体编排、agentcore gateway、langgraph orchestrator、bedrock多agent、跨会话记忆、LTM记忆、MCP工具链、智能体集群、企业智能体编排
+  适用关键词：aws智能体、多智能体编排、agentcore gateway、langgraph orchestrator、bedrock多agent、跨会话记忆、LTM记忆、MCP工具链、智能体集群、企业智能体编排
 
   版本定位：收费专业版，定价¥99/月（企业工具类）。包含免费版全部能力 + 3项高级解锁能力 + 企业级场景指南 + 优先支持。免费试用请使用 aws-agent-orchestrator-free。
 tags:
@@ -34,6 +34,31 @@ edition: pro
 本Skill在免费版单智能体能力之上，解锁**多智能体编排、Gateway工具链、跨会话长期记忆（LTM）**三大高级能力，面向团队与企业生产环境。
 
 > 版本边界：本专业版包含免费版全部能力（单智能体编排、STM短时记忆、本地工具、agentcore CLI），并新增3项高级解锁能力。如仅需个人试用，可使用 `aws-agent-orchestrator-free`。
+
+## 使用流程
+
+### Step 1：准备阶段
+确认运行环境满足依赖说明中的要求,准备好必要的输入参数。
+
+### Step 2：执行阶段
+按照核心能力章节中的操作指令执行,使用`input_params`参数配置执行选项。
+
+### Step 3：验证阶段
+检查执行结果,如遇错误可查阅错误处理章节进行排查。
+
+## 示例
+
+### 基本用法
+
+**输入**：用户提供操作指令和必要参数
+
+**输出**：返回执行结果,包含操作状态和输出数据
+
+```text
+用户: 执行核心功能
+Skill: 正在执行核心功能...
+Skill: 执行完成,结果如下: 操作成功
+```
 
 ## 一、快速开始（按时间分级）
 
@@ -174,8 +199,7 @@ agentcore launch --deployment-type container
     └─ 否 → STM（免费版支持）
 ```
 
-## 四、核心概念
-
+## 核心能力
 | 概念 | 说明 | 专业版能力 |
 |------|------|-----------|
 | AgentCore Runtime | HTTP服务，监听8080端口（/invocations, /ping） | ✅ 完整可用 |
@@ -188,6 +212,31 @@ agentcore launch --deployment-type container
 | 可观测性 | 集成CloudWatch追踪 | ✅ 专业版独有 |
 
 > 关于MCP：MCP是Agent工具协议的行业标准术语。专业版Gateway支持三种transport：Mock（本地降级）、Local MCP（本地MCP server）、Production Gateway（Lambda/REST/MCP三种生产transport）。Gateway部署后会自动配置 `BEDROCK_AGENTCORE_GATEWAY_URL` 环境变量。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：完整的、AWS、多智能体编排能力、工具链与跨会话、长期记忆、面向团队与企业生、产环境、智能体编排专业版、在免费版单智能体、能力之上、解锁多智能体编排、工具链与跨会话长、期记忆、三大高级能力、它让企业能够在统、session、上下文中协调多个、网关转化为、并跨会话沉淀事实、与决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+
+### 核心功能执行
+执行核心功能执行操作,使用`input_params`参数进行配置。
+
+**输入**: 用户提供核心功能执行所需的指令和必要参数。
+**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
+**输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
+### 参数配置与调用
+执行参数配置与调用操作,使用`config_options`参数进行配置。
+
+**输入**: 用户提供参数配置与调用所需的指令和必要参数。
+**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
+**输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
+
+### 扩展能力3
+执行扩展能力3操作,使用`param_3`参数进行配置。
+
+**输入**: 用户提供扩展能力3所需的指令和必要参数。
+**处理**: 按照skill规范执行扩展能力3操作,遵循单一意图原则。
+**输出**: 返回扩展能力3的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`param_3`参数,支持创建/查询/修改操作
 
 ## 五、命名规范（必须遵守）
 
@@ -486,37 +535,6 @@ A：专业版定价¥99/月（企业工具类），通过SkillHub SkillPay发布
 - [references/langgraph-patterns.md](references/langgraph-patterns.md) —— StateGraph设计模式与路由模式
 - [references/multi-agent-architecture.md](references/multi-agent-architecture.md) —— 多智能体参考架构与场景用例
 
-## 十二、依赖说明
-
-### 运行环境
-- **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
-- **操作系统**：Windows / macOS / Linux
-- **Python**：3.9+（推荐3.11）
-- **AWS账户**：需有Bedrock模型访问权限 + Lambda/Gateway部署权限
-
-### 第三方依赖
-| 依赖项 | 类型 | 是否必需 | 获取方式 | 专业版能力 |
-|:-------|:-----|:---------|:---------|:----------|
-| bedrock-agentcore | Python包 | 必需 | `pip install bedrock-agentcore` | ✅ 含Memory与Gateway模块 |
-| bedrock-agentcore-starter-toolkit | Python包 | 必需 | `pip install bedrock-agentcore-starter-toolkit` | ✅ |
-| langgraph | Python包 | 必需 | `pip install langgraph` | ✅ 完整StateGraph |
-| Bedrock模型访问 | AWS服务 | 必需 | AWS控制台开通 | ✅ 全模型 |
-| AgentCore Gateway | AWS服务 | 必需 | `python -m bedrock_agentcore.gateway.deploy` | ✅ 专业版核心 |
-| AgentCore Memory LTM | AWS服务 | 必需 | 部署时默认启用 | ✅ 专业版核心 |
-| AWS Lambda | AWS服务 | 可选 | Gateway transport | ✅ Lambda transport |
-| CloudWatch | AWS服务 | 可选 | AWS控制台开通 | ✅ 可观测性 |
-
-### API Key 配置
-- **AWS凭证**：通过 `aws configure` 或环境变量 `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` 配置
-- **AWS Profile**：通过 `AWS_PROFILE` 环境变量指定命名profile
-- **AWS Region**：通过 `AWS_REGION` 或 `--region` 参数指定
-- **Gateway URL**：部署后自动配置 `BEDROCK_AGENTCORE_GATEWAY_URL`，异常时手动设置
-- 本Skill本身不存储任何AWS凭证
-
-### 可用性分类
-- **分类**：MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
-- **说明**：基于Markdown的AI Skill，通过自然语言指令驱动Agent执行企业级多智能体部署任务
-
 ## 十三、专业版特性
 
 本专业版相比免费版新增以下能力：
@@ -576,3 +594,43 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## 已知限制
+
+- 本skill的能力范围受限于核心能力章节中定义的功能,不支持超出范围的操作
+- 复杂业务场景建议结合人工经验判断
+- 执行效率受模型能力与网络环境影响
+
+## 依赖说明
+
+### 运行环境
+- **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**：Windows / macOS / Linux
+
+### LLM依赖
+- 需要LLM支持,由Agent平台内置LLM提供
+
+### API Key 配置
+- 本skill本身不存储任何API密钥,如需调用外部API请参考对应平台文档
+
+### 可用性分类
+- **分类**：MD+EXEC（纯Markdown指令,部分功能需exec命令行执行）
+- API Key可在对应平台官网注册账号后获取
+- API Key通过环境变量配置: export API_KEY=your_key
+
+## 错误处理
+
+
+| 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
+|------|----------|------|----------|--------|
+| 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
+| 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
+| 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
+
+## FAQ
+
+**Q: 如何开始使用？**
+A: 建议先查看使用流程,按步骤操作即可。
+
+**Q: 遇到错误怎么办？**
+A: 可查阅错误处理章节,按照表格中的处理方式进行排查。

@@ -1,0 +1,67 @@
+﻿================================================================================
+差异化skill质量验证 (L3+L4+SF)
+================================================================================
+Found 1251 differentiated skills across 16 categories
+  Progress: 50/1251 (L3:0 L4:0 SF:15 Combined:0)
+  Progress: 100/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 150/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 200/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 250/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 300/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 350/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 400/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 450/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 500/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 550/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 600/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 650/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 700/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 750/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 800/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 850/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 900/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 950/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 1000/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 1050/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 1100/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 1150/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 1200/1251 (L3:0 L4:0 SF:16 Combined:0)
+  Progress: 1250/1251 (L3:0 L4:0 SF:16 Combined:0)
+
+================================================================================
+验证结果摘要
+================================================================================
+Total skills: 1251
+L3 PASS: 0 (0.0%)
+L4 PASS+WARN: 0 (0.0%)
+SF>=70: 16 (1.3%)
+Combined pass: 0 (0.0%)
+
+按类别统计:
+  Agents: 0/73 (0.0%)
+  Automation: 0/106 (0.0%)
+  Communication: 0/76 (0.0%)
+  Creative: 0/130 (0.0%)
+  Development: 0/100 (0.0%)
+  Finance: 0/24 (0.0%)
+  Integrations: 0/192 (0.0%)
+  Knowledge: 0/64 (0.0%)
+  Lifestyle: 0/36 (0.0%)
+  Operations: 0/28 (0.0%)
+  Other: 0/180 (0.0%)
+  Productivity: 0/78 (0.0%)
+  Research: 0/116 (0.0%)
+  Security: 0/48 (0.0%)
+
+失败skill数: 1251
+失败维度统计:
+  L3-L3-1: 1251
+  L3-L3-2: 1251
+  L3-L3-3: 1251
+  L3-L3-4: 1251
+  L3-L3-5: 1251
+  L3-L3-6: 1251
+  L3-L3-7: 1251
+  SF<70: 1235
+
+Results saved to: D:\skills\skill-registry\differentiated_verification_results.json

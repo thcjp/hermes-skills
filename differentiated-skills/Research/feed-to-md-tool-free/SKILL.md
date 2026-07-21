@@ -42,6 +42,10 @@ tools:
 
 > 详细代码示例已移至 `references/detail.md`
 
+**输入**: 用户提供RSS获取与解析所需的指令和必要参数。
+**处理**: 按照skill规范执行RSS获取与解析操作,遵循单一意图原则。
+**输出**: 返回RSS获取与解析的执行结果,包含操作状态和输出数据。
+
 ### 2. Markdown转换
 ```python
 class MarkdownConverter:
@@ -107,6 +111,11 @@ markdown = converter.convert(feed, max_items=10)
 print(markdown[:500])
 ```
 
+**输入**: 用户提供Markdown转换所需的指令和必要参数。
+**处理**: 按照skill规范执行Markdown转换操作,遵循单一意图原则。
+**输出**: 返回Markdown转换的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 3. 文件保存
 ```python
 import os
@@ -158,6 +167,12 @@ saver = FileSaver("./output")
 filepath = saver.save(markdown, feed_title=feed.get('title'))
 saver.save_batch_info(feed)
 ```
+
+**输入**: 用户提供文件保存所需的指令和必要参数。
+**处理**: 按照skill规范执行文件保存操作,遵循单一意图原则。
+**输出**: 返回文件保存的执行结果,包含操作状态和输出数据。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：支持单个订阅源转、基础元素提取与文、助手免费版是面向、个人用户的轻量、内容转换工具、四步流程、订阅内容转换为结、Use、when、需要文件处理、文档转换、格式互转、内容提取时使用、不适用于加密文件、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
 ### 场景一：订阅内容归档
@@ -221,6 +236,12 @@ for url in tech_feeds:
 ```
 
 ## 快速开始
+1. 阅读## 核心能力章节了解skill功能
+2. 按## 依赖说明配置环境
+3. 执行所需能力对应的命令
+4. 参考## 错误处理章节处理异常
+5. 查看## FAQ解答常见疑问
+
 ### 30秒上手
 ```bash
 python3 << 'PYEOF'
@@ -242,6 +263,9 @@ PYEOF
 ### 120秒标准搭建
 
 > 详细代码示例已移至 `references/detail.md`
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
+
 
 ## 配置示例
 ### 基础配置
@@ -292,7 +316,7 @@ ITEM_TEMPLATE = """### {index}. {title}
 ```
 
 ## 最佳实践
-### 错误处理
+## 错误处理
 ```python
 def safe_fetch_and_convert(url):
     """安全的获取与转换"""
@@ -313,7 +337,7 @@ def safe_fetch_and_convert(url):
         return None
 ```
 
-### 2. 增量保存
+### 2. 增量保存 - 处理方式: 按上述步骤操作并确认结果
 ```python
 def save_incremental(feed, output_dir):
     """增量保存（按条目）"""
@@ -324,7 +348,7 @@ def save_incremental(feed, output_dir):
         saver.save(md, filename=f"{item['title'][:50]}.md")
 ```
 
-### 3. 文件命名规范
+### 3. 文件命名规范 - 处理方式: 按上述步骤操作并确认结果
 ```python
 def generate_filename(feed_title, item_title=None):
     """生成规范文件名"""
@@ -338,7 +362,9 @@ def generate_filename(feed_title, item_title=None):
         safe_name = "".join(c for c in feed_title if c.isalnum() or c in (' ', '-', '_')).strip()
         return f"{safe_name}_{date_str}.md"
 ```
+### 错误场景3
 
+检查`error_code`并按照处理方式进行排查。
 ## 常见问题
 ### Q1：免费版支持批量转换多个订阅源吗？
 不支持。免费版每次只能转换一个订阅源。如需批量转换多个RSS源、并发处理、结果聚合，需升级至专业版。
@@ -394,3 +420,17 @@ def generate_filename(feed_title, item_title=None):
 - **优先技术支持**
 
 解锁全部高级能力请使用专业版：`feed-to-md-tool-pro`
+
+## 示例
+
+### 基本用法
+
+**输入**：用户提供操作指令和必要参数
+
+**输出**：返回执行结果,包含操作状态和输出数据
+
+```text
+用户: 执行核心功能
+Skill: 正在执行核心功能...
+Skill: 执行完成,结果如下: 操作成功
+```

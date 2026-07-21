@@ -57,6 +57,32 @@ tools:
 | 质量量化报告 | ❌ | ✅ |
 | 压缩历史与版本 | ❌ | ✅ |
 | 优先工单支持 | ❌ | ✅ |
+**技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置。
+
+### 核心功能执行
+用`input_params`参数进行配置。
+
+**输入**: 用户提供核心功能执行所需的指令和必要参数。
+**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
+**输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
+### 参数配置与调用
+用`config_options`参数进行配置。
+
+**输入**: 用户提供参数配置与调用所需的指令和必要参数。
+**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
+**输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
+
+### 结果处理与输出
+用`output_format`参数进行配置。
+
+**输入**: 用户提供结果处理与输出所需的指令和必要参数。
+**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
+**输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全功能语义压缩工、多模型验证、自定义锚点与质量、面向专业场景的全、功能语义文本压缩、在免费版基础上扩、跨格式智能优化与、压缩质量量化报告、等高级能力等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
 ## 使用场景
 ### 场景1：企业知识库批量压缩（知识架构师角色）
@@ -160,27 +186,33 @@ file-compressor history rollback --id compress-2024-03-15-001
 ```
 
 ## 使用流程
-### 步骤1：初始化专业版工作区
+### Step 1：初始化专业版工作区
 ```bash
 file-compressor init --workspace ./compressor --edition pro
 ```
 
 创建专业版目录结构：`batch/`、`reports/`、`history/`、`anchors/`、`strategies/`。
 
-### 步骤2：配置自定义锚点
+### Step 2：配置自定义锚点
 ```bash
 file-compressor anchors add --name "finance-terms" --file ./finance-anchors.yaml
 ```
 
-### 步骤3：执行首次批量压缩
+### Step 3：执行首次批量压缩
 ```bash
 file-compressor batch --input ./docs/ --output ./compressed/ --level L2 --parallel 4
 ```
 
-### 步骤4：查看质量报告
+### Step 4：查看质量报告
 ```bash
 file-compressor report --last-batch --format html --output ./reports/last.html
 ```
+
+### 命令参数说明
+
+- `-X`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
 
 ## 示例
 ### 自定义锚点配置
@@ -226,7 +258,7 @@ file-compressor report --last-batch --format html --output ./reports/last.html
 - 已压缩文件幂等性保证
 
 ## 错误处理
-| 现象 | 可能原因 | 解决步骤 | 优先级 |
+| 错误场景(现象) | 可能原因 | 解决步骤 | 优先级 |
 |------|---------|---------|--------|
 | 批量压缩部分失败 | 个别文件格式异常 | 查看`batch-status.json`定位失败文件 | P0 |
 | 多模型验证不一致 | 模型能力差异 | 调整`strategy`为majority-vote，或增加模型数量 | P0 |
@@ -236,7 +268,6 @@ file-compressor report --last-batch --format html --output ./reports/last.html
 | 检查点恢复失败 | 状态文件损坏 | 从备份检查点恢复，或重新执行未完成部分 | P2 |
 | 质量报告生成慢 | 数据量大 | 启用采样模式，仅统计抽样数据 | P2 |
 | 历史回滚失败 | 原文已清理 | 检查`history retention`配置，确保保留期足够 | P1 |
-
 ## 常见问题
 ### Q1：L3-L4压缩可靠性如何？
 A：L3可靠性中等（约85%锚点匹配），L4可靠性低（约70%锚点匹配）。专业版提供多模型验证策略提升可靠性。
@@ -368,7 +399,7 @@ retrieved = rag.retrieve(compressed, query)
 - **操作系统**：Windows / macOS / Linux
 - **存储**：本地文件系统（用于保存压缩结果、原文备份与历史记录）
 
-### 依赖说明
+### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |

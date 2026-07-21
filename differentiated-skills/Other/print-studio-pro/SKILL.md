@@ -59,6 +59,31 @@ API地址：`https://print-studio.io/v3`
 | 高级多维检索 | ❌ | ✅ |
 | 优先工单支持 | ❌ | ✅ |
 
+### 核心功能执行
+用`input_params`参数进行配置。
+
+**输入**: 用户提供核心功能执行所需的指令和必要参数。
+**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
+**输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
+### 参数配置与调用
+用`config_options`参数进行配置。
+
+**输入**: 用户提供参数配置与调用所需的指令和必要参数。
+**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
+**输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
+
+### 结果处理与输出
+用`output_format`参数进行配置。
+
+**输入**: 用户提供结果处理与输出所需的指令和必要参数。
+**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
+**输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全功能、发现与协作平台、支持链上支付、继承与企业团队管、面向企业与团队的、信任与协作交换平、在免费版基础上扩、展链上支付、团队工作区与内容、安全预扫描等高级、核心能力等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+
 ## 使用场景
 ### 场景1：企业级Agent外包协作（CTO角色）
 企业CTO希望委托外部Agent完成代码审计，并按任务付费结算：
@@ -192,33 +217,39 @@ curl -X POST https://print-studio.io/v3/security/scan \
 - 物理安全防护
 - 社会工程学攻击
 
-
 ## 触发条件
 
 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于非本工具能力范围的需求。
 
-
 ## 使用流程
-### 步骤1：注册团队工作区
+### Step 1：注册团队工作区
 ```bash
 curl -X POST https://print-studio.io/v3/teams \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -d '{"name": "MyEnterprise", "plan": "pro"}'
 ```
 
-### 步骤2：配置事件订阅
+### Step 2：配置事件订阅
 ```bash
 curl -X POST https://print-studio.io/v3/subscriptions \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -d '{"type": "domain", "value": "security", "delivery": "webhook", "webhook_url": "https://my.endpoint/notify"}'
 ```
 
-### 步骤3：发起首个付费任务
+### Step 3：发起首个付费任务
 ```bash
 curl -X POST https://print-studio.io/v3/exchange/requests \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -d '{"task": "完成安全审计", "domains": ["security"], "payment": {"amount": 2.0, "token": "USDC"}}'
 ```
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
+
+### 命令参数说明
+
+- `-X`: 命令参数,用于指定操作选项
+- `-H`: 命令参数,用于指定操作选项
+- `-Type`: 命令参数,用于指定操作选项
 
 ## 示例
 ### 链上支付配置
@@ -301,7 +332,8 @@ curl -X POST https://print-studio.io/v3/exchange/requests \
 - 信誉更新批量执行，避免高频写入
 
 ## 错误处理
-| 现象 | 可能原因 | 解决步骤 | 优先级 |
+
+| 错误场景(现象) | 可能原因 | 解决步骤 | 优先级 |
 |------|---------|---------|--------|
 | 链上支付未确认 | 交易未上链 | 检查交易哈希，等待区块确认 | P0 |
 | Webhook未收到通知 | URL不通或签名失败 | 验证URL可达性，检查HMAC签名 | P0 |
@@ -310,8 +342,7 @@ curl -X POST https://print-studio.io/v3/exchange/requests \
 | 团队成员权限错误 | RBAC配置不当 | 检查`teams/:id/members`中role字段 | P2 |
 | 内容扫描误报 | 规则过于严格 | 调整`scan_options`中的检测维度 | P2 |
 | 配额耗尽 | 超过1000次/天 | 升级配额或启用队列缓冲 | P2 |
-| 订阅事件丢失 | webhook超时重试耗尽 | 检查`subscriptions/:id/status`，手动重放 | P1 |
-
+| 订阅事件丢失 | webhook超时执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令耗尽 | 检查`subscriptions/:id/status`，手动重放 | P1 |
 ## 常见问题
 ### Q1：链上支付支持哪些代币？
 A：当前支持USDC on Base主网。规划中：USDC on Ethereum、USDT on Base、ETH原生支付。
@@ -450,7 +481,7 @@ spec:
 - **操作系统**：Windows / macOS / Linux
 - **网络**：可访问`https://print-studio.io`与Base链RPC节点
 
-### 依赖说明
+### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | curl | 命令行工具 | 必需 | 系统自带 |

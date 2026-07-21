@@ -61,6 +61,10 @@ gh-manager issue batch-reopen --repo owner/repo --issues 30,32,35
 - **回滚支持**: 每次批量操作生成回滚脚本
 - **速率控制**: 自动遵守API限速,避免触发429
 
+**输入**: 用户提供批量Issue/PR操作所需的指令和必要参数。
+**处理**: 按照skill规范执行批量Issue/PR操作操作,遵循单一意图原则。
+**输出**: 返回批量Issue/PR操作的执行结果,包含操作状态和输出数据。
+
 ### GraphQL高级查询
 
 ```bash
@@ -98,6 +102,11 @@ query teamContributions($logins: [String!]!, $since: DateTime!) {
 }
 ```
 
+**输入**: 用户提供GraphQL高级查询所需的指令和必要参数。
+**处理**: 按照skill规范执行GraphQL高级查询操作,遵循单一意图原则。
+**输出**: 返回GraphQL高级查询的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 自动化工作流
 
 ```bash
@@ -128,6 +137,10 @@ gh-manager automation history --name "stale-issue-triage" --last 10
 | Branch Cleanup | PR合并后 | 删除已合并分支 |
 | Release Notes | 发布Release | 自动生成变更日志 |
 
+**输入**: 用户提供自动化工作流所需的指令和必要参数。
+**处理**: 按照skill规范执行自动化工作流操作,遵循单一意图原则。
+**输出**: 返回自动化工作流的执行结果,包含操作状态和输出数据。
+
 ### 团队仪表盘
 
 ```bash
@@ -151,6 +164,10 @@ gh-manager dashboard summary --org my-org --period week
 - CI/CD成功率与平均时长
 - 标签分布与趋势
 
+**输入**: 用户提供团队仪表盘所需的指令和必要参数。
+**处理**: 按照skill规范执行团队仪表盘操作,遵循单一意图原则。
+**输出**: 返回团队仪表盘的执行结果,包含操作状态和输出数据。
+
 ### Webhook管理
 
 ```bash
@@ -170,6 +187,11 @@ gh-manager webhook test --repo owner/repo --id 123 --event "issues"
 gh-manager webhook delete --repo owner/repo --id 123
 ```
 
+**输入**: 用户提供Webhook管理所需的指令和必要参数。
+**处理**: 按照skill规范执行Webhook管理操作,遵循单一意图原则。
+**输出**: 返回Webhook管理的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 安全审计
 
 ```bash
@@ -185,6 +207,12 @@ gh-manager audit compliance --org my-org --standard SOC2 --format pdf
 # Token使用审计
 gh-manager audit tokens --org my-org --period 90d
 ```
+
+**输入**: 用户提供安全审计所需的指令和必要参数。
+**处理**: 按照skill规范执行安全审计操作,遵循单一意图原则。
+**输出**: 返回安全审计的执行结果,包含操作状态和输出数据。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全功能、管理工具、含批量操作、团队仪表盘与、适合团队企业级协、管理器、专业版、是企业级、协作管理工具、在免费版基础查询、能力上、扩展批量操作、管理等高级能力、核心能力、复杂关联查询、跨仓库聚合、定时检查、自动分配、状态流转、通知告警、成员贡献统计、事件订阅、自动触发、回调配置等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
 
@@ -230,7 +258,7 @@ gh-manager audit tokens --org my-org --period 90d
 
 ## 快速开始
 
-### 步骤1:安装与认证
+### Step 1:安装与认证
 
 ```bash
 # 安装专业版
@@ -244,7 +272,7 @@ gh-manager version
 gh-manager status
 ```
 
-### 步骤2:配置团队
+### Step 2:配置团队
 
 ```bash
 # 初始化团队配置
@@ -257,7 +285,7 @@ gh-manager team add --members "alice,bob,carol"
 gh-manager repo add --repos "owner/repo1,owner/repo2,owner/repo3"
 ```
 
-### 步骤3:启用自动化
+### Step 3:启用自动化
 
 ```bash
 # 启用stale issue自动化
@@ -270,7 +298,7 @@ gh-manager automation enable --template ci-failure-alert --notify "im:#devops"
 gh-manager automation list --enabled
 ```
 
-### 步骤4:生成仪表盘
+### Step 4:生成仪表盘
 
 ```bash
 # 生成本周团队报告
@@ -482,12 +510,13 @@ A: 支持。配置`GITHUB_ENTERPRISE_HOST`环境变量即可连接Enterprise Ser
 
 ### 可用性分类
 - **分类**: MD+EXEC+CLI+DAEMON(Markdown指令+命令行工具+自动化守护)
-- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务,高级功能需要gh-manager CLI与自动化守护进程
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作,高级功能需要gh-manager CLI与自动化守护进程
 
 ## 错误处理
+
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

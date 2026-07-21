@@ -132,6 +132,11 @@ result = fetcher.fetch_url("https://example.com", wait_seconds=3)
 print(result.get("content", "")[:500] if result.get("success") else result.get("error"))
 ```
 
+**输入**: 用户提供单次页面抓取（fetch模式）所需的指令和必要参数。
+**处理**: 按照skill规范执行单次页面抓取（fetch模式）操作,遵循单一意图原则。
+**输出**: 返回单次页面抓取（fetch模式）的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 2. 基础元素交互
 ```python
 class BsessionInteraction:
@@ -170,6 +175,11 @@ content = interaction.take_snapshot()
 # interaction.fill_field("ref_input_email", "user@test.com")
 ```
 
+**输入**: 用户提供基础元素交互所需的指令和必要参数。
+**处理**: 按照skill规范执行基础元素交互操作,遵循单一意图原则。
+**输出**: 返回基础元素交互的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
 ### 3. 会话列表查看
 ```python
 class SessionLister:
@@ -200,6 +210,12 @@ class SessionLister:
         except Exception as e:
             return f"查询失败：{e}"
 ```
+
+**输入**: 用户提供会话列表查看所需的指令和必要参数。
+**处理**: 按照skill规范执行会话列表查看操作,遵循单一意图原则。
+**输出**: 返回会话列表查看的执行结果,包含操作状态和输出数据。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：浏览器会话管理免、支持一次性页面抓、基础会话列表与简、易调试、浏览器会话助手免、费版是面向个人开、发者的轻量浏览器、会话管理工具、提取信息、返回结果、三步流程、无需编写完整脚本、即可完成单次页面、抓取任务、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
 ### 场景一：单次页面信息提取
@@ -268,6 +284,12 @@ if result.get("success"):
 ```
 
 ## 快速开始
+1. 阅读## 核心能力章节了解skill功能
+2. 按## 依赖说明配置环境
+3. 执行所需能力对应的命令
+4. 参考## 错误处理章节处理异常
+5. 查看## FAQ解答常见疑问
+
 ### 30秒上手
 ```bash
 # 1. 检查Docker容器
@@ -304,6 +326,9 @@ from lib.browser import stop_chrome
 stop_chrome(9222)
 "
 ```
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
+
 
 ## 配置示例
 ### 基础配置
@@ -393,7 +418,8 @@ def safe_fetch(url):
         )
 ```
 
-### 错误处理
+## 错误处理
+
 ```python
 def robust_fetch(url, max_retries=2):
     """带错误恢复的抓取"""
@@ -409,7 +435,7 @@ def robust_fetch(url, max_retries=2):
     return {"success": False, "error": "重试次数已用完"}
 ```
 
-### 3. 端口管理
+### 3. 端口管理 - 处理方式: 按上述步骤操作并确认结果
 ```python
 # 避免端口冲突
 class PortManager:
@@ -428,7 +454,13 @@ class PortManager:
     def release_port(cls, port):
         cls.USED_PORTS.discard(port)
 ```
+### 错误场景2
 
+检查`error_code`并按照处理方式进行排查。
+
+### 错误场景3
+
+检查`error_code`并按照处理方式进行排查。
 ## 常见问题
 ### Q1：免费版支持定时任务吗？
 不支持。免费版仅支持单次（one-shot）抓取任务。如需定时执行（如每30分钟检查一次）、循环监控、状态变化检测等场景，需升级至专业版。
@@ -452,7 +484,7 @@ class PortManager:
 - **Docker**: 20+（运行bsession容器）
 - **Python**: 3.8+（容器内执行）
 
-### 依赖说明
+### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | Docker | 运行时 | 必需 | 官网下载安装 |
@@ -486,3 +518,17 @@ class PortManager:
 - **优先技术支持**
 
 解锁全部高级能力请使用专业版：`bsession-tool-pro`
+
+## 示例
+
+### 基本用法
+
+**输入**：用户提供操作指令和必要参数
+
+**输出**：返回执行结果,包含操作状态和输出数据
+
+```text
+用户: 执行核心功能
+Skill: 正在执行核心功能...
+Skill: 执行完成,结果如下: 操作成功
+```

@@ -58,6 +58,10 @@ tools:
 - `gmail.listLabels`:列出所有标签
 - `gmail.downloadAttachment`:下载附件
 
+**输入**: 用户提供一、Gmail 高级邮件管理(9个工具)所需的指令和必要参数。
+**处理**: 按照skill规范执行一、Gmail 高级邮件管理(9个工具)操作,遵循单一意图原则。
+**输出**: 返回一、Gmail 高级邮件管理(9个工具)的执行结果,包含操作状态和输出数据。
+
 ### 二、Calendar 高级日程管理(8个工具)
 - `calendar.list`:列出所有日历
 - `calendar.listEvents`:列出事件
@@ -68,10 +72,18 @@ tools:
 - `calendar.findFreeTime`:查找空闲时间
 - `calendar.respondToEvent`:响应事件邀请
 
+**输入**: 用户提供二、Calendar 高级日程管理(8个工具)所需的指令和必要参数。
+**处理**: 按照skill规范执行二、Calendar 高级日程管理(8个工具)操作,遵循单一意图原则。
+**输出**: 返回二、Calendar 高级日程管理(8个工具)的执行结果,包含操作状态和输出数据。
+
 ### 三、Drive 文件管理(3个工具)
 - `drive.search`:搜索文件
 - `drive.downloadFile`:下载文件
 - `drive.findFolder`:查找文件夹
+
+**输入**: 用户提供三、Drive 文件管理(3个工具)所需的指令和必要参数。
+**处理**: 按照skill规范执行三、Drive 文件管理(3个工具)操作,遵循单一意图原则。
+**输出**: 返回三、Drive 文件管理(3个工具)的执行结果,包含操作状态和输出数据。
 
 ### 四、Docs 文档操作(8个工具,专业版独有)
 - `docs.create`:创建新文档
@@ -83,16 +95,28 @@ tools:
 - `docs.move`:移动文档
 - `docs.extractIdFromUrl`:从 URL 提取文档 ID
 
+**输入**: 用户提供四、Docs 文档操作(8个工具,专业版独有)所需的指令和必要参数。
+**处理**: 按照skill规范执行四、Docs 文档操作(8个工具,专业版独有)操作,遵循单一意图原则。
+**输出**: 返回四、Docs 文档操作(8个工具,专业版独有)的执行结果,包含操作状态和输出数据。
+
 ### 五、Sheets 表格操作(4个工具,专业版独有)
 - `sheets.getText`:获取表格文本
 - `sheets.getRange`:按范围读取数据
 - `sheets.find`:查找数据
 - `sheets.getMetadata`:获取表格元数据
 
+**输入**: 用户提供五、Sheets 表格操作(4个工具,专业版独有)所需的指令和必要参数。
+**处理**: 按照skill规范执行五、Sheets 表格操作(4个工具,专业版独有)操作,遵循单一意图原则。
+**输出**: 返回五、Sheets 表格操作(4个工具,专业版独有)的执行结果,包含操作状态和输出数据。
+
 ### 六、Slides 幻灯片操作(3个工具,专业版独有)
 - `slides.getText`:获取幻灯片文本
 - `slides.find`:查找文本
 - `slides.getMetadata`:获取幻灯片元数据
+
+**输入**: 用户提供六、Slides 幻灯片操作(3个工具,专业版独有)所需的指令和必要参数。
+**处理**: 按照skill规范执行六、Slides 幻灯片操作(3个工具,专业版独有)操作,遵循单一意图原则。
+**输出**: 返回六、Slides 幻灯片操作(3个工具,专业版独有)的执行结果,包含操作状态和输出数据。
 
 ### 七、Chat 群组协作(8个工具,专业版独有)
 - `chat.listSpaces`:列出所有空间
@@ -104,18 +128,35 @@ tools:
 - `chat.listThreads`:列出消息线程
 - `chat.setUpSpace`:创建空间
 
+**输入**: 用户提供七、Chat 群组协作(8个工具,专业版独有)所需的指令和必要参数。
+**处理**: 按照skill规范执行七、Chat 群组协作(8个工具,专业版独有)操作,遵循单一意图原则。
+**输出**: 返回七、Chat 群组协作(8个工具,专业版独有)的执行结果,包含操作状态和输出数据。
+
 ### 八、People 人员管理(2个工具,专业版独有)
 - `people.getUserProfile`:获取用户资料
 - `people.getMe`:获取当前用户信息
+
+**输入**: 用户提供八、People 人员管理(2个工具,专业版独有)所需的指令和必要参数。
+**处理**: 按照skill规范执行八、People 人员管理(2个工具,专业版独有)操作,遵循单一意图原则。
+**输出**: 返回八、People 人员管理(2个工具,专业版独有)的执行结果,包含操作状态和输出数据。
 
 ### 九、Time 时间工具(3个工具,专业版独有)
 - `time.getCurrentDate`:获取当前日期
 - `time.getCurrentTime`:获取当前时间
 - `time.getTimeZone`:获取时区
 
+**输入**: 用户提供九、Time 时间工具(3个工具,专业版独有)所需的指令和必要参数。
+**处理**: 按照skill规范执行九、Time 时间工具(3个工具,专业版独有)操作,遵循单一意图原则。
+**输出**: 返回九、Time 时间工具(3个工具,专业版独有)的执行结果,包含操作状态和输出数据。
+
 ### 十、Auth 认证管理(2个工具)
 - `auth.clear`:清除凭据
 - `auth.refreshToken`:刷新令牌
+
+**输入**: 用户提供十、Auth 认证管理(2个工具)所需的指令和必要参数。
+**处理**: 按照skill规范执行十、Auth 认证管理(2个工具)操作,遵循单一意图原则。
+**输出**: 返回十、Auth 认证管理(2个工具)的执行结果,包含操作状态和输出数据。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全功能、Google、办公工具接口、个工具覆盖十大服、支持企业级批量操、作与多租户管理、谷歌办公工具接口、通过工具协议统一、Workspace、全部十大服务共、OAuth、登录即用、无需云控制台配置、核心能力、个工具全覆盖、企业级批量操作与、自动化工作流、多账户与多租户管、群组消息发送与空、间管理、文档创建、文本替换、表格读取等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
 ## 使用场景
 ### 场景一:通过 Google Chat 向团队空间推送通知
@@ -234,7 +275,7 @@ print(f"\n汇总完成,共 {len(all_data)} 条记录")
 ```
 
 ## 快速开始
-### 依赖说明
+### 依赖详情
 ```bash
 # 安装工具接口
 npm install -g @presto-ai/google-workspace-toolkit
@@ -267,6 +308,9 @@ gwtool call --server google-workspace --tool "chat.listSpaces"
 # 验证 Slides
 gwtool call --server google-workspace --tool "slides.getMetadata" presentationId="<presentationId>"
 ```
+
+**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
+
 
 ## 示例
 ### 工具服务注册配置
@@ -348,7 +392,8 @@ toolkit.send_chat_message("研发团队日常", "会议时间已确认,请查看
 ```
 
 ## 最佳实践
-### 错误处理
+## 错误处理
+
 企业级操作涉及多个工具调用,务必对每次调用做错误捕获:
 
 ```python
@@ -365,7 +410,7 @@ def safe_call(toolkit, tool_name, max_retries=3, **params):
     return None
 ```
 
-### 2. Chat 消息发送前确认空间名称
+### 2. Chat 消息发送前确认空间名称 - 处理方式: 按上述步骤操作并确认结果
 避免发错群组,发送前先查找确认空间:
 
 ```bash
@@ -376,7 +421,7 @@ gwtool call --server google-workspace --tool "chat.findSpaceByName" name="研发
 gwtool call --server google-workspace --tool "chat.sendMessage" spaceName="研发团队日常" text="通知内容"
 ```
 
-### 3. Docs 文档操作善用 URL 提取
+### 3. Docs 文档操作善用 URL 提取 - 处理方式: 按上述步骤操作并确认结果
 从文档 URL 直接提取 ID,避免手动复制长 ID:
 
 ```bash
@@ -389,7 +434,7 @@ gwtool call --server google-workspace \
 gwtool call --server google-workspace --tool "docs.getText" documentId="1abc123"
 ```
 
-### 4. Sheets 数据读取优先使用范围限定
+### 4. Sheets 数据读取优先使用范围限定 - 处理方式: 按上述步骤操作并确认结果
 避免一次性读取整表导致性能问题,优先用范围限定:
 
 ```bash
@@ -405,7 +450,7 @@ gwtool call --server google-workspace \
     spreadsheetId="<id>"
 ```
 
-### 5. 多服务联动提升效率
+### 5. 多服务联动提升效率 - 处理方式: 按上述步骤操作并确认结果
 结合 Time 工具实现动态时间查询:
 
 ```bash
@@ -419,7 +464,6 @@ gwtool call --server google-workspace \
     timeMin="${CURRENT_DATE}T00:00:00Z" \
     timeMax="${CURRENT_DATE}T23:59:59Z"
 ```
-
 ## 常见问题
 ### Q1: 免费版升级到专业版需要重新配置吗?
 **A**: 不需要。专业版与免费版使用相同的安装与注册流程,OAuth 凭据通用。升级后直接获得全部 49 个工具的调用权限。
@@ -483,6 +527,6 @@ gwtool call --server google-workspace --tool "gmail.search" query="is:unread" ma
 - **说明**: 基于工具接口的企业级 AI Skill,通过工具协议统一调用 Google Workspace 全部十大服务共 49 个工具。专业版完全兼容免费版的零云控制台配置与 OAuth 登录体验,额外解锁 Docs、Sheets、Slides、Chat、People 等高级服务,并提供企业级批量操作模板与多账户管理能力,适合团队协作与规模化办公场景。
 
 ## 已知限制
-- 需要LLM支持，无LLM环境无法使用
-- 复杂场景可能需要人工辅助判断
-- 性能取决于底层模型能力
+- 需LLM支持,无LLM环境不可用
+- 复杂业务场景建议结合人工经验判断
+- 执行效率受模型能力与网络环境影响

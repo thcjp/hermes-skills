@@ -1,0 +1,154 @@
+{
+  "total": 1251,
+  "modified": 13,
+  "unmodified": 1238,
+  "errors": 0,
+  "fix_counts": {
+    "l4_6_user_experience": 0,
+    "l4_5_output_clarity": 0,
+    "l4_2_command_executability": 13,
+    "l4_3_error_recovery": 0,
+    "l4_4_dependency_closure": 0
+  },
+  "details": [
+    {
+      "slug": "local-vector-memory-pro",
+      "path": "D:\\skills\\differentiated-skills\\Agents\\local-vector-memory-pro\\SKILL.md",
+      "changes": [
+        "[L4-2] 补充2个命令参数说明"
+      ],
+      "fix_dims": {
+        "l4_2_command_executability": true
+      }
+    },
+    {
+      "slug": "memory-fortress-pro",
+      "path": "D:\\skills\\differentiated-skills\\Agents\\memory-fortress-pro\\SKILL.md",
+      "changes": [
+        "[L4-2] 补充1个命令参数说明"
+      ],
+      "fix_dims": {
+        "l4_2_command_executability": true
+      }
+    },
+    {
+      "slug": "soul-decision-engine-free",
+      "path": "D:\\skills\\differentiated-skills\\Agents\\soul-decision-engine-free\\SKILL.md",
+      "changes": [
+        "[L4-2] 补充2个命令参数说明"
+      ],
+      "fix_dims": {
+        "l4_2_command_executability": true
+      }
+    },
+    {
+      "slug": "soul-decision-engine-pro",
+      "path": "D:\\skills\\differentiated-skills\\Agents\\soul-decision-engine-pro\\SKILL.md",
+      "changes": [
+        "[L4-2] 补充1个命令参数说明"
+      ],
+      "fix_dims": {
+        "l4_2_command_executability": true
+      }
+    },
+    {
+      "slug": "obsidian-essentials-pro",
+      "path": "D:\\skills\\differentiated-skills\\Automation\\obsidian-essentials-pro\\SKILL.md",
+      "changes": [
+        "[L4-2] 补充6个命令参数说明"
+      ],
+      "fix_dims": {
+        "l4_2_command_executability": true
+      }
+    },
+    {
+      "slug": "obsidian-toolkit-pro",
+      "path": "D:\\skills\\differentiated-skills\\Automation\\obsidian-toolkit-pro\\SKILL.md",
+      "changes": [
+        "[L4-2] 补充1个命令参数说明"
+      ],
+      "fix_dims": {
+        "l4_2_command_executability": true
+      }
+    },
+    {
+      "slug": "alephnet-node-manager-pro",
+      "path": "D:\\skills\\differentiated-skills\\Communication\\alephnet-node-manager-pro\\SKILL.md",
+      "changes": [
+        "[L4-2] 补充1个命令参数说明"
+      ],
+      "fix_dims": {
+        "l4_2_command_executability": true
+      }
+    },
+    {
+      "slug": "lh-video-gen-tool-free",
+      "path": "D:\\skills\\differentiated-skills\\Creative\\lh-video-gen-tool-free\\SKILL.md",
+      "changes": [
+        "[L4-2] 补充3个命令参数说明"
+      ],
+      "fix_dims": {
+        "l4_2_command_executability": true
+      }
+    },
+    {
+      "slug": "api-doc-generator-free",
+      "path": "D:\\skills\\differentiated-skills\\Integrations\\api-doc-generator-free\\SKILL.md",
+      "changes": [
+        "[L4-2] 补充1个命令参数说明"
+      ],
+      "fix_dims": {
+        "l4_2_command_executability": true
+      }
+    },
+    {
+      "slug": "mindmap-gen-tool-free",
+      "path": "D:\\skills\\differentiated-skills\\Knowledge\\mindmap-gen-tool-free\\SKILL.md",
+      "changes": [
+        "[L4-2] 补充2个命令参数说明"
+      ],
+      "fix_dims": {
+        "l4_2_command_executability": true
+      }
+    },
+    {
+      "slug": "auto-file-organizer-free",
+      "path": "D:\\skills\\differentiated-skills\\Other\\auto-file-organizer-free\\SKILL.md",
+      "changes": [
+        "[L4-2] 补充1个命令参数说明"
+      ],
+      "fix_dims": {
+        "l4_2_command_executability": true
+      }
+    },
+    {
+      "slug": "solo-research-tool-free",
+      "path": "D:\\skills\\differentiated-skills\\Research\\solo-research-tool-free\\SKILL.md",
+      "changes": [
+        "[L4-2] 补充1个命令参数说明"
+      ],
+      "fix_dims": {
+        "l4_2_command_executability": true
+      }
+    },
+    {
+      "slug": "solo-validate-tool-free",
+      "path": "D:\\skills\\differentiated-skills\\Research\\solo-validate-tool-free\\SKILL.md",
+      "changes": [
+        "[L4-2] 补充1个命令参数说明"
+      ],
+      "fix_dims": {
+        "l4_2_command_executability": true
+      }
+    }
+  ],
+  "errors_list": [],
+  "timestamp": "2026-07-21T20:36:55.479818",
+  "fix_counts_labels": {
+    "l4_6_user_experience": "L4-6 用户体验完整性",
+    "l4_5_output_clarity": "L4-5 输出标准明确性",
+    "l4_2_command_executability": "L4-2 命令可执行性",
+    "l4_3_error_recovery": "L4-3 错误恢复可操作性",
+    "l4_4_dependency_closure": "L4-4 依赖闭环性"
+  }
+}

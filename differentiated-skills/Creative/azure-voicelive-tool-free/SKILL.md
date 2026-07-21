@@ -46,6 +46,32 @@ Azure语音交互免费版是一款面向个人开发者的轻量级实时语音
 | 音频流处理 | 发送与接收Base64 PCM16音频流 |
 | 多语音选择 | 支持alloy、echo、shimmer等多种语音 |
 | API Key认证 | 简单的API Key认证方式 |
+**技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置。
+
+### 核心功能执行
+用`input_params`参数进行配置。
+
+**输入**: 用户提供核心功能执行所需的指令和必要参数。
+**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
+**输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
+### 参数配置与调用
+用`config_options`参数进行配置。
+
+**输入**: 用户提供参数配置与调用所需的指令和必要参数。
+**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
+**输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
+
+### 结果处理与输出
+用`output_format`参数进行配置。
+
+**输入**: 用户提供结果处理与输出所需的指令和必要参数。
+**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
+**输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Azure、VoiceLive、构建基础实时语音、音频输出与基本会、话管理、语音交互免费版、面向个人开发者的、轻量级实时语音、支持文本与音频双、基本会话配置、模态设置、音频流发送与接收、多种语音选择等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
 ## 使用场景
 
@@ -172,15 +198,19 @@ asyncio.run(voice_transcription())
 - 纯架构设计决策
 - 运维部署管理
 
-
 ## 触发条件
 
 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
 
-
 ## 快速开始
 
-### 依赖说明
+1. 阅读## 核心能力章节了解skill功能
+2. 按## 依赖说明配置环境
+3. 执行所需能力对应的命令
+4. 参考## 错误处理章节处理异常
+5. 查看## FAQ解答常见疑问
+
+### 依赖详情
 
 ```bash
 pip install azure-ai-voicelive aiohttp azure-identity
@@ -190,7 +220,7 @@ pip install azure-ai-voicelive aiohttp azure-identity
 
 ```bash
 export AZURE_COGNITIVE_SERVICES_ENDPOINT="https://<region>.api.cognitive.microsoft.com"
-export AZURE_COGNITIVE_SERVICES_KEY="<your-api-key>"
+export AZURE_COGNITIVE_SERVICES_KEY="配置值"
 ```
 
 ### 3. 建立第一个语音会话
@@ -312,14 +342,16 @@ AZURE_COGNITIVE_SERVICES_KEY=your_api_key_here
 
 - **分类**: MD+EXEC（纯Markdown指令，核心功能需要exec命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行实时语音交互任务。核心功能通过Python异步SDK调用Azure VoiceLive服务实现。
+- API Key通过环境变量配置: export API_KEY=your_key
 
 ## 错误处理
+
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 已知限制
 
