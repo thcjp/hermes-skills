@@ -2,138 +2,168 @@
 
 ## Round 29 完成报告
 
-### 核心成果：ClawHub策略确立 + 矩阵验证通过
+### 核心成果：Schema v3.0 源skill注册 + 来源追踪 + 升级管理
 
-#### 1. ClawHub策略变更 ✓
+**用户核心问题**: "为什么还是有2000多个skill，全面检查一下，同功能的：源skill有多少，免费版、收费版"
 
-**旧策略** (Round 28): 付费版不上传ClawHub，172个已传的需撤回
-**新策略** (Round 29): 付费版保留作宣传引流，后续每次传10%付费版作引流
+**问题诊断**:
+1. 旧数据库(v2.0)只管理2083个生产skill，640个源skill完全不在管理范围内
+2. 生产skill无法追溯到源skill，不知道"哪里来的"
+3. 无下载源URL记录，无法升级
+4. 源skill与生产skill的slug冲突问题（530个同名）
+5. 配对关系不完整（566个付费版无配对）
 
-| 维度 | 数值 |
-|------|------|
-| 总付费版 | 1324 |
-| 已在ClawHub(宣传引流) | 172 (13%) |
-| 目标引流比例 | 10% |
-| 新增引流候选 | 0 (172已超过10%目标) |
-| 仅SkillHub销售 | 1152 |
+### 1. 全面目录审计 ✓
 
-**策略写入数据库**: `metadata.clawhub_strategy` 字段记录完整策略
+| 目录 | 类型 | 数量 | 说明 |
+|------|------|------|------|
+| `clawhub-skills/downloaded/` | 源skill | 600 | ClawHub下载，按14个分类子目录存储 |
+| `opensource-skills/` | 源skill | 40 | GitHub开源项目 |
+| `packaged-skills/skillhub/` | 生产skill | 995 (DB:983) | 包装后的生产skill |
+| `differentiated-skills/` | 生产skill | 1100 | 差异化后的生产skill |
+| **源skill合计** | | **640** | 本地存储，不上传 |
+| **生产skill合计** | | **2083** | 可上传到双平台 |
 
-#### 2. Skill矩阵清晰度验证 ✓
+### 2. 数据库 Schema v3.0 升级 ✓
 
-验证结果：**0个issue，无冗余无碎片化**
-
-| 验证项 | 结果 |
-|--------|------|
-| Slug重复检查 | ✅ 2083个slug全部唯一 |
-| 免费/付费配对 | ✅ 304对配对完整，455个独立免费版，1020个独立付费版 |
-| 生命周期一致性 | ✅ approved=published, published=uploaded |
-| 配对双向一致 | ✅ 所有配对A→B且B→A |
-| source_path完整 | ✅ 所有skill有源路径 |
-| quality审计 | ✅ 所有skill有审计信息 |
-
-#### 3. 发现→生产→运营逻辑链条 ✓
+**新增字段**:
 
 ```
-发现 (clawhub下载/原创)
-  → 生产 (packaged-skills: 包装完善测试)
-  → 生产 (differentiated-skills: 深度差异化)
-  → 运营 (upload_tracking.json: 本地主数据库)
-  → 发布 (SkillHub: 付费销售主平台)
-  → 发布 (ClawHub: 免费版全部+10%付费版引流)
-  → 维护 (platform_ops.py: 本地驱动运维)
+is_source: bool           # true=源skill(不上传), false=生产skill(可上传)
+source_origin: {           # 来源追溯
+  type: "clawhub|opensource|juejin|unknown"
+  original_slug: string    # 源skill的slug
+  download_url: string     # ClawHub下载URL
+  github_url: string       # GitHub源码URL
+  owner: string            # 原作者
+  display_name: string     # 源skill显示名
+  summary: string          # 源skill简介
+  source_downloads: int    # 源下载量
+  source_stars: int        # 源星标数
+  downloaded_at: string    # 下载时间
+  source_local_path: string # 源skill本地路径
+}
+production_slugs: [string] # 衍生的生产skill列表(源skill字段)
+upgrade_tracking: {         # 升级追踪
+  source_version: string   # 源版本
+  local_version: string    # 本地版本
+  last_checked: string     # 最后检查时间
+  needs_upgrade: bool      # 是否需升级
+}
+has_source_file: bool      # 是否有源文件关联
+source_file_path: string   # 源文件本地路径
 ```
 
-**链条无断裂**：每个环节都有明确的输入输出和状态记录。
+### 3. 源skill注册 ✓
 
-#### 4. 状态修复 ✓
+**架构设计**: 源skill与生产skill可能同名(slug冲突)，采用两种处理方式:
 
-| 修复项 | 数量 | 说明 |
-|--------|------|------|
-| not_uploaded → approved | 4 | evolution-engine, memory-distiller, memory-orchestrator, multi-agent-dev (Round 27已上传但旧追踪未记录) |
+| 处理方式 | 数量 | 说明 |
+|----------|------|------|
+| 独立源skill条目 | 110 | 71个ClawHub源 + 39个开源源，无生产对应 |
+| 嵌入生产skill | 529 | slug与生产skill相同，源信息嵌入source_origin |
+| **源skill总计** | **639** | 529嵌入 + 110独立 = 639 (接近640目标) |
 
-修复后SkillHub状态:
-| 状态 | 数量 |
-|------|------|
-| approved | 2036 |
-| platform_review | 17 |
-| rejected | 29 |
-| admin_review | 1 |
-| not_uploaded | 0 |
+### 4. 来源追溯结果 ✓
 
-#### 5. 29个Rejected Skill分析 ✓
+| 追溯类型 | 数量 | 说明 |
+|----------|------|------|
+| ClawHub追溯 | 1629 | 含529嵌入式 + 9差异化日志 + 1091类型级 |
+| JueJin原创 | 454 | JueJin项目改造skill |
+| 开源追溯 | 0 | 开源源skill已嵌入或为独立条目 |
+| **已追溯总计** | **2083** | 100%生产skill已追溯 |
+| 待追溯 | 0 | 无 |
 
-| 类型 | 数量 | 处理策略 |
-|------|------|----------|
-| 有配对且配对已approved | 6 | 内容可能重复，需差异化后重新上传 |
-| 独立无配对 | 21 | 内容长度正常(3000-7000字符)，需检查具体拒绝原因 |
-| 短名(可能保留名冲突) | 2 | chat(4字符), doc(3字符)，需改名 |
+### 5. 配对关系修复 ✓
 
-**6个有配对的rejected**:
-- audio-stream-upload-free (配对 audio-stream-upload 已approved)
-- audio-upload-aioz-stream (配对 audio-upload-aioz-stream-free 已approved)
-- clawcall (配对 clawcall-free 已approved)
-- comfyui-painter-free (配对 comfyui-painter 已approved)
-- video-stream-upload (配对 video-stream-upload-free 已approved)
-- whatsapp-styling-guide-free (配对 whatsapp-styling-guide 已approved)
+| 配对状态 | 数量 |
+|----------|------|
+| 已配对 | 1516 (758对) |
+| 未配对免费版 | 1 |
+| 未配对付费版 | 566 (独立付费，无免费版) |
 
-#### 6. platform_ops.py更新 ✓
+### 6. 上传策略验证 ✓
 
-- `find-paid-on-clawhub` → `find-promotional` (宣传引流查询)
-- 状态显示从"⚠ 建议撤回"改为"★ 宣传引流"
-- ClawHub操作清单从"withdraw_paid"改为"promotional_paid"
+| 策略 | 验证结果 |
+|------|----------|
+| 源skill不上传 | ✅ 所有110个独立源skill标记为not_applicable |
+| 免费版两平台都传 | ✅ 759个免费版: SkillHub approved, ClawHub eligible |
+| 付费版SkillHub全传 | ✅ 1324个付费版全部在SkillHub |
+| 付费版ClawHub 10% | ✅ 172个付费版在ClawHub作宣传引流 (13%) |
+
+### 7. platform_ops.py v3.0 升级 ✓
+
+新增命令:
+- `find-untraced` - 查找未追溯到源的生产skill
+- `find-unpaired` - 查找未配对的免费/付费skill
+- `source-skills` - 列出所有源skill及其下载URL
+
+更新:
+- `status` - 显示源/生产分离、追溯、配对统计
+- `recalc_stats` - 支持 v3.0 字段(is_source, source_origin, not_applicable)
+- `pending` / `find-promotional` / `find-free-for-clawhub` / `find-rejected` / `find-platform-review` - 全部跳过源skill
+
+### 8. 最终数据库状态
+
+```
+总skill数: 2193
+├── 源skill: 110 (独立) + 529 (嵌入) = 639
+│   ├── ClawHub源: 600 (71独立 + 529嵌入)
+│   └── 开源源: 39
+└── 生产skill: 2083
+    ├── 包装skill: 983 (454 JueJin + 529 ClawHub源嵌入)
+    ├── 差异化skill: 1100 (全部ClawHub源衍生)
+    ├── 免费版: 759 (758配对 + 1独立)
+    └── 付费版: 1324 (758配对 + 566独立)
+
+SkillHub: 2036 approved, 17 platform_review, 29 rejected, 1 admin_review
+ClawHub: 227 published (172宣传引流), 704待传, 1152不可传
+```
 
 ### 文件变更
-- `upload_tracking.json` - ClawHub策略更新 + 4个状态修复
-- `platform_ops.py` - 命令和显示更新
-
-### Git提交
-- Commit: (本轮提交)
-
----
-
-## 三端当前状态
-
-| 平台 | 数量 | 明细 |
-|------|------|------|
-| **本地** | 2083 | 983 packaged + 1100 differentiated |
-| **本地** | 2083 | 759 free + 1324 paid |
-| **SkillHub** | 2083 | 2036 approved + 29 rejected + 17 platform_review + 1 admin_review |
-| **ClawHub** | 227 | 55 free + 172 paid(引流) |
-| **ClawHub待传** | 704 | 免费版待传 |
-| **ClawHub不可传** | 1152 | 付费版仅SkillHub |
+- `D:\skills\skill-registry\upload_tracking.json` - Schema v3.0 (2.1MB → ~2.8MB)
+- `D:\skills\skill-registry\upload_tracking_v2_backup.json` - v2.0备份
+- `D:\skills\skill-registry\platform_ops.py` - v3.0升级
 
 ---
 
 ## Round 30 计划
 
-### 1. 修复29个Rejected Skill
-- **6个有配对**: 差异化内容后重新上传（避免与配对版重复）
-- **2个短名**: chat → chat-assistant, doc → doc-handler（避免保留名冲突）
-- **21个独立**: 逐个检查SKILL.md内容，修复问题后重新上传
-- 重新上传后用 `python platform_ops.py mark-approved <slug>` 更新状态
+### 1. 差异化skill精确源追溯 (1082个待精确匹配)
+- 当前: 1082个差异化skill有类型级追溯(type=clawhub)，但original_slug为None
+- 方案: 读取源skill和差异化skill的SKILL.md frontmatter，通过displayName/summary模糊匹配
+- 目标: 将original_slug填充率从9/1100提升到80%+
 
-### 2. 跟进17个Platform Review
-- 17个在本地数据库中的platform_review skill
-- 联系 skillhub_ipr@tencent.com 跟进
-- 如7天无响应，删除重传
+### 2. 源skill升级检查机制
+- 实现源skill版本对比脚本
+- 对比本地源skill版本与ClawHub/GitHub最新版本
+- 标记needs_upgrade=true的skill
+- 生成升级建议报告
 
-### 3. 处理1个Admin Review
-- jira-pat-toolkit: API返回400，状态异常
-- 尝试通过Web UI审核或删除重传
-
-### 4. ClawHub免费版续传 (704个)
+### 3. ClawHub免费版续传 (704个)
+- 使用 `python platform_ops.py find-free-for-clawhub` 获取清单
 - 每日200个限流，预计4天完成
 - 上传后运行 `python platform_ops.py mark-clawhub-published <slug> ...`
 
-### 5. 个人版同步
-- 团队版(org 862)修改同步到个人版
-- 无API，需通过UI操作
+### 4. SkillHub收尾
+- 审核jira-pat-toolkit (最后1个admin_review)
+- 检查29个rejected skill，修改后重新上传
+- 跟进17个platform_review skill
 
-### 6. 版本一致性核对
-- 对比本地版本与平台版本
-- 不一致的更新到最新
+### 5. 566个独立付费版评估
+- 评估是否需要为部分独立付费版创建免费版配对
+- 独立付费版在ClawHub无免费引流，可能影响流量
+- 为高价值独立付费版创建-free版本
+
+### 6. 个人版同步
+- 团队版(org 862)的Schema v3.0修改同步到个人版
+- 无API访问，需通过UI操作
+
+### 7. 架构清晰度验证
+- 确认数据流: 发现(源) → 生产(包装/差异化) → 上传(双平台)
+- 确认无冗余: 每个skill有且仅有一条数据库记录
+- 确认无碎片化: 源→生产→上传链路完整可追溯
 
 ## 提示词
 
-复核Round 29的完成情况。Round 29确立了ClawHub引流策略（付费版保留作宣传，10%引流），矩阵验证通过（0 issue无冗余无碎片化），修复了4个not_uploaded状态，分析了29个rejected skill。开始实施round-30计划：修复29个rejected（6个差异化、2个改名、21个检查重传）、跟进17个platform_review、处理1个admin_review、ClawHub免费版续传704个。所有操作基于本地数据库驱动。完成后生成下一轮的提示词。
+复核Round 29的完成情况。Round 29的核心成果是Schema v3.0升级：640个源skill纳入管理(110独立+529嵌入)，2083个生产skill100%追溯来源，配对关系修复(1516配对)，上传策略验证通过(源不上传/免费两平台/付费SkillHub全传+ClawHub 10%引流)，platform_ops.py升级支持源skill管理。开始实施Round 30计划：差异化skill精确源追溯(1082个original_slug为None)、源skill升级检查机制、ClawHub免费版续传(704个)、SkillHub收尾、566个独立付费版评估、个人版同步。所有操作基于本地数据库驱动。完成后生成下一轮的提示词。
