@@ -6,6 +6,15 @@ displayName: "电子书工厂"
 summary: "三天写完一本专业电子书,Markdown输入EPUB输出,KDP/微信读书多平台发布"
 license: Proprietary
 description: |-
+  电子书工厂是一款从Markdown大纲生成完整电子书的工具。支持逐节生成、多格式导出(EPUB/PDF)、
+  多平台发布(KDP/微信读书/豆瓣阅读)、封面图生成。三天写完一本专业电子书。
+
+  核心能力:
+  - Markdown驱动结构化写作:三级大纲自动解析为目录树,支持预览确认
+  - 逐节生成+自动汇总:每节500-3000字,支持断点续写
+  - 多格式导出:EPUB(Kindle/手机阅读器)、PDF(印刷版)、Markdown(源文件备份)
+  - 多平台发布:KDP/微信读书/豆瓣阅读,自动适配各平台格式要求
+  - 封面图与版权页自动生成:调用图像API生成封面,自动生成版权页
 homepage: "https://skillhub.cn"
 tags: [内容创作, 电子书, 出版, 知识付费]
 tools:

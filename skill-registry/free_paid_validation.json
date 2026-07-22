@@ -1,0 +1,3618 @@
+{
+  "total": 2237,
+  "paid": 1476,
+  "free": 761,
+  "paired": 760,
+  "free_without_paid": [
+    "api-free"
+  ],
+  "paid_without_free": [
+    "accounting-finance",
+    "actor-identifier",
+    "agent",
+    "agent-bom-vulnerability-intel",
+    "agent-browser-assistant",
+    "agent-browser-automation",
+    "agent-browser-cli",
+    "agent-browser-stagehand",
+    "agent-chat",
+    "agent-commercial-contract",
+    "agent-copilot-pro",
+    "agent-framework-azure-ai-py",
+    "agent-group",
+    "agent-knowledge",
+    "agentic-security-audit",
+    "agentvibes-content-skill",
+    "ai-artist-workstation",
+    "ai-news",
+    "ai-video-director",
+    "ai-writing-style-cloner",
+    "amap-jsapi-skill",
+    "analyze",
+    "anygen-diagram",
+    "api-development",
+    "art",
+    "assistant",
+    "audit",
+    "auto-monitor",
+    "auto-workflow",
+    "automation-recipe-pack",
+    "autopilot-flow",
+    "aws",
+    "azure",
+    "azure-cli",
+    "azure-devops",
+    "azure-transcription",
+    "azure-voicelive",
+    "bailian-web-search",
+    "baoyu-diagram",
+    "baoyu-format-markdown",
+    "batch-processor-pro",
+    "biz-auto-hub",
+    "blog-seo-writer",
+    "book-painter",
+    "brainz-calendar",
+    "brave-search",
+    "browser-automation",
+    "browser-automation-v2",
+    "bsession",
+    "build-game",
+    "cad-insight-pro",
+    "calendar",
+    "calendar-skill",
+    "cashu-emoji",
+    "cctv-news-fetcher",
+    "cdn",
+    "cdp-browser-master",
+    "chart-generator-2-0-0",
+    "chat",
+    "cheat-code",
+    "cheat-code-paid",
+    "china-news",
+    "claude-code-runner",
+    "claude-tmux",
+    "clawddocs",
+    "clawprint",
+    "cloud-ops-orchestrator",
+    "cloud-storage",
+    "code",
+    "code-1-0-4",
+    "code-analysis-skills",
+    "code-analyze",
+    "code-delegate",
+    "code-dev-v1",
+    "code-quality",
+    "code-quality-paid",
+    "code-runner",
+    "company-search-fengniao",
+    "compress",
+    "compress-pdf",
+    "content-refiner",
+    "context-driven-development",
+    "control-ikea-lightbulb",
+    "creative-officer",
+    "cron-assist",
+    "cron-master-pro",
+    "cron-scheduler-setup",
+    "ctxly-chat",
+    "cyber-fortune-teller",
+    "daily-news-brief",
+    "daily-report-writer",
+    "dashboard",
+    "dashboard-analytics-tool",
+    "data",
+    "deepseek-chat",
+    "desktop-autopilot",
+    "diagram",
+    "diagram-gen",
+    "diagram-tools",
+    "dingtalk-calendar",
+    "discord-hub",
+    "discrawl",
+    "dlazy-audio",
+    "dlazy-gen",
+    "dlazy-generate",
+    "dns-config",
+    "dns-lookup",
+    "dns-networking",
+    "dns-networking-paid",
+    "doc",
+    "doc-parse",
+    "docker",
+    "docker-ctl",
+    "docker-essentials-v1",
+    "docker-sandbox",
+    "document-pdf",
+    "dogecoin-node",
+    "domain-dns-ops",
+    "doubao-chat",
+    "doubao-image-gen",
+    "drama-hit-producer",
+    "ebook-factory",
+    "ecommerce-pricing-strategist",
+    "elite-frontend",
+    "elite-frontend-design",
+    "email-163",
+    "email-digest",
+    "encrypted-docs",
+    "encryption",
+    "encryption-paid",
+    "excel-formula",
+    "excel-maestro",
+    "excel-studio",
+    "excel-xlsx",
+    "expanso-csv-to-json",
+    "expanso-json-to-yaml",
+    "expanso-json-validate",
+    "expanso-log-sanitize",
+    "expanso-xml-to-json",
+    "explain-code",
+    "explain-code-paid",
+    "feed-digest",
+    "feed-to-md",
+    "feishu-calendar",
+    "feishu-doc",
+    "feishu-doc-write",
+    "figma",
+    "figma-2",
+    "figma-design",
+    "figma-design-paid",
+    "file",
+    "file-auto-organizer",
+    "file-browser",
+    "file-organizer-zh",
+    "finance",
+    "finance-accounting",
+    "finance-acct",
+    "finance-radar",
+    "finance-radar-paid",
+    "finance-report",
+    "finance-report-analyzer",
+    "financial-literacy",
+    "financial-literacy-paid",
+    "firewall",
+    "flexible-database-design",
+    "flow-architect",
+    "flow-editor-pro",
+    "fonts",
+    "free-google-search-with-browser",
+    "free-ride",
+    "free-weather-api",
+    "free-weather-skill",
+    "free-web-search",
+    "frontend-design",
+    "game",
+    "game-ai",
+    "game-asset-gen",
+    "game-asset-generation-cellcog",
+    "game-developer-skill",
+    "generate-mindmap",
+    "generate-presentation",
+    "gif-whatsapp",
+    "git",
+    "git-cli",
+    "git-cli-paid",
+    "git-helper",
+    "git-helper-paid",
+    "git-workflow-cn",
+    "git-workflow-cn-paid",
+    "git-workflows",
+    "git-workflows-paid",
+    "gitcrawl",
+    "github",
+    "github-api",
+    "github-development-standard",
+    "github-repos",
+    "github-trending-feed",
+    "glitch-dashboard",
+    "go",
+    "go-linter-configuration",
+    "google-fonts",
+    "google-search",
+    "graincrawl",
+    "graph-advocate",
+    "graph-query",
+    "grok-image",
+    "grok-image-generate",
+    "health",
+    "heygen-tts",
+    "hook-retention-master",
+    "hot-news-aggregator",
+    "html",
+    "html-coder",
+    "html-coder-paid",
+    "html-designer",
+    "html-designer-paid",
+    "hugo-blog",
+    "humanizer",
+    "image",
+    "intel-sentinel",
+    "internet-search",
+    "interview-simulator",
+    "iris-code-formatter",
+    "iris-formatter",
+    "java-code-reviewer",
+    "java-dev-manual",
+    "java-development-manual",
+    "java-reviewer",
+    "javascript",
+    "javascript-sdk",
+    "javascript-sdk-paid",
+    "javascript-skills",
+    "javascript-skills-paid",
+    "jellyfin-control",
+    "jira-api",
+    "jira-integration-skill",
+    "jira-pat-manager",
+    "jira-pat-toolkit",
+    "job-auto-apply",
+    "json",
+    "json-canvas",
+    "json-formatter",
+    "json-lint",
+    "json-linter",
+    "json-parser",
+    "json-repair",
+    "json-repair-kit",
+    "juejin-skills",
+    "k8s",
+    "kai-tw-figma",
+    "key-guard",
+    "knowledge",
+    "knowledge-capture",
+    "knowledge-graph",
+    "knowledge-graph-paid",
+    "kubernetes",
+    "kubernetes-devops",
+    "kujiale-design",
+    "learn",
+    "lh-video-gen",
+    "lh-video-gen-paid",
+    "linear",
+    "linear-cli-pro",
+    "linear-project-manager",
+    "linear-skill",
+    "linear-sync",
+    "linear-workflow-bot",
+    "lite-sqlite",
+    "live-stream-script",
+    "local-file-rag-basic",
+    "localmemo-pro",
+    "logo",
+    "logo-brand-identity",
+    "logo-brand-identity-cellcog",
+    "logo-design",
+    "mac-node-snapshot",
+    "mac-system-control",
+    "macro-pulse",
+    "magic-api-generate",
+    "manage-liquidity",
+    "markdown",
+    "markdown-converter",
+    "markdown-converter-compdf",
+    "markdown-converter-paid",
+    "markdown-format",
+    "market-news",
+    "mcporter",
+    "md-export",
+    "meeting-join",
+    "meeting-note",
+    "merge-check",
+    "merge-check-paid",
+    "merge-pdf",
+    "mermaid-diagram",
+    "mermaid-diagram-paid",
+    "minimalist-design",
+    "minimalist-design-system",
+    "miniprogram-development",
+    "model-routing",
+    "model-switching",
+    "moltblock",
+    "moltbook-firewall",
+    "molted-work",
+    "monad-development",
+    "mongodb",
+    "monitor",
+    "multi-search-engine",
+    "multi-search-engine-simple",
+    "multi-source-research",
+    "music",
+    "music-gen",
+    "music-gen-cellcog",
+    "music-generation",
+    "music-generation-cellcog",
+    "namecheap-dns",
+    "nano-pdf",
+    "netdisk-sync-pro",
+    "netpad",
+    "neurocache-pro",
+    "news",
+    "news-feed",
+    "news-sentiment",
+    "node-connect",
+    "node-connect-paid",
+    "notcrawl",
+    "note",
+    "note-taker",
+    "notes-cli-toolkit",
+    "notion",
+    "notion-api-skill",
+    "notion-cli",
+    "notion-pages",
+    "notion-skill",
+    "notioncli",
+    "novel-autopilot",
+    "obsidian-cli",
+    "obsidian-official-cli",
+    "ocean-chat",
+    "office-productivity-hub",
+    "okx-dex-token",
+    "okx-dex-token-paid",
+    "ollama-integration",
+    "openai-ai",
+    "openai-ai-paid",
+    "openai-whisper",
+    "openai-whisper-1-0-0",
+    "openai-whisper-paid",
+    "openai-whisper-v1",
+    "openclaw-dashboard",
+    "openclaw-linear",
+    "pandoc-convert-openclaw",
+    "pandoc-document-converter",
+    "paper-parse",
+    "parallel-ai-research",
+    "password-generator",
+    "pdf",
+    "pentest-commands",
+    "personal-health-manager",
+    "photo-caption",
+    "photo-webcam",
+    "ping-monitor",
+    "pipedrive-api",
+    "plugin-architecture",
+    "podcast",
+    "podcast-chaptering",
+    "podcast-chaptering-highlights",
+    "podcast-downloader",
+    "podcast-downloader-paid",
+    "poetry-craftsman",
+    "postgres-job-queue",
+    "postgres-mcp-skills",
+    "powerpoint",
+    "powerpoint-pptx",
+    "powerpoint-pptx-1-0-1",
+    "powerpoint-pptx-cn",
+    "pptx-pdf-font-fix",
+    "productivity-boost",
+    "productivity-bot",
+    "productivity-improving",
+    "python",
+    "python-data-analysis",
+    "python-dataviz",
+    "python3",
+    "quant-data-quality",
+    "quark-scan",
+    "queue-task",
+    "read-github",
+    "reddit-research",
+    "reddit-research-paid",
+    "redis-cache-master",
+    "reminder",
+    "remix-api-key-auth",
+    "remix-auth",
+    "report-summary-builder",
+    "research-agent",
+    "rest-api-reference",
+    "rho-telegram-alerts",
+    "rss-aggregator",
+    "rss-digest",
+    "rss-feed-digest",
+    "rss-fetcher",
+    "rss-reader",
+    "safe-encryption-skill",
+    "sales-copy-writer",
+    "schedule",
+    "scrape-web",
+    "screen-monitor",
+    "search-2",
+    "searching-assistant",
+    "secure-api-calls",
+    "security-audit",
+    "security-auditor",
+    "security-radar",
+    "security-scanner",
+    "self-evolving-ai",
+    "self-integration",
+    "self-integration-paid",
+    "seo-doctor",
+    "seo-rank-monopolizer",
+    "sequential-read",
+    "shadcn-ui",
+    "shopify-helper",
+    "skill-production-standards",
+    "slack-api",
+    "slack-hub",
+    "slacrawl",
+    "smart-auto-updater",
+    "smart-cache",
+    "smart-model-routing-for-zai",
+    "smart-model-switching",
+    "smart-reminder-system",
+    "smart-weekly-report",
+    "social-sentiment",
+    "solo-audit",
+    "solo-validate",
+    "sonoscli",
+    "sovereign-aws-cost-optimizer",
+    "sql-gen",
+    "sql-generator",
+    "sql-master",
+    "sql-query",
+    "sql-toolkit",
+    "sqlite",
+    "ssl",
+    "stagehand-browser-cli",
+    "stealth-browser-assistant",
+    "stock-filter",
+    "stock-filter-skills",
+    "story-long-analyze",
+    "story-short-write",
+    "straker-verify",
+    "system-controller",
+    "t-trading",
+    "tailwindcss",
+    "tardis",
+    "tarot-reader",
+    "task",
+    "task-planner",
+    "telegram",
+    "telegram-alert",
+    "telegram-bot-builder",
+    "telegram-chat",
+    "telegram-chat-manager",
+    "text",
+    "text-game-arcade-universe-v3",
+    "text-to-speech-heygen",
+    "text-to-sql",
+    "tg-body-scan",
+    "the-news",
+    "thesis-helper",
+    "timeline-digest",
+    "timer-alert",
+    "title-hook-factory",
+    "tmux-session",
+    "token-guard-pro",
+    "token-layer",
+    "tool",
+    "tool-call-retry",
+    "tool-finder",
+    "tool-orchestrator",
+    "topic-hunter",
+    "trade-with-taro",
+    "trading",
+    "translate",
+    "translate-en-zh",
+    "travel-assistant",
+    "tts-whatsapp",
+    "tts-whatsapp-paid",
+    "typescript",
+    "typescript-skills",
+    "typescript-skills-paid",
+    "ui",
+    "ui-component",
+    "ui-component-paid",
+    "ui-ux",
+    "ui-ux-dev",
+    "ui-ux-dev-paid",
+    "universal-translate",
+    "universal-translate-paid",
+    "university-app",
+    "university-applications",
+    "update-guardian",
+    "ux",
+    "ux-design",
+    "vault-master-pro",
+    "vault-sync-engine",
+    "vector-control",
+    "verify-claims",
+    "video",
+    "video-editing",
+    "video-editing-paid",
+    "video-frames",
+    "video-frames-paid",
+    "video-translator",
+    "video-translator-paid",
+    "video-upload-aioz-stream",
+    "viral-decoder",
+    "viral-prophet",
+    "visual-file-sorter",
+    "volcengine-network-dns",
+    "vpn",
+    "vpn-rotate-skill",
+    "vscode-node",
+    "vscode-node-paid",
+    "vue",
+    "vue-component-gen",
+    "vue-component-generator",
+    "vulnerability-scanner",
+    "weather",
+    "web",
+    "web-browsing",
+    "web-content-fetcher",
+    "web-learner",
+    "web-vulnerability-assessment",
+    "weekly-report-writer",
+    "weiyun-skills",
+    "wenxiang-2d5-banner",
+    "whatsapp-image",
+    "whatsapp-image-send",
+    "whatsapp-msg",
+    "whatsapp-style",
+    "who-is-actor",
+    "word",
+    "word-docx",
+    "word-docx-1",
+    "word-docx-1-02",
+    "work",
+    "workflow",
+    "workflow-decomposer",
+    "workflow-lite",
+    "workflow-symphony",
+    "write-my-blog",
+    "writing-assistant",
+    "ws-agent-browser",
+    "ws-calendar",
+    "ws-excel",
+    "ws-excel-paid",
+    "xml",
+    "xml-reader",
+    "yaml",
+    "youtube-watcher",
+    "youtube-watcher-paid",
+    "zhuchenggong-doubao-image-gen",
+    "ziptax",
+    "ziptax-paid"
+  ],
+  "pairs": [
+    {
+      "paid": "accounting-and-finance",
+      "free": "accounting-and-finance-free"
+    },
+    {
+      "paid": "accounting-finance-tool-pro",
+      "free": "accounting-finance-tool-free"
+    },
+    {
+      "paid": "ace-music",
+      "free": "ace-music-free"
+    },
+    {
+      "paid": "ace-music-tool-pro",
+      "free": "ace-music-tool-free"
+    },
+    {
+      "paid": "actor-identifier-tool-pro",
+      "free": "actor-identifier-tool-free"
+    },
+    {
+      "paid": "ad-creative-intel-pro",
+      "free": "ad-creative-intel-free"
+    },
+    {
+      "paid": "ad-insight-hub",
+      "free": "ad-insight-hub-free"
+    },
+    {
+      "paid": "admapix",
+      "free": "admapix-free"
+    },
+    {
+      "paid": "aegis-security",
+      "free": "aegis-security-free"
+    },
+    {
+      "paid": "aegis-security-tool-pro",
+      "free": "aegis-security-tool-free"
+    },
+    {
+      "paid": "afrexai-cybersecurity-engine",
+      "free": "afrexai-cybersecurity-engine-free"
+    },
+    {
+      "paid": "afrexai-knowledge-management",
+      "free": "afrexai-knowledge-management-free"
+    },
+    {
+      "paid": "agent-assistant-pro",
+      "free": "agent-assistant-free"
+    },
+    {
+      "paid": "agent-telegram",
+      "free": "agent-telegram-free"
+    },
+    {
+      "paid": "agentvibes-skill",
+      "free": "agentvibes-skill-free"
+    },
+    {
+      "paid": "agentvibes-voice-skill",
+      "free": "agentvibes-voice-skill-free"
+    },
+    {
+      "paid": "ai-agent-helper",
+      "free": "ai-agent-helper-free"
+    },
+    {
+      "paid": "ai-assistant",
+      "free": "ai-assistant-free"
+    },
+    {
+      "paid": "ai-image-gen",
+      "free": "ai-image-gen-free"
+    },
+    {
+      "paid": "ai-image-gen-tool-pro",
+      "free": "ai-image-gen-tool-free"
+    },
+    {
+      "paid": "ai-image-prompt-tool-pro",
+      "free": "ai-image-prompt-tool-free"
+    },
+    {
+      "paid": "ai-kujiale-design",
+      "free": "ai-kujiale-design-free"
+    },
+    {
+      "paid": "ai-news-tool-pro",
+      "free": "ai-news-tool-free"
+    },
+    {
+      "paid": "ai-podcast",
+      "free": "ai-podcast-free"
+    },
+    {
+      "paid": "ai-podcast-tool-pro",
+      "free": "ai-podcast-tool-free"
+    },
+    {
+      "paid": "aic-dashboard",
+      "free": "aic-dashboard-free"
+    },
+    {
+      "paid": "alephnet-node",
+      "free": "alephnet-node-free"
+    },
+    {
+      "paid": "alephnet-node-manager",
+      "free": "alephnet-node-manager-free"
+    },
+    {
+      "paid": "alibaba-quark-scan",
+      "free": "alibaba-quark-scan-free"
+    },
+    {
+      "paid": "alpha-feed-creator",
+      "free": "alpha-feed-creator-free"
+    },
+    {
+      "paid": "amap-jsapi-tool-pro",
+      "free": "amap-jsapi-tool-free"
+    },
+    {
+      "paid": "analytics-dashboard",
+      "free": "analytics-dashboard-free"
+    },
+    {
+      "paid": "analyze-video-by-qwen",
+      "free": "analyze-video-by-qwen-free"
+    },
+    {
+      "paid": "anthropics-frontend-design",
+      "free": "anthropics-frontend-design-free"
+    },
+    {
+      "paid": "anthrovision-telegram-body-scan",
+      "free": "anthrovision-telegram-body-scan-free"
+    },
+    {
+      "paid": "anygen-diagram-generator",
+      "free": "anygen-diagram-generator-free"
+    },
+    {
+      "paid": "anygen-diagram-tool-pro",
+      "free": "anygen-diagram-tool-free"
+    },
+    {
+      "paid": "api-connect-hub",
+      "free": "api-connect-hub-free"
+    },
+    {
+      "paid": "api-dev-tool-pro",
+      "free": "api-dev-tool-free"
+    },
+    {
+      "paid": "api-doc-generator",
+      "free": "api-doc-generator-free"
+    },
+    {
+      "paid": "api-doc-writer",
+      "free": "api-doc-writer-free"
+    },
+    {
+      "paid": "api-gateway",
+      "free": "api-gateway-free"
+    },
+    {
+      "paid": "api-generator",
+      "free": "api-generator-free"
+    },
+    {
+      "paid": "api-integration",
+      "free": "api-integration-free"
+    },
+    {
+      "paid": "api-magic-gen",
+      "free": "api-magic-gen-free"
+    },
+    {
+      "paid": "api-scaffold-gen",
+      "free": "api-scaffold-gen-free"
+    },
+    {
+      "paid": "api-toolkit",
+      "free": "api-toolkit-free"
+    },
+    {
+      "paid": "apple-health-skill",
+      "free": "apple-health-skill-free"
+    },
+    {
+      "paid": "apple-health-tool-pro",
+      "free": "apple-health-tool-free"
+    },
+    {
+      "paid": "archive",
+      "free": "archive-free"
+    },
+    {
+      "paid": "archive-tool-pro",
+      "free": "archive-tool-free"
+    },
+    {
+      "paid": "art-creator-pro",
+      "free": "art-creator-free"
+    },
+    {
+      "paid": "atlas-admin-console",
+      "free": "atlas-admin-console-free"
+    },
+    {
+      "paid": "audio-stream-upload",
+      "free": "audio-stream-upload-free"
+    },
+    {
+      "paid": "audio-upload-aioz-stream",
+      "free": "audio-upload-aioz-stream-free"
+    },
+    {
+      "paid": "audit-toolkit-pro",
+      "free": "audit-toolkit-free"
+    },
+    {
+      "paid": "auto-file-organizer-pro",
+      "free": "auto-file-organizer-free"
+    },
+    {
+      "paid": "auto-monitor-tool-pro",
+      "free": "auto-monitor-tool-free"
+    },
+    {
+      "paid": "auto-updater-tool-pro",
+      "free": "auto-updater-tool-free"
+    },
+    {
+      "paid": "automation-recipe-book",
+      "free": "automation-recipe-book-free"
+    },
+    {
+      "paid": "aws-agent-orchestrator-pro",
+      "free": "aws-agent-orchestrator-free"
+    },
+    {
+      "paid": "aws-agentcore-langgraph",
+      "free": "aws-agentcore-langgraph-free"
+    },
+    {
+      "paid": "aws-cloud-architect",
+      "free": "aws-cloud-architect-free"
+    },
+    {
+      "paid": "aws-cloud-inspector-pro",
+      "free": "aws-cloud-inspector-free"
+    },
+    {
+      "paid": "aws-cost-optimizer-tool-pro",
+      "free": "aws-cost-optimizer-tool-free"
+    },
+    {
+      "paid": "aws-graph-agent",
+      "free": "aws-graph-agent-free"
+    },
+    {
+      "paid": "aws-infra",
+      "free": "aws-infra-free"
+    },
+    {
+      "paid": "aws-toolkit",
+      "free": "aws-toolkit-free"
+    },
+    {
+      "paid": "aws-wechat-article-writing",
+      "free": "aws-wechat-article-writing-free"
+    },
+    {
+      "paid": "azure-agent-framework-tool-pro",
+      "free": "azure-agent-framework-tool-free"
+    },
+    {
+      "paid": "azure-ai-transcription-py",
+      "free": "azure-ai-transcription-py-free"
+    },
+    {
+      "paid": "azure-ai-voicelive-py",
+      "free": "azure-ai-voicelive-py-free"
+    },
+    {
+      "paid": "azure-cli-toolkit",
+      "free": "azure-cli-toolkit-free"
+    },
+    {
+      "paid": "azure-cloud-architect",
+      "free": "azure-cloud-architect-free"
+    },
+    {
+      "paid": "azure-cloud-inspector-pro",
+      "free": "azure-cloud-inspector-free"
+    },
+    {
+      "paid": "azure-devops-tool-pro",
+      "free": "azure-devops-tool-free"
+    },
+    {
+      "paid": "azure-gateway-cli",
+      "free": "azure-gateway-cli-free"
+    },
+    {
+      "paid": "azure-infra",
+      "free": "azure-infra-free"
+    },
+    {
+      "paid": "azure-toolkit-pro",
+      "free": "azure-toolkit-free"
+    },
+    {
+      "paid": "azure-transcription-tool-pro",
+      "free": "azure-transcription-tool-free"
+    },
+    {
+      "paid": "azure-voicelive-tool-pro",
+      "free": "azure-voicelive-tool-free"
+    },
+    {
+      "paid": "baidu-netdisk-skills",
+      "free": "baidu-netdisk-skills-free"
+    },
+    {
+      "paid": "bailian-search-tool-pro",
+      "free": "bailian-search-tool-free"
+    },
+    {
+      "paid": "banner-gen-tool-pro",
+      "free": "banner-gen-tool-free"
+    },
+    {
+      "paid": "batchops-commander-pro",
+      "free": "batchops-commander-free"
+    },
+    {
+      "paid": "beware-piper-tts",
+      "free": "beware-piper-tts-free"
+    },
+    {
+      "paid": "bilibili-all-in-one",
+      "free": "bilibili-all-in-one-free"
+    },
+    {
+      "paid": "bilibili-helper",
+      "free": "bilibili-helper-free"
+    },
+    {
+      "paid": "bilibili-helper-tool-pro",
+      "free": "bilibili-helper-tool-free"
+    },
+    {
+      "paid": "bilibili-toolkit",
+      "free": "bilibili-toolkit-free"
+    },
+    {
+      "paid": "bizauto-flow-pro",
+      "free": "bizauto-flow-free"
+    },
+    {
+      "paid": "block-monitor-tool-pro",
+      "free": "block-monitor-tool-free"
+    },
+    {
+      "paid": "blog-seo-writer-tool-pro",
+      "free": "blog-seo-writer-tool-free"
+    },
+    {
+      "paid": "blog-writer",
+      "free": "blog-writer-free"
+    },
+    {
+      "paid": "blog-writer-tool-pro",
+      "free": "blog-writer-tool-free"
+    },
+    {
+      "paid": "board-art-tool-pro",
+      "free": "board-art-tool-free"
+    },
+    {
+      "paid": "bom-vuln-intel-tool-pro",
+      "free": "bom-vuln-intel-tool-free"
+    },
+    {
+      "paid": "book-illustrator-pro",
+      "free": "book-illustrator-free"
+    },
+    {
+      "paid": "bookmark-intelligence",
+      "free": "bookmark-intelligence-free"
+    },
+    {
+      "paid": "bookmark-smart-hub",
+      "free": "bookmark-smart-hub-free"
+    },
+    {
+      "paid": "brainz-calendar-tool-pro",
+      "free": "brainz-calendar-tool-free"
+    },
+    {
+      "paid": "brave-search-tool-pro",
+      "free": "brave-search-tool-free"
+    },
+    {
+      "paid": "browser-agent-pro-pro",
+      "free": "browser-agent-pro-free"
+    },
+    {
+      "paid": "browser-agent-tool-pro",
+      "free": "browser-agent-tool-free"
+    },
+    {
+      "paid": "browser-automation-tool-pro",
+      "free": "browser-automation-tool-free"
+    },
+    {
+      "paid": "browser-automation-v2-tool-pro",
+      "free": "browser-automation-v2-tool-free"
+    },
+    {
+      "paid": "browser-cli-tool-pro",
+      "free": "browser-cli-tool-free"
+    },
+    {
+      "paid": "browser-stagehand-tool-pro",
+      "free": "browser-stagehand-tool-free"
+    },
+    {
+      "paid": "bsession-tool-pro",
+      "free": "bsession-tool-free"
+    },
+    {
+      "paid": "calendar-reminder",
+      "free": "calendar-reminder-free"
+    },
+    {
+      "paid": "calendar-reminder-tool-pro",
+      "free": "calendar-reminder-tool-free"
+    },
+    {
+      "paid": "calendar-skill-tool-pro",
+      "free": "calendar-skill-tool-free"
+    },
+    {
+      "paid": "calendar-toolkit-pro",
+      "free": "calendar-toolkit-free"
+    },
+    {
+      "paid": "call-bridge",
+      "free": "call-bridge-free"
+    },
+    {
+      "paid": "can-bus-toolkit",
+      "free": "can-bus-toolkit-free"
+    },
+    {
+      "paid": "can",
+      "free": "can-free"
+    },
+    {
+      "paid": "canvas-json-handler",
+      "free": "canvas-json-handler-free"
+    },
+    {
+      "paid": "card-image-builder",
+      "free": "card-image-builder-free"
+    },
+    {
+      "paid": "cctv-news-tool-pro",
+      "free": "cctv-news-tool-free"
+    },
+    {
+      "paid": "cdn-toolkit-pro",
+      "free": "cdn-toolkit-free"
+    },
+    {
+      "paid": "cdp-browser-pilot-pro",
+      "free": "cdp-browser-pilot-free"
+    },
+    {
+      "paid": "chart-craft",
+      "free": "chart-craft-free"
+    },
+    {
+      "paid": "chart",
+      "free": "chart-free"
+    },
+    {
+      "paid": "chart-gen-pro",
+      "free": "chart-gen-free"
+    },
+    {
+      "paid": "chat-agent-tool-pro",
+      "free": "chat-agent-tool-free"
+    },
+    {
+      "paid": "chat-toolkit-pro",
+      "free": "chat-toolkit-free"
+    },
+    {
+      "paid": "cheat-code-tool-pro",
+      "free": "cheat-code-tool-free"
+    },
+    {
+      "paid": "chief-creative-officer",
+      "free": "chief-creative-officer-free"
+    },
+    {
+      "paid": "china-news-tool-pro",
+      "free": "china-news-tool-free"
+    },
+    {
+      "paid": "chromecast-control",
+      "free": "chromecast-control-free"
+    },
+    {
+      "paid": "chromecast-control-tool-pro",
+      "free": "chromecast-control-tool-free"
+    },
+    {
+      "paid": "claude-code-delegate",
+      "free": "claude-code-delegate-free"
+    },
+    {
+      "paid": "clawcall",
+      "free": "clawcall-free"
+    },
+    {
+      "paid": "cloud-architect-design",
+      "free": "cloud-architect-design-free"
+    },
+    {
+      "paid": "cloud-architect",
+      "free": "cloud-architect-free"
+    },
+    {
+      "paid": "cloud",
+      "free": "cloud-free"
+    },
+    {
+      "paid": "cloud-manager",
+      "free": "cloud-manager-free"
+    },
+    {
+      "paid": "cloud-storage-manager-pro",
+      "free": "cloud-storage-manager-free"
+    },
+    {
+      "paid": "cloudforge-automation-pro",
+      "free": "cloudforge-automation-free"
+    },
+    {
+      "paid": "code-analysis-toolkit",
+      "free": "code-analysis-toolkit-free"
+    },
+    {
+      "paid": "code-analyze-tool-pro",
+      "free": "code-analyze-tool-free"
+    },
+    {
+      "paid": "code-delegate-tool-pro",
+      "free": "code-delegate-tool-free"
+    },
+    {
+      "paid": "code-dev-toolkit",
+      "free": "code-dev-toolkit-free"
+    },
+    {
+      "paid": "code-dev-v1-tool-pro",
+      "free": "code-dev-v1-tool-free"
+    },
+    {
+      "paid": "code-quality-tool-pro",
+      "free": "code-quality-tool-free"
+    },
+    {
+      "paid": "code-runner-tool-pro",
+      "free": "code-runner-tool-free"
+    },
+    {
+      "paid": "comfyui-painter",
+      "free": "comfyui-painter-free"
+    },
+    {
+      "paid": "comfyui-painter-tool-pro",
+      "free": "comfyui-painter-tool-free"
+    },
+    {
+      "paid": "comm-skill-tool-pro",
+      "free": "comm-skill-tool-free"
+    },
+    {
+      "paid": "communication-skill",
+      "free": "communication-skill-free"
+    },
+    {
+      "paid": "company-search-tool-pro",
+      "free": "company-search-tool-free"
+    },
+    {
+      "paid": "compress-pdf-tool-pro",
+      "free": "compress-pdf-tool-free"
+    },
+    {
+      "paid": "content-filter-tool-pro",
+      "free": "content-filter-tool-free"
+    },
+    {
+      "paid": "context-compressor-pro",
+      "free": "context-compressor-free"
+    },
+    {
+      "paid": "context-driven-dev-tool-pro",
+      "free": "context-driven-dev-tool-free"
+    },
+    {
+      "paid": "context-vault-manager-pro",
+      "free": "context-vault-manager-free"
+    },
+    {
+      "paid": "contract-agent-pro",
+      "free": "contract-agent-free"
+    },
+    {
+      "paid": "creative-officer-tool-pro",
+      "free": "creative-officer-tool-free"
+    },
+    {
+      "paid": "creator-alpha-feed",
+      "free": "creator-alpha-feed-free"
+    },
+    {
+      "paid": "cron-expert-pro",
+      "free": "cron-expert-free"
+    },
+    {
+      "paid": "cron-guard",
+      "free": "cron-guard-free"
+    },
+    {
+      "paid": "cron-mate-pro",
+      "free": "cron-mate-free"
+    },
+    {
+      "paid": "cron-scheduler-pro",
+      "free": "cron-scheduler-pro-free"
+    },
+    {
+      "paid": "cron-setup-guide",
+      "free": "cron-setup-guide-free"
+    },
+    {
+      "paid": "css",
+      "free": "css-free"
+    },
+    {
+      "paid": "css-toolkit-pro",
+      "free": "css-toolkit-free"
+    },
+    {
+      "paid": "csv-analyzer",
+      "free": "csv-analyzer-free"
+    },
+    {
+      "paid": "csv",
+      "free": "csv-free"
+    },
+    {
+      "paid": "csv-handler",
+      "free": "csv-handler-free"
+    },
+    {
+      "paid": "csv-insight",
+      "free": "csv-insight-free"
+    },
+    {
+      "paid": "csv-json-converter",
+      "free": "csv-json-converter-free"
+    },
+    {
+      "paid": "csv-processor-pro",
+      "free": "csv-processor-free"
+    },
+    {
+      "paid": "csv-toolkit",
+      "free": "csv-toolkit-free"
+    },
+    {
+      "paid": "ctxly-chat-tool-pro",
+      "free": "ctxly-chat-tool-free"
+    },
+    {
+      "paid": "cybersecurity-engine-tool-pro",
+      "free": "cybersecurity-engine-tool-free"
+    },
+    {
+      "paid": "daily-news-brief-tool-pro",
+      "free": "daily-news-brief-tool-free"
+    },
+    {
+      "paid": "daily-report-tool-pro",
+      "free": "daily-report-tool-free"
+    },
+    {
+      "paid": "dashboard-builder-pro",
+      "free": "dashboard-builder-free"
+    },
+    {
+      "paid": "data-analysis-hub",
+      "free": "data-analysis-hub-free"
+    },
+    {
+      "paid": "data-analysis-litiao",
+      "free": "data-analysis-litiao-free"
+    },
+    {
+      "paid": "data-analyst-chinese",
+      "free": "data-analyst-chinese-free"
+    },
+    {
+      "paid": "data-analyst-cn",
+      "free": "data-analyst-cn-free"
+    },
+    {
+      "paid": "data-analyst-expert",
+      "free": "data-analyst-expert-free"
+    },
+    {
+      "paid": "data-format-converter",
+      "free": "data-format-converter-free"
+    },
+    {
+      "paid": "data-toolkit-pro",
+      "free": "data-toolkit-free"
+    },
+    {
+      "paid": "database-admin",
+      "free": "database-admin-free"
+    },
+    {
+      "paid": "db-admin-console",
+      "free": "db-admin-console-free"
+    },
+    {
+      "paid": "db-connector",
+      "free": "db-connector-free"
+    },
+    {
+      "paid": "db",
+      "free": "db-free"
+    },
+    {
+      "paid": "db-schema-designer",
+      "free": "db-schema-designer-free"
+    },
+    {
+      "paid": "decision-architect",
+      "free": "decision-architect-free"
+    },
+    {
+      "paid": "deepseek-assistant",
+      "free": "deepseek-assistant-free"
+    },
+    {
+      "paid": "design",
+      "free": "design-free"
+    },
+    {
+      "paid": "design-toolkit",
+      "free": "design-toolkit-free"
+    },
+    {
+      "paid": "desktop-automation-hub-pro",
+      "free": "desktop-automation-hub-free"
+    },
+    {
+      "paid": "diagram-gen-tool-pro",
+      "free": "diagram-gen-tool-free"
+    },
+    {
+      "paid": "diagram-generator",
+      "free": "diagram-generator-free"
+    },
+    {
+      "paid": "diagram-master-pro",
+      "free": "diagram-master-free"
+    },
+    {
+      "paid": "diagram-tool-pro",
+      "free": "diagram-tool-free"
+    },
+    {
+      "paid": "diagram-tools-tool-pro",
+      "free": "diagram-tools-tool-free"
+    },
+    {
+      "paid": "dingtalk-calendar-tool-pro",
+      "free": "dingtalk-calendar-tool-free"
+    },
+    {
+      "paid": "discord-chat",
+      "free": "discord-chat-free"
+    },
+    {
+      "paid": "discord-chat-manager",
+      "free": "discord-chat-manager-free"
+    },
+    {
+      "paid": "discord-communities",
+      "free": "discord-communities-free"
+    },
+    {
+      "paid": "discord-community-hub",
+      "free": "discord-community-hub-free"
+    },
+    {
+      "paid": "discord",
+      "free": "discord-free"
+    },
+    {
+      "paid": "discord-master",
+      "free": "discord-master-free"
+    },
+    {
+      "paid": "discord-toolkit",
+      "free": "discord-toolkit-free"
+    },
+    {
+      "paid": "discord-voice",
+      "free": "discord-voice-free"
+    },
+    {
+      "paid": "discord-voice-tool-pro",
+      "free": "discord-voice-tool-free"
+    },
+    {
+      "paid": "dlazy-audio-generate",
+      "free": "dlazy-audio-generate-free"
+    },
+    {
+      "paid": "dlazy-audio-tool-pro",
+      "free": "dlazy-audio-tool-free"
+    },
+    {
+      "paid": "dlazy-gen-tool-pro",
+      "free": "dlazy-gen-tool-free"
+    },
+    {
+      "paid": "dns-config-tool-pro",
+      "free": "dns-config-tool-free"
+    },
+    {
+      "paid": "dns",
+      "free": "dns-free"
+    },
+    {
+      "paid": "dns-lookup-tool-pro",
+      "free": "dns-lookup-tool-free"
+    },
+    {
+      "paid": "dns-networking-tool-pro",
+      "free": "dns-networking-tool-free"
+    },
+    {
+      "paid": "doc-guard",
+      "free": "doc-guard-free"
+    },
+    {
+      "paid": "doc-parse-tool-pro",
+      "free": "doc-parse-tool-free"
+    },
+    {
+      "paid": "doc-print-tool-pro",
+      "free": "doc-print-tool-free"
+    },
+    {
+      "paid": "doc-reasoning-analyst-pro",
+      "free": "doc-reasoning-analyst-free"
+    },
+    {
+      "paid": "doc-toolkit-pro",
+      "free": "doc-toolkit-free"
+    },
+    {
+      "paid": "docker-ctl-tool-pro",
+      "free": "docker-ctl-tool-free"
+    },
+    {
+      "paid": "docker-essentials-1-0-0",
+      "free": "docker-essentials-1-0-0-free"
+    },
+    {
+      "paid": "docker-essentials",
+      "free": "docker-essentials-free"
+    },
+    {
+      "paid": "docker-essentials-tool-pro",
+      "free": "docker-essentials-tool-free"
+    },
+    {
+      "paid": "docker-essentials-v1-tool-pro",
+      "free": "docker-essentials-v1-tool-free"
+    },
+    {
+      "paid": "docker-sandbox-tool-pro",
+      "free": "docker-sandbox-tool-free"
+    },
+    {
+      "paid": "docker-toolkit-pro",
+      "free": "docker-toolkit-free"
+    },
+    {
+      "paid": "docs-toolkit-pro",
+      "free": "docs-toolkit-free"
+    },
+    {
+      "paid": "document-pdf-tool-pro",
+      "free": "document-pdf-tool-free"
+    },
+    {
+      "paid": "doge-node-tool-pro",
+      "free": "doge-node-tool-free"
+    },
+    {
+      "paid": "domain-dns-manager-pro",
+      "free": "domain-dns-manager-free"
+    },
+    {
+      "paid": "doubao-assistant",
+      "free": "doubao-assistant-free"
+    },
+    {
+      "paid": "doubao-image-gen-tool-pro",
+      "free": "doubao-image-gen-tool-free"
+    },
+    {
+      "paid": "drawing-insight-pro",
+      "free": "drawing-insight-free"
+    },
+    {
+      "paid": "elite-frontend-tool-pro",
+      "free": "elite-frontend-tool-free"
+    },
+    {
+      "paid": "elite-longterm-memory",
+      "free": "elite-longterm-memory-free"
+    },
+    {
+      "paid": "elite-longterm-memory-local",
+      "free": "elite-longterm-memory-local-free"
+    },
+    {
+      "paid": "email-163-com",
+      "free": "email-163-com-free"
+    },
+    {
+      "paid": "email-163-tool-pro",
+      "free": "email-163-tool-free"
+    },
+    {
+      "paid": "email-daily-summary",
+      "free": "email-daily-summary-free"
+    },
+    {
+      "paid": "email-digest-tool-pro",
+      "free": "email-digest-tool-free"
+    },
+    {
+      "paid": "email-gmail-outlook",
+      "free": "email-gmail-outlook-free"
+    },
+    {
+      "paid": "email-multi-provider-pro",
+      "free": "email-multi-provider-free"
+    },
+    {
+      "paid": "email-skill",
+      "free": "email-skill-free"
+    },
+    {
+      "paid": "email-toolkit",
+      "free": "email-toolkit-free"
+    },
+    {
+      "paid": "emoji-toolkit-pro",
+      "free": "emoji-toolkit-free"
+    },
+    {
+      "paid": "encoding-formats",
+      "free": "encoding-formats-free"
+    },
+    {
+      "paid": "encoding-toolkit",
+      "free": "encoding-toolkit-free"
+    },
+    {
+      "paid": "encryption-tool-pro",
+      "free": "encryption-tool-free"
+    },
+    {
+      "paid": "evolution-engine",
+      "free": "evolution-engine-free"
+    },
+    {
+      "paid": "evolve-loop-pro",
+      "free": "evolve-loop-free"
+    },
+    {
+      "paid": "excel-craft",
+      "free": "excel-craft-free"
+    },
+    {
+      "paid": "excel-expert",
+      "free": "excel-expert-free"
+    },
+    {
+      "paid": "excel-formula-tool-pro",
+      "free": "excel-formula-tool-free"
+    },
+    {
+      "paid": "excel-ninja-pro",
+      "free": "excel-ninja-free"
+    },
+    {
+      "paid": "explain-code-tool-pro",
+      "free": "explain-code-tool-free"
+    },
+    {
+      "paid": "feed-digest-tool-pro",
+      "free": "feed-digest-tool-free"
+    },
+    {
+      "paid": "feed-to-md-tool-pro",
+      "free": "feed-to-md-tool-free"
+    },
+    {
+      "paid": "feedstream-monitor-pro",
+      "free": "feedstream-monitor-free"
+    },
+    {
+      "paid": "feishu-calendar-tool-pro",
+      "free": "feishu-calendar-tool-free"
+    },
+    {
+      "paid": "feishu-card-builder",
+      "free": "feishu-card-builder-free"
+    },
+    {
+      "paid": "feishu-card",
+      "free": "feishu-card-free"
+    },
+    {
+      "paid": "feishu-doc-tool-pro",
+      "free": "feishu-doc-tool-free"
+    },
+    {
+      "paid": "feishu-doc-write-tool-pro",
+      "free": "feishu-doc-write-tool-free"
+    },
+    {
+      "paid": "feishu-file-sender",
+      "free": "feishu-file-sender-free"
+    },
+    {
+      "paid": "feishu-send-file",
+      "free": "feishu-send-file-free"
+    },
+    {
+      "paid": "figma-design-tool-pro",
+      "free": "figma-design-tool-free"
+    },
+    {
+      "paid": "figma-studio",
+      "free": "figma-studio-free"
+    },
+    {
+      "paid": "figma-toolkit-pro",
+      "free": "figma-toolkit-free"
+    },
+    {
+      "paid": "figma-tw-designer",
+      "free": "figma-tw-designer-free"
+    },
+    {
+      "paid": "file-browser-tool-pro",
+      "free": "file-browser-tool-free"
+    },
+    {
+      "paid": "file-compressor-pro",
+      "free": "file-compressor-free"
+    },
+    {
+      "paid": "file-sorter-tool-pro",
+      "free": "file-sorter-tool-free"
+    },
+    {
+      "paid": "file-toolkit-pro",
+      "free": "file-toolkit-free"
+    },
+    {
+      "paid": "finance-acct-tool-pro",
+      "free": "finance-acct-tool-free"
+    },
+    {
+      "paid": "finance-radar-tool-pro",
+      "free": "finance-radar-tool-free"
+    },
+    {
+      "paid": "finance-report-tool-pro",
+      "free": "finance-report-tool-free"
+    },
+    {
+      "paid": "finance-toolkit",
+      "free": "finance-toolkit-free"
+    },
+    {
+      "paid": "financial-literacy-tool-pro",
+      "free": "financial-literacy-tool-free"
+    },
+    {
+      "paid": "firewall-toolkit-pro",
+      "free": "firewall-toolkit-free"
+    },
+    {
+      "paid": "flow-control-hub-pro",
+      "free": "flow-control-hub-free"
+    },
+    {
+      "paid": "flow-manager-pro-pro",
+      "free": "flow-manager-pro-free"
+    },
+    {
+      "paid": "flowforge-builder-pro",
+      "free": "flowforge-builder-free"
+    },
+    {
+      "paid": "focus-flow-optimizer-pro",
+      "free": "focus-flow-optimizer-free"
+    },
+    {
+      "paid": "font-manager-pro",
+      "free": "font-manager-free"
+    },
+    {
+      "paid": "format-converter",
+      "free": "format-converter-free"
+    },
+    {
+      "paid": "free-google-search-tool-pro",
+      "free": "free-google-search-tool-free"
+    },
+    {
+      "paid": "free-resource-finder",
+      "free": "free-resource-finder-free"
+    },
+    {
+      "paid": "free-weather-api-tool-pro",
+      "free": "free-weather-api-tool-free"
+    },
+    {
+      "paid": "free-weather-skill-tool-pro",
+      "free": "free-weather-skill-tool-free"
+    },
+    {
+      "paid": "free-web-search-tool-pro",
+      "free": "free-web-search-tool-free"
+    },
+    {
+      "paid": "frontend-design-3",
+      "free": "frontend-design-3-free"
+    },
+    {
+      "paid": "frontend-design-anthropic",
+      "free": "frontend-design-anthropic-free"
+    },
+    {
+      "paid": "frontend-design-other-tool-pro",
+      "free": "frontend-design-other-tool-free"
+    },
+    {
+      "paid": "frontend-design-v3",
+      "free": "frontend-design-v3-free"
+    },
+    {
+      "paid": "game-ai-tool-pro",
+      "free": "game-ai-tool-free"
+    },
+    {
+      "paid": "game-asset-gen-tool-pro",
+      "free": "game-asset-gen-tool-free"
+    },
+    {
+      "paid": "game-builder-tool-pro",
+      "free": "game-builder-tool-free"
+    },
+    {
+      "paid": "game-dev-tool-pro",
+      "free": "game-dev-tool-free"
+    },
+    {
+      "paid": "game-theory",
+      "free": "game-theory-free"
+    },
+    {
+      "paid": "game-theory-tool-pro",
+      "free": "game-theory-tool-free"
+    },
+    {
+      "paid": "game-toolkit-pro",
+      "free": "game-toolkit-free"
+    },
+    {
+      "paid": "gateway-manager",
+      "free": "gateway-manager-free"
+    },
+    {
+      "paid": "gif-whatsapp-tool-pro",
+      "free": "gif-whatsapp-tool-free"
+    },
+    {
+      "paid": "git-cli-tool-pro",
+      "free": "git-cli-tool-free"
+    },
+    {
+      "paid": "git-essentials",
+      "free": "git-essentials-free"
+    },
+    {
+      "paid": "git-essentials-tool-pro",
+      "free": "git-essentials-tool-free"
+    },
+    {
+      "paid": "git-helper-tool-pro",
+      "free": "git-helper-tool-free"
+    },
+    {
+      "paid": "git-toolkit",
+      "free": "git-toolkit-free"
+    },
+    {
+      "paid": "git-workflow-cn-tool-pro",
+      "free": "git-workflow-cn-tool-free"
+    },
+    {
+      "paid": "git-workflows-tool-pro",
+      "free": "git-workflows-tool-free"
+    },
+    {
+      "paid": "gitcrawl-tool-pro",
+      "free": "gitcrawl-tool-free"
+    },
+    {
+      "paid": "github-api-toolkit",
+      "free": "github-api-toolkit-free"
+    },
+    {
+      "paid": "github-dev-standard",
+      "free": "github-dev-standard-free"
+    },
+    {
+      "paid": "github-manager",
+      "free": "github-manager-free"
+    },
+    {
+      "paid": "glitch-dashboard-tool-pro",
+      "free": "glitch-dashboard-tool-free"
+    },
+    {
+      "paid": "go-linter-config-tool-pro",
+      "free": "go-linter-config-tool-free"
+    },
+    {
+      "paid": "go-security-vuln-tool-pro",
+      "free": "go-security-vuln-tool-free"
+    },
+    {
+      "paid": "go-security-vulnerability",
+      "free": "go-security-vulnerability-free"
+    },
+    {
+      "paid": "go-to-market",
+      "free": "go-to-market-free"
+    },
+    {
+      "paid": "go-to-market-tool-pro",
+      "free": "go-to-market-tool-free"
+    },
+    {
+      "paid": "gog",
+      "free": "gog-free"
+    },
+    {
+      "paid": "golang-toolkit",
+      "free": "golang-toolkit-free"
+    },
+    {
+      "paid": "google-fonts-tool-pro",
+      "free": "google-fonts-tool-free"
+    },
+    {
+      "paid": "google-search-tool-pro",
+      "free": "google-search-tool-free"
+    },
+    {
+      "paid": "google-workspace-cli",
+      "free": "google-workspace-cli-free"
+    },
+    {
+      "paid": "google-workspace-mcp",
+      "free": "google-workspace-mcp-free"
+    },
+    {
+      "paid": "google-workspace-toolkit",
+      "free": "google-workspace-toolkit-free"
+    },
+    {
+      "paid": "grain-crawler",
+      "free": "grain-crawler-free"
+    },
+    {
+      "paid": "graph-knowledge-base",
+      "free": "graph-knowledge-base-free"
+    },
+    {
+      "paid": "graph-query-tool-pro",
+      "free": "graph-query-tool-free"
+    },
+    {
+      "paid": "grok-image-tool-pro",
+      "free": "grok-image-tool-free"
+    },
+    {
+      "paid": "group-agent-tool-pro",
+      "free": "group-agent-tool-free"
+    },
+    {
+      "paid": "health-toolkit-pro",
+      "free": "health-toolkit-free"
+    },
+    {
+      "paid": "heygen-tts-tool-pro",
+      "free": "heygen-tts-tool-free"
+    },
+    {
+      "paid": "hot-news-tool-pro",
+      "free": "hot-news-tool-free"
+    },
+    {
+      "paid": "html-coder-tool-pro",
+      "free": "html-coder-tool-free"
+    },
+    {
+      "paid": "html-designer-tool-pro",
+      "free": "html-designer-tool-free"
+    },
+    {
+      "paid": "html-toolkit-pro",
+      "free": "html-toolkit-free"
+    },
+    {
+      "paid": "hugo-blog-publisher",
+      "free": "hugo-blog-publisher-free"
+    },
+    {
+      "paid": "hugo-blog-tool-pro",
+      "free": "hugo-blog-tool-free"
+    },
+    {
+      "paid": "humanizer-tool-pro",
+      "free": "humanizer-tool-free"
+    },
+    {
+      "paid": "image-tool-pro",
+      "free": "image-tool-free"
+    },
+    {
+      "paid": "in-depth-research",
+      "free": "in-depth-research-free"
+    },
+    {
+      "paid": "in-depth-research-tool-pro",
+      "free": "in-depth-research-tool-free"
+    },
+    {
+      "paid": "infinite-memory-vault-pro",
+      "free": "infinite-memory-vault-free"
+    },
+    {
+      "paid": "internet-search-pro-tool-pro",
+      "free": "internet-search-pro-tool-free"
+    },
+    {
+      "paid": "internet-search-tool-pro",
+      "free": "internet-search-tool-free"
+    },
+    {
+      "paid": "interview-sim-tool-pro",
+      "free": "interview-sim-tool-free"
+    },
+    {
+      "paid": "iris-formatter-tool-pro",
+      "free": "iris-formatter-tool-free"
+    },
+    {
+      "paid": "java-dev-manual-tool-pro",
+      "free": "java-dev-manual-tool-free"
+    },
+    {
+      "paid": "java",
+      "free": "java-free"
+    },
+    {
+      "paid": "java-reviewer-tool-pro",
+      "free": "java-reviewer-tool-free"
+    },
+    {
+      "paid": "java-toolkit-pro",
+      "free": "java-toolkit-free"
+    },
+    {
+      "paid": "javascript-sdk-tool-pro",
+      "free": "javascript-sdk-tool-free"
+    },
+    {
+      "paid": "javascript-skills-tool-pro",
+      "free": "javascript-skills-tool-free"
+    },
+    {
+      "paid": "javascript-toolkit",
+      "free": "javascript-toolkit-free"
+    },
+    {
+      "paid": "jellyfin-control-tool-pro",
+      "free": "jellyfin-control-tool-free"
+    },
+    {
+      "paid": "jinn-node",
+      "free": "jinn-node-free"
+    },
+    {
+      "paid": "jinn-node-tool-pro",
+      "free": "jinn-node-tool-free"
+    },
+    {
+      "paid": "jira-api-toolkit",
+      "free": "jira-api-toolkit-free"
+    },
+    {
+      "paid": "jira-flow-skill",
+      "free": "jira-flow-skill-free"
+    },
+    {
+      "paid": "jira",
+      "free": "jira-free"
+    },
+    {
+      "paid": "jira-pat-tool-pro",
+      "free": "jira-pat-tool-free"
+    },
+    {
+      "paid": "jira-skill",
+      "free": "jira-skill-free"
+    },
+    {
+      "paid": "jira-toolkit-pro",
+      "free": "jira-toolkit-free"
+    },
+    {
+      "paid": "job-auto-apply-tool-pro",
+      "free": "job-auto-apply-tool-free"
+    },
+    {
+      "paid": "join-meeting",
+      "free": "join-meeting-free"
+    },
+    {
+      "paid": "json-beautifier",
+      "free": "json-beautifier-free"
+    },
+    {
+      "paid": "json-lint-tool-pro",
+      "free": "json-lint-tool-free"
+    },
+    {
+      "paid": "json-parse-engine",
+      "free": "json-parse-engine-free"
+    },
+    {
+      "paid": "json-repair-tool-pro",
+      "free": "json-repair-tool-free"
+    },
+    {
+      "paid": "json-toolkit",
+      "free": "json-toolkit-free"
+    },
+    {
+      "paid": "json-validator",
+      "free": "json-validator-free"
+    },
+    {
+      "paid": "json-yaml-converter",
+      "free": "json-yaml-converter-free"
+    },
+    {
+      "paid": "juejin-tool-pro",
+      "free": "juejin-tool-free"
+    },
+    {
+      "paid": "k8s-devops-tool-pro",
+      "free": "k8s-devops-tool-free"
+    },
+    {
+      "paid": "k8s-toolkit-pro",
+      "free": "k8s-toolkit-free"
+    },
+    {
+      "paid": "key-vault-manager",
+      "free": "key-vault-manager-free"
+    },
+    {
+      "paid": "knowledge-agent-tool-pro",
+      "free": "knowledge-agent-tool-free"
+    },
+    {
+      "paid": "knowledge-capture-tool-pro",
+      "free": "knowledge-capture-tool-free"
+    },
+    {
+      "paid": "knowledge-graph-builder-pro",
+      "free": "knowledge-graph-builder-free"
+    },
+    {
+      "paid": "knowledge-graph-skill",
+      "free": "knowledge-graph-skill-free"
+    },
+    {
+      "paid": "knowledge-graph-tool-pro",
+      "free": "knowledge-graph-tool-free"
+    },
+    {
+      "paid": "knowledge-mgmt-tool-pro",
+      "free": "knowledge-mgmt-tool-free"
+    },
+    {
+      "paid": "knowledge-ontology",
+      "free": "knowledge-ontology-free"
+    },
+    {
+      "paid": "knowledge-toolkit-pro",
+      "free": "knowledge-toolkit-free"
+    },
+    {
+      "paid": "kubernetes-toolkit-pro",
+      "free": "kubernetes-toolkit-free"
+    },
+    {
+      "paid": "kujiale-design-tool-pro",
+      "free": "kujiale-design-tool-free"
+    },
+    {
+      "paid": "learn-cog",
+      "free": "learn-cog-free"
+    },
+    {
+      "paid": "learn-cog-tool-pro",
+      "free": "learn-cog-tool-free"
+    },
+    {
+      "paid": "learn-tool-pro",
+      "free": "learn-tool-free"
+    },
+    {
+      "paid": "lh-video-gen-tool-pro",
+      "free": "lh-video-gen-tool-free"
+    },
+    {
+      "paid": "lifestyle-assistant-tool-pro",
+      "free": "lifestyle-assistant-tool-free"
+    },
+    {
+      "paid": "linear-api",
+      "free": "linear-api-free"
+    },
+    {
+      "paid": "linear-api-toolkit",
+      "free": "linear-api-toolkit-free"
+    },
+    {
+      "paid": "linear-flow-cli-pro",
+      "free": "linear-flow-cli-free"
+    },
+    {
+      "paid": "linear-pilot-ai-pro",
+      "free": "linear-pilot-ai-free"
+    },
+    {
+      "paid": "linear-sync-tool-pro",
+      "free": "linear-sync-tool-free"
+    },
+    {
+      "paid": "linear-toolkit-pro",
+      "free": "linear-toolkit-free"
+    },
+    {
+      "paid": "linear-workflow-skill",
+      "free": "linear-workflow-skill-free"
+    },
+    {
+      "paid": "liquidity-mgr-tool-pro",
+      "free": "liquidity-mgr-tool-free"
+    },
+    {
+      "paid": "live-stream-script-tool-pro",
+      "free": "live-stream-script-tool-free"
+    },
+    {
+      "paid": "llm-assistant-hub",
+      "free": "llm-assistant-hub-free"
+    },
+    {
+      "paid": "local-rag-tool-pro",
+      "free": "local-rag-tool-free"
+    },
+    {
+      "paid": "local-vector-memory-pro",
+      "free": "local-vector-memory-free"
+    },
+    {
+      "paid": "log-sanitizer-pro",
+      "free": "log-sanitizer-free"
+    },
+    {
+      "paid": "logo-brand-identity-tool-pro",
+      "free": "logo-brand-identity-tool-free"
+    },
+    {
+      "paid": "logo-design-guide",
+      "free": "logo-design-guide-free"
+    },
+    {
+      "paid": "logo-design-guide-tool-pro",
+      "free": "logo-design-guide-tool-free"
+    },
+    {
+      "paid": "logo-design-tool-pro",
+      "free": "logo-design-tool-free"
+    },
+    {
+      "paid": "longmemo-elite",
+      "free": "longmemo-elite-free"
+    },
+    {
+      "paid": "mac-node-snapshot-tool-pro",
+      "free": "mac-node-snapshot-tool-free"
+    },
+    {
+      "paid": "mac-system-tool-pro",
+      "free": "mac-system-tool-free"
+    },
+    {
+      "paid": "macro-sentinel-pro",
+      "free": "macro-sentinel-free"
+    },
+    {
+      "paid": "markdown-converter-tool-pro",
+      "free": "markdown-converter-tool-free"
+    },
+    {
+      "paid": "markdown-exporter",
+      "free": "markdown-exporter-free"
+    },
+    {
+      "paid": "markdown-format-tool-pro",
+      "free": "markdown-format-tool-free"
+    },
+    {
+      "paid": "markdown-toolkit-pro",
+      "free": "markdown-toolkit-free"
+    },
+    {
+      "paid": "market-news-tool-pro",
+      "free": "market-news-tool-free"
+    },
+    {
+      "paid": "md-converter-pdf-tool-pro",
+      "free": "md-converter-pdf-tool-free"
+    },
+    {
+      "paid": "md-export-tool-pro",
+      "free": "md-export-tool-free"
+    },
+    {
+      "paid": "meeting-join-tool-pro",
+      "free": "meeting-join-tool-free"
+    },
+    {
+      "paid": "meeting-note-tool-pro",
+      "free": "meeting-note-tool-free"
+    },
+    {
+      "paid": "memo-quickstart",
+      "free": "memo-quickstart-free"
+    },
+    {
+      "paid": "memory-compress",
+      "free": "memory-compress-free"
+    },
+    {
+      "paid": "memory-distiller",
+      "free": "memory-distiller-free"
+    },
+    {
+      "paid": "memory-fortress-pro",
+      "free": "memory-fortress-free"
+    },
+    {
+      "paid": "memory",
+      "free": "memory-free"
+    },
+    {
+      "paid": "memory-orchestrator",
+      "free": "memory-orchestrator-free"
+    },
+    {
+      "paid": "memory-radar",
+      "free": "memory-radar-free"
+    },
+    {
+      "paid": "memory-scan",
+      "free": "memory-scan-free"
+    },
+    {
+      "paid": "merge-check-tool-pro",
+      "free": "merge-check-tool-free"
+    },
+    {
+      "paid": "merge-pdf-tool-pro",
+      "free": "merge-pdf-tool-free"
+    },
+    {
+      "paid": "mermaid-diagram-tool-pro",
+      "free": "mermaid-diagram-tool-free"
+    },
+    {
+      "paid": "meta-agent-optimizer-pro",
+      "free": "meta-agent-optimizer-free"
+    },
+    {
+      "paid": "mindmap-gen-tool-pro",
+      "free": "mindmap-gen-tool-free"
+    },
+    {
+      "paid": "minimalist-design-tool-pro",
+      "free": "minimalist-design-tool-free"
+    },
+    {
+      "paid": "miniprogram-dev-tool-pro",
+      "free": "miniprogram-dev-tool-free"
+    },
+    {
+      "paid": "model-routing-tool-pro",
+      "free": "model-routing-tool-free"
+    },
+    {
+      "paid": "model-switching-tool-pro",
+      "free": "model-switching-tool-free"
+    },
+    {
+      "paid": "molt-board-art",
+      "free": "molt-board-art-free"
+    },
+    {
+      "paid": "moltbook-filter",
+      "free": "moltbook-filter-free"
+    },
+    {
+      "paid": "moltbook-firewall-tool-pro",
+      "free": "moltbook-firewall-tool-free"
+    },
+    {
+      "paid": "molted-work-tool-pro",
+      "free": "molted-work-tool-free"
+    },
+    {
+      "paid": "monad-dev-tool-pro",
+      "free": "monad-dev-tool-free"
+    },
+    {
+      "paid": "mongo-manager",
+      "free": "mongo-manager-free"
+    },
+    {
+      "paid": "mongodb-atlas-admin",
+      "free": "mongodb-atlas-admin-free"
+    },
+    {
+      "paid": "monitor-toolkit-pro",
+      "free": "monitor-toolkit-free"
+    },
+    {
+      "paid": "multi-agent-dev",
+      "free": "multi-agent-dev-free"
+    },
+    {
+      "paid": "multi-search-engine-tool-pro",
+      "free": "multi-search-engine-tool-free"
+    },
+    {
+      "paid": "multi-search-tool-pro",
+      "free": "multi-search-tool-free"
+    },
+    {
+      "paid": "multi-source-research-tool-pro",
+      "free": "multi-source-research-tool-free"
+    },
+    {
+      "paid": "music-gen-cellcog-tool-pro",
+      "free": "music-gen-cellcog-tool-free"
+    },
+    {
+      "paid": "music-gen-tool-pro",
+      "free": "music-gen-tool-free"
+    },
+    {
+      "paid": "music-toolkit-pro",
+      "free": "music-toolkit-free"
+    },
+    {
+      "paid": "namecheap-dns-tool-pro",
+      "free": "namecheap-dns-tool-free"
+    },
+    {
+      "paid": "nano-pdf-tool-pro",
+      "free": "nano-pdf-tool-free"
+    },
+    {
+      "paid": "neosoul-decision-agent",
+      "free": "neosoul-decision-agent-free"
+    },
+    {
+      "paid": "neural-context-engine-pro",
+      "free": "neural-context-engine-free"
+    },
+    {
+      "paid": "neural-memory-enhanced",
+      "free": "neural-memory-enhanced-free"
+    },
+    {
+      "paid": "news-aggregator",
+      "free": "news-aggregator-free"
+    },
+    {
+      "paid": "news-aggregator-tool-pro",
+      "free": "news-aggregator-tool-free"
+    },
+    {
+      "paid": "news-daily-digest",
+      "free": "news-daily-digest-free"
+    },
+    {
+      "paid": "news-feed-tool-pro",
+      "free": "news-feed-tool-free"
+    },
+    {
+      "paid": "news-sentiment-scan",
+      "free": "news-sentiment-scan-free"
+    },
+    {
+      "paid": "news-sentiment-tool-pro",
+      "free": "news-sentiment-tool-free"
+    },
+    {
+      "paid": "news-tool-pro",
+      "free": "news-tool-free"
+    },
+    {
+      "paid": "node-connect-tool-pro",
+      "free": "node-connect-tool-free"
+    },
+    {
+      "paid": "note-process-engine-pro",
+      "free": "note-process-engine-free"
+    },
+    {
+      "paid": "note-taker-tool-pro",
+      "free": "note-taker-tool-free"
+    },
+    {
+      "paid": "note-toolkit-pro",
+      "free": "note-toolkit-free"
+    },
+    {
+      "paid": "notes-sync-cli-pro",
+      "free": "notes-sync-cli-free"
+    },
+    {
+      "paid": "notion-api-toolkit",
+      "free": "notion-api-toolkit-free"
+    },
+    {
+      "paid": "notion-cli-tool-pro",
+      "free": "notion-cli-tool-free"
+    },
+    {
+      "paid": "notion-pages-tool-pro",
+      "free": "notion-pages-tool-free"
+    },
+    {
+      "paid": "notion-skill-tool-pro",
+      "free": "notion-skill-tool-free"
+    },
+    {
+      "paid": "notion-toolkit-pro",
+      "free": "notion-toolkit-free"
+    },
+    {
+      "paid": "obsidian-cli-tool-pro",
+      "free": "obsidian-cli-tool-free"
+    },
+    {
+      "paid": "obsidian-essentials-pro",
+      "free": "obsidian-essentials-free"
+    },
+    {
+      "paid": "obsidian-toolkit-pro",
+      "free": "obsidian-toolkit-free"
+    },
+    {
+      "paid": "ocean-chat-tool-pro",
+      "free": "ocean-chat-tool-free"
+    },
+    {
+      "paid": "office-task-automator-pro",
+      "free": "office-task-automator-free"
+    },
+    {
+      "paid": "okx-dex-token-tool-pro",
+      "free": "okx-dex-token-tool-free"
+    },
+    {
+      "paid": "ollama-toolkit",
+      "free": "ollama-toolkit-free"
+    },
+    {
+      "paid": "ontology",
+      "free": "ontology-free"
+    },
+    {
+      "paid": "openai-ai-tool-pro",
+      "free": "openai-ai-tool-free"
+    },
+    {
+      "paid": "openai-whisper-tool-pro",
+      "free": "openai-whisper-tool-free"
+    },
+    {
+      "paid": "openai-whisper-v1-tool-pro",
+      "free": "openai-whisper-v1-tool-free"
+    },
+    {
+      "paid": "ops-dashboard",
+      "free": "ops-dashboard-free"
+    },
+    {
+      "paid": "pan-file-commander-pro",
+      "free": "pan-file-commander-free"
+    },
+    {
+      "paid": "pandoc-convert-tool-pro",
+      "free": "pandoc-convert-tool-free"
+    },
+    {
+      "paid": "paper-parse-tool-pro",
+      "free": "paper-parse-tool-free"
+    },
+    {
+      "paid": "parallel-research-tool-pro",
+      "free": "parallel-research-tool-free"
+    },
+    {
+      "paid": "password-gen-pro-tool-pro",
+      "free": "password-gen-pro-tool-free"
+    },
+    {
+      "paid": "password-generator-tool-pro",
+      "free": "password-generator-tool-free"
+    },
+    {
+      "paid": "pcb-design-assistant-pro",
+      "free": "pcb-design-assistant-free"
+    },
+    {
+      "paid": "pdf-processor-cn-tool-pro",
+      "free": "pdf-processor-cn-tool-free"
+    },
+    {
+      "paid": "pdf-toolkit-pro",
+      "free": "pdf-toolkit-free"
+    },
+    {
+      "paid": "persistent-memory-engine",
+      "free": "persistent-memory-engine-free"
+    },
+    {
+      "paid": "personal-health-tool-pro",
+      "free": "personal-health-tool-free"
+    },
+    {
+      "paid": "personal-prod-tool-pro",
+      "free": "personal-prod-tool-free"
+    },
+    {
+      "paid": "pg-job-queue",
+      "free": "pg-job-queue-free"
+    },
+    {
+      "paid": "pg-mcp-skills",
+      "free": "pg-mcp-skills-free"
+    },
+    {
+      "paid": "photo-caption-tool-pro",
+      "free": "photo-caption-tool-free"
+    },
+    {
+      "paid": "photo-captions",
+      "free": "photo-captions-free"
+    },
+    {
+      "paid": "photo-webcam-tool-pro",
+      "free": "photo-webcam-tool-free"
+    },
+    {
+      "paid": "ping-monitor-tool-pro",
+      "free": "ping-monitor-tool-free"
+    },
+    {
+      "paid": "pipedrive-toolkit",
+      "free": "pipedrive-toolkit-free"
+    },
+    {
+      "paid": "piper-tts-engine",
+      "free": "piper-tts-engine-free"
+    },
+    {
+      "paid": "plugin-arch-tool-pro",
+      "free": "plugin-arch-tool-free"
+    },
+    {
+      "paid": "podcast-chaptering-tool-pro",
+      "free": "podcast-chaptering-tool-free"
+    },
+    {
+      "paid": "podcast-downloader-tool-pro",
+      "free": "podcast-downloader-tool-free"
+    },
+    {
+      "paid": "podcast-toolkit",
+      "free": "podcast-toolkit-free"
+    },
+    {
+      "paid": "popeye-prod-tool-pro",
+      "free": "popeye-prod-tool-free"
+    },
+    {
+      "paid": "port-transfer-tool-pro",
+      "free": "port-transfer-tool-free"
+    },
+    {
+      "paid": "pptx-cn-tool-pro",
+      "free": "pptx-cn-tool-free"
+    },
+    {
+      "paid": "pptx-pdf-font-fix-tool-pro",
+      "free": "pptx-pdf-font-fix-tool-free"
+    },
+    {
+      "paid": "pptx-toolkit-pro",
+      "free": "pptx-toolkit-free"
+    },
+    {
+      "paid": "pptx-v101-tool-pro",
+      "free": "pptx-v101-tool-free"
+    },
+    {
+      "paid": "presentation-gen-tool-pro",
+      "free": "presentation-gen-tool-free"
+    },
+    {
+      "paid": "print-studio-pro",
+      "free": "print-studio-free"
+    },
+    {
+      "paid": "pro-comm-toolkit",
+      "free": "pro-comm-toolkit-free"
+    },
+    {
+      "paid": "proactive-agent",
+      "free": "proactive-agent-free"
+    },
+    {
+      "paid": "proactive-agent-tool-pro",
+      "free": "proactive-agent-tool-free"
+    },
+    {
+      "paid": "prod-helper-v1-tool-pro",
+      "free": "prod-helper-v1-tool-free"
+    },
+    {
+      "paid": "prod-helper-v4-tool-pro",
+      "free": "prod-helper-v4-tool-free"
+    },
+    {
+      "paid": "prod-improve-tool-pro",
+      "free": "prod-improve-tool-free"
+    },
+    {
+      "paid": "productivity",
+      "free": "productivity-free"
+    },
+    {
+      "paid": "professional-communication",
+      "free": "professional-communication-free"
+    },
+    {
+      "paid": "prompt-architect-pro",
+      "free": "prompt-architect-free"
+    },
+    {
+      "paid": "py-data-analyzer",
+      "free": "py-data-analyzer-free"
+    },
+    {
+      "paid": "py",
+      "free": "py-free"
+    },
+    {
+      "paid": "py-toolkit-pro",
+      "free": "py-toolkit-free"
+    },
+    {
+      "paid": "python-dataviz-tool-pro",
+      "free": "python-dataviz-tool-free"
+    },
+    {
+      "paid": "python-toolkit",
+      "free": "python-toolkit-free"
+    },
+    {
+      "paid": "python3-tool-pro",
+      "free": "python3-tool-free"
+    },
+    {
+      "paid": "pyx-scan",
+      "free": "pyx-scan-free"
+    },
+    {
+      "paid": "pyx-scanner",
+      "free": "pyx-scanner-free"
+    },
+    {
+      "paid": "qq-zone-photo",
+      "free": "qq-zone-photo-free"
+    },
+    {
+      "paid": "qq-zone-photo-tool-pro",
+      "free": "qq-zone-photo-tool-free"
+    },
+    {
+      "paid": "quant-data-quality-tool-pro",
+      "free": "quant-data-quality-tool-free"
+    },
+    {
+      "paid": "quark-scan-tool-pro",
+      "free": "quark-scan-tool-free"
+    },
+    {
+      "paid": "quick-context-saver-pro",
+      "free": "quick-context-saver-free"
+    },
+    {
+      "paid": "qwen-video-analyzer",
+      "free": "qwen-video-analyzer-free"
+    },
+    {
+      "paid": "read-github-tool-pro",
+      "free": "read-github-tool-free"
+    },
+    {
+      "paid": "reddit-research-tool-pro",
+      "free": "reddit-research-tool-free"
+    },
+    {
+      "paid": "redis-context-cache-pro",
+      "free": "redis-context-cache-free"
+    },
+    {
+      "paid": "reminder-engine",
+      "free": "reminder-engine-free"
+    },
+    {
+      "paid": "remix-auth-tool-pro",
+      "free": "remix-auth-tool-free"
+    },
+    {
+      "paid": "repo-manager",
+      "free": "repo-manager-free"
+    },
+    {
+      "paid": "report-builder-tool-pro",
+      "free": "report-builder-tool-free"
+    },
+    {
+      "paid": "report",
+      "free": "report-free"
+    },
+    {
+      "paid": "report-toolkit-pro",
+      "free": "report-toolkit-free"
+    },
+    {
+      "paid": "research-agent-tool-pro",
+      "free": "research-agent-tool-free"
+    },
+    {
+      "paid": "resume-assistant",
+      "free": "resume-assistant-free"
+    },
+    {
+      "paid": "resume-assistant-tool-pro",
+      "free": "resume-assistant-tool-free"
+    },
+    {
+      "paid": "rss-aggregator-tool-pro",
+      "free": "rss-aggregator-tool-free"
+    },
+    {
+      "paid": "rss-ai-reader",
+      "free": "rss-ai-reader-free"
+    },
+    {
+      "paid": "rss-digest-tool-pro",
+      "free": "rss-digest-tool-free"
+    },
+    {
+      "paid": "rss-feed-digest-tool-pro",
+      "free": "rss-feed-digest-tool-free"
+    },
+    {
+      "paid": "rss-fetcher-tool-pro",
+      "free": "rss-fetcher-tool-free"
+    },
+    {
+      "paid": "rss-reader-ai",
+      "free": "rss-reader-ai-free"
+    },
+    {
+      "paid": "rss-reader-tool-pro",
+      "free": "rss-reader-tool-free"
+    },
+    {
+      "paid": "rust",
+      "free": "rust-free"
+    },
+    {
+      "paid": "rust-toolkit-pro",
+      "free": "rust-toolkit-free"
+    },
+    {
+      "paid": "safe-encryption-tool-pro",
+      "free": "safe-encryption-tool-free"
+    },
+    {
+      "paid": "schedule-manager",
+      "free": "schedule-manager-free"
+    },
+    {
+      "paid": "scrape-web-tool-pro",
+      "free": "scrape-web-tool-free"
+    },
+    {
+      "paid": "screen-monitor-tool-pro",
+      "free": "screen-monitor-tool-free"
+    },
+    {
+      "paid": "search-assistant-tool-pro",
+      "free": "search-assistant-tool-free"
+    },
+    {
+      "paid": "search-v2-tool-pro",
+      "free": "search-v2-tool-free"
+    },
+    {
+      "paid": "secure-api-toolkit",
+      "free": "secure-api-toolkit-free"
+    },
+    {
+      "paid": "security-audit-agent-tool-pro",
+      "free": "security-audit-agent-tool-free"
+    },
+    {
+      "paid": "security-audit-tool-pro",
+      "free": "security-audit-tool-free"
+    },
+    {
+      "paid": "security-auditor-tool-pro",
+      "free": "security-auditor-tool-free"
+    },
+    {
+      "paid": "security",
+      "free": "security-free"
+    },
+    {
+      "paid": "security-scanner-tool-pro",
+      "free": "security-scanner-tool-free"
+    },
+    {
+      "paid": "security-toolkit-pro",
+      "free": "security-toolkit-free"
+    },
+    {
+      "paid": "self-integration-tool-pro",
+      "free": "self-integration-tool-free"
+    },
+    {
+      "paid": "sequential-read-tool-pro",
+      "free": "sequential-read-tool-free"
+    },
+    {
+      "paid": "shadcn-ui-tool-pro",
+      "free": "shadcn-ui-tool-free"
+    },
+    {
+      "paid": "shop-culture",
+      "free": "shop-culture-free"
+    },
+    {
+      "paid": "shop-culture-tool-pro",
+      "free": "shop-culture-tool-free"
+    },
+    {
+      "paid": "shopify-helper-tool-pro",
+      "free": "shopify-helper-tool-free"
+    },
+    {
+      "paid": "short-story-tool-pro",
+      "free": "short-story-tool-free"
+    },
+    {
+      "paid": "skill-creator",
+      "free": "skill-creator-free"
+    },
+    {
+      "paid": "skill-creator-tool-pro",
+      "free": "skill-creator-tool-free"
+    },
+    {
+      "paid": "skill-vetter",
+      "free": "skill-vetter-free"
+    },
+    {
+      "paid": "skill-vetter-tool-pro",
+      "free": "skill-vetter-tool-free"
+    },
+    {
+      "paid": "skill-writer-tool-pro",
+      "free": "skill-writer-tool-free"
+    },
+    {
+      "paid": "slack-api-toolkit",
+      "free": "slack-api-toolkit-free"
+    },
+    {
+      "paid": "slack-crawler",
+      "free": "slack-crawler-free"
+    },
+    {
+      "paid": "slack",
+      "free": "slack-free"
+    },
+    {
+      "paid": "slack-hub-skill",
+      "free": "slack-hub-skill-free"
+    },
+    {
+      "paid": "slack-hub-tool-pro",
+      "free": "slack-hub-tool-free"
+    },
+    {
+      "paid": "slack-toolkit",
+      "free": "slack-toolkit-free"
+    },
+    {
+      "paid": "slack-workspace",
+      "free": "slack-workspace-free"
+    },
+    {
+      "paid": "slack-workspace-manager",
+      "free": "slack-workspace-manager-free"
+    },
+    {
+      "paid": "smart-cache-tool-pro",
+      "free": "smart-cache-tool-free"
+    },
+    {
+      "paid": "smart-crawler",
+      "free": "smart-crawler-free"
+    },
+    {
+      "paid": "smart-light-controller-pro",
+      "free": "smart-light-controller-free"
+    },
+    {
+      "paid": "smart-reminder",
+      "free": "smart-reminder-free"
+    },
+    {
+      "paid": "smart-update-agent-pro",
+      "free": "smart-update-agent-free"
+    },
+    {
+      "paid": "smart-weekly-report-tool-pro",
+      "free": "smart-weekly-report-tool-free"
+    },
+    {
+      "paid": "social",
+      "free": "social-free"
+    },
+    {
+      "paid": "social-media-scheduler",
+      "free": "social-media-scheduler-free"
+    },
+    {
+      "paid": "social-media-toolkit",
+      "free": "social-media-toolkit-free"
+    },
+    {
+      "paid": "social-scheduler-pro-pro",
+      "free": "social-scheduler-pro-free"
+    },
+    {
+      "paid": "social-sentiment-tool-pro",
+      "free": "social-sentiment-tool-free"
+    },
+    {
+      "paid": "solo-audit-tool-pro",
+      "free": "solo-audit-tool-free"
+    },
+    {
+      "paid": "solo-build",
+      "free": "solo-build-free"
+    },
+    {
+      "paid": "solo-dev-companion",
+      "free": "solo-dev-companion-free"
+    },
+    {
+      "paid": "solo-research",
+      "free": "solo-research-free"
+    },
+    {
+      "paid": "solo-research-tool-pro",
+      "free": "solo-research-tool-free"
+    },
+    {
+      "paid": "solo-validate-tool-pro",
+      "free": "solo-validate-tool-free"
+    },
+    {
+      "paid": "solo-workflow-engine-pro",
+      "free": "solo-workflow-engine-free"
+    },
+    {
+      "paid": "sonos-cli-tool-pro",
+      "free": "sonos-cli-tool-free"
+    },
+    {
+      "paid": "soul-decision-engine-pro",
+      "free": "soul-decision-engine-free"
+    },
+    {
+      "paid": "sql",
+      "free": "sql-free"
+    },
+    {
+      "paid": "sql-gen-tool-pro",
+      "free": "sql-gen-tool-free"
+    },
+    {
+      "paid": "sql-master-tool-pro",
+      "free": "sql-master-tool-free"
+    },
+    {
+      "paid": "sql-query-tool-pro",
+      "free": "sql-query-tool-free"
+    },
+    {
+      "paid": "sqlite-lite-manager",
+      "free": "sqlite-lite-manager-free"
+    },
+    {
+      "paid": "sqlite-manager",
+      "free": "sqlite-manager-free"
+    },
+    {
+      "paid": "ssl-toolkit",
+      "free": "ssl-toolkit-free"
+    },
+    {
+      "paid": "stagehand-browser-tool-pro",
+      "free": "stagehand-browser-tool-free"
+    },
+    {
+      "paid": "stock-filter-tool-pro",
+      "free": "stock-filter-tool-free"
+    },
+    {
+      "paid": "story-analyze-tool-pro",
+      "free": "story-analyze-tool-free"
+    },
+    {
+      "paid": "story-long-write",
+      "free": "story-long-write-free"
+    },
+    {
+      "paid": "story-write-tool-pro",
+      "free": "story-write-tool-free"
+    },
+    {
+      "paid": "straker-verify-tool-pro",
+      "free": "straker-verify-tool-free"
+    },
+    {
+      "paid": "swarm-coder-pro",
+      "free": "swarm-coder-free"
+    },
+    {
+      "paid": "tailwindcss-toolkit",
+      "free": "tailwindcss-toolkit-free"
+    },
+    {
+      "paid": "tardis-tool-pro",
+      "free": "tardis-tool-free"
+    },
+    {
+      "paid": "tarot",
+      "free": "tarot-free"
+    },
+    {
+      "paid": "tarot-reader-tool-pro",
+      "free": "tarot-reader-tool-free"
+    },
+    {
+      "paid": "tarot-tool-pro",
+      "free": "tarot-tool-free"
+    },
+    {
+      "paid": "task-bot-orchestrator",
+      "free": "task-bot-orchestrator-free"
+    },
+    {
+      "paid": "task-planner-tool-pro",
+      "free": "task-planner-tool-free"
+    },
+    {
+      "paid": "task-queue-manager",
+      "free": "task-queue-manager-free"
+    },
+    {
+      "paid": "task-toolkit-pro",
+      "free": "task-toolkit-free"
+    },
+    {
+      "paid": "telegram-agent-comm",
+      "free": "telegram-agent-comm-free"
+    },
+    {
+      "paid": "telegram-alert-tool-pro",
+      "free": "telegram-alert-tool-free"
+    },
+    {
+      "paid": "telegram-chat-tool-pro",
+      "free": "telegram-chat-tool-free"
+    },
+    {
+      "paid": "telegram-messaging",
+      "free": "telegram-messaging-free"
+    },
+    {
+      "paid": "telegram-msg-toolkit",
+      "free": "telegram-msg-toolkit-free"
+    },
+    {
+      "paid": "telegram-toolkit",
+      "free": "telegram-toolkit-free"
+    },
+    {
+      "paid": "text-game-arcade-tool-pro",
+      "free": "text-game-arcade-tool-free"
+    },
+    {
+      "paid": "text-toolkit-pro",
+      "free": "text-toolkit-free"
+    },
+    {
+      "paid": "text2sql-engine",
+      "free": "text2sql-engine-free"
+    },
+    {
+      "paid": "tg-body-scan-tool-pro",
+      "free": "tg-body-scan-tool-free"
+    },
+    {
+      "paid": "tg-bot-builder",
+      "free": "tg-bot-builder-free"
+    },
+    {
+      "paid": "the-news-tool-pro",
+      "free": "the-news-tool-free"
+    },
+    {
+      "paid": "thesis-helper-tool-pro",
+      "free": "thesis-helper-tool-free"
+    },
+    {
+      "paid": "timeline-digest-tool-pro",
+      "free": "timeline-digest-tool-free"
+    },
+    {
+      "paid": "timer-alert-tool-pro",
+      "free": "timer-alert-tool-free"
+    },
+    {
+      "paid": "timer",
+      "free": "timer-free"
+    },
+    {
+      "paid": "tmux-session-tool-pro",
+      "free": "tmux-session-tool-free"
+    },
+    {
+      "paid": "token-economist-pro",
+      "free": "token-economist-free"
+    },
+    {
+      "paid": "token-layer-tool-pro",
+      "free": "token-layer-tool-free"
+    },
+    {
+      "paid": "token-manager",
+      "free": "token-manager-free"
+    },
+    {
+      "paid": "token-manager-tool-pro",
+      "free": "token-manager-tool-free"
+    },
+    {
+      "paid": "tool-call-retry-tool-pro",
+      "free": "tool-call-retry-tool-free"
+    },
+    {
+      "paid": "tool-finder-tool-pro",
+      "free": "tool-finder-tool-free"
+    },
+    {
+      "paid": "tool-toolkit-pro",
+      "free": "tool-toolkit-free"
+    },
+    {
+      "paid": "total-recall-ai-pro",
+      "free": "total-recall-ai-free"
+    },
+    {
+      "paid": "tpn-proxy-tool-pro",
+      "free": "tpn-proxy-tool-free"
+    },
+    {
+      "paid": "trade-assistant-tool-pro",
+      "free": "trade-assistant-tool-free"
+    },
+    {
+      "paid": "trading-tool-pro",
+      "free": "trading-tool-free"
+    },
+    {
+      "paid": "translate-hub",
+      "free": "translate-hub-free"
+    },
+    {
+      "paid": "translate-toolkit-pro",
+      "free": "translate-toolkit-free"
+    },
+    {
+      "paid": "travel-assistant-tool-pro",
+      "free": "travel-assistant-tool-free"
+    },
+    {
+      "paid": "trending-feed-skill",
+      "free": "trending-feed-skill-free"
+    },
+    {
+      "paid": "tts-whatsapp-tool-pro",
+      "free": "tts-whatsapp-tool-free"
+    },
+    {
+      "paid": "typescript-skills-tool-pro",
+      "free": "typescript-skills-tool-free"
+    },
+    {
+      "paid": "typescript-toolkit",
+      "free": "typescript-toolkit-free"
+    },
+    {
+      "paid": "ui-audit",
+      "free": "ui-audit-free"
+    },
+    {
+      "paid": "ui-audit-tool-pro",
+      "free": "ui-audit-tool-free"
+    },
+    {
+      "paid": "ui-component-tool-pro",
+      "free": "ui-component-tool-free"
+    },
+    {
+      "paid": "ui-design-toolkit",
+      "free": "ui-design-toolkit-free"
+    },
+    {
+      "paid": "ui-ux-design",
+      "free": "ui-ux-design-free"
+    },
+    {
+      "paid": "ui-ux-design-tool-pro",
+      "free": "ui-ux-design-tool-free"
+    },
+    {
+      "paid": "ui-ux-dev-tool-pro",
+      "free": "ui-ux-dev-tool-free"
+    },
+    {
+      "paid": "ui-ux-promax-plus-pro",
+      "free": "ui-ux-promax-plus-free"
+    },
+    {
+      "paid": "ui-ux-promax-tool-pro",
+      "free": "ui-ux-promax-tool-free"
+    },
+    {
+      "paid": "ui-ux-promax-v2-pro",
+      "free": "ui-ux-promax-v2-free"
+    },
+    {
+      "paid": "ui-ux-toolkit",
+      "free": "ui-ux-toolkit-free"
+    },
+    {
+      "paid": "universal-proxy-pro",
+      "free": "universal-proxy-free"
+    },
+    {
+      "paid": "universal-translate-tool-pro",
+      "free": "universal-translate-tool-free"
+    },
+    {
+      "paid": "university-app-tool-pro",
+      "free": "university-app-tool-free"
+    },
+    {
+      "paid": "upstage-document-parse",
+      "free": "upstage-document-parse-free"
+    },
+    {
+      "paid": "use-my-browser",
+      "free": "use-my-browser-free"
+    },
+    {
+      "paid": "use-my-browser-tool-pro",
+      "free": "use-my-browser-tool-free"
+    },
+    {
+      "paid": "ux-design-tool-pro",
+      "free": "ux-design-tool-free"
+    },
+    {
+      "paid": "v2ray-proxy-tool-pro",
+      "free": "v2ray-proxy-tool-free"
+    },
+    {
+      "paid": "vector-db-manager",
+      "free": "vector-db-manager-free"
+    },
+    {
+      "paid": "verify-claims-tool-pro",
+      "free": "verify-claims-tool-free"
+    },
+    {
+      "paid": "video-editing-tool-pro",
+      "free": "video-editing-tool-free"
+    },
+    {
+      "paid": "video-frames-tool-pro",
+      "free": "video-frames-tool-free"
+    },
+    {
+      "paid": "video-producer-tool-pro",
+      "free": "video-producer-tool-free"
+    },
+    {
+      "paid": "video-stream-upload",
+      "free": "video-stream-upload-free"
+    },
+    {
+      "paid": "video-toolkit",
+      "free": "video-toolkit-free"
+    },
+    {
+      "paid": "video-translator-tool-pro",
+      "free": "video-translator-tool-free"
+    },
+    {
+      "paid": "volcengine-dns-tool-pro",
+      "free": "volcengine-dns-tool-free"
+    },
+    {
+      "paid": "vpn-rotator",
+      "free": "vpn-rotator-free"
+    },
+    {
+      "paid": "vpn-toolkit-pro",
+      "free": "vpn-toolkit-free"
+    },
+    {
+      "paid": "vscode-node-tool-pro",
+      "free": "vscode-node-tool-free"
+    },
+    {
+      "paid": "vue-component-gen-tool-pro",
+      "free": "vue-component-gen-tool-free"
+    },
+    {
+      "paid": "vue-toolkit",
+      "free": "vue-toolkit-free"
+    },
+    {
+      "paid": "vulnerability-scanner-tool-pro",
+      "free": "vulnerability-scanner-tool-free"
+    },
+    {
+      "paid": "weather-toolkit-pro",
+      "free": "weather-toolkit-free"
+    },
+    {
+      "paid": "web-browsing-tool-pro",
+      "free": "web-browsing-tool-free"
+    },
+    {
+      "paid": "web-content-fetcher-tool-pro",
+      "free": "web-content-fetcher-tool-free"
+    },
+    {
+      "paid": "web-crawler-engine",
+      "free": "web-crawler-engine-free"
+    },
+    {
+      "paid": "web-dev-toolkit",
+      "free": "web-dev-toolkit-free"
+    },
+    {
+      "paid": "web-learner-tool-pro",
+      "free": "web-learner-tool-free"
+    },
+    {
+      "paid": "web-notepad",
+      "free": "web-notepad-free"
+    },
+    {
+      "paid": "web-vuln-assess-tool-pro",
+      "free": "web-vuln-assess-tool-free"
+    },
+    {
+      "paid": "wechat-article-writer",
+      "free": "wechat-article-writer-free"
+    },
+    {
+      "paid": "weekly-report-tool-pro",
+      "free": "weekly-report-tool-free"
+    },
+    {
+      "paid": "weiyun-toolkit",
+      "free": "weiyun-toolkit-free"
+    },
+    {
+      "paid": "whatsapp-image-tool-pro",
+      "free": "whatsapp-image-tool-free"
+    },
+    {
+      "paid": "whatsapp-master",
+      "free": "whatsapp-master-free"
+    },
+    {
+      "paid": "whatsapp-messaging",
+      "free": "whatsapp-messaging-free"
+    },
+    {
+      "paid": "whatsapp-msg-manager",
+      "free": "whatsapp-msg-manager-free"
+    },
+    {
+      "paid": "whatsapp-msg-tool-pro",
+      "free": "whatsapp-msg-tool-free"
+    },
+    {
+      "paid": "whatsapp-style-guide",
+      "free": "whatsapp-style-guide-free"
+    },
+    {
+      "paid": "whatsapp-style-tool-pro",
+      "free": "whatsapp-style-tool-free"
+    },
+    {
+      "paid": "whatsapp-styler",
+      "free": "whatsapp-styler-free"
+    },
+    {
+      "paid": "whatsapp-styling-guide",
+      "free": "whatsapp-styling-guide-free"
+    },
+    {
+      "paid": "whatsapp-ultimate",
+      "free": "whatsapp-ultimate-free"
+    },
+    {
+      "paid": "word-docx-tool-pro",
+      "free": "word-docx-tool-free"
+    },
+    {
+      "paid": "word-docx-v1-tool-pro",
+      "free": "word-docx-v1-tool-free"
+    },
+    {
+      "paid": "word-docx-v102-tool-pro",
+      "free": "word-docx-v102-tool-free"
+    },
+    {
+      "paid": "word-toolkit-pro",
+      "free": "word-toolkit-free"
+    },
+    {
+      "paid": "work-toolkit-pro",
+      "free": "work-toolkit-free"
+    },
+    {
+      "paid": "workflow-catalyst-pro",
+      "free": "workflow-catalyst-free"
+    },
+    {
+      "paid": "workflow-essentials-pro",
+      "free": "workflow-essentials-free"
+    },
+    {
+      "paid": "workflow-orchestrator",
+      "free": "workflow-orchestrator-free"
+    },
+    {
+      "paid": "workflow-splitter",
+      "free": "workflow-splitter-free"
+    },
+    {
+      "paid": "write-a-skill",
+      "free": "write-a-skill-free"
+    },
+    {
+      "paid": "write",
+      "free": "write-free"
+    },
+    {
+      "paid": "write-toolkit-pro",
+      "free": "write-toolkit-free"
+    },
+    {
+      "paid": "writing-assistant-tool-pro",
+      "free": "writing-assistant-tool-free"
+    },
+    {
+      "paid": "ws-calendar-tool-pro",
+      "free": "ws-calendar-tool-free"
+    },
+    {
+      "paid": "ws-excel-tool-pro",
+      "free": "ws-excel-tool-free"
+    },
+    {
+      "paid": "x-news-daily",
+      "free": "x-news-daily-free"
+    },
+    {
+      "paid": "x-timeline-digest",
+      "free": "x-timeline-digest-free"
+    },
+    {
+      "paid": "xlsx-handler",
+      "free": "xlsx-handler-free"
+    },
+    {
+      "paid": "xml-json-converter",
+      "free": "xml-json-converter-free"
+    },
+    {
+      "paid": "xml-reader-tool-pro",
+      "free": "xml-reader-tool-free"
+    },
+    {
+      "paid": "xml-toolkit-pro",
+      "free": "xml-toolkit-free"
+    },
+    {
+      "paid": "yaml-toolkit-pro",
+      "free": "yaml-toolkit-free"
+    },
+    {
+      "paid": "youtube-watcher-tool-pro",
+      "free": "youtube-watcher-tool-free"
+    },
+    {
+      "paid": "z-card-image",
+      "free": "z-card-image-free"
+    },
+    {
+      "paid": "zh-file-organizer-pro",
+      "free": "zh-file-organizer-free"
+    },
+    {
+      "paid": "ziptax-tool-pro",
+      "free": "ziptax-tool-free"
+    }
+  ]
+}

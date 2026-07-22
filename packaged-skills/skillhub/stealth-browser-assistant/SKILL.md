@@ -6,6 +6,14 @@ displayName: "反检测浏览器助手"
 summary: "一人管百号的浏览器自动化底座,指纹隔离+崩溃自愈+智能定位,告别封号掉线"
 license: Proprietary
 description: |-
+  反检测浏览器助手是一款浏览器自动化引擎,专为Agent浏览器场景设计。
+  支持指纹隔离、崩溃自愈、DOM蒸馏智能定位,实现一人管百号不关联。
+  
+  核心能力:
+  - DOM蒸馏三树智能定位
+  - Tab崩溃3秒自愈
+  - 浏览器指纹防护与多账号隔离
+  - 反检测混合方案与行为模拟
 homepage: "https://skillhub.cn"
 tags: [浏览器自动化, 多账号管理, 反检测, 效率工具]
 tools:

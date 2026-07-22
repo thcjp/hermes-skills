@@ -1,0 +1,9336 @@
+{
+  "audit_date": "2026-07-22T08:24:51.871459",
+  "total_skills": 2255,
+  "by_severity": {
+    "critical": 0,
+    "warning": 68,
+    "info": 860,
+    "ok": 1327
+  },
+  "critical_issues": [],
+  "warning_issues": [
+    {
+      "slug": "ai-kujiale-design-free",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 7411,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ai-podcast",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 7603,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ai-podcast-free",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 5654,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ai-video-studio-pro",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "description 过短: 0 字符"
+      ],
+      "body_length": 14268,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "anygen-diagram-generator",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 7320,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "audio-upload-aioz-stream",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (2 处)"
+      ],
+      "body_length": 11766,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "audio-upload-aioz-stream-free",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (2 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 7775,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "aws-agentcore-langgraph",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 8072,
+      "version": "2.0.0"
+    },
+    {
+      "slug": "aws-graph-agent",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 10547,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "aws-graph-agent-free",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 6344,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "aws-wechat-article-writing",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: Placeholder (6 处)",
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 13142,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "azure-ai-voicelive-py",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 11490,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "canvas-json-handler",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 6313,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "claude-code-delegate",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 9275,
+      "version": "0.2.0"
+    },
+    {
+      "slug": "cloud",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 4313,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "dns",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 8153,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ebook-factory",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)",
+        "description 过短: 0 字符"
+      ],
+      "body_length": 14896,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "elite-longterm-memory-local",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 8735,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "frontend-design",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: Placeholder (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 3697,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "git-essentials",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 11683,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "graph-query",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 7668,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "jira-free",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 7054,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "knowledge-ontology-free",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 5456,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "linear-workflow-skill",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 7014,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "molt-board-art",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 7543,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "novel-autopilot",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "description 过短: 0 字符"
+      ],
+      "body_length": 17869,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "pg-job-queue",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 8094,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "powerpoint-pptx",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: Placeholder (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 3866,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "powerpoint-pptx-1-0-1",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: Placeholder (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 3894,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "powerpoint-pptx-cn",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: Placeholder (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 4064,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "productivity",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 10110,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "productivity-free",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 4731,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "remix-auth",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 7034,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "report-summary-builder",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 3289,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "seo-doctor",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "description 过短: 0 字符"
+      ],
+      "body_length": 17243,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "solo-build",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (3 处)"
+      ],
+      "body_length": 8311,
+      "version": "2.2.1"
+    },
+    {
+      "slug": "solo-build-free",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (3 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 3549,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "story-short-write",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (2 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 8104,
+      "version": "1.1.12"
+    },
+    {
+      "slug": "telegram-toolkit",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)",
+        "缺失章节: 概述"
+      ],
+      "body_length": 7593,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "viral-decoder",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "description 过短: 0 字符"
+      ],
+      "body_length": 21359,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "x-timeline-digest",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 8132,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "aws-graph-agent",
+      "source": "differentiated/Agents",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 10802,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "focus-flow-optimizer-pro",
+      "source": "differentiated/Agents",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (3 处)"
+      ],
+      "body_length": 19893,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "longmemo-elite",
+      "source": "differentiated/Agents",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 6997,
+      "version": "2.0.0"
+    },
+    {
+      "slug": "multi-agent-dev-v2",
+      "source": "differentiated/Agents",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 7591,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "swarm-coder-free",
+      "source": "differentiated/Agents",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 8246,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "linear-pilot-ai-pro",
+      "source": "differentiated/Automation",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 22358,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "solo-dev-companion-free",
+      "source": "differentiated/Automation",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 5993,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "tg-body-scan-tool-free",
+      "source": "differentiated/Communication",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 4975,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "logo-design-guide-tool-free",
+      "source": "differentiated/Creative",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 7573,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "hugo-blog-tool-pro",
+      "source": "differentiated/Development",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 9644,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "canvas-json-handler-pro",
+      "source": "differentiated/Integrations",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 6753,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "graph-query-tool-pro",
+      "source": "differentiated/Integrations",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 7409,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "jira-api-toolkit-free",
+      "source": "differentiated/Integrations",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 5679,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "jira-flow-skill-free",
+      "source": "differentiated/Integrations",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 5887,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "linear-api-toolkit-free",
+      "source": "differentiated/Integrations",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 5942,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "linear-workflow-skill-free",
+      "source": "differentiated/Integrations",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 5834,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "linear-workflow-skill-pro",
+      "source": "differentiated/Integrations",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 7567,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "pg-job-queue-pro",
+      "source": "differentiated/Integrations",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 9502,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "pipedrive-toolkit-free",
+      "source": "differentiated/Integrations",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (2 处)"
+      ],
+      "body_length": 9890,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "remix-auth-tool-pro",
+      "source": "differentiated/Integrations",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 7194,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "telegram-toolkit-pro",
+      "source": "differentiated/Integrations",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 7907,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "cloud-storage-manager-free",
+      "source": "differentiated/Other",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 7519,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "file-compressor-pro",
+      "source": "differentiated/Other",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 9549,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "port-transfer-tool-free",
+      "source": "differentiated/Other",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: Placeholder (1 处)"
+      ],
+      "body_length": 4598,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "universal-proxy-free",
+      "source": "differentiated/Other",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 7130,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "browser-cli-tool-pro",
+      "source": "differentiated/Research",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 11971,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "bsession-tool-free",
+      "source": "differentiated/Research",
+      "severity": "warning",
+      "issues": [
+        "占位符内容: 未完成 (1 处)"
+      ],
+      "body_length": 14006,
+      "version": "1.0.0"
+    }
+  ],
+  "info_issues": [
+    {
+      "slug": "accounting-and-finance",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10453,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "accounting-and-finance-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6042,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "accounting-finance",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10089,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ace-music",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9919,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ace-music-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5727,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ace-music-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5726,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "actor-identifier",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10125,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ad-insight-hub",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11344,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ad-insight-hub-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6493,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "admapix",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 12957,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "admapix-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7966,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "aegis-security",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8036,
+      "version": "1.2.2"
+    },
+    {
+      "slug": "aegis-security-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5455,
+      "version": "1.2.2"
+    },
+    {
+      "slug": "afrexai-cybersecurity-engine",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8680,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "afrexai-cybersecurity-engine-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3551,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "afrexai-knowledge-management-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3419,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "agent",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3349,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "agent-bom-vulnerability-intel",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3682,
+      "version": "0.96.3"
+    },
+    {
+      "slug": "（根据实际场景填充）",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2923,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "agent-browser-automation",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4701,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "agent-browser-cli",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5010,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "agent-browser-stagehand",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3840,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "agent-chat",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3803,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "agent-commercial-contract",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4520,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "agent-group",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2229,
+      "version": "1.0.3"
+    },
+    {
+      "slug": "agent-knowledge",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2782,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "agent-telegram",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 7617,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "agent-telegram-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 5290,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "agentic-security-audit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3714,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "agentvibes-content-skill",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2927,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "agentvibes-skill",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5844,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "agentvibes-voice-skill",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 12902,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "agentvibes-voice-skill-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 7937,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ai-agent-helper",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11441,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ai-agent-helper-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5604,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ai-artist-workstation",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述",
+        "description 过短: 0 字符"
+      ],
+      "body_length": 12565,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "ai-assistant",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10679,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ai-assistant-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5775,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ai-image-gen",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7334,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ai-image-gen-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6670,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ai-kujiale-design",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9574,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ai-news",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4451,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "aic-dashboard",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 5247,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "aic-dashboard-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4145,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "alibaba-quark-scan",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7148,
+      "version": "2.0.0"
+    },
+    {
+      "slug": "alibaba-quark-scan-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 4621,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "alpha-feed-creator",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8586,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "amap-jsapi-skill",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4909,
+      "version": "1.1.1"
+    },
+    {
+      "slug": "analytics-dashboard",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8722,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "analyze",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3256,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "analyze-video-by-qwen",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7336,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "analyze-video-by-qwen-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4951,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "anthropics-frontend-design",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 7964,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "anthropics-frontend-design-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 使用场景"
+      ],
+      "body_length": 5040,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "anygen-diagram-generator-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5046,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "api-connect-hub",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9846,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "api-development",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4447,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "api-doc-generator",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10132,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "api-doc-writer",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7504,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "api-doc-writer-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5571,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "api-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5982,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "api-gateway",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7917,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "api-gateway-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4911,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "api-integration",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6805,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "api-integration-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5072,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "api-magic-gen",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7278,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "api-scaffold-gen",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9385,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "api-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10070,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "apple-health-skill",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6420,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "apple-health-skill-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4936,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "archive",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5349,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "archive-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2503,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "art",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3499,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "assistant",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3312,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "audit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3282,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "auto-monitor",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3424,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "auto-workflow",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3709,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "automation-recipe-book",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7766,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "automation-recipe-pack",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3039,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "aws",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4263,
+      "version": "1.0.2"
+    },
+    {
+      "slug": "aws-agentcore-langgraph-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5474,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "aws-cloud-architect",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 10816,
+      "version": "2.0.0"
+    },
+    {
+      "slug": "aws-cloud-architect-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 5608,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "aws-infra",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 12833,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "aws-infra-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6388,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "aws-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6649,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "aws-wechat-article-writing-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7447,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "azure",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4056,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "azure-ai-transcription-py",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8619,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "azure-ai-transcription-py-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5982,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "azure-ai-voicelive-py-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6266,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "azure-cli",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4745,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "azure-cli-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10374,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "azure-cloud-architect",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9234,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "azure-cloud-architect-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6180,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "azure-devops",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4343,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "azure-gateway-cli",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7028,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "azure-transcription",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11675,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "baidu-netdisk-skills",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10796,
+      "version": "2.0.0"
+    },
+    {
+      "slug": "baidu-netdisk-skills-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7222,
+      "version": "2.0.0"
+    },
+    {
+      "slug": "bailian-web-search",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2584,
+      "version": "1.0.4"
+    },
+    {
+      "slug": "baoyu-diagram",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3041,
+      "version": "1.117.3"
+    },
+    {
+      "slug": "baoyu-format-markdown",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4422,
+      "version": "1.117.2"
+    },
+    {
+      "slug": "beware-piper-tts",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7529,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "beware-piper-tts-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4484,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "bilibili-all-in-one",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9440,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "bilibili-all-in-one-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6206,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "blog-seo-writer",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4539,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "blog-writer",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5873,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "blog-writer-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3370,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "book-painter",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3204,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "bookmark-intelligence",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7979,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "bookmark-intelligence-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4030,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "bookmark-smart-hub",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7000,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "brainz-calendar",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2943,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "brave-search",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2695,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "browser-automation",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3840,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "browser-automation-v2",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4487,
+      "version": "2.0.0"
+    },
+    {
+      "slug": "bsession",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3941,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "build-game",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4394,
+      "version": "1.2.0"
+    },
+    {
+      "slug": "calendar",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3318,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "calendar-skill",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3133,
+      "version": "1.0.4"
+    },
+    {
+      "slug": "call-bridge",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 9847,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "can",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5768,
+      "version": "2.0.0"
+    },
+    {
+      "slug": "can-bus-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7384,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "can-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4929,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "card-image-builder",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7670,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "cashu-emoji",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3387,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "cctv-news-fetcher",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2460,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "cdn",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3392,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "chart",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5430,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "chart-craft",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7278,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "chart-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5575,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "chart-generator-2-0-0",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3236,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "chat",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3469,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "cheat-code",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2778,
+      "version": "1.0.11"
+    },
+    {
+      "slug": "cheat-code-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7855,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "chief-creative-officer",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4554,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "chief-creative-officer-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4255,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "china-news",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4102,
+      "version": "1.0.3"
+    },
+    {
+      "slug": "chromecast-control",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6492,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "chromecast-control-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4562,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "claude-code-runner",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4009,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "claude-tmux",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4103,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "clawddocs",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5178,
+      "version": "1.2.2"
+    },
+    {
+      "slug": "clawprint",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4253,
+      "version": "3.0.1"
+    },
+    {
+      "slug": "cloud-architect",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8973,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "cloud-architect-design",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8812,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "cloud-architect-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4969,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "cloud-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4285,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "cloud-manager",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9397,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "cloud-storage",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3157,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "code",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4189,
+      "version": "1.0.4"
+    },
+    {
+      "slug": "code-1-0-4",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4207,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "code-analysis-skills",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5256,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "code-analysis-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9607,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "code-analyze",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6982,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "code-delegate",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7941,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "code-dev-v1",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7742,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "code-quality",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3508,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "code-quality-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10260,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "code-runner",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9920,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "comfyui-painter",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 14616,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "comfyui-painter-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7734,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "communication-skill",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8118,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "communication-skill-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5001,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "company-search-fengniao",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3876,
+      "version": "1.0.2"
+    },
+    {
+      "slug": "compress",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3966,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "compress-pdf",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2833,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "content-refiner",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述",
+        "description 过短: 0 字符"
+      ],
+      "body_length": 12739,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "context-driven-development",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4334,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "control-ikea-lightbulb",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2470,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "creative-officer",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8086,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "cron-scheduler-setup",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4954,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "cron-setup-guide",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11078,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "css",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6621,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "css-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5875,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "csv",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5309,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "csv-analyzer",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5622,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "csv-analyzer-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4916,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "csv-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4516,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "csv-json-converter",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10643,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "csv-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9241,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ctxly-chat",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5188,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "fortune-reading-studio",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述",
+        "description 过短: 0 字符"
+      ],
+      "body_length": 16733,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "daily-news-brief",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4185,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "daily-report-writer",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2476,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "dashboard",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3464,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "dashboard-analytics-tool",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2927,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "data",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3998,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "data-analysis-hub",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6443,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "data-analysis-litiao",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4723,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "data-analyst-chinese",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7172,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "data-analyst-expert",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5974,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "db-admin-console",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8837,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "db-schema-designer",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8285,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "decision-architect",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6251,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "decision-architect-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3755,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "deepseek-chat",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2399,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "design",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6825,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "design-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5265,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "design-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7292,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "diagram-gen",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11685,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "diagram-generator-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 6728,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "diagram-tools",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2782,
+      "version": "1.0.2"
+    },
+    {
+      "slug": "dingtalk-calendar",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3305,
+      "version": "1.0.2"
+    },
+    {
+      "slug": "discord-chat-manager",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8524,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "discord-communities",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 8442,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "discord-communities-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 4980,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "discord-community-hub",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10600,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "discord-hub",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3492,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "discord-voice",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 7954,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "discord-voice-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 5498,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "discord-voice-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7945,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "discrawl",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3008,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "dlazy-audio",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7216,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "dlazy-audio-generate",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10187,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "dlazy-audio-generate-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 使用场景"
+      ],
+      "body_length": 4918,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "dlazy-gen",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11246,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "dlazy-generate",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3363,
+      "version": "1.3.2"
+    },
+    {
+      "slug": "dns-config",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8735,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "dns-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5069,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "dns-lookup",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2229,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "dns-networking",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5287,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "dns-networking-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11164,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "doc",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3730,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "doc-guard",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9123,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "doc-parse",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10545,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "docker",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4183,
+      "version": "1.0.4"
+    },
+    {
+      "slug": "docker-ctl",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2251,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "docker-essentials",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8873,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "docker-essentials-1-0-0",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8938,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "docker-essentials-1-0-0-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3572,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "docker-essentials-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3502,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "docker-essentials-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8865,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "docker-essentials-v1",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8532,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "docker-sandbox",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4059,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "document-pdf",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3990,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "dogecoin-node",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4031,
+      "version": "1.0.5"
+    },
+    {
+      "slug": "domain-dns-ops",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3417,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "doubao-chat",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2394,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "drama-hit-producer",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 15276,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "ecommerce-pricing-strategist",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述",
+        "description 过短: 0 字符"
+      ],
+      "body_length": 15981,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "elite-frontend",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6469,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "elite-frontend-design",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3036,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "elite-longterm-memory",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6815,
+      "version": "1.2.3"
+    },
+    {
+      "slug": "elite-longterm-memory-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4099,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "elite-longterm-memory-local-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4801,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "email-163",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9421,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "email-163-com",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7777,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "email-163-com-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5075,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "email-daily-summary",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8989,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "email-daily-summary-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4875,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "email-digest",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9570,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "email-gmail-outlook",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9017,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "email-gmail-outlook-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4587,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "email-skill",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8115,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "email-skill-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4528,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "email-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10456,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "encoding-formats",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7140,
+      "version": "2.0.0"
+    },
+    {
+      "slug": "encoding-formats-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3486,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "encoding-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8808,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "encrypted-docs",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3394,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "encryption",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3774,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "encryption-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9303,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "evolution-engine",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7664,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "evolution-engine-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4456,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "excel-studio",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3499,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "excel-xlsx",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3952,
+      "version": "1.0.2"
+    },
+    {
+      "slug": "expanso-csv-to-json",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3418,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "expanso-json-to-yaml",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3271,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "expanso-json-validate",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3428,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "expanso-log-sanitize",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4002,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "expanso-xml-to-json",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3557,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "explain-code",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3286,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "explain-code-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6788,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "feed-digest",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3988,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "feed-to-md",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2579,
+      "version": "1.2.0"
+    },
+    {
+      "slug": "feishu-calendar",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2770,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "feishu-card",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5738,
+      "version": "1.4.11"
+    },
+    {
+      "slug": "feishu-card-builder",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9376,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "feishu-card-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4143,
+      "version": "1.4.11"
+    },
+    {
+      "slug": "feishu-doc",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3361,
+      "version": "1.2.7"
+    },
+    {
+      "slug": "feishu-doc-write",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6010,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "feishu-file-sender",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8393,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "feishu-send-file",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10276,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "feishu-send-file-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7195,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "figma",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5034,
+      "version": "2.1.0"
+    },
+    {
+      "slug": "figma-2",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3092,
+      "version": "0.1.1"
+    },
+    {
+      "slug": "figma-design",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 5977,
+      "version": "1.0.6"
+    },
+    {
+      "slug": "figma-design-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11192,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "figma-studio",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 16888,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "figma-tw-designer",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7024,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "file",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4224,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "file-auto-organizer",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3283,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "file-browser",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4298,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "file-organizer-zh",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2517,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "finance",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4024,
+      "version": "1.1.2"
+    },
+    {
+      "slug": "finance-accounting",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4388,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "finance-acct",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8183,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "finance-radar",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4134,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "finance-radar-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6989,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "finance-report",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6196,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "finance-report-analyzer",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4859,
+      "version": "1.2.0"
+    },
+    {
+      "slug": "finance-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7012,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "financial-literacy",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3660,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "financial-literacy-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6492,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "firewall",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3577,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "flexible-database-design",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4216,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "fonts",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2930,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "format-converter",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7902,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "free-google-search-with-browser",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3533,
+      "version": "0.0.1"
+    },
+    {
+      "slug": "free-resource-finder",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10480,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "free-ride",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4173,
+      "version": "1.0.11"
+    },
+    {
+      "slug": "free-weather-api",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4064,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "free-weather-skill",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3199,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "free-web-search",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3855,
+      "version": "8.1.0"
+    },
+    {
+      "slug": "frontend-design-3",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10664,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "frontend-design-3-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5237,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "frontend-design-anthropic",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7608,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "frontend-design-v3",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9167,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "game",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2743,
+      "version": "2.0.0"
+    },
+    {
+      "slug": "game-ai",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3259,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "game-asset-generation-cellcog",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3988,
+      "version": "1.0.14"
+    },
+    {
+      "slug": "game-developer-skill",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4161,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "game-theory",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7999,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "game-theory-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4546,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "gateway-manager",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10207,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "generate-mindmap",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3917,
+      "version": "1.0.3"
+    },
+    {
+      "slug": "generate-presentation",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4688,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "gif-whatsapp",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4175,
+      "version": "1.3.0"
+    },
+    {
+      "slug": "git",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3724,
+      "version": "1.0.8"
+    },
+    {
+      "slug": "git-cli",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3573,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "git-cli-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6353,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "git-essentials-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4382,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "git-essentials-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10421,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "git-helper",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2830,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "git-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7837,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "git-workflow-cn",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5329,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "git-workflow-cn-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8583,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "git-workflows",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3714,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "git-workflows-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9496,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "gitcrawl",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2988,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "github",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3197,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "github-api",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 4853,
+      "version": "1.0.7"
+    },
+    {
+      "slug": "github-dev-standard",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9448,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "github-development-standard",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3447,
+      "version": "2.0.0"
+    },
+    {
+      "slug": "github-repos",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 5896,
+      "version": "1.0.5"
+    },
+    {
+      "slug": "go",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3288,
+      "version": "1.0.2"
+    },
+    {
+      "slug": "go-linter-configuration",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4307,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "go-security-vulnerability",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7981,
+      "version": "0.2.0"
+    },
+    {
+      "slug": "go-to-market",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6715,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "go-to-market-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3749,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "gog",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8078,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "gog-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5573,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "golang-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9961,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "google-fonts",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6927,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "google-search",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3571,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "google-workspace-cli",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9830,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "google-workspace-mcp",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10043,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "google-workspace-mcp-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6811,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "google-workspace-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 12476,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "grain-crawler",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6886,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "graincrawl",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2451,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "graph-advocate",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4808,
+      "version": "2.9.1"
+    },
+    {
+      "slug": "graph-knowledge-base",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6709,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "grok-image-generate",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5211,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "health",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3458,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "heygen-tts",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7974,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "hook-retention-master",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述",
+        "description 过短: 0 字符"
+      ],
+      "body_length": 14918,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "hot-news-aggregator",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3438,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "html",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2636,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "html-coder",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3938,
+      "version": "2.0.1"
+    },
+    {
+      "slug": "html-designer",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4688,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "humanizer",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4606,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "image",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4777,
+      "version": "1.0.4"
+    },
+    {
+      "slug": "in-depth-research",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6079,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "in-depth-research-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3882,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "intel-sentinel",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述",
+        "description 过短: 0 字符"
+      ],
+      "body_length": 13858,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "internet-search",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2828,
+      "version": "0.3.4"
+    },
+    {
+      "slug": "interview-simulator",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5598,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "iris-code-formatter",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9939,
+      "version": "3.1.0"
+    },
+    {
+      "slug": "iris-formatter",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11017,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "java",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9243,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "java-dev-manual",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11952,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "java-development-manual",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4514,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "java-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5009,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "java-reviewer",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 13454,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "javascript",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3538,
+      "version": "1.0.3"
+    },
+    {
+      "slug": "javascript-skills",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4140,
+      "version": "1.0.2"
+    },
+    {
+      "slug": "javascript-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8083,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "jellyfin-control",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5430,
+      "version": "1.3.0"
+    },
+    {
+      "slug": "jinn-node",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5635,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "jinn-node-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4136,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "jira-api",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 5019,
+      "version": "1.0.8"
+    },
+    {
+      "slug": "jira-api-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7756,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "jira-flow-skill",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8647,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "jira-integration-skill",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2925,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "（根据实际场景填充）",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2923,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "jira-pat-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3807,
+      "version": "0.0.1"
+    },
+    {
+      "slug": "join-meeting",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5301,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "join-meeting-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2446,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "json",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3602,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "json-beautifier",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6320,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "json-formatter",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2921,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "json-lint",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7187,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "json-linter",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3066,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "json-parse-engine",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7440,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "json-parser",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3671,
+      "version": "2.1.0"
+    },
+    {
+      "slug": "json-repair",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7055,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "json-repair-kit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3547,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "json-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7257,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "json-validator",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 13412,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "json-yaml-converter",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 12462,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "juejin-skills",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5616,
+      "version": "1.0.8"
+    },
+    {
+      "slug": "k8s",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3125,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "kai-tw-figma",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2584,
+      "version": "1.0.3"
+    },
+    {
+      "slug": "key-guard",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4566,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "key-vault-manager",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6226,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "knowledge",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2562,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "knowledge-capture",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4024,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "knowledge-graph",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2811,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "knowledge-graph-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8527,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "knowledge-graph-skill-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4820,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "knowledge-ontology",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8634,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "kubernetes",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4181,
+      "version": "2.1.0"
+    },
+    {
+      "slug": "kubernetes-devops",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4047,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "kujiale-design",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7401,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "learn",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3695,
+      "version": "1.0.2"
+    },
+    {
+      "slug": "learn-cog",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6135,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "learn-cog-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2783,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "lh-video-gen",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4245,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "linear",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3986,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "（根据实际场景填充）",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2923,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "linear-sync",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11415,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "lite-sqlite",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4728,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "live-stream-script",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2807,
+      "version": "2.0.0"
+    },
+    {
+      "slug": "llm-assistant-hub",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6162,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "llm-assistant-hub-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3411,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "local-file-rag-basic",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2703,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "logo-brand-identity-cellcog",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4464,
+      "version": "1.0.13"
+    },
+    {
+      "slug": "logo-design",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10430,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "logo-design-guide",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6660,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "logo-design-guide-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3251,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "longmemo-elite",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8397,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "longmemo-elite-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4352,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "mac-node-snapshot",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4593,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "mac-system-control",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3172,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "magic-api-generate",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5532,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "markdown",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3211,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "markdown-converter",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2837,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "markdown-converter-compdf",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4427,
+      "version": "1.2.0"
+    },
+    {
+      "slug": "markdown-exporter-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3972,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "markdown-format",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7134,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "market-news",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2210,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "mcporter",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2636,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "md-export",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8038,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "meeting-note",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4457,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "memo-quickstart",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8476,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "memo-quickstart-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4640,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "memory",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5862,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "memory-compress",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6987,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "memory-compress-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3116,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "memory-distiller",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9233,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "memory-distiller-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3269,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "memory-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3174,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "memory-orchestrator",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9999,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "memory-orchestrator-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3837,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "memory-radar",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6940,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "memory-radar-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4239,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "memory-scan-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4373,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "merge-check",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5276,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "merge-pdf",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2831,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "mermaid-diagram",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3507,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "mermaid-diagram-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8320,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "minimalist-design",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9825,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "minimalist-design-system",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3875,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "miniprogram-development",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4339,
+      "version": "1.28.12"
+    },
+    {
+      "slug": "model-routing",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9486,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "model-switching",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8337,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "moltblock",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4298,
+      "version": "0.11.9"
+    },
+    {
+      "slug": "moltbook-filter",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5872,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "moltbook-filter-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3175,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "moltbook-firewall",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3476,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "monad-development",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6507,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "mongodb",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3957,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "mongodb-atlas-admin",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6771,
+      "version": "2.0.0"
+    },
+    {
+      "slug": "mongodb-atlas-admin-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4024,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "monitor",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3463,
+      "version": "1.0.2"
+    },
+    {
+      "slug": "multi-agent-dev",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6860,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "multi-agent-dev-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4601,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "multi-search-engine",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4331,
+      "version": "2.1.3"
+    },
+    {
+      "slug": "multi-search-engine-simple",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3545,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "multi-source-research",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3054,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "music",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2582,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "music-gen",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 12507,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "music-gen-cellcog",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10508,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "music-generation",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3444,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "music-generation-cellcog",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3867,
+      "version": "1.0.11"
+    },
+    {
+      "slug": "namecheap-dns",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6278,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "nano-pdf",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2800,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "neosoul-decision-agent",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9273,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "neosoul-decision-agent-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4119,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "netpad",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3834,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "neural-memory-enhanced",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9362,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "neural-memory-enhanced-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4642,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "news",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3118,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "news-aggregator",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4738,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "news-aggregator-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3408,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "news-daily-digest",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8886,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "news-feed",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2763,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "news-sentiment",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8250,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "news-sentiment-scan",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6522,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "news-sentiment-scan-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5047,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "node-connect",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4349,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "node-connect-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8288,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "notcrawl",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2448,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "note",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3724,
+      "version": "2.1.0"
+    },
+    {
+      "slug": "note-taker",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3581,
+      "version": "2.0.1"
+    },
+    {
+      "slug": "notion",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2919,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "notion-api-skill",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 5555,
+      "version": "1.0.11"
+    },
+    {
+      "slug": "notion-api-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9651,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "notion-cli",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10250,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "notion-pages",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 使用场景"
+      ],
+      "body_length": 5856,
+      "version": "0.1.1"
+    },
+    {
+      "slug": "notion-skill",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3213,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "notioncli",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3677,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "obsidian-cli",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9124,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "obsidian-official-cli",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4510,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ocean-chat",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4042,
+      "version": "2.20.0"
+    },
+    {
+      "slug": "okx-dex-token",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4144,
+      "version": "3.1.3"
+    },
+    {
+      "slug": "okx-dex-token-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6880,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ollama-integration",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2600,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ollama-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11540,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ontology-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5612,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "openai-ai",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 使用场景"
+      ],
+      "body_length": 6508,
+      "version": "1.0.6"
+    },
+    {
+      "slug": "openai-ai-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10918,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "openai-whisper",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2949,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "openai-whisper-1-0-0",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2745,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "openai-whisper-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9612,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "openai-whisper-v1",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8751,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "openclaw-dashboard",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4198,
+      "version": "1.7.3"
+    },
+    {
+      "slug": "openclaw-linear",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3371,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "pandoc-convert-openclaw",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5832,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "（根据实际场景填充）",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2923,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "paper-parse",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4548,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "parallel-ai-research",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4375,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "password-generator",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3412,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "pcb-design-assistant-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10113,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "pdf",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3990,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "pentest-commands",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4678,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "persistent-memory-engine",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8493,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "persistent-memory-engine-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4514,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "personal-health-manager",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7759,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "pg-mcp-skills",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7284,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "photo-captions",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9359,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "photo-captions-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6365,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "photo-webcam",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4207,
+      "version": "1.0.6"
+    },
+    {
+      "slug": "ping-monitor",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2250,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "pipedrive-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 17491,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "piper-tts-engine",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10486,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "podcast",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3328,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "podcast-chaptering",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9832,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "podcast-chaptering-highlights",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2816,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "podcast-downloader",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4116,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "podcast-downloader-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9104,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "poetry-craftsman",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述",
+        "description 过短: 0 字符"
+      ],
+      "body_length": 16113,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "postgres-job-queue",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3073,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "postgres-mcp-skills",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3009,
+      "version": "1.0.2"
+    },
+    {
+      "slug": "powerpoint",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4472,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "pptx-pdf-font-fix",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3525,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "pro-comm-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7888,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "proactive-agent",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5795,
+      "version": "3.1.0"
+    },
+    {
+      "slug": "proactive-agent-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3205,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "productivity-bot",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3642,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "productivity-improving",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4241,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "professional-communication",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7948,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "professional-communication-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5822,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "py",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8750,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "py-data-analyzer",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8624,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "py-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5057,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "python",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4014,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "python-data-analysis",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3011,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "python-dataviz",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4081,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "python-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10011,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "python3",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3546,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "qq-zone-photo",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5984,
+      "version": "1.0.3"
+    },
+    {
+      "slug": "qq-zone-photo-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4504,
+      "version": "1.0.3"
+    },
+    {
+      "slug": "quant-data-quality",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2919,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "quark-scan",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6697,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "queue-task",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2777,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "qwen-video-analyzer",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6793,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "read-github",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4140,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "reddit-research",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4488,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "reddit-research-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9064,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "reminder",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3625,
+      "version": "0.1.1"
+    },
+    {
+      "slug": "reminder-engine",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10310,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "remix-api-key-auth",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3900,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "repo-manager",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8889,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "report",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7715,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "report-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4336,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "research-agent",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4375,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "rest-api-reference",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8684,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "rho-telegram-alerts",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2664,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "rss-aggregator",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3672,
+      "version": "1.0.2"
+    },
+    {
+      "slug": "rss-digest",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4004,
+      "version": "0.2.1"
+    },
+    {
+      "slug": "rss-feed-digest",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4289,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "rss-fetcher",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6895,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "rss-reader",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3738,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "rss-reader-ai",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11056,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "rust",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7043,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "rust-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3463,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "safe-encryption-skill",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4020,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "sales-copy-writer",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述",
+        "description 过短: 0 字符"
+      ],
+      "body_length": 15456,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "schedule",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3904,
+      "version": "1.0.2"
+    },
+    {
+      "slug": "schedule-manager",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10356,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "scrape-web",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2528,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "screen-monitor",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3229,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "search-2",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6076,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "searching-assistant",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2614,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "secure-api-calls",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4085,
+      "version": "1.0.3"
+    },
+    {
+      "slug": "secure-api-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6379,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "security",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5511,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "security-auditor",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3428,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "security-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2449,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "security-scanner",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3655,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "self-integration",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3935,
+      "version": "1.1.2"
+    },
+    {
+      "slug": "self-integration-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8667,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "sequential-read",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3797,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "shadcn-ui",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3801,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "shopify-helper",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2586,
+      "version": "2.0.0"
+    },
+    {
+      "slug": "skill-vetter",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7151,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "skill-vetter-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3540,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "slack-api",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 6208,
+      "version": "1.0.11"
+    },
+    {
+      "slug": "slack-api-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7157,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "slack-crawler",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7683,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "slack-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6068,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "slack-hub",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10479,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "slack-hub-skill",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9532,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "slack-hub-skill-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 5267,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "slack-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10459,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "slack-workspace",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11213,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "slack-workspace-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 4893,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "slacrawl",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2437,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "smart-auto-updater",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5509,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "smart-cache",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2474,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "smart-crawler",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9080,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "smart-model-routing-for-zai",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3906,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "smart-model-switching",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4208,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "smart-reminder",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10787,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "smart-reminder-system",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3337,
+      "version": "1.0.5"
+    },
+    {
+      "slug": "smart-weekly-report",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4430,
+      "version": "1.1.3"
+    },
+    {
+      "slug": "social",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 11029,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "social-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 7477,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "social-media-scheduler",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 5840,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "social-media-scheduler-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4456,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "social-media-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10369,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "social-sentiment",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3500,
+      "version": "1.4.0"
+    },
+    {
+      "slug": "solo-audit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3424,
+      "version": "1.4.1"
+    },
+    {
+      "slug": "solo-dev-companion",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9914,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "solo-research",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6641,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "solo-research-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2375,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "solo-validate",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3401,
+      "version": "2.1.1"
+    },
+    {
+      "slug": "sonoscli",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2676,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "sovereign-aws-cost-optimizer",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3176,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "sql",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10262,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "sql-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4238,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "sql-gen",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6450,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "sql-generator",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3381,
+      "version": "2.3.7"
+    },
+    {
+      "slug": "sql-master",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7209,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "sql-query",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6235,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "sql-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5041,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "sqlite",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3186,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "sqlite-lite-manager",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6635,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "sqlite-manager",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5851,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ssl",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3507,
+      "version": "1.0.2"
+    },
+    {
+      "slug": "ssl-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11249,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "stagehand-browser-cli",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3840,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "stealth-browser-assistant",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述",
+        "description 过短: 0 字符"
+      ],
+      "body_length": 12388,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "stock-filter",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5166,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "stock-filter-skills",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4077,
+      "version": "1.3.0"
+    },
+    {
+      "slug": "story-long-analyze",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3266,
+      "version": "1.1.11"
+    },
+    {
+      "slug": "story-long-write",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9289,
+      "version": "1.1.13"
+    },
+    {
+      "slug": "story-long-write-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3435,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "straker-verify",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3669,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "tailwindcss",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3270,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "tailwindcss-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11865,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "tardis",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4553,
+      "version": "1.2.0"
+    },
+    {
+      "slug": "tarot",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6979,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "tarot-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3801,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "tarot-reader",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3621,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "task",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3123,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "task-bot-orchestrator",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10231,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "task-queue-manager",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10615,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "telegram",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3853,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "telegram-agent-comm",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7872,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "telegram-alert",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7376,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "telegram-bot-builder",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2646,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "telegram-chat",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9244,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "telegram-chat-manager",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3077,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "telegram-messaging",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 6829,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "telegram-messaging-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述, 使用场景"
+      ],
+      "body_length": 4451,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "telegram-msg-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11963,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "text",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3300,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "text-game-arcade-universe-v3",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3340,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "text-to-speech-heygen",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4509,
+      "version": "2.23.0"
+    },
+    {
+      "slug": "text-to-sql",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4052,
+      "version": "999.0.0"
+    },
+    {
+      "slug": "text2sql-engine",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9278,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "tg-body-scan",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9309,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "thesis-helper",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3207,
+      "version": "2.0.0"
+    },
+    {
+      "slug": "timeline-digest",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6743,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "timer-alert",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11011,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "title-hook-factory",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述",
+        "description 过短: 0 字符"
+      ],
+      "body_length": 16736,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "tmux-session",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10542,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "token-manager",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6449,
+      "version": "2.0.0"
+    },
+    {
+      "slug": "token-manager-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3229,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "tool",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3459,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "tool-call-retry",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3471,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "tool-finder",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7321,
+      "version": "1.7.0"
+    },
+    {
+      "slug": "topic-hunter",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述",
+        "description 过短: 0 字符"
+      ],
+      "body_length": 18328,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "trade-with-taro",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3278,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "trading",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6511,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "translate",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3339,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "translate-en-zh",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2912,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "translate-hub",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11806,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "travel-assistant",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3377,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "trending-feed-skill",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6738,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "tts-whatsapp",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3937,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "tts-whatsapp-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11916,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "typescript",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3177,
+      "version": "1.0.2"
+    },
+    {
+      "slug": "typescript-skills",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5578,
+      "version": "1.0.6"
+    },
+    {
+      "slug": "typescript-skills-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11703,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "typescript-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10369,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ui",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3255,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ui-audit-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4665,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "ui-component",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2853,
+      "version": "2.0.0"
+    },
+    {
+      "slug": "ui-component-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9875,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ui-design-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8178,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ui-ux",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5020,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ui-ux-design",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7822,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ui-ux-design-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3465,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ui-ux-dev",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4011,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ui-ux-dev-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 14385,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ui-ux-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8809,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "universal-translate",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3527,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "universal-translate-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9246,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "university-app",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5252,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "university-applications",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4167,
+      "version": "1.2.10"
+    },
+    {
+      "slug": "upstage-document-parse",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7706,
+      "version": "1.0.5"
+    },
+    {
+      "slug": "upstage-document-parse-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3927,
+      "version": "1.0.5"
+    },
+    {
+      "slug": "use-my-browser",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5865,
+      "version": "2.0.0"
+    },
+    {
+      "slug": "use-my-browser-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3080,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ux",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3420,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "vector-db-manager",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11480,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "verify-claims",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7490,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "video",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4268,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "video-editing",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3911,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "video-editing-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7275,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "video-frames",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3300,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "video-frames-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8274,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "video-stream-upload",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9884,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "video-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 14899,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "video-translator",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3881,
+      "version": "1.0.5"
+    },
+    {
+      "slug": "video-translator-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8674,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "viral-prophet",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述",
+        "description 过短: 0 字符"
+      ],
+      "body_length": 22109,
+      "version": "1.1.0"
+    },
+    {
+      "slug": "visual-file-sorter",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3302,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "volcengine-network-dns",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2583,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "vpn",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3264,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "vpn-rotate-skill",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3257,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "vpn-rotator",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10131,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "vscode-node",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5918,
+      "version": "1.0.2"
+    },
+    {
+      "slug": "vscode-node-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9509,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "vue",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3129,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "vue-component-gen",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9431,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "vue-component-generator",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3612,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "vue-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8543,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "vulnerability-scanner",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4162,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "weather",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3196,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "web",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3657,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "web-browsing",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3331,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "web-content-fetcher",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3230,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "web-crawler-engine",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11865,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "web-learner",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2849,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "web-vulnerability-assessment",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5593,
+      "version": "1.0.2"
+    },
+    {
+      "slug": "weekly-report-writer",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2831,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "weiyun-skills",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4383,
+      "version": "1.0.10"
+    },
+    {
+      "slug": "weiyun-toolkit",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6208,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "wenxiang-2d5-banner",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3431,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "whatsapp-image",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9473,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "whatsapp-image-send",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3512,
+      "version": "1.0.1"
+    },
+    {
+      "slug": "whatsapp-style-guide",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8129,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "whatsapp-styler",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8592,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "whatsapp-styler-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4360,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "whatsapp-styling-guide",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9142,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "whatsapp-styling-guide-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4897,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "whatsapp-ultimate-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3890,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "who-is-actor",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7160,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "word",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3869,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "word-docx",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3953,
+      "version": "1.0.2"
+    },
+    {
+      "slug": "word-docx-1",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3953,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "word-docx-1-02",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3962,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "work",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4043,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "workflow",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3951,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "workflow-decomposer",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3909,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "workflow-orchestrator",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11752,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "workflow-splitter",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 12368,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "write",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6782,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "write-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4089,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "writing-assistant",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2831,
+      "version": "0.1.0"
+    },
+    {
+      "slug": "ws-agent-browser",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2839,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ws-calendar",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2706,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ws-excel",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2723,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ws-excel-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6116,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "x-news-daily",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9352,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "x-news-daily-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4771,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "xlsx-handler",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9341,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "xml",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 2630,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "xml-json-converter",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 13189,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "xml-reader",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3771,
+      "version": "2.1.0"
+    },
+    {
+      "slug": "yaml",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3412,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "youtube-watcher",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3191,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "youtube-watcher-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7935,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "z-card-image",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6757,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "z-card-image-free",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4915,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "zhuchenggong-doubao-image-gen",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 3080,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ziptax",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 4964,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "ziptax-paid",
+      "source": "packaged",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11445,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "context-compressor-free",
+      "source": "differentiated/Agents",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7066,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "doc-reasoning-analyst-free",
+      "source": "differentiated/Agents",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6258,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "focus-flow-optimizer-free",
+      "source": "differentiated/Agents",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7998,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "memory-radar",
+      "source": "differentiated/Agents",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5965,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "cdp-browser-pilot-free",
+      "source": "differentiated/Automation",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7880,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "cron-setup-guide-free",
+      "source": "differentiated/Automation",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10212,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "desktop-automation-hub-free",
+      "source": "differentiated/Automation",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10111,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "drawing-insight-free",
+      "source": "differentiated/Automation",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7292,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "flow-control-hub-free",
+      "source": "differentiated/Automation",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 12334,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "pcb-design-assistant-free",
+      "source": "differentiated/Automation",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5851,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "solo-workflow-engine-free",
+      "source": "differentiated/Automation",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7151,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "task-bot-orchestrator-free",
+      "source": "differentiated/Automation",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9587,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "task-queue-manager-free",
+      "source": "differentiated/Automation",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11047,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "workflow-essentials-free",
+      "source": "differentiated/Automation",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 6511,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "workflow-orchestrator-free",
+      "source": "differentiated/Automation",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7565,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "workflow-splitter-free",
+      "source": "differentiated/Automation",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 5565,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "music-gen-cellcog-tool-pro",
+      "source": "differentiated/Creative",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10048,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "music-gen-tool-pro",
+      "source": "differentiated/Creative",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 12332,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "api-toolkit-free",
+      "source": "differentiated/Integrations",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8956,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "gateway-manager-free",
+      "source": "differentiated/Integrations",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8362,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "json-validator-free",
+      "source": "differentiated/Integrations",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9149,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "art-creator-free",
+      "source": "differentiated/Other",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 7171,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "auto-file-organizer-pro",
+      "source": "differentiated/Other",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11253,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "book-illustrator-free",
+      "source": "differentiated/Other",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8094,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "diagram-master-free",
+      "source": "differentiated/Other",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9825,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "file-toolkit-free",
+      "source": "differentiated/Other",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9123,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "font-manager-free",
+      "source": "differentiated/Other",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11039,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "log-sanitizer-free",
+      "source": "differentiated/Other",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8146,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "log-sanitizer-pro",
+      "source": "differentiated/Other",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 12352,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "zh-file-organizer-pro",
+      "source": "differentiated/Other",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10552,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "amap-jsapi-tool-pro",
+      "source": "differentiated/Security",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 11612,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "block-monitor-tool-pro",
+      "source": "differentiated/Security",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 8953,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "multi-search-engine-tool-pro",
+      "source": "differentiated/Security",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 9233,
+      "version": "1.0.0"
+    },
+    {
+      "slug": "password-gen-pro-tool-pro",
+      "source": "differentiated/Security",
+      "severity": "info",
+      "issues": [
+        "缺失章节: 概述"
+      ],
+      "body_length": 10426,
+      "version": "1.0.0"
+    }
+  ]
+}

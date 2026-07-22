@@ -1,0 +1,1115 @@
+{
+  "deleted": [],
+  "failed": [
+    {
+      "slug": "301-redirect-check",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "51shebao-test",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "agentsafe-scan",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "agnes-image-gen",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "ai-director",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "ai-guardian",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "ai-shifu-course-creator",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "apple-health-sync",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "architect",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "article-html-to-ppt",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "backend-engineer",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "byted-emr-skills",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "case-retrieval-report",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "ceph-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "china-admin-divisions",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "chinese-official-writing",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "cicd-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "clawtip-skill",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "cloudbase",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "cloudbase-wechat-integration",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "code-handover-assistant",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "code-to-diagram",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "codexreview",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "compliance-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "container-host-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "cross-platform-memory-hub",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "cs-conversation-qc",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "data-ai-engineer",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "database-specialist",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "deli-ocr-file-parser",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "demo-skill",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "devops-engineer",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "diagram-maker",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "directconnect",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "dlazy-elevenlabs-dialogue",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "dlazy-elevenlabs-stt",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "dlazy-heygen-lipsync-speed",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "dlazy-idea2video",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "dlazy-image-replicate",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "dlazy-image-social-media",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "dlazy-search-audio",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "dlazy-search-image",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "dlazy-search-video",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "dlazy-superres",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "dlazy-vectorize",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "dlazy-video-replicate",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "dlazy-videoseg",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "documentation",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "douyin-account-diagnosis-redfox",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "douyin-daily-hot",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "douyin-search-redfox",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "douyin-similar-account",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "douyin-works-crawler",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "download-dem",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "drakon-agent-optimizer",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "earn-hunter",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "ekyc-suite",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "endpoint-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "fabric-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "famine-survival-player",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "filtmall-shopping",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "finxdata-simtrading",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "finxdata-skill",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "firewall-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "foxmobile-dev-doc",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "foxtable-dev-doc-1",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "free-model-router-v1",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "gdpr-compliance",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "generate-amazon-image-set",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "git-sync",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "global-biblio-base",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "http-status-code-check",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "hyperframes-animation",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "i4h-catheter-navigation",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "i4h-catheter-navigation-digital-twin",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "i4h-catheter-navigation-e2e",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "i4h-catheter-navigation-render-drr",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "i4h-catheter-navigation-setup",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "i4h-catheter-navigation-smoke",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "i4h-catheter-navigation-viewport",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "i4h-lerobot-viz",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "i4h-workflow",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "i4h-workflow-create",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "i4h-workflow-dataset-annotate",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "i4h-workflow-dataset-convert",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "i4h-workflow-dataset-mimic",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "i4h-workflow-dataset-replay",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "i4h-workflow-dataset-teleop",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "i4h-workflow-e2e",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "i4h-workflow-finetune",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "i4h-workflow-scene-edit",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "i4h-workflow-setup",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "i4h-workflow-validate",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "iam-query",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "identity-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "inference-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "injection-molding-pro",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "innovation-research",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "instant-weather",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "k10-compile-server",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "k8s-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "klyc-pmm",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "known-error-fixes-database",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "language-specialist",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "litigation-fee-calculator",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "llm-council",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "loom-vision",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "maybeai-sheet-cli-skill",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "meeting-kb-skill",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "meme-maker",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "mengpotang",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "miao-vision-skill",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "minio-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "monitoring-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "multi-agent-orchestrator",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "multilingual-learning-sprint",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "mysql-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "national-standard-monitor-skill",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "negative-review-butler",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "nemo-relay-get-started",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "nemo-relay-plugin-observability",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "network-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "nutanix-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "observability-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "obsidian-memory-system",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "obsidian-memory-system-clawhub-reviewfix",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "okx-cex-bot",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "okx-cex-earn",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "okx-cex-market",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "okx-cex-portfolio",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "okx-cex-skill-mp",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "okx-cex-smartmoney",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "okx-cex-trade",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "okx-outcomes",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "okx-sentiment-tracker",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "opencrm",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "pathclaw",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "pdf-batch-compress",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "picgo-upload",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "postgres-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "pregnancy-calendar-reminders",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "product-business",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "product-launch-video",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "proxmox-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "proxy-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "publish-answer-baidu-know",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "qa-security",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "queue-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "reddit-account-operations",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "route53",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "runapi-fish-audio",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "runapi-grok",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "runapi-suno",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "rustok-wallet-tui",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "seewo-courseware-generator",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "sheet-to-doc-skill",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "shieldadvanced",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "shieldcortex",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "skill",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "smartclaws",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "smartclaws-bridge-agent",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "smartclaws-device-shelly-plug-s-gen3",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "smartclaws-device-thermal-room-sensor",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "smartclaws-master-agent",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "smartclaws-tariff-file-source",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "smartlib-citation-checker",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "soft-ip-full-lifecycle-delivery-pro",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "soft-ip-full-lifecycle-zijian",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "soft-ip-full-lifecycle-zijian-clawhub-reviewfix",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "spec-workflow-guide",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "ssq-analyzer-skill",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "stockstar-fund-rating",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "super-summarizer",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "talamus-memory",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "taohtml",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "the-ren-skill",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "tiktok-influencer",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "tiktok-insight",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "tiktok-search",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "tiktok-video-search",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "token-usage",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "topos",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "transitgateway",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "truenas-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "ui-design-guide",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "unihiker-k10-arduino",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "unihiker-k10-micropython",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "unihiker-k10-ota",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "unihiker-k10-platformio",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "veeam-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "video-creator",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "videosays",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "vmware-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "vmware-aria",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "vmware-avi",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "vmware-debug",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "vmware-harden",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "vmware-log-insight",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "vmware-monitor",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "vmware-nsx",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "vmware-nsx-security",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "vmware-pilot",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "vmware-policy",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "vmware-storage",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "vmware-vks",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "waf",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "web-development",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "websculpt",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "wechat-10w-hot",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "wechat-account-analyzer",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "wechat-explosive-content",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "wechat-original-article-king",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "wechat-original-hot",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "wechat-search",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "wechat-similar-account",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "weekly-review",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "xcpng-aiops",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "yijing-oracle-interpretation",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "z-zero-payments",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "zerotoken-skill",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    },
+    {
+      "slug": "zhuangji-assistant-skill",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "code": -2
+    }
+  ],
+  "already_deleted": [
+    "api-test-runner",
+    "bot-status-api-test",
+    "bot-status-api-test-free"
+  ]
+}

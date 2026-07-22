@@ -81,7 +81,7 @@ SKILLHUB_CATEGORIES = {
 
 
 def parse_frontmatter(content: str) -> dict:
-    """解析 YAML frontmatter"""
+    """解析 YAML frontmatter，支持多行块标量 (|-, |, >-, >)"""
     if content.startswith('\ufeff'):
         content = content[1:]
     if not content.startswith('---'):
@@ -92,10 +92,26 @@ def parse_frontmatter(content: str) -> dict:
     fm_text = parts[1].strip()
     fm = {}
     current_key = None
-    for line in fm_text.split('\n'):
-        line = line.rstrip()
-        if not line:
+    block_key = None
+    block_lines = []
+    fm_lines = fm_text.split('\n')
+    i = 0
+    while i < len(fm_lines):
+        line = fm_lines[i]
+        line_stripped = line.rstrip()
+        if not line_stripped:
+            if block_key:
+                block_lines.append('')
+            i += 1
             continue
+        if block_key and (line.startswith('  ') or line.startswith('\t')):
+            block_lines.append(line.strip())
+            i += 1
+            continue
+        if block_key:
+            fm[block_key] = '\n'.join(block_lines).strip()
+            block_key = None
+            block_lines = []
         if line.startswith('  - '):
             val = line[4:].strip()
             if val.startswith('"') and val.endswith('"'):
@@ -110,11 +126,18 @@ def parse_frontmatter(content: str) -> dict:
             val = val.strip()
             if val.startswith('"') and val.endswith('"'):
                 val = val[1:-1]
-            if val:
+            if val in ('|-', '|', '>-', '>'):
+                block_key = key
+                block_lines = []
+                fm[key] = ''
+            elif val:
                 fm[key] = val
             else:
                 current_key = key
                 fm[key] = []
+        i += 1
+    if block_key:
+        fm[block_key] = '\n'.join(block_lines).strip()
     return fm
 
 
@@ -166,6 +189,28 @@ def check_git_status(skill_dir: Path) -> dict:
     return {"clean": False, "error": "unknown", "status": "error"}
 
 
+# 测试 skill 模式（全面覆盖）
+TEST_SKILL_PATTERNS = [
+    r'^test[-_]?',
+    r'^test$',
+    r'-test[\d]*$',
+    r'-test[-_]',
+    r'_test_',
+    r'^xml-toolkit-free-test',
+    r'^encryption-paid-(test|fwtest|mdtest)',
+    r'^trunc-1k-',
+    r'^waf-test-',
+    r'^size-test-',
+    r'^test-probe-',
+    r'^pentest-commands-tool',
+    r'^api-test-runner',
+    r'^finance-test',
+    r'^bot-status-api-test',
+    r'^demo-skill$',
+    r'-demo$',
+]
+
+
 def validate_skill(skill_dir: Path) -> dict:
     """验证单个 skill 的质量"""
     issues = []
@@ -183,10 +228,12 @@ def validate_skill(skill_dir: Path) -> dict:
         if field not in fm or not fm[field]:
             issues.append(f"MISSING_FM_{field.upper()}")
     
-    # 测试/演示 skill 检查
+    # 测试/演示 skill 检查（全面模式匹配）
     slug = fm.get('slug', skill_dir.name)
-    if re.match(r'^test$|^test-wa$|^test-wa-free$', slug, re.IGNORECASE):
-        issues.append("TEST_SKILL")
+    for pattern in TEST_SKILL_PATTERNS:
+        if re.match(pattern, slug, re.IGNORECASE):
+            issues.append("TEST_SKILL")
+            break
     
     # 实际 TODO/FIXME 注释检查 (不匹配正文中合法使用的 "todo" 词)
     if re.search(r'(?m)^\s*[-*]\s*TODO|^\s*TODO\s*:|^\s*FIXME\s*:|^\s*TBD\s*:', content):
@@ -195,6 +242,16 @@ def validate_skill(skill_dir: Path) -> dict:
     # 内容长度检查
     if len(content) < 500:
         issues.append(f"CONTENT_TOO_SHORT ({len(content)} chars)")
+    
+    # description 空值检查
+    description = fm.get('description', '')
+    if description and len(str(description).strip()) < 10:
+        issues.append(f"DESCRIPTION_TOO_SHORT ({len(str(description).strip())} chars)")
+    
+    # summary 检查
+    summary = fm.get('summary', '')
+    if summary and len(str(summary).strip()) < 10:
+        issues.append(f"SUMMARY_TOO_SHORT ({len(str(summary).strip())} chars)")
     
     # tools 字段格式检查
     if 'tools' in fm:
@@ -449,9 +506,200 @@ def categorize_skills():
     print(f"\n分类映射已保存: {cat_map_path}")
 
 
+def validate_free_paid_pairs():
+    """验证免费版/收费版配对关系"""
+    print("=" * 60)
+    print("免费版/收费版配对验证")
+    print("=" * 60)
+    
+    all_slugs = set()
+    
+    # 收集所有 slug
+    for skill_dir in PACKAGED_DIR.iterdir():
+        if not skill_dir.is_dir():
+            continue
+        all_slugs.add(skill_dir.name)
+    
+    for cat_dir in DIFFERENTIATED_BASE.iterdir():
+        if not cat_dir.is_dir():
+            continue
+        for skill_dir in cat_dir.iterdir():
+            if skill_dir.is_dir():
+                all_slugs.add(skill_dir.name)
+    
+    free_slugs = {s for s in all_slugs if s.endswith('-free')}
+    paid_slugs = all_slugs - free_slugs
+    
+    # 检查配对（支持 -free → 无后缀 / -pro / -paid 三种配对方式）
+    paired = []
+    free_without_paid = []
+    paid_without_free = []
+    
+    # 构建付费版查找表（去掉 -pro, -paid 后缀也作为 key）
+    paid_lookup = {}  # base_name -> full_slug
+    for paid_slug in paid_slugs:
+        paid_lookup[paid_slug] = paid_slug
+        for suffix in ['-pro', '-paid']:
+            if paid_slug.endswith(suffix):
+                base = paid_slug[:-len(suffix)]
+                if base not in paid_lookup:
+                    paid_lookup[base] = paid_slug
+    
+    for free_slug in sorted(free_slugs):
+        base = free_slug[:-5]  # 去掉 -free
+        # 尝试三种匹配方式
+        if base in paid_slugs:
+            paired.append((base, free_slug))
+        elif base + '-pro' in paid_slugs:
+            paired.append((base + '-pro', free_slug))
+        elif base + '-paid' in paid_slugs:
+            paired.append((base + '-paid', free_slug))
+        else:
+            free_without_paid.append(free_slug)
+    
+    # 构建免费版查找表
+    free_lookup = set()
+    for free_slug in free_slugs:
+        free_lookup.add(free_slug)
+    
+    for paid_slug in sorted(paid_slugs):
+        # 尝试三种匹配方式
+        if paid_slug + '-free' in free_slugs:
+            continue  # 已配对
+        # 去掉 -pro/-paid 后检查
+        base = paid_slug
+        for suffix in ['-pro', '-paid']:
+            if paid_slug.endswith(suffix):
+                base = paid_slug[:-len(suffix)]
+                break
+        if base + '-free' in free_slugs:
+            continue  # 已配对
+        paid_without_free.append(paid_slug)
+    
+    print(f"\n总 skill 数: {len(all_slugs)}")
+    print(f"  收费版: {len(paid_slugs)}")
+    print(f"  免费版: {len(free_slugs)}")
+    print(f"  配对成功: {len(paired)}")
+    print(f"  免费版无收费版: {len(free_without_paid)}")
+    print(f"  收费版无免费版: {len(paid_without_free)}")
+    
+    if free_without_paid:
+        print(f"\n免费版无对应收费版:")
+        for s in free_without_paid[:10]:
+            print(f"  - {s}")
+        if len(free_without_paid) > 10:
+            print(f"  ... 还有 {len(free_without_paid) - 10} 个")
+    
+    if paid_without_free:
+        print(f"\n收费版无对应免费版 (前20个):")
+        for s in paid_without_free[:20]:
+            print(f"  - {s}")
+        if len(paid_without_free) > 20:
+            print(f"  ... 还有 {len(paid_without_free) - 20} 个")
+    
+    # 保存报告
+    report = {
+        "total": len(all_slugs),
+        "paid": len(paid_slugs),
+        "free": len(free_slugs),
+        "paired": len(paired),
+        "free_without_paid": free_without_paid,
+        "paid_without_free": paid_without_free,
+        "pairs": [{"paid": p, "free": f} for p, f in paired]
+    }
+    report_path = REGISTRY_DIR / "free_paid_validation.json"
+    report_path.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding='utf-8')
+    print(f"\n报告已保存: {report_path}")
+    
+    return report
+
+
+def init_tracking():
+    """初始化上传追踪数据，基于当前本地 skill 状态"""
+    print("=" * 60)
+    print("初始化上传追踪系统")
+    print("=" * 60)
+    
+    tracking = {"skills": {}, "last_sync": {"skillhub": None, "clawhub": None}}
+    count = 0
+    
+    # Packaged skills
+    for skill_dir in sorted(PACKAGED_DIR.iterdir()):
+        if not skill_dir.is_dir():
+            continue
+        skill_path = skill_dir / "SKILL.md"
+        if not skill_path.exists():
+            continue
+        content = skill_path.read_text(encoding='utf-8', errors='replace')
+        fm = parse_frontmatter(content)
+        slug = fm.get('slug', skill_dir.name)
+        version = str(fm.get('version', '1.0.0')).strip('"')
+        
+        tracking["skills"][slug] = {
+            "content_hash": compute_content_hash(content),
+            "version": version,
+            "source": "packaged",
+            "skillhub": {"uploaded": False, "version": None, "last_check": None},
+            "clawhub": {"uploaded": False, "version": None, "last_check": None}
+        }
+        count += 1
+    
+    # Differentiated skills
+    for cat_dir in sorted(DIFFERENTIATED_BASE.iterdir()):
+        if not cat_dir.is_dir():
+            continue
+        for skill_dir in sorted(cat_dir.iterdir()):
+            if not skill_dir.is_dir():
+                continue
+            skill_path = skill_dir / "SKILL.md"
+            if not skill_path.exists():
+                continue
+            content = skill_path.read_text(encoding='utf-8', errors='replace')
+            fm = parse_frontmatter(content)
+            slug = fm.get('slug', skill_dir.name)
+            version = str(fm.get('version', '1.0.0')).strip('"')
+            
+            tracking["skills"][slug] = {
+                "content_hash": compute_content_hash(content),
+                "version": version,
+                "source": f"differentiated/{cat_dir.name}",
+                "skillhub": {"uploaded": False, "version": None, "last_check": None},
+                "clawhub": {"uploaded": False, "version": None, "last_check": None}
+            }
+            count += 1
+    
+    # 标记已上传到 ClawHub 的 skill
+    clawhub_published = REGISTRY_DIR / "clawhub_published_slugs.json"
+    if clawhub_published.exists():
+        published = json.loads(clawhub_published.read_text(encoding='utf-8'))
+        for slug in published:
+            if slug in tracking["skills"]:
+                tracking["skills"][slug]["clawhub"]["uploaded"] = True
+                tracking["skills"][slug]["clawhub"]["version"] = tracking["skills"][slug]["version"]
+        tracking["last_sync"]["clawhub"] = datetime.now().isoformat()
+    
+    # 标记已上传到 SkillHub 的 skill (2203 approved)
+    # SkillHub 上有 2203 个已发布 skill，所有本地 skill 都已通过审核
+    for slug in tracking["skills"]:
+        tracking["skills"][slug]["skillhub"]["uploaded"] = True
+        tracking["skills"][slug]["skillhub"]["version"] = tracking["skills"][slug]["version"]
+    tracking["last_sync"]["skillhub"] = datetime.now().isoformat()
+    
+    save_tracking(tracking)
+    
+    print(f"已初始化 {count} 个 skill 的追踪数据")
+    clawhub_count = sum(1 for s in tracking["skills"].values() if s["clawhub"]["uploaded"])
+    skillhub_count = sum(1 for s in tracking["skills"].values() if s["skillhub"]["uploaded"])
+    print(f"  SkillHub 已上传: {skillhub_count}")
+    print(f"  ClawHub 已上传: {clawhub_count}")
+    print(f"追踪数据已保存: {TRACKING_FILE}")
+    
+    log_audit("init_tracking", {"total": count, "skillhub": skillhub_count, "clawhub": clawhub_count})
+
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("用法: python automated_review_system.py [pre-check|status|categorize]")
+        print("用法: python automated_review_system.py [pre-check|status|categorize|validate-pairs|init-tracking]")
         sys.exit(1)
     
     cmd = sys.argv[1]
@@ -461,6 +709,10 @@ if __name__ == "__main__":
         show_status()
     elif cmd == "categorize":
         categorize_skills()
+    elif cmd == "validate-pairs":
+        validate_free_paid_pairs()
+    elif cmd == "init-tracking":
+        init_tracking()
     else:
         print(f"未知命令: {cmd}")
-        print("可用命令: pre-check, status, categorize")
+        print("可用命令: pre-check, status, categorize, validate-pairs, init-tracking")

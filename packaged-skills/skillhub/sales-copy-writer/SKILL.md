@@ -6,6 +6,14 @@ displayName: "卖货文案手"
 summary: "文案干瘪没转化?FAB卖点+6种情绪钩子+4种CTA,一键生成高转化卖货文案"
 license: Proprietary
 description: |-
+  卖货文案手是一款高转化卖货文案生成工具,解决文案干瘪无转化痛点。
+  基于FAB法则提炼卖点,结合6种情绪钩子与4种CTA话术,5平台风格自动适配。
+  
+  核心能力:
+  - FAB法则卖点提炼
+  - 6种情绪钩子生成
+  - 4种CTA话术注入
+  - 5平台风格自动适配
 homepage: "https://skillhub.cn"
 tags: [卖货文案, 营销转化, 电商带货, 副业工具]
 tools:

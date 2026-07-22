@@ -6,6 +6,14 @@ displayName: "AI接单画师工作站"
 summary: "一个人开AI画师工作室,双引擎路由+98%面部保持+接单SOP全闭环"
 license: Proprietary
 description: |-
+  AI接单画师工作站是一款面向商业画师和设计师的AI绘画工具。
+  支持双引擎智能路由、8种风格模板全覆盖、接单SOP全流程闭环,实现98%面部保持。
+  
+  核心能力:
+  - 双引擎智能路由(写实/艺术风格自动选择)
+  - 8种风格模板全覆盖
+  - 接单SOP全流程闭环
+  - 多级引擎降级链与敏感词审核
 homepage: "https://skillhub.cn"
 tags: [AI绘画, 接单变现, 商业画图, AI写真, 副业变现]
 tools:
