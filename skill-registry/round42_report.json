@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-07-22T21:33:12.469333",
+  "skillhub_pending_check": {
+    "total": 7,
+    "approved": [],
+    "still_pending": [
+      "version-control-workflows",
+      "data-analysis-toolkit",
+      "trading-strategy-guide",
+      "xml-parser-tool",
+      "text-rpg-arcade-v3",
+      "video-upload-stream-tool",
+      "pdf-compressor-tool"
+    ]
+  },
+  "three_platform": {
+    "skillhub_published": 2068,
+    "skillhub_pending": 7,
+    "clawhub_published": 430,
+    "clawhub_not_uploaded": 502,
+    "hermes_published": 1067
+  }
+}
