@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-07-22T21:19:32.567032",
+  "free": {
+    "published": 755,
+    "pending": 0,
+    "other": 0
+  },
+  "paid": {
+    "published": 1311,
+    "pending": 9,
+    "other": 0
+  },
+  "total": {
+    "active": 2075,
+    "published": 2066,
+    "pending": 9,
+    "other": 0,
+    "deleted": 31
+  },
+  "search_verification": {
+    "sample_size": 29,
+    "found": 22,
+    "not_found": 7,
+    "pending_approved": 2
+  },
+  "issues": []
+}
