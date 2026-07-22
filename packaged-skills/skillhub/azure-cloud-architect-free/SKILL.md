@@ -14,6 +14,7 @@ tags:
   - 云计算
   - Azure
   - 基础设施
+  - 通用办公
 tools:
   - read
   - exec

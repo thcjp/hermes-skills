@@ -15,6 +15,7 @@ tags:
   - 智能代理
   - 云计算
   - AWS
+  - 通用办公
 tools:
   - read
   - exec

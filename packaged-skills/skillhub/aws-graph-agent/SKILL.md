@@ -14,6 +14,7 @@ tags:
   - 云计算
   - AWS
   - 多代理系统
+  - 通用办公
 tools:
   - read
   - exec

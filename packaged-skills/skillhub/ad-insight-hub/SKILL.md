@@ -15,6 +15,7 @@ tags:
   - 广告情报
   - 数据API
   - 市场分析
+  - 信息检索
 tools:
   - read
   - exec

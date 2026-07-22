@@ -1,17 +1,34 @@
 {
-  "timestamp": "2026-07-22T08:54:38.439625",
+  "timestamp": "2026-07-22T09:15:37.421509",
   "results": {
     "total": 2255,
     "valid": 2255,
     "invalid": 0,
     "new": 0,
-    "updated": 26,
-    "unchanged": 2229,
+    "updated": 39,
+    "unchanged": 2216,
     "issues": []
   },
   "git_status": {
     "clean": false,
-    "error": "Command '['git', 'status', '--porcelain', 'D:\\\\skills\\\\packaged-skills\\\\skillhub']' timed out after 10 seconds",
-    "status": "error"
+    "modified_files": [
+      "M packaged-skills/skillhub/ad-insight-hub-free/SKILL.md",
+      "M packaged-skills/skillhub/ad-insight-hub/SKILL.md",
+      "M packaged-skills/skillhub/aws-graph-agent-free/SKILL.md",
+      "M packaged-skills/skillhub/aws-graph-agent/SKILL.md",
+      "M packaged-skills/skillhub/aws-infra-free/SKILL.md",
+      "M packaged-skills/skillhub/aws-infra/SKILL.md",
+      "M packaged-skills/skillhub/azure-cloud-architect-free/SKILL.md",
+      "M packaged-skills/skillhub/azure-cloud-architect/SKILL.md",
+      "M packaged-skills/skillhub/data-analysis-hub/SKILL.md",
+      "M packaged-skills/skillhub/data-analyst-chinese/SKILL.md",
+      "M packaged-skills/skillhub/data-analyst-expert/SKILL.md",
+      "M packaged-skills/skillhub/db-admin-console/SKILL.md",
+      "M packaged-skills/skillhub/file/SKILL.md",
+      "M packaged-skills/skillhub/format-converter/SKILL.md",
+      "M packaged-skills/skillhub/google-fonts/SKILL.md",
+      "M packaged-skills/skillhub/plugin-architecture/SKILL.md"
+    ],
+    "status": "modified"
   }
 }

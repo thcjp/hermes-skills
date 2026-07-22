@@ -10,6 +10,7 @@ description: |-
   按用途选字体、自托管方案。提供 12 组经验证的字体配对方案，覆盖正文、标题、代码场景。
 tags:
   - Other
+  - 通用办公
 tools:
   - read
   - exec

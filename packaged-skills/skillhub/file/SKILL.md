@@ -11,6 +11,7 @@ description: |-
   帮助用户从混乱的文件堆积建立可持续的文件管理体系。
 tags:
   - Other
+  - 信息检索
 tools:
   - read
   - exec

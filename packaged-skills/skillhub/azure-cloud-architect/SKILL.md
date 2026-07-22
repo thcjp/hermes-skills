@@ -16,6 +16,7 @@ tags:
   - Azure
   - 基础设施
   - 安全合规
+  - 通用办公
 tools:
   - read
   - exec

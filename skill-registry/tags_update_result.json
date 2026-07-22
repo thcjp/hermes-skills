@@ -1,0 +1,22 @@
+{
+  "updated": [
+    "ad-insight-hub",
+    "ad-insight-hub-free",
+    "aws-graph-agent",
+    "aws-graph-agent-free",
+    "aws-infra",
+    "aws-infra-free",
+    "azure-cloud-architect",
+    "azure-cloud-architect-free",
+    "data-analysis-hub",
+    "data-analyst-chinese",
+    "data-analyst-expert",
+    "db-admin-console",
+    "file",
+    "format-converter",
+    "google-fonts",
+    "plugin-architecture"
+  ],
+  "updated_count": 16,
+  "skipped_count": 994
+}

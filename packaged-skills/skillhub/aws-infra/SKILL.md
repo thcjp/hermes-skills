@@ -13,6 +13,7 @@ description: |-
 tags:
   - Cloud
   - DevOps
+  - 通用办公
 tools:
   - read
   - exec
