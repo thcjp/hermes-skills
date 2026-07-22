@@ -1,0 +1,19 @@
+{
+  "converted_at": "2026-07-22T17:58:36",
+  "total_free_skills": 759,
+  "converted": 759,
+  "errors": 0,
+  "error_details": [],
+  "output_dir": "D:\\skills\\hermes-skills",
+  "format": "agentskills.io v1.0",
+  "field_mapping": {
+    "slug": "name",
+    "description": "description (max 1024 chars)",
+    "license": "license",
+    "tools": "allowed-tools (space-separated)",
+    "displayName": "metadata.displayName",
+    "version": "metadata.version",
+    "summary": "metadata.summary",
+    "tags": "metadata.tags"
+  }
+}

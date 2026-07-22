@@ -1,0 +1,180 @@
+---
+name: "memory-scan-free"
+description: "基础版AI Agent记忆文件安全扫描工具，检测恶意内容与凭证泄漏"
+license: MIT
+allowed-tools: read exec
+compatibility: "Requires LLM with tool-use capability"
+metadata:
+  displayName: "记忆安全扫描"
+  version: "1.0.0"
+  summary: "基础版AI Agent记忆文件安全扫描工具，检测恶意内容与凭证泄漏"
+  tags:
+    - "智能助手"
+  source: "SkillHub"
+  converted_at: "2026-07-22T17:58:36"
+---
+
+# 记忆安全扫描（Memory Scan）- 免费版
+
+面向 AI Agent 记忆文件的**基础安全扫描工具**，对 MEMORY.md、每日日志、工作区配置文件进行安全审计，检测恶意内容与凭证泄漏。
+
+## 核心能力
+
+1. **七大检测类别基础扫描**
+   - 恶意指令：检测删除文件、发送邮件等破坏性指令
+   - Prompt注入：识别"忽略之前的指令"等操纵模式
+   - 凭证泄漏：匹配sk-/AKIA/ghp_/xoxb-等前缀的API Key与Token
+   - 数据外泄：检测curl到外部服务器等数据外传行为
+   - 护栏绕过：识别禁用安全检查等绕过行为
+   - 行为操纵：检测未授权的人格改变指令
+   - 权限提升：识别提权到root等越权行为
+   - 输出：按文件列出的威胁清单，含file:line定位
+
+2. **五级安全分级**
+   - SAFE：无威胁检测
+   - LOW：轻微关注
+   - MEDIUM：潜在威胁，建议审查
+   - HIGH：很可能威胁，立即审查
+   - CRITICAL：活跃威胁，建议隔离
+   - 扫描报告中按级别标注每个文件的威胁状态
+
+3. **基础隔离功能**
+   - 检测到威胁后可手动隔离
+   - 备份原文件到 `.memory-scan/quarantine/` 目录
+   - 脱敏威胁行，替换为 `[QUARANTINED BY MEMORY-SCAN: <timestamp>]`
+   - 用 `--restore` 参数恢复原始内容
+   - 系统不自动隔离，始终先询问用户确认
+
+4. **本地模式扫描**
+   - 零网络请求，所有检测在本地完成
+   - 无需任何API Key即可使用
+   - 支持扫描MEMORY.md、memory/*.md及工作区配置文件
+   - 支持JSON格式输出，便于集成到其他工具
+#
+## 使用流程
+
+### 第一步：执行安全扫描
+
+```bash
+# 扫描全部记忆文件（本地模式）
+python3 scripts/memory-scan.py
+
+# 扫描指定文件
+python3 scripts/memory-scan.py --file memory/2026-07-18.md
+
+# JSON输出（用于集成）
+python3 scripts/memory-scan.py --json
+```
+
+### 第二步：分析扫描报告
+
+查看扫描结果，关注MEDIUM及以上级别的威胁。报告包含文件路径与行号定位、威胁类别与描述、安全等级评定、建议处置方案。
+
+### 第三步：处置已发现的威胁
+
+对于MEDIUM及以上威胁，系统询问是否隔离。确认后执行隔离：
+
+```bash
+python3 scripts/quarantine.py memory/2026-07-18.md 42
+```
+
+如需恢复误隔离内容：
+```bash
+python3 scripts/quarantine.py --restore memory/2026-07-18.md 42
+```
+
+## 错误处理
+
+
+| 错误类型 | 原因 | 处理方式 |
+|:---|:---|:---|
+| 扫描报错找不到文件 | 路径配置错误或文件已被移动 | 检查工作区路径，用 `--file` 指定正确路径或确认文件存在 |
+| 隔离操作失败 | 文件权限不足或被其他进程占用 | 检查文件写入权限，关闭占用该文件的进程后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
+| 扫描结果为空 | 记忆文件不存在或目录为空 | 确认memory/目录非空，检查工作区路径是否正确 |
+
+## 示例
+
+### 示例：记忆文件安全审计
+
+**输入：** 用户说"帮我扫描记忆文件看看有没有安全问题"
+
+**执行命令：**
+```bash
+python3 scripts/memory-scan.py
+```
+
+**输出：**
+```
+Memory Security Scan
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Scanning memory files...
+
+✓ MEMORY.md - SAFE
+✓ memory/2026-07-18.md - SAFE
+⚠ memory/2026-07-15.md - MEDIUM (line 42)
+  → Potential credential leakage: API key pattern detected (sk-***)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Overall: MEDIUM
+Action: Review memory/2026-07-15.md:42
+```
+
+**后续操作：** 系统询问是否隔离，用户确认后执行 `python3 scripts/quarantine.py memory/2026-07-15.md 42`。
+
+## FAQ
+
+**Q1：扫描会不会泄露我的记忆内容？**
+不会。免费版使用纯本地模式，零网络请求，所有检测在本地完成，不会将任何内容发送到外部服务器。
+
+**Q2：隔离后能恢复吗？**
+可以。隔离前系统自动备份原文件到 `.memory-scan/quarantine/` 目录，用 `python3 scripts/quarantine.py --restore <file> <line>` 即可恢复原始内容。
+
+**Q3：扫描范围包括哪些文件？**
+默认扫描MEMORY.md、memory/*.md（最近30天日志）以及工作区配置文件（AGENTS.md、SOUL.md、USER.md、TOOLS.md等）。可通过 `--file` 参数指定单个文件扫描。
+
+## 依赖说明
+
+### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
+
+### 依赖项
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
+
+### 可用性分类
+- **分类**: MD+EXEC（）
+
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+## 已知限制
+
+1. **本地模式检测能力有限**：纯模式匹配无法识别语义级的高级注入（如隐含指令、间接提示注入），对于复杂攻击模式可能漏报。
+
+2. **凭证检测基于前缀模式**：依赖已知前缀进行匹配，无法检测自定义格式的凭证或无固定前缀的密码。
+
+3. **无定时监控**：免费版不支持定时任务创建，需手动执行扫描。
+
+4. **无远程LLM分析**：免费版不支持远程LLM增强分析，无法进行语义级威胁检测。
+
+## 升级提示
+
+升级到**记忆安全扫描专业版**即可解锁以下高级能力：
+
+- **远程LLM增强分析**：可选启用远程LLM进行语义级分析，识别隐含指令、间接提示注入等高级攻击模式，自动检测OpenAI/Anthropic提供商
+- **定时监控集成**：创建每日扫描定时任务，仅发现威胁时发送告警通知，配合心跳任务实现持续安全监控
+- **静默模式与自动化**：`--quiet` 静默模式适合自动化场景，`--json` 输出便于集成到CI/CD工具链
+- **自定义扫描范围**：通过 `--days` 参数灵活调整日志扫描天数范围
+- **完整告警工作流**：MEDIUM及以上级别自动触发停止处理→发送告警→提供处置建议的完整工作流
+- **LLM检测提示模板**：专业的detection-prompt.md模板，确保远程分析的一致性和准确性
+
+专业版适合需要持续安全监控、处理大量记忆文件、或需要检测高级注入攻击的团队和高级用户使用。

@@ -1,0 +1,184 @@
+---
+name: "data-format-converter-free"
+description: "CSV与JSON、JSON与YAML基础互转，支持单文件转换与中文输出"
+license: MIT
+allowed-tools: read exec
+compatibility: "Requires LLM with tool-use capability"
+metadata:
+  displayName: "数据格式转换(免费版)"
+  version: "1.0.0"
+  summary: "CSV与JSON、JSON与YAML基础互转，支持单文件转换与中文输出"
+  tags:
+    - "信息检索"
+    - "data-format"
+    - "converter"
+  source: "SkillHub"
+  converted_at: "2026-07-22T17:58:36"
+---
+
+# 数据格式转换器（免费版）
+
+## 概述
+
+在CSV、JSON、YAML等常用数据格式间进行基础转换，支持中文输出与UTF-8编码处理。
+
+## 核心能力
+### CSV转JSON
+使用 `csv.DictReader()` 逐行读取为字典，通过 `json.dumps(ensure_ascii=False, indent=2)` 输出UTF-8中文JSON。
+
+```python
+import csv, json
+
+with open('data.csv', 'r', encoding='utf-8') as f:
+    reader = csv.DictReader(f)
+    rows = list(reader)
+
+json_str = json.dumps(rows, ensure_ascii=False, indent=2)
+```
+
+**输入**: 用户提供CSV转JSON所需的指令和必要参数。
+**处理**: 按照skill规范执行CSV转JSON操作,遵循单一意图原则。
+### JSON转CSV
+使用 `csv.DictWriter()` 写入，需指定 `fieldnames`，`encoding='utf-8-sig'` 确保Excel兼容。
+
+```python
+import csv, json
+
+with open('data.json', 'r', encoding='utf-8') as f:
+    data = json.load(f)
+
+fieldnames = list(data[0].keys())
+with open('output.csv', 'w', encoding='utf-8-sig', newline='') as f:
+    writer = csv.DictWriter(f, fieldnames=fieldnames)
+    writer.writeheader()
+    writer.writerows(data)
+```
+
+**输入**: 用户提供JSON转CSV所需的指令和必要参数。
+**处理**: 按照skill规范执行JSON转CSV操作,遵循单一意图原则。
+### JSON转YAML
+使用 `yaml.safe_dump()` 输出，`default_flow_style=False` 使用块样式，`allow_unicode=True` 保留中文。
+
+```python
+import yaml, json
+
+with open('data.json', 'r', encoding='utf-8') as f:
+    data = json.load(f)
+
+yaml_str = yaml.safe_dump(data, default_flow_style=False, allow_unicode=True, sort_keys=False)
+```
+
+**输入**: 用户提供JSON转YAML所需的指令和必要参数。
+**处理**: 按照skill规范执行JSON转YAML操作,遵循单一意图原则。
+### YAML转JSON
+使用 `yaml.safe_load()` 安全解析（不执行任意Python对象）。
+
+```python
+import yaml, json
+
+with open('data.yaml', 'r', encoding='utf-8') as f:
+    data = yaml.safe_load(f)
+
+json_str = json.dumps(data, ensure_ascii=False, indent=2)
+```
+
+> **升级提示**：XML与JSON互转（`xmltodict.parse`/`unparse`）、TOML与JSON互转（`toml.load`/`dumps`）、批量目录级转换、嵌套结构自动扁平化为付费版专享功能。
+
+**输入**: 用户提供YAML转JSON所需的指令和必要参数。
+**输出**: 返回YAML转JSON的执行结果,包含操作状态和输出数据。
+
+#
+## 依赖说明
+
+### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
+
+### 依赖项
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+需要配置对应API Key，详见上文环境配置章节
+
+### 可用性分类
+- **分类**: MD+EXEC（）
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+## 使用流程
+
+1. **识别源格式**：根据文件扩展名（`.csv`/`.json`/`.yaml`）确定输入格式
+2. **选择目标格式**：确认需要转换为何种格式（免费版支持CSV/JSON/YAML）
+3. **加载源数据**：使用对应解析器读取文件（注意 `encoding='utf-8'`）
+4. **执行转换**：通过JSON作为中间格式进行转换
+5. **输出结果**：写入目标文件，注意 `ensure_ascii=False` 保留中文
+
+## 示例
+
+### 示例1：CSV转JSON
+
+```text
+输入 (CSV):
+name,age,city
+张三,30,北京
+李四,25,上海
+
+输出 (JSON):
+[
+  {"name": "张三", "age": "30", "city": "北京"},
+  {"name": "李四", "age": "25", "city": "上海"}
+]
+```
+
+### 示例2：JSON转YAML
+
+```text
+输入 (JSON):
+{"database": {"host": "localhost", "port": 5432}, "debug": true}
+
+输出 (YAML):
+database:
+  host: localhost
+  port: 5432
+debug: true
+```
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| `json.JSONDecodeError` | JSON格式错误（尾随逗号、单引号） | 使用 `json.loads()` 严格解析，报告出错行号 |
+| CSV含嵌套数据无法扁平化 | CSV单元格内含JSON字符串 | 免费版需手动扁平化，升级付费版获取自动处理 |
+| `UnicodeDecodeError` 编码错误 | 文件非UTF-8编码 | 尝试 `encoding='gbk'` 或 `encoding='latin-1'` 读取 |
+| JSON转CSV时值含逗号或换行 | CSV字段需引号包裹 | `csv.DictWriter` 自动处理引号转义，确保 `newline=''` |
+| YAML含特殊字符未加引号 | 值含 `:` `#` `&` 等保留字符 | 输出时用 `default_style='"'` 强制引号包裹 |
+
+## 常见问题
+
+### Q1: 转换后中文变成 `\u5f20\u4e09` 怎么办？
+A: 输出JSON时设置 `ensure_ascii=False`，如 `json.dumps(data, ensure_ascii=False, indent=2)`。YAML设置 `allow_unicode=True`。
+
+### Q2: JSON转CSV时，JSON值是数组或对象怎么办？
+A: CSV是扁平格式，无法直接表示嵌套结构。免费版需手动将嵌套值扁平化（如 `{"a": {"b": 1}}` → `{"a.b": 1}`），或转为JSON字符串存入单元格。付费版支持自动扁平化。
+
+### Q3: 如何转换XML或TOML格式？
+A: XML与JSON互转、TOML与JSON互转为付费版专享功能。免费版支持CSV、JSON、YAML三种格式互转。
+
+### Q4: 如何批量转换多个文件？
+A: 批量目录级转换为付费版专享功能。免费版需逐个文件手动执行转换。
+
+### Q5: YAML转JSON时遇到 `!!python/object` 标签怎么办？
+A: 这是非安全YAML标签。务必使用 `yaml.safe_load()` 而非 `yaml.load()`，`safe_load` 会拒绝执行任意Python对象。
+
+## 已知限制
+
+- 免费版不支持XML与TOML格式转换
+- 免费版不支持批量目录级转换
+- 免费版不支持嵌套结构自动扁平化
+- CSV是扁平格式，无法无损表示JSON的嵌套结构
+- 升级至付费版可解锁全部高级功能

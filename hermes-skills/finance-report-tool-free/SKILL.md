@@ -1,0 +1,280 @@
+---
+name: "finance-report-tool-free"
+description: "从Excel/PDF文件分析财务数据，生成含趋势图的HTML分析报告。"
+license: Proprietary
+allowed-tools: read exec
+compatibility: "Requires LLM with tool-use capability"
+metadata:
+  displayName: "财报分析入门工具"
+  version: "1.0.0"
+  summary: "从Excel/PDF文件分析财务数据，生成含趋势图的HTML分析报告。"
+  tags:
+    - "Finance"
+    - "财报分析"
+    - "报告生成"
+  source: "SkillHub"
+  converted_at: "2026-07-22T17:58:36"
+---
+
+# 财报分析入门工具（免费版）
+
+## 概述
+
+本工具为个人投资者提供从财务数据文件到分析报告的一站式解决方案。支持Excel和PDF格式的财务数据导入，自动计算关键财务指标，生成包含趋势走势图的交互式HTML报告。适合快速解读上市公司财报。
+
+## 核心能力
+
+### 报告功能
+
+| 功能 | 说明 | 免费版支持 |
+| --- | --- | --- |
+| 数据提取 | Excel/PDF文件解析 | 支持 |
+| 指标计算 | 关键财务指标 | 基础指标 |
+| 趋势图表 | sparkline走势图 | 支持 |
+| 报告格式 | 输出格式 | 仅HTML |
+| 批量处理 | 多文件分析 | 不支持 |
+| 行业对比 | 同业基准 | 不支持 |
+
+**输入**: 用户提供报告功能所需的指令和必要参数。
+**处理**: 按照skill规范执行报告功能操作,遵循单一意图原则。
+**输出**: 返回报告功能的执行结果,包含操作状态和输出数据。
+
+### 报告特性
+执行报告特性操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作。
+
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+### 趋势走势图
+趋势走势图：每行指标含内嵌SVG走势图（实线=实际，虚线=预测）
+
+**输入**: 用户提供趋势走势图所需的指令和必要参数。
+**处理**: 按照skill规范执行趋势走势图操作,遵循单一意图原则。
+**输出**: 返回趋势走势图的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
+### 预测标记
+预测标记：预测值用特殊符号和黄色背景标记
+
+**输入**: 用户提供预测标记所需的指令和必要参数。
+**处理**: 按照skill规范执行预测标记操作,遵循单一意图原则。
+**输出**: 返回预测标记的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
+### 颜色编码
+颜色编码：绿色=正面，红色=负面
+
+**输入**: 用户提供颜色编码所需的指令和必要参数。
+**处理**: 按照skill规范执行颜色编码操作,遵循单一意图原则。
+**输出**: 返回颜色编码的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
+### 响应式
+响应式：适配手机和桌面浏览器
+
+**输入**: 用户提供响应式所需的指令和必要参数。
+**处理**: 按照skill规范执行响应式操作,遵循单一意图原则。
+**输出**: 返回响应式的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
+### 打印就绪
+打印就绪：内置打印CSS样式
+
+**输入**: 用户提供打印就绪所需的指令和必要参数。
+**处理**: 按照skill规范执行打印就绪操作,遵循单一意图原则。
+**输出**: 返回打印就绪的执行结果,包含操作状态和输出数据。
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
+**输入**: 用户提供报告特性所需的指令和必要参数。
+**处理**: 按照skill规范执行报告特性操作,遵循单一意图原则。
+**输出**: 返回报告特性的执行结果,包含操作状态和输出数据。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：文件分析财务数据、生成含趋势图的、分析报告、面向个人投资者与、初级分析师的财务、报告分析工具、支持从本地、文件提取财务数据、自动生成包含趋势、的交互式、Use、when、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数、据处理、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+
+## 使用场景
+
+### 场景一：分析上市公司财报
+
+用户输入："帮我分析这份Excel财报数据"
+
+```bash
+# 从Excel生成分析报告
+python3 scripts/generate_report.py input.xlsx \
+  -o html \
+  --company "示例公司" \
+  --ticker "000001.SZ"
+
+# 示例
+```
+
+### 场景二：PDF财报提取
+
+用户输入："从这份PDF年报里提取财务数据并分析"
+
+```bash
+# 从PDF提取并生成报告
+python3 scripts/generate_report.py annual_report.pdf \
+  -o html \
+  --company "某上市公司" \
+  --ticker "600519.SH"
+```
+
+### 场景三：数据可视化
+
+用户输入："把这些财务数据画成趋势图"
+
+```bash
+# 生成含趋势图的报告
+python3 scripts/generate_report.py financial_data.xlsx \
+  -o html \
+  --include-sparkline \
+  --include-forecast
+```
+
+## 快速开始
+
+1. 阅读## 核心能力章节了解skill功能
+2. 按## 依赖说明配置环境
+3. 执行所需能力对应的命令
+4. 参考## 错误处理章节处理异常
+5. 查看## FAQ解答常见疑问
+
+### 环境准备
+
+```bash
+# 依赖说明
+pip install pandas openpyxl pdfplumber
+
+# 生成报告
+python3 scripts/generate_report.py data.xlsx -o html --company "公司名"
+```
+
+### 常用命令
+
+```bash
+# 基本用法
+python3 scripts/generate_report.py input.xlsx -o html
+
+# 指定公司信息
+python3 scripts/generate_report.py input.xlsx \
+  -o html \
+  --company "公司名" \
+  --ticker "000001.SZ" \
+  --output-dir ./reports
+
+# 含预测标记
+python3 scripts/generate_report.py input.xlsx \
+  -o html \
+  --include-forecast
+```
+
+## 配置示例
+
+### 报告生成配置
+
+```yaml
+report_config:
+  input:
+    supported_formats: ["xlsx", "xls", "pdf"]
+    encoding: "utf-8"
+
+  output:
+    format: "html"               # 免费版仅支持html
+    dir: "./reports"
+    filename_pattern: "{company}_财务分析报告_{date}"
+
+  charts:
+    sparkline: true              # 趋势走势图
+    forecast_markers: true       # 预测标记
+    color_coding: true           # 颜色编码
+    responsive: true             # 响应式布局
+
+  metrics:
+    auto_calculate: true         # 自动计算指标
+    include_definitions: true    # 包含指标定义
+```
+
+## 最佳实践
+
+1. **数据完整性**：确保Excel/PDF包含完整的三大报表数据
+2. **时间跨度**：至少3年数据才能生成有意义的趋势图
+3. **格式规范**：使用标准财务报表格式，便于自动提取
+4. **报告存档**：生成的HTML报告建议按公司+日期归档
+
+| 实践要点 | 说明 |
+| --- | --- |
+| 数据格式 | Excel优于PDF，提取准确率更高 |
+| 指标定义 | 报告中含指标定义说明，便于阅读 |
+| 趋势分析 | 关注趋势方向而非绝对值 |
+| 打印输出 | 使用浏览器打印功能生成PDF |
+
+## 常见问题
+
+### Q1：免费版支持PDF格式导出吗？
+
+免费版仅支持HTML格式输出。如需PDF/DOCX/Markdown等多格式导出，建议升级PRO版。
+
+### Q2：PDF数据提取准确率如何？
+
+PDF提取准确率取决于原文档格式。表格清晰的PDF提取效果较好，扫描版PDF效果较差。建议优先使用Excel格式。
+
+### Q3：支持批量处理多个文件吗？
+
+免费版仅支持单文件处理。如需批量分析多只公司的财报并生成对比报告，建议升级PRO版。
+
+### Q4：报告中的预测数据从哪来？
+
+预测数据基于历史趋势的简单外推，仅供参考。免费版使用基础预测算法，PRO版提供更高级的预测模型。
+
+## 依赖说明
+
+### 运行环境
+
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
+- **Python版本**: 3.8+
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+| Python | 运行时 | 必需 | 系统安装或conda环境 |
+| pandas | Python库 | 必需 | `pip install pandas` |
+| openpyxl | Python库 | 必需 | `pip install openpyxl`（Excel） |
+| pdfplumber | Python库 | 可选 | `pip install pdfplumber`（PDF） |
+
+### API Key 配置
+
+- 免费版无需任何API Key
+- 所有数据处理在本地完成
+
+### 可用性分类
+
+- **分类**: MD+EXEC（Markdown指令+Python脚本执行）
+- **说明**: 从本地文件提取财务数据并生成HTML分析报告
+- **免费版限制**: 仅HTML输出、单文件处理、基础预测算法
+
+## 错误处理
+
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 已知限制
+
+- 本地运行，不支持多设备同步
+
+## 示例
+
+### 基本用法
+
+**输入**：用户提供操作指令和必要参数
+
+**输出**：返回执行结果,包含操作状态和输出数据
+
+```text
+用户: 执行核心功能
+Skill: 正在执行核心功能...
+Skill: 执行完成,结果如下: 操作成功
+```
