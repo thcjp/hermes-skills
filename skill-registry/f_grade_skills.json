@@ -1,0 +1,794 @@
+{
+  "total": 77,
+  "skills": [
+    {
+      "slug": "accounting-finance",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 34
+    },
+    {
+      "slug": "actor-identifier",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 30
+    },
+    {
+      "slug": "admapix",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 13
+    },
+    {
+      "slug": "admapix-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 16
+    },
+    {
+      "slug": "aegis-security",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 18
+    },
+    {
+      "slug": "aegis-security-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 19
+    },
+    {
+      "slug": "agent-telegram",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 18
+    },
+    {
+      "slug": "agent-telegram-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 17
+    },
+    {
+      "slug": "agentvibes-voice-skill",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 26
+    },
+    {
+      "slug": "agentvibes-voice-skill-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 13
+    },
+    {
+      "slug": "ai-kujiale-design",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 26
+    },
+    {
+      "slug": "ai-kujiale-design-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 18
+    },
+    {
+      "slug": "ai-podcast",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 37
+    },
+    {
+      "slug": "ai-podcast-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 26
+    },
+    {
+      "slug": "ai-video-studio-pro",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 26
+    },
+    {
+      "slug": "ai-writing-style-cloner",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 22
+    },
+    {
+      "slug": "alephnet-node",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 11
+    },
+    {
+      "slug": "alephnet-node-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 11
+    },
+    {
+      "slug": "alephnet-node-manager",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 23
+    },
+    {
+      "slug": "alibaba-quark-scan-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 27
+    },
+    {
+      "slug": "alpha-feed-creator",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 31
+    },
+    {
+      "slug": "amap-jsapi-skill",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 17
+    },
+    {
+      "slug": "analyze-video-by-qwen",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 12
+    },
+    {
+      "slug": "analyze-video-by-qwen-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 9
+    },
+    {
+      "slug": "anygen-diagram-generator",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 36
+    },
+    {
+      "slug": "anygen-diagram-generator-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 29
+    },
+    {
+      "slug": "api-doc-generator",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 11
+    },
+    {
+      "slug": "api-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 9
+    },
+    {
+      "slug": "api-gateway",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 12
+    },
+    {
+      "slug": "api-generator",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 9
+    },
+    {
+      "slug": "api-generator-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 9
+    },
+    {
+      "slug": "api-integration",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 13
+    },
+    {
+      "slug": "api-integration-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 11
+    },
+    {
+      "slug": "api-magic-gen",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 31
+    },
+    {
+      "slug": "api-scaffold-gen",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 11
+    },
+    {
+      "slug": "api-toolkit",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 10
+    },
+    {
+      "slug": "atlas-admin-console",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 32
+    },
+    {
+      "slug": "audio-stream-upload",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 29
+    },
+    {
+      "slug": "audio-upload-aioz-stream",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 46
+    },
+    {
+      "slug": "audio-upload-aioz-stream-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 33
+    },
+    {
+      "slug": "aws-agentcore-langgraph",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 22
+    },
+    {
+      "slug": "aws-agentcore-langgraph-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 15
+    },
+    {
+      "slug": "aws-cloud-architect",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 33
+    },
+    {
+      "slug": "aws-cloud-architect-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 15
+    },
+    {
+      "slug": "aws-graph-agent",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 9
+    },
+    {
+      "slug": "aws-graph-agent-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 8
+    },
+    {
+      "slug": "aws-infra",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 8
+    },
+    {
+      "slug": "aws-infra-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 9
+    },
+    {
+      "slug": "aws-toolkit",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 23
+    },
+    {
+      "slug": "aws-wechat-article-writing",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 20
+    },
+    {
+      "slug": "aws-wechat-article-writing-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 17
+    },
+    {
+      "slug": "azure-ai-transcription-py",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 16
+    },
+    {
+      "slug": "azure-ai-transcription-py-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 16
+    },
+    {
+      "slug": "azure-ai-voicelive-py",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 15
+    },
+    {
+      "slug": "azure-ai-voicelive-py-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 13
+    },
+    {
+      "slug": "azure-cloud-architect",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 10
+    },
+    {
+      "slug": "azure-gateway-cli",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 17
+    },
+    {
+      "slug": "azure-infra",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 15
+    },
+    {
+      "slug": "azure-infra-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 19
+    },
+    {
+      "slug": "azure-transcription",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 29
+    },
+    {
+      "slug": "azure-voicelive",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 27
+    },
+    {
+      "slug": "baidu-netdisk-skills-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 28
+    },
+    {
+      "slug": "bilibili-all-in-one",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 18
+    },
+    {
+      "slug": "bilibili-helper",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 38
+    },
+    {
+      "slug": "bilibili-toolkit",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 26
+    },
+    {
+      "slug": "bookmark-intelligence",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 8
+    },
+    {
+      "slug": "bookmark-smart-hub",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 27
+    },
+    {
+      "slug": "calendar-reminder",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 36
+    },
+    {
+      "slug": "calendar-reminder-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 27
+    },
+    {
+      "slug": "can-bus-toolkit",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 18
+    },
+    {
+      "slug": "cheat-code-paid",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 27
+    },
+    {
+      "slug": "claude-code-delegate",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 31
+    },
+    {
+      "slug": "cloud-architect",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 12
+    },
+    {
+      "slug": "cloud-architect-design",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 27
+    },
+    {
+      "slug": "cloud-manager",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 39
+    },
+    {
+      "slug": "code-analyze",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 27
+    },
+    {
+      "slug": "code-delegate",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 27
+    }
+  ],
+  "cd_total": 54,
+  "cd_skills": [
+    {
+      "slug": "ace-music",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 16
+    },
+    {
+      "slug": "ad-insight-hub",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 9
+    },
+    {
+      "slug": "ad-insight-hub-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 8
+    },
+    {
+      "slug": "afrexai-cybersecurity-engine",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 8
+    },
+    {
+      "slug": "agent-browser-assistant",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 12
+    },
+    {
+      "slug": "agent-commercial-contract",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 9
+    },
+    {
+      "slug": "agentvibes-skill",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 18
+    },
+    {
+      "slug": "ai-agent-helper",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 8
+    },
+    {
+      "slug": "ai-artist-workstation",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 17
+    },
+    {
+      "slug": "ai-image-gen",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 15
+    },
+    {
+      "slug": "ai-image-gen-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 16
+    },
+    {
+      "slug": "ai-news",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 13
+    },
+    {
+      "slug": "aic-dashboard",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 11
+    },
+    {
+      "slug": "aic-dashboard-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 9
+    },
+    {
+      "slug": "alibaba-quark-scan",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 16
+    },
+    {
+      "slug": "analytics-dashboard",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 12
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 11
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 11
+    },
+    {
+      "slug": "anygen-diagram",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 20
+    },
+    {
+      "slug": "api-connect-hub",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 13
+    },
+    {
+      "slug": "api-doc-writer",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 14
+    },
+    {
+      "slug": "api-gateway-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 11
+    },
+    {
+      "slug": "apple-health-skill",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 19
+    },
+    {
+      "slug": "apple-health-skill-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 17
+    },
+    {
+      "slug": "automation-recipe-pack",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 8
+    },
+    {
+      "slug": "azure-cli",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 15
+    },
+    {
+      "slug": "azure-cli-toolkit",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 25
+    },
+    {
+      "slug": "baidu-netdisk-skills",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 18
+    },
+    {
+      "slug": "bailian-web-search",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 11
+    },
+    {
+      "slug": "bilibili-all-in-one-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 16
+    },
+    {
+      "slug": "bilibili-helper-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 25
+    },
+    {
+      "slug": "build-game",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 9
+    },
+    {
+      "slug": "call-bridge",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 19
+    },
+    {
+      "slug": "can",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 15
+    },
+    {
+      "slug": "can-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 20
+    },
+    {
+      "slug": "canvas-json-handler",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 16
+    },
+    {
+      "slug": "chart",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 15
+    },
+    {
+      "slug": "chart-craft",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 21
+    },
+    {
+      "slug": "chart-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 23
+    },
+    {
+      "slug": "chart-generator-2-0-0",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 11
+    },
+    {
+      "slug": "chief-creative-officer-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 24
+    },
+    {
+      "slug": "chromecast-control",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 17
+    },
+    {
+      "slug": "chromecast-control-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 17
+    },
+    {
+      "slug": "claude-code-delegate-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 12
+    },
+    {
+      "slug": "claude-code-runner",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 13
+    },
+    {
+      "slug": "clawcall",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 22
+    },
+    {
+      "slug": "clawcall-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 14
+    },
+    {
+      "slug": "clawddocs",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 10
+    },
+    {
+      "slug": "clawprint",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 9
+    },
+    {
+      "slug": "cloud",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 13
+    },
+    {
+      "slug": "cloud-architect-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 12
+    },
+    {
+      "slug": "cloud-free",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 19
+    },
+    {
+      "slug": "code-analysis-skills",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 9
+    },
+    {
+      "slug": "code-dev-v1",
+      "source": "packaged",
+      "template_count": 0,
+      "empty_sections": 25
+    }
+  ]
+}

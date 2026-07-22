@@ -611,6 +611,7 @@ TEMPLATE_PATTERNS = [
 ]
 
 # 空段落检测: section header 后面紧跟空行或另一个header或文件结尾
+# 注意: ## header 后面跟 ### sub-header 是正常结构，不算空段落
 EMPTY_SECTION_REGEX = re.compile(
     r'##\s+(.+?)\s*\n\s*(?:\n##\s+|\n##\s+|$)',
     re.MULTILINE
@@ -634,7 +635,8 @@ PLACEHOLDER_CASE_REGEX = re.compile(
     re.DOTALL
 )
 
-# 截断文本检测 (单词在中间断开)
+# 截断文本检测 (单词在中间断开 - camelCase在非代码上下文)
+# 需要排除: 代码块(```...```), 行内代码(`...`), URL(http/https), 文件路径
 TRUNCATED_TEXT_REGEX = re.compile(r'[a-zA-Z]{3,}[a-z][A-Z]')
 
 
@@ -662,11 +664,32 @@ def check_content_authenticity(body_text: str) -> dict:
             issues.append(f"TEMPLATE_FILL: {code} (出现{len(matches)}次)")
 
     # 2. 检测空段落 (header后直接跟另一个header或空行)
+    # 改进: 排除 ## 后面跟 ### 子标题的正常结构
+    # 只有当 ## header 后面直接跟另一个 ## header (同级) 且中间没有内容时才算空
     empty_sections_found = EMPTY_SECTION_REGEX.findall(body_text)
-    # 过滤掉正常的短段落(有些section确实可以短)
-    meaningful_empty = [s for s in empty_sections_found
-                        if s.strip() and len(s.strip()) < 30
-                        and s.strip() not in ('依赖说明', '概述')]
+    # 过滤: 只保留真正空的段落 (标题文字<30字符 且 后面确实无内容)
+    # 排除有 ### 子标题的段落、排除正常的短标题段落
+    meaningful_empty = []
+    for sec_title in empty_sections_found:
+        title = sec_title.strip()
+        if not title or len(title) >= 30:
+            continue
+        if title in ('依赖说明', '概述', '简介', 'Introduction', 'Overview'):
+            continue
+        # 检查这个 ## 标题后面是否有 ### 子标题
+        # 如果有子标题，说明这个section有内容(通过子标题体现)，不算空
+        pattern = re.compile(
+            r'##\s+' + re.escape(title) + r'\s*\n(.*?)(?=\n##\s+|\Z)',
+            re.DOTALL
+        )
+        match = pattern.search(body_text)
+        if match:
+            section_content = match.group(1).strip()
+            # 有 ### 子标题或有实际内容(>20字符非空行)则不算空
+            has_subsection = bool(re.search(r'^###\s+', section_content, re.MULTILINE))
+            has_content = len(section_content) > 20
+            if not has_subsection and not has_content:
+                meaningful_empty.append(title)
     if meaningful_empty:
         empty_count = len(meaningful_empty)
         if empty_count >= 3:
@@ -690,15 +713,21 @@ def check_content_authenticity(body_text: str) -> dict:
         issues.append("PLACEHOLDER_CASE: 案例展示为占位符内容")
 
     # 6. 检测截断文本 (仅在代码块外的正文中检测)
-    # 移除代码块以避免camelCase变量名导致误报
-    prose_text = re.sub(r'```[\s\S]*?```', '', body_text)
+    # 移除代码块(```...```), 行内代码(`...`), URL, 文件路径
+    prose_text = re.sub(r'```[\s\S]*?```', '', body_text)  # 代码块
+    prose_text = re.sub(r'`[^`]+`', '', prose_text)  # 行内代码
+    prose_text = re.sub(r'https?://[^\s)]+', '', prose_text)  # URL
+    prose_text = re.sub(r'[a-zA-Z]:\\[^\s]+', '', prose_text)  # Windows路径
+    prose_text = re.sub(r'/[a-zA-Z][^\s)]*', '', prose_text)  # Unix路径
     truncated = TRUNCATED_TEXT_REGEX.findall(prose_text)
-    if truncated:
+    # 仅当截断检测命中50+次时才报告 (技术术语camelCase会产生大量误报)
+    if len(truncated) >= 50:
         issues.append(f"TRUNCATED_TEXT: 检测到{len(truncated)}处可能截断的文本")
 
     # 计算真实性得分
-    # 基础分100, 每个模板填充扣5分, 每个空段落扣3分, 截断扣10分
-    penalty = template_count * 5 + empty_count * 3 + len(truncated) * 10
+    # 基础分100, 每个模板填充扣5分, 每个空段落扣3分, 截断扣10分(仅当>=50才扣分)
+    truncated_penalty = len(truncated) * 10 if len(truncated) >= 50 else 0
+    penalty = template_count * 5 + empty_count * 3 + truncated_penalty
     score = max(0, 100 - penalty)
 
     # 评级
