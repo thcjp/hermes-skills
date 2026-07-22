@@ -15,7 +15,7 @@
     python platform_ops.py mark-deleted <slug> [slug...]      # 标记SkillHub已删除
     python platform_ops.py mark-clawhub-published <slug> [slug...]  # 标记ClawHub已发布
     python platform_ops.py mark-clawhub-withdrawn <slug> [slug...] # 标记ClawHub已撤回
-    python platform_ops.py find-paid-on-clawhub  # 查找需从ClawHub撤回的付费版
+    python platform_ops.py find-promotional      # 查找ClawHub付费版宣传引流情况
     python platform_ops.py find-free-for-clawhub # 查找待上传ClawHub的免费版
     python platform_ops.py find-rejected         # 查找SkillHub被拒绝的skill
     python platform_ops.py find-platform-review  # 查找SkillHub平台审核中的skill
@@ -49,7 +49,7 @@ def recalc_stats(db):
         "sh_approved": 0, "sh_rejected": 0, "sh_platform_review": 0,
         "sh_admin_review": 0, "sh_not_uploaded": 0,
         "ch_published": 0, "ch_not_uploaded": 0, "ch_not_eligible": 0,
-        "ch_withdrawn": 0, "ch_paid_on_clawhub": 0
+        "ch_withdrawn": 0, "ch_paid_promotional": 0
     }
     for slug, s in skills.items():
         stage = s.get("lifecycle", {}).get("stage", "")
@@ -74,7 +74,7 @@ def recalc_stats(db):
         if ch_st == "published":
             stats["ch_published"] += 1
             if not s.get("is_free"):
-                stats["ch_paid_on_clawhub"] += 1
+                stats["ch_paid_promotional"] += 1
         elif ch_st == "not_uploaded": stats["ch_not_uploaded"] += 1
         elif ch_st == "not_eligible": stats["ch_not_eligible"] += 1
         elif ch_st == "withdrawn": stats["ch_withdrawn"] += 1
@@ -110,8 +110,8 @@ def cmd_status():
     print(f"  not_uploaded (待传): {s['ch_not_uploaded']}")
     print(f"  not_eligible (不可传): {s['ch_not_eligible']}")
     print(f"  withdrawn (已撤回):  {s['ch_withdrawn']}")
-    if s['ch_paid_on_clawhub'] > 0:
-        print(f"\n  ⚠ {s['ch_paid_on_clawhub']}个付费版在ClawHub，建议撤回")
+    if s['ch_paid_promotional'] > 0:
+        print(f"\n  ★ {s['ch_paid_promotional']}个付费版在ClawHub作宣传引流")
 
 def cmd_pending():
     db = load_db()
@@ -122,7 +122,7 @@ def cmd_pending():
         "skillhub_rejected": [],
         "skillhub_platform_review": [],
         "clawhub_upload_candidates": [],
-        "clawhub_paid_to_withdraw": []
+        "clawhub_paid_promotional": []
     }
 
     for slug, s in skills.items():
@@ -138,7 +138,7 @@ def cmd_pending():
         if ch.get("upload_eligible") and ch.get("status") == "not_uploaded":
             pending["clawhub_upload_candidates"].append(slug)
         if not s.get("is_free") and ch.get("status") == "published":
-            pending["clawhub_paid_to_withdraw"].append(slug)
+            pending["clawhub_paid_promotional"].append(slug)
 
     print("待处理操作清单")
     print(f"{'='*55}")
@@ -163,14 +163,14 @@ def cmd_pending():
             print(f"   → {slug}")
         print(f"   ... 还有 {len(pending['clawhub_upload_candidates'])-10} 个")
 
-    print(f"\n5. ClawHub需撤回付费版 ({len(pending['clawhub_paid_to_withdraw'])}个):")
-    if len(pending["clawhub_paid_to_withdraw"]) <= 20:
-        for slug in pending["clawhub_paid_to_withdraw"]:
+    print(f"\n5. ClawHub付费版宣传引流 ({len(pending['clawhub_paid_promotional'])}个):")
+    if len(pending["clawhub_paid_promotional"]) <= 20:
+        for slug in pending["clawhub_paid_promotional"]:
             print(f"   → {slug}")
     else:
-        for slug in pending["clawhub_paid_to_withdraw"][:10]:
+        for slug in pending["clawhub_paid_promotional"][:10]:
             print(f"   → {slug}")
-        print(f"   ... 还有 {len(pending['clawhub_paid_to_withdraw'])-10} 个")
+        print(f"   ... 还有 {len(pending['clawhub_paid_promotional'])-10} 个")
 
     return pending
 
@@ -203,25 +203,24 @@ def cmd_clawhub_actions():
     db = load_db()
     skills = db["skills"]
 
-    actions = {"upload_free": [], "withdraw_paid": []}
+    actions = {"upload_free": [], "promotional_paid": []}
 
     for slug, s in skills.items():
         ch = s.get("clawhub", {})
         if ch.get("upload_eligible") and ch.get("status") == "not_uploaded":
             actions["upload_free"].append(slug)
         if not s.get("is_free") and ch.get("status") == "published":
-            actions["withdraw_paid"].append(slug)
+            actions["promotional_paid"].append(slug)
 
     output_file = REGISTRY_DIR / "clawhub_pending_actions.json"
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(actions, f, ensure_ascii=False, indent=2)
 
     print(f"ClawHub操作清单已生成: {output_file}")
-    print(f"  待上传免费版: {len(actions['upload_free'])}个")
-    print(f"  待撤回付费版: {len(actions['withdraw_paid'])}个")
-    print(f"\n执行后运行:")
+    print(f"  待上传(免费版+引流候选): {len(actions['upload_free'])}个")
+    print(f"  已发布付费版(宣传引流): {len(actions['promotional_paid'])}个")
+    print(f"\n上传后运行:")
     print(f"  python platform_ops.py mark-clawhub-published <slug1> <slug2> ...")
-    print(f"  python platform_ops.py mark-clawhub-withdrawn <slug1> <slug2> ...")
 
 def cmd_mark_approved(slugs):
     db = load_db()
@@ -282,7 +281,8 @@ def cmd_mark_clawhub_withdrawn(slugs):
     save_db(db)
     print(f"\n已更新 {len(slugs)} 个skill状态")
 
-def cmd_find_paid_on_clawhub():
+def cmd_find_promotional():
+    """查找ClawHub付费版宣传引流情况"""
     db = load_db()
     skills = db["skills"]
     found = []
@@ -290,7 +290,8 @@ def cmd_find_paid_on_clawhub():
         if not s.get("is_free") and s.get("clawhub", {}).get("status") == "published":
             found.append(slug)
             print(f"  → {slug} (pair: {s.get('pair_slug', 'N/A')})")
-    print(f"\n共 {len(found)} 个付费版在ClawHub，建议撤回")
+    total_paid = sum(1 for s in skills.values() if not s.get("is_free"))
+    print(f"\n共 {len(found)} 个付费版在ClawHub作宣传引流 (总付费版: {total_paid}, 占比: {len(found)*100//total_paid}%)")
     return found
 
 def cmd_find_free_for_clawhub():
@@ -366,8 +367,8 @@ def main():
             print("用法: python platform_ops.py mark-clawhub-withdrawn <slug> [slug...]")
             return
         cmd_mark_clawhub_withdrawn(sys.argv[2:])
-    elif cmd == "find-paid-on-clawhub":
-        cmd_find_paid_on_clawhub()
+    elif cmd == "find-promotional":
+        cmd_find_promotional()
     elif cmd == "find-free-for-clawhub":
         cmd_find_free_for_clawhub()
     elif cmd == "find-rejected":
