@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-07-22T20:30:33",
+  "summary": {
+    "total_production": 2106,
+    "active": 2075,
+    "deleted": 31
+  },
+  "skillhub": {
+    "published": 2066,
+    "pending_review": 9,
+    "deleted": 31,
+    "status_breakdown": {
+      "published": 2066,
+      "pending_review": 9
+    },
+    "publish_rate": "2066/2075 (99%)"
+  },
+  "clawhub": {
+    "published": 253,
+    "not_uploaded": 502,
+    "not_eligible": 1320,
+    "free_total": 755,
+    "publish_rate": "253/755 (33%)"
+  },
+  "hermes": {
+    "eligible": 755,
+    "converted": 755,
+    "github_published": 755,
+    "actual_directories": 759,
+    "github_repo": "https://github.com/thcjp/hermes-skills"
+  },
+  "issues": [],
+  "consistency": {
+    "issues_found": 0,
+    "issue_sample": []
+  }
+}

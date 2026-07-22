@@ -1,88 +1,112 @@
-# Hermes Skills Collection
+# Hermes Skills
 
-> 759 production-ready AI skills in [agentskills.io](https://agentskills.io) standard format.
+> 759 free AI agent skills in [agentskills.io](https://agentskills.io) format
 
-## Overview
+## About
 
-This repository contains 759 free AI skills converted from SkillHub format to the agentskills.io standard. Each skill is a self-contained Markdown document with YAML frontmatter that can be loaded by any compatible AI agent runtime (Claude Code, Cursor, Codex, Gemini CLI, etc.).
+This repository contains a curated collection of 759 free AI agent skills, each packaged in the agentskills.io standard format. These skills are compatible with popular AI coding agents including:
+
+- **Claude Code** (Anthropic)
+- **Cursor** (Anysphere)
+- **Codex** (OpenAI)
+- **Gemini CLI** (Google)
+- Any agent platform that supports the SKILL.md standard
+
+## Directory Structure
+
+Each skill is a self-contained directory with a `SKILL.md` file:
+
+```
+hermes-skills/
+├── ad-creative-intel-free/
+│   └── SKILL.md
+├── aws-agent-orchestrator-free/
+│   └── SKILL.md
+├── ...
+└── README.md
+```
 
 ## Skill Format
 
-Each skill follows the agentskills.io specification:
+Each `SKILL.md` file follows the agentskills.io standard:
 
 ```yaml
 ---
-name: "skill-name"
-description: "What this skill does (max 1024 chars)"
+name: skill-name-free
+description: Brief description of the skill
 license: MIT
-allowed-tools: read write exec
-compatibility: "Requires LLM with tool-use capability"
+allowed-tools: read write
+compatibility:
+  - claude-code
+  - cursor
+  - codex
+  - gemini-cli
 metadata:
-  displayName: "Human-friendly name"
-  version: "1.0.0"
-  summary: "One-line summary"
-  tags:
-    - category
-    - topic
+  version: 1.0.0
+  category: productivity
+  tags: [automation, workflow]
 ---
-# Skill Title
 
-...skill content...
+# Skill Name
+
+## Description
+Detailed description of what the skill does...
+
+## Usage
+How to use this skill...
 ```
 
 ## Categories
 
-Skills span multiple categories including:
+Skills are organized across multiple categories:
 
-- Development & Code (API, backend, frontend, DevOps)
-- Data & Analytics (CSV, JSON, database, visualization)
-- Content & Writing (blog, copywriting, documentation)
-- Productivity (calendar, email, task management)
-- Design (UI/UX, diagrams, presentations)
-- Research (web search, news, RSS)
-- Communication (Discord, Telegram, social media)
-- Security (encryption, audit, firewall)
-- Cloud & Infrastructure (AWS, Azure, GCP, Docker, K8s)
-
-## Quality Assurance
-
-All 759 skills have passed a 6-layer quality audit:
-
-| Layer | Check | Result |
-|-------|-------|--------|
-| 1-3 | Format (frontmatter, fields, encoding) | 100% |
-| 4 | Functional quality (instructions, code, I/O) | 100% A+B |
-| 5 | Sellability (depth, completeness, UX) | 100% A+B |
-| 6 | Content authenticity (no template padding) | 100% A+B |
+| Category | Count | Examples |
+|----------|-------|---------|
+| Automation & Workflow | ~60 | cron-scheduler, task-queue-manager, workflow-orchestrator |
+| Communication | ~50 | discord-toolkit, slack-hub-tool, telegram-chat-tool |
+| Creative & Design | ~80 | logo-design-tool, ui-ux-toolkit, video-producer-tool |
+| Development Tools | ~70 | git-cli-tool, docker-essentials, code-analysis-toolkit |
+| Memory & Context | ~25 | context-compressor, memory-fortress, neural-context-engine |
+| Productivity | ~50 | excel-ninja, notes-sync-cli, schedule-manager |
+| Security | ~15 | encryption-tool, ssl-toolkit, aegis-security |
+| Data & Analytics | ~30 | data-analysis-toolkit, knowledge-graph-builder |
+| AI & LLM | ~40 | llm-provider-tool, prompt-architect, ai-image-gen-tool |
+| Other | ~339 | Various specialized tools |
 
 ## Usage
 
-### Install via agentskills.io CLI
+### With Claude Code
+1. Clone this repository
+2. Copy any skill directory to your `.claude/skills/` folder
+3. The skill is automatically available in your Claude Code session
 
-```bash
-# Install a specific skill
-agentskills install <skill-name>
+### With Cursor
+1. Clone this repository
+2. Copy any skill directory to your `.cursor/skills/` folder
+3. Restart Cursor to load the skill
 
-# List available skills
-agentskills list
-```
+### With Codex
+1. Clone this repository
+2. Reference the skill path in your Codex configuration
 
-### Manual Installation
+## Quality Assurance
 
-Copy the desired skill's `SKILL.md` file to your agent's skills directory:
-
-```bash
-# Claude Code
-cp <skill-name>/SKILL.md ~/.claude/skills/
-
-# Cursor
-cp <skill-name>/SKILL.md ~/.cursor/skills/
-```
+All skills pass a 6-layer quality audit:
+- **Layer 1-3**: Format validation (YAML frontmatter, required fields, structure)
+- **Layer 4**: Functional validation (task definition, input/output, error handling)
+- **Layer 5**: Sellability assessment (market value, target audience, differentiation)
+- **Layer 6**: Content authenticity (no template padding, real executable code)
 
 ## License
 
-All skills are licensed under MIT unless otherwise specified in the skill's frontmatter.
+MIT License - see [LICENSE](LICENSE) for details.
 
-## Contributing
+## Related Platforms
 
-These skills are auto-generated and quality-audited. For issues or improvements, please open an issue describing the skill and the problem.
+These skills are also published on:
+- **SkillHub** - Chinese AI skill marketplace (monetization)
+- **ClawHub** - International open-source skill ecosystem
+
+## Last Updated
+
+July 2026
