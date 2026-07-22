@@ -79,10 +79,7 @@ pip install python-docx openpyxl pdfdocx2pdf
 
 ---
 
-### 命令参数说明
-
-- `-MM-DD`: 命令参数,用于指定操作选项
-
+#
 ## 核心能力
 ### 一、文档批量处理
 

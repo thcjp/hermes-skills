@@ -32,10 +32,7 @@ homepage: "https://skillhub.cn"
 
 **输入**: 用户提供增量抓取 / Incremental Fetching所需的参数和指令。
 
-**输出**: 返回增量抓取 / Incremental Fetching的处理结果。
-
-- 执行`增量抓取 / Incremental Fetching`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回增量抓取 / Incremental Fetching的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`增量抓取 / Incremental Fetching`相关配置参数进行设置
 ### 自动标签 / Auto-tagging
 
@@ -43,10 +40,7 @@ homepage: "https://skillhub.cn"
 
 **输入**: 用户提供自动标签 / Auto-tagging所需的参数和指令。
 
-**输出**: 返回自动标签 / Auto-tagging的处理结果。
-
-- 执行`自动标签 / Auto-tagging`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回自动标签 / Auto-tagging的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`自动标签 / Auto-tagging`相关配置参数进行设置
 ### HTML报告 / HTML Reports
 
@@ -54,14 +48,9 @@ homepage: "https://skillhub.cn"
 
 **输入**: 用户提供HTML报告 / HTML Reports所需的参数和指令。
 
-**输出**: 返回HTML报告 / HTML Reports的处理结果。
-
-- 执行`HTML报告 / HTML Reports`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回HTML报告 / HTML Reports的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`HTML报告 / HTML Reports`相关配置参数进行设置
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: 统一的、采集与管理系统、Unified、Feed、Fetcher、Manager、支持增量抓取、报告生成、Use、需要项目管理、任务规划、进度跟踪、团队协作时使用、不适用于实际人员、绩效评估。这些能力在上述核心功能中均有对应处理逻辑。
+#
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -166,16 +155,11 @@ python3 scripts/list.py --json
 
 ---
 
-### 命令参数说明
-
-6. `--hours`: 命令参数,用于指定操作选项
-7. `--workers`: 命令参数,用于指定操作选项
-
+#
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 是 | 相关说明 |
 | content | string | 否 | 相关说明, 默认: 默认值 |
 | content | string | 否 | 相关说明, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |

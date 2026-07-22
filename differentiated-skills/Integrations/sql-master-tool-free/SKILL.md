@@ -146,10 +146,7 @@ CREATE INDEX idx_orders_status ON orders(status);
 
 完整上手时间约60秒。
 
-### 命令参数说明
-
-- `-U`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### `PostgreSQL` UUID主键表设计

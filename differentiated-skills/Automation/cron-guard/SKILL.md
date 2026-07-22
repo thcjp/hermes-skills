@@ -158,15 +158,7 @@ env -i HOME="$HOME" PATH="/usr/local/bin:/usr/bin:/bin" \
   bash -c 'cd /repo && python3 tools/job.py'
 ```
 
-### 命令参数说明
-
-- `-WebRequest`: 命令参数,用于指定操作选项
-- `-Error`: 命令参数,用于指定操作选项
-- `-Location`: 命令参数,用于指定操作选项
-- `-Uri`: 命令参数,用于指定操作选项
-- `-UseBasicParsing`: 命令参数,用于指定操作选项
-- `-Output`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 示例

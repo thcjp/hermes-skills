@@ -169,11 +169,7 @@ const hybrid = await skills.contextVaultManager({
 
 ---
 
-### 命令参数说明
-
-- `-Proj`: 命令参数,用于指定操作选项
-- `-Sum`: 命令参数,用于指定操作选项
-
+#
 ## 核心能力
 ### 1. 三层记忆分层（基础+增强）
 

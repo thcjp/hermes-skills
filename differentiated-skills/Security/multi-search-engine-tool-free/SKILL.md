@@ -385,10 +385,7 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
 ./quick_search.sh all "人工智能"
 ```
 
-### 命令参数说明
-
-- `-React`: 命令参数,用于指定操作选项
-
+#
 ## 配置示例
 
 ### 支持的搜索引擎(免费版8个)

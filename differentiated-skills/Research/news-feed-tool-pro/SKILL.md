@@ -278,14 +278,7 @@ python3 ~/news-feed-pro/scripts/aggregate.py \
     --output ~/news-feed-pro/reports/initial_aggregation.md
 ```
 
-### 命令参数说明
-
-- `-US`: 命令参数,用于指定操作选项
-- `-KR`: 命令参数,用于指定操作选项
-- `-CN`: 命令参数,用于指定操作选项
-- `-DE`: 命令参数,用于指定操作选项
-- `-JP`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 ### 全文抓取配置
 ```python

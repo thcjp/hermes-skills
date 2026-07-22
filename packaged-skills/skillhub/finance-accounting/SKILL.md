@@ -75,17 +75,7 @@ homepage: "https://skillhub.cn"
 **输入**: 用户提供文档生成所需的指令和必要参数。
 **处理**: 按照skill规范执行文档生成操作,遵循单一意图原则。
 
-### 技术细节
-
-| 组件 | 说明 | 关键参数 |
-|:-----|:-----|:---------|
-| `parser` | 解析输入指令 | `format`, `encoding` |
-| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
-| `output` | 格式化输出结果 | `format`, `encoding` |
-
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: 财务会计文书处理、综合技能包、包含记账、报表等核心功能。这些能力在上述核心功能中均有对应处理逻辑。
+#
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -136,17 +126,11 @@ python finance.py report income-statement --period 2026-02 --output income_state
 python finance.py report cash-flow --period 2026-02 --output cash_flow.pdf
 ```
 
-### 命令参数说明
-
-1. `-sheet`: 命令参数,用于指定操作选项
-2. `-flow`: 命令参数,用于指定操作选项
-3. `--year`: 命令参数,用于指定操作选项
-
+#
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 是 | 相关说明 |
 | content | string | 否 | 相关说明, 默认: 默认值 |
 | content | string | 否 | 相关说明, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |

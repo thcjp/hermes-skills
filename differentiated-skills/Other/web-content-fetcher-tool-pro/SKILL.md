@@ -190,10 +190,7 @@ web-fetcher-pro monitor add --name "监测" --urls "url1,url2" --schedule "0 9 *
 web-fetcher-pro report generate --format markdown --output fetch-report.md
 ```
 
-### 命令参数说明
-
-- `-Agent`: 命令参数,用于指定操作选项
-
+#
 ## 配置示例
 
 ```yaml

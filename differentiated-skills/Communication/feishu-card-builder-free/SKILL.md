@@ -204,55 +204,10 @@ node skills/feishu-card-builder/send_safe.js \
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
 
-### 命令参数说明
-
-- `-I`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
-### 命令参数说明
-
-| 参数 | 说明 | 示例 |
-|:-----|:-----|:-----|
-| `-t, --target` | 目标 ID（用户 ou_ 或群组 oc_） | `--target "ou_xxxxxxx"` |
-| `-x, --text` | 简单文本内容 | `--text "Hello"` |
-| `-f, --text-file` | 文本文件路径（支持 Markdown） | `--text-file "msg.md"` |
-| `--title` | 卡片标题 | `--title "通知"` |
-| `--color` | 头部颜色 | `--color blue` |
-| `--button-text` | 按钮文本 | `--button-text "查看"` |
-| `--button-url` | 按钮链接 | `--button-url "https://..."` |
-| `--image-path` | 本地图片路径 | `--image-path "img.png"` |
-
-### 头部颜色选项
-
-| 颜色 | 适用场景 |
-|:-----|:---------|
-| blue（默认） | 普通通知、信息分享 |
-| red | 紧急告警、错误通知 |
-| orange | 警告提醒、注意事项 |
-| green | 成功通知、完成提示 |
-| purple | 特殊标识、创意内容 |
-| grey | 系统消息、辅助信息 |
-
-### 人设消息风格
-
-```bash
-# 使用不同人设发送
-node skills/feishu-card-builder/send_persona.js \
-  --target "ou_xxxxxxx" \
-  --persona "d-guide" \
-  --text "检测到严重错误。"
-```
-
-| 人设 | 风格说明 |
-|:-----|:---------|
-| d-guide | 红色警告头部，加粗/代码前缀 |
-| green-tea | 胭脂色头部，柔和可爱风格 |
-| mad-dog | 灰色头部，原始运行时错误风格 |
-| default | 标准蓝色头部 |
-
----
-
+#
 ## 最佳实践
 
 ### 内容传递安全

@@ -171,11 +171,7 @@ python3 scripts/ocean_pro.py team create --name "公司" --admin alice
 python3 scripts/ocean_pro.py team members --add "bob,charlie"
 ```
 
-### 命令参数说明
-
-- `-XXXX`: 命令参数,用于指定操作选项
-- `-GCM`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### PRO企业级配置

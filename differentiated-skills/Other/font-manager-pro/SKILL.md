@@ -52,13 +52,7 @@ python3 scripts/font-manager-pro.py audit --output reports/ --format pdf
 
 > 详细代码示例已移至 `references/detail.md`
 
-### 命令参数说明
-
-- `-AA`: 命令参数,用于指定操作选项
-- `-Regular`: 命令参数,用于指定操作选项
-- `-JP`: 命令参数,用于指定操作选项
-- `-KR`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 基本用法

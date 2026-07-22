@@ -197,10 +197,7 @@ file-sorter-pro history rollback --id <operation-id>
 file-sorter-pro report generate --format pdf --output sorting-report.pdf
 ```
 
-### 命令参数说明
-
-- `-MM-DD`: 命令参数,用于指定操作选项
-
+#
 ## 配置示例
 
 ```yaml

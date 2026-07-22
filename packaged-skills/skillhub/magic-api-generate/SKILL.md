@@ -56,17 +56,7 @@ homepage: "https://skillhub.cn"
 - 执行`业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)`操作，处理输入数据并返回结果
 - 验证执行结果，确认输出符合预期格式
 - 参考`业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)`相关配置参数进行设置
-### 技术细节
-
-| 组件 | 说明 | 关键参数 |
-|:-----|:-----|:---------|
-| `parser` | 解析输入指令 | `format`, `encoding` |
-| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
-| `output` | 格式化输出结果 | `format`, `encoding` |
-
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: 国产接口快速开发、编写脚本自动映射、HTTP、Controller、Service、Dao、当用户提到、Use、接口对接、Webhook、系统连接时使用、不适用于逆向工程、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+#
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -103,7 +93,6 @@ export API_KEY="your_api_key_here"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 是 | 相关说明 |
 | content | string | 否 | 相关说明, 默认: 默认值 |
 | content | string | 否 | 相关说明, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -143,8 +132,6 @@ export API_KEY="your_api_key_here"
 | 依赖项 | 类型 | 必需 | 说明 |
 |--------|------|------|------|
 | LLM | 模型 | 是 | 需要LLM进行内容生成, 推荐GPT-4/智谱GLM-4/DeepSeek |
-| `references/style.md` | 文件 | 是 | 相关说明 |
-| `assets/output.json` | 文件 | 是 | 相关说明 |
 | API Key | 凭证 | 否 | 使用云端LLM时需要, 本地LLM不需要 |
 
 **国内替代方案**:

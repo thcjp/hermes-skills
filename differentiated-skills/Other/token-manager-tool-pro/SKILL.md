@@ -191,13 +191,7 @@ token-pro session weekly --output weekly-report.md
 token-pro team summary
 ```
 
-### 命令参数说明
-
-- `-report-2026-W29`: 命令参数,用于指定操作选项
-- `-W29`: 命令参数,用于指定操作选项
-- `-Moonshot`: 命令参数,用于指定操作选项
-- `-OpenAI`: 命令参数,用于指定操作选项
-
+#
 ## 配置示例
 
 ```yaml

@@ -129,10 +129,7 @@ result = main.merge(
 result.to_excel('orders_with_customer.xlsx', index=False)
 ```
 
-### 命令参数说明
-
-- `-Disposition`: 命令参数,用于指定操作选项
-
+#
 ## 配置示例
 
 ### 数据透视表

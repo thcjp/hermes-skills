@@ -139,10 +139,7 @@ python3 scripts/alert.py list
 python3 scripts/alert.py monitor
 ```
 
-### 命令参数说明
-
-- `-USD`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 告警配置

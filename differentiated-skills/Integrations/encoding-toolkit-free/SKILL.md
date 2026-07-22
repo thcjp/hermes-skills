@@ -104,12 +104,7 @@ echo -n "Hello" | sha256sum
 echo "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjMifQ.signature" | cut -d. -f2 | tr '-_' '+/' | base64 -d 2>/dev/null
 ```
 
-### 命令参数说明
-
-- `-Fa-f`: 命令参数,用于指定操作选项
-- `-fA-F`: 命令参数,用于指定操作选项
-- `-Za-z0-9_-`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### Python 一键解码多种格式

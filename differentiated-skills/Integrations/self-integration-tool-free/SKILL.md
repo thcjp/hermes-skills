@@ -137,12 +137,7 @@ curl -X POST "https://api.integration-gateway.com/actions/act_xyz/run?connection
   -d '{"input": {"channel": "#general", "text": "Hello!"}}'
 ```
 
-### 命令参数说明
-
-- `-H`: 命令参数,用于指定操作选项
-- `-X`: 命令参数,用于指定操作选项
-- `-Type`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 查询已有连接

@@ -240,12 +240,7 @@ python3 batch_translate.py \
   --report /tmp/translation-report.json
 ```
 
-### 命令参数说明
-
-- `-H`: 命令参数,用于指定操作选项
-- `-F`: 命令参数,用于指定操作选项
-- `-X`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 ### 完整配置文件模板
 

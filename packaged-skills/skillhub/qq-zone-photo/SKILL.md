@@ -57,25 +57,16 @@ export API_KEY="your_api_key_here"
 
 ### 2. 列出相册
 
-通过 `python3 scripts/qzone_photos.py --action list --cookies cookies.json` 列出当前账号的所有相册。返回相册列表，包含相册ID（`album-id`）、相册标题、照片数量等信息。可选参数 `--qq` 指定目标账号。适用于浏览相册结构和获取相册ID。
-
-- 执行`列出相册`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+通过 `python3 scripts/qzone_photos.py --action list --cookies cookies.json` 列出当前账号的所有相册。返回相册列表，包含相册ID（`album-id`）、相册标题、照片数量等信息。可选参数 `--qq` 指定目标账号。适用于浏览相册结构和获取相册ID。- 验证执行结果，确认输出符合预期格式
 ### 3. 浏览相册照片
 
-通过 `python3 scripts/qzone_photos.py --action photos --album-id "ALBUM_ID" --cookies cookies.json` 浏览指定相册中的照片。必填参数 `--album-id` 指定目标相册，可选参数 `--qq` 指定账号。返回照片列表，包含照片URL、缩略图、上传时间等信息。适用于查看相册内容和获取照片下载URL。
-
-- 执行`浏览相册照片`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+通过 `python3 scripts/qzone_photos.py --action photos --album-id "ALBUM_ID" --cookies cookies.json` 浏览指定相册中的照片。必填参数 `--album-id` 指定目标相册，可选参数 `--qq` 指定账号。返回照片列表，包含照片URL、缩略图、上传时间等信息。适用于查看相册内容和获取照片下载URL。- 验证执行结果，确认输出符合预期格式
 - 参考`浏览相册照片`相关配置参数进行设置
 ### 4. 上传照片
 通过 `python3 scripts/qzone_photos.py --action upload --photo "/path/to/image.jpg" --album-id "ALBUM_ID" --cookies cookies.json` 上传照片到指定相册。必填参数 `--photo` 指定本地图片路径，`--album-id` 指定目标相册。可选参数 `--qq` 指定账号。适用于照片备份和迁移场景。
 
 **处理**: 按照skill规范执行上传照片操作,遵循单一意图原则。
-**输出**: 返回上传照片的执行结果,包含操作状态和输出数据。
-
-- 执行`上传照片`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回上传照片的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
 - 参考`上传照片`相关配置参数进行设置
 ### 5. 下载单张照片
 通过 `python3 scripts/qzone_photos.py --action download --url "PHOTO_URL" --cookies cookies.json` 下载单张照片。必填参数 `--url` 指定照片URL（从 `photos` action获取），可选参数 `--output` 指定下载目录。适用于选择性下载特定照片。
@@ -83,18 +74,13 @@ export API_KEY="your_api_key_here"
 **处理**: 按照skill规范执行下载单张照片操作,遵循单一意图原则。
 ### 6. 下载整个相册
 
-通过 `python3 scripts/qzone_photos.py --action download-album --album-id "ALBUM_ID" --output ./downloads --cookies cookies.json` 下载整个相册的所有照片。必填参数 `--album-id` 指定目标相册，可选参数 `--output` 指定下载目录（默认当前目录）。适用于相册全量备份场景。
-
-- 执行`下载整个相册`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+通过 `python3 scripts/qzone_photos.py --action download-album --album-id "ALBUM_ID" --output ./downloads --cookies cookies.json` 下载整个相册的所有照片。必填参数 `--album-id` 指定目标相册，可选参数 `--output` 指定下载目录（默认当前目录）。适用于相册全量备份场景。- 验证执行结果，确认输出符合预期格式
 - 参考`下载整个相册`相关配置参数进行设置
 ### 7. 创建相册
 
 通过 `python3 scripts/qzone_photos.py --action create --title "我的新相册" --cookies cookies.json` 创建新相册。必填参数 `--title` 指定相册标题，可选参数 `--desc` 指定相册描述，`--qq` 指定账号。创建成功后返回新相册的 `album-id`。适用于批量上传前的相册准备。
 
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: 管理社交空间相册、支持扫码登录、浏览照片、上传下载、社交空间相册自动、化管理工具、相册浏览、照片上传、相册创建等功能、认证访问社交空间、非官方、API、适用于相册备份、照片迁移和批量管、理等场景。这些能力在上述核心功能中均有对应处理逻辑。
+#
 ## 使用流程
 
 1. 首次使用执行扫码登录：`python3 scripts/qzone_photos.py --action login --cookies cookies.json`

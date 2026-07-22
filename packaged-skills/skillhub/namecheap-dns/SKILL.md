@@ -27,42 +27,7 @@ homepage: "https://skillhub.cn"
 6. **Merge logic** — adds to existing records instead of replacing
 7. **Rollback** — one command to restore from backup
 8. **Safety override** — `--force` flag for when you need to bypass ghost record warnings
-### 指令解析与执行
-
-解析用户指令,执行核心操作并返回处理结果。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`指令解析与执行`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`指令解析与执行`相关配置参数进行设置
-### 数据处理与转换
-
-处理输入数据,执行转换操作并输出结果。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`数据处理与转换`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`数据处理与转换`相关配置参数进行设置
-### 结果验证与输出
-
-验证处理结果的正确性,格式化输出并返回给用户。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`结果验证与输出`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`结果验证与输出`相关配置参数进行设置
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: Manage、Namecheap、safely、fetching、entries、merging、backing、Use、需要项目管理、任务规划、进度跟踪、团队协作时使用、不适用于实际人员、绩效评估、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+#
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -82,7 +47,6 @@ homepage: "https://skillhub.cn"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 是 | 相关说明 |
 | content | string | 否 | 相关说明, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 

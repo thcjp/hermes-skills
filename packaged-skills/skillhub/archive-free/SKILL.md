@@ -80,17 +80,7 @@ export API_KEY="your_api_key_here"
 - 支持按标签与关键词搜索
 - 存储至 `~/archive/items/{date}_{slug}.md`
 
-### 技术细节
-
-| 组件 | 说明 | 关键参数 |
-|:-----|:-----|:---------|
-| `parser` | 解析输入指令 | `format`, `encoding` |
-| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
-| `output` | 格式化输出结果 | `format`, `encoding` |
-
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: 免费版内容归档工、支持文章、推文的内容提取与、内容归档工具免费、将外部内容捕获为、推文的基本内容提、取与标签管理、提供基于关键词的、搜索能力、适用于个人知识管、理与研究资料收集。这些能力在上述核心功能中均有对应处理逻辑。
+#
 ## 使用流程
 
 1. 首次使用时创建归档目录：`mkdir -p ~/archive/items ~/archive/projects`
@@ -99,10 +89,7 @@ export API_KEY="your_api_key_here"
 4. 内容保存至 `~/archive/items/{date}_{slug}.md`
 5. 需要检索时使用关键词或标签描述进行搜索
 
-### 命令参数说明
-
-- `-pricing`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 示例1：归档一篇文章

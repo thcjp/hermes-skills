@@ -79,16 +79,7 @@ cat /tmp/today.md >> MEMORY.md
 
 ```markdown
 
-### 命令参数说明
-
-- `-MM-DD`: 命令参数,用于指定操作选项
-- `-DECISIONS`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-MM-DD`: 命令参数,用于指定操作选项
-- `-DECISIONS`: 命令参数,用于指定操作选项
-
+#
 ## 记忆维护（每2-3天执行）
 1. 执行：node scripts/context-compressor.js memory/YYYY-MM-DD.md /tmp/compressed.md
 2. 人工审核压缩结果准确性
@@ -98,11 +89,7 @@ cat /tmp/today.md >> MEMORY.md
 
 ---
 
-### 命令参数说明
-
-- `-MM-DD`: 命令参数,用于指定操作选项
-- `-DECISIONS`: 命令参数,用于指定操作选项
-
+#
 ## 核心能力
 ### 1. 智能混合提取
 

@@ -174,12 +174,7 @@ alephnet-node think --text "人工智能正在改变软件开发的方式" --dep
 }
 ```
 
-### 命令参数说明
-
-- `--userId`: 命令参数,用于指定操作选项
-- `--onlineFirst`: 命令参数,用于指定操作选项
-- `-Free`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 免费版配置文件位于 `~/.alephnet/config.json`。

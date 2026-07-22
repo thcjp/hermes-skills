@@ -286,14 +286,7 @@ for repo in repos:
     print(f"{repo['full_name']}: {repo['description']}")
 ```
 
-### 命令参数说明
-
-- `-H`: 命令参数,用于指定操作选项
-- `-X`: 命令参数,用于指定操作选项
-- `-Type`: 命令参数,用于指定操作选项
-- `-RateLimit-Limit`: 命令参数,用于指定操作选项
-- `-RateLimit-Reset`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 通用请求模板

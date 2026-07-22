@@ -43,10 +43,7 @@ tags:
 
 **输入**: 用户提供纯本地向量搜索（LanceDB）所需的参数和指令。
 
-**输出**: 返回纯本地向量搜索（LanceDB）的处理结果。
-
-- 执行`纯本地向量搜索（LanceDB）`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回纯本地向量搜索（LanceDB）的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`纯本地向量搜索（LanceDB）`相关配置参数进行设置
 ### 本地 Embedding（Ollama）
 
@@ -54,10 +51,7 @@ tags:
 
 **输入**: 用户提供本地 Embedding（Ollama）所需的参数和指令。
 
-**输出**: 返回本地 Embedding（Ollama）的处理结果。
-
-- 执行`本地 Embedding（Ollama）`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回本地 Embedding（Ollama）的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`本地 Embedding（Ollama）`相关配置参数进行设置
 ### 热内存（SESSION-STATE.md）
 
@@ -65,22 +59,9 @@ tags:
 
 **输入**: 用户提供热内存（SESSION-STATE.md）所需的参数和指令。
 
-**输出**: 返回热内存（SESSION-STATE.md）的处理结果。
-
-- 执行`热内存（SESSION-STATE.md）`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回热内存（SESSION-STATE.md）的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`热内存（SESSION-STATE.md）`相关配置参数进行设置
-### 技术细节
-
-| 组件 | 说明 | 关键参数 |
-|:-----|:-----|:---------|
-| `parser` | 解析输入指令 | `format`, `encoding` |
-| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
-| `output` | 格式化输出结果 | `format`, `encoding` |
-
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: 与本地、的纯本地向量记忆、零外部、JavaScript、的本地向量记忆系、或原生模块、本地运行、所有数据完全留在、隐私至上、提供五层记忆架构、温存储、冷存储、Git、Notes、协议写前日志、自动召回相关上下、智能捕获重要信息、适用于独立开发者、企业团队和自动化、工作流场景、特别适合对数据隐、私有高要求的环境、对比云端、低延迟。这些能力在上述核心功能中均有对应处理逻辑。
+#
 ## 使用流程
 
 第一步：安装依赖。执行 `ollama --version` 检查 Ollama 是否安装，执行 `ollama pull nomic-embed-text` 下载本地 Embedding 模型。进入 skills/elite-longterm-memory 目录执行 `npm install` 安装 Node.js 依赖。
@@ -93,44 +74,7 @@ tags:
 
 第五步：定期维护。执行 `node bin/memory.js stats` 检查记忆统计，`node bin/memory.js search "*" --limit 50` 全量检索检查质量，`node bin/memory.js dedup` 去重，`node bin/memory.js compact` 压缩向量数据库，`node bin/memory.js cleanup --before 30d` 清理 30 天前旧记忆，`node bin/memory.js backup ./backups/memory-$(date +%Y%m%d).zip` 定期备份。
 
-### 命令参数说明
-
-- `-STATE`: 命令参数,用于指定操作选项
-
-**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
-
-### 命令参数说明
-
-- `-STATE`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-STATE`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-STATE`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-STATE`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-STATE`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-STATE`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-STATE`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-STATE`: 命令参数,用于指定操作选项
-
+#
 ## 错误处理
 
 | 错误类型 | 原因 | 处理方式 |

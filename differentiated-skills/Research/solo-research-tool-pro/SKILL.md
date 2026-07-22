@@ -268,10 +268,7 @@ Reddit内容获取回退链(从最佳到最后手段):
 # WebSearch: "site:trustmrr.com <category or idea>"
 ```
 
-### 命令参数说明
-
-- `-GO`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 ### 混合搜索策略配置
 ```text

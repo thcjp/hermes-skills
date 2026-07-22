@@ -177,10 +177,7 @@ python3 scripts/security.py scan --output security_report.pdf
 python3 scripts/regions.py deploy --template web_app --regions "eastus,westeurope,southeastasia"
 ```
 
-### 命令参数说明
-
-- `-Security-Benchmark`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### PRO企业级配置

@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-深度质量审计系统 (Deep Quality Audit)
-=====================================
+深度质量审计系统 (Deep Quality Audit) v3.0
+==========================================
 全量扫描 packaged-skills/skillhub 和 differentiated-skills 下所有 SKILL.md 文件，
-执行三级严重分类（critical / warning / info）的质量检查。
+执行六层质量检查:
 
-检查项:
+Layer 1-3 (格式检查):
   critical (致命):
     - 缺失 slug / version / name 字段
     - slug 与目录名不匹配
@@ -24,6 +24,30 @@
     - 内容少于 500 字符
     - 缺少依赖说明 section
 
+Layer 4 (功能质量 Functional Quality):
+  - 内容深度评估 (0-25分)
+  - 指令性内容检查 (0-25分)
+  - 代码/示例检查 (0-20分)
+  - 任务定义检查 (0-15分)
+  - 错误处理检查 (0-15分)
+  - 真实placeholder检测 (TODO/FIXME/待补充)
+  评级: A(70+) / B(50+) / C(30+) / D(10+) / F(<10)
+
+Layer 5 (可销售性 Sellability):
+  - 内容深度 (0-25分)
+  - 功能完整度 (0-20分)
+  - 技术深度 (0-20分)
+  - 用户体验 (0-20分)
+  - 专业性 (0-15分)
+  评级: A(70+) / B(50+) / C(30+) / D(<30)
+
+Layer 6 (内容真实性 Content Authenticity):
+  - 模板填充检测 (通用段落/乱码拼接/占位表格)
+  - 空段落检测 (空FAQ/空已知限制/空section)
+  - 截断文本检测
+  - 案例占位检测
+  评级: A(85+) / B(65+) / C(40+) / D(20+) / F(<20)
+
 使用方式:
     python deep_quality_audit.py              # 执行审计
     python deep_quality_audit.py --fix        # 审计并自动修复 warning 级别问题
@@ -31,7 +55,7 @@
 
 输出:
     - JSON 报告: deep_quality_audit_report.json
-    - 控制台汇总统计
+    - 控制台汇总统计 (含功能质量+可销售性)
 """
 
 import json
@@ -339,6 +363,16 @@ def check_skill(skill_path: Path, source: str):
     if not re.search(r'##\s*依赖说明|##\s*Dependencies|##\s*Dependency', body_text, re.IGNORECASE):
         issues["info"].append("MISSING_DEP_SECTION: 缺少依赖说明 section")
 
+    # === functional 检查 (Layer 4) ===
+    func_result = check_functional_quality(body_text)
+    functional_issues = func_result["issues"]
+
+    # === sellability 评估 (Layer 5) ===
+    sell_result = check_sellability(body_text, fm, func_result["score"])
+
+    # === content authenticity 检查 (Layer 6) ===
+    auth_result = check_content_authenticity(body_text)
+
     # 确定最终严重级别
     if issues["critical"]:
         severity = "critical"
@@ -362,8 +396,324 @@ def check_skill(skill_path: Path, source: str):
         "version": version,
         "dir_name": dir_name,
         "frontmatter": fm,
+        "functional": {
+            "score": func_result["score"],
+            "grade": func_result["grade"],
+            "issues": functional_issues,
+        },
+        "sellability": {
+            "score": sell_result["score"],
+            "grade": sell_result["grade"],
+            "factors": sell_result["factors"],
+        },
+        "authenticity": {
+            "score": auth_result["authenticity_score"],
+            "grade": auth_result["grade"],
+            "template_count": auth_result["template_count"],
+            "empty_sections": auth_result["empty_sections"],
+            "issues": auth_result["issues"],
+        },
         "_content": content,
         "_issues_map": issues,
+    }
+
+
+# ============ 功能质量检查 (Layer 4: Functional Quality) ============
+# 从格式检查升级为功能验证 - 判断skill是否真能完成任务
+
+FUNCTIONAL_CHECKS = [
+    "NO_INSTRUCTIONS",        # 无指令性内容(步骤/用法)
+    "NO_CODE_BLOCKS",         # 无代码块
+    "REAL_PLACEHOLDER",       # 含真实placeholder(TODO/FIXME/待补充)
+    "CONTENT_TOO_SHORT_FUNC", # 正文<500字符(功能不足)
+    "NO_TASK_DEFINITION",     # 无任务定义(##功能/Features)
+    "NO_ERROR_HANDLING",      # 无错误处理说明
+    "NO_USAGE_GUIDE",         # 无使用指南(##用法/Usage)
+    "NO_INPUT_OUTPUT",        # 无输入输出说明
+]
+
+# 真实placeholder模式 (非模板变量)
+REAL_PLACEHOLDER_PATTERNS = [
+    (r"TODO[:\s]", "TODO标记"),
+    (r"FIXME[:\s]", "FIXME标记"),
+    (r"待补充", "待补充"),
+    (r"待完善", "待完善"),
+    (r"lorem ipsum", "Lorem Ipsum"),
+    (r"placeholder\s+content", "占位内容"),
+    (r"replace[_ ]this", "替换占位"),
+    (r"示例文本内容", "示例占位"),
+]
+
+def check_functional_quality(body_text: str) -> dict:
+    """功能质量检查 - 判断skill正文是否包含可执行指令
+
+    Returns:
+        dict: {issues: [...], score: 0-100, grade: A/B/C/D/F}
+    """
+    issues = []
+    body_len = len(body_text.strip())
+    score = 0
+
+    # 维度1: 内容深度 (0-25分)
+    if body_len > 8000: score += 25
+    elif body_len > 4000: score += 20
+    elif body_len > 2000: score += 15
+    elif body_len > 1000: score += 10
+    elif body_len > 500: score += 5
+    else:
+        issues.append(f"CONTENT_TOO_SHORT_FUNC: 正文仅{body_len}字符, 功能不足")
+        score += 2
+
+    # 维度2: 指令性内容 (0-25分)
+    if re.search(r'步骤|Step\s*[1-9]|首先|然后|接下来|用法|Usage', body_text, re.IGNORECASE):
+        score += 15
+    else:
+        issues.append("NO_INSTRUCTIONS: 无步骤/用法指令性内容")
+
+    if re.search(r'##\s*(使用|用法|Usage|How to|步骤|Steps|Guide)', body_text, re.IGNORECASE):
+        score += 10
+    else:
+        issues.append("NO_USAGE_GUIDE: 无使用指南section")
+
+    # 维度3: 代码/示例 (0-20分)
+    code_blocks = body_text.count("```") // 2
+    if code_blocks >= 3: score += 15
+    elif code_blocks >= 1: score += 10
+    else:
+        issues.append("NO_CODE_BLOCKS: 无代码块")
+
+    if re.search(r'##\s*(示例|Example|Demo)', body_text, re.IGNORECASE):
+        score += 5
+
+    # 维度4: 任务定义 (0-15分)
+    if re.search(r'##\s*(功能|Features|核心能力|Capabilities|能力)', body_text, re.IGNORECASE):
+        score += 10
+    else:
+        issues.append("NO_TASK_DEFINITION: 无任务定义section")
+
+    if re.search(r'输入|Input|参数|Parameters', body_text, re.IGNORECASE):
+        score += 3
+    if re.search(r'输出|Output|返回|Return', body_text, re.IGNORECASE):
+        score += 2
+    if not (re.search(r'输入|Input|参数', body_text, re.IGNORECASE) and
+            re.search(r'输出|Output|返回', body_text, re.IGNORECASE)):
+        issues.append("NO_INPUT_OUTPUT: 无输入输出说明")
+
+    # 维度5: 错误处理 (0-15分)
+    if re.search(r'错误|Error|异常|Exception|失败|Fail|超时|timeout', body_text, re.IGNORECASE):
+        score += 10
+    else:
+        issues.append("NO_ERROR_HANDLING: 无错误处理说明")
+
+    if re.search(r'##\s*依赖说明|##\s*Dependencies', body_text, re.IGNORECASE):
+        score += 5
+
+    # 扣分项: 真实placeholder
+    for pattern, desc in REAL_PLACEHOLDER_PATTERNS:
+        if re.search(pattern, body_text, re.IGNORECASE):
+            issues.append(f"REAL_PLACEHOLDER: 检测到{desc}")
+            score -= 15
+            break
+
+    # 评级
+    if score >= 70: grade = "A"
+    elif score >= 50: grade = "B"
+    elif score >= 30: grade = "C"
+    elif score >= 10: grade = "D"
+    else: grade = "F"
+
+    return {"issues": issues, "score": max(0, score), "grade": grade}
+
+
+# ============ 可销售性评估 (Layer 5: Sellability) ============
+# 从买家角度评估skill价值
+
+def check_sellability(body_text: str, fm: dict, functional_score: int) -> dict:
+    """可销售性评估 - 从买家角度评估skill价值
+
+    Returns:
+        dict: {score: 0-100, grade: A/B/C/D, factors: [...]}
+    """
+    body_len = len(body_text.strip())
+    score = 0
+    factors = []
+
+    # 1. 内容深度 (0-25分)
+    if body_len > 8000: score += 25; factors.append("内容充实(>8K字符)")
+    elif body_len > 4000: score += 20; factors.append("内容较充实(>4K字符)")
+    elif body_len > 2000: score += 15; factors.append("内容中等(>2K字符)")
+    else: score += 5; factors.append("内容偏少(<2K字符)")
+
+    # 2. 功能完整 (0-20分) - 基于功能质量得分
+    func_pct = functional_score * 20 // 100
+    score += func_pct
+    if functional_score >= 70: factors.append("功能完整(A级)")
+    elif functional_score >= 50: factors.append("功能较完整(B级)")
+
+    # 3. 技术深度 (0-20分)
+    code_blocks = body_text.count("```") // 2
+    if code_blocks >= 5: score += 15; factors.append(f"代码丰富({code_blocks}块)")
+    elif code_blocks >= 2: score += 10; factors.append(f"有代码示例({code_blocks}块)")
+    elif code_blocks >= 1: score += 5
+
+    if re.search(r'API|HTTP|JSON|REST|SDK', body_text):
+        score += 5; factors.append("含技术规格")
+
+    # 4. 用户体验 (0-20分)
+    if re.search(r'步骤|Step|用法|Usage', body_text, re.IGNORECASE):
+        score += 10; factors.append("有使用步骤")
+    if re.search(r'示例|Example|Demo', body_text, re.IGNORECASE):
+        score += 5; factors.append("有示例")
+    if re.search(r'错误|Error|异常', body_text, re.IGNORECASE):
+        score += 5; factors.append("有错误处理")
+
+    # 5. 专业性 (0-15分)
+    if re.search(r'##\s*依赖说明', body_text, re.IGNORECASE):
+        score += 5; factors.append("有依赖说明")
+    if fm.get('license'):
+        score += 5
+    if fm.get('tags'):
+        score += 5
+
+    # 评级
+    if score >= 70: grade = "A"
+    elif score >= 50: grade = "B"
+    elif score >= 30: grade = "C"
+    else: grade = "D"
+
+    return {"score": min(100, score), "grade": grade, "factors": factors}
+
+
+# ============ 内容真实性检查 (Layer 6: Content Authenticity) ============
+# 检测批量生成的模板填充、空段落、乱码拼接等问题
+# 这是质量审计的最后一道防线: 确保内容是真实的，而非模板生成
+
+# 通用模板段落特征 (出现即说明是批量生成的填充内容)
+TEMPLATE_PATTERNS = [
+    # 通用模板句子: "执行X操作，处理输入数据并返回结果"
+    (r'执行.{0,20}操作[,，]处理输入数据并返回结果', "GENERIC_TEMPLATE_SENTENCE"),
+    # 三个完全相同的通用段落标题
+    (r'##\s*指令解析与执行', "GENERIC_SECTION_INSTRUCTION_PARSE"),
+    (r'##\s*数据处理与转换', "GENERIC_SECTION_DATA_PROCESS"),
+    (r'##\s*结果验证与输出', "GENERIC_SECTION_RESULT_VERIFY"),
+    # "能力覆盖范围" 乱码拼接
+    (r'##\s*能力覆盖范围', "GENERIC_SECTION_COVERAGE_GARBLED"),
+    # "技术细节" 通用模板表格 (parser/processor/output)
+    (r'##\s*技术细节[\s\S]{0,200}parser[\s\S]{0,100}processor[\s\S]{0,100}output', "GENERIC_TECH_DETAIL_TABLE"),
+    # "命令参数说明" 无意义的flag列举
+    (r'##\s*命令参数说明', "GENERIC_PARAM_LISTING"),
+    # "相关说明" 作为表格内容的占位符
+    (r'\|\s*相关说明\s*\|', "PLACEHOLDER_TABLE_CELL"),
+    # "源能力映射" 通用模板
+    (r'##\s*源能力映射', "GENERIC_SOURCE_MAPPING"),
+    # "领域术语" 仅罗列单词无解释
+    (r'##\s*领域术语', "GENERIC_DOMAIN_TERMS"),
+]
+
+# 空段落检测: section header 后面紧跟空行或另一个header或文件结尾
+EMPTY_SECTION_REGEX = re.compile(
+    r'##\s+(.+?)\s*\n\s*(?:\n##\s+|\n##\s+|$)',
+    re.MULTILINE
+)
+
+# "已知限制" 空白检测 (只有破折号或空行)
+EMPTY_LIMITATIONS_REGEX = re.compile(
+    r'##\s*(?:已知限制|Limitations)\s*\n((?:[\s\-|]*\n){0,5})\s*(?:##|\Z)',
+    re.MULTILINE
+)
+
+# FAQ 空答案检测
+EMPTY_FAQ_REGEX = re.compile(
+    r'(?:###?\s*.+?\?\s*\n)\s*(?:\n(?:##|\Z))',
+    re.MULTILINE
+)
+
+# "案例展示" 占位检测 (输入: 用户请求 / 处理: 根据使用流程执行 / 输出: 处理结果)
+PLACEHOLDER_CASE_REGEX = re.compile(
+    r'输入[:：]\s*(?:用户请求|示例数据|示例内容)\s*\n.*?处理[:：]\s*(?:根据使用流程执行|示例处理)\s*\n.*?输出[:：]\s*(?:处理结果|示例输出|建议优化)',
+    re.DOTALL
+)
+
+# 截断文本检测 (单词在中间断开)
+TRUNCATED_TEXT_REGEX = re.compile(r'[a-zA-Z]{3,}[a-z][A-Z]')
+
+
+def check_content_authenticity(body_text: str) -> dict:
+    """内容真实性检查 (Layer 6) - 检测模板填充、空段落、乱码
+
+    Returns:
+        dict: {
+            issues: [...],         # 发现的问题列表
+            template_count: int,    # 模板填充数量
+            empty_sections: int,    # 空段落数量
+            authenticity_score: 0-100,  # 真实性得分
+            grade: A/B/C/D/F,
+        }
+    """
+    issues = []
+    template_count = 0
+    empty_count = 0
+
+    # 1. 检测通用模板段落
+    for pattern, code in TEMPLATE_PATTERNS:
+        matches = re.findall(pattern, body_text, re.IGNORECASE)
+        if matches:
+            template_count += len(matches)
+            issues.append(f"TEMPLATE_FILL: {code} (出现{len(matches)}次)")
+
+    # 2. 检测空段落 (header后直接跟另一个header或空行)
+    empty_sections_found = EMPTY_SECTION_REGEX.findall(body_text)
+    # 过滤掉正常的短段落(有些section确实可以短)
+    meaningful_empty = [s for s in empty_sections_found
+                        if s.strip() and len(s.strip()) < 30
+                        and s.strip() not in ('依赖说明', '概述')]
+    if meaningful_empty:
+        empty_count = len(meaningful_empty)
+        if empty_count >= 3:
+            issues.append(f"EMPTY_SECTIONS: {empty_count}个段落内容为空或过短")
+
+    # 3. 检测"已知限制"空白
+    if EMPTY_LIMITATIONS_REGEX.search(body_text):
+        empty_count += 1
+        issues.append("EMPTY_LIMITATIONS: 已知限制段落为空")
+
+    # 4. 检测FAQ空答案
+    faq_empty = EMPTY_FAQ_REGEX.findall(body_text)
+    if faq_empty:
+        empty_count += len(faq_empty)
+        if len(faq_empty) >= 2:
+            issues.append(f"EMPTY_FAQ: {len(faq_empty)}个FAQ答案为空")
+
+    # 5. 检测"案例展示"占位
+    if PLACEHOLDER_CASE_REGEX.search(body_text):
+        template_count += 1
+        issues.append("PLACEHOLDER_CASE: 案例展示为占位符内容")
+
+    # 6. 检测截断文本 (仅在代码块外的正文中检测)
+    # 移除代码块以避免camelCase变量名导致误报
+    prose_text = re.sub(r'```[\s\S]*?```', '', body_text)
+    truncated = TRUNCATED_TEXT_REGEX.findall(prose_text)
+    if truncated:
+        issues.append(f"TRUNCATED_TEXT: 检测到{len(truncated)}处可能截断的文本")
+
+    # 计算真实性得分
+    # 基础分100, 每个模板填充扣5分, 每个空段落扣3分, 截断扣10分
+    penalty = template_count * 5 + empty_count * 3 + len(truncated) * 10
+    score = max(0, 100 - penalty)
+
+    # 评级
+    if score >= 85: grade = "A"
+    elif score >= 65: grade = "B"
+    elif score >= 40: grade = "C"
+    elif score >= 20: grade = "D"
+    else: grade = "F"
+
+    return {
+        "issues": issues,
+        "template_count": template_count,
+        "empty_sections": empty_count,
+        "authenticity_score": score,
+        "grade": grade,
     }
 
 
@@ -678,6 +1028,20 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False):
     warning_issues = []
     info_issues = []
 
+    # Layer 4 & 5 统计
+    func_grades = {"A": 0, "B": 0, "C": 0, "D": 0, "F": 0}
+    sell_grades = {"A": 0, "B": 0, "C": 0, "D": 0}
+    func_issues_list = []
+    sell_grade_d = []  # D级可销售性(需优化)
+    func_score_sum = 0
+    sell_score_sum = 0
+
+    # Layer 6 统计
+    auth_grades = {"A": 0, "B": 0, "C": 0, "D": 0, "F": 0}
+    auth_issues_list = []
+    auth_score_sum = 0
+    auth_template_total = 0
+
     for result in all_results:
         sev = result["severity"]
         by_severity[sev] += 1
@@ -687,6 +1051,54 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False):
             by_source[src] = {"critical": 0, "warning": 0, "info": 0, "ok": 0}
         by_source[src][sev] += 1
 
+        # 收集功能质量统计
+        func = result.get("functional", {})
+        func_grade = func.get("grade", "F")
+        func_score = func.get("score", 0)
+        func_grades[func_grade] = func_grades.get(func_grade, 0) + 1
+        func_score_sum += func_score
+        if func.get("issues"):
+            func_issues_list.append({
+                "slug": result["slug"],
+                "source": result["source"],
+                "grade": func_grade,
+                "score": func_score,
+                "issues": func["issues"],
+            })
+
+        # 收集可销售性统计
+        sell = result.get("sellability", {})
+        sell_grade = sell.get("grade", "D")
+        sell_score = sell.get("score", 0)
+        sell_grades[sell_grade] = sell_grades.get(sell_grade, 0) + 1
+        sell_score_sum += sell_score
+        if sell_grade in ("C", "D"):
+            sell_grade_d.append({
+                "slug": result["slug"],
+                "source": result["source"],
+                "grade": sell_grade,
+                "score": sell_score,
+                "factors": sell.get("factors", []),
+            })
+
+        # 收集内容真实性统计 (Layer 6)
+        auth = result.get("authenticity", {})
+        auth_grade = auth.get("grade", "F")
+        auth_score = auth.get("score", 0)
+        auth_grades[auth_grade] = auth_grades.get(auth_grade, 0) + 1
+        auth_score_sum += auth_score
+        auth_template_total += auth.get("template_count", 0)
+        if auth.get("issues"):
+            auth_issues_list.append({
+                "slug": result["slug"],
+                "source": result["source"],
+                "grade": auth_grade,
+                "score": auth_score,
+                "template_count": auth.get("template_count", 0),
+                "empty_sections": auth.get("empty_sections", 0),
+                "issues": auth["issues"],
+            })
+
         entry = {
             "slug": result["slug"],
             "source": result["source"],
@@ -694,6 +1106,12 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False):
             "issues": result["issues"],
             "body_length": result["body_length"],
             "version": result["version"],
+            "functional_grade": func_grade,
+            "functional_score": func_score,
+            "sellability_grade": sell_grade,
+            "sellability_score": sell_score,
+            "authenticity_grade": auth_grade,
+            "authenticity_score": auth_score,
         }
 
         if sev == "critical":
@@ -704,9 +1122,14 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False):
             info_issues.append(entry)
 
     # 构建 JSON 报告
+    total = len(all_results)
+    func_avg = func_score_sum / total if total else 0
+    sell_avg = sell_score_sum / total if total else 0
+    auth_avg = auth_score_sum / total if total else 0
+
     report = {
         "audit_date": datetime.now().isoformat(),
-        "total_skills": len(all_results),
+        "total_skills": total,
         "fix_mode": fix_mode,
         "fix_all": fix_all,
         "by_severity": by_severity,
@@ -714,6 +1137,25 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False):
         "critical_issues": critical_issues,
         "warning_issues": warning_issues,
         "info_issues": info_issues,
+        "functional_quality": {
+            "grade_distribution": func_grades,
+            "avg_score": round(func_avg, 1),
+            "total_with_issues": len(func_issues_list),
+            "issues_detail": func_issues_list[:100],
+        },
+        "sellability": {
+            "grade_distribution": sell_grades,
+            "avg_score": round(sell_avg, 1),
+            "total_below_b": len(sell_grade_d),
+            "below_b_detail": sell_grade_d[:100],
+        },
+        "content_authenticity": {
+            "grade_distribution": auth_grades,
+            "avg_score": round(auth_avg, 1),
+            "total_with_issues": len(auth_issues_list),
+            "total_template_fills": auth_template_total,
+            "issues_detail": auth_issues_list[:200],
+        },
     }
 
     if fix_mode and fixes_applied:
@@ -742,10 +1184,66 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False):
     print()
     print("按来源统计:")
     for src, counts in sorted(by_source.items()):
-        total = sum(counts.values())
-        print(f"  {src:40s} 总计 {total:4d}  "
+        total_src = sum(counts.values())
+        print(f"  {src:40s} 总计 {total_src:4d}  "
               f"(critical={counts['critical']}, warning={counts['warning']}, "
               f"info={counts['info']}, ok={counts['ok']})")
+
+    # Layer 4: 功能质量统计
+    print()
+    print("─" * 60)
+    print("功能质量 (Layer 4: Functional Quality):")
+    print(f"  平均分: {func_avg:.1f} / 100")
+    print(f"  等级分布: A={func_grades['A']}  B={func_grades['B']}  "
+          f"C={func_grades['C']}  D={func_grades['D']}  F={func_grades['F']}")
+    func_a_b = func_grades['A'] + func_grades['B']
+    print(f"  A+B级 (功能合格): {func_a_b} / {total} ({func_a_b*100//total if total else 0}%)")
+    if func_issues_list:
+        print(f"  有功能问题: {len(func_issues_list)} 个 skill")
+        # 显示前10个功能问题
+        for item in func_issues_list[:10]:
+            print(f"    [{item['grade']}] {item['slug']}: {'; '.join(item['issues'][:2])}")
+        if len(func_issues_list) > 10:
+            print(f"    ... 还有 {len(func_issues_list) - 10} 个")
+
+    # Layer 5: 可销售性统计
+    print()
+    print("─" * 60)
+    print("可销售性 (Layer 5: Sellability):")
+    print(f"  平均分: {sell_avg:.1f} / 100")
+    print(f"  等级分布: A={sell_grades['A']}  B={sell_grades['B']}  "
+          f"C={sell_grades['C']}  D={sell_grades['D']}")
+    sell_a_b = sell_grades['A'] + sell_grades['B']
+    print(f"  A+B级 (可销售): {sell_a_b} / {total} ({sell_a_b*100//total if total else 0}%)")
+    if sell_grade_d:
+        print(f"  C+D级 (需优化): {len(sell_grade_d)} 个 skill")
+        for item in sell_grade_d[:10]:
+            factors_str = ', '.join(item.get('factors', [])) if item.get('factors') else '无'
+            print(f"    [{item['grade']}] {item['slug']} (分:{item['score']}): {factors_str}")
+        if len(sell_grade_d) > 10:
+            print(f"    ... 还有 {len(sell_grade_d) - 10} 个")
+
+    # Layer 6: 内容真实性统计
+    print()
+    print("─" * 60)
+    print("内容真实性 (Layer 6: Content Authenticity):")
+    print(f"  平均分: {auth_avg:.1f} / 100")
+    print(f"  等级分布: A={auth_grades['A']}  B={auth_grades['B']}  "
+          f"C={auth_grades['C']}  D={auth_grades['D']}  F={auth_grades['F']}")
+    auth_a_b = auth_grades['A'] + auth_grades['B']
+    print(f"  A+B级 (内容真实): {auth_a_b} / {total} ({auth_a_b*100//total if total else 0}%)")
+    print(f"  模板填充总数: {auth_template_total}")
+    print(f"  有问题skill: {len(auth_issues_list)} 个")
+    if auth_issues_list:
+        # 显示C/D/F级的问题skill (最严重的)
+        severe_auth = [item for item in auth_issues_list if item['grade'] in ('C', 'D', 'F')]
+        if severe_auth:
+            print(f"  C+D+F级 (严重模板填充): {len(severe_auth)} 个")
+            for item in severe_auth[:20]:
+                issues_str = '; '.join(item['issues'][:2])
+                print(f"    [{item['grade']}] {item['slug']} (分:{item['score']}, 模板:{item['template_count']}): {issues_str}")
+            if len(severe_auth) > 20:
+                print(f"    ... 还有 {len(severe_auth) - 20} 个")
 
     if critical_issues:
         print()
@@ -778,9 +1276,32 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False):
     print()
     print(f"报告已保存: {REPORT_PATH}")
 
-    # 返回是否通过审计（无 critical 问题）
+    # 返回是否通过审计（无 critical 问题 + 功能质量无F级）
     passed = by_severity["critical"] == 0
-    print(f"\n审计结果: {'通过' if passed else '未通过 (存在 critical 级别问题)'}")
+    func_f = func_grades.get("F", 0)
+    sell_d = sell_grades.get("D", 0)
+
+    if passed:
+        verdict_parts = ["格式通过"]
+        if func_f == 0:
+            verdict_parts.append("功能无F级")
+        else:
+            verdict_parts.append(f"功能F级:{func_f}个")
+        if sell_d == 0:
+            verdict_parts.append("可销售性无D级")
+        else:
+            verdict_parts.append(f"可销售性D级:{sell_d}个")
+        auth_f = auth_grades.get("F", 0)
+        auth_cd = auth_grades.get("C", 0) + auth_grades.get("D", 0)
+        if auth_f == 0 and auth_cd == 0:
+            verdict_parts.append("内容真实无C/D/F")
+        elif auth_f > 0:
+            verdict_parts.append(f"内容F级:{auth_f}个")
+        else:
+            verdict_parts.append(f"内容C/D级:{auth_cd}个")
+        print(f"\n审计结果: {'通过' if passed else '未通过'} ({', '.join(verdict_parts)})")
+    else:
+        print(f"\n审计结果: 未通过 (存在 critical 级别问题)")
     return passed
 
 

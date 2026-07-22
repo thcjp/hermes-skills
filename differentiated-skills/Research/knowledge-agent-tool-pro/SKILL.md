@@ -327,10 +327,7 @@ know pro graph export --format dot > knowledge.dot
 dot -Tsvg knowledge.dot -o knowledge.svg
 ```
 
-### 命令参数说明
-
-- `-Tsvg`: 命令参数,用于指定操作选项
-
+#
 ## 配置示例
 
 ### 企业级配置文件

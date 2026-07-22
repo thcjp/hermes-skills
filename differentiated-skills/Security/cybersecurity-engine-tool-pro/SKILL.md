@@ -424,12 +424,7 @@ bash security-check.sh --full --compliance SOC2 --report html
 python3 security_score.py --dimensions all --output report.html
 ```
 
-### 命令参数说明
-
-- `-A10深度检查`: 命令参数,用于指定操作选项
-- `-E`: 命令参数,用于指定操作选项
-- `-Z`: 命令参数,用于指定操作选项
-
+#
 ## 配置示例
 ### 安全指标看板
 ```yaml

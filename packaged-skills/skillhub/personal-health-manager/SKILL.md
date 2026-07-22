@@ -68,10 +68,7 @@ Track and record various health metrics 基于 user profile:
 ### 3. Gender-Specific Health
 
 **处理**: 按照skill规范执行Health Data Recording 📊操作,遵循单一意图原则。
-**输出**: 返回Health Data Recording 📊的执行结果,包含操作状态和输出数据。
-
-- 执行`Gender-Specific Health`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回Health Data Recording 📊的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
 - 参考`Gender-Specific Health`相关配置参数进行设置
 ### 4. Medication Management 💊
 **Features:**
@@ -275,14 +272,9 @@ Track and record various health metrics 基于 user profile:
 ### 8. Travel Health Preparation ✈️
 
 **输入**: 用户提供Nutrition Advice 🥗所需的指令和必要参数。
-**输出**: 返回Nutrition Advice 🥗的执行结果,包含操作状态和输出数据。
-
-- 执行`Travel Health Preparation ✈️`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回Nutrition Advice 🥗的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
 - 参考`Travel Health Preparation ✈️`相关配置参数进行设置
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: Personal、wellness、assistant、users、want、get、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数、据处理、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+#
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -302,7 +294,6 @@ Track and record various health metrics 基于 user profile:
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 是 | 相关说明 |
 | content | string | 否 | 相关说明, 默认: 默认值 |
 | content | string | 否 | 相关说明, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -361,14 +352,6 @@ Track and record various health metrics 基于 user profile:
 export API_KEY="your_api_key_here"
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-## 案例展示
-
-### 示例1：基础用法
-```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
-```
 
 ## 常见问题
 
@@ -391,8 +374,3 @@ A:
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
-## 已知限制
-
-- 
-- 
-- 

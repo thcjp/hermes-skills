@@ -328,10 +328,7 @@ python3 scripts/a11y_audit.py src/
 npm run storybook
 ```
 
-### 命令参数说明
-
-- `-fA-F`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 多平台令牌导出

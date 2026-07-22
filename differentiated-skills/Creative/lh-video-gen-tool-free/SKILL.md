@@ -136,18 +136,7 @@ export CHROME_PATH="/path/to/chrome"
 ```markdown
 ---
 
-### 命令参数说明
-
-- `-CN-XiaoxiaoNeural`: 命令参数,用于指定操作选项
-- `-CN-XiaoyiNeural`: 命令参数,用于指定操作选项
-- `-CN-YunyangNeural`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-CN-XiaoxiaoNeural`: 命令参数,用于指定操作选项
-- `-CN-XiaoyiNeural`: 命令参数,用于指定操作选项
-- `-CN-YunyangNeural`: 命令参数,用于指定操作选项
-
+#
 ## 开场
 **画面**:欢迎页面,显示标题
 **口播**:大家好,欢迎来到今天的分享。
@@ -174,12 +163,7 @@ export CHROME_PATH="/path/to/chrome"
 python3 generate.py script.md -o output.mp4
 ```
 
-### 命令参数说明
-
-- `-CN-XiaoxiaoNeural`: 命令参数,用于指定操作选项
-- `-CN-XiaoyiNeural`: 命令参数,用于指定操作选项
-- `-CN-YunyangNeural`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 命令行参数

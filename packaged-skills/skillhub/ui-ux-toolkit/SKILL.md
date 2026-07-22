@@ -49,10 +49,7 @@ homepage: "https://skillhub.cn"
 | `prompt` | AI提示词与CSS关键词 | (风格名称) |
 
 **输入**: 用户提供全域设计数据库所需的指令和必要参数。
-**输出**: 返回全域设计数据库的执行结果,包含操作状态和输出数据。
-
-- 执行`批量搜索与多格式输出`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回全域设计数据库的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
 - 参考`批量搜索与多格式输出`相关配置参数进行设置
 ### 2. 全技术栈支持
 | 技术栈 | 聚焦领域 |
@@ -118,14 +115,9 @@ python3 scripts/search.py "fintech crypto" --design-system -f markdown
 python3 scripts/search.py "glassmorphism" --domain style -n 5
 python3 scripts/search.py "modern elegant" --domain typography -n 5
 python3 scripts/search.py "fintech" --domain color -n 5
-```
-
-- 执行`批量搜索与多格式输出`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+```- 验证执行结果，确认输出符合预期格式
 - 参考`批量搜索与多格式输出`相关配置参数进行设置
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: 多技术栈、面向团队企业的专、设计决策引擎、面向设计团队和企、业项目的专业级、涵盖全部、种技术栈、批量搜索等高级能、核心能力、个设计域搜索、种技术栈实现指引。这些能力在上述核心功能中均有对应处理逻辑。
+#
 ## 适用场景
 
 ### 场景一:企业级多页面应用设计系统管理
@@ -228,20 +220,11 @@ python3 scripts/search.py "hero testimonial pricing" --domain landing
 python3 scripts/search.py "layout responsive form" --stack html-tailwind
 ```
 
-### 命令参数说明
-
-1. `-pip`: 命令参数,用于指定操作选项
-2. `-time`: 命令参数,用于指定操作选项
-3. `--stack`: 命令参数,用于指定操作选项
-
-**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
-
-
+#
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 是 | 相关说明 |
 | content | string | 否 | 相关说明, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -401,8 +384,3 @@ winget install Python.Python.3.12
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
-## 已知限制
-
-- 
-- 
-- 

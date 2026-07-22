@@ -61,20 +61,14 @@ node scripts/atlas-api.mjs catalog
 
 ```bash
 node scripts/atlas-api.mjs detail --category "Clusters" --endpoint "Create Cluster"
-```
-
-- 执行`端点详情获取`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+```- 验证执行结果，确认输出符合预期格式
 - 参考`端点详情获取`相关配置参数进行设置
 ### 3. Schema定义查询
 查看API端点的请求和响应Schema定义，了解参数类型、是否必填和默认值。
 
 ```bash
 node scripts/atlas-api.mjs detail --category "Database Users" --endpoint "Create Database User" --schema
-```
-
-- 执行`Schema定义查询`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+```- 验证执行结果，确认输出符合预期格式
 - 参考`Schema定义查询`相关配置参数进行设置
 ### 4. 实时API调用
 通过 `atlas-call.mjs` 直接调用API端点，支持 `--dry-run` 预检和 `--yes` 自动确认。
@@ -109,26 +103,7 @@ export ATLAS_CLIENT_SECRET="your_client_secret"
 **输入**: 用户提供凭证管理所需的指令和必要参数。
 **处理**: 按照skill规范执行凭证管理操作,遵循单一意图原则。
 
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: 浏览和调用文档数、据库云管理平台、支持目录浏览、端点详情和实时调、定义查询和实时、分类的完整、预检和自动确认模、适用于独立开发者、企业团队和自动化、工作流场景、不适用于直接数据、库查询操作。这些能力在上述核心功能中均有对应处理逻辑。
-### 源能力映射
-本skill覆盖源skill的以下能力点:
-
-| 源能力点 | 支持状态 | 实现方式 |
-|:---------|:---------|:---------|
-| Projects / Organizations | 支持 | 通过核心功能实现对应能力 |
-
-**输入**: 用户提供源能力映射所需的指令和必要参数。
-**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
-**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
-### 领域术语
-本skill涉及以下领域术语: `requires`, `safety`, `openapi`, `list`, `print`, `operation`, `skip`, `serverless`, `protocol`, `patch`, `require`, `environment`, `democluster`, `confirm`, `configurations`
-
-**输入**: 用户提供领域术语所需的指令和必要参数。
-**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
-**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
-
+#
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求
@@ -136,43 +111,7 @@ export ATLAS_CLIENT_SECRET="your_client_secret"
 3. **执行处理**: Agent按照核心能力章节的指令执行任务
 4. **结果验证**: 检查输出结果是否符合预期，参考错误处理章节处理异常
 
-### 命令参数说明
-
-- `-Demand`: 命令参数,用于指定操作选项
-- `--category`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-Demand`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-Demand`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-Demand`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-Demand`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-Demand`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-Demand`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-Demand`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-Demand`: 命令参数,用于指定操作选项
-
+#
 ## 真实示例
 
 ### 示例1：列出所有API分类

@@ -161,12 +161,7 @@ curl -X POST https://api.remix.gg/v1/agents/games \
   -H "X-Key-Id: $REMIX_KEY_ID"
 ```
 
-### 命令参数说明
-
-- `-X`: 命令参数,用于指定操作选项
-- `-Key-Id`: 命令参数,用于指定操作选项
-- `-H`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 权限策略模板

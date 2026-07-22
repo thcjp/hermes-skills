@@ -153,13 +153,7 @@ curl -X POST -H "X-API-Key: $HEALTH_ADMIN_KEY" \
   "https://api.health-pro.local/v1/devices/connect"
 ```
 
-### 命令参数说明
-
-- `-X`: 命令参数,用于指定操作选项
-- `-API-Key`: 命令参数,用于指定操作选项
-- `-H`: 命令参数,用于指定操作选项
-- `-Type`: 命令参数,用于指定操作选项
-
+#
 ## 配置示例
 ### 企业级配置
 ```yaml

@@ -367,10 +367,7 @@ browser batch run --file tasks.yaml --concurrency 10
 browser batch status
 ```
 
-### 命令参数说明
-
-- `-X`: 命令参数,用于指定操作选项
-
+#
 ## 配置示例
 
 ### 企业级配置文件

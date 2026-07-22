@@ -204,13 +204,7 @@ python3 setup_notifications.py --telegram --email
 python3 start_scheduler.py --config config.json
 ```
 
-### 命令参数说明
-
-- `-Crypto`: 命令参数,用于指定操作选项
-- `-Trending`: 命令参数,用于指定操作选项
-- `-Following`: 命令参数,用于指定操作选项
-- `-ForYou`: 命令参数,用于指定操作选项
-
+#
 ## 配置示例
 ### PRO版企业级配置
 ```json

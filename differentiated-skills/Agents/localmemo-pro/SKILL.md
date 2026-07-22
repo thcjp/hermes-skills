@@ -180,10 +180,7 @@ node bin/memory.js backup ./backups/memory-$(date +%Y%m%d).zip  # 导出备份
 node bin/memory.js cache-clean --older-than 30d  # 清理 embedding 缓存
 ```
 
-### 命令参数说明
-
-- `-fsSL`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 示例

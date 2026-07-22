@@ -78,10 +78,7 @@ gateway-manager render --config gateway.yaml --target nginx --output nginx.conf
 gateway-manager render --config gateway.yaml --target envoy --output envoy.yaml
 ```
 
-### 命令参数说明
-
-- `-RateLimit-Remaining头`: 命令参数,用于指定操作选项
-
+#
 ## 核心能力
 ### 功能1：声明式路由配置
 

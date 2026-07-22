@@ -109,10 +109,7 @@ SET user:profile:123 '{"name":"Alice Updated"}' EX 3600
 DEL user:profile:123
 ```
 
-### 命令参数说明
-
-- `-E`: 命令参数,用于指定操作选项
-
+#
 ## 核心能力
 ### 功能1：过期策略（防止内存泄漏）
 

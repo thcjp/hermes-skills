@@ -234,12 +234,7 @@ bash scripts/merge-check-trend.sh owner/repo --months 6 --format csv > trend.csv
 bash scripts/merge-check-trend.sh owner/repo --months 6 --format chart > trend.html
 ```
 
-### 命令参数说明
-
-- `-fsSL`: 命令参数,用于指定操作选项
-- `-W`: 命令参数,用于指定操作选项
-- `-Risk`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 团队规则配置

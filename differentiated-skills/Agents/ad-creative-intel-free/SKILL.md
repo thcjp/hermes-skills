@@ -70,13 +70,7 @@ curl -s "https://api.ad-creative-intel.com/api/data/content-detail?contentId=XXX
   -H "X-API-Key: ${ADC_INTEL_API_KEY}"
 ```
 
-### 命令参数说明
-
-- `-API-Key`: 命令参数,用于指定操作选项
-- `-H`: 命令参数,用于指定操作选项
-- `-Type`: 命令参数,用于指定操作选项
-- `-X`: 命令参数,用于指定操作选项
-
+#
 ## 核心能力
 
 ### 1. 广告创意搜索

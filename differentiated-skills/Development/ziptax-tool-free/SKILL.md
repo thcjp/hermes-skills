@@ -132,11 +132,7 @@ curl -s "https://api.zip-tax.com/request/v60?postalcode=92618" \
 bash scripts/lookup.sh --postalcode 92618
 ```
 
-### 命令参数说明
-
-- `-API-KEY`: 命令参数,用于指定操作选项
-- `-H`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### CLI 封装脚本(lookup.sh)

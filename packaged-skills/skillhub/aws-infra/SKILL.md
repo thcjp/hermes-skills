@@ -101,17 +101,7 @@ export API_KEY="your_api_key_here"
 - **CloudFormation变更集**: 查看CloudFormation堆栈的待执行变更
   `aws cloudformation describe-change-set --change-set-name CHANGESET_NAME --stack-name STACK_NAME`
 
-### 技术细节
-
-| 组件 | 说明 | 关键参数 |
-|:-----|:-----|:---------|
-| `parser` | 解析输入指令 | `format`, `encoding` |
-| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
-| `output` | 格式化输出结果 | `format`, `encoding` |
-
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: CLI、执行只读基础设施、覆盖实例清单、变更追踪五大场景、基础设施只读检查、read、only、帮助开发者和管理、员快速了解云资源、覆盖五大场景、实例健康检查与、用户与安全组审计、Explorer、默认只读模式、所有变更操作需显、式确认并使用、dry、适用于日常运维、成本优化和故障排、查场景。这些能力在上述核心功能中均有对应处理逻辑。
+#
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |
@@ -172,30 +162,7 @@ aws configure set region us-west-2
 3. 建议使用 `--dry-run` 参数预检
 4. 等待用户显式确认后才执行
 
-### 命令参数说明
-
-- `--expression`: 命令参数,用于指定操作选项
-- `--configuration-aggregator-name`: 命令参数,用于指定操作选项
-- `-east-1c`: 命令参数,用于指定操作选项
-- `--token-code`: 命令参数,用于指定操作选项
-- `-east-1`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-east-1b`: 命令参数,用于指定操作选项
-- `-west-1`: 命令参数,用于指定操作选项
-- `-aggregate-resource-config`: 命令参数,用于指定操作选项
-- `--serial-number`: 命令参数,用于指定操作选项
-- `-state-name`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `--filters`: 命令参数,用于指定操作选项
-- `-west-2`: 命令参数,用于指定操作选项
-- `-east-1a`: 命令参数,用于指定操作选项
-- `-northeast-1`: 命令参数,用于指定操作选项
-- `-caller-identity`: 命令参数,用于指定操作选项
-
+#
 ## 案例展示
 
 ### 案例1: 日常运维巡检 (EC2健康检查)

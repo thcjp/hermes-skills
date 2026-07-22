@@ -21,73 +21,7 @@ homepage: "https://skillhub.cn"
 
 - Generate professional HTML and PDF presentations from markdown content,
   URLs, or topics
-### 指令解析与执行
-
-解析用户指令,执行核心操作并返回处理结果。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`指令解析与执行`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`指令解析与执行`相关配置参数进行设置
-### 数据处理与转换
-
-处理输入数据,执行转换操作并输出结果。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`数据处理与转换`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`数据处理与转换`相关配置参数进行设置
-### 结果验证与输出
-
-验证处理结果的正确性,格式化输出并返回给用户。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`结果验证与输出`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`结果验证与输出`相关配置参数进行设置
-### 技术细节
-
-| 组件 | 说明 | 关键参数 |
-|:-----|:-----|:---------|
-| `parser` | 解析输入指令 | `format`, `encoding` |
-| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
-| `output` | 格式化输出结果 | `format`, `encoding` |
-
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: Creates、Use、需要生成营销文案、写作内容、标题优化、内容创作时使用、不适用于纯技术文、档撰写、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
-### 源能力映射
-本skill覆盖源skill的以下能力点:
-
-| 源能力点 | 支持状态 | 实现方式 |
-|:---------|:---------|:---------|
-| Are visual elements (shapes, gradients) similar? | 支持 | 通过核心功能实现对应能力 |
-| Short sentences, not paragraphs | 支持 | 通过核心功能实现对应能力 |
-| Typography style: Font weight, size hierarchy, letter spacing feel | 支持 | 通过核心功能实现对应能力 |
-| Any specific points to emphasize? | 支持 | 通过核心功能实现对应能力 |
-| Visual elements: Shapes, gradients, borders, shadows, decorative elements | 支持 | 通过核心功能实现对应能力 |
-| Include navigation: arrow keys to move between slides, slide counter | 支持 | 通过核心功能实现对应能力 |
-| Closing slides | 支持 | 通过核心功能实现对应能力 |
-| Slides should be stacked vertically, with JS handling viewport snapping | 支持 | 通过核心功能实现对应能力 |
-| Title/hero slides | 支持 | 通过核心功能实现对应能力 |
-| Each slide is a full-viewport section (100vw x 100vh) | 支持 | 通过核心功能实现对应能力 |
-
-**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
-### 领域术语
-本skill涉及以下领域术语: `presentation/content.md`, `please`, `sorts`, `arguments`, `outputs`, `google`, `screenshot`, `edit`, `compare`, `presentation/images/slide_3_illustration.png`, `regular`, `bullet`, `fonts`, `consider`, `minimal`
-
-**输入**: 用户提供领域术语所需的指令和必要参数。
-**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
-
+#
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -107,7 +41,6 @@ homepage: "https://skillhub.cn"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 是 | 相关说明 |
 | content | string | 否 | 相关说明, 默认: 默认值 |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -197,15 +130,6 @@ homepage: "https://skillhub.cn"
 export API_KEY="your_api_key_here"
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-## 案例展示
-
-### 示例1：基础用法
-
-```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
-```
 
 ## 常见问题
 
@@ -228,8 +152,3 @@ A:
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
-## 已知限制
-
-- 
-- 
-- 

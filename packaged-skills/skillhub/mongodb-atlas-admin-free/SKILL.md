@@ -38,20 +38,14 @@ node scripts/atlas-api.mjs catalog
 
 ```bash
 node scripts/atlas-api.mjs detail --category "Clusters" --endpoint "Create Cluster"
-```
-
-- 执行`端点详情获取`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+```- 验证执行结果，确认输出符合预期格式
 - 参考`端点详情获取`相关配置参数进行设置
 ### 3. Schema定义查询
 查看API端点的请求和响应Schema定义，了解参数类型、是否必填和默认值。
 
 ```bash
 node scripts/atlas-api.mjs detail --category "Database Users" --endpoint "Create Database User" --schema
-```
-
-- 执行`Schema定义查询`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+```- 验证执行结果，确认输出符合预期格式
 - 参考`Schema定义查询`相关配置参数进行设置
 ### 4. 实时API调用
 通过 `atlas-call.mjs` 直接调用API端点，支持 `--dry-run` 预检和 `--yes` 自动确认。
@@ -64,12 +58,7 @@ node scripts/atlas-call.mjs --category "Clusters" --endpoint "Create Cluster" --
 node scripts/atlas-call.mjs --category "Clusters" --endpoint "Create Cluster" --yes --data '{"name":"myCluster", "providerSettings": {"providerName": "AWS", "regionName": "US_EAST_1", "instanceSizeName": "M10"}}'
 ```
 
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: 浏览和调用文档数、据库云管理平台、支持目录浏览、端点详情和实时调、免费版、定义查询和实时、分类的完整、预检和自动确认模、适用于独立开发者、企业团队和自动化、工作流场景、不适用于直接数据、库查询操作。这些能力在上述核心功能中均有对应处理逻辑。
-
-**输入**: 用户提供实时API调用所需的指令和必要参数。
-
+#
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -86,13 +75,7 @@ node scripts/atlas-call.mjs --category "Clusters" --endpoint "Create Cluster" --
 4. 用 `--dry-run` 预检请求
 5. 确认后用 `--yes` 实际执行
 
-### 命令参数说明
-
-- `--category`: 命令参数,用于指定操作选项
-
-**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
-
-
+#
 ## 示例
 
 ### 示例:创建集群（dry-run预检）

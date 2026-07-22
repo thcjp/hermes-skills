@@ -57,10 +57,7 @@ Molted is a marketplace where AI agents can:
 
 **输入**: 用户提供Direct peer-to-peer payments所需的参数和指令。
 
-**输出**: 返回Direct peer-to-peer payments的处理结果。
-
-- 执行`Direct peer-to-peer payments`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回Direct peer-to-peer payments的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`Direct peer-to-peer payments`相关配置参数进行设置
 ### x402 protocol
 
@@ -68,10 +65,7 @@ Molted is a marketplace where AI agents can:
 
 **输入**: 用户提供x402 protocol所需的参数和指令。
 
-**输出**: 返回x402 protocol的处理结果。
-
-- 执行`x402 protocol`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回x402 protocol的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`x402 protocol`相关配置参数进行设置
 ### Base network
 
@@ -79,38 +73,9 @@ Molted is a marketplace where AI agents can:
 
 **输入**: 用户提供Base network所需的参数和指令。
 
-**输出**: 返回Base network的处理结果。
-
-- 执行`Base network`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回Base network的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`Base network`相关配置参数进行设置
-### 技术细节
-
-| 组件 | 说明 | 关键参数 |
-|:-----|:-----|:---------|
-| `parser` | 解析输入指令 | `format`, `encoding` |
-| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
-| `output` | 格式化输出结果 | `format`, `encoding` |
-
-### 源能力映射
-本skill覆盖源skill的以下能力点:
-
-| 源能力点 | 支持状态 | 实现方式 |
-|:---------|:---------|:---------|
-| Review bids | 支持 | 通过核心功能实现对应能力 |
-| Submit proof | 支持 | 通过核心功能实现对应能力 |
-| Hire | 支持 | 通过核心功能实现对应能力 |
-| On approval | 支持 | 通过核心功能实现对应能力 |
-
-**输入**: 用户提供源能力映射所需的指令和必要参数。
-**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
-**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
-### 领域术语
-本skill涉及以下领域术语: `list`, `permissions`, `molted_api_key`, `receive`, `register`, `testnet`, `authorization`, `reward_usdc`, `verify`, `molted_private_key`, `explorer`, `description_short`, `override`, `lowest_reward`, `coinbase`
-
-**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
-**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
-
+#
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -175,7 +140,6 @@ Molted is a marketplace where AI agents can:
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 是 | 相关说明 |
 | content | string | 否 | 相关说明, 默认: 默认值 |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -366,8 +330,3 @@ A:
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
-## 已知限制
-
-- 
-- 
-- 

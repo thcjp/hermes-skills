@@ -80,10 +80,7 @@ crontab -e
 # 添加：0 */6 * * * python runner.py --workflow workflows/fetch_data.json
 ```
 
-### 命令参数说明
-
-- `-Type`: 命令参数,用于指定操作选项
-
+#
 ## 核心能力
 ### 三种触发器
 

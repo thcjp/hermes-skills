@@ -122,32 +122,7 @@ export API_KEY="your_api_key_here"
 **处理**: 按照skill规范执行主题元素对齐操作,遵循单一意图原则。
 **输出**: 返回主题元素对齐的执行结果,包含操作状态和输出数据。
 
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: 捕捉作者独特写作、从研究材料到发布、笔记平台的全流程、博客创作、基于作者已发表作、品校准语气、产出直白、对话式且扎根实战、经验的博客文章、覆盖信息收集、审查迭代、笔记平台发布与示、例库维护全流程、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
-### 源能力映射
-本skill覆盖源skill的以下能力点:
-
-| 源能力点 | 支持状态 | 实现方式 |
-|:---------|:---------|:---------|
-| End with reflection, call-to-action, or forward-looking statement | 支持 | 通过核心功能实现对应能力 |
-| Phase 4: Publish to Notion (REQUIRED) | 支持 | 通过核心功能实现对应能力 |
-| Phase 3: Review and Iterate | 支持 | 通过核心功能实现对应能力 |
-| Any specific angle or thesis to explore | 支持 | 通过核心功能实现对应能力 |
-| Topic or subject matter | 支持 | 通过核心功能实现对应能力 |
-| Incorporate Research | 支持 | 通过核心功能实现对应能力 |
-| Phase 1: Gather Information | 支持 | 通过核心功能实现对应能力 |
-| Start with a strong opening statement establishing the thesis | 支持 | 通过核心功能实现对应能力 |
-| Include relevant personal anecdotes or professional experience if applicable | 支持 | 通过核心功能实现对应能力 |
-| Keep paragraphs short (2-4 sentences) | 支持 | 通过核心功能实现对应能力 |
-
-**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
-### 领域术语
-本skill涉及以下领域术语: `tone`, `voice`, `reflective`, `profile`, `drafting`, `human`, `trigger`, `responsibilities`, `不适用于纯技术文`, `conversational`, `post`, `criteria`, `honest`, `comfortable`, `authentic`
-
-**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
-**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
-
+#
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

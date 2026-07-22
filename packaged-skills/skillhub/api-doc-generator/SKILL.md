@@ -90,7 +90,7 @@ api-doc diff v1.2.0 v1.3.0
 
 DIFF: v1.2.0 → v1.3.0
 =====================
-待补充   POST /api/v1/orders/search - 订单搜索接口
+[NEW]     POST /api/v1/orders/search - 订单搜索接口
 [MODIFIED] GET /api/v1/users/{id}
   - response.data.phone: type string → string|null (允许空)
   - response.data.avatar: NEW FIELD
@@ -98,10 +98,7 @@ DIFF: v1.2.0 → v1.3.0
 [REMOVED]  DELETE /api/v1/users/batch - 批量删除接口已下线
 ```
 
-**输出**: 返回功能3：文档版本管理与diff的执行结果,包含操作状态和输出数据。
-
-- 执行`功能3：文档版本管理与diff`操作,处理输入数据并返回结果
-- 验证执行结果,确认输出符合预期格式
+**输出**: 返回功能3：文档版本管理与diff的执行结果,包含操作状态和输出数据。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `功能3：文档版本管理与diff` 选项
 
@@ -156,9 +153,7 @@ api-doc generate --spec ./openapi.yaml --bilingual --output ./docs/
 **输入**: 用户提供功能8：多语言文档所需的指令和必要参数。
 **处理**: 按照skill规范执行功能8：多语言文档操作,遵循单一意图原则。
 
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: 企业级、文档平台、含代码扫描、联动与团队评审、文档生成器专业版、是面向研发团队的、全功能、在免费版的自然语、Markdown、双产出基础上、解锁代码仓库自动、团队评审协作、多语言文档八大高、级能力、覆盖从代码到文档、再到评审的完整闭。这些能力在上述核心功能中均有对应处理逻辑。
+#
 ## 适用场景
 
 ### 场景一：企业级API文档治理（技术负责人角色）
@@ -252,31 +247,11 @@ api-doc mock start --spec ./openapi.yaml --port 8080
 api-doc collab enable --reviewers @zhang,@li
 ```
 
-### 命令参数说明
-
-1. `-repo`: 命令参数,用于指定操作选项
-2. `--from`: 命令参数,用于指定操作选项
-3. `--lang`: 命令参数,用于指定操作选项
-4. `--remote`: 命令参数,用于指定操作选项
-5. `-git-server`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-docs`: 命令参数,用于指定操作选项
-- `--reviewers`: 命令参数,用于指定操作选项
-- `--path`: 命令参数,用于指定操作选项
-- `-report`: 命令参数,用于指定操作选项
-- `--report`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `--message`: 命令参数,用于指定操作选项
-
+#
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 是 | 相关说明 |
 | content | string | 否 | 相关说明, 默认: 默认值 |
 | content | string | 否 | 相关说明, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |

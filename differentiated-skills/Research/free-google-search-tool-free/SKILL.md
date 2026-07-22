@@ -218,10 +218,7 @@ cat results.json | python3 -m json.tool | head -50
 python3 export.py --input results.json --format markdown --output results.md
 ```
 
-### 命令参数说明
-
-- `-CN`: 命令参数,用于指定操作选项
-
+#
 ## 配置示例
 ### 基础配置
 ```python

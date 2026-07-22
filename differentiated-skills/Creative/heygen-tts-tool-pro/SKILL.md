@@ -202,13 +202,7 @@ export HEYGEN_API_KEY="your-api-key"
 python batch_generator.py --input texts.json --voice YOUR_VOICE_ID --output ./audio
 ```
 
-### 命令参数说明
-
-- `-X`: 命令参数,用于指定操作选项
-- `-H`: 命令参数,用于指定操作选项
-- `-Type`: 命令参数,用于指定操作选项
-- `-BR`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 ### 批量任务配置
 ```yaml

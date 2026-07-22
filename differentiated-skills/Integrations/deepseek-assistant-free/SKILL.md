@@ -151,11 +151,7 @@ async function chat(message) {
 chat(process.argv[2]).then(console.log).catch(console.error);
 ```
 
-### 命令参数说明
-
-- `-Type`: 命令参数,用于指定操作选项
-- `-H`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 多轮对话模板

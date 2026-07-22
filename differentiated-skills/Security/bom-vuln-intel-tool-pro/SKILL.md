@@ -430,12 +430,7 @@ python3 multi_vuln_check.py --package lodash --version 4.17.20
 bash batch_scan.sh . --output batch-report.json
 ```
 
-### 命令参数说明
-
-- `-X`: 命令参数,用于指定操作选项
-- `-H`: 命令参数,用于指定操作选项
-- `-Type`: 命令参数,用于指定操作选项
-
+#
 ## 配置示例
 ### 支持的生态系统(专业版)
 | 生态系统 | 包管理器 | SBOM生成 | 漏洞查询 | 工具 |

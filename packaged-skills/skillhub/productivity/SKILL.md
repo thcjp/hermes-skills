@@ -73,31 +73,7 @@ tags:
 **输入**: 用户提供习惯追踪与摩擦分析所需的指令和必要参数。
 **输出**: 返回习惯追踪与摩擦分析的执行结果,包含操作状态和输出数据。
 
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: 集成目标、回顾的完整生产力、管理系统、完整的生产力操作、覆盖目标设定、项目管理、任务执行、时间规划、定期回顾、精力管理、专注保护、承诺跟踪等全生命、核心能力涵盖目标、周月回顾系统、情境适配框架、专注会话管理、承诺与委派跟踪、所有数据存储在、本地目录、无网络请求、适用于独立开发者、企业管理者、自由职业者、创业者等多种角色、支持倦怠、ADHD、远程办公、育儿等特殊情境的、个性化调整。这些能力在上述核心功能中均有对应处理逻辑。
-### 源能力映射
-本skill覆盖源skill的以下能力点:
-
-| 源能力点 | 支持状态 | 实现方式 |
-|:---------|:---------|:---------|
-| Give the smallest useful intervention first. | 支持 | 通过核心功能实现对应能力 |
-| Common mistakes | 支持 | 通过核心功能实现对应能力 |
-| Start With the Real Bottleneck | 支持 | 通过核心功能实现对应能力 |
-| A sustainable system beats an idealized one that collapses after two days. | 支持 | 通过核心功能实现对应能力 |
-| Guilt and recovery context | 支持 | 通过核心功能实现对应能力 |
-| Save Only Explicitly Approved Preferences | 支持 | 通过核心功能实现对应能力 |
-| Adapt the System to Real Constraints | 支持 | 通过核心功能实现对应能力 |
-
-**输入**: 用户提供源能力映射所需的指令和必要参数。
-**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
-### 领域术语
-本skill涉及以下领域术语: `deliberately`, `ones`, `treating`, `route`, `memory-template.md`, `parked`, `preserving`, `energy`, `remember`, `situations/habits.md`, `replanning`, `triage`, `sets`, `任务规划`, `handed`
-
-**输入**: 用户提供领域术语所需的指令和必要参数。
-**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
-**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
-
+#
 ## 习惯：每日复盘15分钟
 - 目标频率：每日
 - 当前连续：12天

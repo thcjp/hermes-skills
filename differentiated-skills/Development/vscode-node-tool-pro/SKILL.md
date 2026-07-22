@@ -192,13 +192,7 @@ bash scripts/auto-debug.sh src/handler.ts 42
 bash scripts/run-tests.sh "UserService"
 ```
 
-### 命令参数说明
-
-- `--invokeTimeoutMs`: 命令参数,用于指定操作选项
-- `--invokeParamsJson`: 命令参数,用于指定操作选项
-- `--timeoutMs`: 命令参数,用于指定操作选项
-- `--invokeCommand`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 团队网关安全策略

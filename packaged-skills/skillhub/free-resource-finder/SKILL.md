@@ -200,9 +200,7 @@ free-finder monitor report --format html --output quality.html
 - 限速触发频率
 - 错误类型分布
 
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: 全功能免费、资源管理工具、含自动、成本分析与质量监、适合长期无人值守、免费资源发现器、专业版、是企业级免费、在免费版基础上扩、展自动、模型质量监控等高、级能力、核心能力、详细记录每次调用、生成用量报告。这些能力在上述核心功能中均有对应处理逻辑。
+#
 ## 适用场景
 
 ### 场景1 -7x24小时无人值守AI服务
@@ -276,34 +274,11 @@ free-finder monitor report --format html --output quality.html
 11. **分类**: MD+EXEC+CLI+DAEMON(Markdown指令+命令行工具+后台守护进程)
 12. **说明**: 基于Markdown的AI Skill,,高级功能需要free-finder CLI与守护进程
 
-### 命令参数说明
-
-13. `-or-v1-key3`: 命令参数,用于指定操作选项
-14. `--days`: 命令参数,用于指定操作选项
-15. `-coder`: 命令参数,用于指定操作选项
-16. `-or-v1-key1`: 命令参数,用于指定操作选项
-17. `--from`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `--provider`: 命令参数,用于指定操作选项
-- `--status`: 命令参数,用于指定操作选项
-- `-llama`: 命令参数,用于指定操作选项
-- `--stop`: 命令参数,用于指定操作选项
-- `--once`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `--group-by`: 命令参数,用于指定操作选项
-- `-or-v1-key2`: 命令参数,用于指定操作选项
-- `--today`: 命令参数,用于指定操作选项
-- `-instruct`: 命令参数,用于指定操作选项
-
+#
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 是 | 相关说明 |
 | content | string | 否 | 相关说明, 默认: 默认值 |
 | content | string | 否 | 相关说明, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -343,8 +318,6 @@ free-finder monitor report --format html --output quality.html
 | 依赖项 | 类型 | 必需 | 说明 |
 |--------|------|------|------|
 | LLM | 模型 | 是 | 需要LLM进行内容生成, 推荐GPT-4/智谱GLM-4/DeepSeek |
-| `references/style.md` | 文件 | 是 | 相关说明 |
-| `assets/output.json` | 文件 | 是 | 相关说明 |
 | API Key | 凭证 | 否 | 使用云端LLM时需要, 本地LLM不需要 |
 
 **国内替代方案**:

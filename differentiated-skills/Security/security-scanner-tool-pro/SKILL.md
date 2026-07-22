@@ -393,13 +393,7 @@ def schedule_scan(cron_expr, targets_file, workflow, webhook_url=None):
     return cron_config
 ```
 
-### 命令参数说明
-
-- `-F`: 命令参数,用于指定操作选项
-- `-T4`: 命令参数,用于指定操作选项
-- `-sV`: 命令参数,用于指定操作选项
-- `-sC`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 ### 企业扫描配置
 ```json

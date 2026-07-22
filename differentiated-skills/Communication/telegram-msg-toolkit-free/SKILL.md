@@ -153,13 +153,7 @@ curl -X POST "https://api.telegram.org/bot{{BOT_TOKEN}}/sendMessage" \
   }'
 ```
 
-### 命令参数说明
-
-- `-Type`: 命令参数,用于指定操作选项
-- `-X`: 命令参数,用于指定操作选项
-- `-H`: 命令参数,用于指定操作选项
-- `-F`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### Bot Token 配置

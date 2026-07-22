@@ -33,65 +33,7 @@ homepage: "https://skillhub.cn"
 ## 核心能力
 
 - Deploy, monitor, and manage Azure services with battle-tested patterns
-### 指令解析与执行
-
-解析用户指令,执行核心操作并返回处理结果。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`指令解析与执行`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`指令解析与执行`相关配置参数进行设置
-### 数据处理与转换
-
-处理输入数据,执行转换操作并输出结果。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`数据处理与转换`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`数据处理与转换`相关配置参数进行设置
-### 结果验证与输出
-
-验证处理结果的正确性,格式化输出并返回给用户。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`结果验证与输出`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`结果验证与输出`相关配置参数进行设置
-### 技术细节
-
-| 组件 | 说明 | 关键参数 |
-|:-----|:-----|:---------|
-| `parser` | 解析输入指令 | `format`, `encoding` |
-| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
-| `output` | 格式化输出结果 | `format`, `encoding` |
-
-### 源能力映射
-本skill覆盖源skill的以下能力点:
-
-| 源能力点 | 支持状态 | 实现方式 |
-|:---------|:---------|:---------|
-| Bicep is ARM's replacement — transpiles to ARM, better tooling, use for new projects | 支持 | 通过核心功能实现对应能力 |
-| Application Gateway v2 requires dedicated subnet — at least /24 recommended for autoscaling | 支持 | 通过核心功能实现对应能力 |
-
-**输入**: 用户提供源能力映射所需的指令和必要参数。
-**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
-**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
-### 领域术语
-本skill涉及以下领域术语: `cosmos`, `vnet`, `functions`, `virtual`, `activity`, `infrastructure`, `insights`, `alert`, `groups`, `idps`, `performance`, `完全适配`, `firewall`, `vault`, `managed`
-
-**输入**: 用户提供领域术语所需的指令和必要参数。
-**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
-**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
-
+#
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -111,7 +53,6 @@ homepage: "https://skillhub.cn"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 是 | 相关说明 |
 | content | string | 否 | 相关说明, 默认: 默认值 |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -201,15 +142,6 @@ homepage: "https://skillhub.cn"
 export API_KEY="your_api_key_here"
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-## 案例展示
-
-### 示例1：基础用法
-
-```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
-```
 
 ## 常见问题
 

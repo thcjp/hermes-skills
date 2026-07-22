@@ -277,10 +277,7 @@ forge script script/Deploy.s.sol:DeployScript \
   --verify
 ```
 
-### 命令参数说明
-
-- `-L`: 命令参数,用于指定操作选项
-
+#
 ## 配置示例
 
 ### 多环境配置

@@ -33,53 +33,7 @@ homepage: "https://skillhub.cn"
 ## 核心能力
 
 - Notion API for creating and managing pages, databases, and blocks
-### 指令解析与执行
-
-解析用户指令,执行核心操作并返回处理结果。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`指令解析与执行`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`指令解析与执行`相关配置参数进行设置
-### 数据处理与转换
-
-处理输入数据,执行转换操作并输出结果。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`数据处理与转换`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`数据处理与转换`相关配置参数进行设置
-### 结果验证与输出
-
-验证处理结果的正确性,格式化输出并返回给用户。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`结果验证与输出`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`结果验证与输出`相关配置参数进行设置
-### 技术细节
-
-| 组件 | 说明 | 关键参数 |
-|:-----|:-----|:---------|
-| `parser` | 解析输入指令 | `format`, `encoding` |
-| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
-| `output` | 格式化输出结果 | `format`, `encoding` |
-
-### 领域术语
-本skill涉及以下领域术语: `types`, `parent.data_source_id`, `post`, `database_id`, `data_source_id`, `checkbox`, `number`, `todo`, `hello`, `differences`, `operations`, `uuids`, `patch`, `authorization`, `ntn_`
-
-**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
-**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
-
+#
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -99,7 +53,6 @@ homepage: "https://skillhub.cn"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 是 | 相关说明 |
 | content | string | 否 | 相关说明, 默认: 默认值 |
 | content | string | 否 | 相关说明, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -158,15 +111,6 @@ homepage: "https://skillhub.cn"
 export API_KEY="your_api_key_here"
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-## 案例展示
-
-### 示例1：基础用法
-
-```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
-```
 
 ## 常见问题
 

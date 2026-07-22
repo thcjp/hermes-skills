@@ -175,10 +175,7 @@ python3 scripts/k8s_pro.py clusters list
 python3 scripts/k8s_pro.py clusters status --all
 ```
 
-### 命令参数说明
-
-- `-Benchmark`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### PRO企业级配置

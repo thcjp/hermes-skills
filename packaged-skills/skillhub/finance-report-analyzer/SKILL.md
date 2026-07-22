@@ -30,10 +30,7 @@ homepage: "https://skillhub.cn"
 
 **输入**: 用户提供Sparkline trend charts所需的参数和指令。
 
-**输出**: 返回Sparkline trend charts的处理结果。
-
-- 执行`Sparkline trend charts`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回Sparkline trend charts的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`Sparkline trend charts`相关配置参数进行设置
 ### Forecast markers
 
@@ -41,10 +38,7 @@ homepage: "https://skillhub.cn"
 
 **输入**: 用户提供Forecast markers所需的参数和指令。
 
-**输出**: 返回Forecast markers的处理结果。
-
-- 执行`Forecast markers`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回Forecast markers的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`Forecast markers`相关配置参数进行设置
 ### Color coding
 
@@ -52,39 +46,9 @@ homepage: "https://skillhub.cn"
 
 **输入**: 用户提供Color coding所需的参数和指令。
 
-**输出**: 返回Color coding的处理结果。
-
-- 执行`Color coding`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回Color coding的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`Color coding`相关配置参数进行设置
-### 技术细节
-
-| 组件 | 说明 | 关键参数 |
-|:-----|:-----|:---------|
-| `parser` | 解析输入指令 | `format`, `encoding` |
-| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
-| `output` | 格式化输出结果 | `format`, `encoding` |
-
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: Analyze、financial、data、uploaded、Excel、PDF、files、generate、interactive、reports、Use、需要文件处理、文档转换、格式互转、内容提取时使用、不适用于加密文件、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
-### 源能力映射
-本skill覆盖源skill的以下能力点:
-
-| 源能力点 | 支持状态 | 实现方式 |
-|:---------|:---------|:---------|
-| Feishu Doc/Bitable link | 支持 | 通过核心功能实现对应能力 |
-
-**输入**: 用户提供源能力映射所需的指令和必要参数。
-**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
-**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
-### 领域术语
-本skill涉及以下领域术语: `requires`, `docx`, `行业对比`, `enhancement`, `acquire`, `post`, `deliver`, `appsecret`, `authorization`, `html`, `市场份额`, `pasted`, `bearer`, `token`, `formats`
-
-**输入**: 用户提供领域术语所需的指令和必要参数。
-**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
-**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
-
+#
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -112,7 +76,6 @@ python3 scripts/generate_report.py input.xlsx -o pdf --company "公司名" --tic
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 是 | 相关说明 |
 | content | string | 否 | 相关说明, 默认: 默认值 |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -233,8 +196,3 @@ A:
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
-## 已知限制
-
-- 
-- 
-- 

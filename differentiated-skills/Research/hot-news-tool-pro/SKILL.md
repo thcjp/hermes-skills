@@ -241,10 +241,7 @@ python scripts/multi_source.py \
   --output news.json
 ```
 
-### 命令参数说明
-
-- `-X`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 企业级配置文件

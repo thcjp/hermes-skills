@@ -31,44 +31,9 @@ Comprehensive error handling with detailed logging and recovery suggestions.
 **处理**: 按照skill规范执行Error Handling操作,遵循单一意图原则。
 **输出**: 返回Error Handling的执行结果,包含操作状态和输出数据。### Multi-Format Support
 
-Export assets in PNG, SVG, PDF, and WEBP with platform-specific sizing.
-
-- 执行`API Rate Limiting`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+Export assets in PNG, SVG, PDF, and WEBP with platform-specific sizing.- 验证执行结果，确认输出符合预期格式
 - 参考`API Rate Limiting`相关配置参数进行设置
-### 指令解析与执行
-
-解析用户指令,执行核心操作并返回处理结果。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`指令解析与执行`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`指令解析与执行`相关配置参数进行设置
-### 数据处理与转换
-
-处理输入数据,执行转换操作并输出结果。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`数据处理与转换`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`数据处理与转换`相关配置参数进行设置
-### 技术细节
-
-| 组件 | 说明 | 关键参数 |
-|:-----|:-----|:---------|
-| `parser` | 解析输入指令 | `format`, `encoding` |
-| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
-| `output` | 格式化输出结果 | `format`, `encoding` |
-
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: This、does、advertises、reads、data、exports、writes、user、requested、Use、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+#
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -99,27 +64,11 @@ python scripts/style_auditor.py audit-file "file-key" --generate-html
 python scripts/accessibility_checker.py "file-key" --level AA --format html
 ```
 
-### 命令参数说明
-
-1. `--template`: 命令参数,用于指定操作选项
-2. `--brand-colors`: 命令参数,用于指定操作选项
-3. `-package`: 命令参数,用于指定操作选项
-4. `--generate-html`: 命令参数,用于指定操作选项
-5. `-tokens`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-handoff`: 命令参数,用于指定操作选项
-- `-frames`: 命令参数,用于指定操作选项
-- `--include-specs`: 命令参数,用于指定操作选项
-- `--level`: 命令参数,用于指定操作选项
-- `-file-key`: 命令参数,用于指定操作选项
-
+#
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 是 | 相关说明 |
 | content | string | 否 | 相关说明, 默认: 默认值 |
 | content | string | 否 | 相关说明, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |

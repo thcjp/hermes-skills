@@ -352,11 +352,7 @@ results = manager.batch_transcribe(
 manager.export_results(format='srt')
 ```
 
-### 命令参数说明
-
-- `-CN`: 命令参数,用于指定操作选项
-- `-US`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 转写参数配置

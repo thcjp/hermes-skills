@@ -280,15 +280,7 @@ export async function createUser(formData: FormData) {
 }
 ```
 
-### 命令参数说明
-
-- `-zA-Z`: 命令参数,用于指定操作选项
-- `-Transport-Security`: 命令参数,用于指定操作选项
-- `-Frame-Options`: 命令参数,用于指定操作选项
-- `-Content-Type-Options`: 命令参数,用于指定操作选项
-- `-Security-Policy`: 命令参数,用于指定操作选项
-- `-Policy`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 安全HTTP头配置

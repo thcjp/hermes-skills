@@ -242,16 +242,7 @@ curl -H "X-API-Key: $TRANSITION_ADMIN_KEY" \
   "https://api.transition.fun/api/v1/admin/members"
 ```
 
-### 命令参数说明
-
-- `-API-Key`: 命令参数,用于指定操作选项
-- `-Member-Id`: 命令参数,用于指定操作选项
-- `-Admin-Scope`: 命令参数,用于指定操作选项
-- `-F`: 命令参数,用于指定操作选项
-- `-X`: 命令参数,用于指定操作选项
-- `-H`: 命令参数,用于指定操作选项
-- `-Type`: 命令参数,用于指定操作选项
-
+#
 ## 配置示例
 
 ### 企业级配置

@@ -208,12 +208,7 @@ file-compressor batch --input ./docs/ --output ./compressed/ --level L2 --parall
 file-compressor report --last-batch --format html --output ./reports/last.html
 ```
 
-### 命令参数说明
-
-- `-X`: 命令参数,用于指定操作选项
-- `-Type`: 命令参数,用于指定操作选项
-- `-H`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 ### 自定义锚点配置
 

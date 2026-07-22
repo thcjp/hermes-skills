@@ -154,35 +154,7 @@ life/areas/
         └── summary.md
 ```
 
-### 命令参数说明
-
-| 命令 | 参数 | 类型 | 必填 | 说明 |
-|------|------|------|------|------|
-| add | --entity | string | 是 | 实体路径(如people/zhangsan) |
-| add | --category | string | 是 | 事实类别(如status/skill/role) |
-| add | --fact | string | 是 | 事实内容 |
-| add | --source | string | 否 | 来源(如conversation/doc/manual) |
-| supersede | --entity | string | 是 | 实体路径 |
-| supersede | --old | string | 是 | 旧事实ID |
-| supersede | --category | string | 是 | 新事实类别 |
-| supersede | --fact | string | 是 | 新事实内容 |
-| summarize | --entity | string | 是 | 实体路径 |
-| list | --entity | string | 是 | 实体路径 |
-
-### 事实数据结构
-```json
-{
-  "id": "zhangsan-001",
-  "category": "status",
-  "fact": "担任前端开发工程师",
-  "source": "conversation",
-  "status": "superseded",
-  "superseded_by": "zhangsan-002",
-  "created_at": "2026-01-15T10:00:00Z",
-  "superseded_at": "2026-07-01T14:00:00Z"
-}
-```
-
+#
 ## 最佳实践
 
 ### 实践一：原子化事实粒度

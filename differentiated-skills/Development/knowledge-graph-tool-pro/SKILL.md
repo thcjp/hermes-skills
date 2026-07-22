@@ -221,10 +221,7 @@ node scripts/merge.mjs --target <目标id> --source <源id> --mode absorb
 node scripts/merge.mjs --target <目标id> --source <源id> --mode nest
 ```
 
-### 命令参数说明
-
-- `-I`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 完整配置项参考

@@ -319,12 +319,7 @@ bash multi_agent_audit.sh ./agents --full --output report.json
 python3 deep_injection_scan.py --dir ./agents --output injection-report.json
 ```
 
-### 命令参数说明
-
-- `-F`: 命令参数,用于指定操作选项
-- `-Z`: 命令参数,用于指定操作选项
-- `-Za-z0-9`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 ### 审计规则配置
 ```yaml

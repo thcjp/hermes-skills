@@ -69,12 +69,7 @@ clawlink_list_tools({ integration: "discord" });
 | confirm | `discord_edit_application_command_permissions`、`discord_modify_current_user` | 需显式确认 |
 | high_impact | `discord_leave_guild`、`discord_delete_test_entitlement` | 二次确认 + 影响范围说明 |
 
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: 社区管理助手、公会查询、成员权限、应用命令与商业订、阅全流程、社区管理专业版、集成的一站式、社区运营助手、覆盖用户身份、公会与小组件、SKU、角色连接元数据、网关与邀请解析等、核心领域。这些能力在上述核心功能中均有对应处理逻辑。
-
-**输出**: 返回风险分级执行策略的执行结果,包含操作状态和输出数据。
-
+#
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

@@ -194,13 +194,7 @@ curl -X POST -H "X-API-Key: $GAME_DEV_ADMIN_KEY" \
   "https://api.game-dev-pro.local/v1/ci-cd/setup"
 ```
 
-### 命令参数说明
-
-- `-X`: 命令参数,用于指定操作选项
-- `-API-Key`: 命令参数,用于指定操作选项
-- `-H`: 命令参数,用于指定操作选项
-- `-Type`: 命令参数,用于指定操作选项
-
+#
 ## 配置示例
 ### 企业级配置
 

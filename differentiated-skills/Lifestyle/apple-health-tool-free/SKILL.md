@@ -146,14 +146,7 @@ curl -s -H "X-API-Key: $TRANSITION_API_KEY" \
   "https://api.transition.fun/api/v1/profile"
 ```
 
-### 命令参数说明
-
-- `-X`: 命令参数,用于指定操作选项
-- `-API-Key`: 命令参数,用于指定操作选项
-- `-H`: 命令参数,用于指定操作选项
-- `-Type`: 命令参数,用于指定操作选项
-- `-CN`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 基础配置文件

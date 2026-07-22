@@ -154,42 +154,7 @@ ID  类型    标题              生成时间
 
 无云同步，无第三方图表API调用。
 
-### 命令参数说明
-
-| 参数 | 类型 | 说明 | 是否必需 |
-|------|------|------|----------|
-| `--type` | string | 图表类型：bar/line/pie/scatter | 是 |
-| `--title` | string | 图表标题 | 是 |
-| `--labels` | string | 标签列表，逗号分隔 | 是 |
-| `--values` | string | 数值列表，逗号分隔 | 是 |
-| `--output` | string | 输出文件名（可选） | 否 |
-
-### 各图表类型示例
-
-#### 柱状图
-
-```bash
-python3 scripts/make_chart.py --type bar --title "季度营收" --labels "Q1,Q2,Q3,Q4" --values "280,320,290,410"
-```
-
-#### 折线图
-
-```bash
-python3 scripts/make_chart.py --type line --title "日活用户趋势" --labels "周一,周二,周三,周四,周五,周六,周日" --values "1200,1350,1280,1420,1680,1900,1750"
-```
-
-#### 饼图
-
-```bash
-python3 scripts/make_chart.py --type pie --title "预算分配" --labels "研发,市场,运营,行政" --values "45,25,20,10"
-```
-
-#### 散点图
-
-```bash
-python3 scripts/make_chart.py --type scatter --title "价格与销量" --labels "10,15,20,25,30,35" --values "500,420,380,300,250,180"
-```
-
+#
 ## 最佳实践
 
 ### 图表类型选择

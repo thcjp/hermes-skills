@@ -135,9 +135,7 @@ result = guide.validate(test_message)
 print(f"校验结果: {result}")
 ```
 
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: 企业级、WhatsApp、格式化平台、支持样式预设、批量转换、多平台适配、样式工具专业版、面向企业和专业团、队的高级消息格式、化平台、核心能力、格式语法支持、删除线、等宽体、自定义样式预设与、消息模板管理、支持文件级处理、团队样式规范与一、致性校验、Telegram、Slack、实时格式预览与智、能修复、格式审计日志与版、本管理。这些能力在上述核心功能中均有对应处理逻辑。
+#
 ## 适用场景
 
 ### 场景一:客服团队统一消息风格
@@ -221,18 +219,11 @@ python3 init_presets.py --org "你的公司名"
 python3 validate_whatsapp_style.py --input test_message.txt --pro
 ```
 
-### 命令参数说明
-
-1. `-style-tool-pro`: 命令参数,用于指定操作选项
-2. `--input`: 命令参数,用于指定操作选项
-3. `-platform`: 命令参数,用于指定操作选项
-4. `--output`: 命令参数,用于指定操作选项
-
+#
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 是 | 相关说明 |
 | content | string | 否 | 相关说明, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -418,8 +409,3 @@ python3 import_presets.py --input team_presets.json
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
-## 已知限制
-
-- 
-- 
-- 

@@ -158,12 +158,7 @@ curl -X POST http://localhost:8080/webhook/order \
 cat logs/order_processing_$(date +%Y%m%d).log
 ```
 
-### 命令参数说明
-
-- `-X`: 命令参数,用于指定操作选项
-- `-Type`: 命令参数,用于指定操作选项
-- `-H`: 命令参数,用于指定操作选项
-
+#
 ## 核心能力
 ### 四种触发器
 

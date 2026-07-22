@@ -60,23 +60,14 @@ export API_KEY="your_api_key_here"
 将代理封装为 8080 端口 HTTP 服务，处理 `/invocations`（调用）与 `/ping`（健康检查）端点，支持容器模式部署。
 
 **输入**: 用户提供AgentCore Runtime HTTP 封装所需的指令和必要参数。
-**输出**: 返回AgentCore Runtime HTTP 封装的执行结果,包含操作状态和输出数据。
-
-- 执行`AgentCore Runtime HTTP 封装`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回AgentCore Runtime HTTP 封装的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
 - 参考`AgentCore Runtime HTTP 封装`相关配置参数进行设置
 ### 3. agentcore CLI 基础管理
 `configure`（配置）→ `launch`（部署）→ `dev`（本地开发）→ `invoke`（测试调用）→ `destroy`（清理资源）。
 
 > **升级提示**: 跨会话持久记忆（STM/LTM）、Gateway 外部 API/Lambda 工具集成、多代理协调（编排器+专家模式）、记忆一致性验证逻辑等高级功能仅在 [aws-graph-agent 付费版] 中提供。
 
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: Bedrock、基础代理编排、状态图与容器部署、基础代理编排工具、免费版、状态图编排与、容器部署两大基础、自动路由与、可将代理封装为、适用于单一代理的、快速部署和工具调、用场景、如需持久记忆、多代理协调等高级、请升级至。这些能力在上述核心功能中均有对应处理逻辑。
-### 输出格式
-
-执行结果以Markdown格式返回,包含操作状态(成功/失败)、处理摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。
-
+#
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |
@@ -143,12 +134,7 @@ agentcore invoke '{"prompt": "Hello"}'    # 测试调用
 agentcore destroy                          # 清理资源避免持续计费
 ```
 
-### 命令参数说明
-
-- `--deployment-type`: 命令参数,用于指定操作选项
-- `--region`: 命令参数,用于指定操作选项
-- `-agentcore-starter-toolkit`: 命令参数,用于指定操作选项
-
+#
 ## 案例展示
 
 ### 案例1: 带工具调用的代理部署

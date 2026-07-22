@@ -260,12 +260,7 @@ python3 quality_audit.py \
   --report ./audit/quality-report.html
 ```
 
-### 命令参数说明
-
-- `-X`: 命令参数,用于指定操作选项
-- `-H`: 命令参数,用于指定操作选项
-- `-Type`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 ### 企业级音乐生成配置
 

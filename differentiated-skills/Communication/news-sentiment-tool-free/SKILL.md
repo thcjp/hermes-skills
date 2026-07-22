@@ -218,49 +218,7 @@ python3 {SKILL_DIR}/scripts/sentiment_scan.py 600519 7
 
 ## 配置示例
 
-### 命令参数说明
-
-```bash
-python3 {SKILL_DIR}/scripts/sentiment_scan.py <stock_code> [days] [market]
-```
-
-| 参数 | 必需 | 默认值 | 说明 |
-|:-----|:-----|:-------|:-----|
-| stock_code | 是 | - | 股票代码 |
-| days | 否 | 7 | 监控天数 |
-| market | 否 | auto | 市场标识(auto/us/hk/cn) |
-
-### 股票代码格式
-
-```bash
-# A股:6位数字
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 002594 7      # 比亚迪
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 600519 7      # 贵州茅台
-
-# 港股:XXXX.HK 或 5位数字
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 0700.HK 7     # 腾讯
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 00700 7       # 腾讯(数字格式)
-
-# 美股:字母代码
-python3 {SKILL_DIR}/scripts/sentiment_scan.py AAPL 7 us     # 苹果
-python3 {SKILL_DIR}/scripts/sentiment_scan.py TSLA 7 us     # 特斯拉
-```
-
-### 事件类型与情绪贡献参考
-
-| 事件类型 | 基础分数 | 说明 |
-|:---------|:---------|:-----|
-| 业绩超预期 | +5 | 营收/利润大幅增长 |
-| 研报上调评级 | +3 | 券商目标价上调 |
-| 大股东增持 | +3 | 管理层看好 |
-| 政策利好 | +4 | 行业政策支持 |
-| 产品发布 | +2 | 新产品上市 |
-| 业绩不及预期 | -4 | 营收/利润下降 |
-| 研报下调评级 | -3 | 券商目标价下调 |
-| 大股东减持 | -3 | 管理层不看好 |
-| 政策利空 | -4 | 行业政策收紧 |
-| 监管调查 | -5 | 证监会/交易所调查 |
-
+#
 ## 最佳实践
 
 ### 1. 定期扫描建立情绪基线

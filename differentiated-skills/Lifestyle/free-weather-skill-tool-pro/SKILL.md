@@ -315,10 +315,7 @@ curl "http://localhost:8080/weather/Beijing"
 curl "http://localhost:8080/batch/weather" -d '{"cities":["北京","上海"]}'
 ```
 
-### 命令参数说明
-
-- `-API-Key`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 ### 数据归档配置
 ```python

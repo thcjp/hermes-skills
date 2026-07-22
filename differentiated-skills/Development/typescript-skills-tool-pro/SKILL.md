@@ -255,11 +255,7 @@ npx type-coverage --strict --at-least 95
 bash scripts/lint-report.sh
 ```
 
-### 命令参数说明
-
-- `-F`: 命令参数,用于指定操作选项
-- `--noEmit`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 多包仓库共享 ESLint 配置

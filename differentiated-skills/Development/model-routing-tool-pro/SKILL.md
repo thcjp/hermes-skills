@@ -281,11 +281,7 @@ node scripts/cost-dashboard.mjs --period month --group-by team
 node scripts/cost-dashboard.mjs --period month --format csv > reports/month.csv
 ```
 
-### 命令参数说明
-
-- `-Flash`: 命令参数,用于指定操作选项
-- `-Plus`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 团队策略配置

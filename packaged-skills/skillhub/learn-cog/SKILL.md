@@ -116,17 +116,7 @@ export API_KEY="your_api_key_here"
 **处理**: 按照skill规范执行概念解释与作业辅导（Concept Explanations & Homework）操作,遵循单一意图原则。
 **输出**: 返回概念解释与作业辅导（Concept Explanations & Homework）的执行结果,包含操作状态和输出数据。
 
-### 技术细节
-
-| 组件 | 说明 | 关键参数 |
-|:-----|:-----|:---------|
-| `parser` | 解析输入指令 | `format`, `encoding` |
-| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
-| `output` | 格式化输出结果 | `format`, `encoding` |
-
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: 驱动的个性化学习、支持项目教程、视觉学习与学习指、个性化学习助手、CellCog、提供多模式、南生成、STEM、技术与职业技能等、多学科领域、适用于学生、开发者与终身学习、者的知识获取与技、能提升。这些能力在上述核心功能中均有对应处理逻辑。
+#
 ## 使用流程
 
 1. 确认运行环境满足依赖说明中的要求

@@ -253,10 +253,7 @@ python3 scripts/gitmcp_pro.py batch-fetch \
     --output ~/read-github-pro/reports/batch_fetch.md
 ```
 
-### 命令参数说明
-
-- `-Clause`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 ### 自定义分析规则
 ```yaml

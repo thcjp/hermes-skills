@@ -342,10 +342,7 @@ generate_3d_batch \
   --output "./assets/3d/"
 ```
 
-### 命令参数说明
-
-- `-Painted`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 3D 模型生成配置

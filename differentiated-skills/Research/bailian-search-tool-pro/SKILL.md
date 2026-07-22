@@ -364,11 +364,7 @@ bailian-pro api token create --name "integration" --scope "read"
 curl -s -H "Authorization: Bearer <token>" "http://localhost:8080/api/health"
 ```
 
-### 命令参数说明
-
-- `-X`: 命令参数,用于指定操作选项
-- `-H`: 命令参数,用于指定操作选项
-
+#
 ## 配置示例
 
 ### 企业级配置文件

@@ -252,10 +252,7 @@ web-learner batch status
 web-learner batch export --output learnings.json
 ```
 
-### 命令参数说明
-
-- `-CN`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 ### 企业级配置
 

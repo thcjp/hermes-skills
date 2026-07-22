@@ -23,50 +23,7 @@ homepage: "https://skillhub.cn"
 - （根据实际场景填充） - 遵循专业风格规范
 - （根据实际场景填充） - 支持多种变体等多种变体
 - （根据实际场景填充） - 自动适配多种场景
-### 指令解析与执行
-
-解析用户指令,执行核心操作并返回处理结果。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`指令解析与执行`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`指令解析与执行`相关配置参数进行设置
-### 数据处理与转换
-
-处理输入数据,执行转换操作并输出结果。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`数据处理与转换`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`数据处理与转换`相关配置参数进行设置
-### 结果验证与输出
-
-验证处理结果的正确性,格式化输出并返回给用户。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`结果验证与输出`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`结果验证与输出`相关配置参数进行设置
-### 技术细节
-
-| 组件 | 说明 | 关键参数 |
-|:-----|:-----|:---------|
-| `parser` | 解析输入指令 | `format`, `encoding` |
-| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
-| `output` | 格式化输出结果 | `format`, `encoding` |
-
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: Control、Jellyfin、media、server、Search、content、resume、playback、manage、sessions、Use、需要生成营销文案、写作内容、标题优化、内容创作时使用、不适用于纯技术文、档撰写、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+#
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -161,16 +118,11 @@ homepage: "https://skillhub.cn"
 
 > **First time with ADB:** Enable Developer Options on your TV (Settings → About → tap Build Number 7 times), then enable Network/USB debugging. First connection will show "Allow debugging?" on the TV — accept it. Requires `adb` installed on the Skill平台 host (`sudo apt install adb`).
 
-### 命令参数说明
-
-1. `-ha-long-lived-token`: 命令参数,用于指定操作选项
-2. `-jellyfin-api-key`: 命令参数,用于指定操作选项
-
+#
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 是 | 相关说明 |
 | content | string | 否 | 相关说明, 默认: 默认值 |
 | content | string | 否 | 相关说明, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -285,8 +237,3 @@ A:
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
-## 已知限制
-
-- 
-- 
-- 

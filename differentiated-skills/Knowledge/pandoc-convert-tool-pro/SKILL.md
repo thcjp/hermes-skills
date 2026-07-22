@@ -255,10 +255,7 @@ engine.generate_report(results, "conversion_report.json")
 
 执行上述代码后，将根据输入参数返回结构化结果。专业版支持批量操作和并行处理，可同时处理多个文件或任务。
 
-### 命令参数说明
-
-- `-V`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ```yaml

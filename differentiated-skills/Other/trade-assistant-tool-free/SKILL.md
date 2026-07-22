@@ -182,12 +182,7 @@ curl https://exchange.example.com/exchange/trade/abc123 \
   -H "Authorization: Bearer $TRADE_API_KEY"
 ```
 
-### 命令参数说明
-
-- `-X`: 命令参数,用于指定操作选项
-- `-H`: 命令参数,用于指定操作选项
-- `-Type`: 命令参数,用于指定操作选项
-
+#
 ## 配置示例
 
 ```bash

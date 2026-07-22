@@ -179,10 +179,7 @@ python3 scripts/history.py stats --period 30d
 python3 scripts/history.py export --format excel
 ```
 
-### 命令参数说明
-
-- `-USD`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### PRO多通道配置

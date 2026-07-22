@@ -59,29 +59,20 @@ export API_KEY="your_api_key_here"
 将代理封装为 8080 端口 HTTP 服务，处理 `/invocations`（调用）与 `/ping`（健康检查）端点，支持容器模式部署。
 
 **输入**: 用户提供AgentCore Runtime HTTP 封装所需的指令和必要参数。
-**输出**: 返回AgentCore Runtime HTTP 封装的执行结果,包含操作状态和输出数据。
-
-- 执行`AgentCore Runtime HTTP 封装`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回AgentCore Runtime HTTP 封装的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
 - 参考`AgentCore Runtime HTTP 封装`相关配置参数进行设置
 ### 3. AgentCore Memory 持久记忆
 管理跨会话/跨代理的 STM（短期记忆，会话内逐轮）与 LTM（长期记忆，跨会话/跨代理），配套一致性处理模式（写入后约 10s 最终一致，含等待+验证+重试逻辑）。
 
 **输入**: 用户提供AgentCore Memory 持久记忆所需的指令和必要参数。
-**输出**: 返回AgentCore Memory 持久记忆的执行结果,包含操作状态和输出数据。
-
-- 执行`AgentCore Memory 持久记忆`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回AgentCore Memory 持久记忆的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
 - 参考`AgentCore Memory 持久记忆`相关配置参数进行设置
 ### 4. AgentCore Gateway 工具集成
 将 API/Lambda 转化为带认证的 Agent 工具接口，支持 Fallback Mock（本地开发）、Local 工具协议、Production Gateway（生产）三种传输模式。
 
 **输入**: 用户提供AgentCore Gateway 工具集成所需的指令和必要参数。
 **处理**: 按照skill规范执行AgentCore Gateway 工具集成操作,遵循单一意图原则。
-**输出**: 返回AgentCore Gateway 工具集成的执行结果,包含操作状态和输出数据。
-
-- 执行`AgentCore Gateway 工具集成`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回AgentCore Gateway 工具集成的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
 - 参考`AgentCore Gateway 工具集成`相关配置参数进行设置
 ### 5. agentcore CLI 全生命周期管理
 `configure`（交互式/脚本化配置）→ `launch`（容器部署）→ `dev`（热重载本地开发）→ `invoke`（测试调用）→ `destroy`（清理资源避免持续计费）。
@@ -89,13 +80,7 @@ export API_KEY="your_api_key_here"
 **输入**: 用户提供agentcore CLI 全生命周期管理所需的指令和必要参数。
 **输出**: 返回agentcore CLI 全生命周期管理的执行结果,包含操作状态和输出数据。
 
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: Bedrock、多代理编排、覆盖状态图、AWS、多代理部署编排工、全生命周期管理五、大核心能力、适用于多代理协调、的复杂业务系统、跨会话持久记忆代、集成到代理工具链、生产级、代理部署。这些能力在上述核心功能中均有对应处理逻辑。
-### 输出格式
-
-执行结果以Markdown格式返回,包含操作状态(成功/失败)、处理摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。
-
+#
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |
@@ -185,13 +170,7 @@ agentcore invoke '{"prompt": "Hello"}'    # 测试调用
 agentcore destroy
 ```
 
-### 命令参数说明
-
-- `--deployment-type`: 命令参数,用于指定操作选项
-- `--non-interactive`: 命令参数,用于指定操作选项
-- `--region`: 命令参数,用于指定操作选项
-- `-agentcore-starter-toolkit`: 命令参数,用于指定操作选项
-
+#
 ## 案例展示
 
 ### 案例1: 带工具调用的代理部署（StateGraph 基础模式）

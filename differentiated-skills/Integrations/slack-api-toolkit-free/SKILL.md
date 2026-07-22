@@ -118,10 +118,7 @@ sgw connection create slack
 sgw slack message send --channel C0123456789 --text 'Hello from Slack Gateway!'
 ```
 
-### 命令参数说明
-
-- `-Type`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### CLI 发送消息

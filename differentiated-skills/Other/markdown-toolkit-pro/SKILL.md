@@ -135,10 +135,7 @@ markdownlint docs/**/*.md --config .markdownlint.json
 3. 接入 CI lint 与死链检测。
 4. 配置多格式导出。
 
-### 命令参数说明
-
-- `-V`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 站点配置（`md-site.json`）：

@@ -63,12 +63,7 @@ export API_KEY="your_api_key_here"
 `figure`、`caption`。不支持 `chart`、`equation`、`header`、`footer`、`index`、`footnote`
 等高级元素类别。
 
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: 基础版文档解析技、和图片转换为、支持同步模式、upstage、free、是文档解析技能的、基础版本、支持同步模式解析、和基础版面元素识、不包含异步模式、和跨页表格合并、适合快速解析标准、升级完整版获取全、量解析能力。这些能力在上述核心功能中均有对应处理逻辑。
-
-**输入**: 用户提供基础版面元素识别所需的指令和必要参数。
-
+#
 ## 使用流程
 
 1. 确认文档格式在支持列表中（JPEG/PNG/BMP/PDF/TIFF）
@@ -78,10 +73,7 @@ export API_KEY="your_api_key_here"
 5. 解析响应 JSON，提取 `content.markdown`
 6. 将结果写入输出文件，打印绝对路径
 
-### 命令参数说明
-
-- `-over-year`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 示例1：同步模式解析 PDF

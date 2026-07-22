@@ -256,10 +256,7 @@ python3 generate_report.py \
   --include-sensitivity
 ```
 
-### 命令参数说明
-
-- `-CN`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### PRO企业级配置

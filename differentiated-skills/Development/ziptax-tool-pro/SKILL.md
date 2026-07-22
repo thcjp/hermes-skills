@@ -327,10 +327,7 @@ python3 scripts/compliance_report.py
 cat .github/workflows/taxrate-sync.yml
 ```
 
-### 命令参数说明
-
-- `-API-KEY`: 命令参数,用于指定操作选项
-
+#
 ## 配置示例
 ### CI/CD 税率同步流水线
 ```yaml

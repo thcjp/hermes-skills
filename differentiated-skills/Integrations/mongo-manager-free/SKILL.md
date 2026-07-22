@@ -123,10 +123,7 @@ db.users.find({status: "active"}).explain("executionStats")
 
 完整上手时间约120秒。
 
-### 命令参数说明
-
-- `-S-R顺序`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### Schema设计：嵌入vs引用

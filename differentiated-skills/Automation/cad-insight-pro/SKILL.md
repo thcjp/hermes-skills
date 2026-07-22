@@ -320,15 +320,7 @@ index = analyzer.generate_drawing_index(results)
 analyzer.export_csv(results, "takeoff.csv")
 ```
 
-### 命令参数说明
-
-- `-Z`: 命令参数,用于指定操作选项
-- `-B`: 命令参数,用于指定操作选项
-- `-A`: 命令参数,用于指定操作选项
-- `-R6`: 命令参数,用于指定操作选项
-- `-L3`: 命令参数,用于指定操作选项
-- `-S4`: 命令参数,用于指定操作选项
-
+#
 ## 数据结构
 ### TitleBlockData
 ```python

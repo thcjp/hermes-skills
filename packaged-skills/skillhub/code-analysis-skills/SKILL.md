@@ -33,81 +33,7 @@ homepage: "https://skillhub.cn"
 ## 核心能力
 
 - Produces a DESCRIPTIVE Git-history reflection report
-### 指令解析与执行
-
-解析用户指令,执行核心操作并返回处理结果。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`指令解析与执行`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`指令解析与执行`相关配置参数进行设置
-### 数据处理与转换
-
-处理输入数据,执行转换操作并输出结果。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`数据处理与转换`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`数据处理与转换`相关配置参数进行设置
-### 结果验证与输出
-
-验证处理结果的正确性,格式化输出并返回给用户。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`结果验证与输出`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`结果验证与输出`相关配置参数进行设置
-### 处理流程
-
-`code-analysis-skills`按照以下流程处理用户请求:
-
-1. **指令解析**: 接收用户输入，解析指令意图和参数
-2. **能力匹配**: 根据指令内容匹配对应的核心能力点
-3. **执行处理**: 调用匹配的能力处理逻辑，执行具体操作
-4. **结果输出**: 格式化处理结果，返回给用户
-
-### 输入输出规范
-
-- **输入格式**: 自然语言指令或结构化参数
-- **输出格式**: 取决于具体能力点，支持文本、表格、结构化数据
-- **错误处理**: 参考错误处理章节的表格进行异常恢复
-
-### 技术细节
-
-| 组件 | 说明 | 关键参数 |
-|:-----|:-----|:---------|
-| `parser` | 解析输入指令 | `format`, `encoding` |
-| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
-| `output` | 格式化输出结果 | `format`, `encoding` |
-
-### 源能力映射
-本skill覆盖源skill的以下能力点:
-
-| 源能力点 | 支持状态 | 实现方式 |
-|:---------|:---------|:---------|
-| State the indicator and what it literally measures. | 支持 | 通过核心功能实现对应能力 |
-| Phrase weaknesses as points to consider with context, never as | 支持 | 通过核心功能实现对应能力 |
-| Phrase suggestions as discussion prompts, never as directives. | 支持 | 通过核心功能实现对应能力 |
-| ⏰ Work Habits | 支持 | 通过核心功能实现对应能力 |
-
-**输入**: 用户提供源能力映射所需的指令和必要参数。
-**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
-**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
-### 领域术语
-本skill涉及以下领域术语: `commits`, `many`, `ranking`, `src/analyzers/cadence_signal_analyzer.py`, `density`, `performance`, `consistency`, `inverse`, `caveat`, `frame`, `compare`, `verdicts`, `html`, `github`, `documents`
-
-**输入**: 用户提供领域术语所需的指令和必要参数。
-**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
-
+#
 ## 适用场景
 
 - A developer reflecting on **their own** commit cadence and code-change patterns.
@@ -145,7 +71,6 @@ export API_KEY="your_api_key_here"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 是 | 相关说明 |
 | content | string | 否 | 相关说明, 默认: 默认值 |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -216,9 +141,6 @@ export API_KEY="your_api_key_here"
 | 依赖项 | 类型 | 必需 | 说明 |
 |--------|------|------|------|
 | LLM | 模型 | 是 | 需要LLM执行各步骤的智能处理, 推荐GPT-4/智谱GLM-4/DeepSeek |
-| `references/pipeline配置` | 文件 | 是 | 相关说明 |
-| `assets/（根据实际场景填充）` | 文件 | 是 | 相关说明 |
-| `references/checklist.md` | 文件 | 否 | 相关说明 |
 | API Key | 凭证 | 否 | 使用云端LLM时需要 |
 
 **国内替代方案**:
@@ -256,8 +178,3 @@ A:
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
-## 已知限制
-
-- 
-- 
-- 

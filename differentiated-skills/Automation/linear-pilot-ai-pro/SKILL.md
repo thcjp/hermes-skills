@@ -482,10 +482,7 @@ sla:
 linear-pilot start --config enterprise_config.yaml --daemon
 ```
 
-### 命令参数说明
-
-- `-X`: 命令参数,用于指定操作选项
-
+#
 ## 使用场景
 
 ### 场景一：工程团队任务全自动化（团队负责人角色）

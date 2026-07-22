@@ -32,10 +32,7 @@ homepage: "https://skillhub.cn"
 
 **输入**: 用户提供40+ Format Support所需的参数和指令。
 
-**输出**: 返回40+ Format Support的处理结果。
-
-- 执行`+ Format Support`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回40+ Format Support的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`+ Format Support`相关配置参数进行设置
 ### Dual Toolset
 
@@ -43,10 +40,7 @@ homepage: "https://skillhub.cn"
 
 **输入**: 用户提供Dual Toolset所需的参数和指令。
 
-**输出**: 返回Dual Toolset的处理结果。
-
-- 执行`Dual Toolset`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回Dual Toolset的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`Dual Toolset`相关配置参数进行设置
 ### Professional Templates
 
@@ -54,22 +48,9 @@ homepage: "https://skillhub.cn"
 
 **输入**: 用户提供Professional Templates所需的参数和指令。
 
-**输出**: 返回Professional Templates的处理结果。
-
-- 执行`Professional Templates`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+**输出**: 返回Professional Templates的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`Professional Templates`相关配置参数进行设置
-### 技术细节
-
-| 组件 | 说明 | 关键参数 |
-|:-----|:-----|:---------|
-| `parser` | 解析输入指令 | `format`, `encoding` |
-| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
-| `output` | 格式化输出结果 | `format`, `encoding` |
-
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: Convert、documents、between、pandoc、CLI、Handles、需要文件处理、文档转换、格式互转、内容提取时使用、不适用于加密文件、适用于独立开发者、企业团队和自动化、工作流场景。这些能力在上述核心功能中均有对应处理逻辑。
+#
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -109,22 +90,11 @@ pandoc input.md -o output.docx
 pandoc input.docx -o output.md --extract-media=./media
 ```
 
-### 命令参数说明
-
-- `--extract-media`: 命令参数,用于指定操作选项
-
-**使用步骤**:
-1. 阅读依赖说明章节,确认运行环境已就绪
-2. 根据任务需求,参考核心能力章节选择对应能力
-3. 按照能力描述提供输入参数,执行操作
-4. 查看输出结果,确认任务完成状态
-
-
+#
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 是 | 相关说明 |
 | content | string | 否 | 相关说明, 默认: 默认值 |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -278,8 +248,3 @@ A:
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
-## 已知限制
-
-- 
-- 
-- 

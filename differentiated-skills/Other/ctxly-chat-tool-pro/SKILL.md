@@ -188,14 +188,7 @@ export CHAT_RETRY_MAX=3        # 最多重试 3 次
 export CHAT_RETRY_BACKOFF=exponential  # 指数退避
 ```
 
-### 命令参数说明
-
-- `-X`: 命令参数,用于指定操作选项
-- `-H`: 命令参数,用于指定操作选项
-- `-Type`: 命令参数,用于指定操作选项
-- `-Retry-Backoff`: 命令参数,用于指定操作选项
-- `-Retry-Max`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 多房间管理

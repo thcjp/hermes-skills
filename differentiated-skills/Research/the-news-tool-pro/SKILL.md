@@ -320,10 +320,7 @@ news-tool report generate \
   --output analysis_report.html
 ```
 
-### 命令参数说明
-
-- `-CN`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 ### 企业级监控配置
 ```json

@@ -150,11 +150,7 @@ node scripts/context-compressor.js memory/2026-03-14.md --classify --output memo
 
 ---
 
-### 命令参数说明
-
-- `-W11`: 命令参数,用于指定操作选项
-- `-W11-summary`: 命令参数,用于指定操作选项
-
+#
 ## 核心能力
 ### 1. 智能混合提取（基础+增强）
 

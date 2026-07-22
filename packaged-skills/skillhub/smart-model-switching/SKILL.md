@@ -21,76 +21,7 @@ homepage: "https://skillhub.cn"
 
 - This skill is a model-routing guide that helps choose between ai-assistant
   models and shows no evidence
-### 指令解析与执行
-
-解析用户指令,执行核心操作并返回处理结果。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`指令解析与执行`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`指令解析与执行`相关配置参数进行设置
-### 数据处理与转换
-
-处理输入数据,执行转换操作并输出结果。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`数据处理与转换`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`数据处理与转换`相关配置参数进行设置
-### 结果验证与输出
-
-验证处理结果的正确性,格式化输出并返回给用户。
-
-**输入**: 用户提供操作指令和必要参数。
-
-**输出**: 返回操作执行的结果。
-
-- 执行`结果验证与输出`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`结果验证与输出`相关配置参数进行设置
-### 技术细节
-
-| 组件 | 说明 | 关键参数 |
-|:-----|:-----|:---------|
-| `parser` | 解析输入指令 | `format`, `encoding` |
-| `processor` | 执行核心处理逻辑 | `mode`, `timeout` |
-| `output` | 格式化输出结果 | `format`, `encoding` |
-
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: Use、模型调用、智能对话、LLM、应用时使用、不适用于需要、确定性的关键决策。这些能力在上述核心功能中均有对应处理逻辑。
-### 源能力映射
-本skill覆盖源skill的以下能力点:
-
-| 源能力点 | 支持状态 | 实现方式 |
-|:---------|:---------|:---------|
-| ❌ Do multi-step analysis | 支持 | 通过核心功能实现对应能力 |
-| For Subagents | 支持 | 通过核心功能实现对应能力 |
-| Quick lookups — definitions, unit conversions, short translations | 支持 | 通过核心功能实现对应能力 |
-| ❌ Write reports or proposals | 支持 | 通过核心功能实现对应能力 |
-| Nuanced judgment — ethics, ambiguity, competing values | 支持 | 通过核心功能实现对应能力 |
-| Debugging — standard bug investigation | 支持 | 通过核心功能实现对应能力 |
-| Strategic & Creative | 支持 | 通过核心功能实现对应能力 |
-| Security reviews | 支持 | 通过核心功能实现对应能力 |
-| For Cron Jobs | 支持 | 通过核心功能实现对应能力 |
-| System architecture decisions | 支持 | 通过核心功能实现对应能力 |
-
-**输入**: 用户提供源能力映射所需的指令和必要参数。
-**处理**: 按照skill规范执行源能力映射操作,遵循单一意图原则。
-**输出**: 返回源能力映射的执行结果,包含操作状态和输出数据。
-### 领域术语
-本skill涉及以下领域术语: `three`, `reasoning`, `implementation`, `technical`, `relative`, `factual`, `major`, `work`, `performance`, `haiku`, `inspired`, `reality`, `tasks`, `cost`, `golden`
-
-**输入**: 用户提供领域术语所需的指令和必要参数。
-**处理**: 按照skill规范执行领域术语操作,遵循单一意图原则。
-**输出**: 返回领域术语的执行结果,包含操作状态和输出数据。
-
+#
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -110,7 +41,6 @@ homepage: "https://skillhub.cn"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 是 | 相关说明 |
 | content | string | 否 | 相关说明, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -188,15 +118,6 @@ homepage: "https://skillhub.cn"
 export API_KEY="your_api_key_here"
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-## 案例展示
-
-### 示例1：基础用法
-
-```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
-```
 
 ## 常见问题
 

@@ -255,11 +255,7 @@ feed distribute add file \
   --format markdown
 ```
 
-### 命令参数说明
-
-- `-W29`: 命令参数,用于指定操作选项
-- `-PRO-KEY`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 自定义摘要模板

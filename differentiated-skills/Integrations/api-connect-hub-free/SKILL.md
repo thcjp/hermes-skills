@@ -96,13 +96,7 @@ response = conn.call('list_repos', headers=headers, retry=True)
 print(f"获取到 {len(response.json())} 个仓库")
 ```
 
-### 命令参数说明
-
-- `-RateLimit-Reset`: 命令参数,用于指定操作选项
-- `-RateLimit-Remaining`: 命令参数,用于指定操作选项
-- `-Agent`: 命令参数,用于指定操作选项
-- `-Type`: 命令参数,用于指定操作选项
-
+#
 ## 核心能力
 ### 功能1：连接器注册表
 

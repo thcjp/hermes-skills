@@ -107,10 +107,7 @@ tail -10 ~/workspace/browser/logs/2026-07-18.jsonl
 ls ~/workspace/browser/screenshots/2026-07-18/
 ```
 
-### 命令参数说明
-
-- `-MM-SS`: 命令参数,用于指定操作选项
-
+#
 ## 核心能力
 ### 功能一：页面操作
 

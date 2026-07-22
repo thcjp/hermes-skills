@@ -227,13 +227,7 @@ curl -s "https://audiox-api-global.luoji.cn/video-trans/jobs/$JOB_ID" \
   -H "Authorization: Bearer $VIDEO_TRANSLATE_SERVICE_API_KEY"
 ```
 
-### 命令参数说明
-
-- `-F`: 命令参数,用于指定操作选项
-- `-X`: 命令参数,用于指定操作选项
-- `-H`: 命令参数,用于指定操作选项
-- `-Type`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 输入参数说明

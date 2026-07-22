@@ -105,12 +105,7 @@ tags:
 - **Bayesian Games**：不完全信息博弈；分析未知对手方交易、anonymous team评估
 - **Cooperative Game Theory**：可形成binding coalitions的博弈；分析MEV extraction coalitions、validator cartels、governance blocs
 
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: DeFi、机制和治理系统的、博弈论分析框架、面向加密协议、分析模型、等核心概念、等常见、博弈场景分析、并提供、适用于协议设计审、激励对齐评估与攻、击向量识别。这些能力在上述核心功能中均有对应处理逻辑。
-
-**输出**: 返回高级分析能力的执行结果,包含操作状态和输出数据。
-
+#
 ## 使用流程
 
 1. **确定分析目标**：明确要分析的协议或机制（DeFi协议、governance提案、tokenomics设计等）
@@ -121,43 +116,7 @@ tags:
 6. **进行高级分析**：按需调用Repeated Games、Bayesian Games等高级分析能力
 7. **输出Recommendations**：给出mechanism改进、monitoring建议、parameter bounds
 
-### 命令参数说明
-
-- `-Agent`: 命令参数,用于指定操作选项
-- `-come-first-served清算`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-Agent`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-Agent`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-Agent`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-Agent`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-Agent`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-Agent`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-Agent`: 命令参数,用于指定操作选项
-
-### 命令参数说明
-
-- `-Agent`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 示例1：DeFi借贷协议的Principal-Agent分析

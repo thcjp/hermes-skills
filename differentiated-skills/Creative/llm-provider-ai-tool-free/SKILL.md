@@ -199,13 +199,7 @@ curl -X POST "https://api.llm-provider.com/v1/chat/completions" \
   }'
 ```
 
-### 命令参数说明
-
-- `-F`: 命令参数,用于指定操作选项
-- `-X`: 命令参数,用于指定操作选项
-- `-H`: 命令参数,用于指定操作选项
-- `-Type`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### Python SDK 配置

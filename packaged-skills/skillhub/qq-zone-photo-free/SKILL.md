@@ -57,20 +57,12 @@ export API_KEY="your_api_key_here"
 
 ### 2. 列出相册
 
-通过 `python3 scripts/qzone_photos.py --action list --cookies cookies.json` 列出当前账号的所有相册。返回相册列表，包含相册ID（`album-id`）、相册标题、照片数量等信息。可选参数 `--qq` 指定目标账号。适用于浏览相册结构和获取相册ID。
-
-- 执行`列出相册`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+通过 `python3 scripts/qzone_photos.py --action list --cookies cookies.json` 列出当前账号的所有相册。返回相册列表，包含相册ID（`album-id`）、相册标题、照片数量等信息。可选参数 `--qq` 指定目标账号。适用于浏览相册结构和获取相册ID。- 验证执行结果，确认输出符合预期格式
 ### 3. 浏览相册照片
 
-通过 `python3 scripts/qzone_photos.py --action photos --album-id "ALBUM_ID" --cookies cookies.json` 浏览指定相册中的照片。必填参数 `--album-id` 指定目标相册，可选参数 `--qq` 指定账号。返回照片列表，包含照片URL、缩略图、上传时间等信息。适用于查看相册内容。
-
-- 执行`浏览相册照片`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
+通过 `python3 scripts/qzone_photos.py --action photos --album-id "ALBUM_ID" --cookies cookies.json` 浏览指定相册中的照片。必填参数 `--album-id` 指定目标相册，可选参数 `--qq` 指定账号。返回照片列表，包含照片URL、缩略图、上传时间等信息。适用于查看相册内容。- 验证执行结果，确认输出符合预期格式
 - 参考`浏览相册照片`相关配置参数进行设置
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: 基础社交空间相册、列出和浏览相册、社交空间相册自动、化管理工具的免费、支持扫码登录、列出相册和浏览照、片等基础功能、适用于相册查看和、获取场景、升级至完整版可解、锁照片上传、单张下载、整册下载和相册创、建功能。这些能力在上述核心功能中均有对应处理逻辑。
+#
 ## 升级提示
 
 以下为完整版（qq-zone-photo）独有功能，免费版不可用：

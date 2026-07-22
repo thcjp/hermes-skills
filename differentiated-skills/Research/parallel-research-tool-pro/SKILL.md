@@ -234,10 +234,7 @@ fi
 parallel-research create "你的研究问题" --processor ultra --wait
 ```
 
-### 命令参数说明
-
-- `-X`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 ### 研究模板配置
 ```markdown

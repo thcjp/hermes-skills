@@ -419,11 +419,7 @@ async def main():
 asyncio.run(main())
 ```
 
-### 命令参数说明
-
-- `-CN-XiaoxiaoNeural`: 命令参数,用于指定操作选项
-- `-CN-YunxiNeural`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 音频格式对比

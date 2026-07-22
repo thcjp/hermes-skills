@@ -177,12 +177,7 @@ curl -X POST "https://api.integration-gateway.com/actions/batch" \
   }'
 ```
 
-### 命令参数说明
-
-- `-X`: 命令参数,用于指定操作选项
-- `-H`: 命令参数,用于指定操作选项
-- `-Type`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 自定义连接器构建（Agent会话）

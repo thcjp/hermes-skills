@@ -259,11 +259,7 @@ public abstract class DataExporter {
 }
 ```
 
-### 命令参数说明
-
-- `-A`: 命令参数,用于指定操作选项
-- `-API-Version`: 命令参数,用于指定操作选项
-
+#
 ## 配置示例
 ### CI/CD 规约门禁
 ```yaml

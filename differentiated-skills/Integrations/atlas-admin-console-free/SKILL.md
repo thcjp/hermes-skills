@@ -169,15 +169,7 @@ node scripts/atlas-call.mjs POST groups/${ATLAS_GROUP_ID}/clusters \
   --yes
 ```
 
-### 命令参数说明
-
-| 参数 | 说明 |
-|------|------|
-| `-d, --data <json>` | 请求体JSON字符串 |
-| `-p, --params <json>` | 查询参数JSON |
-| `--dry-run` | 仅打印请求详情，不实际执行 |
-| `--yes` | 跳过交互确认（谨慎使用） |
-
+#
 ## 最佳实践
 
 ### 1. 状态变更操作遵循四步安全协议

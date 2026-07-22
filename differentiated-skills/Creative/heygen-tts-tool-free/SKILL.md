@@ -193,12 +193,7 @@ curl -X POST "https://api.heygen.com/v3/voices/speech" \
 curl -o output.wav "https://resource2.heygen.ai/text_to_speech/..."
 ```
 
-### 命令参数说明
-
-- `-X`: 命令参数,用于指定操作选项
-- `-H`: 命令参数,用于指定操作选项
-- `-Type`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### Python 封装

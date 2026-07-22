@@ -179,10 +179,7 @@ chat-agent serve --password prod456 --tunnel cloudflared
 # Public URL: https://random-name.trycloudflare.com
 ```
 
-### 命令参数说明
-
-- `-Pass-2026`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 示例1：开发环境配置

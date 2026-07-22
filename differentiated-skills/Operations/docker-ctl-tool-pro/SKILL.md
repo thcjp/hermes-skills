@@ -168,10 +168,7 @@ python3 scripts/ctl_pro.py remote exec --host 192.168.1.10 --command "podman ps"
 python3 scripts/ctl_pro.py score --hosts all
 ```
 
-### 命令参数说明
-
-- `-DSS`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### PRO企业级配置

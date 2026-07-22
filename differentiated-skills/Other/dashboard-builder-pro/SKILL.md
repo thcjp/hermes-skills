@@ -171,10 +171,7 @@ cd ~/dashboard/ops && python -m http.server 8080 --bind 127.0.0.1
 uv run dashboard_alert.py --dashboard ops --setup
 ```
 
-### 命令参数说明
-
-- `-R`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 多数据源聚合配置

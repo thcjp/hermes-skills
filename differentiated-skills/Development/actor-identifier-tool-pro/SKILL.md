@@ -278,12 +278,7 @@ bash scripts/batch-analyze.sh
 cat reports/repo-analysis/summary-*.md
 ```
 
-### 命令参数说明
-
-- `-C`: 命令参数,用于指定操作选项
-- `-cE`: 命令参数,用于指定操作选项
-- `-E`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 企业级报告模板(Markdown)

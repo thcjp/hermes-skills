@@ -306,10 +306,7 @@ slack-hub-tool-pro search \
 slack-hub-tool-pro channel-info --channel "C0123456789"
 ```
 
-### 命令参数说明
-
-- `-After头部`: 命令参数,用于指定操作选项
-
+#
 ## 配置示例
 ```yaml
 slack:

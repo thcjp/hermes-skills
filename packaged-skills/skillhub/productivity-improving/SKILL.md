@@ -56,9 +56,7 @@ Auto-categorize activities into:
 **处理**: 按照skill规范执行Daily Report Generation操作,遵循单一意图原则。
 **输出**: 返回Daily Report Generation的执行结果,包含操作状态和输出数据。
 
-### 能力覆盖范围
-
-本skill还覆盖以下能力场景: tracker、review、assistant、logs、notes、goals、Use、模型调用、智能对话、Agent、LLM、应用时使用、不适用于需要、确定性的关键决策。这些能力在上述核心功能中均有对应处理逻辑。
+#
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -78,7 +76,6 @@ Auto-categorize activities into:
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 是 | 相关说明 |
 | content | string | 否 | 相关说明, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -245,8 +242,3 @@ A:
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
-## 已知限制
-
-- 
-- 
-- 

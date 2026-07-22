@@ -218,10 +218,7 @@ python main.py [options]
 --verbose       详细日志输出
 ```
 
-### 命令参数说明
-
-- `-CN`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ```yaml

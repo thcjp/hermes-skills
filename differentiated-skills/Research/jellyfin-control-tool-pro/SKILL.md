@@ -263,10 +263,7 @@ node skills/jellyfin-control/cli.js devices list
 node skills/jellyfin-control/cli.js tv play "Movie" --device "living_room"
 ```
 
-### 命令参数说明
-
-- `-X`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 ### 企业级配置文件
 ```yaml

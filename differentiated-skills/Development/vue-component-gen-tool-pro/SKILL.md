@@ -390,12 +390,7 @@ npx vitest run
 npm run storybook
 ```
 
-### 命令参数说明
-
-- `-Z`: 命令参数,用于指定操作选项
-- `--testNamePattern`: 命令参数,用于指定操作选项
-- `--noEmit`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### CI/CD 组件质量门禁

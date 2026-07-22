@@ -163,12 +163,7 @@ chart.sh svg-bar "Q3销售" "Q1:120,Q2:180,Q3:95,Q4:210" --theme corporate-vi
 chart.sh batch --config weekly.yaml --output ./weekly/
 ```
 
-### 命令参数说明
-
-- `-X`: 命令参数,用于指定操作选项
-- `-Type`: 命令参数,用于指定操作选项
-- `-H`: 命令参数,用于指定操作选项
-
+#
 ## 示例
 
 ### 主题配置文件示例
