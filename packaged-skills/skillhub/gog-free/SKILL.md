@@ -10,7 +10,7 @@ description: |-
   通过 OAuth 凭证鉴权,支持 JSON 结构化输出。适用于个人开发者邮件检索与轻量级表格读写场景。
   本免费版仅支持 Gmail search 与 Sheets get/append,Calendar/Drive/Contacts/Docs 等高级能力请升级付费版。
 tags:
-  - Communication
+  - 研发工具
 tools:
   - read
   - exec

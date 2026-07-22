@@ -10,7 +10,7 @@ description: |-
   生成按日期/平台组织的基础内容日历与平台适配文案。附字符计数校验。
   适用于个人账号基础排期、单条内容三平台改写等场景。
 tags:
-  - Communication
+  - 系统运维
   - Marketing
 tools:
   - read

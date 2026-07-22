@@ -14,7 +14,7 @@ description: |-
   通过 Python 与 Chrome 完成本地渲染。
   适用于帖子类型数据导出为社媒分享图、文章封面生成、文字海报制作等场景。
 tags:
-  - Communication
+  - 需求设计
   - Creative
   - Image
 tools:

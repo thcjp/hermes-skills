@@ -22,7 +22,7 @@ description: |-
   - 证书安全加固(CAA锁定+iodef告警)
   - Cloudflare代理导致的非HTTP服务故障排查
 tags:
-  - Communication
+  - 研发工具
   - Networking
   - DevOps
 tools:

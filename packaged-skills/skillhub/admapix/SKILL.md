@@ -12,7 +12,7 @@ description: |-
   支持 X-API-Key 认证、page_size 上限 10 自动钳制、参数代码映射（创意类型/行业/国家/日期范围/排序）、
   filter-options 元数据发现。适用于广告创意监控、应用市场调研、竞品 SDK 审计、跨地区下载收入对比等场景。
 tags:
-  - Creative
+  - 研发工具
   - Research
 tools:
   - read

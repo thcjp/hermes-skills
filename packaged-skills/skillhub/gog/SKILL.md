@@ -11,7 +11,7 @@ description: |-
   脚本化批处理。适用于独立开发者效率提升、自动化工作流编排与一人公司办公自动化场景。
   支持 Gmail 搜索发送、日历事件查询、云盘文件检索、联系人列表、表格读写清除、文档导出查看等。
 tags:
-  - Communication
+  - 研发工具
   - Productivity
 tools:
   - read

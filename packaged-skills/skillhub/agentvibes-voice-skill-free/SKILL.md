@@ -10,7 +10,7 @@ description: |-
   支持声音切换、列出、预览、采样、语速控制等基础能力。免费离线、无需账号（Piper 声音文件需下载）。
   适用于 AI Agent 基础语音播报、简单内容配音场景。
 tags:
-  - Creative
+  - 研发工具
 tools:
   - read
   - exec

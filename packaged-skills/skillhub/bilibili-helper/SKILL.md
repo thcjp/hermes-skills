@@ -18,7 +18,7 @@ description: |-
   适用对象：个人UP主、MCN机构内容团队、企业品牌号运营者
   触发场景：需要为B站视频生成标题、简介、标签或口播脚本时
 tags:
-  - Creative
+  - 研发工具
   - bilibili
   - video
   - content-creation

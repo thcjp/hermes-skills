@@ -19,7 +19,7 @@ description: |-
   - 成本CSV专用解析（金额列去$符号并转数值）
   - 多编码导出（utf-8-sig带BOM导出）
 tags:
-  - Integrations
+  - 研发工具
   - csv
   - data-processing
 tools:

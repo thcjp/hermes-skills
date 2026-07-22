@@ -14,7 +14,7 @@ description: |-
   - 输出规范（洞察先行、量化不确定性）
   高级功能（分析陷阱识别全表、队列分析、异常检测、风险升级机制）为付费版专享。
 tags:
-  - Integrations
+  - 信息检索
   - data-analysis
   - statistics
 tools:

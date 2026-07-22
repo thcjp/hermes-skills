@@ -12,7 +12,7 @@ description: |-
   通过 skill-platform CLI 注册 cron 定时任务,使用 Python zoneinfo 处理时区。
   适用于需要每日日程前置提醒、跨时区协作、避免错过晨会的自动化工作流场景。
 tags:
-  - Communication
+  - 通用办公
   - Automation
   - Productivity
 tools:

@@ -10,7 +10,7 @@ description: |-
   核心能力:每月 10 条书签处理、手动触发运行、关键词启发式分析、本地 JSON 沉淀。
   适用于先体验产品能力。如需无限制书签处理、AI 深度分析、后台守护进程自动监控与 Telegram 推送,请升级至 bookmark-intelligence 付费版。
 tags:
-  - Communication
+  - 信息检索
   - 知识管理
 tools:
   - read

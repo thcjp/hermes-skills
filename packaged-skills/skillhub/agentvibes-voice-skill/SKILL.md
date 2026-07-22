@@ -11,7 +11,7 @@ description: |-
   语音效果（reverb/echo/pitch/eq）、背景音乐、Verbosity 控制、Mute/Replay、语言学习双语播报、翻译播放、前缀文本等能力。
   免费离线、无需账号（Piper 声音需下载）。适用于 AI Agent 语音播报、内容创作配音、语言学习辅助等场景。
 tags:
-  - Creative
+  - 研发工具
 tools:
   - read
   - exec

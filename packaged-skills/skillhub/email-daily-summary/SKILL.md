@@ -11,7 +11,7 @@ description: |-
   支持未读统计、按重要性/发件人/主题分类、AI 智能摘要、截图归档与定时任务调度。
   适用于独立开发者每日邮件梳理、团队晨会邮件同步、企业高管 inbox 分诊等场景。
 tags:
-  - Communication
+  - 通用办公
   - Email
   - Automation
 tools:

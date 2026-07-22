@@ -11,7 +11,7 @@ description: |-
   确保消息正确路由到用户账号。覆盖任务开始与任务完成两类基础汇报时机。
   适用于单 Agent 消息发送、基础任务进度通知等场景。
 tags:
-  - Communication
+  - 通用办公
   - Automation
 tools:
   - read

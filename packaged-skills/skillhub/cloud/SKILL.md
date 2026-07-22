@@ -10,7 +10,7 @@ description: |-
   做出选择、整理、同步、分享与备份决策。覆盖服务选型、常见困惑澄清、存储满处理、备份策略、
   文件分享与安全基础。不适用于AWS、Azure、S3等infrastructure基础设施场景。
 tags:
-  - Integrations
+  - 研发工具
   - 云存储
   - 备份
 tools:

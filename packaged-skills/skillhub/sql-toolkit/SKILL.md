@@ -11,7 +11,7 @@ description: |-
   查询模式（Joins、Aggregations、CTEs、窗口函数）、数据库迁移、查询优化（EXPLAIN、索引策略）、
   备份与恢复。适用于数据库开发、数据探索、性能调优场景。
 tags:
-  - Integrations
+  - 需求设计
 tools:
   - read
   - exec

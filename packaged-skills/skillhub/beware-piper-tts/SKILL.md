@@ -11,7 +11,7 @@ description: |-
   WAV 与 MP3 双格式输出、跨平台部署(macOS Apple Silicon/Intel、Linux、Windows WSL)。
   适用于语音消息投递、有声内容生产、无障碍朗读、播客片段生成、多语言内容本地化等场景。
 tags:
-  - Communication
+  - 研发工具
   - Creative
   - 语音合成
 tools:

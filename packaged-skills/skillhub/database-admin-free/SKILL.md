@@ -15,7 +15,7 @@ description: |-
   - 事务操作（BEGIN/COMMIT/ROLLBACK）
   高级功能（BIGINT/JSONB/UUID类型、COPY批量导入、CTE查询、执行计划分析、VACUUM维护、连接池管理）为付费版专享。
 tags:
-  - Integrations
+  - 信息检索
   - database
   - postgresql
 tools:

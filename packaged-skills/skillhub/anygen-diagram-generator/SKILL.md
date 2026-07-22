@@ -13,7 +13,7 @@ description: |-
   系统设计、知识梳理等场景。需要AnyGen CLI与anygen-workflow-generate
   依赖技能配合运行。
 tags:
-  - Creative
+  - 研发工具
   - Diagram
   - Visualization
   - Flowchart

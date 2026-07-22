@@ -1,9 +1,9 @@
 ---
 name: （根据实际场景填充）
-slug: （根据实际场景填充）
-displayName: （根据实际场景填充）
+slug: pandoc-document-converter
+displayName: Pandoc文档转换
 version: "1.0.0"
-summary: （根据实际场景填充）
+summary: 使用Pandoc进行多格式文档转换,支持Markdown、HTML、PDF、Word等格式互转
 description: |-
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据。
   Use when 用户说"（根据实际场景填充）"、（根据实际场景填充）时使用。

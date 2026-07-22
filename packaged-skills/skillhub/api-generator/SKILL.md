@@ -12,7 +12,7 @@ description: |-
   Jest+Supertest 测试套件。所有代码输出到 stdout,可重定向到项目文件。
   适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - Integrations
+  - 研发工具
   - Development
 tools:
   - read

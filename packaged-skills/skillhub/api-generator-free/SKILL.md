@@ -10,7 +10,7 @@ description: |-
   GraphQL Type+Query+Mutation schema 与 Jest+Supertest 测试套件。
   OpenAPI 文档、Python 客户端、Mock 服务器、认证代码、速率限制器等高级功能需升级付费版。
 tags:
-  - Integrations
+  - 研发工具
   - Development
 tools:
   - read

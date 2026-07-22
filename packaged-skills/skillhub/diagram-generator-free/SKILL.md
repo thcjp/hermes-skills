@@ -9,7 +9,7 @@ description: |-
   diagram-generator 基础客户端(免费版)。通过 mcp-diagram-generator MCP 服务器将自然语言意图转换为 JSON 规范,
   生成 Mermaid 流程图与 Draw.io 架构图两种基础能力。支持默认输出路径、交互式采集、基础质量校验。
 tags:
-  - Creative
+  - 研发工具
 tools:
   - read
   - exec

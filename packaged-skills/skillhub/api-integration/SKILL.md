@@ -11,7 +11,7 @@ description: |-
   HTTP 状态码体系（200/201/400/401/404/500）、GraphQL 按需查询与实时订阅等知识。
   帮助 AI Agent 快速接入第三方服务,扩展能力边界。适用于第三方 API 集成、平台对接、数据同步场景。
 tags:
-  - Integrations
+  - 研发工具
   - Development
 tools:
   - read

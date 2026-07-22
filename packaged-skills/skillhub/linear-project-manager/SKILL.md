@@ -1,9 +1,9 @@
 ---
 name: （根据实际场景填充）
-slug: （根据实际场景填充）
-displayName: （根据实际场景填充）
+slug: linear-project-manager
+displayName: Linear项目管理
 version: "1.0.0"
-summary: （根据实际场景填充）
+summary: Linear项目管理工具,支持任务创建、状态跟踪和团队协作
 description: |-
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据。
   Use when 用户说"（根据实际场景填充）"、（根据实际场景填充）时使用。

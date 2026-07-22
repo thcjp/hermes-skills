@@ -10,7 +10,7 @@ description: |-
   查询聊天基本信息与成员计数。所有写操作需用户确认后执行。
   适用于基础消息通知、聊天信息查询等场景。
 tags:
-  - Communication
+  - 通用办公
   - Automation
 tools:
   - read

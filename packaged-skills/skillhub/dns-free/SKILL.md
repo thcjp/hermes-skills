@@ -19,7 +19,7 @@ description: |-
   - 邮件认证SPF/DMARC基础配置
   - DNS记录基础排查
 tags:
-  - Communication
+  - 研发工具
   - Networking
 tools:
   - read

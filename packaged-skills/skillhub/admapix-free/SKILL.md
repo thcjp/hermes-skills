@@ -11,7 +11,7 @@ description: |-
   支持 X-API-Key 认证、page_size 上限 10 自动钳制、filter-options 元数据发现。
   适用于广告创意搜索、应用信息查询、商店榜单查看等基础场景。
 tags:
-  - Creative
+  - 研发工具
   - Research
 tools:
   - read

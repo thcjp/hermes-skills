@@ -10,7 +10,7 @@ description: |-
   读取 session.json 展示浏览器会话状态。通过 token 保护的本地端口提供服务,每 5 秒自动刷新。
   免费版支持本机访问与基础监控功能。局域网共享、自定义数据源路径等高级功能需升级付费版。
 tags:
-  - Integrations
+  - 研发工具
   - Monitoring
 tools:
   - read

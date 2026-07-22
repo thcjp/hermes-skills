@@ -11,7 +11,7 @@ description: |-
   构建简单语音助手原型。仅支持OpenAI系列音色与服务端VAD,不包含
   函数调用、Azure原生音色、多VAD模式等高级特性。
 tags:
-  - Creative
+  - 通用办公
   - voice
   - azure
 tools:

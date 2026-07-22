@@ -11,7 +11,7 @@ description: |-
   适用于合同审查准备、备忘录摘要等基础场景。如需多版本对比、风险转移条款识别、结构改进建议、护栏机制等
   高级能力,请升级至ai-assistant付费版。本Skill提供分析支持,不替代持牌法律意见。
 tags:
-  - Agents
+  - 研发工具
   - Knowledge
 tools:
   - read

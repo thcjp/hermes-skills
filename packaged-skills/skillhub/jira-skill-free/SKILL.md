@@ -16,7 +16,7 @@ description: |-
   升级付费版专享：状态变更、指派、评论、创建、工时记录、多维工时统计。
   适用场景：只读浏览Jira事务、快速定位事务、查看自己的待办。
 tags:
-  - Integrations
+  - 通用办公
   - Productivity
   - Jira
 tools:

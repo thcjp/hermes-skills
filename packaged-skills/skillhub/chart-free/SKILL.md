@@ -14,7 +14,7 @@ description: |-
   - 存储初始化：init_storage.py 一键初始化本地存储
   升级付费版专享：pie/scatter类型、智能选型、历史管理、多类型组合工作流。
 tags:
-  - Integrations
+  - 需求设计
   - 数据可视化
   - matplotlib
 tools:

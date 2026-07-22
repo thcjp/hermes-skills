@@ -8,7 +8,7 @@ license: Proprietary
 description: |-
   基于Azure CLI的智能云基础设施管理助手,提供多订阅导航、RBAC角色审计与最小权限、成本分析工作流、合规检查清单、跨订阅批量操作五大核心能力。适用于Azure资源盘点、健康监控、安全审计、Cost Management分析、多订阅多租户管理场景。默认只读查询,写操作与破坏性操作需确认。适用关键词:Azure云架构师、基础设施管理、多订阅、RBAC审计、成本分析、Azure CLI、azure-cloud-architect
 tags:
-- 智能代理
+  - 通用办公
 - 云计算
 - Azure
 - 基础设施

@@ -26,7 +26,7 @@ description: |-
   差异化：严格遵循只读优先原则，内置确认机制与 dry-run 偏好，避免误操作；
   支持多订阅/多租户上下文切换；禁止输出任何密钥、令牌等敏感凭据。
 tags:
-  - Agents
+  - 通用办公
   - Cloud
   - Azure
 tools:

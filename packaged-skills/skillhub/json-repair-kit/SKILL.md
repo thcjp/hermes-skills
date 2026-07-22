@@ -10,7 +10,7 @@ description: |-
   解析为JavaScript对象并重新序列化为有效JSON。支持Trailing Commas、Single Quotes、
   Unquoted Keys、Comments、Hex/Octal Numbers五种修复模式，内置备份与验证安全机制。
 tags:
-  - Integrations
+  - 研发工具
   - JSON
   - 修复
 tools:

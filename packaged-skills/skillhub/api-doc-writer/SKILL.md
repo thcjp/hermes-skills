@@ -11,7 +11,7 @@ description: |-
   RESTful 设计规范（HTTP 方法语义、URL 命名、状态码分类）、安全建议（加密传输、Token 过期、频率限制、参数校验）。
   支持用户模块、订单模块、支付模块等多模块文档结构。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - Integrations
+  - 研发工具
   - Documentation
 tools:
   - read

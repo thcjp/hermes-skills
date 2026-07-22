@@ -10,7 +10,7 @@ description: |-
   提供基础 curl 示例与常见错误提示。完整 16 类 147 服务、速率限制策略、分页模式、Webhook 签名验证、
   多账户凭证命名等高级功能需升级付费版。仅作文档参考,不代用户执行请求。
 tags:
-  - Integrations
+  - 研发工具
   - Productivity
 tools:
   - read

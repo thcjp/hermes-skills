@@ -13,7 +13,7 @@ description: |-
   Use when 用户需要撰写回复消息、优化措辞、组织回应结构、处理日常沟通对话时使用。
   不适用于跨文化高冲突谈判、深度情绪疏导、危机公关声明等复杂场景(需升级付费版)。
 tags:
-  - Productivity
+  - 信息检索
   - Communication
 tools:
   - read

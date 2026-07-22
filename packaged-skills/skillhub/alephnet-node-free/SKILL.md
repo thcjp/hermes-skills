@@ -11,7 +11,7 @@ description: |-
   适用场景:Agent社交关系建立、基础消息通信、群组内容浏览。
   不适用于分布式记忆、一致性验证、多智能体团队协作等高级场景。
 tags:
-  - Communication
+  - 研发工具
 tools:
   - read
   - exec

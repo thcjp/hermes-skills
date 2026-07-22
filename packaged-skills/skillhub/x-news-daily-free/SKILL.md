@@ -10,7 +10,7 @@ description: |-
   渲染为基础 HTML 海报图片。支持 Headless Chrome 大视口截图方案。
   适用于每日新闻简报、关键词热搜查看等基础场景。
 tags:
-  - Automation
+  - 研发工具
   - Research
 tools:
   - read

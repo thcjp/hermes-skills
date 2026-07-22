@@ -13,7 +13,7 @@ description: |-
   (Terraform、CloudFormation、ARM)与 Landing Zone 治理。遵循 Well-Architected
   Framework 原则,提供从现状评估到运营优化的全流程架构指导。
 tags:
-  - Creative
+  - 通用办公
   - cloud
   - architecture
   - aws

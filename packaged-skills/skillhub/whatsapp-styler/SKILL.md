@@ -13,7 +13,7 @@ description: |-
   适用于通知模板转换、广播消息批量格式化、客服话术标准化、自动化消息发送前校验等场景。
   基于Markdown指令驱动,无需额外API Key。
 tags:
-  - Communication
+  - 研发工具
   - Productivity
 tools:
   - read

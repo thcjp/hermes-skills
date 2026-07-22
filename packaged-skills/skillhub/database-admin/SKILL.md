@@ -16,7 +16,7 @@ description: |-
   - 事务安全（ACID属性、自动提交/回滚、连接池管理）
   - 数据类型兼容性验证与主键冲突避免
 tags:
-  - Integrations
+  - 信息检索
   - database
   - postgresql
 tools:

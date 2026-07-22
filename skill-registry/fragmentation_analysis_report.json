@@ -1,0 +1,2786 @@
+{
+  "total_skills": 2255,
+  "summary": {
+    "total_issues": 347,
+    "naming": 22,
+    "overlap": 19,
+    "duplication": 20,
+    "version": 4,
+    "category": 131,
+    "free_paid": 151
+  },
+  "naming_issues": [
+    {
+      "type": "invalid_slug_format",
+      "slug": "（根据实际场景填充）",
+      "source": "packaged"
+    },
+    {
+      "type": "slug_dir_mismatch",
+      "slug": "（根据实际场景填充）",
+      "dir": "agent-browser-assistant",
+      "source": "packaged"
+    },
+    {
+      "type": "slug_dir_mismatch",
+      "slug": "ai-video-studio-pro",
+      "dir": "ai-video-director",
+      "source": "packaged"
+    },
+    {
+      "type": "slug_dir_mismatch",
+      "slug": "fortune-reading-studio",
+      "dir": "cyber-fortune-teller",
+      "source": "packaged"
+    },
+    {
+      "type": "invalid_slug_format",
+      "slug": "（根据实际场景填充）",
+      "source": "packaged"
+    },
+    {
+      "type": "slug_dir_mismatch",
+      "slug": "（根据实际场景填充）",
+      "dir": "jira-pat-manager",
+      "source": "packaged"
+    },
+    {
+      "type": "invalid_slug_format",
+      "slug": "（根据实际场景填充）",
+      "source": "packaged"
+    },
+    {
+      "type": "slug_dir_mismatch",
+      "slug": "（根据实际场景填充）",
+      "dir": "linear-project-manager",
+      "source": "packaged"
+    },
+    {
+      "type": "invalid_slug_format",
+      "slug": "（根据实际场景填充）",
+      "source": "packaged"
+    },
+    {
+      "type": "slug_dir_mismatch",
+      "slug": "（根据实际场景填充）",
+      "dir": "pandoc-document-converter",
+      "source": "packaged"
+    },
+    {
+      "type": "slug_dir_mismatch",
+      "slug": "evolution-engine-v2",
+      "dir": "evolution-engine",
+      "source": "differentiated/Agents"
+    },
+    {
+      "type": "slug_dir_mismatch",
+      "slug": "memory-distiller-v2",
+      "dir": "memory-distiller",
+      "source": "differentiated/Agents"
+    },
+    {
+      "type": "slug_dir_mismatch",
+      "slug": "memory-orchestrator-v2",
+      "dir": "memory-orchestrator",
+      "source": "differentiated/Agents"
+    },
+    {
+      "type": "slug_dir_mismatch",
+      "slug": "multi-agent-dev-v2",
+      "dir": "multi-agent-dev",
+      "source": "differentiated/Agents"
+    },
+    {
+      "type": "slug_dir_mismatch",
+      "slug": "frontend-design-ai-provider-free",
+      "dir": "frontend-design-anthropic-free",
+      "source": "differentiated/Creative"
+    },
+    {
+      "type": "slug_dir_mismatch",
+      "slug": "frontend-design-ai-provider-pro",
+      "dir": "frontend-design-anthropic-pro",
+      "source": "differentiated/Creative"
+    },
+    {
+      "type": "slug_dir_mismatch",
+      "slug": "llm-provider-ai-tool-free",
+      "dir": "openai-ai-tool-free",
+      "source": "differentiated/Creative"
+    },
+    {
+      "type": "slug_dir_mismatch",
+      "slug": "llm-provider-ai-tool-pro",
+      "dir": "openai-ai-tool-pro",
+      "source": "differentiated/Creative"
+    },
+    {
+      "type": "slug_dir_mismatch",
+      "slug": "llm-provider-whisper-tool-free",
+      "dir": "openai-whisper-tool-free",
+      "source": "differentiated/Creative"
+    },
+    {
+      "type": "slug_dir_mismatch",
+      "slug": "llm-provider-whisper-tool-pro",
+      "dir": "openai-whisper-tool-pro",
+      "source": "differentiated/Creative"
+    },
+    {
+      "type": "slug_dir_mismatch",
+      "slug": "llm-provider-whisper-v1-tool-free",
+      "dir": "openai-whisper-v1-tool-free",
+      "source": "differentiated/Creative"
+    },
+    {
+      "type": "slug_dir_mismatch",
+      "slug": "llm-provider-whisper-v1-tool-pro",
+      "dir": "openai-whisper-v1-tool-pro",
+      "source": "differentiated/Creative"
+    }
+  ],
+  "overlap_issues": [
+    {
+      "type": "functional_overlap",
+      "keywords": [
+        "language",
+        "automat",
+        "cli"
+      ],
+      "slugs": [
+        "agent-browser-stagehand",
+        "browser-automation",
+        "stagehand-browser-cli"
+      ],
+      "count": 3
+    },
+    {
+      "type": "functional_overlap",
+      "keywords": [
+        "api",
+        "doc",
+        "docker"
+      ],
+      "slugs": [
+        "api-scaffold-gen",
+        "api-scaffold-gen-pro",
+        "security-audit-tool-free"
+      ],
+      "count": 3
+    },
+    {
+      "type": "functional_overlap",
+      "keywords": [
+        "cli",
+        "manage",
+        "azure"
+      ],
+      "slugs": [
+        "azure-cloud-architect",
+        "azure-infra-free",
+        "azure-cloud-inspector-pro"
+      ],
+      "count": 3
+    },
+    {
+      "type": "functional_overlap",
+      "keywords": [
+        "api",
+        "cli",
+        "azure"
+      ],
+      "slugs": [
+        "azure-gateway-cli",
+        "azure-gateway-cli-free",
+        "azure-gateway-cli-pro"
+      ],
+      "count": 3
+    },
+    {
+      "type": "functional_overlap",
+      "keywords": [
+        "gcp",
+        "aws",
+        "azure"
+      ],
+      "slugs": [
+        "cloud-architect-free",
+        "cloudforge-automation-free",
+        "cloud-architect-design-free"
+      ],
+      "count": 3
+    },
+    {
+      "type": "functional_overlap",
+      "keywords": [
+        "devops",
+        "doc",
+        "docker"
+      ],
+      "slugs": [
+        "docker-essentials-paid",
+        "flow-manager-pro-pro",
+        "docker-essentials-tool-pro"
+      ],
+      "count": 3
+    },
+    {
+      "type": "functional_overlap",
+      "keywords": [
+        "memory",
+        "api",
+        "agent"
+      ],
+      "slugs": [
+        "elite-longterm-memory-local-free",
+        "memory-compress",
+        "memory-radar-free"
+      ],
+      "count": 3
+    },
+    {
+      "type": "functional_overlap",
+      "keywords": [
+        "ui",
+        "3d",
+        "figma"
+      ],
+      "slugs": [
+        "figma-design-paid",
+        "figma-tw-designer",
+        "figma-design-tool-pro",
+        "figma-tw-designer-pro"
+      ],
+      "count": 4
+    },
+    {
+      "type": "functional_overlap",
+      "keywords": [
+        "java",
+        "script",
+        "lint",
+        "typescript"
+      ],
+      "slugs": [
+        "javascript-skills-paid",
+        "typescript-toolkit",
+        "javascript-skills-tool-pro",
+        "typescript-toolkit-pro"
+      ],
+      "count": 4
+    },
+    {
+      "type": "functional_overlap",
+      "keywords": [
+        "ui",
+        "3d",
+        "logo"
+      ],
+      "slugs": [
+        "logo-design",
+        "logo-design-guide-paid",
+        "logo-brand-identity-tool-free",
+        "logo-design-guide-tool-free",
+        "logo-design-guide-tool-pro",
+        "logo-design-tool-free",
+        "logo-design-tool-pro"
+      ],
+      "count": 7
+    },
+    {
+      "type": "functional_overlap",
+      "keywords": [
+        "ui",
+        "ux",
+        "3d"
+      ],
+      "slugs": [
+        "minimalist-design-system",
+        "ui-ux-design-paid",
+        "ux-design",
+        "ui-ux-design-tool-pro",
+        "ux-design-tool-pro"
+      ],
+      "count": 5
+    },
+    {
+      "type": "functional_overlap",
+      "keywords": [
+        "api",
+        "claude",
+        "agent"
+      ],
+      "slugs": [
+        "model-switching",
+        "model-switching-tool-free",
+        "model-switching-tool-pro"
+      ],
+      "count": 3
+    },
+    {
+      "type": "functional_overlap",
+      "keywords": [
+        "api",
+        "data",
+        "notion"
+      ],
+      "slugs": [
+        "notion",
+        "notion-skill",
+        "notioncli"
+      ],
+      "count": 3
+    },
+    {
+      "type": "functional_overlap",
+      "keywords": [
+        "api",
+        "slack",
+        "webhook"
+      ],
+      "slugs": [
+        "slack-api-toolkit",
+        "slack-api-toolkit-pro",
+        "report-toolkit-pro"
+      ],
+      "count": 3
+    },
+    {
+      "type": "functional_overlap",
+      "keywords": [
+        "telegram",
+        "bot",
+        "webhook"
+      ],
+      "slugs": [
+        "telegram-chat",
+        "telegram-msg-toolkit",
+        "telegram-toolkit",
+        "telegram-chat-tool-pro",
+        "telegram-msg-toolkit-pro",
+        "telegram-toolkit-pro",
+        "tg-bot-builder-free"
+      ],
+      "count": 7
+    },
+    {
+      "type": "functional_overlap",
+      "keywords": [
+        "document",
+        "doc",
+        "microsoft"
+      ],
+      "slugs": [
+        "word-docx",
+        "word-docx-1",
+        "word-docx-1-02"
+      ],
+      "count": 3
+    },
+    {
+      "type": "functional_overlap",
+      "keywords": [
+        "cron",
+        "llm",
+        "agent"
+      ],
+      "slugs": [
+        "memory-radar-pro",
+        "cron-expert-free",
+        "update-guardian"
+      ],
+      "count": 3
+    },
+    {
+      "type": "functional_overlap",
+      "keywords": [
+        "api",
+        "llm",
+        "agent"
+      ],
+      "slugs": [
+        "quick-context-saver-free",
+        "pcb-design-assistant-free",
+        "social-media-toolkit-free",
+        "deepseek-assistant-free",
+        "doubao-assistant-free",
+        "key-vault-manager-free",
+        "ollama-toolkit-free",
+        "pipedrive-toolkit-free",
+        "tool-call-retry-tool-free"
+      ],
+      "count": 9
+    },
+    {
+      "type": "functional_overlap",
+      "keywords": [
+        "calendar",
+        "cli",
+        "google"
+      ],
+      "slugs": [
+        "brainz-calendar-tool-free",
+        "brainz-calendar-tool-pro",
+        "calendar-skill-tool-free"
+      ],
+      "count": 3
+    }
+  ],
+  "duplication_issues": [
+    {
+      "type": "exact_duplicate",
+      "similarity": 1.0,
+      "slugs": [
+        "（根据实际场景填充）",
+        "（根据实际场景填充）",
+        "（根据实际场景填充）",
+        "（根据实际场景填充）"
+      ],
+      "hash": "e7daa67b9111bc9d"
+    },
+    {
+      "type": "high_similarity",
+      "similarity": 0.803,
+      "slug1": "accounting-finance",
+      "slug2": "accounting-finance-tool-pro",
+      "source1": "packaged",
+      "source2": "differentiated/Finance"
+    },
+    {
+      "type": "high_similarity",
+      "similarity": 0.827,
+      "slug1": "ai-podcast",
+      "slug2": "ai-podcast-free",
+      "source1": "packaged",
+      "source2": "packaged"
+    },
+    {
+      "type": "high_similarity",
+      "similarity": 0.804,
+      "slug1": "aws-agentcore-langgraph",
+      "slug2": "aws-agentcore-langgraph-free",
+      "source1": "packaged",
+      "source2": "packaged"
+    },
+    {
+      "type": "high_similarity",
+      "similarity": 0.973,
+      "slug1": "browser-automation-tool-free",
+      "slug2": "browser-stagehand-tool-free",
+      "source1": "differentiated/Research",
+      "source2": "differentiated/Research"
+    },
+    {
+      "type": "high_similarity",
+      "similarity": 0.964,
+      "slug1": "browser-automation-tool-pro",
+      "slug2": "browser-stagehand-tool-pro",
+      "source1": "differentiated/Research",
+      "source2": "differentiated/Research"
+    },
+    {
+      "type": "high_similarity",
+      "similarity": 0.987,
+      "slug1": "code",
+      "slug2": "code-1-0-4",
+      "source1": "packaged",
+      "source2": "packaged"
+    },
+    {
+      "type": "high_similarity",
+      "similarity": 0.983,
+      "slug1": "docker-essentials",
+      "slug2": "docker-essentials-1-0-0",
+      "source1": "packaged",
+      "source2": "packaged"
+    },
+    {
+      "type": "high_similarity",
+      "similarity": 0.984,
+      "slug1": "docker-essentials-1-0-0-free",
+      "slug2": "docker-essentials-free",
+      "source1": "packaged",
+      "source2": "packaged"
+    },
+    {
+      "type": "high_similarity",
+      "similarity": 0.806,
+      "slug1": "encryption-paid",
+      "slug2": "encryption-tool-pro",
+      "source1": "packaged",
+      "source2": "differentiated/Development"
+    },
+    {
+      "type": "high_similarity",
+      "similarity": 0.885,
+      "slug1": "expanso-csv-to-json",
+      "slug2": "expanso-json-validate",
+      "source1": "packaged",
+      "source2": "packaged"
+    },
+    {
+      "type": "high_similarity",
+      "similarity": 0.812,
+      "slug1": "expanso-csv-to-json",
+      "slug2": "expanso-xml-to-json",
+      "source1": "packaged",
+      "source2": "packaged"
+    },
+    {
+      "type": "high_similarity",
+      "similarity": 0.802,
+      "slug1": "game",
+      "slug2": "game-asset-generation-cellcog",
+      "source1": "packaged",
+      "source2": "packaged"
+    },
+    {
+      "type": "high_similarity",
+      "similarity": 0.932,
+      "slug1": "markdown-exporter",
+      "slug2": "markdown-exporter-free",
+      "source1": "packaged",
+      "source2": "packaged"
+    },
+    {
+      "type": "high_similarity",
+      "similarity": 0.811,
+      "slug1": "music-gen-cellcog",
+      "slug2": "music-gen-cellcog-tool-pro",
+      "source1": "packaged",
+      "source2": "differentiated/Creative"
+    },
+    {
+      "type": "high_similarity",
+      "similarity": 0.973,
+      "slug1": "powerpoint-pptx",
+      "slug2": "powerpoint-pptx-1-0-1",
+      "source1": "packaged",
+      "source2": "packaged"
+    },
+    {
+      "type": "high_similarity",
+      "similarity": 0.82,
+      "slug1": "skill-creator",
+      "slug2": "skill-creator-free",
+      "source1": "packaged",
+      "source2": "packaged"
+    },
+    {
+      "type": "high_similarity",
+      "similarity": 0.995,
+      "slug1": "word-docx",
+      "slug2": "word-docx-1",
+      "source1": "packaged",
+      "source2": "packaged"
+    },
+    {
+      "type": "high_similarity",
+      "similarity": 0.99,
+      "slug1": "word-docx",
+      "slug2": "word-docx-1-02",
+      "source1": "packaged",
+      "source2": "packaged"
+    },
+    {
+      "type": "high_similarity",
+      "similarity": 0.991,
+      "slug1": "word-docx-1",
+      "slug2": "word-docx-1-02",
+      "source1": "packaged",
+      "source2": "packaged"
+    }
+  ],
+  "version_issues": [
+    {
+      "type": "version_mismatch",
+      "slug": "aws-cloud-architect",
+      "entries": [
+        {
+          "version": "2.0.0",
+          "source": "packaged",
+          "path": "D:\\skills\\packaged-skills\\skillhub\\aws-cloud-architect"
+        },
+        {
+          "version": "1.0.0",
+          "source": "differentiated/Agents",
+          "path": "D:\\skills\\differentiated-skills\\Agents\\aws-cloud-architect"
+        }
+      ]
+    },
+    {
+      "type": "version_mismatch",
+      "slug": "decision-architect",
+      "entries": [
+        {
+          "version": "1.0.0",
+          "source": "packaged",
+          "path": "D:\\skills\\packaged-skills\\skillhub\\decision-architect"
+        },
+        {
+          "version": "2.0.0",
+          "source": "differentiated/Agents",
+          "path": "D:\\skills\\differentiated-skills\\Agents\\decision-architect"
+        }
+      ]
+    },
+    {
+      "type": "version_mismatch",
+      "slug": "knowledge-ontology",
+      "entries": [
+        {
+          "version": "1.0.0",
+          "source": "packaged",
+          "path": "D:\\skills\\packaged-skills\\skillhub\\knowledge-ontology"
+        },
+        {
+          "version": "2.0.0",
+          "source": "differentiated/Agents",
+          "path": "D:\\skills\\differentiated-skills\\Agents\\knowledge-ontology"
+        }
+      ]
+    },
+    {
+      "type": "version_mismatch",
+      "slug": "longmemo-elite",
+      "entries": [
+        {
+          "version": "1.0.0",
+          "source": "packaged",
+          "path": "D:\\skills\\packaged-skills\\skillhub\\longmemo-elite"
+        },
+        {
+          "version": "2.0.0",
+          "source": "differentiated/Agents",
+          "path": "D:\\skills\\differentiated-skills\\Agents\\longmemo-elite"
+        }
+      ]
+    }
+  ],
+  "category_issues": [
+    {
+      "type": "tag_category_mismatch",
+      "slug": "admapix",
+      "slug_category": "Development",
+      "tag": "Creative",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "admapix-free",
+      "slug_category": "Development",
+      "tag": "Creative",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "agent-telegram",
+      "slug_category": "Communication",
+      "tag": "Automation",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "agent-telegram-free",
+      "slug_category": "Communication",
+      "tag": "Automation",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "agentvibes-voice-skill",
+      "slug_category": "Agents",
+      "tag": "Creative",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "agentvibes-voice-skill-free",
+      "slug_category": "Agents",
+      "tag": "Creative",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "ai-agent-helper",
+      "slug_category": "Agents",
+      "tag": "Productivity",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "ai-agent-helper-free",
+      "slug_category": "Agents",
+      "tag": "Productivity",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "ai-assistant",
+      "slug_category": "Agents",
+      "tag": "Knowledge",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "ai-assistant-free",
+      "slug_category": "Agents",
+      "tag": "Knowledge",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "aic-dashboard",
+      "slug_category": "Development",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "aic-dashboard-free",
+      "slug_category": "Agents",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "alephnet-node",
+      "slug_category": "Development",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "alephnet-node-free",
+      "slug_category": "Development",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "alibaba-quark-scan-free",
+      "slug_category": "Development",
+      "tag": "Creative",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "anthropics-frontend-design",
+      "slug_category": "Development",
+      "tag": "Creative",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "anthropics-frontend-design-free",
+      "slug_category": "Development",
+      "tag": "Creative",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "anygen-diagram-generator",
+      "slug_category": "Development",
+      "tag": "Creative",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "anygen-diagram-generator-free",
+      "slug_category": "Development",
+      "tag": "Creative",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "api-doc-writer",
+      "slug_category": "Development",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "api-doc-writer-free",
+      "slug_category": "Development",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "api-free",
+      "slug_category": "Development",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "api-gateway",
+      "slug_category": "Development",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "api-gateway-free",
+      "slug_category": "Development",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "api-generator",
+      "slug_category": "Development",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "api-generator-free",
+      "slug_category": "Development",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "api-integration",
+      "slug_category": "Development",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "api-integration-free",
+      "slug_category": "Development",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "azure-ai-transcription-py",
+      "slug_category": "Automation",
+      "tag": "Creative",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "azure-ai-transcription-py-free",
+      "slug_category": "Automation",
+      "tag": "Creative",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "azure-ai-voicelive-py",
+      "slug_category": "Integrations",
+      "tag": "Creative",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "azure-ai-voicelive-py-free",
+      "slug_category": "Integrations",
+      "tag": "Creative",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "azure-cloud-architect",
+      "slug_category": "Integrations",
+      "tag": "安全合规",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "azure-infra",
+      "slug_category": "Integrations",
+      "tag": "Agents",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "azure-infra-free",
+      "slug_category": "Integrations",
+      "tag": "Agents",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "baidu-netdisk-skills-free",
+      "slug_category": "Automation",
+      "tag": "Agents",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "beware-piper-tts",
+      "slug_category": "Development",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "beware-piper-tts-free",
+      "slug_category": "Development",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "bilibili-all-in-one",
+      "slug_category": "Development",
+      "tag": "Creative",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "bilibili-all-in-one-free",
+      "slug_category": "Development",
+      "tag": "Creative",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "bilibili-helper",
+      "slug_category": "Agents",
+      "tag": "Creative",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "bilibili-helper-free",
+      "slug_category": "Agents",
+      "tag": "Creative",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "bookmark-intelligence",
+      "slug_category": "Research",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "bookmark-intelligence-free",
+      "slug_category": "Research",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "calendar-reminder",
+      "slug_category": "Productivity",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "calendar-reminder-free",
+      "slug_category": "Productivity",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "can-free",
+      "slug_category": "Development",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "chart",
+      "slug_category": "Creative",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "chart-free",
+      "slug_category": "Creative",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "clawcall",
+      "slug_category": "Communication",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "clawcall-free",
+      "slug_category": "Communication",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "cloud",
+      "slug_category": "Development",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "cloud-architect",
+      "slug_category": "Integrations",
+      "tag": "Creative",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "cloud-architect-free",
+      "slug_category": "Integrations",
+      "tag": "Creative",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "cloud-free",
+      "slug_category": "Development",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "communication-skill-free",
+      "slug_category": "Knowledge",
+      "tag": "Productivity",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "creator-alpha-feed",
+      "slug_category": "Development",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "creator-alpha-feed-free",
+      "slug_category": "Development",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "csv",
+      "slug_category": "Development",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "csv-analyzer",
+      "slug_category": "Research",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "csv-analyzer-free",
+      "slug_category": "Research",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "csv-free",
+      "slug_category": "Development",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "csv-handler",
+      "slug_category": "Development",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "csv-handler-free",
+      "slug_category": "Development",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "data-analysis-hub",
+      "slug_category": "Research",
+      "tag": "数据分析",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "data-analysis-litiao",
+      "slug_category": "Research",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "data-analysis-litiao-free",
+      "slug_category": "Research",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "data-analyst-chinese",
+      "slug_category": "Research",
+      "tag": "数据分析",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "data-analyst-cn",
+      "slug_category": "Research",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "data-analyst-cn-free",
+      "slug_category": "Research",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "data-analyst-expert",
+      "slug_category": "Research",
+      "tag": "数据分析",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "data-format-converter",
+      "slug_category": "Research",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "data-format-converter-free",
+      "slug_category": "Research",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "database-admin",
+      "slug_category": "Research",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "database-admin-free",
+      "slug_category": "Research",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "db",
+      "slug_category": "Development",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "db-free",
+      "slug_category": "Development",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "diagram-generator-free",
+      "slug_category": "Development",
+      "tag": "Creative",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "dns",
+      "slug_category": "Development",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "dns-free",
+      "slug_category": "Development",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "email-163-com",
+      "slug_category": "Communication",
+      "tag": "Productivity",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "email-163-com-free",
+      "slug_category": "Communication",
+      "tag": "Productivity",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "email-daily-summary",
+      "slug_category": "Communication",
+      "tag": "Automation",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "email-gmail-outlook",
+      "slug_category": "Communication",
+      "tag": "Productivity",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "email-skill",
+      "slug_category": "Communication",
+      "tag": "Automation",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "feishu-send-file",
+      "slug_category": "Development",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "feishu-send-file-free",
+      "slug_category": "Development",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "gog",
+      "slug_category": "Development",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "gog-free",
+      "slug_category": "Development",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "google-workspace-mcp",
+      "slug_category": "Integrations",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "google-workspace-mcp-free",
+      "slug_category": "Integrations",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "jira-skill",
+      "slug_category": "Integrations",
+      "tag": "Productivity",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "jira-skill-free",
+      "slug_category": "Integrations",
+      "tag": "Productivity",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "json-repair-kit",
+      "slug_category": "Development",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "news-sentiment-scan",
+      "slug_category": "Productivity",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "news-sentiment-scan-free",
+      "slug_category": "Productivity",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "photo-captions",
+      "slug_category": "Creative",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "photo-captions-free",
+      "slug_category": "Creative",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "professional-communication-free",
+      "slug_category": "Operations",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "rest-api-reference",
+      "slug_category": "Development",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "rss-ai-reader",
+      "slug_category": "Agents",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "rss-ai-reader-free",
+      "slug_category": "Agents",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "slack",
+      "slug_category": "Communication",
+      "tag": "Productivity",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "social",
+      "slug_category": "Development",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "social-free",
+      "slug_category": "Agents",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "social-media-scheduler",
+      "slug_category": "Automation",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "social-media-scheduler-free",
+      "slug_category": "Automation",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "sql-toolkit",
+      "slug_category": "Creative",
+      "tag": "Integrations",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "telegram-messaging",
+      "slug_category": "Communication",
+      "tag": "Automation",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "telegram-messaging-free",
+      "slug_category": "Communication",
+      "tag": "Automation",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "timer",
+      "slug_category": "Productivity",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "timer-free",
+      "slug_category": "Productivity",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "whatsapp-messaging",
+      "slug_category": "Development",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "whatsapp-messaging-free",
+      "slug_category": "Development",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "whatsapp-styler",
+      "slug_category": "Development",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "whatsapp-styler-free",
+      "slug_category": "Agents",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "whatsapp-styling-guide",
+      "slug_category": "Creative",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "whatsapp-styling-guide-free",
+      "slug_category": "Creative",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "work",
+      "slug_category": "Communication",
+      "tag": "Productivity",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "x-news-daily",
+      "slug_category": "Communication",
+      "tag": "Automation",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "x-news-daily-free",
+      "slug_category": "Agents",
+      "tag": "Automation",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "x-timeline-digest",
+      "slug_category": "Productivity",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "x-timeline-digest-free",
+      "slug_category": "Productivity",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "z-card-image",
+      "slug_category": "Creative",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "z-card-image-free",
+      "slug_category": "Creative",
+      "tag": "Communication",
+      "source": "packaged"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "data-analysis-hub-free",
+      "slug_category": "Research",
+      "tag": "数据分析",
+      "source": "differentiated/Integrations"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "data-analysis-hub-pro",
+      "slug_category": "Research",
+      "tag": "数据分析",
+      "source": "differentiated/Integrations"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "data-analyst-chinese-free",
+      "slug_category": "Research",
+      "tag": "数据分析",
+      "source": "differentiated/Integrations"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "data-analyst-chinese-pro",
+      "slug_category": "Research",
+      "tag": "数据分析",
+      "source": "differentiated/Integrations"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "data-analyst-expert-free",
+      "slug_category": "Research",
+      "tag": "数据分析",
+      "source": "differentiated/Integrations"
+    },
+    {
+      "type": "tag_category_mismatch",
+      "slug": "data-analyst-expert-pro",
+      "slug_category": "Research",
+      "tag": "数据分析",
+      "source": "differentiated/Integrations"
+    }
+  ],
+  "free_paid_issues": [
+    {
+      "type": "free_without_paid",
+      "slug": "api-free",
+      "base": "api"
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "ace-music-free",
+      "paid_variants": [
+        "ace-music",
+        "ace-music-paid"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "agentvibes-skill-free",
+      "paid_variants": [
+        "agentvibes-skill-pro",
+        "agentvibes-skill"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "alephnet-node-manager-free",
+      "paid_variants": [
+        "alephnet-node-manager-pro",
+        "alephnet-node-manager"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "alpha-feed-creator-free",
+      "paid_variants": [
+        "alpha-feed-creator-pro",
+        "alpha-feed-creator"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "analytics-dashboard-free",
+      "paid_variants": [
+        "analytics-dashboard",
+        "analytics-dashboard-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "api-connect-hub-free",
+      "paid_variants": [
+        "api-connect-hub-pro",
+        "api-connect-hub"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "api-doc-generator-free",
+      "paid_variants": [
+        "api-doc-generator",
+        "api-doc-generator-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "api-magic-gen-free",
+      "paid_variants": [
+        "api-magic-gen",
+        "api-magic-gen-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "api-scaffold-gen-free",
+      "paid_variants": [
+        "api-scaffold-gen-pro",
+        "api-scaffold-gen"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "api-toolkit-free",
+      "paid_variants": [
+        "api-toolkit",
+        "api-toolkit-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "atlas-admin-console-free",
+      "paid_variants": [
+        "atlas-admin-console-pro",
+        "atlas-admin-console"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "audio-stream-upload-free",
+      "paid_variants": [
+        "audio-stream-upload-pro",
+        "audio-stream-upload"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "automation-recipe-book-free",
+      "paid_variants": [
+        "automation-recipe-book",
+        "automation-recipe-book-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "aws-toolkit-free",
+      "paid_variants": [
+        "aws-toolkit",
+        "aws-toolkit-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "azure-cli-toolkit-free",
+      "paid_variants": [
+        "azure-cli-toolkit-pro",
+        "azure-cli-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "azure-gateway-cli-free",
+      "paid_variants": [
+        "azure-gateway-cli-pro",
+        "azure-gateway-cli"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "bilibili-toolkit-free",
+      "paid_variants": [
+        "bilibili-toolkit-pro",
+        "bilibili-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "bookmark-smart-hub-free",
+      "paid_variants": [
+        "bookmark-smart-hub",
+        "bookmark-smart-hub-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "calendar-reminder-free",
+      "paid_variants": [
+        "calendar-reminder-paid",
+        "calendar-reminder"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "call-bridge-free",
+      "paid_variants": [
+        "call-bridge",
+        "call-bridge-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "can-bus-toolkit-free",
+      "paid_variants": [
+        "can-bus-toolkit-pro",
+        "can-bus-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "canvas-json-handler-free",
+      "paid_variants": [
+        "canvas-json-handler",
+        "canvas-json-handler-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "card-image-builder-free",
+      "paid_variants": [
+        "card-image-builder-pro",
+        "card-image-builder"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "chart-craft-free",
+      "paid_variants": [
+        "chart-craft-pro",
+        "chart-craft"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "cloud-architect-design-free",
+      "paid_variants": [
+        "cloud-architect-design-pro",
+        "cloud-architect-design"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "cloud-manager-free",
+      "paid_variants": [
+        "cloud-manager",
+        "cloud-manager-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "code-analysis-toolkit-free",
+      "paid_variants": [
+        "code-analysis-toolkit",
+        "code-analysis-toolkit-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "code-dev-toolkit-free",
+      "paid_variants": [
+        "code-dev-toolkit-pro",
+        "code-dev-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "cron-guard-free",
+      "paid_variants": [
+        "cron-guard",
+        "cron-guard-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "cron-scheduler-pro-free",
+      "paid_variants": [
+        "cron-scheduler-pro",
+        "cron-scheduler-pro-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "cron-setup-guide-free",
+      "paid_variants": [
+        "cron-setup-guide-pro",
+        "cron-setup-guide"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "csv-insight-free",
+      "paid_variants": [
+        "csv-insight",
+        "csv-insight-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "csv-json-converter-free",
+      "paid_variants": [
+        "csv-json-converter",
+        "csv-json-converter-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "csv-toolkit-free",
+      "paid_variants": [
+        "csv-toolkit-pro",
+        "csv-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "data-analysis-hub-free",
+      "paid_variants": [
+        "data-analysis-hub",
+        "data-analysis-hub-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "data-analyst-chinese-free",
+      "paid_variants": [
+        "data-analyst-chinese-pro",
+        "data-analyst-chinese"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "data-analyst-expert-free",
+      "paid_variants": [
+        "data-analyst-expert",
+        "data-analyst-expert-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "db-admin-console-free",
+      "paid_variants": [
+        "db-admin-console-pro",
+        "db-admin-console"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "db-connector-free",
+      "paid_variants": [
+        "db-connector",
+        "db-connector-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "db-schema-designer-free",
+      "paid_variants": [
+        "db-schema-designer",
+        "db-schema-designer-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "deepseek-assistant-free",
+      "paid_variants": [
+        "deepseek-assistant-pro",
+        "deepseek-assistant"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "design-toolkit-free",
+      "paid_variants": [
+        "design-toolkit",
+        "design-toolkit-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "discord-chat-manager-free",
+      "paid_variants": [
+        "discord-chat-manager",
+        "discord-chat-manager-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "discord-community-hub-free",
+      "paid_variants": [
+        "discord-community-hub",
+        "discord-community-hub-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "discord-master-free",
+      "paid_variants": [
+        "discord-master-pro",
+        "discord-master"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "discord-toolkit-free",
+      "paid_variants": [
+        "discord-toolkit-pro",
+        "discord-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "discord-voice-free",
+      "paid_variants": [
+        "discord-voice-paid",
+        "discord-voice"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "doc-guard-free",
+      "paid_variants": [
+        "doc-guard-pro",
+        "doc-guard"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "docker-essentials-free",
+      "paid_variants": [
+        "docker-essentials-paid",
+        "docker-essentials"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "doubao-assistant-free",
+      "paid_variants": [
+        "doubao-assistant-pro",
+        "doubao-assistant"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "email-toolkit-free",
+      "paid_variants": [
+        "email-toolkit-pro",
+        "email-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "encoding-toolkit-free",
+      "paid_variants": [
+        "encoding-toolkit-pro",
+        "encoding-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "excel-craft-free",
+      "paid_variants": [
+        "excel-craft-pro",
+        "excel-craft"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "excel-expert-free",
+      "paid_variants": [
+        "excel-expert",
+        "excel-expert-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "feishu-card-builder-free",
+      "paid_variants": [
+        "feishu-card-builder-pro",
+        "feishu-card-builder"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "feishu-file-sender-free",
+      "paid_variants": [
+        "feishu-file-sender-pro",
+        "feishu-file-sender"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "figma-studio-free",
+      "paid_variants": [
+        "figma-studio-pro",
+        "figma-studio"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "figma-tw-designer-free",
+      "paid_variants": [
+        "figma-tw-designer-pro",
+        "figma-tw-designer"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "finance-toolkit-free",
+      "paid_variants": [
+        "finance-toolkit-pro",
+        "finance-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "format-converter-free",
+      "paid_variants": [
+        "format-converter-pro",
+        "format-converter"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "free-resource-finder-free",
+      "paid_variants": [
+        "free-resource-finder",
+        "free-resource-finder-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "frontend-design-v3-free",
+      "paid_variants": [
+        "frontend-design-v3",
+        "frontend-design-v3-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "gateway-manager-free",
+      "paid_variants": [
+        "gateway-manager",
+        "gateway-manager-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "git-essentials-free",
+      "paid_variants": [
+        "git-essentials",
+        "git-essentials-paid"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "git-toolkit-free",
+      "paid_variants": [
+        "git-toolkit-pro",
+        "git-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "github-api-toolkit-free",
+      "paid_variants": [
+        "github-api-toolkit",
+        "github-api-toolkit-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "github-dev-standard-free",
+      "paid_variants": [
+        "github-dev-standard",
+        "github-dev-standard-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "github-manager-free",
+      "paid_variants": [
+        "github-manager",
+        "github-manager-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "golang-toolkit-free",
+      "paid_variants": [
+        "golang-toolkit-pro",
+        "golang-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "google-workspace-cli-free",
+      "paid_variants": [
+        "google-workspace-cli",
+        "google-workspace-cli-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "google-workspace-toolkit-free",
+      "paid_variants": [
+        "google-workspace-toolkit-pro",
+        "google-workspace-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "grain-crawler-free",
+      "paid_variants": [
+        "grain-crawler-pro",
+        "grain-crawler"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "graph-knowledge-base-free",
+      "paid_variants": [
+        "graph-knowledge-base",
+        "graph-knowledge-base-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "javascript-toolkit-free",
+      "paid_variants": [
+        "javascript-toolkit-pro",
+        "javascript-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "jira-api-toolkit-free",
+      "paid_variants": [
+        "jira-api-toolkit",
+        "jira-api-toolkit-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "jira-flow-skill-free",
+      "paid_variants": [
+        "jira-flow-skill-pro",
+        "jira-flow-skill"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "json-beautifier-free",
+      "paid_variants": [
+        "json-beautifier-pro",
+        "json-beautifier"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "json-parse-engine-free",
+      "paid_variants": [
+        "json-parse-engine-pro",
+        "json-parse-engine"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "json-toolkit-free",
+      "paid_variants": [
+        "json-toolkit-pro",
+        "json-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "json-validator-free",
+      "paid_variants": [
+        "json-validator-pro",
+        "json-validator"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "json-yaml-converter-free",
+      "paid_variants": [
+        "json-yaml-converter-pro",
+        "json-yaml-converter"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "key-vault-manager-free",
+      "paid_variants": [
+        "key-vault-manager-pro",
+        "key-vault-manager"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "linear-api-toolkit-free",
+      "paid_variants": [
+        "linear-api-toolkit",
+        "linear-api-toolkit-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "linear-workflow-skill-free",
+      "paid_variants": [
+        "linear-workflow-skill-pro",
+        "linear-workflow-skill"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "logo-design-guide-free",
+      "paid_variants": [
+        "logo-design-guide-paid",
+        "logo-design-guide"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "memory-radar-free",
+      "paid_variants": [
+        "memory-radar-pro",
+        "memory-radar"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "mongo-manager-free",
+      "paid_variants": [
+        "mongo-manager-pro",
+        "mongo-manager"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "news-daily-digest-free",
+      "paid_variants": [
+        "news-daily-digest",
+        "news-daily-digest-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "notion-api-toolkit-free",
+      "paid_variants": [
+        "notion-api-toolkit-pro",
+        "notion-api-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "ollama-toolkit-free",
+      "paid_variants": [
+        "ollama-toolkit-pro",
+        "ollama-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "ops-dashboard-free",
+      "paid_variants": [
+        "ops-dashboard-pro",
+        "ops-dashboard"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "pcb-design-assistant-free",
+      "paid_variants": [
+        "pcb-design-assistant-pro",
+        "pcb-design-assistant-paid"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "pg-job-queue-free",
+      "paid_variants": [
+        "pg-job-queue",
+        "pg-job-queue-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "pg-mcp-skills-free",
+      "paid_variants": [
+        "pg-mcp-skills-pro",
+        "pg-mcp-skills"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "pipedrive-toolkit-free",
+      "paid_variants": [
+        "pipedrive-toolkit",
+        "pipedrive-toolkit-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "piper-tts-engine-free",
+      "paid_variants": [
+        "piper-tts-engine-pro",
+        "piper-tts-engine"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "podcast-toolkit-free",
+      "paid_variants": [
+        "podcast-toolkit-pro",
+        "podcast-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "pro-comm-toolkit-free",
+      "paid_variants": [
+        "pro-comm-toolkit-pro",
+        "pro-comm-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "py-data-analyzer-free",
+      "paid_variants": [
+        "py-data-analyzer-pro",
+        "py-data-analyzer"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "python-toolkit-free",
+      "paid_variants": [
+        "python-toolkit",
+        "python-toolkit-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "pyx-scanner-free",
+      "paid_variants": [
+        "pyx-scanner",
+        "pyx-scanner-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "qwen-video-analyzer-free",
+      "paid_variants": [
+        "qwen-video-analyzer-pro",
+        "qwen-video-analyzer"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "reminder-engine-free",
+      "paid_variants": [
+        "reminder-engine-pro",
+        "reminder-engine"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "repo-manager-free",
+      "paid_variants": [
+        "repo-manager-pro",
+        "repo-manager"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "resume-assistant-free",
+      "paid_variants": [
+        "resume-assistant",
+        "resume-assistant-paid"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "rss-reader-ai-free",
+      "paid_variants": [
+        "rss-reader-ai-pro",
+        "rss-reader-ai"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "schedule-manager-free",
+      "paid_variants": [
+        "schedule-manager-pro",
+        "schedule-manager"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "secure-api-toolkit-free",
+      "paid_variants": [
+        "secure-api-toolkit-pro",
+        "secure-api-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "slack-api-toolkit-free",
+      "paid_variants": [
+        "slack-api-toolkit",
+        "slack-api-toolkit-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "slack-crawler-free",
+      "paid_variants": [
+        "slack-crawler",
+        "slack-crawler-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "slack-toolkit-free",
+      "paid_variants": [
+        "slack-toolkit",
+        "slack-toolkit-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "slack-workspace-manager-free",
+      "paid_variants": [
+        "slack-workspace-manager",
+        "slack-workspace-manager-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "smart-crawler-free",
+      "paid_variants": [
+        "smart-crawler",
+        "smart-crawler-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "smart-reminder-free",
+      "paid_variants": [
+        "smart-reminder",
+        "smart-reminder-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "social-media-toolkit-free",
+      "paid_variants": [
+        "social-media-toolkit",
+        "social-media-toolkit-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "solo-dev-companion-free",
+      "paid_variants": [
+        "solo-dev-companion",
+        "solo-dev-companion-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "sqlite-lite-manager-free",
+      "paid_variants": [
+        "sqlite-lite-manager-pro",
+        "sqlite-lite-manager"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "sqlite-manager-free",
+      "paid_variants": [
+        "sqlite-manager-pro",
+        "sqlite-manager"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "ssl-toolkit-free",
+      "paid_variants": [
+        "ssl-toolkit",
+        "ssl-toolkit-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "tailwindcss-toolkit-free",
+      "paid_variants": [
+        "tailwindcss-toolkit-pro",
+        "tailwindcss-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "task-bot-orchestrator-free",
+      "paid_variants": [
+        "task-bot-orchestrator-pro",
+        "task-bot-orchestrator"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "task-queue-manager-free",
+      "paid_variants": [
+        "task-queue-manager-pro",
+        "task-queue-manager"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "telegram-agent-comm-free",
+      "paid_variants": [
+        "telegram-agent-comm",
+        "telegram-agent-comm-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "telegram-msg-toolkit-free",
+      "paid_variants": [
+        "telegram-msg-toolkit-pro",
+        "telegram-msg-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "telegram-toolkit-free",
+      "paid_variants": [
+        "telegram-toolkit-pro",
+        "telegram-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "text2sql-engine-free",
+      "paid_variants": [
+        "text2sql-engine",
+        "text2sql-engine-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "tg-bot-builder-free",
+      "paid_variants": [
+        "tg-bot-builder",
+        "tg-bot-builder-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "translate-hub-free",
+      "paid_variants": [
+        "translate-hub",
+        "translate-hub-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "trending-feed-skill-free",
+      "paid_variants": [
+        "trending-feed-skill",
+        "trending-feed-skill-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "typescript-toolkit-free",
+      "paid_variants": [
+        "typescript-toolkit",
+        "typescript-toolkit-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "ui-design-toolkit-free",
+      "paid_variants": [
+        "ui-design-toolkit",
+        "ui-design-toolkit-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "ui-ux-design-free",
+      "paid_variants": [
+        "ui-ux-design",
+        "ui-ux-design-paid"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "ui-ux-toolkit-free",
+      "paid_variants": [
+        "ui-ux-toolkit-pro",
+        "ui-ux-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "vector-db-manager-free",
+      "paid_variants": [
+        "vector-db-manager-pro",
+        "vector-db-manager"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "video-stream-upload-free",
+      "paid_variants": [
+        "video-stream-upload",
+        "video-stream-upload-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "video-toolkit-free",
+      "paid_variants": [
+        "video-toolkit",
+        "video-toolkit-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "vpn-rotator-free",
+      "paid_variants": [
+        "vpn-rotator",
+        "vpn-rotator-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "vue-toolkit-free",
+      "paid_variants": [
+        "vue-toolkit",
+        "vue-toolkit-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "web-crawler-engine-free",
+      "paid_variants": [
+        "web-crawler-engine",
+        "web-crawler-engine-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "web-dev-toolkit-free",
+      "paid_variants": [
+        "web-dev-toolkit-pro",
+        "web-dev-toolkit"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "web-notepad-free",
+      "paid_variants": [
+        "web-notepad-pro",
+        "web-notepad"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "wechat-article-writer-free",
+      "paid_variants": [
+        "wechat-article-writer",
+        "wechat-article-writer-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "weiyun-toolkit-free",
+      "paid_variants": [
+        "weiyun-toolkit",
+        "weiyun-toolkit-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "whatsapp-master-free",
+      "paid_variants": [
+        "whatsapp-master",
+        "whatsapp-master-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "whatsapp-msg-manager-free",
+      "paid_variants": [
+        "whatsapp-msg-manager-pro",
+        "whatsapp-msg-manager"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "whatsapp-style-guide-free",
+      "paid_variants": [
+        "whatsapp-style-guide-pro",
+        "whatsapp-style-guide"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "workflow-orchestrator-free",
+      "paid_variants": [
+        "workflow-orchestrator-pro",
+        "workflow-orchestrator"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "workflow-splitter-free",
+      "paid_variants": [
+        "workflow-splitter-pro",
+        "workflow-splitter"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "xlsx-handler-free",
+      "paid_variants": [
+        "xlsx-handler",
+        "xlsx-handler-pro"
+      ]
+    },
+    {
+      "type": "multiple_paid_for_free",
+      "free_slug": "xml-json-converter-free",
+      "paid_variants": [
+        "xml-json-converter-pro",
+        "xml-json-converter"
+      ]
+    }
+  ]
+}

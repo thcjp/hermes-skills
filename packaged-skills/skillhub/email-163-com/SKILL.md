@@ -23,7 +23,7 @@ description: |-
   - 按发件人/主题精准搜索历史邮件
   - 垃圾邮件批量清理与文件夹整理
 tags:
-  - Communication
+  - 通用办公
   - Productivity
   - Email
 tools:

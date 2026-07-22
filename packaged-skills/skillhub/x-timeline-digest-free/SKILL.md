@@ -12,7 +12,7 @@ description: |-
   免费版不包含中文分类简报生成、排序修剪与启发式噪声过滤,
   仅提供基础的去重 JSON 数据供下游自行处理。
 tags:
-  - Communication
+  - 通用办公
   - Social Media
 tools:
   - read

@@ -11,7 +11,7 @@ description: |-
   适合个人或小团队的日常消息触达场景，不包含模板管理、交互按钮、媒体上传等进阶能力。
   受 24 小时客服窗口限制，窗口外无法发送自由文本消息。
 tags:
-  - Communication
+  - 研发工具
   - Automation
 tools:
   - read

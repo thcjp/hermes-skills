@@ -1,7 +1,7 @@
 ---
 slug: aws-cloud-architect
 name: aws-cloud-architect
-version: "1.0.0"
+version: "2.0.0"
 displayName: AWS云架构师
 summary: 安全审计剧本,成本优化工作流,分层权限模型,智能上下文检测,零暴露密钥。
 license: Proprietary

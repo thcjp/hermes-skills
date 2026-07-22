@@ -16,7 +16,7 @@ description: |-
   适用场景：轻量数据探索、基础统计、简单筛选。
   不适用于：超过100MB的大文件、加密文件破解。
 tags:
-  - Integrations
+  - 信息检索
   - 数据分析
   - CSV
 tools:

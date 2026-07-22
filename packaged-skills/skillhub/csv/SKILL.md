@@ -18,7 +18,7 @@ description: |-
   适用场景：数据导出、跨工具数据交换、报表生成、ETL预处理。
   不适用于：加密文件破解。
 tags:
-  - Integrations
+  - 研发工具
   - 数据格式
   - CSV
 tools:

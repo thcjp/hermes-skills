@@ -11,7 +11,7 @@ description: |-
   成本入门优化与基础安全合规咨询。多云灾备、FinOps 深度优化、
   Landing Zone 治理等进阶能力请使用付费版本。
 tags:
-  - Creative
+  - 通用办公
   - cloud
   - architecture
 tools:

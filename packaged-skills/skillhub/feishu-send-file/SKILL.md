@@ -11,7 +11,7 @@ description: |-
   适配中国版飞书(open.feishu.cn)与国际版 Lark(open.larksuite.com)。
   适用于自动化工作流、企业团队通知与开发者文件分发场景。
 tags:
-  - Communication
+  - 研发工具
   - Automation
 tools:
   - read

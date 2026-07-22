@@ -12,7 +12,7 @@ description: |-
   适用于个人开发者日常消息格式转换、单条通知模板转换等基础场景。
   如需批量处理、格式自动修复、特殊字符冲突处理、样式意图保持等高级能力,请升级至whatsapp-styler付费版。
 tags:
-  - Communication
+  - 研发工具
 tools:
   - read
 ---

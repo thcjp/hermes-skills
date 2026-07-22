@@ -12,7 +12,7 @@ description: |-
   流程梳理等基础场景。需要AnyGen CLI与anygen-workflow-generate
   依赖技能配合运行。本免费版支持基础图表类型与默认配置。
 tags:
-  - Creative
+  - 研发工具
   - Diagram
   - Visualization
 tools:

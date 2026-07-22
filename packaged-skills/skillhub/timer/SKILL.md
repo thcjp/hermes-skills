@@ -11,7 +11,7 @@ description: |-
   适用于烹饪计时、番茄工作法、会议提醒、任务切换、休息提醒等需要准确倒计时与到期通知的场景。
   可对运行中的定时器执行列出、轮询、查看日志、终止等管理操作。
 tags:
-  - Communication
+  - 通用办公
   - Productivity
 tools:
   - read

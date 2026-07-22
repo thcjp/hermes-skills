@@ -10,7 +10,7 @@ description: |-
   核心能力:单段文本转语音、默认音色(en_US-kusal-medium)朗读、MP3 输出与语音消息封装。
   适用于偶发的语音消息投递与短文本朗读。如需多音色切换、长文本分段合并、批量生成与风格控制,请升级至 beware-piper-tts 付费版。
 tags:
-  - Communication
+  - 研发工具
   - Creative
   - 语音合成
 tools:

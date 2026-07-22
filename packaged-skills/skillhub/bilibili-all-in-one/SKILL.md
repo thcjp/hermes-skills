@@ -14,7 +14,7 @@ description: |-
   默认内存存储,可选 `BILIBILI_PERSIST` 持久化到0600权限文件。无凭据亦可使用热门、
   标准清晰度下载、字幕列表、弹幕、统计等公共API能力。
 tags:
-  - Creative
+  - 研发工具
   - bilibili
   - video
   - downloader

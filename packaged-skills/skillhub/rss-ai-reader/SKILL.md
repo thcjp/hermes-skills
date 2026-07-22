@@ -14,7 +14,7 @@ description: |-
   定时任务(cron 式调度)。适用于技术博客监控、新闻早报推送、竞品动态追踪、论文筛选等场景。
   基于 Markdown 指令驱动,需配合 Python 运行环境与对应推送渠道的凭证配置。
 tags:
-  - Communication
+  - 研发工具
   - Research
   - Automation
 tools:

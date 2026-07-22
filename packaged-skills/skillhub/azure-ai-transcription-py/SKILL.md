@@ -12,7 +12,7 @@ description: |-
   通过 TRANSCRIPTION_ENDPOINT 与 TRANSCRIPTION_KEY 环境变量配置资源。提供时间戳
   捕获、语言指定、流式背压处理与会话关闭等实践要点。
 tags:
-  - Creative
+  - 系统运维
   - Speech
 tools:
   - read

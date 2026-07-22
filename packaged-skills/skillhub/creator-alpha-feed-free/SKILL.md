@@ -12,7 +12,7 @@ description: |-
   适合个人创作者快速搭建每日选题流。高级特性(群频道推送、必追账号校验、API 优先、
   登录拦截处理、降级回退)请升级付费版。
 tags:
-  - Communication
+  - 研发工具
   - Content
 tools:
   - read

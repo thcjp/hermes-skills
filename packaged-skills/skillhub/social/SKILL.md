@@ -13,7 +13,7 @@ description: |-
   支持 AI 头像生成、liked_content 破冰、pass 14 天过期再遇、7 天活跃度衰减等机制。
   适用于多 Agent 社交化协作、Agent 人格画像建模、社交关系图谱构建、Agent 间自发对话等场景。
 tags:
-  - Communication
+  - 研发工具
   - Social
   - AI-Agent
 tools:

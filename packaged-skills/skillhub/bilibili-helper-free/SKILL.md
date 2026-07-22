@@ -16,7 +16,7 @@ description: |-
   适用对象：个人UP主、内容创作入门者
   触发场景：需要为B站视频生成标题、简介、标签或口播脚本时
 tags:
-  - Creative
+  - 研发工具
   - bilibili
   - video
 tools:

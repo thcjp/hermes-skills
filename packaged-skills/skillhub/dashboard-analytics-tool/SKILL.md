@@ -1,9 +1,9 @@
 ---
 name: dashboard-analytics-tool
 slug: dashboard-analytics-tool
-displayName: （根据实际场景填充）
+displayName: 仪表盘分析工具
 version: "1.0.0"
-summary: （根据实际场景填充）
+summary: 数据仪表盘分析工具,支持可视化报表、KPI监控和数据洞察
 description: |-
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据。
   Use when 用户说"（根据实际场景填充）"、（根据实际场景填充）时使用。

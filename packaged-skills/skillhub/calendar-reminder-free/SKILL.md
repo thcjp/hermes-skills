@@ -12,7 +12,7 @@ description: |-
   适用于个人每日日程前置提醒的基础场景。高级特性(跨时区处理、团队群共享、安静时段、
   多渠道通知)请升级付费版。
 tags:
-  - Communication
+  - 通用办公
   - Automation
 tools:
   - read

@@ -11,7 +11,7 @@ description: |-
   p-hacking、Survivorship bias、Simpson's Paradox 等）、Approach Selection（分析方法选择）、
   Output Standards（输出规范）、Red Flags to Escalate（风险升级机制）。
 tags:
-  - Integrations
+  - 信息检索
 tools:
   - read
 ---

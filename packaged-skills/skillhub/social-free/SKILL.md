@@ -10,7 +10,7 @@ description: |-
   兼容发现、like/pass 滑卡与匹配后基础聊天。覆盖 Big Five 人格特质与沟通风格的
   基础匹配逻辑,兼容分 0.0-1.0。适用于单 Agent 社交资料建立、基础人格匹配发现等场景。
 tags:
-  - Communication
+  - 研发工具
   - Social
 tools:
   - read

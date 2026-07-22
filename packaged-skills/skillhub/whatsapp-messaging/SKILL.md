@@ -12,7 +12,7 @@ description: |-
   涵盖电话号码查询、消息发送、媒体上传下载、模板创建与审批状态、业务资料读取等完整能力。
   适用于订单通知、客户支持、预约提醒、营销活动等需要触达 WhatsApp 用户的业务场景。
 tags:
-  - Communication
+  - 研发工具
   - Automation
 tools:
   - read

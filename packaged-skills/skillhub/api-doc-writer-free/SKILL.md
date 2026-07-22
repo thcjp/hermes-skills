@@ -9,7 +9,7 @@ description: |-
   API 接口文档编写助手免费版。用于编写基础 REST API 文档,提供文档模板、认证方式、请求/响应格式
   与基础 RESTful 规范。完整安全建议、多模块结构、变更记录、HTTP 状态码分类等高级功能需升级付费版。
 tags:
-  - Integrations
+  - 研发工具
   - Documentation
 tools:
   - read

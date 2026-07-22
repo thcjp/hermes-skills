@@ -10,7 +10,7 @@ description: |-
   按类别组织（AI/ML、支付、通信、CRM、数据库、媒体等 16 类）,每类含索引表与逐服务详解。
   提供多账户凭证命名规范、错误处理模式、幂等键使用等工程实践。仅作文档参考,不代用户执行请求。
 tags:
-  - Integrations
+  - 研发工具
   - Productivity
 tools:
   - read

@@ -1,0 +1,326 @@
+{
+  "deleted": [],
+  "fixed_frontmatter": [
+    {
+      "slug": "agent-browser-assistant",
+      "fixes": [
+        "slug",
+        "displayName",
+        "summary"
+      ]
+    },
+    {
+      "slug": "jira-pat-manager",
+      "fixes": [
+        "slug",
+        "displayName",
+        "summary"
+      ]
+    },
+    {
+      "slug": "linear-project-manager",
+      "fixes": [
+        "slug",
+        "displayName",
+        "summary"
+      ]
+    },
+    {
+      "slug": "pandoc-document-converter",
+      "fixes": [
+        "slug",
+        "displayName",
+        "summary"
+      ]
+    },
+    {
+      "slug": "agentvibes-content-skill",
+      "fixes": [
+        "displayName",
+        "summary"
+      ]
+    },
+    {
+      "slug": "dashboard-analytics-tool",
+      "fixes": [
+        "displayName",
+        "summary"
+      ]
+    },
+    {
+      "slug": "jira-integration-skill",
+      "fixes": [
+        "displayName",
+        "summary"
+      ]
+    },
+    {
+      "slug": "aws-cloud-architect",
+      "fixes": {
+        "version": "1.0.0 -> 2.0.0"
+      }
+    },
+    {
+      "slug": "decision-architect",
+      "fixes": {
+        "version": "1.0.0 -> 2.0.0"
+      }
+    },
+    {
+      "slug": "knowledge-ontology",
+      "fixes": {
+        "version": "1.0.0 -> 2.0.0"
+      }
+    },
+    {
+      "slug": "longmemo-elite",
+      "fixes": {
+        "version": "1.0.0 -> 2.0.0"
+      }
+    }
+  ],
+  "fixed_tags": [
+    {
+      "slug": "azure-cloud-architect",
+      "old_tag": "安全合规",
+      "new_tag": "通用办公"
+    },
+    {
+      "slug": "slack",
+      "old_tag": "Productivity",
+      "new_tag": "通用办公"
+    },
+    {
+      "slug": "social",
+      "old_tag": "Communication",
+      "new_tag": "研发工具"
+    },
+    {
+      "slug": "social-free",
+      "old_tag": "Communication",
+      "new_tag": "研发工具"
+    },
+    {
+      "slug": "social-media-scheduler",
+      "old_tag": "Communication",
+      "new_tag": "系统运维"
+    },
+    {
+      "slug": "social-media-scheduler-free",
+      "old_tag": "Communication",
+      "new_tag": "系统运维"
+    },
+    {
+      "slug": "sql-toolkit",
+      "old_tag": "Integrations",
+      "new_tag": "需求设计"
+    },
+    {
+      "slug": "telegram-messaging",
+      "old_tag": "Automation",
+      "new_tag": "通用办公"
+    },
+    {
+      "slug": "telegram-messaging-free",
+      "old_tag": "Automation",
+      "new_tag": "通用办公"
+    },
+    {
+      "slug": "timer",
+      "old_tag": "Communication",
+      "new_tag": "通用办公"
+    },
+    {
+      "slug": "timer-free",
+      "old_tag": "Communication",
+      "new_tag": "通用办公"
+    },
+    {
+      "slug": "whatsapp-messaging",
+      "old_tag": "Communication",
+      "new_tag": "研发工具"
+    },
+    {
+      "slug": "whatsapp-messaging-free",
+      "old_tag": "Communication",
+      "new_tag": "研发工具"
+    },
+    {
+      "slug": "whatsapp-styler",
+      "old_tag": "Communication",
+      "new_tag": "研发工具"
+    },
+    {
+      "slug": "whatsapp-styler-free",
+      "old_tag": "Communication",
+      "new_tag": "研发工具"
+    },
+    {
+      "slug": "whatsapp-styling-guide",
+      "old_tag": "Communication",
+      "new_tag": "需求设计"
+    },
+    {
+      "slug": "whatsapp-styling-guide-free",
+      "old_tag": "Communication",
+      "new_tag": "需求设计"
+    },
+    {
+      "slug": "work",
+      "old_tag": "Productivity",
+      "new_tag": "通用办公"
+    },
+    {
+      "slug": "x-news-daily",
+      "old_tag": "Automation",
+      "new_tag": "通用办公"
+    },
+    {
+      "slug": "x-news-daily-free",
+      "old_tag": "Automation",
+      "new_tag": "研发工具"
+    },
+    {
+      "slug": "x-timeline-digest",
+      "old_tag": "Communication",
+      "new_tag": "通用办公"
+    },
+    {
+      "slug": "x-timeline-digest-free",
+      "old_tag": "Communication",
+      "new_tag": "通用办公"
+    },
+    {
+      "slug": "z-card-image",
+      "old_tag": "Communication",
+      "new_tag": "需求设计"
+    },
+    {
+      "slug": "z-card-image-free",
+      "old_tag": "Communication",
+      "new_tag": "需求设计"
+    },
+    {
+      "slug": "data-analysis-hub-free",
+      "old_tag": "数据分析",
+      "new_tag": "信息检索"
+    },
+    {
+      "slug": "data-analyst-chinese-free",
+      "old_tag": "数据分析",
+      "new_tag": "信息检索"
+    },
+    {
+      "slug": "data-analyst-expert-free",
+      "old_tag": "数据分析",
+      "new_tag": "信息检索"
+    }
+  ],
+  "renamed_dirs": [
+    {
+      "slug": "ai-video-studio-pro",
+      "old_dir": "ai-video-director",
+      "new_path": "D:\\skills\\packaged-skills\\skillhub\\ai-video-studio-pro"
+    },
+    {
+      "slug": "fortune-reading-studio",
+      "old_dir": "cyber-fortune-teller",
+      "new_path": "D:\\skills\\packaged-skills\\skillhub\\fortune-reading-studio"
+    },
+    {
+      "slug": "evolution-engine-v2",
+      "old_dir": "evolution-engine",
+      "new_path": "D:\\skills\\differentiated-skills\\Agents\\evolution-engine-v2"
+    },
+    {
+      "slug": "memory-distiller-v2",
+      "old_dir": "memory-distiller",
+      "new_path": "D:\\skills\\differentiated-skills\\Agents\\memory-distiller-v2"
+    },
+    {
+      "slug": "memory-orchestrator-v2",
+      "old_dir": "memory-orchestrator",
+      "new_path": "D:\\skills\\differentiated-skills\\Agents\\memory-orchestrator-v2"
+    },
+    {
+      "slug": "multi-agent-dev-v2",
+      "old_dir": "multi-agent-dev",
+      "new_path": "D:\\skills\\differentiated-skills\\Agents\\multi-agent-dev-v2"
+    },
+    {
+      "slug": "frontend-design-ai-provider-free",
+      "old_dir": "frontend-design-anthropic-free",
+      "new_path": "D:\\skills\\differentiated-skills\\Creative\\frontend-design-ai-provider-free"
+    },
+    {
+      "slug": "frontend-design-ai-provider-pro",
+      "old_dir": "frontend-design-anthropic-pro",
+      "new_path": "D:\\skills\\differentiated-skills\\Creative\\frontend-design-ai-provider-pro"
+    },
+    {
+      "slug": "llm-provider-ai-tool-free",
+      "old_dir": "openai-ai-tool-free",
+      "new_path": "D:\\skills\\differentiated-skills\\Creative\\llm-provider-ai-tool-free"
+    },
+    {
+      "slug": "llm-provider-ai-tool-pro",
+      "old_dir": "openai-ai-tool-pro",
+      "new_path": "D:\\skills\\differentiated-skills\\Creative\\llm-provider-ai-tool-pro"
+    },
+    {
+      "slug": "llm-provider-whisper-tool-free",
+      "old_dir": "openai-whisper-tool-free",
+      "new_path": "D:\\skills\\differentiated-skills\\Creative\\llm-provider-whisper-tool-free"
+    },
+    {
+      "slug": "llm-provider-whisper-tool-pro",
+      "old_dir": "openai-whisper-tool-pro",
+      "new_path": "D:\\skills\\differentiated-skills\\Creative\\llm-provider-whisper-tool-pro"
+    },
+    {
+      "slug": "llm-provider-whisper-v1-tool-free",
+      "old_dir": "openai-whisper-v1-tool-free",
+      "new_path": "D:\\skills\\differentiated-skills\\Creative\\llm-provider-whisper-v1-tool-free"
+    },
+    {
+      "slug": "llm-provider-whisper-v1-tool-pro",
+      "old_dir": "openai-whisper-v1-tool-pro",
+      "new_path": "D:\\skills\\differentiated-skills\\Creative\\llm-provider-whisper-v1-tool-pro"
+    }
+  ],
+  "merged": [],
+  "skipped": [
+    {
+      "slug": "code-1-0-4",
+      "reason": "not_found"
+    },
+    {
+      "slug": "docker-essentials-1-0-0",
+      "reason": "not_found"
+    },
+    {
+      "slug": "docker-essentials-1-0-0-free",
+      "reason": "not_found"
+    },
+    {
+      "slug": "powerpoint-pptx-1-0-1",
+      "reason": "not_found"
+    },
+    {
+      "slug": "word-docx-1",
+      "reason": "not_found"
+    },
+    {
+      "slug": "word-docx-1-02",
+      "reason": "not_found"
+    },
+    {
+      "slug": "browser-stagehand-tool-free",
+      "reason": "not_found"
+    },
+    {
+      "slug": "browser-stagehand-tool-pro",
+      "reason": "not_found"
+    }
+  ]
+}

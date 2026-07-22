@@ -12,7 +12,7 @@ description: |-
   完整报告以 YYYY-MM-DD_HHMM.md 命名写入 Obsidian Vault。强制追踪 @xiaohu @dotey @marclou
   三个账号,采集源需登录时暂停等待最多 3 分钟。适用于 AI 自媒体、内容策展、行业情报订阅场景。
 tags:
-  - Communication
+  - 研发工具
   - Content
   - Automation
 tools:

@@ -15,7 +15,7 @@ description: |-
   - 基础可视化（折线图、柱状图、散点图、直方图）
   高级功能（IQR异常值剔除、时间序列分析、高级图表、分析报告生成）为付费版专享。
 tags:
-  - Integrations
+  - 信息检索
   - data-analysis
   - visualization
 tools:

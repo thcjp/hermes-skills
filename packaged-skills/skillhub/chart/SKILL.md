@@ -17,7 +17,7 @@ description: |-
   - 存储初始化：init_storage.py 一键初始化本地存储
   - 输出可复用于报告、幻灯片与快速决策
 tags:
-  - Integrations
+  - 需求设计
   - 数据可视化
   - matplotlib
 tools:

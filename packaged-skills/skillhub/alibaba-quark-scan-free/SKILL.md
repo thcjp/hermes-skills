@@ -10,7 +10,7 @@ description: |-
   去手写和文档扫描三种基础场景。适用于个人用户的日常图片
   优化和文档数字化需求。
 tags:
-  - Creative
+  - 研发工具
   - Knowledge
 tools:
   - read

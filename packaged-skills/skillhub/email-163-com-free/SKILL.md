@@ -19,7 +19,7 @@ description: |-
   - 未读邮件快速查阅
   - 按发件人简单搜索历史邮件
 tags:
-  - Communication
+  - 通用办公
   - Productivity
 tools:
   - read

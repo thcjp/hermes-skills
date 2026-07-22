@@ -11,7 +11,7 @@ description: |-
   安全审批流程（只读优先、写操作需确认、高危操作额外审查）。支持 CLI 与 HTTP 两种调用方式,
   速率限制 10 请求/秒/账户。适用于第三方 API 集成、平台对接、自动化工作流场景。
 tags:
-  - Integrations
+  - 研发工具
   - Automation
 tools:
   - read

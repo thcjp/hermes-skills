@@ -17,7 +17,7 @@ description: |-
   - 数据完整性保障（唯一约束竞态、CHECK约束、孤儿行、时区存储、金额精度）
   - 扩展性限制规划（1亿行分片、Autovacuum监控、统计信息更新、连接数非线性扩展、IOPS瓶颈）
 tags:
-  - Integrations
+  - 研发工具
   - database
   - operations
 tools:

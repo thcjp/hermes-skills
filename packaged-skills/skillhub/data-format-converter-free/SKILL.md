@@ -15,7 +15,7 @@ description: |-
   - 中文输出（ensure_ascii=False，allow_unicode=True）
   高级功能（XML互转、TOML互转、批量转换、嵌套结构处理）为付费版专享。
 tags:
-  - Integrations
+  - 信息检索
   - data-format
   - converter
 tools:

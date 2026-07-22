@@ -11,7 +11,7 @@ description: |-
   客服对话、实时翻译、会议转写等场景。支持DefaultAzureCredential与API Key两种认证方式,
   兼容pcm16、g711等多种音频格式,适配24kHz高保真与8kHz电话场景。
 tags:
-  - Creative
+  - 通用办公
   - voice
   - azure
   - realtime

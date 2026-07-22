@@ -14,7 +14,7 @@ description: |-
   如需 Telegram 与 Email 推送、llm-provider 后端、定时任务循环、多渠道组合推送等高级能力,
   请升级至 rss-ai-reader 付费版。
 tags:
-  - Communication
+  - 研发工具
   - Research
 tools:
   - read

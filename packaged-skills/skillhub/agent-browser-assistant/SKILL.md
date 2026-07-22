@@ -1,9 +1,9 @@
 ---
 name: （根据实际场景填充）
-slug: （根据实际场景填充）
-displayName: （根据实际场景填充）
+slug: agent-browser-assistant
+displayName: 浏览器代理助手
 version: "1.0.0"
-summary: （根据实际场景填充）
+summary: AI浏览器代理助手,自动化网页交互与数据采集,支持复杂页面操作流程
 description: |-
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据。
   Use when 用户说"（根据实际场景填充）"、（根据实际场景填充）时使用。

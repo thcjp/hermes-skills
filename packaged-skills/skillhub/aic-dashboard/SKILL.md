@@ -11,7 +11,7 @@ description: |-
   不捕获凭证、不控制浏览器、不发送消息,仅读取本地数据文件并安全呈现。
   适用于独立开发者监控邮件收集器与浏览器认证会话的运行状态。
 tags:
-  - Integrations
+  - 研发工具
   - Monitoring
 tools:
   - read

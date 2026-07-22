@@ -10,7 +10,7 @@ description: |-
   提供脚本化与手动两种调用方式。适用于个人开发者与轻量级文件投递场景。
   本免费版仅支持普通文件链路,图片稳定发送与国际版 Lark 适配等高级能力请升级付费版。
 tags:
-  - Communication
+  - 研发工具
 tools:
   - read
   - exec

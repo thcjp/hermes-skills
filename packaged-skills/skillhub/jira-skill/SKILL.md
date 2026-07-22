@@ -19,7 +19,7 @@ description: |-
   - 工时命令输出JSON，便于其他工具复用
   适用场景：第三方API集成、平台对接、数据同步、独立开发者与一人公司效率提升、自动化工作流。
 tags:
-  - Integrations
+  - 通用办公
   - Productivity
   - Jira
 tools:

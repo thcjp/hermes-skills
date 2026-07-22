@@ -11,7 +11,7 @@ description: |-
   生成的海报可作为文件分发到 QQ、Telegram、Discord、微信等任意 IM 平台。
   适用于每日新闻简报、关键词舆情监测、内容运营自动化、定时任务推送等场景。
 tags:
-  - Automation
+  - 通用办公
   - Research
   - Content
 tools:

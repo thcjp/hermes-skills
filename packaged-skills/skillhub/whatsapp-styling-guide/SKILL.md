@@ -14,7 +14,7 @@ description: |-
   适用于团队WhatsApp消息标准化、客服话术设计、通知模板编写、营销消息排版等场景。
   基于Markdown指令驱动,无需额外API Key。
 tags:
-  - Communication
+  - 需求设计
   - Productivity
 tools:
   - read

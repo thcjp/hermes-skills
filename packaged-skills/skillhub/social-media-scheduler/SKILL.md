@@ -13,7 +13,7 @@ description: |-
   提供跨平台复用映射与三阶标签策略(高量/中量/利基)。输出为可复制格式并附字符计数。
   适用于个人品牌运营、企业社媒矩阵、内容团队周月规划、单条内容多平台分发等场景。
 tags:
-  - Communication
+  - 系统运维
   - Marketing
   - Content
 tools:

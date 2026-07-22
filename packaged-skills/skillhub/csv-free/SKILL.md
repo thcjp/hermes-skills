@@ -17,7 +17,7 @@ description: |-
   适用场景：简单数据导出、基础跨工具交换。
   不适用于：加密文件破解、欧洲Excel分号场景、Excel公式注入防御。
 tags:
-  - Integrations
+  - 研发工具
   - 数据格式
   - CSV
 tools:

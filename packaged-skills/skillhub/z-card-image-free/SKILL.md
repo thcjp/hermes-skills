@@ -12,7 +12,7 @@ description: |-
   通过 Python 与 Chrome 完成本地渲染。
   不包含长文分页、X 风格长图、公众号封面与小红书配色。
 tags:
-  - Communication
+  - 需求设计
   - Creative
 tools:
   - read

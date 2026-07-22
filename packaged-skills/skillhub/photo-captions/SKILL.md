@@ -15,7 +15,7 @@ description: |-
   "golden hour doing its thing"等模板化表达，让配文像人写出来的，
   而不是营销文案。
 tags:
-  - Communication
+  - 需求设计
   - Photography
   - SocialMedia
   - Writing

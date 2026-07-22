@@ -11,7 +11,7 @@ description: |-
   TRANSCRIPTION_ENDPOINT 与 TRANSCRIPTION_KEY 环境变量配置资源。本基础版不含
   实时流式转写、说话人分离、时间戳字幕生成等高级能力。
 tags:
-  - Creative
+  - 系统运维
   - Speech
 tools:
   - read

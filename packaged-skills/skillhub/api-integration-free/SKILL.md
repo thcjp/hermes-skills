@@ -9,7 +9,7 @@ description: |-
   API 集成开发助手免费版。掌握 RESTful API 调用与 API Key 认证管理,提供 Python requests 调用模板
   与基础错误处理。OAuth2 令牌管理、GraphQL 查询、JWT 认证、完整错误处理等高级功能需升级付费版。
 tags:
-  - Integrations
+  - 研发工具
   - Development
 tools:
   - read

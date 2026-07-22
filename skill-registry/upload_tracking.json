@@ -75,21 +75,6 @@
         "last_check": null
       }
     },
-    "ace-music-paid": {
-      "content_hash": "d6e09b2e3afa53b1",
-      "version": "1.0.0",
-      "source": "packaged",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      }
-    },
     "actor-identifier": {
       "content_hash": "d8fb88e7bb3a39cf",
       "version": "1.0.0",
@@ -121,7 +106,7 @@
       }
     },
     "ad-insight-hub-free": {
-      "content_hash": "0beea70f4b1bc07d",
+      "content_hash": "840e3ab1b807598b",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -136,7 +121,7 @@
       }
     },
     "admapix": {
-      "content_hash": "49ceff4588044deb",
+      "content_hash": "fa9cb4cfe48bb312",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -151,7 +136,7 @@
       }
     },
     "admapix-free": {
-      "content_hash": "c28c16264ecde60d",
+      "content_hash": "5732c970c5b6f2bb",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -285,8 +270,8 @@
         "last_check": null
       }
     },
-    "（根据实际场景填充）": {
-      "content_hash": "e7daa67b9111bc9d",
+    "agent-browser-assistant": {
+      "content_hash": "d5986f56064a85a1",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -295,8 +280,8 @@
         "last_check": null
       },
       "clawhub": {
-        "uploaded": false,
-        "version": null,
+        "uploaded": true,
+        "version": "1.0.0",
         "last_check": null
       }
     },
@@ -421,7 +406,7 @@
       }
     },
     "agent-telegram": {
-      "content_hash": "dbe9f5d685c5c858",
+      "content_hash": "8788d0988737af93",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -436,7 +421,7 @@
       }
     },
     "agent-telegram-free": {
-      "content_hash": "28abcc4d9c4d6c16",
+      "content_hash": "37e968e67bd9c4ac",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -466,7 +451,7 @@
       }
     },
     "agentvibes-content-skill": {
-      "content_hash": "000e9ceccf4225ca",
+      "content_hash": "138728428eeb12f2",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -496,7 +481,7 @@
       }
     },
     "agentvibes-voice-skill": {
-      "content_hash": "b8936a21d4b15cf1",
+      "content_hash": "9db48407edb66af6",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -511,7 +496,7 @@
       }
     },
     "agentvibes-voice-skill-free": {
-      "content_hash": "8690dbe82444cc98",
+      "content_hash": "b92073d8528c5823",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -526,7 +511,7 @@
       }
     },
     "ai-agent-helper": {
-      "content_hash": "296cc4104dd67d2d",
+      "content_hash": "dcb0bf8deb49d9c2",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -541,7 +526,7 @@
       }
     },
     "ai-agent-helper-free": {
-      "content_hash": "39bf18277c410e35",
+      "content_hash": "0baae3b2e297ca4f",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -556,7 +541,7 @@
       }
     },
     "ai-artist-workstation": {
-      "content_hash": "b07abbb89b86f932",
+      "content_hash": "6bc6ce029553f2c5",
       "version": "1.0.1",
       "source": "packaged",
       "skillhub": {
@@ -571,7 +556,7 @@
       }
     },
     "ai-assistant": {
-      "content_hash": "cc55944d1c531de0",
+      "content_hash": "f1c6c6344857c3a7",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -586,7 +571,7 @@
       }
     },
     "ai-assistant-free": {
-      "content_hash": "857944317c603989",
+      "content_hash": "e2e1e0c42d4519db",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -736,7 +721,7 @@
       }
     },
     "aic-dashboard": {
-      "content_hash": "26939413fe6a9f66",
+      "content_hash": "d8a544fe3cb330af",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -751,7 +736,7 @@
       }
     },
     "aic-dashboard-free": {
-      "content_hash": "10a87ed798ba3444",
+      "content_hash": "d06260ff0608eb65",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -766,7 +751,7 @@
       }
     },
     "alephnet-node": {
-      "content_hash": "4e5a5400b66eea40",
+      "content_hash": "c738a6ba973b5fa7",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -781,7 +766,7 @@
       }
     },
     "alephnet-node-free": {
-      "content_hash": "9d028a94280bd83d",
+      "content_hash": "c845266843c4f80f",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -826,7 +811,7 @@
       }
     },
     "alibaba-quark-scan-free": {
-      "content_hash": "06d5784b1327cfe0",
+      "content_hash": "a7321505ff73d39f",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -931,7 +916,7 @@
       }
     },
     "anthropics-frontend-design": {
-      "content_hash": "5cf18949502a2a29",
+      "content_hash": "3508571864ee74fb",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -946,7 +931,7 @@
       }
     },
     "anthropics-frontend-design-free": {
-      "content_hash": "49f4f162b49269eb",
+      "content_hash": "580255e1c403b76e",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1006,7 +991,7 @@
       }
     },
     "anygen-diagram-generator": {
-      "content_hash": "8e61294363082234",
+      "content_hash": "01ef92e586a45d35",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1021,7 +1006,7 @@
       }
     },
     "anygen-diagram-generator-free": {
-      "content_hash": "fb4d5f5b3f4e30db",
+      "content_hash": "5498837688ea96a0",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1081,7 +1066,7 @@
       }
     },
     "api-doc-writer": {
-      "content_hash": "4bce539b1a4247aa",
+      "content_hash": "fd1271e22048b577",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1096,7 +1081,7 @@
       }
     },
     "api-doc-writer-free": {
-      "content_hash": "33d0b183755e1d48",
+      "content_hash": "ac2a450b42f27d27",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1111,7 +1096,7 @@
       }
     },
     "api-free": {
-      "content_hash": "c19da33c9cc07b78",
+      "content_hash": "e9c9c5ddf0b3008b",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1126,7 +1111,7 @@
       }
     },
     "api-gateway": {
-      "content_hash": "1afa119a583627ec",
+      "content_hash": "c5a92914e32ed003",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1141,7 +1126,7 @@
       }
     },
     "api-gateway-free": {
-      "content_hash": "a33e3697bf74dba5",
+      "content_hash": "364010f4b08199d7",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1156,7 +1141,7 @@
       }
     },
     "api-generator": {
-      "content_hash": "17c9d7cee80f98c1",
+      "content_hash": "02b3f43f69f13404",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1171,7 +1156,7 @@
       }
     },
     "api-generator-free": {
-      "content_hash": "069d57ccf8a87479",
+      "content_hash": "b36d1683462832bb",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1186,7 +1171,7 @@
       }
     },
     "api-integration": {
-      "content_hash": "973d76f1188181b1",
+      "content_hash": "1b1a82dfed3d6569",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1201,7 +1186,7 @@
       }
     },
     "api-integration-free": {
-      "content_hash": "3f7ea7621004cc6e",
+      "content_hash": "2a8e994191274d32",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1531,17 +1516,17 @@
       }
     },
     "aws-cloud-architect": {
-      "content_hash": "03fd6013bcf9ad93",
-      "version": "1.0.0",
+      "content_hash": "2b46930705402e1f",
+      "version": "2.0.0",
       "source": "differentiated/Agents",
       "skillhub": {
         "uploaded": true,
-        "version": "1.0.0",
+        "version": "2.0.0",
         "last_check": null
       },
       "clawhub": {
         "uploaded": true,
-        "version": "1.0.0",
+        "version": "2.0.0",
         "last_check": null
       }
     },
@@ -1576,7 +1561,7 @@
       }
     },
     "aws-graph-agent-free": {
-      "content_hash": "4f5e494d30c38fa9",
+      "content_hash": "b4f318c524974eac",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1591,7 +1576,7 @@
       }
     },
     "aws-infra": {
-      "content_hash": "36275a04e03b2421",
+      "content_hash": "e2aa7d551c7b8e94",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1606,7 +1591,7 @@
       }
     },
     "aws-infra-free": {
-      "content_hash": "2a707c7fc0b45ed6",
+      "content_hash": "a6cd10efbbf7ed49",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1681,7 +1666,7 @@
       }
     },
     "azure-ai-transcription-py": {
-      "content_hash": "78db5ce00619e45e",
+      "content_hash": "5ca9300533e8808b",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1696,7 +1681,7 @@
       }
     },
     "azure-ai-transcription-py-free": {
-      "content_hash": "c796c0597aef0314",
+      "content_hash": "dca2e69e57992200",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1711,7 +1696,7 @@
       }
     },
     "azure-ai-voicelive-py": {
-      "content_hash": "0c8a5f9922e62ebc",
+      "content_hash": "fee4f71360fa1d43",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1726,7 +1711,7 @@
       }
     },
     "azure-ai-voicelive-py-free": {
-      "content_hash": "8d992dc1b8c0391f",
+      "content_hash": "7a756e1889c21624",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1771,7 +1756,7 @@
       }
     },
     "azure-cloud-architect": {
-      "content_hash": "2ef413dcc91d67c9",
+      "content_hash": "10786fa936c279f9",
       "version": "1.0.0",
       "source": "differentiated/Agents",
       "skillhub": {
@@ -1786,7 +1771,7 @@
       }
     },
     "azure-cloud-architect-free": {
-      "content_hash": "c9b5c193052040ec",
+      "content_hash": "1f487e873304192c",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1831,7 +1816,7 @@
       }
     },
     "azure-infra": {
-      "content_hash": "67900d103ac9b671",
+      "content_hash": "df57c35d2b6fed20",
       "version": "2.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1966,7 +1951,7 @@
       }
     },
     "beware-piper-tts": {
-      "content_hash": "52759f742cc322b1",
+      "content_hash": "29d2b020a40ed0df",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1981,7 +1966,7 @@
       }
     },
     "beware-piper-tts-free": {
-      "content_hash": "49f112241b20e806",
+      "content_hash": "a6422b38c3456fa5",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -1996,7 +1981,7 @@
       }
     },
     "bilibili-all-in-one": {
-      "content_hash": "7d1ec49fe2d0c68f",
+      "content_hash": "b88da35fefc2a428",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -2011,7 +1996,7 @@
       }
     },
     "bilibili-all-in-one-free": {
-      "content_hash": "b181ee9c8ed91bef",
+      "content_hash": "e7197be83d944e88",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -2026,7 +2011,7 @@
       }
     },
     "bilibili-helper": {
-      "content_hash": "29db3a4229d17f34",
+      "content_hash": "d1f2bc126ad2b2a8",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -2041,7 +2026,7 @@
       }
     },
     "bilibili-helper-free": {
-      "content_hash": "c98612798b0608c8",
+      "content_hash": "c54d81daa20ad2f4",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -2131,7 +2116,7 @@
       }
     },
     "bookmark-intelligence": {
-      "content_hash": "c14774c99c1a7ca2",
+      "content_hash": "5b6e30cdf10d4812",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -2146,7 +2131,7 @@
       }
     },
     "bookmark-intelligence-free": {
-      "content_hash": "6bbec6a34893e910",
+      "content_hash": "5b12565401e456d0",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -2281,7 +2266,7 @@
       }
     },
     "calendar-reminder": {
-      "content_hash": "253807d3202b8175",
+      "content_hash": "ec872f1c989d892c",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -2296,22 +2281,7 @@
       }
     },
     "calendar-reminder-free": {
-      "content_hash": "23cc5511b1bd2867",
-      "version": "1.0.0",
-      "source": "packaged",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      }
-    },
-    "calendar-reminder-paid": {
-      "content_hash": "837ce67fb30d9191",
+      "content_hash": "45183e18750a53cc",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -2386,7 +2356,7 @@
       }
     },
     "can-free": {
-      "content_hash": "c743031ba16aeea7",
+      "content_hash": "705a4a2b2116a62d",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -2476,7 +2446,7 @@
       }
     },
     "chart": {
-      "content_hash": "8ffc523de667125d",
+      "content_hash": "2c413601ec91239a",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -2506,7 +2476,7 @@
       }
     },
     "chart-free": {
-      "content_hash": "3dd04dc427d111b2",
+      "content_hash": "f53d6132b734844a",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -2716,7 +2686,7 @@
       }
     },
     "clawcall": {
-      "content_hash": "e2501f1ae2374e5e",
+      "content_hash": "4627b32016a4e592",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -2731,7 +2701,7 @@
       }
     },
     "clawcall-free": {
-      "content_hash": "3dae903ae5e7874c",
+      "content_hash": "197f3f32e8372ec1",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -2776,7 +2746,7 @@
       }
     },
     "cloud": {
-      "content_hash": "64d0e126f781cdf9",
+      "content_hash": "29b31cdbf96c6a85",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -2791,7 +2761,7 @@
       }
     },
     "cloud-architect": {
-      "content_hash": "ce8b4383eb19f377",
+      "content_hash": "a05726b6bf32f11a",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -2821,7 +2791,7 @@
       }
     },
     "cloud-architect-free": {
-      "content_hash": "02d311f1ffd43388",
+      "content_hash": "bf66d64b1b7d777b",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -2836,7 +2806,7 @@
       }
     },
     "cloud-free": {
-      "content_hash": "c84c08a287ec5108",
+      "content_hash": "71d94111b963dabd",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -2892,21 +2862,6 @@
       "clawhub": {
         "uploaded": true,
         "version": "1.0.4",
-        "last_check": null
-      }
-    },
-    "code-1-0-4": {
-      "content_hash": "96e9153d9d4f905c",
-      "version": "1.0.0",
-      "source": "packaged",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": true,
-        "version": "1.0.0",
         "last_check": null
       }
     },
@@ -3091,7 +3046,7 @@
       }
     },
     "communication-skill-free": {
-      "content_hash": "60faa47f255ba7e2",
+      "content_hash": "67958959377d247f",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3151,7 +3106,7 @@
       }
     },
     "content-refiner": {
-      "content_hash": "729938ec0f85802e",
+      "content_hash": "f971344c4efe55c9",
       "version": "1.0.1",
       "source": "packaged",
       "skillhub": {
@@ -3211,7 +3166,7 @@
       }
     },
     "creator-alpha-feed": {
-      "content_hash": "c40d6d48f72256b0",
+      "content_hash": "3261176e78c18ce2",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3226,7 +3181,7 @@
       }
     },
     "creator-alpha-feed-free": {
-      "content_hash": "31f5356a96f78e1a",
+      "content_hash": "6c38efff813cd221",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3301,7 +3256,7 @@
       }
     },
     "csv": {
-      "content_hash": "ed2c07b05d7fb2f5",
+      "content_hash": "8f4461347e0e7f68",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3316,7 +3271,7 @@
       }
     },
     "csv-analyzer": {
-      "content_hash": "3bc413856923a997",
+      "content_hash": "d761f4c7f1962066",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3331,7 +3286,7 @@
       }
     },
     "csv-analyzer-free": {
-      "content_hash": "3b322e9f4a50eda5",
+      "content_hash": "4aa907a7c0bf27ef",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3346,7 +3301,7 @@
       }
     },
     "csv-free": {
-      "content_hash": "29c235814a6c5031",
+      "content_hash": "249de17a0a02b7ff",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3361,7 +3316,7 @@
       }
     },
     "csv-handler": {
-      "content_hash": "e365300b167f87b6",
+      "content_hash": "282c5e3c6bfbffb1",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3376,7 +3331,7 @@
       }
     },
     "csv-handler-free": {
-      "content_hash": "97c2949623533918",
+      "content_hash": "6a47501ff952d25c",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3450,21 +3405,6 @@
         "last_check": null
       }
     },
-    "fortune-reading-studio": {
-      "content_hash": "89e869bde55a93bb",
-      "version": "1.0.1",
-      "source": "packaged",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.1",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "daily-news-brief": {
       "content_hash": "418a2e96a544dac9",
       "version": "1.0.1",
@@ -3511,7 +3451,7 @@
       }
     },
     "dashboard-analytics-tool": {
-      "content_hash": "16d3cd3ba98d768b",
+      "content_hash": "74aacf7b0779795d",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3541,7 +3481,7 @@
       }
     },
     "data-analysis-hub": {
-      "content_hash": "e7ce8e7e95fb4102",
+      "content_hash": "a9c6ffe9f8afaca6",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3556,7 +3496,7 @@
       }
     },
     "data-analysis-litiao": {
-      "content_hash": "d65884d6f10b617b",
+      "content_hash": "08077bf194c1bf8b",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3571,7 +3511,7 @@
       }
     },
     "data-analysis-litiao-free": {
-      "content_hash": "54e113f98102ee81",
+      "content_hash": "f2409ef916637c81",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3586,7 +3526,7 @@
       }
     },
     "data-analyst-chinese": {
-      "content_hash": "ac3670a3f4b4e86f",
+      "content_hash": "ef5d6b2d152b7b77",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3601,7 +3541,7 @@
       }
     },
     "data-analyst-cn": {
-      "content_hash": "1099a15cd9516d98",
+      "content_hash": "0373272d956864d2",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3616,7 +3556,7 @@
       }
     },
     "data-analyst-cn-free": {
-      "content_hash": "7fabea82d4f028d0",
+      "content_hash": "e5560f04d376db87",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3631,7 +3571,7 @@
       }
     },
     "data-analyst-expert": {
-      "content_hash": "259efb1f0209fd99",
+      "content_hash": "9e8222df5a643507",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3646,7 +3586,7 @@
       }
     },
     "data-format-converter": {
-      "content_hash": "33e5a42d044c5e8f",
+      "content_hash": "90c30b5552fd255a",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3661,7 +3601,7 @@
       }
     },
     "data-format-converter-free": {
-      "content_hash": "a8580de64a596bd4",
+      "content_hash": "adbd117fb545b335",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3676,7 +3616,7 @@
       }
     },
     "database-admin": {
-      "content_hash": "4e7742926a083e11",
+      "content_hash": "f5ac14ff1e4fe1a7",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3691,7 +3631,7 @@
       }
     },
     "database-admin-free": {
-      "content_hash": "b70ee85004da50e6",
+      "content_hash": "98afb52e1aaff29c",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3706,7 +3646,7 @@
       }
     },
     "db": {
-      "content_hash": "8ea7384fa0996aa7",
+      "content_hash": "3fd20c92782f7e04",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3721,7 +3661,7 @@
       }
     },
     "db-admin-console": {
-      "content_hash": "18e18e04c898c7a8",
+      "content_hash": "8f9f2a2e58303326",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3751,7 +3691,7 @@
       }
     },
     "db-free": {
-      "content_hash": "2c4552ce3f567765",
+      "content_hash": "954f31f42e77a76c",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -3931,7 +3871,7 @@
       }
     },
     "diagram-generator-free": {
-      "content_hash": "0fb7098a4d40aa6c",
+      "content_hash": "c6fc6314cb76479d",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -4170,21 +4110,6 @@
         "last_check": null
       }
     },
-    "discord-voice-paid": {
-      "content_hash": "569d485c9086403f",
-      "version": "1.0.0",
-      "source": "packaged",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "discrawl": {
       "content_hash": "d95e9780fee236b4",
       "version": "1.0.0",
@@ -4276,7 +4201,7 @@
       }
     },
     "dns": {
-      "content_hash": "9261a0bd15e9af79",
+      "content_hash": "d436cc9fcaf340bd",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -4306,7 +4231,7 @@
       }
     },
     "dns-free": {
-      "content_hash": "c1c857addaa7b5bd",
+      "content_hash": "1baabb16c4b1cba9",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -4455,53 +4380,8 @@
         "last_check": null
       }
     },
-    "docker-essentials-1-0-0": {
-      "content_hash": "fc1c1822dd3eff43",
-      "version": "1.0.0",
-      "source": "packaged",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "docker-essentials-1-0-0-free": {
-      "content_hash": "01443b7cc6b3b5fa",
-      "version": "1.0.0",
-      "source": "packaged",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "docker-essentials-free": {
       "content_hash": "f25317c7916c4f38",
-      "version": "1.0.0",
-      "source": "packaged",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "docker-essentials-paid": {
-      "content_hash": "1a9847e116532c52",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -4666,7 +4546,7 @@
       }
     },
     "ecommerce-pricing-strategist": {
-      "content_hash": "5ff802e63452408f",
+      "content_hash": "2fb3878c786a00ff",
       "version": "1.0.1",
       "source": "packaged",
       "skillhub": {
@@ -4786,7 +4666,7 @@
       }
     },
     "email-163-com": {
-      "content_hash": "ab1ec17c4e8452c5",
+      "content_hash": "3e9fb995194d64e8",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -4801,7 +4681,7 @@
       }
     },
     "email-163-com-free": {
-      "content_hash": "a0b529ed21e8aadb",
+      "content_hash": "189792243893ea4e",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -4816,7 +4696,7 @@
       }
     },
     "email-daily-summary": {
-      "content_hash": "616586a31c731d28",
+      "content_hash": "6cadcbae02312732",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -4861,7 +4741,7 @@
       }
     },
     "email-gmail-outlook": {
-      "content_hash": "db2bfb10707c2cb7",
+      "content_hash": "871a18db98e61091",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -4891,7 +4771,7 @@
       }
     },
     "email-skill": {
-      "content_hash": "f5b556bc254c5f33",
+      "content_hash": "8e48429a5390ecd8",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -5371,7 +5251,7 @@
       }
     },
     "feishu-send-file": {
-      "content_hash": "0f21847926b6c1f5",
+      "content_hash": "1ea1a62791f1db2b",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -5386,7 +5266,7 @@
       }
     },
     "feishu-send-file-free": {
-      "content_hash": "8a46d9d8a9b89c4a",
+      "content_hash": "ca8281317bb94db8",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -5491,7 +5371,7 @@
       }
     },
     "file": {
-      "content_hash": "7009cbd62bff413a",
+      "content_hash": "4469eb821d7e5856",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -5746,12 +5626,27 @@
       }
     },
     "format-converter": {
-      "content_hash": "15e8590a04177ab1",
+      "content_hash": "0e20fac98363151a",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
         "uploaded": true,
         "version": "1.0.0",
+        "last_check": null
+      },
+      "clawhub": {
+        "uploaded": false,
+        "version": null,
+        "last_check": null
+      }
+    },
+    "fortune-reading-studio": {
+      "content_hash": "68d433d2204ec4b0",
+      "version": "1.0.1",
+      "source": "packaged",
+      "skillhub": {
+        "uploaded": true,
+        "version": "1.0.1",
         "last_check": null
       },
       "clawhub": {
@@ -6165,21 +6060,6 @@
         "last_check": null
       }
     },
-    "git-essentials-paid": {
-      "content_hash": "febe32ac7b111d5d",
-      "version": "1.0.0",
-      "source": "packaged",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "git-helper": {
       "content_hash": "c48009ce7580616a",
       "version": "1.0.0",
@@ -6526,7 +6406,7 @@
       }
     },
     "gog": {
-      "content_hash": "0fa6cc829b9d7d53",
+      "content_hash": "614755bb044d73fc",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -6541,7 +6421,7 @@
       }
     },
     "gog-free": {
-      "content_hash": "c430675ea9cd08ef",
+      "content_hash": "186e9ef98ee98d91",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -6571,7 +6451,7 @@
       }
     },
     "google-fonts": {
-      "content_hash": "cd015bdb7398a467",
+      "content_hash": "16968a4e062eb970",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -6616,7 +6496,7 @@
       }
     },
     "google-workspace-mcp": {
-      "content_hash": "9a9ff96c324dd0c7",
+      "content_hash": "bebeeb5d10bf52a9",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -6631,7 +6511,7 @@
       }
     },
     "google-workspace-mcp-free": {
-      "content_hash": "00c903f1b86278f6",
+      "content_hash": "53834705619045a5",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -6796,7 +6676,7 @@
       }
     },
     "hook-retention-master": {
-      "content_hash": "681d24f4d3dbfbe5",
+      "content_hash": "34afd728d6f7b616",
       "version": "1.0.1",
       "source": "packaged",
       "skillhub": {
@@ -7006,7 +6886,7 @@
       }
     },
     "intel-sentinel": {
-      "content_hash": "4f99da54ba30b8c8",
+      "content_hash": "e618a8a075283bfe",
       "version": "1.0.1",
       "source": "packaged",
       "skillhub": {
@@ -7381,7 +7261,22 @@
       }
     },
     "jira-integration-skill": {
-      "content_hash": "2ef71736bf030374",
+      "content_hash": "f4bc6b6c2b3ed8e7",
+      "version": "1.0.0",
+      "source": "packaged",
+      "skillhub": {
+        "uploaded": true,
+        "version": "1.0.0",
+        "last_check": null
+      },
+      "clawhub": {
+        "uploaded": false,
+        "version": null,
+        "last_check": null
+      }
+    },
+    "jira-pat-manager": {
+      "content_hash": "ffb16b1c6ad60985",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -7411,7 +7306,7 @@
       }
     },
     "jira-skill": {
-      "content_hash": "7b6ea78ff7838de4",
+      "content_hash": "590fe52513eff601",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -7426,7 +7321,7 @@
       }
     },
     "jira-skill-free": {
-      "content_hash": "7a7d7fed7ca1900a",
+      "content_hash": "e46b48f5282d667a",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -7621,7 +7516,7 @@
       }
     },
     "json-repair-kit": {
-      "content_hash": "7be44b395af4fd7b",
+      "content_hash": "d20aec1ca1472c77",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -8055,6 +7950,21 @@
         "last_check": null
       }
     },
+    "linear-project-manager": {
+      "content_hash": "f7358dc8fee45b23",
+      "version": "1.0.0",
+      "source": "packaged",
+      "skillhub": {
+        "uploaded": true,
+        "version": "1.0.0",
+        "last_check": null
+      },
+      "clawhub": {
+        "uploaded": false,
+        "version": null,
+        "last_check": null
+      }
+    },
     "linear-skill": {
       "content_hash": "b7025b623cc7e7a1",
       "version": "1.0.0",
@@ -8252,21 +8162,6 @@
     },
     "logo-design-guide-free": {
       "content_hash": "48f6c41d0c040717",
-      "version": "1.0.0",
-      "source": "packaged",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "logo-design-guide-paid": {
-      "content_hash": "d997ecf07c466320",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -9451,7 +9346,7 @@
       }
     },
     "news-sentiment-scan": {
-      "content_hash": "d2718376c7cd6190",
+      "content_hash": "f6603dbf02862ec5",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -9466,7 +9361,7 @@
       }
     },
     "news-sentiment-scan-free": {
-      "content_hash": "6c3783e43b534a00",
+      "content_hash": "c7ffa1707a4d8b6a",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -9960,6 +9855,21 @@
         "last_check": null
       }
     },
+    "pandoc-document-converter": {
+      "content_hash": "3076504c31eaf160",
+      "version": "1.0.0",
+      "source": "packaged",
+      "skillhub": {
+        "uploaded": true,
+        "version": "1.0.0",
+        "last_check": null
+      },
+      "clawhub": {
+        "uploaded": false,
+        "version": null,
+        "last_check": null
+      }
+    },
     "paper-parse": {
       "content_hash": "9fd45fd9b0983065",
       "version": "1.0.0",
@@ -9997,21 +9907,6 @@
       "skillhub": {
         "uploaded": true,
         "version": "1.1.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "pcb-design-assistant-paid": {
-      "content_hash": "f58ca4f0168ac7b7",
-      "version": "1.0.0",
-      "source": "packaged",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
         "last_check": null
       },
       "clawhub": {
@@ -10141,7 +10036,7 @@
       }
     },
     "photo-captions": {
-      "content_hash": "25e45373f1ddbcc0",
+      "content_hash": "d340188c2f0e8ce4",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -10156,7 +10051,7 @@
       }
     },
     "photo-captions-free": {
-      "content_hash": "e372e44d6fe6bdb6",
+      "content_hash": "e078f08ec4ee243e",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -10246,7 +10141,7 @@
       }
     },
     "plugin-architecture": {
-      "content_hash": "84b52563941b6b1d",
+      "content_hash": "929c7acbb926561b",
       "version": "1.0.1",
       "source": "packaged",
       "skillhub": {
@@ -10351,7 +10246,7 @@
       }
     },
     "poetry-craftsman": {
-      "content_hash": "8e94b882be201711",
+      "content_hash": "dcfe9cee6d140b27",
       "version": "1.1.0",
       "source": "packaged",
       "skillhub": {
@@ -10417,21 +10312,6 @@
       "skillhub": {
         "uploaded": true,
         "version": "1.0.1",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "powerpoint-pptx-1-0-1": {
-      "content_hash": "b659ec768e5dffc4",
-      "version": "1.0.0",
-      "source": "packaged",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
         "last_check": null
       },
       "clawhub": {
@@ -10591,7 +10471,7 @@
       }
     },
     "professional-communication-free": {
-      "content_hash": "3c1d78cacc8eb272",
+      "content_hash": "d4ae897cb260ccea",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -11041,7 +10921,7 @@
       }
     },
     "rest-api-reference": {
-      "content_hash": "9f74c1869ec2d08f",
+      "content_hash": "35e453dc7c2ab11e",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -11072,21 +10952,6 @@
     },
     "resume-assistant-free": {
       "content_hash": "bec70f17ee99d8f0",
-      "version": "1.0.0",
-      "source": "packaged",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "resume-assistant-paid": {
-      "content_hash": "e25ea50f9d65aa48",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -11131,7 +10996,7 @@
       }
     },
     "rss-ai-reader": {
-      "content_hash": "7e23b6890bf8f9d4",
+      "content_hash": "3dea550eb934c162",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -11146,7 +11011,7 @@
       }
     },
     "rss-ai-reader-free": {
-      "content_hash": "dfc66e760a667131",
+      "content_hash": "637fa13c64bb9fad",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -11281,7 +11146,7 @@
       }
     },
     "sales-copy-writer": {
-      "content_hash": "9968df560d626d43",
+      "content_hash": "c98355c5298335cb",
       "version": "1.1.0",
       "source": "packaged",
       "skillhub": {
@@ -11686,7 +11551,7 @@
       }
     },
     "slack": {
-      "content_hash": "eb446e8dffd09fdb",
+      "content_hash": "d6f068a56fbf4fb5",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -12001,7 +11866,7 @@
       }
     },
     "social": {
-      "content_hash": "c1652127a26b82e1",
+      "content_hash": "990bd0b7c5bcefe8",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -12016,7 +11881,7 @@
       }
     },
     "social-free": {
-      "content_hash": "47f273e1cb5d3192",
+      "content_hash": "8b0b7309ce6e8dc2",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -12031,7 +11896,7 @@
       }
     },
     "social-media-scheduler": {
-      "content_hash": "fcc5c7af96c4f754",
+      "content_hash": "65745603a3dd8072",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -12046,7 +11911,7 @@
       }
     },
     "social-media-scheduler-free": {
-      "content_hash": "1eedb2a83d1da23a",
+      "content_hash": "7f25631fdafd1145",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -12316,7 +12181,7 @@
       }
     },
     "sql-toolkit": {
-      "content_hash": "227c7143d4d41dd8",
+      "content_hash": "24cc10623dcb28db",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -12421,7 +12286,7 @@
       }
     },
     "stealth-browser-assistant": {
-      "content_hash": "e6127a653221366f",
+      "content_hash": "490e15fe03b179b3",
       "version": "1.1.0",
       "source": "packaged",
       "skillhub": {
@@ -12796,7 +12661,7 @@
       }
     },
     "telegram-messaging": {
-      "content_hash": "dbd02e710e3a0978",
+      "content_hash": "d647dd57b3b8f4f1",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -12811,7 +12676,7 @@
       }
     },
     "telegram-messaging-free": {
-      "content_hash": "8426f51e9561f8da",
+      "content_hash": "cdf7260c28efc0fb",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -13006,7 +12871,7 @@
       }
     },
     "timer": {
-      "content_hash": "a58736c3ae2c7c56",
+      "content_hash": "394f6fbf67544e99",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -13036,7 +12901,7 @@
       }
     },
     "timer-free": {
-      "content_hash": "1f90e0a477ce119b",
+      "content_hash": "91847b9ca4f03499",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -13051,7 +12916,7 @@
       }
     },
     "title-hook-factory": {
-      "content_hash": "0eb9186181e66a7e",
+      "content_hash": "4a845a4a88585ddd",
       "version": "1.1.0",
       "source": "packaged",
       "skillhub": {
@@ -13171,7 +13036,7 @@
       }
     },
     "topic-hunter": {
-      "content_hash": "5de258b9ab3b6010",
+      "content_hash": "4a87248776b0b560",
       "version": "1.1.0",
       "source": "packaged",
       "skillhub": {
@@ -13502,21 +13367,6 @@
     },
     "ui-ux-design-free": {
       "content_hash": "d4d474d149b611e4",
-      "version": "1.0.0",
-      "source": "packaged",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "ui-ux-design-paid": {
-      "content_hash": "52f3631fae16c965",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -13936,7 +13786,7 @@
       }
     },
     "viral-prophet": {
-      "content_hash": "65c17255cab9cf98",
+      "content_hash": "30a6dc01d9261a20",
       "version": "1.1.0",
       "source": "packaged",
       "skillhub": {
@@ -14386,7 +14236,7 @@
       }
     },
     "whatsapp-messaging": {
-      "content_hash": "12fa9b9ea2bcefc4",
+      "content_hash": "1dd885e2558c51bf",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -14401,7 +14251,7 @@
       }
     },
     "whatsapp-messaging-free": {
-      "content_hash": "d5d5d015339caa5e",
+      "content_hash": "7ab70c31fef282eb",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -14476,7 +14326,7 @@
       }
     },
     "whatsapp-styler": {
-      "content_hash": "0653e4eda45ce96a",
+      "content_hash": "a70549d988033857",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -14491,7 +14341,7 @@
       }
     },
     "whatsapp-styler-free": {
-      "content_hash": "6970bb596ff14768",
+      "content_hash": "6655f7385edbe4b3",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -14506,7 +14356,7 @@
       }
     },
     "whatsapp-styling-guide": {
-      "content_hash": "877a87f3c1410159",
+      "content_hash": "4277f80441ec795c",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -14521,7 +14371,7 @@
       }
     },
     "whatsapp-styling-guide-free": {
-      "content_hash": "ecf78392c816c0db",
+      "content_hash": "1447d011cc736655",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -14610,38 +14460,8 @@
         "last_check": null
       }
     },
-    "word-docx-1": {
-      "content_hash": "41588dff5ff0a241",
-      "version": "1.0.0",
-      "source": "packaged",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "word-docx-1-02": {
-      "content_hash": "b4e20f6c1fec08af",
-      "version": "1.0.0",
-      "source": "packaged",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "work": {
-      "content_hash": "a98e8563480a0539",
+      "content_hash": "264b471b04ae45e7",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -14866,7 +14686,7 @@
       }
     },
     "x-news-daily": {
-      "content_hash": "a16cfca4407d4ac1",
+      "content_hash": "0aa512e56d498a07",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -14881,7 +14701,7 @@
       }
     },
     "x-news-daily-free": {
-      "content_hash": "b7c4490189b94c90",
+      "content_hash": "43955863c0d9e50d",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -14896,7 +14716,7 @@
       }
     },
     "x-timeline-digest": {
-      "content_hash": "1cab2e62926f7e8a",
+      "content_hash": "fd715d620cac8223",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -14911,7 +14731,7 @@
       }
     },
     "x-timeline-digest-free": {
-      "content_hash": "18213cbba66055c0",
+      "content_hash": "6e7926b612f16029",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -15031,7 +14851,7 @@
       }
     },
     "z-card-image": {
-      "content_hash": "b2c1b1cc8dd00226",
+      "content_hash": "c85a0c53209b7c32",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -15046,7 +14866,7 @@
       }
     },
     "z-card-image-free": {
-      "content_hash": "bf862c71eee8f9c9",
+      "content_hash": "3cef9ef0c8f35220",
       "version": "1.0.0",
       "source": "packaged",
       "skillhub": {
@@ -15570,21 +15390,6 @@
         "last_check": null
       }
     },
-    "memory-radar-pro": {
-      "content_hash": "45348ea8ed5c3dea",
-      "version": "1.0.0",
-      "source": "differentiated/Agents",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "meta-agent-optimizer-free": {
       "content_hash": "897f0de410189fe4",
       "version": "1.0.0",
@@ -16035,21 +15840,6 @@
         "last_check": null
       }
     },
-    "automation-recipe-book-pro": {
-      "content_hash": "4004ada9dd941c7a",
-      "version": "1.0.0",
-      "source": "differentiated/Automation",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "autopilot-flow": {
       "content_hash": "886e69f0468e7979",
       "version": "1.0.0",
@@ -16365,21 +16155,6 @@
         "last_check": null
       }
     },
-    "cron-guard-pro": {
-      "content_hash": "a4e30003c1a85957",
-      "version": "1.0.0",
-      "source": "differentiated/Automation",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "cron-master-pro": {
       "content_hash": "ea93f2d053f48300",
       "version": "1.0.0",
@@ -16455,38 +16230,8 @@
         "last_check": null
       }
     },
-    "cron-scheduler-pro-pro": {
-      "content_hash": "1d26a2bed5cc3a92",
-      "version": "1.0.0",
-      "source": "differentiated/Automation",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "cron-setup-guide-free": {
       "content_hash": "220b57b097c9a098",
-      "version": "1.0.0",
-      "source": "differentiated/Automation",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "cron-setup-guide-pro": {
-      "content_hash": "9b4844f3bf05cfe9",
       "version": "1.0.0",
       "source": "differentiated/Automation",
       "skillhub": {
@@ -16920,21 +16665,6 @@
         "last_check": null
       }
     },
-    "news-daily-digest-pro": {
-      "content_hash": "30c20ddb917ce925",
-      "version": "1.0.0",
-      "source": "differentiated/Automation",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "notes-cli-toolkit": {
       "content_hash": "6b2f53f0f75a490d",
       "version": "1.0.0",
@@ -17130,38 +16860,8 @@
         "last_check": null
       }
     },
-    "reminder-engine-pro": {
-      "content_hash": "7f8e89484c103c57",
-      "version": "1.0.0",
-      "source": "differentiated/Automation",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "schedule-manager-free": {
       "content_hash": "d7eb235da1a54c89",
-      "version": "1.0.0",
-      "source": "differentiated/Automation",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "schedule-manager-pro": {
-      "content_hash": "9857ceaa1eac8e8f",
       "version": "1.0.0",
       "source": "differentiated/Automation",
       "skillhub": {
@@ -17192,21 +16892,6 @@
     },
     "smart-reminder-free": {
       "content_hash": "d125083cb44698e9",
-      "version": "1.0.0",
-      "source": "differentiated/Automation",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "smart-reminder-pro": {
-      "content_hash": "ee9667ae277c2006",
       "version": "1.0.0",
       "source": "differentiated/Automation",
       "skillhub": {
@@ -17252,21 +16937,6 @@
     },
     "solo-dev-companion-free": {
       "content_hash": "421ff02a4ff90500",
-      "version": "1.0.0",
-      "source": "differentiated/Automation",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "solo-dev-companion-pro": {
-      "content_hash": "358a3e5ba750217b",
       "version": "1.0.0",
       "source": "differentiated/Automation",
       "skillhub": {
@@ -17340,21 +17010,6 @@
         "last_check": null
       }
     },
-    "task-bot-orchestrator-pro": {
-      "content_hash": "b335f0f383b1caff",
-      "version": "1.0.0",
-      "source": "differentiated/Automation",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "task-queue-manager-free": {
       "content_hash": "7e2aa52603232a86",
       "version": "1.0.0",
@@ -17370,38 +17025,8 @@
         "last_check": null
       }
     },
-    "task-queue-manager-pro": {
-      "content_hash": "a18e0c3fc42e4702",
-      "version": "1.0.0",
-      "source": "differentiated/Automation",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "translate-hub-free": {
       "content_hash": "abddc1c1b233372c",
-      "version": "1.0.0",
-      "source": "differentiated/Automation",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "translate-hub-pro": {
-      "content_hash": "ef0d32c79ade9d73",
       "version": "1.0.0",
       "source": "differentiated/Automation",
       "skillhub": {
@@ -17550,38 +17175,8 @@
         "last_check": null
       }
     },
-    "workflow-orchestrator-pro": {
-      "content_hash": "aea5b8e33b5f49b0",
-      "version": "1.0.0",
-      "source": "differentiated/Automation",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "workflow-splitter-free": {
       "content_hash": "a79e00d9d9f5f5b8",
-      "version": "1.0.0",
-      "source": "differentiated/Automation",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "workflow-splitter-pro": {
-      "content_hash": "d6c402bdd64d64c5",
       "version": "1.0.0",
       "source": "differentiated/Automation",
       "skillhub": {
@@ -17625,21 +17220,6 @@
         "last_check": null
       }
     },
-    "alephnet-node-manager-pro": {
-      "content_hash": "15785470c6da560d",
-      "version": "1.0.0",
-      "source": "differentiated/Communication",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "alpha-feed-creator-free": {
       "content_hash": "d80aeb8bee3a231c",
       "version": "1.0.0",
@@ -17655,38 +17235,8 @@
         "last_check": null
       }
     },
-    "alpha-feed-creator-pro": {
-      "content_hash": "ce69e76d28b09c20",
-      "version": "1.0.0",
-      "source": "differentiated/Communication",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "bookmark-smart-hub-free": {
       "content_hash": "fc67ef101db62f61",
-      "version": "1.0.0",
-      "source": "differentiated/Communication",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "bookmark-smart-hub-pro": {
-      "content_hash": "279b53e26d01d504",
       "version": "1.0.0",
       "source": "differentiated/Communication",
       "skillhub": {
@@ -17745,38 +17295,8 @@
         "last_check": null
       }
     },
-    "card-image-builder-pro": {
-      "content_hash": "da97dc010fd7eafe",
-      "version": "1.0.0",
-      "source": "differentiated/Communication",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "discord-chat-manager-free": {
       "content_hash": "efd2eb6421da1d85",
-      "version": "1.0.0",
-      "source": "differentiated/Communication",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "discord-chat-manager-pro": {
-      "content_hash": "4a545b6a4ff19a7e",
       "version": "1.0.0",
       "source": "differentiated/Communication",
       "skillhub": {
@@ -17805,38 +17325,8 @@
         "last_check": null
       }
     },
-    "discord-community-hub-pro": {
-      "content_hash": "536f64a9b2bf991e",
-      "version": "1.0.0",
-      "source": "differentiated/Communication",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "discord-toolkit-free": {
       "content_hash": "f07bdd78d5cd12e2",
-      "version": "1.0.0",
-      "source": "differentiated/Communication",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "discord-toolkit-pro": {
-      "content_hash": "cd8acbc4eed87a5f",
       "version": "1.0.0",
       "source": "differentiated/Communication",
       "skillhub": {
@@ -18015,38 +17505,8 @@
         "last_check": null
       }
     },
-    "email-toolkit-pro": {
-      "content_hash": "b5396446f53eba41",
-      "version": "1.0.0",
-      "source": "differentiated/Communication",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "feishu-card-builder-free": {
       "content_hash": "75affd5bb935152f",
-      "version": "1.0.0",
-      "source": "differentiated/Communication",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "feishu-card-builder-pro": {
-      "content_hash": "a15086c45c896b52",
       "version": "1.0.0",
       "source": "differentiated/Communication",
       "skillhub": {
@@ -18075,21 +17535,6 @@
         "last_check": null
       }
     },
-    "feishu-file-sender-pro": {
-      "content_hash": "dc1fb294110f0efc",
-      "version": "1.0.0",
-      "source": "differentiated/Communication",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "google-workspace-cli-free": {
       "content_hash": "b5e1b8a5cf810189",
       "version": "1.0.0",
@@ -18105,38 +17550,8 @@
         "last_check": null
       }
     },
-    "google-workspace-cli-pro": {
-      "content_hash": "f4cac2d4ec8d5726",
-      "version": "1.0.0",
-      "source": "differentiated/Communication",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "google-workspace-toolkit-free": {
       "content_hash": "f7b8378d9947b06f",
-      "version": "1.0.0",
-      "source": "differentiated/Communication",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "google-workspace-toolkit-pro": {
-      "content_hash": "9da8ea1ded8e6a4a",
       "version": "1.0.0",
       "source": "differentiated/Communication",
       "skillhub": {
@@ -18225,21 +17640,6 @@
         "last_check": null
       }
     },
-    "piper-tts-engine-pro": {
-      "content_hash": "995a2b630eba2207",
-      "version": "1.0.0",
-      "source": "differentiated/Communication",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "pro-comm-toolkit-free": {
       "content_hash": "d40f200d1ab9b03f",
       "version": "1.0.0",
@@ -18255,38 +17655,8 @@
         "last_check": null
       }
     },
-    "pro-comm-toolkit-pro": {
-      "content_hash": "87ce1f4c6e37f4c8",
-      "version": "1.0.0",
-      "source": "differentiated/Communication",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "rss-reader-ai-free": {
       "content_hash": "c8e61e0e48983c30",
-      "version": "1.0.0",
-      "source": "differentiated/Communication",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "rss-reader-ai-pro": {
-      "content_hash": "76ef0a9ef8a204f1",
       "version": "1.0.0",
       "source": "differentiated/Communication",
       "skillhub": {
@@ -18345,21 +17715,6 @@
         "last_check": null
       }
     },
-    "slack-toolkit-pro": {
-      "content_hash": "388521c06de7d515",
-      "version": "1.0.0",
-      "source": "differentiated/Communication",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "slack-workspace-manager-free": {
       "content_hash": "93097a5bb98bb6dc",
       "version": "1.0.0",
@@ -18375,38 +17730,8 @@
         "last_check": null
       }
     },
-    "slack-workspace-manager-pro": {
-      "content_hash": "0a1c0da19544447e",
-      "version": "1.0.0",
-      "source": "differentiated/Communication",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "social-media-toolkit-free": {
       "content_hash": "acb9711785f0bb47",
-      "version": "1.0.0",
-      "source": "differentiated/Communication",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "social-media-toolkit-pro": {
-      "content_hash": "c468b178d369fa7d",
       "version": "1.0.0",
       "source": "differentiated/Communication",
       "skillhub": {
@@ -18465,21 +17790,6 @@
         "last_check": null
       }
     },
-    "telegram-agent-comm-pro": {
-      "content_hash": "75e503420e41fa12",
-      "version": "1.0.0",
-      "source": "differentiated/Communication",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "telegram-chat-tool-free": {
       "content_hash": "be4b18884ee4f269",
       "version": "1.0.0",
@@ -18512,21 +17822,6 @@
     },
     "telegram-msg-toolkit-free": {
       "content_hash": "01a57327d85b64ba",
-      "version": "1.0.0",
-      "source": "differentiated/Communication",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "telegram-msg-toolkit-pro": {
-      "content_hash": "9f7b691f9a1c725a",
       "version": "1.0.0",
       "source": "differentiated/Communication",
       "skillhub": {
@@ -18645,21 +17940,6 @@
         "last_check": null
       }
     },
-    "whatsapp-msg-manager-pro": {
-      "content_hash": "e3019306690daf59",
-      "version": "1.0.0",
-      "source": "differentiated/Communication",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "whatsapp-msg-tool-free": {
       "content_hash": "0667a045ab83755d",
       "version": "1.0.0",
@@ -18692,21 +17972,6 @@
     },
     "whatsapp-style-guide-free": {
       "content_hash": "1c4ebb1612c7ff5e",
-      "version": "1.0.0",
-      "source": "differentiated/Communication",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "whatsapp-style-guide-pro": {
-      "content_hash": "e93fa73eac05d379",
       "version": "1.0.0",
       "source": "differentiated/Communication",
       "skillhub": {
@@ -18782,21 +18047,6 @@
     },
     "agentvibes-skill-free": {
       "content_hash": "7162ac2c035996ef",
-      "version": "1.0.0",
-      "source": "differentiated/Creative",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "agentvibes-skill-pro": {
-      "content_hash": "cf5ebd0365a93c85",
       "version": "1.0.0",
       "source": "differentiated/Creative",
       "skillhub": {
@@ -18945,21 +18195,6 @@
         "last_check": null
       }
     },
-    "audio-stream-upload-pro": {
-      "content_hash": "b52bcf02bc8b614a",
-      "version": "1.0.0",
-      "source": "differentiated/Creative",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "azure-transcription-tool-free": {
       "content_hash": "5fb62d791205a03f",
       "version": "1.0.0",
@@ -19065,21 +18300,6 @@
         "last_check": null
       }
     },
-    "bilibili-toolkit-pro": {
-      "content_hash": "d13cf92f9e43c7b9",
-      "version": "1.0.0",
-      "source": "differentiated/Creative",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "chromecast-control-tool-free": {
       "content_hash": "a657cd166f8c067e",
       "version": "1.0.0",
@@ -19112,21 +18332,6 @@
     },
     "cloud-architect-design-free": {
       "content_hash": "21b4f3618916f9e3",
-      "version": "1.0.0",
-      "source": "differentiated/Creative",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "cloud-architect-design-pro": {
-      "content_hash": "da762a36d630bf29",
       "version": "1.0.0",
       "source": "differentiated/Creative",
       "skillhub": {
@@ -19202,21 +18407,6 @@
     },
     "design-toolkit-free": {
       "content_hash": "458e04b157ca531a",
-      "version": "1.0.0",
-      "source": "differentiated/Creative",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "design-toolkit-pro": {
-      "content_hash": "b0b678c004674c0b",
       "version": "1.0.0",
       "source": "differentiated/Creative",
       "skillhub": {
@@ -19455,21 +18645,6 @@
         "last_check": null
       }
     },
-    "frontend-design-v3-pro": {
-      "content_hash": "baf44c7a5fd8ee84",
-      "version": "1.0.0",
-      "source": "differentiated/Creative",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "game-asset-gen-tool-free": {
       "content_hash": "169bc460d0115bdd",
       "version": "1.0.0",
@@ -19667,6 +18842,96 @@
     },
     "lh-video-gen-tool-pro": {
       "content_hash": "a3b7b91e73dd60c5",
+      "version": "1.0.0",
+      "source": "differentiated/Creative",
+      "skillhub": {
+        "uploaded": true,
+        "version": "1.0.0",
+        "last_check": null
+      },
+      "clawhub": {
+        "uploaded": false,
+        "version": null,
+        "last_check": null
+      }
+    },
+    "llm-provider-ai-tool-free": {
+      "content_hash": "1fee519845ab3efb",
+      "version": "1.0.0",
+      "source": "differentiated/Creative",
+      "skillhub": {
+        "uploaded": true,
+        "version": "1.0.0",
+        "last_check": null
+      },
+      "clawhub": {
+        "uploaded": false,
+        "version": null,
+        "last_check": null
+      }
+    },
+    "llm-provider-ai-tool-pro": {
+      "content_hash": "ef430608d41b0048",
+      "version": "1.0.0",
+      "source": "differentiated/Creative",
+      "skillhub": {
+        "uploaded": true,
+        "version": "1.0.0",
+        "last_check": null
+      },
+      "clawhub": {
+        "uploaded": false,
+        "version": null,
+        "last_check": null
+      }
+    },
+    "llm-provider-whisper-tool-free": {
+      "content_hash": "269111d4be849f7d",
+      "version": "1.0.0",
+      "source": "differentiated/Creative",
+      "skillhub": {
+        "uploaded": true,
+        "version": "1.0.0",
+        "last_check": null
+      },
+      "clawhub": {
+        "uploaded": false,
+        "version": null,
+        "last_check": null
+      }
+    },
+    "llm-provider-whisper-tool-pro": {
+      "content_hash": "46bb3f09622ed233",
+      "version": "1.0.0",
+      "source": "differentiated/Creative",
+      "skillhub": {
+        "uploaded": true,
+        "version": "1.0.0",
+        "last_check": null
+      },
+      "clawhub": {
+        "uploaded": false,
+        "version": null,
+        "last_check": null
+      }
+    },
+    "llm-provider-whisper-v1-tool-free": {
+      "content_hash": "89e7e6ec49d41022",
+      "version": "1.0.0",
+      "source": "differentiated/Creative",
+      "skillhub": {
+        "uploaded": true,
+        "version": "1.0.0",
+        "last_check": null
+      },
+      "clawhub": {
+        "uploaded": false,
+        "version": null,
+        "last_check": null
+      }
+    },
+    "llm-provider-whisper-v1-tool-pro": {
+      "content_hash": "0a3afec41ae949b7",
       "version": "1.0.0",
       "source": "differentiated/Creative",
       "skillhub": {
@@ -19920,96 +19185,6 @@
         "last_check": null
       }
     },
-    "llm-provider-ai-tool-free": {
-      "content_hash": "1fee519845ab3efb",
-      "version": "1.0.0",
-      "source": "differentiated/Creative",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "llm-provider-ai-tool-pro": {
-      "content_hash": "ef430608d41b0048",
-      "version": "1.0.0",
-      "source": "differentiated/Creative",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "llm-provider-whisper-tool-free": {
-      "content_hash": "269111d4be849f7d",
-      "version": "1.0.0",
-      "source": "differentiated/Creative",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "llm-provider-whisper-tool-pro": {
-      "content_hash": "46bb3f09622ed233",
-      "version": "1.0.0",
-      "source": "differentiated/Creative",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "llm-provider-whisper-v1-tool-free": {
-      "content_hash": "89e7e6ec49d41022",
-      "version": "1.0.0",
-      "source": "differentiated/Creative",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "llm-provider-whisper-v1-tool-pro": {
-      "content_hash": "0a3afec41ae949b7",
-      "version": "1.0.0",
-      "source": "differentiated/Creative",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "podcast-chaptering-tool-free": {
       "content_hash": "5e6425e4d204539e",
       "version": "1.0.0",
@@ -20085,21 +19260,6 @@
         "last_check": null
       }
     },
-    "podcast-toolkit-pro": {
-      "content_hash": "31adf3af50561100",
-      "version": "1.0.0",
-      "source": "differentiated/Creative",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "quark-scan-tool-free": {
       "content_hash": "a934bb29bff78b57",
       "version": "1.0.0",
@@ -20145,38 +19305,8 @@
         "last_check": null
       }
     },
-    "qwen-video-analyzer-pro": {
-      "content_hash": "1ba6f0deb88fa139",
-      "version": "1.0.0",
-      "source": "differentiated/Creative",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "tailwindcss-toolkit-free": {
       "content_hash": "539f901bcc916b5a",
-      "version": "1.0.0",
-      "source": "differentiated/Creative",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "tailwindcss-toolkit-pro": {
-      "content_hash": "dc5bbe381a9ecc30",
       "version": "1.0.0",
       "source": "differentiated/Creative",
       "skillhub": {
@@ -20222,21 +19352,6 @@
     },
     "ui-design-toolkit-free": {
       "content_hash": "a232a3087e80ec21",
-      "version": "1.0.0",
-      "source": "differentiated/Creative",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "ui-design-toolkit-pro": {
-      "content_hash": "bf95873fa651b4c0",
       "version": "1.0.0",
       "source": "differentiated/Creative",
       "skillhub": {
@@ -20385,21 +19500,6 @@
         "last_check": null
       }
     },
-    "ui-ux-toolkit-pro": {
-      "content_hash": "a7ced9c1328dd3d8",
-      "version": "1.0.0",
-      "source": "differentiated/Creative",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "ux-design-tool-free": {
       "content_hash": "e974182d495a44cc",
       "version": "1.0.0",
@@ -20535,38 +19635,8 @@
         "last_check": null
       }
     },
-    "video-stream-upload-pro": {
-      "content_hash": "ddd7ddc7e4dad4fd",
-      "version": "1.0.0",
-      "source": "differentiated/Creative",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "video-toolkit-free": {
       "content_hash": "4e8bf18f3180d921",
-      "version": "1.0.0",
-      "source": "differentiated/Creative",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "video-toolkit-pro": {
-      "content_hash": "5e9442e98c739731",
       "version": "1.0.0",
       "source": "differentiated/Creative",
       "skillhub": {
@@ -20612,21 +19682,6 @@
     },
     "wechat-article-writer-free": {
       "content_hash": "e5549fa51a5e70b6",
-      "version": "1.0.0",
-      "source": "differentiated/Creative",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "wechat-article-writer-pro": {
-      "content_hash": "a84c3fe2d7cc652b",
       "version": "1.0.0",
       "source": "differentiated/Creative",
       "skillhub": {
@@ -20745,21 +19800,6 @@
         "last_check": null
       }
     },
-    "azure-cli-toolkit-pro": {
-      "content_hash": "d53e53a26da7b9ae",
-      "version": "1.0.0",
-      "source": "differentiated/Development",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "cheat-code-tool-free": {
       "content_hash": "b8f27e85fb4b16bd",
       "version": "1.0.0",
@@ -20792,21 +19832,6 @@
     },
     "code-analysis-toolkit-free": {
       "content_hash": "388eda7690b86d02",
-      "version": "1.0.0",
-      "source": "differentiated/Development",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "code-analysis-toolkit-pro": {
-      "content_hash": "7f7b63e9149cb472",
       "version": "1.0.0",
       "source": "differentiated/Development",
       "skillhub": {
@@ -20882,21 +19907,6 @@
     },
     "code-dev-toolkit-free": {
       "content_hash": "17106182a0dc5959",
-      "version": "1.0.0",
-      "source": "differentiated/Development",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "code-dev-toolkit-pro": {
-      "content_hash": "4e8b77023d92130d",
       "version": "1.0.0",
       "source": "differentiated/Development",
       "skillhub": {
@@ -21255,21 +20265,6 @@
         "last_check": null
       }
     },
-    "git-toolkit-pro": {
-      "content_hash": "c2cebceaa7abb1b9",
-      "version": "1.0.0",
-      "source": "differentiated/Development",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "git-workflow-cn-tool-free": {
       "content_hash": "ab73ea609d1e2455",
       "version": "1.0.0",
@@ -21345,38 +20340,8 @@
         "last_check": null
       }
     },
-    "github-dev-standard-pro": {
-      "content_hash": "3a8533bea94b3095",
-      "version": "1.0.0",
-      "source": "differentiated/Development",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "golang-toolkit-free": {
       "content_hash": "6cdd45e98c1b4108",
-      "version": "1.0.0",
-      "source": "differentiated/Development",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "golang-toolkit-pro": {
-      "content_hash": "8c91b778345ee63a",
       "version": "1.0.0",
       "source": "differentiated/Development",
       "skillhub": {
@@ -21572,21 +20537,6 @@
     },
     "javascript-toolkit-free": {
       "content_hash": "cfcd8815f78d0414",
-      "version": "1.0.0",
-      "source": "differentiated/Development",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "javascript-toolkit-pro": {
-      "content_hash": "3fd42ead9a71bf4d",
       "version": "1.0.0",
       "source": "differentiated/Development",
       "skillhub": {
@@ -21825,21 +20775,6 @@
         "last_check": null
       }
     },
-    "python-toolkit-pro": {
-      "content_hash": "be7561305f03fe0c",
-      "version": "1.0.0",
-      "source": "differentiated/Development",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "resume-assistant-tool-free": {
       "content_hash": "86b13f049f63f8e1",
       "version": "1.0.0",
@@ -21872,21 +20807,6 @@
     },
     "ssl-toolkit-free": {
       "content_hash": "f15ba80617daad03",
-      "version": "1.0.0",
-      "source": "differentiated/Development",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "ssl-toolkit-pro": {
-      "content_hash": "c970343e1b242256",
       "version": "1.0.0",
       "source": "differentiated/Development",
       "skillhub": {
@@ -21962,21 +20882,6 @@
     },
     "typescript-toolkit-free": {
       "content_hash": "8f7ad85778aae047",
-      "version": "1.0.0",
-      "source": "differentiated/Development",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "typescript-toolkit-pro": {
-      "content_hash": "7cec69fd53580fb1",
       "version": "1.0.0",
       "source": "differentiated/Development",
       "skillhub": {
@@ -22155,21 +21060,6 @@
         "last_check": null
       }
     },
-    "web-dev-toolkit-pro": {
-      "content_hash": "859e338276e4bd07",
-      "version": "1.0.0",
-      "source": "differentiated/Development",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "ziptax-tool-free": {
       "content_hash": "a7e26e1e685cae99",
       "version": "1.0.0",
@@ -22322,21 +21212,6 @@
     },
     "finance-toolkit-free": {
       "content_hash": "634698d452e56346",
-      "version": "1.0.0",
-      "source": "differentiated/Finance",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "finance-toolkit-pro": {
-      "content_hash": "0c49a21d8a943549",
       "version": "1.0.0",
       "source": "differentiated/Finance",
       "skillhub": {
@@ -22545,38 +21420,8 @@
         "last_check": null
       }
     },
-    "analytics-dashboard-pro": {
-      "content_hash": "8224a7b632ca269b",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "api-connect-hub-free": {
       "content_hash": "96b6117c05ffdd37",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "api-connect-hub-pro": {
-      "content_hash": "3e8093d25f88344b",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -22605,38 +21450,8 @@
         "last_check": null
       }
     },
-    "api-doc-generator-pro": {
-      "content_hash": "ad3e5785663194cd",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "api-magic-gen-free": {
       "content_hash": "ec9fe74452fe7c1c",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "api-magic-gen-pro": {
-      "content_hash": "f8c17ad1e9d23e0d",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -22665,38 +21480,8 @@
         "last_check": null
       }
     },
-    "api-scaffold-gen-pro": {
-      "content_hash": "7e6e7372946a25df",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "api-toolkit-free": {
       "content_hash": "c912aec2fab40e93",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "api-toolkit-pro": {
-      "content_hash": "22c9b2821fafe21e",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -22725,38 +21510,8 @@
         "last_check": null
       }
     },
-    "atlas-admin-console-pro": {
-      "content_hash": "611623a0ad5432e5",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "azure-gateway-cli-free": {
       "content_hash": "01f56fe6b182ee84",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "azure-gateway-cli-pro": {
-      "content_hash": "8ae4c5044d02c9ec",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -22815,38 +21570,8 @@
         "last_check": null
       }
     },
-    "call-bridge-pro": {
-      "content_hash": "cb341acb3b36fb8c",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "can-bus-toolkit-free": {
       "content_hash": "244062c2561ced64",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "can-bus-toolkit-pro": {
-      "content_hash": "b121414c545f46d4",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -22875,38 +21600,8 @@
         "last_check": null
       }
     },
-    "canvas-json-handler-pro": {
-      "content_hash": "ef0027f4a3d29cd4",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "chart-craft-free": {
       "content_hash": "4513114f1140d7ee",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "chart-craft-pro": {
-      "content_hash": "90fa19ab3e621522",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -22935,21 +21630,6 @@
         "last_check": null
       }
     },
-    "cloud-manager-pro": {
-      "content_hash": "4e46af14211b4e9e",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "csv-insight-free": {
       "content_hash": "daee8044728dfb9b",
       "version": "1.0.0",
@@ -22965,38 +21645,8 @@
         "last_check": null
       }
     },
-    "csv-insight-pro": {
-      "content_hash": "2ece5bd49d4a288e",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "csv-json-converter-free": {
       "content_hash": "f894dab30ee23ee3",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "csv-json-converter-pro": {
-      "content_hash": "98b5f460c7e240ab",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -23055,38 +21705,8 @@
         "last_check": null
       }
     },
-    "csv-toolkit-pro": {
-      "content_hash": "61ca6eef6952ec14",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "data-analysis-hub-free": {
-      "content_hash": "643ed60cf264fadc",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "data-analysis-hub-pro": {
-      "content_hash": "889698021360cac0",
+      "content_hash": "c521d05abc87f961",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -23101,22 +21721,7 @@
       }
     },
     "data-analyst-chinese-free": {
-      "content_hash": "59c6f569912893c5",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "data-analyst-chinese-pro": {
-      "content_hash": "42cc7da1b0d44aeb",
+      "content_hash": "9105db395c72e06f",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -23131,22 +21736,7 @@
       }
     },
     "data-analyst-expert-free": {
-      "content_hash": "5358372323dc1d0b",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "data-analyst-expert-pro": {
-      "content_hash": "7dc2c76ea5240c55",
+      "content_hash": "1ce380393fa1347a",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -23175,38 +21765,8 @@
         "last_check": null
       }
     },
-    "db-admin-console-pro": {
-      "content_hash": "3134d930d16806ea",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "db-connector-free": {
       "content_hash": "f13849563e9e07cb",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "db-connector-pro": {
-      "content_hash": "05678cfccb9d7467",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -23235,38 +21795,8 @@
         "last_check": null
       }
     },
-    "db-schema-designer-pro": {
-      "content_hash": "76c3249f796fb3c2",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "deepseek-assistant-free": {
       "content_hash": "9a22ff9f4d404db5",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "deepseek-assistant-pro": {
-      "content_hash": "e9e8c7edbae2f6f8",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -23295,38 +21825,8 @@
         "last_check": null
       }
     },
-    "discord-master-pro": {
-      "content_hash": "c63104330ce5da33",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "doc-guard-free": {
       "content_hash": "c652b8cadab045a2",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "doc-guard-pro": {
-      "content_hash": "a0602da0cf875c30",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -23355,38 +21855,8 @@
         "last_check": null
       }
     },
-    "doubao-assistant-pro": {
-      "content_hash": "1828f5b95e1a9676",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "encoding-toolkit-free": {
       "content_hash": "dc2bc661522cfbb9",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "encoding-toolkit-pro": {
-      "content_hash": "3b9395887ba61f63",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -23415,38 +21885,8 @@
         "last_check": null
       }
     },
-    "excel-craft-pro": {
-      "content_hash": "1fb56dd0ef469215",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "excel-expert-free": {
       "content_hash": "3e3315ad35fa5703",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "excel-expert-pro": {
-      "content_hash": "57be0acca07f03e5",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -23475,38 +21915,8 @@
         "last_check": null
       }
     },
-    "figma-studio-pro": {
-      "content_hash": "7ad9812bbce66ed8",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "figma-tw-designer-free": {
       "content_hash": "540c5b766e461ba6",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "figma-tw-designer-pro": {
-      "content_hash": "15391a3412060adb",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -23535,38 +21945,8 @@
         "last_check": null
       }
     },
-    "format-converter-pro": {
-      "content_hash": "7a66bb6a77b94423",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "free-resource-finder-free": {
       "content_hash": "8283a49f41e8ecfe",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "free-resource-finder-pro": {
-      "content_hash": "22a32aafe08de342",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -23595,38 +21975,8 @@
         "last_check": null
       }
     },
-    "gateway-manager-pro": {
-      "content_hash": "26b512ef61117b6a",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "github-api-toolkit-free": {
       "content_hash": "4a4733105697da77",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "github-api-toolkit-pro": {
-      "content_hash": "4d29cceacd7303ff",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -23655,21 +22005,6 @@
         "last_check": null
       }
     },
-    "github-manager-pro": {
-      "content_hash": "81ce82a0c5a63a57",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "grain-crawler-free": {
       "content_hash": "a7bcb5aac89a9cf0",
       "version": "1.0.0",
@@ -23685,38 +22020,8 @@
         "last_check": null
       }
     },
-    "grain-crawler-pro": {
-      "content_hash": "c50657059774c787",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "graph-knowledge-base-free": {
       "content_hash": "e8f2c6560fdf3758",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "graph-knowledge-base-pro": {
-      "content_hash": "f1f26f7e8fb8bac3",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -23775,21 +22080,6 @@
         "last_check": null
       }
     },
-    "jira-api-toolkit-pro": {
-      "content_hash": "3c4ef92a0f0ecf06",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "jira-flow-skill-free": {
       "content_hash": "792e16d50e8a152b",
       "version": "1.0.0",
@@ -23805,38 +22095,8 @@
         "last_check": null
       }
     },
-    "jira-flow-skill-pro": {
-      "content_hash": "3b4e76d7ccb77ff4",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "json-beautifier-free": {
       "content_hash": "a158fc5834dba2a4",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "json-beautifier-pro": {
-      "content_hash": "bc2beb571911e78d",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -23895,21 +22155,6 @@
         "last_check": null
       }
     },
-    "json-parse-engine-pro": {
-      "content_hash": "5589e22b8a73edb4",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "json-repair-tool-free": {
       "content_hash": "c3c3b37ad62e1a48",
       "version": "1.0.0",
@@ -23955,38 +22200,8 @@
         "last_check": null
       }
     },
-    "json-toolkit-pro": {
-      "content_hash": "65931f1d2eda16db",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "json-validator-free": {
       "content_hash": "0e05b9c0bd605fa4",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "json-validator-pro": {
-      "content_hash": "32c3aecee5c0c19e",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -24015,21 +22230,6 @@
         "last_check": null
       }
     },
-    "json-yaml-converter-pro": {
-      "content_hash": "d3307a397dd5941f",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "key-vault-manager-free": {
       "content_hash": "a0dce50506b59918",
       "version": "1.0.0",
@@ -24045,38 +22245,8 @@
         "last_check": null
       }
     },
-    "key-vault-manager-pro": {
-      "content_hash": "edd79b07ed91bafb",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "linear-api-toolkit-free": {
       "content_hash": "f4966fcefee3f365",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "linear-api-toolkit-pro": {
-      "content_hash": "ef28d1d5a9ca3833",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -24135,21 +22305,6 @@
         "last_check": null
       }
     },
-    "linear-workflow-skill-pro": {
-      "content_hash": "6007432431f79b05",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "md-export-tool-free": {
       "content_hash": "b683823c236fa65c",
       "version": "1.0.0",
@@ -24195,21 +22350,6 @@
         "last_check": null
       }
     },
-    "mongo-manager-pro": {
-      "content_hash": "4d59e1f4287e7204",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "note-process-engine-free": {
       "content_hash": "626ce3d0e68585ae",
       "version": "1.0.0",
@@ -24242,21 +22382,6 @@
     },
     "notion-api-toolkit-free": {
       "content_hash": "8985afad7fcbcfc4",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "notion-api-toolkit-pro": {
-      "content_hash": "3330e8d756a4fa7b",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -24345,38 +22470,8 @@
         "last_check": null
       }
     },
-    "ollama-toolkit-pro": {
-      "content_hash": "f58128b25960dd18",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "ops-dashboard-free": {
       "content_hash": "f27998c92e05723a",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "ops-dashboard-pro": {
-      "content_hash": "71c25cb01ceb6029",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -24405,38 +22500,8 @@
         "last_check": null
       }
     },
-    "pg-job-queue-pro": {
-      "content_hash": "7e7c866488c8b1ab",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "pg-mcp-skills-free": {
       "content_hash": "a72a2a54e2b5d3af",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "pg-mcp-skills-pro": {
-      "content_hash": "dbd48ea44404d3a8",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -24465,21 +22530,6 @@
         "last_check": null
       }
     },
-    "pipedrive-toolkit-pro": {
-      "content_hash": "f8d99bfdab406665",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "py-data-analyzer-free": {
       "content_hash": "8afcff153583496c",
       "version": "1.0.0",
@@ -24495,38 +22545,8 @@
         "last_check": null
       }
     },
-    "py-data-analyzer-pro": {
-      "content_hash": "3dd1c03f8b899522",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "pyx-scanner-free": {
       "content_hash": "de8e3f14085dc12f",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "pyx-scanner-pro": {
-      "content_hash": "5c19dfcf50886f52",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -24615,38 +22635,8 @@
         "last_check": null
       }
     },
-    "repo-manager-pro": {
-      "content_hash": "14b956a31373c76c",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "secure-api-toolkit-free": {
       "content_hash": "55dbdb574bc4792d",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "secure-api-toolkit-pro": {
-      "content_hash": "bd60884f6f5dfd72",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -24705,21 +22695,6 @@
         "last_check": null
       }
     },
-    "slack-api-toolkit-pro": {
-      "content_hash": "f4080f3884f9923e",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "slack-crawler-free": {
       "content_hash": "fac0704339c0fb76",
       "version": "1.0.0",
@@ -24735,38 +22710,8 @@
         "last_check": null
       }
     },
-    "slack-crawler-pro": {
-      "content_hash": "0ea677fd4258a725",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "smart-crawler-free": {
       "content_hash": "55fdf6c8a0718921",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "smart-crawler-pro": {
-      "content_hash": "40e8d198f97c91d8",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -24885,38 +22830,8 @@
         "last_check": null
       }
     },
-    "sqlite-lite-manager-pro": {
-      "content_hash": "51cc1162b12e2d36",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "sqlite-manager-free": {
       "content_hash": "da5bbf80a46a69eb",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "sqlite-manager-pro": {
-      "content_hash": "de469fe6c786cbe0",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -24945,21 +22860,6 @@
         "last_check": null
       }
     },
-    "telegram-toolkit-pro": {
-      "content_hash": "fbefabe17e21e40d",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "text2sql-engine-free": {
       "content_hash": "b43d61e96c147820",
       "version": "1.0.0",
@@ -24975,38 +22875,8 @@
         "last_check": null
       }
     },
-    "text2sql-engine-pro": {
-      "content_hash": "37d3826fb64be4d2",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "tg-bot-builder-free": {
       "content_hash": "f70ec5d459594684",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "tg-bot-builder-pro": {
-      "content_hash": "3e42e73542e508e1",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -25065,38 +22935,8 @@
         "last_check": null
       }
     },
-    "trending-feed-skill-pro": {
-      "content_hash": "1cad6c0a6b39abdc",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "vector-db-manager-free": {
       "content_hash": "6fd9fd67fbdb267c",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "vector-db-manager-pro": {
-      "content_hash": "7404069e811ec239",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -25125,38 +22965,8 @@
         "last_check": null
       }
     },
-    "vpn-rotator-pro": {
-      "content_hash": "1d713c9c68b4b669",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "vue-toolkit-free": {
       "content_hash": "1be4e681c1f91098",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "vue-toolkit-pro": {
-      "content_hash": "fb058441b12dec01",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -25185,38 +22995,8 @@
         "last_check": null
       }
     },
-    "web-crawler-engine-pro": {
-      "content_hash": "bea5f995aa97f902",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "web-notepad-free": {
       "content_hash": "e452d204aa4a3643",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "web-notepad-pro": {
-      "content_hash": "13698aaeb3053f97",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -25245,38 +23025,8 @@
         "last_check": null
       }
     },
-    "weiyun-toolkit-pro": {
-      "content_hash": "8d81696868ef81a5",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "whatsapp-master-free": {
       "content_hash": "69c0f9a6eafec83b",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "whatsapp-master-pro": {
-      "content_hash": "31f40052b0851898",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -25335,38 +23085,8 @@
         "last_check": null
       }
     },
-    "xlsx-handler-pro": {
-      "content_hash": "0c0c7cde1bb4451e",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "xml-json-converter-free": {
       "content_hash": "f77335afbf234c16",
-      "version": "1.0.0",
-      "source": "differentiated/Integrations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "xml-json-converter-pro": {
-      "content_hash": "cfb3b5fa44c4e04f",
       "version": "1.0.0",
       "source": "differentiated/Integrations",
       "skillhub": {
@@ -26942,21 +24662,6 @@
     },
     "aws-toolkit-free": {
       "content_hash": "775f4984feee7c5d",
-      "version": "1.0.0",
-      "source": "differentiated/Operations",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "aws-toolkit-pro": {
-      "content_hash": "e49ca33c8d20cdb6",
       "version": "1.0.0",
       "source": "differentiated/Operations",
       "skillhub": {
@@ -31410,36 +29115,6 @@
         "last_check": null
       }
     },
-    "browser-stagehand-tool-free": {
-      "content_hash": "dd0bc47d272f6e67",
-      "version": "1.0.0",
-      "source": "differentiated/Research",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
-    "browser-stagehand-tool-pro": {
-      "content_hash": "681793d77925b763",
-      "version": "1.0.0",
-      "source": "differentiated/Research",
-      "skillhub": {
-        "uploaded": true,
-        "version": "1.0.0",
-        "last_check": null
-      },
-      "clawhub": {
-        "uploaded": false,
-        "version": null,
-        "last_check": null
-      }
-    },
     "bsession-tool-free": {
       "content_hash": "80600c56e1c73a9a",
       "version": "1.0.0",
@@ -33572,7 +31247,7 @@
     }
   },
   "last_sync": {
-    "skillhub": "2026-07-22T08:47:43.691637",
-    "clawhub": "2026-07-22T08:47:43.690638"
+    "skillhub": "2026-07-22T11:00:21.728342",
+    "clawhub": "2026-07-22T11:00:21.728342"
   }
 }

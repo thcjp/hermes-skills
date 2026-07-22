@@ -12,7 +12,7 @@ description: |-
   全部功能基于B站公共API,无需任何登录凭据。不包含1080p+/4K高清下载、字幕处理、
   视频投稿等需要会话Cookie的付费能力。
 tags:
-  - Creative
+  - 研发工具
   - bilibili
   - video
 tools:

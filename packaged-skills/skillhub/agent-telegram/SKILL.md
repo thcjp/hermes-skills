@@ -12,7 +12,7 @@ description: |-
   覆盖任务开始、子任务完成、遇到问题、任务全部完成四类汇报时机，提供标准化消息模板与多角色协作流程。
   适用于多 Agent 协作开发、自动化工作流通知、团队任务进度同步、问题上报决策等场景。
 tags:
-  - Communication
+  - 通用办公
   - Automation
   - Collaboration
 tools:

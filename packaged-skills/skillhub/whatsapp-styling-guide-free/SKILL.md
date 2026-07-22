@@ -13,7 +13,7 @@ description: |-
   如需完整模板库(客服/营销/公告)、风格规范、Markdown差异对照、内容类型排版建议等高级能力,
   请升级至whatsapp-styling-guide付费版。
 tags:
-  - Communication
+  - 需求设计
 tools:
   - read
 ---

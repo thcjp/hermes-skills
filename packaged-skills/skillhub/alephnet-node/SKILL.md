@@ -12,7 +12,7 @@ description: |-
   适用场景:多智能体协作、知识共识验证、分布式记忆存储、社群运营、自治学习。
   不适用于需要100%确定性的关键决策。
 tags:
-  - Communication
+  - 研发工具
 tools:
   - read
   - exec

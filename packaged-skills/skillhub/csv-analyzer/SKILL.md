@@ -19,7 +19,7 @@ description: |-
   适用场景：数据探索、快速统计、异常排查、报表预处理、ETL质检。
   不适用于：超过100MB的大文件（需pandas流式处理）、加密文件破解。
 tags:
-  - Integrations
+  - 信息检索
   - 数据分析
   - CSV
 tools:

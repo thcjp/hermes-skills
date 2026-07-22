@@ -15,7 +15,7 @@ description: |-
   - CSV导出（utf-8-sig编码）
   高级功能（多文件合并、按列拆分、类型转换、进度计划解析、成本解析）为付费版专享。
 tags:
-  - Integrations
+  - 研发工具
   - csv
   - data-processing
 tools:

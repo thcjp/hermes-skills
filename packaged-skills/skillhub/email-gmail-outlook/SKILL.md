@@ -11,7 +11,7 @@ description: |-
   覆盖邮件列表、筛选、搜索、单封/线程获取、发送、回复、转发、修改、删除全生命周期操作。
   适用于收件箱分诊、批量模板回复、线程审阅、定时邮件发送、跨账号搜索等场景。
 tags:
-  - Communication
+  - 通用办公
   - Email
   - Productivity
 tools:

@@ -10,7 +10,7 @@ description: |-
   免费版支持秒、分、时三种时间格式与自定义提醒文案，满足日常烹饪、休息、短时提醒等基础计时需求。
   适合个人用户的单次倒计时场景，不包含多定时器并行管理、日志查看等进阶能力。
 tags:
-  - Communication
+  - 通用办公
   - Productivity
 tools:
   - read

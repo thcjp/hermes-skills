@@ -14,7 +14,7 @@ description: |-
   数量与定制深度为本系列免费版本，付费版扩展至 12 个平台与更细
   颗粒度的器材呈现规则。
 tags:
-  - Communication
+  - 需求设计
   - Photography
   - SocialMedia
 tools:

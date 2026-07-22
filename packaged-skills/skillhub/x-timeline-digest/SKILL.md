@@ -14,7 +14,7 @@ description: |-
   状态持久化到本地 JSON 文件,避免跨次运行重复推送。
   适用于需要定期追踪 X 动态并生成可读摘要的自动化工作流。
 tags:
-  - Communication
+  - 通用办公
   - Social Media
   - Digest
 tools:

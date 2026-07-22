@@ -14,7 +14,7 @@ description: |-
   基于 Markdown 指令驱动,需配合已配置 slack 工具与 Bot Token 的 Agent 平台使用。
   覆盖 channelId 与 messageId 输入采集、JSON action 调用格式、各动作组的参数规范。
 tags:
-  - Communication
+  - 通用办公
   - Collaboration
   - Productivity
 tools:

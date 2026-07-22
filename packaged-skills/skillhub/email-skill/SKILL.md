@@ -11,7 +11,7 @@ description: |-
   TLS/SSL加密传输与企业级凭据管理。适用于发信通知、报表投递、告警推送、
   营销触达等需要程序化邮件输出的自动化场景。
 tags:
-  - Communication
+  - 通用办公
   - SMTP
   - Automation
 tools:

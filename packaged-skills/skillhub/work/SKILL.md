@@ -11,7 +11,7 @@ description: |-
   Work Profile（工作画像）五大能力。帮助处理邮件起草、会议准备、状态汇报、
   职场政治、入职适应等日常工作场景。
 tags:
-  - Productivity
+  - 通用办公
 tools:
   - read
 ---

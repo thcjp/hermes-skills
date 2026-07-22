@@ -15,7 +15,7 @@ description: |-
   适用场景：iCloud满、设备间同步困惑、云存储选型。
   不适用于：AWS、Azure、S3 bucket、VPS、Docker、API等基础设施场景。
 tags:
-  - Integrations
+  - 研发工具
   - 云存储
   - 备份
 tools:

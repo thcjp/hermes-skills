@@ -16,7 +16,7 @@ description: |-
   - 可视化代码生成（折线/柱状/散点/直方/箱线/热力/小提琴/成对图/多轴图）
   - 分析报告自动生成（数据概览/关键指标/分布特征/Top排名/趋势分析/建议）
 tags:
-  - Integrations
+  - 信息检索
   - data-analysis
   - visualization
 tools:

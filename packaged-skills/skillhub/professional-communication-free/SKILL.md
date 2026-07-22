@@ -15,7 +15,7 @@ description: |-
   全部等典型职场沟通病灶。覆盖场景与模板深度为本系列免费版本，
   付费版扩展至技术概念转译、异步团队协作、跨文化沟通等更多场景。
 tags:
-  - Communication
+  - 项目管理
   - Writing
   - Workplace
   - Email

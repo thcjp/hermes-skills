@@ -8,7 +8,7 @@ license: MIT
 description: |-
   通过 @presto-ai/google-workspace-mcp 以纯OAuth登录方式访问Google Workspace,跳过Cloud Console建项目、启用API、下载client_secret.json等繁琐步骤。免费版提供Gmail邮件搜索与读取、Calendar日程查看、Drive文件检索与下载、Docs文档检索与文本提取、Sheets表格区域读取等基础能力,适合个人开发者体验Google Workspace自动化办公。写入、发送、会议创建、Chat与Slides等高级能力见付费版。
 tags:
-  - Communication
+  - 通用办公
   - Productivity
   - Google
 tools:

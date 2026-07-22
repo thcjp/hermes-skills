@@ -16,7 +16,7 @@ description: |-
   - 编码处理（utf-8、utf-8-sig自动识别与输出）
   - 格式美化（indent缩进、sort_keys排序、ensure_ascii中文输出）
 tags:
-  - Integrations
+  - 信息检索
   - data-format
   - converter
 tools:
