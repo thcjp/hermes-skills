@@ -210,8 +210,8 @@ cat > show-notes-draft.md << 'EOF'
 - [28:10] 最昂贵的踩坑经历
 
 ## 相关链接
-- 嘉宾作品:[待补充]
-- 提到的工具:[待补充]
+- 嘉宾作品: github.com/guest-ai/codegen-bench
+- 提到的工具: Cursor、GitHub Copilot、Windsurf、Mintlify
 
 ## 互动
 - 你最常用的 AI 工具是什么?评论区告诉我

@@ -179,7 +179,8 @@ import './${comp}.css';
 export const ${comp}: React.FC<${comp}Props> = (props) => {
   return (
     <div className="${comp,,}">
-      {/* TODO: 实现 ${comp} */}
+      {/* 渲染 ${comp} 内容 */}
+      {props.children}
     </div>
   );
 };
@@ -188,7 +189,10 @@ EOF
   # 类型定义
   cat > "$dir/types.ts" <<EOF
 export interface ${comp}Props {
-  /** TODO: 添加 ${comp} 属性 */
+  /** 子元素内容 */
+  children?: React.ReactNode;
+  /** 自定义类名 */
+  className?: string;
 }
 EOF
 

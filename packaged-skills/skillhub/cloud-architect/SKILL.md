@@ -229,6 +229,181 @@ Landing Zone 是云上的多账号基线环境,包含组织结构、网络基线
 ### Q6: Well-Architected Framework 有哪些支柱?
 AWS Well-Architected Framework 包含六大支柱:卓越运营、安全性、可靠性、性能效率、成本优化、可持续性。Azure 对应为 Cloud Adoption Framework 的 Well-Architected 评审,GCP 对应为 Architecture Framework。设计时应对照各支柱的评审问题逐项检查,避免偏科。
 
+## 代码示例
+
+### Terraform: AWS 多可用区生产架构(VPC + EC2 + RDS)
+
+```hcl
+# main.tf - AWS 多可用区生产架构
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+  backend "s3" {
+    bucket         = "tf-state-prod"
+    key            = "prod/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "tf-locks"
+    encrypt        = true
+  }
+}
+
+provider "aws" {
+  region = "us-east-1"
+}
+
+# VPC 与子网(3 可用区高可用)
+module "vpc" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "5.0.0"
+
+  name                 = "prod-vpc"
+  cidr                 = "10.0.0.0/16"
+  azs                  = ["us-east-1a", "us-east-1b", "us-east-1c"]
+  public_subnets       = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
+  private_subnets      = ["10.0.11.0/24", "10.0.12.0/24", "10.0.13.0/24"]
+  database_subnets     = ["10.0.21.0/24", "10.0.22.0/24", "10.0.23.0/24"]
+  enable_nat_gateway   = true
+  single_nat_gateway   = false
+  enable_dns_hostnames = true
+}
+
+# KMS 密钥用于 RDS 加密
+resource "aws_kms_key" "rds" {
+  description             = "KMS key for RDS encryption"
+  enable_key_rotation     = true
+  deletion_window_in_days = 30
+}
+
+# RDS PostgreSQL 多可用区部署
+resource "aws_db_instance" "main" {
+  engine                  = "postgres"
+  engine_version          = "15.4"
+  instance_class          = "db.r6g.xlarge"
+  allocated_storage       = 200
+  storage_type            = "gp3"
+  storage_encrypted       = true
+  kms_key_id              = aws_kms_key.rds.arn
+  multi_az                = true
+  db_name                 = "prodapp"
+  username                = "dbadmin"
+  password                = var.db_password
+  db_subnet_group_name    = module.vpc.database_subnet_group_name
+  backup_retention_period = 7
+  monitoring_interval     = 60
+  skip_final_snapshot     = false
+  final_snapshot_identifier = "prod-rds-final-${formatdate("YYYYMMDD", timestamp())}"
+}
+
+# EC2 Auto Scaling: Web 层
+resource "aws_launch_template" "web" {
+  name_prefix          = "web-asg"
+  image_id             = "ami-0c7217cdde317cfec"
+  instance_type        = "t3.large"
+  key_name             = "prod-key"
+  vpc_security_group_ids = [aws_security_group.web.id]
+
+  user_data = base64encode(<<-EOF
+    #!/bin/bash
+    yum install -y nginx
+    systemctl enable nginx
+    systemctl start nginx
+  EOF
+  )
+}
+
+resource "aws_autoscaling_group" "web" {
+  vpc_zone_identifier = module.vpc.private_subnets
+  desired_capacity    = 3
+  max_size             = 6
+  min_size             = 2
+  target_group_arns    = [aws_lb_target_group.web.arn]
+
+  launch_template {
+    id      = aws_launch_template.web.id
+    version = "$Latest"
+  }
+
+  tag {
+    key                 = "Name"
+    value               = "web-asg"
+    propagate_at_launch = true
+  }
+}
+```
+
+### AWS CloudFormation: S3 加密存储桶(版本控制 + 生命周期 + KMS)
+
+```yaml
+# s3-secure-bucket.yaml
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Secure S3 bucket with KMS encryption, versioning, and lifecycle'
+
+Resources:
+  SecureBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub 'prod-data-${AWS::AccountId}'
+      VersioningConfiguration:
+        Status: Enabled
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: aws:kms
+              KMSMasterKeyID: !Ref BucketKMSKey
+      LifecycleConfiguration:
+        Rules:
+          - Id: TransitionToGlacier
+            Status: Enabled
+            Transitions:
+              - StorageClass: GLACIER
+                TransitionInDays: 90
+              - StorageClass: DEEP_ARCHIVE
+                TransitionInDays: 365
+            NoncurrentVersionTransitions:
+              - StorageClass: GLACIER
+                TransitionInDays: 90
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+
+  BucketKMSKey:
+    Type: AWS::KMS::Key
+    Properties:
+      Description: 'KMS key for S3 bucket encryption'
+      EnableKeyRotation: true
+      KeyPolicy:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              AWS: !Sub 'arn:aws:iam::${AWS::AccountId}:root'
+            Action: 'kms:*'
+            Resource: '*'
+
+  BucketDenyInsecureTransport:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref SecureBucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Deny
+            Principal: '*'
+            Action: 's3:*'
+            Resource:
+              - !GetAtt SecureBucket.Arn
+              - !Sub '${SecureBucket.Arn}/*'
+            Condition:
+              Bool:
+                aws:SecureTransport: false
+```
+
 ## 依赖说明
 
 ### 运行环境

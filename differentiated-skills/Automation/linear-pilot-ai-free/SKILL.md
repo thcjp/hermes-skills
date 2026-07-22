@@ -398,5 +398,5 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 - Agent是否收到通知
 - 状态是否自动更新为 In Progress
 - 任务完成后状态是否更新为 Done
--
+- Git提交是否自动关联到任务评论
 ```

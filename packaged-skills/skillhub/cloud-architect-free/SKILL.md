@@ -149,6 +149,150 @@ homepage: "https://skillhub.cn"
 ### Q4: 什么是基础设施即代码?
 使用 Terraform、CloudFormation 等工具以代码形式定义云资源,实现可重复部署、版本管理与团队协作。避免控制台手动创建资源导致的不可追溯与漂移问题。
 
+## 代码示例
+
+### Terraform: AWS 基础架构(VPC + EC2 + RDS)
+
+```hcl
+# main.tf - AWS 单云基础架构
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
+
+provider "aws" {
+  region = "ap-northeast-1"
+}
+
+# VPC
+resource "aws_vpc" "main" {
+  cidr_block           = "10.0.0.0/16"
+  enable_dns_support   = true
+  enable_dns_hostnames = true
+  tags = {
+    Name = "main-vpc"
+  }
+}
+
+# 公有子网
+resource "aws_subnet" "public" {
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = "10.0.1.0/24"
+  availability_zone       = "ap-northeast-1a"
+  map_public_ip_on_launch = true
+  tags = { Name = "public-subnet-1a" }
+}
+
+# 私有子网(数据库层)
+resource "aws_subnet" "private" {
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = "10.0.11.0/24"
+  availability_zone = "ap-northeast-1a"
+  tags = { Name = "private-subnet-1a" }
+}
+
+# 互联网网关
+resource "aws_internet_gateway" "main" {
+  vpc_id = aws_vpc.main.id
+}
+
+# EC2 Web 服务器
+resource "aws_instance" "web" {
+  ami                    = "ami-0c7217cdde317cfec"
+  instance_type          = "t3.small"
+  subnet_id              = aws_subnet.public.id
+  vpc_security_group_ids = [aws_security_group.web.id]
+  key_name               = "prod-key"
+
+  user_data = <<-EOF
+    #!/bin/bash
+    yum install -y httpd
+    systemctl enable httpd
+    systemctl start httpd
+  EOF
+
+  tags = { Name = "web-server" }
+}
+
+# 安全组: 仅允许 HTTP/SSH
+resource "aws_security_group" "web" {
+  name        = "web-sg"
+  vpc_id      = aws_vpc.main.id
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["10.0.0.0/16"]
+  }
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+# RDS PostgreSQL
+resource "aws_db_instance" "db" {
+  engine               = "postgres"
+  engine_version       = "15.4"
+  instance_class       = "db.t3.micro"
+  allocated_storage    = 20
+  storage_encrypted    = true
+  db_name              = "appdb"
+  username             = "dbadmin"
+  password             = var.db_password
+  publicly_accessible  = false
+  skip_final_snapshot  = true
+}
+```
+
+### AWS CLI: 成本查询与资源 Right-sizing
+
+```bash
+# 查询过去 30 天 EC2 按需实例成本
+aws ce get-cost-and-usage \
+  --time-period Start=2026-06-22,End=2026-07-22 \
+  --granularity MONTHLY \
+  --metrics "UnblendedCost" \
+  --group-by Type=DIMENSION,Key=SERVICE Type=DIMENSION,Key=INSTANCE_TYPE
+
+# 列出所有运行中的 EC2 实例及其实例类型
+aws ec2 describe-instances \
+  --filters "Name=instance-state-name,Values=running" \
+  --query 'Reservations[*].Instances[*].[InstanceId,InstanceType,State.Name,Tags[?Key==`Name`].Value | [0]]' \
+  --output table
+
+# 查找 CPU 利用率低于 10% 的实例(Right-sizing 候选)
+for instance_id in $(aws ec2 describe-instances \
+  --filters "Name=instance-state-name,Values=running" \
+  --query 'Reservations[*].Instances[*].InstanceId' \
+  --output text); do
+  avg_cpu=$(aws cloudwatch get-metric-statistics \
+    --namespace AWS/EC2 \
+    --metric-name CPUUtilization \
+    --dimensions Name=InstanceId,Value=$instance_id \
+    --start-time $(date -u -v-7d +%Y-%m-%dT%H:%M:%S 2>/dev/null || date -u -d '7 days ago' +%Y-%m-%dT%H:%M:%S) \
+    --end-time $(date -u +%Y-%m-%dT%H:%M:%S) \
+    --period 86400 \
+    --statistics Average \
+    --query 'Datapoints[*].Average' \
+    --output text | awk '{s+=$1} END {print s/NR}')
+  echo "Instance: $instance_id | Avg CPU(7d): ${avg_cpu}%"
+done
+```
+
 ## 依赖说明
 
 ### 运行环境

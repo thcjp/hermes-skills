@@ -185,7 +185,10 @@ export interface ${comp}Props {
 }
 
 export interface ${comp}Emits {
-  // TODO: 定义事件
+  /** 点击事件 */
+  (e: 'click', event: MouseEvent): void
+  /** 值变更事件 */
+  (e: 'change', value: string | number): void
 }
 EOF
 
@@ -390,7 +393,8 @@ npx vitest run
 npm run storybook
 ```
 
-#
+---
+
 ## 示例
 
 ### CI/CD 组件质量门禁

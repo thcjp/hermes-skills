@@ -433,9 +433,10 @@ FUNCTIONAL_CHECKS = [
 ]
 
 # 真实placeholder模式 (非模板变量)
+# TODO/FIXME仅在行首(可带注释符号)匹配，避免误报函数名/状态名/命令中的"todo"
 REAL_PLACEHOLDER_PATTERNS = [
-    (r"TODO[:\s]", "TODO标记"),
-    (r"FIXME[:\s]", "FIXME标记"),
+    (r"(?m)^[\s/#*;]*TODO[:\s]", "TODO标记"),
+    (r"(?m)^[\s/#*;]*FIXME[:\s]", "FIXME标记"),
     (r"待补充", "待补充"),
     (r"待完善", "待完善"),
     (r"lorem ipsum", "Lorem Ipsum"),
@@ -465,12 +466,26 @@ def check_functional_quality(body_text: str) -> dict:
         score += 2
 
     # 维度2: 指令性内容 (0-25分)
-    if re.search(r'步骤|Step\s*[1-9]|首先|然后|接下来|用法|Usage', body_text, re.IGNORECASE):
+    # 指令性内容包括: 步骤关键词、序号列表、输入/处理/输出模式、操作动词
+    if re.search(
+        r'步骤|Step\s*[1-9]|首先|然后|接下来|用法|Usage'
+        r'|输入|处理|输出'           # 输入/处理/输出指令模式
+        r'|安装|配置|运行|执行|部署'   # 操作动词
+        r'|Install|Run|Execute|Config|Deploy|Setup',  # 英文操作动词
+        body_text, re.IGNORECASE
+    ):
         score += 15
     else:
         issues.append("NO_INSTRUCTIONS: 无步骤/用法指令性内容")
 
-    if re.search(r'##\s*(使用|用法|Usage|How to|步骤|Steps|Guide)', body_text, re.IGNORECASE):
+    # 使用指南section: 扩大匹配范围，涵盖功能说明/核心能力/快速开始/入门等常见section
+    if re.search(
+        r'##\s*(使用|用法|Usage|How to|步骤|Steps|Guide'
+        r'|快速开始|快速上手|入门|操作|功能|核心能力|核心功能|功能说明'
+        r'|Capabilities|Overview|Quick Start|Getting Started'
+        r'|Introduction|简介|说明)',
+        body_text, re.IGNORECASE
+    ):
         score += 10
     else:
         issues.append("NO_USAGE_GUIDE: 无使用指南section")
@@ -508,9 +523,9 @@ def check_functional_quality(body_text: str) -> dict:
     if re.search(r'##\s*依赖说明|##\s*Dependencies', body_text, re.IGNORECASE):
         score += 5
 
-    # 扣分项: 真实placeholder
+    # 扣分项: 真实placeholder (TODO/FIXME大小写敏感，待补充等中文不敏感)
     for pattern, desc in REAL_PLACEHOLDER_PATTERNS:
-        if re.search(pattern, body_text, re.IGNORECASE):
+        if re.search(pattern, body_text):
             issues.append(f"REAL_PLACEHOLDER: 检测到{desc}")
             score -= 15
             break

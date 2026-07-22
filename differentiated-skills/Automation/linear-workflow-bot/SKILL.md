@@ -182,7 +182,7 @@ Make.com 配置：新建 scenario → 添加 Linear "Watch Issues" 触发器 →
 
 ## 示例
 
-### 示例
+### 示例 1：任务自动处理流程
 
 **输入：**
 ```

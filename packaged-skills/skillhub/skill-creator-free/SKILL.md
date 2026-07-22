@@ -19,6 +19,11 @@ tags:
 
 创建有效AI Skill的基础指南，覆盖Core Principles与SKILL.md结构设计。
 
+## 输入输出
+
+**输入**: 用户提供skill创建需求，包括具体的concrete examples（skill应支持的功能描述与触发场景）、预期触发关键词或短语、skill名称建议、所需的bundled resources类型（scripts/references/assets）、skill的复杂度与自由度偏好（High/Medium/Low freedom）。
+**输出**: SKILL.md结构设计指导（含frontmatter中 `name` 与 `description` 字段的编写规范、body内容组织建议）、Progressive Disclosure三级加载系统设计建议（Level 1 Metadata约100 words / Level 2 SKILL.md body <5k words / Level 3 Bundled resources按需加载）、Bundled Resources基础组织方案（scripts/references/assets三类目录用途说明）、Core Principles三大原则应用建议。免费版不含 `init_skill.py`/`package_skill.py` 脚本集成与完整规范（付费版专享）。
+
 ## 依赖说明
 
 ### 运行环境

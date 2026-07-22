@@ -31,6 +31,11 @@ homepage: "https://skillhub.cn"
 
 语音通话服务让AI代理为用户拨打真实的美国电话。语音AI代理负责拨号、对话、处理电话菜单或等待时间，并在通话结束后返回转录、结果与录音链接（如可用）。首次外呼可自动签发API密钥。
 
+## 输入输出
+
+**输入**: 用户提供目标电话号码（美国 `+1XXXXXXXXXX` 格式）、通话指令 `task`（含通话目标、已知事实、要问的问题、决策边界、预期核验点、回报要求）、可选的 `bridge_number`（用于实时转接用户进入通话）、可选的 `voice`/`personality`/`greeting` 全局配置；入呼配置时提供 `instructions`、`greeting` 与可选的 `handoff_number`。
+**输出**: `call_id` 与 `api_key`（首次外呼自动签发并持久化至 `~/.config/voicecall/key.json`）、通话生命周期状态（`queued` → `dialing` → `answered` → `finalized`）、终态返回 `outcome`（电话网络结果）、`talk_seconds`（通话时长）、`transcript`（通话转录）、`recording_url`（录音链接，如可用）；入呼历史查询返回通话记录列表；配置更新返回当前 `voice`/`personality`/`greeting` 与 `inbound` 块。
+
 **Base URL:** `https://api.voicecall.example`
 
 ## 核心能力

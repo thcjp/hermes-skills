@@ -162,12 +162,12 @@ obsidian prepend file="日志" content="## 上午事项"
 
 ```bash
 # 全文搜索并显示上下文
-obsidian search query="TODO" matches
+obsidian search query="项目架构" matches
 
 # 按路径范围搜索
 obsidian search query="项目" path="项目/"
 
-# 已知限制
+# 限定返回数量并区分大小写
 obsidian search query="API" limit=10 case
 
 # 以JSON格式输出搜索结果

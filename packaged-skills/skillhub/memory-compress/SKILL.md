@@ -119,7 +119,8 @@ tags:
 | 无 Markdown 结构 | 友好提示，尝试按段落提取 |
 | 多日合并文件 | 混合策略，所有日期均保留 |
 
-#
+---
+
 ## 使用流程
 
 ### 第一步：准备日志文件
@@ -155,7 +156,8 @@ date +%s > .last-memory-maintenance
 mv memory/2026-07-18.md memory/archive/
 ```
 
-#
+---
+
 ## 错误处理
 
 
