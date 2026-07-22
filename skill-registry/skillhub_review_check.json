@@ -1,0 +1,82 @@
+{
+  "found": [
+    "ai-writing-style-cloner",
+    "content-refiner",
+    "drama-hit-producer",
+    "ebook-factory",
+    "ecommerce-pricing-strategist",
+    "hook-retention-master",
+    "intel-sentinel",
+    "jira-pat-toolkit",
+    "novel-autopilot",
+    "poetry-craftsman",
+    "sales-copy-writer",
+    "seo-doctor",
+    "seo-rank-monopolizer",
+    "stealth-browser-assistant",
+    "title-hook-factory",
+    "topic-hunter",
+    "viral-decoder",
+    "viral-prophet",
+    "doc-assistant",
+    "calendar-sync-tool",
+    "media-server-control",
+    "note-app-cli",
+    "repo-reader-tool",
+    "netpad-tool",
+    "ocean-chat-assistant",
+    "ui-ux-developer-tool",
+    "moltbook-firewall-tool"
+  ],
+  "not_found": [
+    {
+      "slug": "version-control-workflows",
+      "status": "pending_review"
+    },
+    {
+      "slug": "data-analysis-toolkit",
+      "status": "pending_review"
+    },
+    {
+      "slug": "trading-strategy-guide",
+      "status": "pending_review"
+    },
+    {
+      "slug": "xml-parser-tool",
+      "status": "pending_review"
+    },
+    {
+      "slug": "baoyu-md-formatter",
+      "status": "pending_review"
+    },
+    {
+      "slug": "file-browser-tool",
+      "status": "pending_review"
+    },
+    {
+      "slug": "markdown-converter-tool",
+      "status": "pending_review"
+    },
+    {
+      "slug": "podcast-downloader-tool",
+      "status": "pending_review"
+    },
+    {
+      "slug": "rho-telegram-alerts-tool",
+      "status": "pending_review"
+    },
+    {
+      "slug": "text-rpg-arcade-v3",
+      "status": "pending_review"
+    },
+    {
+      "slug": "video-upload-stream-tool",
+      "status": "pending_review"
+    },
+    {
+      "slug": "pdf-compressor-tool",
+      "status": "pending_review"
+    }
+  ],
+  "updated": 27
+}

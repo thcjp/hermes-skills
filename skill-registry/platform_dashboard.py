@@ -124,7 +124,9 @@ def analyze_hermes(skills):
     return {
         "eligible": eligible,
         "converted": converted,
-        "published": 0,  # Not published to GitHub yet
+        "published": sum(1 for s in skills.values()
+                         if not s.get("is_source")
+                         and s.get("hermes", {}).get("github_published", False)),
         "not_eligible": not_eligible,
     }
 
