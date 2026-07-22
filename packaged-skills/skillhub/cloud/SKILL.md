@@ -1,10 +1,10 @@
 ---
-slug: cloud
-name: cloud
+slug: "cloud"
+name: "cloud"
 version: "1.0.0"
-displayName: 消费级云存储助手
-summary: 选择、整理、同步、分享与备份iCloud、Google Drive、Dropbox等个人云存储文件。
-license: MIT
+displayName: "消费级云存储助手"
+summary: "选择、整理、同步、分享与备份iCloud、Google Drive、Dropbox等个人云存储文件。"
+license: "MIT"
 description: |-
   消费级云存储助手帮助用户在iCloud、Google Drive、Dropbox、OneDrive等个人云存储服务间
   做出选择、整理、同步、分享与备份决策。覆盖服务选型、常见困惑澄清、存储满处理、备份策略、
@@ -16,8 +16,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Cloud — 消费级云存储助手
 
 ## 依赖说明

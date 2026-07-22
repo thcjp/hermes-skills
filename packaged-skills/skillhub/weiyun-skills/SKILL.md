@@ -1,10 +1,10 @@
 ---
-slug: weiyun-skills
-name: weiyun-skills
+slug: "weiyun-skills"
+name: "weiyun-skills"
 version: "1.0.10"
-displayName: Weiyun Skills
-summary: 微云网盘MCP接口完整技能。
-license: MIT
+displayName: "Weiyun Skills"
+summary: "微云网盘MCP接口完整技能。"
+license: "MIT"
 description: |-
   微云网盘MCP接口完整技能。
 
@@ -23,14 +23,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
-
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
-# Weiyun Skills
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Weiyun Skills
 

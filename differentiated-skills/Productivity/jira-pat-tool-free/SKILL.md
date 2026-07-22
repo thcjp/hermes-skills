@@ -1,11 +1,11 @@
 ---
-slug: jira-pat-tool-free
-name: jira-pat-tool-free
+slug: "jira-pat-tool-free"
+name: "jira-pat-tool-free"
 version: "1.0.0"
-displayName: Jira PAT 管理基础版
-summary: 使用个人访问令牌(PAT)管理自托管 Jira 实例的事务,适合 SSO/SAML 环境
-license: Proprietary
-edition: free
+displayName: "Jira PAT 管理基础版"
+summary: "使用个人访问令牌(PAT)管理自托管 Jira 实例的事务,适合 SSO/SAML 环境"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力: 项目管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
 
@@ -15,13 +15,14 @@ description: |-
 
   适用关键词: jira, pat, 事务, 工作项, jql, sso, saml, 状态流转
 tags:
-- Jira
-- PAT
-- 事务管理
-- SSO
+  - Jira
+  - PAT
+  - 事务管理
+  - SSO
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Jira PAT 管理基础版
 

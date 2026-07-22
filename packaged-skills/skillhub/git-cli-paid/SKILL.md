@@ -1,11 +1,11 @@
 ---
-slug: git-cli-paid
-name: git-cli-paid
+slug: "git-cli-paid"
+name: "git-cli-paid"
 version: "1.0.0"
-displayName: Git命令行助手专业版
-summary: 企业级Git CLI工具,支持自动化脚本、深度诊断、工作流模板与故障排除,提升团队效率。
-license: Proprietary
-edition: pro
+displayName: "Git命令行助手专业版"
+summary: "企业级Git CLI工具,支持自动化脚本、深度诊断、工作流模板与故障排除,提升团队效率。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向企业研发团队的高级Git命令行工具,提供自动化脚本、深度仓库诊断、工作流模板、故障排除与批量操作能力。核心能力:
   - Git自动化脚本库
@@ -29,16 +29,15 @@ description: |-
 
   ...
 tags:
-- 开发工具
-- Git
-- 命令行
-- 企业级
-- 自动化
+  - 开发工具
+  - Git
+  - 命令行
+  - 企业级
+  - 自动化
 tools:
   - - read
-- exec
-# Git命令行助手 - 专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Git命令行助手专业版
 

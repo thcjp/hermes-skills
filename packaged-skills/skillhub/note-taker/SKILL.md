@@ -1,18 +1,18 @@
 ---
-slug: note-taker
-name: note-taker
+slug: "note-taker"
+name: "note-taker"
 version: "2.0.1"
-displayName: Note Taker
-summary: 笔记整理助手。康奈尔笔记法、卡片盒笔记(Zettelkasten)、思维导图笔记、会议笔记、课堂笔记、笔记整理。Note-taking with
-  Cornell method, Zettelka...
-license: MIT-0
+displayName: "Note Taker"
+summary: "笔记整理助手。康奈尔笔记法、卡片盒笔记(Zettelkasten)、思维导图笔记、会议笔记、课堂笔记、笔记整理。Note-taking with"
+license: "MIT-0"
 description: |-
   笔记整理助手。康奈尔笔记法、卡片盒笔记(Zettelkasten)、思维导图笔记、会议笔记、课堂笔记、笔记整理。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- Productivity
+  - Productivity
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Note Taker
 

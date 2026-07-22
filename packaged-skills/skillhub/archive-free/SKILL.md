@@ -1,10 +1,10 @@
 ---
-slug: archive-free
-name: archive-free
+slug: "archive-free"
+name: "archive-free"
 version: "1.0.0"
-displayName: 智能内容归档免费版
-summary: 免费版内容归档工具，支持文章、视频、推文的内容提取与标签管理。
-license: MIT
+displayName: "智能内容归档免费版"
+summary: "免费版内容归档工具，支持文章、视频、推文的内容提取与标签管理。"
+license: "MIT"
 description: |-
   内容归档工具免费版，将外部内容捕获为本地快照。
   支持文章、视频、推文的基本内容提取与标签管理。
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 智能内容归档（免费版）
 
 将外部内容捕获为本地快照，支持文章、视频、推文的内容提取与标签管理。

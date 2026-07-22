@@ -1,11 +1,11 @@
 ---
-slug: notion-toolkit-pro
-name: notion-toolkit-pro
+slug: "notion-toolkit-pro"
+name: "notion-toolkit-pro"
 version: "1.0.0"
-displayName: Notion 工具包专业版
-summary: 企业级 Notion 管理系统,支持批量操作、模板管理、数据同步与工作流自动化
-license: Proprietary
-edition: pro
+displayName: "Notion 工具包专业版"
+summary: "企业级 Notion 管理系统,支持批量操作、模板管理、数据同步与工作流自动化"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 知识管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: notion, 页面, 数据库, 块, api, 搜索, 数据源
 tags:
-- Notion
-- API
-- 页面管理
-- 数据库
+  - Notion
+  - API
+  - 页面管理
+  - 数据库
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Notion 工具包专业版
 
 ## 概述

@@ -1,10 +1,10 @@
 ---
-slug: slack-workspace
-name: slack-workspace
+slug: "slack-workspace"
+name: "slack-workspace"
 version: "1.0.0"
-displayName: Slack工作区管家
-summary: Slack全量工作区管理：消息/频道/文件/提醒/画布/用户组，ClawLink OAuth托管
-license: MIT
+displayName: "Slack工作区管家"
+summary: "Slack全量工作区管理：消息/频道/文件/提醒/画布/用户组，ClawLink OAuth托管"
+license: "MIT"
 description: |-
   面向团队协作与工作区治理的Slack全量管理技能。通过ClawLink OAuth托管连接，
   提供消息管理、频道治理、对话历史、用户查询、文件操作、表情反应、提醒、
@@ -20,8 +20,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Slack工作区管家（Slack Workspace）
 
 通过ClawLink OAuth托管连接管理Slack工作区，覆盖消息、频道、文件、用户、提醒、画布等60+ API工具。内置读写分级安全策略，写操作需用户确认后执行。

@@ -1,10 +1,10 @@
 ---
-slug: afrexai-knowledge-management-free
-name: afrexai-knowledge-management-free
+slug: "afrexai-knowledge-management-free"
+name: "afrexai-knowledge-management-free"
 version: "1.0.0"
-displayName: 知识管理引擎(免费版)
-summary: 结构化知识捕获、关联推理、主动浮现与多源知识库构建。免费版
-license: MIT
+displayName: "知识管理引擎(免费版)"
+summary: "结构化知识捕获、关联推理、主动浮现与多源知识库构建。免费版"
+license: "MIT"
 description: |-
   结构化知识管理与推理引擎（免费版），支持知识捕获、关联推理、主动浮现与
   多源知识库构建。采用图结构存储知识实体与关系。核心能力：
@@ -15,8 +15,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 智能助手
 ---
-
 # 知识管理引擎(免费版)
 
 结构化知识管理与推理引擎，支持知识捕获、关联推理、主动浮现与多源知识库构建，采用图结构存储。

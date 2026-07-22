@@ -1,11 +1,11 @@
 ---
-slug: cdn-toolkit-free
-name: cdn-toolkit-free
+slug: "cdn-toolkit-free"
+name: "cdn-toolkit-free"
 version: "1.0.0"
-displayName: CDN配置工具包免费版
-summary: CDN配置与优化助手,支持缓存策略设置、基础安全加固与性能诊断,适合个人开发者快速部署CDN。
-license: Proprietary
-edition: free
+displayName: "CDN配置工具包免费版"
+summary: "CDN配置与优化助手,支持缓存策略设置、基础安全加固与性能诊断,适合个人开发者快速部署CDN。"
+license: "Proprietary"
+edition: "free"
 description: |-
   CDN配置工具包免费版,为个人开发者提供CDN部署与优化核心能力。
   核心能力:缓存策略配置、基础安全加固、CDN性能诊断、域名配置指导。
@@ -13,13 +13,14 @@ description: |-
   差异化:免费版聚焦核心配置能力,支持主流CDN服务商,适合个人项目快速上手。
   适用关键词: CDN, 缓存策略, 边缘节点, 内容分发, cache, edge, origin, cdn optimization
 tags:
-- CDN
-- 性能优化
-- 缓存
-- 免费版
+  - CDN
+  - 性能优化
+  - 缓存
+  - 免费版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # CDN配置工具包免费版
 

@@ -1,11 +1,11 @@
 ---
-slug: note-taker-tool-pro
-name: note-taker-tool-pro
+slug: "note-taker-tool-pro"
+name: "note-taker-tool-pro"
 version: "1.0.0"
-displayName: 笔记记录器专业版
-summary: 企业级任务管理系统,支持多项目、标签系统、数据分析与团队任务共享
-license: Proprietary
-edition: pro
+displayName: "笔记记录器专业版"
+summary: "企业级任务管理系统,支持多项目、标签系统、数据分析与团队任务共享"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 任务管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: note-taker, 任务, 待办, 清单, 优先级, 提醒, todo
 tags:
-- 笔记
-- 任务管理
-- 待办清单
-- 命令行
+  - 笔记
+  - 任务管理
+  - 待办清单
+  - 命令行
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 笔记记录器专业版
 
 ## 概述

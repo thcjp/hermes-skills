@@ -1,11 +1,11 @@
 ---
-slug: google-workspace-cli
-name: google-workspace-cli
+slug: "google-workspace-cli"
+name: "google-workspace-cli"
 version: "1.0.0"
-displayName: 谷歌办公命令行专业版
-summary: 全功能Google Workspace命令行工具,覆盖六大服务与批量操作,支持企业级多租户场景与自动化工作流。
-license: Proprietary
-edition: pro
+displayName: "谷歌办公命令行专业版"
+summary: "全功能Google Workspace命令行工具,覆盖六大服务与批量操作,支持企业级多租户场景与自动化工作流。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   谷歌办公命令行工具专业版,面向企业与专业用户提供 Gmail、Calendar、Drive、Contacts、Sheets、Docs 全六大服务的深度操作能力。核心能力:
   - 六大服务全覆盖:Gmail / Calendar / Drive / Contacts / Sheets / Docs
@@ -18,16 +18,17 @@ description: |-
   适用场景:
   - 企业批量邮件通知与...
 tags:
-- 沟通协作
-- 邮件管理
-- 谷歌办公
-- 命令行工具
-- 企业效率
-- 自动化
-- 数据处理
+  - 沟通协作
+  - 邮件管理
+  - 谷歌办公
+  - 命令行工具
+  - 企业效率
+  - 自动化
+  - 数据处理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 谷歌办公命令行专业版
 

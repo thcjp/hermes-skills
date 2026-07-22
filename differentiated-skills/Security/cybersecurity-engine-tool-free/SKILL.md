@@ -1,11 +1,11 @@
 ---
-slug: cybersecurity-engine-tool-free
-name: cybersecurity-engine-tool-free
+slug: "cybersecurity-engine-tool-free"
+name: "cybersecurity-engine-tool-free"
 version: "1.0.0"
-displayName: 网络安全评估引擎免费版
-summary: 轻量级安全评估与威胁建模工具,提供安全态势检查、OWASP基础审计与漏洞管理,适合个人开发者快速安全自查。
-license: Proprietary
-edition: free
+displayName: "网络安全评估引擎免费版"
+summary: "轻量级安全评估与威胁建模工具,提供安全态势检查、OWASP基础审计与漏洞管理,适合个人开发者快速安全自查。"
+license: "Proprietary"
+edition: "free"
 description: |-
   网络安全评估引擎免费版,为个人开发者提供基础安全评估与威胁建模能力。
   核心能力:安全态势快速检查、OWASP Top 10基础审计、威胁登记管理、漏洞生命周期跟踪。
@@ -13,15 +13,15 @@ description: |-
   差异化:免费版聚焦核心评估能力,无需额外工具依赖,适合个人开发者快速上手。
   适用关键词: 安全评估, 威胁建模, OWASP, 漏洞管理, security, assessment, threat, modeling
 tags:
-- 安全
-- 威胁建模
-- OWASP
-- 免费版
+  - 安全
+  - 威胁建模
+  - OWASP
+  - 免费版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 网络安全评估引擎免费版
 
 ## 概述

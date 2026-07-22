@@ -1,10 +1,10 @@
 ---
-slug: bookmark-intelligence-free
-name: bookmark-intelligence-free
+slug: "bookmark-intelligence-free"
+name: "bookmark-intelligence-free"
 version: "1.0.0"
-displayName: 书签智析基础版
-summary: X书签基础监控版,每月10条限额,手动运行,基于关键词启发式分析,无AI与推送。
-license: MIT
+displayName: "书签智析基础版"
+summary: "X书签基础监控版,每月10条限额,手动运行,基于关键词启发式分析,无AI与推送。"
+license: "MIT"
 description: |-
   X(Twitter)书签分析与知识萃取基础版(免费)。手动运行抓取最近的 X 书签,用关键词启发式提取摘要并落盘为本地 JSON。
   核心能力:每月 10 条书签处理、手动触发运行、关键词启发式分析、本地 JSON 沉淀。
@@ -15,8 +15,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 书签智析基础版
 
 把你 X(Twitter)上的书签手动转化为本地知识卡片。免费版每月可处理 10 条书签,使用关键词启发式分析(无 AI),结果落盘为本地 JSON 供后续检索。

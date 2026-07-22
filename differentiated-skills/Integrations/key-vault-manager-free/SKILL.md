@@ -1,23 +1,24 @@
 ---
-slug: key-vault-manager-free
-name: key-vault-manager-free
+slug: "key-vault-manager-free"
+name: "key-vault-manager-free"
 version: "1.0.0"
-displayName: 密钥保险箱(免费版)
-summary: 本地密钥管理工具，防止API密钥泄露到LLM服务器，支持密钥验证与脱敏读取
-license: Proprietary
-edition: free
+displayName: "密钥保险箱(免费版)"
+summary: "本地密钥管理工具，防止API密钥泄露到LLM服务器，支持密钥验证与脱敏读取"
+license: "Proprietary"
+edition: "free"
 description: |-
   密钥保险箱(免费版)是一款本地密钥安全守护工具，通过本地中间人机制确保API密钥不会以明文形式发送到LLM服务器，仅将API响应结果返回给Agent。核心能力：
   - 本地密钥验证：检查密钥是否已配置，无需暴露密钥本身
   - 脱敏文件读取：将密钥值替换为占位符后返回文件内容
   - 本地API代理：在本地注入密钥并发起HTTP请求...
 tags:
-- 集成工具
-- 安全防护
-- 密钥管理
+  - 集成工具
+  - 安全防护
+  - 密钥管理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 密钥保险箱(免费版)
 

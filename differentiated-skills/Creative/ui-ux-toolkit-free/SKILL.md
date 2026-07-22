@@ -1,11 +1,11 @@
 ---
-slug: ui-ux-toolkit-free
-name: ui-ux-toolkit-free
+slug: "ui-ux-toolkit-free"
+name: "ui-ux-toolkit-free"
 version: "1.0.0"
-displayName: UI/UX设计工具箱免费版
-summary: 可搜索的UI/UX设计数据库,提供风格、配色、字体、UX规则的基础查询,适合个人开发者快速生成设计系统
-license: Proprietary
-edition: free
+displayName: "UI/UX设计工具箱免费版"
+summary: "可搜索的UI/UX设计数据库,提供风格、配色、字体、UX规则的基础查询,适合个人开发者快速生成设计系统"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人开发者的轻量级UI/UX设计查询工具,内置丰富的设计资源数据库,
   通过自然语言关键词即可获取专业设计建议。核心能力:
@@ -22,15 +22,16 @@ description: |-
   差异化:免费版聚焦核心查询能力,提供基础设计域搜索和默认技术栈指引,
   去除企业级持久化和批量操作功能,降低使用门槛,...
 tags:
-- 设计
-- UI
-- UX
-- 配色
-- 字体
-- 前端
+  - 设计
+  - UI
+  - UX
+  - 配色
+  - 字体
+  - 前端
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # UI/UX设计工具箱 - 免费版
 

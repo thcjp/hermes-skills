@@ -1,11 +1,11 @@
 ---
-slug: gitcrawl-tool-free
-name: gitcrawl-tool-free
+slug: "gitcrawl-tool-free"
+name: "gitcrawl-tool-free"
 version: "1.0.0"
-displayName: 仓库归档搜索
-summary: 轻量级代码仓库 issue/PR 归档搜索工具，支持本地缓存查询与新鲜度检测，适合个人开发者日常代码仓库管理。
-license: Proprietary
-edition: free
+displayName: "仓库归档搜索"
+summary: "轻量级代码仓库 issue/PR 归档搜索工具，支持本地缓存查询与新鲜度检测，适合个人开发者日常代码仓库管理。"
+license: "Proprietary"
+edition: "free"
 description: |-
   轻量级代码仓库 issue/PR 归档搜索工具，支持本地缓存查询与新鲜度检测，适合个人开发者日常代码仓库管理。核心能力:
   - 本地缓存 GitHub issue/PR 归档数据
@@ -22,13 +22,14 @@ description: |-
   - 免费版聚焦单仓库查询，操作简单
   - 优先使用本地缓存...
 tags:
-- 开发工具
-- 代码仓库
-- issue管理
-- PR查询
+  - 开发工具
+  - 代码仓库
+  - issue管理
+  - PR查询
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 仓库归档搜索（免费版）
 

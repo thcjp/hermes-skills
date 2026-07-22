@@ -1,11 +1,11 @@
 ---
-slug: photo-webcam-tool-pro
-name: photo-webcam-tool-pro
+slug: "photo-webcam-tool-pro"
+name: "photo-webcam-tool-pro"
 version: "1.0.0"
-displayName: 网络摄像头工具-专业版
-summary: 企业级摄像头监控平台,支持定时抓取、历史归档、多通道推送与图片分析
-license: Proprietary
-edition: pro
+displayName: "网络摄像头工具-专业版"
+summary: "企业级摄像头监控平台,支持定时抓取、历史归档、多通道推送与图片分析"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级网络摄像头监控工具专业版,面向团队与商业应用。核心能力:
   - 定时自动抓取与调度管理
@@ -25,14 +25,15 @@ description: |-
 
   差异化:专业版在免费版基础上扩展定时调度、历史归...
 tags:
-- 摄像头
-- 监控
-- 企业级
-- 图像分析
-- 定时调度
+  - 摄像头
+  - 监控
+  - 企业级
+  - 图像分析
+  - 定时调度
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 网络摄像头工具 - 专业版
 

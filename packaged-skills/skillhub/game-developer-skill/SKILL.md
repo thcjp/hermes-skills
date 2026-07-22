@@ -1,19 +1,19 @@
 ---
-slug: game-developer-skill
-name: game-developer-skill
+slug: "game-developer-skill"
+name: "game-developer-skill"
 version: "1.0.0"
-displayName: Game Developer Skill
-summary: Use when building game systems, implementing Unity/Unreal features, or optimizing
-  game performanc...
-license: MIT
+displayName: "Game Developer Skill"
+summary: "Use when building game systems, implementing Unity/Unreal features, or optimizing"
+license: "MIT"
 description: |-
   Use when building game systems, implementing Unity/Unreal features,
   or optimizing game performanc。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-- Lifestyle
+  - Lifestyle
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Game Developer Skill
 

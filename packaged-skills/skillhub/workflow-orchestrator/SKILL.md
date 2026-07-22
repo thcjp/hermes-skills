@@ -1,23 +1,23 @@
 ---
-slug: workflow-orchestrator
-name: workflow-orchestrator
+slug: "workflow-orchestrator"
+name: "workflow-orchestrator"
 version: "1.0.0"
-displayName: 工作流编排器(专业版)
-summary: 全功能工作流编排与调度，含cron调度、DAG并行、熔断器、监控告警与分布式执行。
-license: Proprietary
-edition: pro
+displayName: "工作流编排器(专业版)"
+summary: "全功能工作流编排与调度，含cron调度、DAG并行、熔断器、监控告警与分布式执行。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   工作流编排器专业版是在免费版基础上的全功能升级，为自动化团队提供企业级工作流编排与调度能力。除核心编排能力外，解锁高级调度、复杂重试策略、并行执行、监控告警、分布式执行、版本管理、可视化编排七大高级功能。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
 tags:
-- 工作流编排
-- 自动化
-- 任务调度
-- 分布式执行
-- 监控告警
+  - 工作流编排
+  - 自动化
+  - 任务调度
+  - 分布式执行
+  - 监控告警
 tools:
   - - read
-- exec
-# 工作流编排器（专业版）
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 工作流编排器(专业版)
 

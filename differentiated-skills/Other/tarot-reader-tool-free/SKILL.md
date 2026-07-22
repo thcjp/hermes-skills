@@ -1,11 +1,11 @@
 ---
-slug: tarot-reader-tool-free
-name: tarot-reader-tool-free
+slug: "tarot-reader-tool-free"
+name: "tarot-reader-tool-free"
 version: "1.0.0"
-displayName: 韦特塔罗占卜免费版
-summary: 基于经典韦特塔罗的占卜服务，支持单张牌与时间之流牌阵，温暖治愈风格，适合个人日常占卜。
-license: Proprietary
-edition: free
+displayName: "韦特塔罗占卜免费版"
+summary: "基于经典韦特塔罗的占卜服务，支持单张牌与时间之流牌阵，温暖治愈风格，适合个人日常占卜。"
+license: "Proprietary"
+edition: "free"
 description: |-
   韦特塔罗占卜免费版，面向个人用户的轻量级塔罗占卜服务。核心能力:
   - 经典韦特塔罗 78 张牌意库
@@ -20,15 +20,15 @@ description: |-
 
   差异化: 免费版聚焦核心占卜能力，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手
 tags:
-- 塔罗
-- 占卜
-- 韦特塔罗
-- 免费版
+  - 塔罗
+  - 占卜
+  - 韦特塔罗
+  - 免费版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 韦特塔罗占卜（免费版）
 
 ## 概述

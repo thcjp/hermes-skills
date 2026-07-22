@@ -1,19 +1,19 @@
 ---
-slug: vue
-name: vue
+slug: "vue"
+name: "vue"
 version: "1.0.1"
-displayName: Vue
-summary: Avoid common Vue mistakes — reactivity traps, ref vs reactive, computed timing,
-  and Composition A...
-license: MIT
+displayName: "Vue"
+summary: "Avoid common Vue mistakes — reactivity traps, ref vs reactive, computed timing,"
+license: "MIT"
 description: |-
   Avoid common Vue mistakes — reactivity traps, ref vs reactive, computed
   timing, and Composition A。Use when 用户需要Vue相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Vue
 

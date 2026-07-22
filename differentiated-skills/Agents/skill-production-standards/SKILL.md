@@ -1,22 +1,22 @@
 ---
-slug: skill-production-standards
-name: skill-production-standards
+slug: "skill-production-standards"
+name: "skill-production-standards"
 version: "1.2.0"
-displayName: Skill生产规范
-summary: 统一规范所有Skill的优化、升级、改造、去标识、分收费/免费双版本的工作流程（v1.2修复版）
-license: Proprietary
-edition: standards
+displayName: "Skill生产规范"
+summary: "统一规范所有Skill的优化、升级、改造、去标识、分收费/免费双版本的工作流程（v1.2修复版）"
+license: "Proprietary"
+edition: "standards"
 description: |-
   Skill生产规范是一套统一的Skill生产流水线标准，用于指导从原始skill（下载/原创）到可商用skill的完整改造流程。它解决"每个skill改造标准不一、质量参差不齐、收费策略混乱、去除标识不彻底"的核心痛点。Use when 需要电商运营、商品管理、订单处理、支付集成时使用。不适用于虚假交易和刷单。
 tags:
-- Skill规范
-- 生产流水线
-- 商业化
-- 质量标准
+  - Skill规范
+  - 生产流水线
+  - 商业化
+  - 质量标准
 tools:
   - - read
-- exec
-# Skill生产规范 v1.2（Skill Production Standards）
+  - exec
+homepage: "https://skillhub.cn"
 ---
 本规范是所有Skill生产、优化、升级、改造的**唯一权威标准**。任何Skill在进入`d:\skills\differentiated-skills\`或`d:\skills\packaged-skills\`之前，必须通过本规范的全部检查。
 

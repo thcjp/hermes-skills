@@ -1,24 +1,24 @@
 ---
-slug: docker-sandbox-tool-pro
-name: docker-sandbox-tool-pro
+slug: "docker-sandbox-tool-pro"
+name: "docker-sandbox-tool-pro"
 version: "1.0.0"
-displayName: Docker沙箱专业版
-summary: 企业级安全沙箱平台，支持多沙箱管理、快照、高级安全策略与审计追踪。
-license: Proprietary
-edition: pro
+displayName: "Docker沙箱专业版"
+summary: "企业级安全沙箱平台，支持多沙箱管理、快照、高级安全策略与审计追踪。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向企业安全团队的高级沙箱平台。支持多沙箱实例管理、状态快照
   恢复、自定义安全策略、完整审计追踪与恶意行为检测。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。
 tags:
-- Operations
-- Docker
-- 安全沙箱
-- 企业级
+  - Operations
+  - Docker
+  - 安全沙箱
+  - 企业级
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Docker沙箱专业版（PRO版）
 
 ## 概述

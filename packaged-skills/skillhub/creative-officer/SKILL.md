@@ -1,11 +1,11 @@
 ---
-slug: creative-officer
-name: creative-officer
+slug: "creative-officer"
+name: "creative-officer"
 version: "1.0.0"
-displayName: 创意总监专业版
-summary: 企业级创意管理平台，支持完整品牌体系、营销战役规划、创意资产管理与团队协作。
-license: Proprietary
-edition: pro
+displayName: "创意总监专业版"
+summary: "企业级创意管理平台，支持完整品牌体系、营销战役规划、创意资产管理与团队协作。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   创意总监专业版 —— 面向企业团队与专业机构的高级创意管理平台。核心能力:
   - 完整品牌体系构建：品牌定位、视觉系统、语调系统、品牌指南
@@ -13,14 +13,15 @@ description: |-
   - 创意资产管理：创意素材库、版本管理、资产复用
   - 多维度创意评估：扩展评估模型...
 tags:
-- 创意策划
-- 品牌策略
-- 企业工具
-- 营销战役
-- 团队协作
+  - 创意策划
+  - 品牌策略
+  - 企业工具
+  - 营销战役
+  - 团队协作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 创意总监专业版
 

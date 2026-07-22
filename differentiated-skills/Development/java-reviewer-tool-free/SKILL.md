@@ -1,11 +1,11 @@
 ---
-slug: java-reviewer-tool-free
-name: java-reviewer-tool-free
+slug: "java-reviewer-tool-free"
+name: "java-reviewer-tool-free"
 version: "1.0.0"
-displayName: Java代码审查免费版
-summary: Java 代码变更审查工具，按 6 大维度生成结构化审查报告与修复建议。
-license: Proprietary
-edition: free
+displayName: "Java代码审查免费版"
+summary: "Java 代码变更审查工具，按 6 大维度生成结构化审查报告与修复建议。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向 Java 开发者的代码审查工具，自动生成结构化审查报告。核心能力:
   - 6 大维度代码审查（风格/异常/安全/性能/设计/资源）
@@ -20,13 +20,14 @@ description: |-
 
   差异化: 免费版聚焦个人开发者的代码变更审查，提供标准化的 6 维度检查与修复建议模板，开箱即用
 tags:
-- 开发工具
-- Java
-- 代码审查
-- 代码质量
+  - 开发工具
+  - Java
+  - 代码审查
+  - 代码质量
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Java 代码审查工具（免费版）
 

@@ -1,10 +1,10 @@
 ---
-slug: interview-simulator
-name: interview-simulator
+slug: "interview-simulator"
+name: "interview-simulator"
 version: "1.0.0"
-displayName: Interview Simulator
-summary: Simulates mock interviews for any role and experience level.
-license: MIT
+displayName: "Interview Simulator"
+summary: "Simulates mock interviews for any role and experience level."
+license: "MIT"
 description: |-
   Simulates mock interviews for any role and experience level。核心能力:
 
@@ -21,12 +21,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Interview Simulator
 

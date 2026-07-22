@@ -1,19 +1,19 @@
 ---
-slug: expanso-log-sanitize
-name: expanso-log-sanitize
+slug: "expanso-log-sanitize"
+name: "expanso-log-sanitize"
 version: "1.0.0"
-displayName: Expanso log-sanitize
-summary: Sanitize log entries by removing passwords, tokens, and other sensitive patterns
-  using Expanso Ed...
-license: MIT
+displayName: "Expanso log-sanitize"
+summary: "Sanitize log entries by removing passwords, tokens, and other sensitive patterns"
+license: "MIT"
 description: |-
   Sanitize log entries by removing passwords, tokens, and other sensitive
   patterns using Expanso Ed。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Expanso log-sanitize
 

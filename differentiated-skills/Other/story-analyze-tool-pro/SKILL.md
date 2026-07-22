@@ -1,11 +1,11 @@
 ---
-slug: story-analyze-tool-pro
-name: story-analyze-tool-pro
+slug: "story-analyze-tool-pro"
+name: "story-analyze-tool-pro"
 version: "1.0.0"
-displayName: 网文拆文工具-专业版
-summary: 企业级网文分析平台,支持批量拆文、数据对比、创作辅助与市场趋势分析
-license: Proprietary
-edition: pro
+displayName: "网文拆文工具-专业版"
+summary: "企业级网文分析平台,支持批量拆文、数据对比、创作辅助与市场趋势分析"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级网文拆文分析工具专业版,面向网文工作室与专业作者。核心能力:
   - 批量拆文与对比分析
@@ -25,14 +25,15 @@ description: |-
 
   差异化:专业版在免费版基础上扩展批量分析、创作辅助与市场研究,兼容免费版分析报告
 tags:
-- 网文创作
-- 企业级
-- 数据分析
-- 创作辅助
-- 市场研究
+  - 网文创作
+  - 企业级
+  - 数据分析
+  - 创作辅助
+  - 市场研究
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 网文拆文工具 - 专业版
 

@@ -1,11 +1,11 @@
 ---
-slug: monitor-toolkit-pro
-name: monitor-toolkit-pro
+slug: "monitor-toolkit-pro"
+name: "monitor-toolkit-pro"
 version: "1.0.0"
-displayName: 监控工具包-专业版
-summary: 企业级监控平台,支持多目标批量监控、告警升级、历史趋势分析与团队协作
-license: Proprietary
-edition: pro
+displayName: "监控工具包-专业版"
+summary: "企业级监控平台,支持多目标批量监控、告警升级、历史趋势分析与团队协作"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级监控工具专业版,面向团队与生产环境运维。核心能力:
   - 多目标批量监控与分布式探针
@@ -25,15 +25,16 @@ description: |-
 
   差异化:专业版在免费版基础上扩展企业级告警升级...
 tags:
-- 监控
-- 运维
-- 企业级
-- 告警管理
-- SLA
-- SRE
+  - 监控
+  - 运维
+  - 企业级
+  - 告警管理
+  - SLA
+  - SRE
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 监控工具包 - 专业版
 

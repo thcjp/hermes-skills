@@ -1,10 +1,10 @@
 ---
-slug: ace-music
-name: ace-music
+slug: "ace-music"
+name: "ace-music"
 version: "1.0.0"
-displayName: ACE Music AI音乐生成
-summary: 基于ACE-Step 1.5通过ACE Music免费API生成AI音乐,支持歌词定制、多语言、多流派,输出MP3
-license: MIT
+displayName: "ACE Music AI音乐生成"
+summary: "基于ACE-Step 1.5通过ACE Music免费API生成AI音乐,支持歌词定制、多语言、多流派,输出MP3"
+license: "MIT"
 description: |-
   ACE Music AI 音乐生成客户端。通过 ACE Music 托管的免费 API 调用 ACE-Step 1.5 模型,
   支持文本转音乐、自定义歌词、纯音乐、采样模式、翻唱与片段重绘等多种任务类型。
@@ -15,8 +15,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # ACE Music
 
 ACE Music 是基于 ACE-Step 1.5 模型的 AI 音乐生成客户端,通过 ACE Music 托管的免费 API 生成完整带人声的歌曲。永久免费、无订阅、无额度限制。API 基础地址固定为 `https://api.acemusic.ai`。

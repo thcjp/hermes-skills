@@ -1,19 +1,19 @@
 ---
-slug: json-parser
-name: json-parser
+slug: "json-parser"
+name: "json-parser"
 version: "2.1.0"
-displayName: Json Parser
-summary: Parse and validate JSON data from construction APIs, IoT sensors, and BIM
-  exports. Transform nest...
-license: MIT
+displayName: "Json Parser"
+summary: "Parse and validate JSON data from construction APIs, IoT sensors, and BIM"
+license: "MIT"
 description: |-
   Parse and validate JSON data from construction APIs, IoT sensors, and
   BIM exports。Transform nest。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Json Parser
 

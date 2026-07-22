@@ -1,19 +1,19 @@
 ---
-slug: manage-liquidity
-name: manage-liquidity
+slug: "manage-liquidity"
+name: "manage-liquidity"
 version: "0.1.0"
-displayName: Manage Liquidity
-summary: Add liquidity, remove liquidity, or collect fees on Uniswap V2/V3/V4 pools.
-  Handles the full flow...
-license: MIT
+displayName: "Manage Liquidity"
+summary: "Add liquidity, remove liquidity, or collect fees on Uniswap V2/V3/V4 pools."
+license: "MIT"
 description: |-
   Add liquidity, remove liquidity, or collect fees on Uniswap V2/V3/V4
   pools。Handles the full flow。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Manage Liquidity
 

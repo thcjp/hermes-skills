@@ -1,20 +1,21 @@
 ---
-slug: json-yaml-converter
-name: json-yaml-converter
+slug: "json-yaml-converter"
+name: "json-yaml-converter"
 version: "1.0.0"
-displayName: JSON转YAML(专业版)
-summary: 企业级JSON与YAML互转工具，支持批量转换、Schema校验、模板渲染与配置中心对接。
-license: Proprietary
-edition: pro
+displayName: "JSON转YAML(专业版)"
+summary: "企业级JSON与YAML互转工具，支持批量转换、Schema校验、模板渲染与配置中心对接。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   JSON转YAML专业版是一款面向DevOps团队与企业级配置管理场景的全功能格式互转工具。在免费版的双向转换、缩进规范、锚点处理基础上，新增批量转换、JSON Schema校验、YAML模板渲染、多配置合并、注释迁移与配置中心对接六大高级能力，覆盖从单文件到多环境配置管理的全场景需求。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。
 tags:
-- 数据转换
-- 配置管理
-- 企业工具
+  - 数据转换
+  - 配置管理
+  - 企业工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # JSON转YAML(专业版)
 

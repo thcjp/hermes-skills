@@ -1,11 +1,11 @@
 ---
-slug: java-toolkit-free
-name: java-toolkit-free
+slug: "java-toolkit-free"
+name: "java-toolkit-free"
 version: "1.0.0"
-displayName: Java 工具箱
-summary: 面向个人 Java 开发者的健壮编码避坑工具，覆盖空值与并发。
-license: Proprietary
-edition: free
+displayName: "Java 工具箱"
+summary: "面向个人 Java 开发者的健壮编码避坑工具，覆盖空值与并发。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人 Java 开发者的健壮编码避坑工具。核心能力:
   - 空值/Optional/自动装箱陷阱速查
@@ -20,13 +20,14 @@ description: |-
 
   差异化: 免费版聚焦个人单模块自检，提供关键规则速查与避坑清单，零成本核对
 tags:
-- Java
-- 代码质量
-- 个人效率
-- 其他工具
+  - Java
+  - 代码质量
+  - 个人效率
+  - 其他工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Java 工具箱（免费版）
 

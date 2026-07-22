@@ -1,23 +1,23 @@
 ---
-slug: workflow-splitter
-name: workflow-splitter
+slug: "workflow-splitter"
+name: "workflow-splitter"
 version: "1.0.0"
-displayName: 工作流分解器(专业版)
-summary: 全功能任务拆解引擎，含智能算法、多模型并行编排、并行执行、性能分析与模板库。
-license: Proprietary
-edition: pro
+displayName: "工作流分解器(专业版)"
+summary: "全功能任务拆解引擎，含智能算法、多模型并行编排、并行执行、性能分析与模板库。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   工作流分解器专业版是在免费版基础上的全功能升级，为复杂项目团队提供企业级任务拆解与子任务分配能力。除基础拆解外，解锁智能拆解算法、多模型并行编排、并行执行、性能分析、模板库、自定义路由、团队协作、版本管理八大高级功能。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
 tags:
-- 任务拆解
-- 工作流分解
-- 多模型编排
-- 并行执行
-- 项目管理
+  - 任务拆解
+  - 工作流分解
+  - 多模型编排
+  - 并行执行
+  - 项目管理
 tools:
   - - read
-- exec
-# 工作流分解器（专业版）
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 工作流分解器(专业版)
 

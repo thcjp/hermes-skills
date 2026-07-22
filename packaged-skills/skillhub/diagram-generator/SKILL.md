@@ -1,10 +1,10 @@
 ---
-slug: diagram-generator
-name: diagram-generator
+slug: "diagram-generator"
+name: "diagram-generator"
 version: "1.0.0"
-displayName: Diagram生成器
-summary: 通过MCP工具生成与编辑Draw.io/Mermaid/Excalidraw图表,支持网络拓扑/架构/流程图/UML等
-license: MIT
+displayName: "Diagram生成器"
+summary: "通过MCP工具生成与编辑Draw.io/Mermaid/Excalidraw图表,支持网络拓扑/架构/流程图/UML等"
+license: "MIT"
 description: |-
   diagram-generator 图表生成客户端。通过 mcp-diagram-generator MCP 服务器将自然语言意图转换为结构化 JSON 规范,
   生成与编辑 Draw.io(.drawio)、Mermaid(.mmd)、Excalidraw(.excalidraw) 三种格式的图表。
@@ -16,8 +16,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Diagram Generator
 
 通过 mcp-diagram-generator MCP 服务器将自然语言意图转换为结构化 JSON 规范,生成与编辑 Draw.io、Mermaid、Excalidraw 三种格式的图表文件。支持六类图的专属生成策略与质量校验。

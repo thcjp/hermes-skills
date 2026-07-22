@@ -1,11 +1,10 @@
 ---
-slug: expanso-json-validate
-name: expanso-json-validate
+slug: "expanso-json-validate"
+name: "expanso-json-validate"
 version: "1.0.0"
-displayName: Expanso Json Validat
-summary: Validate JSON syntax and structure using the Expanso Edge pipeline in CLI
-  or MCP server modes.
-license: MIT
+displayName: "Expanso Json Validat"
+summary: "Validate JSON syntax and structure using the Expanso Edge pipeline in CLI"
+license: "MIT"
 description: |-
   Validate JSON syntax and structure using the Expanso Edge pipeline in
   CLI or MCP server modes。核心能力:
@@ -26,10 +25,11 @@ description: |-
 
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元...
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Expanso Json Validat
 

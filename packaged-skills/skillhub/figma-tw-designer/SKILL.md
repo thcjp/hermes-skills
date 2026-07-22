@@ -1,24 +1,25 @@
 ---
-slug: figma-tw-designer
-name: figma-tw-designer
+slug: "figma-tw-designer"
+name: "figma-tw-designer"
 version: "1.0.0"
-displayName: Figma设计助手(专业版)
-summary: 全功能Figma交互工具，支持批量导出、高级缓存、团队协作分析与自定义模板
-license: Proprietary
-edition: pro
+displayName: "Figma设计助手(专业版)"
+summary: "全功能Figma交互工具，支持批量导出、高级缓存、团队协作分析与自定义模板"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Figma设计助手(专业版)是面向团队与重度用户的Figma全功能交互工具，在免费版基础上新增批量导出、高级缓存、团队协作分析与自定义模板等高级能力。核心能力：
   - 完整的文件结构读取与增量缓存更新
   - 批量图层导出，支持自定义命名规则与模板
   - 团队评论聚合分析。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。
 tags:
-- 集成工具
-- 设计协作
-- Figma
-- 专业版
+  - 集成工具
+  - 设计协作
+  - Figma
+  - 专业版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Figma设计助手(专业版)
 

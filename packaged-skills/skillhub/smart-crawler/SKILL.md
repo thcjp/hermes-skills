@@ -1,11 +1,11 @@
 ---
-slug: smart-crawler
-name: smart-crawler
+slug: "smart-crawler"
+name: "smart-crawler"
 version: "1.0.0"
-displayName: 智能爬虫(专业版)
-summary: 企业级知识库爬取与检索平台,支持多工作空间、分布式调度、增量索引、全文检索与自定义导出,适合团队与企业规模化使用。
-license: Proprietary
-edition: pro
+displayName: "智能爬虫(专业版)"
+summary: "企业级知识库爬取与检索平台,支持多工作空间、分布式调度、增量索引、全文检索与自定义导出,适合团队与企业规模化使用。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   智能爬虫(专业版)是面向团队与企业的全功能知识库爬取Skill,在免费版基础上新增多工作空间管理、分布式调度、增量索引、全文检索引擎、自定义导出等高级能力。核心能力:
 
@@ -17,12 +17,13 @@ description: |-
   - 定时自动同步,支持cron表达式与事件触发
   - 多级缓存与查询优化,支撑高并发检索...
 tags:
-- 集成工具
-- 企业检索
-- 数据平台
+  - 集成工具
+  - 企业检索
+  - 数据平台
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 智能爬虫(专业版)
 

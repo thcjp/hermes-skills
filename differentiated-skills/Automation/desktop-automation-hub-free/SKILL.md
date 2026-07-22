@@ -1,23 +1,23 @@
 ---
-slug: desktop-automation-hub-free
-name: desktop-automation-hub-free
+slug: "desktop-automation-hub-free"
+name: "desktop-automation-hub-free"
 version: "1.0.0"
-displayName: 桌面自动化中枢(免费版)
-summary: 鼠标键盘精准控制与屏幕截图核心能力，60秒上手桌面自动化，覆盖表单填写与窗口操作基础场景。
-license: Proprietary
-edition: free
+displayName: "桌面自动化中枢(免费版)"
+summary: "鼠标键盘精准控制与屏幕截图核心能力，60秒上手桌面自动化，覆盖表单填写与窗口操作基础场景。"
+license: "Proprietary"
+edition: "free"
 description: |-
   桌面自动化中枢（免费版）为AI Agent提供桌面级精准操控能力，覆盖鼠标定位、键盘输入、屏幕截图、窗口激活与剪贴板操作五大核心模块。采用failsafe紧急停止机制，确保自动化任务可控可中断。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 桌面自动化
-- 鼠标键盘控制
-- 屏幕截图
-- GUI操作
+  - 桌面自动化
+  - 鼠标键盘控制
+  - 屏幕截图
+  - GUI操作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 桌面自动化中枢（免费版）
 
 > **让AI Agent精准操控你的桌面。鼠标、键盘、截图、窗口、剪贴板，五大核心能力开箱即用。**

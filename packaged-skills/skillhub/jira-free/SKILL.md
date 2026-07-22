@@ -1,10 +1,10 @@
 ---
-slug: jira-free
-name: jira-free
+slug: "jira-free"
+name: "jira-free"
 version: "1.0.0"
-displayName: Jira集成引擎(免费版)
-summary: Jira问题跟踪、Sprint管理、项目看板与工作流自动化，支持REST API操作。免费版
-license: MIT
+displayName: "Jira集成引擎(免费版)"
+summary: "Jira问题跟踪、Sprint管理、项目看板与工作流自动化，支持REST API操作。免费版"
+license: "MIT"
 description: |-
   Jira问题跟踪与项目管理集成引擎（免费版），通过REST API操作Jira实例。
   覆盖问题管理、Sprint规划、看板操作与工作流自动化。核心能力：
@@ -15,8 +15,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # Jira集成引擎(免费版)
 
 Jira问题跟踪与项目管理集成引擎，通过REST API操作Jira实例，覆盖问题管理、Sprint规划与工作流自动化。

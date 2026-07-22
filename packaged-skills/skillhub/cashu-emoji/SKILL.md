@@ -1,11 +1,10 @@
 ---
-slug: cashu-emoji
-name: cashu-emoji
+slug: "cashu-emoji"
+name: "cashu-emoji"
 version: "0.1.0"
-displayName: Cashu Emoji
-summary: Encode and decode Cashu tokens that are hidden inside emojis using Unicode
-  variation selectors.
-license: MIT
+displayName: "Cashu Emoji"
+summary: "Encode and decode Cashu tokens that are hidden inside emojis using Unicode"
+license: "MIT"
 description: |-
   Encode and decode Cashu tokens that are hidden inside emojis using Unicode
   variation selectors。核心能力:
@@ -26,10 +25,11 @@ description: |-
 
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和...
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Cashu Emoji
 

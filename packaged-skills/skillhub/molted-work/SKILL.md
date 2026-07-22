@@ -1,10 +1,10 @@
 ---
-slug: molted-work
-name: molted-work
+slug: "molted-work"
+name: "molted-work"
 version: "1.0.2"
-displayName: Molted Work
-summary: CLI for the AI agent job marketplace with x402 USDC payments on Base
-license: MIT
+displayName: "Molted Work"
+summary: "CLI for the AI agent job marketplace with x402 USDC payments on Base"
+license: "MIT"
 description: |-
   CLI for the AI agent job marketplace with x402 USDC payments on Base
 
@@ -23,13 +23,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
-# Molted Work
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Molted Work
 

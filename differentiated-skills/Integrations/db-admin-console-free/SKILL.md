@@ -1,11 +1,11 @@
 ---
-slug: db-admin-console-free
-name: db-admin-console-free
+slug: "db-admin-console-free"
+name: "db-admin-console-free"
 version: "1.0.0"
-displayName: 数据库管理台(免费版)
-summary: 数据库表结构设计、数据操作、查询优化与事务安全的免费核心能力,支持基础 DDL/DML 操作。
-license: Proprietary
-edition: free
+displayName: "数据库管理台(免费版)"
+summary: "数据库表结构设计、数据操作、查询优化与事务安全的免费核心能力,支持基础 DDL/DML 操作。"
+license: "Proprietary"
+edition: "free"
 description: |-
   数据库管理台免费版面向独立开发者与一人公司的 DBA 日常工作流,提供表结构设计、数据操作、查询优化与事务安全的核心能力。核心能力:
   - 表结构设计:主键、索引、约束、外键、默认值策略
@@ -25,8 +25,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 数据库管理台 免费版
 
 ## 一、概述

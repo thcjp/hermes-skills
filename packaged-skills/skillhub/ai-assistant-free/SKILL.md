@@ -1,10 +1,10 @@
 ---
-slug: ai-assistant-free
-name: ai-assistant-free
+slug: "ai-assistant-free"
+name: "ai-assistant-free"
 version: "1.0.0"
-displayName: AI Doc LITE
-summary: 长文本推理基础工具,提供文档评估、核心逻辑提取与基础风险检测三大能力
-license: MIT
+displayName: "AI Doc LITE"
+summary: "长文本推理基础工具,提供文档评估、核心逻辑提取与基础风险检测三大能力"
+license: "MIT"
 description: |-
   长文本推理基础工具(免费版)。针对商业合同、备忘录、提案等长文档,提供文档评估、核心逻辑提取与基础风险检测
   三大基础能力,帮助快速梳理文档结构与识别明显风险。覆盖目的识别、主张提取、歧义与矛盾检测等基础分析。
@@ -16,8 +16,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # AI Doc LITE
 
 将长文档转化为结构化的评估与风险清单。提供文档评估、核心逻辑提取与基础风险检测三大基础能力。

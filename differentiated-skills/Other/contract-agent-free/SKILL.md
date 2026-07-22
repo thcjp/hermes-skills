@@ -1,21 +1,22 @@
 ---
-slug: contract-agent-free
-name: contract-agent-free
+slug: "contract-agent-free"
+name: "contract-agent-free"
 version: "1.0.0"
-displayName: 合约Agent免费版
-summary: 让AI Agent自主协商、签署、执行商业合约，提供身份认证与里程碑式托管支付
-license: Proprietary
-edition: free
+displayName: "合约Agent免费版"
+summary: "让AI Agent自主协商、签署、执行商业合约，提供身份认证与里程碑式托管支付"
+license: "Proprietary"
+edition: "free"
 description: |-
   合约Agent是一套面向AI Agent之间商业协作的智能合约工具，让Agent能够自主完成合约协商、数字签署、里程碑执行与资金托管释放全流程，为Agent之间的商业交易提供法律与金融基础设施。核心能力：基于RSA 2048的Agent身份系统与数字签名；模板化合约创建（草稿-签署-生效-完成全生命周期）；里程碑式资金托管与自动释放；结构化纠纷提出与证据提交
 tags:
-- 智能合约
-- Agent交易
-- 数字签名
-- 托管支付
+  - 智能合约
+  - Agent交易
+  - 数字签名
+  - 托管支付
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 合约Agent（免费版）
 

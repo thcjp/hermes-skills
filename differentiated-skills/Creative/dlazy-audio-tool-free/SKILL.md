@@ -1,11 +1,11 @@
 ---
-slug: dlazy-audio-tool-free
-name: dlazy-audio-tool-free
+slug: "dlazy-audio-tool-free"
+name: "dlazy-audio-tool-free"
 version: "1.0.0"
-displayName: 音频生成工具-免费版
-summary: 轻量级文本转语音工具，支持多语言TTS与基础音效生成，适合个人内容创作。
-license: Proprietary
-edition: free
+displayName: "音频生成工具-免费版"
+summary: "轻量级文本转语音工具，支持多语言TTS与基础音效生成，适合个人内容创作。"
+license: "Proprietary"
+edition: "free"
 description: |-
   音频生成工具免费版，面向个人创作者的文本转语音与基础音效生成方案。核心能力：
   - 文本转语音（TTS）自动模型选择
@@ -20,12 +20,13 @@ description: |-
 
   差异化：免费版聚焦基础 TTS 与音效生成，支持 4 种核心模型，适合个人轻度使用
 tags:
-- Creative
-- Audio
-- TTS
+  - Creative
+  - Audio
+  - TTS
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 音频生成工具（免费版）
 

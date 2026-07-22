@@ -1,11 +1,11 @@
 ---
-slug: code-quality-tool-free
-name: code-quality-tool-free
+slug: "code-quality-tool-free"
+name: "code-quality-tool-free"
 version: "1.0.0"
-displayName: 代码质量检查基础版
-summary: 提供代码风格规范、安全基础检查与可访问性要点,适合个人开发者快速校验代码质量。
-license: Proprietary
-edition: free
+displayName: "代码质量检查基础版"
+summary: "提供代码风格规范、安全基础检查与可访问性要点,适合个人开发者快速校验代码质量。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向独立开发者与小团队的代码质量辅助工具,涵盖命名规范、格式化标准、基础安全检查与可访问性要点。核心能力:
   - 代码风格规范校验(命名、格式、注释)
@@ -25,14 +25,14 @@ description: |-
 
   适用关键词: 代码质量, 编码规范, 风格检查, 安全检查, 可访问性, code q...
 tags:
-- 开发工具
-- 代码质量
-- 安全检查
+  - 开发工具
+  - 代码质量
+  - 安全检查
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 代码质量检查工具 - 免费版
 
 ## 概述

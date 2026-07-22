@@ -1,10 +1,10 @@
 ---
-slug: design-free
-name: design-free
+slug: "design-free"
+name: "design-free"
 version: "1.0.0"
-displayName: 设计偏好基础版
-summary: 基础视觉偏好学习,支持UI设计风格记忆,检测3次以上一致偏好后写入档案
-license: MIT
+displayName: "设计偏好基础版"
+summary: "基础视觉偏好学习,支持UI设计风格记忆,检测3次以上一致偏好后写入档案"
+license: "MIT"
 description: |-
   设计偏好基础客户端（免费版）。通过观察用户在 UI 设计中的选择与反馈,自动提取视觉偏好模式。
   支持两大偏好分类: Aesthetic（美学风格）与 Never（禁忌清单）。检测到 3 次以上一致偏好后
@@ -18,8 +18,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Design LITE
 
 设计偏好基础版,通过观察用户在 UI 设计中的选择与反馈,自动学习视觉偏好。支持 Aesthetic 与 Never 两大分类,偏好档案随使用逐步积累。

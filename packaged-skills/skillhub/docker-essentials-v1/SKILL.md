@@ -1,11 +1,11 @@
 ---
-slug: docker-essentials-v1
-name: docker-essentials-v1
+slug: "docker-essentials-v1"
+name: "docker-essentials-v1"
 version: "1.0.0"
-displayName: Docker V1迁移专业版
-summary: 企业级V1迁移工具,支持自动兼容性扫描、批量迁移、配置转换与回滚保障。
-license: Proprietary
-edition: pro
+displayName: "Docker V1迁移专业版"
+summary: "企业级V1迁移工具,支持自动兼容性扫描、批量迁移、配置转换与回滚保障。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向企业运维团队的Docker V1到V2迁移专业工具,提供自动兼容性扫描、批量配置转换、渐进式迁移与回滚保障。核心能力:
   - V1到V2自动兼容性深度扫描
@@ -25,16 +25,15 @@ description: |-
   - 专业版完全兼容免费版V1命令,支持平滑升级
   - 提供自动化迁移工具...
 tags:
-- 开发工具
-- Docker
-- 遗留系统
-- 企业级
-- 迁移工具
+  - 开发工具
+  - Docker
+  - 遗留系统
+  - 企业级
+  - 迁移工具
 tools:
   - - read
-- exec
-# Docker V1迁移工具 - 专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Docker V1迁移专业版
 

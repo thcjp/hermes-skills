@@ -1,10 +1,10 @@
 ---
-slug: elite-longterm-memory
-name: elite-longterm-memory
+slug: "elite-longterm-memory"
+name: "elite-longterm-memory"
 version: "1.2.3"
-displayName: 长期记忆系统
-summary: 六层记忆架构,从会话状态到云端备份,结合WAL协议与向量检索。
-license: MIT
+displayName: "长期记忆系统"
+summary: "六层记忆架构,从会话状态到云端备份,结合WAL协议与向量检索。"
+license: "MIT"
 description: |-
   融合六种成熟方法的AI代理记忆架构:会话状态热内存、向量数据库
   温存储、Git笔记冷存储、策展归档、云端备份与自动事实提取。通过
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 智能助手
 ---
-
 # 长期记忆系统
 
 融合六种成熟方法的AI代理记忆架构,从会话状态到云端备份,通过WAL协议保证持久性,永不丢失上下文、决策与教训。

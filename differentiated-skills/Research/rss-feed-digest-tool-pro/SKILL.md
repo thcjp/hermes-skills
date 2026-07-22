@@ -1,11 +1,11 @@
 ---
-slug: rss-feed-digest-tool-pro
-name: rss-feed-digest-tool-pro
+slug: "rss-feed-digest-tool-pro"
+name: "rss-feed-digest-tool-pro"
 version: "1.0.0"
-displayName: RSS聚合摘要专业版
-summary: 企业级RSS/Atom聚合摘要系统,支持定时调度、HTML报告、邮件分发、多模板定制与团队协作
-license: Proprietary
-edition: pro
+displayName: "RSS聚合摘要专业版"
+summary: "企业级RSS/Atom聚合摘要系统,支持定时调度、HTML报告、邮件分发、多模板定制与团队协作"
+license: "Proprietary"
+edition: "pro"
 description: |-
   RSS聚合摘要专业版为企业团队提供高阶RSS/Atom订阅聚合与分发能力。核心能力:
   - 大规模多源并行抓取(50+源)
@@ -23,15 +23,16 @@ description: |-
 
   差异化:专业版在免费版核心聚合流程基础上,扩展大规模并行抓取、定时调度、HTML报告、多渠道...
 tags:
-- 研究工具
-- RSS
-- 企业级
-- 信息聚合
-- 竞争情报
-- 自动化
+  - 研究工具
+  - RSS
+  - 企业级
+  - 信息聚合
+  - 竞争情报
+  - 自动化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # RSS聚合摘要专业版
 

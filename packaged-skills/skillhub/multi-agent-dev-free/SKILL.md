@@ -1,10 +1,10 @@
 ---
-slug: multi-agent-dev-free
-name: multi-agent-dev-free
+slug: "multi-agent-dev-free"
+name: "multi-agent-dev-free"
 version: "1.0.0"
-displayName: 多代理开发框架
-summary: 基础版子代理编排开发框架，任务分解、新鲜子代理执行、两阶段评审
-license: MIT
+displayName: "多代理开发框架"
+summary: "基础版子代理编排开发框架，任务分解、新鲜子代理执行、两阶段评审"
+license: "MIT"
 description: |-
   多代理开发基础版，通过子代理编排执行实现计划。为每个任务派发新鲜子代理避免上下文污染，并在每步后进行两阶段评审。
   提供智能任务分解、新鲜子代理执行、基础两阶段评审三大核心能力。
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 智能助手
 ---
-
 # 多代理开发框架（Multi-Agent Dev）- 免费版
 
 通过为每个任务派发新鲜子代理执行实现计划，并在每步后进行两阶段评审（规格合规+代码质量），实现基础的高质量迭代。

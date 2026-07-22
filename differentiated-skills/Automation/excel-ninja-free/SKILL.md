@@ -1,23 +1,23 @@
 ---
-slug: excel-ninja-free
-name: excel-ninja-free
+slug: "excel-ninja-free"
+name: "excel-ninja-free"
 version: "1.0.0"
-displayName: Excel忍者(免费版)
-summary: 一键完成Excel合并、拆分、筛选、去重、聚合、校验等高频操作，告别手工处理表格的繁琐。
-license: Proprietary
-edition: free
+displayName: "Excel忍者(免费版)"
+summary: "一键完成Excel合并、拆分、筛选、去重、聚合、校验等高频操作，告别手工处理表格的繁琐。"
+license: "Proprietary"
+edition: "free"
 description: |-
   Excel忍者为AI Agent提供专业的Excel文件自动化处理能力。免费版开放8个核心脚本，覆盖合并、转换、筛选、拆分、去重、聚合、校验、列选择等高频场景，让Agent像Excel高手一样批量处理表格。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Excel自动化
-- 表格处理
-- 数据清洗
-- 批量操作
+  - Excel自动化
+  - 表格处理
+  - 数据清洗
+  - 批量操作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Excel忍者（免费版）
 
 > **让Agent像Excel高手一样批量处理表格。8个核心脚本，覆盖最高频的表格操作场景。**

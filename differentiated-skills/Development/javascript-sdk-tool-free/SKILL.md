@@ -1,11 +1,11 @@
 ---
-slug: javascript-sdk-tool-free
-name: javascript-sdk-tool-free
+slug: "javascript-sdk-tool-free"
+name: "javascript-sdk-tool-free"
 version: "1.0.0"
-displayName: JS SDK工具免费版
-summary: JavaScript AI 应用 SDK 入门工具，支持模型调用、文件上传与基础代理配置。
-license: Proprietary
-edition: free
+displayName: "JS SDK工具免费版"
+summary: "JavaScript AI 应用 SDK 入门工具，支持模型调用、文件上传与基础代理配置。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人开发者的 JavaScript AI 应用 SDK 工具，提供基础的模型调用与文件处理能力。核心能力:
   - AI 应用调用与结果获取
@@ -21,13 +21,14 @@ description: |-
 
   差异化: 免费版聚焦个人开发者的基础 AI 应用调用场景，提供简洁的 API 与示例，开箱即用
 tags:
-- 开发工具
-- JavaScript
-- AI应用
-- SDK
+  - 开发工具
+  - JavaScript
+  - AI应用
+  - SDK
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # JavaScript SDK 工具（免费版）
 

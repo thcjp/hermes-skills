@@ -1,10 +1,10 @@
 ---
-slug: whatsapp-styler
-name: whatsapp-styler
+slug: "whatsapp-styler"
+name: "whatsapp-styler"
 version: "1.0.0"
-displayName: WhatsApp Styler
-summary: WhatsApp消息格式转换与验证工具,将Markdown转为WhatsApp原生格式,检测违规范式并自动修复
-license: MIT
+displayName: "WhatsApp Styler"
+summary: "WhatsApp消息格式转换与验证工具,将Markdown转为WhatsApp原生格式,检测违规范式并自动修复"
+license: "MIT"
 description: |-
   WhatsApp消息格式转换与验证工具。将标准Markdown转换为WhatsApp原生排版语法,确保接收方看到干净样式文本而非原始符号。
   覆盖六大核心能力:Markdown语法转换(双星号转单星号、井号标题转大写加粗、表格转列表)、格式合规验证
@@ -17,8 +17,8 @@ tags:
   - Productivity
 tools:
   - read
+homepage: "https://skillhub.cn"
 ---
-
 # WhatsApp Styler
 
 将标准Markdown转换为WhatsApp原生排版语法,并验证消息格式合规性。确保接收方看到干净的加粗、斜体、删除线等样式,而非原始的`**`、`#`等符号。

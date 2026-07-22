@@ -1,10 +1,10 @@
 ---
-slug: proactive-agent
-name: proactive-agent
+slug: "proactive-agent"
+name: "proactive-agent"
 version: "3.1.0"
-displayName: 主动式代理
-summary: 将AI代理从任务跟随者转变为主动伙伴,含WAL协议、心跳系统与增长循环。
-license: MIT
+displayName: "主动式代理"
+summary: "将AI代理从任务跟随者转变为主动伙伴,含WAL协议、心跳系统与增长循环。"
+license: "MIT"
 description: |-
   将AI代理从被动任务跟随者转变为主动伙伴的架构。覆盖六大支柱、
   WAL协议、工作缓冲区、压缩恢复、统一搜索、安全加固、自我改进
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 智能助手
 ---
-
 # 主动式代理
 
 将AI代理从被动等待任务转变为主动预判需求并持续自我改进的架构。多数代理只会等待,这个架构让代理预判需求、主动行动、并随时间变得更好。

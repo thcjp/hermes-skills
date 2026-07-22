@@ -1,20 +1,20 @@
 ---
-slug: agent-framework-azure-ai-py
-name: agent-framework-azure-ai-py
+slug: "agent-framework-azure-ai-py"
+name: "agent-framework-azure-ai-py"
 version: "0.1.0"
-displayName: Agent Framework Azur
-summary: This is a documentation-only skill for building Azure AI Foundry agents;
-  its cloud, web search, M...
-license: MIT
+displayName: "Agent Framework Azur"
+summary: "This is a documentation-only skill for building Azure AI Foundry agents;"
+license: "MIT"
 description: |-
   This is a documentation-only skill for building Azure AI Foundry agents;
   its cloud, web search, M。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- Research
-- Development
+  - Research
+  - Development
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Agent Framework Azur
 

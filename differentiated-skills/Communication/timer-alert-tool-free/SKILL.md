@@ -1,24 +1,24 @@
 ---
-slug: timer-alert-tool-free
-name: timer-alert-tool-free
+slug: "timer-alert-tool-free"
+name: "timer-alert-tool-free"
 version: "1.0.0"
-displayName: 定时提醒工具(免费版)
-summary: 后台定时提醒免费版：多格式定时器、完成通知、番茄钟与基础多计时器管理。
-license: Proprietary
-edition: free
+displayName: "定时提醒工具(免费版)"
+summary: "后台定时提醒免费版：多格式定时器、完成通知、番茄钟与基础多计时器管理。"
+license: "Proprietary"
+edition: "free"
 description: |-
   定时提醒工具（免费版）面向个人用户与独立开发者，提供后台定时器与到时提醒能力：支持多种时间格式（秒/分/时/分秒/时分秒）、自定义提醒文案、番茄钟工作法、多计时器并行与后台进程管理。定时器在后台运行，完成后触发系统通知。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。
 tags:
-- 沟通协作
-- 定时提醒
-- 通知
-- 效率工具
-- 番茄钟
+  - 沟通协作
+  - 定时提醒
+  - 通知
+  - 效率工具
+  - 番茄钟
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 定时提醒工具（免费版）
 
 ## 概述

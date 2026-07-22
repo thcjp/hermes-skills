@@ -1,18 +1,18 @@
 ---
-slug: control-ikea-lightbulb
-name: control-ikea-lightbulb
+slug: "control-ikea-lightbulb"
+name: "control-ikea-lightbulb"
 version: "1.0.1"
-displayName: Control Ikea Lightbu
-summary: Control IKEA/TP-Link Kasa smart bulbs (set on/off, brightness, and color).
-  Use when you want to p...
-license: MIT
+displayName: "Control Ikea Lightbu"
+summary: "Control IKEA/TP-Link Kasa smart bulbs (set on/off, brightness, and color)."
+license: "MIT"
 description: |-
   Control IKEA/TP-Link Kasa smart bulbs (set on/off, brightness, and color)。Use when you want to p。Use when 用户需要Control Ikea Lightbu相关功能时使用。不适用于超出本技能能力范围的复杂需求。
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Control Ikea Lightbu
 

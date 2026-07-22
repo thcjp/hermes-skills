@@ -1,10 +1,10 @@
 ---
-slug: memory-scan-free
-name: memory-scan-free
+slug: "memory-scan-free"
+name: "memory-scan-free"
 version: "1.0.0"
-displayName: 记忆安全扫描
-summary: 基础版AI Agent记忆文件安全扫描工具，检测恶意内容与凭证泄漏
-license: MIT
+displayName: "记忆安全扫描"
+summary: "基础版AI Agent记忆文件安全扫描工具，检测恶意内容与凭证泄漏"
+license: "MIT"
 description: |-
   面向AI Agent记忆文件的基础安全扫描工具，帮助发现记忆文件中的恶意指令、Prompt注入和凭证泄漏等常见威胁。
   提供七大检测类别基础扫描、五级安全分级、基础隔离功能三大核心能力。
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 智能助手
 ---
-
 # 记忆安全扫描（Memory Scan）- 免费版
 
 面向 AI Agent 记忆文件的**基础安全扫描工具**，对 MEMORY.md、每日日志、工作区配置文件进行安全审计，检测恶意内容与凭证泄漏。

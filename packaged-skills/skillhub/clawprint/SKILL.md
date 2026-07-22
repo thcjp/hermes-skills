@@ -1,20 +1,19 @@
 ---
-slug: clawprint
-name: clawprint
+slug: "clawprint"
+name: "clawprint"
 version: "3.0.1"
-displayName: Skill
-summary: Agent discovery, trust, and exchange. Register on ClawPrint to be found by
-  other agents, build re...
-license: MIT
+displayName: "Skill"
+summary: "Agent discovery, trust, and exchange. Register on ClawPrint to be found by"
+license: "MIT"
 description: |-
   Agent discovery, trust, and exchange。Register on ClawPrint to be found
   by other agents, build re。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
-# Skill
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Skill
 

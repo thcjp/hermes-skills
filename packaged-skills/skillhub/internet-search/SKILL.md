@@ -1,19 +1,19 @@
 ---
-slug: internet-search
-name: internet-search
+slug: "internet-search"
+name: "internet-search"
 version: "0.3.4"
-displayName: Internet Search
-summary: How to use the internet_search tool effectively — category routing, query
-  formulation, and multi-...
-license: MIT
+displayName: "Internet Search"
+summary: "How to use the internet_search tool effectively — category routing, query"
+license: "MIT"
 description: |-
   How to use the internet_search tool effectively — category routing,
   query formulation, and multi-。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。
 tags:
-- Research
+  - Research
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Internet Search
 

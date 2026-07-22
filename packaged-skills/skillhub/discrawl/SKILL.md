@@ -1,10 +1,10 @@
 ---
-slug: discrawl
-name: discrawl
+slug: "discrawl"
+name: "discrawl"
 version: "1.0.0"
-displayName: Discrawl
+displayName: "Discrawl"
 summary: "Discord archive: search, sync freshness, DMs, channel slices, SQL counts."
-license: MIT
+license: "MIT"
 description: |-
   Discord archive: search, sync freshness, DMs, channel slices, SQL counts。核心能力:
 
@@ -21,12 +21,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Discrawl
 

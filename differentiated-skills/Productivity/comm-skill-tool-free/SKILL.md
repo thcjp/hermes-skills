@@ -1,11 +1,11 @@
 ---
-slug: comm-skill-tool-free
-name: comm-skill-tool-free
+slug: "comm-skill-tool-free"
+name: "comm-skill-tool-free"
 version: "1.0.0"
-displayName: 沟通助手基础版
-summary: 帮助撰写情境感知的共情消息,综合对话历史与情感线索生成回复草稿
-license: Proprietary
-edition: free
+displayName: "沟通助手基础版"
+summary: "帮助撰写情境感知的共情消息,综合对话历史与情感线索生成回复草稿"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力: 沟通协作领域的专业化 AI 辅助工具,提供核心基础功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: 沟通, 消息, 邮件, 回复, 对话, 情感, 共情
 tags:
-- 沟通
-- 消息撰写
-- 共情
-- 情感分析
+  - 沟通
+  - 消息撰写
+  - 共情
+  - 情感分析
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 沟通助手基础版
 
 ## 概述

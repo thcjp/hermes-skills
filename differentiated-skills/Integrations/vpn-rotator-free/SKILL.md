@@ -1,11 +1,11 @@
 ---
-slug: vpn-rotator-free
-name: vpn-rotator-free
+slug: "vpn-rotator-free"
+name: "vpn-rotator-free"
 version: "1.0.0"
-displayName: VPN轮换工具免费版
-summary: 自动轮换VPN服务器IP，规避API速率限制，兼容OpenVPN协议
-license: Proprietary
-edition: free
+displayName: "VPN轮换工具免费版"
+summary: "自动轮换VPN服务器IP，规避API速率限制，兼容OpenVPN协议"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向数据采集开发者与自动化测试工程师的VPN服务器轮换工具，通过定期切换VPN出口IP规避API速率限制。
 
@@ -17,12 +17,13 @@ description: |-
 
   适用关键词：VPN、轮换、IP切换、速率限制、rate limit、OpenVPN、代理轮换
 tags:
-- 网络工具
-- IP轮换
-- 数据采集
+  - 网络工具
+  - IP轮换
+  - 数据采集
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # VPN服务器轮换工具（免费版）
 

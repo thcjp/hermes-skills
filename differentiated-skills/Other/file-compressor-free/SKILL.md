@@ -1,25 +1,25 @@
 ---
-slug: file-compressor-free
-name: file-compressor-free
+slug: "file-compressor-free"
+name: "file-compressor-free"
 version: "1.0.0"
-displayName: 文本语义压缩器(免费版)
-summary: 基于迭代验证与锚点校验的语义文本压缩工具，L1-L2级别可靠还原，适合提示词优化。
-license: Proprietary
-edition: free
+displayName: "文本语义压缩器(免费版)"
+summary: "基于迭代验证与锚点校验的语义文本压缩工具，L1-L2级别可靠还原，适合提示词优化。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向长文本场景的语义压缩工具，通过迭代验证与锚点校验机制，在保证关键信息完整的前提下大幅缩减Token占用。核心能力：
 
   - 四级压缩级别（L1-L4），从0。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 文本压缩
-- Token优化
-- 语义压缩
-- 提示词优化
+  - 文本压缩
+  - Token优化
+  - 语义压缩
+  - 提示词优化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 文本语义压缩器(免费版)
 
 面向长文本场景的语义压缩工具，通过迭代验证与锚点校验机制，在保证关键信息完整的前提下大幅缩减Token占用。

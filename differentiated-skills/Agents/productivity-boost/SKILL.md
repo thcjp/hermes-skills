@@ -1,21 +1,21 @@
 ---
-slug: productivity-boost
-name: productivity-boost
+slug: "productivity-boost"
+name: "productivity-boost"
 version: "2.0.0"
-displayName: 效率倍增器
-summary: 抗倦怠效率系统：能量感知+最小可行系统+反过载分诊+情境适配，告别任务清单焦虑。
-license: Proprietary
+displayName: "效率倍增器"
+summary: "抗倦怠效率系统：能量感知+最小可行系统+反过载分诊+情境适配，告别任务清单焦虑。"
+license: "Proprietary"
 description: |-
   面向真实工作场景的效率操作系统，直击任务清单焦虑、完美系统难维护、能量错配、忽视情境约束四大痛点。适用于过载焦虑、ADHD/倦怠等情境适配、可持续效率系统等场景。核心能力含能量感知规划、最小可行系统、反过载分诊、目标-项目-任务分层、回顾节奏。适用关键词：效率、生产力、任务管理、过载、倦怠、计划、回顾、productivity、burnout、ADHD。
 tags:
-- 智能代理
-- 效率管理
-- 任务规划
+  - 智能代理
+  - 效率管理
+  - 任务规划
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 效率倍增器（Productivity Boost）
 
 **不是更多工具，而是更少焦虑。** 从最小可行系统起步，基于能量动态调整，用反过载分诊和强制回顾重建信任。所有数据存储在本地 `~/productivity/`，零网络请求，不自动读取日历/邮件，不从观察推断偏好。

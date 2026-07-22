@@ -1,22 +1,23 @@
 ---
-slug: telegram-alert
-name: telegram-alert
+slug: "telegram-alert"
+name: "telegram-alert"
 version: "1.0.0"
-displayName: Telegram告警专业版
-summary: 多通道交易告警系统，支持多群组、复杂触发、富媒体消息与团队协作。
-license: Proprietary
-edition: pro
+displayName: "Telegram告警专业版"
+summary: "多通道交易告警系统，支持多群组、复杂触发、富媒体消息与团队协作。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向专业交易团队的多通道告警通知系统。支持Telegram多群组推送、
   复合触发条件、富媒体消息（图表/图片）、定时播报与团队协作功能。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。
 tags:
-- Finance
-- 告警通知
-- 企业级
-- 团队协作
+  - Finance
+  - 告警通知
+  - 企业级
+  - 团队协作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Telegram告警专业版
 

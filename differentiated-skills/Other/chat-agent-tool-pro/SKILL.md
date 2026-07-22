@@ -1,21 +1,22 @@
 ---
-slug: chat-agent-tool-pro
-name: chat-agent-tool-pro
+slug: "chat-agent-tool-pro"
+name: "chat-agent-tool-pro"
 version: "1.0.0"
-displayName: 聊天Agent工具专业版
-summary: 多房间并发、消息持久化、企业鉴权、端到端加密的多Agent协作通信平台
-license: Proprietary
-edition: pro
+displayName: "聊天Agent工具专业版"
+summary: "多房间并发、消息持久化、企业鉴权、端到端加密的多Agent协作通信平台"
+license: "Proprietary"
+edition: "pro"
 description: |-
   聊天Agent工具专业版是面向企业级多Agent系统的实时通信平台，在免费版临时聊天室的基础上，新增多房间并发管理、消息持久化与回放、企业级鉴权（OAuth/SSO）、端到端加密、自定义品牌Web UI与完整审计日志能力。核心能力：单实例支持50+并发房间；消息可持久化至`PostgreSQL`或SQLite，支持历史回放；集成OAuth 2
 tags:
-- 实时通信
-- 企业级
-- Agent协作
-- 合规通信
+  - 实时通信
+  - 企业级
+  - Agent协作
+  - 合规通信
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 聊天Agent工具（专业版）
 

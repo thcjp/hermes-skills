@@ -1,17 +1,18 @@
 ---
-slug: podcast-downloader
-name: podcast-downloader
+slug: "podcast-downloader"
+name: "podcast-downloader"
 version: "1.0.0"
-displayName: Podcast Downloader
-summary: 小宇宙播客下载工具。从小宇宙(xiaoyuzhoufm.com)下载播客音频和Show Notes。自动转换为MP3格式（兼容Sanag、小游等骨传导蓝牙耳机、水下游泳时离线播放）。当用户需要下...
-license: MIT-0
+displayName: "Podcast Downloader"
+summary: "小宇宙播客下载工具。从小宇宙(xiaoyuzhoufm.com)下载播客音频和Show Notes。自动转换为MP3格式（兼容Sanag、小游等骨传导蓝牙耳机、水下游泳时离线播放）。当用户需要下..."
+license: "MIT-0"
 description: |-
   小宇宙播客下载工具。从小宇宙(xiaoyuzhoufm。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Creative
+  - Creative
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Podcast Downloader
 

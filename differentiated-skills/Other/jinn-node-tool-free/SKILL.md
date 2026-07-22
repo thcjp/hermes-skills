@@ -1,11 +1,11 @@
 ---
-slug: jinn-node-tool-free
-name: jinn-node-tool-free
+slug: "jinn-node-tool-free"
+name: "jinn-node-tool-free"
 version: "1.0.0"
-displayName: 节点工作工具
-summary: 面向个人用户的闲置节点工作工具，运行任务赚取代币奖励。
-license: Proprietary
-edition: free
+displayName: "节点工作工具"
+summary: "面向个人用户的闲置节点工作工具，运行任务赚取代币奖励。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人用户的闲置节点工作与代币奖励工具。
 
@@ -24,15 +24,15 @@ description: |-
 
   适用关键词: 节点工作, 闲置节点, 赚取奖励, 代币, worker node, idle, earn, autonomous venture
 tags:
-- 节点
-- 代币奖励
-- 个人效率
-- 其他工具
+  - 节点
+  - 代币奖励
+  - 个人效率
+  - 其他工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 节点工作工具（免费版）
 
 ## 概述

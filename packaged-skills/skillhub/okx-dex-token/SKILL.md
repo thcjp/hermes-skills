@@ -1,19 +1,19 @@
 ---
-slug: okx-dex-token
-name: okx-dex-token
+slug: "okx-dex-token"
+name: "okx-dex-token"
 version: "3.1.3"
-displayName: Okx Dex Token
+displayName: "Okx Dex Token"
 summary: "Use this skill for token-level data: search tokens, trending/hot tokens
-  (热门, 代币榜单), liquidity poo"
-license: MIT-0
+license: "MIT-0"
 description: |-
   Use this skill for token-level data: search tokens, trending/hot tokens
   (热门, 代币榜单), liquidity poo。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Finance
+  - Finance
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Okx Dex Token
 

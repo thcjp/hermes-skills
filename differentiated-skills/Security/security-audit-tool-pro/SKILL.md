@@ -1,11 +1,11 @@
 ---
-slug: security-audit-tool-pro
-name: security-audit-tool-pro
+slug: "security-audit-tool-pro"
+name: "security-audit-tool-pro"
 version: "1.0.0"
-displayName: 安全审计工具(专业版)
-summary: 企业级安全审计平台,8维度扫描、合规模板、HTML报告、定时审计与CI/CD集成
-license: Proprietary
-edition: pro
+displayName: "安全审计工具(专业版)"
+summary: "企业级安全审计平台,8维度扫描、合规模板、HTML报告、定时审计与CI/CD集成"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力:
   - 8维度安全扫描(凭据/端口/配置/权限/Docker/K8s/云/合规)
@@ -25,16 +25,15 @@ description: |-
   - 8维度全覆盖,支持云原生与容器安全
   - 合规框架映射,一键...
 tags:
-- 安全
-- 安全审计
-- 企业安全
-- 合规审计
-- DevSecOps
+  - 安全
+  - 安全审计
+  - 企业安全
+  - 合规审计
+  - DevSecOps
 tools:
   - - read
-- exec
-# 安全审计工具(专业版)
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 安全审计工具专业版是一款面向企业用户的安全审计与合规评估平台。在免费版5个扫描维度基础上,扩展至8个维度(增加Kubernetes安全、云安全配置、合规审计),支持等保2.0、PCI-DSS、ISO27001合规框架映射。提供HTML/PDF/SARIF多格式专业报告,Cron定时审计与告警通知,智能修复与回滚机制,以及CI/CD流水线集成能力。与免费版完全兼容,扫描结果和配置可无缝迁移。
 

@@ -1,11 +1,11 @@
 ---
-slug: tg-body-scan-tool-pro
-name: tg-body-scan-tool-pro
+slug: "tg-body-scan-tool-pro"
+name: "tg-body-scan-tool-pro"
 version: "1.0.0"
-displayName: 体测扫描工具专业版
-summary: 企业级 Telegram 体测测量平台，支持批量扫描、历史趋势、团队管理与高级分析报表。
-license: Proprietary
-edition: pro
+displayName: "体测扫描工具专业版"
+summary: "企业级 Telegram 体测测量平台，支持批量扫描、历史趋势、团队管理与高级分析报表。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向健身工作室、运动队与健康管理团队的批量体测测量平台。
   核心能力: 批量视频扫描、历史趋势对比、团队数据管理、高级分析报表、数据导出、API 集成。
@@ -13,15 +13,16 @@ description: |-
   差异化: 专业版在免费版基础上新增批量处理与团队治理，兼容免费版提交接口与返回格式。
   适用关键词: 体测, 批量扫描, 趋势分析, 团队管理, telegram, 健康报表, body-scan, 专业
 tags:
-- 体测扫描
-- 批量测量
-- 趋势分析
-- 团队管理
-- 健康报表
-- 企业级
+  - 体测扫描
+  - 批量测量
+  - 趋势分析
+  - 团队管理
+  - 健康报表
+  - 企业级
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 体测扫描工具 专业版
 

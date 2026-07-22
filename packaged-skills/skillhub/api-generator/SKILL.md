@@ -1,10 +1,10 @@
 ---
-slug: api-generator
-name: api-generator
+slug: "api-generator"
+name: "api-generator"
 version: "1.0.0"
-displayName: API代码生成器
-summary: 生成RESTful端点、GraphQL schema、OpenAPI文档、API客户端、Mock服务、认证与测试套件
-license: MIT
+displayName: "API代码生成器"
+summary: "生成RESTful端点、GraphQL schema、OpenAPI文档、API客户端、Mock服务、认证与测试套件"
+license: "MIT"
 description: |-
   API 代码生成器。从零生成生产级 API 代码脚手架,支持 RESTful CRUD 端点（Express.js）、
   GraphQL Type+Query+Mutation schema、OpenAPI 3.0 规范文档、Python API 客户端类、
@@ -17,8 +17,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # API 代码生成器
 
 从零生成生产级 API 代码脚手架。REST、GraphQL、认证、测试一站式工具,所有代码输出到 stdout,可复制或重定向到项目文件。

@@ -1,11 +1,11 @@
 ---
-slug: java-dev-manual-tool-free
-name: java-dev-manual-tool-free
+slug: "java-dev-manual-tool-free"
+name: "java-dev-manual-tool-free"
 version: "1.0.0"
-displayName: Java开发手册免费版
-summary: Java 开发规约速查手册，覆盖命名、异常、并发、数据库等 7 大维度核心规范。
-license: Proprietary
-edition: free
+displayName: "Java开发手册免费版"
+summary: "Java 开发规约速查手册，覆盖命名、异常、并发、数据库等 7 大维度核心规范。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向 Java 开发者的开发规约速查工具，提供 7 大维度的规约指引。核心能力:
   - 7 大维度规约速查（编程/异常/测试/安全/数据库/工程/设计）
@@ -20,13 +20,14 @@ description: |-
 
   差异化: 免费版聚焦个人开发者的规约速查，提供简明的速查表与代码示例，开箱即用
 tags:
-- 开发工具
-- Java
-- 开发规范
-- 代码质量
+  - 开发工具
+  - Java
+  - 开发规范
+  - 代码质量
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Java 开发手册（免费版）
 

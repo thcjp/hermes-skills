@@ -1,10 +1,10 @@
 ---
-slug: shop-culture
-name: shop-culture
+slug: "shop-culture"
+name: "shop-culture"
 version: "1.0.12"
-displayName: 生活方式购物
-summary: AI代理自主浏览生活方式商品、下单和跟踪物流的多链加密支付购物
-license: MIT
+displayName: "生活方式购物"
+summary: "AI代理自主浏览生活方式商品、下单和跟踪物流的多链加密支付购物"
+license: "MIT"
 description: |-
   AI代理自主购物技能。支持商品浏览、语义搜索、AI购物助手、多链加密支付结账、
   订单跟踪等功能。支持8+区块链支付（Solana/Ethereum/Base等）和x402协议结账。
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 生活方式购物
 
 AI代理自主购物技能，为生活方式商店提供完整的浏览、下单和跟踪能力。支持自然语言搜索、多链加密支付和x402协议结账，无需API Key。

@@ -1,10 +1,10 @@
 ---
-slug: join-meeting-free
-name: join-meeting-free
+slug: "join-meeting-free"
+name: "join-meeting-free"
 version: "1.0.0"
-displayName: 智能会议机器人免费版
-summary: 免费版会议机器人，支持基础会议加入、语音状态监听与会议转写。
-license: MIT
+displayName: "智能会议机器人免费版"
+summary: "免费版会议机器人，支持基础会议加入、语音状态监听与会议转写。"
+license: "MIT"
 description: |-
   会议机器人免费版，提供基础的会议参与功能。
   支持会议加入、语音状态监听与会议转写。
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 智能会议机器人（免费版）
 
 提供基础会议加入、语音状态监听与会议转写的会议机器人。

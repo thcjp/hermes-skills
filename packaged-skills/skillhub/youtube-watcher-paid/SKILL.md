@@ -1,26 +1,25 @@
 ---
-slug: youtube-watcher-paid
-name: youtube-watcher-paid
+slug: "youtube-watcher-paid"
+name: "youtube-watcher-paid"
 version: "1.0.0"
-displayName: YouTube字幕提取-专业版
-summary: 企业级YouTube内容分析平台，支持批量字幕提取、频道监控、多语言对比与关键词追踪，适合内容研究团队。
-license: Proprietary
-edition: pro
+displayName: "YouTube字幕提取-专业版"
+summary: "企业级YouTube内容分析平台，支持批量字幕提取、频道监控、多语言对比与关键词追踪，适合内容研究团队。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   YouTube 内容分析专业版。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Creative
-- 视频处理
-- 字幕提取
-- 专业版
-- 批量处理
-- 内容分析
-- 企业级
+  - Creative
+  - 视频处理
+  - 字幕提取
+  - 专业版
+  - 批量处理
+  - 内容分析
+  - 企业级
 tools:
   - - read
-- exec
-# YouTube 字幕提取工具 - 专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # YouTube字幕提取-专业版
 

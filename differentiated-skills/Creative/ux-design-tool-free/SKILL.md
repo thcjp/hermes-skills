@@ -1,11 +1,11 @@
 ---
-slug: ux-design-tool-free
-name: ux-design-tool-free
+slug: "ux-design-tool-free"
+name: "ux-design-tool-free"
 version: "1.0.0"
-displayName: UX设计工具免费版
-summary: 用户体验设计原则指南,涵盖流程分析、摩擦减少、反馈设计、错误预防等核心UX方法论
-license: Proprietary
-edition: free
+displayName: "UX设计工具免费版"
+summary: "用户体验设计原则指南,涵盖流程分析、摩擦减少、反馈设计、错误预防等核心UX方法论"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人开发者和小型团队的UX用户体验设计原则指南,提供流程分析、
   心智模型对齐、摩擦减少、渐进式展示、反馈设计、错误预防等核心方法论。核心能力:
@@ -25,15 +25,16 @@ description: |-
 
   差异化:免费版聚焦核心UX方法论和基础原则,适合个人开发者建立UX意识
 tags:
-- 设计
-- UX
-- 用户体验
-- 交互设计
-- 无障碍
-- 前端
+  - 设计
+  - UX
+  - 用户体验
+  - 交互设计
+  - 无障碍
+  - 前端
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # UX设计工具 - 免费版
 

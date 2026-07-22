@@ -1,11 +1,11 @@
 ---
-slug: email-163
-name: email-163
+slug: "email-163"
+name: "email-163"
 version: "1.0.0"
-displayName: 163邮箱助手专业版
-summary: 企业级163邮箱管理，支持批量收发、高级搜索、定时任务与邮件归档
-license: Proprietary
-edition: pro
+displayName: "163邮箱助手专业版"
+summary: "企业级163邮箱管理，支持批量收发、高级搜索、定时任务与邮件归档"
+license: "Proprietary"
+edition: "pro"
 description: |-
   163邮箱助手专业版面向企业用户与高效能个人用户，在免费版基础能力之上扩展批量操作、
   高级搜索过滤、定时任务调度、邮件归档审计、模板化发送与多账户管理等企业级特性。核心能力:
@@ -16,14 +16,15 @@ description: |-
   - 多账户统一管理，租户隔离配置
   - 邮件模板系统...
 tags:
-- 沟通协作
-- 邮件管理
-- 163邮箱
-- 企业效率
-- 批量操作
+  - 沟通协作
+  - 邮件管理
+  - 163邮箱
+  - 企业效率
+  - 批量操作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 163邮箱助手专业版
 

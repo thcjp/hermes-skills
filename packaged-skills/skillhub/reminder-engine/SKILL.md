@@ -1,22 +1,22 @@
 ---
-slug: reminder-engine
-name: reminder-engine
+slug: "reminder-engine"
+name: "reminder-engine"
 version: "1.0.0"
-displayName: 提醒引擎(专业版)
-summary: 一次性提醒创建引擎专业版，含多渠道投递、批量创建、递增提醒、周期性提醒与完整安全校验。
-license: Proprietary
-edition: pro
+displayName: "提醒引擎(专业版)"
+summary: "一次性提醒创建引擎专业版，含多渠道投递、批量创建、递增提醒、周期性提醒与完整安全校验。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   提醒引擎专业版是在免费版基础上的全功能升级，为AI Agent提供企业级提醒创建能力。专业版解锁多渠道同时投递、批量创建、递增提醒、周期性提醒、Webhook投递、完整安全校验脚本等高级特性，实现复杂提醒场景的可靠管理。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- 提醒引擎
-- 多渠道投递
-- 批量提醒
-- 企业自动化
+  - 提醒引擎
+  - 多渠道投递
+  - 批量提醒
+  - 企业自动化
 tools:
   - - read
-- exec
-# 提醒引擎（专业版）
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 提醒引擎(专业版)
 

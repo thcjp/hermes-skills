@@ -1,11 +1,11 @@
 ---
-slug: browser-automation-tool-pro
-name: browser-automation-tool-pro
+slug: "browser-automation-tool-pro"
+name: "browser-automation-tool-pro"
 version: "1.0.0"
-displayName: 浏览器自动化工具-专业版
-summary: 企业级自然语言浏览器自动化,支持远程浏览器、隐身模式、代理与批量任务,面向团队生产场景
-license: Proprietary
-edition: pro
+displayName: "浏览器自动化工具-专业版"
+summary: "企业级自然语言浏览器自动化,支持远程浏览器、隐身模式、代理与批量任务,面向团队生产场景"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级自然语言浏览器自动化工具,在免费版核心能力之上,提供远程浏览器集群、
   隐身模式、代理/CAPTCHA处理、批量任务编排与监控告警能力。核心能力:
@@ -24,15 +24,15 @@ description: |-
 
   差异化:专业版面向团队与企业,提供远程浏览...
 tags:
-- 研究工具
-- 浏览器自动化
-- 企业级
-- 自然语言
+  - 研究工具
+  - 浏览器自动化
+  - 企业级
+  - 自然语言
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 浏览器自动化工具(专业版)
 
 ## 概述

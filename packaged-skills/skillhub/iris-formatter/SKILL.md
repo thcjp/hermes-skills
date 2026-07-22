@@ -1,11 +1,11 @@
 ---
-slug: iris-formatter
-name: iris-formatter
+slug: "iris-formatter"
+name: "iris-formatter"
 version: "1.0.0"
-displayName: IRIS代码格式化专业版
-summary: 企业级 IRIS ObjectScript 代码审查方案，含批量处理、自定义规则与报告导出。
-license: Proprietary
-edition: pro
+displayName: "IRIS代码格式化专业版"
+summary: "企业级 IRIS ObjectScript 代码审查方案，含批量处理、自定义规则与报告导出。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向企业级 IRIS 开发团队的 ObjectScript 代码审查与治理工具。核心能力:
   - 批量代码审查与格式化（多文件/多类）
@@ -23,14 +23,15 @@ description: |-
 
   差异化: 专业版兼容免费版所有规...
 tags:
-- 开发工具
-- IRIS
-- ObjectScript
-- 企业协作
-- 代码质量
+  - 开发工具
+  - IRIS
+  - ObjectScript
+  - 企业协作
+  - 代码质量
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # IRIS代码格式化专业版
 

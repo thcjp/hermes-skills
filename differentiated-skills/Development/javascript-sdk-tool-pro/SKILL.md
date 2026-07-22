@@ -1,11 +1,11 @@
 ---
-slug: javascript-sdk-tool-pro
-name: javascript-sdk-tool-pro
+slug: "javascript-sdk-tool-pro"
+name: "javascript-sdk-tool-pro"
 version: "1.0.0"
-displayName: JS SDK工具专业版
-summary: 企业级 AI 应用 SDK 方案，支持智能体构建、流式响应、会话管理与服务器代理集成。
-license: Proprietary
-edition: pro
+displayName: "JS SDK工具专业版"
+summary: "企业级 AI 应用 SDK 方案，支持智能体构建、流式响应、会话管理与服务器代理集成。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向企业级 AI 应用开发的 JavaScript SDK 专业工具，提供智能体构建与高级调用能力。核心能力:
   - 智能体（Agent）构建与多轮对话
@@ -14,16 +14,15 @@ description: |-
   - 工具构建器 API（自定义工具/应用工具/代理工具）
   - 服务器代理集成（Next
 tags:
-- 开发工具
-- JavaScript
-- AI应用
-- 智能体
-- 企业开发
+  - 开发工具
+  - JavaScript
+  - AI应用
+  - 智能体
+  - 企业开发
 tools:
   - - read
-- exec
-# JavaScript SDK 工具（专业版）
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 本工具面向企业级 AI 应用开发团队，提供智能体构建、流式响应、会话管理、工具构建器与服务器代理集成的完整方案。在免费版基础应用调用与文件上传能力之上，专业版新增 Agent SDK、流式响应处理、有状态会话、自定义工具构建、多框架代理集成、人工审批工作流等能力。通过丰富的 API 与类型安全支持，帮助团队构建生产级 AI 智能体应用。
 

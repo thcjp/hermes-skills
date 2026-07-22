@@ -1,10 +1,10 @@
 ---
-slug: css
-name: css
+slug: "css"
+name: "css"
 version: "1.0.0"
-displayName: CSS避坑指南
-summary: 规避堆叠上下文、布局怪癖与现代CSS特性误用,覆盖flex/grid/响应式/性能。
-license: MIT
+displayName: "CSS避坑指南"
+summary: "规避堆叠上下文、布局怪癖与现代CSS特性误用,覆盖flex/grid/响应式/性能。"
+license: "MIT"
 description: |-
   规避常见CSS陷阱:堆叠上下文失效、margin collapse、flexbox/grid
   误解、响应式策略、现代选择器、滚动行为、简写陷阱、性能优化与
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # CSS避坑指南
 
 用户需要CSS专业能力时提供支持,从布局挑战到生产级优化。覆盖堆叠上下文、flexbox/grid模式、响应式设计、性能与可访问性。

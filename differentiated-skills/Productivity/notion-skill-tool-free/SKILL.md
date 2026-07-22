@@ -1,11 +1,11 @@
 ---
-slug: notion-skill-tool-free
-name: notion-skill-tool-free
+slug: "notion-skill-tool-free"
+name: "notion-skill-tool-free"
 version: "1.0.0"
-displayName: Notion 技能基础版
-summary: 通过 Notion API 操作页面与数据库,支持读取、创建、更新与架构管理
-license: Proprietary
-edition: free
+displayName: "Notion 技能基础版"
+summary: "通过 Notion API 操作页面与数据库,支持读取、创建、更新与架构管理"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力: 知识管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
 
@@ -15,13 +15,14 @@ description: |-
 
   适用关键词: notion, notion-cli, 页面, 数据库, 数据源, 架构, 配置文件
 tags:
-- Notion
-- notion-cli
-- 页面
-- 数据库
+  - Notion
+  - notion-cli
+  - 页面
+  - 数据库
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Notion 技能基础版
 

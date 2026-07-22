@@ -1,19 +1,19 @@
 ---
-slug: xml-reader
-name: xml-reader
+slug: "xml-reader"
+name: "xml-reader"
 version: "2.1.0"
-displayName: Xml Reader
-summary: Read and parse XML from construction systems - P6 schedules, BSDD exports,
-  IFC-XML, COBie-XML. Co...
-license: MIT
+displayName: "Xml Reader"
+summary: "Read and parse XML from construction systems - P6 schedules, BSDD exports,"
+license: "MIT"
 description: |-
   Read and parse XML from construction systems - P6 schedules, BSDD exports,
   IFC-XML, COBie-XML。Co。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Xml Reader
 

@@ -1,23 +1,23 @@
 ---
-slug: cdp-browser-pilot-free
-name: cdp-browser-pilot-free
+slug: "cdp-browser-pilot-free"
+name: "cdp-browser-pilot-free"
 version: "1.0.0"
-displayName: CDP浏览器领航(免费版)
-summary: 通过已登录的Edge/Chrome浏览器执行JS渲染页面自动化，含导航、点击、截图与数据提取。
-license: Proprietary
-edition: free
+displayName: "CDP浏览器领航(免费版)"
+summary: "通过已登录的Edge/Chrome浏览器执行JS渲染页面自动化，含导航、点击、截图与数据提取。"
+license: "Proprietary"
+edition: "free"
 description: |-
   CDP浏览器领航免费版帮助你通过已登录的Edge或Chrome浏览器，利用Chrome DevTools Protocol执行JS渲染页面的自动化操作。解决web_fetch无法处理登录态与JS渲染的痛点，实现导航、点击、截图与基础数据提取。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
-- 浏览器自动化
-- CDP
-- 数据提取
-- 页面交互
+  - 浏览器自动化
+  - CDP
+  - 数据提取
+  - 页面交互
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # CDP浏览器领航（免费版）
 
 > **通过已登录的Edge/Chrome浏览器执行JS渲染页面自动化。导航、点击、截图、提取，一站式解决。**

@@ -1,19 +1,19 @@
 ---
-slug: ui-ux-dev
-name: ui-ux-dev
+slug: "ui-ux-dev"
+name: "ui-ux-dev"
 version: "1.0.0"
-displayName: Ui Ux Dev
-summary: This UI design skill is useful, but its setup script can make persistent
-  privileged Nginx and sys...
-license: MIT
+displayName: "Ui Ux Dev"
+summary: "This UI design skill is useful, but its setup script can make persistent"
+license: "MIT"
 description: |-
   This UI design skill is useful, but its setup script can make persistent
   privileged Nginx and sys。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Creative
+  - Creative
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Ui Ux Dev
 

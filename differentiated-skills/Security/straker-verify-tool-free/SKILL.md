@@ -1,11 +1,11 @@
 ---
-slug: straker-verify-tool-free
-name: straker-verify-tool-free
+slug: "straker-verify-tool-free"
+name: "straker-verify-tool-free"
 version: "1.0.0"
-displayName: AI翻译验证(免费版)
-summary: 100+语言AI翻译服务,支持项目创建、状态查询与文件下载,适合个人翻译需求
-license: Proprietary
-edition: free
+displayName: "AI翻译验证(免费版)"
+summary: "100+语言AI翻译服务,支持项目创建、状态查询与文件下载,适合个人翻译需求"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力:
   - 100+语言AI翻译服务
@@ -28,13 +28,14 @@ description: |-
 
   适用关键词: 翻译, AI翻译, 多语言, translation, translate, localization, 语言翻译, 文档翻译
 tags:
-- 翻译
-- 本地化
-- 多语言
-- AI翻译
+  - 翻译
+  - 本地化
+  - 多语言
+  - AI翻译
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # AI翻译验证(免费版)
 

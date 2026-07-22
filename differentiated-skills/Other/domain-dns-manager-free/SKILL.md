@@ -1,23 +1,23 @@
 ---
-slug: domain-dns-manager-free
-name: domain-dns-manager-free
+slug: "domain-dns-manager-free"
+name: "domain-dns-manager-free"
 version: "1.0.0"
-displayName: 域名DNS管理免费版
-summary: 管理Cloudflare/DNSimple/Namecheap的域名与DNS记录，支持单域名接入与基础记录操作。
-license: Proprietary
-edition: free
+displayName: "域名DNS管理免费版"
+summary: "管理Cloudflare/DNSimple/Namecheap的域名与DNS记录，支持单域名接入与基础记录操作。"
+license: "Proprietary"
+edition: "free"
 description: |-
   域名DNS管理免费版是一款面向个人开发者与小团队的域名管理Skill，封装Cloudflare、DNSimple、Namecheap三大平台的常用操作。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
 tags:
-- 域名管理
-- DNS配置
-- Cloudflare
-- 运维工具
+  - 域名管理
+  - DNS配置
+  - Cloudflare
+  - 运维工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 域名DNS管理免费版（Domain DNS Manager Free）
 
 ## 概述

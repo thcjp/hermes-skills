@@ -1,21 +1,22 @@
 ---
-slug: pipedrive-toolkit
-name: pipedrive-toolkit
+slug: "pipedrive-toolkit"
+name: "pipedrive-toolkit"
 version: "1.0.0"
-displayName: Pipedrive工具(专业版)
-summary: 全功能Pipedrive CRM管理工具，支持商机全生命周期、批量操作与多连接管理
-license: Proprietary
-edition: pro
+displayName: "Pipedrive工具(专业版)"
+summary: "全功能Pipedrive CRM管理工具，支持商机全生命周期、批量操作与多连接管理"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Pipedrive工具专业版是面向销售团队的完整CRM管理命令行方案，在免费版基础上解锁商机创建/更新/删除全生命周期、联系人和组织管理、活动创建与完成标记、备注管理、批量操作、多连接管理和自定义字段操作等全部高级能力。核心能力：商机CRUD全生命周期、联系人/组织CRUD、活动创建与管理、备注创建与关联、批量数据导入导出、多Pipedrive账户连接管理、自定义字段读写、高级过滤器管理、OAuth连接全生命周期控制
 tags:
-- 销售管理
-- CRM集成
-- 批量操作
-- 高级集成
+  - 销售管理
+  - CRM集成
+  - 批量操作
+  - 高级集成
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Pipedrive工具(专业版)
 

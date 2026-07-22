@@ -1,11 +1,11 @@
 ---
-slug: openai-whisper-paid
-name: openai-whisper-paid
+slug: "openai-whisper-paid"
+name: "openai-whisper-paid"
 version: "1.0.0"
-displayName: Whisper语音转文字专业版
-summary: 企业级Whisper语音转文字工具,支持批量处理、GPU加速、说话人分离与API服务化,适配生产环境。
-license: Proprietary
-edition: pro
+displayName: "Whisper语音转文字专业版"
+summary: "企业级Whisper语音转文字工具,支持批量处理、GPU加速、说话人分离与API服务化,适配生产环境。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队与企业用户的 Whisper 语音转文字工具(专业版)。核心能力:
   - 涵盖免费版全部能力(本地转录、翻译、多格式输出)
@@ -21,16 +21,17 @@ description: |-
   - 企业会议纪要自动化流水线
   ...
 tags:
-- 创意设计
-- 语音转文字
-- 企业级
-- 批量处理
-- GPU加速
-- 说话人分离
-- Whisper
+  - 创意设计
+  - 语音转文字
+  - 企业级
+  - 批量处理
+  - GPU加速
+  - 说话人分离
+  - Whisper
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Whisper语音转文字专业版
 

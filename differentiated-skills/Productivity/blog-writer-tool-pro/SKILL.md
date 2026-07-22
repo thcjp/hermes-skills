@@ -1,11 +1,11 @@
 ---
-slug: blog-writer-tool-pro
-name: blog-writer-tool-pro
+slug: "blog-writer-tool-pro"
+name: "blog-writer-tool-pro"
 version: "1.0.0"
-displayName: 博客写作助手专业版
-summary: 企业级内容生产流水线,支持品牌语调管理、多人协作审稿与发布自动化
-license: Proprietary
-edition: pro
+displayName: "博客写作助手专业版"
+summary: "企业级内容生产流水线,支持品牌语调管理、多人协作审稿与发布自动化"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 内容创作领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,14 +15,14 @@ description: |-
 
   适用关键词: 博客, 文章写作, 个人风格, 内容草稿, 写作助手
 tags:
-- 博客写作
-- 内容创作
-- 品牌语调
+  - 博客写作
+  - 内容创作
+  - 品牌语调
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 博客写作助手专业版
 
 ## 概述

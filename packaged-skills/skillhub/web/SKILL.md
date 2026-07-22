@@ -1,19 +1,19 @@
 ---
-slug: web
-name: web
+slug: "web"
+name: "web"
 version: "1.0.0"
-displayName: Web Development
-summary: Build, debug, and deploy websites using HTML, CSS, JavaScript, and modern
-  frameworks following pr...
-license: MIT
+displayName: "Web Development"
+summary: "Build, debug, and deploy websites using HTML, CSS, JavaScript, and modern"
+license: "MIT"
 description: |-
   Build, debug, and deploy websites using HTML, CSS, JavaScript, and modern
   frameworks following pr。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-- Development
+  - Development
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Web Development
 

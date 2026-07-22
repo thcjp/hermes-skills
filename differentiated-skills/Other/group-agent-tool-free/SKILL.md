@@ -1,21 +1,22 @@
 ---
-slug: group-agent-tool-free
-name: group-agent-tool-free
+slug: "group-agent-tool-free"
+name: "group-agent-tool-free"
 version: "1.0.0"
-displayName: Agent群组工具免费版
-summary: 极简多Agent群组协作，像微信群一样拉群、@提及、广播与成员管理
-license: Proprietary
-edition: free
+displayName: "Agent群组工具免费版"
+summary: "极简多Agent群组协作，像微信群一样拉群、@提及、广播与成员管理"
+license: "Proprietary"
+edition: "free"
 description: |-
   Agent群组工具是一套面向多Agent协作的轻量级群组通信方案，借鉴即时通讯软件"拉群-@提及-广播"的成熟交互模式，让多个Agent能像同事群一样协作，无需学习复杂的消息总线或事件驱动架构。核心能力：一行指令创建群组、邀请Agent加入、查看成员、退出解散；支持@特定成员定向通信、群公告广播、消息归档查询；群组数据轻量化、内存优先、按需持久化
 tags:
-- 多Agent协作
-- 群组通信
-- 轻量级
-- 即时通信
+  - 多Agent协作
+  - 群组通信
+  - 轻量级
+  - 即时通信
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Agent群组工具（免费版）
 

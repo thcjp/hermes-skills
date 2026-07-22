@@ -1,11 +1,11 @@
 ---
-slug: short-story-tool-pro
-name: short-story-tool-pro
+slug: "short-story-tool-pro"
+name: "short-story-tool-pro"
 version: "1.0.0"
-displayName: 短篇网文写作-专业版
-summary: 企业级短篇创作平台,支持批量产出、题材模板、投稿管理与数据驱动优化
-license: Proprietary
-edition: pro
+displayName: "短篇网文写作-专业版"
+summary: "企业级短篇创作平台,支持批量产出、题材模板、投稿管理与数据驱动优化"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级短篇网文创作工具专业版,面向专业作者与内容工作室。核心能力:
   - 批量短篇产出与排期
@@ -25,14 +25,15 @@ description: |-
 
   差异化:专业版在免费版基础上扩展批量产出、投稿管理与数据驱动优化,兼容免费版创作流程
 tags:
-- 短篇创作
-- 企业级
-- 批量产出
-- 投稿管理
-- 数据驱动
+  - 短篇创作
+  - 企业级
+  - 批量产出
+  - 投稿管理
+  - 数据驱动
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 短篇网文写作 - 专业版
 

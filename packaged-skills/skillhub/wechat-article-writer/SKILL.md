@@ -1,11 +1,11 @@
 ---
-slug: wechat-article-writer
-name: wechat-article-writer
+slug: "wechat-article-writer"
+name: "wechat-article-writer"
 version: "1.0.0"
-displayName: 公众号写作专业版
-summary: 企业级公众号写作引擎，支持多模型切换、业务资料库、发布流程、配图管理与团队协作。
-license: Proprietary
-edition: pro
+displayName: "公众号写作专业版"
+summary: "企业级公众号写作引擎，支持多模型切换、业务资料库、发布流程、配图管理与团队协作。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   公众号写作专业版 —— 面向专业内容团队与企业运营的高级公众号写作引擎。核心能力:
   - 多模型切换：支持DeepSeek、GPT、Claude等模型，按场景灵活选择
@@ -16,14 +16,15 @@ description: |-
   - 自定义预设：结构预设、文末区块、禁用词等深度定制
   - 内容审查集成：自动剥离引用标注...
 tags:
-- 内容创作
-- 公众号
-- 企业工具
-- 多模型
-- 发布流程
+  - 内容创作
+  - 公众号
+  - 企业工具
+  - 多模型
+  - 发布流程
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 公众号写作专业版
 

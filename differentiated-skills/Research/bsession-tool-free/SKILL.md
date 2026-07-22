@@ -1,23 +1,23 @@
 ---
-slug: bsession-tool-free
-name: bsession-tool-free
+slug: "bsession-tool-free"
+name: "bsession-tool-free"
 version: "1.0.0"
-displayName: 浏览器会话(免费版)
-summary: 浏览器会话管理免费版，支持一次性页面抓取、基础会话列表与简易调试。
-license: Proprietary
-edition: free
+displayName: "浏览器会话(免费版)"
+summary: "浏览器会话管理免费版，支持一次性页面抓取、基础会话列表与简易调试。"
+license: "Proprietary"
+edition: "free"
 description: |-
   浏览器会话助手免费版是面向个人开发者的轻量浏览器会话管理工具。聚焦"打开URL-提取信息-返回结果"三步流程，无需编写完整脚本即可完成单次页面抓取任务。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-- 浏览器会话
-- 单次抓取
-- Docker
-- 轻量级
+  - 浏览器会话
+  - 单次抓取
+  - Docker
+  - 轻量级
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 浏览器会话助手（免费版）
 > **打开URL、提取信息、返回结果。三步完成单次浏览器会话。**
 

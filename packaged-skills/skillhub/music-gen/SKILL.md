@@ -1,26 +1,25 @@
 ---
-slug: music-gen
-name: music-gen
+slug: "music-gen"
+name: "music-gen"
 version: "1.0.0"
-displayName: 音乐生成工具专业版
-summary: 企业级AI音乐生成系统,支持批量生成、版权管理、多平台调度与CI/CD集成,适合团队与商业项目。
-license: Proprietary
-edition: pro
+displayName: "音乐生成工具专业版"
+summary: "企业级AI音乐生成系统,支持批量生成、版权管理、多平台调度与CI/CD集成,适合团队与商业项目。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   音乐生成工具专业版为企业与内容团队提供系统化的AI音乐生成解决方案。在免费版基础生成能力之上,增加批量生成、版权资产管理、多平台智能调度、
   音乐质量审计与CI/CD集成能力。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 音乐生成
-- 企业级
-- 批量处理
-- 版权管理
-- CI/CD
-- 自动化
+  - 音乐生成
+  - 企业级
+  - 批量处理
+  - 版权管理
+  - CI/CD
+  - 自动化
 tools:
   - - read
-- exec
-# 音乐生成工具专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 音乐生成工具专业版
 

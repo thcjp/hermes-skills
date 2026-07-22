@@ -1,19 +1,19 @@
 ---
-slug: telegram
-name: telegram
+slug: "telegram"
+name: "telegram"
 version: "1.0.1"
-displayName: Telegram
-summary: SkillHub skill for designing Telegram Bot API workflows and command-driven
-  conversations using di...
-license: MIT
+displayName: "Telegram"
+summary: "SkillHub skill for designing Telegram Bot API workflows and command-driven"
+license: "MIT"
 description: |-
   SkillHub skill for designing Telegram Bot API workflows and command-driven
   conversations using di。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Telegram
 

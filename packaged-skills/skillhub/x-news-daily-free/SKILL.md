@@ -1,10 +1,10 @@
 ---
-slug: x-news-daily-free
-name: x-news-daily-free
+slug: "x-news-daily-free"
+name: "x-news-daily-free"
 version: "1.0.0"
-displayName: X News Daily LITE
-summary: 抓取 X.com 关键词热门新闻 Top 10，生成基础中文海报。
-license: MIT
+displayName: "X News Daily LITE"
+summary: "抓取 X.com 关键词热门新闻 Top 10，生成基础中文海报。"
+license: "MIT"
 description: |-
   X News Daily 免费版。抓取 X.com 上指定关键词的热门新闻 Top 10，自动将英文标题翻译为中文，
   渲染为基础 HTML 海报图片。支持 Headless Chrome 大视口截图方案。
@@ -15,8 +15,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # X News Daily LITE
 
 X News Daily 免费版。抓取 X.com 上指定关键词的热门新闻 Top 10，翻译为中文，生成基础 HTML 海报并发送给用户。

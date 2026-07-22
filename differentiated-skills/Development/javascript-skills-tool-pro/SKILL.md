@@ -1,11 +1,11 @@
 ---
-slug: javascript-skills-tool-pro
-name: javascript-skills-tool-pro
+slug: "javascript-skills-tool-pro"
+name: "javascript-skills-tool-pro"
 version: "1.0.0"
-displayName: JavaScript规范工具(专业版)
-summary: 面向团队与企业的全量JavaScript规范套件,含性能优化、安全审查与CI/CD集成。
-license: Proprietary
-edition: pro
+displayName: "JavaScript规范工具(专业版)"
+summary: "面向团队与企业的全量JavaScript规范套件,含性能优化、安全审查与CI/CD集成。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   JavaScript规范工具(专业版)面向团队与企业,提供全量JavaScript代码风格规范、性能优化策略、安全审查清单与CI/CD自动化集成方案。核心能力:
   - 覆盖28+全量风格规则,含迭代器、生成器、标准库等进阶主题
@@ -19,19 +19,18 @@ description: |-
   - 大型团队代码审查与质量门禁
   - 性能敏感场景的代码优化
   - 安全合规要求的项目交付
-
-...
 tags:
-- Development
-- Frontend
-- JavaScript
-- 代码规范
-- 企业级
-- 性能优化
-- 安全审查
+  - Development
+  - Frontend
+  - JavaScript
+  - 代码规范
+  - 企业级
+  - 性能优化
+  - 安全审查
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # JavaScript规范工具(专业版)
 

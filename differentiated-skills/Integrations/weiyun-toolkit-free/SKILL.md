@@ -1,23 +1,23 @@
 ---
-slug: weiyun-toolkit-free
-name: weiyun-toolkit-free
+slug: "weiyun-toolkit-free"
+name: "weiyun-toolkit-free"
 version: "1.0.0"
-displayName: 微云工具箱(免费版)
-summary: 微云网盘文件管理免费版：目录浏览、文件下载与上传，内置一键脚本与基础错误码指南。
-license: Proprietary
-edition: free
+displayName: "微云工具箱(免费版)"
+summary: "微云网盘文件管理免费版：目录浏览、文件下载与上传，内置一键脚本与基础错误码指南。"
+license: "Proprietary"
+edition: "free"
 description: |-
   微云工具箱（免费版）面向个人用户与独立开发者，封装微云网盘的日常文件操作：目录浏览、文件下载、文件上传。通过 MCP工具协议与微云网盘交互，所有文件哈希计算在本地完成，避免敏感数据外泄。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 云存储
-- 微云
-- 文件管理
-- MCP工具
+  - 云存储
+  - 微云
+  - 文件管理
+  - MCP工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 微云工具箱（免费版）
 
 ## 概述

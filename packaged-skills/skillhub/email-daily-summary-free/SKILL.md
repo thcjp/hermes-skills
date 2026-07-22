@@ -1,10 +1,10 @@
 ---
-slug: email-daily-summary-free
-name: email-daily-summary-free
+slug: "email-daily-summary-free"
+name: "email-daily-summary-free"
 version: "1.0.0"
-displayName: Email Summary Free
-summary: 基于 browser-use 登录单个邮箱并生成当日邮件摘要的基础版
-license: MIT
+displayName: "Email Summary Free"
+summary: "基于 browser-use 登录单个邮箱并生成当日邮件摘要的基础版"
+license: "MIT"
 description: |-
   基于 browser-use CLI 自动化登录 Gmail、Outlook、QQ 邮箱等 Web 邮箱,
   抓取当日收件箱列表,提取发件人、主题、摘要片段与时间戳,生成基础邮件日报。
@@ -15,8 +15,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Email Daily Summary Free
 
 通过 `browser-use` CLI 驱动浏览器自动化登录 Web 邮箱,抓取当日邮件并生成基础日报。本免费版支持单邮箱当日摘要,适合个人日常使用。

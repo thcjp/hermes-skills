@@ -1,11 +1,11 @@
 ---
-slug: video-frames-tool-free
-name: video-frames-tool-free
+slug: "video-frames-tool-free"
+name: "video-frames-tool-free"
 version: "1.0.0"
-displayName: 视频帧提取-免费版
-summary: 轻量级视频帧提取工具，支持单帧抓取与时间点截图，适合个人创作者快速生成缩略图。
-license: Proprietary
-edition: free
+displayName: "视频帧提取-免费版"
+summary: "轻量级视频帧提取工具，支持单帧抓取与时间点截图，适合个人创作者快速生成缩略图。"
+license: "Proprietary"
+edition: "free"
 description: |-
   视频帧提取免费版，专注于为个人用户提供简洁高效的视频帧抓取能力。核心能力:
   - 单帧精准提取（指定时间点抓取）
@@ -23,13 +23,14 @@ description: |-
   - 免费版聚焦核心抓帧能力，零配置开箱即用
   - 轻量化设计...
 tags:
-- Creative
-- 视频处理
-- 帧提取
-- 免费版
+  - Creative
+  - 视频处理
+  - 帧提取
+  - 免费版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 视频帧提取工具 - 免费版
 

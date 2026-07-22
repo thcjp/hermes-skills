@@ -1,10 +1,10 @@
 ---
-slug: productivity
-name: productivity
+slug: "productivity"
+name: "productivity"
 version: "1.0.0"
-displayName: 生产力操作系统
-summary: 集成目标、项目、任务、习惯、规划、回顾的完整生产力管理系统
-license: MIT
+displayName: "生产力操作系统"
+summary: "集成目标、项目、任务、习惯、规划、回顾的完整生产力管理系统"
+license: "MIT"
 description: |-
   完整的生产力操作系统，覆盖目标设定、项目管理、任务执行、习惯追踪、时间规划、定期回顾、
   精力管理、专注保护、承诺跟踪等全生命周期。核心能力涵盖目标-项目-任务三级体系、
@@ -15,8 +15,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 生产力操作系统
 
 将目标、项目、任务、习惯、规划、回顾整合为统一操作系统的生产力管理框架。不提供一次性激励，而是构建可持续运行的可信系统。所有数据存储在 `~/productivity/` 本地目录，仅在用户明确确认后写入文件。

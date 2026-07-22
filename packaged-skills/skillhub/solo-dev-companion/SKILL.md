@@ -1,23 +1,23 @@
 ---
-slug: solo-dev-companion
-name: solo-dev-companion
+slug: "solo-dev-companion"
+name: "solo-dev-companion"
 version: "1.0.0"
-displayName: 独立开发伙伴(专业版)
-summary: 全功能TDD工作流引擎，含MCP工具集成、多语言质量工具、视觉验证、阶段检查点与高级回滚。
-license: Proprietary
-edition: pro
+displayName: "独立开发伙伴(专业版)"
+summary: "全功能TDD工作流引擎，含MCP工具集成、多语言质量工具、视觉验证、阶段检查点与高级回滚。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   独立开发伙伴专业版是在免费版基础上的全功能升级，为独立开发者与一人公司提供企业级TDD工作流引擎。除核心TDD执行外，解锁MCP工具集成、多语言质量工具、视觉验证、阶段检查点、高级回滚、进度追踪集成六大高级功能。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-- TDD
-- 独立开发
-- 工作流引擎
-- 代码质量
-- MCP工具集成
+  - TDD
+  - 独立开发
+  - 工作流引擎
+  - 代码质量
+  - MCP工具集成
 tools:
   - - read
-- exec
-# 独立开发伙伴（专业版）
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 独立开发伙伴(专业版)
 

@@ -1,11 +1,11 @@
 ---
-slug: dns-config
-name: dns-config
+slug: "dns-config"
+name: "dns-config"
 version: "1.0.0"
-displayName: DNS配置工具专业版
-summary: 企业级 DNS 配置工具,支持 CAA、Cloudflare 代理、通配符与批量迁移策略。
-license: Proprietary
-edition: pro
+displayName: "DNS配置工具专业版"
+summary: "企业级 DNS 配置工具,支持 CAA、Cloudflare 代理、通配符与批量迁移策略。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向企业运维与基础设施团队的 DNS 全功能配置与迁移工具。核心能力:
   - CAA 记录配置(限制证书授权 CA,防未授权签发)
@@ -21,14 +21,15 @@ description: |-
 
   差异化: Pro 版在免...
 tags:
-- DNS
-- 企业运维
-- Communication
-- 安全配置
-- 批量迁移
+  - DNS
+  - 企业运维
+  - Communication
+  - 安全配置
+  - 批量迁移
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # DNS配置工具专业版
 

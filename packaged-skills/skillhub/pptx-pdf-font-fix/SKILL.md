@@ -1,19 +1,19 @@
 ---
-slug: pptx-pdf-font-fix
-name: pptx-pdf-font-fix
+slug: "pptx-pdf-font-fix"
+name: "pptx-pdf-font-fix"
 version: "1.0.0"
-displayName: PPTX PDF Font Fix
-summary: This skill is a narrow PowerPoint repair utility that locally edits a user-provided
-  PPTX and show...
-license: MIT
+displayName: "PPTX PDF Font Fix"
+summary: "This skill is a narrow PowerPoint repair utility that locally edits a user-provided"
+license: "MIT"
 description: |-
   This skill is a narrow PowerPoint repair utility that locally edits
   a user-provided PPTX and show。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Knowledge
+  - Knowledge
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # PPTX PDF Font Fix
 

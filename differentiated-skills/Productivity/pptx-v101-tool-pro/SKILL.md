@@ -1,11 +1,11 @@
 ---
-slug: pptx-v101-tool-pro
-name: pptx-v101-tool-pro
+slug: "pptx-v101-tool-pro"
+name: "pptx-v101-tool-pro"
 version: "1.0.0"
-displayName: PPT 工具 v1.0 专业版
-summary: 企业级演示文稿工坊,支持智能布局引擎、数据驱动幻灯片与协作审阅流水线
-license: Proprietary
-edition: pro
+displayName: "PPT 工具 v1.0 专业版"
+summary: "企业级演示文稿工坊,支持智能布局引擎、数据驱动幻灯片与协作审阅流水线"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 文档处理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: powerpoint, pptx, 演示文稿, 幻灯片, 布局, 模板, v1.0
 tags:
-- PowerPoint
-- PPTX
-- v1.0
-- 演示文稿
+  - PowerPoint
+  - PPTX
+  - v1.0
+  - 演示文稿
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # PPT 工具 v1.0 专业版
 
 ## 概述

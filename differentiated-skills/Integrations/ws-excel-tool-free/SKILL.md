@@ -1,23 +1,23 @@
 ---
-slug: ws-excel-tool-free
-name: ws-excel-tool-free
+slug: "ws-excel-tool-free"
+name: "ws-excel-tool-free"
 version: "1.0.0"
-displayName: Excel工具(免费版)
-summary: Excel 文件处理免费版：读写、数据清洗、公式计算与基础统计，支持 xlsx 格式。
-license: Proprietary
-edition: free
+displayName: "Excel工具(免费版)"
+summary: "Excel 文件处理免费版：读写、数据清洗、公式计算与基础统计，支持 xlsx 格式。"
+license: "Proprietary"
+edition: "free"
 description: |-
   Excel 工具（免费版）面向个人用户与独立开发者，提供 Excel 文件的基础处理能力：读取、写入、数据清洗、公式计算与基础统计。通过 openpyxl 与 pandas 等标准库操作 xlsx 文件，无需安装 Microsoft Excel。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
-- 数据处理
-- Excel
-- 数据清洗
-- 公式计算
+  - 数据处理
+  - Excel
+  - 数据清洗
+  - 公式计算
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Excel 工具（免费版）
 
 ## 概述

@@ -1,24 +1,25 @@
 ---
-slug: lh-video-gen-paid
-name: lh-video-gen-paid
+slug: "lh-video-gen-paid"
+name: "lh-video-gen-paid"
 version: "1.0.0"
-displayName: 短视频生成专业版
-summary: 企业级竖版短视频批量生成系统,支持多模板、多语言、批量处理、品牌定制与CI/CD集成,适合团队与商业项目。
-license: Proprietary
-edition: pro
+displayName: "短视频生成专业版"
+summary: "企业级竖版短视频批量生成系统,支持多模板、多语言、批量处理、品牌定制与CI/CD集成,适合团队与商业项目。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   短视频生成专业版为企业与内容团队提供系统化的竖版短视频生产解决方案。在免费版单视频生成能力之上,增加批量生成、多模板系统、多语言混排、
   品牌定制、团队协作与自动化工作流能力。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 视频生成
-- 批量处理
-- 短视频
-- 企业级
-- 自动化
-- 内容生产
+  - 视频生成
+  - 批量处理
+  - 短视频
+  - 企业级
+  - 自动化
+  - 内容生产
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 短视频生成专业版
 

@@ -1,19 +1,19 @@
 ---
-slug: linear-skill
-name: linear-skill
+slug: "linear-skill"
+name: "linear-skill"
 version: "1.0.0"
-displayName: Linear
-summary: Manage Linear projects, issues, and tasks via the bundled Node CLI and the
-  official Linear API. U...
-license: MIT
+displayName: "Linear"
+summary: "Manage Linear projects, issues, and tasks via the bundled Node CLI and the"
+license: "MIT"
 description: |-
   Manage Linear projects, issues, and tasks via the bundled Node CLI and
   the official Linear API。U。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Linear
 

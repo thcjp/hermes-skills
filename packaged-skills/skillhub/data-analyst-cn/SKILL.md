@@ -1,10 +1,10 @@
 ---
-slug: data-analyst-cn
-name: data-analyst-cn
+slug: "data-analyst-cn"
+name: "data-analyst-cn"
 version: "1.0.0"
-displayName: 数据分析师
-summary: 数据清洗、统计分析、时间序列分析、可视化代码生成与分析报告自动生成
-license: MIT
+displayName: "数据分析师"
+summary: "数据清洗、统计分析、时间序列分析、可视化代码生成与分析报告自动生成"
+license: "MIT"
 description: |-
   数据分析师——快速进行数据清洗、统计分析和可视化，适合数据分析师、产品经理、运营人员。
   核心能力包括：
@@ -22,8 +22,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 数据分析师
 
 ## 概述

@@ -1,23 +1,23 @@
 ---
-slug: browser-agent-pro-free
-name: browser-agent-pro-free
+slug: "browser-agent-pro-free"
+name: "browser-agent-pro-free"
 version: "1.0.0"
-displayName: 浏览器代理(免费版)
-summary: 自然语言驱动浏览器自动化，含页面操作、截图、表单填写与基础数据抓取，让Agent像人一样浏览网页。
-license: Proprietary
-edition: free
+displayName: "浏览器代理(免费版)"
+summary: "自然语言驱动浏览器自动化，含页面操作、截图、表单填写与基础数据抓取，让Agent像人一样浏览网页。"
+license: "Proprietary"
+edition: "free"
 description: |-
   浏览器代理免费版为AI Agent提供基础的浏览器自动化能力。用户用自然语言描述"打开某网页并截图"、"填写这个表单"、"抓取表格数据"，本技能负责把自然语言转化为浏览器操作指令，自动执行并返回结果。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- 浏览器自动化
-- 数据抓取
-- 网页操作
-- 效率工具
+  - 浏览器自动化
+  - 数据抓取
+  - 网页操作
+  - 效率工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 浏览器代理（免费版）
 
 > **让Agent像人一样浏览网页。自然语言驱动，截图、填表、抓取，安全合规。**

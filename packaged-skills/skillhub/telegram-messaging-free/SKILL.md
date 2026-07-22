@@ -1,10 +1,10 @@
 ---
-slug: telegram-messaging-free
-name: telegram-messaging-free
+slug: "telegram-messaging-free"
+name: "telegram-messaging-free"
 version: "1.0.0"
-displayName: Telegram 消息 LITE
-summary: Telegram Bot API 基础消息发送与聊天信息查询。
-license: MIT
+displayName: "Telegram 消息 LITE"
+summary: "Telegram Bot API 基础消息发送与聊天信息查询。"
+license: "MIT"
 description: |-
   Telegram Bot API 集成 Skill 免费版。支持发送文本消息与图片、获取机器人信息、
   查询聊天基本信息与成员计数。所有写操作需用户确认后执行。
@@ -15,8 +15,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Telegram 消息 LITE
 
 Telegram Bot API 集成免费版。支持发送文本消息与图片、获取机器人信息、查询聊天基本信息。所有写操作需用户确认后执行。

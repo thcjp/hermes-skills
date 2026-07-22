@@ -1,23 +1,23 @@
 ---
-slug: automation-recipe-book
-name: automation-recipe-book
+slug: "automation-recipe-book"
+name: "automation-recipe-book"
 version: "1.0.0"
-displayName: 自动化配方手册(专业版)
-summary: 25+自动化配方库+配方生成器+高级模式+企业模板+调试工具包，支撑从个人到企业的全场景自动化。
-license: Proprietary
-edition: pro
+displayName: "自动化配方手册(专业版)"
+summary: "25+自动化配方库+配方生成器+高级模式+企业模板+调试工具包，支撑从个人到企业的全场景自动化。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   自动化配方手册专业版是面向从个人到企业的全场景自动化配方系统。在免费版8个配方基础上扩展至25+配方（6大类别），新增配方生成器框架、高级模式（条件分支/并行执行/错误处理/重试）、企业自动化模板、调试与监控工具包、配方分享与导入、版本管理与回滚七大高级能力。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
 tags:
-- 自动化配方
-- 工作流编排
-- 企业自动化
-- 配方生成器
-- 流程数字化
+  - 自动化配方
+  - 工作流编排
+  - 企业自动化
+  - 配方生成器
+  - 流程数字化
 tools:
   - - read
-- exec
-# 自动化配方手册（专业版）
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 自动化配方手册(专业版)
 

@@ -1,11 +1,11 @@
 ---
-slug: learn-tool-free
-name: learn-tool-free
+slug: "learn-tool-free"
+name: "learn-tool-free"
 version: "1.0.0"
-displayName: 学习助手（免费版）
-summary: 为任何主题生成结构化学习计划、练习题与进度追踪，支持自适应学习路径。
-license: Proprietary
-edition: free
+displayName: "学习助手（免费版）"
+summary: "为任何主题生成结构化学习计划、练习题与进度追踪，支持自适应学习路径。"
+license: "Proprietary"
+edition: "free"
 description: |-
   学习助手 - （免费版）
 
@@ -17,15 +17,15 @@ description: |-
 
   适用关键词: 学习计划, 学习助手, 练习题, 学习评估, 自适应学习, learning plan, 知识评估
 tags:
-- 学习教育
-- 学习计划
-- 自适应学习
-- 练习生成
+  - 学习教育
+  - 学习计划
+  - 自适应学习
+  - 练习生成
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 学习助手（免费版）
 
 ## 概述

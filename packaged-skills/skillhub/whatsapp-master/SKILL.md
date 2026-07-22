@@ -1,22 +1,23 @@
 ---
-slug: whatsapp-master
-name: whatsapp-master
+slug: "whatsapp-master"
+name: "whatsapp-master"
 version: "1.0.0"
-displayName: WhatsApp大师(专业版)
-summary: WhatsApp 全能力版：消息/交互/群组/多智能体协作/预算调度/历史检索，22 类动作。
-license: Proprietary
-edition: pro
+displayName: "WhatsApp大师(专业版)"
+summary: "WhatsApp 全能力版：消息/交互/群组/多智能体协作/预算调度/历史检索，22 类动作。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   WhatsApp 大师（专业版）面向团队与企业用户，提供 WhatsApp 的全部 22 类动作：消息发送（文本/媒体/投票/贴纸/语音/GIF）、交互（反应/回复/编辑/撤回）、群组管理（创建/重命名/图标/描述/参与者/管理员/邀请链接）、历史检索与多智能体协作。配套拥塞控制、对话生命周期与预算感知调度三大高级协议
 tags:
-- 即时通讯
-- WhatsApp
-- 多智能体
-- 群组管理
-- 自动化协作
+  - 即时通讯
+  - WhatsApp
+  - 多智能体
+  - 群组管理
+  - 自动化协作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # WhatsApp大师(专业版)
 

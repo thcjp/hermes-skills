@@ -1,11 +1,11 @@
 ---
-slug: resume-assistant-tool-pro
-name: resume-assistant-tool-pro
+slug: "resume-assistant-tool-pro"
+name: "resume-assistant-tool-pro"
 version: "1.0.0"
-displayName: 简历助手工具(专业版)
-summary: 求职全流程套件,含岗位定制、JD分析、5格式导出、4模板与详细评分。
-license: Proprietary
-edition: pro
+displayName: "简历助手工具(专业版)"
+summary: "求职全流程套件,含岗位定制、JD分析、5格式导出、4模板与详细评分。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   简历助手工具(专业版)面向求职者与招聘方,提供完整的简历润色、岗位定制、多格式导出与专业评分能力。核心能力:
   - 4大命令:润色 / 岗位定制 / 多格式导出 / 详细评分
@@ -18,15 +18,16 @@ description: |-
   - 针对具体岗位定制简历
   - 多格式投递(在...
 tags:
-- Development
-- 求职
-- 简历
-- 企业级
-- 文档
-- 多格式
+  - Development
+  - 求职
+  - 简历
+  - 企业级
+  - 文档
+  - 多格式
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 简历助手工具(专业版)
 

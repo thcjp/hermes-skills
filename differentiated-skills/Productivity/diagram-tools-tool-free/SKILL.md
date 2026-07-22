@@ -1,11 +1,11 @@
 ---
-slug: diagram-tools-tool-free
-name: diagram-tools-tool-free
+slug: "diagram-tools-tool-free"
+name: "diagram-tools-tool-free"
 version: "1.0.0"
-displayName: 图表工具基础版
-summary: 支持 Mermaid 和 Graphviz 生成流程图、思维导图、时序图等多种图表
-license: Proprietary
-edition: free
+displayName: "图表工具基础版"
+summary: "支持 Mermaid 和 Graphviz 生成流程图、思维导图、时序图等多种图表"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力: 可视化工具领域的专业化 AI 辅助工具,提供核心基础功能支持。
 
@@ -15,14 +15,15 @@ description: |-
 
   适用关键词: 图表, mermaid, graphviz, 流程图, 思维导图, 时序图, 架构图
 tags:
-- 图表
-- Mermaid
-- Graphviz
-- 流程图
-- 思维导图
+  - 图表
+  - Mermaid
+  - Graphviz
+  - 流程图
+  - 思维导图
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 图表工具基础版
 

@@ -1,11 +1,11 @@
 ---
-slug: merge-check-tool-pro
-name: merge-check-tool-pro
+slug: "merge-check-tool-pro"
+name: "merge-check-tool-pro"
 version: "1.0.0"
-displayName: 合并检查工具(专业版)
-summary: 批量PR合并性预测,含全维度分析、历史趋势、CI/CD门禁与自定义规则。
-license: Proprietary
-edition: pro
+displayName: "合并检查工具(专业版)"
+summary: "批量PR合并性预测,含全维度分析、历史趋势、CI/CD门禁与自定义规则。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   合并检查工具(专业版)面向团队与维护者,提供批量PR合并性预测、全维度深度分析、历史趋势追踪、CI/CD门禁集成与自定义拒绝向量规则。核心能力:
   - 批量PR分析与团队级看板
@@ -21,15 +21,16 @@ description: |-
   - 贡献者健康度跟踪与导师分配
   - 大型开源项目PR...
 tags:
-- Development
-- 代码审查
-- GitHub
-- 企业级
-- CI/CD
-- DevOps
+  - Development
+  - 代码审查
+  - GitHub
+  - 企业级
+  - CI/CD
+  - DevOps
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 合并检查工具(专业版)
 

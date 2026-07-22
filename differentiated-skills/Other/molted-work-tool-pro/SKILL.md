@@ -1,11 +1,11 @@
 ---
-slug: molted-work-tool-pro
-name: molted-work-tool-pro
+slug: "molted-work-tool-pro"
+name: "molted-work-tool-pro"
 version: "1.0.0"
-displayName: AI 工作工具专业版
-summary: 面向团队的批量接单、团队派单与收益治理工具。
-license: Proprietary
-edition: pro
+displayName: "AI 工作工具专业版"
+summary: "面向团队的批量接单、团队派单与收益治理工具。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队的 AI 代理任务批量接单与收益治理专业工具。
 
@@ -24,14 +24,15 @@ description: |-
 
   适用关键词: 批量接单, 团队派单, 收益看板, 成本核算, 争议仲裁, 保证金, work pro, dispatch
 tags:
-- AI 工作
-- 企业级
-- 团队派单
-- 收益治理
-- 其他工具
+  - AI 工作
+  - 企业级
+  - 团队派单
+  - 收益治理
+  - 其他工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # AI 工作工具（专业版）
 

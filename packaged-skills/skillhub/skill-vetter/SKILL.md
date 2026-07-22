@@ -1,10 +1,10 @@
 ---
-slug: skill-vetter
-name: skill-vetter
+slug: "skill-vetter"
+name: "skill-vetter"
 version: "1.0.0"
-displayName: Skill Vetter
-summary: 安全优先的 AI Agent 技能审查协议，安装任何技能前必须执行。
-license: MIT
+displayName: "Skill Vetter"
+summary: "安全优先的 AI Agent 技能审查协议，安装任何技能前必须执行。"
+license: "MIT"
 description: |-
   skill-vetter 是一个安全优先的 AI Agent 技能审查工具。在安装任何技能前执行 4 步审查协议：
   来源检查、强制代码审查（RED FLAGS 检测）、权限范围评估和风险分级。支持 GitHub 仓库快速审查
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # Skill Vetter
 
 skill-vetter 是安全优先的 AI Agent 技能审查协议。**永远不要在未审查前安装任何技能。**

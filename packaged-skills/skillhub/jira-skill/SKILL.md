@@ -1,10 +1,10 @@
 ---
-slug: jira-skill
-name: jira-skill
+slug: "jira-skill"
+name: "jira-skill"
 version: "1.0.0"
-displayName: Jira集成助手
-summary: 通过Jira Cloud REST API管理事务、状态流转与工时日志，支持搜索、创建、指派、评论、工时统计。
-license: MIT
+displayName: "Jira集成助手"
+summary: "通过Jira Cloud REST API管理事务、状态流转与工时日志，支持搜索、创建、指派、评论、工时统计。"
+license: "MIT"
 description: |-
   Jira集成助手通过Jira Cloud REST API管理事务、状态流转与工时日志。
   支持模糊搜索、详情查看、状态变更、指派、评论、创建、工时记录与多维度工时统计。
@@ -25,8 +25,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Jira集成助手
 
 通过Jira Cloud REST API管理事务、状态流转与工时日志。支持搜索、详情、状态变更、指派、评论、创建、工时记录与多维度工时统计。

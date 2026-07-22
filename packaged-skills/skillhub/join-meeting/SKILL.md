@@ -1,10 +1,10 @@
 ---
-slug: join-meeting
-name: join-meeting
+slug: "join-meeting"
+name: "join-meeting"
 version: "1.0.0"
-displayName: 智能会议机器人
-summary: 会议机器人，支持会议感知、系统状态管理、生命周期、语音状态与TTS事件处理。
-license: Proprietary
+displayName: "智能会议机器人"
+summary: "会议机器人，支持会议感知、系统状态管理、生命周期、语音状态与TTS事件处理。"
+license: "Proprietary"
 description: |-
   智能会议机器人，主动感知并参与在线会议。
   支持会议感知、系统状态管理、生命周期管理（加入/离开）。
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 智能会议机器人
 
 会议机器人，支持会议感知、系统状态管理、生命周期、语音状态与TTS事件处理。

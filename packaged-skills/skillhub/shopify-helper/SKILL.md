@@ -1,18 +1,18 @@
 ---
-slug: shopify-helper
-name: shopify-helper
+slug: "shopify-helper"
+name: "shopify-helper"
 version: "2.0.0"
-displayName: Shopify Helper
-summary: Shopify建站助手。店铺搭建、主题定制、产品管理、SEO优化、应用推荐、上线检查。Shopify store builder with setup,
-  theme, product, SEO,...
-license: MIT-0
+displayName: "Shopify Helper"
+summary: "Shopify建站助手。店铺搭建、主题定制、产品管理、SEO优化、应用推荐、上线检查。Shopify store builder with setup,"
+license: "MIT-0"
 description: |-
   Shopify建站助手。店铺搭建、主题定制、产品管理、SEO优化、应用推荐、上线检查。Use when 需要电商运营、商品管理、订单处理、支付集成时使用。不适用于虚假交易和刷单。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要电商运营、商品管理、订单处理、支付集成时使用。不适用于虚假交易和刷单。
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Shopify Helper
 

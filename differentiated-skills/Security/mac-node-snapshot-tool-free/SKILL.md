@@ -1,11 +1,11 @@
 ---
-slug: mac-node-snapshot-tool-free
-name: mac-node-snapshot-tool-free
+slug: "mac-node-snapshot-tool-free"
+name: "mac-node-snapshot-tool-free"
 version: "1.0.0"
-displayName: macOS截图工具免费版
-summary: macOS屏幕截图与录屏工具,支持全屏截图、区域截图与基础录屏,适合个人开发者快速捕获屏幕内容。
-license: Proprietary
-edition: free
+displayName: "macOS截图工具免费版"
+summary: "macOS屏幕截图与录屏工具,支持全屏截图、区域截图与基础录屏,适合个人开发者快速捕获屏幕内容。"
+license: "Proprietary"
+edition: "free"
 description: |-
   macOS截图工具免费版,为个人用户提供屏幕截图与基础录屏能力。
   核心能力:全屏截图、区域截图、窗口截图、基础屏幕录制。
@@ -13,13 +13,14 @@ description: |-
   差异化:免费版聚焦核心截图功能,使用macOS原生工具,适合个人用户快速上手。
   适用关键词: macOS, 截图, 录屏, screencapture, screenrecord, screenshot, screen recording
 tags:
-- macOS
-- 截图
-- 录屏
-- 免费版
+  - macOS
+  - 截图
+  - 录屏
+  - 免费版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # macOS截图工具免费版
 

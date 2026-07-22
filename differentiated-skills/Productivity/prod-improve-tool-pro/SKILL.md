@@ -1,11 +1,11 @@
 ---
-slug: prod-improve-tool-pro
-name: prod-improve-tool-pro
+slug: "prod-improve-tool-pro"
+name: "prod-improve-tool-pro"
 version: "1.0.0"
-displayName: 效率追踪器专业版
-summary: 企业级效率追踪系统,支持团队效率分析、自动数据采集与 AI 效率教练
-license: Proprietary
-edition: pro
+displayName: "效率追踪器专业版"
+summary: "企业级效率追踪系统,支持团队效率分析、自动数据采集与 AI 效率教练"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 效率管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: productivity, 效率, 追踪, 时间管理, 活动记录, 日报, 周报
 tags:
-- 效率追踪
-- 时间管理
-- 活动分析
-- 日报
+  - 效率追踪
+  - 时间管理
+  - 活动分析
+  - 日报
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 效率追踪器专业版
 
 ## 概述

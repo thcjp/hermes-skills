@@ -1,10 +1,10 @@
 ---
-slug: bilibili-all-in-one
-name: bilibili-all-in-one
+slug: "bilibili-all-in-one"
+name: "bilibili-all-in-one"
 version: "1.0.0"
-displayName: B站全功能工具箱
-summary: B站热门监控、视频下载、数据追踪、字幕处理、播放与投稿一体化工具集。
-license: MIT
+displayName: "B站全功能工具箱"
+summary: "B站热门监控、视频下载、数据追踪、字幕处理、播放与投稿一体化工具集。"
+license: "MIT"
 description: |-
   面向B站的六合一全功能工具技能,集成热门监控(Hot Monitor)、视频下载(Downloader)、
   数据追踪(Watcher)、字幕处理(Subtitle)、播放信息(Player)与视频投稿(Publisher)六大模块。
@@ -21,8 +21,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Bilibili All In One 全功能工具箱
 
 ## 依赖说明

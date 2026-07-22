@@ -1,19 +1,19 @@
 ---
-slug: json-canvas
-name: json-canvas
+slug: "json-canvas"
+name: "json-canvas"
 version: "1.0.0"
-displayName: Json Canvas
-summary: Create and edit JSON Canvas files (.canvas) with nodes, edges, groups, and
-  connections. Use when ...
-license: MIT
+displayName: "Json Canvas"
+summary: "Create and edit JSON Canvas files (.canvas) with nodes, edges, groups, and"
+license: "MIT"
 description: |-
   Create and edit JSON Canvas files (。canvas) with nodes, edges, groups,
   and connections。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Json Canvas
 

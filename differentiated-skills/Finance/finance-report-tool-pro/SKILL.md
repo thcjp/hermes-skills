@@ -1,24 +1,24 @@
 ---
-slug: finance-report-tool-pro
-name: finance-report-tool-pro
+slug: "finance-report-tool-pro"
+name: "finance-report-tool-pro"
 version: "1.0.0"
-displayName: 财报分析专业版
-summary: 企业级财报分析系统，支持批量处理、多格式导出、行业基准与深度预测模型。
-license: Proprietary
-edition: pro
+displayName: "财报分析专业版"
+summary: "企业级财报分析系统，支持批量处理、多格式导出、行业基准与深度预测模型。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向专业分析师与机构的财报分析系统。支持批量文件处理、PDF/DOCX/
   Markdown多格式导出、行业基准对比、高级预测模型与自定义报告模板。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
-- Finance
-- 财报分析
-- 企业级
-- 报告生成
+  - Finance
+  - 财报分析
+  - 企业级
+  - 报告生成
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 财报分析专业版（PRO版）
 
 ## 概述

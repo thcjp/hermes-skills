@@ -1,10 +1,10 @@
 ---
-slug: blog-writer-free
-name: blog-writer-free
+slug: "blog-writer-free"
+name: "blog-writer-free"
 version: "1.0.0"
-displayName: 博客写作引擎(免费版)
-summary: 博客文章创作，覆盖选题分析、大纲生成、SEO优化与多平台适配发布。免费版
-license: MIT
+displayName: "博客写作引擎(免费版)"
+summary: "博客文章创作，覆盖选题分析、大纲生成、SEO优化与多平台适配发布。免费版"
+license: "MIT"
 description: |-
   博客文章创作引擎（免费版），覆盖从选题到发布全流程。支持技术博客、产品博客、
   思想领导力文章等多种类型。核心能力：
@@ -15,8 +15,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 博客写作引擎(免费版)
 
 博客文章创作引擎，覆盖从选题到发布全流程，支持技术博客、产品博客、思想领导力文章等多种类型。

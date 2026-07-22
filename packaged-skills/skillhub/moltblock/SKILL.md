@@ -1,19 +1,19 @@
 ---
-slug: moltblock
-name: moltblock
+slug: "moltblock"
+name: "moltblock"
 version: "0.11.9"
-displayName: Skill
-summary: Verification gating for AI-generated artifacts. Policy checks to catch dangerous
-  patterns before ...
-license: MIT-0
+displayName: "Skill"
+summary: "Verification gating for AI-generated artifacts. Policy checks to catch dangerous"
+license: "MIT-0"
 description: |-
   Verification gating for AI-generated artifacts。Policy checks to catch
   dangerous patterns before。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- Security
+  - Security
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Skill
 

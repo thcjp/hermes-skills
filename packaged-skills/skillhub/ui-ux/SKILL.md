@@ -1,19 +1,19 @@
 ---
-slug: ui-ux
-name: ui-ux
+slug: "ui-ux"
+name: "ui-ux"
 version: "1.0.0"
-displayName: UI / UX
+displayName: "UI / UX"
 summary: "Searchable UI/UX design databases: 50+ styles, 97 palettes, 57 font pairings,
-  99 UX rules, 25 cha"
-license: MIT
+license: "MIT"
 description: |-
   Searchable UI/UX design databases: 50+ styles, 97 palettes, 57 font
   pairings, 99 UX rules, 25 cha。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Creative
+  - Creative
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # UI / UX
 

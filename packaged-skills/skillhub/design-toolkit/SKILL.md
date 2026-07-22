@@ -1,11 +1,11 @@
 ---
-slug: design-toolkit
-name: design-toolkit
+slug: "design-toolkit"
+name: "design-toolkit"
 version: "1.0.0"
-displayName: 设计偏好工具箱-专业版
-summary: 企业级视觉偏好管理系统，支持多媒介、品牌系统、团队协作与批量设计生成。
-license: Proprietary
-edition: pro
+displayName: "设计偏好工具箱-专业版"
+summary: "企业级视觉偏好管理系统，支持多媒介、品牌系统、团队协作与批量设计生成。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   设计偏好工具箱专业版，面向团队与企业的视觉偏好管理平台。核心能力：
   - 覆盖 UI、图形、视频、印刷、3D 五大媒介的偏好管理
@@ -23,13 +23,14 @@ description: |-
 
   差异化：专业版在免费版基础上扩展至五大多媒介...
 tags:
-- Creative
-- Design
-- Enterprise
-- BrandSystem
+  - Creative
+  - Design
+  - Enterprise
+  - BrandSystem
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 设计偏好工具箱-专业版
 

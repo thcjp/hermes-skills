@@ -1,11 +1,11 @@
 ---
-slug: calendar-toolkit-free
-name: calendar-toolkit-free
+slug: "calendar-toolkit-free"
+name: "calendar-toolkit-free"
 version: "1.0.0"
-displayName: 日历管理工具包基础版
-summary: 日历管理与调度工具,支持创建事件、安排会议与跨平台同步,适合个人用户
-license: Proprietary
-edition: free
+displayName: "日历管理工具包基础版"
+summary: "日历管理与调度工具,支持创建事件、安排会议与跨平台同步,适合个人用户"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力: 日程管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
 
@@ -15,12 +15,13 @@ description: |-
 
   适用关键词: 日历, 日程, 会议, 事件创建, 时间安排, 提醒
 tags:
-- 日历管理
-- 日程安排
-- 会议调度
+  - 日历管理
+  - 日程安排
+  - 会议调度
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 日历管理工具包基础版
 

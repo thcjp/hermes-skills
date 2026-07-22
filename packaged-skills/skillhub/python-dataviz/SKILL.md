@@ -1,18 +1,18 @@
 ---
-slug: python-dataviz
-name: python-dataviz
+slug: "python-dataviz"
+name: "python-dataviz"
 version: "1.0.0"
-displayName: Python Dataviz
-summary: Professional data visualization using Python (matplotlib, seaborn, plotly).
-  Create publication-qu...
-license: MIT
+displayName: "Python Dataviz"
+summary: "Professional data visualization using Python (matplotlib, seaborn, plotly)."
+license: "MIT"
 description: |-
   Professional data visualization using Python (matplotlib, seaborn, plotly)。Create publication-qu。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Python Dataviz
 

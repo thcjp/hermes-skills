@@ -1,17 +1,18 @@
 ---
-slug: text-game-arcade-universe-v3
-name: text-game-arcade-universe-v3
+slug: "text-game-arcade-universe-v3"
+name: "text-game-arcade-universe-v3"
 version: "1.0.0"
-displayName: Text Game Arcade Uni
-summary: 综合性 ASCII 文字游戏大厅。严格按规则渲染和裁判五子棋、围棋、井字棋、黑白棋、四子棋、海战棋、中国象棋、国际象棋、扫雷、数独、2048、推箱子、文字迷宫，以及接龙、猜词、猜数、Lights...
-license: MIT-0
+displayName: "Text Game Arcade Uni"
+summary: "综合性 ASCII 文字游戏大厅。严格按规则渲染和裁判五子棋、围棋、井字棋、黑白棋、四子棋、海战棋、中国象棋、国际象棋、扫雷、数独、2048、推箱子、文字迷宫，以及接龙、猜词、猜数、Lights..."
+license: "MIT-0"
 description: |-
   综合性 ASCII 文字游戏大厅。严格按规则渲染和裁判五子棋、围棋、井字棋、黑白棋、四子棋、海战棋、中国象棋、国际象棋、扫雷、数独、2048、推箱子、文字迷宫，以及接龙、猜词、猜数、Lights。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Lifestyle
+  - Lifestyle
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Text Game Arcade Uni
 

@@ -1,11 +1,11 @@
 ---
-slug: cheat-code-paid
-name: cheat-code-paid
+slug: "cheat-code-paid"
+name: "cheat-code-paid"
 version: "1.0.0"
-displayName: 能力扩展工具专业版
-summary: 企业级外部知识检索,支持批量查询、自定义数据源、知识缓存与团队共享
-license: Proprietary
-edition: pro
+displayName: "能力扩展工具专业版"
+summary: "企业级外部知识检索,支持批量查询、自定义数据源、知识缓存与团队共享"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队与企业的高级能力扩展工具,在免费版基础上扩展批量查询、自定义数据源、知识缓存等能力。核心能力:
   - 批量知识查询与并行检索
@@ -25,14 +25,15 @@ description: |-
   - 提供团队协作与历史追踪能力
   - 优先技术支持与...
 tags:
-- 开发工具
-- 知识检索
-- 企业级
-- 批量查询
-- 数据源集成
+  - 开发工具
+  - 知识检索
+  - 企业级
+  - 批量查询
+  - 数据源集成
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 能力扩展工具专业版
 

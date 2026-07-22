@@ -1,11 +1,11 @@
 ---
-slug: calendar-toolkit-pro
-name: calendar-toolkit-pro
+slug: "calendar-toolkit-pro"
+name: "calendar-toolkit-pro"
 version: "1.0.0"
-displayName: 日历管理工具包专业版
-summary: 企业级日历调度系统,支持多租户管理、资源预订、冲突检测与智能排程优化
-license: Proprietary
-edition: pro
+displayName: "日历管理工具包专业版"
+summary: "企业级日历调度系统,支持多租户管理、资源预订、冲突检测与智能排程优化"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 日程管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,14 +15,14 @@ description: |-
 
   适用关键词: 日历, 日程, 会议, 事件创建, 时间安排, 提醒
 tags:
-- 日历管理
-- 日程安排
-- 会议调度
+  - 日历管理
+  - 日程安排
+  - 会议调度
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 日历管理工具包专业版
 
 ## 概述

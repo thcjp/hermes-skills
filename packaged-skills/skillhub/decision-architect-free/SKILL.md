@@ -1,10 +1,10 @@
 ---
-slug: decision-architect-free
-name: decision-architect-free
+slug: "decision-architect-free"
+name: "decision-architect-free"
 version: "1.0.0"
-displayName: 决策架构师免费版
-summary: 基础结构化决策支持与认知偏差检测，帮助避免拍脑袋决策。
-license: MIT
+displayName: "决策架构师免费版"
+summary: "基础结构化决策支持与认知偏差检测，帮助避免拍脑袋决策。"
+license: "MIT"
 description: |-
   面向 AI Agent 的基础结构化决策支持系统，提供决策框架匹配与认知偏差检测两大核心能力。
   内置决策矩阵、成本效益、奥卡姆剃刀、可逆性评估 4 类基础框架，按决策类型自动匹配。
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 系统运维
 ---
-
 # 决策架构师免费版（Decision Architect Free）
 
 **帮你做更好的决定的基础工具。** 通过结构化框架匹配与认知偏差检测，让日常决策更有章法。本免费版提供 4 类基础框架与 4 类偏差检测，覆盖单次决策分析需求。

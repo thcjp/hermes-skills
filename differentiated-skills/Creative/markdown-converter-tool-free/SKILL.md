@@ -1,25 +1,25 @@
 ---
-slug: markdown-converter-tool-free
-name: markdown-converter-tool-free
+slug: "markdown-converter-tool-free"
+name: "markdown-converter-tool-free"
 version: "1.0.0"
-displayName: Markdown转换器免费版
-summary: 将PDF、Word、Excel、PPT等文件转换为Markdown格式,支持基础OCR与文档结构保留,适合个人使用。
-license: Proprietary
-edition: free
+displayName: "Markdown转换器免费版"
+summary: "将PDF、Word、Excel、PPT等文件转换为Markdown格式,支持基础OCR与文档结构保留,适合个人使用。"
+license: "Proprietary"
+edition: "free"
 description: |-
   Markdown转换器免费版帮助个人用户将各类文档文件转换为Markdown格式。支持PDF、Word、Excel、PPT、HTML、图片等常见格式,保留文档结构,
   无需安装额外软件(使用uvx运行)。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Markdown
-- 文档转换
-- PDF
-- OCR
-- 生产力
+  - Markdown
+  - 文档转换
+  - PDF
+  - OCR
+  - 生产力
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Markdown转换器免费版
 
 ## 概述

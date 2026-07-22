@@ -1,20 +1,20 @@
 ---
-slug: browser-automation-v2
-name: browser-automation-v2
+slug: "browser-automation-v2"
+name: "browser-automation-v2"
 version: "2.0.0"
-displayName: Browser Automation V
-summary: Enterprise-grade browser automation with automatic tab cleanup, timeout retries,
-  concurrency lock...
-license: MIT
+displayName: "Browser Automation V"
+summary: "Enterprise-grade browser automation with automatic tab cleanup, timeout retries,"
+license: "MIT"
 description: |-
   Enterprise-grade browser automation with automatic tab cleanup, timeout
   retries, concurrency lock。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Research
-- Automation
+  - Research
+  - Automation
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Browser Automation V
 

@@ -1,11 +1,11 @@
 ---
-slug: graph-knowledge-base
-name: graph-knowledge-base
+slug: "graph-knowledge-base"
+name: "graph-knowledge-base"
 version: "1.0.0"
-displayName: 知识图谱库(专业版)
-summary: 全功能知识图谱工具，支持图谱关系查询、知识分析、跨实体关联与多格式导出
-license: Proprietary
-edition: pro
+displayName: "知识图谱库(专业版)"
+summary: "全功能知识图谱工具，支持图谱关系查询、知识分析、跨实体关联与多格式导出"
+license: "Proprietary"
+edition: "pro"
 description: |-
   知识图谱库(专业版)是面向团队与知识工作者的全功能知识图谱管理工具，在免费版基础上新增图谱关系查询、知识分析、跨实体关联与多格式导出等高级能力。核心能力：
   - 完整的实体管理、事实添加与版本替代能力
@@ -14,13 +14,14 @@ description: |-
   - 跨实体关联，构建知识网络视图
   - 多格式导出...
 tags:
-- 集成工具
-- 知识管理
-- 知识图谱
-- 专业版
+  - 集成工具
+  - 知识管理
+  - 知识图谱
+  - 专业版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 知识图谱库(专业版)
 

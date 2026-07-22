@@ -1,10 +1,10 @@
 ---
-slug: rust
-name: rust
+slug: "rust"
+name: "rust"
 version: "1.0.1"
-displayName: Rust避坑指南
-summary: 规避所有权、借用、生命周期、字符串、错误处理、并发与内存的常见陷阱。
-license: MIT
+displayName: "Rust避坑指南"
+summary: "规避所有权、借用、生命周期、字符串、错误处理、并发与内存的常见陷阱。"
+license: "MIT"
 description: |-
   编写地道Rust代码,规避所有权移动、借用检查器、生命周期推断、
   UTF-8字符串、错误处理、惰性迭代器、线程安全与智能指针的高频
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 研发工具
 ---
-
 # Rust避坑指南
 
 编写地道Rust代码,规避所有权、借用、生命周期、字符串、错误处理、迭代器、并发与内存的高频陷阱,以及常见编译错误与Cargo陷阱。

@@ -1,11 +1,11 @@
 ---
-slug: prod-helper-v4-tool-free
-name: prod-helper-v4-tool-free
+slug: "prod-helper-v4-tool-free"
+name: "prod-helper-v4-tool-free"
 version: "1.0.0"
-displayName: 效率助手 v4 基础版
-summary: 增强版效率助手,支持智能任务分类、进度追踪、数据分析与自动化提醒
-license: Proprietary
-edition: free
+displayName: "效率助手 v4 基础版"
+summary: "增强版效率助手,支持智能任务分类、进度追踪、数据分析与自动化提醒"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力: 效率管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
 
@@ -15,13 +15,14 @@ description: |-
 
   适用关键词: 效率, 助手, v4, 智能分类, 数据分析, 自动化, 进度追踪
 tags:
-- 效率助手
-- 智能分类
-- 数据分析
-- 自动化
+  - 效率助手
+  - 智能分类
+  - 数据分析
+  - 自动化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 效率助手 v4 基础版
 

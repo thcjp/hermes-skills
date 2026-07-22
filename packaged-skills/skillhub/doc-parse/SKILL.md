@@ -1,11 +1,11 @@
 ---
-slug: doc-parse
-name: doc-parse
+slug: "doc-parse"
+name: "doc-parse"
 version: "1.0.0"
-displayName: 文档解析工具（专业版）
-summary: 通用文档解析工具，支持PDF、图片、扫描件的结构化信息提取与OCR识别。
-license: Proprietary
-edition: pro
+displayName: "文档解析工具（专业版）"
+summary: "通用文档解析工具，支持PDF、图片、扫描件的结构化信息提取与OCR识别。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   文档解析工具 - （专业版）
 
@@ -14,17 +14,16 @@ description: |-
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
-
 tags:
-- 文档解析
-- OCR
-- 表格识别
-- 版面分析
+  - 文档解析
+  - OCR
+  - 表格识别
+  - 版面分析
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 文档解析工具（专业版）
 
 ## 核心能力

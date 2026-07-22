@@ -1,11 +1,11 @@
 ---
-slug: short-story-tool-free
-name: short-story-tool-free
+slug: "short-story-tool-free"
+name: "short-story-tool-free"
 version: "1.0.0"
-displayName: 短篇网文写作-免费版
-summary: 短篇网文创作助手,支持故事构思、结构搭建与快速成文,适合个人创作
-license: Proprietary
-edition: free
+displayName: "短篇网文写作-免费版"
+summary: "短篇网文创作助手,支持故事构思、结构搭建与快速成文,适合个人创作"
+license: "Proprietary"
+edition: "free"
 description: |-
   短篇网文创作助手免费版,面向个人作者与写作爱好者。
 
@@ -26,12 +26,13 @@ description: |-
 
   适用关键词: 短篇, 写作, 创作, 故事构思, 三幕式, short story, 短篇小说
 tags:
-- 短篇创作
-- 写作辅助
-- 故事构思
+  - 短篇创作
+  - 写作辅助
+  - 故事构思
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 短篇网文写作 - 免费版
 

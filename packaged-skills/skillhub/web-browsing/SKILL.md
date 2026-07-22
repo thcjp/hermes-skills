@@ -1,19 +1,19 @@
 ---
-slug: web-browsing
-name: web-browsing
+slug: "web-browsing"
+name: "web-browsing"
 version: "1.0.0"
-displayName: Web Browsing
-summary: Browse and summarize websites, extract content from URLs, search the web
-  for information. Use whe...
-license: MIT-0
+displayName: "Web Browsing"
+summary: "Browse and summarize websites, extract content from URLs, search the web"
+license: "MIT-0"
 description: |-
   Browse and summarize websites, extract content from URLs, search the
   web for information。Use whe。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Research
+  - Research
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Web Browsing
 

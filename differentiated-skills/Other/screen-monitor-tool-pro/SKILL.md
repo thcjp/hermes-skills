@@ -1,11 +1,11 @@
 ---
-slug: screen-monitor-tool-pro
-name: screen-monitor-tool-pro
+slug: "screen-monitor-tool-pro"
+name: "screen-monitor-tool-pro"
 version: "1.0.0"
-displayName: 屏幕监控工具-专业版
-summary: 企业级屏幕监控平台,支持实时流共享、多屏支持、AI分析与远程团队协作
-license: Proprietary
-edition: pro
+displayName: "屏幕监控工具-专业版"
+summary: "企业级屏幕监控平台,支持实时流共享、多屏支持、AI分析与远程团队协作"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级屏幕监控工具专业版,面向团队与商业应用。核心能力:
   - 实时屏幕流共享(WebRTC)
@@ -25,14 +25,15 @@ description: |-
 
   差异化:专业版在免费版基础上扩展实时流共享、多屏支持、AI 分析与企业级监控,兼容免费版截图功能
 tags:
-- 屏幕监控
-- 企业级
-- 实时共享
-- AI分析
-- 远程协作
+  - 屏幕监控
+  - 企业级
+  - 实时共享
+  - AI分析
+  - 远程协作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 屏幕监控工具 - 专业版
 

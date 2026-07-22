@@ -1,23 +1,23 @@
 ---
-slug: drawing-insight-free
-name: drawing-insight-free
+slug: "drawing-insight-free"
+name: "drawing-insight-free"
 version: "1.0.0"
-displayName: 图纸解析(免费版)
-summary: 从建筑施工PDF图纸中提取标题栏、尺寸、注释与符号，生成质量检查报告，单文件快速解析。
-license: Proprietary
-edition: free
+displayName: "图纸解析(免费版)"
+summary: "从建筑施工PDF图纸中提取标题栏、尺寸、注释与符号，生成质量检查报告，单文件快速解析。"
+license: "Proprietary"
+edition: "free"
 description: |-
   图纸解析（免费版）面向建筑、结构、机电工程师与造价人员，提供从PDF施工图纸中自动提取标题栏、尺寸标注、注释说明、构件符号以及质量问题的能力。基于正则模式与表格解析的双通道抽取，结合英制/公制单位自动识别，让原本需要人工逐张阅读的图纸在数秒内转为结构化数据。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。
 tags:
-- 图纸解析
-- 建筑工程
-- PDF处理
-- 数据抽取
+  - 图纸解析
+  - 建筑工程
+  - PDF处理
+  - 数据抽取
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 图纸解析（免费版）
 
 > 从一张施工PDF图纸中，10秒拿到结构化数据：标题栏、尺寸、注释、符号、质量问题一网打尽。

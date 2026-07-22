@@ -1,11 +1,11 @@
 ---
-slug: slack-crawler-free
-name: slack-crawler-free
+slug: "slack-crawler-free"
+name: "slack-crawler-free"
 version: "1.0.0"
-displayName: Slack爬虫工具
-summary: 基于本地Slack归档数据的检索与统计工具，支持新鲜度检查与只读SQL查询。
-license: Proprietary
-edition: free
+displayName: "Slack爬虫工具"
+summary: "基于本地Slack归档数据的检索与统计工具，支持新鲜度检查与只读SQL查询。"
+license: "Proprietary"
+edition: "free"
 description: |-
   Slack爬虫工具（免费版）基于本地Slack归档数据提供消息检索、新鲜度检查与只读SQL统计，优先使用本地数据避免重复API调用。
 
@@ -17,11 +17,12 @@ description: |-
 
   适用关键词：Slack归档、消息检索、新鲜度、SQL统计、Slack爬虫
 tags:
-- 集成工具
-- 数据分析
+  - 集成工具
+  - 数据分析
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Slack爬虫工具（免费版）
 

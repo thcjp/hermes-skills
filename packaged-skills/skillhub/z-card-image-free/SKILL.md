@@ -1,10 +1,10 @@
 ---
-slug: z-card-image-free
-name: z-card-image-free
+slug: "z-card-image-free"
+name: "z-card-image-free"
 version: "1.0.0"
-displayName: 卡片图渲染免费版
-summary: 将短文案渲染为 PNG 海报,支持公众号配色与整行高亮,基础渲染能力
-license: MIT
+displayName: "卡片图渲染免费版"
+summary: "将短文案渲染为 PNG 海报,支持公众号配色与整行高亮,基础渲染能力"
+license: "MIT"
 description: |-
   将用户提供的短文案渲染成 PNG 卡片图。
   免费版仅支持 poster-3-4 文字海报模板,
@@ -17,8 +17,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # z-card-image Free
 
 将用户提供的短文案渲染成 PNG 卡片图。

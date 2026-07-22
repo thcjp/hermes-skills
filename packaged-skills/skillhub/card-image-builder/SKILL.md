@@ -1,11 +1,11 @@
 ---
-slug: card-image-builder
-name: card-image-builder
+slug: "card-image-builder"
+name: "card-image-builder"
 version: "1.0.0"
-displayName: 卡片图生成器-专业版
-summary: 企业级卡片图生成平台,支持全模板/批量生成/自定义模板/品牌定制/X长图
-license: Proprietary
-edition: pro
+displayName: "卡片图生成器-专业版"
+summary: "企业级卡片图生成平台,支持全模板/批量生成/自定义模板/品牌定制/X长图"
+license: "Proprietary"
+edition: "pro"
 description: |-
   卡片图生成器专业版,面向企业和专业内容团队的全功能卡片图片生成平台。核心能力:
   - 全模板支持(海报/长文卡片/X风格长图/公众号封面/自定义模板)
@@ -23,17 +23,16 @@ description: |-
   - X/Twitter帖子分享长图制作
   - 品牌统一的...
 tags:
-- 沟通协作
-- 图片生成
-- 卡片图
-- 企业级
-- 批量生成
-- 品牌定制
+  - 沟通协作
+  - 图片生成
+  - 卡片图
+  - 企业级
+  - 批量生成
+  - 品牌定制
 tools:
   - - read
-- exec
-# 卡片图生成器(专业版)
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 卡片图生成器-专业版
 

@@ -1,11 +1,11 @@
 ---
-slug: note-toolkit-pro
-name: note-toolkit-pro
+slug: "note-toolkit-pro"
+name: "note-toolkit-pro"
 version: "1.0.0"
-displayName: 笔记工具包专业版
-summary: 企业级知识管理系统,支持团队协作、全文检索、知识图谱与 AI 智能摘要
-license: Proprietary
-edition: pro
+displayName: "笔记工具包专业版"
+summary: "企业级知识管理系统,支持团队协作、全文检索、知识图谱与 AI 智能摘要"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 知识管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: 笔记, 知识, 捕获, 检索, 连接, 知识图谱, 本地存储
 tags:
-- 笔记
-- 知识管理
-- Zettelkasten
-- 本地存储
+  - 笔记
+  - 知识管理
+  - Zettelkasten
+  - 本地存储
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 笔记工具包专业版
 
 ## 概述

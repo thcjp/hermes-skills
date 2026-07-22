@@ -1,10 +1,10 @@
 ---
-slug: creator-alpha-feed
-name: creator-alpha-feed
+slug: "creator-alpha-feed"
+name: "creator-alpha-feed"
 version: "1.0.0"
-displayName: 创作者AI日报
-summary: 为创作者每日采集X平台AI内容,按KOL/教程/行业三档排名,推送群频道并写入Obsidian日报。
-license: MIT
+displayName: "创作者AI日报"
+summary: "为创作者每日采集X平台AI内容,按KOL/教程/行业三档排名,推送群频道并写入Obsidian日报。"
+license: "MIT"
 description: |-
   面向 AI 内容创作者的每日内容采集与排名 Skill。按"X 主页 feed → 白名单账号 → 关键词"
   顺序采集 AI 领域内容,执行浏览器标签页上限管控(最多 7 个并发),按 KOL TOP3(近 6h)、
@@ -18,8 +18,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Creator Alpha Feed 创作者 AI 日报
 
 ## 概述

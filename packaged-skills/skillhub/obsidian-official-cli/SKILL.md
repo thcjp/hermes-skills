@@ -1,19 +1,19 @@
 ---
-slug: obsidian-official-cli
-name: obsidian-official-cli
+slug: "obsidian-official-cli"
+name: "obsidian-official-cli"
 version: "1.0.0"
-displayName: Obsidian Official Cl
-summary: This skill matches its Obsidian-management purpose, but it gives an agent
-  broad power to change, ...
-license: MIT
+displayName: "Obsidian Official Cl"
+summary: "This skill matches its Obsidian-management purpose, but it gives an agent"
+license: "MIT"
 description: |-
   This skill matches its Obsidian-management purpose, but it gives an
   agent broad power to change, 。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Obsidian Official Cl
 

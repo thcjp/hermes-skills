@@ -1,19 +1,19 @@
 ---
-slug: tardis
-name: tardis
+slug: "tardis"
+name: "tardis"
 version: "1.2.0"
-displayName: TARDIS
-summary: The core time tracker appears legitimate, but the package also includes broad
-  secret loading, pub...
-license: MIT
+displayName: "TARDIS"
+summary: "The core time tracker appears legitimate, but the package also includes broad"
+license: "MIT"
 description: |-
   The core time tracker appears legitimate, but the package also includes
   broad secret loading, pub。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # TARDIS
 

@@ -1,10 +1,10 @@
 ---
-slug: docker-essentials
-name: docker-essentials
+slug: "docker-essentials"
+name: "docker-essentials"
 version: "1.0.0"
-displayName: Docker核心操作指南
-summary: 涵盖容器生命周期、镜像管理、Compose、网络、数据卷、系统管理等Docker核心操作。
-license: Proprietary
+displayName: "Docker核心操作指南"
+summary: "涵盖容器生命周期、镜像管理、Compose、网络、数据卷、系统管理等Docker核心操作。"
+license: "Proprietary"
 description: |-
   Docker核心操作指南，覆盖容器生命周期的完整管理流程。
   包含容器调试、镜像构建与管理、Docker Compose多容器编排。
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 系统运维
 ---
-
 # Docker核心操作指南
 
 涵盖容器生命周期、镜像管理、Compose、网络、数据卷、系统管理等Docker核心操作。

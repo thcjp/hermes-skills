@@ -1,11 +1,11 @@
 ---
-slug: dingtalk-calendar-tool-pro
-name: dingtalk-calendar-tool-pro
+slug: "dingtalk-calendar-tool-pro"
+name: "dingtalk-calendar-tool-pro"
 version: "1.0.0"
-displayName: 钉钉日历专业版
-summary: 企业级钉钉日历管理,支持批量日程操作、组织架构集成与会议资源优化
-license: Proprietary
-edition: pro
+displayName: "钉钉日历专业版"
+summary: "企业级钉钉日历管理,支持批量日程操作、组织架构集成与会议资源优化"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 日程管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: 钉钉, 日历, 日程, mcporter, 会议室, 闲忙查询, 会议预订
 tags:
-- 钉钉
-- 日历
-- 会议室
-- 日程
+  - 钉钉
+  - 日历
+  - 会议室
+  - 日程
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 钉钉日历专业版
 
 ## 概述

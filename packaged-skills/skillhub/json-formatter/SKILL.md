@@ -1,19 +1,19 @@
 ---
-slug: json-formatter
-name: json-formatter
+slug: "json-formatter"
+name: "json-formatter"
 version: "1.0.0"
-displayName: JSON Formatter
-summary: Format, validate, compress JSON data, and extract JSON paths for improved
-  readability and structu...
-license: MIT
+displayName: "JSON Formatter"
+summary: "Format, validate, compress JSON data, and extract JSON paths for improved"
+license: "MIT"
 description: |-
   Format, validate, compress JSON data, and extract JSON paths for improved
   readability and structu。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # JSON Formatter
 

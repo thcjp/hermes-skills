@@ -1,22 +1,22 @@
 ---
-slug: prompt-architect-free
-name: prompt-architect-free
+slug: "prompt-architect-free"
+name: "prompt-architect-free"
 version: "1.0.0"
-displayName: 提示词架构师免费版
-summary: 解决 Prompt 答非所问、任务拆解混乱、Agent Loop 选型盲目的免费提示词工程工具
-license: Proprietary
-edition: free
+displayName: "提示词架构师免费版"
+summary: "解决 Prompt 答非所问、任务拆解混乱、Agent Loop 选型盲目的免费提示词工程工具"
+license: "Proprietary"
+edition: "free"
 description: |-
   提示词架构师免费版是面向 AI Agent 开发者、Prompt 工程师、独立开发者的轻量级 Prompt 工程工具，针对"Prompt 答非所问与幻觉频发、复杂任务拆解颗粒度失控、Agent Loop 模式选型盲目、输出格式不可控"四大高频痛点而设计。它把零散的 Prompt 工程经验沉淀为可复用的结构化模板与决策表，让 Agent 从"能跑"升级到"基本可控"
 tags:
-- 提示词工程
-- 任务拆解
-- 代理设计
-- 输出校验
+  - 提示词工程
+  - 任务拆解
+  - 代理设计
+  - 输出校验
 tools:
   - - read
-- exec
-# 提示词架构师免费版（Prompt Architect Free）
+  - exec
+homepage: "https://skillhub.cn"
 ---
 面向 AI Agent 开发者、Prompt 工程师、独立开发者的轻量级 Prompt 工程工具。把零散的 Prompt 工程经验沉淀为可复用的结构化模板与决策表，让 Agent 从"能跑"升级到"基本可控"。
 

@@ -1,11 +1,11 @@
 ---
-slug: free-web-search-tool-free
-name: free-web-search-tool-free
+slug: "free-web-search-tool-free"
+name: "free-web-search-tool-free"
 version: "1.0.0"
-displayName: 免费网页搜索工具
-summary: 轻量级联网搜索工具，支持 Bing 与 DuckDuckGo 双引擎自动路由，中文环境优化，适合个人日常信息检索。
-license: Proprietary
-edition: free
+displayName: "免费网页搜索工具"
+summary: "轻量级联网搜索工具，支持 Bing 与 DuckDuckGo 双引擎自动路由，中文环境优化，适合个人日常信息检索。"
+license: "Proprietary"
+edition: "free"
 description: |-
   轻量级联网搜索工具，支持 Bing 与 DuckDuckGo 双引擎自动路由，中文环境优化，适合个人日常信息检索。核心能力:
   - 基于 Playwright 的无头浏览器搜索，稳定可靠
@@ -22,13 +22,14 @@ description: |-
   - 免费版聚焦核心搜索能力，适合个人轻量使用
   - 无需注册 API Key...
 tags:
-- 搜索
-- 研究工具
-- 网页抓取
-- 信息检索
+  - 搜索
+  - 研究工具
+  - 网页抓取
+  - 信息检索
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 免费网页搜索工具
 

@@ -1,10 +1,10 @@
 ---
-slug: security-free
-name: security-free
+slug: "security-free"
+name: "security-free"
 version: "1.0.0"
-displayName: GoPlus安全扫描免费版
-summary: 免费版GoPlus安全扫描，支持基础安全扫描与漏洞发现查看。
-license: MIT
+displayName: "GoPlus安全扫描免费版"
+summary: "免费版GoPlus安全扫描，支持基础安全扫描与漏洞发现查看。"
+license: "MIT"
 description: |-
   GoPlus安全扫描免费版，提供基础代码安全检查功能。
   支持一次性安全扫描与漏洞发现详情查看。
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 安全合规
 ---
-
 # GoPlus安全扫描（免费版）
 
 提供基础安全扫描与漏洞发现查看的GoPlus工具。

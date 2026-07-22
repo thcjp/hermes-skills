@@ -1,10 +1,10 @@
 ---
-slug: telegram-messaging
-name: telegram-messaging
+slug: "telegram-messaging"
+name: "telegram-messaging"
 version: "1.0.0"
-displayName: Telegram 消息机器人
-summary: 通过 Telegram Bot API 发送消息、管理聊天、处理文件与自动化机器人工作流。
-license: MIT
+displayName: "Telegram 消息机器人"
+summary: "通过 Telegram Bot API 发送消息、管理聊天、处理文件与自动化机器人工作流。"
+license: "MIT"
 description: |-
   Telegram Bot API 集成 Skill。支持发送文本、图片、文档、位置、投票等多类型消息，
   管理聊天信息与成员、检索聊天历史、转发与编辑消息、生成与撤销邀请链接、
@@ -17,8 +17,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Telegram 消息机器人
 
 通过 Telegram Bot API 实现 Telegram 机器人消息发送、聊天管理、文件处理与自动化工作流。所有调用通过 Bot Token 认证，写操作需用户显式确认后执行。

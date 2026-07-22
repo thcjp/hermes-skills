@@ -1,21 +1,22 @@
 ---
-slug: ad-creative-intel-free
-name: ad-creative-intel-free
+slug: "ad-creative-intel-free"
+name: "ad-creative-intel-free"
 version: "1.0.0"
-displayName: 广告情报免费版
-summary: 解决竞品创意看不见、投放动态摸不透、榜单变化追不到的免费广告情报查询工具
-license: Proprietary
-edition: free
+displayName: "广告情报免费版"
+summary: "解决竞品创意看不见、投放动态摸不透、榜单变化追不到的免费广告情报查询工具"
+license: "Proprietary"
+edition: "free"
 description: |-
   广告情报免费版是面向买量投放、创意策划、市场研究人员的轻量级广告情报查询工具，针对"竞品创意素材分散在多平台难以横向对比、新投放素材发现滞后、应用榜单排名变化无法及时追踪、缺乏统一的数据查询入口"四大痛点而设计。它把多源广告情报数据封装为统一查询接口，让用户在一个会话内完成创意搜索、应用洞察、榜单查询三件事
 tags:
-- 广告情报
-- 创意搜索
-- 竞品分析
-- 应用榜单
+  - 广告情报
+  - 创意搜索
+  - 竞品分析
+  - 应用榜单
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 广告情报免费版（Ad Creative Intel Free）
 

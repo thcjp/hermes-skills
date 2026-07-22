@@ -1,10 +1,10 @@
 ---
-slug: dns-free
-name: dns-free
+slug: "dns-free"
+name: "dns-free"
 version: "1.0.0"
-displayName: DNS配置基础版
-summary: DNS记录配置基础、TTL迁移提示与邮件认证SPF/DMARC入门检查
-license: MIT
+displayName: "DNS配置基础版"
+summary: "DNS记录配置基础、TTL迁移提示与邮件认证SPF/DMARC入门检查"
+license: "MIT"
 description: |-
   DNS配置基础版Skill,覆盖TTL迁移提示、SPF/DMARC入门检查与dig基础诊断。
 
@@ -24,8 +24,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # DNS配置基础版
 
 ## 依赖说明

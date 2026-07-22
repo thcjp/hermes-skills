@@ -1,10 +1,10 @@
 ---
-slug: memory
-name: memory
+slug: "memory"
+name: "memory"
 version: "1.0.0"
-displayName: 记忆管理器
-summary: 无限分类的长期记忆系统，与内置记忆并行扩展，支持索引导航与即时写入
-license: MIT
+displayName: "记忆管理器"
+summary: "无限分类的长期记忆系统，与内置记忆并行扩展，支持索引导航与即时写入"
+license: "MIT"
 description: |-
   记忆管理器是一套面向 AI Agent 的无限分类长期记忆系统，与 Agent 内置记忆并行运行、互不冲突。
   核心能力包括：用户自定义分类存储（项目/人脉/决策/知识/收藏等）、自动索引导航、即时写入机制、
@@ -14,8 +14,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 智能助手
 ---
-
 # 记忆管理器
 
 无限分类的长期记忆系统，与 Agent 内置记忆并行扩展，永不遗忘。

@@ -1,26 +1,26 @@
 ---
-slug: html-toolkit-pro
-name: html-toolkit-pro
+slug: "html-toolkit-pro"
+name: "html-toolkit-pro"
 version: "1.0.0"
-displayName: HTML 工具箱专业版
-summary: 面向团队的全站 HTML 审计、WCAG 合规与组件库治理工具。
-license: Proprietary
-edition: pro
+displayName: "HTML 工具箱专业版"
+summary: "面向团队的全站 HTML 审计、WCAG 合规与组件库治理工具。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队的全站 HTML 审计与 WCAG 合规治理专业工具。核心能力:
   - 全站批量 HTML 审计与回归
   - WCAG 2。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。
 tags:
-- HTML
-- 企业级
-- 可访问性
-- 合规
-- 其他工具
+  - HTML
+  - 企业级
+  - 可访问性
+  - 合规
+  - 其他工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # HTML 工具箱（专业版）
 
 ## 概述

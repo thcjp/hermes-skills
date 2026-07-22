@@ -1,21 +1,22 @@
 ---
-slug: sqlite-lite-manager
-name: sqlite-lite-manager
+slug: "sqlite-lite-manager"
+name: "sqlite-lite-manager"
 version: "1.0.0"
-displayName: 轻量SQLite管理专业版
-summary: 面向AI Agent的轻量SQLite全功能专业版，含连接池监控、自动备份、Schema迁移、DuckDB分析集成与高并发优化。
-license: Proprietary
-edition: pro
+displayName: "轻量SQLite管理专业版"
+summary: "面向AI Agent的轻量SQLite全功能专业版，含连接池监控、自动备份、Schema迁移、DuckDB分析集成与高并发优化。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向AI Agent与专业开发者的轻量级SQLite数据库全功能专业版。在免费版基础上新增连接池监控、自动定时备份、Schema版本迁移、DuckDB分析引擎集成、高并发写入优化、增量备份与断点恢复等高级能力，配套面向运维、数据工程师、Agent架构师的多角色场景指南。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。
 tags:
-- 集成工具
-- 本地存储
-- 数据库
-- 高级特性
+  - 集成工具
+  - 本地存储
+  - 数据库
+  - 高级特性
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 轻量SQLite管理专业版
 

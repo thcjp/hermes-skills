@@ -1,11 +1,11 @@
 ---
-slug: feishu-calendar-tool-pro
-name: feishu-calendar-tool-pro
+slug: "feishu-calendar-tool-pro"
+name: "feishu-calendar-tool-pro"
 version: "1.0.0"
-displayName: 飞书日历专业版
-summary: 企业级飞书日历管理,支持共享日历、多人协作、事件同步与智能调度
-license: Proprietary
-edition: pro
+displayName: "飞书日历专业版"
+summary: "企业级飞书日历管理,支持共享日历、多人协作、事件同步与智能调度"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 日程管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: 飞书, feishu, lark, 日历, 日程, 共享日历, 事件同步
 tags:
-- 飞书
-- Lark
-- 日历
-- 日程
+  - 飞书
+  - Lark
+  - 日历
+  - 日程
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 飞书日历专业版
 
 ## 概述

@@ -1,11 +1,11 @@
 ---
-slug: vpn-toolkit-pro
-name: vpn-toolkit-pro
+slug: "vpn-toolkit-pro"
+name: "vpn-toolkit-pro"
 version: "1.0.0"
-displayName: VPN工具箱(专业版)
-summary: 企业级VPN管理平台,含多VPN负载均衡、监控告警、合规审计与批量部署
-license: Proprietary
-edition: pro
+displayName: "VPN工具箱(专业版)"
+summary: "企业级VPN管理平台,含多VPN负载均衡、监控告警、合规审计与批量部署"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力:
   - 多VPN服务器负载均衡与故障转移
@@ -27,14 +27,15 @@ description: |-
   - 实时监控+告警,确保VPN可用性
   - 合规审计报告,满足行业标准
 tags:
-- 安全
-- 网络安全
-- 企业VPN
-- 合规审计
-- 网络管理
+  - 安全
+  - 网络安全
+  - 企业VPN
+  - 合规审计
+  - 网络管理
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
 # VPN工具箱(专业版)
 ## 概述

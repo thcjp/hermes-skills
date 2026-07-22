@@ -1,11 +1,11 @@
 ---
-slug: browser-cli-tool-pro
-name: browser-cli-tool-pro
+slug: "browser-cli-tool-pro"
+name: "browser-cli-tool-pro"
 version: "1.0.0"
-displayName: 浏览器CLI工具-专业版
-summary: 企业级浏览器自动化CLI,支持批量任务、并发会话、错误重试与监控,面向团队生产场景
-license: Proprietary
-edition: pro
+displayName: "浏览器CLI工具-专业版"
+summary: "企业级浏览器自动化CLI,支持批量任务、并发会话、错误重试与监控,面向团队生产场景"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级浏览器自动化命令行工具,在免费版核心能力之上,提供批量任务编排、
   并发会话管理、错误重试机制、监控告警与团队协作能力。核心能力:
@@ -24,13 +24,14 @@ description: |-
 
   差异化:专业版面向团队与企业,提供批量、并发、重试、监控等高阶能力,并保持与免费版完全兼容
 tags:
-- 研究工具
-- 浏览器自动化
-- 企业级
-- 批量操作
+  - 研究工具
+  - 浏览器自动化
+  - 企业级
+  - 批量操作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 浏览器CLI工具(专业版)
 

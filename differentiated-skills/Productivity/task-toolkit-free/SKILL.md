@@ -1,11 +1,11 @@
 ---
-slug: task-toolkit-free
-name: task-toolkit-free
+slug: "task-toolkit-free"
+name: "task-toolkit-free"
 version: "1.0.0"
-displayName: 任务工具包基础版
-summary: 个人任务与日程管理工具,支持添加、查询、修改与归档任务
-license: Proprietary
-edition: free
+displayName: "任务工具包基础版"
+summary: "个人任务与日程管理工具,支持添加、查询、修改与归档任务"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力: 任务管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
 
@@ -15,13 +15,14 @@ description: |-
 
   适用关键词: task, 任务, 待办, 日程, 优先级, 归档, 清单
 tags:
-- 任务管理
-- 待办
-- 日程
-- 时间管理
+  - 任务管理
+  - 待办
+  - 日程
+  - 时间管理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 任务工具包基础版
 

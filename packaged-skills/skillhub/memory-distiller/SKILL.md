@@ -1,10 +1,10 @@
 ---
-slug: memory-distiller
-name: memory-distiller
+slug: "memory-distiller"
+name: "memory-distiller"
 version: "1.0.0"
-displayName: 记忆蒸馏器
-summary: 智能日志蒸馏系统，分类型差异化压缩，含溯源链与质量评估，4-8倍压缩比零关键事件损失
-license: MIT
+displayName: "记忆蒸馏器"
+summary: "智能日志蒸馏系统，分类型差异化压缩，含溯源链与质量评估，4-8倍压缩比零关键事件损失"
+license: "MIT"
 description: |-
   记忆蒸馏器是面向 AI Agent 日志的智能压缩系统，针对日志膨胀、关键信息丢失、压缩后难回溯、
   不同内容需不同策略四大痛点而设计。核心能力包括：分类型差异化压缩策略（事件/教训/待办/成长四类不同粒度）、
@@ -15,8 +15,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 智能助手
 ---
-
 # 记忆蒸馏器
 
 面向 AI Agent 日志的智能压缩系统，分类型差异化压缩，含溯源链与质量评估。

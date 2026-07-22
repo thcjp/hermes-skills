@@ -1,10 +1,10 @@
 ---
-slug: smart-cache
-name: smart-cache
+slug: "smart-cache"
+name: "smart-cache"
 version: "1.0.0"
-displayName: Smart Cache
-summary: Intelligent caching with LRU/LFU strategies and TTL management
-license: MIT
+displayName: "Smart Cache"
+summary: "Intelligent caching with LRU/LFU strategies and TTL management"
+license: "MIT"
 description: |-
   Intelligent caching with LRU/LFU strategies and TTL management
 
@@ -23,12 +23,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Smart Cache
 

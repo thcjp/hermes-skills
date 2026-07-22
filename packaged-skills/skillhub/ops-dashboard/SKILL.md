@@ -1,21 +1,22 @@
 ---
-slug: ops-dashboard
-name: ops-dashboard
+slug: "ops-dashboard"
+name: "ops-dashboard"
 version: "1.0.0"
-displayName: 运维看板(专业版)
-summary: 全功能实时运维监控看板，支持成本分析、变更操作、告警通知与审计日志
-license: Proprietary
-edition: pro
+displayName: "运维看板(专业版)"
+summary: "全功能实时运维监控看板，支持成本分析、变更操作、告警通知与审计日志"
+license: "Proprietary"
+edition: "pro"
 description: |-
   运维看板专业版是面向团队和企业的完整运维监控方案，在免费版基础上解锁成本分析与用量统计、变更操作与备份管理、告警通知与自动响应、批量会话管理、审计日志与操作追踪、服务商审计集成和系统级运维操作等全部高级能力。核心能力：会话全生命周期管理、Token成本追踪与预算告警、定时任务执行与重试、网关健康监控与自动恢复、批量操作与检查点、变更审计链、敏感数据深度扫描、多环境配置管理、系统级重启控制
 tags:
-- 运维监控
-- 成本分析
-- 变更管理
-- 高级集成
+  - 运维监控
+  - 成本分析
+  - 变更管理
+  - 高级集成
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 运维看板(专业版)
 

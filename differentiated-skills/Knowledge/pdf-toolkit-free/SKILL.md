@@ -1,11 +1,11 @@
 ---
-slug: pdf-toolkit-free
-name: pdf-toolkit-free
+slug: "pdf-toolkit-free"
+name: "pdf-toolkit-free"
 version: "1.0.0"
-displayName: PDF工具包（免费版）
-summary: 综合PDF处理工具集：创建、编辑、转换、合并、拆分、压缩、加密一站式解决。
-license: Proprietary
-edition: free
+displayName: "PDF工具包（免费版）"
+summary: "综合PDF处理工具集：创建、编辑、转换、合并、拆分、压缩、加密一站式解决。"
+license: "Proprietary"
+edition: "free"
 description: |-
   PDF工具包 - （免费版）
 
@@ -17,15 +17,15 @@ description: |-
 
   适用关键词: PDF处理, PDF创建, PDF合并, PDF拆分, PDF压缩, PDF加密, 水印, OCR, 表格提取
 tags:
-- PDF处理
-- PDF工具
-- 文档处理
-- OCR
+  - PDF处理
+  - PDF工具
+  - 文档处理
+  - OCR
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # PDF工具包（免费版）
 
 ## 概述

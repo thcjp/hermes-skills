@@ -1,22 +1,23 @@
 ---
-slug: diagram-gen
-name: diagram-gen
+slug: "diagram-gen"
+name: "diagram-gen"
 version: "1.0.0"
-displayName: 图表生成工具-专业版
-summary: 全格式图表生成引擎，支持Draw.io/Mermaid/Excalidraw，覆盖8种图表类型与批量生成。
-license: Proprietary
-edition: pro
+displayName: "图表生成工具-专业版"
+summary: "全格式图表生成引擎，支持Draw.io/Mermaid/Excalidraw，覆盖8种图表类型与批量生成。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   图表生成工具专业版，面向团队的全格式图表生成与管理平台。核心能力：
   - 三大格式全覆盖：Draw。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
 tags:
-- Creative
-- Diagram
-- Enterprise
-- Architecture
+  - Creative
+  - Diagram
+  - Enterprise
+  - Architecture
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 图表生成工具-专业版
 

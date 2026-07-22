@@ -1,11 +1,11 @@
 ---
-slug: calendar-skill-tool-pro
-name: calendar-skill-tool-pro
+slug: "calendar-skill-tool-pro"
+name: "calendar-skill-tool-pro"
 version: "1.0.0"
-displayName: 日历管理技能专业版
-summary: 企业级日历安全管理系统,支持多配置文件、权限隔离、审计日志与合规策略
-license: Proprietary
-edition: pro
+displayName: "日历管理技能专业版"
+summary: "企业级日历安全管理系统,支持多配置文件、权限隔离、审计日志与合规策略"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 日程管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: calendar, porteden, 日历事件, 日程查询, 会议邀请
 tags:
-- 日历
-- porteden
-- Outlook
-- Google Calendar
+  - 日历
+  - porteden
+  - Outlook
+  - Google Calendar
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 日历管理技能专业版
 
 ## 概述

@@ -1,11 +1,11 @@
 ---
-slug: git-essentials-tool-free
-name: git-essentials-tool-free
+slug: "git-essentials-tool-free"
+name: "git-essentials-tool-free"
 version: "1.0.0"
-displayName: Git基础工具免费版
-summary: 提供Git版本控制核心命令,涵盖初始化、提交、分支、远程同步与历史管理,适合开发者入门。
-license: Proprietary
-edition: free
+displayName: "Git基础工具免费版"
+summary: "提供Git版本控制核心命令,涵盖初始化、提交、分支、远程同步与历史管理,适合开发者入门。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向开发者的Git版本控制基础工具,涵盖仓库初始化、暂存提交、分支管理、远程操作与历史查看。核心能力:
   - 仓库初始化与克隆
@@ -28,12 +28,13 @@ description: |-
 
   适用关键词: Git基础, 版本控制, git init...
 tags:
-- 开发工具
-- Git
-- 版本控制
+  - 开发工具
+  - Git
+  - 版本控制
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Git基础工具 - 免费版
 

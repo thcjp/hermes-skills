@@ -1,10 +1,10 @@
 ---
-slug: t-trading
-name: t-trading
+slug: "t-trading"
+name: "t-trading"
 version: "1.0.0"
-displayName: T Trading
-summary: 基于维加斯通道EMA多层通道与斐波那契回撤，提供A股和加密货币短线交易分析。
-license: MIT
+displayName: "T Trading"
+summary: "基于维加斯通道EMA多层通道与斐波那契回撤，提供A股和加密货币短线交易分析。"
+license: "MIT"
 description: |-
   基于维加斯通道EMA多层通道与斐波那契回撤，提供A股和加密货币短线交易分析。核心能力:
 
@@ -21,12 +21,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Finance
+  - Finance
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # T Trading
 

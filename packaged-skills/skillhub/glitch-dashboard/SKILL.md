@@ -1,20 +1,20 @@
 ---
-slug: glitch-dashboard
-name: glitch-dashboard
+slug: "glitch-dashboard"
+name: "glitch-dashboard"
 version: "2026.2.18"
-displayName: Dashboard
-summary: Unified web dashboard for managing task queues, monitoring system metrics,
-  viewing ZeroTier statu...
-license: MIT
+displayName: "Dashboard"
+summary: "Unified web dashboard for managing task queues, monitoring system metrics,"
+license: "MIT"
 description: |-
   Unified web dashboard for managing task queues, monitoring system metrics,
   viewing ZeroTier statu。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Productivity
-- Operations
+  - Productivity
+  - Operations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Dashboard
 

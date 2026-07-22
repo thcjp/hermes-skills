@@ -1,18 +1,18 @@
 ---
-slug: vue-component-generator
-name: vue-component-generator
+slug: "vue-component-generator"
+name: "vue-component-generator"
 version: "1.0.0"
-displayName: Vue Component Genera
-summary: 生成 Vue 3 组件模板，支持 Composition API、Options API、TypeScript、SFC 单文件组件，一键生成完整
-  Vue 组件代码。
-license: MIT
+displayName: "Vue Component Genera"
+summary: "生成 Vue 3 组件模板，支持 Composition API、Options API、TypeScript、SFC 单文件组件，一键生成完整"
+license: "MIT"
 description: |-
   生成 Vue 3 组件模板，支持 Composition API、Options API、TypeScript、SFC 单文件组件。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
 tags:
-- Development
+  - Development
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Vue Component Genera
 

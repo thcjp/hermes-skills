@@ -1,10 +1,10 @@
-﻿---
-slug: azure-infra-free
-name: azure-infra-free
+---
+slug: "azure-infra-free"
+name: "azure-infra-free"
 version: "2.0.0"
-displayName: Azure Infra Free
-summary: 通过本地 Azure CLI 只读查询 Azure 资源，基础盘点与健康检查。
-license: MIT
+displayName: "Azure Infra Free"
+summary: "通过本地 Azure CLI 只读查询 Azure 资源，基础盘点与健康检查。"
+license: "MIT"
 description: |-
   Azure Infra Free 是 Azure Infra 技能的免费精简版，通过本地 Azure CLI（az 命令）
   提供 Azure 资源的只读查询能力。支持基础的资源清单查询与简单的健康检查，
@@ -29,8 +29,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Azure Infra Free
 
 ## 概述

@@ -1,10 +1,10 @@
 ---
-slug: discord-communities
-name: discord-communities
+slug: "discord-communities"
+name: "discord-communities"
 version: "1.0.0"
-displayName: Discord社区管理
-summary: Discord社区管理助手,覆盖OAuth连接、公会查询、成员权限、应用命令与商业订阅全流程
-license: MIT
+displayName: "Discord社区管理"
+summary: "Discord社区管理助手,覆盖OAuth连接、公会查询、成员权限、应用命令与商业订阅全流程"
+license: "MIT"
 description: |-
   Discord 社区管理专业版 —— 基于 ClawLink OAuth 集成的一站式 Discord 社区运营助手。
   覆盖用户身份、公会与小组件、应用命令权限、商业权益(SKU/订阅/消耗)、
@@ -27,15 +27,15 @@ description: |-
 
   不适用于:使用 Bot Token 调用需要 Bearer Token 的端点、需发送消息或管理频道的场景。
 tags:
-- Communication
-- 社区运营
-- 开发者工具
-- OAuth集成
+  - Communication
+  - 社区运营
+  - 开发者工具
+  - OAuth集成
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Discord 社区管理
 
 基于 ClawLink OAuth 的 Discord 社区管理助手,围绕用户身份、公会、应用命令权限、商业权益与角色连接五大领域提供只读与变更操作。所有变更操作遵循风险分级策略,`confirm` 与 `high_impact` 操作需显式确认。

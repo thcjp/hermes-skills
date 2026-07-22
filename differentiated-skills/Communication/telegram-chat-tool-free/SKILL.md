@@ -1,11 +1,11 @@
 ---
-slug: telegram-chat-tool-free
-name: telegram-chat-tool-free
+slug: "telegram-chat-tool-free"
+name: "telegram-chat-tool-free"
 version: "1.0.0"
-displayName: 电报聊天工具免费版
-summary: 轻量级Telegram Bot配置与跨实例聊天工具,支持用户艾特、消息收发与基础群组管理。
-license: Proprietary
-edition: free
+displayName: "电报聊天工具免费版"
+summary: "轻量级Telegram Bot配置与跨实例聊天工具,支持用户艾特、消息收发与基础群组管理。"
+license: "Proprietary"
+edition: "free"
 description: |-
   电报聊天工具免费版,为个人用户提供 Telegram Bot 创建、配置与跨实例聊天能力,支持用户艾特、消息收发与基础群组管理。核心能力:
   - Telegram Bot 快速创建与配置
@@ -21,14 +21,15 @@ description: |-
 
   差异化:免费版聚焦个人用户与小团队的 Telegram 聊天需求,提供从零开始的 Bot 配置指南...
 tags:
-- 沟通协作
-- 即时通讯
-- Telegram
-- 机器人
-- 个人效率
+  - 沟通协作
+  - 即时通讯
+  - Telegram
+  - 机器人
+  - 个人效率
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 电报聊天工具 - 免费版
 

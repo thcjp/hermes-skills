@@ -1,11 +1,11 @@
 ---
-slug: mermaid-diagram-tool-pro
-name: mermaid-diagram-tool-pro
+slug: "mermaid-diagram-tool-pro"
+name: "mermaid-diagram-tool-pro"
 version: "1.0.0"
-displayName: Mermaid图表工具(专业版)
-summary: 团队级Mermaid图表套件,含全类型、自定义主题、批量生成与CI语法校验。
-license: Proprietary
-edition: pro
+displayName: "Mermaid图表工具(专业版)"
+summary: "团队级Mermaid图表套件,含全类型、自定义主题、批量生成与CI语法校验。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Mermaid图表工具(专业版)面向团队与企业,提供全类型Mermaid图表生成、复杂多节点图、自定义主题样式、从文档批量生成、CI语法校验与文档自动嵌入能力。核心能力:
   - 全图表类型:含C4架构图、Git图、类图、需求图等进阶类型
@@ -21,17 +21,17 @@ description: |-
   - PRD到图表的批量转换
   ...
 tags:
-- Development
-- 文档
-- Mermaid
-- 企业级
-- 可视化
-- 架构
+  - Development
+  - 文档
+  - Mermaid
+  - 企业级
+  - 可视化
+  - 架构
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Mermaid图表工具(专业版)
 
 ## 概述

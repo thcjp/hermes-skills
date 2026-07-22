@@ -1,10 +1,10 @@
 ---
-slug: email-skill-free
-name: email-skill-free
+slug: "email-skill-free"
+name: "email-skill-free"
 version: "1.0.0"
-displayName: Email Free
-summary: SMTP基础邮件发送,支持单供应商与纯文本附件投递
-license: MIT
+displayName: "Email Free"
+summary: "SMTP基础邮件发送,支持单供应商与纯文本附件投递"
+license: "MIT"
 description: |-
   基于SMTP协议的轻量邮件发送Skill,提供纯文本正文、单附件投递与
   测试邮件校验能力,支持Gmail与Outlook主流服务商。适用于个人开发者
@@ -15,8 +15,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Email Free
 
 基于SMTP协议的轻量邮件发送Skill,覆盖"配置-校验-投递"基础发信链路。

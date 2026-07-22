@@ -1,11 +1,11 @@
 ---
-slug: skill-writer-tool-pro
-name: skill-writer-tool-pro
+slug: "skill-writer-tool-pro"
+name: "skill-writer-tool-pro"
 version: "1.0.0"
-displayName: Skill编写工具专业版
-summary: 模板库、多人协作、技能质量评估与发布管理，适合技能团队与企业技能生态治理。
-license: Proprietary
-edition: pro
+displayName: "Skill编写工具专业版"
+summary: "模板库、多人协作、技能质量评估与发布管理，适合技能团队与企业技能生态治理。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Skill编写工具专业版，面向技能团队与企业的高阶技能创建与治理平台。核心能力:
   - 技能模板库与分类复用
@@ -21,15 +21,15 @@ description: |-
 
   差异化: 专业版在免费版核心创建能力之上扩展模板与协作，新增质量评估、发布管理、生态搜索等企业级能力，并与免费版结构规范兼容
 tags:
-- Skill编写
-- 技能治理
-- 团队协作
-- 专业版
+  - Skill编写
+  - 技能治理
+  - 团队协作
+  - 专业版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Skill编写工具（专业版）
 
 ## 概述

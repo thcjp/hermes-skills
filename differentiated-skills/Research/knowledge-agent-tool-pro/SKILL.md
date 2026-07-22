@@ -1,11 +1,11 @@
 ---
-slug: knowledge-agent-tool-pro
-name: knowledge-agent-tool-pro
+slug: "knowledge-agent-tool-pro"
+name: "knowledge-agent-tool-pro"
 version: "1.0.0"
-displayName: 知识管理工具-专业版
-summary: 企业级知识管理,支持团队共享、语义检索、自动摘要、知识图谱与权限管理
-license: Proprietary
-edition: pro
+displayName: "知识管理工具-专业版"
+summary: "企业级知识管理,支持团队共享、语义检索、自动摘要、知识图谱与权限管理"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级知识管理工具,在免费版核心能力之上,提供团队共享知识库、语义检索、
   自动摘要生成、知识图谱构建、权限管理与监控统计能力。核心能力:
@@ -24,13 +24,14 @@ description: |-
 
   差异化:专业版面向团队与企业,提供共享、语义检索、图谱、权限等高阶能力,并保持与免费版完全兼容
 tags:
-- 研究工具
-- 知识管理
-- 企业级
-- 团队协作
+  - 研究工具
+  - 知识管理
+  - 企业级
+  - 团队协作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 知识管理工具(专业版)
 

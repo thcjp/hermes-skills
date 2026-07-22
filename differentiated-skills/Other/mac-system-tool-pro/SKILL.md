@@ -1,11 +1,11 @@
 ---
-slug: mac-system-tool-pro
-name: mac-system-tool-pro
+slug: "mac-system-tool-pro"
+name: "mac-system-tool-pro"
 version: "1.0.0"
-displayName: Mac 系统工具专业版
-summary: 面向团队的多设备远程管理、自动化策略与合规审计工具。
-license: Proprietary
-edition: pro
+displayName: "Mac 系统工具专业版"
+summary: "面向团队的多设备远程管理、自动化策略与合规审计工具。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队的多 Mac 设备远程管理与自动化策略专业工具。
 
@@ -24,14 +24,15 @@ description: |-
 
   适用关键词: 多设备管理, 远程执行, 自动化策略, 合规审计, 资产清单, mac pro, fleet, compliance
 tags:
-- macOS
-- 企业级
-- 设备管理
-- 合规
-- 其他工具
+  - macOS
+  - 企业级
+  - 设备管理
+  - 合规
+  - 其他工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Mac 系统工具（专业版）
 

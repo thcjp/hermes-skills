@@ -1,11 +1,11 @@
 ---
-slug: podcast-toolkit
-name: podcast-toolkit
+slug: "podcast-toolkit"
+name: "podcast-toolkit"
 version: "1.0.0"
-displayName: 播客创作工具包专业版
-summary: 企业级播客创作与运营工具包,支持多节目管理、增长分析、变现策略与AI生成,适配团队协作。
-license: Proprietary
-edition: pro
+displayName: "播客创作工具包专业版"
+summary: "企业级播客创作与运营工具包,支持多节目管理、增长分析、变现策略与AI生成,适配团队协作。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队与专业创作者的播客创作与运营工具包(专业版)。核心能力:
   - 涵盖免费版全部能力(选题、脚本、节目笔记、检查清单)
@@ -27,16 +27,17 @@ description: |-
   差异化:
   - 专业...
 tags:
-- 创意设计
-- 播客
-- 内容创作
-- 企业级
-- 增长分析
-- 变现策略
-- AI生成
+  - 创意设计
+  - 播客
+  - 内容创作
+  - 企业级
+  - 增长分析
+  - 变现策略
+  - AI生成
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 播客创作工具包专业版
 

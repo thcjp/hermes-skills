@@ -1,25 +1,26 @@
 ---
-slug: telegram-agent-comm
-name: telegram-agent-comm
+slug: "telegram-agent-comm"
+name: "telegram-agent-comm"
 version: "1.0.0"
-displayName: 电报通信助手专业版
-summary: 多角色 Agent 团队 Telegram 通信中枢，支持账号映射、批量调度、审计日志与优先级路由。
-license: Proprietary
-edition: pro
+displayName: "电报通信助手专业版"
+summary: "多角色 Agent 团队 Telegram 通信中枢，支持账号映射、批量调度、审计日志与优先级路由。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队与企业的多 Agent Telegram 通信管理规范。
   核心能力: 多角色账号映射、批量消息调度、优先级路由、审计日志、模板库、媒体发送。
   适用场景: 多 Agent 协作汇报、企业通知分发、定时批量推送、跨角色工作流编排。
   差异化: 专业版在免费版基础上扩展多账号体系与调度能力，兼容免费版配置，支持团队级通信治理。
 tags:
-- 通信
-- 电报
-- 团队协作
-- 企业通知
-- 自动化
+  - 通信
+  - 电报
+  - 团队协作
+  - 企业通知
+  - 自动化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 电报通信助手专业版
 

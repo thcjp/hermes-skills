@@ -1,22 +1,23 @@
 ---
-slug: financial-literacy-paid
-name: financial-literacy-paid
+slug: "financial-literacy-paid"
+name: "financial-literacy-paid"
 version: "1.0.0"
-displayName: 金融素养专业版
-summary: 专业金融教育与理财规划系统，支持个性化方案、认证培训与企业内训。
-license: Proprietary
-edition: pro
+displayName: "金融素养专业版"
+summary: "专业金融教育与理财规划系统，支持个性化方案、认证培训与企业内训。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向专业用户与机构的全栈金融素养教育系统。支持个性化理财方案生成、
   金融从业认证培训课程、企业内训定制与学习进度追踪。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
 tags:
-- Finance
-- 金融教育
-- 理财规划
-- 企业级
+  - Finance
+  - 金融教育
+  - 理财规划
+  - 企业级
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 金融素养专业版
 

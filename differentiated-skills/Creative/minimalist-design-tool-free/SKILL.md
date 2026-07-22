@@ -1,25 +1,25 @@
 ---
-slug: minimalist-design-tool-free
-name: minimalist-design-tool-free
+slug: "minimalist-design-tool-free"
+name: "minimalist-design-tool-free"
 version: "1.0.0"
-displayName: 极简设计系统免费版
-summary: 极简现代主义设计系统集成指南,提供设计令牌、组件规范与响应式策略,适合个人前端项目。
-license: Proprietary
-edition: free
+displayName: "极简设计系统免费版"
+summary: "极简现代主义设计系统集成指南,提供设计令牌、组件规范与响应式策略,适合个人前端项目。"
+license: "Proprietary"
+edition: "free"
 description: |-
   极简设计系统免费版帮助个人开发者将精密设计系统无缝集成到现有代码库。提供设计令牌(色彩/字体/间距/阴影)、组件规范、响应式策略与可访问性指南,
   确保视觉一致性与技术架构的前瞻性。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 设计系统
-- 前端开发
-- 极简设计
-- Tailwind
-- UI设计
+  - 设计系统
+  - 前端开发
+  - 极简设计
+  - Tailwind
+  - UI设计
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 极简设计系统免费版
 
 ## 概述

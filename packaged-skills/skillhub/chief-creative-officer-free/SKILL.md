@@ -1,10 +1,10 @@
 ---
-slug: chief-creative-officer-free
-name: chief-creative-officer-free
+slug: "chief-creative-officer-free"
+name: "chief-creative-officer-free"
 version: "1.0.0"
-displayName: 首席创意官助手-免费版
-summary: 首席创意官基础AI助手，提供创意方向规划、视觉风格指导与营销创意概念生成，辅助个人创作者与小型团队完成创意策划。
-license: MIT
+displayName: "首席创意官助手-免费版"
+summary: "首席创意官基础AI助手，提供创意方向规划、视觉风格指导与营销创意概念生成，辅助个人创作者与小型团队完成创意策划。"
+license: "MIT"
 description: |-
   面向创意决策者与内容创作者的基础AI辅助工具，覆盖创意策划的核心环节。
 
@@ -22,8 +22,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Chief Creative Officer Free
 
 首席创意官基础AI助手。提供创意方向规划、视觉风格指导与营销创意概念生成，为个人创作者与小型团队提供创意策划支持。

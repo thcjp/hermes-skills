@@ -1,11 +1,11 @@
 ---
-slug: code-dev-v1
-name: code-dev-v1
+slug: "code-dev-v1"
+name: "code-dev-v1"
 version: "1.0.0"
-displayName: 结构化开发工具专业版
-summary: 企业级版本化开发,支持多任务编排、发布管理、团队规范与交付审计
-license: Proprietary
-edition: pro
+displayName: "结构化开发工具专业版"
+summary: "企业级版本化开发,支持多任务编排、发布管理、团队规范与交付审计"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队与企业的高级结构化开发工具,在免费版基础上扩展多任务编排、发布管理、团队规范等能力。核心能力:
   - 多任务并行编排与版本化检查点
@@ -24,16 +24,16 @@ description: |-
   - 支持版本化发布与变更日志
   - 提供团队规范与审计追踪
   - 优先技术支持与更新通道
-
 tags:
-- 开发工具
-- 结构化开发
-- 企业级
-- 版本管理
-- 发布流程
+  - 开发工具
+  - 结构化开发
+  - 企业级
+  - 版本管理
+  - 发布流程
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 结构化开发工具专业版
 

@@ -1,23 +1,23 @@
 ---
-slug: china-news-tool-pro
-name: china-news-tool-pro
+slug: "china-news-tool-pro"
+name: "china-news-tool-pro"
 version: "1.0.0"
-displayName: 中国新闻聚合(专业版)
-summary: 中国新闻聚合专业版，含浏览器模式、AI摘要、定时推送、情感分析与多渠道分发。
-license: Proprietary
-edition: pro
+displayName: "中国新闻聚合(专业版)"
+summary: "中国新闻聚合专业版，含浏览器模式、AI摘要、定时推送、情感分析与多渠道分发。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   中国新闻聚合助手专业版是面向企业级场景的完整新闻聚合与分发工具。在免费版RSS订阅能力之上，新增浏览器自动化模式、AI智能摘要、定时自动执行、多渠道推送、AI辅助分类、新闻情感分析、历史新闻检索七大高级能力。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- 中国新闻
-- 企业级
-- AI摘要
-- 浏览器模式
-- 多渠道推送
+  - 中国新闻
+  - 企业级
+  - AI摘要
+  - 浏览器模式
+  - 多渠道推送
 tools:
   - - read
-- exec
-# 中国新闻聚合助手（专业版）
+  - exec
+homepage: "https://skillhub.cn"
 ---
 > **浏览器模式+AI摘要+定时推送+情感分析。企业级新闻聚合全功能覆盖。**
 

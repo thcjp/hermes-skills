@@ -1,20 +1,19 @@
 ---
-slug: shadcn-ui
-name: shadcn-ui
+slug: "shadcn-ui"
+name: "shadcn-ui"
 version: "1.0.0"
-displayName: Shadcn Ui
-summary: Use when building UI with shadcn/ui components, Tailwind CSS layouts, form
-  patterns with react-ho...
-license: MIT
+displayName: "Shadcn Ui"
+summary: "Use when building UI with shadcn/ui components, Tailwind CSS layouts, form"
+license: "MIT"
 description: |-
   Use when building UI with shadcn/ui components, Tailwind CSS layouts,
   form patterns with react-ho。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
-# Shadcn Ui
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Shadcn Ui
 

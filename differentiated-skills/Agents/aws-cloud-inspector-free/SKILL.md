@@ -1,23 +1,23 @@
 ---
-slug: aws-cloud-inspector-free
-name: aws-cloud-inspector-free
+slug: "aws-cloud-inspector-free"
+name: "aws-cloud-inspector-free"
 version: "1.0.0"
-displayName: AWS云巡检免费版
-summary: 基于AWS CLI的只读云基础设施查询助手，免费提供资源清点、健康检查与基础安全核查能力，适合个人开发者日常巡检。
-license: Proprietary
+displayName: "AWS云巡检免费版"
+summary: "基于AWS CLI的只读云基础设施查询助手，免费提供资源清点、健康检查与基础安全核查能力，适合个人开发者日常巡检。"
+license: "Proprietary"
 description: |-
   AWS云巡检免费版（aws-cloud-inspector-free）面向独立开发者与运维新人，基于本地AWS CLI提供只读的云资源查询与基础巡检能力。它默认只读，所有变更类操作必须用户显式确认才执行，确保零误操作风险。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-- AWS巡检
-- 只读查询
-- 云基础设施
-- 免费工具
+  - AWS巡检
+  - 只读查询
+  - 云基础设施
+  - 免费工具
 tools:
   - - read
-- exec
-edition: free
+  - exec
+edition: "free"
+homepage: "https://skillhub.cn"
 ---
-
 # AWS云巡检免费版（aws-cloud-inspector-free）
 
 本Skill基于本地AWS CLI提供只读云基础设施查询能力。所有操作默认只读，任何变更/破坏性操作必须用户显式确认后才执行。

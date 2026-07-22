@@ -1,10 +1,10 @@
 ---
-slug: ws-calendar
-name: ws-calendar
+slug: "ws-calendar"
+name: "ws-calendar"
 version: "1.0.0"
-displayName: Calendar
-summary: 日程管理。创建日程、设置提醒、查看安排。
-license: MIT-0
+displayName: "Calendar"
+summary: "日程管理。创建日程、设置提醒、查看安排。"
+license: "MIT-0"
 description: |-
   日程管理。创建日程、设置提醒、查看安排。
 
@@ -23,13 +23,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
-
 tags:
-- Productivity
+  - Productivity
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Calendar
 

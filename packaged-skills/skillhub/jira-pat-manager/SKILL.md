@@ -1,19 +1,21 @@
 ---
-name: （根据实际场景填充）
-slug: jira-pat-manager
-displayName: Jira PAT管理器
+name: "（根据实际场景填充）"
+slug: "jira-pat-manager"
+displayName: "Jira PAT管理器"
 version: "1.0.0"
-summary: 管理Jira个人访问令牌(PAT),支持创建、撤销和权限配置
+summary: "管理Jira个人访问令牌(PAT),支持创建、撤销和权限配置"
 description: |-
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据。
   Use when 用户说"（根据实际场景填充）"、（根据实际场景填充）时使用。
   不适用于需要人工判断的复杂场景。
-license: Proprietary
+license: "Proprietary"
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # （根据实际场景填充）
 
 ## 核心能力

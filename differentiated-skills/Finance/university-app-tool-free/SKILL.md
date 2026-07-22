@@ -1,23 +1,23 @@
 ---
-slug: university-app-tool-free
-name: university-app-tool-free
+slug: "university-app-tool-free"
+name: "university-app-tool-free"
 version: "1.0.0"
-displayName: 命理咨询入门工具
-summary: 传统命理八字分析工具，提供基础命盘排盘与性格特质解读。
-license: Proprietary
-edition: free
+displayName: "命理咨询入门工具"
+summary: "传统命理八字分析工具，提供基础命盘排盘与性格特质解读。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人用户的传统命理咨询工具。基于八字命理学说，提供基础命盘
   排盘、五行分析、性格特质解读与流年运势概览。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
-- Finance
-- 命理文化
-- 传统文化
+  - Finance
+  - 命理文化
+  - 传统文化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 命理咨询入门工具（免费版）
 
 ## 概述

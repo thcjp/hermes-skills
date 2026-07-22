@@ -1,21 +1,21 @@
 ---
-slug: cron-scheduler-pro
-name: cron-scheduler-pro
+slug: "cron-scheduler-pro"
+name: "cron-scheduler-pro"
 version: "1.0.0"
-displayName: 定时调度专家
-summary: 本地优先的周期任务引擎，时区锁定、一次性任务自清理、并发安全，告别漏跑与堆积。
-license: Proprietary
+displayName: "定时调度专家"
+summary: "本地优先的周期任务引擎，时区锁定、一次性任务自清理、并发安全，告别漏跑与堆积。"
+license: "Proprietary"
 description: |-
   定时调度专家为 AI Agent 提供本地优先、无云依赖的周期任务调度能力。它把"每隔X做Y"的意图固化为可信任的执行契约，支持每日/每周/每月/自定义间隔四种调度类型，并内置时区锁定、一次性任务自动清理、并发写安全、下次运行预览与失败重试。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- 自动化
-- 定时调度
-- 任务管理
+  - 自动化
+  - 定时调度
+  - 任务管理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 定时调度专家
 
 把"每两小时检查一次收件箱"这种模糊意图，变成可信任、可审计、可预览的执行契约。本技能解决五个核心痛点：**时区漂移**（"9点"到底是哪个时区）、**任务漏跑**（调度器没跑或跑了不知道）、**一次性任务堆积**（提醒完了任务不清理）、**并发死锁**（add 后立刻 update 导致锁冲突）、**失败无感知**（任务挂了没人知道）。

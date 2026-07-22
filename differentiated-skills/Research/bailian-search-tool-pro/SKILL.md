@@ -1,11 +1,11 @@
 ---
-slug: bailian-search-tool-pro
-name: bailian-search-tool-pro
+slug: "bailian-search-tool-pro"
+name: "bailian-search-tool-pro"
 version: "1.0.0"
-displayName: 百炼搜索工具-专业版
-summary: 企业级AI搜索,支持批量查询、结果缓存、并发搜索与搜索分析,面向团队生产场景
-license: Proprietary
-edition: pro
+displayName: "百炼搜索工具-专业版"
+summary: "企业级AI搜索,支持批量查询、结果缓存、并发搜索与搜索分析,面向团队生产场景"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级 AI 优化网页搜索工具,在免费版核心能力之上,提供批量查询、结果缓存、
   并发搜索、搜索历史、结果去重与搜索分析能力。核心能力:
@@ -24,13 +24,14 @@ description: |-
 
   差异化:专业版面向团队与企业,提供批量、并发、缓存、分析等高阶能力,并保持与免费版完全兼容
 tags:
-- 研究工具
-- 网页搜索
-- 企业级
-- 批量操作
+  - 研究工具
+  - 网页搜索
+  - 企业级
+  - 批量操作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 百炼搜索工具(专业版)
 

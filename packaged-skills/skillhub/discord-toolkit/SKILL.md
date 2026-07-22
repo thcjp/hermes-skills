@@ -1,11 +1,11 @@
 ---
-slug: discord-toolkit
-name: discord-toolkit
+slug: "discord-toolkit"
+name: "discord-toolkit"
 version: "1.0.0"
-displayName: Discord工具箱专业版
-summary: 企业级 Discord 管理工具,支持批量操作、审核管理、角色权限与自定义表情贴纸。
-license: Proprietary
-edition: pro
+displayName: "Discord工具箱专业版"
+summary: "企业级 Discord 管理工具,支持批量操作、审核管理、角色权限与自定义表情贴纸。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向企业运营与社区管理团队的 Discord 全功能管理工具。核心能力:
   - 批量消息发送、清理与定时发布
@@ -21,14 +21,15 @@ description: |-
 
   差异化: Pro 版在免费版基础上解锁审核管理、角色操作、批量处理与自定义资源上传;与免费版操作格式完全兼容
 tags:
-- Discord
-- 企业管理
-- Communication
-- 社区审核
-- 批量操作
+  - Discord
+  - 企业管理
+  - Communication
+  - 社区审核
+  - 批量操作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Discord工具箱专业版
 

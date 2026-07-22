@@ -1,21 +1,21 @@
 ---
-slug: office-productivity-hub
-name: office-productivity-hub
+slug: "office-productivity-hub"
+name: "office-productivity-hub"
 version: "1.0.0"
-displayName: 办公效率中枢
-summary: 解决批量炸裂、格式丢失、PII泄露、模板难复用痛点，让文档/数据/邮件/报表一键稳妥产出
-license: Proprietary
+displayName: "办公效率中枢"
+summary: "解决批量炸裂、格式丢失、PII泄露、模板难复用痛点，让文档/数据/邮件/报表一键稳妥产出"
+license: "Proprietary"
 description: |-
   常见办公流程自动化中枢，覆盖文档处理、数据整理、邮件管理、日程协调、报表生成与工作流编排。聚焦批量操作容错、格式保真、PII 脱敏、模板复用四大痛点，让繁琐办公一键稳妥完成。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 自动化
-- 办公效率
-- 文档处理
+  - 自动化
+  - 办公效率
+  - 文档处理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 办公效率中枢
 
 把繁琐的日常办公工作自动化。覆盖文档、数据、邮件、日程、报表五大场景，每个场景都内建失败隔离、格式保真与合规检查。

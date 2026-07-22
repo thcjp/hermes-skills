@@ -1,23 +1,23 @@
 ---
-slug: feed-to-md-tool-pro
-name: feed-to-md-tool-pro
+slug: "feed-to-md-tool-pro"
+name: "feed-to-md-tool-pro"
 version: "1.0.0"
-displayName: RSS转MD(专业版)
-summary: 企业级RSS转Markdown专业版，含批量转换、自定义模板、AI内容增强、定时归档。
-license: Proprietary
-edition: pro
+displayName: "RSS转MD(专业版)"
+summary: "企业级RSS转Markdown专业版，含批量转换、自定义模板、AI内容增强、定时归档。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   RSS转Markdown助手专业版是面向企业级场景的完整RSS内容转换与归档工具。在免费版单源转换能力之上，新增批量转换、自定义模板、AI内容增强、定时归档、多格式输出、图片下载、全文获取、去重处理八大高级能力。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- RSS转换
-- 企业级
-- 批量转换
-- AI增强
-- 定时归档
+  - RSS转换
+  - 企业级
+  - 批量转换
+  - AI增强
+  - 定时归档
 tools:
   - - read
-- exec
-# RSS转Markdown助手（专业版）
+  - exec
+homepage: "https://skillhub.cn"
 ---
 > **批量转换+自定义模板+AI增强+定时归档。企业级内容归档全功能覆盖。**
 

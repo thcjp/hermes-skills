@@ -1,11 +1,11 @@
 ---
-slug: frontend-design-ai-provider-free
-name: frontend-design-ai-provider-free
+slug: "frontend-design-ai-provider-free"
+name: "frontend-design-ai-provider-free"
 version: "1.0.0"
-displayName: 前端设计-免费版
-summary: 创建高质量前端界面,避免AI审美同质化,支持组件/页面/应用设计,适合个人开发者。
-license: Proprietary
-edition: free
+displayName: "前端设计-免费版"
+summary: "创建高质量前端界面,避免AI审美同质化,支持组件/页面/应用设计,适合个人开发者。"
+license: "Proprietary"
+edition: "free"
 description: |-
   前端设计免费版,面向个人开发者的生产级前端界面设计工具。核心能力:
   - 创建独特、生产级的前端界面,避免通用AI审美
@@ -20,12 +20,13 @@ description: |-
 
   差异化:免费版聚焦核心设计思维与基础美学指导,帮助个人开发者摆脱AI审美同质化,创建有辨识度的前端界面
 tags:
-- Creative
-- 前端设计
-- UI设计
+  - Creative
+  - 前端设计
+  - UI设计
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 前端设计工具 - 免费版
 

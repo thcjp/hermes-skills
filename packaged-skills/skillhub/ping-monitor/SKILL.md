@@ -1,10 +1,10 @@
 ---
-slug: ping-monitor
-name: ping-monitor
+slug: "ping-monitor"
+name: "ping-monitor"
 version: "1.0.0"
-displayName: Ping Monitor
-summary: ICMP health check for hosts, phones, and daemons
-license: MIT
+displayName: "Ping Monitor"
+summary: "ICMP health check for hosts, phones, and daemons"
+license: "MIT"
 description: |-
   ICMP health check for hosts, phones, and daemons
 
@@ -23,12 +23,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Lifestyle
+  - Lifestyle
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Ping Monitor
 

@@ -1,11 +1,11 @@
 ---
-slug: internet-search-pro-tool-free
-name: internet-search-pro-tool-free
+slug: "internet-search-pro-tool-free"
+name: "internet-search-pro-tool-free"
 version: "1.0.0"
-displayName: 联网搜索助手
-summary: 智能联网搜索助手，帮你检索最新信息、新闻、实时数据，自动提取关键词并生成结构化摘要，适合个人日常信息查询。
-license: Proprietary
-edition: free
+displayName: "联网搜索助手"
+summary: "智能联网搜索助手，帮你检索最新信息、新闻、实时数据，自动提取关键词并生成结构化摘要，适合个人日常信息查询。"
+license: "Proprietary"
+edition: "free"
 description: |-
   智能联网搜索助手，帮你检索最新信息、新闻、实时数据，自动提取关键词并生成结构化摘要，适合个人日常信息查询。核心能力:
   - 从用户问题中自动提取搜索关键词
@@ -23,13 +23,14 @@ description: |-
   - 自动关键词提取，无需手动优化
   - 结构化输出...
 tags:
-- 搜索
-- 信息检索
-- 智能助手
-- 新闻查询
+  - 搜索
+  - 信息检索
+  - 智能助手
+  - 新闻查询
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 联网搜索助手（免费版）
 

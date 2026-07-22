@@ -1,10 +1,10 @@
 ---
-slug: moltbook-filter-free
-name: moltbook-filter-free
+slug: "moltbook-filter-free"
+name: "moltbook-filter-free"
 version: "1.0.0"
-displayName: 社区垃圾过滤(免费版)
-summary: 客户端过滤社区平台代币铸造垃圾,96%去除率,支持自定义模式与黑名单。(免费版)
-license: MIT
+displayName: "社区垃圾过滤(免费版)"
+summary: "客户端过滤社区平台代币铸造垃圾,96%去除率,支持自定义模式与黑名单。(免费版)"
+license: "MIT"
 description: |-
   社区平台客户端垃圾内容过滤器,识别并移除数字资产协议铸造机器人的
   批量垃圾帖。覆盖内容模式检测、作者模式检测、子板块扫描、JSON feed
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 社区垃圾过滤(免费版)
 
 社区平台客户端垃圾内容过滤器,识别并移除数字资产协议铸造机器人的批量垃圾帖,将信噪比从4%提升至接近100%。

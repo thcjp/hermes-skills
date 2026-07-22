@@ -1,11 +1,11 @@
 ---
-slug: news-sentiment
-name: news-sentiment
+slug: "news-sentiment"
+name: "news-sentiment"
 version: "1.0.0"
-displayName: 舆情情绪分析专业版
-summary: 企业级舆情监控工具,支持批量多股票扫描、自定义权重、结构化报告导出与趋势对比分析。
-license: Proprietary
-edition: pro
+displayName: "舆情情绪分析专业版"
+summary: "企业级舆情监控工具,支持批量多股票扫描、自定义权重、结构化报告导出与趋势对比分析。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   舆情情绪分析工具专业版,面向专业投资者与企业用户提供批量多股票扫描、自定义权重配置、结构化报告导出与趋势对比分析能力。核心能力:
   - 批量扫描多只股票(支持 A股/港股/美股混合)
@@ -23,18 +23,17 @@ description: |-
 
   差异化:专业版完全兼容免费版命令体系,额外提...
 tags:
-- 沟通协作
-- 舆情监控
-- 情绪分析
-- 投资辅助
-- 企业效率
-- 数据分析
-- 风险预警
+  - 沟通协作
+  - 舆情监控
+  - 情绪分析
+  - 投资辅助
+  - 企业效率
+  - 数据分析
+  - 风险预警
 tools:
   - - read
-- exec
-# 舆情情绪分析工具 - 专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 舆情情绪分析专业版
 

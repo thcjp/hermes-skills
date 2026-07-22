@@ -1,11 +1,11 @@
 ---
-slug: text-game-arcade-tool-free
-name: text-game-arcade-tool-free
+slug: "text-game-arcade-tool-free"
+name: "text-game-arcade-tool-free"
 version: "1.0.0"
-displayName: 文字游戏机免费版
-summary: 多类型文字游戏生成器,含冒险、悬疑、恋爱与互动小说
-license: Proprietary
-edition: free
+displayName: "文字游戏机免费版"
+summary: "多类型文字游戏生成器,含冒险、悬疑、恋爱与互动小说"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人用户的文字游戏生成与游玩工具。
   核心能力: 多类型文字游戏、剧情分支、角色互动、存档读档、本地运行
@@ -13,14 +13,15 @@ description: |-
   差异化: 免费版聚焦单用户游玩,本地运行,无需联网
   适用关键词: 文字游戏, 互动小说, 剧情游戏, 冒险游戏, 恋爱模拟, 文字冒险
 tags:
-- 文字游戏
-- 互动小说
-- 剧情创作
-- 游戏生成
-- 个人娱乐
+  - 文字游戏
+  - 互动小说
+  - 剧情创作
+  - 游戏生成
+  - 个人娱乐
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 文字游戏机 (免费版)
 

@@ -1,11 +1,11 @@
 ---
-slug: can-bus-toolkit
-name: can-bus-toolkit
+slug: "can-bus-toolkit"
+name: "can-bus-toolkit"
 version: "1.0.0"
-displayName: CAN总线工具包专业版
-summary: 企业级数据溯源平台，支持OTS时间戳同步、并行索引、篡改检测告警、多传输协议适配与审计报表
-license: Proprietary
-edition: pro
+displayName: "CAN总线工具包专业版"
+summary: "企业级数据溯源平台，支持OTS时间戳同步、并行索引、篡改检测告警、多传输协议适配与审计报表"
+license: "Proprietary"
+edition: "pro"
 description: |-
   CAN总线工具包专业版是一款面向团队与企业的数据溯源平台，在免费版三列协议基础上，新增OTS外部时间戳同步、并行索引构建、篡改检测告警、多传输协议适配器与审计报表导出等高级能力。核心能力：
   - OTS（OpenTimestamps）外部时间戳同步，提升时间戳可信度
@@ -15,12 +15,13 @@ description: |-
   - 审计报表导出（CSV/JSON/HTML），支持按时间与名称筛选
   - 增量同步与版本对比...
 tags:
-- 集成工具
-- 数据溯源
-- 企业审计
+  - 集成工具
+  - 数据溯源
+  - 企业审计
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # CAN总线工具包专业版
 

@@ -1,18 +1,18 @@
 ---
-slug: web-content-fetcher
-name: web-content-fetcher
+slug: "web-content-fetcher"
+name: "web-content-fetcher"
 version: "1.0.1"
-displayName: Web Content Fetcher
-summary: 网页内容获取工具 | 当常规爬虫被过滤时，使用替代服务获取网页内容。支持：1) r.jina.ai - 最稳定 2) markdown.new -
-  Cloudflare 专用 3) defudd...
-license: MIT
+displayName: "Web Content Fetcher"
+summary: "网页内容获取工具 | 当常规爬虫被过滤时，使用替代服务获取网页内容。支持：1) r.jina.ai - 最稳定 2) markdown.new -"
+license: "MIT"
 description: |-
   网页内容获取工具 | 当常规爬虫被过滤时，使用替代服务获取网页内容。支持：1) r。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Web Content Fetcher
 

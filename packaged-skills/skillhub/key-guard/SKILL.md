@@ -1,22 +1,18 @@
 ---
-slug: key-guard
-name: key-guard
+slug: "key-guard"
+name: "key-guard"
 version: "1.0.1"
-displayName: Key Guard
-  \  ## Why This Exists  When Claude reads a file containing an API key, the raw key\
-  \ content gets sent to Claude's servers. key-guard prevents this by acting as a\
-  \ local middleman â\x80\x94 Claude calls a tool, the tool reads the key and makes\
-  \ the API call locally, and only the result is returned to Claude."
+displayName: "Key Guard"
 summary: "Security guardrail: prevents API keys from being sent to ai-assistant. Triggers
-  when user asks to call"
-license: MIT-0
+license: "MIT-0"
 description: |-
   Security guardrail: prevents API keys from being sent to ai-assistant。Triggers
   when user asks to call。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
-tags: '[''Integrations'']'
+tags: "'[''Integrations'']'"
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
 # Key Guard
 

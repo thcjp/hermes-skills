@@ -1,17 +1,18 @@
 ---
-slug: weekly-report-writer
-name: weekly-report-writer
+slug: "weekly-report-writer"
+name: "weekly-report-writer"
 version: "1.0.0"
-displayName: weekly-report-writer
-summary: 用于撰写结构清晰的中文周报。只要用户提到“周报、weekly report、本周总结、工作复盘、下周计划、给老板汇报”，即使没有明确说“写周报”，也应主动使用此技能来生成可直接发送的周报内容。
-license: MIT-0
+displayName: "weekly-report-writer"
+summary: "用于撰写结构清晰的中文周报。只要用户提到“周报、weekly report、本周总结、工作复盘、下周计划、给老板汇报”，即使没有明确说“写周报”，也应主动使用此技能来生成可直接发送的周报内容。"
+license: "MIT-0"
 description: |-
   用于撰写结构清晰的中文周报。只要用户提到“周报、weekly report、本周总结、工作复盘、下周计划、给老板汇报”，即使没有明确说“写周报”，也应主动使用此技能来生成可直接发送的周报内容。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Productivity
+  - Productivity
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # weekly-report-writer
 

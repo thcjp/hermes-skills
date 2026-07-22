@@ -1,17 +1,20 @@
 ---
-name: dashboard-analytics-tool
-slug: dashboard-analytics-tool
-displayName: 仪表盘分析工具
+name: "dashboard-analytics-tool"
+slug: "dashboard-analytics-tool"
+displayName: "仪表盘分析工具"
 version: "1.0.0"
-summary: 数据仪表盘分析工具,支持可视化报表、KPI监控和数据洞察
+summary: "数据仪表盘分析工具,支持可视化报表、KPI监控和数据洞察"
 description: |-
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据。
   Use when 用户说"（根据实际场景填充）"、（根据实际场景填充）时使用。
   不适用于需要人工判断的复杂场景。
-license: Proprietary
+license: "Proprietary"
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
 # （根据实际场景填充）
 

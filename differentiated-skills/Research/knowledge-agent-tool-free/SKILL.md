@@ -1,22 +1,22 @@
 ---
-slug: knowledge-agent-tool-free
-name: knowledge-agent-tool-free
+slug: "knowledge-agent-tool-free"
+name: "knowledge-agent-tool-free"
 version: "1.0.0"
-displayName: 知识管理工具-免费版
-summary: 基于文件的知识捕获与检索工具,支持URL、视频、文章、社交内容收藏与搜索
-license: Proprietary
-edition: free
+displayName: "知识管理工具-免费版"
+summary: "基于文件的知识捕获与检索工具,支持URL、视频、文章、社交内容收藏与搜索"
+license: "Proprietary"
+edition: "free"
 description: |-
   基于文件的知识组织工具,实现快速捕获、后续检索与自动整理。支持 URL 收藏、视频/文章/论文摘要、社交帖子与研究笔记管理。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。
 tags:
-- 研究工具
-- 知识管理
-- 信息收集
+  - 研究工具
+  - 知识管理
+  - 信息收集
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 知识管理工具(免费版)
 
 ## 概述

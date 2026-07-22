@@ -1,23 +1,23 @@
 ---
-slug: diagram-master-free
-name: diagram-master-free
+slug: "diagram-master-free"
+name: "diagram-master-free"
 version: "1.0.0"
-displayName: 图表制作大师
-summary: 专业SVG图表生成工具，支持架构图、流程图、时序图等九种图表类型，暗色主题自包含输出。
-license: Proprietary
-edition: free
+displayName: "图表制作大师"
+summary: "专业SVG图表生成工具，支持架构图、流程图、时序图等九种图表类型，暗色主题自包含输出。"
+license: "Proprietary"
+edition: "free"
 description: |-
   图表制作大师免费版解决技术文档中"图表绘制效率低、样式不统一、跨平台兼容差"的核心痛点。图表制作大师生成自包含的SVG文件，内嵌样式与字体，无需外部依赖，支持九种主流图表类型，采用统一的暗色主题设计系统。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 图表制作
-- SVG生成
-- 架构图
-- 技术文档
+  - 图表制作
+  - SVG生成
+  - 架构图
+  - 技术文档
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 图表制作大师（免费版）
 
 > **一张好图胜过千言万语。九种图表类型，统一暗色主题，自包含SVG输出。**

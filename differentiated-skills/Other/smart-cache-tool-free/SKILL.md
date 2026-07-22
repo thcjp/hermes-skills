@@ -1,11 +1,11 @@
 ---
-slug: smart-cache-tool-free
-name: smart-cache-tool-free
+slug: "smart-cache-tool-free"
+name: "smart-cache-tool-free"
 version: "1.0.0"
-displayName: 智能缓存工具-免费版
-summary: 智能缓存管理工具,支持LRU/LFU策略与自动失效,适合个人项目性能优化
-license: Proprietary
-edition: free
+displayName: "智能缓存工具-免费版"
+summary: "智能缓存管理工具,支持LRU/LFU策略与自动失效,适合个人项目性能优化"
+license: "Proprietary"
+edition: "free"
 description: |-
   智能缓存管理工具免费版,面向个人开发者与小型项目。
 
@@ -27,13 +27,14 @@ description: |-
 
   适用关键词: cache, lru, lfu, ttl, 缓存, 缓存策略, 命中率, 缓存失效
 tags:
-- 缓存
-- 性能优化
-- LRU
-- 工具
+  - 缓存
+  - 性能优化
+  - LRU
+  - 工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 智能缓存工具 - 免费版
 

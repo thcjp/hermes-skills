@@ -1,11 +1,11 @@
 ---
-slug: ace-music-tool-pro
-name: ace-music-tool-pro
+slug: "ace-music-tool-pro"
+name: "ace-music-tool-pro"
 version: "1.0.0"
-displayName: ACE音乐生成-专业版
-summary: 企业级AI音乐生成工具,支持批量、翻唱、片段重绘、长时长输出,适配商业内容生产。
-license: Proprietary
-edition: pro
+displayName: "ACE音乐生成-专业版"
+summary: "企业级AI音乐生成工具,支持批量、翻唱、片段重绘、长时长输出,适配商业内容生产。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   ACE音乐生成专业版,面向企业团队与专业音乐内容生产者的高级AI音乐工具。核心能力:
   - 批量生成多首歌曲,支持风格矩阵组合
@@ -22,15 +22,15 @@ description: |-
 
   差异化:专业版在免费版基础上扩展批量生成、...
 tags:
-- Creative
-- 音乐生成
-- 企业版
-- 商业内容
+  - Creative
+  - 音乐生成
+  - 企业版
+  - 商业内容
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # ACE音乐生成工具 - 专业版
 
 ## 概述

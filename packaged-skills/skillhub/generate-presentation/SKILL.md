@@ -1,19 +1,19 @@
 ---
-slug: generate-presentation
-name: generate-presentation
+slug: "generate-presentation"
+name: "generate-presentation"
 version: "1.0.0"
-displayName: Generate Presentatio
-summary: Generate professional HTML and PDF presentations from markdown content, URLs,
-  or topics. Creates ...
-license: MIT
+displayName: "Generate Presentatio"
+summary: "Generate professional HTML and PDF presentations from markdown content, URLs,"
+license: "MIT"
 description: |-
   Generate professional HTML and PDF presentations from markdown content,
   URLs, or topics。Creates。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Knowledge
+  - Knowledge
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Generate Presentatio
 

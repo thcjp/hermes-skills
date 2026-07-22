@@ -1,11 +1,11 @@
 ---
-slug: free-resource-finder
-name: free-resource-finder
+slug: "free-resource-finder"
+name: "free-resource-finder"
 version: "1.0.0"
-displayName: 免费资源发现器(专业版)
-summary: 全功能免费AI资源管理工具,含自动fallback、后台守护、负载均衡、成本分析与质量监控,适合长期无人值守场景。
-license: Proprietary
-edition: pro
+displayName: "免费资源发现器(专业版)"
+summary: "全功能免费AI资源管理工具,含自动fallback、后台守护、负载均衡、成本分析与质量监控,适合长期无人值守场景。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   免费资源发现器(专业版)是企业级免费AI资源管理工具,在免费版基础上扩展自动fallback链、后台守护进程、多Key负载均衡、调用统计与成本分析、模型质量监控等高级能力。核心能力:
   - 自动fallback链: 主模型失败时自动切换备用模型,保障服务连续性
@@ -15,13 +15,14 @@ description: |-
   - 模型质量监控: 持续评估模型表现,自动调整排序
   - 智能路由: 按任务类型自动选...
 tags:
-- AI模型
-- 资源管理
-- 自动化
-- 企业版
+  - AI模型
+  - 资源管理
+  - 自动化
+  - 企业版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 免费资源发现器(专业版)
 

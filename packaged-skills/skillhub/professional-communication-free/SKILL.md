@@ -1,10 +1,10 @@
 ---
-slug: professional-communication-free
-name: professional-communication-free
-version: 1.0.0
-displayName: 职场沟通写作免费版
-summary: 为技术团队生成状态更新邮件、升级请求与 Slack/Teams 消息，遵循关键信息优先、可扫描、明确行动项的核心原则。
-license: MIT
+slug: "professional-communication-free"
+name: "professional-communication-free"
+version: "1.0.0"
+displayName: "职场沟通写作免费版"
+summary: "为技术团队生成状态更新邮件、升级请求与 Slack/Teams 消息，遵循关键信息优先、可扫描、明确行动项的核心原则。"
+license: "MIT"
 description: |-
   面向技术团队的入门级职场沟通写作助手。覆盖状态更新邮件、升级
   请求、Slack/Teams 即时消息三个基础场景。核心原则是关键信息优先、
@@ -22,8 +22,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Professional Communication Free
 
 写出清晰、有效、会被读到并被行动的职场消息。技术团队的写作问题通常不是文笔问题，而是结构问题——关键信息埋在第三段、行动请求模糊、渠道错配。本 Skill 用结构化模板与硬规则消除这些病灶。

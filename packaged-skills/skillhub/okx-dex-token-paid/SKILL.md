@@ -1,23 +1,24 @@
 ---
-slug: okx-dex-token-paid
-name: okx-dex-token-paid
+slug: "okx-dex-token-paid"
+name: "okx-dex-token-paid"
 version: "1.0.0"
-displayName: DEX代币数据专业版
-summary: 专业DEX代币分析与交易工具，支持多链深度分析、批量查询与限价交易。
-license: Proprietary
-edition: pro
+displayName: "DEX代币数据专业版"
+summary: "专业DEX代币分析与交易工具，支持多链深度分析、批量查询与限价交易。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向专业DeFi交易者与研究员的DEX代币分析与交易工具。支持15+条链
   深度数据分析、批量代币查询、链上行为追踪、流动性监控告警与限价
   交易执行。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
-- Finance
-- 加密货币
-- DEX
-- 企业级
+  - Finance
+  - 加密货币
+  - DEX
+  - 企业级
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # DEX代币数据专业版
 

@@ -1,26 +1,25 @@
 ---
-slug: music-gen-cellcog
-name: music-gen-cellcog
+slug: "music-gen-cellcog"
+name: "music-gen-cellcog"
 version: "1.0.0"
-displayName: CellCog音乐生成专业版
-summary: 基于CellCog AI引擎的企业级音乐生成系统,支持批量生成、版权管理、高质量输出与CI/CD集成,适合团队与商业项目。
-license: Proprietary
-edition: pro
+displayName: "CellCog音乐生成专业版"
+summary: "基于CellCog AI引擎的企业级音乐生成系统,支持批量生成、版权管理、高质量输出与CI/CD集成,适合团队与商业项目。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   CellCog音乐生成专业版为企业与内容团队提供系统化的AI音乐生成解决方案。在免费版基础生成能力之上,增加批量生成、高质量音频输出、版权资产管理、
   音乐库管理与CI/CD集成能力。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 音乐生成
-- CellCog
-- 企业级
-- 批量处理
-- 版权管理
-- CI/CD
+  - 音乐生成
+  - CellCog
+  - 企业级
+  - 批量处理
+  - 版权管理
+  - CI/CD
 tools:
   - - read
-- exec
-# CellCog音乐生成专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # CellCog音乐生成专业版
 

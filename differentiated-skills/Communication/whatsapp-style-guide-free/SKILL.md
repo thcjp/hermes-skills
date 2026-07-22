@@ -1,11 +1,11 @@
 ---
-slug: whatsapp-style-guide-free
-name: whatsapp-style-guide-free
+slug: "whatsapp-style-guide-free"
+name: "whatsapp-style-guide-free"
 version: "1.0.0"
-displayName: WhatsApp样式指南-免费版
-summary: WhatsApp消息格式化规范指南,涵盖核心语法规则与常见模式速查
-license: Proprietary
-edition: free
+displayName: "WhatsApp样式指南-免费版"
+summary: "WhatsApp消息格式化规范指南,涵盖核心语法规则与常见模式速查"
+license: "Proprietary"
+edition: "free"
 description: |-
   WhatsApp样式指南免费版,提供WhatsApp消息格式的核心规范文档和快速参考。核心能力:
   - WhatsApp格式语法完整规范说明
@@ -25,15 +25,15 @@ description: |-
 
   适用关键词: whatsapp, 样式, 指南, 规范, ...
 tags:
-- 沟通协作
-- 样式指南
-- WhatsApp
-- 格式规范
+  - 沟通协作
+  - 样式指南
+  - WhatsApp
+  - 格式规范
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # WhatsApp样式指南(免费版)
 
 ## 概述

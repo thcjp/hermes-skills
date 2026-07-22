@@ -1,11 +1,11 @@
 ---
-slug: communication-skill-free
-name: communication-skill-free
+slug: "communication-skill-free"
+name: "communication-skill-free"
 version: "1.0.0"
-displayName: Comm LITE
-summary: 基础沟通辅助工具,通过3步流程(GATHER-CRAFT-REFINE)帮助撰写得体回应消息
-license: MIT
-edition: free
+displayName: "Comm LITE"
+summary: "基础沟通辅助工具,通过3步流程(GATHER-CRAFT-REFINE)帮助撰写得体回应消息"
+license: "MIT"
+edition: "free"
 description: |-
   沟通辅助基础版(免费)。通过简化的3步流程(GATHER-CRAFT-REFINE)帮助用户快速撰写得体、结构清晰的回应消息。
   核心能力:收集对话背景信息、按"承认-过渡-引导"单一结构组织回应、自我审视语气一致性。
@@ -17,8 +17,8 @@ tags:
   - Communication
 tools:
   - read
+homepage: "https://skillhub.cn"
 ---
-
 # Comm LITE - 沟通辅助基础版
 
 通过3步流程(GATHER-CRAFT-REFINE)帮助撰写得体回应消息,采用"承认-过渡-引导"单一结构组织回应内容,适用于日常文本沟通场景。

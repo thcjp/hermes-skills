@@ -1,10 +1,10 @@
 ---
-slug: ai-podcast-free
-name: ai-podcast-free
-version: 1.0.0
-displayName: AI播客生成(免费版)
-summary: 将文本内容转化为双主持人对话播客的基础工具
-license: MIT
+slug: "ai-podcast-free"
+name: "ai-podcast-free"
+version: "1.0.0"
+displayName: "AI播客生成(免费版)"
+summary: "将文本内容转化为双主持人对话播客的基础工具"
+license: "MIT"
 description: |-
   基于MagicPodcast API将纯文本内容转化为双主持人对话式播客。
   支持多语言生成，返回可分享的播客链接。适用于个人用户快速
@@ -14,8 +14,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # AI播客生成(免费版) - 文本转对话式播客
 
 ## 依赖说明

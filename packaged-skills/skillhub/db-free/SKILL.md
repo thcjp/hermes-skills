@@ -1,10 +1,10 @@
 ---
-slug: db-free
-name: db-free
+slug: "db-free"
+name: "db-free"
 version: "1.0.0"
-displayName: 数据库设计与运维(免费版)
-summary: 识别并规避基础数据库连接、事务、查询与数据完整性陷阱
-license: MIT
+displayName: "数据库设计与运维(免费版)"
+summary: "识别并规避基础数据库连接、事务、查询与数据完整性陷阱"
+license: "MIT"
 description: |-
   数据库设计与运维免费版，提供基础的数据库陷阱识别与规避能力。
   核心能力包括：
@@ -20,8 +20,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 数据库设计与运维（免费版）
 
 ## 概述

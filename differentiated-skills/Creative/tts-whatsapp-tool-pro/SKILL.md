@@ -1,11 +1,11 @@
 ---
-slug: tts-whatsapp-tool-pro
-name: tts-whatsapp-tool-pro
+slug: "tts-whatsapp-tool-pro"
+name: "tts-whatsapp-tool-pro"
 version: "1.0.0"
-displayName: WhatsApp语音消息专业版
-summary: 企业级WhatsApp语音消息工具,支持群发广播、定时发送、批量处理与消息模板,适配团队协作。
-license: Proprietary
-edition: pro
+displayName: "WhatsApp语音消息专业版"
+summary: "企业级WhatsApp语音消息工具,支持群发广播、定时发送、批量处理与消息模板,适配团队协作。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队与企业用户的 WhatsApp 语音消息工具(专业版)。核心能力:
   - 涵盖免费版全部能力(Piper TTS、40+ 语言、单条发送)
@@ -23,15 +23,16 @@ description: |-
   - 企业客服语音消息群发
   - 营销活动语...
 tags:
-- 创意设计
-- 语音合成
-- WhatsApp
-- 企业级
-- 群发广播
-- 自动化
+  - 创意设计
+  - 语音合成
+  - WhatsApp
+  - 企业级
+  - 群发广播
+  - 自动化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # WhatsApp 语音消息工具 - 专业版
 ## 概述

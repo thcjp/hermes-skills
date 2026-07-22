@@ -1,18 +1,19 @@
 ---
-slug: git-workflow-cn
-name: git-workflow-cn
+slug: "git-workflow-cn"
+name: "git-workflow-cn"
 version: "1.1.0"
-displayName: Git Workflow Cn
-summary: Git 工作流助手 - 分支管理、冲突解决、提交规范。适合：开发者、团队协作。
-license: MIT-0
+displayName: "Git Workflow Cn"
+summary: "Git 工作流助手 - 分支管理、冲突解决、提交规范。适合：开发者、团队协作。"
+license: "MIT-0"
 description: |-
   Git 工作流助手 - 分支管理、冲突解决、提交规范。适合：开发者、团队协作。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-- Development
-- Automation
+  - Development
+  - Automation
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Git Workflow Cn
 

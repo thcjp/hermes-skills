@@ -1,10 +1,10 @@
 ---
-slug: azure-infra
-name: azure-infra
+slug: "azure-infra"
+name: "azure-infra"
 version: "2.0.0"
-displayName: Azure Infra
-summary: 通过本地 Azure CLI 查询与管理 Azure 资源，默认只读，写操作需确认。
-license: MIT
+displayName: "Azure Infra"
+summary: "通过本地 Azure CLI 查询与管理 Azure 资源，默认只读，写操作需确认。"
+license: "MIT"
 description: |-
   Azure Infra 技能通过本地 Azure CLI（az 命令）帮助用户查询、诊断和管理 Azure 云资源。
   默认所有操作为只读查询，任何写操作或破坏性变更（删除、缩放、修改 IAM、计费配置等）
@@ -32,8 +32,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Azure Infra
 
 ## 概述

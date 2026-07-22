@@ -1,23 +1,23 @@
 ---
-slug: telegram-alert-tool-free
-name: telegram-alert-tool-free
+slug: "telegram-alert-tool-free"
+name: "telegram-alert-tool-free"
 version: "1.0.0"
-displayName: Telegram告警入门
-summary: 通过Telegram Bot发送基础交易告警，支持单一群组与简单价格触发。
-license: Proprietary
-edition: free
+displayName: "Telegram告警入门"
+summary: "通过Telegram Bot发送基础交易告警，支持单一群组与简单价格触发。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人交易者的Telegram告警通知工具。通过Telegram Bot将交易信号、
   价格变动等信息推送到指定群组。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。
 tags:
-- Finance
-- 告警通知
-- Telegram
+  - Finance
+  - 告警通知
+  - Telegram
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Telegram告警入门（免费版）
 
 ## 概述

@@ -1,11 +1,11 @@
 ---
-slug: task-planner-tool-free
-name: task-planner-tool-free
+slug: "task-planner-tool-free"
+name: "task-planner-tool-free"
 version: "1.0.0"
-displayName: 任务规划器基础版
-summary: 本地优先的任务规划工具,帮助拆解复杂任务、设定截止日期与管理子任务
-license: Proprietary
-edition: free
+displayName: "任务规划器基础版"
+summary: "本地优先的任务规划工具,帮助拆解复杂任务、设定截止日期与管理子任务"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力: 任务管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: task planner, 任务规划, 拆解, 子任务, 里程碑, 截止日期, 项目管理
 tags:
-- 任务规划
-- 项目管理
-- 子任务
-- 里程碑
+  - 任务规划
+  - 项目管理
+  - 子任务
+  - 里程碑
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 任务规划器基础版
 
 ## 概述

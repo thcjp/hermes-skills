@@ -1,11 +1,11 @@
 ---
-slug: encryption-paid
-name: encryption-paid
+slug: "encryption-paid"
+name: "encryption-paid"
 version: "1.0.0"
-displayName: 加密工具专业版
-summary: 企业级加密管理,支持KMS集成、密钥轮换、合规审计、批量加密与深度代码安全扫描。
-license: Proprietary
-edition: pro
+displayName: "加密工具专业版"
+summary: "企业级加密管理,支持KMS集成、密钥轮换、合规审计、批量加密与深度代码安全扫描。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向企业安全团队的高级加密管理工具,提供KMS密钥管理集成、自动密钥轮换、合规性审计、批量加密与深度代码安全扫描。核心能力:
   - KMS/Vault密钥管理集成
@@ -25,16 +25,15 @@ description: |-
   - 专业版完全兼容免费版命令,支持平滑升级
   - 提供KMS/Va...
 tags:
-- 开发工具
-- 安全
-- 加密
-- 企业级
-- 合规审计
+  - 开发工具
+  - 安全
+  - 加密
+  - 企业级
+  - 合规审计
 tools:
   - - read
-- exec
-# 加密工具 - 专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 加密工具专业版
 

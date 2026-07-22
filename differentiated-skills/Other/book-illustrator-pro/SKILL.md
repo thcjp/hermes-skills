@@ -1,23 +1,23 @@
 ---
-slug: book-illustrator-pro
-name: book-illustrator-pro
+slug: "book-illustrator-pro"
+name: "book-illustrator-pro"
 version: "1.0.0"
-displayName: 书籍插画助手(专业版)
-summary: 全功能书籍插画管理系统，含批量管理、风格库、多插画师协作、进度看板与审核自动化。
-license: Proprietary
-edition: pro
+displayName: "书籍插画助手(专业版)"
+summary: "全功能书籍插画管理系统，含批量管理、风格库、多插画师协作、进度看板与审核自动化。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   书籍插画助手专业版是出版级插画管理的完整解决方案。在免费版基础上解锁批量插画需求管理、插画风格库、多插画师协作管理、插画进度看板、插画审核流程自动化、插画资源库六大高级功能，帮助出版机构建立高效、规范、可追溯的插画制作体系。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
 tags:
-- 书籍插画
-- 批量管理
-- 多插画师协作
-- 进度看板
-- 专业版
+  - 书籍插画
+  - 批量管理
+  - 多插画师协作
+  - 进度看板
+  - 专业版
 tools:
   - - read
-- exec
-# 书籍插画助手（专业版）
+  - exec
+homepage: "https://skillhub.cn"
 ---
 > **从单本书到多书系，从单人创作到团队协作。出版级插画管理系统。**
 

@@ -1,11 +1,11 @@
 ---
-slug: pptx-cn-tool-free
-name: pptx-cn-tool-free
+slug: "pptx-cn-tool-free"
+name: "pptx-cn-tool-free"
 version: "1.0.0"
-displayName: PPT 中文工具基础版
-summary: 创建与编辑中文 PowerPoint 演示文稿,支持中文排版优化与本地化模板
-license: Proprietary
-edition: free
+displayName: "PPT 中文工具基础版"
+summary: "创建与编辑中文 PowerPoint 演示文稿,支持中文排版优化与本地化模板"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力: 文档处理领域的专业化 AI 辅助工具,提供核心基础功能支持。
 
@@ -15,13 +15,14 @@ description: |-
 
   适用关键词: powerpoint, pptx, 中文, 演示文稿, 幻灯片, 排版, 本地化
 tags:
-- PowerPoint
-- PPTX
-- 中文
-- 演示文稿
+  - PowerPoint
+  - PPTX
+  - 中文
+  - 演示文稿
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # PPT 中文工具基础版
 

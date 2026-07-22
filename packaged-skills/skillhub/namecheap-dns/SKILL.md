@@ -1,19 +1,19 @@
 ---
-slug: namecheap-dns
-name: namecheap-dns
+slug: "namecheap-dns"
+name: "namecheap-dns"
 version: "1.1.0"
-displayName: Namecheap DNS
-summary: Manage Namecheap DNS records safely by fetching existing entries, merging
-  changes, auto-backing u...
-license: MIT
+displayName: "Namecheap DNS"
+summary: "Manage Namecheap DNS records safely by fetching existing entries, merging"
+license: "MIT"
 description: |-
   Manage Namecheap DNS records safely by fetching existing entries, merging
   changes, auto-backing u。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Operations
+  - Operations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Namecheap DNS
 

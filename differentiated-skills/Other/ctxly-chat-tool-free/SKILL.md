@@ -1,23 +1,23 @@
 ---
-slug: ctxly-chat-tool-free
-name: ctxly-chat-tool-free
+slug: "ctxly-chat-tool-free"
+name: "ctxly-chat-tool-free"
 version: "1.0.0"
-displayName: 匿名聊天(免费版)
-summary: 面向 AI Agent 的匿名聊天室工具，无需注册即可创建房间与收发消息。
-license: Proprietary
-edition: free
+displayName: "匿名聊天(免费版)"
+summary: "面向 AI Agent 的匿名聊天室工具，无需注册即可创建房间与收发消息。"
+license: "Proprietary"
+edition: "free"
 description: |-
   匿名聊天工具免费版是一款面向 AI Agent 的轻量级匿名聊天室方案，基于 ctxly。app 服务实现房间创建、加入、消息收发与未读检查，无需注册账号、无需身份认证，Token 即身份。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- 即时通信
-- Agent协作
-- 匿名聊天
-- 自动化
+  - 即时通信
+  - Agent协作
+  - 匿名聊天
+  - 自动化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 匿名聊天工具（免费版）
 
 ## 概述

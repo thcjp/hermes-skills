@@ -1,10 +1,10 @@
 ---
-slug: grok-image-generate
-name: grok-image-generate
+slug: "grok-image-generate"
+name: "grok-image-generate"
 version: "1.0.0"
-displayName: grok_image_generate
-summary: 通过 Grok Imagine 生成用户描述的图片，并指导保存及发送至飞书的完整流程。
-license: MIT-0
+displayName: "grok_image_generate"
+summary: "通过 Grok Imagine 生成用户描述的图片，并指导保存及发送至飞书的完整流程。"
+license: "MIT-0"
 description: |-
   通过 Grok Imagine 生成用户描述的图片，并指导保存及发送至飞书的完整流程。核心能力:
 
@@ -21,12 +21,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Creative
+  - Creative
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # grok_image_generate
 

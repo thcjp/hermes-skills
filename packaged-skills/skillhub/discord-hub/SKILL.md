@@ -1,19 +1,19 @@
 ---
-slug: discord-hub
-name: discord-hub
+slug: "discord-hub"
+name: "discord-hub"
 version: "1.1.0"
-displayName: Discord
-summary: SkillHub skill for Discord Bot API workflows, covering interactions, commands,
-  messages, and oper...
-license: MIT
+displayName: "Discord"
+summary: "SkillHub skill for Discord Bot API workflows, covering interactions, commands,"
+license: "MIT"
 description: |-
   SkillHub skill for Discord Bot API workflows, covering interactions,
   commands, messages, and oper。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Discord
 

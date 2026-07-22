@@ -1,11 +1,11 @@
 ---
-slug: auto-updater-tool-pro
-name: auto-updater-tool-pro
+slug: "auto-updater-tool-pro"
+name: "auto-updater-tool-pro"
 version: "1.0.0"
-displayName: 自动更新工具-专业版
-summary: 企业级更新管理平台,支持批量更新、灰度发布、蓝绿部署与全面审计日志
-license: Proprietary
-edition: pro
+displayName: "自动更新工具-专业版"
+summary: "企业级更新管理平台,支持批量更新、灰度发布、蓝绿部署与全面审计日志"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级自动更新管理工具专业版,面向团队与生产环境。核心能力:
   - 多节点批量更新管理
@@ -25,14 +25,15 @@ description: |-
 
   差异化:专业版在免费版基础上扩展批量更新、灰度发布、蓝绿部署与审计日志,兼容免费版更新配置
 tags:
-- 自动更新
-- 企业级
-- 灰度发布
-- 蓝绿部署
-- 变更管理
+  - 自动更新
+  - 企业级
+  - 灰度发布
+  - 蓝绿部署
+  - 变更管理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 自动更新工具 - 专业版
 

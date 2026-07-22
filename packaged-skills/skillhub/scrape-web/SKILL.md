@@ -1,10 +1,10 @@
 ---
-slug: scrape-web
-name: scrape-web
+slug: "scrape-web"
+name: "scrape-web"
 version: "1.0.0"
-displayName: Scrape Web
-summary: 使用 Python + Scrapling 获取网页内容，支持简单选择器
-license: MIT-0
+displayName: "Scrape Web"
+summary: "使用 Python + Scrapling 获取网页内容，支持简单选择器"
+license: "MIT-0"
 description: |-
   使用 Python + Scrapling 获取网页内容，支持简单选择器
 
@@ -23,12 +23,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Research
+  - Research
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Scrape Web
 

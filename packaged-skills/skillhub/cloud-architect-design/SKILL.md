@@ -1,11 +1,11 @@
 ---
-slug: cloud-architect-design
-name: cloud-architect-design
+slug: "cloud-architect-design"
+name: "cloud-architect-design"
 version: "1.0.0"
-displayName: 云架构师专业版
-summary: 企业级云架构设计平台，支持多云策略、迁移规划、FinOps优化、合规设计与灾备方案。
-license: Proprietary
-edition: pro
+displayName: "云架构师专业版"
+summary: "企业级云架构设计平台，支持多云策略、迁移规划、FinOps优化、合规设计与灾备方案。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   云架构师专业版 —— 面向企业团队与架构师的高级云架构设计平台。核心能力:
   - 多云架构策略：AWS+Azure+GCP跨云架构设计与容灾方案
@@ -18,14 +18,15 @@ description: |-
   - 性能工程：容量规划、性能基准与扩展策略
   -...
 tags:
-- 云架构
-- 架构设计
-- 企业工具
-- 多云策略
-- FinOps
+  - 云架构
+  - 架构设计
+  - 企业工具
+  - 多云策略
+  - FinOps
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 云架构师专业版
 

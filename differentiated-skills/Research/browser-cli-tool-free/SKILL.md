@@ -1,11 +1,11 @@
 ---
-slug: browser-cli-tool-free
-name: browser-cli-tool-free
+slug: "browser-cli-tool-free"
+name: "browser-cli-tool-free"
 version: "1.0.0"
-displayName: 浏览器CLI工具-免费版
-summary: 基于Playwright的浏览器自动化CLI,支持签到、填表、截图与信息抓取,适合个人用户
-license: Proprietary
-edition: free
+displayName: "浏览器CLI工具-免费版"
+summary: "基于Playwright的浏览器自动化CLI,支持签到、填表、截图与信息抓取,适合个人用户"
+license: "Proprietary"
+edition: "free"
 description: |-
   浏览器自动化命令行工具,提供导航、交互、信息获取与截图能力,
   适合签到、填表、信息抓取等需要控制浏览器的任务。核心能力:
@@ -21,12 +21,13 @@ description: |-
 
   差异化:免费版提供核心浏览器自动化能力,操作直观,适合个人轻量场景
 tags:
-- 研究工具
-- 浏览器自动化
-- 自动化
+  - 研究工具
+  - 浏览器自动化
+  - 自动化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 浏览器CLI工具(免费版)
 

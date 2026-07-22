@@ -1,11 +1,11 @@
 ---
-slug: port-transfer-tool-free
-name: port-transfer-tool-free
+slug: "port-transfer-tool-free"
+name: "port-transfer-tool-free"
 version: "1.0.0"
-displayName: 工具移植工具
-summary: 面向个人的 MCP工具配置跨环境移植工具，支持导入导出。
-license: Proprietary
-edition: free
+displayName: "工具移植工具"
+summary: "面向个人的 MCP工具配置跨环境移植工具，支持导入导出。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人用户的 MCP工具配置跨环境移植工具。
 
@@ -24,15 +24,15 @@ description: |-
 
   适用关键词: 工具移植, 配置迁移, mcp 导入导出, 跨环境, 凭证占位, port transfer, import export
 tags:
-- 工具移植
-- MCP工具
-- 个人效率
-- 其他工具
+  - 工具移植
+  - MCP工具
+  - 个人效率
+  - 其他工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 工具移植工具（免费版）
 
 ## 概述

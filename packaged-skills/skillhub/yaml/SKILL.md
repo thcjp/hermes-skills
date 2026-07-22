@@ -1,10 +1,10 @@
 ---
-slug: yaml
-name: yaml
+slug: "yaml"
+name: "yaml"
 version: "1.0.0"
-displayName: YAML
-summary: Write valid YAML that parses predictably across languages and versions.
-license: MIT
+displayName: "YAML"
+summary: "Write valid YAML that parses predictably across languages and versions."
+license: "MIT"
 description: |-
   Write valid YAML that parses predictably across languages and versions。核心能力:
 
@@ -21,12 +21,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # YAML
 

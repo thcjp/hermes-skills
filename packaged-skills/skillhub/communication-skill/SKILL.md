@@ -1,11 +1,11 @@
 ---
-slug: communication-skill
-name: communication-skill
+slug: "communication-skill"
+name: "communication-skill"
 version: "1.0.0"
-displayName: Comm Crafter Pro
-summary: 基于GATHER-LISTEN-CONSIDER-CRAFT-REFINE五步法,融合心理学原理,打磨高情商沟通回复与冲突调解方案。
-license: MIT
-edition: pro
+displayName: "Comm Crafter Pro"
+summary: "基于GATHER-LISTEN-CONSIDER-CRAFT-REFINE五步法,融合心理学原理,打磨高情商沟通回复与冲突调解方案。"
+license: "MIT"
+edition: "pro"
 description: |-
   Communication Crafter Pro 是面向复杂人际沟通场景的专业级消息打磨工具,融合心理学原理与结构化表达框架,帮助用户在高压对话、冲突调解、跨文化沟通、敏感反馈等场景中产出高情商、高说服力的回复。核心能力:
   - 五步核心工作流:GATHER(采集上下文) → LISTEN(深度倾听) → CONSIDER(原则与心理) → CRAFT(打磨回复) → REFINE(校验优化)
@@ -24,13 +24,14 @@ description: |-
 
   差异化:专业版在基础消息打磨之上,扩展了心理动力学分析、防御机制识别、语气校准矩阵与六点校验清单,适合需要深度共情与策略性表达的复杂沟通场景。
 tags:
-- Productivity
-- 沟通技巧
-- 心理学
-- 高情商表达
-- 冲突调解
+  - Productivity
+  - 沟通技巧
+  - 心理学
+  - 高情商表达
+  - 冲突调解
 tools:
   - read
+homepage: "https://skillhub.cn"
 ---
 # Communication Crafter Pro
 

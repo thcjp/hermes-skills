@@ -1,11 +1,11 @@
 ---
-slug: html-coder-tool-free
-name: html-coder-tool-free
+slug: "html-coder-tool-free"
+name: "html-coder-tool-free"
 version: "1.0.0"
-displayName: HTML编码工具-免费版
-summary: 专业HTML开发工具，支持语义化标记、表单验证、响应式图片与基础可访问性。
-license: Proprietary
-edition: free
+displayName: "HTML编码工具-免费版"
+summary: "专业HTML开发工具，支持语义化标记、表单验证、响应式图片与基础可访问性。"
+license: "Proprietary"
+edition: "free"
 description: |-
   HTML编码工具免费版，面向个人开发者的专业HTML开发辅助工具。核心能力：
   - 语义化HTML结构生成
@@ -22,12 +22,13 @@ description: |-
 
   差异化：免费版聚焦语义化HTML与基础可访问性，适合个人开发
 tags:
-- Creative
-- HTML
-- WebDevelopment
+  - Creative
+  - HTML
+  - WebDevelopment
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # HTML编码工具（免费版）
 

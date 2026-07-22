@@ -1,19 +1,19 @@
 ---
-slug: feishu-doc
-name: feishu-doc
+slug: "feishu-doc"
+name: "feishu-doc"
 version: "1.2.7"
-displayName: Feishu Doc
-summary: Fetch content from Feishu (Lark) Wiki, Docs, Sheets, and Bitable. Automatically
-  resolves Wiki URL...
-license: MIT
+displayName: "Feishu Doc"
+summary: "Fetch content from Feishu (Lark) Wiki, Docs, Sheets, and Bitable. Automatically"
+license: "MIT"
 description: |-
   Fetch content from Feishu (Lark) Wiki, Docs, Sheets, and Bitable。Automatically
   resolves Wiki URL。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Knowledge
+  - Knowledge
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Feishu Doc
 

@@ -1,11 +1,11 @@
 ---
-slug: glitch-dashboard-tool-pro
-name: glitch-dashboard-tool-pro
+slug: "glitch-dashboard-tool-pro"
+name: "glitch-dashboard-tool-pro"
 version: "1.0.0"
-displayName: 统一仪表盘专业版
-summary: 企业级运维仪表盘,支持自定义面板、告警规则、多节点监控与历史数据分析
-license: Proprietary
-edition: pro
+displayName: "统一仪表盘专业版"
+summary: "企业级运维仪表盘,支持自定义面板、告警规则、多节点监控与历史数据分析"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 运维监控领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: dashboard, 仪表盘, 监控, 任务队列, 系统指标, ZeroTier
 tags:
-- 仪表盘
-- 监控
-- 任务队列
-- 运维
+  - 仪表盘
+  - 监控
+  - 任务队列
+  - 运维
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 统一仪表盘专业版
 
 ## 概述

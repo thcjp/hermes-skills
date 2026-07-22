@@ -1,10 +1,10 @@
 ---
-slug: aegis-security
-name: aegis-security
+slug: "aegis-security"
+name: "aegis-security"
 version: "1.2.2"
-displayName: 区块链安全防护
-summary: 区块链安全API，扫描代币蜜罐、模拟交易、检查地址声誉风险
-license: MIT
+displayName: "区块链安全防护"
+summary: "区块链安全API，扫描代币蜜罐、模拟交易、检查地址声誉风险"
+license: "MIT"
 description: |-
   面向AI代理的区块链安全API。提供代币蜜罐检测、交易模拟、地址声誉检查等功能，
   支持EVM和Solana多链，集成x402付费协议。适用于DeFi交易前安全审计、代币风险评估、
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 安全合规
 ---
-
 # 区块链安全防护
 
 面向AI代理的区块链安全API，提供交易前安全扫描能力。免费额度100次/天，超出后通过x402协议按需付费（USDC on Base或Solana）。

@@ -1,11 +1,11 @@
 ---
-slug: free-weather-skill-tool-pro
-name: free-weather-skill-tool-pro
+slug: "free-weather-skill-tool-pro"
+name: "free-weather-skill-tool-pro"
 version: "1.0.0"
-displayName: 免费天气技能专业版
-summary: 高可靠天气查询平台,支持多源冗余、企业集成、自定义数据源与监控告警
-license: Proprietary
-edition: pro
+displayName: "免费天气技能专业版"
+summary: "高可靠天气查询平台,支持多源冗余、企业集成、自定义数据源与监控告警"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向企业、运维与生产环境的高可靠天气查询平台。
   核心能力: 多数据源冗余、批量查询、缓存加速、监控告警、自定义数据源、企业集成
@@ -13,15 +13,16 @@ description: |-
   差异化: 专业版支持多数据源冗余与企业级集成,与免费版命令行格式完全兼容
   适用关键词: 企业天气集成, 多源冗余, 监控告警, 批量查询, SLA保障, 天气API
 tags:
-- 天气查询
-- 企业级
-- 高可用
-- 多源冗余
-- 监控告警
-- 集成方案
+  - 天气查询
+  - 企业级
+  - 高可用
+  - 多源冗余
+  - 监控告警
+  - 集成方案
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 免费天气技能 (专业版)
 ## 概述

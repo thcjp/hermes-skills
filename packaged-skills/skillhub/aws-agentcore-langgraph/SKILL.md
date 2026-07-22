@@ -1,10 +1,10 @@
 ---
-slug: aws-agentcore-langgraph
-name: aws-agentcore-langgraph
+slug: "aws-agentcore-langgraph"
+name: "aws-agentcore-langgraph"
 version: "2.0.0"
-displayName: AgentCore LangGraph
-summary: AWS Bedrock AgentCore 与 LangGraph 多智能体编排部署助手
-license: MIT
+displayName: "AgentCore LangGraph"
+summary: "AWS Bedrock AgentCore 与 LangGraph 多智能体编排部署助手"
+license: "MIT"
 description: |-
   基于 AWS Bedrock AgentCore Runtime 与 LangGraph 的多智能体系统构建与部署助手。
   覆盖智能体编排(Orchestrator + Specialists)、跨会话记忆(STM/LTM)、
@@ -14,13 +14,13 @@ description: |-
   含状态图设计(StateGraph)、工具路由(tools_condition)、记忆持久化、
   MCP 工具转换等核心模式。不适用于需要 100% 确定性的关键决策场景。
 tags:
-- Agents
-- Operations
+  - Agents
+  - Operations
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # aws-agentcore-langgraph
 
 Multi-agent systems on AWS Bedrock AgentCore with LangGraph orchestration. 

@@ -1,22 +1,22 @@
 ---
-slug: use-my-browser-tool-free
-name: use-my-browser-tool-free
+slug: "use-my-browser-tool-free"
+name: "use-my-browser-tool-free"
 version: "1.0.0"
-displayName: 真实浏览器控制免费版
-summary: 通过用户脚本注入控制真实 Chrome 浏览器,共享登录态与 Cookie,适合个人自动化操作
-license: Proprietary
-edition: free
+displayName: "真实浏览器控制免费版"
+summary: "通过用户脚本注入控制真实 Chrome 浏览器,共享登录态与 Cookie,适合个人自动化操作"
+license: "Proprietary"
+edition: "free"
 description: |-
   真实浏览器控制免费版,面向个人用户提供直接控制用户真实 Chrome 浏览器的能力。通过用户脚本注入技术,在页面上下文中执行 JavaScript,共享所有 Cookie、会话和登录状态。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 研究工具
-- 浏览器控制
-- 个人效率
+  - 研究工具
+  - 浏览器控制
+  - 个人效率
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 真实浏览器控制免费版
 
 ## 概述

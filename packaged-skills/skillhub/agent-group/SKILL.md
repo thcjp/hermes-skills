@@ -1,10 +1,10 @@
 ---
-slug: agent-group
-name: agent-group
+slug: "agent-group"
+name: "agent-group"
 version: "1.0.3"
-displayName: Agent Group
-summary: 极简多Agent群组 - 像微信拉群一样简单
-license: MIT
+displayName: "Agent Group"
+summary: "极简多Agent群组 - 像微信拉群一样简单"
+license: "MIT"
 description: |-
   极简多Agent群组 - 像微信拉群一样简单
 
@@ -23,13 +23,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
-
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Agent Group
 

@@ -1,11 +1,11 @@
 ---
-slug: google-workspace-toolkit
-name: google-workspace-toolkit
+slug: "google-workspace-toolkit"
+name: "google-workspace-toolkit"
 version: "1.0.0"
-displayName: 谷歌办公工具接口专业版
-summary: 全功能Google办公工具接口,49个工具覆盖十大服务,支持企业级批量操作与多租户管理。
-license: Proprietary
-edition: pro
+displayName: "谷歌办公工具接口专业版"
+summary: "全功能Google办公工具接口,49个工具覆盖十大服务,支持企业级批量操作与多租户管理。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   谷歌办公工具接口专业版,通过工具协议统一调用 Google Workspace 全部十大服务共 49 个工具,OAuth 登录即用,无需云控制台配置。核心能力:
   - 49 个工具全覆盖:Gmail / Calendar / Drive / Docs / Sheets / Slides / Chat / People / Time / Auth
@@ -15,15 +15,16 @@ description: |-
   - Docs 文档创建、编辑、文本替换
   - Sheets 表格读取、查找、...
 tags:
-- 沟通协作
-- 谷歌办公
-- 工具接口
-- 企业效率
-- 自动化
-- 数据处理
+  - 沟通协作
+  - 谷歌办公
+  - 工具接口
+  - 企业效率
+  - 自动化
+  - 数据处理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 谷歌办公工具接口专业版
 

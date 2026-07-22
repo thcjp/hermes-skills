@@ -1,11 +1,11 @@
 ---
-slug: social-sentiment-tool-free
-name: social-sentiment-tool-free
+slug: "social-sentiment-tool-free"
+name: "social-sentiment-tool-free"
 version: "1.0.0"
-displayName: 社交情感分析免费版
-summary: 轻量级社交媒体情感分析工具,支持单平台关键词监控与基础情感分类,适合个人品牌追踪
-license: Proprietary
-edition: free
+displayName: "社交情感分析免费版"
+summary: "轻量级社交媒体情感分析工具,支持单平台关键词监控与基础情感分类,适合个人品牌追踪"
+license: "Proprietary"
+edition: "free"
 description: |-
   社交情感分析免费版为个人用户提供轻量级的社交媒体情感监控能力。
 
@@ -24,13 +24,14 @@ description: |-
 
   适用关键词: 社交媒体, 情感分析, sentiment, 口碑监控, 品牌追踪, 舆情分析, 关键词监控
 tags:
-- 研究工具
-- 情感分析
-- 社交媒体
-- 个人效率
+  - 研究工具
+  - 情感分析
+  - 社交媒体
+  - 个人效率
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 社交情感分析免费版
 

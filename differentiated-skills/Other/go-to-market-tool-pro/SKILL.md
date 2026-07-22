@@ -1,11 +1,11 @@
 ---
-slug: go-to-market-tool-pro
-name: go-to-market-tool-pro
+slug: "go-to-market-tool-pro"
+name: "go-to-market-tool-pro"
 version: "1.0.0"
-displayName: 上市策略工具专业版
-summary: 面向团队的多产品 GTM 矩阵、归因分析与渠道优化工具。
-license: Proprietary
-edition: pro
+displayName: "上市策略工具专业版"
+summary: "面向团队的多产品 GTM 矩阵、归因分析与渠道优化工具。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队与企业的多产品上市（GTM）策略与归因分析专业工具。核心能力:
   - 多产品/多市场 GTM 矩阵与优先级排序
@@ -20,13 +20,14 @@ description: |-
 
   差异化: 专业版在免费版单产品基础上扩展多产品矩阵、归因模型、滚动计划与复盘看板，兼容免费版七步法
 tags:
-- 市场策略
-- 企业级
-- 归因分析
-- 其他工具
+  - 市场策略
+  - 企业级
+  - 归因分析
+  - 其他工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 上市策略工具（专业版）
 

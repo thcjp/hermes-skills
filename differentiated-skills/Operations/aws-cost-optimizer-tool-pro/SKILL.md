@@ -1,26 +1,26 @@
 ---
-slug: aws-cost-optimizer-tool-pro
-name: aws-cost-optimizer-tool-pro
+slug: "aws-cost-optimizer-tool-pro"
+name: "aws-cost-optimizer-tool-pro"
 version: "1.0.0"
-displayName: AWS成本优化专业版
-summary: 企业级AWS成本管理平台，支持多账户、自动优化、RI建议与FinOps治理。
-license: Proprietary
-edition: pro
+displayName: "AWS成本优化专业版"
+summary: "企业级AWS成本管理平台，支持多账户、自动优化、RI建议与FinOps治理。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向企业云财务团队的AWS成本管理平台。支持多账户统一分析、自动
   优化执行、预留实例（RI）/Savings Plans建议、预算告警与FinOps
   治理。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Operations
-- AWS
-- 成本优化
-- 企业级
-- FinOps
+  - Operations
+  - AWS
+  - 成本优化
+  - 企业级
+  - FinOps
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # AWS成本优化专业版（PRO版）
 
 ## 概述

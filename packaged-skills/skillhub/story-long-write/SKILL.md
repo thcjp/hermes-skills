@@ -1,10 +1,10 @@
 ---
-slug: story-long-write
-name: story-long-write
+slug: "story-long-write"
+name: "story-long-write"
 version: "1.1.13"
-displayName: 长篇网文写作
-summary: 从选题到正文,辅助长篇网络小说创作,含世界观、人物、情节线管理。
-license: MIT-0
+displayName: "长篇网文写作"
+summary: "从选题到正文,辅助长篇网络小说创作,含世界观、人物、情节线管理。"
+license: "MIT-0"
 description: |-
   长篇网络小说创作全流程:选题方向、核心设定、卷级大纲、章节细纲、
   正文写作与质量检查。覆盖情绪交付、读者契约、期待债、终局储备、
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 长篇网文写作
 
 从零开始写一本长篇网络小说,从选题确认到大纲搭建再到正文输出。先抓情绪,再用验证过的方法可靠地交付这个情绪,灵感只做素材来源。

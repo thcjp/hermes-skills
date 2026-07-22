@@ -1,11 +1,11 @@
 ---
-slug: file-sorter-tool-free
-name: file-sorter-tool-free
+slug: "file-sorter-tool-free"
+name: "file-sorter-tool-free"
 version: "1.0.0"
-displayName: 视觉文件整理免费版
-summary: 利用视觉模型识别文件内容并智能重命名归档，模拟人类整理流程，适合个人桌面清理。
-license: Proprietary
-edition: free
+displayName: "视觉文件整理免费版"
+summary: "利用视觉模型识别文件内容并智能重命名归档，模拟人类整理流程，适合个人桌面清理。"
+license: "Proprietary"
+edition: "free"
 description: |-
   视觉文件整理工具免费版，面向个人用户的轻量级文件整理助手。核心能力:
   - 自动遍历下载文件夹或桌面
@@ -20,13 +20,14 @@ description: |-
 
   差异化: 免费版聚焦核心视觉识别与归档能力，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手
 tags:
-- 文件整理
-- 视觉识别
-- 自动归档
-- 免费版
+  - 文件整理
+  - 视觉识别
+  - 自动归档
+  - 免费版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 视觉文件整理工具（免费版）
 

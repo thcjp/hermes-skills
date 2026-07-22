@@ -1,11 +1,11 @@
 ---
-slug: word-docx-v102-tool-pro
-name: word-docx-v102-tool-pro
+slug: "word-docx-v102-tool-pro"
+name: "word-docx-v102-tool-pro"
 version: "1.0.0"
-displayName: Word文档工具V102（专业版）
-summary: Word文档处理增强版本，支持高级格式化、样式管理、修订追踪与协同编辑。
-license: Proprietary
-edition: pro
+displayName: "Word文档工具V102（专业版）"
+summary: "Word文档处理增强版本，支持高级格式化、样式管理、修订追踪与协同编辑。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Word文档工具V102 - （专业版）
 
@@ -17,15 +17,15 @@ description: |-
 
   适用关键词: Word文档, 高级格式, 修订追踪, 批注管理, 协同编辑, 样式管理, 内容控件, 条件渲染
 tags:
-- Word文档
-- 高级格式
-- 修订追踪
-- 协同编辑
+  - Word文档
+  - 高级格式
+  - 修订追踪
+  - 协同编辑
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Word文档工具V102（专业版）
 
 ## 概述

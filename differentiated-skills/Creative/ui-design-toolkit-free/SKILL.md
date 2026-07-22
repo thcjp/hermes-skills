@@ -1,11 +1,11 @@
 ---
-slug: ui-design-toolkit-free
-name: ui-design-toolkit-free
+slug: "ui-design-toolkit-free"
+name: "ui-design-toolkit-free"
 version: "1.0.0"
-displayName: UI设计工具包免费版
-summary: UI设计原则与优选实践工具包,涵盖视觉层次、排版、色彩与间距,适合个人开发者快速上手。
-license: Proprietary
-edition: free
+displayName: "UI设计工具包免费版"
+summary: "UI设计原则与优选实践工具包,涵盖视觉层次、排版、色彩与间距,适合个人开发者快速上手。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人开发者的 UI 设计工具包(免费版)。核心能力:
   - 视觉层次(Visual Hierarchy)设计原则
@@ -26,14 +26,15 @@ description: |-
   差异化:
   - 免费版聚焦核心设计原则与常见场...
 tags:
-- 创意设计
-- UI设计
-- 界面设计
-- 设计原则
-- 前端开发
+  - 创意设计
+  - UI设计
+  - 界面设计
+  - 设计原则
+  - 前端开发
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # UI 设计工具包 - 免费版
 

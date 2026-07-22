@@ -1,23 +1,23 @@
 ---
-slug: api-doc-generator
-name: api-doc-generator
+slug: "api-doc-generator"
+name: "api-doc-generator"
 version: "1.0.0"
-displayName: API文档生成器(专业版)
-summary: 企业级API文档平台，含代码扫描、多格式导出、版本管理、Mock联动与团队评审。
-license: Proprietary
-edition: pro
+displayName: "API文档生成器(专业版)"
+summary: "企业级API文档平台，含代码扫描、多格式导出、版本管理、Mock联动与团队评审。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   API文档生成器专业版是面向研发团队的全功能API文档平台。在免费版的自然语言→OpenAPI+Markdown双产出基础上，解锁代码仓库自动扫描、多格式导出、文档版本管理、Mock服务器联动、团队评审协作、GraphQL Schema生成、自定义模板引擎、多语言文档八大高级能力，覆盖从代码到文档到 Mock再到评审的完整闭环
 tags:
-- API文档
-- OpenAPI
-- 代码扫描
-- 团队协作
-- 文档治理
+  - API文档
+  - OpenAPI
+  - 代码扫描
+  - 团队协作
+  - 文档治理
 tools:
   - - read
-- exec
-# API文档生成器（专业版）
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # API文档生成器(专业版)
 

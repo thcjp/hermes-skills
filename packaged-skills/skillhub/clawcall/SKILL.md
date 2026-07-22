@@ -1,10 +1,10 @@
 ---
-slug: clawcall
-name: clawcall
+slug: "clawcall"
+name: "clawcall"
 version: "1.0.0"
-displayName: 语音通话服务
-summary: 由AI语音代理拨打美国真实电话，处理菜单、等待、转接，返回转录、结果与录音链接。
-license: MIT
+displayName: "语音通话服务"
+summary: "由AI语音代理拨打美国真实电话，处理菜单、等待、转接，返回转录、结果与录音链接。"
+license: "MIT"
 description: |-
   语音通话服务让AI代理为用户拨打真实的美国电话。语音AI代理负责拨号、对话、处理电话菜单或等待时间，
   并在通话结束后返回转录、结果与录音链接（如可用）。首次外呼可自动签发API密钥。
@@ -25,8 +25,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 语音通话服务（Voice Call Service）
 
 语音通话服务让AI代理为用户拨打真实的美国电话。语音AI代理负责拨号、对话、处理电话菜单或等待时间，并在通话结束后返回转录、结果与录音链接（如可用）。首次外呼可自动签发API密钥。

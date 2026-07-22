@@ -1,10 +1,10 @@
 ---
-slug: api-generator-free
-name: api-generator-free
+slug: "api-generator-free"
+name: "api-generator-free"
 version: "1.0.0"
-displayName: API代码生成器免费版
-summary: 生成RESTful端点、GraphQL schema与测试套件,快速搭建API代码脚手架
-license: MIT
+displayName: "API代码生成器免费版"
+summary: "生成RESTful端点、GraphQL schema与测试套件,快速搭建API代码脚手架"
+license: "MIT"
 description: |-
   API 代码生成器免费版。从零生成基础 API 代码脚手架,支持 RESTful CRUD 端点（Express.js）、
   GraphQL Type+Query+Mutation schema 与 Jest+Supertest 测试套件。
@@ -15,8 +15,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # API 代码生成器（免费版）
 
 从零生成基础 API 代码脚手架。支持 RESTful 端点、GraphQL schema 与测试套件,所有代码输出到 stdout。

@@ -1,10 +1,10 @@
 ---
-slug: shop-culture-free
-name: shop-culture-free
+slug: "shop-culture-free"
+name: "shop-culture-free"
 version: "1.0.12"
-displayName: 生活方式购物基础版
-summary: 基础商品浏览和搜索，AI购物助手和分类导航
-license: MIT
+displayName: "生活方式购物基础版"
+summary: "基础商品浏览和搜索，AI购物助手和分类导航"
+license: "MIT"
 description: |-
   AI代理自主购物技能的免费版。支持商品浏览、语义搜索、AI购物助手和分类导航。
   适用于商品查找和信息查看场景。升级至完整版可解锁多链加密支付结账、x402协议、
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 生活方式购物（免费版）
 
 AI代理自主购物技能的免费版。支持商品浏览、语义搜索、AI购物助手和分类导航，无需API Key。

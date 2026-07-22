@@ -1,19 +1,19 @@
 ---
-slug: tool
-name: tool
+slug: "tool"
+name: "tool"
 version: "1.0.0"
-displayName: Tool
-summary: A comprehensive AI agent skill for finding, evaluating, and getting the most
-  from the tools that ...
-license: MIT
+displayName: "Tool"
+summary: "A comprehensive AI agent skill for finding, evaluating, and getting the most"
+license: "MIT"
 description: |-
   A comprehensive AI agent skill for finding, evaluating, and getting
   the most from the tools that 。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Tool
 

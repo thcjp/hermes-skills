@@ -1,11 +1,11 @@
 ---
-slug: story-write-tool-pro
-name: story-write-tool-pro
+slug: "story-write-tool-pro"
+name: "story-write-tool-pro"
 version: "1.0.0"
-displayName: 长篇网文写作-专业版
-summary: 企业级网文创作平台,支持批量生成、市场适配、多线管理与团队协作,适合工作室
-license: Proprietary
-edition: pro
+displayName: "长篇网文写作-专业版"
+summary: "企业级网文创作平台,支持批量生成、市场适配、多线管理与团队协作,适合工作室"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级长篇网文创作工具专业版,面向网文工作室与专业作者。核心能力:
   - 批量章节生成与定时更新
@@ -25,14 +25,15 @@ description: |-
 
   差异化:专业版在免费版基础上扩展批量生成、市场适配与团队协作,兼容免费版项目结构
 tags:
-- 网文创作
-- 企业级
-- 批量生成
-- 团队协作
-- 市场适配
+  - 网文创作
+  - 企业级
+  - 批量生成
+  - 团队协作
+  - 市场适配
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 长篇网文写作 - 专业版
 

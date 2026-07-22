@@ -1,11 +1,11 @@
 ---
-slug: job-auto-apply-tool-pro
-name: job-auto-apply-tool-pro
+slug: "job-auto-apply-tool-pro"
+name: "job-auto-apply-tool-pro"
 version: "1.0.0"
-displayName: 求职申请专业版
-summary: 企业级求职自动化工具，支持多平台批量投递、申请追踪、效果分析、AI 智能匹配与团队协作，适合猎头与求职机构。
-license: Proprietary
-edition: pro
+displayName: "求职申请专业版"
+summary: "企业级求职自动化工具，支持多平台批量投递、申请追踪、效果分析、AI 智能匹配与团队协作，适合猎头与求职机构。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级求职自动化工具，支持多平台批量投递、申请追踪、效果分析、AI 智能匹配与团队协作，适合猎头与求职机构。核心能力:
   - 跨 5+ 招聘平台批量自动投递
@@ -24,16 +24,16 @@ description: |-
   差异化:
   - PRO 版支持 5+ 平台批量投递...
 tags:
-- 求职
-- 企业工具
-- 批量投递
-- 招聘管理
-- AI 匹配
+  - 求职
+  - 企业工具
+  - 批量投递
+  - 招聘管理
+  - AI 匹配
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 求职申请专业版
 
 ## 概述

@@ -1,26 +1,26 @@
 ---
-slug: markdown-converter-tool-pro
-name: markdown-converter-tool-pro
+slug: "markdown-converter-tool-pro"
+name: "markdown-converter-tool-pro"
 version: "1.0.0"
-displayName: Markdown转换器专业版
-summary: 企业级文档批量转换系统,支持目录扫描、批量处理、自定义模板、元数据提取与CI/CD集成,适合团队与商业项目。
-license: Proprietary
-edition: pro
+displayName: "Markdown转换器专业版"
+summary: "企业级文档批量转换系统,支持目录扫描、批量处理、自定义模板、元数据提取与CI/CD集成,适合团队与商业项目。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Markdown转换器专业版为企业与内容团队提供系统化的文档转换解决方案。在免费版基础转换能力之上,增加批量处理、目录扫描、自定义输出模板、
   元数据提取、文档质量审计与CI/CD集成能力。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Markdown
-- 文档转换
-- 企业级
-- 批量处理
-- 自动化
-- CI/CD
+  - Markdown
+  - 文档转换
+  - 企业级
+  - 批量处理
+  - 自动化
+  - CI/CD
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Markdown转换器专业版
 ## 概述
 Markdown转换器专业版为企业与内容团队提供系统化的文档转换解决方案。在免费版基础转换能力之上,PRO版增加批量处理、目录扫描、自定义输出模板、元数据提取、文档质量审计与CI/CD集成能力,满足企业级文档处理的效率与质量需求。

@@ -1,10 +1,10 @@
 ---
-slug: jinn-node
-name: jinn-node
+slug: "jinn-node"
+name: "jinn-node"
 version: "1.0.0"
-displayName: Jinn Node
-summary: 在自治网络中运行工作节点，通过完成链上任务赚取代币奖励。
-license: MIT
+displayName: "Jinn Node"
+summary: "在自治网络中运行工作节点，通过完成链上任务赚取代币奖励。"
+license: "MIT"
 description: |-
   jinn-node 是一个面向自治网络的链上工作节点技能。部署后，你的 Agent 将持续接收并完成链上任务，
   在 Base 网络上赚取代币奖励并积累声誉。支持钱包管理、质押配置、Launchpad 交互和单任务测试模式。
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # jinn-node
 
 jinn-node 让你的 Agent 在自治网络上持续工作，完成链上任务赚取代币奖励。节点部署在 Base 网络上，

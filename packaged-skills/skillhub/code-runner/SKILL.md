@@ -1,11 +1,11 @@
 ---
-slug: code-runner
-name: code-runner
+slug: "code-runner"
+name: "code-runner"
 version: "1.0.0"
-displayName: 代码执行工具专业版
-summary: 企业级PTY代码执行,支持批量任务、并发执行、执行审计与CI/CD集成
-license: Proprietary
-edition: pro
+displayName: "代码执行工具专业版"
+summary: "企业级PTY代码执行,支持批量任务、并发执行、执行审计与CI/CD集成"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队与企业的高级代码执行工具,在免费版基础上扩展批量执行、并发管理、执行审计等能力。核心能力:
   - 批量任务执行与并发管理
@@ -24,16 +24,16 @@ description: |-
   - 支持批量并发与任务编排
   - 提供执行审计与日志追踪
   - 优先技术支持与更新通道
-
 tags:
-- 开发工具
-- 代码执行
-- 企业级
-- 批量处理
-- CI/CD集成
+  - 开发工具
+  - 代码执行
+  - 企业级
+  - 批量处理
+  - CI/CD集成
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 代码执行工具专业版
 

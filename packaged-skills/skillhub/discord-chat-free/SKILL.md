@@ -1,10 +1,10 @@
 ---
-slug: discord-chat-free
-name: discord-chat-free
+slug: "discord-chat-free"
+name: "discord-chat-free"
 version: "1.0.0"
-displayName: Discord Chat 基础
-summary: 通过message工具在Discord频道发送消息、回复、读取历史与表情回应
-license: MIT
+displayName: "Discord Chat 基础"
+summary: "通过message工具在Discord频道发送消息、回复、读取历史与表情回应"
+license: "MIT"
 description: |-
   discord-chat-free 提供 Discord 频道的基础聊天能力,覆盖消息发送、
   线程回复、历史读取与表情回应。适合个人开发者与小型社区进行通知推送、
@@ -16,8 +16,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Discord Chat 基础
 
 ## 概述

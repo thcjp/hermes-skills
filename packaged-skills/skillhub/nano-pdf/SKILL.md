@@ -1,10 +1,10 @@
 ---
-slug: nano-pdf
-name: nano-pdf
+slug: "nano-pdf"
+name: "nano-pdf"
 version: "1.0.0"
-displayName: Nano Pdf
-summary: Edit PDFs with natural-language instructions using the nano-pdf CLI.
-license: MIT
+displayName: "Nano Pdf"
+summary: "Edit PDFs with natural-language instructions using the nano-pdf CLI."
+license: "MIT"
 description: |-
   Edit PDFs with natural-language instructions using the nano-pdf CLI。核心能力:
 
@@ -21,12 +21,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Knowledge
+  - Knowledge
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Nano Pdf
 

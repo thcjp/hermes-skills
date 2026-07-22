@@ -1,11 +1,11 @@
 ---
-slug: code-analyze
-name: code-analyze
+slug: "code-analyze"
+name: "code-analyze"
 version: "1.0.0"
-displayName: 代码分析工具专业版
-summary: 企业级多领域结构化分析,支持批量分析、团队协作、自定义框架与优先级支持
-license: Proprietary
-edition: pro
+displayName: "代码分析工具专业版"
+summary: "企业级多领域结构化分析,支持批量分析、团队协作、自定义框架与优先级支持"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队与企业的高级结构化分析工具,在免费版基础上扩展批量分析、协作评审、自定义框架等能力。核心能力:
   - 多领域深度分析(代码、数据、文本、决策、可视化、架构)
@@ -25,14 +25,15 @@ description: |-
   - 提供团队协作与历史追踪能力
   - 优先...
 tags:
-- 开发工具
-- 代码分析
-- 企业级
-- 批量分析
-- 团队协作
+  - 开发工具
+  - 代码分析
+  - 企业级
+  - 批量分析
+  - 团队协作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 代码分析工具专业版
 

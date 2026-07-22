@@ -1,11 +1,11 @@
 ---
-slug: data-analysis-hub
-name: data-analysis-hub
+slug: "data-analysis-hub"
+name: "data-analysis-hub"
 version: "1.0.0"
-displayName: 数据分析中枢(专业版)
-summary: 全功能决策分析平台,支持批处理、多重比较校正、定时任务、协同审阅与高级报告模板。
-license: Proprietary
-edition: pro
+displayName: "数据分析中枢(专业版)"
+summary: "全功能决策分析平台,支持批处理、多重比较校正、定时任务、协同审阅与高级报告模板。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   数据分析中枢专业版面向数据分析师、增长负责人、产品负责人与 BI 团队,提供完整的方法论纪律、批量处理能力与团队协同机制。核心能力:
   - 涵盖免费版全部能力,无条数限制、无功能裁剪
@@ -23,6 +23,7 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
 # 数据分析中枢(专业版)
 

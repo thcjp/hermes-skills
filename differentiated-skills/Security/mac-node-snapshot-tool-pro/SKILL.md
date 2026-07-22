@@ -1,11 +1,11 @@
 ---
-slug: mac-node-snapshot-tool-pro
-name: mac-node-snapshot-tool-pro
+slug: "mac-node-snapshot-tool-pro"
+name: "mac-node-snapshot-tool-pro"
 version: "1.0.0"
-displayName: macOS截图工具专业版
-summary: 企业级macOS屏幕捕获平台,支持多屏截图、音频录屏、定时批量截图、OCR文字识别与自动上传,适合专业内容创作与文档制作。
-license: Proprietary
-edition: pro
+displayName: "macOS截图工具专业版"
+summary: "企业级macOS屏幕捕获平台,支持多屏截图、音频录屏、定时批量截图、OCR文字识别与自动上传,适合专业内容创作与文档制作。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   macOS截图工具专业版,为专业用户提供全方位屏幕捕获与处理能力。
   核心能力:多屏截图、音频录屏、定时批量截图、OCR文字识别、图片编辑标注、云端自动上传、GIF制作。
@@ -13,13 +13,14 @@ description: |-
   差异化:专业版兼容免费版截图功能,新增OCR识别与批量处理能力,满足专业内容创作需求。
   适用关键词: macOS截图, OCR识别, 批量截图, 音频录屏, 多显示器, screenshot pro, OCR, batch capture
 tags:
-- macOS
-- 截图
-- 企业版
-- OCR
+  - macOS
+  - 截图
+  - 企业版
+  - OCR
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # macOS截图工具专业版
 ## 概述

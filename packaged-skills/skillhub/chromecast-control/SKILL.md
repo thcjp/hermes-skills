@@ -1,10 +1,10 @@
 ---
-slug: chromecast-control
-name: chromecast-control
+slug: "chromecast-control"
+name: "chromecast-control"
 version: "1.0.0"
-displayName: 投屏设备控制
-summary: 控制局域网投屏设备，发现设备、投放媒体、管理播放和音量
-license: MIT
+displayName: "投屏设备控制"
+summary: "控制局域网投屏设备，发现设备、投放媒体、管理播放和音量"
+license: "MIT"
 description: |-
   使用catt工具控制局域网内的投屏设备。支持设备发现、媒体投放（视频/音频/网页）、
   播放控制、进度跳转、音量调节、队列管理、字幕加载和设备别名管理。
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 投屏设备控制
 
 使用 `catt`（Cast All The Things）工具控制局域网内的投屏协议设备。支持设备发现、媒体投放、播放控制、音量调节、队列管理、字幕加载和多设备别名管理。

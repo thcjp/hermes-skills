@@ -1,10 +1,10 @@
 ---
-slug: learn-cog
-name: learn-cog
+slug: "learn-cog"
+name: "learn-cog"
 version: "1.0.0"
-displayName: 个性化学习助手
-summary: AI驱动的个性化学习助手，支持项目教程、语言学习、写作反馈、视觉学习与学习指南。
-license: Proprietary
+displayName: "个性化学习助手"
+summary: "AI驱动的个性化学习助手，支持项目教程、语言学习、写作反馈、视觉学习与学习指南。"
+license: "Proprietary"
 description: |-
   个性化学习助手，基于CellCog提供多模式AI辅导。
   支持项目教程、语言学习、写作反馈、视觉学习与学习指南生成。
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 个性化学习助手
 
 AI驱动的个性化学习助手，支持项目教程、语言学习、写作反馈、视觉学习与学习指南。

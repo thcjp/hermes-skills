@@ -1,11 +1,11 @@
 ---
-slug: universal-translate-tool-free
-name: universal-translate-tool-free
+slug: "universal-translate-tool-free"
+name: "universal-translate-tool-free"
 version: "1.0.0"
-displayName: 通用翻译工具(免费版)
-summary: 面向个人用户的多语言翻译工具,支持文本翻译、自动检测源语言,保留格式与术语。
-license: Proprietary
-edition: free
+displayName: "通用翻译工具(免费版)"
+summary: "面向个人用户的多语言翻译工具,支持文本翻译、自动检测源语言,保留格式与术语。"
+license: "Proprietary"
+edition: "free"
 description: |-
   通用翻译工具免费版为个人用户提供日常多语言翻译能力,覆盖文本翻译、自动源语言检测、格式保留与术语保护。核心能力:
   - 文本翻译(任意语言互译)
@@ -21,14 +21,15 @@ description: |-
 
   差异化:免费版聚焦个人日常翻译需求,支持单文件翻译
 tags:
-- 翻译
-- 多语言
-- 文档处理
-- 个人开发
-- 本地化
+  - 翻译
+  - 多语言
+  - 文档处理
+  - 个人开发
+  - 本地化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 通用翻译工具(免费版)
 

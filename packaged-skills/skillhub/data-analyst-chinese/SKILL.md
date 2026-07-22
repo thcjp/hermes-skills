@@ -1,11 +1,11 @@
 ---
-slug: data-analyst-chinese
-name: data-analyst-chinese
+slug: "data-analyst-chinese"
+name: "data-analyst-chinese"
 version: "1.0.0"
-displayName: 中文数据分析(专业版)
-summary: 全功能中文数据分析平台,支持时序分解、假设检验、大数据集批处理与自定义报告模板。
-license: Proprietary
-edition: pro
+displayName: "中文数据分析(专业版)"
+summary: "全功能中文数据分析平台,支持时序分解、假设检验、大数据集批处理与自定义报告模板。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   中文数据分析专业版面向专业数据分析师、BI 工程师与数据团队负责人,提供完整的数据分析生产线能力。核心能力:
   - 涵盖免费版全部能力,无条数与功能限制
@@ -24,6 +24,7 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
 # 中文数据分析(专业版)
 

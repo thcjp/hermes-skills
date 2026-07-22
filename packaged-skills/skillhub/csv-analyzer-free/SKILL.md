@@ -1,10 +1,10 @@
 ---
-slug: csv-analyzer-free
-name: csv-analyzer-free
+slug: "csv-analyzer-free"
+name: "csv-analyzer-free"
 version: "1.0.0"
-displayName: CSV数据分析-免费版
-summary: CSV数据分析免费版，提供快速统计与基础筛选，零外部依赖，适合轻量数据探索。
-license: MIT
+displayName: "CSV数据分析-免费版"
+summary: "CSV数据分析免费版，提供快速统计与基础筛选，零外部依赖，适合轻量数据探索。"
+license: "MIT"
 description: |-
   CSV数据分析器免费版提供快速统计与基础筛选能力。
   仅依赖Python标准库（csv模块），无需pandas或重型依赖。
@@ -22,8 +22,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Csv Analyzer — CSV数据分析器（免费版）
 
 用简单命令分析CSV文件，即时获取统计与筛选结果——无需pandas或重型依赖。

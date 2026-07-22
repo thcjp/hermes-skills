@@ -1,11 +1,11 @@
 ---
-slug: cdn-toolkit-pro
-name: cdn-toolkit-pro
+slug: "cdn-toolkit-pro"
+name: "cdn-toolkit-pro"
 version: "1.0.0"
-displayName: CDN配置工具包专业版
-summary: 企业级CDN管理平台,支持多CDN智能调度、边缘计算、高级WAF防护、实时监控与DDoS防护,适合企业级内容分发需求。
-license: Proprietary
-edition: pro
+displayName: "CDN配置工具包专业版"
+summary: "企业级CDN管理平台,支持多CDN智能调度、边缘计算、高级WAF防护、实时监控与DDoS防护,适合企业级内容分发需求。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   CDN配置工具包专业版,为企业提供全方位内容分发网络管理能力。
   核心能力:多CDN智能调度、Edge Workers边缘计算、高级WAF与DDoS防护、实时性能监控、缓存预热与刷新、SARIF报告。
@@ -13,15 +13,14 @@ description: |-
   差异化:专业版兼容免费版配置方法,新增企业级多CDN管理与边缘计算能力,满足规模化分发需求。
   适用关键词: 多CDN, 边缘计算, Edge Workers, DDoS防护, WAF, CDN监控, multi-cdn, edge computing
 tags:
-- CDN
-- 边缘计算
-- 企业版
-- DDoS防护
+  - CDN
+  - 边缘计算
+  - 企业版
+  - DDoS防护
 tools:
   - - read
-- exec
-# CDN配置工具包专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 专业版为企业提供完整的CDN管理与优化平台,在免费版基础配置能力之上,新增多CDN智能调度、Edge Workers边缘计算、高级WAF与DDoS防护、实时性能监控与告警、缓存预热与批量刷新、SARIF合规报告等企业级功能。专业版完全兼容免费版配置方法,已有CDN配置可无缝升级,适合全球内容分发与高并发场景。
 

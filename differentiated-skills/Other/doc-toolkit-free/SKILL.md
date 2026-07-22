@@ -1,11 +1,11 @@
 ---
-slug: doc-toolkit-free
-name: doc-toolkit-free
+slug: "doc-toolkit-free"
+name: "doc-toolkit-free"
 version: "1.0.0"
-displayName: 文档工具箱免费版
-summary: 使用python-docx读写与编辑DOCX文档，支持基础格式化与视觉校验，适合日常文档处理。
-license: Proprietary
-edition: free
+displayName: "文档工具箱免费版"
+summary: "使用python-docx读写与编辑DOCX文档，支持基础格式化与视觉校验，适合日常文档处理。"
+license: "Proprietary"
+edition: "free"
 description: |-
   文档工具箱免费版是一款面向开发者的DOCX文档处理Skill，封装python-docx与LibreOffice渲染能力，提供从读取、创建到编辑的完整基础工作流。核心能力：
   - 读取与审查DOCX内容（表格、段落、样式）
@@ -13,13 +13,14 @@ description: |-
   - 基础格式化（字体、字号、颜色、对齐）
   - 视觉校验：DOCX转PDF转PNG...
 tags:
-- 文档处理
-- DOCX
-- 办公自动化
-- 排版校验
+  - 文档处理
+  - DOCX
+  - 办公自动化
+  - 排版校验
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 文档工具箱免费版（Doc Toolkit Free）
 

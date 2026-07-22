@@ -1,21 +1,22 @@
 ---
-slug: xlsx-handler
-name: xlsx-handler
+slug: "xlsx-handler"
+name: "xlsx-handler"
 version: "1.0.0"
-displayName: XLSX处理专业版
-summary: 企业级 XLSX 读写引擎，含批量处理、大文件流式、公式审计、跨平台兼容与数据源对接。
-license: Proprietary
-edition: pro
+displayName: "XLSX处理专业版"
+summary: "企业级 XLSX 读写引擎，含批量处理、大文件流式、公式审计、跨平台兼容与数据源对接。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   XLSX 处理专业版在免费版基础上扩展批量处理、大文件流式读写、工作簿差异对比、公式审计与依赖追踪、数据源对接与跨平台深度兼容能力。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
-- 集成工具
-- 表格处理
-- 企业级
-- 工作簿治理
+  - 集成工具
+  - 表格处理
+  - 企业级
+  - 工作簿治理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # XLSX处理专业版
 

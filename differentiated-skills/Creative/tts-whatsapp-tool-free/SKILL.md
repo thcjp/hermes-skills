@@ -1,11 +1,11 @@
 ---
-slug: tts-whatsapp-tool-free
-name: tts-whatsapp-tool-free
+slug: "tts-whatsapp-tool-free"
+name: "tts-whatsapp-tool-free"
 version: "1.0.0"
-displayName: WhatsApp语音消息免费版
-summary: 基于 Piper TTS 的 WhatsApp 语音消息发送工具,支持 40+ 语言,适合个人用户发送语音消息。
-license: Proprietary
-edition: free
+displayName: "WhatsApp语音消息免费版"
+summary: "基于 Piper TTS 的 WhatsApp 语音消息发送工具,支持 40+ 语言,适合个人用户发送语音消息。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人用户的 WhatsApp 语音消息工具(免费版)。核心能力:
   - 基于 Piper TTS 的高质量语音合成(40+ 语言)
@@ -25,14 +25,15 @@ description: |-
   - 免费版聚焦单条消息发送核心能力
   - 完...
 tags:
-- 创意设计
-- 语音合成
-- WhatsApp
-- 消息发送
-- 多语言
+  - 创意设计
+  - 语音合成
+  - WhatsApp
+  - 消息发送
+  - 多语言
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # WhatsApp 语音消息工具 - 免费版
 

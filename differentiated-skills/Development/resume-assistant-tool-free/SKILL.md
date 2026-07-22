@@ -1,11 +1,11 @@
 ---
-slug: resume-assistant-tool-free
-name: resume-assistant-tool-free
+slug: "resume-assistant-tool-free"
+name: "resume-assistant-tool-free"
 version: "1.0.0"
-displayName: 简历助手工具(免费版)
-summary: 个人求职者的简历润色、基础评分与Markdown导出,助你快速优化简历。
-license: Proprietary
-edition: free
+displayName: "简历助手工具(免费版)"
+summary: "个人求职者的简历润色、基础评分与Markdown导出,助你快速优化简历。"
+license: "Proprietary"
+edition: "free"
 description: |-
   简历助手工具(免费版)为个人求职者提供简历润色、基础评分与Markdown导出能力。核心能力:
   - 40+项清单式简历审查与润色
@@ -25,15 +25,15 @@ description: |-
 
   适用关键词: 简历, resume, cv, 润色, pol...
 tags:
-- Development
-- 求职
-- 简历
-- 文档
+  - Development
+  - 求职
+  - 简历
+  - 文档
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 简历助手工具(免费版)
 
 ## 概述

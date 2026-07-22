@@ -1,11 +1,11 @@
 ---
-slug: content-filter-tool-pro
-name: content-filter-tool-pro
+slug: "content-filter-tool-pro"
+name: "content-filter-tool-pro"
 version: "1.0.0"
-displayName: 内容过滤工具专业版
-summary: 面向团队的 AI 语义过滤、多账号同步与合规审计工具。
-license: Proprietary
-edition: pro
+displayName: "内容过滤工具专业版"
+summary: "面向团队的 AI 语义过滤、多账号同步与合规审计工具。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队的信息流 AI 语义过滤与合规治理专业工具。核心能力:
   - AI 语义识别与多语言过滤
@@ -20,14 +20,15 @@ description: |-
 
   差异化: 专业版在免费版关键词过滤上扩展 AI 语义、多账号同步、合规审计与自定义管道，兼容免费版规则格式
 tags:
-- 内容过滤
-- 企业级
-- AI 语义
-- 合规
-- 其他工具
+  - 内容过滤
+  - 企业级
+  - AI 语义
+  - 合规
+  - 其他工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 内容过滤工具（专业版）
 

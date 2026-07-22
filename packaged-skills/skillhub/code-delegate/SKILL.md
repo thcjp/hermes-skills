@@ -1,11 +1,11 @@
 ---
-slug: code-delegate
-name: code-delegate
+slug: "code-delegate"
+name: "code-delegate"
 version: "1.0.0"
-displayName: 代码委派工具专业版
-summary: 企业级批量代码委派,支持多任务并行、团队协作、权限治理与质量审计
-license: Proprietary
-edition: pro
+displayName: "代码委派工具专业版"
+summary: "企业级批量代码委派,支持多任务并行、团队协作、权限治理与质量审计"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队与企业的高级代码委派工具,在免费版基础上扩展批量委派、并行执行、权限治理等能力。核心能力:
   - 多任务并行委派与任务队列管理
@@ -24,16 +24,16 @@ description: |-
   - 支持多任务并行与队列管理
   - 提供权限治理与审计能力
   - 优先技术支持与更新通道
-
 tags:
-- 开发工具
-- 代码委派
-- 企业级
-- 批量执行
-- 权限治理
+  - 开发工具
+  - 代码委派
+  - 企业级
+  - 批量执行
+  - 权限治理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 代码委派工具专业版
 

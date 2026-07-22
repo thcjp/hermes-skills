@@ -1,19 +1,19 @@
 ---
-slug: ux
-name: ux
+slug: "ux"
+name: "ux"
 version: "1.0.0"
-displayName: UX
-summary: Design and analyze user experiences that are intuitive, efficient, and aligned
-  with user mental m...
-license: MIT
+displayName: "UX"
+summary: "Design and analyze user experiences that are intuitive, efficient, and aligned"
+license: "MIT"
 description: |-
   Design and analyze user experiences that are intuitive, efficient, and
   aligned with user mental m。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Creative
+  - Creative
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # UX
 

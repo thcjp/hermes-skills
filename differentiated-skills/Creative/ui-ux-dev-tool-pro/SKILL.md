@@ -1,11 +1,11 @@
 ---
-slug: ui-ux-dev-tool-pro
-name: ui-ux-dev-tool-pro
+slug: "ui-ux-dev-tool-pro"
+name: "ui-ux-dev-tool-pro"
 version: "1.0.0"
-displayName: UI/UX开发工具专业版
-summary: 多页面React项目生成+设计系统持久化+批量截图+Zip导出,面向团队的专业页面开发引擎
-license: Proprietary
-edition: pro
+displayName: "UI/UX开发工具专业版"
+summary: "多页面React项目生成+设计系统持久化+批量截图+Zip导出,面向团队的专业页面开发引擎"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向开发团队和代理机构的专业级React页面生成引擎,支持多页面项目管理、
   设计系统持久化、自动化截图审查循环、批量图片处理和Zip打包导出。核心能力:
@@ -22,21 +22,20 @@ description: |-
   - 企业多页面Web应用快速开发
   - 设计系...
 tags:
-- 设计
-- UI
-- UX
-- React
-- 前端
-- 原型
-- 开发
-- 企业级
-- 项目管理
-- 批量处理
+  - 设计
+  - UI
+  - UX
+  - React
+  - 前端
+  - 原型
+  - 开发
+  - 企业级
+  - 项目管理
+  - 批量处理
 tools:
   - - read
-- exec
-# UI/UX开发工具 - 专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 UI/UX开发工具专业版是一款面向开发团队和代理机构的专业级React页面生成引擎。在免费版单页面生成能力之上,扩展至多页面项目管理、设计系统持久化引用、自动化多分辨率截图审查循环、批量图片处理和Zip打包导出。
 

@@ -1,10 +1,10 @@
 ---
-slug: whatsapp-messaging-free
-name: whatsapp-messaging-free
+slug: "whatsapp-messaging-free"
+name: "whatsapp-messaging-free"
 version: "1.0.0"
-displayName: WhatsApp 消息（免费版）
-summary: 通过 WhatsApp Business API 发送文本与图片消息、查询手机号，满足基础触达需求。
-license: MIT
+displayName: "WhatsApp 消息（免费版）"
+summary: "通过 WhatsApp Business API 发送文本与图片消息、查询手机号，满足基础触达需求。"
+license: "MIT"
 description: |-
   通过 WhatsApp Business API 发送基础消息。免费版支持文本消息、图片消息与手机号查询。
   通过 ClawLink 托管的连接流程与凭据管理，无需自行配置 WhatsApp API 访问。
@@ -16,8 +16,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # WhatsApp（免费版）
 
 通过 WhatsApp Business API 发送基础消息。免费版支持文本消息、图片消息与手机号查询，满足日常触达需求。本技能通过 ClawLink 托管的连接流程与凭据管理，无需自行配置 WhatsApp API 访问。

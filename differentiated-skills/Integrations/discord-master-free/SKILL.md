@@ -1,21 +1,22 @@
 ---
-slug: discord-master-free
-name: discord-master-free
+slug: "discord-master-free"
+name: "discord-master-free"
 version: "1.0.0"
-displayName: Discord开发助手(免费版)
-summary: Discord Bot开发入门指南，覆盖命令注册、消息处理、认证安全等核心能力。
-license: Proprietary
-edition: free
+displayName: "Discord开发助手(免费版)"
+summary: "Discord Bot开发入门指南，覆盖命令注册、消息处理、认证安全等核心能力。"
+license: "Proprietary"
+edition: "free"
 description: |-
   Discord 开发助手免费版是一套面向初学者与个人开发者的 Discord Bot 开发知识库，帮助用户快速掌握斜杠命令注册、消息收发、认证安全等核心技能。核心能力：提供 Bot Token 安全管理指南、斜杠命令注册流程、消息与组件交互模板、基础权限配置、HTTP 直连调用方法（无需 SDK 依赖）
 tags:
-- Discord
-- 集成工具
-- Bot开发
-- 免费版
+  - Discord
+  - 集成工具
+  - Bot开发
+  - 免费版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Discord 开发助手（免费版）
 

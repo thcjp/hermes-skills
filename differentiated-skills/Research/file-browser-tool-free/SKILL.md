@@ -1,22 +1,22 @@
 ---
-slug: file-browser-tool-free
-name: file-browser-tool-free
+slug: "file-browser-tool-free"
+name: "file-browser-tool-free"
 version: "1.0.0"
-displayName: 文件浏览器(免费版)
-summary: 文件浏览器免费版，支持基础文件操作、目录浏览、简单搜索与文本预览。
-license: Proprietary
-edition: free
+displayName: "文件浏览器(免费版)"
+summary: "文件浏览器免费版，支持基础文件操作、目录浏览、简单搜索与文本预览。"
+license: "Proprietary"
+edition: "free"
 description: |-
   文件浏览器助手免费版是面向个人用户的轻量文件管理工具。聚焦"浏览-查看-搜索-管理"四步流程，提供基础的文件系统操作能力。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。
 tags:
-- 文件管理
-- 目录浏览
-- 文件搜索
-- 文本预览
+  - 文件管理
+  - 目录浏览
+  - 文件搜索
+  - 文本预览
 tools:
   - - read
-- exec
-# 文件浏览器助手（免费版）
+  - exec
+homepage: "https://skillhub.cn"
 ---
 > **浏览、查看、搜索、管理。四步完成文件系统操作。**
 

@@ -1,26 +1,25 @@
 ---
-slug: minimalist-design-tool-pro
-name: minimalist-design-tool-pro
+slug: "minimalist-design-tool-pro"
+name: "minimalist-design-tool-pro"
 version: "1.0.0"
-displayName: 极简设计系统专业版
-summary: 企业级极简设计系统解决方案,支持完整组件库、多主题切换、设计审计与CI/CD集成,适合团队与商业项目。
-license: Proprietary
-edition: pro
+displayName: "极简设计系统专业版"
+summary: "企业级极简设计系统解决方案,支持完整组件库、多主题切换、设计审计与CI/CD集成,适合团队与商业项目。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   极简设计系统专业版为企业与专业团队提供系统化的极简现代主义设计系统解决方案。在免费版核心设计令牌之上,增加完整组件库、多主题切换、设计系统文档自动生成、
   设计审计与CI/CD集成能力。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 设计系统
-- 企业级
-- 组件库
-- 多主题
-- CI/CD
-- 前端开发
+  - 设计系统
+  - 企业级
+  - 组件库
+  - 多主题
+  - CI/CD
+  - 前端开发
 tools:
   - - read
-- exec
-# 极简设计系统专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 极简设计系统专业版为企业与专业团队提供系统化的极简现代主义设计系统解决方案。在免费版核心设计令牌之上,PRO版增加完整组件库、多主题切换、设计系统文档自动生成、设计审计与CI/CD集成能力,满足企业级设计系统的全面需求。
 

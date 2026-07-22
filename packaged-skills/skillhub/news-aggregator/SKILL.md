@@ -1,10 +1,10 @@
 ---
-slug: news-aggregator
-name: news-aggregator
+slug: "news-aggregator"
+name: "news-aggregator"
 version: "1.0.0"
-displayName: 新闻聚合引擎
-summary: 国内外科技、军事、社会新闻聚合，自动搜索、筛选、去重与结构化汇总。
-license: Proprietary
+displayName: "新闻聚合引擎"
+summary: "国内外科技、军事、社会新闻聚合，自动搜索、筛选、去重与结构化汇总。"
+license: "Proprietary"
 description: |-
   国内外社会、科技、军事新闻聚合引擎，自动搜索、筛选、整理新闻要点。覆盖国内科技、
   国内军事、国际科技、国际军事四大板块。核心能力：
@@ -16,6 +16,9 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 信息检索
 ---
 # 新闻聚合引擎
 

@@ -1,11 +1,11 @@
 ---
-slug: solo-validate-tool-free
-name: solo-validate-tool-free
+slug: "solo-validate-tool-free"
+name: "solo-validate-tool-free"
 version: "1.0.0"
-displayName: 想法验证工具免费版
-summary: 轻量级创业想法验证工具,支持S.E.E.D.维度检查与基础评分,适合个人创业者快速筛选想法
-license: Proprietary
-edition: free
+displayName: "想法验证工具免费版"
+summary: "轻量级创业想法验证工具,支持S.E.E.D.维度检查与基础评分,适合个人创业者快速筛选想法"
+license: "Proprietary"
+edition: "free"
 description: |-
   想法验证工具免费版为个人创业者提供轻量级的创业想法验证能力。
 
@@ -24,15 +24,15 @@ description: |-
 
   适用关键词: 想法验证, S.E.E.D., 创业验证, 可行性评估, PRD, validate, startup, 创业筛选
 tags:
-- 研究工具
-- 想法验证
-- 创业
-- 个人效率
+  - 研究工具
+  - 想法验证
+  - 创业
+  - 个人效率
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 想法验证工具免费版
 
 ## 概述

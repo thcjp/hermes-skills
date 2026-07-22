@@ -1,11 +1,11 @@
 ---
-slug: code-analysis-toolkit
-name: code-analysis-toolkit
+slug: "code-analysis-toolkit"
+name: "code-analysis-toolkit"
 version: "1.0.0"
-displayName: 代码分析工具包专业版
-summary: 企业级Git历史分析,支持团队复盘、同意管理、趋势追踪与多格式报告
-license: Proprietary
-edition: pro
+displayName: "代码分析工具包专业版"
+summary: "企业级Git历史分析,支持团队复盘、同意管理、趋势追踪与多格式报告"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队与企业的高级 Git 历史分析工具,在免费版基础上扩展团队复盘、同意管理、趋势追踪等能力。核心能力:
   - 团队复盘分析(需全员同意)
@@ -24,16 +24,16 @@ description: |-
   - 支持团队复盘与同意管理
   - 提供趋势追踪与基线对比
   - 优先技术支持与更新通道
-
 tags:
-- 代码分析
-- Git历史
-- 企业级
-- 团队复盘
-- 趋势追踪
+  - 代码分析
+  - Git历史
+  - 企业级
+  - 团队复盘
+  - 趋势追踪
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 代码分析工具包专业版
 

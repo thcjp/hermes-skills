@@ -1,11 +1,11 @@
 ---
-slug: miniprogram-dev-tool-pro
-name: miniprogram-dev-tool-pro
+slug: "miniprogram-dev-tool-pro"
+name: "miniprogram-dev-tool-pro"
 version: "1.0.0"
-displayName: 小程序开发工具专业版
-summary: 面向团队的多端框架、CI/CD 与企业云治理工具。
-license: Proprietary
-edition: pro
+displayName: "小程序开发工具专业版"
+summary: "面向团队的多端框架、CI/CD 与企业云治理工具。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队的小程序多端框架与企业级开发治理专业工具。核心能力:
   - 多端框架（Taro/uni-app）跨平台开发
@@ -20,14 +20,15 @@ description: |-
 
   差异化: 专业版在免费版单项目微信小程序上扩展多端框架、CI/CD、企业云治理与性能监控，兼容免费版规范
 tags:
-- 小程序
-- 企业级
-- 多端开发
-- CI/CD
-- 其他工具
+  - 小程序
+  - 企业级
+  - 多端开发
+  - CI/CD
+  - 其他工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 小程序开发工具（专业版）
 

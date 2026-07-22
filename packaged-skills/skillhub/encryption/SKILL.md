@@ -1,11 +1,10 @@
 ---
-slug: encryption
-name: encryption
+slug: "encryption"
+name: "encryption"
 version: "1.0.0"
-displayName: Encryption
-summary: Encrypt files, secure passwords, manage keys, and audit code for cryptographic
-  best practices.
-license: MIT
+displayName: "Encryption"
+summary: "Encrypt files, secure passwords, manage keys, and audit code for cryptographic"
+license: "MIT"
 description: |-
   Encrypt files, secure passwords, manage keys, and audit code for cryptographic
   best practices。核心能力:
@@ -26,10 +25,11 @@ description: |-
 
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触...
 tags:
-- Development
+  - Development
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Encryption
 

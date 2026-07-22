@@ -1,23 +1,23 @@
 ---
-slug: workflow-essentials-free
-name: workflow-essentials-free
+slug: "workflow-essentials-free"
+name: "workflow-essentials-free"
 version: "1.0.0"
-displayName: Workflow Essentials
-summary: 自动化工作流的入门精要指南，三步法掌握识别、设计、构建自动化的核心方法。
-license: Proprietary
-edition: free
+displayName: "Workflow Essentials"
+summary: "自动化工作流的入门精要指南，三步法掌握识别、设计、构建自动化的核心方法。"
+license: "Proprietary"
+edition: "free"
 description: |-
   工作流精要为AI Agent提供自动化工作流的入门级方法论。不同于面向特定角色或特定工具的指南，工作流精要聚焦自动化的通用原理与核心方法，适合任何角色快速建立自动化思维。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 自动化基础
-- 工作流入门
-- 效率提升
-- 无代码
+  - 自动化基础
+  - 工作流入门
+  - 效率提升
+  - 无代码
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 工作流精要（免费版）
 
 > **自动化的入门精要指南。三步法掌握核心方法，用最少的篇幅讲清楚如何开始自动化。**

@@ -1,19 +1,19 @@
 ---
-slug: rss-reader
-name: rss-reader
+slug: "rss-reader"
+name: "rss-reader"
 version: "1.0.0"
-displayName: RSS Reader
-summary: Monitor RSS and Atom feeds for content research. Track blogs, news sites,
-  newsletters, and any fe...
-license: MIT
+displayName: "RSS Reader"
+summary: "Monitor RSS and Atom feeds for content research. Track blogs, news sites,"
+license: "MIT"
 description: |-
   Monitor RSS and Atom feeds for content research。Track blogs, news sites,
   newsletters, and any fe。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Research
+  - Research
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # RSS Reader
 

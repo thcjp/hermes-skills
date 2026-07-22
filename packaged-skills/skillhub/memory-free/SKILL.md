@@ -1,10 +1,10 @@
 ---
-slug: memory-free
-name: memory-free
+slug: "memory-free"
+name: "memory-free"
 version: "1.0.0"
-displayName: 记忆管理器免费版
-summary: 基础分类长期记忆系统，支持预设类别与关键词检索，本地隐私存储
-license: MIT
+displayName: "记忆管理器免费版"
+summary: "基础分类长期记忆系统，支持预设类别与关键词检索，本地隐私存储"
+license: "MIT"
 description: |-
   记忆管理器免费版提供基础分类长期记忆能力，与 Agent 内置记忆并行运行。
   核心能力包括：预设三类分类存储（项目/人脉/知识）、自动索引维护、即时写入机制、关键词检索。
@@ -14,8 +14,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 智能助手
 ---
-
 # 记忆管理器免费版
 
 基础分类长期记忆系统，与 Agent 内置记忆并行扩展。

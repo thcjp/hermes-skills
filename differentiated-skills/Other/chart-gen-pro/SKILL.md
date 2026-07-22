@@ -1,11 +1,11 @@
 ---
-slug: chart-gen-pro
-name: chart-gen-pro
+slug: "chart-gen-pro"
+name: "chart-gen-pro"
 version: "1.0.0"
-displayName: 图表生成器(专业版)
-summary: 全功能图表生成工具，支持批量、自定义主题、实时数据源与多图表联动仪表盘，专业可视化场景。
-license: Proprietary
-edition: pro
+displayName: "图表生成器(专业版)"
+summary: "全功能图表生成工具，支持批量、自定义主题、实时数据源与多图表联动仪表盘，专业可视化场景。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向专业数据可视化场景的全功能图表生成器，在免费版基础上扩展批量生成、自定义主题、实时数据源接入、多图表联动仪表盘、位图导出、模板库等高级能力。核心能力：
 
@@ -20,15 +20,15 @@ description: |-
   - 企业级数据周报/月报的批量图表生成
   - 数据分析师构建可复用模板库...
 tags:
-- 数据可视化
-- 企业图表
-- 批量生成
-- 自定义主题
+  - 数据可视化
+  - 企业图表
+  - 批量生成
+  - 自定义主题
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 图表生成器(专业版)
 
 面向专业数据可视化场景的全功能图表生成工具。在免费版基础上扩展批量生成、自定义主题、实时数据源接入、多图表联动仪表盘、位图导出、模板库等6项高级能力。

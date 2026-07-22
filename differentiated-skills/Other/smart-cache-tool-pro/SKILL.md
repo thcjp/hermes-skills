@@ -1,11 +1,11 @@
 ---
-slug: smart-cache-tool-pro
-name: smart-cache-tool-pro
+slug: "smart-cache-tool-pro"
+name: "smart-cache-tool-pro"
 version: "1.0.0"
-displayName: 智能缓存工具-专业版
-summary: 企业级缓存平台,支持分布式缓存、多级缓存、智能预热与实时监控,适合高并发场景
-license: Proprietary
-edition: pro
+displayName: "智能缓存工具-专业版"
+summary: "企业级缓存平台,支持分布式缓存、多级缓存、智能预热与实时监控,适合高并发场景"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级智能缓存管理工具专业版,面向团队与高并发应用。核心能力:
   - 分布式缓存(Redis/Memcached 集成)
@@ -25,14 +25,15 @@ description: |-
 
   差异化:专业版在免费版基础上扩展分布式缓存、多级缓存与智能预热,兼容免费版 API
 tags:
-- 缓存
-- 企业级
-- 分布式
-- Redis
-- 高并发
+  - 缓存
+  - 企业级
+  - 分布式
+  - Redis
+  - 高并发
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 智能缓存工具 - 专业版
 

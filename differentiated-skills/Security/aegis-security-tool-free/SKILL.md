@@ -1,11 +1,11 @@
 ---
-slug: aegis-security-tool-free
-name: aegis-security-tool-free
+slug: "aegis-security-tool-free"
+name: "aegis-security-tool-free"
 version: "1.0.0"
-displayName: 区块链安全扫描免费版
-summary: 区块链地址与代币安全检查工具,支持地址信誉查询、代币蜜罐检测,适合个人开发者日常交易前快速验证。
-license: Proprietary
-edition: free
+displayName: "区块链安全扫描免费版"
+summary: "区块链地址与代币安全检查工具,支持地址信誉查询、代币蜜罐检测,适合个人开发者日常交易前快速验证。"
+license: "Proprietary"
+edition: "free"
 description: |-
   区块链安全扫描免费版,为个人用户提供地址信誉查询、代币安全检测等核心能力。
   核心能力:地址风险检查、代币蜜罐检测、免费额度查询、风险等级分级。
@@ -13,13 +13,14 @@ description: |-
   差异化:免费版聚焦核心检查能力,每日100次免费额度,适合个人用户日常使用。
   适用关键词: 区块链安全, 地址检查, 代币扫描, 蜜罐检测, blockchain, scan, token, address
 tags:
-- 安全
-- 区块链
-- DeFi
-- 免费版
+  - 安全
+  - 区块链
+  - DeFi
+  - 免费版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 区块链安全扫描免费版
 

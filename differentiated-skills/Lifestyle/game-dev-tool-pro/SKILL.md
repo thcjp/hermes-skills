@@ -1,11 +1,11 @@
 ---
-slug: game-dev-tool-pro
-name: game-dev-tool-pro
+slug: "game-dev-tool-pro"
+name: "game-dev-tool-pro"
 version: "1.0.0"
-displayName: 游戏开发助手专业版
-summary: 企业级游戏开发平台,支持团队协作、资产管理、数据分析与商业化
-license: Proprietary
-edition: pro
+displayName: "游戏开发助手专业版"
+summary: "企业级游戏开发平台,支持团队协作、资产管理、数据分析与商业化"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向游戏工作室与商业项目的企业级游戏开发平台。
   核心能力: 团队协作、资产管理、数据分析、CI/CD、商业化支持、多平台发布
@@ -13,17 +13,16 @@ description: |-
   差异化: 专业版支持团队协作与商业化能力,与免费版开发流程兼容
   适用关键词: 团队协作, 资产管理, 玩家数据分析, CI/CD, 商业化, 多平台发布
 tags:
-- 游戏开发
-- 企业级
-- 团队协作
-- 资产管理
-- 数据分析
-- 商业化
+  - 游戏开发
+  - 企业级
+  - 团队协作
+  - 资产管理
+  - 数据分析
+  - 商业化
 tools:
   - - read
-- exec
-# 游戏开发助手 (专业版)
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 专业版面向游戏工作室与商业项目,在免费版全流程指导之上,扩展团队协作、资产管理、玩家数据分析、CI/CD 自动化、商业化支持与多平台发布等企业级能力。支持数十人团队协作开发,提供完整的项目管理、版本控制、资产管线与数据驱动的运营决策能力。
 

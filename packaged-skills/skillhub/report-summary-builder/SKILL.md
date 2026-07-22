@@ -1,10 +1,10 @@
 ---
-slug: report-summary-builder
-name: report-summary-builder
+slug: "report-summary-builder"
+name: "report-summary-builder"
 version: "1.0.0"
-displayName: Report Summary Build
-summary: 基于已有日报自动汇总生成周报和月报。
-license: MIT-0
+displayName: "Report Summary Build"
+summary: "基于已有日报自动汇总生成周报和月报。"
+license: "MIT-0"
 description: |-
   基于已有日报自动汇总生成周报和月报。核心能力:
 
@@ -21,12 +21,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Productivity
+  - Productivity
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Report Summary Build
 

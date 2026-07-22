@@ -1,11 +1,11 @@
 ---
-slug: google-workspace-cli-free
-name: google-workspace-cli-free
+slug: "google-workspace-cli-free"
+name: "google-workspace-cli-free"
 version: "1.0.0"
-displayName: 谷歌办公命令行免费版
-summary: 轻量级Google Workspace命令行工具,支持Gmail、Calendar、Drive核心操作,适合个人用户日常使用。
-license: Proprietary
-edition: free
+displayName: "谷歌办公命令行免费版"
+summary: "轻量级Google Workspace命令行工具,支持Gmail、Calendar、Drive核心操作,适合个人用户日常使用。"
+license: "Proprietary"
+edition: "free"
 description: |-
   谷歌办公命令行工具免费版,为个人用户提供Gmail邮件管理、Google日历日程查询、Google Drive文件搜索等核心能力。核心能力:
   - Gmail邮件搜索、读取与发送
@@ -13,16 +13,16 @@ description: |-
   - Google Drive文件检索与下载
   - OAuth 2。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。
 tags:
-- 沟通协作
-- 邮件管理
-- 谷歌办公
-- 命令行工具
-- 个人效率
+  - 沟通协作
+  - 邮件管理
+  - 谷歌办公
+  - 命令行工具
+  - 个人效率
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 谷歌办公命令行工具 - 免费版
 
 ## 概述

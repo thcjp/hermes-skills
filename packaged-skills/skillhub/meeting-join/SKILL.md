@@ -1,24 +1,25 @@
 ---
-slug: meeting-join
-name: meeting-join
+slug: "meeting-join"
+name: "meeting-join"
 version: "1.0.0"
-displayName: AI会议助手专业版
-summary: 企业级AI会议机器人,支持可视化头像、屏幕共享、实时协作、批量会议与团队管理,适合企业与团队场景。
-license: Proprietary
-edition: pro
+displayName: "AI会议助手专业版"
+summary: "企业级AI会议机器人,支持可视化头像、屏幕共享、实时协作、批量会议与团队管理,适合企业与团队场景。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   AI会议助手专业版为企业与团队提供全方位的智能会议机器人解决方案。在免费版语音会议能力之上,增加可视化头像、屏幕共享、实时网页协作、
   多种语音策略、批量会议调度与团队管理能力。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 会议
-- 语音转写
-- AI助手
-- 企业级
-- 屏幕共享
-- 协作
+  - 会议
+  - 语音转写
+  - AI助手
+  - 企业级
+  - 屏幕共享
+  - 协作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # AI会议助手专业版
 

@@ -1,19 +1,20 @@
 ---
-slug: cloud-ops-orchestrator
-name: cloud-ops-orchestrator
+slug: "cloud-ops-orchestrator"
+name: "cloud-ops-orchestrator"
 version: "1.0.0"
-displayName: 云运维编排器
-summary: 用 Terraform+Ansible 编排多云基础设施，内置漂移检测、变更预演与安全销毁，杜绝误删。
-license: Proprietary
+displayName: "云运维编排器"
+summary: "用 Terraform+Ansible 编排多云基础设施，内置漂移检测、变更预演与安全销毁，杜绝误删。"
+license: "Proprietary"
 description: |-
   云运维编排器为 AI Agent 提供以基础设施即代码（IaC）为核心的多云运维能力。它明确划分 Terraform（资源生命周期）与 Ansible（系统配置）的职责边界，覆盖 AWS、GCP、Azure 三大云，并内置状态漂移检测、变更预演（plan）、安全销毁（带保护期）、凭证隔离与回滚机制。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。
 tags:
-- 自动化
-- 云运维
-- 基础设施即代码
+  - 自动化
+  - 云运维
+  - 基础设施即代码
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 云运维编排器
 

@@ -1,11 +1,11 @@
 ---
-slug: context-driven-dev-tool-free
-name: context-driven-dev-tool-free
+slug: "context-driven-dev-tool-free"
+name: "context-driven-dev-tool-free"
 version: "1.0.0"
-displayName: 上下文驱动开发（免费版）
-summary: 将项目上下文作为可管理制品，通过结构化文档确保AI辅助开发的一致性。
-license: Proprietary
-edition: free
+displayName: "上下文驱动开发（免费版）"
+summary: "将项目上下文作为可管理制品，通过结构化文档确保AI辅助开发的一致性。"
+license: "Proprietary"
+edition: "free"
 description: |-
   上下文驱动开发 - （免费版）
 
@@ -17,15 +17,15 @@ description: |-
 
   适用关键词: 上下文驱动, 项目初始化, 上下文文档, AI开发对齐, context driven, 技术栈追踪
 tags:
-- 开发方法论
-- 上下文管理
-- AI对齐
-- 项目文档
+  - 开发方法论
+  - 上下文管理
+  - AI对齐
+  - 项目文档
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 上下文驱动开发（免费版）
 
 ## 概述

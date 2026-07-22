@@ -1,11 +1,11 @@
 ---
-slug: internet-search-tool-free
-name: internet-search-tool-free
+slug: "internet-search-tool-free"
+name: "internet-search-tool-free"
 version: "1.0.0"
-displayName: 聚合搜索工具
-summary: 基于 SearXNG 的多引擎聚合搜索工具，支持分类路由与智能查询，聚合多个搜索引擎结果，适合个人日常信息检索。
-license: Proprietary
-edition: free
+displayName: "聚合搜索工具"
+summary: "基于 SearXNG 的多引擎聚合搜索工具，支持分类路由与智能查询，聚合多个搜索引擎结果，适合个人日常信息检索。"
+license: "Proprietary"
+edition: "free"
 description: |-
   基于 SearXNG 的多引擎聚合搜索工具，支持分类路由与智能查询，聚合多个搜索引擎结果，适合个人日常信息检索。核心能力:
   - 聚合多个搜索引擎结果（Brave、Bing、DuckDuckGo 等）
@@ -23,13 +23,14 @@ description: |-
   - 自动选择最匹配的搜索引擎
   - 结果聚合...
 tags:
-- 搜索
-- 聚合工具
-- 多引擎
-- 信息检索
+  - 搜索
+  - 聚合工具
+  - 多引擎
+  - 信息检索
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 聚合搜索工具（免费版）
 

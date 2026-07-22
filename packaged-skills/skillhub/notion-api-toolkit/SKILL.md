@@ -1,11 +1,11 @@
 ---
-slug: notion-api-toolkit
-name: notion-api-toolkit
+slug: "notion-api-toolkit"
+name: "notion-api-toolkit"
 version: "1.0.0"
-displayName: Notion API工具箱(专业版)
-summary: 企业级Notion API集成平台,支持多连接管理、批量操作、Webhook订阅、自动分页与审计日志,适合团队与企业规模化使用。
-license: Proprietary
-edition: pro
+displayName: "Notion API工具箱(专业版)"
+summary: "企业级Notion API集成平台,支持多连接管理、批量操作、Webhook订阅、自动分页与审计日志,适合团队与企业规模化使用。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Notion API工具箱(专业版)是面向团队与企业的全功能Notion集成Skill,在免费版基础上新增多连接管理、批量操作、Webhook订阅、自动分页、高级筛选、审计日志等高级能力。核心能力:
 
@@ -18,12 +18,13 @@ description: |-
   - 自定义转换器,Jinja2模板灵活转换数据
   -...
 tags:
-- 集成工具
-- 企业Notion
-- 数据合规
+  - 集成工具
+  - 企业Notion
+  - 数据合规
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Notion API工具箱(专业版)
 

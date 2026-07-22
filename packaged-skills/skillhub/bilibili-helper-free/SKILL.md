@@ -1,10 +1,10 @@
 ---
-slug: bilibili-helper-free
-name: bilibili-helper-free
+slug: "bilibili-helper-free"
+name: "bilibili-helper-free"
 version: "1.0.0"
-displayName: B站创作助手-免费版
-summary: B站视频运营基础工具，提供标题生成、简介与标签推荐、口播脚本撰写，帮助内容创作者快速完成投稿素材准备。
-license: MIT
+displayName: "B站创作助手-免费版"
+summary: "B站视频运营基础工具，提供标题生成、简介与标签推荐、口播脚本撰写，帮助内容创作者快速完成投稿素材准备。"
+license: "MIT"
 description: |-
   面向B站(Bilibili)内容创作者的基础运营辅助工具，覆盖视频投稿前的核心内容生产环节。
 
@@ -22,8 +22,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Bilibili Helper Free
 
 B站视频运营基础助手。提供标题生成、简介与标签推荐、口播脚本撰写，输出内容可直接用于B站投稿页面。

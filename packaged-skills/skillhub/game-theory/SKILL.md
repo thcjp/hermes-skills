@@ -1,10 +1,10 @@
 ---
-slug: game-theory
-name: game-theory
+slug: "game-theory"
+name: "game-theory"
 version: "1.0.0"
-displayName: 加密协议博弈论分析
-summary: 面向crypto协议、DeFi机制和治理系统的博弈论分析框架，识别Nash Equilibrium与MEV风险
-license: Proprietary
+displayName: "加密协议博弈论分析"
+summary: "面向crypto协议、DeFi机制和治理系统的博弈论分析框架，识别Nash Equilibrium与MEV风险"
+license: "Proprietary"
 description: |-
   面向加密协议、DeFi机制和治理系统的博弈论分析框架。
   基于Five Questions分析模型，覆盖Nash Equilibrium、Dominant Strategy、Mechanism Design等核心概念，
@@ -14,8 +14,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 生活服务
 ---
-
 # 加密协议博弈论分析
 
 面向web3协议的激励系统设计与博弈论分析框架，用于识别Nash Equilibrium、评估MEV风险与治理攻击向量。

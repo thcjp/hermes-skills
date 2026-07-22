@@ -1,22 +1,23 @@
 ---
-slug: py-data-analyzer
-name: py-data-analyzer
+slug: "py-data-analyzer"
+name: "py-data-analyzer"
 version: "1.0.0"
-displayName: Python数据分析(专业版)
-summary: 企业级Python数据分析方案，支持机器学习建模、时间序列预测、大数据处理与自动化报表。
-license: Proprietary
-edition: pro
+displayName: "Python数据分析(专业版)"
+summary: "企业级Python数据分析方案，支持机器学习建模、时间序列预测、大数据处理与自动化报表。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Python数据分析专业版是一套面向数据科学家与企业级团队的高级数据分析解决方案，在免费版基础上扩展出机器学习建模、时间序列预测、多维透视与交互式仪表盘、大数据处理、自动化报表与调度等能力。核心能力：提供特征工程与模型训练流程、ARIMA / Prophet 时间序列预测方案、多维数据 OLAP 透视与 Plotly 交互式可视化、Dask / Spark 大数据处理集成、定时报表自动生成与邮件分发
 tags:
-- 数据分析
-- 集成工具
-- Python
-- 企业级
-- 专业版
+  - 数据分析
+  - 集成工具
+  - Python
+  - 企业级
+  - 专业版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Python数据分析(专业版)
 

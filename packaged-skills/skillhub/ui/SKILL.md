@@ -1,10 +1,10 @@
 ---
-slug: ui
-name: ui
+slug: "ui"
+name: "ui"
 version: "1.0.0"
-displayName: UI
-summary: Design clear, consistent, and visually polished user interfaces.
-license: MIT
+displayName: "UI"
+summary: "Design clear, consistent, and visually polished user interfaces."
+license: "MIT"
 description: |-
   Design clear, consistent, and visually polished user interfaces。核心能力:
 
@@ -21,12 +21,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Creative
+  - Creative
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # UI
 

@@ -1,10 +1,10 @@
 ---
-slug: chromecast-control-free
-name: chromecast-control-free
+slug: "chromecast-control-free"
+name: "chromecast-control-free"
 version: "1.0.0"
-displayName: 投屏设备基础版
-summary: 基础投屏控制，设备发现、媒体投放、播放和音量管理
-license: MIT
+displayName: "投屏设备基础版"
+summary: "基础投屏控制，设备发现、媒体投放、播放和音量管理"
+license: "MIT"
 description: |-
   使用catt工具控制局域网投屏设备的免费版。支持设备发现、基础媒体投放、播放控制和音量调节。
   适用于家庭娱乐和简单投屏场景。升级至完整版可解锁进度跳转、队列管理、字幕加载、
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 投屏设备控制（免费版）
 
 使用 `catt`（Cast All The Things）工具控制局域网内的投屏协议设备。免费版提供设备发现、基础媒体投放、播放控制和音量调节功能。

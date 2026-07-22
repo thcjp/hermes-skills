@@ -1,10 +1,10 @@
 ---
-slug: sonoscli
-name: sonoscli
+slug: "sonoscli"
+name: "sonoscli"
 version: "1.0.0"
-displayName: Sonoscli
-summary: Control Sonos speakers (discover/status/play/volume/group).
-license: MIT
+displayName: "Sonoscli"
+summary: "Control Sonos speakers (discover/status/play/volume/group)."
+license: "MIT"
 description: |-
   Control Sonos speakers (discover/status/play/volume/group)。核心能力:
 
@@ -21,12 +21,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Sonoscli
 

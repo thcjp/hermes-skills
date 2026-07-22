@@ -1,23 +1,23 @@
 ---
-slug: quick-context-saver-free
-name: quick-context-saver-free
+slug: "quick-context-saver-free"
+name: "quick-context-saver-free"
 version: "1.0.0"
-displayName: Quick Context Saver
-summary: 零依赖本地记忆系统，无需API Key，TF-IDF智能搜索，100%本地存储隐私无忧。
-license: Proprietary
-edition: free
+displayName: "Quick Context Saver"
+summary: "零依赖本地记忆系统，无需API Key，TF-IDF智能搜索，100%本地存储隐私无忧。"
+license: "Proprietary"
+edition: "free"
 description: |-
   快速上下文记忆免费版解决隐私敏感用户"不想用云端记忆、不想配API Key、离线也能用"的核心痛点。零外部依赖、零API Key、零云服务，纯本地JSON存储配合TF-IDF智能搜索，实现Agent记忆的完全自主可控。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- 本地记忆
-- 零依赖
-- 隐私保护
-- TF-IDF搜索
+  - 本地记忆
+  - 零依赖
+  - 隐私保护
+  - TF-IDF搜索
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 快速上下文记忆（免费版）
 
 > **零依赖、零API Key、零云服务。100%本地存储，隐私无忧。**

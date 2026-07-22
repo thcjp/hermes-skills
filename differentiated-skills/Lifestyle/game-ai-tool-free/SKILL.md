@@ -1,11 +1,11 @@
 ---
-slug: game-ai-tool-free
-name: game-ai-tool-free
+slug: "game-ai-tool-free"
+name: "game-ai-tool-free"
 version: "1.0.0"
-displayName: 游戏AI工具免费版
-summary: 游戏AI开发指南,涵盖FSM、行为树、寻路与决策系统的代码实现
-license: Proprietary
-edition: free
+displayName: "游戏AI工具免费版"
+summary: "游戏AI开发指南,涵盖FSM、行为树、寻路与决策系统的代码实现"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向独立游戏开发者与学生的游戏 AI 开发指南与代码模板。
   核心能力: 有限状态机、行为树、A*寻路、效用AI、感知系统、群体行为
@@ -13,17 +13,16 @@ description: |-
   差异化: 免费版聚焦个人学习与原型开发,提供主流 AI 架构的代码模板
   适用关键词: 游戏AI, FSM, 行为树, A*寻路, 效用AI, 群体行为, NPC AI
 tags:
-- 游戏开发
-- AI开发
-- 有限状态机
-- 行为树
-- 寻路算法
-- 独立游戏
+  - 游戏开发
+  - AI开发
+  - 有限状态机
+  - 行为树
+  - 寻路算法
+  - 独立游戏
 tools:
   - - read
-- exec
-# 游戏 AI 工具 (免费版)
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 本工具为独立游戏开发者与学生提供游戏 AI 开发指南与代码模板,涵盖有限状态机 (FSM)、行为树 (Behavior Tree)、A* 寻路、效用 AI、感知系统、群体行为等主流 AI 架构。每种架构都配有完整的可运行代码示例,适合学习、原型验证与 Game Jam 使用。
 

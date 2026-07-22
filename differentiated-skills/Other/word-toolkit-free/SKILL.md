@@ -1,11 +1,11 @@
 ---
-slug: word-toolkit-free
-name: word-toolkit-free
+slug: "word-toolkit-free"
+name: "word-toolkit-free"
 version: "1.0.0"
-displayName: Word文档控制免费版
-summary: 通过osascript控制Word应用，支持文档操作、选区编辑、评论与导出，适合个人macOS用户。
-license: Proprietary
-edition: free
+displayName: "Word文档控制免费版"
+summary: "通过osascript控制Word应用，支持文档操作、选区编辑、评论与导出，适合个人macOS用户。"
+license: "Proprietary"
+edition: "free"
 description: |-
   Word文档控制工具免费版，面向个人macOS用户的轻量级Word应用控制工具。核心能力:
   - 通过 osascript 控制 Word 应用会话
@@ -20,13 +20,14 @@ description: |-
 
   差异化: 免费版聚焦核心 Word 应用控制能力，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手
 tags:
-- Word文档
-- 应用控制
-- macOS自动化
-- 免费版
+  - Word文档
+  - 应用控制
+  - macOS自动化
+  - 免费版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Word文档控制工具（免费版）
 

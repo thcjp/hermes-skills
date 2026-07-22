@@ -1,11 +1,11 @@
 ---
-slug: ziptax-paid
-name: ziptax-paid
+slug: "ziptax-paid"
+name: "ziptax-paid"
 version: "1.0.0"
-displayName: 销售税查询(专业版)
-summary: 面向团队的企业级销售税工程平台,含批量查询、本地缓存、合规报告与CI集成,支持高并发。
-license: Proprietary
-edition: pro
+displayName: "销售税查询(专业版)"
+summary: "面向团队的企业级销售税工程平台,含批量查询、本地缓存、合规报告与CI集成,支持高并发。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   销售税查询工具专业版为团队与企业提供端到端销售税工程能力,涵盖批量查询、本地缓存、税务合规报告、CI集成与高并发API封装。核心能力:
   - 批量地址/邮编查询(并行处理)
@@ -21,19 +21,18 @@ description: |-
   - 企业税务合规与审计追溯
   - 跨州销售税率对比分析
   - 高并发订单税率实时计算
-
- ...
 tags:
-- 销售税
-- 税务工程
-- 企业开发
-- 电商
-- CI/CD
-- 合规审计
-- 团队协作
+  - 销售税
+  - 税务工程
+  - 企业开发
+  - 电商
+  - CI/CD
+  - 合规审计
+  - 团队协作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 销售税查询(专业版)
 

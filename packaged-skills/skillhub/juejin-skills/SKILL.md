@@ -1,10 +1,10 @@
 ---
-slug: juejin-skills
-name: juejin-skills
+slug: "juejin-skills"
+name: "juejin-skills"
 version: "1.0.8"
-displayName: 掘金技能集
-summary: 掘金技术社区一站式操作技能，支持热门文章排行榜查询。
-license: MIT
+displayName: "掘金技能集"
+summary: "掘金技术社区一站式操作技能，支持热门文章排行榜查询。"
+license: "MIT"
 description: |-
   掘金技术社区一站式操作技能，支持热门文章排行榜查询。核心能力:
 
@@ -21,12 +21,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 掘金技能集
 

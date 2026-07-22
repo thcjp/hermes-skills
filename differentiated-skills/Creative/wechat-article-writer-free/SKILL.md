@@ -1,11 +1,11 @@
 ---
-slug: wechat-article-writer-free
-name: wechat-article-writer-free
+slug: "wechat-article-writer-free"
+name: "wechat-article-writer-free"
 version: "1.0.0"
-displayName: 公众号写作免费版
-summary: 从话题或提纲生成公众号长文初稿，支持基础润色与改写，适合个人创作者快速产出。
-license: Proprietary
-edition: free
+displayName: "公众号写作免费版"
+summary: "从话题或提纲生成公众号长文初稿，支持基础润色与改写，适合个人创作者快速产出。"
+license: "Proprietary"
+edition: "free"
 description: |-
   公众号写作免费版 —— 面向个人创作者的轻量级公众号长文写作工具。核心能力:
   - 从话题或提纲自动生成完整公众号文章初稿
@@ -21,13 +21,14 @@ description: |-
 
   差异化:免费版提供核心写作能力，聚焦从话题到初稿的快速生成，适合个人用户日常使用
 tags:
-- 内容创作
-- 公众号
-- 写作工具
-- 个人创作
+  - 内容创作
+  - 公众号
+  - 写作工具
+  - 个人创作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 公众号写作免费版
 

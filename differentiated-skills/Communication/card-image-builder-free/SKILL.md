@@ -1,11 +1,11 @@
 ---
-slug: card-image-builder-free
-name: card-image-builder-free
+slug: "card-image-builder-free"
+name: "card-image-builder-free"
 version: "1.0.0"
-displayName: 卡片图生成器-免费版
-summary: 将文案渲染为PNG卡片图,支持海报和文章封面,适合个人创作者快速出图
-license: Proprietary
-edition: free
+displayName: "卡片图生成器-免费版"
+summary: "将文案渲染为PNG卡片图,支持海报和文章封面,适合个人创作者快速出图"
+license: "Proprietary"
+edition: "free"
 description: |-
   卡片图生成器免费版,将文字文案渲染为精美的PNG卡片图片。核心能力:
   - 文字海报生成(3:4比例,900x1200)
@@ -25,13 +25,14 @@ description: |-
   - 内置公众号和小红书配色预设
   - 与PRO版完全兼容,可升级获得全部模板和高级功能...
 tags:
-- 沟通协作
-- 图片生成
-- 卡片图
-- 创意设计
+  - 沟通协作
+  - 图片生成
+  - 卡片图
+  - 创意设计
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 卡片图生成器(免费版)
 ## 概述

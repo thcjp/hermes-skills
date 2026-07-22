@@ -1,19 +1,19 @@
 ---
-slug: agent
-name: agent
+slug: "agent"
+name: "agent"
 version: "1.0.0"
-displayName: Agent
-summary: Define agent identity, personality, voice, and boundaries to create assistants
-  that feel authenti...
-license: MIT
+displayName: "Agent"
+summary: "Define agent identity, personality, voice, and boundaries to create assistants"
+license: "MIT"
 description: |-
   Define agent identity, personality, voice, and boundaries to create
   assistants that feel authenti。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Agent
 

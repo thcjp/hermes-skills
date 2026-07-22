@@ -1,25 +1,25 @@
 ---
-slug: linear-api-toolkit-free
-name: linear-api-toolkit-free
+slug: "linear-api-toolkit-free"
+name: "linear-api-toolkit-free"
 version: "1.0.0"
-displayName: Linear工具箱(免费版)
-summary: 通过GraphQL查询管理Linear任务、项目与团队，支持问题查看与基础操作
-license: Proprietary
-edition: free
+displayName: "Linear工具箱(免费版)"
+summary: "通过GraphQL查询管理Linear任务、项目与团队，支持问题查看与基础操作"
+license: "Proprietary"
+edition: "free"
 description: |-
   Linear工具箱(免费版)是一款通过GraphQL API与Linear交互的任务管理工具，支持问题查询、项目浏览、团队管理与评论查看等核心能力。核心能力：
   - 通过GraphQL查询Linear问题、项目、团队、周期与标签
   - 查看当前用户与组织信息
   - 创建与更新问题。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
 tags:
-- 集成工具
-- 项目管理
-- Linear
+  - 集成工具
+  - 项目管理
+  - Linear
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Linear工具箱(免费版)
 
 本工具通过GraphQL API帮助用户与Linear交互，实现问题查询、项目管理、团队协作等核心功能。免费版聚焦日常查阅与基础操作需求。

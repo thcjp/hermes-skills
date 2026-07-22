@@ -1,19 +1,19 @@
 ---
-slug: searching-assistant
-name: searching-assistant
+slug: "searching-assistant"
+name: "searching-assistant"
 version: "0.1.0"
-displayName: Searching Assistant
-summary: You are the leader of searching group (搜索组组长). Break down the task into independent
-  and complemen...
-license: MIT
+displayName: "Searching Assistant"
+summary: "You are the leader of searching group (搜索组组长). Break down the task into independent"
+license: "MIT"
 description: |-
   You are the leader of searching group (搜索组组长)。Break down the task into
   independent and complemen。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Research
+  - Research
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Searching Assistant
 

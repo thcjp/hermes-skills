@@ -1,10 +1,10 @@
 ---
-slug: aws-infra-free
-name: aws-infra-free
+slug: "aws-infra-free"
+name: "aws-infra-free"
 version: "1.0.0"
-displayName: AWS Infra LITE
-summary: 通过AWS CLI执行基础只读查询,覆盖EC2/S3/RDS资源清单和实例健康检查两大场景
-license: MIT
+displayName: "AWS Infra LITE"
+summary: "通过AWS CLI执行基础只读查询,覆盖EC2/S3/RDS资源清单和实例健康检查两大场景"
+license: "MIT"
 description: |-
   AWS基础设施基础查询工具(免费版)。通过AWS CLI执行read-only查询,帮助开发者快速了解云资源状态。
   覆盖两大基础场景:EC2/S3/RDS资源清单查询、实例健康检查与CloudWatch告警查看。
@@ -17,8 +17,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # AWS Infra LITE
 
 通过AWS CLI执行基础只读查询,覆盖资源清单和健康检查两大场景。

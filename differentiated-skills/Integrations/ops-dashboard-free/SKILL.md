@@ -1,23 +1,23 @@
 ---
-slug: ops-dashboard-free
-name: ops-dashboard-free
+slug: "ops-dashboard-free"
+name: "ops-dashboard-free"
 version: "1.0.0"
-displayName: 运维看板(免费版)
-summary: 实时运维监控看板免费版，支持会话查看、定时任务监控与基础健康检查
-license: Proprietary
-edition: free
+displayName: "运维看板(免费版)"
+summary: "实时运维监控看板免费版，支持会话查看、定时任务监控与基础健康检查"
+license: "Proprietary"
+edition: "free"
 description: |-
   运维看板免费版是一款面向个人开发者和小团队的实时运维监控辅助Skill，让AI Agent能够查看会话状态、监控定时任务执行情况和检查系统健康度，实现轻量级的运维可视化。核心能力：会话列表查看、定时任务状态监控、网关健康检查、基础安全扫描、配置文件管理。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。
 tags:
-- 运维监控
-- 健康检查
-- 定时任务
-- 集成工具
+  - 运维监控
+  - 健康检查
+  - 定时任务
+  - 集成工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 运维看板（免费版）
 
 通过命令行驱动AI Agent执行运维巡检任务，查看会话状态、监控定时任务和检查系统健康度。免费版提供只读监控和基础安全检查功能。

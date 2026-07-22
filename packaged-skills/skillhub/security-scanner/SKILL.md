@@ -1,19 +1,19 @@
 ---
-slug: security-scanner
-name: security-scanner
+slug: "security-scanner"
+name: "security-scanner"
 version: "1.0.0"
-displayName: Security Scanner
-summary: This appears to be a legitimate security-scanning skill, but users must only
-  run its active scans...
-license: MIT
+displayName: "Security Scanner"
+summary: "This appears to be a legitimate security-scanning skill, but users must only"
+license: "MIT"
 description: |-
   This appears to be a legitimate security-scanning skill, but users must
   only run its active scans。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Security
+  - Security
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Security Scanner
 

@@ -1,11 +1,11 @@
 ---
-slug: writing-assistant-tool-pro
-name: writing-assistant-tool-pro
+slug: "writing-assistant-tool-pro"
+name: "writing-assistant-tool-pro"
 version: "1.0.0"
-displayName: 写作助手专业版
-summary: 企业级写作管理系统,支持品牌语调管理、多人协作审稿、内容库治理与发布管道
-license: Proprietary
-edition: pro
+displayName: "写作助手专业版"
+summary: "企业级写作管理系统,支持品牌语调管理、多人协作审稿、内容库治理与发布管道"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 内容创作领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: 写作, 助手, 文档, 内容, 风格, 质量检查, 编辑
 tags:
-- 写作
-- 内容创作
-- 文档
-- 质量检查
+  - 写作
+  - 内容创作
+  - 文档
+  - 质量检查
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 写作助手专业版
 
 ## 概述

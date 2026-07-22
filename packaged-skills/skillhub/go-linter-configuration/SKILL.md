@@ -1,19 +1,19 @@
 ---
-slug: go-linter-configuration
-name: go-linter-configuration
+slug: "go-linter-configuration"
+name: "go-linter-configuration"
 version: "1.0.0"
-displayName: Go Linter Configurat
-summary: Configure and troubleshoot golangci-lint for Go projects. Handle import resolution
-  issues, type-c...
-license: MIT
+displayName: "Go Linter Configurat"
+summary: "Configure and troubleshoot golangci-lint for Go projects. Handle import resolution"
+license: "MIT"
 description: |-
   Configure and troubleshoot golangci-lint for Go projects。Handle import
   resolution issues, type-c。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Go Linter Configurat
 

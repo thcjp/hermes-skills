@@ -1,10 +1,10 @@
 ---
-slug: py-free
-name: py-free
+slug: "py-free"
+name: "py-free"
 version: "1.0.0"
-displayName: Python基础版
-summary: 编写可靠 Python 代码的基础能力，覆盖可变默认参数陷阱、import 规范与基础异常处理。
-license: MIT
+displayName: "Python基础版"
+summary: "编写可靠 Python 代码的基础能力，覆盖可变默认参数陷阱、import 规范与基础异常处理。"
+license: "MIT"
 description: |-
   编写可靠 Python 代码的基础能力，覆盖可变默认参数陷阱、
   import 规范与基础异常处理。
@@ -29,9 +29,10 @@ description: |-
 
   差异化:基础版聚焦 Python 高频陷阱防护，去除了高级版的并发陷阱（GIL、asyncio）、性能调优与元类高级用法。
 tags:
-- Other
+  - Other
 tools:
   - read
+homepage: "https://skillhub.cn"
 ---
 # Python 基础版
 

@@ -1,11 +1,11 @@
 ---
-slug: amap-jsapi-tool-pro
-name: amap-jsapi-tool-pro
+slug: "amap-jsapi-tool-pro"
+name: "amap-jsapi-tool-pro"
 version: "1.0.0"
-displayName: 高德地图JSAPI专业版
-summary: 企业级高德地图开发平台,支持矢量图层、实时路况、批量地理编码、自定义样式与货车导航,适合商业级地图应用开发。
-license: Proprietary
-edition: pro
+displayName: "高德地图JSAPI专业版"
+summary: "企业级高德地图开发平台,支持矢量图层、实时路况、批量地理编码、自定义样式与货车导航,适合商业级地图应用开发。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   高德地图JSAPI v2.0开发助手专业版,为企业提供全方位地图开发能力。
   核心能力:WebGL高级渲染、矢量图层、实时路况、批量地理编码、自定义地图样式、货车路径规划、公交导航。
@@ -13,15 +13,14 @@ description: |-
   差异化:专业版兼容免费版接口,新增企业级数据处理与高级渲染能力,满足商业场景需求。
   适用关键词: 高德地图, 矢量图层, 实时路况, 批量地理编码, 货车导航, amap pro, vector layer
 tags:
-- 地图开发
-- 高德地图
-- 企业版
-- 矢量图层
+  - 地图开发
+  - 高德地图
+  - 企业版
+  - 矢量图层
 tools:
   - - read
-- exec
-# 高德地图JSAPI v2.0 开发助手专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 专业版为企业开发者提供完整的高德地图JSAPI v2.0开发能力,在免费版基础功能之上,新增WebGL高级渲染、矢量图层管理、实时路况数据、批量地理编码、自定义地图样式、货车路径规划与公交导航等企业级功能。专业版完全兼容免费版接口,已有免费版代码可无缝升级,适合商业级地图应用开发。
 

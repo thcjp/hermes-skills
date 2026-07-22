@@ -1,11 +1,10 @@
 ---
-slug: art
-name: art
+slug: "art"
+name: "art"
 version: "1.0.0"
-displayName: Art
-summary: Guide art creation, technique development, and appreciation with practical,
-  medium-specific advice.
-license: MIT
+displayName: "Art"
+summary: "Guide art creation, technique development, and appreciation with practical,"
+license: "MIT"
 description: |-
   Guide art creation, technique development, and appreciation with practical,
   medium-specific advice。核心能力:
@@ -26,10 +25,11 @@ description: |-
 
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强...
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Art
 

@@ -1,22 +1,22 @@
 ---
-slug: obsidian-essentials-free
-name: obsidian-essentials-free
+slug: "obsidian-essentials-free"
+name: "obsidian-essentials-free"
 version: "1.0.0"
-displayName: Obsidian基础入门(免费版)
-summary: Obsidian新手入门与核心配置免费版，含安装、领先篇笔记、Markdown基础、核心配置与基础工作流。
-license: Proprietary
-edition: free
+displayName: "Obsidian基础入门(免费版)"
+summary: "Obsidian新手入门与核心配置免费版，含安装、领先篇笔记、Markdown基础、核心配置与基础工作流。"
+license: "Proprietary"
+edition: "free"
 description: |-
   Obsidian基础入门免费版是面向AI Agent的Obsidian新手入门指南。不同于综合工具箱，本技能聚焦"新手快速上手"：安装配置、领先篇笔记、Markdown基础、核心配置项、基础工作流，帮助Agent引导用户完成Obsidian的初次配置与基础使用。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- Obsidian
-- 新手入门
-- 核心配置
-- Markdown
+  - Obsidian
+  - 新手入门
+  - 核心配置
+  - Markdown
 tools:
   - - read
-- exec
-# Obsidian基础入门（免费版）
+  - exec
+homepage: "https://skillhub.cn"
 ---
 > **不是教你成为Obsidian高手，而是带你从零开始迈出领先步。安装、配置、领先篇笔记，新手友好。**
 

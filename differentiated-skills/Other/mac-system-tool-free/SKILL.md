@@ -1,11 +1,11 @@
 ---
-slug: mac-system-tool-free
-name: mac-system-tool-free
+slug: "mac-system-tool-free"
+name: "mac-system-tool-free"
 version: "1.0.0"
-displayName: Mac 系统工具
-summary: 面向个人用户的 macOS 系统信息查询与基础控制工具。
-license: Proprietary
-edition: free
+displayName: "Mac 系统工具"
+summary: "面向个人用户的 macOS 系统信息查询与基础控制工具。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人用户的 macOS 系统管理与控制工具。
 
@@ -24,13 +24,14 @@ description: |-
 
   适用关键词: mac 系统, 系统信息, 进程, 音量, 亮度, 截图, 剪贴板, macos, system control
 tags:
-- macOS
-- 系统管理
-- 个人效率
-- 其他工具
+  - macOS
+  - 系统管理
+  - 个人效率
+  - 其他工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Mac 系统工具（免费版）
 

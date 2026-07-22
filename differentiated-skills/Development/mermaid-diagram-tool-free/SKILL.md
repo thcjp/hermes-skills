@@ -1,11 +1,11 @@
 ---
-slug: mermaid-diagram-tool-free
-name: mermaid-diagram-tool-free
+slug: "mermaid-diagram-tool-free"
+name: "mermaid-diagram-tool-free"
 version: "1.0.0"
-displayName: Mermaid图表工具(免费版)
-summary: 个人用户从文本生成Mermaid流程图、时序图、脑图等基础图表代码。
-license: Proprietary
-edition: free
+displayName: "Mermaid图表工具(免费版)"
+summary: "个人用户从文本生成Mermaid流程图、时序图、脑图等基础图表代码。"
+license: "Proprietary"
+edition: "free"
 description: |-
   Mermaid图表工具(免费版)为个人用户从文本描述生成符合语法的Mermaid图表代码,支持流程图、时序图、脑图、状态图等基础类型。核心能力:
   - 7种基础图表类型选择与生成
@@ -23,15 +23,15 @@ description: |-
   - 移除原始平台引用,纯净适配SkillHub
   - 提供中文友好的图表类型选择表...
 tags:
-- Development
-- 文档
-- Mermaid
-- 可视化
+  - Development
+  - 文档
+  - Mermaid
+  - 可视化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Mermaid图表工具(免费版)
 
 ## 概述

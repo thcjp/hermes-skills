@@ -1,11 +1,11 @@
 ---
-slug: image-tool-pro
-name: image-tool-pro
+slug: "image-tool-pro"
+name: "image-tool-pro"
 version: "1.0.0"
-displayName: 图像处理专业版
-summary: 企业级图像处理流水线,支持批量处理、CDN 集成、响应式图片生成与无障碍优化
-license: Proprietary
-edition: pro
+displayName: "图像处理专业版"
+summary: "企业级图像处理流水线,支持批量处理、CDN 集成、响应式图片生成与无障碍优化"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 图像处理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: image, 图像, 图片, 格式转换, 压缩, 裁剪, 元数据, WebP
 tags:
-- 图像
-- 图片处理
-- 格式转换
-- 压缩优化
+  - 图像
+  - 图片处理
+  - 格式转换
+  - 压缩优化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 图像处理专业版
 
 ## 概述

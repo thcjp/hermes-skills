@@ -1,19 +1,19 @@
 ---
-slug: typescript
-name: typescript
+slug: "typescript"
+name: "typescript"
 version: "1.0.2"
-displayName: TypeScript
-summary: Write type-safe TypeScript with proper narrowing, inference patterns, and
-  strict mode best practi...
-license: MIT
+displayName: "TypeScript"
+summary: "Write type-safe TypeScript with proper narrowing, inference patterns, and"
+license: "MIT"
 description: |-
   Write type-safe TypeScript with proper narrowing, inference patterns,
   and strict mode best practi。Use when 用户需要TypeScript相关功能时使用。不适用于超出本技能能力范围的复杂需求。
 tags:
-- Development
+  - Development
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # TypeScript
 

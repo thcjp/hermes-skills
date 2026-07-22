@@ -1,10 +1,10 @@
 ---
-slug: doubao-chat
-name: doubao-chat
+slug: "doubao-chat"
+name: "doubao-chat"
 version: "1.0.0"
-displayName: Doubao Chat
-summary: 豆包大模型对话（免费 API，支持联网搜索）
-license: MIT
+displayName: "Doubao Chat"
+summary: "豆包大模型对话（免费 API，支持联网搜索）"
+license: "MIT"
 description: |-
   豆包大模型对话（免费 API，支持联网搜索）
 
@@ -23,13 +23,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
-
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Doubao Chat
 

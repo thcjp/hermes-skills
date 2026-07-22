@@ -1,19 +1,19 @@
 ---
-slug: bailian-web-search
-name: bailian-web-search
+slug: "bailian-web-search"
+name: "bailian-web-search"
 version: "1.0.4"
-displayName: Bailian Web Search
-summary: AI-optimized web search via Bailian(Alibaba ModelStdio) API. Returns multisourced,
-  concise web se...
-license: MIT
+displayName: "Bailian Web Search"
+summary: "AI-optimized web search via Bailian(Alibaba ModelStdio) API. Returns multisourced,"
+license: "MIT"
 description: |-
   AI-optimized web search via Bailian(Alibaba ModelStdio) API。Returns
   multisourced, concise web se。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- Research
+  - Research
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Bailian Web Search
 

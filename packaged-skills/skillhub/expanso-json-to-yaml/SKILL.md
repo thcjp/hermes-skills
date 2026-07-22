@@ -1,11 +1,10 @@
 ---
-slug: expanso-json-to-yaml
-name: expanso-json-to-yaml
+slug: "expanso-json-to-yaml"
+name: "expanso-json-to-yaml"
 version: "1.0.0"
-displayName: Expanso json-to-yaml
-summary: Convert JSON input into YAML format using Expanso Edge pipelines for CLI
-  or MCP server integration.
-license: MIT
+displayName: "Expanso json-to-yaml"
+summary: "Convert JSON input into YAML format using Expanso Edge pipelines for CLI"
+license: "MIT"
 description: |-
   Convert JSON input into YAML format using Expanso Edge pipelines for
   CLI or MCP server integration。核心能力:
@@ -26,10 +25,11 @@ description: |-
 
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引...
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Expanso json-to-yaml
 

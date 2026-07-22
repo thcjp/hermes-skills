@@ -1,10 +1,10 @@
 ---
-slug: java-free
-name: java-free
+slug: "java-free"
+name: "java-free"
 version: "1.0.0"
-displayName: Java基础版
-summary: 编写健壮 Java 代码的基础能力，覆盖空指针防护、相等性判断与基础异常处理。
-license: MIT
+displayName: "Java基础版"
+summary: "编写健壮 Java 代码的基础能力，覆盖空指针防护、相等性判断与基础异常处理。"
+license: "MIT"
 description: |-
   编写健壮 Java 代码的基础能力，覆盖空指针防护、相等性判断
   与基础异常处理。
@@ -29,9 +29,10 @@ description: |-
 
   差异化:基础版聚焦 Java 编程的高频陷阱防护，去除了高级版的并发陷阱、复杂泛型与 JVM 性能调优能力。
 tags:
-- Other
+  - Other
 tools:
   - read
+homepage: "https://skillhub.cn"
 ---
 # Java 基础版
 

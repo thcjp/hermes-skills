@@ -1,10 +1,10 @@
 ---
-slug: api-doc-writer-free
-name: api-doc-writer-free
+slug: "api-doc-writer-free"
+name: "api-doc-writer-free"
 version: "1.0.0"
-displayName: API文档编写器免费版
-summary: 编写基础REST API文档,含模板、认证方式、请求响应格式与基础RESTful规范
-license: MIT
+displayName: "API文档编写器免费版"
+summary: "编写基础REST API文档,含模板、认证方式、请求响应格式与基础RESTful规范"
+license: "MIT"
 description: |-
   API 接口文档编写助手免费版。用于编写基础 REST API 文档,提供文档模板、认证方式、请求/响应格式
   与基础 RESTful 规范。完整安全建议、多模块结构、变更记录、HTTP 状态码分类等高级功能需升级付费版。
@@ -14,8 +14,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # API 接口文档编写器（免费版）
 
 API 接口文档编写助手免费版。提供基础文档模板、认证方式、请求/响应格式与 RESTful 规范,快速生成结构化 API 文档。

@@ -1,19 +1,19 @@
 ---
-slug: agent-browser-cli
-name: agent-browser-cli
+slug: "agent-browser-cli"
+name: "agent-browser-cli"
 version: "1.0.0"
-displayName: Agent Browser CLI
-summary: 使用 agent-browser CLI 进行浏览器自动化。用于签到、填表、截图、信息抓取等需要控制浏览器的任务。触发条件：(1) 用户要求自动化浏览器操作
-  (2) 需要签到、填表、点击按钮 (...
-license: MIT
+displayName: "Agent Browser CLI"
+summary: "使用 agent-browser CLI 进行浏览器自动化。用于签到、填表、截图、信息抓取等需要控制浏览器的任务。触发条件：(1) 用户要求自动化浏览器操作"
+license: "MIT"
 description: |-
   使用 agent-browser CLI 进行浏览器自动化。用于签到、填表、截图、信息抓取等需要控制浏览器的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
 tags:
-- Research
-- Automation
+  - Research
+  - Automation
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Agent Browser CLI
 

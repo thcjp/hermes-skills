@@ -1,21 +1,22 @@
 ---
-slug: db-connector
-name: db-connector
+slug: "db-connector"
+name: "db-connector"
 version: "1.0.0"
-displayName: 数据库连接助手(专业版)
-summary: 全功能数据库运维与架构设计平台，覆盖分库分表、高可用、性能调优、监控告警全链路。
-license: Proprietary
-edition: pro
+displayName: "数据库连接助手(专业版)"
+summary: "全功能数据库运维与架构设计平台，覆盖分库分表、高可用、性能调优、监控告警全链路。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   数据库连接助手专业版是面向团队与企业的全链路数据库运维与架构设计知识平台，在免费版基础上新增分库分表策略、复制高可用方案、执行计划深度分析、自动化备份编排、监控告警体系五大高级模块。核心能力：提供分片键选择决策树、主从复制故障转移流程、EXPLAIN 执行计划解读方法论、增量备份与时间点恢复编排脚本、Prometheus + Grafana 监控面板模板
 tags:
-- 数据库
-- 集成工具
-- 架构设计
-- 专业版
+  - 数据库
+  - 集成工具
+  - 架构设计
+  - 专业版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 数据库连接助手(专业版)
 

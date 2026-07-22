@@ -1,17 +1,19 @@
 ---
-slug: py
-name: py
+slug: "py"
+name: "py"
 version: "1.1.0"
-displayName: Python健壮编程
-summary: 编写可靠Python代码,避免可变默认值、导入陷阱与运行时意外
-license: MIT
+displayName: "Python健壮编程"
+summary: "编写可靠Python代码,避免可变默认值、导入陷阱与运行时意外"
+license: "MIT"
 description: |-
   编写可靠Python代码,避免可变默认值、导入陷阱与常见运行时意外。核心能力涵盖动态类型与类型提示、集合陷阱与推导式、参数/闭包/装饰器/生成器、继承/描述符/元类、GIL/线程/asyncio/多进程、循环导入/包管理、Pytest测试与模拟,提供关键规则与错误场景防护。
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # Python健壮编程
 
 编写可靠Python代码,避免可变默认值、导入陷阱与常见运行时意外。涵盖从动态类型陷阱到并发模型的完整防护指南。

@@ -1,23 +1,23 @@
 ---
-slug: workflow-symphony
-name: workflow-symphony
+slug: "workflow-symphony"
+name: "workflow-symphony"
 version: "1.0.0"
-displayName: 工作流交响曲
-summary: 解决不知自动化什么、工具选错、维护负担、测试不充分四大痛点，附机会雷达与决策树。
-license: Proprietary
+displayName: "工作流交响曲"
+summary: "解决不知自动化什么、工具选错、维护负担、测试不充分四大痛点，附机会雷达与决策树。"
+license: "Proprietary"
 description: |-
   工作流交响曲是面向一人公司的无代码自动化编排能力包。它不只罗列Zapier/Make/n8n的对比表，
   更解决四个高频痛点：不知道该自动化什么、选错工具反复迁移、上线后维护负担失控、
   测试不充分就上线导致生产事故。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-- 自动化
-- 无代码
-- 效率工具
+  - 自动化
+  - 无代码
+  - 效率工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 工作流交响曲
 
 让一人公司用无代码工具scale业务而不用招人。核心信条：**先找高价值机会，再选合适工具；先测透再上线，上线后持续维护。**

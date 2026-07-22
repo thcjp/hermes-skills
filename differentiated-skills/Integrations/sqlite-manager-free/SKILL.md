@@ -1,21 +1,22 @@
 ---
-slug: sqlite-manager-free
-name: sqlite-manager-free
+slug: "sqlite-manager-free"
+name: "sqlite-manager-free"
 version: "1.0.0"
-displayName: SQLite管理(免费版)
-summary: 面向AI Agent的SQLite管理工具免费版，覆盖并发、外键、类型、Pragma、索引、备份等核心场景。
-license: Proprietary
-edition: free
+displayName: "SQLite管理(免费版)"
+summary: "面向AI Agent的SQLite管理工具免费版，覆盖并发、外键、类型、Pragma、索引、备份等核心场景。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向独立开发者与AI Agent的SQLite本地数据库管理工具免费版。聚焦SQLite特有的并发模型、外键默认关闭、类型亲和性、Schema变更限制、性能Pragma、VACUUM维护等关键知识点，配套WAL模式、busy_timeout、事务批处理等实战配置，帮助用户正确使用SQLite避免常见陷阱
 tags:
-- 集成工具
-- 本地存储
-- 数据库
-- SQLite
+  - 集成工具
+  - 本地存储
+  - 数据库
+  - SQLite
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # SQLite管理工具（免费版）
 

@@ -1,10 +1,10 @@
 ---
-slug: ad-insight-hub
-name: ad-insight-hub
+slug: "ad-insight-hub"
+name: "ad-insight-hub"
 version: "1.0.0"
-displayName: 广告洞察中枢
-summary: 聚合AdMapix广告情报API，参数翻译/端点编排/缓存/可信度标注四层能力
-license: MIT
+displayName: "广告洞察中枢"
+summary: "聚合AdMapix广告情报API，参数翻译/端点编排/缓存/可信度标注四层能力"
+license: "MIT"
 description: |-
   面向广告投放与市场分析场景的结构化广告情报数据中枢。在AdMapix原始API之上叠加参数自然语言翻译、
   端点依赖编排、结果缓存复用、估算数据可信度A/B/C分级标注四层核心能力。支持广告创意搜索/计数/分布、
@@ -19,8 +19,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 广告洞察中枢（Ad Insight Hub）
 
 面向广告投放与市场分析场景的结构化广告情报数据中枢。在原始 API 之上叠加参数翻译、依赖编排、缓存复用、可信度标注四层能力，让 Agent 用最少的往返拿到最可用的数据。

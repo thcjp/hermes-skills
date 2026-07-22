@@ -1,10 +1,10 @@
 ---
-slug: skill-vetter-free
-name: skill-vetter-free
+slug: "skill-vetter-free"
+name: "skill-vetter-free"
 version: "1.0.0"
-displayName: Skill Vetter Free
-summary: 基础版 AI Agent 技能审查工具，执行来源检查和 RED FLAGS 检测。
-license: MIT
+displayName: "Skill Vetter Free"
+summary: "基础版 AI Agent 技能审查工具，执行来源检查和 RED FLAGS 检测。"
+license: "MIT"
 description: |-
   skill-vetter-free 是安全优先的 AI Agent 技能审查工具基础版。在安装技能前执行来源检查和
   RED FLAGS 代码审查，输出基础审查报告。不包含 GitHub API 快速审查命令、权限范围评估、
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # Skill Vetter Free
 
 skill-vetter-free 是安全优先的 AI Agent 技能审查工具基础版。**永远不要在未审查前安装任何技能。**

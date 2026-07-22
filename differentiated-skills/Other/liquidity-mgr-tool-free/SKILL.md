@@ -1,11 +1,11 @@
 ---
-slug: liquidity-mgr-tool-free
-name: liquidity-mgr-tool-free
+slug: "liquidity-mgr-tool-free"
+name: "liquidity-mgr-tool-free"
 version: "1.0.0"
-displayName: 流动性管理工具
-summary: 面向个人用户的 Uniswap V2/V3/V4 流动性查询与基础管理工具。
-license: Proprietary
-edition: free
+displayName: "流动性管理工具"
+summary: "面向个人用户的 Uniswap V2/V3/V4 流动性查询与基础管理工具。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人用户的去中心化交易所流动性管理工具。
 
@@ -24,13 +24,14 @@ description: |-
 
   适用关键词: 流动性, uniswap, v2, v3, v4, lp, 头寸, 添加流动性, 无常损失, liquidity
 tags:
-- DeFi
-- 流动性
-- 个人效率
-- 其他工具
+  - DeFi
+  - 流动性
+  - 个人效率
+  - 其他工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 流动性管理工具（免费版）
 

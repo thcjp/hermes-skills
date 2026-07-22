@@ -1,22 +1,22 @@
 ---
-slug: netdisk-sync-pro
-name: netdisk-sync-pro
+slug: "netdisk-sync-pro"
+name: "netdisk-sync-pro"
 version: "1.0.0"
-displayName: 网盘同步专家
-summary: 智能下载策略,断点续传后台模式,批量处理模板,增量同步,完整性校验。
-license: Proprietary
+displayName: "网盘同步专家"
+summary: "智能下载策略,断点续传后台模式,批量处理模板,增量同步,完整性校验。"
+license: "Proprietary"
 description: |-
   百度网盘文件管理工具，解决下载限速、大文件中断超时、批量操作繁琐、同步可靠性差、路径安全风险六大痛点。提供智能下载策略（按大小自动选择直接/后台模式）、断点续传、增量同步、完整性校验、批量处理模板、Agent记忆备份恢复。适用于百度网盘文件上传下载、大文件可靠下载、分享链接转存、批量文件操作。适用关键词：网盘同步、百度网盘、文件上传、大文件下载、分享转存、记忆备份、bdpan
 tags:
-- 智能代理
-- 文件管理
-- 百度网盘
-- 数据同步
+  - 智能代理
+  - 文件管理
+  - 百度网盘
+  - 数据同步
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 网盘同步专家
 
 百度网盘文件管理工具，所有操作限制在 `/apps/bdpan/` 目录内。适配所有支持 SKILL.md 的 Agent 平台。

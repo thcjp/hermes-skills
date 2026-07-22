@@ -1,11 +1,11 @@
 ---
-slug: azure-cli-toolkit-free
-name: azure-cli-toolkit-free
+slug: "azure-cli-toolkit-free"
+name: "azure-cli-toolkit-free"
 version: "1.0.0"
-displayName: Azure命令行工具免费版
-summary: Azure云平台命令行管理工具,支持虚拟机、存储、网络等核心资源的基本操作
-license: Proprietary
-edition: free
+displayName: "Azure命令行工具免费版"
+summary: "Azure云平台命令行管理工具,支持虚拟机、存储、网络等核心资源的基本操作"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人开发者的 Azure 云平台命令行管理工具,提供核心资源管理能力。核心能力:
   - Azure 订阅与资源组管理
@@ -25,15 +25,15 @@ description: |-
 
   适用关键词: azure, cli, cloud, vm, storage,...
 tags:
-- 云平台
-- Azure
-- 命令行工具
-- 云资源管理
+  - 云平台
+  - Azure
+  - 命令行工具
+  - 云资源管理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Azure 命令行工具免费版
 
 ## 概述

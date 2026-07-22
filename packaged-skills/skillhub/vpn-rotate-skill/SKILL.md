@@ -1,19 +1,19 @@
 ---
-slug: vpn-rotate-skill
-name: vpn-rotate-skill
+slug: "vpn-rotate-skill"
+name: "vpn-rotate-skill"
 version: "0.1.0"
-displayName: Vpn Rotate Skill
-summary: Bypass API rate limits by rotating VPN servers. Works with any OpenVPN-compatible
-  VPN (ProtonVPN,...
-license: MIT
+displayName: "Vpn Rotate Skill"
+summary: "Bypass API rate limits by rotating VPN servers. Works with any OpenVPN-compatible"
+license: "MIT"
 description: |-
   Bypass API rate limits by rotating VPN servers。Works with any OpenVPN-compatible
   VPN (ProtonVPN,。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Vpn Rotate Skill
 

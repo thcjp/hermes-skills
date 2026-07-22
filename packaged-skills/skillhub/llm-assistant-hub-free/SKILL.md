@@ -1,10 +1,10 @@
 ---
-slug: llm-assistant-hub-free
-name: llm-assistant-hub-free
+slug: "llm-assistant-hub-free"
+name: "llm-assistant-hub-free"
 version: "1.0.0"
-displayName: LLM助手中枢
-summary: 长文档推理基础版：分层分析+假设检测，提升文档推理质量。
-license: MIT
+displayName: "LLM助手中枢"
+summary: "长文档推理基础版：分层分析+假设检测，提升文档推理质量。"
+license: "MIT"
 description: |-
   针对长文档的长上下文推理优化器基础版，提供分层分析与假设检测两大核心能力。
   分层分析策略（L0快速扫描→L1深度分析）按文档长度自动选择层级组合。
@@ -14,8 +14,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 智能助手
 ---
-
 # LLM助手中枢（基础版）
 
 将冗长的文档转化为更清晰的推理和更干净的决策。基础版提供分层分析与假设检测能力，针对中等长度文档（5000字以内）的推理优化。

@@ -1,23 +1,22 @@
 ---
-slug: universal-proxy-pro
-name: universal-proxy-pro
+slug: "universal-proxy-pro"
+name: "universal-proxy-pro"
 version: "1.0.0"
-displayName: 通用代理工具专业版
-summary: 多电路并发、负载均衡、地区路由、企业审计与节点自建一体的Agent隐私通信平台
-license: Proprietary
-edition: pro
+displayName: "通用代理工具专业版"
+summary: "多电路并发、负载均衡、地区路由、企业审计与节点自建一体的Agent隐私通信平台"
+license: "Proprietary"
+edition: "pro"
 description: |-
   通用代理工具专业版是面向企业级Agent系统的隐私通信代理平台，在免费版单电路代理的基础上，新增多电路并发、流量负载均衡、按地区路由、企业级审计日志、自建代理节点与高可用部署能力。核心能力：同时管理10+独立加密电路；请求级负载均衡与故障自动切换；按地区选择出口节点（覆盖全球50+地区）；完整流量审计日志满足合规要求；接入企业自建代理节点构建私有中继网络；多实例集群部署提供99
 tags:
-- 网络代理
-- 企业级
-- 隐私通信
-- 合规审计
+  - 网络代理
+  - 企业级
+  - 隐私通信
+  - 合规审计
 tools:
   - - read
-- exec
-# 通用代理工具（专业版）
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 当企业内部署大规模Agent系统时，免费版的单电路代理模型会遇到瓶颈：**单电路带宽有限、无法指定出口地区、缺乏审计日志、节点不可控、无故障切换**。一个电路被反爬识别后整个采集任务停摆，一次网络抖动导致代理中断而无人知晓。
 

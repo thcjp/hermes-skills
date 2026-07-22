@@ -1,10 +1,10 @@
 ---
-slug: token-manager-free
-name: token-manager-free
+slug: "token-manager-free"
+name: "token-manager-free"
 version: "1.0.0"
-displayName: Token用量管理(免费版)
-summary: 监控API Token使用量和费用，提供定时提醒、余额预警和跨会话分析(免费版)
-license: MIT
+displayName: "Token用量管理(免费版)"
+summary: "监控API Token使用量和费用，提供定时提醒、余额预警和跨会话分析(免费版)"
+license: "MIT"
 description: |-
   API Token使用量和费用监控工具。实时跟踪Token消耗和余额，支持定时提醒、
   余额预警、工具集成和跨会话分析。按¥12/1M tokens计费，80%上下文阈值
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # Token用量管理(免费版)
 
 监控API Token使用量和费用，提供定时提醒、余额预警和跨会话分析。

@@ -1,18 +1,18 @@
 ---
-slug: thesis-helper
-name: thesis-helper
+slug: "thesis-helper"
+name: "thesis-helper"
 version: "2.0.0"
-displayName: Thesis Helper
-summary: 论文写作助手。论文大纲生成、文献综述框架、摘要生成、引用格式转换、格式规范检查、答辩准备。Thesis helper with outline generation,
-  literature re...
-license: MIT-0
+displayName: "Thesis Helper"
+summary: "论文写作助手。论文大纲生成、文献综述框架、摘要生成、引用格式转换、格式规范检查、答辩准备。Thesis helper with outline generation,"
+license: "MIT-0"
 description: |-
   论文写作助手。论文大纲生成、文献综述框架、摘要生成、引用格式转换、格式规范检查、答辩准备。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。
 tags:
-- Research
+  - Research
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Thesis Helper
 

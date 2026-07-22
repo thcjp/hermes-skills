@@ -1,22 +1,22 @@
 ---
-slug: file-toolkit-pro
-name: file-toolkit-pro
+slug: "file-toolkit-pro"
+name: "file-toolkit-pro"
 version: "1.0.0"
-displayName: 文件工具箱专业版
-summary: 全功能文件管理体系，支持多项目管理、关键文档清单、维护习惯追踪、批量定时整理与团队协作。
-license: Proprietary
-edition: pro
+displayName: "文件工具箱专业版"
+summary: "全功能文件管理体系，支持多项目管理、关键文档清单、维护习惯追踪、批量定时整理与团队协作。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   文件工具箱专业版面向团队与专业用户的文件治理场景，在免费版基础上扩展全功能管理能力。解决文件治理的"规模与协作"痛点：多项目并行时目录结构不统一、关键文档（合同/税务/医疗）缺乏库存管理、团队协作时命名规范无法共享、文件积累到一定程度后人工清理不现实、项目归档流程缺乏标准。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。
 tags:
-- 文件管理
-- 团队协作
-- 项目归档
-- 文档治理
+  - 文件管理
+  - 团队协作
+  - 项目归档
+  - 文档治理
 tools:
   - - read
-- exec
-# 文件工具箱（专业版）
+  - exec
+homepage: "https://skillhub.cn"
 ---
 > **团队级文件治理解决方案。多项目管理、关键文档清单、维护习惯追踪、批量定时整理。**
 

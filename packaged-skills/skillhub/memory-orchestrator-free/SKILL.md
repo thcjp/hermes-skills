@@ -1,10 +1,10 @@
 ---
-slug: memory-orchestrator-free
-name: memory-orchestrator-free
+slug: "memory-orchestrator-free"
+name: "memory-orchestrator-free"
 version: "1.0.0"
-displayName: 记忆编排器免费版
-summary: 基础两层记忆管理，支持关键词检索与简单摘要，本地持久化存储
-license: MIT
+displayName: "记忆编排器免费版"
+summary: "基础两层记忆管理，支持关键词检索与简单摘要，本地持久化存储"
+license: "MIT"
 description: |-
   记忆编排器免费版提供基础记忆管理能力，支持短期与长期两层记忆架构。
   核心能力包括：两层记忆存储（短期/长期）、关键词检索、基础摘要生成、本地持久化。
@@ -13,8 +13,10 @@ description: |-
   如需四层架构、混合检索、健康度仪表盘、并发冲突解决等高级能力，请升级到付费版。
 tools:
   - read
+homepage: "https://skillhub.cn"
+tags:
+  - 智能助手
 ---
-
 # 记忆编排器免费版
 
 基础记忆管理系统，两层架构与关键词检索。

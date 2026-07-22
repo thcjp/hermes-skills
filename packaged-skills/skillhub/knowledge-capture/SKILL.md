@@ -1,10 +1,10 @@
 ---
-slug: knowledge-capture
-name: knowledge-capture
+slug: "knowledge-capture"
+name: "knowledge-capture"
 version: "0.1.0"
-displayName: Knowledge Capture
-summary: Transform conversations and discussions into structured Notion documentation
-license: MIT
+displayName: "Knowledge Capture"
+summary: "Transform conversations and discussions into structured Notion documentation"
+license: "MIT"
 description: |-
   Transform conversations and discussions into structured Notion documentation
 
@@ -23,13 +23,13 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Knowledge
-- Productivity
+  - Knowledge
+  - Productivity
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Knowledge Capture
 

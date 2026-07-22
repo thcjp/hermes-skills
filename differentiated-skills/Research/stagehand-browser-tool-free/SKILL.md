@@ -1,22 +1,22 @@
 ---
-slug: stagehand-browser-tool-free
-name: stagehand-browser-tool-free
+slug: "stagehand-browser-tool-free"
+name: "stagehand-browser-tool-free"
 version: "1.0.0"
-displayName: 浏览器自动化工具免费版
-summary: 通过自然语言指令驱动本地 Chrome 浏览器的轻量级自动化工具,适合个人开发者日常网页交互
-license: Proprietary
-edition: free
+displayName: "浏览器自动化工具免费版"
+summary: "通过自然语言指令驱动本地 Chrome 浏览器的轻量级自动化工具,适合个人开发者日常网页交互"
+license: "Proprietary"
+edition: "free"
 description: |-
   浏览器自动化工具免费版,面向个人用户提供基础的网页自动化能力。通过自然语言指令驱动本地 Chrome 浏览器,实现页面导航、元素操作、数据提取等核心功能。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
-- 研究工具
-- 浏览器自动化
-- 个人效率
+  - 研究工具
+  - 浏览器自动化
+  - 个人效率
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 浏览器自动化工具免费版
 
 ## 概述

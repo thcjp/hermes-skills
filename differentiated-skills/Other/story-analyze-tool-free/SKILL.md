@@ -1,11 +1,11 @@
 ---
-slug: story-analyze-tool-free
-name: story-analyze-tool-free
+slug: "story-analyze-tool-free"
+name: "story-analyze-tool-free"
 version: "1.0.0"
-displayName: 网文拆文工具-免费版
-summary: 长篇网文结构拆解分析工具,支持大纲提取、节奏分析与人物关系梳理
-license: Proprietary
-edition: free
+displayName: "网文拆文工具-免费版"
+summary: "长篇网文结构拆解分析工具,支持大纲提取、节奏分析与人物关系梳理"
+license: "Proprietary"
+edition: "free"
 description: |-
   长篇网文拆文分析工具免费版,面向网文作者与文学爱好者。
 
@@ -26,15 +26,15 @@ description: |-
 
   适用关键词: 网文, 拆文, 分析, 大纲, 节奏, 人物关系, 伏笔, 爽点, 小说分析
 tags:
-- 网文创作
-- 文学分析
-- 拆文
-- 写作辅助
+  - 网文创作
+  - 文学分析
+  - 拆文
+  - 写作辅助
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 网文拆文工具 - 免费版
 
 ## 概述

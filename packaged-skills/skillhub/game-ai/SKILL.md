@@ -1,22 +1,19 @@
 ---
-slug: game-ai
-name: game-ai
+slug: "game-ai"
+name: "game-ai"
 version: "1.0.0"
-displayName: Game AI Systems
-summary: Game AI development guide covering behavior trees, state machines, pathfinding,
-  and decision-maki...
-license: MIT
+displayName: "Game AI Systems"
+summary: "Game AI development guide covering behavior trees, state machines, pathfinding,"
+license: "MIT"
 description: |-
   Game AI development guide covering behavior trees, state machines, pathfinding,
   and decision-maki。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-- Lifestyle
+  - Lifestyle
 tools:
   - - read
-- exec
-# Game AI Systems
-## AI 架构选择
-### 架构对比
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Game AI Systems
 

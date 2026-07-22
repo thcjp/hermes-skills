@@ -1,10 +1,10 @@
 ---
-slug: ai-kujiale-design-free
-name: ai-kujiale-design-free
+slug: "ai-kujiale-design-free"
+name: "ai-kujiale-design-free"
 version: "1.0.0"
-displayName: 酷家乐AI室内设计LITE
-summary: 酷家乐室内设计基础版,文字搜索户型、风格选择、布局与渲染出图。
-license: MIT
+displayName: "酷家乐AI室内设计LITE"
+summary: "酷家乐室内设计基础版,文字搜索户型、风格选择、布局与渲染出图。"
+license: "MIT"
 description: |-
   基于酷家乐(Kujiale)开放能力的室内智能设计基础版(免费),通过分步式对话完成
   户型搜索、风格选择、布局生成、渲染出图基础流程。
@@ -23,8 +23,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 酷家乐 AI 室内设计 LITE
 
 基于酷家乐开放能力,通过分步式对话完成户型搜索、风格选择、布局生成与渲染出图的基础流程。仅支持文字搜索户型与静态效果图输出。必须严格按本文档流程执行。

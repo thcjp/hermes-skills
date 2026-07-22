@@ -1,11 +1,11 @@
 ---
-slug: diagram-tool-pro
-name: diagram-tool-pro
+slug: "diagram-tool-pro"
+name: "diagram-tool-pro"
 version: "1.0.0"
-displayName: 图表工具专业版
-summary: 全格式图表生成引擎，支持Mermaid/PlantUML/SVG/批量处理/模板管理与多平台导出。
-license: Proprietary
-edition: pro
+displayName: "图表工具专业版"
+summary: "全格式图表生成引擎，支持Mermaid/PlantUML/SVG/批量处理/模板管理与多平台导出。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   图表工具专业版是企业级图表生成与管理的完整解决方案，在免费版基础上扩展了PlantUML语法、SVG矢量导出、批量图表生成、自定义模板、版本管理、HTML交互式页面等高级能力。核心能力：
   - 支持Mermaid、PlantUML、ASCII、SVG四种图表语法的完整覆盖
@@ -14,14 +14,15 @@ description: |-
   - 图表版本管理与差异对比，支持回滚与分支演化
   - HTML交互式页面输出...
 tags:
-- 图表生成
-- 可视化
-- 企业工具
-- PlantUML
-- 模板管理
+  - 图表生成
+  - 可视化
+  - 企业工具
+  - PlantUML
+  - 模板管理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 图表工具专业版（Diagram Tool Pro）
 

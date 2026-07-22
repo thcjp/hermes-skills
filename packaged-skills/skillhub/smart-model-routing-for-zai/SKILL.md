@@ -1,18 +1,18 @@
 ---
-slug: smart-model-routing-for-zai
-name: smart-model-routing-for-zai
+slug: "smart-model-routing-for-zai"
+name: "smart-model-routing-for-zai"
 version: "1.0.0"
-displayName: Smart Model Routing 
-summary: This skill is a disclosed z.ai model-routing guide and does not install code,
-  request credentials...
-license: MIT
+displayName: "Smart Model Routing"
+summary: "This skill is a disclosed z.ai model-routing guide and does not install code,"
+license: "MIT"
 description: |-
   This skill is a disclosed z。ai model-routing guide and does not install
   code, request credentials。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
-tags: '[''Development'']'
+tags: "'[''Development'']'"
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
 # Smart Model Routing
 

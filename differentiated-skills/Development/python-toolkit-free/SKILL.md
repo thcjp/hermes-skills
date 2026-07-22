@@ -1,11 +1,11 @@
 ---
-slug: python-toolkit-free
-name: python-toolkit-free
+slug: "python-toolkit-free"
+name: "python-toolkit-free"
 version: "1.0.0"
-displayName: Python工具箱(免费版)
-summary: 个人开发者的Python编码规范,涵盖PEP8、Pythonic模式与基础依赖管理。
-license: Proprietary
-edition: free
+displayName: "Python工具箱(免费版)"
+summary: "个人开发者的Python编码规范,涵盖PEP8、Pythonic模式与基础依赖管理。"
+license: "Proprietary"
+edition: "free"
 description: |-
   Python工具箱(免费版)为个人开发者提供实用的Python编码规范与最佳实践指导。核心能力:
   - PEP 8代码风格规范
@@ -25,13 +25,14 @@ description: |-
 
   适用关键词: python, py, pep8, 编码规范, ...
 tags:
-- Development
-- Python
-- 代码规范
-- 脚本
+  - Development
+  - Python
+  - 代码规范
+  - 脚本
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Python工具箱(免费版)
 

@@ -1,10 +1,10 @@
 ---
-slug: smart-weekly-report
-name: smart-weekly-report
+slug: "smart-weekly-report"
+name: "smart-weekly-report"
 version: "1.1.3"
-displayName: Report Generator
-summary: 自动提炼关键信息，生成结构化、专业且具有洞察力的周报。
-license: MIT
+displayName: "Report Generator"
+summary: "自动提炼关键信息，生成结构化、专业且具有洞察力的周报。"
+license: "MIT"
 description: |-
   自动提炼关键信息，生成结构化、专业且具有洞察力的周报。核心能力:
 
@@ -21,12 +21,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Productivity
+  - Productivity
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Report Generator
 

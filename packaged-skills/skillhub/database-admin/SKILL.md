@@ -1,10 +1,10 @@
 ---
-slug: database-admin
-name: database-admin
+slug: "database-admin"
+name: "database-admin"
 version: "1.0.0"
-displayName: 数据库管理专家
-summary: 表结构设计、批量数据操作、查询优化、类型处理与事务安全的全面数据库管理服务
-license: MIT
+displayName: "数据库管理专家"
+summary: "表结构设计、批量数据操作、查询优化、类型处理与事务安全的全面数据库管理服务"
+license: "MIT"
 description: |-
   数据库管理专家——提供全面的数据库管理功能，包括表结构创建、数据操作、查询优化、类型处理等。
   核心能力包括：
@@ -22,8 +22,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 数据库管理专家
 
 ## 概述

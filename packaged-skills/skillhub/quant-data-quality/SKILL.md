@@ -1,10 +1,10 @@
 ---
-slug: quant-data-quality
-name: quant-data-quality
+slug: "quant-data-quality"
+name: "quant-data-quality"
 version: "1.0.0"
-displayName: Quant Data Quality
-summary: 数据质量检查技能。当用户说\
-license: MIT-0
+displayName: "Quant Data Quality"
+summary: "数据质量检查技能。当用户说\"
+license: "MIT-0"
 description: |-
   数据质量检查技能。当用户说\
 
@@ -23,12 +23,11 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
-
-tags: '[''Productivity'']'
+tags: "'[''Productivity'']'"
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
 # Quant Data Quality
 

@@ -25,8 +25,9 @@
     - 缺少依赖说明 section
 
 使用方式:
-    python deep_quality_audit.py          # 执行审计
-    python deep_quality_audit.py --fix    # 审计并自动修复 warning 级别问题
+    python deep_quality_audit.py              # 执行审计
+    python deep_quality_audit.py --fix        # 审计并自动修复 warning 级别问题
+    python deep_quality_audit.py --fix-all    # 审计并自动修复 warning + info 级别问题
 
 输出:
     - JSON 报告: deep_quality_audit_report.json
@@ -366,6 +367,154 @@ def check_skill(skill_path: Path, source: str):
     }
 
 
+# ============ 分类映射 (用于 --fix-all 自动补 tags) ============
+CATEGORY_TAGS_MAP = {
+    "Agents": ["AI代理", "智能体", "自动化"],
+    "Automation": ["自动化", "效率工具", "工作流"],
+    "Communication": ["通信", "消息", "协作"],
+    "Creative": ["创意设计", "内容创作", "多媒体"],
+    "Development": ["开发工具", "编程", "代码"],
+    "Finance": ["金融", "财务", "数据分析"],
+    "Integrations": ["集成", "API", "第三方服务"],
+    "Knowledge": ["知识管理", "笔记", "文档"],
+    "Lifestyle": ["生活", "健康", "日常"],
+    "Operations": ["运维", "监控", "基础设施"],
+    "Other": ["通用工具"],
+    "Productivity": ["效率", "办公", "生产力"],
+    "Research": ["研究", "分析", "学术"],
+    "Security": ["安全", "审计", "防护"],
+    "其他": ["通用工具"],
+    "packaged": ["通用工具"],
+}
+
+DEFAULT_HOMEPAGE = "https://skillhub.cn"
+
+# 默认依赖说明模板
+DEFAULT_DEP_SECTION = """
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。
+"""
+
+
+def infer_tags_from_path(skill_path: Path, source: str) -> list:
+    """根据 skill 路径和来源推断 tags"""
+    # 如果 source 是 differentiated/Category 格式，提取 Category
+    if source.startswith("differentiated/"):
+        category = source.split("/", 1)[1]
+        return CATEGORY_TAGS_MAP.get(category, ["通用工具"])
+    return CATEGORY_TAGS_MAP.get(source, ["通用工具"])
+
+
+def add_frontmatter_field(content: str, key: str, value) -> str:
+    """在 frontmatter 中添加一个新字段（在 --- 闭合行之前插入）"""
+    if content.startswith('\ufeff'):
+        content = content[1:]
+    if not content.startswith('---'):
+        return content
+
+    parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
+    if len(parts) < 3:
+        return content
+
+    fm_text = parts[1]
+    body = parts[2]
+
+    # 构建新字段文本
+    if isinstance(value, list):
+        # 列表格式: key:\n  - item1\n  - item2
+        items = '\n'.join(f'  - {v}' for v in value)
+        new_field = f'{key}:\n{items}'
+    else:
+        new_field = f'{key}: "{value}"'
+
+    # 在 frontmatter 末尾添加新字段
+    fm_text = fm_text.rstrip() + '\n' + new_field + '\n'
+
+    return f'---{fm_text}---{body}'
+
+
+def add_dep_section(content: str) -> str:
+    """在正文末尾添加依赖说明 section"""
+    if '## 依赖说明' in content or '## Dependencies' in content or '## Dependency' in content:
+        return content
+    return content.rstrip() + '\n' + DEFAULT_DEP_SECTION
+
+
+def fix_info_issues(skill_path: Path, result: dict) -> list:
+    """自动修复 info 级别问题
+
+    可修复的问题:
+    - MISSING_HOMEPAGE: 添加 homepage 字段
+    - MISSING_TAGS: 根据 skill 所在目录推断 tags 并添加
+    - MISSING_DEP_SECTION: 添加依赖说明 section
+    - CONTENT_TOO_SHORT: 添加基础内容（概述 + 依赖说明）
+
+    Returns:
+        list of str: 已执行的修复描述
+    """
+    fixes = []
+    content = result.get("_content", "")
+    fm = result.get("frontmatter", {})
+    issues_map = result.get("_issues_map", {"critical": [], "warning": [], "info": []})
+
+    modified = False
+    info_issues = issues_map.get("info", [])
+
+    # 修复 MISSING_HOMEPAGE
+    has_homepage_issue = any(i.startswith("MISSING_HOMEPAGE") for i in info_issues)
+    if has_homepage_issue:
+        content = add_frontmatter_field(content, 'homepage', DEFAULT_HOMEPAGE)
+        fixes.append(f"添加 homepage: {DEFAULT_HOMEPAGE}")
+        modified = True
+
+    # 修复 MISSING_TAGS
+    has_tags_issue = any(i.startswith("MISSING_TAGS") for i in info_issues)
+    if has_tags_issue:
+        inferred_tags = infer_tags_from_path(skill_path, result.get("source", ""))
+        content = add_frontmatter_field(content, 'tags', inferred_tags)
+        fixes.append(f"添加 tags: {', '.join(inferred_tags)}")
+        modified = True
+
+    # 修复 MISSING_DEP_SECTION
+    has_dep_issue = any(i.startswith("MISSING_DEP_SECTION") for i in info_issues)
+    if has_dep_issue:
+        content = add_dep_section(content)
+        fixes.append("添加依赖说明 section")
+        modified = True
+
+    # 修复 CONTENT_TOO_SHORT（在添加依赖说明后再次检查）
+    has_short_issue = any(i.startswith("CONTENT_TOO_SHORT") for i in info_issues)
+    if has_short_issue and not has_dep_issue:
+        # 如果内容太短且还没添加依赖说明，添加它
+        content = add_dep_section(content)
+        fixes.append("添加依赖说明 section (内容补充)")
+        modified = True
+    elif has_short_issue:
+        # 依赖说明已添加，如果内容仍然太短，添加基础概述
+        if len(content) < MIN_CONTENT_LENGTH:
+            _, body = split_frontmatter_body(content)
+            if not re.search(r'##\s*概述', body):
+                overview = "\n## 概述\n\n本Skill提供专业功能，通过自然语言指令驱动Agent完成操作。\n"
+                # 在 body 的开头插入概述
+                parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
+                if len(parts) >= 3:
+                    content = f'{parts[0]}---\n{parts[1]}\n---\n{overview}{parts[2]}'
+                    fixes.append("添加概述 section (内容补充)")
+                    modified = True
+
+    if modified:
+        skill_path.write_text(content, encoding='utf-8')
+
+    return fixes
+
+
 def fix_warning_issues(skill_path: Path, result: dict) -> list:
     """自动修复 warning 级别问题
 
@@ -461,16 +610,19 @@ def replace_frontmatter_value(content: str, key: str, old_val: str, new_val: str
     return content
 
 
-def run_audit(fix_mode: bool = False):
+def run_audit(fix_mode: bool = False, fix_all: bool = False):
     """执行全量审计
 
     Args:
-        fix_mode: 是否启用自动修复模式
+        fix_mode: 是否启用自动修复模式 (修复 warning 级别)
+        fix_all: 是否启用全量修复模式 (修复 warning + info 级别)
     """
     print("=" * 60)
     print("深度质量审计系统 (Deep Quality Audit)")
     print("=" * 60)
-    if fix_mode:
+    if fix_all:
+        print("[模式] 审计 + 全量自动修复 (warning + info)")
+    elif fix_mode:
         print("[模式] 审计 + 自动修复 warning 级别问题")
     else:
         print("[模式] 仅审计")
@@ -491,7 +643,7 @@ def run_audit(fix_mode: bool = False):
         all_results.append(result)
 
         # 自动修复 warning 级别问题
-        if fix_mode and result["severity"] in ("warning", "critical"):
+        if (fix_mode or fix_all) and result["severity"] in ("warning", "critical"):
             warning_issues = result.get("_issues_map", {}).get("warning", [])
             if warning_issues:
                 applied = fix_warning_issues(skill_path, result)
@@ -500,6 +652,21 @@ def run_audit(fix_mode: bool = False):
                         "slug": result["slug"],
                         "source": source,
                         "fixes": applied,
+                    })
+
+        # 自动修复 info 级别问题 (仅 --fix-all 模式)
+        if fix_all and result["severity"] in ("info", "warning", "critical"):
+            info_issues = result.get("_issues_map", {}).get("info", [])
+            if info_issues:
+                # 重新读取文件（可能已被 warning 修复修改过）
+                result["_content"] = skill_path.read_text(encoding='utf-8', errors='replace')
+                applied = fix_info_issues(skill_path, result)
+                if applied:
+                    fixes_applied.append({
+                        "slug": result["slug"],
+                        "source": source,
+                        "fixes": applied,
+                        "level": "info",
                     })
 
     # 统计汇总
@@ -541,6 +708,7 @@ def run_audit(fix_mode: bool = False):
         "audit_date": datetime.now().isoformat(),
         "total_skills": len(all_results),
         "fix_mode": fix_mode,
+        "fix_all": fix_all,
         "by_severity": by_severity,
         "by_source": by_source,
         "critical_issues": critical_issues,
@@ -619,8 +787,9 @@ def run_audit(fix_mode: bool = False):
 def main():
     """主入口"""
     fix_mode = "--fix" in sys.argv
+    fix_all = "--fix-all" in sys.argv
 
-    passed = run_audit(fix_mode=fix_mode)
+    passed = run_audit(fix_mode=fix_mode, fix_all=fix_all)
 
     # 如果存在 critical 问题，返回非零退出码
     if not passed:

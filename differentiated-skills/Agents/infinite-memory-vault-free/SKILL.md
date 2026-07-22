@@ -1,21 +1,21 @@
 ---
-slug: infinite-memory-vault-free
-name: infinite-memory-vault-free
+slug: "infinite-memory-vault-free"
+name: "infinite-memory-vault-free"
 version: "1.0.0"
-displayName: 无限记忆库(免费版)
-summary: 与Agent内置记忆并行的无限组织化记忆免费版：自定义分类、索引导航、即写即存。
-license: Proprietary
-edition: free
+displayName: "无限记忆库(免费版)"
+summary: "与Agent内置记忆并行的无限组织化记忆免费版：自定义分类、索引导航、即写即存。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向需要超越 Agent 内置记忆的长期结构化存储场景的无限记忆库免费体验版。与 Agent 内置记忆并行工作，互不冲突，提供无限分类、索引导航、即写即存能力。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 智能代理
-- 记忆管理
-- 知识组织
+  - 智能代理
+  - 记忆管理
+  - 知识组织
 tools:
   - - read
-- exec
-# 无限记忆库（免费版）
+  - exec
+homepage: "https://skillhub.cn"
 ---
 **与 Agent 内置记忆并行的无限组织化记忆系统**。你的 Agent 有基础内置记忆，本 Skill 为它添加无限、完美组织的并行记忆系统——互补而非替代，永不冲突。
 

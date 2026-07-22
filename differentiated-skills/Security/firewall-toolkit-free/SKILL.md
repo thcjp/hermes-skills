@@ -1,11 +1,11 @@
 ---
-slug: firewall-toolkit-free
-name: firewall-toolkit-free
+slug: "firewall-toolkit-free"
+name: "firewall-toolkit-free"
 version: "1.0.0"
-displayName: 防火墙配置工具包免费版
-summary: 服务器防火墙配置助手,支持iptables/uffw基础规则、端口管理与安全基线检查,适合个人开发者服务器安全防护。
-license: Proprietary
-edition: free
+displayName: "防火墙配置工具包免费版"
+summary: "服务器防火墙配置助手,支持iptables/uffw基础规则、端口管理与安全基线检查,适合个人开发者服务器安全防护。"
+license: "Proprietary"
+edition: "free"
 description: |-
   防火墙配置工具包免费版,为个人开发者提供服务器防火墙配置与安全加固能力。
   核心能力:iptables/ufw规则配置、端口管理、安全基线检查、防火墙状态诊断。
@@ -13,15 +13,15 @@ description: |-
   差异化:免费版聚焦单机防火墙配置,支持Linux主流防火墙工具,适合个人服务器快速加固。
   适用关键词: 防火墙, iptables, ufw, 端口管理, 安全基线, firewall, security group, network security
 tags:
-- 防火墙
-- 网络安全
-- iptables
-- 免费版
+  - 防火墙
+  - 网络安全
+  - iptables
+  - 免费版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 防火墙配置工具包免费版
 
 ## 概述

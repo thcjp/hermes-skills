@@ -1,19 +1,19 @@
 ---
-slug: finance
-name: finance
+slug: "finance"
+name: "finance"
 version: "1.1.2"
-displayName: finance
-summary: Track stocks, ETFs, indices, crypto (where available), and FX pairs with
-  caching + provider fallb...
-license: MIT
+displayName: "finance"
+summary: "Track stocks, ETFs, indices, crypto (where available), and FX pairs with"
+license: "MIT"
 description: |-
   Track stocks, ETFs, indices, crypto (where available), and FX pairs
   with caching + provider fallb。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Finance
+  - Finance
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # finance
 

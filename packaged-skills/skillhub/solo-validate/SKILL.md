@@ -1,18 +1,18 @@
 ---
-slug: solo-validate
-name: solo-validate
+slug: "solo-validate"
+name: "solo-validate"
 version: "2.1.1"
-displayName: Validate
-summary: Score startup idea through S.E.E.D. niche check + STREAM 6-layer analysis
-  + Devil's Advocate inve...
-license: MIT
+displayName: "Validate"
+summary: "Score startup idea through S.E.E.D. niche check + STREAM 6-layer analysis"
+license: "MIT"
 description: |-
   Score startup idea through S。E。Use when 用户需要Validate相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-- Research
+  - Research
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Validate
 

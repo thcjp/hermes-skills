@@ -1,25 +1,25 @@
 ---
-slug: video-frames-tool-pro
-name: video-frames-tool-pro
+slug: "video-frames-tool-pro"
+name: "video-frames-tool-pro"
 version: "1.0.0"
-displayName: 视频帧提取-专业版
-summary: 企业级视频帧提取与剪辑工具，支持批量处理、区间抓取、分辨率调整、水印添加等高级能力。
-license: Proprietary
-edition: pro
+displayName: "视频帧提取-专业版"
+summary: "企业级视频帧提取与剪辑工具，支持批量处理、区间抓取、分辨率调整、水印添加等高级能力。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   视频帧提取专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Creative
-- 视频处理
-- 帧提取
-- 专业版
-- 批量处理
-- 企业级
+  - Creative
+  - 视频处理
+  - 帧提取
+  - 专业版
+  - 批量处理
+  - 企业级
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 视频帧提取工具 - 专业版
 
 ## 概述

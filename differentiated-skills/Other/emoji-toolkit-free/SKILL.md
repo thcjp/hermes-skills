@@ -1,23 +1,23 @@
 ---
-slug: emoji-toolkit-free
-name: emoji-toolkit-free
+slug: "emoji-toolkit-free"
+name: "emoji-toolkit-free"
 version: "1.0.0"
-displayName: 表情符号工具箱
-summary: 表情符号编码解码工具，支持Unicode变体选择器隐藏消息、代币编码与元数据解析。
-license: Proprietary
-edition: free
+displayName: "表情符号工具箱"
+summary: "表情符号编码解码工具，支持Unicode变体选择器隐藏消息、代币编码与元数据解析。"
+license: "Proprietary"
+edition: "free"
 description: |-
   表情符号工具箱免费版解决在即时通讯中"隐藏消息传递、代币安全传输、表情符号深度解析"的核心需求。表情符号工具箱利用Unicode变体选择器（VS1-VS256）技术，将文本隐藏在表情符号内部，实现视觉上只显示表情但实际携带隐藏信息的效果。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
-- 表情符号
-- 隐藏消息
-- 编码解码
-- Unicode
+  - 表情符号
+  - 隐藏消息
+  - 编码解码
+  - Unicode
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 表情符号工具箱（免费版）
 
 > **在表情符号中隐藏消息。Unicode变体选择器让隐秘通信成为可能。**

@@ -1,11 +1,11 @@
 ---
-slug: in-depth-research-tool-pro
-name: in-depth-research-tool-pro
+slug: "in-depth-research-tool-pro"
+name: "in-depth-research-tool-pro"
 version: "1.0.0"
-displayName: 深度研究专业版
-summary: 企业级深度研究工具，支持团队协作、自动化引用管理、知识库构建、定时研究与多格式报告，适合专业研究与决策支持。
-license: Proprietary
-edition: pro
+displayName: "深度研究专业版"
+summary: "企业级深度研究工具，支持团队协作、自动化引用管理、知识库构建、定时研究与多格式报告，适合专业研究与决策支持。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级深度研究工具，支持团队协作、自动化引用管理、知识库构建、定时研究与多格式报告，适合专业研究与决策支持。核心能力:
   - 多人协作研究，支持角色分工与任务分配
@@ -24,14 +24,15 @@ description: |-
   差异化:
   - PRO 版支持团队协作...
 tags:
-- 研究
-- 企业工具
-- 团队协作
-- 知识库
-- 报告生成
+  - 研究
+  - 企业工具
+  - 团队协作
+  - 知识库
+  - 报告生成
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 深度研究专业版
 

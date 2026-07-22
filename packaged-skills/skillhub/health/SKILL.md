@@ -1,10 +1,10 @@
 ---
-slug: health
-name: health
+slug: "health"
+name: "health"
 version: "1.0.1"
-displayName: 健康指导助手
-summary: 提供个性化健康指导，同时保持严格的安全边界与证据分级。
-license: MIT
+displayName: "健康指导助手"
+summary: "提供个性化健康指导，同时保持严格的安全边界与证据分级。"
+license: "MIT"
 description: |-
   健康指导助手在严格安全边界下提供个性化健康建议。覆盖Safety Boundary Protocols、
   个性化基线建立、Communication Standards、Evidence-Based Recommendation Protocols、
@@ -17,8 +17,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Health — 健康指导助手
 
 ## 依赖说明

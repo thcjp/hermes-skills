@@ -1,11 +1,11 @@
 ---
-slug: report-builder-tool-pro
-name: report-builder-tool-pro
+slug: "report-builder-tool-pro"
+name: "report-builder-tool-pro"
 version: "1.0.0"
-displayName: 报告汇总构建器专业版
-summary: 企业级报告管理系统,支持多源数据聚合、智能摘要、模板管理与自动分发
-license: Proprietary
-edition: pro
+displayName: "报告汇总构建器专业版"
+summary: "企业级报告管理系统,支持多源数据聚合、智能摘要、模板管理与自动分发"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 工作汇报领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: 周报, 月报, 日报, 汇总, 报告, 工作总结, 自动汇总
 tags:
-- 报告汇总
-- 周报
-- 月报
-- 日报
+  - 报告汇总
+  - 周报
+  - 月报
+  - 日报
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 报告汇总构建器专业版
 
 ## 概述

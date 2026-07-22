@@ -1,10 +1,10 @@
 ---
-slug: data-format-converter-free
-name: data-format-converter-free
+slug: "data-format-converter-free"
+name: "data-format-converter-free"
 version: "1.0.0"
-displayName: 数据格式转换(免费版)
-summary: CSV与JSON、JSON与YAML基础互转，支持单文件转换与中文输出
-license: MIT
+displayName: "数据格式转换(免费版)"
+summary: "CSV与JSON、JSON与YAML基础互转，支持单文件转换与中文输出"
+license: "MIT"
 description: |-
   数据格式转换器免费版，提供基础的数据格式互转能力。
   核心能力包括：
@@ -21,8 +21,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 数据格式转换器（免费版）
 
 ## 概述

@@ -1,21 +1,22 @@
 ---
-slug: atlas-admin-console
-name: atlas-admin-console
+slug: "atlas-admin-console"
+name: "atlas-admin-console"
 version: "1.0.0"
-displayName: Atlas管理台专业版
-summary: MongoDB Atlas全功能管理控制台，含批量API调用、结果导出、历史回放、多API编排与监控告警自动化。
-license: Proprietary
-edition: pro
+displayName: "Atlas管理台专业版"
+summary: "MongoDB Atlas全功能管理控制台，含批量API调用、结果导出、历史回放、多API编排与监控告警自动化。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向MongoDB Atlas运维团队的企业级全功能管理控制台。在免费版基础上新增批量API调用与并发执行、调用结果导出（CSV/JSON）、调用历史记录与回放、多API编排（工作流）、监控告警自动化、Terraform集成、多项目统一管理等高级能力，配套面向DBA、SRE、平台工程的多角色场景指南
 tags:
-- 集成工具
-- MongoDB
-- 云数据库
-- 企业级
+  - 集成工具
+  - MongoDB
+  - 云数据库
+  - 企业级
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Atlas管理台专业版
 

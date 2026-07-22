@@ -1,11 +1,11 @@
 ---
-slug: doc-toolkit-pro
-name: doc-toolkit-pro
+slug: "doc-toolkit-pro"
+name: "doc-toolkit-pro"
 version: "1.0.0"
-displayName: 文档工具箱专业版
-summary: 企业级DOCX处理引擎，支持批量生成、模板管理、邮件合并、版本对比与多格式导出。
-license: Proprietary
-edition: pro
+displayName: "文档工具箱专业版"
+summary: "企业级DOCX处理引擎，支持批量生成、模板管理、邮件合并、版本对比与多格式导出。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   文档工具箱专业版是面向企业文档团队的DOCX全生命周期管理Skill，在免费版基础上扩展了批量处理、模板库、邮件合并、图片编辑、版本对比、水印加密、多格式导出等高级能力。核心能力：
   - 批量文档处理（单次100+文档），并行渲染与校验
@@ -14,14 +14,15 @@ description: |-
   - 图片替换、裁剪、水印叠加
   - 文档版本diff对比...
 tags:
-- 文档处理
-- 企业工具
-- 批量自动化
-- 模板管理
-- 邮件合并
+  - 文档处理
+  - 企业工具
+  - 批量自动化
+  - 模板管理
+  - 邮件合并
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 文档工具箱专业版（Doc Toolkit Pro）
 

@@ -1,11 +1,11 @@
 ---
-slug: jellyfin-control-tool-free
-name: jellyfin-control-tool-free
+slug: "jellyfin-control-tool-free"
+name: "jellyfin-control-tool-free"
 version: "1.0.0"
-displayName: 媒体服务器控制
-summary: 轻量级 Jellyfin 媒体服务器控制工具，支持内容搜索、播放控制与设备管理，适合个人家庭影音娱乐使用。
-license: Proprietary
-edition: free
+displayName: "媒体服务器控制"
+summary: "轻量级 Jellyfin 媒体服务器控制工具，支持内容搜索、播放控制与设备管理，适合个人家庭影音娱乐使用。"
+license: "Proprietary"
+edition: "free"
 description: |-
   轻量级 Jellyfin 媒体服务器控制工具，支持内容搜索、播放控制与设备管理，适合个人家庭影音娱乐使用。核心能力:
   - 一键播放：搜索内容并自动开始播放
@@ -23,13 +23,14 @@ description: |-
   - 一键播放，无需手动操作电视
   - 智能续播...
 tags:
-- 媒体
-- Jellyfin
-- 智能家居
-- 播放控制
+  - 媒体
+  - Jellyfin
+  - 智能家居
+  - 播放控制
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 媒体服务器控制（免费版）
 

@@ -1,11 +1,11 @@
 ---
-slug: weather-toolkit-pro
-name: weather-toolkit-pro
+slug: "weather-toolkit-pro"
+name: "weather-toolkit-pro"
 version: "1.0.0"
-displayName: 天气查询工具包专业版
-summary: 企业级天气数据平台,支持批量查询、历史数据、预警推送与多数据源聚合
-license: Proprietary
-edition: pro
+displayName: "天气查询工具包专业版"
+summary: "企业级天气数据平台,支持批量查询、历史数据、预警推送与多数据源聚合"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向企业与开发者的高级天气数据工具包,在免费版基础上扩展批量查询、历史数据、预警推送与多数据源聚合能力。核心能力:
   - 多城市批量天气查询与并发处理
@@ -23,15 +23,16 @@ description: |-
   - 旅游平台的天气信息聚合
   - 户外活动的天气...
 tags:
-- Lifestyle
-- 企业天气
-- 数据聚合
-- 预警推送
-- 批量查询
-- 历史数据
+  - Lifestyle
+  - 企业天气
+  - 数据聚合
+  - 预警推送
+  - 批量查询
+  - 历史数据
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 天气查询工具包专业版
 

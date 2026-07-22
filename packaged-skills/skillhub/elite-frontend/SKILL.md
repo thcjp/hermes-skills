@@ -1,11 +1,11 @@
 ---
-slug: elite-frontend
-name: elite-frontend
+slug: "elite-frontend"
+name: "elite-frontend"
 version: "1.0.0"
-displayName: 精英前端设计-专业版
-summary: 企业级前端设计系统，支持多页面应用、React/Vue组件、品牌一致性与高级动效编排。
-license: Proprietary
-edition: pro
+displayName: "精英前端设计-专业版"
+summary: "企业级前端设计系统，支持多页面应用、React/Vue组件、品牌一致性与高级动效编排。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   精英前端设计工具专业版，面向团队的企业级前端设计系统。核心能力：
   - 多页面应用设计，统一视觉语言贯穿全站
@@ -16,15 +16,14 @@ description: |-
   - 响应式适配策略，多断点一致体验
   - 可访问性合规...
 tags:
-- Creative
-- Frontend
-- Enterprise
-- DesignSystem
+  - Creative
+  - Frontend
+  - Enterprise
+  - DesignSystem
 tools:
   - - read
-- exec
-# 精英前端设计工具（专业版）
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 精英前端设计-专业版
 

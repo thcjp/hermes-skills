@@ -1,10 +1,10 @@
 ---
-slug: deepseek-chat
-name: deepseek-chat
+slug: "deepseek-chat"
+name: "deepseek-chat"
 version: "1.0.0"
-displayName: DeepSeek Chat
-summary: DeepSeek 官方 API 对话（免费/超便宜，支持中文）
-license: MIT
+displayName: "DeepSeek Chat"
+summary: "DeepSeek 官方 API 对话（免费/超便宜，支持中文）"
+license: "MIT"
 description: |-
   DeepSeek 官方 API 对话（免费/超便宜，支持中文）
 
@@ -23,12 +23,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # DeepSeek Chat
 

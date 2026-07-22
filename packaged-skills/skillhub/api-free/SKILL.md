@@ -1,10 +1,10 @@
 ---
-slug: api-free
-name: api-free
+slug: "api-free"
+name: "api-free"
 version: "1.0.0"
-displayName: REST API参考免费版
-summary: 3大类核心服务的REST API参考,含认证模式与端点示例,快速查阅集成要点
-license: MIT
+displayName: "REST API参考免费版"
+summary: "3大类核心服务的REST API参考,含认证模式与端点示例,快速查阅集成要点"
+license: "MIT"
 description: |-
   REST API 参考文档库免费版。覆盖 AI/ML、支付、通信 3 大类核心服务的认证模式与端点参考。
   提供基础 curl 示例与常见错误提示。完整 16 类 147 服务、速率限制策略、分页模式、Webhook 签名验证、
@@ -15,8 +15,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # REST API 参考手册（免费版）
 
 核心服务的 REST API 参考文档免费版。覆盖 AI/ML、支付、通信 3 大类服务,提供认证模式、端点参考与基础 curl 示例。

@@ -1,19 +1,19 @@
 ---
-slug: universal-translate
-name: universal-translate
+slug: "universal-translate"
+name: "universal-translate"
 version: "1.0.0"
-displayName: Universal Translate
-summary: Translate text, files, and conversations between any languages. Auto-detects
-  source language. Pre...
-license: MIT-0
+displayName: "Universal Translate"
+summary: "Translate text, files, and conversations between any languages. Auto-detects"
+license: "MIT-0"
 description: |-
   Translate text, files, and conversations between any languages。Auto-detects
   source language。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Development
+  - Development
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Universal Translate
 

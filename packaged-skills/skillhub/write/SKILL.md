@@ -1,10 +1,10 @@
 ---
-slug: write
-name: write
+slug: "write"
+name: "write"
 version: "1.0.0"
-displayName: 版本化写作工具
-summary: 带强制版本控制与质量审计的写作工作流，通过edit.sh脚本管理草稿版本与audit审计
-license: Proprietary
+displayName: "版本化写作工具"
+summary: "带强制版本控制与质量审计的写作工作流，通过edit.sh脚本管理草稿版本与audit审计"
+license: "Proprietary"
 description: |-
   带强制版本控制与质量审计的版本化写作工具。
   遵循Request→Plan→Draft→Audit→Refine→Deliver工作流，通过edit.sh脚本强制版本备份，
@@ -14,8 +14,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 版本化写作工具
 
 带强制版本控制与质量审计的写作工作流，通过edit.sh脚本管理版本，遵循Request→Plan→Draft→Audit→Refine→Deliver流程。

@@ -1,11 +1,11 @@
 ---
-slug: word-docx-v1-tool-pro
-name: word-docx-v1-tool-pro
+slug: "word-docx-v1-tool-pro"
+name: "word-docx-v1-tool-pro"
 version: "1.0.0"
-displayName: Word文档工具V1（专业版）
-summary: Word文档创建与编辑工具基础版本，支持段落、标题、列表与基本格式化。
-license: Proprietary
-edition: pro
+displayName: "Word文档工具V1（专业版）"
+summary: "Word文档创建与编辑工具基础版本，支持段落、标题、列表与基本格式化。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Word文档工具V1 - （专业版）
 
@@ -17,15 +17,15 @@ description: |-
 
   适用关键词: Word文档, docx创建, 段落编辑, 标题层级, 列表生成, 页面设置, 批量创建
 tags:
-- Word文档
-- docx
-- 文档创建
-- 格式化
+  - Word文档
+  - docx
+  - 文档创建
+  - 格式化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Word文档工具V1（专业版）
 
 ## 概述

@@ -1,11 +1,11 @@
 ---
-slug: lifestyle-assistant-tool-free
-name: lifestyle-assistant-tool-free
+slug: "lifestyle-assistant-tool-free"
+name: "lifestyle-assistant-tool-free"
 version: "1.0.0"
-displayName: 生活助手免费版
-summary: 个人任务、沟通与日程管理助手,主动跟进待办、邮件摘要与会议安排
-license: Proprietary
-edition: free
+displayName: "生活助手免费版"
+summary: "个人任务、沟通与日程管理助手,主动跟进待办、邮件摘要与会议安排"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人用户的生活与工作助理,聚焦任务捕获、沟通优化与日程管理。
   核心能力: 任务分解与跟进、邮件长文摘要、日程冲突检测、提醒推送、信息归档
@@ -13,16 +13,16 @@ description: |-
   差异化: 免费版专注单用户日常任务管理,配置简单,适合个人使用
   适用关键词: 任务管理, 日程安排, 邮件摘要, 待办清单, 会议准备, 助手
 tags:
-- 个人助手
-- 任务管理
-- 日程管理
-- 效率工具
-- 沟通优化
+  - 个人助手
+  - 任务管理
+  - 日程管理
+  - 效率工具
+  - 沟通优化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 生活助手 (免费版)
 
 ## 概述

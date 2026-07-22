@@ -1,11 +1,11 @@
 ---
-slug: job-auto-apply-tool-free
-name: job-auto-apply-tool-free
+slug: "job-auto-apply-tool-free"
+name: "job-auto-apply-tool-free"
 version: "1.0.0"
-displayName: 求职自动申请
-summary: 轻量级求职自动化工具，支持多平台职位搜索与申请提交，自动生成求职信，适合个人求职者提升效率。
-license: Proprietary
-edition: free
+displayName: "求职自动申请"
+summary: "轻量级求职自动化工具，支持多平台职位搜索与申请提交，自动生成求职信，适合个人求职者提升效率。"
+license: "Proprietary"
+edition: "free"
 description: |-
   轻量级求职自动化工具，支持多平台职位搜索与申请提交，自动生成求职信，适合个人求职者提升效率。
 
@@ -27,13 +27,14 @@ description: |-
 
   适用关键词: 求职申请, 自动投递, 职位搜索, 简历投递, 求职信生成
 tags:
-- 求职
-- 自动化
-- 招聘
-- 求职信
+  - 求职
+  - 自动化
+  - 招聘
+  - 求职信
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 求职自动申请（免费版）
 

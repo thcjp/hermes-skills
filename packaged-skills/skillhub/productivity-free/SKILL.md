@@ -1,10 +1,10 @@
 ---
-slug: productivity-free
-name: productivity-free
+slug: "productivity-free"
+name: "productivity-free"
 version: "1.0.0"
-displayName: 生产力操作系统
-summary: 集成目标、项目、任务、习惯的基础生产力管理系统
-license: MIT
+displayName: "生产力操作系统"
+summary: "集成目标、项目、任务、习惯的基础生产力管理系统"
+license: "MIT"
 description: |-
   基础生产力管理系统，覆盖目标设定、项目管理、任务执行、习惯追踪等核心功能。
   基础能力涵盖目标-项目-任务三级体系、收件箱捕获与分流、习惯追踪、周回顾。
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 生产力操作系统（基础版）
 
 将目标、项目、任务、习惯整合为统一系统的生产力管理框架。不提供一次性激励，而是构建可持续运行的可信系统。所有数据存储在 `~/productivity/` 本地目录，仅在用户明确确认后写入文件。

@@ -1,11 +1,11 @@
 ---
-slug: jellyfin-control-tool-pro
-name: jellyfin-control-tool-pro
+slug: "jellyfin-control-tool-pro"
+name: "jellyfin-control-tool-pro"
 version: "1.0.0"
-displayName: 媒体控制专业版
-summary: 企业级 Jellyfin 媒体服务器管理工具，支持多设备、多用户、定时播放、媒体库自动化与播放统计，适合家庭影院与小型机构。
-license: Proprietary
-edition: pro
+displayName: "媒体控制专业版"
+summary: "企业级 Jellyfin 媒体服务器管理工具，支持多设备、多用户、定时播放、媒体库自动化与播放统计，适合家庭影院与小型机构。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级 Jellyfin 媒体服务器管理工具，支持多设备、多用户、定时播放、媒体库自动化与播放统计，适合家庭影院与小型机构。核心能力:
   - 多设备同时管理与控制
@@ -24,14 +24,15 @@ description: |-
   差异化:
   - PRO 版支持多设备管理...
 tags:
-- 媒体
-- 企业工具
-- 多设备
-- 自动化管理
-- 家庭影院
+  - 媒体
+  - 企业工具
+  - 多设备
+  - 自动化管理
+  - 家庭影院
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 媒体控制专业版
 ## 概述

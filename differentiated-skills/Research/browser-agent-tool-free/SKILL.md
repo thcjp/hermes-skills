@@ -1,11 +1,11 @@
 ---
-slug: browser-agent-tool-free
-name: browser-agent-tool-free
+slug: "browser-agent-tool-free"
+name: "browser-agent-tool-free"
 version: "1.0.0"
-displayName: 浏览器智能代理工具-免费版
-summary: 无头浏览器自动化CLI,支持可访问性树快照与确定性元素选择,适合个人开发者
-license: Proprietary
-edition: free
+displayName: "浏览器智能代理工具-免费版"
+summary: "无头浏览器自动化CLI,支持可访问性树快照与确定性元素选择,适合个人开发者"
+license: "Proprietary"
+edition: "free"
 description: |-
   无头浏览器自动化命令行工具,通过可访问性树快照(ref引用)实现确定性元素选择,
   专为AI代理优化的浏览器操作工作流。核心能力:
@@ -21,12 +21,13 @@ description: |-
 
   差异化:免费版提供核心浏览器自动化能力,适合个人用户与轻量场景,无企业级特性
 tags:
-- 研究工具
-- 浏览器自动化
-- 自动化
+  - 研究工具
+  - 浏览器自动化
+  - 自动化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 浏览器智能代理工具(免费版)
 

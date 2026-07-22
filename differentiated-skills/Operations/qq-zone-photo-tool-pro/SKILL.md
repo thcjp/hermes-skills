@@ -1,25 +1,25 @@
 ---
-slug: qq-zone-photo-tool-pro
-name: qq-zone-photo-tool-pro
+slug: "qq-zone-photo-tool-pro"
+name: "qq-zone-photo-tool-pro"
 version: "1.0.0"
-displayName: QQ空间相册专业版
-summary: 专业相册管理平台，支持批量下载、相册创建上传与多平台迁移。
-license: Proprietary
-edition: pro
+displayName: "QQ空间相册专业版"
+summary: "专业相册管理平台，支持批量下载、相册创建上传与多平台迁移。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向专业用户的QQ空间相册管理平台。支持批量下载整个相册、创建
   新相册、批量上传照片、相册管理与多平台迁移（至Google Photos/
   iCloud等）。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Operations
-- QQ空间
-- 相册管理
-- 专业版
+  - Operations
+  - QQ空间
+  - 相册管理
+  - 专业版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # QQ空间相册专业版（PRO版）
 
 ## 概述

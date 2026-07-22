@@ -1,25 +1,25 @@
 ---
-slug: file-compressor-pro
-name: file-compressor-pro
+slug: "file-compressor-pro"
+name: "file-compressor-pro"
 version: "1.0.0"
-displayName: 文本语义压缩器(专业版)
-summary: 全功能语义压缩工具，支持L1-L4四级、批量压缩、多模型验证、自定义锚点与质量报告。
-license: Proprietary
-edition: pro
+displayName: "文本语义压缩器(专业版)"
+summary: "全功能语义压缩工具，支持L1-L4四级、批量压缩、多模型验证、自定义锚点与质量报告。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向专业场景的全功能语义文本压缩工具，在免费版基础上扩展L3-L4极限压缩、批量压缩流水线、多模型并行验证、自定义锚点策略、跨格式智能优化与压缩质量量化报告等高级能力。核心能力：
 
   - L1-L4全级别压缩，从0。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- 极限压缩
-- 批量压缩
-- 多模型验证
-- 质量报告
-- 企业Token优化
+  - 极限压缩
+  - 批量压缩
+  - 多模型验证
+  - 质量报告
+  - 企业Token优化
 tools:
   - - read
-- exec
-# 文本语义压缩器(专业版)
+  - exec
+homepage: "https://skillhub.cn"
 ---
 面向专业场景的全功能语义文本压缩工具。在免费版基础上扩展L3-L4极限压缩、批量压缩流水线、多模型并行验证、自定义锚点策略、跨格式智能优化与压缩质量量化报告等8项高级能力。
 

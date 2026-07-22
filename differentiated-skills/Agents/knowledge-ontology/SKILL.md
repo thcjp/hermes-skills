@@ -1,21 +1,21 @@
 ---
-slug: knowledge-ontology
-name: knowledge-ontology
+slug: "knowledge-ontology"
+name: "knowledge-ontology"
 version: "2.0.0"
-displayName: 知识本体
-summary: 类型化知识图谱：约束校验+模式演进+图遍历规划，让Agent记忆结构化可验证。
-license: Proprietary
+displayName: "知识本体"
+summary: "类型化知识图谱：约束校验+模式演进+图遍历规划，让Agent记忆结构化可验证。"
+license: "Proprietary"
 description: |-
   面向AI Agent的类型化知识图谱系统，提供实体关系建模、约束校验、模式演进、图遍历规划能力。适用于需要结构化查询的Agent记忆、多实体关系管理、依赖追踪与影响分析、多步计划建模场景，避免扁平文件记忆难查询、约束缺失数据脏、模式演进破坏旧数据等问题。适用关键词：知识图谱、本体、实体关系、ontology、graph、类型化、约束校验、图遍历。
 tags:
-- 智能代理
-- 知识管理
-- 数据建模
+  - 智能代理
+  - 知识管理
+  - 数据建模
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 知识本体（Knowledge Ontology）
 
 **一切皆实体，一切变更皆受约束。** 将 Agent 记忆从扁平文件升级为类型化可验证的知识图谱，支持图遍历查询、模式演进、多步规划建模，让知识结构化、可查询、可信任。

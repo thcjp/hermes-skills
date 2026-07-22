@@ -1,18 +1,18 @@
 ---
-slug: wenxiang-2d5-banner
-name: wenxiang-2d5-banner
+slug: "wenxiang-2d5-banner"
+name: "wenxiang-2d5-banner"
 version: "1.0.0"
-displayName: Wenxiang 2d5 Banner
-summary: Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image). Use for image
-  create/modify reque...
-license: MIT-0
+displayName: "Wenxiang 2d5 Banner"
+summary: "Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image). Use for image"
+license: "MIT-0"
 description: |-
   Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image)。Use\
   \ for image create/modify reque。Use when 用户需要Wenxiang 2d5 Banner相关功能时使用。不适用于超出本技能能力范围的复杂需求。
-tags: '[''Other'']'
+tags: "'[''Other'']'"
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
 # Wenxiang 2d5 Banner
 

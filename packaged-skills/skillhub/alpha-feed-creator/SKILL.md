@@ -1,11 +1,11 @@
 ---
-slug: alpha-feed-creator
-name: alpha-feed-creator
+slug: "alpha-feed-creator"
+name: "alpha-feed-creator"
 version: "1.0.0"
-displayName: 内容采集器专业版
-summary: 多源批量采集并智能排名 AI 内容,支持群组推送与企业级内容运营工作流。
-license: Proprietary
-edition: pro
+displayName: "内容采集器专业版"
+summary: "多源批量采集并智能排名 AI 内容,支持群组推送与企业级内容运营工作流。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向内容团队与企业级运营的多源 AI 内容采集与智能排名平台。核心能力:
   - 跨平台多源采集(X、知乎、即刻、微博等),支持批量白名单与多关键词组
@@ -20,14 +20,15 @@ description: |-
 
   差异化: Pro 版在免费版基础上扩展多源采集、智能排名、群组推送、定时调度与企业级管理能力;与免费版配置完全兼容,可平滑升级
 tags:
-- 内容采集
-- 企业运营
-- Communication
-- 智能排名
-- 批量调度
+  - 内容采集
+  - 企业运营
+  - Communication
+  - 智能排名
+  - 批量调度
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 内容采集器专业版
 

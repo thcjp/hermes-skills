@@ -1,11 +1,11 @@
 ---
-slug: markdown-format-tool-free
-name: markdown-format-tool-free
+slug: "markdown-format-tool-free"
+name: "markdown-format-tool-free"
 version: "1.0.0"
-displayName: Markdown格式化工具免费版
-summary: 将纯文本或Markdown文件转换为结构清晰、易读的格式,支持标题、摘要、列表优化
-license: Proprietary
-edition: free
+displayName: "Markdown格式化工具免费版"
+summary: "将纯文本或Markdown文件转换为结构清晰、易读的格式,支持标题、摘要、列表优化"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人用户的 Markdown 格式化工具,将纯文本或已有 Markdown 转换为结构清晰、易读的格式。核心能力:
   - 自动识别纯文本与 Markdown 内容类型
@@ -25,13 +25,14 @@ description: |-
 
   触发关...
 tags:
-- 文档工具
-- Markdown
-- 格式化
-- 排版
+  - 文档工具
+  - Markdown
+  - 格式化
+  - 排版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Markdown 格式化工具免费版
 

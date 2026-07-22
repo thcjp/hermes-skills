@@ -1,19 +1,19 @@
 ---
-slug: game
-name: game
+slug: "game"
+name: "game"
 version: "2.0.0"
-displayName: Game
-summary: The instant game design engine for AI agents. Describe any game concept in
-  one sentence and get a...
-license: MIT-0
+displayName: "Game"
+summary: "The instant game design engine for AI agents. Describe any game concept in"
+license: "MIT-0"
 description: |-
   The instant game design engine for AI agents。Describe any game concept
   in one sentence and get a。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- Lifestyle
+  - Lifestyle
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Game
 

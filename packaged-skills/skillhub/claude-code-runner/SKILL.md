@@ -1,18 +1,18 @@
 ---
-slug: claude-code-runner
-name: claude-code-runner
+slug: "claude-code-runner"
+name: "claude-code-runner"
 version: "0.1.0"
-displayName: ai-assistant Code Ru
-summary: Execute programming tasks via ai-assistant Code using PTY-based invocation. Handles
-  non-TTY environment...
-license: MIT
+displayName: "ai-assistant Code Ru"
+summary: "Execute programming tasks via ai-assistant Code using PTY-based invocation. Handles"
+license: "MIT"
 description: |-
   Execute programming tasks via ai-assistant Code using PTY-based invocation。Handles non-TTY environment。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-- Development
+  - Development
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # ai-assistant Code Ru
 

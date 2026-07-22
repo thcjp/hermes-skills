@@ -1,11 +1,11 @@
 ---
-slug: dns-networking-paid
-name: dns-networking-paid
+slug: "dns-networking-paid"
+name: "dns-networking-paid"
 version: "1.0.0"
-displayName: DNS网络诊断专业版
-summary: 企业级网络诊断,支持批量巡检、防火墙审计、代理链分析与持续监控告警。
-license: Proprietary
-edition: pro
+displayName: "DNS网络诊断专业版"
+summary: "企业级网络诊断,支持批量巡检、防火墙审计、代理链分析与持续监控告警。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向运维团队的企业级网络诊断工具,提供批量目标巡检、防火墙规则审计、代理链完整分析、持续监控与告警通知。核心能力:
   - 批量多目标DNS与端口巡检
@@ -24,15 +24,14 @@ description: |-
   差异化:
   - 专业版完全兼容免费版命令...
 tags:
-- 开发工具
-- 网络诊断
-- 运维监控
-- 企业级
+  - 开发工具
+  - 网络诊断
+  - 运维监控
+  - 企业级
 tools:
   - - read
-- exec
-# DNS网络诊断工具 - 专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # DNS网络诊断专业版
 

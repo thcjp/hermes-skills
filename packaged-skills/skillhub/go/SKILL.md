@@ -1,11 +1,10 @@
 ---
-slug: go
-name: go
+slug: "go"
+name: "go"
 version: "1.0.2"
-displayName: Go
-summary: Write reliable Go code avoiding goroutine leaks, interface traps, and common
-  concurrency bugs.
-license: MIT
+displayName: "Go"
+summary: "Write reliable Go code avoiding goroutine leaks, interface traps, and common"
+license: "MIT"
 description: |-
   Write reliable Go code avoiding goroutine leaks, interface traps, and
   common concurrency bugs。核心能力:
@@ -26,10 +25,11 @@ description: |-
 
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触...
 tags:
-- Development
+  - Development
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Go
 

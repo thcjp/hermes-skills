@@ -1,11 +1,11 @@
 ---
-slug: openai-ai-paid
-name: openai-ai-paid
+slug: "openai-ai-paid"
+name: "openai-ai-paid"
 version: "1.0.0"
-displayName: OpenAI助手专业版
-summary: 企业级OpenAI API管理工具,支持批量任务、微调、评估与向量存储,适配团队协作与自动化流水线。
-license: Proprietary
-edition: pro
+displayName: "OpenAI助手专业版"
+summary: "企业级OpenAI API管理工具,支持批量任务、微调、评估与向量存储,适配团队协作与自动化流水线。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队与企业用户的 llm-provider API 全功能管理工具。核心能力:
   - 涵盖免费版全部能力(对话补全、图像生成、助手管理)
@@ -21,16 +21,17 @@ description: |-
   - 企业级内容生产与自动化流水线
   - ...
 tags:
-- 创意设计
-- AI助手
-- API集成
-- 企业级
-- 模型微调
-- 批量处理
-- 向量检索
+  - 创意设计
+  - AI助手
+  - API集成
+  - 企业级
+  - 模型微调
+  - 批量处理
+  - 向量检索
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # OpenAI助手专业版
 

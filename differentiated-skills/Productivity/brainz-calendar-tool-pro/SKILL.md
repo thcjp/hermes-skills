@@ -1,11 +1,11 @@
 ---
-slug: brainz-calendar-tool-pro
-name: brainz-calendar-tool-pro
+slug: "brainz-calendar-tool-pro"
+name: "brainz-calendar-tool-pro"
 version: "1.0.0"
-displayName: Google 日历专业版
-summary: 企业级日历管理,支持多日历同步、智能调度、会议冲突检测与团队空闲时间分析
-license: Proprietary
-edition: pro
+displayName: "Google 日历专业版"
+summary: "企业级日历管理,支持多日历同步、智能调度、会议冲突检测与团队空闲时间分析"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 日程管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,14 +15,14 @@ description: |-
 
   适用关键词: google calendar, 日历, 日程, 事件, gcalcli, 会议安排
 tags:
-- 日历
-- Google Calendar
-- 时间管理
+  - 日历
+  - Google Calendar
+  - 时间管理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Google 日历专业版
 
 ## 概述

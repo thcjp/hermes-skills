@@ -1,11 +1,11 @@
 ---
-slug: prod-helper-v4-tool-pro
-name: prod-helper-v4-tool-pro
+slug: "prod-helper-v4-tool-pro"
+name: "prod-helper-v4-tool-pro"
 version: "1.0.0"
-displayName: 效率助手 v4 专业版
-summary: 企业级智能效率系统,支持 AI 驱动的工作流优化、团队效率分析与预测性建议
-license: Proprietary
-edition: pro
+displayName: "效率助手 v4 专业版"
+summary: "企业级智能效率系统,支持 AI 驱动的工作流优化、团队效率分析与预测性建议"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 效率管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: 效率, 助手, v4, 智能分类, 数据分析, 自动化, 进度追踪
 tags:
-- 效率助手
-- 智能分类
-- 数据分析
-- 自动化
+  - 效率助手
+  - 智能分类
+  - 数据分析
+  - 自动化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 效率助手 v4 专业版
 
 ## 概述

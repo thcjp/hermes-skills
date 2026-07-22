@@ -1,19 +1,19 @@
 ---
-slug: tool-call-retry
-name: tool-call-retry
+slug: "tool-call-retry"
+name: "tool-call-retry"
 version: "1.0.1"
-displayName: tool-call-retry
-summary: Auto retry & fix LLM tool calls with exponential backoff, format validation,
-  error correction, bo...
-license: MIT-0
+displayName: "tool-call-retry"
+summary: "Auto retry & fix LLM tool calls with exponential backoff, format validation,"
+license: "MIT-0"
 description: |-
   Auto retry & fix LLM tool calls with exponential backoff, format validation,
   error correction, bo。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # tool-call-retry
 

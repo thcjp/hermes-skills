@@ -1,10 +1,10 @@
 ---
-slug: write-free
-name: write-free
+slug: "write-free"
+name: "write-free"
 version: "1.0.0"
-displayName: 版本化写作工具（免费版）
-summary: 免费版版本化写作工具，支持基础工作流与edit.sh版本控制
-license: MIT
+displayName: "版本化写作工具（免费版）"
+summary: "免费版版本化写作工具，支持基础工作流与edit.sh版本控制"
+license: "MIT"
 description: |-
   带版本控制的写作工具（免费版）。
   遵循Request→Plan→Draft→Audit→Refine→Deliver基础工作流，通过edit.sh脚本管理版本。
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 版本化写作工具（免费版）
 
 带基础版本控制的写作工具，通过edit.sh脚本管理版本，遵循Request→Plan→Draft→Audit→Refine→Deliver流程。

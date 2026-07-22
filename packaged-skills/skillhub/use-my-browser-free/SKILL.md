@@ -1,10 +1,10 @@
 ---
-slug: use-my-browser-free
-name: use-my-browser-free
+slug: "use-my-browser-free"
+name: "use-my-browser-free"
 version: "1.0.0"
-displayName: 浏览器控制工具(免费版)
-summary: 控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取(免费版)
-license: MIT
+displayName: "浏览器控制工具(免费版)"
+summary: "控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取(免费版)"
+license: "MIT"
 description: |-
   控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取。通过浏览器扩展
   桥接，直接操作用户已登录的浏览器会话，无需重新认证。支持页面文本提取、
@@ -12,8 +12,10 @@ description: |-
   和自动化工作流场景。不适用于无头浏览器或远程浏览器场景。
 tools:
   - read
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 浏览器控制工具(免费版)
 
 控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取。

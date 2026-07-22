@@ -1,10 +1,10 @@
 ---
-slug: code-analysis-skills
-name: code-analysis-skills
+slug: "code-analysis-skills"
+name: "code-analysis-skills"
 version: "1.0.0"
-displayName: Code Analysis Skills
-summary: Produces a DESCRIPTIVE Git-history reflection report.
-license: MIT
+displayName: "Code Analysis Skills"
+summary: "Produces a DESCRIPTIVE Git-history reflection report."
+license: "MIT"
 description: |-
   Produces a DESCRIPTIVE Git-history reflection report。核心能力:
 
@@ -21,12 +21,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Development
+  - Development
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Code Analysis Skills
 

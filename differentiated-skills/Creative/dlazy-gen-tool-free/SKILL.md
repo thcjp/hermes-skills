@@ -1,11 +1,11 @@
 ---
-slug: dlazy-gen-tool-free
-name: dlazy-gen-tool-free
+slug: "dlazy-gen-tool-free"
+name: "dlazy-gen-tool-free"
 version: "1.0.0"
-displayName: 综合生成工具-免费版
-summary: 轻量级AI图片生成工具，支持文生图与基础图片编辑，适合个人创意原型制作。
-license: Proprietary
-edition: free
+displayName: "综合生成工具-免费版"
+summary: "轻量级AI图片生成工具，支持文生图与基础图片编辑，适合个人创意原型制作。"
+license: "Proprietary"
+edition: "free"
 description: |-
   综合生成工具免费版，面向个人创作者的AI图片生成方案。核心能力：
   - 文本生成图片（Text-to-Image）自动模型选择
@@ -20,12 +20,13 @@ description: |-
 
   差异化：免费版聚焦图片生成与编辑，支持6个核心模型，适合个人轻度使用
 tags:
-- Creative
-- ImageGeneration
-- Design
+  - Creative
+  - ImageGeneration
+  - Design
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 综合生成工具（免费版）
 

@@ -1,10 +1,10 @@
 ---
-slug: qq-zone-photo-free
-name: qq-zone-photo-free
+slug: "qq-zone-photo-free"
+name: "qq-zone-photo-free"
 version: "1.0.3"
-displayName: 社交空间相册基础版
-summary: 基础社交空间相册管理，扫码登录、列出和浏览相册
-license: MIT
+displayName: "社交空间相册基础版"
+summary: "基础社交空间相册管理，扫码登录、列出和浏览相册"
+license: "MIT"
 description: |-
   社交空间相册自动化管理工具的免费版。支持扫码登录、列出相册和浏览照片等基础功能。
   适用于相册查看和照片URL获取场景。升级至完整版可解锁照片上传、单张下载、
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 社交空间相册（免费版）
 
 社交空间相册自动化管理工具的免费版。支持扫码登录、列出相册和浏览照片等基础功能。通过 `qzone_photos.py` 脚本调用社交空间非官方API实现自动化操作。

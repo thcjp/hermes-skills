@@ -1,10 +1,10 @@
 ---
-slug: data-format-converter
-name: data-format-converter
+slug: "data-format-converter"
+name: "data-format-converter"
 version: "1.0.0"
-displayName: 数据格式转换器
-summary: 在CSV、JSON、XML、YAML、TOML格式间高效互转，支持批量处理与嵌套结构处理
-license: MIT
+displayName: "数据格式转换器"
+summary: "在CSV、JSON、XML、YAML、TOML格式间高效互转，支持批量处理与嵌套结构处理"
+license: "MIT"
 description: |-
   数据格式转换器——在CSV、JSON、XML、YAML、TOML等主流数据格式间高效转换。
   核心能力包括：
@@ -22,8 +22,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 数据格式转换器
 
 ## 概述

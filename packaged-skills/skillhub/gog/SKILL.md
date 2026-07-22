@@ -1,10 +1,10 @@
 ---
-slug: gog
-name: gog
+slug: "gog"
+name: "gog"
 version: "1.0.0"
-displayName: Gog
-summary: Google Workspace命令行工具,覆盖Gmail/日历/云盘/联系人/表格/文档六大服务。
-license: MIT
+displayName: "Gog"
+summary: "Google Workspace命令行工具,覆盖Gmail/日历/云盘/联系人/表格/文档六大服务。"
+license: "MIT"
 description: |-
   Google Workspace 命令行工具技能。通过 `gog` CLI 统一操作 Gmail、Calendar、Drive、
   Contacts、Sheets、Docs 六大服务,支持 OAuth 凭证管理、多账户切换、JSON 结构化输出与
@@ -16,8 +16,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # gog
 
 `gog` 是 Google Workspace 的命令行工具,统一封装 Gmail、Calendar、Drive、Contacts、Sheets、Docs 六大服务的 API 调用。所有操作通过 OAuth 凭证鉴权,支持多账户切换、JSON 结构化输出与 `--no-input` 脚本模式。

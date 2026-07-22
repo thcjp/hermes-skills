@@ -1,10 +1,10 @@
 ---
-slug: mongodb-atlas-admin
-name: mongodb-atlas-admin
+slug: "mongodb-atlas-admin"
+name: "mongodb-atlas-admin"
 version: "2.0.0"
-displayName: 文档数据库管理
-summary: 通过API浏览和调用文档数据库云管理平台，支持目录浏览、端点详情和实时调用
-license: MIT-0
+displayName: "文档数据库管理"
+summary: "通过API浏览和调用文档数据库云管理平台，支持目录浏览、端点详情和实时调用"
+license: "MIT-0"
 description: |-
   通过API浏览和调用文档数据库云管理平台。支持API目录浏览、端点详情获取、
   Schema定义查询和实时API调用。覆盖50+分类的完整API端点，支持 dry-run
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 数据存储
 ---
-
 # 文档数据库云管理平台
 
 通过API浏览和调用文档数据库云管理平台的管理接口。

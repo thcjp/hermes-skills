@@ -1,10 +1,10 @@
 ---
-slug: azure-cloud-architect
-name: azure-cloud-architect
+slug: "azure-cloud-architect"
+name: "azure-cloud-architect"
 version: "1.0.0"
-displayName: Azure云架构师
-summary: 基于Azure CLI的多订阅导航、RBAC角色审计、成本分析、合规检查、跨订阅批量操作。
-license: MIT
+displayName: "Azure云架构师"
+summary: "基于Azure CLI的多订阅导航、RBAC角色审计、成本分析、合规检查、跨订阅批量操作。"
+license: "MIT"
 description: |-
   基于 Azure CLI 的智能云基础设施管理助手。提供多订阅导航、RBAC 角色审计与最小权限、
   成本分析工作流、合规检查清单、跨订阅批量操作五大核心能力。适用于 Azure 资源盘点、健康监控、
@@ -20,8 +20,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Azure 云架构师
 
 使用本地 Azure CLI 回答关于 Azure 资源的问题。默认只读查询，仅在用户明确要求变更并确认后执行写/破坏性操作。

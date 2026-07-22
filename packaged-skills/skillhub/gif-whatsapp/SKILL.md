@@ -1,19 +1,19 @@
 ---
-slug: gif-whatsapp
-name: gif-whatsapp
+slug: "gif-whatsapp"
+name: "gif-whatsapp"
 version: "1.3.0"
-displayName: Gif Whatsapp
-summary: Search and send GIFs on WhatsApp. Handles the Tenor→MP4 conversion required
-  for WhatsApp.
-license: MIT-0
+displayName: "Gif Whatsapp"
+summary: "Search and send GIFs on WhatsApp. Handles the Tenor→MP4 conversion required"
+license: "MIT-0"
 description: |-
   Search and send GIFs on WhatsApp。Handles the Tenor→MP4 conversion required
   for WhatsApp。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Research
+  - Research
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Gif Whatsapp
 

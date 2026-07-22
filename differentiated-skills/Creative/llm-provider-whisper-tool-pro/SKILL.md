@@ -1,11 +1,11 @@
 ---
-slug: llm-provider-whisper-tool-pro
-name: llm-provider-whisper-tool-pro
+slug: "llm-provider-whisper-tool-pro"
+name: "llm-provider-whisper-tool-pro"
 version: "1.0.0"
-displayName: Whisper语音转文字专业版
-summary: 企业级Whisper语音转文字工具,支持批量处理、GPU加速、说话人分离与API服务化,适配生产环境。
-license: Proprietary
-edition: pro
+displayName: "Whisper语音转文字专业版"
+summary: "企业级Whisper语音转文字工具,支持批量处理、GPU加速、说话人分离与API服务化,适配生产环境。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队与企业用户的 Whisper 语音转文字工具(专业版)。核心能力:
   - 涵盖免费版全部能力(本地转录、翻译、多格式输出)
@@ -21,16 +21,17 @@ description: |-
   - 企业会议纪要自动化流水线
   ...
 tags:
-- 创意设计
-- 语音转文字
-- 企业级
-- 批量处理
-- GPU加速
-- 说话人分离
-- Whisper
+  - 创意设计
+  - 语音转文字
+  - 企业级
+  - 批量处理
+  - GPU加速
+  - 说话人分离
+  - Whisper
 tools:
-  - - read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Whisper 语音转文字工具 - 专业版
 
@@ -213,9 +214,9 @@ async def transcribe(
             "duration": result["segments"][-1]["end"] if result["segments"] else 0
         })
     finally:
-        os.unlink(tmp_path)
+        os.remove(tmp_path)
 
-# 启动: uvicorn server:app --host 0.0.0.0 --port 8000
+# 启动: uvicorn server:app --host 127.0.0.1 --port 8000
 ```
 
 ## 不适用场景

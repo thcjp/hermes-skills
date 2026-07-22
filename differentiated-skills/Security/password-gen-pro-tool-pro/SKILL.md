@@ -1,11 +1,11 @@
 ---
-slug: password-gen-pro-tool-pro
-name: password-gen-pro-tool-pro
+slug: "password-gen-pro-tool-pro"
+name: "password-gen-pro-tool-pro"
 version: "1.0.0"
-displayName: 密码生成器Pro专业版
-summary: 企业级密码管理平台,支持批量生成、泄露检查、企业策略模板、加密存储与CSV导出,适合安全团队与企业用户。
-license: Proprietary
-edition: pro
+displayName: "密码生成器Pro专业版"
+summary: "企业级密码管理平台,支持批量生成、泄露检查、企业策略模板、加密存储与CSV导出,适合安全团队与企业用户。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   密码生成器Pro专业版,为企业安全团队提供全方位密码生成与管理能力。
   核心能力:批量密码生成、HaveIBeenPwned泄露检查、企业密码策略模板、加密存储、多格式导出。
@@ -13,15 +13,14 @@ description: |-
   差异化:专业版兼容免费版生成方法,新增企业级批量管理与泄露检查能力,满足规模化密码安全需求。
   适用关键词: 批量密码, 泄露检查, 密码策略, 企业密码, batch password, breach check, password policy
 tags:
-- 安全
-- 密码
-- 企业版
-- 泄露检查
+  - 安全
+  - 密码
+  - 企业版
+  - 泄露检查
 tools:
   - - read
-- exec
-# 密码生成器Pro专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 专业版为企业安全团队提供完整的密码生成与管理平台,在免费版密码生成与强度检测基础上,新增批量密码生成(CSV导出)、HaveIBeenPwned泄露检查、企业密码策略模板、加密密码存储与多格式导出。专业版完全兼容免费版生成方法,已有密码生成脚本可无缝升级,适合企业级密码安全治理。
 

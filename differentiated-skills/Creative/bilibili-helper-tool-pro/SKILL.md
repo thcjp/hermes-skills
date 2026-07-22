@@ -1,11 +1,11 @@
 ---
-slug: bilibili-helper-tool-pro
-name: bilibili-helper-tool-pro
+slug: "bilibili-helper-tool-pro"
+name: "bilibili-helper-tool-pro"
 version: "1.0.0"
-displayName: B站创作助手专业版
-summary: 专业UP主创作引擎，支持口播脚本、运营策略、SEO优化、批量生成与数据分析。
-license: Proprietary
-edition: pro
+displayName: "B站创作助手专业版"
+summary: "专业UP主创作引擎，支持口播脚本、运营策略、SEO优化、批量生成与数据分析。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   B站创作助手专业版 —— 面向专业UP主与运营团队的高级B站内容创作引擎。核心能力:
   - 完整口播脚本生成：开场白、正文、结尾、CTA全流程脚本
@@ -20,14 +20,15 @@ description: |-
   适用场景:
   - 专业UP主系统化...
 tags:
-- B站
-- 内容创作
-- 企业工具
-- 运营策略
-- SEO优化
+  - B站
+  - 内容创作
+  - 企业工具
+  - 运营策略
+  - SEO优化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # B站创作助手专业版
 

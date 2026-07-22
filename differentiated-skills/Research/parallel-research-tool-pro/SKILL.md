@@ -1,24 +1,23 @@
 ---
-slug: parallel-research-tool-pro
-name: parallel-research-tool-pro
+slug: "parallel-research-tool-pro"
+name: "parallel-research-tool-pro"
 version: "1.0.0"
-displayName: 并行研究助手专业版
-summary: 企业级研究平台，支持深度异步研究、多主题并行、API集成与团队协作
-license: Proprietary
-edition: pro
+displayName: "并行研究助手专业版"
+summary: "企业级研究平台，支持深度异步研究、多主题并行、API集成与团队协作"
+license: "Proprietary"
+edition: "pro"
 description: |-
   并行研究助手专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 研究
-- 企业级
-- 深度研究
-- 并行处理
-- 团队协作
+  - 研究
+  - 企业级
+  - 深度研究
+  - 并行处理
+  - 团队协作
 tools:
   - - read
-- exec
-# 并行研究助手（专业版）
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 并行研究助手专业版在免费版交互式研究的基础上，新增深度异步研究模式、多主题并行处理、6 级处理器选择、定时研究任务、多格式导出、版本管理、多租户团队协作和 REST API 集成等企业级能力，满足研究机构和企业对深度、批量、自动化研究的全面需求。
 

@@ -1,21 +1,20 @@
 ---
-slug: jira-api
-name: jira-api
+slug: "jira-api"
+name: "jira-api"
 version: "1.0.8"
-displayName: Jira
-summary: Jira API integration with managed OAuth. Search issues with JQL, create and
-  update issues, manage...
-license: MIT-0
+displayName: "Jira"
+summary: "Jira API integration with managed OAuth. Search issues with JQL, create and"
+license: "MIT-0"
 description: |-
   Jira API integration with managed OAuth。Search issues with JQL, create
   and update issues, manage。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
 tags:
-- Integrations
-- Productivity
+  - Integrations
+  - Productivity
 tools:
   - - read
-- exec
-# Jira
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Jira
 

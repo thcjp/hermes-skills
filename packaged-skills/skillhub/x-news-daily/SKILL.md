@@ -1,10 +1,10 @@
 ---
-slug: x-news-daily
-name: x-news-daily
+slug: "x-news-daily"
+name: "x-news-daily"
 version: "1.0.0"
-displayName: X News Daily
-summary: 抓取 X.com 关键词热门新闻 Top 10，生成全屏中文海报，支持多平台分发。
-license: MIT
+displayName: "X News Daily"
+summary: "抓取 X.com 关键词热门新闻 Top 10，生成全屏中文海报，支持多平台分发。"
+license: "MIT"
 description: |-
   抓取 X.com 上指定关键词的热门新闻 Top 10，自动将英文标题翻译为中文，为每条新闻生成 1-2 句中文摘要，
   最终渲染为全屏 HTML 海报图片。支持 Headless Chrome 打印 PDF、大视口截图、kiosk 模式配合 screencapture 三种截图方案。
@@ -17,8 +17,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # X News Daily
 
 抓取 X.com 上指定关键词的热门新闻 Top 10，翻译为中文，生成全屏精美 HTML 海报并发送给用户。

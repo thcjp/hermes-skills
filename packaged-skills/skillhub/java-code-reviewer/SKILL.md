@@ -1,18 +1,18 @@
 ---
-slug: java-code-reviewer
-name: java-code-reviewer
+slug: "java-code-reviewer"
+name: "java-code-reviewer"
 version: "1.0.0"
-displayName: Java Code Reviewer
-summary: Java 代码审查报告生成器。用于审查 Java 代码变更，生成结构化审查报告。 触发场景： (1) 审查 git diff 或代码变更 (2)
-  审查 Java 源文件 (3) 代码质量检查 (...
-license: MIT-0
+displayName: "Java Code Reviewer"
+summary: "Java 代码审查报告生成器。用于审查 Java 代码变更，生成结构化审查报告。 触发场景： (1) 审查 git diff 或代码变更 (2)"
+license: "MIT-0"
 description: |-
   Java 代码审查报告生成器。用于审查 Java 代码变更，生成结构化审查报告。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-- Development
+  - Development
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Java Code Reviewer
 

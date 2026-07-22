@@ -1,25 +1,25 @@
 ---
-slug: social-scheduler-pro-pro
-name: social-scheduler-pro-pro
+slug: "social-scheduler-pro-pro"
+name: "social-scheduler-pro-pro"
 version: "1.0.0"
-displayName: 社媒内容排期(专业版)
-summary: 社媒内容排期全能力版：跨平台编排、内容复用、数据分析、团队协作与智能排期。
-license: Proprietary
-edition: pro
+displayName: "社媒内容排期(专业版)"
+summary: "社媒内容排期全能力版：跨平台编排、内容复用、数据分析、团队协作与智能排期。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   社媒内容排期工具（专业版）面向团队与企业用户，在免费版基础模块之上新增跨平台内容编排引擎、发布效果分析、团队协作审批、智能排期推荐与 A/B 测试草稿生成。支持从内容规划到发布监控的完整工作流。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 沟通协作
-- 社媒运营
-- 内容创作
-- 数据分析
-- 团队协作
-- 内容排期
+  - 沟通协作
+  - 社媒运营
+  - 内容创作
+  - 数据分析
+  - 团队协作
+  - 内容排期
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 社媒内容排期工具（专业版）
 
 ## 概述

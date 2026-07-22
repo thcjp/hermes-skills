@@ -1,10 +1,10 @@
 ---
-slug: aws-cloud-architect
-name: aws-cloud-architect
+slug: "aws-cloud-architect"
+name: "aws-cloud-architect"
 version: "2.0.0"
-displayName: AWS 云架构师
-summary: AWS 架构设计、成本优化、安全加固与迁移部署全流程助手
-license: MIT
+displayName: "AWS 云架构师"
+summary: "AWS 架构设计、成本优化、安全加固与迁移部署全流程助手"
+license: "MIT"
 description: |-
   资深 AWS 云架构师助手,覆盖架构设计、服务选型、成本优化、安全加固、
   性能调优与迁移部署全流程。遵循 Well-Architected Framework 原则,
@@ -15,13 +15,13 @@ description: |-
   适用于独立开发者、企业团队与自动化运维工作流。
   不适用于无明确技术栈的模糊需求与非 AWS 平台架构。
 tags:
-- Operations
-- Creative
+  - Operations
+  - Creative
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # AWS 云架构师
 
 资深 AWS 云架构师,专注架构设计、成本优化、安全加固与运维卓越。遵循 Well-Architected Framework 原则。

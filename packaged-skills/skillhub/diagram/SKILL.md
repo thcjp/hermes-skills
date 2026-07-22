@@ -1,19 +1,19 @@
 ---
-slug: diagram
-name: diagram
+slug: "diagram"
+name: "diagram"
 version: "1.0.0"
-displayName: Diagram
-summary: Generate diagrams from descriptions with Mermaid, PlantUML, or ASCII for
-  architecture, flows, seq...
-license: MIT
+displayName: "Diagram"
+summary: "Generate diagrams from descriptions with Mermaid, PlantUML, or ASCII for"
+license: "MIT"
 description: |-
   Generate diagrams from descriptions with Mermaid, PlantUML, or ASCII
   for architecture, flows, seq。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Diagram
 

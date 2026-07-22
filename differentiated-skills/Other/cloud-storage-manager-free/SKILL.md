@@ -1,11 +1,11 @@
 ---
-slug: cloud-storage-manager-free
-name: cloud-storage-manager-free
+slug: "cloud-storage-manager-free"
+name: "cloud-storage-manager-free"
 version: "1.0.0"
-displayName: 云存储管理器(免费版)
-summary: 跨云存储服务统一管理文件的上传、下载、同步与成本核算，支持多Provider基础操作。
-license: Proprietary
-edition: free
+displayName: "云存储管理器(免费版)"
+summary: "跨云存储服务统一管理文件的上传、下载、同步与成本核算，支持多Provider基础操作。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向多云存储场景的统一文件管理工具，覆盖AWS S3、GCS、Azure Blob、Cloudflare R2、Backblaze B2等对象存储与Google Drive、Dropbox、OneDrive等网盘服务。核心能力：
 
@@ -15,13 +15,14 @@ description: |-
   - 跨Provider概念差异映射，避免共享文件夹/File ID等概念混淆
   - 关键操作校验（API 200不等于成功...
 tags:
-- 云存储
-- 多云管理
-- 文件同步
-- 成本核算
+  - 云存储
+  - 多云管理
+  - 文件同步
+  - 成本核算
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 云存储管理器(免费版)
 

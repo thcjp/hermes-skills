@@ -1,11 +1,10 @@
 ---
-slug: workflow
-name: workflow
+slug: "workflow"
+name: "workflow"
 version: "1.0.0"
-displayName: Workflow
-summary: Build automated pipelines with reusable components, data flow between nodes,
-  and state management.
-license: MIT
+displayName: "Workflow"
+summary: "Build automated pipelines with reusable components, data flow between nodes,"
+license: "MIT"
 description: |-
   Build automated pipelines with reusable components, data flow between
   nodes, and state management。核心能力:
@@ -26,10 +25,11 @@ description: |-
 
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强...
 tags:
-- Automation
+  - Automation
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Workflow
 

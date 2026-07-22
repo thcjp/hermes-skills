@@ -1,11 +1,11 @@
 ---
-slug: content-filter-tool-free
-name: content-filter-tool-free
+slug: "content-filter-tool-free"
+name: "content-filter-tool-free"
 version: "1.0.0"
-displayName: 内容过滤工具
-summary: 面向个人的信息流内容过滤工具，关键词与作者过滤。
-license: Proprietary
-edition: free
+displayName: "内容过滤工具"
+summary: "面向个人的信息流内容过滤工具，关键词与作者过滤。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人用户的信息流内容过滤工具。
 
@@ -24,13 +24,14 @@ description: |-
 
   适用关键词: 内容过滤, 关键词过滤, 作者屏蔽, 白名单, 信息流降噪, content filter, spam filter
 tags:
-- 内容过滤
-- 信息流
-- 个人效率
-- 其他工具
+  - 内容过滤
+  - 信息流
+  - 个人效率
+  - 其他工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 内容过滤工具（免费版）
 

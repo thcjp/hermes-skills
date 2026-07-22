@@ -1,11 +1,11 @@
 ---
-slug: humanizer-tool-free
-name: humanizer-tool-free
+slug: "humanizer-tool-free"
+name: "humanizer-tool-free"
 version: "1.0.0"
-displayName: 文本人性化工具
-summary: 面向个人用户的 AI 文本痕迹去除工具，让写作更自然。
-license: Proprietary
-edition: free
+displayName: "文本人性化工具"
+summary: "面向个人用户的 AI 文本痕迹去除工具，让写作更自然。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人用户的 AI 生成文本痕迹识别与去除工具。
 
@@ -24,15 +24,15 @@ description: |-
 
   适用关键词: 去 AI 味, 人性化, 润色, 去痕迹, humanizer, natural writing, ai detection
 tags:
-- 写作
-- 文本处理
-- 个人效率
-- 其他工具
+  - 写作
+  - 文本处理
+  - 个人效率
+  - 其他工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 文本人性化工具（免费版）
 
 ## 概述

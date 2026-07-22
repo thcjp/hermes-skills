@@ -1,11 +1,11 @@
 ---
-slug: yaml-toolkit-free
-name: yaml-toolkit-free
+slug: "yaml-toolkit-free"
+name: "yaml-toolkit-free"
 version: "1.0.0"
-displayName: YAML处理工具免费版
-summary: 解析、生成与校验YAML，正确处理缩进与多文档，适合个人开发者配置管理。
-license: Proprietary
-edition: free
+displayName: "YAML处理工具免费版"
+summary: "解析、生成与校验YAML，正确处理缩进与多文档，适合个人开发者配置管理。"
+license: "Proprietary"
+edition: "free"
 description: |-
   YAML处理工具免费版，面向个人开发者的轻量级YAML解析与生成工具。核心能力:
   - YAML解析与多文档处理
@@ -20,15 +20,15 @@ description: |-
 
   差异化: 免费版聚焦核心解析与生成能力，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手
 tags:
-- YAML
-- 配置管理
-- 数据序列化
-- 免费版
+  - YAML
+  - 配置管理
+  - 数据序列化
+  - 免费版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # YAML处理工具（免费版）
 
 ## 概述

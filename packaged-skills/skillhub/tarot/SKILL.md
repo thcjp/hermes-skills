@@ -1,10 +1,10 @@
 ---
-slug: tarot
-name: tarot
+slug: "tarot"
+name: "tarot"
 version: "1.0.0"
-displayName: Reflective Tarot
-summary: 反思式塔罗抽取，用于情感支持和自我觉察，非临床非预测性。
-license: MIT
+displayName: "Reflective Tarot"
+summary: "反思式塔罗抽取，用于情感支持和自我觉察，非临床非预测性。"
+license: "MIT"
 description: |-
   tarot 是一个反思式塔罗抽取技能，用于情感支持和意义构建。核心理念是"塔罗是镜子而非预言"，
   采用 `presence-first`（临在优先）、`non-clinical`（非临床化）、`agency-first`（主体性优先）
@@ -15,8 +15,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # Reflective Tarot
 
 塔罗在这里是镜子，不是预言。它用于意义构建、grounding 和温和的反思。

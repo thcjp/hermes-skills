@@ -1,11 +1,11 @@
 ---
-slug: model-switching
-name: model-switching
+slug: "model-switching"
+name: "model-switching"
 version: "1.0.0"
-displayName: 模型切换工具(专业版)
-summary: 团队级Claude模型切换套件,含成本仪表盘、批量分发、自定义规则与监控告警。
-license: Proprietary
-edition: pro
+displayName: "模型切换工具(专业版)"
+summary: "团队级Claude模型切换套件,含成本仪表盘、批量分发、自定义规则与监控告警。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   模型切换工具(专业版)面向团队与企业,在三层Claude模型切换基础上,扩展成本分析仪表盘、批量任务分发、自定义切换规则、实时监控告警与团队策略治理能力。核心能力:
   - 三层切换 + 自定义规则引擎
@@ -20,16 +20,17 @@ description: |-
   - 大规模子Agent并发任务分发
   - 团队...
 tags:
-- Development
-- AI
-- 模型切换
-- 企业级
-- 成本优化
-- Claude
-- 监控
+  - Development
+  - AI
+  - 模型切换
+  - 企业级
+  - 成本优化
+  - Claude
+  - 监控
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 模型切换工具(专业版)
 

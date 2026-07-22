@@ -1,10 +1,10 @@
 ---
-slug: x-timeline-digest
-name: x-timeline-digest
+slug: "x-timeline-digest"
+name: "x-timeline-digest"
 version: "1.0.0"
-displayName: X 时间线摘要
-summary: 使用 bird 读取 X/Twitter For You 与 Following 时间线,增量去重后生成中文分类简报与结构化 JSON
-license: MIT
+displayName: "X 时间线摘要"
+summary: "使用 bird 读取 X/Twitter For You 与 Following 时间线,增量去重后生成中文分类简报与结构化 JSON"
+license: "MIT"
 description: |-
   基于 bird 命令行工具读取 X(Twitter)的 For You 与 Following 两条时间线,
   对推文进行增量过滤、ID 硬去重、近重复文本合并与排序修剪,
@@ -20,8 +20,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # X Timeline Digest
 
 ## 概述

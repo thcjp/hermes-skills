@@ -1,11 +1,11 @@
 ---
-slug: llm-provider-whisper-v1-tool-free
-name: llm-provider-whisper-v1-tool-free
+slug: "llm-provider-whisper-v1-tool-free"
+name: "llm-provider-whisper-v1-tool-free"
 version: "1.0.0"
-displayName: Whisper v1转录免费版
-summary: Whisper v1稳定版本地转录工具,支持基础语音转文字与字幕生成,适合个人快速上手。
-license: Proprietary
-edition: free
+displayName: "Whisper v1转录免费版"
+summary: "Whisper v1稳定版本地转录工具,支持基础语音转文字与字幕生成,适合个人快速上手。"
+license: "Proprietary"
+edition: "free"
 description: |-
   基于 Whisper v1 稳定版本的本地语音转文字工具(免费版)。核心能力:
   - v1 稳定版 CLI 转录能力,接口简洁可靠
@@ -24,14 +24,15 @@ description: |-
   - 基于 v1 稳定版,API 接口固化,适合长期维护
   - 完全本地运...
 tags:
-- 创意设计
-- 语音转文字
-- 本地工具
-- 字幕生成
-- Whisper v1
+  - 创意设计
+  - 语音转文字
+  - 本地工具
+  - 字幕生成
+  - Whisper v1
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Whisper v1 语音转文字工具 - 免费版
 

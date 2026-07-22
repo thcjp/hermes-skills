@@ -1,11 +1,11 @@
 ---
-slug: pdf-processor-cn-tool-free
-name: pdf-processor-cn-tool-free
+slug: "pdf-processor-cn-tool-free"
+name: "pdf-processor-cn-tool-free"
 version: "1.0.0"
-displayName: 中文PDF处理器（免费版）
-summary: 针对中文PDF优化的处理工具，支持中文OCR、版面分析、表格提取与智能分块。
-license: Proprietary
-edition: free
+displayName: "中文PDF处理器（免费版）"
+summary: "针对中文PDF优化的处理工具，支持中文OCR、版面分析、表格提取与智能分块。"
+license: "Proprietary"
+edition: "free"
 description: |-
   中文PDF处理器 - （免费版）
 
@@ -17,15 +17,15 @@ description: |-
 
   适用关键词: 中文PDF, PDF解析, 中文OCR, 表格提取, 版面分析, 智能分块, 双栏识别
 tags:
-- PDF处理
-- 中文OCR
-- 表格提取
-- 版面分析
+  - PDF处理
+  - 中文OCR
+  - 表格提取
+  - 版面分析
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 中文PDF处理器（免费版）
 
 ## 概述

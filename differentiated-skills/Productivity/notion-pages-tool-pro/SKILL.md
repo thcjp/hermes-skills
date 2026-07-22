@@ -1,11 +1,11 @@
 ---
-slug: notion-pages-tool-pro
-name: notion-pages-tool-pro
+slug: "notion-pages-tool-pro"
+name: "notion-pages-tool-pro"
 version: "1.0.0"
-displayName: Notion 页面管理专业版
-summary: 企业级 Notion 工作区管理,支持 OAuth 认证、批量操作、安全审计与团队协作
-license: Proprietary
-edition: pro
+displayName: "Notion 页面管理专业版"
+summary: "企业级 Notion 工作区管理,支持 OAuth 认证、批量操作、安全审计与团队协作"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 知识管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: notion, 页面, 数据库, 搜索, oauth, 工作区, 内容管理
 tags:
-- Notion
-- 页面管理
-- OAuth
-- 工作区
+  - Notion
+  - 页面管理
+  - OAuth
+  - 工作区
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Notion 页面管理专业版
 
 ## 概述

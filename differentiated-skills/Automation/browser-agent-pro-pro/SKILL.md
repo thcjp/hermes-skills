@@ -1,23 +1,23 @@
 ---
-slug: browser-agent-pro-pro
-name: browser-agent-pro-pro
+slug: "browser-agent-pro-pro"
+name: "browser-agent-pro-pro"
 version: "1.0.0"
-displayName: 浏览器代理(专业版)
-summary: 全功能浏览器自动化，含反检测、多标签页、代理、分页抓取、登录态保持与UI回归测试，支撑企业级自动化场景。
-license: Proprietary
-edition: pro
+displayName: "浏览器代理(专业版)"
+summary: "全功能浏览器自动化，含反检测、多标签页、代理、分页抓取、登录态保持与UI回归测试，支撑企业级自动化场景。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   浏览器代理专业版是面向企业级自动化的全功能浏览器控制系统。在免费版基础上解锁反检测策略、多标签页与会话管理、代理与网络配置、分页抓取与无限滚动、动态内容抓取、登录态持久化、UI回归测试框架、性能监控八大高级能力。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-- 浏览器自动化
-- 反检测
-- 数据抓取
-- UI测试
-- 企业自动化
+  - 浏览器自动化
+  - 反检测
+  - 数据抓取
+  - UI测试
+  - 企业自动化
 tools:
   - - read
-- exec
-# 浏览器代理（专业版）
+  - exec
+homepage: "https://skillhub.cn"
 ---
 > **企业级浏览器自动化系统。反检测+多标签+代理+动态抓取+登录态+UI测试，支撑复杂自动化场景。**
 

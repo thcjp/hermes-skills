@@ -1,11 +1,11 @@
 ---
-slug: juejin-tool-free
-name: juejin-tool-free
+slug: "juejin-tool-free"
+name: "juejin-tool-free"
 version: "1.0.0"
-displayName: 掘金工具
-summary: 面向个人用户的掘金社区只读与草稿发布工具，支持热门排行。
-license: Proprietary
-edition: free
+displayName: "掘金工具"
+summary: "面向个人用户的掘金社区只读与草稿发布工具，支持热门排行。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人用户的掘金技术社区操作工具。核心能力:
   - 热门文章排行榜与分类查询（只读）
@@ -20,13 +20,14 @@ description: |-
 
   差异化: 免费版聚焦个人只读与草稿场景，默认仅创建草稿，安全限制严格，零成本使用
 tags:
-- 掘金
-- 内容工具
-- 个人效率
-- 其他工具
+  - 掘金
+  - 内容工具
+  - 个人效率
+  - 其他工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 掘金工具（免费版）
 

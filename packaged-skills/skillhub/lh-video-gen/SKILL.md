@@ -1,19 +1,19 @@
 ---
-slug: lh-video-gen
-name: lh-video-gen
+slug: "lh-video-gen"
+name: "lh-video-gen"
 version: "1.0.0"
-displayName: LH Video Gen
-summary: Generate vertical short videos (9:16) from a Markdown script. Parses script
-  sections, generates T...
-license: MIT
+displayName: "LH Video Gen"
+summary: "Generate vertical short videos (9:16) from a Markdown script. Parses script"
+license: "MIT"
 description: |-
   Generate vertical short videos (9:16) from a Markdown script。Parses
   script sections, generates T。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。
 tags:
-- Creative
+  - Creative
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # LH Video Gen
 

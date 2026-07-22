@@ -1,11 +1,11 @@
 ---
-slug: call-bridge
-name: call-bridge
+slug: "call-bridge"
+name: "call-bridge"
 version: "1.0.0"
-displayName: 通话桥接专业版
-summary: 企业级AI电话代理平台，支持并行外呼、实时转接、呼入号码、通话活动管理与个性化语音配置
-license: Proprietary
-edition: pro
+displayName: "通话桥接专业版"
+summary: "企业级AI电话代理平台，支持并行外呼、实时转接、呼入号码、通话活动管理与个性化语音配置"
+license: "Proprietary"
+edition: "pro"
 description: |-
   通话桥接专业版是一款面向团队与企业的AI电话代理平台，在免费版单次外呼基础上，新增并行外呼、实时转接、呼入号码配置、通话活动管理、个性化语音配置与完整错误处理等高级能力。核心能力：
   - 并行外呼：同时拨打3-4通电话进行信息比价与选项探索
@@ -13,12 +13,13 @@ description: |-
   - 呼入号码配置：设置来电应答规则与转接策略
   - 通话活动管理：跨通话保持状态...
 tags:
-- 集成工具
-- 语音通信
-- 企业通信
+  - 集成工具
+  - 语音通信
+  - 企业通信
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 通话桥接专业版
 

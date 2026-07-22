@@ -1,11 +1,11 @@
 ---
-slug: news-tool-free
-name: news-tool-free
+slug: "news-tool-free"
+name: "news-tool-free"
 version: "1.0.0"
-displayName: 个性化新闻助手免费版
-summary: 学习用户兴趣偏好的个性化新闻简报工具，支持多源覆盖与本地记忆
-license: Proprietary
-edition: free
+displayName: "个性化新闻助手免费版"
+summary: "学习用户兴趣偏好的个性化新闻简报工具，支持多源覆盖与本地记忆"
+license: "Proprietary"
+edition: "free"
 description: |-
   个性化新闻助手免费版，通过学习用户兴趣、格式偏好和时间习惯，提供定制化新闻简报服务。核心能力:
   - 构建用户兴趣画像，逐步学习偏好
@@ -23,13 +23,14 @@ description: |-
   - 隐私优先，不上传用户数据
   - 与PRO版本完全兼容...
 tags:
-- 新闻
-- 个性化
-- 资讯
-- 隐私保护
+  - 新闻
+  - 个性化
+  - 资讯
+  - 隐私保护
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 个性化新闻助手（免费版）
 

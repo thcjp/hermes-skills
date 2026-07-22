@@ -1,11 +1,10 @@
 ---
-slug: fonts
-name: fonts
+slug: "fonts"
+name: "fonts"
 version: "1.0.0"
-displayName: Fonts
-summary: Choose and implement web typography avoiding common rendering, pairing, and
-  hierarchy mistakes.
-license: MIT
+displayName: "Fonts"
+summary: "Choose and implement web typography avoiding common rendering, pairing, and"
+license: "MIT"
 description: |-
   Choose and implement web typography avoiding common rendering, pairing,
   and hierarchy mistakes。核心能力:
@@ -26,10 +25,11 @@ description: |-
 
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和...
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Fonts
 

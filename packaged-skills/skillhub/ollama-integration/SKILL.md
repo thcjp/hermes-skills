@@ -1,19 +1,19 @@
 ---
-slug: ollama-integration
-name: ollama-integration
+slug: "ollama-integration"
+name: "ollama-integration"
 version: "1.0.0"
-displayName: Ollama Integration
-summary: Integrate and run local Ollama AI models with custom prompts for AI assistance
-  and automatic mode...
-license: MIT
+displayName: "Ollama Integration"
+summary: "Integrate and run local Ollama AI models with custom prompts for AI assistance"
+license: "MIT"
 description: |-
   Integrate and run local Ollama AI models with custom prompts for AI
   assistance and automatic mode。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Ollama Integration
 

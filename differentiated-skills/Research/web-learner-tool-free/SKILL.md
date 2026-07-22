@@ -1,22 +1,22 @@
 ---
-slug: web-learner-tool-free
-name: web-learner-tool-free
+slug: "web-learner-tool-free"
+name: "web-learner-tool-free"
 version: "1.0.0"
-displayName: 自主学习助手免费版
-summary: 让 AI 自主上网搜索和学习,主动获取最新信息,整合互联网知识,适合个人知识获取
-license: Proprietary
-edition: free
+displayName: "自主学习助手免费版"
+summary: "让 AI 自主上网搜索和学习,主动获取最新信息,整合互联网知识,适合个人知识获取"
+license: "Proprietary"
+edition: "free"
 description: |-
   自主学习助手免费版,面向个人用户提供 AI 自主上网搜索和学习的能力。支持 Web 搜索、网页抓取、浏览器交互等多种信息获取方式。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- 研究工具
-- 自主学习
-- 知识获取
+  - 研究工具
+  - 自主学习
+  - 知识获取
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 自主学习助手免费版
 
 ## 概述

@@ -1,21 +1,21 @@
 ---
-slug: cdp-browser-master
-name: cdp-browser-master
+slug: "cdp-browser-master"
+name: "cdp-browser-master"
 version: "1.0.0"
-displayName: CDP浏览器大师
-summary: 解决反爬检测、选择器易变、SPA路由、等待不准四大痛点，附反检测与智能等待。
-license: Proprietary
+displayName: "CDP浏览器大师"
+summary: "解决反爬检测、选择器易变、SPA路由、等待不准四大痛点，附反检测与智能等待。"
+license: "Proprietary"
 description: |-
   通过Chrome DevTools Protocol驱动已登录浏览器执行自动化任务,解决反爬检测、选择器易变、SPA路由难导航、等待不准四大痛点,提供反检测策略、选择器探测模式、SPA导航模式、智能等待、Cookie获取、连接管理六大核心能力。适用于JS渲染页面抓取、需登录态网站操作、平台配额查询场景。适用关键词:CDP、浏览器自动化、Chrome、Edge、反爬、选择器、SPA、智能等待、Cookie
 tags:
-- 自动化
-- 浏览器
-- 数据抓取
+  - 自动化
+  - 浏览器
+  - 数据抓取
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # CDP浏览器大师
 
 通过用户已登录的浏览器(Edge/Chrome)执行自动化任务。核心技术:CDP(Chrome DevTools Protocol),通过WebSocket与浏览器通信。核心信条:**优先用web_fetch,CDP只用于JS渲染或需登录态的场景;先探测再定位,多备选降级。**

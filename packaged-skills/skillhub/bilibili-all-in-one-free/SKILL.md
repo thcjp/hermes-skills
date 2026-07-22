@@ -1,10 +1,10 @@
 ---
-slug: bilibili-all-in-one-free
-name: bilibili-all-in-one-free
+slug: "bilibili-all-in-one-free"
+name: "bilibili-all-in-one-free"
 version: "1.0.0"
-displayName: B站工具箱免费版
-summary: B站热门监控、标准清晰度下载、数据追踪与弹幕获取基础工具集,无需登录凭据。
-license: MIT
+displayName: "B站工具箱免费版"
+summary: "B站热门监控、标准清晰度下载、数据追踪与弹幕获取基础工具集,无需登录凭据。"
+license: "MIT"
 description: |-
   B站全功能工具箱的免费基础版,集成热门监控(Hot Monitor)、标准清晰度下载(Downloader)、
   数据追踪(Watcher)与播放信息(Player)四大公共API模块。支持热门/热搜/必看榜/分区排行获取,
@@ -18,8 +18,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Bilibili All In One 全功能工具箱 (免费版)
 
 ## 依赖说明

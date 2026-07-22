@@ -1,11 +1,11 @@
 ---
-slug: heygen-tts
-name: heygen-tts
+slug: "heygen-tts"
+name: "heygen-tts"
 version: "1.0.0"
-displayName: HeyGen TTS专业版
-summary: 企业级HeyGen TTS工具,支持SSML标记、批量生成、词级时间戳与API服务化,适配生产环境。
-license: Proprietary
-edition: pro
+displayName: "HeyGen TTS专业版"
+summary: "企业级HeyGen TTS工具,支持SSML标记、批量生成、词级时间戳与API服务化,适配生产环境。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队与企业用户的 HeyGen 文字转语音工具(专业版)。核心能力:
   - 涵盖免费版全部能力(Starfish TTS、多语言、语速控制、停顿)
@@ -23,18 +23,17 @@ description: |-
   - 企业级内容生产流水线
   - 视频批...
 tags:
-- 创意设计
-- 语音合成
-- TTS
-- HeyGen
-- 企业级
-- 批量处理
-- SSML
+  - 创意设计
+  - 语音合成
+  - TTS
+  - HeyGen
+  - 企业级
+  - 批量处理
+  - SSML
 tools:
   - - read
-- exec
-# HeyGen TTS 工具 - 专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # HeyGen TTS专业版
 

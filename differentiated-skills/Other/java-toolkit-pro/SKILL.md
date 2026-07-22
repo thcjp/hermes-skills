@@ -1,11 +1,11 @@
 ---
-slug: java-toolkit-pro
-name: java-toolkit-pro
+slug: "java-toolkit-pro"
+name: "java-toolkit-pro"
 version: "1.0.0"
-displayName: Java 工具箱专业版
-summary: 面向团队的全项目扫描、规则集治理与 JVM 调优工具。
-license: Proprietary
-edition: pro
+displayName: "Java 工具箱专业版"
+summary: "面向团队的全项目扫描、规则集治理与 JVM 调优工具。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队的 Java 全项目扫描、规则集治理与 JVM 调优专业工具。核心能力:
   - 全项目批量规则扫描与回归
@@ -20,14 +20,15 @@ description: |-
 
   差异化: 专业版在免费版单文件自检上扩展全项目扫描、规则集治理、JVM 调优与测试门禁，兼容免费版 14 条规则
 tags:
-- Java
-- 企业级
-- 代码质量
-- JVM
-- 其他工具
+  - Java
+  - 企业级
+  - 代码质量
+  - JVM
+  - 其他工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Java 工具箱（专业版）
 

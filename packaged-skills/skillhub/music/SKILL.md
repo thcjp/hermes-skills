@@ -1,11 +1,10 @@
 ---
-slug: music
-name: music
+slug: "music"
+name: "music"
 version: "1.0.0"
-displayName: Music
-summary: Build a personal music system for tracking discoveries, favorites, concerts,
-  and listening memories.
-license: MIT
+displayName: "Music"
+summary: "Build a personal music system for tracking discoveries, favorites, concerts,"
+license: "MIT"
 description: |-
   Build a personal music system for tracking discoveries, favorites, concerts,
   and listening memories。核心能力:
@@ -26,10 +25,11 @@ description: |-
 
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增...
 tags:
-- Lifestyle
+  - Lifestyle
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Music
 

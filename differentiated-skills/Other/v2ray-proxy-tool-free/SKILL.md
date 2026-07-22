@@ -1,11 +1,11 @@
 ---
-slug: v2ray-proxy-tool-free
-name: v2ray-proxy-tool-free
+slug: "v2ray-proxy-tool-free"
+name: "v2ray-proxy-tool-free"
 version: "1.0.0"
-displayName: V2Ray代理管理免费版
-summary: 管理V2Ray代理的开关与系统代理配置，支持手动与自动模式，适合个人开发者日常使用。
-license: Proprietary
-edition: free
+displayName: "V2Ray代理管理免费版"
+summary: "管理V2Ray代理的开关与系统代理配置，支持手动与自动模式，适合个人开发者日常使用。"
+license: "Proprietary"
+edition: "free"
 description: |-
   V2Ray代理管理工具免费版，面向个人开发者的轻量级代理管理工具。核心能力:
   - 启动/停止 V2Ray 代理服务
@@ -20,13 +20,14 @@ description: |-
 
   差异化: 免费版聚焦核心代理开关与自动配置，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手
 tags:
-- V2Ray
-- 代理管理
-- 网络配置
-- 免费版
+  - V2Ray
+  - 代理管理
+  - 网络配置
+  - 免费版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # V2Ray代理管理（免费版）
 

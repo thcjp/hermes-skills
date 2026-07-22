@@ -1,11 +1,11 @@
 ---
-slug: rss-reader-tool-free
-name: rss-reader-tool-free
+slug: "rss-reader-tool-free"
+name: "rss-reader-tool-free"
 version: "1.0.0"
-displayName: RSS阅读器免费版
-summary: 轻量级RSS/Atom订阅阅读器,支持分类管理、关键词过滤与多种输出格式,适合个人内容研究
-license: Proprietary
-edition: free
+displayName: "RSS阅读器免费版"
+summary: "轻量级RSS/Atom订阅阅读器,支持分类管理、关键词过滤与多种输出格式,适合个人内容研究"
+license: "Proprietary"
+edition: "free"
 description: |-
   RSS阅读器免费版为个人用户提供轻量级的RSS/Atom订阅管理与内容研究能力。核心能力:
   - 订阅源添加与分类管理
@@ -21,14 +21,15 @@ description: |-
 
   差异化:免费版聚焦核心订阅管理与内容研究流程,基于Node
 tags:
-- 研究工具
-- RSS
-- 内容研究
-- 个人效率
-- 订阅管理
+  - 研究工具
+  - RSS
+  - 内容研究
+  - 个人效率
+  - 订阅管理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # RSS阅读器免费版
 

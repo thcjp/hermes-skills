@@ -1,11 +1,11 @@
 ---
-slug: vscode-node-tool-free
-name: vscode-node-tool-free
+slug: "vscode-node-tool-free"
+name: "vscode-node-tool-free"
 version: "1.0.0"
-displayName: VSCode节点工具(免费版)
-summary: 面向个人开发者的VSCode/Cursor远程操作工具,覆盖文件读写、语言特性、Git基础操作。
-license: Proprietary
-edition: free
+displayName: "VSCode节点工具(免费版)"
+summary: "面向个人开发者的VSCode/Cursor远程操作工具,覆盖文件读写、语言特性、Git基础操作。"
+license: "Proprietary"
+edition: "free"
 description: |-
   VSCode节点工具免费版为个人开发者提供通过节点协议远程操作VSCode/Cursor IDE的能力,涵盖文件读写、语言特性查询、编辑器状态与Git基础操作。核心能力:
   - 文件读写与目录列举
@@ -21,14 +21,15 @@ description: |-
 
   差异化:免费版聚焦个人开发...
 tags:
-- VSCode
-- Cursor
-- IDE集成
-- 个人开发
-- 远程操作
+  - VSCode
+  - Cursor
+  - IDE集成
+  - 个人开发
+  - 远程操作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # VSCode 节点工具(免费版)
 

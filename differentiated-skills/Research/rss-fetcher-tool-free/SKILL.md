@@ -1,11 +1,11 @@
 ---
-slug: rss-fetcher-tool-free
-name: rss-fetcher-tool-free
+slug: "rss-fetcher-tool-free"
+name: "rss-fetcher-tool-free"
 version: "1.0.0"
-displayName: RSS采集器免费版
-summary: 轻量级RSS采集与管理工具,支持增量抓取、自动去重与标签提取,适合个人用户构建本地订阅库
-license: Proprietary
-edition: free
+displayName: "RSS采集器免费版"
+summary: "轻量级RSS采集与管理工具,支持增量抓取、自动去重与标签提取,适合个人用户构建本地订阅库"
+license: "Proprietary"
+edition: "free"
 description: |-
   RSS采集器免费版为个人用户提供轻量级的RSS订阅采集与本地管理能力。核心能力:
   - 增量抓取与URL哈希去重
@@ -21,14 +21,15 @@ description: |-
 
   差异化:免费版聚焦核心采集与存储流程,基于SQLite实现轻量本地部署,适合个人用户构建可持续积累的订阅文章库,无需服务器
 tags:
-- 研究工具
-- RSS
-- 数据采集
-- 本地存储
-- 个人效率
+  - 研究工具
+  - RSS
+  - 数据采集
+  - 本地存储
+  - 个人效率
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # RSS采集器免费版
 

@@ -1,19 +1,19 @@
 ---
-slug: note
-name: note
+slug: "note"
+name: "note"
 version: "2.1.0"
-displayName: Note
-summary: Knowledge capture and connection system with automatic organization and retrieval.
-  Use when user ...
-license: MIT-0
+displayName: "Note"
+summary: "Knowledge capture and connection system with automatic organization and retrieval."
+license: "MIT-0"
 description: |-
   Knowledge capture and connection system with automatic organization
   and retrieval。Use when user。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
 tags:
-- Productivity
+  - Productivity
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Note
 

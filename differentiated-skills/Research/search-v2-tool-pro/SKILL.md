@@ -1,11 +1,11 @@
 ---
-slug: search-v2-tool-pro
-name: search-v2-tool-pro
+slug: "search-v2-tool-pro"
+name: "search-v2-tool-pro"
 version: "1.0.0"
-displayName: 搜索工具专业版
-summary: 企业级LLM优化搜索系统,支持批量搜索、主题分类、全文提取、图片搜索与结果缓存加速
-license: Proprietary
-edition: pro
+displayName: "搜索工具专业版"
+summary: "企业级LLM优化搜索系统,支持批量搜索、主题分类、全文提取、图片搜索与结果缓存加速"
+license: "Proprietary"
+edition: "pro"
 description: |-
   搜索工具专业版为企业团队提供高阶LLM优化网页搜索与信息检索能力。核心能力:
   - 批量多查询并行搜索
@@ -23,14 +23,15 @@ description: |-
 
   差异化:专业版在免费版基础搜索与域名过滤基础上,扩展批量搜索、主题分类、全文提取、图片搜索与缓存能力
 tags:
-- 研究工具
-- 搜索
-- 企业级
-- 信息检索
-- 竞争情报
+  - 研究工具
+  - 搜索
+  - 企业级
+  - 信息检索
+  - 竞争情报
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 搜索工具专业版
 

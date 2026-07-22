@@ -1,10 +1,10 @@
 ---
-slug: resume-assistant
-name: resume-assistant
+slug: "resume-assistant"
+name: "resume-assistant"
 version: "1.0.0"
-displayName: 简历助手
-summary: AI简历助手，支持polish润色、customize定制、score评分与export多格式导出。
-license: Proprietary
+displayName: "简历助手"
+summary: "AI简历助手，支持polish润色、customize定制、score评分与export多格式导出。"
+license: "Proprietary"
 description: |-
   AI驱动的简历/CV助手，帮助求职者创建、优化与导出简历。
   支持polish润色（40+检查项）、customize针对岗位定制、score 100分制评分。
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 简历助手
 
 AI简历助手，支持polish润色、customize定制、score评分与export多格式导出。

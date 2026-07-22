@@ -1,11 +1,11 @@
 ---
-slug: domain-dns-manager-pro
-name: domain-dns-manager-pro
+slug: "domain-dns-manager-pro"
+name: "domain-dns-manager-pro"
 version: "1.0.0"
-displayName: 域名DNS管理专业版
-summary: 企业级域名DNS编排引擎，支持批量域名、多供应商、Worker路由、审计日志与回滚。
-license: Proprietary
-edition: pro
+displayName: "域名DNS管理专业版"
+summary: "企业级域名DNS编排引擎，支持批量域名、多供应商、Worker路由、审计日志与回滚。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   域名DNS管理专业版是面向运维团队与企业的域名资产编排Skill，在免费版基础上扩展了批量域名管理、多供应商编排、Worker路由、Rulesets、审计日志、定时健康检查、变更回滚与多账号管理能力。核心能力：
   - 批量域名接入与迁移（单次100+域名），并行执行并汇总报告
@@ -13,14 +13,15 @@ description: |-
   - Worker路由与Bulk Redirects：大规模重定向配置
   - DNS变更审计日志：所有操作记录到SQLite...
 tags:
-- 域名管理
-- 企业运维
-- 多供应商编排
-- 审计回滚
-- 批量管理
+  - 域名管理
+  - 企业运维
+  - 多供应商编排
+  - 审计回滚
+  - 批量管理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 域名DNS管理专业版（Domain DNS Manager Pro）
 

@@ -1,23 +1,23 @@
 ---
-slug: workflow-catalyst-free
-name: workflow-catalyst-free
+slug: "workflow-catalyst-free"
+name: "workflow-catalyst-free"
 version: "1.0.0"
-displayName: 工作流催化器(免费版)
-summary: 识别重复任务并快速构建自动化工作流，四步法将手动操作转化为可复用脚本。
-license: Proprietary
-edition: free
+displayName: "工作流催化器(免费版)"
+summary: "识别重复任务并快速构建自动化工作流，四步法将手动操作转化为可复用脚本。"
+license: "Proprietary"
+edition: "free"
 description: |-
   工作流催化器为AI Agent提供"识别重复→抽象模式→设计自动化→实现脚本"的四步思维框架。免费版提供核心方法论与基础模板，帮助Agent主动发现用户的重复操作并构建自动化方案。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 工作流自动化
-- 效率提升
-- 脚本生成
-- 任务自动化
+  - 工作流自动化
+  - 效率提升
+  - 脚本生成
+  - 任务自动化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 工作流催化器（免费版）
 
 > **不是回答问题，而是看到重复就立刻构建自动化。四步法将手动操作变成可复用脚本。**

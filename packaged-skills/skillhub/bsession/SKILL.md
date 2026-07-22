@@ -1,20 +1,20 @@
 ---
-slug: bsession
-name: bsession
+slug: "bsession"
+name: "bsession"
 version: "0.1.0"
-displayName: browser
-summary: Browser automation — setup the bsession environment, fetch info from a website
-  (one-shot), create...
-license: MIT-0
+displayName: "browser"
+summary: "Browser automation — setup the bsession environment, fetch info from a website"
+license: "MIT-0"
 description: |-
   Browser automation — setup the bsession environment, fetch info from
   a website (one-shot), create。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
 tags:
-- Research
-- Automation
+  - Research
+  - Automation
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # browser
 

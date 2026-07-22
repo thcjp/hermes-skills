@@ -1,19 +1,19 @@
 ---
-slug: task-planner
-name: task-planner
+slug: "task-planner"
+name: "task-planner"
 version: "3.0.5"
-displayName: Task Planner
-summary: Manage tasks, set priorities, and track deadlines locally. Supports bilingual
-  (EN/CN) documentati...
-license: MIT-0
+displayName: "Task Planner"
+summary: "Manage tasks, set priorities, and track deadlines locally. Supports bilingual"
+license: "MIT-0"
 description: |-
   Manage tasks, set priorities, and track deadlines locally。Supports
   bilingual (EN/CN) documentati。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Productivity
+  - Productivity
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Task Planner
 

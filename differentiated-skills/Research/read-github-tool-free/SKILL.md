@@ -1,11 +1,11 @@
 ---
-slug: read-github-tool-free
-name: read-github-tool-free
+slug: "read-github-tool-free"
+name: "read-github-tool-free"
 version: "1.0.0"
-displayName: 代码仓库阅读免费版
-summary: 通过MCP server读取代码仓库文档与代码，支持文档搜索与代码检索
-license: Proprietary
-edition: free
+displayName: "代码仓库阅读免费版"
+summary: "通过MCP server读取代码仓库文档与代码，支持文档搜索与代码检索"
+license: "Proprietary"
+edition: "free"
 description: |-
   代码仓库阅读工具免费版，通过MCP server读取代码仓库的文档和代码，帮助用户快速理解开源项目。核心能力:
   - 获取仓库完整文档（README等）
@@ -14,15 +14,15 @@ description: |-
   - 获取文档中引用的外部URL内容
   - URL自动转换（github。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。
 tags:
-- 开发
-- 代码阅读
-- 文档
-- 开源
+  - 开发
+  - 代码阅读
+  - 文档
+  - 开源
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 代码仓库阅读工具（免费版）
 
 ## 概述

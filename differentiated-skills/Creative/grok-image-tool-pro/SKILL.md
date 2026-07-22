@@ -1,23 +1,23 @@
 ---
-slug: grok-image-tool-pro
-name: grok-image-tool-pro
+slug: "grok-image-tool-pro"
+name: "grok-image-tool-pro"
 version: "1.0.0"
-displayName: Grok图片生成-专业版
-summary: 批量AI图片生成引擎，支持多格式导出、消息平台集成与自动化工作流。
-license: Proprietary
-edition: pro
+displayName: "Grok图片生成-专业版"
+summary: "批量AI图片生成引擎，支持多格式导出、消息平台集成与自动化工作流。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Grok图片生成工具专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Creative
-- ImageGeneration
-- Enterprise
-- Automation
+  - Creative
+  - ImageGeneration
+  - Enterprise
+  - Automation
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Grok图片生成工具（专业版）
 
 ## 概述

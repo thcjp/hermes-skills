@@ -1,11 +1,11 @@
 ---
-slug: actor-identifier
-name: actor-identifier
+slug: "actor-identifier"
+name: "actor-identifier"
 version: "1.0.0"
-displayName: 仓库协作分析(专业版)
-summary: 面向团队的企业级Git仓库协作分析平台,含批量分析、自定义指标、CI集成与企业报告。
-license: Proprietary
-edition: pro
+displayName: "仓库协作分析(专业版)"
+summary: "面向团队的企业级Git仓库协作分析平台,含批量分析、自定义指标、CI集成与企业报告。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   仓库协作分析工具专业版为团队与企业提供端到端Git仓库协作分析能力,涵盖多仓库批量分析、自定义指标、CI/CD集成与企业级聚合报告。核心能力:
   - 多仓库批量分析与汇总
@@ -22,16 +22,17 @@ description: |-
   - 工作流改进复盘与决策支持
   - 周期性仓库健康...
 tags:
-- Git
-- 仓库分析
-- 企业开发
-- 团队协作
-- CI/CD
-- 研发效能
-- 隐私保护
+  - Git
+  - 仓库分析
+  - 企业开发
+  - 团队协作
+  - CI/CD
+  - 研发效能
+  - 隐私保护
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 仓库协作分析(专业版)
 

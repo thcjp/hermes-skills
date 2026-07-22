@@ -1,11 +1,11 @@
 ---
-slug: ui-design-toolkit
-name: ui-design-toolkit
+slug: "ui-design-toolkit"
+name: "ui-design-toolkit"
 version: "1.0.0"
-displayName: UI设计工具包专业版
-summary: 企业级UI设计工具包,支持设计系统、设计令牌、可访问性与组件库,适配团队协作与大型项目。
-license: Proprietary
-edition: pro
+displayName: "UI设计工具包专业版"
+summary: "企业级UI设计工具包,支持设计系统、设计令牌、可访问性与组件库,适配团队协作与大型项目。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队与企业用户的 UI 设计工具包(专业版)。核心能力:
   - 涵盖免费版全部能力(视觉层次、排版、色彩、间距、状态)
@@ -22,15 +22,16 @@ description: |-
 
   适用场景:
 tags:
-- 创意设计
-- UI设计
-- 企业级
-- 设计系统
-- 可访问性
-- 组件库
+  - 创意设计
+  - UI设计
+  - 企业级
+  - 设计系统
+  - 可访问性
+  - 组件库
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
 # UI设计工具包专业版
 

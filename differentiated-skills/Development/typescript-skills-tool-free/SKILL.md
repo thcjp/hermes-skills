@@ -1,11 +1,11 @@
 ---
-slug: typescript-skills-tool-free
-name: typescript-skills-tool-free
+slug: "typescript-skills-tool-free"
+name: "typescript-skills-tool-free"
 version: "1.0.0"
-displayName: TS编码规范工具(免费版)
-summary: 面向个人开发者的TypeScript编码规范指导,覆盖命名、类型、函数、模块等基础约定。
-license: Proprietary
-edition: free
+displayName: "TS编码规范工具(免费版)"
+summary: "面向个人开发者的TypeScript编码规范指导,覆盖命名、类型、函数、模块等基础约定。"
+license: "Proprietary"
+edition: "free"
 description: |-
   TypeScript编码规范工具免费版为个人开发者提供符合行业惯例的TypeScript编码约定,涵盖命名规范、类型与接口、函数与类、模块与导入等基础主题。核心能力:
   - 命名规范指导(变量、函数、类、接口、枚举)
@@ -21,14 +21,15 @@ description: |-
 
   差异化:免费版聚焦个人开发者的基础规范需求,提供核心约定与示例
 tags:
-- TypeScript
-- 编码规范
-- 代码风格
-- 前端开发
-- 个人开发
+  - TypeScript
+  - 编码规范
+  - 代码风格
+  - 前端开发
+  - 个人开发
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # TypeScript 编码规范工具(免费版)
 

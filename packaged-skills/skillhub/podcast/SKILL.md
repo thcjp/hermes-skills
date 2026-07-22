@@ -1,19 +1,19 @@
 ---
-slug: podcast
-name: podcast
+slug: "podcast"
+name: "podcast"
 version: "1.0.1"
-displayName: Podcast
-summary: Create and grow podcasts by planning episodes, producing audio or video,
-  generating clips, and bu...
-license: MIT
+displayName: "Podcast"
+summary: "Create and grow podcasts by planning episodes, producing audio or video,"
+license: "MIT"
 description: |-
   Create and grow podcasts by planning episodes, producing audio or video,
   generating clips, and bu。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。
 tags:
-- Creative
+  - Creative
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Podcast
 

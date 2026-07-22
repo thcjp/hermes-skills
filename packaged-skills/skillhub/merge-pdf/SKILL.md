@@ -1,19 +1,19 @@
 ---
-slug: merge-pdf
-name: merge-pdf
+slug: "merge-pdf"
+name: "merge-pdf"
 version: "1.0.0"
-displayName: Merge PDF
-summary: Merge multiple user-provided PDF files by uploading them to Cross-Service-Solutions,
-  polling unti...
-license: MIT
+displayName: "Merge PDF"
+summary: "Merge multiple user-provided PDF files by uploading them to Cross-Service-Solutions,"
+license: "MIT"
 description: |-
   Merge multiple user-provided PDF files by uploading them to Cross-Service-Solutions,
   polling unti。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Knowledge
+  - Knowledge
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Merge PDF
 

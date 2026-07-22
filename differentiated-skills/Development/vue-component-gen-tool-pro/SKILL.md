@@ -1,11 +1,11 @@
 ---
-slug: vue-component-gen-tool-pro
-name: vue-component-gen-tool-pro
+slug: "vue-component-gen-tool-pro"
+name: "vue-component-gen-tool-pro"
 version: "1.0.0"
-displayName: Vue组件生成(专业版)
-summary: 面向团队的企业级Vue 3组件工程平台,含组件库结构、批量生成、可访问性、测试模板与CI集成。
-license: Proprietary
-edition: pro
+displayName: "Vue组件生成(专业版)"
+summary: "面向团队的企业级Vue 3组件工程平台,含组件库结构、批量生成、可访问性、测试模板与CI集成。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Vue组件生成工具专业版为团队与企业提供端到端Vue 3组件工程能力,涵盖企业级组件库结构、批量组件生成、WCAG AA可访问性、单元测试模板与CI/CD集成。核心能力:
   - 企业级组件库目录结构与文档
@@ -20,18 +20,18 @@ description: |-
   - 中大型团队Vue组件库从0到1搭建
   - 企业级产...
 tags:
-- Vue
-- 组件库
-- 企业开发
-- 可访问性
-- 自动化测试
-- 团队协作
-- CI/CD
+  - Vue
+  - 组件库
+  - 企业开发
+  - 可访问性
+  - 自动化测试
+  - 团队协作
+  - CI/CD
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Vue 组件生成工具(专业版)
 
 ## 概述

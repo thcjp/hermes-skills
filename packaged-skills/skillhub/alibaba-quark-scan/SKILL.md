@@ -1,10 +1,10 @@
 ---
-slug: alibaba-quark-scan
-name: alibaba-quark-scan
+slug: "alibaba-quark-scan"
+name: "alibaba-quark-scan"
 version: "2.0.0"
-displayName: 文档扫描增强
-summary: 文档高清扫描增强工具，支持画质优化、去手写、去水印、去阴影等13种场景
-license: MIT-0
+displayName: "文档扫描增强"
+summary: "文档高清扫描增强工具，支持画质优化、去手写、去水印、去阴影等13种场景"
+license: "MIT-0"
 description: |-
   文档高清扫描增强工具，通过扫描服务API对图片进行画质优化、瑕疵去除和视觉增强。
   支持13种场景：考试增强、画质增强、证件票据增强、去手写、去水印、去阴影、去屏纹、
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 文档扫描增强工具
 
 通过扫描服务API对图片进行高清扫描、画质优化和瑕疵去除。支持13种场景识别，每次请求只执行一个意图类型。

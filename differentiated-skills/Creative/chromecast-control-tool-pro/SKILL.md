@@ -1,11 +1,11 @@
 ---
-slug: chromecast-control-tool-pro
-name: chromecast-control-tool-pro
+slug: "chromecast-control-tool-pro"
+name: "chromecast-control-tool-pro"
 version: "1.0.0"
-displayName: 投屏控制专业版
-summary: 企业级投屏管理系统，支持多设备管理、播放队列、自动化脚本、状态监控与定时任务。
-license: Proprietary
-edition: pro
+displayName: "投屏控制专业版"
+summary: "企业级投屏管理系统，支持多设备管理、播放队列、自动化脚本、状态监控与定时任务。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   投屏控制专业版 —— 面向专业用户与企业环境的高级Chromecast投屏管理系统。核心能力:
   - 多设备同步管理：统一管理多台Chromecast设备
@@ -14,16 +14,16 @@ description: |-
   - 实时状态监控：监控所有设备的播放状态
   - 设备分组：将设备分组...
 tags:
-- 投屏控制
-- Chromecast
-- 企业工具
-- 自动化
-- 多设备管理
+  - 投屏控制
+  - Chromecast
+  - 企业工具
+  - 自动化
+  - 多设备管理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 投屏控制专业版
 
 ## 概述

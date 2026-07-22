@@ -1,11 +1,11 @@
 ---
-slug: report-toolkit-free
-name: report-toolkit-free
+slug: "report-toolkit-free"
+name: "report-toolkit-free"
 version: "1.0.0"
-displayName: 报告工具包-免费版
-summary: 自定义定期报告生成工具,支持多数据源、定时调度与多渠道交付,适合个人使用
-license: Proprietary
-edition: free
+displayName: "报告工具包-免费版"
+summary: "自定义定期报告生成工具,支持多数据源、定时调度与多渠道交付,适合个人使用"
+license: "Proprietary"
+edition: "free"
 description: |-
   自定义定期报告生成工具免费版,面向个人开发者与小型项目。核心能力:
   - 自定义报告配置与数据源
@@ -22,12 +22,13 @@ description: |-
 
   差异化:免费版提供基础报告生成能力
 tags:
-- 报告生成
-- 定时调度
-- 数据汇总
+  - 报告生成
+  - 定时调度
+  - 数据汇总
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 报告工具包 - 免费版
 

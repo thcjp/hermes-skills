@@ -1,11 +1,11 @@
 ---
-slug: daily-report-tool-pro
-name: daily-report-tool-pro
+slug: "daily-report-tool-pro"
+name: "daily-report-tool-pro"
 version: "1.0.0"
-displayName: 日报生成器专业版
-summary: 企业级日报系统,支持自动采集、多人日报聚合、趋势分析与管理者仪表盘
-license: Proprietary
-edition: pro
+displayName: "日报生成器专业版"
+summary: "企业级日报系统,支持自动采集、多人日报聚合、趋势分析与管理者仪表盘"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 工作汇报领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,14 +15,14 @@ description: |-
 
   适用关键词: 日报, 工作总结, 每日报告, highlights, blockers
 tags:
-- 日报
-- 工作总结
-- Markdown
+  - 日报
+  - 工作总结
+  - Markdown
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 日报生成器专业版
 
 ## 概述

@@ -1,11 +1,11 @@
 ---
-slug: browser-automation-tool-free
-name: browser-automation-tool-free
+slug: "browser-automation-tool-free"
+name: "browser-automation-tool-free"
 version: "1.0.0"
-displayName: 浏览器自动化工具-免费版
-summary: 通过自然语言驱动浏览器交互的CLI工具,支持本地Chrome,适合个人开发者快速自动化
-license: Proprietary
-edition: free
+displayName: "浏览器自动化工具-免费版"
+summary: "通过自然语言驱动浏览器交互的CLI工具,支持本地Chrome,适合个人开发者快速自动化"
+license: "Proprietary"
+edition: "free"
 description: |-
   通过自然语言指令驱动浏览器交互的命令行工具,用户可用自然语言描述动作,
   工具自动转化为浏览器操作,降低自动化脚本编写门槛。核心能力:
@@ -22,12 +22,13 @@ description: |-
 
   差异化:免费版提供本地Chrome浏览器环境下的自然语言自动化能力,操作直观,适合个人轻量场景
 tags:
-- 研究工具
-- 浏览器自动化
-- 自然语言
+  - 研究工具
+  - 浏览器自动化
+  - 自然语言
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 浏览器自动化工具(免费版)
 

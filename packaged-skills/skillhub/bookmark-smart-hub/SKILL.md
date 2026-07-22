@@ -1,26 +1,27 @@
 ---
-slug: bookmark-smart-hub
-name: bookmark-smart-hub
+slug: "bookmark-smart-hub"
+name: "bookmark-smart-hub"
 version: "1.0.0"
-displayName: 书签智能中心专业版
-summary: 自动化书签监控与 AI 深度分析平台，支持后台守护、多渠道通知与知识库全文检索。
-license: Proprietary
-edition: pro
+displayName: "书签智能中心专业版"
+summary: "自动化书签监控与 AI 深度分析平台，支持后台守护、多渠道通知与知识库全文检索。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向知识工作者与团队的自动化书签监控与 AI 分析平台。
   核心能力: 后台自动监控、AI 深度分析、多渠道通知、知识库全文检索、趋势发现、数据导出、团队共享。
   适用场景: 知识管理自动化、研究素材收集、行业趋势跟踪、团队知识沉淀、内容灵感挖掘。
   差异化: 专业版在免费版基础上新增自动化监控与 AI 分析，兼容免费版存储格式与配置。
 tags:
-- 书签管理
-- AI分析
-- 自动化监控
-- 知识库
-- 团队协作
-- 趋势发现
+  - 书签管理
+  - AI分析
+  - 自动化监控
+  - 知识库
+  - 团队协作
+  - 趋势发现
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 书签智能中心专业版
 

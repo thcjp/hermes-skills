@@ -1,11 +1,11 @@
 ---
-slug: bilibili-toolkit-free
-name: bilibili-toolkit-free
+slug: "bilibili-toolkit-free"
+name: "bilibili-toolkit-free"
 version: "1.0.0"
-displayName: B站工具箱免费版
-summary: B站热门监控、视频下载、数据查看与字幕获取，免登录使用核心功能，适合个人用户。
-license: Proprietary
-edition: free
+displayName: "B站工具箱免费版"
+summary: "B站热门监控、视频下载、数据查看与字幕获取，免登录使用核心功能，适合个人用户。"
+license: "Proprietary"
+edition: "free"
 description: |-
   B站工具箱免费版 —— 面向个人用户的轻量级B站内容工具。核心能力:
   - 热门视频监控：实时查看B站热门、热搜、排行榜、必看榜
@@ -23,13 +23,14 @@ description: |-
 
   差异化:免费版提供无需登录的核心功能...
 tags:
-- B站
-- 视频下载
-- 内容监控
-- 个人创作
+  - B站
+  - 视频下载
+  - 内容监控
+  - 个人创作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # B站工具箱免费版
 

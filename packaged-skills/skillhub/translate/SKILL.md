@@ -1,11 +1,10 @@
 ---
-slug: translate
-name: translate
+slug: "translate"
+name: "translate"
 version: "1.0.0"
-displayName: Translate
-summary: Translate text accurately — preserve formatting, handle plurals, and adapt
-  tone per locale.
-license: MIT
+displayName: "Translate"
+summary: "Translate text accurately — preserve formatting, handle plurals, and adapt"
+license: "MIT"
 description: |-
   Translate text accurately — preserve formatting, handle plurals, and
   adapt tone per locale。核心能力:
@@ -26,10 +25,11 @@ description: |-
 
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键...
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Translate
 

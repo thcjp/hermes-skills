@@ -1,10 +1,10 @@
 ---
-slug: csv-free
-name: csv-free
+slug: "csv-free"
+name: "csv-free"
 version: "1.0.0"
-displayName: CSV解析生成-免费版
-summary: CSV解析与生成免费版，提供基础引号规则与逗号分隔，适合简单跨工具数据交换。
-license: MIT
+displayName: "CSV解析生成-免费版"
+summary: "CSV解析与生成免费版，提供基础引号规则与逗号分隔，适合简单跨工具数据交换。"
+license: "MIT"
 description: |-
   CSV解析与生成免费版提供基于RFC 4180的基础引号规则与逗号分隔能力。
   适合简单的跨工具数据交换场景，确保含逗号/引号的字段正确转义。
@@ -23,8 +23,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # CSV — 解析与生成（免费版）
 
 ## 核心理念

@@ -1,20 +1,20 @@
 ---
-slug: cad-insight-pro
-name: cad-insight-pro
+slug: "cad-insight-pro"
+name: "cad-insight-pro"
 version: "1.0.0"
-displayName: CAD洞察专家
-summary: 同时解析 PDF 与 DWG 工程图，可配置标题栏模板、多比例检测、工程量自动统计。
-license: Proprietary
+displayName: "CAD洞察专家"
+summary: "同时解析 PDF 与 DWG 工程图，可配置标题栏模板、多比例检测、工程量自动统计。"
+license: "Proprietary"
 description: |-
   CAD 洞察专家为 AI Agent 提供工程图纸智能分析能力，支持 PDF 与 DWG 两种格式，可提取标题栏、尺寸、标注、符号、比例并生成质量检查报告与工程量统计。它通过可配置的标题栏模板适配不同公司/标准的图框，通过多比例检测处理一张图多比例的情况，通过 OCR 管线处理扫描件，通过尺寸上下文关联还原尺寸与构件的对应关系
 tags:
-- 自动化
-- 图纸分析
-- 工程造价
+  - 自动化
+  - 图纸分析
+  - 工程造价
 tools:
   - - read
-- exec
-# CAD 洞察专家
+  - exec
+homepage: "https://skillhub.cn"
 ---
 把工程图纸里的标题栏、尺寸、标注、符号变成结构化数据，自动算量、查合规、出报告。本技能解决六个核心痛点：**格式单一**（原始只支持 PDF，DWG 是行业主流）、**标题栏不通用**（每家公司图框格式不同，硬编码正则必挂）、**多比例漏检**（一张图主图 1:100、详图 1:20，只取一个比例全错）、**符号库僵化**（原始只识别 schedule 表格，符号图例无法识别）、**扫描件无解**（光栅 PDF 无文字层，原始方案直接失效）、**算量缺失**（原始只提取不统计，无法直接用于造价）。
 

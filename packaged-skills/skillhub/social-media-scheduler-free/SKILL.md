@@ -1,10 +1,10 @@
 ---
-slug: social-media-scheduler-free
-name: social-media-scheduler-free
+slug: "social-media-scheduler-free"
+name: "social-media-scheduler-free"
 version: "1.0.0"
-displayName: 社媒排期 LITE
-summary: 基础社媒内容排期,支持三平台内容日历与文案生成。
-license: MIT
+displayName: "社媒排期 LITE"
+summary: "基础社媒内容排期,支持三平台内容日历与文案生成。"
+license: "MIT"
 description: |-
   跨平台社媒内容排期免费版。支持 Twitter/X、LinkedIn、Facebook 三平台,
   生成按日期/平台组织的基础内容日历与平台适配文案。附字符计数校验。
@@ -15,8 +15,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 社媒内容排期 LITE
 
 跨平台社媒内容排期免费版。支持 Twitter/X、LinkedIn、Facebook 三平台,生成基础内容日历与平台适配文案,附字符计数。不直接发布,专注内容生产环节。

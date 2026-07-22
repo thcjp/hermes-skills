@@ -1,11 +1,11 @@
 ---
-slug: podcast-chaptering-tool-free
-name: podcast-chaptering-tool-free
+slug: "podcast-chaptering-tool-free"
+name: "podcast-chaptering-tool-free"
 version: "1.0.0"
-displayName: 播客章节工具免费版
-summary: 从播客音频或文字稿生成章节标记与高光片段建议,适合个人创作者快速制作节目笔记。
-license: Proprietary
-edition: free
+displayName: "播客章节工具免费版"
+summary: "从播客音频或文字稿生成章节标记与高光片段建议,适合个人创作者快速制作节目笔记。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人创作者的播客章节标记工具(免费版)。核心能力:
   - 从音频或文字稿生成章节标记(时间戳+标题)
@@ -28,16 +28,16 @@ description: |-
 
   适用关键词: po...
 tags:
-- 创意设计
-- 播客
-- 章节标记
-- 节目笔记
-- 个人创作
+  - 创意设计
+  - 播客
+  - 章节标记
+  - 节目笔记
+  - 个人创作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 播客章节工具 - 免费版
 
 ## 概述

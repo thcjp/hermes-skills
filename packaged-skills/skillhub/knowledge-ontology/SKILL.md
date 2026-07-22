@@ -1,10 +1,10 @@
 ---
-slug: knowledge-ontology
-name: knowledge-ontology
+slug: "knowledge-ontology"
+name: "knowledge-ontology"
 version: "1.0.0"
-displayName: 知识本体
-summary: 类型化知识图谱：约束校验+模式演进+图遍历规划，让Agent记忆结构化可验证。
-license: MIT
+displayName: "知识本体"
+summary: "类型化知识图谱：约束校验+模式演进+图遍历规划，让Agent记忆结构化可验证。"
+license: "MIT"
 description: |-
   面向AI Agent的类型化知识图谱系统，提供实体关系建模、约束校验引擎、模式演进管理、图遍历规划四大核心能力。
   内置15+实体类型与7类约束规则，支持append-only历史保留与三步迁移法，确保模式变更不破坏旧数据。
@@ -15,8 +15,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 智能助手
 ---
-
 # 知识本体
 
 一切皆实体，一切变更皆受约束。将Agent记忆从扁平文件升级为类型化可验证的知识图谱，支持图遍历查询、模式演进、多步规划建模，让知识结构化、可查询、可信任。

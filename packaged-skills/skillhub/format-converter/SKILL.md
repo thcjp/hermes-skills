@@ -1,11 +1,11 @@
 ---
-slug: format-converter
-name: format-converter
+slug: "format-converter"
+name: "format-converter"
 version: "1.0.0"
-displayName: 数据格式转换(专业版)
-summary: 全功能数据格式转换平台,支持批量、流式、自定义映射、定时任务与企业数据库导入导出。
-license: Proprietary
-edition: pro
+displayName: "数据格式转换(专业版)"
+summary: "全功能数据格式转换平台,支持批量、流式、自定义映射、定时任务与企业数据库导入导出。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   数据格式转换专业版面向需要在大规模数据与多源系统间进行格式转换的专业开发者与数据工程师,提供完整的批量、流式、自动化转换能力。核心能力:
   - 涵盖免费版全部能力,无文件大小与数量限制
@@ -24,6 +24,7 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
 # 数据格式转换(专业版)
 

@@ -1,11 +1,11 @@
 ---
-slug: block-monitor-tool-free
-name: block-monitor-tool-free
+slug: "block-monitor-tool-free"
+name: "block-monitor-tool-free"
 version: "1.0.0"
-displayName: 内容验证网关免费版
-summary: AI生成内容验证与策略检查工具,支持黑白名单管理、内容分类与基础策略执行,适合个人开发者内容审核。
-license: Proprietary
-edition: free
+displayName: "内容验证网关免费版"
+summary: "AI生成内容验证与策略检查工具,支持黑白名单管理、内容分类与基础策略执行,适合个人开发者内容审核。"
+license: "Proprietary"
+edition: "free"
 description: |-
   内容验证网关免费版,为个人开发者提供AI生成内容的验证与策略管理能力。
   核心能力:内容策略检查、黑白名单管理、内容分类标记、验证结果记录。
@@ -13,15 +13,14 @@ description: |-
   差异化:免费版聚焦基础策略检查,支持单规则管理,适合个人项目快速集成。
   适用关键词: 内容验证, 策略检查, 黑白名单, 内容审核, verification, policy, blocklist, allowlist
 tags:
-- 安全
-- 内容验证
-- 策略管理
-- 免费版
+  - 安全
+  - 内容验证
+  - 策略管理
+  - 免费版
 tools:
   - - read
-- exec
-# 内容验证网关免费版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 本工具为AI应用开发者提供内容验证与策略管理能力,在AI生成内容输出前执行策略检查,通过黑白名单机制过滤不当内容。免费版支持基础策略检查、内容分类标记与验证结果记录,适合个人开发者对AI输出进行基础内容审核。
 

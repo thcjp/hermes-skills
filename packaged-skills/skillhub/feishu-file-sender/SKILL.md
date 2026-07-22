@@ -1,22 +1,23 @@
 ---
-slug: feishu-file-sender
-name: feishu-file-sender
+slug: "feishu-file-sender"
+name: "feishu-file-sender"
 version: "1.0.0"
-displayName: 飞书文件发送专业版
-summary: 企业级文件批量分发与稳定投递，支持审计与重试机制
-license: Proprietary
-edition: pro
+displayName: "飞书文件发送专业版"
+summary: "企业级文件批量分发与稳定投递，支持审计与重试机制"
+license: "Proprietary"
+edition: "pro"
 description: |-
   飞书文件发送专业版面向企业用户与高效能个人用户。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 沟通协作
-- 飞书
-- 文件发送
-- 企业效率
-- 批量操作
+  - 沟通协作
+  - 飞书
+  - 文件发送
+  - 企业效率
+  - 批量操作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 飞书文件发送专业版
 

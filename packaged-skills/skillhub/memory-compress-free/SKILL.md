@@ -1,10 +1,10 @@
 ---
-slug: memory-compress-free
-name: memory-compress-free
+slug: "memory-compress-free"
+name: "memory-compress-free"
 version: "1.0.0"
-displayName: 日志压缩器免费版
-summary: 基础日志压缩工具，将日志压缩为结构化摘要，支持单文件处理
-license: MIT
+displayName: "日志压缩器免费版"
+summary: "基础日志压缩工具，将日志压缩为结构化摘要，支持单文件处理"
+license: "MIT"
 description: |-
   日志压缩器免费版提供基础日志压缩能力，将冗长日志压缩为结构化摘要。
   核心能力包括：单文件日志压缩、古文压缩四原则、关键词匹配提取、基础边界处理。
@@ -14,8 +14,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 智能助手
 ---
-
 # 日志压缩器免费版
 
 基础日志压缩工具，将日志压缩为结构化摘要。

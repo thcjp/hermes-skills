@@ -1,11 +1,11 @@
 ---
-slug: go-security-vuln-tool-free
-name: go-security-vuln-tool-free
+slug: "go-security-vuln-tool-free"
+name: "go-security-vuln-tool-free"
 version: "1.0.0"
-displayName: Go安全漏洞扫描免费版
-summary: Go模块安全漏洞检测工具,使用govulncheck扫描已知漏洞、评估影响并提供修复建议,适合个人Go开发者使用。
-license: Proprietary
-edition: free
+displayName: "Go安全漏洞扫描免费版"
+summary: "Go模块安全漏洞检测工具,使用govulncheck扫描已知漏洞、评估影响并提供修复建议,适合个人Go开发者使用。"
+license: "Proprietary"
+edition: "free"
 description: |-
   Go安全漏洞扫描免费版,为个人Go开发者提供依赖漏洞检测与修复指导能力。
   核心能力:govulncheck漏洞扫描、漏洞影响评估、修复版本建议、依赖更新指导。
@@ -13,13 +13,14 @@ description: |-
   差异化:免费版聚焦单项目扫描,使用官方govulncheck工具,适合个人开发者快速上手。
   适用关键词: Go安全, govulncheck, 漏洞扫描, Go模块, 依赖漏洞, golang, vulnerability, CVE
 tags:
-- 安全
-- Go
-- 漏洞扫描
-- 免费版
+  - 安全
+  - Go
+  - 漏洞扫描
+  - 免费版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Go安全漏洞扫描免费版
 

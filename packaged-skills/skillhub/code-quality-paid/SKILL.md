@@ -1,11 +1,11 @@
 ---
-slug: code-quality-paid
-name: code-quality-paid
+slug: "code-quality-paid"
+name: "code-quality-paid"
 version: "1.0.0"
-displayName: 代码质量检查专业版
-summary: 企业级代码质量审计,支持OWASP Top 10、批量扫描、自定义规则与CI/CD集成,输出多格式报告。
-license: Proprietary
-edition: pro
+displayName: "代码质量检查专业版"
+summary: "企业级代码质量审计,支持OWASP Top 10、批量扫描、自定义规则与CI/CD集成,输出多格式报告。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向企业研发团队的高级代码质量审计工具,提供深度安全扫描、合规性检查、批量项目分析与CI/CD流水线集成。核心能力:
   - OWASP Top 10 安全漏洞深度扫描
@@ -24,16 +24,15 @@ description: |-
   差异化:
   - 专业版完全兼容免费版...
 tags:
-- 开发工具
-- 代码质量
-- 安全审计
-- 企业级
-- DevSecOps
+  - 开发工具
+  - 代码质量
+  - 安全审计
+  - 企业级
+  - DevSecOps
 tools:
   - - read
-- exec
-# 代码质量检查工具 - 专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 代码质量检查专业版
 

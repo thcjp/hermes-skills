@@ -1,11 +1,11 @@
 ---
-slug: hugo-blog
-name: hugo-blog
+slug: "hugo-blog"
+name: "hugo-blog"
 version: "1.0.0"
-displayName: Hugo博客发布专业版
-summary: 企业级 Hugo 博客管理方案，支持批量发布、多语言站点、SEO 优化与 CI/CD 集成。
-license: Proprietary
-edition: pro
+displayName: "Hugo博客发布专业版"
+summary: "企业级 Hugo 博客管理方案，支持批量发布、多语言站点、SEO 优化与 CI/CD 集成。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向专业博主的 Hugo 博客管理工具，提供批量发布与站点级管理能力。核心能力:
   - 批量文章发布与定时发布调度
@@ -23,16 +23,15 @@ description: |-
 
   差异化: 专业版兼容免费版所有发布能力...
 tags:
-- 开发工具
-- 博客
-- Hugo
-- 内容运营
-- SEO
+  - 开发工具
+  - 博客
+  - Hugo
+  - 内容运营
+  - SEO
 tools:
   - - read
-- exec
-# Hugo 博客发布工具（专业版）
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Hugo博客发布专业版
 

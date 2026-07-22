@@ -1,11 +1,11 @@
 ---
-slug: quant-data-quality-tool-free
-name: quant-data-quality-tool-free
+slug: "quant-data-quality-tool-free"
+name: "quant-data-quality-tool-free"
 version: "1.0.0"
-displayName: 数据质量检查基础版
-summary: 量化策略数据质量检查工具,检查数据完整性、准确性、一致性与时效性
-license: Proprietary
-edition: free
+displayName: "数据质量检查基础版"
+summary: "量化策略数据质量检查工具,检查数据完整性、准确性、一致性与时效性"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力: 数据质量领域的专业化 AI 辅助工具,提供核心基础功能支持。
 
@@ -15,13 +15,14 @@ description: |-
 
   适用关键词: 数据质量, 量化, 检查, 完整性, 准确性, 一致性, 时效性
 tags:
-- 数据质量
-- 量化策略
-- 数据检查
-- 数据完整性
+  - 数据质量
+  - 量化策略
+  - 数据检查
+  - 数据完整性
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 数据质量检查基础版
 

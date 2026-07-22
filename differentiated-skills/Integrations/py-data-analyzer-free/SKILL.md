@@ -1,21 +1,22 @@
 ---
-slug: py-data-analyzer-free
-name: py-data-analyzer-free
+slug: "py-data-analyzer-free"
+name: "py-data-analyzer-free"
 version: "1.0.0"
-displayName: Python数据分析(免费版)
-summary: 提供Python数据清洗、统计分析与可视化建议，覆盖业务报表与科研数据的快速处理流程。
-license: Proprietary
-edition: free
+displayName: "Python数据分析(免费版)"
+summary: "提供Python数据清洗、统计分析与可视化建议，覆盖业务报表与科研数据的快速处理流程。"
+license: "Proprietary"
+edition: "free"
 description: |-
   Python数据分析免费版是一套面向独立开发者与初级数据分析师的 Python 数据处理知识库，帮助用户在日常工作中快速完成数据清洗、统计分析与可视化建议。核心能力：提供缺失值处理、异常值识别、数据类型转换等清洗模式；描述性统计、相关性分析、分组聚合等分析方法；折线图、柱状图、散点图、热力图等可视化建议
 tags:
-- 数据分析
-- 集成工具
-- Python
-- 免费版
+  - 数据分析
+  - 集成工具
+  - Python
+  - 免费版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Python数据分析（免费版）
 

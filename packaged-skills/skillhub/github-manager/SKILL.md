@@ -1,11 +1,11 @@
 ---
-slug: github-manager
-name: github-manager
+slug: "github-manager"
+name: "github-manager"
 version: "1.0.0"
-displayName: GitHub管理器(专业版)
-summary: 全功能GitHub管理工具,含批量操作、GraphQL高级查询、自动化工作流、团队仪表盘与Webhook管理,适合团队企业级协作。
-license: Proprietary
-edition: pro
+displayName: "GitHub管理器(专业版)"
+summary: "全功能GitHub管理工具,含批量操作、GraphQL高级查询、自动化工作流、团队仪表盘与Webhook管理,适合团队企业级协作。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   GitHub管理器(专业版)是企业级GitHub协作管理工具,在免费版基础查询能力上,扩展批量操作、GraphQL高级查询、自动化工作流、团队仪表盘与Webhook管理等高级能力。核心能力:
   - 批量Issue/PR操作: 批量关闭、打标签、分配负责人、迁移
@@ -15,13 +15,14 @@ description: |-
   - Webhook管理: 事件订阅、自动触发、回调配置
   - 安全审计: 权限审查、敏感信息扫...
 tags:
-- GitHub
-- 团队协作
-- 自动化
-- 企业版
+  - GitHub
+  - 团队协作
+  - 自动化
+  - 企业版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # GitHub管理器(专业版)
 

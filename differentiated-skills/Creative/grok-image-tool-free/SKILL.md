@@ -1,11 +1,11 @@
 ---
-slug: grok-image-tool-free
-name: grok-image-tool-free
+slug: "grok-image-tool-free"
+name: "grok-image-tool-free"
 version: "1.0.0"
-displayName: Grok图片生成-免费版
-summary: 轻量级AI图片生成工具，通过浏览器自动化操作Grok Imagine生成并保存图片。
-license: Proprietary
-edition: free
+displayName: "Grok图片生成-免费版"
+summary: "轻量级AI图片生成工具，通过浏览器自动化操作Grok Imagine生成并保存图片。"
+license: "Proprietary"
+edition: "free"
 description: |-
   Grok图片生成工具免费版，面向个人用户的AI图片生成方案。
 
@@ -24,12 +24,13 @@ description: |-
 
   适用关键词: grok, imagine, 图片生成, AI画图, 生成图片, 浏览器自动化
 tags:
-- Creative
-- ImageGeneration
-- Automation
+  - Creative
+  - ImageGeneration
+  - Automation
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Grok图片生成工具（免费版）
 

@@ -1,11 +1,10 @@
 ---
-slug: javascript
-name: javascript
+slug: "javascript"
+name: "javascript"
 version: "1.0.3"
-displayName: JavaScript
-summary: Write robust JavaScript with async patterns, type coercion handling, and
-  modern ES2023+ features.
-license: MIT
+displayName: "JavaScript"
+summary: "Write robust JavaScript with async patterns, type coercion handling, and"
+license: "MIT"
 description: |-
   Write robust JavaScript with async patterns, type coercion handling,
   and modern ES2023+ features。核心能力:
@@ -26,10 +25,11 @@ description: |-
 
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数...
 tags:
-- Development
+  - Development
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # JavaScript
 

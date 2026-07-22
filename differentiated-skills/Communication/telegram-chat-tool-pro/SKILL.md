@@ -1,11 +1,11 @@
 ---
-slug: telegram-chat-tool-pro
-name: telegram-chat-tool-pro
+slug: "telegram-chat-tool-pro"
+name: "telegram-chat-tool-pro"
 version: "1.0.0"
-displayName: 电报聊天工具专业版
-summary: 企业级Telegram多Bot管理与跨实例通信工具,支持主动推送、消息归档审计与群组批量管理。
-license: Proprietary
-edition: pro
+displayName: "电报聊天工具专业版"
+summary: "企业级Telegram多Bot管理与跨实例通信工具,支持主动推送、消息归档审计与群组批量管理。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   电报聊天工具专业版,面向团队与企业用户提供多 Bot 管理、主动消息推送、消息归档审计与群组批量管理能力。核心能力:
   - 多 Bot 统一管理与快速切换
@@ -24,18 +24,17 @@ description: |-
 
   差异化:专业版完全兼容免费版配置与命令体系...
 tags:
-- 沟通协作
-- 即时通讯
-- Telegram
-- 机器人
-- 企业效率
-- 自动化
-- 消息归档
+  - 沟通协作
+  - 即时通讯
+  - Telegram
+  - 机器人
+  - 企业效率
+  - 自动化
+  - 消息归档
 tools:
   - - read
-- exec
-# 电报聊天工具 - 专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 电报聊天工具专业版是一款面向团队与企业用户的 Telegram 多 Bot 管理与跨实例通信解决方案。在完全兼容免费版单 Bot 配置与基础聊天能力的基础上,专业版解锁了多 Bot 统一管理、主动消息推送、消息归档审计、群组批量管理与 Webhook 集成等高级能力。
 

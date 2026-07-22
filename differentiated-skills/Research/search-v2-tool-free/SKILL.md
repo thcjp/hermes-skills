@@ -1,11 +1,11 @@
 ---
-slug: search-v2-tool-free
-name: search-v2-tool-free
+slug: "search-v2-tool-free"
+name: "search-v2-tool-free"
 version: "1.0.0"
-displayName: 搜索工具免费版
-summary: 轻量级LLM优化搜索工具,支持基础网页搜索与结果摘要,适合个人用户快速获取信息
-license: Proprietary
-edition: free
+displayName: "搜索工具免费版"
+summary: "轻量级LLM优化搜索工具,支持基础网页搜索与结果摘要,适合个人用户快速获取信息"
+license: "Proprietary"
+edition: "free"
 description: |-
   搜索工具免费版为个人用户提供轻量级的LLM优化网页搜索能力。
 
@@ -24,13 +24,14 @@ description: |-
 
   适用关键词: 搜索, search, Tavily, 网页搜索, LLM优化, 检索, 查询
 tags:
-- 研究工具
-- 搜索
-- 信息检索
-- 个人效率
+  - 研究工具
+  - 搜索
+  - 信息检索
+  - 个人效率
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 搜索工具免费版
 

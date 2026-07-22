@@ -1,11 +1,11 @@
 ---
-slug: ai-podcast-tool-free
-name: ai-podcast-tool-free
+slug: "ai-podcast-tool-free"
+name: "ai-podcast-tool-free"
 version: "1.0.0"
-displayName: AI播客生成-免费版
-summary: 将PDF、文本、链接转为双人对话播客,适合个人创作者快速制作音频内容。
-license: Proprietary
-edition: free
+displayName: "AI播客生成-免费版"
+summary: "将PDF、文本、链接转为双人对话播客,适合个人创作者快速制作音频内容。"
+license: "Proprietary"
+edition: "free"
 description: |-
   AI播客生成免费版,面向个人用户的文档转播客工具。
 
@@ -24,12 +24,13 @@ description: |-
 
   适用关键词: AI播客, PDF转播客, 文本转音频, 双人对话, 播客生成, 音频内容, magicpodcast
 tags:
-- Creative
-- 播客生成
-- AI创作
+  - Creative
+  - 播客生成
+  - AI创作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # AI播客生成工具 - 免费版
 

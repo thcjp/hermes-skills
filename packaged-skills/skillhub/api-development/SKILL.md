@@ -1,19 +1,19 @@
 ---
-slug: api-development
-name: api-development
+slug: "api-development"
+name: "api-development"
 version: "1.0.0"
-displayName: api-development
-summary: Meta-skill that orchestrates the full API development lifecycle — from design
-  through documentati...
-license: MIT
+displayName: "api-development"
+summary: "Meta-skill that orchestrates the full API development lifecycle — from design"
+license: "MIT"
 description: |-
   Meta-skill that orchestrates the full API development lifecycle — from
   design through documentati。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-- Knowledge
+  - Knowledge
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # api-development
 

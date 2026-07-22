@@ -1,11 +1,11 @@
 ---
-slug: game-toolkit-free
-name: game-toolkit-free
+slug: "game-toolkit-free"
+name: "game-toolkit-free"
 version: "1.0.0"
-displayName: 游戏设计工具箱免费版
-summary: 自然语言生成完整可玩的桌游、派对游戏与儿童游戏,含规则与组件
-license: Proprietary
-edition: free
+displayName: "游戏设计工具箱免费版"
+summary: "自然语言生成完整可玩的桌游、派对游戏与儿童游戏,含规则与组件"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人用户的游戏设计工具箱,用一句话描述即可生成完整可玩的游戏。
   核心能力: 桌游设计、派对游戏、儿童游戏、视频游戏概念、生活游戏化
@@ -13,14 +13,15 @@ description: |-
   差异化: 免费版聚焦个人场景的完整游戏设计,适合家庭、教师与爱好者使用
   适用关键词: 游戏设计, 桌游, 派对游戏, 儿童游戏, 游戏化, 团建活动
 tags:
-- 游戏设计
-- 桌游
-- 派对游戏
-- 创意工具
-- 教育游戏
+  - 游戏设计
+  - 桌游
+  - 派对游戏
+  - 创意工具
+  - 教育游戏
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 游戏设计工具箱 (免费版)
 

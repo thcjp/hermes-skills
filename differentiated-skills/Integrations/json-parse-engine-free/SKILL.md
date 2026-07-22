@@ -1,23 +1,23 @@
 ---
-slug: json-parse-engine-free
-name: json-parse-engine-free
+slug: "json-parse-engine-free"
+name: "json-parse-engine-free"
 version: "1.0.0"
-displayName: JSON解析引擎免费版
-summary: 轻量级JSON解析、展平与提取工具，支持文件与字符串解析、嵌套结构展平、路径提取。
-license: Proprietary
-edition: free
+displayName: "JSON解析引擎免费版"
+summary: "轻量级JSON解析、展平与提取工具，支持文件与字符串解析、嵌套结构展平、路径提取。"
+license: "Proprietary"
+edition: "free"
 description: |-
   JSON解析引擎免费版提供文件解析、字符串解析、嵌套展平、路径提取四项核心能力，帮助开发者将复杂JSON转化为可消费的结构化数据。核心能力：支持文件与字符串两种输入源、嵌套JSON展平为单层字典、点分路径提取嵌套元素、必填字段校验与完整度评分、记录计数与错误报告。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
-- 集成工具
-- JSON
-- 解析
-- 开发者工具
+  - 集成工具
+  - JSON
+  - 解析
+  - 开发者工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # JSON解析引擎（免费版）
 
 本工具提供JSON数据的解析、展平、提取与校验能力，帮助开发者将复杂嵌套JSON转化为可消费的结构化数据，适用于数据预处理与字段提取场景。

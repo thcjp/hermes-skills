@@ -1,11 +1,11 @@
 ---
-slug: monitor-toolkit-free
-name: monitor-toolkit-free
+slug: "monitor-toolkit-free"
+name: "monitor-toolkit-free"
 version: "1.0.0"
-displayName: 监控工具包-免费版
-summary: 轻量级服务监控工具,支持HTTP/SSL/进程/磁盘检查,状态变更告警,适合个人项目
-license: Proprietary
-edition: free
+displayName: "监控工具包-免费版"
+summary: "轻量级服务监控工具,支持HTTP/SSL/进程/磁盘检查,状态变更告警,适合个人项目"
+license: "Proprietary"
+edition: "free"
 description: |-
   轻量级服务监控工具免费版,面向个人开发者与小型项目。核心能力:
   - HTTP 接口可用性监控
@@ -21,13 +21,14 @@ description: |-
 
   差异化:免费版提供基础监控能力,适合个人项目
 tags:
-- 监控
-- 运维
-- 告警
-- 健康检查
+  - 监控
+  - 运维
+  - 告警
+  - 健康检查
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 监控工具包 - 免费版
 

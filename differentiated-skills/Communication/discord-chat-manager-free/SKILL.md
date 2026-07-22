@@ -1,11 +1,11 @@
 ---
-slug: discord-chat-manager-free
-name: discord-chat-manager-free
+slug: "discord-chat-manager-free"
+name: "discord-chat-manager-free"
 version: "1.0.0"
-displayName: Discord聊天管理免费版
-summary: 基础 Discord 聊天管理工具,支持消息发送、回复、搜索与读取,适合个人日常使用。
-license: Proprietary
-edition: free
+displayName: "Discord聊天管理免费版"
+summary: "基础 Discord 聊天管理工具,支持消息发送、回复、搜索与读取,适合个人日常使用。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人用户的 Discord 频道聊天管理工具。核心能力:
   - 向频道发送消息并支持回复指定消息
@@ -20,13 +20,14 @@ description: |-
 
   差异化: 免费版聚焦高频聊天操作,命令简洁即用;Pro 版提供高级搜索、批量消息与频道管理能力
 tags:
-- Discord
-- 聊天管理
-- Communication
-- 消息搜索
+  - Discord
+  - 聊天管理
+  - Communication
+  - 消息搜索
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Discord 聊天管理(免费版)
 

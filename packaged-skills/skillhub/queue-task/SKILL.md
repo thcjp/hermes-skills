@@ -1,11 +1,10 @@
 ---
-slug: queue-task
-name: queue-task
+slug: "queue-task"
+name: "queue-task"
 version: "0.1.0"
-displayName: Queue Task
-summary: Durable queue-task helper for resumable, idempotent batch jobs in task-father
-  task folders.
-license: MIT
+displayName: "Queue Task"
+summary: "Durable queue-task helper for resumable, idempotent batch jobs in task-father"
+license: "MIT"
 description: |-
   Durable queue-task helper for resumable, idempotent batch jobs in task-father
   task folders。核心能力:
@@ -26,10 +25,11 @@ description: |-
 
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关...
 tags:
-- Automation
+  - Automation
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Queue Task
 

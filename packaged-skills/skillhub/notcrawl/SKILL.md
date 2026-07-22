@@ -1,10 +1,10 @@
 ---
-slug: notcrawl
-name: notcrawl
+slug: "notcrawl"
+name: "notcrawl"
 version: "1.0.1"
-displayName: Notcrawl
+displayName: "Notcrawl"
 summary: "Notion archive: search, sync freshness, pages/databases, Markdown exports."
-license: MIT
+license: "MIT"
 description: |-
   Notion archive: search, sync freshness, pages/databases, Markdown exports。核心能力:
 
@@ -21,13 +21,13 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Integrations
-- Productivity
+  - Integrations
+  - Productivity
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Notcrawl
 

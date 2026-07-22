@@ -1,10 +1,10 @@
 ---
-slug: knowledge-graph-skill-free
-name: knowledge-graph-skill-free
+slug: "knowledge-graph-skill-free"
+name: "knowledge-graph-skill-free"
 version: "1.0.0"
-displayName: 知识图谱基础版
-summary: 嵌入式知识图谱基础能力，支持实体、关系、属性的基础存储与查询，适合结构化知识管理。
-license: MIT
+displayName: "知识图谱基础版"
+summary: "嵌入式知识图谱基础能力，支持实体、关系、属性的基础存储与查询，适合结构化知识管理。"
+license: "MIT"
 description: |-
   嵌入式知识图谱基础能力，支持实体、关系、属性的基础存储
   与查询。
@@ -27,11 +27,12 @@ description: |-
 
   差异化:基础版聚焦实体与关系的基础存储与查询，去除了高级版的图谱推理、跨图谱关联与向量检索能力。
 tags:
-- Development
-- Agents
-- Research
+  - Development
+  - Agents
+  - Research
 tools:
   - read
+homepage: "https://skillhub.cn"
 ---
 # 知识图谱基础版
 

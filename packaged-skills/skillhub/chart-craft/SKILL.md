@@ -1,11 +1,11 @@
 ---
-slug: chart-craft
-name: chart-craft
+slug: "chart-craft"
+name: "chart-craft"
 version: "1.0.0"
-displayName: 图表工坊专业版
-summary: 企业级图表生成平台，支持12种高级图表类型、自定义模板、批量生成、多格式导出与使用分析
-license: Proprietary
-edition: pro
+displayName: "图表工坊专业版"
+summary: "企业级图表生成平台，支持12种高级图表类型、自定义模板、批量生成、多格式导出与使用分析"
+license: "Proprietary"
+edition: "pro"
 description: |-
   图表工坊专业版是一款面向团队与企业的图表生成平台，在免费版四种基础图表基础上，新增堆叠柱状图、面积图、雷达图、热力图等8种高级图表类型，并提供自定义模板、批量生成、多格式导出与使用统计分析等高级能力。核心能力：
   - 12种图表类型：基础4种+高级8种（堆叠柱状、面积、雷达、热力图、箱线图、气泡图、瀑布图、组合图）
@@ -14,12 +14,13 @@ description: |-
   - 多格式导出：PNG、SVG、PDF、JSON四种格式
   - 图表历史分析与使用统计...
 tags:
-- 集成工具
-- 数据可视化
-- 企业报表
+  - 集成工具
+  - 数据可视化
+  - 企业报表
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 图表工坊专业版
 

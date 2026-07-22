@@ -1,11 +1,11 @@
 ---
-slug: v2ray-proxy-tool-pro
-name: v2ray-proxy-tool-pro
+slug: "v2ray-proxy-tool-pro"
+name: "v2ray-proxy-tool-pro"
 version: "1.0.0"
-displayName: V2Ray代理管理专业版
-summary: 多节点切换、定时开关、负载均衡与连接监控，适合团队与企业级代理管理需求。
-license: Proprietary
-edition: pro
+displayName: "V2Ray代理管理专业版"
+summary: "多节点切换、定时开关、负载均衡与连接监控，适合团队与企业级代理管理需求。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   V2Ray代理管理工具专业版，面向团队与企业的高阶代理管理平台。核心能力:
   - 多代理节点管理与智能切换
@@ -21,13 +21,14 @@ description: |-
 
   差异化: 专业版在免费版核心开关能力之上扩展多节点与自动化，新增负载均衡、监控告警、团队共享等企业级能力，并与免费版命令兼容
 tags:
-- V2Ray
-- 代理管理
-- 多节点
-- 专业版
+  - V2Ray
+  - 代理管理
+  - 多节点
+  - 专业版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # V2Ray代理管理（专业版）
 

@@ -1,11 +1,11 @@
 ---
-slug: api-dev-tool-free
-name: api-dev-tool-free
+slug: "api-dev-tool-free"
+name: "api-dev-tool-free"
 version: "1.0.0"
-displayName: API开发工具（免费版）
-summary: 编排完整API开发生命周期：设计、规格生成、脚手架、测试、文档与版本部署。
-license: Proprietary
-edition: free
+displayName: "API开发工具（免费版）"
+summary: "编排完整API开发生命周期：设计、规格生成、脚手架、测试、文档与版本部署。"
+license: "Proprietary"
+edition: "free"
 description: |-
   API开发工具 - （免费版）
 
@@ -17,15 +17,15 @@ description: |-
 
   适用关键词: API开发, 接口设计, OpenAPI, REST, GraphQL, 端点, 版本管理, API测试
 tags:
-- API开发
-- OpenAPI
-- 后端开发
-- 接口设计
+  - API开发
+  - OpenAPI
+  - 后端开发
+  - 接口设计
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # API开发工具（免费版）
 
 ## 概述

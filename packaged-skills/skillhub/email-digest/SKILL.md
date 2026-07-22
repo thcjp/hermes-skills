@@ -1,22 +1,23 @@
 ---
-slug: email-digest
-name: email-digest
+slug: "email-digest"
+name: "email-digest"
 version: "1.0.0"
-displayName: 邮件日报专业版
-summary: 多邮箱AI智能摘要与定时报告，企业级邮件监控与分类方案
-license: Proprietary
-edition: pro
+displayName: "邮件日报专业版"
+summary: "多邮箱AI智能摘要与定时报告，企业级邮件监控与分类方案"
+license: "Proprietary"
+edition: "pro"
 description: |-
   邮件日报专业版面向企业用户与高效能个人用户。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 沟通协作
-- 邮件管理
-- 邮件摘要
-- 企业效率
-- AI智能
+  - 沟通协作
+  - 邮件管理
+  - 邮件摘要
+  - 企业效率
+  - AI智能
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 邮件日报专业版
 

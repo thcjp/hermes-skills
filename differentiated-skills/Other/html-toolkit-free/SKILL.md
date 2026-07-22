@@ -1,11 +1,11 @@
 ---
-slug: html-toolkit-free
-name: html-toolkit-free
+slug: "html-toolkit-free"
+name: "html-toolkit-free"
 version: "1.0.0"
-displayName: HTML 工具箱
-summary: 面向个人开发者的 HTML 常见坑规避工具，覆盖可访问性与表单。
-license: Proprietary
-edition: free
+displayName: "HTML 工具箱"
+summary: "面向个人开发者的 HTML 常见坑规避工具，覆盖可访问性与表单。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人开发者的 HTML 常见错误规避工具。核心能力:
   - 布局抖动预防与表单陷阱规避
@@ -20,13 +20,14 @@ description: |-
 
   差异化: 免费版聚焦单页 HTML 常见坑规避，提供可访问性与表单清单，零成本自检
 tags:
-- HTML
-- 可访问性
-- 个人效率
-- 其他工具
+  - HTML
+  - 可访问性
+  - 个人效率
+  - 其他工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # HTML 工具箱（免费版）
 

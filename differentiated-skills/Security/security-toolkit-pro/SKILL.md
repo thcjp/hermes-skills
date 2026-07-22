@@ -1,11 +1,11 @@
 ---
-slug: security-toolkit-pro
-name: security-toolkit-pro
+slug: "security-toolkit-pro"
+name: "security-toolkit-pro"
 version: "1.0.0"
-displayName: Agent安全工具箱(专业版)
-summary: 企业级AI Agent安全平台,含行动评估、8项自动巡检、信任注册表、6维健康评分与HTML报告
-license: Proprietary
-edition: pro
+displayName: "Agent安全工具箱(专业版)"
+summary: "企业级AI Agent安全平台,含行动评估、8项自动巡检、信任注册表、6维健康评分与HTML报告"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力:
   - 24条规则+自定义规则安全扫描引擎
@@ -25,16 +25,16 @@ description: |-
   - 企业级运行时安全决策引擎
   ...
 tags:
-- 安全
-- Agent安全
-- 企业安全
-- 合规审计
-- 安全治理
+  - 安全
+  - Agent安全
+  - 企业安全
+  - 合规审计
+  - 安全治理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Agent安全工具箱(专业版)
 ## 概述
 Agent安全工具箱专业版是一款面向企业用户的AI Agent安全治理平台。在免费版24条静态扫描规则基础上,增加了运行时行动安全评估、8项自动化安全巡检、Skill信任注册表、6维度健康评分与可视化HTML报告等企业级功能。支持3级保护策略(strict/balanced/permissive),全面保障企业AI Agent生态安全。与免费版完全兼容,扫描规则和报告格式可无缝复用。

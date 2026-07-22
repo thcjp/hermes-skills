@@ -1,11 +1,11 @@
 ---
-slug: smart-weekly-report-tool-free
-name: smart-weekly-report-tool-free
+slug: "smart-weekly-report-tool-free"
+name: "smart-weekly-report-tool-free"
 version: "1.0.0"
-displayName: 智能周报基础版
-summary: 自动生成周报草稿与待办清单,智能整理本周工作与下周计划
-license: Proprietary
-edition: free
+displayName: "智能周报基础版"
+summary: "自动生成周报草稿与待办清单,智能整理本周工作与下周计划"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力: 工作汇报领域的专业化 AI 辅助工具,提供核心基础功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: 周报, 工作总结, 待办, 智能报告, 自动生成, 下周计划
 tags:
-- 周报
-- 工作总结
-- 待办清单
-- 自动化
+  - 周报
+  - 工作总结
+  - 待办清单
+  - 自动化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 智能周报基础版
 
 ## 概述

@@ -1,11 +1,11 @@
 ---
-slug: meeting-note-tool-pro
-name: meeting-note-tool-pro
+slug: "meeting-note-tool-pro"
+name: "meeting-note-tool-pro"
 version: "1.0.0"
-displayName: 会议纪要专业版
-summary: 企业级会议智能系统,支持多轮深度分析、专家圆桌、权力动态识别与知识网络管理
-license: Proprietary
-edition: pro
+displayName: "会议纪要专业版"
+summary: "企业级会议智能系统,支持多轮深度分析、专家圆桌、权力动态识别与知识网络管理"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 会议管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: 会议, 纪要, 决策, 共识, 分歧, 行动项, 复盘, zettelkasten
 tags:
-- 会议纪要
-- 决策追踪
-- 行动项
-- Zettelkasten
+  - 会议纪要
+  - 决策追踪
+  - 行动项
+  - Zettelkasten
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 会议纪要专业版
 
 ## 概述

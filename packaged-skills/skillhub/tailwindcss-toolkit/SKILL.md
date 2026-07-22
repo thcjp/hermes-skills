@@ -1,11 +1,11 @@
 ---
-slug: tailwindcss-toolkit
-name: tailwindcss-toolkit
+slug: "tailwindcss-toolkit"
+name: "tailwindcss-toolkit"
 version: "1.0.0"
-displayName: Tailwind CSS工具包专业版
-summary: 企业级Tailwind CSS工具包,支持自定义插件、设计系统、性能优化与组件库,适配团队协作与大型项目。
-license: Proprietary
-edition: pro
+displayName: "Tailwind CSS工具包专业版"
+summary: "企业级Tailwind CSS工具包,支持自定义插件、设计系统、性能优化与组件库,适配团队协作与大型项目。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队与企业用户的 Tailwind CSS 工具包(专业版)。核心能力:
   - 涵盖免费版全部能力(实用类、响应式、暗黑模式、状态变体)
@@ -16,18 +16,17 @@ description: |-
   - 多主题与品牌切换
   - 与主流框架集成(React/Vue/Next
 tags:
-- 创意设计
-- 前端开发
-- CSS
-- Tailwind
-- 企业级
-- 设计系统
-- 性能优化
+  - 创意设计
+  - 前端开发
+  - CSS
+  - Tailwind
+  - 企业级
+  - 设计系统
+  - 性能优化
 tools:
   - - read
-- exec
-# Tailwind CSS 工具包 - 专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Tailwind CSS工具包专业版
 

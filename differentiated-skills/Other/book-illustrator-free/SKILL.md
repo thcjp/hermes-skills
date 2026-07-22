@@ -1,23 +1,23 @@
 ---
-slug: book-illustrator-free
-name: book-illustrator-free
+slug: "book-illustrator-free"
+name: "book-illustrator-free"
 version: "1.0.0"
-displayName: 书籍插画助手
-summary: 书籍插画创作与管理工具，支持插画需求规划、风格匹配、创作指导与项目管理全流程。
-license: Proprietary
-edition: free
+displayName: "书籍插画助手"
+summary: "书籍插画创作与管理工具，支持插画需求规划、风格匹配、创作指导与项目管理全流程。"
+license: "Proprietary"
+edition: "free"
 description: |-
   书籍插画助手免费版解决作者与出版方在书籍插画制作中"需求不清晰、风格不匹配、沟通效率低"的核心痛点。书籍插画助手提供从插画需求规划到创作指导的完整流程框架，帮助作者系统化地规划书籍插画，与插画师高效协作。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 书籍插画
-- 创作指导
-- 插画管理
-- 出版配图
+  - 书籍插画
+  - 创作指导
+  - 插画管理
+  - 出版配图
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 书籍插画助手（免费版）
 
 > **从"需要插画"到"插画完成"，结构化流程让创作不再迷茫。**

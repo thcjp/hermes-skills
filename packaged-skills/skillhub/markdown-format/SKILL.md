@@ -1,11 +1,11 @@
 ---
-slug: markdown-format
-name: markdown-format
+slug: "markdown-format"
+name: "markdown-format"
 version: "1.0.0"
-displayName: Markdown格式化工具专业版
-summary: 企业级文档批量格式化,支持自定义模板、团队规范、多格式输出与质量审计
-license: Proprietary
-edition: pro
+displayName: "Markdown格式化工具专业版"
+summary: "企业级文档批量格式化,支持自定义模板、团队规范、多格式输出与质量审计"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队与企业的高级 Markdown 格式化工具,在免费版基础上扩展批量处理、规范管理、质量审计等能力。核心能力:
   - 批量目录格式化与聚合报告
@@ -25,14 +25,15 @@ description: |-
   - 提供质量评分与审计能力
   ...
 tags:
-- 文档工具
-- Markdown
-- 批量处理
-- 企业级
-- 质量审计
+  - 文档工具
+  - Markdown
+  - 批量处理
+  - 企业级
+  - 质量审计
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Markdown格式化工具专业版
 

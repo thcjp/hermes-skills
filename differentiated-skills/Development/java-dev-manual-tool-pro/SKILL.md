@@ -1,11 +1,11 @@
 ---
-slug: java-dev-manual-tool-pro
-name: java-dev-manual-tool-pro
+slug: "java-dev-manual-tool-pro"
+name: "java-dev-manual-tool-pro"
 version: "1.0.0"
-displayName: Java开发手册专业版
-summary: 企业级 Java 开发规约方案，含自定义规则、团队规范模板与 CI 集成。
-license: Proprietary
-edition: pro
+displayName: "Java开发手册专业版"
+summary: "企业级 Java 开发规约方案，含自定义规则、团队规范模板与 CI 集成。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向企业级 Java 开发团队的开发规约治理工具，提供团队级规范定制能力。核心能力:
   - 7 大维度规约的团队级自定义配置
@@ -23,16 +23,15 @@ description: |-
 
   差异化: 专业版兼容免费版所有规约内容...
 tags:
-- 开发工具
-- Java
-- 开发规范
-- 企业协作
-- 架构设计
+  - 开发工具
+  - Java
+  - 开发规范
+  - 企业协作
+  - 架构设计
 tools:
   - - read
-- exec
-# Java 开发手册（专业版）
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 本工具面向企业级 Java 开发团队，提供开发规约的完整治理方案。在免费版 7 大维度规约速查能力之上，专业版新增团队级规则定制、规约合规性自动检查、新项目脚手架集成、架构分层约束、设计模式示例库、CI/CD 规约门禁等能力。通过可配置的规则引擎与自动化检查脚本，帮助团队建立统一、可执行、可追踪的编码规范体系。
 

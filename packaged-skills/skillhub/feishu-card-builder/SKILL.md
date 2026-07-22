@@ -1,11 +1,11 @@
 ---
-slug: feishu-card-builder
-name: feishu-card-builder
+slug: "feishu-card-builder"
+name: "feishu-card-builder"
 version: "1.0.0"
-displayName: 飞书卡片专业版
-summary: 企业级飞书交互卡片与批量推送，支持模板与高级组件
-license: Proprietary
-edition: pro
+displayName: "飞书卡片专业版"
+summary: "企业级飞书交互卡片与批量推送，支持模板与高级组件"
+license: "Proprietary"
+edition: "pro"
 description: |-
   飞书卡片专业版面向企业用户与高效能个人用户，在免费版卡片消息发送能力之上扩展
   批量推送、卡片模板系统、高级交互组件、数据动态绑定、卡片版本管理与发送分析等
@@ -13,14 +13,15 @@ description: |-
   - 批量卡片推送（多用户/多群组同时发送）
   - 卡片模板系统（内置与自定义模板。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
-- 沟通协作
-- 飞书
-- 卡片消息
-- 企业效率
-- 批量操作
+  - 沟通协作
+  - 飞书
+  - 卡片消息
+  - 企业效率
+  - 批量操作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 飞书卡片专业版
 

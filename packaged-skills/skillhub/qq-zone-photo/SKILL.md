@@ -1,10 +1,10 @@
 ---
-slug: qq-zone-photo
-name: qq-zone-photo
+slug: "qq-zone-photo"
+name: "qq-zone-photo"
 version: "1.0.3"
-displayName: 社交空间相册
-summary: 管理社交空间相册，支持扫码登录、浏览照片、上传下载
-license: MIT
+displayName: "社交空间相册"
+summary: "管理社交空间相册，支持扫码登录、浏览照片、上传下载"
+license: "MIT"
 description: |-
   社交空间相册自动化管理工具。支持扫码登录、相册浏览、照片上传/下载、
   相册创建等功能。通过Cookie认证访问社交空间非官方API，适用于相册备份、
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 社交空间相册
 
 社交空间相册的自动化管理工具，支持扫码登录、相册浏览、照片上传/下载、相册创建等功能。通过 `qzone_photos.py` 脚本调用社交空间非官方API实现自动化操作。

@@ -1,10 +1,10 @@
 ---
-slug: creator-alpha-feed-free
-name: creator-alpha-feed-free
+slug: "creator-alpha-feed-free"
+name: "creator-alpha-feed-free"
 version: "1.0.0"
-displayName: 创作者AI日报(免费版)
-summary: 每日采集X平台AI内容,基础三档排名,写入Obsidian日报,适合个人创作者快速选题。
-license: MIT
+displayName: "创作者AI日报(免费版)"
+summary: "每日采集X平台AI内容,基础三档排名,写入Obsidian日报,适合个人创作者快速选题。"
+license: "MIT"
 description: |-
   面向 AI 内容创作者的每日内容采集 Skill 免费版。按"X 主页 feed → 白名单账号 → 关键词"
   顺序采集 AI 领域内容,浏览器标签页最多 7 个并发,按 KOL TOP3、实用/教程/观点 TOP10、
@@ -17,8 +17,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Creator Alpha Feed Free 创作者 AI 日报(免费版)
 
 ## 概述

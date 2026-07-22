@@ -1,24 +1,24 @@
 ---
-slug: azure-cloud-inspector-free
-name: azure-cloud-inspector-free
+slug: "azure-cloud-inspector-free"
+name: "azure-cloud-inspector-free"
 version: "1.0.0"
-displayName: Azure巡检员免费版
-summary: 面向日常巡检的Azure检查助手,默认只读,风险评分,暴露面发现,配置漂移检测。
-license: Proprietary
-edition: free
+displayName: "Azure巡检员免费版"
+summary: "面向日常巡检的Azure检查助手,默认只读,风险评分,暴露面发现,配置漂移检测。"
+license: "Proprietary"
+edition: "free"
 description: |-
   Azure巡检员免费版是一个以"日常巡检"为核心视角的Azure CLI辅助工具。针对云上资源"配置漂移无人察觉、公网暴露面长期敞开、巡检脚本每次重写、风险等级无量化、巡检结论难分享"五大痛点,构建了风险评分模型、暴露面发现、配置漂移检测、巡检任务模板和巡检报告生成五大基础能力。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- 智能代理
-- 云计算
-- Azure
-- 巡检
-- 安全检查
+  - 智能代理
+  - 云计算
+  - Azure
+  - 巡检
+  - 安全检查
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Azure巡检员(免费版)
 
 面向"日常巡检"场景的Azure CLI辅助工具。默认只读查询,聚焦检查与报告,不主动执行变更操作。仅在用户明确要求变更并确认后,才执行写/破坏性操作。

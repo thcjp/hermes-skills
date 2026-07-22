@@ -1,21 +1,22 @@
 ---
-slug: grain-crawler
-name: grain-crawler
+slug: "grain-crawler"
+name: "grain-crawler"
 version: "1.0.0"
-displayName: 归档检索(专业版)
-summary: 全功能 Granola 归档检索，含同步、SQL、转录稿、面板、批量导出。
-license: Proprietary
-edition: pro
+displayName: "归档检索(专业版)"
+summary: "全功能 Granola 归档检索，含同步、SQL、转录稿、面板、批量导出。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   全功能 Granola 归档检索。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 集成工具
-- 知识管理
-- 企业效率
-- 数据分析
+  - 集成工具
+  - 知识管理
+  - 企业效率
+  - 数据分析
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 归档检索(专业版)
 

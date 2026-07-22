@@ -1,23 +1,23 @@
 ---
-slug: browser-automation-v2-tool-free
-name: browser-automation-v2-tool-free
+slug: "browser-automation-v2-tool-free"
+name: "browser-automation-v2-tool-free"
 version: "1.0.0"
-displayName: 浏览器自动化(免费版)
-summary: 浏览器自动化免费版，支持标签页自动清理、超时重试、智能等待与基础表单填写。
-license: Proprietary
-edition: free
+displayName: "浏览器自动化(免费版)"
+summary: "浏览器自动化免费版，支持标签页自动清理、超时重试、智能等待与基础表单填写。"
+license: "Proprietary"
+edition: "free"
 description: |-
   浏览器自动化助手免费版是面向个人开发者和轻量任务场景的浏览器自动化工具。聚焦"打开页面-等待加载-提取数据-关闭标签"四步基础流程，让重复的网页操作自动化。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 浏览器自动化
-- 网页抓取
-- 表单填写
-- 单页面
+  - 浏览器自动化
+  - 网页抓取
+  - 表单填写
+  - 单页面
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 浏览器自动化助手（免费版）
 
 > **打开页面、等待加载、提取内容、自动清理。四步完成单页面自动化。**

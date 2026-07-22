@@ -1,11 +1,11 @@
 ---
-slug: cheat-code-tool-free
-name: cheat-code-tool-free
+slug: "cheat-code-tool-free"
+name: "cheat-code-tool-free"
 version: "1.0.0"
-displayName: 能力扩展工具免费版
-summary: 为AI代理提供训练数据之外的外部知识检索能力,扩展问题解决边界
-license: Proprietary
-edition: free
+displayName: "能力扩展工具免费版"
+summary: "为AI代理提供训练数据之外的外部知识检索能力,扩展问题解决边界"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人用户的能力扩展工具,让 AI Agent 能够访问训练数据之外的结构化知识。核心能力:
   - 外部知识库查询与结构化数据获取
@@ -25,13 +25,14 @@ description: |-
 
   适用关键词: cheat, code, knowledge...
 tags:
-- 开发工具
-- 知识检索
-- 能力扩展
-- AI辅助
+  - 开发工具
+  - 知识检索
+  - 能力扩展
+  - AI辅助
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 能力扩展工具免费版
 

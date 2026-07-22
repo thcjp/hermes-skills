@@ -1,23 +1,22 @@
 ---
-slug: moltbook-firewall-tool-pro
-name: moltbook-firewall-tool-pro
+slug: "moltbook-firewall-tool-pro"
+name: "moltbook-firewall-tool-pro"
 version: "1.0.0"
-displayName: Agent防火墙专业版
-summary: 企业级Agent安全防护平台,支持深度注入检测、沙盒隔离、多Agent统一管理、实时监控与审计,适合企业Agent安全团队。
-license: Proprietary
-edition: pro
+displayName: "Agent防火墙专业版"
+summary: "企业级Agent安全防护平台,支持深度注入检测、沙盒隔离、多Agent统一管理、实时监控与审计,适合企业Agent安全团队。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Agent防火墙专业版,为企业提供全方位AI Agent安全防护能力。核心能力:上下文感知深度注入检测、沙盒隔离、参数投毒检测、多Agent统一管理、实时监控与告警、完整审计链。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 安全
-- AI安全
-- 企业版
-- 沙盒隔离
+  - 安全
+  - AI安全
+  - 企业版
+  - 沙盒隔离
 tools:
   - - read
-- exec
-# Agent防火墙专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 专业版为企业提供完整的AI Agent安全防护平台,在免费版基础防护能力之上,新增上下文感知深度注入检测、沙盒隔离执行、工具参数投毒检测、多Agent统一管理、实时监控与Webhook告警、完整审计链与SARIF报告。专业版完全兼容免费版防护规则,已有安全配置可无缝升级,适合企业级Agent安全治理。
 

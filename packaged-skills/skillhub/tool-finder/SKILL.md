@@ -1,16 +1,17 @@
 ---
-slug: tool-finder
-name: tool-finder
+slug: "tool-finder"
+name: "tool-finder"
 version: "1.7.0"
-displayName: Tool Finder
-summary: 统一搜索 SkillHub skills 和 Smithery 协议 servers 的工具发现引擎。支持评分排序、推荐规则、来源标识。优先原词搜索，扩展补充。**自动触发：看到\
-license: MIT
+displayName: "Tool Finder"
+summary: "统一搜索 SkillHub skills 和 Smithery 协议 servers 的工具发现引擎。支持评分排序、推荐规则、来源标识。优先原词搜索，扩展补充。**自动触发：看到\"
+license: "MIT"
 description: |-
   统一搜索 SkillHub skills 和 Smithery 协议 servers 的工具发现引擎。支持评分排序、推荐规则、来源标识。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。
-tags: '[''Research'']'
+tags: "'[''Research'']'"
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
 # Tool Finder
 

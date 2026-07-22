@@ -1,24 +1,23 @@
 ---
-slug: news-feed-tool-pro
-name: news-feed-tool-pro
+slug: "news-feed-tool-pro"
+name: "news-feed-tool-pro"
 version: "1.0.0"
-displayName: RSS新闻订阅专业版
-summary: 企业级RSS新闻平台，支持50+国内外源、定时获取、全文抓取与API集成
-license: Proprietary
-edition: pro
+displayName: "RSS新闻订阅专业版"
+summary: "企业级RSS新闻平台，支持50+国内外源、定时获取、全文抓取与API集成"
+license: "Proprietary"
+edition: "pro"
 description: |-
   RSS新闻订阅工具专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 新闻
-- RSS
-- 企业级
-- 定时获取
-- 全文抓取
+  - 新闻
+  - RSS
+  - 企业级
+  - 定时获取
+  - 全文抓取
 tools:
   - - read
-- exec
-# RSS新闻订阅工具（专业版）
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 RSS新闻订阅工具专业版在免费版 7 个国际 RSS 源的基础上，新增 50+ 国内外 RSS 源、定时自动获取、全文内容抓取、多源去重与主题聚类、多格式导出和 REST API 集成等企业级能力，满足企业新闻监控、媒体采编和行业情报收集的深度需求。
 

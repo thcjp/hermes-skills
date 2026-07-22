@@ -1,10 +1,10 @@
 ---
-slug: alibaba-quark-scan-free
-name: alibaba-quark-scan-free
-version: 1.0.0
-displayName: 夸克扫描王(免费版)
-summary: 基础文件扫描工具，支持画质增强、去手写和文档扫描
-license: MIT
+slug: "alibaba-quark-scan-free"
+name: "alibaba-quark-scan-free"
+version: "1.0.0"
+displayName: "夸克扫描王(免费版)"
+summary: "基础文件扫描工具，支持画质增强、去手写和文档扫描"
+license: "MIT"
 description: |-
   由夸克扫描王官方提供的基础文件高清扫描工具。支持画质增强、
   去手写和文档扫描三种基础场景。适用于个人用户的日常图片
@@ -15,8 +15,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 夸克扫描王(免费版) - 基础文件扫描与增强
 
 ## 依赖说明

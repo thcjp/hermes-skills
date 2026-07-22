@@ -1,11 +1,11 @@
 ---
-slug: whatsapp-style-guide
-name: whatsapp-style-guide
+slug: "whatsapp-style-guide"
+name: "whatsapp-style-guide"
 version: "1.0.0"
-displayName: WhatsApp样式指南-专业版
-summary: 企业级WhatsApp格式完整规范,含边界场景/高级模式/多语言指南/交互式测试
-license: Proprietary
-edition: pro
+displayName: "WhatsApp样式指南-专业版"
+summary: "企业级WhatsApp格式完整规范,含边界场景/高级模式/多语言指南/交互式测试"
+license: "Proprietary"
+edition: "pro"
 description: |-
   WhatsApp样式指南专业版,提供完整的WhatsApp消息格式规范体系,面向企业和专业内容团队。核心能力:
   - 完整WhatsApp格式语法规范(含边界场景与特殊字符处理)
@@ -20,19 +20,17 @@ description: |-
   - 企业内容团队的WhatsApp消息规范制定
   - 多语言客服团队的格式培训
   - 消息格式合规审计与质量管控
- ...
 tags:
-- 沟通协作
-- 样式指南
-- WhatsApp
-- 企业级
-- 格式规范
-- 合规审计
+  - 沟通协作
+  - 样式指南
+  - WhatsApp
+  - 企业级
+  - 格式规范
+  - 合规审计
 tools:
   - - read
-- exec
-# WhatsApp样式指南(专业版)
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # WhatsApp样式指南-专业版
 

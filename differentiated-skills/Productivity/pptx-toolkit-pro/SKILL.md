@@ -1,11 +1,11 @@
 ---
-slug: pptx-toolkit-pro
-name: pptx-toolkit-pro
+slug: "pptx-toolkit-pro"
+name: "pptx-toolkit-pro"
 version: "1.0.0"
-displayName: PPT 演示工具包专业版
-summary: 企业级演示文稿系统,支持品牌模板管理、批量生成、协作审阅与多格式导出
-license: Proprietary
-edition: pro
+displayName: "PPT 演示工具包专业版"
+summary: "企业级演示文稿系统,支持品牌模板管理、批量生成、协作审阅与多格式导出"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 文档处理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: powerpoint, pptx, 演示文稿, 幻灯片, 模板, 布局, 演示
 tags:
-- PowerPoint
-- PPTX
-- 演示文稿
-- 幻灯片
+  - PowerPoint
+  - PPTX
+  - 演示文稿
+  - 幻灯片
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # PPT 演示工具包专业版
 
 ## 概述

@@ -1,23 +1,23 @@
 ---
-slug: web-crawler-engine-free
-name: web-crawler-engine-free
+slug: "web-crawler-engine-free"
+name: "web-crawler-engine-free"
 version: "1.0.0"
-displayName: 网页抓取引擎(免费版)
-summary: 轻量级网页与社区数据抓取工具，支持本地归档、搜索查询与新鲜度检查。
-license: Proprietary
-edition: free
+displayName: "网页抓取引擎(免费版)"
+summary: "轻量级网页与社区数据抓取工具，支持本地归档、搜索查询与新鲜度检查。"
+license: "Proprietary"
+edition: "free"
 description: |-
   网页抓取引擎免费版是一套面向个人开发者与小型团队的数据抓取与归档工具，帮助用户高效采集网页内容与社区消息并建立本地可搜索的归档库。核心能力：提供网页内容抓取模板、社区频道消息归档、本地全文搜索、数据新鲜度检查、只读 SQL 查询接口。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。
 tags:
-- 数据抓取
-- 集成工具
-- 信息检索
-- 免费版
+  - 数据抓取
+  - 集成工具
+  - 信息检索
+  - 免费版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 网页抓取引擎（免费版）
 
 ## 概述

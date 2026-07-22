@@ -1,10 +1,10 @@
 ---
-slug: apple-health-skill-free
-name: apple-health-skill-free
+slug: "apple-health-skill-free"
+name: "apple-health-skill-free"
 version: "1.0.0"
-displayName: 运动健康数据基础版
-summary: 基础运动健康数据查询，获取训练方案和训练记录
-license: MIT
+displayName: "运动健康数据基础版"
+summary: "基础运动健康数据查询，获取训练方案和训练记录"
+license: "MIT"
 description: |-
   使用AI与运动健康数据对话的免费版。支持获取每日训练方案（无需认证）和查询训练记录。
   适用于基础训练数据查看场景。升级至完整版可解锁AI教练对话、性能管理图表、
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 生活服务
 ---
-
 # 运动健康数据（免费版）
 
 使用AI与运动健康数据对话的免费版。支持获取每日训练方案（无需认证）和查询训练记录。通过健康数据同步服务获取运动手环/手表同步的健康数据。

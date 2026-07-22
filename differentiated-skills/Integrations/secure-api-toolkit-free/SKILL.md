@@ -1,21 +1,21 @@
 ---
-slug: secure-api-toolkit-free
-name: secure-api-toolkit-free
+slug: "secure-api-toolkit-free"
+name: "secure-api-toolkit-free"
 version: "1.0.0"
-displayName: 安全API工具箱
-summary: 通过占位符代理安全调用第三方API，密钥不落地Agent，适合个人开发者试用。
-license: Proprietary
-edition: free
+displayName: "安全API工具箱"
+summary: "通过占位符代理安全调用第三方API，密钥不落地Agent，适合个人开发者试用。"
+license: "Proprietary"
+edition: "free"
 description: |-
   安全API工具箱（免费版）通过凭据代理机制让Agent在调用第三方API时无需接触真实密钥，从架构层杜绝密钥泄露风险。核心能力：占位符模板化请求、服务端密钥注入、生物识别授权、单提供商连通验证、CLI命令行调用。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-- 集成工具
-- 安全合规
+  - 集成工具
+  - 安全合规
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 安全API工具箱（免费版）
 
 ## 概述

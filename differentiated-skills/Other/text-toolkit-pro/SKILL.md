@@ -1,11 +1,11 @@
 ---
-slug: text-toolkit-pro
-name: text-toolkit-pro
+slug: "text-toolkit-pro"
+name: "text-toolkit-pro"
 version: "1.0.0"
-displayName: 文本处理工具专业版
-summary: 多文件批处理、流水线编排、编码批量转换与自定义变换模板，适合数据团队与内容工程场景。
-license: Proprietary
-edition: pro
+displayName: "文本处理工具专业版"
+summary: "多文件批处理、流水线编排、编码批量转换与自定义变换模板，适合数据团队与内容工程场景。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   文本处理工具专业版，面向数据团队与内容工程师的高阶文本处理平台。核心能力:
   - 多文件批量变换与流水线编排
@@ -21,13 +21,14 @@ description: |-
 
   差异化: 专业版在免费版核心能力之上扩展批量处理与流水线编排...
 tags:
-- 文本处理
-- 批量变换
-- 数据工程
-- 专业版
+  - 文本处理
+  - 批量变换
+  - 数据工程
+  - 专业版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 文本处理工具（专业版）
 

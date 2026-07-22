@@ -1,10 +1,10 @@
 ---
-slug: slack-workspace-free
-name: slack-workspace-free
+slug: "slack-workspace-free"
+name: "slack-workspace-free"
 version: "1.0.0"
-displayName: Slack工作区管家LITE
-summary: Slack基础消息发送与频道列表，ClawLink OAuth托管连接
-license: MIT
+displayName: "Slack工作区管家LITE"
+summary: "Slack基础消息发送与频道列表，ClawLink OAuth托管连接"
+license: "MIT"
 description: |-
   面向团队协作场景的Slack基础工作区管理技能（免费版）。通过ClawLink OAuth托管连接，
   提供频道消息发送、频道列表、用户列表三大基础能力。
@@ -16,8 +16,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Slack工作区管家 LITE（Slack Workspace Free）
 
 面向团队协作场景的Slack基础工作区管理（免费版）。通过ClawLink OAuth托管连接，提供频道消息发送、频道列表、用户列表三大能力。

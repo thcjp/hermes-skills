@@ -1,19 +1,19 @@
 ---
-slug: live-stream-script
-name: live-stream-script
+slug: "live-stream-script"
+name: "live-stream-script"
 version: "2.0.0"
-displayName: Live Stream Script
-summary: 直播脚本生成器。带货直播、娱乐直播、知识直播话术、互动设计、开场预热、逼单话术、互动话术库。Live stream script generator
-  for e-commerce, entert...
-license: MIT-0
+displayName: "Live Stream Script"
+summary: "直播脚本生成器。带货直播、娱乐直播、知识直播话术、互动设计、开场预热、逼单话术、互动话术库。Live stream script generator"
+license: "MIT-0"
 description: |-
   直播脚本生成器。带货直播、娱乐直播、知识直播话术、互动设计、开场预热、逼单话术、互动话术库。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。
 tags:
-- Lifestyle
-- Knowledge
+  - Lifestyle
+  - Knowledge
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Live Stream Script
 

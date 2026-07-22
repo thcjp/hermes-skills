@@ -1,11 +1,11 @@
 ---
-slug: interview-sim-tool-free
-name: interview-sim-tool-free
+slug: "interview-sim-tool-free"
+name: "interview-sim-tool-free"
 version: "1.0.0"
-displayName: 面试模拟工具
-summary: 面向个人的多岗位面试模拟工具，支持评分与改进建议。
-license: Proprietary
-edition: free
+displayName: "面试模拟工具"
+summary: "面向个人的多岗位面试模拟工具，支持评分与改进建议。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人求职者的多岗位面试模拟工具。
 
@@ -24,15 +24,15 @@ description: |-
 
   适用关键词: 面试模拟, 模拟面试, 面试练习, 记分卡, mock interview, interview simulator, star
 tags:
-- 面试
-- 求职
-- 个人效率
-- 其他工具
+  - 面试
+  - 求职
+  - 个人效率
+  - 其他工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 面试模拟工具（免费版）
 
 ## 概述

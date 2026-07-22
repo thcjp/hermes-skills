@@ -1,10 +1,10 @@
 ---
-slug: brave-search
-name: brave-search
+slug: "brave-search"
+name: "brave-search"
 version: "1.0.1"
-displayName: Brave Search
-summary: Web search and content extraction via Brave Search API.
-license: MIT
+displayName: "Brave Search"
+summary: "Web search and content extraction via Brave Search API."
+license: "MIT"
 description: |-
   Web search and content extraction via Brave Search API。核心能力:
 
@@ -21,12 +21,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Research
+  - Research
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Brave Search
 

@@ -1,26 +1,25 @@
 ---
-slug: video-translator-tool-pro
-name: video-translator-tool-pro
+slug: "video-translator-tool-pro"
+name: "video-translator-tool-pro"
 version: "1.0.0"
-displayName: 视频翻译-专业版
-summary: 企业级视频翻译与配音平台，支持8种语言、双语字幕、批量翻译、语音克隆与优先队列，适合跨国内容本地化。
-license: Proprietary
-edition: pro
+displayName: "视频翻译-专业版"
+summary: "企业级视频翻译与配音平台，支持8种语言、双语字幕、批量翻译、语音克隆与优先队列，适合跨国内容本地化。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   视频翻译专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Creative
-- 视频翻译
-- 多语言
-- 专业版
-- 批量处理
-- 语音克隆
-- 企业级
+  - Creative
+  - 视频翻译
+  - 多语言
+  - 专业版
+  - 批量处理
+  - 语音克隆
+  - 企业级
 tools:
   - - read
-- exec
-# 视频翻译工具 - 专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 视频翻译专业版是一款面向企业团队与跨国内容机构的多语言视频本地化平台。在免费版中英互译能力之上，专业版扩展了 8 种源语言支持、双语字幕烧录、批量翻译处理、语音克隆、翻译记忆库等企业级能力。
 

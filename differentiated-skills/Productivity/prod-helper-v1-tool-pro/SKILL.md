@@ -1,11 +1,11 @@
 ---
-slug: prod-helper-v1-tool-pro
-name: prod-helper-v1-tool-pro
+slug: "prod-helper-v1-tool-pro"
+name: "prod-helper-v1-tool-pro"
 version: "1.0.0"
-displayName: 效率助手 v1 专业版
-summary: 企业级效率助手,支持团队协作、数据分析、智能提醒与工作流自动化
-license: Proprietary
-edition: pro
+displayName: "效率助手 v1 专业版"
+summary: "企业级效率助手,支持团队协作、数据分析、智能提醒与工作流自动化"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 效率管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: 效率, 助手, 任务, 笔记, 进度追踪, 工作总结, 想法记录
 tags:
-- 效率助手
-- 任务管理
-- 笔记
-- 工作总结
+  - 效率助手
+  - 任务管理
+  - 笔记
+  - 工作总结
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 效率助手 v1 专业版
 
 ## 概述

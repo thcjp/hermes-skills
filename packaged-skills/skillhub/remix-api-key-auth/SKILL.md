@@ -1,11 +1,10 @@
 ---
-slug: remix-api-key-auth
-name: remix-api-key-auth
+slug: "remix-api-key-auth"
+name: "remix-api-key-auth"
 version: "0.1.0"
-displayName: Remix Api Key Auth
-summary: Configure and verify bearer API key authentication for Remix agent publishing
-  workflows.
-license: MIT
+displayName: "Remix Api Key Auth"
+summary: "Configure and verify bearer API key authentication for Remix agent publishing"
+license: "MIT"
 description: |-
   Configure and verify bearer API key authentication for Remix agent publishing
   workflows。核心能力:
@@ -26,10 +25,11 @@ description: |-
 
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关...
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Remix Api Key Auth
 

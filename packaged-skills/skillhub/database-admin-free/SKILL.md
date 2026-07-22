@@ -1,10 +1,10 @@
 ---
-slug: database-admin-free
-name: database-admin-free
+slug: "database-admin-free"
+name: "database-admin-free"
 version: "1.0.0"
-displayName: 数据库管理(免费版)
-summary: 基础表结构设计、数据插入与简单查询，支持常用数据类型与事务操作
-license: MIT
+displayName: "数据库管理(免费版)"
+summary: "基础表结构设计、数据插入与简单查询，支持常用数据类型与事务操作"
+license: "MIT"
 description: |-
   数据库管理免费版，提供基础的数据库表结构与数据操作能力。
   核心能力包括：
@@ -21,8 +21,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 数据库管理（免费版）
 
 ## 概述

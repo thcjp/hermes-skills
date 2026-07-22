@@ -1,22 +1,22 @@
 ---
-slug: llm-assistant-hub
-name: llm-assistant-hub
+slug: "llm-assistant-hub"
+name: "llm-assistant-hub"
 version: "1.0.0"
-displayName: LLM助手中枢
-summary: 分层分析分块,聚焦检索锚定,假设检测框架,结构化压缩,差异化比对。
-license: Proprietary
+displayName: "LLM助手中枢"
+summary: "分层分析分块,聚焦检索锚定,假设检测框架,结构化压缩,差异化比对。"
+license: "Proprietary"
 description: |-
   针对商业、法律等高风险长文档的长上下文推理优化器。提供分层分析（L0扫描→L1深度→L2聚焦）、文档分块处理、假设检测框架、结构化压缩、差异化版本比对五大能力。适用于合同审查准备、商业备忘录分析、提案红线审查、政策对比、谈判简报准备场景，解决token成本失控、上下文衰减、假设遗漏、版本比对困难痛点。适用关键词：LLM助手中枢、长文档推理、合同分析、假设检测、文档比对、结构化压缩、long-context、reasoning。
 tags:
-- 智能代理
-- 文档分析
-- 长上下文推理
-- 法律合同
+  - 智能代理
+  - 文档分析
+  - 长上下文推理
+  - 法律合同
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # LLM 助手中枢
 
 将冗长、杂乱、高风险的文档转化为更清晰的推理和更干净的决策。针对商业和法律文档工作流的长上下文推理优化器。

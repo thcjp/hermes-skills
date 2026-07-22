@@ -1,19 +1,19 @@
 ---
-slug: logo-brand-identity-cellcog
-name: logo-brand-identity-cellcog
+slug: "logo-brand-identity-cellcog"
+name: "logo-brand-identity-cellcog"
 version: "1.0.13"
-displayName: Logo Brand Identity 
-summary: AI logo and brand identity design powered by CellCog. Brand kits, color palettes,
-  typography, bra...
-license: MIT-0
+displayName: "Logo Brand Identity"
+summary: "AI logo and brand identity design powered by CellCog. Brand kits, color palettes,"
+license: "MIT-0"
 description: |-
   AI logo and brand identity design powered by CellCog。Brand kits, color
   palettes, typography, bra。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Creative
+  - Creative
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Logo Brand Identity
 

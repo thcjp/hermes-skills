@@ -1,23 +1,22 @@
 ---
-slug: tool-finder-tool-pro
-name: tool-finder-tool-pro
+slug: "tool-finder-tool-pro"
+name: "tool-finder-tool-pro"
 version: "1.0.0"
-displayName: 工具发现引擎专业版
-summary: 企业级工具发现与评估平台,支持批量搜索、团队推荐、工具评估报告与自动化部署
-license: Proprietary
-edition: pro
+displayName: "工具发现引擎专业版"
+summary: "企业级工具发现与评估平台,支持批量搜索、团队推荐、工具评估报告与自动化部署"
+license: "Proprietary"
+edition: "pro"
 description: |-
   工具发现引擎专业版,面向企业团队和高级用户提供深度的工具发现与评估能力。支持批量搜索、团队推荐、工具评估报告、自动化部署、使用统计等高级功能。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
 tags:
-- 研究工具
-- 工具发现
-- 企业级
-- 批量处理
+  - 研究工具
+  - 工具发现
+  - 企业级
+  - 批量处理
 tools:
   - - read
-- exec
-# 工具发现引擎专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 工具发现引擎专业版是企业级的工具发现与评估平台。在完整兼容免费版所有搜索和安装能力的基础上,专业版引入了批量并行搜索、团队推荐、工具评估报告、自动化部署、使用统计等高级能力,适用于企业团队统一工具选型、DevOps 批量部署、技术评审等复杂场景。
 

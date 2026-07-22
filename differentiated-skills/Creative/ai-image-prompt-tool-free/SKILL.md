@@ -1,11 +1,11 @@
 ---
-slug: ai-image-prompt-tool-free
-name: ai-image-prompt-tool-free
+slug: "ai-image-prompt-tool-free"
+name: "ai-image-prompt-tool-free"
 version: "1.0.0"
-displayName: AI图像提示词-免费版
-summary: AI图像生成提示词 crafting 工具,提供模板库与基础优化,适合个人创作者提升出图质量。
-license: Proprietary
-edition: free
+displayName: "AI图像提示词-免费版"
+summary: "AI图像生成提示词 crafting 工具,提供模板库与基础优化,适合个人创作者提升出图质量。"
+license: "Proprietary"
+edition: "free"
 description: |-
   AI图像提示词免费版,面向个人用户的图像生成提示词 crafting 工具。核心能力:
   - 提供常用场景提示词模板库(花卉、人物、风景、商品等)
@@ -20,12 +20,13 @@ description: |-
 
   差异化:免费版聚焦基础提示词模板与优化建议,帮助个人用户快速上手 AI 图像生成,提升出图效果
 tags:
-- Creative
-- 提示词工程
-- AI创作
+  - Creative
+  - 提示词工程
+  - AI创作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # AI图像提示词工具 - 免费版
 

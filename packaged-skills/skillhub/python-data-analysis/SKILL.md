@@ -1,17 +1,18 @@
 ---
-slug: python-data-analysis
-name: python-data-analysis
+slug: "python-data-analysis"
+name: "python-data-analysis"
 version: "1.0.0"
-displayName: Python Data Analysis
-summary: 提供Python数据清洗、统计分析及可视化建议，辅助业务和科研数据的快速处理与分析。
-license: MIT-0
+displayName: "Python Data Analysis"
+summary: "提供Python数据清洗、统计分析及可视化建议，辅助业务和科研数据的快速处理与分析。"
+license: "MIT-0"
 description: |-
   提供Python数据清洗、统计分析及可视化建议，辅助业务和科研数据的快速处理与分析。\n\n核心能力:\n- 集成工具领域的专业化AI辅助工具\n\
   - 基于高人气开源Skill深度优化升级\n- 移除风险代码,增强安全性和稳定性\n\n适用场景:\n- 第三方API集成、平台对接、数据同步\n- 独立开发者与一人公司效率提升\n\
-tags: '[''Integrations'']'
+tags: "'[''Integrations'']'"
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
 # Python Data Analysis
 

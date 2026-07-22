@@ -1,10 +1,10 @@
 ---
-slug: timer-free
-name: timer-free
+slug: "timer-free"
+name: "timer-free"
 version: "1.0.0"
-displayName: 后台定时器（免费版）
-summary: 在后台运行基础倒计时，完成后通过系统通知提醒用户，支持秒/分/时三种时间格式。
-license: MIT
+displayName: "后台定时器（免费版）"
+summary: "在后台运行基础倒计时，完成后通过系统通知提醒用户，支持秒/分/时三种时间格式。"
+license: "MIT"
 description: |-
   在后台设置基础定时器。当后台定时器完成时，会收到系统通知，必须将提醒内容传达给用户。
   免费版支持秒、分、时三种时间格式与自定义提醒文案，满足日常烹饪、休息、短时提醒等基础计时需求。
@@ -15,8 +15,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # timer-free
 
 在后台运行基础定时器。当定时器完成时，你会收到一条系统通知，必须以提醒形式告知用户。免费版支持秒、分、时三种时间格式与自定义提醒文案，满足日常烹饪、休息、短时提醒等基础计时需求。

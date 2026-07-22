@@ -1,10 +1,10 @@
 ---
-slug: file
-name: file
+slug: "file"
+name: "file"
 version: "1.0.0"
-displayName: 文件管理整理
-summary: 文件与文件夹管理工具，覆盖命名规范、文件夹结构、文件检索与关键文档归档
-license: MIT
+displayName: "文件管理整理"
+summary: "文件与文件夹管理工具，覆盖命名规范、文件夹结构、文件检索与关键文档归档"
+license: "MIT"
 description: |-
   File 是文件与文件夹管理的完整工具，覆盖桌面整理、命名规范构建、文件夹结构设计、
   文件检索找回、项目文件管理、Downloads 清理、关键文档 inventory 归档、维护习惯养成。
@@ -15,8 +15,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # File 文件管理整理
 
 文件与文件夹管理的完整工具，从命名规范到文件夹结构到关键文档归档，帮助建立可持续的文件管理体系。

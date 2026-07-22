@@ -1,11 +1,11 @@
 ---
-slug: git-toolkit-free
-name: git-toolkit-free
+slug: "git-toolkit-free"
+name: "git-toolkit-free"
 version: "1.0.0"
-displayName: Git工具包免费版
-summary: 提供Git提交、分支、合并、冲突解决与历史恢复等核心命令,适合开发者日常版本管理。
-license: Proprietary
-edition: free
+displayName: "Git工具包免费版"
+summary: "提供Git提交、分支、合并、冲突解决与历史恢复等核心命令,适合开发者日常版本管理。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向开发者的Git版本管理工具包,涵盖提交管理、分支策略、合并冲突解决、历史检查与恢复操作。核心能力:
   - 提交管理与规范(commit/amend)
@@ -25,14 +25,14 @@ description: |-
   - 提供安全检查清单
   - 与专业版...
 tags:
-- 开发工具
-- Git
-- 版本控制
+  - 开发工具
+  - Git
+  - 版本控制
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Git工具包 - 免费版
 ## 概述
 Git工具包免费版为开发者提供日常版本管理能力。工具涵盖提交管理、分支策略、合并冲突解决、历史检查与恢复操作,帮助开发者高效使用Git进行代码版本管理。

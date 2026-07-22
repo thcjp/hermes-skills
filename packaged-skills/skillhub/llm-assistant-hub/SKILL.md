@@ -1,10 +1,10 @@
 ---
-slug: llm-assistant-hub
-name: llm-assistant-hub
+slug: "llm-assistant-hub"
+name: "llm-assistant-hub"
 version: "1.0.0"
-displayName: LLM助手中枢
-summary: 长文档推理优化器：分层分析+假设检测+结构化压缩+差异化比对。
-license: MIT
+displayName: "LLM助手中枢"
+summary: "长文档推理优化器：分层分析+假设检测+结构化压缩+差异化比对。"
+license: "MIT"
 description: |-
   针对商业、法律等高风险长文档的长上下文推理优化器，提供五大核心能力。
   分层分析策略（L0快速扫描→L1深度分析→L2聚焦深挖）按文档长度自动选择层级组合，控制token成本。
@@ -16,8 +16,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 智能助手
 ---
-
 # LLM助手中枢
 
 将冗长、杂乱、高风险的文档转化为更清晰的推理和更干净的决策。针对商业和法律文档工作流的长上下文推理优化器，通过分层分析、假设检测、结构化压缩与差异化比对四大能力，解决token成本失控、上下文衰减、假设遗漏、版本比对困难四大痛点。

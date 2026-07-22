@@ -1,24 +1,24 @@
 ---
-slug: multi-search-tool-pro
-name: multi-search-tool-pro
+slug: "multi-search-tool-pro"
+name: "multi-search-tool-pro"
 version: "1.0.0"
-displayName: 多搜索引擎工具专业版
-summary: 集成20+全球搜索引擎，支持批量搜索、结果自动聚合去重与企业级API集成
-license: Proprietary
-edition: pro
+displayName: "多搜索引擎工具专业版"
+summary: "集成20+全球搜索引擎，支持批量搜索、结果自动聚合去重与企业级API集成"
+license: "Proprietary"
+edition: "pro"
 description: |-
   多搜索引擎工具专业版，集成20+全球搜索引擎。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 搜索
-- 研究
-- 企业级
-- 全球搜索
-- 信息聚合
+  - 搜索
+  - 研究
+  - 企业级
+  - 全球搜索
+  - 信息聚合
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 多搜索引擎工具（专业版）
 ## 概述
 多搜索引擎工具专业版在免费版 10 个国内搜索引擎的基础上，新增 10+ 个海外搜索引擎，并提供批量关键词搜索、结果自动抓取聚合、去重排序、搜索历史记录与 REST API 集成等企业级能力，满足专业研究与商业情报收集场景的深度需求。

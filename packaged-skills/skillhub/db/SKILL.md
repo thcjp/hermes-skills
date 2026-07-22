@@ -1,10 +1,10 @@
 ---
-slug: db
-name: db
+slug: "db"
+name: "db"
 version: "1.0.0"
-displayName: 数据库设计与运维
-summary: 识别并规避数据库连接、事务、Schema变更、备份恢复、复制、查询、数据完整性与扩展性陷阱
-license: MIT
+displayName: "数据库设计与运维"
+summary: "识别并规避数据库连接、事务、Schema变更、备份恢复、复制、查询、数据完整性与扩展性陷阱"
+license: "MIT"
 description: |-
   数据库设计与运维——帮助设计和操作数据库时避免常见的扩展性、可靠性和数据完整性陷阱。
   核心能力包括：
@@ -23,8 +23,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 数据库设计与运维
 
 ## 概述

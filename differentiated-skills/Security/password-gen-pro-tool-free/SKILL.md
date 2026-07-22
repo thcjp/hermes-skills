@@ -1,11 +1,11 @@
 ---
-slug: password-gen-pro-tool-free
-name: password-gen-pro-tool-free
+slug: "password-gen-pro-tool-free"
+name: "password-gen-pro-tool-free"
 version: "1.0.0"
-displayName: 密码生成器Pro免费版
-summary: 专业密码生成工具,支持强密码生成、强度检测、口令短语与PIN码生成,适合个人用户密码管理。
-license: Proprietary
-edition: free
+displayName: "密码生成器Pro免费版"
+summary: "专业密码生成工具,支持强密码生成、强度检测、口令短语与PIN码生成,适合个人用户密码管理。"
+license: "Proprietary"
+edition: "free"
 description: |-
   密码生成器Pro免费版,为个人用户提供多样化密码生成与强度检测能力。
   核心能力:强密码生成、密码强度检测、口令短语生成、PIN码生成。
@@ -13,14 +13,13 @@ description: |-
   差异化:免费版聚焦核心生成能力,支持多种密码类型,适合个人用户日常使用。
   适用关键词: 密码生成, 强度检测, 口令短语, PIN码, password generator, strength check, passphrase
 tags:
-- 安全
-- 密码
-- 免费版
+  - 安全
+  - 密码
+  - 免费版
 tools:
   - - read
-- exec
-# 密码生成器Pro免费版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 本工具为个人用户提供多样化的密码生成与强度检测能力,支持强密码生成、密码强度评估、口令短语(Passphrase)生成与PIN码生成。免费版覆盖个人用户日常密码管理需求,帮助用户创建安全且易记的密码。
 

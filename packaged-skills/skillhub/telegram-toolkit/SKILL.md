@@ -1,21 +1,22 @@
 ---
-slug: telegram-toolkit
-name: telegram-toolkit
+slug: "telegram-toolkit"
+name: "telegram-toolkit"
 version: "1.0.0"
-displayName: TG机器人工具(专业版)
-summary: 面向企业的Telegram Bot专业版，含对话状态机、富媒体模板、多机器人管理、消息队列与优先支持。
-license: Proprietary
-edition: pro
+displayName: "TG机器人工具(专业版)"
+summary: "面向企业的Telegram Bot专业版，含对话状态机、富媒体模板、多机器人管理、消息队列与优先支持。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队、企业与专业开发者的Telegram Bot工作流设计工具专业版。在免费版基础上新增对话状态机与会话管理、富媒体消息模板库、多机器人统一管理面板、消息队列削峰与批量发送、Webhook健康监控与自动告警等高级能力，配套面向运维、产品、开发者角色的多角色场景指南。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。
 tags:
-- 集成工具
-- 即时通讯
-- 机器人
-- 高级特性
+  - 集成工具
+  - 即时通讯
+  - 机器人
+  - 高级特性
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # TG机器人工具(专业版)
 

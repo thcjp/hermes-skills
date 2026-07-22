@@ -1,23 +1,23 @@
 ---
-slug: cctv-news-tool-free
-name: cctv-news-tool-free
+slug: "cctv-news-tool-free"
+name: "cctv-news-tool-free"
 version: "1.0.0"
-displayName: 央视新闻抓取(免费版)
-summary: 央视新闻联播抓取免费版，支持按日期获取新闻标题与摘要，生成基础简报。
-license: Proprietary
-edition: free
+displayName: "央视新闻抓取(免费版)"
+summary: "央视新闻联播抓取免费版，支持按日期获取新闻标题与摘要，生成基础简报。"
+license: "Proprietary"
+edition: "free"
 description: |-
   央视新闻抓取助手免费版是面向个人用户的轻量新闻联播内容抓取工具。聚焦"指定日期-抓取标题-生成简报"三步流程，快速获取新闻联播要点。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。
 tags:
-- 央视新闻
-- 新闻联播
-- 日期查询
-- 简报生成
+  - 央视新闻
+  - 新闻联播
+  - 日期查询
+  - 简报生成
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 央视新闻抓取助手（免费版）
 > **指定日期、抓取标题、生成简报。三步完成央视新闻联播内容获取。**
 

@@ -1,10 +1,10 @@
 ---
-slug: email-gmail-outlook
-name: email-gmail-outlook
+slug: "email-gmail-outlook"
+name: "email-gmail-outlook"
 version: "1.0.0"
-displayName: Email Gmail Outlook
-summary: 基于 porteden CLI 管理 Gmail、Outlook、Exchange 多账号邮件
-license: MIT
+displayName: "Email Gmail Outlook"
+summary: "基于 porteden CLI 管理 Gmail、Outlook、Exchange 多账号邮件"
+license: "MIT"
 description: |-
   基于 porteden CLI(`porteden email` / `porteden mail`)安全读写 Gmail、Outlook、Exchange 邮箱,
   支持多账号 profile 隔离、系统 keyring 凭证存储、JSON 紧凑输出(-jc)降低 token 消耗。
@@ -17,8 +17,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Email Gmail Outlook
 
 使用 `porteden email`(别名 `porteden mail`)读写当前活动账号的邮件。所有列表/搜索类操作默认带 `-jc` 标志(`--json --compact`),剥离附件详情、截断正文预览、限制标签数量,显著降低 token 消耗。

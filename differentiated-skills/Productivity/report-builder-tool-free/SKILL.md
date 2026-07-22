@@ -1,11 +1,11 @@
 ---
-slug: report-builder-tool-free
-name: report-builder-tool-free
+slug: "report-builder-tool-free"
+name: "report-builder-tool-free"
 version: "1.0.0"
-displayName: 报告汇总构建器基础版
-summary: 基于已有日报自动汇总生成周报和月报,遵循结果导向与闭环原则
-license: Proprietary
-edition: free
+displayName: "报告汇总构建器基础版"
+summary: "基于已有日报自动汇总生成周报和月报,遵循结果导向与闭环原则"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力: 工作汇报领域的专业化 AI 辅助工具,提供核心基础功能支持。
 
@@ -15,13 +15,14 @@ description: |-
 
   适用关键词: 周报, 月报, 日报, 汇总, 报告, 工作总结, 自动汇总
 tags:
-- 报告汇总
-- 周报
-- 月报
-- 日报
+  - 报告汇总
+  - 周报
+  - 月报
+  - 日报
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 报告汇总构建器基础版
 

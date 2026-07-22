@@ -1,11 +1,11 @@
 ---
-slug: video-editing-tool-free
-name: video-editing-tool-free
+slug: "video-editing-tool-free"
+name: "video-editing-tool-free"
 version: "1.0.0"
-displayName: 视频剪辑变现免费版
-summary: 视频剪辑变现路径指南,含赛道选择、MVP搭建、流量获取、转化交付的基础执行框架
-license: Proprietary
-edition: free
+displayName: "视频剪辑变现免费版"
+summary: "视频剪辑变现路径指南,含赛道选择、MVP搭建、流量获取、转化交付的基础执行框架"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人创作者的视频剪辑变现路径指南,提供从选赛道到交付的完整执行框架,
   包含30日启动计划和基础变现模型。核心能力:
@@ -23,15 +23,16 @@ description: |-
 
   差异化:免费版聚焦个人创作者的单一渠道变现路径,提供30日启动计划
 tags:
-- 视频
-- 剪辑
-- 变现
-- 内容创作
-- 副业
-- 自由职业
+  - 视频
+  - 剪辑
+  - 变现
+  - 内容创作
+  - 副业
+  - 自由职业
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 视频剪辑变现工具 - 免费版
 

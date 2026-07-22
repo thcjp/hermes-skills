@@ -1,10 +1,10 @@
 ---
-slug: api-integration-free
-name: api-integration-free
+slug: "api-integration-free"
+name: "api-integration-free"
 version: "1.0.0"
-displayName: API集成助手免费版
-summary: 掌握RESTful调用与API Key认证,含基础错误处理,快速接入第三方服务
-license: MIT
+displayName: "API集成助手免费版"
+summary: "掌握RESTful调用与API Key认证,含基础错误处理,快速接入第三方服务"
+license: "MIT"
 description: |-
   API 集成开发助手免费版。掌握 RESTful API 调用与 API Key 认证管理,提供 Python requests 调用模板
   与基础错误处理。OAuth2 令牌管理、GraphQL 查询、JWT 认证、完整错误处理等高级功能需升级付费版。
@@ -14,8 +14,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # API 集成开发助手（免费版）
 
 提供基础的 API 集成能力,掌握 RESTful 调用与 API Key 认证,帮助 AI Agent 快速接入第三方服务。

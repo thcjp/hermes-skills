@@ -1,10 +1,10 @@
 ---
-slug: longmemo-elite-free
-name: longmemo-elite-free
+slug: "longmemo-elite-free"
+name: "longmemo-elite-free"
 version: "1.0.0"
-displayName: 精英长记忆
-summary: Agent长记忆基础版：WAL防丢失+热内存+基础检索，跨会话不丢上下文。
-license: MIT
+displayName: "精英长记忆"
+summary: "Agent长记忆基础版：WAL防丢失+热内存+基础检索，跨会话不丢上下文。"
+license: "MIT"
 description: |-
   面向AI Agent的长期记忆系统基础版，解决跨会话遗忘这一核心痛点。
   WAL写前日志协议采用"先写状态，再回复用户"模式，在压缩/崩溃场景下保证上下文不丢失。
@@ -14,8 +14,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 精英长记忆（基础版）
 
 解决AI Agent跨会话遗忘问题。基础版提供WAL写前日志与热内存两大核心能力，确保关键上下文不丢失、决策不遗忘。

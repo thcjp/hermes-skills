@@ -1,26 +1,25 @@
 ---
-slug: whatsapp-image-tool-pro
-name: whatsapp-image-tool-pro
+slug: "whatsapp-image-tool-pro"
+name: "whatsapp-image-tool-pro"
 version: "1.0.0"
-displayName: WhatsApp图片发送-专业版
-summary: 企业级WhatsApp多媒体消息平台，支持批量发送、视频音频文档、定时发送、群组消息与模板管理。
-license: Proprietary
-edition: pro
+displayName: "WhatsApp图片发送-专业版"
+summary: "企业级WhatsApp多媒体消息平台，支持批量发送、视频音频文档、定时发送、群组消息与模板管理。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   WhatsApp 多媒体消息发送专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Creative
-- 消息发送
-- WhatsApp
-- 专业版
-- 批量处理
-- 企业级
-- 营销
+  - Creative
+  - 消息发送
+  - WhatsApp
+  - 专业版
+  - 批量处理
+  - 企业级
+  - 营销
 tools:
   - - read
-- exec
-# WhatsApp 图片发送工具 - 专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 WhatsApp 多媒体消息发送专业版是一款面向企业团队与营销机构的高级消息分发平台。在免费版单图发送能力之上，专业版扩展了批量发送、多媒体支持、定时发送、群组消息、模板管理等企业级能力。
 

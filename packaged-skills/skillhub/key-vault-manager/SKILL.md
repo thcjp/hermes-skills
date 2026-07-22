@@ -1,11 +1,11 @@
 ---
-slug: key-vault-manager
-name: key-vault-manager
+slug: "key-vault-manager"
+name: "key-vault-manager"
 version: "1.0.0"
-displayName: 密钥保险箱(专业版)
-summary: 企业级密钥安全管家，支持多保险箱、审计日志、密钥轮换与团队共享
-license: Proprietary
-edition: pro
+displayName: "密钥保险箱(专业版)"
+summary: "企业级密钥安全管家，支持多保险箱、审计日志、密钥轮换与团队共享"
+license: "Proprietary"
+edition: "pro"
 description: |-
   密钥保险箱(专业版)是面向团队与企业的全功能密钥安全管理工具，在免费版基础上新增多保险箱管理、审计日志、密钥轮换与团队共享等高级能力。核心能力：
   - 完整的本地密钥验证、脱敏读取与API代理能力
@@ -15,13 +15,14 @@ description: |-
   - 团队密钥共享，加密分发与细粒度权限控制
   - 合规报告生成...
 tags:
-- 集成工具
-- 安全防护
-- 密钥管理
-- 专业版
+  - 集成工具
+  - 安全防护
+  - 密钥管理
+  - 专业版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 密钥保险箱(专业版)
 

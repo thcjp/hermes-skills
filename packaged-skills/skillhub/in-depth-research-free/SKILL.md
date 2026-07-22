@@ -1,10 +1,10 @@
 ---
-slug: in-depth-research-free
-name: in-depth-research-free
+slug: "in-depth-research-free"
+name: "in-depth-research-free"
 version: "1.0.0"
-displayName: 深度研究引擎(免费版)
-summary: 多源深度调研，覆盖范围界定、多向量搜索、来源评估、迭代深化与结构化交付。免费版
-license: MIT
+displayName: "深度研究引擎(免费版)"
+summary: "多源深度调研，覆盖范围界定、多向量搜索、来源评估、迭代深化与结构化交付。免费版"
+license: "MIT"
 description: |-
   系统化深度研究方法论（免费版），通过七步协议（Scope → Search → Evaluate → Deepen →
   Synthesize → Document → Deliver）实现多源调研。核心能力：
@@ -15,8 +15,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 信息检索
 ---
-
 # 深度研究引擎(免费版)
 
 系统化深度研究方法论，通过七步协议实现多源调研，覆盖范围界定、多向量搜索、来源评估与迭代深化。

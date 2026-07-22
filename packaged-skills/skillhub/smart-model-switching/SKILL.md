@@ -1,19 +1,19 @@
 ---
-slug: smart-model-switching
-name: smart-model-switching
+slug: "smart-model-switching"
+name: "smart-model-switching"
 version: "1.0.0"
-displayName: Smart Model Switchin
-summary: This skill is a model-routing guide that helps choose between ai-assistant models
-  and shows no evidence...
-license: MIT
+displayName: "Smart Model Switchin"
+summary: "This skill is a model-routing guide that helps choose between ai-assistant models"
+license: "MIT"
 description: |-
   This skill is a model-routing guide that helps choose between ai-assistant
   models and shows no evidence。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- Development
+  - Development
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Smart Model Switchin
 

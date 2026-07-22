@@ -1,10 +1,10 @@
 ---
-slug: frontend-design-3-free
-name: frontend-design-3-free
+slug: "frontend-design-3-free"
+name: "frontend-design-3-free"
 version: "0.1.0"
-displayName: Frontend Design Free
-summary: 基础版前端设计技能，创建独特界面并避免通用 AI 风格，支持 3 种美学方向。
-license: MIT
+displayName: "Frontend Design Free"
+summary: "基础版前端设计技能，创建独特界面并避免通用 AI 风格，支持 3 种美学方向。"
+license: "MIT"
 description: |-
   frontend-design-3-free 是前端设计技能的基础版本，创建独特的生产级界面，避免通用"AI slop"美学。
   支持 3 种美学方向（brutally minimal、editorial/magazine、brutalist/raw）和基础字体、色彩、
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 创意设计
 ---
-
 # Frontend Design Free
 
 frontend-design-3-free 创建独特的生产级前端界面，避免通用"AI slop"美学。

@@ -1,11 +1,11 @@
 ---
-slug: chat-toolkit-pro
-name: chat-toolkit-pro
+slug: "chat-toolkit-pro"
+name: "chat-toolkit-pro"
 version: "1.0.0"
-displayName: 沟通偏好工具箱(专业版)
-summary: 多用户共享、版本回滚、跨设备同步、场景化切换的企业级沟通偏好管理工具。
-license: Proprietary
-edition: pro
+displayName: "沟通偏好工具箱(专业版)"
+summary: "多用户共享、版本回滚、跨设备同步、场景化切换的企业级沟通偏好管理工具。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队与企业的全功能沟通偏好管理工具，在免费版基础上扩展多用户共享、版本历史、跨设备同步、偏好分析、场景化切换与跨Agent迁移等高级能力。核心能力：
 
@@ -20,13 +20,14 @@ description: |-
 
   - 团队共享偏好基线...
 tags:
-- 团队偏好
-- 偏好管理
-- 版本历史
-- 跨设备同步
+  - 团队偏好
+  - 偏好管理
+  - 版本历史
+  - 跨设备同步
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 沟通偏好工具箱(专业版)
 

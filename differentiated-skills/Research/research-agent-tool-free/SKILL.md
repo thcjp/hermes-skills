@@ -1,11 +1,11 @@
 ---
-slug: research-agent-tool-free
-name: research-agent-tool-free
+slug: "research-agent-tool-free"
+name: "research-agent-tool-free"
 version: "1.0.0"
-displayName: 研究代理助手免费版
-summary: 开放式主题研究工具，构建可持续维护的Markdown研究文档，支持交互式探索
-license: Proprietary
-edition: free
+displayName: "研究代理助手免费版"
+summary: "开放式主题研究工具，构建可持续维护的Markdown研究文档，支持交互式探索"
+license: "Proprietary"
+edition: "free"
 description: |-
   研究代理助手免费版，帮助用户围绕特定主题开展开放式研究，通过交互式对话逐步构建结构化研究文档。核心能力:
   - 交互式研究模式，实时搜索与综合
@@ -23,13 +23,14 @@ description: |-
   - 免费版聚焦交互式研究，文档驱动而非对话驱动
   - 研究成果持久化保存...
 tags:
-- 研究
-- 文档
-- 调研
-- 知识管理
+  - 研究
+  - 文档
+  - 调研
+  - 知识管理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 研究代理助手（免费版）
 ## 概述

@@ -1,11 +1,11 @@
 ---
-slug: plugin-arch-tool-pro
-name: plugin-arch-tool-pro
+slug: "plugin-arch-tool-pro"
+name: "plugin-arch-tool-pro"
 version: "1.0.0"
-displayName: 插件架构工具-专业版
-summary: 企业级插件开发框架,支持插件市场、权限管控、热更新与团队协作开发
-license: Proprietary
-edition: pro
+displayName: "插件架构工具-专业版"
+summary: "企业级插件开发框架,支持插件市场、权限管控、热更新与团队协作开发"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级插件架构开发工具专业版,面向团队与商业应用。核心能力:
   - 插件市场与一键安装管理
@@ -25,14 +25,15 @@ description: |-
 
   差异化:专业版在免费版基础上扩展插件市场、权限管控、热更新与企业级开发工具链,兼容...
 tags:
-- 插件架构
-- 企业级
-- 权限管理
-- 插件市场
-- 热更新
+  - 插件架构
+  - 企业级
+  - 权限管理
+  - 插件市场
+  - 热更新
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 插件架构工具 - 专业版
 

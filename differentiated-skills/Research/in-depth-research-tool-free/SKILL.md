@@ -1,11 +1,11 @@
 ---
-slug: in-depth-research-tool-free
-name: in-depth-research-tool-free
+slug: "in-depth-research-tool-free"
+name: "in-depth-research-tool-free"
 version: "1.0.0"
-displayName: 深度研究工具
-summary: 多源深度研究工具，支持系统性信息探索、来源评估与方法论追踪，生成结构化研究报告，适合个人研究与学习。
-license: Proprietary
-edition: free
+displayName: "深度研究工具"
+summary: "多源深度研究工具，支持系统性信息探索、来源评估与方法论追踪，生成结构化研究报告，适合个人研究与学习。"
+license: "Proprietary"
+edition: "free"
 description: |-
   多源深度研究工具，支持系统性信息探索、来源评估与方法论追踪，生成结构化研究报告，适合个人研究与学习。
 
@@ -27,13 +27,14 @@ description: |-
 
   适用关键词: 深度研究, 多源调研, 信息分析, 研究报告, 课题调研
 tags:
-- 研究
-- 分析工具
-- 信息检索
-- 报告生成
+  - 研究
+  - 分析工具
+  - 信息检索
+  - 报告生成
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 深度研究工具（免费版）
 

@@ -1,10 +1,10 @@
 ---
-slug: ws-excel
-name: ws-excel
+slug: "ws-excel"
+name: "ws-excel"
 version: "1.0.0"
-displayName: Excel
-summary: Excel 操作。数据处理、公式、表格操作。
-license: MIT-0
+displayName: "Excel"
+summary: "Excel 操作。数据处理、公式、表格操作。"
+license: "MIT-0"
 description: |-
   Excel 操作。数据处理、公式、表格操作。
 
@@ -23,13 +23,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
-
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Excel
 

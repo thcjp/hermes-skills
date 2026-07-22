@@ -1,11 +1,11 @@
 ---
-slug: ws-calendar-tool-free
-name: ws-calendar-tool-free
+slug: "ws-calendar-tool-free"
+name: "ws-calendar-tool-free"
 version: "1.0.0"
-displayName: 日历同步工具基础版
-summary: 日历管理与同步工具,支持创建事件、设置提醒与跨平台同步
-license: Proprietary
-edition: free
+displayName: "日历同步工具基础版"
+summary: "日历管理与同步工具,支持创建事件、设置提醒与跨平台同步"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力: 日程管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
 
@@ -15,13 +15,14 @@ description: |-
 
   适用关键词: calendar, 日历, 同步, 日程, 事件, 提醒, 跨平台
 tags:
-- 日历
-- 同步
-- 日程
-- 提醒
+  - 日历
+  - 同步
+  - 日程
+  - 提醒
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 日历同步工具基础版
 

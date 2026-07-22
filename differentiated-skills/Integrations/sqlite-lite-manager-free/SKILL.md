@@ -1,23 +1,23 @@
 ---
-slug: sqlite-lite-manager-free
-name: sqlite-lite-manager-free
+slug: "sqlite-lite-manager-free"
+name: "sqlite-lite-manager-free"
 version: "1.0.0"
-displayName: 轻量SQLite管理免费版
-summary: 面向AI Agent的轻量级本地SQLite数据库管理工具，免部署、低内存，覆盖建表、查询、索引、备份等核心场景。
-license: Proprietary
-edition: free
+displayName: "轻量SQLite管理免费版"
+summary: "面向AI Agent的轻量级本地SQLite数据库管理工具，免部署、低内存，覆盖建表、查询、索引、备份等核心场景。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向AI Agent场景重新设计的轻量级SQLite本地数据库管理工具。通过单一文件、零运维的方式提供结构化数据存储能力，配套Python封装API、性能调优参数与常用Schema模板，可快速接入会话记忆、缓存层、日志归档等典型工作流。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。
 tags:
-- 集成工具
-- 本地存储
-- 数据库
-- 轻量级
+  - 集成工具
+  - 本地存储
+  - 数据库
+  - 轻量级
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 轻量SQLite管理工具（免费版）
 
 本工具为AI Agent、独立开发者与小型团队提供轻量级本地SQLite数据库管理能力。免费版聚焦核心场景：建表、增删改查、索引、备份、查询优化，足以覆盖绝大多数本地数据存储需求。

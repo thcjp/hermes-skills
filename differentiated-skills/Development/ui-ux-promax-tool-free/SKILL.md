@@ -1,11 +1,11 @@
 ---
-slug: ui-ux-promax-tool-free
-name: ui-ux-promax-tool-free
+slug: "ui-ux-promax-tool-free"
+name: "ui-ux-promax-tool-free"
 version: "1.0.0"
-displayName: UIUX设计助手(免费版)
-summary: 面向个人开发者的UI/UX设计指导工具,提供布局、配色、排版的快速建议与设计令牌输出。
-license: Proprietary
-edition: free
+displayName: "UIUX设计助手(免费版)"
+summary: "面向个人开发者的UI/UX设计指导工具,提供布局、配色、排版的快速建议与设计令牌输出。"
+license: "Proprietary"
+edition: "free"
 description: |-
   UI/UX设计助手免费版为个人开发者提供基础的UI/UX设计指导,涵盖布局方向、配色系统、排版规模与设计令牌输出。核心能力:
   - UI概念与布局方向快速建议
@@ -21,14 +21,15 @@ description: |-
 
   差异化:免费版聚焦个人开发者的基础设计需求,输出ASCII友好令牌
 tags:
-- UI/UX
-- 设计系统
-- 前端开发
-- 个人开发
-- 设计令牌
+  - UI/UX
+  - 设计系统
+  - 前端开发
+  - 个人开发
+  - 设计令牌
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # UI/UX 设计助手(免费版)
 

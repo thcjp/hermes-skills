@@ -1,10 +1,10 @@
 ---
-slug: dns-lookup
-name: dns-lookup
+slug: "dns-lookup"
+name: "dns-lookup"
 version: "1.0.0"
-displayName: Dns Lookup
-summary: Resolve hostnames to IP addresses using `dig` from bind-utils.
-license: MIT
+displayName: "Dns Lookup"
+summary: "Resolve hostnames to IP addresses using `dig` from bind-utils."
+license: "MIT"
 description: |-
   Resolve hostnames to IP addresses using `dig` from bind-utils。核心能力:
 
@@ -21,12 +21,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Dns Lookup
 

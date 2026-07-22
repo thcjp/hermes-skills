@@ -1,11 +1,11 @@
 ---
-slug: token-manager-tool-free
-name: token-manager-tool-free
+slug: "token-manager-tool-free"
+name: "token-manager-tool-free"
 version: "1.0.0"
-displayName: Token用量管理免费版
-summary: 监控LLM API的Token用量与费用，提供省钱建议与余额提醒，适合个人开发者日常使用。
-license: Proprietary
-edition: free
+displayName: "Token用量管理免费版"
+summary: "监控LLM API的Token用量与费用，提供省钱建议与余额提醒，适合个人开发者日常使用。"
+license: "Proprietary"
+edition: "free"
 description: |-
   Token用量管理工具免费版，面向个人开发者的轻量级LLM用量监控工具。核心能力:
   - 实时会话Token用量分析与费用估算
@@ -20,15 +20,15 @@ description: |-
 
   差异化: 免费版聚焦核心用量监控与省钱建议，去除所有外部平台与作者引用，强化中文本地化与适用关键词...
 tags:
-- Token管理
-- 费用监控
-- LLM优化
-- 免费版
+  - Token管理
+  - 费用监控
+  - LLM优化
+  - 免费版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Token用量管理工具（免费版）
 
 ## 概述

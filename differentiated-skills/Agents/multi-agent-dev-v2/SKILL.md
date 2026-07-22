@@ -1,22 +1,22 @@
 ---
-slug: multi-agent-dev-v2
-name: multi-agent-dev-v2
+slug: "multi-agent-dev-v2"
+name: "multi-agent-dev-v2"
 version: "1.0.0"
-displayName: 多代理开发
-summary: 智能任务分解,选择性并行执行,分层评审机制,上下文隔离防污染。
-license: Proprietary
+displayName: "多代理开发"
+summary: "智能任务分解,选择性并行执行,分层评审机制,上下文隔离防污染。"
+license: "Proprietary"
 description: |-
   多代理开发是一个通过子代理编排执行实现计划的开发框架。针对传统子代理开发"协调开销大、上下文污染、串行瓶颈、评审成本高"四大痛点,构建了智能任务分解图、选择性并行执行、分层评审机制和上下文隔离四大核心能力。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-- 智能代理
-- 开发流程
-- 代码评审
-- 任务编排
+  - 智能代理
+  - 开发流程
+  - 代码评审
+  - 任务编排
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 多代理开发
 
 通过为每个任务派发新鲜子代理执行实现计划,并在每步后进行两阶段评审(先规格合规,后代码质量),实现高质量快速迭代。

@@ -1,10 +1,10 @@
 ---
-slug: ai-image-gen-free
-name: ai-image-gen-free
+slug: "ai-image-gen-free"
+name: "ai-image-gen-free"
 version: "1.0.0"
-displayName: AI图像生成基础版
-summary: Gemini Flash Image 文生图基础版,支持标准与2K分辨率、10种画面比例。
-license: MIT
+displayName: "AI图像生成基础版"
+summary: "Gemini Flash Image 文生图基础版,支持标准与2K分辨率、10种画面比例。"
+license: "MIT"
 description: |-
   AI 图像生成基础版(免费),通过执行脚本调用 Gemini Flash Image API 完成文本生成图像。
   核心能力:
@@ -21,8 +21,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # AI Image Gen LITE
 
 AI 图像生成基础版,通过执行 `scripts/generate_image.py` 调用 Gemini Flash Image API 生成图片。仅支持文本生成图像(文生图),覆盖标准与 2K 两档分辨率、10 种画面比例。

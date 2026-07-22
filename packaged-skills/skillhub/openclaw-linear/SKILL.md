@@ -1,19 +1,19 @@
 ---
-slug: openclaw-linear
-name: openclaw-linear
+slug: "openclaw-linear"
+name: "openclaw-linear"
 version: "1.0.1"
-displayName: Linear CLI
-summary: Manage Linear issues, projects, teams, and documents from the command line
-  using the linear CLI. ...
-license: MIT
+displayName: "Linear CLI"
+summary: "Manage Linear issues, projects, teams, and documents from the command line"
+license: "MIT"
 description: |-
   Manage Linear issues, projects, teams, and documents from the command
   line using the linear CLI。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Linear CLI
 

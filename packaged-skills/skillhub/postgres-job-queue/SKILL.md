@@ -1,19 +1,19 @@
 ---
-slug: postgres-job-queue
-name: postgres-job-queue
+slug: "postgres-job-queue"
+name: "postgres-job-queue"
 version: "1.0.0"
-displayName: Postgres Job Queue
-summary: 关系型数据库-based job queue with priority scheduling, batch claiming, and
-  progress tracking. Use w...
-license: MIT
+displayName: "Postgres Job Queue"
+summary: "关系型数据库-based job queue with priority scheduling, batch claiming, and"
+license: "MIT"
 description: |-
   关系型数据库-based job queue with priority scheduling, batch claiming,
   and progress tracking。Use w。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Postgres Job Queue
 

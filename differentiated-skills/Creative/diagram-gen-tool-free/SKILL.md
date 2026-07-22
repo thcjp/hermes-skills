@@ -1,11 +1,11 @@
 ---
-slug: diagram-gen-tool-free
-name: diagram-gen-tool-free
+slug: "diagram-gen-tool-free"
+name: "diagram-gen-tool-free"
 version: "1.0.0"
-displayName: 图表生成工具-免费版
-summary: 轻量级图表生成工具，支持Mermaid格式流程图与序列图的快速创建与编辑。
-license: Proprietary
-edition: free
+displayName: "图表生成工具-免费版"
+summary: "轻量级图表生成工具，支持Mermaid格式流程图与序列图的快速创建与编辑。"
+license: "Proprietary"
+edition: "free"
 description: |-
   图表生成工具免费版，面向个人开发者的轻量级图表制作方案。核心能力：
   - Mermaid 格式图表生成与编辑
@@ -20,14 +20,14 @@ description: |-
 
   差异化：免费版聚焦 Mermaid 单一格式与两种高频图表类型，零依赖、即开即用
 tags:
-- Creative
-- Diagram
-- Documentation
+  - Creative
+  - Diagram
+  - Documentation
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 图表生成工具（免费版）
 
 ## 概述

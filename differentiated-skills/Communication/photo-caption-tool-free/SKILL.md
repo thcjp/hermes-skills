@@ -1,11 +1,11 @@
 ---
-slug: photo-caption-tool-free
-name: photo-caption-tool-free
+slug: "photo-caption-tool-free"
+name: "photo-caption-tool-free"
 version: "1.0.0"
-displayName: 照片配文工具免费版
-summary: 轻量级社交媒体照片配文生成工具,支持Instagram、X(Twitter)、Facebook三大平台,一键生成平台适配文案。
-license: Proprietary
-edition: free
+displayName: "照片配文工具免费版"
+summary: "轻量级社交媒体照片配文生成工具,支持Instagram、X(Twitter)、Facebook三大平台,一键生成平台适配文案。"
+license: "Proprietary"
+edition: "free"
 description: |-
   照片配文工具免费版,为个人用户提供 Instagram、X(Twitter)、Facebook 三大主流社交平台的照片配文自动生成能力。核心能力:
   - 三大主流平台配文一键生成
@@ -20,14 +20,15 @@ description: |-
 
   差异化:免费版聚焦 Instagram、X、Facebook 三大高频平台,配置简单,适合个人用户快速生成平台适配的配文内容
 tags:
-- 沟通协作
-- 社交媒体
-- 内容创作
-- 摄影配文
-- 个人效率
+  - 沟通协作
+  - 社交媒体
+  - 内容创作
+  - 摄影配文
+  - 个人效率
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 照片配文工具 - 免费版
 

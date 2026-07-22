@@ -1,11 +1,11 @@
 ---
-slug: calendar-skill-tool-free
-name: calendar-skill-tool-free
+slug: "calendar-skill-tool-free"
+name: "calendar-skill-tool-free"
 version: "1.0.0"
-displayName: 日历管理技能基础版
-summary: 通过 porteden CLI 安全管理 Google 与 Outlook 日历,支持事件查询、创建与更新
-license: Proprietary
-edition: free
+displayName: "日历管理技能基础版"
+summary: "通过 porteden CLI 安全管理 Google 与 Outlook 日历,支持事件查询、创建与更新"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力: 日程管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
 
@@ -15,13 +15,14 @@ description: |-
 
   适用关键词: calendar, porteden, 日历事件, 日程查询, 会议邀请
 tags:
-- 日历
-- porteden
-- Outlook
-- Google Calendar
+  - 日历
+  - porteden
+  - Outlook
+  - Google Calendar
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 日历管理技能基础版
 

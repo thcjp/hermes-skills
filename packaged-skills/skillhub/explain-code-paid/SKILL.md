@@ -1,11 +1,11 @@
 ---
-slug: explain-code-paid
-name: explain-code-paid
+slug: "explain-code-paid"
+name: "explain-code-paid"
 version: "1.0.0"
-displayName: 代码解释工具专业版
-summary: 企业级代码理解工具,支持项目架构分析、批量文档生成、Mermaid可视化与API文档输出。
-license: Proprietary
-edition: pro
+displayName: "代码解释工具专业版"
+summary: "企业级代码理解工具,支持项目架构分析、批量文档生成、Mermaid可视化与API文档输出。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向研发团队的高级代码理解工具,提供项目级架构分析、批量代码文档生成、Mermaid/UML可视化与API文档自动输出。核心能力:
   - 项目级架构分析与依赖图
@@ -25,15 +25,14 @@ description: |-
   - 专业版完全兼容免费版解释风格,支持平滑升级
   - 支...
 tags:
-- 开发工具
-- 代码理解
-- 技术文档
-- 企业级
+  - 开发工具
+  - 代码理解
+  - 技术文档
+  - 企业级
 tools:
   - - read
-- exec
-# 代码解释工具 - 专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 代码解释工具专业版
 

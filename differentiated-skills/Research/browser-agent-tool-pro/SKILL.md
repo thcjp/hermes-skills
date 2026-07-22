@@ -1,11 +1,11 @@
 ---
-slug: browser-agent-tool-pro
-name: browser-agent-tool-pro
+slug: "browser-agent-tool-pro"
+name: "browser-agent-tool-pro"
 version: "1.0.0"
-displayName: 浏览器智能代理工具-专业版
-summary: 企业级无头浏览器自动化,支持批量调度、网络拦截、代理池与监控告警,面向团队生产场景
-license: Proprietary
-edition: pro
+displayName: "浏览器智能代理工具-专业版"
+summary: "企业级无头浏览器自动化,支持批量调度、网络拦截、代理池与监控告警,面向团队生产场景"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级无头浏览器自动化命令行工具,在免费版核心能力之上,提供网络拦截与Mock、
   批量任务调度、代理池管理、监控告警、多租户隔离与团队协作能力。核心能力:
@@ -24,13 +24,14 @@ description: |-
 
   差异化:专业...
 tags:
-- 研究工具
-- 浏览器自动化
-- 企业级
-- 批量操作
+  - 研究工具
+  - 浏览器自动化
+  - 企业级
+  - 批量操作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 浏览器智能代理工具(专业版)
 

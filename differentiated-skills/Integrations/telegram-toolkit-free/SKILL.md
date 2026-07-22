@@ -1,23 +1,23 @@
 ---
-slug: telegram-toolkit-free
-name: telegram-toolkit-free
+slug: "telegram-toolkit-free"
+name: "telegram-toolkit-free"
 version: "1.0.0"
-displayName: TG机器人工具(免费版)
-summary: 面向AI Agent的Telegram Bot工作流设计工具免费版，覆盖命令路由、更新处理、安全配置核心能力。
-license: Proprietary
-edition: free
+displayName: "TG机器人工具(免费版)"
+summary: "面向AI Agent的Telegram Bot工作流设计工具免费版，覆盖命令路由、更新处理、安全配置核心能力。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向独立开发者与AI Agent的Telegram Bot工作流设计工具免费版。聚焦命令优先的机器人交互设计、更新处理（webhook或长轮询）、HTTP请求模板与安全配置，提供生产可用的命令路由规范与更新归一化处理模式，帮助用户快速构建专业、可靠的Telegram机器人。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- 集成工具
-- 即时通讯
-- 机器人
-- Telegram
+  - 集成工具
+  - 即时通讯
+  - 机器人
+  - Telegram
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # TG机器人工具（免费版）
 
 本工具为独立开发者、运维与AI Agent提供Telegram Bot工作流的设计与实现能力。免费版聚焦核心场景：命令路由设计、更新处理、HTTP请求模板、安全配置，足以覆盖命令式Telegram机器人的绝大多数日常需求。

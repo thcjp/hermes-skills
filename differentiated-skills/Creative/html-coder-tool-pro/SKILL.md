@@ -1,26 +1,25 @@
 ---
-slug: html-coder-tool-pro
-name: html-coder-tool-pro
+slug: "html-coder-tool-pro"
+name: "html-coder-tool-pro"
 version: "1.0.0"
-displayName: HTML编码工具-专业版
-summary: 企业级HTML开发引擎，支持HTML5高级API、Web Components、WCAG全面合规与性能优化。
-license: Proprietary
-edition: pro
+displayName: "HTML编码工具-专业版"
+summary: "企业级HTML开发引擎，支持HTML5高级API、Web Components、WCAG全面合规与性能优化。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   HTML编码工具专业版，面向团队的企业级HTML开发平台。核心能力：
   - HTML5 全API覆盖（Canvas/SVG/Storage/Geolocation/Drag&Drop/Web Workers）
   - Web Components 与 Shadow DOM 组件化开发
   - WCAG 2
 tags:
-- Creative
-- HTML
-- Enterprise
-- WebStandards
+  - Creative
+  - HTML
+  - Enterprise
+  - WebStandards
 tools:
   - - read
-- exec
-# HTML编码工具（专业版）
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 HTML编码工具专业版是企业级 HTML 开发平台，覆盖 HTML5 全部 API、Web Components 组件化开发、WCAG 2.1 全面合规检查和性能优化策略。从基础语义化标记到高级 Canvas 绘图、SVG 操作、Web Storage 和地理定位，专业版提供完整的 HTML 开发能力。
 

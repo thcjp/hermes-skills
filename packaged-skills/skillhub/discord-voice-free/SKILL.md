@@ -1,10 +1,10 @@
 ---
-slug: discord-voice-free
-name: discord-voice-free
+slug: "discord-voice-free"
+name: "discord-voice-free"
 version: "1.0.0"
-displayName: Discord语音免费
-summary: Discord语音助手免费版,提供基础加入/离开/状态查询与本地Whisper转写
-license: MIT
+displayName: "Discord语音免费"
+summary: "Discord语音助手免费版,提供基础加入/离开/状态查询与本地Whisper转写"
+license: "MIT"
 description: |-
   Discord 语音对话助手(免费版),提供基础的语音频道加入、离开、状态查询与本地
   Whisper 离线转写能力。覆盖 VAD 语音检测、静默触发 STT、TTS 播放的最小闭环。
@@ -27,8 +27,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Discord 语音助手 (免费版)
 
 在 Discord 语音频道中提供基础的语音对话能力:VAD 检测 → 本地 Whisper 转写 → OpenAI TTS 播放。仅支持 `medium` 灵敏度与默认配置,适合个人开发者快速验证原型。

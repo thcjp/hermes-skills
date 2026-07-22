@@ -1,19 +1,19 @@
 ---
-slug: openai-ai
-name: openai-ai
+slug: "openai-ai"
+name: "openai-ai"
 version: "1.0.6"
-displayName: llm-provider
-summary: Manage llm-provider files, assistants, vector stores, batches, fine-tuning jobs,
-  and model resources vi...
-license: MIT-0
+displayName: "llm-provider"
+summary: "Manage llm-provider files, assistants, vector stores, batches, fine-tuning jobs,"
+license: "MIT-0"
 description: |-
   Manage llm-provider files, assistants, vector stores, batches, fine-tuning
   jobs, and model resources vi。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- Creative
+  - Creative
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # llm-provider
 

@@ -1,10 +1,10 @@
 ---
-slug: email-daily-summary
-name: email-daily-summary
+slug: "email-daily-summary"
+name: "email-daily-summary"
 version: "1.0.0"
-displayName: Email Daily Summary
-summary: 基于 browser-use 自动登录邮箱并生成每日邮件摘要与统计日报
-license: MIT
+displayName: "Email Daily Summary"
+summary: "基于 browser-use 自动登录邮箱并生成每日邮件摘要与统计日报"
+license: "MIT"
 description: |-
   基于 browser-use CLI 自动化登录 Gmail、Outlook、QQ 邮箱、163/126 邮箱及企业微信邮箱,
   抓取收件箱列表,提取发件人、主题、摘要片段与时间戳,生成结构化每日邮件日报。
@@ -17,8 +17,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Email Daily Summary
 
 通过 `browser-use` CLI 驱动浏览器自动化登录 Web 邮箱,抓取当日邮件并生成结构化日报。优先复用本机 Chrome 已登录会话(`--browser real`),避免在脚本中存储明文密码。

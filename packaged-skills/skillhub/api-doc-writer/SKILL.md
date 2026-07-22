@@ -1,10 +1,10 @@
 ---
-slug: api-doc-writer
-name: api-doc-writer
+slug: "api-doc-writer"
+name: "api-doc-writer"
 version: "1.0.0"
-displayName: API接口文档编写器
-summary: 编写REST API文档,定义接口规范,生成接口说明,含模板、状态码、RESTful规范与安全建议
-license: MIT
+displayName: "API接口文档编写器"
+summary: "编写REST API文档,定义接口规范,生成接口说明,含模板、状态码、RESTful规范与安全建议"
+license: "MIT"
 description: |-
   API 接口文档编写助手。用于编写 REST API 文档、定义接口规范、生成接口说明。
   提供完整文档模板（接口概览、通用说明、认证方式、请求/响应格式、状态码、接口详情、变更记录）、
@@ -16,8 +16,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # API 接口文档编写器
 
 API 接口文档编写助手。用于编写 REST API 文档、定义接口规范、生成接口说明。提供完整文档模板、RESTful 设计规范与安全建议。

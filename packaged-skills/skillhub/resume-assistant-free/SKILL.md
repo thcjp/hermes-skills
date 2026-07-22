@@ -1,10 +1,10 @@
 ---
-slug: resume-assistant-free
-name: resume-assistant-free
+slug: "resume-assistant-free"
+name: "resume-assistant-free"
 version: "1.0.0"
-displayName: 简历助手免费版
-summary: 免费版简历助手，支持基础评分与润色功能。
-license: MIT
+displayName: "简历助手免费版"
+summary: "免费版简历助手，支持基础评分与润色功能。"
+license: "MIT"
 description: |-
   简历助手免费版，提供基础的简历评分与润色功能。
   支持100分制评分与基础检查项审查。
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 简历助手（免费版）
 
 提供基础简历评分与润色功能的AI助手。

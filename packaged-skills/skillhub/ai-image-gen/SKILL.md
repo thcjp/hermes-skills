@@ -1,10 +1,10 @@
 ---
-slug: ai-image-gen
-name: ai-image-gen
+slug: "ai-image-gen"
+name: "ai-image-gen"
 version: "1.0.0"
-displayName: AI图像生成专业版
-summary: 基于Gemini Flash Image的图像生成,支持文生图、图生图、风格转换,标准/2K/4K多分辨率与10种比例。
-license: MIT
+displayName: "AI图像生成专业版"
+summary: "基于Gemini Flash Image的图像生成,支持文生图、图生图、风格转换,标准/2K/4K多分辨率与10种比例。"
+license: "MIT"
 description: |-
   AI 图像生成专业版,通过执行脚本调用 Gemini Flash Image API 完成图像生成与编辑。
   核心能力:
@@ -25,8 +25,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # AI Image Gen
 
 通过执行 `scripts/generate_image.py` 调用 Gemini Flash Image API 生成图片。支持文生图、图生图、风格转换,覆盖标准/2K/4K 三档分辨率与 10 种画面比例。

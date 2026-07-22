@@ -1,11 +1,11 @@
 ---
-slug: pro-comm-toolkit-free
-name: pro-comm-toolkit-free
+slug: "pro-comm-toolkit-free"
+name: "pro-comm-toolkit-free"
 version: "1.0.0"
-displayName: 职场沟通工具箱免费版
-summary: 专业职场写作助手，提供邮件、会议、消息模板，帮助个人用户高效完成日常沟通写作。
-license: Proprietary
-edition: free
+displayName: "职场沟通工具箱免费版"
+summary: "专业职场写作助手，提供邮件、会议、消息模板，帮助个人用户高效完成日常沟通写作。"
+license: "Proprietary"
+edition: "free"
 description: |-
   职场沟通工具箱（免费版）—— 面向个人用户的专业写作辅助工具。核心能力:
   - 邮件模板生成与结构化写作指导
@@ -21,12 +21,13 @@ description: |-
 
   差异化: 聚焦个人用户高频沟通场景，提供开箱即用的模板与写作规则，无需配置即可使用
 tags:
-- 沟通协作
-- 写作助手
-- 职场效率
+  - 沟通协作
+  - 写作助手
+  - 职场效率
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 职场沟通工具箱（免费版）
 

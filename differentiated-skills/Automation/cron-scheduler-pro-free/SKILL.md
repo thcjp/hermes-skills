@@ -1,22 +1,22 @@
 ---
-slug: cron-scheduler-pro-free
-name: cron-scheduler-pro-free
+slug: "cron-scheduler-pro-free"
+name: "cron-scheduler-pro-free"
 version: "1.0.0"
-displayName: Cron Scheduler Pro
-summary: 本地优先的定时任务调度引擎免费版，支持每日/每周/每月/间隔四种调度模式与任务生命周期管理。
-license: Proprietary
-edition: free
+displayName: "Cron Scheduler Pro"
+summary: "本地优先的定时任务调度引擎免费版，支持每日/每周/每月/间隔四种调度模式与任务生命周期管理。"
+license: "Proprietary"
+edition: "free"
 description: |-
   定时调度引擎免费版是一套面向AI Agent的本地优先定时任务调度框架。将重复性意图转化为结构化的执行契约，让Agent按计划自动执行任务。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
 tags:
-- 定时调度
-- 任务管理
-- 自动化
-- 本地优先
+  - 定时调度
+  - 任务管理
+  - 自动化
+  - 本地优先
 tools:
   - - read
-- exec
-# 定时调度引擎（免费版）
+  - exec
+homepage: "https://skillhub.cn"
 ---
 > **将重复性意图转化为可信赖的执行契约。本地优先，隐私安全，四种调度模式。**
 

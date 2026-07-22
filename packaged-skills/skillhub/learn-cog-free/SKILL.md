@@ -1,10 +1,10 @@
 ---
-slug: learn-cog-free
-name: learn-cog-free
+slug: "learn-cog-free"
+name: "learn-cog-free"
 version: "1.0.0"
-displayName: 个性化学习助手免费版
-summary: 免费版AI学习助手，支持概念解释、语言学习与学习指南生成。
-license: MIT
+displayName: "个性化学习助手免费版"
+summary: "免费版AI学习助手，支持概念解释、语言学习与学习指南生成。"
+license: "MIT"
 description: |-
   个性化学习助手免费版，提供基础AI辅导功能。
   支持概念解释、语言学习基础与学习指南生成。
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 个性化学习助手（免费版）
 
 AI驱动的学习助手，支持概念解释、语言学习与学习指南生成。

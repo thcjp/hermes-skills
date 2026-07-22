@@ -1,11 +1,11 @@
 ---
-slug: free-weather-skill-tool-free
-name: free-weather-skill-tool-free
+slug: "free-weather-skill-tool-free"
+name: "free-weather-skill-tool-free"
 version: "1.0.0"
-displayName: 免费天气技能免费版
-summary: 通过wttr.in和Open-Meteo免费API查询全球天气,无需API Key
-license: Proprietary
-edition: free
+displayName: "免费天气技能免费版"
+summary: "通过wttr.in和Open-Meteo免费API查询全球天气,无需API Key"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人用户的轻量天气查询工具,完全免费且无需 API Key。
   核心能力: 全球城市天气查询、多格式输出、JSON编程接口、命令行便捷调用
@@ -13,14 +13,15 @@ description: |-
   差异化: 免费版聚焦命令行查询,零配置开箱即用,适合个人与开发者
   适用关键词: 免费天气, wttr.in, open-meteo, 命令行天气, 无需API Key
 tags:
-- 天气查询
-- 免费工具
-- 命令行
-- 开发者工具
-- 全球天气
+  - 天气查询
+  - 免费工具
+  - 命令行
+  - 开发者工具
+  - 全球天气
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 免费天气技能 (免费版)
 

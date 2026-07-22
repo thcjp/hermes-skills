@@ -1,19 +1,19 @@
 ---
-slug: blog-seo-writer
-name: blog-seo-writer
+slug: "blog-seo-writer"
+name: "blog-seo-writer"
 version: "1.0.0"
-displayName: blog-seo-writer
-summary: Create SEO-optimized blog posts that rank higher on Google. Includes keyword
-  integration, meta de...
-license: MIT-0
+displayName: "blog-seo-writer"
+summary: "Create SEO-optimized blog posts that rank higher on Google. Includes keyword"
+license: "MIT-0"
 description: |-
   Create SEO-optimized blog posts that rank higher on Google。Includes
   keyword integration, meta de。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Productivity
+  - Productivity
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # blog-seo-writer
 

@@ -1,11 +1,10 @@
 ---
-slug: cctv-news-fetcher
-name: cctv-news-fetcher
+slug: "cctv-news-fetcher"
+name: "cctv-news-fetcher"
 version: "1.0.0"
-displayName: CCTV News Fetcher
-summary: Fetch and parse news highlights from CCTV News Broadcast (Xinwen Lianbo)
-  for a given date.
-license: MIT
+displayName: "CCTV News Fetcher"
+summary: "Fetch and parse news highlights from CCTV News Broadcast (Xinwen Lianbo)"
+license: "MIT"
 description: |-
   Fetch and parse news highlights from CCTV News Broadcast (Xinwen Lianbo)
   for a given date。核心能力:
@@ -23,12 +22,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Research
+  - Research
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # CCTV News Fetcher
 

@@ -1,11 +1,11 @@
 ---
-slug: note-process-engine-pro
-name: note-process-engine-pro
+slug: "note-process-engine-pro"
+name: "note-process-engine-pro"
 version: "1.0.0"
-displayName: 笔记处理引擎(专业版)
-summary: 企业级研究笔记分析平台,支持语义检索、自动标签、跨库联合、可视化与导出报告,适合研究团队与企业规模化使用。
-license: Proprietary
-edition: pro
+displayName: "笔记处理引擎(专业版)"
+summary: "企业级研究笔记分析平台,支持语义检索、自动标签、跨库联合、可视化与导出报告,适合研究团队与企业规模化使用。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   笔记处理引擎(专业版)是面向研究团队与企业的全功能笔记分析Skill,在免费版基础上新增语义检索、自动标签、跨库联合检索、可视化、导出报告、定时分析等高级能力。核心能力:
 
@@ -17,14 +17,14 @@ description: |-
   - 定时分析:cron调度,自动生成周期性报告
   - 多语言深度...
 tags:
-- 集成工具
-- 知识分析
-- 企业研究
+  - 集成工具
+  - 知识分析
+  - 企业研究
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 笔记处理引擎(专业版)
 
 一个面向研究团队与企业的全功能笔记分析Skill,在免费版基础上扩展了语义检索、自动标签、跨库联合检索、可视化、导出报告、定时分析等高级能力,适合规模化使用场景。

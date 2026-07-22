@@ -1,11 +1,11 @@
 ---
-slug: ai-image-gen-tool-free
-name: ai-image-gen-tool-free
+slug: "ai-image-gen-tool-free"
+name: "ai-image-gen-tool-free"
 version: "1.0.0"
-displayName: AI图像生成-免费版
-summary: 通过文本描述生成图片,支持多种比例与标准分辨率,适合个人创作者快速出图。
-license: Proprietary
-edition: free
+displayName: "AI图像生成-免费版"
+summary: "通过文本描述生成图片,支持多种比例与标准分辨率,适合个人创作者快速出图。"
+license: "Proprietary"
+edition: "free"
 description: |-
   AI图像生成免费版,面向个人用户的文本生成图像工具。核心能力:
   - 文本描述生成图片(文生图)
@@ -20,12 +20,13 @@ description: |-
 
   差异化:免费版聚焦核心文生图能力,提供标准分辨率与常用比例,适合个人用户体验AI图像生成
 tags:
-- Creative
-- 图像生成
-- AI创作
+  - Creative
+  - 图像生成
+  - AI创作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # AI图像生成工具 - 免费版
 

@@ -1,10 +1,10 @@
 ---
-slug: ai-agent-helper-free
-name: ai-agent-helper-free
+slug: "ai-agent-helper-free"
+name: "ai-agent-helper-free"
 version: "1.0.0"
-displayName: AI Agent LITE
-summary: AI Agent基础设计助手,提供Prompt工程与ReAct循环设计两大基础能力
-license: MIT
+displayName: "AI Agent LITE"
+summary: "AI Agent基础设计助手,提供Prompt工程与ReAct循环设计两大基础能力"
+license: "MIT"
 description: |-
   AI Agent基础设计助手(免费版)。面向独立开发者,提供Prompt工程与ReAct循环设计两大基础能力,
   帮助快速搭建可用的AI Agent。覆盖System Prompt角色定义、约束设定、输出格式规范,以及ReAct
@@ -17,8 +17,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # AI Agent LITE
 
 帮你setup基础AI Agents的技能。提供Prompt工程与ReAct循环设计两大基础能力,快速搭建可用的AI Agent。

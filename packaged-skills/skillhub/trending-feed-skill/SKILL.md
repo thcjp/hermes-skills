@@ -1,11 +1,11 @@
 ---
-slug: trending-feed-skill
-name: trending-feed-skill
+slug: "trending-feed-skill"
+name: "trending-feed-skill"
 version: "1.0.0"
-displayName: 热榜订阅(专业版)
-summary: 全功能 GitHub Trending 订阅，含批量抓取、多级缓存、定时推送、自定义模板。
-license: Proprietary
-edition: pro
+displayName: "热榜订阅(专业版)"
+summary: "全功能 GitHub Trending 订阅，含批量抓取、多级缓存、定时推送、自定义模板。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   全功能 GitHub Trending 订阅，含批量抓取、多级缓存、定时推送、自定义模板。核心能力：
   - 批量抓取多语言、多时间窗（daily/weekly/monthly）热榜
@@ -14,13 +14,14 @@ description: |-
   - 定时抓取并自动推送到飞书、Discord、Telegram
   - 自定义输出模板与字段映射...
 tags:
-- 集成工具
-- 数据聚合
-- 企业效率
-- 自动化
+  - 集成工具
+  - 数据聚合
+  - 企业效率
+  - 自动化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 热榜订阅(专业版)
 

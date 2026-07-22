@@ -1,23 +1,23 @@
 ---
-slug: log-sanitizer-free
-name: log-sanitizer-free
+slug: "log-sanitizer-free"
+name: "log-sanitizer-free"
 version: "1.0.0"
-displayName: 日志脱敏工具
-summary: 扫描日志文件识别并脱敏密码、令牌、密钥等敏感信息，支持正则规则与自定义模式，本地运行零数据外泄。
-license: Proprietary
-edition: free
+displayName: "日志脱敏工具"
+summary: "扫描日志文件识别并脱敏密码、令牌、密钥等敏感信息，支持正则规则与自定义模式，本地运行零数据外泄。"
+license: "Proprietary"
+edition: "free"
 description: |-
   日志脱敏工具免费版解决日志安全的"隐性泄露"痛点：开发者将应用日志上传到排查平台时无意间泄露数据库密码、API令牌被写入调试日志、生产环境日志包含用户隐私字段、合规审计要求日志中不得出现明文敏感信息。这些场景下，原始日志直接归档或转发会带来严重的安全与合规风险。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。
 tags:
-- 日志安全
-- 敏感信息
-- 数据脱敏
-- 合规审计
+  - 日志安全
+  - 敏感信息
+  - 数据脱敏
+  - 合规审计
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 日志脱敏工具（免费版）
 
 > **日志中的敏感信息雷达。六大类别识别，本地运行零数据外泄。**

@@ -1,11 +1,11 @@
 ---
-slug: slack-hub
-name: slack-hub
+slug: "slack-hub"
+name: "slack-hub"
 version: "1.0.0"
-displayName: Slack Hub工具专业版
-summary: 企业级Slack集成工具，支持批量消息发送、高级搜索、限流处理、消息模板与工作区深度管理。
-license: Proprietary
-edition: pro
+displayName: "Slack Hub工具专业版"
+summary: "企业级Slack集成工具，支持批量消息发送、高级搜索、限流处理、消息模板与工作区深度管理。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Slack Hub工具（专业版）—— 面向团队和企业的全功能Slack集成工具。核心能力:
   - 批量消息发送与多频道分发
@@ -23,16 +23,15 @@ description: |-
 
   差异化: 在免费版基础上增加批量发送、高级搜索、限流处理、模板管理等企业级能力，完全兼容免费版操作格式
 tags:
-- 沟通协作
-- 企业级
-- Slack
-- 搜索引擎
-- 批量处理
+  - 沟通协作
+  - 企业级
+  - Slack
+  - 搜索引擎
+  - 批量处理
 tools:
   - - read
-- exec
-# Slack Hub工具（专业版）
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Slack Hub工具专业版
 

@@ -1,11 +1,11 @@
 ---
-slug: notion-cli-tool-free
-name: notion-cli-tool-free
+slug: "notion-cli-tool-free"
+name: "notion-cli-tool-free"
 version: "1.0.0"
-displayName: Notion命令行(免费版)
-summary: 轻量化Notion命令行工具,支持数据库查询、页面管理、块操作与别名机制,适合个人开发者从终端高效操作Notion。
-license: Proprietary
-edition: free
+displayName: "Notion命令行(免费版)"
+summary: "轻量化Notion命令行工具,支持数据库查询、页面管理、块操作与别名机制,适合个人开发者从终端高效操作Notion。"
+license: "Proprietary"
+edition: "free"
 description: |-
   Notion命令行(免费版)是面向个人开发者与知识工作者的轻量化Notion操作Skill,通过命令行工具的组合,帮助用户从终端高效完成Notion工作空间的日常操作。核心能力:
 
@@ -22,12 +22,13 @@ description: |-
   - 小型团队的任务与项目管理
   - 自动化脚...
 tags:
-- 集成工具
-- Notion
-- 命令行
+  - 集成工具
+  - Notion
+  - 命令行
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Notion命令行(免费版)
 

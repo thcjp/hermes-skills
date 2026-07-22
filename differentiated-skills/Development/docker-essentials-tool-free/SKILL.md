@@ -1,11 +1,11 @@
 ---
-slug: docker-essentials-tool-free
-name: docker-essentials-tool-free
+slug: "docker-essentials-tool-free"
+name: "docker-essentials-tool-free"
 version: "1.0.0"
-displayName: Docker基础工具免费版
-summary: 提供Docker容器生命周期、镜像管理、Compose编排与网络卷管理,适合开发者日常使用。
-license: Proprietary
-edition: free
+displayName: "Docker基础工具免费版"
+summary: "提供Docker容器生命周期、镜像管理、Compose编排与网络卷管理,适合开发者日常使用。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向开发者的Docker容器管理辅助工具,涵盖容器生命周期、镜像构建管理、Compose编排与网络卷操作。核心能力:
   - 容器生命周期管理(run/stop/rm)
@@ -26,12 +26,13 @@ description: |-
 
   适用关键词:...
 tags:
-- 开发工具
-- Docker
-- 容器化
+  - 开发工具
+  - Docker
+  - 容器化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Docker基础工具 - 免费版
 ## 概述

@@ -1,11 +1,11 @@
 ---
-slug: podcast-toolkit-free
-name: podcast-toolkit-free
+slug: "podcast-toolkit-free"
+name: "podcast-toolkit-free"
 version: "1.0.0"
-displayName: 播客创作工具包免费版
-summary: 个人播客创作工具包,覆盖选题规划、脚本撰写与节目笔记,帮助独立创作者快速起步。
-license: Proprietary
-edition: free
+displayName: "播客创作工具包免费版"
+summary: "个人播客创作工具包,覆盖选题规划、脚本撰写与节目笔记,帮助独立创作者快速起步。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人创作者的播客创作工具包(免费版)。核心能力:
   - 播客选题规划与节目定位
@@ -28,16 +28,16 @@ description: |-
 
   适用关键词: podcast...
 tags:
-- 创意设计
-- 播客
-- 内容创作
-- 脚本撰写
-- 个人创作
+  - 创意设计
+  - 播客
+  - 内容创作
+  - 脚本撰写
+  - 个人创作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 播客创作工具包 - 免费版
 
 ## 概述

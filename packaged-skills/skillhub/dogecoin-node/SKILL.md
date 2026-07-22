@@ -1,19 +1,19 @@
 ---
-slug: dogecoin-node
-name: dogecoin-node
+slug: "dogecoin-node"
+name: "dogecoin-node"
 version: "1.0.5"
-displayName: Dogecoin Node
-summary: A skill to set up and operate a Dogecoin Core full node with RPC access,
-  blockchain tools, and op...
-license: MIT
+displayName: "Dogecoin Node"
+summary: "A skill to set up and operate a Dogecoin Core full node with RPC access,"
+license: "MIT"
 description: |-
   A skill to set up and operate a Dogecoin Core full node with RPC access,
   blockchain tools, and op。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Dogecoin Node
 

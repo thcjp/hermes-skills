@@ -1,10 +1,10 @@
 ---
-slug: write-a-skill
-name: write-a-skill
+slug: "write-a-skill"
+name: "write-a-skill"
 version: "2.0.0"
-displayName: 技能创建工具
-summary: 创建和优化AI技能，支持结构规划、渐进式披露、脚本集成和文件拆分
-license: MIT-0
+displayName: "技能创建工具"
+summary: "创建和优化AI技能，支持结构规划、渐进式披露、脚本集成和文件拆分"
+license: "MIT-0"
 description: |-
   AI技能创建和优化工具。支持技能结构规划、渐进式披露设计、脚本集成和文件
   拆分。技能描述不超过1024字符，SKILL.md不超过100行，超过500行时拆分到
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 技能创建工具
 
 创建和优化AI技能，支持结构规划、渐进式披露、脚本集成和文件拆分。

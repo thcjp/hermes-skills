@@ -1,10 +1,10 @@
 ---
-slug: neural-memory-enhanced
-name: neural-memory-enhanced
+slug: "neural-memory-enhanced"
+name: "neural-memory-enhanced"
 version: "1.0.0"
-displayName: 神经记忆增强系统
-summary: 基于扩散激活的联想记忆系统，通过神经图谱实现智能持久化召回
-license: MIT
+displayName: "神经记忆增强系统"
+summary: "基于扩散激活的联想记忆系统，通过神经图谱实现智能持久化召回"
+license: "MIT"
 description: |-
   生物学启发的联想记忆系统，采用扩散激活替代关键词检索和向量搜索。记忆以神经图谱形式组织，
   神经元之间通过20种类型化突触连接，频繁共同访问的记忆自动强化连接（赫布学习），陈旧记忆
@@ -15,8 +15,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 智能助手
 ---
-
 # 神经记忆增强系统
 
 基于扩散激活机制的联想记忆系统，通过神经图谱遍历实现概念关联召回，而非关键词匹配或向量相似度搜索。当查询"我们之前对认证模块做了什么决策"时，系统同时激活时间、实体、概念三类神经元，通过图谱遍历找到交集，即使没有共享关键词也能发现关联记忆。

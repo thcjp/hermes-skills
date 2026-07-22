@@ -1,11 +1,11 @@
 ---
-slug: data-analyst-expert
-name: data-analyst-expert
+slug: "data-analyst-expert"
+name: "data-analyst-expert"
 version: "1.0.0"
-displayName: 数据分析专家(专业版)
-summary: 全功能委派式分析平台,支持大数据流式处理、多任务编排、结果缓存与企业数据库集成。
-license: Proprietary
-edition: pro
+displayName: "数据分析专家(专业版)"
+summary: "全功能委派式分析平台,支持大数据流式处理、多任务编排、结果缓存与企业数据库集成。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   数据分析专家专业版面向需要把复杂数据分析任务"委派"给 AI Agent 完成的专业用户与团队,提供完整的多任务编排、大数据处理与企业级集成能力。核心能力:
   - 涵盖免费版全部能力,无文件大小与任务复杂度限制
@@ -24,6 +24,7 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
 # 数据分析专家(专业版)
 

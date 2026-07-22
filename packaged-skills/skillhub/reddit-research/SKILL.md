@@ -1,19 +1,19 @@
 ---
-slug: reddit-research
-name: reddit-research
+slug: "reddit-research"
+name: "reddit-research"
 version: "1.0.0"
-displayName: Reddit Research
-summary: Extracts and summarizes trending topics, recurring issues, and content gaps
-  across targeted Reddi...
-license: MIT
+displayName: "Reddit Research"
+summary: "Extracts and summarizes trending topics, recurring issues, and content gaps"
+license: "MIT"
 description: |-
   Extracts and summarizes trending topics, recurring issues, and content
   gaps across targeted Reddi。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Reddit Research
 

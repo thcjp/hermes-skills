@@ -1,11 +1,11 @@
 ---
-slug: safe-encryption-tool-pro
-name: safe-encryption-tool-pro
+slug: "safe-encryption-tool-pro"
+name: "safe-encryption-tool-pro"
 version: "1.0.0"
-displayName: 安全加密工具-专业版
-summary: 企业级加密平台,支持批量加密、密钥管理、安全策略与审计日志,量子安全算法
-license: Proprietary
-edition: pro
+displayName: "安全加密工具-专业版"
+summary: "企业级加密平台,支持批量加密、密钥管理、安全策略与审计日志,量子安全算法"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级安全加密工具专业版,面向团队与企业数据保护。核心能力:
   - 批量文件与目录加密
@@ -25,14 +25,15 @@ description: |-
 
   差异化:专业版在免费版基础上扩展批量加密、KMS 集成、安全策略与审计日...
 tags:
-- 加密
-- 企业级
-- 密钥管理
-- 安全合规
-- 审计日志
+  - 加密
+  - 企业级
+  - 密钥管理
+  - 安全合规
+  - 审计日志
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 安全加密工具 - 专业版
 

@@ -1,10 +1,10 @@
 ---
-slug: jira-skill-free
-name: jira-skill-free
+slug: "jira-skill-free"
+name: "jira-skill-free"
 version: "1.0.0"
-displayName: Jira集成助手-免费版
-summary: 通过Jira Cloud REST API查看事务详情、状态流转与浏览器链接，适合只读浏览场景。
-license: MIT
+displayName: "Jira集成助手-免费版"
+summary: "通过Jira Cloud REST API查看事务详情、状态流转与浏览器链接，适合只读浏览场景。"
+license: "MIT"
 description: |-
   Jira集成助手免费版提供Jira事务的只读浏览能力。
   支持模糊搜索、事务详情查看、浏览器链接生成与可用流转列表查看。
@@ -22,8 +22,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Jira集成助手（免费版）
 
 Jira集成助手免费版提供Jira事务的只读浏览能力。支持模糊搜索、事务详情查看、浏览器链接生成与可用流转列表查看。

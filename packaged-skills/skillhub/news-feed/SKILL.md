@@ -1,19 +1,19 @@
 ---
-slug: news-feed
-name: news-feed
+slug: "news-feed"
+name: "news-feed"
 version: "1.0.0"
-displayName: News Feed
-summary: Fetch latest news headlines from major RSS feeds (BBC, Reuters, AP, Al Jazeera,
-  NPR, The Guardian...
-license: MIT
+displayName: "News Feed"
+summary: "Fetch latest news headlines from major RSS feeds (BBC, Reuters, AP, Al Jazeera,"
+license: "MIT"
 description: |-
   Fetch latest news headlines from major RSS feeds (BBC, Reuters, AP,
   Al Jazeera, NPR, The Guardian。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-- Research
+  - Research
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # News Feed
 

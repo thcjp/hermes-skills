@@ -1,19 +1,19 @@
 ---
-slug: lite-sqlite
-name: lite-sqlite
+slug: "lite-sqlite"
+name: "lite-sqlite"
 version: "1.0.0"
-displayName: Lite Sqlite
-summary: Fast lightweight local SQLite database for SkillHub agents with minimal RAM
-  and storage usage. Us...
-license: MIT
+displayName: "Lite Sqlite"
+summary: "Fast lightweight local SQLite database for SkillHub agents with minimal RAM"
+license: "MIT"
 description: |-
   Fast lightweight local SQLite database for SkillHub agents with minimal
   RAM and storage usage。Us。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Lite Sqlite
 

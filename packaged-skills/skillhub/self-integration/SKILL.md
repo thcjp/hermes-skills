@@ -1,19 +1,19 @@
 ---
-slug: self-integration
-name: self-integration
+slug: "self-integration"
+name: "self-integration"
 version: "1.1.2"
-displayName: Self-Integration
-summary: Connect to any external app and perform actions on it. Use when the user
-  wants to interact with e...
-license: MIT
+displayName: "Self-Integration"
+summary: "Connect to any external app and perform actions on it. Use when the user"
+license: "MIT"
 description: |-
   Connect to any external app and perform actions on it。Use when the
   user wants to interact with e。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Self-Integration
 

@@ -1,19 +1,19 @@
 ---
-slug: music-generation-cellcog
-name: music-generation-cellcog
+slug: "music-generation-cellcog"
+name: "music-generation-cellcog"
 version: "1.0.11"
-displayName: Music Generation Cel
-summary: AI music generation powered by CellCog. Original instrumental and vocal tracks,
-  5 seconds to 10 m...
-license: MIT-0
+displayName: "Music Generation Cel"
+summary: "AI music generation powered by CellCog. Original instrumental and vocal tracks,"
+license: "MIT-0"
 description: |-
   AI music generation powered by CellCog。Original instrumental and vocal
   tracks, 5 seconds to 10 m。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。
 tags:
-- Creative
+  - Creative
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Music Generation Cel
 

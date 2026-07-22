@@ -1,11 +1,11 @@
 ---
-slug: weekly-report-tool-free
-name: weekly-report-tool-free
+slug: "weekly-report-tool-free"
+name: "weekly-report-tool-free"
 version: "1.0.0"
-displayName: 周报写作器基础版
-summary: 生成结构化周报,包含本周完成、下周计划与问题风险,适合个人工作汇报
-license: Proprietary
-edition: free
+displayName: "周报写作器基础版"
+summary: "生成结构化周报,包含本周完成、下周计划与问题风险,适合个人工作汇报"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力: 工作汇报领域的专业化 AI 辅助工具,提供核心基础功能支持。
 
@@ -15,14 +15,14 @@ description: |-
 
   适用关键词: 周报, 工作总结, 汇报, 进度, 下周计划, 问题风险
 tags:
-- 周报
-- 工作汇报
-- 进度跟踪
+  - 周报
+  - 工作汇报
+  - 进度跟踪
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 周报写作器基础版
 
 ## 概述

@@ -1,11 +1,11 @@
 ---
-slug: smart-light-controller-pro
-name: smart-light-controller-pro
+slug: "smart-light-controller-pro"
+name: "smart-light-controller-pro"
 version: "1.0.0"
-displayName: 智能灯控(专业版)
-summary: 全功能智能灯控方案，支持多灯同步、灯光秀、场景预设与定时计划。
-license: Proprietary
-edition: pro
+displayName: "智能灯控(专业版)"
+summary: "全功能智能灯控方案，支持多灯同步、灯光秀、场景预设与定时计划。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   智能灯控专业版是一款面向局域网智能灯泡的全功能控制方案，兼容 TP-Link Kasa 协议设备，覆盖单灯控制、多灯同步、灯光秀编排、场景预设、定时计划与日出日落联动等完整能力。核心能力：
   - 多灯批量同步控制，支持分组与级联编排
@@ -14,13 +14,14 @@ description: |-
   - 定时计划任务与日出日落联动，自动适配地理位置
   - 设备健康监控与异常告警...
 tags:
-- 智能家居
-- 灯光控制
-- 自动化
-- 场景编排
+  - 智能家居
+  - 灯光控制
+  - 自动化
+  - 场景编排
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 智能灯控工具（专业版）
 

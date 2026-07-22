@@ -1,19 +1,19 @@
 ---
-slug: github
-name: github
+slug: "github"
+name: "github"
 version: "1.0.0"
-displayName: Github
-summary: Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`,
-  and `gh api` for issu...
-license: MIT
+displayName: "Github"
+summary: "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`,"
+license: "MIT"
 description: |-
   Interact with GitHub using the `gh` CLI。Use `gh issue`, `gh pr`, `gh
   run`, and `gh api` for issu。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Github
 

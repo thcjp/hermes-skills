@@ -1,23 +1,22 @@
 ---
-slug: the-news-tool-pro
-name: the-news-tool-pro
+slug: "the-news-tool-pro"
+name: "the-news-tool-pro"
 version: "1.0.0"
-displayName: 全球新闻情报专业版
-summary: 企业级新闻情报分析平台,支持批量国家查询、长期归档、情感分析与趋势追踪
-license: Proprietary
-edition: pro
+displayName: "全球新闻情报专业版"
+summary: "企业级新闻情报分析平台,支持批量国家查询、长期归档、情感分析与趋势追踪"
+license: "Proprietary"
+edition: "pro"
 description: |-
   全球新闻情报专业版,面向企业团队和专业研究人员提供深度的全球新闻分析能力。支持批量国家查询、长期新闻归档、情感分析、趋势追踪、定制化报告生成等高级功能。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
-- 研究工具
-- 新闻情报
-- 舆情分析
-- 企业级
+  - 研究工具
+  - 新闻情报
+  - 舆情分析
+  - 企业级
 tools:
   - - read
-- exec
-# 全球新闻情报专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 全球新闻情报专业版是企业级的新闻情报分析平台。在完整兼容免费版 API 的基础上,专业版引入了批量多国并行查询、长期新闻归档、情感分析、趋势追踪、定时监控预警等高级能力,适用于企业公关舆情监控、行业研究、跨国市场情报收集等专业场景。
 

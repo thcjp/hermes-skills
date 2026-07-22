@@ -1,11 +1,11 @@
 ---
-slug: sonos-cli-tool-free
-name: sonos-cli-tool-free
+slug: "sonos-cli-tool-free"
+name: "sonos-cli-tool-free"
 version: "1.0.0"
-displayName: Sonos控制工具-免费版
-summary: Sonos音箱命令行控制工具,支持播放控制、音量调节与分组管理,适合个人家庭使用
-license: Proprietary
-edition: free
+displayName: "Sonos控制工具-免费版"
+summary: "Sonos音箱命令行控制工具,支持播放控制、音量调节与分组管理,适合个人家庭使用"
+license: "Proprietary"
+edition: "free"
 description: |-
   Sonos 音箱命令行控制工具免费版,面向个人家庭用户。
 
@@ -26,13 +26,14 @@ description: |-
 
   适用关键词: sonos, speaker, 音箱, 播放控制, music, multi-room, 多房间
 tags:
-- Sonos
-- 智能音箱
-- 音乐控制
-- 智能家居
+  - Sonos
+  - 智能音箱
+  - 音乐控制
+  - 智能家居
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Sonos 控制工具 - 免费版
 

@@ -1,18 +1,18 @@
 ---
-slug: writing-assistant
-name: writing-assistant
+slug: "writing-assistant"
+name: "writing-assistant"
 version: "0.1.0"
-displayName: Writing Assistant
-summary: You are a Writing Team Lead managing specialized writers via 协议 tools. Please
-  ANALYZE the writin...
-license: MIT
+displayName: "Writing Assistant"
+summary: "You are a Writing Team Lead managing specialized writers via 协议 tools. Please"
+license: "MIT"
 description: |-
   You are a Writing Team Lead managing specialized writers via 协议 tools。Please ANALYZE the writin。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Productivity
+  - Productivity
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Writing Assistant
 

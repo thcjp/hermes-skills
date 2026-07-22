@@ -1,25 +1,25 @@
 ---
-slug: multi-source-research-tool-pro
-name: multi-source-research-tool-pro
+slug: "multi-source-research-tool-pro"
+name: "multi-source-research-tool-pro"
 version: "1.0.0"
-displayName: 多源研究助手专业版
-summary: 企业级多源研究平台，支持批量研究、语义去重、自定义数据源与团队协作
-license: Proprietary
-edition: pro
+displayName: "多源研究助手专业版"
+summary: "企业级多源研究平台，支持批量研究、语义去重、自定义数据源与团队协作"
+license: "Proprietary"
+edition: "pro"
 description: |-
   多源研究助手专业版，面向研究机构和企业用户提供企业级多源数据采集与分析能力。核心能力:
   - 批量多主题并行研究。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
-- 研究
-- 企业级
-- 文献分析
-- 尽职调查
-- 团队协作
+  - 研究
+  - 企业级
+  - 文献分析
+  - 尽职调查
+  - 团队协作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 多源研究助手（专业版）
 ## 概述
 多源研究助手专业版在免费版四大数据源的基础上，新增自定义数据源接入、批量多主题并行研究、语义级去重排序、多格式导出、研究历史版本管理和多租户团队协作等企业级能力，满足研究机构和企业的深度调研需求。

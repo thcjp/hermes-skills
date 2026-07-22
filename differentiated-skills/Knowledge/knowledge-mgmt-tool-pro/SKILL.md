@@ -1,11 +1,11 @@
 ---
-slug: knowledge-mgmt-tool-pro
-name: knowledge-mgmt-tool-pro
+slug: "knowledge-mgmt-tool-pro"
+name: "knowledge-mgmt-tool-pro"
 version: "1.0.0"
-displayName: 知识管理工具（专业版）
-summary: 组织知识审计、分类体系设计与文档模板管理，将隐性经验转化为可检索的组织智能。
-license: Proprietary
-edition: pro
+displayName: "知识管理工具（专业版）"
+summary: "组织知识审计、分类体系设计与文档模板管理，将隐性经验转化为可检索的组织智能。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   知识管理工具 - （专业版）
 
@@ -17,14 +17,14 @@ description: |-
 
   适用关键词: 知识审计, 知识管理, 文档模板, 分类体系, 知识捕获, 组织智能, knowledge management
 tags:
-- 知识管理
-- 文档管理
-- 组织智能
+  - 知识管理
+  - 文档管理
+  - 组织智能
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 知识管理工具（专业版）
 
 ## 概述

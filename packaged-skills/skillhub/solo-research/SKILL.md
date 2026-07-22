@@ -1,10 +1,10 @@
 ---
-slug: solo-research
-name: solo-research
+slug: "solo-research"
+name: "solo-research"
 version: "1.0.0"
-displayName: 独立研究工具
-summary: 多策略研究工具，支持GitHub库发现、WebFetch、MCP搜索、内容回退与Product Hunt调研。
-license: Proprietary
+displayName: "独立研究工具"
+summary: "多策略研究工具，支持GitHub库发现、WebFetch、MCP搜索、内容回退与Product Hunt调研。"
+license: "Proprietary"
 description: |-
   独立研究工具，通过多搜索策略获取全面准确的研究结果。
   支持GitHub Library Discovery、WebFetch、MCP web_search、Blocked Content Fallback。
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 信息检索
 ---
-
 # 独立研究工具
 
 多策略研究工具，支持GitHub库发现、WebFetch、MCP搜索、内容回退与Product Hunt调研。

@@ -1,24 +1,25 @@
 ---
-slug: logo-design
-name: logo-design
+slug: "logo-design"
+name: "logo-design"
 version: "1.0.0"
-displayName: Logo设计工具专业版
-summary: 企业级AI Logo设计系统,支持批量生成、自动矢量化、品牌变体管理、CI/CD集成,适合团队与商业项目。
-license: Proprietary
-edition: pro
+displayName: "Logo设计工具专业版"
+summary: "企业级AI Logo设计系统,支持批量生成、自动矢量化、品牌变体管理、CI/CD集成,适合团队与商业项目。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Logo设计工具专业版为企业与设计团队提供系统化的AI Logo设计解决方案。在免费版基础生成能力之上,增加批量生成、自动矢量化、品牌变体管理、
   多格式导出、设计审计与CI/CD集成能力。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Logo设计
-- 品牌设计
-- 企业级
-- 矢量化
-- 自动化
-- 设计系统
+  - Logo设计
+  - 品牌设计
+  - 企业级
+  - 矢量化
+  - 自动化
+  - 设计系统
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Logo设计工具专业版
 

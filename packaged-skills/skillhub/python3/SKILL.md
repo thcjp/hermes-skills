@@ -1,19 +1,19 @@
 ---
-slug: python3
-name: python3
+slug: "python3"
+name: "python3"
 version: "1.0.0"
-displayName: python
-summary: Use Python for practical project setup, dependency install, script execution,
-  and environment tro...
-license: MIT-0
+displayName: "python"
+summary: "Use Python for practical project setup, dependency install, script execution,"
+license: "MIT-0"
 description: |-
   Use Python for practical project setup, dependency install, script execution,
   and environment tro。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Productivity
+  - Productivity
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # python
 

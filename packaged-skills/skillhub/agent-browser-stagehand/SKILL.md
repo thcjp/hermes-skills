@@ -1,19 +1,19 @@
 ---
-slug: agent-browser-stagehand
-name: agent-browser-stagehand
+slug: "agent-browser-stagehand"
+name: "agent-browser-stagehand"
 version: "1.0.0"
-displayName: Agent Browser Stageh
-summary: Automate web browser interactions using natural language via CLI commands.
-  Use when the user asks...
-license: MIT
+displayName: "Agent Browser Stageh"
+summary: "Automate web browser interactions using natural language via CLI commands."
+license: "MIT"
 description: |-
   Automate web browser interactions using natural language via CLI commands。Use when the user asks。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Research
-- Automation
+  - Research
+  - Automation
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Agent Browser Stageh
 

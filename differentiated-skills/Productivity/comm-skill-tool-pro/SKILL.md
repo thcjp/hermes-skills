@@ -1,11 +1,11 @@
 ---
-slug: comm-skill-tool-pro
-name: comm-skill-tool-pro
+slug: "comm-skill-tool-pro"
+name: "comm-skill-tool-pro"
 version: "1.0.0"
-displayName: 沟通助手专业版
-summary: 企业级沟通智能系统,支持跨渠道消息管理、情感分析、关系图谱与沟通策略优化
-license: Proprietary
-edition: pro
+displayName: "沟通助手专业版"
+summary: "企业级沟通智能系统,支持跨渠道消息管理、情感分析、关系图谱与沟通策略优化"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 沟通协作领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: 沟通, 消息, 邮件, 回复, 对话, 情感, 共情
 tags:
-- 沟通
-- 消息撰写
-- 共情
-- 情感分析
+  - 沟通
+  - 消息撰写
+  - 共情
+  - 情感分析
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 沟通助手专业版
 
 ## 概述

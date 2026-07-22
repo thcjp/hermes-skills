@@ -1,10 +1,10 @@
 ---
-slug: aws-agentcore-langgraph-free
-name: aws-agentcore-langgraph-free
+slug: "aws-agentcore-langgraph-free"
+name: "aws-agentcore-langgraph-free"
 version: "1.0.0"
-displayName: AgentCore 免费
-summary: AWS Bedrock AgentCore 与 LangGraph 基础智能体部署助手
-license: MIT
+displayName: "AgentCore 免费"
+summary: "AWS Bedrock AgentCore 与 LangGraph 基础智能体部署助手"
+license: "MIT"
 description: |-
   基于 AWS Bedrock AgentCore Runtime 与 LangGraph 的基础智能体构建助手(免费版)。
   覆盖单智能体 StateGraph 定义、工具路由(tools_condition)、容器化部署基础流程。
@@ -12,13 +12,13 @@ description: |-
   跨会话 LTM 记忆等高级功能。如需完整能力请升级付费版。
   不适用于需要 100% 确定性的关键决策场景。
 tags:
-- Agents
-- Operations
+  - Agents
+  - Operations
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # aws-agentcore-langgraph (免费版)
 
 基于 AWS Bedrock AgentCore 与 LangGraph 的基础智能体部署助手。

@@ -1,11 +1,11 @@
 ---
-slug: blog-seo-writer-tool-pro
-name: blog-seo-writer-tool-pro
+slug: "blog-seo-writer-tool-pro"
+name: "blog-seo-writer-tool-pro"
 version: "1.0.0"
-displayName: SEO 博客写作专业版
-summary: 企业级 SEO 内容工坊,支持竞品分析、长尾词矩阵、多语言生成与发布管道自动化
-license: Proprietary
-edition: pro
+displayName: "SEO 博客写作专业版"
+summary: "企业级 SEO 内容工坊,支持竞品分析、长尾词矩阵、多语言生成与发布管道自动化"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 内容营销领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,14 +15,14 @@ description: |-
 
   适用关键词: seo, 博客, 关键词, 元描述, 内容优化, 搜索引擎排名
 tags:
-- SEO
-- 内容写作
-- 博客营销
+  - SEO
+  - 内容写作
+  - 博客营销
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # SEO 博客写作专业版
 
 ## 概述

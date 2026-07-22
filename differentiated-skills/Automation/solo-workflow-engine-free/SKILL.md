@@ -1,23 +1,23 @@
 ---
-slug: solo-workflow-engine-free
-name: solo-workflow-engine-free
+slug: "solo-workflow-engine-free"
+name: "solo-workflow-engine-free"
 version: "1.0.0"
-displayName: Solo Workflow Engine
-summary: 独立开发者的无代码自动化引擎，七步法识别、设计、构建、维护自动化工作流。
-license: Proprietary
-edition: free
+displayName: "Solo Workflow Engine"
+summary: "独立开发者的无代码自动化引擎，七步法识别、设计、构建、维护自动化工作流。"
+license: "Proprietary"
+edition: "free"
 description: |-
   独立者引擎为独立开发者、一人公司、自由职业者提供系统化的无代码自动化方法论。免费版开放七步框架的前四步核心流程（识别机会、选择工具、设计方案、构建测试），帮助用户从零开始构建自动化工作流，节省时间、扩大运营规模。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-- 无代码自动化
-- 独立开发者
-- 效率提升
-- 工作流设计
+  - 无代码自动化
+  - 独立开发者
+  - 效率提升
+  - 工作流设计
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 独立者引擎（免费版）
 
 > **独立开发者、一人公司的无代码自动化引擎。七步法前四步核心流程，帮你从重复劳动中解放出来。**

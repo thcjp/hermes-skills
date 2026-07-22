@@ -1,11 +1,11 @@
 ---
-slug: health-toolkit-free
-name: health-toolkit-free
+slug: "health-toolkit-free"
+name: "health-toolkit-free"
 version: "1.0.0"
-displayName: 健康管理工具箱免费版
-summary: 个人健康数据管理,支持运动、睡眠、饮食记录与基础健康分析
-license: Proprietary
-edition: free
+displayName: "健康管理工具箱免费版"
+summary: "个人健康数据管理,支持运动、睡眠、饮食记录与基础健康分析"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人用户的健康管理工具箱,帮助用户记录与分析健康数据。
   核心能力: 运动记录、睡眠追踪、饮食日记、健康指标分析、目标设定
@@ -13,15 +13,16 @@ description: |-
   差异化: 免费版聚焦个人健康数据管理,本地存储,隐私安全
   适用关键词: 健康管理, 运动记录, 睡眠追踪, 饮食日记, 健康分析, 目标设定
 tags:
-- 健康管理
-- 个人健康
-- 运动追踪
-- 睡眠管理
-- 饮食记录
-- 数据分析
+  - 健康管理
+  - 个人健康
+  - 运动追踪
+  - 睡眠管理
+  - 饮食记录
+  - 数据分析
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 健康管理工具箱 (免费版)
 

@@ -1,10 +1,10 @@
 ---
-slug: csv-handler-free
-name: csv-handler-free
+slug: "csv-handler-free"
+name: "csv-handler-free"
 version: "1.0.0"
-displayName: CSV文件处理(免费版)
-summary: 自动检测编码与分隔符，读取并清洗CSV数据，支持基础合并与导出
-license: MIT
+displayName: "CSV文件处理(免费版)"
+summary: "自动检测编码与分隔符，读取并清洗CSV数据，支持基础合并与导出"
+license: "MIT"
 description: |-
   CSV文件处理免费版，提供基础的CSV读写与清洗能力。
   核心能力包括：
@@ -21,8 +21,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # CSV文件处理（免费版）
 
 ## 概述

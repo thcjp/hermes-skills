@@ -1,10 +1,10 @@
 ---
-slug: bilibili-helper
-name: bilibili-helper
+slug: "bilibili-helper"
+name: "bilibili-helper"
 version: "1.0.0"
-displayName: B站创作运营助手
-summary: B站视频运营助手，提供标题优化、标签推荐、简介模板、口播脚本、投稿策略与UP主运营指导，助力内容创作者提升曝光与粉丝增长。
-license: MIT
+displayName: "B站创作运营助手"
+summary: "B站视频运营助手，提供标题优化、标签推荐、简介模板、口播脚本、投稿策略与UP主运营指导，助力内容创作者提升曝光与粉丝增长。"
+license: "MIT"
 description: |-
   面向B站(Bilibili)内容创作者的运营辅助工具，覆盖视频发布全流程的关键内容生产环节。
 
@@ -25,8 +25,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Bilibili Helper
 
 B站视频运营助手。围绕视频发布全流程，提供标题优化、简介生成、标签推荐、口播脚本撰写与UP主运营指导，输出内容可直接用于B站投稿页面。

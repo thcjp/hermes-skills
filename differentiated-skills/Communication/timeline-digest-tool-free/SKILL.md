@@ -1,11 +1,11 @@
 ---
-slug: timeline-digest-tool-free
-name: timeline-digest-tool-free
+slug: "timeline-digest-tool-free"
+name: "timeline-digest-tool-free"
 version: "1.0.0"
-displayName: 时间线摘要工具-免费版
-summary: 抓取X/Twitter时间线并生成去重摘要,适合个人用户的信息聚合阅读
-license: Proprietary
-edition: free
+displayName: "时间线摘要工具-免费版"
+summary: "抓取X/Twitter时间线并生成去重摘要,适合个人用户的信息聚合阅读"
+license: "Proprietary"
+edition: "free"
 description: |-
   时间线摘要工具免费版,从X(Twitter)时间线抓取推文并生成去重摘要。核心能力:
   - 抓取X/Twitter For You和Following时间线推文
@@ -24,15 +24,14 @@ description: |-
   - 免费版聚焦单次摘要生成,操作简洁
   - 内置增量过滤,避免...
 tags:
-- 沟通协作
-- 信息聚合
-- X/Twitter
-- 内容摘要
+  - 沟通协作
+  - 信息聚合
+  - X/Twitter
+  - 内容摘要
 tools:
   - - read
-- exec
-# 时间线摘要工具(免费版)
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 时间线摘要工具免费版是一款X(Twitter)时间线信息聚合工具。通过命令行工具抓取For You和Following两个时间线的最新推文,进行增量过滤、硬去重和近似去重处理,最终生成结构化的JSON摘要数据,帮助用户快速了解关注领域的最新动态,减少信息噪音。
 

@@ -1,10 +1,10 @@
 ---
-slug: docker-ctl
-name: docker-ctl
+slug: "docker-ctl"
+name: "docker-ctl"
 version: "1.0.0"
-displayName: Docker Ctl
-summary: Inspect containers, logs, and images via podman
-license: MIT
+displayName: "Docker Ctl"
+summary: "Inspect containers, logs, and images via podman"
+license: "MIT"
 description: |-
   Inspect containers, logs, and images via podman
 
@@ -23,12 +23,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Operations
+  - Operations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Docker Ctl
 

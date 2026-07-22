@@ -1,11 +1,11 @@
 ---
-slug: notion-toolkit-free
-name: notion-toolkit-free
+slug: "notion-toolkit-free"
+name: "notion-toolkit-free"
 version: "1.0.0"
-displayName: Notion 工具包基础版
-summary: 通过 Notion API 创建和管理页面、数据库与块,支持搜索、查询与内容更新
-license: Proprietary
-edition: free
+displayName: "Notion 工具包基础版"
+summary: "通过 Notion API 创建和管理页面、数据库与块,支持搜索、查询与内容更新"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力: 知识管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
 
@@ -15,13 +15,14 @@ description: |-
 
   适用关键词: notion, 页面, 数据库, 块, api, 搜索, 数据源
 tags:
-- Notion
-- API
-- 页面管理
-- 数据库
+  - Notion
+  - API
+  - 页面管理
+  - 数据库
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Notion 工具包基础版
 

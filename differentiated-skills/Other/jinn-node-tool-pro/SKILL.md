@@ -1,11 +1,11 @@
 ---
-slug: jinn-node-tool-pro
-name: jinn-node-tool-pro
+slug: "jinn-node-tool-pro"
+name: "jinn-node-tool-pro"
 version: "1.0.0"
-displayName: 节点工作工具专业版
-summary: 面向团队的多节点集群、任务调度与收益治理工具。
-license: Proprietary
-edition: pro
+displayName: "节点工作工具专业版"
+summary: "面向团队的多节点集群、任务调度与收益治理工具。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队的多节点集群与收益治理专业工具。
 
@@ -24,14 +24,15 @@ description: |-
 
   适用关键词: 多节点集群, 任务调度, 偏好画像, 收益看板, 成本核算, node pro, cluster, scheduling
 tags:
-- 节点
-- 企业级
-- 集群调度
-- 收益治理
-- 其他工具
+  - 节点
+  - 企业级
+  - 集群调度
+  - 收益治理
+  - 其他工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 节点工作工具（专业版）
 

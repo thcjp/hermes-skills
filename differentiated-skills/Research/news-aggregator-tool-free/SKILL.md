@@ -1,11 +1,11 @@
 ---
-slug: news-aggregator-tool-free
-name: news-aggregator-tool-free
+slug: "news-aggregator-tool-free"
+name: "news-aggregator-tool-free"
 version: "1.0.0"
-displayName: 新闻聚合工具免费版
-summary: 聚合国内外社会、科技、军事新闻，自动搜索筛选整理新闻要点
-license: Proprietary
-edition: free
+displayName: "新闻聚合工具免费版"
+summary: "聚合国内外社会、科技、军事新闻，自动搜索筛选整理新闻要点"
+license: "Proprietary"
+edition: "free"
 description: |-
   新闻聚合工具免费版，自动聚合国内外社会、科技、军事领域的新闻，通过搜索、筛选、整理生成结构化新闻汇总。核心能力:
   - 聚合国内科技、军事新闻源
@@ -23,13 +23,14 @@ description: |-
   - 自动筛选去重，提升阅读效率
   - 与PRO版本完全兼容...
 tags:
-- 新闻
-- 聚合
-- 科技
-- 军事
+  - 新闻
+  - 聚合
+  - 科技
+  - 军事
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 新闻聚合工具（免费版）
 

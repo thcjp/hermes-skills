@@ -1,11 +1,11 @@
 ---
-slug: daily-report-tool-free
-name: daily-report-tool-free
+slug: "daily-report-tool-free"
+name: "daily-report-tool-free"
 version: "1.0.0"
-displayName: 日报生成器基础版
-summary: 根据输入生成日报 Markdown 草稿并写入 reports 目录,适合个人工作记录
-license: Proprietary
-edition: free
+displayName: "日报生成器基础版"
+summary: "根据输入生成日报 Markdown 草稿并写入 reports 目录,适合个人工作记录"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力: 工作汇报领域的专业化 AI 辅助工具,提供核心基础功能支持。
 
@@ -15,14 +15,14 @@ description: |-
 
   适用关键词: 日报, 工作总结, 每日报告, highlights, blockers
 tags:
-- 日报
-- 工作总结
-- Markdown
+  - 日报
+  - 工作总结
+  - Markdown
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 日报生成器基础版
 
 ## 概述

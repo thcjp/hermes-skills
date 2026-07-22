@@ -1,11 +1,10 @@
 ---
-slug: auto-workflow
-name: auto-workflow
+slug: "auto-workflow"
+name: "auto-workflow"
 version: "1.0.0"
-displayName: Auto Workflow
-summary: Builds automation workflows from repetitive tasks. Use when user mentions
-  \
-license: MIT
+displayName: "Auto Workflow"
+summary: "Builds automation workflows from repetitive tasks. Use when user mentions"
+license: "MIT"
 description: |-
   Builds automation workflows from repetitive tasks。Use when user mentions
   \
@@ -25,13 +24,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
-tags: '[''Automation'']'
+tags: "'[''Automation'']'"
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Auto Workflow
 
 ## 核心能力

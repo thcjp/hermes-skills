@@ -1,11 +1,11 @@
 ---
-slug: shopify-helper-tool-free
-name: shopify-helper-tool-free
+slug: "shopify-helper-tool-free"
+name: "shopify-helper-tool-free"
 version: "1.0.0"
-displayName: Shopify助手-免费版
-summary: Shopify建站助手,支持主题定制、产品管理与基础开发,适合个人卖家
-license: Proprietary
-edition: free
+displayName: "Shopify助手-免费版"
+summary: "Shopify建站助手,支持主题定制、产品管理与基础开发,适合个人卖家"
+license: "Proprietary"
+edition: "free"
 description: |-
   Shopify 建站助手免费版,面向个人卖家与小型电商。核心能力:
   - Shopify 主题 Liquid 模板开发
@@ -23,13 +23,14 @@ description: |-
 
   差异化:免费版提供基础建站能力
 tags:
-- Shopify
-- 电商
-- Liquid
-- 建站
+  - Shopify
+  - 电商
+  - Liquid
+  - 建站
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Shopify 助手 - 免费版
 

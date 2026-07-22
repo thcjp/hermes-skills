@@ -1,10 +1,10 @@
 ---
-slug: slack
-name: slack
+slug: "slack"
+name: "slack"
 version: "1.0.0"
-displayName: Slack 消息管理
-summary: 通过slack工具管理Slack消息:回应、置顶、发送/编辑/删除、成员与表情查询
-license: MIT
+displayName: "Slack 消息管理"
+summary: "通过slack工具管理Slack消息:回应、置顶、发送/编辑/删除、成员与表情查询"
+license: "MIT"
 description: |-
   Slack 消息管理。通过 slack 工具对 Slack 工作区进行消息操作,涵盖五大动作组:
   reactions(添加回应与列出回应)、messages(发送、编辑、删除、读取消息)、
@@ -19,8 +19,8 @@ tags:
   - Productivity
 tools:
   - read
+homepage: "https://skillhub.cn"
 ---
-
 # Slack 消息管理
 
 通过 `slack` 工具对 Slack 工作区进行消息操作,涵盖回应、消息收发与编辑、置顶管理、成员查询、表情列表五大动作组。工具使用已配置的 Bot Token 进行认证。

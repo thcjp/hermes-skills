@@ -1,11 +1,10 @@
 ---
-slug: tailwindcss
-name: tailwindcss
+slug: "tailwindcss"
+name: "tailwindcss"
 version: "1.0.0"
-displayName: Tailwind CSS
-summary: Write Tailwind utility classes with proper responsive design, dark mode,
-  and configuration.
-license: MIT
+displayName: "Tailwind CSS"
+summary: "Write Tailwind utility classes with proper responsive design, dark mode,"
+license: "MIT"
 description: |-
   Write Tailwind utility classes with proper responsive design, dark mode,
   and configuration。核心能力:
@@ -26,10 +25,11 @@ description: |-
 
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关...
 tags:
-- Creative
+  - Creative
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Tailwind CSS
 

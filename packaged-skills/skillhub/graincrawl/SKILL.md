@@ -1,10 +1,10 @@
 ---
-slug: graincrawl
-name: graincrawl
+slug: "graincrawl"
+name: "graincrawl"
 version: "1.0.1"
-displayName: Graincrawl
+displayName: "Graincrawl"
 summary: "Granola archive: search, sync freshness, notes, transcripts, panels, SQL."
-license: MIT
+license: "MIT"
 description: |-
   Granola archive: search, sync freshness, notes, transcripts, panels,
   SQL。核心能力:
@@ -22,12 +22,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Graincrawl
 

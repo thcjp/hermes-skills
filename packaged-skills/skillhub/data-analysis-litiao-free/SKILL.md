@@ -1,10 +1,10 @@
 ---
-slug: data-analysis-litiao-free
-name: data-analysis-litiao-free
+slug: "data-analysis-litiao-free"
+name: "data-analysis-litiao-free"
 version: "1.0.0"
-displayName: 数据分析助手(免费版)
-summary: 基础数据分析框架，含方法论优先与统计严谨性检查清单，支持假设检验与描述统计
-license: MIT
+displayName: "数据分析助手(免费版)"
+summary: "基础数据分析框架，含方法论优先与统计严谨性检查清单，支持假设检验与描述统计"
+license: "MIT"
 description: |-
   数据分析助手免费版，提供基础的数据分析框架与统计检查能力。
   核心能力包括：
@@ -20,8 +20,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 数据分析助手（免费版）
 
 ## 概述

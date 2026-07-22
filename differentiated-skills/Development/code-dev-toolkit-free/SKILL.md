@@ -1,11 +1,11 @@
 ---
-slug: code-dev-toolkit-free
-name: code-dev-toolkit-free
+slug: "code-dev-toolkit-free"
+name: "code-dev-toolkit-free"
 version: "1.0.0"
-displayName: 代码开发工具包免费版
-summary: 规划、实现、验证、测试的完整编码工作流,支持个人偏好记忆与步骤化开发
-license: Proprietary
-edition: free
+displayName: "代码开发工具包免费版"
+summary: "规划、实现、验证、测试的完整编码工作流,支持个人偏好记忆与步骤化开发"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人开发者的代码开发工作流工具,提供规划、执行、验证、测试的完整开发流程。核心能力:
   - 请求到交付的五步开发工作流
@@ -25,15 +25,15 @@ description: |-
 
   适用关键词: code, planning, workflow, implementation, verifi...
 tags:
-- 开发工具
-- 编码工作流
-- 开发流程
-- 代码质量
+  - 开发工具
+  - 编码工作流
+  - 开发流程
+  - 代码质量
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 代码开发工具包免费版
 
 ## 概述

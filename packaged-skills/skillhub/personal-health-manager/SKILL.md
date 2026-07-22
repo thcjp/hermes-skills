@@ -1,20 +1,19 @@
 ---
-slug: personal-health-manager
-name: personal-health-manager
+slug: "personal-health-manager"
+name: "personal-health-manager"
 version: "1.0.0"
-displayName: Personal Health Mana
-summary: Personal health management and wellness assistant. Use when users want to
-  track health data, get ...
-license: MIT-0
+displayName: "Personal Health Mana"
+summary: "Personal health management and wellness assistant. Use when users want to"
+license: "MIT-0"
 description: |-
   Personal health management and wellness assistant。Use when users want
   to track health data, get。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Lifestyle
+  - Lifestyle
 tools:
   - - read
-- exec
-# personal health manager
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Personal Health Mana
 

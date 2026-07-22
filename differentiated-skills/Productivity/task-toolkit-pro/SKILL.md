@@ -1,11 +1,11 @@
 ---
-slug: task-toolkit-pro
-name: task-toolkit-pro
+slug: "task-toolkit-pro"
+name: "task-toolkit-pro"
 version: "1.0.0"
-displayName: 任务工具包专业版
-summary: 企业级任务管理系统,支持多项目管理、团队协作、甘特图与自动化工作流
-license: Proprietary
-edition: pro
+displayName: "任务工具包专业版"
+summary: "企业级任务管理系统,支持多项目管理、团队协作、甘特图与自动化工作流"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 任务管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: task, 任务, 待办, 日程, 优先级, 归档, 清单
 tags:
-- 任务管理
-- 待办
-- 日程
-- 时间管理
+  - 任务管理
+  - 待办
+  - 日程
+  - 时间管理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 任务工具包专业版
 
 ## 概述

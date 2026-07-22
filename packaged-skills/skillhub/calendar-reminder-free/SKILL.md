@@ -1,10 +1,10 @@
 ---
-slug: calendar-reminder-free
-name: calendar-reminder-free
+slug: "calendar-reminder-free"
+name: "calendar-reminder-free"
 version: "1.0.0"
-displayName: 日历提醒(免费版)
-summary: 每晚22点扫描明日Outlook日历,基础飞书提醒,支持手动运行与cron注册。
-license: MIT
+displayName: "日历提醒(免费版)"
+summary: "每晚22点扫描明日Outlook日历,基础飞书提醒,支持手动运行与cron注册。"
+license: "MIT"
 description: |-
   面向个人开发者的 Outlook 日历提醒 Skill 免费版。每晚 22:00 扫描明日 Outlook 日历,
   将上午日程与下午日程分别按"提前 2 小时"和"当天 12:00 统一"两种基础策略推送飞书提醒。
@@ -17,8 +17,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Calendar Reminder Free 日历提醒(免费版)
 
 ## 概述

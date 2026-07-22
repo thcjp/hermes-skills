@@ -1,11 +1,11 @@
 ---
-slug: discord-voice-tool-pro
-name: discord-voice-tool-pro
+slug: "discord-voice-tool-pro"
+name: "discord-voice-tool-pro"
 version: "1.0.0"
-displayName: Discord语音工具专业版
-summary: 企业级 Discord 语音 AI 对话,支持多服务商、流式转写、自动重连与批量频道管理。
-license: Proprietary
-edition: pro
+displayName: "Discord语音工具专业版"
+summary: "企业级 Discord 语音 AI 对话,支持多服务商、流式转写、自动重连与批量频道管理。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向企业与社区运营团队的 Discord 语音 AI 全功能对话工具。核心能力:
   - 多 STT/TTS 服务商切换(OpenAI/Deepgram/ElevenLabs/本地)
@@ -21,14 +21,15 @@ description: |-
 
   差异化: Pro 版在免...
 tags:
-- Discord
-- 语音对话
-- Communication
-- 流式转写
-- 企业级
+  - Discord
+  - 语音对话
+  - Communication
+  - 流式转写
+  - 企业级
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Discord 语音工具(专业版)
 

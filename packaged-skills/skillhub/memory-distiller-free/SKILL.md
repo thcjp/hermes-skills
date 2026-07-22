@@ -1,10 +1,10 @@
 ---
-slug: memory-distiller-free
-name: memory-distiller-free
+slug: "memory-distiller-free"
+name: "memory-distiller-free"
 version: "1.0.0"
-displayName: 记忆蒸馏器免费版
-summary: 基础日志蒸馏工具，支持单文件压缩与古文压缩原则，约4倍压缩比
-license: MIT
+displayName: "记忆蒸馏器免费版"
+summary: "基础日志蒸馏工具，支持单文件压缩与古文压缩原则，约4倍压缩比"
+license: "MIT"
 description: |-
   记忆蒸馏器免费版提供基础日志蒸馏能力，将冗长日志压缩为结构化摘要。
   核心能力包括：单文件日志蒸馏、古文压缩四原则、关键词匹配提取、基础输出格式。
@@ -14,8 +14,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 智能助手
 ---
-
 # 记忆蒸馏器免费版
 
 基础日志蒸馏工具，将日志压缩为结构化摘要。

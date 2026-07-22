@@ -1,11 +1,11 @@
 ---
-slug: google-search-tool-pro
-name: google-search-tool-pro
+slug: "google-search-tool-pro"
+name: "google-search-tool-pro"
 version: "1.0.0"
-displayName: 谷歌搜索专业版
-summary: 企业级 Google 搜索工具，支持批量查询、多搜索引擎配置、结果导出、定时任务与搜索分析，适合专业研究与数据采集。
-license: Proprietary
-edition: pro
+displayName: "谷歌搜索专业版"
+summary: "企业级 Google 搜索工具，支持批量查询、多搜索引擎配置、结果导出、定时任务与搜索分析，适合专业研究与数据采集。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级 Google 搜索工具，支持批量查询、多搜索引擎配置、结果导出、定时任务与搜索分析，适合专业研究与数据采集。核心能力:
   - 批量关键词查询，一次执行数十个搜索任务
@@ -14,14 +14,15 @@ description: |-
   - 定时任务调度，自动执行搜索并归档
   - 站点限定搜索...
 tags:
-- 搜索
-- 企业工具
-- Google
-- 批量查询
-- 数据采集
+  - 搜索
+  - 企业工具
+  - Google
+  - 批量查询
+  - 数据采集
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 谷歌搜索专业版
 

@@ -1,20 +1,20 @@
 ---
-slug: game-asset-generation-cellcog
-name: game-asset-generation-cellcog
+slug: "game-asset-generation-cellcog"
+name: "game-asset-generation-cellcog"
 version: "1.0.14"
-displayName: Game Asset Generatio
-summary: AI game asset generation and game development powered by CellCog. Character-consistent
-  art, sprit...
-license: MIT-0
+displayName: "Game Asset Generatio"
+summary: "AI game asset generation and game development powered by CellCog. Character-consistent"
+license: "MIT-0"
 description: |-
   AI game asset generation and game development powered by CellCog。Character-consistent
   art, sprit。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Creative
-- Lifestyle
+  - Creative
+  - Lifestyle
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Game Asset Generatio
 

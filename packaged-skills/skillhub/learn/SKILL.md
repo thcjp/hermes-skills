@@ -1,11 +1,10 @@
 ---
-slug: learn
-name: learn
+slug: "learn"
+name: "learn"
 version: "1.0.2"
-displayName: Learn
-summary: Structure and track learning with spaced repetition and active recall across
-  any domain.
-license: MIT
+displayName: "Learn"
+summary: "Structure and track learning with spaced repetition and active recall across"
+license: "MIT"
 description: |-
   Structure and track learning with spaced repetition and active recall
   across any domain。核心能力:
@@ -23,12 +22,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Knowledge
+  - Knowledge
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Learn
 

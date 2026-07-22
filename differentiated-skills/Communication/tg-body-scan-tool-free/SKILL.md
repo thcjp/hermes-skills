@@ -1,11 +1,11 @@
 ---
-slug: tg-body-scan-tool-free
-name: tg-body-scan-tool-free
+slug: "tg-body-scan-tool-free"
+name: "tg-body-scan-tool-free"
 version: "1.0.0"
-displayName: 体测扫描工具免费版
-summary: 通过 Telegram 提交视频进行人体测量，返回基础围度数据与腰臀比，适合个人单次使用。
-license: Proprietary
-edition: free
+displayName: "体测扫描工具免费版"
+summary: "通过 Telegram 提交视频进行人体测量，返回基础围度数据与腰臀比，适合个人单次使用。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人用户的 Telegram 人体体测测量工具。
   核心能力: 视频提交、扫描状态轮询、基础围度测量、腰臀比汇总。
@@ -13,15 +13,15 @@ description: |-
   差异化: 免费版聚焦单次扫描与基础测量，不含批量处理与历史对比分析。
   适用关键词: 体测, 扫描, 测量, telegram, 围度, 腰臀比, body-scan, fitness
 tags:
-- 体测扫描
-- 健康测量
-- 电报机器人
-- 个人健康
+  - 体测扫描
+  - 健康测量
+  - 电报机器人
+  - 个人健康
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 体测扫描工具 免费版
 
 ## 概述

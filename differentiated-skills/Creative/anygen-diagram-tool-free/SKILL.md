@@ -1,11 +1,11 @@
 ---
-slug: anygen-diagram-tool-free
-name: anygen-diagram-tool-free
+slug: "anygen-diagram-tool-free"
+name: "anygen-diagram-tool-free"
 version: "1.0.0"
-displayName: AnyGen图表生成-免费版
-summary: 通过自然语言生成图表与可视化结构,支持流程图、架构图等,适合个人用户快速出图。
-license: Proprietary
-edition: free
+displayName: "AnyGen图表生成-免费版"
+summary: "通过自然语言生成图表与可视化结构,支持流程图、架构图等,适合个人用户快速出图。"
+license: "Proprietary"
+edition: "free"
 description: |-
   AnyGen图表生成免费版,面向个人用户的智能图表与可视化结构生成工具。
 
@@ -24,12 +24,13 @@ description: |-
 
   适用关键词: 图表生成, 流程图, 架构图, 可视化, smart_draw, AnyGen, 自然语言画图
 tags:
-- Creative
-- 图表生成
-- 可视化
+  - Creative
+  - 图表生成
+  - 可视化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # AnyGen图表生成工具 - 免费版
 

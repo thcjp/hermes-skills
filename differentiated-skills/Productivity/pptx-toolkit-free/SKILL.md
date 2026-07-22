@@ -1,11 +1,11 @@
 ---
-slug: pptx-toolkit-free
-name: pptx-toolkit-free
+slug: "pptx-toolkit-free"
+name: "pptx-toolkit-free"
 version: "1.0.0"
-displayName: PPT 演示工具包基础版
-summary: 创建、检查与编辑 PowerPoint 演示文稿,支持布局管理、模板应用与内容质量检查
-license: Proprietary
-edition: free
+displayName: "PPT 演示工具包基础版"
+summary: "创建、检查与编辑 PowerPoint 演示文稿,支持布局管理、模板应用与内容质量检查"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力: 文档处理领域的专业化 AI 辅助工具,提供核心基础功能支持。
 
@@ -15,13 +15,14 @@ description: |-
 
   适用关键词: powerpoint, pptx, 演示文稿, 幻灯片, 模板, 布局, 演示
 tags:
-- PowerPoint
-- PPTX
-- 演示文稿
-- 幻灯片
+  - PowerPoint
+  - PPTX
+  - 演示文稿
+  - 幻灯片
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # PPT 演示工具包基础版
 

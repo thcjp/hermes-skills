@@ -1,20 +1,20 @@
 ---
-slug: notion-pages
-name: notion-pages
+slug: "notion-pages"
+name: "notion-pages"
 version: "0.1.1"
-displayName: Notion
-summary: Search pages and databases, update content, and manage Notion workspace data
-  from chat. Use this ...
-license: MIT-0
+displayName: "Notion"
+summary: "Search pages and databases, update content, and manage Notion workspace data"
+license: "MIT-0"
 description: |-
   Search pages and databases, update content, and manage Notion workspace
   data from chat。Use this。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Productivity
-- Automation
+  - Productivity
+  - Automation
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Notion
 

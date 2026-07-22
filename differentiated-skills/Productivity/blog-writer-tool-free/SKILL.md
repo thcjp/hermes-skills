@@ -1,11 +1,11 @@
 ---
-slug: blog-writer-tool-free
-name: blog-writer-tool-free
+slug: "blog-writer-tool-free"
+name: "blog-writer-tool-free"
 version: "1.0.0"
-displayName: 博客写作助手基础版
-summary: 根据个人风格偏好撰写博客文章,支持研究材料整合与多轮迭代修改
-license: Proprietary
-edition: free
+displayName: "博客写作助手基础版"
+summary: "根据个人风格偏好撰写博客文章,支持研究材料整合与多轮迭代修改"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力: 内容创作领域的专业化 AI 辅助工具,提供核心基础功能支持。
 
@@ -15,14 +15,14 @@ description: |-
 
   适用关键词: 博客, 文章写作, 个人风格, 内容草稿, 写作助手
 tags:
-- 博客写作
-- 内容创作
-- 品牌语调
+  - 博客写作
+  - 内容创作
+  - 品牌语调
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 博客写作助手基础版
 
 ## 概述

@@ -1,10 +1,10 @@
 ---
-slug: hugo-blog-publisher
-name: hugo-blog-publisher
+slug: "hugo-blog-publisher"
+name: "hugo-blog-publisher"
 version: "2.0.0"
-displayName: 博客发布工具
-summary: 将Markdown文章发布到静态站点生成器博客并推送到代码仓库
-license: MIT-0
+displayName: "博客发布工具"
+summary: "将Markdown文章发布到静态站点生成器博客并推送到代码仓库"
+license: "MIT-0"
 description: |-
   将Markdown文章发布到静态站点生成器博客并推送到代码仓库。自动分析内容提取
   标题、标签、分类，生成front matter，创建标签分类映射文件，添加截断标记，
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 研发工具
 ---
-
 # 博客发布工具
 
 将Markdown文章发布到静态站点生成器博客并推送到代码仓库。

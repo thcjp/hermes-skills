@@ -1,18 +1,18 @@
 ---
-slug: flexible-database-design
-name: flexible-database-design
+slug: "flexible-database-design"
+name: "flexible-database-design"
 version: "1.0.0"
-displayName: Flexible Database De
-  \ base skill"
-summary: Guide agents and users to design and implement a \
-license: MIT-0
+displayName: "Flexible Database De"
+summary: "Guide agents and users to design and implement a \"
+license: "MIT-0"
 description: |-
   Guide agents and users to design and implement a \\\n\n核心能力:\n- 集成工具领域的专业化AI辅助工具\n\
   - 基于高人气开源Skill深度优化升级\n- 移除风险代码,增强安全性和稳定性\n\n适用场景:\n- 第三方API集成、平台对接、数据同步\n- 独立开发者与一人公司效率提升\n\
-tags: '[''Integrations'', ''Knowledge'']'
+tags: "'[''Integrations'', ''Knowledge'']'"
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
 # Flexible Database De
 

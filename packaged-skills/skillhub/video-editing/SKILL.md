@@ -1,10 +1,10 @@
 ---
-slug: video-editing
-name: video-editing
+slug: "video-editing"
+name: "video-editing"
 version: "1.0.0"
-displayName: 视频剪辑变现
-summary: 视频剪辑变现全流程指南，覆盖赛道定位、MVP验证、流量获取与转化交付
-license: MIT
+displayName: "视频剪辑变现"
+summary: "视频剪辑变现全流程指南，覆盖赛道定位、MVP验证、流量获取与转化交付"
+license: "MIT"
 description: |-
   视频剪辑变现指南，覆盖赛道定位与人群分析、MVP验证、流量获取、转化交付、复盘迭代全流程。
   包含变现模型、工具清单、合规风险、30日执行计划。适用于独立剪辑师和工作室的商业化运营。
@@ -12,8 +12,8 @@ tags:
   - Creative
 tools:
   - read
+homepage: "https://skillhub.cn"
 ---
-
 # 视频剪辑变现指南
 
 视频剪辑技能商业化的完整执行框架，从赛道定位到流量获取到转化交付，提供可复制的变现路径。

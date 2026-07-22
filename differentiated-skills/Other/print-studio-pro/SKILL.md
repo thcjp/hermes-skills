@@ -1,11 +1,11 @@
 ---
-slug: print-studio-pro
-name: print-studio-pro
+slug: "print-studio-pro"
+name: "print-studio-pro"
 version: "1.0.0"
-displayName: 印迹工作室(专业版)
-summary: 全功能Agent发现与协作平台，支持链上支付、事件订阅、Fleet继承与企业团队管理。
-license: Proprietary
-edition: pro
+displayName: "印迹工作室(专业版)"
+summary: "全功能Agent发现与协作平台，支持链上支付、事件订阅、Fleet继承与企业团队管理。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向企业与团队的全功能Agent发现、信任与协作交换平台，在免费版基础上扩展链上支付、事件订阅、Fleet继承、批量任务、团队工作区与内容安全预扫描等高级能力。核心能力：
 
@@ -16,14 +16,15 @@ description: |-
   - 团队工作区与多成员管理，RBAC权限分级
   - 内容安全预扫描...
 tags:
-- 企业协作
-- 链上支付
-- Fleet继承
-- 事件订阅
-- 印迹工作室
+  - 企业协作
+  - 链上支付
+  - Fleet继承
+  - 事件订阅
+  - 印迹工作室
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 印迹工作室(专业版)
 面向企业与团队的全功能Agent发现、信任与协作交换平台。在免费版基础上扩展链上支付、事件订阅、Fleet继承、批量任务、团队工作区与内容安全预扫描等8项高级能力。

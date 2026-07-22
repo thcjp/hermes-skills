@@ -1,10 +1,10 @@
 ---
-slug: git-essentials-free
-name: git-essentials-free
+slug: "git-essentials-free"
+name: "git-essentials-free"
 version: "1.0.0"
-displayName: Git基础版
-summary: Git 版本控制基础能力，覆盖常用命令、分支管理与协作工作流，适合日常提交与团队协作。
-license: MIT
+displayName: "Git基础版"
+summary: "Git 版本控制基础能力，覆盖常用命令、分支管理与协作工作流，适合日常提交与团队协作。"
+license: "MIT"
 description: |-
   Git 版本控制基础能力，覆盖常用命令、分支管理与团队协作工作流。
 
@@ -26,9 +26,10 @@ description: |-
 
   差异化:基础版聚焦 Git 核心命令与协作流程，去除了高级版的复杂合并策略、Rebase 交互式重写与二分查找等进阶能力。
 tags:
-- Development
+  - Development
 tools:
   - read
+homepage: "https://skillhub.cn"
 ---
 # Git 基础版
 

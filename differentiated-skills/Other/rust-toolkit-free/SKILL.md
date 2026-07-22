@@ -1,11 +1,11 @@
 ---
-slug: rust-toolkit-free
-name: rust-toolkit-free
+slug: "rust-toolkit-free"
+name: "rust-toolkit-free"
 version: "1.0.0"
-displayName: Rust工具包-免费版
-summary: Rust开发优选实践助手,避免所有权、借用与生命周期常见陷阱,适合个人学习
-license: Proprietary
-edition: free
+displayName: "Rust工具包-免费版"
+summary: "Rust开发优选实践助手,避免所有权、借用与生命周期常见陷阱,适合个人学习"
+license: "Proprietary"
+edition: "free"
 description: |-
   Rust 开发优选实践助手免费版,面向个人开发者与学习者。核心能力:
   - 所有权与借用陷阱检测
@@ -24,13 +24,14 @@ description: |-
 
   差异化:免费版覆盖核心陷阱与优选实践
 tags:
-- Rust
-- 编程规范
-- 所有权
-- 优选实践
+  - Rust
+  - 编程规范
+  - 所有权
+  - 优选实践
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Rust 工具包 - 免费版
 

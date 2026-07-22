@@ -1,11 +1,11 @@
 ---
-slug: cloud-storage-manager-pro
-name: cloud-storage-manager-pro
+slug: "cloud-storage-manager-pro"
+name: "cloud-storage-manager-pro"
 version: "1.0.0"
-displayName: 云存储管理器(专业版)
-summary: 企业级多云存储管理平台，支持批量迁移、双向同步、加密KMS、多用户协作与成本分析报告。
-license: Proprietary
-edition: pro
+displayName: "云存储管理器(专业版)"
+summary: "企业级多云存储管理平台，支持批量迁移、双向同步、加密KMS、多用户协作与成本分析报告。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队与企业的全功能多云存储管理平台，在免费版基础上扩展批量跨云迁移、双向实时同步、加密密钥管理、多用户协作、智能分层存储与成本分析报告等高级能力。核心能力：
 
@@ -15,15 +15,15 @@ description: |-
   - 多用户协作与权限共享，RBAC权限分级
   - 智能分层存储自动分级...
 tags:
-- 企业云存储
-- 批量迁移
-- 双向同步
-- 密钥管理
-- 成本分析
+  - 企业云存储
+  - 批量迁移
+  - 双向同步
+  - 密钥管理
+  - 成本分析
 tools:
   - - read
-- exec
-# 云存储管理器(专业版)
+  - exec
+homepage: "https://skillhub.cn"
 ---
 面向团队与企业的全功能多云存储管理平台。在免费版基础上扩展批量跨云迁移、双向实时同步、加密密钥管理、多用户协作、智能分层存储与成本分析报告等8项高级能力。
 

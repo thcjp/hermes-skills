@@ -1,11 +1,11 @@
 ---
-slug: story-write-tool-free
-name: story-write-tool-free
+slug: "story-write-tool-free"
+name: "story-write-tool-free"
 version: "1.0.0"
-displayName: 长篇网文写作-免费版
-summary: 长篇网文创作助手,支持大纲管理、章节生成与一致性检查,适合个人作者
-license: Proprietary
-edition: free
+displayName: "长篇网文写作-免费版"
+summary: "长篇网文创作助手,支持大纲管理、章节生成与一致性检查,适合个人作者"
+license: "Proprietary"
+edition: "free"
 description: |-
   长篇网文创作助手免费版,面向个人网文作者。
 
@@ -26,12 +26,13 @@ description: |-
 
   适用关键词: 网文, 写作, 创作, 大纲, 章节, 续写, 人物卡, 小说写作
 tags:
-- 网文创作
-- 写作辅助
-- 长篇小说
+  - 网文创作
+  - 写作辅助
+  - 长篇小说
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 长篇网文写作 - 免费版
 

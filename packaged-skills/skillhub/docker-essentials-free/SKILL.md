@@ -1,10 +1,10 @@
 ---
-slug: docker-essentials-free
-name: docker-essentials-free
+slug: "docker-essentials-free"
+name: "docker-essentials-free"
 version: "1.0.0"
-displayName: Docker核心操作免费版
-summary: 免费版Docker操作指南，涵盖容器管理、镜像操作与基础调试命令。
-license: MIT
+displayName: "Docker核心操作免费版"
+summary: "免费版Docker操作指南，涵盖容器管理、镜像操作与基础调试命令。"
+license: "MIT"
 description: |-
   Docker核心操作指南免费版，提供容器生命周期管理基础命令。
   包含镜像管理、容器调试与常用工作流。
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 系统运维
 ---
-
 # Docker核心操作指南（免费版）
 
 涵盖容器管理、镜像操作与基础调试的Docker核心命令。

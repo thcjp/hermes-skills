@@ -1,23 +1,23 @@
 ---
-slug: sql-query-tool-pro
-name: sql-query-tool-pro
+slug: "sql-query-tool-pro"
+name: "sql-query-tool-pro"
 version: "1.0.0"
-displayName: SQL查询工具(专业版)
-summary: 面向团队与企业的SQL查询专业版，含慢查询采集、结果缓存、跨库SQL转换、性能基准测试与优先工单支持。
-license: Proprietary
-edition: pro
+displayName: "SQL查询工具(专业版)"
+summary: "面向团队与企业的SQL查询专业版，含慢查询采集、结果缓存、跨库SQL转换、性能基准测试与优先工单支持。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队、企业与专业运维的SQL查询执行工具专业版。在免费版基础上新增查询结果缓存与命中率监控、慢查询自动采集与告警、跨数据库SQL自动转换、查询性能基准测试套件、连接池调优与读写分离路由等高级能力，配套面向运维、数据工程师、DBA的多角色场景指南。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。
 tags:
-- 集成工具
-- 数据库
-- SQL查询
-- 高级特性
+  - 集成工具
+  - 数据库
+  - SQL查询
+  - 高级特性
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # SQL查询工具（专业版）
 
 专业版在免费版核心能力之上，新增查询结果缓存、慢查询自动采集、跨数据库SQL自动转换、性能基准测试套件、连接池调优等高级能力，专为团队协作、企业生产环境与高并发查询场景设计。

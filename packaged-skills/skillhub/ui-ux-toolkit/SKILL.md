@@ -1,11 +1,11 @@
 ---
-slug: ui-ux-toolkit
-name: ui-ux-toolkit
+slug: "ui-ux-toolkit"
+name: "ui-ux-toolkit"
 version: "1.0.0"
-displayName: UI/UX设计工具箱专业版
-summary: 全域设计数据库+持久化设计系统+多技术栈+批量搜索,面向团队企业的专业UI/UX设计决策引擎
-license: Proprietary
-edition: pro
+displayName: "UI/UX设计工具箱专业版"
+summary: "全域设计数据库+持久化设计系统+多技术栈+批量搜索,面向团队企业的专业UI/UX设计决策引擎"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向设计团队和企业项目的专业级UI/UX设计决策引擎,涵盖全部10个设计域、
   10种技术栈、设计系统持久化、页面级覆盖、批量搜索等高级能力。核心能力:
@@ -13,19 +13,20 @@ description: |-
   - 10种技术栈实现指引(html-tailwind/react/nextjs/vue/svelte/swiftui/react-native/flutter/shadcn/jetpack-compose)
   - 设计系统持久化:...
 tags:
-- 设计
-- UI
-- UX
-- 配色
-- 字体
-- 前端
-- 企业级
-- 设计系统
-- 技术栈
-- 批量处理
+  - 设计
+  - UI
+  - UX
+  - 配色
+  - 字体
+  - 前端
+  - 企业级
+  - 设计系统
+  - 技术栈
+  - 批量处理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # UI/UX设计工具箱专业版
 

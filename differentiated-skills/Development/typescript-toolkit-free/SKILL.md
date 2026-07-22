@@ -1,11 +1,11 @@
 ---
-slug: typescript-toolkit-free
-name: typescript-toolkit-free
+slug: "typescript-toolkit-free"
+name: "typescript-toolkit-free"
 version: "1.0.0"
-displayName: TypeScript工具集(免费版)
-summary: 面向个人开发者的TypeScript类型安全辅助工具,覆盖基础类型收窄、推断与严格模式实践。
-license: Proprietary
-edition: free
+displayName: "TypeScript工具集(免费版)"
+summary: "面向个人开发者的TypeScript类型安全辅助工具,覆盖基础类型收窄、推断与严格模式实践。"
+license: "Proprietary"
+edition: "free"
 description: |-
   TypeScript工具集免费版为个人开发者提供日常类型安全辅助,涵盖类型收窄、字面量陷阱、严格空值处理等核心主题。核心能力:
   - 基础类型安全指导与代码审查
@@ -20,14 +20,15 @@ description: |-
 
   差异化:免费版聚焦个人开发场景,提供核心类型安全指导,适合中小型项目日常使用
 tags:
-- TypeScript
-- 类型系统
-- 前端开发
-- 代码质量
-- 个人开发
+  - TypeScript
+  - 类型系统
+  - 前端开发
+  - 代码质量
+  - 个人开发
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # TypeScript 工具集(免费版)
 

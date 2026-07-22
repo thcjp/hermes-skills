@@ -1,17 +1,20 @@
 ---
-name: jira-integration-skill
-slug: jira-integration-skill
-displayName: Jira集成技能
+name: "jira-integration-skill"
+slug: "jira-integration-skill"
+displayName: "Jira集成技能"
 version: "1.0.0"
-summary: Jira项目管理集成技能,支持工单创建、状态同步和工作流自动化
+summary: "Jira项目管理集成技能,支持工单创建、状态同步和工作流自动化"
 description: |-
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据。
   Use when 用户说"（根据实际场景填充）"、（根据实际场景填充）时使用。
   不适用于需要人工判断的复杂场景。
-license: Proprietary
+license: "Proprietary"
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
 # （根据实际场景填充）
 

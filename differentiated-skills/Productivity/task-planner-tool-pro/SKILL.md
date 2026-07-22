@@ -1,11 +1,11 @@
 ---
-slug: task-planner-tool-pro
-name: task-planner-tool-pro
+slug: "task-planner-tool-pro"
+name: "task-planner-tool-pro"
 version: "1.0.0"
-displayName: 任务规划器专业版
-summary: 企业级任务规划系统,支持里程碑管理、资源分配、风险追踪与项目进度可视化
-license: Proprietary
-edition: pro
+displayName: "任务规划器专业版"
+summary: "企业级任务规划系统,支持里程碑管理、资源分配、风险追踪与项目进度可视化"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 任务管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: task planner, 任务规划, 拆解, 子任务, 里程碑, 截止日期, 项目管理
 tags:
-- 任务规划
-- 项目管理
-- 子任务
-- 里程碑
+  - 任务规划
+  - 项目管理
+  - 子任务
+  - 里程碑
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 任务规划器专业版
 
 ## 概述

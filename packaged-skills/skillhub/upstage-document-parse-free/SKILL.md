@@ -1,10 +1,10 @@
 ---
-slug: upstage-document-parse-free
-name: upstage-document-parse-free
+slug: "upstage-document-parse-free"
+name: "upstage-document-parse-free"
 version: "1.0.5"
-displayName: Document Parse Free
-summary: 基础版文档解析技能，将 PDF 和图片转换为 Markdown，支持同步模式。
-license: MIT-0
+displayName: "Document Parse Free"
+summary: "基础版文档解析技能，将 PDF 和图片转换为 Markdown，支持同步模式。"
+license: "MIT-0"
 description: |-
   upstage-document-parse-free 是文档解析技能的基础版本，将 PDF 和图片转换为 Markdown 格式。
   支持同步模式解析（最多 100 页/50MB）和基础版面元素识别。不包含异步模式、enhanced 模式、
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 文档处理
 ---
-
 # Document Parse Free
 
 document-parse-free 将文档转换为 Markdown 格式。基础版支持 PDF 和图片的同步模式解析，

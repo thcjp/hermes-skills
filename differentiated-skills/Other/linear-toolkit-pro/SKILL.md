@@ -1,11 +1,11 @@
 ---
-slug: linear-toolkit-pro
-name: linear-toolkit-pro
+slug: "linear-toolkit-pro"
+name: "linear-toolkit-pro"
 version: "1.0.0"
-displayName: Linear 工具箱专业版
-summary: 面向团队的跨团队看板、批量操作与项目健康度分析工具。
-license: Proprietary
-edition: pro
+displayName: "Linear 工具箱专业版"
+summary: "面向团队的跨团队看板、批量操作与项目健康度分析工具。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队的 Linear 跨团队看板与项目健康度分析专业工具。核心能力:
   - 跨团队统一看板与批量操作
@@ -20,14 +20,15 @@ description: |-
 
   差异化: 专业版在免费版单团队基础上扩展跨团队看板、健康度分析、自动化与审计，兼容免费版命令
 tags:
-- Linear
-- 企业级
-- 项目管理
-- 数据分析
-- 其他工具
+  - Linear
+  - 企业级
+  - 项目管理
+  - 数据分析
+  - 其他工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Linear 工具箱（专业版）
 

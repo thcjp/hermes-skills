@@ -1,11 +1,10 @@
 ---
-slug: mongodb
-name: mongodb
+slug: "mongodb"
+name: "mongodb"
 version: "1.0.1"
-displayName: MongoDB
-summary: Design schemas, write queries, and configure MongoDB for consistency and
-  performance.
-license: MIT
+displayName: "MongoDB"
+summary: "Design schemas, write queries, and configure MongoDB for consistency and"
+license: "MIT"
 description: |-
   Design schemas, write queries, and configure MongoDB for consistency
   and performance。核心能力:
@@ -23,12 +22,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # MongoDB
 

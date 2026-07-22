@@ -1,11 +1,11 @@
 ---
-slug: frontend-design-anthropic
-name: frontend-design-anthropic
+slug: "frontend-design-anthropic"
+name: "frontend-design-anthropic"
 version: "1.0.0"
-displayName: 前端设计-专业版
-summary: 企业级前端设计工具,支持设计系统生成、组件库批量产出、多端适配,适配商业产品开发。
-license: Proprietary
-edition: pro
+displayName: "前端设计-专业版"
+summary: "企业级前端设计工具,支持设计系统生成、组件库批量产出、多端适配,适配商业产品开发。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   前端设计专业版,面向企业团队与专业设计师的高级前端界面设计工具。核心能力:
   - 完整设计系统生成(Design Tokens、主题、规范文档)
@@ -23,13 +23,14 @@ description: |-
 
   差异化:专业版在免费版基础上...
 tags:
-- Creative
-- 前端设计
-- 企业版
-- 设计系统
+  - Creative
+  - 前端设计
+  - 企业版
+  - 设计系统
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 前端设计-专业版
 

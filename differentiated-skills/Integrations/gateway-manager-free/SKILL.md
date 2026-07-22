@@ -1,23 +1,23 @@
 ---
-slug: gateway-manager-free
-name: gateway-manager-free
+slug: "gateway-manager-free"
+name: "gateway-manager-free"
 version: "1.0.0"
-displayName: API网关管理器(免费版)
-summary: 轻量级API网关配置与管理，覆盖路由、认证、限流、监控四大基础能力，60秒上手。
-license: Proprietary
-edition: free
+displayName: "API网关管理器(免费版)"
+summary: "轻量级API网关配置与管理，覆盖路由、认证、限流、监控四大基础能力，60秒上手。"
+license: "Proprietary"
+edition: "free"
 description: |-
   API网关管理器免费版解决中小团队"网关配置散乱、限流靠猜、认证各自实现"的痛点。提供声明式路由配置、统一认证接入、基础速率限制、实时监控看板四大能力，支持以YAML或JSON声明式定义网关规则，自动生成主流网关（Kong/APISIX/Nginx/Envoy）的配置文件。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
 tags:
-- API网关
-- 路由配置
-- 限流
-- 集成工具
+  - API网关
+  - 路由配置
+  - 限流
+  - 集成工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # API网关管理器（免费版）
 
 > **把"网关配置"从翻文档翻半天压缩到填个表。声明式路由+统一认证+限流+监控，四件套。**

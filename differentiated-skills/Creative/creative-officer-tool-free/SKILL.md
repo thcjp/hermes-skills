@@ -1,11 +1,11 @@
 ---
-slug: creative-officer-tool-free
-name: creative-officer-tool-free
+slug: "creative-officer-tool-free"
+name: "creative-officer-tool-free"
 version: "1.0.0"
-displayName: 创意总监免费版
-summary: 提供创意咨询、头脑风暴与方案评估，帮助个人用户快速产出创意想法与执行方向。
-license: Proprietary
-edition: free
+displayName: "创意总监免费版"
+summary: "提供创意咨询、头脑风暴与方案评估，帮助个人用户快速产出创意想法与执行方向。"
+license: "Proprietary"
+edition: "free"
 description: |-
   创意总监免费版 —— 面向个人用户的轻量级创意辅助工具。核心能力:
   - 创意咨询：回答创意相关问题，提供专业建议
@@ -22,13 +22,14 @@ description: |-
 
   差异化:免费版提供核心创意咨询与头脑风暴能力，适合个人用户快速获取灵感
 tags:
-- 创意策划
-- 品牌策略
-- 个人创作
-- 创意工具
+  - 创意策划
+  - 品牌策略
+  - 个人创作
+  - 创意工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 创意总监免费版
 

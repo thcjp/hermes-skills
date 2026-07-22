@@ -1,10 +1,10 @@
 ---
-slug: css-free
-name: css-free
+slug: "css-free"
+name: "css-free"
 version: "1.0.0"
-displayName: CSS样式引擎(免费版)
-summary: 现代CSS布局、动画、响应式设计与组件样式生成，支持Flexbox/Grid/Tailwind。免费版
-license: MIT
+displayName: "CSS样式引擎(免费版)"
+summary: "现代CSS布局、动画、响应式设计与组件样式生成，支持Flexbox/Grid/Tailwind。免费版"
+license: "MIT"
 description: |-
   CSS样式与布局辅助引擎（免费版），覆盖现代CSS布局、动画效果、响应式设计与
   组件样式生成。核心能力：
@@ -15,8 +15,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # CSS样式引擎(免费版)
 
 CSS样式与布局辅助引擎，覆盖现代CSS布局、动画效果、响应式设计与组件样式生成。

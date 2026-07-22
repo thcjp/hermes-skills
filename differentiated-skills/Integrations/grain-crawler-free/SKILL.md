@@ -1,11 +1,11 @@
 ---
-slug: grain-crawler-free
-name: grain-crawler-free
+slug: "grain-crawler-free"
+name: "grain-crawler-free"
 version: "1.0.0"
-displayName: 归档检索(免费版)
-summary: 本地 Granola 归档检索，支持笔记搜索、详情查看、新鲜度检查。
-license: Proprietary
-edition: free
+displayName: "归档检索(免费版)"
+summary: "本地 Granola 归档检索，支持笔记搜索、详情查看、新鲜度检查。"
+license: "Proprietary"
+edition: "free"
 description: |-
   本地 Granola 归档检索，支持笔记搜索、详情查看、新鲜度检查。核心能力：
   - 基于本地归档数据优先检索，避免频繁联网
@@ -21,12 +21,13 @@ description: |-
 
   差异化：优先使用本地缓存降低外部依赖，配合新鲜度提示让用户决定何时刷新，免费版聚焦"查得到、读得快"的核心场景
 tags:
-- 集成工具
-- 知识管理
-- 个人效率
+  - 集成工具
+  - 知识管理
+  - 个人效率
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 归档检索（免费版）
 

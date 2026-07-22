@@ -1,11 +1,11 @@
 ---
-slug: work-toolkit-free
-name: work-toolkit-free
+slug: "work-toolkit-free"
+name: "work-toolkit-free"
 version: "1.0.0"
-displayName: 办公工具包基础版
-summary: 日常办公导航工具,帮助快速定位文件、管理日程与处理邮件
-license: Proprietary
-edition: free
+displayName: "办公工具包基础版"
+summary: "日常办公导航工具,帮助快速定位文件、管理日程与处理邮件"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力: 办公效率领域的专业化 AI 辅助工具,提供核心基础功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: 办公, 文件, 日程, 邮件, 效率, 导航, 文档管理
 tags:
-- 办公
-- 文件管理
-- 日程
-- 邮件
+  - 办公
+  - 文件管理
+  - 日程
+  - 邮件
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 办公工具包基础版
 
 ## 概述

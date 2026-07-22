@@ -1,11 +1,11 @@
 ---
-slug: interview-sim-tool-pro
-name: interview-sim-tool-pro
+slug: "interview-sim-tool-pro"
+name: "interview-sim-tool-pro"
 version: "1.0.0"
-displayName: 面试模拟工具专业版
-summary: 面向团队的企业题库、定制面试官与招聘漏斗分析工具。
-license: Proprietary
-edition: pro
+displayName: "面试模拟工具专业版"
+summary: "面向团队的企业题库、定制面试官与招聘漏斗分析工具。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向招聘团队的企业题库、定制面试官与招聘漏斗分析专业工具。核心能力:
   - 企业专属题库与定制面试官人设
@@ -20,14 +20,15 @@ description: |-
 
   差异化: 专业版在免费版单场模拟上扩展企业题库、定制面试官、能力画像与漏斗分析，兼容免费版记分卡格式
 tags:
-- 面试
-- 企业级
-- 招聘
-- 题库
-- 其他工具
+  - 面试
+  - 企业级
+  - 招聘
+  - 题库
+  - 其他工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 面试模拟工具（专业版）
 

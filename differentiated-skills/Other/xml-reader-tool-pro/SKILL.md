@@ -1,25 +1,25 @@
 ---
-slug: xml-reader-tool-pro
-name: xml-reader-tool-pro
+slug: "xml-reader-tool-pro"
+name: "xml-reader-tool-pro"
 version: "1.0.0"
-displayName: XML读取器专业版
-summary: 流式读取大文件、高级XPath、批量查询与结果导出，适合数据团队与企业级XML分析。
-license: Proprietary
-edition: pro
+displayName: "XML读取器专业版"
+summary: "流式读取大文件、高级XPath、批量查询与结果导出，适合数据团队与企业级XML分析。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   XML读取器工具专业版，面向数据团队与企业的高阶XML读取与分析平台。核心能力:
   - 流式读取大文件（GB级）
   - XPath 2。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
-- XML读取
-- 数据分析
-- 批量查询
-- 专业版
+  - XML读取
+  - 数据分析
+  - 批量查询
+  - 专业版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # XML读取器工具（专业版）
 
 ## 概述

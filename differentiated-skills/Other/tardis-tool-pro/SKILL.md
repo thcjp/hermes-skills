@@ -1,11 +1,11 @@
 ---
-slug: tardis-tool-pro
-name: tardis-tool-pro
+slug: "tardis-tool-pro"
+name: "tardis-tool-pro"
 version: "1.0.0"
-displayName: 生活事件追踪-专业版
-summary: 企业级事件追踪平台,支持数据分析、多维度回顾、团队协作与API集成
-license: Proprietary
-edition: pro
+displayName: "生活事件追踪-专业版"
+summary: "企业级事件追踪平台,支持数据分析、多维度回顾、团队协作与API集成"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级生活事件追踪工具专业版,面向团队与专业用户。核心能力:
   - 多维度数据分析与可视化
@@ -25,14 +25,15 @@ description: |-
 
   差异化:专业版在免费版基础上扩展数据分析、团队协作与 AI 洞察,兼容免费版数据格式
 tags:
-- 事件追踪
-- 企业级
-- 数据分析
-- 团队协作
-- AI洞察
+  - 事件追踪
+  - 企业级
+  - 数据分析
+  - 团队协作
+  - AI洞察
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 生活事件追踪 - 专业版
 

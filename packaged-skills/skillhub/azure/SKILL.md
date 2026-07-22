@@ -1,10 +1,10 @@
 ---
-slug: azure
-name: azure
+slug: "azure"
+name: "azure"
 version: "1.0.0"
-displayName: Azure
-summary: Deploy, monitor, and manage Azure services with battle-tested patterns.
-license: MIT
+displayName: "Azure"
+summary: "Deploy, monitor, and manage Azure services with battle-tested patterns."
+license: "MIT"
 description: |-
   Deploy, monitor, and manage Azure services with battle-tested patterns。核心能力:
 
@@ -21,12 +21,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Operations
+  - Operations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Azure
 

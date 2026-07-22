@@ -1,10 +1,10 @@
 ---
-slug: whatsapp-ultimate-free
-name: whatsapp-ultimate-free
+slug: "whatsapp-ultimate-free"
+name: "whatsapp-ultimate-free"
 version: "1.0.0"
-displayName: 通讯应用工具(免费版)
-summary: 通讯应用消息发送、交互反应、群组管理和多Agent讨论工具(免费版)
-license: MIT
+displayName: "通讯应用工具(免费版)"
+summary: "通讯应用消息发送、交互反应、群组管理和多Agent讨论工具(免费版)"
+license: "MIT"
 description: |-
   通讯应用消息发送、交互反应、群组管理和多Agent讨论工具。支持文本、图片、
   语音、视频、贴纸等多种消息类型，支持投票、群组创建、历史搜索和多Agent
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 通讯应用工具(免费版)
 
 通讯应用消息发送、交互反应、群组管理和多Agent讨论。

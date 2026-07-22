@@ -1,11 +1,11 @@
 ---
-slug: pptx-cn-tool-pro
-name: pptx-cn-tool-pro
+slug: "pptx-cn-tool-pro"
+name: "pptx-cn-tool-pro"
 version: "1.0.0"
-displayName: PPT 中文工具专业版
-summary: 企业级中文演示文稿系统,支持中文排版引擎、本地化品牌模板与多地区适配
-license: Proprietary
-edition: pro
+displayName: "PPT 中文工具专业版"
+summary: "企业级中文演示文稿系统,支持中文排版引擎、本地化品牌模板与多地区适配"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 文档处理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: powerpoint, pptx, 中文, 演示文稿, 幻灯片, 排版, 本地化
 tags:
-- PowerPoint
-- PPTX
-- 中文
-- 演示文稿
+  - PowerPoint
+  - PPTX
+  - 中文
+  - 演示文稿
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # PPT 中文工具专业版
 
 ## 概述

@@ -1,24 +1,24 @@
 ---
-slug: ocean-chat-tool-free
-name: ocean-chat-tool-free
+slug: "ocean-chat-tool-free"
+name: "ocean-chat-tool-free"
 version: "1.0.0"
-displayName: P2P通讯入门工具
-summary: 基于WASM的P2P消息通讯工具，支持点对点文本消息与基础文件传输。
-license: Proprietary
-edition: free
+displayName: "P2P通讯入门工具"
+summary: "基于WASM的P2P消息通讯工具，支持点对点文本消息与基础文件传输。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人开发者的P2P消息通讯工具。基于WASM技术实现浏览器端的
   点对点通讯，支持文本消息与基础文件传输。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-- Operations
-- 通讯
-- P2P
-- WebRTC
+  - Operations
+  - 通讯
+  - P2P
+  - WebRTC
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # P2P通讯入门工具（免费版）
 
 ## 概述

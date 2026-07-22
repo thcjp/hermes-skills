@@ -1,10 +1,10 @@
 ---
-slug: agent-telegram
-name: agent-telegram
+slug: "agent-telegram"
+name: "agent-telegram"
 version: "1.0.0"
-displayName: Agent Telegram
-summary: Agent 团队 Telegram 通信规范，统一 8 类角色消息发送与汇报。
-license: MIT
+displayName: "Agent Telegram"
+summary: "Agent 团队 Telegram 通信规范，统一 8 类角色消息发送与汇报。"
+license: "MIT"
 description: |-
   Agent 团队 Telegram 通信规范。定义 main、architect、backend、frontend、product、content、crawler、qa
   共 8 类 Agent 角色的 accountId、emoji 标识与消息发送格式。所有 Agent 向用户发送 Telegram 消息时必须遵循此规范，
@@ -18,8 +18,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Agent Telegram
 
 所有 Agent 向用户（Legend）发送 Telegram 消息时必须遵循此规范。规范定义了 8 类 Agent 角色的账号映射、消息格式、汇报时机与消息模板，确保多 Agent 协作时消息统一路由到用户 Telegram 账号 `5440561025`。

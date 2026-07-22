@@ -1,21 +1,22 @@
 ---
-slug: mongo-manager
-name: mongo-manager
+slug: "mongo-manager"
+name: "mongo-manager"
 version: "1.0.0"
-displayName: Mongo管理工具专业版
-summary: MongoDB企业级管理与优化全功能版，含分片集群、副本集高可用、Atlas Search、Change Stream与基准测试。
-license: Proprietary
-edition: pro
+displayName: "Mongo管理工具专业版"
+summary: "MongoDB企业级管理与优化全功能版，含分片集群、副本集高可用、Atlas Search、Change Stream与基准测试。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向MongoDB运维与架构师的企业级全功能专业版。在免费版基础上新增分片集群配置、副本集高可用、Atlas Search全文搜索、Change Stream实时同步、性能基准测试套件、容量规划模型等高级能力，配套面向DBA、架构师、SRE的多角色场景指南。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。
 tags:
-- 集成工具
-- 数据库
-- NoSQL
-- 企业级
+  - 集成工具
+  - 数据库
+  - NoSQL
+  - 企业级
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Mongo管理工具专业版
 

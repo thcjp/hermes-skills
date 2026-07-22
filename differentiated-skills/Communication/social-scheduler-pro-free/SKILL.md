@@ -1,24 +1,24 @@
 ---
-slug: social-scheduler-pro-free
-name: social-scheduler-pro-free
+slug: "social-scheduler-pro-free"
+name: "social-scheduler-pro-free"
 version: "1.0.0"
-displayName: 社媒内容排期(免费版)
-summary: 社媒内容排期免费版：内容日历、平台适配草稿、内容支柱与标签策略，适合个人创作者。
-license: Proprietary
-edition: free
+displayName: "社媒内容排期(免费版)"
+summary: "社媒内容排期免费版：内容日历、平台适配草稿、内容支柱与标签策略，适合个人创作者。"
+license: "Proprietary"
+edition: "free"
 description: |-
   社媒内容排期工具（免费版）面向个人创作者与独立开发者，提供社交媒体内容规划与草稿撰写能力：周/月内容日历、平台适配文案撰写、内容支柱定义与三层标签策略。覆盖 Twitter/X、LinkedIn、Instagram、TikTok、Facebook 五大平台的风格适配。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。
 tags:
-- 沟通协作
-- 社媒运营
-- 内容创作
-- 内容排期
-- 文案撰写
+  - 沟通协作
+  - 社媒运营
+  - 内容创作
+  - 内容排期
+  - 文案撰写
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 社媒内容排期工具（免费版）
 
 ## 概述

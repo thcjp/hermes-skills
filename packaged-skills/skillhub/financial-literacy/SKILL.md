@@ -1,11 +1,10 @@
 ---
-slug: financial-literacy
-name: financial-literacy
+slug: "financial-literacy"
+name: "financial-literacy"
 version: "1.0.0"
-displayName: Finance
-summary: Support financial understanding from personal budgeting to professional analysis
-  and research.
-license: MIT
+displayName: "Finance"
+summary: "Support financial understanding from personal budgeting to professional analysis"
+license: "MIT"
 description: |-
   Support financial understanding from personal budgeting to professional
   analysis and research。核心能力:
@@ -26,10 +25,11 @@ description: |-
 
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触...
 tags:
-- Finance
+  - Finance
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Finance
 

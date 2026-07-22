@@ -1,10 +1,10 @@
 ---
-slug: decision-architect
-name: decision-architect
+slug: "decision-architect"
+name: "decision-architect"
 version: "1.0.0"
-displayName: 决策架构师
-summary: 结构化决策支持加认知偏差检测与回顾复盘，避免拍脑袋决策与重复踩坑。
-license: MIT
+displayName: "决策架构师"
+summary: "结构化决策支持加认知偏差检测与回顾复盘，避免拍脑袋决策与重复踩坑。"
+license: "MIT"
 description: |-
   面向 AI Agent 的结构化决策支持系统，提供决策框架匹配、认知偏差检测、风险画像学习与强制复盘闭环。
   内置 8 类决策框架（决策矩阵、成本效益、前置分析、预演困境、机会成本、二阶思维、奥卡姆剃刀、可逆性评估），
@@ -13,8 +13,10 @@ description: |-
   通过 3 次一致信号确认才入档的风险画像学习机制，结合 30 天心跳触发的回顾复盘闭环，
 tools:
   - read
+homepage: "https://skillhub.cn"
+tags:
+  - 系统运维
 ---
-
 # 决策架构师（Decision Architect）
 
 **不替你做决定，但帮你做更好的决定。** 通过结构化框架匹配、12 类认知偏差检测、风险画像学习、强制复盘闭环，让每次决策都留下可复用的经验。本系统避免拍脑袋决策、框架错配、不复盘、重复犯同类错误四大顽疾。

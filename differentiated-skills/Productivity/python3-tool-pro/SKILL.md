@@ -1,11 +1,11 @@
 ---
-slug: python3-tool-pro
-name: python3-tool-pro
+slug: "python3-tool-pro"
+name: "python3-tool-pro"
 version: "1.0.0"
-displayName: Python 环境工具专业版
-summary: 企业级 Python 环境管理系统,支持多版本管理、依赖审计、CI/CD 集成与安全扫描
-license: Proprietary
-edition: pro
+displayName: "Python 环境工具专业版"
+summary: "企业级 Python 环境管理系统,支持多版本管理、依赖审计、CI/CD 集成与安全扫描"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 开发工具领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: python, python3, venv, pip, 依赖, 虚拟环境, requirements
 tags:
-- Python
-- 虚拟环境
-- 依赖管理
-- pip
+  - Python
+  - 虚拟环境
+  - 依赖管理
+  - pip
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Python 环境工具专业版
 
 ## 概述

@@ -1,11 +1,11 @@
 ---
-slug: whatsapp-style
-name: whatsapp-style
+slug: "whatsapp-style"
+name: "whatsapp-style"
 version: "1.0.0"
-displayName: WhatsApp样式工具-专业版
-summary: 企业级WhatsApp格式化平台,支持样式预设/批量转换/团队规范/多平台适配
-license: Proprietary
-edition: pro
+displayName: "WhatsApp样式工具-专业版"
+summary: "企业级WhatsApp格式化平台,支持样式预设/批量转换/团队规范/多平台适配"
+license: "Proprietary"
+edition: "pro"
 description: |-
   WhatsApp样式工具专业版,面向企业和专业团队的高级消息格式化平台。核心能力:
   - 全部WhatsApp格式语法支持(加粗/斜体/删除线/等宽体/列表/引用)
@@ -22,17 +22,16 @@ description: |-
   - 多渠道消息格式自动适配
   - 消...
 tags:
-- 沟通协作
-- 消息样式
-- WhatsApp
-- 企业级
-- 批量转换
-- 格式规范
+  - 沟通协作
+  - 消息样式
+  - WhatsApp
+  - 企业级
+  - 批量转换
+  - 格式规范
 tools:
   - - read
-- exec
-# WhatsApp样式工具(专业版)
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # WhatsApp样式工具-专业版
 

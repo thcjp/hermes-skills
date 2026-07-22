@@ -1,11 +1,11 @@
 ---
-slug: feishu-doc-tool-free
-name: feishu-doc-tool-free
+slug: "feishu-doc-tool-free"
+name: "feishu-doc-tool-free"
 version: "1.0.0"
-displayName: 飞书文档工具（免费版）
-summary: 读取飞书Wiki、文档、表格、多维表格内容，支持文档创建、写入、追加与块操作。
-license: Proprietary
-edition: free
+displayName: "飞书文档工具（免费版）"
+summary: "读取飞书Wiki、文档、表格、多维表格内容，支持文档创建、写入、追加与块操作。"
+license: "Proprietary"
+edition: "free"
 description: |-
   飞书文档工具 - （免费版）
 
@@ -17,15 +17,15 @@ description: |-
 
   适用关键词: 飞书文档, 飞书Wiki, 文档读取, 文档创建, feishu, lark, 块操作, 长文档
 tags:
-- 飞书集成
-- 文档管理
-- Wiki
-- API调用
+  - 飞书集成
+  - 文档管理
+  - Wiki
+  - API调用
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 飞书文档工具（免费版）
 
 ## 概述

@@ -1,11 +1,11 @@
 ---
-slug: game-ai-tool-pro
-name: game-ai-tool-pro
+slug: "game-ai-tool-pro"
+name: "game-ai-tool-pro"
 version: "1.0.0"
-displayName: 游戏AI工具专业版
-summary: 企业级游戏AI平台,支持GOAP、机器学习、多AI协作与可视化调试
-license: Proprietary
-edition: pro
+displayName: "游戏AI工具专业版"
+summary: "企业级游戏AI平台,支持GOAP、机器学习、多AI协作与可视化调试"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向游戏工作室与商业项目的企业级游戏 AI 开发平台。
   核心能力: GOAP目标导向规划、强化学习集成、多AI协作、可视化调试器、性能分析、团队协作
@@ -13,17 +13,16 @@ description: |-
   差异化: 专业版支持高级AI架构与企业级工具链,与免费版代码格式兼容
   适用关键词: GOAP, 强化学习, 多AI协作, AI调试器, 性能分析, 商业游戏AI
 tags:
-- 游戏开发
-- 企业级
-- 机器学习
-- GOAP
-- 多AI协作
-- 性能优化
+  - 游戏开发
+  - 企业级
+  - 机器学习
+  - GOAP
+  - 多AI协作
+  - 性能优化
 tools:
   - - read
-- exec
-# 游戏 AI 工具 (专业版)
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 专业版面向游戏工作室与商业项目,在免费版基础 AI 架构之上,扩展 GOAP 目标导向行动规划、强化学习集成、多 AI 协作、可视化调试器、性能分析工具链等企业级能力。支持构建复杂的战术 AI、可学习的 NPC 行为、团队协作 AI,适合 3A 级游戏与训练模拟项目。
 

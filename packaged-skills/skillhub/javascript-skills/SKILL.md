@@ -1,21 +1,19 @@
 ---
-slug: javascript-skills
-name: javascript-skills
+slug: "javascript-skills"
+name: "javascript-skills"
 version: "1.0.2"
-displayName: JavaScript
-summary: A comprehensive JavaScript style guide skill. When activated, it provides
-  best-practice JavaScrip...
-license: MIT-0
+displayName: "JavaScript"
+summary: "A comprehensive JavaScript style guide skill. When activated, it provides"
+license: "MIT-0"
 description: |-
   A comprehensive JavaScript style guide skill。When activated, it provides
   best-practice JavaScrip。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Development
+  - Development
 tools:
   - - read
-- exec
-# JavaScript
-## Activation
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # JavaScript
 

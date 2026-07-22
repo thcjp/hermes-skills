@@ -1,22 +1,22 @@
 ---
-slug: zh-file-organizer-pro
-name: zh-file-organizer-pro
+slug: "zh-file-organizer-pro"
+name: "zh-file-organizer-pro"
 version: "1.0.0"
-displayName: 中文整理专业版
-summary: 全功能中文文件整理工具，支持内容感知分类、批量定时整理、实时监控与团队规则共享。
-license: Proprietary
-edition: pro
+displayName: "中文整理专业版"
+summary: "全功能中文文件整理工具，支持内容感知分类、批量定时整理、实时监控与团队规则共享。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   中文文件整理器专业版面向中文用户的高效文件治理场景，在免费版基础上扩展全功能自动化能力。解决中文文件治理的"规模与智能"痛点：大量中文文档需要按内容而非文件名分类、多个文件夹需要批量定时整理、团队需要共享中文分类规则、新增文件需要实时监控自动归位、重复文件需要基于内容精准去重。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。
 tags:
-- 文件整理
-- 中文分类
-- 内容感知
-- 自动化
+  - 文件整理
+  - 中文分类
+  - 内容感知
+  - 自动化
 tools:
   - - read
-- exec
-# 中文文件整理器（专业版）
+  - exec
+homepage: "https://skillhub.cn"
 ---
 > **全功能中文文件整理。内容感知分类、批量定时整理、实时监控、团队规则共享。**
 

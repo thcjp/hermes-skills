@@ -1,25 +1,24 @@
 ---
-slug: doubao-image-gen
-name: doubao-image-gen
+slug: "doubao-image-gen"
+name: "doubao-image-gen"
 version: "1.0.0"
-displayName: 豆包图片生成-专业版
-summary: 企业级AI图片生成平台，支持批量生成、多比例输出、风格预设、提示词增强与工作流自动化。
-license: Proprietary
-edition: pro
+displayName: "豆包图片生成-专业版"
+summary: "企业级AI图片生成平台，支持批量生成、多比例输出、风格预设、提示词增强与工作流自动化。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   豆包图片生成专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Creative
-- AI绘图
-- 图片生成
-- 专业版
-- 批量处理
-- 企业级
+  - Creative
+  - AI绘图
+  - 图片生成
+  - 专业版
+  - 批量处理
+  - 企业级
 tools:
   - - read
-- exec
-# 豆包图片生成工具 - 专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 豆包图片生成-专业版
 

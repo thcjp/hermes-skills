@@ -1,21 +1,22 @@
 ---
-slug: excel-craft
-name: excel-craft
+slug: "excel-craft"
+name: "excel-craft"
 version: "1.0.0"
-displayName: Excel工艺专业版
-summary: 企业级 Excel 生成引擎，含批量处理、条件格式、高级图表、模板系统与数据源对接。
-license: Proprietary
-edition: pro
+displayName: "Excel工艺专业版"
+summary: "企业级 Excel 生成引擎，含批量处理、条件格式、高级图表、模板系统与数据源对接。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Excel 工艺专业版在免费版基础上扩展批量生成、多文件合并拆分、条件格式与数据验证、高级图表、模板系统与数据源对接能力。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。
 tags:
-- 集成工具
-- 表格生成
-- 企业级
-- 自动化
+  - 集成工具
+  - 表格生成
+  - 企业级
+  - 自动化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Excel工艺专业版
 

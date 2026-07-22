@@ -1,11 +1,11 @@
 ---
-slug: youtube-watcher-tool-free
-name: youtube-watcher-tool-free
+slug: "youtube-watcher-tool-free"
+name: "youtube-watcher-tool-free"
 version: "1.0.0"
-displayName: YouTube字幕提取-免费版
-summary: 轻量级YouTube视频字幕提取工具，支持单视频字幕获取与内容摘要，适合个人学习与内容分析。
-license: Proprietary
-edition: free
+displayName: "YouTube字幕提取-免费版"
+summary: "轻量级YouTube视频字幕提取工具，支持单视频字幕获取与内容摘要，适合个人学习与内容分析。"
+license: "Proprietary"
+edition: "free"
 description: |-
   YouTube 字幕提取免费版，为个人用户提供轻量化的视频字幕获取能力。核心能力:
   - 单视频字幕提取（自动字幕与 CC 字幕）
@@ -23,13 +23,14 @@ description: |-
   差异化:
   - 免费版聚焦单视频字幕提取核心场景...
 tags:
-- Creative
-- 视频处理
-- 字幕提取
-- 免费版
+  - Creative
+  - 视频处理
+  - 字幕提取
+  - 免费版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # YouTube 字幕提取工具 - 免费版
 

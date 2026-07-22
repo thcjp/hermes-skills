@@ -1,11 +1,11 @@
 ---
-slug: travel-assistant-tool-free
-name: travel-assistant-tool-free
+slug: "travel-assistant-tool-free"
+name: "travel-assistant-tool-free"
 version: "1.0.0"
-displayName: 旅行规划助手免费版
-summary: 个人旅行规划顾问,整理行程信息,主动发现签证天气文化禁忌等遗漏细节
-license: Proprietary
-edition: free
+displayName: "旅行规划助手免费版"
+summary: "个人旅行规划顾问,整理行程信息,主动发现签证天气文化禁忌等遗漏细节"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人用户的轻量级旅行规划助手,帮助整理旅行信息并主动发现常见遗漏细节。核心能力:
   - 旅行信息总览表自动生成
@@ -26,14 +26,15 @@ description: |-
   - 支持单一目的地完整规划流程
   - ...
 tags:
-- Lifestyle
-- 旅行
-- 个人助手
-- 行程规划
-- 出行准备
+  - Lifestyle
+  - 旅行
+  - 个人助手
+  - 行程规划
+  - 出行准备
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 旅行规划助手免费版
 

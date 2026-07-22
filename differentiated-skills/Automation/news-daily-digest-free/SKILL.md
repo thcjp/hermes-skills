@@ -1,23 +1,23 @@
 ---
-slug: news-daily-digest-free
-name: news-daily-digest-free
+slug: "news-daily-digest-free"
+name: "news-daily-digest-free"
 version: "1.0.0"
-displayName: 每日新闻摘要(免费版)
-summary: 抓取X.com与RSS源的热门新闻Top10，自动翻译中文并生成精美海报，每日资讯一目了然。
-license: Proprietary
-edition: free
+displayName: "每日新闻摘要(免费版)"
+summary: "抓取X.com与RSS源的热门新闻Top10，自动翻译中文并生成精美海报，每日资讯一目了然。"
+license: "Proprietary"
+edition: "free"
 description: |-
   每日新闻摘要免费版为AI Agent提供轻量的新闻聚合与可视化能力。用户指定关键词，本技能从X。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- 新闻聚合
-- 信息摘要
-- 海报生成
-- 效率工具
+  - 新闻聚合
+  - 信息摘要
+  - 海报生成
+  - 效率工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 每日新闻摘要（免费版）
 
 > **每日资讯一目了然。关键词驱动，多源聚合，精美海报，一键分享。**

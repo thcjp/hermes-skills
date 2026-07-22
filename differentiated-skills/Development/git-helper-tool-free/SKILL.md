@@ -1,11 +1,11 @@
 ---
-slug: git-helper-tool-free
-name: git-helper-tool-free
+slug: "git-helper-tool-free"
+name: "git-helper-tool-free"
 version: "1.0.0"
-displayName: Git助手免费版
-summary: 提供Git常见操作辅助、冲突解决指引、提交规范检查与安全操作清单,适合开发者日常使用。
-license: Proprietary
-edition: free
+displayName: "Git助手免费版"
+summary: "提供Git常见操作辅助、冲突解决指引、提交规范检查与安全操作清单,适合开发者日常使用。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向开发者的Git操作辅助工具,提供常见操作指引、冲突解决步骤、提交规范检查与安全操作清单。核心能力:
   - 常见Git操作辅助指引
@@ -27,14 +27,13 @@ description: |-
 
   适用关键词: Git助手, Git帮助, 冲突解决, ...
 tags:
-- 开发工具
-- Git
-- 辅助工具
+  - 开发工具
+  - Git
+  - 辅助工具
 tools:
   - - read
-- exec
-# Git助手 - 免费版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 Git助手免费版为开发者提供Git操作辅助能力。工具提供常见操作指引、合并冲突解决步骤、提交信息规范检查和安全操作检查清单,帮助开发者安全高效地使用Git。
 

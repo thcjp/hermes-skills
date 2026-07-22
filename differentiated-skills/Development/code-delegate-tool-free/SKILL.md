@@ -1,11 +1,11 @@
 ---
-slug: code-delegate-tool-free
-name: code-delegate-tool-free
+slug: "code-delegate-tool-free"
+name: "code-delegate-tool-free"
 version: "1.0.0"
-displayName: 代码委派工具免费版
-summary: 将编程任务委派给本地代码CLI执行,支持异步流程与单任务调试迭代
-license: Proprietary
-edition: free
+displayName: "代码委派工具免费版"
+summary: "将编程任务委派给本地代码CLI执行,支持异步流程与单任务调试迭代"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人开发者的代码委派工具,将编程任务委派给本地代码 CLI 执行,保持主 Agent 响应性。核心能力:
   - 异步委派编程任务,不阻塞主 Agent
@@ -25,13 +25,14 @@ description: |-
 
   适用关键词: delegate, code...
 tags:
-- 开发工具
-- 代码委派
-- 异步执行
-- 编程辅助
+  - 开发工具
+  - 代码委派
+  - 异步执行
+  - 编程辅助
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 代码委派工具免费版
 

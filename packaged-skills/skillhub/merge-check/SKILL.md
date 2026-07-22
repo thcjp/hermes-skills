@@ -1,19 +1,19 @@
 ---
-slug: merge-check
-name: merge-check
+slug: "merge-check"
+name: "merge-check"
 version: "1.0.0"
-displayName: Merge Check
-summary: Analyze a GitHub pull request for mergeability — predict whether it will
-  get merged 基于 tech...
-license: MIT
+displayName: "Merge Check"
+summary: "Analyze a GitHub pull request for mergeability — predict whether it will"
+license: "MIT"
 description: |-
   Analyze a GitHub pull request for mergeability — predict whether it
   will get merged 基于 tech。Use when 用户需要Merge Check相关功能时使用。不适用于超出本技能能力范围的复杂需求。
 tags:
-- Development
+  - Development
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Merge Check
 

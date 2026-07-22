@@ -1,10 +1,10 @@
 ---
-slug: discord-free
-name: discord-free
+slug: "discord-free"
+name: "discord-free"
 version: "1.0.0"
-displayName: Discord 基础控制
-summary: 通过discord工具控制机器人,收发消息、表情回应、读取与置顶消息等基础操作
-license: MIT
+displayName: "Discord 基础控制"
+summary: "通过discord工具控制机器人,收发消息、表情回应、读取与置顶消息等基础操作"
+license: "MIT"
 description: |-
   discord-free 提供 Discord 机器人的基础控制能力,覆盖消息收发与编辑、
   表情回应、消息读取、置顶管理等常用操作。适合个人开发者与小型社区进行
@@ -16,8 +16,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Discord 基础控制
 
 ## 概述

@@ -1,10 +1,10 @@
 ---
-slug: encoding-formats
-name: encoding-formats
+slug: "encoding-formats"
+name: "encoding-formats"
 version: "2.0.0"
-displayName: 编码格式工具
-summary: 编码解码与数据格式转换，覆盖Base64、URL编码、Hex、Unicode、JWT、哈希、序列化
-license: MIT
+displayName: "编码格式工具"
+summary: "编码解码与数据格式转换，覆盖Base64、URL编码、Hex、Unicode、JWT、哈希、序列化"
+license: "MIT"
 description: |-
   编码解码与数据格式转换工具，覆盖Base64、URL编码、Hex、Unicode、JWT解码、
   哈希校验和序列化格式转换。支持命令行和代码两种方式，适用于API响应解码、
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 编码格式工具
 
 编码、解码和检查常见数据格式。覆盖Base64、URL编码、Hex、Unicode、JWT、哈希校验和序列化格式。

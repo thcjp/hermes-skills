@@ -1,11 +1,11 @@
 ---
-slug: google-fonts-tool-free
-name: google-fonts-tool-free
+slug: "google-fonts-tool-free"
+name: "google-fonts-tool-free"
 version: "1.0.0"
-displayName: 谷歌字体工具
-summary: 面向个人开发者的 Google Fonts 加载、子集与经典搭配工具。
-license: Proprietary
-edition: free
+displayName: "谷歌字体工具"
+summary: "面向个人开发者的 Google Fonts 加载、子集与经典搭配工具。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人开发者的 Google Fonts 性能加载与字体搭配工具。核心能力:
   - display=swap 与 preconnect 最佳加载
@@ -20,13 +20,14 @@ description: |-
 
   差异化: 免费版聚焦单项目加载优化与经典搭配，提供按用途选字体清单，零成本上手
 tags:
-- 字体
-- 前端性能
-- 个人效率
-- 其他工具
+  - 字体
+  - 前端性能
+  - 个人效率
+  - 其他工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 谷歌字体工具（免费版）
 

@@ -1,24 +1,24 @@
 ---
-slug: finance-acct-tool-free
-name: finance-acct-tool-free
+slug: "finance-acct-tool-free"
+name: "finance-acct-tool-free"
 version: "1.0.0"
-displayName: 财务会计入门工具
-summary: 个人与小微企业财务会计工具，支持记账、对账、税务计算与基础报表生成。
-license: Proprietary
-edition: free
+displayName: "财务会计入门工具"
+summary: "个人与小微企业财务会计工具，支持记账、对账、税务计算与基础报表生成。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人用户与小微企业的基础财务会计工具，提供流水账记录、银行对账、
   增值税计算和标准财务报表生成功能。通过命令行操作简化日常财务工作，
   适合独立开发者、自由职业者和小型工作室使用。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Finance
-- 会计记账
-- 税务计算
+  - Finance
+  - 会计记账
+  - 税务计算
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 财务会计入门工具（免费版）
 
 ## 概述

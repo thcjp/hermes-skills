@@ -1,21 +1,22 @@
 ---
-slug: json-lint
-name: json-lint
+slug: "json-lint"
+name: "json-lint"
 version: "1.0.0"
-displayName: JSON校验工具专业版
-summary: 企业级JSON校验工具，支持并行扫描、Schema验证、超集兼容、自动修复与监控告警。
-license: Proprietary
-edition: pro
+displayName: "JSON校验工具专业版"
+summary: "企业级JSON校验工具，支持并行扫描、Schema验证、超集兼容、自动修复与监控告警。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   JSON校验工具专业版面向企业级场景，在免费版基础上扩展并行扫描、JSON Schema验证、JSON5/JSONC超集兼容、自动修复建议、历史趋势监控等高级能力。核心能力：多线程并行扫描万级文件、基于JSON Schema的语义校验、JSON5/JSONC/JSON-LD超集支持、自动修复建议生成、通过率历史趋势与告警、CI/CD深度集成
 tags:
-- 集成工具
-- JSON
-- 企业级
-- 校验
+  - 集成工具
+  - JSON
+  - 企业级
+  - 校验
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # JSON校验工具专业版
 

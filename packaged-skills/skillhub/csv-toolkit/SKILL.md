@@ -1,21 +1,22 @@
 ---
-slug: csv-toolkit
-name: csv-toolkit
+slug: "csv-toolkit"
+name: "csv-toolkit"
 version: "1.0.0"
-displayName: CSV工具箱 专业版
-summary: 全功能CSV处理工具，支持流式解析、自定义方言、Schema校验与多格式互转。
-license: Proprietary
-edition: pro
+displayName: "CSV工具箱 专业版"
+summary: "全功能CSV处理工具，支持流式解析、自定义方言、Schema校验与多格式互转。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   CSV Toolkit 专业版面向数据工程师与后端开发者，在免费版基础上解锁流式大文件处理、自定义方言、Schema 校验与多格式互转能力。核心能力：流式分块解析（支持 GB 级文件）、自定义 CSV 方言配置、Schema 校验与列类型推断、多文件合并与拆分、CSV 与 JSON/Parquet/Arrow 互转、性能基准测试与优化建议、增量更新与检查点恢复
 tags:
-- 集成工具
-- 数据处理
-- 数据工程
-- 开发者工具
+  - 集成工具
+  - 数据处理
+  - 数据工程
+  - 开发者工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # CSV工具箱 专业版
 

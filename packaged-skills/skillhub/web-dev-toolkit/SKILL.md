@@ -1,11 +1,11 @@
 ---
-slug: web-dev-toolkit
-name: web-dev-toolkit
+slug: "web-dev-toolkit"
+name: "web-dev-toolkit"
 version: "1.0.0"
-displayName: Web开发工具集(专业版)
-summary: 面向团队的企业级Web开发平台,含性能工程、SEO深度、WCAG审查、企业部署与监控。
-license: Proprietary
-edition: pro
+displayName: "Web开发工具集(专业版)"
+summary: "面向团队的企业级Web开发平台,含性能工程、SEO深度、WCAG审查、企业部署与监控。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Web开发工具集专业版为团队与企业提供端到端Web开发工程能力,涵盖性能工程化、SEO深度优化、WCAG AA可访问性审查、企业级部署与监控告警。核心能力:
   - 性能工程化(Lighthouse CI/性能预算/监控)
@@ -15,16 +15,17 @@ description: |-
   - 监控告警(RUM/Sentry/告警规则)
   - 多框架工程化(Next
 tags:
-- Web开发
-- 性能优化
-- 企业开发
-- 可访问性
-- SEO
-- 监控告警
-- CI/CD
+  - Web开发
+  - 性能优化
+  - 企业开发
+  - 可访问性
+  - SEO
+  - 监控告警
+  - CI/CD
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Web开发工具集(专业版)
 

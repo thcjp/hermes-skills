@@ -1,11 +1,11 @@
 ---
-slug: video-toolkit
-name: video-toolkit
+slug: "video-toolkit"
+name: "video-toolkit"
 version: "1.0.0"
-displayName: 视频工具箱专业版
-summary: 批量视频处理+AI超分+智能重构图+多码率+自动化工作流,面向内容团队的专业视频引擎
-license: Proprietary
-edition: pro
+displayName: "视频工具箱专业版"
+summary: "批量视频处理+AI超分+智能重构图+多码率+自动化工作流,面向内容团队的专业视频引擎"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向内容团队和机构的专业级视频处理引擎,在免费版核心功能之上,新增批量
   文件处理、AI超分辨率、智能重构图、多码率自适应、自动化工作流和全平台
@@ -22,18 +22,19 @@ description: |-
   适用场景:
   -...
 tags:
-- 视频
-- FFmpeg
-- 多媒体
-- 字幕
-- 压缩
-- 内容创作
-- 企业级
-- 批量处理
-- AI增强
+  - 视频
+  - FFmpeg
+  - 多媒体
+  - 字幕
+  - 压缩
+  - 内容创作
+  - 企业级
+  - 批量处理
+  - AI增强
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 视频工具箱专业版
 

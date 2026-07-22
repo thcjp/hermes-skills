@@ -1,11 +1,11 @@
 ---
-slug: archive-tool-pro
-name: archive-tool-pro
+slug: "archive-tool-pro"
+name: "archive-tool-pro"
 version: "1.0.0"
-displayName: 内容归档工具-专业版
-summary: 企业级内容归档,支持团队共享、自动摘要、版本控制、全文检索与API访问
-license: Proprietary
-edition: pro
+displayName: "内容归档工具-专业版"
+summary: "企业级内容归档,支持团队共享、自动摘要、版本控制、全文检索与API访问"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级内容归档工具,在免费版核心能力之上,提供团队共享归档库、AI 自动摘要、
   版本控制、全文检索、API 访问、权限管理与监控统计能力。核心能力:
@@ -25,15 +25,15 @@ description: |-
 
   差异化:专业版面向团队与企业,提供共享、版本控制...
 tags:
-- 研究工具
-- 内容归档
-- 企业级
-- 知识管理
+  - 研究工具
+  - 内容归档
+  - 企业级
+  - 知识管理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 内容归档工具(专业版)
 
 ## 概述

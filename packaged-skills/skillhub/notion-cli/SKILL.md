@@ -1,11 +1,11 @@
 ---
-slug: notion-cli
-name: notion-cli
+slug: "notion-cli"
+name: "notion-cli"
 version: "1.0.0"
-displayName: Notion命令行(专业版)
-summary: 企业级Notion命令行工具,支持多工作空间、文件上传、Schema管理、批量操作与审计日志,适合团队与企业规模化使用。
-license: Proprietary
-edition: pro
+displayName: "Notion命令行(专业版)"
+summary: "企业级Notion命令行工具,支持多工作空间、文件上传、Schema管理、批量操作与审计日志,适合团队与企业规模化使用。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Notion命令行(专业版)是面向团队与企业的全功能Notion操作Skill,在免费版基础上新增多工作空间管理、文件上传、Schema管理、页面移动、批量操作、模板管理、自定义输出与审计日志等高级能力。核心能力:
 
@@ -18,13 +18,13 @@ description: |-
   - 自定义输出格式(Jinja2模板)
   - ...
 tags:
-- 集成工具
-- 企业Notion
-- 命令行
+  - 集成工具
+  - 企业Notion
+  - 命令行
 tools:
   - - read
-- exec
-# Notion命令行(专业版)
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Notion命令行(专业版)
 

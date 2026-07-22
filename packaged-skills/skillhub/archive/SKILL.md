@@ -1,10 +1,10 @@
 ---
-slug: archive
-name: archive
+slug: "archive"
+name: "archive"
 version: "1.0.0"
-displayName: 智能内容归档
-summary: 将网页、视频、推文等内容捕获为带语义标签的可搜索快照，支持全文提取与主动浮现。
-license: Proprietary
+displayName: "智能内容归档"
+summary: "将网页、视频、推文等内容捕获为带语义标签的可搜索快照，支持全文提取与主动浮现。"
+license: "Proprietary"
 description: |-
   智能内容归档工具，将外部内容捕获为持久化的智能快照。
   支持视频、推文、文章、PDF等多种内容类型的全文提取与语义标签管理。
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 智能内容归档
 
 将外部内容捕获为持久化的智能快照，支持语义搜索、全文提取与主动浮现。

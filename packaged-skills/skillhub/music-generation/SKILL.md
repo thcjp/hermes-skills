@@ -1,11 +1,10 @@
 ---
-slug: music-generation
-name: music-generation
+slug: "music-generation"
+name: "music-generation"
 version: "1.0.0"
-displayName: Music Generation
-summary: Generate AI music with optimized prompts, style control, and production-ready
-  audio output.
-license: MIT
+displayName: "Music Generation"
+summary: "Generate AI music with optimized prompts, style control, and production-ready"
+license: "MIT"
 description: |-
   Generate AI music with optimized prompts, style control, and production-ready
   audio output。核心能力:
@@ -26,10 +25,11 @@ description: |-
 
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关...
 tags:
-- Creative
+  - Creative
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Music Generation
 

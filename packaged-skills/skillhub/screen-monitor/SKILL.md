@@ -1,17 +1,18 @@
 ---
-slug: screen-monitor
-name: screen-monitor
+slug: "screen-monitor"
+name: "screen-monitor"
 version: "1.0.1"
-displayName: Screen Monitor
-summary: Dual-mode screen sharing and analysis. Model-agnostic (Gemini/ai-assistant/Qwen3-VL).
-license: MIT
+displayName: "Screen Monitor"
+summary: "Dual-mode screen sharing and analysis. Model-agnostic (Gemini/ai-assistant/Qwen3-VL)."
+license: "MIT"
 description: |-
   Dual-mode screen sharing and analysis。Model-agnostic (Gemini/ai-assistant/Qwen3-VL)。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Screen Monitor
 

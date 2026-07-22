@@ -1,10 +1,10 @@
 ---
-slug: aegis-security-free
-name: aegis-security-free
+slug: "aegis-security-free"
+name: "aegis-security-free"
 version: "1.2.2"
-displayName: 区块链安全基础版
-summary: 基础区块链安全API，地址声誉检查和代币蜜罐检测
-license: MIT
+displayName: "区块链安全基础版"
+summary: "基础区块链安全API，地址声誉检查和代币蜜罐检测"
+license: "MIT"
 description: |-
   面向AI代理的区块链安全API免费版。提供地址声誉检查、代币蜜罐检测和免费额度查询等基础功能，
   支持Ethereum和Base链。适用于基础交易前安全检查场景。升级至完整版可解锁交易模拟、
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 安全合规
 ---
-
 # 区块链安全防护（免费版）
 
 面向AI代理的区块链安全API免费版，提供基础的交易前安全扫描能力。每日100次免费检查额度，支持Ethereum和Base链的地址声誉检查和代币蜜罐检测。

@@ -1,25 +1,25 @@
 ---
-slug: linear-workflow-skill-free
-name: linear-workflow-skill-free
+slug: "linear-workflow-skill-free"
+name: "linear-workflow-skill-free"
 version: "1.0.0"
-displayName: Linear工作流(免费版)
-summary: 通过Node CLI管理Linear问题与项目，支持问题查看、创建与状态更新
-license: Proprietary
-edition: free
+displayName: "Linear工作流(免费版)"
+summary: "通过Node CLI管理Linear问题与项目，支持问题查看、创建与状态更新"
+license: "Proprietary"
+edition: "free"
 description: |-
   Linear工作流(免费版)是一款通过内置Node CLI与Linear官方API交互的工作流管理工具，支持问题查看、创建、更新与项目管理等核心能力。核心能力：
   - 通过Node CLI查询团队、项目与问题
   - 创建与更新问题，支持优先级与状态设置
   - 添加协作评论。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
 tags:
-- 集成工具
-- 项目管理
-- Linear
+  - 集成工具
+  - 项目管理
+  - Linear
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Linear工作流(免费版)
 
 本工具通过内置Node CLI帮助用户管理Linear问题与项目，遵循"先读后写"的安全工作流，确保操作准确可追溯。

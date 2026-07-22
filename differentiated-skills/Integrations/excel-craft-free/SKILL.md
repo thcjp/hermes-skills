@@ -1,22 +1,22 @@
 ---
-slug: excel-craft-free
-name: excel-craft-free
+slug: "excel-craft-free"
+name: "excel-craft-free"
 version: "1.0.0"
-displayName: Excel工艺免费版
-summary: 专业 Excel 文件生成器，支持多 Sheet、公式、图表与基础格式，适合日常表格生成需求。
-license: Proprietary
-edition: free
+displayName: "Excel工艺免费版"
+summary: "专业 Excel 文件生成器，支持多 Sheet、公式、图表与基础格式，适合日常表格生成需求。"
+license: "Proprietary"
+edition: "free"
 description: |-
   Excel 工艺免费版面向需要程序化生成 Excel 文件的开发者与运营人员，提供多 Sheet、公式、图表与基础格式化能力。基于 openpyxl 与 Python，输出兼容 Excel / WPS / LibreOffice 的。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。
 tags:
-- 集成工具
-- 表格生成
-- 开发者工具
+  - 集成工具
+  - 表格生成
+  - 开发者工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Excel 工艺（免费版）
 
 本 Skill 把 Excel 生成任务脚本化——通过 Python 与 openpyxl 生成结构化、可复用、可版本控制的 .xlsx 文件。免费版覆盖日常报表生成场景。

@@ -1,11 +1,11 @@
 ---
-slug: slack-workspace-manager
-name: slack-workspace-manager
+slug: "slack-workspace-manager"
+name: "slack-workspace-manager"
 version: "1.0.0"
-displayName: Slack工作区管理专业版
-summary: 企业级Slack工作区管理平台，支持企业Grid、审计日志、Canvas文档、用户组管理与批量操作。
-license: Proprietary
-edition: pro
+displayName: "Slack工作区管理专业版"
+summary: "企业级Slack工作区管理平台，支持企业Grid、审计日志、Canvas文档、用户组管理与批量操作。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Slack工作区管理器（专业版）—— 面向企业的全功能Slack工作区管理平台。核心能力:
   - 企业Grid多团队管理与审计日志
@@ -23,14 +23,15 @@ description: |-
 
   差异化: 在免费版基础上增加企业Grid、审计日志、Canvas、用户组、批量操作等企业级能力...
 tags:
-- 沟通协作
-- 企业级
-- Slack
-- 工作区管理
-- 安全审计
+  - 沟通协作
+  - 企业级
+  - Slack
+  - 工作区管理
+  - 安全审计
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Slack工作区管理专业版
 

@@ -1,11 +1,11 @@
 ---
-slug: slack-toolkit
-name: slack-toolkit
+slug: "slack-toolkit"
+name: "slack-toolkit"
 version: "1.0.0"
-displayName: Slack工具箱专业版
-summary: 企业级Slack管理工具，支持批量消息操作、定时发送、消息模板、频道分析与团队协作场景。
-license: Proprietary
-edition: pro
+displayName: "Slack工具箱专业版"
+summary: "企业级Slack管理工具，支持批量消息操作、定时发送、消息模板、频道分析与团队协作场景。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Slack工具箱（专业版）—— 面向团队和企业的全功能Slack管理工具。核心能力:
   - 批量消息发送、编辑与删除
@@ -23,14 +23,15 @@ description: |-
 
   差异化: 在免费版基础上增加批量操作、定时调度、模板管理、数据分析等企业级能力，完全兼容免费版操作格式
 tags:
-- 沟通协作
-- 企业级
-- Slack
-- 自动化
-- 批量处理
+  - 沟通协作
+  - 企业级
+  - Slack
+  - 自动化
+  - 批量处理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Slack工具箱专业版
 

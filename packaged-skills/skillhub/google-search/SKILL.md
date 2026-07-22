@@ -1,19 +1,19 @@
 ---
-slug: google-search
-name: google-search
+slug: "google-search"
+name: "google-search"
 version: "1.0.0"
-displayName: google-search
-summary: Search the web using Google Custom Search Engine (PSE). Use this when you
-  need live information, ...
-license: MIT
+displayName: "google-search"
+summary: "Search the web using Google Custom Search Engine (PSE). Use this when you"
+license: "MIT"
 description: |-
   Search the web using Google Custom Search Engine (PSE)。Use this when
   you need live information,。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Research
+  - Research
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # google-search
 

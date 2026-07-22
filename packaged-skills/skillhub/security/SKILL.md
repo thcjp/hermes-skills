@@ -1,10 +1,10 @@
 ---
-slug: security
-name: security
+slug: "security"
+name: "security"
 version: "1.0.0"
-displayName: GoPlus安全扫描
-summary: GoPlus AgentGuard安全扫描，支持定时巡逻、漏洞发现、Webhook通知与结果检查。
-license: Proprietary
+displayName: "GoPlus安全扫描"
+summary: "GoPlus AgentGuard安全扫描，支持定时巡逻、漏洞发现、Webhook通知与结果检查。"
+license: "Proprietary"
 description: |-
   GoPlus AgentGuard驱动的安全扫描工具，提供代码与依赖安全检查。
   支持定时巡逻（Schedule Patrol）、一次性扫描、漏洞发现详情管理。
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 安全合规
 ---
-
 # GoPlus安全扫描
 
 GoPlus AgentGuard安全扫描，支持定时巡逻、漏洞发现、Webhook通知与结果检查。

@@ -1,11 +1,11 @@
 ---
-slug: discord-chat-manager
-name: discord-chat-manager
+slug: "discord-chat-manager"
+name: "discord-chat-manager"
 version: "1.0.0"
-displayName: Discord聊天管理专业版
-summary: 企业级 Discord 聊天管理,支持高级搜索、批量消息分发与频道全生命周期管理。
-license: Proprietary
-edition: pro
+displayName: "Discord聊天管理专业版"
+summary: "企业级 Discord 聊天管理,支持高级搜索、批量消息分发与频道全生命周期管理。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向运营团队与企业场景的 Discord 聊天全功能管理工具。核心能力:
   - 多条件组合高级搜索(作者/时间范围/频道/关键词)
@@ -20,14 +20,15 @@ description: |-
 
   差异化: Pro 版在免费版基础上扩展高级搜索、批量分发与频道管理;与免费版命令格式完全兼容
 tags:
-- Discord
-- 聊天管理
-- Communication
-- 高级搜索
-- 批量分发
+  - Discord
+  - 聊天管理
+  - Communication
+  - 高级搜索
+  - 批量分发
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Discord聊天管理专业版
 

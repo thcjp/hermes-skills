@@ -1,22 +1,23 @@
 ---
-slug: email-toolkit
-name: email-toolkit
+slug: "email-toolkit"
+name: "email-toolkit"
 version: "1.0.0"
-displayName: 邮件工具箱专业版
-summary: 企业邮件自动化与批量发送方案，支持模板与定时调度
-license: Proprietary
-edition: pro
+displayName: "邮件工具箱专业版"
+summary: "企业邮件自动化与批量发送方案，支持模板与定时调度"
+license: "Proprietary"
+edition: "pro"
 description: |-
   邮件工具箱专业版面向企业用户与高效能个人用户。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
 tags:
-- 沟通协作
-- 邮件管理
-- 邮件发送
-- 企业效率
-- 批量操作
+  - 沟通协作
+  - 邮件管理
+  - 邮件发送
+  - 企业效率
+  - 批量操作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 邮件工具箱专业版
 

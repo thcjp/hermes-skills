@@ -1,10 +1,10 @@
 ---
-slug: admapix-free
-name: admapix-free
+slug: "admapix-free"
+name: "admapix-free"
 version: "1.0.0"
-displayName: AdMapix LITE
-summary: AdMapix基础查询，创意搜索+应用详情+商店榜单
-license: MIT
+displayName: "AdMapix LITE"
+summary: "AdMapix基础查询，创意搜索+应用详情+商店榜单"
+license: "MIT"
 description: |-
   AdMapix 原始数据层基础客户端（免费版）。覆盖广告创意搜索、应用详情查询、商店榜单查询三大基础端点类别。
   作为薄客户端透传 API 返回的原始结构化 JSON，不分析、不总结、不排序、不生成页面。
@@ -16,8 +16,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # AdMapix LITE
 
 AdMapix 原始 API 基础客户端（免费版）。获取原始结构化数据并返回 JSON，不分析、不总结、不排序、不生成页面。

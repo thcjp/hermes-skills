@@ -1,10 +1,10 @@
 ---
-slug: baidu-netdisk-skills
-name: baidu-netdisk-skills
+slug: "baidu-netdisk-skills"
+name: "baidu-netdisk-skills"
 version: "2.0.0"
-displayName: 百度网盘
-summary: 百度网盘文件管理，限 /apps/bdpan/ 目录，支持上传下载转存分享搜索与记忆备份。
-license: MIT
+displayName: "百度网盘"
+summary: "百度网盘文件管理，限 /apps/bdpan/ 目录，支持上传下载转存分享搜索与记忆备份。"
+license: "MIT"
 description: |-
   百度网盘文件管理技能，通过 bdpan 命令行工具对百度网盘进行文件操作，所有操作限制在
   /apps/bdpan/ 目录范围内。支持完整的文件生命周期管理与 Agent 记忆备份恢复能力。
@@ -14,7 +14,7 @@ description: |-
   - 大文件下载策略：根据文件大小自动选择直接下载或 nohup 后台下载，避免 Bash 超时
   - 分享链接处理：支持从分享链接（含提取码）转存或下载到本地
   - 记忆备份与恢复：支持 4 种 Claw 产品（kimiclaw/maxclaw/qclaw/skill-platform）的
-    Agent 记忆备份、查看备份列表、按日期恢复，内置 safety net 防误操作
+  Agent 记忆备份、查看备份列表、按日期恢复，内置 safety net 防误操作
   - 安全机制：写操作必须用户显式确认、路径穿越防护、禁止读取敏感凭据配置
 
   适用场景：
@@ -33,8 +33,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 百度网盘
 
 百度网盘文件管理工具，所有操作限制在 `/apps/bdpan/` 目录内。适配 Claude Code、DuClaw、Skill 平台等 Agent 环境。

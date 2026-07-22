@@ -1,11 +1,11 @@
 ---
-slug: whatsapp-image-tool-free
-name: whatsapp-image-tool-free
+slug: "whatsapp-image-tool-free"
+name: "whatsapp-image-tool-free"
 version: "1.0.0"
-displayName: WhatsApp图片发送-免费版
-summary: 轻量级WhatsApp图片发送工具，支持单图发送与基础文件传输，适合个人用户快速分享多媒体内容。
-license: Proprietary
-edition: free
+displayName: "WhatsApp图片发送-免费版"
+summary: "轻量级WhatsApp图片发送工具，支持单图发送与基础文件传输，适合个人用户快速分享多媒体内容。"
+license: "Proprietary"
+edition: "free"
 description: |-
   WhatsApp 图片发送免费版，为个人用户提供轻量化的多媒体消息发送能力。核心能力:
   - 单张图片发送（含说明文字）
@@ -23,13 +23,14 @@ description: |-
   差异化:
   - 免费版聚焦单图发送核心场景...
 tags:
-- Creative
-- 消息发送
-- WhatsApp
-- 免费版
+  - Creative
+  - 消息发送
+  - WhatsApp
+  - 免费版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # WhatsApp 图片发送工具 - 免费版
 

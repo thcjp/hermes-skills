@@ -1,11 +1,11 @@
 ---
-slug: azure-agent-framework-tool-pro
-name: azure-agent-framework-tool-pro
+slug: "azure-agent-framework-tool-pro"
+name: "azure-agent-framework-tool-pro"
 version: "1.0.0"
-displayName: Azure智能体框架工具-专业版
-summary: 企业级Azure AI智能体编排,支持批量管理、MCP工具集成、监控告警与多租户隔离
-license: Proprietary
-edition: pro
+displayName: "Azure智能体框架工具-专业版"
+summary: "企业级Azure AI智能体编排,支持批量管理、MCP工具集成、监控告警与多租户隔离"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级 Azure AI Foundry 智能体编排工具,在免费版核心能力之上,提供智能体批量管理、
   MCP工具深度集成、监控告警、多租户隔离、CI/CD 集成与团队协作能力。核心能力:
@@ -24,15 +24,14 @@ description: |-
 
   差异...
 tags:
-- 研究工具
-- AI开发
-- 智能体
-- 企业级
+  - 研究工具
+  - AI开发
+  - 智能体
+  - 企业级
 tools:
   - - read
-- exec
-# Azure智能体框架工具(专业版)
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 本工具是企业级 Azure AI Foundry 智能体编排工具,在免费版核心能力之上,扩展了智能体批量管理、MCP工具深度集成、监控告警、多租户隔离、CI/CD 集成与团队协作能力,适合企业级智能体编排、多智能体协作工作流、生产环境监控与运维场景。专业版与免费版完全兼容:免费版的所有代码、工作流均可直接在专业版中使用。
 

@@ -1,11 +1,11 @@
 ---
-slug: bom-vuln-intel-tool-free
-name: bom-vuln-intel-tool-free
+slug: "bom-vuln-intel-tool-free"
+name: "bom-vuln-intel-tool-free"
 version: "1.0.0"
-displayName: 物料清单漏洞情报免费版
-summary: 软件物料清单(SBOM)生成与依赖漏洞检查工具,支持基础包扫描与OSV/GHSA查询,适合个人开发者日常使用。
-license: Proprietary
-edition: free
+displayName: "物料清单漏洞情报免费版"
+summary: "软件物料清单(SBOM)生成与依赖漏洞检查工具,支持基础包扫描与OSV/GHSA查询,适合个人开发者日常使用。"
+license: "Proprietary"
+edition: "free"
 description: |-
   物料清单漏洞情报免费版,为个人开发者提供软件物料清单生成与依赖漏洞检测能力。
   核心能力:包信息查询、基础SBOM生成、OSV/GHSA漏洞匹配、依赖树可视化。
@@ -13,13 +13,14 @@ description: |-
   差异化:免费版聚焦单项目检查,支持npm/pip两种生态,适合个人开发者快速上手。
   适用关键词: SBOM, 物料清单, 依赖漏洞, CVE, OSV, GHSA, vulnerability, dependency
 tags:
-- 安全
-- SBOM
-- 依赖管理
-- 免费版
+  - 安全
+  - SBOM
+  - 依赖管理
+  - 免费版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 物料清单漏洞情报免费版
 

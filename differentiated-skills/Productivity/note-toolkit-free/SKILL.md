@@ -1,11 +1,11 @@
 ---
-slug: note-toolkit-free
-name: note-toolkit-free
+slug: "note-toolkit-free"
+name: "note-toolkit-free"
 version: "1.0.0"
-displayName: 笔记工具包基础版
-summary: 知识捕获与连接系统,支持自动组织、检索与笔记间关联,纯本地存储保护隐私
-license: Proprietary
-edition: free
+displayName: "笔记工具包基础版"
+summary: "知识捕获与连接系统,支持自动组织、检索与笔记间关联,纯本地存储保护隐私"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力: 知识管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
 
@@ -15,13 +15,14 @@ description: |-
 
   适用关键词: 笔记, 知识, 捕获, 检索, 连接, 知识图谱, 本地存储
 tags:
-- 笔记
-- 知识管理
-- Zettelkasten
-- 本地存储
+  - 笔记
+  - 知识管理
+  - Zettelkasten
+  - 本地存储
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 笔记工具包基础版
 

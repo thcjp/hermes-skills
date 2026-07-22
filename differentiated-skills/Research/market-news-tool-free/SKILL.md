@@ -1,11 +1,11 @@
 ---
-slug: market-news-tool-free
-name: market-news-tool-free
+slug: "market-news-tool-free"
+name: "market-news-tool-free"
 version: "1.0.0"
-displayName: 财经资讯助手免费版
-summary: 自动搜索和总结最新财经新闻与市场动态，适合个人投资者快速获取每日市场要点
-license: Proprietary
-edition: free
+displayName: "财经资讯助手免费版"
+summary: "自动搜索和总结最新财经新闻与市场动态，适合个人投资者快速获取每日市场要点"
+license: "Proprietary"
+edition: "free"
 description: |-
   财经资讯助手免费版，面向个人投资者与独立研究者提供基础财经新闻摘要能力。核心能力:
   - 自动搜索并汇总最新财经新闻与市场动态
@@ -23,13 +23,14 @@ description: |-
   - 纯指令驱动，无需复杂配置即可使用
   - 与PRO版本完全兼容...
 tags:
-- 财经
-- 资讯
-- 研究
-- 投资
+  - 财经
+  - 资讯
+  - 研究
+  - 投资
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 财经资讯助手（免费版）
 

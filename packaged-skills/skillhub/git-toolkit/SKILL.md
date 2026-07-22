@@ -1,11 +1,11 @@
 ---
-slug: git-toolkit
-name: git-toolkit
+slug: "git-toolkit"
+name: "git-toolkit"
 version: "1.0.0"
-displayName: Git工具包专业版
-summary: 企业级Git管理,支持批量分支操作、自动化审查、Git Hook管理与CI/CD流水线集成。
-license: Proprietary
-edition: pro
+displayName: "Git工具包专业版"
+summary: "企业级Git管理,支持批量分支操作、自动化审查、Git Hook管理与CI/CD流水线集成。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向企业研发团队的高级Git管理工具,提供批量分支操作、自动化代码审查、Git Hook管理、历史分析与CI/CD流水线集成。核心能力:
   - 批量分支管理与清理
@@ -26,16 +26,15 @@ description: |-
   - 提供批量操作和自动化能力
   - ...
 tags:
-- 开发工具
-- Git
-- 版本控制
-- 企业级
-- DevOps
+  - 开发工具
+  - Git
+  - 版本控制
+  - 企业级
+  - DevOps
 tools:
   - - read
-- exec
-# Git工具包 - 专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Git工具包专业版
 

@@ -1,11 +1,11 @@
 ---
-slug: monad-dev-tool-free
-name: monad-dev-tool-free
+slug: "monad-dev-tool-free"
+name: "monad-dev-tool-free"
 version: "1.0.0"
-displayName: Monad开发工具-免费版
-summary: Monad区块链DApp开发助手,支持合约部署、验证与前端集成,适合个人开发者快速上手
-license: Proprietary
-edition: free
+displayName: "Monad开发工具-免费版"
+summary: "Monad区块链DApp开发助手,支持合约部署、验证与前端集成,适合个人开发者快速上手"
+license: "Proprietary"
+edition: "free"
 description: |-
   Monad区块链DApp开发助手免费版,面向个人开发者与区块链爱好者。核心能力:
   - Monad测试网合约部署与验证
@@ -21,14 +21,15 @@ description: |-
 
   差异化:免费版提供核心开发能力,适合个人学习与原型开发
 tags:
-- 区块链
-- 智能合约
-- Monad
-- DApp开发
-- Solidity
+  - 区块链
+  - 智能合约
+  - Monad
+  - DApp开发
+  - Solidity
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Monad 开发工具 - 免费版
 

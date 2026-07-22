@@ -1,11 +1,11 @@
 ---
-slug: security-toolkit-free
-name: security-toolkit-free
+slug: "security-toolkit-free"
+name: "security-toolkit-free"
 version: "1.0.0"
-displayName: Agent安全工具箱(免费版)
-summary: AI Agent安全扫描与风险检测,24条规则覆盖注入、密钥泄露、恶意代码等,适合个人开发者
-license: Proprietary
-edition: free
+displayName: "Agent安全工具箱(免费版)"
+summary: "AI Agent安全扫描与风险检测,24条规则覆盖注入、密钥泄露、恶意代码等,适合个人开发者"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力:
   - 24条安全检测规则覆盖代码与配置
@@ -24,15 +24,15 @@ description: |-
   - 覆盖Prompt注入、密钥泄露等AI特有风险
   - 纯本地执行,不依赖外部服务
   - 中文报告与修复建议
-...
 tags:
-- 安全
-- Agent安全
-- 代码审计
-- 漏洞扫描
+  - 安全
+  - Agent安全
+  - 代码审计
+  - 漏洞扫描
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Agent安全工具箱(免费版)
 

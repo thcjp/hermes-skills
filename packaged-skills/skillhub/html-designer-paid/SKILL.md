@@ -1,24 +1,25 @@
 ---
-slug: html-designer-paid
-name: html-designer-paid
+slug: "html-designer-paid"
+name: "html-designer-paid"
 version: "1.0.0"
-displayName: HTML设计工具专业版
-summary: 企业级HTML/CSS设计系统,支持设计令牌、组件库、批量生成、主题切换与团队协作,适合团队与商业项目。
-license: Proprietary
-edition: pro
+displayName: "HTML设计工具专业版"
+summary: "企业级HTML/CSS设计系统,支持设计令牌、组件库、批量生成、主题切换与团队协作,适合团队与商业项目。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   HTML设计工具专业版是一款面向企业与专业团队的网页设计系统化解决方案。在免费版核心能力之上,提供完整的设计令牌系统、可复用组件库、
   批量页面生成、多主题切换、团队协作与品牌一致性保障。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 网页设计
-- 设计系统
-- HTML
-- CSS
-- 企业级
-- 组件库
+  - 网页设计
+  - 设计系统
+  - HTML
+  - CSS
+  - 企业级
+  - 组件库
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # HTML设计工具专业版
 

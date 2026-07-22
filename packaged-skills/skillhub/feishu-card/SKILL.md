@@ -1,10 +1,10 @@
 ---
-slug: feishu-card
-name: feishu-card
+slug: "feishu-card"
+name: "feishu-card"
 version: "1.4.11"
-displayName: 协作平台卡片
-summary: 发送富交互协作平台卡片，支持Markdown、标题、按钮、图片和人格化消息
-license: MIT
+displayName: "协作平台卡片"
+summary: "发送富交互协作平台卡片，支持Markdown、标题、按钮、图片和人格化消息"
+license: "MIT"
 description: |-
   向协作平台用户或群组发送富交互卡片。支持Markdown（代码块、表格）、标题、彩色头部、
   按钮组件、图片嵌入和多种AI人格化消息样式。适用于自动化通知、告警推送、
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 协作平台卡片
 
 向协作平台用户或群组发送富交互卡片。支持Markdown（代码块、表格）、标题、彩色头部、按钮组件、图片嵌入和多种AI人格化消息样式。

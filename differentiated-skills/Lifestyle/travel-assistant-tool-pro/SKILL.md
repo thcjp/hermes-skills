@@ -1,11 +1,11 @@
 ---
-slug: travel-assistant-tool-pro
-name: travel-assistant-tool-pro
+slug: "travel-assistant-tool-pro"
+name: "travel-assistant-tool-pro"
 version: "1.0.0"
-displayName: 旅行规划助手专业版
-summary: 企业级旅行规划顾问,支持多目的地行程、团队协同、批量规划、行程模板与离线导出
-license: Proprietary
-edition: pro
+displayName: "旅行规划助手专业版"
+summary: "企业级旅行规划顾问,支持多目的地行程、团队协同、批量规划、行程模板与离线导出"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向企业差旅与专业旅行规划者的高级旅行规划助手,支持多目的地串联、团队协同、批量规划与离线导出。核心能力:
   - 多目的地行程串联与路线优化
@@ -24,15 +24,16 @@ description: |-
   - 高频差旅人员的行程模板化管理
   - 旅行服务...
 tags:
-- Lifestyle
-- 企业差旅
-- 商务旅行
-- 团队协同
-- 行程优化
-- 批量规划
+  - Lifestyle
+  - 企业差旅
+  - 商务旅行
+  - 团队协同
+  - 行程优化
+  - 批量规划
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 旅行规划助手专业版
 

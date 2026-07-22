@@ -1,11 +1,11 @@
 ---
-slug: tpn-proxy-tool-free
-name: tpn-proxy-tool-free
+slug: "tpn-proxy-tool-free"
+name: "tpn-proxy-tool-free"
 version: "1.0.0"
-displayName: 代理网络工具免费版
-summary: 通过去中心化SOCKS5代理发起网络请求，支持80+国家地区节点选择
-license: Proprietary
-edition: free
+displayName: "代理网络工具免费版"
+summary: "通过去中心化SOCKS5代理发起网络请求，支持80+国家地区节点选择"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向开发者的去中心化SOCKS5代理请求工具，通过全球分布式网络节点发起HTTP请求，支持按国家地区选择出口IP。
 
@@ -17,14 +17,14 @@ description: |-
 
   适用关键词：代理、proxy、socks5、去中心化、出口IP、网络请求、地区节点
 tags:
-- 网络工具
-- 代理服务
-- 请求转发
+  - 网络工具
+  - 代理服务
+  - 请求转发
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 去中心化代理网络工具（免费版）
 
 ## 概述

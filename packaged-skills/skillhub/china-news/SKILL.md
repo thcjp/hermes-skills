@@ -1,18 +1,18 @@
 ---
-slug: china-news
-name: china-news
+slug: "china-news"
+name: "china-news"
 version: "1.0.3"
-displayName: China News
-summary: 中国新闻资讯聚合工具。Use when user wants to get latest news from Chinese sources. Supports
-  multiple news si...
-license: MIT-0
+displayName: "China News"
+summary: "中国新闻资讯聚合工具。Use when user wants to get latest news from Chinese sources. Supports"
+license: "MIT-0"
 description: |-
   中国新闻资讯聚合工具。Use when user wants to get latest news from Chinese sources。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-- Research
+  - Research
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # China News
 

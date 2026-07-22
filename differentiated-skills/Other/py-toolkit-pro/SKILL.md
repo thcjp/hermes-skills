@@ -1,11 +1,11 @@
 ---
-slug: py-toolkit-pro
-name: py-toolkit-pro
+slug: "py-toolkit-pro"
+name: "py-toolkit-pro"
 version: "1.0.0"
-displayName: Python工具包-专业版
-summary: 企业级Python开发平台,支持性能优化、异步编程、代码规范与CI/CD集成
-license: Proprietary
-edition: pro
+displayName: "Python工具包-专业版"
+summary: "企业级Python开发平台,支持性能优化、异步编程、代码规范与CI/CD集成"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级 Python 开发工具专业版,面向团队与生产环境。核心能力:
   - 性能分析与优化深度指导
@@ -22,18 +22,17 @@ description: |-
   - 异步 Web 框架(asyncio/aiohttp/FastAPI)
   - 数据处理管道优化
   - 企业级 Python 项目规范建设
-
- ...
 tags:
-- Python
-- 性能优化
-- 异步编程
-- 企业级
-- 安全编码
-- CI/CD
+  - Python
+  - 性能优化
+  - 异步编程
+  - 企业级
+  - 安全编码
+  - CI/CD
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Python 工具包 - 专业版
 

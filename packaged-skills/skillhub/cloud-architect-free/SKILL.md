@@ -1,10 +1,10 @@
 ---
-slug: cloud-architect-free
-name: cloud-architect-free
+slug: "cloud-architect-free"
+name: "cloud-architect-free"
 version: "1.0.0"
-displayName: 云架构师免费版
-summary: 基础云架构设计,覆盖 AWS、Azure、GCP 服务选型与迁移策略框架
-license: MIT
+displayName: "云架构师免费版"
+summary: "基础云架构设计,覆盖 AWS、Azure、GCP 服务选型与迁移策略框架"
+license: "MIT"
 description: |-
   面向云架构入门场景的基础技能,覆盖 AWS、Azure、GCP 三大云平台的
   服务选型、迁移策略框架与基础架构设计原则。适合单云架构设计、
@@ -17,8 +17,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 云架构师免费版
 
 基础云架构设计技能,覆盖 AWS、Azure、GCP 三大云平台的服务选型、迁移策略框架与基础架构设计原则,适合单云架构设计入门与常见云架构咨询。

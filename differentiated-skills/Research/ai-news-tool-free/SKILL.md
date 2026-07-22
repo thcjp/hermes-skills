@@ -1,11 +1,11 @@
 ---
-slug: ai-news-tool-free
-name: ai-news-tool-free
+slug: "ai-news-tool-free"
+name: "ai-news-tool-free"
 version: "1.0.0"
-displayName: AI新闻工具-免费版
-summary: 每日新闻获取工具,支持按日期查询、热点排行与详情阅读,适合个人用户
-license: Proprietary
-edition: free
+displayName: "AI新闻工具-免费版"
+summary: "每日新闻获取工具,支持按日期查询、热点排行与详情阅读,适合个人用户"
+license: "Proprietary"
+edition: "free"
 description: |-
   每日新闻获取工具,通过 API 获取每日新闻摘要与详情,支持按日期查询、
   热点新闻排行、新闻详情阅读与分类筛选。
@@ -26,12 +26,13 @@ description: |-
 
   适用关键词: 新闻, 每日新闻, 日报, 热点新闻, 新闻摘要, 新闻详情
 tags:
-- 研究工具
-- 新闻资讯
-- 信息收集
+  - 研究工具
+  - 新闻资讯
+  - 信息收集
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # AI新闻工具(免费版)
 

@@ -1,11 +1,11 @@
 ---
-slug: llm-provider-whisper-v1-tool-pro
-name: llm-provider-whisper-v1-tool-pro
+slug: "llm-provider-whisper-v1-tool-pro"
+name: "llm-provider-whisper-v1-tool-pro"
 version: "1.0.0"
-displayName: Whisper v1转录专业版
-summary: Whisper v1稳定版企业级转录工具,支持批量处理、模型管理、性能调优与服务化部署。
-license: Proprietary
-edition: pro
+displayName: "Whisper v1转录专业版"
+summary: "Whisper v1稳定版企业级转录工具,支持批量处理、模型管理、性能调优与服务化部署。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   基于 Whisper v1 稳定版本的企业级语音转文字工具(专业版)。核心能力:
   - 涵盖免费版全部能力(v1 稳定 CLI、多格式输出、翻译)
@@ -21,15 +21,16 @@ description: |-
   - 企业会议纪要自动化
   - 视频/播客批量字幕生成...
 tags:
-- 创意设计
-- 语音转文字
-- 企业级
-- 批量处理
-- 模型管理
-- Whisper v1
+  - 创意设计
+  - 语音转文字
+  - 企业级
+  - 批量处理
+  - 模型管理
+  - Whisper v1
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Whisper v1 语音转文字工具 - 专业版
 

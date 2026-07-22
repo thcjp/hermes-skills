@@ -1,18 +1,18 @@
 ---
-slug: translate-en-zh
-name: translate-en-zh
+slug: "translate-en-zh"
+name: "translate-en-zh"
 version: "1.0.0"
-displayName: Translate EN ZH
-summary: 中英文互转工具，支持文本翻译、批量文件翻译、术语对齐。使用场景：(1) 用户需要将中文翻译成英文或英文翻译成中文；(2) 翻译文档、代码注释、邮件等文本内容；(3)
-  批量处理翻译任务；(4) 用...
-license: MIT-0
+displayName: "Translate EN ZH"
+summary: "中英文互转工具，支持文本翻译、批量文件翻译、术语对齐。使用场景：(1) 用户需要将中文翻译成英文或英文翻译成中文；(2) 翻译文档、代码注释、邮件等文本内容；(3)"
+license: "MIT-0"
 description: |-
   中英文互转工具，支持文本翻译、批量文件翻译、术语对齐。使用场景：(1) 用户需要将中文翻译成英文或英文翻译成中文；(2) 翻译文档、代码注释、邮件等文本内容；(3)
   批量处理翻译任务；(4) 用。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。
-tags: '[''Automation'']'
+tags: "'[''Automation'']'"
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
 # Translate EN ZH
 

@@ -1,11 +1,11 @@
 ---
-slug: podcast-chaptering
-name: podcast-chaptering
+slug: "podcast-chaptering"
+name: "podcast-chaptering"
 version: "1.0.0"
-displayName: 播客章节工具专业版
-summary: 企业级播客章节工具,支持批量处理、社媒切片文案、多格式输出与API集成,适配生产流水线。
-license: Proprietary
-edition: pro
+displayName: "播客章节工具专业版"
+summary: "企业级播客章节工具,支持批量处理、社媒切片文案、多格式输出与API集成,适配生产流水线。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队与企业用户的播客章节标记工具(专业版)。核心能力:
   - 涵盖免费版全部能力(章节标记、高光片段、节目笔记)
@@ -21,16 +21,17 @@ description: |-
   适用场景:
   - 播客矩阵...
 tags:
-- 创意设计
-- 播客
-- 章节标记
-- 企业级
-- 批量处理
-- 社媒切片
-- AI生成
+  - 创意设计
+  - 播客
+  - 章节标记
+  - 企业级
+  - 批量处理
+  - 社媒切片
+  - AI生成
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 播客章节工具专业版
 

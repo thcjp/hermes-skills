@@ -1,11 +1,11 @@
 ---
-slug: go-linter-config-tool-free
-name: go-linter-config-tool-free
+slug: "go-linter-config-tool-free"
+name: "go-linter-config-tool-free"
 version: "1.0.0"
-displayName: Go Lint 配置工具
-summary: 面向个人 Go 项目的 golangci-lint 配置与排障工具，快速起步。
-license: Proprietary
-edition: free
+displayName: "Go Lint 配置工具"
+summary: "面向个人 Go 项目的 golangci-lint 配置与排障工具，快速起步。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人 Go 开发者的 golangci-lint 配置与排障工具。核心能力:
   - 最小与标准两套配置模板
@@ -20,14 +20,15 @@ description: |-
 
   差异化: 免费版聚焦单项目本地与基础 CI 场景，提供最小/标准模板与排障清单，零成本接入
 tags:
-- Go
-- 代码质量
-- 静态检查
-- 个人效率
-- 其他工具
+  - Go
+  - 代码质量
+  - 静态检查
+  - 个人效率
+  - 其他工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Go Lint 配置工具（免费版）
 

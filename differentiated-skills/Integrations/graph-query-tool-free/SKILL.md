@@ -1,11 +1,11 @@
 ---
-slug: graph-query-tool-free
-name: graph-query-tool-free
+slug: "graph-query-tool-free"
+name: "graph-query-tool-free"
 version: "1.0.0"
-displayName: 链上数据查询(免费版)
-summary: 区块链数据自然语言查询，路由到免费数据服务，返回实时结果。
-license: Proprietary
-edition: free
+displayName: "链上数据查询(免费版)"
+summary: "区块链数据自然语言查询，路由到免费数据服务，返回实时结果。"
+license: "Proprietary"
+edition: "free"
 description: |-
   区块链数据自然语言查询，路由到免费数据服务，返回实时结果。核心能力：
   - 自然语言提问自动路由到合适的链上数据服务
@@ -21,12 +21,13 @@ description: |-
 
   差异化：采用自然语言路由与免费层优先策略，让非链上专业用户也能快速查询区块链数据，免费版聚焦"问得到、查得到"的核心场景
 tags:
-- 集成工具
-- 区块链
-- 数据查询
+  - 集成工具
+  - 区块链
+  - 数据查询
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 链上数据查询（免费版）
 

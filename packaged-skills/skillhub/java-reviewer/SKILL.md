@@ -1,24 +1,23 @@
 ---
-slug: java-reviewer
-name: java-reviewer
+slug: "java-reviewer"
+name: "java-reviewer"
 version: "1.0.0"
-displayName: Java代码审查专业版
-summary: 企业级 Java 代码审查方案，支持批量审查、自定义规则、HTML 报告与 CI 集成。
-license: Proprietary
-edition: pro
+displayName: "Java代码审查专业版"
+summary: "企业级 Java 代码审查方案，支持批量审查、自定义规则、HTML 报告与 CI 集成。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向企业级 Java 开发团队的代码审查治理工具。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 开发工具
-- Java
-- 代码审查
-- 企业协作
-- 安全审计
+  - 开发工具
+  - Java
+  - 代码审查
+  - 企业协作
+  - 安全审计
 tools:
   - - read
-- exec
-# Java 代码审查工具（专业版）
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Java代码审查专业版
 

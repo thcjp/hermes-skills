@@ -1,23 +1,23 @@
 ---
-slug: cloudforge-automation-free
-name: cloudforge-automation-free
+slug: "cloudforge-automation-free"
+name: "cloudforge-automation-free"
 version: "1.0.0"
-displayName: Cloudforge Automatio
-summary: 单云基础设施即代码工具，含Terraform模板、基础资源配置与一键部署，支持AWS/GCP/Azure。
-license: Proprietary
-edition: free
+displayName: "Cloudforge Automatio"
+summary: "单云基础设施即代码工具，含Terraform模板、基础资源配置与一键部署，支持AWS/GCP/Azure。"
+license: "Proprietary"
+edition: "free"
 description: |-
   云锻造自动化免费版帮助你使用基础设施即代码（IaC）管理云资源。通过Terraform模板定义、一键部署与基础配置管理，告别手动控制台操作，实现云资源的可重复、可版本化、可追溯管理。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 云基础设施
-- Terraform
-- IaC
-- 云资源管理
+  - 云基础设施
+  - Terraform
+  - IaC
+  - 云资源管理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 云锻造自动化（免费版）
 
 > **单云基础设施即代码工具。Terraform模板+一键部署，告别手动控制台操作。**

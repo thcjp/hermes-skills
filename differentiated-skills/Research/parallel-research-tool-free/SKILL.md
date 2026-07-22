@@ -1,11 +1,11 @@
 ---
-slug: parallel-research-tool-free
-name: parallel-research-tool-free
+slug: "parallel-research-tool-free"
+name: "parallel-research-tool-free"
 version: "1.0.0"
-displayName: 并行研究助手免费版
-summary: 开放式主题研究工具，构建可持续维护的研究文档，支持交互式探索
-license: Proprietary
-edition: free
+displayName: "并行研究助手免费版"
+summary: "开放式主题研究工具，构建可持续维护的研究文档，支持交互式探索"
+license: "Proprietary"
+edition: "free"
 description: |-
   并行研究助手免费版，帮助用户围绕特定主题开展开放式研究，构建可持续维护的Markdown研究文档。核心能力:
   - 交互式研究模式，实时搜索与综合
@@ -24,15 +24,15 @@ description: |-
   - 研究成果持久化保存，可持续维护
   - 与PRO版本完全兼容...
 tags:
-- 研究
-- 文档
-- 调研
-- 知识管理
+  - 研究
+  - 文档
+  - 调研
+  - 知识管理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 并行研究助手（免费版）
 
 ## 概述

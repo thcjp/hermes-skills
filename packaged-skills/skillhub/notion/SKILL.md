@@ -1,10 +1,10 @@
 ---
-slug: notion
-name: notion
+slug: "notion"
+name: "notion"
 version: "1.0.0"
-displayName: Notion
-summary: Notion API for creating and managing pages, databases, and blocks.
-license: MIT
+displayName: "Notion"
+summary: "Notion API for creating and managing pages, databases, and blocks."
+license: "MIT"
 description: |-
   Notion API for creating and managing pages, databases, and blocks。核心能力:
 
@@ -21,12 +21,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Productivity
+  - Productivity
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Notion
 

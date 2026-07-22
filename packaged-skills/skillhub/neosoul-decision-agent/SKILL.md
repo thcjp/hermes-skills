@@ -1,10 +1,10 @@
 ---
-slug: neosoul-decision-agent
-name: neosoul-decision-agent
+slug: "neosoul-decision-agent"
+name: "neosoul-decision-agent"
 version: "1.0.0"
-displayName: 自主决策代理
-summary: 具备自改进记忆的结构化决策支持系统，学习用户风险偏好与决策框架偏好
-license: MIT
+displayName: "自主决策代理"
+summary: "具备自改进记忆的结构化决策支持系统，学习用户风险偏好与决策框架偏好"
+license: "MIT"
 description: |-
   具备自改进记忆的结构化决策支持系统，帮助用户在面临权衡选择时做出更优决策。
   通过分层记忆体系（HOT/WARM/RECORD/COLD四级）学习用户的风险偏好、框架偏好与领域权重，
@@ -14,8 +14,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 系统运维
 ---
-
 # 自主决策代理（Neosoul Decision Agent）
 
 具备自改进记忆的结构化决策支持系统，通过分层记忆体系学习用户的风险偏好与决策框架偏好，在后续决策中应用学到的模式，帮助用户做出更优决策。

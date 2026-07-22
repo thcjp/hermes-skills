@@ -1,19 +1,19 @@
 ---
-slug: word-docx
-name: word-docx
+slug: "word-docx"
+name: "word-docx"
 version: "1.0.2"
-displayName: Word / DOCX
-summary: Create, inspect, and edit Microsoft Word documents and DOCX files with reliable
-  styles, numbering...
-license: MIT-0
+displayName: "Word / DOCX"
+summary: "Create, inspect, and edit Microsoft Word documents and DOCX files with reliable"
+license: "MIT-0"
 description: |-
   Create, inspect, and edit Microsoft Word documents and DOCX files with
   reliable styles, numbering。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Knowledge
+  - Knowledge
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Word / DOCX
 

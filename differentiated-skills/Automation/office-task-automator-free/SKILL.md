@@ -1,23 +1,23 @@
 ---
-slug: office-task-automator-free
-name: office-task-automator-free
+slug: "office-task-automator-free"
+name: "office-task-automator-free"
 version: "1.0.0"
-displayName: 办公任务自动化(免费版)
-summary: 文档批量处理与数据清洗核心能力，覆盖Word/Excel/PDF转换与基础格式处理，60秒上手办公自动化。
-license: Proprietary
-edition: free
+displayName: "办公任务自动化(免费版)"
+summary: "文档批量处理与数据清洗核心能力，覆盖Word/Excel/PDF转换与基础格式处理，60秒上手办公自动化。"
+license: "Proprietary"
+edition: "free"
 description: |-
   办公任务自动化（免费版）为AI Agent提供日常办公文档的批量处理能力，覆盖Word文档生成、Excel数据清洗、PDF格式转换、文本格式互转四大核心场景。通过自然语言指令驱动，让繁琐的文档处理工作一键完成。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。
 tags:
-- 办公自动化
-- 文档处理
-- 数据清洗
-- 格式转换
+  - 办公自动化
+  - 文档处理
+  - 数据清洗
+  - 格式转换
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 办公任务自动化（免费版）
 
 > **让AI Agent帮你处理繁琐的办公文档。Word批量生成、Excel数据清洗、PDF格式转换，一键完成。**

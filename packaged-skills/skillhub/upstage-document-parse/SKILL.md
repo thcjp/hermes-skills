@@ -1,10 +1,10 @@
 ---
-slug: upstage-document-parse
-name: upstage-document-parse
+slug: "upstage-document-parse"
+name: "upstage-document-parse"
 version: "1.0.5"
-displayName: Document Parse
-summary: 将 PDF、图片、Office 文档解析为带版面感知的 Markdown/HTML，含表格和坐标。
-license: MIT-0
+displayName: "Document Parse"
+summary: "将 PDF、图片、Office 文档解析为带版面感知的 Markdown/HTML，含表格和坐标。"
+license: "MIT-0"
 description: |-
   upstage-document-parse 是一个文档解析技能，将 PDF、图片、DOCX、PPTX、XLSX、HWP 等格式
   转换为结构化的 Markdown/HTML。识别表格、图片、公式、图表等版面元素并返回边界框坐标。
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 文档处理
 ---
-
 # Document Parse
 
 document-parse 将文档转换为结构化的 HTML/Markdown。识别表格、图片、公式、图表等版面元素，

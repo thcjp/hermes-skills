@@ -1,22 +1,22 @@
 ---
-slug: smart-reminder-free
-name: smart-reminder-free
+slug: "smart-reminder-free"
+name: "smart-reminder-free"
 version: "1.0.0"
-displayName: 智能提醒助手(免费版)
-summary: 自然语言事件捕获与提醒助手免费版，含中文解析、事件存储、默认提醒偏移与基础查询。
-license: Proprietary
-edition: free
+displayName: "智能提醒助手(免费版)"
+summary: "自然语言事件捕获与提醒助手免费版，含中文解析、事件存储、默认提醒偏移与基础查询。"
+license: "Proprietary"
+edition: "free"
 description: |-
   智能提醒助手免费版是面向AI Agent的自然语言事件捕获与提醒系统。不同于提醒创建引擎，本技能聚焦"如何理解用户的自然语言事件描述并智能管理"：事件解析、结构化存储、提醒偏移、基础查询。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- 智能提醒
-- 自然语言
-- 事件管理
-- 日程助手
+  - 智能提醒
+  - 自然语言
+  - 事件管理
+  - 日程助手
 tools:
   - - read
-- exec
-# 智能提醒助手（免费版）
+  - exec
+homepage: "https://skillhub.cn"
 ---
 > **不是教你创建提醒，而是教你理解用户的自然语言事件描述。中文解析、结构化存储、智能查询，一站式日程助手。**
 

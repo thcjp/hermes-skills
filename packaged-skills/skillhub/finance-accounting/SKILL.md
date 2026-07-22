@@ -1,10 +1,10 @@
 ---
-slug: finance-accounting
-name: finance-accounting
+slug: "finance-accounting"
+name: "finance-accounting"
 version: "1.0.0"
-displayName: Finance Accounting
-summary: 财务会计文书处理综合技能包 - 包含记账、对账、税务、报表等核心功能
-license: MIT
+displayName: "Finance Accounting"
+summary: "财务会计文书处理综合技能包 - 包含记账、对账、税务、报表等核心功能"
+license: "MIT"
 description: |-
   财务会计文书处理综合技能包 - 包含记账、对账、税务、报表等核心功能
 
@@ -23,12 +23,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Finance
+  - Finance
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Finance Accounting
 

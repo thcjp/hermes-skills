@@ -1,10 +1,10 @@
 ---
-slug: blog-writer
-name: blog-writer
+slug: "blog-writer"
+name: "blog-writer"
 version: "1.0.0"
-displayName: 博客写作助手
-summary: 捕捉作者独特写作风格,从研究材料到发布笔记平台的全流程博客创作。
-license: MIT
+displayName: "博客写作助手"
+summary: "捕捉作者独特写作风格,从研究材料到发布笔记平台的全流程博客创作。"
+license: "MIT"
 description: |-
   基于作者已发表作品校准语气、用词、结构与长度,产出直白、有观点、
   对话式且扎根实战经验的博客文章。覆盖信息收集、起草、审查迭代、
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 博客写作助手
 
 基于作者已发表作品校准语气、用词、结构与长度,产出直白、有观点、对话式且扎根实战经验的博客文章。集成笔记平台自动发布,维护不断增长的定稿示例库。

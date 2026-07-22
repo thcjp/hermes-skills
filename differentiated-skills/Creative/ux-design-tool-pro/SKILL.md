@@ -1,30 +1,29 @@
 ---
-slug: ux-design-tool-pro
-name: ux-design-tool-pro
+slug: "ux-design-tool-pro"
+name: "ux-design-tool-pro"
 version: "1.0.0"
-displayName: UX设计工具专业版
-summary: 完整UX方法论+用户研究+WCAG合规+状态机设计+企业UX审计,面向UX团队的专业体验设计引擎
-license: Proprietary
-edition: pro
+displayName: "UX设计工具专业版"
+summary: "完整UX方法论+用户研究+WCAG合规+状态机设计+企业UX审计,面向UX团队的专业体验设计引擎"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向企业UX团队和专业设计师的完整用户体验设计引擎,涵盖深度流程分析、
   用户研究方法论、WCAG 2。2无障碍合规、状态机设计模式、企业级UX审计
   和全面边界状态设计。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 设计
-- UX
-- 用户体验
-- 交互设计
-- 无障碍
-- 前端
-- 企业级
-- 用户研究
-- WCAG
+  - 设计
+  - UX
+  - 用户体验
+  - 交互设计
+  - 无障碍
+  - 前端
+  - 企业级
+  - 用户研究
+  - WCAG
 tools:
   - - read
-- exec
-# UX设计工具 - 专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 UX设计工具专业版是一款面向企业UX团队和专业设计师的完整用户体验设计引擎。在免费版核心UX原则之上,扩展至深度流程分析、用户研究方法论、WCAG 2.2无障碍合规审计、状态机设计模式和企业级UX审计框架。
 

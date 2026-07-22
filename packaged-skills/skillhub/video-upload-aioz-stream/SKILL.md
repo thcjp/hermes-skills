@@ -1,19 +1,19 @@
 ---
-slug: video-upload-aioz-stream
-name: video-upload-aioz-stream
+slug: "video-upload-aioz-stream"
+name: "video-upload-aioz-stream"
 version: "1.0.1"
-displayName: Video Upload Aioz St
-summary: Quick upload video to AIOZ Stream API. Create video objects with default
-  or custom encoding confi...
-license: MIT
+displayName: "Video Upload Aioz St"
+summary: "Quick upload video to AIOZ Stream API. Create video objects with default"
+license: "MIT"
 description: |-
   Quick upload video to AIOZ Stream API。Create video objects with default
   or custom encoding confi。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Creative
+  - Creative
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Video Upload Aioz St
 

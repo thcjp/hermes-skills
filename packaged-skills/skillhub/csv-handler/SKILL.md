@@ -1,10 +1,10 @@
 ---
-slug: csv-handler
-name: csv-handler
+slug: "csv-handler"
+name: "csv-handler"
 version: "1.0.0"
-displayName: CSV文件处理专家
-summary: 自动检测编码与分隔符，清洗、合并、拆分、转换CSV数据，支持进度计划与成本数据专用解析
-license: MIT
+displayName: "CSV文件处理专家"
+summary: "自动检测编码与分隔符，清洗、合并、拆分、转换CSV数据，支持进度计划与成本数据专用解析"
+license: "MIT"
 description: |-
   CSV文件处理专家，覆盖建筑、工程、财务等场景下的CSV全生命周期管理。
   核心能力包括：
@@ -25,8 +25,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # CSV文件处理专家
 
 ## 概述

@@ -1,17 +1,18 @@
 ---
-slug: file-auto-organizer
-name: file-auto-organizer
+slug: "file-auto-organizer"
+name: "file-auto-organizer"
 version: "1.0.0"
-displayName: File Auto Organizer
-summary: 文件自动整理工具。按文件类型、日期自动归类下载文件夹，适合整理控和洁癖用户。
-license: MIT-0
+displayName: "File Auto Organizer"
+summary: "文件自动整理工具。按文件类型、日期自动归类下载文件夹，适合整理控和洁癖用户。"
+license: "MIT-0"
 description: |-
   文件自动整理工具。按文件类型、日期自动归类下载文件夹，适合整理控和洁癖用户。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # File Auto Organizer
 

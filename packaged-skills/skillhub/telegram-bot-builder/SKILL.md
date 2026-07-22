@@ -1,10 +1,10 @@
 ---
-slug: telegram-bot-builder
-name: telegram-bot-builder
+slug: "telegram-bot-builder"
+name: "telegram-bot-builder"
 version: "1.0.0"
-displayName: Telegram Bot Builder
-summary: Telegram Bot 快速build工具 - Keyboard、Inline Buttons、Webhook、Auto-reply、Group管理
-license: MIT
+displayName: "Telegram Bot Builder"
+summary: "Telegram Bot 快速build工具 - Keyboard、Inline Buttons、Webhook、Auto-reply、Group管理"
+license: "MIT"
 description: |-
   Telegram Bot 快速build工具 - Keyboard、Inline Buttons、Webhook、Auto-reply、Group管理
 
@@ -23,14 +23,14 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Integrations
-- Communication
-- Automation
+  - Integrations
+  - Communication
+  - Automation
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Telegram Bot Builder
 

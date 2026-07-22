@@ -1,11 +1,11 @@
 ---
-slug: git-cli-tool-free
-name: git-cli-tool-free
+slug: "git-cli-tool-free"
+name: "git-cli-tool-free"
 version: "1.0.0"
-displayName: Git命令行助手免费版
-summary: 提供Git CLI快速参考、状态检查、暂存提交与分支同步,适合开发者日常命令行操作。
-license: Proprietary
-edition: free
+displayName: "Git命令行助手免费版"
+summary: "提供Git CLI快速参考、状态检查、暂存提交与分支同步,适合开发者日常命令行操作。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向开发者的Git命令行辅助工具,提供快速命令参考、仓库状态检查、暂存提交与远程同步操作指引。核心能力:
   - Git CLI快速参考表
@@ -27,12 +27,13 @@ description: |-
 
   适用关键词: Git命令, git cli, ...
 tags:
-- 开发工具
-- Git
-- 命令行
+  - 开发工具
+  - Git
+  - 命令行
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Git命令行助手 - 免费版
 

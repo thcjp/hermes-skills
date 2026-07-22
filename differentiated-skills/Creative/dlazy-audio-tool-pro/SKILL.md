@@ -1,11 +1,11 @@
 ---
-slug: dlazy-audio-tool-pro
-name: dlazy-audio-tool-pro
+slug: "dlazy-audio-tool-pro"
+name: "dlazy-audio-tool-pro"
 version: "1.0.0"
-displayName: 音频生成工具-专业版
-summary: 全功能音频生成引擎，支持TTS、语音克隆、音乐生成、多角色对话与管道链接批量处理。
-license: Proprietary
-edition: pro
+displayName: "音频生成工具-专业版"
+summary: "全功能音频生成引擎，支持TTS、语音克隆、音乐生成、多角色对话与管道链接批量处理。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   音频生成工具专业版，面向专业内容团队的全功能音频生成平台。核心能力：
   - 15+ 音频模型全覆盖（TTS、语音克隆、音乐生成、音效、对话）
@@ -13,13 +13,14 @@ description: |-
   - 语音克隆（ElevenLabs IVC、Qwen、Kling、Vidu）
   - 原创音乐生成（Suno V5
 tags:
-- Creative
-- Audio
-- Enterprise
-- VoiceClone
+  - Creative
+  - Audio
+  - Enterprise
+  - VoiceClone
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 音频生成工具（专业版）
 

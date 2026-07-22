@@ -1,11 +1,11 @@
 ---
-slug: qwen-video-analyzer
-name: qwen-video-analyzer
+slug: "qwen-video-analyzer"
+name: "qwen-video-analyzer"
 version: "1.0.0"
-displayName: 通义千问视频分析-专业版
-summary: 企业级视频分析工具,支持批量处理、自定义模型、结构化报告,适配商业内容审核与生产。
-license: Proprietary
-edition: pro
+displayName: "通义千问视频分析-专业版"
+summary: "企业级视频分析工具,支持批量处理、自定义模型、结构化报告,适配商业内容审核与生产。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   通义千问视频分析专业版,面向企业团队与专业用户的高级AI视频内容理解工具。核心能力:
   - 批量视频分析,支持目录扫描与队列处理
@@ -23,13 +23,14 @@ description: |-
 
   差异化:专业版在免...
 tags:
-- Creative
-- 视频分析
-- 企业版
-- 商业内容
+  - Creative
+  - 视频分析
+  - 企业版
+  - 商业内容
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 通义千问视频分析-专业版
 

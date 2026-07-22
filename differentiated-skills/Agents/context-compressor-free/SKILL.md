@@ -1,23 +1,23 @@
 ---
-slug: context-compressor-free
-name: context-compressor-free
+slug: "context-compressor-free"
+name: "context-compressor-free"
 version: "1.0.0"
-displayName: Context Compressor
-summary: 智能压缩对话日志为结构化摘要，4-8倍压缩比，保留关键决策与教训，降低Token成本。
-license: Proprietary
-edition: free
+displayName: "Context Compressor"
+summary: "智能压缩对话日志为结构化摘要，4-8倍压缩比，保留关键决策与教训，降低Token成本。"
+license: "Proprietary"
+edition: "free"
 description: |-
   上下文压缩器免费版解决AI Agent长期协作中"记忆膨胀"的核心痛点：MEMORY。md动辄上万字、每日日志堆积如山、关键决策被冗余信息淹没、Token成本随对话增长线性飙升。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 上下文压缩
-- 记忆管理
-- Token优化
-- 日志归档
+  - 上下文压缩
+  - 记忆管理
+  - Token优化
+  - 日志归档
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 上下文压缩器（免费版）
 
 > **让Agent的记忆瘦身。4-8倍压缩比，关键信息零丢失。**

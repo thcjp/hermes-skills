@@ -1,22 +1,22 @@
 ---
-slug: font-manager-pro
-name: font-manager-pro
+slug: "font-manager-pro"
+name: "font-manager-pro"
 version: "1.0.0"
-displayName: 字体管理专业版
-summary: 全功能字体排版管理工具，支持智能配对、子集化、设计系统集成、无障碍检查与多语言适配。
-license: Proprietary
-edition: pro
+displayName: "字体管理专业版"
+summary: "全功能字体排版管理工具，支持智能配对、子集化、设计系统集成、无障碍检查与多语言适配。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   字体管理器专业版面向专业前端团队与设计系统的字体排版治理场景，在免费版基础上扩展全功能管理能力。解决专业排版的"系统化与合规"痛点：设计系统需要统一的字体变量管理、多语言页面需要CJK字体适配、无障碍合规要求对比度与字号达标、字体加载需要CDN多级fallback、字体子集化需要自动化工具、排版审计需要可导出的报告
 tags:
-- 字体排版
-- 设计系统
-- 无障碍
-- 性能优化
+  - 字体排版
+  - 设计系统
+  - 无障碍
+  - 性能优化
 tools:
   - - read
-- exec
-# 字体管理器（专业版）
+  - exec
+homepage: "https://skillhub.cn"
 ---
 > **全功能字体排版管理。智能配对、子集化、设计系统集成、无障碍检查、多语言适配。**
 

@@ -1,11 +1,11 @@
 ---
-slug: web-content-fetcher-tool-pro
-name: web-content-fetcher-tool-pro
+slug: "web-content-fetcher-tool-pro"
+name: "web-content-fetcher-tool-pro"
 version: "1.0.0"
-displayName: 网页内容获取专业版
-summary: 批量获取、本地缓存、内容解析与质量评分，适合数据团队与内容聚合场景。
-license: Proprietary
-edition: pro
+displayName: "网页内容获取专业版"
+summary: "批量获取、本地缓存、内容解析与质量评分，适合数据团队与内容聚合场景。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   网页内容获取工具专业版，面向数据团队与内容聚合的高阶网页抓取平台。核心能力:
   - 批量 URL 获取与并发控制
@@ -21,13 +21,14 @@ description: |-
 
   差异化: 专业版在免费版核心获取能力之上扩展批量与缓存，新增内容解析、质量评分、认证支持等企业级能力，并与免费版服务优先级兼容
 tags:
-- 网页抓取
-- 批量采集
-- 内容聚合
-- 专业版
+  - 网页抓取
+  - 批量采集
+  - 内容聚合
+  - 专业版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 网页内容获取工具（专业版）
 

@@ -1,10 +1,10 @@
 ---
-slug: claude-code-delegate-free
-name: claude-code-delegate-free
+slug: "claude-code-delegate-free"
+name: "claude-code-delegate-free"
 version: "0.1.0"
-displayName: 代码委派基础版
-summary: 将编程任务委派给 AI 助手处理的基础能力，支持任务分类、代码生成与执行日志记录。
-license: MIT
+displayName: "代码委派基础版"
+summary: "将编程任务委派给 AI 助手处理的基础能力，支持任务分类、代码生成与执行日志记录。"
+license: "MIT"
 description: |-
   将编程任务委派给 AI 助手执行的基础能力，支持任务分解、
   基础代码生成与执行日志记录。
@@ -27,10 +27,11 @@ description: |-
 
   差异化:基础版提供任务委派核心流程，针对常见编程场景进行优化，去除了高级版的多步门控与断点续传能力。
 tags:
-- Development
+  - Development
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
 # 代码委派基础版
 

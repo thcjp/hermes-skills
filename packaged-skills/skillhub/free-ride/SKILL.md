@@ -1,10 +1,10 @@
 ---
-slug: free-ride
-name: free-ride
+slug: "free-ride"
+name: "free-ride"
 version: "1.0.11"
-displayName: Free Ride
-summary: Manages free AI models from OpenRouter for SkillHub.
-license: MIT
+displayName: "Free Ride"
+summary: "Manages free AI models from OpenRouter for SkillHub."
+license: "MIT"
 description: |-
   Manages free AI models from OpenRouter for SkillHub。核心能力:
 
@@ -21,12 +21,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Free Ride
 

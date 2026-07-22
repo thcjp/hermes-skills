@@ -1,11 +1,11 @@
 ---
-slug: rss-digest-tool-free
-name: rss-digest-tool-free
+slug: "rss-digest-tool-free"
+name: "rss-digest-tool-free"
 version: "1.0.0"
-displayName: RSS摘要工具免费版
-summary: 轻量级RSS订阅摘要生成工具,支持订阅抓取、智能筛选与内容浓缩,适合个人用户日常阅读
-license: Proprietary
-edition: free
+displayName: "RSS摘要工具免费版"
+summary: "轻量级RSS订阅摘要生成工具,支持订阅抓取、智能筛选与内容浓缩,适合个人用户日常阅读"
+license: "Proprietary"
+edition: "free"
 description: |-
   RSS摘要工具免费版为个人用户提供轻量级的RSS订阅内容消化方案。
 
@@ -24,14 +24,15 @@ description: |-
 
   适用关键词: RSS, 订阅, 摘要, digest, feed, 抓取, 筛选, 聚合
 tags:
-- 研究工具
-- RSS
-- 信息聚合
-- 内容摘要
-- 个人效率
+  - 研究工具
+  - RSS
+  - 信息聚合
+  - 内容摘要
+  - 个人效率
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # RSS摘要工具免费版
 

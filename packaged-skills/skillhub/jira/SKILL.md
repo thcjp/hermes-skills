@@ -1,10 +1,10 @@
 ---
-slug: jira
-name: jira
+slug: "jira"
+name: "jira"
 version: "1.0.0"
-displayName: 项目管理工具
-summary: 通过工具操作史诗、故事、缺陷、冲刺与看板,覆盖创建搜索转换全流程。
-license: MIT
+displayName: "项目管理工具"
+summary: "通过工具操作史诗、故事、缺陷、冲刺与看板,覆盖创建搜索转换全流程。"
+license: "MIT"
 description: |-
   通过项目管理工具集成操作工作项全生命周期:史诗、故事、缺陷、
   子任务、冲刺、看板、关联、状态转换与用户管理。覆盖JQL高级搜索、
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 项目管理工具集成
 
 通过项目管理工具集成操作工作项的全生命周期,从史诗拆分到冲刺执行,覆盖创建、搜索、状态转换与看板管理。

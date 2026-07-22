@@ -1,10 +1,10 @@
 ---
-slug: can
-name: can
+slug: "can"
+name: "can"
 version: "2.0.0"
-displayName: CAN内容寻址
-summary: 时钟地址命名协议，通过时间戳、内容哈希和可读名称为数据流建立可验证索引
-license: MIT
+displayName: "CAN内容寻址"
+summary: "时钟地址命名协议，通过时间戳、内容哈希和可读名称为数据流建立可验证索引"
+license: "MIT"
 description: |-
   CAN（Clock Address Naming）协议为Agent数据流提供可验证的内容寻址能力。
   通过三列结构（WHEN/WHERE/WHAT）记录事件，实现内容完整性验证、快速查找和
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # CAN — 时钟地址命名协议
 
 ## 核心问题

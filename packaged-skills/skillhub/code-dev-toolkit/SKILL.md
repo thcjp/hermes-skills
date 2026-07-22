@@ -1,11 +1,11 @@
 ---
-slug: code-dev-toolkit
-name: code-dev-toolkit
+slug: "code-dev-toolkit"
+name: "code-dev-toolkit"
 version: "1.0.0"
-displayName: 代码开发工具包专业版
-summary: 企业级编码工作流,支持多任务编排、团队规范、质量门禁与交付审计
-license: Proprietary
-edition: pro
+displayName: "代码开发工具包专业版"
+summary: "企业级编码工作流,支持多任务编排、团队规范、质量门禁与交付审计"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向团队与企业的高级代码开发工作流工具,在免费版基础上扩展多任务编排、团队规范、质量门禁等能力。核心能力:
   - 多任务并行编排与依赖管理
@@ -24,16 +24,16 @@ description: |-
   - 支持多任务编排与质量门禁
   - 提供团队规范与审计追踪
   - 优先技术支持与更新通道
-
 tags:
-- 开发工具
-- 编码工作流
-- 企业级
-- 多任务编排
-- CI/CD
+  - 开发工具
+  - 编码工作流
+  - 企业级
+  - 多任务编排
+  - CI/CD
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 代码开发工具包专业版
 

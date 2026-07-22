@@ -1,10 +1,10 @@
 ---
-slug: report-free
-name: report-free
+slug: "report-free"
+name: "report-free"
 version: "1.0.0"
-displayName: 报表配置基础版
-summary: 自定义报表基础能力，支持单一数据源接入、基础字段映射与标准格式导出。
-license: MIT
+displayName: "报表配置基础版"
+summary: "自定义报表基础能力，支持单一数据源接入、基础字段映射与标准格式导出。"
+license: "MIT"
 description: |-
   自定义报表基础能力，支持单一数据源接入、基础字段映射
   与标准格式导出。
@@ -27,9 +27,10 @@ description: |-
 
   差异化:基础版聚焦单一数据源的报表生成，去除了高级版的多源合并、复杂调度与可视化图表能力。
 tags:
-- Other
+  - Other
 tools:
   - read
+homepage: "https://skillhub.cn"
 ---
 # 报表配置基础版
 

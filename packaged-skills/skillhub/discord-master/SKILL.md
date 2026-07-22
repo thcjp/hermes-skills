@@ -1,21 +1,22 @@
 ---
-slug: discord-master
-name: discord-master
+slug: "discord-master"
+name: "discord-master"
 version: "1.0.0"
-displayName: Discord开发大师(专业版)
-summary: 全功能Discord Bot工程化平台，覆盖网关、限流、组件、安全与多服务器管理。
-license: Proprietary
-edition: pro
+displayName: "Discord开发大师(专业版)"
+summary: "全功能Discord Bot工程化平台，覆盖网关、限流、组件、安全与多服务器管理。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Discord 开发大师专业版是面向团队与生产环境的全功能 Discord Bot 工程化平台，在免费版基础上新增 Gateway 网关管理、高级限流策略、消息组件深度集成、Embed 富文本、多服务器批量管理、Webhook 自动化六大高级模块。核心能力：提供 Gateway 事件分发架构、基于 Bucket 的限流处理框架、按钮/下拉菜单/模态框组件交互模板、Embed 富文本设计规范、多服务器命令批量部署脚本、Webhook 驱动的 CI/CD 集成方案
 tags:
-- Discord
-- 集成工具
-- 工程化
-- 专业版
+  - Discord
+  - 集成工具
+  - 工程化
+  - 专业版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Discord开发大师(专业版)
 

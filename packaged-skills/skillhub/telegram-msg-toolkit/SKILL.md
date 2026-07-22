@@ -1,23 +1,24 @@
 ---
-slug: telegram-msg-toolkit
-name: telegram-msg-toolkit
+slug: "telegram-msg-toolkit"
+name: "telegram-msg-toolkit"
 version: "1.0.0"
-displayName: Telegram消息工具箱(专业版)
-summary: Telegram Bot 全能力版：批量操作、群组管理、频道运营、审核与Webhook回调。
-license: Proprietary
-edition: pro
+displayName: "Telegram消息工具箱(专业版)"
+summary: "Telegram Bot 全能力版：批量操作、群组管理、频道运营、审核与Webhook回调。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Telegram 消息工具箱（专业版）面向团队与企业用户，在免费版基础消息能力之上新增批量操作引擎、群组管理、频道运营、消息审核与 Webhook 回调。支持从消息发送到群组运营的完整工作流。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 沟通协作
-- 即时通讯
-- Telegram
-- 群组管理
-- 自动化运营
-- 消息自动化
+  - 沟通协作
+  - 即时通讯
+  - Telegram
+  - 群组管理
+  - 自动化运营
+  - 消息自动化
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Telegram消息工具箱(专业版)
 

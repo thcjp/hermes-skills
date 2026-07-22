@@ -1,11 +1,10 @@
 ---
-slug: tts-whatsapp
-name: tts-whatsapp
+slug: "tts-whatsapp"
+name: "tts-whatsapp"
 version: "1.0.0"
-displayName: TTS WhatsApp
-summary: Send high-quality text-to-speech voice messages on WhatsApp in 40+ languages
-  with automatic delivery
-license: MIT
+displayName: "TTS WhatsApp"
+summary: "Send high-quality text-to-speech voice messages on WhatsApp in 40+ languages"
+license: "MIT"
 description: |-
   Send high-quality text-to-speech voice messages on WhatsApp in 40+ languages
   with automatic delivery
@@ -28,11 +27,12 @@ description: |-
 
   差异化:经过深度优化,去除原始风险代码,清理外部依...
 tags:
-- Creative
-- Communication
+  - Creative
+  - Communication
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # TTS WhatsApp
 

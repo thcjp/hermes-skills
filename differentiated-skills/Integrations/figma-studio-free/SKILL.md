@@ -1,22 +1,22 @@
 ---
-slug: figma-studio-free
-name: figma-studio-free
+slug: "figma-studio-free"
+name: "figma-studio-free"
 version: "1.0.0"
-displayName: Figma工作室(免费版)
-summary: 轻量级Figma设计文件读取工具，覆盖文件解析、评论管理与图片导出，60秒上手。
-license: Proprietary
-edition: free
+displayName: "Figma工作室(免费版)"
+summary: "轻量级Figma设计文件读取工具，覆盖文件解析、评论管理与图片导出，60秒上手。"
+license: "Proprietary"
+edition: "free"
 description: |-
   Figma工作室免费版是一款面向前端工程师与独立设计师的轻量级Figma设计文件读取与协作工具。围绕"文件读取—评论管理—图片导出—设计令牌提取"四件事，提供可复制即用的Python/Node。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 设计协作
-- 资源导出
-- 集成工具
+  - 设计协作
+  - 资源导出
+  - 集成工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Figma工作室（免费版）
 
 > **把"Figma设计文件读取"从翻API文档半小时压缩到一条命令搞定。文件读取+评论管理+图片导出三件套。**

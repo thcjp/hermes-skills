@@ -1,10 +1,10 @@
 ---
-slug: explain-code
-name: explain-code
+slug: "explain-code"
+name: "explain-code"
 version: "1.0.0"
-displayName: explain-code
-summary: 用可视化图表和类比解释代码。在解释代码如何工作、教授代码库或用户询问如何工作时使用
-license: MIT
+displayName: "explain-code"
+summary: "用可视化图表和类比解释代码。在解释代码如何工作、教授代码库或用户询问如何工作时使用"
+license: "MIT"
 description: |-
   用可视化图表和类比解释代码。在解释代码如何工作、教授代码库或用户询问如何工作时使用
 
@@ -23,12 +23,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Development
+  - Development
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # explain-code
 

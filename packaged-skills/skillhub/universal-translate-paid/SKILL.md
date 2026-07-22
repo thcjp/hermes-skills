@@ -1,11 +1,11 @@
 ---
-slug: universal-translate-paid
-name: universal-translate-paid
+slug: "universal-translate-paid"
+name: "universal-translate-paid"
 version: "1.0.0"
-displayName: 通用翻译工具(专业版)
-summary: 面向团队的企业级本地化平台,含批量翻译、术语库、对话模式与CI集成,支持多文件并行。
-license: Proprietary
-edition: pro
+displayName: "通用翻译工具(专业版)"
+summary: "面向团队的企业级本地化平台,含批量翻译、术语库、对话模式与CI集成,支持多文件并行。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   通用翻译工具专业版为团队与企业提供端到端本地化工程能力,涵盖批量文件翻译、术语库管理、对话模式、API集成与CI/CD流水线集成。核心能力:
   - 批量文件翻译(多文件并行处理)
@@ -24,15 +24,16 @@ description: |-
 
   差异化...
 tags:
-- 翻译
-- 本地化
-- 企业开发
-- 文档工程
-- CI/CD
-- 团队协作
+  - 翻译
+  - 本地化
+  - 企业开发
+  - 文档工程
+  - CI/CD
+  - 团队协作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 通用翻译工具(专业版)
 

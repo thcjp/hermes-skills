@@ -1,10 +1,10 @@
 ---
-slug: pyx-scan-free
-name: pyx-scan-free
+slug: "pyx-scan-free"
+name: "pyx-scan-free"
 version: "1.0.0"
-displayName: 技能安全扫描(免费版)
-summary: AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告(免费版)
-license: MIT
+displayName: "技能安全扫描(免费版)"
+summary: "AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告(免费版)"
+license: "MIT"
 description: |-
   AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告。评估维度
   包括恶意指令、数据泄露、权限滥用、供应链风险等。返回信任评分（0-10）、
@@ -13,8 +13,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 技能安全扫描(免费版)
 
 通过Scanner API对AI技能进行安全评级和风险报告。

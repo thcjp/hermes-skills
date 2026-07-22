@@ -1,10 +1,10 @@
 ---
-slug: whatsapp-styler-free
-name: whatsapp-styler-free
+slug: "whatsapp-styler-free"
+name: "whatsapp-styler-free"
 version: "1.0.0"
-displayName: WhatsApp Styler LITE
-summary: WhatsApp消息格式基础转换工具,将Markdown加粗/斜体/删除线转为WhatsApp原生格式
-license: MIT
+displayName: "WhatsApp Styler LITE"
+summary: "WhatsApp消息格式基础转换工具,将Markdown加粗/斜体/删除线转为WhatsApp原生格式"
+license: "MIT"
 description: |-
   WhatsApp消息格式基础转换工具(免费版)。将标准Markdown的加粗、斜体、删除线转换为WhatsApp原生排版语法,
   确保接收方看到干净样式而非原始符号。覆盖基础语法转换(双星号转单星号、双波浪线转单波浪线)、
@@ -15,8 +15,8 @@ tags:
   - 研发工具
 tools:
   - read
+homepage: "https://skillhub.cn"
 ---
-
 # WhatsApp Styler LITE
 
 将标准Markdown的基础格式(加粗、斜体、删除线)转换为WhatsApp原生排版语法。确保接收方看到干净的样式文本而非原始符号。

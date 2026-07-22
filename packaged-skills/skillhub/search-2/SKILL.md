@@ -1,19 +1,19 @@
 ---
-slug: search-2
-name: search-2
+slug: "search-2"
+name: "search-2"
 version: "0.1.0"
-displayName: Search
-summary: Search the web using Tavily's LLM-optimized search API. Returns relevant
-  results with content sni...
-license: MIT
+displayName: "Search"
+summary: "Search the web using Tavily's LLM-optimized search API. Returns relevant"
+license: "MIT"
 description: |-
   Search the web using Tavily's LLM-optimized search API。Returns relevant
   results with content sni。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Research
+  - Research
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Search
 

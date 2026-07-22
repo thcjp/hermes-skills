@@ -1,18 +1,18 @@
 ---
-slug: baoyu-format-markdown
-name: baoyu-format-markdown
+slug: "baoyu-format-markdown"
+name: "baoyu-format-markdown"
 version: "1.117.2"
-displayName: Baoyu Format Markdow
-summary: Formats plain text or markdown files with frontmatter, titles, summaries,
-  headings, bold, lists, ...
-license: MIT-0
+displayName: "Baoyu Format Markdow"
+summary: "Formats plain text or markdown files with frontmatter, titles, summaries,"
+license: "MIT-0"
 description: |-
   Formats plain text or markdown files with frontmatter, titles, summaries,
   headings, bold, lists, 。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
-tags: '[''Development'']'
+tags: "'[''Development'']'"
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
 # Baoyu Format Markdow
 

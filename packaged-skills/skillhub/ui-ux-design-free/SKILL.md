@@ -1,10 +1,10 @@
 ---
-slug: ui-ux-design-free
-name: ui-ux-design-free
+slug: "ui-ux-design-free"
+name: "ui-ux-design-free"
 version: "1.0.0"
-displayName: UI/UX设计指南免费版
-summary: 免费版UI/UX设计指南，涵盖基础设计原则、配色与排版系统。
-license: MIT
+displayName: "UI/UX设计指南免费版"
+summary: "免费版UI/UX设计指南，涵盖基础设计原则、配色与排版系统。"
+license: "MIT"
 description: |-
   UI/UX设计指南免费版，提供基础设计原则与快速参考。
   涵盖Mobile-First设计、配色系统、排版尺度与基础无障碍要求。
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 创意设计
 ---
-
 # UI/UX设计指南（免费版）
 
 涵盖基础设计原则、配色与排版系统的UI/UX指南。

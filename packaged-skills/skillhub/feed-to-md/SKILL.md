@@ -1,19 +1,19 @@
 ---
-slug: feed-to-md
-name: feed-to-md
+slug: "feed-to-md"
+name: "feed-to-md"
 version: "1.2.0"
-displayName: Feed To Md
-summary: Convert RSS or Atom feed URLs into Markdown using the bundled local converter
-  script. Use this wh...
-license: MIT
+displayName: "Feed To Md"
+summary: "Convert RSS or Atom feed URLs into Markdown using the bundled local converter"
+license: "MIT"
 description: |-
   Convert RSS or Atom feed URLs into Markdown using the bundled local
   converter script。Use this wh。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Research
+  - Research
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Feed To Md
 

@@ -1,10 +1,10 @@
 ---
-slug: accounting-and-finance
-name: accounting-and-finance
+slug: "accounting-and-finance"
+name: "accounting-and-finance"
 version: "1.0.0"
-displayName: Finance Analyst Pro
-summary: 企业级财务分析工具,涵盖估值建模(14项)、财务分析(26项)、风险评估(18项)共58个专业分析技能
-license: MIT
+displayName: "Finance Analyst Pro"
+summary: "企业级财务分析工具,涵盖估值建模(14项)、财务分析(26项)、风险评估(18项)共58个专业分析技能"
+license: "MIT"
 description: |-
   企业级财务分析工具,内置58个专业金融分析技能,覆盖三大核心领域:
   估值建模(DCF/可比公司/分部估值/银行/保险/地产/科技公司估值共14项)、
@@ -16,8 +16,8 @@ tags:
   - Analysis
 tools:
   - read
+homepage: "https://skillhub.cn"
 ---
-
 # Finance Analyst Pro
 
 企业级财务分析工具,内置58个专业金融分析技能。

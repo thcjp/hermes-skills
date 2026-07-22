@@ -1,11 +1,11 @@
 ---
-slug: slack-toolkit-free
-name: slack-toolkit-free
+slug: "slack-toolkit-free"
+name: "slack-toolkit-free"
 version: "1.0.0"
-displayName: Slack工具箱免费版
-summary: Slack消息管理基础工具，支持发送、编辑、删除消息，表情回应与置顶操作，适合个人日常使用。
-license: Proprietary
-edition: free
+displayName: "Slack工具箱免费版"
+summary: "Slack消息管理基础工具，支持发送、编辑、删除消息，表情回应与置顶操作，适合个人日常使用。"
+license: "Proprietary"
+edition: "free"
 description: |-
   Slack工具箱（免费版）—— 面向个人用户的Slack消息管理工具。核心能力:
   - 消息发送、编辑、删除与读取
@@ -21,12 +21,13 @@ description: |-
 
   差异化: 聚焦个人用户高频操作，提供简洁直观的Slack消息管理能力，开箱即用
 tags:
-- 沟通协作
-- Slack
-- 消息管理
+  - 沟通协作
+  - Slack
+  - 消息管理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Slack工具箱（免费版）
 

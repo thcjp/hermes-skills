@@ -1,11 +1,10 @@
 ---
-slug: aws
-name: aws
+slug: "aws"
+name: "aws"
 version: "1.0.2"
-displayName: Aws
-summary: Architect, deploy, and optimize AWS infrastructure avoiding cost explosions
-  and security pitfalls.
-license: MIT
+displayName: "Aws"
+summary: "Architect, deploy, and optimize AWS infrastructure avoiding cost explosions"
+license: "MIT"
 description: |-
   Architect, deploy, and optimize AWS infrastructure avoiding cost explosions
   and security pitfalls。核心能力:
@@ -26,10 +25,11 @@ description: |-
 
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元...
 tags:
-- Operations
+  - Operations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Aws
 

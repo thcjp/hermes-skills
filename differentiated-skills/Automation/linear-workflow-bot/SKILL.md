@@ -1,21 +1,21 @@
 ---
-slug: linear-workflow-bot
-name: linear-workflow-bot
+slug: "linear-workflow-bot"
+name: "linear-workflow-bot"
 version: "1.0.0"
-displayName: Linear工作流机器人
-summary: 解决Webhook易断、免费额度烧光、多服务配置混乱痛点，打造可自愈的Linear任务流水线
-license: Proprietary
+displayName: "Linear工作流机器人"
+summary: "解决Webhook易断、免费额度烧光、多服务配置混乱痛点，打造可自愈的Linear任务流水线"
+license: "Proprietary"
 description: |-
   把Linear任务自动接入"通知-执行-回写-Git同步"流水线。面向独立开发者与一人公司，解决Webhook易断、免费额度烧光、多服务配置散乱、Git同步冲突四大痛点。适用于个人开发者把Linear作为任务中枢自动分发到Discord/Git、小团队任务到达即通知即执行即归档场景。适用关键词：linear、webhook、discord、make、pipedream、zapier、自动化、任务流水线、git sync。
 tags:
-- 自动化
-- 项目管理
-- 通知集成
+  - 自动化
+  - 项目管理
+  - 通知集成
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Linear 工作流机器人
 
 自动化流水线：**Linear → Webhook 平台 → 通知通道 → 任务执行 → Git 同步**。在 Linear 创建的任务自动触发处理，实时通知、执行、回写结果并同步到 Git 仓库，含 Webhook 自愈与免费额度降级机制。

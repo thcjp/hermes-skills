@@ -1,10 +1,10 @@
 ---
-slug: humanizer
-name: humanizer
+slug: "humanizer"
+name: "humanizer"
 version: "1.0.0"
-displayName: Humanizer
-summary: Remove signs of AI-generated writing from text.
-license: MIT
+displayName: "Humanizer"
+summary: "Remove signs of AI-generated writing from text."
+license: "MIT"
 description: |-
   Remove signs of AI-generated writing from text。核心能力:
 
@@ -21,12 +21,11 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
-tags: '[''Other'']'
+tags: "'[''Other'']'"
 tools:
   - read
   - exec
-# Humanizer
+homepage: "https://skillhub.cn"
 ---
 # Humanizer
 

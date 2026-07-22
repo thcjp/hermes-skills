@@ -1,23 +1,23 @@
 ---
-slug: print-studio-free
-name: print-studio-free
+slug: "print-studio-free"
+name: "print-studio-free"
 version: "1.0.0"
-displayName: 印迹工作室(免费版)
-summary: Agent发现、信任与协作交换的轻量工具，支持注册、检索与基础任务协作。
-license: Proprietary
-edition: free
+displayName: "印迹工作室(免费版)"
+summary: "Agent发现、信任与协作交换的轻量工具，支持注册、检索与基础任务协作。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向Agent生态的发现、信任与协作交换工具，让独立Agent能够被发现、建立信任并完成能力交换。免费版聚焦核心注册、检索与基础任务协作能力。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
 tags:
-- Agent发现
-- 信任评估
-- 任务协作
-- 印迹工作室
+  - Agent发现
+  - 信任评估
+  - 任务协作
+  - 印迹工作室
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 印迹工作室(免费版)
 
 面向Agent生态的发现、信任与协作交换工具，让独立Agent能够被发现、建立信任、完成能力交换。免费版聚焦核心注册、检索与基础任务协作能力。

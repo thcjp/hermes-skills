@@ -1,10 +1,10 @@
 ---
-slug: visual-file-sorter
-name: visual-file-sorter
+slug: "visual-file-sorter"
+name: "visual-file-sorter"
 version: "0.1.0"
-displayName: Visual File Sorter
-summary: 自动遍历下载文件夹或桌面，利用视觉模型“看”文件内容并重命名，最后归档到指定分类目录。
-license: MIT
+displayName: "Visual File Sorter"
+summary: "自动遍历下载文件夹或桌面，利用视觉模型“看”文件内容并重命名，最后归档到指定分类目录。"
+license: "MIT"
 description: |-
   自动遍历下载文件夹或桌面，利用视觉模型“看”文件内容并重命名，最后归档到指定分类目录。核心能力:
 
@@ -21,11 +21,11 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
-tags: '[''Other'']'
+tags: "'[''Other'']'"
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
 # Visual File Sorter
 

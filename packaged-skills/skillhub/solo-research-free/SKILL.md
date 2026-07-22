@@ -1,10 +1,10 @@
 ---
-slug: solo-research-free
-name: solo-research-free
+slug: "solo-research-free"
+name: "solo-research-free"
 version: "1.0.0"
-displayName: 独立研究工具免费版
-summary: 免费版研究工具，支持WebFetch内容获取与基础搜索策略。
-license: MIT
+displayName: "独立研究工具免费版"
+summary: "免费版研究工具，支持WebFetch内容获取与基础搜索策略。"
+license: "MIT"
 description: |-
   独立研究工具免费版，提供基础的多策略搜索能力。
   支持WebFetch内容获取与基础搜索回退策略。
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 信息检索
 ---
-
 # 独立研究工具（免费版）
 
 提供基础WebFetch内容获取与搜索策略的研究工具。

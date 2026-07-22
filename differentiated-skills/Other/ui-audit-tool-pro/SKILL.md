@@ -1,11 +1,11 @@
 ---
-slug: ui-audit-tool-pro
-name: ui-audit-tool-pro
+slug: "ui-audit-tool-pro"
+name: "ui-audit-tool-pro"
 version: "1.0.0"
-displayName: UI审计工具专业版
-summary: 全维度审计、设计系统对齐、批量审计与团队协作，适合设计团队与产品企业的质量治理。
-license: Proprietary
-edition: pro
+displayName: "UI审计工具专业版"
+summary: "全维度审计、设计系统对齐、批量审计与团队协作，适合设计团队与产品企业的质量治理。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   UI审计工具专业版，面向设计团队与产品企业的高阶界面质量治理平台。核心能力:
   - 全维度审计（视觉层级+风格+可访问性+导航+可用性+表单+社交证明+引导）
@@ -21,13 +21,14 @@ description: |-
 
   差异化: 专业版在免费版核心三维审计之上扩展全维度与设计系统，新增批量、协作、Figma 集成等企业级能力，并与免费版审计标准兼容
 tags:
-- UI审计
-- 设计系统
-- 质量治理
-- 专业版
+  - UI审计
+  - 设计系统
+  - 质量治理
+  - 专业版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # UI审计工具（专业版）
 

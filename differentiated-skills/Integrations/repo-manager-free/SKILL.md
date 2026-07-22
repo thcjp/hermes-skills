@@ -1,11 +1,11 @@
 ---
-slug: repo-manager-free
-name: repo-manager-free
+slug: "repo-manager-free"
+name: "repo-manager-free"
 version: "1.0.0"
-displayName: 仓库管理器(免费版)
-summary: 通过MCP工具协议管理GitHub仓库、Issue与PR,支持工具发现、参数预览与安全执行,适合个人开发者日常使用。
-license: Proprietary
-edition: free
+displayName: "仓库管理器(免费版)"
+summary: "通过MCP工具协议管理GitHub仓库、Issue与PR,支持工具发现、参数预览与安全执行,适合个人开发者日常使用。"
+license: "Proprietary"
+edition: "free"
 description: |-
   仓库管理器(免费版)是一款基于MCP工具协议的GitHub仓库管理工具,通过统一的工具调用接口管理仓库、Issue、Pull Request、提交与分支,无需手动配置API认证。核心能力:
   - 基于MCP工具协议的统一调用接口,自动处理OAuth认证
@@ -19,13 +19,14 @@ description: |-
   - Issue与PR的快速浏览与处理
   - 代码审查前的信息...
 tags:
-- GitHub
-- 仓库管理
-- MCP工具
-- 集成
+  - GitHub
+  - 仓库管理
+  - MCP工具
+  - 集成
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 仓库管理器(免费版)
 

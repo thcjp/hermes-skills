@@ -1,19 +1,19 @@
 ---
-slug: knowledge-graph
-name: knowledge-graph
+slug: "knowledge-graph"
+name: "knowledge-graph"
 version: "1.0.0"
-displayName: Knowledge Graph
-summary: Maintain SkillHub's compounding knowledge graph under life/areas/** by adding/superseding
-  atomic ...
-license: MIT
+displayName: "Knowledge Graph"
+summary: "Maintain SkillHub's compounding knowledge graph under life/areas/** by adding/superseding"
+license: "MIT"
 description: |-
   Maintain SkillHub's compounding knowledge graph under life/areas/**
   by adding/superseding atomic 。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Integrations
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Knowledge Graph
 

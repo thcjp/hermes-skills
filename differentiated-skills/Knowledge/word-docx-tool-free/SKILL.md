@@ -1,11 +1,11 @@
 ---
-slug: word-docx-tool-free
-name: word-docx-tool-free
+slug: "word-docx-tool-free"
+name: "word-docx-tool-free"
 version: "1.0.0"
-displayName: Word文档工具（免费版）
-summary: 创建、读取、编辑Word文档，支持格式化、模板、目录生成与批量操作。
-license: Proprietary
-edition: free
+displayName: "Word文档工具（免费版）"
+summary: "创建、读取、编辑Word文档，支持格式化、模板、目录生成与批量操作。"
+license: "Proprietary"
+edition: "free"
 description: |-
   Word文档工具 - （免费版）
 
@@ -17,15 +17,15 @@ description: |-
 
   适用关键词: Word文档, docx, 文档创建, 文档编辑, 模板应用, 目录生成, 批量创建
 tags:
-- Word文档
-- docx
-- 文档创建
-- 模板
+  - Word文档
+  - docx
+  - 文档创建
+  - 模板
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Word文档工具（免费版）
 
 ## 概述

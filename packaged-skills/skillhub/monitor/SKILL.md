@@ -1,19 +1,19 @@
 ---
-slug: monitor
-name: monitor
+slug: "monitor"
+name: "monitor"
 version: "1.0.2"
-displayName: Monitor
-summary: Create monitors for anything. User defines what to check, skill handles scheduling
-  and alerts.
-license: MIT
+displayName: "Monitor"
+summary: "Create monitors for anything. User defines what to check, skill handles scheduling"
+license: "MIT"
 description: |-
   Create monitors for anything。User defines what to check, skill handles
   scheduling and alerts。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Monitor
 

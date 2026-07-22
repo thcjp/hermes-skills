@@ -1,23 +1,23 @@
 ---
-slug: game-asset-gen-tool-pro
-name: game-asset-gen-tool-pro
+slug: "game-asset-gen-tool-pro"
+name: "game-asset-gen-tool-pro"
 version: "1.0.0"
-displayName: 游戏资产生成-专业版
-summary: 全栈游戏资产生成引擎，支持2D/3D资产、完整GDD、批量生成与多艺术风格。
-license: Proprietary
-edition: pro
+displayName: "游戏资产生成-专业版"
+summary: "全栈游戏资产生成引擎，支持2D/3D资产、完整GDD、批量生成与多艺术风格。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   游戏资产生成工具专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Creative
-- GameDev
-- Enterprise
-- 3D
+  - Creative
+  - GameDev
+  - Enterprise
+  - 3D
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 游戏资产生成工具（专业版）
 
 ## 概述

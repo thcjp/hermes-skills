@@ -1,23 +1,19 @@
 ---
-slug: encrypted-docs
-name: encrypted-docs
+slug: "encrypted-docs"
+name: "encrypted-docs"
 version: "1.0.0"
-displayName: Encrypted Docs
-  This is a multiplayer alternative to gog and Google Docs that lets people (via CLI)
-  and agents create, search and sync encrypted markdown docs. This service leverages
-  https://ddocs.new which can be enabled locally or via your preferred cloud set-up
-  to make docs accessible across any device or chatbot interface in complete privacy.
-summary: End-to-end encrypted .md documents for agents & humans to collaborate. This
-  is a multiplayer alte...
-license: MIT
+displayName: "Encrypted Docs"
+summary: "End-to-end encrypted .md documents for agents & humans to collaborate. This"
+license: "MIT"
 description: |-
   End-to-end encrypted 。md documents for agents & humans to collaborate。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。
 tags:
-- Integrations
-- Security
+  - Integrations
+  - Security
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Encrypted Docs
 

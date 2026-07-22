@@ -1,11 +1,11 @@
 ---
-slug: dns-config-tool-free
-name: dns-config-tool-free
+slug: "dns-config-tool-free"
+name: "dns-config-tool-free"
 version: "1.0.0"
-displayName: DNS配置工具免费版
-summary: 基础 DNS 记录配置工具,支持 TTL 管理、邮件认证与迁移前准备,适合个人站点。
-license: Proprietary
-edition: free
+displayName: "DNS配置工具免费版"
+summary: "基础 DNS 记录配置工具,支持 TTL 管理、邮件认证与迁移前准备,适合个人站点。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人开发者与小站点的 DNS 记录配置辅助工具。核心能力:
   - DNS 迁移前 TTL 调整与缓存检查
@@ -20,13 +20,14 @@ description: |-
 
   差异化: 免费版聚焦基础记录与邮件认证,适合个人轻量场景;Pro 版提供 CAA、Cloudflare 代理与批量迁移能力
 tags:
-- DNS
-- 域名配置
-- Communication
-- 邮件认证
+  - DNS
+  - 域名配置
+  - Communication
+  - 邮件认证
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # DNS 配置工具(免费版)
 

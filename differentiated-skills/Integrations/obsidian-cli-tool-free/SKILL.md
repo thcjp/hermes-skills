@@ -1,23 +1,23 @@
 ---
-slug: obsidian-cli-tool-free
-name: obsidian-cli-tool-free
+slug: "obsidian-cli-tool-free"
+name: "obsidian-cli-tool-free"
 version: "1.0.0"
-displayName: Obsidian CLI(免费版)
-summary: 通过命令行管理Obsidian笔记库的免费工具，支持文件操作、搜索、标签与日常笔记
-license: Proprietary
-edition: free
+displayName: "Obsidian CLI(免费版)"
+summary: "通过命令行管理Obsidian笔记库的免费工具，支持文件操作、搜索、标签与日常笔记"
+license: "Proprietary"
+edition: "free"
 description: |-
   Obsidian CLI工具免费版是一款面向个人知识管理场景的命令行辅助Skill，让AI Agent能够直接通过命令行操作Obsidian笔记库，实现笔记的创建、读取、搜索和基础管理。核心能力：文件读写与列表、全文搜索与标签查询、Daily Notes日常笔记、基础任务管理、属性读写。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
 tags:
-- 笔记管理
-- 命令行工具
-- 知识库
-- 集成工具
+  - 笔记管理
+  - 命令行工具
+  - 知识库
+  - 集成工具
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Obsidian CLI工具（免费版）
 
 通过命令行驱动AI Agent操作Obsidian笔记库，实现笔记的自动化创建、检索与整理。免费版提供核心文件操作、搜索和日常笔记功能，满足个人知识管理的基础需求。

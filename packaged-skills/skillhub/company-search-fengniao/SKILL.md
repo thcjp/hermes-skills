@@ -1,17 +1,18 @@
 ---
-slug: company-search-fengniao
-name: company-search-fengniao
+slug: "company-search-fengniao"
+name: "company-search-fengniao"
 version: "1.0.2"
-displayName: Company Search Fengn
-summary: 企业查询、工商查询、公司查询、企业信息查询与企业风险查询 Skill。风鸟 Fengniao（Riskbird）支持查公司基本信息、法人、股东、主要人员、对外投资、工商变更、企业信用，以及被执行...
-license: MIT-0
+displayName: "Company Search Fengn"
+summary: "企业查询、工商查询、公司查询、企业信息查询与企业风险查询 Skill。风鸟 Fengniao（Riskbird）支持查公司基本信息、法人、股东、主要人员、对外投资、工商变更、企业信用，以及被执行..."
+license: "MIT-0"
 description: |-
   企业查询、工商查询、公司查询、企业信息查询与企业风险查询 Skill。风鸟 Fengniao（Riskbird）支持查公司基本信息、法人、股东、主要人员、对外投资、工商变更、企业信用，以及被执行。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Research
+  - Research
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Company Search Fengn
 

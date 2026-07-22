@@ -1,19 +1,19 @@
 ---
-slug: compress
-name: compress
+slug: "compress"
+name: "compress"
 version: "1.0.0"
-displayName: Compress
-summary: Compress text semantically with iterative validation, anchor checksums, and
-  verified information ...
-license: MIT
+displayName: "Compress"
+summary: "Compress text semantically with iterative validation, anchor checksums, and"
+license: "MIT"
 description: |-
   Compress text semantically with iterative validation, anchor checksums,
   and verified information 。Use when 用户需要Compress相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Compress
 

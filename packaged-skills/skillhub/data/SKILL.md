@@ -1,19 +1,19 @@
 ---
-slug: data
-name: data
+slug: "data"
+name: "data"
 version: "1.0.1"
-displayName: Data
-summary: Work with data across the full lifecycle from extraction and cleaning to
-  analysis, visualization,...
-license: MIT
+displayName: "Data"
+summary: "Work with data across the full lifecycle from extraction and cleaning to"
+license: "MIT"
 description: |-
   Work with data across the full lifecycle from extraction and cleaning
   to analysis, visualization,。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Data
 

@@ -1,10 +1,10 @@
 ---
-slug: feishu-card-free
-name: feishu-card-free
+slug: "feishu-card-free"
+name: "feishu-card-free"
 version: "1.4.11"
-displayName: 协作平台卡片基础版
-summary: 基础协作平台卡片发送，支持文本、标题和颜色设置
-license: MIT
+displayName: "协作平台卡片基础版"
+summary: "基础协作平台卡片发送，支持文本、标题和颜色设置"
+license: "MIT"
 description: |-
   向协作平台用户或群组发送基础文本卡片的免费版。支持简单文本、卡片标题和颜色设置、
   安全发送（自动处理转义）。适用于基础通知和简单消息推送场景。
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 ---
-
 # 协作平台卡片（免费版）
 
 向协作平台用户或群组发送基础文本卡片的免费版。支持简单文本发送、卡片标题和颜色设置，以及安全发送（自动处理shell转义）。

@@ -1,11 +1,11 @@
 ---
-slug: personal-prod-tool-pro
-name: personal-prod-tool-pro
+slug: "personal-prod-tool-pro"
+name: "personal-prod-tool-pro"
 version: "1.0.0"
-displayName: 个人效率顾问专业版
-summary: 企业级个人效率系统,支持能量周期分析、习惯追踪、AI 教练与团队效率基准对比
-license: Proprietary
-edition: pro
+displayName: "个人效率顾问专业版"
+summary: "企业级个人效率系统,支持能量周期分析、习惯追踪、AI 教练与团队效率基准对比"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 效率管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: 效率, 时间管理, 拖延, 专注力, 能量管理, 日程规划, 任务优先级
 tags:
-- 个人效率
-- 时间管理
-- 拖延症
-- 专注力
+  - 个人效率
+  - 时间管理
+  - 拖延症
+  - 专注力
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 个人效率顾问专业版
 
 ## 概述

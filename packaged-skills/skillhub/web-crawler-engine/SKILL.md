@@ -1,21 +1,22 @@
 ---
-slug: web-crawler-engine
-name: web-crawler-engine
+slug: "web-crawler-engine"
+name: "web-crawler-engine"
 version: "1.0.0"
-displayName: 网页抓取引擎(专业版)
-summary: 全功能数据抓取与归档平台，支持增量同步、SQL分析、批量调度与监控告警。
-license: Proprietary
-edition: pro
+displayName: "网页抓取引擎(专业版)"
+summary: "全功能数据抓取与归档平台，支持增量同步、SQL分析、批量调度与监控告警。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   网页抓取引擎专业版是面向团队与生产环境的全功能数据抓取与归档平台，在免费版基础上新增增量同步调度、SQL 高级分析、批量并发抓取、多格式数据导出、监控告警体系、分布式归档六大高级模块。核心能力：提供基于时间戳的增量同步调度器、SQL 聚合统计与分析模板、并发抓取池与去重策略、CSV/JSON/Excel 多格式导出、同步异常监控与告警通知、分布式归档与云端备份方案
 tags:
-- 数据抓取
-- 集成工具
-- 数据分析
-- 专业版
+  - 数据抓取
+  - 集成工具
+  - 数据分析
+  - 专业版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 网页抓取引擎(专业版)
 

@@ -1,10 +1,10 @@
 ---
-slug: photo-captions
-name: photo-captions
-version: 1.0.0
-displayName: 多平台摄影配文
-summary: 为摄影作品生成Instagram、Flickr、X、Glass、Reddit等12个平台的差异化社交媒体配文，根据照片场景、器材、氛围适配各社区语调与格式。
-license: MIT
+slug: "photo-captions"
+name: "photo-captions"
+version: "1.0.0"
+displayName: "多平台摄影配文"
+summary: "为摄影作品生成Instagram、Flickr、X、Glass、Reddit等12个平台的差异化社交媒体配文，根据照片场景、器材、氛围适配各社区语调与格式。"
+license: "MIT"
 description: |-
   面向摄影师与影像创作者的多平台配文生成助手。当用户分享照片并附带
   拍摄背景（地点、机身、镜头、胶片、主体、氛围）时，一次性输出适配
@@ -22,8 +22,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Photo Captions
 
 当用户分享一张照片并附带拍摄背景（地点、机身、镜头、胶片型号、主体、氛围、拍摄意图），为下方所有平台一次性生成差异化配文。每个平台独立成段，语调与格式贴合该社区的真实习惯，禁止跨平台复制同一句话。

@@ -1,10 +1,10 @@
 ---
-slug: agentvibes-voice-skill
-name: agentvibes-voice-skill
+slug: "agentvibes-voice-skill"
+name: "agentvibes-voice-skill"
 version: "1.0.0"
-displayName: AgentVibes TTS语音
-summary: 多Provider TTS语音合成,914+声音,个性风格、语速、效果、背景音乐、语言学习
-license: MIT
+displayName: "AgentVibes TTS语音"
+summary: "多Provider TTS语音合成,914+声音,个性风格、语速、效果、背景音乐、语言学习"
+license: "MIT"
 description: |-
   AgentVibes TTS 语音合成客户端。集成 Piper TTS、macOS Say、Windows SAPI、Soprano 四种 Provider,
   覆盖 914+ 声音、30+ 语言。支持声音切换/预览/列出、个性风格（sarcastic/dramatic 等）、语速控制（0.5x-3.0x）、
@@ -15,8 +15,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # AgentVibes TTS
 
 AgentVibes 是多 Provider 文本转语音（TTS）客户端,为 AI Agent 提供可切换、可定制、可离线运行的语音播报能力。免费、离线、无需账号（Piper 声音文件需从 HuggingFace 下载）。

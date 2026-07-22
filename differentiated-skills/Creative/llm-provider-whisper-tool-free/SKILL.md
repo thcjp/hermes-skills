@@ -1,11 +1,11 @@
 ---
-slug: llm-provider-whisper-tool-free
-name: llm-provider-whisper-tool-free
+slug: "llm-provider-whisper-tool-free"
+name: "llm-provider-whisper-tool-free"
 version: "1.0.0"
-displayName: Whisper语音转文字免费版
-summary: 本地Whisper CLI语音转文字工具,支持常见音频格式转录与翻译,无需API Key,适合个人使用。
-license: Proprietary
-edition: free
+displayName: "Whisper语音转文字免费版"
+summary: "本地Whisper CLI语音转文字工具,支持常见音频格式转录与翻译,无需API Key,适合个人使用。"
+license: "Proprietary"
+edition: "free"
 description: |-
   基于 Whisper CLI 的本地语音转文字工具(免费版)。核心能力:
   - 本地音频转文字(transcription),无需 API Key
@@ -24,14 +24,15 @@ description: |-
   - 免费版聚焦单文件转录核心能力
   - 完全本...
 tags:
-- 创意设计
-- 语音转文字
-- 本地工具
-- 字幕生成
-- Whisper
+  - 创意设计
+  - 语音转文字
+  - 本地工具
+  - 字幕生成
+  - Whisper
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Whisper 语音转文字工具 - 免费版
 

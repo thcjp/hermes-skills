@@ -1,11 +1,11 @@
 ---
-slug: azure-gateway-cli
-name: azure-gateway-cli
+slug: "azure-gateway-cli"
+name: "azure-gateway-cli"
 version: "1.0.0"
-displayName: Azure网关CLI专业版
-summary: 企业级Azure OpenAI代理网关，支持多端点路由、负载均衡、故障切换、请求缓存与成本治理
-license: Proprietary
-edition: pro
+displayName: "Azure网关CLI专业版"
+summary: "企业级Azure OpenAI代理网关，支持多端点路由、负载均衡、故障切换、请求缓存与成本治理"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Azure网关CLI专业版是一款面向团队与企业的本地代理网关，在免费版协议适配基础上，新增多端点路由、智能负载均衡、故障自动切换、请求级缓存、成本统计与多租户隔离等高级能力。核心能力：
   - 多Azure端点路由，按权重与延迟动态分配流量
@@ -15,12 +15,13 @@ description: |-
   - 多租户隔离与API Key轮换，适合团队共享部署
   - 内置systemd服务模板...
 tags:
-- 集成工具
-- API网关
-- 企业代理
+  - 集成工具
+  - API网关
+  - 企业代理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Azure网关CLI专业版
 

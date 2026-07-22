@@ -1,19 +1,19 @@
 ---
-slug: miniprogram-development
-name: miniprogram-development
+slug: "miniprogram-development"
+name: "miniprogram-development"
 version: "1.28.12"
-displayName: Miniprogram Developm
-summary: WeChat Mini Program development skill for building, debugging, previewing,
-  testing, publishing, a...
-license: MIT-0
+displayName: "Miniprogram Developm"
+summary: "WeChat Mini Program development skill for building, debugging, previewing,"
+license: "MIT-0"
 description: |-
   WeChat Mini Program development skill for building, debugging, previewing,
   testing, publishing, a。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-- Other
+  - Other
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Miniprogram Developm
 

@@ -1,11 +1,11 @@
 ---
-slug: bilibili-toolkit
-name: bilibili-toolkit
+slug: "bilibili-toolkit"
+name: "bilibili-toolkit"
 version: "1.0.0"
-displayName: B站工具箱专业版
-summary: 企业级B站运营工具，支持高清下载、视频发布、批量操作、数据追踪与凭证安全管理。
-license: Proprietary
-edition: pro
+displayName: "B站工具箱专业版"
+summary: "企业级B站运营工具，支持高清下载、视频发布、批量操作、数据追踪与凭证安全管理。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   B站工具箱专业版 —— 面向专业UP主与企业运营的全功能B站工具。核心能力:
   - 高清视频下载：支持1080p+、4K超清画质下载
@@ -14,14 +14,15 @@ description: |-
   - 数据追踪监控：定时追踪视频播放量、点赞等指标变化
   - 视频对比分析：多视频数据对比...
 tags:
-- B站
-- 视频发布
-- 企业工具
-- 数据追踪
-- 批量处理
+  - B站
+  - 视频发布
+  - 企业工具
+  - 数据追踪
+  - 批量处理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # B站工具箱专业版
 

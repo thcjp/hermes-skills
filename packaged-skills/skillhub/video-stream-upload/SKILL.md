@@ -1,25 +1,24 @@
 ---
-slug: video-stream-upload
-name: video-stream-upload
+slug: "video-stream-upload"
+name: "video-stream-upload"
 version: "1.0.0"
-displayName: 视频上传-专业版
-summary: 企业级视频上传与流媒体管理平台，支持自定义编码、多分辨率、批量上传、缩略图管理与转码费用预估。
-license: Proprietary
-edition: pro
+displayName: "视频上传-专业版"
+summary: "企业级视频上传与流媒体管理平台，支持自定义编码、多分辨率、批量上传、缩略图管理与转码费用预估。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   视频上传专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Creative
-- 视频上传
-- 流媒体
-- 专业版
-- 批量处理
-- 企业级
+  - Creative
+  - 视频上传
+  - 流媒体
+  - 专业版
+  - 批量处理
+  - 企业级
 tools:
   - - read
-- exec
-# 视频上传工具 - 专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 视频上传-专业版
 

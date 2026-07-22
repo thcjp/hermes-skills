@@ -1,22 +1,22 @@
 ---
-slug: pan-file-commander-free
-name: pan-file-commander-free
+slug: "pan-file-commander-free"
+name: "pan-file-commander-free"
 version: "1.0.0"
-displayName: 网盘指挥官免费版
-summary: 命令式百度网盘文件管理,快捷命令模板,分类视图,路径校验,确认规则。
-license: Proprietary
-edition: free
+displayName: "网盘指挥官免费版"
+summary: "命令式百度网盘文件管理,快捷命令模板,分类视图,路径校验,确认规则。"
+license: "Proprietary"
+edition: "free"
 description: |-
   网盘指挥官免费版是一个以"命令式高效操作"为核心视角的百度网盘文件管理工具,所有操作限制在 `/apps/bdpan/` 目录内。针对网盘管理"命令记不住、操作不连贯、路径易出错、风险操作无确认、文件难分类"五大痛点,构建了快捷命令模板、分类视图、智能路径校验、分层确认规则和操作意图识别五大基础能力
 tags:
-- 智能代理
-- 文件管理
-- 百度网盘
-- 命令式操作
+  - 智能代理
+  - 文件管理
+  - 百度网盘
+  - 命令式操作
 tools:
   - - read
-- exec
-# 网盘指挥官(免费版)
+  - exec
+homepage: "https://skillhub.cn"
 ---
 百度网盘文件管理工具,以"命令式高效操作"为核心视角,所有操作限制在 `/apps/bdpan/` 目录内。适配所有支持SKILL.md的Agent平台。
 

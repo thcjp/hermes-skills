@@ -1,11 +1,11 @@
 ---
-slug: timeline-digest
-name: timeline-digest
+slug: "timeline-digest"
+name: "timeline-digest"
 version: "1.0.0"
-displayName: 时间线摘要工具-专业版
-summary: 企业级X/Twitter时间线摘要平台,支持定时调度/智能分类/多源聚合/自动推送
-license: Proprietary
-edition: pro
+displayName: "时间线摘要工具-专业版"
+summary: "企业级X/Twitter时间线摘要平台,支持定时调度/智能分类/多源聚合/自动推送"
+license: "Proprietary"
+edition: "pro"
 description: |-
   时间线摘要工具专业版,面向企业和专业用户的高级X/Twitter时间线信息聚合平台。核心能力:
   - 全时间线抓取(For You + Following + 自定义列表)
@@ -19,19 +19,17 @@ description: |-
 
   适用场景:
   - 企业舆情监控与行业动态追踪
- ...
 tags:
-- 沟通协作
-- 信息聚合
-- X/Twitter
-- 企业级
-- 智能摘要
-- 自动化
+  - 沟通协作
+  - 信息聚合
+  - X/Twitter
+  - 企业级
+  - 智能摘要
+  - 自动化
 tools:
   - - read
-- exec
-# 时间线摘要工具(专业版)
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 时间线摘要工具-专业版
 

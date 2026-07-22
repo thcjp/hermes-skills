@@ -1,11 +1,11 @@
 ---
-slug: db-schema-designer
-name: db-schema-designer
+slug: "db-schema-designer"
+name: "db-schema-designer"
 version: "1.0.0"
-displayName: 数据库Schema设计器(专业版)
-summary: 全功能数据库建模工具,支持SQLite/`PostgreSQL`/MySQL多引擎,含性能诊断、版本管理、团队协作与自定义抽取器。
-license: Proprietary
-edition: pro
+displayName: "数据库Schema设计器(专业版)"
+summary: "全功能数据库建模工具,支持SQLite/`PostgreSQL`/MySQL多引擎,含性能诊断、版本管理、团队协作与自定义抽取器。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   数据库Schema设计器(专业版)是企业级数据库建模与演进管理工具,在免费版软Schema方法论基础上,扩展多数据库引擎适配、性能诊断、Schema版本管理、团队协作与自定义抽取器等高级能力。核心能力:
   - 支持SQLite、`PostgreSQL`、MySQL三大引擎的统一建模与差异化适配
@@ -15,13 +15,14 @@ description: |-
   - 团队协作模式,支持Schema评审、变更审批、权限分级
   -...
 tags:
-- 数据库
-- 建模
-- 性能优化
-- 企业版
+  - 数据库
+  - 建模
+  - 性能优化
+  - 企业版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 数据库Schema设计器(专业版)
 

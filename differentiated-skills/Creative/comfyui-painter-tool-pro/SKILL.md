@@ -1,11 +1,11 @@
 ---
-slug: comfyui-painter-tool-pro
-name: comfyui-painter-tool-pro
+slug: "comfyui-painter-tool-pro"
+name: "comfyui-painter-tool-pro"
 version: "1.0.0"
-displayName: ComfyUI绘画专业版
-summary: 专业AI绘画工具，支持自动调参、CivitAI模型管理、批量生成、图生图与ControlNet。
-license: Proprietary
-edition: pro
+displayName: "ComfyUI绘画专业版"
+summary: "专业AI绘画工具，支持自动调参、CivitAI模型管理、批量生成、图生图与ControlNet。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   ComfyUI绘画专业版 —— 面向专业创作者与设计团队的高级本地AI绘画工具。核心能力:
   - 自动调参：根据提示词自动优化采样器、步数、CFG等参数
@@ -14,16 +14,16 @@ description: |-
   - ControlNet集成：姿态控制、边缘检测、深度图等专业控制
   - 批量生成：队列管理...
 tags:
-- AI绘画
-- 图像生成
-- 企业工具
-- ControlNet
-- CivitAI
+  - AI绘画
+  - 图像生成
+  - 企业工具
+  - ControlNet
+  - CivitAI
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # ComfyUI绘画专业版
 
 ## 概述

@@ -1,11 +1,11 @@
 ---
-slug: brave-search-tool-free
-name: brave-search-tool-free
+slug: "brave-search-tool-free"
+name: "brave-search-tool-free"
 version: "1.0.0"
-displayName: Brave搜索工具-免费版
-summary: 基于Brave Search API的网页搜索与内容提取工具,无需浏览器,适合个人用户
-license: Proprietary
-edition: free
+displayName: "Brave搜索工具-免费版"
+summary: "基于Brave Search API的网页搜索与内容提取工具,无需浏览器,适合个人用户"
+license: "Proprietary"
+edition: "free"
 description: |-
   基于 Brave Search API 的无头网页搜索与内容提取工具,无需启动浏览器,
   支持基础搜索、内容提取与结果数量配置。核心能力:
@@ -21,12 +21,13 @@ description: |-
 
   差异化:免费版提供核心搜索与内容提取能力,适合个人用户轻量场景
 tags:
-- 研究工具
-- 网页搜索
-- 信息检索
+  - 研究工具
+  - 网页搜索
+  - 信息检索
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Brave搜索工具(免费版)
 

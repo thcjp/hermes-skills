@@ -1,10 +1,10 @@
 ---
-slug: vpn
-name: vpn
+slug: "vpn"
+name: "vpn"
 version: "1.0.0"
-displayName: VPN
-summary: Configure and troubleshoot VPN connections for privacy and remote access.
-license: MIT
+displayName: "VPN"
+summary: "Configure and troubleshoot VPN connections for privacy and remote access."
+license: "MIT"
 description: |-
   Configure and troubleshoot VPN connections for privacy and remote access。核心能力:
 
@@ -21,12 +21,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Security
+  - Security
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # VPN
 

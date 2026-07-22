@@ -1,22 +1,23 @@
 ---
-slug: pg-job-queue
-name: pg-job-queue
+slug: "pg-job-queue"
+name: "pg-job-queue"
 version: "1.0.0"
-displayName: PG任务队列(专业版)
-summary: 基于`PostgreSQL`的企业级任务队列，支持DAG编排、分片扩展、死信队列与高可用方案。
-license: Proprietary
-edition: pro
+displayName: "PG任务队列(专业版)"
+summary: "基于`PostgreSQL`的企业级任务队列，支持DAG编排、分片扩展、死信队列与高可用方案。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   PG任务队列专业版是一套面向中大型团队与企业级场景的 `PostgreSQL` 任务队列解决方案，在免费版基础上扩展出任务依赖图编排、多队列分片、死信队列、高可用部署、灰度发布与高级监控等能力。核心能力：提供 DAG 任务编排模型、按 job_type 水平分片方案、死信队列与人工补偿流程、主备切换与故障转移设计、灰度发布与版本回滚策略、Prometheus 指标体系与告警规则模板
 tags:
-- 数据库
-- 集成工具
-- 任务队列
-- 企业级
-- 专业版
+  - 数据库
+  - 集成工具
+  - 任务队列
+  - 企业级
+  - 专业版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # PG任务队列(专业版)
 

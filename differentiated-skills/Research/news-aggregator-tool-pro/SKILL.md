@@ -1,24 +1,23 @@
 ---
-slug: news-aggregator-tool-pro
-name: news-aggregator-tool-pro
+slug: "news-aggregator-tool-pro"
+name: "news-aggregator-tool-pro"
 version: "1.0.0"
-displayName: 新闻聚合工具专业版
-summary: 企业级新闻聚合平台，支持国内外30+信息源、定时聚合、多格式导出与API集成
-license: Proprietary
-edition: pro
+displayName: "新闻聚合工具专业版"
+summary: "企业级新闻聚合平台，支持国内外30+信息源、定时聚合、多格式导出与API集成"
+license: "Proprietary"
+edition: "pro"
 description: |-
   新闻聚合工具专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 新闻
-- 聚合
-- 企业级
-- 国际新闻
-- 舆情监控
+  - 新闻
+  - 聚合
+  - 企业级
+  - 国际新闻
+  - 舆情监控
 tools:
   - - read
-- exec
-# 新闻聚合工具（专业版）
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 新闻聚合工具专业版在免费版国内新闻聚合的基础上，新增 30+ 国内外信息源、定时自动聚合、突发新闻触发推送、多格式导出、自定义新闻源接入、多语言聚合和 REST API 集成等企业级能力，满足企业舆情监控、媒体采编和行业研究的深度需求。
 

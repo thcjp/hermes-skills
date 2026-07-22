@@ -1,22 +1,23 @@
 ---
-slug: pyx-scanner
-name: pyx-scanner
+slug: "pyx-scanner"
+name: "pyx-scanner"
 version: "1.0.0"
-displayName: Skill安全扫描(专业版)
-summary: 企业级Skill安全检测方案，支持批量扫描、持续监控、自定义策略与团队协作审计。
-license: Proprietary
-edition: pro
+displayName: "Skill安全扫描(专业版)"
+summary: "企业级Skill安全检测方案，支持批量扫描、持续监控、自定义策略与团队协作审计。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Skill安全扫描专业版是一套面向安全团队与企业级场景的 AI Agent Skill 安全检测解决方案，在免费版基础上扩展出批量扫描与队列调度、持续监控与变更通知、自定义安全策略、详细漏洞分析与修复建议、团队协作与审计日志等能力。核心能力：提供批量扫描任务编排、Skill 变更持续监控与告警、组织级安全策略与白名单管理、漏洞详情分析与修复建议、扫描结果团队协作与审计存档
 tags:
-- 安全
-- 集成工具
-- 扫描
-- 企业级
-- 专业版
+  - 安全
+  - 集成工具
+  - 扫描
+  - 企业级
+  - 专业版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Skill安全扫描(专业版)
 

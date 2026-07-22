@@ -1,11 +1,11 @@
 ---
-slug: ws-calendar-tool-pro
-name: ws-calendar-tool-pro
+slug: "ws-calendar-tool-pro"
+name: "ws-calendar-tool-pro"
 version: "1.0.0"
-displayName: 日历同步工具专业版
-summary: 企业级日历同步系统,支持多平台聚合、智能调度、团队协作与资源管理
-license: Proprietary
-edition: pro
+displayName: "日历同步工具专业版"
+summary: "企业级日历同步系统,支持多平台聚合、智能调度、团队协作与资源管理"
+license: "Proprietary"
+edition: "pro"
 description: |-
   核心能力: 日程管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
 
@@ -15,15 +15,15 @@ description: |-
 
   适用关键词: calendar, 日历, 同步, 日程, 事件, 提醒, 跨平台
 tags:
-- 日历
-- 同步
-- 日程
-- 提醒
+  - 日历
+  - 同步
+  - 日程
+  - 提醒
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 日历同步工具专业版
 
 ## 概述

@@ -1,11 +1,11 @@
 ---
-slug: code-quality-tool-pro
-name: code-quality-tool-pro
+slug: "code-quality-tool-pro"
+name: "code-quality-tool-pro"
 version: "1.0.0"
-displayName: 代码质量检查专业版
-summary: 企业级代码质量审计,支持OWASP Top 10、批量扫描、自定义规则与CI/CD集成,输出多格式报告。
-license: Proprietary
-edition: pro
+displayName: "代码质量检查专业版"
+summary: "企业级代码质量审计,支持OWASP Top 10、批量扫描、自定义规则与CI/CD集成,输出多格式报告。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向企业研发团队的高级代码质量审计工具,提供深度安全扫描、合规性检查、批量项目分析与CI/CD流水线集成。核心能力:
   - OWASP Top 10 安全漏洞深度扫描
@@ -24,16 +24,15 @@ description: |-
   差异化:
   - 专业版完全兼容免费版...
 tags:
-- 开发工具
-- 代码质量
-- 安全审计
-- 企业级
-- DevSecOps
+  - 开发工具
+  - 代码质量
+  - 安全审计
+  - 企业级
+  - DevSecOps
 tools:
   - - read
-- exec
-# 代码质量检查工具 - 专业版
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 代码质量检查工具专业版为企业研发团队提供深度代码审计能力。在免费版基础能力之上,专业版新增 OWASP Top 10 漏洞扫描、全项目批量分析、自定义规则引擎、多格式报告输出和 CI/CD 流水线集成,满足企业级 DevSecOps 实践需求。
 

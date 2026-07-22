@@ -1,11 +1,11 @@
 ---
-slug: tool-call-retry-tool-free
-name: tool-call-retry-tool-free
+slug: "tool-call-retry-tool-free"
+name: "tool-call-retry-tool-free"
 version: "1.0.0"
-displayName: 工具调用重试免费版
-summary: 为LLM工具调用提供指数退避重试与格式校验，零侵入封装，成功率提升90%以上，适合个人开发者。
-license: Proprietary
-edition: free
+displayName: "工具调用重试免费版"
+summary: "为LLM工具调用提供指数退避重试与格式校验，零侵入封装，成功率提升90%以上，适合个人开发者。"
+license: "Proprietary"
+edition: "free"
 description: |-
   工具调用重试工具免费版，面向个人开发者的轻量级LLM工具调用增强方案。核心能力:
   - 指数退避重试机制
@@ -20,15 +20,15 @@ description: |-
 
   差异化: 免费版聚焦核心重试与校验能力，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手
 tags:
-- 工具调用
-- 重试机制
-- 稳定性增强
-- 免费版
+  - 工具调用
+  - 重试机制
+  - 稳定性增强
+  - 免费版
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 工具调用重试工具（免费版）
 
 ## 概述

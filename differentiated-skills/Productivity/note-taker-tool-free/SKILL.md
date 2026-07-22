@@ -1,11 +1,11 @@
 ---
-slug: note-taker-tool-free
-name: note-taker-tool-free
+slug: "note-taker-tool-free"
+name: "note-taker-tool-free"
 version: "1.0.0"
-displayName: 笔记记录器基础版
-summary: 命令行任务与笔记管理工具,支持添加、列表、完成、优先级与提醒功能
-license: Proprietary
-edition: free
+displayName: "笔记记录器基础版"
+summary: "命令行任务与笔记管理工具,支持添加、列表、完成、优先级与提醒功能"
+license: "Proprietary"
+edition: "free"
 description: |-
   核心能力: 任务管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
 
@@ -15,13 +15,14 @@ description: |-
 
   适用关键词: note-taker, 任务, 待办, 清单, 优先级, 提醒, todo
 tags:
-- 笔记
-- 任务管理
-- 待办清单
-- 命令行
+  - 笔记
+  - 任务管理
+  - 待办清单
+  - 命令行
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 笔记记录器基础版
 

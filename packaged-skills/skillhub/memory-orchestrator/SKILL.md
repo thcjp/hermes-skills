@@ -1,10 +1,10 @@
 ---
-slug: memory-orchestrator
-name: memory-orchestrator
+slug: "memory-orchestrator"
+name: "memory-orchestrator"
 version: "1.0.0"
-displayName: 记忆编排器
-summary: 四层记忆架构管理系统，多模式检索与健康度仪表盘，支持并发写入冲突解决
-license: MIT
+displayName: "记忆编排器"
+summary: "四层记忆架构管理系统，多模式检索与健康度仪表盘，支持并发写入冲突解决"
+license: "MIT"
 description: |-
   记忆编排器是面向 AI Agent 的智能记忆管理系统，针对分层体系不清、自动摘要质量不稳、
   并发写入冲突、缺乏健康度指标四大痛点而设计。核心能力包括：四层记忆架构（工作/短期/长期/重要，
@@ -17,8 +17,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 智能助手
 ---
-
 # 记忆编排器
 
 面向 AI Agent 的智能记忆管理系统，四层架构与多模式检索，全生命周期编排。

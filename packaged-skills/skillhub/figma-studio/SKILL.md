@@ -1,21 +1,21 @@
 ---
-slug: figma-studio
-name: figma-studio
+slug: "figma-studio"
+name: "figma-studio"
 version: "1.0.0"
-displayName: Figma工作室(专业版)
-summary: 企业级Figma设计协作工具，支持批量导出、Webhook管理、设计变更监控与团队资源治理。
-license: Proprietary
-edition: pro
+displayName: "Figma工作室(专业版)"
+summary: "企业级Figma设计协作工具，支持批量导出、Webhook管理、设计变更监控与团队资源治理。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Figma工作室专业版是一款面向设计团队与企业级设计工程化场景的全功能Figma协作工具。在免费版的文件读取、评论管理、图片导出、设计令牌提取基础上，新增批量导出、Webhook管理、设计变更监控、团队资源治理、设计令牌转Tailwind与设计版本对比六大高级能力，覆盖从单文件读取到企业级设计系统治理的全场景需求
 tags:
-- 设计协作
-- 设计工程化
-- 企业工具
+  - 设计协作
+  - 设计工程化
+  - 企业工具
 tools:
   - - read
-- exec
-# Figma工作室（专业版）
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Figma工作室(专业版)
 

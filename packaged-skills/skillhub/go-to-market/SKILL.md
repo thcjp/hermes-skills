@@ -1,10 +1,10 @@
 ---
-slug: go-to-market
-name: go-to-market
+slug: "go-to-market"
+name: "go-to-market"
 version: "1.0.0"
-displayName: 上市策略
-summary: 从ICP定义到90天执行计划,覆盖定位、渠道、定价与度量的GTM全流程。
-license: MIT
+displayName: "上市策略"
+summary: "从ICP定义到90天执行计划,覆盖定位、渠道、定价与度量的GTM全流程。"
+license: "MIT"
 description: |-
   构建产品上市或进入新市场的GTM策略:目标客户画像、定位陈述、
   销售运动模式选择、渠道筛选、90天执行计划、定价与优惠、度量
@@ -12,8 +12,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 研发工具
 ---
-
 # 上市策略
 
 GTM(上市)策略是触达客户并产生收入的计划。回答:客户是谁?信息是什么?如何触达?如何销售?对独立创业者,精准GTM策略避免在无效渠道或信息上浪费精力。

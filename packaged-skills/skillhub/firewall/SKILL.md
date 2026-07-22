@@ -1,10 +1,10 @@
 ---
-slug: firewall
-name: firewall
+slug: "firewall"
+name: "firewall"
 version: "1.0.0"
-displayName: Firewall
-summary: Configure firewalls on servers and cloud providers with security best practices.
-license: MIT
+displayName: "Firewall"
+summary: "Configure firewalls on servers and cloud providers with security best practices."
+license: "MIT"
 description: |-
   Configure firewalls on servers and cloud providers with security best
   practices。核心能力:
@@ -22,12 +22,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Security
+  - Security
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Firewall
 

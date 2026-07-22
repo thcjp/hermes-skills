@@ -1,25 +1,25 @@
 ---
-slug: music-gen-cellcog-tool-free
-name: music-gen-cellcog-tool-free
+slug: "music-gen-cellcog-tool-free"
+name: "music-gen-cellcog-tool-free"
 version: "1.0.0"
-displayName: CellCog音乐生成免费版
-summary: 基于CellCog AI引擎的音乐生成工具,支持文本/歌词生成音乐、多种风格选择,适合个人内容创作。
-license: Proprietary
-edition: free
+displayName: "CellCog音乐生成免费版"
+summary: "基于CellCog AI引擎的音乐生成工具,支持文本/歌词生成音乐、多种风格选择,适合个人内容创作。"
+license: "Proprietary"
+edition: "free"
 description: |-
   CellCog音乐生成免费版帮助个人用户通过CellCog AI引擎创建音乐。支持从文本描述或歌词生成完整音乐作品,涵盖流行、电子、古典、环境等多种风格,
   生成的音乐可用于个人内容创作。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 音乐生成
-- CellCog
-- AI音乐
-- 文生音乐
-- 内容创作
+  - 音乐生成
+  - CellCog
+  - AI音乐
+  - 文生音乐
+  - 内容创作
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # CellCog音乐生成免费版
 
 ## 概述

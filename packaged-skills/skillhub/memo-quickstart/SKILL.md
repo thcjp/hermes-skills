@@ -1,10 +1,10 @@
 ---
-slug: memo-quickstart
-name: memo-quickstart
+slug: "memo-quickstart"
+name: "memo-quickstart"
 version: "1.0.0"
-displayName: 记忆快速启动
-summary: 零依赖本地记忆系统：三层架构+混合检索+WAL日志+关系图谱+迁移工具。
-license: MIT
+displayName: "记忆快速启动"
+summary: "零依赖本地记忆系统：三层架构+混合检索+WAL日志+关系图谱+迁移工具。"
+license: "MIT"
 description: |-
   面向零依赖场景的本地记忆系统，解决搜索精度不足、上手门槛高、数据格式不统一四大痛点。
   三层记忆架构（热内存SESSION-STATE.json/冷存储memories/目录/人类可读归档MEMORY.md+daily/）协同提供从快到慢的记忆存取。
@@ -18,8 +18,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 创意设计
 ---
-
 # 记忆快速启动
 
 面向零依赖场景的本地记忆系统，用三层架构和混合检索算法，在不引入任何外部依赖的前提下，提供开箱即用的记忆能力。无API Key、无云、无追踪，纯本地记忆。

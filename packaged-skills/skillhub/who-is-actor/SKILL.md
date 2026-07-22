@@ -1,10 +1,10 @@
 ---
-slug: who-is-actor
-name: who-is-actor
+slug: "who-is-actor"
+name: "who-is-actor"
 version: "1.0.0"
-displayName: Who Is Actor
-summary: Git repository actor identification skill.
-license: MIT
+displayName: "Who Is Actor"
+summary: "Git repository actor identification skill."
+license: "MIT"
 description: |-
   Git repository actor identification skill。核心能力:
 
@@ -21,13 +21,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Development
+  - Development
 tools:
   - - read
-- exec
-# Who Is Actor — Git Repository Collaboration-Pattern Analysis Skill
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Who Is Actor
 

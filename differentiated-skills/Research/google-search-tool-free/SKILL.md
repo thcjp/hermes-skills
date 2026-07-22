@@ -1,11 +1,11 @@
 ---
-slug: google-search-tool-free
-name: google-search-tool-free
+slug: "google-search-tool-free"
+name: "google-search-tool-free"
 version: "1.0.0"
-displayName: 谷歌搜索工具
-summary: 基于 Google Custom Search Engine 的联网搜索工具，支持实时信息检索与结果结构化输出，适合个人研究与学习使用。
-license: Proprietary
-edition: free
+displayName: "谷歌搜索工具"
+summary: "基于 Google Custom Search Engine 的联网搜索工具，支持实时信息检索与结果结构化输出，适合个人研究与学习使用。"
+license: "Proprietary"
+edition: "free"
 description: |-
   基于 Google Custom Search Engine 的联网搜索工具，支持实时信息检索与结果结构化输出，适合个人研究与学习使用。核心能力:
   - 通过 Google Custom Search API 进行精准搜索
@@ -21,13 +21,14 @@ description: |-
   差异化:
   - 免费版聚焦单次搜索...
 tags:
-- 搜索
-- Google
-- 研究工具
-- 信息检索
+  - 搜索
+  - Google
+  - 研究工具
+  - 信息检索
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 谷歌搜索工具（免费版）
 

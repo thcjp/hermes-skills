@@ -1,23 +1,23 @@
 ---
-slug: knowledge-graph-builder-free
-name: knowledge-graph-builder-free
+slug: "knowledge-graph-builder-free"
+name: "knowledge-graph-builder-free"
 version: "1.0.0"
-displayName: Knowledge Graph Buil
-summary: AI Agent类型化知识图谱系统，实体-关系-约束三要素，JSONL存储+约束验证。
-license: Proprietary
-edition: free
+displayName: "Knowledge Graph Buil"
+summary: "AI Agent类型化知识图谱系统，实体-关系-约束三要素，JSONL存储+约束验证。"
+license: "Proprietary"
+edition: "free"
 description: |-
   知识图谱构建器免费版为AI Agent提供类型化知识图谱系统，将零散的信息片段组织为可验证、可查询、可推理的结构化图谱。基于"实体-关系-约束"三要素，每条变更在提交前都经过类型约束验证，确保图谱一致性。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 知识图谱
-- 类型化实体
-- 关系网络
-- 约束验证
+  - 知识图谱
+  - 类型化实体
+  - 关系网络
+  - 约束验证
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 知识图谱构建器（免费版）
 > **AI Agent的类型化知识图谱系统。实体-关系-约束三要素，每条变更都经过验证。**
 

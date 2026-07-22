@@ -1,11 +1,11 @@
 ---
-slug: python-dataviz-tool-pro
-name: python-dataviz-tool-pro
+slug: "python-dataviz-tool-pro"
+name: "python-dataviz-tool-pro"
 version: "1.0.0"
-displayName: Python数据可视化-专业版
-summary: 企业级数据可视化平台,支持交互式仪表盘、大数据可视化与实时数据流图表
-license: Proprietary
-edition: pro
+displayName: "Python数据可视化-专业版"
+summary: "企业级数据可视化平台,支持交互式仪表盘、大数据可视化与实时数据流图表"
+license: "Proprietary"
+edition: "pro"
 description: |-
   企业级数据可视化工具专业版,面向团队与商业应用。核心能力:
   - 交互式 Web 仪表盘(Dash/Streamlit)
@@ -25,14 +25,15 @@ description: |-
 
   差异化:专业版在免费版基础上扩展交互式仪表盘、大数据可视化、...
 tags:
-- 数据可视化
-- 企业级
-- 仪表盘
-- 大数据
-- 实时图表
+  - 数据可视化
+  - 企业级
+  - 仪表盘
+  - 大数据
+  - 实时图表
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Python 数据可视化 - 专业版
 

@@ -1,24 +1,24 @@
 ---
-slug: finance-toolkit-free
-name: finance-toolkit-free
+slug: "finance-toolkit-free"
+name: "finance-toolkit-free"
 version: "1.0.0"
-displayName: 行情追踪基础工具
-summary: 股票、ETF、指数、外汇行情查询工具，支持本地自选股与历史数据获取。
-license: Proprietary
-edition: free
+displayName: "行情追踪基础工具"
+summary: "股票、ETF、指数、外汇行情查询工具，支持本地自选股与历史数据获取。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向个人投资者的轻量级行情追踪工具，支持股票、ETF、指数、外汇的实时
   报价与历史序列获取。内置缓存机制避免频率限制，适合日常行情查询与
   个人自选股管理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Finance
-- 行情追踪
-- 自选股
+  - Finance
+  - 行情追踪
+  - 自选股
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 行情追踪基础工具（免费版）
 
 ## 概述

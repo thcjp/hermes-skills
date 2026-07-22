@@ -1,11 +1,11 @@
 ---
-slug: knowledge-graph-paid
-name: knowledge-graph-paid
+slug: "knowledge-graph-paid"
+name: "knowledge-graph-paid"
 version: "1.0.0"
-displayName: 知识图谱工具(专业版)
-summary: 团队级嵌入式知识图谱,含加密保险库、可视化、多Agent协作与内存导入。
-license: Proprietary
-edition: pro
+displayName: "知识图谱工具(专业版)"
+summary: "团队级嵌入式知识图谱,含加密保险库、可视化、多Agent协作与内存导入。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   知识图谱工具(专业版)面向团队与企业,提供完整的嵌入式知识图谱能力,含加密保险库、离线可视化、跨Agent协作与内存自动导入。核心能力:
   - 全量查询、合并、嵌套、整理能力
@@ -21,15 +21,16 @@ description: |-
   - 多Agent协作共享长期记忆
   - 敏感配置...
 tags:
-- Development
-- Knowledge
-- 团队知识库
-- 企业级
-- 可视化
-- 安全
+  - Development
+  - Knowledge
+  - 团队知识库
+  - 企业级
+  - 可视化
+  - 安全
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 知识图谱工具(专业版)
 

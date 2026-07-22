@@ -1,10 +1,10 @@
 ---
-slug: multi-search-engine
-name: multi-search-engine
+slug: "multi-search-engine"
+name: "multi-search-engine"
 version: "2.1.3"
-displayName: Multi Search Engine
-summary: Multi search engine integration with 16 engines (7 CN + 9 Global).
-license: MIT
+displayName: "Multi Search Engine"
+summary: "Multi search engine integration with 16 engines (7 CN + 9 Global)."
+license: "MIT"
 description: |-
   Multi search engine integration with 16 engines (7 CN + 9 Global)。核心能力:
 
@@ -21,13 +21,13 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Security
-- Integrations
+  - Security
+  - Integrations
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Multi Search Engine
 

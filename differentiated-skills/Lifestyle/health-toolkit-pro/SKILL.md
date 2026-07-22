@@ -1,11 +1,11 @@
 ---
-slug: health-toolkit-pro
-name: health-toolkit-pro
+slug: "health-toolkit-pro"
+name: "health-toolkit-pro"
 version: "1.0.0"
-displayName: 健康管理工具箱专业版
-summary: 企业级健康管理平台,支持多用户、设备同步、AI建议与医疗级报告
-license: Proprietary
-edition: pro
+displayName: "健康管理工具箱专业版"
+summary: "企业级健康管理平台,支持多用户、设备同步、AI建议与医疗级报告"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向家庭、企业健康关怀与医疗机构的健康管理平台。
   核心能力: 多用户管理、可穿戴设备同步、AI个性化建议、医疗级报告、异常预警、专业分析
@@ -13,17 +13,16 @@ description: |-
   差异化: 专业版支持多用户与专业能力,与免费版数据格式兼容
   适用关键词: 多用户健康, 设备同步, AI健康建议, 医疗报告, 异常预警, 慢病管理
 tags:
-- 健康管理
-- 企业级
-- 多用户
-- 设备同步
-- AI建议
-- 医疗报告
+  - 健康管理
+  - 企业级
+  - 多用户
+  - 设备同步
+  - AI建议
+  - 医疗报告
 tools:
   - - read
-- exec
-# 健康管理工具箱 (专业版)
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 专业版面向家庭、企业健康关怀项目与医疗机构,在免费版个人健康管理之上,扩展多用户管理、可穿戴设备同步、AI 个性化建议、医疗级报告、异常预警、专业分析等企业级能力。支持家庭多成员管理、企业员工健康关怀、健身工作室会员跟踪、慢病管理等场景。
 

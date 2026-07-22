@@ -1,21 +1,22 @@
 ---
-slug: json-toolkit
-name: json-toolkit
+slug: "json-toolkit"
+name: "json-toolkit"
 version: "1.0.0"
-displayName: JSON工具箱(专业版)
-summary: 全功能 JSON 处理，含高级序列化、解析安全、Unicode 边界、自动化校验。
-license: Proprietary
-edition: pro
+displayName: "JSON工具箱(专业版)"
+summary: "全功能 JSON 处理，含高级序列化、解析安全、Unicode 边界、自动化校验。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   全功能 JSON 处理。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- 集成工具
-- 数据规范
-- 企业效率
-- 安全
+  - 集成工具
+  - 数据规范
+  - 企业效率
+  - 安全
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # JSON工具箱(专业版)
 

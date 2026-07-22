@@ -1,11 +1,11 @@
 ---
-slug: compress-pdf-tool-free
-name: compress-pdf-tool-free
+slug: "compress-pdf-tool-free"
+name: "compress-pdf-tool-free"
 version: "1.0.0"
-displayName: PDF压缩工具（免费版）
-summary: 通过API上传PDF文件进行压缩，支持图像质量与DPI参数调整，轮询返回下载链接。
-license: Proprietary
-edition: free
+displayName: "PDF压缩工具（免费版）"
+summary: "通过API上传PDF文件进行压缩，支持图像质量与DPI参数调整，轮询返回下载链接。"
+license: "Proprietary"
+edition: "free"
 description: |-
   PDF压缩工具 - （免费版）
 
@@ -17,14 +17,14 @@ description: |-
 
   适用关键词: PDF压缩, 文件压缩, 减小体积, 压缩PDF, compress pdf, 批量压缩
 tags:
-- PDF处理
-- 文件压缩
-- 批量处理
+  - PDF处理
+  - 文件压缩
+  - 批量处理
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # PDF压缩工具（免费版）
 
 ## 概述

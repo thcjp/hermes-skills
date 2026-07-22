@@ -1,19 +1,19 @@
 ---
-slug: image
-name: image
+slug: "image"
+name: "image"
 version: "1.0.4"
-displayName: Image
-summary: Create, inspect, process, and optimize image files and visual assets with
-  reliable format choice,...
-license: MIT-0
+displayName: "Image"
+summary: "Create, inspect, process, and optimize image files and visual assets with"
+license: "MIT-0"
 description: |-
   Create, inspect, process, and optimize image files and visual assets
   with reliable format choice,。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-- Productivity
+  - Productivity
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Image
 

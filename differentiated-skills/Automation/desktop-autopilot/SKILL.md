@@ -1,19 +1,20 @@
 ---
-slug: desktop-autopilot
-name: desktop-autopilot
+slug: "desktop-autopilot"
+name: "desktop-autopilot"
 version: "1.0.0"
-displayName: 桌面自动驾驶
-summary: 智能桌面 GUI 自动化，视觉识别定位、智能等待、工作流编排，DPI 自适应不迷路。
-license: Proprietary
+displayName: "桌面自动驾驶"
+summary: "智能桌面 GUI 自动化，视觉识别定位、智能等待、工作流编排，DPI 自适应不迷路。"
+license: "Proprietary"
 description: |-
   桌面自动驾驶为 AI Agent 提供基于视觉的智能 GUI 自动化能力。它不依赖固定坐标，而是通过图像识别、OCR 文本定位、智能等待元素出现来操控界面，内置工作流编排、录制回放、DPI 自适应与多显示器支持，让自动化脚本像人一样"看着屏幕操作"。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-- 自动化
-- 桌面自动化
-- 视觉识别
+  - 自动化
+  - 桌面自动化
+  - 视觉识别
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # 桌面自动驾驶
 让 AI Agent 像人一样"看着屏幕操作"，而不是盲点坐标。本技能解决五个核心痛点：**坐标漂移**（DPI 缩放、窗口移动导致固定坐标失效）、**时机不对**（元素没加载就点击）、**识别率低**（原始 locateOnScreen 效果差）、**操作不可逆**（点错了无法回退）、**流程难复用**（每次重写脚本）。

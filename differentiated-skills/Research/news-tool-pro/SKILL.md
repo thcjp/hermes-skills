@@ -1,25 +1,24 @@
 ---
-slug: news-tool-pro
-name: news-tool-pro
+slug: "news-tool-pro"
+name: "news-tool-pro"
 version: "1.0.0"
-displayName: 个性化新闻助手专业版
-summary: 企业级个性化新闻平台，支持多用户管理、定时推送、阅读分析与API集成
-license: Proprietary
-edition: pro
+displayName: "个性化新闻助手专业版"
+summary: "企业级个性化新闻平台，支持多用户管理、定时推送、阅读分析与API集成"
+license: "Proprietary"
+edition: "pro"
 description: |-
   个性化新闻助手专业版，面向团队和企业用户提供多用户管理、定时自动推送、阅读行为分析与API集成能力。核心能力:
   - 多用户/多租户管理。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
 tags:
-- 新闻
-- 企业级
-- 个性化
-- 多租户
-- 定时推送
+  - 新闻
+  - 企业级
+  - 个性化
+  - 多租户
+  - 定时推送
 tools:
   - - read
-- exec
-# 个性化新闻助手（专业版）
-## 概述
+  - exec
+homepage: "https://skillhub.cn"
 ---
 个性化新闻助手专业版在免费版单用户个性化简报的基础上，新增多用户/多租户管理、定时自动推送、阅读行为深度分析、自定义新闻源接入、多格式导出和 REST API 集成等企业级能力，满足团队和企业的定制化新闻服务需求。
 

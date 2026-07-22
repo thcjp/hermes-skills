@@ -1,23 +1,23 @@
 ---
-slug: api-magic-gen-free
-name: api-magic-gen-free
+slug: "api-magic-gen-free"
+name: "api-magic-gen-free"
 version: "1.0.0"
-displayName: 接口魔法生成免费版
-summary: 基于magic-api框架的接口快速生成工具，通过Web UI编写脚本自动映射HTTP接口，无需Controller/Service/Dao。
-license: Proprietary
-edition: free
+displayName: "接口魔法生成免费版"
+summary: "基于magic-api框架的接口快速生成工具，通过Web UI编写脚本自动映射HTTP接口，无需Controller/Service/Dao。"
+license: "Proprietary"
+edition: "free"
 description: |-
   面向Java后端开发者的接口快速生成工具，基于magic-api框架能力封装。通过Web UI编写脚本即可自动映射为HTTP接口，免除Controller、Service、Dao、Mapper、XML、VO等Java对象的编写负担，特别适合原型验证、内部工具、数据看板接口等场景。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
 tags:
-- 集成工具
-- 接口开发
-- 低代码
-- Java生态
+  - 集成工具
+  - 接口开发
+  - 低代码
+  - Java生态
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 接口魔法生成工具（免费版）
 
 本工具为Java后端开发者提供基于magic-api框架的接口快速生成能力。免费版覆盖核心场景：脚本编写、CRUD映射、条件查询、基础认证，可快速搭建原型与内部工具接口。

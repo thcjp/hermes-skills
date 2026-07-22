@@ -1,10 +1,10 @@
 ---
-slug: github-development-standard
-name: github-development-standard
+slug: "github-development-standard"
+name: "github-development-standard"
 version: "2.0.0"
-displayName: Github Development S
-summary: 完整的 GitHub 项目开发标准流程 - 9步流程 + 4层验证 + 15项验收清单
-license: MIT-0
+displayName: "Github Development S"
+summary: "完整的 GitHub 项目开发标准流程 - 9步流程 + 4层验证 + 15项验收清单"
+license: "MIT-0"
 description: |-
   完整的 GitHub 项目开发标准流程 - 9步流程 + 4层验证 + 15项验收清单
 
@@ -23,12 +23,12 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-
 tags:
-- Development
+  - Development
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
 # Github Development S
 

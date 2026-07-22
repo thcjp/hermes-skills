@@ -1,10 +1,10 @@
 ---
-slug: api-gateway
-name: api-gateway
+slug: "api-gateway"
+name: "api-gateway"
 version: "1.0.0"
-displayName: API网关集成路由
-summary: 通过托管API网关连接Slack/Gmail/Stripe等外部服务,含连接管理、触发器、事件重放与安全审批
-license: MIT
+displayName: "API网关集成路由"
+summary: "通过托管API网关连接Slack/Gmail/Stripe等外部服务,含连接管理、触发器、事件重放与安全审批"
+license: "MIT"
 description: |-
   托管式 API 网关路由服务。通过统一的 API 路由地址连接 Slack、Gmail、HubSpot、Salesforce、Stripe、
   Airtable、Notion 等第三方服务。提供连接管理（创建/列出/删除）、触发器管理（事件监听/重放/目标配置）、
@@ -16,8 +16,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # API 网关集成路由
 
 托管式 API 网关路由服务。通过统一的 API 路由地址 `https://api.maton.ai/` 连接第三方服务,提供连接管理、触发器管理与安全审批流程。

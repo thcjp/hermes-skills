@@ -1,10 +1,10 @@
 ---
-slug: elite-longterm-memory-free
-name: elite-longterm-memory-free
+slug: "elite-longterm-memory-free"
+name: "elite-longterm-memory-free"
 version: "1.0.0"
-displayName: 精英长期记忆免费版
-summary: 基础 AI Agent 记忆系统，热内存加文件归档，抗压缩不丢上下文。
-license: MIT
+displayName: "精英长期记忆免费版"
+summary: "基础 AI Agent 记忆系统，热内存加文件归档，抗压缩不丢上下文。"
+license: "MIT"
 description: |-
   面向 AI Agent 的基础长期记忆系统，提供热内存与文件归档两层记忆能力。
   热内存（SESSION-STATE.md）抗压缩与重启，通过 WAL 协议确保先写状态再回复。
@@ -15,8 +15,10 @@ description: |-
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
+tags:
+  - 智能助手
 ---
-
 # 精英长期记忆免费版（Elite Longterm Memory Free）
 
 **AI Agent 的基础记忆系统。** 通过热内存与文件归档，让 Agent 不遗忘关键上下文与用户偏好。本免费版提供两层记忆能力，覆盖单设备记忆持久化需求。

@@ -1,10 +1,10 @@
 ---
-slug: agent-telegram-free
-name: agent-telegram-free
+slug: "agent-telegram-free"
+name: "agent-telegram-free"
 version: "1.0.0"
-displayName: Agent TG LITE
-summary: Agent Telegram 基础通信规范，支持 3 类角色消息发送。
-license: MIT
+displayName: "Agent TG LITE"
+summary: "Agent Telegram 基础通信规范，支持 3 类角色消息发送。"
+license: "MIT"
 description: |-
   Agent Telegram 通信规范免费版。定义 main、backend、frontend 三类基础 Agent 角色的 accountId、
   emoji 标识与消息发送格式。Agent 向用户发送 Telegram 消息时使用 message 工具配合 accountId 与 target 字段，
@@ -16,8 +16,8 @@ tags:
 tools:
   - read
   - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Agent Telegram LITE
 
 Agent Telegram 通信规范免费版。定义 3 类基础 Agent 角色的账号映射与消息发送格式，Agent 向用户发送 Telegram 消息时遵循此规范。

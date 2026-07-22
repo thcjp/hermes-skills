@@ -1,22 +1,22 @@
 ---
-slug: cloud-manager-free
-name: cloud-manager-free
+slug: "cloud-manager-free"
+name: "cloud-manager-free"
 version: "1.0.0"
-displayName: 云存储管家 免费版
-summary: 个人云存储选型、整理、同步、备份与分享的实用指南，覆盖主流消费级云盘。
-license: Proprietary
-edition: free
+displayName: "云存储管家 免费版"
+summary: "个人云存储选型、整理、同步、备份与分享的实用指南，覆盖主流消费级云盘。"
+license: "Proprietary"
+edition: "free"
 description: |-
   Cloud Manager 是面向个人用户的消费级云存储管理辅助 Skill，帮助解决"选哪个云盘、怎么整理、如何同步、如何备份、如何分享"的日常决策。核心能力：云盘选型决策矩阵、存储整理与清理策略、跨设备同步最佳实践、3-2-1 备份原则落地、安全分享与权限管理。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
 tags:
-- 集成工具
-- 云存储
-- 个人效率
+  - 集成工具
+  - 云存储
+  - 个人效率
 tools:
   - - read
-- exec
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Cloud Manager（免费版）
 
 面向个人用户的消费级云存储管理辅助工具，覆盖选型、整理、同步、备份与分享的完整决策链路。
