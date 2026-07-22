@@ -1,0 +1,7 @@
+# Hermes Skills .gitignore
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
