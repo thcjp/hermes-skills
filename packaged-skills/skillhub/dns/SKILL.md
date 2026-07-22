@@ -4,7 +4,7 @@ name: "dns"
 version: "1.0.0"
 displayName: "DNS配置专家"
 summary: "DNS记录配置、TTL迁移、邮件认证三件套、CAA证书锁定与Cloudflare代理排障"
-license: "MIT"
+license: "Proprietary"
 description: |-
   DNS领域专业配置与排障Skill,覆盖记录生命周期、邮件认证链、证书授权限制与CDN代理行为。
 

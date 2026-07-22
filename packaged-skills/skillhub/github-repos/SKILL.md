@@ -4,7 +4,7 @@ name: "github-repos"
 version: "1.0.5"
 displayName: "GitHub"
 summary: "Work with GitHub repositories, issues, pull requests, commits, branches,"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   Work with GitHub repositories, issues, pull requests, commits, branches,
   releases, and workflows 。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。

@@ -4,7 +4,7 @@ name: "feishu-send-file"
 version: "1.0.0"
 displayName: "飞书发文件"
 summary: "飞书发送普通文件与图片附件,支持file_key两步上传与image_key图片稳定链路。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   飞书机器人发送文件附件技能。覆盖普通文件(HTML/ZIP/PDF/代码文件等)与图片两类链路,
   解决"本地图片路径被发成路径文本"的常见故障,提供脚本化与手动两步两种调用方式,

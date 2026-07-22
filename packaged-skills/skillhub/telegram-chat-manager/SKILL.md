@@ -4,7 +4,7 @@ name: "telegram-chat-manager"
 version: "0.1.0"
 displayName: "SkillHub Telegram Ch"
 summary: "Enable Telegram cross-instance chat, user mention, and personal bot setup"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   Enable Telegram cross-instance chat, user mention, and personal bot
   setup for seamless communicat。Use when 用户需要Openclaw Telegram Ch相关功能时使用。不适用于超出本技能能力范围的复杂需求。

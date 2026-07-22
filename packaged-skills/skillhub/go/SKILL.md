@@ -4,7 +4,7 @@ name: "go"
 version: "1.0.2"
 displayName: "Go"
 summary: "Write reliable Go code avoiding goroutine leaks, interface traps, and common"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Write reliable Go code avoiding goroutine leaks, interface traps, and
   common concurrency bugs。核心能力:

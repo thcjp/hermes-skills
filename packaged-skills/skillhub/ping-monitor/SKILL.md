@@ -4,7 +4,7 @@ name: "ping-monitor"
 version: "1.0.0"
 displayName: "Ping Monitor"
 summary: "ICMP health check for hosts, phones, and daemons"
-license: "MIT"
+license: "Proprietary"
 description: |-
   ICMP health check for hosts, phones, and daemons
 

@@ -4,7 +4,7 @@ name: "baidu-netdisk-skills"
 version: "2.0.0"
 displayName: "百度网盘"
 summary: "百度网盘文件管理，限 /apps/bdpan/ 目录，支持上传下载转存分享搜索与记忆备份。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   百度网盘文件管理技能，通过 bdpan 命令行工具对百度网盘进行文件操作，所有操作限制在
   /apps/bdpan/ 目录范围内。支持完整的文件生命周期管理与 Agent 记忆备份恢复能力。

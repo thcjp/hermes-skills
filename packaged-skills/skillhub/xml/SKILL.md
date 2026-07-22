@@ -4,7 +4,7 @@ name: "xml"
 version: "1.0.0"
 displayName: "XML"
 summary: "Parse, generate, and transform XML with correct namespace handling and encoding."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Parse, generate, and transform XML with correct namespace handling and
   encoding。核心能力:

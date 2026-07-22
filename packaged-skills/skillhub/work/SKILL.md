@@ -4,7 +4,7 @@ name: "work"
 version: "1.0.0"
 displayName: "职场工作汇报"
 summary: "职场日常工作指导，覆盖专业沟通、会议准备、职场动态与入职90天策略"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Work Skill 是职场日常工作指导工具，覆盖 Professional Communication（专业沟通）、
   Workplace Dynamics（职场动态）、First 90 Days（入职90天）、Situation Detection（情境识别）、

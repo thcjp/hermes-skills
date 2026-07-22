@@ -4,7 +4,7 @@ name: "linear"
 version: "1.0.0"
 displayName: "Linear"
 summary: "Query and manage Linear issues, projects, and team workflows."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Query and manage Linear issues, projects, and team workflows。核心能力:
 

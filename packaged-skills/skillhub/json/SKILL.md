@@ -4,7 +4,7 @@ name: "json"
 version: "1.0.0"
 displayName: "JSON"
 summary: "Work with JSON data structures, APIs, and serialization effectively."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Work with JSON data structures, APIs, and serialization effectively。核心能力:
 

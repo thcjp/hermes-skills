@@ -4,7 +4,7 @@ name: "doubao-chat"
 version: "1.0.0"
 displayName: "Doubao Chat"
 summary: "豆包大模型对话（免费 API，支持联网搜索）"
-license: "MIT"
+license: "Proprietary"
 description: |-
   豆包大模型对话（免费 API，支持联网搜索）
 

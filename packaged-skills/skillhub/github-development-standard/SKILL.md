@@ -4,7 +4,7 @@ name: "github-development-standard"
 version: "2.0.0"
 displayName: "Github Development S"
 summary: "完整的 GitHub 项目开发标准流程 - 9步流程 + 4层验证 + 15项验收清单"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   完整的 GitHub 项目开发标准流程 - 9步流程 + 4层验证 + 15项验收清单
 

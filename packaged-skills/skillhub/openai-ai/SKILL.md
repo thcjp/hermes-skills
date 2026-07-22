@@ -4,7 +4,7 @@ name: "openai-ai"
 version: "1.0.6"
 displayName: "llm-provider"
 summary: "Manage llm-provider files, assistants, vector stores, batches, fine-tuning jobs,"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   Manage llm-provider files, assistants, vector stores, batches, fine-tuning
   jobs, and model resources vi。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。

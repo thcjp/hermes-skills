@@ -4,7 +4,7 @@ name: "email-daily-summary"
 version: "1.0.0"
 displayName: "Email Daily Summary"
 summary: "基于 browser-use 自动登录邮箱并生成每日邮件摘要与统计日报"
-license: "MIT"
+license: "Proprietary"
 description: |-
   基于 browser-use CLI 自动化登录 Gmail、Outlook、QQ 邮箱、163/126 邮箱及企业微信邮箱,
   抓取收件箱列表,提取发件人、主题、摘要片段与时间戳,生成结构化每日邮件日报。

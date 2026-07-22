@@ -4,7 +4,7 @@ name: "notion-skill"
 version: "1.0.0"
 displayName: "Notion"
 summary: "Work with Notion pages and databases via the official Notion API."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Work with Notion pages and databases via the official Notion API。核心能力:
 

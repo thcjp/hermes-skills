@@ -4,7 +4,7 @@ name: "tailwindcss"
 version: "1.0.0"
 displayName: "Tailwind CSS"
 summary: "Write Tailwind utility classes with proper responsive design, dark mode,"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Write Tailwind utility classes with proper responsive design, dark mode,
   and configuration。核心能力:

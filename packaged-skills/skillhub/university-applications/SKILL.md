@@ -4,7 +4,7 @@ name: "university-applications"
 version: "1.2.10"
 displayName: "命理大师"
 summary: "全体系命理大师—八字四柱、紫微斗数、奇门遁甲、六爻、梅花易数、塔罗、星盘。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   全体系命理大师—八字四柱、紫微斗数、奇门遁甲、六爻、梅花易数、塔罗、星盘。核心能力:
 

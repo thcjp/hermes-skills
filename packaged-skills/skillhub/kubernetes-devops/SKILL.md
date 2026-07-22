@@ -4,7 +4,7 @@ name: "kubernetes-devops"
 version: "1.0.0"
 displayName: "Kubernetes"
 summary: "This is a coherent Kubernetes manifest helper; its main risk is that users"
-license: "MIT"
+license: "Proprietary"
 description: |-
   This is a coherent Kubernetes manifest helper; its main risk is that
   users could copy examples th。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。

@@ -4,7 +4,7 @@ name: "java"
 version: "1.1.0"
 displayName: "Java健壮编程"
 summary: "编写健壮Java代码,避免空指针陷阱、相等性Bug与并发问题"
-license: "MIT"
+license: "Proprietary"
 description: |-
   编写健壮Java代码,避免空指针陷阱、相等性Bug与并发问题。核心能力涵盖空值与Optional处理、集合迭代陷阱、泛型与类型擦除、并发与同步、类继承与内存模型、Stream与CompletableFuture、测试(JUnit/Mockito)及JVM/GC/模块系统,提供关键规则与错误场景防护。
 tools:

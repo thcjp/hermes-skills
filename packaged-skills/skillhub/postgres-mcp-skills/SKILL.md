@@ -4,7 +4,7 @@ name: "postgres-mcp-skills"
 version: "1.0.2"
 displayName: "postgres mcp"
 summary: "PostgreSQL 数据库管理和优化助手。提供完整的数据库操作能力：健康检查、索引优化、查询计划分析、模式查询、SQL 执行。 当用户提到 PostgreSQL、Postgres、数据库优化、..."
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   PostgreSQL 数据库管理和优化助手。提供完整的数据库操作能力：健康检查、索引优化、查询计划分析、模式查询、SQL 执行。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。
 tags:

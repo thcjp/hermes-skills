@@ -4,7 +4,7 @@ name: "cloud-storage"
 version: "1.0.1"
 displayName: "Cloud Storage"
 summary: "Manage files across cloud providers with authentication, cost awareness,"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Manage files across cloud providers with authentication, cost awareness,
   and multi-provider opera。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。适用于独立开发者、企业团队和自动化工作流场景。

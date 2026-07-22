@@ -4,7 +4,7 @@ name: "google-workspace-mcp"
 version: "1.0.0"
 displayName: "Google Workspace MCP"
 summary: "免Google Cloud Console配置,OAuth登录即用Gmail/Calendar/Drive/Docs/Sheets/Chat等49项工具,覆盖邮件、日历、文档、表格与联系人管理。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   通过 @presto-ai/google-workspace-mcp 以纯OAuth登录方式访问Google Workspace全家桶,跳过Cloud Console建项目、启用API、下载client_secret.json等繁琐步骤。支持Gmail邮件搜索收发、Calendar日程管理与空闲时段查找、Drive文件检索下载、Docs文档增改查、Sheets与Slides读取、Chat空间消息、People个人资料及Time时区查询共49个工具。适用于独立开发者日常办公自动化、企业团队协同排程、以及跨Google服务的自动化工作流编排。
 tags:

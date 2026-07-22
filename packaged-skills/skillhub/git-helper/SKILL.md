@@ -4,7 +4,7 @@ name: "git-helper"
 version: "1.0.0"
 displayName: "Git Helper"
 summary: "Common git operations as a skill (status, pull, push, branch, log)"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Common git operations as a skill (status, pull, push, branch, log)
 

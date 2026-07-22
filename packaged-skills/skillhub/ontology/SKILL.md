@@ -4,7 +4,7 @@ name: "ontology"
 version: "1.0.0"
 displayName: "类型化知识图谱引擎"
 summary: "基于类型约束的知识图谱系统，为智能代理提供结构化记忆与可组合技能"
-license: "MIT"
+license: "Proprietary"
 description: |-
   类型化知识图谱引擎，将知识表示为可验证的实体-关系图谱。每个实体拥有类型、属性和关系，
   所有变更在提交前根据类型约束进行验证。核心能力涵盖类型化实体创建与验证、关系图谱与基数约束、

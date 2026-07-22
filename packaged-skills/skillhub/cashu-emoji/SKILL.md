@@ -4,7 +4,7 @@ name: "cashu-emoji"
 version: "0.1.0"
 displayName: "Cashu Emoji"
 summary: "Encode and decode Cashu tokens that are hidden inside emojis using Unicode"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Encode and decode Cashu tokens that are hidden inside emojis using Unicode
   variation selectors。核心能力:

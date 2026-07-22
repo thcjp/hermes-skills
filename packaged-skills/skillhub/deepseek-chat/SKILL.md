@@ -4,7 +4,7 @@ name: "deepseek-chat"
 version: "1.0.0"
 displayName: "DeepSeek Chat"
 summary: "DeepSeek 官方 API 对话（免费/超便宜，支持中文）"
-license: "MIT"
+license: "Proprietary"
 description: |-
   DeepSeek 官方 API 对话（免费/超便宜，支持中文）
 

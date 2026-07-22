@@ -4,7 +4,7 @@ name: "frontend-design"
 version: "1.1.0"
 displayName: "Frontend Design"
 summary: "Create distinctive, production-grade frontend interfaces with high design"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   Create distinctive, production-grade frontend interfaces with high design
   quality。Use this skill。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。

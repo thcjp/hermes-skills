@@ -4,7 +4,7 @@ name: "domain-dns-ops"
 version: "1.0.0"
 displayName: "Domain Dns Ops"
 summary: "Domain/DNS ops across Cloudflare, DNSimple, Namecheap for Peter. Use for"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Domain/DNS ops across Cloudflare, DNSimple, Namecheap for Peter。Use
   for onboarding zones to Clou。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。

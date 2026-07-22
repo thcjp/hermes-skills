@@ -4,7 +4,7 @@ name: "chat"
 version: "1.1.0"
 displayName: "Chat"
 summary: "Learns communication preferences from explicit feedback. Adapts tone, format,"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Learns communication preferences from explicit feedback。Adapts tone,
   format, and style。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。

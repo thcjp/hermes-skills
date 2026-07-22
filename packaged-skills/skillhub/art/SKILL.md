@@ -4,7 +4,7 @@ name: "art"
 version: "1.0.0"
 displayName: "Art"
 summary: "Guide art creation, technique development, and appreciation with practical,"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Guide art creation, technique development, and appreciation with practical,
   medium-specific advice。核心能力:

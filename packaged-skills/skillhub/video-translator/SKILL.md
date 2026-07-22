@@ -4,7 +4,7 @@ name: "video-translator"
 version: "1.0.5"
 displayName: "Video Translator"
 summary: "Real time video translation / dubbing skill. Translate user-provided video"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   Real time video translation / dubbing skill。Translate user-provided
   video (file or URL) and retu。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。

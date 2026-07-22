@@ -4,7 +4,7 @@ name: "auto-workflow"
 version: "1.0.0"
 displayName: "Auto Workflow"
 summary: "Builds automation workflows from repetitive tasks. Use when user mentions"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Builds automation workflows from repetitive tasks。Use when user mentions
   \

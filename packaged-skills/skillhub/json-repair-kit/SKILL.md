@@ -4,7 +4,7 @@ name: "json-repair-kit"
 version: "1.0.0"
 displayName: "JSON修复工具"
 summary: "通过Node.js解析修复格式错误的JSON文件，支持尾逗号、单引号等修复。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   JSON修复工具通过Node.js解析将格式错误的"宽松"JSON文件（如含尾逗号、单引号、未加引号键）
   解析为JavaScript对象并重新序列化为有效JSON。支持Trailing Commas、Single Quotes、

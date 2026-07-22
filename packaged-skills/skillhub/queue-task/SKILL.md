@@ -4,7 +4,7 @@ name: "queue-task"
 version: "0.1.0"
 displayName: "Queue Task"
 summary: "Durable queue-task helper for resumable, idempotent batch jobs in task-father"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Durable queue-task helper for resumable, idempotent batch jobs in task-father
   task folders。核心能力:

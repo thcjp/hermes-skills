@@ -4,7 +4,7 @@ name: "jira-pat-toolkit"
 version: "0.0.1"
 displayName: "SkillHub Jira Pat Sk"
 summary: "Manage Jira issues on self-hosted or enterprise Jira instances using Personal"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Manage Jira issues on self-hosted or enterprise Jira instances using
   Personal Access Tokens in SS。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。

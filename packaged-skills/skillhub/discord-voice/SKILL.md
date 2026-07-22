@@ -4,7 +4,7 @@ name: "discord-voice"
 version: "1.0.0"
 displayName: "Discord语音助手"
 summary: "Discord语音对话助手,覆盖STT/TTS/VAD/打断/自动重连与流式转录全流程"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Discord 语音对话专业版 —— 在 Discord 语音频道中实现实时双向语音对话的端到端助手。
   覆盖语音活动检测(VAD)、语音转文字(STT)、文字转语音(TTS)、打断响应(Barge-in)、

@@ -4,7 +4,7 @@ name: "git"
 version: "1.0.8"
 displayName: "Git"
 summary: "Git commits, branches, rebases, merges, conflict resolution, history recovery,"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   Git commits, branches, rebases, merges, conflict resolution, history
   recovery, team workflows, an。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。

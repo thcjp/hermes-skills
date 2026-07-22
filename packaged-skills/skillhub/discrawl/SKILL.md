@@ -4,7 +4,7 @@ name: "discrawl"
 version: "1.0.0"
 displayName: "Discrawl"
 summary: "Discord archive: search, sync freshness, DMs, channel slices, SQL counts."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Discord archive: search, sync freshness, DMs, channel slices, SQL counts。核心能力:
 

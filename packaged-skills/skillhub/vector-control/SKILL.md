@@ -4,7 +4,7 @@ name: "vector-control"
 version: "1.0.1"
 displayName: "Vector Control"
 summary: "Control a Vector robot via Wirepod’s local HTTP API on the same network."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Control a Vector robot via Wirepod’s local HTTP API on the same network。Use when you need to mov。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
 tags:

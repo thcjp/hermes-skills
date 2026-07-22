@@ -4,7 +4,7 @@ name: "neural-memory-enhanced"
 version: "1.0.0"
 displayName: "神经记忆增强系统"
 summary: "基于扩散激活的联想记忆系统，通过神经图谱实现智能持久化召回"
-license: "MIT"
+license: "Proprietary"
 description: |-
   生物学启发的联想记忆系统，采用扩散激活替代关键词检索和向量搜索。记忆以神经图谱形式组织，
   神经元之间通过20种类型化突触连接，频繁共同访问的记忆自动强化连接（赫布学习），陈旧记忆

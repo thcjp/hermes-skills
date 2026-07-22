@@ -4,7 +4,7 @@ name: "ocean-chat-assistant"
 version: "2.20.0"
 displayName: "Ocean Chat"
 summary: "OceanBus-powered P2P messaging, shared address book, 1v1 meetup negotiation,"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   OceanBus-powered P2P messaging, shared address book, 1v1 meetup negotiation,
   and conversation thr。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。

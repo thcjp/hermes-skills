@@ -4,7 +4,7 @@ name: "openai-whisper-1-0-0"
 version: "1.0.0"
 displayName: "llm-provider Whisper"
 summary: "Local speech-to-text with the Whisper CLI (no API key)."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Local speech-to-text with the Whisper CLI (no API key)。核心能力:
 

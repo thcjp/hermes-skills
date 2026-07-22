@@ -4,7 +4,7 @@ name: "smart-cache"
 version: "1.0.0"
 displayName: "Smart Cache"
 summary: "Intelligent caching with LRU/LFU strategies and TTL management"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Intelligent caching with LRU/LFU strategies and TTL management
 

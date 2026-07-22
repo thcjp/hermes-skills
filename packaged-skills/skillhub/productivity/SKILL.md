@@ -4,7 +4,7 @@ name: "productivity"
 version: "1.0.0"
 displayName: "生产力操作系统"
 summary: "集成目标、项目、任务、习惯、规划、回顾的完整生产力管理系统"
-license: "MIT"
+license: "Proprietary"
 description: |-
   完整的生产力操作系统，覆盖目标设定、项目管理、任务执行、习惯追踪、时间规划、定期回顾、
   精力管理、专注保护、承诺跟踪等全生命周期。核心能力涵盖目标-项目-任务三级体系、

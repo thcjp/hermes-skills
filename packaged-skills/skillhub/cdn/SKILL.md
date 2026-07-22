@@ -4,7 +4,7 @@ name: "cdn"
 version: "1.0.1"
 displayName: "CDN"
 summary: "Configure, optimize, and troubleshoot CDN deployments with caching strategies,"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Configure, optimize, and troubleshoot CDN deployments with caching strategies,
   security hardening。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。

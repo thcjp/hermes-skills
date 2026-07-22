@@ -4,7 +4,7 @@ name: "postgres-job-queue"
 version: "1.0.0"
 displayName: "Postgres Job Queue"
 summary: "关系型数据库-based job queue with priority scheduling, batch claiming, and"
-license: "MIT"
+license: "Proprietary"
 description: |-
   关系型数据库-based job queue with priority scheduling, batch claiming,
   and progress tracking。Use w。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。

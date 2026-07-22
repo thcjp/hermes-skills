@@ -4,7 +4,7 @@ name: "audit"
 version: "1.0.0"
 displayName: "Audit"
 summary: "The Supreme Verifier for the Synthetic Economy. Autonomous inspection of"
-license: "MIT"
+license: "Proprietary"
 description: |-
   The Supreme Verifier for the Synthetic Economy。Autonomous inspection
   of code, contracts, and cap。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。

@@ -4,7 +4,7 @@ name: "video-frames"
 version: "1.0.0"
 displayName: "Video Frames"
 summary: "Extract frames or short clips from videos using ffmpeg."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Extract frames or short clips from videos using ffmpeg。核心能力:
 

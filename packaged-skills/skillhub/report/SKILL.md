@@ -4,7 +4,7 @@ name: "report"
 version: "1.1.0"
 displayName: "定制报表生成"
 summary: "配置自定义周期性报表,用户定义数据源,自动处理调度与格式化投递"
-license: "MIT"
+license: "Proprietary"
 description: |-
   配置自定义周期性报表,用户定义数据源,自动处理调度与格式化投递。核心能力包括数据源用户驱动配置、YAML报表配置、Cron定时调度、多渠道投递(chat/telegram/file/email)、报表管理(列表/暂停/按需运行)与环境变量安全凭证管理。
 tools:

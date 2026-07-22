@@ -4,7 +4,7 @@ name: "auto-monitor"
 version: "1.0.0"
 displayName: "Auto Monitor"
 summary: "主动监控系统状态。定期检查服务器健康，主动汇报，无需等待指令。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   主动监控系统状态。定期检查服务器健康，主动汇报，无需等待指令。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。适用于独立开发者、企业团队和自动化工作流场景。
 tags:

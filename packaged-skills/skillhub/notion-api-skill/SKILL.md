@@ -4,7 +4,7 @@ name: "notion-api-skill"
 version: "1.0.11"
 displayName: "Notion"
 summary: "Notion API integration with managed OAuth. Query databases, search pages,"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   Notion API integration with managed OAuth。Query databases, search pages,
   and read workspace cont。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。适用于独立开发者、企业团队和自动化工作流场景。

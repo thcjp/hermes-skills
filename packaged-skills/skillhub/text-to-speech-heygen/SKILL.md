@@ -4,7 +4,7 @@ name: "text-to-speech-heygen"
 version: "2.23.0"
 displayName: "Text to Speech"
 summary: "HeyGen TTS语音合成工具's Starfish TTS model. Use"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   Generate speech audio from text using HeyGen's Starfish TTS model。Use when: (1) Generating stand。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:

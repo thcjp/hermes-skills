@@ -4,7 +4,7 @@ name: "admapix"
 version: "1.0.0"
 displayName: "AdMapix"
 summary: "AdMapix原始数据层，广告创意/应用/榜单/下载收入查询"
-license: "MIT"
+license: "Proprietary"
 description: |-
   AdMapix 原始数据层客户端。覆盖广告创意搜索/计数/分布、应用与开发者画像、商店榜单、
   下载与收入估算、应用分发与全球推广、市场级搜索七大端点类别。作为薄客户端透传 API 返回的原始结构化 JSON，

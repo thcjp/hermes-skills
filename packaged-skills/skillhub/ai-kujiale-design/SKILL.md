@@ -4,7 +4,7 @@ name: "ai-kujiale-design"
 version: "1.0.0"
 displayName: "酷家乐AI室内设计"
 summary: "酷家乐室内智能设计,分步对话完成户型确认、风格选择、布局生成与渲染出图。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   基于酷家乐(Kujiale)开放能力的室内智能设计技能,通过分步式对话完成
   户型确认、风格选择、布局生成、渲染出图全流程。

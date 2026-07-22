@@ -4,7 +4,7 @@ name: "mongodb"
 version: "1.0.1"
 displayName: "MongoDB"
 summary: "Design schemas, write queries, and configure MongoDB for consistency and"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Design schemas, write queries, and configure MongoDB for consistency
   and performance。核心能力:

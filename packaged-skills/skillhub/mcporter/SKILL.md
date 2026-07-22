@@ -4,7 +4,7 @@ name: "mcporter"
 version: "1.0.0"
 displayName: "Mcporter"
 summary: "Use the mcporter CLI to list, configure, auth, and call 协议 servers/tools."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Use the mcporter CLI to list, configure, auth, and call 协议 servers/tools。核心能力:
 

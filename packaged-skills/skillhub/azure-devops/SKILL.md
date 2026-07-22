@@ -4,7 +4,7 @@ name: "azure-devops"
 version: "1.0.0"
 displayName: "Azure DevOps"
 summary: "List Azure DevOps projects, repositories, and branches; create pull requests;"
-license: "MIT"
+license: "Proprietary"
 description: |-
   List Azure DevOps projects, repositories, and branches; create pull
   requests; manage work items; 。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。

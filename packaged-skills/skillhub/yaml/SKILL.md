@@ -4,7 +4,7 @@ name: "yaml"
 version: "1.0.0"
 displayName: "YAML"
 summary: "Write valid YAML that parses predictably across languages and versions."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Write valid YAML that parses predictably across languages and versions。核心能力:
 

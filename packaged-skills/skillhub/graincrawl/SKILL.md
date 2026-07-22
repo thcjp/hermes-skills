@@ -4,7 +4,7 @@ name: "graincrawl"
 version: "1.0.1"
 displayName: "Graincrawl"
 summary: "Granola archive: search, sync freshness, notes, transcripts, panels, SQL."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Granola archive: search, sync freshness, notes, transcripts, panels,
   SQL。核心能力:

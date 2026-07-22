@@ -4,7 +4,7 @@ name: "humanizer"
 version: "1.0.0"
 displayName: "Humanizer"
 summary: "Remove signs of AI-generated writing from text."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Remove signs of AI-generated writing from text。核心能力:
 

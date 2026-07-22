@@ -4,7 +4,7 @@ name: "html"
 version: "1.0.0"
 displayName: "HTML"
 summary: "Avoid common HTML mistakes — accessibility gaps, form pitfalls, and SEO oversights."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Avoid common HTML mistakes — accessibility gaps, form pitfalls, and
   SEO oversights。核心能力:

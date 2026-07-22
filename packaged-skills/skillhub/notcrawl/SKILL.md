@@ -4,7 +4,7 @@ name: "notcrawl"
 version: "1.0.1"
 displayName: "Notcrawl"
 summary: "Notion archive: search, sync freshness, pages/databases, Markdown exports."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Notion archive: search, sync freshness, pages/databases, Markdown exports。核心能力:
 

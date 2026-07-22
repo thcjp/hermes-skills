@@ -4,7 +4,7 @@ name: "knowledge-capture"
 version: "0.1.0"
 displayName: "Knowledge Capture"
 summary: "Transform conversations and discussions into structured Notion documentation"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Transform conversations and discussions into structured Notion documentation
 

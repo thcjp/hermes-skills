@@ -4,7 +4,7 @@ name: "json-linter"
 version: "1.0.0"
 displayName: "Json Linter"
 summary: "Validates JSON syntax across the workspace. Use this skill to check for syntax"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Validates JSON syntax across the workspace。Use this skill to check
   for syntax errors in configur。Use when 用户需要Json Linter相关功能时使用。不适用于超出本技能能力范围的复杂需求。

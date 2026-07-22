@@ -4,7 +4,7 @@ name: "excel-studio"
 version: "1.0.0"
 displayName: "Excel Studio"
 summary: "Professional Excel spreadsheet generator. Use when user needs to create data"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   Professional Excel spreadsheet generator。Use when user needs to create
   data tables, reports, cha。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。

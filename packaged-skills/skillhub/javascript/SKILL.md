@@ -4,7 +4,7 @@ name: "javascript"
 version: "1.0.3"
 displayName: "JavaScript"
 summary: "Write robust JavaScript with async patterns, type coercion handling, and"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Write robust JavaScript with async patterns, type coercion handling,
   and modern ES2023+ features。核心能力:

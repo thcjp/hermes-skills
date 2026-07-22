@@ -4,7 +4,7 @@ name: "ui"
 version: "1.0.0"
 displayName: "UI"
 summary: "Design clear, consistent, and visually polished user interfaces."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Design clear, consistent, and visually polished user interfaces。核心能力:
 

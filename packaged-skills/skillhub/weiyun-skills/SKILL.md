@@ -4,7 +4,7 @@ name: "weiyun-skills"
 version: "1.0.10"
 displayName: "Weiyun Skills"
 summary: "微云网盘MCP接口完整技能。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   微云网盘MCP接口完整技能。
 

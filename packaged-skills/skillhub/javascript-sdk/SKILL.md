@@ -4,7 +4,7 @@ name: "javascript-sdk"
 version: "0.1.5"
 displayName: "Javascript Sdk"
 summary: "JavaScript/TypeScript SDK for inference.sh - run AI apps, build agents, integrate"
-license: "MIT"
+license: "Proprietary"
 description: |-
   JavaScript/TypeScript SDK for inference。sh - run AI apps, build agents,
   integrate 150+ models。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。

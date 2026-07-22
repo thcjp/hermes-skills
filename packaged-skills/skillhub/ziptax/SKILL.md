@@ -4,7 +4,7 @@ name: "ziptax"
 version: "1.0.0"
 displayName: "Ziptax Sales Tax"
 summary: "This sales-tax lookup skill is legitimate in purpose, but its bundled lookup"
-license: "MIT"
+license: "Proprietary"
 description: |-
   This sales-tax lookup skill is legitimate in purpose, but its bundled
   lookup script can run local。Use when 用户需要Ziptax Sales Tax相关功能时使用。不适用于超出本技能能力范围的复杂需求。

@@ -4,7 +4,7 @@ name: "interview-simulator"
 version: "1.0.0"
 displayName: "Interview Simulator"
 summary: "Simulates mock interviews for any role and experience level."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Simulates mock interviews for any role and experience level。核心能力:
 

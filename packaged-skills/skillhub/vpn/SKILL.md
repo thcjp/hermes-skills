@@ -4,7 +4,7 @@ name: "vpn"
 version: "1.0.0"
 displayName: "VPN"
 summary: "Configure and troubleshoot VPN connections for privacy and remote access."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Configure and troubleshoot VPN connections for privacy and remote access。核心能力:
 

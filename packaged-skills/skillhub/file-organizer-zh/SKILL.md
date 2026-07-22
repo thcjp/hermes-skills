@@ -4,7 +4,7 @@ name: "file-organizer-zh"
 version: "1.0.0"
 displayName: "File Organizer"
 summary: "文件整理器，按类型自动分类（中文版）"
-license: "MIT"
+license: "Proprietary"
 description: |-
   文件整理器，按类型自动分类（中文版）
 

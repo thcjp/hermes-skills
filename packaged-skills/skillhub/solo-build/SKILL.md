@@ -4,7 +4,7 @@ name: "solo-build"
 version: "2.2.1"
 displayName: "构建执行引擎"
 summary: "执行实现计划任务,TDD工作流,自动提交,阶段门检查,进度跟踪。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   执行实现计划任务的引擎:轨道选择、上下文加载、任务恢复、
   TDD工作流、集成测试、视觉验证、阶段门检查、错误处理与进度

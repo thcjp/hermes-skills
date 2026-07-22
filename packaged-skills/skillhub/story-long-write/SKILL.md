@@ -4,7 +4,7 @@ name: "story-long-write"
 version: "1.1.13"
 displayName: "长篇网文写作"
 summary: "从选题到正文,辅助长篇网络小说创作,含世界观、人物、情节线管理。"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   长篇网络小说创作全流程:选题方向、核心设定、卷级大纲、章节细纲、
   正文写作与质量检查。覆盖情绪交付、读者契约、期待债、终局储备、

@@ -4,7 +4,7 @@ name: "automation-recipe-pack"
 version: "1.1.0"
 displayName: "SkillHub Automation"
 summary: "SkillHub 自动化配方 - 10 个实用自动化场景。适合：效率工具爱好者、自动化新手。"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   SkillHub 自动化配方 - 10 个实用自动化场景。适合：效率工具爱好者、自动化新手。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
 tags:

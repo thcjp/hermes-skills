@@ -4,7 +4,7 @@ name: "assistant"
 version: "1.0.0"
 displayName: "Assistant"
 summary: "Manage tasks, communications, and scheduling with proactive and organized"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Manage tasks, communications, and scheduling with proactive and organized
   support。核心能力:

@@ -4,7 +4,7 @@ name: "internet-search"
 version: "0.3.4"
 displayName: "Internet Search"
 summary: "How to use the internet_search tool effectively — category routing, query"
-license: "MIT"
+license: "Proprietary"
 description: |-
   How to use the internet_search tool effectively — category routing,
   query formulation, and multi-。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。

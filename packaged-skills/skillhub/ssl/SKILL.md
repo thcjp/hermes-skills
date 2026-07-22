@@ -4,7 +4,7 @@ name: "ssl"
 version: "1.0.2"
 displayName: "SSL"
 summary: "Set up HTTPS, manage TLS certificates, and debug secure connection issues."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Set up HTTPS, manage TLS certificates, and debug secure connection issues。核心能力:
 

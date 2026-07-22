@@ -4,7 +4,7 @@ name: "video-upload-stream-tool"
 version: "1.0.1"
 displayName: "Video Upload Aioz St"
 summary: "Quick upload video to AIOZ Stream API. Create video objects with default"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Quick upload video to AIOZ Stream API。Create video objects with default
   or custom encoding confi。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。

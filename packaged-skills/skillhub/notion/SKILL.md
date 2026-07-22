@@ -4,7 +4,7 @@ name: "notion"
 version: "1.0.0"
 displayName: "Notion"
 summary: "Notion API for creating and managing pages, databases, and blocks."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Notion API for creating and managing pages, databases, and blocks。核心能力:
 

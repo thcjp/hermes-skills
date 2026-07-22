@@ -4,7 +4,7 @@ name: "html-designer"
 version: "1.0.0"
 displayName: "HTML Designer"
 summary: "Expert web graphic designer specializing in HTML/CSS design with deep knowledge"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   Expert web graphic designer specializing in HTML/CSS design with deep
   knowledge of graphic design。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。

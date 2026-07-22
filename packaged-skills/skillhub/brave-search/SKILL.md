@@ -4,7 +4,7 @@ name: "brave-search"
 version: "1.0.1"
 displayName: "Brave Search"
 summary: "Web search and content extraction via Brave Search API."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Web search and content extraction via Brave Search API。核心能力:
 

@@ -4,7 +4,7 @@ name: "upstage-document-parse"
 version: "1.0.5"
 displayName: "Document Parse"
 summary: "将 PDF、图片、Office 文档解析为带版面感知的 Markdown/HTML，含表格和坐标。"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   upstage-document-parse 是一个文档解析技能，将 PDF、图片、DOCX、PPTX、XLSX、HWP 等格式
   转换为结构化的 Markdown/HTML。识别表格、图片、公式、图表等版面元素并返回边界框坐标。

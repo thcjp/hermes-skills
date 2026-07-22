@@ -4,7 +4,7 @@ name: "repo-reader-tool"
 version: "1.0.1"
 displayName: "Read GitHub"
 summary: "This skill is mostly transparent about reading GitHub through gitmcp.io,"
-license: "MIT"
+license: "Proprietary"
 description: |-
   This skill is mostly transparent about reading GitHub through gitmcp。io,
   but it exposes broader r。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。

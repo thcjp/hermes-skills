@@ -4,7 +4,7 @@ name: "calendar-sync-tool"
 version: "1.0.0"
 displayName: "feishu-calendar"
 summary: "Manage Feishu (Lark) calendars by listing, searching, checking schedules,"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Manage Feishu (Lark) calendars by listing, searching, checking schedules,
   syncing events, and mar。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。

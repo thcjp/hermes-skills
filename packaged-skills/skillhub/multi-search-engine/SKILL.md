@@ -4,7 +4,7 @@ name: "multi-search-engine"
 version: "2.1.3"
 displayName: "Multi Search Engine"
 summary: "Multi search engine integration with 16 engines (7 CN + 9 Global)."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Multi search engine integration with 16 engines (7 CN + 9 Global)。核心能力:
 

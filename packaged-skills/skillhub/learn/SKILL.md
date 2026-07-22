@@ -4,7 +4,7 @@ name: "learn"
 version: "1.0.2"
 displayName: "Learn"
 summary: "Structure and track learning with spaced repetition and active recall across"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Structure and track learning with spaced repetition and active recall
   across any domain。核心能力:

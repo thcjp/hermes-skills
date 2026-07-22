@@ -4,7 +4,7 @@ name: "elite-longterm-memory-local"
 version: "1.0.0"
 displayName: "本地向量记忆系统"
 summary: "基于 LanceDB 与本地 Embedding 的纯本地向量记忆，零外部 API 依赖。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   基于 LanceDB 与纯 JavaScript Embedding 的本地向量记忆系统，无需外部 API 或原生模块。
   通过 Ollama 本地运行 nomic-embed-text 模型生成向量，所有数据完全留在本地，隐私至上。

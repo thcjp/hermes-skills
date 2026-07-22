@@ -4,7 +4,7 @@ name: "straker-verify"
 version: "1.0.0"
 displayName: "Straker Verify"
 summary: "Professional AI-powered translation with optional human verification. Supports"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Professional AI-powered translation with optional human verification。Supports 100+ languages。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。
 tags:

@@ -4,7 +4,7 @@ name: "claude-code-runner"
 version: "0.1.0"
 displayName: "ai-assistant Code Ru"
 summary: "Execute programming tasks via ai-assistant Code using PTY-based invocation. Handles"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Execute programming tasks via ai-assistant Code using PTY-based invocation。Handles non-TTY environment。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:

@@ -4,7 +4,7 @@ name: "write-my-blog"
 version: "0.1.0"
 displayName: "Write My Blog"
 summary: "Enables the agent to create, manage, and publish a full-featured blog autonomously."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Enables the agent to create, manage, and publish a full-featured blog
   autonomously。The agent can。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。

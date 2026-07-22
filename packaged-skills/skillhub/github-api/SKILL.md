@@ -4,7 +4,7 @@ name: "github-api"
 version: "1.0.7"
 displayName: "GitHub"
 summary: "This is a disclosed GitHub integration that uses Maton-managed OAuth/API"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   This is a disclosed GitHub integration that uses Maton-managed OAuth/API
   access and includes appr。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。

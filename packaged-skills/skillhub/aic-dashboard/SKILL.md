@@ -4,7 +4,7 @@ name: "aic-dashboard"
 version: "1.0.0"
 displayName: "AIC仪表盘监控"
 summary: "轻量级只读监控面板,展示入站邮件与浏览器会话状态,token保护,5秒自动刷新"
-license: "MIT"
+license: "Proprietary"
 description: |-
   AI Commander 配套管理仪表盘。轻量级只读 Web UI,读取 inbox.jsonl 展示最近 50 封入站邮件,
   读取 session.json 展示浏览器会话状态。通过 token 保护的本地端口提供服务,每 5 秒自动刷新。

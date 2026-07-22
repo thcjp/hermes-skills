@@ -4,7 +4,7 @@ name: "elite-frontend-design"
 version: "1.0.0"
 displayName: "Elite Frontend Desig"
 summary: "前端 UI 界面设计。当用户要创建网页、landing page、dashboard、React/Vue 组件、前端页面时触发。 输出 HTML/CSS/JS"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   前端 UI 界面设计。当用户要创建网页、landing page、dashboard、React/Vue 组件、前端页面时触发。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。
 tags:

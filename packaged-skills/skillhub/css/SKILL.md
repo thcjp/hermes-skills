@@ -4,7 +4,7 @@ name: "css"
 version: "1.0.0"
 displayName: "CSS避坑指南"
 summary: "规避堆叠上下文、布局怪癖与现代CSS特性误用,覆盖flex/grid/响应式/性能。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   规避常见CSS陷阱:堆叠上下文失效、margin collapse、flexbox/grid
   误解、响应式策略、现代选择器、滚动行为、简写陷阱、性能优化与

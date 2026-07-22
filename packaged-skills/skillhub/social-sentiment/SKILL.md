@@ -4,7 +4,7 @@ name: "social-sentiment"
 version: "1.4.0"
 displayName: "Social Sentiment"
 summary: "This skill is a disclosed social-listening workflow that uses Xpoz and an"
-license: "MIT"
+license: "Proprietary"
 description: |-
   This skill is a disclosed social-listening workflow that uses Xpoz and
   an npm-installed helper, w。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。

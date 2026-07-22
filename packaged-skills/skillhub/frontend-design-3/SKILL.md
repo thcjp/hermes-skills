@@ -4,7 +4,7 @@ name: "frontend-design-3"
 version: "0.1.0"
 displayName: "Frontend Design"
 summary: "创建独特的生产级前端界面，避免通用 AI 风格，支持 11 种美学方向。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   frontend-design-3 是一个前端设计技能，创建独特的生产级界面，避免通用"AI slop"美学。
   支持 11 种美学方向（极简、最大化、复古未来、有机自然、奢华精致、俏皮玩具、编辑杂志、

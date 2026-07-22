@@ -4,7 +4,7 @@ name: "reddit-research"
 version: "1.0.0"
 displayName: "Reddit Research"
 summary: "Extracts and summarizes trending topics, recurring issues, and content gaps"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Extracts and summarizes trending topics, recurring issues, and content
   gaps across targeted Reddi。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。

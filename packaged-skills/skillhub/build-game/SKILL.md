@@ -4,7 +4,7 @@ name: "build-game"
 version: "1.2.0"
 displayName: "3D Game Builder"
 summary: "Generate and iteratively develop polished 3D browser games from natural language."
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   Generate and iteratively develop polished 3D browser games from natural
   language。Supports any ge。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。

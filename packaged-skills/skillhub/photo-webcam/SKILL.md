@@ -4,7 +4,7 @@ name: "photo-webcam"
 version: "1.0.6"
 displayName: "Photo Webcam"
 summary: "List and snapshot retrieval for webcams (especially foto-webcam.eu). Use"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   List and snapshot retrieval for webcams (especially foto-webcam。eu)。Use when 用户需要Photo Webcam相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:

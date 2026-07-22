@@ -4,7 +4,7 @@ name: "productivity-improving"
 version: "1.1.0"
 displayName: "Productivity Tracker"
 summary: "Productivity tracker and daily review assistant. Input activity logs, time"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   Productivity tracker and daily review assistant。Input activity logs,
   time notes, goals, or a dai。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。

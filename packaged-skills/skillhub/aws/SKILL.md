@@ -4,7 +4,7 @@ name: "aws"
 version: "1.0.2"
 displayName: "Aws"
 summary: "Architect, deploy, and optimize AWS infrastructure avoiding cost explosions"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Architect, deploy, and optimize AWS infrastructure avoiding cost explosions
   and security pitfalls。核心能力:

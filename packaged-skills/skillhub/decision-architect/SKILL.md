@@ -4,7 +4,7 @@ name: "decision-architect"
 version: "1.0.0"
 displayName: "决策架构师"
 summary: "结构化决策支持加认知偏差检测与回顾复盘，避免拍脑袋决策与重复踩坑。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   面向 AI Agent 的结构化决策支持系统，提供决策框架匹配、认知偏差检测、风险画像学习与强制复盘闭环。
   内置 8 类决策框架（决策矩阵、成本效益、前置分析、预演困境、机会成本、二阶思维、奥卡姆剃刀、可逆性评估），

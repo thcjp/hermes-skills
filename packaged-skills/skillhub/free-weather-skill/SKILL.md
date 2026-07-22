@@ -4,7 +4,7 @@ name: "free-weather-skill"
 version: "0.1.0"
 displayName: "Weather"
 summary: "Get current weather and forecasts (no API key required)."
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   Get current weather and forecasts (no API key required)。核心能力:
 

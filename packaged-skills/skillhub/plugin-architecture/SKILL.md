@@ -4,7 +4,7 @@ name: "plugin-architecture"
 version: "1.0.1"
 displayName: "插件UI架构"
 summary: "为SkillHub安装UI插件架构，使插件可注册自定义视图与导航标签。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   插件UI架构为SkillHub（OpenClaw）安装UI插件注册支持，使插件可在Control仪表板侧边栏
   注册自定义UI视图/标签。支持registerView API注册，包含id、label、subtitle、icon、

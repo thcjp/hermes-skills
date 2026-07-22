@@ -4,7 +4,7 @@ name: "ws-excel"
 version: "1.0.0"
 displayName: "Excel"
 summary: "Excel 操作。数据处理、公式、表格操作。"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   Excel 操作。数据处理、公式、表格操作。
 

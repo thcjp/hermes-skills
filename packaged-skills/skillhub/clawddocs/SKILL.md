@@ -4,7 +4,7 @@ name: "clawddocs"
 version: "1.2.2"
 displayName: "Clawddocs"
 summary: "SkillHub documentation expert with decision tree navigation."
-license: "MIT"
+license: "Proprietary"
 description: |-
   SkillHub documentation expert with decision tree navigation。核心能力:
 

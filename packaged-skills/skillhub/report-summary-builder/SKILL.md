@@ -4,7 +4,7 @@ name: "report-summary-builder"
 version: "1.0.0"
 displayName: "Report Summary Build"
 summary: "基于已有日报自动汇总生成周报和月报。"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   基于已有日报自动汇总生成周报和月报。核心能力:
 

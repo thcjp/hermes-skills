@@ -4,7 +4,7 @@ name: "pipedrive-api"
 version: "1.0.4"
 displayName: "Pipedrive"
 summary: "Pipedrive API integration with managed OAuth. Manage deals, persons, organizations,"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   Pipedrive API integration with managed OAuth。Manage deals, persons,
   organizations, activities, a。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。

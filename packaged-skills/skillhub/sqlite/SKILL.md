@@ -4,7 +4,7 @@ name: "sqlite"
 version: "1.0.0"
 displayName: "SQLite"
 summary: "Use SQLite correctly with proper concurrency, pragmas, and type handling."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Use SQLite correctly with proper concurrency, pragmas, and type handling。核心能力:
 

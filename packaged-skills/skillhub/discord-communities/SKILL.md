@@ -4,7 +4,7 @@ name: "discord-communities"
 version: "1.0.0"
 displayName: "Discord社区管理"
 summary: "Discord社区管理助手,覆盖OAuth连接、公会查询、成员权限、应用命令与商业订阅全流程"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Discord 社区管理专业版 —— 基于 ClawLink OAuth 集成的一站式 Discord 社区运营助手。
   覆盖用户身份、公会与小组件、应用命令权限、商业权益(SKU/订阅/消耗)、

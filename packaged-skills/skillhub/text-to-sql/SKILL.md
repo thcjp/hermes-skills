@@ -4,7 +4,7 @@ name: "text-to-sql"
 version: "999.0.0"
 displayName: "Text To Sql"
 summary: "Use when (1) user describes what data they want in plain English and asks"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   Use when (1) user describes what data they want in plain English and
   asks for the corresponding S。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。

@@ -4,7 +4,7 @@ name: "agent-group"
 version: "1.0.3"
 displayName: "Agent Group"
 summary: "极简多Agent群组 - 像微信拉群一样简单"
-license: "MIT"
+license: "Proprietary"
 description: |-
   极简多Agent群组 - 像微信拉群一样简单
 

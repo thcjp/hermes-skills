@@ -4,7 +4,7 @@ name: "sonoscli"
 version: "1.0.0"
 displayName: "Sonoscli"
 summary: "Control Sonos speakers (discover/status/play/volume/group)."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Control Sonos speakers (discover/status/play/volume/group)。核心能力:
 

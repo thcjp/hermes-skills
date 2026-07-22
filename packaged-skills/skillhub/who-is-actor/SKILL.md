@@ -4,7 +4,7 @@ name: "who-is-actor"
 version: "1.0.0"
 displayName: "Who Is Actor"
 summary: "Git repository actor identification skill."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Git repository actor identification skill。核心能力:
 

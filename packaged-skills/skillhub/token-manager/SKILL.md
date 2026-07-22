@@ -4,7 +4,7 @@ name: "token-manager"
 version: "2.0.0"
 displayName: "Token用量管理"
 summary: "监控API Token使用量和费用，提供定时提醒、余额预警和跨会话分析"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   API Token使用量和费用监控工具。实时跟踪Token消耗和余额，支持定时提醒、
   余额预警、工具集成和跨会话分析。按¥12/1M tokens计费，80%上下文阈值

@@ -4,7 +4,7 @@ name: "use-my-browser"
 version: "2.0.0"
 displayName: "浏览器控制工具"
 summary: "控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取。通过浏览器扩展
   桥接，直接操作用户已登录的浏览器会话，无需重新认证。支持页面文本提取、

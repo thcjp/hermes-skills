@@ -4,7 +4,7 @@ name: "tts-whatsapp"
 version: "1.0.0"
 displayName: "TTS WhatsApp"
 summary: "Send high-quality text-to-speech voice messages on WhatsApp in 40+ languages"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Send high-quality text-to-speech voice messages on WhatsApp in 40+ languages
   with automatic delivery

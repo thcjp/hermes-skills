@@ -4,7 +4,7 @@ name: "browser-automation"
 version: "1.0.1"
 displayName: "Browser Automation"
 summary: "Automate web browser interactions using natural language via CLI commands."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Automate web browser interactions using natural language via CLI commands。Use when the user asks。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
 tags:

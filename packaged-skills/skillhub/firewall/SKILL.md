@@ -4,7 +4,7 @@ name: "firewall"
 version: "1.0.0"
 displayName: "Firewall"
 summary: "Configure firewalls on servers and cloud providers with security best practices."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Configure firewalls on servers and cloud providers with security best
   practices。核心能力:

@@ -4,7 +4,7 @@ name: "feed-digest"
 version: "1.0.0"
 displayName: "Feed Digest"
 summary: "This skill is a straightforward feed digest helper with disclosed feed fetching"
-license: "MIT"
+license: "Proprietary"
 description: |-
   This skill is a straightforward feed digest helper with disclosed feed
   fetching and read-status c。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。

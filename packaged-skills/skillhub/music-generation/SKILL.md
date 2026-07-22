@@ -4,7 +4,7 @@ name: "music-generation"
 version: "1.0.0"
 displayName: "Music Generation"
 summary: "Generate AI music with optimized prompts, style control, and production-ready"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Generate AI music with optimized prompts, style control, and production-ready
   audio output。核心能力:

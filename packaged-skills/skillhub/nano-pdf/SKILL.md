@@ -4,7 +4,7 @@ name: "nano-pdf"
 version: "1.0.0"
 displayName: "Nano Pdf"
 summary: "Edit PDFs with natural-language instructions using the nano-pdf CLI."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Edit PDFs with natural-language instructions using the nano-pdf CLI。核心能力:
 

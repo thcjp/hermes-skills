@@ -4,7 +4,7 @@ name: "cheat-code"
 version: "1.0.11"
 displayName: "Cheat Code"
 summary: "Makes your agent's talents limitless. Tell your agent what you want. Watch"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Makes your agent's talents limitless。Tell your agent what you want。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:

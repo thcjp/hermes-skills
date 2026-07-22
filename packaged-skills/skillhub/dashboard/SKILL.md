@@ -4,7 +4,7 @@ name: "dashboard"
 version: "1.0.1"
 displayName: "Dashboard"
 summary: "Build custom dashboards from any data source with local hosting and visual"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Build custom dashboards from any data source with local hosting and
   visual QA loops。核心能力:

@@ -4,7 +4,7 @@ name: "solo-audit"
 version: "1.4.1"
 displayName: "Audit"
 summary: "Health check knowledge base for broken links, missing frontmatter, tag inconsistencies,"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Health check knowledge base for broken links, missing frontmatter, tag
   inconsistencies, and cover。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。

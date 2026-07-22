@@ -4,7 +4,7 @@ name: "expanso-csv-to-json"
 version: "1.0.0"
 displayName: "Expanso csv-to-json"
 summary: "Convert CSV input into a JSON array of objects using Expanso Edge CLI or"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Convert CSV input into a JSON array of objects using Expanso Edge CLI
   or MCP pipelines。核心能力:

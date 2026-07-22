@@ -1,0 +1,2509 @@
+{
+  "timestamp": "2026-07-22T22:51:20.895722",
+  "total_paid_dirs": 830,
+  "fixed_count": 403,
+  "already_proprietary_count": 293,
+  "file_not_found_count": 0,
+  "no_license_field_count": 134,
+  "error_count": 0,
+  "details": {
+    "fixed": [
+      {
+        "slug": "accounting-and-finance"
+      },
+      {
+        "slug": "ace-music"
+      },
+      {
+        "slug": "ad-insight-hub"
+      },
+      {
+        "slug": "admapix"
+      },
+      {
+        "slug": "aegis-security"
+      },
+      {
+        "slug": "afrexai-knowledge-management"
+      },
+      {
+        "slug": "agent"
+      },
+      {
+        "slug": "agent-browser-automation"
+      },
+      {
+        "slug": "agent-browser-cli"
+      },
+      {
+        "slug": "agent-browser-stagehand"
+      },
+      {
+        "slug": "agent-chat"
+      },
+      {
+        "slug": "agent-framework-azure-ai-py"
+      },
+      {
+        "slug": "agent-group"
+      },
+      {
+        "slug": "agent-knowledge"
+      },
+      {
+        "slug": "agent-telegram"
+      },
+      {
+        "slug": "agentic-security-audit"
+      },
+      {
+        "slug": "agentvibes-voice-skill"
+      },
+      {
+        "slug": "ai-agent-helper"
+      },
+      {
+        "slug": "ai-assistant"
+      },
+      {
+        "slug": "ai-image-gen"
+      },
+      {
+        "slug": "ai-kujiale-design"
+      },
+      {
+        "slug": "ai-podcast"
+      },
+      {
+        "slug": "aic-dashboard"
+      },
+      {
+        "slug": "alephnet-node"
+      },
+      {
+        "slug": "analyze"
+      },
+      {
+        "slug": "analyze-video-by-qwen"
+      },
+      {
+        "slug": "anthropics-frontend-design"
+      },
+      {
+        "slug": "anthrovision-telegram-body-scan"
+      },
+      {
+        "slug": "anygen-diagram-generator"
+      },
+      {
+        "slug": "api-development"
+      },
+      {
+        "slug": "api-doc-writer"
+      },
+      {
+        "slug": "api-gateway"
+      },
+      {
+        "slug": "api-generator"
+      },
+      {
+        "slug": "api-integration"
+      },
+      {
+        "slug": "apple-health-skill"
+      },
+      {
+        "slug": "art"
+      },
+      {
+        "slug": "assistant"
+      },
+      {
+        "slug": "audio-upload-aioz-stream"
+      },
+      {
+        "slug": "audit"
+      },
+      {
+        "slug": "auto-monitor"
+      },
+      {
+        "slug": "auto-workflow"
+      },
+      {
+        "slug": "aws"
+      },
+      {
+        "slug": "aws-agentcore-langgraph"
+      },
+      {
+        "slug": "aws-cloud-architect"
+      },
+      {
+        "slug": "aws-graph-agent"
+      },
+      {
+        "slug": "aws-infra"
+      },
+      {
+        "slug": "aws-wechat-article-writing"
+      },
+      {
+        "slug": "azure"
+      },
+      {
+        "slug": "azure-ai-transcription-py"
+      },
+      {
+        "slug": "azure-ai-voicelive-py"
+      },
+      {
+        "slug": "azure-cli"
+      },
+      {
+        "slug": "azure-cloud-architect"
+      },
+      {
+        "slug": "azure-devops"
+      },
+      {
+        "slug": "azure-infra"
+      },
+      {
+        "slug": "baidu-netdisk-skills"
+      },
+      {
+        "slug": "bailian-web-search"
+      },
+      {
+        "slug": "beware-piper-tts"
+      },
+      {
+        "slug": "bilibili-all-in-one"
+      },
+      {
+        "slug": "bilibili-helper"
+      },
+      {
+        "slug": "blog-writer"
+      },
+      {
+        "slug": "book-painter"
+      },
+      {
+        "slug": "bookmark-intelligence"
+      },
+      {
+        "slug": "brainz-calendar"
+      },
+      {
+        "slug": "brave-search"
+      },
+      {
+        "slug": "browser-automation"
+      },
+      {
+        "slug": "browser-automation-v2"
+      },
+      {
+        "slug": "calendar"
+      },
+      {
+        "slug": "calendar-reminder"
+      },
+      {
+        "slug": "calendar-sync-tool"
+      },
+      {
+        "slug": "can"
+      },
+      {
+        "slug": "cashu-emoji"
+      },
+      {
+        "slug": "cctv-news-fetcher"
+      },
+      {
+        "slug": "cdn"
+      },
+      {
+        "slug": "chart"
+      },
+      {
+        "slug": "chat"
+      },
+      {
+        "slug": "cheat-code"
+      },
+      {
+        "slug": "chromecast-control"
+      },
+      {
+        "slug": "claude-code-delegate"
+      },
+      {
+        "slug": "claude-code-runner"
+      },
+      {
+        "slug": "claude-tmux"
+      },
+      {
+        "slug": "clawcall"
+      },
+      {
+        "slug": "clawddocs"
+      },
+      {
+        "slug": "clawprint"
+      },
+      {
+        "slug": "cloud"
+      },
+      {
+        "slug": "cloud-architect"
+      },
+      {
+        "slug": "cloud-storage"
+      },
+      {
+        "slug": "code"
+      },
+      {
+        "slug": "code-analysis-skills"
+      },
+      {
+        "slug": "comfyui-painter"
+      },
+      {
+        "slug": "communication-skill"
+      },
+      {
+        "slug": "compress"
+      },
+      {
+        "slug": "context-driven-development"
+      },
+      {
+        "slug": "control-ikea-lightbulb"
+      },
+      {
+        "slug": "creator-alpha-feed"
+      },
+      {
+        "slug": "cron-scheduler-setup"
+      },
+      {
+        "slug": "css"
+      },
+      {
+        "slug": "csv"
+      },
+      {
+        "slug": "csv-analyzer"
+      },
+      {
+        "slug": "csv-handler"
+      },
+      {
+        "slug": "ctxly-chat"
+      },
+      {
+        "slug": "daily-report-writer"
+      },
+      {
+        "slug": "dashboard"
+      },
+      {
+        "slug": "data"
+      },
+      {
+        "slug": "data-analysis-litiao"
+      },
+      {
+        "slug": "data-analyst-cn"
+      },
+      {
+        "slug": "data-format-converter"
+      },
+      {
+        "slug": "database-admin"
+      },
+      {
+        "slug": "db"
+      },
+      {
+        "slug": "decision-architect"
+      },
+      {
+        "slug": "deepseek-chat"
+      },
+      {
+        "slug": "design"
+      },
+      {
+        "slug": "diagram"
+      },
+      {
+        "slug": "diagram-generator"
+      },
+      {
+        "slug": "dingtalk-calendar"
+      },
+      {
+        "slug": "discord"
+      },
+      {
+        "slug": "discord-chat"
+      },
+      {
+        "slug": "discord-communities"
+      },
+      {
+        "slug": "discord-hub"
+      },
+      {
+        "slug": "discord-voice"
+      },
+      {
+        "slug": "discrawl"
+      },
+      {
+        "slug": "dlazy-audio-generate"
+      },
+      {
+        "slug": "dns"
+      },
+      {
+        "slug": "dns-lookup"
+      },
+      {
+        "slug": "dns-networking"
+      },
+      {
+        "slug": "doc-assistant"
+      },
+      {
+        "slug": "docker-ctl"
+      },
+      {
+        "slug": "docker-sandbox"
+      },
+      {
+        "slug": "dogecoin-node"
+      },
+      {
+        "slug": "domain-dns-ops"
+      },
+      {
+        "slug": "doubao-chat"
+      },
+      {
+        "slug": "elite-longterm-memory"
+      },
+      {
+        "slug": "elite-longterm-memory-local"
+      },
+      {
+        "slug": "email-163-com"
+      },
+      {
+        "slug": "email-daily-summary"
+      },
+      {
+        "slug": "email-gmail-outlook"
+      },
+      {
+        "slug": "email-skill"
+      },
+      {
+        "slug": "encoding-formats"
+      },
+      {
+        "slug": "encrypted-docs"
+      },
+      {
+        "slug": "encryption"
+      },
+      {
+        "slug": "evolution-engine"
+      },
+      {
+        "slug": "expanso-csv-to-json"
+      },
+      {
+        "slug": "expanso-json-to-yaml"
+      },
+      {
+        "slug": "expanso-json-validate"
+      },
+      {
+        "slug": "expanso-log-sanitize"
+      },
+      {
+        "slug": "expanso-xml-to-json"
+      },
+      {
+        "slug": "explain-code"
+      },
+      {
+        "slug": "feed-digest"
+      },
+      {
+        "slug": "feed-to-md"
+      },
+      {
+        "slug": "feishu-card"
+      },
+      {
+        "slug": "feishu-doc"
+      },
+      {
+        "slug": "feishu-doc-write"
+      },
+      {
+        "slug": "feishu-send-file"
+      },
+      {
+        "slug": "figma"
+      },
+      {
+        "slug": "figma-2"
+      },
+      {
+        "slug": "file"
+      },
+      {
+        "slug": "file-organizer-zh"
+      },
+      {
+        "slug": "finance"
+      },
+      {
+        "slug": "finance-accounting"
+      },
+      {
+        "slug": "finance-radar"
+      },
+      {
+        "slug": "finance-report-analyzer"
+      },
+      {
+        "slug": "financial-literacy"
+      },
+      {
+        "slug": "firewall"
+      },
+      {
+        "slug": "fonts"
+      },
+      {
+        "slug": "free-ride"
+      },
+      {
+        "slug": "free-weather-api"
+      },
+      {
+        "slug": "frontend-design-3"
+      },
+      {
+        "slug": "game-ai"
+      },
+      {
+        "slug": "game-developer-skill"
+      },
+      {
+        "slug": "generate-presentation"
+      },
+      {
+        "slug": "git-essentials"
+      },
+      {
+        "slug": "git-helper"
+      },
+      {
+        "slug": "gitcrawl"
+      },
+      {
+        "slug": "github"
+      },
+      {
+        "slug": "glitch-dashboard"
+      },
+      {
+        "slug": "go"
+      },
+      {
+        "slug": "go-linter-configuration"
+      },
+      {
+        "slug": "go-security-vulnerability"
+      },
+      {
+        "slug": "go-to-market"
+      },
+      {
+        "slug": "gog"
+      },
+      {
+        "slug": "google-fonts"
+      },
+      {
+        "slug": "google-search"
+      },
+      {
+        "slug": "google-workspace-mcp"
+      },
+      {
+        "slug": "graincrawl"
+      },
+      {
+        "slug": "health"
+      },
+      {
+        "slug": "html"
+      },
+      {
+        "slug": "humanizer"
+      },
+      {
+        "slug": "internet-search"
+      },
+      {
+        "slug": "interview-simulator"
+      },
+      {
+        "slug": "java"
+      },
+      {
+        "slug": "javascript"
+      },
+      {
+        "slug": "javascript-sdk"
+      },
+      {
+        "slug": "jinn-node"
+      },
+      {
+        "slug": "jira"
+      },
+      {
+        "slug": "jira-pat-toolkit"
+      },
+      {
+        "slug": "jira-skill"
+      },
+      {
+        "slug": "job-auto-apply"
+      },
+      {
+        "slug": "json"
+      },
+      {
+        "slug": "json-canvas"
+      },
+      {
+        "slug": "json-formatter"
+      },
+      {
+        "slug": "json-linter"
+      },
+      {
+        "slug": "json-parser"
+      },
+      {
+        "slug": "json-repair-kit"
+      },
+      {
+        "slug": "juejin-skills"
+      },
+      {
+        "slug": "k8s"
+      },
+      {
+        "slug": "kai-tw-figma"
+      },
+      {
+        "slug": "knowledge"
+      },
+      {
+        "slug": "knowledge-capture"
+      },
+      {
+        "slug": "knowledge-graph"
+      },
+      {
+        "slug": "knowledge-graph-skill"
+      },
+      {
+        "slug": "knowledge-ontology"
+      },
+      {
+        "slug": "kubernetes-devops"
+      },
+      {
+        "slug": "learn"
+      },
+      {
+        "slug": "lh-video-gen"
+      },
+      {
+        "slug": "linear"
+      },
+      {
+        "slug": "linear-api"
+      },
+      {
+        "slug": "linear-skill"
+      },
+      {
+        "slug": "lite-sqlite"
+      },
+      {
+        "slug": "llm-assistant-hub"
+      },
+      {
+        "slug": "local-file-rag-basic"
+      },
+      {
+        "slug": "logo"
+      },
+      {
+        "slug": "logo-design-guide"
+      },
+      {
+        "slug": "longmemo-elite"
+      },
+      {
+        "slug": "mac-node-snapshot"
+      },
+      {
+        "slug": "manage-liquidity"
+      },
+      {
+        "slug": "markdown"
+      },
+      {
+        "slug": "markdown-converter-tool"
+      },
+      {
+        "slug": "mcporter"
+      },
+      {
+        "slug": "media-server-control"
+      },
+      {
+        "slug": "meeting-note"
+      },
+      {
+        "slug": "memo-quickstart"
+      },
+      {
+        "slug": "memory"
+      },
+      {
+        "slug": "memory-compress"
+      },
+      {
+        "slug": "memory-distiller"
+      },
+      {
+        "slug": "memory-orchestrator"
+      },
+      {
+        "slug": "memory-radar"
+      },
+      {
+        "slug": "memory-scan"
+      },
+      {
+        "slug": "merge-check"
+      },
+      {
+        "slug": "merge-pdf"
+      },
+      {
+        "slug": "molt-board-art"
+      },
+      {
+        "slug": "moltbook-filter"
+      },
+      {
+        "slug": "moltbook-firewall-tool"
+      },
+      {
+        "slug": "molted-work"
+      },
+      {
+        "slug": "monad-development"
+      },
+      {
+        "slug": "mongodb"
+      },
+      {
+        "slug": "monitor"
+      },
+      {
+        "slug": "multi-agent-dev"
+      },
+      {
+        "slug": "multi-search-engine"
+      },
+      {
+        "slug": "music"
+      },
+      {
+        "slug": "music-generation"
+      },
+      {
+        "slug": "namecheap-dns"
+      },
+      {
+        "slug": "nano-pdf"
+      },
+      {
+        "slug": "neosoul-decision-agent"
+      },
+      {
+        "slug": "netpad-tool"
+      },
+      {
+        "slug": "neural-memory-enhanced"
+      },
+      {
+        "slug": "news"
+      },
+      {
+        "slug": "news-feed"
+      },
+      {
+        "slug": "news-sentiment-scan"
+      },
+      {
+        "slug": "notcrawl"
+      },
+      {
+        "slug": "note-app-cli"
+      },
+      {
+        "slug": "notion"
+      },
+      {
+        "slug": "notion-skill"
+      },
+      {
+        "slug": "notioncli"
+      },
+      {
+        "slug": "ollama-integration"
+      },
+      {
+        "slug": "ontology"
+      },
+      {
+        "slug": "openai-whisper"
+      },
+      {
+        "slug": "openai-whisper-1-0-0"
+      },
+      {
+        "slug": "openclaw-dashboard"
+      },
+      {
+        "slug": "openclaw-linear"
+      },
+      {
+        "slug": "pandoc-convert-openclaw"
+      },
+      {
+        "slug": "paper-parse"
+      },
+      {
+        "slug": "parallel-ai-research"
+      },
+      {
+        "slug": "password-generator"
+      },
+      {
+        "slug": "pdf"
+      },
+      {
+        "slug": "pdf-compressor-tool"
+      },
+      {
+        "slug": "persistent-memory-engine"
+      },
+      {
+        "slug": "photo-captions"
+      },
+      {
+        "slug": "ping-monitor"
+      },
+      {
+        "slug": "plugin-architecture"
+      },
+      {
+        "slug": "podcast"
+      },
+      {
+        "slug": "podcast-chaptering-highlights"
+      },
+      {
+        "slug": "postgres-job-queue"
+      },
+      {
+        "slug": "pptx-pdf-font-fix"
+      },
+      {
+        "slug": "proactive-agent"
+      },
+      {
+        "slug": "productivity"
+      },
+      {
+        "slug": "professional-communication"
+      },
+      {
+        "slug": "py"
+      },
+      {
+        "slug": "python"
+      },
+      {
+        "slug": "python-dataviz"
+      },
+      {
+        "slug": "qq-zone-photo"
+      },
+      {
+        "slug": "queue-task"
+      },
+      {
+        "slug": "reddit-research"
+      },
+      {
+        "slug": "reminder"
+      },
+      {
+        "slug": "remix-api-key-auth"
+      },
+      {
+        "slug": "repo-reader-tool"
+      },
+      {
+        "slug": "report"
+      },
+      {
+        "slug": "research-agent"
+      },
+      {
+        "slug": "rest-api-reference"
+      },
+      {
+        "slug": "rho-telegram-alerts-tool"
+      },
+      {
+        "slug": "rss-aggregator"
+      },
+      {
+        "slug": "rss-ai-reader"
+      },
+      {
+        "slug": "rss-digest"
+      },
+      {
+        "slug": "rss-feed-digest"
+      },
+      {
+        "slug": "rss-reader"
+      },
+      {
+        "slug": "rust"
+      },
+      {
+        "slug": "safe-encryption-skill"
+      },
+      {
+        "slug": "schedule"
+      },
+      {
+        "slug": "screen-monitor"
+      },
+      {
+        "slug": "search-2"
+      },
+      {
+        "slug": "searching-assistant"
+      },
+      {
+        "slug": "secure-api-calls"
+      },
+      {
+        "slug": "security-audit"
+      },
+      {
+        "slug": "security-auditor"
+      },
+      {
+        "slug": "security-scanner"
+      },
+      {
+        "slug": "self-integration"
+      },
+      {
+        "slug": "sequential-read"
+      },
+      {
+        "slug": "shadcn-ui"
+      },
+      {
+        "slug": "shop-culture"
+      },
+      {
+        "slug": "skill-vetter"
+      },
+      {
+        "slug": "slack"
+      },
+      {
+        "slug": "slack-hub-skill"
+      },
+      {
+        "slug": "slack-workspace"
+      },
+      {
+        "slug": "slacrawl"
+      },
+      {
+        "slug": "smart-auto-updater"
+      },
+      {
+        "slug": "smart-cache"
+      },
+      {
+        "slug": "smart-model-routing-for-zai"
+      },
+      {
+        "slug": "smart-model-switching"
+      },
+      {
+        "slug": "smart-reminder-system"
+      },
+      {
+        "slug": "smart-weekly-report"
+      },
+      {
+        "slug": "social"
+      },
+      {
+        "slug": "social-media-scheduler"
+      },
+      {
+        "slug": "social-sentiment"
+      },
+      {
+        "slug": "solo-audit"
+      },
+      {
+        "slug": "solo-build"
+      },
+      {
+        "slug": "solo-validate"
+      },
+      {
+        "slug": "sonoscli"
+      },
+      {
+        "slug": "sovereign-aws-cost-optimizer"
+      },
+      {
+        "slug": "sql-toolkit"
+      },
+      {
+        "slug": "sqlite"
+      },
+      {
+        "slug": "ssl"
+      },
+      {
+        "slug": "stagehand-browser-cli"
+      },
+      {
+        "slug": "straker-verify"
+      },
+      {
+        "slug": "t-trading"
+      },
+      {
+        "slug": "tailwindcss"
+      },
+      {
+        "slug": "tardis"
+      },
+      {
+        "slug": "tarot"
+      },
+      {
+        "slug": "task"
+      },
+      {
+        "slug": "telegram"
+      },
+      {
+        "slug": "telegram-bot-builder"
+      },
+      {
+        "slug": "telegram-messaging"
+      },
+      {
+        "slug": "text"
+      },
+      {
+        "slug": "timer"
+      },
+      {
+        "slug": "token-layer"
+      },
+      {
+        "slug": "tool"
+      },
+      {
+        "slug": "tool-finder"
+      },
+      {
+        "slug": "trading-strategy-guide"
+      },
+      {
+        "slug": "translate"
+      },
+      {
+        "slug": "tts-whatsapp"
+      },
+      {
+        "slug": "typescript"
+      },
+      {
+        "slug": "ui"
+      },
+      {
+        "slug": "ui-audit"
+      },
+      {
+        "slug": "ui-ux"
+      },
+      {
+        "slug": "ui-ux-developer-tool"
+      },
+      {
+        "slug": "university-applications"
+      },
+      {
+        "slug": "ux"
+      },
+      {
+        "slug": "vector-control"
+      },
+      {
+        "slug": "verify-claims"
+      },
+      {
+        "slug": "version-control-workflows"
+      },
+      {
+        "slug": "video"
+      },
+      {
+        "slug": "video-editing"
+      },
+      {
+        "slug": "video-frames"
+      },
+      {
+        "slug": "video-upload-stream-tool"
+      },
+      {
+        "slug": "visual-file-sorter"
+      },
+      {
+        "slug": "volcengine-network-dns"
+      },
+      {
+        "slug": "vpn"
+      },
+      {
+        "slug": "vpn-rotate-skill"
+      },
+      {
+        "slug": "vscode-node"
+      },
+      {
+        "slug": "vue"
+      },
+      {
+        "slug": "vue-component-generator"
+      },
+      {
+        "slug": "vulnerability-scanner"
+      },
+      {
+        "slug": "weather"
+      },
+      {
+        "slug": "web"
+      },
+      {
+        "slug": "web-content-fetcher"
+      },
+      {
+        "slug": "web-learner"
+      },
+      {
+        "slug": "weiyun-skills"
+      },
+      {
+        "slug": "whatsapp-image-send"
+      },
+      {
+        "slug": "whatsapp-messaging"
+      },
+      {
+        "slug": "whatsapp-styler"
+      },
+      {
+        "slug": "whatsapp-styling-guide"
+      },
+      {
+        "slug": "who-is-actor"
+      },
+      {
+        "slug": "work"
+      },
+      {
+        "slug": "workflow"
+      },
+      {
+        "slug": "workflow-decomposer"
+      },
+      {
+        "slug": "write-a-skill"
+      },
+      {
+        "slug": "write-my-blog"
+      },
+      {
+        "slug": "writing-assistant"
+      },
+      {
+        "slug": "x-news-daily"
+      },
+      {
+        "slug": "x-timeline-digest"
+      },
+      {
+        "slug": "xml"
+      },
+      {
+        "slug": "xml-parser-tool"
+      },
+      {
+        "slug": "yaml"
+      },
+      {
+        "slug": "youtube-watcher"
+      },
+      {
+        "slug": "z-card-image"
+      },
+      {
+        "slug": "ziptax"
+      }
+    ],
+    "already_proprietary": [
+      {
+        "slug": "accounting-finance"
+      },
+      {
+        "slug": "actor-identifier"
+      },
+      {
+        "slug": "afrexai-cybersecurity-engine"
+      },
+      {
+        "slug": "agent-browser-assistant"
+      },
+      {
+        "slug": "agentvibes-content-skill"
+      },
+      {
+        "slug": "agentvibes-skill"
+      },
+      {
+        "slug": "ai-artist-workstation"
+      },
+      {
+        "slug": "ai-video-studio-pro"
+      },
+      {
+        "slug": "ai-writing-style-cloner"
+      },
+      {
+        "slug": "alephnet-node-manager"
+      },
+      {
+        "slug": "alpha-feed-creator"
+      },
+      {
+        "slug": "analytics-dashboard"
+      },
+      {
+        "slug": "anygen-diagram"
+      },
+      {
+        "slug": "api-connect-hub"
+      },
+      {
+        "slug": "api-doc-generator"
+      },
+      {
+        "slug": "api-magic-gen"
+      },
+      {
+        "slug": "api-scaffold-gen"
+      },
+      {
+        "slug": "api-toolkit"
+      },
+      {
+        "slug": "archive"
+      },
+      {
+        "slug": "atlas-admin-console"
+      },
+      {
+        "slug": "audio-stream-upload"
+      },
+      {
+        "slug": "automation-recipe-book"
+      },
+      {
+        "slug": "aws-toolkit"
+      },
+      {
+        "slug": "azure-cli-toolkit"
+      },
+      {
+        "slug": "azure-gateway-cli"
+      },
+      {
+        "slug": "azure-transcription"
+      },
+      {
+        "slug": "azure-voicelive"
+      },
+      {
+        "slug": "bilibili-toolkit"
+      },
+      {
+        "slug": "bookmark-smart-hub"
+      },
+      {
+        "slug": "call-bridge"
+      },
+      {
+        "slug": "can-bus-toolkit"
+      },
+      {
+        "slug": "canvas-json-handler"
+      },
+      {
+        "slug": "card-image-builder"
+      },
+      {
+        "slug": "chart-craft"
+      },
+      {
+        "slug": "cheat-code-paid"
+      },
+      {
+        "slug": "chief-creative-officer"
+      },
+      {
+        "slug": "cloud-architect-design"
+      },
+      {
+        "slug": "cloud-manager"
+      },
+      {
+        "slug": "code-analysis-toolkit"
+      },
+      {
+        "slug": "code-analyze"
+      },
+      {
+        "slug": "code-delegate"
+      },
+      {
+        "slug": "code-dev-toolkit"
+      },
+      {
+        "slug": "code-dev-v1"
+      },
+      {
+        "slug": "code-quality-paid"
+      },
+      {
+        "slug": "code-runner"
+      },
+      {
+        "slug": "content-refiner"
+      },
+      {
+        "slug": "creative-officer"
+      },
+      {
+        "slug": "cron-setup-guide"
+      },
+      {
+        "slug": "csv-insight"
+      },
+      {
+        "slug": "csv-json-converter"
+      },
+      {
+        "slug": "csv-toolkit"
+      },
+      {
+        "slug": "dashboard-analytics-tool"
+      },
+      {
+        "slug": "data-analysis-hub"
+      },
+      {
+        "slug": "data-analyst-chinese"
+      },
+      {
+        "slug": "data-analyst-expert"
+      },
+      {
+        "slug": "db-admin-console"
+      },
+      {
+        "slug": "db-connector"
+      },
+      {
+        "slug": "db-schema-designer"
+      },
+      {
+        "slug": "deepseek-assistant"
+      },
+      {
+        "slug": "design-toolkit"
+      },
+      {
+        "slug": "diagram-gen"
+      },
+      {
+        "slug": "discord-chat-manager"
+      },
+      {
+        "slug": "discord-community-hub"
+      },
+      {
+        "slug": "discord-master"
+      },
+      {
+        "slug": "discord-toolkit"
+      },
+      {
+        "slug": "dlazy-audio"
+      },
+      {
+        "slug": "dlazy-gen"
+      },
+      {
+        "slug": "dns-config"
+      },
+      {
+        "slug": "dns-networking-paid"
+      },
+      {
+        "slug": "doc-guard"
+      },
+      {
+        "slug": "doc-parse"
+      },
+      {
+        "slug": "docker-essentials"
+      },
+      {
+        "slug": "docker-essentials-v1"
+      },
+      {
+        "slug": "doubao-assistant"
+      },
+      {
+        "slug": "doubao-image-gen"
+      },
+      {
+        "slug": "drama-hit-producer"
+      },
+      {
+        "slug": "ebook-factory"
+      },
+      {
+        "slug": "ecommerce-pricing-strategist"
+      },
+      {
+        "slug": "elite-frontend"
+      },
+      {
+        "slug": "email-163"
+      },
+      {
+        "slug": "email-digest"
+      },
+      {
+        "slug": "email-toolkit"
+      },
+      {
+        "slug": "encoding-toolkit"
+      },
+      {
+        "slug": "encryption-paid"
+      },
+      {
+        "slug": "excel-craft"
+      },
+      {
+        "slug": "excel-expert"
+      },
+      {
+        "slug": "explain-code-paid"
+      },
+      {
+        "slug": "feishu-card-builder"
+      },
+      {
+        "slug": "feishu-file-sender"
+      },
+      {
+        "slug": "figma-design-paid"
+      },
+      {
+        "slug": "figma-studio"
+      },
+      {
+        "slug": "figma-tw-designer"
+      },
+      {
+        "slug": "finance-acct"
+      },
+      {
+        "slug": "finance-radar-paid"
+      },
+      {
+        "slug": "finance-report"
+      },
+      {
+        "slug": "finance-toolkit"
+      },
+      {
+        "slug": "financial-literacy-paid"
+      },
+      {
+        "slug": "format-converter"
+      },
+      {
+        "slug": "fortune-reading-studio"
+      },
+      {
+        "slug": "free-resource-finder"
+      },
+      {
+        "slug": "frontend-design-anthropic"
+      },
+      {
+        "slug": "frontend-design-v3"
+      },
+      {
+        "slug": "game-asset-gen"
+      },
+      {
+        "slug": "game-theory"
+      },
+      {
+        "slug": "gateway-manager"
+      },
+      {
+        "slug": "git-cli-paid"
+      },
+      {
+        "slug": "git-helper-paid"
+      },
+      {
+        "slug": "git-toolkit"
+      },
+      {
+        "slug": "git-workflow-cn-paid"
+      },
+      {
+        "slug": "git-workflows-paid"
+      },
+      {
+        "slug": "github-api-toolkit"
+      },
+      {
+        "slug": "github-dev-standard"
+      },
+      {
+        "slug": "github-manager"
+      },
+      {
+        "slug": "golang-toolkit"
+      },
+      {
+        "slug": "google-workspace-cli"
+      },
+      {
+        "slug": "google-workspace-toolkit"
+      },
+      {
+        "slug": "grain-crawler"
+      },
+      {
+        "slug": "graph-knowledge-base"
+      },
+      {
+        "slug": "graph-query"
+      },
+      {
+        "slug": "grok-image"
+      },
+      {
+        "slug": "heygen-tts"
+      },
+      {
+        "slug": "hook-retention-master"
+      },
+      {
+        "slug": "html-coder-paid"
+      },
+      {
+        "slug": "html-designer-paid"
+      },
+      {
+        "slug": "hugo-blog"
+      },
+      {
+        "slug": "in-depth-research"
+      },
+      {
+        "slug": "intel-sentinel"
+      },
+      {
+        "slug": "iris-formatter"
+      },
+      {
+        "slug": "java-dev-manual"
+      },
+      {
+        "slug": "java-reviewer"
+      },
+      {
+        "slug": "javascript-sdk-paid"
+      },
+      {
+        "slug": "javascript-skills-paid"
+      },
+      {
+        "slug": "javascript-toolkit"
+      },
+      {
+        "slug": "jira-api-toolkit"
+      },
+      {
+        "slug": "jira-flow-skill"
+      },
+      {
+        "slug": "jira-integration-skill"
+      },
+      {
+        "slug": "jira-pat-manager"
+      },
+      {
+        "slug": "join-meeting"
+      },
+      {
+        "slug": "json-beautifier"
+      },
+      {
+        "slug": "json-lint"
+      },
+      {
+        "slug": "json-parse-engine"
+      },
+      {
+        "slug": "json-repair"
+      },
+      {
+        "slug": "json-toolkit"
+      },
+      {
+        "slug": "json-validator"
+      },
+      {
+        "slug": "json-yaml-converter"
+      },
+      {
+        "slug": "key-vault-manager"
+      },
+      {
+        "slug": "knowledge-graph-paid"
+      },
+      {
+        "slug": "kujiale-design"
+      },
+      {
+        "slug": "learn-cog"
+      },
+      {
+        "slug": "lh-video-gen-paid"
+      },
+      {
+        "slug": "linear-api-toolkit"
+      },
+      {
+        "slug": "linear-project-manager"
+      },
+      {
+        "slug": "linear-sync"
+      },
+      {
+        "slug": "linear-workflow-skill"
+      },
+      {
+        "slug": "logo-brand-identity"
+      },
+      {
+        "slug": "logo-design"
+      },
+      {
+        "slug": "markdown-converter-paid"
+      },
+      {
+        "slug": "markdown-exporter"
+      },
+      {
+        "slug": "markdown-format"
+      },
+      {
+        "slug": "md-export"
+      },
+      {
+        "slug": "meeting-join"
+      },
+      {
+        "slug": "merge-check-paid"
+      },
+      {
+        "slug": "mermaid-diagram-paid"
+      },
+      {
+        "slug": "minimalist-design"
+      },
+      {
+        "slug": "model-routing"
+      },
+      {
+        "slug": "model-switching"
+      },
+      {
+        "slug": "mongo-manager"
+      },
+      {
+        "slug": "music-gen"
+      },
+      {
+        "slug": "music-gen-cellcog"
+      },
+      {
+        "slug": "news-aggregator"
+      },
+      {
+        "slug": "news-daily-digest"
+      },
+      {
+        "slug": "news-sentiment"
+      },
+      {
+        "slug": "node-connect-paid"
+      },
+      {
+        "slug": "notion-api-toolkit"
+      },
+      {
+        "slug": "notion-cli"
+      },
+      {
+        "slug": "novel-autopilot"
+      },
+      {
+        "slug": "obsidian-cli"
+      },
+      {
+        "slug": "okx-dex-token-paid"
+      },
+      {
+        "slug": "ollama-toolkit"
+      },
+      {
+        "slug": "openai-ai-paid"
+      },
+      {
+        "slug": "openai-whisper-paid"
+      },
+      {
+        "slug": "openai-whisper-v1"
+      },
+      {
+        "slug": "ops-dashboard"
+      },
+      {
+        "slug": "pandoc-document-converter"
+      },
+      {
+        "slug": "pg-job-queue"
+      },
+      {
+        "slug": "pg-mcp-skills"
+      },
+      {
+        "slug": "photo-caption"
+      },
+      {
+        "slug": "pipedrive-toolkit"
+      },
+      {
+        "slug": "piper-tts-engine"
+      },
+      {
+        "slug": "podcast-chaptering"
+      },
+      {
+        "slug": "podcast-downloader-paid"
+      },
+      {
+        "slug": "podcast-toolkit"
+      },
+      {
+        "slug": "poetry-craftsman"
+      },
+      {
+        "slug": "pro-comm-toolkit"
+      },
+      {
+        "slug": "py-data-analyzer"
+      },
+      {
+        "slug": "python-toolkit"
+      },
+      {
+        "slug": "pyx-scanner"
+      },
+      {
+        "slug": "quark-scan"
+      },
+      {
+        "slug": "qwen-video-analyzer"
+      },
+      {
+        "slug": "reddit-research-paid"
+      },
+      {
+        "slug": "reminder-engine"
+      },
+      {
+        "slug": "remix-auth"
+      },
+      {
+        "slug": "repo-manager"
+      },
+      {
+        "slug": "resume-assistant"
+      },
+      {
+        "slug": "rss-reader-ai"
+      },
+      {
+        "slug": "sales-copy-writer"
+      },
+      {
+        "slug": "schedule-manager"
+      },
+      {
+        "slug": "secure-api-toolkit"
+      },
+      {
+        "slug": "security"
+      },
+      {
+        "slug": "self-integration-paid"
+      },
+      {
+        "slug": "seo-doctor"
+      },
+      {
+        "slug": "seo-rank-monopolizer"
+      },
+      {
+        "slug": "skill-creator"
+      },
+      {
+        "slug": "slack-api-toolkit"
+      },
+      {
+        "slug": "slack-crawler"
+      },
+      {
+        "slug": "slack-hub"
+      },
+      {
+        "slug": "slack-toolkit"
+      },
+      {
+        "slug": "slack-workspace-manager"
+      },
+      {
+        "slug": "smart-crawler"
+      },
+      {
+        "slug": "smart-reminder"
+      },
+      {
+        "slug": "social-media-toolkit"
+      },
+      {
+        "slug": "solo-dev-companion"
+      },
+      {
+        "slug": "solo-research"
+      },
+      {
+        "slug": "sql"
+      },
+      {
+        "slug": "sql-gen"
+      },
+      {
+        "slug": "sql-master"
+      },
+      {
+        "slug": "sql-query"
+      },
+      {
+        "slug": "sqlite-lite-manager"
+      },
+      {
+        "slug": "sqlite-manager"
+      },
+      {
+        "slug": "ssl-toolkit"
+      },
+      {
+        "slug": "stealth-browser-assistant"
+      },
+      {
+        "slug": "stock-filter"
+      },
+      {
+        "slug": "tailwindcss-toolkit"
+      },
+      {
+        "slug": "task-bot-orchestrator"
+      },
+      {
+        "slug": "task-queue-manager"
+      },
+      {
+        "slug": "telegram-agent-comm"
+      },
+      {
+        "slug": "telegram-alert"
+      },
+      {
+        "slug": "telegram-chat"
+      },
+      {
+        "slug": "telegram-msg-toolkit"
+      },
+      {
+        "slug": "telegram-toolkit"
+      },
+      {
+        "slug": "text2sql-engine"
+      },
+      {
+        "slug": "tg-body-scan"
+      },
+      {
+        "slug": "tg-bot-builder"
+      },
+      {
+        "slug": "timeline-digest"
+      },
+      {
+        "slug": "timer-alert"
+      },
+      {
+        "slug": "title-hook-factory"
+      },
+      {
+        "slug": "tmux-session"
+      },
+      {
+        "slug": "topic-hunter"
+      },
+      {
+        "slug": "trading"
+      },
+      {
+        "slug": "translate-hub"
+      },
+      {
+        "slug": "trending-feed-skill"
+      },
+      {
+        "slug": "tts-whatsapp-paid"
+      },
+      {
+        "slug": "typescript-skills-paid"
+      },
+      {
+        "slug": "typescript-toolkit"
+      },
+      {
+        "slug": "ui-component-paid"
+      },
+      {
+        "slug": "ui-design-toolkit"
+      },
+      {
+        "slug": "ui-ux-design"
+      },
+      {
+        "slug": "ui-ux-dev-paid"
+      },
+      {
+        "slug": "ui-ux-toolkit"
+      },
+      {
+        "slug": "universal-translate-paid"
+      },
+      {
+        "slug": "university-app"
+      },
+      {
+        "slug": "ux-design"
+      },
+      {
+        "slug": "vector-db-manager"
+      },
+      {
+        "slug": "video-editing-paid"
+      },
+      {
+        "slug": "video-frames-paid"
+      },
+      {
+        "slug": "video-stream-upload"
+      },
+      {
+        "slug": "video-toolkit"
+      },
+      {
+        "slug": "video-translator-paid"
+      },
+      {
+        "slug": "viral-decoder"
+      },
+      {
+        "slug": "viral-prophet"
+      },
+      {
+        "slug": "vpn-rotator"
+      },
+      {
+        "slug": "vscode-node-paid"
+      },
+      {
+        "slug": "vue-component-gen"
+      },
+      {
+        "slug": "vue-toolkit"
+      },
+      {
+        "slug": "web-crawler-engine"
+      },
+      {
+        "slug": "web-dev-toolkit"
+      },
+      {
+        "slug": "web-notepad"
+      },
+      {
+        "slug": "wechat-article-writer"
+      },
+      {
+        "slug": "weiyun-toolkit"
+      },
+      {
+        "slug": "whatsapp-image"
+      },
+      {
+        "slug": "whatsapp-master"
+      },
+      {
+        "slug": "whatsapp-msg"
+      },
+      {
+        "slug": "whatsapp-msg-manager"
+      },
+      {
+        "slug": "whatsapp-style"
+      },
+      {
+        "slug": "whatsapp-style-guide"
+      },
+      {
+        "slug": "workflow-orchestrator"
+      },
+      {
+        "slug": "workflow-splitter"
+      },
+      {
+        "slug": "write"
+      },
+      {
+        "slug": "ws-excel-paid"
+      },
+      {
+        "slug": "xlsx-handler"
+      },
+      {
+        "slug": "xml-json-converter"
+      },
+      {
+        "slug": "youtube-watcher-paid"
+      },
+      {
+        "slug": "ziptax-paid"
+      }
+    ],
+    "file_not_found": [],
+    "no_license_field": [
+      {
+        "slug": "agent-bom-vulnerability-intel"
+      },
+      {
+        "slug": "agent-commercial-contract"
+      },
+      {
+        "slug": "ai-news"
+      },
+      {
+        "slug": "alibaba-quark-scan"
+      },
+      {
+        "slug": "amap-jsapi-skill"
+      },
+      {
+        "slug": "automation-recipe-pack"
+      },
+      {
+        "slug": "baoyu-diagram"
+      },
+      {
+        "slug": "baoyu-md-formatter"
+      },
+      {
+        "slug": "blog-seo-writer"
+      },
+      {
+        "slug": "bsession"
+      },
+      {
+        "slug": "build-game"
+      },
+      {
+        "slug": "calendar-skill"
+      },
+      {
+        "slug": "chart-generator-2-0-0"
+      },
+      {
+        "slug": "china-news"
+      },
+      {
+        "slug": "code-quality"
+      },
+      {
+        "slug": "company-search-fengniao"
+      },
+      {
+        "slug": "daily-news-brief"
+      },
+      {
+        "slug": "data-analysis-toolkit"
+      },
+      {
+        "slug": "diagram-tools"
+      },
+      {
+        "slug": "dlazy-generate"
+      },
+      {
+        "slug": "docker"
+      },
+      {
+        "slug": "document-pdf"
+      },
+      {
+        "slug": "elite-frontend-design"
+      },
+      {
+        "slug": "excel-formula"
+      },
+      {
+        "slug": "excel-studio"
+      },
+      {
+        "slug": "excel-xlsx"
+      },
+      {
+        "slug": "figma-design"
+      },
+      {
+        "slug": "file-auto-organizer"
+      },
+      {
+        "slug": "file-browser-tool"
+      },
+      {
+        "slug": "flexible-database-design"
+      },
+      {
+        "slug": "free-google-search-with-browser"
+      },
+      {
+        "slug": "free-weather-skill"
+      },
+      {
+        "slug": "free-web-search"
+      },
+      {
+        "slug": "frontend-design"
+      },
+      {
+        "slug": "game"
+      },
+      {
+        "slug": "game-asset-generation-cellcog"
+      },
+      {
+        "slug": "generate-mindmap"
+      },
+      {
+        "slug": "gif-whatsapp"
+      },
+      {
+        "slug": "git"
+      },
+      {
+        "slug": "git-cli"
+      },
+      {
+        "slug": "git-workflow-cn"
+      },
+      {
+        "slug": "github-api"
+      },
+      {
+        "slug": "github-development-standard"
+      },
+      {
+        "slug": "github-repos"
+      },
+      {
+        "slug": "github-trending-feed"
+      },
+      {
+        "slug": "graph-advocate"
+      },
+      {
+        "slug": "grok-image-generate"
+      },
+      {
+        "slug": "hot-news-aggregator"
+      },
+      {
+        "slug": "html-coder"
+      },
+      {
+        "slug": "html-designer"
+      },
+      {
+        "slug": "hugo-blog-publisher"
+      },
+      {
+        "slug": "image"
+      },
+      {
+        "slug": "iris-code-formatter"
+      },
+      {
+        "slug": "java-code-reviewer"
+      },
+      {
+        "slug": "java-development-manual"
+      },
+      {
+        "slug": "javascript-skills"
+      },
+      {
+        "slug": "jira-api"
+      },
+      {
+        "slug": "key-guard"
+      },
+      {
+        "slug": "kubernetes"
+      },
+      {
+        "slug": "live-stream-script"
+      },
+      {
+        "slug": "logo-brand-identity-cellcog"
+      },
+      {
+        "slug": "mac-system-control"
+      },
+      {
+        "slug": "magic-api-generate"
+      },
+      {
+        "slug": "markdown-converter-compdf"
+      },
+      {
+        "slug": "market-news"
+      },
+      {
+        "slug": "mermaid-diagram"
+      },
+      {
+        "slug": "minimalist-design-system"
+      },
+      {
+        "slug": "miniprogram-development"
+      },
+      {
+        "slug": "moltblock"
+      },
+      {
+        "slug": "mongodb-atlas-admin"
+      },
+      {
+        "slug": "multi-search-engine-simple"
+      },
+      {
+        "slug": "multi-source-research"
+      },
+      {
+        "slug": "music-generation-cellcog"
+      },
+      {
+        "slug": "node-connect"
+      },
+      {
+        "slug": "note"
+      },
+      {
+        "slug": "note-taker"
+      },
+      {
+        "slug": "notion-api-skill"
+      },
+      {
+        "slug": "notion-pages"
+      },
+      {
+        "slug": "ocean-chat-assistant"
+      },
+      {
+        "slug": "okx-dex-token"
+      },
+      {
+        "slug": "openai-ai"
+      },
+      {
+        "slug": "pentest-commands"
+      },
+      {
+        "slug": "personal-health-manager"
+      },
+      {
+        "slug": "photo-webcam"
+      },
+      {
+        "slug": "pipedrive-api"
+      },
+      {
+        "slug": "podcast-downloader-tool"
+      },
+      {
+        "slug": "postgres-mcp-skills"
+      },
+      {
+        "slug": "powerpoint"
+      },
+      {
+        "slug": "powerpoint-pptx"
+      },
+      {
+        "slug": "powerpoint-pptx-cn"
+      },
+      {
+        "slug": "productivity-bot"
+      },
+      {
+        "slug": "productivity-improving"
+      },
+      {
+        "slug": "python3"
+      },
+      {
+        "slug": "pyx-scan"
+      },
+      {
+        "slug": "quant-data-quality"
+      },
+      {
+        "slug": "report-summary-builder"
+      },
+      {
+        "slug": "rss-fetcher"
+      },
+      {
+        "slug": "scrape-web"
+      },
+      {
+        "slug": "shopify-helper"
+      },
+      {
+        "slug": "slack-api"
+      },
+      {
+        "slug": "sql-generator"
+      },
+      {
+        "slug": "stock-filter-skills"
+      },
+      {
+        "slug": "story-long-analyze"
+      },
+      {
+        "slug": "story-long-write"
+      },
+      {
+        "slug": "story-short-write"
+      },
+      {
+        "slug": "tarot-reader"
+      },
+      {
+        "slug": "task-planner"
+      },
+      {
+        "slug": "telegram-chat-manager"
+      },
+      {
+        "slug": "text-rpg-arcade-v3"
+      },
+      {
+        "slug": "text-to-speech-heygen"
+      },
+      {
+        "slug": "text-to-sql"
+      },
+      {
+        "slug": "the-news"
+      },
+      {
+        "slug": "thesis-helper"
+      },
+      {
+        "slug": "token-manager"
+      },
+      {
+        "slug": "tool-call-retry"
+      },
+      {
+        "slug": "translate-en-zh"
+      },
+      {
+        "slug": "travel-assistant"
+      },
+      {
+        "slug": "typescript-skills"
+      },
+      {
+        "slug": "ui-component"
+      },
+      {
+        "slug": "universal-translate"
+      },
+      {
+        "slug": "upstage-document-parse"
+      },
+      {
+        "slug": "use-my-browser"
+      },
+      {
+        "slug": "video-translator"
+      },
+      {
+        "slug": "web-browsing"
+      },
+      {
+        "slug": "web-vulnerability-assessment"
+      },
+      {
+        "slug": "weekly-report-writer"
+      },
+      {
+        "slug": "wenxiang-2d5-banner"
+      },
+      {
+        "slug": "whatsapp-ultimate"
+      },
+      {
+        "slug": "word"
+      },
+      {
+        "slug": "word-docx"
+      },
+      {
+        "slug": "ws-agent-browser"
+      },
+      {
+        "slug": "ws-calendar"
+      },
+      {
+        "slug": "ws-excel"
+      },
+      {
+        "slug": "zhuchenggong-doubao-image-gen"
+      }
+    ],
+    "errors": []
+  }
+}

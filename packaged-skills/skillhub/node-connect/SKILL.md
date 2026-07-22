@@ -4,7 +4,7 @@ name: "node-connect"
 version: "1.0.0"
 displayName: "node-connect"
 summary: "Diagnose SkillHub node connection and pairing failures for Android, iOS,"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   Diagnose SkillHub node connection and pairing failures for Android,
   iOS, and macOS companion apps。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。

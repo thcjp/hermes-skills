@@ -4,7 +4,7 @@ name: "market-news"
 version: "1.0.0"
 displayName: "Market News"
 summary: "自动搜索和总结最新财经新闻与市场动态"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   自动搜索和总结最新财经新闻与市场动态
 

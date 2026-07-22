@@ -4,7 +4,7 @@ name: "remix-api-key-auth"
 version: "0.1.0"
 displayName: "Remix Api Key Auth"
 summary: "Configure and verify bearer API key authentication for Remix agent publishing"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Configure and verify bearer API key authentication for Remix agent publishing
   workflows。核心能力:

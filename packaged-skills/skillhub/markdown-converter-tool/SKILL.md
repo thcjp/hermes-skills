@@ -4,7 +4,7 @@ name: "markdown-converter-tool"
 version: "1.0.0"
 displayName: "Markdown Converter"
 summary: "This is a straightforward Markdown conversion helper, with privacy caveats"
-license: "MIT"
+license: "Proprietary"
 description: |-
   This is a straightforward Markdown conversion helper, with privacy caveats
   if users choose Azure 。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。

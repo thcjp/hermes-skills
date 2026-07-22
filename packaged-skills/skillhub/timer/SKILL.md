@@ -4,7 +4,7 @@ name: "timer"
 version: "1.0.0"
 displayName: "后台定时器与提醒"
 summary: "在后台运行定时器与闹钟，完成后通过系统通知提醒用户，支持多种时间格式与多任务并行管理。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   在后台设置定时器和闹钟。当后台定时器完成时，会收到系统通知，必须将提醒内容传达给用户。
   支持秒、分、时及复合时间格式，可同时运行多个独立定时器，每个定时器以独立后台进程运行并拥有唯一 sessionId。

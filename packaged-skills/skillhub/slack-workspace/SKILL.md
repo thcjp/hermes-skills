@@ -4,7 +4,7 @@ name: "slack-workspace"
 version: "1.0.0"
 displayName: "Slack工作区管家"
 summary: "Slack全量工作区管理：消息/频道/文件/提醒/画布/用户组，ClawLink OAuth托管"
-license: "MIT"
+license: "Proprietary"
 description: |-
   面向团队协作与工作区治理的Slack全量管理技能。通过ClawLink OAuth托管连接，
   提供消息管理、频道治理、对话历史、用户查询、文件操作、表情反应、提醒、

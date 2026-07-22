@@ -4,7 +4,7 @@ name: "sovereign-aws-cost-optimizer"
 version: "1.0.0"
 displayName: "AWS Cost Optimizer"
 summary: "Analyzes AWS infrastructure for cost savings. Right-sizing, Reserved Instances,"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Analyzes AWS infrastructure for cost savings。Right-sizing, Reserved
   Instances, Savings Plans, un。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。

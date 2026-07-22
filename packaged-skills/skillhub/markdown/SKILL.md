@@ -4,7 +4,7 @@ name: "markdown"
 version: "1.0.1"
 displayName: "Markdown"
 summary: "Generate clean, portable Markdown that renders correctly across parsers."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Generate clean, portable Markdown that renders correctly across parsers。核心能力:
 

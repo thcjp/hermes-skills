@@ -4,7 +4,7 @@ name: "evolution-engine"
 version: "1.0.0"
 displayName: "进化引擎"
 summary: "Agent 自我进化引擎，反思纠错加反污染防线与压缩不删，避免重复犯错与误学。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   面向 AI Agent 的自我进化引擎，直击"重复犯错、从沉默误学、记忆压缩丢失、进化无法衡量"四大痛点。
   通过自反思机制、纠错学习、模式晋升机制，让 Agent 从每次交互中积累可复用经验，而非每次会话从零开始。

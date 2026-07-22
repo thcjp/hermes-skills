@@ -4,7 +4,7 @@ name: "translate"
 version: "1.0.0"
 displayName: "Translate"
 summary: "Translate text accurately — preserve formatting, handle plurals, and adapt"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Translate text accurately — preserve formatting, handle plurals, and
   adapt tone per locale。核心能力:

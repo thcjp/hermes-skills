@@ -4,7 +4,7 @@ name: "dlazy-generate"
 version: "1.3.2"
 displayName: "Dlazy Generate"
 summary: "A comprehensive generation skill. Can generate images, videos, and audio"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   A comprehensive generation skill。Can generate images, videos, and audio\
   \ by automatically selecti。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。

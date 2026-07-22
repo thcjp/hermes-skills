@@ -4,7 +4,7 @@ name: "dns-lookup"
 version: "1.0.0"
 displayName: "Dns Lookup"
 summary: "Resolve hostnames to IP addresses using `dig` from bind-utils."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Resolve hostnames to IP addresses using `dig` from bind-utils。核心能力:
 

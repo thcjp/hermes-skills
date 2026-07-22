@@ -4,7 +4,7 @@ name: "dns-networking"
 version: "1.0.0"
 displayName: "DNS & Networking"
 summary: "Debug DNS resolution and network connectivity. Use when troubleshooting DNS"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Debug DNS resolution and network connectivity。Use when troubleshooting
   DNS failures, testing por。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。

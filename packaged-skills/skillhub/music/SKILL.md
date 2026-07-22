@@ -4,7 +4,7 @@ name: "music"
 version: "1.0.0"
 displayName: "Music"
 summary: "Build a personal music system for tracking discoveries, favorites, concerts,"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Build a personal music system for tracking discoveries, favorites, concerts,
   and listening memories。核心能力:

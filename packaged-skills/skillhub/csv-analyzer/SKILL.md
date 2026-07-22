@@ -4,7 +4,7 @@ name: "csv-analyzer"
 version: "1.0.0"
 displayName: "CSV数据分析器"
 summary: "用简单命令分析CSV文件，获取统计、筛选行、检测异常、分组聚合，零外部依赖。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   CSV数据分析器用简单命令分析CSV文件，即时获取统计、筛选数据、检测异常并导出结果。
   仅依赖Python标准库（csv模块），无需pandas或重型依赖，在2GB内存服务器上运行无压力。

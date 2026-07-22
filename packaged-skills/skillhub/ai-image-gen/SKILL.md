@@ -2,9 +2,9 @@
 slug: "ai-image-gen"
 name: "ai-image-gen"
 version: "1.0.0"
-displayName: "AI图像生成专业版"
-summary: "基于Gemini Flash Image的图像生成,支持文生图、图生图、风格转换,标准/2K/4K多分辨率与10种比例。"
-license: "MIT"
+displayName: "4K商用图像一键生成"
+summary: "设计素材太慢?Gemini Flash Image一键生成4K商用图,支持10种比例、风格转换、批量生产,广告海报到印刷输出全覆盖。"
+license: "Proprietary"
 description: |-
   AI 图像生成专业版,通过执行脚本调用 Gemini Flash Image API 完成图像生成与编辑。
   核心能力:
@@ -26,12 +26,27 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "29.9 CNY/次"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-# AI Image Gen
+# 4K商用图像一键生成
 
-通过执行 `scripts/generate_image.py` 调用 Gemini Flash Image API 生成图片。支持文生图、图生图、风格转换,覆盖标准/2K/4K 三档分辨率与 10 种画面比例。
+设计素材外包太慢、设计师产能不足?Gemini Flash Image 一键生成 4K 商用级图像,10 种比例覆盖从社交媒体到印刷输出全场景。付费版独享图生图、风格转换、4K 分辨率与批量生产。
 
 **范围外**(本技能不做): 视频生成、模型微调训练、本地推理部署、图像超分辨率重建。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 文生图(标准分辨率) | 支持 | 支持 |
+| 图生图(图+文二次创作) | 不支持 | 支持 |
+| 风格转换(水彩/油画/赛博朋克等) | 不支持 | 支持 |
+| 4K分辨率输出 | 不支持 | 支持 |
+| 批量生成 | 不支持 | 支持 |
+| 商业授权 | 不支持 | 支持 |
 
 ## 依赖说明
 

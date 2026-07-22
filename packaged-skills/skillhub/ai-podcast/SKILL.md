@@ -4,7 +4,7 @@ name: "ai-podcast"
 version: "1.0.0"
 displayName: "AI播客生成"
 summary: "将PDF、文本、笔记和链接转化为双主持人对话播客，几分钟生成可分享的音频节目"
-license: "MIT"
+license: "Proprietary"
 description: |-
   基于MagicPodcast API将PDF文档、文本内容、笔记和网页链接转化为
   自然流畅的双主持人对话式播客节目。支持多语言生成，返回可分享的

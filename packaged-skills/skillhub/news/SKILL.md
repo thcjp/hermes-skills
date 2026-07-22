@@ -4,7 +4,7 @@ name: "news"
 version: "1.0.1"
 displayName: "News"
 summary: "Personalized news briefings that learn your interests, formats, and timing"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Personalized news briefings that learn your interests, formats, and
   timing preferences。核心能力:

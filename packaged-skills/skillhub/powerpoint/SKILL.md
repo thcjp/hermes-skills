@@ -4,7 +4,7 @@ name: "powerpoint"
 version: "1.0.0"
 displayName: "PowerPoint"
 summary: "Control PowerPoint app sessions, slides, notes, export, and presentation"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   Control PowerPoint app sessions, slides, notes, export, and presentation
   state with osascript wor。Use when 用户需要PowerPoint相关功能时使用。不适用于超出本技能能力范围的复杂需求。

@@ -4,7 +4,7 @@ name: "job-auto-apply"
 version: "1.0.0"
 displayName: "Job Auto Apply"
 summary: "This skill fits its job-application automation purpose, but it gives an agent"
-license: "MIT"
+license: "Proprietary"
 description: |-
   This skill fits its job-application automation purpose, but it gives
   an agent authority to submit。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。

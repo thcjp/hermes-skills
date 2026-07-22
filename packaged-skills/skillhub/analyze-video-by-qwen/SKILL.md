@@ -4,7 +4,7 @@ name: "analyze-video-by-qwen"
 version: "1.0.0"
 displayName: "Qwen视频智能分析"
 summary: "使用Qwen多模态模型分析视频内容,支持本地文件和远程URL,可自定义提示词与抽帧频率"
-license: "MIT"
+license: "Proprietary"
 description: |-
   基于 Qwen 3.5 Plus 多模态模型对视频进行智能分析。支持本地视频文件和远程 URL 两种输入方式,
   可自定义分析提示词与抽帧频率(FPS),灵活控制分析精度与 API 调用成本。

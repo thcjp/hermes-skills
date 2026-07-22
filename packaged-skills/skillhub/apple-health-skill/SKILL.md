@@ -4,7 +4,7 @@ name: "apple-health-skill"
 version: "1.0.0"
 displayName: "运动健康数据"
 summary: "与运动健康数据对话，查询训练、心率、活动量和VO2 Max趋势"
-license: "MIT"
+license: "Proprietary"
 description: |-
   使用AI与运动健康数据对话。支持查询训练记录、心率趋势、活动量环、VO2 Max、
   性能管理图表（CTL/ATL/TSB）等。通过健康数据同步服务获取数据，AI教练提供

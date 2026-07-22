@@ -4,7 +4,7 @@ name: "k8s"
 version: "1.0.0"
 displayName: "Kubernetes"
 summary: "Avoid common Kubernetes mistakes — resource limits, probe configuration,"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Avoid common Kubernetes mistakes — resource limits, probe configuration,
   selector mismatches, and。Use when 用户需要Kubernetes相关功能时使用。不适用于超出本技能能力范围的复杂需求。

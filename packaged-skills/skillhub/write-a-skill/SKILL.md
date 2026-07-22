@@ -111,7 +111,7 @@ name: my-skill
 version: "1.0.0"
 displayName: 技能名称
 summary: 一句话描述
-license: MIT
+license: "Proprietary"
 description: |-
   详细描述...
 tools:

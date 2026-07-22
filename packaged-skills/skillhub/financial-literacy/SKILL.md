@@ -4,7 +4,7 @@ name: "financial-literacy"
 version: "1.0.0"
 displayName: "Finance"
 summary: "Support financial understanding from personal budgeting to professional analysis"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Support financial understanding from personal budgeting to professional
   analysis and research。核心能力:

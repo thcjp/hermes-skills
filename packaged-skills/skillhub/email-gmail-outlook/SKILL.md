@@ -4,7 +4,7 @@ name: "email-gmail-outlook"
 version: "1.0.0"
 displayName: "Email Gmail Outlook"
 summary: "基于 porteden CLI 管理 Gmail、Outlook、Exchange 多账号邮件"
-license: "MIT"
+license: "Proprietary"
 description: |-
   基于 porteden CLI(`porteden email` / `porteden mail`)安全读写 Gmail、Outlook、Exchange 邮箱,
   支持多账号 profile 隔离、系统 keyring 凭证存储、JSON 紧凑输出(-jc)降低 token 消耗。

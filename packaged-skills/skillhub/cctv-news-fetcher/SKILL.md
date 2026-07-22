@@ -4,7 +4,7 @@ name: "cctv-news-fetcher"
 version: "1.0.0"
 displayName: "CCTV News Fetcher"
 summary: "Fetch and parse news highlights from CCTV News Broadcast (Xinwen Lianbo)"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Fetch and parse news highlights from CCTV News Broadcast (Xinwen Lianbo)
   for a given date。核心能力:

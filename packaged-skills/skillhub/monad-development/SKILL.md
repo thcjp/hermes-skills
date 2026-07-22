@@ -4,7 +4,7 @@ name: "monad-development"
 version: "1.0.0"
 displayName: "Monad Development"
 summary: "Builds dapps on Monad blockchain. Use when deploying contracts, setting up"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Builds dapps on Monad blockchain。Use when deploying contracts, setting
   up frontends with viem/wa。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。

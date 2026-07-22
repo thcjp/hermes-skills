@@ -4,7 +4,7 @@ name: "memory-orchestrator"
 version: "1.0.0"
 displayName: "记忆编排器"
 summary: "四层记忆架构管理系统，多模式检索与健康度仪表盘，支持并发写入冲突解决"
-license: "MIT"
+license: "Proprietary"
 description: |-
   记忆编排器是面向 AI Agent 的智能记忆管理系统，针对分层体系不清、自动摘要质量不稳、
   并发写入冲突、缺乏健康度指标四大痛点而设计。核心能力包括：四层记忆架构（工作/短期/长期/重要，

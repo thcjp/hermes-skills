@@ -4,7 +4,7 @@ name: "t-trading"
 version: "1.0.0"
 displayName: "T Trading"
 summary: "基于维加斯通道EMA多层通道与斐波那契回撤，提供A股和加密货币短线交易分析。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   基于维加斯通道EMA多层通道与斐波那契回撤，提供A股和加密货币短线交易分析。核心能力:
 

@@ -4,7 +4,7 @@ name: "docker-sandbox"
 version: "1.0.0"
 displayName: "Docker Sandbox"
 summary: "Create and manage Docker sandboxed VM environments for safe agent execution."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Create and manage Docker sandboxed VM environments for safe agent execution。Use when running unt。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。适用于独立开发者、企业团队和自动化工作流场景。
 tags:

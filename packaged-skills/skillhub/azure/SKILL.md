@@ -4,7 +4,7 @@ name: "azure"
 version: "1.0.0"
 displayName: "Azure"
 summary: "Deploy, monitor, and manage Azure services with battle-tested patterns."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Deploy, monitor, and manage Azure services with battle-tested patterns。核心能力:
 

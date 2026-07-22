@@ -4,7 +4,7 @@ name: "database-admin"
 version: "1.0.0"
 displayName: "数据库管理专家"
 summary: "表结构设计、批量数据操作、查询优化、类型处理与事务安全的全面数据库管理服务"
-license: "MIT"
+license: "Proprietary"
 description: |-
   数据库管理专家——提供全面的数据库管理功能，包括表结构创建、数据操作、查询优化、类型处理等。
   核心能力包括：

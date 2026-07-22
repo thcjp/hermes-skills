@@ -4,7 +4,7 @@ name: "email-skill"
 version: "1.0.0"
 displayName: "Email"
 summary: "SMTP邮件发送自动化,支持多供应商、附件、HTML模板与TLS加密"
-license: "MIT"
+license: "Proprietary"
 description: |-
   基于SMTP协议的邮件发送自动化Skill,支持Gmail、Outlook、QQ邮箱等主流服务商。
   提供纯文本与HTML双模式、多附件并行上传、CC/BCC收件人编排、测试邮件校验、

@@ -4,7 +4,7 @@ name: "free-google-search-with-browser"
 version: "0.0.1"
 displayName: "Free Google Search W"
 summary: "Search Google using scrapling and return structured results (title, link,"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   Search Google using scrapling and return structured results (title,
   link, snippet)。Invoke when u。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。

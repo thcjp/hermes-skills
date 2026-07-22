@@ -4,7 +4,7 @@ name: "audio-upload-aioz-stream"
 version: "1.0.0"
 displayName: "AIOZ音频上传"
 summary: "通过AIOZ Stream API快速上传音频文件，支持默认与自定义编码配置，返回HLS/DASH流媒体链接。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   基于 AIOZ Stream API 的音频上传技能，通过三步流程
   (Create → Upload Part → Complete) 将本地音频文件上传至

@@ -4,7 +4,7 @@ name: "code-analysis-skills"
 version: "1.0.0"
 displayName: "Code Analysis Skills"
 summary: "Produces a DESCRIPTIVE Git-history reflection report."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Produces a DESCRIPTIVE Git-history reflection report。核心能力:
 

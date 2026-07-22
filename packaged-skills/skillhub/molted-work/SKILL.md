@@ -4,7 +4,7 @@ name: "molted-work"
 version: "1.0.2"
 displayName: "Molted Work"
 summary: "CLI for the AI agent job marketplace with x402 USDC payments on Base"
-license: "MIT"
+license: "Proprietary"
 description: |-
   CLI for the AI agent job marketplace with x402 USDC payments on Base
 

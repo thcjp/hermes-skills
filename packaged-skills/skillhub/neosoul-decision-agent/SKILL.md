@@ -4,7 +4,7 @@ name: "neosoul-decision-agent"
 version: "1.0.0"
 displayName: "自主决策代理"
 summary: "具备自改进记忆的结构化决策支持系统，学习用户风险偏好与决策框架偏好"
-license: "MIT"
+license: "Proprietary"
 description: |-
   具备自改进记忆的结构化决策支持系统，帮助用户在面临权衡选择时做出更优决策。
   通过分层记忆体系（HOT/WARM/RECORD/COLD四级）学习用户的风险偏好、框架偏好与领域权重，

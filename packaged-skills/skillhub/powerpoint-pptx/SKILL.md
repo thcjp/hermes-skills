@@ -4,7 +4,7 @@ name: "powerpoint-pptx"
 version: "1.0.1"
 displayName: "Powerpoint / PPTX"
 summary: "Create, inspect, and edit Microsoft PowerPoint presentations and PPTX decks"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   Create, inspect, and edit Microsoft PowerPoint presentations and PPTX
   decks with reliable layouts。Use when 用户需要Powerpoint / PPTX相关功能时使用。不适用于超出本技能能力范围的复杂需求。

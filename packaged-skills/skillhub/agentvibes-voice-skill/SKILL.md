@@ -4,7 +4,7 @@ name: "agentvibes-voice-skill"
 version: "1.0.0"
 displayName: "AgentVibes TTS语音"
 summary: "多Provider TTS语音合成,914+声音,个性风格、语速、效果、背景音乐、语言学习"
-license: "MIT"
+license: "Proprietary"
 description: |-
   AgentVibes TTS 语音合成客户端。集成 Piper TTS、macOS Say、Windows SAPI、Soprano 四种 Provider,
   覆盖 914+ 声音、30+ 语言。支持声音切换/预览/列出、个性风格（sarcastic/dramatic 等）、语速控制（0.5x-3.0x）、

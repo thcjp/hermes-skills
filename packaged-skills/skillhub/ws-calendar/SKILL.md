@@ -4,7 +4,7 @@ name: "ws-calendar"
 version: "1.0.0"
 displayName: "Calendar"
 summary: "日程管理。创建日程、设置提醒、查看安排。"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   日程管理。创建日程、设置提醒、查看安排。
 

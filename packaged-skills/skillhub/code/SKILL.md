@@ -4,7 +4,7 @@ name: "code"
 version: "1.0.4"
 displayName: "Code"
 summary: "Coding workflow with planning, implementation, verification, and testing"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Coding workflow with planning, implementation, verification, and testing
   for clean software devel。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。

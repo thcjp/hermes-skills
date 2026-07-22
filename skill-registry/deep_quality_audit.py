@@ -222,7 +222,7 @@ def collect_skill_files():
     return files
 
 
-def check_skill(skill_path: Path, source: str):
+def check_skill(skill_path: Path, source: str, enable_l7: bool = False):
     """对单个 SKILL.md 执行全部质量检查
 
     Returns:
@@ -373,6 +373,9 @@ def check_skill(skill_path: Path, source: str):
     # === content authenticity 检查 (Layer 6) ===
     auth_result = check_content_authenticity(body_text)
 
+    # === semantic 检查 (Layer 7) ===
+    l7_result = check_semantic_quality(body_text, enable_l7a=enable_l7)
+
     # 确定最终严重级别
     if issues["critical"]:
         severity = "critical"
@@ -412,6 +415,16 @@ def check_skill(skill_path: Path, source: str):
             "template_count": auth_result["template_count"],
             "empty_sections": auth_result["empty_sections"],
             "issues": auth_result["issues"],
+        },
+        "semantic": {
+            "l7a_available": l7_result["l7a_available"],
+            "l7a_score": l7_result["l7a_score"],
+            "l7a_grade": l7_result["l7a_grade"],
+            "template_block_count": l7_result["template_block_count"],
+            "template_blocks": l7_result["template_blocks"][:10],
+            "similarity_scores": l7_result["similarity_scores"][:20],
+            "issues": l7_result["issues"],
+            "model_error": l7_result["model_error"],
         },
         "_content": content,
         "_issues_map": issues,
@@ -1004,7 +1017,250 @@ def replace_frontmatter_value(content: str, key: str, old_val: str, new_val: str
     return content
 
 
-def run_audit(fix_mode: bool = False, fix_all: bool = False):
+# ============ 语义审计 (Layer 7: Semantic Audit) ============
+# L7a: TF-IDF 语义模板检测 - 使用 scikit-learn TF-IDF 向量化文本块,
+# 与已知模板模式进行余弦相似度比较,检测 regex (Layer 6) 无法覆盖的语义级模板填充
+# 设计支持两种后端: sklearn TF-IDF (默认,轻量) 和 sentence-transformers (可选,深度语义)
+# L7b: LLM 深度审查 (预留接口, 未来实现)
+
+# 已知模板填充模式的代表性文本 (用于语义比较)
+_TEMPLATE_PATTERNS = [
+    "按照skill规范执行操作",
+    "用户提供所需的参数和指令",
+    "返回操作结果,包含操作状态和输出数据",
+    "验证执行结果,确认输出符合预期格式",
+    "参考相关配置参数进行设置",
+    "执行ping命令测试网络连通性,检查防火墙和代理设置",
+    "本技能不做以下内容",
+    "需要人工判断的复杂决策场景",
+    "确认运行环境满足依赖说明中的要求",
+    "根据适用场景选择合适的使用方式",
+    "如遇错误,参考错误处理章节",
+    "基础使用 用户请求 处理结果",
+    "相关说明, 默认: 全部维度",
+    "审查严格度, 可选: strict/normal/loose, 默认: normal",
+]
+
+# 向量化模型缓存
+_vectorizer = None
+_model_loaded = False
+_model_load_error = None
+
+
+def _load_embedding_model():
+    """加载文本向量化模型 (懒加载)
+
+    优先使用 sentence-transformers (深度语义), 降级到 sklearn TF-IDF (轻量词频)
+    """
+    global _vectorizer, _model_loaded, _model_load_error
+    if _model_loaded:
+        return _vectorizer, _model_load_error
+    _model_loaded = True
+    try:
+        from sklearn.feature_extraction.text import TfidfVectorizer
+        from sklearn.metrics.pairwise import cosine_similarity as sklearn_cosine
+        # 使用 sklearn TF-IDF 向量化器 (支持中文字符级 n-gram)
+        _vectorizer = {
+            "type": "sklearn_tfidf",
+            "model": TfidfVectorizer(
+                analyzer='char_wb',
+                ngram_range=(2, 5),
+                max_features=5000,
+                sublinear_tf=True,
+            ),
+            "cosine_fn": sklearn_cosine,
+        }
+    except ImportError:
+        _model_load_error = "scikit-learn not installed (pip install scikit-learn)"
+    except Exception as e:
+        _model_load_error = f"model load error: {e}"
+    return _vectorizer, _model_load_error
+
+
+def _extract_semantic_blocks(body_text: str, max_blocks: int = 20) -> list:
+    """从SKILL.md正文中提取语义块(段落/表格行/列表项)用于嵌入比较"""
+    blocks = []
+    # 按双换行分段
+    paragraphs = re.split(r'\n\s*\n', body_text)
+    for para in paragraphs:
+        para = para.strip()
+        if not para or len(para) < 10:
+            continue
+        # 跳过代码块
+        if para.startswith('```'):
+            continue
+        # 跳过纯表格分隔符行
+        if re.match(r'^[\|:\-\s]+$', para):
+            continue
+        # 提取表格行作为单独块
+        table_rows = [line.strip() for line in para.split('\n') if line.strip().startswith('|')]
+        if table_rows:
+            for row in table_rows:
+                # 去掉表格格式符,只保留文本
+                text = re.sub(r'\|', ' ', row).strip()
+                if len(text) > 5:
+                    blocks.append(text[:200])  # 截断防止过长
+        else:
+            blocks.append(para[:200])
+
+    return blocks[:max_blocks]
+
+
+def _cosine_similarity(vec1, vec2):
+    """计算两个向量的余弦相似度"""
+    import math
+    dot = sum(a * b for a, b in zip(vec1, vec2))
+    norm1 = math.sqrt(sum(a * a for a in vec1))
+    norm2 = math.sqrt(sum(b * b for b in vec2))
+    if norm1 == 0 or norm2 == 0:
+        return 0.0
+    return dot / (norm1 * norm2)
+
+
+def check_semantic_quality(body_text: str, enable_l7a: bool = True) -> dict:
+    """Layer 7: 语义审计
+
+    L7a: 嵌入向量模板检测
+    - 提取正文语义块,计算嵌入向量
+    - 与已知模板模式比较余弦相似度
+    - 相似度 > 0.85 的块标记为疑似模板填充
+
+    Returns:
+        dict: {
+            l7a_available: bool,     # 模型是否可用
+            l7a_score: int,          # 0-100, 越高越好
+            l7a_grade: str,          # A/B/C/D/F
+            template_blocks: list,   # 疑似模板块列表
+            template_block_count: int,
+            similarity_scores: list, # 各块的最高相似度
+            issues: list,            # 问题描述
+            model_error: str,        # 模型加载错误(如有)
+        }
+    """
+    result = {
+        "l7a_available": False,
+        "l7a_score": 100,
+        "l7a_grade": "A",
+        "template_blocks": [],
+        "template_block_count": 0,
+        "similarity_scores": [],
+        "issues": [],
+        "model_error": None,
+    }
+
+    if not enable_l7a:
+        result["issues"].append("L7A_DISABLED: Layer 7a 未启用")
+        return result
+
+    # 加载模型
+    model, error = _load_embedding_model()
+    if error:
+        result["model_error"] = error
+        result["issues"].append(f"L7A_MODEL_UNAVAILABLE: {error}")
+        # 模型不可用时给中性分数,不惩罚skill
+        result["l7a_score"] = -1
+        result["l7a_grade"] = "N/A"
+        return result
+
+    result["l7a_available"] = True
+
+    # 提取语义块
+    blocks = _extract_semantic_blocks(body_text)
+    if not blocks:
+        result["issues"].append("L7A_NO_BLOCKS: 无法提取语义块,内容可能过短")
+        result["l7a_score"] = 50
+        result["l7a_grade"] = "C"
+        return result
+
+    # 使用 TF-IDF 向量化文本块和模板模式
+    import numpy as np
+    from scipy.sparse import vstack
+
+    vectorizer = model["model"]
+    cosine_fn = model["cosine_fn"]
+
+    # 合并模板模式和文本块进行 fit_transform,确保特征空间一致
+    all_texts = _TEMPLATE_PATTERNS + blocks
+    tfidf_matrix = vectorizer.fit_transform(all_texts)
+
+    # 模板模式向量 (前 len(_TEMPLATE_PATTERNS) 行)
+    template_matrix = tfidf_matrix[:len(_TEMPLATE_PATTERNS)]
+    # 文本块向量 (后 len(blocks) 行)
+    block_matrix = tfidf_matrix[len(_TEMPLATE_PATTERNS):]
+
+    # 计算每个块与所有模板模式的余弦相似度
+    sim_matrix = cosine_fn(block_matrix, template_matrix)
+
+    # 对每个块,找出与模板模式的最高相似度
+    template_blocks = []
+    similarity_scores = []
+
+    for i in range(sim_matrix.shape[0]):
+        sim_row = sim_matrix[i]
+        max_sim = float(sim_row.max())
+        best_pattern_idx = int(sim_row.argmax())
+
+        similarity_scores.append(round(max_sim, 3))
+
+        # 相似度 > 0.85 标记为疑似模板填充
+        if max_sim > 0.85:
+            template_blocks.append({
+                "block_text": blocks[i][:100],
+                "similarity": round(float(max_sim), 3),
+                "matched_pattern": _TEMPLATE_PATTERNS[best_pattern_idx][:60],
+            })
+
+    result["template_blocks"] = template_blocks
+    result["template_block_count"] = len(template_blocks)
+    result["similarity_scores"] = similarity_scores
+
+    # 评分: 模板块占比越低越好
+    template_ratio = len(template_blocks) / len(blocks) if blocks else 0
+    if template_ratio == 0:
+        result["l7a_score"] = 100
+        result["l7a_grade"] = "A"
+    elif template_ratio < 0.1:
+        result["l7a_score"] = 85
+        result["l7a_grade"] = "B"
+    elif template_ratio < 0.2:
+        result["l7a_score"] = 65
+        result["l7a_grade"] = "C"
+    elif template_ratio < 0.4:
+        result["l7a_score"] = 40
+        result["l7a_grade"] = "D"
+    else:
+        result["l7a_score"] = 15
+        result["l7a_grade"] = "F"
+
+    if template_blocks:
+        result["issues"].append(
+            f"L7A_TEMPLATE_DETECTED: 检测到 {len(template_blocks)} 个疑似模板填充块 "
+            f"(占比 {template_ratio*100:.1f}%), 最高相似度 {max(s[1] for s in [(b['block_text'], b['similarity']) for b in template_blocks]):.3f}"
+        )
+
+    # 检测高重复块 (语义块之间的相似度,使用 TF-IDF 矩阵)
+    if len(blocks) > 3:
+        block_sim_matrix = cosine_fn(block_matrix)
+        duplicate_count = 0
+        for i in range(block_sim_matrix.shape[0]):
+            for j in range(i + 1, block_sim_matrix.shape[0]):
+                sim = float(block_sim_matrix[i, j])
+                if sim > 0.92:
+                    duplicate_count += 1
+        if duplicate_count > 0:
+            result["issues"].append(
+                f"L7A_DUPLICATE_BLOCKS: 检测到 {duplicate_count} 对高度相似的内容块 "
+                f"(相似度 > 0.92), 可能存在内容重复"
+            )
+            # 重复内容降低评分
+            result["l7a_score"] = max(0, result["l7a_score"] - 15)
+            if result["l7a_score"] < 65 and result["l7a_grade"] == "A":
+                result["l7a_grade"] = "B"
+
+    return result
+
+
+def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = False):
     """执行全量审计
 
     Args:
@@ -1020,6 +1276,8 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False):
         print("[模式] 审计 + 自动修复 warning 级别问题")
     else:
         print("[模式] 仅审计")
+    if enable_l7:
+        print("[Layer 7] 语义审计已启用 (L7a 嵌入向量模板检测)")
     print()
 
     # 收集所有 SKILL.md 文件
@@ -1033,7 +1291,7 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False):
     fixes_applied = []
 
     for skill_path, source in skill_files:
-        result = check_skill(skill_path, source)
+        result = check_skill(skill_path, source, enable_l7=enable_l7)
         all_results.append(result)
 
         # 自动修复 warning 级别问题
@@ -1085,6 +1343,13 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False):
     auth_issues_list = []
     auth_score_sum = 0
     auth_template_total = 0
+
+    # Layer 7 统计
+    l7_grades = {"A": 0, "B": 0, "C": 0, "D": 0, "F": 0, "N/A": 0}
+    l7_issues_list = []
+    l7_score_sum = 0
+    l7_template_block_total = 0
+    l7_available_count = 0
 
     for result in all_results:
         sev = result["severity"]
@@ -1143,6 +1408,27 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False):
                 "issues": auth["issues"],
             })
 
+        # 收集语义审计统计 (Layer 7)
+        sem = result.get("semantic", {})
+        l7_grade = sem.get("l7a_grade", "N/A")
+        l7_score = sem.get("l7a_score", -1)
+        if l7_grade not in l7_grades:
+            l7_grades[l7_grade] = 0
+        l7_grades[l7_grade] += 1
+        if l7_score >= 0:
+            l7_score_sum += l7_score
+            l7_available_count += 1
+        l7_template_block_total += sem.get("template_block_count", 0)
+        if sem.get("issues"):
+            l7_issues_list.append({
+                "slug": result["slug"],
+                "source": result["source"],
+                "grade": l7_grade,
+                "score": l7_score,
+                "template_block_count": sem.get("template_block_count", 0),
+                "issues": sem["issues"],
+            })
+
         entry = {
             "slug": result["slug"],
             "source": result["source"],
@@ -1156,6 +1442,8 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False):
             "sellability_score": sell_score,
             "authenticity_grade": auth_grade,
             "authenticity_score": auth_score,
+            "semantic_grade": sem.get("l7a_grade", "N/A") if 'sem' in dir() else "N/A",
+            "semantic_score": sem.get("l7a_score", -1) if 'sem' in dir() else -1,
         }
 
         if sev == "critical":
@@ -1199,6 +1487,15 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False):
             "total_with_issues": len(auth_issues_list),
             "total_template_fills": auth_template_total,
             "issues_detail": auth_issues_list[:200],
+        },
+        "semantic_audit": {
+            "enabled": enable_l7,
+            "l7a_available_count": l7_available_count,
+            "grade_distribution": l7_grades,
+            "avg_score": round(l7_score_sum / l7_available_count, 1) if l7_available_count else 0,
+            "total_template_blocks": l7_template_block_total,
+            "total_with_issues": len(l7_issues_list),
+            "issues_detail": l7_issues_list[:100],
         },
     }
 
@@ -1289,6 +1586,36 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False):
             if len(severe_auth) > 20:
                 print(f"    ... 还有 {len(severe_auth) - 20} 个")
 
+    # Layer 7: 语义审计统计
+    if enable_l7:
+        print()
+        print("─" * 60)
+        print("语义审计 (Layer 7: Semantic Audit - L7a 嵌入向量模板检测):")
+        if l7_available_count > 0:
+            l7_avg = l7_score_sum / l7_available_count
+            print(f"  模型可用: {l7_available_count} / {total} 个 skill 已分析")
+            print(f"  平均分: {l7_avg:.1f} / 100")
+            print(f"  等级分布: A={l7_grades.get('A',0)}  B={l7_grades.get('B',0)}  "
+                  f"C={l7_grades.get('C',0)}  D={l7_grades.get('D',0)}  "
+                  f"F={l7_grades.get('F',0)}  N/A={l7_grades.get('N/A',0)}")
+            l7_a_b = l7_grades.get('A', 0) + l7_grades.get('B', 0)
+            print(f"  A+B级 (语义合格): {l7_a_b} / {l7_available_count} ({l7_a_b*100//l7_available_count if l7_available_count else 0}%)")
+            print(f"  疑似模板块总数: {l7_template_block_total}")
+            print(f"  有问题skill: {len(l7_issues_list)} 个")
+            if l7_issues_list:
+                severe_l7 = [item for item in l7_issues_list if item['grade'] in ('C', 'D', 'F')]
+                if severe_l7:
+                    print(f"  C+D+F级 (严重语义问题): {len(severe_l7)} 个")
+                    for item in severe_l7[:15]:
+                        issues_str = '; '.join(item['issues'][:2])
+                        print(f"    [{item['grade']}] {item['slug']} (分:{item['score']}, 模板块:{item['template_block_count']}): {issues_str}")
+                    if len(severe_l7) > 15:
+                        print(f"    ... 还有 {len(severe_l7) - 15} 个")
+        else:
+            na_count = l7_grades.get('N/A', 0)
+            print(f"  模型不可用: {na_count} 个 skill 跳过 L7a 分析")
+            print(f"  安装 sentence-transformers 以启用: pip install sentence-transformers")
+
     if critical_issues:
         print()
         print(f"CRITICAL 问题列表 ({len(critical_issues)} 个):")
@@ -1353,8 +1680,9 @@ def main():
     """主入口"""
     fix_mode = "--fix" in sys.argv
     fix_all = "--fix-all" in sys.argv
+    enable_l7 = "--layer7" in sys.argv
 
-    passed = run_audit(fix_mode=fix_mode, fix_all=fix_all)
+    passed = run_audit(fix_mode=fix_mode, fix_all=fix_all, enable_l7=enable_l7)
 
     # 如果存在 critical 问题，返回非零退出码
     if not passed:

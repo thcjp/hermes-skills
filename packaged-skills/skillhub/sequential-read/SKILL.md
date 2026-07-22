@@ -4,7 +4,7 @@ name: "sequential-read"
 version: "1.0.0"
 displayName: "Sequential Read"
 summary: "Read prose sequentially with structured reflections to simulate the reading"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Read prose sequentially with structured reflections to simulate the
   reading experience

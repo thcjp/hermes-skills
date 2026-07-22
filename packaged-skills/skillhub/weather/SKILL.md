@@ -4,7 +4,7 @@ name: "weather"
 version: "1.0.0"
 displayName: "Weather"
 summary: "Get current weather and forecasts (no API key required)."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Get current weather and forecasts (no API key required)。核心能力:
 

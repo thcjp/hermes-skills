@@ -4,7 +4,7 @@ name: "daily-report-writer"
 version: "1.0.0"
 displayName: "Daily Report Writer"
 summary: "根据输入生成日报 Markdown 草稿并写入 reports 目录"
-license: "MIT"
+license: "Proprietary"
 description: |-
   根据输入生成日报 Markdown 草稿并写入 reports 目录
 

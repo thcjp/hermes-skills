@@ -4,7 +4,7 @@ name: "free-ride"
 version: "1.0.11"
 displayName: "Free Ride"
 summary: "Manages free AI models from OpenRouter for SkillHub."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Manages free AI models from OpenRouter for SkillHub。核心能力:
 

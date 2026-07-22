@@ -4,7 +4,7 @@ name: "fonts"
 version: "1.0.0"
 displayName: "Fonts"
 summary: "Choose and implement web typography avoiding common rendering, pairing, and"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Choose and implement web typography avoiding common rendering, pairing,
   and hierarchy mistakes。核心能力:

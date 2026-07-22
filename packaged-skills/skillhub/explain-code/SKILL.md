@@ -4,7 +4,7 @@ name: "explain-code"
 version: "1.0.0"
 displayName: "explain-code"
 summary: "用可视化图表和类比解释代码。在解释代码如何工作、教授代码库或用户询问如何工作时使用"
-license: "MIT"
+license: "Proprietary"
 description: |-
   用可视化图表和类比解释代码。在解释代码如何工作、教授代码库或用户询问如何工作时使用
 

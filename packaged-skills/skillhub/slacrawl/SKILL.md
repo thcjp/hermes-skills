@@ -4,7 +4,7 @@ name: "slacrawl"
 version: "1.0.1"
 displayName: "Slacrawl"
 summary: "Slack archive: search, sync freshness, threads/DMs, SQL counts."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Slack archive: search, sync freshness, threads/DMs, SQL counts。核心能力:
 

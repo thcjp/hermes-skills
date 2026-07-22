@@ -41,12 +41,11 @@ def get_db_stats():
         c.execute("SELECT COUNT(*) as cnt FROM skills")
         stats["total_skills"] = c.fetchone()["cnt"]
 
-        c.execute("SELECT skill_type, COUNT(*) as cnt FROM skills GROUP BY skill_type")
-        for row in c.fetchall():
-            if row["skill_type"] == "free":
-                stats["free_count"] = row["cnt"]
-            elif row["skill_type"] in ("paid", "pro"):
-                stats["paid_count"] = row["cnt"]
+        # 付费/免费统计: 通过slug后缀判断(-free=免费, 无后缀=付费)
+        c.execute("SELECT COUNT(*) as cnt FROM skills WHERE slug NOT LIKE '%%-free'")
+        stats["paid_count"] = c.fetchone()["cnt"]
+        c.execute("SELECT COUNT(*) as cnt FROM skills WHERE slug LIKE '%%-free'")
+        stats["free_count"] = c.fetchone()["cnt"]
 
         c.execute("SELECT category, COUNT(*) as cnt FROM skills WHERE category IS NOT NULL GROUP BY category ORDER BY cnt DESC LIMIT 15")
         stats["categories"] = {row["category"]: row["cnt"] for row in c.fetchall()}

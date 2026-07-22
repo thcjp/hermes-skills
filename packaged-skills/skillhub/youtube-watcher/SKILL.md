@@ -4,7 +4,7 @@ name: "youtube-watcher"
 version: "1.0.0"
 displayName: "YouTube Watcher"
 summary: "Fetch and read transcripts from YouTube videos."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Fetch and read transcripts from YouTube videos。核心能力:
 

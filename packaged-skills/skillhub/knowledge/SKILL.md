@@ -4,7 +4,7 @@ name: "knowledge"
 version: "1.0.0"
 displayName: "Knowledge"
 summary: "本地知识库集成 - 文档检索、投喂、双轨模式切换"
-license: "MIT"
+license: "Proprietary"
 description: |-
   本地知识库集成 - 文档检索、投喂、双轨模式切换
 

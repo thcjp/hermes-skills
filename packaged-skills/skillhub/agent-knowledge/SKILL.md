@@ -4,7 +4,7 @@ name: "agent-knowledge"
 version: "1.0.0"
 displayName: "Agent Knowledge"
 summary: "Unified knowledge capture and retrieval for URLs, video/article/paper extracts,"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Unified knowledge capture and retrieval for URLs, video/article/paper
   extracts, social posts, and。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。

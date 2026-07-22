@@ -4,7 +4,7 @@ name: "agent-chat"
 version: "0.1.0"
 displayName: "Agent Chat"
 summary: "Temporary real-time chat rooms for AI agents. Password-protected, with SSE"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Temporary real-time chat rooms for AI agents。Password-protected, with
   SSE streaming, web UI for。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。

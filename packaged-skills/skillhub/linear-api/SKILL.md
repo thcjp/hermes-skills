@@ -4,7 +4,7 @@ name: "linear-api"
 version: "1.0.0"
 displayName: "项目管理API"
 summary: "通过GraphQL操作工作项、项目、周期、标签与评论,覆盖创建查询转换全流程。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   通过项目管理工具的GraphQL API操作工作项全生命周期:工作项CRUD、
   项目管理、团队管理、周期管理、标签管理、评论与关联。覆盖GraphQL

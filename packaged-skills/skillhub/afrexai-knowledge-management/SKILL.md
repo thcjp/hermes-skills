@@ -4,7 +4,7 @@ name: "afrexai-knowledge-management"
 version: "1.0.0"
 displayName: "知识管理体系"
 summary: "组织知识审计、分类架构、文档模板、贡献系统与新鲜度维护的完整体系。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   将组织内隐式经验转化为可搜索、可维护的结构化知识资产。覆盖知识审计、
   分类架构、文档模板、贡献激励、搜索发现、知识捕获、新鲜度维护、跨团队

@@ -4,7 +4,7 @@ name: "context-driven-development"
 version: "1.0.0"
 displayName: "Context Driven Devel"
 summary: "Treat project context as a managed artifact alongside code. Use structured"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Treat project context as a managed artifact alongside code。Use structured
   context documents (pro。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。

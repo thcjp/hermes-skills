@@ -4,7 +4,7 @@ name: "quant-data-quality"
 version: "1.0.0"
 displayName: "Quant Data Quality"
 summary: "数据质量检查技能。当用户说\"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   数据质量检查技能。当用户说\
 

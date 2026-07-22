@@ -4,7 +4,7 @@ name: "figma"
 version: "2.1.0"
 displayName: "Figma"
 summary: "This skill does what it advertises: reads Figma data, exports assets, and
-license: "MIT"
+license: "Proprietary"
 description: |-
   This skill does what it advertises: reads Figma data, exports assets,
   and writes user-requested r。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。

@@ -4,7 +4,7 @@ name: "docker-ctl"
 version: "1.0.0"
 displayName: "Docker Ctl"
 summary: "Inspect containers, logs, and images via podman"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Inspect containers, logs, and images via podman
 

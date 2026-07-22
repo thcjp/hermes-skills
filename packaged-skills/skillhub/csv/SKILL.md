@@ -4,7 +4,7 @@ name: "csv"
 version: "1.0.0"
 displayName: "CSV解析与生成"
 summary: "解析与生成RFC 4180合规的CSV，处理引号、分隔符、编码、数字日期与Excel特性，跨工具兼容。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   CSV解析与生成技能基于RFC 4180标准，确保产出的CSV能在Excel、Google Sheets、pandas等工具间无缝流转。
   覆盖引号规则、分隔符识别、编码处理、解析失败排查、数字与日期格式、Excel特性等关键细节。

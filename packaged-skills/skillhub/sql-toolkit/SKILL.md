@@ -4,7 +4,7 @@ name: "sql-toolkit"
 version: "1.0.0"
 displayName: "SQL Toolkit"
 summary: "关系型数据库操作工具箱，覆盖SQLite/PostgreSQL/MySQL的查询、设计、迁移与优化"
-license: "MIT"
+license: "Proprietary"
 description: |-
   SQL Toolkit 是关系型数据库命令行操作的完整工具箱，覆盖 SQLite、PostgreSQL、MySQL 三大数据库。
   核心能力包括 Schema Operations（表结构创建与修改）、Quick Start（零配置快速上手）、

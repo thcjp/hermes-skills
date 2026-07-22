@@ -4,7 +4,7 @@ name: "workflow"
 version: "1.0.0"
 displayName: "Workflow"
 summary: "Build automated pipelines with reusable components, data flow between nodes,"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Build automated pipelines with reusable components, data flow between
   nodes, and state management。核心能力:

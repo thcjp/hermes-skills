@@ -4,7 +4,7 @@ name: "docker"
 version: "1.0.4"
 displayName: "Docker"
 summary: "Docker containers, images, Compose stacks, networking, volumes, debugging,"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   Docker containers, images, Compose stacks, networking, volumes, debugging,
   production hardening, 。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。

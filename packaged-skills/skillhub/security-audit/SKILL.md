@@ -4,7 +4,7 @@ name: "security-audit"
 version: "1.0.0"
 displayName: "Security Audit"
 summary: "Comprehensive security auditing for SkillHub deployments. Scans for exposed"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Comprehensive security auditing for SkillHub deployments。Scans for
   exposed credentials, open por。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。

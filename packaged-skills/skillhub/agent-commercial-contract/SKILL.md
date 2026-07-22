@@ -4,7 +4,7 @@ name: "agent-commercial-contract"
 version: "1.0.0"
 displayName: "Agent Commercial Con"
 summary: "Enables AI agents to autonomously negotiate, sign, execute, and enforce legally"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   Enables AI agents to autonomously negotiate, sign, execute, and enforce
   legally binding commercia。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。

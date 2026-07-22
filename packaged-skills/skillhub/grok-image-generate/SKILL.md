@@ -4,7 +4,7 @@ name: "grok-image-generate"
 version: "1.0.0"
 displayName: "grok_image_generate"
 summary: "通过 Grok Imagine 生成用户描述的图片，并指导保存及发送至飞书的完整流程。"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   通过 Grok Imagine 生成用户描述的图片，并指导保存及发送至飞书的完整流程。核心能力:
 

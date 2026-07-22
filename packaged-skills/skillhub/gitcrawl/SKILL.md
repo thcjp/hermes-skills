@@ -4,7 +4,7 @@ name: "gitcrawl"
 version: "1.0.0"
 displayName: "Gitcrawl"
 summary: "GitHub archive: issue/PR search, sync freshness, duplicate clusters."
-license: "MIT"
+license: "Proprietary"
 description: |-
   GitHub archive: issue/PR search, sync freshness, duplicate clusters。核心能力:
 

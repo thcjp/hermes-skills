@@ -4,7 +4,7 @@ name: "memory-scan"
 version: "1.0.0"
 displayName: "记忆安全扫描"
 summary: "扫描AI Agent记忆文件与工作区配置，检测恶意内容、凭证泄漏与注入攻击"
-license: "MIT"
+license: "Proprietary"
 description: |-
   面向AI Agent记忆文件与工作区配置的安全扫描工具，检测恶意指令、Prompt注入、凭证泄漏、数据外泄、护栏绕过、行为操纵、权限提升七大威胁类别。
   提供五级安全分级、本地模式与可选远程LLM分析、隔离与恢复、定时监控集成、心跳任务集成五大核心能力。

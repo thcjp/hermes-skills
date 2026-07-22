@@ -4,7 +4,7 @@ name: "encryption"
 version: "1.0.0"
 displayName: "Encryption"
 summary: "Encrypt files, secure passwords, manage keys, and audit code for cryptographic"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Encrypt files, secure passwords, manage keys, and audit code for cryptographic
   best practices。核心能力:

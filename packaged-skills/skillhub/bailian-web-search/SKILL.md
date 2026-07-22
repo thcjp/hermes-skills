@@ -4,7 +4,7 @@ name: "bailian-web-search"
 version: "1.0.4"
 displayName: "Bailian Web Search"
 summary: "AI-optimized web search via Bailian(Alibaba ModelStdio) API. Returns multisourced,"
-license: "MIT"
+license: "Proprietary"
 description: |-
   AI-optimized web search via Bailian(Alibaba ModelStdio) API。Returns
   multisourced, concise web se。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。

@@ -4,7 +4,7 @@ name: "azure-cli"
 version: "1.0.0"
 displayName: "azure-cli"
 summary: "Comprehensive Azure Cloud Platform management via command-line interface"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Comprehensive Azure Cloud Platform management via command-line interface
 

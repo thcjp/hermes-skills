@@ -4,7 +4,7 @@ name: "local-file-rag-basic"
 version: "1.0.0"
 displayName: "local-file-rag-basic"
 summary: "High-performance local File RAG suite (Basic Edition)."
-license: "MIT"
+license: "Proprietary"
 description: |-
   High-performance local File RAG suite (Basic Edition)。核心能力:
 

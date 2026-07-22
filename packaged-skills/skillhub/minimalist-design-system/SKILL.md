@@ -4,7 +4,7 @@ name: "minimalist-design-system"
 version: "1.0.0"
 displayName: "Minimalist Design Sy"
 summary: "专家级前端架构师与UI/UX设计系统集成指南。极简现代主义设计系统，帮助将精密设计系统无缝集成到现有代码库。适用于：前端组件开发、UI设计实现、设计令牌配置、Tailwind"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   专家级前端架构师与UI/UX设计系统集成指南。极简现代主义设计系统，帮助将精密设计系统无缝集成到现有代码库。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。
 tags:

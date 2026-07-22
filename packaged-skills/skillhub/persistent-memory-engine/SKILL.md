@@ -4,7 +4,7 @@ name: "persistent-memory-engine"
 version: "1.0.0"
 displayName: "持久记忆引擎"
 summary: "无限分层持久记忆系统，解决跨会话遗忘、检索不准、记忆膨胀与冲突问题"
-license: "MIT"
+license: "Proprietary"
 description: |-
   面向 AI Agent 的无限分层持久记忆系统，在内置记忆之上构建并行、可扩展、可检索的结构化本地存储。
   直击跨会话遗忘、检索不准、记忆膨胀、新旧冲突四大痛点。核心能力涵盖无限分层结构化存储、

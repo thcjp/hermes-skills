@@ -4,7 +4,7 @@ name: "elite-longterm-memory"
 version: "1.2.3"
 displayName: "长期记忆系统"
 summary: "六层记忆架构,从会话状态到云端备份,结合WAL协议与向量检索。"
-license: "MIT"
+license: "Proprietary"
 description: |-
   融合六种成熟方法的AI代理记忆架构:会话状态热内存、向量数据库
   温存储、Git笔记冷存储、策展归档、云端备份与自动事实提取。通过

@@ -2,9 +2,9 @@
 slug: "api-doc-writer"
 name: "api-doc-writer"
 version: "1.0.0"
-displayName: "API接口文档编写器"
-summary: "编写REST API文档,定义接口规范,生成接口说明,含模板、状态码、RESTful规范与安全建议"
-license: "MIT"
+displayName: "API文档一键生成规范器"
+summary: "接口文档写不规范?一键生成REST API完整文档,含认证/状态码/安全建议模板,支持多模块结构,开发团队协作必备。"
+license: "Proprietary"
 description: |-
   API 接口文档编写助手。用于编写 REST API 文档、定义接口规范、生成接口说明。
   提供完整文档模板（接口概览、通用说明、认证方式、请求/响应格式、状态码、接口详情、变更记录）、
@@ -17,10 +17,25 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "9.9 CNY/次"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
-# API 接口文档编写器
+# API文档一键生成规范器
 
-API 接口文档编写助手。用于编写 REST API 文档、定义接口规范、生成接口说明。提供完整文档模板、RESTful 设计规范与安全建议。
+接口文档写不规范、团队成员各写各的?一键生成符合RESTful规范的完整API文档,含认证方式、状态码分类、安全建议模板,支持用户/订单/支付等多模块结构,开发团队协作必备。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础文档模板 | 支持 | 支持 |
+| RESTful设计规范 | 不支持 | 支持 |
+| 安全建议(加密/Token/限频) | 不支持 | 支持 |
+| 多模块文档结构 | 不支持 | 支持 |
+| 变更记录管理 | 不支持 | 支持 |
+| 接口详情自动补全 | 不支持 | 支持 |
 
 **范围外**（本技能不做）: 逆向工程闭源 API 文档、自动生成代码框架、API 测试执行、接口 mock 服务。
 

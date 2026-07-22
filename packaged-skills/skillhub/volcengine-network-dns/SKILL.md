@@ -4,7 +4,7 @@ name: "volcengine-network-dns"
 version: "1.0.0"
 displayName: "Volcengine Network D"
 summary: "DNS record management on Volcengine networking services. Use when users need"
-license: "MIT"
+license: "Proprietary"
 description: |-
   DNS record management on Volcengine networking services。Use when users
   need zone record query/up。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。适用于独立开发者、企业团队和自动化工作流场景。

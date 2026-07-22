@@ -4,7 +4,7 @@ name: "secure-api-calls"
 version: "1.0.3"
 displayName: "Secure API Calls"
 summary: "Call any API without leaking credentials. Keychains proxies requests and"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Call any API without leaking credentials。Keychains proxies requests
   and injects real tokens serv。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。

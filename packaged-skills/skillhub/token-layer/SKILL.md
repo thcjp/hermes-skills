@@ -4,7 +4,7 @@ name: "token-layer"
 version: "1.0.3"
 displayName: "Token Layer"
 summary: "Token Layer - Censorship resistant crosschain public token infrastructure."
-license: "MIT"
+license: "Proprietary"
 description: |-
   Token Layer - Censorship resistant crosschain public token infrastructure。Launch once, trade eve。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
 tags:

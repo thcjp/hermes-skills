@@ -4,7 +4,7 @@ name: "encrypted-docs"
 version: "1.0.0"
 displayName: "Encrypted Docs"
 summary: "End-to-end encrypted .md documents for agents & humans to collaborate. This"
-license: "MIT"
+license: "Proprietary"
 description: |-
   End-to-end encrypted 。md documents for agents & humans to collaborate。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。
 tags:

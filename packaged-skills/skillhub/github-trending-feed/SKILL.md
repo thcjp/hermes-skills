@@ -4,7 +4,7 @@ name: "github-trending-feed"
 version: "1.0.0"
 displayName: "GitHub Trending Feed"
 summary: "获取 GitHub Trending 热门仓库列表。当用户要求查看 GitHub 热榜、每日 GitHub trending、推送 GitHub"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   获取 GitHub Trending 热门仓库列表。当用户要求查看 GitHub 热榜、每日 GitHub trending、推送 GitHub
   热门项目时使用。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。适用于独立开发者、企业团队和自动化工作流场景。

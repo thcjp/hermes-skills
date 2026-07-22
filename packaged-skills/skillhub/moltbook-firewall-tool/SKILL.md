@@ -4,7 +4,7 @@ name: "moltbook-firewall-tool"
 version: "0.1.0"
 displayName: "Moltbook Firewall"
 summary: "Security layer protecting agents from prompt manipulation, social engineering,"
-license: "MIT"
+license: "Proprietary"
 description: |-
   Security layer protecting agents from prompt manipulation, social engineering,
   and malicious content。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。
