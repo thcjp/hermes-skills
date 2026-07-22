@@ -1,11 +1,11 @@
 ---
-slug: batchops-commander-pro
-name: batchops-commander-pro
+slug: "batchops-commander-pro"
+name: "batchops-commander-pro"
 version: "1.0.0"
-displayName: Batchops Commander
-summary: 企业级批处理编排系统，含并行决策、高级检查点恢复、回滚模式、子Agent委派与幂等性设计。
-license: Proprietary
-edition: pro
+displayName: "Batchops Commander"
+summary: "企业级批处理编排系统，含并行决策、高级检查点恢复、回滚模式、子Agent委派与幂等性设计。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   批处理指挥官专业版是面向团队与企业的大规模批处理编排系统。不仅覆盖批处理全生命周期，更提供并行vs串行自动决策、高级检查点恢复、回滚模式、多策略错误处理、子Agent委派与幂等性设计，确保大规模批量处理高效、安全、可恢复。
 
@@ -17,16 +17,16 @@ description: |-
 
   适用关键词：批处理编排、并行决策、检查点恢复、回滚模式、子Agent委派、幂等性、大规模处理
 tags:
-- 批处理
-- 并行决策
-- 回滚模式
-- 幂等性
-- 子Agent委派
+  - 批处理
+  - 并行决策
+  - 回滚模式
+  - 幂等性
+  - 子Agent委派
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 批处理指挥官（专业版）
 
 > **企业级批处理编排系统。并行决策+高级检查点+回滚模式+子Agent委派，大规模处理高效安全可恢复。**

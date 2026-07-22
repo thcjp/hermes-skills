@@ -1,10 +1,10 @@
 ---
-slug: doc-reasoning-analyst-pro
-name: doc-reasoning-analyst-pro
+slug: "doc-reasoning-analyst-pro"
+name: "doc-reasoning-analyst-pro"
 version: "1.0.0"
-displayName: 文档推理分析师(专业版)
-summary: 长文本推理优化器专业版，含多版本对比、结构改进建议、决策准备报告，全面覆盖商业法律文档分析需求。
-license: Proprietary
+displayName: "文档推理分析师(专业版)"
+summary: "长文本推理优化器专业版，含多版本对比、结构改进建议、决策准备报告，全面覆盖商业法律文档分析需求。"
+license: "Proprietary"
 description: |-
   文档推理分析师专业版是在免费版基础上的全功能升级，专为商业、法律及高风险文档工作流设计。不仅提供核心推理分析能力，更解锁多版本对比分析、结构改进建议、决策准备报告三大高级功能，帮助法务团队、管理层和采购人员在高风险决策中获得全方位支持。
 
@@ -16,17 +16,17 @@ description: |-
 
   适用关键词：文档推理、合同审查、多版本对比、结构优化、决策报告、风险矩阵、逻辑梳理、商业备忘录
 tags:
-- 文档推理
-- 合同审查
-- 风险分析
-- 决策支持
-- 多版本对比
+  - 文档推理
+  - 合同审查
+  - 风险分析
+  - 决策支持
+  - 多版本对比
 tools:
-- read
-- exec
-edition: pro
+  - read
+  - exec
+edition: "pro"
+homepage: "https://skillhub.cn"
 ---
-
 # 文档推理分析师（专业版）
 
 > **将冗长、杂乱的高风险文档转化为更清晰的推理和更干净的决策——现在支持多版本对比、结构优化与决策报告。**

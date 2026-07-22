@@ -1,11 +1,11 @@
 ---
-slug: knowledge-graph-builder-pro
-name: knowledge-graph-builder-pro
+slug: "knowledge-graph-builder-pro"
+name: "knowledge-graph-builder-pro"
 version: "1.0.0"
-displayName: Knowledge Graph Buil
-summary: AI Agent全功能知识图谱引擎，SQLite迁移+图可视化+SPARQL查询+版本追踪+跨技能通信。
-license: Proprietary
-edition: pro
+displayName: "Knowledge Graph Buil"
+summary: "AI Agent全功能知识图谱引擎，SQLite迁移+图可视化+SPARQL查询+版本追踪+跨技能通信。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   知识图谱构建器专业版是在免费版基础上的全功能升级，为AI Agent提供从类型化图谱到可视化的完整知识管理引擎。专业版解锁SQLite迁移、图可视化、SPARQL-like高级查询、版本追踪与差异对比、跨技能通信增强、多平台集成六大高级功能，实现大规模图谱的高性能管理与可视化。
 
@@ -17,16 +17,16 @@ description: |-
 
   适用关键词：知识图谱、SQLite迁移、图可视化、SPARQL查询、版本追踪、跨技能通信、事件总线
 tags:
-- 知识图谱
-- SQLite迁移
-- 图可视化
-- SPARQL查询
-- 版本追踪
+  - 知识图谱
+  - SQLite迁移
+  - 图可视化
+  - SPARQL查询
+  - 版本追踪
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 知识图谱构建器（专业版）
 
 > **AI Agent的全功能知识图谱引擎。SQLite迁移+图可视化+SPARQL查询+版本追踪，大规模图谱高性能管理。**

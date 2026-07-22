@@ -1,11 +1,11 @@
 ---
-slug: workflow-essentials-pro
-name: workflow-essentials-pro
+slug: "workflow-essentials-pro"
+name: "workflow-essentials-pro"
 version: "1.0.0"
-displayName: Workflow Essentials
-summary: 完整自动化方法论，六步框架、六种设计模式、四种进阶场景、维护策略与故障排查。
-license: Proprietary
-edition: pro
+displayName: "Workflow Essentials"
+summary: "完整自动化方法论，六步框架、六种设计模式、四种进阶场景、维护策略与故障排查。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   工作流精要专业版是在免费版基础上的全功能升级，为AI Agent提供完整的自动化工作流方法论。不同于面向特定角色或特定工具的指南，工作流精要聚焦自动化的通用原理与系统方法。专业版解锁六步完整框架、六种设计模式、四种进阶场景、维护策略和完整故障排查表。
 
@@ -17,16 +17,16 @@ description: |-
 
   适用关键词：自动化方法论、工作流设计模式、自动化维护、工具迁移、进阶自动化、效率体系
 tags:
-- 自动化基础
-- 工作流入门
-- 效率提升
-- 无代码
-- 设计模式
+  - 自动化基础
+  - 工作流入门
+  - 效率提升
+  - 无代码
+  - 设计模式
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 工作流精要（专业版）
 
 > **自动化的完整方法论指南。六步框架，六种设计模式，从入门到系统化管理，建立可持续的自动化体系。**

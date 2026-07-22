@@ -1,11 +1,11 @@
 ---
-slug: infinite-memory-vault-pro
-name: infinite-memory-vault-pro
+slug: "infinite-memory-vault-pro"
+name: "infinite-memory-vault-pro"
 version: "1.0.0"
-displayName: 无限记忆库(专业版)
-summary: 与Agent内置记忆并行的无限组织化记忆专业版：语义搜索+自动同步+大规模索引，全功能解锁。
-license: Proprietary
-edition: pro
+displayName: "无限记忆库(专业版)"
+summary: "与Agent内置记忆并行的无限组织化记忆专业版：语义搜索+自动同步+大规模索引，全功能解锁。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向需要超越 Agent 内置记忆的长期结构化存储场景的无限记忆库专业版。与 Agent 内置记忆并行工作，互不冲突，提供无限分类、语义搜索、自动同步、大规模索引能力。专业版解锁全部高级功能，适合团队/企业级知识管理与长期记忆需求。
 
@@ -17,14 +17,14 @@ description: |-
 
   适用关键词：组织化记忆、无限记忆、记忆库、分类存储、索引导航、长期记忆、记忆管理、memory vault、parallel memory、语义搜索、自动同步、知识管理
 tags:
-- 智能代理
-- 记忆管理
-- 知识组织
+  - 智能代理
+  - 记忆管理
+  - 知识组织
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 无限记忆库（专业版）
 
 **与 Agent 内置记忆并行的无限组织化记忆系统专业版**。你的 Agent 有基础内置记忆，本 Skill 为它添加无限、完美组织的并行记忆系统——互补而非替代，永不冲突。专业版解锁语义搜索、自动同步、大规模索引全部高级功能。

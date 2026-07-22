@@ -1,11 +1,11 @@
 ---
-slug: smart-update-agent-pro
-name: smart-update-agent-pro
+slug: "smart-update-agent-pro"
+name: "smart-update-agent-pro"
 version: "1.0.0"
-displayName: Smart Update Agent
-summary: 企业级更新编排系统，含多环境策略、回滚备份、金丝雀发布、依赖分析、Breaking Change检测与合规审计。
-license: Proprietary
-edition: pro
+displayName: "Smart Update Agent"
+summary: "企业级更新编排系统，含多环境策略、回滚备份、金丝雀发布、依赖分析、Breaking Change检测与合规审计。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   智能更新管家专业版是面向团队与企业的全功能更新编排系统。不仅自动保持Agent运行时与技能最新，更提供多环境更新策略、回滚备份、金丝雀发布、依赖冲突分析、Breaking Change检测与合规审计报告，确保更新安全可控、可追溯、可回滚。
 
@@ -17,15 +17,15 @@ description: |-
 
   适用关键词：更新编排、多环境更新、回滚备份、金丝雀发布、依赖分析、Breaking Change、合规审计、更新窗口
 tags:
-- 自动更新
-- 多环境编排
-- 回滚备份
-- 合规审计
+  - 自动更新
+  - 多环境编排
+  - 回滚备份
+  - 合规审计
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 智能更新管家（专业版）
 
 > **企业级更新编排系统。多环境策略+回滚备份+金丝雀发布+Breaking Change检测，更新安全可控可追溯。**

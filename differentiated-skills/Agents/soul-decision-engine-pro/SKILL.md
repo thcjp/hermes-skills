@@ -1,11 +1,11 @@
 ---
-slug: soul-decision-engine-pro
-name: soul-decision-engine-pro
+slug: "soul-decision-engine-pro"
+name: "soul-decision-engine-pro"
 version: "1.0.0"
-displayName: Soul Decision Engine
-summary: AI Agent全功能决策引擎，决策质量评分+偏见深度检测+决策树可视化+跨设备云同步。
-license: Proprietary
-edition: pro
+displayName: "Soul Decision Engine"
+summary: "AI Agent全功能决策引擎，决策质量评分+偏见深度检测+决策树可视化+跨设备云同步。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   灵魂决策引擎专业版是在免费版基础上的全功能升级，为AI Agent提供从决策分析到决策优化的完整闭环。专业版解锁决策质量评分、偏见深度检测、决策树可视化、多领域权重学习、跨设备云同步、决策回溯六大高级功能，实现决策能力的量化与持续优化。
 
@@ -17,16 +17,16 @@ description: |-
 
   适用关键词：决策引擎、质量评分、偏见检测、决策树、跨设备同步、决策回溯、权重学习
 tags:
-- 决策引擎
-- 质量评分
-- 偏见检测
-- 决策树可视化
-- 跨设备同步
+  - 决策引擎
+  - 质量评分
+  - 偏见检测
+  - 决策树可视化
+  - 跨设备同步
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 灵魂决策引擎（专业版）
 
 > **AI Agent的全功能决策引擎。质量评分+偏见检测+决策树可视化+跨设备同步，决策能力可量化。**

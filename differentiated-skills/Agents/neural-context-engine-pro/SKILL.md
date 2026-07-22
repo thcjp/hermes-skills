@@ -1,11 +1,11 @@
 ---
-slug: neural-context-engine-pro
-name: neural-context-engine-pro
+slug: "neural-context-engine-pro"
+name: "neural-context-engine-pro"
 version: "1.0.0"
-displayName: Neural Context Engin
-summary: 联想记忆引擎专业版，含多脑管理、版本快照、脑移植、深度因果链、习惯识别、矛盾检测，全功能。
-license: Proprietary
-edition: pro
+displayName: "Neural Context Engin"
+summary: "联想记忆引擎专业版，含多脑管理、版本快照、脑移植、深度因果链、习惯识别、矛盾检测，全功能。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   神经上下文引擎专业版是联想记忆引擎的终极形态。在免费版基础上解锁多脑管理（多项目/多角色独立记忆空间）、脑版本快照（快照/回滚/diff）、脑移植（跨脑知识迁移）、深度因果链追踪（depth=2/3跨域关联）、习惯模式识别（工作流建议）、矛盾自动检测（冲突记忆识别）、自动事实提取（对话自动提取决策/错误/待办）七大高级功能。
 
@@ -17,16 +17,16 @@ description: |-
 
   适用关键词：联想记忆、多脑管理、脑移植、因果链追踪、习惯识别、矛盾检测、自动提取
 tags:
-- 联想记忆
-- 神经图谱
-- 多脑管理
-- 企业级
-- 因果链
+  - 联想记忆
+  - 神经图谱
+  - 多脑管理
+  - 企业级
+  - 因果链
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 神经上下文引擎（专业版）
 
 > **联想记忆引擎的终极形态。多脑管理、深度因果链、习惯识别、矛盾检测，零LLM依赖。**

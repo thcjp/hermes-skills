@@ -1,11 +1,11 @@
 ---
-slug: blog-writer-tool-pro
-name: blog-writer-tool-pro
+slug: "blog-writer-tool-pro"
+name: "blog-writer-tool-pro"
 version: "1.0.0"
-displayName: 博客写作(专业版)
-summary: AI 博客全栈版：文章/主题/媒体/分析/部署，10 套主题与多平台一键发布。
-license: MIT
-edition: pro
+displayName: "博客写作(专业版)"
+summary: "AI 博客全栈版：文章/主题/媒体/分析/部署，10 套主题与多平台一键发布。"
+license: "MIT"
+edition: "pro"
 description: |-
   博客写作工具（专业版）面向内容团队与独立创作者，在免费版文章 CRUD 的基础上新增主题切换、媒体上传、数据分析、博客设置与一键部署五大模块。提供 10 套精选主题与 Vercel/Cloudflare 部署脚本，让 AI Agent 能够端到端运营一个专业博客。
 
@@ -27,16 +27,16 @@ description: |-
 
   适用关键词：博客、主题、媒体上传、数据分析、部署、Vercel、Cloudflare
 tags:
-- 内容创作
-- 博客
-- 主题定制
-- 数据分析
-- 部署发布
+  - 内容创作
+  - 博客
+  - 主题定制
+  - 数据分析
+  - 部署发布
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 博客写作工具（专业版）
 
 ## 概述

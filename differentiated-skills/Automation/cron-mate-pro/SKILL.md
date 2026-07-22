@@ -1,11 +1,11 @@
 ---
-slug: cron-mate-pro
-name: cron-mate-pro
+slug: "cron-mate-pro"
+name: "cron-mate-pro"
 version: "1.0.0"
-displayName: cron表达式助手(专业版)
-summary: 企业级cron表达式工具专业版，含高级语法L/W/#、时区转换、冲突检测、优化建议、执行预览。
-license: Proprietary
-edition: pro
+displayName: "cron表达式助手(专业版)"
+summary: "企业级cron表达式工具专业版，含高级语法L/W/#、时区转换、冲突检测、优化建议、执行预览。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   cron表达式助手专业版是面向企业级场景的完整cron表达式工具。在免费版基础语法之上，专业版新增高级特殊字符（L/W/#）、时区转换与对比、表达式冲突检测、智能优化建议、执行时间预计算五大高级能力，满足复杂调度场景的表达式编写需求。
 
@@ -17,16 +17,16 @@ description: |-
 
   适用关键词：cron高级语法、L/W/#特殊字符、时区转换、冲突检测、表达式优化、执行预览、Quartz格式
 tags:
-- cron表达式
-- 高级语法
-- 时区转换
-- 冲突检测
-- 表达式优化
+  - cron表达式
+  - 高级语法
+  - 时区转换
+  - 冲突检测
+  - 表达式优化
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # cron表达式助手（专业版）
 
 > **企业级cron表达式工具。高级语法+时区转换+冲突检测+优化建议+执行预览，全功能覆盖。**

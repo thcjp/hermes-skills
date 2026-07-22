@@ -1,11 +1,11 @@
 ---
-slug: token-economist-pro
-name: token-economist-pro
+slug: "token-economist-pro"
+name: "token-economist-pro"
 version: "1.0.0"
-displayName: Token经济学家(专业版)
-summary: AI Agent全功能Token优化系统，含多级向量缓存、成本预估、预算控制、团队分析与多模型路由。
-license: Proprietary
-edition: pro
+displayName: "Token经济学家(专业版)"
+summary: "AI Agent全功能Token优化系统，含多级向量缓存、成本预估、预算控制、团队分析与多模型路由。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Token经济学家（专业版）在免费版基础上解锁多级向量语义缓存、Token成本预估与月度预算控制、团队成本分析、基于LLM的智能摘要与上下文图压缩、缓存命中率优化、多模型智能路由等高级能力。
 
@@ -17,18 +17,18 @@ description: |-
 
   适用关键词：Token优化、向量缓存、成本预估、预算控制、团队成本、多模型路由、上下文图压缩、缓存命中率
 tags:
-- Token优化
-- 向量缓存
-- 成本预估
-- 预算控制
-- 多模型路由
-- 团队成本分析
+  - Token优化
+  - 向量缓存
+  - 成本预估
+  - 预算控制
+  - 多模型路由
+  - 团队成本分析
 tools:
-- read
-- exec
-edition: pro
+  - read
+  - exec
+edition: "pro"
+homepage: "https://skillhub.cn"
 ---
-
 # Token经济学家（专业版）
 
 > **全功能Token优化系统。向量缓存+成本预估+预算控制+多模型路由，从个人节省走向团队级成本治理。**

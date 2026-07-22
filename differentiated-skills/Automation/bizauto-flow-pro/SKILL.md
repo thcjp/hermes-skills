@@ -1,11 +1,11 @@
 ---
-slug: bizauto-flow-pro
-name: bizauto-flow-pro
+slug: "bizauto-flow-pro"
+name: "bizauto-flow-pro"
 version: "1.0.0"
-displayName: 业务自动化师(专业版)
-summary: 全流程业务自动化架构师，含事件驱动、人机协同、多系统同步、ROI仪表盘与五级容错降级。
-license: Proprietary
-edition: pro
+displayName: "业务自动化师(专业版)"
+summary: "全流程业务自动化架构师，含事件驱动、人机协同、多系统同步、ROI仪表盘与五级容错降级。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   业务自动化师专业版是面向团队与企业的全功能业务自动化架构系统。采用"审计-设计-实现-监控-优化"五阶段方法论，从识别瓶颈到高级容错，覆盖自动化全生命周期。专业版解锁事件驱动架构、人机协同审批门、五级容错降级、多系统同步策略与ROI仪表盘五大高级能力。
 
@@ -17,16 +17,16 @@ description: |-
 
   适用关键词：业务自动化、事件驱动、人机协同、容错降级、多系统同步、ROI仪表盘、审批门、事件溯源
 tags:
-- 业务自动化
-- 事件驱动
-- 人机协同
-- 容错降级
-- ROI分析
+  - 业务自动化
+  - 事件驱动
+  - 人机协同
+  - 容错降级
+  - ROI分析
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 业务自动化师（专业版）
 
 > **企业级业务自动化架构系统。五阶段全生命周期，事件驱动+人机协同+五级容错，自动化永不中断。**

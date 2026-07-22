@@ -1,11 +1,11 @@
 ---
-slug: doc-print-tool-free
-name: doc-print-tool-free
+slug: "doc-print-tool-free"
+name: "doc-print-tool-free"
 version: "1.0.0"
-displayName: 文档凭证注册工具
-summary: 面向个人用户的文档凭证注册、检索与基础交换工具，支持快速登记与发现。
-license: MIT
-edition: free
+displayName: "文档凭证注册工具"
+summary: "面向个人用户的文档凭证注册、检索与基础交换工具，支持快速登记与发现。"
+license: "MIT"
+edition: "free"
 description: |-
   面向个人开发者与一人公司的文档凭证注册与发现工具。
 
@@ -24,15 +24,15 @@ description: |-
 
   适用关键词: 文档注册, 凭证打印, 登记, 发现, 检索, 能力卡片, doc-print, register, discover
 tags:
-- 文档工具
-- 凭证注册
-- 个人效率
-- 其他工具
+  - 文档工具
+  - 凭证注册
+  - 个人效率
+  - 其他工具
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 文档凭证注册工具（免费版）
 
 ## 概述

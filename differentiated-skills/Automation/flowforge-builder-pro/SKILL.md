@@ -1,11 +1,11 @@
 ---
-slug: flowforge-builder-pro
-name: flowforge-builder-pro
+slug: "flowforge-builder-pro"
+name: "flowforge-builder-pro"
 version: "1.0.0"
-displayName: Flowforge Builder
-summary: 全功能JSON工作流构建，四种触发器、多条件组合、数据处理、通知发送、六模板库。
-license: Proprietary
-edition: pro
+displayName: "Flowforge Builder"
+summary: "全功能JSON工作流构建，四种触发器、多条件组合、数据处理、通知发送、六模板库。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   流程锻造器专业版是在免费版基础上的全功能升级，为AI Agent提供代码化的工作流构建能力。通过JSON定义触发器、操作步骤、条件判断和错误处理，将跨平台自动化流程转化为可版本控制、可复用的工作流配置。专业版解锁API Webhook触发、多条件组合、数据处理转换、通知发送四大高级能力。
 
@@ -17,17 +17,17 @@ description: |-
 
   适用关键词：工作流构建、自动化流程、JSON工作流、触发器、Webhook、定时任务、文件监控、数据处理
 tags:
-- 工作流构建
-- 流程自动化
-- JSON配置
-- 触发器系统
-- Webhook
-- 数据处理
+  - 工作流构建
+  - 流程自动化
+  - JSON配置
+  - 触发器系统
+  - Webhook
+  - 数据处理
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 流程锻造器（专业版）
 
 > **AI Agent的代码化工作流引擎。四种触发器，五类操作节点，多条件组合，让自动化流程像代码一样可审查、可版本控制、可回滚。**

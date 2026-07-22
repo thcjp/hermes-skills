@@ -1,11 +1,11 @@
 ---
-slug: solo-workflow-engine-pro
-name: solo-workflow-engine-pro
+slug: "solo-workflow-engine-pro"
+name: "solo-workflow-engine-pro"
 version: "1.0.0"
-displayName: Solo Workflow Engine
-summary: 完整七步无代码自动化框架，含高级场景、维护监控、ROI计算与故障排查。
-license: Proprietary
-edition: pro
+displayName: "Solo Workflow Engine"
+summary: "完整七步无代码自动化框架，含高级场景、维护监控、ROI计算与故障排查。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   独立者引擎专业版是在免费版基础上的全功能升级，为独立开发者、一人公司、自由职业者提供完整的七步无代码自动化方法论。从识别机会到计算ROI，全流程覆盖自动化工作流的构建、维护与优化。专业版解锁维护监控、高级自动化场景、ROI计算工具和完整故障排查表。
 
@@ -17,16 +17,16 @@ description: |-
 
   适用关键词：独立开发者、一人公司、无代码自动化、Zapier、Make、n8n、工作流、效率提升、ROI
 tags:
-- 无代码自动化
-- 独立开发者
-- 效率提升
-- 工作流设计
-- ROI分析
+  - 无代码自动化
+  - 独立开发者
+  - 效率提升
+  - 工作流设计
+  - ROI分析
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 独立者引擎（专业版）
 
 > **独立开发者、一人公司的终极无代码自动化引擎。完整七步框架，从识别到ROI计算，让一个人像一支团队一样高效运转。**

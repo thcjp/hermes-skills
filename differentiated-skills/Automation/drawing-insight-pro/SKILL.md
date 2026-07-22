@@ -1,11 +1,11 @@
 ---
-slug: drawing-insight-pro
-name: drawing-insight-pro
+slug: "drawing-insight-pro"
+name: "drawing-insight-pro"
 version: "1.0.0"
-displayName: 图纸解析(专业版)
-summary: 建筑施工图纸深度解析专业版，支持PDF/DWG批量处理、OCR预处理、跨图纸索引、中文注释分类与自定义模板。
-license: Proprietary
-edition: pro
+displayName: "图纸解析(专业版)"
+summary: "建筑施工图纸深度解析专业版，支持PDF/DWG批量处理、OCR预处理、跨图纸索引、中文注释分类与自定义模板。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   图纸解析（专业版）面向工程团队与造价咨询机构，在免费版基础上解锁全部高级能力：无上限批量处理、DWG原生解析、扫描件OCR预处理、跨图纸索引生成、中文注释智能分类、自定义正则模板、版本差异分析。覆盖从单图纸解析到项目级图纸资产管理的完整工作流。
 
@@ -17,16 +17,16 @@ description: |-
 
   适用关键词：图纸批量解析、DWG解析、OCR预处理、跨图纸索引、中文注释分类、版本差异、图纸资产管理
 tags:
-- 图纸解析
-- 建筑工程
-- DWG解析
-- 批量处理
-- 图纸管理
+  - 图纸解析
+  - 建筑工程
+  - DWG解析
+  - 批量处理
+  - 图纸管理
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 图纸解析（专业版）
 
 > 工程团队的图纸资产管理中枢。PDF/DWG批量解析、OCR预处理、跨图纸索引、版本差异分析，让万张图纸瞬间变为可检索数据资产。

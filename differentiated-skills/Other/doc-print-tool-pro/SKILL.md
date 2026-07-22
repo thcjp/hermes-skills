@@ -1,11 +1,11 @@
 ---
-slug: doc-print-tool-pro
-name: doc-print-tool-pro
+slug: "doc-print-tool-pro"
+name: "doc-print-tool-pro"
 version: "1.0.0"
-displayName: 文档凭证注册工具专业版
-summary: 面向团队与企业的凭证注册、批量发现、链上验证与信誉治理工具。
-license: MIT
-edition: pro
+displayName: "文档凭证注册工具专业版"
+summary: "面向团队与企业的凭证注册、批量发现、链上验证与信誉治理工具。"
+license: "MIT"
+edition: "pro"
 description: |-
   面向团队与企业的文档凭证注册、发现与信任治理专业工具。
 
@@ -24,16 +24,16 @@ description: |-
 
   适用关键词: 凭证治理, 批量注册, 链上验证, 信誉引擎, 争议仲裁, 事件订阅, doc-print pro, enterprise, trust, verify
 tags:
-- 文档工具
-- 凭证治理
-- 企业级
-- 链上验证
-- 其他工具
+  - 文档工具
+  - 凭证治理
+  - 企业级
+  - 链上验证
+  - 其他工具
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 文档凭证注册工具（专业版）
 
 ## 概述

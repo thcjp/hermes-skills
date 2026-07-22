@@ -1,11 +1,11 @@
 ---
-slug: cron-expert-pro
-name: cron-expert-pro
+slug: "cron-expert-pro"
+name: "cron-expert-pro"
 version: "1.0.0"
-displayName: cron最佳实践专家(专业版)
-summary: 企业级cron最佳实践专业版，含高级调度模式、遗留迁移、并发控制、清理工规则、完整陷阱库。
-license: Proprietary
-edition: pro
+displayName: "cron最佳实践专家(专业版)"
+summary: "企业级cron最佳实践专业版，含高级调度模式、遗留迁移、并发控制、清理工规则、完整陷阱库。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   cron最佳实践专家专业版是面向企业级场景的定时系统最佳实践完整指南。在免费版基础实践之上，专业版新增高级调度模式（cron表达式精确控制）、遗留系统迁移指南、并发控制规则、清理工自动化规则、完整陷阱库（15+类）五大高级能力，满足复杂生产环境的定时系统治理需求。
 
@@ -17,16 +17,16 @@ description: |-
 
   适用关键词：cron企业实践、遗留迁移、并发控制、清理工规则、定时SLA、故障恢复、定时审计
 tags:
-- cron最佳实践
-- 遗留迁移
-- 并发控制
-- 清理工规则
-- 企业治理
+  - cron最佳实践
+  - 遗留迁移
+  - 并发控制
+  - 清理工规则
+  - 企业治理
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # cron最佳实践专家（专业版）
 
 > **企业级定时系统治理。高级调度+遗留迁移+并发控制+清理工规则+完整陷阱库，方法论全覆盖。**

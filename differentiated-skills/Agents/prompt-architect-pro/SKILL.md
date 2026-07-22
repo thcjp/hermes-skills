@@ -1,11 +1,11 @@
 ---
-slug: prompt-architect-pro
-name: prompt-architect-pro
+slug: "prompt-architect-pro"
+name: "prompt-architect-pro"
 version: "1.0.0"
-displayName: 提示词架构师专业版
-summary: 解决 Few-shot 难编写、Token 预算失控、多 Agent 协作混乱、幻觉难检测的专业 Prompt 工程平台
-license: Proprietary
-edition: pro
+displayName: "提示词架构师专业版"
+summary: "解决 Few-shot 难编写、Token 预算失控、多 Agent 协作混乱、幻觉难检测的专业 Prompt 工程平台"
+license: "Proprietary"
+edition: "pro"
 description: |-
   提示词架构师专业版是面向 AI Agent 团队负责人、Prompt 工程师、企业应用开发者的全功能 Prompt 工程平台，针对"Few-shot 示例难编写与维护、Token 预算失控导致成本飙升、多 Agent 协作编排混乱、长会话上下文腐烂、幻觉难检测与回归测试缺失"五大高频痛点而设计。它在免费版五段式 Prompt 与线性拆解基础上，解锁 Few-shot 自动生成、Token 预算管理、多 Agent 编排三类高级能力，并新增 Prompt A/B 测试、幻觉检测与回归测试、上下文腐烂诊断三项独有能力。
 
@@ -17,15 +17,15 @@ description: |-
 
   适用关键词：prompt工程、few-shot生成、token预算、多agent编排、dag拆解、ab测试、幻觉检测、回归测试、上下文腐烂、plan-execute、reflection
 tags:
-- 提示词工程
-- 多Agent编排
-- 质量评估
-- 成本优化
+  - 提示词工程
+  - 多Agent编排
+  - 质量评估
+  - 成本优化
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 提示词架构师专业版（Prompt Architect Pro）
 
 面向 AI Agent 团队负责人、Prompt 工程师、企业应用开发者的全功能 Prompt 工程平台。在免费版五段式 Prompt 与线性拆解基础上，解锁 Few-shot 自动生成、Token 预算管理、多 Agent 编排三类高级能力，并新增 Prompt A/B 测试、幻觉检测与回归测试、上下文腐烂诊断三项独有能力。

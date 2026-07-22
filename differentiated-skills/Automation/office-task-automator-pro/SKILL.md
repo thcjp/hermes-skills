@@ -1,11 +1,11 @@
 ---
-slug: office-task-automator-pro
-name: office-task-automator-pro
+slug: "office-task-automator-pro"
+name: "office-task-automator-pro"
 version: "1.0.0"
-displayName: 办公任务自动化(专业版)
-summary: 全功能办公自动化，含邮件批量发送、日程管理、报表生成、工作流编排，支持5种角色×6类场景。
-license: Proprietary
-edition: pro
+displayName: "办公任务自动化(专业版)"
+summary: "全功能办公自动化，含邮件批量发送、日程管理、报表生成、工作流编排，支持5种角色×6类场景。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   办公任务自动化（专业版）是在免费版基础上的全功能升级，为AI Agent提供完整的办公流程自动化能力。在文档处理、数据清洗、格式转换核心能力之上，解锁邮件批量发送、日程智能管理、报表自动生成、工作流编排、PPT批量制作、云存储集成六大高级模块。
 
@@ -17,16 +17,16 @@ description: |-
 
   适用关键词：办公自动化、邮件批量、日程管理、报表生成、工作流编排、PPT制作、云存储同步
 tags:
-- 办公自动化
-- 邮件自动化
-- 日程管理
-- 报表生成
-- 工作流编排
+  - 办公自动化
+  - 邮件自动化
+  - 日程管理
+  - 报表生成
+  - 工作流编排
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 办公任务自动化（专业版）
 
 > **AI Agent的终极办公自动化方案。文档+邮件+日程+报表+工作流+云存储，六大模块全覆盖。**

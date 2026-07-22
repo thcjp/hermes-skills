@@ -1,10 +1,10 @@
 ---
-slug: aws-agent-orchestrator-pro
-name: aws-agent-orchestrator-pro
+slug: "aws-agent-orchestrator-pro"
+name: "aws-agent-orchestrator-pro"
 version: "1.0.0"
-displayName: AWS智能体编排专业版
-summary: 完整的AWS多智能体编排能力，含Orchestrator协作、Gateway工具链与跨会话LTM长期记忆，面向团队与企业生产环境。
-license: Proprietary
+displayName: "AWS智能体编排专业版"
+summary: "完整的AWS多智能体编排能力，含Orchestrator协作、Gateway工具链与跨会话LTM长期记忆，面向团队与企业生产环境。"
+license: "Proprietary"
 description: |-
   AWS智能体编排专业版（aws-agent-orchestrator-pro）面向团队与企业生产环境，在免费版单智能体能力之上，解锁多智能体编排、Gateway工具链与跨会话长期记忆（LTM）三大高级能力。它让企业能够在统一session上下文中协调多个Specialist Agent，将Lambda/API网关转化为MCP工具，并跨会话沉淀事实与决策。
 
@@ -18,17 +18,17 @@ description: |-
 
   版本定位：收费专业版，定价¥99/月（企业工具类）。包含免费版全部能力 + 3项高级解锁能力 + 企业级场景指南 + 优先支持。免费试用请使用 aws-agent-orchestrator-free。
 tags:
-- 智能体编排
-- 多智能体
-- 企业工具
-- AWS部署
-- 高级编排
+  - 智能体编排
+  - 多智能体
+  - 企业工具
+  - AWS部署
+  - 高级编排
 tools:
-- read
-- exec
-edition: pro
+  - read
+  - exec
+edition: "pro"
+homepage: "https://skillhub.cn"
 ---
-
 # AWS智能体编排专业版（aws-agent-orchestrator-pro）
 
 本Skill在免费版单智能体能力之上，解锁**多智能体编排、Gateway工具链、跨会话长期记忆（LTM）**三大高级能力，面向团队与企业生产环境。

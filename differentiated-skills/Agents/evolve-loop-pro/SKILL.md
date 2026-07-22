@@ -1,11 +1,11 @@
 ---
-slug: evolve-loop-pro
-name: evolve-loop-pro
+slug: "evolve-loop-pro"
+name: "evolve-loop-pro"
 version: "1.0.0"
-displayName: 进化循环(专业版)
-summary: AI Agent全功能PDCA自改进引擎，六西格玛质量度量+跨设备云同步+决策回溯+多项目并行。
-license: Proprietary
-edition: pro
+displayName: "进化循环(专业版)"
+summary: "AI Agent全功能PDCA自改进引擎，六西格玛质量度量+跨设备云同步+决策回溯+多项目并行。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   进化循环专业版是在免费版基础上的全功能升级，为AI Agent提供终极自改进引擎。在PDCA闭环之上叠加六西格玛质量度量体系，实现可量化的持续进化。专业版解锁跨设备云同步、多项目并行记忆隔离、决策回溯与历史版本对比三大高级功能。
 
@@ -17,16 +17,16 @@ description: |-
 
   适用关键词：自改进、PDCA、六西格玛、DMAIC、跨设备同步、决策回溯、质量度量、多项目并行
 tags:
-- 自改进
-- Agent记忆
-- 质量度量
-- 跨设备同步
-- 决策回溯
+  - 自改进
+  - Agent记忆
+  - 质量度量
+  - 跨设备同步
+  - 决策回溯
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 进化循环（专业版）
 
 > **AI Agent的终极自改进引擎。六西格玛质量度量+跨设备云同步+多项目并行，改进效果可量化。**

@@ -1,11 +1,11 @@
 ---
-slug: context-compressor-pro
-name: context-compressor-pro
+slug: "context-compressor-pro"
+name: "context-compressor-pro"
 version: "1.0.0"
-displayName: Context Compressor
-summary: 智能压缩对话日志，含批量处理、智能分类、增量压缩、质量评分、自定义模板，Token成本降低70%+。
-license: Proprietary
-edition: pro
+displayName: "Context Compressor"
+summary: "智能压缩对话日志，含批量处理、智能分类、增量压缩、质量评分、自定义模板，Token成本降低70%+。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   上下文压缩器专业版是Agent记忆管理的终极压缩方案。在免费版基础上解锁批量压缩自动化、智能分类归档（决策/教训/待办/事实/偏好五类）、增量压缩（仅处理新增内容）、压缩质量评分（信息保留率量化评估）、自定义输出模板、压缩历史追踪、多语言混合日志优化七大高级功能。
 
@@ -17,16 +17,16 @@ description: |-
 
   适用关键词：上下文压缩、批量压缩、智能分类、增量压缩、压缩质量评分、Token优化、企业记忆管理
 tags:
-- 上下文压缩
-- 记忆管理
-- Token优化
-- 企业级
-- 批量处理
+  - 上下文压缩
+  - 记忆管理
+  - Token优化
+  - 企业级
+  - 批量处理
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 上下文压缩器（专业版）
 
 > **Agent记忆管理的终极压缩方案。批量压缩、智能分类、质量评分，Token成本降低70%+。**

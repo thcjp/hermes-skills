@@ -1,10 +1,10 @@
 ---
-slug: aws-cloud-inspector-pro
-name: aws-cloud-inspector-pro
+slug: "aws-cloud-inspector-pro"
+name: "aws-cloud-inspector-pro"
 version: "1.0.0"
-displayName: AWS云巡检专业版
-summary: 完整的AWS云巡检能力，含跨服务安全审计、Cost Explorer成本分析与CloudTrail变更管理，面向团队与企业云治理场景。
-license: Proprietary
+displayName: "AWS云巡检专业版"
+summary: "完整的AWS云巡检能力，含跨服务安全审计、Cost Explorer成本分析与CloudTrail变更管理，面向团队与企业云治理场景。"
+license: "Proprietary"
 description: |-
   AWS云巡检专业版（aws-cloud-inspector-pro）面向团队与企业云治理场景，在免费版只读巡检能力之上，解锁跨服务安全审计、Cost Explorer成本分析与CloudTrail变更管理三大高级能力。它让企业能够在统一会话中完成安全态势扫描、成本分摊分析与资源变更追踪回滚。
 
@@ -18,17 +18,17 @@ description: |-
 
   版本定位：收费专业版，定价¥49.9/月（行业工具类）。包含免费版全部能力 + 3项高级解锁能力 + 企业级场景指南 + 优先支持。免费试用请使用 aws-cloud-inspector-free。
 tags:
-- AWS巡检
-- 安全审计
-- 成本分析
-- 变更管理
-- 企业工具
+  - AWS巡检
+  - 安全审计
+  - 成本分析
+  - 变更管理
+  - 企业工具
 tools:
-- read
-- exec
-edition: pro
+  - read
+  - exec
+edition: "pro"
+homepage: "https://skillhub.cn"
 ---
-
 # AWS云巡检专业版（aws-cloud-inspector-pro）
 
 本Skill在免费版只读巡检能力之上，解锁**安全审计、成本分析、变更管理**三大高级能力，面向团队与企业云治理场景。

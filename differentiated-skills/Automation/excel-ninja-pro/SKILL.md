@@ -1,11 +1,11 @@
 ---
-slug: excel-ninja-pro
-name: excel-ninja-pro
+slug: "excel-ninja-pro"
+name: "excel-ninja-pro"
 version: "1.0.0"
-displayName: Excel忍者(专业版)
-summary: 全功能Excel自动化处理，16个脚本覆盖合并、VLOOKUP、模板填充、条件格式等全部场景。
-license: Proprietary
-edition: pro
+displayName: "Excel忍者(专业版)"
+summary: "全功能Excel自动化处理，16个脚本覆盖合并、VLOOKUP、模板填充、条件格式等全部场景。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Excel忍者专业版是在免费版基础上的全功能升级，为AI Agent提供终极Excel自动化处理能力。开放全部16个命令行脚本，从基础的合并、筛选、拆分，到高级的多表VLOOKUP、模板填充、条件格式、文本格式化，全面覆盖表格处理需求。
 
@@ -17,17 +17,17 @@ description: |-
 
   适用关键词：Excel、xlsx、合并、拆分、筛选、去重、聚合、VLOOKUP、模板填充、条件格式、CSV、表格、批量处理
 tags:
-- Excel自动化
-- 表格处理
-- 数据清洗
-- 批量操作
-- VLOOKUP
-- 条件格式
+  - Excel自动化
+  - 表格处理
+  - 数据清洗
+  - 批量操作
+  - VLOOKUP
+  - 条件格式
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Excel忍者（专业版）
 
 > **AI Agent的终极Excel处理工具。16个脚本全覆盖，从基础合并到高级VLOOKUP、模板填充、条件格式，一键搞定。**

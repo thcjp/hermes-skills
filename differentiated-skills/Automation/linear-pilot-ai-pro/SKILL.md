@@ -1,11 +1,11 @@
 ---
-slug: linear-pilot-ai-pro
-name: linear-pilot-ai-pro
+slug: "linear-pilot-ai-pro"
+name: "linear-pilot-ai-pro"
 version: "1.0.0"
-displayName: Linear自动驾驶(专业版)
-summary: Linear任务全流程自动化专业版，支持多工作流路由、子Agent分发、多平台通知、失败重试与处理指标，企业级任务流转。
-license: Proprietary
-edition: pro
+displayName: "Linear自动驾驶(专业版)"
+summary: "Linear任务全流程自动化专业版，支持多工作流路由、子Agent分发、多平台通知、失败重试与处理指标，企业级任务流转。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Linear自动驾驶（专业版）面向工程团队与AI Agent运行时，在免费版基础上解锁全部高级能力：多工作流条件路由、多Webhook服务冗余、子Agent任务分发、多平台通知（Discord/Slack/邮件/企业微信）、任务优先级队列、失败重试与熔断机制、跨团队任务分发、处理指标与可视化报表。覆盖从单任务自动化到企业级任务流转的完整工作流。
 
@@ -17,15 +17,15 @@ description: |-
 
   适用关键词：多工作流路由、子Agent分发、多平台通知、优先级队列、失败重试、熔断保护、跨团队分发、处理指标
 tags:
-- Linear
-- 任务自动化
-- 工作流路由
-- 企业级
+  - Linear
+  - 任务自动化
+  - 工作流路由
+  - 企业级
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # Linear自动驾驶（专业版）
 
 > 企业级Linear任务流转中枢。多工作流路由、子Agent分发、多平台通知、失败重试与熔断保护，让任务处理效能提升10倍。

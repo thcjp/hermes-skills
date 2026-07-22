@@ -1,11 +1,11 @@
 ---
-slug: macro-sentinel-pro
-name: macro-sentinel-pro
+slug: "macro-sentinel-pro"
+name: "macro-sentinel-pro"
 version: "1.0.0"
-displayName: 宏观哨兵(专业版)
-summary: 全功能宏观监控，含深度解读、高频采集、多渠道推送、可视化图表与告警，支持6种角色场景。
-license: Proprietary
-edition: pro
+displayName: "宏观哨兵(专业版)"
+summary: "全功能宏观监控，含深度解读、高频采集、多渠道推送、可视化图表与告警，支持6种角色场景。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   宏观哨兵（专业版）是在免费版基础上的全功能升级，为AI Agent提供完整的宏观经济监控与分析能力。在核心数据采集与整理能力之上，解锁指标深度解读、历史趋势对比、高频实时监控、多渠道推送、可视化图表生成、阈值告警、专业报告输出七大高级功能。
 
@@ -17,15 +17,15 @@ description: |-
 
   适用关键词：宏观监控、深度解读、趋势分析、阈值告警、可视化图表、专业报告、多渠道推送
 tags:
-- 宏观经济
-- 深度分析
-- 趋势预测
-- 告警预警
+  - 宏观经济
+  - 深度分析
+  - 趋势预测
+  - 告警预警
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 宏观哨兵（专业版）
 
 > **AI Agent的终极宏观监控方案。深度解读+高频监控+多渠道推送+可视化图表+告警预警，全场景覆盖。**

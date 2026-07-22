@@ -1,10 +1,10 @@
 ---
-slug: memory-fortress-pro
-name: memory-fortress-pro
+slug: "memory-fortress-pro"
+name: "memory-fortress-pro"
 version: "1.0.0"
-displayName: 记忆堡垒(专业版)
-summary: AI Agent六层记忆系统专业版，含向量语义搜索、Mem0自动提取、云备份，全面覆盖记忆管理需求。
-license: Proprietary
+displayName: "记忆堡垒(专业版)"
+summary: "AI Agent六层记忆系统专业版，含向量语义搜索、Mem0自动提取、云备份，全面覆盖记忆管理需求。"
+license: "Proprietary"
 description: |-
   记忆堡垒专业版是在免费版基础上的全功能升级，为AI Agent提供终极记忆系统。采用六层架构（热内存/温存储/冷存储/归档/云备份/自动提取），基于WAL协议确保持久化。专业版解锁向量语义搜索、Mem0自动提取、云备份三大高级功能，实现跨设备同步与智能记忆管理。
 
@@ -16,17 +16,17 @@ description: |-
 
   适用关键词：记忆系统、长期记忆、向量搜索、自动提取、云备份、WAL协议、知识图谱、跨设备同步
 tags:
-- 记忆系统
-- Agent记忆
-- 向量搜索
-- 知识管理
-- 跨设备同步
+  - 记忆系统
+  - Agent记忆
+  - 向量搜索
+  - 知识管理
+  - 跨设备同步
 tools:
-- read
-- exec
-edition: pro
+  - read
+  - exec
+edition: "pro"
+homepage: "https://skillhub.cn"
 ---
-
 # 记忆堡垒（专业版）
 
 > **AI Agent的终极记忆系统。六层架构全启用，向量搜索+自动提取+云备份，记忆永不丢失。**

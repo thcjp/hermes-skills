@@ -1,11 +1,11 @@
 ---
-slug: flow-manager-pro-pro
-name: flow-manager-pro-pro
+slug: "flow-manager-pro-pro"
+name: "flow-manager-pro-pro"
 version: "1.0.0"
-displayName: 流程管理器(专业版)
-summary: 全功能Node-RED实例管理，含多实例、完整备份、Docker编排、性能监控与审计日志。
-license: Proprietary
-edition: pro
+displayName: "流程管理器(专业版)"
+summary: "全功能Node-RED实例管理，含多实例、完整备份、Docker编排、性能监控与审计日志。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   流程管理器专业版是在免费版基础上的全功能升级，为IoT团队与自动化运维提供企业级Node-RED实例管理能力。除核心流程操作外，解锁多实例管理、完整备份恢复、Docker容器编排、性能监控告警、批量节点操作、流程版本对比回滚、审计日志七大高级功能。
 
@@ -17,16 +17,16 @@ description: |-
 
   适用关键词：Node-RED管理、多实例、完整备份、Docker编排、性能监控、批量节点、版本回滚、审计日志
 tags:
-- Node-RED
-- 流程管理
-- 自动化
-- DevOps
-- 运维监控
+  - Node-RED
+  - 流程管理
+  - 自动化
+  - DevOps
+  - 运维监控
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 流程管理器（专业版）
 
 > **企业级Node-RED实例管理。多实例+完整备份+Docker编排+性能监控+审计日志，IoT团队的终极运维工具。**

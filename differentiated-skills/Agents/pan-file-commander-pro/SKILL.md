@@ -1,11 +1,11 @@
 ---
-slug: pan-file-commander-pro
-name: pan-file-commander-pro
+slug: "pan-file-commander-pro"
+name: "pan-file-commander-pro"
 version: "1.0.0"
-displayName: 网盘指挥官专业版
-summary: 命令式网盘管理,含记忆备份恢复、大文件后台下载、批量操作、增量同步、完整性校验。
-license: Proprietary
-edition: pro
+displayName: "网盘指挥官专业版"
+summary: "命令式网盘管理,含记忆备份恢复、大文件后台下载、批量操作、增量同步、完整性校验。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   网盘指挥官专业版是一个以"命令式高效操作"为核心视角的百度网盘文件管理工具,所有操作限制在 `/apps/bdpan/` 目录内。面向个人创作者、团队协作者、内容运营、开发者、Agent记忆管理者五类角色。针对网盘管理"命令记不住、操作不连贯、路径易出错、风险操作无确认、文件难分类、大文件下载超时中断、批量操作繁琐、记忆无法跨设备同步、下载完整性无校验、同步可靠性差"十大痛点,构建了快捷命令模板、分类视图、智能路径校验、分层确认规则、操作意图识别、记忆备份恢复、大文件后台下载、批量操作模板、增量同步与完整性校验十大核心能力。
 
@@ -17,16 +17,16 @@ description: |-
 
   适用关键词:网盘指挥官、百度网盘、文件管理、bdpan、pan-file-commander、记忆备份、大文件下载、批量操作、增量同步
 tags:
-- 智能代理
-- 文件管理
-- 百度网盘
-- 命令式操作
-- 记忆备份
+  - 智能代理
+  - 文件管理
+  - 百度网盘
+  - 命令式操作
+  - 记忆备份
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 网盘指挥官(专业版)
 
 百度网盘文件管理工具,以"命令式高效操作"为核心视角,所有操作限制在 `/apps/bdpan/` 目录内。专业版在免费版基础上解锁Agent记忆备份与恢复、大文件后台下载、批量操作模板、增量同步与完整性校验。适配所有支持SKILL.md的Agent平台。

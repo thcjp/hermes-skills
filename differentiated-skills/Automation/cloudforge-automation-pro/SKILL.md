@@ -1,11 +1,11 @@
 ---
-slug: cloudforge-automation-pro
-name: cloudforge-automation-pro
+slug: "cloudforge-automation-pro"
+name: "cloudforge-automation-pro"
 version: "1.0.0"
-displayName: Cloudforge Automatio
-summary: 企业级多云IaC编排系统，含多云管理、Ansible配置、CI/CD流水线、合规审计与灾备恢复。
-license: Proprietary
-edition: pro
+displayName: "Cloudforge Automatio"
+summary: "企业级多云IaC编排系统，含多云管理、Ansible配置、CI/CD流水线、合规审计与灾备恢复。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   云锻造自动化专业版是面向团队与企业的全功能多云基础设施即代码编排系统。不仅覆盖单云IaC基础能力，更提供多云统一管理、Ansible配置管理、CI/CD部署流水线、合规策略审计、灾备恢复、成本优化与安全加固，确保企业级云基础设施安全、合规、高效。
 
@@ -17,16 +17,16 @@ description: |-
 
   适用关键词：多云管理、IaC编排、Ansible、CI/CD、合规审计、灾备恢复、成本优化、安全加固
 tags:
-- 多云管理
-- IaC编排
-- 合规审计
-- 灾备恢复
-- 成本优化
+  - 多云管理
+  - IaC编排
+  - 合规审计
+  - 灾备恢复
+  - 成本优化
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 云锻造自动化（专业版）
 
 > **企业级多云IaC编排系统。多云管理+Ansible+CI/CD+合规审计+灾备恢复，云基础设施安全合规高效。**

@@ -1,11 +1,11 @@
 ---
-slug: redis-context-cache-pro
-name: redis-context-cache-pro
+slug: "redis-context-cache-pro"
+name: "redis-context-cache-pro"
 version: "1.0.0"
-displayName: Redis Context Cache
-summary: AI Agent的Redis全功能缓存方案，含集群分片、性能调优、监控指标、高级限流与Redlock算法。
-license: Proprietary
-edition: pro
+displayName: "Redis Context Cache"
+summary: "AI Agent的Redis全功能缓存方案，含集群分片、性能调优、监控指标、高级限流与Redlock算法。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   Redis上下文缓存（专业版）在免费版基础上解锁Redis Cluster集群方案、性能调优（管道化/连接池/批量处理）、完整监控指标（INFO/慢查询/命中率）、高级持久化（RDB+AOF混合）、令牌桶/漏桶限流、Redlock多节点分布式锁、Pub/Sub与Streams高级用法。
 
@@ -17,18 +17,18 @@ description: |-
 
   适用关键词：Redis集群、性能调优、监控指标、Redlock、令牌桶、漏桶、Pipeline、连接池、慢查询、命中率
 tags:
-- Redis
-- 集群方案
-- 性能调优
-- 监控告警
-- 分布式锁
-- 限流算法
+  - Redis
+  - 集群方案
+  - 性能调优
+  - 监控告警
+  - 分布式锁
+  - 限流算法
 tools:
-- read
-- exec
-edition: pro
+  - read
+  - exec
+edition: "pro"
+homepage: "https://skillhub.cn"
 ---
-
 # Redis上下文缓存（专业版）
 
 > **全功能Redis缓存方案。集群分片+性能调优+监控告警+Redlock，从单机缓存走向生产级分布式缓存。**

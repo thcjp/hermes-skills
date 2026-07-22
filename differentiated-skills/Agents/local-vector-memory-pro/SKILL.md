@@ -1,11 +1,11 @@
 ---
-slug: local-vector-memory-pro
-name: local-vector-memory-pro
+slug: "local-vector-memory-pro"
+name: "local-vector-memory-pro"
 version: "1.0.0"
-displayName: 本地向量记忆(专业版)
-summary: 零API零云依赖的本地向量记忆专业版：LanceDB高级搜索+自动召回+知识图谱，全功能解锁。
-license: Proprietary
-edition: pro
+displayName: "本地向量记忆(专业版)"
+summary: "零API零云依赖的本地向量记忆专业版：LanceDB高级搜索+自动召回+知识图谱，全功能解锁。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   面向隐私敏感与离线场景的本地向量记忆系统专业版。基于 LanceDB + 纯本地 embedding（Ollama/nomic-embed-text），实现零外部 API 调用、零数据出域、完全离线可用的语义记忆检索。专业版解锁全部高级功能，包括 LanceDB 高级向量搜索、自动召回与捕获、Git-Notes 知识图谱，适合团队/企业级生产环境使用。
 
@@ -17,14 +17,14 @@ description: |-
 
   适用关键词：本地记忆、向量记忆、离线记忆、隐私记忆、embedding、LanceDB、Ollama、nomic、本地向量、local memory、知识图谱、自动召回、专业记忆
 tags:
-- 智能代理
-- 记忆管理
-- 本地存储
+  - 智能代理
+  - 记忆管理
+  - 本地存储
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 本地向量记忆（专业版）
 
 **零 API、零云端、零数据出域**的本地向量记忆系统专业版。基于 Ollama + LanceDB，在本地完成 embedding 生成与语义检索，解锁全部高级功能，适合隐私敏感、离线、成本敏感场景的团队/企业级生产部署。

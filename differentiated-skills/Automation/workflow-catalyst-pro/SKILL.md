@@ -1,11 +1,11 @@
 ---
-slug: workflow-catalyst-pro
-name: workflow-catalyst-pro
+slug: "workflow-catalyst-pro"
+name: "workflow-catalyst-pro"
 version: "1.0.0"
-displayName: Workflow Catalyst
-summary: 六步完整自动化框架，含模式库、ROI计算、6个进阶模板、多角色场景与故障排查。
-license: Proprietary
-edition: pro
+displayName: "Workflow Catalyst"
+summary: "六步完整自动化框架，含模式库、ROI计算、6个进阶模板、多角色场景与故障排查。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   工作流催化器专业版是在免费版基础上的全功能升级，为AI Agent提供完整的六步自动化框架。从识别重复任务到测试优化，全流程覆盖自动化工作流的构建与维护。专业版解锁模式库、ROI计算工具、6个进阶模板、多角色场景指南和完整故障排查表。
 
@@ -17,16 +17,16 @@ description: |-
 
   适用关键词：自动化、重复任务、工作流、脚本、批处理、效率提升、定时任务、ROI、模式库
 tags:
-- 工作流自动化
-- 效率提升
-- 脚本生成
-- 任务自动化
-- ROI分析
+  - 工作流自动化
+  - 效率提升
+  - 脚本生成
+  - 任务自动化
+  - ROI分析
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 工作流催化器（专业版）
 
 > **AI Agent的自动化思维引擎。六步完整框架，从识别重复到测试优化，让每一次重复都变成自动化的机会。**

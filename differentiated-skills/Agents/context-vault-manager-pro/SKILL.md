@@ -1,11 +1,11 @@
 ---
-slug: context-vault-manager-pro
-name: context-vault-manager-pro
+slug: "context-vault-manager-pro"
+name: "context-vault-manager-pro"
 version: "1.0.0"
-displayName: Context Vault Manage
-summary: 智能分层记忆专业版，含语义检索、混合检索、自动摘要、向量数据库、多项目隔离，RAG准确率提升40%。
-license: Proprietary
-edition: pro
+displayName: "Context Vault Manage"
+summary: "智能分层记忆专业版，含语义检索、混合检索、自动摘要、向量数据库、多项目隔离，RAG准确率提升40%。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   上下文保险库专业版是智能分层记忆管理的终极方案。在免费版基础上解锁语义检索（基于向量嵌入的语义相似度搜索）、混合检索（关键词+语义混合，RAG准确率提升40%）、自动摘要（LLM自动生成记忆摘要）、向量数据库集成（LanceDB/Chroma支持）、多项目隔离（多项目独立记忆空间）、智能清理策略（基于重要性与时效性）、记忆关系网络七大高级功能。
 
@@ -17,16 +17,16 @@ description: |-
 
   适用关键词：分层记忆、语义检索、混合检索、向量数据库、多项目隔离、RAG优化、企业记忆
 tags:
-- 记忆管理
-- 语义检索
-- 向量数据库
-- 企业级
-- RAG优化
+  - 记忆管理
+  - 语义检索
+  - 向量数据库
+  - 企业级
+  - RAG优化
 tools:
-- read
-- exec
+  - read
+  - exec
+homepage: "https://skillhub.cn"
 ---
-
 # 上下文保险库（专业版）
 
 > **智能分层记忆的终极方案。语义检索、向量数据库、多项目隔离，RAG准确率提升40%。**

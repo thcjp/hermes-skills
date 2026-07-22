@@ -1,11 +1,11 @@
 ---
-slug: total-recall-ai-pro
-name: total-recall-ai-pro
+slug: "total-recall-ai-pro"
+name: "total-recall-ai-pro"
 version: "1.0.0"
-displayName: 全息记忆AI(专业版)
-summary: AI Agent全功能加密记忆系统，含自动事实提取、跨设备同步、向量语义搜索与记忆策展。
-license: Proprietary
-edition: pro
+displayName: "全息记忆AI(专业版)"
+summary: "AI Agent全功能加密记忆系统，含自动事实提取、跨设备同步、向量语义搜索与记忆策展。"
+license: "Proprietary"
+edition: "pro"
 description: |-
   全息记忆AI（专业版）在免费版基础上解锁自动事实提取、跨设备同步、向量语义搜索、记忆策展与归档、多角色场景指南、性能优化与监控等高级能力。为长期项目协作、团队知识沉淀、企业级隐私保护提供完整方案。
 
@@ -17,18 +17,18 @@ description: |-
 
   适用关键词：加密记忆、自动提取、跨设备同步、向量搜索、记忆策展、团队知识、企业隐私、长期项目记忆
 tags:
-- 加密记忆
-- 自动提取
-- 跨设备同步
-- 向量搜索
-- 记忆策展
-- 团队知识
+  - 加密记忆
+  - 自动提取
+  - 跨设备同步
+  - 向量搜索
+  - 记忆策展
+  - 团队知识
 tools:
-- read
-- exec
-edition: pro
+  - read
+  - exec
+edition: "pro"
+homepage: "https://skillhub.cn"
 ---
-
 # 全息记忆AI（专业版）
 
 > **全功能加密记忆系统。自动提取+跨设备同步+向量搜索+记忆策展，从个人记忆走向团队级知识沉淀。**
