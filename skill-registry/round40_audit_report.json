@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-07-22T21:06:12.882048",
+  "org_prefix": {
+    "has_prefix": 2075,
+    "missing_prefix": 0,
+    "fixed": 0
+  },
+  "consistency": {
+    "inconsistencies_found": 0,
+    "fixed": 0
+  },
+  "search_verification": {
+    "total_published": 2066,
+    "free_published": 755,
+    "paid_published": 1311,
+    "sample_size": 30,
+    "found": 30,
+    "not_found": 0,
+    "success_rate": "100%"
+  },
+  "three_platform": {
+    "skillhub_published": 2066,
+    "skillhub_pending": 9,
+    "skillhub_deleted": 31,
+    "clawhub_published": 430,
+    "clawhub_not_uploaded": 502,
+    "hermes_published": 1067
+  }
+}
