@@ -1,7 +1,7 @@
 ---
 slug: auto-monitor-tool-free
 name: auto-monitor-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: 系统监控入门工具
 summary: 个人服务器监控工具，支持CPU/内存/磁盘基础指标与简单告警通知。
 license: Proprietary

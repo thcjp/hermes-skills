@@ -19,6 +19,7 @@ pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 tools: ["read", "write", "exec"]
 tags: "金融,财务,数据"
+license: "MIT"
 ---
 # Finance Radar
 

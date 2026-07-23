@@ -1,7 +1,7 @@
 ---
 slug: json-toolkit-free
 name: json-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: JSON工具箱(免费版)
 summary: JSON 数据结构处理优选实践，含校验、命名、空值、日期、数字规范。
 license: Proprietary

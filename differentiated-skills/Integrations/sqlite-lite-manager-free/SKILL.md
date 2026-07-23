@@ -1,7 +1,7 @@
 ---
 slug: sqlite-lite-manager-free
 name: sqlite-lite-manager-free
-version: 1.0.0
+version: 1.0.1
 displayName: 轻量SQLite管理免费版
 summary: 面向AI Agent的轻量级本地SQLite数据库管理工具，免部署、低内存，覆盖建表、查询、索引、备份等核心场景。
 license: Proprietary

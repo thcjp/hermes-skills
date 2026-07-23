@@ -1,7 +1,7 @@
 ---
 slug: figma-tw-designer-free
 name: figma-tw-designer-free
-version: 1.0.0
+version: 1.0.1
 displayName: Figma设计助手(免费版)
 summary: 读取Figma文件结构、导出图层、查看评论的免费体验版，适合个人设计稿查阅
 license: Proprietary

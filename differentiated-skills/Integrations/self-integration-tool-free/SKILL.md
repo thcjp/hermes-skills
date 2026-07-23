@@ -1,7 +1,7 @@
 ---
 slug: self-integration-tool-free
 name: self-integration-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: 自集成工具
 summary: 通过统一网关连接任意外部应用并执行操作，适合个人开发者快速打通多平台。
 license: Proprietary

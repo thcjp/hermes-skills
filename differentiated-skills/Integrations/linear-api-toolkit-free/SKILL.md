@@ -1,7 +1,7 @@
 ---
 slug: linear-api-toolkit-free
 name: linear-api-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Linear工具箱(免费版)
 summary: 通过GraphQL查询管理Linear任务、项目与团队，支持问题查看与基础操作
 license: Proprietary

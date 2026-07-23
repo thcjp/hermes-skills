@@ -1,7 +1,7 @@
 ---
 slug: web-notepad-free
 name: web-notepad-free
-version: 1.0.0
+version: 1.0.1
 displayName: 在线表单笔记(免费版)
 summary: 轻量化在线表单与提交数据管理工具,支持表单创建、提交查询、字段配置等核心能力,适合个人快速搭建信息收集流程。
 license: Proprietary

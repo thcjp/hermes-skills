@@ -1,7 +1,7 @@
 ---
 slug: json-validator-free
 name: json-validator-free
-version: 1.0.0
+version: 1.0.1
 displayName: JSON校验器(免费版)
 summary: 轻量级JSON语法与结构校验工具，覆盖语法检查、错误定位与单文件校验，60秒上手。
 license: Proprietary

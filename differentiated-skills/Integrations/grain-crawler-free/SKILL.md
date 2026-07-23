@@ -1,7 +1,7 @@
 ---
 slug: grain-crawler-free
 name: grain-crawler-free
-version: 1.0.0
+version: 1.0.1
 displayName: 归档检索(免费版)
 summary: 本地 Granola 归档检索，支持笔记搜索、详情查看、新鲜度检查。
 license: Proprietary

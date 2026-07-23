@@ -18,9 +18,9 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L0-免费"
+pricing_model: free
+suggested_price: "0"
 tools: ["read", "write", "exec"]
 tags: "工具,效率,自动化"
 ---
@@ -261,7 +261,7 @@ WEATHER_CODES = {
 def describe_weather(code):
     return WEATHER_CODES.get(code, "未知天气")
 ```
-- 当前为免费版本,如需完整功能请升级到付费版获取全部能力
+- 本免费版本提供当前天气查询与3天预报，历史天气查询、多城市批量查询、天气预警推送等高级功能请使用专业版
 ## 依赖说明
 
 ### 运行环境

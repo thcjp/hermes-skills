@@ -1,7 +1,7 @@
 ---
 slug: learn-tool-free
 name: learn-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: 学习助手（免费版）
 summary: 为任何主题生成结构化学习计划、练习题与进度追踪，支持自适应学习路径。
 license: Proprietary

@@ -35,9 +35,9 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+pricing_tier: "L0-免费"
+pricing_model: free
+suggested_price: "0"
 tools: ["read", "write", "exec", "glob", "grep"]
 tags: "AI代理,自动化,智能"
 ---
@@ -266,8 +266,8 @@ A:使用 `/agent-vibes:cleanup` 命令清理已缓存的音频文件。
 
 ## 已知限制
 
-- 需要API Key，无Key环境无法使用
-- 当前为免费版本,如需完整功能请升级到付费版获取全部能力
+- 无需API Key，所有引擎均离线运行
+- 本免费版本提供基础语音合成能力，神经声音引擎、多角色协同、批量导出等高级功能请使用专业版
 
 ## 输出格式
 ```json

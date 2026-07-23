@@ -1,7 +1,7 @@
 ---
 slug: graph-query-tool-free
 name: graph-query-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: 链上数据查询(免费版)
 summary: 区块链数据自然语言查询，路由到免费数据服务，返回实时结果。
 license: Proprietary

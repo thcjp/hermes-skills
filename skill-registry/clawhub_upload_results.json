@@ -200,7 +200,124 @@
     "merge-check-tool-free",
     "mermaid-diagram-tool-free",
     "podcast-toolkit-free",
-    "model-routing-tool-free"
+    "model-routing-tool-free",
+    "csv-json-converter-free",
+    "csv-processor-free",
+    "csv-toolkit-free",
+    "data-analysis-hub-free",
+    "data-analyst-chinese-free",
+    "data-analyst-expert-free",
+    "db-admin-console-free",
+    "db-connector-free",
+    "db-schema-designer-free",
+    "deepseek-assistant-free",
+    "discord-master-free",
+    "doc-guard-free",
+    "doubao-assistant-free",
+    "encoding-toolkit-free",
+    "excel-craft-free",
+    "excel-expert-free",
+    "figma-studio-free",
+    "figma-tw-designer-free",
+    "format-converter-free",
+    "free-resource-finder-free",
+    "gateway-manager-free",
+    "github-manager-free",
+    "graph-knowledge-base-free",
+    "jira-api-toolkit-free",
+    "json-beautifier-free",
+    "json-parse-engine-free",
+    "json-repair-tool-free",
+    "json-toolkit-free",
+    "json-yaml-converter-free",
+    "md-export-tool-free",
+    "note-process-engine-free",
+    "notion-cli-tool-free",
+    "obsidian-cli-tool-free",
+    "ollama-toolkit-free",
+    "pg-job-queue-free",
+    "pipedrive-toolkit-free",
+    "py-data-analyzer-free",
+    "pyx-scanner-free",
+    "reddit-research-tool-free",
+    "repo-manager-free",
+    "secure-api-toolkit-free",
+    "self-integration-tool-free",
+    "slack-api-toolkit-free",
+    "slack-crawler-free",
+    "smart-crawler-free",
+    "sql-gen-tool-free",
+    "sql-master-tool-free",
+    "sql-query-tool-free",
+    "sqlite-lite-manager-free",
+    "sqlite-manager-free",
+    "telegram-toolkit-free",
+    "text2sql-engine-free",
+    "tpn-proxy-tool-free",
+    "trending-feed-skill-free",
+    "vector-db-manager-free",
+    "vpn-rotator-free",
+    "vue-toolkit-free",
+    "web-crawler-engine-free",
+    "web-notepad-free",
+    "weiyun-toolkit-free",
+    "whatsapp-master-free",
+    "ws-excel-tool-free",
+    "xlsx-handler-free",
+    "xml-json-converter-free",
+    "api-dev-tool-free",
+    "compress-pdf-tool-free",
+    "context-driven-dev-tool-free",
+    "doc-parse-tool-free",
+    "docs-toolkit-free",
+    "document-pdf-tool-free",
+    "excel-formula-tool-free",
+    "feishu-doc-tool-free",
+    "feishu-doc-write-tool-free",
+    "knowledge-capture-tool-free",
+    "knowledge-mgmt-tool-free",
+    "knowledge-toolkit-free",
+    "learn-cog-tool-free",
+    "learn-tool-free",
+    "local-rag-tool-free",
+    "md-converter-pdf-tool-free",
+    "merge-pdf-tool-free",
+    "mindmap-gen-tool-free",
+    "pandoc-convert-tool-free",
+    "paper-parse-tool-free",
+    "pdf-processor-cn-tool-free",
+    "pdf-toolkit-free",
+    "pptx-pdf-font-fix-tool-free",
+    "presentation-gen-tool-free",
+    "skill-creator-tool-free",
+    "solo-audit-tool-free",
+    "word-docx-tool-free",
+    "word-docx-v1-tool-free",
+    "word-docx-v102-tool-free",
+    "apple-health-tool-free",
+    "free-weather-api-tool-free",
+    "free-weather-skill-tool-free",
+    "game-ai-tool-free",
+    "game-builder-tool-free",
+    "game-dev-tool-free",
+    "game-theory-tool-free",
+    "game-toolkit-free",
+    "health-toolkit-free",
+    "lifestyle-assistant-tool-free",
+    "live-stream-script-tool-free",
+    "music-toolkit-free",
+    "ping-monitor-tool-free",
+    "shop-culture-tool-free",
+    "text-game-arcade-tool-free",
+    "travel-assistant-tool-free",
+    "weather-toolkit-free",
+    "aws-cost-optimizer-tool-free",
+    "aws-toolkit-free",
+    "azure-toolkit-free",
+    "docker-ctl-tool-free",
+    "docker-sandbox-tool-free",
+    "docker-toolkit-free",
+    "k8s-toolkit-free"
   ],
   "failed": [
     {
@@ -210,6 +327,94 @@
     {
       "slug": "model-switching-tool-free",
       "error": "RATE_LIMITED"
+    },
+    {
+      "slug": "github-api-toolkit-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "grain-crawler-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "graph-query-tool-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "jira-flow-skill-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "json-lint-tool-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "json-validator-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "key-vault-manager-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "linear-api-toolkit-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "linear-sync-tool-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "linear-workflow-skill-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "mongo-manager-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "notion-api-toolkit-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "ops-dashboard-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "pg-mcp-skills-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "remix-auth-tool-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "tg-bot-builder-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "figma-toolkit-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "nano-pdf-tool-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "popeye-prod-tool-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "personal-health-tool-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "auto-monitor-tool-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "k8s-devops-tool-free",
+      "error": "VERSION_EXISTS"
     }
   ],
   "not_found": [],

@@ -7,19 +7,17 @@ summary: "上传PDF到Cross-Service-Solutions压缩,轮询至完成"
 license: "Proprietary"
 description: |-
   Compress a user-provided PDF by uploading it to Cross-Service-Solutions,
-  polling until completion。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
+  polling until completion. Returns download URL and compression settings.
 tags:
   - Knowledge
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 ---
 # Compress PDF
 
@@ -28,7 +26,7 @@ tags: "工具,效率,自动化"
 | 能力 | 免费版 | 付费版 |
 |---|---|---|
 | 基础功能 | 支持 | 支持 |
-| Compress PDFolutions压缩 | 不支持 | 支持 |
+| Compress PDF压缩服务 | 不支持 | 支持 |
 | 复杂工作流可视化编排 | 不支持 | 支持 |
 | 条件分支与异常重试 | 不支持 | 支持 |
 | 定时触发与事件驱动 | 不支持 | 支持 |

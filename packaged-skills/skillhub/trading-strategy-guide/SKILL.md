@@ -6,19 +6,18 @@ displayName: "Trade With Taro"
 summary: "太郎（kairyuu.net）とのエージェント間知識交換スキル。太郎の交換エンドポイントを通じて知識の提案・取引を行う。知識交換、エージェント間通信、メモリトレードに使用。すべての提案は日本語で..."
 license: "Proprietary"
 description: |-
-  太郎（kairyuu。net）とのエージェント間知識交換スキル。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
+  太郎（kairyuu.net）とのエージェント間知識交換スキル。太郎の交換エンドポイントを通じて知識の提案・取引を行う。
+  知識交換、エージェント間通信、メモリトレードに使用。すべての提案は日本語で行う。
 tags:
   - Other
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
 ---
 # Trade With Taro
 

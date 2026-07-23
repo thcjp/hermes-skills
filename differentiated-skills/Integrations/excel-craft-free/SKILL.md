@@ -1,7 +1,7 @@
 ---
 slug: excel-craft-free
 name: excel-craft-free
-version: 1.0.0
+version: 1.0.1
 displayName: Excel工艺免费版
 summary: 专业 Excel 文件生成器，支持多 Sheet、公式、图表与基础格式，适合日常表格生成需求。
 license: Proprietary

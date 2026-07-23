@@ -1,7 +1,7 @@
 ---
 slug: mongo-manager-free
 name: mongo-manager-free
-version: 1.0.0
+version: 1.0.1
 displayName: Mongo管理工具免费版
 summary: 面向AI Agent的MongoDB设计与优化指南，覆盖Schema建模、索引策略、聚合管道、一致性配置等核心场景。
 license: Proprietary

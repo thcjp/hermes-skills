@@ -1,7 +1,7 @@
 ---
 slug: jira-flow-skill-free
 name: jira-flow-skill-free
-version: 1.0.0
+version: 1.0.1
 displayName: Jira Flow 免费版
 summary: 通过Jira Cloud REST API管理任务、状态流转与工时记录，适合个人开发者日常追踪。
 license: Proprietary

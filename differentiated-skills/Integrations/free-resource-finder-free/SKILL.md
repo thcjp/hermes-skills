@@ -1,7 +1,7 @@
 ---
 slug: free-resource-finder-free
 name: free-resource-finder-free
-version: 1.0.0
+version: 1.0.1
 displayName: 免费资源发现器(免费版)
 summary: 发现与切换免费AI模型资源,支持基础列表查看、模型切换与状态检查,帮助用户零成本体验AI能力。
 license: Proprietary

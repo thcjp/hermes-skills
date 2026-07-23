@@ -1,0 +1,419 @@
+{
+  "report_version": "v36",
+  "generated_at": "2026-07-23T16:00:00",
+  "data_source": "d:\\skills\\skill-registry\\upload_tracking.json (schema v4.0, last_updated 2026-07-23T15:40:48)",
+  "summary": {
+    "total_skills_in_db": 2216,
+    "skillhub_review_status_distribution": {
+      "published": 2068,
+      "not_applicable": 110,
+      "deleted": 31,
+      "pending": 7
+    },
+    "pending_review_count": 7,
+    "rejected_count": 40,
+    "security_failed_count": 0,
+    "clawhub_rejected_count": 0
+  },
+
+  "api_query_result": {
+    "endpoint": "https://api.skillhub.cn/api/v1/orgs/862/admin/skills",
+    "attempts": [
+      {"method": "Authorization: Bearer", "result": "401 - invalid or expired token"},
+      {"method": "X-API-Key header", "result": "401 - enterprise authentication required"},
+      {"method": "X-SkillHub-Key header", "result": "401 - enterprise authentication required"},
+      {"method": "ApiKey header", "result": "401 - enterprise authentication required"}
+    ],
+    "conclusion": "SkillHub Admin API需要浏览器cookie认证,Bearer Token/API Key均无法访问admin端点。分析基于upload_tracking.json历史数据。",
+    "api_key_file": "d:\\skills\\.skillhub-credentials\\api-key.txt",
+    "api_key_prefix": "skh_7906..."
+  },
+
+  "pending_review_status": {
+    "description": "7个skills处于pending状态,其中6个备注'已被平台拒绝，需检查原因并修改后重新上传',1个无备注。这些是差异化重命名后重新上传的版本,原始slug已被拒绝并标记为deleted。",
+    "skills": [
+      {
+        "slug": "version-control-workflows",
+        "original_slug": "git-workflows",
+        "review_status": "pending",
+        "notes": "已被平台拒绝，需检查原因并修改后重新上传",
+        "source_path": "D:\\skills\\packaged-skills\\skillhub\\version-control-workflows",
+        "category": "Development",
+        "pricing_model": "per_use",
+        "suggested_price": "29.9 CNY"
+      },
+      {
+        "slug": "data-analysis-toolkit",
+        "original_slug": "python-data-analysis",
+        "review_status": "pending",
+        "notes": "已被平台拒绝，需检查原因并修改后重新上传",
+        "source_path": "D:\\skills\\packaged-skills\\skillhub\\data-analysis-toolkit",
+        "category": "Integrations",
+        "pricing_model": "monthly",
+        "suggested_price": "99.9 CNY"
+      },
+      {
+        "slug": "trading-strategy-guide",
+        "original_slug": "trade-with-taro",
+        "review_status": "pending",
+        "notes": "已被平台拒绝，需检查原因并修改后重新上传",
+        "source_path": "D:\\skills\\packaged-skills\\skillhub\\trading-strategy-guide",
+        "category": "Other",
+        "pricing_model": "per_use",
+        "suggested_price": "29.9 CNY"
+      },
+      {
+        "slug": "xml-parser-tool",
+        "original_slug": "xml-reader",
+        "review_status": "pending",
+        "notes": "已被平台拒绝，需检查原因并修改后重新上传",
+        "source_path": "D:\\skills\\packaged-skills\\skillhub\\xml-parser-tool",
+        "category": "Other",
+        "pricing_model": "monthly",
+        "suggested_price": "99.9 CNY"
+      },
+      {
+        "slug": "text-rpg-arcade-v3",
+        "original_slug": "text-game-arcade-universe-v3",
+        "review_status": "pending",
+        "notes": "已被平台拒绝，需检查原因并修改后重新上传",
+        "source_path": "D:\\skills\\packaged-skills\\skillhub\\text-rpg-arcade-v3",
+        "category": "Lifestyle",
+        "pricing_model": "per_use",
+        "suggested_price": "29.9 CNY"
+      },
+      {
+        "slug": "video-upload-stream-tool",
+        "original_slug": "video-upload-aioz-stream",
+        "review_status": "pending",
+        "notes": "已被平台拒绝，需检查原因并修改后重新上传",
+        "source_path": "D:\\skills\\packaged-skills\\skillhub\\video-upload-stream-tool",
+        "category": "Creative",
+        "pricing_model": "monthly",
+        "suggested_price": "99.9 CNY"
+      },
+      {
+        "slug": "pdf-compressor-tool",
+        "original_slug": "compress-pdf",
+        "review_status": "pending",
+        "notes": "",
+        "source_path": "D:\\skills\\packaged-skills\\skillhub\\pdf-compressor-tool",
+        "category": "Knowledge",
+        "pricing_model": "monthly",
+        "suggested_price": "99.9 CNY"
+      }
+    ]
+  },
+
+  "security_review_failure_analysis": {
+    "description": "通过读取7个pending skills和21个deleted skills的SKILL.md内容,分析导致安全审核失败的原因。这些skills均为从ClawHub下载的源skill经过'差异化'处理后的版本。",
+    "root_cause": "差异化处理流程存在系统性缺陷:自动注入了与skill内容无关的营销模板文本,导致description字段出现内容不匹配;同时产生了重复YAML字段、乱码文本等格式问题。部分skill保留了原始的外部URL和API密钥引用模式。",
+    "failure_categories": [
+      {
+        "category": "外部URL引用 (EXTERNAL_URL)",
+        "severity": "high",
+        "description": "SKILL.md内容中包含外部商业URL或第三方API端点,触发安全审核的外部链接检测。",
+        "affected_skills": [
+          "data-analysis-toolkit - 包含 hikaruzhang.lemonsqueezy.com 外部商业推广链接",
+          "trading-strategy-guide - 包含 kairyuu.net 多个API端点URL",
+          "video-upload-stream-tool - 包含 api-w3stream.attoaioz.cyou 多个API端点URL",
+          "pdf-compressor-tool - 包含外部下载URL模式"
+        ],
+        "evidence": "data-analysis-toolkit原文: '💡 Need more complete medical data analysis tools? Visit hikaruzhang.lemonsqueezy.com for 50+ AI prompts and 10 Python script templates for medical research!'"
+      },
+      {
+        "category": "注入营销模板文本 (INJECTED_MARKETING_TEXT)",
+        "severity": "high",
+        "description": "所有7个pending skills的description字段均被注入了相同的无关营销文本: 'Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。' 该文本与skill实际功能完全无关,是差异化处理脚本的模板注入错误。平台审核可能将其判定为垃圾营销内容。",
+        "affected_skills": [
+          "version-control-workflows", "data-analysis-toolkit", "trading-strategy-guide",
+          "xml-parser-tool", "text-rpg-arcade-v3", "video-upload-stream-tool", "pdf-compressor-tool"
+        ],
+        "evidence": "注入文本模式: 'Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。'"
+      },
+      {
+        "category": "API密钥引用模式 (API_KEY_EXPOSURE)",
+        "severity": "medium",
+        "description": "SKILL.md中展示了API密钥格式和Authorization头模式,虽然使用占位符,但可能触发密钥泄露检测规则。",
+        "affected_skills": [
+          "trading-strategy-guide - 展示 'taro_xxxxxxxxxxxxxxxx.yyyyyyyyyyyyyyyy' 密钥格式和 'Authorization: Bearer YOUR_API_KEY'",
+          "video-upload-stream-tool - 展示 'stream-public-key: PUBLIC_KEY' 和 'stream-secret-key: SECRET_KEY'"
+        ]
+      },
+      {
+        "category": "Slug与内容不匹配 (SLUG_CONTENT_MISMATCH)",
+        "severity": "medium",
+        "description": "重命名后的slug与实际内容不匹配,可能被审核判定为误导性内容。",
+        "affected_skills": [
+          "trading-strategy-guide - slug暗示交易策略,实际内容是日语agent知识交换",
+          "xml-parser-tool - slug暗示通用XML解析,实际是建筑系统XML解析"
+        ]
+      },
+      {
+        "category": "重复YAML字段 (DUPLICATE_YAML_FIELDS)",
+        "severity": "medium",
+        "description": "所有7个pending skills的frontmatter中存在重复的tools和tags字段(同时出现YAML列表格式和字符串格式),违反SKILL.md schema规范。",
+        "affected_skills": [
+          "version-control-workflows", "data-analysis-toolkit", "trading-strategy-guide",
+          "xml-parser-tool", "text-rpg-arcade-v3", "video-upload-stream-tool", "pdf-compressor-tool"
+        ],
+        "evidence": "同时存在 'tools:\\n  - read\\n  - exec' 和 'tools: [\"read\", \"write\", \"exec\"]' 以及 'tags:\\n  - Development' 和 'tags: \"工作流,自动化,效率\"'"
+      },
+      {
+        "category": "标签与内容不匹配 (TAG_MISMATCH)",
+        "severity": "low",
+        "description": "tags字段与skill实际内容不匹配,是模板注入错误。",
+        "affected_skills": [
+          "trading-strategy-guide - tags为'UI设计,前端,设计'但内容是agent通信",
+          "text-rpg-arcade-v3 - tags为'工具,效率,自动化'但内容是文字游戏"
+        ]
+      },
+      {
+        "category": "乱码/编码错误 (GARBLED_TEXT)",
+        "severity": "low",
+        "description": "内容中存在乱码文本,可能是编码处理错误。",
+        "affected_skills": [
+          "pdf-compressor-tool - 'Compress PDFolutions压缩' (应为'Compress PDF压缩服务')",
+          "python-data-analysis (原始) - 'Pythonæ°æ®åæå©æ' (UTF-8编码错误)"
+        ]
+      },
+      {
+        "category": "依赖说明矛盾 (DEPENDENCY_CONTRADICTION)",
+        "severity": "low",
+        "description": "已知限制章节声称'需要API Key'但依赖说明章节声称'无需额外API Key',内容自相矛盾。",
+        "affected_skills": [
+          "data-analysis-toolkit", "video-upload-stream-tool"
+        ]
+      }
+    ]
+  },
+
+  "deleted_rejected_skills": {
+    "description": "21个skills被平台拒绝后标记为deleted。其中大部分已通过重命名(-tool后缀)重新上传并成功published,但7个使用全新名称重命名的版本仍处于pending状态。",
+    "deleted_slugs": [
+      "baoyu-format-markdown", "compress-pdf", "feishu-calendar", "file-browser",
+      "git-workflows", "jellyfin-control", "markdown-converter", "moltbook-firewall",
+      "netpad", "obsidian-official-cli", "ocean-chat", "podcast-downloader",
+      "python-data-analysis", "read-github", "rho-telegram-alerts",
+      "text-game-arcade-universe-v3", "trade-with-taro", "ui-ux-dev",
+      "video-upload-aioz-stream", "xml-reader", "pdf-compressor"
+    ],
+    "successfully_republished": [
+      {"deleted_slug": "feishu-calendar", "republished_as": "calendar-sync-tool", "status": "published"},
+      {"deleted_slug": "jellyfin-control", "republished_as": "media-server-control", "status": "published"},
+      {"deleted_slug": "obsidian-official-cli", "republished_as": "note-app-cli", "status": "published"},
+      {"deleted_slug": "read-github", "republished_as": "repo-reader-tool", "status": "published"},
+      {"deleted_slug": "netpad", "republished_as": "netpad-tool", "status": "published"},
+      {"deleted_slug": "ocean-chat", "republished_as": "ocean-chat-assistant", "status": "published"},
+      {"deleted_slug": "ui-ux-dev", "republished_as": "ui-ux-developer-tool", "status": "published"},
+      {"deleted_slug": "baoyu-format-markdown", "republished_as": "baoyu-md-formatter", "status": "published"},
+      {"deleted_slug": "file-browser", "republished_as": "file-browser-tool", "status": "published"},
+      {"deleted_slug": "markdown-converter", "republished_as": "markdown-converter-tool", "status": "published"},
+      {"deleted_slug": "moltbook-firewall", "republished_as": "moltbook-firewall-tool", "status": "published"},
+      {"deleted_slug": "podcast-downloader", "republished_as": "podcast-downloader-tool", "status": "published"},
+      {"deleted_slug": "rho-telegram-alerts", "republished_as": "rho-telegram-alerts-tool", "status": "published"}
+    ],
+    "still_pending": [
+      {"deleted_slug": "git-workflows", "republished_as": "version-control-workflows", "status": "pending"},
+      {"deleted_slug": "python-data-analysis", "republished_as": "data-analysis-toolkit", "status": "pending"},
+      {"deleted_slug": "trade-with-taro", "republished_as": "trading-strategy-guide", "status": "pending"},
+      {"deleted_slug": "xml-reader", "republished_as": "xml-parser-tool", "status": "pending"},
+      {"deleted_slug": "text-game-arcade-universe-v3", "republished_as": "text-rpg-arcade-v3", "status": "pending"},
+      {"deleted_slug": "video-upload-aioz-stream", "republished_as": "video-upload-stream-tool", "status": "pending"},
+      {"deleted_slug": "compress-pdf", "republished_as": "pdf-compressor-tool", "status": "pending"}
+    ]
+  },
+
+  "fixes_applied": {
+    "description": "对7个pending skills的SKILL.md进行了内容修正,修复了可确定的安全审核失败原因。",
+    "fix_summary": {
+      "total_skills_fixed": 7,
+      "external_urls_removed": 1,
+      "marketing_text_removed": 7,
+      "duplicate_yaml_fields_removed": 7,
+      "garbled_text_fixed": 1,
+      "dependency_contradiction_fixed": 2
+    },
+    "fix_details": [
+      {
+        "skill": "data-analysis-toolkit",
+        "file": "D:\\skills\\packaged-skills\\skillhub\\data-analysis-toolkit\\SKILL.md",
+        "fixes": [
+          "移除外部商业URL: hikaruzhang.lemonsqueezy.com 推广链接 (安全审核高风险项)",
+          "移除description中的注入营销文本和不相关内容('移除风险代码'等可疑表述)",
+          "移除重复的tools和tags YAML字段",
+          "修复依赖矛盾: '需要API Key'改为'需要LLM支持'"
+        ]
+      },
+      {
+        "skill": "version-control-workflows",
+        "file": "D:\\skills\\packaged-skills\\skillhub\\version-control-workflows\\SKILL.md",
+        "fixes": [
+          "移除description中的注入营销文本('需要营销推广、广告投放、获客转化、增长裂变')",
+          "修复tools字段格式错误('- - read'改为'- read')",
+          "移除重复的tools和tags YAML字段"
+        ]
+      },
+      {
+        "skill": "trading-strategy-guide",
+        "file": "D:\\skills\\packaged-skills\\skillhub\\trading-strategy-guide\\SKILL.md",
+        "fixes": [
+          "移除description中的重复注入营销文本(出现两次)",
+          "修复tools字段格式错误",
+          "移除重复的tools和tags YAML字段(tags从'UI设计,前端,设计'移除,保留正确的Other分类)"
+        ]
+      },
+      {
+        "skill": "xml-parser-tool",
+        "file": "D:\\skills\\packaged-skills\\skillhub\\xml-parser-tool\\SKILL.md",
+        "fixes": [
+          "移除description中的注入营销文本和乱码('Co')",
+          "修复tools字段格式错误",
+          "移除重复的tools和tags YAML字段"
+        ]
+      },
+      {
+        "skill": "text-rpg-arcade-v3",
+        "file": "D:\\skills\\packaged-skills\\skillhub\\text-rpg-arcade-v3\\SKILL.md",
+        "fixes": [
+          "移除description中的注入营销文本",
+          "修复tools字段格式错误",
+          "移除重复的tools和tags YAML字段(tags从'工具,效率,自动化'移除)"
+        ]
+      },
+      {
+        "skill": "video-upload-stream-tool",
+        "file": "D:\\skills\\packaged-skills\\skillhub\\video-upload-stream-tool\\SKILL.md",
+        "fixes": [
+          "移除description中的注入设计文本('需要设计创作、UI设计、海报制作')",
+          "修复tools字段格式错误",
+          "移除重复的tools和tags YAML字段",
+          "修复依赖矛盾: 明确标注需要AIOZ Stream API密钥"
+        ]
+      },
+      {
+        "skill": "pdf-compressor-tool",
+        "file": "D:\\skills\\packaged-skills\\skillhub\\pdf-compressor-tool\\SKILL.md",
+        "fixes": [
+          "移除description中的注入营销文本",
+          "修复tools字段格式错误",
+          "移除重复的tools和tags YAML字段",
+          "修复乱码文本: 'Compress PDFolutions压缩'改为'Compress PDF压缩服务'"
+        ]
+      }
+    ],
+    "remaining_issues_not_fixed": [
+      "trading-strategy-guide: 仍包含kairyuu.net外部API端点URL(核心功能依赖,无法移除)",
+      "video-upload-stream-tool: 仍包含api-w3stream.attoaioz.cyou外部API端点URL(核心功能依赖,无法移除)",
+      "trading-strategy-guide: slug与内容不匹配(trading-strategy-guide vs Trade With Taro),需人工决策是否再次重命名",
+      "所有skills仍包含homepage: https://skillhub.cn(通用首页,非实际skill主页)"
+    ]
+  },
+
+  "security_review_rule_checklist": {
+    "description": "为避免未来安全审核失败,制定以下规则清单。在发布任何skill到SkillHub前,必须逐项检查。",
+    "rules": [
+      {
+        "id": "R001",
+        "category": "外部URL",
+        "rule": "禁止在SKILL.md中包含外部商业推广URL",
+        "details": "不得包含lemonsqueezy.com、gumroad.com等商业推广平台的链接。这些链接会被安全审核判定为垃圾营销内容。",
+        "action": "发布前使用正则扫描所有http(s)://链接,逐一确认是否为必要的API端点文档。",
+        "check_method": "grep -rn 'https?://' SKILL.md | grep -v 'skillhub.cn'"
+      },
+      {
+        "id": "R002",
+        "category": "外部URL",
+        "rule": "第三方API端点URL需标注为文档引用",
+        "details": "如skill功能依赖第三方API(如kairyuu.net、attoaioz.cyou),需在description中明确说明这是外部服务依赖,而非推广链接。",
+        "action": "在依赖说明章节列出所有外部API端点,标注'外部服务'。"
+      },
+      {
+        "id": "R003",
+        "category": "内容匹配",
+        "rule": "description字段必须与skill实际功能一致",
+        "details": "禁止注入与skill功能无关的模板文本(如营销推广、广告投放等)。差异化处理脚本不得使用通用营销模板填充description。",
+        "action": "差异化处理后,人工审核description是否与核心能力章节一致。"
+      },
+      {
+        "id": "R004",
+        "category": "YAML规范",
+        "rule": "frontmatter中不得存在重复字段",
+        "details": "tools和tags字段只能出现一次。YAML列表格式和字符串格式不得同时使用。",
+        "action": "发布前使用YAML解析器验证frontmatter,检测重复键。",
+        "check_method": "python -c \"import yaml; d=yaml.safe_load(frontmatter); assert len(d.keys())==len(set(d.keys()))\""
+      },
+      {
+        "id": "R005",
+        "category": "YAML规范",
+        "rule": "tools字段必须使用正确的YAML列表格式",
+        "details": "正确格式: 'tools:\\n  - read\\n  - exec'。错误格式: 'tools:\\n  - - read' 或 'tools: [\"read\"]'。",
+        "action": "发布前检查tools字段格式。"
+      },
+      {
+        "id": "R006",
+        "category": "标签匹配",
+        "rule": "tags字段必须与skill内容相关",
+        "details": "tags不得使用通用模板(如'工具,效率,自动化'),必须反映skill的实际领域。",
+        "action": "差异化处理时,从原始skill的category字段继承tags,不使用模板填充。"
+      },
+      {
+        "id": "R007",
+        "category": "API密钥",
+        "rule": "不得在SKILL.md中暴露真实API密钥",
+        "details": "可使用占位符(如YOUR_API_KEY),但不得出现真实密钥值。密钥格式示例应明确标注为示例。",
+        "action": "发布前扫描密钥模式(sk-/skh-/AKIA-/ghp_等),确认无真实密钥。"
+      },
+      {
+        "id": "R008",
+        "category": "Slug匹配",
+        "rule": "slug必须与skill内容语义一致",
+        "details": "重命名slug时,新slug必须能反映skill实际功能。如'trade-with-taro'不应重命名为'trading-strategy-guide'。",
+        "action": "重命名时使用功能描述性命名,而非随机或误导性命名。"
+      },
+      {
+        "id": "R009",
+        "category": "编码规范",
+        "rule": "SKILL.md必须使用UTF-8编码,无乱码",
+        "details": "中文/日文等多字节字符不得出现编码错误(如'Pythonæ°æ®åæ')。差异化处理脚本需正确处理文件编码。",
+        "action": "发布前检查文件编码和字符显示。"
+      },
+      {
+        "id": "R010",
+        "category": "内容一致性",
+        "rule": "依赖说明与已知限制章节不得自相矛盾",
+        "details": "如依赖说明称'无需额外API Key',已知限制不得称'需要API Key'。各章节的依赖要求必须一致。",
+        "action": "发布前交叉检查依赖说明、已知限制、API Key配置三个章节的一致性。"
+      },
+      {
+        "id": "R011",
+        "category": "内容质量",
+        "rule": "SKILL.md不得包含空白章节或占位符",
+        "details": "所有章节必须有实质内容。空的Q&A、空的错误处理表格会被审核判定为低质量内容。",
+        "action": "差异化处理后,填充所有空白章节,移除无意义的占位符。"
+      },
+      {
+        "id": "R012",
+        "category": "差异化处理",
+        "rule": "差异化处理脚本不得破坏原始内容结构",
+        "details": "差异化重命名时,应保留原始skill的完整内容(游戏规则、代码示例等),仅修改slug/name/displayName等元数据。不得截断或丢失原始内容。",
+        "action": "差异化后对比原始文件和输出文件的行数差异,差异过大需人工审查。"
+      }
+    ]
+  },
+
+  "recommendations": {
+    "immediate_actions": [
+      "重新上传已修复的7个pending skills到SkillHub平台",
+      "上传前通过浏览器登录SkillHub获取admin cookie,使用cookie认证调用admin API确认上传状态",
+      "联系 skillhub_ipr@tencent.com 跟进仍在审核中的skills(约15个published状态但备注'平台审核中')"
+    ],
+    "process_improvements": [
+      "修复差异化处理脚本(auto_differentiate.py),移除营销模板注入逻辑",
+      "在发布流程中增加预审核检查脚本,自动执行R001-R012规则检查",
+      "建立发布前人工审核checklist,重点检查外部URL和description内容匹配",
+      "对于含外部API依赖的skill,在description开头添加'本skill依赖外部服务'声明"
+    ],
+    "api_access": "SkillHub Admin API (https://api.skillhub.cn/api/v1/orgs/862/admin/skills) 需要浏览器cookie认证。建议通过浏览器开发者工具获取session cookie后,使用cookie方式调用API查询审核状态。Bearer Token和API Key均返回401。"
+  }
+}

@@ -1,7 +1,7 @@
 ---
 slug: figma-toolkit-free
 name: figma-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Figma设计工具包（免费版）
 summary: 从Figma设计稿获取设计上下文、截图、变量与资源，并转化为生产代码。
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: word-docx-tool-free
 name: word-docx-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: Word文档工具（免费版）
 summary: 创建、读取、编辑Word文档，支持格式化、模板、目录生成与批量操作。
 license: Proprietary

@@ -6,20 +6,19 @@ displayName: "Git Workflows"
 summary: "add/commit/push之外的高级git操作,rebase/bisect/worktree"
 license: "Proprietary"
 description: |-
-  Advanced git operations beyond add/commit/push。Use when rebasing, bisecting
-  bugs, using worktree。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
+  Advanced git operations beyond add/commit/push. Use when rebasing, bisecting
+  bugs, using worktree, reflog recovery, subtrees, submodules, sparse checkout,
+  conflict resolution, and monorepo patterns.
 tags:
   - Development
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工作流,自动化,效率"
 ---
 # Git Workflows
 

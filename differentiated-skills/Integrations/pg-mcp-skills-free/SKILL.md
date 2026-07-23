@@ -1,7 +1,7 @@
 ---
 slug: pg-mcp-skills-free
 name: pg-mcp-skills-free
-version: 1.0.0
+version: 1.0.1
 displayName: PG-MCP助手(免费版)
 summary: PostgreSQL数据库管理与优化助手，通过MCP工具实现健康检查、索引调优、查询计划分析等。
 license: Proprietary

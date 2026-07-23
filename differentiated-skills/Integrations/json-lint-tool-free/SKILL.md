@@ -1,7 +1,7 @@
 ---
 slug: json-lint-tool-free
 name: json-lint-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: JSON校验工具免费版
 summary: 轻量级JSON语法校验工具，递归扫描工作区.json文件并输出结构化错误报告。
 license: Proprietary

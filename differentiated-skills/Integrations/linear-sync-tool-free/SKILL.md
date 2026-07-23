@@ -1,7 +1,7 @@
 ---
 slug: linear-sync-tool-free
 name: linear-sync-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: Linear同步(免费版)
 summary: 管理Linear任务与项目的免费命令行工具，支持任务列表、查看与基础创建
 license: Proprietary

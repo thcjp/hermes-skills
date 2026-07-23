@@ -1,7 +1,7 @@
 ---
 slug: api-dev-tool-free
 name: api-dev-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: API开发工具（免费版）
 summary: 编排完整API开发生命周期：设计、规格生成、脚手架、测试、文档与版本部署。
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: vue-toolkit-free
 name: vue-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Vue工具箱(免费版)
 summary: 规避 Vue 3 常见陷阱：响应式、ref 与 reactive、computed 时机与组合式 API 优选实践。
 license: Proprietary

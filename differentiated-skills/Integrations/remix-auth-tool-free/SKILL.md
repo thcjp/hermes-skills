@@ -1,7 +1,7 @@
 ---
 slug: remix-auth-tool-free
 name: remix-auth-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: Remix认证工具
 summary: 为Remix平台快速配置并验证Bearer API Key认证，适用于个人开发者与测试环境。
 license: Proprietary

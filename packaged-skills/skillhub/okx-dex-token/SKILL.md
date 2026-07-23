@@ -19,6 +19,7 @@ pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 tools: ["read", "exec", "glob", "grep"]
 tags: "工具,效率,自动化"
+license: "MIT"
 ---
 # Okx Dex Token
 

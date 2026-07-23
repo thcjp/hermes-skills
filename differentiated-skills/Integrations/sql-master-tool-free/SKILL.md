@@ -1,7 +1,7 @@
 ---
 slug: sql-master-tool-free
 name: sql-master-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: SQL大师工具(免费版)
 summary: 面向SQLite、`PostgreSQL`、MySQL的SQL全栈工具免费版，覆盖建表、查询、索引、迁移、备份核心能力。
 license: Proprietary

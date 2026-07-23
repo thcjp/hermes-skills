@@ -1,7 +1,7 @@
 ---
 slug: ws-excel-tool-free
 name: ws-excel-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: Excel工具(免费版)
 summary: Excel 文件处理免费版：读写、数据清洗、公式计算与基础统计，支持 xlsx 格式。
 license: Proprietary

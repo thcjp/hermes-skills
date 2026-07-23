@@ -1,7 +1,7 @@
 ---
 slug: nano-pdf-tool-free
 name: nano-pdf-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: Nano PDF工具（免费版）
 summary: 轻量级PDF处理工具：读取、创建、编辑PDF，支持文本提取与基本页面操作。
 license: Proprietary

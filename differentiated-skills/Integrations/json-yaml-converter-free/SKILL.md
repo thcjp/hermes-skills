@@ -1,7 +1,7 @@
 ---
 slug: json-yaml-converter-free
 name: json-yaml-converter-free
-version: 1.0.0
+version: 1.0.1
 displayName: JSON转YAML(免费版)
 summary: 轻量级JSON与YAML互转工具，覆盖缩进规范、注释保留与单文件转换，60秒上手。
 license: Proprietary

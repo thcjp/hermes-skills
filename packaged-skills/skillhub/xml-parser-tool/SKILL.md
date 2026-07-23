@@ -7,19 +7,17 @@ summary: "读解析建筑系统XML,P6进度/BSDD/IFC-XML/COBie-XML"
 license: "Proprietary"
 description: |-
   Read and parse XML from construction systems - P6 schedules, BSDD exports,
-  IFC-XML, COBie-XML。Co。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
+  IFC-XML, COBie-XML. This skill parses XML and converts to structured DataFrames.
 tags:
   - Other
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 ---
 # Xml Reader
 

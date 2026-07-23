@@ -1,20 +1,20 @@
 {
-  "audit_date": "2026-07-23T19:42:29.525088",
+  "audit_date": "2026-07-23T21:13:09.120307",
   "total_skills": 2097,
   "fix_mode": false,
-  "fix_all": true,
+  "fix_all": false,
   "by_severity": {
     "critical": 0,
-    "warning": 6,
+    "warning": 0,
     "info": 0,
-    "ok": 2091
+    "ok": 2097
   },
   "by_source": {
     "packaged": {
       "critical": 0,
-      "warning": 5,
+      "warning": 0,
       "info": 0,
-      "ok": 990
+      "ok": 995
     },
     "differentiated/Agents": {
       "critical": 0,
@@ -24,9 +24,9 @@
     },
     "differentiated/Automation": {
       "critical": 0,
-      "warning": 1,
+      "warning": 0,
       "info": 0,
-      "ok": 91
+      "ok": 92
     },
     "differentiated/Communication": {
       "critical": 0,
@@ -102,136 +102,7 @@
     }
   },
   "critical_issues": [],
-  "warning_issues": [
-    {
-      "slug": "figma",
-      "source": "packaged",
-      "severity": "warning",
-      "issues": [
-        "MISSING_LICENSE: 缺少 license 字段"
-      ],
-      "body_length": 4532,
-      "version": "2.1.0",
-      "functional_grade": "A",
-      "functional_score": 85,
-      "sellability_grade": "A",
-      "sellability_score": 72,
-      "authenticity_grade": "A",
-      "authenticity_score": 97,
-      "semantic_grade": "A",
-      "semantic_score": 100,
-      "executability_grade": "A",
-      "executability_score": 100,
-      "executable": true
-    },
-    {
-      "slug": "finance-radar",
-      "source": "packaged",
-      "severity": "warning",
-      "issues": [
-        "MISSING_LICENSE: 缺少 license 字段"
-      ],
-      "body_length": 3580,
-      "version": "1.1.0",
-      "functional_grade": "A",
-      "functional_score": 85,
-      "sellability_grade": "A",
-      "sellability_score": 77,
-      "authenticity_grade": "A",
-      "authenticity_score": 100,
-      "semantic_grade": "A",
-      "semantic_score": 100,
-      "executability_grade": "A",
-      "executability_score": 100,
-      "executable": true
-    },
-    {
-      "slug": "key-guard",
-      "source": "packaged",
-      "severity": "warning",
-      "issues": [
-        "MISSING_LICENSE: 缺少 license 字段"
-      ],
-      "body_length": 4036,
-      "version": "1.0.1",
-      "functional_grade": "A",
-      "functional_score": 85,
-      "sellability_grade": "A",
-      "sellability_score": 72,
-      "authenticity_grade": "A",
-      "authenticity_score": 100,
-      "semantic_grade": "A",
-      "semantic_score": 100,
-      "executability_grade": "A",
-      "executability_score": 100,
-      "executable": true
-    },
-    {
-      "slug": "okx-dex-token",
-      "source": "packaged",
-      "severity": "warning",
-      "issues": [
-        "MISSING_LICENSE: 缺少 license 字段"
-      ],
-      "body_length": 3314,
-      "version": "3.1.3",
-      "functional_grade": "A",
-      "functional_score": 80,
-      "sellability_grade": "A",
-      "sellability_score": 76,
-      "authenticity_grade": "A",
-      "authenticity_score": 100,
-      "semantic_grade": "A",
-      "semantic_score": 100,
-      "executability_grade": "A",
-      "executability_score": 100,
-      "executable": true
-    },
-    {
-      "slug": "ui-ux",
-      "source": "packaged",
-      "severity": "warning",
-      "issues": [
-        "MISSING_LICENSE: 缺少 license 字段"
-      ],
-      "body_length": 3917,
-      "version": "1.0.0",
-      "functional_grade": "A",
-      "functional_score": 85,
-      "sellability_grade": "A",
-      "sellability_score": 82,
-      "authenticity_grade": "A",
-      "authenticity_score": 100,
-      "semantic_grade": "A",
-      "semantic_score": 100,
-      "executability_grade": "A",
-      "executability_score": 100,
-      "executable": true
-    },
-    {
-      "slug": "autopilot-flow",
-      "source": "differentiated/Automation",
-      "severity": "warning",
-      "issues": [
-        "DESCRIPTION_EMPTY: description 为空",
-        "MISSING_LICENSE: 缺少 license 字段",
-        "MISSING_HOMEPAGE: 缺少 homepage 字段"
-      ],
-      "body_length": 6827,
-      "version": "1.0.0",
-      "functional_grade": "A",
-      "functional_score": 95,
-      "sellability_grade": "A",
-      "sellability_score": 89,
-      "authenticity_grade": "A",
-      "authenticity_score": 100,
-      "semantic_grade": "A",
-      "semantic_score": 100,
-      "executability_grade": "A",
-      "executability_score": 100,
-      "executable": true
-    }
-  ],
+  "warning_issues": [],
   "info_issues": [],
   "functional_quality": {
     "grade_distribution": {
@@ -241,18 +112,18 @@
       "D": 0,
       "F": 0
     },
-    "avg_score": 93.4,
+    "avg_score": 93.3,
     "total_with_issues": 0,
     "issues_detail": []
   },
   "sellability": {
     "grade_distribution": {
-      "A": 2070,
-      "B": 27,
+      "A": 2041,
+      "B": 56,
       "C": 0,
       "D": 0
     },
-    "avg_score": 89.9,
+    "avg_score": 89.7,
     "total_below_b": 0,
     "below_b_detail": []
   },
@@ -264,8 +135,8 @@
       "D": 0,
       "F": 0
     },
-    "avg_score": 99.6,
-    "total_with_issues": 16,
+    "avg_score": 99.5,
+    "total_with_issues": 15,
     "total_template_fills": 5,
     "issues_detail": [
       {
@@ -281,17 +152,6 @@
       },
       {
         "slug": "figma",
-        "source": "packaged",
-        "grade": "A",
-        "score": 97,
-        "template_count": 0,
-        "empty_sections": 1,
-        "issues": [
-          "EMPTY_LIMITATIONS: 已知限制段落为空"
-        ]
-      },
-      {
-        "slug": "finance-accounting",
         "source": "packaged",
         "grade": "A",
         "score": 97,
@@ -349,11 +209,33 @@
         "slug": "cdp-browser-pilot-free",
         "source": "differentiated/Automation",
         "grade": "A",
+        "score": 94,
+        "template_count": 0,
+        "empty_sections": 2,
+        "issues": [
+          "EMPTY_LIMITATIONS: 已知限制段落为空"
+        ]
+      },
+      {
+        "slug": "cloud-ops-orchestrator",
+        "source": "differentiated/Automation",
+        "grade": "A",
         "score": 91,
         "template_count": 0,
         "empty_sections": 3,
         "issues": [
-          "EMPTY_LIMITATIONS: 已知限制段落为空"
+          "EMPTY_SECTIONS: 3个段落内容为空或过短"
+        ]
+      },
+      {
+        "slug": "cron-assist",
+        "source": "differentiated/Automation",
+        "grade": "A",
+        "score": 91,
+        "template_count": 0,
+        "empty_sections": 3,
+        "issues": [
+          "EMPTY_SECTIONS: 3个段落内容为空或过短"
         ]
       },
       {
@@ -412,17 +294,6 @@
         ]
       },
       {
-        "slug": "alpha-feed-creator-free",
-        "source": "differentiated/Communication",
-        "grade": "A",
-        "score": 91,
-        "template_count": 0,
-        "empty_sections": 3,
-        "issues": [
-          "EMPTY_SECTIONS: 3个段落内容为空或过短"
-        ]
-      },
-      {
         "slug": "note-process-engine-pro",
         "source": "differentiated/Integrations",
         "grade": "A",
@@ -431,17 +302,6 @@
         "empty_sections": 1,
         "issues": [
           "EMPTY_LIMITATIONS: 已知限制段落为空"
-        ]
-      },
-      {
-        "slug": "news-tool-free",
-        "source": "differentiated/Research",
-        "grade": "A",
-        "score": 91,
-        "template_count": 0,
-        "empty_sections": 3,
-        "issues": [
-          "EMPTY_SECTIONS: 3个段落内容为空或过短"
         ]
       }
     ]
@@ -1467,8 +1327,8 @@
     "enabled": true,
     "l7b_available_count": 2097,
     "grade_distribution": {
-      "A": 2094,
-      "B": 3,
+      "A": 2097,
+      "B": 0,
       "C": 0,
       "D": 0,
       "F": 0,
@@ -1483,46 +1343,9 @@
       "L7B_VAGUE_TASK": 0,
       "L7B_MISSING_INPUT": 0,
       "L7B_NO_OUTPUT": 0,
-      "L7B_CONTRADICTION": 3
+      "L7B_CONTRADICTION": 0
     },
-    "total_with_issues": 3,
-    "issues_detail": [
-      {
-        "slug": "solo-workflow-engine-pro",
-        "source": "differentiated/Automation",
-        "grade": "B",
-        "score": 80,
-        "executable": true,
-        "checks_passed": 5,
-        "checks_failed": 1,
-        "issues": [
-          "L7B_CONTRADICTION: 同时存在免费和付费表述,内容自相矛盾"
-        ]
-      },
-      {
-        "slug": "agentvibes-skill-free",
-        "source": "differentiated/Creative",
-        "grade": "B",
-        "score": 80,
-        "executable": true,
-        "checks_passed": 5,
-        "checks_failed": 1,
-        "issues": [
-          "L7B_CONTRADICTION: 同时存在免费和付费表述,内容自相矛盾"
-        ]
-      },
-      {
-        "slug": "weather-toolkit-free",
-        "source": "differentiated/Lifestyle",
-        "grade": "B",
-        "score": 80,
-        "executable": true,
-        "checks_passed": 5,
-        "checks_failed": 1,
-        "issues": [
-          "L7B_CONTRADICTION: 同时存在免费和付费表述,内容自相矛盾"
-        ]
-      }
-    ]
+    "total_with_issues": 0,
+    "issues_detail": []
   }
 }

@@ -1,7 +1,7 @@
 ---
 slug: personal-health-tool-free
 name: personal-health-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: 个人健康管家免费版
 summary: 个人健康数据管理,支持运动、睡眠、饮食与体检报告分析
 license: Proprietary

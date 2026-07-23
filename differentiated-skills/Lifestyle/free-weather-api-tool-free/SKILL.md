@@ -1,7 +1,7 @@
 ---
 slug: free-weather-api-tool-free
 name: free-weather-api-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: 天气查询免费版
 summary: 查询城市天气,支持实时天气、未来7天预报、空气质量与出行建议
 license: Proprietary

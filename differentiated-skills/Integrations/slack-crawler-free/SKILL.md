@@ -1,7 +1,7 @@
 ---
 slug: slack-crawler-free
 name: slack-crawler-free
-version: 1.0.0
+version: 1.0.1
 displayName: Slack爬虫工具
 summary: 基于本地Slack归档数据的检索与统计工具，支持新鲜度检查与只读SQL查询。
 license: Proprietary

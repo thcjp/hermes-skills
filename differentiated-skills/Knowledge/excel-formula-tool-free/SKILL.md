@@ -1,7 +1,7 @@
 ---
 slug: excel-formula-tool-free
 name: excel-formula-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: Excel公式工具（免费版）
 summary: 从自然语言描述生成Excel公式，诊断表格错误，支持VLOOKUP、条件求和等常用函数。
 license: Proprietary

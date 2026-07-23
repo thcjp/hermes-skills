@@ -6,9 +6,11 @@ displayName: "Python Data Analysis"
 summary: "提供Python数据清洗、统计分析及可视化建议，辅助业务和科研数据的快速处理与分析。"
 license: "Proprietary"
 description: |-
-  提供Python数据清洗、统计分析及可视化建议，辅助业务和科研数据的快速处理与分析。\n\n核心能力:\n- 集成工具领域的专业化AI辅助工具\n\
-  - 基于高人气开源Skill深度优化升级\n- 移除风险代码,增强安全性和稳定性\n\n适用场景:\n- 第三方API集成、平台对接、数据同步\n- 独立开发者与一人公司效率提升\n\
-tags: "'[''Integrations'']'"
+  提供Python数据清洗、统计分析及可视化建议，辅助业务和科研数据的快速处理与分析。
+  核心能力:数据清洗预处理、统计分析支持、数据可视化建议、常见分析模式指导。
+  适用场景:业务数据分析、科研数据处理、报表生成辅助、数据探索性分析。
+tags:
+  - Integrations
 tools:
   - read
   - exec
@@ -17,7 +19,6 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "write", "exec", "glob"]
 ---
 # Python Data Analysis
 
@@ -111,10 +112,6 @@ export API_KEY="your_api_key_here"
 
 "帮我分析这份销售数据，找出季节性趋势"
 
----
-
-💡 Need more complete medical data analysis tools? Visit hikaruzhang.lemonsqueezy.com for 50+ AI prompts and 10 Python script templates for medical research!
-
 ## 错误处理
 
 | 错误场景(续)| 原因 | 处理方式 |
@@ -126,7 +123,7 @@ export API_KEY="your_api_key_here"
 
 ## 已知限制
 
-- 需要API Key，无Key环境无法使用
+- 需要LLM支持，无LLM环境无法使用
 
 ## 常见问题
 

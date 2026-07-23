@@ -1,7 +1,7 @@
 ---
 slug: k8s-devops-tool-free
 name: k8s-devops-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: K8s清单生成入门
 summary: Kubernetes YAML清单生成工具，支持常用资源模板与基础校验。
 license: Proprietary

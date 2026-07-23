@@ -1,7 +1,7 @@
 ---
 slug: doubao-assistant-free
 name: doubao-assistant-free
-version: 1.0.0
+version: 1.0.1
 displayName: 豆包助手(免费版)
 summary: 基于豆包大模型的中文对话助手，支持联网搜索与基础问答能力。
 license: Proprietary

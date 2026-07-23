@@ -6,20 +6,18 @@ displayName: "Video Upload Aioz St"
 summary: "快速上传视频到AIOZ Stream API,建视频对象配编码"
 license: "Proprietary"
 description: |-
-  Quick upload video to AIOZ Stream API。Create video objects with default
-  or custom encoding confi。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
+  Quick upload video to AIOZ Stream API. Create video objects with default
+  or custom encoding config, upload thumbnails, manage and delete videos.
 tags:
   - Creative
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
 ---
 # Video Upload Aioz St
 
@@ -245,4 +243,5 @@ A:
 
 ## 已知限制
 
-- 需要API Key，无Key环境无法使用
+- 需要AIOZ Stream API密钥才能使用完整功能
+- 需要LLM支持，无LLM环境无法使用
