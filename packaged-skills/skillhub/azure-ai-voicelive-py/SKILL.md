@@ -26,16 +26,24 @@ pricing_model: "monthly"
 ---
 # Azure VoiceLive 实时语音AI开发
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | Azure实时语音AI开发处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+| --- | --- | --- |
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -45,7 +53,7 @@ pricing_model: "monthly"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+| --: | --: | --: | --: |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -103,7 +111,7 @@ AZURE_COGNITIVE_SERVICES_KEY=<api-key>
 ```python
 from azure.ai.voicelive.aio import connect
 from azure.identity.aio import DefaultAzureCredential
-
+# ...
 async with connect(
     endpoint=os.environ["AZURE_COGNITIVE_SERVICES_ENDPOINT"],
     credential=DefaultAzureCredential(),
@@ -117,7 +125,7 @@ async with connect(
 ```python
 from azure.ai.voicelive.aio import connect
 from azure.core.credentials import AzureKeyCredential
-
+# ...
 async with connect(
     endpoint=os.environ["AZURE_COGNITIVE_SERVICES_ENDPOINT"],
     credential=AzureKeyCredential(os.environ["AZURE_COGNITIVE_SERVICES_KEY"]),
@@ -130,7 +138,7 @@ async with connect(
 
 ```python
 from azure.ai.voicelive.models import RequestSession, FunctionTool
-
+# ...
 await conn.session.update(session=RequestSession(
     instructions="You are a helpful voice assistant.",
     modalities=["text", "audio"],
@@ -167,12 +175,12 @@ await conn.session.update(session=RequestSession(
 import asyncio, os, json, base64
 from azure.ai.voicelive.aio import connect
 from azure.identity.aio import DefaultAzureCredential
-
+# ...
 def handle_function(name, arguments):
     if name == "get_weather":
         return {"temperature": 26, "condition": "sunny"}
     return {}
-
+# ...
 async def main():
     async with connect(
         endpoint=os.environ["AZURE_COGNITIVE_SERVICES_ENDPOINT"],
@@ -185,7 +193,7 @@ async def main():
             "modalities": ["text", "audio"],
             "voice": "alloy"
         })
-
+# ...
         async for event in conn:
             if event.type == "response.audio_transcript.done":
                 print(f"Transcript: {event.transcript}")
@@ -202,7 +210,7 @@ async def main():
                 await conn.response.create()
             elif event.type == "response.done":
                 break
-
+# ...
 asyncio.run(main())
 ```
 
@@ -211,12 +219,12 @@ asyncio.run(main())
 关闭VAD后由业务侧控制用户话音结束时机,适用于按键说话或外部分片场景:
 ```python
 await conn.session.update(session={"turn_detection": None})
-
+# ...
 # 注入音频块
 audio_chunk = await read_audio_from_microphone()
 b64_audio = base64.b64encode(audio_chunk).decode()
 await conn.input_audio_buffer.append(audio=b64_audio)
-
+# ...
 # 显式结束用户轮次并触发响应
 await conn.input_audio_buffer.commit()
 await conn.response.create()
@@ -311,7 +319,7 @@ OpenAI音色 (`alloy`/`echo`/`shimmer` 等) 走实时模型内置TTS;Azure原生
 
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| :-- | :-- | :-- |
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

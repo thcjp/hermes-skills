@@ -21,6 +21,15 @@ tags:
 
 编码、解码和检查常见数据格式。覆盖Base64、URL编码、Hex、Unicode、JWT、哈希校验和序列化格式。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | 编码格式工具(免费版)处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 核心能力
 
 ### 1. Base64编码解码
@@ -35,8 +44,8 @@ echo "SGVsbG8sIFdvcmxkIQ==" | base64 -d
 
 # URL安全变体
 echo -n "Hello" | base64 | tr '+/' '-_' | tr -d '='
-```- 验证执行结果，确认输出符合预期格式
-- 参考`Base64编码解码`相关配置参数进行设置
+```- 验证返回数据的完整性和格式正确性
+- 参考`Base64编码解码`的配置文档进行参数调优
 ### 2. URL编码解码
 对HTTP请求参数进行编码，处理特殊字符和空格。
 
@@ -51,7 +60,7 @@ python3 -c "from urllib.parse import unquote; print(unquote('hello%20world%20%26
 - 关键参数: `url编码解码` 选项
 - 处理流程: 接收输入 -> 执行URL编码解码 -> 返回结果
 - 输入: 用户提供URL编码解码所需的参数和指令
-- 输出: 返回URL编码解码的执行结果,包含操作状态和输出数据
+- 输出: 返回URL编码解码的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 3. Hex查看与转换
 查看二进制文件的十六进制转储，在Hex和文本之间转换。
@@ -76,7 +85,7 @@ echo "$TOKEN" | cut -d. -f2 | tr '-_' '+/' | base64 -d 2>/dev/null | jq
 ```
 
 **输入**: 用户提供JWT解码所需的指令和必要参数。
-**处理**: 按照skill规范执行JWT解码操作,遵循单一意图原则。
+**处理**: 解析JWT解码的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 
 #
 ## 适用场景
@@ -156,3 +165,25 @@ export API_KEY="your_api_key_here"
 ## 升级提示
 
 本免费版提供基础功能。升级到完整版 encoding-formats 获取全部能力和高级特性。
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "编码格式工具(免费版)处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "encoding-formats"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

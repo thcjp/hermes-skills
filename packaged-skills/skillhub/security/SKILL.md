@@ -25,6 +25,15 @@ pricing_model: "monthly"
 
 GoPlus AgentGuard安全扫描，支持定时巡逻、漏洞发现、Webhook通知与结果检查。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | GoPlus安全扫描处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -81,7 +90,7 @@ export API_KEY="your_api_key_here"
 - **巡逻间隔**：支持每日、每周、自定义间隔
 
 **输入**: 用户提供定时巡逻（Schedule Patrol）所需的指令和必要参数。
-**输出**: 返回定时巡逻（Schedule Patrol）的执行结果,包含操作状态和输出数据。### 漏洞发现详情（Findings Detail）
+**输出**: 返回定时巡逻（Schedule Patrol）的处理结果,包含执行状态码、结果数据和执行日志。### 漏洞发现详情（Findings Detail）
 
 查看每个安全发现（finding）的详细信息：
 
@@ -112,7 +121,7 @@ export API_KEY="your_api_key_here"
 - **批量处理**：按文件路径批量修复或忽略漏洞
 
 **输入**: 用户提供按文件路径定位漏洞（Finding with File Path）所需的指令和必要参数。
-**输出**: 返回按文件路径定位漏洞（Finding with File Path）的执行结果,包含操作状态和输出数据。### 检查结果（Check Results）
+**输出**: 返回按文件路径定位漏洞（Finding with File Path）的处理结果,包含执行状态码、结果数据和执行日志。### 检查结果（Check Results）
 
 查看与管理安全扫描结果：
 
@@ -131,7 +140,7 @@ export API_KEY="your_api_key_here"
 - **版本检查**：检查GoPlus CLI版本是否为最新
 
 **输入**: 用户提供健康检查（Health Check）所需的指令和必要参数。
-**输出**: 返回健康检查（Health Check）的执行结果,包含操作状态和输出数据。
+**输出**: 返回健康检查（Health Check）的处理结果,包含执行状态码、结果数据和执行日志。
 
 #
 ## 使用流程

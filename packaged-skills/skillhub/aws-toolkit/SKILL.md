@@ -31,11 +31,11 @@ pricing_model: "monthly"
 | 能力 | 免费版 | 付费版 |
 |:-----|:-------|:-------|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| AWS部署专业版业级AWS全服务管理 | 不支持 | 支持 |
+| 多租户管理与权限分配 | 不支持 | 支持 |
+| 操作审计与合规日志 | 不支持 | 支持 |
+| 自定义仪表盘与报表 | 不支持 | 支持 |
+| API开放与第三方集成 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -52,10 +52,10 @@ pricing_model: "monthly"
 | 灾备管理 | 不支持 | 跨区域灾备 |
 
 **输入**: 用户提供PRO版功能增强对比所需的指令和必要参数。
-**输出**: 返回PRO版功能增强对比的执行结果,包含操作状态和输出数据。### 支持的AWS服务
+**输出**: 返回PRO版功能增强对比的处理结果,包含执行状态码、结果数据和执行日志。### 支持的AWS服务
 
 | 类别 | 服务 | PRO版支持 |
-| --- | --- | --- |
+| --: | --: | --: |
 | 计算 | EC2/Lambda/ECS/EKS/Batch | 支持 |
 | 存储 | S3/EBS/EFS/FSx/Glacier | 支持 |
 | 网络 | VPC/Route53/CloudFront/ELB | 支持 |
@@ -66,20 +66,20 @@ pricing_model: "monthly"
 | 分析 | Athena/EMR/Kinesis/Glue | 支持 |
 ### 服务覆盖
 
-执行服务覆盖,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
+针对服务覆盖,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
 
 **输入**: 用户提供服务覆盖相关的配置参数、输入数据和处理选项。
 
-**输出**: 返回服务覆盖的处理结果。- 验证执行结果，确认输出符合预期格式
-- 参考`服务覆盖`相关配置参数进行设置
+**输出**: 返回服务覆盖的处理结果。- 验证返回数据的完整性和格式正确性
+- 参考`服务覆盖`的配置文档进行参数调优
 ### 部署方式
 
-执行部署方式,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
+针对部署方式,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
 
 **输入**: 用户提供部署方式相关的配置参数、输入数据和处理选项。
 
-**输出**: 返回部署方式的处理结果。- 验证执行结果，确认输出符合预期格式
-- 参考`部署方式`相关配置参数进行设置
+**输出**: 返回部署方式的处理结果。- 验证返回数据的完整性和格式正确性
+- 参考`部署方式`的配置文档进行参数调优
 #
 ## 适用场景
 
@@ -93,12 +93,12 @@ python3 （请参考skill目录中的脚本文件） generate \
   --template "web_app_ha" \
   --regions "us-east-1,us-west-2" \
   --output ./terraform/
-
+# ...
 # 部署基础设施
 python3 （请参考skill目录中的脚本文件） apply \
   --config ./terraform/ \
   --auto-approve
-
+# ...
 # 输出：
 # VPC: 10.0.0.0/16 (2区域)
 # EC2: 4台 (2区域x2可用区)
@@ -116,7 +116,7 @@ python3 （请参考skill目录中的脚本文件） apply \
 python3 （请参考skill目录中的脚本文件） run \
   --standards "CIS,PCI-DSS,HIPAA" \
   --output audit_report.pdf
-
+# ...
 # 输出包含：
 # - 合规检查项清单
 # - 不合规项详情
@@ -133,12 +133,12 @@ python3 （请参考skill目录中的脚本文件） run \
 python3 （请参考skill目录中的脚本文件） analyze \
   --period "3m" \
   --output cost_report.xlsx
-
+# ...
 # 优化建议
 python3 （请参考skill目录中的脚本文件） optimize \
   --apply-recommendations \
   --dry-run
-
+# ...
 # 输出：
 # - 月度成本趋势
 # - 各服务成本占比
@@ -154,11 +154,11 @@ python3 （请参考skill目录中的脚本文件） optimize \
 ```bash
 # 依赖说明
 pip install -r requirements_pro.txt
-
+# ...
 # 安装Terraform
 # macOS: brew install terraform
 # Linux: 下载官方安装包
-
+# ...
 # 配置多区域凭证
 cp config_pro_template.yaml config_pro.yaml
 ```
@@ -169,17 +169,17 @@ cp config_pro_template.yaml config_pro.yaml
 # IaC部署
 python3 （请参考skill目录中的脚本文件） generate --template "web_app_ha" --regions "us-east-1,us-west-2"
 python3 （请参考skill目录中的脚本文件） apply --config ./terraform/
-
+# ...
 # 合规审计
 python3 （请参考skill目录中的脚本文件） run --standards "CIS,PCI-DSS"
-
+# ...
 # 成本优化
 python3 （请参考skill目录中的脚本文件） analyze --period "3m"
 python3 （请参考skill目录中的脚本文件） optimize --dry-run
-
+# ...
 # 安全扫描
 python3 （请参考skill目录中的脚本文件） scan --output security_report.pdf
-
+# ...
 # 多区域管理
 python3 （请参考skill目录中的脚本文件） deploy --template web_app --regions "us-east-1,eu-west-1,ap-southeast-1"
 ```
@@ -188,7 +188,7 @@ python3 （请参考skill目录中的脚本文件） deploy --template web_app -
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+| :-- | :-- | :-- | :-- |
 
 ## 输出格式
 
@@ -209,7 +209,7 @@ python3 （请参考skill目录中的脚本文件） deploy --template web_app -
 - 降级策略: 异常时返回默认值, 确保流程不中断
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| :-: | :-: | :-: |
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -226,7 +226,7 @@ python3 （请参考skill目录中的脚本文件） deploy --template web_app -
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+| --- | --: | :-- | :-: |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 系统安装或conda环境 |
 | boto3 | Python库 | 必需 | `pip install boto3` |
@@ -237,7 +237,7 @@ python3 （请参考skill目录中的脚本文件） deploy --template web_app -
 ### API Key 配置
 
 | 服务 | 环境变量 | 是否必需 | 用途 |
-|:-------|:---------|:---------|:-----|
+| --: | :-- | :-: | --- |
 | AWS Access Key | `AWS_ACCESS_KEY_ID` | 必需 | API认证 |
 | AWS Secret | `AWS_SECRET_ACCESS_KEY` | 必需 | API认证 |
 | AWS Region | `AWS_DEFAULT_REGION` | 必需 | 默认区域 |
@@ -262,13 +262,13 @@ pro_config:
   regions:
     primary: "us-east-1"
     secondary: ["us-west-2", "eu-west-1", "ap-southeast-1"]
-
+# ...
   infrastructure:
     iac: "terraform"               # terraform | cloudformation
     state_backend: "s3"
     state_bucket: "my-tf-state"
     state_lock: "dynamodb"
-
+# ...
   services:
     compute: ["ec2", "lambda", "ecs", "eks"]
     database: ["rds", "dynamodb", "elasticache"]
@@ -276,24 +276,24 @@ pro_config:
     networking: ["vpc", "route53", "cloudfront"]
     security: ["iam", "kms", "waf", "guardduty"]
     monitoring: ["cloudwatch", "cloudtrail", "x-ray"]
-
+# ...
   audit:
     standards: ["CIS", "PCI-DSS", "HIPAA", "SOC2"]
     schedule: "weekly"
     auto_remediation: false        # 自动修复（谨慎开启）
-
+# ...
   cost:
     analysis_period: "3m"
     recommendations: true
     budget_alerts:
       monthly: 10000
       alert_threshold: 0.8
-
+# ...
   security:
     scan_frequency: "daily"
     vulnerability_scan: true
     config_compliance: true
-
+# ...
   disaster_recovery:
     enabled: true
     rpo: 15                        # 恢复点目标（分钟）
@@ -304,8 +304,8 @@ pro_config:
 ## 错误处理
 
 
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景2 | 原因 | 处理方式 |
+| :-- | :-: | --- |
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

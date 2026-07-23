@@ -43,28 +43,28 @@ pricing_model: "per_use"
 ---
 ### 增量抓取 / Incremental Fetching
 
-执行增量抓取 / Incremental Fetching,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
+针对增量抓取 / Incremental Fetching,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
 
 **输入**: 用户提供增量抓取 / Incremental Fetching相关的配置参数、输入数据和处理选项。
 
-**输出**: 返回增量抓取 / Incremental Fetching的处理结果。- 验证执行结果，确认输出符合预期格式
-- 参考`增量抓取 / Incremental Fetching`相关配置参数进行设置
+**输出**: 返回增量抓取 / Incremental Fetching的处理结果。- 验证返回数据的完整性和格式正确性
+- 参考`增量抓取 / Incremental Fetching`的配置文档进行参数调优
 ### 自动标签 / Auto-tagging
 
-执行自动标签 / Auto-tagging,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
+针对自动标签 / Auto-tagging,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
 
 **输入**: 用户提供自动标签 / Auto-tagging相关的配置参数、输入数据和处理选项。
 
-**输出**: 返回自动标签 / Auto-tagging的处理结果。- 验证执行结果，确认输出符合预期格式
-- 参考`自动标签 / Auto-tagging`相关配置参数进行设置
+**输出**: 返回自动标签 / Auto-tagging的处理结果。- 验证返回数据的完整性和格式正确性
+- 参考`自动标签 / Auto-tagging`的配置文档进行参数调优
 ### HTML报告 / HTML Reports
 
-执行HTML报告 / HTML Reports,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
+针对HTML报告 / HTML Reports,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
 
 **输入**: 用户提供HTML报告 / HTML Reports相关的配置参数、输入数据和处理选项。
 
-**输出**: 返回HTML报告 / HTML Reports的处理结果。- 验证执行结果，确认输出符合预期格式
-- 参考`HTML报告 / HTML Reports`相关配置参数进行设置
+**输出**: 返回HTML报告 / HTML Reports的处理结果。- 验证返回数据的完整性和格式正确性
+- 参考`HTML报告 / HTML Reports`的配置文档进行参数调优
 #
 ## 适用场景
 

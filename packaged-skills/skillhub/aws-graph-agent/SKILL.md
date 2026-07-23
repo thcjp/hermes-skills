@@ -28,16 +28,24 @@ pricing_model: "monthly"
 
 基于 AWS Bedrock AgentCore 与 LangGraph 编排的多代理系统。通过 StateGraph 状态图定义代理工作流，AgentCore Runtime 封装为 HTTP 服务，Memory 管理持久记忆，Gateway 集成外部工具。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | AWS Graph Agent处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+| --- | --- | --- |
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -47,7 +55,7 @@ pricing_model: "monthly"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+| --: | --: | --: | --: |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -68,38 +76,38 @@ export API_KEY="your_api_key_here"
 使用 LangGraph StateGraph 定义多代理工作流，支持 `tools_condition` 自动路由（代理 → 工具或 END）、`ToolNode` 预置工具执行器、条件边实现复杂多步逻辑（planner → executor → reviewer 循环）。
 
 **输入**: 用户提供StateGraph 状态图编排所需的指令和必要参数。
-**输出**: 返回StateGraph 状态图编排的执行结果,包含操作状态和输出数据。
+**输出**: 返回StateGraph 状态图编排的处理结果,包含执行状态码、结果数据和执行日志。
 
 ### 2. AgentCore Runtime HTTP 封装
 将代理封装为 8080 端口 HTTP 服务，处理 `/invocations`（调用）与 `/ping`（健康检查）端点，支持容器模式部署。
 
 **输入**: 用户提供AgentCore Runtime HTTP 封装所需的指令和必要参数。
-**输出**: 返回AgentCore Runtime HTTP 封装的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
-- 参考`AgentCore Runtime HTTP 封装`相关配置参数进行设置
+**输出**: 返回AgentCore Runtime HTTP 封装的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+- 参考`AgentCore Runtime HTTP 封装`的配置文档进行参数调优
 ### 3. AgentCore Memory 持久记忆
 管理跨会话/跨代理的 STM（短期记忆，会话内逐轮）与 LTM（长期记忆，跨会话/跨代理），配套一致性处理模式（写入后约 10s 最终一致，含等待+验证+重试逻辑）。
 
 **输入**: 用户提供AgentCore Memory 持久记忆所需的指令和必要参数。
-**输出**: 返回AgentCore Memory 持久记忆的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
-- 参考`AgentCore Memory 持久记忆`相关配置参数进行设置
+**输出**: 返回AgentCore Memory 持久记忆的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+- 参考`AgentCore Memory 持久记忆`的配置文档进行参数调优
 ### 4. AgentCore Gateway 工具集成
 将 API/Lambda 转化为带认证的 Agent 工具接口，支持 Fallback Mock（本地开发）、Local 工具协议、Production Gateway（生产）三种传输模式。
 
 **输入**: 用户提供AgentCore Gateway 工具集成所需的指令和必要参数。
-**处理**: 按照skill规范执行AgentCore Gateway 工具集成操作,遵循单一意图原则。
-**输出**: 返回AgentCore Gateway 工具集成的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
-- 参考`AgentCore Gateway 工具集成`相关配置参数进行设置
+**处理**: 解析AgentCore Gateway 工具集成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回AgentCore Gateway 工具集成的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+- 参考`AgentCore Gateway 工具集成`的配置文档进行参数调优
 ### 5. agentcore CLI 全生命周期管理
 `configure`（交互式/脚本化配置）→ `launch`（容器部署）→ `dev`（热重载本地开发）→ `invoke`（测试调用）→ `destroy`（清理资源避免持续计费）。
 
 **输入**: 用户提供agentcore CLI 全生命周期管理所需的指令和必要参数。
-**输出**: 返回agentcore CLI 全生命周期管理的执行结果,包含操作状态和输出数据。
+**输出**: 返回agentcore CLI 全生命周期管理的处理结果,包含执行状态码、结果数据和执行日志。
 
 #
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |
-|------|---------|---------|---------|
+| :-- | :-- | :-- | :-- |
 | 多代理客服系统 | "按意图路由到客服/计费专家" | 编排器+专家模式部署，共享 session_id | StateGraph + Memory |
 | 跨会话持久记忆 | "记住用户偏好和历史决策" | LTM 写入与一致性验证逻辑 | Memory |
 | 外部 API 工具集成 | "将订单查询 Lambda 集成为代理工具" | Gateway 注册+三种传输模式 | Gateway |
@@ -118,7 +126,7 @@ uv tool install bedrock-agentcore-starter-toolkit  # 安装 agentcore CLI
 
 ### Step 2: 预检清单（部署前必读）
 | 检查项 | 要求 | 不满足的后果 |
-|--------|------|-------------|
+| :-: | :-: | :-: |
 | 模型使用审批 | 在 Bedrock Console 填写 Anthropic 表单 | `Model use case details not submitted` |
 | 推理配置 | 使用 `us.anthropic.claude-*` 推理配置文件 | `on-demand throughput isn't supported` |
 | 代理命名 | 字母开头，仅字母/数字/下划线，1-48 字符 | `Invalid agent name` |
@@ -134,17 +142,17 @@ from langgraph.prebuilt import ToolNode, tools_condition
 from bedrock_agentcore.runtime import BedrockAgentCoreApp
 from typing import Annotated
 from typing_extensions import TypedDict
-
+# ...
 class State(TypedDict):
     messages: Annotated[list, add_messages]
-
+# ...
 builder = StateGraph(State)
 builder.add_node("agent", agent_node)
 builder.add_node("tools", ToolNode(tools))
 builder.add_conditional_edges("agent", tools_condition)
 builder.add_edge(START, "agent")
 graph = builder.compile()
-
+# ...
 app = BedrockAgentCoreApp()
 @app.entrypoint
 def invoke(payload, context):
@@ -217,10 +225,10 @@ agentcore invoke '{"prompt": "查询北京今天天气"}'
 ```python
 from bedrock_agentcore.memory import MemoryClient
 import time
-
+# ...
 memory = MemoryClient()
 memory.create_event(session_id, actor_id, event_type, payload)  # 写入
-
+# ...
 # 最终一致性验证（指数退避：2s→4s→8s→16s→30s，最多 5 次）
 def verify_with_backoff(memory, session_id, actor_id, event_type, payload,
                         base=2, max_wait=30, max_retries=5):
@@ -231,7 +239,7 @@ def verify_with_backoff(memory, session_id, actor_id, event_type, payload,
         if attempt < max_retries - 1:
             memory.create_event(session_id, actor_id, event_type, payload)  # 重写
     raise RuntimeError(f"记忆一致性验证失败：{max_retries} 次重试后仍为空")
-
+# ...
 verify_with_backoff(memory, session_id, actor_id, event_type, payload)
 # 注意：event['payload'] 是列表类型；确认 actor_id 和 session_id 匹配
 ```
@@ -244,21 +252,21 @@ verify_with_backoff(memory, session_id, actor_id, event_type, payload)
 ```python
 from langgraph.graph import StateGraph, START, END
 from typing_extensions import TypedDict
-
+# ...
 class State(TypedDict):
     messages: list
     expert: str
-
+# ...
 def orchestrator(state):
     intent = classify(state["messages"][-1])  # 意图分类
     return {"expert": {"投诉": "cs_expert", "账单": "billing_expert"}[intent]}
-
+# ...
 def cs_expert(state):
     return {"messages": [handle_cs(state)]}      # 客服专家处理
-
+# ...
 def billing_expert(state):
     return {"messages": [handle_billing(state)]}  # 计费专家处理
-
+# ...
 builder = StateGraph(State)
 builder.add_node("orchestrator", orchestrator)
 builder.add_node("cs_expert", cs_expert)
@@ -281,7 +289,7 @@ agentcore launch
 ## 异常处理
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
-|---------|---------|---------|---------|
+| --- | --: | :-- | :-: |
 | 推理配置不支持 | `on-demand throughput isn't supported` | 未使用跨区域推理配置文件 | 改用 `us.anthropic.claude-*` 推理配置文件 |
 | 模型审批未提交 | `Model use case details not submitted` | 未在 Bedrock Console 填写使用表单 | 进入 Bedrock Console 填写 Anthropic 模型使用审批表单 |
 | 代理名称无效 | `Invalid agent name` | 名称含连字符或非法字符 | 改用下划线，字母开头，1-48 字符（如 `my-agent` → `my_agent`） |
@@ -324,7 +332,7 @@ A: 多个专家代理共享同一 `session_id`，通过 AgentCore Memory 的 `cr
 
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| --: | :-- | :-: |
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
@@ -337,3 +345,25 @@ A: 多个专家代理共享同一 `session_id`，通过 AgentCore Memory 的 `cr
 3. **代理命名规则严格**：仅字母/数字/下划线，1-48 字符，连字符等常见命名方式不被接受
 4. **容器模式不支持 .env**：必须在 Dockerfile 中用 ENV 设置环境变量，与本地开发习惯不同
 5. **Gateway 工具名需去前缀**：Lambda 的 `bedrockAgentCoreToolName` 必须去除 `___` 前缀，否则返回 "Unknown tool"
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "AWS Graph Agent处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "aws-graph-agent"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

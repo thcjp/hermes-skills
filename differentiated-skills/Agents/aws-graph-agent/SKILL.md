@@ -31,39 +31,39 @@ suggested_price: 99.9
 使用 LangGraph StateGraph 定义多代理工作流，支持 `tools_condition` 自动路由（代理→工具或 END）、`ToolNode` 预置工具执行器、条件边实现复杂多步逻辑（planner→executor→reviewer 循环）
 
 **输入**: 用户提供StateGraph 状态图编排所需的指令和必要参数。
-**处理**: 按照skill规范执行StateGraph 状态图编排操作,遵循单一意图原则。
-**输出**: 返回StateGraph 状态图编排的执行结果,包含操作状态和输出数据。
+**处理**: 解析StateGraph 状态图编排的输入参数,完成核心逻辑,返回结构化响应。
+**输出**: 返回StateGraph 状态图编排的响应数据,包含状态码、结果和日志。
 
 ### 2. AgentCore Runtime HTTP 封装
 将代理封装为 8080 端口 HTTP 服务，处理 `/invocations`（调用）与 `/ping`（健康检查）端点，支持容器模式部署
 
 **输入**: 用户提供AgentCore Runtime HTTP 封装所需的指令和必要参数。
-**处理**: 按照skill规范执行AgentCore Runtime HTTP 封装操作,遵循单一意图原则。
-**输出**: 返回AgentCore Runtime HTTP 封装的执行结果,包含操作状态和输出数据。
+**处理**: 解析AgentCore Runtime HTTP 封装的输入参数,完成核心逻辑,返回结构化响应。
+**输出**: 返回AgentCore Runtime HTTP 封装的响应数据,包含状态码、结果和日志。
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 3. AgentCore Memory 持久记忆
 管理跨会话/跨代理的 STM（短期记忆，会话内逐轮）与 LTM（长期记忆，跨会话/跨代理），配套一致性处理模式（写入后约 10s 最终一致，含等待+验证+重试逻辑）
 
 **输入**: 用户提供AgentCore Memory 持久记忆所需的指令和必要参数。
-**处理**: 按照skill规范执行AgentCore Memory 持久记忆操作,遵循单一意图原则。
-**输出**: 返回AgentCore Memory 持久记忆的执行结果,包含操作状态和输出数据。
+**处理**: 解析AgentCore Memory 持久记忆的输入参数,完成核心逻辑,返回结构化响应。
+**输出**: 返回AgentCore Memory 持久记忆的响应数据,包含状态码、结果和日志。
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 4. AgentCore Gateway 工具集成
 将 API/Lambda 转化为带认证的 Agent 工具接口，支持 Fallback Mock（本地开发）、Local 工具协议、Production Gateway（生产）三种传输模式
 
 **输入**: 用户提供AgentCore Gateway 工具集成所需的指令和必要参数。
-**处理**: 按照skill规范执行AgentCore Gateway 工具集成操作,遵循单一意图原则。
-**输出**: 返回AgentCore Gateway 工具集成的执行结果,包含操作状态和输出数据。
+**处理**: 解析AgentCore Gateway 工具集成的输入参数,完成核心逻辑,返回结构化响应。
+**输出**: 返回AgentCore Gateway 工具集成的响应数据,包含状态码、结果和日志。
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 5. agentcore CLI 全生命周期管理
 `configure`（交互式/脚本化配置）→`launch`（容器部署）→`dev`（热重载本地开发）→`invoke`（测试调用）→`destroy`（清理资源避免持续计费）
 
 **输入**: 用户提供agentcore CLI 全生命周期管理所需的指令和必要参数。
-**处理**: 按照skill规范执行agentcore CLI 全生命周期管理操作,遵循单一意图原则。
-**输出**: 返回agentcore CLI 全生命周期管理的执行结果,包含操作状态和输出数据。
+**处理**: 解析agentcore CLI 全生命周期管理的输入参数,完成核心逻辑,返回结构化响应。
+**输出**: 返回agentcore CLI 全生命周期管理的响应数据,包含状态码、结果和日志。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Bedrock、引导式部署、多代理模式库、AWS、多代理部署编排工、全生命周期管理五、大核心能力、适用于多代理协调、的复杂业务系统、跨会话持久记忆代、集成到代理工具链、生产级、代理部署、适用关键词、多代理编排等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
 ## 适用场景
@@ -86,6 +86,13 @@ suggested_price: 99.9
 ## 使用流程
 
 ### 依赖详情
+## 输入格式
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | AWS图代理处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ```bash
 pip install bedrock-agentcore bedrock-agentcore-starter-toolkit langgraph
 uv tool install bedrock-agentcore-starter-toolkit  # 安装 agentcore CLI

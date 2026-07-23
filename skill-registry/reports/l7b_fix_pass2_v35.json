@@ -1,0 +1,1451 @@
+{
+  "files_scanned": 995,
+  "files_modified": 361,
+  "total_changes": 1281,
+  "details": [
+    {
+      "slug": "accounting-finance",
+      "changes": 2
+    },
+    {
+      "slug": "ace-music-free",
+      "changes": 3
+    },
+    {
+      "slug": "ad-insight-hub",
+      "changes": 4
+    },
+    {
+      "slug": "ad-insight-hub-free",
+      "changes": 1
+    },
+    {
+      "slug": "admapix",
+      "changes": 2
+    },
+    {
+      "slug": "admapix-free",
+      "changes": 2
+    },
+    {
+      "slug": "aegis-security",
+      "changes": 2
+    },
+    {
+      "slug": "afrexai-cybersecurity-engine",
+      "changes": 7
+    },
+    {
+      "slug": "afrexai-cybersecurity-engine-free",
+      "changes": 3
+    },
+    {
+      "slug": "afrexai-knowledge-management",
+      "changes": 8
+    },
+    {
+      "slug": "afrexai-knowledge-management-free",
+      "changes": 2
+    },
+    {
+      "slug": "agentvibes-voice-skill",
+      "changes": 23
+    },
+    {
+      "slug": "agentvibes-voice-skill-free",
+      "changes": 10
+    },
+    {
+      "slug": "ai-agent-helper",
+      "changes": 4
+    },
+    {
+      "slug": "ai-assistant",
+      "changes": 6
+    },
+    {
+      "slug": "ai-assistant-free",
+      "changes": 3
+    },
+    {
+      "slug": "ai-image-gen-free",
+      "changes": 8
+    },
+    {
+      "slug": "ai-kujiale-design",
+      "changes": 7
+    },
+    {
+      "slug": "ai-kujiale-design-free",
+      "changes": 2
+    },
+    {
+      "slug": "aic-dashboard-free",
+      "changes": 1
+    },
+    {
+      "slug": "alephnet-node",
+      "changes": 4
+    },
+    {
+      "slug": "alephnet-node-free",
+      "changes": 2
+    },
+    {
+      "slug": "alibaba-quark-scan",
+      "changes": 12
+    },
+    {
+      "slug": "alibaba-quark-scan-free",
+      "changes": 3
+    },
+    {
+      "slug": "analytics-dashboard",
+      "changes": 5
+    },
+    {
+      "slug": "anthropics-frontend-design",
+      "changes": 5
+    },
+    {
+      "slug": "anthropics-frontend-design-free",
+      "changes": 6
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan",
+      "changes": 2
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan-free",
+      "changes": 1
+    },
+    {
+      "slug": "api-connect-hub",
+      "changes": 5
+    },
+    {
+      "slug": "api-doc-generator",
+      "changes": 2
+    },
+    {
+      "slug": "api-doc-writer-free",
+      "changes": 1
+    },
+    {
+      "slug": "api-free",
+      "changes": 1
+    },
+    {
+      "slug": "api-generator",
+      "changes": 2
+    },
+    {
+      "slug": "api-integration-free",
+      "changes": 1
+    },
+    {
+      "slug": "api-scaffold-gen",
+      "changes": 1
+    },
+    {
+      "slug": "api-toolkit",
+      "changes": 1
+    },
+    {
+      "slug": "apple-health-skill",
+      "changes": 1
+    },
+    {
+      "slug": "apple-health-skill-free",
+      "changes": 1
+    },
+    {
+      "slug": "archive-free",
+      "changes": 1
+    },
+    {
+      "slug": "audio-stream-upload",
+      "changes": 1
+    },
+    {
+      "slug": "automation-recipe-book",
+      "changes": 3
+    },
+    {
+      "slug": "aws-cloud-architect-free",
+      "changes": 3
+    },
+    {
+      "slug": "aws-graph-agent",
+      "changes": 5
+    },
+    {
+      "slug": "aws-graph-agent-free",
+      "changes": 2
+    },
+    {
+      "slug": "aws-infra",
+      "changes": 1
+    },
+    {
+      "slug": "aws-toolkit",
+      "changes": 1
+    },
+    {
+      "slug": "azure-cli-toolkit",
+      "changes": 4
+    },
+    {
+      "slug": "azure-cloud-architect",
+      "changes": 4
+    },
+    {
+      "slug": "azure-cloud-architect-free",
+      "changes": 1
+    },
+    {
+      "slug": "azure-gateway-cli",
+      "changes": 4
+    },
+    {
+      "slug": "azure-infra",
+      "changes": 5
+    },
+    {
+      "slug": "azure-infra-free",
+      "changes": 6
+    },
+    {
+      "slug": "azure-voicelive",
+      "changes": 3
+    },
+    {
+      "slug": "baidu-netdisk-skills",
+      "changes": 7
+    },
+    {
+      "slug": "baidu-netdisk-skills-free",
+      "changes": 9
+    },
+    {
+      "slug": "beware-piper-tts",
+      "changes": 3
+    },
+    {
+      "slug": "bilibili-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "blog-writer",
+      "changes": 7
+    },
+    {
+      "slug": "blog-writer-free",
+      "changes": 4
+    },
+    {
+      "slug": "bookmark-intelligence",
+      "changes": 4
+    },
+    {
+      "slug": "bookmark-intelligence-free",
+      "changes": 2
+    },
+    {
+      "slug": "calendar-reminder",
+      "changes": 2
+    },
+    {
+      "slug": "calendar-reminder-free",
+      "changes": 3
+    },
+    {
+      "slug": "call-bridge",
+      "changes": 4
+    },
+    {
+      "slug": "can",
+      "changes": 6
+    },
+    {
+      "slug": "can-bus-toolkit",
+      "changes": 4
+    },
+    {
+      "slug": "can-free",
+      "changes": 10
+    },
+    {
+      "slug": "canvas-json-handler",
+      "changes": 3
+    },
+    {
+      "slug": "card-image-builder",
+      "changes": 3
+    },
+    {
+      "slug": "chart-craft",
+      "changes": 3
+    },
+    {
+      "slug": "chart-free",
+      "changes": 7
+    },
+    {
+      "slug": "cheat-code-paid",
+      "changes": 2
+    },
+    {
+      "slug": "chief-creative-officer",
+      "changes": 5
+    },
+    {
+      "slug": "chromecast-control",
+      "changes": 7
+    },
+    {
+      "slug": "chromecast-control-free",
+      "changes": 3
+    },
+    {
+      "slug": "cloud",
+      "changes": 6
+    },
+    {
+      "slug": "cloud-architect",
+      "changes": 7
+    },
+    {
+      "slug": "cloud-architect-design",
+      "changes": 5
+    },
+    {
+      "slug": "cloud-architect-free",
+      "changes": 5
+    },
+    {
+      "slug": "cloud-free",
+      "changes": 8
+    },
+    {
+      "slug": "code-analysis-toolkit",
+      "changes": 4
+    },
+    {
+      "slug": "code-analyze",
+      "changes": 4
+    },
+    {
+      "slug": "code-delegate",
+      "changes": 2
+    },
+    {
+      "slug": "code-dev-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "code-dev-v1",
+      "changes": 3
+    },
+    {
+      "slug": "code-quality-paid",
+      "changes": 1
+    },
+    {
+      "slug": "code-runner",
+      "changes": 2
+    },
+    {
+      "slug": "comfyui-painter",
+      "changes": 14
+    },
+    {
+      "slug": "comfyui-painter-free",
+      "changes": 9
+    },
+    {
+      "slug": "communication-skill",
+      "changes": 4
+    },
+    {
+      "slug": "communication-skill-free",
+      "changes": 1
+    },
+    {
+      "slug": "creative-officer",
+      "changes": 3
+    },
+    {
+      "slug": "creator-alpha-feed",
+      "changes": 5
+    },
+    {
+      "slug": "creator-alpha-feed-free",
+      "changes": 4
+    },
+    {
+      "slug": "cron-setup-guide",
+      "changes": 3
+    },
+    {
+      "slug": "css",
+      "changes": 9
+    },
+    {
+      "slug": "css-free",
+      "changes": 4
+    },
+    {
+      "slug": "csv",
+      "changes": 2
+    },
+    {
+      "slug": "csv-analyzer",
+      "changes": 4
+    },
+    {
+      "slug": "csv-analyzer-free",
+      "changes": 6
+    },
+    {
+      "slug": "csv-free",
+      "changes": 8
+    },
+    {
+      "slug": "csv-handler",
+      "changes": 6
+    },
+    {
+      "slug": "csv-handler-free",
+      "changes": 2
+    },
+    {
+      "slug": "csv-json-converter",
+      "changes": 1
+    },
+    {
+      "slug": "data-analysis-hub",
+      "changes": 3
+    },
+    {
+      "slug": "data-analysis-litiao",
+      "changes": 2
+    },
+    {
+      "slug": "data-analysis-litiao-free",
+      "changes": 2
+    },
+    {
+      "slug": "data-analyst-chinese",
+      "changes": 5
+    },
+    {
+      "slug": "data-analyst-cn",
+      "changes": 5
+    },
+    {
+      "slug": "data-analyst-cn-free",
+      "changes": 4
+    },
+    {
+      "slug": "data-analyst-expert",
+      "changes": 2
+    },
+    {
+      "slug": "data-format-converter-free",
+      "changes": 1
+    },
+    {
+      "slug": "database-admin",
+      "changes": 3
+    },
+    {
+      "slug": "database-admin-free",
+      "changes": 2
+    },
+    {
+      "slug": "db",
+      "changes": 5
+    },
+    {
+      "slug": "db-admin-console",
+      "changes": 8
+    },
+    {
+      "slug": "db-connector",
+      "changes": 2
+    },
+    {
+      "slug": "db-free",
+      "changes": 2
+    },
+    {
+      "slug": "db-schema-designer",
+      "changes": 1
+    },
+    {
+      "slug": "design-toolkit",
+      "changes": 1
+    },
+    {
+      "slug": "diagram-gen",
+      "changes": 1
+    },
+    {
+      "slug": "diagram-generator",
+      "changes": 7
+    },
+    {
+      "slug": "diagram-generator-free",
+      "changes": 4
+    },
+    {
+      "slug": "diagram-tools",
+      "changes": 1
+    },
+    {
+      "slug": "discord",
+      "changes": 6
+    },
+    {
+      "slug": "discord-chat",
+      "changes": 5
+    },
+    {
+      "slug": "discord-chat-free",
+      "changes": 4
+    },
+    {
+      "slug": "discord-communities-free",
+      "changes": 1
+    },
+    {
+      "slug": "discord-free",
+      "changes": 5
+    },
+    {
+      "slug": "discord-master",
+      "changes": 3
+    },
+    {
+      "slug": "discord-voice",
+      "changes": 1
+    },
+    {
+      "slug": "discord-voice-free",
+      "changes": 3
+    },
+    {
+      "slug": "dlazy-audio",
+      "changes": 1
+    },
+    {
+      "slug": "dlazy-audio-generate",
+      "changes": 4
+    },
+    {
+      "slug": "dlazy-gen",
+      "changes": 1
+    },
+    {
+      "slug": "dns-networking-paid",
+      "changes": 4
+    },
+    {
+      "slug": "doc-parse",
+      "changes": 1
+    },
+    {
+      "slug": "docker-essentials",
+      "changes": 4
+    },
+    {
+      "slug": "docker-essentials-free",
+      "changes": 3
+    },
+    {
+      "slug": "docker-essentials-v1",
+      "changes": 4
+    },
+    {
+      "slug": "doubao-image-gen",
+      "changes": 2
+    },
+    {
+      "slug": "elite-longterm-memory",
+      "changes": 9
+    },
+    {
+      "slug": "elite-longterm-memory-free",
+      "changes": 1
+    },
+    {
+      "slug": "email-163",
+      "changes": 2
+    },
+    {
+      "slug": "email-digest",
+      "changes": 4
+    },
+    {
+      "slug": "email-toolkit",
+      "changes": 4
+    },
+    {
+      "slug": "encoding-formats",
+      "changes": 3
+    },
+    {
+      "slug": "encoding-formats-free",
+      "changes": 1
+    },
+    {
+      "slug": "encryption-paid",
+      "changes": 4
+    },
+    {
+      "slug": "explain-code-paid",
+      "changes": 1
+    },
+    {
+      "slug": "feishu-card",
+      "changes": 3
+    },
+    {
+      "slug": "feishu-card-builder",
+      "changes": 3
+    },
+    {
+      "slug": "feishu-card-free",
+      "changes": 2
+    },
+    {
+      "slug": "feishu-file-sender",
+      "changes": 5
+    },
+    {
+      "slug": "figma",
+      "changes": 2
+    },
+    {
+      "slug": "figma-studio",
+      "changes": 3
+    },
+    {
+      "slug": "file",
+      "changes": 3
+    },
+    {
+      "slug": "finance-acct",
+      "changes": 2
+    },
+    {
+      "slug": "finance-radar-paid",
+      "changes": 1
+    },
+    {
+      "slug": "finance-report",
+      "changes": 2
+    },
+    {
+      "slug": "finance-toolkit",
+      "changes": 1
+    },
+    {
+      "slug": "financial-literacy-paid",
+      "changes": 1
+    },
+    {
+      "slug": "format-converter",
+      "changes": 4
+    },
+    {
+      "slug": "free-resource-finder",
+      "changes": 3
+    },
+    {
+      "slug": "frontend-design-3",
+      "changes": 6
+    },
+    {
+      "slug": "frontend-design-3-free",
+      "changes": 3
+    },
+    {
+      "slug": "frontend-design-v3",
+      "changes": 1
+    },
+    {
+      "slug": "game-theory",
+      "changes": 2
+    },
+    {
+      "slug": "game-theory-free",
+      "changes": 2
+    },
+    {
+      "slug": "gateway-manager",
+      "changes": 6
+    },
+    {
+      "slug": "git-cli-paid",
+      "changes": 4
+    },
+    {
+      "slug": "git-helper-paid",
+      "changes": 4
+    },
+    {
+      "slug": "git-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "github-api-toolkit",
+      "changes": 4
+    },
+    {
+      "slug": "github-manager",
+      "changes": 3
+    },
+    {
+      "slug": "go-to-market",
+      "changes": 8
+    },
+    {
+      "slug": "go-to-market-free",
+      "changes": 3
+    },
+    {
+      "slug": "google-fonts",
+      "changes": 5
+    },
+    {
+      "slug": "google-workspace-cli",
+      "changes": 3
+    },
+    {
+      "slug": "google-workspace-toolkit",
+      "changes": 6
+    },
+    {
+      "slug": "grok-image",
+      "changes": 1
+    },
+    {
+      "slug": "health",
+      "changes": 4
+    },
+    {
+      "slug": "html-coder-paid",
+      "changes": 1
+    },
+    {
+      "slug": "html-designer-paid",
+      "changes": 2
+    },
+    {
+      "slug": "hugo-blog-publisher",
+      "changes": 5
+    },
+    {
+      "slug": "hugo-blog-publisher-free",
+      "changes": 3
+    },
+    {
+      "slug": "in-depth-research",
+      "changes": 7
+    },
+    {
+      "slug": "in-depth-research-free",
+      "changes": 4
+    },
+    {
+      "slug": "iris-code-formatter",
+      "changes": 15
+    },
+    {
+      "slug": "jinn-node-free",
+      "changes": 1
+    },
+    {
+      "slug": "jira",
+      "changes": 4
+    },
+    {
+      "slug": "jira-free",
+      "changes": 2
+    },
+    {
+      "slug": "jira-skill",
+      "changes": 4
+    },
+    {
+      "slug": "jira-skill-free",
+      "changes": 8
+    },
+    {
+      "slug": "join-meeting",
+      "changes": 3
+    },
+    {
+      "slug": "join-meeting-free",
+      "changes": 1
+    },
+    {
+      "slug": "json-beautifier",
+      "changes": 2
+    },
+    {
+      "slug": "json-lint",
+      "changes": 3
+    },
+    {
+      "slug": "json-parse-engine",
+      "changes": 2
+    },
+    {
+      "slug": "json-repair",
+      "changes": 3
+    },
+    {
+      "slug": "json-repair-kit",
+      "changes": 3
+    },
+    {
+      "slug": "json-validator",
+      "changes": 3
+    },
+    {
+      "slug": "json-yaml-converter",
+      "changes": 2
+    },
+    {
+      "slug": "juejin-skills",
+      "changes": 1
+    },
+    {
+      "slug": "learn-cog",
+      "changes": 3
+    },
+    {
+      "slug": "learn-cog-free",
+      "changes": 1
+    },
+    {
+      "slug": "lh-video-gen-paid",
+      "changes": 3
+    },
+    {
+      "slug": "linear-api",
+      "changes": 3
+    },
+    {
+      "slug": "linear-api-free",
+      "changes": 3
+    },
+    {
+      "slug": "logo-brand-identity",
+      "changes": 2
+    },
+    {
+      "slug": "logo-design",
+      "changes": 2
+    },
+    {
+      "slug": "logo-design-guide",
+      "changes": 7
+    },
+    {
+      "slug": "logo-design-guide-free",
+      "changes": 4
+    },
+    {
+      "slug": "longmemo-elite",
+      "changes": 1
+    },
+    {
+      "slug": "markdown-converter-paid",
+      "changes": 3
+    },
+    {
+      "slug": "markdown-exporter",
+      "changes": 1
+    },
+    {
+      "slug": "markdown-exporter-free",
+      "changes": 1
+    },
+    {
+      "slug": "markdown-format",
+      "changes": 2
+    },
+    {
+      "slug": "meeting-join",
+      "changes": 3
+    },
+    {
+      "slug": "memo-quickstart",
+      "changes": 2
+    },
+    {
+      "slug": "minimalist-design",
+      "changes": 3
+    },
+    {
+      "slug": "molt-board-art",
+      "changes": 4
+    },
+    {
+      "slug": "molt-board-art-free",
+      "changes": 1
+    },
+    {
+      "slug": "moltbook-filter",
+      "changes": 3
+    },
+    {
+      "slug": "moltbook-filter-free",
+      "changes": 1
+    },
+    {
+      "slug": "mongodb-atlas-admin",
+      "changes": 2
+    },
+    {
+      "slug": "mongodb-atlas-admin-free",
+      "changes": 1
+    },
+    {
+      "slug": "multi-source-research",
+      "changes": 3
+    },
+    {
+      "slug": "music-gen",
+      "changes": 4
+    },
+    {
+      "slug": "music-gen-cellcog",
+      "changes": 4
+    },
+    {
+      "slug": "neural-memory-enhanced",
+      "changes": 3
+    },
+    {
+      "slug": "neural-memory-enhanced-free",
+      "changes": 1
+    },
+    {
+      "slug": "news-aggregator",
+      "changes": 4
+    },
+    {
+      "slug": "news-aggregator-free",
+      "changes": 3
+    },
+    {
+      "slug": "news-daily-digest",
+      "changes": 6
+    },
+    {
+      "slug": "news-sentiment",
+      "changes": 3
+    },
+    {
+      "slug": "note-app-cli",
+      "changes": 3
+    },
+    {
+      "slug": "notion-api-toolkit",
+      "changes": 1
+    },
+    {
+      "slug": "okx-dex-token-paid",
+      "changes": 1
+    },
+    {
+      "slug": "ontology",
+      "changes": 2
+    },
+    {
+      "slug": "ontology-free",
+      "changes": 2
+    },
+    {
+      "slug": "persistent-memory-engine",
+      "changes": 2
+    },
+    {
+      "slug": "persistent-memory-engine-free",
+      "changes": 2
+    },
+    {
+      "slug": "personal-health-manager",
+      "changes": 8
+    },
+    {
+      "slug": "pg-job-queue",
+      "changes": 2
+    },
+    {
+      "slug": "pg-mcp-skills",
+      "changes": 4
+    },
+    {
+      "slug": "photo-caption",
+      "changes": 1
+    },
+    {
+      "slug": "plugin-architecture",
+      "changes": 4
+    },
+    {
+      "slug": "podcast-downloader-paid",
+      "changes": 1
+    },
+    {
+      "slug": "pro-comm-toolkit",
+      "changes": 4
+    },
+    {
+      "slug": "proactive-agent",
+      "changes": 12
+    },
+    {
+      "slug": "proactive-agent-free",
+      "changes": 4
+    },
+    {
+      "slug": "productivity",
+      "changes": 3
+    },
+    {
+      "slug": "productivity-free",
+      "changes": 2
+    },
+    {
+      "slug": "productivity-improving",
+      "changes": 4
+    },
+    {
+      "slug": "py-data-analyzer",
+      "changes": 4
+    },
+    {
+      "slug": "pyx-scan",
+      "changes": 1
+    },
+    {
+      "slug": "pyx-scanner",
+      "changes": 3
+    },
+    {
+      "slug": "qq-zone-photo",
+      "changes": 1
+    },
+    {
+      "slug": "reddit-research-paid",
+      "changes": 4
+    },
+    {
+      "slug": "reminder-engine",
+      "changes": 6
+    },
+    {
+      "slug": "repo-manager",
+      "changes": 2
+    },
+    {
+      "slug": "resume-assistant",
+      "changes": 1
+    },
+    {
+      "slug": "rss-ai-reader",
+      "changes": 3
+    },
+    {
+      "slug": "rss-ai-reader-free",
+      "changes": 3
+    },
+    {
+      "slug": "rss-reader-ai",
+      "changes": 5
+    },
+    {
+      "slug": "rust",
+      "changes": 5
+    },
+    {
+      "slug": "rust-free",
+      "changes": 1
+    },
+    {
+      "slug": "schedule-manager",
+      "changes": 4
+    },
+    {
+      "slug": "security",
+      "changes": 3
+    },
+    {
+      "slug": "security-free",
+      "changes": 1
+    },
+    {
+      "slug": "skill-creator",
+      "changes": 1
+    },
+    {
+      "slug": "skill-creator-free",
+      "changes": 1
+    },
+    {
+      "slug": "skill-vetter",
+      "changes": 3
+    },
+    {
+      "slug": "skill-vetter-free",
+      "changes": 2
+    },
+    {
+      "slug": "slack",
+      "changes": 3
+    },
+    {
+      "slug": "slack-hub",
+      "changes": 2
+    },
+    {
+      "slug": "slack-hub-skill",
+      "changes": 2
+    },
+    {
+      "slug": "slack-hub-skill-free",
+      "changes": 1
+    },
+    {
+      "slug": "slack-toolkit",
+      "changes": 4
+    },
+    {
+      "slug": "slack-workspace",
+      "changes": 5
+    },
+    {
+      "slug": "slack-workspace-free",
+      "changes": 1
+    },
+    {
+      "slug": "slack-workspace-manager",
+      "changes": 4
+    },
+    {
+      "slug": "smart-reminder",
+      "changes": 5
+    },
+    {
+      "slug": "solo-build",
+      "changes": 12
+    },
+    {
+      "slug": "solo-build-free",
+      "changes": 3
+    },
+    {
+      "slug": "solo-dev-companion",
+      "changes": 6
+    },
+    {
+      "slug": "solo-research",
+      "changes": 3
+    },
+    {
+      "slug": "solo-research-free",
+      "changes": 1
+    },
+    {
+      "slug": "sql",
+      "changes": 4
+    },
+    {
+      "slug": "sql-free",
+      "changes": 1
+    },
+    {
+      "slug": "sql-toolkit",
+      "changes": 2
+    },
+    {
+      "slug": "stock-filter",
+      "changes": 1
+    },
+    {
+      "slug": "story-long-write",
+      "changes": 17
+    },
+    {
+      "slug": "story-long-write-free",
+      "changes": 4
+    },
+    {
+      "slug": "tailwindcss-toolkit",
+      "changes": 1
+    },
+    {
+      "slug": "tarot",
+      "changes": 3
+    },
+    {
+      "slug": "tarot-free",
+      "changes": 2
+    },
+    {
+      "slug": "task-bot-orchestrator",
+      "changes": 5
+    },
+    {
+      "slug": "task-planner",
+      "changes": 3
+    },
+    {
+      "slug": "task-queue-manager",
+      "changes": 6
+    },
+    {
+      "slug": "telegram-alert",
+      "changes": 2
+    },
+    {
+      "slug": "telegram-chat",
+      "changes": 3
+    },
+    {
+      "slug": "timeline-digest",
+      "changes": 2
+    },
+    {
+      "slug": "tmux-session",
+      "changes": 6
+    },
+    {
+      "slug": "token-manager",
+      "changes": 5
+    },
+    {
+      "slug": "token-manager-free",
+      "changes": 3
+    },
+    {
+      "slug": "trading",
+      "changes": 1
+    },
+    {
+      "slug": "translate-en-zh",
+      "changes": 1
+    },
+    {
+      "slug": "translate-hub",
+      "changes": 2
+    },
+    {
+      "slug": "travel-assistant",
+      "changes": 2
+    },
+    {
+      "slug": "tts-whatsapp-paid",
+      "changes": 1
+    },
+    {
+      "slug": "typescript-skills",
+      "changes": 4
+    },
+    {
+      "slug": "ui-audit",
+      "changes": 3
+    },
+    {
+      "slug": "ui-audit-free",
+      "changes": 2
+    },
+    {
+      "slug": "ui-design-toolkit",
+      "changes": 1
+    },
+    {
+      "slug": "ui-ux-design",
+      "changes": 7
+    },
+    {
+      "slug": "ui-ux-design-free",
+      "changes": 4
+    },
+    {
+      "slug": "ui-ux-dev-paid",
+      "changes": 5
+    },
+    {
+      "slug": "ui-ux-toolkit",
+      "changes": 2
+    },
+    {
+      "slug": "university-app",
+      "changes": 1
+    },
+    {
+      "slug": "upstage-document-parse",
+      "changes": 1
+    },
+    {
+      "slug": "use-my-browser",
+      "changes": 7
+    },
+    {
+      "slug": "use-my-browser-free",
+      "changes": 4
+    },
+    {
+      "slug": "ux-design",
+      "changes": 5
+    },
+    {
+      "slug": "video-editing",
+      "changes": 5
+    },
+    {
+      "slug": "video-editing-paid",
+      "changes": 5
+    },
+    {
+      "slug": "video-frames-paid",
+      "changes": 3
+    },
+    {
+      "slug": "video-stream-upload",
+      "changes": 5
+    },
+    {
+      "slug": "video-toolkit",
+      "changes": 4
+    },
+    {
+      "slug": "video-translator-paid",
+      "changes": 5
+    },
+    {
+      "slug": "video-upload-stream-tool",
+      "changes": 4
+    },
+    {
+      "slug": "vulnerability-scanner",
+      "changes": 4
+    },
+    {
+      "slug": "web-crawler-engine",
+      "changes": 1
+    },
+    {
+      "slug": "web-notepad",
+      "changes": 1
+    },
+    {
+      "slug": "wechat-article-writer",
+      "changes": 4
+    },
+    {
+      "slug": "whatsapp-image",
+      "changes": 4
+    },
+    {
+      "slug": "whatsapp-msg-manager",
+      "changes": 7
+    },
+    {
+      "slug": "whatsapp-style",
+      "changes": 2
+    },
+    {
+      "slug": "whatsapp-style-guide",
+      "changes": 4
+    },
+    {
+      "slug": "whatsapp-styler",
+      "changes": 6
+    },
+    {
+      "slug": "whatsapp-styler-free",
+      "changes": 3
+    },
+    {
+      "slug": "whatsapp-styling-guide",
+      "changes": 5
+    },
+    {
+      "slug": "whatsapp-styling-guide-free",
+      "changes": 3
+    },
+    {
+      "slug": "whatsapp-ultimate",
+      "changes": 4
+    },
+    {
+      "slug": "whatsapp-ultimate-free",
+      "changes": 3
+    },
+    {
+      "slug": "work",
+      "changes": 5
+    },
+    {
+      "slug": "workflow-orchestrator",
+      "changes": 4
+    },
+    {
+      "slug": "workflow-splitter",
+      "changes": 6
+    },
+    {
+      "slug": "write",
+      "changes": 2
+    },
+    {
+      "slug": "write-a-skill",
+      "changes": 6
+    },
+    {
+      "slug": "write-a-skill-free",
+      "changes": 4
+    },
+    {
+      "slug": "write-free",
+      "changes": 2
+    },
+    {
+      "slug": "ws-agent-browser",
+      "changes": 2
+    },
+    {
+      "slug": "x-timeline-digest",
+      "changes": 3
+    },
+    {
+      "slug": "x-timeline-digest-free",
+      "changes": 3
+    },
+    {
+      "slug": "xml-json-converter",
+      "changes": 2
+    },
+    {
+      "slug": "youtube-watcher-paid",
+      "changes": 5
+    },
+    {
+      "slug": "z-card-image",
+      "changes": 2
+    },
+    {
+      "slug": "z-card-image-free",
+      "changes": 15
+    }
+  ]
+}

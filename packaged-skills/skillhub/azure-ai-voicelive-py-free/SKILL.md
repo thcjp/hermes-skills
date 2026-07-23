@@ -21,6 +21,15 @@ homepage: "https://skillhub.cn"
 ---
 # Azure VoiceLive 实时语音AI (免费版)
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | Azure实时语音AI免费版处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 依赖说明
 
 ### 运行环境
@@ -205,3 +214,25 @@ await conn.input_audio_buffer.append(audio=b64_audio)
 - 用户打断处理与 `transcription_session` 纯转写模式
 
 付费版slug: `azure-ai-voicelive-py`
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "Azure实时语音AI免费版处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "azure-ai-voicelive-py"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

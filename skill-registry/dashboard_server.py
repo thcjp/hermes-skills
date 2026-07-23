@@ -99,6 +99,24 @@ def get_l7_audit_stats():
         return {"available": False, "error": str(e)}
 
 
+def get_l7b_stats():
+    audit_report = Path(REGISTRY_DIR) / "reports" / "l7b_executability_report.json"
+    if not audit_report.exists():
+        return {"available": False}
+    try:
+        import json as _j
+        data = _j.loads(audit_report.read_text(encoding="utf-8"))
+        return {"available": True, "generated_at": data.get("generated_at", ""),
+                "total_skills": data.get("total_skills", 0),
+                "grade_distribution": data.get("grade_distribution", {}),
+                "checks_distribution": data.get("checks_distribution", {}),
+                "pass_rate": data.get("pass_rate", "0%"),
+                "avg_score": data.get("avg_l7b_score", 0),
+                "executable_count": data.get("executable_count", 0)}
+    except Exception as e:
+        return {"available": False, "error": str(e)}
+
+
 def get_pricing_stats():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
@@ -672,6 +690,38 @@ body {
     </div>
   </div>
 
+  <!-- L7b 可执行性审计 -->
+  <div class="card col-6">
+    <div class="card-title">L7b 可执行性审计</div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px;">
+      <div style="text-align:center;min-width:80px;">
+        <div style="font-size:24px;font-weight:700;color:var(--accent)" id="l7b-passrate">--</div>
+        <div style="font-size:11px;color:var(--text-dim)">通过率</div>
+      </div>
+      <div style="text-align:center;min-width:80px;">
+        <div style="font-size:24px;font-weight:700;color:var(--brand)" id="l7b-avg">--</div>
+        <div style="font-size:11px;color:var(--text-dim)">平均分</div>
+      </div>
+      <div style="text-align:center;min-width:80px;">
+        <div style="font-size:24px;font-weight:700;color:var(--info)" id="l7b-exec">--</div>
+        <div style="font-size:11px;color:var(--text-dim)">可执行数</div>
+      </div>
+      <div style="text-align:center;min-width:80px;">
+        <div style="font-size:24px;font-weight:700;color:var(--warn)" id="l7b-total">--</div>
+        <div style="font-size:11px;color:var(--text-dim)">总审计数</div>
+      </div>
+    </div>
+    <div class="bar-chart" id="l7bGradeChart">
+      <div style="color:var(--text-dim);text-align:center;padding:20px;">加载中...</div>
+    </div>
+    <div style="margin-top:12px;">
+      <div style="font-size:12px;color:var(--text-muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px;">检查项分布</div>
+      <ul id="l7bChecksList" style="list-style:none;display:flex;flex-direction:column;gap:6px;">
+        <li style="color:var(--text-dim);text-align:center;padding:12px;">加载中...</li>
+      </ul>
+    </div>
+  </div>
+
   <!-- 定价分布 -->
   <div class="card col-6">
     <div class="card-title">定价分布 (L1-L4)</div>
@@ -870,6 +920,47 @@ async function refreshData() {
       renderBarChart('l7GradeChart', gData, 'accent');
     }
 
+    // L7b可执行性审计结果
+    const l7b = await fetchAPI('/api/l7b-audit');
+    if (l7b.available) {
+      document.getElementById('l7b-passrate').textContent = l7b.pass_rate || '--';
+      document.getElementById('l7b-avg').textContent = (l7b.avg_score || 0).toFixed(1);
+      document.getElementById('l7b-exec').textContent = formatNum(l7b.executable_count || 0);
+      document.getElementById('l7b-total').textContent = formatNum(l7b.total_skills || 0);
+      const bGrades = l7b.grade_distribution || {};
+      const bLabels = {'A': 'A级', 'B': 'B级', 'C': 'C级', 'D': 'D级', 'F': 'F级'};
+      const bData = {};
+      for (const [k, label] of Object.entries(bLabels)) {
+        if (bGrades[k]) bData[label] = bGrades[k];
+      }
+      renderBarChart('l7bGradeChart', bData, 'info');
+      const checks = l7b.checks_distribution || {};
+      const checkLabels = {
+        'L7B_NO_CODE': '无代码',
+        'L7B_BROKEN_REF': '引用断裂',
+        'L7B_VAGUE_TASK': '任务模糊',
+        'L7B_MISSING_INPUT': '缺少输入',
+        'L7B_NO_OUTPUT': '无输出说明',
+        'L7B_CONTRADICTION': '内容矛盾'
+      };
+      const checksList = document.getElementById('l7bChecksList');
+      const checkEntries = Object.entries(checkLabels)
+        .map(([key, label]) => [label, checks[key] || 0])
+        .filter(([, val]) => val > 0)
+        .sort((a, b) => b[1] - a[1]);
+      if (checkEntries.length === 0) {
+        checksList.innerHTML = '<li style="color:var(--text-dim);text-align:center;padding:12px;">无检查项问题</li>';
+      } else {
+        checksList.innerHTML = checkEntries.map(([label, val]) => {
+          const cls = val > 500 ? 'danger' : val > 100 ? 'warn' : 'info';
+          return `<li style="display:flex;align-items:center;justify-content:space-between;padding:6px 10px;background:var(--surface-2);border-radius:6px;font-size:13px;">
+            <span style="color:var(--text);">${label}</span>
+            <span class="tag ${cls}">${formatNum(val)}</span>
+          </li>`;
+        }).join('');
+      }
+    }
+
     // 定价分布
     const pricing = await fetchAPI('/api/pricing');
     if (pricing.available) {
@@ -1004,6 +1095,9 @@ class DashboardHandler(http.server.BaseHTTPRequestHandler):
 
         elif path == '/api/l7-audit':
             self._json(get_l7_audit_stats())
+
+        elif path == '/api/l7b-audit':
+            self._json(get_l7b_stats())
 
         elif path == '/api/pricing':
             self._json(get_pricing_stats())

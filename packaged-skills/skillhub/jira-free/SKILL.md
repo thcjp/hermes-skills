@@ -23,6 +23,15 @@ tags:
 
 Jira问题跟踪与项目管理集成引擎，通过REST API操作Jira实例，覆盖问题管理、Sprint规划与工作流自动化。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | Jira集成引擎(免费版)处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 依赖说明
 
 ### 运行环境
@@ -78,7 +87,7 @@ curl -X PUT "https://your-domain.atlassian.net/rest/api/3/issue/PROJ-123" \
   -d '{"fields": {"summary": "更新后的标题"}}'
 ```
 
-**处理**: 按照skill规范执行问题管理操作,遵循单一意图原则。
+**处理**: 解析问题管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 ### 2. JQL高级查询
 ```bash
 # JQL查询
@@ -94,8 +103,8 @@ curl -X GET "https://your-domain.atlassian.net/rest/api/3/search" \
 - 高优先级缺陷：`issuetype = Bug AND priority in (Highest, High) AND status = Open`
 - 过期问题：`duedate < now() AND statusCategory != Done`
 
-**处理**: 按照skill规范执行JQL高级查询操作,遵循单一意图原则。
-**输出**: 返回JQL高级查询的执行结果,包含操作状态和输出数据。
+**处理**: 解析JQL高级查询的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回JQL高级查询的处理结果,包含执行状态码、结果数据和执行日志。
 
 ### 3. Sprint与看板管理
 ```bash
@@ -117,7 +126,7 @@ curl -X POST "https://your-domain.atlassian.net/rest/agile/1.0/sprint" \
 ```
 
 **输入**: 用户提供Sprint与看板管理所需的指令和必要参数。
-**处理**: 按照skill规范执行Sprint与看板管理操作,遵循单一意图原则。- 验证执行结果,确认输出符合预期格式
+**处理**: 解析Sprint与看板管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `sprint与看板管理` 选项
 
@@ -141,7 +150,7 @@ curl -X POST "https://your-domain.atlassian.net/rest/api/3/issue/PROJ-123/commen
 ```
 
 **输入**: 用户提供工作流与状态流转所需的指令和必要参数。
-**输出**: 返回工作流与状态流转的执行结果,包含操作状态和输出数据。- 验证执行结果,确认输出符合预期格式
+**输出**: 返回工作流与状态流转的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `工作流与状态流转` 选项
 
@@ -207,3 +216,25 @@ Cloud使用`https://your-domain.atlassian.net/rest/api/3/`，认证用邮箱+API
 ## 升级提示
 
 本免费版提供基础功能。升级到完整版 jira 获取全部能力和高级特性。
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "Jira集成引擎(免费版)处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "jira"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

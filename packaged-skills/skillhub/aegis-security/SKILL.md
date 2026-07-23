@@ -24,16 +24,24 @@ pricing_model: "monthly"
 
 面向AI代理的区块链安全API，提供交易前安全扫描能力。免费额度100次/天，超出后通过x402协议按需付费（USDC on Base或Solana）。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | 区块链安全防护处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+| --- | --- | --- |
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 深度漏洞扫描与CVE关联 | 不支持 | 支持 |
+| 安全基线合规审计 | 不支持 | 支持 |
+| 批量资产风险评分 | 不支持 | 支持 |
+| 威胁情报实时订阅与告警 | 不支持 | 支持 |
 
 ## 安全策略
 
@@ -51,7 +59,7 @@ pricing_model: "monthly"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+| --: | --: | --: | --: |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -79,7 +87,7 @@ export API_KEY="your_api_key_here"
 通过 `GET /v1/check-token/:address` 端点检测代币合约是否存在蜜罐行为。传入代币合约地址和 `chain_id`（1=Ethereum, 8453=Base等），返回蜜罐概率百分比、风险评估和具体风险信号（如买入税率过高、卖出暂停等）。适用于购买新代币前的风险评估。
 
 **输入**: 用户提供代币蜜罐检测所需的指令和必要参数。
-**处理**: 按照skill规范执行代币蜜罐检测操作,遵循单一意图原则。
+**处理**: 解析代币蜜罐检测的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 
 ### 4. 免费额度查询
 
@@ -87,8 +95,8 @@ export API_KEY="your_api_key_here"
 
 ### 5. x402付费机制
 
-超出免费额度后，API返回 `402 Payment Required` 状态码并附带x402付费挑战。通过集成 `@x402/fetch` 和 `@x402/evm`（EVM链）或 `@x402/svm`（Solana链）客户端，实现自动支付和请求重试。支持USDC在Base链或Solana上的微额支付。适用于高频安全检查场景。- 验证执行结果，确认输出符合预期格式
-- 参考`x402付费机制`相关配置参数进行设置
+超出免费额度后，API返回 `402 Payment Required` 状态码并附带x402付费挑战。通过集成 `@x402/fetch` 和 `@x402/evm`（EVM链）或 `@x402/svm`（Solana链）客户端，实现自动支付和请求重试。支持USDC在Base链或Solana上的微额支付。适用于高频安全检查场景。- 验证返回数据的完整性和格式正确性
+- 参考`x402付费机制`的配置文档进行参数调优
 ### 6. 风险等级评估
 根据检查结果自动计算综合风险等级。`LOW` 表示次要风险可放行，`MEDIUM` 表示存在部分风险需人工复核，`HIGH` 表示显著风险需阻止并确认，`CRITICAL` 表示恶意或不安全必须阻止。每个响应包含 `isSafe` 布尔值和详细威胁信号列表。适用于自动化交易策略中的风险决策。
 
@@ -97,13 +105,13 @@ export API_KEY="your_api_key_here"
 支持8条区块链的地址和代币检查：Ethereum(chain_id=1)、Base(chain_id=8453)、Polygon(chain_id=137)、Arbitrum(chain_id=42161)、Optimism(chain_id=10)、BSC(chain_id=56)、Avalanche(chain_id=43114)和Solana。`check-address` 和 `check-token` 支持全部链，`simulate-tx` 仅支持EVM链（Solana不支持交易模拟）。
 
 **输入**: 用户提供多链支持所需的指令和必要参数。
-**输出**: 返回多链支持的执行结果,包含操作状态和输出数据。
+**输出**: 返回多链支持的处理结果,包含执行状态码、结果数据和执行日志。
 
 ### 8. 反馈提交
 通过 `POST /v1/feedback` 端点提交问题报告或功能反馈，不消耗免费配额。请求体包含 `kind`（issue/feedback/expectation）、`summary`、`endpoint`、`status_code`、`chain_id` 和 `agent` 对象（含name和version）。支持通过 `failed_request_id` 关联 `_meta.requestId` 进行服务端追踪。适用于问题反馈和服务改进。
 
-**处理**: 按照skill规范执行反馈提交操作,遵循单一意图原则。
-**输出**: 返回反馈提交的执行结果,包含操作状态和输出数据。
+**处理**: 解析反馈提交的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回反馈提交的处理结果,包含执行状态码、结果数据和执行日志。
 
 #
 ## 使用流程
@@ -123,7 +131,7 @@ export API_KEY="your_api_key_here"
 # 查询免费额度
 curl "https://security-api.example.com/v1/usage" \
   -H "X-Client-Fingerprint: agent-default"
-
+# ...
 # 响应
 # {
 #   "freeTier": {
@@ -136,11 +144,11 @@ curl "https://security-api.example.com/v1/usage" \
 #   },
 #   "_meta": { "requestId": "uuid-xxx", "tier": "free", "latencyMs": 4 }
 # }
-
+# ...
 # 检查Base链上的地址安全性
 curl "https://security-api.example.com/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454e4438f44e?chain_id=8453" \
   -H "X-Client-Fingerprint: agent-default"
-
+# ...
 # 响应包含 isSafe、riskLevel、threatSignals 等字段
 ```
 
@@ -157,7 +165,7 @@ curl -X POST "https://security-api.example.com/v1/simulate-tx" \
     "data": "0x38ed1739",
     "chain_id": 1
   }'
-
+# ...
 # 同时检查目标代币是否存在蜜罐风险
 curl "https://security-api.example.com/v1/check-token/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48?chain_id=1" \
   -H "X-Client-Fingerprint: agent-default"
@@ -167,7 +175,7 @@ curl "https://security-api.example.com/v1/check-token/0xA0b86991c6218b36c1d19D4a
 
 
 | 错误场景 | HTTP状态 | 原因 | 处理方式 |
-|---------|---------|------|---------|
+| :-- | :-- | :-- | :-- |
 | 免费额度耗尽 | 402 | 当日100次免费配额已用完 | 配置x402客户端自动付费，或等待UTC次日0点重置 |
 | 地址标记为恶意 | 200 | `isSafe=false`，地址在黑名单中 | 阻止交易，向用户展示威胁信号详情 |
 | 代币蜜罐检测阳性 | 200 | honeypot概率高，存在卖出限制 | 警告用户该代币可能无法卖出，建议不购买 |
@@ -209,3 +217,25 @@ curl "https://security-api.example.com/v1/check-token/0xA0b86991c6218b36c1d19D4a
 - `simulate-tx` 不支持Solana链
 - 免费配额基于尽力而为的防滥用机制，非安全保证
 - 检测结果不构成100%确定的安全保证，关键决策仍需人工复核
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "区块链安全防护处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "aegis-security"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

@@ -138,6 +138,13 @@ pricing_model: "per_use"
 ### 示例1: 电商销售数据探查
 
 **输入**:
+## 输入格式
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | CSV洞察挖掘机处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ```
 文件:sales.csv(电商订单数据)
 列:order_id, customer_id, product, category, quantity, price, order_date, region

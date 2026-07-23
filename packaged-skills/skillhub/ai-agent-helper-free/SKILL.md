@@ -23,6 +23,15 @@ homepage: "https://skillhub.cn"
 
 帮你setup基础AI Agents的技能。提供Prompt工程与ReAct循环设计两大基础能力,快速搭建可用的AI Agent。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | AI Agent LITE处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 依赖说明
 
 ### 运行环境

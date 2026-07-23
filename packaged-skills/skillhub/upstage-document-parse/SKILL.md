@@ -26,6 +26,15 @@ pricing_model: "per_use"
 document-parse 将文档转换为结构化的 HTML/Markdown。识别表格、图片、公式、图表等版面元素，
 并返回边界框坐标（bounding box coordinates）。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | Document Parse处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -95,8 +104,8 @@ export API_KEY="your_api_key_here"
 `coordinates=false` 可省略边界框以减小响应体积。
 
 **输入**: 用户提供增强模式与 OCR 控制所需的指令和必要参数。
-**输出**: 返回增强模式与 OCR 控制的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
-- 参考`增强模式与 OCR 控制`相关配置参数进行设置
+**输出**: 返回增强模式与 OCR 控制的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+- 参考`增强模式与 OCR 控制`的配置文档进行参数调优
 ### 6. 输出文件管理
 默认输出到 `<system-temp>/<input-stem>.parsed.<ext>`，其中 `<ext>` 匹配 `output_formats`
 （`md` 或 `html`）。例如 `/tmp/report.parsed.md`。使用 `tempfile.gettempdir()` 实现跨平台路径。

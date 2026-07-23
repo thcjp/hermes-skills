@@ -27,6 +27,15 @@ pricing_model: "per_use"
 
 通过 WhatsApp Business API 发送消息、管理模板、处理媒体，自动化 WhatsApp Business 消息工作流。本技能通过 ClawLink 托管的连接流程与凭据管理，无需自行配置 WhatsApp API 访问。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | WhatsApp 商业消息处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -399,3 +408,25 @@ WhatsApp 未连接。处理：引导用户访问 `https://claw-link.dev/dashboar
 - 收件人手机号须包含国家代码，否则发送失败
 - 消息一旦发出无法撤回，发送前须确认收件人与内容
 - 依赖 ClawLink 托管鉴权，ClawLink 连接异常时所有工具不可用
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "WhatsApp 商业消息处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "whatsapp-messaging"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

@@ -20,6 +20,15 @@ tags:
 
 带基础版本控制的写作工具，通过edit.sh脚本管理版本，遵循Request→Plan→Draft→Audit→Refine→Deliver流程。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | 版本化写作工具（免费版）处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 依赖说明
 
 ### 运行环境
@@ -54,7 +63,7 @@ Request → Plan → Draft → Audit → Refine → Deliver
 - **Run quality audit before delivering**：交付前运行quality audit
 - **Offer cleanup only after user confirms**：仅在用户确认piece最终后提供cleanup
 
-**输出**: 返回版本化写作工作流的执行结果,包含操作状态和输出数据。
+**输出**: 返回版本化写作工作流的处理结果,包含执行状态码、结果数据和执行日志。
 ### 基础Scripts工具集
 
 提供核心shell脚本：
@@ -76,7 +85,7 @@ Request → Plan → Draft → Audit → Refine → Deliver
 - **auto_audit**: `true`/`false` — drafts后自动运行audits
 
 **输入**: 用户提供配置系统所需的指令和必要参数。
-**输出**: 返回配置系统的执行结果,包含操作状态和输出数据。### 工作空间初始化
+**输出**: 返回配置系统的处理结果,包含执行状态码、结果数据和执行日志。### 工作空间初始化
 首次使用时创建工作空间：
 
 ```bash
@@ -86,7 +95,7 @@ Request → Plan → Draft → Audit → Refine → Deliver
 创建标准项目结构，包含pieces目录、scripts目录、references目录与config.json配置文件。
 
 **输入**: 用户提供工作空间初始化所需的指令和必要参数。
-**处理**: 按照skill规范执行工作空间初始化操作,遵循单一意图原则。
+**处理**: 解析工作空间初始化的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 
 #
 ## 使用流程
@@ -167,3 +176,25 @@ A: `quick`适用于短篇内容，最少研究轮次；`standard`适用于常规
 - 不含深度质量审计能力，audit为基础版
 - 强制依赖Bash/Shell环境执行scripts，Windows需Git Bash或WSL
 - cleanup.sh清除的versions无法自动恢复，需谨慎确认后执行
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "版本化写作工具（免费版）处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "write"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

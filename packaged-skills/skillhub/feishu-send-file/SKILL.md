@@ -28,6 +28,15 @@ pricing_model: "per_use"
 
 本技能封装两条链路的稳定调用方式,并提供针对"本地图片路径被发成路径文本"故障的可靠补救脚本。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | 飞书发文件处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -349,3 +358,25 @@ python3 /root/.skill-platform/workspace/skills/feishu-send-file/（请参考skil
 - 本技能不处理飞书云文档原生创建与权限管理,仅处理文件附件投递
 - 国际版 Lark 与中国版飞书的 OAuth 凭证不互通,需分别申请应用
 - 群聊发送需机器人已入群,不支持向未加入的群聊推送
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "飞书发文件处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "feishu-send-file"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

@@ -47,7 +47,7 @@ homepage: "https://skillhub.cn"
 按关键词、国家、行业、创意类型多维度检索广告创意。`page_size` 上限 10 自动钳制。支持创意搜索（`search`）与计数（`count`）。
 
 **输入**: 用户提供广告创意搜索/计数所需的指令和必要参数。
-**输出**: 返回广告创意搜索/计数的执行结果,包含操作状态和输出数据。
+**输出**: 返回广告创意搜索/计数的处理结果,包含执行状态码、结果数据和执行日志。
 
 ### 2. 应用与开发者画像
 统一产品搜索（`unified-product-search`）、应用详情（`app-detail`）、开发者详情（`developer-detail`）。
@@ -58,14 +58,14 @@ homepage: "https://skillhub.cn"
 
 ### 高频行业码（trade_level1）
 | 自然语言 | 代码 | 自然语言 | 代码 |
-|----------|------|----------|------|
+| --- | --- | --- | --- |
 | 游戏 | 602 | 金融 | 607 |
 | 电商 | 601 | 工具 | 603 |
 | 社交 | 604 | 娱乐 | 609 |
 
 ### 高频国家码
-| 自然语言 | 代码 | 自然语言 | 代码 |
-|----------|------|----------|------|
+| 高频国家 | 代码 | 自然语言 | 代码 |
+| --: | --: | --: | --: |
 | 美国 | US | 日本 | JP |
 | 韩国 | KR | 德国 | DE |
 | 视频(创意类型) | 010 | - | - |
@@ -75,7 +75,7 @@ homepage: "https://skillhub.cn"
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |
-|------|---------|---------|---------|
+| :-- | :-- | :-- | :-- |
 | 竞品创意搜索 | "搜索美国地区游戏类视频广告创意" | 创意列表（ID、URL、首次出现时间） | 创意搜索 |
 | 应用信息查询 | "查询某应用的详细信息" | 应用名称、开发者、分类等详情 | 应用画像 |
 | 创意数量统计 | "统计某行业近7天的创意数量" | 创意总数 | 创意计数 |
@@ -141,7 +141,7 @@ curl -s -X POST "https://api.admapix.com/api/data/search" \
 curl -s -X POST "https://api.admapix.com/api/data/unified-product-search" \
   -H "X-API-Key: ${ADMAPIX_API_KEY}" -H "Content-Type: application/json" \
   -d '{"keyword":"应用名称","page":1,"page_size":10}'
-
+# ...
 # 再查应用详情
 curl -s "https://api.admapix.com/api/data/app-detail?unifiedProductId=xxx" \
   -H "X-API-Key: ${ADMAPIX_API_KEY}"
@@ -162,7 +162,7 @@ curl -s "https://api.admapix.com/api/data/app-detail?unifiedProductId=xxx" \
 
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
-|---------|---------|---------|---------|
+| :-: | :-: | :-: | :-: |
 | 401 INVALID_API_KEY | `{"code":"INVALID_API_KEY"}` | Key 缺失/格式错/已禁用 | 检查网络连接和配置后重试，引导用户检查 Key；永不打印 Key |
 | 403 FORBIDDEN | `{"code":"FORBIDDEN"}` | 权限不足或套餐限制 | 检查网络连接和配置后重试，提示用户升级 AdMapix 套餐 |
 | 429 RATE_LIMITED | `{"code":"RATE_LIMITED"}` | 触发限流 | 等待 1 秒后检查网络连接和配置后重试，最多 3 次 |

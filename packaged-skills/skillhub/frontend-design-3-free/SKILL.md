@@ -22,6 +22,15 @@ tags:
 frontend-design-3-free 创建独特的生产级前端界面，避免通用"AI slop"美学。
 基础版支持 3 种美学方向和 CSS-only 动画方案。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | Frontend Design Free处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 依赖说明
 
 ### 运行环境
@@ -49,33 +58,33 @@ export API_KEY="your_api_key_here"
 ### 1. 设计思维与美学方向选择
 在编码前理解上下文并承诺一个美学方向。分析四个维度：Purpose、Tone、Constraints、Differentiation。
 基础版支持 3 种美学方向：brutally minimal（极简）、editorial/magazine（编辑杂志）、
-brutalist/raw（粗野主义）。选择一种并极致执行，不要混合多种方向。- 验证执行结果，确认输出符合预期格式
-- 参考`设计思维与美学方向选择`相关配置参数进行设置
+brutalist/raw（粗野主义）。选择一种并极致执行，不要混合多种方向。- 验证返回数据的完整性和格式正确性
+- 参考`设计思维与美学方向选择`的配置文档进行参数调优
 ### 2. 字体策略（Display + Body 配对）
 选择独特的字体，避免通用字体（Arial、Inter、Roboto、system fonts）。将 display 字体与
 body 字体配对。基础版支持字体配对建议，但不包含跨美学方向的完整字体匹配策略。
 禁止使用 Space Grotesk 等 AI 常见选择。
 
 **输入**: 用户提供字体策略（Display + Body 配对）所需的指令和必要参数。
-**输出**: 返回字体策略（Display + Body 配对）的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
-- 参考`字体策略（Display + Body 配对）`相关配置参数进行设置
+**输出**: 返回字体策略（Display + Body 配对）的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+- 参考`字体策略（Display + Body 配对）`的配置文档进行参数调优
 ### 3. 色彩与主题系统
 使用 CSS variables 建立色彩系统。主色配以锐利强调色优于均匀分布的调色板。
 支持 light/dark 主题切换。基础版支持单色+一个强调色的配色策略，不包含高饱和度撞色、
 霓虹色+暗色背景等高级配色方案。
 
 **输入**: 用户提供色彩与主题系统所需的指令和必要参数。
-**处理**: 按照skill规范执行色彩与主题系统操作,遵循单一意图原则。
-**输出**: 返回色彩与主题系统的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
-- 参考`色彩与主题系统`相关配置参数进行设置
+**处理**: 解析色彩与主题系统的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回色彩与主题系统的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+- 参考`色彩与主题系统`的配置文档进行参数调优
 ### 4. CSS-only 动效
 使用 CSS-only 方案实现动画（`@keyframes`、`transition`、`transform`）。聚焦高影响力时刻：
 一次精心编排的页面加载配合 staggered reveals 比散落的微交互更有感染力。基础版不包含
 Motion 库（React）集成。
 
 **输入**: 用户提供CSS-only 动效所需的指令和必要参数。
-**处理**: 按照skill规范执行CSS-only 动效操作,遵循单一意图原则。
-**输出**: 返回CSS-only 动效的执行结果,包含操作状态和输出数据。
+**处理**: 解析CSS-only 动效的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回CSS-only 动效的处理结果,包含执行状态码、结果数据和执行日志。
 
 #
 ## 使用流程
@@ -187,3 +196,25 @@ Motion 库集成、8 种背景视觉细节和反模式完整规避策略。
 - 不包含 gradient meshes、noise textures、grain overlays 等背景视觉细节
 - 不包含 custom cursors、decorative borders 等高级视觉技巧
 - 不包含完整反模式规避清单（仅基础检查）
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "Frontend Design Free处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "frontend-design-3"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

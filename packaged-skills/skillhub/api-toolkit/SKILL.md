@@ -30,11 +30,10 @@ pricing_model: "per_use"
 | 能力 | 免费版 | 付费版 |
 |:-----|:-------|:-------|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
+| 可视化图表自动生成 | 不支持 | 支持 |
+| 定时数据同步与增量更新 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -75,13 +74,13 @@ assert:
 
 ```bash
 api-toolkit mock start --spec ./openapi.yaml --scenario edge-case
-
+# ...
 api-toolkit mock record --target https://api.example.com --port 8080
-
+# ...
 api-toolkit mock replay --recording ./recordings/2026-07.json
 ```
 
-**处理**: 按照skill规范执行功能2：本地Mock服务器操作,遵循单一意图原则。
+**处理**: 解析功能2：本地Mock服务器的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 ### 功能3：性能压测
 **解决痛点**：上线前才知道接口扛不住，或压测工具太重不会用。
 
@@ -100,13 +99,13 @@ Load Test Report - 2026-07-18
 ================================
 Target: https://api.example.com/v1/users
 Duration: 300s | Total Requests: 150,000
-
+# ...
 Concurrency | QPS  | P95(ms) | P99(ms) | Error%
 10          | 95   | 85      | 120     | 0.0%
 50          | 420  | 180     | 320     | 0.1%
 100         | 780  | 450     | 820     | 1.2%  ← 拐点
 200         | 920  | 1800    | 3500    | 8.5%  ← 降级触发
-
+# ...
 Bottleneck: P95在并发100时突破500ms阈值
 Suggestion: 检查DB连接池配置，建议限流阈值设为800 QPS
 ```
@@ -127,7 +126,7 @@ api-toolkit contract-check \
   --endpoint /v1/users \
   --method GET \
   --response ./sample-response.json
-
+# ...
 api-toolkit contract-check --spec ./openapi.yaml --ci-mode
 ```
 
@@ -135,7 +134,7 @@ api-toolkit contract-check --spec ./openapi.yaml --ci-mode
 
 > 详细代码示例已移至 `references/detail.md`
 
-**处理**: 按照skill规范执行功能4：OpenAPI契约校验操作,遵循单一意图原则。
+**处理**: 解析功能4：OpenAPI契约校验的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 ### 错误恢复步骤
 **解决痛点**：第三方API的业务错误码散落在文档各处，排查时翻半天。
 
@@ -143,7 +142,7 @@ api-toolkit contract-check --spec ./openapi.yaml --ci-mode
 
 ```bash
 api-toolkit error-dict --service stripe --search "card_declined"
-
+# ...
 Stripe Error: card_declined
 HTTP Status: 402
 Meaning: 顾客的银行卡被拒
@@ -152,7 +151,7 @@ Recovery: 提示用户更换支付方式，或使用Idempotency-Key
 Doc: 搜索 "Stripe card_declined codes"
 ```
 
-**输出**: 返回错误处理的执行结果,包含操作状态和输出数据。- 验证执行结果,确认输出符合预期格式
+**输出**: 返回错误处理的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `错误处理` 选项
 
@@ -166,7 +165,7 @@ Doc: 搜索 "Stripe card_declined codes"
 - 权限管理：读/写/管理员三角色
 - Webhook：测试失败自动通知Slack/钉钉/飞书
 
-- 参考`功能6：团队协作空间`相关配置参数进行设置
+- 参考`功能6：团队协作空间`的配置文档进行参数调优
 #
 ## 适用场景
 
@@ -260,7 +259,7 @@ api-toolkit load-test \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+| --- | --- | --- | --- |
 | content | string | 否 | api-toolkit处理的内容输入 |,  |
 | content | string | 否 | api-toolkit处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -289,12 +288,10 @@ api-toolkit load-test \
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 输入content为空 | 用户未提供必要信息 | 提示用户提供content, 并给出示例格式 |
-| 输入内容过长(>5000字) | 超出单次处理能力 | 建议分段处理, 每段不超过2000字 |
-| 风格参数不识别 | 传入不支持的风格 | 列出支持的风格选项, 使用默认风格 |
-| 生成内容不达标 | 质量校验未通过 | 自动1次, 仍不达标则标注问题返回 |
-| 其他异常 | 内部处理异常 | 检查输入后 |
+| --: | --: | --: |
+| 数据源读取失败 | 文件损坏或数据库连接中断 | 校验文件完整性,检查数据库连接参数,尝试备份数据源 |
+| 数据处理内存溢出 | 数据集过大超出内存限制 | 启用流式处理模式,分批加载数据,或增加可用内存 |
+| 查询结果为空 | 过滤条件过严或数据源无匹配记录 | 放宽查询条件,检查数据源时间范围,提示用户调整参数 |
 
 ## 依赖说明
 
@@ -306,7 +303,7 @@ api-toolkit load-test \
 
 ### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+| :-- | :-- | :-- | :-- |
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（专业版路由GPT-4o） |
 | Node.js 18+ | 运行时 | 必需 | 从nodejs.org安装 |
 | curl | 工具 | 推荐 | 系统自带或从curl.se安装 |
@@ -327,8 +324,6 @@ api-toolkit load-test \
 ## 案例展示
 
 ### 与CI/CD集成
-
-> 详细代码示例已移至 `references/detail.md`
 
 ### 与开发工具集成
 ```json

@@ -33,11 +33,11 @@ pricing_model: "monthly"
 | 能力 | 免费版 | 付费版 |
 |:-----|:-------|:-------|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| Azure语音交互专业版高级会话与中断处理 | 不支持 | 支持 |
+| 高级参数配置与自定义 | 不支持 | 支持 |
+| 批量处理与自动化 | 不支持 | 支持 |
+| 结果导出与格式转换 | 不支持 | 支持 |
+| 实时监控与告警通知 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -46,7 +46,7 @@ pricing_model: "monthly"
 ```python
 import json
 from azure.ai.voicelive.models import FunctionTool
-
+# ...
 async def voice_assistant_with_tools():
     async with connect(
         endpoint=os.environ["AZURE_COGNITIVE_SERVICES_ENDPOINT"],
@@ -93,7 +93,7 @@ async def voice_assistant_with_tools():
                 )
             ]
         ))
-
+# ...
         # 事件处理（含函数调用）
         async for event in conn:
             match event.type:
@@ -106,17 +106,17 @@ async def voice_assistant_with_tools():
                         "output": json.dumps(result)
                     })
                     await conn.response.create()  # 触发后续响应
-
+# ...
                 case "response.audio_transcript.delta":
                     print(event.delta, end="", flush=True)
-
+# ...
                 case "response.audio.delta":
                     audio = base64.b64decode(event.delta)
                     await play_audio(audio)
-
+# ...
                 case "response.done":
                     break
-
+# ...
 async def handle_function(name, arguments):
     """处理AI请求的函数调用"""
     args = json.loads(arguments)
@@ -125,10 +125,10 @@ async def handle_function(name, arguments):
     elif name == "get_weather":
         return {"location": args["location"], "temp": "25℃", "condition": "晴"}
     return {"error": "未知函数"}
-```- 验证执行结果，确认输出符合预期格式
-- 参考`中断处理与手动轮次`相关配置参数进行设置- 验证执行结果，确认输出符合预期格式
-- 参考`电话音频格式支持`相关配置参数进行设置- 验证执行结果，确认输出符合预期格式
-- 参考`函数调用（Function Tools）`相关配置参数进行设置
+```- 验证返回数据的完整性和格式正确性
+- 参考`中断处理与手动轮次`的配置文档进行参数调优- 验证返回数据的完整性和格式正确性
+- 参考`电话音频格式支持`的配置文档进行参数调优- 验证返回数据的完整性和格式正确性
+- 参考`函数调用（Function Tools）`的配置文档进行参数调优
 ### 2. 电话音频格式支持
 
 ```python
@@ -157,7 +157,7 @@ async def telephony_voice_bot():
 - 关键参数: `电话音频格式支持` 选项
 - 处理流程: 接收输入 -> 执行电话音频格式支持 -> 返回结果
 - 输入: 用户提供电话音频格式支持所需的参数和指令
-- 输出: 返回电话音频格式支持的执行结果,包含操作状态和输出数据
+- 输出: 返回电话音频格式支持的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 3. 中断处理与手动轮次
 
@@ -171,24 +171,24 @@ async def interruptible_assistant():
             "voice": "alloy",
             "turn_detection": {"type": "server_vad", "threshold": 0.5}
         })
-
+# ...
         async for event in conn:
             if event.type == "input_audio_buffer.speech_started":
                 # 用户开始说话 → 取消当前AI响应
                 await conn.response.cancel()
                 await conn.output_audio_buffer.clear()
                 print("[用户打断，已停止当前回复]")
-
+# ...
             elif event.type == "response.audio.delta":
                 audio = base64.b64decode(event.delta)
                 await play_audio(audio)
-
+# ...
 # 手动轮次模式（无VAD）
 async def manual_turn_mode():
     async with connect(...) as conn:
         # 关闭自动VAD
         await conn.session.update(session={"turn_detection": None})
-
+# ...
         # 手动发送音频并提交
         audio_chunk = await read_audio_from_microphone()
         b64_audio = base64.b64encode(audio_chunk).decode()
@@ -200,12 +200,12 @@ async def manual_turn_mode():
 - 关键参数: `中断处理与手动轮次` 选项
 - 处理流程: 接收输入 -> 执行中断处理与手动轮次 -> 返回结果
 - 输入: 用户提供中断处理与手动轮次所需的参数和指令
-- 输出: 返回中断处理与手动轮次的执行结果,包含操作状态和输出数据
+- 输出: 返回中断处理与手动轮次的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 4. 自定义语音集成
 ```python
 from azure.ai.voicelive.models import AzureStandardVoice, AzureCustomVoice
-
+# ...
 # 使用Azure标准语音
 await conn.session.update(session={
     "voice": AzureStandardVoice(
@@ -213,7 +213,7 @@ await conn.session.update(session={
         voice_type="AzureStandardVoice"
     )
 })
-
+# ...
 # 使用自定义语音（品牌专属语音）
 await conn.session.update(session={
     "voice": AzureCustomVoice(
@@ -225,8 +225,8 @@ await conn.session.update(session={
 ```
 
 **输入**: 用户提供自定义语音集成所需的指令和必要参数。
-**处理**: 按照skill规范执行自定义语音集成操作,遵循单一意图原则。
-**输出**: 返回自定义语音集成的执行结果,包含操作状态和输出数据。- 验证执行结果,确认输出符合预期格式
+**处理**: 解析自定义语音集成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回自定义语音集成的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `自定义语音集成` 选项
 
@@ -271,7 +271,7 @@ async def enterprise_customer_service():
                     parameters={"type": "object", "properties": {}})
             ]
         ))
-
+# ...
         async for event in conn:
             if event.type == "response.function_call_arguments.done":
                 result = await handle_service_function(event.name, event.arguments)
@@ -312,14 +312,14 @@ async def telephony_bot():
                 "silence_duration_ms": 700  # 电话场景适当延长静默时间
             }
         })
-
+# ...
         # 对话历史管理
         await conn.conversation.item.create(item={
             "type": "message",
             "role": "system",
             "content": [{"type": "input_text", "text": "当前来电号码: 138详情见说明x1234"}]
         })
-
+# ...
         # ... 事件处理
 ```
 
@@ -374,7 +374,7 @@ import asyncio, os, json, base64
 from azure.ai.voicelive.aio import connect
 from azure.ai.voicelive.models import RequestSession, FunctionTool
 from azure.identity.aio import DefaultAzureCredential
-
+# ...
 async def main():
     async with connect(
         endpoint=os.environ["AZURE_COGNITIVE_SERVICES_ENDPOINT"],
@@ -401,7 +401,7 @@ async def main():
                     await conn.response.create()
             elif event.type == "response.done":
                 break
-
+# ...
 asyncio.run(main())
 ```
 
@@ -409,7 +409,7 @@ asyncio.run(main())
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+| --- | --- | --- | --- |
 | content | string | 否 | azure-voicelive处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -458,7 +458,7 @@ asyncio.run(main())
 
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| --: | --: | --: |
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -474,7 +474,7 @@ asyncio.run(main())
 ### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+| :-- | :-- | :-- | :-- |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python 3 | 运行时 | 必需 | python.org 下载安装 |
 | azure-ai-voicelive | Python SDK | 必需 | `pip install azure-ai-voicelive` |
@@ -505,7 +505,7 @@ export API_KEY="your_api_key_here"
 ### 音频格式对比
 
 | 格式 | 采样率 | 适用场景 |
-| --- | --- | --- |
+| :-: | :-: | :-: |
 | `pcm16` | 24kHz | 默认，高质量 |
 | `pcm16-8000hz` | 8kHz | 电话 |
 | `pcm16-16000hz` | 16kHz | 语音助手 |
@@ -515,7 +515,7 @@ export API_KEY="your_api_key_here"
 ### VAD选项对比
 
 | VAD类型 | 说明 | 适用场景 |
-| --- | --- | --- |
+| --- | --: | :-- |
 | `server_vad` | 基于阈值的服务器端检测 | 通用场景 |
 | `azure_semantic_vad` | 语义级端点检测 | 高精度场景 |
 | `azure_semantic_vad_multilingual` | 多语言语义检测 | 多语言应用 |
@@ -523,7 +523,7 @@ export API_KEY="your_api_key_here"
 ### 语音类型对比
 
 | 类型 | 说明 | 适用场景 |
-| --- | --- | --- |
+| --: | :-- | :-: |
 | 内置语音 | alloy/echo/shimmer等 | 通用 |
 | AzureStandardVoice | Azure神经语音 | 生产环境 |
 | AzureCustomVoice | 自定义训练语音 | 品牌专属 |
@@ -532,8 +532,8 @@ export API_KEY="your_api_key_here"
 ## 错误处理
 
 
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景2 | 原因 | 处理方式 |
+| :-- | :-: | --- |
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

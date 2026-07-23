@@ -26,6 +26,15 @@ pricing_model: "per_use"
 
 带强制版本控制与质量审计的写作工作流，通过edit.sh脚本管理版本，遵循Request→Plan→Draft→Audit→Refine→Deliver流程。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | 版本化写作工具处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -73,7 +82,7 @@ Request → Plan → Draft → Audit → Refine → Deliver
 - **Run quality audit before delivering**：交付前运行quality audit（参见audit.md）
 - **Offer cleanup only after user confirms**：仅在用户确认piece最终后提供cleanup
 
-**输出**: 返回版本化写作工作流的执行结果,包含操作状态和输出数据。
+**输出**: 返回版本化写作工作流的处理结果,包含执行状态码、结果数据和执行日志。
 ### 强制Scripts工具集
 
 提供七个强制使用的shell脚本：
@@ -100,7 +109,7 @@ Request → Plan → Draft → Audit → Refine → Deliver
 - **auto_audit**: `true`/`false` — drafts后自动运行audits
 
 **输入**: 用户提供配置系统所需的指令和必要参数。
-**输出**: 返回配置系统的执行结果,包含操作状态和输出数据。### 参考文档库
+**输出**: 返回配置系统的处理结果,包含执行状态码、结果数据和执行日志。### 参考文档库
 
 集成八份参考文档，按需加载支撑写作各阶段：
 
@@ -125,7 +134,7 @@ Request → Plan → Draft → Audit → Refine → Deliver
 创建标准项目结构，包含pieces目录（存放各写作piece及其versions）、scripts目录、references目录与config.json配置文件。
 
 **输入**: 用户提供工作空间初始化所需的指令和必要参数。
-**处理**: 按照skill规范执行工作空间初始化操作,遵循单一意图原则。### 质量审计与版本管理
+**处理**: 解析工作空间初始化的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 质量审计与版本管理
 
 - **Quality Audit**：通过`（请参考skill目录中的脚本文件）`运行，依据audit.md中的dimensions生成审计报告
 - **Version管理**：每次通过edit.sh编辑自动创建version备份，通过`（请参考skill目录中的脚本文件）`查看所有versions，通过`（请参考skill目录中的脚本文件）`恢复任意version
@@ -246,3 +255,25 @@ A: cleanup.sh仅在用户确认piece最终（final）后使用，清除旧versio
 - edit.sh强制版本控制意味着所有编辑必须通过脚本，不支持直接文件操作
 - cleanup.sh清除的versions无法自动恢复，需谨慎确认后执行
 - config.json配置变更不影响已创建pieces的已有versions
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "版本化写作工具处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "write"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

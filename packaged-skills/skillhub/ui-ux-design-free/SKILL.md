@@ -20,6 +20,15 @@ tags:
 
 涵盖基础设计原则、配色与排版系统的UI/UX指南。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | UI/UX设计指南免费版处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 依赖说明
 
 ### 运行环境
@@ -53,8 +62,8 @@ export API_KEY="your_api_key_here"
 - **Whitespace**：间距使用8px倍数（8, 16, 24, 32, 48, 64）
 
 **输入**: 用户提供核心设计原则（Core Design Principles）所需的指令和必要参数。
-**处理**: 按照skill规范执行核心设计原则（Core Design Principles）操作,遵循单一意图原则。
-**输出**: 返回核心设计原则（Core Design Principles）的执行结果,包含操作状态和输出数据。### 配色系统（Color System）
+**处理**: 解析核心设计原则（Core Design Principles）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回核心设计原则（Core Design Principles）的处理结果,包含执行状态码、结果数据和执行日志。### 配色系统（Color System）
 基础配色方案构建：
 
 - **Primary**：品牌色（CTA、链接、激活状态）
@@ -62,8 +71,8 @@ export API_KEY="your_api_key_here"
 - **Semantic**：Success（绿）、Error（红）、Warning（黄）
 
 **输入**: 用户提供配色系统（Color System）所需的指令和必要参数。
-**处理**: 按照skill规范执行配色系统（Color System）操作,遵循单一意图原则。
-**输出**: 返回配色系统（Color System）的执行结果,包含操作状态和输出数据。### 排版系统（Typography Scale）
+**处理**: 解析配色系统（Color System）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回配色系统（Color System）的处理结果,包含执行状态码、结果数据和执行日志。### 排版系统（Typography Scale）
 基于8px基线的排版尺度：
 
 ```text
@@ -77,8 +86,8 @@ text-3xl:  30px / 36px (section headers)
 字体配对：最多2种字体（UI用无衬线，标题可选衬线）
 
 **输入**: 用户提供排版系统（Typography Scale）所需的指令和必要参数。
-**处理**: 按照skill规范执行排版系统（Typography Scale）操作,遵循单一意图原则。
-**输出**: 返回排版系统（Typography Scale）的执行结果,包含操作状态和输出数据。### 基础无障碍（Accessibility）
+**处理**: 解析排版系统（Typography Scale）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回排版系统（Typography Scale）的处理结果,包含执行状态码、结果数据和执行日志。### 基础无障碍（Accessibility）
 WCAG基础要求：
 
 - 文本对比度：最低4.5:1（正常文本），3:1（大文本）
@@ -86,24 +95,24 @@ WCAG基础要求：
 - 键盘导航：Tab顺序合理，焦点状态可见
 
 **输入**: 用户提供基础无障碍（Accessibility）所需的指令和必要参数。
-**处理**: 按照skill规范执行基础无障碍（Accessibility）操作,遵循单一意图原则。
-**输出**: 返回基础无障碍（Accessibility）的执行结果,包含操作状态和输出数据。
+**处理**: 解析基础无障碍（Accessibility）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回基础无障碍（Accessibility）的处理结果,包含执行状态码、结果数据和执行日志。
 ### Mobile-First
 
-执行Mobile-First,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
+针对Mobile-First,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
 
 **输入**: 用户提供Mobile-First相关的配置参数、输入数据和处理选项。
 
-**输出**: 返回Mobile-First的处理结果。- 验证执行结果，确认输出符合预期格式
-- 参考`Mobile-First`相关配置参数进行设置
+**输出**: 返回Mobile-First的处理结果。- 验证返回数据的完整性和格式正确性
+- 参考`Mobile-First`的配置文档进行参数调优
 ### Visual Hierarchy
 
-执行Visual Hierarchy,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
+针对Visual Hierarchy,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
 
 **输入**: 用户提供Visual Hierarchy相关的配置参数、输入数据和处理选项。
 
-**输出**: 返回Visual Hierarchy的处理结果。- 验证执行结果，确认输出符合预期格式
-- 参考`Visual Hierarchy`相关配置参数进行设置
+**输出**: 返回Visual Hierarchy的处理结果。- 验证返回数据的完整性和格式正确性
+- 参考`Visual Hierarchy`的配置文档进行参数调优
 #
 ## 使用流程
 
@@ -155,3 +164,25 @@ A: 从最小屏幕（320px）开始设计单列布局，使用断点逐步扩展
 - 不包含微交互设计指导
 - 不包含UI设计五法则详解
 - 不包含构建前检查清单
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "UI/UX设计指南免费版处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "ui-ux-design"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

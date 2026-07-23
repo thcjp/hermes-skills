@@ -27,16 +27,25 @@ pricing_model: "monthly"
 
 通过AWS CLI执行只读基础设施查询,覆盖五大运维场景。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | AWS Infra Inspector处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+| --- | --- | --- |
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| AWS Infra Inspector执行只读基础设施查询 | 不支持 | 支持 |
+| AWS Infra Inspector成本分析 | 不支持 | 支持 |
+| 深度漏洞扫描与CVE关联 | 不支持 | 支持 |
+| 安全基线合规审计 | 不支持 | 支持 |
+| 批量资产风险评分 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -46,7 +55,7 @@ pricing_model: "monthly"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+| --: | --: | --: | --: |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -105,8 +114,8 @@ export API_KEY="your_api_key_here"
   `aws ce get-cost-forecast --time-period Start=2024-01-15,End=2024-02-15 --granularity MONTHLY --metric BLENDED_COST`
 
 **输入**: 用户提供成本分析 (Costs)所需的指令和必要参数。
-**处理**: 按照skill规范执行成本分析 (Costs)操作,遵循单一意图原则。
-**输出**: 返回成本分析 (Costs)的执行结果,包含操作状态和输出数据。
+**处理**: 解析成本分析 (Costs)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回成本分析 (Costs)的处理结果,包含执行状态码、结果数据和执行日志。
 
 ### 5. 变更追踪 (Changes)
 - **CloudTrail事件查询**: 查询特定的API调用事件(如谁启动了实例)
@@ -120,7 +129,7 @@ export API_KEY="your_api_key_here"
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |
-|------|---------|---------|---------|
+| :-- | :-- | :-- | :-- |
 | 日常运维巡检 | "检查所有EC2实例状态" | 实例ID、状态、状态检查结果的表格 | 健康检查 |
 | 资源盘点 | "列出我们账户下的所有S3存储桶" | 存储桶名称、创建时间、区域列表 | 资源清单 |
 | 安全合规审计 | "检查是否有安全组开放了0.0.0.0/0" | 安全组名称、规则、风险等级报告 | 安全审计 |
@@ -142,10 +151,10 @@ aws sts get-caller-identity
 ```bash
 # 查看当前默认区域
 aws configure get region
-
+# ...
 # 查询所有可用区域
 aws ec2 describe-regions --query 'Regions[].RegionName' --output text
-
+# ...
 # 如需切换区域
 aws configure set region us-west-2
 ```
@@ -162,10 +171,10 @@ aws configure set region us-west-2
 ```bash
 # 表格格式 (适合人类阅读)
 --output table
-
+# ...
 # JSON格式 (适合程序处理)
 --output json
-
+# ...
 # 文本格式 (适合脚本提取)
 --output text
 ```
@@ -258,7 +267,7 @@ aws ce get-cost-and-usage \
 ## 异常处理
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
-|---------|---------|---------|---------|
+| :-: | :-: | :-: | :-: |
 | 凭证未配置 | `Unable to locate credentials` | 未运行`aws configure`或环境变量未设置 | 运行`aws configure`配置Access Key和Secret Key |
 | 凭证过期 | `The security token included in the request is expired` | 使用了临时凭证(STS)且已过期 | 运行`aws sts get-session-token`获取新凭证,或使用长期凭证 |
 | 权限不足 | `User: arn:aws:iam::xxx is not authorized to perform: ec2:DescribeInstances` | IAM用户缺少对应API的调用权限 | 在IAM控制台为用户附加对应服务的ReadOnlyAccess策略 |
@@ -278,7 +287,7 @@ for region in us-east-1 us-west-2 eu-west-1 ap-northeast-1; do
   echo "=== $region ==="
   aws ec2 describe-instances --region $region --query 'Reservations[].Instances[].InstanceId' --output text
 done
-
+# ...
 # 方式2: 使用AWS Config聚合查询 (需要预先配置)
 aws configservice select-aggregate-resource-config \
   --expression "SELECT resourceId WHERE resourceType = 'AWS::EC2::Instance'" \
@@ -290,11 +299,11 @@ A: 通过`--profile`参数或`AWS_PROFILE`环境变量切换:
 ```bash
 # 方式1: 命令行指定
 aws ec2 describe-instances --profile production
-
+# ...
 # 方式2: 环境变量
 export AWS_PROFILE=production
 aws ec2 describe-instances
-
+# ...
 # 配置多个Profile (在~/.aws/credentials中)
 # [production]
 # aws_access_key_id = AKIAXXXXXXXX
@@ -309,12 +318,12 @@ A: 需要先获取临时凭证:
 ```bash
 # 获取MFA临时凭证 (有效期12小时)
 aws sts get-session-token --serial-number arn:aws:iam::123456789012:mfa/user --token-code 123456
-
+# ...
 # 将返回的临时凭证配置到Profile
 aws configure set aws_access_key_id ASIAXXXXXXXX --profile mfa
 aws configure set aws_secret_access_key xxxxxxxxxx --profile mfa
 aws configure set aws_session_token xxxxxxxxxx --profile mfa
-
+# ...
 # 使用MFA Profile执行查询
 aws ec2 describe-instances --profile mfa
 ```
@@ -325,11 +334,11 @@ A: 使用JMESPath查询语言通过`--query`参数过滤:
 # 只查询运行中的实例
 aws ec2 describe-instances --filters Name=instance-state-name,Values=running \
   --query 'Reservations[].Instances[].[InstanceId,InstanceType,LaunchTime]'
-
+# ...
 # 按标签过滤
 aws ec2 describe-instances --filters "Name=tag:Environment,Values=production" \
   --query 'Reservations[].Instances[].InstanceId'
-
+# ...
 # 使用JMESPath高级过滤
 aws ec2 describe-instances \
   --query 'Reservations[].Instances[?State.Name==`running` && InstanceType==`t3.medium`].[InstanceId,Tags[?Key==`Name`].Value | [0]]'
@@ -340,10 +349,10 @@ A: 使用`--output`参数配合重定向:
 ```bash
 # 导出为JSON
 aws ec2 describe-instances --output json > instances.json
-
+# ...
 # 导出为CSV (使用jq转换)
 aws ec2 describe-instances --output json | jq -r '.Reservations[].Instances[] | [.InstanceId,.InstanceType,.State.Name] | @csv' > instances.csv
-
+# ...
 # 导出为表格文本
 aws ec2 describe-instances --output table > instances.txt
 ```
@@ -352,7 +361,7 @@ aws ec2 describe-instances --output table > instances.txt
 
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| --- | --: | :-- |
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

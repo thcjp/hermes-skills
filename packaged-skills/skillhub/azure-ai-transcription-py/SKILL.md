@@ -27,16 +27,24 @@ pricing_model: "monthly"
 
 Azure AI Transcription(speech-to-text)的 Python 客户端库,支持实时与批量转写。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | Azure语音转文字SDK处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 批量转写:对存储在 Blob 中的长音频文件提交转写作业,支持说话人分离与多通道 | 支持 | 支持 |
-| 实时转写:通过流式会话边录边转,逐事件输出识别文本,适合会议同传与字幕生成 | 不支持 | 支持 |
-| 说话人分离:开启 `diarization_enabled` 区分多说话人,标注每段发言归属 | 不支持 | 支持 |
-| 时间戳捕获:为识别结果附带时间戳,用于字幕对齐与片段定位 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| --- | --- | --- |
+| 基础功能 | 支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
 
 ## 安装
 
@@ -60,7 +68,7 @@ TRANSCRIPTION_KEY=API_KEY
 ```python
 import os
 from azure.ai.transcription import TranscriptionClient
-
+# ...
 client = TranscriptionClient(
     endpoint=os.environ["TRANSCRIPTION_ENDPOINT"],
     credential=os.environ["TRANSCRIPTION_KEY"]
@@ -75,7 +83,7 @@ client = TranscriptionClient(
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+| --: | --: | --: | --: |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -239,7 +247,7 @@ for event in stream:
 
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| :-- | :-- | :-- |
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -25,6 +25,15 @@ pricing_model: "monthly"
 
 AI驱动的个性化学习助手，支持项目教程、语言学习、写作反馈、视觉学习与学习指南。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | 个性化学习助手处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -77,7 +86,7 @@ export API_KEY="your_api_key_here"
 > "Walk me through building a REST API step by step"
 > "Teach me React hooks: My level is I know basic JavaScript, never used React"
 
-**输出**: 返回项目教程（Project Tutorials）的执行结果,包含操作状态和输出数据。
+**输出**: 返回项目教程（Project Tutorials）的处理结果,包含执行状态码、结果数据和执行日志。
 ### 语言学习（Language Learning）
 系统化掌握新语言，覆盖听说读写全方位训练：
 
@@ -88,8 +97,8 @@ export API_KEY="your_api_key_here"
 - **文化背景**：附带语言使用的文化语境与注意事项
 
 **输入**: 用户提供语言学习（Language Learning）所需的指令和必要参数。
-**处理**: 按照skill规范执行语言学习（Language Learning）操作,遵循单一意图原则。
-**输出**: 返回语言学习（Language Learning）的执行结果,包含操作状态和输出数据。### 写作反馈（Writing Feedback）
+**处理**: 解析语言学习（Language Learning）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回语言学习（Language Learning）的处理结果,包含执行状态码、结果数据和执行日志。### 写作反馈（Writing Feedback）
 
 对文章、论文、邮件等写作内容提供专业反馈：
 
@@ -109,7 +118,7 @@ export API_KEY="your_api_key_here"
 - **学习风格适配**：支持Visual（图表）、Examples（示例）、Analogies（类比）、Step-by-Step（步骤）、Big Picture（全局）、Hands-On（实践）等多种学习风格
 
 **输入**: 用户提供视觉学习（Visual Learning）所需的指令和必要参数。
-**处理**: 按照skill规范执行视觉学习（Visual Learning）操作,遵循单一意图原则。### 学习指南（Study Guides）
+**处理**: 解析视觉学习（Visual Learning）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 学习指南（Study Guides）
 生成系统化的学习材料与备考资源：
 
 - **学习指南（Study Guides）**：如"Create a study guide for AP Chemistry exam"
@@ -119,7 +128,7 @@ export API_KEY="your_api_key_here"
 - **速查表（Cheat Sheets）**：如"Create a one-page reference for Python syntax"
 
 **输入**: 用户提供学习指南（Study Guides）所需的指令和必要参数。
-**处理**: 按照skill规范执行学习指南（Study Guides）操作,遵循单一意图原则。### 概念解释与作业辅导（Concept Explanations & Homework）
+**处理**: 解析学习指南（Study Guides）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 概念解释与作业辅导（Concept Explanations & Homework）
 多角度解释概念与作业问题解答：
 
 - **概念拆解**：如"Explain quantum entanglement like I'm 10 years old"
@@ -128,8 +137,8 @@ export API_KEY="your_api_key_here"
 - **代码调试**：解释代码为何不工作并帮助修复
 - **作文结构**：帮助构建论文框架与论点
 
-**处理**: 按照skill规范执行概念解释与作业辅导（Concept Explanations & Homework）操作,遵循单一意图原则。
-**输出**: 返回概念解释与作业辅导（Concept Explanations & Homework）的执行结果,包含操作状态和输出数据。
+**处理**: 解析概念解释与作业辅导（Concept Explanations & Homework）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回概念解释与作业辅导（Concept Explanations & Homework）的处理结果,包含执行状态码、结果数据和执行日志。
 
 ---
 
@@ -142,7 +151,7 @@ export API_KEY="your_api_key_here"
 5. 使用自然语言描述学习需求，Agent生成个性化学习内容
 6. 通过主动回忆（Active Recall）与练习巩固学习成果
 
-**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
 
 ## 示例
@@ -228,3 +237,25 @@ A: 提供考试名称、时间线、目标分数、薄弱环节，Agent会生成
 - 语言学习口语练习需配合TTS工具实现语音输出
 - 复杂学科（如高级医学、法学）的准确性需人工验证
 - 学习进度跟踪需要用户手动维护
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "个性化学习助手处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "learn-cog"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

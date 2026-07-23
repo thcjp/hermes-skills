@@ -25,6 +25,15 @@ pricing_model: "per_use"
 
 AI简历助手，支持polish润色、customize定制、score评分与export多格式导出。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | 简历助手处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -126,7 +135,7 @@ export API_KEY="your_api_key_here"
 | `target_role` | string | 否 | - | 目标职位（用于匹配度评估） |
 | `language` | string | 否 | `en` | `en`英文 / `zh`中文 |
 
-**输出**: 返回Score - 简历评分的执行结果,包含操作状态和输出数据。
+**输出**: 返回Score - 简历评分的处理结果,包含执行状态码、结果数据和执行日志。
 ### Export - 多格式导出
 
 将简历转换为Word、Markdown、HTML、LaTeX或PDF格式：

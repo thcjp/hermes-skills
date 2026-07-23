@@ -40,28 +40,28 @@ pricing_model: "per_use"
 * **Print-ready**: CSS print styles included
 ### Sparkline trend charts
 
-执行Sparkline trend charts,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
+针对Sparkline trend charts,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
 
 **输入**: 用户提供Sparkline trend charts相关的配置参数、输入数据和处理选项。
 
-**输出**: 返回Sparkline trend charts的处理结果。- 验证执行结果，确认输出符合预期格式
-- 参考`Sparkline trend charts`相关配置参数进行设置
+**输出**: 返回Sparkline trend charts的处理结果。- 验证返回数据的完整性和格式正确性
+- 参考`Sparkline trend charts`的配置文档进行参数调优
 ### Forecast markers
 
-执行Forecast markers,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
+针对Forecast markers,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
 
 **输入**: 用户提供Forecast markers相关的配置参数、输入数据和处理选项。
 
-**输出**: 返回Forecast markers的处理结果。- 验证执行结果，确认输出符合预期格式
-- 参考`Forecast markers`相关配置参数进行设置
+**输出**: 返回Forecast markers的处理结果。- 验证返回数据的完整性和格式正确性
+- 参考`Forecast markers`的配置文档进行参数调优
 ### Color coding
 
-执行Color coding,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
+针对Color coding,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
 
 **输入**: 用户提供Color coding相关的配置参数、输入数据和处理选项。
 
-**输出**: 返回Color coding的处理结果。- 验证执行结果，确认输出符合预期格式
-- 参考`Color coding`相关配置参数进行设置
+**输出**: 返回Color coding的处理结果。- 验证返回数据的完整性和格式正确性
+- 参考`Color coding`的配置文档进行参数调优
 #
 ## 适用场景
 
@@ -77,7 +77,7 @@ pricing_model: "per_use"
 python3 （请参考skill目录中的脚本文件） input.xlsx -o pdf --company "公司名" --ticker "000001.SZ"
 ```
 
-**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
 **使用步骤**:
 1. 阅读依赖说明章节,确认运行环境已就绪

@@ -24,6 +24,15 @@ pricing_model: "per_use"
 ---
 # JSON Repair Kit — JSON修复工具
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | JSON修复工具处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -64,22 +73,22 @@ export API_KEY="your_api_key_here"
 修复JSON中多余的尾逗号。将 `{"a": 1,}` 规范化为 `{"a": 1}`，消除解析器拒绝的尾逗号问题。解析为JavaScript对象后重新序列化，自动去除逗号。
 
 **输入**: 用户提供Trailing Commas 修复所需的指令和必要参数。
-**输出**: 返回Trailing Commas 修复的执行结果,包含操作状态和输出数据。### Single Quotes 修复
+**输出**: 返回Trailing Commas 修复的处理结果,包含执行状态码、结果数据和执行日志。### Single Quotes 修复
 修复JSON中使用单引号而非双引号的问题。将 `{'a': 'b'}` 转换为 `{"a": "b"}`，确保字符串使用标准双引号。通过Node.js的JavaScript对象解析能力自动转换引号风格。
 
 **输入**: 用户提供Single Quotes 修复所需的指令和必要参数。
-**输出**: 返回Single Quotes 修复的执行结果,包含操作状态和输出数据。### Unquoted Keys 修复
+**输出**: 返回Single Quotes 修复的处理结果,包含执行状态码、结果数据和执行日志。### Unquoted Keys 修复
 修复JSON中键名未加引号的问题。将 `{key: "value"}` 转换为 `{"key": "value"}`，确保所有键名使用双引号包裹。JavaScript对象语法允许未加引号的键，修复后重新序列化为标准JSON。
 
 **输入**: 用户提供Unquoted Keys 修复所需的指令和必要参数。
-**输出**: 返回Unquoted Keys 修复的执行结果,包含操作状态和输出数据。### Comments 移除
+**输出**: 返回Unquoted Keys 修复的处理结果,包含执行状态码、结果数据和执行日志。### Comments 移除
 
-移除JS风格注释。处理 `//` 行注释（标准Node解析器在字符串外时会剥离行注释），确保输出为纯净JSON。注释在JavaScript对象解析阶段被自动移除。- 验证执行结果，确认输出符合预期格式
-- 参考`Trailing Commas 修复`相关配置参数进行设置
+移除JS风格注释。处理 `//` 行注释（标准Node解析器在字符串外时会剥离行注释），确保输出为纯净JSON。注释在JavaScript对象解析阶段被自动移除。- 验证返回数据的完整性和格式正确性
+- 参考`Trailing Commas 修复`的配置文档进行参数调优
 ### Hex/Octal Numbers 修复
 
-修复JSON中的十六进制和八进制数字。将 `0xFF` 转换为 `255`，确保所有数字使用标准十进制格式。JavaScript支持十六进制字面量，解析后转换为十进制数字输出。- 验证执行结果，确认输出符合预期格式
-- 参考`Hex/Octal Numbers 修复`相关配置参数进行设置
+修复JSON中的十六进制和八进制数字。将 `0xFF` 转换为 `255`，确保所有数字使用标准十进制格式。JavaScript支持十六进制字面量，解析后转换为十进制数字输出。- 验证返回数据的完整性和格式正确性
+- 参考`Hex/Octal Numbers 修复`的配置文档进行参数调优
 #
 ## 使用流程
 
@@ -101,7 +110,7 @@ export API_KEY="your_api_key_here"
 
 ### 输出说明
 
-Agent将根据指令执行操作，返回处理结果。结果格式取决于具体能力点的输出定义。
+Agent将根据指令调用对应能力,返回响应数据。响应格式取决于具体能力点的输出定义。
 
 ## 使用方式
 

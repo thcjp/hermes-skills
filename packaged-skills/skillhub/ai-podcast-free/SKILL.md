@@ -18,6 +18,15 @@ homepage: "https://skillhub.cn"
 ---
 # AI播客生成(免费版) - 文本转对话式播客
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | AI播客生成(免费版)处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 依赖说明
 
 ### 运行环境
@@ -199,3 +208,25 @@ API返回401认证错误时，引导用户访问 https://www.magicpodcast.app/sk
 ## 升级提示
 
 本免费版支持基础的文本转播客功能。如需PDF文档转播客、多来源内容处理、高级引导式交互流程等完整能力，请升级到完整版 ai-podcast 获取全部功能。
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "AI播客生成(免费版)处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "ai-podcast"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

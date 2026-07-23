@@ -35,11 +35,11 @@ pricing_model: "per_use"
 | 能力 | 免费版 | 付费版 |
 |:-----|:-------|:-------|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| B站工具箱专业版据追踪与凭证安全管理 | 不支持 | 支持 |
+| 深度漏洞扫描与CVE关联 | 不支持 | 支持 |
+| 安全基线合规审计 | 不支持 | 支持 |
+| 批量资产风险评分 | 不支持 | 支持 |
+| 威胁情报实时订阅与告警 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -48,14 +48,14 @@ pricing_model: "per_use"
 ```python
 import asyncio
 from main import BilibiliAllInOne
-
+# ...
 # 使用凭证初始化
 app = BilibiliAllInOne(
     sessdata="your_sessdata",
     bili_jct="your_bili_jct",
     buvid3="your_buvid3"
 )
-
+# ...
 async def publish_video():
     # 上传并发布视频
     result = await app.execute("publisher", "upload",
@@ -68,7 +68,7 @@ async def publish_video():
         open_elec=1      # 开启充电
     )
     print(f"发布结果: {result}")
-
+# ...
 asyncio.run(publish_video())
 ```
 
@@ -81,30 +81,30 @@ python main.py publisher upload '{
     "tags": ["教程", "python"],
     "category": "122"
 }'
-
+# ...
 # 保存为草稿
 python main.py publisher draft '{
     "file_path": "./video.mp4",
     "title": "草稿视频"
 }'
-
+# ...
 # 定时发布
 python main.py publisher schedule '{
     "file_path": "./video.mp4",
     "title": "定时发布视频",
     "schedule_time": "2026-12-31T20:00:00+08:00"
 }'
-
+# ...
 # 编辑已发布视频
 python main.py publisher edit '{
     "bvid": "BV1xx411c7mD",
     "title": "新标题",
     "tags": ["更新", "标签"]
 }'
-```- 验证执行结果，确认输出符合预期格式
-- 参考`数据追踪与对比分析`相关配置参数进行设置- 验证执行结果，确认输出符合预期格式
-- 参考`批量下载与队列管理`相关配置参数进行设置- 验证执行结果，确认输出符合预期格式
-- 参考`视频发布管理`相关配置参数进行设置
+```- 验证返回数据的完整性和格式正确性
+- 参考`数据追踪与对比分析`的配置文档进行参数调优- 验证返回数据的完整性和格式正确性
+- 参考`批量下载与队列管理`的配置文档进行参数调优- 验证返回数据的完整性和格式正确性
+- 参考`视频发布管理`的配置文档进行参数调优
 ### 2. 批量下载与队列管理
 ```python
 async def batch_download():
@@ -114,7 +114,7 @@ async def batch_download():
         "BV1yy411c8nE",
         "BV1zz411c9oF"
     ]
-    
+# ...
     result = await app.execute("downloader", "batch_download",
         urls=urls,
         quality="1080p+",  # 专业版支持高清
@@ -122,7 +122,7 @@ async def batch_download():
         output_dir="./downloads"
     )
     print(f"批量下载完成: {result}")
-
+# ...
 asyncio.run(batch_download())
 ```
 
@@ -131,7 +131,7 @@ asyncio.run(batch_download())
 - 关键参数: `批量下载与队列管理` 选项
 - 处理流程: 接收输入 -> 执行批量下载与队列管理 -> 返回结果
 - 输入: 用户提供批量下载与队列管理所需的参数和指令
-- 输出: 返回批量下载与队列管理的执行结果,包含操作状态和输出数据
+- 输出: 返回批量下载与队列管理的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 3. 数据追踪与对比分析
 ```python
@@ -143,13 +143,13 @@ async def track_and_compare():
         duration=12     # 持续12小时
     )
     print(f"追踪完成: {track_result}")
-    
+# ...
     # 多视频数据对比
     compare_result = await app.execute("watcher", "compare",
         urls=["BV1xx411c7mD", "BV1yy411c8nE", "BV1zz411c9oF"]
     )
     print(f"对比结果: {compare_result}")
-
+# ...
 asyncio.run(track_and_compare())
 ```
 
@@ -158,7 +158,7 @@ asyncio.run(track_and_compare())
 - 关键参数: `数据追踪与对比分析` 选项
 - 处理流程: 接收输入 -> 执行数据追踪与对比分析 -> 返回结果
 - 输入: 用户提供数据追踪与对比分析所需的参数和指令
-- 输出: 返回数据追踪与对比分析的执行结果,包含操作状态和输出数据
+- 输出: 返回数据追踪与对比分析的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 4. 凭证安全管理
 ```python
@@ -167,9 +167,9 @@ import os
 os.environ["BILIBILI_SESSDATA"] = "your_sessdata"
 os.environ["BILIBILI_BILI_JCT"] = "your_bili_jct"
 os.environ["BILIBILI_BUVID3"] = "your_buvid3"
-
+# ...
 app = BilibiliAllInOne()  # 自动从环境变量读取
-
+# ...
 # 方式二：凭证文件
 app = BilibiliAllInOne(
     sessdata="your_sessdata",
@@ -177,14 +177,14 @@ app = BilibiliAllInOne(
     buvid3="your_buvid3",
     persist=True  # 启用持久化存储（0600权限）
 )
-
+# ...
 # 方式三：运行时管理
 app.auth.persist = True   # 启用持久化
 app.auth.clear_persisted()  # 清除持久化文件
 ```
 
 **输入**: 用户提供凭证安全管理所需的指令和必要参数。
-**输出**: 返回凭证安全管理的执行结果,包含操作状态和输出数据。- 验证执行结果,确认输出符合预期格式
+**输出**: 返回凭证安全管理的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `凭证安全管理` 选项
 
@@ -205,7 +205,7 @@ async def up_master_workflow():
         tags=["Python", "教程", "编程"],
         category="122"
     )
-    
+# ...
     # 2. 定时发布第二期
     schedule_result = await app.execute("publisher", "schedule",
         file_path="./videos/episode02.mp4",
@@ -214,18 +214,18 @@ async def up_master_workflow():
         tags=["Python", "教程", "编程"],
         category="122"
     )
-    
+# ...
     # 3. 编辑已发布视频信息
     edit_result = await app.execute("publisher", "edit",
         bvid="BV1xx411c7mD",
         title="更新后的标题",
         tags=["更新标签", "Python"]
     )
-    
+# ...
     print(f"草稿: {draft_result}")
     print(f"定时: {schedule_result}")
     print(f"编辑: {edit_result}")
-
+# ...
 asyncio.run(up_master_workflow())
 ```
 
@@ -241,23 +241,23 @@ async def competitor_analysis():
         "BV1yy411c8nE",  # 竞品B
         "BV1zz411c9oF"   # 竞品C
     ]
-    
+# ...
     # 获取当前数据
     for bv in competitor_videos:
         stats = await app.execute("watcher", "get_stats", url=bv)
         print(f"视频{bv}: 播放{stats['data']['view']} 点赞{stats['data']['like']}")
-    
+# ...
     # 多视频对比
     comparison = await app.execute("watcher", "compare", urls=competitor_videos)
     print(f"对比分析: {comparison}")
-    
+# ...
     # 长期追踪（每小时采集，持续24小时）
     track = await app.execute("watcher", "track",
         url="BV1xx411c7mD",
         interval=60,
         duration=24
     )
-
+# ...
 asyncio.run(competitor_analysis())
 ```
 
@@ -274,14 +274,14 @@ async def batch_archive():
         "BV1zz411c9oF",
         "BV1aa411c0pG"
     ]
-    
+# ...
     result = await app.execute("downloader", "batch_download",
         urls=video_list,
         quality="4k",      # 4K超清
         format="mp4",
         output_dir="./archive/4k_videos"
     )
-    
+# ...
     # 批量获取字幕
     for bv in video_list:
         await app.execute("subtitle", "download",
@@ -290,9 +290,9 @@ async def batch_archive():
             format="srt",
             output_dir="./archive/subtitles"
         )
-    
+# ...
     print(f"归档完成: {result}")
-
+# ...
 asyncio.run(batch_archive())
 ```
 
@@ -310,7 +310,7 @@ asyncio.run(batch_archive())
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+| --- | --- | --- | --- |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python 3 | 运行时 | 必需 | python.org 下载安装 |
 | httpx | Python库 | 必需 | `pip install httpx` |
@@ -345,7 +345,7 @@ export API_KEY="your_api_key_here"
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+| --: | --: | --: | --: |
 | content | string | 否 | bilibili-toolkit处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -394,7 +394,7 @@ export API_KEY="your_api_key_here"
 
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| :-- | :-- | :-- |
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -402,7 +402,7 @@ export API_KEY="your_api_key_here"
 ## 依赖说明
 
 | 依赖项 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
+| :-: | :-: | :-: | :-: |
 | LLM | 模型 | 是 | 需要LLM进行智能审查, 推荐GPT-4/智谱GLM-4/DeepSeek |
 | API Key | 凭证 | 否 | 使用云端LLM时需要 |
 
@@ -416,7 +416,7 @@ export API_KEY="your_api_key_here"
 登录bilibili.com，打开浏览器开发者工具（F12）→ Application → Cookies，复制以下值：
 
 | 凭证 | 说明 | 用途 |
-| --- | --- | --- |
+| --- | --: | :-- |
 | `SESSDATA` | 会话凭证 | 登录验证 |
 | `bili_jct` | CSRF Token | 写操作（发布/编辑） |
 | `buvid3` | 设备标识 | 辅助验证 |
@@ -424,7 +424,7 @@ export API_KEY="your_api_key_here"
 ### 发布参数说明
 
 | 参数 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
+| --: | :-- | :-: | --- |
 | `file_path` | string | 必填 | 视频文件路径 |
 | `title` | string | 必填 | 标题（最多80字） |
 | `description` | string | 空 | 简介（最多2000字） |
@@ -437,7 +437,7 @@ export API_KEY="your_api_key_here"
 ### 凭证安全说明
 
 | 关注点 | 说明 |
-| --- | --- |
+| :-- | :-: |
 | 凭证类型 | 完整浏览器会话Cookie，非受限API Key |
 | 存储方式 | 默认内存存储，不落盘 |
 | 持久化 | 可选启用，0600权限保护 |
@@ -469,8 +469,8 @@ export API_KEY="your_api_key_here"
 ## 错误处理
 
 
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景2 | 原因 | 处理方式 |
+| :-: | --- | --: |
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

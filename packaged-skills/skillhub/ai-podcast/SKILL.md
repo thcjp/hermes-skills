@@ -23,16 +23,25 @@ pricing_model: "per_use"
 ---
 # AI播客生成 - PDF与文本转对话式播客
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | AI播客生成处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 从PDF URL提取内容并生成播客 | 支持 | 支持 |
-| 从粘贴的纯文本生成播客 | 不支持 | 支持 |
-| 多语言播客生成（需用户明确指定语言） | 不支持 | 支持 |
-| 异步任务状态查询 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| --- | --- | --- |
+| 基础功能 | 支持 | 支持 |
+| AI播客生成几分钟生成 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -42,7 +51,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+| --: | --: | --: | --: |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -110,7 +119,7 @@ API密钥获取地址：https://www.magicpodcast.app/skill-platform
 safe_job_id() {
   printf '%s' "$1" | grep -Eq '^[A-Za-z0-9_-]{8,128}$'
 }
-
+# ...
 safe_http_url() {
   printf '%s' "$1" | grep -Eq '^https?://[^[:space:]]+$'
 }
@@ -123,9 +132,9 @@ if ! safe_http_url "$PDF_URL"; then
   echo "Invalid PDF URL" >&2
   exit 1
 fi
-
+# ...
 payload="$(jq -n --arg pdfUrl "$PDF_URL" --arg language "$LANGUAGE" '{pdfUrl:$pdfUrl,language:$language}')"
-
+# ...
 curl -sS -X POST "$MAGICPODCAST_API_URL/agent/v1/podcasts/pdf" \
   -H "Content-Type: application/json" \
   -H "x-api-key: $MAGICPODCAST_API_KEY" \
@@ -136,7 +145,7 @@ curl -sS -X POST "$MAGICPODCAST_API_URL/agent/v1/podcasts/pdf" \
 
 ```bash
 payload="$(jq -n --arg text "$SOURCE_TEXT" --arg language "$LANGUAGE" '{text:$text,language:$language}')"
-
+# ...
 curl -sS -X POST "$MAGICPODCAST_API_URL/agent/v1/podcasts/text" \
   -H "Content-Type: application/json" \
   -H "x-api-key: $MAGICPODCAST_API_KEY" \
@@ -150,7 +159,7 @@ if ! safe_job_id "$JOB_ID"; then
   echo "Invalid job id" >&2
   exit 1
 fi
-
+# ...
 curl -sS "$MAGICPODCAST_API_URL/agent/v1/jobs/$JOB_ID" \
   -H "x-api-key: $MAGICPODCAST_API_KEY"
 ```
@@ -264,7 +273,7 @@ curl -sS "$MAGICPODCAST_API_URL/agent/v1/jobs/$JOB_ID" \
 
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| :-- | :-- | :-- |
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

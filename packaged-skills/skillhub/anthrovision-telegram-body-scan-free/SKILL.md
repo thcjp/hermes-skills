@@ -19,6 +19,15 @@ homepage: "https://skillhub.cn"
 ---
 # Anthrovision Telegram Body Scan Free
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | Body Scan Basic处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 概述
 
 在Telegram中运行基础身体扫描测量流程。提交视频至AnthroVision桥接工具,轮询状态并输出基础测量结果。基础版覆盖输入校验、扫描提交与状态轮询。
@@ -52,8 +61,8 @@ export API_KEY="your_api_key_here"
 - 必需输入: `gender`(male/female)、`height_cm`(100-250)、`video`附件或可下载URL、`phone_model`
 - 拒绝本地文件路径与私有/本地URL
 
-**处理**: 按照skill规范执行输入校验(基础)操作,遵循单一意图原则。
-**输出**: 返回输入校验(基础)的执行结果,包含操作状态和输出数据。
+**处理**: 解析输入校验(基础)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回输入校验(基础)的处理结果,包含执行状态码、结果数据和执行日志。
 
 ### 2. 扫描提交与轮询(基础)
 - 调用 `anthrovision_bridge_submit_scan` 提交

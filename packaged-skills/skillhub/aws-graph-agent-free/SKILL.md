@@ -25,6 +25,15 @@ homepage: "https://skillhub.cn"
 
 基于 AWS Bedrock AgentCore 与 LangGraph 的基础代理编排工具。通过 StateGraph 状态图定义代理工作流，AgentCore Runtime 封装为 HTTP 服务。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | AWS Graph LITE处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 依赖说明
 
 ### 运行环境
@@ -54,14 +63,14 @@ export API_KEY="your_api_key_here"
 使用 LangGraph StateGraph 定义代理工作流，支持 `tools_condition` 自动路由（代理 → 工具或 END）、`ToolNode` 预置工具执行器，实现工具调用与自动路由。
 
 **输入**: 用户提供StateGraph 状态图编排所需的指令和必要参数。
-**输出**: 返回StateGraph 状态图编排的执行结果,包含操作状态和输出数据。
+**输出**: 返回StateGraph 状态图编排的处理结果,包含执行状态码、结果数据和执行日志。
 
 ### 2. AgentCore Runtime HTTP 封装
 将代理封装为 8080 端口 HTTP 服务，处理 `/invocations`（调用）与 `/ping`（健康检查）端点，支持容器模式部署。
 
 **输入**: 用户提供AgentCore Runtime HTTP 封装所需的指令和必要参数。
-**输出**: 返回AgentCore Runtime HTTP 封装的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
-- 参考`AgentCore Runtime HTTP 封装`相关配置参数进行设置
+**输出**: 返回AgentCore Runtime HTTP 封装的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+- 参考`AgentCore Runtime HTTP 封装`的配置文档进行参数调优
 ### 3. agentcore CLI 基础管理
 `configure`（配置）→ `launch`（部署）→ `dev`（本地开发）→ `invoke`（测试调用）→ `destroy`（清理资源）。
 
@@ -207,3 +216,25 @@ A: 免费版（LITE）包含 StateGraph 状态图编排和 AgentCore Runtime 容
 - **依赖 Bedrock 模型审批**: 未在 Bedrock Console 填写 Anthropic 表单则无法部署
 - **代理命名规则严格**: 仅字母/数字/下划线，1-48 字符，连字符不被接受
 - **容器模式不支持 .env**: 必须在 Dockerfile 中用 ENV 设置环境变量
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "AWS Graph LITE处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "aws-graph-agent"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

@@ -36,11 +36,11 @@ pricing_model: "per_use"
 | 能力 | 免费版 | 付费版 |
 |:-----|:-------|:-------|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 音频流上传专业版分片上传与元数据管理 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -52,7 +52,7 @@ import hashlib
 import os
 import json
 from concurrent.futures import ThreadPoolExecutor, as_completed
-
+# ...
 class AudioBatchUploader:
     def __init__(self, public_key, secret_key, max_workers=3):
         self.public_key = public_key
@@ -61,14 +61,14 @@ class AudioBatchUploader:
         self.max_workers = max_workers
         self.results = []
         self.failed = []
-
+# ...
     @property
     def headers(self):
         return {
             'stream-public-key': self.public_key,
             'stream-secret-key': self.secret_key
         }
-
+# ...
     def upload_single(self, file_path, title, config=None):
         """上传单个音频文件，支持自定义编码配置"""
         try:
@@ -76,19 +76,19 @@ class AudioBatchUploader:
             create_data = {'title': title, 'type': 'audio'}
             if config:
                 create_data.update(config)
-            
+# ...
             resp = requests.post(
                 f'{self.base_url}/videos/create',
                 headers={**self.headers, 'Content-Type': 'application/json'},
                 json=create_data
             )
             audio_id = resp.json()['data']['id']
-
+# ...
             # 步骤2：上传文件
             file_size = os.path.getsize(file_path)
             with open(file_path, 'rb') as f:
                 file_hash = hashlib.md5(f.read()).hexdigest()
-            
+# ...
             with open(file_path, 'rb') as f:
                 requests.post(
                     f'{self.base_url}/videos/{audio_id}/part',
@@ -99,19 +99,19 @@ class AudioBatchUploader:
                     files={'file': f},
                     data={'index': 0, 'hash': file_hash}
                 )
-
+# ...
             # 步骤3：完成上传
             requests.get(
                 f'{self.base_url}/videos/{audio_id}/complete',
                 headers={'accept': 'application/json', **self.headers}
             )
-            
+# ...
             self.results.append({'file': file_path, 'audio_id': audio_id, 'status': 'success'})
             return audio_id
         except Exception as e:
             self.failed.append({'file': file_path, 'error': str(e)})
             return None
-
+# ...
     def batch_upload(self, file_list, config=None):
         """批量上传音频文件"""
         with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
@@ -121,18 +121,18 @@ class AudioBatchUploader:
             }
             for future in as_completed(futures):
                 future.result()
-        
+# ...
         print(f"成功: {len(self.results)}, 失败: {len(self.failed)}")
         return {'success': self.results, 'failed': self.failed}
-
+# ...
     def retry_failed(self, config=None):
         """重试失败的 uploads"""
         retry_list = [{'path': f['file'], 'title': os.path.basename(f['file'])} for f in self.failed]
         self.failed = []
         return self.batch_upload(retry_list, config)
-```- 验证执行结果，确认输出符合预期格式
-- 参考`分片上传大文件`相关配置参数进行设置- 验证执行结果，确认输出符合预期格式
-- 参考`批量上传与队列管理`相关配置参数进行设置
+```- 验证返回数据的完整性和格式正确性
+- 参考`分片上传大文件`的配置文档进行参数调优- 验证返回数据的完整性和格式正确性
+- 参考`批量上传与队列管理`的配置文档进行参数调优
 ### 2. 自定义编码配置
 ```python
 # 最高质量HLS配置
@@ -161,7 +161,7 @@ HIGHEST_QUALITY_CONFIG = {
         }
     ]
 }
-
+# ...
 # 多质量自适应配置（适配不同网络环境）
 ADAPTIVE_QUALITY_CONFIG = {
     "qualities": [
@@ -185,7 +185,7 @@ ADAPTIVE_QUALITY_CONFIG = {
         }
     ]
 }
-
+# ...
 # DASH格式配置（适配Web端播放）
 DASH_CONFIG = {
     "qualities": [
@@ -203,8 +203,8 @@ DASH_CONFIG = {
 ```
 
 **输入**: 用户提供自定义编码配置所需的指令和必要参数。
-**处理**: 按照skill规范执行自定义编码配置操作,遵循单一意图原则。
-**输出**: 返回自定义编码配置的执行结果,包含操作状态和输出数据。- 验证执行结果,确认输出符合预期格式
+**处理**: 解析自定义编码配置的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回自定义编码配置的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `自定义编码配置` 选项
 
@@ -214,17 +214,17 @@ DASH_CONFIG = {
 def upload_large_file(self, file_path, title, chunk_size=10*1024*1024):
     """分片上传大文件，支持断点续传"""
     file_size = os.path.getsize(file_path)
-    
+# ...
     # 创建音频对象
     resp = requests.post(f'{self.base_url}/videos/create',
         headers={**self.headers, 'Content-Type': 'application/json'},
         json={'title': title, 'type': 'audio'})
     audio_id = resp.json()['data']['id']
-    
+# ...
     # 分片上传
     chunk_index = 0
     uploaded_chunks = self.get_upload_progress(audio_id)  # 断点续传检查
-    
+# ...
     with open(file_path, 'rb') as f:
         while True:
             chunk = f.read(chunk_size)
@@ -233,18 +233,18 @@ def upload_large_file(self, file_path, title, chunk_size=10*1024*1024):
             if chunk_index in uploaded_chunks:
                 chunk_index += 1
                 continue
-            
+# ...
             chunk_hash = hashlib.md5(chunk).hexdigest()
             start = chunk_index * chunk_size
             end = min(start + len(chunk) - 1, file_size - 1)
-            
+# ...
             requests.post(f'{self.base_url}/videos/{audio_id}/part',
                 headers={**self.headers, 'Content-Range': f'bytes {start}-{end}/{file_size}'},
                 files={'file': chunk},
                 data={'index': chunk_index, 'hash': chunk_hash})
-            
+# ...
             chunk_index += 1
-    
+# ...
     # 完成上传
     requests.get(f'{self.base_url}/videos/{audio_id}/complete',
         headers={'accept': 'application/json', **self.headers})
@@ -264,24 +264,24 @@ def upload_large_file(self, file_path, title, chunk_size=10*1024*1024):
 # 批量上传脚本
 python3 -c "
 from uploader import AudioBatchUploader
-
+# ...
 uploader = AudioBatchUploader(
     public_key='YOUR_PUBLIC_KEY',
     secret_key='YOUR_SECRET_KEY',
     max_workers=3
 )
-
+# ...
 # 定义上传任务
 file_list = [
     {'path': '/audio/episode01.mp3', 'title': '节目优秀期'},
     {'path': '/audio/episode02.mp3', 'title': '节目第二期'},
     {'path': '/audio/episode03.mp3', 'title': '节目第三期'},
 ]
-
+# ...
 # 使用自适应质量配置批量上传
 result = uploader.batch_upload(file_list, config=ADAPTIVE_QUALITY_CONFIG)
 print(f'上传结果: {result}')
-
+# ...
 # 重试失败的 uploads
 if result['failed']:
     uploader.retry_failed(config=ADAPTIVE_QUALITY_CONFIG)
@@ -337,7 +337,7 @@ training_audio_list = [
     {'path': '/training/onboarding_02.mp3', 'title': '新人培训-制度规范'},
     {'path': '/training/safety_01.mp3', 'title': '安全培训-基础篇'},
 ]
-
+# ...
 ENTERPRISE_CONFIG = {
     "is_public": False,
     "tags": ["企业培训", "内部资料"],
@@ -358,7 +358,7 @@ ENTERPRISE_CONFIG = {
         }
     ]
 }
-
+# ...
 uploader = AudioBatchUploader('YOUR_PUBLIC_KEY', 'YOUR_SECRET_KEY', max_workers=5)
 result = uploader.batch_upload(training_audio_list, config=ENTERPRISE_CONFIG)
 ```
@@ -370,7 +370,7 @@ result = uploader.batch_upload(training_audio_list, config=ENTERPRISE_CONFIG)
 ```bash
 # 依赖说明
 pip install requests
-
+# ...
 # 配置环境变量
 export STREAM_PUBLIC_KEY="your_public_key"
 export STREAM_SECRET_KEY="your_secret_key"
@@ -391,7 +391,7 @@ curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+| --- | --- | --- | --- |
 | content | string | 否 | audio-stream-upload处理的内容输入 |,  |
 | content | string | 否 | audio-stream-upload处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -421,7 +421,7 @@ curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
 
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| --: | --: | --: |
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -438,7 +438,7 @@ curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+| :-- | :-- | :-- | :-- |
 | curl | 系统工具 | 必需 | 系统自带或包管理器安装 |
 | 流媒体平台API | 外部API | 必需 | 在平台注册获取 |
 | Python 3 | 运行时 | 必需 | python.org 下载安装 |
@@ -467,7 +467,7 @@ export API_KEY="your_api_key_here"
 ### 质量预设参考
 
 | 预设 | 分辨率字段 | 适用场景 |
-| --- | --- | --- |
+| :-: | :-: | :-: |
 | 标准 | `standard` | 语音内容、播客 |
 | 良好 | `good` | 日常音乐播放 |
 | 最高 | `highest` | 高品质音乐 |
@@ -476,7 +476,7 @@ export API_KEY="your_api_key_here"
 ### 比特率推荐
 
 | 内容类型 | 推荐比特率 | 推荐采样率 |
-| --- | --- | --- |
+| --- | --: | :-- |
 | 语音/播客 | 64000-128000 | 22050或32000 |
 | 标准音乐 | 128000-192000 | 44100 |
 | 高品质音乐 | 192000-256000 | 48000 |
@@ -485,7 +485,7 @@ export API_KEY="your_api_key_here"
 ### 流媒体格式对比
 
 | 格式 | type字段 | 容器格式 | 适用场景 |
-| --- | --- | --- | --- |
+| --: | :-- | :-: | --- |
 | HLS | `hls` | mpegts / mp4 | 移动端、直播 |
 | DASH | `dash` | fmp4 | Web端、自适应码率 |
 
@@ -514,8 +514,8 @@ bitrate单位为bits/sec，例如320kbps应写为320000，128kbps应写为128000
 ## 错误处理
 
 
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景2 | 原因 | 处理方式 |
+| :-- | :-: | --- |
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

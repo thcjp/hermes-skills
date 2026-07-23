@@ -24,6 +24,15 @@ pricing_model: "per_use"
 
 数据分析方法论守护框架，确保分析过程的统计严谨性、陷阱识别和方法论正确性。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | 数据分析理调处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -72,7 +81,7 @@ pricing_model: "per_use"
 | 百分比聚合错误 | Aggregating percentages | 各组百分比不能直接平均，需用加权平均或回到原始计数 |
 | 摘樱桃 | Cherry-picking | 是否只展示有利数据？检查完整时间范围和所有分组 |
 
-**输出**: 返回Analytical Pitfalls（分析陷阱识别）的执行结果,包含操作状态和输出数据。
+**输出**: 返回Analytical Pitfalls（分析陷阱识别）的处理结果,包含执行状态码、结果数据和执行日志。
 ### Approach Selection（分析方法选择）
 根据分析目标选择正确的分析方法：
 
@@ -84,7 +93,7 @@ pricing_model: "per_use"
 
 选择原则：correlation 不等于 causation。观察数据只能发现关联，因果需实验或准实验方法。
 
-**输出**: 返回Approach Selection（分析方法选择）的执行结果,包含操作状态和输出数据。
+**输出**: 返回Approach Selection（分析方法选择）的处理结果,包含执行状态码、结果数据和执行日志。
 ### Output Standards（输出规范）
 分析输出的标准化要求：
 
@@ -129,7 +138,7 @@ pricing_model: "per_use"
 
 ### 输出说明
 
-Agent将根据指令执行操作，返回处理结果。结果格式取决于具体能力点的输出定义。
+Agent将根据指令调用对应能力,返回响应数据。响应格式取决于具体能力点的输出定义。
 
 ## 依赖说明
 

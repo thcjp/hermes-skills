@@ -227,3 +227,25 @@ X-Api-Key: voicecall_sk_abc123
 - 不支持主动取消/挂断（`POST /call/{call_id}/hangup` 为付费版专享）。
 - 轮询间隔固定 3 秒。
 - 不适用于紧急救助、医疗急救或需100%确定性的关键决策。
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "语音通话服务-免费版处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "clawcall"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

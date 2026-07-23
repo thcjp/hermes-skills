@@ -22,6 +22,15 @@ homepage: "https://skillhub.cn"
 
 将长文档转化为结构化的评估与风险清单。提供文档评估、核心逻辑提取与基础风险检测三大基础能力。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | AI Doc LITE处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 依赖说明
 
 ### 运行环境
@@ -50,8 +59,8 @@ homepage: "https://skillhub.cn"
 - **决策相关性**: 明确该文档支持什么决策
 
 **输入**: 用户提供Document Assessment(文档评估)所需的指令和必要参数。
-**处理**: 按照skill规范执行Document Assessment(文档评估)操作,遵循单一意图原则。
-**输出**: 返回Document Assessment(文档评估)的执行结果,包含操作状态和输出数据。
+**处理**: 解析Document Assessment(文档评估)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回Document Assessment(文档评估)的处理结果,包含执行状态码、结果数据和执行日志。
 
 ### 2. Core Logic Extraction(核心逻辑提取)
 - **主张提取**: 识别文档的核心主张、义务或商业要点
@@ -59,8 +68,8 @@ homepage: "https://skillhub.cn"
 - **关键假设**: 标记文档成立所依赖的隐含假设
 
 **输入**: 用户提供Core Logic Extraction(核心逻辑提取)所需的指令和必要参数。
-**处理**: 按照skill规范执行Core Logic Extraction(核心逻辑提取)操作,遵循单一意图原则。
-**输出**: 返回Core Logic Extraction(核心逻辑提取)的执行结果,包含操作状态和输出数据。
+**处理**: 解析Core Logic Extraction(核心逻辑提取)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回Core Logic Extraction(核心逻辑提取)的处理结果,包含执行状态码、结果数据和执行日志。
 
 ### 3. Risk Detection(基础风险检测)
 - **歧义识别**: 标记含糊或多义的条款(如"合理时间""重大事项")
@@ -68,8 +77,8 @@ homepage: "https://skillhub.cn"
 - **未定义术语**: 标记关键但未定义的术语
 
 **输入**: 用户提供Risk Detection(基础风险检测)所需的指令和必要参数。
-**处理**: 按照skill规范执行Risk Detection(基础风险检测)操作,遵循单一意图原则。
-**输出**: 返回Risk Detection(基础风险检测)的执行结果,包含操作状态和输出数据。
+**处理**: 解析Risk Detection(基础风险检测)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回Risk Detection(基础风险检测)的处理结果,包含执行状态码、结果数据和执行日志。
 
 #
 ## 标准输出格式

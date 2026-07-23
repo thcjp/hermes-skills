@@ -22,6 +22,15 @@ homepage: "https://skillhub.cn"
 
 免费版聚焦基础读取场景,提供邮件检索、日程查看、文件下载与文档表格文本提取能力。所有工具通过同一OAuth凭证访问,无需为每个服务单独配置。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | Workspace MCP免费版处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 依赖说明
 
 ### 运行环境
@@ -196,3 +205,25 @@ mcporter call --server google-workspace --tool "time.getCurrentDate"
 ## 升级提示
 
 当前为免费版,仅开放基础读取能力。升级到付费版 `google-workspace-mcp` 可解锁全部49个工具,包括Gmail发送与草稿、Calendar会议创建与空闲时段查找、Docs文档增改、Chat空间消息、People联系人资料等,并获取更完整的异常处理与使用案例,适合日常办公自动化与跨服务工作流编排。
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "Workspace MCP免费版处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "google-workspace-mcp"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

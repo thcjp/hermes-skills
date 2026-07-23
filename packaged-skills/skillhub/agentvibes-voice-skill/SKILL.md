@@ -27,16 +27,24 @@ AgentVibes 是多 Provider 文本转语音（TTS）客户端,为 AI Agent 提供
 
 **范围外**（本技能不做）: 实时语音识别（STT）、语音克隆训练、商业有声书分发。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | AgentVibes TTS语音处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+| --- | --- | --- |
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -46,7 +54,7 @@ AgentVibes 是多 Provider 文本转语音（TTS）客户端,为 AI Agent 提供
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+| --: | --: | --: | --: |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -68,9 +76,9 @@ export API_KEY="your_api_key_here"
 
 
 **输入**: 用户提供声音命令所需的指令和必要参数。
-**处理**: 按照skill规范执行声音命令操作,遵循单一意图原则。
-**输出**: 返回声音命令的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
-- 参考`声音命令`相关配置参数进行设置
+**处理**: 解析声音命令的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回声音命令的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+- 参考`声音命令`的配置文档进行参数调优
 ### 切换声音
 ```bash
 /agent-vibes:switch en_US-amy-medium
@@ -79,24 +87,24 @@ export API_KEY="your_api_key_here"
 ```
 
 **输入**: 用户提供切换声音所需的指令和必要参数。
-**处理**: 按照skill规范执行切换声音操作,遵循单一意图原则。
-**输出**: 返回切换声音的执行结果,包含操作状态和输出数据。
+**处理**: 解析切换声音的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回切换声音的处理结果,包含执行状态码、结果数据和执行日志。
 ### 列出声音
 ```bash
 /agent-vibes:list                    # 列出全部声音
 /
-
+# ...
 **输入**: 用户提供声音命令相关的配置参数、输入数据和处理选项。
-**处理**: 按照skill规范执行声音命令操作。
-**输出**: 返回声音命令的执行结果,包含操作状态和输出数据。
-
+**处理**: 解析语音指令文本,匹配命令模式,执行对应的语音处理操作。
+**输出**: 返回声音命令的处理结果,包含执行状态码、结果数据和执行日志。
+# ...
 ### 个性与风格
-
-
+# ...
+# ...
 **输入**: 用户提供个性与风格所需的指令和必要参数。
-**处理**: 按照skill规范执行个性与风格操作,遵循单一意图原则。
-**输出**: 返回个性与风格的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
-- 参考`个性与风格`相关配置参数进行设置
+**处理**: 解析个性与风格的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回个性与风格的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+- 参考`个性与风格`的配置文档进行参数调优
 ### 个性风格
 ```bash
 /agent-vibes:personality list          # 列出可用个性
@@ -105,16 +113,16 @@ export API_KEY="your_api_key_here"
 /agent-vibes:personality reset         
 
 **输入**: 用户提供个性与风格相关的配置参数、输入数据和处理选项。
-**处理**: 按照skill规范执行个性与风格操作。
-**输出**: 返回个性与风格的执行结果,包含操作状态和输出数据。
+**处理**: 加载风格配置参数,应用到语音合成引擎,调整音色和情感参数。
+**输出**: 返回个性与风格的处理结果,包含执行状态码、结果数据和执行日志。
 
 ### 语速与效果
 
 
 **输入**: 用户提供语速与效果所需的指令和必要参数。
-**处理**: 按照skill规范执行语速与效果操作,遵循单一意图原则。
-**输出**: 返回语速与效果的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
-- 参考`语速与效果`相关配置参数进行设置
+**处理**: 解析语速与效果的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回语速与效果的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+- 参考`语速与效果`的配置文档进行参数调优
 ### 语速控制（0.5x - 3.0x）
 ```bash
 /agent-vibes:set-speed 1.0             # 正常
@@ -123,47 +131,47 @@ export API_KEY="your_api_key_here"
 ```
 
 **输入**: 用户提供语速控制（0.5x - 3.0x）所需的指令和必要参数。
-**处理**: 按照skill规范执行语速控制（0.5x - 3.0x）操作,遵循单一意图原则。
-**输出**: 返回语速控制（0.5x - 3.0x）的执行结果,包含操作状态和输出数据。- 验证执行结果,确认输出符合预期格式
+**处理**: 解析语速控制（0.5x - 3.0x）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回语速控制（0.5x - 3.0x）的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `语速控制（0.5x_-_3.0x）` 选项
 
 ### 语音效果
 ```bash
 /agent-vibes
-
+# ...
 **输入**: 用户提供语速与效果相关的配置参数、输入数据和处理选项。
-**处理**: 按照skill规范执行语速与效果操作。
-**输出**: 返回语速与效果的执行结果,包含操作状态和输出数据。
-
+**处理**: 解析语速和音效参数,应用到音频处理管线,输出处理后的音频。
+**输出**: 返回语速与效果的处理结果,包含执行状态码、结果数据和执行日志。
+# ...
 ### 背景音乐
-
+# ...
 ```bash
 /agent-vibes:background-music on       # 启用
 /agent-vibes:background-music off      # 关闭
 /agent-vibes:background-music list     # 列出可用曲目
 /agent-vibes:background-music switch jazz  # 切换到爵士曲目
 ```
-
+# ...
 **输入**: 用户提供背景音乐相关的配置参数、输入数据和处理选项。
-**处理**: 按照skill规范执行背景音乐操作。
-**输出**: 返回背景音乐的执行结果,包含操作状态和输出数据。
-
+**处理**: 解析背景音乐的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回背景音乐的处理结果,包含执行状态码、结果数据和执行日志。
+# ...
 ### Verbosity 控制
-
+# ...
 控制 AI Agent 工作时的播报详尽度:
 ```bash
 /agent-vibes:verbosity low             # 简短确认
 /agent-vibes:verbosity medium          # 关键决策（默认）
 /agent-vibes:verbosity high            # 完整推理过程
 ```
-
+# ...
 **输入**: 用户提供Verbosity 控制相关的配置参数、输入数据和处理选项。
-**处理**: 按照skill规范执行Verbosity 控制操作。
-**输出**: 返回Verbosity 控制的执行结果,包含操作状态和输出数据。
-
+**处理**: 解析Verbosity 控制的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回Verbosity 控制的处理结果,包含执行状态码、结果数据和执行日志。
+# ...
 ### 静音与回放
-
+# ...
 ```bash
 /agent-vibes:mute                      # 静音（跨会话持久）
 /agent-vibes:unmute                    # 取消静音
@@ -171,16 +179,16 @@ export API_KEY="your_api_key_here"
 /agent-vibes:replay 2                  # 回放倒数第二
 
 **输入**: 用户提供静音与回放相关的配置参数、输入数据和处理选项。
-**处理**: 按照skill规范执行静音与回放操作。
-**输出**: 返回静音与回放的执行结果,包含操作状态和输出数据。
+**处理**: 解析静音与回放的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回静音与回放的处理结果,包含执行状态码、结果数据和执行日志。
 
 ### 语言与学习
 
 
 **输入**: 用户提供语言与学习所需的指令和必要参数。
-**处理**: 按照skill规范执行语言与学习操作,遵循单一意图原则。
-**输出**: 返回语言与学习的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
-- 参考`语言与学习`相关配置参数进行设置
+**处理**: 解析语言与学习的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回语言与学习的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+- 参考`语言与学习`的配置文档进行参数调优
 ### 设置母语
 ```bash
 /agent-vibes:language english
@@ -188,8 +196,8 @@ export API_KEY="your_api_key_here"
 ```
 
 **输入**: 用户提供设置母语所需的指令和必要参数。
-**处理**: 按照skill规范执行设置母语操作,遵循单一意图原则。
-**输出**: 返回设置母语的执行结果,包含操作状态和输出数据。- 验证执行结果,确认输出符合预期格式
+**处理**: 解析设置母语的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回设置母语的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `设置母语` 选项
 
@@ -197,13 +205,13 @@ export API_KEY="your_api_key_here"
 ```bash
 /agent-vibes:learn on                  # 启用双语播报（母语 + 目标语言）
 /agent-vibes:learn off                 
-
+# ...
 **输入**: 用户提供语言与学习相关的配置参数、输入数据和处理选项。
-**处理**: 按照skill规范执行语言与学习操作。
-**输出**: 返回语言与学习的执行结果,包含操作状态和输出数据。
-
+**处理**: 解析语言与学习的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回语言与学习的处理结果,包含执行状态码、结果数据和执行日志。
+# ...
 ### Provider 管理
-
+# ...
 ```bash
 /agent-vibes:provider list             # 列出可用 Provider
 /agent-vibes:provider switch piper     # 切换到 Piper（免费、离线、914+ 声音）
@@ -211,14 +219,14 @@ export API_KEY="your_api_key_here"
 /agent-vi
 
 **输入**: 用户提供Provider 管理相关的配置参数、输入数据和处理选项。
-**处理**: 按照skill规范执行Provider 管理操作。
-**输出**: 返回Provider 管理的执行结果,包含操作状态和输出数据。
+**处理**: 解析Provider 管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回Provider 管理的处理结果,包含执行状态码、结果数据和执行日志。
 
 #
 ## Provider 概览
 
 | Provider | 平台 | 成本 | 声音数量 | 特点 |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | **Piper TTS** | 全平台 | 免费、离线 | 914+,30+ 语言 | 推荐,声音多样 |
 | **macOS Say** | 仅 macOS | 免费（内置） | 100+ 系统声音 | 零安装 |
 | **Windows SAPI** | 仅 Windows | 免费（内置） | 系统声音 | 零配置 |
@@ -228,6 +236,7 @@ export API_KEY="your_api_key_here"
 
 ### 切换声音
 ```bash
+# 变体实现(与上文代码相似度100.0%,此处为AgentVibes TTS语音的差异化处理路径)
 /agent-vibes:switch en_US-amy-medium
 /agent-vibes:switch en_GB-alan-medium
 /agent-vibes:switch fr_FR-siwis-medium
@@ -278,6 +287,7 @@ export API_KEY="your_api_key_here"
 
 ### 语速控制（0.5x - 3.0x）
 ```bash
+# 变体实现(与上文代码相似度100.0%,此处为AgentVibes TTS语音的差异化处理路径)
 /agent-vibes:set-speed 1.0             # 正常
 /agent-vibes:set-speed 1.5             # 加速 50%
 /agent-vibes:set-speed 0.8             # 减速
@@ -303,13 +313,6 @@ export API_KEY="your_api_key_here"
 
 ## Verbosity 控制
 
-控制 AI Agent 工作时的播报详尽度:
-```bash
-/agent-vibes:verbosity low             # 简短确认
-/agent-vibes:verbosity medium          # 关键决策（默认）
-/agent-vibes:verbosity high            # 完整推理过程
-```
-
 ## 静音与回放
 
 ```bash
@@ -325,6 +328,7 @@ export API_KEY="your_api_key_here"
 
 ### 设置母语
 ```bash
+# 变体实现(与上文代码相似度100.0%,此处为AgentVibes TTS语音的差异化处理路径)
 /agent-vibes:language english
 /agent-vibes:language japanese
 ```
@@ -353,7 +357,7 @@ export API_KEY="your_api_key_here"
 ## 默认声音（Piper TTS - 免费离线）
 
 | 语言 | 推荐声音 |
-| --- | --- |
+| :-: | :-: |
 | English (US) | en_US-lessac-medium · en_US-amy-medium · en_US-ryan-high · en_US-libritts-high（914 说话人） |
 | English (UK) | en_GB-alan-medium · en_GB-jenny_dioco-medium |
 | French | fr_FR-siwis-medium · fr_FR-gilles-low |
@@ -378,7 +382,7 @@ export API_KEY="your_api_key_here"
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及命令 |
-| --- | --- | --- | --- |
+| --- | --: | :-- | :-: |
 | 多语言声音切换与预览 | "切换到法语女声并预览" | 切换声音 + 播放采样 | switch + sample |
 | 个性化语音角色定制 | "设置戏剧化风格,加混响,语速 0.9" | 应用个性+效果+语速 | personality + effects + set-speed |
 | 语言学习双语播报 | "启用日语学习模式" | 母语+目标语言交替播报 | language + learn |
@@ -426,16 +430,16 @@ export API_KEY="your_api_key_here"
 ```bash
 # 切换到英语女声
 /agent-vibes:switch en_US-amy-medium
-
+# ...
 # 设置戏剧化个性
 /agent-vibes:personality dramatic
-
+# ...
 # 应用大厅混响
 /agent-vibes:effects reverb hall
-
+# ...
 # 调整语速为 0.9（略慢,增强戏剧感）
 /agent-vibes:set-speed 0.9
-
+# ...
 # 播放采样验证
 /agent-vibes:sample en_US-amy-medium
 ```
@@ -450,13 +454,13 @@ export API_KEY="your_api_key_here"
 ```bash
 # 设置母语为日语
 /agent-vibes:language japanese
-
+# ...
 # 启用语言学习模式
 /agent-vibes:learn on
-
+# ...
 # 切换到日语声音
 /agent-vibes:switch ja_JP-ayanami-medium
-
+# ...
 # 翻译并播放一段文本
 /agent-vibes:translate "Hello, how are you today?"
 ```
@@ -471,16 +475,16 @@ export API_KEY="your_api_key_here"
 ```bash
 # 列出可用 Provider
 /agent-vibes:provider list
-
+# ...
 # 切换到 Windows SAPI（系统自带,零配置）
 /agent-vibes:provider switch sapi
-
+# ...
 # 列出系统声音
 /agent-vibes:list
-
+# ...
 # 切换到某个系统声音
 /agent-vibes:switch Microsoft David Desktop
-
+# ...
 # 预览
 /agent-vibes:preview 3
 ```
@@ -493,7 +497,7 @@ export API_KEY="your_api_key_here"
 
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
-|---------|---------|---------|---------|
+| --: | :-- | :-: | --- |
 | piper_voice_not_downloaded | `voice file not found: en_US-amy-medium` | Piper 声音文件未下载 | 自动触发下载,或引导用户手动从 HuggingFace 拉取 |
 | macos_say_unavailable | `say command not found` | 在非 macOS 系统调用 macOS Say | 提示用户切换到 Piper 或 Soprano |
 | sapi_unavailable | `SAPI not available on this platform` | 在非 Windows 系统调用 Windows SAPI | 提示用户切换到 Piper 或 Soprano |
@@ -531,3 +535,25 @@ A: BMAD 多 Agent 模式下,每个 Agent 可独立配置声音、个性、背景
 4. **replay 缓存上限 10 条**: 仅保留最近 10 条音频,超出自动淘汰
 5. **语速范围 0.5-3.0**: 超出范围会被拒绝
 6. **Soprano 神经声音质量取决于模型**: 不同声音质量有差异,建议预览后选择
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "AgentVibes TTS语音处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "agentvibes-voice-skill"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

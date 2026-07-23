@@ -25,6 +25,15 @@ pricing_model: "monthly"
 
 涵盖容器生命周期、镜像管理、Compose、网络、数据卷、系统管理等Docker核心操作。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | Docker核心操作指南处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -123,7 +132,7 @@ docker top container_name     # 容器内进程
 ```
 
 **输入**: 用户提供容器检查与调试（Container Inspection & Debugging）所需的指令和必要参数。
-**输出**: 返回容器检查与调试（Container Inspection & Debugging）的执行结果,包含操作状态和输出数据。### 镜像管理（Image Management）
+**输出**: 返回容器检查与调试（Container Inspection & Debugging）的处理结果,包含执行状态码、结果数据和执行日志。### 镜像管理（Image Management）
 
 构建、拉取、推送、清理镜像：
 
@@ -174,7 +183,7 @@ docker-compose up -d --build # 重新构建并启动
 ```
 
 **输入**: 用户提供Docker Compose所需的指令和必要参数。
-**输出**: 返回Docker Compose的执行结果,包含操作状态和输出数据。### 网络配置（Networking）
+**输出**: 返回Docker Compose的处理结果,包含执行状态码、结果数据和执行日志。### 网络配置（Networking）
 管理Docker网络与容器互联：
 
 ```bash
@@ -187,7 +196,7 @@ docker network rm mynetwork                  # 删除网络
 ```
 
 **输入**: 用户提供网络配置（Networking）所需的指令和必要参数。
-**处理**: 按照skill规范执行网络配置（Networking）操作,遵循单一意图原则。### 数据卷管理（Volumes）
+**处理**: 解析网络配置（Networking）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 数据卷管理（Volumes）
 
 持久化数据存储管理：
 
@@ -213,7 +222,7 @@ docker version                  # 版本信息
 ```
 
 **输入**: 用户提供系统管理（System Management）所需的指令和必要参数。
-**输出**: 返回系统管理（System Management）的执行结果,包含操作状态和输出数据。### 常见工作流（Common Workflows）
+**输出**: 返回系统管理（System Management）的处理结果,包含执行状态码、结果数据和执行日志。### 常见工作流（Common Workflows）
 预置开发、数据库、调试与构建工作流：
 
 **开发容器（Development container）：**
@@ -262,7 +271,7 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 ```
 
 **输入**: 用户提供常见工作流（Common Workflows）所需的指令和必要参数。
-**输出**: 返回常见工作流（Common Workflows）的执行结果,包含操作状态和输出数据。
+**输出**: 返回常见工作流（Common Workflows）的处理结果,包含执行状态码、结果数据和执行日志。
 
 #
 ## 使用流程
@@ -364,3 +373,25 @@ A: `docker-compose up` 在前台运行，日志直接输出到终端，Ctrl+C停
 - 容器内GPU支持需要额外配置NVIDIA Container Toolkit
 - 复杂网络拓扑（如overlay网络）需要Swarm模式支持
 - 镜像构建性能受网络影响，拉取基础镜像可能较慢
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "Docker核心操作指南处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "docker-essentials"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

@@ -65,6 +65,13 @@ pricing_model: "per_use"
 
 **输出**：返回执行结果,包含操作状态和输出数据
 
+## 输入格式
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | AWS云巡检专业版处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ```text
 用户: 执行核心功能
 Skill: 正在执行核心功能...
@@ -564,3 +571,20 @@ A: 建议先查看使用流程,按步骤操作即可。
 
 **Q: 遇到错误怎么办？**
 A: 可查阅错误处理章节,按照表格中的处理方式进行排查。
+
+## 输出格式
+```json
+{
+  "success": true,
+  "data": {
+    "result": "AWS云巡检专业版处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "aws cloud inspector pro"
+    }
+  },
+  "execution_log": ["解析输入参数", "执行核心处理", "格式化输出结果"],
+  "error": null
+}
+```

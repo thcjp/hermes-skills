@@ -1,0 +1,3257 @@
+{
+  "files_scanned": 995,
+  "files_modified": 464,
+  "vague_total": 1000,
+  "input_added_total": 314,
+  "output_added_total": 162,
+  "details": [
+    {
+      "slug": "accounting-and-finance",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "accounting-and-finance-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "accounting-finance",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "ace-music-free",
+      "vague_fixed": 0,
+      "input_added": false,
+      "output_added": true,
+      "total_changes": 1
+    },
+    {
+      "slug": "ad-insight-hub",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "aegis-security",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "aegis-security-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "afrexai-cybersecurity-engine",
+      "vague_fixed": 4,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "afrexai-cybersecurity-engine-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "afrexai-knowledge-management",
+      "vague_fixed": 5,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 6
+    },
+    {
+      "slug": "afrexai-knowledge-management-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "agent-telegram",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "agent-telegram-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "agentvibes-voice-skill",
+      "vague_fixed": 7,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 9
+    },
+    {
+      "slug": "agentvibes-voice-skill-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "ai-agent-helper",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "ai-agent-helper-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "ai-assistant",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "ai-assistant-free",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "ai-image-gen",
+      "vague_fixed": 0,
+      "input_added": false,
+      "output_added": true,
+      "total_changes": 1
+    },
+    {
+      "slug": "ai-image-gen-free",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "ai-kujiale-design",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "ai-kujiale-design-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "ai-podcast",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "ai-podcast-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "aic-dashboard",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "aic-dashboard-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "alephnet-node",
+      "vague_fixed": 6,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 8
+    },
+    {
+      "slug": "alephnet-node-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "alibaba-quark-scan",
+      "vague_fixed": 9,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 10
+    },
+    {
+      "slug": "alibaba-quark-scan-free",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "analytics-dashboard",
+      "vague_fixed": 5,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "analyze-video-by-qwen",
+      "vague_fixed": 0,
+      "input_added": false,
+      "output_added": true,
+      "total_changes": 1
+    },
+    {
+      "slug": "analyze-video-by-qwen-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "anthropics-frontend-design",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "anthropics-frontend-design-free",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 5
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "anygen-diagram-generator",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "anygen-diagram-generator-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "api-connect-hub",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "api-doc-generator",
+      "vague_fixed": 4,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "api-doc-writer",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "api-doc-writer-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "api-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "api-gateway",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "api-gateway-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "api-generator",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "api-generator-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "api-integration",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "api-integration-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "api-scaffold-gen",
+      "vague_fixed": 6,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 6
+    },
+    {
+      "slug": "api-toolkit",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "apple-health-skill",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 5
+    },
+    {
+      "slug": "apple-health-skill-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "archive",
+      "vague_fixed": 4,
+      "input_added": false,
+      "output_added": true,
+      "total_changes": 5
+    },
+    {
+      "slug": "archive-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "audio-stream-upload",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "audio-upload-aioz-stream",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "audio-upload-aioz-stream-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "automation-recipe-book",
+      "vague_fixed": 5,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "aws-agentcore-langgraph",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "aws-agentcore-langgraph-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "aws-cloud-architect",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "aws-cloud-architect-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "aws-graph-agent",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "aws-graph-agent-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "aws-infra",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "aws-infra-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "aws-wechat-article-writing",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "aws-wechat-article-writing-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "azure-ai-transcription-py",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "azure-ai-transcription-py-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "azure-ai-voicelive-py",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "azure-ai-voicelive-py-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "azure-cli-toolkit",
+      "vague_fixed": 4,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "azure-cloud-architect",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "azure-cloud-architect-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "azure-gateway-cli",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "azure-infra",
+      "vague_fixed": 4,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 6
+    },
+    {
+      "slug": "azure-infra-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "azure-transcription",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "azure-voicelive",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "baidu-netdisk-skills",
+      "vague_fixed": 5,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 7
+    },
+    {
+      "slug": "baidu-netdisk-skills-free",
+      "vague_fixed": 4,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 6
+    },
+    {
+      "slug": "beware-piper-tts",
+      "vague_fixed": 5,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 6
+    },
+    {
+      "slug": "beware-piper-tts-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "bilibili-all-in-one",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "bilibili-all-in-one-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "bilibili-helper",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "bilibili-helper-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "blog-writer",
+      "vague_fixed": 7,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 8
+    },
+    {
+      "slug": "blog-writer-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "bookmark-intelligence",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "bookmark-intelligence-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "calendar-reminder",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "calendar-reminder-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "call-bridge",
+      "vague_fixed": 5,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "can",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "can-bus-toolkit",
+      "vague_fixed": 5,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "can-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "canvas-json-handler",
+      "vague_fixed": 4,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "card-image-builder",
+      "vague_fixed": 6,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 6
+    },
+    {
+      "slug": "chart",
+      "vague_fixed": 4,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 6
+    },
+    {
+      "slug": "chart-craft",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "chart-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "cheat-code-paid",
+      "vague_fixed": 5,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "chief-creative-officer",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "chief-creative-officer-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "chromecast-control",
+      "vague_fixed": 8,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 9
+    },
+    {
+      "slug": "chromecast-control-free",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "clawcall",
+      "vague_fixed": 0,
+      "input_added": false,
+      "output_added": true,
+      "total_changes": 1
+    },
+    {
+      "slug": "clawcall-free",
+      "vague_fixed": 0,
+      "input_added": false,
+      "output_added": true,
+      "total_changes": 1
+    },
+    {
+      "slug": "cloud",
+      "vague_fixed": 4,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "cloud-architect",
+      "vague_fixed": 6,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 7
+    },
+    {
+      "slug": "cloud-architect-free",
+      "vague_fixed": 5,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 6
+    },
+    {
+      "slug": "cloud-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "code-analysis-toolkit",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "code-delegate",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "code-dev-toolkit",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "code-dev-v1",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "code-quality-paid",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "code-runner",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "comfyui-painter",
+      "vague_fixed": 6,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 8
+    },
+    {
+      "slug": "comfyui-painter-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "communication-skill",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "communication-skill-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "creative-officer",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "creator-alpha-feed",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "creator-alpha-feed-free",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "cron-setup-guide",
+      "vague_fixed": 4,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "css",
+      "vague_fixed": 11,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 12
+    },
+    {
+      "slug": "css-free",
+      "vague_fixed": 4,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 6
+    },
+    {
+      "slug": "csv",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "csv-analyzer",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "csv-analyzer-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "csv-free",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "csv-handler",
+      "vague_fixed": 5,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 7
+    },
+    {
+      "slug": "csv-handler-free",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 5
+    },
+    {
+      "slug": "data-analysis-hub",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "data-analysis-litiao",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "data-analysis-litiao-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "data-analyst-chinese",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "data-analyst-cn",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "data-analyst-cn-free",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "data-analyst-expert",
+      "vague_fixed": 5,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "data-format-converter",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "data-format-converter-free",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "database-admin",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "database-admin-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "db",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "db-admin-console",
+      "vague_fixed": 6,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 6
+    },
+    {
+      "slug": "db-connector",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "db-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "db-schema-designer",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "decision-architect",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "decision-architect-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "design",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "design-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "design-toolkit",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "diagram-gen",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "diagram-generator",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 5
+    },
+    {
+      "slug": "diagram-generator-free",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 5
+    },
+    {
+      "slug": "diagram-tools",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "discord",
+      "vague_fixed": 6,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 7
+    },
+    {
+      "slug": "discord-chat",
+      "vague_fixed": 5,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 6
+    },
+    {
+      "slug": "discord-chat-free",
+      "vague_fixed": 4,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "discord-communities",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "discord-communities-free",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 5
+    },
+    {
+      "slug": "discord-free",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "discord-master",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "discord-voice",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "discord-voice-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "dlazy-audio-generate",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "dlazy-audio-generate-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "dns",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "dns-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "dns-networking-paid",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "docker-essentials",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "docker-essentials-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "docker-essentials-v1",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "doubao-image-gen",
+      "vague_fixed": 4,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "elite-frontend",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "elite-longterm-memory",
+      "vague_fixed": 6,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 8
+    },
+    {
+      "slug": "elite-longterm-memory-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "elite-longterm-memory-local",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "elite-longterm-memory-local-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "email-163",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "email-163-com",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "email-163-com-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "email-daily-summary",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "email-daily-summary-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "email-digest",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "email-gmail-outlook",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "email-gmail-outlook-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "email-skill",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "email-skill-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "email-toolkit",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "encoding-formats",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "encoding-formats-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "encryption-paid",
+      "vague_fixed": 4,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "evolution-engine",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "evolution-engine-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "explain-code-paid",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "feishu-card",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "feishu-card-builder",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "feishu-card-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "feishu-file-sender",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "feishu-send-file",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "feishu-send-file-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "figma",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "figma-design-paid",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "figma-studio",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "file",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "finance-accounting",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "finance-acct",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "finance-report",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "finance-toolkit",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "financial-literacy-paid",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "format-converter",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "free-resource-finder",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "frontend-design-3",
+      "vague_fixed": 5,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 7
+    },
+    {
+      "slug": "frontend-design-3-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "game-asset-gen",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "game-theory",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "game-theory-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "gateway-manager",
+      "vague_fixed": 5,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "git-cli-paid",
+      "vague_fixed": 4,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "git-essentials",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "git-helper-paid",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "git-toolkit",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "github-api-toolkit",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "github-manager",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "go-security-vulnerability",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "go-to-market",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "go-to-market-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "gog",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "gog-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "google-fonts",
+      "vague_fixed": 6,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 7
+    },
+    {
+      "slug": "google-workspace-cli",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "google-workspace-mcp",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "google-workspace-mcp-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "google-workspace-toolkit",
+      "vague_fixed": 7,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 7
+    },
+    {
+      "slug": "health",
+      "vague_fixed": 4,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "html-designer-paid",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "hugo-blog-publisher",
+      "vague_fixed": 7,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 8
+    },
+    {
+      "slug": "hugo-blog-publisher-free",
+      "vague_fixed": 4,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "in-depth-research",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 5
+    },
+    {
+      "slug": "in-depth-research-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "iris-code-formatter",
+      "vague_fixed": 17,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 17
+    },
+    {
+      "slug": "java",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "jinn-node",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "jinn-node-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "jira",
+      "vague_fixed": 7,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 8
+    },
+    {
+      "slug": "jira-free",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 5
+    },
+    {
+      "slug": "jira-skill",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 5
+    },
+    {
+      "slug": "jira-skill-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "join-meeting",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 5
+    },
+    {
+      "slug": "join-meeting-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "json-beautifier",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "json-lint",
+      "vague_fixed": 4,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "json-parse-engine",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "json-repair",
+      "vague_fixed": 4,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "json-repair-kit",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "json-validator",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "json-yaml-converter",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "knowledge-graph-skill",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "knowledge-ontology",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "knowledge-ontology-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "learn-cog",
+      "vague_fixed": 4,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 6
+    },
+    {
+      "slug": "learn-cog-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "lh-video-gen-paid",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "linear-api",
+      "vague_fixed": 9,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 11
+    },
+    {
+      "slug": "linear-api-free",
+      "vague_fixed": 4,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 6
+    },
+    {
+      "slug": "llm-assistant-hub",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "llm-assistant-hub-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "logo-brand-identity",
+      "vague_fixed": 4,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "logo-design",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "logo-design-guide",
+      "vague_fixed": 8,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 9
+    },
+    {
+      "slug": "logo-design-guide-free",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "longmemo-elite",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "longmemo-elite-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "markdown-exporter",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "markdown-exporter-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "markdown-format",
+      "vague_fixed": 4,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "meeting-join",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "memo-quickstart",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "memo-quickstart-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "memory",
+      "vague_fixed": 4,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 6
+    },
+    {
+      "slug": "memory-compress",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "memory-compress-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "memory-distiller",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "memory-distiller-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "memory-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "memory-orchestrator",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "memory-orchestrator-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "memory-radar",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "memory-radar-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "memory-scan",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "memory-scan-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "minimalist-design",
+      "vague_fixed": 4,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "molt-board-art",
+      "vague_fixed": 4,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "molt-board-art-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "moltbook-filter",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "moltbook-filter-free",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "mongodb-atlas-admin",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "mongodb-atlas-admin-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "multi-agent-dev",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "multi-agent-dev-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "multi-source-research",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "music-gen",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "music-gen-cellcog",
+      "vague_fixed": 4,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "neosoul-decision-agent",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "neosoul-decision-agent-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "neural-memory-enhanced",
+      "vague_fixed": 4,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "neural-memory-enhanced-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "news-aggregator",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "news-aggregator-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "news-daily-digest",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "news-sentiment",
+      "vague_fixed": 5,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "news-sentiment-scan",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "news-sentiment-scan-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "note-app-cli",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "okx-dex-token-paid",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "ontology",
+      "vague_fixed": 4,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 6
+    },
+    {
+      "slug": "ontology-free",
+      "vague_fixed": 4,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 6
+    },
+    {
+      "slug": "persistent-memory-engine",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 5
+    },
+    {
+      "slug": "persistent-memory-engine-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "personal-health-manager",
+      "vague_fixed": 4,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "pg-job-queue",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "pg-mcp-skills",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "photo-caption",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "photo-captions",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "photo-captions-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "plugin-architecture",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "pro-comm-toolkit",
+      "vague_fixed": 6,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 6
+    },
+    {
+      "slug": "proactive-agent",
+      "vague_fixed": 7,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 8
+    },
+    {
+      "slug": "proactive-agent-free",
+      "vague_fixed": 4,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "productivity",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "productivity-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "productivity-improving",
+      "vague_fixed": 4,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "professional-communication",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "professional-communication-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "py",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "py-data-analyzer",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "pyx-scan",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "pyx-scan-free",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "pyx-scanner",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "qq-zone-photo",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "qq-zone-photo-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "reddit-research-paid",
+      "vague_fixed": 4,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "reminder-engine",
+      "vague_fixed": 5,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "repo-manager",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "report",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "rest-api-reference",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "resume-assistant",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "resume-assistant-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 4
+    },
+    {
+      "slug": "rss-ai-reader",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "rss-ai-reader-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "rss-reader-ai",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "rust",
+      "vague_fixed": 7,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 8
+    },
+    {
+      "slug": "rust-free",
+      "vague_fixed": 4,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "schedule-manager",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "security",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "security-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "shop-culture",
+      "vague_fixed": 6,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 8
+    },
+    {
+      "slug": "shop-culture-free",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 5
+    },
+    {
+      "slug": "skill-creator",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "skill-creator-free",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "skill-vetter",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "skill-vetter-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "slack",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "slack-hub",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "slack-hub-skill",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "slack-hub-skill-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "slack-toolkit",
+      "vague_fixed": 5,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "slack-workspace",
+      "vague_fixed": 7,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 8
+    },
+    {
+      "slug": "slack-workspace-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "slack-workspace-manager",
+      "vague_fixed": 7,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 7
+    },
+    {
+      "slug": "smart-crawler",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "smart-reminder",
+      "vague_fixed": 4,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "social",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "social-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "social-media-scheduler",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "social-media-scheduler-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "solo-build",
+      "vague_fixed": 5,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 6
+    },
+    {
+      "slug": "solo-build-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "solo-dev-companion",
+      "vague_fixed": 6,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 6
+    },
+    {
+      "slug": "solo-research",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "solo-research-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "sql",
+      "vague_fixed": 4,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 6
+    },
+    {
+      "slug": "sql-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "sql-toolkit",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "stock-filter",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "story-long-write",
+      "vague_fixed": 8,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 9
+    },
+    {
+      "slug": "story-long-write-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "tarot",
+      "vague_fixed": 5,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 6
+    },
+    {
+      "slug": "tarot-free",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "task-bot-orchestrator",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "task-planner",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "task-queue-manager",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "telegram-alert",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "telegram-chat",
+      "vague_fixed": 4,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "telegram-messaging",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "telegram-messaging-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "timeline-digest",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "timer",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "timer-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "tmux-session",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "token-manager",
+      "vague_fixed": 4,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "token-manager-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "translate-en-zh",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "translate-hub",
+      "vague_fixed": 6,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 6
+    },
+    {
+      "slug": "travel-assistant",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "typescript-skills",
+      "vague_fixed": 5,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 6
+    },
+    {
+      "slug": "ui-audit",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "ui-audit-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "ui-design-toolkit",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "ui-ux-design",
+      "vague_fixed": 8,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 10
+    },
+    {
+      "slug": "ui-ux-design-free",
+      "vague_fixed": 4,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 6
+    },
+    {
+      "slug": "ui-ux-dev-paid",
+      "vague_fixed": 5,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "upstage-document-parse",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "upstage-document-parse-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "use-my-browser",
+      "vague_fixed": 6,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 7
+    },
+    {
+      "slug": "use-my-browser-free",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "ux-design",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "video-editing",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "video-editing-paid",
+      "vague_fixed": 4,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "video-frames-paid",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "video-stream-upload",
+      "vague_fixed": 5,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "video-toolkit",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "video-translator-paid",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "video-upload-stream-tool",
+      "vague_fixed": 5,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "vulnerability-scanner",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "web-crawler-engine",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "web-notepad",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "wechat-article-writer",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "whatsapp-image",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "whatsapp-messaging",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "whatsapp-messaging-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "whatsapp-msg-manager",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "whatsapp-style",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "whatsapp-style-guide",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "whatsapp-styler",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 2
+    },
+    {
+      "slug": "whatsapp-styler-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "whatsapp-styling-guide",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 5
+    },
+    {
+      "slug": "whatsapp-styling-guide-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "whatsapp-ultimate",
+      "vague_fixed": 5,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 6
+    },
+    {
+      "slug": "whatsapp-ultimate-free",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "work",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "workflow-orchestrator",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "workflow-splitter",
+      "vague_fixed": 4,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 4
+    },
+    {
+      "slug": "write",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "write-a-skill",
+      "vague_fixed": 5,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 6
+    },
+    {
+      "slug": "write-a-skill-free",
+      "vague_fixed": 3,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 5
+    },
+    {
+      "slug": "write-free",
+      "vague_fixed": 1,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 3
+    },
+    {
+      "slug": "ws-agent-browser",
+      "vague_fixed": 5,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "x-news-daily",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "x-news-daily-free",
+      "vague_fixed": 0,
+      "input_added": true,
+      "output_added": true,
+      "total_changes": 2
+    },
+    {
+      "slug": "x-timeline-digest",
+      "vague_fixed": 4,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 5
+    },
+    {
+      "slug": "x-timeline-digest-free",
+      "vague_fixed": 2,
+      "input_added": true,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "youtube-watcher-paid",
+      "vague_fixed": 1,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 1
+    },
+    {
+      "slug": "z-card-image",
+      "vague_fixed": 3,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 3
+    },
+    {
+      "slug": "z-card-image-free",
+      "vague_fixed": 2,
+      "input_added": false,
+      "output_added": false,
+      "total_changes": 2
+    }
+  ]
+}

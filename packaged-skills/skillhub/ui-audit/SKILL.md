@@ -26,6 +26,15 @@ pricing_model: "per_use"
 ui-audit 基于 Warp-Speed Decisioning 框架，对界面进行结构化 UX 审计。核心理念是
 "Speed ≠ Recklessness"——快速设计不等于鲁莽设计，关键在于意图性。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | UI Audit处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -72,25 +81,25 @@ export API_KEY="your_api_key_here"
 加载 `02-information-scaffold.md` 获取心理学、经济学、无障碍性和默认值理论。决策流程为三步权衡：
 institutional knowledge → user familiarity → research，通过 JTBD（Jobs-to-be-done）支持度选择方案。
 
-**处理**: 按照skill规范执行基础框架引用与决策流程操作,遵循单一意图原则。
-**输出**: 返回基础框架引用与决策流程的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
-- 参考`基础框架引用与决策流程`相关配置参数进行设置
+**处理**: 解析基础框架引用与决策流程的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回基础框架引用与决策流程的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+- 参考`基础框架引用与决策流程`的配置文档进行参数调优
 ### 2. 新界面设计检查清单（6 步流程）
 参照 `10-checklist-new-interfaces.md` 执行 6 步新界面设计流程。每步包含明确的输入、输出和验证标准。
 同时参照 `11-checklist-fidelity.md` 检查组件状态（hover/focus/disabled/loading）、交互逻辑、
-可扩展性和反馈机制。参照 `13-checklist-innovation.md` 评估 5 级原创性光谱（Level 0-4）。- 验证执行结果，确认输出符合预期格式
-- 参考`新界面设计检查清单（6 步流程）`相关配置参数进行设置
+可扩展性和反馈机制。参照 `13-checklist-innovation.md` 评估 5 级原创性光谱（Level 0-4）。- 验证返回数据的完整性和格式正确性
+- 参考`新界面设计检查清单（6 步流程）`的配置文档进行参数调优
 ### 3. 视觉样式审计（Spacing/Color/Elevation/Typography/Motion）
 参照 `12-checklist-visual-style.md` 审计视觉样式。检查间距一致性（8px 基线网格）、
 色彩调色板遵循度、阴影/elevation 层级、字体系统（display/body/mono 配对）、
 圆角/边框一致性、图标风格统一性和动效原则。每项检查标注 pass/warn/fail/na 状态。
 
 **输入**: 用户提供视觉样式审计（Spacing/Color/Elevation/Typography/Motion）所需的指令和必要参数。
-**输出**: 返回视觉样式审计（Spacing/Color/Elevation/Typography/Motion）的执行结果,包含操作状态和输出数据。
+**输出**: 返回视觉样式审计（Spacing/Color/Elevation/Typography/Motion）的处理结果,包含执行状态码、结果数据和执行日志。
 
-- 执行`视觉样式审计（Spacing/Color/Elevation/Typography/Motion）`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`视觉样式审计（Spacing/Color/Elevation/Typography/Motion）`相关配置参数进行设置
+- 针对`视觉样式审计（Spacing/Color/Elevation/Typography/Motion）`,解析输入数据并返回响应
+- 验证返回数据的完整性和格式正确性
+- 参考`视觉样式审计（Spacing/Color/Elevation/Typography/Motion）`的配置文档进行参数调优
 ### 4. UI 模式库匹配（12 类模式）
 根据核心问题匹配模式库：`20-patterns-chunking.md`（卡片/标签页/手风琴/分页/轮播）、
 `21-patterns-progressive-disclosure.md`（tooltip/popover/drawer/modal）、
@@ -103,22 +112,22 @@ institutional knowledge → user familiarity → research，通过 JTBD（Jobs-t
 `28-patterns-personalization.md`（仪表盘/自适应内容/偏好设置/l10n）、
 `29-patterns-onboarding.md`（引导教程/上下文提示/清单）、
 `30-patterns-information.md`（面包屑/站点地图/标签/分面搜索）、
-`31-patterns-navigation.md`（优先导航/离屏导航/粘性导航/底部导航）。- 验证执行结果，确认输出符合预期格式
-- 参考`UI 模式库匹配（12 类模式）`相关配置参数进行设置
+`31-patterns-navigation.md`（优先导航/离屏导航/粘性导航/底部导航）。- 验证返回数据的完整性和格式正确性
+- 参考`UI 模式库匹配（12 类模式）`的配置文档进行参数调优
 ### 5. 结构化审计报告生成（JSON 格式）
 生成包含必检项和上下文检查项的 JSON 审计报告。必检项：Visual Hierarchy、Visual Style、
 Accessibility。上下文检查项：Navigation（多页应用）、Usability（交互流程）、Onboarding（新用户体验）、
 Social Proof（落地页/营销页）、Forms（数据录入）。每项包含 6-10 个检查点，
-标注 pass/warn/fail/na 状态。报告包含 macro_bets 对齐分析和 priority_fixes 优先修复列表。- 验证执行结果，确认输出符合预期格式
-- 参考`结构化审计报告生成（JSON 格式）`相关配置参数进行设置
+标注 pass/warn/fail/na 状态。报告包含 macro_bets 对齐分析和 priority_fixes 优先修复列表。- 验证返回数据的完整性和格式正确性
+- 参考`结构化审计报告生成（JSON 格式）`的配置文档进行参数调优
 ### 6. Macro Bet 对齐分析
 分析设计与公司宏观押注的对齐度。4 类 macro bets：Velocity（功能快速上市）、
 Efficiency（减少浪费）、Accuracy（更高准确率）、Innovation（发现未开发潜力）。
 每类标注 strong/moderate/weak 对齐度，确保微观设计决策与公司宏观战略一致。
 
 **输入**: 用户提供Macro Bet 对齐分析所需的指令和必要参数。
-**输出**: 返回Macro Bet 对齐分析的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
-- 参考`Macro Bet 对齐分析`相关配置参数进行设置
+**输出**: 返回Macro Bet 对齐分析的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+- 参考`Macro Bet 对齐分析`的配置文档进行参数调优
 #
 ## 使用流程
 

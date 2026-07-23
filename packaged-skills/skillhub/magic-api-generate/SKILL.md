@@ -40,37 +40,37 @@ pricing_model: "per_use"
 * **[业务示例](/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)** - 登录认证、文件上传、导出等
 ### 语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)
 
-执行语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32),自动处理参数解析、任务调度和结果格式化,返回结构化输出。
+针对语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32),自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
 
 **输入**: 用户提供语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)的处理结果。
 
-- 执行`语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)`相关配置参数进行设置
+- 针对`语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)`,解析输入数据并返回响应
+- 验证返回数据的完整性和格式正确性
+- 参考`语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)`的配置文档进行参数调优
 ### 数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)
 
-执行数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32),自动处理参数解析、任务调度和结果格式化,返回结构化输出。
+针对数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32),自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
 
 **输入**: 用户提供数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)的处理结果。
 
-- 执行`数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)`相关配置参数进行设置
+- 针对`数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)`,解析输入数据并返回响应
+- 验证返回数据的完整性和格式正确性
+- 参考`数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)`的配置文档进行参数调优
 ### 业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)
 
-执行业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32),自动处理参数解析、任务调度和结果格式化,返回结构化输出。
+针对业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32),自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
 
 **输入**: 用户提供业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)的处理结果。
 
-- 执行`业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)`相关配置参数进行设置
+- 针对`业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)`,解析输入数据并返回响应
+- 验证返回数据的完整性和格式正确性
+- 参考`业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)`的配置文档进行参数调优
 #
 ## 适用场景
 

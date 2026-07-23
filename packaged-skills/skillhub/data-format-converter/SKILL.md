@@ -30,6 +30,15 @@ pricing_model: "per_use"
 ---
 # 数据格式转换器
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | 数据格式转换器处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -98,7 +107,7 @@ with open('output.csv', 'w', encoding='utf-8-sig', newline='') as f:
 ```
 
 **输入**: 用户提供CSV与JSON互转所需的指令和必要参数。
-**处理**: 按照skill规范执行CSV与JSON互转操作,遵循单一意图原则。### JSON与YAML互转
+**处理**: 解析CSV与JSON互转的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### JSON与YAML互转
 
 **JSON转YAML**：使用 `yaml.safe_dump()` 输出，`default_flow_style=False` 使用块样式（更易读），`allow_unicode=True` 保留中文。
 

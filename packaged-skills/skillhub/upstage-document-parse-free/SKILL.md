@@ -21,6 +21,15 @@ tags:
 document-parse-free 将文档转换为 Markdown 格式。基础版支持 PDF 和图片的同步模式解析，
 识别基础版面元素（段落、标题、表格）。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | Document Parse Free处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 依赖说明
 
 ### 运行环境

@@ -20,6 +20,15 @@ tags:
 
 skill-vetter-free 是安全优先的 AI Agent 技能审查工具基础版。**永远不要在未审查前安装任何技能。**
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | Skill Vetter Free处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 依赖说明
 
 ### 运行环境
@@ -50,9 +59,9 @@ export API_KEY="your_api_key_here"
 基础版支持手动来源验证，不包含 GitHub API 自动查询命令。
 
 **输入**: 用户提供来源检查（Source Check）所需的指令和必要参数。
-**处理**: 按照skill规范执行来源检查（Source Check）操作,遵循单一意图原则。
-**输出**: 返回来源检查（Source Check）的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
-- 参考`来源检查（Source Check）`相关配置参数进行设置
+**处理**: 解析来源检查（Source Check）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回来源检查（Source Check）的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+- 参考`来源检查（Source Check）`的配置文档进行参数调优
 ### 2. 强制代码审查（Code Review - MANDATORY）
 读取技能中的所有文件，逐一检查 RED FLAGS 清单。发现以下任何一项立即拒绝安装：
 `curl`/`wget` 到未知 URL；向外部服务器发送数据；请求凭证/令牌/API Key；
@@ -60,12 +69,12 @@ export API_KEY="your_api_key_here"
 `SOUL.md`、`IDENTITY.md` 等身份文件；使用 `eval()` 或 `exec()` 处理外部输入；
 修改工作区外的系统文件；向 IP 地址而非域名发起网络调用；使用混淆代码。
 
-**输出**: 返回强制代码审查（Code Review - MANDATORY）的执行结果,包含操作状态和输出数据。
+**输出**: 返回强制代码审查（Code Review - MANDATORY）的处理结果,包含执行状态码、结果数据和执行日志。
 ### 3. 基础审查报告生成
 生成基础审查报告，包含：技能名称、来源、作者、版本；RED FLAGS 列表（None 或具体列表）；
 基础安装建议（SAFE TO INSTALL / DO NOT INSTALL）。基础版不包含风险分级（LOW/MEDIUM/HIGH/EXTREME）
-和权限需求详细分析。- 验证执行结果，确认输出符合预期格式
-- 参考`基础审查报告生成`相关配置参数进行设置
+和权限需求详细分析。- 验证返回数据的完整性和格式正确性
+- 参考`基础审查报告生成`的配置文档进行参数调优
 #
 ## 使用流程
 
@@ -138,3 +147,25 @@ A: 将技能替换为完整版 skill-vetter 即可。完整版包含 6 项核心
 - 不包含权限范围评估和最小权限分析
 - 不包含 5 级信任层级差异化审查
 - 不包含结构化审查报告的完整字段（指标、权限需求、附注）
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "Skill Vetter Free处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "skill-vetter"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

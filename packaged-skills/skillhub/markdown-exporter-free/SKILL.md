@@ -23,6 +23,15 @@ tags:
 
 Markdown文本多格式导出引擎，支持将Markdown转换为DOCX、PDF、HTML、XLSX、CSV、JSON等格式。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | Markdown导出工具(免费版)处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 依赖说明
 
 ### 运行环境
@@ -49,8 +58,8 @@ markdown-exporter md_to_pdf /path/input.md /path/output.pdf
 markdown-exporter md_to_html /path/input.md /path/output.html
 markdown-exporter md_to_html_text /path/input.md
 markdown-exporter md_to_md /path/input.md /path/output.md
-```- 验证执行结果，确认输出符合预期格式
-- 参考`文档格式转换`相关配置参数进行设置
+```- 验证返回数据的完整性和格式正确性
+- 参考`文档格式转换`的配置文档进行参数调优
 ### 2. 表格数据导出
 将Markdown表格转换为结构化数据格式：
 ```bash
@@ -64,7 +73,7 @@ markdown-exporter md_to_latex /path/input.md /path/output.tex
 - 关键参数: `表格数据导出` 选项
 - 处理流程: 接收输入 -> 执行表格数据导出 -> 返回结果
 - 输入: 用户提供表格数据导出所需的参数和指令
-- 输出: 返回表格数据导出的执行结果,包含操作状态和输出数据
+- 输出: 返回表格数据导出的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 3. 演示文稿生成
 ```bash
@@ -73,7 +82,7 @@ markdown-exporter md_to_pptx /path/input.md /path/output.pptx --template /path/t
 ```
 支持Pandoc风格的幻灯片语法：分栏布局（`::::: columns`）、演讲者备注（`::: notes`）、增量列表（`::: incremental`）、背景图片。
 
-**处理**: 按照skill规范执行演示文稿生成操作,遵循单一意图原则。- 验证执行结果,确认输出符合预期格式
+**处理**: 解析演示文稿生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `演示文稿生成` 选项
 
@@ -144,3 +153,25 @@ markdown-exporter md_to_docx /home/user/report.md /home/user/report.docx
 ## 升级提示
 
 本免费版提供基础功能。升级到完整版 markdown-exporter 获取全部能力和高级特性。
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "Markdown导出工具(免费版)处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "markdown-exporter"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

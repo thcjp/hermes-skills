@@ -22,6 +22,15 @@ homepage: "https://skillhub.cn"
 
 通过 WhatsApp Business API 发送基础消息。免费版支持文本消息、图片消息与手机号查询，满足日常触达需求。本技能通过 ClawLink 托管的连接流程与凭据管理，无需自行配置 WhatsApp API 访问。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | WhatsApp 消息（免费版）处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## Quick Start
 
 ```bash
@@ -192,3 +201,25 @@ WhatsApp 未连接。处理：引导用户访问 `https://claw-link.dev/dashboar
 ## 升级提示
 
 本免费版仅提供文本与图片消息的基础触达能力。如需模板消息（窗口外触达）、交互按钮、列表消息、媒体上传与复用、位置与联系人消息、模板全生命周期管理、业务资料查询等完整能力，请升级到付费版 whatsapp-messaging，解锁 WhatsApp Business API 的全部消息类型与管理功能。
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "WhatsApp 消息（免费版）处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "whatsapp-messaging"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

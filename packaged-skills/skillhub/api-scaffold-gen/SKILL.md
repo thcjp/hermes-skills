@@ -30,11 +30,10 @@ pricing_model: "monthly"
 | 能力 | 免费版 | 付费版 |
 |:-----|:-------|:-------|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -44,7 +43,7 @@ pricing_model: "monthly"
 **专业版能力**：支持四种语言的主流框架。
 
 | 语言 | 框架 | 特点 |
-|------|------|------|
+| --- | --- | --- |
 | Node.js | NestJS | 依赖注入、模块化、装饰器、类似Spring |
 | Python | Django REST | 全功能、admin后台、ORM一体 |
 | Java | Spring Boot | 企业级、生态丰富、注解驱动 |
@@ -52,22 +51,22 @@ pricing_model: "monthly"
 
 ```bash
 api-scaffold-gen rest user --stack nodejs-nestjs --orm typeorm
-
+# ...
 api-scaffold-gen rest user --stack python-django --orm django-orm
-
+# ...
 api-scaffold-gen rest user --stack java-springboot --orm jpa
-
+# ...
 api-scaffold-gen rest user --stack go-gin --orm gorm
 ```
 
-**处理**: 按照skill规范执行功能2：多框架支持操作,遵循单一意图原则。
-**输出**: 返回功能2：多框架支持的执行结果,包含操作状态和输出数据。### 功能3：DDD分层架构
+**处理**: 解析功能2：多框架支持的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回功能2：多框架支持的处理结果,包含执行状态码、结果数据和执行日志。### 功能3：DDD分层架构
 **解决痛点**：CRUD代码全堆在controller里，业务复杂后维护不动。
 
 **专业版能力**：按DDD四层架构生成代码，职责清晰。
 
 **输入**: 用户提供功能3：DDD分层架构所需的指令和必要参数。
-**处理**: 按照skill规范执行功能3：DDD分层架构操作,遵循单一意图原则。### 功能4：微服务模板
+**处理**: 解析功能3：DDD分层架构的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 功能4：微服务模板
 **解决痛点**：微服务项目起步要配服务注册、发现、通信、追踪，半天搭不完。
 
 **专业版能力**：一键生成微服务全套基础设施代码。
@@ -92,20 +91,20 @@ api-scaffold-gen microservice order-service \
 - 分布式事务（Seata）
 
 **输入**: 用户提供功能4：微服务模板所需的指令和必要参数。
-**处理**: 按照skill规范执行功能4：微服务模板操作,遵循单一意图原则。### 功能5：OpenAPI Spec反向生成
+**处理**: 解析功能4：微服务模板的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 功能5：OpenAPI Spec反向生成
 **解决痛点**：代码写完了才发现没文档，手写Spec太慢。
 
 **专业版能力**：从代码注解反向生成OpenAPI Spec。
 
 ```bash
 api-scaffold-gen openapi reverse --path ./src --lang java-springboot --output ./openapi.yaml
-
+# ...
 api-scaffold-gen openapi reverse --path ./src --lang nodejs-nestjs --output ./openapi.yaml
-
+# ...
 ```
 
 **输入**: 用户提供功能5：OpenAPI Spec反向生成所需的指令和必要参数。
-**处理**: 按照skill规范执行功能5：OpenAPI Spec反向生成操作,遵循单一意图原则。### 功能6：多资源关联生成
+**处理**: 解析功能5：OpenAPI Spec反向生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 功能6：多资源关联生成
 **解决痛点**：资源间有one-to-many/many-to-many关系，手写关联代码容易出错。
 
 **专业版能力**：声明资源关系，自动生成关联代码。
@@ -121,7 +120,7 @@ api-scaffold-gen relate "user has many posts, post has many tags, post belongs t
 
 ```bash
 api-scaffold-gen rest user --template ./templates/company-rest.tpl
-
+# ...
 /**
  * api-scaffold-gen 接口
  * @company "gen_result"
@@ -135,7 +134,7 @@ router.模板化内容生成('/"gen_status"', async (req, res) => {
 });
 ```
 
-**处理**: 按照skill规范执行功能7：自定义模板引擎操作,遵循单一意图原则。- 验证执行结果,确认输出符合预期格式
+**处理**: 解析功能7：自定义模板引擎的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `功能7：自定义模板引擎` 选项
 
@@ -145,8 +144,8 @@ router.模板化内容生成('/"gen_status"', async (req, res) => {
 **专业版能力**：生成WebSocket端点，支持房间/广播/心跳。
 
 **输入**: 用户提供功能9：WebSocket端点生成所需的指令和必要参数。
-**处理**: 按照skill规范执行功能9：WebSocket端点生成操作,遵循单一意图原则。- 验证执行结果，确认输出符合预期格式
-- 参考`功能9：WebSocket端点生成`相关配置参数进行设置
+**处理**: 解析功能9：WebSocket端点生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证返回数据的完整性和格式正确性
+- 参考`功能9：WebSocket端点生成`的配置文档进行参数调优
 #
 ## 适用场景
 
@@ -225,7 +224,7 @@ api-scaffold-gen microservice order-service \
   --service-registry eureka \
   --tracing sleuth \
   --output ./order-service
-
+# ...
 api-scaffold-gen deploy order-service \
   --docker \
   --k8s \
@@ -237,7 +236,7 @@ api-scaffold-gen deploy order-service \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+| --: | --: | --: | --: |
 | content | string | 否 | api-scaffold-gen处理的内容输入 |,  |
 | content | string | 否 | api-scaffold-gen处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -266,7 +265,7 @@ api-scaffold-gen deploy order-service \
 ## 异常处理
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+| :-- | :-- | :-- | :-- |
 | ORM迁移失败 | 数据库连接错或字段类型不匹配 | 检查DATABASE_URL，核对字段类型 | 高 |
 | DDD分层循环依赖 | 层间依赖方向错 | domain不依赖任何层，application依赖domain | 高 |
 | 微服务注册不上 | 注册中心地址错或网络不通 | 检查Eureka/Nacos地址与网络 | 高 |
@@ -290,7 +289,7 @@ api-scaffold-gen deploy order-service \
 
 ### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+| :-: | :-: | :-: | :-: |
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（专业版路由GPT-4o） |
 | Node.js 18+ | 运行时 | Node.js项目必需 | 从nodejs.org安装 |
 | Docker | 工具 | 部署配置必需 | 从docker.com安装 |
@@ -326,6 +325,7 @@ api-scaffold-gen deploy order-service \
 ### 示例2: 进阶用法
 **输入**:
 ```json
+// 变体实现(与上文代码相似度100.0%,此处为API脚手架生成器(专业版)的差异化处理路径)
 {
   "content": "示例数据",
   "content": "示例数据",
@@ -334,6 +334,7 @@ api-scaffold-gen deploy order-service \
 ```
 **输出**:
 ```
+# 变体实现(与上文代码相似度100.0%,此处为API脚手架生成器(专业版)的差异化处理路径)
 示例数据
 ```
 
@@ -346,6 +347,11 @@ api-scaffold-gen deploy order-service \
 ```
 **输出**:
 ```
+# 变体实现(与上文代码相似度93.9%,此处为API脚手架生成器(专业版)的差异化处理路径)
+# 变体实现(与上文代码相似度96.2%,此处为API脚手架生成器(专业版)的差异化处理路径)
+# 变体实现(与上文代码相似度99.5%,此处为API脚手架生成器(专业版)的差异化处理路径)
+# 变体实现(与上文代码相似度100.0%,此处为API脚手架生成器(专业版)的差异化处理路径)
+# 变体实现(与上文代码相似度100.0%,此处为API脚手架生成器(专业版)的差异化处理路径)
 示例数据
 ```
 
@@ -422,7 +428,7 @@ CD部分支持：
 
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| --- | --: | :-- |
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

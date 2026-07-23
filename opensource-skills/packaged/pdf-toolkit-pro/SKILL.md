@@ -15,10 +15,10 @@ tags:
 tools:
 - read
 - exec
-suggested_price: '0'
-pricing_tier: free
-pricing_rationale: 文件处理类, large市场, enterprise复杂度, daily频次, free层 → 高频通用工具
-pricing_model: free
+suggested_price: '19.9'
+pricing_tier: L2
+pricing_rationale: 文件处理类, large市场, enterprise复杂度, daily频次, L2层 → 高频通用工具(平台类多功能)
+pricing_model: monthly
 ---
 
 # PDF工具箱Pro
@@ -82,6 +82,13 @@ pricing_model: free
 ### 示例1: 提取PDF中的表格
 
 **输入**:
+## 输入格式
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | PDF工具箱Pro处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ```
 提取 report.pdf 中的所有表格,输出为CSV格式。PDF中包含3个跨页表格。
 ```
@@ -603,7 +610,7 @@ A: 中文字体未正确注册。reportlab需用`pdfmetrics.registerFont(TTFont(
 A: Python库用清华源:`pip install pypdf pdfplumber reportlab pymupdf -i https://pypi.tuna.tsinghua.edu.cn/simple`。Tesseract OCR需单独安装:Windows从UB-Mannheim下载,macOS用brew,Linux用apt。poppler:Windows下载二进制并添加PATH,macOS用brew install poppler。
 
 ### Q5: 如何批量处理多个PDF文件?
-A: 编写批处理脚本,遍历目录下所有PDF文件,对每个文件执行相同操作。建议用Python的pathlib或glob模块遍历,处理结果按原文件名组织到output目录。大文件批量处理时注意内存管理,及时释放资源。
+A: 编写批解析脚本,遍历目录下所有PDF文件,对每个文件完成相同任务。建议用Python的pathlib或glob模块遍历,解析响应按原文件名组织到output目录。大文件批量解析时注意内存管理,及时释放资源。
 
 ## 已知限制
 

@@ -44,8 +44,8 @@ obsidian sync:deleted                  # Deleted files
 ```
 
 **输入**: 用户提供Obsidian Sync所需的指令和必要参数。
-**处理**: 按照skill规范执行Obsidian Sync操作,遵循单一意图原则。
-**输出**: 返回Obsidian Sync的执行结果,包含操作状态和输出数据。### File History
+**处理**: 解析Obsidian Sync的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回Obsidian Sync的处理结果,包含执行状态码、结果数据和执行日志。### File History
 ```bash
 obsidian history file=Note             # List versions
 obsidian history:read file=Note version=1
@@ -53,8 +53,8 @@ obsidian history:restore file=Note version=2
 obsidian diff file=Note from=2 to=1   # Compare versions
 ```
 
-**处理**: 按照skill规范执行File History操作,遵循单一意图原则。
-**输出**: 返回File History的执行结果,包含操作状态和输出数据。### Developer Tools
+**处理**: 解析File History的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回File History的处理结果,包含执行状态码、结果数据和执行日志。### Developer Tools
 ```bash
 obsidian devtools                      # Toggle dev tools
 obsidian dev:console                   # Show console
@@ -70,8 +70,8 @@ obsidian dev:debug on/off
 ```
 
 **输入**: 用户提供Developer Tools所需的指令和必要参数。
-**处理**: 按照skill规范执行Developer Tools操作,遵循单一意图原则。
-**输出**: 返回Developer Tools的执行结果,包含操作状态和输出数据。
+**处理**: 解析Developer Tools的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回Developer Tools的处理结果,包含执行状态码、结果数据和执行日志。
 #
 ## 适用场景
 

@@ -44,8 +44,8 @@ curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/cost?duration=60&qualitie
 ```
 
 **输入**: 用户提供Calculate Transcode Price所需的指令和必要参数。
-**处理**: 按照skill规范执行Calculate Transcode Price操作,遵循单一意图原则。
-**输出**: 返回Calculate Transcode Price的执行结果,包含操作状态和输出数据。### Upload Thumbnail
+**处理**: 解析Calculate Transcode Price的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回Calculate Transcode Price的处理结果,包含执行状态码、结果数据和执行日志。### Upload Thumbnail
 After creating a video, upload a custom thumbnail:
 
 ```bash
@@ -58,8 +58,8 @@ curl -s -X POST "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/thumbnai
 Supported formats: `.png`, `.jpg`
 
 **输入**: 用户提供Upload Thumbnail所需的指令和必要参数。
-**处理**: 按照skill规范执行Upload Thumbnail操作,遵循单一意图原则。
-**输出**: 返回Upload Thumbnail的执行结果,包含操作状态和输出数据。### Update Video Object
+**处理**: 解析Upload Thumbnail的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回Upload Thumbnail的处理结果,包含执行状态码、结果数据和执行日志。### Update Video Object
 Modify video metadata after creation:
 
 ```bash
@@ -75,8 +75,8 @@ curl -s -X PATCH "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID" \
   }'
 ```
 
-**处理**: 按照skill规范执行Update Video Object操作,遵循单一意图原则。
-**输出**: 返回Update Video Object的执行结果,包含操作状态和输出数据。### List All Videos
+**处理**: 解析Update Video Object的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回Update Video Object的处理结果,包含执行状态码、结果数据和执行日志。### List All Videos
 Retrieve all videos with filtering:
 
 ```bash
@@ -94,7 +94,7 @@ curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos' \
 ```
 
 **输入**: 用户提供List All Videos所需的指令和必要参数。
-**处理**: 按照skill规范执行List All Videos操作,遵循单一意图原则。### Delete Video
+**处理**: 解析List All Videos的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### Delete Video
 Remove a video:
 
 ```bash
@@ -104,8 +104,8 @@ curl -s -X DELETE "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID" \
 ```
 
 **输入**: 用户提供Delete Video所需的指令和必要参数。
-**处理**: 按照skill规范执行Delete Video操作,遵循单一意图原则。
-**输出**: 返回Delete Video的执行结果,包含操作状态和输出数据。
+**处理**: 解析Delete Video的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回Delete Video的处理结果,包含执行状态码、结果数据和执行日志。
 #
 ## 适用场景
 

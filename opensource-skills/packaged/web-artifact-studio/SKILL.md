@@ -63,6 +63,13 @@ pricing_model: "per_use"
 
 ### Step 2: 项目搭建
 1. **目录结构**:
+## 输入格式
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | Web工件工作室处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
    ```
    artifact/
    ├── index.html          # 入口

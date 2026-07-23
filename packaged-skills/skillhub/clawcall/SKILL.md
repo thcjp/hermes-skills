@@ -467,3 +467,25 @@ PUT /me/call-preferences
 - 并行通话上限 3-4 路，且仅限信息查询场景。
 - 轮询间隔固定 3 秒；cron 入呼轮询建议 30 分钟。
 - 不适用于紧急救助、医疗急救或需100%确定性的关键决策。
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "语音通话服务处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "clawcall"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

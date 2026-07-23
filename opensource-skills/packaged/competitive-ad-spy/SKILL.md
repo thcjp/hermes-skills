@@ -105,6 +105,13 @@ pricing_model: "per_use"
 ### 示例1: DTC护肤品牌竞品调研
 
 **输入**:
+## 输入格式
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | 竞品广告侦察兵处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ```
 竞品清单:Glossier, The Ordinary, Drunk Elephant
 品类:护肤精华

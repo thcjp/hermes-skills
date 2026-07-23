@@ -1,0 +1,1003 @@
+{
+  "files_scanned": 995,
+  "files_modified": 249,
+  "total_changes": 592,
+  "details": [
+    {
+      "slug": "agent-group",
+      "changes": 1
+    },
+    {
+      "slug": "agent-telegram",
+      "changes": 3
+    },
+    {
+      "slug": "agent-telegram-free",
+      "changes": 3
+    },
+    {
+      "slug": "agentvibes-skill",
+      "changes": 3
+    },
+    {
+      "slug": "aic-dashboard",
+      "changes": 3
+    },
+    {
+      "slug": "aic-dashboard-free",
+      "changes": 2
+    },
+    {
+      "slug": "alephnet-node-manager",
+      "changes": 3
+    },
+    {
+      "slug": "alpha-feed-creator",
+      "changes": 3
+    },
+    {
+      "slug": "analytics-dashboard",
+      "changes": 1
+    },
+    {
+      "slug": "anygen-diagram",
+      "changes": 3
+    },
+    {
+      "slug": "anygen-diagram-generator",
+      "changes": 3
+    },
+    {
+      "slug": "anygen-diagram-generator-free",
+      "changes": 3
+    },
+    {
+      "slug": "api-doc-writer",
+      "changes": 3
+    },
+    {
+      "slug": "api-doc-writer-free",
+      "changes": 2
+    },
+    {
+      "slug": "api-free",
+      "changes": 2
+    },
+    {
+      "slug": "api-gateway",
+      "changes": 3
+    },
+    {
+      "slug": "api-gateway-free",
+      "changes": 2
+    },
+    {
+      "slug": "api-generator",
+      "changes": 2
+    },
+    {
+      "slug": "api-generator-free",
+      "changes": 2
+    },
+    {
+      "slug": "api-integration",
+      "changes": 3
+    },
+    {
+      "slug": "api-integration-free",
+      "changes": 2
+    },
+    {
+      "slug": "api-magic-gen",
+      "changes": 3
+    },
+    {
+      "slug": "art",
+      "changes": 1
+    },
+    {
+      "slug": "atlas-admin-console",
+      "changes": 3
+    },
+    {
+      "slug": "audio-upload-aioz-stream",
+      "changes": 3
+    },
+    {
+      "slug": "audio-upload-aioz-stream-free",
+      "changes": 3
+    },
+    {
+      "slug": "aws-agentcore-langgraph",
+      "changes": 3
+    },
+    {
+      "slug": "aws-agentcore-langgraph-free",
+      "changes": 3
+    },
+    {
+      "slug": "aws-infra-free",
+      "changes": 1
+    },
+    {
+      "slug": "aws-toolkit",
+      "changes": 2
+    },
+    {
+      "slug": "azure-cli",
+      "changes": 1
+    },
+    {
+      "slug": "azure-infra",
+      "changes": 2
+    },
+    {
+      "slug": "bilibili-all-in-one",
+      "changes": 3
+    },
+    {
+      "slug": "bilibili-all-in-one-free",
+      "changes": 3
+    },
+    {
+      "slug": "bookmark-smart-hub",
+      "changes": 3
+    },
+    {
+      "slug": "canvas-json-handler",
+      "changes": 1
+    },
+    {
+      "slug": "chart-craft",
+      "changes": 1
+    },
+    {
+      "slug": "claude-code-delegate",
+      "changes": 3
+    },
+    {
+      "slug": "cloud",
+      "changes": 2
+    },
+    {
+      "slug": "cloud-manager",
+      "changes": 3
+    },
+    {
+      "slug": "communication-skill-free",
+      "changes": 2
+    },
+    {
+      "slug": "cron-setup-guide",
+      "changes": 1
+    },
+    {
+      "slug": "csv-insight",
+      "changes": 3
+    },
+    {
+      "slug": "csv-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "daily-report-writer",
+      "changes": 1
+    },
+    {
+      "slug": "db",
+      "changes": 1
+    },
+    {
+      "slug": "decision-architect",
+      "changes": 3
+    },
+    {
+      "slug": "decision-architect-free",
+      "changes": 3
+    },
+    {
+      "slug": "deepseek-chat",
+      "changes": 1
+    },
+    {
+      "slug": "design",
+      "changes": 3
+    },
+    {
+      "slug": "design-free",
+      "changes": 3
+    },
+    {
+      "slug": "design-toolkit",
+      "changes": 1
+    },
+    {
+      "slug": "diagram-gen",
+      "changes": 2
+    },
+    {
+      "slug": "diagram-generator-free",
+      "changes": 2
+    },
+    {
+      "slug": "discord-chat-manager",
+      "changes": 3
+    },
+    {
+      "slug": "discord-community-hub",
+      "changes": 3
+    },
+    {
+      "slug": "discord-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "dlazy-audio",
+      "changes": 1
+    },
+    {
+      "slug": "dlazy-gen",
+      "changes": 1
+    },
+    {
+      "slug": "dns",
+      "changes": 3
+    },
+    {
+      "slug": "dns-config",
+      "changes": 3
+    },
+    {
+      "slug": "dns-free",
+      "changes": 3
+    },
+    {
+      "slug": "doc-guard",
+      "changes": 2
+    },
+    {
+      "slug": "docker-ctl",
+      "changes": 1
+    },
+    {
+      "slug": "doubao-chat",
+      "changes": 1
+    },
+    {
+      "slug": "elite-frontend",
+      "changes": 1
+    },
+    {
+      "slug": "elite-longterm-memory-local",
+      "changes": 3
+    },
+    {
+      "slug": "elite-longterm-memory-local-free",
+      "changes": 3
+    },
+    {
+      "slug": "email-163-com",
+      "changes": 3
+    },
+    {
+      "slug": "email-163-com-free",
+      "changes": 3
+    },
+    {
+      "slug": "email-daily-summary",
+      "changes": 3
+    },
+    {
+      "slug": "email-daily-summary-free",
+      "changes": 3
+    },
+    {
+      "slug": "email-gmail-outlook",
+      "changes": 3
+    },
+    {
+      "slug": "email-gmail-outlook-free",
+      "changes": 3
+    },
+    {
+      "slug": "email-skill",
+      "changes": 3
+    },
+    {
+      "slug": "email-skill-free",
+      "changes": 3
+    },
+    {
+      "slug": "email-toolkit",
+      "changes": 1
+    },
+    {
+      "slug": "encoding-toolkit",
+      "changes": 2
+    },
+    {
+      "slug": "evolution-engine",
+      "changes": 3
+    },
+    {
+      "slug": "evolution-engine-free",
+      "changes": 3
+    },
+    {
+      "slug": "excel-craft",
+      "changes": 2
+    },
+    {
+      "slug": "excel-expert",
+      "changes": 2
+    },
+    {
+      "slug": "expanso-json-to-yaml",
+      "changes": 1
+    },
+    {
+      "slug": "figma-design-paid",
+      "changes": 2
+    },
+    {
+      "slug": "figma-tw-designer",
+      "changes": 3
+    },
+    {
+      "slug": "finance-acct",
+      "changes": 1
+    },
+    {
+      "slug": "finance-report",
+      "changes": 2
+    },
+    {
+      "slug": "finance-report-analyzer",
+      "changes": 3
+    },
+    {
+      "slug": "finance-toolkit",
+      "changes": 2
+    },
+    {
+      "slug": "financial-literacy-paid",
+      "changes": 1
+    },
+    {
+      "slug": "free-web-search",
+      "changes": 3
+    },
+    {
+      "slug": "frontend-design-anthropic",
+      "changes": 3
+    },
+    {
+      "slug": "frontend-design-v3",
+      "changes": 1
+    },
+    {
+      "slug": "game-asset-gen",
+      "changes": 2
+    },
+    {
+      "slug": "git-essentials",
+      "changes": 3
+    },
+    {
+      "slug": "git-helper",
+      "changes": 1
+    },
+    {
+      "slug": "git-workflow-cn",
+      "changes": 3
+    },
+    {
+      "slug": "git-workflow-cn-paid",
+      "changes": 3
+    },
+    {
+      "slug": "git-workflows-paid",
+      "changes": 3
+    },
+    {
+      "slug": "github-dev-standard",
+      "changes": 3
+    },
+    {
+      "slug": "github-development-standard",
+      "changes": 1
+    },
+    {
+      "slug": "go-security-vulnerability",
+      "changes": 3
+    },
+    {
+      "slug": "golang-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "google-fonts",
+      "changes": 2
+    },
+    {
+      "slug": "grain-crawler",
+      "changes": 3
+    },
+    {
+      "slug": "graph-knowledge-base",
+      "changes": 3
+    },
+    {
+      "slug": "graph-query",
+      "changes": 3
+    },
+    {
+      "slug": "grok-image",
+      "changes": 1
+    },
+    {
+      "slug": "heygen-tts",
+      "changes": 2
+    },
+    {
+      "slug": "html-coder-paid",
+      "changes": 2
+    },
+    {
+      "slug": "hugo-blog",
+      "changes": 3
+    },
+    {
+      "slug": "iris-formatter",
+      "changes": 3
+    },
+    {
+      "slug": "java",
+      "changes": 3
+    },
+    {
+      "slug": "java-dev-manual",
+      "changes": 3
+    },
+    {
+      "slug": "java-development-manual",
+      "changes": 3
+    },
+    {
+      "slug": "java-reviewer",
+      "changes": 3
+    },
+    {
+      "slug": "javascript-sdk-paid",
+      "changes": 3
+    },
+    {
+      "slug": "javascript-skills-paid",
+      "changes": 3
+    },
+    {
+      "slug": "javascript-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "jira-api-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "jira-flow-skill",
+      "changes": 3
+    },
+    {
+      "slug": "jira-skill-free",
+      "changes": 1
+    },
+    {
+      "slug": "join-meeting-free",
+      "changes": 1
+    },
+    {
+      "slug": "json-beautifier",
+      "changes": 1
+    },
+    {
+      "slug": "json-lint",
+      "changes": 1
+    },
+    {
+      "slug": "json-repair",
+      "changes": 1
+    },
+    {
+      "slug": "json-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "juejin-skills",
+      "changes": 1
+    },
+    {
+      "slug": "key-vault-manager",
+      "changes": 3
+    },
+    {
+      "slug": "knowledge",
+      "changes": 1
+    },
+    {
+      "slug": "knowledge-graph-paid",
+      "changes": 3
+    },
+    {
+      "slug": "knowledge-graph-skill",
+      "changes": 3
+    },
+    {
+      "slug": "knowledge-ontology",
+      "changes": 3
+    },
+    {
+      "slug": "knowledge-ontology-free",
+      "changes": 3
+    },
+    {
+      "slug": "kujiale-design",
+      "changes": 3
+    },
+    {
+      "slug": "learn-cog-free",
+      "changes": 1
+    },
+    {
+      "slug": "linear-api-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "linear-sync",
+      "changes": 3
+    },
+    {
+      "slug": "linear-workflow-skill",
+      "changes": 3
+    },
+    {
+      "slug": "llm-assistant-hub",
+      "changes": 3
+    },
+    {
+      "slug": "llm-assistant-hub-free",
+      "changes": 3
+    },
+    {
+      "slug": "longmemo-elite",
+      "changes": 2
+    },
+    {
+      "slug": "longmemo-elite-free",
+      "changes": 3
+    },
+    {
+      "slug": "magic-api-generate",
+      "changes": 3
+    },
+    {
+      "slug": "market-news",
+      "changes": 1
+    },
+    {
+      "slug": "md-export",
+      "changes": 3
+    },
+    {
+      "slug": "memo-quickstart",
+      "changes": 2
+    },
+    {
+      "slug": "memo-quickstart-free",
+      "changes": 3
+    },
+    {
+      "slug": "merge-check-paid",
+      "changes": 3
+    },
+    {
+      "slug": "mermaid-diagram-paid",
+      "changes": 3
+    },
+    {
+      "slug": "model-routing",
+      "changes": 3
+    },
+    {
+      "slug": "model-switching",
+      "changes": 3
+    },
+    {
+      "slug": "molted-work",
+      "changes": 3
+    },
+    {
+      "slug": "mongo-manager",
+      "changes": 3
+    },
+    {
+      "slug": "multi-source-research",
+      "changes": 2
+    },
+    {
+      "slug": "music",
+      "changes": 1
+    },
+    {
+      "slug": "music-gen-cellcog",
+      "changes": 1
+    },
+    {
+      "slug": "node-connect-paid",
+      "changes": 3
+    },
+    {
+      "slug": "notion-api-toolkit",
+      "changes": 2
+    },
+    {
+      "slug": "notion-cli",
+      "changes": 2
+    },
+    {
+      "slug": "obsidian-cli",
+      "changes": 3
+    },
+    {
+      "slug": "okx-dex-token-paid",
+      "changes": 1
+    },
+    {
+      "slug": "ollama-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "openai-ai-paid",
+      "changes": 2
+    },
+    {
+      "slug": "openai-whisper-paid",
+      "changes": 2
+    },
+    {
+      "slug": "openai-whisper-v1",
+      "changes": 2
+    },
+    {
+      "slug": "ops-dashboard",
+      "changes": 3
+    },
+    {
+      "slug": "pandoc-convert-openclaw",
+      "changes": 3
+    },
+    {
+      "slug": "pg-job-queue",
+      "changes": 1
+    },
+    {
+      "slug": "photo-caption",
+      "changes": 1
+    },
+    {
+      "slug": "ping-monitor",
+      "changes": 1
+    },
+    {
+      "slug": "pipedrive-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "piper-tts-engine",
+      "changes": 3
+    },
+    {
+      "slug": "podcast-chaptering",
+      "changes": 2
+    },
+    {
+      "slug": "podcast-downloader-paid",
+      "changes": 2
+    },
+    {
+      "slug": "podcast-toolkit",
+      "changes": 2
+    },
+    {
+      "slug": "py",
+      "changes": 3
+    },
+    {
+      "slug": "py-data-analyzer",
+      "changes": 1
+    },
+    {
+      "slug": "python-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "quant-data-quality",
+      "changes": 1
+    },
+    {
+      "slug": "quark-scan",
+      "changes": 2
+    },
+    {
+      "slug": "qwen-video-analyzer",
+      "changes": 3
+    },
+    {
+      "slug": "reddit-research-paid",
+      "changes": 1
+    },
+    {
+      "slug": "reminder-engine",
+      "changes": 2
+    },
+    {
+      "slug": "remix-auth",
+      "changes": 3
+    },
+    {
+      "slug": "report",
+      "changes": 3
+    },
+    {
+      "slug": "rest-api-reference",
+      "changes": 3
+    },
+    {
+      "slug": "rss-fetcher",
+      "changes": 3
+    },
+    {
+      "slug": "scrape-web",
+      "changes": 1
+    },
+    {
+      "slug": "secure-api-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "security-free",
+      "changes": 1
+    },
+    {
+      "slug": "self-integration-paid",
+      "changes": 3
+    },
+    {
+      "slug": "sequential-read",
+      "changes": 1
+    },
+    {
+      "slug": "slack-api-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "slack-crawler",
+      "changes": 3
+    },
+    {
+      "slug": "slack-free",
+      "changes": 1
+    },
+    {
+      "slug": "smart-cache",
+      "changes": 1
+    },
+    {
+      "slug": "smart-crawler",
+      "changes": 2
+    },
+    {
+      "slug": "social",
+      "changes": 3
+    },
+    {
+      "slug": "social-free",
+      "changes": 3
+    },
+    {
+      "slug": "social-media-scheduler",
+      "changes": 3
+    },
+    {
+      "slug": "social-media-scheduler-free",
+      "changes": 3
+    },
+    {
+      "slug": "social-media-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "solo-research-free",
+      "changes": 1
+    },
+    {
+      "slug": "sql-gen",
+      "changes": 3
+    },
+    {
+      "slug": "sql-master",
+      "changes": 3
+    },
+    {
+      "slug": "sql-query",
+      "changes": 3
+    },
+    {
+      "slug": "sqlite-lite-manager",
+      "changes": 3
+    },
+    {
+      "slug": "sqlite-manager",
+      "changes": 3
+    },
+    {
+      "slug": "ssl-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "stock-filter",
+      "changes": 1
+    },
+    {
+      "slug": "tailwindcss-toolkit",
+      "changes": 2
+    },
+    {
+      "slug": "telegram-agent-comm",
+      "changes": 3
+    },
+    {
+      "slug": "telegram-alert",
+      "changes": 1
+    },
+    {
+      "slug": "telegram-messaging",
+      "changes": 3
+    },
+    {
+      "slug": "telegram-messaging-free",
+      "changes": 3
+    },
+    {
+      "slug": "telegram-msg-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "telegram-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "text2sql-engine",
+      "changes": 3
+    },
+    {
+      "slug": "tg-body-scan",
+      "changes": 3
+    },
+    {
+      "slug": "tg-bot-builder",
+      "changes": 3
+    },
+    {
+      "slug": "timer-alert",
+      "changes": 3
+    },
+    {
+      "slug": "trading",
+      "changes": 1
+    },
+    {
+      "slug": "trending-feed-skill",
+      "changes": 3
+    },
+    {
+      "slug": "tts-whatsapp-paid",
+      "changes": 2
+    },
+    {
+      "slug": "typescript-skills-paid",
+      "changes": 3
+    },
+    {
+      "slug": "typescript-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "ui-component-paid",
+      "changes": 3
+    },
+    {
+      "slug": "ui-design-toolkit",
+      "changes": 2
+    },
+    {
+      "slug": "ui-ux-design",
+      "changes": 2
+    },
+    {
+      "slug": "ui-ux-design-free",
+      "changes": 2
+    },
+    {
+      "slug": "universal-translate-paid",
+      "changes": 3
+    },
+    {
+      "slug": "university-app",
+      "changes": 1
+    },
+    {
+      "slug": "vector-db-manager",
+      "changes": 3
+    },
+    {
+      "slug": "video-editing",
+      "changes": 1
+    },
+    {
+      "slug": "vpn-rotator",
+      "changes": 3
+    },
+    {
+      "slug": "vscode-node-paid",
+      "changes": 3
+    },
+    {
+      "slug": "vue-component-gen",
+      "changes": 3
+    },
+    {
+      "slug": "vue-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "web-dev-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "web-notepad",
+      "changes": 2
+    },
+    {
+      "slug": "weiyun-toolkit",
+      "changes": 3
+    },
+    {
+      "slug": "whatsapp-master",
+      "changes": 1
+    },
+    {
+      "slug": "whatsapp-msg",
+      "changes": 3
+    },
+    {
+      "slug": "ws-excel-paid",
+      "changes": 3
+    },
+    {
+      "slug": "x-news-daily",
+      "changes": 3
+    },
+    {
+      "slug": "x-news-daily-free",
+      "changes": 3
+    },
+    {
+      "slug": "xlsx-handler",
+      "changes": 2
+    },
+    {
+      "slug": "ziptax-paid",
+      "changes": 3
+    }
+  ]
+}

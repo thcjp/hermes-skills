@@ -24,6 +24,15 @@ pricing_model: "per_use"
 
 职场日常工作指导，覆盖专业沟通、职场动态处理、入职适应、情境识别与工作画像构建。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | 职场工作汇报处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -49,7 +58,7 @@ pricing_model: "per_use"
 
 **状态汇报（Status updates）**：主动汇报，不等被问。格式：本周完成 → 下周计划 → 风险/阻塞。用书面记录贡献，邮件先发再开会。
 
-**输出**: 返回Professional Communication（专业沟通）的执行结果,包含操作状态和输出数据。
+**输出**: 返回Professional Communication（专业沟通）的处理结果,包含执行状态码、结果数据和执行日志。
 ### Workplace Dynamics（职场动态）
 识别和处理办公室政治与人际动态。
 
@@ -58,7 +67,7 @@ pricing_model: "per_use"
 - **建立联盟（Building alliances）**：Visibility comes from being useful to the right people. 找到你的工作与有影响力的人的交集。
 - **读懂氛围（Reading the room）**：观察谁发言、谁被打断、谁做最终决定 — 那才是真正的组织架构图。
 
-**输出**: 返回Workplace Dynamics（职场动态）的执行结果,包含操作状态和输出数据。
+**输出**: 返回Workplace Dynamics（职场动态）的处理结果,包含执行状态码、结果数据和执行日志。
 ### First 90 Days（入职90天）
 新角色适应的分阶段策略：
 
@@ -72,8 +81,8 @@ pricing_model: "per_use"
 - "What should I definitely avoid?" — 了解必须避免的雷区
 
 **输入**: 用户提供First 90 Days（入职90天）所需的指令和必要参数。
-**处理**: 按照skill规范执行First 90 Days（入职90天）操作,遵循单一意图原则。
-**输出**: 返回First 90 Days（入职90天）的执行结果,包含操作状态和输出数据。### Situation Detection（情境识别）
+**处理**: 解析First 90 Days（入职90天）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回First 90 Days（入职90天）的处理结果,包含执行状态码、结果数据和执行日志。### Situation Detection（情境识别）
 根据用户描述自动识别工作情境并加载对应策略：
 
 | 信号 | 上下文 | 对应场景 |
@@ -84,12 +93,12 @@ pricing_model: "per_use"
 | 可见性、被忽视、认可 | 感知管理 | visibility 策略 |
 | 模糊任务、不清晰优先级 | 任务清晰度 | clarity 策略 |
 
-**处理**: 按照skill规范执行Situation Detection（情境识别）操作,遵循单一意图原则。
-**输出**: 返回Situation Detection（情境识别）的执行结果,包含操作状态和输出数据。### Work Profile（工作画像）
+**处理**: 解析Situation Detection（情境识别）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回Situation Detection（情境识别）的处理结果,包含执行状态码、结果数据和执行日志。### Work Profile（工作画像）
 逐步构建用户的工作环境画像，包括 Environment（工作环境）、Key Relationships（关键关系）、Culture Signals（文化信号）、Challenges（挑战）。每次工作相关问题都会丰富画像。空字段表示尚未收集到信息。
 
-**处理**: 按照skill规范执行Work Profile（工作画像）操作,遵循单一意图原则。
-**输出**: 返回Work Profile（工作画像）的执行结果,包含操作状态和输出数据。
+**处理**: 解析Work Profile（工作画像）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回Work Profile（工作画像）的处理结果,包含执行状态码、结果数据和执行日志。
 
 #
 ## 使用流程
@@ -112,7 +121,7 @@ pricing_model: "per_use"
 
 ### 输出说明
 
-Agent将根据指令执行操作，返回处理结果。结果格式取决于具体能力点的输出定义。
+Agent将根据指令调用对应能力,返回响应数据。响应格式取决于具体能力点的输出定义。
 
 ## 依赖说明
 

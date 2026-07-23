@@ -21,6 +21,15 @@ homepage: "https://skillhub.cn"
 
 **范围外**(本技能不做): 音乐生成、音效生成、语音克隆、多角色对话、管道串联、ElevenLabs、Gemini、Qwen、Suno 等高级模型(需升级付费版)。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | Dlazy Audio LITE处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 依赖说明
 
 ### 运行环境
@@ -170,3 +179,25 @@ A: CLI 返回 `code: "insufficient_balance"` 时,明确告知用户余额不足,
 ---
 
 > **想要音乐生成、音效、语音克隆、多角色对话?** 升级到 dlazy-audio-generate 付费版解锁 15+ 高级音频模型。
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "Dlazy Audio LITE处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "dlazy-audio-generate"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

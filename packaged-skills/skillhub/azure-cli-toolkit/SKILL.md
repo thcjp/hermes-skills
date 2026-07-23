@@ -47,17 +47,17 @@ pricing_model: "per_use"
 | 能力 | 免费版 | 付费版 |
 |:-----|:-------|:-------|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| Azure命令行工具专业版业级Azure云管理 | 不支持 | 支持 |
+| Azure命令行工具专业版多订阅管理 | 不支持 | 支持 |
+| Azure命令行工具专业版与成本优化分析 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
 
 ## 核心能力
 
 ### 1. 自动化认证方式
 | 认证方式 | 适用场景 | 命令 |
-|:---------|:---------|:-----|
+| --- | --- | --- |
 | 服务主体 | CI/CD、自动化脚本 | `az login --service-principal` |
 | 托管身份 | Azure 资源内部调用 | `az login --identity` |
 | 令牌认证 | 无状态流水线 | `az login --service-principal --password-stdin` |
@@ -68,30 +68,30 @@ az login --service-principal \
   --username $AZURE_CLIENT_ID \
   --password $AZURE_CLIENT_SECRET \
   --tenant $AZURE_TENANT_ID
-
+# ...
 # 托管身份认证(虚拟机内部)
 az login --identity
-
+# ...
 # 令牌认证(CI/CD)
 echo "$AZURE_ACCESS_TOKEN" | az login --service-principal \
   -u $AZURE_CLIENT_ID --password-stdin --tenant $AZURE_TENANT_ID
 ```
 
-**输出**: 返回自动化认证方式的执行结果,包含操作状态和输出数据。
+**输出**: 返回自动化认证方式的处理结果,包含执行状态码、结果数据和执行日志。
 ### 2. 批量资源操作
 ```bash
 # 批量删除资源组下所有虚拟机
 az vm list -g myRG -d --query "[].id" -o tsv | xargs az vm delete --ids --yes
-
+# ...
 # 批量停止所有运行中的虚拟机
 az vm list -d --query "[?powerState=='VM running'].id" -o tsv | xargs az vm stop --ids
-
+# ...
 # 按标签批量筛选资源
 az resource list --tag env=production --query "[].id" -o tsv
 ```
 
 **输入**: 用户提供批量资源操作所需的指令和必要参数。
-**输出**: 返回批量资源操作的执行结果,包含操作状态和输出数据。- 验证执行结果,确认输出符合预期格式
+**输出**: 返回批量资源的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `批量资源操作` 选项
 
@@ -99,10 +99,10 @@ az resource list --tag env=production --query "[].id" -o tsv
 ```bash
 #!/bin/bash
 set -e  # 出错即退出
-
+# ...
 # 创建资源组
 az group create -g prod-rg -l eastus
-
+# ...
 # 创建虚拟机并获取 ID
 VM_ID=$(az vm create \
   -g prod-rg \
@@ -110,12 +110,12 @@ VM_ID=$(az vm create \
   --image UbuntuLTS \
   --query id \
   --output tsv)
-
+# ...
 echo "Created VM: $VM_ID"
-
+# ...
 # 验证状态
 az vm show --ids "$VM_ID" --query provisioningState
-
+# ...
 # 配置网络安全组
 az network nsg create -g prod-rg -n prod-nsg
 az network nsg rule create -g prod-rg --nsg-name prod-nsg \
@@ -126,7 +126,7 @@ az network nsg rule create -g prod-rg --nsg-name prod-nsg \
 ```
 
 **输入**: 用户提供自动化部署脚本所需的指令和必要参数。
-**处理**: 按照skill规范执行自动化部署脚本操作,遵循单一意图原则。- 验证执行结果,确认输出符合预期格式
+**处理**: 解析自动化部署脚本的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `自动化部署脚本` 选项
 
@@ -134,7 +134,7 @@ az network nsg rule create -g prod-rg --nsg-name prod-nsg \
 ```bash
 # 列出所有订阅
 az account list --query "[].{name:name, id:id, state:state}" -o table
-
+# ...
 # 跨订阅操作
 for sub in $(az account list --query "[].id" -o tsv); do
   az account set --subscription $sub
@@ -144,8 +144,8 @@ done
 ```
 
 **输入**: 用户提供多订阅管理所需的指令和必要参数。
-**处理**: 按照skill规范执行多订阅管理操作,遵循单一意图原则。
-**输出**: 返回多订阅管理的执行结果,包含操作状态和输出数据。- 验证执行结果,确认输出符合预期格式
+**处理**: 解析多订阅管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回多订阅管理的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `多订阅管理` 选项
 
@@ -156,10 +156,10 @@ az consumption usage list \
   --top 10 \
   --query "[].{service:instanceName, cost:pretaxCost}" \
   -o table
-
+# ...
 # 识别未使用的资源
 az resource list --query "[?tags.env=='dev']" -o table
-
+# ...
 # 查看虚拟机实际使用率
 az monitor metrics list \
   --resource $(az vm show -g myRG -n myVM --query id -o tsv) \
@@ -168,23 +168,23 @@ az monitor metrics list \
 ```
 
 **输入**: 用户提供成本分析与优化所需的指令和必要参数。
-**处理**: 按照skill规范执行成本分析与优化操作,遵循单一意图原则。
-**输出**: 返回成本分析与优化的执行结果,包含操作状态和输出数据。
+**处理**: 解析成本分析与优化的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回成本分析与优化的处理结果,包含执行状态码、结果数据和执行日志。
 
 ### 6. 策略合规审计
 ```bash
 # 查看策略分配
 az policy assignment list -o table
-
+# ...
 # 合规状态检查
 az policy state list --query "[?complianceState=='NonCompliant']" -o table
-
+# ...
 # 安全基线扫描
 az security assessment list -o table
 ```
 
 **输入**: 用户提供策略合规审计所需的指令和必要参数。
-**输出**: 返回策略合规审计的执行结果,包含操作状态和输出数据。
+**输出**: 返回策略合规审计的处理结果,包含执行状态码、结果数据和执行日志。
 
 #
 ## 适用场景
@@ -196,24 +196,24 @@ az security assessment list -o table
 ```bash
 #!/bin/bash
 set -e
-
+# ...
 ENV=${1:-dev}
 RG="app-${ENV}-rg"
 LOCATION="eastus"
-
+# ...
 # 1. 创建资源组
 az group create -g $RG -l $LOCATION
-
+# ...
 # 2. 部署应用服务
 az deployment group create \
   -g $RG \
   --template-file infra/main.bicep \
   --parameters env=$ENV location=$LOCATION
-
+# ...
 # 3. 配置监控
 az monitor log-analytics workspace create \
   -g $RG -n "logs-${ENV}" -l $LOCATION
-
+# ...
 # 4. 输出部署结果
 echo "部署完成: $ENV 环境"
 az resource list -g $RG --query "[].{name:name, type:type}" -o table
@@ -231,7 +231,7 @@ for env in dev test prod; do
     --query "[].{name:name, type:type, location:location}" \
     -o table
 done
-
+# ...
 # 批量启停(夜间自动关停开发环境)
 az vm list -g app-dev-rg --query "[].id" -o tsv | \
   xargs az vm deallocate --ids
@@ -244,10 +244,10 @@ az vm list -g app-dev-rg --query "[].id" -o tsv | \
 ```bash
 # 查找未附加的磁盘
 az disk list --query "[?diskState=='Unattached']" -o table
-
+# ...
 # 查找停止超过 7 天的虚拟机
 az vm list -d --query "[?powerState!='VM running']" -o table
-
+# ...
 # 批量删除未使用的存储容器
 az storage container list \
   --account-name mystorage \
@@ -263,14 +263,14 @@ az storage container list \
 ```bash
 # 创建服务主体
 az ad sp create-for-rbac --name my-automation-sp
-
+# ...
 # 示例
 # {
 #   "appId": "详情见说明xx-详情见说明x-详情见说明x",
 #   "password": "详情见说明xx-详情见说明x-详情见说明x",
 #   "tenant": "详情见说明xx-详情见说明x-详情见说明x"
 # }
-
+# ...
 # 配置环境变量
 export AZURE_CLIENT_ID="<appId>"
 export AZURE_CLIENT_SECRET="<password>"
@@ -281,7 +281,7 @@ export AZURE_TENANT_ID="<租户ID>"
 
 ```bash
 mkdir -p .azure-toolkit/{scripts,templates,reports}
-
+# ...
 cat > .azure-toolkit/config.json << 'EOF'
 {
   "edition": "pro",
@@ -307,7 +307,7 @@ EOF
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+| --: | --: | --: | --: |
 | content | string | 否 | azure-cli-toolkit处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -356,12 +356,10 @@ EOF
 
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 待审查内容为空 | 用户未提供内容 | 提示用户提供待审查的代码 |
-| 内容格式不识别 | 传入不支持的内容格式 | 列出支持的格式, 建议转换后 |
-| 检查项超出范围 | 传入了不存在的检查维度 | 列出可用检查维度, 使用默认全部检查 |
-| 审查超时 | 内容过长导致处理超时 | 建议分段审查, 每段不超过5000字 |
-| 其他异常 | 内部处理异常 | 检查输入后 |
+| :-- | :-- | :-- |
+| 数据源读取失败 | 文件损坏或数据库连接中断 | 校验文件完整性,检查数据库连接参数,尝试备份数据源 |
+| 数据处理内存溢出 | 数据集过大超出内存限制 | 启用流式处理模式,分批加载数据,或增加可用内存 |
+| 查询结果为空 | 过滤条件过严或数据源无匹配记录 | 放宽查询条件,检查数据源时间范围,提示用户调整参数 |
 
 ## 依赖说明
 
@@ -375,7 +373,7 @@ EOF
 ### 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+| :-: | :-: | :-: | :-: |
 | Azure CLI | CLI 工具 | 必需 | brew / apt / choco 安装 |
 | Azure 订阅 | 云服务 | 必需 | azure.com 注册 |
 | 服务主体 | 认证 | 自动化必需 | `az ad sp create-for-rbac` |
@@ -421,12 +419,12 @@ az keyvault secret show --vault-name myVault -n azure-client-secret \
 **输出**:
 ```
 评级: B级(良好) - 总分: 85/100
-
+# ...
 检查详情:
 - 代码风格: 通过(95分) - 检查通过
 - 安全合规: 警告(75分) - 检查通过
 - 无障碍性: 通过(85分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [中优先级] 建议优化
@@ -443,12 +441,12 @@ az keyvault secret show --vault-name myVault -n azure-client-secret \
 **输出**:
 ```
 评级: C级(及格) - 总分: 70/100
-
+# ...
 检查详情:
 - 代码风格: 通过(90分) - 检查通过
 - 安全合规: 不通过(50分) - 检查通过
 - 无障碍性: 警告(70分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [高优先级] 建议优化
@@ -465,12 +463,12 @@ az keyvault secret show --vault-name myVault -n azure-client-secret \
 **输出**:
 ```
 评级: D级(不及格) - 总分: 45/100
-
+# ...
 检查详情:
 - 代码风格: 不通过(40分) - 检查通过
 - 安全合规: 不通过(30分) - 检查通过
 - 无障碍性: 通过(65分) - 检查通过
-
+# ...
 改进建议:
 1. [紧急] 建议优化
 2. [高优先级] 建议优化
@@ -517,8 +515,8 @@ az policy state trigger-scan
 ## 错误处理
 
 
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景2 | 原因 | 处理方式 |
+| --- | --: | :-- |
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

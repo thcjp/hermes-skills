@@ -34,11 +34,10 @@ pricing_model: "per_use"
 | 能力 | 免费版 | 付费版 |
 |:-----|:-------|:-------|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
+| 可视化图表自动生成 | 不支持 | 支持 |
+| 定时数据同步与增量更新 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -49,7 +48,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+| --- | --- | --- | --- |
 | AdMapix API | 远程 HTTP API | 必需 | https://www.admapix.com 注册获取 |
 | ADMAPIX_API_KEY | 环境变量 | 必需 | 控制台 API Keys 创建；仅作 `X-API-Key` 请求头 |
 | curl 或等价 HTTP 客户端 | 命令行工具 | 必需 | 系统自带或包管理器安装 |
@@ -61,7 +60,7 @@ pricing_model: "per_use"
 
 ### 缓存策略
 | 数据类型 | 缓存时长 | 缓存位置 |
-|:---------|:---------|:---------|
+| --: | --: | --: |
 | 元数据（filter-options 等） | 24 小时 | `~/.admapix-cache/metadata/` |
 | 创意搜索结果 | 1 小时 | `~/.admapix-cache/search/` |
 | 创意详情 | 7 天 | `~/.admapix-cache/detail/` |
@@ -74,17 +73,17 @@ pricing_model: "per_use"
 按关键词、国家、行业、创意类型多维度检索广告创意。`page_size` 上限 10 自动钳制；配额紧张时优先用 `count` 替代 `search` 降低消耗。支持创意分布维度查询（`distribute` / `distribute-dims`）与创意关联应用反查（`item-apps`）。
 
 **输入**: 用户提供广告创意搜索/计数/分布所需的指令和必要参数。
-**处理**: 按照skill规范执行广告创意搜索/计数/分布操作,遵循单一意图原则。
-**输出**: 返回广告创意搜索/计数/分布的执行结果,包含操作状态和输出数据。
+**处理**: 解析广告创意搜索/计数/分布的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回广告创意搜索/计数/分布的处理结果,包含执行状态码、结果数据和执行日志。
 
 ### 2. 应用与开发者画像
-统一产品搜索（`unified-product-search`）、应用详情（`app-detail`）、开发者详情（`developer-detail`）、相似应用（`similar-apps`）、SDK 详情（`sdk-detail`）；支持从创意 ID 反查关联应用（`item-apps`）。- 验证执行结果，确认输出符合预期格式
+统一产品搜索（`unified-product-search`）、应用详情（`app-detail`）、开发者详情（`developer-detail`）、相似应用（`similar-apps`）、SDK 详情（`sdk-detail`）；支持从创意 ID 反查关联应用（`item-apps`）。- 验证返回数据的完整性和格式正确性
 ### 3. 商店榜单查询
 应用商店免费/付费/畅销榜单（`store-rank`），按类目与国家筛选；通用榜单（`generic-rank`）支持自定义维度聚合。
 
 **输入**: 用户提供商店榜单查询所需的指令和必要参数。
-**处理**: 按照skill规范执行商店榜单查询操作,遵循单一意图原则。
-**输出**: 返回商店榜单查询的执行结果,包含操作状态和输出数据。
+**处理**: 解析商店榜单查询的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回商店榜单查询的处理结果,包含执行状态码、结果数据和执行日志。
 
 ### 4. 下载与收入估算（带可信度分级）
 按日期（`download-date` / `revenue-date`）、详情（`download-detail` / `revenue-detail`）、国家（`download-country` / `revenue-country`）维度查询第三方估算数据；强制附 A/B/C 三级可信度标注：
@@ -93,28 +92,28 @@ pricing_model: "per_use"
 - **C 级**：长尾方差 > 25%，仅用于方向性判断
 
 **输入**: 用户提供下载与收入估算（带可信度分级）所需的指令和必要参数。
-**处理**: 按照skill规范执行下载与收入估算（带可信度分级）操作,遵循单一意图原则。
-**输出**: 返回下载与收入估算（带可信度分级）的执行结果,包含操作状态和输出数据。
+**处理**: 解析下载与收入估算（带可信度分级）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回下载与收入估算（带可信度分级）的处理结果,包含执行状态码、结果数据和执行日志。
 
 ### 5. 参数自然语言翻译与端点编排
 内置 40+ 行业码与 200+ 国家码中文映射；端点依赖图自动并行化无依赖调用、串行化有依赖调用，单轮可编排 5-10 个端点。
 
 **输入**: 用户提供参数自然语言翻译与端点编排所需的指令和必要参数。
-**输出**: 返回参数自然语言翻译与端点编排的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
-- 参考`参数自然语言翻译与端点编排`相关配置参数进行设置
+**输出**: 返回参数自然语言翻译与端点编排的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+- 参考`参数自然语言翻译与端点编排`的配置文档进行参数调优
 #
 ## 参数映射表
 
 ### 行业码（trade_level1）
 | 自然语言 | 代码 | 自然语言 | 代码 |
-|----------|------|----------|------|
+| :-- | :-- | :-- | :-- |
 | 游戏 | 602 | 金融 | 607 |
 | 电商 | 601 | 工具 | 603 |
 | 社交 | 604 | 娱乐 | 609 |
 
 ### 国家/地区码
-| 自然语言 | 代码 | 自然语言 | 代码 |
-|----------|------|----------|------|
+| 国家/地 | 代码 | 自然语言 | 代码 |
+| :-: | :-: | :-: | :-: |
 | 美国 | US | 日本 | JP |
 | 韩国 | KR | 德国 | DE |
 | 东南亚 | TH/VN/ID/PH/MY | 中东 | SA/AE/TR/EG |
@@ -129,7 +128,7 @@ pricing_model: "per_use"
   filter-options / distribute-dims / screen-types / page-config
   search / count / count-all / distribute
   market-search / unified-product-search / company-search
-
+# ...
 依赖前序结果（必须串行）：
   content-detail    ← 依赖 search 返回的创意 ID
   item-apps         ← 依赖 search 返回的创意 ID
@@ -147,7 +146,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |
-|------|---------|---------|---------|
+| --- | --: | :-- | :-: |
 | 竞品创意监控 | "监控某竞品最近7天在美国的视频创意变化" | 新增创意列表、素材分布变化 | 创意搜索+计数 |
 | 出海选品调研 | "对比美国和东南亚三消类游戏的下载与收入" | 多国下载/收入对比表+可信度分级 | 下载/收入估算 |
 | 素材趋势分析 | "统计游戏行业近30天创意类型分布" | 创意类型分布饼图数据 | 创意分布 |
@@ -200,7 +199,7 @@ pricing_model: "per_use"
 curl -s -X POST "https://api.admapix.com/api/data/product-search" \
   -H "X-API-Key: ${ADMAPIX_API_KEY}" -H "Content-Type: application/json" \
   -d '{"keyword":"竞品名称","page":1,"page_size":10}'
-
+# ...
 # Step 2: 查询近7天美国视频创意
 curl -s -X POST "https://api.admapix.com/api/data/product-content-search" \
   -H "X-API-Key: ${ADMAPIX_API_KEY}" -H "Content-Type: application/json" \
@@ -230,17 +229,17 @@ curl -s -X POST "https://api.admapix.com/api/data/product-content-search" \
 curl -s -X POST "https://api.admapix.com/api/data/download-country" \
   -H "X-API-Key: ${ADMAPIX_API_KEY}" -H "Content-Type: application/json" \
   -d '{"countries":["US"],"trade_level1":["602"],"genre":["match3"],"dateRange":"30d"}'
-
+# ...
 # 东南亚下载估算（多国合并）
 curl -s -X POST "https://api.admapix.com/api/data/download-country" \
   -H "X-API-Key: ${ADMAPIX_API_KEY}" -H "Content-Type: application/json" \
   -d '{"countries":["TH","VN","ID","PH","MY"],"trade_level1":["602"],"genre":["match3"],"dateRange":"30d"}'
-
+# ...
 # 美国收入估算
 curl -s -X POST "https://api.admapix.com/api/data/revenue-country" \
   -H "X-API-Key: ${ADMAPIX_API_KEY}" -H "Content-Type: application/json" \
   -d '{"countries":["US"],"trade_level1":["602"],"genre":["match3"],"dateRange":"30d"}'
-
+# ...
 # 东南亚收入估算
 curl -s -X POST "https://api.admapix.com/api/data/revenue-country" \
   -H "X-API-Key: ${ADMAPIX_API_KEY}" -H "Content-Type: application/json" \
@@ -250,7 +249,7 @@ curl -s -X POST "https://api.admapix.com/api/data/revenue-country" \
 **输出**：表格对比，每行附可信度分级
 
 | 地区 | 月下载量 | 月收入 | 可信度 |
-|------|---------|--------|--------|
+| --: | :-- | :-: | --- |
 | 美国 | 12,500,000 | $3,200,000 | A 级（多源交叉方差 < 10%） |
 | 东南亚 | 8,700,000 | $680,000 | C 级（长尾方差 > 25%） |
 
@@ -270,7 +269,7 @@ curl -s -X POST "https://api.admapix.com/api/data/revenue-country" \
 curl -s -X POST "https://api.admapix.com/api/data/company-search" \
   -H "X-API-Key: ${ADMAPIX_API_KEY}" -H "Content-Type: application/json" \
   -d '{"keyword":"开发者名称","page":1,"page_size":10}'
-
+# ...
 # Step 3: 并行查询每个应用的SDK（示例）
 curl -s "https://api.admapix.com/api/data/sdk-detail?unifiedProductId=app_001" \
   -H "X-API-Key: ${ADMAPIX_API_KEY}"
@@ -279,7 +278,7 @@ curl -s "https://api.admapix.com/api/data/sdk-detail?unifiedProductId=app_001" \
 **输出**：SDK 矩阵表（应用 x SDK）+ 供应链风险提示
 
 | 应用 | Firebase | AppsFlyer | Unity Ads | 独家SDK |
-|------|----------|-----------|-----------|---------|
+| :-- | :-: | --- | --: | :-- |
 | App A | Yes | Yes | Yes | IRONSOURCE |
 | App B | Yes | Yes | No | - |
 | App C | Yes | No | Yes | CHARTBOOST |
@@ -290,7 +289,7 @@ curl -s "https://api.admapix.com/api/data/sdk-detail?unifiedProductId=app_001" \
 
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
-|---------|---------|---------|---------|
+| :-: | --- | --: | :-- |
 | 401 INVALID_API_KEY | `{"code":"INVALID_API_KEY"}` | Key 缺失/格式错/已禁用 | 引导用户检查 Key；永不打印 Key |
 | 403 FORBIDDEN | `{"code":"FORBIDDEN"}` | 权限不足或套餐限制 | 提示用户升级 AdMapix 套餐 |
 | 429 RATE_LIMITED | `{"code":"RATE_LIMITED"}` | 触发限流 | （1s/2s/4s），最多 3 次；降低并发到 3 |

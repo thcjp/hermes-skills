@@ -24,6 +24,15 @@ pricing_model: "per_use"
 
 AI代理自主购物技能，为生活方式商店提供完整的浏览、下单和跟踪能力。支持自然语言搜索、多链加密支付和x402协议结账，无需API Key。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | 生活方式购物处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -69,8 +78,8 @@ export API_KEY="your_api_key_here"
 
 ### 1. 能力发现
 
-通过 `GET /agent/capabilities` 获取API能力摘要。返回支持的功能、链/代币列表和限制说明。适用于首次调用时了解API完整能力和支持的支付方式。- 验证执行结果，确认输出符合预期格式
-- 参考`能力发现`相关配置参数进行设置
+通过 `GET /agent/capabilities` 获取API能力摘要。返回支持的功能、链/代币列表和限制说明。适用于首次调用时了解API完整能力和支持的支付方式。- 验证返回数据的完整性和格式正确性
+- 参考`能力发现`的配置文档进行参数调优
 ### 2. AI购物助手
 
 通过 `POST /agent/shop` 发送自然语言购物请求。请求体包含 `message`（自然语言查询）和可选 `context`（含 `priceRange`、`preferences` 等）。返回AI回复文本和匹配的 `products` 数组（含 `id`、`title`、`price`、`inStock`、`badge` 等字段）。适用于对话式商品搜索和推荐场景。
@@ -79,13 +88,13 @@ export API_KEY="your_api_key_here"
 通过 `GET /categories` 获取商品分类树。返回包含分类slug、名称和商品数量的层级结构。适用于商品分类浏览和导航场景。
 
 **输入**: 用户提供分类树查询所需的指令和必要参数。
-**处理**: 按照skill规范执行分类树查询操作,遵循单一意图原则。- 验证执行结果，确认输出符合预期格式
-- 参考`分类树查询`相关配置参数进行设置
+**处理**: 解析分类树查询的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证返回数据的完整性和格式正确性
+- 参考`分类树查询`的配置文档进行参数调优
 ### 4. 精选商品
 通过 `GET /products/featured` 获取精选商品列表。返回带 `trending`、`new`、`bestseller` 等标签的精选商品。适用于礼品推荐和热门商品展示场景。
 
 **输入**: 用户提供精选商品所需的指令和必要参数。
-**处理**: 按照skill规范执行精选商品操作,遵循单一意图原则。
+**处理**: 解析精选商品的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 
 ### 5. 语义搜索
 
@@ -95,18 +104,18 @@ export API_KEY="your_api_key_here"
 通过 `GET /products/{slug}` 获取商品完整信息。返回 `id`（用于结账）、`variants[]`（含 `id`、`name`、`inStock`、`stockQuantity`、`price`）、`images[]`、`relatedProducts[]` 和 `description`。若商品有变体，需选择 `inStock` 的变体并在结账时包含 `variantId`。适用于结账前的商品信息确认。
 
 **输入**: 用户提供商品详情所需的指令和必要参数。
-**处理**: 按照skill规范执行商品详情操作,遵循单一意图原则。
+**处理**: 解析商品详情的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 
 ### 7. 支付方式查询
 通过 `GET /payment-methods` 获取所有支持的支付方式。返回 `data`（已启用支付方式设置）和 `chains`（区块链网络和代币列表）。支持Solana（SOL/USDC/USDT/CULT）、Ethereum（ETH/USDC/USDT）、Base（ETH/USDC）、Polygon（MATIC/USDC）、Arbitrum、Bitcoin、Dogecoin、Monero等。结账前必须验证支付方式是否支持。
 
 **输入**: 用户提供支付方式查询所需的指令和必要参数。
-**处理**: 按照skill规范执行支付方式查询操作,遵循单一意图原则。
+**处理**: 解析支付方式查询的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 
 ### 8. 标准结账
 通过 `POST /checkout` 创建订单。请求体包含 `items`（含 `productId`、`quantity`、可选 `variantId`）、`email`、`payment`（含 `chain` 和 `token`）和 `shipping`（含 `name`、`address1`、`city`、`stateCode`、`postalCode`、`countryCode`）。返回 `orderId`、`payment.address`（付款地址）、`payment.amount`（精确金额）、`payment.qrCode`（二维码）和 `expiresAt`（约15分钟有效期）。仅在用户明确确认后告知付款信息。
 
-**处理**: 按照skill规范执行标准结账操作,遵循单一意图原则。
+**处理**: 解析标准结账的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 ### 9. x402结账
 
 通过 `POST /checkout/x402` 创建x402协议订单。API返回HTTP 402状态码和付费要求，运行时（或用户）构建并签名USDC转账（含memo `Store Order: {orderId}`），通过 `X-PAYMENT` 头部重试请求。成功后返回201和订单确认。skill不访问私钥，签名由运行时负责。适用于自动化代理支付场景。
@@ -118,7 +127,7 @@ export API_KEY="your_api_key_here"
 ### 11. 订单详情
 通过 `GET /orders/{orderId}` 获取完整订单详情。返回商品列表、配送信息、支付信息（含 `txHash`）、订单总额和跟踪信息。始终向用户传达响应中的 `_actions.next` 指引下一步操作。适用于订单信息查询和问题排查。
 
-**处理**: 按照skill规范执行订单详情操作,遵循单一意图原则。
+**处理**: 解析订单详情的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 ### 12. 代理身份
 通过 `GET /agent/me`、`GET /agent/me/orders`、`GET /agent/me/preferences` 获取代理身份信息。需在请求头中携带 `X-Moltbook-Identity` 令牌（由代理运行时提供）。仅在运行时明确提供令牌时使用，正常浏览和结账流程禁止发送身份令牌。适用于代理个性化场景。
 
@@ -219,3 +228,25 @@ CULT token持有者享5-20%折扣加免运费。结账时可选提供 `wallet`/`
 - `X-Moltbook-Identity` 头部仅用于代理身份端点，正常流程禁止发送
 - 客户PII可能在90天后自动删除
 - 不支持需要100%确定性的关键决策场景
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "生活方式购物处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "shop-culture"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

@@ -98,8 +98,8 @@ query dependencyGraph($owner: String!, $name: String!) {
 }
 ```
 
-**处理**: 按照skill规范执行GraphQL API操作,遵循单一意图原则。
-**输出**: 返回GraphQL API的执行结果,包含操作状态和输出数据。### 批量操作
+**处理**: 解析GraphQL API的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回GraphQL API的解析响应,包含完成状态码、响应数据和完成日志。### 批量任务
 ```bash
 gh-api-toolkit batch-create-issues \
   --repo owner/repo \
@@ -127,8 +127,8 @@ gh-api-toolkit batch-archive-repos \
 - **速率控制**: 自动遵守API限速,可配置QPS
 - **断点续传**: 失败时记录进度,支持从断点恢复
 - **回滚支持**: 生成反向操作脚本,支持撤销
-- **进度报告**: 实时显示进度与成功/失败计数- 验证执行结果，确认输出符合预期格式
-- 参考`GitHub Actions API`相关配置参数进行设置
+- **进度报告**: 实时显示进度与成功/失败计数- 验证返回数据的完整性和格式正确性
+- 参考`GitHub Actions API`的配置文档进行参数调优
 ### Webhook管理
 ```bash
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
@@ -190,12 +190,12 @@ curl -L -H "Authorization: Bearer $GITHUB_TOKEN" \
   https://api.相关技术文档
 ```
 
-**输出**: 返回GitHub Actions API的执行结果,包含操作状态和输出数据。- 验证执行结果,确认输出符合预期格式
+**输出**: 返回GitHub Actions API的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `github_actions_api` 选项
 - 处理流程: 接收输入 -> 执行GitHub Actions API -> 返回结果
 - 输入: 用户提供GitHub Actions API所需的参数和指令
-- 输出: 返回GitHub Actions API的执行结果,包含操作状态和输出数据
+- 输出: 返回GitHub Actions API的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 组织与团队管理
 ```bash
@@ -220,8 +220,8 @@ curl -H "Authorization: Bearer $GITHUB_TOKEN" \
 ```
 
 **输入**: 用户提供组织与团队管理所需的指令和必要参数。
-**处理**: 按照skill规范执行组织与团队管理操作,遵循单一意图原则。
-**输出**: 返回组织与团队管理的执行结果,包含操作状态和输出数据。### 高级搜索
+**处理**: 解析组织与团队管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回组织与团队管理的处理结果,包含执行状态码、结果数据和执行日志。### 高级搜索
 ```bash
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
   "https://api.相关技术文档

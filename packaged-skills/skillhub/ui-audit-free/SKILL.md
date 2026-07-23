@@ -21,6 +21,15 @@ tags:
 ui-audit-free 基于 Warp-Speed Decisioning 框架，对界面进行基础 UX 审计。核心理念是
 "Speed ≠ Recklessness"——快速设计不等于鲁莽设计，关键在于意图性。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | UI Audit Free处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 核心理念：3 Pillars of Warp-Speed Decisioning
 
 1. **Scaffolding** — 用于自动化重复决策的规则体系
@@ -56,25 +65,25 @@ export API_KEY="your_api_key_here"
 institutional knowledge → user familiarity → research，通过 JTBD 支持度选择方案。
 基础版支持核心决策框架，不包含 `01-anchors.md` 和 `02-information-scaffold.md` 的完整内容。
 
-**处理**: 按照skill规范执行基础框架引用与决策流程操作,遵循单一意图原则。
-**输出**: 返回基础框架引用与决策流程的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
-- 参考`基础框架引用与决策流程`相关配置参数进行设置
+**处理**: 解析基础框架引用与决策流程的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回基础框架引用与决策流程的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+- 参考`基础框架引用与决策流程`的配置文档进行参数调优
 ### 2. 视觉样式审计（Spacing/Color/Elevation/Typography/Motion）
 参照 `12-checklist-visual-style.md` 审计视觉样式。检查间距一致性（8px 基线网格）、
 色彩调色板遵循度、阴影/elevation 层级、字体系统配对、圆角/边框一致性和图标风格统一性。
 每项检查标注 pass/warn/fail/na 状态。
 
 **输入**: 用户提供视觉样式审计（Spacing/Color/Elevation/Typography/Motion）所需的指令和必要参数。
-**输出**: 返回视觉样式审计（Spacing/Color/Elevation/Typography/Motion）的执行结果,包含操作状态和输出数据。
+**输出**: 返回视觉样式审计（Spacing/Color/Elevation/Typography/Motion）的处理结果,包含执行状态码、结果数据和执行日志。
 
-- 执行`视觉样式审计（Spacing/Color/Elevation/Typography/Motion）`操作，处理输入数据并返回结果
-- 验证执行结果，确认输出符合预期格式
-- 参考`视觉样式审计（Spacing/Color/Elevation/Typography/Motion）`相关配置参数进行设置
+- 针对`视觉样式审计（Spacing/Color/Elevation/Typography/Motion）`,解析输入数据并返回响应
+- 验证返回数据的完整性和格式正确性
+- 参考`视觉样式审计（Spacing/Color/Elevation/Typography/Motion）`的配置文档进行参数调优
 ### 3. 基础审计报告生成（JSON 格式）
 生成包含三项必检项的 JSON 审计报告：Visual Hierarchy、Visual Style、Accessibility。
 每项包含 6-10 个检查点，标注 pass/warn/fail/na 状态。基础版不包含 Navigation、Usability、
-Onboarding 等上下文检查项，也不包含 macro_bets 对齐分析。- 验证执行结果，确认输出符合预期格式
-- 参考`基础审计报告生成（JSON 格式）`相关配置参数进行设置
+Onboarding 等上下文检查项，也不包含 macro_bets 对齐分析。- 验证返回数据的完整性和格式正确性
+- 参考`基础审计报告生成（JSON 格式）`的配置文档进行参数调优
 #
 ## 使用流程
 
@@ -153,3 +162,25 @@ Macro Bet 分析、上下文检查项和结构化优先修复列表。
 - 不包含 Macro Bet 对齐分析
 - 不包含 5 级原创性光谱（Level 0-4）评估
 - 不包含 `01-anchors.md` 和 `02-information-scaffold.md` 的完整内容
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "UI Audit Free处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "ui-audit"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

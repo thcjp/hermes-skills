@@ -90,6 +90,13 @@ pricing_model: "per_use"
 
 DuckDB 支持多种格式与来源:
 
+## 输入格式
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | DuckDB分析引擎处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ```sql
 -- CSV(自动类型推断)
 SELECT * FROM read_csv_auto('sales.csv');

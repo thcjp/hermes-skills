@@ -25,6 +25,15 @@ pricing_model: "monthly"
 
 面向 AI Agent 记忆文件的**安全扫描系统**，对记忆文件、日志、工作区配置进行持续安全审计，主动发现恶意指令、注入模式、凭证泄漏与行为操纵，防患于未然。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | 记忆雷达处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -279,3 +288,25 @@ export API_KEY="your_api_key_here"
 4. **隔离不自动执行**：系统永不自动隔离，始终先询问用户确认。在无人值守的定时监控场景下，威胁会保留至下次人工审查，可能延误处置。
 
 5. **扫描范围限于记忆文件**：仅扫描MEMORY.md、memory/*.md及工作区配置文件（AGENTS.md、SOUL.md、USER.md等），不覆盖代码文件、日志文件或其他非记忆文件中的安全威胁。
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "记忆雷达处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "memory-radar"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

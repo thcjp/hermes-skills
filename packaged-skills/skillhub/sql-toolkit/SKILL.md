@@ -25,6 +25,15 @@ pricing_model: "per_use"
 
 关系型数据库命令行操作工具箱，覆盖 SQLite、PostgreSQL、MySQL，提供 Schema 设计、查询编写、迁移脚本、索引优化、备份恢复的完整模式。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | SQL Toolkit处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -108,7 +117,7 @@ SELECT month, revenue, LAG(revenue) OVER (ORDER BY month) AS prev_revenue FROM m
 索引策略：单列索引、复合索引（等值过滤在前、范围过滤在后）、覆盖索引（`INCLUDE` 避免回表）、部分索引（`WHERE` 条件缩小体积）、GIN 索引（JSONB 查询）。SQLite 用 `EXPLAIN QUERY PLAN` 检查 SCAN vs SEARCH USING INDEX。
 
 **输入**: 用户提供Query Optimization（EXPLAIN 与索引策略）所需的指令和必要参数。
-**输出**: 返回Query Optimization（EXPLAIN 与索引策略）的执行结果,包含操作状态和输出数据。### Backup & Restore（备份与恢复）
+**输出**: 返回Query Optimization（EXPLAIN 与索引策略）的处理结果,包含执行状态码、结果数据和执行日志。### Backup & Restore（备份与恢复）
 ```bash
 # PostgreSQL
 pg_dump -Fc -h localhost -U myuser mydb > backup.dump
@@ -123,8 +132,8 @@ mysqldump -h localhost -u root -p mydb > backup.sql
 mysql -h localhost -u root -p mydb < backup.sql
 ```
 
-**处理**: 按照skill规范执行Backup & Restore（备份与恢复）操作,遵循单一意图原则。
-**输出**: 返回Backup & Restore（备份与恢复）的执行结果,包含操作状态和输出数据。
+**处理**: 解析Backup & Restore（备份与恢复）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回Backup & Restore（备份与恢复）的处理结果,包含执行状态码、结果数据和执行日志。
 
 #
 ## 示例
@@ -140,7 +149,7 @@ mysql -h localhost -u root -p mydb < backup.sql
 
 ### 输出说明
 
-Agent将根据指令执行操作，返回处理结果。结果格式取决于具体能力点的输出定义。
+Agent将根据指令调用对应能力,返回响应数据。响应格式取决于具体能力点的输出定义。
 
 ## 依赖说明
 

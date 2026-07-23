@@ -87,6 +87,13 @@ pricing_model: "monthly"
 ### 示例1: Python天气查询MCP服务器
 
 **输入**:
+## 输入格式
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | MCP服务器构建器处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ```
 构建一个MCP服务器,提供天气查询工具,输入城市名返回天气信息。使用Python FastMCP。
 ```

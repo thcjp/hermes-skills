@@ -198,16 +198,18 @@
     "knowledge-graph-tool-free",
     "markdown-format-tool-free",
     "merge-check-tool-free",
-    "mermaid-diagram-tool-free"
+    "mermaid-diagram-tool-free",
+    "podcast-toolkit-free",
+    "model-routing-tool-free"
   ],
   "failed": [
     {
-      "slug": "podcast-toolkit-free",
-      "error": "timeout"
-    },
-    {
       "slug": "model-routing-tool-free",
       "error": "Error: Rate limit: max 200 new skills per 24 hours. Please wait before publishing more.\n    at enforceNewSkillRateLimit (../../convex/skills.ts:1528:6)\n    at handler (../../convex/skills.ts:12622:6)\n"
+    },
+    {
+      "slug": "model-switching-tool-free",
+      "error": "RATE_LIMITED"
     }
   ],
   "not_found": [],

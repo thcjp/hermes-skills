@@ -44,6 +44,13 @@ AWS CLI标准配置路径：
 1. **Linux/macOS**：`~/.aws/config`（profile与region配置）、`~/.aws/credentials`（访问密钥）
 2. **Windows**：`%USERPROFILE%\.aws\config`、`%USERPROFILE%\.aws\credentials`
 
+## 输入格式
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | AWS云巡检免费版处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ```bash
 aws --version  # 确认CLI已安装
 aws configure list  # 查看当前profile与region
@@ -335,40 +342,40 @@ SOFTWARE.
 AWS云巡检免费版（aws-cloud-inspector-free）面向独立开发者与运维新人，基于本地AWS CLI提供只读的云资源查询与基础巡检能力
 
 **输入**: 用户提供AWS云巡检免费版（aws-cloud-所需的指令和必要参数。
-**处理**: 按照skill规范执行AWS云巡检免费版（aws-cloud-操作,遵循单一意图原则。
-**输出**: 返回AWS云巡检免费版（aws-cloud-的执行结果,包含操作状态和输出数据。
+**处理**: 解析AWS云巡检免费版（aws-cloud-的输入参数,完成核心逻辑,返回结构化响应。
+**输出**: 返回AWS云巡检免费版（aws-cloud-的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 它默认只读
 它默认只读，所有变更类操作必须用户显式确认才执行，确保零误操作风险
 
 **输入**: 用户提供它默认只读所需的指令和必要参数。
-**处理**: 按照skill规范执行它默认只读操作,遵循单一意图原则。
-**输出**: 返回它默认只读的执行结果,包含操作状态和输出数据。
+**处理**: 解析它默认只读的输入参数,完成核心逻辑,返回结构化响应。
+**输出**: 返回它默认只读的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### aws/config` 与 `
 aws/config` 与 `~/
 
 **输入**: 用户提供aws/config` 与 `所需的指令和必要参数。
-**处理**: 按照skill规范执行aws/config` 与 `操作,遵循单一意图原则。
-**输出**: 返回aws/config` 与 `的执行结果,包含操作状态和输出数据。
+**处理**: 解析aws/config` 与 `的输入参数,完成核心逻辑,返回结构化响应。
+**输出**: 返回aws/config` 与 `的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### aws/credentials
 aws/credentials` 标准位置）
 
 **输入**: 用户提供aws/credentials所需的指令和必要参数。
-**处理**: 按照skill规范执行aws/credentials操作,遵循单一意图原则。
-**输出**: 返回aws/credentials的执行结果,包含操作状态和输出数据。
+**处理**: 解析aws/credentials的输入参数,完成核心逻辑,返回结构化响应。
+**输出**: 返回aws/credentials的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 适用场景
 适用场景：个人AWS账号日常巡检、新接手项目的资源盘点、上线前基础安全自检、CloudWatch告警排查、IAM权限梳理、学习AWS CLI命令模式、为团队试点云巡检流程前的个人练习
 
 **输入**: 用户提供适用场景所需的指令和必要参数。
-**处理**: 按照skill规范执行适用场景操作,遵循单一意图原则。
-**输出**: 返回适用场景的执行结果,包含操作状态和输出数据。
+**处理**: 解析适用场景的输入参数,完成核心逻辑,返回结构化响应。
+**输出**: 返回适用场景的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置。
@@ -380,3 +387,20 @@ aws/credentials` 标准位置）
 **目标**：盘点刚接手的AWS账号下所有核心资源。
 
 ```bash
+
+## 输出格式
+```json
+{
+  "success": true,
+  "data": {
+    "result": "AWS云巡检免费版处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "aws cloud inspector"
+    }
+  },
+  "execution_log": ["解析输入参数", "执行核心处理", "格式化输出结果"],
+  "error": null
+}
+```

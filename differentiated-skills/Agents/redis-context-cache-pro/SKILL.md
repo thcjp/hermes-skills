@@ -47,6 +47,13 @@ Redis上下文缓存专业版在免费版基础上解锁集群方案、性能调
 
 ## 架构总览
 
+## 输入格式
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | Redis Context Cache处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ```text
 ┌─────────────────────────────────────────────────────────────────┐
 │              Redis上下文缓存专业版 (PRO)                          │
@@ -1089,4 +1096,21 @@ KEYS *一次性遍历所有键，期间阻塞Redis。SCAN分批迭代（count参
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
+```
+
+## 输出格式
+```json
+{
+  "success": true,
+  "data": {
+    "result": "Redis Context Cache处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "redis context cache pro"
+    }
+  },
+  "execution_log": ["解析输入参数", "执行核心处理", "格式化输出结果"],
+  "error": null
+}
 ```

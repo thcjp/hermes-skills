@@ -72,19 +72,19 @@ Track and record various health metrics 基于 user profile:
 
 > 详细内容已移至 `references/detail.md` -
 
-**处理**: 按照skill规范执行Health Data Recording 📊操作,遵循单一意图原则。
-**输出**: 返回Health Data Recording 📊的执行结果,包含操作状态和输出数据。
+**处理**: 解析Health Data Recording 📊的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回Health Data Recording 📊的处理结果,包含执行状态码、结果数据和执行日志。
 ### 2. Age-Specific Health Guidance
 > 详细内容已移至 `references/detail.md` -
 
 **输入**: 用户提供Age-Specific Health Guidance所需的指令和必要参数。
-**处理**: 按照skill规范执行Age-Specific Health Guidance操作,遵循单一意图原则。
-**输出**: 返回Age-Specific Health Guidance的执行结果,包含操作状态和输出数据。
+**处理**: 解析Age-Specific Health Guidance的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回Age-Specific Health Guidance的处理结果,包含执行状态码、结果数据和执行日志。
 ### 3. Gender-Specific Health
 
-**处理**: 按照skill规范执行Health Data Recording 📊操作,遵循单一意图原则。
-**输出**: 返回Health Data Recording 📊的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
-- 参考`Gender-Specific Health`相关配置参数进行设置
+**处理**: 解析Health Data Recording 📊的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回Health Data Recording 📊的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+- 参考`Gender-Specific Health`的配置文档进行参数调优
 ### 4. Medication Management 💊
 **Features:**
 
@@ -132,8 +132,8 @@ Track and record various health metrics 基于 user profile:
 | ACE inhibitors | Potassium | High potassium |
 
 **输入**: 用户提供Medication Management 💊所需的指令和必要参数。
-**处理**: 按照skill规范执行Medication Management 💊操作,遵循单一意图原则。
-**输出**: 返回Medication Management 💊的执行结果,包含操作状态和输出数据。
+**处理**: 解析Medication Management 💊的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回Medication Management 💊的处理结果,包含执行状态码、结果数据和执行日志。
 
 ### 5. Symptom Analysis 🩺
 **Process:**
@@ -176,7 +176,7 @@ Track and record various health metrics 基于 user profile:
 * Severe vomiting + unable to keep fluids down
 * Overdose symptoms
 
-**输出**: 返回Symptom Analysis 🩺的执行结果,包含操作状态和输出数据。
+**输出**: 返回Symptom Analysis 🩺的处理结果,包含执行状态码、结果数据和执行日志。
 ### 6. Exercise Recommendations 🏃
 #### By Age & Fitness Level
 **Beginner (Any Age):**
@@ -226,9 +226,9 @@ Track and record various health metrics 基于 user profile:
 * Start slow, gradual increase
 * Monitor heart rate
 
-- 参考`Exercise Recommendations 🏃`相关配置参数进行设置
+- 参考`Exercise Recommendations 🏃`的配置文档进行参数调优
 
-**输出**: 返回Exercise Recommendations 🏃的执行结果,包含操作状态和输出数据。
+**输出**: 返回Exercise Recommendations 🏃的处理结果,包含执行状态码、结果数据和执行日志。
 ### 7. Nutrition Advice 🥗
 #### By Age
 **Children:**
@@ -283,12 +283,12 @@ Track and record various health metrics 基于 user profile:
 > 详细内容已移至 `references/detail.md` -
 
 **输入**: 用户提供Nutrition Advice 🥗所需的指令和必要参数。
-**输出**: 返回Nutrition Advice 🥗的执行结果,包含操作状态和输出数据。
+**输出**: 返回Nutrition Advice 🥗的处理结果,包含执行状态码、结果数据和执行日志。
 ### 8. Travel Health Preparation ✈️
 
 **输入**: 用户提供Nutrition Advice 🥗所需的指令和必要参数。
-**输出**: 返回Nutrition Advice 🥗的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
-- 参考`Travel Health Preparation ✈️`相关配置参数进行设置
+**输出**: 返回Nutrition Advice 🥗的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+- 参考`Travel Health Preparation ✈️`的配置文档进行参数调优
 #
 ## 适用场景
 

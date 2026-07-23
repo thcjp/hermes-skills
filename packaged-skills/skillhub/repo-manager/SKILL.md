@@ -62,8 +62,8 @@ pricing_model: "per_use"
 > 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供Release管理所需的指令和必要参数。
-**处理**: 按照skill规范执行Release管理操作,遵循单一意图原则。
-**输出**: 返回Release管理的执行结果,包含操作状态和输出数据。### 批量操作
+**处理**: 解析Release管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回Release管理的解析响应,包含完成状态码、响应数据和完成日志。### 批量任务
 ```bash
 repo-manager batch-call --file batch_query.json --parallel 5
 
@@ -125,8 +125,8 @@ repo-manager integrations list
 repo-manager list-tools --integration my-ci-tool
 
 repo-manager call --tool "my_ci_trigger_pipeline" --params '{"project":"api"}' --confirm
-```- 验证执行结果，确认输出符合预期格式
-- 参考`自定义工具集成`相关配置参数进行设置
+```- 验证返回数据的完整性和格式正确性
+- 参考`自定义工具集成`的配置文档进行参数调优
 ### 团队共享配置
 ```bash
 repo-manager team init --name "dev-team"
@@ -141,8 +141,8 @@ repo-manager team show
 ```
 
 **输入**: 用户提供团队共享配置所需的指令和必要参数。
-**处理**: 按照skill规范执行团队共享配置操作,遵循单一意图原则。
-**输出**: 返回团队共享配置的执行结果,包含操作状态和输出数据。
+**处理**: 解析团队共享配置的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回团队共享配置的处理结果,包含执行状态码、结果数据和执行日志。
 
 #
 ## 适用场景

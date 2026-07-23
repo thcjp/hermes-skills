@@ -52,7 +52,7 @@ Just ask your AI assistant: / 直接告诉 AI 助手：
 2. "Calculate days between two dates" (计算两个日期之间的天数)
 3. "Sum sales where category is Electronics" (计算电子类产品总销售额)
 
-**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
 
 ## 输入格式

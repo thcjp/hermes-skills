@@ -21,6 +21,15 @@ tags:
 
 面向 AI Agent 记忆文件的**基础安全扫描工具**，对 MEMORY.md、每日日志、工作区配置文件进行安全审计，检测恶意内容与凭证泄漏。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | 记忆安全扫描处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 核心能力
 
 1. **七大检测类别基础扫描**
@@ -181,3 +190,25 @@ export API_KEY="your_api_key_here"
 - **LLM检测提示模板**：专业的detection-prompt.md模板，确保远程分析的一致性和准确性
 
 专业版适合需要持续安全监控、处理大量记忆文件、或需要检测高级注入攻击的团队和高级用户使用。
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "记忆安全扫描处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "memory-scan"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

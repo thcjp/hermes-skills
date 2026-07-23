@@ -25,6 +25,15 @@ pricing_model: "per_use"
 
 文件与文件夹管理的完整工具，从命名规范到文件夹结构到关键文档归档，帮助建立可持续的文件管理体系。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | 文件管理整理处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -57,7 +66,7 @@ pricing_model: "per_use"
 - **项目文件夹模板**：每个项目统一分类 — 工作文档、参考材料、assets、deliverables、communications
 - **归档机制**：项目完成后干净归档 — 压缩需保留的、删除不需要的，确保一年后客户提问时能快速找到
 
-**处理**: 按照skill规范执行文件夹结构设计（Folder Structure）操作,遵循单一意图原则。
+**处理**: 解析文件夹结构设计（Folder Structure）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 ### 文件检索与找回（Finding Lost Files）
 通过自然语言描述检索找不到的文件：
 
@@ -76,7 +85,7 @@ pricing_model: "per_use"
 - **系统 vs 积累**：区分运行的系统和积累债务的系统 — 定期处理的文件环境保持可控
 
 **输入**: 用户提供Downloads 与 Desktop 清理（Inbox Zero for Files）所需的指令和必要参数。
-**输出**: 返回Downloads 与 Desktop 清理（Inbox Zero for Files）的执行结果,包含操作状态和输出数据。### 关键文档 inventory 管理（Critical Documents）
+**输出**: 返回Downloads 与 Desktop 清理（Inbox Zero for Files）的处理结果,包含执行状态码、结果数据和执行日志。### 关键文档 inventory 管理（Critical Documents）
 识别和管理有实际后果的重要文档：
 
 - **文档类型**：合同、税务文件、医疗记录、财务报表、法律信函 — 丢失或无法访问会有实际后果
@@ -86,8 +95,8 @@ pricing_model: "per_use"
 - **备份策略**：关键文档多重备份，确保可访问性
 
 **输入**: 用户提供关键文档 inventory 管理（Critical Documents）所需的指令和必要参数。
-**处理**: 按照skill规范执行关键文档 inventory 管理（Critical Documents）操作,遵循单一意图原则。
-**输出**: 返回关键文档 inventory 管理（Critical Documents）的执行结果,包含操作状态和输出数据。### 文件维护习惯养成（Maintenance Without Effort）
+**处理**: 解析关键文档 inventory 管理（Critical Documents）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回关键文档 inventory 管理（Critical Documents）的处理结果,包含执行状态码、结果数据和执行日志。### 文件维护习惯养成（Maintenance Without Effort）
 建立足够轻量可持续的文件管理习惯：
 
 - **低摩擦原则**：正确归档只需 10 秒而非 10 分钟，结构清晰到不存在"该放哪"的问题
@@ -97,7 +106,7 @@ pricing_model: "per_use"
 - **目标**：不是完美系统，而是维护成本足够低以至于你实际会维护的系统
 
 **输入**: 用户提供文件维护习惯养成（Maintenance Without Effort）所需的指令和必要参数。
-**输出**: 返回文件维护习惯养成（Maintenance Without Effort）的执行结果,包含操作状态和输出数据。
+**输出**: 返回文件维护习惯养成（Maintenance Without Effort）的处理结果,包含执行状态码、结果数据和执行日志。
 
 #
 ## 使用流程
@@ -120,7 +129,7 @@ pricing_model: "per_use"
 
 ### 输出说明
 
-Agent将根据指令执行操作，返回处理结果。结果格式取决于具体能力点的输出定义。
+Agent将根据指令调用对应能力,返回响应数据。响应格式取决于具体能力点的输出定义。
 
 ## 依赖说明
 

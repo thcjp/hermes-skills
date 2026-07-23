@@ -42,28 +42,28 @@ pricing_model: "monthly"
 * **Error Recovery**: Validation and helpful error messages
 ### 40+ Format Support
 
-执行40+ Format Support,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
+针对40+ Format Support,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
 
 **输入**: 用户提供40+ Format Support相关的配置参数、输入数据和处理选项。
 
-**输出**: 返回40+ Format Support的处理结果。- 验证执行结果，确认输出符合预期格式
-- 参考`+ Format Support`相关配置参数进行设置
+**输出**: 返回40+ Format Support的处理结果。- 验证返回数据的完整性和格式正确性
+- 参考`+ Format Support`的配置文档进行参数调优
 ### Dual Toolset
 
-执行Dual Toolset,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
+针对Dual Toolset,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
 
 **输入**: 用户提供Dual Toolset相关的配置参数、输入数据和处理选项。
 
-**输出**: 返回Dual Toolset的处理结果。- 验证执行结果，确认输出符合预期格式
-- 参考`Dual Toolset`相关配置参数进行设置
+**输出**: 返回Dual Toolset的处理结果。- 验证返回数据的完整性和格式正确性
+- 参考`Dual Toolset`的配置文档进行参数调优
 ### Professional Templates
 
-执行Professional Templates,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
+针对Professional Templates,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
 
 **输入**: 用户提供Professional Templates相关的配置参数、输入数据和处理选项。
 
-**输出**: 返回Professional Templates的处理结果。- 验证执行结果，确认输出符合预期格式
-- 参考`Professional Templates`相关配置参数进行设置
+**输出**: 返回Professional Templates的处理结果。- 验证返回数据的完整性和格式正确性
+- 参考`Professional Templates`的配置文档进行参数调优
 #
 ## 适用场景
 

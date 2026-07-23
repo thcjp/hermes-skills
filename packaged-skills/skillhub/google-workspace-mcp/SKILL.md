@@ -26,6 +26,15 @@ pricing_model: "per_use"
 
 传统接入Google API需建项目、逐个启用API、创建OAuth凭据、下载client_secret.json、配置重定向URI;本技能将上述步骤全部托管,登录Google账号即可开始调用49个工具。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | Google Workspace MCP处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -262,3 +271,25 @@ rm -rf ~/.config/google-workspace-mcp
 - 凭证以本地文件形式存储,迁移设备时需手动复制 `~/.config/google-workspace-mcp/` 目录。
 - Gmail单次搜索maxResults受API上限约束,大批量拉取需分页或缩小查询条件。
 - Docs的 `docs.replaceText` 为全量替换,不支持正则; 复杂改写需先读取全文再构造新内容。
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "Google Workspace MCP处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "google-workspace-mcp"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

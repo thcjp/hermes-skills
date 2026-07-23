@@ -22,6 +22,15 @@ homepage: "https://skillhub.cn"
 
 本免费版封装普通文件两步上传链路的基础调用方式。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | 飞书发文件(免费)处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 依赖说明
 
 ### 运行环境
@@ -228,3 +237,25 @@ python3 /root/.skill-platform/workspace/skills/feishu-send-file/（请参考skil
 - 国际版 Lark 域名适配(`open.larksuite.com`)
 - 群聊 `chat_id` 批量推送
 - 完整的 8 类领域异常处理与 6 类 FAQ 排查指引
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "飞书发文件(免费)处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "feishu-send-file"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

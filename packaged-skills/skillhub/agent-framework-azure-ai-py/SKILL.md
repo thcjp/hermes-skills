@@ -26,10 +26,11 @@ pricing_model: "per_use"
 
 | 能力 | 免费版 | 付费版 |
 |:-----|:-------|:-------|
-| This is a documentation-only skill for building Azure AI Foundry agents | 支持 | 支持 |
-| its cloud, web search, M | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 基础功能 | 支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -39,23 +40,25 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| --- | --- | --- |
+| 场景1: 纯文档型技能 | 用户请求数据 | 结构化处理结果 |
+| 场景2: 指导构建Azure AI Foundry Agent | 用户请求数据 | 结构化处理结果 |
+| 场景3: 覆盖云搜索与多模型能力 | 用户请求数据 | 结构化处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
 ## 使用流程
 
-1. 确认运行环境满足依赖说明中的要求
-2. 根据适用场景选择合适的使用方式
-3. 执行操作并检查输出结果
-4. 如遇错误，参考错误处理章节
+1. **分析代码上下文**: 读取目标代码文件,解析项目结构与依赖关系
+2. **执行开发操作**: 根据用户指令执行编写/审查/重构/测试等开发任务
+3. **验证与反馈**: 运行检查工具确认修改正确性,输出差异与建议
+4. **异常处理**: 如遇错误,参考错误处理章节中对应场景的处理方式
 
 #
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+| --: | --: | --: | --: |
 | content | string | 否 | agent-framework-azure-ai-py处理的内容输入 |,  |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -116,7 +119,7 @@ pricing_model: "per_use"
 
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| :-- | :-- | :-- |
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -129,7 +132,7 @@ pricing_model: "per_use"
 
 ### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+| :-: | :-: | :-: | :-: |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -158,18 +161,18 @@ from agent_framework import (
 )
 from agent_framework.azure import AzureAIAgentsProvider
 from azure.identity.aio import AzureCliCredential
-
+# ...
 def get_weather(
     location: Annotated[str, Field(description="City name")],
 ) -> str:
     """Get weather for a location."""
     return f"Weather in {location}: 72°F, sunny"
-
+# ...
 class AnalysisResult(BaseModel):
     summary: str
     key_findings: list[str]
     confidence: float
-
+# ...
 async def main():
     async with (
         AzureCliCredential() as credential,
@@ -189,23 +192,23 @@ async def main():
                 mcp_tool,
             ],
         )
-
+# ...
         thread = agent.get_new_thread()
-
+# ...
         # Non-streaming
         result = await agent.run(
             "Search for Python best practices and summarize",
             thread=thread,
         )
         print(f"Response: {result.text}")
-
+# ...
         # Streaming
         print("\nStreaming: ", end="")
         async for chunk in agent.run_stream("Continue with examples", thread=thread):
             if chunk.text:
                 print(chunk.text, end="", flush=True)
         print()
-
+# ...
         # Structured output
         result = await agent.run(
             "Analyze findings",
@@ -214,7 +217,7 @@ async def main():
         )
         analysis = AnalysisResult.model_validate_json(result.text)
         print(f"\nConfidence: {analysis.confidence}")
-
+# ...
 if __name__ == "__main__":
     asyncio.run(main())
 ```
@@ -233,8 +236,8 @@ A:
 ## 错误处理
 
 
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景2 | 原因 | 处理方式 |
+| --- | --: | :-- |
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

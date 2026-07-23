@@ -44,6 +44,13 @@ pricing_model: "per_use"
 ## 快速开始(分级时间)
 
 ### 30秒:确认身份
+## 输入格式
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | Azure巡检员专业版处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ```bash
 az account show --query '{Subscription:name, Tenant:tenantId, User:user.name}' --output table
 ```
@@ -98,7 +105,7 @@ az account list 多个订阅 → 询问用户选择
 4. 参考## 错误处理章节处理异常
 5. 查看## FAQ解答常见疑问
 
-**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
+**响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
 #
 ## 核心能力
@@ -645,3 +652,20 @@ A: 专业版在免费版基础上新增:RBAC深度安全审计(Owner过度授权
 - 重写description为五段结构,新增edition字段
 
 原始MIT license允许修改与再分发,本改进作品在MIT license下发布,保留原始版权声明。
+
+## 输出格式
+```json
+{
+  "success": true,
+  "data": {
+    "result": "Azure巡检员专业版处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "azure cloud inspector pro"
+    }
+  },
+  "execution_log": ["解析输入参数", "执行核心处理", "格式化输出结果"],
+  "error": null
+}
+```

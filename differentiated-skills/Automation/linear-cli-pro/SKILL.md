@@ -26,6 +26,13 @@ pricing_model: "per_use"
 
 ## 前置检查
 
+## 输入格式
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | Linear CLI专家处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ```bash
 linear --version          # 必须可用
 linear auth status        # 鉴权状态
@@ -299,24 +306,24 @@ A: `linear auth login` 交互式登录后存于 `~/.config/linear/credentials.js
 面向在 Agent（Claude Code / Codex / Cursor 等）中调用 `linear` CLI 的开发者
 
 **输入**: 用户提供面向在 Agent（Claud所需的指令和必要参数。
-**处理**: 按照skill规范执行面向在 Agent（Claud操作,遵循单一意图原则。
-**输出**: 返回面向在 Agent（Claud的执行结果,包含操作状态和输出数据。
+**处理**: 解析面向在 Agent（Claud的输入参数,完成核心逻辑,返回结构化响应。
+**输出**: 返回面向在 Agent（Claud的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 聚焦 v3 执行模型下的稳定 
 聚焦 v3 执行模型下的稳定 JSON 契约、预演式写入、Markdown 安全传参、批量操作与鉴权自愈
 
 **输入**: 用户提供聚焦 v3 执行模型下的稳定 所需的指令和必要参数。
-**处理**: 按照skill规范执行聚焦 v3 执行模型下的稳定 操作,遵循单一意图原则。
-**输出**: 返回聚焦 v3 执行模型下的稳定 的执行结果,包含操作状态和输出数据。
+**处理**: 解析聚焦 v3 执行模型下的稳定 的输入参数,完成核心逻辑,返回结构化响应。
+**输出**: 返回聚焦 v3 执行模型下的稳定 的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心能力
 核心能力:
 
 **输入**: 用户提供核心能力所需的指令和必要参数。
-**处理**: 按照skill规范执行核心能力操作,遵循单一意图原则。
-**输出**: 返回核心能力的执行结果,包含操作状态和输出数据。
+**处理**: 解析核心能力的输入参数,完成核心逻辑,返回结构化响应。
+**输出**: 返回核心能力的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
   - Agent 优先执行循环：capabilities 发现 → 读 → dry-run 预览 → 写 → 校验 receipt/error
@@ -335,3 +342,20 @@ A: `linear auth login` 交互式登录后存于 `~/.config/linear/credentials.js
 4. 如遇错误，参考错误处理章节
 
 #
+
+## 输出格式
+```json
+{
+  "success": true,
+  "data": {
+    "result": "Linear CLI专家处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "linear cli pro"
+    }
+  },
+  "execution_log": ["解析输入参数", "执行核心处理", "格式化输出结果"],
+  "error": null
+}
+```

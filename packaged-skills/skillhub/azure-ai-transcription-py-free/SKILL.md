@@ -22,6 +22,15 @@ homepage: "https://skillhub.cn"
 
 Azure AI Transcription(speech-to-text)Python 客户端库基础功能,支持批量转写。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | Azure语音转文字基础版处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 安装
 
 ```bash
@@ -190,3 +199,25 @@ print(result.status)
 ## 升级提示
 
 本基础版仅覆盖批量转写与语言指定。如需实时流式转写(`begin_stream_transcription` 与 `send_audio_file`)、说话人分离(`diarization_enabled`)、时间戳捕获与字幕生成、流式背压处理与会话管理实践要点,请升级至付费版 `azure-ai-transcription-py`。
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "Azure语音转文字基础版处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "azure-ai-transcription-py"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

@@ -136,6 +136,13 @@ pricing_model: "per_use"
 ### 示例1: 上线前安全审计(输入→输出)
 
 **输入**:
+## 输入格式
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | 安全加固之盾处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ```
 项目: Node.js + Express + MongoDB 电商后端
 目录: /home/user/shop-backend

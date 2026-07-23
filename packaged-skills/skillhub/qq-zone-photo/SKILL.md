@@ -24,6 +24,15 @@ pricing_model: "per_use"
 
 社交空间相册的自动化管理工具，支持扫码登录、相册浏览、照片上传/下载、相册创建等功能。通过 `qzone_photos.py` 脚本调用社交空间非官方API实现自动化操作。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | 社交空间相册处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -72,25 +81,25 @@ export API_KEY="your_api_key_here"
 
 ### 2. 列出相册
 
-通过 `python3 （请参考skill目录中的脚本文件） --action list --cookies cookies.json` 列出当前账号的所有相册。返回相册列表，包含相册ID（`album-id`）、相册标题、照片数量等信息。可选参数 `--qq` 指定目标账号。适用于浏览相册结构和获取相册ID。- 验证执行结果，确认输出符合预期格式
+通过 `python3 （请参考skill目录中的脚本文件） --action list --cookies cookies.json` 列出当前账号的所有相册。返回相册列表，包含相册ID（`album-id`）、相册标题、照片数量等信息。可选参数 `--qq` 指定目标账号。适用于浏览相册结构和获取相册ID。- 验证返回数据的完整性和格式正确性
 ### 3. 浏览相册照片
 
-通过 `python3 （请参考skill目录中的脚本文件） --action photos --album-id "ALBUM_ID" --cookies cookies.json` 浏览指定相册中的照片。必填参数 `--album-id` 指定目标相册，可选参数 `--qq` 指定账号。返回照片列表，包含照片URL、缩略图、上传时间等信息。适用于查看相册内容和获取照片下载URL。- 验证执行结果，确认输出符合预期格式
-- 参考`浏览相册照片`相关配置参数进行设置
+通过 `python3 （请参考skill目录中的脚本文件） --action photos --album-id "ALBUM_ID" --cookies cookies.json` 浏览指定相册中的照片。必填参数 `--album-id` 指定目标相册，可选参数 `--qq` 指定账号。返回照片列表，包含照片URL、缩略图、上传时间等信息。适用于查看相册内容和获取照片下载URL。- 验证返回数据的完整性和格式正确性
+- 参考`浏览相册照片`的配置文档进行参数调优
 ### 4. 上传照片
 通过 `python3 （请参考skill目录中的脚本文件） --action upload --photo "/path/to/image.jpg" --album-id "ALBUM_ID" --cookies cookies.json` 上传照片到指定相册。必填参数 `--photo` 指定本地图片路径，`--album-id` 指定目标相册。可选参数 `--qq` 指定账号。适用于照片备份和迁移场景。
 
-**处理**: 按照skill规范执行上传照片操作,遵循单一意图原则。
-**输出**: 返回上传照片的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
-- 参考`上传照片`相关配置参数进行设置
+**处理**: 解析上传照片的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回上传照片的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+- 参考`上传照片`的配置文档进行参数调优
 ### 5. 下载单张照片
 通过 `python3 （请参考skill目录中的脚本文件） --action download --url "PHOTO_URL" --cookies cookies.json` 下载单张照片。必填参数 `--url` 指定照片URL（从 `photos` action获取），可选参数 `--output` 指定下载目录。适用于选择性下载特定照片。
 
-**处理**: 按照skill规范执行下载单张照片操作,遵循单一意图原则。
+**处理**: 解析下载单张照片的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 ### 6. 下载整个相册
 
-通过 `python3 （请参考skill目录中的脚本文件） --action download-album --album-id "ALBUM_ID" --output ./downloads --cookies cookies.json` 下载整个相册的所有照片。必填参数 `--album-id` 指定目标相册，可选参数 `--output` 指定下载目录（默认当前目录）。适用于相册全量备份场景。- 验证执行结果，确认输出符合预期格式
-- 参考`下载整个相册`相关配置参数进行设置
+通过 `python3 （请参考skill目录中的脚本文件） --action download-album --album-id "ALBUM_ID" --output ./downloads --cookies cookies.json` 下载整个相册的所有照片。必填参数 `--album-id` 指定目标相册，可选参数 `--output` 指定下载目录（默认当前目录）。适用于相册全量备份场景。- 验证返回数据的完整性和格式正确性
+- 参考`下载整个相册`的配置文档进行参数调优
 ### 7. 创建相册
 
 通过 `python3 （请参考skill目录中的脚本文件） --action create --title "我的新相册" --cookies cookies.json` 创建新相册。必填参数 `--title` 指定相册标题，可选参数 `--desc` 指定相册描述，`--qq` 指定账号。创建成功后返回新相册的 `album-id`。适用于批量上传前的相册准备。
@@ -105,7 +114,7 @@ export API_KEY="your_api_key_here"
 5. 下载照片时先通过 `photos` action获取照片URL，再执行下载
 6. 如遇Cookie过期，重新执行 `login` action获取新Cookie
 
-**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
 
 ## 示例

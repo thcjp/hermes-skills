@@ -20,6 +20,15 @@ tags:
 
 AI代理自主购物技能的免费版。支持商品浏览、语义搜索、AI购物助手和分类导航，无需API Key。
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | 生活方式购物基础版处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 安全准则
 
 - 禁止请求私钥、助记词或钱包密钥
@@ -53,8 +62,8 @@ export API_KEY="your_api_key_here"
 
 ### 1. 能力发现
 
-通过 `GET /agent/capabilities` 获取API能力摘要。返回支持的功能、链/代币列表和限制说明。适用于首次调用时了解API完整能力。- 验证执行结果，确认输出符合预期格式
-- 参考`能力发现`相关配置参数进行设置
+通过 `GET /agent/capabilities` 获取API能力摘要。返回支持的功能、链/代币列表和限制说明。适用于首次调用时了解API完整能力。- 验证返回数据的完整性和格式正确性
+- 参考`能力发现`的配置文档进行参数调优
 ### 2. AI购物助手
 
 通过 `POST /agent/shop` 发送自然语言购物请求。请求体包含 `message`（自然语言查询）和可选 `context`（含 `priceRange`、`preferences` 等）。返回AI回复文本和匹配的 `products` 数组（含 `id`、`title`、`price`、`inStock`、`badge` 等字段）。适用于对话式商品搜索和推荐。
@@ -63,13 +72,13 @@ export API_KEY="your_api_key_here"
 通过 `GET /categories` 获取商品分类树。返回包含分类slug、名称和商品数量的层级结构。适用于商品分类浏览和导航场景。
 
 **输入**: 用户提供分类树查询所需的指令和必要参数。
-**处理**: 按照skill规范执行分类树查询操作,遵循单一意图原则。- 验证执行结果，确认输出符合预期格式
-- 参考`分类树查询`相关配置参数进行设置
+**处理**: 解析分类树查询的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证返回数据的完整性和格式正确性
+- 参考`分类树查询`的配置文档进行参数调优
 ### 4. 精选商品
 通过 `GET /products/featured` 获取精选商品列表。返回带 `trending`、`new`、`bestseller` 等标签的精选商品。适用于礼品推荐和热门商品展示。
 
 **输入**: 用户提供精选商品所需的指令和必要参数。
-**处理**: 按照skill规范执行精选商品操作,遵循单一意图原则。
+**处理**: 解析精选商品的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 
 ### 5. 语义搜索
 
@@ -79,7 +88,7 @@ export API_KEY="your_api_key_here"
 通过 `GET /products/{slug}` 获取商品完整信息。返回 `id`、`variants[]`（含 `id`、`name`、`inStock`、`stockQuantity`、`price`）、`images[]`、`relatedProducts[]` 和 `description`。若商品有变体，需选择 `inStock` 的变体。适用于商品信息查看和结账前确认（完整版结账）。
 
 **输入**: 用户提供商品详情所需的指令和必要参数。
-**处理**: 按照skill规范执行商品详情操作,遵循单一意图原则。
+**处理**: 解析商品详情的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 
 #
 ## 升级提示
@@ -179,3 +188,25 @@ curl "https://lifestyle-store.example.com/api/products/sony-wh-1000xm4"
 - 不支持代理身份（`GET /agent/me`），完整版可用
 - 速率限制约100 req/min per IP，超限返回429
 - 商品ID必须从搜索结果获取，禁止编造
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "生活方式购物基础版处理结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "shop-culture"
+    }
+  },
+  "execution_log": [
+    "解析输入参数",
+    "执行核心处理",
+    "格式化输出结果"
+  ],
+  "error": null
+}
+```

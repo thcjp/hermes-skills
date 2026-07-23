@@ -54,28 +54,28 @@ pricing_model: "per_use"
 | `check_skill_update` | 版本检查 | version |
 ### weiyun.list
 
-执行weiyun.list,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
+针对weiyun.list,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
 
 **输入**: 用户提供weiyun.list相关的配置参数、输入数据和处理选项。
 
-**输出**: 返回weiyun.list的处理结果。- 验证执行结果，确认输出符合预期格式
-- 参考`weiyun.list`相关配置参数进行设置
+**输出**: 返回weiyun.list的处理结果。- 验证返回数据的完整性和格式正确性
+- 参考`weiyun.list`的配置文档进行参数调优
 ### weiyun.list_by_category
 
-执行weiyun.list_by_category,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
+针对weiyun.list_by_category,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
 
 **输入**: 用户提供weiyun.list_by_category相关的配置参数、输入数据和处理选项。
 
-**输出**: 返回weiyun.list_by_category的处理结果。- 验证执行结果，确认输出符合预期格式
-- 参考`weiyun.list_by_category`相关配置参数进行设置
+**输出**: 返回weiyun.list_by_category的处理结果。- 验证返回数据的完整性和格式正确性
+- 参考`weiyun.list_by_category`的配置文档进行参数调优
 ### weiyun.download
 
-执行weiyun.download,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
+针对weiyun.download,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
 
 **输入**: 用户提供weiyun.download相关的配置参数、输入数据和处理选项。
 
-**输出**: 返回weiyun.download的处理结果。- 验证执行结果，确认输出符合预期格式
-- 参考`weiyun.download`相关配置参数进行设置
+**输出**: 返回weiyun.download的处理结果。- 验证返回数据的完整性和格式正确性
+- 参考`weiyun.download`的配置文档进行参数调优
 #
 ## 适用场景
 
@@ -116,7 +116,7 @@ pricing_model: "per_use"
 
 分类位运算值：1-doc、2-excel、4-ppt、8-pdf、64-image、512-腾讯文档、4095-全部。
 
-**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
 
 ## 输入格式

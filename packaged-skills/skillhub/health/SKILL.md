@@ -25,6 +25,15 @@ pricing_model: "per_use"
 ---
 # Health — 健康指导助手
 
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| input | string | 是 | 健康指导助手处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -67,21 +76,21 @@ export API_KEY="your_api_key_here"
 - 区分证据等级：有研究支持 vs 新兴数据 vs 理论机制
 - 专业转介触发条件：持续症状超过预期时间、令人担忧的模式变化、超出正常压力的心理健康问题
 
-**输出**: 返回安全边界协议（Safety Boundary Protocols）的执行结果,包含操作状态和输出数据。
+**输出**: 返回安全边界协议（Safety Boundary Protocols）的处理结果,包含执行状态码、结果数据和执行日志。
 ### 个性化基线建立（Personalized Baselines）
 - 在2-4周内学习个人正常值后再做推荐，人群平均值不适用于个体
 - 考虑个体因素：当前用药、健康状况、工作日程、睡眠模式、压力水平
 - 追踪相关性模式：睡眠质量如何影响食物选择？运动对情绪的影响？
 - 基于对特定人有效的方式调整，而非通用人群研究
 
-**处理**: 按照skill规范执行个性化基线建立（Personalized Baselines）操作,遵循单一意图原则。
-**输出**: 返回个性化基线建立（Personalized Baselines）的执行结果,包含操作状态和输出数据。### 沟通标准（Communication Standards）
+**处理**: 解析个性化基线建立（Personalized Baselines）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回个性化基线建立（Personalized Baselines）的处理结果,包含执行状态码、结果数据和执行日志。### 沟通标准（Communication Standards）
 - 使用8年级阅读水平，避免令人困惑而非澄清的医学术语
 - 提供具体行动："起床时喝16盎司水"而非"保持水分"
 - 包含时间预期："精力可能在1-2周内改善"而非"你会感觉更好"
 
-**处理**: 按照skill规范执行沟通标准（Communication Standards）操作,遵循单一意图原则。
-**输出**: 返回沟通标准（Communication Standards）的执行结果,包含操作状态和输出数据。### 循证推荐协议（Evidence-Based Recommendation Protocols）
+**处理**: 解析沟通标准（Communication Standards）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回沟通标准（Communication Standards）的处理结果,包含执行状态码、结果数据和执行日志。### 循证推荐协议（Evidence-Based Recommendation Protocols）
 
 - 清晰引用证据等级：多项研究 vs 单项研究 vs 理论 vs 轶事
 - 专注于对大多数人有明显益处的高安全性特征干预
@@ -93,14 +102,14 @@ export API_KEY="your_api_key_here"
 - 基于现有习惯构建，而非从零创建全新例程
 
 **输入**: 用户提供变更实施策略（Change Implementation Strategy）所需的指令和必要参数。
-**处理**: 按照skill规范执行变更实施策略（Change Implementation Strategy）操作,遵循单一意图原则。### 进度追踪模式（Progress Tracking Patterns）
+**处理**: 解析变更实施策略（Change Implementation Strategy）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 进度追踪模式（Progress Tracking Patterns）
 - 庆祝一致性而非完美，错过一天不会抹去之前的进展
 - 追踪多个指标：精力、情绪、睡眠质量，而非仅体重或步数
 - 为波动提供背景：正常日间变化 vs 需要关注的令人担忧的趋势
 - 每周/每月趋势比单个数据点或每日快照更重要
 
-**处理**: 按照skill规范执行进度追踪模式（Progress Tracking Patterns）操作,遵循单一意图原则。
-**输出**: 返回进度追踪模式（Progress Tracking Patterns）的执行结果,包含操作状态和输出数据。
+**处理**: 解析进度追踪模式（Progress Tracking Patterns）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输出**: 返回进度追踪模式（Progress Tracking Patterns）的处理结果,包含执行状态码、结果数据和执行日志。
 
 #
 ## 使用流程
@@ -113,7 +122,7 @@ export API_KEY="your_api_key_here"
 6. **追踪进度**：追踪多指标（精力、情绪、睡眠），关注周/月趋势而非单日数据。
 7. **触发专业转介**：持续症状超预期、模式变化令人担忧、心理健康超正常压力时转介。
 
-**结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,参考错误处理章节获取恢复步骤。
+**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
 
 ## 示例
@@ -129,7 +138,7 @@ export API_KEY="your_api_key_here"
 
 ### 输出说明
 
-Agent将根据指令执行操作，返回处理结果。结果格式取决于具体能力点的输出定义。
+Agent将根据指令调用对应能力,返回响应数据。响应格式取决于具体能力点的输出定义。
 
 ## 错误处理
 
