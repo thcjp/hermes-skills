@@ -7,19 +7,18 @@ summary: "指数退避自动重试并修复LLM工具调用,格式校验/纠错"
 license: "Proprietary"
 description: |-
   Auto retry & fix LLM tool calls with exponential backoff, format validation,
-  error correction, bo。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
+  error correction, bo。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - Other
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # tool-call-retry
 
@@ -101,7 +100,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 基础用法（零配置）
@@ -162,9 +161,7 @@ const result = await skills.toolCallRetry({
 
 ### 如何开始使用？
 
-阅读使用流程章节,按步骤配置环境和参数后即可开始使用。首次使用建议先阅读依赖说明章节确认环境就绪。
-
+阅读使用流程章节,按步骤配置环境和参数后即可开始使用。首次使用建议先阅读依赖说明章节确认环境就绪.
 ### 遇到错误怎么办？
 
-查看错误处理章节,对照错误场景找到对应的处理方式。如错误处理章节未覆盖,收集错误信息后通过已知限制章节了解skill能力边界。
-
+查看错误处理章节,对照错误场景找到对应的处理方式。如错误处理章节未覆盖,收集错误信息后通过已知限制章节了解skill能力边界.

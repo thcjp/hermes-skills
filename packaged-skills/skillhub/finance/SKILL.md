@@ -7,19 +7,18 @@ summary: "跟踪股票/ETF/指数/加密/外汇,带缓存与提供商回退"
 license: "Proprietary"
 description: |-
   Track stocks, ETFs, indices, crypto (where available), and FX pairs
-  with caching + provider fallb。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。
+  with caching + provider fallb。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
 tags:
   - Finance
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "金融,财务,数据"
+
 ---
 # finance
 
@@ -126,8 +125,7 @@ tags: "金融,财务,数据"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用finance？

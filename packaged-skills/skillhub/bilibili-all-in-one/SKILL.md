@@ -7,12 +7,12 @@ summary: "B站热门监控、视频下载、数据追踪、字幕处理、播放
 license: "Proprietary"
 description: |-
   面向B站的六合一全功能工具技能,集成热门监控(Hot Monitor)、视频下载(Downloader)、
-  数据追踪(Watcher)、字幕处理(Subtitle)、播放信息(Player)与视频投稿(Publisher)六大模块。
+  数据追踪(Watcher)、字幕处理(Subtitle)、播放信息(Player)与视频投稿(Publisher)六大模块.
   支持热门/热搜/必看榜/分区排行实时获取,360p至4K多清晰度下载与mp4/flv/mp3格式转换,
   播放量/点赞/评论长期追踪与多视频对比,字幕下载与格式转换,弹幕获取与播放列表解析,
   以及视频上传/定时发布/草稿编辑。凭据支持环境变量、JSON文件、直接参数三种方式,
   默认内存存储,可选 `BILIBILI_PERSIST` 持久化到0600权限文件。无凭据亦可使用热门、
-  标准清晰度下载、字幕列表、弹幕、统计等公共API能力。
+  标准清晰度下载、字幕列表、弹幕、统计等公共API能力.
 tags:
   - 研发工具
   - bilibili
@@ -26,8 +26,7 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "B站,视频,媒体"
+
 ---
 # Bilibili All In One 全功能工具箱
 
@@ -71,7 +70,7 @@ tags: "B站,视频,媒体"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 - **热门监控 (hot_monitor)**: `get_hot` 获取热门视频、`get_trending` 获取热门系列、`get_weekly` 获取每周必看榜、`get_rank` 按分区获取排行,支持 `all`/`anime`/`music`/`dance`/`game`/`tech`/`life`/`food`/`car`/`fashion`/`entertainment`/`movie`/`tv` 等13个分区
@@ -84,26 +83,20 @@ export API_KEY="your_api_key_here"
 - **凭据三态管理**: 环境变量(`BILIBILI_SESSDATA`/`BILIBILI_BILI_JCT`/`BILIBILI_BUVID3`)、JSON文件、直接参数三种注入方式;默认内存存储,`BILIBILI_PERSIST=1` 启用0600权限文件持久化,支持运行时 `auth.persist` 切换与 `auth.clear_persisted()` 清理
 ### 热门监控 (hot_monitor)
 
-针对热门监控 (hot_monitor),自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供热门监控 (hot_monitor)相关的配置参数、输入数据和处理选项。
-
+针对热门监控 (hot_monitor),自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供热门监控 (hot_monitor)相关的配置参数、输入数据和处理选项.
 **输出**: 返回热门监控 (hot_monitor)的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`热门监控 (hot_monitor)`的配置文档进行参数调优
 ### 视频下载 (downloader)
 
-针对视频下载 (downloader),自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供视频下载 (downloader)相关的配置参数、输入数据和处理选项。
-
+针对视频下载 (downloader),自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供视频下载 (downloader)相关的配置参数、输入数据和处理选项.
 **输出**: 返回视频下载 (downloader)的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`视频下载 (downloader)`的配置文档进行参数调优
 ### 数据追踪 (watcher)
 
-针对数据追踪 (watcher),自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供数据追踪 (watcher)相关的配置参数、输入数据和处理选项。
-
+针对数据追踪 (watcher),自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供数据追踪 (watcher)相关的配置参数、输入数据和处理选项.
 **输出**: 返回数据追踪 (watcher)的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`数据追踪 (watcher)`的配置文档进行参数调优
 #
@@ -131,8 +124,7 @@ pip install faster-whisper
 # 系统安装 ffmpeg
 ```
 
-Python >= 3.8,操作系统 Windows / macOS / Linux。
-
+Python >= 3.8,操作系统 Windows / macOS / Linux.
 ## 凭据配置
 
 **方式1: 环境变量**
@@ -162,8 +154,7 @@ app = BilibiliAllInOne(
 )
 ```
 
-**持久化 (可选)**: 默认凭据仅存内存,设置 `BILIBILI_PERSIST=1` 或 `BilibiliAllInOne(persist=True)` 后自动保存到 `.credentials.json` (0600权限),下次启动自动加载,运行时可用 `app.auth.persist = True/False` 切换,`app.auth.clear_persisted()` 删除文件。
-
+**持久化 (可选)**: 默认凭据仅存内存,设置 `BILIBILI_PERSIST=1` 或 `BilibiliAllInOne(persist=True)` 后自动保存到 `.credentials.json` (0600权限),下次启动自动加载,运行时可用 `app.auth.persist = True/False` 切换,`app.auth.clear_persisted()` 删除文件.
 ## 模块凭据要求
 
 | 模块 | 是否需要凭据 | 说明 |
@@ -240,70 +231,55 @@ playlist = await app.execute("player", "get_playlist", url="BV1xx411c7mD")
 | `upos-sz-upcdnbda2.bilivideo.com` | 视频文件上传CDN |
 | `www.bilibili.com` | 网页抓包兜底 |
 
-所有HTTP请求仅发往B站官方域名,HTTPS加密,不向任何第三方服务、分析端点或遥测服务发送凭据。
-
+所有HTTP请求仅发往B站官方域名,HTTPS加密,不向任何第三方服务、分析端点或遥测服务发送凭据.
 ## 异常处理
 
 ### 凭据无效或过期
-现象: Publisher操作返回 `{"success": false, "message": "login required"}`;Downloader返回1080p+清晰度不可用。
-原因: `SESSDATA`/`bili_jct` 过期或被B站风控,`buvid3` 缺失导致WBI签名失败。
-处理: 浏览器登录B站后重新抓取三个Cookie;优先用小号测试而非主账号;凭据通过环境变量注入,启用 `persist=True` 时确认 `.credentials.json` 权限为0600。
-
+现象: Publisher操作返回 `{"success": false, "message": "login required"}`;Downloader返回1080p+清晰度不可用.
+原因: `SESSDATA`/`bili_jct` 过期或被B站风控,`buvid3` 缺失导致WBI签名失败.
+处理: 浏览器登录B站后重新抓取三个Cookie;优先用小号测试而非主账号;凭据通过环境变量注入,启用 `persist=True` 时确认 `.credentials.json` 权限为0600.
 ### 412风控拦截
-现象: 请求返回412状态码或 `{"code": -509, "message": "请求过于频繁"}`。
-原因: 短时间高频请求触发B站反爬,缺少 `buvid3` 或UA指纹异常。
-处理: 降低调用频率,`watcher.track` 的 `interval` 不低于30分钟;补全 `BILIBILI_BUVID3`;复用同一会话的httpx Client以保持Cookie一致性。
-
+现象: 请求返回412状态码或 `{"code": -509, "message": "请求过于频繁"}`.
+原因: 短时间高频请求触发B站反爬,缺少 `buvid3` 或UA指纹异常.
+处理: 降低调用频率,`watcher.track` 的 `interval` 不低于30分钟;补全 `BILIBILI_BUVID3`;复用同一会话的httpx Client以保持Cookie一致性.
 ### 视频清晰度不可用
-现象: `downloader.download` 指定 `1080p+`/`4k` 后实际下载为 `720p`。
-原因: 该清晰度需要大会员账号或UP主未提供该档位;未携带 `SESSDATA`。
-处理: 调用 `get_formats` 先确认可用清晰度列表;1080p+/4K必须携带有效 `SESSDATA`(大会员账号);非会员场景使用 `1080p` 及以下档位。
-
+现象: `downloader.download` 指定 `1080p+`/`4k` 后实际下载为 `720p`.
+原因: 该清晰度需要大会员账号或UP主未提供该档位;未携带 `SESSDATA`.
+处理: 调用 `get_formats` 先确认可用清晰度列表;1080p+/4K必须携带有效 `SESSDATA`(大会员账号);非会员场景使用 `1080p` 及以下档位.
 ### 弹幕分段缺失
-现象: `get_danmaku` 返回弹幕数量明显少于实际播放量。
-原因: B站弹幕按分P与时间分段存储,长视频弹幕分多段,默认只返回第一段且 `segment` 参数未指定。
-处理: 通过 `get_playlist` 获取分P列表后逐P调用 `get_danmaku`,并指定 `segment` 索引遍历所有分段;长视频建议按6分钟一段循环拉取。
-
+现象: `get_danmaku` 返回弹幕数量明显少于实际播放量.
+原因: B站弹幕按分P与时间分段存储,长视频弹幕分多段,默认只返回第一段且 `segment` 参数未指定.
+处理: 通过 `get_playlist` 获取分P列表后逐P调用 `get_danmaku`,并指定 `segment` 索引遍历所有分段;长视频建议按6分钟一段循环拉取.
 ### ffmpeg合并失败
-现象: 下载的视频只有画面无声音,或合并时报 `ffmpeg not found`。
-原因: B站高清流为音视频分离的DASH流,需要ffmpeg合并;系统未安装ffmpeg或未加入PATH。
-处理: 安装ffmpeg(`brew install ffmpeg` / `apt install ffmpeg` / Windows下载二进制并配置PATH);指定 `format=mp3` 时仅下载音频可跳过合并。
-
+现象: 下载的视频只有画面无声音,或合并时报 `ffmpeg not found`.
+原因: B站高清流为音视频分离的DASH流,需要ffmpeg合并;系统未安装ffmpeg或未加入PATH.
+处理: 安装ffmpeg(`brew install ffmpeg` / `apt install ffmpeg` / Windows下载二进制并配置PATH);指定 `format=mp3` 时仅下载音频可跳过合并.
 ### 投稿上传中断
-现象: `publisher` 上传过程中断,文件未完整到达CDN。
-原因: 大文件分片上传网络抖动,`upos-sz-upcdnbda2.bilivideo.com` 连接超时。
-处理: 检查上行带宽,单文件建议小于8GB;启用断点续传需在代码层捕获异常后分片;投稿前先用 `get_info` 确认视频元数据完整。
-
+现象: `publisher` 上传过程中断,文件未完整到达CDN.
+原因: 大文件分片上传网络抖动,`upos-sz-upcdnbda2.bilivideo.com` 连接超时.
+处理: 检查上行带宽,单文件建议小于8GB;启用断点续传需在代码层捕获异常后分片;投稿前先用 `get_info` 确认视频元数据完整.
 ### 字幕获取为空
-现象: `subtitle` 模块返回空列表。
-原因: UP主未上传官方字幕,且视频无AI自动字幕;`faster-whisper` 未安装无法走语音识别兜底。
-处理: 确认视频确实有字幕轨(播放页CC按钮可开启);安装 `faster-whisper>=1.0.0` 启用语音识别兜底;部分字幕需登录后才能获取,携带 `SESSDATA`。
-
+现象: `subtitle` 模块返回空列表.
+原因: UP主未上传官方字幕,且视频无AI自动字幕;`faster-whisper` 未安装无法走语音识别兜底.
+处理: 确认视频确实有字幕轨(播放页CC按钮可开启);安装 `faster-whisper>=1.0.0` 启用语音识别兜底;部分字幕需登录后才能获取,携带 `SESSDATA`.
 ### WBI签名错误
-现象: 部分API返回 `{"code": -403, "message": "访问权限不足"}` 即便凭据正确。
-原因: B站部分接口要求WBI签名,`img_key`/`sub_key` 未正确获取或缓存过期,凭据缓存失效。
-处理: 库内部会自动获取并刷新WBI密钥,若仍失败尝试重启进程重新初始化 `BilibiliAllInOne()`;确认 `buvid3` 不为空,WBI签名依赖完整设备指纹。
-
+现象: 部分API返回 `{"code": -403, "message": "访问权限不足"}` 即便凭据正确.
+原因: B站部分接口要求WBI签名,`img_key`/`sub_key` 未正确获取或缓存过期,凭据缓存失效.
+处理: 库内部会自动获取并刷新WBI密钥,若仍失败尝试重启进程重新初始化 `BilibiliAllInOne()`;确认 `buvid3` 不为空,WBI签名依赖完整设备指纹.
 ## 常见问题
 
 ### Q1: 哪些功能不需要登录凭据?
-热门监控(`get_hot`/`get_trending`/`get_weekly`/`get_rank`)、标准清晰度(360p-1080p)下载、数据追踪(`watch`/`get_stats`/`track`/`compare`)、字幕列表、弹幕获取、播放信息全部使用公共API,无需任何凭据。仅1080p+/4K下载、高清播放直链、投稿发布需要 `SESSDATA`+`bili_jct`。
-
+热门监控(`get_hot`/`get_trending`/`get_weekly`/`get_rank`)、标准清晰度(360p-1080p)下载、数据追踪(`watch`/`get_stats`/`track`/`compare`)、字幕列表、弹幕获取、播放信息全部使用公共API,无需任何凭据。仅1080p+/4K下载、高清播放直链、投稿发布需要 `SESSDATA`+`bili_jct`.
 ### Q2: 凭据会被保存到磁盘吗?
-默认不会。凭据仅在内存中持有,进程退出即销毁。显式设置 `BILIBILI_PERSIST=1` 环境变量或 `BilibiliAllInOne(persist=True)` 后,凭据会保存到当前目录 `.credentials.json`,文件权限0600(仅属主可读写)。运行时可用 `app.auth.persist = False` 关闭并调用 `app.auth.clear_persisted()` 删除文件。
-
+默认不会。凭据仅在内存中持有,进程退出即销毁。显式设置 `BILIBILI_PERSIST=1` 环境变量或 `BilibiliAllInOne(persist=True)` 后,凭据会保存到当前目录 `.credentials.json`,文件权限0600(仅属主可读写)。运行时可用 `app.auth.persist = False` 关闭并调用 `app.auth.clear_persisted()` 删除文件.
 ### Q3: SESSDATA和bili_jct是受限API密钥吗?
-不是。它们是B站浏览器完整会话Cookie,等同于账号密码级别权限,可执行登录态下所有操作。务必使用小号测试,不要在共享环境或公共仓库中暴露;启用持久化时确认 `.credentials.json` 已加入 `.gitignore`。
-
+不是。它们是B站浏览器完整会话Cookie,等同于账号密码级别权限,可执行登录态下所有操作。务必使用小号测试,不要在共享环境或公共仓库中暴露;启用持久化时确认 `.credentials.json` 已加入 `.gitignore`.
 ### Q4: batch_download支持多少个视频?
-理论无上限,但B站反爬会限制短时间请求频率。建议单批不超过20个,批量间间隔5-10秒;`watcher.track` 的 `interval` 建议30分钟以上避免触发412。
-
+理论无上限,但B站反爬会限制短时间请求频率。建议单批不超过20个,批量间间隔5-10秒;`watcher.track` 的 `interval` 建议30分钟以上避免触发412.
 ### Q5: 下载的视频为什么音画分离?
-B站高清流(720p+)采用DASH协议,音频与视频独立传输。库内部会调用ffmpeg合并为单文件;若系统无ffmpeg,可在 `download` 指定 `format=mp3` 仅取音频,或手动用ffmpeg合并下载的两个文件。
-
+B站高清流(720p+)采用DASH协议,音频与视频独立传输。库内部会调用ffmpeg合并为单文件;若系统无ffmpeg,可在 `download` 指定 `format=mp3` 仅取音频,或手动用ffmpeg合并下载的两个文件.
 ### Q6: publisher支持哪些投稿操作?
-支持视频上传、定时发布、草稿编辑与管理。所有操作必须携带 `SESSDATA`+`bili_jct`,通过 `member.bilibili.com` 提交元数据,视频文件经 `upos-sz-upcdnbda2.bilivideo.com` CDN上传。具体action列表参考 `references/detail.md`。
-
+支持视频上传、定时发布、草稿编辑与管理。所有操作必须携带 `SESSDATA`+`bili_jct`,通过 `member.bilibili.com` 提交元数据,视频文件经 `upos-sz-upcdnbda2.bilivideo.com` CDN上传。具体action列表参考 `references/detail.md`.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

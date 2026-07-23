@@ -6,20 +6,19 @@ displayName: "Agent Browser Stageh"
 summary: "自然语言驱动浏览器自动化,CLI直达交互,免去手写选择器的繁琐"
 license: "Proprietary"
 description: |-
-  Automate web browser interactions using natural language via CLI commands。Use when the user asks。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。
+  Automate web browser interactions using natural language via CLI commands。Use when the user asks。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证.
 tags:
   - Research
   - Automation
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+
 ---
 # Agent Browser Stageh
 
@@ -145,7 +144,7 @@ tags: "AI代理,自动化,智能"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ```bash

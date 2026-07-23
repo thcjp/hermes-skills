@@ -7,19 +7,17 @@ summary: "设计分析直觉高效贴合心智模型的用户体验"
 license: "Proprietary"
 description: |-
   Design and analyze user experiences that are intuitive, efficient, and
-  aligned with user mental m。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
+  aligned with user mental m。
 tags:
   - Creative
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 ---
 # UX
 
@@ -43,7 +41,8 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 体验分析 | 产品流程与用户行为数据 | 贴合心智模型的UX诊断报告 |
+| 交互设计 | 用户场景与任务目标 | 直观高效的交互流程方案 |
 
 **不适用于**：需要人工判断的复杂决策场景
 

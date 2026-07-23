@@ -5,9 +5,9 @@ displayName: "Jira集成技能"
 version: "1.0.0"
 summary: "Jira项目管理集成技能,支持工单创建、状态同步和工作流自动化"
 description: |-
-  API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据。
-  Use when 用户说"Jira Integration Skill 核心处理"、Jira Integration Skill 核心处理时使用。
-  不适用于需要人工判断的复杂场景。
+  API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.
+  Use when 用户说"Jira Integration Skill 核心处理"、Jira Integration Skill 核心处理时使用.
+  不适用于需要人工判断的复杂场景.
 license: "Proprietary"
 tools:
   - read
@@ -19,8 +19,7 @@ tags:
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Jira Integration Skill 智能分析
 
@@ -105,7 +104,7 @@ Jira集成技能验证用户身份与操作权限，加载租户配置
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 示例1: 基础用法
@@ -129,3 +128,6 @@ A: 请参考使用流程章节
 ## 已知限制
 
 - 需要LLM支持
+- 依赖第三方项目管理平台的API可用性
+- 免费版有事务数量限制与功能限制
+- 自定义字段与工作流支持有限

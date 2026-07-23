@@ -1,9 +1,9 @@
 ---
 slug: github-api-toolkit-free
 name: github-api-toolkit-free
-version: 1.0.1
+version: 1.0.2
 displayName: GitHub API工具包(免费版)
-summary: 通过GitHub REST API管理仓库、Issue、PR与分支,支持基础CRUD与结构化输出,适合个人开发者集成场景。
+summary: 通过GitHub REST API管理仓库、Issue、PR与分支,支持基础CRUD与结构化输出,适合个人开发者集成场景.
 license: Proprietary
 edition: free
 description: 'GitHub API工具包(免费版)是一款面向开发者的GitHub REST API集成工具,封装常用API端点,帮助用户通过命令行或脚本管理仓库、Issue、Pull
@@ -19,37 +19,31 @@ description: 'GitHub API工具包(免费版)是一款面向开发者的GitHub RE
 
   - 支持CLI与Python两种调用方式
 
-
   适用场景:
 
   - 个人开发者通过API自动化GitHub操作
 
-  - 脚本化批量管理仓库...'
+  - 脚本化批量管理仓库..'
 tags:
 - GitHub
 - API
 - 集成
 - 开发工具
 tools:
-- - read
+- read
 - exec
 homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "版本控制,Git,开发工具"
 ---
 # GitHub API工具包(免费版)
 
-通过GitHub REST API管理仓库、Issue、Pull Request与分支,封装常用端点,提供CLI与Python两种调用方式,适合个人开发者集成场景。
-
+通过GitHub REST API管理仓库、Issue、Pull Request与分支,封装常用端点,提供CLI与Python两种调用方式,适合个人开发者集成场景.
 ## 概述
 
-GitHub REST API是管理GitHub资源的标准接口,但官方API文档庞大,新手难以快速找到所需端点。本Skill封装最常用的API端点,提供场景化调用示例,帮助开发者在命令行或脚本中快速完成GitHub操作,无需翻阅文档。
-
-免费版聚焦基础CRUD能力,适合个人开发者日常集成。
-
+GitHub REST API是管理GitHub资源的标准接口,但官方API文档庞大,新手难以快速找到所需端点。本Skill封装最常用的API端点,提供场景化调用示例,帮助开发者在命令行或脚本中快速完成GitHub操作,无需翻阅文档.
+免费版聚焦基础CRUD能力,适合个人开发者日常集成.
 ## 核心能力
 
 ### 认证机制
@@ -66,7 +60,7 @@ GitHub REST API是管理GitHub资源的标准接口,但官方API文档庞大,新
 ```bash
 # 设置环境变量(推荐)
 export GITHUB_TOKEN="ghp_xxxxxxxxxxxx"
-# ...
+# ..
 # 验证token有效性
 curl -H "Authorization: Bearer $GITHUB_TOKEN" https://api.user
 ```
@@ -76,27 +70,26 @@ Token权限建议:
 - `read:org`: 读取组织信息
 - `workflow`: 管理Actions工作流
 
-**输入**: 用户提供认证机制所需的指令和必要参数。
-**处理**: 解析认证机制的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回认证机制的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供认证机制所需的指令和必要参数.
+**处理**: 解析认证机制的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回认证机制的响应数据,包含状态码、结果和日志.
 ### 仓库管理
 
 ```bash
 # 列出认证用户的仓库
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
   "https://api.user/repos?sort=updated&per_page=10"
-# ...
+# ..
 # 查看指定仓库
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
   "https://api.repos/owner/repo"
-# ...
+# ..
 # 创建新仓库
 curl -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"name":"my-new-repo","description":"新仓库","private":true}' \
   "https://api.user/repos"
-# ...
+# ..
 # 更新仓库设置
 curl -X PATCH -H "Authorization: Bearer $GITHUB_TOKEN" \
   -H "Content-Type: application/json" \
@@ -104,9 +97,9 @@ curl -X PATCH -H "Authorization: Bearer $GITHUB_TOKEN" \
   "https://api.repos/owner/repo"
 ```
 
-**输入**: 用户提供仓库管理所需的指令和必要参数。
-**处理**: 解析仓库管理的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回仓库管理的响应数据,包含状态码、结果和日志。
+**输入**: 用户提供仓库管理所需的指令和必要参数.
+**处理**: 解析仓库管理的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回仓库管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### Issue管理
@@ -115,23 +108,23 @@ curl -X PATCH -H "Authorization: Bearer $GITHUB_TOKEN" \
 # 列出仓库Issue
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
   "https://api.repos/owner/repo/issues?state=open&per_page=10"
-# ...
+# ..
 # 查看指定Issue
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
   "https://api.repos/owner/repo/issues/123"
-# ...
+# ..
 # 创建Issue
 curl -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"title":"发现bug","body":"问题描述","labels":["bug"]}' \
   "https://api.repos/owner/repo/issues"
-# ...
+# ..
 # 关闭Issue
 curl -X PATCH -H "Authorization: Bearer $GITHUB_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"state":"closed","state_reason":"completed"}' \
   "https://api.repos/owner/repo/issues/123"
-# ...
+# ..
 # 添加评论
 curl -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
   -H "Content-Type: application/json" \
@@ -139,9 +132,9 @@ curl -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
   "https://api.repos/owner/repo/issues/123/comments"
 ```
 
-**输入**: 用户提供Issue管理所需的指令和必要参数。
-**处理**: 解析Issue管理的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回Issue管理的响应数据,包含状态码、结果和日志。
+**输入**: 用户提供Issue管理所需的指令和必要参数.
+**处理**: 解析Issue管理的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回Issue管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### Pull Request管理
@@ -150,17 +143,17 @@ curl -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
 # 列出仓库PR
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
   "https://api.repos/owner/repo/pulls?state=open&per_page=10"
-# ...
+# ..
 # 查看PR详情
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
   "https://api.repos/owner/repo/pulls/55"
-# ...
+# ..
 # 创建PR
 curl -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"title":"新功能","head":"feature-branch","base":"main","body":"变更说明"}' \
   "https://api.repos/owner/repo/pulls"
-# ...
+# ..
 # 合并PR
 curl -X PUT -H "Authorization: Bearer $GITHUB_TOKEN" \
   -H "Content-Type: application/json" \
@@ -168,9 +161,9 @@ curl -X PUT -H "Authorization: Bearer $GITHUB_TOKEN" \
   "https://api.repos/owner/repo/pulls/55/merge"
 ```
 
-**输入**: 用户提供Pull Request管理所需的指令和必要参数。
-**处理**: 解析Pull Request管理的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回Pull Request管理的响应数据,包含状态码、结果和日志。
+**输入**: 用户提供Pull Request管理所需的指令和必要参数.
+**处理**: 解析Pull Request管理的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回Pull Request管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 分支与提交管理
@@ -179,34 +172,34 @@ curl -X PUT -H "Authorization: Bearer $GITHUB_TOKEN" \
 # 列出分支
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
   "https://api.repos/owner/repo/branches?per_page=30"
-# ...
+# ..
 # 查看提交历史
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
   "https://api.repos/owner/repo/commits?sha=main&per_page=10"
-# ...
+# ..
 # 比较两个提交
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
-  "https://api.repos/owner/repo/compare/main...feature-branch"
+  "https://api.repos/owner/repo/compare/main..feature-branch"
 ```
 
-**输入**: 用户提供分支与提交管理所需的指令和必要参数。
-**处理**: 解析分支与提交管理的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回分支与提交管理的响应数据,包含状态码、结果和日志。
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：REST、管理仓库、与分支、支持基础、CRUD、与结构化输出、适合个人开发者集、成场景、工具包、免费版、是一款面向开发者、集成工具、封装常用、帮助用户通过命令、行或脚本管理仓库、核心能力、CLI、Python、两种调用方式等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+**输入**: 用户提供分支与提交管理所需的指令和必要参数.
+**处理**: 解析分支与提交管理的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回分支与提交管理的响应数据,包含状态码、结果和日志.
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：REST、管理仓库、与分支、支持基础、CRUD、与结构化输出、适合个人开发者集、成场景、工具包、免费版、是一款面向开发者、集成工具、封装常用、帮助用户通过命令、行或脚本管理仓库、核心能力、CLI、Python、两种调用方式等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
 
 ### 场景1:CI/CD流水线中创建Release Issue
 
-用户意图: "每次发布自动在仓库创建一个Release Issue,记录变更。"
+用户意图: "每次发布自动在仓库创建一个Release Issue,记录变更"
 
 ```bash
 #!/bin/bash
 # 在CI流水线中调用
 VERSION=$(git describe --tags)
 CHANGELOG=$(cat CHANGELOG.md)
-# ...
+# ..
 curl -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
   -H "Content-Type: application/json" \
   -d "{\"title\":\"Release $VERSION\",\"body\":\"$CHANGELOG\",\"labels\":[\"release\"]}" \
@@ -215,7 +208,7 @@ curl -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
 
 ### 场景2:批量查看团队成员的PR
 
-用户意图: "看看团队5个人本周提交了哪些PR。"
+用户意图: "看看团队5个人本周提交了哪些PR"
 
 ```bash
 #!/bin/bash
@@ -230,14 +223,14 @@ done
 
 ### 场景3:监控仓库的开放Issue数量
 
-用户意图: "每天早上统计仓库的开放Issue数,超过50就告警。"
+用户意图: "每天早上统计仓库的开放Issue数,超过50就告警"
 
 ```bash
 #!/bin/bash
 COUNT=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
   "https://api.repos/owner/repo/issues?state=open" \
   | jq 'length')
-# ...
+# ..
 echo "当前开放Issue数: $COUNT"
 if [ "$COUNT" -gt 50 ]; then
   echo "WARNING: Issue数量超过阈值"
@@ -255,8 +248,7 @@ fi
 
 ## 触发条件
 
-需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于非本工具能力范围的需求。
-
+需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
 ### Step 1:获取Token
@@ -270,7 +262,7 @@ fi
 ```bash
 # 设置环境变量
 export GITHUB_TOKEN="ghp_your_token_here"
-# ...
+# ..
 # 验证认证
 curl -H "Authorization: Bearer $GITHUB_TOKEN" https://api.user
 ```
@@ -288,13 +280,13 @@ curl -H "Authorization: Bearer $GITHUB_TOKEN" \
 ```python
 import os
 import requests
-# ...
+# ..
 token = os.environ['GITHUB_TOKEN']
 headers = {
     'Authorization': f'Bearer {token}',
     'Accept': 'application/vnd.github+json'
 }
-# ...
+# ..
 # 列出仓库
 response = requests.get(
     'https://api.user/repos',
@@ -319,7 +311,7 @@ gh-api-get() {
        -H "Accept: application/vnd.github+json" \
        "https://api.github.com$endpoint"
 }
-# ...
+# ..
 # 通用POST请求
 gh-api-post() {
   local endpoint=$1
@@ -330,7 +322,7 @@ gh-api-post() {
        -d "$data" \
        "https://api.github.com$endpoint"
 }
-# ...
+# ..
 # 使用示例
 gh-api-get "/repos/owner/repo/issues?state=open" | jq '.[].title'
 gh-api-post "/repos/owner/repo/issues" '{"title":"测试","body":"内容"}'
@@ -341,7 +333,7 @@ gh-api-post "/repos/owner/repo/issues" '{"title":"测试","body":"内容"}'
 ```python
 import os
 import requests
-# ...
+# ..
 class GitHubAPI:
     def __init__(self, token=None):
         self.token = token or os.environ['GITHUB_TOKEN']
@@ -350,7 +342,7 @@ class GitHubAPI:
             'Accept': 'application/vnd.github+json'
         }
         self.base_url = 'https://api.github.com'
-# ...
+# ..
     def list_repos(self, sort='updated', per_page=30):
         resp = requests.get(
             f'{self.base_url}/user/repos',
@@ -359,7 +351,7 @@ class GitHubAPI:
         )
         resp.raise_for_status()
         return resp.json()
-# ...
+# ..
     def list_issues(self, owner, repo, state='open'):
         resp = requests.get(
             f'{self.base_url}/repos/{owner}/{repo}/issues',
@@ -368,7 +360,7 @@ class GitHubAPI:
         )
         resp.raise_for_status()
         return resp.json()
-# ...
+# ..
     def create_issue(self, owner, repo, title, body='', labels=None):
         data = {'title': title, 'body': body}
         if labels:
@@ -402,7 +394,7 @@ GitHub API对认证用户的限制为5000请求/小时,搜索API为30次/分钟:
 # 查看当前速率限制
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
   https://api.rate_limit | jq '.rate'
-# ...
+# ..
 # 响应头包含限制信息
 # X-RateLimit-Limit: 5000
 # X-RateLimit-Remaining: 4999
@@ -421,24 +413,19 @@ curl -H "Authorization: Bearer $GITHUB_TOKEN" \
 
 ### Q1: API返回401 Unauthorized怎么办?
 
-A: 检查: (1)token是否正确设置(`echo $GITHUB_TOKEN`); (2)token是否过期; (3)Authorization头格式是否正确(`Bearer <token>`); (4)token是否有所需scope。
-
+A: 检查: (1)token是否正确设置(`echo $GITHUB_TOKEN`); (2)token是否过期; (3)Authorization头格式是否正确(`Bearer <token>`); (4)token是否有所需scope.
 ### Q2: API返回403 Forbidden怎么办?
 
-A: 可能原因: (1)权限不足,token缺少对应scope; (2)触发速率限制(检查`X-RateLimit-Remaining`); (3)操作的是组织仓库但token无`read:org`权限; (4)仓库设置为限制操作。
-
+A: 可能原因: (1)权限不足,token缺少对应scope; (2)触发速率限制(检查`X-RateLimit-Remaining`); (3)操作的是组织仓库但token无`read:org`权限; (4)仓库设置为限制操作.
 ### Q3: 如何处理分页?
 
-A: GitHub使用page-based分页。通过`page`和`per_page`参数控制。响应头`Link`中包含`rel="next"`和`rel="last"`链接。循环请求直到`next`不存在。
-
+A: GitHub使用page-based分页。通过`page`和`per_page`参数控制。响应头`Link`中包含`rel="next"`和`rel="last"`链接。循环请求直到`next`不存在.
 ### Q4: 创建/更新文件时content字段怎么处理?
 
-A: 文件内容必须Base64编码后传入`content`字段。更新文件还需提供文件的`sha`(通过GET获取)。示例: `echo -n "content" | base64`。
-
+A: 文件内容必须Base64编码后传入`content`字段。更新文件还需提供文件的`sha`(通过GET获取)。示例: `echo -n "content" | base64`.
 ### Q5: 搜索API和普通API有什么区别?
 
-A: 搜索API(`/search/...`)有独立的速率限制(30次/分钟),且查询语法不同(支持`q=keyword+label:bug+state:open`)。结果结构也不同(包含`total_count`和`items`)。搜索查询可能超时,建议缩小范围。
-
+A: 搜索API(`/search/..`)有独立的速率限制(30次/分钟),且查询语法不同(支持`q=keyword+label:bug+state:open`)。结果结构也不同(包含`total_count`和`items`)。搜索查询可能超时,建议缩小范围.
 ## 免费版限制
 
 本免费体验版限制以下高级功能:

@@ -7,19 +7,18 @@ summary: "本地管任务/设优先级/追截止,支持中英双语"
 license: "Proprietary"
 description: |-
   Manage tasks, set priorities, and track deadlines locally。Supports
-  bilingual (EN/CN) documentati。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
+  bilingual (EN/CN) documentati。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
   - Productivity
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "任务管理,效率,工具"
+
 ---
 # Task Planner
 
@@ -43,8 +42,8 @@ Add a new task with optional priority and due date.
 bash （请参考skill目录中的脚本文件） add "Task description" --priority high --due 2026-12-31
 ```
 
-**输入**: 用户提供add所需的指令和必要参数。
-**处理**: 解析add的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输入**: 用户提供add所需的指令和必要参数.
+**处理**: 解析add的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回add的处理结果,包含执行状态码、结果数据和执行日志。### list
 Display pending or all tasks.
 
@@ -52,8 +51,8 @@ Display pending or all tasks.
 bash （请参考skill目录中的脚本文件） list --status pending
 ```
 
-**输入**: 用户提供list所需的指令和必要参数。
-**处理**: 解析list的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输入**: 用户提供list所需的指令和必要参数.
+**处理**: 解析list的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回list的处理结果,包含执行状态码、结果数据和执行日志。### done
 Complete a task by ID.
 
@@ -61,9 +60,9 @@ Complete a task by ID.
 bash （请参考skill目录中的脚本文件） done 1
 ```
 
-**输入**: 用户提供done所需的指令和必要参数。
-**处理**: 解析done的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回done的处理结果,包含执行状态码、结果数据和执行日志。
+**输入**: 用户提供done所需的指令和必要参数.
+**处理**: 解析done的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回done的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 适用场景
 
@@ -158,7 +157,7 @@ Just ask your AI assistant: / 直接告诉 AI 助手：
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 示例1：基础用法
@@ -188,3 +187,6 @@ A:
 ## 已知限制
 
 - 本地运行，不支持多设备同步
+- 本地存储任务数据，不支持团队协作分配
+- 免费版不支持甘特图与依赖关系管理等高级功能
+- 任务提醒依赖Agent心跳触发，存在可能的延迟

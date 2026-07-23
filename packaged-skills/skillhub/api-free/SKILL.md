@@ -6,9 +6,9 @@ displayName: "REST API参考免费版"
 summary: "3大类核心服务的REST API参考,含认证模式与端点示例,快速查阅集成要点"
 license: "MIT"
 description: |-
-  REST API 参考文档库免费版。覆盖 AI/ML、支付、通信 3 大类核心服务的认证模式与端点参考。
+  REST API 参考文档库免费版。覆盖 AI/ML、支付、通信 3 大类核心服务的认证模式与端点参考.
   提供基础 curl 示例与常见错误提示。完整 16 类 147 服务、速率限制策略、分页模式、Webhook 签名验证、
-  多账户凭证命名等高级功能需升级付费版。仅作文档参考,不代用户执行请求。
+  多账户凭证命名等高级功能需升级付费版。仅作文档参考,不代用户执行请求.
 tags:
   - 研发工具
   - Productivity
@@ -16,15 +16,12 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+
 ---
 # REST API 参考手册（免费版）
 
-核心服务的 REST API 参考文档免费版。覆盖 AI/ML、支付、通信 3 大类服务,提供认证模式、端点参考与基础 curl 示例。
-
-> **升级提示**: 完整 16 类 147 服务、速率限制策略、分页模式、Webhook 签名验证、多账户凭证命名等高级功能为付费版专享。升级付费版解锁完整能力。
-
+核心服务的 REST API 参考文档免费版。覆盖 AI/ML、支付、通信 3 大类服务,提供认证模式、端点参考与基础 curl 示例.
+> **升级提示**: 完整 16 类 147 服务、速率限制策略、分页模式、Webhook 签名验证、多账户凭证命名等高级功能为付费版专享。升级付费版解锁完整能力.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -54,7 +51,7 @@ tags: "API,接口,开发工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 - **核心服务覆盖**: AI/ML、支付、通信 3 大类服务参考
@@ -74,22 +71,18 @@ export API_KEY="your_api_key_here"
 - **幂等键使用**: `Idempotency-Key` 头规范
 - **resilience 错误处理**: 完整重试模式与错误恢复策略
 
-**输入**: 用户提供付费版专享功能所需的指令和必要参数。
-**输出**: 返回付费版专享功能的处理结果,包含执行状态码、结果数据和执行日志。
+**输入**: 用户提供付费版专享功能所需的指令和必要参数.
+**输出**: 返回付费版专享功能的处理结果,包含执行状态码、结果数据和执行日志.
 ### 核心服务覆盖
 
-针对核心服务覆盖,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供核心服务覆盖相关的配置参数、输入数据和处理选项。
-
+针对核心服务覆盖,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供核心服务覆盖相关的配置参数、输入数据和处理选项.
 **输出**: 返回核心服务覆盖的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`核心服务覆盖`的配置文档进行参数调优
 ### 认证文档
 
-针对认证文档,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供认证文档相关的配置参数、输入数据和处理选项。
-
+针对认证文档,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供认证文档相关的配置参数、输入数据和处理选项.
 **输出**: 返回认证文档的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`认证文档`的配置文档进行参数调优
 #
@@ -101,8 +94,7 @@ export API_KEY="your_api_key_here"
 | Payments | `apis/payments.md` | stripe, paypal, square, plaid |
 | Communication | `apis/communication.md` | twilio, sendgrid, slack, discord, telegram |
 
-> **升级提示**: 付费版额外覆盖 Realtime、CRM、Marketing、Developer、Database、Auth、Media、Social、Productivity、Business、Geo、Support、Analytics 共 13 类 134 个服务。
-
+> **升级提示**: 付费版额外覆盖 Realtime、CRM、Marketing、Developer、Database、Auth、Media、Social、Productivity、Business、Geo、Support、Analytics 共 13 类 134 个服务.
 ## 能力速查
 1. **先定位文件** — 根据服务名找到对应 `apis/*.md` 文件
 2. **必带 Content-Type** — POST/PUT/PATCH 请求需 `Content-Type: application/json`
@@ -112,8 +104,7 @@ export API_KEY="your_api_key_here"
 ## 使用流程
 
 ### Step 1: 定位服务类别
-根据用户提到的服务名,在免费版服务索引中找到对应 `apis/*.md` 文件。
-
+根据用户提到的服务名,在免费版服务索引中找到对应 `apis/*.md` 文件.
 ### Step 2: 读取文件索引
 ```bash
 # 读取 AI/ML 分类文件索引
@@ -133,10 +124,8 @@ sed -n '119,230p' apis/ai-ml.md
 - 常见陷阱
 
 ### Step 5: 生成集成建议
-基于文档内容,为用户提供含 curl 示例的集成方案。
-
-> **提示**: 如需速率限制处理、分页策略、Webhook 验证等高级模式,请升级付费版查阅 `resilience.md`、`pagination.md`、`webhooks.md`。
-
+基于文档内容,为用户提供含 curl 示例的集成方案.
+> **提示**: 如需速率限制处理、分页策略、Webhook 验证等高级模式,请升级付费版查阅 `resilience.md`、`pagination.md`、`webhooks.md`.
 #
 ## 案例展示
 
@@ -161,8 +150,7 @@ curl https://api.openai.com/v1/chat/completions \
   -d '{"model":"gpt-4","messages":[{"role":"user","content":"Hello"}]}'
 ```
 
-> **升级提示**: 付费版提供 `X-RateLimit-Remaining` 速率限制处理策略与 429 指数退避方案。
-
+> **升级提示**: 付费版提供 `X-RateLimit-Remaining` 速率限制处理策略与 429 指数退避方案.
 ### 案例2: Stripe 支付集成参考
 **场景**: 开发者需要集成 Stripe 支付 API
 
@@ -184,8 +172,7 @@ curl https://api.stripe.com/v1/charges \
   -d source=tok_visa
 ```
 
-> **升级提示**: 付费版提供 `Idempotency-Key` 幂等键使用规范,防止网络重试导致重复扣款。
-
+> **升级提示**: 付费版提供 `Idempotency-Key` 幂等键使用规范,防止网络重试导致重复扣款.
 ## 错误处理
 
 | 错误场景 | 原因分析 | 处理方式 |
@@ -199,20 +186,15 @@ curl https://api.stripe.com/v1/charges \
 ## 常见问题
 
 ### Q1: 免费版覆盖多少个服务?
-A: 免费版覆盖 3 大类核心服务: AI/ML（openai, anthropic, cohere, groq, mistral）、Payments（stripe, paypal, square, plaid）、Communication（twilio, sendgrid, slack, discord, telegram）。升级付费版解锁完整 16 类 147 服务。
-
+A: 免费版覆盖 3 大类核心服务: AI/ML（openai, anthropic, cohere, groq, mistral）、Payments（stripe, paypal, square, plaid）、Communication（twilio, sendgrid, slack, discord, telegram）。升级付费版解锁完整 16 类 147 服务.
 ### Q2: 免费版包含速率限制处理策略吗?
-A: 免费版仅提示需注意 `Content-Type` 与密钥安全。完整的 `X-RateLimit-Remaining` 速率限制策略与 429 指数退避方案为付费版专享。
-
+A: 免费版仅提示需注意 `Content-Type` 与密钥安全。完整的 `X-RateLimit-Remaining` 速率限制策略与 429 指数退避方案为付费版专享.
 ### Q3: 如何处理 API 分页?
-A: 免费版不包含分页模式文档。升级付费版可查阅 `pagination.md`,获取 cursor / offset / page 三种分页模式的实现参考。
-
+A: 免费版不包含分页模式文档。升级付费版可查阅 `pagination.md`,获取 cursor / offset / page 三种分页模式的实现参考.
 ### Q4: Webhook 签名验证怎么做?
-A: 免费版不包含 Webhook 签名验证文档。升级付费版可查阅 `webhooks.md`,获取 Slack `X-Slack-Signature`、Stripe `Stripe-Signature` 等各服务的验证代码示例。
-
+A: 免费版不包含 Webhook 签名验证文档。升级付费版可查阅 `webhooks.md`,获取 Slack `X-Slack-Signature`、Stripe `Stripe-Signature` 等各服务的验证代码示例.
 ### Q5: 多账户场景如何管理凭证?
-A: 免费版不包含多账户凭证命名规范。升级付费版可查阅 `credentials.md`,获取 `{SERVICE}_{ACCOUNT}_{TYPE}` 命名规范。
-
+A: 免费版不包含多账户凭证命名规范。升级付费版可查阅 `credentials.md`,获取 `{SERVICE}_{ACCOUNT}_{TYPE}` 命名规范.
 ## 已知限制
 
 1. **仅 3 大类服务**: 免费版覆盖 AI/ML、Payments、Communication,其余 13 类需升级
@@ -224,8 +206,7 @@ A: 免费版不包含多账户凭证命名规范。升级付费版可查阅 `cre
 
 ---
 
-> **升级付费版** 解锁: 完整 16 类 147 服务、速率限制策略、分页模式、Webhook 签名验证、多账户凭证命名、幂等键使用等完整能力。
-
+> **升级付费版** 解锁: 完整 16 类 147 服务、速率限制策略、分页模式、Webhook 签名验证、多账户凭证命名、幂等键使用等完整能力.
 ## 输出格式
 
 ```json

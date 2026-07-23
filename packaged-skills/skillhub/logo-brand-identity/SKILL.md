@@ -3,12 +3,12 @@ slug: "logo-brand-identity"
 name: "logo-brand-identity"
 version: "1.0.0"
 displayName: "品牌标识设计专业版"
-summary: "企业级AI品牌标识设计系统,支持完整品牌套件、多品牌管理、批量生成、品牌审计与CI/CD集成,适合团队与商业项目。"
+summary: "企业级AI品牌标识设计系统,支持完整品牌套件、多品牌管理、批量生成、品牌审计与CI/CD集成,适合团队与商业项目"
 license: "Proprietary"
 edition: "pro"
 description: |-
   品牌标识设计专业版为企业与设计团队提供系统化的AI品牌标识设计解决方案。在免费版基础品牌套件能力之上,增加完整品牌系统、多品牌管理、
-  批量资产生成、品牌一致性审计与CI/CD集成能力。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
+  批量资产生成、品牌一致性审计与CI/CD集成能力。
 tags:
   - 品牌设计
   - 企业级
@@ -17,15 +17,13 @@ tags:
   - CI/CD
   - 设计管理
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 ---
 # 品牌标识设计专业版
 
@@ -52,7 +50,7 @@ brand:
     mission: "用技术赋能每一个团队"
     values: ["创新", "可靠", "协作", "成长"]
     personality: "专业、前瞻、可信、温暖"
-# ...
+# .
   identity:
     logo:
       primary: "assets/logo-primary.svg"
@@ -64,7 +62,7 @@ brand:
         - monochrome
       clear_space: "logo高度的1/2"
       min_size: "24px digital / 10mm print"
-# ...
+# .
     color_system:
       primary: "#0052FF"
       secondary: "#4D7CFF"
@@ -76,24 +74,24 @@ brand:
         error: "#EF4444"
         info: "#3B82F6"
       usage_rules: "主色占比60%,辅助色30%,强调色10%"
-# ...
+# .
     typography:
       display: { family: "Calistoga, serif", sizes: [2, 3, 4, 5] }
       body: { family: "Inter, sans-serif", sizes: [0.875, 1, 1.125] }
       mono: { family: "JetBrains Mono, monospace" }
       hierarchy: "h1-h6明确的字号与字重规范"
-# ...
+# .
     imagery:
       style: "明亮、自然光、真实人物"
       photography: "避免摆拍感,强调真实瞬间"
       illustration: "扁平化、几何、品牌色调"
       iconography: "线描风格,线宽2px"
-# ...
+# .
     voice:
       tone: "专业但平易近人"
       personality: "知识丰富、赋能、前瞻"
       writing_rules: "避免空洞的企业话术,用具体例子说话"
-# ...
+# .
   assets:
     digital:
       - website_header
@@ -147,7 +145,7 @@ brand_portfolio = {
         }
     ]
 }
-# ...
+# .
 # 批量生成所有品牌资产
 for brand in brand_portfolio["sub_brands"]:
     generate_brand_system(brand, shared=brand_portfolio["master_brand"])
@@ -231,16 +229,16 @@ brand_audit = {
 brand_strategy = {
     "market_analysis": {
         "competitors": ["竞品A", "竞品B", "竞品C"],
-        "differentiation": "我们更注重...",
+        "differentiation": "我们更注重.",
         "positioning_map": "quality vs price quadrant"
     },
     "audience_personas": [
-        {"name": "决策者", "demographics": "35-50岁,高管", "needs": "..."},
-        {"name": "使用者", "demographics": "25-35岁,专业人士", "needs": "..."}
+        {"name": "决策者", "demographics": "35-50岁,高管", "needs": "."},
+        {"name": "使用者", "demographics": "25-35岁,专业人士", "needs": "."}
     ],
     "brand_archetype": "智者(The Sage)",
-    "value_proposition": "...",
-    "brand_story": "..."
+    "value_proposition": ".",
+    "brand_story": ""
 }
 ```
 #
@@ -302,7 +300,7 @@ group_config = {
         "strict": ["clear_space", "min_size"]
     }
 }
-# ...
+# .
 # 批量生成所有品牌系统
 generate_brand_portfolio(group_config)
 ```
@@ -420,36 +418,36 @@ python3 audit_brand.py \
 ### 品牌指南文档结构
 ```markdown
 # 品牌指南 - [品牌名称]
-# ...
+# .
 ## 常见问题
-# ...
+# .
 ### Q1: 如何从免费版迁移至PRO版?
 A: PRO版完全兼容免费版。现有品牌简介与配置可直接使用。运行迁移脚本将免费版资产升级为完整品牌系统:
-# ...
+# .
 ```bash
 python3 migrate.py --from free --to pro --upgrade-assets
 ```
-# ...
+# .
 ### Q2: 多品牌如何确保一致性?
 A: PRO版提供"一致性规则"配置,指定哪些元素必须共享(如字体、Logo结构),哪些可以灵活调整(如主色、图像风格)。系统自动验证规则遵守情况。
-# ...
+# .
 ### Q3: 品牌审计能检测哪些问题?
 A: 可检测:颜色未使用品牌色、字体不符合规范、Logo使用不当(清晰空间不足、尺寸过小)、文案语调偏离品牌个性等。生成详细报告并提供修复建议。
-# ...
+# .
 ### Q4: 支持哪些输出格式?
 A: 数字资产:SVG、PNG、HTML、PPTX。印刷资产:PDF、AI、EPS。动态资产:MP4、GIF。可根据使用场景自动选择优秀格式。
-# ...
+# .
 ### Q5: 如何管理品牌资产的版本?
 A: PRO版支持语义化版本控制,每次品牌变更自动生成变更日志。可集成Git进行团队协作,支持品牌资产的审批与发布流程。
-# ...
+# .
 ## 错误处理
-# ...
-# ...
+# .
+# .
 | 错误场景(续)| 原因 | 处理方式 |
 |:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
-# ...
-# ...
+# .
+# .

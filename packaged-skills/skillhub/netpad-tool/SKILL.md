@@ -7,19 +7,18 @@ summary: "NetPad管理工具,管表单/提交/用户(删除需谨慎)"
 license: "Proprietary"
 description: |-
   The skill appears to be a legitimate NetPad management tool, but it
-  gives an agent powerful delet。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
+  gives an agent powerful delet
 tags:
   - Integrations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Netpad
 
@@ -126,8 +125,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Netpad？

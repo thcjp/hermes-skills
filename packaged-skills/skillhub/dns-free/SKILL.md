@@ -6,8 +6,7 @@ displayName: "DNS配置基础版"
 summary: "DNS记录配置基础、TTL迁移提示与邮件认证SPF/DMARC入门检查"
 license: "MIT"
 description: |-
-  DNS配置基础版Skill,覆盖TTL迁移提示、SPF/DMARC入门检查与dig基础诊断。
-
+  DNS配置基础版Skill,覆盖TTL迁移提示、SPF/DMARC入门检查与dig基础诊断.
   核心能力:
   - 迁移前的TTL降级提示与基础缓存探测
   - SPF单TXT记录与DMARC基础配置检查
@@ -25,8 +24,7 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # DNS配置基础版
 
@@ -59,7 +57,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 本Skill提供DNS配置的基础检查与提示能力:
@@ -71,26 +69,20 @@ export API_KEY="your_api_key_here"
 - **www规范化**: apex与www需同时配置或互转,HTTPS重定向需双域名证书
 ### TTL迁移提示
 
-针对TTL迁移提示,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供TTL迁移提示相关的配置参数、输入数据和处理选项。
-
+针对TTL迁移提示,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供TTL迁移提示相关的配置参数、输入数据和处理选项.
 **输出**: 返回TTL迁移提示的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`TTL迁移提示`的配置文档进行参数调优
 ### SPF基础检查
 
-针对SPF基础,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供SPF基础检查相关的配置参数、输入数据和处理选项。
-
+针对SPF基础,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供SPF基础检查相关的配置参数、输入数据和处理选项.
 **输出**: 返回SPF基础检查的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`SPF基础检查`的配置文档进行参数调优
 ### DMARC基础配置
 
-针对DMARC基础,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供DMARC基础配置相关的配置参数、输入数据和处理选项。
-
+针对DMARC基础,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供DMARC基础配置相关的配置参数、输入数据和处理选项.
 **输出**: 返回DMARC基础配置的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`DMARC基础配置`的配置文档进行参数调优
 #
@@ -135,8 +127,7 @@ export API_KEY="your_api_key_here"
 ## 案例展示
 
 ### 案例1: 迁移后部分用户访问旧IP
-**背景**: 将 example.com 迁移到新DNS商,A记录已更新,但部分用户仍命中旧IP。
-
+**背景**: 将 example.com 迁移到新DNS商,A记录已更新,但部分用户仍命中旧IP.
 **诊断过程**:
 1. 用 `dig @8.8.8.8 example.com` 与 `dig @1.1.1.1 example.com` 对比,发现Google解析器仍返回旧IP
 2. 检查原TTL,发现迁移前未降TTL(仍为86400s),旧缓存需24小时才过期
@@ -146,8 +137,7 @@ export API_KEY="your_api_key_here"
 - 下次迁移前48小时将TTL降至300s
 
 ### 案例2: SPF配置多条TXT导致邮件被拒
-**背景**: 配置了SPF但向Gmail发送邮件仍被拒收。
-
+**背景**: 配置了SPF但向Gmail发送邮件仍被拒收.
 **诊断过程**:
 1. 用 `dig TXT example.com` 发现存在两条SPF TXT记录,这是无效配置
 2. 检查SPF结尾,原为 `+all`(允许所有),需改为 `-all`
@@ -181,17 +171,13 @@ export API_KEY="your_api_key_here"
 ## FAQ
 
 ### Q1: 迁移前TTL应该提前多久降低?
-A: 至少提前48小时将TTL降至300秒,确保旧TTL完全过期后再切换。降TTL前先用 `dig +nocmd +noall +answer example.com` 探测当前缓存TTL。
-
+A: 至少提前48小时将TTL降至300秒,确保旧TTL完全过期后再切换。降TTL前先用 `dig +nocmd +noall +answer example.com` 探测当前缓存TTL.
 ### Q2: SPF可以配置多条TXT记录吗?
-A: 不可以。SPF必须为单条TXT记录,多条SPF TXT无效。多个发送源使用 `include:` 串联,如 `"v=spf1 include:_spf.google.com -all"`。
-
+A: 不可以。SPF必须为单条TXT记录,多条SPF TXT无效。多个发送源使用 `include:` 串联,如 `"v=spf1 include:_spf.google.com -all"`.
 ### Q3: DMARC的p=none/quarantine/reject有什么区别?
-A: `p=none` 仅监控;`p=quarantine` 隔离至垃圾箱;`p=reject` 直接拒绝。建议从none开始观察,逐步升级。
-
+A: `p=none` 仅监控;`p=quarantine` 隔离至垃圾箱;`p=reject` 直接拒绝。建议从none开始观察,逐步升级.
 ### Q4: dig +trace和dig @ns有什么区别?
-A: `dig +trace` 从根服务器逐级解析,展示完整解析链;`dig @ns1.provider.com` 直接查询权威服务器,绕过缓存。两者配合可定位缓存与权威不一致问题。
-
+A: `dig +trace` 从根服务器逐级解析,展示完整解析链;`dig @ns1.provider.com` 直接查询权威服务器,绕过缓存。两者配合可定位缓存与权威不一致问题.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

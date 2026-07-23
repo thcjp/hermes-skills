@@ -24,15 +24,14 @@ description: |-
 tags:
   - Creative
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
+
 ---
 # Video Frames
 
@@ -55,7 +54,8 @@ tags: "视频处理,媒体,创意"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 视频生成 | 脚本与画面描述 | 视频文件与时长信息 |
+| 用ffmpeg从视频 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -74,8 +74,7 @@ tags: "视频处理,媒体,创意"
 
 ### Step 3: 内容生成
 根据输入生成专业内容
-按照 `references/style.md` 中的风格规范生成内容。
-
+按照 `references/style.md` 中的风格规范生成内容.
 ### Step 4: 质量校验
 根据输入生成专业内容
 检查生成结果是否满足:
@@ -142,7 +141,7 @@ tags: "视频处理,媒体,创意"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 示例1：基础用法

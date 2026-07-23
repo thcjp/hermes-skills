@@ -20,15 +20,14 @@ tags:
   - 性能优化
   - 企业版
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
+
 ---
 # 数据库Schema设计器(专业版)
 
@@ -67,7 +66,7 @@ tags: "设计,UI/UX,创意"
      └──────────────┘    └────────────────┘  └──────────────┘
 ```
 
-**输入**: 用户提供多数据库引擎适配所需的指令和必要参数。
+**输入**: 用户提供多数据库引擎适配所需的指令和必要参数.
 **处理**: 解析多数据库引擎适配的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 性能诊断引擎
 
 自动识别以下问题并给出优化建议:
@@ -101,7 +100,7 @@ schema-designer rollback --to v1.2.0 --backup-dir data/backups/
 - 灰度发布:按比例逐步应用变更,降低风险
 - 变更审计:记录操作人、时间、影响范围
 
-**处理**: 解析Schema版本管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**处理**: 解析Schema版本管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 自定义抽取器
 
 支持通过模板定义字段抽取逻辑,可集成LLM实现智能提取:
@@ -203,8 +202,7 @@ schema-designer init --engine postgresql --db "postgresql://user:pass@localhost/
 
 ### 第2步:Discovery需求澄清
 
-Agent主动向用户确认数据来源、主干字段、软字段、查询需求、数据量级等(同免费版Discovery流程,但支持多引擎选项)。
-
+Agent主动向用户确认数据来源、主干字段、软字段、查询需求、数据量级等(同免费版Discovery流程,但支持多引擎选项).
 ### 第3步:生成多引擎DDL
 
 ```bash
@@ -329,44 +327,34 @@ schema-designer archive --source manual --content "测试数据" --extractor ext
 
 ### Q1: 从免费版升级到专业版,现有数据需要迁移吗?
 
-A: 不需要。专业版兼容免费版的Schema结构,直接安装专业版即可使用高级功能,现有数据无损升级。
-
+A: 不需要。专业版兼容免费版的Schema结构,直接安装专业版即可使用高级功能,现有数据无损升级.
 ### Q2: 多引擎适配时,JSON字段类型怎么选?
 
-A: SQLite用JSON1扩展(文本存储), `PostgreSQL`用JSONB(二进制存储,支持GIN索引,查询更快), MySQL用JSON类型。统一逻辑层会自动映射。
-
+A: SQLite用JSON1扩展(文本存储), `PostgreSQL`用JSONB(二进制存储,支持GIN索引,查询更快), MySQL用JSON类型。统一逻辑层会自动映射.
 ### Q3: 性能诊断会拖慢生产数据库吗?
 
-A: 不会。诊断默认走只读副本或采样模式,EXPLAIN QUERY PLAN不执行实际查询。建议在低峰期运行完整诊断。
-
+A: 不会。诊断默认走只读副本或采样模式,EXPLAIN QUERY PLAN不执行实际查询。建议在低峰期运行完整诊断.
 ### Q4: 灰度发布时如何处理新旧Schema共存?
 
-A: 通过视图层屏蔽差异,新字段允许NULL,旧版本写入时忽略新字段。全量应用后再添加NOT NULL约束。
-
+A: 通过视图层屏蔽差异,新字段允许NULL,旧版本写入时忽略新字段。全量应用后再添加NOT NULL约束.
 ### Q5: Schema回滚会丢失数据吗?
 
-A: 不会。回滚前自动备份受影响数据到`data/backups/`,回滚仅恢复Schema结构,数据保留。如需恢复数据,从备份目录还原。
-
+A: 不会。回滚前自动备份受影响数据到`data/backups/`,回滚仅恢复Schema结构,数据保留。如需恢复数据,从备份目录还原.
 ### Q6: 自定义抽取器如何调试?
 
-A: 使用`schema-designer test-extractor --extractor my_extractor --input sample.txt`单独测试抽取器,查看输出与预期差异,支持逐步断点调试。
-
+A: 使用`schema-designer test-extractor --extractor my_extractor --input sample.txt`单独测试抽取器,查看输出与预期差异,支持逐步断点调试.
 ### Q7: 团队协作模式下,如何处理冲突的Schema变更?
 
-A: 通过PR评审流程合并冲突变更,版本管理工具会检测冲突并提示合并方案。无法自动合并时,由DBA人工裁决。
-
+A: 通过PR评审流程合并冲突变更,版本管理工具会检测冲突并提示合并方案。无法自动合并时,由DBA人工裁决.
 ### Q8: 如何导出Schema审计报告?
 
-A: 运行`schema-designer audit --from 2026-01-01 --to 2026-06-30 --format pdf --output audit.pdf`,支持PDF、HTML、CSV三种格式。
-
+A: 运行`schema-designer audit --from 2026-01-01 --to 2026-06-30 --format pdf --output audit.pdf`,支持PDF、HTML、CSV三种格式.
 ### Q9: 增量同步如何保证多环境一致性?
 
-A: 通过校验和(checksum)比对各环境Schema快照,差异项生成同步脚本,应用后再次校验,确保一致。
-
+A: 通过校验和(checksum)比对各环境Schema快照,差异项生成同步脚本,应用后再次校验,确保一致.
 ### Q10: 专业版支持哪些LLM抽取器?
 
-A: 支持Agent平台内置LLM,以及OpenAI兼容接口的自定义LLM。配置时填写API endpoint和key即可。
-
+A: 支持Agent平台内置LLM,以及OpenAI兼容接口的自定义LLM。配置时填写API endpoint和key即可.
 ## 错误处理
 
 | 错误场景(续)| 原因 | 处理方式 |

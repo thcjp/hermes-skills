@@ -6,7 +6,7 @@ displayName: "数据分析师"
 summary: "数据清洗、统计分析、时间序列分析、可视化代码生成与分析报告自动生成"
 license: "Proprietary"
 description: |-
-  数据分析师——快速进行数据清洗、统计分析和可视化，适合数据分析师、产品经理、运营人员。
+  数据分析师——快速进行数据清洗、统计分析和可视化，适合数据分析师、产品经理、运营人员.
   核心能力包括：
   - 多源数据读取（CSV、Excel、JSON、SQLite、API）
   - 数据预览与质量检查（shape、dtypes、describe、缺失/重复统计）
@@ -27,8 +27,7 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob"]
-tags: "数据处理,数据分析,工具"
+
 ---
 # 数据分析师
 
@@ -53,8 +52,7 @@ tags: "数据处理,数据分析,工具"
 
 ## 概述
 
-快速进行数据清洗、统计分析和可视化，适合数据分析师、产品经理、运营人员。提供从数据读取到报告生成的完整Python代码模板，覆盖Pandas、Matplotlib、Seaborn、Statsmodels核心工作流。
-
+快速进行数据清洗、统计分析和可视化，适合数据分析师、产品经理、运营人员。提供从数据读取到报告生成的完整Python代码模板，覆盖Pandas、Matplotlib、Seaborn、Statsmodels核心工作流.
 ## 依赖说明
 
 ### 运行环境
@@ -76,7 +74,7 @@ tags: "数据处理,数据分析,工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### 多源数据读取
@@ -88,7 +86,7 @@ export API_KEY="your_api_key_here"
 | SQLite | `pd.read_sql('SELECT * FROM table', conn)` | 需先 `sqlite3.connect('database.db')` |
 | API | `pd.DataFrame(response.json())` | 需先 `requests.get('https://api.example.com/data')` |
 
-**处理**: 解析多源数据读取的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**处理**: 解析多源数据读取的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回多源数据读取的处理结果,包含执行状态码、结果数据和执行日志。### 数据预览与质量检查
 ```python
 print(df.shape)        # 行列数，如 (1542, 7)
@@ -104,8 +102,8 @@ print(df.describe())   # 数值列统计
 print(df.describe(include='all'))  # 所有列（含分类列）
 ```
 
-**输入**: 用户提供数据预览与质量检查所需的指令和必要参数。
-**处理**: 解析数据预览与质量检查的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输入**: 用户提供数据预览与质量检查所需的指令和必要参数.
+**处理**: 解析数据预览与质量检查的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回数据预览与质量检查的处理结果,包含执行状态码、结果数据和执行日志。### 数据清洗
 **缺失值处理**：
 
@@ -150,7 +148,7 @@ df['name'] = df['name'].str.lower()           # 转小写
 df['name'] = df['name'].str.replace('old', 'new')  # 替换
 ```
 
-**输入**: 用户提供数据清洗所需的指令和必要参数。
+**输入**: 用户提供数据清洗所需的指令和必要参数.
 **输出**: 返回数据清洗的处理结果,包含执行状态码、结果数据和执行日志。### 统计分析
 **描述统计**：
 
@@ -188,7 +186,7 @@ df.groupby('category').agg({
 pd.crosstab(df['col1'], df['col2'])
 ```
 
-**输入**: 用户提供统计分析所需的指令和必要参数。
+**输入**: 用户提供统计分析所需的指令和必要参数.
 **输出**: 返回统计分析的处理结果,包含执行状态码、结果数据和执行日志。### 时间序列分析
 
 ```python
@@ -253,14 +251,14 @@ ax.fill_between(df.index, df['lower'], df['upper'], alpha=0.2)
 ax.legend()
 ```
 
-**输出**: 返回可视化代码生成的处理结果,包含执行状态码、结果数据和执行日志。
+**输出**: 返回可视化代码生成的处理结果,包含执行状态码、结果数据和执行日志.
 ### 分析报告自动生成
 ```python
 def generate_report(df):
     report = f"""
 # ...
-**输入**: 用户提供分析报告自动生成所需的指令和必要参数。
-**处理**: 解析分析报告自动生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输入**: 用户提供分析报告自动生成所需的指令和必要参数.
+**处理**: 解析分析报告自动生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 # ...
 #
 ## 1. 数据概览
@@ -357,23 +355,17 @@ plt.show()
 ## 常见问题
 
 ### Q1: 图表中中文显示为方框怎么解决？
-A: 在绘图前配置字体：`plt.rcParams['font.sans-serif'] = ['SimHei']`（Windows）或 `['Arial Unicode MS']`（macOS），同时设置 `plt.rcParams['axes.unicode_minus'] = False` 避免负号显示异常。
-
+A: 在绘图前配置字体：`plt.rcParams['font.sans-serif'] = ['SimHei']`（Windows）或 `['Arial Unicode MS']`（macOS），同时设置 `plt.rcParams['axes.unicode_minus'] = False` 避免负号显示异常.
 ### Q2: IQR异常值剔除后数据量减少太多怎么办？
-A: 检查数据分布的偏度（`df['col'].skew()`），若偏度>2说明极度右偏。可先做对数变换 `np.log1p(df['col'])` 再用IQR，或将阈值从1.5*IQR放宽至3*IQR。
-
+A: 检查数据分布的偏度（`df['col'].skew()`），若偏度>2说明极度右偏。可先做对数变换 `np.log1p(df['col'])` 再用IQR，或将阈值从1.5*IQR放宽至3*IQR.
 ### Q3: `rolling(window=7)` 前几行为NaN正常吗？
-A: 正常。7日滚动窗口需要至少7个数据点才能计算，前6行无足够数据故为NaN。绘图时可用 `df.dropna()` 去掉或保留以显示真实情况。
-
+A: 正常。7日滚动窗口需要至少7个数据点才能计算，前6行无足够数据故为NaN。绘图时可用 `df.dropna()` 去掉或保留以显示真实情况.
 ### Q4: `seasonal_decompose` 的 period 参数怎么选？
-A: period是季节周期长度。月度数据通常 period=12（一年12个月），季度数据 period=4，日数据如有周季节性则 period=7。需确保数据长度至少为 period 的2倍。
-
+A: period是季节周期长度。月度数据通常 period=12（一年12个月），季度数据 period=4，日数据如有周季节性则 period=7。需确保数据长度至少为 period 的2倍.
 ### Q5: `df.corr()` 中有非数值列怎么办？
-A: `df.corr()` 默认仅计算数值列，非数值列自动忽略。如需包含分类列，先转为哑变量：`pd.get_dummies(df, columns=['category'])` 后再计算相关矩阵。
-
+A: `df.corr()` 默认仅计算数值列，非数值列自动忽略。如需包含分类列，先转为哑变量：`pd.get_dummies(df, columns=['category'])` 后再计算相关矩阵.
 ### Q6: 分组聚合后结果有多级索引怎么处理？
-A: 使用 `reset_index()` 展平：`df.groupby('category').agg({'sales': 'sum'}).reset_index()`，或用 `as_index=False`：`df.groupby('category', as_index=False).agg({'sales': 'sum'})`。
-
+A: 使用 `reset_index()` 展平：`df.groupby('category').agg({'sales': 'sum'}).reset_index()`，或用 `as_index=False`：`df.groupby('category', as_index=False).agg({'sales': 'sum'})`.
 ## 已知限制
 
 - 大数据集需注意内存使用，建议超过1GB时分块处理

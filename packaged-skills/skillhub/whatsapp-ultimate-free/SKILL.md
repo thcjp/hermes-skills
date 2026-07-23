@@ -9,20 +9,18 @@ description: |-
   通讯应用消息发送、交互反应、群组管理和多Agent讨论工具。支持文本、图片、
   语音、视频、贴纸等多种消息类型，支持投票、群组创建、历史搜索和多Agent
   协作讨论。通过协议库桥接通讯应用，提供完整的消息交互能力。适用于独立
-  开发者、企业团队和自动化工作流场景。不适用于无通讯应用账号的场景。
+  开发者、企业团队和自动化工作流场景。不适用于无通讯应用账号的场景.
 tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
 tags:
   - 通用办公
-tools: ["read", "write", "exec"]
-tags: "WhatsApp,社交,通信"
+
 ---
 # 通讯应用工具(免费版)
 
-通讯应用消息发送、交互反应、群组管理和多Agent讨论。
-
+通讯应用消息发送、交互反应、群组管理和多Agent讨论.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -46,40 +44,34 @@ tags: "WhatsApp,社交,通信"
 python3 （请参考skill目录中的脚本文件） action=send --to "contact-id@s.whatsapp.net" --type text --content "你好，这是一条测试消息"
 ```
 
-**输入**: 用户提供消息发送所需的指令和必要参数。
-**处理**: 解析消息发送的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回消息发送的处理结果,包含执行状态码、结果数据和执行日志。
-
+**输入**: 用户提供消息发送所需的指令和必要参数.
+**处理**: 解析消息发送的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回消息发送的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. 交互反应
-对消息添加表情反应、回复消息和转发消息。
-
+对消息添加表情反应、回复消息和转发消息.
 ```bash
 python3 （请参考skill目录中的脚本文件） action=react --message-id "msg-abc123" --emoji "👍"
 python3 （请参考skill目录中的脚本文件） action=reply --message-id "msg-abc123" --content "收到"
 ```
 
-**输入**: 用户提供交互反应所需的指令和必要参数。
-**处理**: 解析交互反应的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回交互反应的处理结果,包含执行状态码、结果数据和执行日志。
-
+**输入**: 用户提供交互反应所需的指令和必要参数.
+**处理**: 解析交互反应的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回交互反应的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. 群组管理
-创建群组、添加/移除成员、修改群组信息。
-
+创建群组、添加/移除成员、修改群组信息.
 ```bash
 python3 （请参考skill目录中的脚本文件） action=group-create --name "项目讨论组" --participants "user1@s.whatsapp.net" "user2@s.whatsapp.net"
 ```
 
-**处理**: 解析群组管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**处理**: 解析群组管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 4. 历史搜索
-搜索聊天历史记录，支持关键词和日期范围。
-
+搜索聊天历史记录，支持关键词和日期范围.
 ```bash
 python3 （请参考skill目录中的脚本文件） action=search --chat "contact-id@s.whatsapp.net" --query "会议纪要" --limit 20
 ```
 
-**输入**: 用户提供历史搜索所需的指令和必要参数。
-**输出**: 返回历史搜索的处理结果,包含执行状态码、结果数据和执行日志。
-
+**输入**: 用户提供历史搜索所需的指令和必要参数.
+**输出**: 返回历史搜索的处理结果,包含执行状态码、结果数据和执行日志.
 ### 输出格式
 
 完成响应以Markdown格式返回,包含任务状态(成功/失败)、解析摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。- 验证返回数据的完整性和格式正确性
@@ -135,14 +127,11 @@ python3 （请参考skill目录中的脚本文件） action=send \
 ## 常见问题
 
 ### Q1: 贴纸的尺寸和格式要求是什么？
-A: 贴纸必须是512x512像素的webp格式文件，大小不超过100KB。使用 `ffmpeg -i input.png -vf "scale=512:512:force_original_aspect_ratio=decrease" -lossless 1 output.webp` 生成。
-
+A: 贴纸必须是512x512像素的webp格式文件，大小不超过100KB。使用 `ffmpeg -i input.png -vf "scale=512:512:force_original_aspect_ratio=decrease" -lossless 1 output.webp` 生成.
 ### Q2: 语音消息的采样率是多少？
-A: 语音消息采样率为48000Hz，比特率64k，格式为opus。使用 `ffmpeg -i input.wav -ar 48000 -ac 1 -b:a 64k -c:a libopus output.opus` 转换。
-
+A: 语音消息采样率为48000Hz，比特率64k，格式为opus。使用 `ffmpeg -i input.wav -ar 48000 -ac 1 -b:a 64k -c:a libopus output.opus` 转换.
 ### Q3: JID格式有哪些？
-A: 个人聊天JID格式为 `国际区号+号码@s.whatsapp.net`（如 `8613800138000@s.whatsapp.net`）。群组JID格式为 `群组ID@g.us`（如 `project-group@g.us`）。
-
+A: 个人聊天JID格式为 `国际区号+号码@s.whatsapp.net`（如 `8613800138000@s.whatsapp.net`）。群组JID格式为 `群组ID@g.us`（如 `project-group@g.us`）.
 ## 已知限制
 
 - 贴纸必须为512x512像素的webp格式，大小不超过100KB
@@ -168,4 +157,4 @@ A: 个人聊天JID格式为 `国际区号+号码@s.whatsapp.net`（如 `86138001
 
 ## 升级提示
 
-本免费版提供基础功能。升级到完整版 whatsapp-ultimate 获取全部能力和高级特性。
+本免费版提供基础功能。升级到完整版 whatsapp-ultimate 获取全部能力和高级特性.

@@ -7,19 +7,18 @@ summary: "生产力追踪与每日复盘助手,输入活动日志/目标/日报"
 license: "Proprietary"
 description: |-
   Productivity tracker and daily review assistant。Input activity logs,
-  time notes, goals, or a dai。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
+  time notes, goals, or a dai。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - Productivity
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+
 ---
 # Productivity Tracker
 
@@ -42,9 +41,8 @@ tags: "工具,效率,自动化"
 * Support for interruptions and resumption
 * Voice and text input support
 
-**处理**: 解析Activity Recording的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回Activity Recording的处理结果,包含执行状态码、结果数据和执行日志。
-
+**处理**: 解析Activity Recording的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回Activity Recording的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. Smart Categorization
 Auto-categorize activities into:
 
@@ -54,31 +52,31 @@ Auto-categorize activities into:
 * **Life**: cooking, cleaning, family time
 * **Rest**: entertainment, social media, breaks
 
-**处理**: 解析Smart Categorization的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回Smart Categorization的处理结果,包含执行状态码、结果数据和执行日志。
-
+**处理**: 解析Smart Categorization的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回Smart Categorization的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. Time Analysis
 * Daily/weekly/monthly time distribution
 * Focus time vs. fragmented time analysis
 * Peak productivity hours identification
 * Work-life balance metrics
 
-**处理**: 解析Time Analysis的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回Time Analysis的处理结果,包含执行状态码、结果数据和执行日志。
-
+**处理**: 解析Time Analysis的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回Time Analysis的处理结果,包含执行状态码、结果数据和执行日志.
 ### 4. Daily Report Generation
 ```markdown
 # ...
-**输入**: 用户提供Daily Report Generation所需的指令和必要参数。
-**处理**: 解析Daily Report Generation的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回Daily Report Generation的处理结果,包含执行状态码、结果数据和执行日志。
+**输入**: 用户提供Daily Report Generation所需的指令和必要参数.
+**处理**: 解析Daily Report Generation的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回Daily Report Generation的处理结果,包含执行状态码、结果数据和执行日志.
 # ...
 #
 ## 适用场景
 # ...
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 日报撰写 | 工作内容与日期 | Markdown日报文件 |
+| 生产力追踪与每日复盘 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 输入活动日志 | 目标数据与配置参数 | 处理结果与执行状态 |
 # ...
 **不适用于**：需要人工判断的复杂决策场景
 # ...
@@ -169,7 +167,7 @@ Auto-categorize activities into:
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 # ...
 ### 示例1: 基础用法

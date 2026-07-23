@@ -9,8 +9,7 @@ description: |-
   API 代码生成器。从零生成生产级 API 代码脚手架,支持 RESTful CRUD 端点（Express.js）、
   GraphQL Type+Query+Mutation schema、OpenAPI 3.0 规范文档、Python API 客户端类、
   Mock API 服务器（内存存储）、认证代码（jwt/oauth/apikey）、速率限制器（token-bucket/sliding-window）、
-  Jest+Supertest 测试套件。所有代码输出到 stdout,可重定向到项目文件。
-  适用于独立开发者、企业团队和自动化工作流场景。
+  Jest+Supertest 测试套件。所有代码输出到 stdout,可重定向到项目文件.
 tags:
   - 研发工具
   - Development
@@ -22,15 +21,12 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+
 ---
 # API 代码生成器
 
-从零生成生产级 API 代码脚手架。REST、GraphQL、认证、测试一站式工具,所有代码输出到 stdout,可复制或重定向到项目文件。
-
-**范围外**（本技能不做）: 数据库迁移脚本生成、前端 UI 代码、CI/CD 配置、生产环境部署。
-
+从零生成生产级 API 代码脚手架。REST、GraphQL、认证、测试一站式工具,所有代码输出到 stdout,可复制或重定向到项目文件.
+**范围外**（本技能不做）: 数据库迁移脚本生成、前端 UI 代码、CI/CD 配置、生产环境部署.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -70,7 +66,7 @@ tags: "API,接口,开发工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### 核心生成
@@ -78,7 +74,7 @@ export API_KEY="your_api_key_here"
 - **graphql** `<name>` — GraphQL Type + Query + Mutation schema 定义
 - **swagger** `<name>` — OpenAPI 3.0 规范文档,含路径、参数、响应定义
 
-**处理**: 解析核心生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**处理**: 解析核心生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回核心生成的处理结果,包含执行状态码、结果数据和执行日志。### 工具生成
 - **client** `<name>` — Python API 客户端类,含 GET/POST/PUT/DELETE 方法封装
 - **mock** `<name>` — Mock API 服务器,内存存储,支持 CRUD 操作
@@ -86,23 +82,19 @@ export API_KEY="your_api_key_here"
 - **rate-limit** `<type>` — 速率限制器,支持 `token-bucket` / `sliding-window` 两种算法
 - **test** `<name>` — Jest + Supertest API 测试套件,含 CRUD 测试用例
 
-**输入**: 用户提供工具生成所需的指令和必要参数。
-**处理**: 解析工具生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回工具生成的处理结果,包含执行状态码、结果数据和执行日志。
+**输入**: 用户提供工具生成所需的指令和必要参数.
+**处理**: 解析工具生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回工具生成的处理结果,包含执行状态码、结果数据和执行日志.
 ### rest
 
-针对rest,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供rest相关的配置参数、输入数据和处理选项。
-
+针对rest,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供rest相关的配置参数、输入数据和处理选项.
 **输出**: 返回rest的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`rest`的配置文档进行参数调优
 ### graphql
 
-针对graphql,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供graphql相关的配置参数、输入数据和处理选项。
-
+针对graphql,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供graphql相关的配置参数、输入数据和处理选项.
 **输出**: 返回graphql的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`graphql`的配置文档进行参数调优
 #
@@ -126,16 +118,14 @@ bash （请参考skill目录中的脚本文件） <command> <resource_name> [opt
 ## 使用流程
 
 ### Step 1: 确定生成目标
-明确需要生成的代码类型（rest/graphql/swagger/client/mock/auth/rate-limit/test）与资源名称。
-
+明确需要生成的代码类型（rest/graphql/swagger/client/mock/auth/rate-limit/test）与资源名称.
 ### Step 2: 执行生成命令
 ```bash
 bash （请参考skill目录中的脚本文件） rest user
 ```
 
 ### Step 3: 查看输出
-所有代码输出到 stdout,含完整注释,可直接作为项目起点。
-
+所有代码输出到 stdout,含完整注释,可直接作为项目起点.
 ### Step 4: 重定向到项目文件
 ```bash
 bash （请参考skill目录中的脚本文件） rest user > routes/user.js
@@ -143,8 +133,7 @@ bash （请参考skill目录中的脚本文件） test user > tests/user.test.js
 ```
 
 ### Step 5: 集成到项目
-将生成的代码文件复制到项目对应目录,安装依赖后即可运行。
-
+将生成的代码文件复制到项目对应目录,安装依赖后即可运行.
 ## 案例展示
 
 ### 案例1: 生成用户 RESTful 端点
@@ -162,8 +151,7 @@ bash （请参考skill目录中的脚本文件） rest user
 - `PUT /users/:id` — 更新用户
 - `DELETE /users/:id` — 删除用户
 
-**说明**: 生成的代码含完整注释与错误处理,重定向到 `routes/user.js` 即可使用。
-
+**说明**: 生成的代码含完整注释与错误处理,重定向到 `routes/user.js` 即可使用.
 ### 案例2: 生成产品 GraphQL Schema
 **场景**: 开发者需要为产品模块定义 GraphQL 类型
 
@@ -188,8 +176,7 @@ bash （请参考skill目录中的脚本文件） auth jwt
 - `verifyToken(req, res, next)` — 验证 token 中间件
 - Token 过期时间设置（默认 24 小时）
 
-**说明**: 支持 `jwt`、`oauth`、`apikey` 三种认证类型,按需选择。
-
+**说明**: 支持 `jwt`、`oauth`、`apikey` 三种认证类型,按需选择.
 ### 案例4: 生成订单测试套件
 **场景**: 开发者需要为订单 API 编写测试
 
@@ -215,8 +202,7 @@ bash （请参考skill目录中的脚本文件） rate-limit token-bucket
 - `rateLimiter(req, res, next)` 中间件
 - 429 响应处理
 
-**说明**: 支持 `token-bucket`（令牌桶）与 `sliding-window`（滑动窗口）两种算法。
-
+**说明**: 支持 `token-bucket`（令牌桶）与 `sliding-window`（滑动窗口）两种算法.
 ## 错误处理
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
@@ -231,23 +217,17 @@ bash （请参考skill目录中的脚本文件） rate-limit token-bucket
 ## 常见问题
 
 ### Q1: 生成的代码输出到哪里?
-A: 所有代码输出到 stdout。可直接查看,或重定向到项目文件: `bash （请参考skill目录中的脚本文件） rest user > routes/user.js`。生成的代码含完整注释,可作为项目起点。
-
+A: 所有代码输出到 stdout。可直接查看,或重定向到项目文件: `bash （请参考skill目录中的脚本文件） rest user > routes/user.js`。生成的代码含完整注释,可作为项目起点.
 ### Q2: rest 命令生成什么框架的代码?
-A: 生成 Express.js 的 RESTful CRUD 端点,包含 GET/POST/PUT/DELETE 路由、参数校验与错误处理。需配合 `express` 包使用。
-
+A: 生成 Express.js 的 RESTful CRUD 端点,包含 GET/POST/PUT/DELETE 路由、参数校验与错误处理。需配合 `express` 包使用.
 ### Q3: auth 命令支持哪些认证类型?
-A: 支持三种: `jwt`（JSON Web Token,默认过期 24 小时）、`oauth`（OAuth2 授权流程）、`apikey`（API Key 验证中间件）。根据项目安全需求选择。
-
+A: 支持三种: `jwt`（JSON Web Token,默认过期 24 小时）、`oauth`（OAuth2 授权流程）、`apikey`（API Key 验证中间件）。根据项目安全需求选择.
 ### Q4: rate-limit 命令的两种算法有什么区别?
-A: `token-bucket`（令牌桶）允许突发流量,令牌按固定速率填充,请求消耗令牌;`sliding-window`（滑动窗口）在固定时间窗口内计数,更严格控制请求频率。API 网关场景推荐令牌桶,支付场景推荐滑动窗口。
-
+A: `token-bucket`（令牌桶）允许突发流量,令牌按固定速率填充,请求消耗令牌;`sliding-window`（滑动窗口）在固定时间窗口内计数,更严格控制请求频率。API 网关场景推荐令牌桶,支付场景推荐滑动窗口.
 ### Q5: test 命令生成的测试用什么框架?
-A: 使用 Jest + Supertest。生成 CRUD 测试用例,覆盖创建、查询、更新、删除操作。需安装 `jest` 与 `supertest` 包。
-
+A: 使用 Jest + Supertest。生成 CRUD 测试用例,覆盖创建、查询、更新、删除操作。需安装 `jest` 与 `supertest` 包.
 ### Q6: mock 命令生成的 Mock 服务器怎么用?
-A: 生成基于内存存储的 Mock API 服务器,支持 CRUD 操作。适用于前端开发时后端 API 未就绪的场景。启动后即可响应请求,数据存储在内存中,重启后清空。
-
+A: 生成基于内存存储的 Mock API 服务器,支持 CRUD 操作。适用于前端开发时后端 API 未就绪的场景。启动后即可响应请求,数据存储在内存中,重启后清空.
 ## 已知限制
 
 1. **输出到 stdout**: 代码不自动写入文件,需手动重定向

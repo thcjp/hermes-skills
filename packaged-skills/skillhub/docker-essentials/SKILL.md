@@ -6,10 +6,10 @@ displayName: "Docker核心操作指南"
 summary: "涵盖容器生命周期、镜像管理、Compose、网络、数据卷、系统管理等Docker核心操作。"
 license: "Proprietary"
 description: |-
-  Docker核心操作指南，覆盖容器生命周期的完整管理流程。
-  包含容器调试、镜像构建与管理、Docker Compose多容器编排。
-  涵盖网络配置、数据卷管理、系统管理与常见工作流。
-  适用于开发、测试、生产环境的Docker容器化部署与运维。
+  Docker核心操作指南，覆盖容器生命周期的完整管理流程.
+  包含容器调试、镜像构建与管理、Docker Compose多容器编排.
+  涵盖网络配置、数据卷管理、系统管理与常见工作流.
+  适用于开发、测试、生产环境的Docker容器化部署与运维.
 tools:
   - read
   - exec
@@ -20,13 +20,11 @@ tags:
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "容器,Docker,DevOps"
+
 ---
 # Docker核心操作指南
 
-涵盖容器生命周期、镜像管理、Compose、网络、数据卷、系统管理等Docker核心操作。
-
+涵盖容器生命周期、镜像管理、Compose、网络、数据卷、系统管理等Docker核心操作.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -67,7 +65,7 @@ tags: "容器,Docker,DevOps"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### 容器生命周期管理（Container Lifecycle）
@@ -99,7 +97,7 @@ docker rm -f container_name   # 强制删除容器
 docker container prune        # 清理所有已停止容器
 ```
 
-**输入**: 用户提供容器生命周期管理（Container Lifecycle）所需的指令和必要参数。
+**输入**: 用户提供容器生命周期管理（Container Lifecycle）所需的指令和必要参数.
 ### 容器检查与调试（Container Inspection & Debugging）
 查看日志、执行命令、检查容器状态：
 
@@ -131,7 +129,7 @@ docker stats container_name   # 指定容器资源使用
 docker top container_name     # 容器内进程
 ```
 
-**输入**: 用户提供容器检查与调试（Container Inspection & Debugging）所需的指令和必要参数。
+**输入**: 用户提供容器检查与调试（Container Inspection & Debugging）所需的指令和必要参数.
 **输出**: 返回容器检查与调试（Container Inspection & Debugging）的处理结果,包含执行状态码、结果数据和执行日志。### 镜像管理（Image Management）
 
 构建、拉取、推送、清理镜像：
@@ -182,7 +180,7 @@ docker-compose build web     # 重新构建服务
 docker-compose up -d --build # 重新构建并启动
 ```
 
-**输入**: 用户提供Docker Compose所需的指令和必要参数。
+**输入**: 用户提供Docker Compose所需的指令和必要参数.
 **输出**: 返回Docker Compose的处理结果,包含执行状态码、结果数据和执行日志。### 网络配置（Networking）
 管理Docker网络与容器互联：
 
@@ -195,7 +193,7 @@ docker network inspect mynetwork             # 查看网络详情
 docker network rm mynetwork                  # 删除网络
 ```
 
-**输入**: 用户提供网络配置（Networking）所需的指令和必要参数。
+**输入**: 用户提供网络配置（Networking）所需的指令和必要参数.
 **处理**: 解析网络配置（Networking）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 数据卷管理（Volumes）
 
 持久化数据存储管理：
@@ -221,7 +219,7 @@ docker info                     # 系统信息
 docker version                  # 版本信息
 ```
 
-**输入**: 用户提供系统管理（System Management）所需的指令和必要参数。
+**输入**: 用户提供系统管理（System Management）所需的指令和必要参数.
 **输出**: 返回系统管理（System Management）的处理结果,包含执行状态码、结果数据和执行日志。### 常见工作流（Common Workflows）
 预置开发、数据库、调试与构建工作流：
 
@@ -270,9 +268,8 @@ FROM nginx:alpine
 COPY --from=builder /app/dist /usr/share/nginx/html
 ```
 
-**输入**: 用户提供常见工作流（Common Workflows）所需的指令和必要参数。
-**输出**: 返回常见工作流（Common Workflows）的处理结果,包含执行状态码、结果数据和执行日志。
-
+**输入**: 用户提供常见工作流（Common Workflows）所需的指令和必要参数.
+**输出**: 返回常见工作流（Common Workflows）的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 使用流程
 
@@ -348,23 +345,17 @@ docker cp app:/var/log/app.log ./app.log
 ## 常见问题
 
 ### Q1: 如何查看容器内发生了什么？
-A: 使用 `docker logs -f <container>` 跟踪日志，使用 `docker exec -it <container> sh` 进入容器shell，使用 `docker stats <container>` 查看资源使用情况。
-
+A: 使用 `docker logs -f <container>` 跟踪日志，使用 `docker exec -it <container> sh` 进入容器shell，使用 `docker stats <container>` 查看资源使用情况.
 ### Q2: 如何清理Docker释放空间？
-A: 使用 `docker system prune -a --volumes` 清理所有未使用的镜像、容器、网络和卷。注意此操作不可逆，确保没有需要保留的资源。
-
+A: 使用 `docker system prune -a --volumes` 清理所有未使用的镜像、容器、网络和卷。注意此操作不可逆，确保没有需要保留的资源.
 ### Q3: 如何在容器间通信？
-A: 创建自定义网络 `docker network create mynet`，启动容器时使用 `--network mynet`，容器间可通过容器名互相访问。
-
+A: 创建自定义网络 `docker network create mynet`，启动容器时使用 `--network mynet`，容器间可通过容器名互相访问.
 ### Q4: 数据卷和绑定挂载有什么区别？
-A: 数据卷（volume）由Docker管理，存储在Docker目录，适合持久化数据。绑定挂载（bind mount）直接映射主机路径，适合开发时挂载代码。
-
+A: 数据卷（volume）由Docker管理，存储在Docker目录，适合持久化数据。绑定挂载（bind mount）直接映射主机路径，适合开发时挂载代码.
 ### Q5: 如何构建更小的镜像？
-A: 使用多阶段构建（multi-stage build），合并RUN命令减少层，使用Alpine等基础镜像，添加 `.dockerignore` 排除不必要文件。
-
+A: 使用多阶段构建（multi-stage build），合并RUN命令减少层，使用Alpine等基础镜像，添加 `.dockerignore` 排除不必要文件.
 ### Q6: docker-compose up和docker-compose up -d有什么区别？
-A: `docker-compose up` 在前台运行，日志直接输出到终端，Ctrl+C停止。`docker-compose up -d` 在后台运行，需要用 `docker-compose logs` 查看日志。
-
+A: `docker-compose up` 在前台运行，日志直接输出到终端，Ctrl+C停止。`docker-compose up -d` 在后台运行，需要用 `docker-compose logs` 查看日志.
 ## 已知限制
 
 - 需要Docker Engine运行环境，无Docker环境无法执行命令

@@ -1,14 +1,14 @@
 ---
 slug: k8s-devops-tool-free
 name: k8s-devops-tool-free
-version: 1.0.1
+version: 1.0.2
 displayName: K8s清单生成入门
-summary: Kubernetes YAML清单生成工具，支持常用资源模板与基础校验。
+summary: Kubernetes YAML清单生成工具，支持常用资源模板与基础校验.
 license: Proprietary
 edition: free
 description: '面向个人开发者的K8s YAML清单生成工具。支持Deployment/Service/
 
-  ConfigMap等常用资源的清单生成与基础校验。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use
+  ConfigMap等常用资源的清单生成与基础校验。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。Use
   when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
 tags:
 - Operations
@@ -16,21 +16,18 @@ tags:
 - DevOps
 - 清单生成
 tools:
-- - read
+- read
 - exec
 homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 ---
 # K8s清单生成入门（免费版）
 
 ## 概述
 
-本工具为个人开发者提供K8s YAML清单生成能力。支持常用K8s资源的清单生成、模板化创建和基础校验，帮助开发者快速编写规范的K8s配置文件。
-
+本工具为个人开发者提供K8s YAML清单生成能力。支持常用K8s资源的清单生成、模板化创建和基础校验，帮助开发者快速编写规范的K8s配置文件.
 ## 核心能力
 
 ### 清单生成功能
@@ -48,27 +45,23 @@ tags: "工具,效率,自动化"
 | Helm Chart | 不支持 | 不支持 | - |
 | Kustomize | 不支持 | 不支持 | - |
 
-**输入**: 用户提供清单生成功能所需的指令和必要参数。
-**处理**: 解析清单生成功能的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回清单生成功能的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供清单生成功能所需的指令和必要参数.
+**处理**: 解析清单生成功能的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回清单生成功能的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
-用`input_params`参数进行配置。
-
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志。
+用`input_params`参数进行配置.
+**输入**: 用户提供核心功能执行所需的指令和必要参数.
+**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
-用`config_options`参数进行配置。
-
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志。
+用`config_options`参数进行配置.
+**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+**处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Kubernetes、YAML、清单生成工具、支持常用资源模板、与基础校验、面向个人开发者的、等常用资源的清单、生成与基础校验、Use、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Kubernetes、YAML、清单生成工具、支持常用资源模板、与基础校验、面向个人开发者的、等常用资源的清单、生成与基础校验、Use、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 使用场景
 
 ### 场景一：生成Deployment清单
@@ -83,7 +76,7 @@ python3 （请参考skill目录中的脚本文件） deployment \
   --replicas 3 \
   --port 80 \
   --output deployment.yaml
-# ...
+# ..
 # 输出文件内容
 cat deployment.yaml
 ```
@@ -100,7 +93,7 @@ python3 （请参考skill目录中的脚本文件） stack \
   --app-image my-app:v1 \
   --db-image postgres:15 \
   --output-dir ./manifests/
-# ...
+# ..
 # 输出：
 # ./manifests/deployment.yaml
 # ./manifests/service.yaml
@@ -118,7 +111,7 @@ python3 （请参考skill目录中的脚本文件） stack \
 python3 （请参考skill目录中的脚本文件） validate \
   --file deployment.yaml \
   --dry-run
-# ...
+# ..
 # 输出：
 # [OK] 语法正确
 # [OK] 必填字段完整
@@ -139,7 +132,7 @@ python3 （请参考skill目录中的脚本文件） validate \
 ```bash
 # 依赖说明
 pip install pyyaml jsonschema
-# ...
+# ..
 # 生成清单
 python3 （请参考skill目录中的脚本文件） deployment --name my-app --image nginx:1.25
 ```
@@ -151,19 +144,18 @@ python3 （请参考skill目录中的脚本文件） deployment --name my-app --
 python3 （请参考skill目录中的脚本文件） deployment --name my-app --image my-image:v1 --replicas 3
 python3 （请参考skill目录中的脚本文件） service --name my-service --port 80 --type ClusterIP
 python3 （请参考skill目录中的脚本文件） configmap --name my-config --from-file ./config.yaml
-# ...
+# ..
 # 生成应用栈
 python3 （请参考skill目录中的脚本文件） stack --template "web_db" --app-name my-app
-# ...
+# ..
 # 校验清单
 python3 （请参考skill目录中的脚本文件） validate --file deployment.yaml --dry-run
-# ...
+# ..
 # 查看模板列表
 python3 （请参考skill目录中的脚本文件） templates list
 ```
 
-**响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
+**响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
 ## 示例
 
 ### 生成模板配置
@@ -175,7 +167,7 @@ generate_config:
     namespace: "default"
     replicas: 2
     image_pull_policy: "IfNotPresent"
-# ...
+# ..
   resources:
     requests:
       cpu: "100m"
@@ -183,7 +175,7 @@ generate_config:
     limits:
       cpu: "500m"
       memory: "512Mi"
-# ...
+# ..
   templates:
     - name: "web_app"
       resources: ["deployment", "service", "configmap", "ingress"]
@@ -191,7 +183,7 @@ generate_config:
       resources: ["deployment", "service", "configmap", "secret", "pvc"]
     - name: "cron_job"
       resources: ["cronjob", "configmap"]
-# ...
+# ..
   validation:
     schema_check: true
     dry_run: true               # kubectl dry-run验证
@@ -222,20 +214,16 @@ generate_config:
 
 ### Q1：免费版支持Helm Chart吗？
 
-免费版不包含Helm Chart生成。如需Helm支持，建议升级PRO版。
-
+免费版不包含Helm Chart生成。如需Helm支持，建议升级PRO版.
 ### Q2：生成的清单可以直接apply吗？
 
-可以。生成后通过 `kubectl apply -f` 直接应用。建议先用 `--dry-run` 校验。
-
+可以。生成后通过 `kubectl apply -f` 直接应用。建议先用 `--dry-run` 校验.
 ### Q3：支持Kustomize吗？
 
-免费版不包含Kustomize支持。如需Kustomize覆盖层管理，建议升级PRO版。
-
+免费版不包含Kustomize支持。如需Kustomize覆盖层管理，建议升级PRO版.
 ### Q4：模板可以自定义吗？
 
-免费版提供预置模板，不支持自定义模板。如需自定义模板系统，建议升级PRO版。
-
+免费版提供预置模板，不支持自定义模板。如需自定义模板系统，建议升级PRO版.
 ## 依赖说明
 
 ### 运行环境

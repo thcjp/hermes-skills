@@ -7,20 +7,19 @@ summary: "Jira API托管OAuth集成,JQL搜索/建改issue/管看板"
 license: "Proprietary"
 description: |-
   Jira API integration with managed OAuth。Search issues with JQL, create
-  and update issues, manage。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
+  and update issues, manage。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
   - Integrations
   - Productivity
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+
 ---
 # Jira
 
@@ -45,7 +44,9 @@ tags: "API,接口,开发工具"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 搜索检索 | 关键词与过滤条件 | 匹配结果与相关性排序 |
+| Jira API托管 | 目标数据与配置参数 | 处理结果与执行状态 |
+| JQL搜索 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -159,8 +160,7 @@ EOF
 
 * Correct: `https://api.maton.ai/jira/ex/jira/{cloudId}/rest/api/3/project`
 * Incorrect: `https://api.maton.ai/ex/jira/{cloudId}/rest/api/3/project`
-> **处理方式**: 参考上表中的错误场景说明,按照对应建议进行处理和恢复。
-
+> **处理方式**: 参考上表中的错误场景说明,按照对应建议进行处理和恢复.
 ## 依赖说明
 
 ### 运行环境
@@ -183,7 +183,7 @@ EOF
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### CLI

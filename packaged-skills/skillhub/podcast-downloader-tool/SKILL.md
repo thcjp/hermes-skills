@@ -6,19 +6,18 @@ displayName: "Podcast Downloader"
 summary: "小宇宙播客下载工具。从小宇宙(xiaoyuzhoufm.com)下载播客音频和Show Notes。自动转换为MP3格式（兼容Sanag、小游等骨传导蓝牙耳机、水下游泳时离线播放）。当用户需要下..."
 license: "Proprietary"
 description: |-
-  小宇宙播客下载工具。从小宇宙(xiaoyuzhoufm。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
+  小宇宙播客下载工具。从小宇宙(xiaoyuzhoufm
 tags:
   - Creative
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "播客,音频,媒体"
+
 ---
 # Podcast Downloader
 
@@ -43,7 +42,9 @@ tags: "播客,音频,媒体"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 音频生成 | 文本与语音参数 | 音频文件与时长信息 |
+| 小宇宙播客下载工具 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 从小宇宙 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -102,7 +103,7 @@ tags: "播客,音频,媒体"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 示例1：基础用法

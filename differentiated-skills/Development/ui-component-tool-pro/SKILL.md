@@ -3,7 +3,7 @@ slug: "ui-component-tool-pro"
 name: "ui-component-tool-pro"
 version: "1.0.0"
 displayName: "UI组件生成(专业版)"
-summary: "面向团队的企业级UI组件工程平台,含设计系统、批量生成、可访问性增强与组件库管理。"
+summary: "面向团队的企业级UI组件工程平台,含设计系统、批量生成、可访问性增强与组件库管理"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -19,7 +19,7 @@ description: |-
   - 中大型团队设计系统落地与维护
   - 企业级组件库从0到1搭建
   - 多项目组件复用与版本管理
-  ...
+  .
 tags:
   - UI组件
   - 设计系统
@@ -28,14 +28,12 @@ tags:
   - 组件库
   - 团队协作
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
 ---
 # UI 组件生成工具(专业版)
 
@@ -102,7 +100,7 @@ tags: "UI设计,前端,设计"
   --color-neutral-900: #1a1a1a;
   --color-danger-500: #cc0000;
   --color-success-500: #00875a;
-// ...
+// .
   /* 排版令牌 */
   --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-size-xs: 0.75rem;
@@ -116,7 +114,7 @@ tags: "UI设计,前端,设计"
   --font-weight-bold: 700;
   --line-height-tight: 1.25;
   --line-height-base: 1.5;
-// ...
+// .
   /* 间距令牌(8px 基准) */
   --spacing-0: 0;
   --spacing-1: 0.25rem;
@@ -126,23 +124,23 @@ tags: "UI设计,前端,设计"
   --spacing-6: 1.5rem;
   --spacing-8: 2rem;
   --spacing-12: 3rem;
-// ...
+// .
   /* 圆角令牌 */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
   --radius-full: 9999px;
-// ...
+// .
   /* 阴影令牌 */
   --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
   --shadow-md: 0 2px 8px rgba(0,0,0,0.1);
   --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
-// ...
+// .
   /* 过渡令牌 */
   --transition-fast: 150ms ease-in-out;
   --transition-base: 250ms ease-in-out;
 }
-// ...
+// .
 /* 暗色模式令牌覆盖 */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -161,26 +159,26 @@ tags: "UI设计,前端,设计"
 #!/usr/bin/env bash
 # （请参考skill目录中的脚本文件） — 批量生成企业组件库
 set -euo pipefail
-# ...
+# .
 COMPONENTS=(
   "Button" "Input" "Select" "Checkbox" "Radio"
   "Table" "Pagination" "Tag" "Badge"
   "Card" "Modal" "Drawer" "Tooltip"
   "Navbar" "Sidebar" "Breadcrumb"
 )
-# ...
+# .
 BASE_DIR="src/components"
-# ...
+# .
 for comp in "${COMPONENTS[@]}"; do
   dir="$BASE_DIR/$comp"
   mkdir -p "$dir"
-# ...
+# .
   # React 组件
   cat > "$dir/$comp.tsx" <<EOF
 import React from 'react';
 import { ${comp}Props } from './types';
 import './${comp}.css';
-# ...
+# .
 export const ${comp}: React.FC<${comp}Props> = (props) => {
   return (
     <div className="${comp,,}">
@@ -190,7 +188,7 @@ export const ${comp}: React.FC<${comp}Props> = (props) => {
   );
 };
 EOF
-# ...
+# .
   # 类型定义
   cat > "$dir/types.ts" <<EOF
 export interface ${comp}Props {
@@ -200,7 +198,7 @@ export interface ${comp}Props {
   className?: string;
 }
 EOF
-# ...
+# .
   # 样式(使用设计令牌)
   cat > "$dir/${comp}.css" <<EOF
 .${comp,,} {
@@ -209,12 +207,12 @@ EOF
   border-radius: var(--radius-md);
 }
 EOF
-# ...
+# .
   # 单元测试
   cat > "$dir}/${comp}.test.tsx" <<EOF
 import { render } from '@testing-library/react';
 import { ${comp} } from './${comp}';
-# ...
+# .
 describe('${comp}', () => {
   it('应正确渲染', () => {
     const { container } = render(<${comp} />);
@@ -222,43 +220,43 @@ describe('${comp}', () => {
   });
 });
 EOF
-# ...
+# .
   # 文档
   cat > "$dir}/README.md" <<EOF
 # ${comp}
-# ...
+# .
 ## 不适用场景
-# ...
+# .
 以下场景UI组件生成(专业版)不适合处理：
-# ...
+# .
 - 3D建模和动画制作
 - 照片级写实渲染
 - 手绘原创插画
-# ...
+# .
 ## 触发条件
-# ...
-需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于非本工具能力范围的需求。
-# ...
+# .
+、品牌视觉时使用。不适用于非本工具能力范围的需求。
+# .
 ## 用法
-# ...
+# .
 \`\`\`tsx
 import { ${comp} } from '@/components/${comp}';
 \`\`\`
-# ...
+# .
 ## Props
-# ...
+# .
 | 属性 | 类型 | 默认值 | 说明 |
 |:-----|:-----|:-----|:-----|
 | className | string | undefined | 组件自定义样式类名 |
 | children | ReactNode | - | 组件子元素 |
-# ...
+# .
 ## 可访问性
-# ...
+# .
 - 组件需遵循 WCAG AA 标准,确保键盘导航、屏幕阅读器支持与颜色对比度合规
 EOF
-# ...
+# .
 done
-# ...
+# .
 echo "已生成 ${#COMPONENTS[@]} 个组件于 $BASE_DIR/"
 ```
 
@@ -270,10 +268,10 @@ echo "已生成 ${#COMPONENTS[@]} 个组件于 $BASE_DIR/"
 #!/usr/bin/env bash
 # （请参考skill目录中的脚本文件） — WCAG AA 可访问性审查
 set -euo pipefail
-# ...
+# .
 echo "=== WCAG AA 可访问性审查 ==="
 echo ""
-# ...
+# .
 # 1. 检查图片是否有 alt 属性
 echo "[1] 图片 alt 属性检查"
 missing_alt=$(grep -rn '<img[^>]*>' src/ --include='*.tsx' --include='*.html' \
@@ -284,7 +282,7 @@ if [ -n "$missing_alt" ]; then
 else
   echo "  通过"
 fi
-# ...
+# .
 # 2. 检查表单字段是否有 label
 echo ""
 echo "[2] 表单 label 关联检查"
@@ -294,7 +292,7 @@ if [ -n "$missing_label" ]; then
   echo "  发现可能缺失 label 的输入:"
   echo "$missing_label"
 fi
-# ...
+# .
 # 3. 检查按钮是否有可访问文本
 echo ""
 echo "[3] 按钮可访问文本检查"
@@ -303,14 +301,14 @@ if [ -n "$empty_btn" ]; then
   echo "  发现空按钮:"
   echo "$empty_btn"
 fi
-# ...
+# .
 # 4. 检查颜色对比度(需 pa11y 工具)
 if command -v npx &> /dev/null; then
   echo ""
   echo "[4] 颜色对比度检查(需 pa11y)"
   npx pa11y http://localhost:3000 --standard WCAG2AA || true
 fi
-# ...
+# .
 echo ""
 echo "=== 审查完成 ==="
 ```
@@ -335,13 +333,13 @@ echo "=== 审查完成 ==="
 ```bash
 # 应用设计系统令牌
 cp tokens.css src/styles/
-# ...
+# .
 # 批量生成组件骨架
 bash （请参考skill目录中的脚本文件）
-# ...
+# .
 # 运行可访问性审查
 bash （请参考skill目录中的脚本文件）
-# ...
+# .
 # 启动文档站点(Storybook 等)
 npm run storybook
 ```
@@ -359,7 +357,7 @@ src/
 │   │   ├── Button.css
 │   │   ├── types.ts
 │   │   └── README.md
-│   └── ...
+│   └── .
 ├── tokens/               # 设计系统令牌
 │   ├── colors.css
 │   ├── typography.css

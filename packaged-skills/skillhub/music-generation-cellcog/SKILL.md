@@ -7,19 +7,18 @@ summary: "CellCog驱动AI音乐生成,原创器乐与人声5秒到10分钟"
 license: "Proprietary"
 description: |-
   AI music generation powered by CellCog。Original instrumental and vocal
-  tracks, 5 seconds to 10 m。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。
+  tracks, 5 seconds to 10 m。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
 tags:
   - Creative
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "音乐生成,音频,创意"
+
 ---
 # Music Generation Cel
 
@@ -44,7 +43,9 @@ tags: "音乐生成,音频,创意"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 内容生成 | 提示词与风格参数 | 生成内容与质量评分 |
+| CellCog驱动A | 目标数据与配置参数 | 处理结果与执行状态 |
+| 原创器乐与人声5秒到 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -114,7 +115,7 @@ tags: "音乐生成,音频,创意"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 **Cinematic score:**

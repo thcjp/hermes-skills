@@ -8,9 +8,9 @@ license: "MIT"
 description: |-
   AI Agent基础设计助手(免费版)。面向独立开发者,提供Prompt工程与ReAct循环设计两大基础能力,
   帮助快速搭建可用的AI Agent。覆盖System Prompt角色定义、约束设定、输出格式规范,以及ReAct
-  (Thought→Action→Observation)基础循环设计。适用于客服Agent、简单数据分析Agent等基础场景。
+  (Thought→Action→Observation)基础循环设计。适用于客服Agent、简单数据分析Agent等基础场景.
   如需Task Decomposition、Plan-and-Execute/Reflexion范式、Tool Selection优化、Token Optimization
-  等高级能力,请升级至ai-agent-helper付费版。
+  等高级能力,请升级至ai-agent-helper付费版.
 tags:
   - 研发工具
   - Productivity
@@ -18,13 +18,11 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+
 ---
 # AI Agent LITE
 
-帮你setup基础AI Agents的技能。提供Prompt工程与ReAct循环设计两大基础能力,快速搭建可用的AI Agent。
-
+帮你setup基础AI Agents的技能。提供Prompt工程与ReAct循环设计两大基础能力,快速搭建可用的AI Agent.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -61,7 +59,7 @@ tags: "AI代理,自动化,智能"
 - **Few-shot示例**: 提供1-2个输入→输出示例对,引导Agent行为
 
 ```python
-system = """你是一个{role}。
+system = """你是一个{role}.
 目标: {goal}
 约束: {constraints}
 可用工具: {tools}
@@ -127,7 +125,7 @@ system = """你是一个{role}。
 **场景**: 为电商平台设计一个客服Agent,处理订单查询与物流咨询
 
 ```python
-system_prompt = """你是一个电商客服Agent。
+system_prompt = """你是一个电商客服Agent.
 目标: 帮助用户处理订单查询和物流咨询
 约束:
   - 不承诺具体赔偿金额,赔偿需人工审核
@@ -145,8 +143,7 @@ system_prompt = """你是一个电商客服Agent。
 """
 ```
 
-**分析**: 该Prompt定义了清晰的工具边界(不承诺赔偿),用JSON格式约束输出便于程序解析,few-shot示例展示了工具调用的标准模式。
-
+**分析**: 该Prompt定义了清晰的工具边界(不承诺赔偿),用JSON格式约束输出便于程序解析,few-shot示例展示了工具调用的标准模式.
 ### 示例2: ReAct Loop处理物流查询任务
 **场景**: 用户询问订单物流状态,Agent需要查询并回复
 
@@ -158,11 +155,10 @@ system_prompt = """你是一个电商客服Agent。
 [Observation] {"status": "运输中", "location": "深圳转运中心", "eta": "2025-01-20"}
 # ...
 [Thought] 已获取物流信息,可以回复用户了
-[Final Answer] 您的订单20250118目前正在运输中,已到达深圳转运中心,预计2025-01-20送达。
+[Final Answer] 您的订单20250118目前正在运输中,已到达深圳转运中心,预计2025-01-20送达.
 ```
 
-**分析**: ReAct Loop通过Thought→Action→Observation推进,获取物流信息后直接输出Final Answer。简单查询任务通常2-3步即可完成。
-
+**分析**: ReAct Loop通过Thought→Action→Observation推进,获取物流信息后直接输出Final Answer。简单查询任务通常2-3步即可完成.
 ## 异常处理
 
 | 错误场景 | 错误信息/现象 | 原因分析 | 处理方式 |
@@ -177,14 +173,11 @@ system_prompt = """你是一个电商客服Agent。
 ## 常见问题
 
 ### Q1: ReAct Loop中Agent反复调用同一工具怎么办?
-A: 在Prompt中设置最大循环次数(如max_steps=10),并加入指令"如果同一工具调用超过2次仍未获得有效结果,请停止并总结当前情况"。同时检查Observation是否返回了有效信息,如果工具返回错误,Agent可能误以为是临时错误而反复重试。
-
+A: 在Prompt中设置最大循环次数(如max_steps=10),并加入指令"如果同一工具调用超过2次仍未获得有效结果,请停止并总结当前情况"。同时检查Observation是否返回了有效信息,如果工具返回错误,Agent可能误以为是临时错误而反复重试.
 ### Q2: System Prompt应该多长?
-A: 建议控制在500-1000 token。核心结构:角色(1句)→目标(1-2句)→约束(列表)→工具描述(每个2-3句)→输出格式(schema)。避免在System Prompt中放完整业务文档,长内容改用RAG按需检索。Token优化时优先精简对话历史,再精简System Prompt。
-
+A: 建议控制在500-1000 token。核心结构:角色(1句)→目标(1-2句)→约束(列表)→工具描述(每个2-3句)→输出格式(schema)。避免在System Prompt中放完整业务文档,长内容改用RAG按需检索。Token优化时优先精简对话历史,再精简System Prompt.
 ### Q3: JSON输出总是解析失败怎么调试?
-A: (1)打印LLM原始输出,观察是否包含```json标记或前后多余文字;(2)在Prompt中强调"只输出JSON,不要markdown标记";(3)解析时先用正则提取`{`到`}`的内容再parse;(4)parse失败时将原始输出回传给LLM要求修复。
-
+A: (1)打印LLM原始输出,观察是否包含```json标记或前后多余文字;(2)在Prompt中强调"只输出JSON,不要markdown标记";(3)解析时先用正则提取`{`到`}`的内容再parse;(4)parse失败时将原始输出回传给LLM要求修复.
 ### Q4: 免费版和付费版有什么区别?
 A: 免费版(LITE)包含Prompt工程与ReAct循环设计两大基础功能。付费版(AI Agent Helper)额外提供:
 - Task Decomposition(复杂任务拆解为子任务,支持依赖排序与并行识别)

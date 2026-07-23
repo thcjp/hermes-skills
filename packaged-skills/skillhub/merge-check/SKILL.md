@@ -7,19 +7,18 @@ summary: "分析GitHub PR可合并性,预测是否会被合并"
 license: "Proprietary"
 description: |-
   Analyze a GitHub pull request for mergeability — predict whether it
-  will get merged 基于 tech。Use when 用户需要Merge Check相关功能时使用。不适用于超出本技能能力范围的复杂需求。
+  will get merged 基于 tech。Use when 用户需要Merge Check相关功能时使用。不适用于超出本技能能力范围的复杂需求.
 tags:
   - Development
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Merge Check
 
@@ -134,7 +133,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 示例1: 基础用法

@@ -7,20 +7,19 @@ summary: "企业级浏览器自动化,自动清标签/超时重试/并发锁,稳
 license: "Proprietary"
 description: |-
   Enterprise-grade browser automation with automatic tab cleanup, timeout
-  retries, concurrency lock。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
+  retries, concurrency lock
 tags:
   - Research
   - Automation
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+
 ---
 # Browser Automation V
 
@@ -148,8 +147,7 @@ tags: "自动化,工作流,效率"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Browser Automation V？

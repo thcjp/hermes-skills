@@ -7,7 +7,7 @@ summary: "掌握RESTful调用与API Key认证,含基础错误处理,快速接入
 license: "MIT"
 description: |-
   API 集成开发助手免费版。掌握 RESTful API 调用与 API Key 认证管理,提供 Python requests 调用模板
-  与基础错误处理。OAuth2 令牌管理、GraphQL 查询、JWT 认证、完整错误处理等高级功能需升级付费版。
+  与基础错误处理。OAuth2 令牌管理、GraphQL 查询、JWT 认证、完整错误处理等高级功能需升级付费版.
 tags:
   - 研发工具
   - Development
@@ -15,15 +15,12 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+
 ---
 # API 集成开发助手（免费版）
 
-提供基础的 API 集成能力,掌握 RESTful 调用与 API Key 认证,帮助 AI Agent 快速接入第三方服务。
-
-> **升级提示**: OAuth2 令牌管理、GraphQL 查询、JWT 认证、完整错误处理、速率限制处理等高级功能为付费版专享。升级付费版解锁完整能力。
-
+提供基础的 API 集成能力,掌握 RESTful 调用与 API Key 认证,帮助 AI Agent 快速接入第三方服务.
+> **升级提示**: OAuth2 令牌管理、GraphQL 查询、JWT 认证、完整错误处理、速率限制处理等高级功能为付费版专享。升级付费版解锁完整能力.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -53,7 +50,7 @@ tags: "API,接口,开发工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 - **RESTful 调用**: GET/POST/PUT/DELETE 方法封装,支持 JSON 请求与响应处理
@@ -71,21 +68,17 @@ export API_KEY="your_api_key_here"
 - **完整错误处理**: 分状态码处理（404/401/500 分类）、连接超时与连接错误处理
 - **速率限制处理**: `X-RateLimit-Remaining` 检查与 429 指数退避
 
-**输出**: 返回付费版专享功能的处理结果,包含执行状态码、结果数据和执行日志。
+**输出**: 返回付费版专享功能的处理结果,包含执行状态码、结果数据和执行日志.
 ### RESTful 调用
 
-针对RESTful 调用,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供RESTful 调用相关的配置参数、输入数据和处理选项。
-
+针对RESTful 调用,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供RESTful 调用相关的配置参数、输入数据和处理选项.
 **输出**: 返回RESTful 调用的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`RESTful 调用`的配置文档进行参数调优
 ### API Key 认证
 
-针对API Key 认证,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供API Key 认证相关的配置参数、输入数据和处理选项。
-
+针对API Key 认证,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供API Key 认证相关的配置参数、输入数据和处理选项.
 **输出**: 返回API Key 认证的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`API Key 认证`的配置文档进行参数调优
 #
@@ -122,24 +115,18 @@ Authorization: Bearer <api_key>
 X-API-Key: <api_key>
 ```
 
-> **升级提示**: 付费版提供 OAuth2、JWT、Basic Auth 三种高级认证方式的完整实现模板。
-
+> **升级提示**: 付费版提供 OAuth2、JWT、Basic Auth 三种高级认证方式的完整实现模板.
 ## 使用流程
 
 ### Step 1: 确定集成目标
-明确需要接入的第三方服务与数据需求。
-
+明确需要接入的第三方服务与数据需求.
 ### Step 2: 获取 API Key
-在目标服务平台注册并获取 API Key。
-
+在目标服务平台注册并获取 API Key.
 ### Step 3: 实现 RESTful 调用
-使用 `requests` 库封装通用调用函数,通过请求头传递 API Key。
-
+使用 `requests` 库封装通用调用函数,通过请求头传递 API Key.
 ### Step 4: 基础错误处理
-使用 `raise_for_status()` 检测 4xx/5xx 异常。
-
-> **提示**: 如需 OAuth2 令牌管理、GraphQL 查询、分状态码错误处理等高级功能,请升级付费版。
-
+使用 `raise_for_status()` 检测 4xx/5xx 异常.
+> **提示**: 如需 OAuth2 令牌管理、GraphQL 查询、分状态码错误处理等高级功能,请升级付费版.
 #
 ## 案例展示
 
@@ -160,8 +147,7 @@ def call_api(endpoint, method='GET', data=None, headers=None):
     return response.json()
 ```
 
-**说明**: 通用调用函数支持 GET/POST/PUT/DELETE,`json=data` 自动序列化请求体,`raise_for_status()` 在 4xx/5xx 时抛出 `HTTPError`。
-
+**说明**: 通用调用函数支持 GET/POST/PUT/DELETE,`json=data` 自动序列化请求体,`raise_for_status()` 在 4xx/5xx 时抛出 `HTTPError`.
 ### 案例2: API Key 认证调用
 **场景**: 开发者需要使用 API Key 调用第三方服务
 
@@ -176,10 +162,8 @@ response.raise_for_status()
 data = response.json()
 ```
 
-**说明**: 通过 `Authorization: Bearer` 请求头传递 API Key,`raise_for_status()` 检测异常。
-
-> **升级提示**: 付费版提供 OAuth2 `client_credentials` 令牌获取与 `refresh_token` 刷新的完整实现。
-
+**说明**: 通过 `Authorization: Bearer` 请求头传递 API Key,`raise_for_status()` 检测异常.
+> **升级提示**: 付费版提供 OAuth2 `client_credentials` 令牌获取与 `refresh_token` 刷新的完整实现.
 ## 错误处理
 
 | 错误场景 | HTTP 状态码 | 原因分析 | 处理方式 |
@@ -193,20 +177,15 @@ data = response.json()
 ## 常见问题
 
 ### Q1: 免费版支持哪些认证方式?
-A: 免费版仅支持 API Key 认证（请求头传递密钥）。OAuth2、JWT、Basic Auth 三种高级认证方式需升级付费版。
-
+A: 免费版仅支持 API Key 认证（请求头传递密钥）。OAuth2、JWT、Basic Auth 三种高级认证方式需升级付费版.
 ### Q2: 免费版支持 GraphQL 吗?
-A: 不支持。GraphQL 查询（按需查询、强类型、单一端点、实时订阅）为付费版专享功能。免费版仅支持 RESTful API 调用。
-
+A: 不支持。GraphQL 查询（按需查询、强类型、单一端点、实时订阅）为付费版专享功能。免费版仅支持 RESTful API 调用.
 ### Q3: 如何处理 OAuth2 令牌过期?
-A: 免费版不包含 OAuth2 认证管理。升级付费版可获取 `client_credentials` 授权模式获取 `access_token` 与 `refresh_token` 刷新的完整实现。
-
+A: 免费版不包含 OAuth2 认证管理。升级付费版可获取 `client_credentials` 授权模式获取 `access_token` 与 `refresh_token` 刷新的完整实现.
 ### Q4: 免费版的错误处理够用吗?
-A: 免费版提供基础的 `raise_for_status()` 异常检测。如需按状态码分类处理（404 提示资源不存在、401 提示 Token 过期）、连接超时与连接错误处理,请升级付费版。
-
+A: 免费版提供基础的 `raise_for_status()` 异常检测。如需按状态码分类处理（404 提示资源不存在、401 提示 Token 过期）、连接超时与连接错误处理,请升级付费版.
 ### Q5: 如何处理 API 速率限制?
-A: 免费版不包含速率限制处理。升级付费版可获取 `X-RateLimit-Remaining` 检查与 429 指数退避（2s/4s/8s）策略。
-
+A: 免费版不包含速率限制处理。升级付费版可获取 `X-RateLimit-Remaining` 检查与 429 指数退避（2s/4s/8s）策略.
 ## 已知限制
 
 1. **仅 API Key 认证**: 不支持 OAuth2 / JWT / Basic Auth
@@ -218,8 +197,7 @@ A: 免费版不包含速率限制处理。升级付费版可获取 `X-RateLimit-
 
 ---
 
-> **升级付费版** 解锁: OAuth2 令牌管理、JWT 认证、GraphQL 查询、完整错误处理（分状态码）、速率限制处理等完整能力。
-
+> **升级付费版** 解锁: OAuth2 令牌管理、JWT 认证、GraphQL 查询、完整错误处理（分状态码）、速率限制处理等完整能力.
 ## 输出格式
 
 ```json

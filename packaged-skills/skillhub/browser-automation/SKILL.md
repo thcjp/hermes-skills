@@ -6,20 +6,19 @@ displayName: "Browser Automation"
 summary: "自然语言经CLI自动化浏览器交互,告别手写脚本"
 license: "Proprietary"
 description: |-
-  Automate web browser interactions using natural language via CLI commands。Use when the user asks。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
+  Automate web browser interactions using natural language via CLI commands。Use when the user asks。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - Research
   - Automation
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+
 ---
 # Browser Automation
 
@@ -144,7 +143,7 @@ tags: "自动化,工作流,效率"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ```bash

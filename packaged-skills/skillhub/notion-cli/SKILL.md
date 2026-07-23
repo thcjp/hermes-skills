@@ -22,15 +22,14 @@ tags:
   - 企业Notion
   - 命令行
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+
 ---
 # Notion命令行(专业版)
 
@@ -63,29 +62,24 @@ tags: "工具,效率,自动化"
 | 双ID处理 | 自动 | 自动+手动切换 |
 | 技术支持 | 社区 | 优先工单(4小时响应) |
 
-**输入**: 用户提供与免费版能力对比所需的指令和必要参数。
+**输入**: 用户提供与免费版能力对比所需的指令和必要参数.
 ### 工作空间数量
 
-针对工作空间数量,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供工作空间数量相关的配置参数、输入数据和处理选项。
-
+针对工作空间数量,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供工作空间数量相关的配置参数、输入数据和处理选项.
 **输出**: 返回工作空间数量的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`工作空间数量`的配置文档进行参数调优
 ### 文件上传
 
-针对文件上传,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供文件上传相关的配置参数、输入数据和处理选项。
-
+针对文件上传,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供文件上传相关的配置参数、输入数据和处理选项.
 **输出**: 返回文件上传的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`文件上传`的配置文档进行参数调优
 #
 ## 适用场景
 
 ### 场景一:企业多工作空间管理
-集团企业拥有多个Notion工作空间(各部门独立),需要统一管理。
-
+集团企业拥有多个Notion工作空间(各部门独立),需要统一管理.
 ```bash
 notion workspace add work --key ntn_work_key
 notion workspace add personal --key ntn_personal_key
@@ -102,8 +96,7 @@ notion init --workspace research --key ntn_research_key
 ```
 
 ### 场景二:数据库Schema演进
-产品团队需要根据业务发展,动态调整Notion数据库的属性列。
-
+产品团队需要根据业务发展,动态调整Notion数据库的属性列.
 ```bash
 notion --json query tasks --limit 1 | jq '.properties | keys'
 # ...
@@ -125,8 +118,7 @@ notion templates tasks
 ```
 
 ### 场景三:批量数据迁移与文件上传
-企业需要将大量本地数据迁移到Notion,并上传相关附件。
-
+企业需要将大量本地数据迁移到Notion,并上传相关附件.
 ```bash
 notion batch-add tasks --input ./data/tasks.csv \
   --checkpoint --interval 100 \
@@ -150,8 +142,7 @@ notion move tasks --filter "Status=Done" --to <page-id>
 
 ## 使用流程
 
-预计上手时间:<120秒(适合中等复杂度工具)。
-
+预计上手时间:<120秒(适合中等复杂度工具).
 ### 第1步:升级到专业版
 ```bash
 notion license apply --key $PRO_LICENSE_KEY
@@ -408,35 +399,25 @@ notion audit export --format csv --output ./audit-2026-07.csv
 ## 常见问题
 
 ### Q1: 多工作空间如何切换?
-A: 1)用`notion workspace use <name>`切换默认;2)用`-w <name>`或`--workspace <name>`临时指定。
-
+A: 1)用`notion workspace use <name>`切换默认;2)用`-w <name>`或`--workspace <name>`临时指定.
 ### Q2: 批量操作失败如何重试?
-A: 使用`Idempotency-Key`重发同一批请求,系统跳过已成功部分。也可通过`batch status --job-id`查看进度,用`batch resume --job-id`断点续传。
-
+A: 使用`Idempotency-Key`重发同一批请求,系统跳过已成功部分。也可通过`batch status --job-id`查看进度,用`batch resume --job-id`断点续传.
 ### Q3: Schema变更会影响现有数据吗?
-A: 添加属性列不影响现有数据(新列为空)。删除属性列会导致该列数据丢失,建议先`--dry-run`预览。重命名数据库仅改变显示名,不影响数据。
-
+A: 添加属性列不影响现有数据(新列为空)。删除属性列会导致该列数据丢失,建议先`--dry-run`预览。重命名数据库仅改变显示名,不影响数据.
 ### Q4: 文件上传支持哪些格式?
-A: 支持图片(png/jpg/jpeg/gif/webp/svg)、文档(pdf/docx/xlsx/pptx)、文本(txt/md/csv/json/yaml)、压缩(zip/tar/gz)。单文件不超过5MB。
-
+A: 支持图片(png/jpg/jpeg/gif/webp/svg)、文档(pdf/docx/xlsx/pptx)、文本(txt/md/csv/json/yaml)、压缩(zip/tar/gz)。单文件不超过5MB.
 ### Q5: 跨工作空间移动页面会丢失数据吗?
-A: 不会。但目标数据库的Schema需要与源兼容(属性名与类型匹配),不匹配的属性会被丢弃。建议移动前先对比Schema。
-
+A: 不会。但目标数据库的Schema需要与源兼容(属性名与类型匹配),不匹配的属性会被丢弃。建议移动前先对比Schema.
 ### Q6: 双ID如何处理?
-A: 专业版默认自动处理,无需关心。在`auto`模式下,系统根据操作类型自动选择合适的ID。需要手动控制时,用`--id-type`指定。
-
+A: 专业版默认自动处理,无需关心。在`auto`模式下,系统根据操作类型自动选择合适的ID。需要手动控制时,用`--id-type`指定.
 ### Q7: 自定义模板支持哪些语法?
-A: 支持Jinja2完整语法,包括变量、条件、循环、过滤器、宏等。
-
+A: 支持Jinja2完整语法,包括变量、条件、循环、过滤器、宏等.
 ### Q8: 审计日志可以导出吗?
-A: 可以。支持按时间、操作类型、资源ID、工作空间筛选,导出为JSON或CSV。
-
+A: 可以。支持按时间、操作类型、资源ID、工作空间筛选,导出为JSON或CSV.
 ### Q9: 多级缓存如何主动失效?
-A: 通过`notion cache invalidate --alias tasks`主动失效,或在页面更新时自动失效相关缓存。
-
+A: 通过`notion cache invalidate --alias tasks`主动失效,或在页面更新时自动失效相关缓存.
 ### Q10: 专业版的SLA承诺是什么?
-A: 99.9%可用性,故障4小时响应,数据可恢复性RPO<15分钟、RTO<4小时。
-
+A: 99.9%可用性,故障4小时响应,数据可恢复性RPO<15分钟、RTO<4小时.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

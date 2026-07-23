@@ -3,71 +3,59 @@ slug: localmemo-pro
 name: localmemo-pro
 version: 2.0.0
 displayName: 本地长记忆
-summary: 零API零云依赖的本地向量记忆：离线可用、隐私不出域、embedding缓存省成本。
+summary: 零API零云依赖的本地向量记忆：离线可用、隐私不出域、embedding缓存省成本.
 license: Proprietary
 description: 面向隐私敏感与离线场景的本地向量记忆系统。基于LanceDB+Ollama nomic-embed-text，提供本地embedding生成、向量语义检索、embedding缓存、WAL写前日志、三层冷热分层能力。适用于隐私敏感行业（医疗/金融/法律）、离线/弱网环境、个人知识库、合规要求数据不出域场景，实现零外部API、零数据出域、完全离线可用。适用关键词：本地记忆、向量记忆、离线记忆、隐私记忆、embedding、LanceDB、Ollama、nomic、本地向量、local
-  memory。
+  memory.
 tags:
 - 智能代理
 - 记忆管理
 - 本地存储
 tools:
-- - read
+- read
 - exec
 homepage: https://skillhub.cn
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+
 ---
 # 本地长记忆（LocalMemo Pro）
 
-**零 API、零云端、零数据出域**的本地向量记忆系统。基于 Ollama + LanceDB，在本地完成 embedding 生成与语义检索，适合隐私敏感、离线、成本敏感场景。
-
+**零 API、零云端、零数据出域**的本地向量记忆系统。基于 Ollama + LanceDB，在本地完成 embedding 生成与语义检索，适合隐私敏感、离线、成本敏感场景.
 ## 核心能力
 
 ### 本地 embedding 引擎
-基于 Ollama nomic-embed-text（274MB，768 维），本地毫秒级生成 embedding，零外部 API 调用、零数据出域、完全离线可用；支持切换 bge-m3/mxbai-embed-large/all-MiniLM-L6 等模型。
-
-**输入**: 用户提供本地 embedding 引擎所需的指令和必要参数。
-**处理**: 解析本地 embedding 引擎的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回本地 embedding 引擎的响应数据,包含状态码、结果和日志。
-
+基于 Ollama nomic-embed-text（274MB，768 维），本地毫秒级生成 embedding，零外部 API 调用、零数据出域、完全离线可用；支持切换 bge-m3/mxbai-embed-large/all-MiniLM-L6 等模型.
+**输入**: 用户提供本地 embedding 引擎所需的指令和必要参数.
+**处理**: 解析本地 embedding 引擎的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回本地 embedding 引擎的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### LanceDB 向量库 + embedding 缓存
-本地 SQLite 存储向量，embedding 结果按 SHA256(文本) 缓存（命中 <1ms，未命中 10-50ms），典型命中率 60-90%，避免重复计算。
-
-**输入**: 用户提供LanceDB 向量库 + embedding 缓存所需的指令和必要参数。
-**处理**: 解析LanceDB 向量库 + embedding 缓存的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回LanceDB 向量库 + embedding 缓存的响应数据,包含状态码、结果和日志。
-
+本地 SQLite 存储向量，embedding 结果按 SHA256(文本) 缓存（命中 <1ms，未命中 10-50ms），典型命中率 60-90%，避免重复计算.
+**输入**: 用户提供LanceDB 向量库 + embedding 缓存所需的指令和必要参数.
+**处理**: 解析LanceDB 向量库 + embedding 缓存的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回LanceDB 向量库 + embedding 缓存的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 三层冷热分层 + WAL 写前日志
-L1 热内存（SESSION-STATE.md 活跃任务上下文）→ L2 温向量（LanceDB 检索）→ L3 冷存储（Git-Notes 结构化决策）→ L4 精选归档（MEMORY.md + daily/）；WAL 协议保证崩溃/压缩不丢上下文。
-
-**输入**: 用户提供三层冷热分层 + WAL 写前日志所需的指令和必要参数。
-**处理**: 解析三层冷热分层 + WAL 写前日志的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回三层冷热分层 + WAL 写前日志的响应数据,包含状态码、结果和日志。
-
+L1 热内存（SESSION-STATE.md 活跃任务上下文）→ L2 温向量（LanceDB 检索）→ L3 冷存储（Git-Notes 结构化决策）→ L4 精选归档（MEMORY.md + daily/）；WAL 协议保证崩溃/压缩不丢上下文.
+**输入**: 用户提供三层冷热分层 + WAL 写前日志所需的指令和必要参数.
+**处理**: 解析三层冷热分层 + WAL 写前日志的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回三层冷热分层 + WAL 写前日志的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 资源占用控制
-三级控制（向量数 >10000 自动压缩低重要性向量；磁盘 >500MB 归档 90 天前记忆；磁盘 >1GB 告警+停止写入仅检索），防止内存/CPU/磁盘膨胀。
-
-**输入**: 用户提供资源占用控制所需的指令和必要参数。
-**处理**: 解析资源占用控制的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回资源占用控制的响应数据,包含状态码、结果和日志。
-
+三级控制（向量数 >10000 自动压缩低重要性向量；磁盘 >500MB 归档 90 天前记忆；磁盘 >1GB 告警+停止写入仅检索），防止内存/CPU/磁盘膨胀.
+**输入**: 用户提供资源占用控制所需的指令和必要参数.
+**处理**: 解析资源占用控制的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回资源占用控制的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 一键初始化与维护
-`node （请参考skill目录中的脚本文件）` 初始化、`memory.js` CLI 提供 store/search/stats/forget/compact/cleanup/dedup/backup/cache-clean 等命令。
-
-**输入**: 用户提供一键初始化与维护所需的指令和必要参数。
-**处理**: 解析一键初始化与维护的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回一键初始化与维护的响应数据,包含状态码、结果和日志。
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：零云依赖的本地向、量记忆、隐私不出域、缓存省成本、面向隐私敏感与离、线场景的本地向量、记忆系统、向量语义检索、三层冷热分层能力、适用于隐私敏感行、弱网环境、个人知识库、合规要求数据不出、域场景、实现零外部、适用关键词、本地记忆、向量记忆、离线记忆、隐私记忆、本地向量、local等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+`node （请参考skill目录中的脚本文件）` 初始化、`memory.js` CLI 提供 store/search/stats/forget/compact/cleanup/dedup/backup/cache-clean 等命令.
+**输入**: 用户提供一键初始化与维护所需的指令和必要参数.
+**处理**: 解析一键初始化与维护的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回一键初始化与维护的响应数据,包含状态码、结果和日志.
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：零云依赖的本地向、量记忆、隐私不出域、缓存省成本、面向隐私敏感与离、线场景的本地向量、记忆系统、向量语义检索、三层冷热分层能力、适用于隐私敏感行、弱网环境、个人知识库、合规要求数据不出、域场景、实现零外部、适用关键词、本地记忆、向量记忆、离线记忆、隐私记忆、本地向量、local等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 适用场景
 
 **何时使用：**
@@ -172,8 +160,7 @@ node （请参考skill目录中的脚本文件） forget --query "深色模式"
 }
 ```
 
-启用后自动提供工具：`memory_recall`（搜索）、`memory_store`（存储）、`memory_forget`（删除）。
-
+启用后自动提供工具：`memory_recall`（搜索）、`memory_store`（存储）、`memory_forget`（删除）.
 ### Step 5：会话中使用记忆
 
 | 阶段 | 动作 |
@@ -287,38 +274,29 @@ embedding 由本地 nomic-embed-text 生成，数据未离开本机
 | Agent 平台 | 运行环境 | 必需 | 支持 SKILL.md 的任意 AI Agent |
 | 操作系统 | 运行环境 | 必需 | Windows / macOS / Linux |
 
-**硬件要求：** 内存建议 8GB+（Ollama 运行需 2-4GB）；磁盘建议 2GB+ 可用空间。
-
-**API Key 配置：** 本 Skill 核心功能无需任何 API Key，完全本地运行，零外部 API 调用。如需可选的云端备份功能，另行配置对应服务 Key。
-
-**可用性分类：** MD+EXEC（Markdown 指令 + exec 命令行执行）。核心记忆协议纯 Markdown 可工作；向量检索、embedding 生成需 Ollama + LanceDB 环境。
-
+**硬件要求：** 内存建议 8GB+（Ollama 运行需 2-4GB）；磁盘建议 2GB+ 可用空间.
+**API Key 配置：** 本 Skill 核心功能无需任何 API Key，完全本地运行，零外部 API 调用。如需可选的云端备份功能，另行配置对应服务 Key.
+**可用性分类：** MD+EXEC（Markdown 指令 + exec 命令行执行）。核心记忆协议纯 Markdown 可工作；向量检索、embedding 生成需 Ollama + LanceDB 环境.
 ## 常见问题
 
 **Q1：本地 embedding 质量够用吗？**
-A：nomic-embed-text 在 MTEB 基准上表现接近 text-embedding-3-small，对个人/小规模记忆库完全够用。如需更高质量可切换 bge-m3（1.2GB，1024 维）。
-
+A：nomic-embed-text 在 MTEB 基准上表现接近 text-embedding-3-small，对个人/小规模记忆库完全够用。如需更高质量可切换 bge-m3（1.2GB，1024 维）.
 **Q2：Ollama 占多少内存？**
-A：nomic-embed-text 运行时约 2-4GB 内存。资源紧张可用 all-MiniLM-L6（90MB，约 500MB 内存）。
-
+A：nomic-embed-text 运行时约 2-4GB 内存。资源紧张可用 all-MiniLM-L6（90MB，约 500MB 内存）.
 **Q3：embedding 缓存会占多少磁盘？**
-A：每条记忆的 embedding 约 3KB（768 维 float32）。10000 条记忆约 30MB，缓存上限可配置（默认 500MB），达到上限自动 LRU 淘汰。
-
+A：每条记忆的 embedding 约 3KB（768 维 float32）。10000 条记忆约 30MB，缓存上限可配置（默认 500MB），达到上限自动 LRU 淘汰.
 **Q4：能和云端方案混用吗？**
-A：可以。重要记忆用云端高质量 embedding，日常用本地。但需注意维度一致性，建议统一用一种。
-
+A：可以。重要记忆用云端高质量 embedding，日常用本地。但需注意维度一致性，建议统一用一种.
 **Q5：向量库损坏怎么办？**
-A：定期 `node （请参考skill目录中的脚本文件） backup` 备份。损坏后从备份恢复，或从 MEMORY.md + daily/ 重建（记忆内容仍在文件中，仅丢失向量索引）。
-
+A：定期 `node （请参考skill目录中的脚本文件） backup` 备份。损坏后从备份恢复，或从 MEMORY.md + daily/ 重建（记忆内容仍在文件中，仅丢失向量索引）.
 ## 已知限制
 
-1. **本地 embedding 质量有上限**：nomic-embed-text 接近 text-embedding-3-small，但不如 text-embedding-3-large；超大规模或高质量检索场景仍需云端方案。
-2. **资源占用较高**：Ollama 运行需 2-4GB 内存，资源受限设备（< 4GB 内存）难以运行；建议 8GB+ 内存。
-3. **无跨设备同步**：本地方案无云同步能力，多设备需手动备份恢复或外接同步工具。
-4. **首次部署门槛**：需安装 Ollama + 拉取模型 + npm install + init，比云端 API Key 方案复杂。
-5. **模型切换需重建索引**：切换 embedding 模型后维度变化，需重新生成所有向量索引（可从 MEMORY.md + daily/ 重建）。
-6. **WAL 仅保证单机持久性**：写前日志防崩溃丢失，但不防磁盘物理损坏，仍需定期 backup。
-
+1. **本地 embedding 质量有上限**：nomic-embed-text 接近 text-embedding-3-small，但不如 text-embedding-3-large；超大规模或高质量检索场景仍需云端方案.
+2. **资源占用较高**：Ollama 运行需 2-4GB 内存，资源受限设备（< 4GB 内存）难以运行；建议 8GB+ 内存.
+3. **无跨设备同步**：本地方案无云同步能力，多设备需手动备份恢复或外接同步工具.
+4. **首次部署门槛**：需安装 Ollama + 拉取模型 + npm install + init，比云端 API Key 方案复杂.
+5. **模型切换需重建索引**：切换 embedding 模型后维度变化，需重新生成所有向量索引（可从 MEMORY.md + daily/ 重建）.
+6. **WAL 仅保证单机持久性**：写前日志防崩溃丢失，但不防磁盘物理损坏，仍需定期 backup.
 ## 输出格式
 ```json
 {

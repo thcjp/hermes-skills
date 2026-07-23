@@ -6,19 +6,18 @@ displayName: "File Auto Organizer"
 summary: "文件自动整理工具。按文件类型、日期自动归类下载文件夹，适合整理控和洁癖用户。"
 license: "Proprietary"
 description: |-
-  文件自动整理工具。按文件类型、日期自动归类下载文件夹，适合整理控和洁癖用户。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。
+  文件自动整理工具。按文件类型、日期自动归类下载文件夹，适合整理控和洁癖用户。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
   - Other
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # File Auto Organizer
 
@@ -45,7 +44,9 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 文件操作 | 文件路径与操作参数 | 操作结果与文件元信息 |
+| 文件自动整理工具 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 按文件类型 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -135,7 +136,7 @@ python3 （请参考skill目录中的脚本文件） stats ~/Downloads
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ```bash

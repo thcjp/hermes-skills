@@ -7,19 +7,18 @@ summary: "用Google可编程搜索引擎(PSE)搜实时信息"
 license: "Proprietary"
 description: |-
   Search the web using Google Custom Search Engine (PSE)。Use this when
-  you need live information,。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。
+  you need live information,。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
 tags:
   - Research
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+
 ---
 # google-search
 
@@ -44,7 +43,9 @@ tags: "搜索,检索,工具"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 搜索检索 | 关键词与过滤条件 | 匹配结果与相关性排序 |
+| 用Google可编程 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 搜实时信息 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -145,7 +146,7 @@ tags: "搜索,检索,工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ```bash

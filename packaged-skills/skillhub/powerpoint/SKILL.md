@@ -7,19 +7,18 @@ summary: "经osascript控PowerPoint会话/幻灯片/备注/导出/放映状态"
 license: "Proprietary"
 description: |-
   Control PowerPoint app sessions, slides, notes, export, and presentation
-  state with osascript wor。Use when 用户需要PowerPoint相关功能时使用。不适用于超出本技能能力范围的复杂需求。
+  state with osascript wor。Use when 用户需要PowerPoint相关功能时使用。不适用于超出本技能能力范围的复杂需求.
 tags:
   - Other
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # PowerPoint
 
@@ -43,7 +42,8 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 经osascript | 目标数据与配置参数 | 处理结果与执行状态 |
+| 放映状态 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -144,8 +144,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用PowerPoint？

@@ -7,19 +7,18 @@ summary: "管OpenAI文件/助手/向量库/批次/微调/模型资源"
 license: "Proprietary"
 description: |-
   Manage llm-provider files, assistants, vector stores, batches, fine-tuning
-  jobs, and model resources vi。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
+  jobs, and model resources vi。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - Creative
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # llm-provider
 
@@ -43,7 +42,9 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 文件操作 | 文件路径与操作参数 | 操作结果与文件元信息 |
+| 模型调用 | 输入文本与模型参数 | 模型输出与用量统计 |
+| 管OpenAI文件 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -152,8 +153,7 @@ clawlink_call_tool --tool "openai_list_files" --params '{"purpose": "batch"}'
 1. Ensure the integration slug is exactly `llm-provider`.
 2. Use `clawlink_describe_tool` to verify parameter names and types before calling.
 3. For write operations, always call `clawlink_preview_tool` first.
-> **处理方式**: 参考上表中的错误场景说明,按照对应建议进行处理和恢复。
-
+> **处理方式**: 参考上表中的错误场景说明,按照对应建议进行处理和恢复.
 ## 依赖说明
 
 ### 运行环境
@@ -176,7 +176,7 @@ clawlink_call_tool --tool "openai_list_files" --params '{"purpose": "batch"}'
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### Create a chat completion

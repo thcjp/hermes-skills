@@ -7,19 +7,18 @@ summary: "SkillHub实时运营仪表盘,监控会话/成本/cron/网关"
 license: "Proprietary"
 description: |-
   Real-time operations dashboard for SkillHub。Monitors sessions, costs,
-  cron jobs, and gateway hea。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。适用于独立开发者、企业团队和自动化工作流场景。
+  cron jobs, and gateway hea。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
 tags:
   - Integrations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # SkillHub-dashboard
 
@@ -44,7 +43,9 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 仪表盘构建 | 数据源与布局配置 | 仪表盘页面与刷新状态 |
+| Cron配置 | 时间表达式与命令 | 调度ID与下次执行时间 |
+| 监控告警 | 监控目标与阈值 | 告警事件与指标快照 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -145,8 +146,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用openclaw-dashboard？

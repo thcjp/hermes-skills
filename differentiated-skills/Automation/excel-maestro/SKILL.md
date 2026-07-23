@@ -3,7 +3,7 @@ slug: excel-maestro
 name: excel-maestro
 version: 1.0.0
 displayName: Excel大师
-summary: 解决大文件内存爆炸、格式丢失、科学计数法、公式不计算四大痛点，按文件规模分层处理。
+summary: 解决大文件内存爆炸、格式丢失、科学计数法、公式不计算四大痛点，按文件规模分层处理.
 license: Proprietary
 description: 'Excel大师是面向批量表格处理的能力包。它不只罗列脚本，更解决四个高频痛点：
 
@@ -15,15 +15,14 @@ tags:
 - 表格处理
 - 效率工具
 tools:
-- - read
+- read
 - exec
 homepage: https://skillhub.cn
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+
 ---
 # Excel大师
 
@@ -80,8 +79,7 @@ wb.save("output.xlsx")  # 不会OOM
 
 ## 第二步：格式保留矩阵
 
-> 90%的"格式丢失"问题源于选错了工具。
-
+> 90%的"格式丢失"问题源于选错了工具.
 | 操作需求 | 用pandas | 用openpyxl | 说明 |
 |---:|---:|---:|---:|
 | 纯数据读写 | ✅ | ✅ | pandas更简洁 |
@@ -310,8 +308,7 @@ if errors:
         json.dump(errors, f, ensure_ascii=False, indent=2)
 ```
 
-**批量输出命名规则建议**：`原名_out.xlsx` 或统一汇总到一个文件。
-
+**批量输出命名规则建议**：`原名_out.xlsx` 或统一汇总到一个文件.
 ---
 
 ## 第七步：性能优化技巧
@@ -364,23 +361,17 @@ pip install openpyxl pandas xlrd formulas
 ## FAQ
 
 **Q：50万行Excel一读就OOM怎么办？**
-A：用`load_workbook(read_only=True, data_only=True)`流式读取，配合`iter_rows(values_only=True)`逐行处理，内存恒定。
-
+A：用`load_workbook(read_only=True, data_only=True)`流式读取，配合`iter_rows(values_only=True)`逐行处理，内存恒定.
 **Q：用pandas读写后Excel颜色和公式都没了？**
-A：pandas只处理数据不处理格式。需要保格式就用openpyxl加载原文件，只改目标单元格再save（见"路径B"）。
-
+A：pandas只处理数据不处理格式。需要保格式就用openpyxl加载原文件，只改目标单元格再save（见"路径B"）.
 **Q：身份证号变成科学计数法怎么救？**
-A：读取时`dtype={"身份证号": str}`，或openpyxl读后`str(cell.value)`。写入前设`number_format = FORMAT_TEXT`。
-
+A：读取时`dtype={"身份证号": str}`，或openpyxl读后`str(cell.value)`。写入前设`number_format = FORMAT_TEXT`.
 **Q：data_only=True读公式单元格是None？**
-A：文件从未被Excel打开保存过，没有缓存值。要么用Excel打开存一次，要么用formulas库重算，要么data_only=False读公式字符串。
-
+A：文件从未被Excel打开保存过，没有缓存值。要么用Excel打开存一次，要么用formulas库重算，要么data_only=False读公式字符串.
 **Q：多个Excel文件需要合并到一个sheet？**
-A：用`merge_sheets.py --inputs 目录 --output out.xlsx`，或pandas的`pd.concat([pd.read_excel(f) for f in files])`。
-
+A：用`merge_sheets.py --inputs 目录 --output out.xlsx`，或pandas的`pd.concat([pd.read_excel(f) for f in files])`.
 **Q：CSV用Excel打开中文乱码？**
-A：写入时`encoding="utf-8-sig"`加BOM，Excel就能正确识别UTF-8。
-
+A：写入时`encoding="utf-8-sig"`加BOM，Excel就能正确识别UTF-8.
 ---
 
 ## 故障排查
@@ -413,7 +404,7 @@ A：写入时`encoding="utf-8-sig"`加BOM，Excel就能正确识别UTF-8。
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
-- 本skill基于本地脚本，无需额外API Key
+- 本skill基于本地脚本，基础LLM由Agent平台提供
 - 涉及读取在线Excel（如OneDrive）时需对应平台OAuth Token
 
 ### 可用性分类
@@ -426,33 +417,28 @@ A：写入时`encoding="utf-8-sig"`加BOM，Excel就能正确识别UTF-8。
 - 它不只罗列脚本，更解决四个高频痛点：
   大xlsx一加载就内存爆炸、用pandas读写后格式公式全丢失、长数字变成科学计数法、
   data_only=True拿到公式却是None
-**技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置。
-
+**技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
-用`input_params`参数进行配置。
-
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志。
+用`input_params`参数进行配置.
+**输入**: 用户提供核心功能执行所需的指令和必要参数.
+**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
-用`config_options`参数进行配置。
-
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志。
+用`config_options`参数进行配置.
+**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+**处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
-用`output_format`参数进行配置。
-
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志。
+用`output_format`参数进行配置.
+**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+**处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：解决大文件内存爆、格式丢失、公式不计算四大痛、按文件规模分层处、Use、when、需要文件处理、文档转换、格式互转、内容提取时使用、不适用于加密文件等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：解决大文件内存爆、格式丢失、公式不计算四大痛、按文件规模分层处、Use、when、需要文件处理、文档转换、格式互转、内容提取时使用、不适用于加密文件等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -470,17 +456,44 @@ A：写入时`encoding="utf-8-sig"`加BOM，Excel就能正确识别UTF-8。
 
 ## 示例
 
-### 示例1：基础用法
+### 示例1：大文件流式读取避免OOM
+
+用户需要读取一个 50 万行的 Excel 文件并提取关键列，直接加载会内存爆炸：
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+输入: 50万行xlsx文件，需提取"订单号"和"金额"两列
+处理:
+  1. 按文件规模分层：>50万行 → openpyxl read_only 流式
+  2. 使用 iter_rows(values_only=True) 逐行读取
+  3. 身份证号/订单号列指定 dtype=str 防止科学计数法
+  4. 内存恒定，不随行数增长
+输出: 成功提取 500,000 行数据
+      内存占用: ~50MB（恒定）
+      耗时: 12秒
+      保存为 output.csv（utf-8-sig 编码）
+```
+
+### 示例2：保留格式修改单元格
+
+用户需要在保留原有颜色、公式、合并单元格的前提下修改某列数据：
+
+```
+输入: 在已有的报表xlsx中更新C列销售额，保留所有格式
+处理:
+  1. 选择路径B：openpyxl load_workbook（不加read_only）
+  2. 只修改目标单元格 ws["C2"] = new_value
+  3. 其余格式（颜色/字体/公式/合并）全部保留
+  4. save 输出新文件
+输出: output.xlsx 已保存
+      原有格式: 100%保留（颜色、公式、合并单元格均未丢失）
+      修改内容: C列 200 行销售额已更新
 ```
 
 ## 已知限制
 
-- 需要API Key，无Key环境无法使用
+- 大文件处理（>100MB xlsx）仍可能触发内存限制，openpyxl模式建议文件不超过50MB
+- 格式保真度受openpyxl/pandas能力限制，部分Excel高级特性（如数据透视表、条件格式中的色阶）可能丢失
+- 科学计数法转换需指定列范围，全表扫描可能将非数值文本误判为数字导致数据损坏
 
 ## 输出格式
 ```json

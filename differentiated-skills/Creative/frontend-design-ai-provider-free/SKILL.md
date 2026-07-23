@@ -3,7 +3,7 @@ slug: "frontend-design-ai-provider-free"
 name: "frontend-design-ai-provider-free"
 version: "1.0.0"
 displayName: "前端设计-免费版"
-summary: "创建高质量前端界面,避免AI审美同质化,支持组件/页面/应用设计,适合个人开发者。"
+summary: "创建高质量前端界面,避免AI审美同质化,支持组件/页面/应用设计,适合个人开发者"
 license: "Proprietary"
 edition: "free"
 description: |-
@@ -24,11 +24,9 @@ tags:
   - 前端设计
   - UI设计
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 ---
 # 前端设计工具 - 免费版
 
@@ -92,13 +90,13 @@ tags: "设计,UI/UX,创意"
 - 调性:极简主义,大量留白,精致排版
 - 约束:纯HTML/CSS/JS,无需框架
 - 差异化:独特的滚动动效与字体选择
-# ...
+# .
 实现示例(HTML结构):
 <section class="hero">
   <h1 class="display-font">创意开发者</h1>
   <p class="body-font">用代码构建独特体验</p>
 </section>
-# ...
+# .
 <style>
 .display-font {
   font-family: 'Playfair Display', serif;
@@ -122,7 +120,7 @@ tags: "设计,UI/UX,创意"
 - 调性:精致极简,功能性优先
 - 约束:React,需要响应式
 - 差异化:微交互与过渡动效
-# ...
+# .
 配色方案:
 :root {
   --bg-primary: #0a0a0a;
@@ -143,7 +141,7 @@ tags: "设计,UI/UX,创意"
 - 调性:大胆 maximalism,强烈视觉冲击
 - 约束:需要快速加载
 - 差异化:渐变网格背景 + 大胆字体
-# ...
+# .
 字体搭配:
 - 标题:Space Grotesk(几何感)
 - 正文:Source Sans 3(可读性)
@@ -160,7 +158,7 @@ tags: "设计,UI/UX,创意"
 
 ## 触发条件
 
-需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于非本工具能力范围的需求。
+、品牌视觉时使用。不适用于非本工具能力范围的需求。
 
 ## 快速开始
 
@@ -191,7 +189,7 @@ Agent 会根据设计思考输出生产级代码(HTML/CSS/JS 或 React/Vue)。
 /* 字体选择原则 */
 /* 避免:Arial, Inter, Roboto, system-ui */
 /* 推荐:独特的展示字体 + 精致的正文字体 */
-// ...
+// .
 /* 配色方案原则 */
 :root {
   /* 主色调占主导,辅以锐利的强调色 */
@@ -199,7 +197,7 @@ Agent 会根据设计思考输出生产级代码(HTML/CSS/JS 或 React/Vue)。
   --color-accent: #e94560;
   /* 避免均匀分布的配色,主色+强调色更有效 */
 }
-// ...
+// .
 /* 动效原则 */
 /* 优先CSS-only方案(HTML) */
 /* React可用Motion库 */
@@ -210,7 +208,7 @@ Agent 会根据设计思考输出生产级代码(HTML/CSS/JS 或 React/Vue)。
 }
 .hero > *:nth-child(2) { animation-delay: 0.1s; }
 .hero > *:nth-child(3) { animation-delay: 0.2s; }
-// ...
+// .
 /* 空间构图原则 */
 /* 意外的布局,不对称,重叠,对角线流动 */
 /* 慷慨的负空间 或 受控的密度 */

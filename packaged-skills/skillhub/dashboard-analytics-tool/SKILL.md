@@ -5,9 +5,9 @@ displayName: "仪表盘分析工具"
 version: "1.0.0"
 summary: "封装仪表盘分析API,请求参数直转响应数据,付费版独享批量与高级配置"
 description: |-
-  API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据。
-  Use when 用户说"Dashboard Analytics Tool 核心处理"、Dashboard Analytics Tool 核心处理时使用。
-  不适用于需要人工判断的复杂场景。
+  API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.
+  Use when 用户说"Dashboard Analytics Tool 核心处理"、Dashboard Analytics Tool 核心处理时使用.
+  不适用于需要人工判断的复杂场景.
 license: "Proprietary"
 tools:
   - read
@@ -19,8 +19,7 @@ tags:
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Dashboard Analytics Tool 智能分析
 
@@ -105,7 +104,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 示例1: 基础用法
@@ -129,3 +128,6 @@ A: 请参考使用流程章节
 ## 已知限制
 
 - 需要LLM支持
+- 数据处理能力受限于本地硬件资源
+- 大数据量时分析性能可能显著下降
+- 数据准确性依赖输入质量，无法自动修正脏数据

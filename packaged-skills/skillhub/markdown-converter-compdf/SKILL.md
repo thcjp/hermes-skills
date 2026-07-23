@@ -7,19 +7,18 @@ summary: "用ComPDF Cloud API处理/转换/编辑/提取PDF"
 license: "Proprietary"
 description: |-
   Process, convert, edit, and extract data from PDF files using the ComPDF
-  Cloud API。Supports form。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
+  Cloud API。Supports form。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
   - Knowledge
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Markdown,文档,工具"
+
 ---
 # Markdown convert
 
@@ -44,7 +43,9 @@ tags: "Markdown,文档,工具"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| PDF处理 | PDF文件与操作类型 | 提取文本或生成文档 |
+| 用ComPDF Cl | 目标数据与配置参数 | 处理结果与执行状态 |
+| 提取PDF | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -145,8 +146,7 @@ tags: "Markdown,文档,工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Markdown convert？

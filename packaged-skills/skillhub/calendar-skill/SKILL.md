@@ -6,19 +6,18 @@ displayName: "Calendar"
 summary: "安全管理Google日历/Outlook/Exchange,一处排程多端同步"
 license: "Proprietary"
 description: |-
-  Calendar Management - secure Google Calendar, Microsoft Outlook & Exchange。Use when the user wan。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
+  Calendar Management - secure Google Calendar, Microsoft Outlook & Exchange。Use when the user wan。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
   - Productivity
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Calendar
 
@@ -125,8 +124,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Calendar？

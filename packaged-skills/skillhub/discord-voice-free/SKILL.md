@@ -28,8 +28,6 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "Discord,社交,通信"
 ---
 # Discord 语音助手 (免费版)
 
@@ -90,7 +88,7 @@ Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
-需要配置对应API Key，详见上文环境配置章节
+如需调用外部API，请参考环境配置章节
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
@@ -159,20 +157,20 @@ agent-cli discord_voice status
 #     }
 #   }
 # }
-# ...
+# ..
 # 2. 加入语音频道
 agent-cli discord_voice join 1234567890123456
 # 输出: [discord-voice] Joined channel "General" (1234567890123456)
-# ...
+# ..
 # 3. 用户说话 -> VAD 检测 -> 本地 Whisper 转写
 # 日志: [discord-voice] VAD: speech started
 # 日志: [discord-voice] VAD: speech ended (duration: 3.8s)
 # 日志: [discord-voice] STT (local): "今天天气怎么样?"
-# ...
+# ..
 # 4. Agent 处理 -> TTS 合成 -> 频道播放
 # 日志: [discord-voice] TTS: synthesizing 64 chars
 # 日志: [discord-voice] Playing audio (2.7s)
-# ...
+# ..
 # 5. 查看状态
 agent-cli discord_voice status
 # 输出: Connected to "General" | Uptime: 5m

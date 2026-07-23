@@ -3,7 +3,7 @@ slug: "kujiale-design-tool-pro"
 name: "kujiale-design-tool-pro"
 version: "1.0.0"
 displayName: "酷家乐设计-专业版"
-summary: "企业级室内设计工具,支持多方案对比、批量渲染、自定义风格与团队协作,适配商业设计生产。"
+summary: "企业级室内设计工具,支持多方案对比、批量渲染、自定义风格与团队协作,适配商业设计生产"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -27,14 +27,12 @@ tags:
   - 企业版
   - 商业内容
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 ---
 # 酷家乐设计工具 - 专业版
 
@@ -97,18 +95,18 @@ python3 （请参考skill目录中的脚本文件） \
   --styles "现代简约,北欧风,新中式" \
   --parallel 3 \
   --output ./proposals/
-# ...
+# .
 # 每个方案独立布局与渲染
 # 方案1: 现代简约
 node （请参考skill目录中的脚本文件） --token=<token> --planId=<planId>
 node （请参考skill目录中的脚本文件） --token=<token> --designId=<designId1> --styleId=<styleId1> --autoDesign=true
 node （请参考skill目录中的脚本文件） --obsDesignId=<designId1> --xToken=<token> --quality=hd
-# ...
+# .
 # 方案2: 北欧风(并行)
 node （请参考skill目录中的脚本文件） --token=<token> --planId=<planId>
 node （请参考skill目录中的脚本文件） --token=<token> --designId=<designId2> --styleId=<styleId2> --autoDesign=true
 node （请参考skill目录中的脚本文件） --obsDesignId=<designId2> --xToken=<token> --quality=hd
-# ...
+# .
 # 生成对比报告
 python3 （请参考skill目录中的脚本文件） \
   --proposals ./proposals/ \
@@ -127,7 +125,7 @@ python3 （请参考skill目录中的脚本文件） \
   --quality 4k \
   --parallel 5 \
   --output ./renders/
-# ...
+# .
 # 批量生成全景图
 python3 （请参考skill目录中的脚本文件） \
   --designId <designId> \
@@ -144,14 +142,14 @@ python3 （请参考skill目录中的脚本文件） \
 python3 （请参考skill目录中的脚本文件） create \
   --name "万科未来城样板房" \
   --team "design-team-a"
-# ...
+# .
 # 提交方案版本
 python3 （请参考skill目录中的脚本文件） \
   --project "万科未来城样板房" \
   --designId <designId> \
   --message "v1.0 现代简约方案" \
   --reviewer alice
-# ...
+# .
 # 团队成员拉取与审核
 python3 （请参考skill目录中的脚本文件） --project "万科未来城样板房"
 python3 （请参考skill目录中的脚本文件） --pr 42 --action approve --comment "风格统一,通过"
@@ -167,7 +165,7 @@ python3 （请参考skill目录中的脚本文件） --pr 42 --action approve --
 
 ## 触发条件
 
-需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于非本工具能力范围的需求。
+、品牌视觉时使用。不适用于非本工具能力范围的需求。
 
 ## 快速开始
 

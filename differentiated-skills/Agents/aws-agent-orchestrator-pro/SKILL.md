@@ -3,25 +3,16 @@ slug: aws-agent-orchestrator-pro
 name: aws-agent-orchestrator-pro
 version: 1.0.0
 displayName: AWS智能体编排专业版
-summary: 完整的AWS多智能体编排能力，含Orchestrator协作、Gateway工具链与跨会话LTM长期记忆，面向团队与企业生产环境。
+summary: 完整的AWS多智能体编排能力，含Orchestrator协作、Gateway工具链与跨会话LTM长期记忆，面向团队与企业生产环境.
 license: Proprietary
 description: 'AWS智能体编排专业版（aws-agent-orchestrator-pro）面向团队与企业生产环境，在免费版单智能体能力之上，解锁多智能体编排、Gateway工具链与跨会话长期记忆（LTM）三大高级能力。它让企业能够在统一session上下文中协调多个Specialist
-  Agent，将Lambda/API网关转化为MCP工具，并跨会话沉淀事实与决策。
-
-
+  Agent，将Lambda/API网关转化为MCP工具，并跨会话沉淀事实与决策.
   核心能力：Orchestrator-Specialists多智能体协作、AgentCore Memory STM+LTM双模记忆、AgentCore Gateway（Lambda/REST/MCP三transport）、LangGraph完整StateGraph编排、BedrockAgentCoreApp
-  HTTP服务封装、agentcore CLI全命令、容器化部署与生命周期管理、企业级可观测性与流式响应、跨Agent session上下文共享、AWS Bedrock全模型调用、企业级场景指南与多角色用例。
-
-
-  适用场景：企业级客服中心多Agent协作、金融风控多智能体决策、电商导购+下单+售后流水线、医疗问诊分诊+专家会诊、广告投放多Agent协同、跨部门知识中台、生产环境智能体集群、Bedrock生产化部署与治理、团队级AI工作流编排。
-
-
+  HTTP服务封装、agentcore CLI全命令、容器化部署与生命周期管理、企业级可观测性与流式响应、跨Agent session上下文共享、AWS Bedrock全模型调用、企业级场景指南与多角色用例.
+  适用场景：企业级客服中心多Agent协作、金融风控多智能体决策、电商导购+下单+售后流水线、医疗问诊分诊+专家会诊、广告投放多Agent协同、跨部门知识中台、生产环境智能体集群、Bedrock生产化部署与治理、团队级AI工作流编排.
   差异化：相比免费版与通用部署模板，专业版提供三大独有能力：(1) Orchestrator委托模式，支持内联函数与独立部署Agent混合协作；(2) Gateway工具链，将Lambda/REST/MCP三种transport统一封装为可调用工具并自动注入鉴权；(3)
-  LTM长期记忆，跨会话/跨Agent沉淀事实与决策，约10秒最终一致性。配合企业级场景指南（4角色×3+场景）、完整FAQ（10+问）与性能优化策略，覆盖从POC到生产的全路径。
-
-
+  LTM长期记忆，跨会话/跨Agent沉淀事实与决策，约10秒最终一致性。配合企业级场景指南（4角色×3+场景）、完整FAQ（10+问）与性能优化策略，覆盖从POC到生产的全路径.
   适用关键词：aws智能体、多智能体编排、agentcore gateway、langgraph orchestrator、bedrock多agent、跨会话记忆、LTM记忆、MCP工具链、智能体集群、企业智能体编排
-
 
   版本定位：收费专业版，定价¥99/月（企业工具类）。包含免费版全部能力 + 3项高级解锁能力 + 企业级场景指南 + 优先支持。免费试用请使用 aws-agent-orchestrator-free。'
 tags:
@@ -39,26 +30,20 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "AWS,云计算,DevOps"
+
 ---
 # AWS智能体编排专业版（aws-agent-orchestrator-pro）
 
-本Skill在免费版单智能体能力之上，解锁**多智能体编排、Gateway工具链、跨会话长期记忆（LTM）**三大高级能力，面向团队与企业生产环境。
-
-> 版本边界：本专业版包含免费版全部能力（单智能体编排、STM短时记忆、本地工具、agentcore CLI），并新增3项高级解锁能力。如仅需个人试用，可使用 `aws-agent-orchestrator-free`。
-
+本Skill在免费版单智能体能力之上，解锁**多智能体编排、Gateway工具链、跨会话长期记忆（LTM）**三大高级能力，面向团队与企业生产环境.
+> 版本边界：本专业版包含免费版全部能力（单智能体编排、STM短时记忆、本地工具、agentcore CLI），并新增3项高级解锁能力。如仅需个人试用，可使用 `aws-agent-orchestrator-free`.
 ## 使用流程
 
 ### Step 1：准备阶段
-确认运行环境满足依赖说明中的要求,准备好必要的输入参数。
-
+确认运行环境满足依赖说明中的要求,准备好必要的输入参数.
 ### Step 2：执行阶段
-按照核心能力章节中的操作指令执行,使用`input_params`参数配置执行选项。
-
+按照核心能力章节中的操作指令执行,使用`input_params`参数配置执行选项.
 ### Step 3：验证阶段
-检查执行结果,如遇错误可查阅错误处理章节进行排查。
-
+检查执行结果,如遇错误可查阅错误处理章节进行排查.
 ## 示例
 
 ### 基本用法
@@ -75,8 +60,7 @@ Skill: 执行完成,结果如下: 操作成功
 
 ## 一、快速开始（按时间分级）
 
-本工具属"复杂工具"级别，完整上手目标 < 300秒。
-
+本工具属"复杂工具"级别，完整上手目标 < 300秒.
 | 阶段 | 目标耗时 | 任务 |
 |---|----|---|
 | 安装阶段 | < 60秒 | pip安装三件套 + agentcore CLI |
@@ -224,31 +208,27 @@ agentcore launch --deployment-type container
 | 异步调用 | Runtime支持async调用 | ✅ 专业版独有 |
 | 可观测性 | 集成CloudWatch追踪 | ✅ 专业版独有 |
 
-> 关于MCP：MCP是Agent工具协议的行业标准术语。专业版Gateway支持三种transport：Mock（本地降级）、Local MCP（本地MCP server）、Production Gateway（Lambda/REST/MCP三种生产transport）。Gateway部署后会自动配置 `BEDROCK_AGENTCORE_GATEWAY_URL` 环境变量。
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：完整的、AWS、多智能体编排能力、工具链与跨会话、长期记忆、面向团队与企业生、产环境、智能体编排专业版、在免费版单智能体、能力之上、解锁多智能体编排、工具链与跨会话长、期记忆、三大高级能力、它让企业能够在统、session、上下文中协调多个、网关转化为、并跨会话沉淀事实、与决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+> 关于MCP：MCP是Agent工具协议的行业标准术语。专业版Gateway支持三种transport：Mock（本地降级）、Local MCP（本地MCP server）、Production Gateway（Lambda/REST/MCP三种生产transport）。Gateway部署后会自动配置 `BEDROCK_AGENTCORE_GATEWAY_URL` 环境变量.
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：完整的、AWS、多智能体编排能力、工具链与跨会话、长期记忆、面向团队与企业生、产环境、智能体编排专业版、在免费版单智能体、能力之上、解锁多智能体编排、工具链与跨会话长、期记忆、三大高级能力、它让企业能够在统、session、上下文中协调多个、网关转化为、并跨会话沉淀事实、与决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ### 核心功能执行
-执行核心功能执行操作,使用`input_params`参数进行配置。
-
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志。
+执行核心功能执行操作,使用`input_params`参数进行配置.
+**输入**: 用户提供核心功能执行所需的指令和必要参数.
+**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
-执行参数配置与调用操作,使用`config_options`参数进行配置。
-
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志。
+执行参数配置与调用操作,使用`config_options`参数进行配置.
+**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+**处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 扩展能力3
-执行扩展能力3操作,使用`param_3`参数进行配置。
-
-**输入**: 用户提供扩展能力3所需的指令和必要参数。
-**处理**: 解析扩展能力3的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回扩展能力3的响应数据,包含状态码、结果和日志。
+执行扩展能力3操作,使用`param_3`参数进行配置.
+**输入**: 用户提供扩展能力3所需的指令和必要参数.
+**处理**: 解析扩展能力3的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回扩展能力3的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`param_3`参数,支持创建/查询/修改操作
 
 ## 五、命名规范（必须遵守）
@@ -265,8 +245,7 @@ agentcore launch --deployment-type container
 
 ### 6.1 多智能体编排（Orchestrator-Specialists）
 
-**模式**：Orchestrator作为入口，根据用户意图将请求路由到一个或多个Specialist Agent。所有Specialist共享 `session_id` 以保持上下文一致。
-
+**模式**：Orchestrator作为入口，根据用户意图将请求路由到一个或多个Specialist Agent。所有Specialist共享 `session_id` 以保持上下文一致.
 **Specialist类型**：
 - 内联函数：定义在同一StateGraph内的节点
 - 独立部署Agent：通过AgentCore Runtime调用其他已部署Agent
@@ -278,8 +257,7 @@ agentcore launch --deployment-type container
 
 ### 6.2 Gateway工具链
 
-**能力**：将AWS Lambda、RESTful API、MCP端点统一封装为Agent可调用的工具，自动注入鉴权。
-
+**能力**：将AWS Lambda、RESTful API、MCP端点统一封装为Agent可调用的工具，自动注入鉴权.
 **部署**：
 ```bash
 python -m bedrock_agentcore.gateway.deploy --stack-name my-agents --region us-east-1
@@ -301,12 +279,10 @@ result = gateway.call("tool_name", param1=value1, param2=value2)
 | REST | RESTful API | 生产环境 |
 | `Production MCP` | 生产工具协议端点 | 企业工具协议生态 |
 
-> Lambda集成注意：Lambda函数必须从 `bedrockAgentCoreToolName` 中剥离 `___` 前缀，否则会报 "Unknown tool"。
-
+> Lambda集成注意：Lambda函数必须从 `bedrockAgentCoreToolName` 中剥离 `___` 前缀，否则会报 "Unknown tool".
 ### 6.3 跨会话长期记忆（LTM）
 
-**能力**：跨会话、跨Agent持久化事实与决策，约10秒最终一致性。
-
+**能力**：跨会话、跨Agent持久化事实与决策，约10秒最终一致性.
 **API**：
 ```python
 from bedrock_agentcore.memory import MemoryClient
@@ -331,8 +307,7 @@ events = memory.list_events(session_id)
 ### 场景1：企业级客服中心多Agent协作
 
 **用户角色**：企业客服团队负责人
-**目标**：构建售前/售后/技术支持三Agent协作的客服中心，共享用户画像。
-
+**目标**：构建售前/售后/技术支持三Agent协作的客服中心，共享用户画像.
 ```python
 def presales_agent(state: State):
     """售前咨询"""
@@ -364,8 +339,7 @@ def orchestrator(state: State):
 ### 场景2：金融风控多智能体决策
 
 **用户角色**：金融科技团队
-**目标**：反欺诈、信用评估、风险预警三Agent协同决策。
-
+**目标**：反欺诈、信用评估、风险预警三Agent协同决策.
 ```python
 def fraud_detection_agent(state: State):
     """反欺诈检测"""
@@ -396,8 +370,7 @@ def orchestrator(state: State):
 ### 场景3：电商导购+下单流水线
 
 **用户角色**：电商技术团队
-**目标**：导购推荐→下单→支付→物流全链路自动化。
-
+**目标**：导购推荐→下单→支付→物流全链路自动化.
 ```python
 def shopping_guide(state: State):
     """导购推荐"""
@@ -435,8 +408,7 @@ def orchestrator(state: State):
 ### 场景4：医疗问诊分诊+专家会诊
 
 **用户角色**：医疗AI团队
-**目标**：症状收集→分诊→专家会诊→处方建议。
-
+**目标**：症状收集→分诊→专家会诊→处方建议.
 ```python
 def symptom_collection(state: State):
     """症状收集"""
@@ -485,41 +457,29 @@ def orchestrator(state: State):
 ## 九、FAQ（常见问题）
 
 ### Q1：专业版与免费版的核心差异是什么？
-A：专业版在免费版单智能体能力之上，新增三项高级能力：(1) 多智能体Orchestrator-Specialists协作；(2) Gateway工具链（Lambda/REST/MCP三transport）；(3) LTM跨会话长期记忆。同时提供企业级场景指南、性能优化策略与优先支持。
-
+A：专业版在免费版单智能体能力之上，新增三项高级能力：(1) 多智能体Orchestrator-Specialists协作；(2) Gateway工具链（Lambda/REST/MCP三transport）；(3) LTM跨会话长期记忆。同时提供企业级场景指南、性能优化策略与优先支持.
 ### Q2：多Agent协作时如何保持上下文一致？
-A：所有Specialist共享同一 `session_id`。Orchestrator在路由前将session_id注入State，Specialist通过该ID访问STM与LTM，确保跨Agent上下文一致。
-
+A：所有Specialist共享同一 `session_id`。Orchestrator在路由前将session_id注入State，Specialist通过该ID访问STM与LTM，确保跨Agent上下文一致.
 ### Q3：Gateway部署后报 "Unknown tool" 怎么办？
-A：Lambda函数必须从 `bedrockAgentCoreToolName` 参数中剥离 `___` 前缀。检查Lambda代码中的工具名解析逻辑。
-
+A：Lambda函数必须从 `bedrockAgentCoreToolName` 参数中剥离 `___` 前缀。检查Lambda代码中的工具名解析逻辑.
 ### Q4：LTM写入后立即查询返回空？
-A：LTM有约10秒的最终一致性延迟。写入后请等待10秒再查询。另外检查 `actor_id` 与 `session_id` 是否匹配，`event['payload']` 是一个list结构。
-
+A：LTM有约10秒的最终一致性延迟。写入后请等待10秒再查询。另外检查 `actor_id` 与 `session_id` 是否匹配，`event['payload']` 是一个list结构.
 ### Q5：报错 "on-demand throughput isn't supported"？
-A：使用 `us.anthropic.claude-*` 形式的inference profile，而非裸模型ID。
-
+A：使用 `us.anthropic.claude-*` 形式的inference profile，而非裸模型ID.
 ### Q6：报错 "Model use case details not submitted"？
-A：登录Bedrock控制台，找到对应Anthropic模型，填写use case表单。
-
+A：登录Bedrock控制台，找到对应Anthropic模型，填写use case表单.
 ### Q7：Agent名称报 "Invalid agent name"？
-A：必须以字母开头，仅含字母/数字/下划线，1-48字符。禁止连字符。
-
+A：必须以字母开头，仅含字母/数字/下划线，1-48字符。禁止连字符.
 ### Q8：容器部署后读不到.env？
-A：容器模式不加载本地.env。在Dockerfile中用 `ENV` 指令设置，或在 `agentcore configure` 阶段参数注入。
-
+A：容器模式不加载本地.env。在Dockerfile中用 `ENV` 指令设置，或在 `agentcore configure` 阶段参数注入.
 ### Q9：部署后Memory不工作？
-A：检查部署时是否误用 `--disable-memory`。查看日志确认 "Memory enabled" 字样。必要时重新部署。
-
+A：检查部署时是否误用 `--disable-memory`。查看日志确认 "Memory enabled" 字样。必要时重新部署.
 ### Q10：Platform mismatch warning需要处理吗？
-A：不需要。这是ARM64/x86跨平台构建的正常现象，CodeBuild会自动处理。
-
+A：不需要。这是ARM64/x86跨平台构建的正常现象，CodeBuild会自动处理.
 ### Q11：Gateway支持哪些transport？
-A：专业版Gateway支持五种transport：Mock（本地降级）、`Local MCP`（本地工具协议server）、Lambda（AWS Lambda）、REST（RESTful API）、`Production MCP`（生产工具协议端点）。生产环境推荐Lambda或REST。
-
+A：专业版Gateway支持五种transport：Mock（本地降级）、`Local MCP`（本地工具协议server）、Lambda（AWS Lambda）、REST（RESTful API）、`Production MCP`（生产工具协议端点）。生产环境推荐Lambda或REST.
 ### Q12：专业版定价是多少？如何购买？
-A：专业版定价¥99/月（企业工具类），通过SkillHub SkillPay发布购买。详见"定价"章节。
-
+A：专业版定价¥99/月（企业工具类），通过SkillHub SkillPay发布购买。详见"定价"章节.
 ## 十、故障排查表
 
 | 序号 | 问题 | 原因 | 修复方案 | 优先级 |
@@ -566,10 +526,8 @@ A：专业版定价¥99/月（企业工具类），通过SkillHub SkillPay发布
 | 免费体验版 | ¥0 | 单智能体编排 + STM短时记忆 + 本地工具 + agentcore CLI | 个人试用、原型验证 |
 | 收费专业版 | ¥99/月 | 全功能 + 多智能体编排 + Gateway工具链 + LTM长期记忆 + 企业级场景指南 + 优先支持 | 团队/企业生产环境 |
 
-专业版通过SkillHub SkillPay发布。
-
-> 定价依据：企业工具类（团队用），参考Skill生产规范v1.1定价策略表。¥99/月对应团队级AI工作流编排的高价值场景，支持多Agent协作与生产级Gateway部署。
-
+专业版通过SkillHub SkillPay发布.
+> 定价依据：企业工具类（团队用），参考Skill生产规范v1.1定价策略表。¥99/月对应团队级AI工作流编排的高价值场景，支持多Agent协作与生产级Gateway部署.
 ## License与版权声明
 
 本Skill基于原始作品改进，保留原始版权声明：
@@ -642,11 +600,9 @@ SOFTWARE.
 ## FAQ
 
 **Q: 如何开始使用？**
-A: 建议先查看使用流程,按步骤操作即可。
-
+A: 建议先查看使用流程,按步骤操作即可.
 **Q: 遇到错误怎么办？**
-A: 可查阅错误处理章节,按照表格中的处理方式进行排查。
-
+A: 可查阅错误处理章节,按照表格中的处理方式进行排查.
 ## 输出格式
 ```json
 {

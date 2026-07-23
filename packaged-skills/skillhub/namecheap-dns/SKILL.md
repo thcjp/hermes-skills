@@ -7,19 +7,18 @@ summary: "安全管理Namecheap DNS,拉取/合并/自动备份/原子更新"
 license: "Proprietary"
 description: |-
   Manage Namecheap DNS records safely by fetching existing entries, merging
-  changes, auto-backing u。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
+  changes, auto-backing u。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
   - Operations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Namecheap DNS
 
@@ -132,7 +131,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### Mailgun Setup
@@ -165,6 +164,8 @@ A:
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
 ## 已知限制
+
+This skill has critical limitations due to the Namecheap API's destructive nature. Please review carefully before use:
 
 ### ⚠️ The Namecheap API is Destructive
 

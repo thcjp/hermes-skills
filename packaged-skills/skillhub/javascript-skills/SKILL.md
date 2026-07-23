@@ -7,19 +7,17 @@ summary: "综合JavaScript风格指南,激活即供最佳实践"
 license: "Proprietary"
 description: |-
   A comprehensive JavaScript style guide skill。When activated, it provides
-  best-practice JavaScrip。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
+  best-practice JavaScrip。
 tags:
   - Development
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 ---
 # JavaScript
 
@@ -44,7 +42,8 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 风格指导 | JavaScript代码片段 | 符合最佳实践的代码建议 |
+| 代码审查 | JS源文件 | 风格规范评分与改进项 |
 
 **不适用于**：需要人工判断的复杂决策场景
 

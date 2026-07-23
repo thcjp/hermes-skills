@@ -27,15 +27,14 @@ description: |-
 tags:
   - Automation
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工作流,自动化,效率"
+
 ---
 # Workflow
 
@@ -59,7 +58,9 @@ tags: "工作流,自动化,效率"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 数据处理 | 数据源与处理规则 | 清洗结果与统计摘要 |
+| 自动化流程 | 流程定义与触发参数 | 执行状态与步骤日志 |
+| 管理操作 | 操作目标与参数 | 操作结果与状态变更 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -160,8 +161,7 @@ tags: "工作流,自动化,效率"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Workflow？

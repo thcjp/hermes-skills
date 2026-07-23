@@ -7,19 +7,18 @@ summary: "上传多PDF到Cross-Service-Solutions合并,轮询直至完成"
 license: "Proprietary"
 description: |-
   Merge multiple user-provided PDF files by uploading them to Cross-Service-Solutions,
-  polling unti。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
+  polling unti。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
   - Knowledge
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Merge PDF
 
@@ -43,7 +42,9 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| PDF处理 | PDF文件与操作类型 | 提取文本或生成文档 |
+| 上传多PDF到Cro | 目标数据与配置参数 | 处理结果与执行状态 |
+| 轮询直至完成 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -111,8 +112,7 @@ Example output:
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 错误处理
 
 | 错误场景(续)| 原因 | 处理方式 |
@@ -126,9 +126,7 @@ export API_KEY="your_api_key_here"
 
 ### 如何开始使用？
 
-阅读使用流程章节,按步骤配置环境和参数后即可开始使用。首次使用建议先阅读依赖说明章节确认环境就绪。
-
+阅读使用流程章节,按步骤配置环境和参数后即可开始使用。首次使用建议先阅读依赖说明章节确认环境就绪.
 ### 遇到错误怎么办？
 
-查看错误处理章节,对照错误场景找到对应的处理方式。如错误处理章节未覆盖,收集错误信息后通过已知限制章节了解skill能力边界。
-
+查看错误处理章节,对照错误场景找到对应的处理方式。如错误处理章节未覆盖,收集错误信息后通过已知限制章节了解skill能力边界.

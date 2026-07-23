@@ -7,20 +7,19 @@ summary: "生产力任务自动化bot,数据处理/定时通知/工作流"
 license: "Proprietary"
 description: |-
   Automation bot for productivity tasks including data processing, scheduled
-  notifications, and wor。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
+  notifications, and wor。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - Automation
   - Integrations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Productivity Bot
 
@@ -47,7 +46,9 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 数据处理 | 数据源与处理规则 | 清洗结果与统计摘要 |
+| 通知推送 | 接收人与通知模板 | 推送状态与送达确认 |
+| Bot交互 | 事件类型与载荷 | 响应动作与状态码 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -148,8 +149,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Productivity Bot？

@@ -6,8 +6,7 @@ displayName: "DNS配置专家"
 summary: "DNS记录配置、TTL迁移、邮件认证三件套、CAA证书锁定与Cloudflare代理排障"
 license: "Proprietary"
 description: |-
-  DNS领域专业配置与排障Skill,覆盖记录生命周期、邮件认证链、证书授权限制与CDN代理行为。
-
+  DNS领域专业配置与排障Skill,覆盖记录生命周期、邮件认证链、证书授权限制与CDN代理行为.
   核心能力:
   - 迁移前的TTL预降策略与多resolver缓存探测
   - SPF/DKIM/DMARC三位一体邮件认证配置
@@ -33,8 +32,7 @@ homepage: "https://skillhub.cn"
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # DNS配置专家
 
@@ -78,7 +76,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 本Skill围绕DNS记录的正确配置、迁移策略与故障排查构建,重点解决以下领域问题:
@@ -93,26 +91,20 @@ export API_KEY="your_api_key_here"
 - **通配符SSL证书**: HTTP-01验证不支持通配符,需使用DNS-01挑战方式签发
 ### TTL迁移策略
 
-针对TTL迁移策略,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供TTL迁移策略相关的配置参数、输入数据和处理选项。
-
+针对TTL迁移策略,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供TTL迁移策略相关的配置参数、输入数据和处理选项.
 **输出**: 返回TTL迁移策略的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`TTL迁移策略`的配置文档进行参数调优
 ### 邮件认证三件套
 
-针对邮件认证三件套,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供邮件认证三件套相关的配置参数、输入数据和处理选项。
-
+针对邮件认证三件套,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供邮件认证三件套相关的配置参数、输入数据和处理选项.
 **输出**: 返回邮件认证三件套的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`邮件认证三件套`的配置文档进行参数调优
 ### CAA证书锁定
 
-针对CAA证书锁定,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供CAA证书锁定相关的配置参数、输入数据和处理选项。
-
+针对CAA证书锁定,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供CAA证书锁定相关的配置参数、输入数据和处理选项.
 **输出**: 返回CAA证书锁定的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`CAA证书锁定`的配置文档进行参数调优
 #
@@ -148,8 +140,7 @@ export API_KEY="your_api_key_here"
 ## 案例展示
 
 ### 案例1: 迁移后部分用户仍访问旧服务器
-**背景**: 将 example.com 从旧DNS商迁移到新DNS商,A记录已更新,但约30%用户48小时后仍命中旧IP。
-
+**背景**: 将 example.com 从旧DNS商迁移到新DNS商,A记录已更新,但约30%用户48小时后仍命中旧IP.
 **诊断过程**:
 1. 用 `dig +trace example.com` 查看完整解析链,定位缓存层级
 2. 用 `dig @8.8.8.8 example.com` 与 `dig @1.1.1.1 example.com` 对比,发现Google解析器仍返回旧IP
@@ -162,8 +153,7 @@ export API_KEY="your_api_key_here"
 - 迁移稳定24小时后再将TTL恢复至3600s以上
 
 ### 案例2: SPF+DMARC配置后邮件仍被拒收
-**背景**: 已配置SPF和DMARC,但向Gmail发送业务邮件仍被拒收。
-
+**背景**: 已配置SPF和DMARC,但向Gmail发送业务邮件仍被拒收.
 **诊断过程**:
 1. 检查SPF记录: `dig TXT example.com` 发现存在两条SPF TXT记录,这是无效配置
 2. 合并为单条: `"v=spf1 include:_spf.google.com include:mailgun.org -all"`
@@ -178,8 +168,7 @@ export API_KEY="your_api_key_here"
 - 使用 mail-tester.com 验证完整三件套
 
 ### 案例3: 通配符证书签发失败
-**背景**: 为 `*.example.com` 申请通配符SSL证书,使用HTTP验证方式失败。
-
+**背景**: 为 `*.example.com` 申请通配符SSL证书,使用HTTP验证方式失败.
 **诊断过程**:
 1. 检查DNS: `dig example.com` 与 `dig www.example.com` 发现apex无A记录,通配符不匹配apex
 2. 检查CAA: 发现配置了 `CAA 0 issue "letsencrypt.org"` 但未配置 `issuewild`,导致通配符签发被拒
@@ -249,23 +238,17 @@ export API_KEY="your_api_key_here"
 ## FAQ
 
 ### Q1: 迁移前TTL应该提前多久降低?
-A: 至少提前48小时将TTL降至300秒。必须确保当前TTL(如86400s)完全过期后,新的300s TTL才会在全球解析器生效。降TTL前先用 `dig +nocmd +noall +answer example.com` 探测当前缓存TTL,避免在旧TTL未过期时切换。
-
+A: 至少提前48小时将TTL降至300秒。必须确保当前TTL(如86400s)完全过期后,新的300s TTL才会在全球解析器生效。降TTL前先用 `dig +nocmd +noall +answer example.com` 探测当前缓存TTL,避免在旧TTL未过期时切换.
 ### Q2: SPF可以配置多条TXT记录吗?
-A: 不可以。SPF必须为单条TXT记录,多条SPF TXT记录无效。如果需要包含多个发送源,使用 `include:` 串联,如 `"v=spf1 include:_spf.google.com include:mailgun.org -all"`。SPF结尾应为 `-all`(拒绝)或 `~all`(软失败),禁止使用 `+all` 或 `?all`。
-
+A: 不可以。SPF必须为单条TXT记录,多条SPF TXT记录无效。如果需要包含多个发送源,使用 `include:` 串联,如 `"v=spf1 include:_spf.google.com include:mailgun.org -all"`。SPF结尾应为 `-all`(拒绝)或 `~all`(软失败),禁止使用 `+all` 或 `?all`.
 ### Q3: DMARC的p=none/quarantine/reject有什么区别?
-A: `p=none` 仅监控不处理,用于初始观察阶段;`p=quarantine` 将未通过认证的邮件隔离至垃圾箱;`p=reject` 直接拒绝。建议从none开始观察rua报告,逐步升级到quarantine再到reject,避免误伤合法邮件。
-
+A: `p=none` 仅监控不处理,用于初始观察阶段;`p=quarantine` 将未通过认证的邮件隔离至垃圾箱;`p=reject` 直接拒绝。建议从none开始观察rua报告,逐步升级到quarantine再到reject,避免误伤合法邮件.
 ### Q4: Cloudflare橙云和灰云该如何选择?
-A: 橙云(代理)适合HTTP/HTTPS服务,隐藏源站IP并提供CDN/WAF/Universal SSL;灰云(DNS-only)适合非HTTP服务,如SSH、SMTP、游戏服务器、MX记录。橙云会忽略用户TTL设置并破坏非HTTP服务,迁移时CNAME扁平化也易产生混淆。
-
+A: 橙云(代理)适合HTTP/HTTPS服务,隐藏源站IP并提供CDN/WAF/Universal SSL;灰云(DNS-only)适合非HTTP服务,如SSH、SMTP、游戏服务器、MX记录。橙云会忽略用户TTL设置并破坏非HTTP服务,迁移时CNAME扁平化也易产生混淆.
 ### Q5: CAA记录配置后会影响现有证书续期吗?
-A: 会。配置CAA后,未列入CAA的CA无法签发或续期证书。配置CAA前需确认当前所有证书签发机构都已包含在issue记录中,否则续期会失败。通配符证书需单独配置issuewild条目。
-
+A: 会。配置CAA后,未列入CAA的CA无法签发或续期证书。配置CAA前需确认当前所有证书签发机构都已包含在issue记录中,否则续期会失败。通配符证书需单独配置issuewild条目.
 ### Q6: dig +trace和dig @ns有什么区别?
-A: `dig +trace` 从根服务器开始逐级解析,展示完整解析链,适合定位解析链路问题;`dig @ns1.provider.com` 直接查询指定权威服务器,绕过所有缓存,适合验证权威记录是否已更新。两者配合使用可定位缓存与权威不一致问题。
-
+A: `dig +trace` 从根服务器开始逐级解析,展示完整解析链,适合定位解析链路问题;`dig @ns1.provider.com` 直接查询指定权威服务器,绕过所有缓存,适合验证权威记录是否已更新。两者配合使用可定位缓存与权威不一致问题.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

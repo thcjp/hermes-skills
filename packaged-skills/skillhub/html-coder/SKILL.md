@@ -7,19 +7,18 @@ summary: "专家级HTML开发,构建网页/表单/交互内容"
 license: "Proprietary"
 description: |-
   Expert HTML development skill for building web pages, forms, and interactive
-  content。Use when cr。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。
+  content。Use when cr。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Creative
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
+
 ---
 # HTML Coder
 
@@ -127,8 +126,7 @@ tags: "开发工具,代码生成,编程辅助"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用HTML Coder？

@@ -7,19 +7,18 @@ summary: "本地编辑PPTX修复PowerPoint字体,窄范围修复工具"
 license: "Proprietary"
 description: |-
   This skill is a narrow PowerPoint repair utility that locally edits
-  a user-provided PPTX and show。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
+  a user-provided PPTX and show。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
   - Knowledge
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # PPTX PDF Font Fix
 
@@ -43,7 +42,8 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 本地编辑PPTX修复 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 窄范围修复工具 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -144,8 +144,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用PPTX PDF Font Fix？
@@ -163,3 +162,6 @@ A:
 ## 已知限制
 
 - 本地运行，不支持多设备同步
+- 图像处理能力受限于本地硬件与内存
+- 大尺寸图片处理可能较慢或失败
+- 免费版不支持批量处理与高级滤镜

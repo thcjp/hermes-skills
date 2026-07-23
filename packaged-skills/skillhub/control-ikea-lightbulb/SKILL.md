@@ -6,19 +6,18 @@ displayName: "Control Ikea Lightbu"
 summary: "控IKEA/TP-Link Kasa智能灯泡,开关/亮度/颜色一键调"
 license: "Proprietary"
 description: |-
-  Control IKEA/TP-Link Kasa smart bulbs (set on/off, brightness, and color)。Use when you want to p。Use when 用户需要Control Ikea Lightbu相关功能时使用。不适用于超出本技能能力范围的复杂需求。
+  Control IKEA/TP-Link Kasa smart bulbs (set on/off, brightness, and color)。Use when you want to p。Use when 用户需要Control Ikea Lightbu相关功能时使用。不适用于超出本技能能力范围的复杂需求.
 tags:
   - Other
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Control Ikea Lightbu
 
@@ -42,7 +41,9 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 设备控制 | 设备ID与控制指令 | 设备状态与确认回执 |
+| 智能家居 | 设备ID与场景模式 | 设备状态与执行确认 |
+| 智能灯控 | 设备IP与亮度参数 | 灯光状态与调光确认 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -101,8 +102,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 错误处理
 
 | 错误场景(续)| 原因 | 处理方式 |
@@ -116,9 +116,7 @@ export API_KEY="your_api_key_here"
 
 ### 如何开始使用？
 
-阅读使用流程章节,按步骤配置环境和参数后即可开始使用。首次使用建议先阅读依赖说明章节确认环境就绪。
-
+阅读使用流程章节,按步骤配置环境和参数后即可开始使用。首次使用建议先阅读依赖说明章节确认环境就绪.
 ### 遇到错误怎么办？
 
-查看错误处理章节,对照错误场景找到对应的处理方式。如错误处理章节未覆盖,收集错误信息后通过已知限制章节了解skill能力边界。
-
+查看错误处理章节,对照错误场景找到对应的处理方式。如错误处理章节未覆盖,收集错误信息后通过已知限制章节了解skill能力边界.

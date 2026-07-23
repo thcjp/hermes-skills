@@ -7,19 +7,18 @@ summary: "浏览汇总网站/从URL提取内容/搜网"
 license: "Proprietary"
 description: |-
   Browse and summarize websites, extract content from URLs, search the
-  web for information。Use whe。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。
+  web for information。Use whe。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
   - Research
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob"]
-tags: "Web开发,前端,开发工具"
+
 ---
 # Web Browsing
 
@@ -43,7 +42,8 @@ tags: "Web开发,前端,开发工具"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 浏览汇总网站 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 从URL提取内容 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -113,7 +113,7 @@ tags: "Web开发,前端,开发工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ```markdown

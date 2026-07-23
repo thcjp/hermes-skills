@@ -7,19 +7,18 @@ summary: "编码工作流含规划/实现/验证/测试,交付干净软件"
 license: "Proprietary"
 description: |-
   Coding workflow with planning, implementation, verification, and testing
-  for clean software devel。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
+  for clean software devel。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Development
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
+
 ---
 # Code
 
@@ -43,7 +42,9 @@ tags: "开发工具,代码生成,编程辅助"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 编码执行 | 需求描述与约束条件 | 代码文件与测试结果 |
+| 测试验证 | 测试用例与预期 | 测试报告与覆盖率 |
+| 工作流执行 | 流程定义与输入数据 | 执行结果与步骤日志 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -144,8 +145,7 @@ tags: "开发工具,代码生成,编程辅助"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Code？

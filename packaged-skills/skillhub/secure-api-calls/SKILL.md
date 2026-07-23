@@ -7,19 +7,18 @@ summary: "调任意API不泄密钥,Keychains代理并在服务端注入真实令
 license: "Proprietary"
 description: |-
   Call any API without leaking credentials。Keychains proxies requests
-  and injects real tokens serv。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
+  and injects real tokens serv。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
   - Integrations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+
 ---
 # Secure API Calls
 
@@ -44,7 +43,9 @@ tags: "API,接口,开发工具"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 密钥管理 | 密钥名称与算法 | 密钥指纹与存储路径 |
+| 令牌编解码 | 原始数据与编码方案 | 编码输出与验证结果 |
+| 调任意API不泄密钥 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -123,7 +124,7 @@ keychains curl https://api.相关技术文档 \
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 - "List GitHub repos: `keychains curl https://api.相关技术文档 -H 'Authorization: Bearer Secure Api Calls 核心处理'`"

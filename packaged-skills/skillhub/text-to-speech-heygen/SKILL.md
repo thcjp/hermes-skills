@@ -6,19 +6,18 @@ displayName: "Text to Speech"
 summary: "HeyGen TTS语音合成工具's Starfish TTS model. Use"
 license: "Proprietary"
 description: |-
-  Generate speech audio from text using HeyGen's Starfish TTS model。Use when: (1) Generating stand。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。
+  Generate speech audio from text using HeyGen's Starfish TTS model。Use when: (1) Generating stand。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
 tags:
   - Creative
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Text to Speech
 
@@ -42,7 +41,9 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| HeyGen TTS | 目标数据与配置参数 | 处理结果与执行状态 |
+| text操作执行 | text相关参数与配置 | 执行结果与返回数据 |
+| text状态查询 | 查询条件与过滤选项 | 当前状态与详细信息 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -113,7 +114,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### Basic TTS

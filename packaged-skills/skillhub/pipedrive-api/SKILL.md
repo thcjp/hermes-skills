@@ -7,20 +7,19 @@ summary: "Pipedrive API托管OAuth,管交易/联系人/机构/活动"
 license: "Proprietary"
 description: |-
   Pipedrive API integration with managed OAuth。Manage deals, persons,
-  organizations, activities, a。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
+  organizations, activities, a。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
   - Integrations
   - Productivity
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+
 ---
 # Pipedrive
 
@@ -45,7 +44,9 @@ tags: "API,接口,开发工具"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| Pipedrive  | 目标数据与配置参数 | 处理结果与执行状态 |
+| pipedrive操作执行 | pipedrive相关参数与配置 | 执行结果与返回数据 |
+| pipedrive状态查询 | 查询条件与过滤选项 | 当前状态与详细信息 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -60,8 +61,7 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 EOF
 ```
 
-**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
-
+**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤.
 **使用步骤**:
 1. 阅读依赖说明章节,确认运行环境已就绪
 2. 根据任务需求,参考核心能力章节选择对应能力
@@ -160,8 +160,7 @@ EOF
 
 * Correct: `https://api.maton.ai/pipedrive/api/v1/deals`
 * Incorrect: `https://api.maton.ai/api/v1/deals`
-> **处理方式**: 参考上表中的错误场景说明,按照对应建议进行处理和恢复。
-
+> **处理方式**: 参考上表中的错误场景说明,按照对应建议进行处理和恢复.
 ## 依赖说明
 
 ### 运行环境
@@ -184,7 +183,7 @@ EOF
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### JavaScript

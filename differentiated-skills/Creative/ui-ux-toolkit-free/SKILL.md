@@ -18,7 +18,6 @@ description: '面向个人开发者的轻量级UI/UX设计查询工具,内置丰
 
   - 多技术栈适配指引
 
-
   适用场景:
 
   - 个人项目快速搭建界面设计系统
@@ -27,10 +26,9 @@ description: '面向个人开发者的轻量级UI/UX设计查询工具,内置丰
 
   - 小型SaaS或落地页的UI风格决策
 
-
   差异化:免费版聚焦核心查询能力,提供基础设计域搜索和默认技术栈指引,
 
-  去除企业级持久化和批量操作功能,降低使用门槛,...'
+  去除企业级持久化和批量操作功能,降低使用门槛,.'
 tags:
 - 设计
 - UI
@@ -39,23 +37,20 @@ tags:
 - 字体
 - 前端
 tools:
-- - read
+- read
 - exec
 homepage: https://skillhub.cn
 pricing_tier: "L1-入门级"
 pricing_model: per_use
 suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
+
 ---
 # UI/UX设计工具箱 - 免费版
 
 ## 概述
 
-UI/UX设计工具箱免费版是一款面向个人开发者的轻量级设计资源查询工具。内置涵盖50+种界面风格、97套配色方案、57组字体配对、99条UX规则的设计数据库,通过Python CLI工具以自然语言关键词驱动查询,帮助开发者在数秒内获取专业设计建议。
-
-免费版聚焦核心查询能力,支持基础设计域搜索(style、color、typography、ux)和默认技术栈(html-tailwind)指引,适合个人项目快速搭建设计系统。
-
+UI/UX设计工具箱免费版是一款面向个人开发者的轻量级设计资源查询工具。内置涵盖50+种界面风格、97套配色方案、57组字体配对、99条UX规则的设计数据库,通过Python CLI工具以自然语言关键词驱动查询,帮助开发者在数秒内获取专业设计建议.
+免费版聚焦核心查询能力,支持基础设计域搜索(style、color、typography、ux)和默认技术栈(html-tailwind)指引,适合个人项目快速搭建设计系统.
 ## 核心能力
 
 ### 1. 设计资源数据库查询
@@ -72,15 +67,15 @@ UI/UX设计工具箱免费版是一款面向个人开发者的轻量级设计资
 ```bash
 # 按产品类型和行业搜索设计系统
 python3 （请参考skill目录中的脚本文件） "SaaS dashboard fintech" --design-system
-# ...
+# .
 # 按特定域搜索
 python3 （请参考skill目录中的脚本文件） "glassmorphism dark" --domain style
 python3 （请参考skill目录中的脚本文件） "elegant luxury" --domain typography
 ```
 
-**输入**: 用户提供设计资源数据库查询所需的指令和必要参数。
-**处理**: 解析设计资源数据库查询的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回设计资源数据库查询的响应数据,包含状态码、结果和日志。
+**输入**: 用户提供设计资源数据库查询所需的指令和必要参数.
+**处理**: 解析设计资源数据库查询的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回设计资源数据库查询的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 2. 规则优先级体系
@@ -98,10 +93,9 @@ python3 （请参考skill目录中的脚本文件） "elegant luxury" --domain t
 | 7 | 风格选择 | 中 | style |
 | 8 | 图表与数据 | 低 | chart |
 
-**输入**: 用户提供规则优先级体系所需的指令和必要参数。
-**处理**: 解析规则优先级体系的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回规则优先级体系的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供规则优先级体系所需的指令和必要参数.
+**处理**: 解析规则优先级体系的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回规则优先级体系的响应数据,包含状态码、结果和日志.
 ### 3. 基础设计域支持
 
 | 域 | 用途 | 示例关键词 |
@@ -112,10 +106,9 @@ python3 （请参考skill目录中的脚本文件） "elegant luxury" --domain t
 | `color` | 配色方案 | saas, ecommerce, healthcare |
 | `ux` | 最佳实践与反模式 | 动画, 无障碍, z-index |
 
-**输入**: 用户提供基础设计域支持所需的指令和必要参数。
-**处理**: 解析基础设计域支持的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回基础设计域支持的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供基础设计域支持所需的指令和必要参数.
+**处理**: 解析基础设计域支持的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回基础设计域支持的响应数据,包含状态码、结果和日志.
 ### 4. 默认技术栈指引
 
 免费版默认提供 `html-tailwind` 技术栈的实现指南:
@@ -125,24 +118,22 @@ python3 （请参考skill目录中的脚本文件） "elegant luxury" --domain t
 python3 （请参考skill目录中的脚本文件） "layout responsive form" --stack html-tailwind
 ```
 
-**输入**: 用户提供默认技术栈指引所需的指令和必要参数。
-**处理**: 解析默认技术栈指引的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回默认技术栈指引的响应数据,包含状态码、结果和日志。
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：可搜索的、设计数据库、提供风格、规则的基础查询、适合个人开发者快、速生成设计系统、面向个人开发者的、轻量级、设计查询工具、内置丰富的设计资、通过自然语言关键、词即可获取专业设、计建议、核心能力、可搜索的设计资源、自然语言驱动的、CLI、查询工具、基础设计系统一键、多技术栈适配指引等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+**输入**: 用户提供默认技术栈指引所需的指令和必要参数.
+**处理**: 解析默认技术栈指引的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回默认技术栈指引的响应数据,包含状态码、结果和日志.
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：可搜索的、设计数据库、提供风格、规则的基础查询、适合个人开发者快、速生成设计系统、面向个人开发者的、轻量级、设计查询工具、内置丰富的设计资、通过自然语言关键、词即可获取专业设、计建议、核心能力、可搜索的设计资源、自然语言驱动的、CLI、查询工具、基础设计系统一键、多技术栈适配指引等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 使用场景
 
 ### 场景一:个人SaaS项目配色选择
 
-独立开发者正在构建一款任务管理SaaS,需要快速确定配色和字体方案。
-
+独立开发者正在构建一款任务管理SaaS,需要快速确定配色和字体方案.
 ```bash
 # 步骤1:生成基础设计系统
 python3 （请参考skill目录中的脚本文件） "SaaS productivity tool minimal" --design-system -p "TaskFlow"
-# ...
+# .
 # 步骤2:补充字体搜索
 python3 （请参考skill目录中的脚本文件） "modern clean sans-serif" --domain typography
-# ...
+# .
 # 步骤3:获取Tailwind实现指引
 python3 （请参考skill目录中的脚本文件） "dashboard card layout" --stack html-tailwind
 ```
@@ -158,12 +149,11 @@ python3 （请参考skill目录中的脚本文件） "dashboard card layout" --s
 
 ### 场景二:落地页设计风格决策
 
-为一个新的播客平台设计落地页,需要确定视觉风格。
-
+为一个新的播客平台设计落地页,需要确定视觉风格.
 ```bash
 # 搜索适合播客/媒体类产品的风格
 python3 （请参考skill目录中的脚本文件） "podcast media creative bold" --domain style
-# ...
+# .
 # 搜索落地页结构建议
 python3 （请参考skill目录中的脚本文件） "hero testimonial pricing" --domain landing
 ```
@@ -175,7 +165,7 @@ python3 （请参考skill目录中的脚本文件） "hero testimonial pricing" 
 ```bash
 # 检查动画和无障碍相关规则
 python3 （请参考skill目录中的脚本文件） "animation accessibility" --domain ux
-# ...
+# .
 # 检查布局和响应式规则
 python3 （请参考skill目录中的脚本文件） "responsive viewport" --domain ux
 ```
@@ -190,8 +180,7 @@ python3 （请参考skill目录中的脚本文件） "responsive viewport" --dom
 
 ## 触发条件
 
-需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于非本工具能力范围的需求。
-
+、品牌视觉时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
 1. 阅读## 核心能力章节了解skill功能
@@ -206,7 +195,7 @@ python3 （请参考skill目录中的脚本文件） "responsive viewport" --dom
 # 验证Python环境
 python3 --version
 # 预期输出: Python 3.10+
-# ...
+# .
 # 验证搜索工具可用
 python3 （请参考skill目录中的脚本文件） "minimal" --domain style -n 3
 ```
@@ -216,11 +205,11 @@ python3 （请参考skill目录中的脚本文件） "minimal" --domain style -n
 ```bash
 # 第1步:分析需求并搜索
 python3 （请参考skill目录中的脚本文件） "beauty spa wellness elegant" --design-system -p "Serenity Spa"
-# ...
+# .
 # 第2步:补充详细搜索
 python3 （请参考skill目录中的脚本文件） "elegant luxury serif" --domain typography
 python3 （请参考skill目录中的脚本文件） "soft pastel" --domain color
-# ...
+# .
 # 第3步:获取技术栈指引
 python3 （请参考skill目录中的脚本文件） "layout responsive" --stack html-tailwind
 ```
@@ -272,7 +261,7 @@ python3 （请参考skill目录中的脚本文件） "layout responsive" --stack
 ```bash
 # 不推荐:过于宽泛
 python3 （请参考skill目录中的脚本文件） "app" --design-system
-# ...
+# .
 # 推荐:具体到产品类型和行业
 python3 （请参考skill目录中的脚本文件） "healthcare SaaS dashboard minimal" --design-system
 ```
@@ -308,24 +297,19 @@ python3 （请参考skill目录中的脚本文件） "animation performance" --d
 
 ### Q1: 免费版支持哪些技术栈?
 
-免费版默认提供 `html-tailwind`(Tailwind CSS)技术栈的实现指引。如需React、Vue、Next.js、Svelte、SwiftUI、Flutter等更多技术栈支持,请升级至专业版。
-
+免费版默认提供 `html-tailwind`(Tailwind CSS)技术栈的实现指引。如需React、Vue、Next.js、Svelte、SwiftUI、Flutter等更多技术栈支持,请升级至专业版.
 ### Q2: 搜索结果不相关怎么办?
 
-尝试更换关键词组合。例如,将"app"替换为"healthcare SaaS dashboard",具体的产品类型、行业和风格关键词能显著提升匹配精度。
-
+尝试更换关键词组合。例如,将"app"替换为"healthcare SaaS dashboard",具体的产品类型、行业和风格关键词能显著提升匹配精度.
 ### Q3: 设计系统可以保存供后续使用吗?
 
-免费版不支持设计系统持久化。每次搜索结果为即时输出。如需跨会话保存设计系统并支持页面级覆盖,请使用专业版的 `--persist` 功能。
-
+免费版不支持设计系统持久化。每次搜索结果为即时输出。如需跨会话保存设计系统并支持页面级覆盖,请使用专业版的 `--persist` 功能.
 ### Q4: Python版本有要求吗?
 
-需要 Python 3.8 及以上版本。可通过 `python3 --version` 检查。如未安装,请参考依赖说明部分。
-
+需要 Python 3.8 及以上版本。可通过 `python3 --version` 检查。如未安装,请参考依赖说明部分.
 ### Q5: 可以搜索图表类型的推荐吗?
 
-免费版不包含 `chart` 域搜索。图表类型推荐是专业版功能,支持趋势图、对比图、时间线、漏斗图等25种图表类型匹配。
-
+免费版不包含 `chart` 域搜索。图表类型推荐是专业版功能,支持趋势图、对比图、时间线、漏斗图等25种图表类型匹配.
 ## 依赖说明
 
 ### 运行环境
@@ -346,23 +330,21 @@ Python安装命令:
 ```bash
 # macOS
 brew install python3
-# ...
+# .
 # Ubuntu/Debian
 sudo apt update && sudo apt install python3
-# ...
+# .
 # Windows
 winget install Python.Python.3.12
 ```
 
 ### API Key 配置
 
-本Skill的CLI搜索工具基于本地数据文件运行,无需额外API Key。设计建议的生成由Agent内置LLM驱动,无需独立配置。
-
+本Skill的CLI搜索工具基于本地数据文件运行,无需额外API Key。设计建议的生成由Agent内置LLM驱动,无需独立配置.
 ### 可用性分类
 
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
-- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。核心查询功能依赖Python CLI脚本执行,需确保exec工具可用。
-
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。核心查询功能依赖Python CLI脚本执行,需确保exec工具可用.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

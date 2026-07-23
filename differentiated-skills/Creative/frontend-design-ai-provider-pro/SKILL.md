@@ -3,7 +3,7 @@ slug: "frontend-design-ai-provider-pro"
 name: "frontend-design-ai-provider-pro"
 version: "1.0.0"
 displayName: "前端设计-专业版"
-summary: "企业级前端设计工具,支持设计系统生成、组件库批量产出、多端适配,适配商业产品开发。"
+summary: "企业级前端设计工具,支持设计系统生成、组件库批量产出、多端适配,适配商业产品开发"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -21,18 +21,16 @@ description: |-
   - 多端产品界面统一设计
   - 设计团队协作与规范沉淀
 
-  差异化:专业版在免费版基础上...
+  差异化:专业版在免费版基础上.
 tags:
   - Creative
   - 前端设计
   - 企业版
   - 设计系统
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 ---
 # 前端设计工具 - 专业版
 
@@ -99,27 +97,27 @@ tags: "设计,UI/UX,创意"
   --color-primary-50: #f0f9ff;
   --color-primary-500: #0ea5e9;
   --color-primary-900: #0c4a6e;
-// ...
+// .
   /* 字体系统 */
   --font-display: 'Playfair Display', serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-// ...
+// .
   /* 间距系统(8px 基准) */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-4: 1rem;
   --space-8: 2rem;
-// ...
+// .
   /* 圆角系统 */
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 1rem;
-// ...
+// .
   /* 阴影系统 */
   --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
   --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-// ...
+// .
   /* 动效系统 */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --duration-fast: 150ms;
@@ -139,7 +137,7 @@ python3 （请参考skill目录中的脚本文件） \
   --framework react \
   --storybook \
   --types
-# ...
+# .
 # 示例
 # components:
 #   - name: Button
@@ -164,19 +162,19 @@ python3 （请参考skill目录中的脚本文件） \
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
 }
-// ...
+// .
 /* 响应式组件 */
 .card {
   padding: var(--space-4);
   /* 移动端优先 */
 }
-// ...
+// .
 @media (min-width: 768px) {
   .card {
     padding: var(--space-8);
   }
 }
-// ...
+// .
 /* 暗色模式 */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -198,7 +196,7 @@ python3 （请参考skill目录中的脚本文件） \
   --standard wcag2.1-aa \
   --output ./reports/a11y_report.md \
   --fix-suggestions
-# ...
+# .
 # 检查项目:颜色对比度、键盘导航、屏幕阅读器、焦点管理
 ```
 
@@ -212,7 +210,7 @@ python3 （请参考skill目录中的脚本文件） \
 
 ## 触发条件
 
-需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于非本工具能力范围的需求。
+、品牌视觉时使用。不适用于非本工具能力范围的需求。
 
 ## 快速开始
 
@@ -253,7 +251,7 @@ FRONTEND_DESIGN_EDITION=pro
 FRONTEND_DESIGN_LICENSE=your_license
 FRONTEND_DESIGN_DEFAULT_FRAMEWORK=react
 FRONTEND_DESIGN_DEFAULT_BREAKPOINTS=sm,md,lg,xl
-# ...
+# .
 # 设计系统参数
 --brand <name>                # 品牌名称
 --tone <direction>            # 调性方向
@@ -358,7 +356,7 @@ A:可以。支持导入现有 Figma Tokens 或 Style Dictionary 配置,生成兼
 
 ```text
 用户: 执行核心功能
-Skill: 正在执行核心功能...
+Skill: 正在执行核心功能.
 Skill: 执行完成,结果如下: 操作成功
 ```
 

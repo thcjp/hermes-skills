@@ -20,15 +20,14 @@ tags:
   - 自动化
   - 企业版
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # 免费资源发现器(专业版)
 
@@ -99,7 +98,7 @@ tags: "工具,效率,自动化"
 }
 ```
 
-**处理**: 解析自动fallback链的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**处理**: 解析自动fallback链的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 后台守护进程
 实时探测模型可用性,限速中断时自动重建链路:
 
@@ -127,7 +126,7 @@ free-finder daemon --stop
 4. 选出最优可用模型作为新主模型
 5. 通知Agent应用新配置
 
-**输出**: 返回后台守护进程的处理结果,包含执行状态码、结果数据和执行日志。
+**输出**: 返回后台守护进程的处理结果,包含执行状态码、结果数据和执行日志.
 ### 多API Key负载均衡
 聚合多账号额度,突破单账号限速:
 
@@ -153,8 +152,8 @@ free-finder keys stats
 | lowest_latency | 优先延迟最低的Key | 追求响应速度 |
 | weighted | 按权重分配 | 混合免费与付费Key |
 
-**输入**: 用户提供多API Key负载均衡所需的指令和必要参数。
-**处理**: 解析多API Key负载均衡的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输入**: 用户提供多API Key负载均衡所需的指令和必要参数.
+**处理**: 解析多API Key负载均衡的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回多API Key负载均衡的处理结果,包含执行状态码、结果数据和执行日志。### 调用统计与成本分析
 ```bash
 # 查看今日统计
@@ -192,7 +191,7 @@ free-finder stats --from 2026-07-01 --to 2026-07-18 --format csv
 }
 ```
 
-**输入**: 用户提供智能路由所需的指令和必要参数。
+**输入**: 用户提供智能路由所需的指令和必要参数.
 **输出**: 返回智能路由的处理结果,包含执行状态码、结果数据和执行日志。### 模型质量监控
 持续评估模型表现,自动调整排序:
 
@@ -407,35 +406,25 @@ free-finder monitor report --format html --output quality.html
 ## 常见问题
 
 ### Q1: 守护进程会消耗多少API额度?
-A: 守护进程每60秒探测一次,单次探测消耗约10 token。24小时约消耗14400 token,对免费额度影响可忽略(<1%)。
-
+A: 守护进程每60秒探测一次,单次探测消耗约10 token。24小时约消耗14400 token,对免费额度影响可忽略(<1%).
 ### Q2: 多Key负载均衡是否违反平台ToS?
-A: 大多数聚合平台(如OpenRouter)允许个人使用多账号,但禁止商业转售。建议阅读平台ToS,合理使用。团队场景推荐使用平台提供的团队版。
-
+A: 大多数聚合平台(如OpenRouter)允许个人使用多账号,但禁止商业转售。建议阅读平台ToS,合理使用。团队场景推荐使用平台提供的团队版.
 ### Q3: 智能路由如何识别任务类型?
-A: 通过请求特征识别: (1)system prompt关键词(如"补全代码"→code_completion); (2)输入长度(>8K→long_context); (3)是否含function定义(→function_call); (4)可自定义规则。
-
+A: 通过请求特征识别: (1)system prompt关键词(如"补全代码"→code_completion); (2)输入长度(>8K→long_context); (3)是否含function定义(→function_call); (4)可自定义规则.
 ### Q4: 质量监控的基准测试是什么?
-A: 内置100个编程任务(涵盖Python/JS/Java等多语言),每小时运行一次,记录通过率与质量评分。支持自定义基准测试集。
-
+A: 内置100个编程任务(涵盖Python/JS/Java等多语言),每小时运行一次,记录通过率与质量评分。支持自定义基准测试集.
 ### Q5: fallback切换时会丢失上下文吗?
-A: 不会。切换时自动重放最近N轮对话(默认10轮),新模型接续上下文。但注意: 若新模型上下文长度<原模型,可能截断早期对话。
-
+A: 不会。切换时自动重放最近N轮对话(默认10轮),新模型接续上下文。但注意: 若新模型上下文长度<原模型,可能截断早期对话.
 ### Q6: 如何导出统计报告给团队?
-A: 运行`free-finder stats --week --format pdf --email team@example.com`,支持PDF/HTML/CSV三种格式,可直接发送邮件。
-
+A: 运行`free-finder stats --week --format pdf --email team@example.com`,支持PDF/HTML/CSV三种格式,可直接发送邮件.
 ### Q7: 守护进程意外退出怎么办?
-A: 推荐使用systemd或supervisor管理守护进程,实现自动重启。配置示例见`docs/systemd.service`。
-
+A: 推荐使用systemd或supervisor管理守护进程,实现自动重启。配置示例见`docs/systemd.service`.
 ### Q8: 专业版支持哪些聚合平台?
-A: 支持OpenRouter、SiliconFlow、Together AI等OpenAI兼容协议的平台。配置时填写对应base_url即可。
-
+A: 支持OpenRouter、SiliconFlow、Together AI等OpenAI兼容协议的平台。配置时填写对应base_url即可.
 ### Q9: 如何在Kubernetes中部署?
-A: 提供Helm Chart,一行命令部署: `helm install free-finder ./charts/free-finder`。支持HPA自动扩缩容。
-
+A: 提供Helm Chart,一行命令部署: `helm install free-finder ./charts/free-finder`。支持HPA自动扩缩容.
 ### Q10: 专业版有SLA保障吗?
-A: 专业版提供99.5%可用性SLA(基于守护进程+多Key+fallback机制)。如未达标,按比例退还月费。详细SLA条款见服务协议。
-
+A: 专业版提供99.5%可用性SLA(基于守护进程+多Key+fallback机制)。如未达标,按比例退还月费。详细SLA条款见服务协议.
 ## 错误处理
 
 | 错误场景(续)| 原因 | 处理方式 |

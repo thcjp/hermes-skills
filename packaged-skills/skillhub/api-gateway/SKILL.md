@@ -9,7 +9,7 @@ description: |-
   托管式 API 网关路由服务。通过统一的 API 路由地址连接 Slack、Gmail、HubSpot、Salesforce、Stripe、
   Airtable、Notion 等第三方服务。提供连接管理（创建/列出/删除）、触发器管理（事件监听/重放/目标配置）、
   安全审批流程（只读优先、写操作需确认、高危操作额外审查）。支持 CLI 与 HTTP 两种调用方式,
-  速率限制 10 请求/秒/账户。适用于第三方 API 集成、平台对接、自动化工作流场景。
+  速率限制 10 请求/秒/账户。适用于第三方 API 集成、平台对接、自动化工作流场景.
 tags:
   - 研发工具
   - Automation
@@ -21,15 +21,12 @@ homepage: "https://skillhub.cn"
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+
 ---
 # API 网关集成路由
 
-托管式 API 网关路由服务。通过统一的 API 路由地址 `https://api.maton.ai/` 连接第三方服务,提供连接管理、触发器管理与安全审批流程。
-
-**范围外**（本技能不做）: 自建 API 代理服务器、OAuth 服务端部署、API Key 生成与分发。
-
+托管式 API 网关路由服务。通过统一的 API 路由地址 `https://api.maton.ai/` 连接第三方服务,提供连接管理、触发器管理与安全审批流程.
+**范围外**（本技能不做）: 自建 API 代理服务器、OAuth 服务端部署、API Key 生成与分发.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -70,7 +67,7 @@ tags: "API,接口,开发工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 - **统一路由**: 通过 `https://api.maton.ai/<app>/...` 路由访问 Slack、Gmail、Stripe 等服务
@@ -81,26 +78,20 @@ export API_KEY="your_api_key_here"
 - **事件检查点**: 触发器监听中断后从上次处理位置恢复,不重复执行已处理事件
 ### 统一路由
 
-针对统一路由,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供统一路由相关的配置参数、输入数据和处理选项。
-
+针对统一路由,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供统一路由相关的配置参数、输入数据和处理选项.
 **输出**: 返回统一路由的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`统一路由`的配置文档进行参数调优
 ### 连接管理
 
-针对连接,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供连接管理相关的配置参数、输入数据和处理选项。
-
+针对连接,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供连接管理相关的配置参数、输入数据和处理选项.
 **输出**: 返回连接管理的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`连接管理`的配置文档进行参数调优
 ### 触发器管理
 
-针对触发器,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供触发器管理相关的配置参数、输入数据和处理选项。
-
+针对触发器,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供触发器管理相关的配置参数、输入数据和处理选项.
 **输出**: 返回触发器管理的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`触发器管理`的配置文档进行参数调优
 #
@@ -120,8 +111,7 @@ https://api.maton.ai/stripe/v1/customers?limit=10
 https://api.maton.ai/salesforce/services/data/v64.0/query?q=SELECT+Id,Name+FROM+Contact+LIMIT+10
 ```
 
-第一个路径段是 app 标识符（如 `slack`、`google-mail`、`stripe`、`salesforce`）。
-
+第一个路径段是 app 标识符（如 `slack`、`google-mail`、`stripe`、`salesforce`）.
 ## 安全与权限
 
 - **最小权限**: 仅连接当前任务所需的服务,优先使用只读 scope,及时撤销无用连接
@@ -161,8 +151,7 @@ maton stripe customer list -L 10
 ```
 
 ### Step 4: 写操作前向用户确认
-展示: 连接 ID、端点路径、请求体、预期结果。等待用户明确批准。
-
+展示: 连接 ID、端点路径、请求体、预期结果。等待用户明确批准.
 ### Step 5: 执行写操作
 ```bash
 # 用户批准后执行
@@ -179,8 +168,7 @@ maton api '/slack/api/chat.postMessage' -X POST -d '{"channel":"C0123456789","te
 maton slack channel list --types public_channel --limit 10
 ```
 
-**说明**: 只读 GET 操作,无需额外批准。返回频道 ID 与名称列表。
-
+**说明**: 只读 GET 操作,无需额外批准。返回频道 ID 与名称列表.
 ### 案例2: Salesforce SOQL 查询（只读）
 **场景**: 用户需要查询 Salesforce 联系人
 
@@ -197,8 +185,7 @@ req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 ```
 
-**说明**: SOQL 查询为只读操作,返回联系人 ID 与姓名。
-
+**说明**: SOQL 查询为只读操作,返回联系人 ID 与姓名.
 ### 案例3: Gmail 触发器 → Slack 自动化
 **场景**: 收到新邮件时自动发送 Slack 通知
 
@@ -209,8 +196,7 @@ maton trigger create --source google-mail --event-type email.received \
   --destination '{"url":"https://api.maton.ai/slack/api/chat.postMessage","method":"POST","name":"slack","headers":{"Authorization":"Bearer '"$MATON_API_KEY"'","Content-Type":"application/json"},"body_template":"{\"channel\": \"C0123456789\", \"text\": \"New email: {{ payload.snippet }}\"}"}'
 ```
 
-**说明**: 创建触发器监听 Gmail 收件事件,新邮件到达时自动向 Slack 频道发送通知。触发器支持事件检查点,中断后从上次位置恢复。
-
+**说明**: 创建触发器监听 Gmail 收件事件,新邮件到达时自动向 Slack 频道发送通知。触发器支持事件检查点,中断后从上次位置恢复.
 ### 案例4: Stripe 列出客户（带 jq 过滤）
 **场景**: 用户需要列出非欠款客户
 
@@ -218,8 +204,7 @@ maton trigger create --source google-mail --event-type email.received \
 maton stripe customer list -L 10 --json --jq '.data | map(select(.delinquent == false))'
 ```
 
-**说明**: 使用 `--jq` 过滤 `delinquent == false` 的客户,只读操作。
-
+**说明**: 使用 `--jq` 过滤 `delinquent == false` 的客户,只读操作.
 ## 错误处理
 
 | 错误场景 | HTTP 状态码 | 原因分析 | 处理方式 |
@@ -235,23 +220,17 @@ maton stripe customer list -L 10 --json --jq '.data | map(select(.delinquent == 
 ## 常见问题
 
 ### Q1: 如何安装 CLI 工具?
-A: NPM 安装: `npm install -g @maton/cli`;Homebrew 安装: `brew install maton-ai/cli/maton`。安装后运行 `maton whoami` 验证。
-
+A: NPM 安装: `npm install -g @maton/cli`;Homebrew 安装: `brew install maton-ai/cli/maton`。安装后运行 `maton whoami` 验证.
 ### Q2: 速率限制是多少?
-A: 每账户 10 请求/秒。同时,目标 API 自身的速率限制也适用。建议实现指数退避（1s/2s/4s）处理 429 响应。
-
+A: 每账户 10 请求/秒。同时,目标 API 自身的速率限制也适用。建议实现指数退避（1s/2s/4s）处理 429 响应.
 ### Q3: 非_GET 操作为什么需要额外确认?
-A: 写操作（POST/PUT/PATCH/DELETE）会修改数据,部分操作不可逆。所有写操作前需向用户展示连接 ID、端点路径、请求体与预期结果,等待明确批准后才执行。高危操作（发消息、删除、计费变更等）需额外审查。
-
+A: 写操作（POST/PUT/PATCH/DELETE）会修改数据,部分操作不可逆。所有写操作前需向用户展示连接 ID、端点路径、请求体与预期结果,等待明确批准后才执行。高危操作（发消息、删除、计费变更等）需额外审查.
 ### Q4: 如何处理 QuickBooks 的 realmId?
-A: QuickBooks 路由中使用 `:realmId` 占位符,网关自动替换为已连接的 realm ID。例如 `/quickbooks/v3/company/:realmId/query`。
-
+A: QuickBooks 路由中使用 `:realmId` 占位符,网关自动替换为已连接的 realm ID。例如 `/quickbooks/v3/company/:realmId/query`.
 ### Q5: 触发器监听中断后会重复处理事件吗?
-A: 不会。触发器监听使用检查点机制,每个事件处理后将最后处理的事件 ID 写入 per-trigger 状态文件。重启监听从上次位置恢复,中断的批次不会重新执行已处理事件。
-
+A: 不会。触发器监听使用检查点机制,每个事件处理后将最后处理的事件 ID 写入 per-trigger 状态文件。重启监听从上次位置恢复,中断的批次不会重新执行已处理事件.
 ### Q6: 媒体上传 URL 为什么和 API host 不同?
-A: LinkedIn 等服务返回预签名上传 URL 指向不同 host（如 `www.linkedin.com` 而非 `api.linkedin.com`）。这些 URL 已预签名,不需要 Authorization 头。必须使用 Python `urllib` 上传（URL 含 `%253D` 等编码字符,curl 会损坏）。仅跟随预期服务域名的上传 URL。
-
+A: LinkedIn 等服务返回预签名上传 URL 指向不同 host（如 `www.linkedin.com` 而非 `api.linkedin.com`）。这些 URL 已预签名,不需要 Authorization 头。必须使用 Python `urllib` 上传（URL 含 `%253D` 等编码字符,curl 会损坏）。仅跟随预期服务域名的上传 URL.
 ## 已知限制
 
 1. **需 API Key**: 必须配置 `MATON_API_KEY`,无 Key 环境无法使用

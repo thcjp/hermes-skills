@@ -15,15 +15,14 @@ tags:
   - 群组管理
   - 自动化协作
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "WhatsApp,社交,通信"
+
 ---
 # WhatsApp大师(专业版)
 
@@ -49,33 +48,25 @@ tags: "WhatsApp,社交,通信"
 | 多智能体 | 路由、拥塞、生命周期、预算 | 4 |
 ### 多智能体
 
-针对多智能体,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供多智能体相关的配置参数、输入数据和处理选项。
-
+针对多智能体,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供多智能体相关的配置参数、输入数据和处理选项.
 **输出**: 返回多智能体的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`多智能体`的配置文档进行参数调优
 #
 ## 适用场景
 
 ### 场景一：多智能体脑暴（架构师视角）
-把 3 个 Agent（Jarvis/Luna/Rex）放进一个 WhatsApp 群组讨论产品方案。配置 `broadcast` 模式让所有 Agent 都能发言，开启拥塞控制防止消息爆炸，设置 `maxTurnsPerObjective=30` 硬上限。
-
+把 3 个 Agent（Jarvis/Luna/Rex）放进一个 WhatsApp 群组讨论产品方案。配置 `broadcast` 模式让所有 Agent 都能发言，开启拥塞控制防止消息爆炸，设置 `maxTurnsPerObjective=30` 硬上限.
 ### 场景二：按需点名讨论（产品视角）
-只让被点名的 Agent 发言。配置 `addressed` 模式，用户说"Luna，你怎么看？"时只有 Luna 响应，其他 Agent 保持沉默。
-
+只让被点名的 Agent 发言。配置 `addressed` 模式，用户说"Luna，你怎么看？"时只有 Luna 响应，其他 Agent 保持沉默.
 ### 场景三：结构化轮询（QA 视角）
-需要每个 Agent 依次给出意见。配置 `round-robin` 模式，Agent 按顺序发言，避免抢话。
-
+需要每个 Agent 依次给出意见。配置 `round-robin` 模式，Agent 按顺序发言，避免抢话.
 ### 场景四：预算燃烧模式（运维视角）
-接近 API 配额重置时仍有大量额度剩余。启用 `burn` 模式，加快发言节奏、放宽陈旧阈值、鼓励发散讨论，把即将过期的 token 用完。
-
+接近 API 配额重置时仍有大量额度剩余。启用 `burn` 模式，加快发言节奏、放宽陈旧阈值、鼓励发散讨论，把即将过期的 token 用完.
 ### 场景五：群组运营（运营视角）
-创建项目群组、设置图标与描述、邀请参与者、生成邀请链接、管理员权限管理。全部通过命令行完成。
-
+创建项目群组、设置图标与描述、邀请参与者、生成邀请链接、管理员权限管理。全部通过命令行完成.
 ### 场景六：历史检索（开发者视角）
-搜索群组历史消息中的关键词，提取 vCard 联系人电话号码，按 LID/JID 别名跨格式检索。
-
+搜索群组历史消息中的关键词，提取 vCard 联系人电话号码，按 LID/JID 别名跨格式检索.
 ## 使用流程
 
 ### 120 秒上手
@@ -178,7 +169,7 @@ message action=group-create channel=whatsapp name="Project Team" participants=["
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 多智能体身份配置
@@ -287,8 +278,7 @@ workspace/
 | 激进 | < 60% | 0.7 倍快 | 0.85 | 正常 | 是 |
 | 燃烧 | < 20% 且 < 24h 重置 | 0.3 倍快 | 0.95 | 2 倍 | 鼓励 |
 
-燃烧模式哲学：未使用的 token 在重置时过期，不如让 Agent 之间产生涌现性讨论。
-
+燃烧模式哲学：未使用的 token 在重置时过期，不如让 Agent 之间产生涌现性讨论.
 ### 群组管理命令
 
 ```text
@@ -314,35 +304,25 @@ message action=getInviteCode channel=whatsapp groupJid="123456789@g.us"
 ## 常见问题
 
 ### Q1：多 Agent 同时发言导致消息爆炸？
-A：开启 `congestion.enabled=true`，指数礼貌协议会让 Agent 按平方延迟发言。5 个 Agent 基础延迟约 3.75 秒，避免同时响应。
-
+A：开启 `congestion.enabled=true`，指数礼貌协议会让 Agent 按平方延迟发言。5 个 Agent 基础延迟约 3.75 秒，避免同时响应.
 ### Q2：Agent 一直在"I agree"循环？
-A：开启 `lifecycle.autoClose=true` 与同意循环检测。`stalenessThreshold=0.85` 会检测到相似度高于阈值的循环并触发收尾。
-
+A：开启 `lifecycle.autoClose=true` 与同意循环检测。`stalenessThreshold=0.85` 会检测到相似度高于阈值的循环并触发收尾.
 ### Q3：API 账单突然暴涨？
-A：检查 `budget` 配置。多 Agent 广播模式下每条消息触发 N 次响应。建议：① 用 `addressed` 模式替代 `broadcast`；② 设置 `maxTurnsPerObjective`；③ 月末切 `conservative` 模式。
-
+A：检查 `budget` 配置。多 Agent 广播模式下每条消息触发 N 次响应。建议：① 用 `addressed` 模式替代 `broadcast`；② 设置 `maxTurnsPerObjective`；③ 月末切 `conservative` 模式.
 ### Q4：编辑消息失败？
-A：只能编辑自己发送的消息（`message action=edit`）。需要 `messageId` 与 `chatJid`，且消息发送未超过编辑窗口（通常 15 分钟）。
-
+A：只能编辑自己发送的消息（`message action=edit`）。需要 `messageId` 与 `chatJid`，且消息发送未超过编辑窗口（通常 15 分钟）.
 ### Q5：撤回消息不成功？
-A：`message action=unsend` 只能撤回自己发送的消息，且需在撤回窗口内（通常 1 小时）。群组中管理员可撤回他人消息。
-
+A：`message action=unsend` 只能撤回自己发送的消息，且需在撤回窗口内（通常 1 小时）。群组中管理员可撤回他人消息.
 ### Q6：群组邀请链接失效？
-A：邀请链接可能被撤销或群组已满。调用 `getInviteCode` 获取最新链接，或 `revokeInviteCode` 撤销旧链接后重新生成。
-
+A：邀请链接可能被撤销或群组已满。调用 `getInviteCode` 获取最新链接，或 `revokeInviteCode` 撤销旧链接后重新生成.
 ### Q7：历史搜索搜不到旧消息？
-A：WhatsApp 的 LID/JID 别名可能导致搜索遗漏。专业版的 `resolveChatJids()` 会跨 `@lid` 与 `@s.whatsapp.net` 两种格式交叉引用。
-
+A：WhatsApp 的 LID/JID 别名可能导致搜索遗漏。专业版的 `resolveChatJids()` 会跨 `@lid` 与 `@s.whatsapp.net` 两种格式交叉引用.
 ### Q8：vCard 联系人怎么提取？
-A：联系人消息会返回结构化 `vcard` 字段，包含姓名与电话号码。3.7.0+ 版本支持多联系人 `contactsArrayMessage`，电话号码也会写入 `text_content` 支持全文检索。
-
+A：联系人消息会返回结构化 `vcard` 字段，包含姓名与电话号码。3.7.0+ 版本支持多联系人 `contactsArrayMessage`，电话号码也会写入 `text_content` 支持全文检索.
 ### Q9：燃烧模式会不会失控？
-A：燃烧模式仍受 `maxTurnsPerObjective`（2 倍）与拥塞控制约束，只是放宽陈旧阈值与延迟。它鼓励发散但不允许无限循环。
-
+A：燃烧模式仍受 `maxTurnsPerObjective`（2 倍）与拥塞控制约束，只是放宽陈旧阈值与延迟。它鼓励发散但不允许无限循环.
 ### Q10：DM 触发前缀怎么配？
-A：在通道配置中设置 `triggerPrefix`。群主始终绕过；授权联系人必须在消息开头加前缀；群内 Agent 自由讨论绕过前缀。
-
+A：在通道配置中设置 `triggerPrefix`。群主始终绕过；授权联系人必须在消息开头加前缀；群内 Agent 自由讨论绕过前缀.
 ## 错误处理
 
 | 错误场景(续)| 原因 | 处理方式 |

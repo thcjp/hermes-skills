@@ -5,9 +5,9 @@ displayName: "AgentVibes内容技能"
 version: "1.0.0"
 summary: "AgentVibes内容创作与管理技能,支持多模态内容生成与发布"
 description: |-
-  API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据。
-  Use when 用户说"Agentvibes Content Skill 核心处理"、Agentvibes Content Skill 核心处理时使用。
-  不适用于需要人工判断的复杂场景。
+  API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.
+  Use when 用户说"Agentvibes Content Skill 核心处理"、Agentvibes Content Skill 核心处理时使用.
+  不适用于需要人工判断的复杂场景.
 license: "Proprietary"
 tools:
   - read
@@ -19,8 +19,7 @@ tags:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+
 ---
 # Agentvibes Content Skill 智能分析
 
@@ -103,7 +102,7 @@ tags: "AI代理,自动化,智能"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 示例1: 基础用法

@@ -3,12 +3,12 @@ slug: "minimalist-design-tool-pro"
 name: "minimalist-design-tool-pro"
 version: "1.0.0"
 displayName: "极简设计系统专业版"
-summary: "企业级极简设计系统解决方案,支持完整组件库、多主题切换、设计审计与CI/CD集成,适合团队与商业项目。"
+summary: "企业级极简设计系统解决方案,支持完整组件库、多主题切换、设计审计与CI/CD集成,适合团队与商业项目"
 license: "Proprietary"
 edition: "pro"
 description: |-
   极简设计系统专业版为企业与专业团队提供系统化的极简现代主义设计系统解决方案。在免费版核心设计令牌之上,增加完整组件库、多主题切换、设计系统文档自动生成、
-  设计审计与CI/CD集成能力。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
+  设计审计与CI/CD集成能力。
 tags:
   - 设计系统
   - 企业级
@@ -17,14 +17,12 @@ tags:
   - CI/CD
   - 前端开发
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 ---
 极简设计系统专业版为企业与专业团队提供系统化的极简现代主义设计系统解决方案。在免费版核心设计令牌之上,PRO版增加完整组件库、多主题切换、设计系统文档自动生成、设计审计与CI/CD集成能力,满足企业级设计系统的全面需求。
 
@@ -50,7 +48,7 @@ component_library = {
     "layout": ["container", "grid", "stack", "divider", "spacer"],
     "overlay": ["dropdown", "popover", "context-menu", "drawer"]
 }
-# ...
+# .
 python3 generate_components.py \
   --config components.yml \
   --output ./components/ \
@@ -86,7 +84,7 @@ export_config = {
         {"name": "ios_swift", "output": "Tokens.swift"}
     ]
 }
-# ...
+# .
 python3 export_tokens.py --config export_config
 ```
 
@@ -165,7 +163,7 @@ const motionSystem = {
 **输入**: 用户提供Framer Motion高级动效所需的指令和必要参数。
 **处理**: 解析Framer Motion高级动效的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回Framer Motion高级动效的响应数据,包含状态码、结果和日志。
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级极简设计系、统解决方案、支持完整组件库、多主题切换、设计审计与、适合团队与商业项、极简设计系统专业、版为企业与专业团、队提供系统化的极、简现代主义设计系、在免费版核心设计、令牌之上、增加完整组件库、集成能力、Use、when、需要设计创作、海报制作、品牌视觉时使用、不适用于、建模和动画制作、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级极简设计系、统解决方案、支持完整组件库、多主题切换、设计审计与、适合团队与商业项、极简设计系统专业、版为企业与专业团、队提供系统化的极、简现代主义设计系、在免费版核心设计、令牌之上、增加完整组件库、集成能力、Use、when、、品牌视觉时使用、不适用于、建模和动画制作、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
@@ -178,18 +176,18 @@ python3 init_design_system.py \
   --version "2.0.0" \
   --themes "light,dark,brand" \
   --output ./design-system/
-# ...
+# .
 python3 generate_components.py \
   --config components.yml \
   --output ./design-system/components/ \
   --with-docs \
   --with-tests \
   --with-stories
-# ...
+# .
 python3 export_tokens.py \
   --source design-tokens.yml \
   --formats "css,tailwind,figma,scss,json"
-# ...
+# .
 python3 generate_docs.py \
   --config doc-config.yml \
   --output ./design-system/docs/
@@ -242,7 +240,7 @@ brands = {
         "components": "custom_override"
     }
 }
-# ...
+# .
 for brand_id, config in brands.items():
     generate_brand_package(brand_id, config)
 ```
@@ -302,7 +300,7 @@ python3 generate_components.py \
 ### Step 3:审计与文档
 ```bash
 python3 audit_design.py --scan ./src/ --report ./audit/
-# ...
+# .
 python3 generate_docs.py --output ./docs/
 ```
 
@@ -316,11 +314,11 @@ components:
     variants: [primary, secondary, ghost, icon, fab]
     sizes: [sm, md, lg]
     states: [default, hover, active, disabled, loading]
-# ...
+# .
   cards:
     types: [basic, media, interactive, pricing, testimonial]
     features: [hover_effect, gradient_border, shadow_glow]
-# ...
+# .
   forms:
     inputs: [text, email, password, search, number]
     selects: [single, multi, searchable]

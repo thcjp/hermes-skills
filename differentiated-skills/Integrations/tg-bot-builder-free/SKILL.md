@@ -1,35 +1,31 @@
 ---
 slug: tg-bot-builder-free
 name: tg-bot-builder-free
-version: 1.0.1
+version: 1.0.2
 displayName: TG机器人构建免费版
 summary: 零代码快速搭建Telegram机器人，支持键盘按钮、内联菜单、Webhook与自动回复
 license: Proprietary
 edition: free
 description: 面向独立开发者与小团队的Telegram机器人构建助手，覆盖Bot创建、交互菜单、消息流转、群组管理等核心场景。核心能力：通过自然语言指令生成Bot配置代码，支持Reply键盘、Inline内联按钮、Webhook接入、自动回复规则与基础群组权限管理。Use
-  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
+  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
 - 集成工具
 - 通信自动化
 - 机器人开发
 tools:
-- - read
+- read
 - exec
 homepage: https://skillhub.cn
 pricing_tier: "L2-标准级"
 pricing_model: per_use
 suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
 ---
 # TG机器人构建助手（免费版）
 
 ## 概述
 
-本Skill帮助开发者通过自然语言描述快速生成Telegram机器人的配置代码与交互逻辑。无需手翻文档，只需描述你想要的机器人行为，即可获得可直接运行的代码片段与部署指引。
-
-免费版覆盖Bot创建、键盘交互、Webhook接入、自动回复等核心能力，满足个人项目与小型社群的日常需求。
-
+本Skill帮助开发者通过自然语言描述快速生成Telegram机器人的配置代码与交互逻辑。无需手翻文档，只需描述你想要的机器人行为，即可获得可直接运行的代码片段与部署指引.
+免费版覆盖Bot创建、键盘交互、Webhook接入、自动回复等核心能力，满足个人项目与小型社群的日常需求.
 ## 核心能力
 
 | 能力模块 | 说明 | 免费版支持 |
@@ -45,44 +41,37 @@ tags: "UI设计,前端,设计"
 | 高级会话状态机 | 多轮对话状态管理 | 否（专业版） |
 
 ### 核心功能执行
-用`input_params`参数进行配置。
-
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志。
+用`input_params`参数进行配置.
+**输入**: 用户提供核心功能执行所需的指令和必要参数.
+**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
-用`config_options`参数进行配置。
-
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志。
+用`config_options`参数进行配置.
+**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+**处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
-用`output_format`参数进行配置。
-
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志。
+用`output_format`参数进行配置.
+**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+**处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：零代码快速搭建、机器人、支持键盘按钮、内联菜单、与自动回复、面向独立开发者与、小团队的、机器人构建助手、交互菜单、消息流转、群组管理等核心场、核心能力、通过自然语言指令、配置代码、自动回复规则与基、础群组权限管理、Use、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：零代码快速搭建、机器人、支持键盘按钮、内联菜单、与自动回复、面向独立开发者与、小团队的、机器人构建助手、交互菜单、消息流转、群组管理等核心场、核心能力、通过自然语言指令、配置代码、自动回复规则与基、础群组权限管理、Use、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 使用场景
 
 ### 场景一：客服自动应答机器人
 
-某独立开发者运营一个产品社群，每天收到大量重复问题。通过本Skill生成一个关键词匹配的自动回复Bot，将常见问题（价格、文档链接、退款政策）设置为自动响应，人工只处理复杂问题。
-
+某独立开发者运营一个产品社群，每天收到大量重复问题。通过本Skill生成一个关键词匹配的自动回复Bot，将常见问题（价格、文档链接、退款政策）设置为自动响应，人工只处理复杂问题.
 ### 场景二：订单查询机器人
 
-小型电商希望用户通过Telegram查询订单状态。使用Inline按钮构建查询菜单，用户点击"查询订单"后输入订单号，Bot返回物流信息。
-
+小型电商希望用户通过Telegram查询订单状态。使用Inline按钮构建查询菜单，用户点击"查询订单"后输入订单号，Bot返回物流信息.
 ### 场景三：内容订阅通知
 
-内容创作者搭建订阅通知系统，新文章发布时通过Webhook推送到订阅者群组，支持富文本格式与图片附件。
-
+内容创作者搭建订阅通知系统，新文章发布时通过Webhook推送到订阅者群组，支持富文本格式与图片附件.
 ## 快速开始
 
 ### 第一步：创建Bot（约60秒）
@@ -104,7 +93,7 @@ Agent将生成如下配置：
 
 ```python
 from telegram import ReplyKeyboardMarkup
-# ...
+# ..
 keyboard = [
     ["产品咨询", "价格查询"],
     ["联系人工"]
@@ -125,7 +114,7 @@ curl -s "https://api.telegram.org/bot<TOKEN>/setWebhook?url=https://yourdomain.c
 
 ```python
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-# ...
+# ..
 # 构建内联菜单
 keyboard = [
     [InlineKeyboardButton("查看订单", callback_data="order_view"),
@@ -141,9 +130,9 @@ markup = InlineKeyboardMarkup(keyboard)
 auto_reply_rules = {
     "价格": "我们的套餐分为：基础版¥29/月、专业版¥99/月。详情请访问官网。",
     "文档": "开发文档地址：https://docs.example.com",
-    "退款": "退款政策：购买7天内无条件退款，请联系人工客服处理。"
+    "退款": "退款政策：购买7天内无条件退款，请联系人工客服处理"
 }
-# ...
+# ..
 def match_reply(text):
     for keyword, reply in auto_reply_rules.items():
         if keyword in text:
@@ -170,12 +159,12 @@ Telegram Bot API限制每秒最多30条消息，单个聊天每分钟最多20条
 ```python
 import asyncio
 from collections import defaultdict
-# ...
+# ..
 class RateLimiter:
     def __init__(self):
         self.user_last_msg = defaultdict(float)
         self.global_queue = asyncio.Queue()
-# ...
+# ..
     async def send(self, user_id, message):
         # 单用户限流：每60秒最多20条
         elapsed = time.time() - self.user_last_msg[user_id]
@@ -206,24 +195,19 @@ class RateLimiter:
 
 ### Q1：Bot无法发送消息，提示403怎么办？
 
-A：用户可能已屏蔽你的Bot。403错误表示"bot was blocked by user"，此时应停止向该用户发送消息，并在数据库中标记为非活跃。不要反复重试，否则会触发速率限制。
-
+A：用户可能已屏蔽你的Bot。403错误表示"bot was blocked by user"，此时应停止向该用户发送消息，并在数据库中标记为非活跃。不要反复重试，否则会触发速率限制.
 ### Q2：Webhook一直收不到消息怎么排查？
 
-A：按以下顺序检查：(1) 确认Webhook URL使用HTTPS且证书有效；(2) 使用 `getWebhookInfo` 接口查看Telegram返回的错误信息；(3) 确认服务器防火墙放行了443端口；(4) 检查Webhook处理脚本是否有语法错误导致500响应。
-
+A：按以下顺序检查：(1) 确认Webhook URL使用HTTPS且证书有效；(2) 使用 `getWebhookInfo` 接口查看Telegram返回的错误信息；(3) 确认服务器防火墙放行了443端口；(4) 检查Webhook处理脚本是否有语法错误导致500响应.
 ### Q3：如何处理按钮点击事件？
 
-A：Inline按钮的点击通过 `callback_query` 更新类型传递。需要监听 `CallbackQuery` 并调用 `answerCallbackQuery` 确认，否则用户端会一直显示加载状态。
-
+A：Inline按钮的点击通过 `callback_query` 更新类型传递。需要监听 `CallbackQuery` 并调用 `answerCallbackQuery` 确认，否则用户端会一直显示加载状态.
 ### Q4：群组中Bot无法读取用户消息？
 
-A：默认情况下Bot只能读取以 `/` 开头的命令和@提及。需要在BotFather中通过 `/setprivacy` 设置为 `Disabled`，Bot才能读取群内所有消息（需Bot为群管理员）。
-
+A：默认情况下Bot只能读取以 `/` 开头的命令和@提及。需要在BotFather中通过 `/setprivacy` 设置为 `Disabled`，Bot才能读取群内所有消息（需Bot为群管理员）.
 ### Q5：免费版有哪些功能限制？
 
-A：免费版不限制使用次数，但不支持Telegram Stars支付集成、批量消息推送、高级会话状态机、自定义模板库等高级功能。如需这些能力请使用专业版。
-
+A：免费版不限制使用次数，但不支持Telegram Stars支付集成、批量消息推送、高级会话状态机、自定义模板库等高级功能。如需这些能力请使用专业版.
 ## 依赖说明
 
 ### 运行环境

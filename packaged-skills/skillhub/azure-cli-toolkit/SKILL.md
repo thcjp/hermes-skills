@@ -32,15 +32,14 @@ tags:
   - 企业级
   - 成本治理
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Azure,云计算,DevOps"
+
 ---
 # Azure命令行工具专业版
 
@@ -79,7 +78,7 @@ echo "$AZURE_ACCESS_TOKEN" | az login --service-principal \
   -u $AZURE_CLIENT_ID --password-stdin --tenant $AZURE_TENANT_ID
 ```
 
-**输出**: 返回自动化认证方式的处理结果,包含执行状态码、结果数据和执行日志。
+**输出**: 返回自动化认证方式的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. 批量资源操作
 ```bash
 # 批量删除资源组下所有虚拟机
@@ -92,7 +91,7 @@ az vm list -d --query "[?powerState=='VM running'].id" -o tsv | xargs az vm stop
 az resource list --tag env=production --query "[].id" -o tsv
 ```
 
-**输入**: 用户提供批量资源操作所需的指令和必要参数。
+**输入**: 用户提供批量资源操作所需的指令和必要参数.
 **输出**: 返回批量资源的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `批量资源操作` 选项
@@ -127,7 +126,7 @@ az network nsg rule create -g prod-rg --nsg-name prod-nsg \
   --access Allow --protocol Tcp
 ```
 
-**输入**: 用户提供自动化部署脚本所需的指令和必要参数。
+**输入**: 用户提供自动化部署脚本所需的指令和必要参数.
 **处理**: 解析自动化部署脚本的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `自动化部署脚本` 选项
@@ -145,8 +144,8 @@ for sub in $(az account list --query "[].id" -o tsv); do
 done
 ```
 
-**输入**: 用户提供多订阅管理所需的指令和必要参数。
-**处理**: 解析多订阅管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输入**: 用户提供多订阅管理所需的指令和必要参数.
+**处理**: 解析多订阅管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回多订阅管理的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `多订阅管理` 选项
@@ -169,10 +168,9 @@ az monitor metrics list \
   --interval PT1H -o table
 ```
 
-**输入**: 用户提供成本分析与优化所需的指令和必要参数。
-**处理**: 解析成本分析与优化的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回成本分析与优化的处理结果,包含执行状态码、结果数据和执行日志。
-
+**输入**: 用户提供成本分析与优化所需的指令和必要参数.
+**处理**: 解析成本分析与优化的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回成本分析与优化的处理结果,包含执行状态码、结果数据和执行日志.
 ### 6. 策略合规审计
 ```bash
 # 查看策略分配
@@ -185,16 +183,14 @@ az policy state list --query "[?complianceState=='NonCompliant']" -o table
 az security assessment list -o table
 ```
 
-**输入**: 用户提供策略合规审计所需的指令和必要参数。
-**输出**: 返回策略合规审计的处理结果,包含执行状态码、结果数据和执行日志。
-
+**输入**: 用户提供策略合规审计所需的指令和必要参数.
+**输出**: 返回策略合规审计的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 适用场景
 
 ### 场景一: 企业级基础设施自动化部署
 
-通过脚本化方式部署完整的生产环境。
-
+通过脚本化方式部署完整的生产环境.
 ```bash
 #!/bin/bash
 set -e
@@ -223,8 +219,7 @@ az resource list -g $RG --query "[].{name:name, type:type}" -o table
 
 ### 场景二: 多环境统一管理
 
-统一管理开发、测试、生产三个环境的资源状态。
-
+统一管理开发、测试、生产三个环境的资源状态.
 ```bash
 # 批量查询所有环境资源
 for env in dev test prod; do
@@ -241,8 +236,7 @@ az vm list -g app-dev-rg --query "[].id" -o tsv | \
 
 ### 场景三: 成本治理与资源清理
 
-识别闲置资源并清理,优化云成本。
-
+识别闲置资源并清理,优化云成本.
 ```bash
 # 查找未附加的磁盘
 az disk list --query "[?diskState=='Unattached']" -o table
@@ -479,8 +473,7 @@ az keyvault secret show --vault-name myVault -n azure-client-secret \
 
 ### Q1: 专业版是否兼容免费版的命令?
 
-完全兼容。专业版使用相同的 `az` 命令语法,免费版的所有命令在专业版中可直接使用。
-
+完全兼容。专业版使用相同的 `az` 命令语法,免费版的所有命令在专业版中可直接使用.
 ### Q2: 服务主体的密码过期了怎么办?
 
 ```bash
@@ -490,8 +483,7 @@ az ad sp credential reset --name <appId> --password <new-password>
 
 ### Q3: 如何在 CI/CD 中安全存储凭据?
 
-使用 CI/CD 平台的密钥管理功能(如 Azure KeyVault、GitHub Secrets),不要在代码中硬编码凭据。
-
+使用 CI/CD 平台的密钥管理功能(如 Azure KeyVault、GitHub Secrets),不要在代码中硬编码凭据.
 ### Q4: 批量操作误删了资源怎么办?
 
 专业版支持软删除恢复:
@@ -503,8 +495,7 @@ az resource recover --ids <deleted-resource-id>
 
 ### Q5: 成本分析数据延迟多久?
 
-成本数据通常有 8-24 小时延迟,建议结合监控指标做实时预估。
-
+成本数据通常有 8-24 小时延迟,建议结合监控指标做实时预估.
 ### Q6: 策略合规扫描多久执行一次?
 
 建议每周执行一次全量扫描,新资源部署后立即扫描:
@@ -525,3 +516,6 @@ az policy state trigger-scan
 ## 已知限制
 
 - 依赖云服务，需要网络连接
+- 需要有效的云服务凭证和配置好的CLI环境
+- 产生的云资源可能产生费用，使用前请确认计费方式
+- 不同区域的服务可用性和功能支持可能存在差异

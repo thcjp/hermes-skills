@@ -7,19 +7,18 @@ summary: "用内置本地转换器把RSS/Atom订阅转Markdown"
 license: "Proprietary"
 description: |-
   Convert RSS or Atom feed URLs into Markdown using the bundled local
-  converter script。Use this wh。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
+  converter script。Use this wh。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
   - Research
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Feed To Md
 
@@ -44,7 +43,8 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 用内置本地转换器把R | 目标数据与配置参数 | 处理结果与执行状态 |
+| Atom订阅转Mar | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -103,8 +103,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 错误处理
 
 | 错误场景(续)| 原因 | 处理方式 |
@@ -118,12 +117,13 @@ export API_KEY="your_api_key_here"
 
 ### 如何开始使用？
 
-阅读使用流程章节,按步骤配置环境和参数后即可开始使用。首次使用建议先阅读依赖说明章节确认环境就绪。
-
+阅读使用流程章节,按步骤配置环境和参数后即可开始使用。首次使用建议先阅读依赖说明章节确认环境就绪.
 ### 遇到错误怎么办？
 
-查看错误处理章节,对照错误场景找到对应的处理方式。如错误处理章节未覆盖,收集错误信息后通过已知限制章节了解skill能力边界。
-
+查看错误处理章节,对照错误场景找到对应的处理方式。如错误处理章节未覆盖,收集错误信息后通过已知限制章节了解skill能力边界.
 ## 已知限制
 
 - 本地运行，不支持多设备同步
+- 依赖Agent平台的LLM能力与运行环境配置
+- 免费版功能受限，高级能力需升级专业版
+- 处理能力受限于本地硬件资源

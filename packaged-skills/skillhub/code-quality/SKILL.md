@@ -6,19 +6,18 @@ displayName: "Code Quality"
 summary: "编码风格标准/安全准则/无障碍要求,守住质量底线"
 license: "Proprietary"
 description: |-
-  Coding style standards, security guidelines, and accessibility requirements。Use when (1) Writing。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。
+  Coding style standards, security guidelines, and accessibility requirements。Use when (1) Writing。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Development
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
+
 ---
 # Code Quality
 
@@ -42,7 +41,9 @@ tags: "开发工具,代码生成,编程辅助"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 编码执行 | 需求描述与约束条件 | 代码文件与测试结果 |
+| 质量检查 | 代码库与标准配置 | 问题列表与修复建议 |
+| 风格检查 | 代码文件与风格规则 | 违规列表与修正建议 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -112,8 +113,7 @@ tags: "开发工具,代码生成,编程辅助"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Code Quality？

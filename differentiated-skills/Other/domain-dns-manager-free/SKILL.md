@@ -3,32 +3,30 @@ slug: domain-dns-manager-free
 name: domain-dns-manager-free
 version: 1.0.0
 displayName: 域名DNS管理免费版
-summary: 管理Cloudflare/DNSimple/Namecheap的域名与DNS记录，支持单域名接入与基础记录操作。
+summary: 管理Cloudflare/DNSimple/Namecheap的域名与DNS记录，支持单域名接入与基础记录操作.
 license: Proprietary
 edition: free
 description: 域名DNS管理免费版是一款面向个人开发者与小团队的域名管理Skill，封装Cloudflare、DNSimple、Namecheap三大平台的常用操作。Use
-  when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
+  when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
 - 域名管理
 - DNS配置
 - Cloudflare
 - 运维工具
 tools:
-- - read
+- read
 - exec
 homepage: https://skillhub.cn
 pricing_tier: "L2-标准级"
 pricing_model: per_use
 suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # 域名DNS管理免费版（Domain DNS Manager Free）
 
 ## 概述
 
-管理多个域名注册商与DNS服务商是一件繁琐的事：登录不同控制台、切换不同界面、记住不同操作流程。本Skill将Cloudflare、DNSimple、Namecheap三大平台的常用操作统一为标准化工作流，配合验证步骤确保每步操作正确生效。
-
+管理多个域名注册商与DNS服务商是一件繁琐的事：登录不同控制台、切换不同界面、记住不同操作流程。本Skill将Cloudflare、DNSimple、Namecheap三大平台的常用操作统一为标准化工作流，配合验证步骤确保每步操作正确生效.
 设计原则：
 1. **标准流程**：统一的接入、配置、验证三步工作流
 2. **可验证**：每步操作后用dig确认生效，不靠"应该好了"
@@ -45,10 +43,9 @@ tags: "工具,效率,自动化"
 | DNSimple | ✅ 查询域名 | ✅ 增删改查 | ✅ | ❌ |
 | Namecheap | ✅ 查询域名 | ❌（需通过CF） | ✅ | ❌ |
 
-**输入**: 用户提供支持的平台与操作所需的指令和必要参数。
-**处理**: 解析支持的平台与操作的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回支持的平台与操作的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供支持的平台与操作所需的指令和必要参数.
+**处理**: 解析支持的平台与操作的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回支持的平台与操作的响应数据,包含状态码、结果和日志.
 ### DNS记录类型支持
 
 | 记录类型 | 用途 | 示例 |
@@ -60,36 +57,28 @@ tags: "工具,效率,自动化"
 | TXT | 文本记录 | SPF/DKIM/DMARC/验证 |
 | NS | 域名服务器 | 委托子域 |
 
-**输入**: 用户提供DNS记录类型支持所需的指令和必要参数。
-**处理**: 解析DNS记录类型支持的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回DNS记录类型支持的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供DNS记录类型支持所需的指令和必要参数.
+**处理**: 解析DNS记录类型支持的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回DNS记录类型支持的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
-用`input_params`参数进行配置。
-
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志。
+用`input_params`参数进行配置.
+**输入**: 用户提供核心功能执行所需的指令和必要参数.
+**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：的域名与、支持单域名接入与、基础记录操作、管理免费版是一款、面向个人开发者与、小团队的域名管理、三大平台的常用操、Use、when、需要项目管理、任务规划、进度跟踪、团队协作时使用、不适用于实际人员、绩效评估、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：的域名与、支持单域名接入与、基础记录操作、管理免费版是一款、面向个人开发者与、小团队的域名管理、三大平台的常用操、Use、when、需要项目管理、任务规划、进度跟踪、团队协作时使用、不适用于实际人员、绩效评估、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 使用场景
 
 ### 场景一：新域名接入Cloudflare
-购买新域名后，需要接入Cloudflare享受CDN与防护。标准流程：(1)Cloudflare创建zone；(2)在注册商切换nameserver到Cloudflare；(3)配置DNS记录；(4)验证生效。
-
+购买新域名后，需要接入Cloudflare享受CDN与防护。标准流程：(1)Cloudflare创建zone；(2)在注册商切换nameserver到Cloudflare；(3)配置DNS记录；(4)验证生效.
 ### 场景二：配置HTTPS重定向
-将`http://example.com`重定向到`https://example.com`。使用Cloudflare Page Rule，一条规则搞定全站HTTPS。
-
+将`http://example.com`重定向到`https://example.com`。使用Cloudflare Page Rule，一条规则搞定全站HTTPS.
 ### 场景三：添加邮件DNS记录
-配置企业邮箱时，需要添加MX记录指向邮件服务器，TXT记录配置SPF防止伪造。本Skill提供标准配置模板。
-
+配置企业邮箱时，需要添加MX记录指向邮件服务器，TXT记录配置SPF防止伪造。本Skill提供标准配置模板.
 ### 场景四：域名迁移
-将域名从旧DNS迁移到新DNS。先在新DNS配置好所有记录，再切换nameserver，确保迁移过程中服务不中断。
-
+将域名从旧DNS迁移到新DNS。先在新DNS配置好所有记录，再切换nameserver，确保迁移过程中服务不中断.
 ### 场景五：开发调试DNS
-开发环境需要临时DNS记录指向本地服务器。快速添加A记录，调试完成后删除，避免影响生产。
-
+开发环境需要临时DNS记录指向本地服务器。快速添加A记录，调试完成后删除，避免影响生产.
 ## 快速开始
 
 ### 120秒上手
@@ -205,23 +194,17 @@ export NAMECHEAP_API_KEY="your_api_key"
 ## 常见问题
 
 ### Q1：nameserver切换后多久生效？
-A：通常24-48小时全球生效。可通过`dig @1.1.1.1 example.com NS`与`dig @8.8.8.8 example.com NS`对比不同DNS的返回结果判断生效进度。
-
+A：通常24-48小时全球生效。可通过`dig @1.1.1.1 example.com NS`与`dig @8.8.8.8 example.com NS`对比不同DNS的返回结果判断生效进度.
 ### Q2：Cloudflare显示"invalid nameservers"？
-A：确认域名注册商是否正确。常见错误是在错误的注册商控制台修改nameserver。先通过WHOIS查询确认注册商。
-
+A：确认域名注册商是否正确。常见错误是在错误的注册商控制台修改nameserver。先通过WHOIS查询确认注册商.
 ### Q3：能批量管理多个域名吗？
-A：免费版支持单域名操作。批量域名接入、多供应商编排属于专业版能力，详见domain-dns-manager-pro。
-
+A：免费版支持单域名操作。批量域名接入、多供应商编排属于专业版能力，详见domain-dns-manager-pro.
 ### Q4：支持Worker路由配置吗？
-A：免费版仅支持Page Rule重定向。Worker路由、Rulesets、Bulk Redirects属于专业版能力。
-
+A：免费版仅支持Page Rule重定向。Worker路由、Rulesets、Bulk Redirects属于专业版能力.
 ### Q5：DNS记录修改后多久生效？
-A：取决于记录TTL。TTL未过期前各DNS返回缓存值。可使用短TTL（60秒）加快生效，或等待TTL自然过期。
-
+A：取决于记录TTL。TTL未过期前各DNS返回缓存值。可使用短TTL（60秒）加快生效，或等待TTL自然过期.
 ### Q6：如何关闭"Block AI Bots"？
-A：在Cloudflare控制台或使用API：`cloudflare-ai-bots disable`。部分场景下AI爬虫访问需要放行。
-
+A：在Cloudflare控制台或使用API：`cloudflare-ai-bots disable`。部分场景下AI爬虫访问需要放行.
 ## 已知限制
 
 本免费体验版限制以下高级功能：

@@ -3,24 +3,16 @@ slug: linear-flow-cli-pro
 name: linear-flow-cli-pro
 version: 1.0.0
 displayName: Linear流程CLI(专业版)
-summary: Linear命令行Agent原生运行时专业版，支持批量操作、dry-run预览、自动化策略、Slack集成与Git工作流联动。
+summary: Linear命令行Agent原生运行时专业版，支持批量操作、dry-run预览、自动化策略、Slack集成与Git工作流联动.
 license: Proprietary
 edition: pro
 description: 'Linear流程CLI（专业版）面向使用Linear进行复杂项目管理的工程团队与AI Agent运行时，在免费版基础上解锁全部高级能力：批量操作、dry-run预览、自动化策略、Slack/Ticket上下文集成、Git/JJ工作流联动、高级GraphQL查询模板、Webhook管理、跨团队Initiative管理。让AI
-  Agent成为真正的Linear自动化中枢。
-
-
+  Agent成为真正的Linear自动化中枢.
   核心能力：批量Issue创建/更新/删除（CSV/JSON驱动）、dry-run预览所有写入操作、自动化策略（suggest-only/preview-required/autonomous）、Slack/Ticket上下文文件解析（--context-file
-  + --apply-triage）、Git/JJ工作流联动（提交关联Issue自动更新状态）、高级GraphQL查询模板库、Webhook管理与通知配置、跨团队Initiative与里程碑管理、项目状态更新（project-update）、通知管理、超时感知写入语义、源邻近任务摄入。
-
-
-  适用场景：AI Agent深度自动化任务管理、大规模任务批量迁移与重构、跨团队协作的Initiative管理、Slack驱动的任务分流、Git提交自动关联任务状态、项目管理仪表盘、企业级Linear工作流定制。
-
-
+  + --apply-triage）、Git/JJ工作流联动（提交关联Issue自动更新状态）、高级GraphQL查询模板库、Webhook管理与通知配置、跨团队Initiative与里程碑管理、项目状态更新（project-update）、通知管理、超时感知写入语义、源邻近任务摄入.
+  适用场景：AI Agent深度自动化任务管理、大规模任务批量迁移与重构、跨团队协作的Initiative管理、Slack驱动的任务分流、Git提交自动关联任务状态、项目管理仪表盘、企业级Linear工作流定制.
   差异化：在免费版基础上新增八大高级能力，针对Agent原生运行时场景设计完整工作流。提供多角色场景指南（开发者/Scrum Master/DevOps/项目经理/技术负责人）、性能优化策略、多平台集成示例、版本升级迁移指南。专业版通过SkillHub
-  SkillPay发布。保留原始MIT-0版权声明。
-
-
+  SkillPay发布。保留原始MIT-0版权声明.
   适用关键词：批量操作、dry-run预览、自动化策略、Slack集成、Git联动、Webhook、Initiative、Agent运行时'
 tags:
 - Linear
@@ -36,13 +28,11 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+
 ---
 # Linear流程CLI（专业版）
 
-> Agent原生的Linear自动化中枢。批量操作、dry-run预览、自动化策略、Slack集成、Git联动，让AI Agent接管你的任务管理工作流。
-
+> Agent原生的Linear自动化中枢。批量操作、dry-run预览、自动化策略、Slack集成、Git联动，让AI Agent接管你的任务管理工作流.
 ## 架构总览
 
 ## 输入格式
@@ -84,8 +74,7 @@ tags: "自动化,工作流,效率"
 
 ## 核心能力
 ### 1. 批量操作（专业版独有）
-执行1. 批量操作（专业版独有）操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作。
-
+执行1. 批量操作（专业版独有）操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作.
 通过CSV或JSON驱动批量创建、更新、删除Issue：
 
 ```bash
@@ -121,8 +110,7 @@ linear issue batch-assign --csv /tmp/assign.csv
 ```
 
 ### 2. Dry-run预览（专业版独有）
-执行2. Dry-run预览（专业版独有）操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作。
-
+执行2. Dry-run预览（专业版独有）操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作.
 所有写入操作支持 `--dry-run` 预览，避免误操作：
 
 ```bash
@@ -184,8 +172,7 @@ linear issue create --title "..." --autonomy-policy autonomous
 ```
 
 ### 4. Slack/Ticket上下文集成（专业版独有）
-执行4. Slack/Ticket上下文集成（专业版独有）操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作。
-
+执行4. Slack/Ticket上下文集成（专业版独有）操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作.
 解析Slack消息或工单系统传入的上下文文件，自动提取任务信息：
 
 ```bash
@@ -257,12 +244,11 @@ linear issue get ENG-123 --include git-history
 # }
 ```
 
-支持JJ（Jujutsu）版本控制系统，配置方式相同。
+支持JJ（Jujutsu）版本控制系统，配置方式相同.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 6. 高级GraphQL查询模板（专业版独有）
-执行6. 高级GraphQL查询模板（专业版独有）操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作。
-
+执行6. 高级GraphQL查询模板（专业版独有）操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作.
 预置常用GraphQL查询模板，覆盖复杂查询场景：
 
 ```bash
@@ -298,8 +284,7 @@ GRAPHQL
 ```
 
 ### 7. Webhook管理与通知配置（专业版独有）
-执行7. Webhook管理与通知配置（专业版独有）操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作。
-
+执行7. Webhook管理与通知配置（专业版独有）操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作.
 ```bash
 # 列出Webhook
 linear webhook list
@@ -326,8 +311,7 @@ linear notification read-all
 ```
 
 ### 8. 跨团队Initiative管理（专业版独有）
-执行8. 跨团队Initiative管理（专业版独有）操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作。
-
+执行8. 跨团队Initiative管理（专业版独有）操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作.
 管理跨团队的大型倡议与里程碑：
 
 ```bash
@@ -355,8 +339,7 @@ linear project-update create \
   --health "on_track" \
   --body-file /tmp/status.md
 ```
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：命令行、原生运行时专业版、支持批量操作、集成与、CLI、面向使用、进行复杂项目管理、的工程团队与、运行时、在免费版基础上解、锁全部高级能力、成为真正的、自动化中枢等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：命令行、原生运行时专业版、支持批量操作、集成与、CLI、面向使用、进行复杂项目管理、的工程团队与、运行时、在免费版基础上解、锁全部高级能力、成为真正的、自动化中枢等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 快速开始
 
 1. 阅读## 核心能力章节了解skill功能
@@ -447,15 +430,13 @@ linear issue create ...                      # 4. 执行写入
 echo $?                                      # 5. 检查退出码与error.details
 ```
 
-**响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
+**响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
 #
 ## 使用场景
 
 ### 场景一：AI Agent深度自动化任务管理（开发者角色）
 
-**场景描述**：开发团队希望AI Agent能完全接管Linear任务管理——从Slack消息自动创建Issue、自动分配、Git提交关联、PR合并自动完成，形成端到端自动化。
-
+**场景描述**：开发团队希望AI Agent能完全接管Linear任务管理——从Slack消息自动创建Issue、自动分配、Git提交关联、PR合并自动完成，形成端到端自动化.
 **配置**：
 ```yaml
 runtime:
@@ -479,12 +460,10 @@ integrations:
 - PR合并后自动完成Issue并添加评论
 - 每日生成任务摘要推送至Slack
 
-**效果**：任务管理的人工操作减少约90%，从创建到完成的全程自动化，任务状态实时准确，Slack到Linear的转化时间从平均5分钟降至秒级。
-
+**效果**：任务管理的人工操作减少约90%，从创建到完成的全程自动化，任务状态实时准确，Slack到Linear的转化时间从平均5分钟降至秒级.
 ### 场景二：大规模任务批量迁移（项目经理角色）
 
-**场景描述**：团队要从Jira迁移至Linear，需将500+历史任务批量导入，并保留原始优先级、标签、状态与描述。
-
+**场景描述**：团队要从Jira迁移至Linear，需将500+历史任务批量导入，并保留原始优先级、标签、状态与描述.
 **配置**：
 ```bash
 # 准备迁移CSV（从Jira导出转换）
@@ -502,12 +481,10 @@ integrations:
 - 自动应用原始状态（Done/In Progress/Todo）
 - 生成迁移报告：成功/失败/跳过统计
 
-**效果**：500+任务迁移从人工约2周缩短至自动1小时，数据完整性100%，迁移过程可追溯。
-
+**效果**：500+任务迁移从人工约2周缩短至自动1小时，数据完整性100%，迁移过程可追溯.
 ### 场景三：跨团队Initiative管理（技术负责人角色）
 
-**场景描述**：大型平台升级项目涉及3个团队（前端、后端、基础设施），需统一管理跨团队的Initiative与里程碑，追踪整体进度。
-
+**场景描述**：大型平台升级项目涉及3个团队（前端、后端、基础设施），需统一管理跨团队的Initiative与里程碑，追踪整体进度.
 **配置**：
 ```bash
 # 创建跨团队Initiative
@@ -531,12 +508,10 @@ linear milestone create --name "Q2 完成" --project "API网关" --target-date 2
 - 里程碑到期前自动预警
 - 跨团队依赖关系可视化
 
-**效果**：跨团队协作的进度可见性从约60%提升至95%，依赖冲突提前发现率提升约70%，项目状态汇报从人工每周2小时缩短至自动生成。
-
+**效果**：跨团队协作的进度可见性从约60%提升至95%，依赖冲突提前发现率提升约70%，项目状态汇报从人工每周2小时缩短至自动生成.
 ### 场景四：Slack驱动的任务分流（Scrum Master角色）
 
-**场景描述**：团队通过Slack沟通任务，Scrum Master需要将Slack中的任务讨论自动转化为结构化的Linear Issue，并自动分流至合适的团队与负责人。
-
+**场景描述**：团队通过Slack沟通任务，Scrum Master需要将Slack中的任务讨论自动转化为结构化的Linear Issue，并自动分流至合适的团队与负责人.
 **配置**：
 ```bash
 # Slack消息通过Webhook传入上下文文件
@@ -555,8 +530,7 @@ linear issue create \
 - dry-run预览后创建Issue
 - 回复Slack确认Issue已创建及编号
 
-**效果**：Slack到Linear的任务转化从人工平均10分钟/条降至自动30秒/条，任务分流准确率约90%，漏创建率从约20%降至0。
-
+**效果**：Slack到Linear的任务转化从人工平均10分钟/条降至自动30秒/条，任务分流准确率约90%，漏创建率从约20%降至0.
 ## 多角色场景指南
 
 | 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
@@ -721,52 +695,41 @@ done
 
 ### Q1：专业版的dry-run能预览所有操作吗？
 
-可以。所有写入操作（创建/更新/删除Issue、批量操作、状态变更、Webhook管理）均支持 `--dry-run` 预览，输出会变更的内容但不实际执行。
-
+可以。所有写入操作（创建/更新/删除Issue、批量操作、状态变更、Webhook管理）均支持 `--dry-run` 预览，输出会变更的内容但不实际执行.
 ### Q2：自动化策略如何选择？
 
 - `suggest-only`：用于审慎场景，如生产环境的关键操作
 - `preview-required`：用于常规Agent自动化，强制先预览再执行
 - `autonomous`：用于受信任的CI/CD流水线，全自动执行
 
-建议从 `preview-required` 开始，确认Agent行为稳定后切换至 `autonomous`。
-
+建议从 `preview-required` 开始，确认Agent行为稳定后切换至 `autonomous`.
 ### Q3：Slack集成需要额外配置吗？
 
-需要。Slack集成通过上下文文件实现，需要：(1) Slack Bot接收消息并生成上下文JSON文件；(2) 调用CLI时传入 `--context-file`；(3) 可选 `--apply-triage` 自动应用hints。Slack Bot的搭建需要单独配置Slack App与Bot Token。
-
+需要。Slack集成通过上下文文件实现，需要：(1) Slack Bot接收消息并生成上下文JSON文件；(2) 调用CLI时传入 `--context-file`；(3) 可选 `--apply-triage` 自动应用hints。Slack Bot的搭建需要单独配置Slack App与Bot Token.
 ### Q4：Git联动支持哪些版本控制系统？
 
-支持Git与Jujutsu（JJ）两种版本控制系统。Git联动通过post-commit Hook实现，JJ联动通过对应的Hook机制实现。配置方式相同。
-
+支持Git与Jujutsu（JJ）两种版本控制系统。Git联动通过post-commit Hook实现，JJ联动通过对应的Hook机制实现。配置方式相同.
 ### Q5：批量操作有数量限制吗？
 
-单次批量建议不超过100条（避免API速率限制）。大批量（>100）建议分批执行，每批50条，配合检查点机制实现断点续传。专业版提供 `--batch-size` 参数控制批大小。
-
+单次批量建议不超过100条（避免API速率限制）。大批量（>100）建议分批执行，每批50条，配合检查点机制实现断点续传。专业版提供 `--batch-size` 参数控制批大小.
 ### Q6：Webhook管理支持哪些事件？
 
-支持Linear的所有Webhook事件：Issue创建/更新/删除、评论创建、项目更新、周期更新等。可通过 `--events` 参数指定订阅的事件类型。
-
+支持Linear的所有Webhook事件：Issue创建/更新/删除、评论创建、项目更新、周期更新等。可通过 `--events` 参数指定订阅的事件类型.
 ### Q7：Initiative管理适合什么规模的项目？
 
-适合跨多团队的大型项目。单团队项目用Project管理即可；跨3+团队的协作用Initiative统一管理，确保进度可见与依赖协调。
-
+适合跨多团队的大型项目。单团队项目用Project管理即可；跨3+团队的协作用Initiative统一管理，确保进度可见与依赖协调.
 ### Q8：GraphQL查询模板可以自定义吗？
 
-可以。专业版支持加载自定义GraphQL查询模板，通过YAML文件定义。模板可包含变量与默认值，便于复用。也支持直接通过 `linear api` 发起原生GraphQL请求。
-
+可以。专业版支持加载自定义GraphQL查询模板，通过YAML文件定义。模板可包含变量与默认值，便于复用。也支持直接通过 `linear api` 发起原生GraphQL请求.
 ### Q9：专业版如何处理API速率限制？
 
-专业版内置速率限制处理：(1) 自动退避重试（exponential backoff）；(2) 批量操作分批执行避免触发限制；(3) 查询缓存减少API调用；(4) 速率限制时排队等待，而非直接失败。
-
+专业版内置速率限制处理：(1) 自动退避重试（exponential backoff）；(2) 批量操作分批执行避免触发限制；(3) 查询缓存减少API调用；(4) 速率限制时排队等待，而非直接失败.
 ### Q10：超时感知写入语义是什么？
 
-指写入操作在超时时的处理策略。Linear API可能因网络或服务端原因超时，专业版会：(1) 超时后查询操作是否实际完成（避免重复写入）；(2) 提供操作回执（receipt）供后续查询；(3) 失败时提供详细的error.details便于排查。
-
+指写入操作在超时时的处理策略。Linear API可能因网络或服务端原因超时，专业版会：(1) 超时后查询操作是否实际完成（避免重复写入）；(2) 提供操作回执（receipt）供后续查询；(3) 失败时提供详细的error.details便于排查.
 ### Q11：专业版支持多Linear工作区吗？
 
-支持。通过 `--workspace` 参数指定工作区，或在 `.linear.toml` 中配置多个工作区profile。适合同时管理多个组织的Linear任务。
-
+支持。通过 `--workspace` 参数指定工作区，或在 `.linear.toml` 中配置多个工作区profile。适合同时管理多个组织的Linear任务.
 ## 故障排查表
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
@@ -835,8 +798,7 @@ done
 - 重新设计架构图，增加中文标注与专业版标识
 - 内容原创度超过70%
 
-原始MIT-0 license允许使用、复制、修改和分发，无需保留版权声明。本改进作品仍主动保留原始版权声明以示尊重，并添加自有署名。
-
+原始MIT-0 license允许使用、复制、修改和分发，无需保留版权声明。本改进作品仍主动保留原始版权声明以示尊重，并添加自有署名.
 ## 专业版特性
 
 本专业版相比免费版新增以下能力：
@@ -865,8 +827,7 @@ done
 | 免费体验版 | ¥0 | 任务查询与基础创建+团队/项目读取+JSON输出+Markdown文件化处理 | 个人使用、小型团队、轻量任务管理 |
 | 收费专业版 | ¥29.9/月 | 全部高级功能（批量操作+dry-run+自动化策略+Slack集成+Git联动+GraphQL模板+Webhook+Initiative）+多角色指南+性能优化+优先支持 | 工程团队、AI Agent自动化、跨团队协作、企业级Linear工作流 |
 
-专业版通过SkillHub SkillPay发布。
-
+专业版通过SkillHub SkillPay发布.
 ## 示例
 
 ### 基本用法

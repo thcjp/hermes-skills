@@ -7,19 +7,17 @@ summary: "打造独特生产级前端界面,高设计质量,告别AI通用感"
 license: "Proprietary"
 description: |-
   Create distinctive, production-grade frontend interfaces with high design
-  quality。Use this skill。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
+  quality。Use this skill。
 tags:
   - Other
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 ---
 # Frontend Design
 
@@ -44,7 +42,8 @@ tags: "设计,UI/UX,创意"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 界面构建 | 设计需求与组件描述 | 生产级前端界面代码 |
+| 设计差异化 | 风格定位与视觉参考 | 摆脱AI通用感的前端实现 |
 
 **不适用于**：需要人工判断的复杂决策场景
 

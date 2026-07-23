@@ -6,11 +6,11 @@ displayName: "版本化写作工具"
 summary: "带强制版本控制与质量审计的写作工作流，通过edit.sh脚本管理草稿版本与audit审计"
 license: "Proprietary"
 description: |-
-  带强制版本控制与质量审计的版本化写作工具。
+  带强制版本控制与质量审计的版本化写作工具.
   遵循Request→Plan→Draft→Audit→Refine→Deliver工作流，通过edit.sh脚本强制版本备份，
-  支持depth（quick/standard/thorough）配置与auto_audit自动审计。
-  集成brief.md、execution.md、verification.md等八份参考文档，覆盖规划、执行、版本管理与质量审计全流程。
-  适用于长篇内容创作、技术文档撰写与需要版本追溯的写作场景。
+  支持depth（quick/standard/thorough）配置与auto_audit自动审计.
+  集成brief.md、execution.md、verification.md等八份参考文档，覆盖规划、执行、版本管理与质量审计全流程.
+  适用于长篇内容创作、技术文档撰写与需要版本追溯的写作场景.
 tools:
   - read
   - exec
@@ -21,13 +21,11 @@ tags:
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+
 ---
 # 版本化写作工具
 
-带强制版本控制与质量审计的写作工作流，通过edit.sh脚本管理版本，遵循Request→Plan→Draft→Audit→Refine→Deliver流程。
-
+带强制版本控制与质量审计的写作工作流，通过edit.sh脚本管理版本，遵循Request→Plan→Draft→Audit→Refine→Deliver流程.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -83,7 +81,7 @@ Request → Plan → Draft → Audit → Refine → Deliver
 - **Run quality audit before delivering**：交付前运行quality audit（参见audit.md）
 - **Offer cleanup only after user confirms**：仅在用户确认piece最终后提供cleanup
 
-**输出**: 返回版本化写作工作流的处理结果,包含执行状态码、结果数据和执行日志。
+**输出**: 返回版本化写作工作流的处理结果,包含执行状态码、结果数据和执行日志.
 ### 强制Scripts工具集
 
 提供七个强制使用的shell脚本：
@@ -109,7 +107,7 @@ Request → Plan → Draft → Audit → Refine → Deliver
   - `thorough`：深度写作，最多研究轮次与修订passes
 - **auto_audit**: `true`/`false` — drafts后自动运行audits
 
-**输入**: 用户提供配置系统所需的指令和必要参数。
+**输入**: 用户提供配置系统所需的指令和必要参数.
 **输出**: 返回配置系统的处理结果,包含执行状态码、结果数据和执行日志。### 参考文档库
 
 集成八份参考文档，按需加载支撑写作各阶段：
@@ -132,9 +130,8 @@ Request → Plan → Draft → Audit → Refine → Deliver
 （请参考skill目录中的脚本文件） ~/writing
 ```
 
-创建标准项目结构，包含pieces目录（存放各写作piece及其versions）、scripts目录、references目录与config.json配置文件。
-
-**输入**: 用户提供工作空间初始化所需的指令和必要参数。
+创建标准项目结构，包含pieces目录（存放各写作piece及其versions）、scripts目录、references目录与config.json配置文件.
+**输入**: 用户提供工作空间初始化所需的指令和必要参数.
 **处理**: 解析工作空间初始化的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 质量审计与版本管理
 
 - **Quality Audit**：通过`（请参考skill目录中的脚本文件）`运行，依据audit.md中的dimensions生成审计报告
@@ -231,23 +228,17 @@ Step 3 - 继续编辑:
 ## 常见问题
 
 ### Q1: 为什么禁止直接编辑文件？
-A: 直接编辑文件会绕过版本控制系统，导致无法追溯修改历史与恢复旧versions。必须使用`（请参考skill目录中的脚本文件）`编辑，该脚本自动创建version备份，确保每次修改都有记录。这是本Skill的强制规则（NEVER edit files directly）。
-
+A: 直接编辑文件会绕过版本控制系统，导致无法追溯修改历史与恢复旧versions。必须使用`（请参考skill目录中的脚本文件）`编辑，该脚本自动创建version备份，确保每次修改都有记录。这是本Skill的强制规则（NEVER edit files directly）.
 ### Q2: depth配置的三个级别如何选择？
-A: `quick`适用于短篇内容或紧急需求，最少研究轮次；`standard`适用于常规写作，平衡研究与修订；`thorough`适用于长篇内容或高要求场景，最多研究轮次与修订passes。在config.json中设置`depth`字段。
-
+A: `quick`适用于短篇内容或紧急需求，最少研究轮次；`standard`适用于常规写作，平衡研究与修订；`thorough`适用于长篇内容或高要求场景，最多研究轮次与修订passes。在config.json中设置`depth`字段.
 ### Q3: auto_audit为true时会发生什么？
-A: 当auto_audit设为true时，每次draft完成后自动运行`（请参考skill目录中的脚本文件）`执行quality audit，依据audit.md中的dimensions生成审计报告。设为false时需手动运行audit。
-
+A: 当auto_audit设为true时，每次draft完成后自动运行`（请参考skill目录中的脚本文件）`执行quality audit，依据audit.md中的dimensions生成审计报告。设为false时需手动运行audit.
 ### Q4: 如何管理多个写作pieces？
-A: 每个piece通过`new-piece.sh`创建并分配唯一piece ID。使用`list.sh`查看所有pieces及其versions。各piece独立管理versions，互不干扰。cleanup.sh针对单个piece操作。
-
+A: 每个piece通过`new-piece.sh`创建并分配唯一piece ID。使用`list.sh`查看所有pieces及其versions。各piece独立管理versions，互不干扰。cleanup.sh针对单个piece操作.
 ### Q5: 八份参考文档分别在何时使用？
-A: `brief.md`在Plan阶段使用；`execution.md`在Draft阶段使用；`verification.md`和`audit.md`在Audit阶段使用；`research.md`在调查研究时使用；`versioning.md`规范版本规则；`state.md`用于进度跟踪；`criteria.md`定义写作偏好标准。
-
+A: `brief.md`在Plan阶段使用；`execution.md`在Draft阶段使用；`verification.md`和`audit.md`在Audit阶段使用；`research.md`在调查研究时使用；`versioning.md`规范版本规则；`state.md`用于进度跟踪；`criteria.md`定义写作偏好标准.
 ### Q6: cleanup.sh何时使用？
-A: cleanup.sh仅在用户确认piece最终（final）后使用，清除旧versions释放空间。运行时需确认。切勿在piece仍在修订时运行cleanup，以免丢失需要恢复的versions。
-
+A: cleanup.sh仅在用户确认piece最终（final）后使用，清除旧versions释放空间。运行时需确认。切勿在piece仍在修订时运行cleanup，以免丢失需要恢复的versions.
 ## 已知限制
 
 - 强制依赖Bash/Shell环境执行scripts，Windows需Git Bash或WSL

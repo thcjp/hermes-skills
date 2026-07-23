@@ -7,19 +7,18 @@ summary: "从Markdown脚本生成9:16竖屏短视频,自动分镜"
 license: "Proprietary"
 description: |-
   Generate vertical short videos (9:16) from a Markdown script。Parses
-  script sections, generates T。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。
+  script sections, generates T。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
 tags:
   - Creative
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
+
 ---
 # LH Video Gen
 
@@ -44,7 +43,9 @@ tags: "视频处理,媒体,创意"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 内容生成 | 提示词与风格参数 | 生成内容与质量评分 |
+| 视频生成 | 脚本与画面描述 | 视频文件与时长信息 |
+| 从Markdown脚 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -60,16 +61,14 @@ python3 generate.py script.md -o output.mp4
 python3 generate.py script.md --images-dir ./my-slides -o output.mp4
 ```
 
-图片命名规则：`slide_01.png`, `slide_02.png`...，与脚本分段一一对应。
-
+图片命名规则：`slide_01.png`, `slide_02.png`...，与脚本分段一一对应.
 ### 自定义 TTS 命令
 
 ```bash
 python3 generate.py script.md --tts-command "my-tts {text} -o {output} -v {voice} -r {rate}"
 ```
 
-占位符：`{text}` 口播文案、`{output}` 输出路径、`{voice}` 音色、`{rate}` 语速。
-
+占位符：`{text}` 口播文案、`{output}` 输出路径、`{voice}` 音色、`{rate}` 语速.
 #
 ## 输入格式
 
@@ -139,7 +138,7 @@ python3 generate.py <脚本路径> [选项]
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 示例1：基础用法
@@ -155,7 +154,7 @@ python3 generate.py script.md -o output.mp4
 python3 generate.py script.md --images-dir ./my-slides -o output.mp4
 ```
 # ...
-图片命名规则：`slide_01.png`, `slide_02.png`...，与脚本分段一一对应。
+图片命名规则：`slide_01.png`, `slide_02.png`...，与脚本分段一一对应.
 # ...
 ### 自定义 TTS 命令(补充)
 # ...
@@ -163,7 +162,7 @@ python3 generate.py script.md --images-dir ./my-slides -o output.mp4
 python3 generate.py script.md --tts-command "my-tts {text} -o {output} -v {voice} -r {rate}"
 ```
 # ...
-占位符：`{text}` 口播文案、`{output}` 输出路径、`{voice}` 音色、`{rate}` 语速。
+占位符：`{text}` 口播文案、`{output}` 输出路径、`{voice}` 音色、`{rate}` 语速.
 ```
 
 ## 常见问题

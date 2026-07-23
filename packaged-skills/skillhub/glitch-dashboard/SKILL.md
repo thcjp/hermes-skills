@@ -7,20 +7,19 @@ summary: "统一Web仪表盘,管任务队列/监控指标/查ZeroTier状态"
 license: "Proprietary"
 description: |-
   Unified web dashboard for managing task queues, monitoring system metrics,
-  viewing ZeroTier statu。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
+  viewing ZeroTier statu。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
   - Productivity
   - Operations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Dashboard
 
@@ -57,8 +56,7 @@ dashboard start 3853
 
 Then open: <http://localhost:3853>
 
-**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
-
+**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤.
 **使用步骤**:
 1. 阅读依赖说明章节,确认运行环境已就绪
 2. 根据任务需求,参考核心能力章节选择对应能力
@@ -70,7 +68,7 @@ Then open: <http://localhost:3853>
 | 参数名 | 类型 | 必填 | 说明 |
 |:-----|:-----|:-----|:-----|
 | content | string | 否 | glitch-dashboard处理的内容输入 |, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| refresh_interval | integer | 否 | 仪表盘数据刷新间隔(秒), 默认: 30, 范围: 5-3600 |
 
 ## 输出格式
 
@@ -143,7 +141,7 @@ Then open: <http://localhost:3853>
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 示例1：基础用法

@@ -7,11 +7,11 @@ summary: "Slack消息发送/线程回复/工作区搜索/频道发现，Bot Toke
 license: "Proprietary"
 description: |-
   面向团队协作场景的Slack消息与搜索集成技能。通过Slack Bot Token直连Slack Web API，
-  提供频道与用户消息发送、线程回复、工作区内容搜索、公共频道列表四大能力。
+  提供频道与用户消息发送、线程回复、工作区内容搜索、公共频道列表四大能力.
   支持频道名与频道ID双向寻址、用户ID提及、Slack消息格式化（粗体/斜体/代码块/引用）、
-  线程化讨论路由、工作区历史消息与文件检索。
-  适用于发布部署通知、路由讨论到线程、检索过往决策与文档、发现团队频道等场景。
-  内置速率限制感知与指数退避重试，支持高活跃工作区下的稳定消息投递。
+  线程化讨论路由、工作区历史消息与文件检索.
+  适用于发布部署通知、路由讨论到线程、检索过往决策与文档、发现团队频道等场景.
+  内置速率限制感知与指数退避重试，支持高活跃工作区下的稳定消息投递.
 tags:
   - Communication
   - 团队协作
@@ -24,13 +24,11 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Slack,社交,通信"
+
 ---
 # Slack消息中枢（Slack Hub Skill）
 
-面向团队协作场景的Slack消息与搜索集成。通过Bot Token直连Slack Web API，提供消息投递、线程回复、工作区搜索、频道发现四大能力。
-
+面向团队协作场景的Slack消息与搜索集成。通过Bot Token直连Slack Web API，提供消息投递、线程回复、工作区搜索、频道发现四大能力.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -71,13 +69,12 @@ tags: "Slack,社交,通信"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### 1. 消息发送与线程回复
-向指定频道或用户发送文本消息，支持以 `thread_ts` 参数回复指定消息的线程。频道参数接受频道ID（`C0123456789`）或频道名（`#general`）；用户消息需使用用户ID或DM频道ID。支持Slack消息格式化语法：`*bold*`、`_italic_`、`~strike~`、`` `code` ``、` ```code block``` `、`>quote`。
-
-**输出**: 返回消息发送与线程回复的处理结果,包含执行状态码、结果数据和执行日志。
+向指定频道或用户发送文本消息，支持以 `thread_ts` 参数回复指定消息的线程。频道参数接受频道ID（`C0123456789`）或频道名（`#general`）；用户消息需使用用户ID或DM频道ID。支持Slack消息格式化语法：`*bold*`、`_italic_`、`~strike~`、`` `code` ``、` ```code block``` `、`>quote`.
+**输出**: 返回消息发送与线程回复的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. 工作区内容搜索
 按关键词检索工作区内的消息和文件。搜索范围包括所有可访问的公共频道及Bot已加入的私有频道。支持Slack搜索修饰符：`from:@user`、`in:#channel`、`has:link`、`has:file`、`before:YYYY-MM-DD`、`after:YYYY-MM-DD`。搜索结果包含匹配片段、来源频道、作者、时间戳与永久链接。- 验证返回数据的完整性和格式正确性
 - 参考`工作区内容搜索`的配置文档进行参数调优
@@ -85,12 +82,10 @@ export API_KEY="your_api_key_here"
 列出工作区内所有公共频道，返回频道ID、名称、成员数、话题、用途、创建时间。支持分页遍历大型工作区。可用于频道发现、ID解析、成员统计。- 验证返回数据的完整性和格式正确性
 - 参考`公共频道发现`的配置文档进行参数调优
 ### 4. 速率限制感知
-Slack Web API 对不同端点有独立速率限制：`chat.postMessage` 约1次/秒/频道，`search.messages` 约20次/分钟，`conversations.list` 约20次/分钟。本技能在收到 `429 rate_limited` 响应时读取 `Retry-After` 头并指数退避重试，最多3次。
-
-**输入**: 用户提供速率限制感知所需的指令和必要参数。
-**处理**: 解析速率限制感知的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回速率限制感知的处理结果,包含执行状态码、结果数据和执行日志。
-
+Slack Web API 对不同端点有独立速率限制：`chat.postMessage` 约1次/秒/频道，`search.messages` 约20次/分钟，`conversations.list` 约20次/分钟。本技能在收到 `429 rate_limited` 响应时读取 `Retry-After` 头并指数退避重试，最多3次.
+**输入**: 用户提供速率限制感知所需的指令和必要参数.
+**处理**: 解析速率限制感知的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回速率限制感知的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 频道与用户寻址
 
@@ -100,16 +95,14 @@ Slack Web API 对不同端点有独立速率限制：`chat.postMessage` 约1次/
 | 频道ID | 以 `C` 开头的9位字符串 | `C0123456789` |
 | 频道名 | 以 `#` 开头或纯名称 | `#general` 或 `general` |
 
-频道名解析：`#general` 会先调 `conversations.list` 匹配 `name` 字段获取 `id`，再发送消息。
-
+频道名解析：`#general` 会先调 `conversations.list` 匹配 `name` 字段获取 `id`，再发送消息.
 ### 用户寻址
 | 输入格式(续)| 说明 | 示例 |
 |:---------|---------:|:---------|
 | 用户ID | 以 `U` 开头的9位字符串 | `U0123456789` |
 | DM频道ID | 以 `D` 开头的9位字符串 | `D0123456789` |
 
-消息中提及用户使用 `<@U0123456789>` 语法，提及频道使用 `<#C0123456789>` 语法。
-
+消息中提及用户使用 `<@U0123456789>` 语法，提及频道使用 `<#C0123456789>` 语法.
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |
@@ -136,11 +129,9 @@ Slack Web API 对不同端点有独立速率限制：`chat.postMessage` 约1次/
 > 4. 终端环境变量：`export SLACK_BOT_TOKEN="xoxb-你的Token"`
 > 5. 将Bot邀请到目标频道（`/invite @botname`）
 
-**安全红线**：永不接受/回显/存储来自聊天输入的Token；Token仅作为 `Authorization: Bearer` 请求头使用。
-
+**安全红线**：永不接受/回显/存储来自聊天输入的Token；Token仅作为 `Authorization: Bearer` 请求头使用.
 ### 解析目标地址
-频道名需先调 `conversations.list` 解析为频道ID。用户DM需先调 `conversations.list` 过滤 `is_im: true` 的频道。
-
+频道名需先调 `conversations.list` 解析为频道ID。用户DM需先调 `conversations.list` 过滤 `is_im: true` 的频道.
 ### 执行操作
 1. 发送消息：`POST chat.postMessage`，传 `channel`、`text`、可选 `thread_ts`
 2. 搜索内容：`GET search.messages`，传 `query`、可选 `count`、`page`
@@ -187,8 +178,7 @@ curl -s -X POST "https://slack.com/api/chat.postMessage" \
 }
 ```
 
-**分析**：消息成功投递到 `#deployments` 频道，时间戳 `1721452800.123456` 可用于后续线程回复或消息更新。Slack格式化语法 `:rocket:` 会被渲染为emoji，`*部署完成*` 渲染为粗体。
-
+**分析**：消息成功投递到 `#deployments` 频道，时间戳 `1721452800.123456` 可用于后续线程回复或消息更新。Slack格式化语法 `:rocket:` 会被渲染为emoji，`*部署完成*` 渲染为粗体.
 ### 案例2：工作区知识检索
 **场景**：新成员需要检索工作区内关于数据库迁移方案的过往讨论
 
@@ -221,8 +211,7 @@ curl -s "https://slack.com/api/search.messages?query=migration%20in%3A%23eng-pla
 }
 ```
 
-**分析**：共匹配 3 条消息，当前返回全部（不足5条）。alice 在 `#eng-platform` 频道提到使用 pg-verify 做增量迁移，可通过 `permalink` 跳转查看完整上下文。搜索修饰符 `in:#eng-platform` 将范围限定到指定频道。
-
+**分析**：共匹配 3 条消息，当前返回全部（不足5条）。alice 在 `#eng-platform` 频道提到使用 pg-verify 做增量迁移，可通过 `permalink` 跳转查看完整上下文。搜索修饰符 `in:#eng-platform` 将范围限定到指定频道.
 ### 案例3：讨论路由到线程
 **场景**：在 `#general` 频道找到关于API变更的消息，将评审安排回复到该消息的线程中
 
@@ -256,8 +245,7 @@ curl -s -X POST "https://slack.com/api/chat.postMessage" \
 }
 ```
 
-**分析**：回复成功投递到原消息的线程中，`thread_ts` 指向父消息时间戳，`ts` 是本次回复的时间戳。线程内参与者将收到通知，主时间线不会被打扰。
-
+**分析**：回复成功投递到原消息的线程中，`thread_ts` 指向父消息时间戳，`ts` 是本次回复的时间戳。线程内参与者将收到通知，主时间线不会被打扰.
 ## 错误处理
 
 | 错误码 | 错误信息 | 原因分析 | 处理方式 |
@@ -274,23 +262,17 @@ curl -s -X POST "https://slack.com/api/chat.postMessage" \
 ## 常见问题
 
 ### Q1：如何获取Slack Bot Token？
-A：访问 https://api.slack.com/apps 创建新App，在 **OAuth & Permissions** 页面配置 Bot Token Scopes（至少 `chat:write`、`channels:read`；搜索需加 `search:read`），然后安装App到工作区，复制 `xoxb-` 开头的 Bot User OAuth Token。注意将Bot邀请到目标频道后才能发送消息。
-
+A：访问 https://api.slack.com/apps 创建新App，在 **OAuth & Permissions** 页面配置 Bot Token Scopes（至少 `chat:write`、`channels:read`；搜索需加 `search:read`），然后安装App到工作区，复制 `xoxb-` 开头的 Bot User OAuth Token。注意将Bot邀请到目标频道后才能发送消息.
 ### Q2：如何在消息中提及用户或频道？
-A：提及用户使用 `<@U0123456789>` 格式（需用户ID），提及频道使用 `<#C0123456789>` 格式（需频道ID）。纯文本 `@username` 不会产生实际提及通知。用户ID可通过 `users.list` API获取，频道ID可通过 `conversations.list` 获取。
-
+A：提及用户使用 `<@U0123456789>` 格式（需用户ID），提及频道使用 `<#C0123456789>` 格式（需频道ID）。纯文本 `@username` 不会产生实际提及通知。用户ID可通过 `users.list` API获取，频道ID可通过 `conversations.list` 获取.
 ### Q3：搜索为什么返回空结果？
-A：可能原因：1) 搜索词拼写错误；2) Bot缺少 `search:read` 权限；3) 工作区套餐不支持搜索（需Standard及以上）；4) 搜索范围受限，Bot只能搜索公共频道和已加入的私有频道。建议先用简单关键词测试，确认返回 `ok: true` 且 `total: 0` 表示搜索成功但无匹配。
-
+A：可能原因：1) 搜索词拼写错误；2) Bot缺少 `search:read` 权限；3) 工作区套餐不支持搜索（需Standard及以上）；4) 搜索范围受限，Bot只能搜索公共频道和已加入的私有频道。建议先用简单关键词测试，确认返回 `ok: true` 且 `total: 0` 表示搜索成功但无匹配.
 ### Q4：如何处理速率限制？
-A：Slack对 `chat.postMessage` 限制约1次/秒/频道，`search.messages` 约20次/分钟。收到 HTTP 429 时读取 `Retry-After` 头的秒数，等待后重试。批量发送时建议每条间隔1秒，或使用频道级队列。本技能内置3次指数退避重试（1s/2s/4s）。
-
+A：Slack对 `chat.postMessage` 限制约1次/秒/频道，`search.messages` 约20次/分钟。收到 HTTP 429 时读取 `Retry-After` 头的秒数，等待后重试。批量发送时建议每条间隔1秒，或使用频道级队列。本技能内置3次指数退避重试（1s/2s/4s）.
 ### Q5：能否发送DM（私信）？
-A：可以。需先通过 `conversations.list` 过滤 `is_im: true` 的频道获取DM频道ID（以 `D` 开头），然后向该DM频道ID发送消息。Bot需有 `im:write` 和 `im:read` 权限。注意DM仅限Bot与单个用户之间的对话。
-
+A：可以。需先通过 `conversations.list` 过滤 `is_im: true` 的频道获取DM频道ID（以 `D` 开头），然后向该DM频道ID发送消息。Bot需有 `im:write` 和 `im:read` 权限。注意DM仅限Bot与单个用户之间的对话.
 ### Q6：如何格式化消息内容？
-A：Slack支持 `*bold*`（粗体）、`_italic_`（斜体）、`~strike~`（删除线）、`` `code` ``（行内代码）、` ```code block``` `（代码块）、`>quote`（引用）、`---`（分隔线）。emoji使用 `:name:` 语法，如 `:rocket:`、`:white_check_mark:`。链接使用 `<https://example.com|显示文本>` 格式。
-
+A：Slack支持 `*bold*`（粗体）、`_italic_`（斜体）、`~strike~`（删除线）、`` `code` ``（行内代码）、` ```code block``` `（代码块）、`>quote`（引用）、`---`（分隔线）。emoji使用 `:name:` 语法，如 `:rocket:`、`:white_check_mark:`。链接使用 `<https://example.com|显示文本>` 格式.
 ## 已知限制
 
 1. **仅支持公共频道列表**：`conversations.list` 默认仅返回公共频道，私有频道需Bot已被邀请并指定 `types=private_channel`

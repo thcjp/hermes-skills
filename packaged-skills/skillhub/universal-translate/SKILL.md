@@ -7,19 +7,18 @@ summary: "在任意语言间翻译文本/文件/对话,自动检测源语言"
 license: "Proprietary"
 description: |-
   Translate text, files, and conversations between any languages。Auto-detects
-  source language。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。
+  source language。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证.
 tags:
   - Development
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "翻译,语言,工具"
+
 ---
 # Universal Translate
 
@@ -44,7 +43,9 @@ tags: "翻译,语言,工具"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 文件操作 | 文件路径与操作参数 | 操作结果与文件元信息 |
+| AI对话 | 消息内容与会话ID | 回复文本与Token用量 |
+| 在任意语言间翻译文本 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -145,8 +146,7 @@ tags: "翻译,语言,工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Universal Translate？

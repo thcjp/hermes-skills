@@ -7,19 +7,18 @@ summary: "用gh CLI操作GitHub,issue/pr/run/api一站管理"
 license: "Proprietary"
 description: |-
   Interact with GitHub using the `gh` CLI。Use `gh issue`, `gh pr`, `gh
-  run`, and `gh api` for issu。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
+  run`, and `gh api` for issu。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
   - Integrations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "版本控制,Git,开发工具"
+
 ---
 # Github
 
@@ -44,7 +43,9 @@ tags: "版本控制,Git,开发工具"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| Git操作 | 仓库路径与分支名 | 操作结果与变更记录 |
+| 管理操作 | 操作目标与参数 | 操作结果与状态变更 |
+| 用gh CLI操作G | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -145,8 +146,7 @@ tags: "版本控制,Git,开发工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Github？

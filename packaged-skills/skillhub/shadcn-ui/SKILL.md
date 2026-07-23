@@ -7,19 +7,17 @@ summary: "用shadcn/ui组件/Tailwind布局/react-hook-form表单建UI"
 license: "Proprietary"
 description: |-
   Use when building UI with shadcn/ui components, Tailwind CSS layouts,
-  form patterns with react-ho。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
+  form patterns with react-ho。
 tags:
   - Other
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
 ---
 # Shadcn Ui
 
@@ -43,7 +41,8 @@ tags: "UI设计,前端,设计"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 组件构建 | UI需求与shadcn组件规格 | Tailwind布局+shadcn组件代码 |
+| 表单开发 | 表单字段与校验规则 | react-hook-form表单实现 |
 
 **不适用于**：需要人工判断的复杂决策场景
 

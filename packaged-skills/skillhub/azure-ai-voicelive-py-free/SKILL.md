@@ -9,7 +9,7 @@ description: |-
   Azure VoiceLive SDK基础版技能,提供WebSocket双向连接、API Key认证、
   pcm16音频流式输入输出与文字转写能力。适用于快速验证语音对话效果、
   构建简单语音助手原型。仅支持OpenAI系列音色与服务端VAD,不包含
-  函数调用、Azure原生音色、多VAD模式等高级特性。
+  函数调用、Azure原生音色、多VAD模式等高级特性.
 tags:
   - 通用办公
   - voice
@@ -18,8 +18,7 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "Azure,云计算,DevOps"
+
 ---
 # Azure VoiceLive 实时语音AI (免费版)
 
@@ -52,7 +51,7 @@ tags: "Azure,云计算,DevOps"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 - 通过 `azure.ai.voicelive.aio.connect` 建立与Azure认知服务的WebSocket双向流式连接,使用 `gpt-4o-realtime-preview` 实时模型进行语音对话
@@ -146,44 +145,35 @@ await conn.input_audio_buffer.append(audio=b64_audio)
 ## 异常处理
 
 ### WebSocket连接中断
-现象: 抛出 `ConnectionClosed` 异常,带 `code` 与 `reason`。
-原因: 网络抖动、服务端超时、长时间无音频收发。
-处理: 捕获异常后重新调用 `connect()` 建立连接并重新 `session.update`,简单场景可外层 `while True` 检查网络连接和配置后重试3次。
-
+现象: 抛出 `ConnectionClosed` 异常,带 `code` 与 `reason`.
+原因: 网络抖动、服务端超时、长时间无音频收发.
+处理: 捕获异常后重新调用 `connect()` 建立连接并重新 `session.update`,简单场景可外层 `while True` 检查网络连接和配置后重试3次.
 ### 鉴权失败 (401)
-现象: 事件流收到 `error` 事件,`code` 为 `unauthorized`。
-原因: `AZURE_COGNITIVE_SERVICES_KEY` 错误或已轮换、endpoint区域与资源不匹配。
-处理: 在Azure门户复核密钥,确认endpoint域名中的region与资源部署区域一致;密钥通过环境变量注入,避免硬编码。
-
+现象: 事件流收到 `error` 事件,`code` 为 `unauthorized`.
+原因: `AZURE_COGNITIVE_SERVICES_KEY` 错误或已轮换、endpoint区域与资源不匹配.
+处理: 在Azure门户复核密钥,确认endpoint域名中的region与资源部署区域一致;密钥通过环境变量注入,避免硬编码.
 ### 音色不可用
-现象: `session.update` 返回 `voice_not_found`。
-原因: 免费版仅支持 `alloy`/`echo`/`shimmer` 三种基础音色,其他音色需付费版。
-处理: 切换到三种基础音色之一;若需 `sage`/`coral`/`ash`/`ballad`/`verse` 或Azure原生音色,请升级付费版。
-
+现象: `session.update` 返回 `voice_not_found`.
+原因: 免费版仅支持 `alloy`/`echo`/`shimmer` 三种基础音色,其他音色需付费版.
+处理: 切换到三种基础音色之一;若需 `sage`/`coral`/`ash`/`ballad`/`verse` 或Azure原生音色,请升级付费版.
 ### 事件流无响应
-现象: 调用 `response.create()` 后长时间未收到任何事件。
-原因: 会话未配置 `modalities`,或 `instructions` 为空导致模型无输出。
-处理: 确认 `session.update` 已设置 `modalities=["text","audio"]` 与非空 `instructions`;检查 `input_audio_buffer.commit()` 是否在手动模式下被调用。
-
+现象: 调用 `response.create()` 后长时间未收到任何事件.
+原因: 会话未配置 `modalities`,或 `instructions` 为空导致模型无输出.
+处理: 确认 `session.update` 已设置 `modalities=["text","audio"]` 与非空 `instructions`;检查 `input_audio_buffer.commit()` 是否在手动模式下被调用.
 ### 音频格式不匹配
-现象: 上行音频被服务端丢弃,转写结果为空。
-原因: 实际采样率与 `input_audio_format` 配置不一致。
-处理: 免费版默认 `pcm16` 24kHz,麦克风采集需匹配该采样率;若设备为16kHz需付费版支持 `pcm16-16000hz`。
-
+现象: 上行音频被服务端丢弃,转写结果为空.
+原因: 实际采样率与 `input_audio_format` 配置不一致.
+处理: 免费版默认 `pcm16` 24kHz,麦克风采集需匹配该采样率;若设备为16kHz需付费版支持 `pcm16-16000hz`.
 ## 常见问题
 
 ### Q1: 免费版支持哪些音色?
-免费版仅支持 `alloy`、`echo`、`shimmer` 三种基础OpenAI音色。`sage`、`coral`、`ash`、`ballad`、`verse` 与Azure原生音色 (`AzureStandardVoice`/`AzureCustomVoice`/`AzurePersonalVoice`) 需升级付费版。
-
+免费版仅支持 `alloy`、`echo`、`shimmer` 三种基础OpenAI音色。`sage`、`coral`、`ash`、`ballad`、`verse` 与Azure原生音色 (`AzureStandardVoice`/`AzureCustomVoice`/`AzurePersonalVoice`) 需升级付费版.
 ### Q2: 免费版能用DefaultAzureCredential吗?
-免费版仅支持 `AzureKeyCredential` API密钥认证。`DefaultAzureCredential`(托管身份/AAD令牌/Key Vault轮换)属付费版能力,适合生产环境。
-
+免费版仅支持 `AzureKeyCredential` API密钥认证。`DefaultAzureCredential`(托管身份/AAD令牌/Key Vault轮换)属付费版能力,适合生产环境.
 ### Q3: 如何同时拿到音频和文字?
-配置 `modalities=["text","audio"]` 后,同一响应会同时派发 `response.audio.delta`(base64 PCM)与 `response.audio_transcript.delta`(增量文本),`response.audio_transcript.done` 给出完整转写。
-
+配置 `modalities=["text","audio"]` 后,同一响应会同时派发 `response.audio.delta`(base64 PCM)与 `response.audio_transcript.delta`(增量文本),`response.audio_transcript.done` 给出完整转写.
 ### Q4: 免费版支持函数调用吗?
-不支持。`FunctionTool` 工具集成、`response.function_call_arguments.done` 事件处理与 `conversation.item.create` 回填流程属付费版能力。
-
+不支持。`FunctionTool` 工具集成、`response.function_call_arguments.done` 事件处理与 `conversation.item.create` 回填流程属付费版能力.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

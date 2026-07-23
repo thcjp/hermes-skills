@@ -7,8 +7,10 @@ summary: "经Maton托管OAuth/API接入GitHub,含适当权限范围"
 license: "Proprietary"
 description: |-
   This is a disclosed GitHub integration that uses Maton-managed OAuth/API
-  access and includes appr。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
-tags: "'[''Integrations'', ''Development'']'"
+  access and includes appr。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
+tags:
+  - Integrations
+  - Development
 tools:
   - read
   - exec
@@ -17,7 +19,7 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
+
 ---
 # GitHub
 
@@ -41,7 +43,9 @@ tools: ["read", "write", "exec"]
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| Git操作 | 仓库路径与分支名 | 操作结果与变更记录 |
+| 经Maton托管OA | 目标数据与配置参数 | 处理结果与执行状态 |
+| API接入GitHu | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -128,8 +132,7 @@ EOF
 
 * Correct: `https://api.maton.ai/github/user`
 * Incorrect: `https://api.maton.ai/api.相关技术文档
-> **处理方式**: 参考上表中的错误场景说明,按照对应建议进行处理和恢复。
-
+> **处理方式**: 参考上表中的错误场景说明,按照对应建议进行处理和恢复.
 ## 依赖说明
 
 ### 运行环境
@@ -152,7 +155,7 @@ EOF
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### CLI

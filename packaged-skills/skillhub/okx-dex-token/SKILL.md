@@ -6,20 +6,19 @@ displayName: "Okx Dex Token"
 summary: "代币级数据,搜代币/热门榜/流动性池"Proprietary"
 description: |-
   Use this skill for token-level data: search tokens, trending/hot tokens
-  (热门, 代币榜单), liquidity poo。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
+  (热门, 代币榜单), liquidity poo。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - Finance
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 license: "MIT"
+
 ---
 # Okx Dex Token
 
@@ -43,7 +42,9 @@ license: "MIT"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 数据处理 | 数据源与处理规则 | 清洗结果与统计摘要 |
+| 代币级数据 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 流动性池"Propr | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -144,8 +145,7 @@ license: "MIT"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Okx Dex Token？
@@ -160,3 +160,8 @@ A:
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
+## 已知限制
+
+- API调用受OKX DEX API速率限制约束，高频请求可能被限流，需实现请求队列与退避策略
+- 链上数据存在区块确认延迟，实时性取决于底层区块链的出块速度，不适合毫秒级交易决策
+- 仅支持OKX DEX覆盖的链和代币，不涵盖所有DeFi生态（如未上架DEX的私募代币）

@@ -3,30 +3,28 @@ slug: obsidian-toolkit-free
 name: obsidian-toolkit-free
 version: 1.0.0
 displayName: Obsidian工具箱(免费版)
-summary: Obsidian综合工具箱免费版，含vault发现、笔记管理、基础模板与插件生态入门指南。
+summary: Obsidian综合工具箱免费版，含vault发现、笔记管理、基础模板与插件生态入门指南.
 license: Proprietary
 edition: free
 description: Obsidian工具箱免费版是面向AI Agent的Obsidian综合管理工具。不同于基础入门指南，本技能聚焦"综合工具箱"能力：vault发现、笔记全生命周期管理、模板系统入门、插件生态认知，帮助Agent成为Obsidian用户的得力助手。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
+  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
 - Obsidian
 - 笔记管理
 - 模板系统
 - 插件生态
 tools:
-- - read
+- read
 - exec
 homepage: https://skillhub.cn
 pricing_tier: "L1-入门级"
 pricing_model: per_use
 suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+
 ---
 > **不是教你入门Obsidian，而是提供一套综合工具箱。vault发现、笔记管理、模板入门、插件认知，一站式服务。**
 
-Obsidian的强大在于其灵活的笔记管理与丰富的插件生态。但如何自动发现多个vault？如何在移动笔记时自动更新wikilink？如何设计可复用的模板？如何选择合适的插件？本技能聚焦综合工具箱能力，帮助Agent成为Obsidian用户的得力助手。
-
+Obsidian的强大在于其灵活的笔记管理与丰富的插件生态。但如何自动发现多个vault？如何在移动笔记时自动更新wikilink？如何设计可复用的模板？如何选择合适的插件？本技能聚焦综合工具箱能力，帮助Agent成为Obsidian用户的得力助手.
 ## 架构总览
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
@@ -165,8 +163,7 @@ tags: [daily]
 EOF
 ```
 
-**响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
+**响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
 #
 ## 核心能力
 ### vault发现
@@ -193,10 +190,9 @@ EOF
 - 多vault常见（iCloud vs Documents，work vs personal）
 - vault名称通常为文件夹名（路径后缀）
 
-**输入**: 用户提供vault发现所需的指令和必要参数。
-**处理**: 解析vault发现的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回vault发现的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供vault发现所需的指令和必要参数.
+**处理**: 解析vault发现的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回vault发现的响应数据,包含状态码、结果和日志.
 ### 笔记全生命周期管理
 ```text
 创建(create) → 搜索(search) → 编辑(edit) → 移动(move) → 删除(delete)
@@ -244,8 +240,7 @@ obsidian-cli move "path/old-name" "path/new-name"
   note-b.md 移动到 new/path/
 ```
 
-**这是`obsidian-cli move`相比`mv`命令的核心优势**：自动更新所有引用了该笔记的wikilink，避免链接失效。
-
+**这是`obsidian-cli move`相比`mv`命令的核心优势**：自动更新所有引用了该笔记的wikilink，避免链接失效.
 #### 删除
 ```bash
 obsidian-cli delete "path/note"
@@ -256,10 +251,9 @@ obsidian-cli delete "path/note"
 - 确认无重要引用后再删除
 - 考虑使用归档目录而非直接删除
 
-**输入**: 用户提供笔记全生命周期管理所需的指令和必要参数。
-**处理**: 解析笔记全生命周期管理的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回笔记全生命周期管理的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供笔记全生命周期管理所需的指令和必要参数.
+**处理**: 解析笔记全生命周期管理的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回笔记全生命周期管理的响应数据,包含状态码、结果和日志.
 ### 模板系统入门
 **基础模板变量**：
 
@@ -294,10 +288,9 @@ tags:                  # 标签
 status: active         # 状态
 ```
 
-**输入**: 用户提供模板系统入门所需的指令和必要参数。
-**处理**: 解析模板系统入门的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回模板系统入门的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供模板系统入门所需的指令和必要参数.
+**处理**: 解析模板系统入门的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回模板系统入门的响应数据,包含状态码、结果和日志.
 ### 插件生态认知
 **核心插件启用建议**（免费版入门）：
 
@@ -314,17 +307,15 @@ status: active         # 状态
 
 **配置入口**：设置 → 第三方插件 → 启用核心插件
 
-**输入**: 用户提供插件生态认知所需的指令和必要参数。
-**处理**: 解析插件生态认知的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回插件生态认知的响应数据,包含状态码、结果和日志。
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：综合工具箱免费版、笔记管理、基础模板与插件生、态入门指南、工具箱免费版是面、Agent、综合管理工具、不同于基础入门指、本技能聚焦、综合工具箱、用户的得力助手、Use、when、模型调用、智能对话、LLM、应用时使用、不适用于需要、确定性的关键决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+**输入**: 用户提供插件生态认知所需的指令和必要参数.
+**处理**: 解析插件生态认知的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回插件生态认知的响应数据,包含状态码、结果和日志.
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：综合工具箱免费版、笔记管理、基础模板与插件生、态入门指南、工具箱免费版是面、Agent、综合管理工具、不同于基础入门指、本技能聚焦、综合工具箱、用户的得力助手、Use、when、模型调用、智能对话、LLM、应用时使用、不适用于需要、确定性的关键决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 使用场景
 ### 场景一：知识库整理与重构
 **角色**：知识管理爱好者
 
-**场景描述**：将散乱的笔记按主题重新组织，移动时自动更新wikilink。
-
+**场景描述**：将散乱的笔记按主题重新组织，移动时自动更新wikilink.
 ```bash
 obsidian-cli search-content "架构"
 # ...
@@ -344,8 +335,7 @@ obsidian-cli search-content "[[架构"
 ### 场景二：会议笔记模板化
 **角色**：职场人士
 
-**场景描述**：使用模板快速创建结构化会议笔记。
-
+**场景描述**：使用模板快速创建结构化会议笔记.
 ```bash
 TEMPLATE=$(cat Templates/meeting.md)
 TEMPLATE=${TEMPLATE//\{\{date\}\}/$(date +%Y-%m-%d)}
@@ -360,8 +350,7 @@ obsidian-cli search "2026-07"
 ### 场景三：多vault切换管理
 **角色**：工作生活分离的用户
 
-**场景描述**：在工作vault和个人vault间切换。
-
+**场景描述**：在工作vault和个人vault间切换.
 ```bash
 obsidian-cli print-default
 obsidian-cli set-default "PersonalVault"
@@ -380,8 +369,7 @@ obsidian-cli set-default "WorkVault"
 ### 场景四：项目笔记批量创建
 **角色**：项目经理
 
-**场景描述**：为新项目批量创建结构化笔记。
-
+**场景描述**：为新项目批量创建结构化笔记.
 ```bash
 obsidian-cli create "Projects/ProjectA/index" --content "# 项目A
 [项目描述]
@@ -409,20 +397,15 @@ obsidian-cli create "Projects/ProjectA/会议" --content "# 会议记录
 
 ## FAQ
 ### Q1：如何自动发现当前活跃的vault？
-读取Obsidian的配置文件（`~/Library/Application Support/obsidian/obsidian.json`），找到`open: true`的vault条目，其`path`字段即为vault路径。也可使用`obsidian-cli print-default --path-only`快速获取。不要硬编码vault路径，优先读取配置。
-
+读取Obsidian的配置文件（`~/Library/Application Support/obsidian/obsidian.json`），找到`open: true`的vault条目，其`path`字段即为vault路径。也可使用`obsidian-cli print-default --path-only`快速获取。不要硬编码vault路径，优先读取配置.
 ### Q2：移动笔记时wikilink会自动更新吗？
-使用`obsidian-cli move`命令移动笔记时，会自动扫描vault中所有引用了该笔记的`[[wikilink]]`和Markdown链接，并更新为新路径。这是`obsidian-cli move`相比`mv`命令的核心优势，避免链接失效。直接使用`mv`不会更新wikilink。
-
+使用`obsidian-cli move`命令移动笔记时，会自动扫描vault中所有引用了该笔记的`[[wikilink]]`和Markdown链接，并更新为新路径。这是`obsidian-cli move`相比`mv`命令的核心优势，避免链接失效。直接使用`mv`不会更新wikilink.
 ### Q3：模板中的变量如何替换？
-免费版需手动替换：读取模板文件，用字符串替换将`{{date}}`替换为当前日期、`{{time}}`替换为当前时间、`{{title}}`替换为笔记标题。专业版支持在Obsidian中启用"模板"核心插件或"Templater"社区插件，实现自动变量替换与更复杂的模板逻辑。
-
+免费版需手动替换：读取模板文件，用字符串替换将`{{date}}`替换为当前日期、`{{time}}`替换为当前时间、`{{title}}`替换为笔记标题。专业版支持在Obsidian中启用"模板"核心插件或"Templater"社区插件，实现自动变量替换与更复杂的模板逻辑.
 ### Q4：支持多vault管理吗？
-支持。Obsidian原生支持多vault，配置文件中记录所有vault。使用`obsidian-cli set-default`切换默认vault，使用`obsidian-cli print-default`查看当前默认。多vault常见于工作/个人分离、多设备同步、项目独立vault等场景。
-
+支持。Obsidian原生支持多vault，配置文件中记录所有vault。使用`obsidian-cli set-default`切换默认vault，使用`obsidian-cli print-default`查看当前默认。多vault常见于工作/个人分离、多设备同步、项目独立vault等场景.
 ### 已知限制
-(1) 需要Obsidian URI处理器（`obsidian://`）正常工作，确保Obsidian已安装；(2) 避免在隐藏dot-folder下创建（如`.something/...`），Obsidian可能拒绝；(3) 路径中的文件夹不存在时会自动创建；(4) 笔记名称避免包含特殊字符（`/`、`\`、`:`、`*`、`?`、`"`、`<`、`>`、`|`）。
-
+(1) 需要Obsidian URI处理器（`obsidian://`）正常工作，确保Obsidian已安装；(2) 避免在隐藏dot-folder下创建（如`.something/...`），Obsidian可能拒绝；(3) 路径中的文件夹不存在时会自动创建；(4) 笔记名称避免包含特殊字符（`/`、`\`、`:`、`*`、`?`、`"`、`<`、`>`、`|`）.
 ## 依赖说明
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
@@ -472,8 +455,7 @@ obsidian-cli create "Projects/ProjectA/会议" --content "# 会议记录
 - 新增依赖说明章节与License版权声明
 - 内容原创度超过70%
 
-原始MIT license允许使用、复制、修改和分发，需保留版权声明。本改进作品在保留原始版权声明的基础上添加自有署名，完全符合MIT license要求。
-
+原始MIT license允许使用、复制、修改和分发，需保留版权声明。本改进作品在保留原始版权声明的基础上添加自有署名，完全符合MIT license要求.
 ## 免费版限制
 本免费体验版限制以下高级功能：
 

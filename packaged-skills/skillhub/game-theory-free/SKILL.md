@@ -6,23 +6,21 @@ displayName: "加密博弈论分析（免费版）"
 summary: "免费版crypto协议博弈论分析框架，支持Five Questions建模与基础Red Flags检测"
 license: "MIT"
 description: |-
-  面向加密协议的博弈论分析框架（免费版）。
+  面向加密协议的博弈论分析框架（免费版）.
   基于Five Questions分析模型，覆盖Nash Equilibrium、Dominant Strategy等核心概念，
-  支持基础Common Crypto Games识别与Red Flags检测。
-  免费版不含高级分析能力（Repeated Games、Bayesian Games等）与外部工具集成。
+  支持基础Common Crypto Games识别与Red Flags检测.
+  免费版不含高级分析能力（Repeated Games、Bayesian Games等）与外部工具集成.
 tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
 tags:
   - 生活服务
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+
 ---
 # 加密协议博弈论分析（免费版）
 
-面向web3协议的博弈论分析框架，提供Five Questions建模与基础风险检测能力。
-
+面向web3协议的博弈论分析框架，提供Five Questions建模与基础风险检测能力.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -60,8 +58,7 @@ tags: "工具,效率,自动化"
 4. **What information do they have?**（信息结构：Complete / Incomplete / Asymmetric Information）
 5. **What's the equilibrium?**（均衡分析：理性参与者的最终收敛点）
 
-支持核心概念应用：Nash Equilibrium（staking系统均衡）、Dominant Strategy（second-price auction）、Pareto Efficiency（AMM fee结构）、Schelling Point（价格支撑位）、Incentive Compatibility（Oracle设计）、Common Knowledge（公链状态）。
-
+支持核心概念应用：Nash Equilibrium（staking系统均衡）、Dominant Strategy（second-price auction）、Pareto Efficiency（AMM fee结构）、Schelling Point（价格支撑位）、Incentive Compatibility（Oracle设计）、Common Knowledge（公链状态）.
 ### Common Crypto Games识别
 针对crypto原生博弈提供基础识别能力：
 
@@ -71,7 +68,7 @@ tags: "工具,效率,自动化"
 - **Staking Game**：玩家为stakers、validators、delegators；核心洞察为security budget必须超过attack profit
 - **Oracle Game**：玩家为data providers、consumers、attackers；核心洞察为操纵收益必须小于操纵成本
 
-**处理**: 解析Common Crypto Games识别的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**处理**: 解析Common Crypto Games识别的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回Common Crypto Games识别的处理结果,包含执行状态码、结果数据和执行日志。### Red Flags基础检测
 
 提供三维度协议设计风险检测：
@@ -90,9 +87,8 @@ tags: "工具,效率,自动化"
 - **Adverse Selection**：Token launches、insurance protocols
 - **Moral Hazard**：带保险的协议冒险、anonymous teams
 
-**输入**: 用户提供六大分析模式基础支持所需的指令和必要参数。
-**输出**: 返回六大分析模式基础支持的处理结果,包含执行状态码、结果数据和执行日志。
-
+**输入**: 用户提供六大分析模式基础支持所需的指令和必要参数.
+**输出**: 返回六大分析模式基础支持的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 使用流程
 
@@ -136,14 +132,11 @@ Step 4 - Recommendations:
 ## 常见问题
 
 ### Q1: 免费版与付费版有何区别？
-A: 免费版提供基础Five Questions分析与Red Flags检测，不含高级分析能力（Repeated Games、Bayesian Games、Cooperative Game Theory等）及Nashpy/Gambit外部工具集成。
-
+A: 免费版提供基础Five Questions分析与Red Flags检测，不含高级分析能力（Repeated Games、Bayesian Games、Cooperative Game Theory等）及Nashpy/Gambit外部工具集成.
 ### Q2: 如何判断协议是否存在MEV风险？
-A: 通过MEV Game分析框架，检查transaction ordering是否可被操纵、是否存在first-come-first-served机制、sealed bid是否有commitment。
-
+A: 通过MEV Game分析框架，检查transaction ordering是否可被操纵、是否存在first-come-first-served机制、sealed bid是否有commitment.
 ### Q3: Nash Equilibrium在实际协议分析中如何应用？
-A: 先建模players和strategies，定义payoff functions，然后检查是否存在Dominant Strategy。若无dominant strategy，定性分析Nash Equilibrium。精确数值求解需付费版或外部工具。
-
+A: 先建模players和strategies，定义payoff functions，然后检查是否存在Dominant Strategy。若无dominant strategy，定性分析Nash Equilibrium。精确数值求解需付费版或外部工具.
 ## 已知限制
 
 - 仅支持定性分析，无法进行Nash Equilibrium精确数值求解（需付费版Nashpy/Gambit集成）

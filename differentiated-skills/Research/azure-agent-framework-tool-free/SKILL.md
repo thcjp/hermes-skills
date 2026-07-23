@@ -19,7 +19,6 @@ description: '文档型技能,指导开发者使用 Microsoft Agent Framework Py
 
   - 结构化输出(Pydantic 模型)
 
-
   适用场景:
 
   - 个人开发者构建 AI 助手
@@ -28,28 +27,25 @@ description: '文档型技能,指导开发者使用 Microsoft Agent Framework Py
 
   - 学习 Azure AI Foundry 智能体开发
 
-
   差...'
 tags:
 - 研究工具
 - AI开发
 - 智能体
 tools:
-- - read
+- read
 - exec
 homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "Azure,云计算,DevOps"
+
 ---
 # Azure智能体框架工具(免费版)
 
 ## 概述
 
-本工具是文档型技能,指导开发者使用 Microsoft Agent Framework Python SDK 在 Azure AI Foundry 上构建持久化智能体。免费版面向个人开发者,提供核心的智能体创建、函数工具集成、托管工具使用、流式响应与会话线程管理能力。
-
+本工具是文档型技能,指导开发者使用 Microsoft Agent Framework Python SDK 在 Azure AI Foundry 上构建持久化智能体。免费版面向个人开发者,提供核心的智能体创建、函数工具集成、托管工具使用、流式响应与会话线程管理能力.
 ### 架构概览
 
 ```text
@@ -72,39 +68,33 @@ tags: "Azure,云计算,DevOps"
 | 流式响应 | `run_stream()` 逐 token 输出 | 实时交互体验 |
 | 会话线程 | `get_new_thread()` 多轮对话 | 上下文保持 |
 | 结构化输出 | Pydantic 模型约束输出 | 数据抽取与校验 |
-**技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置。
-
+**技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
-用`input_params`参数进行配置。
-
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志。
+用`input_params`参数进行配置.
+**输入**: 用户提供核心功能执行所需的指令和必要参数.
+**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
-用`config_options`参数进行配置。
-
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志。
+用`config_options`参数进行配置.
+**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+**处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
-用`output_format`参数进行配置。
-
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志。
+用`output_format`参数进行配置.
+**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+**处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Azure、Foundry、构建持久化智能体、支持函数工具、托管工具与会话线、文档型技能、指导开发者使用、Microsoft、Framework、SDK、与会话线程、函数工具与托管工、具集成、流式响应与会话线、程管理等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Azure、Foundry、构建持久化智能体、支持函数工具、托管工具与会话线、文档型技能、指导开发者使用、Microsoft、Framework、SDK、与会话线程、函数工具与托管工、具集成、流式响应与会话线、程管理等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 使用场景
 
 ### 场景一:构建基础 AI 助手
 
-个人开发者快速创建一个能对话的 AI 智能体。
-
+个人开发者快速创建一个能对话的 AI 智能体.
 ```python
 import asyncio
 from agent_framework.azure import AzureAIAgentsProvider
@@ -130,8 +120,7 @@ asyncio.run(main())
 
 ### 场景二:带函数工具的智能体
 
-为智能体提供自定义函数(如天气查询、时间查询)。
-
+为智能体提供自定义函数(如天气查询、时间查询).
 ```python
 import asyncio
 from typing import Annotated
@@ -169,8 +158,7 @@ asyncio.run(main())
 
 ### 场景三:多轮对话与会话线程
 
-使用线程保持多轮对话上下文。
-
+使用线程保持多轮对话上下文.
 ```python
 import asyncio
 from agent_framework.azure import AzureAIAgentsProvider
@@ -213,8 +201,7 @@ asyncio.run(main())
 
 ## 触发条件
 
-需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于非本工具能力范围的需求。
-
+需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
 1. 阅读## 核心能力章节了解skill功能
@@ -345,13 +332,12 @@ async def main():
 
 ## 最佳实践
 
-1. **使用异步上下文管理器**:始终用 `async with provider:` 确保资源正确释放。
-2. **函数直接传入**:将 Python 函数直接传入 `tools=` 参数(自动转换为 AIFunction)。
-3. **参数注解**:用 `Annotated[type, Field(description=...)]` 为函数参数添加描述。
-4. **多轮对话用线程**:`get_new_thread()` 保持上下文。
-5. **结构化输出用 Pydantic**:用 `response_format` 约束输出格式。
-6. **本地开发用 AzureCliCredential**:生产环境用 DefaultAzureCredential 或托管标识。
-
+1. **使用异步上下文管理器**:始终用 `async with provider:` 确保资源正确释放.
+2. **函数直接传入**:将 Python 函数直接传入 `tools=` 参数(自动转换为 AIFunction).
+3. **参数注解**:用 `Annotated[type, Field(description=...)]` 为函数参数添加描述.
+4. **多轮对话用线程**:`get_new_thread()` 保持上下文.
+5. **结构化输出用 Pydantic**:用 `response_format` 约束输出格式.
+6. **本地开发用 AzureCliCredential**:生产环境用 DefaultAzureCredential 或托管标识.
 ## 常见问题
 
 ### Q1: 认证失败怎么办?
@@ -373,8 +359,7 @@ az account show
 - 在 instructions 中明确指示何时使用工具
 
 ### 已知限制
-免费版提供核心智能体构建能力,适合个人开发与原型验证。如需企业级编排、批量智能体管理、监控告警、多租户隔离等高阶能力,请升级至专业版。
-
+免费版提供核心智能体构建能力,适合个人开发与原型验证。如需企业级编排、批量智能体管理、监控告警、多租户隔离等高阶能力,请升级至专业版.
 ### Q5: 如何调试智能体?
 - 使用流式响应 `run_stream()` 观察实时输出
 - 检查 `result` 对象的完整字段

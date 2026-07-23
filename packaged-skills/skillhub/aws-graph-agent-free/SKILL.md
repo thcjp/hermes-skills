@@ -8,9 +8,9 @@ license: "MIT"
 description: |-
   AWS Bedrock AgentCore与LangGraph基础代理编排工具（免费版）。提供StateGraph状态图编排与
   AgentCore Runtime容器部署两大基础能力。支持 tools_condition 自动路由与 ToolNode 工具执行器，
-  可将代理封装为 8080 端口 HTTP 服务。
+  可将代理封装为 8080 端口 HTTP 服务.
   适用于单一代理的快速部署和工具调用场景。如需持久记忆、Gateway工具集成、多代理协调等高级功能，
-  请升级至 aws-graph-agent 付费版。
+  请升级至 aws-graph-agent 付费版.
 tags:
   - 智能代理
   - 云计算
@@ -20,13 +20,11 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "AWS,云计算,DevOps"
+
 ---
 # AWS Graph LITE
 
-基于 AWS Bedrock AgentCore 与 LangGraph 的基础代理编排工具。通过 StateGraph 状态图定义代理工作流，AgentCore Runtime 封装为 HTTP 服务。
-
+基于 AWS Bedrock AgentCore 与 LangGraph 的基础代理编排工具。通过 StateGraph 状态图定义代理工作流，AgentCore Runtime 封装为 HTTP 服务.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -56,26 +54,21 @@ tags: "AWS,云计算,DevOps"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### 1. StateGraph 状态图编排
-使用 LangGraph StateGraph 定义代理工作流，支持 `tools_condition` 自动路由（代理 → 工具或 END）、`ToolNode` 预置工具执行器，实现工具调用与自动路由。
-
-**输入**: 用户提供StateGraph 状态图编排所需的指令和必要参数。
-**输出**: 返回StateGraph 状态图编排的处理结果,包含执行状态码、结果数据和执行日志。
-
+使用 LangGraph StateGraph 定义代理工作流，支持 `tools_condition` 自动路由（代理 → 工具或 END）、`ToolNode` 预置工具执行器，实现工具调用与自动路由.
+**输入**: 用户提供StateGraph 状态图编排所需的指令和必要参数.
+**输出**: 返回StateGraph 状态图编排的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. AgentCore Runtime HTTP 封装
-将代理封装为 8080 端口 HTTP 服务，处理 `/invocations`（调用）与 `/ping`（健康检查）端点，支持容器模式部署。
-
-**输入**: 用户提供AgentCore Runtime HTTP 封装所需的指令和必要参数。
+将代理封装为 8080 端口 HTTP 服务，处理 `/invocations`（调用）与 `/ping`（健康检查）端点，支持容器模式部署.
+**输入**: 用户提供AgentCore Runtime HTTP 封装所需的指令和必要参数.
 **输出**: 返回AgentCore Runtime HTTP 封装的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`AgentCore Runtime HTTP 封装`的配置文档进行参数调优
 ### 3. agentcore CLI 基础管理
-`configure`（配置）→ `launch`（部署）→ `dev`（本地开发）→ `invoke`（测试调用）→ `destroy`（清理资源）。
-
-> **升级提示**: 跨会话持久记忆（STM/LTM）、Gateway 外部 API/Lambda 工具集成、多代理协调（编排器+专家模式）、记忆一致性验证逻辑等高级功能仅在 [aws-graph-agent 付费版] 中提供。
-
+`configure`（配置）→ `launch`（部署）→ `dev`（本地开发）→ `invoke`（测试调用）→ `destroy`（清理资源）.
+> **升级提示**: 跨会话持久记忆（STM/LTM）、Gateway 外部 API/Lambda 工具集成、多代理协调（编排器+专家模式）、记忆一致性验证逻辑等高级功能仅在 [aws-graph-agent 付费版] 中提供.
 #
 ## 适用场景
 
@@ -85,8 +78,7 @@ export API_KEY="your_api_key_here"
 | 工具调用代理 | "代理自动判断是否调用工具" | tools_condition 自动路由 | StateGraph |
 | 本地开发调试 | "热重载本地开发代理" | agentcore dev 热重载 | CLI |
 
-**不适用于**: 需要跨会话持久记忆的场景（需付费版），需要外部 API/Lambda 工具集成的场景（需付费版），多代理协调的复杂业务系统（需付费版），未完成 Bedrock 模型审批的账户。
-
+**不适用于**: 需要跨会话持久记忆的场景（需付费版），需要外部 API/Lambda 工具集成的场景（需付费版），多代理协调的复杂业务系统（需付费版），未完成 Bedrock 模型审批的账户.
 ## 使用流程
 
 ### Step 1: 安装依赖
@@ -167,8 +159,7 @@ agentcore launch
 agentcore invoke '{"prompt": "查询北京今天天气"}'
 ```
 
-**分析**: `tools_condition` 自动判断代理输出是否包含工具调用请求。包含则路由到 `ToolNode` 执行工具后返回代理节点；不包含则直接路由到 END。部署后可通过 8080 端口的 `/invocations` 端点调用，`/ping` 端点检查健康状态。测试完成后务必执行 `agentcore destroy` 清理资源，避免持续计费。本地开发可使用 `agentcore dev` 热重载，无需每次重新部署容器。
-
+**分析**: `tools_condition` 自动判断代理输出是否包含工具调用请求。包含则路由到 `ToolNode` 执行工具后返回代理节点；不包含则直接路由到 END。部署后可通过 8080 端口的 `/invocations` 端点调用，`/ping` 端点检查健康状态。测试完成后务必执行 `agentcore destroy` 清理资源，避免持续计费。本地开发可使用 `agentcore dev` 热重载，无需每次重新部署容器.
 ## 异常处理
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
@@ -182,16 +173,12 @@ agentcore invoke '{"prompt": "查询北京今天天气"}'
 ## 常见问题
 
 ### Q1: 收到 "on-demand throughput isn't supported" 错误？
-A: 使用 `us.anthropic.claude-*` 推理配置文件替代按需吞吐量。这是区域和模型组合的限制，跨区域推理配置文件可自动路由到容量充足的区域。
-
-如仍报错，确认所选区域（如 us-east-1）支持 AgentCore 与 Bedrock 模型，并检查账户是否已开通对应模型的访问权限。
-
+A: 使用 `us.anthropic.claude-*` 推理配置文件替代按需吞吐量。这是区域和模型组合的限制，跨区域推理配置文件可自动路由到容量充足的区域.
+如仍报错，确认所选区域（如 us-east-1）支持 AgentCore 与 Bedrock 模型，并检查账户是否已开通对应模型的访问权限.
 ### Q2: 代理名称无效如何修改？
-A: 代理名称必须字母开头，仅含字母/数字/下划线，1-48 字符。将连字符改为下划线（如 `my-agent` → `my_agent`），避免使用特殊符号和中文。
-
+A: 代理名称必须字母开头，仅含字母/数字/下划线，1-48 字符。将连字符改为下划线（如 `my-agent` → `my_agent`），避免使用特殊符号和中文.
 ### Q3: 容器无法读取 .env 文件怎么办？
-A: 容器模式下 .env 文件不会被自动读取。在 Dockerfile 中使用 `ENV` 指令设置环境变量，而非依赖 .env 文件。这是容器模式与本地开发习惯的主要差异。
-
+A: 容器模式下 .env 文件不会被自动读取。在 Dockerfile 中使用 `ENV` 指令设置环境变量，而非依赖 .env 文件。这是容器模式与本地开发习惯的主要差异.
 ### Q4: 免费版和付费版有什么区别？
 A: 免费版（LITE）包含 StateGraph 状态图编排和 AgentCore Runtime 容器部署两大基础功能。付费版（AWS Graph Agent）额外提供：
 - 跨会话持久记忆（STM/LTM）与一致性验证逻辑（指数退避）

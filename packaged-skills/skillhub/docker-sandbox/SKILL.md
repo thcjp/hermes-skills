@@ -6,19 +6,18 @@ displayName: "Docker Sandbox"
 summary: "建管Docker沙箱VM环境,让Agent安全执行不可信代码"
 license: "Proprietary"
 description: |-
-  Create and manage Docker sandboxed VM environments for safe agent execution。Use when running unt。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。适用于独立开发者、企业团队和自动化工作流场景。
+  Create and manage Docker sandboxed VM environments for safe agent execution。Use when running unt。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
   - Operations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "容器,Docker,DevOps"
+
 ---
 # Docker Sandbox
 
@@ -42,7 +41,9 @@ tags: "容器,Docker,DevOps"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 代码处理 | 源代码文件路径 | 分析报告与修改建议 |
+| 容器管理 | 镜像名与运行参数 | 容器状态与日志输出 |
+| 沙箱管理 | 镜像与资源限制 | 沙箱ID与隔离状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -76,8 +77,7 @@ docker sandbox run claude . -- -p "What files are in this project?"
 docker sandbox run my-sandbox -- -p "Analyze this codebase"
 ```
 
-**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
-
+**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -139,7 +139,7 @@ docker sandbox run my-sandbox -- -p "Analyze this codebase"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 示例1：基础用法

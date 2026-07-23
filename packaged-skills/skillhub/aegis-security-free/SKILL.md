@@ -8,20 +8,18 @@ license: "MIT"
 description: |-
   面向AI代理的区块链安全API免费版。提供地址声誉检查、代币蜜罐检测和免费额度查询等基础功能，
   支持Ethereum和Base链。适用于基础交易前安全检查场景。升级至完整版可解锁交易模拟、
-  x402付费机制和8条链全链支持。
+  x402付费机制和8条链全链支持.
 tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
 tags:
   - 安全合规
-tools: ["read", "exec"]
-tags: "安全,加密,工具"
+
 ---
 # 区块链安全防护（免费版）
 
-面向AI代理的区块链安全API免费版，提供基础的交易前安全扫描能力。每日100次免费检查额度，支持Ethereum和Base链的地址声誉检查和代币蜜罐检测。
-
+面向AI代理的区块链安全API免费版，提供基础的交易前安全扫描能力。每日100次免费检查额度，支持Ethereum和Base链的地址声誉检查和代币蜜罐检测.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -58,27 +56,22 @@ tags: "安全,加密,工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### 1. 地址声誉检查
 
-通过 `GET /v1/check-address/:address` 端点检查接收地址的链上声誉。传入地址路径参数和 `chain_id` 查询参数（免费版支持1=Ethereum和8453=Base），返回 `isSafe` 布尔值、风险等级（LOW/MEDIUM/HIGH/CRITICAL）和威胁信号列表。适用于转账前验证收款方是否为已知恶意地址。
-
+通过 `GET /v1/check-address/:address` 端点检查接收地址的链上声誉。传入地址路径参数和 `chain_id` 查询参数（免费版支持1=Ethereum和8453=Base），返回 `isSafe` 布尔值、风险等级（LOW/MEDIUM/HIGH/CRITICAL）和威胁信号列表。适用于转账前验证收款方是否为已知恶意地址.
 ### 2. 代币蜜罐检测
-通过 `GET /v1/check-token/:address` 端点检测代币合约是否存在蜜罐行为。传入代币合约地址和 `chain_id`（免费版支持1和8453），返回蜜罐概率百分比、风险评估和具体风险信号（如买入税率过高、卖出暂停等）。适用于购买新代币前的风险评估。
-
-**输入**: 用户提供代币蜜罐检测所需的指令和必要参数。
-**处理**: 解析代币蜜罐检测的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-
+通过 `GET /v1/check-token/:address` 端点检测代币合约是否存在蜜罐行为。传入代币合约地址和 `chain_id`（免费版支持1和8453），返回蜜罐概率百分比、风险评估和具体风险信号（如买入税率过高、卖出暂停等）。适用于购买新代币前的风险评估.
+**输入**: 用户提供代币蜜罐检测所需的指令和必要参数.
+**处理**: 解析代币蜜罐检测的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 3. 免费额度查询
 
-通过 `GET /v1/usage` 端点查询当前指纹的免费配额使用情况。通过 `X-Client-Fingerprint` 头部识别用户身份，返回 `dailyLimit`（100次/天）、`usedToday`、`remainingChecks` 和 `nextResetAt`（UTC时间戳）。适用于配额监控和调用规划。
-
+通过 `GET /v1/usage` 端点查询当前指纹的免费配额使用情况。通过 `X-Client-Fingerprint` 头部识别用户身份，返回 `dailyLimit`（100次/天）、`usedToday`、`remainingChecks` 和 `nextResetAt`（UTC时间戳）。适用于配额监控和调用规划.
 ### 4. 风险等级评估
 
-根据检查结果自动计算综合风险等级。`LOW` 表示次要风险可放行，`MEDIUM` 表示存在部分风险需人工复核，`HIGH` 表示显著风险需阻止并确认，`CRITICAL` 表示恶意或不安全必须阻止。每个响应包含 `isSafe` 布尔值和详细威胁信号列表。适用于基础安全决策。
-
+根据检查结果自动计算综合风险等级。`LOW` 表示次要风险可放行，`MEDIUM` 表示存在部分风险需人工复核，`HIGH` 表示显著风险需阻止并确认，`CRITICAL` 表示恶意或不安全必须阻止。每个响应包含 `isSafe` 布尔值和详细威胁信号列表。适用于基础安全决策.
 #
 ## 升级提示
 
@@ -89,8 +82,7 @@ export API_KEY="your_api_key_here"
 - **全链支持**：支持Polygon(137)、Arbitrum(42161)、Optimism(10)、BSC(56)、Avalanche(43114)和Solana
 - **反馈提交**：`POST /v1/feedback` 端点提交问题报告，支持requestId关联追踪
 
-升级至完整版以获取全部能力。
-
+升级至完整版以获取全部能力.
 ## 使用流程
 
 1. 在所有请求中设置 `X-Client-Fingerprint` 头部为稳定的用户标识，确保免费配额稳定分配
@@ -152,28 +144,22 @@ curl "https://security-api.example.com/v1/check-token/0xA0b86991c6218b36c1d19D4a
 
 ### Q1: 免费额度是如何计算的？
 
-免费额度按 `X-Client-Fingerprint` 头部进行每日100次配额分配。UTC时间次日0点自动重置。如果未设置该头部，系统回退到IP/User-Agent进行配额计算，可能导致配额不稳定。
-
+免费额度按 `X-Client-Fingerprint` 头部进行每日100次配额分配。UTC时间次日0点自动重置。如果未设置该头部，系统回退到IP/User-Agent进行配额计算，可能导致配额不稳定.
 ### Q2: 免费版支持哪些链？
 
-免费版支持Ethereum(chain_id=1)和Base(chain_id=8453)两条链的 `check-address` 和 `check-token` 检查。如需Polygon(137)、Arbitrum(42161)、BSC(56)等链支持，请升级至完整版。
-
+免费版支持Ethereum(chain_id=1)和Base(chain_id=8453)两条链的 `check-address` 和 `check-token` 检查。如需Polygon(137)、Arbitrum(42161)、BSC(56)等链支持，请升级至完整版.
 ### Q3: 免费额度用尽后怎么办？
 
-等待UTC时间次日0点自动重置，或升级至完整版配置x402付费机制（通过 `@x402/fetch` 和 `@x402/evm` 客户端实现USDC自动微额支付），实现超限后自动续用。
-
+等待UTC时间次日0点自动重置，或升级至完整版配置x402付费机制（通过 `@x402/fetch` 和 `@x402/evm` 客户端实现USDC自动微额支付），实现超限后自动续用.
 ### Q4: 免费版可以使用交易模拟吗？
 
-不可以。`POST /v1/simulate-tx` 是完整版独有功能。免费版仅支持只读安全检查（地址声誉和代币蜜罐检测）。如需交易模拟能力，请升级至完整版。
-
+不可以。`POST /v1/simulate-tx` 是完整版独有功能。免费版仅支持只读安全检查（地址声誉和代币蜜罐检测）。如需交易模拟能力，请升级至完整版.
 ### Q5: 风险等级HIGH和CRITICAL有什么区别？
 
-`HIGH` 表示显著风险，Agent应阻止交易并请求用户确认。`CRITICAL` 表示地址或交易被判定为恶意或不安全，Agent必须阻止交易且不建议继续。两者都会触发 `isSafe=false`，但CRITICAL通常关联已知诈骗地址或蜜罐合约。
-
+`HIGH` 表示显著风险，Agent应阻止交易并请求用户确认。`CRITICAL` 表示地址或交易被判定为恶意或不安全，Agent必须阻止交易且不建议继续。两者都会触发 `isSafe=false`，但CRITICAL通常关联已知诈骗地址或蜜罐合约.
 ### Q6: 如何判断代币是否是蜜罐？
 
-调用 `GET /v1/check-token/:address` 并查看返回的 `honeypot` 概率和风险信号。如果蜜罐概率高于阈值或存在卖出暂停、交易税率异常等信号，建议不要购买该代币。
-
+调用 `GET /v1/check-token/:address` 并查看返回的 `honeypot` 概率和风险信号。如果蜜罐概率高于阈值或存在卖出暂停、交易税率异常等信号，建议不要购买该代币.
 ## 已知限制
 
 - 免费额度100次/天，额度用尽需等待次日重置或升级完整版

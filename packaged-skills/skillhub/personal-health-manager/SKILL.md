@@ -7,19 +7,18 @@ summary: "个人健康管理与养生助手,追踪健康数据"
 license: "Proprietary"
 description: |-
   Personal health management and wellness assistant。Use when users want
-  to track health data, get。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
+  to track health data, get。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - Lifestyle
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Personal Health Mana
 
@@ -74,17 +73,17 @@ Track and record various health metrics 基于 user profile:
 
 > 详细内容已移至 `references/detail.md` -
 
-**处理**: 解析Health Data Recording 📊的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回Health Data Recording 📊的处理结果,包含执行状态码、结果数据和执行日志。
+**处理**: 解析Health Data Recording 📊的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回Health Data Recording 📊的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. Age-Specific Health Guidance
 > 详细内容已移至 `references/detail.md` -
 
-**输入**: 用户提供Age-Specific Health Guidance所需的指令和必要参数。
-**处理**: 解析Age-Specific Health Guidance的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回Age-Specific Health Guidance的处理结果,包含执行状态码、结果数据和执行日志。
+**输入**: 用户提供Age-Specific Health Guidance所需的指令和必要参数.
+**处理**: 解析Age-Specific Health Guidance的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回Age-Specific Health Guidance的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. Gender-Specific Health
 
-**处理**: 解析Health Data Recording 📊的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**处理**: 解析Health Data Recording 📊的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回Health Data Recording 📊的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`Gender-Specific Health`的配置文档进行参数调优
 ### 4. Medication Management 💊
@@ -133,10 +132,9 @@ Track and record various health metrics 基于 user profile:
 | Statins | Grapefruit | Increased side effects |
 | ACE inhibitors | Potassium | High potassium |
 
-**输入**: 用户提供Medication Management 💊所需的指令和必要参数。
-**处理**: 解析Medication Management 💊的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回Medication Management 💊的处理结果,包含执行状态码、结果数据和执行日志。
-
+**输入**: 用户提供Medication Management 💊所需的指令和必要参数.
+**处理**: 解析Medication Management 💊的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回Medication Management 💊的处理结果,包含执行状态码、结果数据和执行日志.
 ### 5. Symptom Analysis 🩺
 **Process:**
 
@@ -178,7 +176,7 @@ Track and record various health metrics 基于 user profile:
 * Severe vomiting + unable to keep fluids down
 * Overdose symptoms
 
-**输出**: 返回Symptom Analysis 🩺的处理结果,包含执行状态码、结果数据和执行日志。
+**输出**: 返回Symptom Analysis 🩺的处理结果,包含执行状态码、结果数据和执行日志.
 ### 6. Exercise Recommendations 🏃
 #### By Age & Fitness Level
 **Beginner (Any Age):**
@@ -228,7 +226,7 @@ Track and record various health metrics 基于 user profile:
 
 - 参考`Exercise Recommendations 🏃`的配置文档进行参数调优
 
-**输出**: 返回Exercise Recommendations 🏃的处理结果,包含执行状态码、结果数据和执行日志。
+**输出**: 返回Exercise Recommendations 🏃的处理结果,包含执行状态码、结果数据和执行日志.
 ### 7. Nutrition Advice 🥗
 #### By Age
 **Children:**
@@ -271,11 +269,11 @@ Track and record various health metrics 基于 user profile:
 * Limit added sugars
 * Drink water before meals
 
-**输入**: 用户提供Nutrition Advice 🥗所需的指令和必要参数。
-**输出**: 返回Nutrition Advice 🥗的处理结果,包含执行状态码、结果数据和执行日志。
+**输入**: 用户提供Nutrition Advice 🥗所需的指令和必要参数.
+**输出**: 返回Nutrition Advice 🥗的处理结果,包含执行状态码、结果数据和执行日志.
 ### 8. Travel Health Preparation ✈️
 
-**输入**: 用户提供Nutrition Advice 🥗所需的指令和必要参数。
+**输入**: 用户提供Nutrition Advice 🥗所需的指令和必要参数.
 **输出**: 返回Nutrition Advice 🥗的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`Travel Health Preparation ✈️`的配置文档进行参数调优
 #
@@ -353,8 +351,7 @@ Track and record various health metrics 基于 user profile:
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Personal Health Mana？

@@ -7,19 +7,17 @@ summary: "在Uniswap V2/V3/V4池加撤流动性并收手续费"
 license: "Proprietary"
 description: |-
   Add liquidity, remove liquidity, or collect fees on Uniswap V2/V3/V4
-  pools。Handles the full flow。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
+  pools。Handles the full flow。
 tags:
   - Other
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
 ---
 # Manage Liquidity
 
@@ -48,7 +46,9 @@ Each action delegates to the `liquidity-manager` agent for execution, with optio
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 加流动性 | 代币对与资金量 | 池子选择建议与入金交易 |
+| 撤流动性 | 持仓ID与提取比例 | 代币提取交易回执 |
+| 收取手续费 | 持仓ID | 累积手续费领取结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
 

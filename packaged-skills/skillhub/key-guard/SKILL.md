@@ -6,8 +6,9 @@ displayName: "Key Guard"
 summary: "安全护栏,阻止API Key被发送给Claude"Proprietary"
 description: |-
   Security guardrail: prevents API keys from being sent to ai-assistant。Triggers
-  when user asks to call。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
-tags: "'[''Integrations'']'"
+  when user asks to call。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+tags:
+  - Integrations
 tools:
   - read
   - exec
@@ -16,8 +17,8 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
 license: "MIT"
+
 ---
 # Key Guard
 
@@ -126,7 +127,7 @@ license: "MIT"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### User: "Is my llm-provider key set up?"

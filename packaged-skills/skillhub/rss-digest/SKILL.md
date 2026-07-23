@@ -7,19 +7,18 @@ summary: "用feed CLI做RSS摘要,抓取/分诊/汇总高价值条目"
 license: "Proprietary"
 description: |-
   Agentic RSS digest using the feed CLI。Fetch, triage, and summarize
-  RSS feeds to surface high-sig。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
+  RSS feeds to surface high-sig。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - Research
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "RSS,订阅,信息"
+
 ---
 # Rss Digest
 
@@ -44,7 +43,9 @@ tags: "RSS,订阅,信息"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 内容抓取 | 目标URL与解析规则 | 结构化数据与元信息 |
+| 用feed CLI做 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 汇总高价值条目 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -145,8 +146,7 @@ tags: "RSS,订阅,信息"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Rss Digest？

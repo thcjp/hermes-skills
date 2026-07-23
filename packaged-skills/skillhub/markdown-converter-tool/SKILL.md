@@ -7,21 +7,20 @@ summary: "简洁Markdown转换助手(用Azure有隐私提示)"
 license: "Proprietary"
 description: |-
   This is a straightforward Markdown conversion helper, with privacy caveats
-  if users choose Azure 。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
+  if users choose Azure 
 tags:
   - Creative
   - Knowledge
   - Integrations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Markdown,文档,工具"
+
 ---
 # Markdown Converter
 
@@ -45,7 +44,8 @@ tags: "Markdown,文档,工具"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 简洁Markdown | 目标数据与配置参数 | 处理结果与执行状态 |
+| 用Azure有隐私提 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -105,7 +105,7 @@ tags: "Markdown,文档,工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ```bash
@@ -133,12 +133,13 @@ uvx markitdown scan.pdf -d -e "https://your-resource.cognitiveservices.azure.com
 
 ### 如何开始使用？
 
-阅读使用流程章节,按步骤配置环境和参数后即可开始使用。首次使用建议先阅读依赖说明章节确认环境就绪。
-
+阅读使用流程章节,按步骤配置环境和参数后即可开始使用。首次使用建议先阅读依赖说明章节确认环境就绪.
 ### 遇到错误怎么办？
 
-查看错误处理章节,对照错误场景找到对应的处理方式。如错误处理章节未覆盖,收集错误信息后通过已知限制章节了解skill能力边界。
-
+查看错误处理章节,对照错误场景找到对应的处理方式。如错误处理章节未覆盖,收集错误信息后通过已知限制章节了解skill能力边界.
 ## 已知限制
 
 - 依赖云服务，需要网络连接
+- 需要有效的云服务凭证和配置好的CLI环境
+- 产生的云资源可能产生费用，使用前请确认计费方式
+- 不同区域的服务可用性和功能支持可能存在差异

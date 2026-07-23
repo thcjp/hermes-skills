@@ -7,20 +7,19 @@ summary: "Slack API托管OAuth,发消息/管频道/搜会话"
 license: "Proprietary"
 description: |-
   Slack API integration with managed OAuth。Send messages, manage channels,
-  search conversations, a。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
+  search conversations, a。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
   - Integrations
   - Automation
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+
 ---
 # Slack
 
@@ -45,7 +44,8 @@ tags: "API,接口,开发工具"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 消息发送 | 目标与消息内容 | 送达回执与消息ID |
+| Slack API托 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -161,8 +161,7 @@ EOF
 
 * Correct: `https://api.maton.ai/slack/api/chat.postMessage`
 * Incorrect: `https://api.maton.ai/api/chat.postMessage`
-> **处理方式**: 参考上表中的错误场景说明,按照对应建议进行处理和恢复。
-
+> **处理方式**: 参考上表中的错误场景说明,按照对应建议进行处理和恢复.
 ## 依赖说明
 
 ### 运行环境
@@ -185,7 +184,7 @@ EOF
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### CLI

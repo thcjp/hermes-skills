@@ -7,19 +7,18 @@ summary: "销售税查询(其脚本可本地运行需谨慎)"
 license: "Proprietary"
 description: |-
   This sales-tax lookup skill is legitimate in purpose, but its bundled
-  lookup script can run local。Use when 用户需要Ziptax Sales Tax相关功能时使用。不适用于超出本技能能力范围的复杂需求。
+  lookup script can run local。Use when 用户需要Ziptax Sales Tax相关功能时使用。不适用于超出本技能能力范围的复杂需求.
 tags:
   - Development
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Ziptax Sales Tax
 
@@ -43,7 +42,9 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 信息查询 | 查询条件与关键词 | 查询结果与匹配记录 |
+| 销售税查询 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 其脚本可本地运行需谨 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -161,7 +162,7 @@ curl -s "https://api.zip-tax.com/request/v60?lat=33.6525&lng=-117.7479" \
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 示例1：基础用法
@@ -206,3 +207,6 @@ A:
 ## 已知限制
 
 - 本地运行，不支持多设备同步
+- 依赖Agent平台的LLM能力与运行环境配置
+- 免费版功能受限，高级能力需升级专业版
+- 处理能力受限于本地硬件资源

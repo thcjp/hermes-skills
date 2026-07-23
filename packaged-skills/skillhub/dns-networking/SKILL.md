@@ -7,19 +7,18 @@ summary: "调试DNS解析与网络连通,DNS故障/端口测试一键诊断"
 license: "Proprietary"
 description: |-
   Debug DNS resolution and network connectivity。Use when troubleshooting
-  DNS failures, testing por。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。
+  DNS failures, testing por。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Development
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "网络,DNS,工具"
+
 ---
 # DNS & Networking
 
@@ -44,7 +43,9 @@ tags: "网络,DNS,工具"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 数据解析 | 原始内容与格式 | 结构化字段与提取结果 |
+| 网络配置 | 网络名与子网参数 | 网络ID与连通状态 |
+| 测试验证 | 测试用例与预期 | 测试报告与覆盖率 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -164,8 +165,7 @@ date
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用DNS & Networking？

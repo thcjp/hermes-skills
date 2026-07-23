@@ -5,9 +5,9 @@ displayName: "Linear项目管理"
 version: "1.0.0"
 summary: "封装Linear项目管理API,请求参数直转响应数据,付费版独享批量与高级配置"
 description: |-
-  API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据。
-  Use when 用户说"Linear Project Manager 智能分析"、Linear Project Manager 智能分析时使用。
-  不适用于需要人工判断的复杂场景。
+  API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.
+  Use when 用户说"Linear Project Manager 智能分析"、Linear Project Manager 智能分析时使用.
+  不适用于需要人工判断的复杂场景.
 license: "Proprietary"
 tools:
   - read
@@ -19,8 +19,7 @@ tags:
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Linear Project Manager 批量处理
 
@@ -105,7 +104,7 @@ Linear项目管理验证用户身份与操作权限，加载租户配置
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 示例1: 基础用法
@@ -125,13 +124,13 @@ export API_KEY="your_api_key_here"
 
 ### 如何开始使用？
 
-阅读使用流程章节,按步骤配置环境和参数后即可开始使用。首次使用建议先阅读依赖说明章节确认环境就绪。
-
+阅读使用流程章节,按步骤配置环境和参数后即可开始使用。首次使用建议先阅读依赖说明章节确认环境就绪.
 ### 遇到错误怎么办？
 
-查看错误处理章节,对照错误场景找到对应的处理方式。如错误处理章节未覆盖,收集错误信息后通过已知限制章节了解skill能力边界。
-
+查看错误处理章节,对照错误场景找到对应的处理方式。如错误处理章节未覆盖,收集错误信息后通过已知限制章节了解skill能力边界.
 ## 已知限制
 
 - 需要LLM支持
-
+- 数据处理能力受限于本地硬件资源
+- 大数据量时分析性能可能显著下降
+- 数据准确性依赖输入质量，无法自动修正脏数据

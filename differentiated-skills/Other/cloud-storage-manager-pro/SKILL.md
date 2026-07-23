@@ -3,11 +3,10 @@ slug: cloud-storage-manager-pro
 name: cloud-storage-manager-pro
 version: 1.0.0
 displayName: 云存储管理器(专业版)
-summary: 企业级多云存储管理平台，支持批量迁移、双向同步、加密KMS、多用户协作与成本分析报告。
+summary: 企业级多云存储管理平台，支持批量迁移、双向同步、加密KMS、多用户协作与成本分析报告.
 license: Proprietary
 edition: pro
 description: '面向团队与企业的全功能多云存储管理平台，在免费版基础上扩展批量跨云迁移、双向实时同步、加密密钥管理、多用户协作、智能分层存储与成本分析报告等高级能力。核心能力：
-
 
   - 批量跨云迁移，一次任务多源多目标并发，支持断点续传
 
@@ -25,18 +24,16 @@ tags:
 - 密钥管理
 - 成本分析
 tools:
-- - read
+- read
 - exec
 homepage: https://skillhub.cn
 # 定价元数据
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "云计算,DevOps,基础设施"
----
-面向团队与企业的全功能多云存储管理平台。在免费版基础上扩展批量跨云迁移、双向实时同步、加密密钥管理、多用户协作、智能分层存储与成本分析报告等8项高级能力。
 
+---
+面向团队与企业的全功能多云存储管理平台。在免费版基础上扩展批量跨云迁移、双向实时同步、加密密钥管理、多用户协作、智能分层存储与成本分析报告等8项高级能力.
 ## 概述
 本工具在免费版"统一API与成本意识"基础上，新增企业级能力。专业版额外提供：
 
@@ -66,30 +63,26 @@ tags: "云计算,DevOps,基础设施"
 | 多副本冗余写入 | ❌ | ✅ |
 
 ### 核心功能执行
-用`input_params`参数进行配置。
-
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志。
+用`input_params`参数进行配置.
+**输入**: 用户提供核心功能执行所需的指令和必要参数.
+**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
-用`config_options`参数进行配置。
-
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志。
+用`config_options`参数进行配置.
+**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+**处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
-用`output_format`参数进行配置。
-
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志。
+用`output_format`参数进行配置.
+**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+**处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级多云存储管、理平台、支持批量迁移、双向同步、多用户协作与成本、面向团队与企业的、全功能多云存储管、在免费版基础上扩、展批量跨云迁移、加密密钥管理、智能分层存储与成、本分析报告等高级、核心能力等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级多云存储管、理平台、支持批量迁移、双向同步、多用户协作与成本、面向团队与企业的、全功能多云存储管、在免费版基础上扩、展批量跨云迁移、加密密钥管理、智能分层存储与成、本分析报告等高级、核心能力等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 使用场景
 ### 场景1：TB级跨云批量迁移（架构师角色）
 架构师需要将10TB数据从S3迁移至R2、B2、Azure Blob三处备份，需要并发与断点续传：
@@ -218,16 +211,14 @@ csm cost-analysis \
 
 ## 触发条件
 
-需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于非本工具能力范围的需求。
-
+需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于非本工具能力范围的需求.
 ## 使用流程
 ### Step 1：初始化专业版工作区
 ```bash
 csm init --workspace ./cloud-mgr --edition pro
 ```
 
-创建专业版目录结构：`team/`、`sync-rules/`、`lifecycle/`、`reports/`、`audit-logs/`。
-
+创建专业版目录结构：`team/`、`sync-rules/`、`lifecycle/`、`reports/`、`audit-logs/`.
 ### Step 2：配置多Provider凭据
 ```bash
 csm config import --file ./providers.yaml --vault hashicorp-vault://secrets/cloud
@@ -244,8 +235,7 @@ csm team invite --team MyTeam --members "alice:admin,bob:operator"
 csm batch-migrate --source s3://src/ --targets r2://dst/ --estimate-cost
 ```
 
-**响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
+**响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
 #
 ## 示例
 ### 团队权限矩阵配置
@@ -314,35 +304,25 @@ providers:
 | 实时同步延迟高 | webhook队列堵塞 | 增加`--concurrency`，启用消息队列缓冲 | P2 |
 ## 常见问题
 ### Q1：批量迁移支持多少并发？
-A：默认并行16个文件，可根据Provider限速调整。S3建议≤32（per prefix 3500 PUT/s）。
-
+A：默认并行16个文件，可根据Provider限速调整。S3建议≤32（per prefix 3500 PUT/s）.
 ### Q2：双向同步冲突如何处理？
-A：三种策略：`latest-wins`（默认，最新修改胜）、`manual`（保留两版本待解决）、`custom`（调用自定义脚本）。
-
+A：三种策略：`latest-wins`（默认，最新修改胜）、`manual`（保留两版本待解决）、`custom`（调用自定义脚本）.
 ### Q3：KMS支持哪些Provider？
-A：支持AWS KMS、Azure Key Vault、HashiCorp Vault、Google Cloud KMS。可混合使用。
-
+A：支持AWS KMS、Azure Key Vault、HashiCorp Vault、Google Cloud KMS。可混合使用.
 ### Q4：智能分层支持哪些Provider？
-A：支持AWS S3（STANDARD_IA/GLACIER/DEEP_ARCHIVE）、Azure Blob（Hot/Cool/Archive）、Google Cloud Storage（Nearline/Coldline/Archive）、Backblaze B2（无分层）。
-
+A：支持AWS S3（STANDARD_IA/GLACIER/DEEP_ARCHIVE）、Azure Blob（Hot/Cool/Archive）、Google Cloud Storage（Nearline/Coldline/Archive）、Backblaze B2（无分层）.
 ### Q5：多副本写入如何保证一致性？
-A：采用最终一致性模型。所有副本写入成功后返回成功。部分失败时启用`--retry`，最终一致。
-
+A：采用最终一致性模型。所有副本写入成功后返回成功。部分失败时启用`--retry`，最终一致.
 ### Q6：成本分析报告包含哪些维度？
-A：按Provider/桶/前缀/部门/项目维度量化。包含存储费、API调用费、egress费用、请求费用等。
-
+A：按Provider/桶/前缀/部门/项目维度量化。包含存储费、API调用费、egress费用、请求费用等.
 ### Q7：RBAC角色可自定义吗？
-A：admin/operator/viewer三种内置角色。企业版支持自定义角色与权限组合。
-
+A：admin/operator/viewer三种内置角色。企业版支持自定义角色与权限组合.
 ### Q8：能否同时启用KMS加密和智能分层？
-A：可以。加密在写入时执行，分层在生命周期管理时执行，两者独立。
-
+A：可以。加密在写入时执行，分层在生命周期管理时执行，两者独立.
 ### Q9：批量迁移支持断点续传吗？
-A：支持。每个文件分块上传保存检查点，任务级别也保存进度。失败后`--resume`恢复。
-
+A：支持。每个文件分块上传保存检查点，任务级别也保存进度。失败后`--resume`恢复.
 ### Q10：审计日志包含哪些信息？
-A：操作者、时间、操作类型、源/目标、文件大小、校验和、结果。日志保留期可配置。
-
+A：操作者、时间、操作类型、源/目标、文件大小、校验和、结果。日志保留期可配置.
 ## 版本升级迁移指南
 | 版本 | 变更 | 迁移建议 |
 |---:|---:|---:|
@@ -399,8 +379,7 @@ csm config rotate --all --vault hashicorp-vault://secrets/cloud-providers --sche
 }
 ```
 
-错误码列表：`PROVIDER_AUTH_FAILED`、`PROVIDER_RATE_LIMITED`、`FILE_NOT_FOUND`、`CHECKSUM_MISMATCH`、`KMS_KEY_DISABLED`、`RBAC_PERMISSION_DENIED`、`SYNC_CONFLICT`、`STORAGE_QUOTA_EXCEEDED`。
-
+错误码列表：`PROVIDER_AUTH_FAILED`、`PROVIDER_RATE_LIMITED`、`FILE_NOT_FOUND`、`CHECKSUM_MISMATCH`、`KMS_KEY_DISABLED`、`RBAC_PERMISSION_DENIED`、`SYNC_CONFLICT`、`STORAGE_QUOTA_EXCEEDED`.
 ## 专业版特性
 本专业版相比免费版新增以下8项能力：
 
@@ -419,8 +398,7 @@ csm config rotate --all --vault hashicorp-vault://secrets/cloud-providers --sche
 | 免费体验版 | ¥0 | 单源单目标基础操作+成本预估 | 个人开发者试用 |
 | 收费专业版 | ¥99/月 | 全功能+批量迁移+双向同步+KMS+RBAC+分层+成本分析+优先支持 | 团队/企业多云管理 |
 
-专业版通过SkillHub SkillPay发布，提供工单优先响应与SLA保障。
-
+专业版通过SkillHub SkillPay发布，提供工单优先响应与SLA保障.
 ## 依赖说明
 ### 运行环境
 - **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）

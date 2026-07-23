@@ -7,19 +7,18 @@ summary: "规避Kubernetes常见错误,资源限制/探针/选择器"
 license: "Proprietary"
 description: |-
   Avoid common Kubernetes mistakes — resource limits, probe configuration,
-  selector mismatches, and。Use when 用户需要Kubernetes相关功能时使用。不适用于超出本技能能力范围的复杂需求。
+  selector mismatches, and。Use when 用户需要Kubernetes相关功能时使用。不适用于超出本技能能力范围的复杂需求.
 tags:
   - Operations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Kubernetes
 
@@ -43,7 +42,8 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 规避Kubernet | 目标数据与配置参数 | 处理结果与执行状态 |
+| 资源限制 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -113,8 +113,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Kubernetes？

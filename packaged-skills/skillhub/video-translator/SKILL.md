@@ -7,19 +7,18 @@ summary: "实时视频翻译/配音,翻译用户视频并返回"
 license: "Proprietary"
 description: |-
   Real time video translation / dubbing skill。Translate user-provided
-  video (file or URL) and retu。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。
+  video (file or URL) and retu。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证.
 tags:
   - Creative
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
+
 ---
 # Video Translator
 
@@ -127,8 +126,7 @@ tags: "视频处理,媒体,创意"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Video Translator？

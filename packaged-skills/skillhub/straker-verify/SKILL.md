@@ -6,7 +6,7 @@ displayName: "Straker Verify"
 summary: "专业AI翻译+可选人工校验,支持100+语言"
 license: "Proprietary"
 description: |-
-  Professional AI-powered translation with optional human verification。Supports 100+ languages。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。
+  Professional AI-powered translation with optional human verification。Supports 100+ languages。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证.
 tags:
   - translation
   - localization
@@ -29,15 +29,14 @@ tags:
   - content-localization
   - translation-management
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Straker Verify
 
@@ -63,7 +62,8 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 专业AI翻译+可选人 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 支持100+语言 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -73,8 +73,7 @@ tags: "工具,效率,自动化"
 2. Set the environment variable: `STRAKER_VERIFY_API_KEY=your-key`
 3. Ask your AI assistant: "Translate 'Hello world' to French"
 
-**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
-
+**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -153,7 +152,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 - "What languages can I translate to?"

@@ -7,19 +7,18 @@ summary: "事实核查技能(会自动建延迟跟进需谨慎)"
 license: "Proprietary"
 description: |-
   This fact-checking skill is mostly coherent, but it can automatically
-  create delayed follow-up ch。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
+  create delayed follow-up ch。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - Research
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+
 ---
 # Verify Claims
 
@@ -43,7 +42,8 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 事实核查技能 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 会自动建延迟跟进需谨 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -144,7 +144,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 示例1: 基础用法
@@ -240,6 +240,8 @@ A:
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
 ## 已知限制
+
+This fact-checking skill has the following known limitations. Please review them before use:
 
 ### When Fact-Checkers Haven't Covered the Topic
 If searches return no relevant results:

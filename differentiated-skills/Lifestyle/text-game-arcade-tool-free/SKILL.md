@@ -6,8 +6,7 @@ displayName: 文字游戏机免费版
 summary: 多类型文字游戏生成器,含冒险、悬疑、恋爱与互动小说
 license: Proprietary
 edition: free
-description: '面向个人用户的文字游戏生成与游玩工具。
-
+description: '面向个人用户的文字游戏生成与游玩工具.
   核心能力: 多类型文字游戏、剧情分支、角色互动、存档读档、本地运行
 
   适用场景: 个人娱乐、互动小说创作、剧情练习、游戏原型
@@ -22,23 +21,20 @@ tags:
 - 游戏生成
 - 个人娱乐
 tools:
-- - read
+- read
 - exec
 homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+
 ---
 # 文字游戏机 (免费版)
 
 ## 概述
 
-本工具为个人用户提供多类型文字游戏生成与游玩能力,涵盖冒险、悬疑、恋爱、科幻、奇幻等类型。支持剧情分支、角色互动、存档读档,所有游戏本地运行,无需联网。既可以游玩预设游戏,也可以根据用户描述生成定制游戏。
-
-免费版聚焦个人娱乐,适合游戏爱好者、互动小说爱好者、创意写作者使用。
-
+本工具为个人用户提供多类型文字游戏生成与游玩能力,涵盖冒险、悬疑、恋爱、科幻、奇幻等类型。支持剧情分支、角色互动、存档读档,所有游戏本地运行,无需联网。既可以游玩预设游戏,也可以根据用户描述生成定制游戏.
+免费版聚焦个人娱乐,适合游戏爱好者、互动小说爱好者、创意写作者使用.
 ## 核心能力
 
 | 能力模块 | 描述 | 免费版支持 |
@@ -57,103 +53,97 @@ tags: "工具,效率,自动化"
 | AI 剧情生成 | 智能 NPC | 不支持 (升级 PRO) |
 
 ### 核心功能执行
-用`input_params`参数进行配置。
-
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志。
+用`input_params`参数进行配置.
+**输入**: 用户提供核心功能执行所需的指令和必要参数.
+**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
-用`config_options`参数进行配置。
-
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志。
+用`config_options`参数进行配置.
+**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+**处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
-用`output_format`参数进行配置。
-
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志。
+用`output_format`参数进行配置.
+**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+**处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：多类型文字游戏生、含冒险、恋爱与互动小说、面向个人用户的文、字游戏生成与游玩、核心能力、多类型文字游戏、本地运行、适用场景、个人娱乐、互动小说创作、剧情练习、游戏原型、差异化、免费版聚焦单用户、无需联网、适用关键词、文字游戏、互动小说、剧情游戏、冒险游戏、恋爱模拟、文字冒险等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：多类型文字游戏生、含冒险、恋爱与互动小说、面向个人用户的文、字游戏生成与游玩、核心能力、多类型文字游戏、本地运行、适用场景、个人娱乐、互动小说创作、剧情练习、游戏原型、差异化、免费版聚焦单用户、无需联网、适用关键词、文字游戏、互动小说、剧情游戏、冒险游戏、恋爱模拟、文字冒险等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 使用场景
 
 ### 场景一: 游玩预设游戏
 
-直接开始一个预设的冒险游戏。
-
+直接开始一个预设的冒险游戏.
 ```text
 用户: "我想玩一个文字冒险游戏"
-# ...
+# .
 助手:
 === 暗夜古堡 ===
-# ...
-你站在一座古老城堡的大门前。夜色浓重,月光被乌云遮蔽。
-大门微微敞开,似乎在邀请你进去。
-# ...
-你的任务: 找到失踪的考古学家。
-# ...
+# .
+你站在一座古老城堡的大门前。夜色浓重,月光被乌云遮蔽.
+大门微微敞开,似乎在邀请你进去.
+# .
+你的任务: 找到失踪的考古学家.
+# .
 你的状态:
 - 生命: 100/100
 - 物品: 手电筒、钥匙、笔记本
-# ...
+# .
 你打算:
 1. 推开大门进入
 2. 绕着城堡走一圈
 3. 用手电筒照亮周围
 4. 在笔记本上记录现状
-# ...
+# .
 > 1
-# ...
-你推开沉重的大门,发出吱呀一声。
-一阵冷风扑面而来,带着霉味和某种甜腻的气息。
-# ...
-大厅里一片漆黑。你听到远处似乎有脚步声...
-# ...
+# .
+你推开沉重的大门,发出吱呀一声.
+一阵冷风扑面而来,带着霉味和某种甜腻的气息.
+# .
+大厅里一片漆黑。你听到远处似乎有脚步声.
+# .
 你的状态更新:
 - 位置: 城堡大厅
 - 警觉度: 高
-# ...
+# .
 你打算:
 1. 用手电筒照亮大厅
 2. 蹲下倾听脚步声
 3. 大声呼喊
 4. 退回门外
-# ...
+# .
 >
 ```
 
 ### 场景二: 自定义游戏生成
 
-根据用户描述生成定制游戏。
-
+根据用户描述生成定制游戏.
 ```text
 用户: "生成一个悬疑推理游戏,场景是大学校园"
-# ...
+# .
 助手:
 === 沉默的图书馆 ===
-# ...
+# .
 背景:
-你是私立青山大学的学生。
-昨晚,图书馆管理员张教授被发现死在闭馆后的图书馆内。
-警方初步判定为意外,但你是最后一个见到他的人...
-# ...
+你是私立青山大学的学生.
+昨晚,图书馆管理员张教授被发现死在闭馆后的图书馆内.
+警方初步判定为意外,但你是最后一个见到他的人.
+# .
 嫌疑人:
 1. 李同学 - 与张教授有学术纠纷
 2. 王老师 - 正在申请终身教职,张教授是评审
 3. 赵馆长 - 与张教授争夺图书馆经费
-# ...
-你的任务: 在 7 天内找出真凶,洗清自己的嫌疑。
-# ...
+# .
+你的任务: 在 7 天内找出真凶,洗清自己的嫌疑.
+# .
 第一天 - 早上 9:00
 你站在图书馆门前,手机上还留着张教授昨晚发来的消息:
-"如果你看到这条消息,说明我出事了。查 201 房间的资料..."
-# ...
+"如果你看到这条消息,说明我出事了。查 201 房间的资料"
+# .
 你打算:
 1. 立即前往 201 房间
 2. 先找李同学了解情况
@@ -163,8 +153,7 @@ tags: "工具,效率,自动化"
 
 ### 场景三: 互动小说创作
 
-将创意转化为可游玩的互动小说。
-
+将创意转化为可游玩的互动小说.
 ```python
 class InteractiveFiction:
     def __init__(self, title, author):
@@ -173,7 +162,7 @@ class InteractiveFiction:
         self.scenes = {}
         self.current_scene = "start"
         self.player_state = {"inventory": [], "flags": set()}
-# ...
+# .
     def add_scene(self, scene_id, text, choices=None, effects=None):
         """添加场景"""
         self.scenes[scene_id] = {
@@ -181,49 +170,49 @@ class InteractiveFiction:
             "choices": choices or [],
             "effects": effects or {},
         }
-# ...
+# .
     def play(self):
         """开始游戏"""
         print(f"=== {self.title} ===")
         print(f"作者: {self.author}\n")
         return self._render_scene(self.current_scene)
-# ...
+# .
     def _render_scene(self, scene_id):
         scene = self.scenes.get(scene_id)
         if not scene:
-            return "游戏结束。"
-# ...
+            return "游戏结束"
+# .
         # 应用效果
         for effect in scene.get("effects", []):
             self._apply_effect(effect)
-# ...
+# .
         # 显示文本
         text = scene["text"]
         for key, value in self.player_state.items():
             text = text.replace(f"{{{key}}}", str(value))
-# ...
+# .
         output = text + "\n"
         for i, choice in enumerate(scene.get("choices", []), 1):
             output += f"{i}. {choice['text']}\n"
-# ...
+# .
         return output
-# ...
+# .
     def choose(self, choice_idx):
         """选择分支"""
         scene = self.scenes.get(self.current_scene)
         if not scene or choice_idx >= len(scene["choices"]):
             return "无效选择"
-# ...
+# .
         choice = scene["choices"][choice_idx]
         self.current_scene = choice["next"]
         return self._render_scene(self.current_scene)
-# ...
+# .
 # 创建一个简单的互动小说
 story = InteractiveFiction("迷雾森林", "AI 作者")
 story.add_scene("start", """
-你醒来时发现自己躺在一片陌生的森林中。
-浓雾笼罩四周,你只看到一条小径通向前方。
-# ...
+你醒来时发现自己躺在一片陌生的森林中.
+浓雾笼罩四周,你只看到一条小径通向前方.
+# .
 你的物品: {inventory}
 """, choices=[
     {"text": "沿着小径前进", "next": "path"},
@@ -241,8 +230,7 @@ story.add_scene("start", """
 
 ## 触发条件
 
-需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于非本工具能力范围的需求。
-
+、品牌视觉时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
 ### Step 1: 选择游戏类型
@@ -262,7 +250,7 @@ story.add_scene("start", """
 ```bash
 # 游玩预设游戏
 echo "玩一个冒险游戏" | text-game
-# ...
+# .
 # 自定义游戏
 echo "生成一个赛博朋克题材的悬疑游戏" | text-game
 ```
@@ -272,14 +260,14 @@ echo "生成一个赛博朋克题材的悬疑游戏" | text-game
 ```python
 import json
 from pathlib import Path
-# ...
+# .
 def save_game(game_state, slot="auto"):
     """保存游戏进度"""
     save_dir = Path("~/.text-game/saves").expanduser()
     save_dir.mkdir(parents=True, exist_ok=True)
     save_file = save_dir / f"{slot}.json"
     save_file.write_text(json.dumps(game_state, ensure_ascii=False, indent=2))
-# ...
+# .
 def load_game(slot="auto"):
     """读取游戏进度"""
     save_file = Path("~/.text-game/saves").expanduser() / f"{slot}.json"
@@ -299,7 +287,7 @@ preferences:
   difficulty: normal  # easy, normal, hard
   language: zh
   save_auto: true
-# ...
+# .
 game_types:
   adventure:
     elements: [exploration, puzzle, combat]
@@ -310,7 +298,7 @@ game_types:
   romance:
     elements: [character_interaction, choices, endings]
     avg_duration: 60min
-# ...
+# .
 storage:
   saves_dir: ~/.text-game/saves
   max_saves: 10
@@ -373,12 +361,12 @@ def design_choices(scene, options):
 
 ```python
 ENDINGS = {
-    "good": {"condition": {"trust": ">=80", "evidence": "complete"}, "text": "..."},
-    "neutral": {"condition": {"trust": ">=50"}, "text": "..."},
-    "bad": {"condition": {"trust": "<50"}, "text": "..."},
-    "secret": {"condition": {"flag": "found_secret"}, "text": "..."},
+    "good": {"condition": {"trust": ">=80", "evidence": "complete"}, "text": "."},
+    "neutral": {"condition": {"trust": ">=50"}, "text": "."},
+    "bad": {"condition": {"trust": "<50"}, "text": "."},
+    "secret": {"condition": {"flag": "found_secret"}, "text": "."},
 }
-# ...
+# .
 def determine_ending(player_state):
     """根据玩家状态决定结局"""
     for name, ending in ENDINGS.items():
@@ -391,24 +379,19 @@ def determine_ending(player_state):
 
 ### Q1: 免费版有多少预设游戏?
 
-免费版内置 5 款基础游戏。完整游戏库需要 PRO 版本。
-
+免费版内置 5 款基础游戏。完整游戏库需要 PRO 版本.
 ### Q2: 可以保存多个游戏进度吗?
 
-可以,免费版支持最多 10 个存档槽。
-
+可以,免费版支持最多 10 个存档槽.
 ### Q3: 生成的游戏可以分享吗?
 
-可以分享游戏文本给朋友。但游戏本身不能商业发布。
-
+可以分享游戏文本给朋友。但游戏本身不能商业发布.
 ### Q4: 支持哪些游戏类型?
 
-冒险、悬疑、恋爱、科幻、奇幻、恐怖等主流文字游戏类型。
-
+冒险、悬疑、恋爱、科幻、奇幻、恐怖等主流文字游戏类型.
 ### Q5: 游戏有多长?
 
-简单游戏 15-30 分钟,复杂游戏可达数小时。支持多周目游玩。
-
+简单游戏 15-30 分钟,复杂游戏可达数小时。支持多周目游玩.
 ## 依赖说明
 
 ### 运行环境
@@ -429,7 +412,7 @@ def determine_ending(player_state):
 ```bash
 # 免费版无需外部 API Key
 # 所有游戏通过 Agent LLM 本地推理生成
-# ...
+# .
 # 可选: 游戏偏好
 export TEXT_GAME_GENRE="adventure"
 export TEXT_GAME_DIFFICULTY="normal"
@@ -453,6 +436,9 @@ export TEXT_GAME_LANGUAGE="zh"
 ## 已知限制
 
 - 本地运行，不支持多设备同步
+- 生成内容的质量依赖LLM的创造力与上下文理解
+- 不支持实时协作编辑与版本管理
+- 长篇内容生成可能出现情节不一致，需人工校验
 
 ## 输出格式
 ```json

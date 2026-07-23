@@ -22,15 +22,14 @@ tags:
   - 企业Notion
   - 数据合规
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+
 ---
 # Notion API工具箱(专业版)
 
@@ -63,22 +62,18 @@ tags: "API,接口,开发工具"
 | 并发限制 | 10 req/sec | 100 req/sec |
 | 技术支持 | 社区 | 优先工单(4小时响应) |
 
-**输入**: 用户提供与免费版能力对比所需的指令和必要参数。
-**输出**: 返回与免费版能力对比的处理结果,包含执行状态码、结果数据和执行日志。
+**输入**: 用户提供与免费版能力对比所需的指令和必要参数.
+**输出**: 返回与免费版能力对比的处理结果,包含执行状态码、结果数据和执行日志.
 ### 连接数量
 
-针对连接数量,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供连接数量相关的配置参数、输入数据和处理选项。
-
+针对连接数量,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供连接数量相关的配置参数、输入数据和处理选项.
 **输出**: 返回连接数量的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`连接数量`的配置文档进行参数调优
 ### 写操作
 
-针对写,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供写操作相关的配置参数、输入数据和处理选项。
-
+针对写,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供写操作相关的配置参数、输入数据和处理选项.
 **输出**: 返回写操作的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`写操作`的配置文档进行参数调优
 #
@@ -86,8 +81,7 @@ tags: "API,接口,开发工具"
 
 ### 场景一:企业多工作空间管理
 
-集团企业拥有多个Notion工作空间(各部门独立),需要统一管理。
-
+集团企业拥有多个Notion工作空间(各部门独立),需要统一管理.
 ```bash
 # 1. 添加多个连接
 notion-toolkit connection create notion --name research
@@ -106,8 +100,7 @@ notion-toolkit page view <pageId> --connection research
 
 ### 场景二:批量数据迁移
 
-企业需要将大量数据从其他系统迁移到Notion。
-
+企业需要将大量数据从其他系统迁移到Notion.
 ```bash
 # 1. 批量创建页面(带检查点)
 notion-toolkit page batch-create \
@@ -133,8 +126,7 @@ notion-toolkit batch status --job-id <jobId>
 
 ### 场景三:实时事件订阅
 
-SaaS产品需要在Notion页面变更时同步到自己的系统。
-
+SaaS产品需要在Notion页面变更时同步到自己的系统.
 ```bash
 # 1. 创建Webhook订阅
 notion-toolkit webhook create \
@@ -155,8 +147,7 @@ notion-toolkit webhook replay --webhook-id <webhookId> --event-id <eventId>
 
 ## 使用流程
 
-预计上手时间:<120秒(适合中等复杂度工具)。
-
+预计上手时间:<120秒(适合中等复杂度工具).
 ### 第1步:升级到专业版
 
 ```bash
@@ -388,43 +379,43 @@ notion-toolkit database query <databaseId> \
 # ...
 ### Q1: 多连接如何切换?
 # ...
-A: 1)用`--connection <name>`指定;2)用`connection use <name>`设置默认连接;3)不指定时使用默认连接。
+A: 1)用`--connection <name>`指定;2)用`connection use <name>`设置默认连接;3)不指定时使用默认连接.
 # ...
 ### Q2: 批量操作失败如何重试?
 # ...
-A: 使用`Idempotency-Key`重发同一批请求,系统跳过已成功部分。也可通过`batch status --job-id`查看进度,用`batch resume --job-id`断点续传。
+A: 使用`Idempotency-Key`重发同一批请求,系统跳过已成功部分。也可通过`batch status --job-id`查看进度,用`batch resume --job-id`断点续传.
 # ...
 ### Q3: Webhook收不到事件?
 # ...
-A: 1)检查接收端是否返回200;2)检查签名校验;3)查看`webhook logs`;4)手动`webhook replay`。
+A: 1)检查接收端是否返回200;2)检查签名校验;3)查看`webhook logs`;4)手动`webhook replay`.
 # ...
 ### Q4: 自动分页会触发频率限制吗?
 # ...
-A: 不会。自动分页内置并发控制与速率限制(默认10 req/sec),可通过`--rate-limit`调整。
+A: 不会。自动分页内置并发控制与速率限制(默认10 req/sec),可通过`--rate-limit`调整.
 # ...
 ### Q5: 高级筛选支持哪些操作符?
 # ...
-A: 支持equals/does_not_equal/contains/does_not_contain/starts_with/ends_with/is_empty/is_not_empty/greater_than/less_than,以及and/or嵌套逻辑。
+A: 支持equals/does_not_equal/contains/does_not_contain/starts_with/ends_with/is_empty/is_not_empty/greater_than/less_than,以及and/or嵌套逻辑.
 # ...
 ### Q6: 审计日志可以导出吗?
 # ...
-A: 可以。支持按时间、操作类型、资源ID筛选,导出为JSON或CSV。
+A: 可以。支持按时间、操作类型、资源ID筛选,导出为JSON或CSV.
 # ...
 ### Q7: 自定义转换器支持哪些模板语法?
 # ...
-A: 支持Jinja2完整语法,包括变量、条件、循环、过滤器、宏等。
+A: 支持Jinja2完整语法,包括变量、条件、循环、过滤器、宏等.
 # ...
 ### Q8: 幂等键如何生成?
 # ...
-A: 建议使用`任务标识-批次号-时间戳`格式(如`migration-2026-07-batch1-1721234567`),保证同一批请求的幂等键一致。
+A: 建议使用`任务标识-批次号-时间戳`格式(如`migration-2026-07-batch1-1721234567`),保证同一批请求的幂等键一致.
 # ...
 ### Q9: 专业版的SLA承诺是什么?
 # ...
-A: 99.9%可用性,故障4小时响应,数据可恢复性RPO<15分钟、RTO<4小时。
+A: 99.9%可用性,故障4小时响应,数据可恢复性RPO<15分钟、RTO<4小时.
 # ...
 ### Q10: 如何监控API用量?
 # ...
-A: `notion-toolkit metrics`命令查看请求量、缓存命中率、批量任务数等指标,支持设置预算告警。
+A: `notion-toolkit metrics`命令查看请求量、缓存命中率、批量任务数等指标,支持设置预算告警.
 # ...
 ## 错误处理
 # ...

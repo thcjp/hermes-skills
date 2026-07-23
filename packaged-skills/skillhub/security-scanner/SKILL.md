@@ -7,19 +7,18 @@ summary: "安全扫描技能,主动扫描需仅在授权目标运行"
 license: "Proprietary"
 description: |-
   This appears to be a legitimate security-scanning skill, but users must
-  only run its active scans。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。
+  only run its active scans。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
 tags:
   - Security
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "安全,加密,工具"
+
 ---
 # Security Scanner
 
@@ -108,7 +107,7 @@ Save reports to `reports/security-scan-YYYY-MM-DD.md` with:
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 示例1：基础用法

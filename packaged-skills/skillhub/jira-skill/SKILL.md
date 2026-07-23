@@ -6,8 +6,8 @@ displayName: "Jira集成助手"
 summary: "通过Jira Cloud REST API管理事务、状态流转与工时日志，支持搜索、创建、指派、评论、工时统计。"
 license: "Proprietary"
 description: |-
-  Jira集成助手通过Jira Cloud REST API管理事务、状态流转与工时日志。
-  支持模糊搜索、详情查看、状态变更、指派、评论、创建、工时记录与多维度工时统计。
+  Jira集成助手通过Jira Cloud REST API管理事务、状态流转与工时日志.
+  支持模糊搜索、详情查看、状态变更、指派、评论、创建、工时记录与多维度工时统计.
   核心能力：
   - 事务搜索：按summary或key模糊搜索，支持maxResults限制
   - 事务详情与浏览器链接：快速查看与跳转
@@ -17,7 +17,7 @@ description: |-
   - 工时记录：log按小时记录，支持指定日期（默认今日UTC）
   - 工时统计：hours（按事务）/ hours-day（按日全员）/ hours-issue（按事务+用户过滤）
   - 工时命令输出JSON，便于其他工具复用
-  适用场景：第三方API集成、平台对接、数据同步、独立开发者与一人公司效率提升、自动化工作流。
+  适用场景：第三方API集成、平台对接、数据同步、独立开发者与一人公司效率提升、自动化工作流.
 tags:
   - 通用办公
   - Productivity
@@ -30,13 +30,11 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+
 ---
 # Jira集成助手
 
-通过Jira Cloud REST API管理事务、状态流转与工时日志。支持搜索、详情、状态变更、指派、评论、创建、工时记录与多维度工时统计。
-
+通过Jira Cloud REST API管理事务、状态流转与工时日志。支持搜索、详情、状态变更、指派、评论、创建、工时记录与多维度工时统计.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -66,16 +64,14 @@ tags: "工具,效率,自动化"
    export JIRA_EMAIL="you@example.com"
    export JIRA_API_TOKEN="[REDACTED]"
    export JIRA_URL="https://your-domain.atlassian.net"
-   # 可选项目范围（逗号分隔）。空=搜索全部。
+   # 可选项目范围（逗号分隔）。空=搜索全部.
    export JIRA_BOARD="ABC"
    ```
 
-依赖：`curl`、`jq`、`bc`、`python3`。
-
+依赖：`curl`、`jq`、`bc`、`python3`.
 ## 快速命令
 
-所有命令位于 `{baseDir}/（请参考skill目录中的脚本文件）`。
-
+所有命令位于 `{baseDir}/（请参考skill目录中的脚本文件）`.
 | 命令 | 用途 |
 |---:|---:|
 | `jira.sh search "关键词" [max]` | 在 `JIRA_BOARD` 内按summary或key模糊搜索 |
@@ -114,7 +110,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### 1. 事务搜索
@@ -122,57 +118,50 @@ export API_KEY="your_api_key_here"
 {baseDir}/（请参考skill目录中的脚本文件） search "payment failure" [maxResults]
 ```
 
-在 `JIRA_BOARD` 项目范围内按 summary 或 key 模糊搜索。`maxResults` 可选，控制返回条数。
-
-**输入**: 用户提供事务搜索所需的指令和必要参数。
+在 `JIRA_BOARD` 项目范围内按 summary 或 key 模糊搜索。`maxResults` 可选，控制返回条数.
+**输入**: 用户提供事务搜索所需的指令和必要参数.
 ### 2. 事务链接与详情
 ```bash
 {baseDir}/（请参考skill目录中的脚本文件） link ABC-321       # 浏览器链接
 {baseDir}/（请参考skill目录中的脚本文件） issue ABC-321      # 快速详情
 ```
 
-**输入**: 用户提供事务链接与详情所需的指令和必要参数。
-**处理**: 解析事务链接与详情的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回事务链接与详情的处理结果,包含执行状态码、结果数据和执行日志。
-
+**输入**: 用户提供事务链接与详情所需的指令和必要参数.
+**处理**: 解析事务链接与详情的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回事务链接与详情的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. 状态流转
 ```bash
 {baseDir}/（请参考skill目录中的脚本文件） transitions ABC-321        # 列出可用流转
 {baseDir}/（请参考skill目录中的脚本文件） status ABC-321 "Done"      # 变更状态
 ```
 
-状态变更前先调用 `transitions` 获取服务端提供的可用流转列表，校验通过后才应用，避免无效流转。
-
-**输出**: 返回状态流转的处理结果,包含执行状态码、结果数据和执行日志。
+状态变更前先调用 `transitions` 获取服务端提供的可用流转列表，校验通过后才应用，避免无效流转.
+**输出**: 返回状态流转的处理结果,包含执行状态码、结果数据和执行日志.
 ### 4. 指派
 ```bash
 {baseDir}/（请参考skill目录中的脚本文件） assign ABC-321 "Jane Doe"  # 按姓名/邮箱搜索后指派
 {baseDir}/（请参考skill目录中的脚本文件） assign-me ABC-321          # 指派给自己
 ```
 
-`assign` 会先按姓名或邮箱搜索用户，解析到 accountId 后再指派。
-
-**输出**: 返回指派的处理结果,包含执行状态码、结果数据和执行日志。
+`assign` 会先按姓名或邮箱搜索用户，解析到 accountId 后再指派.
+**输出**: 返回指派的处理结果,包含执行状态码、结果数据和执行日志.
 ### 5. 评论与创建
 ```bash
 {baseDir}/（请参考skill目录中的脚本文件） comment ABC-321 "Deployed to staging"
 {baseDir}/（请参考skill目录中的脚本文件） create "Fix auth timeout" "Users being logged out after 5m"
 ```
 
-`create` 在 `JIRA_BOARD` 项目创建 Task 类型事务，描述可选。
-
-**处理**: 解析评论与创建的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+`create` 在 `JIRA_BOARD` 项目创建 Task 类型事务，描述可选.
+**处理**: 解析评论与创建的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 6. 工时记录
 ```bash
 {baseDir}/（请参考skill目录中的脚本文件） log PB-321 1.5 2025-01-18
 ```
 
-按小时记录工时。日期可选，默认今日UTC。数值支持小数（如 `1.5` 表示1.5小时）。
-
-**输入**: 用户提供工时记录所需的指令和必要参数。
-**处理**: 解析工时记录的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回工时记录的处理结果,包含执行状态码、结果数据和执行日志。
-
+按小时记录工时。日期可选，默认今日UTC。数值支持小数（如 `1.5` 表示1.5小时）.
+**输入**: 用户提供工时记录所需的指令和必要参数.
+**处理**: 解析工时记录的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回工时记录的处理结果,包含执行状态码、结果数据和执行日志.
 ### 7. 工时统计
 
 ```bash
@@ -182,22 +171,20 @@ export API_KEY="your_api_key_here"
 {baseDir}/（请参考skill目录中的脚本文件） hours-issue ABC-321 "jane"                        # 按事务+用户过滤
 ```
 
-- `hours`：按 `JIRA_EMAIL` 过滤，返回自己在指定日期范围内按事务分组的工时。
-- `hours-day`：返回所有用户按事务与用户分组的工时汇总；可选按 name/email 过滤（同时解析为 accountId）。
-- `hours-issue`：返回指定事务的工时；可选按 name/email 过滤。
-- 所有工时命令输出 JSON，便于其他工具复用。
-
+- `hours`：按 `JIRA_EMAIL` 过滤，返回自己在指定日期范围内按事务分组的工时.
+- `hours-day`：返回所有用户按事务与用户分组的工时汇总；可选按 name/email 过滤（同时解析为 accountId）.
+- `hours-issue`：返回指定事务的工时；可选按 name/email 过滤.
+- 所有工时命令输出 JSON，便于其他工具复用.
 #
 ## 使用流程
 
-1. **配置环境变量**：设置 `JIRA_EMAIL`、`JIRA_API_TOKEN`、`JIRA_URL`，可选 `JIRA_BOARD`。
-2. **校验依赖**：确认 `curl`、`jq`、`bc`、`python3` 可用。
-3. **搜索或定位事务**：用 `search` 模糊搜索，或直接用事务key（如 `ABC-123`）。
-4. **查看详情与流转**：用 `issue` 查看详情，`transitions` 查看可用流转。
-5. **执行操作**：按需调用 `status`/`assign`/`assign-me`/`comment`/`create`/`log`。
-6. **统计工时**：用 `hours`/`hours-day`/`hours-issue` 按事务、按日、按用户统计。
-7. **复用输出**：工时命令的JSON输出可直接喂给其他工具或报表。
-
+1. **配置环境变量**：设置 `JIRA_EMAIL`、`JIRA_API_TOKEN`、`JIRA_URL`，可选 `JIRA_BOARD`.
+2. **校验依赖**：确认 `curl`、`jq`、`bc`、`python3` 可用.
+3. **搜索或定位事务**：用 `search` 模糊搜索，或直接用事务key（如 `ABC-123`）.
+4. **查看详情与流转**：用 `issue` 查看详情，`transitions` 查看可用流转.
+5. **执行操作**：按需调用 `status`/`assign`/`assign-me`/`comment`/`create`/`log`.
+6. **统计工时**：用 `hours`/`hours-day`/`hours-issue` 按事务、按日、按用户统计.
+7. **复用输出**：工时命令的JSON输出可直接喂给其他工具或报表.
 ## 示例
 
 ### 示例1：搜索并查看事务
@@ -265,39 +252,30 @@ export API_KEY="your_api_key_here"
 ## 常见问题
 
 ### Q1：如何获取Jira API Token？
-访问 <https://id.atlassian.com/manage-profile/security/api-tokens>，点击"Create API Token"，复制后设置为 `JIRA_API_TOKEN` 环境变量。
-
+访问 <https://id.atlassian.com/manage-profile/security/api-tokens>，点击"Create API Token"，复制后设置为 `JIRA_API_TOKEN` 环境变量.
 ### Q2：`JIRA_BOARD` 不设置会怎样？
-`JIRA_BOARD` 为空时，`search` 与 `create` 会搜索/创建在所有可访问项目内。建议设置以限定范围，避免误操作。
-
+`JIRA_BOARD` 为空时，`search` 与 `create` 会搜索/创建在所有可访问项目内。建议设置以限定范围，避免误操作.
 ### Q3：`hours` 与 `hours-day` 有何区别？
-`hours` 按 `JIRA_EMAIL` 过滤，只返回自己的工时，按事务分组；`hours-day` 返回所有用户的工时，按事务与用户分组，可选按 name/email 过滤。
-
+`hours` 按 `JIRA_EMAIL` 过滤，只返回自己的工时，按事务分组；`hours-day` 返回所有用户的工时，按事务与用户分组，可选按 name/email 过滤.
 ### Q4：状态变更为何要先校验？
-Jira的工作流决定了每个状态可达的下一个状态。`status` 命令先调用 `transitions` 获取服务端可用流转列表，校验通过才应用，避免无效流转报错。
-
+Jira的工作流决定了每个状态可达的下一个状态。`status` 命令先调用 `transitions` 获取服务端可用流转列表，校验通过才应用，避免无效流转报错.
 ### Q5：工时命令输出为何是JSON？
-JSON格式便于其他工具（如报表、仪表盘）直接消费与复用。可用 `jq` 进一步过滤或格式化。
-
+JSON格式便于其他工具（如报表、仪表盘）直接消费与复用。可用 `jq` 进一步过滤或格式化.
 ### Q6：`assign` 如何解析用户？
-`assign` 先按姓名或邮箱调用Jira用户搜索API，解析到 accountId 后再指派。`hours-day`/`hours-issue` 的可选过滤参数也会同样解析为 accountId。
-
+`assign` 先按姓名或邮箱调用Jira用户搜索API，解析到 accountId 后再指派。`hours-day`/`hours-issue` 的可选过滤参数也会同样解析为 accountId.
 ### Q7：工时记录的单位是什么？
-单位为小时，支持小数。`log ABC-123 2.5` 表示记录2.5小时。日期可选，默认今日UTC。
-
+单位为小时，支持小数。`log ABC-123 2.5` 表示记录2.5小时。日期可选，默认今日UTC.
 ### Q8：Worklog查询为何慢？
-Worklog命令使用Jira的 worklog/updated + worklog/list 组合API，在大项目上可能耗时几秒。可缩小日期范围或耐心等待。
-
+Worklog命令使用Jira的 worklog/updated + worklog/list 组合API，在大项目上可能耗时几秒。可缩小日期范围或耐心等待.
 ## 已知限制
 
-- 仅支持Jira Cloud REST API，不支持Jira Server/Data Center。
-- 依赖 `curl`、`jq`、`bc`、`python3` 四个外部工具，缺一不可。
-- `create` 仅创建 Task 类型事务，不支持Bug/Story/Epic等其他类型。
-- Worklog查询在大项目上较慢，因使用 worklog/updated + worklog/list 组合。
-- `hours` 仅按 `JIRA_EMAIL` 过滤，无法直接按其他用户过滤（需用 `hours-day` 的可选参数）。
-- 状态变更受Jira工作流约束，不可跳过流转校验。
-- 依赖云服务，需要网络连接。
-
+- 仅支持Jira Cloud REST API，不支持Jira Server/Data Center.
+- 依赖 `curl`、`jq`、`bc`、`python3` 四个外部工具，缺一不可.
+- `create` 仅创建 Task 类型事务，不支持Bug/Story/Epic等其他类型.
+- Worklog查询在大项目上较慢，因使用 worklog/updated + worklog/list 组合.
+- `hours` 仅按 `JIRA_EMAIL` 过滤，无法直接按其他用户过滤（需用 `hours-day` 的可选参数）.
+- 状态变更受Jira工作流约束，不可跳过流转校验.
+- 依赖云服务，需要网络连接.
 ## 输出格式
 
 ```json

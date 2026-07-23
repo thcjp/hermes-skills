@@ -7,20 +7,18 @@ summary: "专精HTML/CSS的网页平面设计师,深谙图形设计"
 license: "Proprietary"
 description: |-
   Expert web graphic designer specializing in HTML/CSS design with deep
-  knowledge of graphic design。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
+  knowledge of graphic design。
 tags:
   - Creative
   - Productivity
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 ---
 # HTML Designer
 
@@ -44,7 +42,8 @@ tags: "设计,UI/UX,创意"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 网页设计 | 页面布局与图形设计需求 | HTML/CSS平面设计代码 |
+| 视觉优化 | 排版、配色、留白诊断 | 层次清晰的设计调整建议 |
 
 **不适用于**：需要人工判断的复杂决策场景
 

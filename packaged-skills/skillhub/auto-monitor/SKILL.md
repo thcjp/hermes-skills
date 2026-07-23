@@ -6,19 +6,18 @@ displayName: "Auto Monitor"
 summary: "主动监控系统状态。定期检查服务器健康，主动汇报，无需等待指令。"
 license: "Proprietary"
 description: |-
-  主动监控系统状态。定期检查服务器健康，主动汇报，无需等待指令。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。适用于独立开发者、企业团队和自动化工作流场景。
+  主动监控系统状态。定期检查服务器健康，主动汇报，无需等待指令。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
 tags:
   - Operations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "监控,运维,工具"
+
 ---
 # Auto Monitor
 
@@ -113,8 +112,7 @@ tags: "监控,运维,工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Auto Monitor？

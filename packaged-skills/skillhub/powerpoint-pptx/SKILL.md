@@ -7,19 +7,18 @@ summary: "创建检查编辑PowerPoint演示文稿与PPTX,布局可靠"
 license: "Proprietary"
 description: |-
   Create, inspect, and edit Microsoft PowerPoint presentations and PPTX
-  decks with reliable layouts。Use when 用户需要Powerpoint / PPTX相关功能时使用。不适用于超出本技能能力范围的复杂需求。
+  decks with reliable layouts。Use when 用户需要Powerpoint / PPTX相关功能时使用。不适用于超出本技能能力范围的复杂需求.
 tags:
   - Productivity
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Powerpoint / PPTX
 
@@ -43,7 +42,8 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 创建检查编辑Powe | 目标数据与配置参数 | 处理结果与执行状态 |
+| 布局可靠 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -144,8 +144,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Powerpoint / PPTX？

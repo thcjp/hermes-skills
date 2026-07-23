@@ -7,30 +7,26 @@ summary: 统一规范所有Skill的优化、升级、改造、去标识、分收
 license: Proprietary
 edition: standards
 description: Skill生产规范是一套统一的Skill生产流水线标准，用于指导从原始skill（下载/原创）到可商用skill的完整改造流程。它解决"每个skill改造标准不一、质量参差不齐、收费策略混乱、去除标识不彻底"的核心痛点。Use
-  when 需要电商运营、商品管理、订单处理、支付集成时使用。不适用于虚假交易和刷单。
+  when 需要电商运营、商品管理、订单处理、支付集成时使用。不适用于虚假交易和刷单.
 tags:
 - Skill规范
 - 生产流水线
 - 商业化
 - 质量标准
 tools:
-- - read
+- read
 - exec
 homepage: https://skillhub.cn
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+
 ---
-本规范是所有Skill生产、优化、升级、改造的**唯一权威标准**。任何Skill在进入`d:\skills\differentiated-skills\`或`d:\skills\packaged-skills\`之前，必须通过本规范的全部检查。
-
-> **v1.2变更说明**：经第二轮五角色交叉审核，修复9项P0问题。主要变更：(1) 修复`\b`正则在中文上下文失效（改用ASCII-only lookarounds `(?<![A-Za-z0-9_])(?![A-Za-z0-9_])`）；(2) 数据库新增edition/parent_slug/current_score/workflow_state字段；(3) 新增scores表持久化八大维度评分；(4) 新增workflow_states表追踪10步工作流；(5) 修复License违规（规范要求保留原作者版权声明）；(6) 清除所有硬编码API Token；(7) 完善ALLOWED_CONTEXTS。
-
+本规范是所有Skill生产、优化、升级、改造的**唯一权威标准**。任何Skill在进入`d:\skills\differentiated-skills\`或`d:\skills\packaged-skills\`之前，必须通过本规范的全部检查.
+> **v1.2变更说明**：经第二轮五角色交叉审核，修复9项P0问题。主要变更：(1) 修复`\b`正则在中文上下文失效（改用ASCII-only lookarounds `(?<![A-Za-z0-9_])(?![A-Za-z0-9_])`）；(2) 数据库新增edition/parent_slug/current_score/workflow_state字段；(3) 新增scores表持久化八大维度评分；(4) 新增workflow_states表追踪10步工作流；(5) 修复License违规（规范要求保留原作者版权声明）；(6) 清除所有硬编码API Token；(7) 完善ALLOWED_CONTEXTS.
 ## 一、八大改造维度（量化评分）
-每个Skill改造后，按以下八大维度评分。每维度采用**0/2/4/6分制**（0=缺失，2=不足，4=合格，6=优秀），总分48分。
-
+每个Skill改造后，按以下八大维度评分。每维度采用**0/2/4/6分制**（0=缺失，2=不足，4=合格，6=优秀），总分48分.
 ### 评分门槛
 - **≥40分**：通过，可上架
 - **30-39分**：需复审，改进后可上架
@@ -92,8 +88,7 @@ tags: "AI代理,自动化,智能"
 | 人工检查通过率 | <50% | 50-80% | 80-95% | 95%+ |
 | 技术术语处理 | 误删合法术语 | 部分误删 | allowlist机制 | allowlist+上下文感知 |
 
-**检查清单**：见第三章"去除标识检测体系"。
-
+**检查清单**：见第三章"去除标识检测体系".
 ### 维度7：合规性（Compliance）- 6分制
 | 评分项(续)(续)| 0分 | 2分 | 4分 | 6分 |
 |------:|:------|------:|------:|:------|
@@ -306,11 +301,9 @@ cat d:\skills\clawhub-skills\downloaded\[category]\[slug]\SKILL.md
 ```
 
 ### Step 3：改造前评分（基线）
-对原始skill按八大维度评分，记录基线分。
-
+对原始skill按八大维度评分，记录基线分.
 ### Step 4：差异化设计
-针对低分维度（<4分）设计改进方案。
-
+针对低分维度（<4分）设计改进方案.
 ### Step 5：内容重写
 - 新slug命名（体现差异化特色，不使用-pro等简单后缀）
 - 完全重写SKILL.md（原创度>70%）
@@ -330,7 +323,7 @@ python d:\skills\skill-registry\check_debranding.py d:\skills\differentiated-ski
 - **License兼容**：保留版权声明，添加自有署名
 
 ### Step 8：改造后评分
-对改造后skill按八大维度评分。
+对改造后skill按八大维度评分.
 - **<30分**：返回步骤5
 - **30-39分**：进入步骤7.5复审
 - **≥40分**：进入步骤9
@@ -411,20 +404,15 @@ python d:\skills\skill-registry\check_debranding.py d:\skills\differentiated-ski
 
 ## 常见问题
 ### Q1: 如何判断一个skill是否需要改造？
-A: 查询数据库 `SELECT * FROM skills WHERE is_differentiated = 0`，这些是需要改造的。
-
+A: 查询数据库 `SELECT * FROM skills WHERE is_differentiated = 0`，这些是需要改造的.
 ### Q2: 改造后slug被占用怎么办？
-A: clawhub平台使用`@username/slug`格式；skillhub平台冲突时加`-v2`后缀。
-
+A: clawhub平台使用`@username/slug`格式；skillhub平台冲突时加`-v2`后缀.
 ### Q3: 免费版和专业版如何分别上传？
-A: clawhub上传免费版（引流）；skillhub上传专业版（通过SkillPay变现）。
-
+A: clawhub上传免费版（引流）；skillhub上传专业版（通过SkillPay变现）.
 ### Q4: 原始skill是GPL license怎么办？
-A: 必须保留GPL license，不可改用MIT。在License声明章节注明双重license。
-
+A: 必须保留GPL license，不可改用MIT。在License声明章节注明双重license.
 ### Q5: 规范自身如何通过去除标识检测？
-A: 通过`exclude_dirs = ['skill-production-standards']`排除，因为规范需要引用检测规则示例。
-
+A: 通过`exclude_dirs = ['skill-production-standards']`排除，因为规范需要引用检测规则示例.
 ## 依赖说明
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
@@ -454,30 +442,29 @@ A: 通过`exclude_dirs = ['skill-production-standards']`排除，因为规范需
 ### ✅ [高级功能1]
 ✅ [高级功能1]：[价值描述]
 
-**输入**: 用户提供✅ [高级功能1]所需的指令和必要参数。
-**处理**: 解析✅ [高级功能1]的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回✅ [高级功能1]的响应数据,包含状态码、结果和日志。
+**输入**: 用户提供✅ [高级功能1]所需的指令和必要参数.
+**处理**: 解析✅ [高级功能1]的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回✅ [高级功能1]的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### ✅ [高级功能2]
 ✅ [高级功能2]：[价值描述]
 
-**输入**: 用户提供✅ [高级功能2]所需的指令和必要参数。
-**处理**: 解析✅ [高级功能2]的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回✅ [高级功能2]的响应数据,包含状态码、结果和日志。
+**输入**: 用户提供✅ [高级功能2]所需的指令和必要参数.
+**处理**: 解析✅ [高级功能2]的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回✅ [高级功能2]的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### ✅ [高级功能3]
 ✅ [高级功能3]：[价值描述]
 
-**输入**: 用户提供✅ [高级功能3]所需的指令和必要参数。
-**处理**: 解析✅ [高级功能3]的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回✅ [高级功能3]的响应数据,包含状态码、结果和日志。
+**输入**: 用户提供✅ [高级功能3]所需的指令和必要参数.
+**处理**: 解析✅ [高级功能3]的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回✅ [高级功能3]的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置。
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：统一规范所有、的优化、去标识、分收费、免费双版本的工作、修复版、生产规范是一套统、生产流水线标准、用于指导从原始、到可商用、的完整改造流程、它解决、改造标准不一、质量参差不齐、收费策略混乱、去除标识不彻底、的核心痛点、Use、when、需要电商运营、商品管理、订单处理、支付集成时使用、不适用于虚假交易、和刷单等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+**技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：统一规范所有、的优化、去标识、分收费、免费双版本的工作、修复版、生产规范是一套统、生产流水线标准、用于指导从原始、到可商用、的完整改造流程、它解决、改造标准不一、质量参差不齐、收费策略混乱、去除标识不彻底、的核心痛点、Use、when、需要电商运营、商品管理、订单处理、支付集成时使用、不适用于虚假交易、和刷单等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 适用场景
 | 场景 | 输入 | 输出 |
 |:---:|:---:|:---:|

@@ -24,7 +24,8 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-tags: "'[''Automation'']'"
+tags:
+  - Automation
 tools:
   - read
   - exec
@@ -33,7 +34,7 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
+
 ---
 # Auto Workflow
 
@@ -157,7 +158,7 @@ tools: ["read", "write", "exec"]
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 用户每周手动发周报：

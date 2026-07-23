@@ -6,10 +6,10 @@ displayName: "UI/UX设计指南"
 summary: "涵盖设计原则、配色系统、Shadcn/ui+Tailwind栈、响应式设计与WCAG 2.2无障碍的完整指南。"
 license: "Proprietary"
 description: |-
-  现代UI/UX设计原则、模式与最佳实践指南。
-  涵盖Mobile-First响应式设计、配色系统、排版、WCAG 2.2无障碍。
-  包含Shadcn/ui + Tailwind CSS技术栈集成与微交互设计。
-  适用于Web与移动应用的界面设计、布局选择与设计审查。
+  现代UI/UX设计原则、模式与最佳实践指南.
+  涵盖Mobile-First响应式设计、配色系统、排版、WCAG 2.2无障碍.
+  包含Shadcn/ui + Tailwind CSS技术栈集成与微交互设计.
+  适用于Web与移动应用的界面设计、布局选择与设计审查.
 tools:
   - read
   - exec
@@ -20,13 +20,11 @@ tags:
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
+
 ---
 # UI/UX设计指南
 
-涵盖设计原则、配色系统、Shadcn/ui+Tailwind栈、响应式设计与WCAG 2.2无障碍的完整指南。
-
+涵盖设计原则、配色系统、Shadcn/ui+Tailwind栈、响应式设计与WCAG 2.2无障碍的完整指南.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -67,7 +65,7 @@ tags: "设计,UI/UX,创意"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### 核心设计原则（Core Design Principles）
@@ -90,8 +88,8 @@ export API_KEY="your_api_key_here"
 - 区块间最小留白：48-64px
 - 卡片内边距：24-32px
 
-**输入**: 用户提供核心设计原则（Core Design Principles）所需的指令和必要参数。
-**处理**: 解析核心设计原则（Core Design Principles）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输入**: 用户提供核心设计原则（Core Design Principles）所需的指令和必要参数.
+**处理**: 解析核心设计原则（Core Design Principles）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回核心设计原则（Core Design Principles）的处理结果,包含执行状态码、结果数据和执行日志。### 配色系统（Color System）
 构建完整的主色阶（50-900）：
 
@@ -101,8 +99,8 @@ export API_KEY="your_api_key_here"
 
 工具推荐：Huevy.app、Coolors.co、Adobe Color
 
-**输入**: 用户提供配色系统（Color System）所需的指令和必要参数。
-**处理**: 解析配色系统（Color System）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输入**: 用户提供配色系统（Color System）所需的指令和必要参数.
+**处理**: 解析配色系统（Color System）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回配色系统（Color System）的处理结果,包含执行状态码、结果数据和执行日志。### 排版系统（Typography Scale）
 基于8px基线的排版尺度：
 
@@ -120,8 +118,8 @@ text-5xl:  48px / 1 (hero titles)
 
 字体配对：最多2种字体（UI用无衬线，标题可选衬线）
 
-**输入**: 用户提供排版系统（Typography Scale）所需的指令和必要参数。
-**处理**: 解析排版系统（Typography Scale）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输入**: 用户提供排版系统（Typography Scale）所需的指令和必要参数.
+**处理**: 解析排版系统（Typography Scale）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回排版系统（Typography Scale）的处理结果,包含执行状态码、结果数据和执行日志。### Shadcn/ui + Tailwind CSS技术栈
 完整的Shadcn/ui + Tailwind项目搭建与组件管理：
 
@@ -144,14 +142,13 @@ npx shadcn@latest add dialog
 npx shadcn@latest add calendar
 ```
 
-组件出现在 `components/ui/`，你拥有代码所有权，可自由定制。
-
+组件出现在 `components/ui/`，你拥有代码所有权，可自由定制.
 **Tailwind最佳实践：**
 - 使用设计令牌（非任意值）：`p-4` 而非 `p-[17px]`
 - 响应式工具类：`w-full md:w-1/2 lg:w-1/3`
 - 暗色模式：`dark:bg-gray-900 dark:text-white`
 
-**输入**: 用户提供Shadcn/ui + Tailwind CSS技术栈所需的指令和必要参数。
+**输入**: 用户提供Shadcn/ui + Tailwind CSS技术栈所需的指令和必要参数.
 **处理**: 解析Shadcn/ui + Tailwind CSS技术栈的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 响应式设计（Responsive Design）
 Mobile-First响应式布局模式：
 
@@ -165,8 +162,8 @@ Mobile-First响应式布局模式：
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
 ```
 
-**输入**: 用户提供响应式设计（Responsive Design）所需的指令和必要参数。
-**处理**: 解析响应式设计（Responsive Design）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输入**: 用户提供响应式设计（Responsive Design）所需的指令和必要参数.
+**处理**: 解析响应式设计（Responsive Design）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回响应式设计（Responsive Design）的处理结果,包含执行状态码、结果数据和执行日志。### 微交互设计（Micro-Interactions）
 提升用户体验的微交互模式：
 
@@ -175,7 +172,7 @@ Mobile-First响应式布局模式：
 - **Duration（时长）**：0.2-0.3s（保持微妙）
 - **Animate only（仅动画）**：`transform` 和 `opacity`（GPU加速）
 
-**处理**: 解析微交互设计（Micro-Interactions）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**处理**: 解析微交互设计（Micro-Interactions）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回微交互设计（Micro-Interactions）的处理结果,包含执行状态码、结果数据和执行日志。### 无障碍设计（Accessibility - WCAG 2.2）
 WCAG 2.2无障碍标准合规：
 
@@ -184,7 +181,7 @@ WCAG 2.2无障碍标准合规：
 - **键盘导航**：Tab顺序合理，焦点状态可见（3:1对比度）
 - **ARIA标签**：为按钮、图片、交互元素始终提供
 
-**处理**: 解析无障碍设计（Accessibility - WCAG 2.2）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**处理**: 解析无障碍设计（Accessibility - WCAG 2.2）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回无障碍设计（Accessibility - WCAG 2.2）的处理结果,包含执行状态码、结果数据和执行日志。### UI设计五法则（The 5 Laws of Beautiful UI）
 1. **Contrast creates hierarchy**（对比创造层次）- 大vs小，深vs浅
 2. **Whitespace creates calm**（留白创造宁静）- 不要害怕空白
@@ -192,7 +189,7 @@ WCAG 2.2无障碍标准合规：
 4. **Feedback confirms action**（反馈确认操作）- 动画、成功消息
 5. **Accessibility includes everyone**（无障碍包容所有人）- 对比度、键盘、屏幕阅读器
 
-**输入**: 用户提供UI设计五法则（The 5 Laws of Beautiful UI）所需的指令和必要参数。
+**输入**: 用户提供UI设计五法则（The 5 Laws of Beautiful UI）所需的指令和必要参数.
 **处理**: 解析UI设计五法则（The 5 Laws of Beautiful UI）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 快速参考与构建前检查清单（Quick Reference & Pre-Build Checklist）
 编码前需确认的检查清单：
 
@@ -210,22 +207,18 @@ WCAG 2.2无障碍标准合规：
 - Vercel — 极简，快速，现代渐变
 - Notion — 直观拖放，清晰层次
 
-**输入**: 用户提供快速参考与构建前检查清单（Quick Reference & Pre-Build Checklist）所需的指令和必要参数。
-**输出**: 返回快速参考与构建前检查清单（Quick Reference & Pre-Build Checklist）的处理结果,包含执行状态码、结果数据和执行日志。
+**输入**: 用户提供快速参考与构建前检查清单（Quick Reference & Pre-Build Checklist）所需的指令和必要参数.
+**输出**: 返回快速参考与构建前检查清单（Quick Reference & Pre-Build Checklist）的处理结果,包含执行状态码、结果数据和执行日志.
 ### Size（大小）
 
-针对Size（大小）,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供Size（大小）相关的配置参数、输入数据和处理选项。
-
+针对Size（大小）,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供Size（大小）相关的配置参数、输入数据和处理选项.
 **输出**: 返回Size（大小）的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`Size（大小）`的配置文档进行参数调优
 ### Color（颜色）
 
-针对Color（颜色）,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供Color（颜色）相关的配置参数、输入数据和处理选项。
-
+针对Color（颜色）,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供Color（颜色）相关的配置参数、输入数据和处理选项.
 **输出**: 返回Color（颜色）的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`Color（颜色）`的配置文档进行参数调优
 #
@@ -301,23 +294,17 @@ Agent: 对比度检查：
 ## 常见问题
 
 ### Q1: Mobile-First设计的原则是什么？
-A: 从最小屏幕（320px）开始设计，默认单列布局。使用断点（576px、768px、992px、1200px）逐步扩展。Tailwind中响应式前缀按从小到大顺序应用：`w-full md:w-1/2 lg:w-1/3`。
-
+A: 从最小屏幕（320px）开始设计，默认单列布局。使用断点（576px、768px、992px、1200px）逐步扩展。Tailwind中响应式前缀按从小到大顺序应用：`w-full md:w-1/2 lg:w-1/3`.
 ### Q2: 如何选择配色方案？
-A: 构建主色阶（50-900）：Primary为品牌色（CTA、链接），Neutrals为灰色系（文本、背景），Semantic为语义色（成功绿、错误红、警告黄）。使用Coolors.co或Huevy.app生成调色板。
-
+A: 构建主色阶（50-900）：Primary为品牌色（CTA、链接），Neutrals为灰色系（文本、背景），Semantic为语义色（成功绿、错误红、警告黄）。使用Coolors.co或Huevy.app生成调色板.
 ### Q3: WCAG 2.2无障碍有哪些关键要求？
-A: 文本对比度最低4.5:1（正常文本）或3:1（大文本）；UI组件最低3:1对比度；键盘导航Tab顺序合理且焦点可见；为交互元素提供ARIA标签。
-
+A: 文本对比度最低4.5:1（正常文本）或3:1（大文本）；UI组件最低3:1对比度；键盘导航Tab顺序合理且焦点可见；为交互元素提供ARIA标签.
 ### Q4: Shadcn/ui与其他组件库有什么区别？
-A: Shadcn/ui将组件代码直接复制到你的项目中（components/ui/），你拥有完全所有权与定制权。不像MUI/Antd通过npm包引用，Shadcn让你自由修改任何组件代码。
-
+A: Shadcn/ui将组件代码直接复制到你的项目中（components/ui/），你拥有完全所有权与定制权。不像MUI/Antd通过npm包引用，Shadcn让你自由修改任何组件代码.
 ### Q5: 微交互应该使用哪些CSS属性？
-A: 仅动画 `transform`（translate、scale、rotate）和 `opacity`，这两个属性GPU加速，性能最优。避免动画width、height、margin等触发重排的属性。时长保持0.2-0.3s。
-
+A: 仅动画 `transform`（translate、scale、rotate）和 `opacity`，这两个属性GPU加速，性能最优。避免动画width、height、margin等触发重排的属性。时长保持0.2-0.3s.
 ### Q6: 如何确保设计的一致性？
-A: 使用设计令牌（design tokens）而非任意值；定义统一的排版尺度（6-8种尺寸）；保持间距使用8px倍数；重复使用相同的组件模式；参考Linear、Stripe等优秀产品的设计规范。
-
+A: 使用设计令牌（design tokens）而非任意值；定义统一的排版尺度（6-8种尺寸）；保持间距使用8px倍数；重复使用相同的组件模式；参考Linear、Stripe等优秀产品的设计规范.
 ## 已知限制
 
 - Shadcn/ui + Tailwind项目搭建需要Node.js环境

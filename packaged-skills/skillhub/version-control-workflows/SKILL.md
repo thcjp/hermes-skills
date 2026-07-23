@@ -1,7 +1,7 @@
 ---
 slug: "version-control-workflows"
 name: "version-control-workflows"
-version: "1.0.0"
+version: "1.0.1"
 displayName: "Git Workflows"
 summary: "add/commit/push之外的高级git操作,rebase/bisect/worktree"
 license: "Proprietary"
@@ -58,7 +58,7 @@ pricing_model: "per_use"
 | 参数名 | 类型 | 必填 | 说明 |
 |:-----|:-----|:-----|:-----|
 | content | string | 否 | version-control-workflows处理的内容输入 |, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| operation | string | 否 | Git高级操作类型, 可选: rebase/bisect/worktree/reflog/subtree, 默认: rebase |
 
 ## 输出格式
 
@@ -131,8 +131,7 @@ pricing_model: "per_use"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Git Workflows？

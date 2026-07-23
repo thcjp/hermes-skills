@@ -6,19 +6,18 @@ displayName: "Photo Webcam"
 summary: "列出并抓取网络摄像头快照(尤其foto-webcam.eu)"
 license: "Proprietary"
 description: |-
-  List and snapshot retrieval for webcams (especially foto-webcam。eu)。Use when 用户需要Photo Webcam相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
+  List and snapshot retrieval for webcams (especially foto-webcam。eu)。Use when 用户需要Photo Webcam相关功能时使用。不适用于超出本技能能力范围的复杂需求。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Other
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob"]
-tags: "Web开发,前端,开发工具"
+
 ---
 # Photo Webcam
 
@@ -42,7 +41,9 @@ tags: "Web开发,前端,开发工具"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 内容抓取 | 目标URL与解析规则 | 结构化数据与元信息 |
+| 网络配置 | 网络名与子网参数 | 网络ID与连通状态 |
+| 列出并抓取网络摄像头 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -143,8 +144,7 @@ tags: "Web开发,前端,开发工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Photo Webcam？

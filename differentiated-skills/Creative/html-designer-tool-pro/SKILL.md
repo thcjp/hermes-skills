@@ -3,12 +3,12 @@ slug: "html-designer-tool-pro"
 name: "html-designer-tool-pro"
 version: "1.0.0"
 displayName: "HTML设计工具专业版"
-summary: "企业级HTML/CSS设计系统,支持设计令牌、组件库、批量生成、主题切换与团队协作,适合团队与商业项目。"
+summary: "企业级HTML/CSS设计系统,支持设计令牌、组件库、批量生成、主题切换与团队协作,适合团队与商业项目"
 license: "Proprietary"
 edition: "pro"
 description: |-
   HTML设计工具专业版是一款面向企业与专业团队的网页设计系统化解决方案。在免费版核心能力之上,提供完整的设计令牌系统、可复用组件库、
-  批量页面生成、多主题切换、团队协作与品牌一致性保障。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
+  批量页面生成、多主题切换、团队协作与品牌一致性保障。
 tags:
   - 网页设计
   - 设计系统
@@ -17,14 +17,12 @@ tags:
   - 企业级
   - 组件库
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 ---
 # HTML设计工具专业版
 
@@ -69,7 +67,7 @@ color:
     background: "#0F172A"
     foreground: "#F1F5F9"
     card: "#1E293B"
-# ...
+# .
 typography:
   display:
     family: "Calistoga, serif"
@@ -79,18 +77,18 @@ typography:
     sizes: { sm: 0.875rem, md: 1rem, lg: 1.125rem }
   mono:
     family: "JetBrains Mono, monospace"
-# ...
+# .
 spacing:
   scale: [0, 0.25, 0.5, 1, 1.5, 2, 3, 4, 6, 8, 12, 16]  # rem
   section_padding: "py-28 to py-44"
   container_max: "max-w-6xl"
-# ...
+# .
 shadow:
   sm: "0 1px 3px rgba(0,0,0,0.06)"
   md: "0 4px 6px rgba(0,0,0,0.07)"
   xl: "0 20px 25px rgba(0,0,0,0.1)"
   accent: "0 4px 14px rgba(0,82,255,0.25)"
-# ...
+# .
 radius:
   sm: "4px"
   md: "8px"
@@ -115,7 +113,7 @@ components = {
     "feedback": ["alert", "toast", "modal", "progress", "skeleton"],
     "data_display": ["table", "timeline", "accordion", "badge", "chip"]
 }
-# ...
+# .
 # 为每个组件生成 HTML + CSS + 文档
 for category, items in components.items():
     for item in items:
@@ -137,7 +135,7 @@ const themes = {
   dark: { "--bg": "#0F172A", "--fg": "#F1F5F9", "--accent": "#4D7CFF" },
   brand_custom: { "--bg": "#FFF8F0", "--fg": "#2D1B0E", "--accent": "#E67E22" }
 };
-// ...
+// .
 function switchTheme(themeName) {
   const root = document.documentElement;
   Object.entries(themes[themeName]).forEach(([key, value]) => {
@@ -156,7 +154,7 @@ function switchTheme(themeName) {
 ```bash
 # 批量生成多个页面
 python3 generate_pages.py --config pages-config.yml --output ./dist/
-# ...
+# .
 # 示例
 # pages:
 #   - name: "首页"
@@ -173,7 +171,7 @@ python3 generate_pages.py --config pages-config.yml --output ./dist/
 **输入**: 用户提供批量页面生成所需的指令和必要参数。
 **处理**: 解析批量页面生成的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回批量页面生成的响应数据,包含状态码、结果和日志。
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：设计系统、支持设计令牌、主题切换与团队协、适合团队与商业项、设计工具专业版是、一款面向企业与专、业团队的网页设计、系统化解决方案、在免费版核心能力、可复用组件库、团队协作与品牌一、致性保障、Use、when、需要设计创作、海报制作、品牌视觉时使用、不适用于、建模和动画制作、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：设计系统、支持设计令牌、主题切换与团队协、适合团队与商业项、设计工具专业版是、一款面向企业与专、业团队的网页设计、系统化解决方案、在免费版核心能力、可复用组件库、团队协作与品牌一、致性保障、Use、when、、品牌视觉时使用、不适用于、建模和动画制作、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
@@ -192,10 +190,10 @@ design_system = DesignSystem(
     themes=["light", "dark", "brand"],
     guidelines=load_guidelines("docs/")
 )
-# ...
+# .
 # 生成设计系统文档
 design_system.generate_docs(output="./docs/design-system/")
-# ...
+# .
 # 导出为多平台格式
 design_system.export(format=["html", "figma-tokens", "css-variables", "tailwind-config"])
 ```
@@ -282,7 +280,7 @@ tenants = {
         "components": "custom_override"  # 自定义覆盖部分组件
     }
 }
-# ...
+# .
 # 为每个租户生成独立设计包
 for tenant_id, config in tenants.items():
     generate_tenant_package(tenant_id, config)
@@ -505,6 +503,6 @@ A: 支持语义化版本控制,每次变更自动生成变更日志。可集成G
 
 ```text
 用户: 执行核心功能
-Skill: 正在执行核心功能...
+Skill: 正在执行核心功能.
 Skill: 执行完成,结果如下: 操作成功
 ```

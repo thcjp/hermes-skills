@@ -20,15 +20,14 @@ tags:
   - 自动化
   - 企业版
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "版本控制,Git,开发工具"
+
 ---
 # GitHub管理器(专业版)
 
@@ -162,7 +161,7 @@ gh-manager dashboard summary --org my-org --period week
 - CI/CD成功率与平均时长
 - 标签分布与趋势
 
-**输入**: 用户提供团队仪表盘所需的指令和必要参数。
+**输入**: 用户提供团队仪表盘所需的指令和必要参数.
 **处理**: 解析团队仪表盘的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### Webhook管理
 ```bash
 # 列出仓库Webhook
@@ -181,7 +180,7 @@ gh-manager webhook test --repo owner/repo --id 123 --event "issues"
 gh-manager webhook delete --repo owner/repo --id 123
 ```
 
-**处理**: 解析Webhook管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**处理**: 解析Webhook管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回Webhook管理的处理结果,包含执行状态码、结果数据和执行日志。### 安全审计
 ```bash
 # 权限审查
@@ -197,10 +196,9 @@ gh-manager audit compliance --org my-org --standard SOC2 --format pdf
 gh-manager audit tokens --org my-org --period 90d
 ```
 
-**输入**: 用户提供安全审计所需的指令和必要参数。
-**处理**: 解析安全审计的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回安全审计的处理结果,包含执行状态码、结果数据和执行日志。
-
+**输入**: 用户提供安全审计所需的指令和必要参数.
+**处理**: 解析安全审计的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回安全审计的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 适用场景
 
@@ -464,8 +462,7 @@ gh-manager dashboard live --port 8080
 
 ### Q1: 批量操作会不会触发GitHub限速?
 
-A: 专业版自动遵守API限速(5000请求/小时),超限时自动排队等待。大批量操作(>100条)建议在低峰期执行,并启用`--rate-limit wait`模式。
-
+A: 专业版自动遵守API限速(5000请求/小时),超限时自动排队等待。大批量操作(>100条)建议在低峰期执行,并启用`--rate-limit wait`模式.
 ### 错误恢复步骤
 | 错误场景(续)| 原因 | 处理方式 |
 |----:|:----|----:|
@@ -476,40 +473,31 @@ A: 专业版自动遵守API限速(5000请求/小时),超限时自动排队等待
 
 ## 已知限制
 
-A: GitHub GraphQL API有复杂度评分限制(单次查询≤500000点)。专业版会自动计算复杂度,超限时建议拆分查询或使用分页。
-
+A: GitHub GraphQL API有复杂度评分限制(单次查询≤500000点)。专业版会自动计算复杂度,超限时建议拆分查询或使用分页.
 ### Q3: 自动化规则失败会通知吗?
 
-A: 会。自动化规则执行失败时,自动发送通知到配置的channel(邮件/IM)。同时记录到`automation_history`表,可通过`gh-manager automation history --failed`查看。
-
+A: 会。自动化规则执行失败时,自动发送通知到配置的channel(邮件/IM)。同时记录到`automation_history`表,可通过`gh-manager automation history --failed`查看.
 ### Q4: 团队仪表盘数据多久更新一次?
 
-A: 实时仪表盘默认5分钟刷新一次(可配置)。周报/月报在生成时全量拉取。建议启用数据缓存,降低API消耗。
-
+A: 实时仪表盘默认5分钟刷新一次(可配置)。周报/月报在生成时全量拉取。建议启用数据缓存,降低API消耗.
 ### Q5: Webhook secret如何管理?
 
-A: 通过环境变量`WEBHOOK_SECRET`配置,加密存储于`~/.gh-manager/secrets.enc`。禁止在配置文件中明文存储。支持按仓库配置不同secret。
-
+A: 通过环境变量`WEBHOOK_SECRET`配置,加密存储于`~/.gh-manager/secrets.enc`。禁止在配置文件中明文存储。支持按仓库配置不同secret.
 ### Q6: 安全审计会扫描哪些敏感信息?
 
-A: 扫描内容包括: API Key、密码、私钥、token等(基于正则与熵值检测)。支持自定义扫描规则。发现敏感信息会自动告警并生成Issue。
-
+A: 扫描内容包括: API Key、密码、私钥、token等(基于正则与熵值检测)。支持自定义扫描规则。发现敏感信息会自动告警并生成Issue.
 ### Q7: 如何导出审计报告给合规团队?
 
-A: 运行`gh-manager audit compliance --standard SOC2 --format pdf --output audit.pdf`,支持SOC2、ISO27001、GDPR等标准。报告包含权限矩阵、操作日志、敏感信息扫描结果。
-
+A: 运行`gh-manager audit compliance --standard SOC2 --format pdf --output audit.pdf`,支持SOC2、ISO27001、GDPR等标准。报告包含权限矩阵、操作日志、敏感信息扫描结果.
 ### Q8: 多组织场景如何管理?
 
-A: 通过`gh-manager org add`添加多个组织,切换时用`--org`参数指定。仪表盘支持跨组织汇总视图。
-
+A: 通过`gh-manager org add`添加多个组织,切换时用`--org`参数指定。仪表盘支持跨组织汇总视图.
 ### Q9: 自动化规则支持哪些触发条件?
 
-A: 支持: (1)定时(cron表达式); (2)事件(Issue/PR/Push/Release等); (3)状态变化(标签添加、状态流转); (4)外部webhook。可组合多条件。
-
+A: 支持: (1)定时(cron表达式); (2)事件(Issue/PR/Push/Release等); (3)状态变化(标签添加、状态流转); (4)外部webhook。可组合多条件.
 ### Q10: 专业版支持GitHub Enterprise吗?
 
-A: 支持。配置`GITHUB_ENTERPRISE_HOST`环境变量即可连接Enterprise Server。所有功能在Enterprise环境下均可用。
-
+A: 支持。配置`GITHUB_ENTERPRISE_HOST`环境变量即可连接Enterprise Server。所有功能在Enterprise环境下均可用.
 ## 错误处理
 
 | 错误场景(续)(续)| 原因 | 处理方式 |
@@ -522,4 +510,5 @@ A: 支持。配置`GITHUB_ENTERPRISE_HOST`环境变量即可连接Enterprise Ser
 ## 补充限制说明
 
 - 需要LLM支持
-
+- API调用依赖第三方服务的可用性与稳定性
+- 免费版有调用次数限制与并发限制

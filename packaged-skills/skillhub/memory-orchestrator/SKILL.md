@@ -24,8 +24,6 @@ pricing_tier: "L4-企业级"
 pricing_model: "monthly"
 tags:
   - 智能助手
-tools: ["read", "write", "exec"]
-tags: "记忆管理,上下文,AI"
 ---
 # 记忆编排器
 
@@ -75,16 +73,16 @@ tags: "记忆管理,上下文,AI"
 写入 → 工作记忆（容量 20）
          ├─ 超限 → 自动晋升到短期记忆
          └─ 标记重要 → 直接晋升到重要记忆
-# ...
+# ..
 短期记忆（容量 100）
          ├─ 超限 → FIFO 淘汰最旧（移到长期或删除）
          ├─ 标记重要 → 晋升到重要记忆
          └─ 7 天未访问 → 自动归档到长期记忆
-# ...
+# ..
 长期记忆
          ├─ 被引用 → 临时提升到短期（LRU）
          └─ 180 天未引用 → 提示归档/遗忘
-# ...
+# ..
 重要记忆
          └─ 永不清理，仅可手动修改
 ```
@@ -107,7 +105,7 @@ tags: "记忆管理,上下文,AI"
 
 ```text
 score = keyword_score * 0.4 + semantic_score * 0.4 + recency_score * 0.1 + importance_score * 0.1
-# ...
+# ..
 说明：
 - keyword_score：关键词匹配（TF-IDF）
 - semantic_score：语义相似度（有向量库时用 cosine，无则降级为关键词）
@@ -131,12 +129,12 @@ score = keyword_score * 0.4 + semantic_score * 0.4 + recency_score * 0.1 + impor
    - 决策：决策内容、原因、影响
    - 教训：问题、原因、规避方法
    - 待办：任务、优先级、截止时间
-# ...
+# ..
 2. 压缩冗余
    - 去重复（相同信息只保留一次）
    - 去过程（保留结果，省略中间步骤）
    - 去客套（移除寒暄与无信息内容）
-# ...
+# ..
 3. 结构化输出
    - 按类别分组
    - 层级列表呈现
@@ -279,7 +277,7 @@ await skills.memoryOrchestrator({
   type: "long-term",
   persist: true
 });
-// ...
+// ..
 // 添加重要记忆（永不清理）
 await skills.memoryOrchestrator({
   action: "add",
@@ -335,7 +333,7 @@ await skills.memoryOrchestrator({
   action: "save",
   persistPath: "./my-memory.json"
 });
-// ...
+// ..
 // 加载
 await skills.memoryOrchestrator({
   action: "load",
@@ -364,7 +362,7 @@ await skills.memoryOrchestrator({
 
 ```text
 用户："这个会话已经聊了 30 轮，上下文快爆了"
-# ...
+# ..
 执行：
 1. 生成短期记忆摘要：
    const summary = await skills.memoryOrchestrator({
@@ -372,7 +370,7 @@ await skills.memoryOrchestrator({
      typeFilter: "short-term",
      maxTokens: 500
    });
-# ...
+# ..
 2. 压缩后的摘要替换原始短期记忆
 3. 工作记忆仅保留最近 5 轮：
    const recent = await skills.memoryOrchestrator({
@@ -382,12 +380,12 @@ await skills.memoryOrchestrator({
      limit: 5,
      searchMode: "keyword"
    });
-# ...
+# ..
 4. 继续会话
 5. 验证效果：
    const health = await skills.memoryOrchestrator({ action: "health" });
    // 检查 short_term 容量是否下降
-# ...
+# ..
 结果：
   原始上下文：约 15,000 token（30 轮）
   压缩后上下文：约 4,500 token（5 轮原文 + 25 轮摘要）
@@ -401,7 +399,7 @@ Agent A 与 Agent B 同时操作共享记忆库，需要解决并发冲突。
 
 ```text
 场景：Agent A 与 Agent B 同时更新用户偏好
-# ...
+# ..
 执行：
 1. Agent A 读取用户偏好（version=3）：
    const pref = await skills.memoryOrchestrator({
@@ -410,9 +408,9 @@ Agent A 与 Agent B 同时操作共享记忆库，需要解决并发冲突。
      searchMode: "keyword"
    });
    // 返回 version=3
-# ...
+# ..
 2. Agent B 同时读取用户偏好（version=3）
-# ...
+# ..
 3. Agent A 写入更新（version=3 → 4）：
    await skills.memoryOrchestrator({
      action: "add",
@@ -421,7 +419,7 @@ Agent A 与 Agent B 同时操作共享记忆库，需要解决并发冲突。
      version: 3
    });
    // 写入成功，version 升级为 4
-# ...
+# ..
 4. Agent B 写入更新（version=3，冲突！）：
    await skills.memoryOrchestrator({
      action: "add",
@@ -430,13 +428,13 @@ Agent A 与 Agent B 同时操作共享记忆库，需要解决并发冲突。
      version: 3
    });
    // 版本不匹配，触发冲突解决
-# ...
+# ..
 5. 冲突解决：
    - 同条目同字段不同值 → 保留两版本
    - 标记为冲突
    - 提示用户："检测到偏好冲突，请选择"
      [深色模式] [自动切换] [两者都记]
-# ...
+# ..
 6. 用户选择后，合并完成，version 升级为 5
 ```
 
@@ -446,11 +444,11 @@ Agent A 与 Agent B 同时操作共享记忆库，需要解决并发冲突。
 
 ```text
 心跳任务：每天检查记忆健康度
-# ...
+# ..
 执行：
 1. 调用健康度仪表盘：
    const health = await skills.memoryOrchestrator({ action: "health" });
-# ...
+# ..
 2. 检查告警项：
    - 工作记忆使用率 90%（> 85%，warning）
      → 触发晋升：最旧 5 条工作记忆移到短期
@@ -460,13 +458,13 @@ Agent A 与 Agent B 同时操作共享记忆库，需要解决并发冲突。
      → 提示清理：23 条长期记忆 30 天未访问，建议归档
    - 命中率 28%（< 30%，warning）
      → 提示优化：建议切换为 hybrid 检索模式
-# ...
+# ..
 3. 生成健康度报告：
    容量状态：工作 15/20、短期 77/100、长期 352、重要 15
    分布情况：偏好 45、决策 30、事实 20、教训 15
    命中率趋势：improving（7天 72%、30天 65%）
    陈旧情况：23 条未访问，最久 45 天
-# ...
+# ..
 4. 处理后重新检查：
    const healthAfter = await skills.memoryOrchestrator({ action: "health" });
    // 工作记忆降至 15/20（75%），告警消除

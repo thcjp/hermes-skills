@@ -26,15 +26,14 @@ tags:
   - 高级搜索
   - 批量分发
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Discord,社交,通信"
+
 ---
 # Discord聊天管理专业版
 
@@ -65,26 +64,20 @@ tags: "Discord,社交,通信"
 | 消息分析 | 统计与聚合 | 不支持 | 支持 |
 ### 能力模块
 
-针对能力模块,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供能力模块相关的配置参数、输入数据和处理选项。
-
+针对能力模块,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供能力模块相关的配置参数、输入数据和处理选项.
 **输出**: 返回能力模块的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`能力模块`的配置文档进行参数调优
 ### 发送消息
 
-针对发送消息,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供发送消息相关的配置参数、输入数据和处理选项。
-
+针对发送消息,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供发送消息相关的配置参数、输入数据和处理选项.
 **输出**: 返回发送消息的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`发送消息`的配置文档进行参数调优
 ### 回复消息
 
-针对回复消息,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供回复消息相关的配置参数、输入数据和处理选项。
-
+针对回复消息,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供回复消息相关的配置参数、输入数据和处理选项.
 **输出**: 返回回复消息的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`回复消息`的配置文档进行参数调优
 #
@@ -92,8 +85,7 @@ tags: "Discord,社交,通信"
 
 ### 场景一:多频道批量通知分发
 
-运营团队需要将一条重要公告同步到多个分类频道,并附带统一表态。
-
+运营团队需要将一条重要公告同步到多个分类频道,并附带统一表态.
 ```bash
 message action=batch-send channel=discord \
   targets="#announcements,#general,#dev-team" \
@@ -102,12 +94,10 @@ message action=batch-send channel=discord \
   pin-first=true
 ```
 
-批量发送支持自动反应、首条置顶和发送结果汇总报告。
-
+批量发送支持自动反应、首条置顶和发送结果汇总报告.
 ### 场景二:高级搜索定位历史讨论
 
-需要查找某位成员在上周发布过的关于部署问题的所有讨论。
-
+需要查找某位成员在上周发布过的关于部署问题的所有讨论.
 ```bash
 message action=advanced-search channel=discord \
   channelId="1234567890" \
@@ -119,12 +109,10 @@ message action=advanced-search channel=discord \
   format=threaded
 ```
 
-高级搜索支持按作者、时间范围、频道、关键词多条件组合,结果可按线索(threaded)或时间序列(chronological)输出。
-
+高级搜索支持按作者、时间范围、频道、关键词多条件组合,结果可按线索(threaded)或时间序列(chronological)输出.
 ### 场景三:频道结构化搭建
 
-新社区搭建时,需要批量创建分类与频道。
-
+新社区搭建时,需要批量创建分类与频道.
 ```bash
 message action=channel-create channel=discord \
   guildId="9999999999" \
@@ -181,8 +169,7 @@ message action=batch-channel-create channel=discord \
 message action=channel-info channel=discord channelId="1234567890"
 ```
 
-机器人需具备「管理频道」权限才能执行创建/编辑/删除操作。
-
+机器人需具备「管理频道」权限才能执行创建/编辑/删除操作.
 ### 第三步:执行批量操作(建议预演)
 
 ```bash
@@ -192,8 +179,7 @@ message action=batch-send channel=discord \
   dry-run=true
 ```
 
-`dry-run=true` 预演模式会返回将要发送的目标列表和内容,不实际发送。
-
+`dry-run=true` 预演模式会返回将要发送的目标列表和内容,不实际发送.
 #
 ## 输入格式
 
@@ -253,11 +239,10 @@ message action=batch-send channel=discord \
 
 ### API Key 配置
 
-- **Discord Bot Token**: 在 Agent 网关配置中设置机器人令牌(建议通过环境变量 `DISCORD_TOKEN` 注入)。
-- **高级权限范围**: 机器人需在目标服务器被授予「管理频道」权限才能执行创建/编辑/删除操作;批量操作需「管理消息」权限。
-- **功能开关**: 高级搜索、批量操作、频道管理、分析统计需在配置中显式启用对应功能开关。
-- **审计配置**: 建议为批量删除等高影响操作开启审计日志,记录操作人、目标范围和原因。
-
+- **Discord Bot Token**: 在 Agent 网关配置中设置机器人令牌(建议通过环境变量 `DISCORD_TOKEN` 注入).
+- **高级权限范围**: 机器人需在目标服务器被授予「管理频道」权限才能执行创建/编辑/删除操作;批量操作需「管理消息」权限.
+- **功能开关**: 高级搜索、批量操作、频道管理、分析统计需在配置中显式启用对应功能开关.
+- **审计配置**: 建议为批量删除等高影响操作开启审计日志,记录操作人、目标范围和原因.
 ### 可用性分类
 
 - **分类**: MD+EXEC(纯 Markdown 指令 + 部分功能需 `exec` 执行能力)
@@ -307,8 +292,7 @@ message action=batch-send channel=discord \
   stagger-ms=500
 ```
 
-`stagger-ms` 控制每条发送间隔,避免触发频率限制。
-
+`stagger-ms` 控制每条发送间隔,避免触发频率限制.
 ### 定时消息发布
 
 ```bash
@@ -366,7 +350,7 @@ message action=analytics channel=discord \
 # ...
 ### Q1: 高级搜索支持哪些过滤条件?
 # ...
-Pro 版高级搜索支持:关键词(`query`)、作者(`authorId`)、频道列表(`channelIds`)、时间范围(`after`/`before`)、内容类型(`has`: attachment/embed/link)、排序(`sort`)、输出格式(`format`)和导出格式(`export`)。各条件可任意组合。
+Pro 版高级搜索支持:关键词(`query`)、作者(`authorId`)、频道列表(`channelIds`)、时间范围(`after`/`before`)、内容类型(`has`: attachment/embed/link)、排序(`sort`)、输出格式(`format`)和导出格式(`export`)。各条件可任意组合.
 # ...
 ### 错误恢复步骤
 | 错误场景(续)| 原因 | 处理方式 |
@@ -378,31 +362,31 @@ Pro 版高级搜索支持:关键词(`query`)、作者(`authorId`)、频道列表
 # ...
 ## 已知限制
 # ...
-Discord API 有全局和按频道频率限制。Pro 版内置 `stagger-ms`(默认 500ms)错峰控制和 `maxConcurrency`(默认 5)并发限制。接近限制时自动排队,触发 429 时按 `Retry-After` 自动退避重试。
+Discord API 有全局和按频道频率限制。Pro 版内置 `stagger-ms`(默认 500ms)错峰控制和 `maxConcurrency`(默认 5)并发限制。接近限制时自动排队,触发 429 时按 `Retry-After` 自动退避重试.
 # ...
 ### Q3: 频道创建支持哪些类型?
 # ...
-支持文本频道(text)、语音频道(voice)、公告频道(announcement)、舞台频道(stage)。创建时可指定分类(category)、主题(topic)、慢速模式(slowmode,单位秒)和位置(position)。
+支持文本频道(text)、语音频道(voice)、公告频道(announcement)、舞台频道(stage)。创建时可指定分类(category)、主题(topic)、慢速模式(slowmode,单位秒)和位置(position).
 # ...
 ### Q4: 消息分析统计的数据范围多大?
 # ...
-单次分析建议覆盖 1-4 周(约 1000-5000 条消息)。范围过大会导致响应缓慢。需要长期趋势分析时,建议按周分批运行后合并报告。分析指标包括活跃度、TOP 发言者、活跃时段和热门关键词。
+单次分析建议覆盖 1-4 周(约 1000-5000 条消息)。范围过大会导致响应缓慢。需要长期趋势分析时,建议按周分批运行后合并报告。分析指标包括活跃度、TOP 发言者、活跃时段和热门关键词.
 # ...
 ### Q5: 定时消息和批量消息能组合吗?
 # ...
-可以。可以创建一个定时任务,在指定时间执行批量发送到多频道。例如每周一 10:00 向三个频道发送周报提醒。配置时将 `schedule` 和 `targets` 同时指定即可。
+可以。可以创建一个定时任务,在指定时间执行批量发送到多频道。例如每周一 10:00 向三个频道发送周报提醒。配置时将 `schedule` 和 `targets` 同时指定即可.
 # ...
 ### Q6: 搜索结果导出有哪些格式?
 # ...
-支持 markdown(可读性优秀,适合归档)、json(结构化,适合二次处理)和 csv(表格,适合数据分析)。建议日常归档用 markdown,数据统计用 csv,程序处理用 json。
+支持 markdown(可读性优秀,适合归档)、json(结构化,适合二次处理)和 csv(表格,适合数据分析)。建议日常归档用 markdown,数据统计用 csv,程序处理用 json.
 # ...
 ### Q7: Pro 版如何与免费版共存?
 # ...
-两者 `message` 命令格式完全兼容,可共存。Pro 版额外支持 `advanced-search`、`batch-send`、`channel-create/edit/delete`、`analytics` 等高级 action。建议生产环境统一使用 Pro 版,免费版仅用于轻量测试。
+两者 `message` 命令格式完全兼容,可共存。Pro 版额外支持 `advanced-search`、`batch-send`、`channel-create/edit/delete`、`analytics` 等高级 action。建议生产环境统一使用 Pro 版,免费版仅用于轻量测试.
 # ...
 ### Q8: 批量删除消息有风险吗?
 # ...
-批量删除属于高影响操作。建议:先用 `dry-run` 确认删除范围;开启审计日志记录;按作者或时间范围精确过滤,避免误删。删除操作不可撤销,务必谨慎。
+批量删除属于高影响操作。建议:先用 `dry-run` 确认删除范围;开启审计日志记录;按作者或时间范围精确过滤,避免误删。删除操作不可撤销,务必谨慎.
 # ...
 ## 错误处理
 # ...

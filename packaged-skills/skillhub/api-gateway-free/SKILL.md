@@ -7,7 +7,7 @@ summary: "通过托管网关连接Slack/Gmail/Stripe等服务的只读路由,含
 license: "MIT"
 description: |-
   托管式 API 网关路由服务免费版。通过统一的 API 路由地址连接 Slack、Gmail、Stripe 等第三方服务,
-  支持只读 GET 操作与基础连接管理。触发器管理、事件重放、写操作审批流程、高危操作审查等高级功能需升级付费版。
+  支持只读 GET 操作与基础连接管理。触发器管理、事件重放、写操作审批流程、高危操作审查等高级功能需升级付费版.
 tags:
   - 研发工具
   - Automation
@@ -15,15 +15,12 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+
 ---
 # API 网关集成路由（免费版）
 
-托管式 API 网关路由服务免费版。通过统一的 API 路由地址 `https://api.maton.ai/` 连接第三方服务,支持只读 GET 操作与基础连接管理。
-
-> **升级提示**: 触发器管理、事件重放、写操作审批流程、高危操作审查、多语言调用等高级功能为付费版专享。升级付费版解锁完整能力。
-
+托管式 API 网关路由服务免费版。通过统一的 API 路由地址 `https://api.maton.ai/` 连接第三方服务,支持只读 GET 操作与基础连接管理.
+> **升级提示**: 触发器管理、事件重放、写操作审批流程、高危操作审查、多语言调用等高级功能为付费版专享。升级付费版解锁完整能力.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -53,7 +50,7 @@ tags: "API,接口,开发工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 - **统一路由**: 通过 `https://api.maton.ai/<app>/...` 路由访问 Slack、Gmail、Stripe 等服务
@@ -74,18 +71,14 @@ export API_KEY="your_api_key_here"
 - **jq 过滤**: 使用 `--jq` 过滤 CLI 输出
 ### 统一路由
 
-针对统一路由,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供统一路由相关的配置参数、输入数据和处理选项。
-
+针对统一路由,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供统一路由相关的配置参数、输入数据和处理选项.
 **输出**: 返回统一路由的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`统一路由`的配置文档进行参数调优
 ### 只读 GET 操作
 
-针对只读 GET ,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供只读 GET 操作相关的配置参数、输入数据和处理选项。
-
+针对只读 GET ,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供只读 GET 操作相关的配置参数、输入数据和处理选项.
 **输出**: 返回只读 GET 操作的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`只读 GET 操作`的配置文档进行参数调优
 #
@@ -97,10 +90,8 @@ https://api.maton.ai/google-mail/gmail/v1/users/me/messages
 https://api.maton.ai/stripe/v1/customers?limit=10
 ```
 
-第一个路径段是 app 标识符（如 `slack`、`google-mail`、`stripe`）。
-
-> **升级提示**: 免费版仅支持只读 GET 路由。POST/PUT/PATCH/DELETE 等写操作需升级付费版。
-
+第一个路径段是 app 标识符（如 `slack`、`google-mail`、`stripe`）.
+> **升级提示**: 免费版仅支持只读 GET 路由。POST/PUT/PATCH/DELETE 等写操作需升级付费版.
 ## 安全与权限
 
 - **最小权限**: 仅连接当前任务所需的服务,优先使用只读 scope
@@ -129,8 +120,7 @@ maton slack channel list --types public_channel --limit 10
 maton stripe customer list -L 10
 ```
 
-> **提示**: 如需执行写操作（发送消息、创建记录等）,请升级付费版解锁写操作审批流程。
-
+> **提示**: 如需执行写操作（发送消息、创建记录等）,请升级付费版解锁写操作审批流程.
 #
 ## 案例展示
 
@@ -141,8 +131,7 @@ maton stripe customer list -L 10
 maton slack channel list --types public_channel --limit 10
 ```
 
-**说明**: 只读 GET 操作,返回频道 ID 与名称列表。
-
+**说明**: 只读 GET 操作,返回频道 ID 与名称列表.
 ### 案例2: Salesforce SOQL 查询（只读）
 **场景**: 用户需要查询 Salesforce 联系人
 
@@ -150,10 +139,8 @@ maton slack channel list --types public_channel --limit 10
 maton salesforce query 'SELECT Id,Name FROM Contact LIMIT 10'
 ```
 
-**说明**: SOQL 查询为只读操作,返回联系人 ID 与姓名。
-
-> **升级提示**: 付费版提供 Python `urllib` 调用方式与完整安全审批流程。
-
+**说明**: SOQL 查询为只读操作,返回联系人 ID 与姓名.
+> **升级提示**: 付费版提供 Python `urllib` 调用方式与完整安全审批流程.
 ### 案例3: Stripe 列出客户
 **场景**: 用户需要列出客户信息
 
@@ -161,10 +148,8 @@ maton salesforce query 'SELECT Id,Name FROM Contact LIMIT 10'
 maton stripe customer list -L 10
 ```
 
-**说明**: 只读操作,返回客户列表。
-
-> **升级提示**: 付费版支持 `--jq` 过滤（如 `map(select(.delinquent == false))`）与完整写操作。
-
+**说明**: 只读操作,返回客户列表.
+> **升级提示**: 付费版支持 `--jq` 过滤（如 `map(select(.delinquent == false))`）与完整写操作.
 ## 错误处理
 
 | 错误场景 | HTTP 状态码 | 原因分析 | 处理方式 |
@@ -179,20 +164,15 @@ maton stripe customer list -L 10
 ## 常见问题
 
 ### Q1: 免费版支持哪些操作?
-A: 免费版仅支持只读 GET 操作（列出频道、查询客户、搜索联系人等）。写操作（POST/PUT/PATCH/DELETE）需升级付费版。
-
+A: 免费版仅支持只读 GET 操作（列出频道、查询客户、搜索联系人等）。写操作（POST/PUT/PATCH/DELETE）需升级付费版.
 ### Q2: 免费版能创建触发器吗?
-A: 不能。触发器管理（创建事件触发器、监听事件、重放事件、配置目标）为付费版专享功能。
-
+A: 不能。触发器管理（创建事件触发器、监听事件、重放事件、配置目标）为付费版专享功能.
 ### Q3: 速率限制是多少?
-A: 每账户 10 请求/秒。同时,目标 API 自身的速率限制也适用。免费版遇到 429 时需降低频率后重试。
-
+A: 每账户 10 请求/秒。同时,目标 API 自身的速率限制也适用。免费版遇到 429 时需降低频率后重试.
 ### Q4: 如何验证 API Key 是否有效?
-A: 运行 `maton whoami` 验证认证状态。如 Key 无效,重新设置 `MATON_API_KEY` 环境变量。
-
+A: 运行 `maton whoami` 验证认证状态。如 Key 无效,重新设置 `MATON_API_KEY` 环境变量.
 ### Q5: 免费版支持 Python/JavaScript 调用吗?
-A: 免费版以 `maton` CLI 与 curl 为主。Python requests 与 JavaScript fetch 调用方式为付费版专享。
-
+A: 免费版以 `maton` CLI 与 curl 为主。Python requests 与 JavaScript fetch 调用方式为付费版专享.
 ## 已知限制
 
 1. **仅只读操作**: 免费版仅支持 GET/list,不支持写操作
@@ -204,8 +184,7 @@ A: 免费版以 `maton` CLI 与 curl 为主。Python requests 与 JavaScript fet
 
 ---
 
-> **升级付费版** 解锁: 写操作审批、触发器管理、事件重放、高危操作审查、多语言调用、事件检查点、jq 过滤等完整能力。
-
+> **升级付费版** 解锁: 写操作审批、触发器管理、事件重放、高危操作审查、多语言调用、事件检查点、jq 过滤等完整能力.
 ## 输出格式
 
 ```json

@@ -28,15 +28,14 @@ tags:
   - Communication
   - Automation
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
+
 ---
 # Telegram Bot Builder
 
@@ -127,8 +126,7 @@ tags: "UI设计,前端,设计"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 错误处理
 
 | 错误场景(续)| 原因 | 处理方式 |
@@ -145,7 +143,6 @@ export API_KEY="your_api_key_here"
 ## 常见问题
 
 **Q: 如何处理异常输入?**
-A: 系统会自动检测并返回错误提示, 同时提供修复建议。
-
+A: 系统会自动检测并返回错误提示, 同时提供修复建议.
 **Q: 支持哪些输入格式?**
-A: 支持标准文本、JSON、CSV等常见格式。
+A: 支持标准文本、JSON、CSV等常见格式.

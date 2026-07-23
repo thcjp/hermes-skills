@@ -7,19 +7,18 @@ summary: "创建/检查/处理/优化图像与视觉资产,格式选择可靠"
 license: "Proprietary"
 description: |-
   Create, inspect, process, and optimize image files and visual assets
-  with reliable format choice,。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
+  with reliable format choice,。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
   - Productivity
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "图像处理,AI绘图,创意"
+
 ---
 # Image
 
@@ -43,7 +42,8 @@ tags: "图像处理,AI绘图,创意"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 优化图像与视觉资产 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 格式选择可靠 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -144,8 +144,7 @@ tags: "图像处理,AI绘图,创意"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Image？

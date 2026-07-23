@@ -6,20 +6,19 @@ displayName: "Finance Radar"
 summary: "基于雅虎财经做股票与加密分析,数据驱动决策"Proprietary"
 description: |-
   Stock and cryptocurrency analysis powered by Yahoo Finance data。Use
-  when a user wants to: (1) An。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
+  when a user wants to: (1) An。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - Finance
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "金融,财务,数据"
 license: "MIT"
+
 ---
 # Finance Radar
 
@@ -44,7 +43,9 @@ license: "MIT"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 数据处理 | 数据源与处理规则 | 清洗结果与统计摘要 |
+| 加密操作 | 明文与密钥配置 | 密文与加密元数据 |
+| 智能分析 | 数据与分析维度 | 分析报告与关键发现 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -146,7 +147,7 @@ license: "MIT"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ```bash

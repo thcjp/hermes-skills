@@ -7,19 +7,18 @@ summary: "用Tavily的LLM优化搜索API搜网,返相关结果与片段"
 license: "Proprietary"
 description: |-
   Search the web using Tavily's LLM-optimized search API。Returns relevant
-  results with content sni。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。
+  results with content sni。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
   - Research
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+
 ---
 # Search
 
@@ -44,7 +43,9 @@ tags: "搜索,检索,工具"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 搜索检索 | 关键词与过滤条件 | 匹配结果与相关性排序 |
+| 用Tavily的LL | 目标数据与配置参数 | 处理结果与执行状态 |
+| 返相关结果与片段 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -157,7 +158,7 @@ curl --request POST \
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### News Search

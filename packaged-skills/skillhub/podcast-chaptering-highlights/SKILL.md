@@ -6,19 +6,18 @@ displayName: "Podcast Chaptering H"
 summary: "从播客音频或转写生成章节/亮点/节目说明"
 license: "Proprietary"
 description: |-
-  Create chapters, highlights, and show notes from podcast audio or transcripts。Use when a user wa。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。
+  Create chapters, highlights, and show notes from podcast audio or transcripts。Use when a user wa。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
 tags:
   - Creative
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "播客,音频,媒体"
+
 ---
 # Podcast Chaptering H
 
@@ -42,7 +41,9 @@ tags: "播客,音频,媒体"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 内容生成 | 提示词与风格参数 | 生成内容与质量评分 |
+| 音频生成 | 文本与语音参数 | 音频文件与时长信息 |
+| 从播客音频或转写生成 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -112,8 +113,7 @@ tags: "播客,音频,媒体"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Podcast Chaptering H？

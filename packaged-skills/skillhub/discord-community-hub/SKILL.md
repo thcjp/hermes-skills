@@ -27,15 +27,14 @@ tags:
   - 应用命令
   - 权益管理
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Discord,社交,通信"
+
 ---
 # Discord社区中心专业版
 
@@ -65,26 +64,20 @@ tags: "Discord,社交,通信"
 | 审计日志 | 操作记录 | 不支持 | 支持 |
 ### 能力模块
 
-针对能力模块,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供能力模块相关的配置参数、输入数据和处理选项。
-
+针对能力模块,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供能力模块相关的配置参数、输入数据和处理选项.
 **输出**: 返回能力模块的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`能力模块`的配置文档进行参数调优
 ### 用户/身份
 
-针对用户/身份,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供用户/身份相关的配置参数、输入数据和处理选项。
-
+针对用户/身份,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供用户/身份相关的配置参数、输入数据和处理选项.
 **输出**: 返回用户/身份的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`用户/身份`的配置文档进行参数调优
 ### 服务器/组件
 
-针对服务器/组件,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供服务器/组件相关的配置参数、输入数据和处理选项。
-
+针对服务器/组件,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供服务器/组件相关的配置参数、输入数据和处理选项.
 **输出**: 返回服务器/组件的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`服务器/组件`的配置文档进行参数调优
 #
@@ -92,8 +85,7 @@ tags: "Discord,社交,通信"
 
 ### 场景一:应用命令权限治理
 
-企业社区注册了多个斜杠命令(slash command),需要按服务器维度批量配置各命令的可用角色范围。
-
+企业社区注册了多个斜杠命令(slash command),需要按服务器维度批量配置各命令的可用角色范围.
 ```javascript
 // 1. 获取某命令在服务器的当前权限
 const perm = await integration.call_tool({
@@ -130,8 +122,7 @@ await integration.call_tool({
 
 ### 场景二:付费订阅与权益发放
 
-付费应用需要查询用户权益、列出订阅记录并消费消耗型权益。
-
+付费应用需要查询用户权益、列出订阅记录并消费消耗型权益.
 ```javascript
 // 1. 查询用户在某应用下的权益
 const entitlements = await integration.call_tool({
@@ -169,8 +160,7 @@ await integration.call_tool({
 
 ### 场景三:外部系统与 Discord 角色对接
 
-游戏平台或论坛需将用户的外部身份(如游戏 ID)同步到 Discord 角色连接元数据。
-
+游戏平台或论坛需将用户的外部身份(如游戏 ID)同步到 Discord 角色连接元数据.
 ```javascript
 // 1. 获取用户当前角色连接
 const roleConn = await integration.call_tool({
@@ -228,8 +218,7 @@ const member = await integration.call_tool({
 });
 ```
 
-编辑命令权限需用户在目标服务器具备 `MANAGE_GUILD` 和 `MANAGE_ROLES` 权限。
-
+编辑命令权限需用户在目标服务器具备 `MANAGE_GUILD` 和 `MANAGE_ROLES` 权限.
 ### 第三步:执行写操作
 
 ```javascript
@@ -243,8 +232,7 @@ await integration.call_tool({
 });
 ```
 
-**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
-
+**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -323,11 +311,10 @@ await integration.call_tool({
 
 ### API Key 配置
 
-- **OAuth2 应用**: 在 Discord Developer Portal 注册 OAuth2 应用,获取 Client ID 和 Client Secret。
-- **完整授权 scope**: Pro 版需更完整的 scope:`identify` `guilds` `email` `applications.commands` `role_connections.write` `applications.entitlements`。重新连接时务必补全。
-- **Bearer 令牌**: 写操作(命令权限、权益、角色连接)必须使用 OAuth2 Bearer 令牌,非机器人令牌。集成网关自动管理令牌刷新。
-- **审计存储**: 审计日志建议配置独立存储路径,加密存储,设置保留策略(建议 90 天以上)。
-
+- **OAuth2 应用**: 在 Discord Developer Portal 注册 OAuth2 应用,获取 Client ID 和 Client Secret.
+- **完整授权 scope**: Pro 版需更完整的 scope:`identify` `guilds` `email` `applications.commands` `role_connections.write` `applications.entitlements`。重新连接时务必补全.
+- **Bearer 令牌**: 写操作(命令权限、权益、角色连接)必须使用 OAuth2 Bearer 令牌,非机器人令牌。集成网关自动管理令牌刷新.
+- **审计存储**: 审计日志建议配置独立存储路径,加密存储,设置保留策略(建议 90 天以上).
 ### 可用性分类
 
 - **分类**: MD+EXEC(纯 Markdown 指令 + 部分功能需 `exec` 执行能力)
@@ -340,7 +327,7 @@ await integration.call_tool({
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 应用命令权限完整配置
@@ -429,16 +416,13 @@ await integration.call_tool({
 
 ### Q1: 编辑命令权限报「Missing MANAGE_GUILD permission」?
 
-编辑应用命令权限需要当前用户在目标服务器具备 `MANAGE_GUILD` 和 `MANAGE_ROLES` 权限,且使用 OAuth2 Bearer 令牌(机器人令牌会报错)。请确认:用户是服务器管理员或有管理权限的角色;集成网关使用 Bearer 令牌;OAuth2 授权包含 `applications.commands` scope。
-
+编辑应用命令权限需要当前用户在目标服务器具备 `MANAGE_GUILD` 和 `MANAGE_ROLES` 权限,且使用 OAuth2 Bearer 令牌(机器人令牌会报错)。请确认:用户是服务器管理员或有管理权限的角色;集成网关使用 Bearer 令牌;OAuth2 授权包含 `applications.commands` scope.
 ### Q2: 「Role connection write scope missing」是什么原因?
 
-角色连接写入需要 OAuth2 授权包含 `role_connections.write` scope。若当前授权缺失,需重新连接 Discord 并补全该 scope。重新授权后即可正常调用 `discord_update_user_application_role_connection`。
-
+角色连接写入需要 OAuth2 授权包含 `role_connections.write` scope。若当前授权缺失,需重新连接 Discord 并补全该 scope。重新授权后即可正常调用 `discord_update_user_application_role_connection`.
 ### Q3: 权益查询返回为空?
 
-确认:查询的 `application_id` 正确;用户确实有该应用的付费订阅;OAuth2 授权包含 `applications.entitlements` scope。测试权益需通过 `discord_delete_test_entitlement` 单独管理,不在正式权益列表中返回。
-
+确认:查询的 `application_id` 正确;用户确实有该应用的付费订阅;OAuth2 授权包含 `applications.entitlements` scope。测试权益需通过 `discord_delete_test_entitlement` 单独管理,不在正式权益列表中返回.
 ### 错误恢复步骤
 | 错误场景(续)| 原因 | 处理方式 |
 |----:|:----|----:|
@@ -449,24 +433,19 @@ await integration.call_tool({
 
 ## 已知限制
 
-`custom_fields` 是应用在 Discord Developer Portal 中预先定义的元数据字段。字段 `name` 必须与预定义一致,`value` 为字符串。未预定义的字段会被忽略。最多支持 8 个自定义字段。
-
+`custom_fields` 是应用在 Discord Developer Portal 中预先定义的元数据字段。字段 `name` 必须与预定义一致,`value` 为字符串。未预定义的字段会被忽略。最多支持 8 个自定义字段.
 ### Q5: `discord_delete_test_entitlement` 和 `discord_consume_entitlement` 有什么区别?
 
-`consume_entitlement` 用于标记消耗型权益(如一次性道具)为已使用,正式权益不会被删除,只是状态变更;`delete_test_entitlement` 用于删除测试环境产生的测试权益,是物理删除,仅对测试权益有效,不影响正式权益。
-
+`consume_entitlement` 用于标记消耗型权益(如一次性道具)为已使用,正式权益不会被删除,只是状态变更;`delete_test_entitlement` 用于删除测试环境产生的测试权益,是物理删除,仅对测试权益有效,不影响正式权益.
 ### Q6: 多服务器批量运营如何管理?
 
-Pro 版支持遍历服务器列表批量执行操作。建议:按操作类型分组批量执行;配置频率限制避免触发 API 限流;记录每个服务器的执行结果汇总;失败项单独重试。大规模批量操作建议在低峰时段执行。
-
+Pro 版支持遍历服务器列表批量执行操作。建议:按操作类型分组批量执行;配置频率限制避免触发 API 限流;记录每个服务器的执行结果汇总;失败项单独重试。大规模批量操作建议在低峰时段执行.
 ### Q7: 审计日志记录哪些内容?
 
-审计日志记录:操作时间、操作人、工具名称、目标(application_id/guild_id/user_id)、参数摘要、结果(成功/失败)、错误信息。高影响操作(leave_guild、delete_test_entitlement、delete_role_connection)额外记录操作前状态快照。日志建议加密存储,保留 90 天以上。
-
+审计日志记录:操作时间、操作人、工具名称、目标(application_id/guild_id/user_id)、参数摘要、结果(成功/失败)、错误信息。高影响操作(leave_guild、delete_test_entitlement、delete_role_connection)额外记录操作前状态快照。日志建议加密存储,保留 90 天以上.
 ### Q8: Pro 版能管理机器人的应用命令吗?
 
-可以。通过 `application_id`(机器人的应用 ID)管理其在各服务器的命令权限。但需注意:编辑命令权限使用的是用户的 OAuth2 Bearer 令牌(需用户有管理权限),而非机器人令牌。这是设计上的权限分离。
-
+可以。通过 `application_id`(机器人的应用 ID)管理其在各服务器的命令权限。但需注意:编辑命令权限使用的是用户的 OAuth2 Bearer 令牌(需用户有管理权限),而非机器人令牌。这是设计上的权限分离.
 ## 错误处理
 
 | 错误场景(续)(续)| 原因 | 处理方式 |
@@ -479,4 +458,5 @@ Pro 版支持遍历服务器列表批量执行操作。建议:按操作类型分
 ## 补充限制说明
 
 - 需要LLM支持
-
+- 消息发送依赖第三方平台的API可用性
+- 免费版有消息发送频率限制

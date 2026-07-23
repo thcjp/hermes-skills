@@ -7,19 +7,18 @@ summary: "SkillHub的Discord Bot API技能,覆盖交互/命令/消息/运维"
 license: "Proprietary"
 description: |-
   SkillHub skill for Discord Bot API workflows, covering interactions,
-  commands, messages, and oper。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
+  commands, messages, and oper。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - Integrations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Discord,社交,通信"
+
 ---
 # Discord
 
@@ -43,7 +42,9 @@ tags: "Discord,社交,通信"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 消息发送 | 目标与消息内容 | 送达回执与消息ID |
+| 交互响应 | 事件与回调数据 | 响应状态与交互结果 |
+| 命令执行 | 指令名与参数 | 执行结果与输出日志 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -144,8 +145,7 @@ tags: "Discord,社交,通信"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Discord？

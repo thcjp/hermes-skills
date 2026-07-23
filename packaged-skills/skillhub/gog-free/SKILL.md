@@ -7,21 +7,19 @@ summary: "Google Workspace命令行工具基础版,覆盖Gmail搜索与Sheets读
 license: "MIT"
 description: |-
   Google Workspace 命令行工具的基础免费版。覆盖 Gmail 邮件搜索与 Sheets 表格读写两类核心操作,
-  通过 OAuth 凭证鉴权,支持 JSON 结构化输出。适用于个人开发者邮件检索与轻量级表格读写场景。
-  本免费版仅支持 Gmail search 与 Sheets get/append,Calendar/Drive/Contacts/Docs 等高级能力请升级付费版。
+  通过 OAuth 凭证鉴权,支持 JSON 结构化输出。适用于个人开发者邮件检索与轻量级表格读写场景.
+  本免费版仅支持 Gmail search 与 Sheets get/append,Calendar/Drive/Contacts/Docs 等高级能力请升级付费版.
 tags:
   - 研发工具
 tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+
 ---
 # gog-free
 
-`gog` 是 Google Workspace 的命令行工具。本免费版封装 Gmail 邮件搜索与 Sheets 表格读写两类基础操作,通过 OAuth 凭证鉴权,适合个人开发者轻量级使用。
-
+`gog` 是 Google Workspace 的命令行工具。本免费版封装 Gmail 邮件搜索与 Sheets 表格读写两类基础操作,通过 OAuth 凭证鉴权,适合个人开发者轻量级使用.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -51,7 +49,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 - OAuth 凭证管理:导入 `client_secret.json`、添加账户授权、列出已授权账户
@@ -75,8 +73,7 @@ gog auth add you@gmail.com --services gmail,sheets
 gog auth list
 ```
 
-`client_secret.json` 从 Google Cloud Console 的 OAuth 客户端凭证页面下载,类型选择"桌面应用"。本免费版仅需 `gmail` 与 `sheets` 两个服务授权。
-
+`client_secret.json` 从 Google Cloud Console 的 OAuth 客户端凭证页面下载,类型选择"桌面应用"。本免费版仅需 `gmail` 与 `sheets` 两个服务授权.
 ## 常用命令
 
 ### Gmail 搜索
@@ -132,8 +129,7 @@ gog sheets append <sheetId> "Tab!A:C" --values-json '[["x","y","z"]]' --insert I
 
 ### 案例一:近 7 天邮件归档
 
-需求:导出近 7 天带附件的邮件到本地 JSON 文件。
-
+需求:导出近 7 天带附件的邮件到本地 JSON 文件.
 实现:
 
 ```bash
@@ -150,12 +146,10 @@ gog gmail search 'newer_than:7d has:attachment' --max 50 --json --no-input > /tm
 ]
 ```
 
-`--no-input` 确保不阻塞脚本执行。
-
+`--no-input` 确保不阻塞脚本执行.
 ### 案例二:Sheet 追加日志行
 
-需求:向监控 Sheet 的 `Builds!A:C` 追加一行构建记录。
-
+需求:向监控 Sheet 的 `Builds!A:C` 追加一行构建记录.
 实现:
 
 ```bash
@@ -165,8 +159,7 @@ gog sheets append <sheetId> "Builds!A:C" \
   --no-input
 ```
 
-输出:`UpdatedRange: Builds!A5:C5, UpdatedRows: 1`,可用于断言追加成功。
-
+输出:`UpdatedRange: Builds!A5:C5, UpdatedRows: 1`,可用于断言追加成功.
 ## 异常处理
 
 ### 1. OAuth 凭证未导入
@@ -203,20 +196,16 @@ gog sheets append <sheetId> "Builds!A:C" \
 
 ### Q1:如何避免每次都传 `--account`?
 
-设置环境变量 `GOG_ACCOUNT=you@gmail.com`,gog 会自动使用该账户作为默认账户,无需每次命令重复传入。
-
+设置环境变量 `GOG_ACCOUNT=you@gmail.com`,gog 会自动使用该账户作为默认账户,无需每次命令重复传入.
 ### Q2:`--values-json` 和内联行参数有什么区别?
 
-`--values-json` 接收标准 JSON 二维数组(如 `[["A","B"],["1","2"]]`),推荐用于脚本化场景,可避免 shell 转义问题。内联行参数适合简单交互式调用,但含特殊字符时易出错。
-
+`--values-json` 接收标准 JSON 二维数组(如 `[["A","B"],["1","2"]]`),推荐用于脚本化场景,可避免 shell 转义问题。内联行参数适合简单交互式调用,但含特殊字符时易出错.
 ### Q3:本免费版支持发送邮件吗?
 
-不支持。本免费版仅支持 Gmail 搜索与 Sheets 读/追加。邮件发送、日历事件、云盘搜索、联系人列表、文档导出等能力请升级付费版。
-
+不支持。本免费版仅支持 Gmail 搜索与 Sheets 读/追加。邮件发送、日历事件、云盘搜索、联系人列表、文档导出等能力请升级付费版.
 ### Q4:Sheets 支持更新和清除单元格吗?
 
-本免费版仅支持 `get`(读取)与 `append`(追加)。`update`(更新)与 `clear`(清除)需升级付费版。
-
+本免费版仅支持 `get`(读取)与 `append`(追加)。`update`(更新)与 `clear`(清除)需升级付费版.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

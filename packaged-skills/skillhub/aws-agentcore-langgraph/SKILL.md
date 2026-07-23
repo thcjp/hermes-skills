@@ -6,13 +6,13 @@ displayName: "AgentCore LangGraph"
 summary: "AWS Bedrock AgentCore 与 LangGraph 多智能体编排部署助手"
 license: "Proprietary"
 description: |-
-  基于 AWS Bedrock AgentCore Runtime 与 LangGraph 的多智能体系统构建与部署助手。
+  基于 AWS Bedrock AgentCore Runtime 与 LangGraph 的多智能体系统构建与部署助手.
   覆盖智能体编排(Orchestrator + Specialists)、跨会话记忆(STM/LTM)、
-  Gateway 工具集成(Lambda/MCP/REST)、容器化部署全流程。
+  Gateway 工具集成(Lambda/MCP/REST)、容器化部署全流程.
   适用于需要在 AWS 上构建可扩展多智能体应用的开发团队,支持客户服务、电商、
   医疗、金融等领域的专家智能体协同。提供从本地开发到生产部署的完整 CLI 工作流,
   含状态图设计(StateGraph)、工具路由(tools_condition)、记忆持久化、
-  MCP 工具转换等核心模式。不适用于需要 100% 确定性的关键决策场景。
+  MCP 工具转换等核心模式。不适用于需要 100% 确定性的关键决策场景.
 tags:
   - Agents
   - Operations
@@ -24,8 +24,7 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "AWS,云计算,DevOps"
+
 ---
 # aws-agentcore-langgraph
 
@@ -92,26 +91,20 @@ app.run()
 - **AgentCore Gateway**: 将 API/Lambda 转换为带鉴权的 MCP 工具
 ### AgentCore Runtime
 
-针对AgentCore Runtime,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供AgentCore Runtime相关的配置参数、输入数据和处理选项。
-
+针对AgentCore Runtime,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供AgentCore Runtime相关的配置参数、输入数据和处理选项.
 **输出**: 返回AgentCore Runtime的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`AgentCore Runtime`的配置文档进行参数调优
 ### AgentCore Memory
 
-针对AgentCore Memory,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供AgentCore Memory相关的配置参数、输入数据和处理选项。
-
+针对AgentCore Memory,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供AgentCore Memory相关的配置参数、输入数据和处理选项.
 **输出**: 返回AgentCore Memory的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`AgentCore Memory`的配置文档进行参数调优
 ### LangGraph Routing
 
-针对LangGraph Routing,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供LangGraph Routing相关的配置参数、输入数据和处理选项。
-
+针对LangGraph Routing,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供LangGraph Routing相关的配置参数、输入数据和处理选项.
 **输出**: 返回LangGraph Routing的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`LangGraph Routing`的配置文档进行参数调优
 #
@@ -185,8 +178,7 @@ result = gateway.call("tool_name", param1=value1, param2=value2)
 | 跨会话持久记忆 | session_id、actor_id、事件数据 | STM 逐轮记忆与 LTM 跨会话事实存储 |
 | Gateway 工具集成 | Lambda/REST API 定义与鉴权配置 | 转换为 MCP 工具并自动配置 Gateway URL |
 
-**不适用于**: 需要 100% 确定性的关键决策场景、纯本地无网络环境。
-
+**不适用于**: 需要 100% 确定性的关键决策场景、纯本地无网络环境.
 ## 依赖说明
 
 ### 运行环境
@@ -208,7 +200,7 @@ result = gateway.call("tool_name", param1=value1, param2=value2)
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 使用流程
 
 1. 安装 `bedrock-agentcore`、`bedrock-agentcore`、`langgraph`
@@ -284,23 +276,17 @@ result = gateway.call("search_products", query="laptop", limit=10)
 ## 常见问题
 
 ### Q1: STM 与 LTM 何时分别使用?
-A: STM 用于单次会话内的逐轮对话上下文;LTM 用于跨会话、跨智能体持久化的事实与决策。需要长期记住用户偏好或历史决策时用 LTM。
-
+A: STM 用于单次会话内的逐轮对话上下文;LTM 用于跨会话、跨智能体持久化的事实与决策。需要长期记住用户偏好或历史决策时用 LTM.
 ### Q2: 多个专家智能体如何共享上下文?
-A: 所有专家智能体使用同一个 `session_id`,通过 AgentCore Memory 读写共享事件。编排器在委托任务时传递 session_id。
-
+A: 所有专家智能体使用同一个 `session_id`,通过 AgentCore Memory 读写共享事件。编排器在委托任务时传递 session_id.
 ### Q3: 何时用 Gateway 而非内联工具?
-A: 需要鉴权、生产级可靠性、多智能体共享工具时用 Gateway;本地开发或简单场景可用内联函数或 Fallback Mock。
-
+A: 需要鉴权、生产级可靠性、多智能体共享工具时用 Gateway;本地开发或简单场景可用内联函数或 Fallback Mock.
 ### Q4: 如何部署不带记忆子系统的智能体?
-A: 使用 `agentcore launch --disable-memory`。适用于无状态工具型智能体,可降低成本与延迟。
-
+A: 使用 `agentcore launch --disable-memory`。适用于无状态工具型智能体,可降低成本与延迟.
 ### Q5: tools_condition 路由如何工作?
-A: `tools_condition` 是 LangGraph 预置的条件边函数,根据智能体节点输出中是否包含工具调用,自动路由到 `ToolNode` 执行或到 `END` 结束。
-
+A: `tools_condition` 是 LangGraph 预置的条件边函数,根据智能体节点输出中是否包含工具调用,自动路由到 `ToolNode` 执行或到 `END` 结束.
 ### Q6: 跨平台 ARM64 构建出现警告怎么办?
-A: Platform mismatch warning 属正常现象。CodeBuild 会自动处理 ARM64 跨平台构建,无需手动干预。
-
+A: Platform mismatch warning 属正常现象。CodeBuild 会自动处理 ARM64 跨平台构建,无需手动干预.
 ## 已知限制
 
 - 依赖 AWS 云服务,需要网络连接与有效的 AWS 凭证

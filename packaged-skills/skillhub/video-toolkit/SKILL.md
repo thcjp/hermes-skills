@@ -32,15 +32,14 @@ tags:
   - 批量处理
   - AI增强
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
+
 ---
 # 视频工具箱专业版
 
@@ -139,7 +138,7 @@ ffmpeg -i output_2x.mp4 -c:v libx264 -crf 18 -preset slow -c:a copy final.mp4
 | 720p | 2x | 1440p | realesr-animevideov3 |
 | 1080p | 2x | 4K | realesr-animevideov3 |
 
-**处理**: 解析AI超分辨率(Real-ESRGAN)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**处理**: 解析AI超分辨率(Real-ESRGAN)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 3. 智能重构图
 通过AI分析视频内容,自动选择优秀裁剪区域:
 
@@ -302,8 +301,8 @@ ffmpeg -i original.mp4 -i compressed.mp4 -lavfi ssim -f null - 2>&1 | grep "All"
 ffmpeg -i distorted.mp4 -i reference.mp4 -lavfi libvmaf="model_path=vmaf_v0.6.1.pkl" -f null - 2>&1 | grep "VMAF"
 ```
 
-**输入**: 用户提供视频质量评估所需的指令和必要参数。
-**处理**: 解析视频质量评估的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输入**: 用户提供视频质量评估所需的指令和必要参数.
+**处理**: 解析视频质量评估的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回视频质量评估的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `视频质量评估` 选项
@@ -312,8 +311,7 @@ ffmpeg -i distorted.mp4 -i reference.mp4 -lavfi libvmaf="model_path=vmaf_v0.6.1.
 ## 适用场景
 
 ### 场景一:内容团队批量多平台发布
-内容团队有10个视频,需要同时适配TikTok、Instagram、YouTube Shorts和WhatsApp发布。
-
+内容团队有10个视频,需要同时适配TikTok、Instagram、YouTube Shorts和WhatsApp发布.
 ```bash
 # 一键批量处理所有视频到所有平台
 bash （请参考skill目录中的脚本文件） batch_input/ team_project
@@ -328,8 +326,7 @@ bash （请参考skill目录中的脚本文件） batch_input/ team_project
 ```
 
 ### 场景二:低清视频AI增强
-用户有一段480p的老视频,需要提升到1080p并增强画质。
-
+用户有一段480p的老视频,需要提升到1080p并增强画质.
 ```bash
 # 第1步:AI超分辨率(480p -> 1080p)
 realesrgan-ncnn-vulkan -i old_video.mp4 -o enhanced.mp4 -n realesrgan-x4plus -s 4
@@ -342,8 +339,7 @@ ffmpeg -i old_video.mp4 -i output_1080p.mp4 -lavfi ssim -f null - 2>&1 | grep "A
 ```
 
 ### 场景三:多码率流媒体服务
-为视频平台生成HLS自适应多码率流,支持不同网络环境自动切换画质。
-
+为视频平台生成HLS自适应多码率流,支持不同网络环境自动切换画质.
 ```bash
 # 生成4档画质的HLS流
 bash （请参考skill目录中的脚本文件） source_video.mp4 ./hls_output
@@ -451,12 +447,10 @@ pip install openai-whisper
 ```
 
 ### API Key 配置
-本Skill基于本地工具运行,无需额外API Key。FFmpeg、Real-ESRGAN和Whisper均为本地执行,不依赖外部API。视频处理完全在本地完成,不上传至外部服务。
-
+本Skill基于本地工具运行,无需额外API Key。FFmpeg、Real-ESRGAN和Whisper均为本地执行,不依赖外部API。视频处理完全在本地完成,不上传至外部服务.
 ### 可用性分类
 - **分类**: MD+EXEC()
-- **说明**: 基于Markdown的AI Skill,。核心视频处理依赖FFmpeg/FFprobe,AI超分依赖Real-ESRGAN,字幕依赖Whisper,批量处理依赖Bash脚本。仅处理用户明确提供的视频文件,不自动访问其他文件,不上传至外部服务。
-
+- **说明**: 基于Markdown的AI Skill,。核心视频处理依赖FFmpeg/FFprobe,AI超分依赖Real-ESRGAN,字幕依赖Whisper,批量处理依赖Bash脚本。仅处理用户明确提供的视频文件,不自动访问其他文件,不上传至外部服务.
 ## 案例展示
 
 ### 专业版平台规格配置
@@ -509,23 +503,17 @@ pip install openai-whisper
 ## 常见问题
 
 ### Q1: 专业版兼容免费版命令吗?
-完全兼容。专业版支持免费版的所有FFmpeg命令和参数。专业版新增批量脚本、AI增强和自动化工作流。
-
+完全兼容。专业版支持免费版的所有FFmpeg命令和参数。专业版新增批量脚本、AI增强和自动化工作流.
 ### Q2: Real-ESRGAN需要什么硬件?
-Real-ESRGAN支持NVIDIA GPU(CUDA)、AMD GPU和CPU运行。GPU运行速度更快,CPU运行较慢但兼容性更好。1080p视频2x超分在GPU上约需5-10分钟。
-
+Real-ESRGAN支持NVIDIA GPU(CUDA)、AMD GPU和CPU运行。GPU运行速度更快,CPU运行较慢但兼容性更好。1080p视频2x超分在GPU上约需5-10分钟.
 ### Q3: 批量处理支持哪些视频格式?
-支持MP4、MOV、AVI、MKV、WebM、FLV等FFmpeg支持的所有格式。通过配置文件的formats参数可自定义。
-
+支持MP4、MOV、AVI、MKV、WebM、FLV等FFmpeg支持的所有格式。通过配置文件的formats参数可自定义.
 ### Q4: HLS流如何部署到服务器?
-将HLS输出目录(hls_output/)上传到任意Web服务器或CDN,通过master.m3u8地址播放。播放器(Safari/Video.js/HLS.js)会自动根据网络选择优秀画质。
-
+将HLS输出目录(hls_output/)上传到任意Web服务器或CDN,通过master.m3u8地址播放。播放器(Safari/Video.js/HLS.js)会自动根据网络选择优秀画质.
 ### Q5: 智能重构图如何工作?
-智能重构图通过场景检测分析视频内容,识别画面中的主体位置,动态调整裁剪区域确保主体始终在画面中。避免简单居中裁剪导致主体被切掉。
-
+智能重构图通过场景检测分析视频内容,识别画面中的主体位置,动态调整裁剪区域确保主体始终在画面中。避免简单居中裁剪导致主体被切掉.
 ### Q6: 多语言字幕如何实现?
-通过软字幕方式嵌入多个语言的SRT文件,播放器可切换语言。使用`-map`映射多个字幕流,`-metadata:s:s:N language=详情见说明`标记语言。
-
+通过软字幕方式嵌入多个语言的SRT文件,播放器可切换语言。使用`-map`映射多个字幕流,`-metadata:s:s:N language=详情见说明`标记语言.
 ## 错误处理
 
 | 错误场景(续)| 原因 | 处理方式 |

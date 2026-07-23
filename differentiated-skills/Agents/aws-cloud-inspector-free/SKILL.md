@@ -3,36 +3,32 @@ slug: aws-cloud-inspector-free
 name: aws-cloud-inspector-free
 version: 1.0.0
 displayName: AWS云巡检免费版
-summary: 基于AWS CLI的只读云基础设施查询助手，免费提供资源清点、健康检查与基础安全核查能力，适合个人开发者日常巡检。
+summary: 基于AWS CLI的只读云基础设施查询助手，免费提供资源清点、健康检查与基础安全核查能力，适合个人开发者日常巡检.
 license: Proprietary
 description: AWS云巡检免费版（aws-cloud-inspector-free）面向独立开发者与运维新人，基于本地AWS CLI提供只读的云资源查询与基础巡检能力。它默认只读，所有变更类操作必须用户显式确认才执行，确保零误操作风险。Use
-  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
+  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
 - AWS巡检
 - 只读查询
 - 云基础设施
 - 免费工具
 tools:
-- - read
+- read
 - exec
 edition: free
 homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "AWS,云计算,DevOps"
+
 ---
 # AWS云巡检免费版（aws-cloud-inspector-free）
 
-本Skill基于本地AWS CLI提供只读云基础设施查询能力。所有操作默认只读，任何变更/破坏性操作必须用户显式确认后才执行。
-
-> 版本边界：本免费版支持资源清点、健康检查、基础安全核查与变更预演。**安全审计、成本分析、变更管理**三项高级能力被限制，需升级至 `aws-cloud-inspector-pro` 解锁。
-
+本Skill基于本地AWS CLI提供只读云基础设施查询能力。所有操作默认只读，任何变更/破坏性操作必须用户显式确认后才执行.
+> 版本边界：本免费版支持资源清点、健康检查、基础安全核查与变更预演。**安全审计、成本分析、变更管理**三项高级能力被限制，需升级至 `aws-cloud-inspector-pro` 解锁.
 ## 使用流程
 
-本工具属"中等工具"级别，完整上手目标 < 120秒。
-
+本工具属"中等工具"级别，完整上手目标 < 120秒.
 | 阶段 | 目标耗时 | 任务 |
 |---|----|---|
 | 环境检查 | < 30秒 | 确认AWS CLI已安装且凭证已配置 |
@@ -57,8 +53,7 @@ aws --version  # 确认CLI已安装
 aws configure list  # 查看当前profile与region
 ```
 
-如果未配置，运行 `aws configure` 引导配置。
-
+如果未配置，运行 `aws configure` 引导配置.
 ### 1.2 身份确认（< 30秒）
 
 ```bash
@@ -78,13 +73,12 @@ aws ec2 describe-instances --query 'Reservations[].Instances[].{ID:InstanceId,St
 
 以下规则优先级最高，任何命令执行前必须先通过这些规则检查：
 
-1. **默认只读**：所有操作视为只读，除非用户显式请求变更**并**确认。
-2. **破坏性操作二次确认**：对任何潜在破坏性操作（delete/terminate/destroy/modify/scale/billing/IAM凭证），必须要求用户确认步骤。
-3. **优先dry-run**：有 `--dry-run` 参数时优先使用，先展示计划再执行。
-4. **绝不泄露密钥**：永不输出或记录access key、session token等敏感信息。查询IAM时只显示元数据，不显示凭证内容。
-5. **Region感知**：结果如果region-scoped，必须明确说明使用的region。
-6. **Profile隔离**：严格使用用户指定的profile，不跨profile操作。
-
+1. **默认只读**：所有操作视为只读，除非用户显式请求变更**并**确认.
+2. **破坏性操作二次确认**：对任何潜在破坏性操作（delete/terminate/destroy/modify/scale/billing/IAM凭证），必须要求用户确认步骤.
+3. **优先dry-run**：有 `--dry-run` 参数时优先使用，先展示计划再执行.
+4. **绝不泄露密钥**：永不输出或记录access key、session token等敏感信息。查询IAM时只显示元数据，不显示凭证内容.
+5. **Region感知**：结果如果region-scoped，必须明确说明使用的region.
+6. **Profile隔离**：严格使用用户指定的profile，不跨profile操作.
 ## 三、Region与Profile处理
 
 ### 3.1 优先级链
@@ -130,8 +124,7 @@ aws_access_key_id = AKIA...
 aws_secret_access_key = ...
 ```
 
-> 安全提示：本Skill永不读取或输出 `~/.aws/credentials` 文件内容，仅通过AWS CLI内部机制使用凭证。
-
+> 安全提示：本Skill永不读取或输出 `~/.aws/credentials` 文件内容，仅通过AWS CLI内部机制使用凭证.
 ## 四、任务指南（常见巡检请求）
 
 | 任务类型 | 推荐命令 | 操作属性 | 免费版支持 |
@@ -149,8 +142,7 @@ aws_secret_access_key = ...
 ### 场景1：新接手项目的资源盘点
 
 **用户角色**：新入职运维工程师
-**目标**：盘点刚接手的AWS账号下所有核心资源。
-
+**目标**：盘点刚接手的AWS账号下所有核心资源.
 ```bash
 # 步骤1：确认身份
 aws sts get-caller-identity
@@ -173,8 +165,7 @@ aws iam list-users --query 'Users[].{Name:UserName,Created:CreateDate}' --output
 ### 场景2：上线前基础安全自检
 
 **用户角色**：独立开发者
-**目标**：上线前检查是否存在公开暴露的资源。
-
+**目标**：上线前检查是否存在公开暴露的资源.
 ```bash
 # 检查1：S3桶公开访问阻止配置
 aws s3api get-public-access-block --bucket my-bucket 2>/dev/null || echo "未配置公开访问阻止"
@@ -192,8 +183,7 @@ aws iam list-access-keys --user-name my-user \
 ### 场景3：CloudWatch告警排查
 
 **用户角色**：运维值班
-**目标**：排查某EC2实例的CPU告警。
-
+**目标**：排查某EC2实例的CPU告警.
 ```bash
 # 查看最近1小时CPU使用率
 aws cloudwatch get-metric-statistics \
@@ -214,17 +204,13 @@ aws cloudwatch describe-alarms --state-value ALARM \
 ## 常见问题
 
 ### Q1：如何切换到不同的AWS账号？
-A：使用 `--profile` 参数指定命名profile。例如 `aws ec2 describe-instances --profile production`。或设置环境变量 `export AWS_PROFILE=production`。
-
+A：使用 `--profile` 参数指定命名profile。例如 `aws ec2 describe-instances --profile production`。或设置环境变量 `export AWS_PROFILE=production`.
 ### Q2：如何查询所有region的资源？
-A：先 `aws ec2 describe-regions` 获取所有region列表，然后循环调用带 `--region` 参数的命令。注意部分服务（如IAM、S3）是全局服务，无需指定region。
-
+A：先 `aws ec2 describe-regions` 获取所有region列表，然后循环调用带 `--region` 参数的命令。注意部分服务（如IAM、S3）是全局服务，无需指定region.
 ### Q3：免费版能执行变更操作吗？
-A：可以，但所有变更类操作（delete/terminate/modify等）必须经过用户二次确认。本Skill会先展示完整命令与 `--dry-run` 预演结果，用户确认后才执行。完整变更管理（变更追踪、回滚、审批流）是专业版能力。
-
+A：可以，但所有变更类操作（delete/terminate/modify等）必须经过用户二次确认。本Skill会先展示完整命令与 `--dry-run` 预演结果，用户确认后才执行。完整变更管理（变更追踪、回滚、审批流）是专业版能力.
 ### Q4：报错 "Unable to locate credentials" 怎么办？
-A：运行 `aws configure` 配置访问密钥，或检查 `~/.aws/credentials` 文件是否存在且格式正确。也可通过环境变量 `AWS_ACCESS_KEY_ID` 与 `AWS_SECRET_ACCESS_KEY` 临时设置。
-
+A：运行 `aws configure` 配置访问密钥，或检查 `~/.aws/credentials` 文件是否存在且格式正确。也可通过环境变量 `AWS_ACCESS_KEY_ID` 与 `AWS_SECRET_ACCESS_KEY` 临时设置.
 ### Q5：如何只查询特定状态的EC2实例？
 A：使用 `--filters` 参数。例如：
 ```bash
@@ -233,11 +219,9 @@ aws ec2 describe-instances --filters Name=instance-state-name,Values=running \
 ```
 
 ### Q6：免费版与专业版的核心差异？
-A：免费版提供资源清点、健康检查、基础安全核查与变更预演。专业版新增三项高级能力：(1) 安全审计（跨服务安全态势扫描）；(2) 成本分析（Cost Explorer深度查询）；(3) 变更管理（变更追踪与回滚）。
-
+A：免费版提供资源清点、健康检查、基础安全核查与变更预演。专业版新增三项高级能力：(1) 安全审计（跨服务安全态势扫描）；(2) 成本分析（Cost Explorer深度查询）；(3) 变更管理（变更追踪与回滚）.
 ### Q7：查询结果太多如何过滤？
-A：使用 `--query` 参数配合JMESPath语法过滤。例如 `--query 'Reservations[].Instances[?State.Name==`running`].InstanceId'`。也可用 `--output table` 让结果更易读。
-
+A：使用 `--query` 参数配合JMESPath语法过滤。例如 `--query 'Reservations[].Instances[?State.Name==`running`].InstanceId'`。也可用 `--output table` 让结果更易读.
 ## 错误处理
 
 | 序号 | 问题 | 原因 | 修复方案 | 优先级 |
@@ -259,8 +243,7 @@ A：使用 `--query` 参数配合JMESPath语法过滤。例如 `--query 'Reserva
 - [references/aws-security-basics.md](references/aws-security-basics.md) —— 基础安全核查清单与命令
 - [references/aws-region-profile.md](references/aws-region-profile.md) —— Region与Profile配置详解
 
-> 安全审计、成本分析、变更管理相关参考文档在专业版提供。
-
+> 安全审计、成本分析、变更管理相关参考文档在专业版提供.
 ## 依赖说明
 
 ### 运行环境
@@ -341,50 +324,51 @@ SOFTWARE.
 ### AWS云巡检免费版（aws-cloud-
 AWS云巡检免费版（aws-cloud-inspector-free）面向独立开发者与运维新人，基于本地AWS CLI提供只读的云资源查询与基础巡检能力
 
-**输入**: 用户提供AWS云巡检免费版（aws-cloud-所需的指令和必要参数。
-**处理**: 解析AWS云巡检免费版（aws-cloud-的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回AWS云巡检免费版（aws-cloud-的响应数据,包含状态码、结果和日志。
+**输入**: 用户提供AWS云巡检免费版（aws-cloud-所需的指令和必要参数.
+**处理**: 解析AWS云巡检免费版（aws-cloud-的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回AWS云巡检免费版（aws-cloud-的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 它默认只读
 它默认只读，所有变更类操作必须用户显式确认才执行，确保零误操作风险
 
-**输入**: 用户提供它默认只读所需的指令和必要参数。
-**处理**: 解析它默认只读的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回它默认只读的响应数据,包含状态码、结果和日志。
+**输入**: 用户提供它默认只读所需的指令和必要参数.
+**处理**: 解析它默认只读的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回它默认只读的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### aws/config` 与 `
 aws/config` 与 `~/
 
-**输入**: 用户提供aws/config` 与 `所需的指令和必要参数。
-**处理**: 解析aws/config` 与 `的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回aws/config` 与 `的响应数据,包含状态码、结果和日志。
+**输入**: 用户提供aws/config` 与 `所需的指令和必要参数.
+**处理**: 解析aws/config` 与 `的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回aws/config` 与 `的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### aws/credentials
 aws/credentials` 标准位置）
 
-**输入**: 用户提供aws/credentials所需的指令和必要参数。
-**处理**: 解析aws/credentials的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回aws/credentials的响应数据,包含状态码、结果和日志。
+**输入**: 用户提供aws/credentials所需的指令和必要参数.
+**处理**: 解析aws/credentials的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回aws/credentials的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 适用场景
 适用场景：个人AWS账号日常巡检、新接手项目的资源盘点、上线前基础安全自检、CloudWatch告警排查、IAM权限梳理、学习AWS CLI命令模式、为团队试点云巡检流程前的个人练习
 
-**输入**: 用户提供适用场景所需的指令和必要参数。
-**处理**: 解析适用场景的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回适用场景的响应数据,包含状态码、结果和日志。
+**输入**: 用户提供适用场景所需的指令和必要参数.
+**处理**: 解析适用场景的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回适用场景的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置。
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：的只读云基础设施、查询助手、免费提供资源清点、健康检查与基础安、全核查能力、适合个人开发者日、Use、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+**技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：的只读云基础设施、查询助手、免费提供资源清点、健康检查与基础安、全核查能力、适合个人开发者日、Use、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 适用场景(补充)
 
 ```bash
 # ...
+
+具体详情请参考下方内容.
 ## 输出格式
 ```json
 {

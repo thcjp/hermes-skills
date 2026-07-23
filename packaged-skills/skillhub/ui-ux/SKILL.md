@@ -3,149 +3,62 @@ slug: "ui-ux"
 name: "ui-ux"
 version: "1.0.0"
 displayName: "UI / UX"
-summary: "可搜UI/UX设计库,50+风格/97色板/57字体对/99规则"Proprietary"
+summary: "可搜UI/UX设计库,50+风格/97色板/57字体对/99规则"
+license: "Proprietary"
+homepage: "https://skillhub.ai/skills/ui-ux"
 description: |-
   Searchable UI/UX design databases: 50+ styles, 97 palettes, 57 font
-  pairings, 99 UX rules, 25 cha。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-  - Creative
+  pairings, 99 UX rules, 25 character sets.
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
-license: "MIT"
+- read
+- exec
+tags:
+- ui
+- ux
 ---
-# UI / UX
+## 任务定义
 
-## 付费版专享能力
+根据用户的设计需求，从可搜索的UI/UX设计库中检索匹配的设计风格、配色方案、字体配对和UX规则，输出完整的设计系统供开发者使用。
 
-| 能力 | 免费版 | 付费版 |
-|---|---|---|
-| 基础功能 | 支持 | 支持 |
-| 高清分辨率与无损输出 | 不支持 | 支持 |
-| 批量生成与风格预设 | 不支持 | 支持 |
-| 自定义模型微调 | 不支持 | 支持 |
-| 商用版权授权 | 不支持 | 支持 |
-| 多版本对比与A/B优选 | 不支持 | 支持 |
+## 输入输出
 
-## 核心能力
+| 输入 | 说明 |
+|------|------|
+| 设计关键词 | 必填，如"beauty spa elegant"、"dashboard minimal" |
+| 项目名称 | 推荐填写，用于生成设计系统标识 |
+| 技术栈 | 可选，如html-tailwind、react、vue等 |
+| 补充领域 | 可选，如typography、ux、animation |
 
-- Searchable UI/UX design databases: 50+ styles, 97 palettes, 57 font
-  pairings, 99 UX rules, 25 cha
-#
-## 适用场景
+| 输出 | 说明 |
+|------|------|
+| 设计系统 | 风格定义、色彩变量、排版规范 |
+| 配色方案 | 97种色板中匹配的最佳方案 |
+| 字体配对 | 57组字体配对中的推荐组合 |
+| UX规则 | 99条规则中相关的最佳实践 |
 
-| 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+## 使用指南
 
-**不适用于**：需要人工判断的复杂决策场景
+1. 分析设计需求，提取关键词
+2. 搜索设计系统、补充领域和技术栈
 
-## 使用流程
+```bash
+# 搜索设计系统
+python3 design_db.py "beauty spa wellness service elegant" --design-system -p "Serenity Spa"
 
-1. 确认运行环境满足依赖说明中的要求
-2. 根据适用场景选择合适的使用方式
-3. 执行操作并检查输出结果
-4. 如遇错误，参考错误处理章节
+# 补充搜索UX规则和字体
+python3 design_db.py "animation accessibility" --domain ux
+python3 design_db.py "elegant luxury serif" --domain typography
 
-#
-## 输入格式
-
-| 参数名 | 类型 | 必填 | 说明 |
-|---:|---:|---:|---:|
-| content | string | 否 | ui-ux处理的内容输入 |,  |
-| mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
-| max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
-| skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |
-
-## 输出格式
-
-```json
-{
-  "success": true,
-  "data": {
-    "final_result": {
-      "ux_result": "ux_result_value",
-      "ux_metadata": "ux_metadata_value",
-      "ux_status": "ux_status_value"
-    },
-    "execution_log": [
-      {
-        "step": 1,
-        "name": "按流程执行",
-        "status": "completed",
-        "duration_ms": 1200,
-        "output_summary": "按流程执行"
-      },
-      {
-        "step": 2,
-        "name": "按流程执行",
-        "status": "completed",
-        "duration_ms": 3500,
-        "output_summary": "按流程执行"
-      },
-      {
-        "step": 3,
-        "name": "按流程执行",
-        "status": "completed",
-        "duration_ms": 2100,
-        "output_summary": "按流程执行"
-      },
-      {
-        "step": 4,
-        "name": "按流程执行",
-        "status": "completed",
-        "duration_ms": 800,
-        "output_summary": "按流程执行"
-      }
-    ],
-    "total_duration_ms": 7600,
-    "gates_passed": 3,
-    "gates_total": 3
-  },
-  "error": null
-}
+# 搜索技术栈组件
+python3 design_db.py "layout responsive form" --stack html-tailwind
 ```
-
-中间产物模板参考: `assets/ui-ux_template`
-
-## 异常处理
-
-| 错误场景 | 原因 | 处理方式 |
-|:---:|:---:|:---:|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
 
 ## 依赖说明
 
-### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
-- **操作系统**: Windows / macOS / Linux
+- Python 3.8+ 运行环境
+- 设计库数据文件（随skill分发）
+- LLM API Key（用于综合分析和方案生成）
 
-### 第三方依赖
-| 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:------|------:|:------|:------|
-| LLM API | API | 必需 | 由Agent内置LLM提供 |
-
-### API Key 配置
-- 
-
-### 可用性分类
-- **分类**: MD+EXEC()
-- **说明**: 基于Markdown的AI Skill,
-
-**API Key配置方式**:
-```bash
-export API_KEY="your_api_key_here"
-```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 案例展示
 
 **User request:** "Build a landing page for a professional skincare service"
@@ -173,12 +86,10 @@ python3 （请参考skill目录中的脚本文件） "layout responsive form" --
 
 Then synthesize design system + detailed searches and implement.
 
----
-
 ## 常见问题
 
 ### Q1: 如何开始使用UI / UX？
-A: 
+A: 提供设计需求关键词（如"beauty spa elegant"），系统会从50+风格、97色板、57字体对和99条UX规则中检索匹配方案，输出完整设计系统供直接使用。
 
 ## 错误处理
 
@@ -189,3 +100,8 @@ A:
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
+## 已知限制
+
+- 设计库内容为静态预设数据，无法根据最新设计趋势自动更新，需定期手动维护
+- 配色方案和字体配对基于通用设计原则，特定品牌场景（如强品牌色约束）仍需人工调整
+- 99条UX规则为通用最佳实践，不涵盖医疗、金融等强监管行业的特殊合规要求

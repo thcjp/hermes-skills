@@ -7,8 +7,9 @@ summary: "用Nano Banana Pro(Gemini 3 Pro Image)生成编辑图片"
 license: "Proprietary"
 description: |-
   Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image)。Use\
-  \ for image create/modify reque。Use when 用户需要Wenxiang 2d5 Banner相关功能时使用。不适用于超出本技能能力范围的复杂需求。
-tags: "'[''Other'']'"
+  \ for image create/modify reque。Use when 用户需要Wenxiang 2d5 Banner相关功能时使用。不适用于超出本技能能力范围的复杂需求.
+tags:
+  - Other
 tools:
   - read
   - exec
@@ -17,7 +18,7 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
+
 ---
 # Wenxiang 2d5 Banner
 
@@ -42,7 +43,9 @@ tools: ["read", "write", "exec"]
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 内容生成 | 提示词与风格参数 | 生成内容与质量评分 |
+| 图片生成 | 提示词与尺寸参数 | 图片文件与分辨率 |
+| 用Nano Bana | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -98,7 +101,7 @@ tools: ["read", "write", "exec"]
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 **Generate new image:**

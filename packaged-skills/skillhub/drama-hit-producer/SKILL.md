@@ -8,7 +8,12 @@ license: Proprietary
 description: |-
   短剧爆款生产线——丢进一章小说,25步全自动管道吐出可发布的竖屏短剧。核心功能:双轨风格(真人剧InstantID+动漫FLUX/Kling)、三轨角色构建(手工/AI批量/自动提取)、四层TTS智能配音(云端/本地GPU/免费)、质量闭环(A/B/C/D评分+自动重做+人工兜底)、25步管道从剧本转换到多平台发布全链路覆盖、资产持久化、经验回写自生长闭环
 homepage: "https://skillhub.cn"
-tags: [视频创作, 短剧, 内容创作, 自动化, AI视频]
+tags:
+  - 视频创作
+  - 短剧
+  - 内容创作
+  - 自动化
+  - AI视频
 tools:
   - read
   - exec
@@ -16,12 +21,12 @@ tools:
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
+
+
 ---
 # 短剧爆款生产线
 
-从小说章节自动生成竖屏短剧,支持多集、多角色配音、多平台发布。核心能力包括双轨风格(真人剧/动漫)、三轨角色构建(手工/AI批量/自动提取)、四层TTS配音(云端/本地GPU/免费)、质量闭环(自动重做+人工兜底)、资产持久化。
-
+从小说章节自动生成竖屏短剧,支持多集、多角色配音、多平台发布。核心能力包括双轨风格(真人剧/动漫)、三轨角色构建(手工/AI批量/自动提取)、四层TTS配音(云端/本地GPU/免费)、质量闭环(自动重做+人工兜底)、资产持久化.
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -94,8 +99,7 @@ tools: ["read", "write", "exec"]
 - 生成成功后记录经验:记录成功生成模式(drama_id/style_track/scene_id等)
 - 生成失败时记录错误教训:错误经验自动记录(错误码和原因)
 
-**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
-
+**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤.
 ## 双轨风格配置
 
 | style_track | scene_id | 画面生成 | TTS推荐 | 成本 |
@@ -199,11 +203,9 @@ tools: ["read", "write", "exec"]
 - **零暴露原则**: API Key必须通过环境变量注入(如`$env:IMAGE_API_KEY`),严禁硬编码在SKILL.md或脚本源码中;所有示例代码中Key位置使用环境变量占位符;禁止在日志、错误信息、输出JSON中打印Key明文
 
 ### 使用流程(补充)
-四层TTS降级链中L4(Edge-TTS)为免费方案,无API Key可使用。本地GPU方案(Fish-Speech/GPT-SoVITS)需GPU环境。
-
-只需将SKILL.md文件放入Agent的skills目录即可直接使用。
-如果Skill中包含exec工具调用,需要Agent支持命令行执行能力。
-
+四层TTS降级链中L4(Edge-TTS)为免费方案,无API Key可使用。本地GPU方案(Fish-Speech/GPT-SoVITS)需GPU环境.
+只需将SKILL.md文件放入Agent的skills目录即可直接使用.
+如果Skill中包含exec工具调用,需要Agent支持命令行执行能力.
 ### 可用性分类
 - **分类**: MD+EXEC
 - **说明**: 纯Markdown,但需要exec能力(命令行执行),用于文件读写和命令调用
@@ -306,8 +308,7 @@ tools: ["read", "write", "exec"]
 
 ## 案例展示
 
-以下案例展示了skill的工作流程和预期输出效果，由LLM按照skill定义的流程生成。
-
+以下案例展示了skill的工作流程和预期输出效果，由LLM按照skill定义的流程生成.
 ### 案例1: 动漫风格短剧生成(FLUX标准画质,多平台发布)
 
 **输入**:
@@ -481,17 +482,13 @@ tools: ["read", "write", "exec"]
 ## 常见问题
 
 ### Q1: 真人剧和动漫风格有什么区别?如何选择?
-A: 真人剧(style_track=real_person)使用InstantID云端API生成真人风格画面,成本约45元/分钟,适合现实题材;动漫(style_track=anime)使用FLUX(约14元/分钟,标准画质)或Kling(约35元/分钟,高级画质),适合玄幻/二次元题材。建议:预算有限选anime+FLUX(scene_6),追求真实感选real_person(scene_8),追求画质选anime+Kling(scene_7)。
-
+A: 真人剧(style_track=real_person)使用InstantID云端API生成真人风格画面,成本约45元/分钟,适合现实题材;动漫(style_track=anime)使用FLUX(约14元/分钟,标准画质)或Kling(约35元/分钟,高级画质),适合玄幻/二次元题材。建议:预算有限选anime+FLUX(scene_6),追求真实感选real_person(scene_8),追求画质选anime+Kling(scene_7).
 ### Q2: 四层TTS降级链如何工作?
-A: TTS按L1→L2→L3→L4降级:L1 CosyVoice2(云端,高质量,需API Key)→L2 Fish-Speech(本地GPU,免费)→L3 GPT-SoVITS(本地GPU,免费)→L4 Edge-TTS(云端免费,兜底)。无API Key时直接使用L4 Edge-TTS免费方案。本地GPU方案需GPU环境,无GPU时跳过L2/L3直接到L4。
-
+A: TTS按L1→L2→L3→L4降级:L1 CosyVoice2(云端,高质量,需API Key)→L2 Fish-Speech(本地GPU,免费)→L3 GPT-SoVITS(本地GPU,免费)→L4 Edge-TTS(云端免费,兜底)。无API Key时直接使用L4 Edge-TTS免费方案。本地GPU方案需GPU环境,无GPU时跳过L2/L3直接到L4.
 ### Q3: 质量监督C/D级如何处理?
-A: C/D级触发auto_redo自动重做(最大2次),重做后仍不达标触发final_arbitration人工兜底裁决(pass/reject)。R1-R4红线检查:角色一致性/剧本忠实度/画面质量/配音质量,任一红线不通过直接判D级。人工裁决reject需整体返工(ARBITRATION_REJECT)。
-
+A: C/D级触发auto_redo自动重做(最大2次),重做后仍不达标触发final_arbitration人工兜底裁决(pass/reject)。R1-R4红线检查:角色一致性/剧本忠实度/画面质量/配音质量,任一红线不通过直接判D级。人工裁决reject需整体返工(ARBITRATION_REJECT).
 ### Q4: 25步管道执行超时怎么办?
-A: 管道执行超时上限为60分钟,超时返回DRAMA_TIMEOUT错误。建议:1)检查各API服务是否正常;2)降低单集复杂度(减少分镜数量);3)使用anime+FLUX(scene_6)降低生成时间;4)分章节分批生成避免单次管道过长。生成锁冲突(GENERATION_LOCKED)时同一book_id不可并行生成。
-
+A: 管道执行超时上限为60分钟,超时返回DRAMA_TIMEOUT错误。建议:1)检查各API服务是否正常;2)降低单集复杂度(减少分镜数量);3)使用anime+FLUX(scene_6)降低生成时间;4)分章节分批生成避免单次管道过长。生成锁冲突(GENERATION_LOCKED)时同一book_id不可并行生成.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

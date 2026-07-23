@@ -7,19 +7,18 @@ summary: "跨Cloudflare/DNSimple/Namecheap做域名DNS运维与区托管"
 license: "Proprietary"
 description: |-
   Domain/DNS ops across Cloudflare, DNSimple, Namecheap for Peter。Use
-  for onboarding zones to Clou。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
+  for onboarding zones to Clou。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - Other
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Domain Dns Ops
 
@@ -44,7 +43,9 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 运维管理 | 服务名与操作类型 | 运维状态与操作日志 |
+| DNS查询 | 域名与记录类型 | 解析记录与TTL信息 |
+| 域名解析 | 主机名与记录类型 | IP地址与解析链路 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -103,8 +104,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 错误处理
 
 | 错误场景(续)| 原因 | 处理方式 |
@@ -118,12 +118,13 @@ export API_KEY="your_api_key_here"
 
 ### 如何开始使用？
 
-阅读使用流程章节,按步骤配置环境和参数后即可开始使用。首次使用建议先阅读依赖说明章节确认环境就绪。
-
+阅读使用流程章节,按步骤配置环境和参数后即可开始使用。首次使用建议先阅读依赖说明章节确认环境就绪.
 ### 遇到错误怎么办？
 
-查看错误处理章节,对照错误场景找到对应的处理方式。如错误处理章节未覆盖,收集错误信息后通过已知限制章节了解skill能力边界。
-
+查看错误处理章节,对照错误场景找到对应的处理方式。如错误处理章节未覆盖,收集错误信息后通过已知限制章节了解skill能力边界.
 ## 已知限制
 
 - 依赖云服务，需要网络连接
+- 需要有效的云服务凭证和配置好的CLI环境
+- 产生的云资源可能产生费用，使用前请确认计费方式
+- 不同区域的服务可用性和功能支持可能存在差异

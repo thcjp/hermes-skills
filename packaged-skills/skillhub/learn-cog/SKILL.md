@@ -6,10 +6,10 @@ displayName: "个性化学习助手"
 summary: "AI驱动的个性化学习助手，支持项目教程、语言学习、写作反馈、视觉学习与学习指南。"
 license: "Proprietary"
 description: |-
-  个性化学习助手，基于CellCog提供多模式AI辅导。
-  支持项目教程、语言学习、写作反馈、视觉学习与学习指南生成。
-  覆盖STEM、人文、技术与职业技能等多学科领域。
-  适用于学生、开发者与终身学习者的知识获取与技能提升。
+  个性化学习助手，基于CellCog提供多模式AI辅导.
+  支持项目教程、语言学习、写作反馈、视觉学习与学习指南生成.
+  覆盖STEM、人文、技术与职业技能等多学科领域.
+  适用于学生、开发者与终身学习者的知识获取与技能提升.
 tools:
   - read
   - exec
@@ -20,13 +20,11 @@ tags:
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # 个性化学习助手
 
-AI驱动的个性化学习助手，支持项目教程、语言学习、写作反馈、视觉学习与学习指南。
-
+AI驱动的个性化学习助手，支持项目教程、语言学习、写作反馈、视觉学习与学习指南.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -69,7 +67,7 @@ AI驱动的个性化学习助手，支持项目教程、语言学习、写作反
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### 项目教程（Project Tutorials）
@@ -86,7 +84,7 @@ export API_KEY="your_api_key_here"
 > "Walk me through building a REST API step by step"
 > "Teach me React hooks: My level is I know basic JavaScript, never used React"
 
-**输出**: 返回项目教程（Project Tutorials）的处理结果,包含执行状态码、结果数据和执行日志。
+**输出**: 返回项目教程（Project Tutorials）的处理结果,包含执行状态码、结果数据和执行日志.
 ### 语言学习（Language Learning）
 系统化掌握新语言，覆盖听说读写全方位训练：
 
@@ -96,8 +94,8 @@ export API_KEY="your_api_key_here"
 - **多语言支持**：日语（JLPT N4-N1）、法语、西班牙语、中文等
 - **文化背景**：附带语言使用的文化语境与注意事项
 
-**输入**: 用户提供语言学习（Language Learning）所需的指令和必要参数。
-**处理**: 解析语言学习（Language Learning）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输入**: 用户提供语言学习（Language Learning）所需的指令和必要参数.
+**处理**: 解析语言学习（Language Learning）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回语言学习（Language Learning）的处理结果,包含执行状态码、结果数据和执行日志。### 写作反馈（Writing Feedback）
 
 对文章、论文、邮件等写作内容提供专业反馈：
@@ -117,7 +115,7 @@ export API_KEY="your_api_key_here"
 - **对比图**：通过视觉对比帮助理解差异
 - **学习风格适配**：支持Visual（图表）、Examples（示例）、Analogies（类比）、Step-by-Step（步骤）、Big Picture（全局）、Hands-On（实践）等多种学习风格
 
-**输入**: 用户提供视觉学习（Visual Learning）所需的指令和必要参数。
+**输入**: 用户提供视觉学习（Visual Learning）所需的指令和必要参数.
 **处理**: 解析视觉学习（Visual Learning）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 学习指南（Study Guides）
 生成系统化的学习材料与备考资源：
 
@@ -127,7 +125,7 @@ export API_KEY="your_api_key_here"
 - **摘要笔记（Summary Notes）**：如"Summarize Chapter 5 of my biology textbook"
 - **速查表（Cheat Sheets）**：如"Create a one-page reference for Python syntax"
 
-**输入**: 用户提供学习指南（Study Guides）所需的指令和必要参数。
+**输入**: 用户提供学习指南（Study Guides）所需的指令和必要参数.
 **处理**: 解析学习指南（Study Guides）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 概念解释与作业辅导（Concept Explanations & Homework）
 多角度解释概念与作业问题解答：
 
@@ -137,9 +135,8 @@ export API_KEY="your_api_key_here"
 - **代码调试**：解释代码为何不工作并帮助修复
 - **作文结构**：帮助构建论文框架与论点
 
-**处理**: 解析概念解释与作业辅导（Concept Explanations & Homework）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回概念解释与作业辅导（Concept Explanations & Homework）的处理结果,包含执行状态码、结果数据和执行日志。
-
+**处理**: 解析概念解释与作业辅导（Concept Explanations & Homework）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回概念解释与作业辅导（Concept Explanations & Homework）的处理结果,包含执行状态码、结果数据和执行日志.
 ---
 
 ## 使用流程
@@ -151,8 +148,7 @@ export API_KEY="your_api_key_here"
 5. 使用自然语言描述学习需求，Agent生成个性化学习内容
 6. 通过主动回忆（Active Recall）与练习巩固学习成果
 
-**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
-
+**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤.
 ## 示例
 
 ### 示例1：学习React Hooks
@@ -211,23 +207,17 @@ Agent: 日语对话练习 - 在东京问路：
 ## 常见问题
 
 ### Q1: 如何获得最佳学习效果？
-A: 1）说明当前水平；2）多问"为什么"而非只要答案；3）请求练习题；4）承认困惑点；5）基于已理解的内容构建新知识；6）使用主动回忆（要求测验而非仅解释）。
-
+A: 1）说明当前水平；2）多问"为什么"而非只要答案；3）请求练习题；4）承认困惑点；5）基于已理解的内容构建新知识；6）使用主动回忆（要求测验而非仅解释）.
 ### Q2: agent模式和agent team模式有什么区别？
-A: `agent`模式适合大多数学习场景：快速解释、作业辅导、学习材料生成。`agent team`模式适合综合学习：完整课程大纲、研究论文、多源综合分析。
-
+A: `agent`模式适合大多数学习场景：快速解释、作业辅导、学习材料生成。`agent team`模式适合综合学习：完整课程大纲、研究论文、多源综合分析.
 ### Q3: 支持哪些学科领域？
-A: STEM（数学、物理、化学、生物、计算机、统计）、人文（历史、文学、哲学、语言、心理）、职业（商业、金融、营销、项目管理、设计、法律）、技术技能（编程语言、云平台、DevOps、数据工程、AI/ML）。
-
+A: STEM（数学、物理、化学、生物、计算机、统计）、人文（历史、文学、哲学、语言、心理）、职业（商业、金融、营销、项目管理、设计、法律）、技术技能（编程语言、云平台、DevOps、数据工程、AI/ML）.
 ### Q4: 如何进行语言学习写作反馈？
-A: 将你的写作内容发送给Agent，说明语言（如西班牙语），Agent会检查语法错误、解释错误原因、提供修改建议并优化表达。
-
+A: 将你的写作内容发送给Agent，说明语言（如西班牙语），Agent会检查语法错误、解释错误原因、提供修改建议并优化表达.
 ### Q5: CellCog未安装怎么办？
-A: 运行 `/cellcog-setup` 安装认证，或手动执行 `pip install -U cellcog` 并设置 `CELLCOG_API_KEY`。也可直接使用Agent内置LLM进行学习辅导。
-
+A: 运行 `/cellcog-setup` 安装认证，或手动执行 `pip install -U cellcog` 并设置 `CELLCOG_API_KEY`。也可直接使用Agent内置LLM进行学习辅导.
 ### Q6: 如何生成备考学习计划？
-A: 提供考试名称、时间线、目标分数、薄弱环节，Agent会生成包含每周计划、资源推荐、练习测试策略与考前清单的完整学习计划。
-
+A: 提供考试名称、时间线、目标分数、薄弱环节，Agent会生成包含每周计划、资源推荐、练习测试策略与考前清单的完整学习计划.
 ## 已知限制
 
 - 单次会话仅覆盖一个学习意图，跨学科综合问题需拆分为多次交互

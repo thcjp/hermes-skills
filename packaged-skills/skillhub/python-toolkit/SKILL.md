@@ -26,15 +26,14 @@ tags:
   - 性能优化
   - 测试
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Python工具箱(专业版)
 
@@ -63,34 +62,27 @@ tags: "工具,效率,自动化"
 | 团队治理 | 规则分级、豁免、迁移指南 | 免费版无 |
 ### 能力模块
 
-针对能力模块,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供能力模块相关的配置参数、输入数据和处理选项。
-
+针对能力模块,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供能力模块相关的配置参数、输入数据和处理选项.
 **输出**: 返回能力模块的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`能力模块`的配置文档进行参数调优
 ### PEP 8 + Pythonic
 
-针对PEP 8 + Pythonic,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供PEP 8 + Pythonic相关的配置参数、输入数据和处理选项。
-
+针对PEP 8 + Pythonic,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供PEP 8 + Pythonic相关的配置参数、输入数据和处理选项.
 **输出**: 返回PEP 8 + Pythonic的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`PEP 8 + Pythonic`的配置文档进行参数调优
 ### 类型系统
 
-针对类型系统,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供类型系统相关的配置参数、输入数据和处理选项。
-
+针对类型系统,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供类型系统相关的配置参数、输入数据和处理选项.
 **输出**: 返回类型系统的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`类型系统`的配置文档进行参数调优
 #
 ## 适用场景
 
 ### 场景一:企业级异步服务规范统一
-团队需要为多个异步服务统一规范,并接入CI门禁。
-
+团队需要为多个异步服务统一规范,并接入CI门禁.
 ```yaml
 # .github/workflows/python-quality.yml 企业级Python质量门禁
 name: Python Quality Gate
@@ -117,8 +109,7 @@ jobs:
 ```
 
 ### 场景二:异步服务并发与性能调优
-某异步服务在高并发下响应变慢,工具分析后给出符合规范的优化方案。
-
+某异步服务在高并发下响应变慢,工具分析后给出符合规范的优化方案.
 ```python
 import asyncio
 from collections.abc import AsyncIterator
@@ -129,15 +120,15 @@ async def fetch_batch(
     concurrency: int = 10,
     timeout: float = 5.0,
 ) -> AsyncIterator[dict]:
-    """并发获取数据,限制并发数与超时。
+    """并发获取数据,限制并发数与超时.
 # ...
     Args:
-        ids: 待获取的ID列表。
-        concurrency: 最大并发数。
-        timeout: 单次请求超时秒数。
+        ids: 待获取的ID列表.
+        concurrency: 最大并发数.
+        timeout: 单次请求超时秒数.
 # ...
     Yields:
-        每个ID对应的结果。
+        每个ID对应的结果.
     """
     semaphore = asyncio.Semaphore(concurrency)
 # ...
@@ -158,8 +149,7 @@ async def _do_fetch(item_id: int) -> dict:
 ```
 
 ### 场景三:完整类型系统的API设计
-团队需要设计类型安全的公共API,工具输出符合规范的类型注解。
-
+团队需要设计类型安全的公共API,工具输出符合规范的类型注解.
 ```python
 from typing import Protocol, TypedDict, overload, runtime_checkable
 from collections.abc import Sequence
@@ -210,8 +200,7 @@ class UserService:
 ## 使用流程
 
 ### 1. 平滑升级
-已使用免费版的项目直接替换Skill文件即可,核心规范完全兼容。
-
+已使用免费版的项目直接替换Skill文件即可,核心规范完全兼容.
 ```bash
 # 依赖说明
 pip install uv ruff mypy pytest pytest-cov bandit pytest-asyncio
@@ -365,13 +354,11 @@ asyncio_mode = "auto"
 | uv | 包管理器 | 可选 | astral.sh 下载 |
 
 ### API Key 配置
-- 。
-- CI/CD流水线若需上传覆盖率或安全扫描结果,按对应服务(Codecov / Snyk 等)文档配置令牌环境变量。
-
+- .
+- CI/CD流水线若需上传覆盖率或安全扫描结果,按对应服务(Codecov / Snyk 等)文档配置令牌环境变量.
 ### 可用性分类
 - **分类**: MD+EXEC()
-- **说明**: 基于Markdown的AI Skill,。PRO版面向团队与企业,提供类型系统、异步、测试金字塔、性能优化与CI治理能力,完全兼容免费版核心规范。
-
+- **说明**: 基于Markdown的AI Skill,。PRO版面向团队与企业,提供类型系统、异步、测试金字塔、性能优化与CI治理能力,完全兼容免费版核心规范.
 ## 案例展示
 
 ### 性能profiling脚本
@@ -427,23 +414,17 @@ async def test_concurrent_fetch(db_session):
 ## 常见问题
 
 ### Q1:PRO版与免费版如何共存?
-两者核心规范完全兼容,PRO版包含免费版全部能力。团队统一使用PRO版,个人项目可继续使用免费版。迁移时直接替换Skill文件,无需改动业务代码。
-
+两者核心规范完全兼容,PRO版包含免费版全部能力。团队统一使用PRO版,个人项目可继续使用免费版。迁移时直接替换Skill文件,无需改动业务代码.
 ### Q2:mypy strict太严格怎么办?
-建议渐进式开启:先在CI跑非strict的mypy,统计错误;再逐模块在 `[[tool.mypy.overrides]]` 中开启strict,避免一次性阻塞所有提交。参考"团队迁移指南"。
-
+建议渐进式开启:先在CI跑非strict的mypy,统计错误;再逐模块在 `[[tool.mypy.overrides]]` 中开启strict,避免一次性阻塞所有提交。参考"团队迁移指南".
 ### Q3:PRO版是否支持异步框架?
-支持asyncio原生与主流框架(FastAPI、aiohttp等)。工具提供asyncio并发模型、取消传播、背压等优秀实践。深度框架调优建议结合对应框架专用工具。
-
+支持asyncio原生与主流框架(FastAPI、aiohttp等)。工具提供asyncio并发模型、取消传播、背压等优秀实践。深度框架调优建议结合对应框架专用工具.
 ### Q4:覆盖率门禁设多少合理?
-新项目建议85%,成熟项目可逐步提升至90%以上。关键路径(支付、鉴权)建议95%+。`--cov-fail-under` 在CI中强制执行,未达标则阻断合并。
-
+新项目建议85%,成熟项目可逐步提升至90%以上。关键路径(支付、鉴权)建议95%+。`--cov-fail-under` 在CI中强制执行,未达标则阻断合并.
 ### Q5:支持Monorepo吗?
-支持。建议用uv workspace或pdm workspace管理多包,ruff/mypy在根目录配置,各子包通过 `tool.ruff.extend` 继承。
-
+支持。建议用uv workspace或pdm workspace管理多包,ruff/mypy在根目录配置,各子包通过 `tool.ruff.extend` 继承.
 ### Q6:性能优化建议是否覆盖GIL场景?
-覆盖。CPU密集型用多进程绕开GIL,I/O密集型用asyncio或线程池。工具会分析瓶颈类型给出对应方案,并提供cProfile profiling脚本模板。
-
+覆盖。CPU密集型用多进程绕开GIL,I/O密集型用asyncio或线程池。工具会分析瓶颈类型给出对应方案,并提供cProfile profiling脚本模板.
 ## 错误处理
 
 | 错误场景(续)| 原因 | 处理方式 |

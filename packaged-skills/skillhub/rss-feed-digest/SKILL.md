@@ -7,19 +7,18 @@ summary: "抓取/过滤/汇总RSS与Atom为日或周报,支持多源"
 license: "Proprietary"
 description: |-
   Fetch, filter, and summarize RSS/Atom feeds into a clean daily or weekly
-  digest。Supports multipl。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
+  digest。Supports multipl。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - Research
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "RSS,订阅,信息"
+
 ---
 # RSS Feed Digest
 
@@ -148,7 +147,7 @@ tags: "RSS,订阅,信息"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ```bash

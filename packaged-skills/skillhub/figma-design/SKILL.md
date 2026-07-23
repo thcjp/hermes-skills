@@ -7,19 +7,17 @@ summary: "读文件/管评论/提设计令牌/下图片/建Webhook,Figma全管"
 license: "Proprietary"
 description: |-
   Read files, manage comments, extract design tokens, download images,
-  and create webhooks in Figma。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
+  and create webhooks in Figma。
 tags:
   - Integrations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 ---
 # Figma
 
@@ -43,7 +41,10 @@ tags: "设计,UI/UX,创意"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 文件读取 | Figma文件URL或file_key | 文件JSON结构与节点数据 |
+| 设计令牌提取 | file_key与目标令牌类型 | Tailwind/CSS设计令牌配置 |
+| 图片下载 | file_key与node_id列表 | PNG/SVG格式图片文件 |
+| 评论管理 | file_key与评论文本 | 评论发布/删除操作结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -51,9 +52,9 @@ tags: "设计,UI/UX,创意"
 
 ```bash
 clawlink_call_tool --tool "figma_get_current_user" --params '{}'
-# ...
+# .
 clawlink_call_tool --tool "figma_discover_figma_resources" --params '{"figma_url": "https://www.figma.com/file/ABC123xyz/MyFile"}'
-# ...
+# .
 clawlink_call_tool --tool "figma_get_file_json" --params '{"file_key": "ABC123xyz"}'
 ```
 
@@ -232,10 +233,10 @@ clawlink_call_tool --tool "figma_extract_design_tokens" \
   --params '{
     "file_key": "ABC123xyz"
   }'
-# ...
+# .
 clawlink_call_tool --tool "figma_design_tokens_to_tailwind" \
   --params '{
-    "tokens": { "$schema": "...", "colors": {...} }
+    "tokens": { "$schema": ".", "colors": {.} }
   }'
 ```
 
@@ -246,4 +247,3 @@ A:
 
 ## 已知限制
 
-- 需要API Key，无Key环境无法使用

@@ -7,19 +7,18 @@ summary: "管GitHub仓库/issue/PR/提交/分支/发布/工作流"
 license: "Proprietary"
 description: |-
   Work with GitHub repositories, issues, pull requests, commits, branches,
-  releases, and workflows 。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
+  releases, and workflows 。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - Integrations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "版本控制,Git,开发工具"
+
 ---
 # GitHub
 
@@ -43,7 +42,9 @@ tags: "版本控制,Git,开发工具"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| Git操作 | 仓库路径与分支名 | 操作结果与变更记录 |
+| 工作流执行 | 流程定义与输入数据 | 执行结果与步骤日志 |
+| 管GitHub仓库 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -152,8 +153,7 @@ clawlink_call_tool --tool "github_list_issues_for_a_repository" --params '{"owne
 1. Ensure the integration slug is exactly `github`.
 2. Use `clawlink_describe_tool` to verify parameter names and types before calling.
 3. For write operations, always call `clawlink_preview_tool` first.
-> **处理方式**: 参考上表中的错误场景说明,按照对应建议进行处理和恢复。
-
+> **处理方式**: 参考上表中的错误场景说明,按照对应建议进行处理和恢复.
 ## 依赖说明
 
 ### 运行环境
@@ -176,7 +176,7 @@ clawlink_call_tool --tool "github_list_issues_for_a_repository" --params '{"owne
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### List open issues in a repository

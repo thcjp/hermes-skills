@@ -7,8 +7,8 @@ summary: "Bedrock AgentCore与LangGraph多代理编排,覆盖状态图、Runtime
 license: "Proprietary"
 description: |-
   AWS Bedrock AgentCore与LangGraph多代理部署编排工具。提供StateGraph状态图编排、AgentCore Runtime HTTP封装（8080端口）、
-  Memory跨会话STM/LTM持久记忆、Gateway外部API/Lambda工具集成、CLI全生命周期管理五大核心能力。
-  适用于多代理协调的复杂业务系统、跨会话持久记忆代理、外部API集成到代理工具链、生产级AI代理部署。
+  Memory跨会话STM/LTM持久记忆、Gateway外部API/Lambda工具集成、CLI全生命周期管理五大核心能力.
+  适用于多代理协调的复杂业务系统、跨会话持久记忆代理、外部API集成到代理工具链、生产级AI代理部署.
 tags:
   - 智能代理
   - 云计算
@@ -23,13 +23,11 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "AWS,云计算,DevOps"
+
 ---
 # AWS Graph Agent
 
-基于 AWS Bedrock AgentCore 与 LangGraph 编排的多代理系统。通过 StateGraph 状态图定义代理工作流，AgentCore Runtime 封装为 HTTP 服务，Memory 管理持久记忆，Gateway 集成外部工具。
-
+基于 AWS Bedrock AgentCore 与 LangGraph 编排的多代理系统。通过 StateGraph 状态图定义代理工作流，AgentCore Runtime 封装为 HTTP 服务，Memory 管理持久记忆，Gateway 集成外部工具.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -69,40 +67,33 @@ tags: "AWS,云计算,DevOps"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### 1. StateGraph 状态图编排
-使用 LangGraph StateGraph 定义多代理工作流，支持 `tools_condition` 自动路由（代理 → 工具或 END）、`ToolNode` 预置工具执行器、条件边实现复杂多步逻辑（planner → executor → reviewer 循环）。
-
-**输入**: 用户提供StateGraph 状态图编排所需的指令和必要参数。
-**输出**: 返回StateGraph 状态图编排的处理结果,包含执行状态码、结果数据和执行日志。
-
+使用 LangGraph StateGraph 定义多代理工作流，支持 `tools_condition` 自动路由（代理 → 工具或 END）、`ToolNode` 预置工具执行器、条件边实现复杂多步逻辑（planner → executor → reviewer 循环）.
+**输入**: 用户提供StateGraph 状态图编排所需的指令和必要参数.
+**输出**: 返回StateGraph 状态图编排的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. AgentCore Runtime HTTP 封装
-将代理封装为 8080 端口 HTTP 服务，处理 `/invocations`（调用）与 `/ping`（健康检查）端点，支持容器模式部署。
-
-**输入**: 用户提供AgentCore Runtime HTTP 封装所需的指令和必要参数。
+将代理封装为 8080 端口 HTTP 服务，处理 `/invocations`（调用）与 `/ping`（健康检查）端点，支持容器模式部署.
+**输入**: 用户提供AgentCore Runtime HTTP 封装所需的指令和必要参数.
 **输出**: 返回AgentCore Runtime HTTP 封装的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`AgentCore Runtime HTTP 封装`的配置文档进行参数调优
 ### 3. AgentCore Memory 持久记忆
-管理跨会话/跨代理的 STM（短期记忆，会话内逐轮）与 LTM（长期记忆，跨会话/跨代理），配套一致性处理模式（写入后约 10s 最终一致，含等待+验证+重试逻辑）。
-
-**输入**: 用户提供AgentCore Memory 持久记忆所需的指令和必要参数。
+管理跨会话/跨代理的 STM（短期记忆，会话内逐轮）与 LTM（长期记忆，跨会话/跨代理），配套一致性处理模式（写入后约 10s 最终一致，含等待+验证+重试逻辑）.
+**输入**: 用户提供AgentCore Memory 持久记忆所需的指令和必要参数.
 **输出**: 返回AgentCore Memory 持久记忆的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`AgentCore Memory 持久记忆`的配置文档进行参数调优
 ### 4. AgentCore Gateway 工具集成
-将 API/Lambda 转化为带认证的 Agent 工具接口，支持 Fallback Mock（本地开发）、Local 工具协议、Production Gateway（生产）三种传输模式。
-
-**输入**: 用户提供AgentCore Gateway 工具集成所需的指令和必要参数。
-**处理**: 解析AgentCore Gateway 工具集成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+将 API/Lambda 转化为带认证的 Agent 工具接口，支持 Fallback Mock（本地开发）、Local 工具协议、Production Gateway（生产）三种传输模式.
+**输入**: 用户提供AgentCore Gateway 工具集成所需的指令和必要参数.
+**处理**: 解析AgentCore Gateway 工具集成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回AgentCore Gateway 工具集成的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`AgentCore Gateway 工具集成`的配置文档进行参数调优
 ### 5. agentcore CLI 全生命周期管理
-`configure`（交互式/脚本化配置）→ `launch`（容器部署）→ `dev`（热重载本地开发）→ `invoke`（测试调用）→ `destroy`（清理资源避免持续计费）。
-
-**输入**: 用户提供agentcore CLI 全生命周期管理所需的指令和必要参数。
-**输出**: 返回agentcore CLI 全生命周期管理的处理结果,包含执行状态码、结果数据和执行日志。
-
+`configure`（交互式/脚本化配置）→ `launch`（容器部署）→ `dev`（热重载本地开发）→ `invoke`（测试调用）→ `destroy`（清理资源避免持续计费）.
+**输入**: 用户提供agentcore CLI 全生命周期管理所需的指令和必要参数.
+**输出**: 返回agentcore CLI 全生命周期管理的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 适用场景
 
@@ -114,8 +105,7 @@ export API_KEY="your_api_key_here"
 | 生产级代理部署 | "部署带工具调用的代理到 8080 端口" | 容器部署+健康检查 | Runtime + CLI |
 | 复杂多步逻辑 | "planner→executor→reviewer 循环" | 条件边+ToolNode 状态图 | StateGraph |
 
-**不适用于**: 未完成 Bedrock 模型使用审批的账户，不需要多代理协调的简单单一代理场景，非 AWS 平台部署需求。
-
+**不适用于**: 未完成 Bedrock 模型使用审批的账户，不需要多代理协调的简单单一代理场景，非 AWS 平台部署需求.
 ## 使用流程
 
 ### Step 1: 安装依赖
@@ -217,8 +207,7 @@ agentcore launch
 agentcore invoke '{"prompt": "查询北京今天天气"}'
 ```
 
-**分析**: `tools_condition` 自动判断代理输出是否包含工具调用请求。包含则路由到 `ToolNode` 执行工具后返回代理节点继续处理；不包含则直接路由到 END 返回结果。
-
+**分析**: `tools_condition` 自动判断代理输出是否包含工具调用请求。包含则路由到 `ToolNode` 执行工具后返回代理节点继续处理；不包含则直接路由到 END 返回结果.
 ### 案例2: 记忆系统写入与一致性验证（指数退避）
 **场景**: 写入长期记忆并确保跨会话可读，处理约 10s 最终一致性延迟
 
@@ -244,8 +233,7 @@ verify_with_backoff(memory, session_id, actor_id, event_type, payload)
 # 注意：event['payload'] 是列表类型；确认 actor_id 和 session_id 匹配
 ```
 
-**分析**: 记忆写入后存在约 10 秒最终一致性延迟，立即查询会返回空。指数退避策略（2→4→8→16→30s）在保证最终一致的同时避免频繁轮询。重试时重新写入确保事件不被丢失。
-
+**分析**: 记忆写入后存在约 10 秒最终一致性延迟，立即查询会返回空。指数退避策略（2→4→8→16→30s）在保证最终一致的同时避免频繁轮询。重试时重新写入确保事件不被丢失.
 ### 案例3: 多代理协调（编排器+专家模式）端到端
 **场景**: 客服系统按意图路由到客服专家/计费专家，共享 session_id 跨专家记忆
 
@@ -284,8 +272,7 @@ agentcore configure -e agent.py --region us-east-1
 agentcore launch
 ```
 
-**分析**: 两个专家共享同一 `session_id`，通过 AgentCore Memory 实现跨专家记忆传递（编排器写入意图，专家读取上下文），避免用户重复陈述。`conditional_edges` 根据 `expert` 字段动态路由到对应专家节点。
-
+**分析**: 两个专家共享同一 `session_id`，通过 AgentCore Memory 实现跨专家记忆传递（编排器写入意图，专家读取上下文），避免用户重复陈述。`conditional_edges` 根据 `expert` 字段动态路由到对应专家节点.
 ## 异常处理
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
@@ -311,23 +298,17 @@ agentcore launch
 ## 常见问题
 
 ### Q1: 部署后记忆为空怎么办？
-A: 记忆写入后有约 10 秒最终一致性延迟。等待 10 秒后用 `list_events` 重新查询。如仍为空，检查日志中是否显示 "Memory enabled"，确认部署时未使用 `--disable-memory`。
-
+A: 记忆写入后有约 10 秒最终一致性延迟。等待 10 秒后用 `list_events` 重新查询。如仍为空，检查日志中是否显示 "Memory enabled"，确认部署时未使用 `--disable-memory`.
 ### Q2: 容器无法读取 .env 文件怎么办？
-A: 容器模式下 .env 文件不会被自动读取。在 Dockerfile 中使用 `ENV` 指令设置环境变量，而非依赖 .env 文件。这是容器模式与本地开发习惯的主要差异。
-
+A: 容器模式下 .env 文件不会被自动读取。在 Dockerfile 中使用 `ENV` 指令设置环境变量，而非依赖 .env 文件。这是容器模式与本地开发习惯的主要差异.
 ### Q3: 收到 "on-demand throughput isn't supported" 错误？
-A: 使用 `us.anthropic.claude-*` 推理配置文件替代按需吞吐量。这是区域和模型组合的限制，跨区域推理配置文件可自动路由到容量充足的区域。
-
+A: 使用 `us.anthropic.claude-*` 推理配置文件替代按需吞吐量。这是区域和模型组合的限制，跨区域推理配置文件可自动路由到容量充足的区域.
 ### Q4: 代理名称无效如何修改？
-A: 代理名称必须字母开头，仅含字母/数字/下划线，1-48 字符。将连字符改为下划线（如 `my-agent` → `my_agent`），避免使用特殊符号和中文。
-
+A: 代理名称必须字母开头，仅含字母/数字/下划线，1-48 字符。将连字符改为下划线（如 `my-agent` → `my_agent`），避免使用特殊符号和中文.
 ### Q5: Gateway 返回 "Unknown tool" 如何排查？
-A: Lambda 函数必须从 `bedrockAgentCoreToolName` 参数中去除 `___` 前缀。检查 Lambda 代码中的工具名处理逻辑，确认注册时使用的名称与代理调用时一致。
-
+A: Lambda 函数必须从 `bedrockAgentCoreToolName` 参数中去除 `___` 前缀。检查 Lambda 代码中的工具名处理逻辑，确认注册时使用的名称与代理调用时一致.
 ### Q6: 多代理如何共享记忆？
-A: 多个专家代理共享同一 `session_id`，通过 AgentCore Memory 的 `create_event` 写入、`list_events` 读取。编排器写入意图后，专家节点读取上下文，避免用户重复陈述。注意使用指数退避验证一致性。
-
+A: 多个专家代理共享同一 `session_id`，通过 AgentCore Memory 的 `create_event` 写入、`list_events` 读取。编排器写入意图后，专家节点读取上下文，避免用户重复陈述。注意使用指数退避验证一致性.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

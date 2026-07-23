@@ -17,15 +17,14 @@ tags:
   - Enterprise
   - WebStandards
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
+
 ---
 # HTML编码工具-专业版
 
@@ -58,7 +57,7 @@ tags: "开发工具,代码生成,编程辅助"
 | 结构化数据 | 不支持 | Schema.org + JSON-LD |
 | 性能优化 | 基础懒加载 | 关键路径+预加载+懒加载 |
 
-**输入**: 用户提供能力对比所需的指令和必要参数。
+**输入**: 用户提供能力对比所需的指令和必要参数.
 **输出**: 返回能力对比的处理结果,包含执行状态码、结果数据和执行日志。### 核心能力
 ```text
 HTML5 高级API:
@@ -106,26 +105,21 @@ WCAG 合规:
 ```
 ### 能力维度
 
-针对能力维度,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供能力维度相关的配置参数、输入数据和处理选项。
-
+针对能力维度,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供能力维度相关的配置参数、输入数据和处理选项.
 **输出**: 返回能力维度的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`能力维度`的配置文档进行参数调优
 ### 语义化HTML
 
-针对语义化HTML,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供语义化HTML相关的配置参数、输入数据和处理选项。
-
+针对语义化HTML,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供语义化HTML相关的配置参数、输入数据和处理选项.
 **输出**: 返回语义化HTML的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`语义化HTML`的配置文档进行参数调优
 #
 ## 适用场景
 
 ### 场景一：Canvas 数据可视化
-使用 Canvas API 创建数据可视化图表。
-
+使用 Canvas API 创建数据可视化图表.
 ```html
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -200,8 +194,7 @@ WCAG 合规:
 ```
 
 ### 场景二：Web Components 组件化
-创建可复用的自定义组件。
-
+创建可复用的自定义组件.
 > 详细代码示例已移至 `references/detail.md`
 
 ### 场景三：WCAG 全面合规检查
@@ -344,7 +337,7 @@ npx lighthouse https://example.com --output html --output-path ./report.html
 | webcomponentsjs（可选） | Polyfill | 可选 | 旧浏览器兼容支持 |
 
 ### API Key 配置
-- 本Skill采用纯Markdown指令驱动，无需额外API Key
+- 基础LLM由Agent平台内置提供，Skill采用纯Markdown指令驱动
 - HTML5 API 为浏览器原生支持，无需额外配置
 
 ### 可用性分类
@@ -407,20 +400,15 @@ db.onupgradeneeded = (event) => {
 ## 常见问题
 
 ### Q: 如何从免费版升级到专业版？
-A: 免费版的语义化 HTML、表单验证和响应式图片能力在专业版中完整保留。专业版新增 HTML5 高级 API、Web Components 和 WCAG 全面合规检查，无需迁移已有代码。
-
+A: 免费版的语义化 HTML、表单验证和响应式图片能力在专业版中完整保留。专业版新增 HTML5 高级 API、Web Components 和 WCAG 全面合规检查，无需迁移已有代码.
 ### Q: Web Components 浏览器兼容性如何？
-A: 现代浏览器（Chrome/Firefox/Safari/Edge）全面支持 Web Components。对于旧浏览器可使用 polyfill（webcomponentsjs）补充支持。
-
+A: 现代浏览器（Chrome/Firefox/Safari/Edge）全面支持 Web Components。对于旧浏览器可使用 polyfill（webcomponentsjs）补充支持.
 ### Q: WCAG AA 和 AAA 的区别？
-A: AA 是主流合规标准（对比度 4.5:1），AAA 是最高标准（对比度 7:1）。建议先达到 AA，部分关键页面追求 AAA。
-
+A: AA 是主流合规标准（对比度 4.5:1），AAA 是最高标准（对比度 7:1）。建议先达到 AA，部分关键页面追求 AAA.
 ### Q: Canvas 和 SVG 如何选择？
-A: Canvas 适合复杂动画和像素级控制（游戏、图表），SVG 适合矢量图形和可缩放场景（图标、地图）。SVG 可被屏幕阅读器访问，Canvas 需要额外 aria 支持。
-
+A: Canvas 适合复杂动画和像素级控制（游戏、图表），SVG 适合矢量图形和可缩放场景（图标、地图）。SVG 可被屏幕阅读器访问，Canvas 需要额外 aria 支持.
 ### Q: 结构化数据对 SEO 有什么帮助？
-A: JSON-LD 结构化数据帮助搜索引擎理解页面内容，可触发富文本搜索结果（Rich Snippets），提升点击率和搜索可见性。
-
+A: JSON-LD 结构化数据帮助搜索引擎理解页面内容，可触发富文本搜索结果（Rich Snippets），提升点击率和搜索可见性.
 ## 错误处理
 
 | 错误场景(续)| 原因 | 处理方式 |
@@ -432,4 +420,6 @@ A: JSON-LD 结构化数据帮助搜索引擎理解页面内容，可触发富文
 
 ## 已知限制
 
-- 需要API Key，无Key环境无法使用
+- 生成的HTML代码需人工复核WCAG合规性，工具不保证100%通过WAVE或axe等自动化检测工具
+- Web Components与Shadow DOM在旧版浏览器（IE11及以下）中不兼容，需额外引入polyfill
+- HTML5高级API（如Geolocation、Notification）的实际行为受浏览器安全策略和用户授权限制，非所有环境可用

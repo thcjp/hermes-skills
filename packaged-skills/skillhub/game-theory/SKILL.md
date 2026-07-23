@@ -6,11 +6,11 @@ displayName: "加密协议博弈论分析"
 summary: "面向crypto协议、DeFi机制和治理系统的博弈论分析框架，识别Nash Equilibrium与MEV风险"
 license: "Proprietary"
 description: |-
-  面向加密协议、DeFi机制和治理系统的博弈论分析框架。
+  面向加密协议、DeFi机制和治理系统的博弈论分析框架.
   基于Five Questions分析模型，覆盖Nash Equilibrium、Dominant Strategy、Mechanism Design等核心概念，
   支持MEV Game、Liquidity Game、Governance Game等常见crypto博弈场景分析，
-  并提供Tokenomics、Governance、Mechanism三维度Red Flags检测。
-  适用于协议设计审计、激励对齐评估与攻击向量识别。
+  并提供Tokenomics、Governance、Mechanism三维度Red Flags检测.
+  适用于协议设计审计、激励对齐评估与攻击向量识别.
 tools:
   - read
   - exec
@@ -21,13 +21,11 @@ tags:
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+
 ---
 # 加密协议博弈论分析
 
-面向web3协议的激励系统设计与博弈论分析框架，用于识别Nash Equilibrium、评估MEV风险与治理攻击向量。
-
+面向web3协议的激励系统设计与博弈论分析框架，用于识别Nash Equilibrium、评估MEV风险与治理攻击向量.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -79,8 +77,7 @@ tags: "工具,效率,自动化"
 4. **What information do they have?**（信息结构：Complete / Incomplete / Asymmetric Information）
 5. **What's the equilibrium?**（均衡分析：理性参与者的最终收敛点）
 
-输出标准Analysis Template包含Players、Strategy Space、Payoff Structure、Information Structure、Equilibrium Analysis、Recommendations六个章节。
-
+输出标准Analysis Template包含Players、Strategy Space、Payoff Structure、Information Structure、Equilibrium Analysis、Recommendations六个章节.
 ### 核心博弈论概念应用
 | 概念 | 定义 | Crypto应用场景 |
 |:---:|:---:|:---:|
@@ -92,7 +89,7 @@ tags: "工具,效率,自动化"
 | Incentive Compatibility | 诚实行为对参与者最优的状态 | Oracle设计中诚实报告为Dominant Strategy |
 | Common Knowledge | 所有人知道X，所有人知道所有人知道X，无限递归 | 公链状态创建balances/positions的Common Knowledge |
 
-**输入**: 用户提供核心博弈论概念应用所需的指令和必要参数。
+**输入**: 用户提供核心博弈论概念应用所需的指令和必要参数.
 **处理**: 解析核心博弈论概念应用的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 六大分析模式
 
 支持识别并分析六种经典博弈模式，每种均提供crypto实例与解决方案：
@@ -113,7 +110,7 @@ tags: "工具,效率,自动化"
 - **Staking Game**：玩家为stakers、validators、delegators；核心洞察为security budget必须超过attack profit
 - **Oracle Game**：玩家为data providers、consumers、attackers；核心洞察为操纵收益必须小于操纵成本
 
-**输出**: 返回Common Crypto Games分析的处理结果,包含执行状态码、结果数据和执行日志。
+**输出**: 返回Common Crypto Games分析的处理结果,包含执行状态码、结果数据和执行日志.
 ### Red Flags检测
 提供三维度协议设计风险检测：
 
@@ -121,7 +118,7 @@ tags: "工具,效率,自动化"
 - **Governance Red Flags**：quorum过低、无timelock（flash loan攻击）、token voting only（plutocracy）、delegates无skin in game
 - **Mechanism Red Flags**：first-come-first-served（bot优势）、sealed bid无commitment（frontrunning）、rebates（MEV提取）、复杂公式（隐藏漏洞）
 
-**输出**: 返回Red Flags检测的处理结果,包含执行状态码、结果数据和执行日志。
+**输出**: 返回Red Flags检测的处理结果,包含执行状态码、结果数据和执行日志.
 ### 高级分析能力
 支持四类高级博弈论主题的深入分析：
 
@@ -203,23 +200,17 @@ Step 5 - Recommendations:
 ## 常见问题
 
 ### Q1: 这个Skill适用于分析哪些类型的协议？
-A: 适用于所有web3协议的博弈论分析，包括DeFi借贷、AMM、staking、governance、oracle、MEV相关协议。特别适合分析tokenomics设计、激励对齐、攻击向量识别与机制设计审计。
-
+A: 适用于所有web3协议的博弈论分析，包括DeFi借贷、AMM、staking、governance、oracle、MEV相关协议。特别适合分析tokenomics设计、激励对齐、攻击向量识别与机制设计审计.
 ### Q2: 如何判断一个协议是否存在MEV风险？
-A: 通过MEV Game分析框架，检查transaction ordering是否可被操纵、是否存在first-come-first-served机制、sealed bid是否有commitment。若存在rebates/refunds机制，通常伴随MEV提取。
-
+A: 通过MEV Game分析框架，检查transaction ordering是否可被操纵、是否存在first-come-first-served机制、sealed bid是否有commitment。若存在rebates/refunds机制，通常伴随MEV提取.
 ### Q3: Nash Equilibrium在实际协议分析中如何应用？
-A: 先建模players和strategies，定义payoff functions，然后检查是否存在Dominant Strategy。若无dominant strategy，计算Nash Equilibrium。对于staking系统，Nash Equilibrium决定validator的stake分布。
-
+A: 先建模players和strategies，定义payoff functions，然后检查是否存在Dominant Strategy。若无dominant strategy，计算Nash Equilibrium。对于staking系统，Nash Equilibrium决定validator的stake分布.
 ### Q4: Red Flags检测发现多个风险点如何优先级排序？
-A: 按攻击成本与影响排序：governance capture（flash loan攻击）> tokenomics vesting不对称 > mechanism的frontrunning风险。优先修复攻击成本最低、影响最大的风险点。
-
+A: 按攻击成本与影响排序：governance capture（flash loan攻击）> tokenomics vesting不对称 > mechanism的frontrunning风险。优先修复攻击成本最低、影响最大的风险点.
 ### Q5: 是否需要Nashpy或Gambit等外部工具？
-A: 基础分析无需外部工具，Agent可通过Markdown指令完成定性分析。涉及复杂数值求解（如连续策略空间的Nash Equilibrium计算）时，可选用Nashpy（`pip install nashpy`）或Gambit进行辅助计算。
-
+A: 基础分析无需外部工具，Agent可通过Markdown指令完成定性分析。涉及复杂数值求解（如连续策略空间的Nash Equilibrium计算）时，可选用Nashpy（`pip install nashpy`）或Gambit进行辅助计算.
 ### Q6: 如何分析anonymous team的协议风险？
-A: 使用Bayesian Games框架分析信息不对称，结合Repeated Games理论——anonymous actors因无reputation成本，行为通常比doxxed teams更差。重点检查Moral Hazard风险与rug可能性。
-
+A: 使用Bayesian Games框架分析信息不对称，结合Repeated Games理论——anonymous actors因无reputation成本，行为通常比doxxed teams更差。重点检查Moral Hazard风险与rug可能性.
 ## 已知限制
 
 - 定性分析为主，复杂博弈的精确数值求解需依赖Nashpy/Gambit等外部工具

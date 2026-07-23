@@ -7,19 +7,18 @@ summary: "为任意事物建监控,用户定义检查项,技能管调度告警"
 license: "Proprietary"
 description: |-
   Create monitors for anything。User defines what to check, skill handles
-  scheduling and alerts。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。适用于独立开发者、企业团队和自动化工作流场景。
+  scheduling and alerts。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
 tags:
   - Other
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "监控,运维,工具"
+
 ---
 # Monitor
 
@@ -44,7 +43,9 @@ tags: "监控,运维,工具"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 任务调度 | 任务ID与触发条件 | 执行结果与调度日志 |
+| 监控告警 | 监控目标与阈值 | 告警事件与指标快照 |
+| 为任意事物建监控 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -114,8 +115,7 @@ tags: "监控,运维,工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Monitor？

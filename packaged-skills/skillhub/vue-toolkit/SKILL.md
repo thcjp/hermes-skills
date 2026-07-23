@@ -7,7 +7,7 @@ summary: "Vue 3 全栈实战：响应式、性能优化、SSR、Pinia、Composab
 license: "Proprietary"
 edition: "pro"
 description: |-
-  Vue 工具箱（专业版）面向中高级 Vue 3 开发者与团队，在免费版陷阱清单的基础上新增性能优化、SSR/SSG、Pinia 状态管理、Composable 架构、可访问性、测试与团队规范六大模块。目标是让 Agent 能够输出"架构级"建议而不仅是单点修复。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
+  Vue 工具箱（专业版）面向中高级 Vue 3 开发者与团队，在免费版陷阱清单的基础上新增性能优化、SSR/SSG、Pinia 状态管理、Composable 架构、可访问性、测试与团队规范六大模块。目标是让 Agent 能够输出"架构级"建议而不仅是单点修复。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - 前端架构
   - Vue
@@ -15,15 +15,14 @@ tags:
   - SSR
   - 状态管理
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Vue工具箱(专业版)
 
@@ -53,49 +52,37 @@ tags: "工具,效率,自动化"
 | 团队规范 | ESLint、目录约定、命名约定、PR 模板 | 协作效率 |
 ### 响应式进阶
 
-针对响应式进阶,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供响应式进阶相关的配置参数、输入数据和处理选项。
-
+针对响应式进阶,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供响应式进阶相关的配置参数、输入数据和处理选项.
 **输出**: 返回响应式进阶的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`响应式进阶`的配置文档进行参数调优
 ### 性能优化
 
-针对性能,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供性能优化相关的配置参数、输入数据和处理选项。
-
+针对性能,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供性能优化相关的配置参数、输入数据和处理选项.
 **输出**: 返回性能优化的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`性能优化`的配置文档进行参数调优
 ### SSR/SSG
 
-针对SSR/SSG,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供SSR/SSG相关的配置参数、输入数据和处理选项。
-
+针对SSR/SSG,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供SSR/SSG相关的配置参数、输入数据和处理选项.
 **输出**: 返回SSR/SSG的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`SSR/SSG`的配置文档进行参数调优
 #
 ## 适用场景
 
 ### 场景一：首屏性能优化（架构师视角）
-项目首屏 LCP > 3s，需要系统性优化。Agent 应建议：① 路由级懒加载 `defineAsyncComponent`；② 大列表用 `v-memo` 或虚拟滚动；③ 静态内容用 `shallowRef` 避免深度响应式开销；④ 关键 CSS 内联，非关键 CSS 延迟加载。
-
+项目首屏 LCP > 3s，需要系统性优化。Agent 应建议：① 路由级懒加载 `defineAsyncComponent`；② 大列表用 `v-memo` 或虚拟滚动；③ 静态内容用 `shallowRef` 避免深度响应式开销；④ 关键 CSS 内联，非关键 CSS 延迟加载.
 ### 场景二：SSR 落地评估（架构师视角）
-团队考虑将 CSR 项目迁移到 SSR。Agent 应给出评估清单：① 是否有窗口对象依赖（需 polyfill 或客户端 only）；② 数据获取方式（async setup + Suspense）；③ 状态 hydration（Pinia + initialState）；④ 部署目标（Node 服务 vs Edge）。
-
+团队考虑将 CSR 项目迁移到 SSR。Agent 应给出评估清单：① 是否有窗口对象依赖（需 polyfill 或客户端 only）；② 数据获取方式（async setup + Suspense）；③ 状态 hydration（Pinia + initialState）；④ 部署目标（Node 服务 vs Edge）.
 ### 场景三：Pinia 模块化（开发者视角）
-单一 store 膨胀到 800 行。Agent 应建议按领域拆分为多个 setup store，用 `storeToRefs` 解构保持响应式，跨 store 调用通过 `useOtherStore()` 注入而非全局单例。
-
+单一 store 膨胀到 800 行。Agent 应建议按领域拆分为多个 setup store，用 `storeToRefs` 解构保持响应式，跨 store 调用通过 `useOtherStore()` 注入而非全局单例.
 ### 场景四：Composable 设计（开发者视角）
-需要封装一个 `useFetch`。Agent 应提供完整模板：① 接收 url 与 options；② 返回 `{ data, error, loading, refresh }`；③ 内部用 `AbortController` 支持取消；④ 在 `onUnmounted` 中清理副作用。
-
+需要封装一个 `useFetch`。Agent 应提供完整模板：① 接收 url 与 options；② 返回 `{ data, error, loading, refresh }`；③ 内部用 `AbortController` 支持取消；④ 在 `onUnmounted` 中清理副作用.
 ### 场景五：可访问性合规（QA 视角）
-组件库需要通过 WCAG AA。Agent 应检查：① 所有交互元素有 `aria-label`；② 模态框有焦点陷阱；③ 颜色对比度 ≥ 4.5:1；④ 键盘可完整操作（Tab/Enter/Esc）。
-
+组件库需要通过 WCAG AA。Agent 应检查：① 所有交互元素有 `aria-label`；② 模态框有焦点陷阱；③ 颜色对比度 ≥ 4.5:1；④ 键盘可完整操作（Tab/Enter/Esc）.
 ### 场景六：测试覆盖（QA 视角）
-关键组件需要 100% 覆盖。Agent 应建议：① 纯逻辑用单元测试；② 组件渲染用 `@vue/test-utils` 的 `mount`；③ 异步用 `flushPromises`；④ 用户交互用 `userEvent`；⑤ 路由用 mock router。
-
+关键组件需要 100% 覆盖。Agent 应建议：① 纯逻辑用单元测试；② 组件渲染用 `@vue/test-utils` 的 `mount`；③ 异步用 `flushPromises`；④ 用户交互用 `userEvent`；⑤ 路由用 mock router.
 ## 使用流程
 
 ### 120 秒上手
@@ -299,35 +286,25 @@ describe('Button', () => {
 ## 常见问题
 
 ### Q1：shallowRef 与 ref 该怎么选？
-A：当数据量大且结构深、但你只关心整体替换时用 `shallowRef`（如表格数据、图表数据集）。需要深度响应式时用 `ref` 或 `reactive`。改了 `shallowRef` 内部属性后需手动 `triggerRef` 触发更新。
-
+A：当数据量大且结构深、但你只关心整体替换时用 `shallowRef`（如表格数据、图表数据集）。需要深度响应式时用 `ref` 或 `reactive`。改了 `shallowRef` 内部属性后需手动 `triggerRef` 触发更新.
 ### Q2：SSR 项目里 window 未定义怎么办？
-A：使用 `import.meta.env.SSR`（Vite）或 `process.server`（Nuxt）做环境判断，把客户端 only 的逻辑放到 `onMounted` 中执行，或用 `<ClientOnly>` 组件包裹。
-
+A：使用 `import.meta.env.SSR`（Vite）或 `process.server`（Nuxt）做环境判断，把客户端 only 的逻辑放到 `onMounted` 中执行，或用 `<ClientOnly>` 组件包裹.
 ### 依赖说明(补充)
-A：不会。Pinia 在 `defineStore` 工厂函数内调用 `useOtherStore()` 是惰性求值，只要不在模块顶层直接调用即可避免循环。
-
+A：不会。Pinia 在 `defineStore` 工厂函数内调用 `useOtherStore()` 是惰性求值，只要不在模块顶层直接调用即可避免循环.
 ### Q4：Composable 里发请求怎么取消？
-A：用 `AbortController`，在 `onUnmounted` 中调用 `controller.abort()`。同时支持外部传入 signal 以便父级统一取消。
-
+A：用 `AbortController`，在 `onUnmounted` 中调用 `controller.abort()`。同时支持外部传入 signal 以便父级统一取消.
 ### Q5：v-memo 什么场景下用？
-A：仅在列表项渲染成本高且大部分项不变时使用。简单列表用 v-memo 反而增加开销。基线：单次渲染 > 5ms 的列表项才考虑。
-
+A：仅在列表项渲染成本高且大部分项不变时使用。简单列表用 v-memo 反而增加开销。基线：单次渲染 > 5ms 的列表项才考虑.
 ### Q6：keep-alive 内存泄漏怎么排查？
-A：① 检查 `include`/`max` 配置；② 在 `onDeactivated` 中清理定时器与监听；③ 用 Chrome DevTools Memory 面板对比快照。
-
+A：① 检查 `include`/`max` 配置；② 在 `onDeactivated` 中清理定时器与监听；③ 用 Chrome DevTools Memory 面板对比快照.
 ### Q7：defineAsyncComponent 加载失败如何降级？
-A：使用 `errorComponent` 与 `timeout` 选项，配合 `onErrorCaptured` 在父级兜底。
-
+A：使用 `errorComponent` 与 `timeout` 选项，配合 `onErrorCaptured` 在父级兜底.
 ### Q8：Suspense 与 async setup 的坑？
-A：① async setup 必须配合 Suspense，否则报错；② Suspense 没有内置错误处理，需用 `onErrorCaptured`；③ 多个异步子组件会等到全部完成才切换。
-
+A：① async setup 必须配合 Suspense，否则报错；② Suspense 没有内置错误处理，需用 `onErrorCaptured`；③ 多个异步子组件会等到全部完成才切换.
 ### Q9：Pinia 持久化怎么按字段白名单？
-A：使用 `pinia-plugin-persistedstate`，在 store 中配置 `persist: { paths: ['token', 'profile'] }`。
-
+A：使用 `pinia-plugin-persistedstate`，在 store 中配置 `persist: { paths: ['token', 'profile'] }`.
 ### Q10：Vitest 测异步组件怎么等待？
-A：用 `flushPromises` from `@vue/test-utils`，或 `await nextTick()`。涉及路由用 `vi.mock('vue-router')`。
-
+A：用 `flushPromises` from `@vue/test-utils`，或 `await nextTick()`。涉及路由用 `vi.mock('vue-router')`.
 ## 错误处理
 
 | 错误场景(续)| 原因 | 处理方式 |

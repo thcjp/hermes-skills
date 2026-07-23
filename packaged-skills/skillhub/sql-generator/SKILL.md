@@ -6,19 +6,18 @@ displayName: "Sql Generator"
 summary: "SQL生成器。自然语言转SQL、SQL解释、性能优化、建表语句、测试数据生成、数据库迁移、SQL速查表。SQL generator from natural"
 license: "Proprietary"
 description: |-
-  SQL生成器。自然语言转SQL、SQL解释、性能优化、建表语句、测试数据生成、数据库迁移、SQL速查表。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。
+  SQL生成器。自然语言转SQL、SQL解释、性能优化、建表语句、测试数据生成、数据库迁移、SQL速查表。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
   - Integrations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Sql Generator
 
@@ -43,7 +42,9 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 测试验证 | 测试用例与预期 | 测试报告与覆盖率 |
+| 数据处理 | 数据源与处理规则 | 清洗结果与统计摘要 |
+| 内容生成 | 提示词与风格参数 | 生成内容与质量评分 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -113,7 +114,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ```bash
@@ -125,11 +126,9 @@ sql-generator run
 ## 常见问题
 
 **Q: 这个工具适合谁用？**
-A: 任何需要sql generator的人，无论是个人还是企业用户。
-
+A: 任何需要sql generator的人，无论是个人还是企业用户.
 **Q: 输出格式是什么？**
-A: 主要输出Markdown格式，方便复制和编辑。
-
+A: 主要输出Markdown格式，方便复制和编辑.
 ## 错误处理
 
 | 错误场景(续)| 原因 | 处理方式 |

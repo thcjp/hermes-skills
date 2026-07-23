@@ -6,16 +6,19 @@ displayName: "诗词匠心"
 summary: "一人做古诗词内容厂牌,6种融合模式+平仄校验+意境评分,图文短视频双输出"
 license: Proprietary
 description: |-
-  诗词匠心是一款古诗词融合故事编织工具,打造古诗词内容厂牌。
-  支持6种融合模式、平仄韵律校验、意境评分,图文与短视频双输出。
-  
+  诗词匠心是一款古诗词融合故事编织工具,打造古诗词内容厂牌.
+  支持6种融合模式、平仄韵律校验、意境评分,图文与短视频双输出.
   核心能力:
   - 6种诗词融合模式
   - 平仄韵律自动校验
   - 意境融合度评分
   - 图文+短视频双输出
 homepage: "https://skillhub.cn"
-tags: [古诗词, 内容创作, 短视频, 文化IP]
+tags:
+  - 古诗词
+  - 内容创作
+  - 短视频
+  - 文化IP
 tools:
   - read
   - exec
@@ -23,12 +26,12 @@ tools:
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
+
+
 ---
 # 诗词匠心 Poetry Craftsman v1.1.0
 
-古诗词融合故事编织工具,将历史人物诗词自然融入故事叙述,支持6种融合模式与图文/短视频双输出格式,可选画外音解说。
-
+古诗词融合故事编织工具,将历史人物诗词自然融入故事叙述,支持6种融合模式与图文/短视频双输出格式,可选画外音解说.
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -58,8 +61,7 @@ tools: ["read", "write", "exec"]
 | 打油诗/反差爆款内容 | mode=parody或contrast+character | 原诗+打油诗改编/正经+搞笑对比版本 |
 | 双角色对比叙事 | mode=dual_character+character+poem_title | 真实人物念原诗+虚构孪生角色打油诗重说 |
 
-**不适用于**: 现代诗创作(仅支持古诗词)、纯诗词翻译(无故事融合需求)、非中文诗词(仅支持中文古诗词)、长篇小说连载(单次输出为段落级非全篇)。
-
+**不适用于**: 现代诗创作(仅支持古诗词)、纯诗词翻译(无故事融合需求)、非中文诗词(仅支持中文古诗词)、长篇小说连载(单次输出为段落级非全篇).
 ## 使用流程
 
 ### Step 1: 环境准备
@@ -195,11 +197,9 @@ tools: ["read", "write", "exec"]
 - **安全检查**: 本SKILL.md中不包含任何API Key示例,所有Key均通过 `$env:LLM_API_KEY` 等环境变量读取
 
 ### 使用流程(补充)
-诗词数据库不可用时降级为纯LLM创作。历史人物档案不可用时使用通用历史知识。
-
-只需将SKILL.md文件放入Agent的skills目录即可直接使用。
-如果Skill中包含exec工具调用,需要Agent支持命令行执行能力。
-
+诗词数据库不可用时降级为纯LLM创作。历史人物档案不可用时使用通用历史知识.
+只需将SKILL.md文件放入Agent的skills目录即可直接使用.
+如果Skill中包含exec工具调用,需要Agent支持命令行执行能力.
 ### 可用性分类
 - **分类**: MD+EXEC
 - **说明**: 纯Markdown,但需要exec能力(命令行执行),用于文件读写和命令调用
@@ -308,8 +308,7 @@ tools: ["read", "write", "exec"]
 
 ## 案例展示
 
-以下案例展示了skill的工作流程和预期输出效果，由LLM按照skill定义的流程生成。
-
+以下案例展示了skill的工作流程和预期输出效果，由LLM按照skill定义的流程生成.
 ### 案例1: 意境延伸模式(图文,李白行路难,小学受众)
 
 **输入**:
@@ -487,20 +486,15 @@ tools: ["read", "write", "exec"]
 ## 常见问题
 
 ### Q1: 如何开始使用诗词匠心?
-A: 三步启动:(1)将SKILL.md放入Agent的skills目录;(2)确认Agent环境变量已配置LLM_API_KEY;(3)调用时传入character(必填)和mode(可选,默认blend)即可。诗词数据库和历史人物档案API为可选,不可用时自动降级为纯LLM创作。
-
+A: 三步启动:(1)将SKILL.md放入Agent的skills目录;(2)确认Agent环境变量已配置LLM_API_KEY;(3)调用时传入character(必填)和mode(可选,默认blend)即可。诗词数据库和历史人物档案API为可选,不可用时自动降级为纯LLM创作.
 ### Q2: 诗词数据库不可用会影响输出质量吗?
-A: 会一定程度影响。诗词数据库不可用时,系统降级为纯LLM创作,LLM依赖内置知识库生成诗词,可能出现诗词引用不准确或张冠李戴。建议关键内容人工核对诗词原文。可配置国内替代数据源(中华诗词数据库/古诗文网API)提升准确度。
-
+A: 会一定程度影响。诗词数据库不可用时,系统降级为纯LLM创作,LLM依赖内置知识库生成诗词,可能出现诗词引用不准确或张冠李戴。建议关键内容人工核对诗词原文。可配置国内替代数据源(中华诗词数据库/古诗文网API)提升准确度.
 ### Q3: 6种融合模式如何选择?
-A: 按内容定位选择:(1)正经文化科普→quote/paraphrase/blend;(2)教育内容(小学/中学)→paraphrase+elementary受众;(3)搞笑爆款→parody/contrast/dual_character;(4)短视频带货→dual_character+short_video+voiceover=on。contrast和parody适合制造反差引流,dual_character适合短视频双角色对话。
-
+A: 按内容定位选择:(1)正经文化科普→quote/paraphrase/blend;(2)教育内容(小学/中学)→paraphrase+elementary受众;(3)搞笑爆款→parody/contrast/dual_character;(4)短视频带货→dual_character+short_video+voiceover=on。contrast和parody适合制造反差引流,dual_character适合短视频双角色对话.
 ### Q4: 平仄校验不准确怎么办?
-A: 平仄校验基于LLM内置诗词格律知识,可能存在误差。处理方式:(1)关键内容建议人工复核平仄;(2)使用专业诗词格律工具(如诗词吾爱/搜韵网)二次校验;(3)meter_check返回null时表示诗词格式不规范无法校验,需人工确认诗词版本。
-
+A: 平仄校验基于LLM内置诗词格律知识,可能存在误差。处理方式:(1)关键内容建议人工复核平仄;(2)使用专业诗词格律工具(如诗词吾爱/搜韵网)二次校验;(3)meter_check返回null时表示诗词格式不规范无法校验,需人工确认诗词版本.
 ### Q5: 短视频脚本可以直接用于拍摄吗?
-A: 脚本输出包含分镜(shot/duration/visual/dialogue/character)和总时长,结构完整可直接作为拍摄参考。但实际拍摄还需:(1)根据visual描述制作画面/分镜图;(2)录制dialogue台词(可配合TTS工具);(3)按duration控制节奏。建议拍摄前人工微调台词口语化程度。
-
+A: 脚本输出包含分镜(shot/duration/visual/dialogue/character)和总时长,结构完整可直接作为拍摄参考。但实际拍摄还需:(1)根据visual描述制作画面/分镜图;(2)录制dialogue台词(可配合TTS工具);(3)按duration控制节奏。建议拍摄前人工微调台词口语化程度.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

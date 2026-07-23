@@ -31,15 +31,14 @@ tags:
   - 批量处理
   - SSML
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # HeyGen TTS专业版
 
@@ -73,29 +72,24 @@ tags: "工具,效率,自动化"
 | 缓存去重 | 不支持 | 哈希缓存 | 成本节省 |
 | 成本监控 | 不支持 | 配额管理 | 运维能力 |
 
-**输入**: 用户提供免费版 vs 专业版对比所需的指令和必要参数。
+**输入**: 用户提供免费版 vs 专业版对比所需的指令和必要参数.
 ### TTS 合成
 
-针对TTS 合成,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供TTS 合成相关的配置参数、输入数据和处理选项。
-
+针对TTS 合成,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供TTS 合成相关的配置参数、输入数据和处理选项.
 **输出**: 返回TTS 合成的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`TTS 合成`的配置文档进行参数调优
 ### 多语言
 
-针对多语言,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供多语言相关的配置参数、输入数据和处理选项。
-
+针对多语言,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供多语言相关的配置参数、输入数据和处理选项.
 **输出**: 返回多语言的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`多语言`的配置文档进行参数调优
 #
 ## 适用场景
 
 ### 场景一:SSML 高级语音合成
-使用 SSML 实现精细的语音控制。
-
+使用 SSML 实现精细的语音控制.
 ```bash
 curl -X POST "https://api.heygen.com/v3/voices/speech" \
   -H "X-Api-Key: $HEYGEN_API_KEY" \
@@ -103,15 +97,15 @@ curl -X POST "https://api.heygen.com/v3/voices/speech" \
   -d '{
     "text": "<speak>
       <prosody rate=\"slow\" pitch=\"-2st\">
-        欢迎收听本期节目。
+        欢迎收听本期节目.
       </prosody>
       <break time=\"1s\"/>
       <emphasis level=\"strong\">
-        今天的话题非常重要。
+        今天的话题非常重要.
       </emphasis>
       <break time=\"0.5s\"/>
       <prosody rate=\"fast\">
-        让我们快速进入正题。
+        让我们快速进入正题.
       </prosody>
     </speak>",
     "voice_id": "YOUR_VOICE_ID",
@@ -120,13 +114,11 @@ curl -X POST "https://api.heygen.com/v3/voices/speech" \
 ```
 
 ### 场景二:批量语音生成
-批量处理文本列表,生成多个音频文件。
-
+批量处理文本列表,生成多个音频文件.
 > 详细代码示例已移至 `references/detail.md`
 
 ### 场景三:词级时间戳与字幕同步
-利用词级时间戳生成精确字幕。
-
+利用词级时间戳生成精确字幕.
 ```python
 def generate_with_timestamps(text, voice_id, api_key):
     """生成语音并获取词级时间戳"""
@@ -178,8 +170,7 @@ with open("subtitles.srt", "w", encoding="utf-8") as f:
 ```
 
 ### 场景四:API 服务化部署
-将 TTS 封装为 API 服务。
-
+将 TTS 封装为 API 服务.
 ## 使用流程
 
 ### 依赖说明
@@ -208,8 +199,7 @@ with open("subtitles.srt", "w", encoding="utf-8") as f:
 
 ### 可用性分类
 10. **分类**: MD+EXEC()
-11. **说明**: 基于Markdown的AI Skill,。专业版支持 SSML、批量生成、词级时间戳与 API 服务化,适合企业级语音内容生产流水线。
-
+11. **说明**: 基于Markdown的AI Skill,。专业版支持 SSML、批量生成、词级时间戳与 API 服务化,适合企业级语音内容生产流水线.
 #
 ## 输入格式
 
@@ -288,8 +278,7 @@ batch:
 ## 常见问题
 
 ### Q1: SSML 与 break 标签的区别?
-break 标签是 SSML 的子集,可在普通文本中使用(`input_type: "text"`)。完整 SSML 需要 `input_type: "ssml"`,支持 prosody、emphasis 等高级标记。
-
+break 标签是 SSML 的子集,可在普通文本中使用(`input_type: "text"`)。完整 SSML 需要 `input_type: "ssml"`,支持 prosody、emphasis 等高级标记.
 ### Q2: 词级时间戳有什么用?
 词级时间戳返回每个词的精确开始与结束时间,用于:
 - 字幕同步(SRT/VTT 生成)
@@ -315,11 +304,9 @@ break 标签是 SSML 的子集,可在普通文本中使用(`input_type: "text"`)
 - 监控 API 配额用量
 
 ### Q5: 专业版与免费版的迁移?
-零迁移成本。专业版是免费版的超集,API 完全兼容。升级后原有代码自动支持新参数,新特性按需启用。
-
+零迁移成本。专业版是免费版的超集,API 完全兼容。升级后原有代码自动支持新参数,新特性按需启用.
 ### Q6: 如何估算成本?
-成本按音频时长计费。通过 `duration` 字段获取每次生成的时长,累计计算总成本。建议启用用量追踪与预算告警。
-
+成本按音频时长计费。通过 `duration` 字段获取每次生成的时长,累计计算总成本。建议启用用量追踪与预算告警.
 ## 错误处理
 
 | 错误场景(续)| 原因 | 处理方式 |

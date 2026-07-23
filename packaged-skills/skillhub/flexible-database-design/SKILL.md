@@ -8,7 +8,9 @@ license: "Proprietary"
 description: |-
   Guide agents and users to design and implement a \\\n\n核心能力:\n- 集成工具领域的专业化AI辅助工具\n\
   - 基于高人气开源Skill深度优化升级\n- 移除风险代码,增强安全性和稳定性\n\n适用场景:\n- 第三方API集成、平台对接、数据同步\n- 独立开发者与一人公司效率提升\n\
-tags: "'[''Integrations'', ''Knowledge'']'"
+tags:
+  - Integrations
+  - Knowledge
 tools:
   - read
   - exec
@@ -17,7 +19,7 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob"]
+
 ---
 # Flexible Database De
 
@@ -34,8 +36,7 @@ tools: ["read", "write", "exec", "glob"]
 
 ## 核心能力
 
-- \n\n\
-#
+本工具的核心能力包括：指导Agent与用户设计实现灵活数据库,建模不踩坑。具体功能详情请参考下方能力说明表格与使用场景.
 ## 适用场景
 
 根据用户描述，选择最接近的场景并适配：
@@ -115,8 +116,7 @@ tools: ["read", "write", "exec", "glob"]
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Flexible Database De？

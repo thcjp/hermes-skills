@@ -7,9 +7,9 @@ summary: "基于 porteden CLI 管理 Gmail、Outlook、Exchange 多账号邮件"
 license: "Proprietary"
 description: |-
   基于 porteden CLI(`porteden email` / `porteden mail`)安全读写 Gmail、Outlook、Exchange 邮箱,
-  支持多账号 profile 隔离、系统 keyring 凭证存储、JSON 紧凑输出(-jc)降低 token 消耗。
-  覆盖邮件列表、筛选、搜索、单封/线程获取、发送、回复、转发、修改、删除全生命周期操作。
-  适用于收件箱分诊、批量模板回复、线程审阅、定时邮件发送、跨账号搜索等场景。
+  支持多账号 profile 隔离、系统 keyring 凭证存储、JSON 紧凑输出(-jc)降低 token 消耗.
+  覆盖邮件列表、筛选、搜索、单封/线程获取、发送、回复、转发、修改、删除全生命周期操作.
+  适用于收件箱分诊、批量模板回复、线程审阅、定时邮件发送、跨账号搜索等场景.
 tags:
   - 通用办公
   - Email
@@ -22,13 +22,11 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "邮件,通信,工具"
+
 ---
 # Email Gmail Outlook
 
-使用 `porteden email`(别名 `porteden mail`)读写当前活动账号的邮件。所有列表/搜索类操作默认带 `-jc` 标志(`--json --compact`),剥离附件详情、截断正文预览、限制标签数量,显著降低 token 消耗。
-
+使用 `porteden email`(别名 `porteden mail`)读写当前活动账号的邮件。所有列表/搜索类操作默认带 `-jc` 标志(`--json --compact`),剥离附件详情、截断正文预览、限制标签数量,显著降低 token 消耗.
 若未安装 porteden:
 
 ```bash
@@ -77,7 +75,7 @@ go install 相关技术文档
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 - **多账号 profile 隔离**:通过 `--profile`(或 `PE_PROFILE` 环境变量)隔离 work/personal 等多账号,任务只触及指定邮箱
@@ -91,26 +89,20 @@ export API_KEY="your_api_key_here"
 - **JSON 紧凑输出**:`-jc` 针对AI场景优化,降低上下文 token 占用
 ### 多账号 profile 隔离
 
-针对多账号 profile 隔离,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供多账号 profile 隔离相关的配置参数、输入数据和处理选项。
-
+针对多账号 profile 隔离,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供多账号 profile 隔离相关的配置参数、输入数据和处理选项.
 **输出**: 返回多账号 profile 隔离的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`多账号 profile 隔离`的配置文档进行参数调优
 ### 安全凭证存储
 
-针对安全凭证存储,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供安全凭证存储相关的配置参数、输入数据和处理选项。
-
+针对安全凭证存储,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供安全凭证存储相关的配置参数、输入数据和处理选项.
 **输出**: 返回安全凭证存储的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`安全凭证存储`的配置文档进行参数调优
 ### 邮件列表与筛选
 
-针对邮件列表与筛选,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供邮件列表与筛选相关的配置参数、输入数据和处理选项。
-
+针对邮件列表与筛选,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供邮件列表与筛选相关的配置参数、输入数据和处理选项.
 **输出**: 返回邮件列表与筛选的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`邮件列表与筛选`的配置文档进行参数调优
 #
@@ -303,28 +295,22 @@ porteden email messages --profile personal -q "Q3 财报" --week -jc
 
 ### Q1:如何切换工作账号与个人账号?
 
-使用 `--profile work` 或 `--profile personal` 指定账号;或设置环境变量 `export PE_PROFILE=work` 作为默认 profile。每个 profile 独立登录,凭证隔离存储在系统 keyring。
-
+使用 `--profile work` 或 `--profile personal` 指定账号;或设置环境变量 `export PE_PROFILE=work` 作为默认 profile。每个 profile 独立登录,凭证隔离存储在系统 keyring.
 ### Q2:-jc 与 --include-body 的区别?
 
-`-jc` 是 `--json --compact` 简写,剥离附件详情、截断正文预览、限制标签,适合列表/搜索场景降低 token。`--include-body` 在 `messages` 命令上拉取完整正文(默认仅预览);单封 `message` 默认含正文。AI 场景默认用 `-jc`,仅在用户明确需要完整正文时加 `--include-body`。
-
+`-jc` 是 `--json --compact` 简写,剥离附件详情、截断正文预览、限制标签,适合列表/搜索场景降低 token。`--include-body` 在 `messages` 命令上拉取完整正文(默认仅预览);单封 `message` 默认含正文。AI 场景默认用 `-jc`,仅在用户明确需要完整正文时加 `--include-body`.
 ### Q3:凭证存储在哪里?如何撤销?
 
-凭证存入系统 keyring:macOS Keychain、Windows Credential Manager、Linux Secret Service(gnome-keyring/kwallet)。撤销分两步:① `porteden auth logout` 清除本地 keyring 条目;② 登录 provider(Google/Microsoft)账户安全页撤销 token 授权。共享机器任务结束务必执行撤销。
-
+凭证存入系统 keyring:macOS Keychain、Windows Credential Manager、Linux Secret Service(gnome-keyring/kwallet)。撤销分两步:① `porteden auth logout` 清除本地 keyring 条目;② 登录 provider(Google/Microsoft)账户安全页撤销 token 授权。共享机器任务结束务必执行撤销.
 ### Q4:如何获取邮件完整正文而不超 token?
 
-列表查询用 `-jc` 仅获取预览;对目标邮件用 `porteden email message <id> -jc` 获取单封正文;若正文仍过长,改用 `porteden email message <id> --body-file /tmp/body.txt` 写入文件,再由 Agent 按需读取文件片段。
-
+列表查询用 `-jc` 仅获取预览;对目标邮件用 `porteden email message <id> -jc` 获取单封正文;若正文仍过长,改用 `porteden email message <id> --body-file /tmp/body.txt` 写入文件,再由 Agent 按需读取文件片段.
 ### Q5:如何处理分页大量邮件?
 
-`messages` 命令默认返回单页,检查 JSON 输出的 `hasMore` 与 `nextPageToken` 字段。加 `--all` 自动拉取所有分页。超大结果集(>500 封)建议结合 `--after/--before` 日期范围或 `--from` 筛选分批处理,避免单次 token 超限。
-
+`messages` 命令默认返回单页,检查 JSON 输出的 `hasMore` 与 `nextPageToken` 字段。加 `--all` 自动拉取所有分页。超大结果集(>500 封)建议结合 `--after/--before` 日期范围或 `--from` 筛选分批处理,避免单次 token 超限.
 ### Q6:邮件 ID 为什么带前缀?
 
-porteden 用 `provider:id` 格式区分不同邮箱 provider(如 `google:abc123`、`m365:xyz789`)。前缀确保跨 provider 唯一性,调用 `message`、`reply`、`forward`、`modify`、`delete` 时必须原样传入完整 ID,不可省略前缀。
-
+porteden 用 `provider:id` 格式区分不同邮箱 provider(如 `google:abc123`、`m365:xyz789`)。前缀确保跨 provider 唯一性,调用 `message`、`reply`、`forward`、`modify`、`delete` 时必须原样传入完整 ID,不可省略前缀.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

@@ -3,11 +3,11 @@ slug: telegram-msg-toolkit-free
 name: telegram-msg-toolkit-free
 version: 1.0.0
 displayName: Telegram消息工具箱(免费版)
-summary: Telegram Bot 消息免费版：文本/图片/文件/投票发送，聊天信息查询与基础Bot命令管理。
+summary: Telegram Bot 消息免费版：文本/图片/文件/投票发送，聊天信息查询与基础Bot命令管理.
 license: Proprietary
 edition: free
 description: Telegram 消息工具箱（免费版）面向个人用户与独立开发者，封装 Telegram Bot API 的基础消息能力：文本消息、图片、文件、投票发送，聊天信息查询与基础
-  Bot 命令管理。通过 REST API 直接调用 Telegram Bot 接口，无需额外中间件。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
+  Bot 命令管理。通过 REST API 直接调用 Telegram Bot 接口，无需额外中间件。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
 - 沟通协作
 - 即时通讯
@@ -15,23 +15,20 @@ tags:
 - 消息自动化
 - Bot开发
 tools:
-- - read
+- read
 - exec
 homepage: https://skillhub.cn
 pricing_tier: "L1-入门级"
 pricing_model: per_use
 suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "Telegram,社交,通信"
+
 ---
 # Telegram 消息工具箱（免费版）
 
 ## 概述
 
-本工具箱封装 Telegram Bot API 的基础消息能力，让 AI Agent 能够通过 REST API 发送文本、图片、文件、位置、投票与转发消息，查询聊天信息，并管理 Bot 命令。免费版聚焦"能发能查"——覆盖 6 类基础消息发送与聊天信息读取；批量操作、群组管理、审核与 Webhook 等进阶能力留给专业版。
-
-Telegram Bot API 使用 HTTP REST 接口，所有请求通过 `https://api.telegram.org/bot<TOKEN>/<METHOD>` 调用，响应为 JSON 格式。
-
+本工具箱封装 Telegram Bot API 的基础消息能力，让 AI Agent 能够通过 REST API 发送文本、图片、文件、位置、投票与转发消息，查询聊天信息，并管理 Bot 命令。免费版聚焦"能发能查"——覆盖 6 类基础消息发送与聊天信息读取；批量操作、群组管理、审核与 Webhook 等进阶能力留给专业版.
+Telegram Bot API 使用 HTTP REST 接口，所有请求通过 `https://api.telegram.org/bot<TOKEN>/<METHOD>` 调用，响应为 JSON 格式.
 ## 核心能力
 
 | 能力 | 说明 | 免费版 |
@@ -53,36 +50,31 @@ Telegram Bot API 使用 HTTP REST 接口，所有请求通过 `https://api.teleg
 | 频道管理 | 频道发布/管理 | 否（专业版） |
 
 ### 核心功能执行
-用`input_params`参数进行配置。
-
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志。
+用`input_params`参数进行配置.
+**输入**: 用户提供核心功能执行所需的指令和必要参数.
+**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
-用`config_options`参数进行配置。
-
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志。
+用`config_options`参数进行配置.
+**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+**处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
-用`output_format`参数进行配置。
-
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志。
+用`output_format`参数进行配置.
+**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+**处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Telegram、消息免费版、聊天信息查询与基、命令管理、消息工具箱、面向个人用户与独、立开发者、API、的基础消息能力、REST、直接调用、无需额外中间件、Use、when、接口对接、系统连接时使用、不适用于逆向工程等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Telegram、消息免费版、聊天信息查询与基、命令管理、消息工具箱、面向个人用户与独、立开发者、API、的基础消息能力、REST、直接调用、无需额外中间件、Use、when、接口对接、系统连接时使用、不适用于逆向工程等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 使用场景
 
 ### 场景一：部署状态通知
 
-用户说"部署完成后通知 Telegram 群"。Agent 调用 `sendMessage` 发送文本消息到指定群组，包含版本号与状态。
-
+用户说"部署完成后通知 Telegram 群"。Agent 调用 `sendMessage` 发送文本消息到指定群组，包含版本号与状态.
 ```bash
 curl -X POST "https://api.telegram.org/bot{{BOT_TOKEN}}/sendMessage" \
   -H "Content-Type: application/json" \
@@ -95,8 +87,7 @@ curl -X POST "https://api.telegram.org/bot{{BOT_TOKEN}}/sendMessage" \
 
 ### 场景二：发送周报图片
 
-用户说"把这张周报图表发到 Telegram"。Agent 调用 `sendPhoto` 发送图片，附带说明文字。
-
+用户说"把这张周报图表发到 Telegram"。Agent 调用 `sendPhoto` 发送图片，附带说明文字.
 ```bash
 curl -X POST "https://api.telegram.org/bot{{BOT_TOKEN}}/sendPhoto" \
   -H "Content-Type: application/json" \
@@ -109,8 +100,7 @@ curl -X POST "https://api.telegram.org/bot{{BOT_TOKEN}}/sendPhoto" \
 
 ### 场景三：发起功能投票
 
-用户说"在群里发起投票问下个版本优先做什么"。Agent 调用 `sendPoll` 发送原生投票。
-
+用户说"在群里发起投票问下个版本优先做什么"。Agent 调用 `sendPoll` 发送原生投票.
 ```bash
 curl -X POST "https://api.telegram.org/bot{{BOT_TOKEN}}/sendPoll" \
   -H "Content-Type: application/json" \
@@ -246,8 +236,7 @@ curl "https://api.telegram.org/bot{{BOT_TOKEN}}/getMyCommands"
 
 ### 已知限制
 
-Telegram Bot API 限制：全局约 30 条消息/秒，单个聊天约 1 条消息/秒。收到 429 响应时按 `retry_after` 等待后重试。
-
+Telegram Bot API 限制：全局约 30 条消息/秒，单个聊天约 1 条消息/秒。收到 429 响应时按 `retry_after` 等待后重试.
 ### 2. 消息格式选择
 
 - 简单文本：不设 `parse_mode`
@@ -266,8 +255,7 @@ curl -X POST "https://api.telegram.org/bot{{BOT_TOKEN}}/sendDocument" \
 
 ### 4. 消息删除限制
 
-Bot 只能删除自己发送的消息，或在 Bot 为管理员的群组中删除他人消息。群组中超过 48 小时的消息无法删除。
-
+Bot 只能删除自己发送的消息，或在 Bot 为管理员的群组中删除他人消息。群组中超过 48 小时的消息无法删除.
 ### 5. 长轮询与 Webhook 互斥
 
 `getUpdates`（长轮询）与 Webhook 互斥。若 Webhook 已设置，调用 `getUpdates` 返回 409 冲突。删除 Webhook 后才能使用长轮询：
@@ -278,31 +266,24 @@ curl "https://api.telegram.org/bot{{BOT_TOKEN}}/deleteWebhook"
 
 ### 6. 聊天 ID 持久化
 
-获取到的聊天 ID 应持久化存储，避免每次都通过 `getUpdates` 重新获取。私聊 ID 是用户数字 ID，群组以 `-100` 开头。
+获取到的聊天 ID 应持久化存储，避免每次都通过 `getUpdates` 重新获取。私聊 ID 是用户数字 ID，群组以 `-100` 开头.
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
 ## 常见问题
 
 ### Q1：发送消息返回 403 Forbidden？
-A：Bot 未被加入目标聊天，或被聊天管理员屏蔽。将 Bot 加入群组并确保有发送消息权限。
-
+A：Bot 未被加入目标聊天，或被聊天管理员屏蔽。将 Bot 加入群组并确保有发送消息权限.
 ### Q2：发送消息返回 400 chat_not_found？
-A：聊天 ID 不正确。群组以 `-100` 开头（如 `-1001234567890`），私聊用用户数字 ID。检查 ID 是否完整。
-
+A：聊天 ID 不正确。群组以 `-100` 开头（如 `-1001234567890`），私聊用用户数字 ID。检查 ID 是否完整.
 ### Q3：Markdown 格式消息发送失败？
-A：MarkdownV2 需要转义特殊字符（`_`、`*`、`[`、`]`、`(`、`)`、`~`、`` ` ``、`>`、`#`、`+`、`-`、`=`、`|`、`{`、`}`、`.`、`!`）。或改用 HTML 格式更简单。
-
+A：MarkdownV2 需要转义特殊字符（`_`、`*`、`[`、`]`、`(`、`)`、`~`、`` ` ``、`>`、`#`、`+`、`-`、`=`、`|`、`{`、`}`、`.`、`!`）。或改用 HTML 格式更简单.
 ### Q4：图片发送后质量下降？
-A：`sendPhoto` 会压缩图片。使用 `sendDocument` 发送可保持原始质量，但不会显示预览。
-
+A：`sendPhoto` 会压缩图片。使用 `sendDocument` 发送可保持原始质量，但不会显示预览.
 ### Q5：Bot 收不到群组消息？
-A：检查 Bot 的隐私模式（Privacy Mode）。通过 BotFather 的 `/setprivacy` 关闭后 Bot 才能接收群组所有消息。关闭后需重新加入群组。
-
+A：检查 Bot 的隐私模式（Privacy Mode）。通过 BotFather 的 `/setprivacy` 关闭后 Bot 才能接收群组所有消息。关闭后需重新加入群组.
 ### Q6：getUpdates 返回 409 冲突？
-A：已设置 Webhook，长轮询不可用。调用 `deleteWebhook` 删除后重试，或改用 Webhook 接收更新。
-
+A：已设置 Webhook，长轮询不可用。调用 `deleteWebhook` 删除后重试，或改用 Webhook 接收更新.
 ### Q7：免费版有哪些限制？
-A：免费版不支持批量发送、群组管理（踢人/封禁/权限）、频道管理、Webhook 回调与审核功能。这些能力在专业版提供。
-
+A：免费版不支持批量发送、群组管理（踢人/封禁/权限）、频道管理、Webhook 回调与审核功能。这些能力在专业版提供.
 ## 免费版限制
 
 本免费版限制以下高级功能：

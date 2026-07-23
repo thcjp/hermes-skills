@@ -11,7 +11,7 @@ description: |-
   AIOZ 流媒体平台。支持默认快速上传方式，使用默认编码配置，
   上传完成后返回 HLS 流媒体播放链接。使用 API Key
   (stream-public-key/stream-secret-key) 认证。适用于播客发布、
-  语音内容托管等基础场景。本免费版仅支持默认编码配置。
+  语音内容托管等基础场景。本免费版仅支持默认编码配置.
 tags:
   - Creative
   - Audio
@@ -20,13 +20,11 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "音频处理,媒体,创意"
+
 ---
 # AIOZ 音频上传（免费版）
 
-通过 AIOZ Stream API 将本地音频文件上传至 AIOZ 流媒体平台。完整上传流程包含三次 API 调用：创建音频对象 → 上传文件分片 → 完成上传。上传完成后服务端自动触发转码，返回 HLS 流媒体播放链接。本免费版支持默认上传方式与基础编码配置。
-
+通过 AIOZ Stream API 将本地音频文件上传至 AIOZ 流媒体平台。完整上传流程包含三次 API 调用：创建音频对象 → 上传文件分片 → 完成上传。上传完成后服务端自动触发转码，返回 HLS 流媒体播放链接。本免费版支持默认上传方式与基础编码配置.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -42,8 +40,7 @@ tags: "音频处理,媒体,创意"
 - `stream-public-key`：AIOZ Stream 公钥
 - `stream-secret-key`：AIOZ Stream 私钥
 
-若用户未提供密钥，主动询问获取。密钥通过 AIOZ Stream 控制台创建与管理。
-
+若用户未提供密钥，主动询问获取。密钥通过 AIOZ Stream 控制台创建与管理.
 ## 完整上传流程
 
 ### 第一步：创建音频对象
@@ -52,8 +49,8 @@ tags: "音频处理,媒体,创意"
 
 ```bash
 curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
-  -H 'stream-public-key: PUBLIC_KEY' \
-  -H 'stream-secret-key: SECRET_KEY' \
+  -H 'stream-public-key: YOUR_PUBLIC_KEY' \
+  -H 'stream-secret-key: YOUR_SECRET_KEY' \
   -H 'Content-Type: application/json' \
   -d '{
     "title": "AUDIO_TITLE",
@@ -61,8 +58,7 @@ curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
   }'
 ```
 
-从响应中提取 `data.id`，作为后续步骤的 `AUDIO_ID`。
-
+从响应中提取 `data.id`，作为后续步骤的 `AUDIO_ID`.
 ### 第二步：上传文件分片
 
 上传音频文件二进制数据。首先获取文件大小并计算 MD5 哈希：
@@ -78,16 +74,15 @@ HASH=$(md5sum /path/to/audio.mp3 | awk '{print $1}')
 
 ```bash
 curl -s -X POST "https://api-w3stream.attoaioz.cyou/api/videos/AUDIO_ID/part" \
-  -H 'stream-public-key: PUBLIC_KEY' \
-  -H 'stream-secret-key: SECRET_KEY' \
+  -H 'stream-public-key: YOUR_PUBLIC_KEY' \
+  -H 'stream-secret-key: YOUR_SECRET_KEY' \
   -H "Content-Range: bytes 0-$END_POS/$FILE_SIZE" \
   -F "file=@/path/to/audio.mp3" \
   -F "index=0" \
   -F "hash=$HASH"
 ```
 
-`Content-Range` 头格式为 `bytes {start}-{end}/{total_size}`。单分片上传时 start=0、end=file_size-1、total_size=file_size。表单字段：`file` 为音频文件二进制，`index` 为分片序号（单分片为 0），`hash` 为文件的 MD5 哈希。
-
+`Content-Range` 头格式为 `bytes {start}-{end}/{total_size}`。单分片上传时 start=0、end=file_size-1、total_size=file_size。表单字段：`file` 为音频文件二进制，`index` 为分片序号（单分片为 0），`hash` 为文件的 MD5 哈希.
 ### 第三步：完成上传
 
 文件分片上传完成后调用完成接口触发转码：
@@ -95,8 +90,8 @@ curl -s -X POST "https://api-w3stream.attoaioz.cyou/api/videos/AUDIO_ID/part" \
 ```bash
 curl -s -X GET "https://api-w3stream.attoaioz.cyou/api/videos/AUDIO_ID/complete" \
   -H 'accept: application/json' \
-  -H 'stream-public-key: PUBLIC_KEY' \
-  -H 'stream-secret-key: SECRET_KEY'
+  -H 'stream-public-key: YOUR_PUBLIC_KEY' \
+  -H 'stream-secret-key: YOUR_SECRET_KEY'
 ```
 
 ### 获取播放链接
@@ -105,12 +100,11 @@ curl -s -X GET "https://api-w3stream.attoaioz.cyou/api/videos/AUDIO_ID/complete"
 
 ```bash
 curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/AUDIO_ID' \
-  -H 'stream-public-key: PUBLIC_KEY' \
-  -H 'stream-secret-key: SECRET_KEY'
+  -H 'stream-public-key: YOUR_PUBLIC_KEY' \
+  -H 'stream-secret-key: YOUR_SECRET_KEY'
 ```
 
-从响应的 `assets` 或 `hls` 字段解析 HLS 流媒体链接返回给用户。音频输出没有 `mp4_url` 字段，仅提供 HLS 流媒体链接。
-
+从响应的 `assets` 或 `hls` 字段解析 HLS 流媒体链接返回给用户。音频输出没有 `mp4_url` 字段，仅提供 HLS 流媒体链接.
 ## 依赖说明
 
 ### 运行环境
@@ -132,7 +126,7 @@ curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/AUDIO_ID' \
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 - **三步上传流程**：Create → Upload Part → Complete 的标准化上传流程，支持单分片上传
@@ -141,26 +135,20 @@ export API_KEY="your_api_key_here"
 - **API Key 认证**：通过 stream-public-key 与 stream-secret-key 进行身份验证
 ### 三步上传流程
 
-针对三步上传流程,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供三步上传流程相关的配置参数、输入数据和处理选项。
-
+针对三步上传流程,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供三步上传流程相关的配置参数、输入数据和处理选项.
 **输出**: 返回三步上传流程的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`三步上传流程`的配置文档进行参数调优
 ### 默认编码配置
 
-针对默认编码,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供默认编码配置相关的配置参数、输入数据和处理选项。
-
+针对默认编码,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供默认编码配置相关的配置参数、输入数据和处理选项.
 **输出**: 返回默认编码配置的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`默认编码配置`的配置文档进行参数调优
 ### HLS 流媒体输出
 
-针对HLS 流媒体输出,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供HLS 流媒体输出相关的配置参数、输入数据和处理选项。
-
+针对HLS 流媒体输出,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供HLS 流媒体输出相关的配置参数、输入数据和处理选项.
 **输出**: 返回HLS 流媒体输出的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`HLS 流媒体输出`的配置文档进行参数调优
 #
@@ -176,26 +164,21 @@ export API_KEY="your_api_key_here"
 
 ### 场景一：播客节目快速发布
 
-播客创作者需要将录制好的音频节目快速上传到流媒体平台分发。使用默认上传方式，仅提供节目标题即可完成上传并获取 HLS 播放链接，嵌入播客网站或分发给订阅者。
-
+播客创作者需要将录制好的音频节目快速上传到流媒体平台分发。使用默认上传方式，仅提供节目标题即可完成上传并获取 HLS 播放链接，嵌入播客网站或分发给订阅者.
 ### 场景二：语音内容托管
 
-教育或媒体机构需要将语音讲座、会议录音等内容上传到流媒体平台托管。使用默认上传方式快速完成上传，获取 HLS 播放链接分发给听众，适合对编码参数无特殊要求的日常内容托管。
-
+教育或媒体机构需要将语音讲座、会议录音等内容上传到流媒体平台托管。使用默认上传方式快速完成上传，获取 HLS 播放链接分发给听众，适合对编码参数无特殊要求的日常内容托管.
 ### 场景三：音频资料归档
 
-个人或团队需要将音频资料上传至流媒体平台备份托管。通过默认上传方式快速完成上传，获取播放链接便于后续访问与分享。
-
+个人或团队需要将音频资料上传至流媒体平台备份托管。通过默认上传方式快速完成上传，获取播放链接便于后续访问与分享.
 ## 使用案例
 
 ### 案例一：播客节目默认上传
 
-用户提供音频文件路径与节目标题"科技脱口秀第50期"。流程执行：调用 create 接口创建 type 为 audio 的音频对象，获取 AUDIO_ID；计算文件 MD5 哈希与大小，通过 part 接口上传文件分片；调用 complete 接口触发转码；查询音频详情获取 HLS 播放链接返回用户。用户将链接嵌入播客网站供订阅者收听。
-
+用户提供音频文件路径与节目标题"科技脱口秀第50期"。流程执行：调用 create 接口创建 type 为 audio 的音频对象，获取 AUDIO_ID；计算文件 MD5 哈希与大小，通过 part 接口上传文件分片；调用 complete 接口触发转码；查询音频详情获取 HLS 播放链接返回用户。用户将链接嵌入播客网站供订阅者收听.
 ### 案例二：语音讲座上传
 
-用户提供语音讲座音频文件路径与标题"产品方法论第三讲"。流程执行：调用 create 接口创建音频对象；计算文件哈希并上传分片；调用 complete 接口完成上传并触发转码；查询详情获取 HLS 播放链接。用户将链接分享给学员在线收听。
-
+用户提供语音讲座音频文件路径与标题"产品方法论第三讲"。流程执行：调用 create 接口创建音频对象；计算文件哈希并上传分片；调用 complete 接口完成上传并触发转码；查询详情获取 HLS 播放链接。用户将链接分享给学员在线收听.
 ## 响应处理规范
 
 1. 解析 create 接口的 JSON 响应，提取 `data.id` 作为 AUDIO_ID
@@ -210,42 +193,33 @@ export API_KEY="your_api_key_here"
 
 ### 401 认证失败
 
-API 返回 401 状态码，说明 stream-public-key 或 stream-secret-key 无效。处理方式：提示用户核对 AIOZ Stream 控制台中的公钥与私钥是否正确复制，确认密钥未过期或被撤销。重新提供正确的密钥后检查网络连接和配置后重试。
-
+API 返回 401 状态码，说明 stream-public-key 或 stream-secret-key 无效。处理方式：提示用户核对 AIOZ Stream 控制台中的公钥与私钥是否正确复制，确认密钥未过期或被撤销。重新提供正确的密钥后检查网络连接和配置后重试.
 ### 400 请求格式错误
 
-API 返回 400 状态码，说明请求体格式不符合接口要求。处理方式：检查 create 接口的 JSON 请求体结构，确认 type 字段为 "audio"，title 字段已正确填写。重新构造请求后检查网络连接和配置后重试。
-
+API 返回 400 状态码，说明请求体格式不符合接口要求。处理方式：检查 create 接口的 JSON 请求体结构，确认 type 字段为 "audio"，title 字段已正确填写。重新构造请求后检查网络连接和配置后重试.
 ### Content-Range 头缺失或格式错误
 
-上传分片时缺少 Content-Range 头或格式不符合 `bytes {start}-{end}/{total_size}` 规范。处理方式：确认上传前正确计算 FILE_SIZE 与 END_POS，单分片上传时 start 为 0、end 为 file_size-1。重新构造请求头后检查网络连接和配置后重试。
-
+上传分片时缺少 Content-Range 头或格式不符合 `bytes {start}-{end}/{total_size}` 规范。处理方式：确认上传前正确计算 FILE_SIZE 与 END_POS，单分片上传时 start 为 0、end 为 file_size-1。重新构造请求头后检查网络连接和配置后重试.
 ### 转码未完成
 
-查询音频详情时状态为 transcoding，尚未生成流媒体播放链接。处理方式：告知用户音频正在转码中，播放链接需等待转码完成后才能获取。建议用户间隔一段时间后重新查询音频详情。
-
+查询音频详情时状态为 transcoding，尚未生成流媒体播放链接。处理方式：告知用户音频正在转码中，播放链接需等待转码完成后才能获取。建议用户间隔一段时间后重新查询音频详情.
 ### 网络超时或连接中断
 
-上传过程中网络超时或连接中断，导致分片上传未完成。处理方式：检查网络连接和配置后重试，确认 AIOZ Stream API 域名 `api-w3stream.attoaioz.cyou` 可达。网络恢复后重新执行上传流程。
-
+上传过程中网络超时或连接中断，导致分片上传未完成。处理方式：检查网络连接和配置后重试，确认 AIOZ Stream API 域名 `api-w3stream.attoaioz.cyou` 可达。网络恢复后重新执行上传流程.
 ## 常见问题
 
 ### Q1：如何获取 AIOZ Stream 的 API 密钥？
 
-注册并登录 AIOZ Stream 平台后，在控制台的 API 设置或开发者页面创建 API 密钥。系统会生成一对 stream-public-key（公钥）与 stream-secret-key（私钥）。密钥作为 HTTP 请求头附加到所有 API 调用中，需妥善保管避免泄露。
-
+注册并登录 AIOZ Stream 平台后，在控制台的 API 设置或开发者页面创建 API 密钥。系统会生成一对 stream-public-key（公钥）与 stream-secret-key（私钥）。密钥作为 HTTP 请求头附加到所有 API 调用中，需妥善保管避免泄露.
 ### Q2：音频上传后为什么没有 mp4_url 字段？
 
-AIOZ Stream 的音频类型输出仅提供 HLS 流媒体链接，不生成 mp4_url 字段。音频内容以自适应流媒体格式分发，由播放器根据网络状况动态选择码率。如需直接下载音频文件，需在本地保留原始文件。
-
+AIOZ Stream 的音频类型输出仅提供 HLS 流媒体链接，不生成 mp4_url 字段。音频内容以自适应流媒体格式分发，由播放器根据网络状况动态选择码率。如需直接下载音频文件，需在本地保留原始文件.
 ### Q3：免费版与付费版有什么区别？
 
-免费版仅支持默认上传方式，使用平台默认编码配置，适合快速发布场景。付费版支持自定义编码配置（质量预设、码率、采样率、标签、元数据）、多档位质量输出、DASH 格式、多分片上传等高级能力。
-
+免费版仅支持默认上传方式，使用平台默认编码配置，适合快速发布场景。付费版支持自定义编码配置（质量预设、码率、采样率、标签、元数据）、多档位质量输出、DASH 格式、多分片上传等高级能力.
 ### Q4：转码需要多长时间？
 
-转码耗时取决于音频时长与服务端负载。短音频通常在数分钟内完成转码。上传完成后通过查询音频详情接口检查转码状态，状态从 transcoding 变为 ready 即表示完成，此时可获取播放链接。
-
+转码耗时取决于音频时长与服务端负载。短音频通常在数分钟内完成转码。上传完成后通过查询音频详情接口检查转码状态，状态从 transcoding 变为 ready 即表示完成，此时可获取播放链接.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
@@ -275,8 +249,7 @@ AIOZ Stream 的音频类型输出仅提供 HLS 流媒体链接，不生成 mp4_u
 - 标签与元数据管理
 - 完整异常处理与编码配置参考
 
-如需以上能力，请升级至付费版 audio-upload-aioz-stream。
-
+如需以上能力，请升级至付费版 audio-upload-aioz-stream.
 ## 输出格式
 
 ```json

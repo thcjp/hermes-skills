@@ -6,8 +6,7 @@ displayName: "163邮箱管理专家"
 summary: "163邮箱CLI工具,支持IMAP ID认证收发邮件、附件、文件夹、搜索与邮件操作"
 license: "Proprietary"
 description: |-
-  163邮箱完整邮件管理Skill,基于Python CLI实现,覆盖发送、读取、搜索、文件夹、附件与邮件操作全链路。
-
+  163邮箱完整邮件管理Skill,基于Python CLI实现,覆盖发送、读取、搜索、文件夹、附件与邮件操作全链路.
   核心能力:
   - 发送邮件(纯文本/HTML/多附件/文件正文)
   - 读取邮件(IMAP ID扩展RFC 2971,163邮箱必需)
@@ -34,8 +33,7 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "邮件,通信,工具"
+
 ---
 # 163邮箱管理专家
 
@@ -79,7 +77,7 @@ tags: "邮件,通信,工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 本Skill基于163邮箱IMAP/SMTP协议实现完整邮件管理,重点解决以下领域问题:
@@ -94,26 +92,20 @@ export API_KEY="your_api_key_here"
 - **配置管理**: JSON配置文件 + 环境变量双模式,支持默认文件夹与下载目录
 ### IMAP ID认证
 
-针对IMAP ID认证,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供IMAP ID认证相关的配置参数、输入数据和处理选项。
-
+针对IMAP ID认证,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供IMAP ID认证相关的配置参数、输入数据和处理选项.
 **输出**: 返回IMAP ID认证的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`IMAP ID认证`的配置文档进行参数调优
 ### 发送邮件
 
-针对发送邮件,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供发送邮件相关的配置参数、输入数据和处理选项。
-
+针对发送邮件,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供发送邮件相关的配置参数、输入数据和处理选项.
 **输出**: 返回发送邮件的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`发送邮件`的配置文档进行参数调优
 ### 读取邮件
 
-针对读取邮件,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供读取邮件相关的配置参数、输入数据和处理选项。
-
+针对读取邮件,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供读取邮件相关的配置参数、输入数据和处理选项.
 **输出**: 返回读取邮件的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`读取邮件`的配置文档进行参数调优
 #
@@ -149,8 +141,7 @@ export API_KEY="your_api_key_here"
 ## 案例展示
 
 ### 案例1: 发送带附件的项目周报
-**背景**: 每周五需向团队发送项目周报,正文在本地 report.txt,附带你 progress.pdf 与 stats.xlsx 两个文件。
-
+**背景**: 每周五需向团队发送项目周报,正文在本地 report.txt,附带你 progress.pdf 与 stats.xlsx 两个文件.
 **操作**:
 ```bash
 email-163-com send \
@@ -169,11 +160,9 @@ email-163-com send \
    Attachments: progress.pdf (1.2 MB), stats.xlsx (85 KB)
 ```
 
-**要点**: `--file` 指定正文文件,`--attach` 可多次使用添加多个附件;中文主题与附件名均正常处理。
-
+**要点**: `--file` 指定正文文件,`--attach` 可多次使用添加多个附件;中文主题与附件名均正常处理.
 ### 案例2: 搜索并下载Cloudflare验证邮件附件
-**背景**: 需要找到Cloudflare发来的验证邮件,下载其中的验证文档。
-
+**背景**: 需要找到Cloudflare发来的验证邮件,下载其中的验证文档.
 **操作**:
 ```bash
 # 第一步:搜索Cloudflare邮件
@@ -200,11 +189,9 @@ email-163-com attachments --id 15 --download --output ~/Downloads/
 ✅ Downloaded 2 attachments to ~/Downloads/
 ```
 
-**要点**: 搜索支持 `--from` 与 `--subject` 组合;附件下载前先用 `attachments --id` 确认附件清单。
-
+**要点**: 搜索支持 `--from` 与 `--subject` 组合;附件下载前先用 `attachments --id` 确认附件清单.
 ### 案例3: 批量清理垃圾邮件并标记重要邮件
-**背景**: 垃圾邮件积累过多需批量清理,但其中有一封阿里云通知需先移动到收件箱保留。
-
+**背景**: 垃圾邮件积累过多需批量清理,但其中有一封阿里云通知需先移动到收件箱保留.
 **操作**:
 ```bash
 # 第一步:查看垃圾邮件
@@ -220,8 +207,7 @@ email-163-com flag --id 42 --set seen
 email-163-com delete --folder "垃圾邮件" --all
 ```
 
-**要点**: 批量删除前务必确认重要邮件已移出;`flag --set seen` 标记已读,`--unset seen` 标记未读。
-
+**要点**: 批量删除前务必确认重要邮件已移出;`flag --set seen` 标记已读,`--unset seen` 标记未读.
 ## 异常处理
 
 ### 1. IMAP连接失败: SELECT Unsafe Login
@@ -259,23 +245,17 @@ email-163-com delete --folder "垃圾邮件" --all
 ## FAQ
 
 ### Q1: 为什么必须使用客户端授权码而不是登录密码?
-A: 163邮箱出于安全考虑,IMAP/SMTP登录必须使用客户端授权码而非账号登录密码。获取方式:登录163网页版 → 设置 → POP3/SMTP/IMAP → 开启服务并生成授权码。授权码仅显示一次,请妥善保存。
-
+A: 163邮箱出于安全考虑,IMAP/SMTP登录必须使用客户端授权码而非账号登录密码。获取方式:登录163网页版 → 设置 → POP3/SMTP/IMAP → 开启服务并生成授权码。授权码仅显示一次,请妥善保存.
 ### Q2: 配置文件应该放在哪里?格式是什么?
-A: 默认路径 `~/.config/email-163-com/config.json`,包含 `email`、`password`(授权码)、`imap_server`(imap.163.com)、`imap_port`(993)、`smtp_server`(smtp.163.com)、`smtp_port`(465)等字段。也可使用环境变量 `EMAIL_163_USER` 和 `EMAIL_163_PASS` 替代配置文件。建议执行 `chmod 600 config.json` 设置文件权限。
-
+A: 默认路径 `~/.config/email-163-com/config.json`,包含 `email`、`password`(授权码)、`imap_server`(imap.163.com)、`imap_port`(993)、`smtp_server`(smtp.163.com)、`smtp_port`(465)等字段。也可使用环境变量 `EMAIL_163_USER` 和 `EMAIL_163_PASS` 替代配置文件。建议执行 `chmod 600 config.json` 设置文件权限.
 ### Q3: 如何发送HTML格式邮件?
-A: 使用 `--html` 参数直接传入HTML内容,如 `email-163-com send --to x@example.com --subject "Hello" --html "<h1>标题</h1><p>正文</p>"`。HTML内容较长时建议使用 `--file` 指定HTML文件,避免命令行转义问题。
-
+A: 使用 `--html` 参数直接传入HTML内容,如 `email-163-com send --to x@example.com --subject "Hello" --html "<h1>标题</h1><p>正文</p>"`。HTML内容较长时建议使用 `--file` 指定HTML文件,避免命令行转义问题.
 ### Q4: IMAP ID是什么?为什么163邮箱必需?
-A: IMAP ID是RFC 2971定义的IMAP4 ID扩展,用于向服务器标识客户端身份(名称、版本、厂商等)。163邮箱强制要求IMAP ID,未配置会返回 `SELECT Unsafe Login` 错误。本Skill默认已内置IMAP ID配置,自定义时需保留 `imap_id` 字段。
-
+A: IMAP ID是RFC 2971定义的IMAP4 ID扩展,用于向服务器标识客户端身份(名称、版本、厂商等)。163邮箱强制要求IMAP ID,未配置会返回 `SELECT Unsafe Login` 错误。本Skill默认已内置IMAP ID配置,自定义时需保留 `imap_id` 字段.
 ### Q5: 如何批量下载某封邮件的所有附件?
-A: 先用 `email-163-com attachments --id <ID>` 查看附件清单,再用 `email-163-com attachments --id <ID> --download --output ~/Downloads/` 批量下载到指定目录。下载目录可在配置文件 `defaults.output_dir` 中设置默认值。
-
+A: 先用 `email-163-com attachments --id <ID>` 查看附件清单,再用 `email-163-com attachments --id <ID> --download --output ~/Downloads/` 批量下载到指定目录。下载目录可在配置文件 `defaults.output_dir` 中设置默认值.
 ### Q6: 邮件搜索支持哪些条件?可以组合使用吗?
-A: 支持 `--from`(发件人)、`--subject`(主题)、`--folder`(文件夹)、`--count`(数量)等条件,可组合使用。如 `email-163-com search --from "阿里云" --subject "通知" --count 10`。注意163邮箱IMAP搜索对中文支持有限,若结果异常可放宽条件逐项排查。
-
+A: 支持 `--from`(发件人)、`--subject`(主题)、`--folder`(文件夹)、`--count`(数量)等条件,可组合使用。如 `email-163-com search --from "阿里云" --subject "通知" --count 10`。注意163邮箱IMAP搜索对中文支持有限,若结果异常可放宽条件逐项排查.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

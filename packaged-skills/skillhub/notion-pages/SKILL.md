@@ -7,20 +7,19 @@ summary: "搜页面数据库/更新内容/管Notion工作区数据"
 license: "Proprietary"
 description: |-
   Search pages and databases, update content, and manage Notion workspace
-  data from chat。Use this。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。
+  data from chat。Use this。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
   - Productivity
   - Automation
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+
 ---
 # Notion
 
@@ -44,7 +43,9 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 数据处理 | 数据源与处理规则 | 清洗结果与统计摘要 |
+| 搜页面数据库 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 更新内容 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -153,8 +154,7 @@ clawlink_call_tool --tool "notion_get_page" --params '{"page_id": "PAGE_ID"}'
 1. Ensure the integration slug is exactly `notion`.
 2. Use `clawlink_describe_tool` to verify parameter names and types before calling.
 3. For write operations, always call `clawlink_preview_tool` first.
-> **处理方式**: 参考上表中的错误场景说明,按照对应建议进行处理和恢复。
-
+> **处理方式**: 参考上表中的错误场景说明,按照对应建议进行处理和恢复.
 ## 依赖说明
 
 ### 运行环境
@@ -177,7 +177,7 @@ clawlink_call_tool --tool "notion_get_page" --params '{"page_id": "PAGE_ID"}'
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### Search pages

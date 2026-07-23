@@ -7,19 +7,18 @@ summary: "用SkillHub cron建一次性提醒任务,指定时间与内容"
 license: "Proprietary"
 description: |-
   Create one-time reminder tasks using SkillHub cron。User specifies reminder
-  time and task content。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。
+  time and task content。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
   - Automation
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Reminder
 
@@ -44,7 +43,9 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 定时任务 | Cron表达式与任务定义 | 调度状态与执行记录 |
+| Cron配置 | 时间表达式与命令 | 调度ID与下次执行时间 |
+| 提醒创建 | 时间与提醒内容 | 提醒ID与投递状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -115,7 +116,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 User says "remind me to check weather in 30 seconds":

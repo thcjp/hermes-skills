@@ -7,19 +7,17 @@ summary: "UI设计技能(其setup脚本会改Nginx与系统配置需谨慎)"
 license: "Proprietary"
 description: |-
   This UI design skill is useful, but its setup script can make persistent
-  privileged Nginx and sys。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
+  privileged Nginx and sys。
 tags:
   - Creative
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
 ---
 # Ui Ux Dev
 
@@ -43,7 +41,8 @@ tags: "UI设计,前端,设计"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| UI设计 | 界面需求与设计规范 | UI设计方案与实现代码 |
+| 环境配置 | Nginx与系统配置参数 | 持久化的服务部署配置 |
 
 **不适用于**：需要人工判断的复杂决策场景
 

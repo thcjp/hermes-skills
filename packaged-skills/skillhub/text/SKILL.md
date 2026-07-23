@@ -7,19 +7,18 @@ summary: "用模式转换/格式化/处理文本,写作/清洗/本地化/引用"
 license: "Proprietary"
 description: |-
   Transform, format, and process text with patterns for writing, data
-  cleaning, localization, citat。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
+  cleaning, localization, citat。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - Other
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Text
 
@@ -43,7 +42,8 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 用模式转换 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 处理文本 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -113,8 +113,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Text？
@@ -132,3 +131,6 @@ A:
 ## 已知限制
 
 - 本地运行，不支持多设备同步
+- 生成内容的质量依赖LLM的创造力与上下文理解
+- 不支持实时协作编辑与版本管理
+- 长篇内容生成可能出现情节不一致，需人工校验

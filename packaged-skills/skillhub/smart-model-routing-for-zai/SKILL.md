@@ -7,8 +7,9 @@ summary: "z.ai模型路由指南,不装代码不索凭据"
 license: "Proprietary"
 description: |-
   This skill is a disclosed z。ai model-routing guide and does not install
-  code, request credentials。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
-tags: "'[''Development'']'"
+  code, request credentials。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+tags:
+  - Development
 tools:
   - read
   - exec
@@ -17,7 +18,7 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
+
 ---
 # Smart Model Routing
 
@@ -126,8 +127,7 @@ tools: ["read", "write", "exec"]
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Smart Model Routing？

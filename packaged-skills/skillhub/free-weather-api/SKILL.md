@@ -6,19 +6,18 @@ displayName: "weather"
 summary: "查询指定城市或地区的天气预报信息，包括温度、天气状况、降水概率、风力风向等。支持实时天气和未来多日预报查询。"
 license: "Proprietary"
 description: |-
-  查询指定城市或地区的天气预报信息，包括温度、天气状况、降水概率、风力风向等。支持实时天气和未来多日预报查询。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。
+  查询指定城市或地区的天气预报信息，包括温度、天气状况、降水概率、风力风向等。支持实时天气和未来多日预报查询。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
   - Lifestyle
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+
 ---
 # weather
 
@@ -123,7 +122,7 @@ tags: "API,接口,开发工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 示例1: 基础用法

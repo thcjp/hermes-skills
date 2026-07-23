@@ -9,7 +9,7 @@ description: |-
   面向Azure VoiceLive SDK的实时语音AI开发技能,覆盖WebSocket双向通信、流式音频输入输出、
   实时转写、会话管理、VAD端点检测、函数调用工具集成与多语音模型选择。适用于构建语音助手、
   客服对话、实时翻译、会议转写等场景。支持DefaultAzureCredential与API Key两种认证方式,
-  兼容pcm16、g711等多种音频格式,适配24kHz高保真与8kHz电话场景。
+  兼容pcm16、g711等多种音频格式,适配24kHz高保真与8kHz电话场景.
 tags:
   - 通用办公
   - voice
@@ -23,8 +23,7 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "Azure,云计算,DevOps"
+
 ---
 # Azure VoiceLive 实时语音AI开发
 
@@ -67,7 +66,7 @@ tags: "Azure,云计算,DevOps"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 - 通过 `azure.ai.voicelive.aio.connect` 建立与Azure认知服务的WebSocket双向流式连接,使用 `gpt-4o-realtime-preview` 等实时模型进行低延迟语音对话
@@ -256,65 +255,51 @@ async for event in conn:
 ## 异常处理
 
 ### WebSocket连接中断
-现象: 抛出 `ConnectionClosed`,带 `code` 与 `reason`。
-原因: 网络抖动、服务端超时、鉴权令牌过期。
-处理: 捕获 `ConnectionClosed` 后重新 `connect()` 并恢复 `session.update`,长连接场景建议外层 `while True` 并指数退避。
-
+现象: 抛出 `ConnectionClosed`,带 `code` 与 `reason`.
+原因: 网络抖动、服务端超时、鉴权令牌过期.
+处理: 捕获 `ConnectionClosed` 后重新 `connect()` 并恢复 `session.update`,长连接场景建议外层 `while True` 并指数退避.
 ### 鉴权失败 (401/403)
-现象: 事件流中收到 `error`, `code` 为 `unauthorized` 或 `forbidden`。
-原因: `AZURE_COGNITIVE_SERVICES_KEY` 错误、AAD主体未授予认知服务权限、`credential_scopes` 写错。
-处理: 用 `az cognitiveservices account keys list` 复核密钥;AAD方式确认子主体已加入资源 `Cognitive Services User` 角色;`credential_scopes` 必须为 `https://cognitiveservices.azure.com/.default`。
-
+现象: 事件流中收到 `error`, `code` 为 `unauthorized` 或 `forbidden`.
+原因: `AZURE_COGNITIVE_SERVICES_KEY` 错误、AAD主体未授予认知服务权限、`credential_scopes` 写错.
+处理: 用 `az cognitiveservices account keys list` 复核密钥;AAD方式确认子主体已加入资源 `Cognitive Services User` 角色;`credential_scopes` 必须为 `https://cognitiveservices.azure.com/.default`.
 ### 音频格式不匹配
-现象: 上行音频被服务端丢弃,日志出现 `invalid_audio_format`。
-原因: `input_audio_format` 配置与实际采样率/编码不一致,例如设备是16kHz但配置为 `pcm16` (24kHz)。
-处理: 用 `pyaudio`/`sounddevice` 检查实际采样率,改为 `pcm16-16000hz`;G711电话流必须显式指定 `g711_ulaw` 或 `g711_alaw`。
-
+现象: 上行音频被服务端丢弃,日志出现 `invalid_audio_format`.
+原因: `input_audio_format` 配置与实际采样率/编码不一致,例如设备是16kHz但配置为 `pcm16` (24kHz).
+处理: 用 `pyaudio`/`sounddevice` 检查实际采样率,改为 `pcm16-16000hz`;G711电话流必须显式指定 `g711_ulaw` 或 `g711_alaw`.
 ### VAD端点漏判
-现象: 用户话音未结束就被 `speech_stopped` 触发响应,或停顿后未触发响应。
-原因: `server_vad.threshold` 过高/过低,`silence_duration_ms` 太短。
-处理: 嘈杂环境调高 `threshold` 至 0.6-0.7;温和场景降至 0.3-0.4;`silence_duration_ms` 默认500ms,中文对话可调至700ms。
-
+现象: 用户话音未结束就被 `speech_stopped` 触发响应,或停顿后未触发响应.
+原因: `server_vad.threshold` 过高/过低,`silence_duration_ms` 太短.
+处理: 嘈杂环境调高 `threshold` 至 0.6-0.7;温和场景降至 0.3-0.4;`silence_duration_ms` 默认500ms,中文对话可调至700ms.
 ### 函数调用回填丢失
-现象: 模型不再继续响应,事件流停滞在 `response.function_call_arguments.done`。
-原因: 未调用 `conn.conversation.item.create` 注入 `function_call_output`,或 `call_id` 不匹配。
-处理: 始终用事件提供的 `event.call_id` 作为回填 `call_id`;回填后必须显式 `await conn.response.create()` 触发下一轮响应。
-
+现象: 模型不再继续响应,事件流停滞在 `response.function_call_arguments.done`.
+原因: 未调用 `conn.conversation.item.create` 注入 `function_call_output`,或 `call_id` 不匹配.
+处理: 始终用事件提供的 `event.call_id` 作为回填 `call_id`;回填后必须显式 `await conn.response.create()` 触发下一轮响应.
 ### 音色不可用
-现象: `session.update` 返回 `voice_not_found` 错误。
-原因: 指定音色在当前区域/模型不可用,例如Azure原生音色未在资源上部署。
-处理: OpenAI系列音色用字符串名 (`alloy`/`echo` 等);Azure原生音色需用 `AzureStandardVoice`/`AzureCustomVoice`/`AzurePersonalVoice` 模型对象,且确认资源已部署对应音色。
-
+现象: `session.update` 返回 `voice_not_found` 错误.
+原因: 指定音色在当前区域/模型不可用,例如Azure原生音色未在资源上部署.
+处理: OpenAI系列音色用字符串名 (`alloy`/`echo` 等);Azure原生音色需用 `AzureStandardVoice`/`AzureCustomVoice`/`AzurePersonalVoice` 模型对象,且确认资源已部署对应音色.
 ### 响应被取消后状态不一致
-现象: 调用 `response.cancel()` 后再次 `response.create()` 报 `response_already_active`。
-原因: 取消是异步操作,未等待完成就触发新响应。
-处理: 在 `response.cancel()` 协程完成后再调用 `response.create()`;必要时先 `output_audio_buffer.clear()` 重置输出。
-
+现象: 调用 `response.cancel()` 后再次 `response.create()` 报 `response_already_active`.
+原因: 取消是异步操作,未等待完成就触发新响应.
+处理: 在 `response.cancel()` 协程完成后再调用 `response.create()`;必要时先 `output_audio_buffer.clear()` 重置输出.
 ### 并发音频追加冲突
-现象: `input_audio_buffer.append` 抛 `concurrent_append` 错误。
-原因: 多个协程同时向同一连接写入音频块。
-处理: 用 `asyncio.Lock` 串行化对 `input_audio_buffer` 的写入,或采用单生产者协程从音频队列消费。
-
+现象: `input_audio_buffer.append` 抛 `concurrent_append` 错误.
+原因: 多个协程同时向同一连接写入音频块.
+处理: 用 `asyncio.Lock` 串行化对 `input_audio_buffer` 的写入,或采用单生产者协程从音频队列消费.
 ## 常见问题
 
 ### Q1: DefaultAzureCredential 与 API Key 该选哪个?
-生产环境优先 `DefaultAzureCredential`,可结合托管身份、AAD令牌、Key Vault轮换,避免密钥硬编码;本地快速验证或无AAD环境用 `AzureKeyCredential`,密钥通过环境变量注入而非源码。
-
+生产环境优先 `DefaultAzureCredential`,可结合托管身份、AAD令牌、Key Vault轮换,避免密钥硬编码;本地快速验证或无AAD环境用 `AzureKeyCredential`,密钥通过环境变量注入而非源码.
 ### Q2: 如何降低端到端延迟?
-启用 `server_vad` 让服务端自动判定话音起止,避免本地VAD往返;`prefix_padding_ms` 设为200-300ms防截断;`input_audio_format` 使用 `pcm16` 24kHz;播放端使用环形缓冲区而非整段缓存;模型选 `gpt-4o-realtime-preview` 而非标准版。
-
+启用 `server_vad` 让服务端自动判定话音起止,避免本地VAD往返;`prefix_padding_ms` 设为200-300ms防截断;`input_audio_format` 使用 `pcm16` 24kHz;播放端使用环形缓冲区而非整段缓存;模型选 `gpt-4o-realtime-preview` 而非标准版.
 ### Q3: 如何在对话中保留历史上下文?
-通过 `conn.conversation.item.create` 显式注入 `type=message` 的 `system`/`user`/`assistant` 消息,`content` 数组中 `input_text`/`output_text`/`input_audio`/`output_audio` 类型混合存在;服务端会按注入顺序维护对话历史。
-
+通过 `conn.conversation.item.create` 显式注入 `type=message` 的 `system`/`user`/`assistant` 消息,`content` 数组中 `input_text`/`output_text`/`input_audio`/`output_audio` 类型混合存在;服务端会按注入顺序维护对话历史.
 ### Q4: 能否同时拿到音频流和文字转写?
-可以。`modalities=["text","audio"]` 配置后,同一响应会同时派发 `response.audio.delta` 与 `response.audio_transcript.delta`,前者为base64 PCM,后者为增量文本,业务侧可分别消费。
-
+可以。`modalities=["text","audio"]` 配置后,同一响应会同时派发 `response.audio.delta` 与 `response.audio_transcript.delta`,前者为base64 PCM,后者为增量文本,业务侧可分别消费.
 ### Q5: Azure原生音色和OpenAI音色有什么区别?
-OpenAI音色 (`alloy`/`echo`/`shimmer` 等) 走实时模型内置TTS;Azure原生音色 (`AzureStandardVoice`/`AzureCustomVoice`/`AzurePersonalVoice`) 走Azure语音服务,支持自定义音色与神经语音克隆,但需要在Azure语音资源上单独部署。
-
+OpenAI音色 (`alloy`/`echo`/`shimmer` 等) 走实时模型内置TTS;Azure原生音色 (`AzureStandardVoice`/`AzureCustomVoice`/`AzurePersonalVoice`) 走Azure语音服务,支持自定义音色与神经语音克隆,但需要在Azure语音资源上单独部署.
 ### Q6: 通话中断后如何恢复对话?
-`VoiceLiveConnection` 是无状态WebSocket,断线后必须重新 `connect()` 建立新会话;若要恢复语义上下文,需把历史 `conversation.item` 重新通过 `item.create` 注入新会话,服务端不会自动持久化。
-
+`VoiceLiveConnection` 是无状态WebSocket,断线后必须重新 `connect()` 建立新会话;若要恢复语义上下文,需把历史 `conversation.item` 重新通过 `item.create` 注入新会话,服务端不会自动持久化.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

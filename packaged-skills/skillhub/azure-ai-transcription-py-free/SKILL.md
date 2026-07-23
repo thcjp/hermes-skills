@@ -9,7 +9,7 @@ description: |-
   Azure AI Transcription 的 Python 客户端库基础功能。支持对存储在 Blob 中的音频
   提交批量转写作业,通过 locale 指定识别语言。使用订阅密钥认证,通过
   TRANSCRIPTION_ENDPOINT 与 TRANSCRIPTION_KEY 环境变量配置资源。本基础版不含
-  实时流式转写、说话人分离、时间戳字幕生成等高级能力。
+  实时流式转写、说话人分离、时间戳字幕生成等高级能力.
 tags:
   - 系统运维
   - Speech
@@ -17,13 +17,11 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "Azure,云计算,DevOps"
+
 ---
 # Azure Ai Transcription Py Free
 
-Azure AI Transcription(speech-to-text)Python 客户端库基础功能,支持批量转写。
-
+Azure AI Transcription(speech-to-text)Python 客户端库基础功能,支持批量转写.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -45,8 +43,7 @@ TRANSCRIPTION_ENDPOINT=https://<resource>.cognitiveservices.azure.com
 TRANSCRIPTION_KEY=API_KEY
 ```
 
-`TRANSCRIPTION_ENDPOINT` 为 Azure AI 资源终结点,`TRANSCRIPTION_KEY` 为该资源的订阅密钥(primary 或 secondary 均可)。两个变量建议放入 `.env` 或系统环境变量,不要硬编码进源码;密钥泄漏后须在门户轮换并更新变量。
-
+`TRANSCRIPTION_ENDPOINT` 为 Azure AI 资源终结点,`TRANSCRIPTION_KEY` 为该资源的订阅密钥(primary 或 secondary 均可)。两个变量建议放入 `.env` 或系统环境变量,不要硬编码进源码;密钥泄漏后须在门户轮换并更新变量.
 ## 认证
 
 使用订阅密钥认证(此客户端不支持 DefaultAzureCredential):
@@ -82,7 +79,7 @@ client = TranscriptionClient(
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 - 批量转写:对存储在 Blob 中的音频文件提交转写作业,异步等待完成
@@ -110,12 +107,10 @@ result = job.result()
 print(result.status)
 ```
 
-`begin_transcription` 提交一个批量转写作业并立即返回作业句柄;`job.result()` 阻塞等待作业完成并返回结果。`content_urls` 指向可公开访问或带 SAS 的音频 URL。
-
+`begin_transcription` 提交一个批量转写作业并立即返回作业句柄;`job.result()` 阻塞等待作业完成并返回结果。`content_urls` 指向可公开访问或带 SAS 的音频 URL.
 ## 结果处理
 
-`result.status` 反映作业状态:`Succeeded` 表示成功可取回文稿,`Failed` 表示失败需检查 `content_urls` 可达性与 `locale` 合法性。结果按识别片段组织,每个片段含文本与时间戳。导出纯文稿时按片段顺序拼接文本即可;导出字幕时把每个片段起止时间戳格式化为时间码(形如 `00:00:01,000 至 00:00:03,000`)与文本拼接成字幕条目。批量作业通过轮询 `job.result()` 等待完成,无须显式关闭会话。
-
+`result.status` 反映作业状态:`Succeeded` 表示成功可取回文稿,`Failed` 表示失败需检查 `content_urls` 可达性与 `locale` 合法性。结果按识别片段组织,每个片段含文本与时间戳。导出纯文稿时按片段顺序拼接文本即可;导出字幕时把每个片段起止时间戳格式化为时间码(形如 `00:00:01,000 至 00:00:03,000`)与文本拼接成字幕条目。批量作业通过轮询 `job.result()` 等待完成,无须显式关闭会话.
 ## 实践要点
 
 1. 长文件用批量转写,服务端异步处理不受客户端连接时长限制
@@ -134,50 +129,37 @@ print(result.status)
 ## 适用场景
 
 ### 会议录音批量转写
-将会议录音上传至 Blob 存储并生成 SAS URL,提交批量转写作业并指定 `locale`,异步等待完成后取回完整会议文稿。适合长会议、离线归档、会议纪要生成。
-
+将会议录音上传至 Blob 存储并生成 SAS URL,提交批量转写作业并指定 `locale`,异步等待完成后取回完整会议文稿。适合长会议、离线归档、会议纪要生成.
 ### 指定语言提升准确率
-对中英文等不同语言音频指定对应 `locale`(如 `zh-CN`、`en-US`),避免语言误判,提升专有名词与口音的识别准确率。
-
+对中英文等不同语言音频指定对应 `locale`(如 `zh-CN`、`en-US`),避免语言误判,提升专有名词与口音的识别准确率.
 ## 案例
 
 ### 批量转写会议录音
-用户有一段会议录音 `meeting.wav` 已上传至 Blob 并得到 SAS URL。先配置环境变量 `TRANSCRIPTION_ENDPOINT` 与 `TRANSCRIPTION_KEY`,实例化 `TranscriptionClient`。调用 `begin_transcription(name="meeting-20260406", locale="zh-CN", content_urls=["https://<storage>/meeting.wav?<sas>"])`。`job.result()` 阻塞等待,完成后从 `result` 取回完整文稿并导出为会议纪要。
-
+用户有一段会议录音 `meeting.wav` 已上传至 Blob 并得到 SAS URL。先配置环境变量 `TRANSCRIPTION_ENDPOINT` 与 `TRANSCRIPTION_KEY`,实例化 `TranscriptionClient`。调用 `begin_transcription(name="meeting-20260406", locale="zh-CN", content_urls=["https://<storage>/meeting.wav?<sas>"])`。`job.result()` 阻塞等待,完成后从 `result` 取回完整文稿并导出为会议纪要.
 ### 指定语言转写英文音频
-用户有一段英文播客 `podcast.wav`,不指定语言时识别准确率低。批量提交 `begin_transcription(locale="en-US", content_urls=[...])`,指定 `en-US` 后专有名词识别准确率明显提升,取回结果后导出文本。
-
+用户有一段英文播客 `podcast.wav`,不指定语言时识别准确率低。批量提交 `begin_transcription(locale="en-US", content_urls=[...])`,指定 `en-US` 后专有名词识别准确率明显提升,取回结果后导出文本.
 ## 异常处理
 
 ### TRANSCRIPTION_ENDPOINT 未设置
-实例化 `TranscriptionClient` 时 `os.environ["TRANSCRIPTION_ENDPOINT"]` 抛 `KeyError`。检查环境变量是否已导出(常见为 `https://<resource>.cognitiveservices.azure.com`),在 shell 或 `.env` 中配置后检查网络连接和配置后重试。不要把 endpoint 硬编码进源码。
-
+实例化 `TranscriptionClient` 时 `os.environ["TRANSCRIPTION_ENDPOINT"]` 抛 `KeyError`。检查环境变量是否已导出(常见为 `https://<resource>.cognitiveservices.azure.com`),在 shell 或 `.env` 中配置后检查网络连接和配置后重试。不要把 endpoint 硬编码进源码.
 ### TRANSCRIPTION_KEY 无效(401/403)
-调用转写接口返回 401 或 403。核对 `TRANSCRIPTION_KEY` 是否为该资源的有效订阅密钥,确认 endpoint 与 key 属于同一资源同一区域。密钥轮换后旧 key 会失效,需更新环境变量。
-
+调用转写接口返回 401 或 403。核对 `TRANSCRIPTION_KEY` 是否为该资源的有效订阅密钥,确认 endpoint 与 key 属于同一资源同一区域。密钥轮换后旧 key 会失效,需更新环境变量.
 ### DefaultAzureCredential 不被支持
-尝试用 `DefaultAzureCredential` 认证时报错。此客户端仅支持订阅密钥认证,改用 `credential=os.environ["TRANSCRIPTION_KEY"]` 传入订阅密钥。
-
+尝试用 `DefaultAzureCredential` 认证时报错。此客户端仅支持订阅密钥认证,改用 `credential=os.environ["TRANSCRIPTION_KEY"]` 传入订阅密钥.
 ### content_urls 不可访问
-批量转写作业提交后长时间不返回或返回失败。确认 `content_urls` 指向的 URL 可被服务端公开访问或附带了未过期的 SAS 令牌;Blob 容器若为私有须生成只读 SAS;URL 协议须为 HTTPS。
-
+批量转写作业提交后长时间不返回或返回失败。确认 `content_urls` 指向的 URL 可被服务端公开访问或附带了未过期的 SAS 令牌;Blob 容器若为私有须生成只读 SAS;URL 协议须为 HTTPS.
 ### locale 不被支持
-指定 `locale` 后识别准确率低或报错语言不支持。核对 locale 是否在 Azure AI Speech 支持的语言列表内(如 `en-US`、`zh-CN`、`ja-JP`)。
-
+指定 `locale` 后识别准确率低或报错语言不支持。核对 locale 是否在 Azure AI Speech 支持的语言列表内(如 `en-US`、`zh-CN`、`ja-JP`).
 ## 常见问题
 
 ### Q1:如何认证?
-此客户端仅支持订阅密钥认证,通过 `TRANSCRIPTION_ENDPOINT` 与 `TRANSCRIPTION_KEY` 环境变量配置资源,实例化时传入 `credential=os.environ["TRANSCRIPTION_KEY"]`。不支持 `DefaultAzureCredential`。
-
+此客户端仅支持订阅密钥认证,通过 `TRANSCRIPTION_ENDPOINT` 与 `TRANSCRIPTION_KEY` 环境变量配置资源,实例化时传入 `credential=os.environ["TRANSCRIPTION_KEY"]`。不支持 `DefaultAzureCredential`.
 ### Q2:locale 怎么填?
-填 BCP-47 语言标签,如 `en-US`、`zh-CN`、`ja-JP`。指定与音频一致的语言可显著提升识别准确率,避免语言误判。
-
+填 BCP-47 语言标签,如 `en-US`、`zh-CN`、`ja-JP`。指定与音频一致的语言可显著提升识别准确率,避免语言误判.
 ### Q3:长文件怎么处理?
-长文件优先用批量转写并存储在 Blob 中,服务端异步处理不受客户端连接时长限制;`job.result()` 阻塞等待完成。
-
+长文件优先用批量转写并存储在 Blob 中,服务端异步处理不受客户端连接时长限制;`job.result()` 阻塞等待完成.
 ### Q4:content_urls 有什么要求?
-须为可被服务端公开访问或带 SAS 令牌的 HTTPS URL;Blob 容器若为私有须生成只读 SAS;URL 协议须为 HTTPS。
-
+须为可被服务端公开访问或带 SAS 令牌的 HTTPS URL;Blob 容器若为私有须生成只读 SAS;URL 协议须为 HTTPS.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
@@ -197,8 +179,7 @@ print(result.status)
 
 ## 升级提示
 
-本基础版仅覆盖批量转写与语言指定。如需实时流式转写(`begin_stream_transcription` 与 `send_audio_file`)、说话人分离(`diarization_enabled`)、时间戳捕获与字幕生成、流式背压处理与会话管理实践要点,请升级至付费版 `azure-ai-transcription-py`。
-
+本基础版仅覆盖批量转写与语言指定。如需实时流式转写(`begin_stream_transcription` 与 `send_audio_file`)、说话人分离(`diarization_enabled`)、时间戳捕获与字幕生成、流式背压处理与会话管理实践要点,请升级至付费版 `azure-ai-transcription-py`.
 ## 输出格式
 
 ```json

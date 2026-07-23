@@ -3,7 +3,7 @@ slug: cdp-browser-master
 name: cdp-browser-master
 version: 1.0.0
 displayName: CDP浏览器大师
-summary: 解决反爬检测、选择器易变、SPA路由、等待不准四大痛点，附反检测与智能等待。
+summary: 解决反爬检测、选择器易变、SPA路由、等待不准四大痛点，附反检测与智能等待.
 license: Proprietary
 description: 通过Chrome DevTools Protocol驱动已登录浏览器执行自动化任务,解决反爬检测、选择器易变、SPA路由难导航、等待不准四大痛点,提供反检测策略、选择器探测模式、SPA导航模式、智能等待、Cookie获取、连接管理六大核心能力。适用于JS渲染页面抓取、需登录态网站操作、平台配额查询场景。适用关键词:CDP、浏览器自动化、Chrome、Edge、反爬、选择器、SPA、智能等待、Cookie
 tags:
@@ -11,15 +11,14 @@ tags:
 - 浏览器
 - 数据抓取
 tools:
-- - read
+- read
 - exec
 homepage: https://skillhub.cn
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+
 ---
 # CDP浏览器大师
 
@@ -30,51 +29,44 @@ tags: "自动化,工作流,效率"
 ### 1. 反检测策略
 UA天然真实(用已登录浏览器)、启动参数`--disable-blink-features=AutomationControlled`规避WebDriver标记、行为拟人化(随机延迟)、Cloudflare绕过思路(复用已验证会话)
 
-**输入**: 用户提供反检测策略所需的指令和必要参数。
-**处理**: 解析反检测策略的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回反检测策略的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供反检测策略所需的指令和必要参数.
+**处理**: 解析反检测策略的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回反检测策略的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 2. 选择器探测模式
 先eval探索DOM结构(打印class/tag/text样本),再写精确选择器,提供多备选(精确class→模糊`[class*="xxx"]`→语义tag→属性选择器)降级匹配
 
-**输入**: 用户提供选择器探测模式所需的指令和必要参数。
-**处理**: 解析选择器探测模式的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回选择器探测模式的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供选择器探测模式所需的指令和必要参数.
+**处理**: 解析选择器探测模式的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回选择器探测模式的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 3. SPA导航模式
 处理Next.js/React内部路由,先入可访问父页面(如`/user-center/basic-information`),再用JS点击侧边栏`<div cursor-pointer>`触发内部路由跳转,避免直接navigate子路由404
 
-**输入**: 用户提供SPA导航模式所需的指令和必要参数。
-**处理**: 解析SPA导航模式的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回SPA导航模式的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供SPA导航模式所需的指令和必要参数.
+**处理**: 解析SPA导航模式的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回SPA导航模式的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 4. 智能等待
 `waitNetworkIdle`检测无请求持续500ms即继续,替代固定sleep,既不快也不慢
 
-**输入**: 用户提供智能等待所需的指令和必要参数。
-**处理**: 解析智能等待的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回智能等待的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供智能等待所需的指令和必要参数.
+**处理**: 解析智能等待的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回智能等待的响应数据,包含状态码、结果和日志.
 ### 5. Cookie获取
 普通Cookie用`document.cookie`,HttpOnly Cookie用CDP `Network.getCookies`命令获取
 
-**输入**: 用户提供Cookie获取所需的指令和必要参数。
-**处理**: 解析Cookie获取的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回Cookie获取的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供Cookie获取所需的指令和必要参数.
+**处理**: 解析Cookie获取的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回Cookie获取的响应数据,包含状态码、结果和日志.
 ### 6. 连接管理
 端口复用(每端口同时一个WebSocket)、ConnectionManager自动管理、残留连接清理、端口占用排查
 
-**输入**: 用户提供连接管理所需的指令和必要参数。
-**处理**: 解析连接管理的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回连接管理的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供连接管理所需的指令和必要参数.
+**处理**: 解析连接管理的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回连接管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：解决反爬检测、选择器易变、等待不准四大痛点、附反检测与智能等、Chrome、DevTools、Protocol、驱动已登录浏览器、执行自动化任务、路由难导航、连接管理六大核心、适用于、渲染页面抓取、需登录态网站操作、平台配额查询场景、适用关键词、浏览器自动化、Edge等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：解决反爬检测、选择器易变、等待不准四大痛点、附反检测与智能等、Chrome、DevTools、Protocol、驱动已登录浏览器、执行自动化任务、路由难导航、连接管理六大核心、适用于、渲染页面抓取、需登录态网站操作、平台配额查询场景、适用关键词、浏览器自动化、Edge等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 适用场景
 
 **何时使用**:
@@ -244,20 +236,15 @@ const r = await edge.eval(`(function(){
 ## 常见问题
 
 **Q: 什么时候该用CDP而不是web_fetch?**
-A: JS渲染页面、需登录态、需交互(点击/填表)时用CDP。静态HTML用web_fetch即可。B站等页面web_fetch拿到的是空壳。
-
+A: JS渲染页面、需登录态、需交互(点击/填表)时用CDP。静态HTML用web_fetch即可。B站等页面web_fetch拿到的是空壳.
 **Q: 被Cloudflare拦了怎么办?**
-A: 用真实已登录浏览器(非Headless),加`--disable-blink-features=AutomationControlled`,操作间加随机延迟(500-1500ms),首次访问等验证页通过后复用Cookie。
-
+A: 用真实已登录浏览器(非Headless),加`--disable-blink-features=AutomationControlled`,操作间加随机延迟(500-1500ms),首次访问等验证页通过后复用Cookie.
 **Q: 选择器经常失效怎么办?**
-A: 用探测模式——先eval探索DOM结构再定位。提供多备选选择器(从精确class到模糊`[class*="xxx"]`到语义tag到属性选择器)降级匹配。优先用`[class*="xxx"]`模糊匹配。
-
+A: 用探测模式——先eval探索DOM结构再定位。提供多备选选择器(从精确class到模糊`[class*="xxx"]`到语义tag到属性选择器)降级匹配。优先用`[class*="xxx"]`模糊匹配.
 **Q: Next.js SPA子路由404怎么解决?**
-A: 直接navigate会404。先进入可访问的父页面(如`/user-center/basic-information`),再用JS点击侧边栏div(`cursor-pointer`)触发内部路由跳转,跳转后用`waitNetworkIdle`等待数据加载。
-
+A: 直接navigate会404。先进入可访问的父页面(如`/user-center/basic-information`),再用JS点击侧边栏div(`cursor-pointer`)触发内部路由跳转,跳转后用`waitNetworkIdle`等待数据加载.
 **Q: 怎么拿HttpOnly Cookie?**
-A: `document.cookie`拿不到。用CDP的`Network.getCookies`命令:`cdpSession.send('Network.getCookies', {urls: ['https://目标网站.com']})`。
-
+A: `document.cookie`拿不到。用CDP的`Network.getCookies`命令:`cdpSession.send('Network.getCookies', {urls: ['https://目标网站.com']})`.
 ## 已知限制
 
 1. **依赖本地浏览器环境**:需提前安装Edge/Chrome并启动远程调试,无浏览器环境的服务器无法使用

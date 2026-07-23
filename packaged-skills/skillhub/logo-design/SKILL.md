@@ -3,12 +3,12 @@ slug: "logo-design"
 name: "logo-design"
 version: "1.0.0"
 displayName: "Logo设计工具专业版"
-summary: "企业级AI Logo设计系统,支持批量生成、自动矢量化、品牌变体管理、CI/CD集成,适合团队与商业项目。"
+summary: "企业级AI Logo设计系统,支持批量生成、自动矢量化、品牌变体管理、CI/CD集成,适合团队与商业项目"
 license: "Proprietary"
 edition: "pro"
 description: |-
   Logo设计工具专业版为企业与设计团队提供系统化的AI Logo设计解决方案。在免费版基础生成能力之上,增加批量生成、自动矢量化、品牌变体管理、
-  多格式导出、设计审计与CI/CD集成能力。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
+  多格式导出、设计审计与CI/CD集成能力。
 tags:
   - Logo设计
   - 品牌设计
@@ -17,15 +17,13 @@ tags:
   - 自动化
   - 设计系统
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 ---
 # Logo设计工具专业版
 
@@ -51,17 +49,17 @@ batch_config = {
     "directions": [
         {
             "name": "极简几何",
-            "prompt": "minimalist geometric logo, interlocking hexagonal shapes...",
+            "prompt": "minimalist geometric logo, interlocking hexagonal shapes.",
             "variations": 5
         },
         {
             "name": "具象图形",
-            "prompt": "flat vector logo of a fox head in profile...",
+            "prompt": "flat vector logo of a fox head in profile.",
             "variations": 5
         },
         {
             "name": "抽象线条",
-            "prompt": "abstract line art logo, interconnected nodes...",
+            "prompt": "abstract line art logo, interconnected nodes.",
             "variations": 5
         }
     ],
@@ -69,7 +67,7 @@ batch_config = {
     "auto_validate": True,
     "output_dir": "./output/"
 }
-# ...
+# .
 # 执行批量生成
 python3 batch_logo_gen.py --config batch_config
 ```- 验证返回数据的完整性和格式正确性
@@ -91,7 +89,7 @@ vectorization_config = {
         "preserve_details": True         # 保留细节
     }
 }
-# ...
+# .
 # 执行矢量化
 python3 vectorize.py --config vectorization_config
 ```- 验证执行结果,确认输出符合预期格式
@@ -137,7 +135,7 @@ brand_variants = {
         "format": "ico_and_png"
     }
 }
-# ...
+# .
 # 批量生成所有变体
 python3 generate_variants.py --config brand_variants
 ```
@@ -220,7 +218,7 @@ sub_brands = [
     {"name": "BrandC", "industry": "education", "color": "#F59E0B"},
     {"name": "BrandD", "industry": "health", "color": "#EF4444"}
 ]
-# ...
+# .
 for brand in sub_brands:
     generate_logo_system(
         brand_name=brand["name"],
@@ -366,7 +364,7 @@ python3 audit_logo.py \
 brand:
   name: "MyBrand"
   tagline: "Innovation Forward"
-# ...
+# .
 logo:
   style: "minimalist geometric"
   colors:
@@ -374,11 +372,11 @@ logo:
     secondary: "#4D7CFF"
     neutral: "#0F172A"
     background: "#FFFFFF"
-# ...
+# .
   typography:
     logo_font: "Inter, sans-serif"
     weights: [400, 600, 700]
-# ...
+# .
   variants:
     - primary
     - horizontal
@@ -387,14 +385,14 @@ logo:
     - dark_mode
     - monochrome
     - favicon
-# ...
+# .
   export_formats:
     - svg
     - png_transparent
     - png_white_bg
     - ico
     - high_res_png
-# ...
+# .
   quality_requirements:
     min_size: 16
     max_complexity: 0.7

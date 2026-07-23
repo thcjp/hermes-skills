@@ -6,7 +6,7 @@ displayName: "SQL查询助手(免费版)"
 summary: "多数据库SQL查询、优化、schema设计与数据分析，支持MySQL/PostgreSQL/SQLite/SQLServer。免费版"
 license: "MIT"
 description: |-
-  SQL查询与数据库操作辅助引擎（免费版），支持MySQL、PostgreSQL、SQLite、SQLServer。
+  SQL查询与数据库操作辅助引擎（免费版），支持MySQL、PostgreSQL、SQLite、SQLServer.
   核心能力：
   - 自然语言转SQL查询（跨4种数据库方言）
   - 查询性能分析与索引优化建议
@@ -18,13 +18,11 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 数据存储
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # SQL查询助手(免费版)
 
-SQL查询与数据库操作辅助引擎，支持MySQL、PostgreSQL、SQLite、SQLServer，覆盖自然语言转SQL、性能优化与Schema设计。
-
+SQL查询与数据库操作辅助引擎，支持MySQL、PostgreSQL、SQLite、SQLServer，覆盖自然语言转SQL、性能优化与Schema设计.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -54,7 +52,7 @@ SQL查询与数据库操作辅助引擎，支持MySQL、PostgreSQL、SQLite、SQ
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### 1. 自然语言转SQL
@@ -90,18 +88,16 @@ HAVING total_spent > 1000;
 - **ER图生成**：表关系可视化（Mermaid格式）
 - **迁移脚本**：DDL生成与版本管理
 
-**输入**: 用户提供数据库Schema设计所需的指令和必要参数。
-**处理**: 解析数据库Schema设计的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-
+**输入**: 用户提供数据库Schema设计所需的指令和必要参数.
+**处理**: 解析数据库Schema设计的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 4. 复杂分析查询
 - **窗口函数**：`ROW_NUMBER()`/`RANK()`/`LAG()`/`LEAD()`/`SUM() OVER()`
 - **CTE递归**：层级数据查询（组织架构/评论树/目录树）
 - **聚合分析**：`GROUP BY`/`HAVING`/`ROLLUP`/`CUBE`
 - **时间序列**：同比/环比/移动平均/累计求和
 
-**输入**: 用户提供复杂分析查询所需的指令和必要参数。
-**输出**: 返回复杂分析查询的处理结果,包含执行状态码、结果数据和执行日志。
-
+**输入**: 用户提供复杂分析查询所需的指令和必要参数.
+**输出**: 返回复杂分析查询的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 适用场景
 
@@ -112,8 +108,7 @@ HAVING total_spent > 1000;
 | Schema设计 | 业务需求描述 | 表结构DDL+索引策略+ER图 |
 | 数据分析 | 分析维度+指标 | 窗口函数/CTE查询+结果解读 |
 
-**不适用于**：数据库运维（备份/主从配置）、NoSQL查询、数据库安全审计。
-
+**不适用于**：数据库运维（备份/主从配置）、NoSQL查询、数据库安全审计.
 ## 使用流程
 
 1. 确定目标数据库类型（MySQL/PostgreSQL/SQLite/SQLServer）
@@ -162,14 +157,11 @@ ORDER BY user_id, month;
 ## 常见问题
 
 ### Q1: 如何选择数据库方言？生成的SQL如何适配不同数据库？
-开始查询前明确目标数据库类型。引擎自动处理方言差异：日期函数（MySQL `DATE_SUB()` vs PostgreSQL `INTERVAL`）、分页（MySQL `LIMIT offset, count` vs SQLServer `OFFSET FETCH`）、字符串函数（`CONCAT()` vs `||`）。如果不确定目标数据库，默认生成标准SQL，标注需要按方言调整的部分。
-
+开始查询前明确目标数据库类型。引擎自动处理方言差异：日期函数（MySQL `DATE_SUB()` vs PostgreSQL `INTERVAL`）、分页（MySQL `LIMIT offset, count` vs SQLServer `OFFSET FETCH`）、字符串函数（`CONCAT()` vs `||`）。如果不确定目标数据库，默认生成标准SQL，标注需要按方言调整的部分.
 ### Q2: EXPLAIN执行计划中哪些指标最关键？
-重点关注：`type`（访问类型，`ALL`为全表扫描需优化，`ref`/`eq_ref`为索引查找）、`key`（实际使用的索引，`NULL`表示未用索引）、`rows`（预估扫描行数，越少越好）、`Extra`（`Using filesort`和`Using temporary`表示需要额外排序/临时表，通常需优化）。优化目标是将`type`从`ALL`提升到`ref`或更高，减少`rows`。
-
+重点关注：`type`（访问类型，`ALL`为全表扫描需优化，`ref`/`eq_ref`为索引查找）、`key`（实际使用的索引，`NULL`表示未用索引）、`rows`（预估扫描行数，越少越好）、`Extra`（`Using filesort`和`Using temporary`表示需要额外排序/临时表，通常需优化）。优化目标是将`type`从`ALL`提升到`ref`或更高，减少`rows`.
 ### Q3: 联合索引的最左前缀原则是什么？
-联合索引`(a, b, c)`仅支持以下查询前缀：`a`、`a,b`、`a,b,c`。单独查询`b`或`c`无法使用该索引。设计联合索引时，将选择性最高的列放最前面（如`WHERE status='active'`比`WHERE created_at>'2024-01-01'`选择性高），范围查询列放最后（范围查询后的列无法走索引）。
-
+联合索引`(a, b, c)`仅支持以下查询前缀：`a`、`a,b`、`a,b,c`。单独查询`b`或`c`无法使用该索引。设计联合索引时，将选择性最高的列放最前面（如`WHERE status='active'`比`WHERE created_at>'2024-01-01'`选择性高），范围查询列放最后（范围查询后的列无法走索引）.
 ## 已知限制
 
 - 无法直接连接数据库执行查询（需用户提供数据库客户端或连接）
@@ -178,8 +170,7 @@ ORDER BY user_id, month;
 
 ## 升级提示
 
-本免费版提供基础功能。升级到完整版 sql 获取全部能力和高级特性。
-
+本免费版提供基础功能。升级到完整版 sql 获取全部能力和高级特性.
 ## 输出格式
 
 ```json

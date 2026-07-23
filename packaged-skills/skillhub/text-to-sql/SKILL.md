@@ -7,8 +7,9 @@ summary: "用户自然语言描述数据需求,生成对应SQL查询"
 license: "Proprietary"
 description: |-
   Use when (1) user describes what data they want in plain English and
-  asks for the corresponding S。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
-tags: "'[''Integrations'']'"
+  asks for the corresponding S。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+tags:
+  - Integrations
 tools:
   - read
   - exec
@@ -17,7 +18,7 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
+
 ---
 # Text To Sql
 
@@ -41,7 +42,9 @@ tools: ["read", "write", "exec"]
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 数据处理 | 数据源与处理规则 | 清洗结果与统计摘要 |
+| 内容生成 | 提示词与风格参数 | 生成内容与质量评分 |
+| 信息查询 | 查询条件与关键词 | 查询结果与匹配记录 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -142,7 +145,7 @@ tools: ["read", "write", "exec"]
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 | Scenario | Bad Output | Good Output |

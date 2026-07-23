@@ -7,22 +7,19 @@ summary: "通过dlazy CLI调用基础TTS模型,支持中英文文本转语音"
 license: "MIT"
 description: |-
   dlazy 音频生成基础客户端(免费版)。通过 dlazy CLI 调用 doubao-tts 与 keling-tts 两个基础 TTS 模型,
-  支持中英文文本转语音、音色与语速控制。适用于有声书朗读、配音原型、语音播报等基础场景。
+  支持中英文文本转语音、音色与语速控制。适用于有声书朗读、配音原型、语音播报等基础场景.
 tags:
   - Creative
 tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "音频处理,媒体,创意"
+
 ---
 # Dlazy Audio LITE
 
-基础版音频生成客户端,通过 dlazy CLI 调用 doubao-tts 与 keling-tts 两个基础 TTS 模型,完成中英文文本转语音。
-
-**范围外**(本技能不做): 音乐生成、音效生成、语音克隆、多角色对话、管道串联、ElevenLabs、Gemini、Qwen、Suno 等高级模型(需升级付费版)。
-
+基础版音频生成客户端,通过 dlazy CLI 调用 doubao-tts 与 keling-tts 两个基础 TTS 模型,完成中英文文本转语音.
+**范围外**(本技能不做): 音乐生成、音效生成、语音克隆、多角色对话、管道串联、ElevenLabs、Gemini、Qwen、Suno 等高级模型(需升级付费版).
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -52,11 +49,10 @@ tags: "音频处理,媒体,创意"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
-#
+本工具的核心能力包括：通过dlazy CLI调用基础TTS模型,支持中英文文本转语音。具体功能详情请参考下方能力说明表格与使用场景.
 ## 认证
 
 所有请求需 dLazy API Key。推荐:
@@ -64,19 +60,15 @@ export API_KEY="your_api_key_here"
 dlazy auth set YOUR_API_KEY
 ```
 
-Key 持久化到本地配置(`~/.dlazy/config.json` 或 `%USERPROFILE%\.dlazy\config.json`)。也可通过 `DLAZY_API_KEY` 环境变量按次传入。
-
-Key 获取: 登录 dlazy.com,在 `dashboard/organization/api-key` 创建。
-
-**安全红线**: 永不接受、回显或存储来自聊天输入的 Key;Key 仅作认证用途。
-
+Key 持久化到本地配置(`~/.dlazy/config.json` 或 `%USERPROFILE%\.dlazy\config.json`)。也可通过 `DLAZY_API_KEY` 环境变量按次传入.
+Key 获取: 登录 dlazy.com,在 `dashboard/organization/api-key` 创建.
+**安全红线**: 永不接受、回显或存储来自聊天输入的 Key;Key 仅作认证用途.
 ## 可用音频模型(基础)
 
 - `doubao-tts`: 字节豆包语音合成,多语言多音色,流式高自然度,适合中文新闻播报与有声书
 - `keling-tts`: 可可西 TTS,支持语言、音色、语速、输出格式,适合配音与语音播报
 
-> **升级提示**: ElevenLabs 多角色对话、Suno 音乐生成、ElevenLabs 音效、即时语音克隆、Gemini 与 Qwen TTS、管道串联等高级能力仅在 dlazy-audio-generate 付费版中提供。
-
+> **升级提示**: ElevenLabs 多角色对话、Suno 音乐生成、ElevenLabs 音效、即时语音克隆、Gemini 与 Qwen TTS、管道串联等高级能力仅在 dlazy-audio-generate 付费版中提供.
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 |
@@ -126,8 +118,7 @@ dlazy doubao-tts \
 
 **输出**: `chapter-intro.mp3` 文件路径
 
-**说明**: `doubao-tts` 在中文长文本朗读上自然度高,`--voice` 选择女温暖音色适合有声书场景。
-
+**说明**: `doubao-tts` 在中文长文本朗读上自然度高,`--voice` 选择女温暖音色适合有声书场景.
 ### 案例二： 中英文配音
 **场景**: 产品团队需要为中英文混排的产品介绍生成男声配音
 
@@ -141,8 +132,7 @@ dlazy keling-tts \
 
 **输出**: `product-intro.mp3` 文件路径
 
-**说明**: `keling-tts` 支持中英混排,`--speed 1.0` 控制语速。`--voice` 选择专业男声适合产品介绍场景。
-
+**说明**: `keling-tts` 支持中英混排,`--speed 1.0` 控制语速。`--voice` 选择专业男声适合产品介绍场景.
 ## 错误处理
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
@@ -156,17 +146,13 @@ dlazy keling-tts \
 ## 常见问题
 
 ### Q1: 免费版支持哪些模型?
-A: 免费版(LITE)支持 `doubao-tts` 与 `keling-tts` 两个基础 TTS 模型。付费版(dlazy-audio-generate)额外提供 ElevenLabs 系列、Gemini、Qwen、Suno 音乐、音效生成、语音克隆等 15+ 模型,以及管道串联能力。
-
+A: 免费版(LITE)支持 `doubao-tts` 与 `keling-tts` 两个基础 TTS 模型。付费版(dlazy-audio-generate)额外提供 ElevenLabs 系列、Gemini、Qwen、Suno 音乐、音效生成、语音克隆等 15+ 模型,以及管道串联能力.
 ### Q2: 如何获取并配置 dLazy API Key?
-A: 登录 dlazy.com,在 `dashboard/organization/api-key` 创建 Key。终端运行 `dlazy auth set YOUR_API_KEY` 持久化到本地配置,或通过 `DLAZY_API_KEY` 环境变量按次传入。
-
+A: 登录 dlazy.com,在 `dashboard/organization/api-key` 创建 Key。终端运行 `dlazy auth set YOUR_API_KEY` 持久化到本地配置,或通过 `DLAZY_API_KEY` 环境变量按次传入.
 ### Q3: 支持哪些语言?
-A: `doubao-tts` 与 `keling-tts` 均支持中英文。`doubao-tts` 在中文长文本上自然度较高,`keling-tts` 支持中英混排与语速控制。其他语言支持情况以 dlazy 官方文档为准。
-
+A: `doubao-tts` 与 `keling-tts` 均支持中英文。`doubao-tts` 在中文长文本上自然度较高,`keling-tts` 支持中英混排与语速控制。其他语言支持情况以 dlazy 官方文档为准.
 ### Q4: 余额不足怎么办?
-A: CLI 返回 `code: "insufficient_balance"` 时,明确告知用户余额不足,引导访问 `dlazy.com/dashboard/organization/settings?tab=credits` 充值。充值后可直接重试生成请求。
-
+A: CLI 返回 `code: "insufficient_balance"` 时,明确告知用户余额不足,引导访问 `dlazy.com/dashboard/organization/settings?tab=credits` 充值。充值后可直接重试生成请求.
 ## 已知限制
 
 1. **基础模型**: 仅支持 `doubao-tts` 与 `keling-tts`,不支持音乐/音效/克隆/对话(需升级付费版)
@@ -177,8 +163,7 @@ A: CLI 返回 `code: "insufficient_balance"` 时,明确告知用户余额不足,
 
 ---
 
-> **想要音乐生成、音效、语音克隆、多角色对话?** 升级到 dlazy-audio-generate 付费版解锁 15+ 高级音频模型。
-
+> **想要音乐生成、音效、语音克隆、多角色对话?** 升级到 dlazy-audio-generate 付费版解锁 15+ 高级音频模型.
 ## 输出格式
 
 ```json

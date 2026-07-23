@@ -7,19 +7,18 @@ summary: "经WhatsApp发图/视频/音频/文档,下载转存后发送"
 license: "Proprietary"
 description: |-
   Send images, videos, audio, or documents via WhatsApp by downloading,
-  copying to workspace, sendi。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。
+  copying to workspace, sendi。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
 tags:
   - Creative
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "图像处理,AI绘图,创意"
+
 ---
 # WhatsApp Image Send
 
@@ -43,7 +42,9 @@ tags: "图像处理,AI绘图,创意"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 文档处理 | 文件路径与格式选项 | 转换结果与页面信息 |
+| 视频生成 | 脚本与画面描述 | 视频文件与时长信息 |
+| 音频生成 | 文本与语音参数 | 音频文件与时长信息 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -144,8 +145,7 @@ tags: "图像处理,AI绘图,创意"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用WhatsApp Image Send？

@@ -3,26 +3,24 @@ slug: "frontend-design-v3"
 name: "frontend-design-v3"
 version: "1.0.0"
 displayName: "前端设计V3-专业版"
-summary: "生产级前端设计引擎，支持多框架输出、高级动效编排与可访问性合规。"
+summary: "生产级前端设计引擎，支持多框架输出、高级动效编排与可访问性合规"
 license: "Proprietary"
 edition: "pro"
 description: |-
-  前端设计工具V3专业版。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
+  前端设计工具V3专业版。
 tags:
   - Creative
   - Frontend
   - Enterprise
   - Production
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 ---
 # 前端设计V3-专业版
 
@@ -58,13 +56,13 @@ tags: "设计,UI/UX,创意"
   - React: 函数组件 + Hooks + TypeScript
   - Vue 3: Composition API + <script setup> + TypeScript
   - 共享: 设计令牌跨框架一致
-# ...
+# .
 高级动效:
   - CSS: @keyframes + animation-delay 交错
   - Framer Motion: staggerChildren, whileHover, layoutId
   - GSAP: Timeline, ScrollTrigger, 复杂序列
   - 滚动驱动: Intersection Observer + 动效触发
-# ...
+# .
 可访问性:
   - 语义化 HTML 结构
   - ARIA 标签与角色
@@ -72,7 +70,7 @@ tags: "设计,UI/UX,创意"
   - 焦点管理
   - 颜色对比度检查
   - 屏幕阅读器兼容
-# ...
+# .
 性能优化:
   - 图片懒加载 (loading="lazy")
   - 响应式图片 (srcset, <picture>)
@@ -80,7 +78,7 @@ tags: "设计,UI/UX,创意"
   - 字体加载优化 (font-display: swap)
   - CSS 关键路径优化
   - 资源预加载 (preload, prefetch)
-# ...
+# .
 组件化架构:
   - 原子组件 (Button, Input, Icon)
   - 分子组件 (FormField, Card)
@@ -115,10 +113,10 @@ tags: "设计,UI/UX,创意"
 ```python
 class AccessibilityChecker:
     """WCAG 2.1 AA 合规检查器"""
-# ...
+# .
     def __init__(self):
         self.issues = []
-# ...
+# .
     def check_html(self, html_content):
         """检查 HTML 内容的可访问性"""
         self._check_semantic_structure(html_content)
@@ -128,7 +126,7 @@ class AccessibilityChecker:
         self._check_keyboard_nav(html_content)
         self._check_images_alt(html_content)
         return self._generate_report()
-# ...
+# .
     def _check_semantic_structure(self, html):
         """检查语义化结构"""
         required_tags = ['<header>', '<main>', '<nav>', '<footer>']
@@ -139,7 +137,7 @@ class AccessibilityChecker:
                     "rule": "WCAG 1.3.1",
                     "message": f"缺少语义化标签: {tag}"
                 })
-# ...
+# .
     def _check_aria_labels(self, html):
         """检查 ARIA 标签"""
         if 'role="button"' in html and 'aria-label' not in html:
@@ -148,7 +146,7 @@ class AccessibilityChecker:
                 "rule": "WCAG 4.1.2",
                 "message": "按钮角色缺少 aria-label"
             })
-# ...
+# .
     def _check_heading_hierarchy(self, html):
         """检查标题层级"""
         self.issues.append({
@@ -156,7 +154,7 @@ class AccessibilityChecker:
             "rule": "WCAG 1.3.1",
             "message": "标题层级应按 h1→h2→h3 顺序，不跳级"
         })
-# ...
+# .
     def _check_color_contrast(self, html):
         """检查颜色对比度"""
         self.issues.append({
@@ -164,7 +162,7 @@ class AccessibilityChecker:
             "rule": "WCAG 1.4.3",
             "message": "文本对比度应 ≥ 4.5:1 (AA标准)"
         })
-# ...
+# .
     def _check_keyboard_nav(self, html):
         """检查键盘导航"""
         if 'tabindex' not in html and 'button' not in html:
@@ -173,7 +171,7 @@ class AccessibilityChecker:
                 "rule": "WCAG 2.1.1",
                 "message": "确保所有交互元素可通过键盘访问"
             })
-# ...
+# .
     def _check_images_alt(self, html):
         """检查图片 alt 属性"""
         if '<img' in html and 'alt=' not in html:
@@ -182,7 +180,7 @@ class AccessibilityChecker:
                 "rule": "WCAG 1.1.1",
                 "message": "图片缺少 alt 属性"
             })
-# ...
+# .
     def _generate_report(self):
         errors = [i for i in self.issues if i["level"] == "error"]
         warnings = [i for i in self.issues if i["level"] == "warning"]
@@ -193,7 +191,7 @@ class AccessibilityChecker:
             "compliant": len(errors) == 0,
             "details": self.issues
         }
-# ...
+# .
 checker = AccessibilityChecker()
 report = checker.check_html("<html><body><header></header><main></main></body></html>")
 print(f"合规: {report['compliant']}, 错误: {report['errors']}, 警告: {report['warnings']}")
@@ -225,7 +223,7 @@ generate-frontend \
 ### 第三步：验证可访问性
 ```bash
 check-a11y ./src/components/ --standard wcag-2.1-aa
-# ...
+# .
 audit-performance ./src/ --lighthouse
 ```
 
@@ -305,7 +303,7 @@ audit-performance ./src/ --lighthouse
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&family=IBM+Plex+Sans:wght@300;400;600&display=swap"
       rel="stylesheet">
-# ...
+# .
 <!-- 响应式图片 + 懒加载 -->
 <img
   src="image-default.jpg"
@@ -322,11 +320,11 @@ audit-performance ./src/ --lighthouse
 ```tsx
 // 路由级代码分割
 import { lazy, Suspense } from 'react';
-# ...
+# .
 const HomePage = lazy(() => import('./pages/Home'));
 const AboutPage = lazy(() => import('./pages/About'));
 const ContactPage = lazy(() => import('./pages/Contact'));
-# ...
+# .
 // Suspense 边界
 <Suspense fallback={<div aria-busy="true">加载中</div>}>
   <Routes>

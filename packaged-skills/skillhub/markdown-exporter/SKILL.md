@@ -24,8 +24,7 @@ tags:
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Markdown,文档,工具"
+
 ---
 # Markdown导出工具
 
@@ -96,8 +95,7 @@ markdown-exporter md_to_latex /path/input.md /path/output.tex
 markdown-exporter md_to_pptx /path/input.md /path/output.pptx
 markdown-exporter md_to_pptx /path/input.md /path/output.pptx --template /path/template.pptx
 ```
-支持Pandoc风格的幻灯片语法：分栏布局（`::::: columns`）、演讲者备注（`::: notes`）、增量列表（`::: incremental`）、背景图片。
-
+支持Pandoc风格的幻灯片语法：分栏布局（`::::: columns`）、演讲者备注（`::: notes`）、增量列表（`::: incremental`）、背景图片.
 **处理**: 解析演示文稿生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `演示文稿生成` 选项
@@ -107,8 +105,7 @@ markdown-exporter md_to_pptx /path/input.md /path/output.pptx --template /path/t
 markdown-exporter md_to_codeblock /path/input.md /path/output_dir
 markdown-exporter md_to_codeblock /path/input.md /path/output.zip --compress
 ```
-从Markdown中提取所有代码块，按语言保存为独立文件（`.py`/`.js`/`.sh`等）。
-
+从Markdown中提取所有代码块，按语言保存为独立文件（`.py`/`.js`/`.sh`等）.
 **处理**: 解析代码块提取的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `代码块提取` 选项
@@ -118,8 +115,7 @@ markdown-exporter md_to_codeblock /path/input.md /path/output.zip --compress
 markdown-exporter md_to_ipynb /path/input.md /path/output.ipynb
 markdown-exporter md_to_ipynb /path/input.md /path/output.ipynb --strip-wrapper
 ```
-`--strip-wrapper` 选项移除代码块外层```包裹后再处理。
-
+`--strip-wrapper` 选项移除代码块外层```包裹后再处理.
 #
 ## 支持格式总览
 
@@ -150,8 +146,7 @@ markdown-exporter md_to_ipynb /path/input.md /path/output.ipynb --strip-wrapper
 | 学术论文 | Markdown内容 | `.tex` LaTeX文件 |
 | 网页发布 | Markdown内容 | `.html` 自包含HTML |
 
-**不适用于**：加密文件破解、二进制文件转换、非Markdown格式间互转。
-
+**不适用于**：加密文件破解、二进制文件转换、非Markdown格式间互转.
 ## 使用流程
 
 1. 安装：`pip install md-exporter`
@@ -166,8 +161,7 @@ markdown-exporter md_to_ipynb /path/input.md /path/output.ipynb --strip-wrapper
 ```bash
 markdown-exporter md_to_docx /home/user/report.md /home/user/report.docx
 ```
-输入 `report.md` 包含标题、段落、列表和表格，输出 `report.docx` 保留格式结构。
-
+输入 `report.md` 包含标题、段落、列表和表格，输出 `report.docx` 保留格式结构.
 ### 示例2：表格数据导出
 ```bash
 markdown-exporter md_to_xlsx /home/user/data.md /home/user/data.xlsx
@@ -179,20 +173,17 @@ markdown-exporter md_to_xlsx /home/user/data.md /home/user/data.xlsx
 | Item A | $10 | 50 |
 | Item B | $20 | 30 |
 ```
-输出 `data.xlsx` Excel表格，表头为Name/Price/Stock，两行数据。
-
+输出 `data.xlsx` Excel表格，表头为Name/Price/Stock，两行数据.
 ### 示例3：代码块提取为ZIP
 ```bash
 markdown-exporter md_to_codeblock /home/user/tutorial.md /home/user/code.zip --compress
 ```
-输入包含Python和JavaScript代码块的Markdown文件，输出ZIP包含 `block_1.py` 和 `block_2.js`。
-
+输入包含Python和JavaScript代码块的Markdown文件，输出ZIP包含 `block_1.py` 和 `block_2.js`.
 ### 示例4：PPTX带模板
 ```bash
 markdown-exporter md_to_pptx /home/user/slides.md /home/user/output.pptx --template /home/user/corporate.pptx
 ```
-使用企业模板 `corporate.pptx` 的样式生成演示文稿。
-
+使用企业模板 `corporate.pptx` 的样式生成演示文稿.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
@@ -207,23 +198,17 @@ markdown-exporter md_to_pptx /home/user/slides.md /home/user/output.pptx --templ
 ## 常见问题
 
 ### Q1: 所有命令为什么只支持文件路径输入而不支持管道？
-设计上要求所有输入为文件路径，确保大文件处理的稳定性和可重现性。如果需要处理管道输入的Markdown文本，先写入临时文件再调用命令：`echo "$markdown" > /tmp/input.md && markdown-exporter md_to_docx /tmp/input.md /tmp/output.docx`。
-
+设计上要求所有输入为文件路径，确保大文件处理的稳定性和可重现性。如果需要处理管道输入的Markdown文本，先写入临时文件再调用命令：`echo "$markdown" > /tmp/input.md && markdown-exporter md_to_docx /tmp/input.md /tmp/output.docx`.
 ### Q2: `md_to_pptx` 支持哪些幻灯片布局？
-支持Pandoc风格的幻灯片语法：标题+内容布局（`##` 标题后跟内容）、两栏布局（`::::: columns` + `::: column`）、比较布局（含图片的栏触发）、内容带说明（图片+caption）、增量列表（`::: incremental`）、空白布局（仅背景图+备注）。通过 `--template` 可使用自定义PPTX模板控制视觉风格。
-
+支持Pandoc风格的幻灯片语法：标题+内容布局（`##` 标题后跟内容）、两栏布局（`::::: columns` + `::: column`）、比较布局（含图片的栏触发）、内容带说明（图片+caption）、增量列表（`::: incremental`）、空白布局（仅背景图+备注）。通过 `--template` 可使用自定义PPTX模板控制视觉风格.
 ### Q3: `md_to_codeblock` 如何处理代码块语言识别？
-代码块的语言标注（如 ` ```python `）决定输出文件扩展名：`python`→`.py`，`javascript`→`.js`，`bash`→`.sh`，`sql`→`.sql`等。未标注语言的代码块默认输出为 `.txt`。使用 `--compress` 将所有代码块打包为ZIP，适合教程场景一次性分发所有示例代码。
-
+代码块的语言标注（如 ` ```python `）决定输出文件扩展名：`python`→`.py`，`javascript`→`.js`，`bash`→`.sh`，`sql`→`.sql`等。未标注语言的代码块默认输出为 `.txt`。使用 `--compress` 将所有代码块打包为ZIP，适合教程场景一次性分发所有示例代码.
 ### Q4: `md_to_html` 和 `md_to_html_text` 有什么区别？
-`md_to_html` 输出完整的HTML文件（含`<html>`/`<head>`/`<body>`标签），适合直接部署或保存。`md_to_html_text` 仅输出HTML片段到stdout，适合嵌入到其他HTML页面或程序中处理。如果需要完整网页用 `md_to_html`，如果需要HTML片段用于集成用 `md_to_html_text`。
-
+`md_to_html` 输出完整的HTML文件（含`<html>`/`<head>`/`<body>`标签），适合直接部署或保存。`md_to_html_text` 仅输出HTML片段到stdout，适合嵌入到其他HTML页面或程序中处理。如果需要完整网页用 `md_to_html`，如果需要HTML片段用于集成用 `md_to_html_text`.
 ### Q5: 表格导出为JSON的格式是什么样的？
-Markdown表格导出为JSON时，每行变为一个JSON对象，表头为键名。例如表格 `| Name | Price |` 导出为 `[{"Name": "Item A", "Price": "$10"}, {"Name": "Item B", "Price": "$20"}]`。JSONL格式则每行一个独立JSON对象，适合流式处理大数据量表格。
-
+Markdown表格导出为JSON时，每行变为一个JSON对象，表头为键名。例如表格 `| Name | Price |` 导出为 `[{"Name": "Item A", "Price": "$10"}, {"Name": "Item B", "Price": "$20"}]`。JSONL格式则每行一个独立JSON对象，适合流式处理大数据量表格.
 ### Q6: 如何生成带样式的Word文档？
-`md_to_docx` 基本转换保留Markdown的标题层级、列表、加粗/斜体、表格等结构。如需自定义样式（字体、颜色、页眉页脚），建议先转为HTML（`md_to_html`），在HTML中嵌入CSS样式，再通过Pandoc等工具转为DOCX。或使用 `--template` 参数指定已有的样式模板（部分子命令支持）。
-
+`md_to_docx` 基本转换保留Markdown的标题层级、列表、加粗/斜体、表格等结构。如需自定义样式（字体、颜色、页眉页脚），建议先转为HTML（`md_to_html`），在HTML中嵌入CSS样式，再通过Pandoc等工具转为DOCX。或使用 `--template` 参数指定已有的样式模板（部分子命令支持）.
 ## 已知限制
 
 - 所有命令仅支持文件路径输入，不支持stdin管道

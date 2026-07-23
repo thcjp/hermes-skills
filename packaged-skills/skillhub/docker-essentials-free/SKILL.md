@@ -6,22 +6,20 @@ displayName: "Docker核心操作免费版"
 summary: "免费版Docker操作指南，涵盖容器管理、镜像操作与基础调试命令。"
 license: "MIT"
 description: |-
-  Docker核心操作指南免费版，提供容器生命周期管理基础命令。
-  包含镜像管理、容器调试与常用工作流。
-  适用于个人开发与学习场景的Docker容器化操作。
+  Docker核心操作指南免费版，提供容器生命周期管理基础命令.
+  包含镜像管理、容器调试与常用工作流.
+  适用于个人开发与学习场景的Docker容器化操作.
 tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
 tags:
   - 系统运维
-tools: ["read", "write", "exec"]
-tags: "容器,Docker,DevOps"
+
 ---
 # Docker核心操作指南（免费版）
 
-涵盖容器管理、镜像操作与基础调试的Docker核心命令。
-
+涵盖容器管理、镜像操作与基础调试的Docker核心命令.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -51,7 +49,7 @@ tags: "容器,Docker,DevOps"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### 容器生命周期管理（Container Lifecycle）
@@ -67,7 +65,7 @@ docker rm container_name     # 删除容器
 docker container prune       # 清理已停止容器
 ```
 
-**输入**: 用户提供容器生命周期管理（Container Lifecycle）所需的指令和必要参数。
+**输入**: 用户提供容器生命周期管理（Container Lifecycle）所需的指令和必要参数.
 ### 镜像管理（Image Management）
 构建与管理Docker镜像：
 
@@ -79,7 +77,7 @@ docker rmi image_name            # 删除镜像
 docker image prune               # 清理悬空镜像
 ```
 
-**输入**: 用户提供镜像管理（Image Management）所需的指令和必要参数。
+**输入**: 用户提供镜像管理（Image Management）所需的指令和必要参数.
 **输出**: 返回镜像管理（Image Management）的处理结果,包含执行状态码、结果数据和执行日志。### 容器调试（Container Inspection & Debugging）
 查看日志与进入容器调试：
 
@@ -91,8 +89,8 @@ docker stats                           # 资源使用
 docker inspect container_name          # 容器详情
 ```
 
-**输入**: 用户提供容器调试（Container Inspection & Debugging）所需的指令和必要参数。
-**处理**: 解析容器调试（Container Inspection & Debugging）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输入**: 用户提供容器调试（Container Inspection & Debugging）所需的指令和必要参数.
+**处理**: 解析容器调试（Container Inspection & Debugging）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回容器调试（Container Inspection & Debugging）的处理结果,包含执行状态码、结果数据和执行日志。### 常用工作流（Common Workflows）
 预置开发与数据库容器工作流：
 
@@ -104,8 +102,8 @@ docker run -it --rm -v $(pwd):/app -w /app -p 3000:3000 node:18 npm run dev
 docker run -d --name postgres -e POSTGRES_PASSWORD=secret -v postgres-data:/var/lib/postgresql/data -p 5432:5432 postgres:15
 ```
 
-**输入**: 用户提供常用工作流（Common Workflows）所需的指令和必要参数。
-**输出**: 返回常用工作流（Common Workflows）的处理结果,包含执行状态码、结果数据和执行日志。
+**输入**: 用户提供常用工作流（Common Workflows）所需的指令和必要参数.
+**输出**: 返回常用工作流（Common Workflows）的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 使用流程
 
@@ -139,14 +137,11 @@ Agent: docker run -d --name my-nginx -p 8080:80 nginx
 ## 常见问题
 
 ### Q1: 免费版与付费版有什么区别？
-A: 免费版提供容器管理、镜像操作与基础调试功能。付费版额外涵盖Docker Compose、网络配置、数据卷管理、系统管理与完整工作流。
-
+A: 免费版提供容器管理、镜像操作与基础调试功能。付费版额外涵盖Docker Compose、网络配置、数据卷管理、系统管理与完整工作流.
 ### Q2: 如何查看容器日志？
-A: 使用 `docker logs -f <container>` 跟踪日志输出，使用 `docker logs --tail 100 <container>` 查看最后100行。
-
+A: 使用 `docker logs -f <container>` 跟踪日志输出，使用 `docker logs --tail 100 <container>` 查看最后100行.
 ### Q3: 如何进入运行中的容器？
-A: 使用 `docker exec -it <container> bash` 进入容器的交互式bash，若容器无bash可使用 `sh` 替代。
-
+A: 使用 `docker exec -it <container> bash` 进入容器的交互式bash，若容器无bash可使用 `sh` 替代.
 ## 已知限制
 
 - 不包含Docker Compose多容器编排功能

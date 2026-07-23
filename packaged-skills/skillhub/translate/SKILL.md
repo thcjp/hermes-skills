@@ -27,15 +27,14 @@ description: |-
 tags:
   - Other
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "翻译,语言,工具"
+
 ---
 # Translate
 
@@ -59,7 +58,9 @@ tags: "翻译,语言,工具"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 风格适配 | 对话样本与偏好设置 | 定制化的回复风格 |
+| 准确翻译文本 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 处理复数 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -129,8 +130,7 @@ tags: "翻译,语言,工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Translate？
@@ -148,3 +148,6 @@ A:
 ## 已知限制
 
 - 本地运行，不支持多设备同步
+- 依赖Agent平台的LLM能力与运行环境配置
+- 免费版功能受限，高级能力需升级专业版
+- 处理能力受限于本地硬件资源

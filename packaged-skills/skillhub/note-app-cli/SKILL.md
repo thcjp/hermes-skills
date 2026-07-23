@@ -7,19 +7,18 @@ summary: "Obsidian管理技能,管笔记库(权限较广需谨慎)"
 license: "Proprietary"
 description: |-
   This skill matches its Obsidian-management purpose, but it gives an
-  agent broad power to change, 。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
+  agent broad power to change, 
 tags:
   - Integrations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Obsidian Official Cl
 
@@ -45,8 +44,8 @@ obsidian sync:restore file=Note version=2
 obsidian sync:deleted                  # Deleted files
 ```
 
-**输入**: 用户提供Obsidian Sync所需的指令和必要参数。
-**处理**: 解析Obsidian Sync的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输入**: 用户提供Obsidian Sync所需的指令和必要参数.
+**处理**: 解析Obsidian Sync的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回Obsidian Sync的处理结果,包含执行状态码、结果数据和执行日志。### File History
 ```bash
 obsidian history file=Note             # List versions
@@ -55,7 +54,7 @@ obsidian history:restore file=Note version=2
 obsidian diff file=Note from=2 to=1   # Compare versions
 ```
 
-**处理**: 解析File History的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**处理**: 解析File History的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回File History的处理结果,包含执行状态码、结果数据和执行日志。### Developer Tools
 ```bash
 obsidian devtools                      # Toggle dev tools
@@ -71,15 +70,17 @@ obsidian dev:mobile on/off
 obsidian dev:debug on/off
 ```
 
-**输入**: 用户提供Developer Tools所需的指令和必要参数。
-**处理**: 解析Developer Tools的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回Developer Tools的处理结果,包含执行状态码、结果数据和执行日志。
+**输入**: 用户提供Developer Tools所需的指令和必要参数.
+**处理**: 解析Developer Tools的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回Developer Tools的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 管理操作 | 操作目标与参数 | 操作结果与状态变更 |
+| Obsidian管理 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 管笔记库 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -152,8 +153,7 @@ obsidian dev:debug on/off
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Obsidian Official Cl？

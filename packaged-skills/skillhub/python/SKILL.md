@@ -7,19 +7,17 @@ summary: "Python编码规范与最佳实践,写审重构时用"
 license: "Proprietary"
 description: |-
   Python coding guidelines and best practices。Use when writing, reviewing,
-  or refactoring Python c。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
+  or refactoring Python c。
 tags:
   - Development
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 ---
 # Python
 

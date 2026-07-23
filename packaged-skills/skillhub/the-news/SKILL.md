@@ -7,19 +7,18 @@ summary: "给Agent实时与归档访问20国头版头条"
 license: "Proprietary"
 description: |-
   gives agents real-time and archival access to front-page headlines across
-  20 countries for breaki。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
+  20 countries for breaki
 tags:
   - Research
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "新闻,信息,资讯"
+
 ---
 # The News
 
@@ -43,7 +42,9 @@ tags: "新闻,信息,资讯"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 给Agent实时与归 | 目标数据与配置参数 | 处理结果与执行状态 |
+| the操作执行 | the相关参数与配置 | 执行结果与返回数据 |
+| the状态查询 | 查询条件与过滤选项 | 当前状态与详细信息 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -113,7 +114,7 @@ tags: "新闻,信息,资讯"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 User: `What's going on in Germany right now?`

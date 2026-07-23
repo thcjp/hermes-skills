@@ -7,8 +7,9 @@ summary: "知识库健康检查,断链/缺frontmatter/标签不一致/封面"
 license: "Proprietary"
 description: |-
   Health check knowledge base for broken links, missing frontmatter, tag
-  inconsistencies, and cover。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。
-tags: "'[''Knowledge'']'"
+  inconsistencies, and cover。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
+tags:
+  - Knowledge
 tools:
   - read
   - exec
@@ -17,7 +18,7 @@ homepage: "https://skillhub.cn"
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
+
 ---
 # Audit
 
@@ -124,8 +125,7 @@ tools: ["read", "write", "exec"]
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Audit？

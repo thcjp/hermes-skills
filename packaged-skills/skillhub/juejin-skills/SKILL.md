@@ -24,15 +24,14 @@ description: |-
 tags:
   - Other
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # 掘金技能集
 
@@ -64,7 +63,7 @@ tags: "工具,效率,自动化"
 * 分类文章：`POST https://api.juejin.cn/recommend_api/v1/article/recommend_cate_feed`
 * 标签列表：`POST https://api.juejin.cn/tag_api/v1/query_category_tags`
 
-**输入**: 用户提供📊 功能一：热门文章排行榜所需的指令和必要参数。
+**输入**: 用户提供📊 功能一：热门文章排行榜所需的指令和必要参数.
 **输出**: 返回📊 功能一：热门文章排行榜的处理结果,包含执行状态码、结果数据和执行日志。### 📝 功能二：文章自动发布
 
 | 子功能(续)| 说明 |
@@ -95,10 +94,8 @@ tags: "工具,效率,自动化"
 * 用户文章列表：`POST https://api.juejin.cn/content_api/v1/article/query_list`
 ### 子功能
 
-针对子功能,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供子功能相关的配置参数、输入数据和处理选项。
-
+针对子功能,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供子功能相关的配置参数、输入数据和处理选项.
 **输出**: 返回子功能的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`子功能`的配置文档进行参数调优
 #
@@ -195,7 +192,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ```text
@@ -225,6 +222,8 @@ A:
 
 ## 已知限制
 
+本技能在文件读写、网络访问和内容发布方面存在以下安全限制与已知约束，使用前请充分了解：
+
 ### 本地文件写入安全限制（`filesystem_write`）
 
 * `download_article(...)`、`download_user_articles(...)` 以及内部的
@@ -232,17 +231,15 @@ A:
   `juejin_skill.downloader._validate_output_dir()`：
   + 写入路径必须位于 `./output`（或 `$JUEJIN_OUTPUT_ROOT`）之下；
   + 使用 `os.path.realpath` 解析后再比对，可抵御符号链接、`..` 馑越，
-    以及伪造后缀绕过检查。
+    以及伪造后缀绕过检查.
 * 任何越出根目录的 `output_dir` 传入都会被以
-  `{"success": False, "message": ...}` 形式拒绝，不会创建目录也不会调用 open()。
-* 这保证了 SKILL.md 中 `filesystem_write` 边界与代码实际行为一致。
-
+  `{"success": False, "message": ...}` 形式拒绝，不会创建目录也不会调用 open().
+* 这保证了 SKILL.md 中 `filesystem_write` 边界与代码实际行为一致.
 ### 批量下载安全限制（`bulk_download_policy`）
 
 * `download_user_articles()` 需要显式 `confirm_bulk=True` 才会执行；
 * `max_count` 默认 20、硬上限 `BULK_DOWNLOAD_HARD_CAP=50`，超出会被静默降级；
-* 防止在用户仅下载一两篇文章时被意外启动为全量抓取，控制运营风险与平台合规风险。
-
+* 防止在用户仅下载一两篇文章时被意外启动为全量抓取，控制运营风险与平台合规风险.
 ### 本地文件读取安全限制（`filesystem_read`）
 
 * `publish_markdown(filepath=...)` 会经过
@@ -250,12 +247,11 @@ A:
   + 位于当前工作目录（或 `$JUEJIN_MD_ROOT`）之下的 `.md` / `.markdown` 文件；
   + 文件大小 ≤ 2 MiB；
   + 不在 `/etc`、`/var`、`/proc`、`/sys`、`/dev`、`/root`、`/boot`、
-    `[REDACTED_SSH_PATH] 等敏感前缀下的文件。
+    `[REDACTED_SSH_PATH] 等敏感前缀下的文件.
 * 路径会使用 `os.path.realpath` 解析后再比对，以防止符号链接逃逸、
-  `..` 路径馑越、以及伪造后缀绕过检查。
+  `..` 路径馑越、以及伪造后缀绕过检查.
 * 违反任一规则都会抩出 `ValueError`，不会走到 `open()`，也不会被填到
-  草稿 / 发布 / 任何外发请求中。
-
+  草稿 / 发布 / 任何外发请求中.
 ### 图片下载安全限制
 
 * 图片下载功能仅允许下载来自掘金官方域名的图片

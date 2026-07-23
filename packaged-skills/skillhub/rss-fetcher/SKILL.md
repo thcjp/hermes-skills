@@ -7,8 +7,10 @@ summary: "统一的RSS采集与管理系统 | Unified RSS Feed Fetcher and Manag
 license: "Proprietary"
 description: |-
   统一的RSS采集与管理系统 | Unified RSS Feed Fetcher and Manager 支持增量抓取、自动去重、自动标签、源健康监控、HTML报告生成\
-  \ Incremental 。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
-tags: "'[''Research'', ''Lifestyle'']'"
+  \ Incremental 。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
+tags:
+  - Research
+  - Lifestyle
 tools:
   - read
   - exec
@@ -17,7 +19,7 @@ homepage: "https://skillhub.cn"
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "exec"]
+
 ---
 # Rss Fetcher
 
@@ -44,26 +46,20 @@ tools: ["read", "exec"]
 ---
 ### 增量抓取 / Incremental Fetching
 
-针对增量抓取 / Incremental Fetching,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供增量抓取 / Incremental Fetching相关的配置参数、输入数据和处理选项。
-
+针对增量抓取 / Incremental Fetching,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供增量抓取 / Incremental Fetching相关的配置参数、输入数据和处理选项.
 **输出**: 返回增量抓取 / Incremental Fetching的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`增量抓取 / Incremental Fetching`的配置文档进行参数调优
 ### 自动标签 / Auto-tagging
 
-针对自动标签 / Auto-tagging,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供自动标签 / Auto-tagging相关的配置参数、输入数据和处理选项。
-
+针对自动标签 / Auto-tagging,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供自动标签 / Auto-tagging相关的配置参数、输入数据和处理选项.
 **输出**: 返回自动标签 / Auto-tagging的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`自动标签 / Auto-tagging`的配置文档进行参数调优
 ### HTML报告 / HTML Reports
 
-针对HTML报告 / HTML Reports,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供HTML报告 / HTML Reports相关的配置参数、输入数据和处理选项。
-
+针对HTML报告 / HTML Reports,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供HTML报告 / HTML Reports相关的配置参数、输入数据和处理选项.
 **输出**: 返回HTML报告 / HTML Reports的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`HTML报告 / HTML Reports`的配置文档进行参数调优
 #
@@ -71,7 +67,10 @@ tools: ["read", "exec"]
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 增量抓取 | RSS源配置与时间范围 | 去重后的新文章数据 |
+| HTML报告 | 抓取的文章数据 | 可筛选的静态HTML报告页 |
+| 源健康监控 | RSS源URL列表 | 源可用性状态检查结果 |
+| 源管理 | 源ID/名称/URL/分类 | 源的增删启停操作结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -231,7 +230,7 @@ python3 （请参考skill目录中的脚本文件） --json
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 获取今天所有文章 | Get Today's Articles

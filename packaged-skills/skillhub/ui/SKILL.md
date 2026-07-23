@@ -24,15 +24,14 @@ description: |-
 tags:
   - Creative
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
+
 ---
 # UI
 
@@ -55,7 +54,9 @@ tags: "UI设计,前端,设计"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 设计清晰一致视觉精致 | 目标数据与配置参数 | 处理结果与执行状态 |
+| ui操作执行 | ui相关参数与配置 | 执行结果与返回数据 |
+| ui状态查询 | 查询条件与过滤选项 | 当前状态与详细信息 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -125,8 +126,7 @@ tags: "UI设计,前端,设计"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用UI？

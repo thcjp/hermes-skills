@@ -6,23 +6,21 @@ displayName: "Document Parse Free"
 summary: "基础版文档解析技能，将 PDF 和图片转换为 Markdown，支持同步模式。"
 license: "MIT-0"
 description: |-
-  upstage-document-parse-free 是文档解析技能的基础版本，将 PDF 和图片转换为 Markdown 格式。
+  upstage-document-parse-free 是文档解析技能的基础版本，将 PDF 和图片转换为 Markdown 格式.
   支持同步模式解析（最多 100 页/50MB）和基础版面元素识别。不包含异步模式、enhanced 模式、
-  force OCR 和跨页表格合并。适合快速解析标准文档，升级完整版获取全量解析能力。
+  force OCR 和跨页表格合并。适合快速解析标准文档，升级完整版获取全量解析能力.
 tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
 tags:
   - 文档处理
-tools: ["read", "write", "exec"]
-tags: "文档处理,工具,效率"
+
 ---
 # Document Parse Free
 
 document-parse-free 将文档转换为 Markdown 格式。基础版支持 PDF 和图片的同步模式解析，
-识别基础版面元素（段落、标题、表格）。
-
+识别基础版面元素（段落、标题、表格）.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -52,27 +50,24 @@ document-parse-free 将文档转换为 Markdown 格式。基础版支持 PDF 和
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### 1. 基础文档解析
 支持 JPEG、PNG、BMP、PDF、TIFF 格式。通过 `model: "document-parse"` 调用解析模型，
 将文档内容转换为 `content.markdown` 格式输出。基础版仅支持 Markdown 输出，
-不支持 HTML 和 text 格式。标准文档处理时间约 3 秒。
-
+不支持 HTML 和 text 格式。标准文档处理时间约 3 秒.
 ### 2. 同步模式解析（Sync）
 通过 `POST /v1/document-digitization` 端点进行同步解析。限制：最多 100 页、50 MB 文件大小、
 5 分钟服务器超时。参数包括 `model`（必填，值为 `document-parse`）、
 `output_formats`（固定为 `['markdown']`）、`mode`（固定为 `standard`）、
-`ocr`（默认 `auto`）、`coordinates`（默认 `true`）。
-基础版不支持 enhanced 模式和 force OCR。
-
+`ocr`（默认 `auto`）、`coordinates`（默认 `true`）.
+基础版不支持 enhanced 模式和 force OCR.
 ### 3. 基础版面元素识别
-解析结果包含 `elements` 数组，每个元素包含 `id`、`category`、`content`、`page` 和 `coordinates`。
+解析结果包含 `elements` 数组，每个元素包含 `id`、`category`、`content`、`page` 和 `coordinates`.
 基础版支持基础元素类别：`paragraph`、`heading1`、`heading2`、`heading3`、`list`、`table`、
 `figure`、`caption`。不支持 `chart`、`equation`、`header`、`footer`、`index`、`footnote`
-等高级元素类别。
-
+等高级元素类别.
 #
 ## 使用流程
 
@@ -131,28 +126,22 @@ print(f"Pages processed: {result['usage']['pages']}")
 ## 常见问题
 
 ### Q1: 免费版支持异步模式吗？
-A: 免费版仅支持同步模式（`/v1/document-digitization`），最多 100 页/50MB/5 分钟超时。
-完整版支持异步模式（`/v1/document-digitization/async`），最多 1000 页，按 10 页批次处理。
-
+A: 免费版仅支持同步模式（`/v1/document-digitization`），最多 100 页/50MB/5 分钟超时.
+完整版支持异步模式（`/v1/document-digitization/async`），最多 1000 页，按 10 页批次处理.
 ### Q2: 免费版可以使用 enhanced 模式吗？
 A: 免费版仅支持 `mode=standard`。完整版支持 `mode=enhanced`（复杂表格精确解析）和
-`mode=auto`（逐页自动选择），以及 `merge_multipage_tables=true` 跨页表格合并。
-
+`mode=auto`（逐页自动选择），以及 `merge_multipage_tables=true` 跨页表格合并.
 ### Q3: 免费版支持哪些文件格式？
-A: 免费版支持 JPEG、PNG、BMP、PDF、TIFF。完整版额外支持 HEIC、DOCX、PPTX、XLSX、HWP、HWPX。
-
+A: 免费版支持 JPEG、PNG、BMP、PDF、TIFF。完整版额外支持 HEIC、DOCX、PPTX、XLSX、HWP、HWPX.
 ### Q4: 免费版可以使用 force OCR 吗？
 A: 免费版仅支持 `ocr=auto`（自动检测）。完整版支持 `ocr=force` 强制对扫描 PDF 或图片
-执行 OCR，适用于非原生数字文档。
-
+执行 OCR，适用于非原生数字文档.
 ### Q5: 免费版支持哪些元素类别？
 A: 免费版支持基础元素：paragraph、heading1-3、list、table、figure、caption。完整版支持
-全部 14 种类别，额外包括 chart、equation、header、footer、index、footnote。
-
+全部 14 种类别，额外包括 chart、equation、header、footer、index、footnote.
 ### Q6: 如何升级到完整版？
 A: 将技能替换为完整版 upstage-document-parse 即可。完整版包含 6 项核心能力：多格式解析、
-同步/异步模式、增强模式与 OCR 控制、14 种版面元素识别、跨页表格合并和输出文件管理。
-
+同步/异步模式、增强模式与 OCR 控制、14 种版面元素识别、跨页表格合并和输出文件管理.
 ## 已知限制
 
 - 仅支持同步模式，最多 100 页/50MB/5 分钟超时

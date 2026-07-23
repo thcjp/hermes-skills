@@ -6,8 +6,9 @@ displayName: "Tool Finder"
 summary: "统一搜索 SkillHub skills 和 Smithery 协议 servers 的工具发现引擎。支持评分排序、推荐规则、来源标识。优先原词搜索，扩展补充。**自动触发：看到\"
 license: "Proprietary"
 description: |-
-  统一搜索 SkillHub skills 和 Smithery 协议 servers 的工具发现引擎。支持评分排序、推荐规则、来源标识。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。
-tags: "'[''Research'']'"
+  统一搜索 SkillHub skills 和 Smithery 协议 servers 的工具发现引擎。支持评分排序、推荐规则、来源标识。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
+tags:
+  - Research
 tools:
   - read
   - exec
@@ -16,7 +17,7 @@ homepage: "https://skillhub.cn"
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
+
 ---
 # Tool Finder
 
@@ -54,10 +55,8 @@ tools: ["read", "exec", "glob", "grep"]
 
 ## 使用流程
 
-Smithery 协议 安装需指定客户端（claude-code/cursor/vscode 等）。
-
-**解决**：输出指引让用户手动安装。
-
+Smithery 协议 安装需指定客户端（claude-code/cursor/vscode 等）.
+**解决**：输出指引让用户手动安装.
 #
 ## 输入格式
 
@@ -137,7 +136,7 @@ Smithery 协议 安装需指定客户端（claude-code/cursor/vscode 等）。
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 配置自动触发（让 AI 默认使用 tool-finder）
@@ -236,6 +235,8 @@ A:
 
 ## 已知限制
 
+本技能在搜索策略、推荐规则、平台限制等方面存在以下已知限制，使用前请了解：
+
 ### 0. 自动触发配置 ✅ 新增
 
 **让 AI 默认使用 tool-finder：**
@@ -252,12 +253,10 @@ A:
 
 **效果：** AI 会自动使用 tool-finder，无需每次指定！
 
-**分享配置：** 将 AGENTS.md 和 TOOLS.md 分享给其他人，他们也能享受同样的智能搜索体验。
-
+**分享配置：** 将 AGENTS.md 和 TOOLS.md 分享给其他人，他们也能享受同样的智能搜索体验.
 ### 1. 搜索策略 ✅ v1.3.0 优化
 
-**优先原词搜索**：先用原词搜索，保证基础结果；如果结果不足，再用同义词扩展补充。
-
+**优先原词搜索**：先用原词搜索，保证基础结果；如果结果不足，再用同义词扩展补充.
 **搜索流程**：
 
 ```text
@@ -274,8 +273,7 @@ A:
 
 ### 2. 推荐规则 ✅ v1.2.0 新增
 
-**评分排序**：结果按 SkillHub 评分降序排列，高评分技能优先显示。
-
+**评分排序**：结果按 SkillHub 评分降序排列，高评分技能优先显示.
 **推荐等级**：
 
 | 等级 | 图标 | 条件 |
@@ -294,8 +292,7 @@ A:
 
 ### 2. 错误透明化 ✅ 新增
 
-**改进**：遇到 API 限流或搜索失败时，会显示明确的警告信息，而不是内部消化。
-
+**改进**：遇到 API 限流或搜索失败时，会显示明确的警告信息，而不是内部消化.
 **示例输出**：
 
 ```text
@@ -316,8 +313,7 @@ A:
 
 ### 3. 结果可验证性 ✅ 新增
 
-**问题**：搜索结果可能与 SkillHub 网页搜索有差异（向量搜索 vs 文本搜索）。
-
+**问题**：搜索结果可能与 SkillHub 网页搜索有差异（向量搜索 vs 文本搜索）.
 **解决方案**：
 
 * 使用 `--verbose` 查看详细错误信息
@@ -327,8 +323,7 @@ A:
 
 ### 4. SkillHub 搜索限制
 
-**问题**：SkillHub 使用向量搜索，有时搜功能词（如"RAG"）找不到名字包含该词的 skill（如 `clawrag`）。
-
+**问题**：SkillHub 使用向量搜索，有时搜功能词（如"RAG"）找不到名字包含该词的 skill（如 `clawrag`）.
 **解决方案**：
 
 * 知道名字 → 用 `--exact` 模式：`tool-finder search "clawrag" --exact`
@@ -337,8 +332,7 @@ A:
 
 ### 5. SkillHub Rate Limit
 
-未登录时可能遇到速率限制（60 次/小时）。
-
+未登录时可能遇到速率限制（60 次/小时）.
 **解决**：
 
 * 等待几分钟后重试

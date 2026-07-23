@@ -18,13 +18,11 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 文档处理
-tools: ["read", "write", "exec"]
-tags: "Markdown,文档,工具"
+
 ---
 # Markdown导出工具(免费版)
 
-Markdown文本多格式导出引擎，支持将Markdown转换为DOCX、PDF、HTML、XLSX、CSV、JSON等格式。
-
+Markdown文本多格式导出引擎，支持将Markdown转换为DOCX、PDF、HTML、XLSX、CSV、JSON等格式.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -81,8 +79,7 @@ markdown-exporter md_to_latex /path/input.md /path/output.tex
 markdown-exporter md_to_pptx /path/input.md /path/output.pptx
 markdown-exporter md_to_pptx /path/input.md /path/output.pptx --template /path/template.pptx
 ```
-支持Pandoc风格的幻灯片语法：分栏布局（`::::: columns`）、演讲者备注（`::: notes`）、增量列表（`::: incremental`）、背景图片。
-
+支持Pandoc风格的幻灯片语法：分栏布局（`::::: columns`）、演讲者备注（`::: notes`）、增量列表（`::: incremental`）、背景图片.
 **处理**: 解析演示文稿生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `演示文稿生成` 选项
@@ -106,8 +103,7 @@ markdown-exporter md_to_codeblock /path/input.md /path/output.zip --compress
 | 演示文稿制作 | Pandoc风格Markdown | `.pptx` PowerPoint |
 | 代码提取 | 含代码块的Markdown | 独立代码文件或ZIP |
 
-**不适用于**：加密文件破解、二进制文件转换、非Markdown格式间互转。
-
+**不适用于**：加密文件破解、二进制文件转换、非Markdown格式间互转.
 ## 使用流程
 
 1. 安装：`pip install md-exporter`
@@ -122,8 +118,7 @@ markdown-exporter md_to_codeblock /path/input.md /path/output.zip --compress
 ```bash
 markdown-exporter md_to_docx /home/user/report.md /home/user/report.docx
 ```
-输入 `report.md` 包含标题、段落、列表和表格，输出 `report.docx` 保留格式结构。
-
+输入 `report.md` 包含标题、段落、列表和表格，输出 `report.docx` 保留格式结构.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
@@ -136,14 +131,11 @@ markdown-exporter md_to_docx /home/user/report.md /home/user/report.docx
 ## 常见问题
 
 ### Q1: 所有命令为什么只支持文件路径输入而不支持管道？
-设计上要求所有输入为文件路径，确保大文件处理的稳定性和可重现性。如果需要处理管道输入的Markdown文本，先写入临时文件再调用命令：`echo "$markdown" > /tmp/input.md && markdown-exporter md_to_docx /tmp/input.md /tmp/output.docx`。
-
+设计上要求所有输入为文件路径，确保大文件处理的稳定性和可重现性。如果需要处理管道输入的Markdown文本，先写入临时文件再调用命令：`echo "$markdown" > /tmp/input.md && markdown-exporter md_to_docx /tmp/input.md /tmp/output.docx`.
 ### Q2: `md_to_pptx` 支持哪些幻灯片布局？
-支持Pandoc风格的幻灯片语法：标题+内容布局（`##` 标题后跟内容）、两栏布局（`::::: columns` + `::: column`）、比较布局（含图片的栏触发）、内容带说明（图片+caption）、增量列表（`::: incremental`）、空白布局（仅背景图+备注）。通过 `--template` 可使用自定义PPTX模板控制视觉风格。
-
+支持Pandoc风格的幻灯片语法：标题+内容布局（`##` 标题后跟内容）、两栏布局（`::::: columns` + `::: column`）、比较布局（含图片的栏触发）、内容带说明（图片+caption）、增量列表（`::: incremental`）、空白布局（仅背景图+备注）。通过 `--template` 可使用自定义PPTX模板控制视觉风格.
 ### Q3: `md_to_codeblock` 如何处理代码块语言识别？
-代码块的语言标注（如 ` ```python `）决定输出文件扩展名：`python`→`.py`，`javascript`→`.js`，`bash`→`.sh`，`sql`→`.sql`等。未标注语言的代码块默认输出为 `.txt`。使用 `--compress` 将所有代码块打包为ZIP，适合教程场景一次性分发所有示例代码。
-
+代码块的语言标注（如 ` ```python `）决定输出文件扩展名：`python`→`.py`，`javascript`→`.js`，`bash`→`.sh`，`sql`→`.sql`等。未标注语言的代码块默认输出为 `.txt`。使用 `--compress` 将所有代码块打包为ZIP，适合教程场景一次性分发所有示例代码.
 ## 已知限制
 
 - 所有命令仅支持文件路径输入，不支持stdin管道
@@ -152,8 +144,7 @@ markdown-exporter md_to_docx /home/user/report.md /home/user/report.docx
 
 ## 升级提示
 
-本免费版提供基础功能。升级到完整版 markdown-exporter 获取全部能力和高级特性。
-
+本免费版提供基础功能。升级到完整版 markdown-exporter 获取全部能力和高级特性.
 ## 输出格式
 
 ```json

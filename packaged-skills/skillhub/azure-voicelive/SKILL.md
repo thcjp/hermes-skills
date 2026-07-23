@@ -10,7 +10,7 @@ description: |-
   Azure语音交互专业版 —— 面向企业团队与专业开发者的高级实时语音AI工具。核心能力:
   - 函数调用（Function Tools），支持AI主动调用外部API
   - 自定义语音集成：Azure标准语音、自定义语音、个人语音
-  - 电话音频格式支持：G。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
+  - 电话音频格式支持：G。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
   - 语音AI
   - Azure
@@ -18,15 +18,14 @@ tags:
   - 函数调用
   - 电话客服
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "Azure,云计算,DevOps"
+
 ---
 # Azure语音交互专业版
 
@@ -226,8 +225,8 @@ await conn.session.update(session={
 })
 ```
 
-**输入**: 用户提供自定义语音集成所需的指令和必要参数。
-**处理**: 解析自定义语音集成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输入**: 用户提供自定义语音集成所需的指令和必要参数.
+**处理**: 解析自定义语音集成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回自定义语音集成的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `自定义语音集成` 选项
@@ -237,8 +236,7 @@ await conn.session.update(session={
 
 ### 场景一：企业智能客服系统
 
-企业客服中心部署AI语音助手，支持查询订单、天气等功能调用。
-
+企业客服中心部署AI语音助手，支持查询订单、天气等功能调用.
 ```python
 async def enterprise_customer_service():
     async with connect(
@@ -292,8 +290,7 @@ async def enterprise_customer_service():
 
 ### 场景二：电话客服AI语音机器人
 
-电话客服系统接入AI语音，处理来电咨询。
-
+电话客服系统接入AI语音，处理来电咨询.
 ```python
 async def telephony_bot():
     async with connect(
@@ -327,8 +324,7 @@ async def telephony_bot():
 
 ### 场景三：品牌定制语音体验
 
-品牌应用使用专属定制语音，提供独特交互体验。
-
+品牌应用使用专属定制语音，提供独特交互体验.
 ```python
 async def branded_voice_experience():
     async with connect(
@@ -493,13 +489,12 @@ asyncio.run(main())
 ### 可用性分类
 
 - **分类**: MD+EXEC（纯Markdown指令，核心功能需要exec命令行执行能力）
-- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行专业实时语音交互任务。支持函数调用、自定义语音、电话音频格式等企业级功能，通过Python异步SDK调用Azure VoiceLive服务。与免费版完全兼容，可直接复用免费版的认证配置与基础会话流程。
-
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行专业实时语音交互任务。支持函数调用、自定义语音、电话音频格式等企业级功能，通过Python异步SDK调用Azure VoiceLive服务。与免费版完全兼容，可直接复用免费版的认证配置与基础会话流程.
 **API Key配置方式**:
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 音频格式对比
@@ -542,12 +537,10 @@ export API_KEY="your_api_key_here"
 
 ### Q1：函数调用不触发怎么办？
 
-检查函数工具的description是否清晰，parameters定义是否正确。AI需要理解何时调用哪个函数。
-
+检查函数工具的description是否清晰，parameters定义是否正确。AI需要理解何时调用哪个函数.
 ### Q2：电话音频质量不佳怎么办？
 
-确保使用正确的G.711格式（美国用ulaw，欧洲用alaw），适当调整silence_duration_ms。
-
+确保使用正确的G.711格式（美国用ulaw，欧洲用alaw），适当调整silence_duration_ms.
 ## 已知限制
 
 - 每次请求仅处理单一任务,不支持批量并发

@@ -6,10 +6,10 @@ displayName: "独立研究工具"
 summary: "多策略研究工具，支持GitHub库发现、WebFetch、MCP搜索、内容回退与Product Hunt调研。"
 license: "Proprietary"
 description: |-
-  独立研究工具，通过多搜索策略获取全面准确的研究结果。
-  支持GitHub Library Discovery、WebFetch、MCP web_search、Blocked Content Fallback。
-  覆盖Product Hunt调研、技术选型、库发现等多种研究场景。
-  提供来源验证、交叉验证与结构化结果输出，适用于深度研究与决策支持。
+  独立研究工具，通过多搜索策略获取全面准确的研究结果.
+  支持GitHub Library Discovery、WebFetch、MCP web_search、Blocked Content Fallback.
+  覆盖Product Hunt调研、技术选型、库发现等多种研究场景.
+  提供来源验证、交叉验证与结构化结果输出，适用于深度研究与决策支持.
 tools:
   - read
   - exec
@@ -20,13 +20,11 @@ tags:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+
 ---
 # 独立研究工具
 
-多策略研究工具，支持GitHub库发现、WebFetch、MCP搜索、内容回退与Product Hunt调研。
-
+多策略研究工具，支持GitHub库发现、WebFetch、MCP搜索、内容回退与Product Hunt调研.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -67,7 +65,7 @@ tags: "搜索,检索,工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### GitHub Library Discovery
@@ -79,7 +77,7 @@ export API_KEY="your_api_key_here"
 - **依赖分析**：分析库的依赖关系与兼容性
 - **社区评估**：检查贡献者数量、fork数、release频率
 
-**输入**: 用户提供GitHub Library Discovery所需的指令和必要参数。
+**输入**: 用户提供GitHub Library Discovery所需的指令和必要参数.
 **输出**: 返回GitHub Library Discovery的处理结果,包含执行状态码、结果数据和执行日志。### WebFetch
 获取指定URL的网页内容并进行结构化提取：
 
@@ -89,8 +87,8 @@ export API_KEY="your_api_key_here"
 - **重试机制**：网络失败时自动重试
 - **内容清洗**：去除广告、导航等无关内容
 
-**输入**: 用户提供WebFetch所需的指令和必要参数。
-**处理**: 解析WebFetch的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输入**: 用户提供WebFetch所需的指令和必要参数.
+**处理**: 解析WebFetch的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回WebFetch的处理结果,包含执行状态码、结果数据和执行日志。### MCP web_search
 
 通过MCP（Model Context Protocol）web_search服务进行网络搜索：
@@ -120,7 +118,7 @@ export API_KEY="your_api_key_here"
 - **发布时间**：查看产品发布时间与更新历史
 - **用户反馈**：提取用户评论中的优缺点分析
 
-**输出**: 返回Product Hunt Research的处理结果,包含执行状态码、结果数据和执行日志。
+**输出**: 返回Product Hunt Research的处理结果,包含执行状态码、结果数据和执行日志.
 ### 研究方法论（Research Methodology）
 
 系统化的研究流程确保结果全面准确：
@@ -164,7 +162,7 @@ export API_KEY="your_api_key_here"
 Agent: 研究完成
 # ...
 ## SOLO Answer
-2026年最流行的React状态管理库依次为：Zustand、Jotai、Redux Toolkit、TanStack Query。
+2026年最流行的React状态管理库依次为：Zustand、Jotai、Redux Toolkit、TanStack Query.
 # ...
 ## Search Process Summary
 - GitHub Library Discovery: 搜索 "react state management"，按stars排序
@@ -192,7 +190,7 @@ Agent: 研究完成
 Agent: 研究完成
 # ...
 ## SOLO Answer(续1)
-近期Product Hunt上热门的AI写作工具包括：Jasper AI、Copy.ai、Writesonic、Rytr。
+近期Product Hunt上热门的AI写作工具包括：Jasper AI、Copy.ai、Writesonic、Rytr.
 # ...
 ## Key Findings(续1)
 1. Jasper AI - 1,245 upvotes，企业级AI写作，支持品牌语调
@@ -213,7 +211,7 @@ Agent: 研究完成
 Agent: 研究完成
 # ...
 ## SOLO Answer(续2)
-PostgreSQL适合需要ACID事务与复杂查询的场景，MongoDB适合灵活schema与水平扩展的场景。
+PostgreSQL适合需要ACID事务与复杂查询的场景，MongoDB适合灵活schema与水平扩展的场景.
 # ...
 ## Key Findings(续2)
 1. PostgreSQL: SQL标准兼容，ACID事务，JSON支持，扩展性强
@@ -240,23 +238,17 @@ PostgreSQL适合需要ACID事务与复杂查询的场景，MongoDB适合灵活sc
 ## 常见问题
 
 ### Q1: 支持哪些搜索策略？
-A: 支持五种搜索策略：GitHub Library Discovery（开源库发现）、WebFetch（网页内容获取）、MCP web_search（网络搜索）、Blocked Content Fallback（内容回退）、Product Hunt Research（产品调研）。根据问题类型自动选择或组合使用。
-
+A: 支持五种搜索策略：GitHub Library Discovery（开源库发现）、WebFetch（网页内容获取）、MCP web_search（网络搜索）、Blocked Content Fallback（内容回退）、Product Hunt Research（产品调研）。根据问题类型自动选择或组合使用.
 ### Q2: 如何处理被阻止的内容？
-A: 使用Blocked Content Fallback策略：1）尝试缓存服务（Wayback Machine）；2）寻找替代URL；3）从搜索摘要提取关键信息；4）使用API替代网页抓取；5）提示用户提供内容。
-
+A: 使用Blocked Content Fallback策略：1）尝试缓存服务（Wayback Machine）；2）寻找替代URL；3）从搜索摘要提取关键信息；4）使用API替代网页抓取；5）提示用户提供内容.
 ### Q3: 研究结果如何保证准确性？
-A: 通过研究方法论确保准确性：并发查询覆盖多角度、引用追踪验证来源、来源验证检查权威性、交叉验证通过多源验证同一信息、综合与差距分析识别知识差距。
-
+A: 通过研究方法论确保准确性：并发查询覆盖多角度、引用追踪验证来源、来源验证检查权威性、交叉验证通过多源验证同一信息、综合与差距分析识别知识差距.
 ### Q4: 结果输出格式是什么样的？
-A: 标准输出包含五部分：SOLO Answer（核心结论）、Search Process Summary（搜索过程）、Key Findings（关键发现）、Citation Table（引用表格）、Gaps & Limitations（知识差距与局限性）。
-
+A: 标准输出包含五部分：SOLO Answer（核心结论）、Search Process Summary（搜索过程）、Key Findings（关键发现）、Citation Table（引用表格）、Gaps & Limitations（知识差距与局限性）.
 ### Q5: MCP web_search必须配置吗？
-A: 不是必须的。MCP web_search为可选依赖，未配置时可降级为WebFetch直接获取网页内容。但配置MCP可获得更好的搜索体验与更全面的结果。
-
+A: 不是必须的。MCP web_search为可选依赖，未配置时可降级为WebFetch直接获取网页内容。但配置MCP可获得更好的搜索体验与更全面的结果.
 ### Q6: 如何提高搜索效率？
-A: 1）使用并发查询同时发起多个搜索；2）按问题类型选择最优策略；3）先用MCP搜索获取概览，再用WebFetch获取详情；4）对GitHub项目优先使用GitHub API；5）设置合理的超时与重试机制。
-
+A: 1）使用并发查询同时发起多个搜索；2）按问题类型选择最优策略；3）先用MCP搜索获取概览，再用WebFetch获取详情；4）对GitHub项目优先使用GitHub API；5）设置合理的超时与重试机制.
 ## 已知限制
 
 - 需要网络访问，无网络环境无法执行搜索

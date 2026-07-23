@@ -8,8 +8,8 @@ license: "Proprietary"
 description: |-
   dlazy 音频生成客户端。通过 dlazy CLI 调用 15+ 托管音频模型,涵盖文本转语音(TTS)、音乐生成、音效生成、
   语音克隆四大类别。模型包括 doubao-tts、elevenlabs-tts/dialogue/music/sfx/voice-clone、gemini-2.5-tts、
-  keling-tts/sfx、kling-audio-clone、qwen-tts/audio-clone、suno-music、vidu-audio-clone 等。
-  根据提示词自动选择最匹配的模型,支持多语言人声、多角色对话、10-300 秒音乐、1-22 秒音效、即时语音克隆。
+  keling-tts/sfx、kling-audio-clone、qwen-tts/audio-clone、suno-music、vidu-audio-clone 等.
+  根据提示词自动选择最匹配的模型,支持多语言人声、多角色对话、10-300 秒音乐、1-22 秒音效、即时语音克隆.
   通过管道引用(@N、@*、@stdin)串联多步骤工作流,无需手动复制 URL。适用于配音、有声书、播客、
 tags:
   - Creative
@@ -21,15 +21,12 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "音频处理,媒体,创意"
+
 ---
 # Dlazy Audio Generate
 
-通过 dlazy CLI 调用 15+ 托管音频模型,根据提示词自动选择最匹配的模型,涵盖 TTS、音乐、音效、语音克隆四大类别。模型推理在 dLazy 托管 API(`api.dlazy.com`)完成,生成的输出 URL 托管在 `files.dlazy.com`。
-
-**范围外**(本技能不做): 模型微调训练、本地推理部署、音频后期混音、商业分发渠道对接、版权登记与授权。
-
+通过 dlazy CLI 调用 15+ 托管音频模型,根据提示词自动选择最匹配的模型,涵盖 TTS、音乐、音效、语音克隆四大类别。模型推理在 dLazy 托管 API(`api.dlazy.com`)完成,生成的输出 URL 托管在 `files.dlazy.com`.
+**范围外**(本技能不做): 模型微调训练、本地推理部署、音频后期混音、商业分发渠道对接、版权登记与授权.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -70,14 +67,13 @@ tags: "音频处理,媒体,创意"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### 可用音频模型
 
-**输入**: 用户提供可用音频模型所需的指令和必要参数。
-**处理**: 解析可用音频模型的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输入**: 用户提供可用音频模型所需的指令和必要参数.
+**处理**: 解析可用音频模型的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回可用音频模型的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`可用音频模型`的配置文档进行参数调优
 ### 文本转语音(TTS)
@@ -86,10 +82,9 @@ export API_KEY="your_api_key_here"
 - `gemini-2.5-tts`: Gemini 驱动 TTS,支持中英双语与多种情感音色
 - `keling-tt
 
-**输入**: 用户提供可用音频模型相关的配置参数、输入数据和处理选项。
-**处理**: 解析可用音频模型的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-
-**输出**: 返回文本转语音(TTS)的处理结果,包含执行状态码、结果数据和执行日志。
+**输入**: 用户提供可用音频模型相关的配置参数、输入数据和处理选项.
+**处理**: 解析可用音频模型的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回文本转语音(TTS)的处理结果,包含执行状态码、结果数据和执行日志.
 ### 模型选择策略
 
 **关键指令**:
@@ -102,8 +97,7 @@ export API_KEY="your_api_key_here"
 - 多角色对话: `elevenlabs-dialogue`(单次多角色)
 - 音
 
-**输出**: 返回模型选择策略的处理结果,包含执行状态码、结果数据和执行日志。
-
+**输出**: 返回模型选择策略的处理结果,包含执行状态码、结果数据和执行日志.
 ### 管道串联
 
 每次 `dlazy` 调用会在 stdout 输出 JSON 信封。任意 flag 值可以是管道引用,从上游命令的信封中取值,无需手动复制 URL:
@@ -114,8 +108,7 @@ export API_KEY="your_api_key_here"
 | `@N` | 第 N 个输出的主值(`@0` 为第一个输出 URL) |
 | `@N.<jsonpath>` | 第 N 个输出的 js
 
-**输入**: 用户提供管道串联相关的配置参数、输入数据和处理选项。
-
+**输入**: 用户提供管道串联相关的配置参数、输入数据和处理选项.
 #
 ## 认证
 
@@ -123,19 +116,15 @@ export API_KEY="your_api_key_here"
 ```bash
 dlazy auth login
 ```
-该命令自动保存 Key 到本地配置(`~/.dlazy/config.json` 或 `%USERPROFILE%\.dlazy\config.json`),文件权限限定为当前 OS 用户。
-
+该命令自动保存 Key 到本地配置(`~/.dlazy/config.json` 或 `%USERPROFILE%\.dlazy\config.json`),文件权限限定为当前 OS 用户.
 手动设置:
 ```bash
 dlazy auth set YOUR_API_KEY
 ```
 
-也可通过 `DLAZY_API_KEY` 环境变量按次调用传入。
-
-Key 获取: 登录 dlazy.com,在 `dashboard/organization/api-key` 创建。每个 Key 绑定一个 dLazy 组织,可在控制台随时轮换或吊销。
-
-**安全红线**: 永不接受、回显或存储来自聊天输入的 Key;永不将 Key 写入日志或链接参数。
-
+也可通过 `DLAZY_API_KEY` 环境变量按次调用传入.
+Key 获取: 登录 dlazy.com,在 `dashboard/organization/api-key` 创建。每个 Key 绑定一个 dLazy 组织,可在控制台随时轮换或吊销.
+**安全红线**: 永不接受、回显或存储来自聊天输入的 Key;永不将 Key 写入日志或链接参数.
 ## 可用音频模型(补充)
 
 ### 文本转语音(TTS)(补充)
@@ -195,8 +184,7 @@ dlazy seedream-4.5 --prompt "city skyline" --n 4 \
   | dlazy superres --images @*
 ```
 
-必填 flag 可完全来自管道: `--field -` 在上游有值时满足要求。stdin 为空时 CLI 返回 `code: "no_stdin"`。
-
+必填 flag 可完全来自管道: `--field -` 在上游有值时满足要求。stdin 为空时 CLI 返回 `code: "no_stdin"`.
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及模型 |
@@ -206,8 +194,7 @@ dlazy seedream-4.5 --prompt "city skyline" --n 4 \
 | 游戏与视频音效 | 生成开门声与脚步声 | 短音效文件 | elevenlabs-sfx / keling-sfx |
 | 多角色对话与播客 | 两人对话,男声提问女声回答 | 多角色对话音频 | elevenlabs-dialogue |
 
-**不适用于**: 模型微调训练、本地推理部署、音频后期混音、商业分发、版权登记。
-
+**不适用于**: 模型微调训练、本地推理部署、音频后期混音、商业分发、版权登记.
 ## 使用流程
 
 ### 校验 API Key
@@ -221,8 +208,7 @@ dlazy seedream-4.5 --prompt "city skyline" --n 4 \
 3. 配置完成后重新发起生成请求
 
 ### 选择模型
-根据提示词选择最匹配的音频模型。不确定时运行 `dlazy <model_name> -h` 查看参数。
-
+根据提示词选择最匹配的音频模型。不确定时运行 `dlazy <model_name> -h` 查看参数.
 ### 构造并执行命令
 ```bash
 dlazy doubao-tts --text "你好,欢迎收听本期播客" --voice "female-warm" --output podcast-intro.mp3
@@ -250,8 +236,7 @@ dlazy elevenlabs-dialogue \
 
 **输出**: `podcast-dialogue.mp3` 文件路径
 
-**说明**: 单次调用渲染整段对话,每行分配不同音色,`[giggling]` 与 `[whispers]` 等音频标签由 eleven_v3 解析为非语言表达。最多支持 10 个角色,适合播客、短剧、角色对话场景。选择音色前可用 `elevenlabs-search` 按关键词试听预览。
-
+**说明**: 单次调用渲染整段对话,每行分配不同音色,`[giggling]` 与 `[whispers]` 等音频标签由 eleven_v3 解析为非语言表达。最多支持 10 个角色,适合播客、短剧、角色对话场景。选择音色前可用 `elevenlabs-search` 按关键词试听预览.
 ### 案例二： 短视频 BGM 生成
 **场景**: 短视频创作者需要生成 30 秒夏日电子风 BGM,带自动歌词
 
@@ -269,8 +254,7 @@ dlazy suno-music --prompt "summer electronic" \
 
 **输出**: `summer-bg.mp3` 与 `summer-custom.mp3` 文件路径
 
-**说明**: 灵感模式适合快速出稿,自定义模式可精确控制风格、标题、歌词。Suno V5.5 支持风格权重、异常度、音频权重等细粒度参数。纯 BGM 可加 `--instrumental`。
-
+**说明**: 灵感模式适合快速出稿,自定义模式可精确控制风格、标题、歌词。Suno V5.5 支持风格权重、异常度、音频权重等细粒度参数。纯 BGM 可加 `--instrumental`.
 ### 案例三： 语音克隆与 TTS 串联
 **场景**: 有声书团队需要克隆主讲人声音,并用克隆音色朗读后续章节
 
@@ -287,8 +271,7 @@ dlazy elevenlabs-voice-clone --audio sample-voice.wav --name "narrator-male" \
 
 **输出**: `chapter-1.mp3` 文件路径,使用克隆的主讲人音色
 
-**说明**: 通过 `@0.voice_id` 管道引用将克隆结果直接传入 TTS,无需手动复制 voice id。样本需为干净人声(无背景噪音),克隆后音色可在后续多次 TTS 调用中复用。
-
+**说明**: 通过 `@0.voice_id` 管道引用将克隆结果直接传入 TTS,无需手动复制 voice id。样本需为干净人声(无背景噪音),克隆后音色可在后续多次 TTS 调用中复用.
 ## 错误处理
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
@@ -305,23 +288,17 @@ dlazy elevenlabs-voice-clone --audio sample-voice.wav --name "narrator-male" \
 ## 常见问题
 
 ### Q1: 如何获取并配置 dLazy API Key?
-A: 登录 dlazy.com,在 `dashboard/organization/api-key` 创建 Key。终端运行 `dlazy auth set YOUR_API_KEY` 持久化到本地配置,或通过 `DLAZY_API_KEY` 环境变量按次传入。Key 绑定 dLazy 组织,可在控制台随时轮换或吊销。
-
+A: 登录 dlazy.com,在 `dashboard/organization/api-key` 创建 Key。终端运行 `dlazy auth set YOUR_API_KEY` 持久化到本地配置,或通过 `DLAZY_API_KEY` 环境变量按次传入。Key 绑定 dLazy 组织,可在控制台随时轮换或吊销.
 ### Q2: 如何选择合适的音频模型?
-A: 按需求类型选择。文本转语音优先 `doubao-tts`(中文)、`elevenlabs-tts`(多语言);多角色对话用 `elevenlabs-dialogue`;带歌词音乐用 `suno-music`、纯 BGM 用 `elevenlabs-music`;短音效用 `elevenlabs-sfx`;语音克隆按后续 TTS 配套选择(克隆后用配套 TTS)。不确定时运行 `dlazy <model> -h` 查看参数。
-
+A: 按需求类型选择。文本转语音优先 `doubao-tts`(中文)、`elevenlabs-tts`(多语言);多角色对话用 `elevenlabs-dialogue`;带歌词音乐用 `suno-music`、纯 BGM 用 `elevenlabs-music`;短音效用 `elevenlabs-sfx`;语音克隆按后续 TTS 配套选择(克隆后用配套 TTS)。不确定时运行 `dlazy <model> -h` 查看参数.
 ### Q3: 管道串联如何工作?
-A: 每次 `dlazy` 调用在 stdout 输出 JSON 信封,后续命令可通过 `-`(上游该字段自然值)、`@N`(第 N 个输出主值)、`@N.<jsonpath>`(jsonpath 钻取)、`@*`(全部输出数组)、`@stdin`(完整信封)引用上游结果,无需手动复制 URL。必填 flag 用 `--field -` 可完全来自管道。
-
+A: 每次 `dlazy` 调用在 stdout 输出 JSON 信封,后续命令可通过 `-`(上游该字段自然值)、`@N`(第 N 个输出主值)、`@N.<jsonpath>`(jsonpath 钻取)、`@*`(全部输出数组)、`@stdin`(完整信封)引用上游结果,无需手动复制 URL。必填 flag 用 `--field -` 可完全来自管道.
 ### Q4: 语音克隆需要什么样的样本?
-A: 需要干净人声样本(无背景噪音、无音乐、单一说话人),时长通常 10-30 秒以上。克隆后音色绑定到对应 TTS 模型(`elevenlabs-voice-clone` 配 `elevenlabs-tts`、`qwen-audio-clone` 配 `qwen-tts`),可在后续多次 TTS 调用中复用。
-
+A: 需要干净人声样本(无背景噪音、无音乐、单一说话人),时长通常 10-30 秒以上。克隆后音色绑定到对应 TTS 模型(`elevenlabs-voice-clone` 配 `elevenlabs-tts`、`qwen-audio-clone` 配 `qwen-tts`),可在后续多次 TTS 调用中复用.
 ### Q5: 生成的内容版权归属如何?
-A: 生成内容的版权与商用授权以 dLazy 服务条款为准,详见 dlazy.com。涉及版权受保护的媒体内容(如已有歌曲翻唱、受保护音色模仿)不在本技能范围内,用户需自行确保输入内容与生成用途的合法性。
-
+A: 生成内容的版权与商用授权以 dLazy 服务条款为准,详见 dlazy.com。涉及版权受保护的媒体内容(如已有歌曲翻唱、受保护音色模仿)不在本技能范围内,用户需自行确保输入内容与生成用途的合法性.
 ### Q6: 余额不足怎么办?
-A: CLI 返回 `code: "insufficient_balance"` 时,明确告知用户余额不足,引导访问 `dlazy.com/dashboard/organization/settings?tab=credits` 充值。充值后无需重新配置 Key,可直接重试生成请求。
-
+A: CLI 返回 `code: "insufficient_balance"` 时,明确告知用户余额不足,引导访问 `dlazy.com/dashboard/organization/settings?tab=credits` 充值。充值后无需重新配置 Key,可直接重试生成请求.
 ## 已知限制
 
 1. **依赖 dLazy API**: 必须配置 `DLAZY_API_KEY`,无 Key 环境无法使用

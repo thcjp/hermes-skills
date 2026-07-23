@@ -7,19 +7,18 @@ summary: "跨云商管理文件,带认证/成本感知/多提供商操作,云盘
 license: "Proprietary"
 description: |-
   Manage files across cloud providers with authentication, cost awareness,
-  and multi-provider opera。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。适用于独立开发者、企业团队和自动化工作流场景。
+  and multi-provider opera。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
   - Other
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "云计算,DevOps,基础设施"
+
 ---
 # Cloud Storage
 
@@ -126,8 +125,7 @@ tags: "云计算,DevOps,基础设施"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Cloud Storage？
@@ -145,3 +143,6 @@ A:
 ## 已知限制
 
 - 依赖云服务，需要网络连接
+- 需要有效的云服务凭证和配置好的CLI环境
+- 产生的云资源可能产生费用，使用前请确认计费方式
+- 不同区域的服务可用性和功能支持可能存在差异

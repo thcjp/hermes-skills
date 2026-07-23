@@ -3,12 +3,12 @@ slug: "logo-brand-identity-tool-pro"
 name: "logo-brand-identity-tool-pro"
 version: "1.0.0"
 displayName: "品牌标识设计专业版"
-summary: "企业级AI品牌标识设计系统,支持完整品牌套件、多品牌管理、批量生成、品牌审计与CI/CD集成,适合团队与商业项目。"
+summary: "企业级AI品牌标识设计系统,支持完整品牌套件、多品牌管理、批量生成、品牌审计与CI/CD集成,适合团队与商业项目"
 license: "Proprietary"
 edition: "pro"
 description: |-
   品牌标识设计专业版为企业与设计团队提供系统化的AI品牌标识设计解决方案。在免费版基础品牌套件能力之上,增加完整品牌系统、多品牌管理、
-  批量资产生成、品牌一致性审计与CI/CD集成能力。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
+  批量资产生成、品牌一致性审计与CI/CD集成能力。
 tags:
   - 品牌设计
   - 企业级
@@ -17,14 +17,12 @@ tags:
   - CI/CD
   - 设计管理
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 ---
 品牌标识设计专业版为企业与设计团队提供系统化的AI品牌标识设计解决方案。在免费版基础品牌套件能力之上,PRO版引入完整品牌系统、多品牌管理、批量资产生成、品牌一致性审计与CI/CD集成能力,满足企业级品牌建设的全面需求。
 
@@ -48,7 +46,7 @@ brand:
     mission: "用技术赋能每一个团队"
     values: ["创新", "可靠", "协作", "成长"]
     personality: "专业、前瞻、可信、温暖"
-# ...
+# .
   identity:
     logo:
       primary: "assets/logo-primary.svg"
@@ -60,7 +58,7 @@ brand:
         - monochrome
       clear_space: "logo高度的1/2"
       min_size: "24px digital / 10mm print"
-# ...
+# .
     color_system:
       primary: "#0052FF"
       secondary: "#4D7CFF"
@@ -72,24 +70,24 @@ brand:
         error: "#EF4444"
         info: "#3B82F6"
       usage_rules: "主色占比60%,辅助色30%,强调色10%"
-# ...
+# .
     typography:
       display: { family: "Calistoga, serif", sizes: [2, 3, 4, 5] }
       body: { family: "Inter, sans-serif", sizes: [0.875, 1, 1.125] }
       mono: { family: "JetBrains Mono, monospace" }
       hierarchy: "h1-h6明确的字号与字重规范"
-# ...
+# .
     imagery:
       style: "明亮、自然光、真实人物"
       photography: "避免摆拍感,强调真实瞬间"
       illustration: "扁平化、几何、品牌色调"
       iconography: "线描风格,线宽2px"
-# ...
+# .
     voice:
       tone: "专业但平易近人"
       personality: "知识丰富、赋能、前瞻"
       writing_rules: "避免空洞的企业话术,用具体例子说话"
-# ...
+# .
   assets:
     digital:
       - website_header
@@ -147,7 +145,7 @@ brand_portfolio = {
         }
     ]
 }
-# ...
+# .
 # 批量生成所有品牌资产
 for brand in brand_portfolio["sub_brands"]:
     generate_brand_system(brand, shared=brand_portfolio["master_brand"])
@@ -242,23 +240,23 @@ brand_audit = {
 brand_strategy = {
     "market_analysis": {
         "competitors": ["竞品A", "竞品B", "竞品C"],
-        "differentiation": "我们更注重...",
+        "differentiation": "我们更注重.",
         "positioning_map": "quality vs price quadrant"
     },
     "audience_personas": [
-        {"name": "决策者", "demographics": "35-50岁,高管", "needs": "..."},
-        {"name": "使用者", "demographics": "25-35岁,专业人士", "needs": "..."}
+        {"name": "决策者", "demographics": "35-50岁,高管", "needs": "."},
+        {"name": "使用者", "demographics": "25-35岁,专业人士", "needs": "."}
     ],
     "brand_archetype": "智者(The Sage)",
-    "value_proposition": "...",
-    "brand_story": "..."
+    "value_proposition": ".",
+    "brand_story": ""
 }
 ```
 
 **输入**: 用户提供品牌策略分析所需的指令和必要参数。
 **处理**: 解析品牌策略分析的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回品牌策略分析的响应数据,包含状态码、结果和日志。
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、品牌标识设计系统、支持完整品牌套件、品牌审计与、适合团队与商业项、品牌标识设计专业、版为企业与设计团、队提供系统化的、品牌标识设计解决、在免费版基础品牌、套件能力之上、增加完整品牌系统、品牌一致性审计与、集成能力、Use、when、需要设计创作、海报制作、品牌视觉时使用、不适用于、建模和动画制作、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、品牌标识设计系统、支持完整品牌套件、品牌审计与、适合团队与商业项、品牌标识设计专业、版为企业与设计团、队提供系统化的、品牌标识设计解决、在免费版基础品牌、套件能力之上、增加完整品牌系统、品牌一致性审计与、集成能力、Use、when、、品牌视觉时使用、不适用于、建模和动画制作、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
@@ -318,7 +316,7 @@ group_config = {
         "strict": ["clear_space", "min_size"]
     }
 }
-# ...
+# .
 # 批量生成所有品牌系统
 generate_brand_portfolio(group_config)
 ```
@@ -373,37 +371,37 @@ python3 audit_brand.py \
 - 使命与愿景
 - 品牌人格
 - 价值主张
-# ...
+# .
 ## 2. 品牌标识
 - Logo设计与含义
 - Logo变体与使用
 - 清晰空间与最小尺寸
 - 禁止使用示例
-# ...
+# .
 ## 3. 品牌色彩
 - 主色与辅助色
 - 色彩搭配规则
 - 使用比例
 - 深色模式色彩
-# ...
+# .
 ## 4. 字体系统
 - 标题字体
 - 正文字体
 - 字号层级
 - 使用规范
-# ...
+# .
 ## 5. 图像风格
 - 摄影风格
 - 插画风格
 - 图标系统
 - 图片处理
-# ...
+# .
 ## 6. 品牌语调
 - 写作风格
 - 词汇选择
 - 示例文案
 - 多语言适配
-# ...
+# .
 ## 7. 应用规范
 - 数字应用
 - 印刷应用
@@ -458,7 +456,7 @@ jobs:
 ### 品牌资产使用比例
 ```
 品牌色彩使用比例(60-30-10法则):
-# ...
+# .
 ┌─────────────────────────────────┐
 │  主色 60%    │ 辅助色 30%│强调10%│
 │  (背景、大   │ (次要元素) │(CTA) │

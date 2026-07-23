@@ -7,19 +7,18 @@ summary: "分析AWS基础设施省钱,右尺寸/预留实例/储蓄计划"
 license: "Proprietary"
 description: |-
   Analyzes AWS infrastructure for cost savings。Right-sizing, Reserved
-  Instances, Savings Plans, un。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
+  Instances, Savings Plans, un。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
   - Operations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "AWS,云计算,DevOps"
+
 ---
 # AWS Cost Optimizer
 
@@ -127,8 +126,7 @@ tags: "AWS,云计算,DevOps"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用AWS Cost Optimizer？
@@ -146,3 +144,6 @@ A:
 ## 已知限制
 
 - 依赖云服务，需要网络连接
+- 需要有效的云服务凭证和配置好的CLI环境
+- 产生的云资源可能产生费用，使用前请确认计费方式
+- 不同区域的服务可用性和功能支持可能存在差异

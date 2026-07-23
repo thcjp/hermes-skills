@@ -7,19 +7,18 @@ summary: "Tasker docstore任务管理,清单/今日到期/逾期/周计划"
 license: "Proprietary"
 description: |-
   Tasker docstore task management via tool-dispatch。Use for task lists,
-  due today/overdue, week pl。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
+  due today/overdue, week pl。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
   - Productivity
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "任务管理,效率,工具"
+
 ---
 # Task
 
@@ -127,8 +126,7 @@ tags: "任务管理,效率,工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Task？

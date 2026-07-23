@@ -3,12 +3,12 @@ slug: "minimalist-design"
 name: "minimalist-design"
 version: "1.0.0"
 displayName: "极简设计系统专业版"
-summary: "企业级极简设计系统解决方案,支持完整组件库、多主题切换、设计审计与CI/CD集成,适合团队与商业项目。"
+summary: "企业级极简设计系统解决方案,支持完整组件库、多主题切换、设计审计与CI/CD集成,适合团队与商业项目"
 license: "Proprietary"
 edition: "pro"
 description: |-
   极简设计系统专业版为企业与专业团队提供系统化的极简现代主义设计系统解决方案。在免费版核心设计令牌之上,增加完整组件库、多主题切换、设计系统文档自动生成、
-  设计审计与CI/CD集成能力。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
+  设计审计与CI/CD集成能力。
 tags:
   - 设计系统
   - 企业级
@@ -17,15 +17,13 @@ tags:
   - CI/CD
   - 前端开发
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 ---
 # 极简设计系统专业版
 
@@ -54,7 +52,7 @@ component_library = {
     "layout": ["container", "grid", "stack", "divider", "spacer"],
     "overlay": ["dropdown", "popover", "context-menu", "drawer"]
 }
-# ...
+# .
 python3 generate_components.py \
   --config components.yml \
   --output ./components/ \
@@ -82,7 +80,7 @@ export_config = {
         {"name": "ios_swift", "output": "Tokens.swift"}
     ]
 }
-# ...
+# .
 python3 export_tokens.py --config export_config
 ```
 
@@ -164,18 +162,18 @@ python3 init_design_system.py \
   --version "2.0.0" \
   --themes "light,dark,brand" \
   --output ./design-system/
-# ...
+# .
 python3 generate_components.py \
   --config components.yml \
   --output ./design-system/components/ \
   --with-docs \
   --with-tests \
   --with-stories
-# ...
+# .
 python3 export_tokens.py \
   --source design-tokens.yml \
   --formats "css,tailwind,figma,scss,json"
-# ...
+# .
 python3 generate_docs.py \
   --config doc-config.yml \
   --output ./design-system/docs/
@@ -228,7 +226,7 @@ brands = {
         "components": "custom_override"
     }
 }
-# ...
+# .
 for brand_id, config in brands.items():
     generate_brand_package(brand_id, config)
 ```
@@ -289,7 +287,7 @@ python3 generate_components.py \
 ### 步骤三:审计与文档
 ```bash
 python3 audit_design.py --scan ./src/ --report ./audit/
-# ...
+# .
 python3 generate_docs.py --output ./docs/
 ```
 
@@ -371,11 +369,11 @@ components:
     variants: [primary, secondary, ghost, icon, fab]
     sizes: [sm, md, lg]
     states: [default, hover, active, disabled, loading]
-# ...
+# .
   cards:
     types: [basic, media, interactive, pricing, testimonial]
     features: [hover_effect, gradient_border, shadow_glow]
-# ...
+# .
   forms:
     inputs: [text, email, password, search, number]
     selects: [single, multi, searchable]

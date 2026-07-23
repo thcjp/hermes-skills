@@ -6,19 +6,18 @@ displayName: "magic-api-generate"
 summary: "magic-api 国产接口快速开发框架。通过 Web UI 编写脚本自动映射为 HTTP 接口，无需 Controller/Service/Dao。当用户提到"
 license: "Proprietary"
 description: |-
-  magic-api 国产接口快速开发框架。通过 Web UI 编写脚本自动映射为 HTTP 接口，无需 Controller/Service/Dao。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。
+  magic-api 国产接口快速开发框架。通过 Web UI 编写脚本自动映射为 HTTP 接口，无需 Controller/Service/Dao。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
   - Integrations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+
 ---
 # magic-api-generate
 
@@ -42,34 +41,25 @@ tags: "API,接口,开发工具"
 * **[业务示例](/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)** - 登录认证、文件上传、导出等
 ### 语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)
 
-针对语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32),自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)相关的配置参数、输入数据和处理选项。
-
-**输出**: 返回语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)的处理结果。
-
+针对语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32),自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)相关的配置参数、输入数据和处理选项.
+**输出**: 返回语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)的处理结果.
 - 针对`语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)`,解析输入数据并返回响应
 - 验证返回数据的完整性和格式正确性
 - 参考`语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)`的配置文档进行参数调优
 ### 数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)
 
-针对数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32),自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)相关的配置参数、输入数据和处理选项。
-
-**输出**: 返回数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)的处理结果。
-
+针对数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32),自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)相关的配置参数、输入数据和处理选项.
+**输出**: 返回数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)的处理结果.
 - 针对`数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)`,解析输入数据并返回响应
 - 验证返回数据的完整性和格式正确性
 - 参考`数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)`的配置文档进行参数调优
 ### 业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)
 
-针对业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32),自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)相关的配置参数、输入数据和处理选项。
-
-**输出**: 返回业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)的处理结果。
-
+针对业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32),自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)相关的配置参数、输入数据和处理选项.
+**输出**: 返回业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)的处理结果.
 - 针对`业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)`,解析输入数据并返回响应
 - 验证返回数据的完整性和格式正确性
 - 参考`业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)`的配置文档进行参数调优
@@ -78,7 +68,9 @@ tags: "API,接口,开发工具"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 接口开发 | 接口路径与业务逻辑脚本 | 自动映射的HTTP接口 |
+| 数据库操作 | SQL与数据源配置 | 多数据源查询/分页/事务结果 |
+| 业务实现 | 登录认证/文件上传/导出需求 | 可运行的magic-api脚本 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -104,7 +96,7 @@ tags: "API,接口,开发工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

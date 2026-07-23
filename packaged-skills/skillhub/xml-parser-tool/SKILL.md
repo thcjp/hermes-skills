@@ -1,7 +1,7 @@
 ---
 slug: "xml-parser-tool"
 name: "xml-parser-tool"
-version: "2.1.0"
+version: "2.1.1"
 displayName: "Xml Reader"
 summary: "读解析建筑系统XML,P6进度/BSDD/IFC-XML/COBie-XML"
 license: "Proprietary"
@@ -81,8 +81,7 @@ print(f"Found {len(activities)} activities")
 df = reader.elements_to_dataframe(activities)
 ```
 
-**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
-
+**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤.
 **使用步骤**:
 1. 阅读依赖说明章节,确认运行环境已就绪
 2. 根据任务需求,参考核心能力章节选择对应能力
@@ -137,7 +136,7 @@ df = reader.elements_to_dataframe(activities)
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 示例1：基础用法
@@ -168,9 +167,7 @@ df = reader.elements_to_dataframe(activities)
 
 ### 如何开始使用？
 
-阅读使用流程章节,按步骤配置环境和参数后即可开始使用。首次使用建议先阅读依赖说明章节确认环境就绪。
-
+阅读使用流程章节,按步骤配置环境和参数后即可开始使用。首次使用建议先阅读依赖说明章节确认环境就绪.
 ### 遇到错误怎么办？
 
-查看错误处理章节,对照错误场景找到对应的处理方式。如错误处理章节未覆盖,收集错误信息后通过已知限制章节了解skill能力边界。
-
+查看错误处理章节,对照错误场景找到对应的处理方式。如错误处理章节未覆盖,收集错误信息后通过已知限制章节了解skill能力边界.

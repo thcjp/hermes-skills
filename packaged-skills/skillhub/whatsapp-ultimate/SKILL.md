@@ -9,7 +9,7 @@ description: |-
   通讯应用消息发送、交互反应、群组管理和多Agent讨论工具。支持文本、图片、
   语音、视频、贴纸等多种消息类型，支持投票、群组创建、历史搜索和多Agent
   协作讨论。通过协议库桥接通讯应用，提供完整的消息交互能力。适用于独立
-  开发者、企业团队和自动化工作流场景。不适用于无通讯应用账号的场景。
+  开发者、企业团队和自动化工作流场景。不适用于无通讯应用账号的场景.
 tools:
   - read
   - exec
@@ -20,13 +20,11 @@ tags:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "WhatsApp,社交,通信"
+
 ---
 # 通讯应用工具
 
-通讯应用消息发送、交互反应、群组管理和多Agent讨论。
-
+通讯应用消息发送、交互反应、群组管理和多Agent讨论.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -78,35 +76,29 @@ tags: "WhatsApp,社交,通信"
 python3 （请参考skill目录中的脚本文件） action=send --to "contact-id@s.whatsapp.net" --type text --content "你好，这是一条测试消息"
 ```
 
-**输入**: 用户提供消息发送所需的指令和必要参数。
-**处理**: 解析消息发送的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回消息发送的处理结果,包含执行状态码、结果数据和执行日志。
-
+**输入**: 用户提供消息发送所需的指令和必要参数.
+**处理**: 解析消息发送的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回消息发送的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. 交互反应
-对消息添加表情反应、回复消息和转发消息。
-
+对消息添加表情反应、回复消息和转发消息.
 ```bash
 python3 （请参考skill目录中的脚本文件） action=react --message-id "msg-abc123" --emoji "👍"
 python3 （请参考skill目录中的脚本文件） action=reply --message-id "msg-abc123" --content "收到"
 ```
 
-**输入**: 用户提供交互反应所需的指令和必要参数。
-**处理**: 解析交互反应的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回交互反应的处理结果,包含执行状态码、结果数据和执行日志。
-
+**输入**: 用户提供交互反应所需的指令和必要参数.
+**处理**: 解析交互反应的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回交互反应的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. 投票创建
-在群组或个人聊天中创建投票。
-
+在群组或个人聊天中创建投票.
 ```bash
 python3 （请参考skill目录中的脚本文件） action=poll --to "group-id@g.us" --question "下周会议时间" --options "周一" "周二" "周三"
 ```
 
-**输入**: 用户提供投票创建所需的指令和必要参数。
-**处理**: 解析投票创建的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-
+**输入**: 用户提供投票创建所需的指令和必要参数.
+**处理**: 解析投票创建的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 4. 群组管理
-创建群组、添加/移除成员、修改群组信息。
-
+创建群组、添加/移除成员、修改群组信息.
 ```bash
 python3 （请参考skill目录中的脚本文件） action=group-create --name "项目讨论组" --participants "user1@s.whatsapp.net" "user2@s.whatsapp.net"
 ```
@@ -116,28 +108,25 @@ python3 （请参考skill目录中的脚本文件） action=group-create --name 
 - 关键参数: `群组管理` 选项
 
 ### 5. 历史搜索
-搜索聊天历史记录，支持关键词和日期范围。
-
+搜索聊天历史记录，支持关键词和日期范围.
 ```bash
 python3 （请参考skill目录中的脚本文件） action=search --chat "contact-id@s.whatsapp.net" --query "会议纪要" --limit 20
 ```
 
-**输入**: 用户提供历史搜索所需的指令和必要参数。
+**输入**: 用户提供历史搜索所需的指令和必要参数.
 **输出**: 返回历史搜索的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `历史搜索` 选项
 
 ### 6. 多Agent讨论
-多个Agent在同一群组中进行协作讨论，通过 `staleness_threshold` 0.85控制消息新鲜度，避免回声循环。
-
+多个Agent在同一群组中进行协作讨论，通过 `staleness_threshold` 0.85控制消息新鲜度，避免回声循环.
 ```bash
 python3 （请参考skill目录中的脚本文件） --group "project-group@g.us" --agents 3 --staleness-threshold 0.85
 ```
 
-**输入**: 用户提供多Agent讨论所需的指令和必要参数。
-**处理**: 解析多Agent讨论的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回多Agent讨论的处理结果,包含执行状态码、结果数据和执行日志。
-
+**输入**: 用户提供多Agent讨论所需的指令和必要参数.
+**处理**: 解析多Agent讨论的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回多Agent讨论的处理结果,包含执行状态码、结果数据和执行日志.
 ### 7. 媒体处理
 通过 `ffmpeg` 处理媒体文件：
 - 语音消息：采样率64k，格式opus
@@ -301,26 +290,19 @@ python3 （请参考skill目录中的脚本文件） action=send \
 ## 常见问题
 
 ### Q1: 贴纸的尺寸和格式要求是什么？
-A: 贴纸必须是512x512像素的webp格式文件，大小不超过100KB。使用 `ffmpeg -i input.png -vf "scale=512:512:force_original_aspect_ratio=decrease" -lossless 1 output.webp` 生成。
-
+A: 贴纸必须是512x512像素的webp格式文件，大小不超过100KB。使用 `ffmpeg -i input.png -vf "scale=512:512:force_original_aspect_ratio=decrease" -lossless 1 output.webp` 生成.
 ### Q2: 语音消息的采样率是多少？
-A: 语音消息采样率为48000Hz，比特率64k，格式为opus。使用 `ffmpeg -i input.wav -ar 48000 -ac 1 -b:a 64k -c:a libopus output.opus` 转换。
-
+A: 语音消息采样率为48000Hz，比特率64k，格式为opus。使用 `ffmpeg -i input.wav -ar 48000 -ac 1 -b:a 64k -c:a libopus output.opus` 转换.
 ### Q3: JID格式有哪些？
-A: 个人聊天JID格式为 `国际区号+号码@s.whatsapp.net`（如 `8613800138000@s.whatsapp.net`）。群组JID格式为 `群组ID@g.us`（如 `project-group@g.us`）。
-
+A: 个人聊天JID格式为 `国际区号+号码@s.whatsapp.net`（如 `8613800138000@s.whatsapp.net`）。群组JID格式为 `群组ID@g.us`（如 `project-group@g.us`）.
 ### Q4: 多Agent讨论如何避免回声循环？
-A: 设置 `staleness-threshold` 为0.85。当消息的新鲜度低于0.85时，Agent不再回复该消息。新鲜度基于消息时间戳和当前时间的差值计算，超过60000ms窗口的消息新鲜度降为0。
-
+A: 设置 `staleness-threshold` 为0.85。当消息的新鲜度低于0.85时，Agent不再回复该消息。新鲜度基于消息时间戳和当前时间的差值计算，超过60000ms窗口的消息新鲜度降为0.
 ### Q5: 消息发送有速率限制吗？
-A: 有。短时间内发送过多消息会触发速率限制。建议每次发送间隔至少1秒。触发限制后等待30秒重试。
-
+A: 有。短时间内发送过多消息会触发速率限制。建议每次发送间隔至少1秒。触发限制后等待30秒重试.
 ### Q6: 如何搜索特定聊天中的历史消息？
-A: 使用 `message action=search` 命令，提供 `--chat`（聊天JID）、`--query`（搜索关键词）和 `--limit`（最大结果数）。返回匹配的消息列表，包含发送者、内容和时间戳。
-
+A: 使用 `message action=search` 命令，提供 `--chat`（聊天JID）、`--query`（搜索关键词）和 `--limit`（最大结果数）。返回匹配的消息列表，包含发送者、内容和时间戳.
 ### Q7: 投票支持多选吗？
-A: 支持。通过 `--multi-select true` 参数启用多选模式。默认为单选（`--multi-select false`）。每个投票最多支持12个选项。
-
+A: 支持。通过 `--multi-select true` 参数启用多选模式。默认为单选（`--multi-select false`）。每个投票最多支持12个选项.
 ## 已知限制
 
 - 贴纸必须为512x512像素的webp格式，大小不超过100KB

@@ -7,19 +7,18 @@ summary: "OceanBus驱动的P2P消息/共享通讯录/1v1约见/话题"
 license: "Proprietary"
 description: |-
   OceanBus-powered P2P messaging, shared address book, 1v1 meetup negotiation,
-  and conversation thr。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
+  and conversation thr
 tags:
   - Operations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Ocean Chat
 
@@ -43,7 +42,9 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 消息发送 | 目标与消息内容 | 送达回执与消息ID |
+| OceanBus驱动 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 共享通讯录 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -144,8 +145,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Ocean Chat？
@@ -163,4 +163,6 @@ A:
 ## 已知限制
 
 - 需要LLM支持
-
+- 依赖Agent平台的LLM能力与运行环境配置
+- 免费版功能受限，高级能力需升级专业版
+- 处理能力受限于本地硬件资源

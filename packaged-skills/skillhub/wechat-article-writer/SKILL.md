@@ -22,15 +22,14 @@ tags:
   - 多模型
   - 发布流程
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # 公众号写作专业版
 
@@ -116,7 +115,7 @@ products_structure = """
 # 无相关文档 → 仅靠选题卡与合并配置写稿
 ```
 
-**处理**: 解析业务资料库集成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**处理**: 解析业务资料库集成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回业务资料库集成的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `业务资料库集成` 选项
@@ -190,16 +189,14 @@ drafts/
 │   └── draft.md
 ```
 
-**处理**: 解析多草稿管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回多草稿管理的处理结果,包含执行状态码、结果数据和执行日志。
-
+**处理**: 解析多草稿管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回多草稿管理的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 适用场景
 
 ### 场景一：企业产品软文写作
 
-企业需要撰写产品介绍软文，自动关联业务资料库中的产品信息。
-
+企业需要撰写产品介绍软文，自动关联业务资料库中的产品信息.
 ```bash
 # 1. 检查业务资料库
 ls .article/products/smart_speaker/
@@ -221,8 +218,7 @@ python3 publish.py full --article article.md --method draft
 
 ### 场景二：内容矩阵批量生产
 
-运营团队管理多个公众号，需要批量生产不同风格的内容。
-
+运营团队管理多个公众号，需要批量生产不同风格的内容.
 ```python
 # 多账号配置管理
 accounts = [
@@ -258,8 +254,7 @@ for account in accounts:
 
 ### 场景三：用户供图写作流程
 
-用户提供自有图片，Agent读图分析后按图编排文章结构。
-
+用户提供自有图片，Agent读图分析后按图编排文章结构.
 ```bash
 # 1. 用户图片放入 imgs/ 目录
 cp ~/photos/product_demo.png drafts/20260118-product/imgs/
@@ -400,8 +395,7 @@ python3 publish.py full --article article.md --method draft
 ### 可用性分类
 
 - **分类**: MD+EXEC（纯Markdown指令，核心功能需要exec命令行执行能力）
-- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行专业写作任务。支持多模型切换、业务资料库、发布流程等企业级功能，通过Python脚本实现复杂工作流。与免费版完全兼容，可直接复用免费版的配置文件与写作约束。
-
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行专业写作任务。支持多模型切换、业务资料库、发布流程等企业级功能，通过Python脚本实现复杂工作流。与免费版完全兼容，可直接复用免费版的配置文件与写作约束.
 ## 案例展示
 
 ### 示例1: 基础用法
@@ -434,24 +428,19 @@ python3 publish.py full --article article.md --method draft
 
 ### Q1：如何切换写作模型？
 
-修改 `.article/config.yaml` 中的 `writing_model` 配置，或运行脚本时通过 `--model` 参数指定。
-
+修改 `.article/config.yaml` 中的 `writing_model` 配置，或运行脚本时通过 `--model` 参数指定.
 ### Q2：业务资料库的文档格式有什么要求？
 
-使用Markdown格式，文档直接放在产品根目录下（如 `.article/products/产品名/intro.md`）。
-
+使用Markdown格式，文档直接放在产品根目录下（如 `.article/products/产品名/intro.md`）.
 ### Q3：发布失败提示微信凭证错误怎么办？
 
-检查 `aws.env` 中的 `WECHAT_APP_ID` 和 `WECHAT_APP_SECRET` 是否正确，确认公众号API权限已开启。
-
+检查 `aws.env` 中的 `WECHAT_APP_ID` 和 `WECHAT_APP_SECRET` 是否正确，确认公众号API权限已开启.
 ### Q4：如何实现Agent代写（不调用外部API）？
 
-使用 `write.py prompt` 子命令获取提示词JSON，由Agent按相同约束直接写稿。模型未配置时会自动降级为此模式。
-
+使用 `write.py prompt` 子命令获取提示词JSON，由Agent按相同约束直接写稿。模型未配置时会自动降级为此模式.
 ### Q5：与免费版的配置文件是否兼容？
 
-完全兼容。专业版在免费版配置基础上扩展，免费版的 `config.yaml` 和 `article.yaml` 可直接在专业版中使用。
-
+完全兼容。专业版在免费版配置基础上扩展，免费版的 `config.yaml` 和 `article.yaml` 可直接在专业版中使用.
 ## 错误处理
 
 | 错误场景(续)| 原因 | 处理方式 |

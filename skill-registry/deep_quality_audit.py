@@ -3,7 +3,7 @@
 深度质量审计系统 (Deep Quality Audit) v3.0
 ==========================================
 全量扫描 packaged-skills/skillhub 和 differentiated-skills 下所有 SKILL.md 文件，
-执行六层质量检查:
+执行八层质量检查:
 
 Layer 1-3 (格式检查):
   critical (致命):
@@ -48,10 +48,22 @@ Layer 6 (内容真实性 Content Authenticity):
   - 案例占位检测
   评级: A(85+) / B(65+) / C(40+) / D(20+) / F(<20)
 
+Layer 8 (安全审计 Security Audit):
+  - EXTERNAL_URL: 外部商业URL或第三方API端点
+  - INJECTED_MARKETING_TEXT: 注入的无关营销模板文本
+  - API_KEY_EXPOSURE: API密钥格式和Authorization头模式
+  - SLUG_CONTENT_MISMATCH: slug与内容不匹配
+  - DUPLICATE_YAML_FIELDS: frontmatter重复字段
+  - TAG_MISMATCH: tags与内容不匹配
+  - GARBLED_TEXT: 乱码/编码错误文本
+  - DEPENDENCY_CONTRADICTION: 依赖说明与已知限制矛盾
+  评级: A(90+) / B(70+) / C(50+) / D(30+) / F(<30)
+
 使用方式:
     python deep_quality_audit.py              # 执行审计
     python deep_quality_audit.py --fix        # 审计并自动修复 warning 级别问题
     python deep_quality_audit.py --fix-all    # 审计并自动修复 warning + info 级别问题
+    python deep_quality_audit.py --no-layer8  # 关闭L8安全审计
 
 输出:
     - JSON 报告: deep_quality_audit_report.json
@@ -156,6 +168,13 @@ def parse_frontmatter(content: str) -> dict:
                 if current_key not in fm:
                     fm[current_key] = []
                 fm[current_key].append(val)
+        elif line.startswith('- ') and current_key:
+            val = line[2:].strip()
+            if val.startswith('"') and val.endswith('"'):
+                val = val[1:-1]
+            if current_key not in fm:
+                fm[current_key] = []
+            fm[current_key].append(val)
         elif ':' in line:
             key, _, val = line.partition(':')
             key = key.strip()
@@ -222,7 +241,7 @@ def collect_skill_files():
     return files
 
 
-def check_skill(skill_path: Path, source: str, enable_l7: bool = False, enable_l7b: bool = False):
+def check_skill(skill_path: Path, source: str, enable_l7: bool = True, enable_l7b: bool = False, enable_l8: bool = True):
     """对单个 SKILL.md 执行全部质量检查
 
     Returns:
@@ -379,6 +398,19 @@ def check_skill(skill_path: Path, source: str, enable_l7: bool = False, enable_l
     # === LLM 可执行性检查 (Layer 7b) ===
     l7b_result = check_llm_executability(body_text, skill_slug=slug, enable_l7b=enable_l7b, skill_path=skill_path)
 
+    # === 安全审计 (Layer 8) ===
+    if enable_l8:
+        fm_text_raw, _ = split_frontmatter_body(content)
+        l8_result = check_security_quality(
+            content=content, fm=fm, fm_text=fm_text_raw,
+            body_text=body_text, slug=slug, dir_name=dir_name
+        )
+    else:
+        l8_result = {
+            "issues": [], "score": -1, "grade": "N/A",
+            "passed": False, "category_counts": {},
+        }
+
     # 确定最终严重级别
     if issues["critical"]:
         severity = "critical"
@@ -437,6 +469,14 @@ def check_skill(skill_path: Path, source: str, enable_l7: bool = False, enable_l
             "checks_passed": l7b_result["checks_passed"],
             "checks_failed": l7b_result["checks_failed"],
             "issues": l7b_result["issues"],
+        },
+        "security": {
+            "l8_enabled": enable_l8,
+            "l8_score": l8_result["score"],
+            "l8_grade": l8_result["grade"],
+            "l8_passed": l8_result["passed"],
+            "category_counts": l8_result["category_counts"],
+            "issues": l8_result["issues"],
         },
         "_content": content,
         "_issues_map": issues,
@@ -526,7 +566,7 @@ def check_functional_quality(body_text: str) -> dict:
         score += 5
 
     # 维度4: 任务定义 (0-15分)
-    if re.search(r'##\s*(功能|Features|核心能力|Capabilities|能力)', body_text, re.IGNORECASE):
+    if re.search(r'##\s*(功能|Features|核心能力|Capabilities|能力|任务定义)', body_text, re.IGNORECASE):
         score += 10
     else:
         issues.append("NO_TASK_DEFINITION: 无任务定义section")
@@ -1473,7 +1513,339 @@ def check_llm_executability(body_text: str, skill_slug: str = "", enable_l7b: bo
     return result
 
 
-def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = False, enable_l7b: bool = False):
+# ============ 安全审计 (Layer 8: Security Audit) ============
+# L8: 安全审计 - 基于 skillhub_review_analysis_v36.json 的8类安全审核失败模式
+# 检测外部URL、注入营销文本、API密钥暴露、slug内容不匹配、重复YAML字段、
+# 标签不匹配、乱码文本、依赖矛盾
+
+# 外部URL白名单域名 (允许的文档/开发站点)
+_EXTERNAL_URL_ALLOWLIST = frozenset({
+    "skillhub.cn", "www.skillhub.cn",
+    "skillhub.ai", "www.skillhub.ai",
+    "clawhub.ai", "www.clawhub.ai",
+    "github.com", "raw.githubusercontent.com", "gist.github.com",
+    "npmjs.com", "www.npmjs.com",
+    "pypi.org", "www.pypi.org",
+    "python.org", "docs.python.org", "www.python.org",
+    "nodejs.org", "www.nodejs.org",
+    "developer.mozilla.org", "learn.microsoft.com",
+    "json.org", "www.json.org",
+    "schema.org", "www.schema.org",
+    "w3.org", "www.w3.org",
+    "example.com", "www.example.com",
+    "localhost", "127.0.0.1",
+    "unicode.org", "www.unicode.org",
+    "opensource.org",
+    "creativecommons.org",
+    "tools.ietf.org",
+    "datatracker.ietf.org",
+    "semver.org",
+    "yaml.org",
+    "httpstatus.io",
+    "google.com", "www.google.com",
+    "swagger.io", "www.swagger.io",
+    "openai.com", "www.openai.com",
+    "anthropic.com", "www.anthropic.com",
+})
+
+# slug关键词停用词 (不参与slug-content匹配的通用词)
+_SLUG_STOPWORDS = frozenset({
+    "and", "the", "for", "pro", "free", "tool", "tools", "api", "new",
+    "all", "gen", "skill", "paid", "hub", "app", "plus", "lite", "max",
+    "with", "your", "use", "via", "using", "from", "into",
+})
+
+# 注入营销文本模式 (差异化处理脚本注入的无关模板文本)
+# 注意: "海报制作"单独出现是合法词汇,只匹配完整营销模板序列
+_INJECTED_MARKETING_PATTERNS = [
+    (r'需要营销推广[、，。]|广告投放[、，。][^。]*获客转化|增长裂变', "营销推广模板注入"),
+    (r'需要设计创作[、，。][^。]*海报制作', "设计创作模板注入"),
+    (r'不适用于非法营销手段', "非法营销免责声明模板"),
+    (r'适用于独立开发者[、，]企业团队和自动化工作流场景', "适用场景模板注入"),
+]
+
+# API密钥暴露模式
+_API_KEY_EXPOSURE_PATTERNS = [
+    # 占位符密钥: 至少12个x, 且前后有引号/等号/冒号等上下文 (排除普通文本中的xxx)
+    (r'(?<=["\':= ])x{12,}(?=["\':= \n])', "占位符密钥(xxxxxxxxxxxx模式)"),
+    (r'Authorization:\s*Bearer\s+YOUR_API_KEY', "Bearer YOUR_API_KEY模式"),
+    (r'sk-xxxx', "sk-xxxx密钥格式"),
+    # 排除YOUR_PUBLIC_KEY/YOUR_SECRET_KEY等安全占位符
+    (r'stream-public-key:\s*(?!YOUR_|your_)[A-Z_]{4,}', "stream-public-key请求头模式"),
+    (r'stream-secret-key:\s*(?!YOUR_|your_)[A-Z_]{4,}', "stream-secret-key请求头模式"),
+    (r'taro_[a-z_]{4,}\.[a-z_]{4,}', "taro_密钥格式"),
+    (r'AKIA[0-9A-Z]{16}', "AWS AKIA密钥格式"),
+    (r'ghp_[a-zA-Z0-9]{36}', "GitHub Token格式"),
+]
+
+# 乱码/编码错误模式 (UTF-8被错误解码为Latin-1的mojibake)
+_GARBLED_TEXT_PATTERNS = [
+    (r'æ[\xb0-\xff]{2,5}å[\xe6-\xff]{1,5}', "UTF-8 mojibake (æ°å模式)"),
+    (r'[æåçèéêëìíîïðñòóôõöøùúûüýþÿ]{4,}', "连续Latin-1扩展字符(mojibake)"),
+    (r'Ã[\x80-\xbf]', "UTF-8双字节mojibake (Ã模式)"),
+    (r'Â[\xa6-\xbf]', "Latin-1符号mojibake (Â模式)"),
+]
+
+# URL提取正则
+_URL_DOMAIN_REGEX = re.compile(
+    r'https?://([a-zA-Z0-9][-a-zA-Z0-9.]*\.[a-zA-Z]{2,}|localhost|127\.0\.0\.1)'
+)
+
+
+def check_security_quality(content: str, fm: dict, fm_text: str, body_text: str,
+                           slug: str, dir_name: str) -> dict:
+    """Layer 8: 安全审计 - 检测8类安全审核失败模式
+
+    基于 skillhub_review_analysis_v36.json 的失败类别:
+    1. EXTERNAL_URL - 外部商业URL或第三方API端点
+    2. INJECTED_MARKETING_TEXT - 注入的无关营销模板文本
+    3. API_KEY_EXPOSURE - API密钥格式和Authorization头模式
+    4. SLUG_CONTENT_MISMATCH - slug与内容不匹配
+    5. DUPLICATE_YAML_FIELDS - frontmatter重复字段
+    6. TAG_MISMATCH - tags与内容不匹配
+    7. GARBLED_TEXT - 乱码/编码错误
+    8. DEPENDENCY_CONTRADICTION - 依赖说明与限制矛盾
+
+    Args:
+        content: 完整文件内容 (frontmatter + body)
+        fm: 解析后的frontmatter字典
+        fm_text: frontmatter原始文本
+        body_text: 正文文本 (不含frontmatter)
+        slug: skill slug
+        dir_name: 目录名
+
+    Returns:
+        dict: {
+            issues: list,          # 问题描述列表 [{category, severity, message, evidence}]
+            score: int,            # 0-100
+            grade: str,            # A/B/C/D/F
+            passed: bool,          # 是否通过安全审计
+            category_counts: dict, # 各类别问题数量
+        }
+    """
+    issues = []
+    category_counts = {
+        "EXTERNAL_URL": 0,
+        "INJECTED_MARKETING_TEXT": 0,
+        "API_KEY_EXPOSURE": 0,
+        "SLUG_CONTENT_MISMATCH": 0,
+        "DUPLICATE_YAML_FIELDS": 0,
+        "TAG_MISMATCH": 0,
+        "GARBLED_TEXT": 0,
+        "DEPENDENCY_CONTRADICTION": 0,
+    }
+
+    # === 1. EXTERNAL_URL 检查 ===
+    # 只检查frontmatter中的URL (body中的API端点文档是合法的)
+    url_domains = _URL_DOMAIN_REGEX.findall(fm_text)
+    external_urls = []
+    for domain in url_domains:
+        domain_lower = domain.lower()
+        is_allowed = any(
+            domain_lower == a or domain_lower.endswith('.' + a)
+            for a in _EXTERNAL_URL_ALLOWLIST
+        )
+        if not is_allowed and domain not in external_urls:
+            external_urls.append(domain)
+    if external_urls:
+        category_counts["EXTERNAL_URL"] = len(external_urls)
+        issues.append({
+            "category": "EXTERNAL_URL",
+            "severity": "high",
+            "message": f"frontmatter中发现 {len(external_urls)} 个外部URL域名 (非白名单)",
+            "evidence": ", ".join(external_urls[:5]),
+        })
+
+    # === 2. INJECTED_MARKETING_TEXT 检查 ===
+    marketing_hits = []
+    for pattern, desc in _INJECTED_MARKETING_PATTERNS:
+        matches = re.findall(pattern, content)
+        if matches:
+            marketing_hits.append(desc)
+            category_counts["INJECTED_MARKETING_TEXT"] += len(matches)
+    if marketing_hits:
+        issues.append({
+            "category": "INJECTED_MARKETING_TEXT",
+            "severity": "high",
+            "message": f"发现注入营销模板文本: {'; '.join(marketing_hits)}",
+            "evidence": marketing_hits[0],
+        })
+
+    # === 3. API_KEY_EXPOSURE 检查 ===
+    api_key_hits = []
+    for pattern, desc in _API_KEY_EXPOSURE_PATTERNS:
+        matches = re.findall(pattern, content)
+        if matches:
+            api_key_hits.append(desc)
+            category_counts["API_KEY_EXPOSURE"] += len(matches)
+    if api_key_hits:
+        issues.append({
+            "category": "API_KEY_EXPOSURE",
+            "severity": "medium",
+            "message": f"发现API密钥暴露模式: {'; '.join(api_key_hits)}",
+            "evidence": api_key_hits[0],
+        })
+
+    # === 4. SLUG_CONTENT_MISMATCH 检查 ===
+    # 启发式: slug关键词应出现在description/body/name/displayName中
+    # 过滤停用词,避免对通用词(and/free/pro等)的误报
+    description = str(fm.get('description', '')).strip()
+    if slug and description and len(slug) > 3:
+        slug_words = [w for w in slug.split('-')
+                      if len(w) > 2 and w.lower() not in _SLUG_STOPWORDS]
+        if slug_words:
+            # 在description, body_text, name, displayName中搜索
+            name_val = str(fm.get('name', '')).lower()
+            display_val = str(fm.get('displayName', '')).lower()
+            search_text = (description + ' ' + body_text[:3000] +
+                           ' ' + name_val + ' ' + display_val).lower()
+            matched_words = [w for w in slug_words if w.lower() in search_text]
+            # 如果没有任何slug关键词出现在搜索文本中,标记为不匹配
+            if not matched_words:
+                category_counts["SLUG_CONTENT_MISMATCH"] = 1
+                issues.append({
+                    "category": "SLUG_CONTENT_MISMATCH",
+                    "severity": "medium",
+                    "message": f"slug关键词 {slug_words} 均未出现在description/body中",
+                    "evidence": f"slug='{slug}', desc前50字符='{description[:50]}'",
+                })
+
+    # === 5. DUPLICATE_YAML_FIELDS 检查 ===
+    # 检查frontmatter原始文本中的重复顶层键
+    if fm_text:
+        # 匹配行首的 key: 模式 (非缩进行)
+        fm_keys = re.findall(r'^([a-zA-Z_][a-zA-Z0-9_]*)\s*:', fm_text, re.MULTILINE)
+        key_counts = {}
+        for key in fm_keys:
+            key_counts[key] = key_counts.get(key, 0) + 1
+        duplicates = {k: v for k, v in key_counts.items() if v > 1}
+        if duplicates:
+            dup_count = sum(duplicates.values())
+            category_counts["DUPLICATE_YAML_FIELDS"] = dup_count
+            issues.append({
+                "category": "DUPLICATE_YAML_FIELDS",
+                "severity": "medium",
+                "message": f"frontmatter存在重复字段: {dict(duplicates)}",
+                "evidence": f"重复字段: {', '.join(f'{k}({v}次)' for k, v in duplicates.items())}",
+            })
+
+    # === 6. TAG_MISMATCH 检查 ===
+    # 启发式: tags为逗号分隔字符串时,检查是否与内容相关
+    tags_val = fm.get('tags', None)
+    if tags_val and isinstance(tags_val, str):
+        tag_words = [t.strip().strip("'\"") for t in tags_val.split(',') if t.strip()]
+        tag_words = [t for t in tag_words if len(t) > 1]
+        if tag_words:
+            search_text = (description + ' ' + body_text[:2000]).lower()
+            matched_tags = [t for t in tag_words if t.lower() in search_text]
+            # 如果超过一半的tag词未在内容中出现,标记为不匹配
+            unmatched = len(tag_words) - len(matched_tags)
+            if unmatched > len(tag_words) / 2:
+                category_counts["TAG_MISMATCH"] = 1
+                issues.append({
+                    "category": "TAG_MISMATCH",
+                    "severity": "low",
+                    "message": f"tags字段与内容不匹配: {tag_words} (匹配{len(matched_tags)}/{len(tag_words)})",
+                    "evidence": f"未匹配tags: {[t for t in tag_words if t.lower() not in search_text]}",
+                })
+
+    # === 7. GARBLED_TEXT 检查 ===
+    garbled_hits = []
+    for pattern, desc in _GARBLED_TEXT_PATTERNS:
+        matches = re.findall(pattern, content)
+        if matches:
+            garbled_hits.append(desc)
+            category_counts["GARBLED_TEXT"] += len(matches)
+    if garbled_hits:
+        issues.append({
+            "category": "GARBLED_TEXT",
+            "severity": "low",
+            "message": f"发现乱码/编码错误文本: {'; '.join(garbled_hits)}",
+            "evidence": garbled_hits[0],
+        })
+
+    # === 8. DEPENDENCY_CONTRADICTION 检查 ===
+    # 检查"需要API Key"和"无需API Key"同时出现
+    # 使用负向后顾(?<![无不])排除"无需"中的"需"导致的误报
+    # 使用负向后顾(?<!非)排除"非API Key"的否定表述
+    # 使用[^。；\n]避免跨句匹配,排除"回报要求...API密钥"等误报
+    # 排除可选/高级功能场景(如需/若需/可选/专业版/外部/脚本等)以减少误报
+    # 使用负向前瞻(?!\s*[吗呢])排除FAQ问句"需要API Key吗？"的误报
+    _OPTIONAL_INDICATORS = re.compile(
+        r'(?:如需|若需|可选|专业版|高级功能|额外配置|云端|云服务|外部服务|外部API|外部|批量|企业版|付费|Pro版|增强|升级|对应服务|对应|各自平台|各自|自定义|CDN|短信|推送|更高|专业|批量扫描|官方API|兼容API|外部写作|TTS|图像生成|云向量|云浏览器|OpenAI|Deepgram|ElevenLabs|百度|模型|目标API|脚本|被守护|可能|如使用|若使用)',
+        re.IGNORECASE
+    )
+    # FAQ问句行模式: 以Q/### Q/问开头,或包含问号
+    _QA_LINE_PATTERN = re.compile(r'^(?:#{1,6}\s*)?(?:Q\d*[：:]|问[：:]|.*？\s*$)', re.MULTILINE)
+    needs_api_key = False
+    for m in re.finditer(
+        r'(?<![无不])(?:需要|需|要求)[^。；\n]{0,10}(?<!非)(?:API\s*Key|API密钥|API\s*key|api[_-]?key)(?!\s*[吗呢])',
+        body_text, re.IGNORECASE
+    ):
+        # 排除FAQ问句行: 如果匹配所在行是Q&A问句,跳过
+        line_start = body_text.rfind('\n', 0, m.start()) + 1
+        line_end = body_text.find('\n', m.end())
+        if line_end == -1:
+            line_end = len(body_text)
+        line_text = body_text[line_start:line_end]
+        if _QA_LINE_PATTERN.match(line_text.strip()):
+            continue
+        # 检查匹配前的50字符上下文和匹配文本本身是否包含可选/外部功能指示词
+        context_start = max(0, m.start() - 50)
+        context = body_text[context_start:m.end()]
+        if not _OPTIONAL_INDICATORS.search(context):
+            needs_api_key = True
+            break
+    no_api_key = bool(re.search(
+        r'(?:无需|不需要|无须|无需额外).{0,10}(?:API|密钥|API\s*Key)',
+        body_text, re.IGNORECASE
+    ))
+    if needs_api_key and no_api_key:
+        category_counts["DEPENDENCY_CONTRADICTION"] = 1
+        issues.append({
+            "category": "DEPENDENCY_CONTRADICTION",
+            "severity": "low",
+            "message": "依赖说明与已知限制矛盾: 同时出现'需要API Key'和'无需API Key'表述",
+            "evidence": "body中同时存在需要/无需API Key的矛盾表述",
+        })
+
+    # === 评分 ===
+    # 基础分100, 每个high问题扣25, medium扣15, low扣10
+    penalty = 0
+    for issue in issues:
+        sev = issue["severity"]
+        if sev == "high":
+            penalty += 25
+        elif sev == "medium":
+            penalty += 15
+        elif sev == "low":
+            penalty += 10
+    score = max(0, 100 - penalty)
+
+    # 评级
+    if score >= 90:
+        grade = "A"
+    elif score >= 70:
+        grade = "B"
+    elif score >= 50:
+        grade = "C"
+    elif score >= 30:
+        grade = "D"
+    else:
+        grade = "F"
+
+    passed = len(issues) == 0
+
+    return {
+        "issues": issues,
+        "score": score,
+        "grade": grade,
+        "passed": passed,
+        "category_counts": category_counts,
+    }
+
+
+def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = True, enable_l7b: bool = False, enable_l8: bool = True):
     """执行全量审计
 
     Args:
@@ -1493,6 +1865,8 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = F
         print("[Layer 7a] 语义审计已启用 (L7a TF-IDF模板检测)")
     if enable_l7b:
         print("[Layer 7b] 可执行性审计已启用 (L7b 静态可执行性检查)")
+    if enable_l8:
+        print("[Layer 8] 安全审计已启用 (L8 8类安全审核检查)")
     print()
 
     # 收集所有 SKILL.md 文件
@@ -1506,7 +1880,7 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = F
     fixes_applied = []
 
     for skill_path, source in skill_files:
-        result = check_skill(skill_path, source, enable_l7=enable_l7, enable_l7b=enable_l7b)
+        result = check_skill(skill_path, source, enable_l7=enable_l7, enable_l7b=enable_l7b, enable_l8=enable_l8)
         all_results.append(result)
 
         # 自动修复 warning 级别问题
@@ -1580,6 +1954,25 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = F
         "L7B_MISSING_INPUT": 0,
         "L7B_NO_OUTPUT": 0,
         "L7B_CONTRADICTION": 0,
+    }
+
+    # Layer 8 (安全审计) 统计
+    l8_grades = {"A": 0, "B": 0, "C": 0, "D": 0, "F": 0, "N/A": 0}
+    l8_issues_list = []
+    l8_score_sum = 0
+    l8_available_count = 0
+    l8_passed_count = 0
+    l8_failed_count = 0
+    # 8类安全问题触发分布
+    l8_category_distribution = {
+        "EXTERNAL_URL": 0,
+        "INJECTED_MARKETING_TEXT": 0,
+        "API_KEY_EXPOSURE": 0,
+        "SLUG_CONTENT_MISMATCH": 0,
+        "DUPLICATE_YAML_FIELDS": 0,
+        "TAG_MISMATCH": 0,
+        "GARBLED_TEXT": 0,
+        "DEPENDENCY_CONTRADICTION": 0,
     }
 
     for result in all_results:
@@ -1695,6 +2088,35 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = F
                 "issues": exe["issues"],
             })
 
+        # 收集安全审计统计 (Layer 8)
+        sec = result.get("security", {})
+        l8_grade = sec.get("l8_grade", "N/A")
+        l8_score = sec.get("l8_score", -1)
+        if l8_grade not in l8_grades:
+            l8_grades[l8_grade] = 0
+        l8_grades[l8_grade] += 1
+        if l8_score >= 0:
+            l8_score_sum += l8_score
+            l8_available_count += 1
+        if sec.get("l8_passed"):
+            l8_passed_count += 1
+        else:
+            l8_failed_count += 1
+        # 统计8类安全问题触发分布
+        for cat, cnt in sec.get("category_counts", {}).items():
+            if cnt > 0 and cat in l8_category_distribution:
+                l8_category_distribution[cat] += 1
+        if sec.get("issues"):
+            l8_issues_list.append({
+                "slug": result["slug"],
+                "source": result["source"],
+                "grade": l8_grade,
+                "score": l8_score,
+                "passed": sec.get("l8_passed"),
+                "category_counts": sec.get("category_counts", {}),
+                "issues": sec["issues"],
+            })
+
         entry = {
             "slug": result["slug"],
             "source": result["source"],
@@ -1713,6 +2135,9 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = F
             "executability_grade": l7b_grade,
             "executability_score": l7b_score,
             "executable": exe.get("executable"),
+            "security_grade": l8_grade,
+            "security_score": l8_score,
+            "security_passed": sec.get("l8_passed"),
         }
 
         if sev == "critical":
@@ -1776,6 +2201,18 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = F
             "check_distribution": l7b_check_distribution,
             "total_with_issues": len(l7b_issues_list),
             "issues_detail": l7b_issues_list,
+        },
+        "security_audit": {
+            "enabled": enable_l8,
+            "l8_available_count": l8_available_count,
+            "grade_distribution": l8_grades,
+            "avg_score": round(l8_score_sum / l8_available_count, 1) if l8_available_count else 0,
+            "passed_count": l8_passed_count,
+            "failed_count": l8_failed_count,
+            "pass_rate": f"{l8_passed_count * 100 // total}%" if total else "0%",
+            "category_distribution": l8_category_distribution,
+            "total_with_issues": len(l8_issues_list),
+            "issues_detail": l8_issues_list,
         },
     }
 
@@ -1925,6 +2362,37 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = F
                     if len(severe_l7b) > 20:
                         print(f"    ... 还有 {len(severe_l7b) - 20} 个")
 
+    # Layer 8: 安全审计统计
+    if enable_l8:
+        print()
+        print("─" * 60)
+        print("安全审计 (Layer 8: Security Audit - L8 8类安全审核检查):")
+        if l8_available_count > 0:
+            l8_avg = l8_score_sum / l8_available_count
+            print(f"  已分析: {l8_available_count} / {total} 个 skill")
+            print(f"  平均分: {l8_avg:.1f} / 100")
+            print(f"  等级分布: A={l8_grades.get('A',0)}  B={l8_grades.get('B',0)}  "
+                  f"C={l8_grades.get('C',0)}  D={l8_grades.get('D',0)}  "
+                  f"F={l8_grades.get('F',0)}  N/A={l8_grades.get('N/A',0)}")
+            print(f"  安全通过: {l8_passed_count} / {total} ({l8_passed_count*100//total if total else 0}%)")
+            print(f"  安全失败: {l8_failed_count} / {total} ({l8_failed_count*100//total if total else 0}%)")
+            print(f"  8类安全问题触发分布:")
+            for cat, cnt in l8_category_distribution.items():
+                print(f"    {cat}: {cnt}")
+            print(f"  有问题skill: {len(l8_issues_list)} 个")
+            if l8_issues_list:
+                severe_l8 = [item for item in l8_issues_list if item['grade'] in ('C', 'D', 'F')]
+                if severe_l8:
+                    print(f"  C+D+F级 (严重安全问题): {len(severe_l8)} 个")
+                    for item in severe_l8[:25]:
+                        issues_str = '; '.join(
+                            (i.get('message', str(i)) if isinstance(i, dict) else str(i))
+                            for i in item['issues'][:3]
+                        )
+                        print(f"    [{item['grade']}] {item['slug']} (分:{item['score']}): {issues_str}")
+                    if len(severe_l8) > 25:
+                        print(f"    ... 还有 {len(severe_l8) - 25} 个")
+
     if critical_issues:
         print()
         print(f"CRITICAL 问题列表 ({len(critical_issues)} 个):")
@@ -1989,10 +2457,13 @@ def main():
     """主入口"""
     fix_mode = "--fix" in sys.argv
     fix_all = "--fix-all" in sys.argv
-    enable_l7 = "--layer7" in sys.argv
+    # L7a 使用轻量级 sklearn TF-IDF 后端, 默认启用; 可通过 --no-layer7 关闭
+    enable_l7 = "--no-layer7" not in sys.argv
     enable_l7b = "--layer7b" in sys.argv
+    # L8 安全审计默认启用; 可通过 --no-layer8 关闭
+    enable_l8 = "--no-layer8" not in sys.argv
 
-    passed = run_audit(fix_mode=fix_mode, fix_all=fix_all, enable_l7=enable_l7, enable_l7b=enable_l7b)
+    passed = run_audit(fix_mode=fix_mode, fix_all=fix_all, enable_l7=enable_l7, enable_l7b=enable_l7b, enable_l8=enable_l8)
 
     # 如果存在 critical 问题，返回非零退出码
     if not passed:

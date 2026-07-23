@@ -6,19 +6,18 @@ displayName: "Web Content Fetcher"
 summary: "网页内容获取工具 | 当常规爬虫被过滤时，使用替代服务获取网页内容。支持：1) r.jina.ai - 最稳定 2) markdown.new -"
 license: "Proprietary"
 description: |-
-  网页内容获取工具 | 当常规爬虫被过滤时，使用替代服务获取网页内容。支持：1) r。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。
+  网页内容获取工具 | 当常规爬虫被过滤时，使用替代服务获取网页内容。支持：1) r。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
   - Other
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob"]
-tags: "Web开发,前端,开发工具"
+
 ---
 # Web Content Fetcher
 
@@ -44,7 +43,9 @@ tags: "Web开发,前端,开发工具"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 网页内容获取工具 | | 目标数据与配置参数 | 处理结果与执行状态 |
+| 使用替代服务获取网页 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 支持：1 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -133,7 +134,7 @@ fetch_webpage <url> --method jina|markdown|defuddle
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ```text
@@ -158,3 +159,6 @@ A:
 ## 已知限制
 
 - 依赖云服务，需要网络连接
+- 依赖Agent平台的LLM能力与运行环境配置
+- 免费版功能受限，高级能力需升级专业版
+- 处理能力受限于本地硬件资源

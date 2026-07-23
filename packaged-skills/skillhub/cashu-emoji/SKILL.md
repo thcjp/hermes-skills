@@ -27,15 +27,14 @@ description: |-
 tags:
   - Other
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Cashu Emoji
 
@@ -59,7 +58,9 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 令牌编解码 | 原始数据与编码方案 | 编码输出与验证结果 |
+| Emoji隐写 | 文本与令牌数据 | 嵌入Emoji的隐写文本 |
+| Unicode编码 | 文本与变体选择符 | 编码后的Emoji文本 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -160,8 +161,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Cashu Emoji？

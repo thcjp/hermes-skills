@@ -19,15 +19,14 @@ tags:
   - 企业集成
   - 自动化
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "版本控制,Git,开发工具"
+
 ---
 # GitHub API工具包(专业版)
 
@@ -100,7 +99,7 @@ query dependencyGraph($owner: String!, $name: String!) {
 }
 ```
 
-**处理**: 解析GraphQL API的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**处理**: 解析GraphQL API的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回GraphQL API的解析响应,包含完成状态码、响应数据和完成日志。### 批量任务
 ```bash
 gh-api-toolkit batch-create-issues \
@@ -221,8 +220,8 @@ curl -H "Authorization: Bearer $GITHUB_TOKEN" \
   https://api.相关技术文档
 ```
 
-**输入**: 用户提供组织与团队管理所需的指令和必要参数。
-**处理**: 解析组织与团队管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输入**: 用户提供组织与团队管理所需的指令和必要参数.
+**处理**: 解析组织与团队管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回组织与团队管理的处理结果,包含执行状态码、结果数据和执行日志。### 高级搜索
 ```bash
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
@@ -474,35 +473,25 @@ if results.failures:
 ## 常见问题
 
 ### Q1: GraphQL查询复杂度超限怎么办?
-A: GitHub限制单次查询复杂度≤500000点。优化方案: (1)减少`first`参数值; (2)拆分为多次查询; (3)使用分页(cursor); (4)避免深层嵌套。专业版工具会自动计算复杂度并提示。
-
+A: GitHub限制单次查询复杂度≤500000点。优化方案: (1)减少`first`参数值; (2)拆分为多次查询; (3)使用分页(cursor); (4)避免深层嵌套。专业版工具会自动计算复杂度并提示.
 ### Q2: 批量操作中部分失败如何处理?
-A: 专业版支持断点续传。失败项记录到`failures.csv`,可单独重试。检查失败原因(权限不足、资源不存在、限速等),修复后重试。
-
+A: 专业版支持断点续传。失败项记录到`failures.csv`,可单独重试。检查失败原因(权限不足、资源不存在、限速等),修复后重试.
 ### Q3: Webhook签名验证失败怎么办?
-A: 检查: (1)secret是否与GitHub配置一致; (2)签名算法是否为HMAC-SHA256; (3)是否对原始请求体(非解析后JSON)计算签名; (4)比较时使用constant-time comparison。
-
+A: 检查: (1)secret是否与GitHub配置一致; (2)签名算法是否为HMAC-SHA256; (3)是否对原始请求体(非解析后JSON)计算签名; (4)比较时使用constant-time comparison.
 ### Q4: Actions API触发工作流失败?
-A: 常见原因: (1)工作流未配置`workflow_dispatch`触发器; (2)指定的`ref`不存在; (3)token缺少`workflow`scope; (4)inputs参数与工作流定义不匹配。
-
+A: 常见原因: (1)工作流未配置`workflow_dispatch`触发器; (2)指定的`ref`不存在; (3)token缺少`workflow`scope; (4)inputs参数与工作流定义不匹配.
 ### Q5: 如何监控API用量?
-A: 通过响应头`X-RateLimit-Remaining`与`X-RateLimit-Reset`监控。专业版工具自动记录用量,运行`gh-api-toolkit usage stats`查看趋势。GraphQL与REST共享5000/小时配额。
-
+A: 通过响应头`X-RateLimit-Remaining`与`X-RateLimit-Reset`监控。专业版工具自动记录用量,运行`gh-api-toolkit usage stats`查看趋势。GraphQL与REST共享5000/小时配额.
 ### Q6: 组织操作需要什么权限?
-A: 组织级操作(管理成员、团队、仓库)需要`admin:org`scope。团队管理还需对应团队的maintainer角色。建议使用组织级App而非个人token。
-
+A: 组织级操作(管理成员、团队、仓库)需要`admin:org`scope。团队管理还需对应团队的maintainer角色。建议使用组织级App而非个人token.
 ### Q7: 如何导出搜索结果?
-A: 搜索API返回`total_count`与`items`。使用分页参数`page`与`per_page`遍历。专业版支持`--export csv/json`直接导出全部结果。
-
+A: 搜索API返回`total_count`与`items`。使用分页参数`page`与`per_page`遍历。专业版支持`--export csv/json`直接导出全部结果.
 ### Q8: 专业版支持GitHub App吗?
-A: 支持。配置App ID、私钥、installation ID后,自动获取installation token。相比PAT,App token更安全(可细粒度授权、自动过期)。
-
+A: 支持。配置App ID、私钥、installation ID后,自动获取installation token。相比PAT,App token更安全(可细粒度授权、自动过期).
 ### Q9: 如何处理API版本兼容?
-A: GitHub API通过`Accept`头指定版本(如`application/vnd.github+json`)。专业版工具会自动添加正确的Accept头。建议关注GitHub API变更日志,及时适配新版本。
-
+A: GitHub API通过`Accept`头指定版本(如`application/vnd.github+json`)。专业版工具会自动添加正确的Accept头。建议关注GitHub API变更日志,及时适配新版本.
 ### Q10: 大规模数据同步如何优化?
-A: (1)使用GraphQL减少请求次数; (2)启用增量同步(基于`updated_at`过滤); (3)并行请求(遵守限速); (4)本地缓存已同步数据; (5)使用Webhook实时同步变更。
-
+A: (1)使用GraphQL减少请求次数; (2)启用增量同步(基于`updated_at`过滤); (3)并行请求(遵守限速); (4)本地缓存已同步数据; (5)使用Webhook实时同步变更.
 ## 错误处理
 
 | 错误场景(续)| 原因 | 处理方式 |

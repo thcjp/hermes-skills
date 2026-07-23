@@ -8,11 +8,11 @@ license: "Proprietary"
 description: |-
   面向团队协作与工作区治理的Slack全量管理技能。通过ClawLink OAuth托管连接，
   提供消息管理、频道治理、对话历史、用户查询、文件操作、表情反应、提醒、
-  置顶与星标、Canvas画布、团队管理、自定义emoji、通话管理十二大能力域。
+  置顶与星标、Canvas画布、团队管理、自定义emoji、通话管理十二大能力域.
   覆盖60+ Slack Web API工具，支持定时消息、线程回复、频道创建/归档/重命名、
-  文件上传/下载/删除、用户组管理、企业Grid审计日志等高级操作。
-  内置读写分级安全策略：读操作直接执行，写操作需用户确认后调用。
-  适用于项目频道搭建、事件响应协作、文件分发、团队协调等场景。
+  文件上传/下载/删除、用户组管理、企业Grid审计日志等高级操作.
+  内置读写分级安全策略：读操作直接执行，写操作需用户确认后调用.
+  适用于项目频道搭建、事件响应协作、文件分发、团队协调等场景.
 tags:
   - Communication
   - 团队协作
@@ -25,13 +25,11 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Slack,社交,通信"
+
 ---
 # Slack工作区管家（Slack Workspace）
 
-通过ClawLink OAuth托管连接管理Slack工作区，覆盖消息、频道、文件、用户、提醒、画布等60+ API工具。内置读写分级安全策略，写操作需用户确认后执行。
-
+通过ClawLink OAuth托管连接管理Slack工作区，覆盖消息、频道、文件、用户、提醒、画布等60+ API工具。内置读写分级安全策略，写操作需用户确认后执行.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -80,14 +78,12 @@ Agent 聊话 ───▶ ClawLink (OAuth托管) ───▶ Slack Web API
                     └─ 4. 代理API请求并注入Token
 ```
 
-**无需在聊天中提供API Token**。ClawLink 安全存储 OAuth Token 并自动注入每个 Slack API 请求。
-
+**无需在聊天中提供API Token**。ClawLink 安全存储 OAuth Token 并自动注入每个 Slack API 请求.
 ## 核心能力
 
 ### 1. 消息管理
-发送文本消息到频道/DM/MPDM，回复指定消息线程，定时发送未来消息，更新已有消息文本，删除已发送消息，查询/取消待发送的定时消息。
-
-**输入**: 用户提供消息管理所需的指令和必要参数。
+发送文本消息到频道/DM/MPDM，回复指定消息线程，定时发送未来消息，更新已有消息文本，删除已发送消息，查询/取消待发送的定时消息.
+**输入**: 用户提供消息管理所需的指令和必要参数.
 **输出**: 返回消息管理的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`消息管理`的配置文档进行参数调优
 ### 2. 频道治理
@@ -100,52 +96,45 @@ Agent 聊话 ───▶ ClawLink (OAuth托管) ───▶ Slack Web API
 列出工作区全部用户，按姓名/邮箱/条件搜索用户，按邮箱精确查找用户，查询用户在线状态（active/away），查询用户勿扰状态。- 验证返回数据的完整性和格式正确性
 - 参考`用户查询`的配置文档进行参数调优
 ### 5. 文件操作
-列出工作区内共享文件（支持过滤），向频道上传文件，永久删除文件，下载文件内容并获取公开URL。大文件受Slack限制可能需先上传到文件托管服务。
-
-**输入**: 用户提供文件操作所需的指令和必要参数。
+列出工作区内共享文件（支持过滤），向频道上传文件，永久删除文件，下载文件内容并获取公开URL。大文件受Slack限制可能需先上传到文件托管服务.
+**输入**: 用户提供文件操作所需的指令和必要参数.
 **输出**: 返回文件的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`文件操作`的配置文档进行参数调优
 ### 6. 表情反应
-向消息添加emoji反应，移除消息上的emoji反应，获取消息上的全部反应列表。
-
-**输入**: 用户提供表情反应所需的指令和必要参数。
-**处理**: 解析表情反应的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+向消息添加emoji反应，移除消息上的emoji反应，获取消息上的全部反应列表.
+**输入**: 用户提供表情反应所需的指令和必要参数.
+**处理**: 解析表情反应的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回表情反应的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`表情反应`的配置文档进行参数调优
 ### 7. 提醒管理
-创建定时提醒，列出全部提醒，查询提醒详情，标记提醒完成，删除提醒。支持自然语言时间（如"明天上午10点"、"每周四下午2点"）。
-
-**输入**: 用户提供提醒管理所需的指令和必要参数。
+创建定时提醒，列出全部提醒，查询提醒详情，标记提醒完成，删除提醒。支持自然语言时间（如"明天上午10点"、"每周四下午2点"）.
+**输入**: 用户提供提醒管理所需的指令和必要参数.
 **处理**: 解析提醒管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证返回数据的完整性和格式正确性
 - 参考`提醒管理`的配置文档进行参数调优
 ### 8. 置顶与星标
-置顶消息到频道，列出频道置顶项，取消置顶，星标频道/文件/消息，列出星标项，取消星标。
-
-**输入**: 用户提供置顶与星标所需的指令和必要参数。
-**处理**: 解析置顶与星标的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+置顶消息到频道，列出频道置顶项，取消置顶，星标频道/文件/消息，列出星标项，取消星标.
+**输入**: 用户提供置顶与星标所需的指令和必要参数.
+**处理**: 解析置顶与星标的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回置顶与星标的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`置顶与星标`的配置文档进行参数调优
 ### 9. Canvas画布
-创建Slack Canvas文档，编辑Canvas内容，永久删除Canvas，查询Canvas章节ID用于定向编辑。
-
-**输入**: 用户提供Canvas画布所需的指令和必要参数。
+创建Slack Canvas文档，编辑Canvas内容，永久删除Canvas，查询Canvas章节ID用于定向编辑.
+**输入**: 用户提供Canvas画布所需的指令和必要参数.
 **处理**: 解析Canvas画布的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证返回数据的完整性和格式正确性
 - 参考`Canvas画布`的配置文档进行参数调优
 ### 10. 团队与管理
 查询工作区元数据与设置，邀请新用户加入工作区，创建/禁用/启用用户组（子团队），列出用户组，列出企业Grid全部团队，读取企业Grid审计日志。- 验证返回数据的完整性和格式正确性
 - 参考`团队与管理`的配置文档进行参数调优
 ### 11. 自定义emoji
-添加自定义emoji到工作区，列出全部自定义emoji，移除自定义emoji（仅企业Grid）。
-
-**输入**: 用户提供自定义emoji所需的指令和必要参数。
-**处理**: 解析自定义emoji的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+添加自定义emoji到工作区，列出全部自定义emoji，移除自定义emoji（仅企业Grid）.
+**输入**: 用户提供自定义emoji所需的指令和必要参数.
+**处理**: 解析自定义emoji的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回自定义emoji的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`自定义emoji`的配置文档进行参数调优
 ### 12. 通话管理
-查询Slack通话详情，结束进行中的通话，添加/移除通话参与者。
-
-**输入**: 用户提供通话管理所需的指令和必要参数。
-**处理**: 解析通话管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+查询Slack通话详情，结束进行中的通话，添加/移除通话参与者.
+**输入**: 用户提供通话管理所需的指令和必要参数.
+**处理**: 解析通话管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回通话管理的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`通话管理`的配置文档进行参数调优
 #
@@ -178,8 +167,7 @@ clawlink_describe_tool --tool "slack_send_message"
 | 写操作（send/create/update/delete） | 需用户确认后执行 | `slack_send_message`、`slack_create_channel`、`slack_delete_file` |
 | 破坏性操作（delete/archive） | 高风险确认 | `slack_delete_file`、`slack_archive_conversation`、`slack_deletes_a_message_from_a_chat` |
 
-**写操作执行前必须**：1) 调 `clawlink_describe_tool` 查看参数；2) 调 `clawlink_preview_tool` 预览效果；3) 用户确认后调 `clawlink_call_tool` 执行。
-
+**写操作执行前必须**：1) 调 `clawlink_describe_tool` 查看参数；2) 调 `clawlink_preview_tool` 预览效果；3) 用户确认后调 `clawlink_call_tool` 执行.
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |
@@ -197,15 +185,13 @@ clawlink_describe_tool --tool "slack_send_message"
 ```bash
 clawlink_list_integrations
 ```
-返回列表中包含 `slack` 即已连接。若未连接，引导用户访问 ClawLink Dashboard 连接 Slack。
-
+返回列表中包含 `slack` 即已连接。若未连接，引导用户访问 ClawLink Dashboard 连接 Slack.
 ### 工具发现与参数确认
 ```bash
 # 查看工具参数说明（写操作必做）
 clawlink_describe_tool --tool "slack_send_message"
 ```
-返回包含 `schema`、`whenToUse`、`askBefore`、`safeDefaults`、`examples` 等指导信息。
-
+返回包含 `schema`、`whenToUse`、`askBefore`、`safeDefaults`、`examples` 等指导信息.
 ### 频道名解析为ID
 大部分Slack工具需要频道ID（`C`/`G`/`D` 开头）。频道名需先解析：
 ```bash
@@ -256,8 +242,7 @@ clawlink_call_tool --tool "slack_invite_users_to_a_slack_channel" --params '{"ch
 {"ok": true, "channel": {"id": "C0NEW12345", "members": ["U0ALICE01","U0BOB002","U0CAROL03"]}}
 ```
 
-**分析**：频道 `#project-alpha` 创建成功（ID: `C0NEW12345`），话题已设置，3名成员已邀请加入。写操作（创建/设置话题/邀请）均需用户确认后执行。
-
+**分析**：频道 `#project-alpha` 创建成功（ID: `C0NEW12345`），话题已设置，3名成员已邀请加入。写操作（创建/设置话题/邀请）均需用户确认后执行.
 ### 案例2：事件响应协作
 **场景**：生产环境告警，需在 `#incidents` 频道发送告警，线程跟进处理状态，最后置顶解决结论
 
@@ -295,8 +280,7 @@ clawlink_call_tool --tool "slack_pin_item" --params '{
 {"ok": true, "channel": "C0INCIDENT1", "pinned": true}
 ```
 
-**分析**：告警消息发送后获得时间戳 `1721452800.123456`，用作后续线程回复的 `thread_ts`。线程内跟进不打扰主时间线。解决结论消息被置顶，便于团队快速查看。
-
+**分析**：告警消息发送后获得时间戳 `1721452800.123456`，用作后续线程回复的 `thread_ts`。线程内跟进不打扰主时间线。解决结论消息被置顶，便于团队快速查看.
 ### 案例3：文件分发
 **场景**：需要将Q1销售报告上传到 `#reports` 频道供团队查阅
 
@@ -327,8 +311,7 @@ clawlink_call_tool --tool "slack_upload_file_to_channel" --params '{
 }
 ```
 
-**分析**：CSV文件已上传到 `#reports` 频道，文件ID `F0FILE1234` 可用于后续下载或删除。`url_private` 为带认证的下载链接，需授权才能访问。大文件建议先上传到外部托管服务再分享链接。
-
+**分析**：CSV文件已上传到 `#reports` 频道，文件ID `F0FILE1234` 可用于后续下载或删除。`url_private` 为带认证的下载链接，需授权才能访问。大文件建议先上传到外部托管服务再分享链接.
 ## 错误处理
 
 | 错误码 | 错误信息 | 原因分析 | 处理方式 |
@@ -345,23 +328,17 @@ clawlink_call_tool --tool "slack_upload_file_to_channel" --params '{
 ## 常见问题
 
 ### Q1：如何将频道名解析为频道ID？
-A：大部分Slack工具需要频道ID（`C`/`G`/`D` 开头）。使用 `slack_find_channels` 按名称搜索，或使用 `slack_list_all_channels` 列出全部频道后按 `name` 字段匹配。DM频道ID以 `D` 开头，MPDM以 `G` 开头，普通频道以 `C` 开头。
-
+A：大部分Slack工具需要频道ID（`C`/`G`/`D` 开头）。使用 `slack_find_channels` 按名称搜索，或使用 `slack_list_all_channels` 列出全部频道后按 `name` 字段匹配。DM频道ID以 `D` 开头，MPDM以 `G` 开头，普通频道以 `C` 开头.
 ### Q2：线程回复与主时间线消息有什么区别？
-A：`slack_fetch_conversation_history` 仅返回频道主时间线消息，不包含线程回复。获取线程回复需用 `slack_fetch_message_thread_from_a_conversation` 并传入父消息的 `thread_ts`。发送线程回复需在 `slack_send_thread_reply` 中指定 `thread_ts` 参数。
-
+A：`slack_fetch_conversation_history` 仅返回频道主时间线消息，不包含线程回复。获取线程回复需用 `slack_fetch_message_thread_from_a_conversation` 并传入父消息的 `thread_ts`。发送线程回复需在 `slack_send_thread_reply` 中指定 `thread_ts` 参数.
 ### Q3：文件上传有什么限制？
-A：Slack对文件上传有大小限制（取决于套餐，免费版通常1GB/文件）。大文件建议先上传到外部文件托管服务（如S3、Google Drive），再将分享链接发到频道。上传后文件ID（`F` 开头）可用于下载、删除操作。`url_private` 为带认证链接，需授权才能访问。
-
+A：Slack对文件上传有大小限制（取决于套餐，免费版通常1GB/文件）。大文件建议先上传到外部文件托管服务（如S3、Google Drive），再将分享链接发到频道。上传后文件ID（`F` 开头）可用于下载、删除操作。`url_private` 为带认证链接，需授权才能访问.
 ### Q4：Token失效后如何重新连接？
-A：若Slack工具返回 `not_authed` 错误，说明OAuth Token已失效。引导用户访问 ClawLink Dashboard 重新连接Slack工作区，重新授权后调用 `clawlink_list_integrations` 验证连接已恢复，再调用 `clawlink_list_tools --integration slack` 确认工具目录可用。
-
+A：若Slack工具返回 `not_authed` 错误，说明OAuth Token已失效。引导用户访问 ClawLink Dashboard 重新连接Slack工作区，重新授权后调用 `clawlink_list_integrations` 验证连接已恢复，再调用 `clawlink_list_tools --integration slack` 确认工具目录可用.
 ### Q5：DM和MPDM的频道ID有什么区别？
-A：DM（私信）频道ID以 `D` 开头，仅限两人对话；MPDM（群组私信）频道ID以 `G` 开头，支持多人。两者均通过 `slack_list_conversations` 或 `slack_list_all_channels` 获取。向DM/MPDM发送消息使用与普通频道相同的 `slack_send_message` 工具，`channel` 参数传DM/MPDM的频道ID。
-
+A：DM（私信）频道ID以 `D` 开头，仅限两人对话；MPDM（群组私信）频道ID以 `G` 开头，支持多人。两者均通过 `slack_list_conversations` 或 `slack_list_all_channels` 获取。向DM/MPDM发送消息使用与普通频道相同的 `slack_send_message` 工具，`channel` 参数传DM/MPDM的频道ID.
 ### Q6：如何查看频道历史消息？
-A：使用 `slack_fetch_conversation_history` 获取频道主时间线消息，支持分页（`limit`、`cursor` 参数）。如需查看某条消息的线程讨论，先用历史接口找到父消息的 `ts`，再用 `slack_fetch_message_thread_from_a_conversation` 传入 `thread_ts` 获取全部线程回复。
-
+A：使用 `slack_fetch_conversation_history` 获取频道主时间线消息，支持分页（`limit`、`cursor` 参数）。如需查看某条消息的线程讨论，先用历史接口找到父消息的 `ts`，再用 `slack_fetch_message_thread_from_a_conversation` 传入 `thread_ts` 获取全部线程回复.
 ## 已知限制
 
 1. **频道ID必需**：大部分工具需要频道ID而非频道名，需先通过 `slack_find_channels` 解析

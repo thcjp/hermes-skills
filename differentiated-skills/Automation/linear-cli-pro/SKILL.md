@@ -6,26 +6,24 @@ displayName: Linear CLI专家
 summary: 解决JSON解析难、内联转义炸、批量操作慢、鉴权易失效痛点，让Linear CLI在Agent中稳跑
 license: Proprietary
 description: 面向在 Agent（Claude Code / Codex / Cursor 等）中调用 `linear` CLI 的开发者。聚焦 v3
-  执行模型下的稳定 JSON 契约、预演式写入、Markdown 安全传参、批量操作与鉴权自愈。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
+  执行模型下的稳定 JSON 契约、预演式写入、Markdown 安全传参、批量操作与鉴权自愈。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
 - 自动化
 - 项目管理
 - 开发者工具
 tools:
-- - read
+- read
 - exec
 homepage: https://skillhub.cn
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+
 ---
 # Linear CLI 专家
 
-在 Agent 运行时中安全、稳定地操作 Linear。所有写操作遵循"预览-执行-校验"闭环，所有 Markdown 内容走文件/stdin 而非内联，批量操作有并发与限速保护。
-
+在 Agent 运行时中安全、稳定地操作 Linear。所有写操作遵循"预览-执行-校验"闭环，所有 Markdown 内容走文件/stdin 而非内联，批量操作有并发与限速保护.
 ## 前置检查
 
 ## 输入格式
@@ -41,8 +39,7 @@ linear auth status        # 鉴权状态
 linear capabilities       # 命令能力清单（机器可读）
 ```
 
-未安装时，按官方文档安装 `linear` CLI 并运行 `linear auth login`。Agent 检测到 `command not found` 应直接告知用户安装步骤，不要继续后续流程。
-
+未安装时，按官方文档安装 `linear` CLI 并运行 `linear auth login`。Agent 检测到 `command not found` 应直接告知用户安装步骤，不要继续后续流程.
 ## Agent 推荐执行循环
 
 按此顺序执行，**写操作必须先 dry-run**：
@@ -53,10 +50,8 @@ linear capabilities       # 命令能力清单（机器可读）
 4. **执行写入**：在机器可读通道上执行，然后检查 `operation`、`receipt`、`error.details`
 5. **校验结果**：查退出码与 `error.details`，**不要**解析带样式的终端文本
 
-人/调试模式是次要且显式的：`--profile human-debug --interactive`。Agent 默认使用 `--profile agent-safe`（旧自动化兼容）。
-
-当上游工具传入 Slack/工单信封时：优先 `--context-file`，若信封已含确定性 team/state/label 提示则加 `--apply-triage`，需要 suggest-only 或 preview-required 暂存时显式选 `--autonomy-policy`。
-
+人/调试模式是次要且显式的：`--profile human-debug --interactive`。Agent 默认使用 `--profile agent-safe`（旧自动化兼容）.
+当上游工具传入 Slack/工单信封时：优先 `--context-file`，若信封已含确定性 team/state/label 提示则加 `--apply-triage`，需要 suggest-only 或 preview-required 暂存时显式选 `--autonomy-policy`.
 ## Markdown 安全传参决策表
 
 | 场景 | 推荐方式 | 反模式（禁用） |
@@ -81,7 +76,7 @@ cat > /tmp/description.md <<'EOF'
 - 第二项
 # ...
 ## Details
-这是带格式的详细描述。
+这是带格式的详细描述.
 EOF
 # ...
 linear issue create --title "My Issue" --description-file /tmp/description.md
@@ -106,8 +101,7 @@ linear issue comment add ENG-123 --body-file /tmp/comment.md
 | `linear capabilities` | Agent 命令面描述 |
 | `linear resolve` | 不变更地解析引用 |
 
-任何命令加 `--help` 查看子命令与 flag。机器可读发现：`linear capabilities` 或 `linear capabilities --compat v1`。
-
+任何命令加 `--help` 查看子命令与 flag。机器可读发现：`linear capabilities` 或 `linear capabilities --compat v1`.
 ## 批量操作模板
 
 ### 模板1：批量创建 issue（CSV → Linear）
@@ -123,8 +117,7 @@ tail -n +2 issues.csv | xargs -P 4 -I {} bash -c '
 '
 ```
 
-并发上限默认 4，超过 8 易触发 Linear API 速率限制（每分钟 1500 请求/工作区）。
-
+并发上限默认 4，超过 8 易触发 Linear API 速率限制（每分钟 1500 请求/工作区）.
 ### 模板2：批量状态流转
 
 ```bash
@@ -160,8 +153,7 @@ done
 
 ## GraphQL 兜底工作流
 
-**优先用 CLI**。仅当 CLI 未覆盖时用 `linear api`。
-
+**优先用 CLI**。仅当 CLI 未覆盖时用 `linear api`.
 ### Schema 检索（节省流量）
 
 ```bash
@@ -171,8 +163,7 @@ grep -i "cycle" "${TMPDIR:-/tmp}/linear-schema.graphql"
 grep -A 30 "^type Issue " "${TMPDIR:-/tmp}/linear-schema.graphql"
 ```
 
-仅当本地转储超过 7 天或查询字段不存在时才重新拉取。
-
+仅当本地转储超过 7 天或查询字段不存在时才重新拉取.
 ### GraphQL 请求
 
 含 `!` 非空标记的查询必须用 heredoc stdin，避免转义问题：
@@ -187,8 +178,7 @@ query($filter: IssueFilter!) { issues(filter: $filter) { nodes { title } } }
 GRAPHQL
 ```
 
-简单查询可内联：`linear api '{ viewer { id name email } }'`。
-
+简单查询可内联：`linear api '{ viewer { id name email } }'`.
 ### curl 兜底（需完全 HTTP 控制时）
 
 ```bash
@@ -251,20 +241,15 @@ done
 ## FAQ
 
 **Q1: `--dry-run` 不是所有命令都支持怎么办？**
-A: 不支持 dry-run 的命令（如 `label create`）改用"先 list 确认不存在 → 再创建"的预检模式。写操作前永远先读。
-
+A: 不支持 dry-run 的命令（如 `label create`）改用"先 list 确认不存在 → 再创建"的预检模式。写操作前永远先读.
 **Q2: 大量 issue 创建时频繁 429？**
-A: 并发降到 2，并在每次请求间加 `sleep 0.5`。Linear 速率限制按工作区计，跨工作区不会累计。
-
+A: 并发降到 2，并在每次请求间加 `sleep 0.5`。Linear 速率限制按工作区计，跨工作区不会累计.
 **Q3: JSON 输出字段不稳定？**
-A: 用 `linear capabilities --compat v1` 获取稳定契约。字段名变更时优先看 `error.details`，它给出字段路径。
-
+A: 用 `linear capabilities --compat v1` 获取稳定契约。字段名变更时优先看 `error.details`，它给出字段路径.
 **Q4: heredoc 在 Windows PowerShell 报错？**
-A: PowerShell 不支持 heredoc。改用文件：把查询写入 `.graphql` 文件，用 `linear api --query-file query.graphql`（如 CLI 不支持该 flag，则用 `Get-Content query.graphql -Raw | linear api`）。
-
+A: PowerShell 不支持 heredoc。改用文件：把查询写入 `.graphql` 文件，用 `linear api --query-file query.graphql`（如 CLI 不支持该 flag，则用 `Get-Content query.graphql -Raw | linear api`）.
 **Q5: token 存哪里？**
-A: `linear auth login` 交互式登录后存于 `~/.config/linear/credentials.json`。CI 环境用 `LINEAR_API_KEY` 环境变量，不要写入代码仓库。
-
+A: `linear auth login` 交互式登录后存于 `~/.config/linear/credentials.json`。CI 环境用 `LINEAR_API_KEY` 环境变量，不要写入代码仓库.
 ## 故障排查
 
 | 现象 | 排查路径 |
@@ -306,35 +291,33 @@ A: `linear auth login` 交互式登录后存于 `~/.config/linear/credentials.js
 ### 面向在 Agent（Claud
 面向在 Agent（Claude Code / Codex / Cursor 等）中调用 `linear` CLI 的开发者
 
-**输入**: 用户提供面向在 Agent（Claud所需的指令和必要参数。
-**处理**: 解析面向在 Agent（Claud的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回面向在 Agent（Claud的响应数据,包含状态码、结果和日志。
+**输入**: 用户提供面向在 Agent（Claud所需的指令和必要参数.
+**处理**: 解析面向在 Agent（Claud的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回面向在 Agent（Claud的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 聚焦 v3 执行模型下的稳定 
 聚焦 v3 执行模型下的稳定 JSON 契约、预演式写入、Markdown 安全传参、批量操作与鉴权自愈
 
-**输入**: 用户提供聚焦 v3 执行模型下的稳定 所需的指令和必要参数。
-**处理**: 解析聚焦 v3 执行模型下的稳定 的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回聚焦 v3 执行模型下的稳定 的响应数据,包含状态码、结果和日志。
+**输入**: 用户提供聚焦 v3 执行模型下的稳定 所需的指令和必要参数.
+**处理**: 解析聚焦 v3 执行模型下的稳定 的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回聚焦 v3 执行模型下的稳定 的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心能力(补充)
 核心能力:
 
-**输入**: 用户提供核心能力所需的指令和必要参数。
-**处理**: 解析核心能力的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回核心能力的响应数据,包含状态码、结果和日志。
+**输入**: 用户提供核心能力所需的指令和必要参数.
+**处理**: 解析核心能力的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回核心能力的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
   - Agent 优先执行循环：capabilities 发现 → 读 → dry-run 预览 → 写 → 校验 receipt/error
-**技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置。
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：解析难、内联转义炸、批量操作慢、鉴权易失效痛点、中稳跑、Use、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+**技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：解析难、内联转义炸、批量操作慢、鉴权易失效痛点、中稳跑、Use、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 适用场景
 
-```bash
-# ...
+适用于需要解决JSON解析难、内联转义炸、批量操作慢、鉴权易失效痛点，让Linear CLI在Agent中稳跑的场景。具体使用场景请参考下方详细说明.
 ## 使用流程
 # ...
 1. 确认运行环境满足依赖说明中的要求

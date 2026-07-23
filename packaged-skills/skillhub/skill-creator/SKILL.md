@@ -6,10 +6,10 @@ displayName: "AI技能创建指南"
 summary: "创建有效AI Skill的完整指南，覆盖frontmatter、SKILL.md结构与Progressive Disclosure设计原则"
 license: "Proprietary"
 description: |-
-  创建有效AI Skill的完整指南，基于Core Principles与Anatomy of a Skill规范。
+  创建有效AI Skill的完整指南，基于Core Principles与Anatomy of a Skill规范.
   覆盖frontmatter编写、SKILL.md结构设计、Bundled Resources（scripts/references/assets）组织，
-  以及Progressive Disclosure三级加载体系。支持从需求理解到skill打包的完整创建流程。
-  适用于独立开发者、企业团队构建专属AI技能与自动化工作流。
+  以及Progressive Disclosure三级加载体系。支持从需求理解到skill打包的完整创建流程.
+  适用于独立开发者、企业团队构建专属AI技能与自动化工作流.
 tools:
   - read
   - exec
@@ -20,13 +20,11 @@ tags:
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+
 ---
 # AI技能创建指南
 
-创建有效AI Skill的完整指南，覆盖从需求理解到skill打包的完整流程，基于Core Principles与Progressive Disclosure设计原则。
-
+创建有效AI Skill的完整指南，覆盖从需求理解到skill打包的完整流程，基于Core Principles与Progressive Disclosure设计原则.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -73,7 +71,7 @@ tags: "工具,效率,自动化"
 
 提供skill创建的三大核心原则指导：
 
-- **Concise is Key**：context window是公共资源，skill仅添加Claude不具备的知识。默认假设"Claude already is very smart"，对每段内容质疑"Does Claude really need this explanation?"与"Does this paragraph justify its token cost?"。优先用简洁examples替代冗长explanations。
+- **Concise is Key**：context window是公共资源，skill仅添加Claude不具备的知识。默认假设"Claude already is very smart"，对每段内容质疑"Does Claude really need this explanation?"与"Does this paragraph justify its token cost?"。优先用简洁examples替代冗长explanations.
 - **Set Appropriate Degrees of Freedom**：根据任务的fragility和variability匹配specificity级别
   - High freedom（text-based instructions）：多种方法valid、决策依赖context时使用
   - Medium freedom（pseudocode or scripts with parameters）：有preferred pattern但允许variation时使用
@@ -96,10 +94,9 @@ skill-name/
     └── assets/           - Files used in output (templates, icons, fonts, etc.)
 ```
 
-- **Frontmatter（YAML）**：包含`name`和`description`字段。这是Claude读取以判断何时使用skill的唯一依据，必须清晰全面地描述skill是什么以及何时使用。`description`是primary triggering mechanism，应包含skill做什么与具体触发场景。
-- **Body（Markdown）**：使用skill的instructions和guidance。仅在skill触发后加载。
-
-**处理**: 解析SKILL.md结构设计的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+- **Frontmatter（YAML）**：包含`name`和`description`字段。这是Claude读取以判断何时使用skill的唯一依据，必须清晰全面地描述skill是什么以及何时使用。`description`是primary triggering mechanism，应包含skill做什么与具体触发场景.
+- **Body（Markdown）**：使用skill的instructions和guidance。仅在skill触发后加载.
+**处理**: 解析SKILL.md结构设计的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### Bundled Resources组织
 
 提供三类bundled resources的组织规范：
@@ -130,9 +127,8 @@ skill-name/
 - **Pattern 2: Domain-specific organization**：多领域skill按domain组织references目录
 - **Pattern 3: Conditional details**：展示基础内容，链接高级内容
 
-重要准则：references保持一级深度；长reference文件（>100 lines）顶部包含table of contents。
-
-**输出**: 返回Progressive Disclosure设计的处理结果,包含执行状态码、结果数据和执行日志。
+重要准则：references保持一级深度；长reference文件（>100 lines）顶部包含table of contents.
+**输出**: 返回Progressive Disclosure设计的处理结果,包含执行状态码、结果数据和执行日志.
 ### Skill Creation Process
 
 提供从理解到迭代的六步创建流程：
@@ -233,20 +229,15 @@ Step 5 - Validate:
 A: description是skill的primary triggering mechanism，必须包含：skill做什么、具体的触发场景（when to use）。不应在body中放"When to Use"sections，因为body仅在触发后加载。示例："Comprehensive document creation... Use when Claude needs to work with professional documents (.docx files) for: (1) Creating new documents, (2) Modifying content..."
 
 ### Q2: 何时应该使用scripts而非inline code？
-A: 当同一代码被反复重写（repeatedly rewritten）或需要deterministic reliability时使用scripts。scripts的优势是token efficient、deterministic、可不加载入context即执行。注意scripts仍可能需被Claude读取以进行patching或environment-specific adjustments。
-
+A: 当同一代码被反复重写（repeatedly rewritten）或需要deterministic reliability时使用scripts。scripts的优势是token efficient、deterministic、可不加载入context即执行。注意scripts仍可能需被Claude读取以进行patching或environment-specific adjustments.
 ### Q3: Progressive Disclosure的三个层级如何划分？
-A: Level 1是Metadata（name + description），始终在context（约100 words）；Level 2是SKILL.md body，skill触发时加载（<5k words）；Level 3是Bundled resources，Claude按需加载（unlimited，因scripts可执行不读入context）。
-
+A: Level 1是Metadata（name + description），始终在context（约100 words）；Level 2是SKILL.md body，skill触发时加载（<5k words）；Level 3是Bundled resources，Claude按需加载（unlimited，因scripts可执行不读入context）.
 ### Q4: references文件应该多大？
-A: 大文件（>10k words）应在SKILL.md中包含grep search patterns。长reference文件（>100 lines）顶部应包含table of contents。references保持一级深度（one level deep from SKILL.md），所有reference文件直接从SKILL.md链接。
-
+A: 大文件（>10k words）应在SKILL.md中包含grep search patterns。长reference文件（>100 lines）顶部应包含table of contents。references保持一级深度（one level deep from SKILL.md），所有reference文件直接从SKILL.md链接.
 ### Q5: init_skill.py和package_skill.py如何使用？
-A: 初始化：`（请参考skill目录中的脚本文件） <skill-name> --path <output-directory>`，生成含SKILL.md模板和（请参考skill目录中的脚本文件）。打包：`（请参考skill目录中的脚本文件） <path/to/skill-folder> [./dist]`，自动验证frontmatter、命名规范、description质量后打包为.skill文件（zip格式）。
-
+A: 初始化：`（请参考skill目录中的脚本文件） <skill-name> --path <output-directory>`，生成含SKILL.md模板和（请参考skill目录中的脚本文件）。打包：`（请参考skill目录中的脚本文件） <path/to/skill-folder> [./dist]`，自动验证frontmatter、命名规范、description质量后打包为.skill文件（zip格式）.
 ### Q6: 如何判断应该使用High/Medium/Low freedom？
-A: High freedom（text-based）适用于多种方法valid、决策依赖context；Medium freedom（pseudocode/参数化scripts）适用于有preferred pattern但允许variation；Low freedom（specific scripts）适用于操作fragile且error-prone、consistency关键。类比：narrow bridge with cliffs需specific guardrails（low freedom），open field允许many routes（high freedom）。
-
+A: High freedom（text-based）适用于多种方法valid、决策依赖context；Medium freedom（pseudocode/参数化scripts）适用于有preferred pattern但允许variation；Low freedom（specific scripts）适用于操作fragile且error-prone、consistency关键。类比：narrow bridge with cliffs需specific guardrails（low freedom），open field允许many routes（high freedom）.
 ## 已知限制
 
 - 需要Python 3.8+环境运行init_skill.py与package_skill.py

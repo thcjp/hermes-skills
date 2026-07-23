@@ -6,20 +6,18 @@ displayName: "Live Stream Script"
 summary: "直播脚本生成器。带货直播、娱乐直播、知识直播话术、互动设计、开场预热、逼单话术、互动话术库。Live stream script generator"
 license: "Proprietary"
 description: |-
-  直播脚本生成器。带货直播、娱乐直播、知识直播话术、互动设计、开场预热、逼单话术、互动话术库。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。
+  直播脚本生成器。带货直播、娱乐直播、知识直播话术、互动设计、开场预热、逼单话术、互动话术库。Use when 、品牌视觉时使用。不适用于3D建模和动画制作。
 tags:
   - Lifestyle
   - Knowledge
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 ---
 # Live Stream Script
 
@@ -44,7 +42,9 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 带货话术 | 商品信息与卖点 | 开场预热+逼单转化话术 |
+| 互动设计 | 直播类型与受众画像 | 互动话术库与节奏编排 |
+| 知识直播 | 知识主题与大纲 | 知识讲解脚本与过渡语 |
 
 **不适用于**：需要人工判断的复杂决策场景
 

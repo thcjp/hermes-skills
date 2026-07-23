@@ -7,19 +7,18 @@ summary: "社交聆听工作流,用Xpoz与npm助手分析舆情"
 license: "Proprietary"
 description: |-
   This skill is a disclosed social-listening workflow that uses Xpoz and
-  an npm-installed helper, w。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
+  an npm-installed helper, w。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - Research
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "社交媒体,营销,通信"
+
 ---
 # Social Sentiment
 
@@ -43,7 +42,9 @@ tags: "社交媒体,营销,通信"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 智能分析 | 数据与分析维度 | 分析报告与关键发现 |
+| 工作流执行 | 流程定义与输入数据 | 执行结果与步骤日志 |
+| 社交聆听工作流 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -144,8 +145,7 @@ tags: "社交媒体,营销,通信"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Social Sentiment？

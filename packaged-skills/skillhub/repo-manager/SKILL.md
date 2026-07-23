@@ -20,15 +20,14 @@ tags:
   - 工作流
   - 企业版
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+
 ---
 # 仓库管理器(专业版)
 
@@ -60,8 +59,8 @@ tags: "工具,效率,自动化"
 | 重跑失败步骤 | rerun_workflow_failed_jobs | 仅重跑失败部分,节省时间 |
 | 触发工作流 | create_workflow_dispatch | 手动触发指定工作流 |
 
-**输入**: 用户提供Release管理所需的指令和必要参数。
-**处理**: 解析Release管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输入**: 用户提供Release管理所需的指令和必要参数.
+**处理**: 解析Release管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回Release管理的解析响应,包含完成状态码、响应数据和完成日志。### 批量任务
 ```bash
 repo-manager batch-call --file batch_query.json --parallel 5
@@ -139,10 +138,9 @@ repo-manager team share-config --file team-config.json
 repo-manager team show
 ```
 
-**输入**: 用户提供团队共享配置所需的指令和必要参数。
-**处理**: 解析团队共享配置的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回团队共享配置的处理结果,包含执行状态码、结果数据和执行日志。
-
+**输入**: 用户提供团队共享配置所需的指令和必要参数.
+**处理**: 解析团队共享配置的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回团队共享配置的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 适用场景
 
@@ -343,35 +341,25 @@ repo-manager batch-call --file repos_status.json --parallel 3
 ## 常见问题
 
 ### Q1: 工作流工具不可用怎么办?
-A: 检查: (1)GitHub连接的scope是否包含`workflow`; (2)仓库是否启用了Actions; (3)插件版本是否为专业版; (4)用`search-tools --query workflow`验证工具是否存在。
-
+A: 检查: (1)GitHub连接的scope是否包含`workflow`; (2)仓库是否启用了Actions; (3)插件版本是否为专业版; (4)用`search-tools --query workflow`验证工具是否存在.
 ### Q2: 批量操作中部分失败如何处理?
-A: 专业版支持断点续传。失败项记录到`failures.json`,可单独重试。检查失败原因(权限、限速、资源不存在),修复后重试。
-
+A: 专业版支持断点续传。失败项记录到`failures.json`,可单独重试。检查失败原因(权限、限速、资源不存在),修复后重试.
 ### Q3: Release创建后如何上传产物?
-A: 使用`repo-manager release upload-artifacts --repo owner/repo --tag v1.0.0 --files "dist/*.zip"`。支持通配符,自动上传到Release的assets。
-
+A: 使用`repo-manager release upload-artifacts --repo owner/repo --tag v1.0.0 --files "dist/*.zip"`。支持通配符,自动上传到Release的assets.
 ### Q4: 自定义MCP server如何开发?
-A: 遵循MCP工具协议规范,实现工具注册、参数schema、执行接口。参考MCP工具生态的官方文档。开发完成后通过`integrations add`接入。
-
+A: 遵循MCP工具协议规范,实现工具注册、参数schema、执行接口。参考MCP工具生态的官方文档。开发完成后通过`integrations add`接入.
 ### Q5: 团队配置如何共享?
-A: 使用`team share-config`导出配置JSON,团队成员通过`team import-config`导入。配置包含仓库列表、工具权限、告警规则,不含认证信息。
-
+A: 使用`team share-config`导出配置JSON,团队成员通过`team import-config`导入。配置包含仓库列表、工具权限、告警规则,不含认证信息.
 ### Q6: 工具搜索结果不准怎么办?
-A: 尝试: (1)使用更具体的关键词; (2)用英文搜索(工具名多为英文); (3)启用模糊匹配; (4)重建索引`repo-manager search rebuild-index`。
-
+A: 尝试: (1)使用更具体的关键词; (2)用英文搜索(工具名多为英文); (3)启用模糊匹配; (4)重建索引`repo-manager search rebuild-index`.
 ### Q7: 如何监控多个仓库的CI状态?
-A: 使用批量操作,配置`batch_ci_monitor.json`,并行查询所有仓库的工作流运行状态。可设置定时任务,每小时执行一次,失败时告警。
-
+A: 使用批量操作,配置`batch_ci_monitor.json`,并行查询所有仓库的工作流运行状态。可设置定时任务,每小时执行一次,失败时告警.
 ### Q8: Release发布后能修改吗?
-A: 可以。使用`github_update_a_release`更新标题、描述等。已上传的产物可单独删除或替换。但已发布的Release修改需谨慎,建议仅修改draft状态。
-
+A: 可以。使用`github_update_a_release`更新标题、描述等。已上传的产物可单独删除或替换。但已发布的Release修改需谨慎,建议仅修改draft状态.
 ### Q9: 专业版支持GitHub Enterprise吗?
-A: 支持。在集成配置中指定Enterprise Server的API endpoint,所有工具调用自动路由到Enterprise实例。
-
+A: 支持。在集成配置中指定Enterprise Server的API endpoint,所有工具调用自动路由到Enterprise实例.
 ### Q10: 如何导出操作审计日志?
-A: 运行`repo-manager audit log --period 30d --format csv --output audit.csv`,记录所有工具调用(含调用者、时间、参数、结果),支持合规审计。
-
+A: 运行`repo-manager audit log --period 30d --format csv --output audit.csv`,记录所有工具调用(含调用者、时间、参数、结果),支持合规审计.
 ## 错误处理
 
 | 错误场景(续)| 原因 | 处理方式 |

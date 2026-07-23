@@ -1,13 +1,13 @@
 ---
 slug: "text-rpg-arcade-v3"
 name: "text-rpg-arcade-v3"
-version: "1.0.0"
+version: "1.0.1"
 displayName: "Text Game Arcade Uni"
 summary: "综合性 ASCII 文字游戏大厅。严格按规则渲染和裁判五子棋、围棋、井字棋、黑白棋、四子棋、海战棋、中国象棋、国际象棋、扫雷、数独、2048、推箱子、文字迷宫，以及接龙、猜词、猜数、Lights..."
 license: "Proprietary"
 description: |-
   综合性 ASCII 文字游戏大厅。严格按规则渲染和裁判五子棋、围棋、井字棋、黑白棋、四子棋、海战棋、
-  中国象棋、国际象棋、扫雷、数独、2048、推箱子、文字迷宫，以及接龙、猜词、猜数、Lights Out 等游戏。
+  中国象棋、国际象棋、扫雷、数独、2048、推箱子、文字迷宫，以及接龙、猜词、猜数、Lights Out 等游戏.
 tags:
   - Lifestyle
 tools:
@@ -48,8 +48,7 @@ pricing_model: "per_use"
 * 用 ASCII / 文字 / 斜杠 / 线框表现游戏
 * 让我当对手、裁判、出题人、闯关主持人
 
-就优先使用本技能。
-
+就优先使用本技能.
 ## 使用流程
 
 1. 确认运行环境满足依赖说明中的要求
@@ -116,8 +115,7 @@ pricing_model: "per_use"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Text Game Arcade Uni？

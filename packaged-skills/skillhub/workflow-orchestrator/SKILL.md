@@ -7,7 +7,7 @@ summary: "全功能工作流编排与调度，含cron调度、DAG并行、熔断
 license: "Proprietary"
 edition: "pro"
 description: |-
-  工作流编排器专业版是在免费版基础上的全功能升级，为自动化团队提供企业级工作流编排与调度能力。除核心编排能力外，解锁高级调度、复杂重试策略、并行执行、监控告警、分布式执行、版本管理、可视化编排七大高级功能。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
+  工作流编排器专业版是在免费版基础上的全功能升级，为自动化团队提供企业级工作流编排与调度能力。除核心编排能力外，解锁高级调度、复杂重试策略、并行执行、监控告警、分布式执行、版本管理、可视化编排七大高级功能。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - 工作流编排
   - 自动化
@@ -15,15 +15,14 @@ tags:
   - 分布式执行
   - 监控告警
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工作流,自动化,效率"
+
 ---
 # 工作流编排器(专业版)
 
@@ -52,8 +51,8 @@ tags: "工作流,自动化,效率"
 | `0 9 * * 1-5` | 工作日早上9点 |
 | `0 0 1 * *` | 每月1号 |
 
-**输入**: 用户提供高级调度（专业版）所需的指令和必要参数。
-**处理**: 解析高级调度（专业版）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输入**: 用户提供高级调度（专业版）所需的指令和必要参数.
+**处理**: 解析高级调度（专业版）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回高级调度（专业版）的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`可视化编排（专业版）`的配置文档进行参数调优- 验证返回数据的完整性和格式正确性
 - 参考`版本管理（专业版）`的配置文档进行参数调优
@@ -69,9 +68,8 @@ tags: "工作流,自动化,效率"
 | 熔断器 | 级联故障 | 保护系统 | 需恢复时间 |
 | 降级方案 | 持续故障 | 保证可用 | 结果降级 |
 
-**输入**: 用户提供复杂重试策略（专业版）所需的指令和必要参数。
-**处理**: 解析复杂重试策略（专业版）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-
+**输入**: 用户提供复杂重试策略（专业版）所需的指令和必要参数.
+**处理**: 解析复杂重试策略（专业版）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **DAG执行示例**：
 
 ```text
@@ -86,7 +84,7 @@ T2: transform执行
 T3: output执行
 ```
 
-**输入**: 用户提供DAG并行执行（专业版）所需的指令和必要参数。
+**输入**: 用户提供DAG并行执行（专业版）所需的指令和必要参数.
 ### 4. 监控告警（专业版）
 > 详细代码示例已移至 `references/detail.md`
 
@@ -101,9 +99,8 @@ T3: output执行
 | memory | 内存使用率 | >85% |
 | data_volume | 数据量 | - |
 
-**输入**: 用户提供监控告警（专业版）所需的指令和必要参数。
-**输出**: 返回监控告警（专业版）的处理结果,包含执行状态码、结果数据和执行日志。
-
+**输入**: 用户提供监控告警（专业版）所需的指令和必要参数.
+**输出**: 返回监控告警（专业版）的处理结果,包含执行状态码、结果数据和执行日志.
 ### 5. 分布式执行（专业版）
 ```bash
 workflow node add --name "worker-1" --host "worker-1.local" --capacity 4
@@ -127,9 +124,8 @@ workflow balance --strategy round-robin
 | affinity | 亲和性 | 数据本地化 |
 | random | 随机 | 简单场景 |
 
-**输入**: 用户提供分布式执行（专业版）所需的指令和必要参数。
-**输出**: 返回分布式执行（专业版）的处理结果,包含执行状态码、结果数据和执行日志。
-
+**输入**: 用户提供分布式执行（专业版）所需的指令和必要参数.
+**输出**: 返回分布式执行（专业版）的处理结果,包含执行状态码、结果数据和执行日志.
 ### 6. 版本管理（专业版）
 ```bash
 workflow version log --flow my-flow
@@ -167,10 +163,8 @@ workflow visualize report --flow my-flow --run-id "run-001" --output "report.htm
 ## 适用场景
 
 ### 场景一：企业级数据管道（数据工程团队角色）
-**痛点**：企业数据管道涉及多数据源、多阶段处理，需要定时调度、并行执行与故障自愈。
-
-**对策**：用DAG并行+熔断器+监控告警构建健壮的数据管道。
-
+**痛点**：企业数据管道涉及多数据源、多阶段处理，需要定时调度、并行执行与故障自愈.
+**对策**：用DAG并行+熔断器+监控告警构建健壮的数据管道.
 ```bash
 workflow dag execute --file pipelines/etl-dag.yaml --max-workers 8
 # ...
@@ -180,13 +174,10 @@ workflow monitor alert --flow etl-pipeline --metric success_rate --threshold 95
 workflow monitor notify --flow etl-pipeline --channels "slack,pagerduty"
 ```
 
-**效果**：管道执行时间缩短约60%（并行化），故障恢复<5分钟（熔断器+告警）。
-
+**效果**：管道执行时间缩短约60%（并行化），故障恢复<5分钟（熔断器+告警）.
 ### 场景二：多团队协作的流水线管理（DevOps负责人角色）
-**痛点**：多团队共享流水线基础设施，需要权限隔离与版本管理。
-
-**对策**：用版本管理+分布式执行支持多团队协作。
-
+**痛点**：多团队共享流水线基础设施，需要权限隔离与版本管理.
+**对策**：用版本管理+分布式执行支持多团队协作.
 ```bash
 workflow schedule add --flow team-a-pipeline --cron "0 2 * * *"
 # ...
@@ -196,10 +187,8 @@ workflow version diff --flow shared-pipeline --from "team-a" --to "team-b"
 ```
 
 ### 场景三：SLA敏感的定时任务（SRE角色）
-**痛点**：SLA要求任务必须在指定时间内完成，超时需告警。
-
-**对策**：用cron调度+超时告警+降级方案保障SLA。
-
+**痛点**：SLA要求任务必须在指定时间内完成，超时需告警.
+**对策**：用cron调度+超时告警+降级方案保障SLA.
 ```bash
 workflow monitor alert --flow sla-critical --metric duration --threshold 3600
 workflow monitor notify --flow sla-critical --channels "pagerduty"
@@ -208,10 +197,8 @@ workflow retry fallback --flow sla-critical --fallback-flow sla-critical-degrade
 ```
 
 ### 场景四：大规模并行ETL（数据工程师角色）
-**痛点**：单机ETL处理TB级数据耗时过长。
-
-**对策**：用DAG并行+分布式执行加速。
-
+**痛点**：单机ETL处理TB级数据耗时过长.
+**对策**：用DAG并行+分布式执行加速.
 ```bash
 workflow dag execute --file etl-parallel.yaml --max-workers 16
 # ...
@@ -219,10 +206,8 @@ workflow distribute --flow etl-parallel --strategy least-loaded
 ```
 
 ### 场景五：故障自愈的自动化流程（运维角色）
-**痛点**：自动化流程故障后需要人工干预，MTTR（平均恢复时间）长。
-
-**对策**：用熔断器+降级方案+自动重试实现自愈。
-
+**痛点**：自动化流程故障后需要人工干预，MTTR（平均恢复时间）长.
+**对策**：用熔断器+降级方案+自动重试实现自愈.
 ```bash
 workflow retry config --flow auto-process \
   --strategy exponential --max-attempts 5
@@ -231,10 +216,8 @@ workflow retry fallback --flow auto-process --fallback-flow auto-process-safe
 ```
 
 ### 场景六：合规审计的工作流追踪（合规角色）
-**痛点**：合规审计要求工作流执行可追溯，包括谁在何时执行了什么。
-
-**对策**：用版本管理+监控历史提供审计追踪。
-
+**痛点**：合规审计要求工作流执行可追溯，包括谁在何时执行了什么.
+**对策**：用版本管理+监控历史提供审计追踪.
 ```bash
 workflow monitor history --flow compliance-flow --period "90d"
 # ...
@@ -244,10 +227,8 @@ workflow version log --flow compliance-flow
 ```
 
 ### 场景七：微服务编排（架构师角色）
-**痛点**：微服务间的业务流程编排复杂，缺乏统一的编排工具。
-
-**对策**：用事件驱动+条件触发编排微服务。
-
+**痛点**：微服务间的业务流程编排复杂，缺乏统一的编排工具.
+**对策**：用事件驱动+条件触发编排微服务.
 ```bash
 workflow schedule event --flow order-fulfillment --event "api:order.created"
 workflow schedule dependency --flow inventory-update --after "order-fulfillment"
@@ -268,7 +249,7 @@ mkdir -p workflows/flows/my-flow/{state,data,logs}
 
 > 详细内容已移至 `references/detail.md` - ### 完整搭建（<300秒）
 
-#
+以下是工作流编排器(专业版)的快速搭建流程，从初始化到完整配置的步骤说明.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -401,46 +382,35 @@ workflow monitor notify --channel slack --webhook "$SLACK_WEBHOOK"
 
 ### 与Agent平台集成
 ```markdown
-将 workflow-orchestrator-pro 添加到Agent的技能列表中。
-Agent可通过自然语言指令驱动工作流编排与调度。
-LLM路由至GPT-4o，确保复杂调度决策的质量。
+将 workflow-orchestrator-pro 添加到Agent的技能列表中.
+Agent可通过自然语言指令驱动工作流编排与调度.
+LLM路由至GPT-4o，确保复杂调度决策的质量.
 ```
 
 ## 常见问题
 
 ### Q1：免费版与专业版有什么区别？
-免费版提供核心编排能力（目录结构/数据流/状态管理/错误声明/锁文件/组件复用）。专业版解锁七大高级功能：高级调度、复杂重试策略、DAG并行执行、监控告警、分布式执行、版本管理、可视化编排。此外提供多角色场景指南、性能优化策略和多平台集成示例。
-
+免费版提供核心编排能力（目录结构/数据流/状态管理/错误声明/锁文件/组件复用）。专业版解锁七大高级功能：高级调度、复杂重试策略、DAG并行执行、监控告警、分布式执行、版本管理、可视化编排。此外提供多角色场景指南、性能优化策略和多平台集成示例.
 ### Q2：支持多少个并发工作流？
-专业版默认支持10个并发，可通过`maxConcurrent`配置调整。分布式模式下支持数百个并发（受节点数量限制）。
-
+专业版默认支持10个并发，可通过`maxConcurrent`配置调整。分布式模式下支持数百个并发（受节点数量限制）.
 ### Q3：DAG并行如何确定可并行节点？
-通过依赖图分析。无依赖关系的节点自动并行执行，有依赖的节点按拓扑顺序串行。例如fetch-a/b/c无依赖则并行，merge依赖三者则等待。
-
+通过依赖图分析。无依赖关系的节点自动并行执行，有依赖的节点按拓扑顺序串行。例如fetch-a/b/c无依赖则并行，merge依赖三者则等待.
 ### Q4：熔断器触发后如何恢复？
-熔断器在cooldown时间（默认300秒）后自动进入半开状态，尝试执行一次。成功则关闭熔断器，失败则重新熔断。
-
+熔断器在cooldown时间（默认300秒）后自动进入半开状态，尝试执行一次。成功则关闭熔断器，失败则重新熔断.
 ### Q5：分布式执行需要什么网络条件？
-节点间需要SSH免密登录或API可达。建议在同一内网或VPN中。跨公网执行需考虑网络延迟与安全性。
-
+节点间需要SSH免密登录或API可达。建议在同一内网或VPN中。跨公网执行需考虑网络延迟与安全性.
 ### Q6：版本管理支持分支吗？
-支持。每个版本相当于一个快照，可通过tag标记。支持任意版本间的对比与回滚。
-
+支持。每个版本相当于一个快照，可通过tag标记。支持任意版本间的对比与回滚.
 ### Q7：可视化编排支持哪些浏览器？
-支持所有现代浏览器（Chrome/Firefox/Safari/Edge）。提供DAG图渲染、实时执行视图、历史回放等功能。
-
+支持所有现代浏览器（Chrome/Firefox/Safari/Edge）。提供DAG图渲染、实时执行视图、历史回放等功能.
 ### Q8：监控数据存储在哪里？
-默认存储在本地`~/.workflow-orchestrator/metrics/`目录。专业版支持导出到Prometheus、InfluxDB等外部时序数据库。
-
+默认存储在本地`~/.workflow-orchestrator/metrics/`目录。专业版支持导出到Prometheus、InfluxDB等外部时序数据库.
 ### Q9：可以与现有调度系统共存吗？
-可以。专业版支持以 exporter 模式运行，与Airflow、Prefect等调度系统集成。也支持被外部系统通过API触发。
-
+可以。专业版支持以 exporter 模式运行，与Airflow、Prefect等调度系统集成。也支持被外部系统通过API触发.
 ### Q10：降级方案如何定义？
-降级方案是一个独立的工作流（如my-flow-degraded），在主流程失败时自动执行。通常提供简化版的结果，保证业务可用性。
-
+降级方案是一个独立的工作流（如my-flow-degraded），在主流程失败时自动执行。通常提供简化版的结果，保证业务可用性.
 ### Q11：专业版数据存储在哪里？安全吗？
-所有数据存储在本地`workflows/`与`~/.workflow-orchestrator/`目录。分布式执行的数据通过SSH加密传输。API凭证通过环境变量配置，不硬编码。
-
+所有数据存储在本地`workflows/`与`~/.workflow-orchestrator/`目录。分布式执行的数据通过SSH加密传输。API凭证通过环境变量配置，不硬编码.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

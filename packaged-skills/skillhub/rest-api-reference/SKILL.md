@@ -6,9 +6,9 @@ displayName: "REST API参考手册"
 summary: "147个第三方服务的REST API参考,含认证模式、端点、速率限制、分页与Webhook模式"
 license: "Proprietary"
 description: |-
-  REST API 参考文档库。覆盖 147 个第三方服务的认证模式、端点参考、速率限制、分页模式与 Webhook 处理。
-  按类别组织（AI/ML、支付、通信、CRM、数据库、媒体等 16 类）,每类含索引表与逐服务详解。
-  提供多账户凭证命名规范、错误处理模式、幂等键使用等工程实践。仅作文档参考,不代用户执行请求。
+  REST API 参考文档库。覆盖 147 个第三方服务的认证模式、端点参考、速率限制、分页模式与 Webhook 处理.
+  按类别组织（AI/ML、支付、通信、CRM、数据库、媒体等 16 类）,每类含索引表与逐服务详解.
+  提供多账户凭证命名规范、错误处理模式、幂等键使用等工程实践。仅作文档参考,不代用户执行请求.
 tags:
   - 研发工具
   - Productivity
@@ -20,15 +20,12 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+
 ---
 # REST API 参考手册
 
-147 个第三方服务的 REST API 参考文档。按类别组织,每类含索引表与逐服务详解,覆盖认证模式、端点参考、速率限制、分页模式与 Webhook 处理。
-
-**范围外**（本技能不做）: 逆向工程闭源 API、代用户执行实际 API 请求、管理用户 API Key、代理 API 调用。
-
+147 个第三方服务的 REST API 参考文档。按类别组织,每类含索引表与逐服务详解,覆盖认证模式、端点参考、速率限制、分页模式与 Webhook 处理.
+**范围外**（本技能不做）: 逆向工程闭源 API、代用户执行实际 API 请求、管理用户 API Key、代理 API 调用.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -69,7 +66,7 @@ tags: "API,接口,开发工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 - **147 服务覆盖**: 涵盖 AI/ML、支付、通信、CRM、数据库、媒体等 16 大类服务
@@ -82,26 +79,20 @@ export API_KEY="your_api_key_here"
 - **幂等键使用**: 支付与关键操作的 `Idempotency-Key` 头规范
 ### 147 服务覆盖
 
-针对147 服务覆盖,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供147 服务覆盖相关的配置参数、输入数据和处理选项。
-
+针对147 服务覆盖,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供147 服务覆盖相关的配置参数、输入数据和处理选项.
 **输出**: 返回147 服务覆盖的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`服务覆盖`的配置文档进行参数调优
 ### 认证文档
 
-针对认证文档,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供认证文档相关的配置参数、输入数据和处理选项。
-
+针对认证文档,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供认证文档相关的配置参数、输入数据和处理选项.
 **输出**: 返回认证文档的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`认证文档`的配置文档进行参数调优
 ### 端点参考
 
-针对端点参考,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供端点参考相关的配置参数、输入数据和处理选项。
-
+针对端点参考,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供端点参考相关的配置参数、输入数据和处理选项.
 **输出**: 返回端点参考的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`端点参考`的配置文档进行参数调优
 #
@@ -148,8 +139,7 @@ export API_KEY="your_api_key_here"
 ## 使用流程
 
 ### Step 1: 定位服务类别
-根据用户提到的服务名,查阅 API 分类索引表,找到对应的 `apis/*.md` 文件。
-
+根据用户提到的服务名,查阅 API 分类索引表,找到对应的 `apis/*.md` 文件.
 ### Step 2: 读取文件索引
 ```bash
 # 读取 AI/ML 分类文件索引
@@ -170,8 +160,7 @@ sed -n '119,230p' apis/ai-ml.md
 - 常见陷阱与注意事项
 
 ### Step 5: 生成集成建议
-基于文档内容,为用户提供含 curl 示例的集成方案,并标注常见错误。
-
+基于文档内容,为用户提供含 curl 示例的集成方案,并标注常见错误.
 #
 ## 案例展示
 
@@ -202,8 +191,7 @@ curl https://api.stripe.com/v1/charges \
   -d source=tok_visa
 ```
 
-**说明**: 支付操作必须使用 `Idempotency-Key` 头,网络重试时不会重复扣款。
-
+**说明**: 支付操作必须使用 `Idempotency-Key` 头,网络重试时不会重复扣款.
 ### 案例2: OpenAI API 集成参考
 **场景**: 开发者需要调用 OpenAI Chat Completions
 
@@ -255,23 +243,17 @@ sed -n '180,250p' apis/communication.md
 ## 常见问题
 
 ### Q1: 147 个服务都覆盖了哪些类别?
-A: 覆盖 16 大类: AI/ML（14 服务）、Payments（13）、Communication（10）、Realtime（8）、CRM（8）、Marketing（7）、Developer（17）、Database（10）、Auth（4）、Media（14）、Social（7）、Productivity（17）、Business（5）、Geo（3）、Support（4）、Analytics（7）。
-
+A: 覆盖 16 大类: AI/ML（14 服务）、Payments（13）、Communication（10）、Realtime（8）、CRM（8）、Marketing（7）、Developer（17）、Database（10）、Auth（4）、Media（14）、Social（7）、Productivity（17）、Business（5）、Geo（3）、Support（4）、Analytics（7）.
 ### Q2: 文档中包含 curl 示例吗?
-A: 是的,每个服务的端点参考都包含 curl 示例,含认证头、请求体与预期响应结构。示例仅供参考,用户需自行替换 API Key 与参数。
-
+A: 是的,每个服务的端点参考都包含 curl 示例,含认证头、请求体与预期响应结构。示例仅供参考,用户需自行替换 API Key 与参数.
 ### Q3: 如何快速找到某个服务的文档?
-A: 先确定服务所属类别（如 Stripe 属于 Payments）,打开对应 `apis/payments.md`,读取顶部索引表找到行号,按行号跳转读取该服务段落（通常 50-100 行）。
-
+A: 先确定服务所属类别（如 Stripe 属于 Payments）,打开对应 `apis/payments.md`,读取顶部索引表找到行号,按行号跳转读取该服务段落（通常 50-100 行）.
 ### Q4: 多账户场景如何管理凭证?
-A: 参考 `credentials.md` 的命名规范: `{SERVICE}_{ACCOUNT}_{TYPE}`。例如 `STRIPE_PRODUCTION_SECRET`、`OPENAI_DEV_API_KEY`,便于环境变量管理与多账户隔离。
-
+A: 参考 `credentials.md` 的命名规范: `{SERVICE}_{ACCOUNT}_{TYPE}`。例如 `STRIPE_PRODUCTION_SECRET`、`OPENAI_DEV_API_KEY`,便于环境变量管理与多账户隔离.
 ### Q5: 文档会代我执行 API 请求吗?
-A: 不会。本技能是纯文档参考,提供端点、认证、参数与示例。用户自行管理 API Key 并执行请求。技能不存储、不代理、不代发任何 API 调用。
-
+A: 不会。本技能是纯文档参考,提供端点、认证、参数与示例。用户自行管理 API Key 并执行请求。技能不存储、不代理、不代发任何 API 调用.
 ### Q6: Webhook 签名验证怎么做?
-A: 参考 `webhooks.md`,不同服务签名方式不同。如 Slack 使用 `X-Slack-Signature` HMAC-SHA256,Stripe 使用 `Stripe-Signature` 头含时间戳与签名。文档提供各服务的验证代码示例。
-
+A: 参考 `webhooks.md`,不同服务签名方式不同。如 Slack 使用 `X-Slack-Signature` HMAC-SHA256,Stripe 使用 `Stripe-Signature` 头含时间戳与签名。文档提供各服务的验证代码示例.
 ## 已知限制
 
 1. **纯文档参考**: 不代用户执行 API 请求,不管理 API Key,不代理调用

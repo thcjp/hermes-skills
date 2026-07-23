@@ -6,25 +6,23 @@ displayName: "本地向量记忆免费版"
 summary: "基础本地记忆系统，热内存加文件归档，纯本地运行无外部依赖。"
 license: "MIT"
 description: |-
-  面向 AI Agent 的基础本地记忆系统，提供热内存与文件归档两层记忆能力。
-  热内存（SESSION-STATE.md）抗压缩与重启，通过 WAL 协议确保先写状态再回复。
-  精选归档（MEMORY.md + daily/）提供人类可读的长期记忆与每日日志。
-  所有数据完全存储在本地文件系统，无需 Ollama 或任何外部 API，隐私至上。
-  适用于独立开发者与轻量使用场景，帮助 Agent 不遗忘关键上下文与用户偏好。
-  本免费版覆盖单设备本地记忆持久化需求，不含向量语义搜索能力。
+  面向 AI Agent 的基础本地记忆系统，提供热内存与文件归档两层记忆能力.
+  热内存（SESSION-STATE.md）抗压缩与重启，通过 WAL 协议确保先写状态再回复.
+  精选归档（MEMORY.md + daily/）提供人类可读的长期记忆与每日日志.
+  所有数据完全存储在本地文件系统，无需 Ollama 或任何外部 API，隐私至上.
+  适用于独立开发者与轻量使用场景，帮助 Agent 不遗忘关键上下文与用户偏好.
+  本免费版覆盖单设备本地记忆持久化需求，不含向量语义搜索能力.
 tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
 tags:
   - 智能助手
-tools: ["read", "write", "exec"]
-tags: "记忆管理,上下文,AI"
+
 ---
 # 本地向量记忆免费版（Elite Longterm Memory Local Free）
 
-**本地优先，隐私至上。** 基础本地记忆系统，通过热内存与文件归档，让 Agent 不遗忘关键上下文与用户偏好。所有数据完全存储在本地，无需任何外部依赖。本免费版提供两层记忆能力，覆盖单设备本地记忆持久化需求。
-
+**本地优先，隐私至上。** 基础本地记忆系统，通过热内存与文件归档，让 Agent 不遗忘关键上下文与用户偏好。所有数据完全存储在本地，无需任何外部依赖。本免费版提供两层记忆能力，覆盖单设备本地记忆持久化需求.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -35,48 +33,35 @@ tags: "记忆管理,上下文,AI"
 
 ## 核心能力
 
-- **热内存（SESSION-STATE.md）**：活跃工作记忆，抗压缩与重启。参数：当前任务、关键上下文、待办动作、近期决策。输出：会话级状态文件，Agent 每次响应前先读取。遵循 WAL 协议：用户输入触发写入，先写状态再回复。文件结构含 Current Task、Key Context、Pending Actions、Recent Decisions 四个区块。
-
-- **精选归档（MEMORY.md + daily/）**：人类可读的长期记忆。参数：MEMORY.md（摘要文件）+ memory/YYYY-MM-DD.md（每日日志）+ memory/topics/（主题文件）。输出：精炼后的长期记忆与每日活动记录。会话结束时将重要内容从 SESSION-STATE.md 迁移至 MEMORY.md，创建或更新每日日志。
-
-- **WAL 协议保障**：写前日志机制确保数据持久。参数：触发条件（用户表达偏好/做出决策/给出期限/纠正代理）。输出：先写入 SESSION-STATE.md 再回复用户。若先回复再保存，崩溃或压缩会导致上下文丢失；WAL 确保写入优先，保障持久性。
-
-- **会话记忆协议**：标准化 Agent 记忆行为。参数：会话开始/对话中/会话结束三个阶段的行为规则。输出：会话开始读取 SESSION-STATE.md 获取热上下文，检查 memory/YYYY-MM-DD.md 了解近期活动；对话中用户给出具体细节则先写入再回复；会话结束时更新最终状态并迁移重要内容到 MEMORY.md。
+- **热内存（SESSION-STATE.md）**：活跃工作记忆，抗压缩与重启。参数：当前任务、关键上下文、待办动作、近期决策。输出：会话级状态文件，Agent 每次响应前先读取。遵循 WAL 协议：用户输入触发写入，先写状态再回复。文件结构含 Current Task、Key Context、Pending Actions、Recent Decisions 四个区块.
+- **精选归档（MEMORY.md + daily/）**：人类可读的长期记忆。参数：MEMORY.md（摘要文件）+ memory/YYYY-MM-DD.md（每日日志）+ memory/topics/（主题文件）。输出：精炼后的长期记忆与每日活动记录。会话结束时将重要内容从 SESSION-STATE.md 迁移至 MEMORY.md，创建或更新每日日志.
+- **WAL 协议保障**：写前日志机制确保数据持久。参数：触发条件（用户表达偏好/做出决策/给出期限/纠正代理）。输出：先写入 SESSION-STATE.md 再回复用户。若先回复再保存，崩溃或压缩会导致上下文丢失；WAL 确保写入优先，保障持久性.
+- **会话记忆协议**：标准化 Agent 记忆行为。参数：会话开始/对话中/会话结束三个阶段的行为规则。输出：会话开始读取 SESSION-STATE.md 获取热上下文，检查 memory/YYYY-MM-DD.md 了解近期活动；对话中用户给出具体细节则先写入再回复；会话结束时更新最终状态并迁移重要内容到 MEMORY.md.
 ### 热内存（SESSION-STATE.md）
 
-针对热内存（SESSION-STATE.md）,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供热内存（SESSION-STATE.md）相关的配置参数、输入数据和处理选项。
-
+针对热内存（SESSION-STATE.md）,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供热内存（SESSION-STATE.md）相关的配置参数、输入数据和处理选项.
 **输出**: 返回热内存（SESSION-STATE.md）的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`热内存（SESSION-STATE.md）`的配置文档进行参数调优
 ### 精选归档（MEMORY.md + daily/）
 
-针对精选归档（MEMORY.md + daily/）,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供精选归档（MEMORY.md + daily/）相关的配置参数、输入数据和处理选项。
-
+针对精选归档（MEMORY.md + daily/）,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供精选归档（MEMORY.md + daily/）相关的配置参数、输入数据和处理选项.
 **输出**: 返回精选归档（MEMORY.md + daily/）的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`精选归档（MEMORY.md + daily/）`的配置文档进行参数调优
 ### WAL 协议保障
 
-针对WAL 协议保障,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供WAL 协议保障相关的配置参数、输入数据和处理选项。
-
+针对WAL 协议保障,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供WAL 协议保障相关的配置参数、输入数据和处理选项.
 **输出**: 返回WAL 协议保障的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`WAL 协议保障`的配置文档进行参数调优
 #
 ## 使用流程
 
-第一步：创建记忆系统结构。手动创建 SESSION-STATE.md（热内存，含 Current Task、Key Context、Pending Actions、Recent Decisions 四区块）、MEMORY.md（长期摘要）、memory/ 目录（每日日志）。
-
-第二步：配置 Agent 记忆协议。在 AGENTS.md 或 SOUL.md 中添加记忆协议：会话开始时读取 SESSION-STATE.md 获取热上下文，检查 memory/YYYY-MM-DD.md 了解近期活动。对话中用户给出具体细节则先写入 SESSION-STATE.md 再回复。
-
-第三步：会话结束与维护。会话结束时更新 SESSION-STATE.md 最终状态，将重要内容迁移至 MEMORY.md，创建或更新 memory/YYYY-MM-DD.md 每日日志。定期合并每日日志到 MEMORY.md 保持精简。
-
-**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
-
+第一步：创建记忆系统结构。手动创建 SESSION-STATE.md（热内存，含 Current Task、Key Context、Pending Actions、Recent Decisions 四区块）、MEMORY.md（长期摘要）、memory/ 目录（每日日志）.
+第二步：配置 Agent 记忆协议。在 AGENTS.md 或 SOUL.md 中添加记忆协议：会话开始时读取 SESSION-STATE.md 获取热上下文，检查 memory/YYYY-MM-DD.md 了解近期活动。对话中用户给出具体细节则先写入 SESSION-STATE.md 再回复.
+第三步：会话结束与维护。会话结束时更新 SESSION-STATE.md 最终状态，将重要内容迁移至 MEMORY.md，创建或更新 memory/YYYY-MM-DD.md 每日日志。定期合并每日日志到 MEMORY.md 保持精简.
+**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤.
 ## 错误处理
 
 | 错误类型 | 原因 | 处理方式 |
@@ -114,35 +99,26 @@ Agent 内部执行与输出：
 ## FAQ
 
 **Q1：免费版支持向量语义搜索吗？**
-不支持。免费版仅提供热内存（SESSION-STATE.md）与文件归档（MEMORY.md + daily/）两层记忆，无 LanceDB 向量搜索能力。记忆召回依赖文件读取与关键词匹配。向量语义搜索在付费版通过 LanceDB 与 Ollama 本地 Embedding 提供。
-
+不支持。免费版仅提供热内存（SESSION-STATE.md）与文件归档（MEMORY.md + daily/）两层记忆，无 LanceDB 向量搜索能力。记忆召回依赖文件读取与关键词匹配。向量语义搜索在付费版通过 LanceDB 与 Ollama 本地 Embedding 提供.
 **Q2：免费版需要安装 Ollama 吗？**
-不需要。免费版纯 Markdown 指令驱动，所有记忆通过文件读写管理，无需 Ollama、Node.js 或任何外部依赖。付费版需要 Ollama 运行 nomic-embed-text 模型提供本地向量 Embedding。
-
+不需要。免费版纯 Markdown 指令驱动，所有记忆通过文件读写管理，无需 Ollama、Node.js 或任何外部依赖。付费版需要 Ollama 运行 nomic-embed-text 模型提供本地向量 Embedding.
 **Q3：免费版能自动召回相关记忆吗？**
-不能。免费版无 autoRecall 自动召回能力，Agent 需手动读取 SESSION-STATE.md 与 MEMORY.md 获取上下文。付费版支持 autoRecall=true 会话开始自动搜索相关记忆并注入上下文。
-
+不能。免费版无 autoRecall 自动召回能力，Agent 需手动读取 SESSION-STATE.md 与 MEMORY.md 获取上下文。付费版支持 autoRecall=true 会话开始自动搜索相关记忆并注入上下文.
 ## 依赖说明
 
-**LLM 依赖**：由 Agent 内置 LLM 提供自然语言理解与推理能力，必需。
-
-**API Key 配置**：本 Skill 无需任何 API Key，纯 Markdown 指令驱动，所有记忆存储在本地文件，不做任何网络请求。
-
+**LLM 依赖**：由 Agent 内置 LLM 提供自然语言理解与推理能力，必需.
+**API Key 配置**：本 Skill 无需任何 API Key，纯 Markdown 指令驱动，所有记忆存储在本地文件，不做任何网络请求.
 **运行环境**：
 - Agent 平台：支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
 - 操作系统：Windows / macOS / Linux
 - 文件系统：本地存储，必需，操作系统内置
 
-**可用性分类**：MD（纯 Markdown 指令，无需 exec 命令行能力）。所有记忆通过文件读写管理。
-
+**可用性分类**：MD（纯 Markdown 指令，无需 exec 命令行能力）。所有记忆通过文件读写管理.
 ## 已知限制
 
-1. **无向量语义搜索**：不提供 LanceDB 向量搜索能力，记忆召回依赖文件读取与关键词匹配，无法进行语义相似度召回。
-
-2. **无自动召回与捕获**：不支持 autoRecall 自动召回与 autoCapture 自动捕获，所有记忆操作需 Agent 手动执行。
-
-3. **无 CLI 管理工具**：不提供 memory.js CLI 工具的 stats、dedup、compact、cleanup、backup 等管理命令，记忆维护需手动操作文件。
-
+1. **无向量语义搜索**：不提供 LanceDB 向量搜索能力，记忆召回依赖文件读取与关键词匹配，无法进行语义相似度召回.
+2. **无自动召回与捕获**：不支持 autoRecall 自动召回与 autoCapture 自动捕获，所有记忆操作需 Agent 手动执行.
+3. **无 CLI 管理工具**：不提供 memory.js CLI 工具的 stats、dedup、compact、cleanup、backup 等管理命令，记忆维护需手动操作文件.
 ## 升级提示
 
 本免费版提供基础热内存与文件归档两层本地记忆。升级到付费版可获得以下完整能力：
@@ -154,4 +130,4 @@ Agent 内部执行与输出：
 - **五层完整记忆架构**：热内存、LanceDB 向量、Git-Notes 知识图谱、精选归档、本地 Embedding 五层协同
 - **插件集成**：启用后自动提供 memory_recall、memory_store、memory_forget 三个工具，深度集成 Agent 工作流
 
-付费版适合需要语义搜索、自动召回、完整记忆管理工具的高级本地 AI Agent 应用场景，特别适合对数据隐私有高要求的环境。
+付费版适合需要语义搜索、自动召回、完整记忆管理工具的高级本地 AI Agent 应用场景，特别适合对数据隐私有高要求的环境.

@@ -7,8 +7,9 @@ summary: "K8s清单助手,生成规范的部署清单"
 license: "Proprietary"
 description: |-
   This is a coherent Kubernetes manifest helper; its main risk is that
-  users could copy examples th。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
-tags: "'[''Operations'']'"
+  users could copy examples th。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
+tags:
+  - Operations
 tools:
   - read
   - exec
@@ -17,7 +18,7 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
+
 ---
 # Kubernetes
 
@@ -42,7 +43,9 @@ tools: ["read", "write", "exec"]
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 内容生成 | 提示词与风格参数 | 生成内容与质量评分 |
+| 部署发布 | 部署配置与环境参数 | 部署状态与版本信息 |
+| K8s清单助手 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -116,8 +119,7 @@ tools: ["read", "write", "exec"]
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Kubernetes？

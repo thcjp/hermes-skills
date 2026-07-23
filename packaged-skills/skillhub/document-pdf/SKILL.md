@@ -7,19 +7,18 @@ summary: "PDF全操作工具箱,提取文本表格/建PDF/合并拆分/填表"
 license: "Proprietary"
 description: |-
   Comprehensive PDF manipulation toolkit for extracting text and tables,
-  creating new PDFs, merging。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
+  creating new PDFs, merging。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
   - Knowledge
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "文档处理,工具,效率"
+
 ---
 # Pdf
 
@@ -42,7 +41,9 @@ This guide covers essential PDF processing operations using Python libraries and
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| PDF处理 | PDF文件与操作类型 | 提取文本或生成文档 |
+| PDF全操作工具箱 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 提取文本表格 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -59,8 +60,7 @@ for page in reader.pages:
     text += page.extract_text()
 ```
 
-**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
-
+**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤.
 **使用步骤**:
 1. 阅读依赖说明章节,确认运行环境已就绪
 2. 根据任务需求,参考核心能力章节选择对应能力
@@ -126,7 +126,7 @@ for page in reader.pages:
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 示例1：基础用法

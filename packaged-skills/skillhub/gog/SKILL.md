@@ -8,8 +8,8 @@ license: "Proprietary"
 description: |-
   Google Workspace 命令行工具技能。通过 `gog` CLI 统一操作 Gmail、Calendar、Drive、
   Contacts、Sheets、Docs 六大服务,支持 OAuth 凭证管理、多账户切换、JSON 结构化输出与
-  脚本化批处理。适用于独立开发者效率提升、自动化工作流编排与一人公司办公自动化场景。
-  支持 Gmail 搜索发送、日历事件查询、云盘文件检索、联系人列表、表格读写清除、文档导出查看等。
+  脚本化批处理。适用于独立开发者效率提升、自动化工作流编排与一人公司办公自动化场景.
+  支持 Gmail 搜索发送、日历事件查询、云盘文件检索、联系人列表、表格读写清除、文档导出查看等.
 tags:
   - 研发工具
   - Productivity
@@ -21,13 +21,11 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+
 ---
 # gog
 
-`gog` 是 Google Workspace 的命令行工具,统一封装 Gmail、Calendar、Drive、Contacts、Sheets、Docs 六大服务的 API 调用。所有操作通过 OAuth 凭证鉴权,支持多账户切换、JSON 结构化输出与 `--no-input` 脚本模式。
-
+`gog` 是 Google Workspace 的命令行工具,统一封装 Gmail、Calendar、Drive、Contacts、Sheets、Docs 六大服务的 API 调用。所有操作通过 OAuth 凭证鉴权,支持多账户切换、JSON 结构化输出与 `--no-input` 脚本模式.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -68,7 +66,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 - OAuth 凭证管理:导入 `client_secret.json`、添加多服务授权账户、列出已授权账户
@@ -95,8 +93,7 @@ gog auth add you@gmail.com --services gmail,calendar,drive,contacts,sheets,docs
 gog auth list
 ```
 
-`client_secret.json` 从 Google Cloud Console 的 OAuth 客户端凭证页面下载,类型选择"桌面应用"。`--services` 按需勾选,首次 `auth add` 会触发浏览器授权流程。
-
+`client_secret.json` 从 Google Cloud Console 的 OAuth 客户端凭证页面下载,类型选择"桌面应用"。`--services` 按需勾选,首次 `auth add` 会触发浏览器授权流程.
 ## 常用命令
 
 ### Gmail
@@ -217,8 +214,7 @@ gog docs cat <docId>
 
 ### 案例一:近 7 天邮件归档流水线
 
-需求:每天凌晨归档近 7 天带附件的邮件到本地 JSON 文件。
-
+需求:每天凌晨归档近 7 天带附件的邮件到本地 JSON 文件.
 实现:
 
 ```bash
@@ -235,12 +231,10 @@ gog gmail search 'newer_than:7d has:attachment' --max 50 --json --no-input > /tm
 ]
 ```
 
-下游脚本读取 JSON 分类归档,`--no-input` 确保不阻塞流水线。
-
+下游脚本读取 JSON 分类归档,`--no-input` 确保不阻塞流水线.
 ### 案例二:Google Sheet 追加日志行
 
-需求:CI 流水线每次构建完成后,向监控 Sheet 的 `Builds!A:C` 追加一行构建记录。
-
+需求:CI 流水线每次构建完成后,向监控 Sheet 的 `Builds!A:C` 追加一行构建记录.
 实现:
 
 ```bash
@@ -250,12 +244,10 @@ gog sheets append <sheetId> "Builds!A:C" \
   --no-input
 ```
 
-输出:`UpdatedRange: Builds!A5:C5, UpdatedRows: 1`,可用于断言追加成功。
-
+输出:`UpdatedRange: Builds!A5:C5, UpdatedRows: 1`,可用于断言追加成功.
 ### 案例三:日历事件导出为待办清单
 
-需求:导出本周主日历事件,生成 Markdown 待办清单。
-
+需求:导出本周主日历事件,生成 Markdown 待办清单.
 实现:
 
 ```bash
@@ -271,8 +263,7 @@ for e in events:
 "
 ```
 
-输出本周所有会议标题与开始时间,管道给 Python 生成 Markdown 清单。
-
+输出本周所有会议标题与开始时间,管道给 Python 生成 Markdown 清单.
 ## 异常处理
 
 ### 1. OAuth 凭证未导入
@@ -327,28 +318,22 @@ for e in events:
 
 ### Q1:如何避免每次都传 `--account`?
 
-设置环境变量 `GOG_ACCOUNT=you@gmail.com`,gog 会自动使用该账户作为默认账户,无需每次命令重复传入。
-
+设置环境变量 `GOG_ACCOUNT=you@gmail.com`,gog 会自动使用该账户作为默认账户,无需每次命令重复传入.
 ### Q2:`--values-json` 和内联行参数有什么区别?
 
-`--values-json` 接收标准 JSON 二维数组(如 `[["A","B"],["1","2"]]`),推荐用于脚本化场景,可避免 shell 转义问题。内联行参数适合简单交互式调用,但含特殊字符时易出错。
-
+`--values-json` 接收标准 JSON 二维数组(如 `[["A","B"],["1","2"]]`),推荐用于脚本化场景,可避免 shell 转义问题。内联行参数适合简单交互式调用,但含特殊字符时易出错.
 ### Q3:Docs 能否直接修改文档内容?
 
-不能。gog 的 docs 模块仅支持 export(导出)、cat(输出内容)、copy(复制文档)。原位编辑需要 Google Docs API 的 `documents:batchUpdate` 接口,不在 gog 范围内。常见替代流程是 export 为 txt 本地编辑后重新上传。
-
+不能。gog 的 docs 模块仅支持 export(导出)、cat(输出内容)、copy(复制文档)。原位编辑需要 Google Docs API 的 `documents:batchUpdate` 接口,不在 gog 范围内。常见替代流程是 export 为 txt 本地编辑后重新上传.
 ### Q4:多账户如何切换?
 
-通过 `--account` 参数指定,或设置 `GOG_ACCOUNT` 环境变量切换默认账户。`gog auth list` 可查看所有已授权账户。不同账户的 OAuth token 相互隔离。
-
+通过 `--account` 参数指定,或设置 `GOG_ACCOUNT` 环境变量切换默认账户。`gog auth list` 可查看所有已授权账户。不同账户的 OAuth token 相互隔离.
 ### Q5:Gmail 发送邮件是否需要确认?
 
-是的。发送邮件是不可逆操作,gog 默认在发送前会要求确认。脚本化场景可加 `--no-input`,但需自行承担误发风险。建议先 `gog gmail send --dry-run` 预览内容。
-
+是的。发送邮件是不可逆操作,gog 默认在发送前会要求确认。脚本化场景可加 `--no-input`,但需自行承担误发风险。建议先 `gog gmail send --dry-run` 预览内容.
 ### Q6:Sheets 的 `--input USER_ENTERED` 与 `RAW` 有何区别?
 
-`USER_ENTERED` 表示值按用户在 UI 中输入的方式解析(如 `=SUM(A1:A10)` 会被识别为公式),`RAW` 表示值作为字面量原样写入(公式不会被计算)。默认为 `USER_ENTERED`,写入纯数据时建议显式指定以避免歧义。
-
+`USER_ENTERED` 表示值按用户在 UI 中输入的方式解析(如 `=SUM(A1:A10)` 会被识别为公式),`RAW` 表示值作为字面量原样写入(公式不会被计算)。默认为 `USER_ENTERED`,写入纯数据时建议显式指定以避免歧义.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

@@ -7,19 +7,18 @@ summary: "抓取飞书Wiki/文档/表格/多维表格内容,自动解析URL"
 license: "Proprietary"
 description: |-
   Fetch content from Feishu (Lark) Wiki, Docs, Sheets, and Bitable。Automatically
-  resolves Wiki URL。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。
+  resolves Wiki URL。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
   - Knowledge
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Feishu Doc
 
@@ -44,7 +43,9 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 内容抓取 | 目标URL与解析规则 | 结构化数据与元信息 |
+| 数据解析 | 原始内容与格式 | 结构化字段与提取结果 |
+| 文档处理 | 文件路径与格式选项 | 转换结果与页面信息 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -114,8 +115,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Feishu Doc？

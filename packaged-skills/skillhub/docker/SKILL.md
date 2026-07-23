@@ -7,20 +7,19 @@ summary: "管Docker容器/镜像/Compose/网络/卷,含调试与生产加固"
 license: "Proprietary"
 description: |-
   Docker containers, images, Compose stacks, networking, volumes, debugging,
-  production hardening, 。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
+  production hardening, 。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Operations
   - Development
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "容器,Docker,DevOps"
+
 ---
 # Docker
 
@@ -44,7 +43,9 @@ tags: "容器,Docker,DevOps"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 容器管理 | 镜像名与运行参数 | 容器状态与日志输出 |
+| 镜像构建 | Dockerfile与标签 | 镜像ID与构建日志 |
+| 编排部署 | compose配置文件 | 服务状态与网络配置 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -145,8 +146,7 @@ tags: "容器,Docker,DevOps"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Docker？

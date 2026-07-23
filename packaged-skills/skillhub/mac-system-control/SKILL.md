@@ -6,19 +6,18 @@ displayName: "mac-system-control"
 summary: "管理和控制 macOS 系统功能。包括查看系统信息、管理进程、控制音量/亮度、 网络管理、电源管理、截图、剪贴板、Finder 操作等。当用户要求查看系统状态、"
 license: "Proprietary"
 description: |-
-  管理和控制 macOS 系统功能。包括查看系统信息、管理进程、控制音量/亮度、 网络管理、电源管理、截图、剪贴板、Finder 操作等。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
+  管理和控制 macOS 系统功能。包括查看系统信息、管理进程、控制音量/亮度、 网络管理、电源管理、截图、剪贴板、Finder 操作等。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
   - Other
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # mac-system-control
 
@@ -127,8 +126,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用mac-system-control？

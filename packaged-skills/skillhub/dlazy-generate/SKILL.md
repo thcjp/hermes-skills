@@ -7,8 +7,9 @@ summary: "综合生成技能,自动选模型生成图/视频/音频,多模态出
 license: "Proprietary"
 description: |-
   A comprehensive generation skill。Can generate images, videos, and audio\
-  \ by automatically selecti。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。
-tags: "'[''Creative'']'"
+  \ by automatically selecti。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
+tags:
+  - Creative
 tools:
   - read
   - exec
@@ -17,7 +18,7 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
+
 ---
 # Dlazy Generate
 
@@ -42,7 +43,9 @@ tools: ["read", "write", "exec"]
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 内容生成 | 提示词与风格参数 | 生成内容与质量评分 |
+| 模型调用 | 输入文本与模型参数 | 模型输出与用量统计 |
+| 多模态生成 | 文本与媒体类型 | 图片或视频或音频文件 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -112,7 +115,7 @@ tools: ["read", "write", "exec"]
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 示例1: 基础用法

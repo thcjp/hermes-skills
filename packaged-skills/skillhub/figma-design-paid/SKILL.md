@@ -3,26 +3,24 @@ slug: "figma-design-paid"
 name: "figma-design-paid"
 version: "1.0.0"
 displayName: "Figma设计集成-专业版"
-summary: "企业级Figma集成平台，支持组件库管理、设计变量提取、批量导出与团队协作工作流。"
+summary: "企业级Figma集成平台，支持组件库管理、设计变量提取、批量导出与团队协作工作流"
 license: "Proprietary"
 edition: "pro"
 description: |-
-  Figma设计集成工具专业版。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
+  Figma设计集成工具专业版。
 tags:
   - Creative
   - Figma
   - Enterprise
   - DesignSystem
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 ---
 # Figma设计集成-专业版
 
@@ -63,7 +61,7 @@ tags: "设计,UI/UX,创意"
   - list_comments    列出评论
   - post_comment     发表/回复评论
   - delete_comment   删除评论
-# ...
+# .
 组件库管理:
   - get_file_components       文件内组件
   - get_team_components       团队组件库
@@ -71,13 +69,13 @@ tags: "设计,UI/UX,创意"
   - get_team_component_sets   团队组件集
   - get_file_styles           文件样式
   - get_team_styles           团队样式库
-# ...
+# .
 设计变量（Design Token）:
   - get_local_variables       文件本地变量
   - get_published_variables   发布的跨文件变量
   - 变量类型: COLOR / FLOAT / STRING / BOOLEAN
   - 多模式值: valuesByMode
-# ...
+# .
 批量操作:
   - 批量图片导出
   - 批量节点信息获取
@@ -111,7 +109,7 @@ tags: "设计,UI/UX,创意"
 # 设计系统检查脚本
 class FigmaDesignSystemChecker:
     """Figma设计系统检查器"""
-# ...
+# .
     def __init__(self, file_key, team_id=None):
         self.file_key = file_key
         self.team_id = team_id
@@ -123,7 +121,7 @@ class FigmaDesignSystemChecker:
             "variables": [],
             "issues": []
         }
-# ...
+# .
     def run_full_check(self):
         """执行全量检查"""
         self._check_components()
@@ -133,7 +131,7 @@ class FigmaDesignSystemChecker:
         if self.team_id:
             self._check_team_library()
         return self.report
-# ...
+# .
     def _check_components(self):
         """检查文件组件"""
         # mx_figma: get_file_components, file_key: self.file_key
@@ -142,7 +140,7 @@ class FigmaDesignSystemChecker:
             {"id": "C002", "name": "Input", "type": "COMPONENT"},
             {"id": "C003", "name": "Card", "type": "COMPONENT"},
         ]
-# ...
+# .
     def _check_component_sets(self):
         """检查组件变体"""
         # mx_figma: get_file_component_sets, file_key: self.file_key
@@ -150,7 +148,7 @@ class FigmaDesignSystemChecker:
             {"name": "Button", "variants": ["Primary", "Secondary", "Ghost"]},
             {"name": "Input", "variants": ["Default", "Error", "Disabled"]},
         ]
-# ...
+# .
     def _check_styles(self):
         """检查文件样式"""
         # mx_figma: get_file_styles, file_key: self.file_key
@@ -159,7 +157,7 @@ class FigmaDesignSystemChecker:
             {"name": "Primary/Text", "type": "TEXT"},
             {"name": "Spacing/Base", "type": "EFFECT"},
         ]
-# ...
+# .
     def _check_variables(self):
         """检查设计变量"""
         # mx_figma: get_local_variables, file_key: self.file_key
@@ -169,7 +167,7 @@ class FigmaDesignSystemChecker:
             {"name": "spacing/base", "type": "FLOAT", "value": 4},
             {"name": "radius/md", "type": "FLOAT", "value": 8},
         ]
-# ...
+# .
     def _check_team_library(self):
         """检查团队组件库"""
         # mx_figma: get_team_components, team_id: self.team_id
@@ -177,7 +175,7 @@ class FigmaDesignSystemChecker:
             "total_components": 150,
             "total_styles": 45
         }
-# ...
+# .
 # 执行检查
 checker = FigmaDesignSystemChecker("abc123DEF456", "123456789")
 report = checker.run_full_check()
@@ -195,20 +193,20 @@ print(f"变量: {len(report['variables'])}个")
 # 开发资产获取全流程
 1. mx_figma: get_file, file_key: "详情见说明", depth: 2
    → 获取页面和 Frame 结构
-# ...
+# .
 2. mx_figma: get_file_nodes, file_key: "详情见说明", node_ids: ["target_node"]
    → 获取指定节点详细属性
-# ...
+# .
 3. mx_figma: get_file_components, file_key: "详情见说明"
    → 获取可复用组件列表
-# ...
+# .
 4. mx_figma: get_file_component_sets, file_key: "详情见说明"
    → 获取组件变体（Primary/Secondary 等）
-# ...
+# .
 5. mx_figma: get_local_variables, file_key: "详情见说明"
    → 获取颜色/间距/字体等设计 Token
-# ...
-6. mx_figma: export_images, file_key: "详情见说明", node_ids: ["icon1","icon2",...], format: "svg"
+# .
+6. mx_figma: export_images, file_key: "详情见说明", node_ids: ["icon1","icon2",.], format: "svg"
    → 批量导出图标资源
 ```
 
@@ -216,11 +214,11 @@ print(f"变量: {len(report['variables'])}个")
 # 批量导出脚本
 class BatchAssetExporter:
     """批量资产导出器"""
-# ...
+# .
     def __init__(self, file_key):
         self.file_key = file_key
         self.exported = []
-# ...
+# .
     def export_all_icons(self, icon_node_ids, format="svg", scale=1):
         """批量导出所有图标"""
         # mx_figma: export_images 支持多节点
@@ -233,7 +231,7 @@ class BatchAssetExporter:
             result["exports"][node_id] = f"https://files.example.com/{node_id}.{format}"
             self.exported.append({"node_id": node_id, "url": result["exports"][node_id]})
         return result
-# ...
+# .
     def export_design_tokens(self):
         """导出设计变量为 Token 文件"""
         # mx_figma: get_local_variables
@@ -251,7 +249,7 @@ class BatchAssetExporter:
             }
         }
         return variables
-# ...
+# .
     def export_component_specs(self):
         """导出组件规格"""
         # mx_figma: get_file_components + get_file_component_sets
@@ -262,7 +260,7 @@ class BatchAssetExporter:
              "props": {"placeholder": "string", "type": ["text", "email", "password"]}},
         ]
         return specs
-# ...
+# .
 # 批量导出
 exporter = BatchAssetExporter("abc123DEF456")
 icons = exporter.export_all_icons(["1:2", "3:4", "5:6", "7:8"], format="svg")
@@ -277,37 +275,37 @@ print(f"已导出 {len(icons['exports'])} 个图标")
 
 ```text
 # 设计走查工作流
-# ...
+# .
 # 1. 查看文件结构
 mx_figma:
   action: get_file
   file_key: "详情见说明"
   depth: 2
-# ...
+# .
 # 2. 查看指定页面详情
 mx_figma:
   action: get_file_nodes
   file_key: "详情见说明"
   node_ids: ["page_id"]
-# ...
+# .
 # 3. 查看现有评论
 mx_figma:
   action: list_comments
   file_key: "详情见说明"
-# ...
+# .
 # 4. 添加走查反馈
 mx_figma:
   action: post_comment
   file_key: "详情见说明"
   message: "这个按钮的圆角需要改为 8px，与设计系统一致"
-# ...
+# .
 # 5. 回复设计师的疑问
 mx_figma:
   action: post_comment
   file_key: "详情见说明"
   message: "已确认，圆角统一为 8px，间距基准为 4px"
   comment_id: "12345"
-# ...
+# .
 # 6. 删除已解决的评论
 mx_figma:
   action: delete_comment
@@ -322,10 +320,10 @@ mx_figma:
 ```bash
 # 依赖说明
 skill-platform plugins install skill-platform-morphixai
-# ...
+# .
 # 配置 API Key
 export MORPHIXAI_API_KEY="mk_your_key_here"
-# ...
+# .
 # 链接 Figma 账号
 # 访问 morphix.app/connections
 ```
@@ -428,7 +426,7 @@ mx_figma:
   FLOAT   → 数值变量 (间距/圆角/字号)
   STRING  → 字符串变量 (字体名称)
   BOOLEAN → 布尔变量 (显示/隐藏)
-# ...
+# .
 变量模式:
   valuesByMode → 各模式下的不同值
   例: 颜色变量在 light/dark 模式下有不同值
@@ -441,10 +439,10 @@ mx_figma:
   get_team_components
     team_id: "123456789"
     page_size: 30   # 分页大小
-# ...
+# .
   get_team_component_sets
     team_id: "123456789"
-# ...
+# .
   get_team_styles
     team_id: "123456789"
 ```

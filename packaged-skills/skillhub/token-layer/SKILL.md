@@ -6,19 +6,18 @@ displayName: "Token Layer"
 summary: "抗审查跨链公共代币基础设施,一次发行处处交易"
 license: "Proprietary"
 description: |-
-  Token Layer - Censorship resistant crosschain public token infrastructure。Launch once, trade eve。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
+  Token Layer - Censorship resistant crosschain public token infrastructure。Launch once, trade eve
 tags:
   - Operations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Token Layer
 
@@ -42,7 +41,9 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 质量审查 | 代码文件与检查规则 | 审查报告与评级 |
+| 抗审查跨链公共代币基 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 一次发行处处交易 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -113,7 +114,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### Check Wallet

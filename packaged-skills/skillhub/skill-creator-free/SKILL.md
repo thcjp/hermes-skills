@@ -6,26 +6,23 @@ displayName: "AI技能创建指南（免费版）"
 summary: "免费版AI Skill创建指南，支持基础SKILL.md结构与Progressive Disclosure设计"
 license: "MIT"
 description: |-
-  创建有效AI Skill的基础指南（免费版）。
-  覆盖Core Principles、SKILL.md结构设计与Progressive Disclosure基础概念。
-  免费版不含完整Bundled Resources规范、Skill Creation Process脚本集成与不应包含内容指南。
+  创建有效AI Skill的基础指南（免费版）.
+  覆盖Core Principles、SKILL.md结构设计与Progressive Disclosure基础概念.
+  免费版不含完整Bundled Resources规范、Skill Creation Process脚本集成与不应包含内容指南.
 tools:
   - read
 homepage: "https://skillhub.cn"
 tags:
   - 通用办公
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+
 ---
 # AI技能创建指南（免费版）
 
-创建有效AI Skill的基础指南，覆盖Core Principles与SKILL.md结构设计。
-
+创建有效AI Skill的基础指南，覆盖Core Principles与SKILL.md结构设计.
 ## 输入输出
 
-**输入**: 用户提供skill创建需求，包括具体的concrete examples（skill应支持的功能描述与触发场景）、预期触发关键词或短语、skill名称建议、所需的bundled resources类型（（请参考skill目录中的脚本文件））、skill的复杂度与自由度偏好（High/Medium/Low freedom）。
-**输出**: SKILL.md结构设计指导（含frontmatter中 `name` 与 `description` 字段的编写规范、body内容组织建议）、Progressive Disclosure三级加载系统设计建议（Level 1 Metadata约100 words / Level 2 SKILL.md body <5k words / Level 3 Bundled resources按需加载）、Bundled Resources基础组织方案（（请参考skill目录中的脚本文件））、Core Principles三大原则应用建议。免费版不含 `init_skill.py`/`package_skill.py` 脚本集成与完整规范（付费版专享）。
-
+**输入**: 用户提供skill创建需求，包括具体的concrete examples（skill应支持的功能描述与触发场景）、预期触发关键词或短语、skill名称建议、所需的bundled resources类型（（请参考skill目录中的脚本文件））、skill的复杂度与自由度偏好（High/Medium/Low freedom）.
+**输出**: SKILL.md结构设计指导（含frontmatter中 `name` 与 `description` 字段的编写规范、body内容组织建议）、Progressive Disclosure三级加载系统设计建议（Level 1 Metadata约100 words / Level 2 SKILL.md body <5k words / Level 3 Bundled resources按需加载）、Bundled Resources基础组织方案（（请参考skill目录中的脚本文件））、Core Principles三大原则应用建议。免费版不含 `init_skill.py`/`package_skill.py` 脚本集成与完整规范（付费版专享）.
 ## 依赖说明
 
 ### 运行环境
@@ -50,7 +47,7 @@ tags: "工具,效率,自动化"
 
 提供skill创建的三大核心原则指导：
 
-- **Concise is Key**：context window是公共资源，skill仅添加Claude不具备的知识。默认假设"Claude already is very smart"，对每段内容质疑"Does Claude really need this explanation?"与"Does this paragraph justify its token cost?"。优先用简洁examples替代冗长explanations。
+- **Concise is Key**：context window是公共资源，skill仅添加Claude不具备的知识。默认假设"Claude already is very smart"，对每段内容质疑"Does Claude really need this explanation?"与"Does this paragraph justify its token cost?"。优先用简洁examples替代冗长explanations.
 - **Set Appropriate Degrees of Freedom**：根据任务的fragility和variability匹配specificity级别
   - High freedom（text-based instructions）：多种方法valid、决策依赖context时使用
   - Medium freedom（pseudocode or scripts with parameters）：有preferred pattern但允许variation时使用
@@ -73,10 +70,9 @@ skill-name/
     └── assets/           - Files used in output (templates, icons, fonts, etc.)
 ```
 
-- **Frontmatter（YAML）**：包含`name`和`description`字段。这是Claude读取以判断何时使用skill的唯一依据，必须清晰全面地描述skill是什么以及何时使用。`description`是primary triggering mechanism，应包含skill做什么与具体触发场景。
-- **Body（Markdown）**：使用skill的instructions和guidance。仅在skill触发后加载。
-
-**处理**: 解析SKILL.md结构设计的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+- **Frontmatter（YAML）**：包含`name`和`description`字段。这是Claude读取以判断何时使用skill的唯一依据，必须清晰全面地描述skill是什么以及何时使用。`description`是primary triggering mechanism，应包含skill做什么与具体触发场景.
+- **Body（Markdown）**：使用skill的instructions和guidance。仅在skill触发后加载.
+**处理**: 解析SKILL.md结构设计的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### Progressive Disclosure设计
 提供三级加载系统的设计原则：
 
@@ -84,9 +80,8 @@ skill-name/
 - **Level 2 - SKILL.md body**：skill触发时加载（<5k words）
 - **Level 3 - Bundled resources**：Claude按需加载（Unlimited，因scripts可不读入context即执行）
 
-保持SKILL.md body在essentials以内且<500 lines，接近限制时拆分内容。重要准则：references保持一级深度；长reference文件（>100 lines）顶部包含table of contents。
-
-**输出**: 返回Progressive Disclosure设计的处理结果,包含执行状态码、结果数据和执行日志。
+保持SKILL.md body在essentials以内且<500 lines，接近限制时拆分内容。重要准则：references保持一级深度；长reference文件（>100 lines）顶部包含table of contents.
+**输出**: 返回Progressive Disclosure设计的处理结果,包含执行状态码、结果数据和执行日志.
 ### Bundled Resources基础组织
 
 提供三类bundled resources的基础说明：
@@ -104,8 +99,7 @@ skill-name/
 4. **应用Progressive Disclosure**：保持SKILL.md <500 lines，detailed info移至references
 5. **迭代优化**：实际使用后识别改进点并更新
 
-**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
-
+**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤.
 ## 示例
 
 ### 示例1：创建pdf-editor skill基础结构
@@ -141,14 +135,11 @@ Step 4 - Progressive Disclosure 检查:
 ## 常见问题
 
 ### Q1: 免费版与付费版有何区别？
-A: 免费版提供基础Core Principles、SKILL.md结构与Progressive Disclosure设计指导。不含完整Bundled Resources规范、Skill Creation Process（init_skill.py/package_skill.py脚本集成）、三种Progressive Disclosure Patterns详解与不应包含内容指南。
-
+A: 免费版提供基础Core Principles、SKILL.md结构与Progressive Disclosure设计指导。不含完整Bundled Resources规范、Skill Creation Process（init_skill.py/package_skill.py脚本集成）、三种Progressive Disclosure Patterns详解与不应包含内容指南.
 ### Q2: description应该包含哪些内容？
-A: description是skill的primary triggering mechanism，必须包含skill做什么与具体触发场景（when to use）。不应在body中放"When to Use"sections，因为body仅在触发后加载。
-
+A: description是skill的primary triggering mechanism，必须包含skill做什么与具体触发场景（when to use）。不应在body中放"When to Use"sections，因为body仅在触发后加载.
 ### Q3: Progressive Disclosure的三个层级如何划分？
-A: Level 1是Metadata（name + description），始终在context（约100 words）；Level 2是SKILL.md body，skill触发时加载（<5k words）；Level 3是Bundled resources，Claude按需加载（unlimited，因scripts可执行不读入context）。
-
+A: Level 1是Metadata（name + description），始终在context（约100 words）；Level 2是SKILL.md body，skill触发时加载（<5k words）；Level 3是Bundled resources，Claude按需加载（unlimited，因scripts可执行不读入context）.
 ## 已知限制
 
 - 不含init_skill.py与package_skill.py脚本集成，需手动创建skill目录结构

@@ -6,19 +6,18 @@ displayName: "Cheat Code"
 summary: "让Agent才能无极限,说出想要即兑现,解锁隐藏能力"
 license: "Proprietary"
 description: |-
-  Makes your agent's talents limitless。Tell your agent what you want。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
+  Makes your agent's talents limitless。Tell your agent what you want。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Development
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
+
 ---
 # Cheat Code
 
@@ -43,7 +42,9 @@ tags: "开发工具,代码生成,编程辅助"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 隐藏能力解锁 | 指令与目标参数 | 执行结果与解锁状态 |
+| 让Agent才能无极 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 说出想要即兑现 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -113,8 +114,7 @@ tags: "开发工具,代码生成,编程辅助"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Cheat Code？

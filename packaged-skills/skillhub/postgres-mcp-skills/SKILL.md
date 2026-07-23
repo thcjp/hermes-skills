@@ -6,19 +6,18 @@ displayName: "postgres mcp"
 summary: "PostgreSQL 数据库管理和优化助手。提供完整的数据库操作能力：健康检查、索引优化、查询计划分析、模式查询、SQL 执行。 当用户提到 PostgreSQL、Postgres、数据库优化、..."
 license: "Proprietary"
 description: |-
-  PostgreSQL 数据库管理和优化助手。提供完整的数据库操作能力：健康检查、索引优化、查询计划分析、模式查询、SQL 执行。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。
+  PostgreSQL 数据库管理和优化助手。提供完整的数据库操作能力：健康检查、索引优化、查询计划分析、模式查询、SQL 执行。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
   - Integrations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # postgres mcp
 
@@ -44,7 +43,9 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 数据处理 | 数据源与处理规则 | 清洗结果与统计摘要 |
+| 智能分析 | 数据与分析维度 | 分析报告与关键发现 |
+| 信息查询 | 查询条件与关键词 | 查询结果与匹配记录 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -114,8 +115,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用postgres mcp？

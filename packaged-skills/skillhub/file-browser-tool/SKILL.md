@@ -6,19 +6,18 @@ displayName: "file-browser"
 summary: "SkillHub工作区只读文件浏览与读取,安全查看"
 license: "Proprietary"
 description: |-
-  Read-only file browsing and reading in the SkillHub workspace (/home/alfred/。SkillHub/workspace)。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
+  Read-only file browsing and reading in the SkillHub workspace (/home/alfred/。SkillHub/workspace)
 tags:
   - Research
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # file-browser
 
@@ -42,7 +41,9 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 安全检查 | 目标地址与扫描选项 | 漏洞列表与风险评级 |
+| 文件操作 | 文件路径与操作参数 | 操作结果与文件元信息 |
+| SkillHub工作 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -144,7 +145,7 @@ Resolve all paths relative to WORKSPACE=/home/alfred/.skill-platform/workspace. 
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 示例1：基础用法

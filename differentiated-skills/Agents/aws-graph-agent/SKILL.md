@@ -6,67 +6,60 @@ displayName: "AWS图代理"
 summary: "Bedrock AgentCore与LangGraph编排,引导式部署,一致性处理,多代理模式库。"
 license: "Proprietary"
 description: |-
-  AWS Bedrock AgentCore与LangGraph多代理部署编排工具：提供StateGraph状态图编排、AgentCore Runtime HTTP封装（8080端口）、Memory跨会话STM/LTM持久记忆、Gateway外部API/Lambda工具集成、CLI全生命周期管理五大核心能力。适用于多代理协调的复杂业务系统、跨会话持久记忆代理、外部API集成到代理工具链、生产级AI代理部署。适用关键词：Bedrock AgentCore、LangGraph、多代理编排、状态图、agentcore、state-graph。
+  AWS Bedrock AgentCore与LangGraph多代理部署编排工具：提供StateGraph状态图编排、AgentCore Runtime HTTP封装（8080端口）、Memory跨会话STM/LTM持久记忆、Gateway外部API/Lambda工具集成、CLI全生命周期管理五大核心能力。适用于多代理协调的复杂业务系统、跨会话持久记忆代理、外部API集成到代理工具链、生产级AI代理部署。适用关键词：Bedrock AgentCore、LangGraph、多代理编排、状态图、agentcore、state-graph.
 tags:
   - 智能代理
   - 云计算
   - AWS
   - 多代理系统
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "AWS,云计算,DevOps"
+
 ---
 # AWS图代理（AWS Graph Agent）
 
-基于 AWS Bedrock AgentCore 与 LangGraph 编排的多代理系统。通过 StateGraph 状态图定义代理工作流，AgentCore Runtime 封装为 HTTP 服务，Memory 管理持久记忆，Gateway 集成外部工具。
-
+基于 AWS Bedrock AgentCore 与 LangGraph 编排的多代理系统。通过 StateGraph 状态图定义代理工作流，AgentCore Runtime 封装为 HTTP 服务，Memory 管理持久记忆，Gateway 集成外部工具.
 ## 核心能力
 
 ### 1. StateGraph 状态图编排
 使用 LangGraph StateGraph 定义多代理工作流，支持 `tools_condition` 自动路由（代理→工具或 END）、`ToolNode` 预置工具执行器、条件边实现复杂多步逻辑（planner→executor→reviewer 循环）
 
-**输入**: 用户提供StateGraph 状态图编排所需的指令和必要参数。
-**处理**: 解析StateGraph 状态图编排的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回StateGraph 状态图编排的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供StateGraph 状态图编排所需的指令和必要参数.
+**处理**: 解析StateGraph 状态图编排的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回StateGraph 状态图编排的响应数据,包含状态码、结果和日志.
 ### 2. AgentCore Runtime HTTP 封装
 将代理封装为 8080 端口 HTTP 服务，处理 `/invocations`（调用）与 `/ping`（健康检查）端点，支持容器模式部署
 
-**输入**: 用户提供AgentCore Runtime HTTP 封装所需的指令和必要参数。
-**处理**: 解析AgentCore Runtime HTTP 封装的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回AgentCore Runtime HTTP 封装的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供AgentCore Runtime HTTP 封装所需的指令和必要参数.
+**处理**: 解析AgentCore Runtime HTTP 封装的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回AgentCore Runtime HTTP 封装的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 3. AgentCore Memory 持久记忆
 管理跨会话/跨代理的 STM（短期记忆，会话内逐轮）与 LTM（长期记忆，跨会话/跨代理），配套一致性处理模式（写入后约 10s 最终一致，含等待+验证+重试逻辑）
 
-**输入**: 用户提供AgentCore Memory 持久记忆所需的指令和必要参数。
-**处理**: 解析AgentCore Memory 持久记忆的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回AgentCore Memory 持久记忆的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供AgentCore Memory 持久记忆所需的指令和必要参数.
+**处理**: 解析AgentCore Memory 持久记忆的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回AgentCore Memory 持久记忆的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 4. AgentCore Gateway 工具集成
 将 API/Lambda 转化为带认证的 Agent 工具接口，支持 Fallback Mock（本地开发）、Local 工具协议、Production Gateway（生产）三种传输模式
 
-**输入**: 用户提供AgentCore Gateway 工具集成所需的指令和必要参数。
-**处理**: 解析AgentCore Gateway 工具集成的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回AgentCore Gateway 工具集成的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供AgentCore Gateway 工具集成所需的指令和必要参数.
+**处理**: 解析AgentCore Gateway 工具集成的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回AgentCore Gateway 工具集成的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 5. agentcore CLI 全生命周期管理
 `configure`（交互式/脚本化配置）→`launch`（容器部署）→`dev`（热重载本地开发）→`invoke`（测试调用）→`destroy`（清理资源避免持续计费）
 
-**输入**: 用户提供agentcore CLI 全生命周期管理所需的指令和必要参数。
-**处理**: 解析agentcore CLI 全生命周期管理的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回agentcore CLI 全生命周期管理的响应数据,包含状态码、结果和日志。
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Bedrock、引导式部署、多代理模式库、AWS、多代理部署编排工、全生命周期管理五、大核心能力、适用于多代理协调、的复杂业务系统、跨会话持久记忆代、集成到代理工具链、生产级、代理部署、适用关键词、多代理编排等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+**输入**: 用户提供agentcore CLI 全生命周期管理所需的指令和必要参数.
+**处理**: 解析agentcore CLI 全生命周期管理的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回agentcore CLI 全生命周期管理的响应数据,包含状态码、结果和日志.
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Bedrock、引导式部署、多代理模式库、AWS、多代理部署编排工、全生命周期管理五、大核心能力、适用于多代理协调、的复杂业务系统、跨会话持久记忆代、集成到代理工具链、生产级、代理部署、适用关键词、多代理编排等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 适用场景
 
 **何时使用**：
@@ -247,8 +240,7 @@ builder.add_edge("cs_expert", END)
 builder.add_edge("billing_expert", END)
 graph = builder.compile()
 ```
-部署：`agentcore configure -e agent.py --region us-east-1 && agentcore launch`。两个专家共享同一 `session_id`，通过 AgentCore Memory 实现跨专家记忆传递（编排器写入意图，专家读取上下文），避免用户重复陈述。
-
+部署：`agentcore configure -e agent.py --region us-east-1 && agentcore launch`。两个专家共享同一 `session_id`，通过 AgentCore Memory 实现跨专家记忆传递（编排器写入意图，专家读取上下文），避免用户重复陈述.
 ### 示例四：Gateway 工具集成端到端
 
 **输入**：将订单查询/退款 Lambda 集成为代理工具，生产网关模式部署
@@ -268,8 +260,7 @@ tools = gateway.register_tools([
 # ...
 agent = create_agent_with_tools(tools)  # 工具自动注入 StateGraph
 ```
-调用：`agentcore invoke '{"prompt": "查询订单 #1234 并退款"}'`。代理自动调用 `search_orders`→`issue_refund`，Gateway 处理 Lambda 认证与调用。本地开发用 `mode="mock"` 返回假数据无需真实 Lambda；生产用 `mode="production"` 走网关鉴权。
-
+调用：`agentcore invoke '{"prompt": "查询订单 #1234 并退款"}'`。代理自动调用 `search_orders`→`issue_refund`，Gateway 处理 Lambda 认证与调用。本地开发用 `mode="mock"` 返回假数据无需真实 Lambda；生产用 `mode="production"` 走网关鉴权.
 ## 错误处理
 
 | 场景 | 原因 | 处理方式 |
@@ -300,30 +291,23 @@ agent = create_agent_with_tools(tools)  # 工具自动注入 StateGraph
 | Agent 平台 | 运行环境 | 必需 | Claude Code / Cursor / Codex / Gemini CLI 等 |
 | 操作系统 | 运行环境 | 必需 | Windows / macOS / Linux |
 
-**成本优化策略**：无状态部署用 `--disable-memory` 节省记忆存储成本；测试后立即 `agentcore destroy` 避免持续运行成本；生产用容器、开发用 `agentcore dev`；选择低成本区域（如 us-east-1）；使用 `us.anthropic.claude-*` 推理配置降低吞吐量成本。
-
-**密钥安全处理规范（零暴露硬性约束）**：代理绝不能读取、cat、打印、回显或日志记录 `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` 明文，绝不在聊天/提交/镜像中暴露凭据——无论出于任何原因包括"验证配置"。硬性规则：(1) 凭据只通过环境变量或 IAM Role 注入，禁止硬编码到源码或 Dockerfile ARG；(2) `agentcore configure` 所需凭据从 AWS CLI 命名配置文件（`--profile`）或实例元数据获取，禁止在命令行明文传参；(3) 容器部署用任务角色（Task Role）而非 ENV 明文密钥，ENV 仅用于非敏感配置；(4) 如用户在聊天中粘贴了密钥，立即告知已泄露，要求轮换并从历史清除，绝不回显；(5) `.env` 加入 `.gitignore`，禁止提交版本库；(6) `agentcore destroy` 后确认密钥与资源已清理。验证安装状态用 `aws sts get-caller-identity`（返回角色 ARN，不暴露密钥）而非打印环境变量。
-
+**成本优化策略**：无状态部署用 `--disable-memory` 节省记忆存储成本；测试后立即 `agentcore destroy` 避免持续运行成本；生产用容器、开发用 `agentcore dev`；选择低成本区域（如 us-east-1）；使用 `us.anthropic.claude-*` 推理配置降低吞吐量成本.
+**密钥安全处理规范（零暴露硬性约束）**：代理绝不能读取、cat、打印、回显或日志记录 `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` 明文，绝不在聊天/提交/镜像中暴露凭据——无论出于任何原因包括"验证配置"。硬性规则：(1) 凭据只通过环境变量或 IAM Role 注入，禁止硬编码到源码或 Dockerfile ARG；(2) `agentcore configure` 所需凭据从 AWS CLI 命名配置文件（`--profile`）或实例元数据获取，禁止在命令行明文传参；(3) 容器部署用任务角色（Task Role）而非 ENV 明文密钥，ENV 仅用于非敏感配置；(4) 如用户在聊天中粘贴了密钥，立即告知已泄露，要求轮换并从历史清除，绝不回显；(5) `.env` 加入 `.gitignore`，禁止提交版本库；(6) `agentcore destroy` 后确认密钥与资源已清理。验证安装状态用 `aws sts get-caller-identity`（返回角色 ARN，不暴露密钥）而非打印环境变量.
 **可用性分类**：MD+EXEC（纯 Markdown 指令，需要命令行执行能力进行部署与管理）
 - **API Key**：本skill无需额外API Key配置
 
 ## 常见问题
 
 **Q1：部署后记忆为空怎么办？**
-A：记忆写入后有约 10 秒最终一致性延迟。等待 10 秒后用 `list_events` 重新查询。如仍为空，检查日志中是否显示"Memory enabled"，确认部署时未使用 `--disable-memory`。
-
+A：记忆写入后有约 10 秒最终一致性延迟。等待 10 秒后用 `list_events` 重新查询。如仍为空，检查日志中是否显示"Memory enabled"，确认部署时未使用 `--disable-memory`.
 **Q2：容器无法读取 .env 文件怎么办？**
-A：容器模式下 .env 文件不会被自动读取。在 Dockerfile 中使用 ENV 指令设置环境变量，而非依赖 .env 文件。
-
+A：容器模式下 .env 文件不会被自动读取。在 Dockerfile 中使用 ENV 指令设置环境变量，而非依赖 .env 文件.
 **Q3：收到"on-demand throughput isn't supported"错误？**
-A：使用 `us.anthropic.claude-*` 推理配置文件替代按需吞吐量。这是区域和模型组合的限制。
-
+A：使用 `us.anthropic.claude-*` 推理配置文件替代按需吞吐量。这是区域和模型组合的限制.
 **Q4：代理名称无效？**
-A：代理名称必须字母开头，仅含字母/数字/下划线，1-48 字符。将连字符改为下划线（如 `my-agent` → `my_agent`）。
-
+A：代理名称必须字母开头，仅含字母/数字/下划线，1-48 字符。将连字符改为下划线（如 `my-agent` → `my_agent`）.
 **Q5：Gateway 返回"Unknown tool"？**
-A：Lambda 函数必须从 `bedrockAgentCoreToolName` 参数中去除 `___` 前缀。检查 Lambda 代码中的工具名处理逻辑。
-
+A：Lambda 函数必须从 `bedrockAgentCoreToolName` 参数中去除 `___` 前缀。检查 Lambda 代码中的工具名处理逻辑.
 ## 已知限制
 
 1. **记忆最终一致性延迟约10秒**：写入后不能立即可读，需等待+验证+重试机制，不适合强一致性场景

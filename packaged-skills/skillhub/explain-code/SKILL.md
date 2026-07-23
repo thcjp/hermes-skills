@@ -26,15 +26,14 @@ description: |-
 tags:
   - Development
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
+
 ---
 # explain-code
 
@@ -51,8 +50,7 @@ tags: "开发工具,代码生成,编程辅助"
 
 ## 核心能力
 
-- 用可视化图表和类比解释代码
-#
+本工具的核心能力包括：用可视化图表和类比解释代码。在解释代码如何工作、教授代码库或用户询问如何工作时使用。具体功能详情请参考下方能力说明表格与使用场景.
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -140,8 +138,7 @@ tags: "开发工具,代码生成,编程辅助"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用explain-code？

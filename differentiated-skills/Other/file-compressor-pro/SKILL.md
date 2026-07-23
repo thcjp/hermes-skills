@@ -3,11 +3,10 @@ slug: file-compressor-pro
 name: file-compressor-pro
 version: 1.0.0
 displayName: 文本语义压缩器(专业版)
-summary: 全功能语义压缩工具，支持L1-L4四级、批量压缩、多模型验证、自定义锚点与质量报告。
+summary: 全功能语义压缩工具，支持L1-L4四级、批量压缩、多模型验证、自定义锚点与质量报告.
 license: Proprietary
 edition: pro
 description: '面向专业场景的全功能语义文本压缩工具，在免费版基础上扩展L3-L4极限压缩、批量压缩流水线、多模型并行验证、自定义锚点策略、跨格式智能优化与压缩质量量化报告等高级能力。核心能力：
-
 
   - L1-L4全级别压缩，从0。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。'
 tags:
@@ -17,18 +16,16 @@ tags:
 - 质量报告
 - 企业Token优化
 tools:
-- - read
+- read
 - exec
 homepage: https://skillhub.cn
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
----
-面向专业场景的全功能语义文本压缩工具。在免费版基础上扩展L3-L4极限压缩、批量压缩流水线、多模型并行验证、自定义锚点策略、跨格式智能优化与压缩质量量化报告等8项高级能力。
 
+---
+面向专业场景的全功能语义文本压缩工具。在免费版基础上扩展L3-L4极限压缩、批量压缩流水线、多模型并行验证、自定义锚点策略、跨格式智能优化与压缩质量量化报告等8项高级能力.
 ## 概述
 本工具在免费版"L1-L2可靠压缩"基础上，新增极限压缩与企业级能力。专业版额外提供：
 
@@ -63,33 +60,28 @@ tags: "工具,效率,自动化"
 | 质量量化报告 | ❌ | ✅ |
 | 压缩历史与版本 | ❌ | ✅ |
 | 优先工单支持 | ❌ | ✅ |
-**技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置。
-
+**技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
-用`input_params`参数进行配置。
-
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志。
+用`input_params`参数进行配置.
+**输入**: 用户提供核心功能执行所需的指令和必要参数.
+**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
-用`config_options`参数进行配置。
-
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志。
+用`config_options`参数进行配置.
+**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+**处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
-用`output_format`参数进行配置。
-
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志。
+用`output_format`参数进行配置.
+**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+**处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全功能语义压缩工、多模型验证、自定义锚点与质量、面向专业场景的全、功能语义文本压缩、在免费版基础上扩、跨格式智能优化与、压缩质量量化报告、等高级能力等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全功能语义压缩工、多模型验证、自定义锚点与质量、面向专业场景的全、功能语义文本压缩、在免费版基础上扩、跨格式智能优化与、压缩质量量化报告、等高级能力等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 使用场景
 ### 场景1：企业知识库批量压缩（知识架构师角色）
 知识架构师需要将10000篇技术文档从L0压缩至L2，降低检索Token消耗：
@@ -197,8 +189,7 @@ file-compressor history rollback --id compress-2024-03-15-001
 file-compressor init --workspace ./compressor --edition pro
 ```
 
-创建专业版目录结构：`batch/`、`reports/`、`history/`、`anchors/`、`strategies/`。
-
+创建专业版目录结构：`batch/`、`reports/`、`history/`、`anchors/`、`strategies/`.
 ### Step 2：配置自定义锚点
 ```bash
 file-compressor anchors add --name "finance-terms" --file ./finance-anchors.yaml
@@ -265,35 +256,25 @@ file-compressor report --last-batch --format html --output ./reports/last.html
 | 历史回滚失败 | 原文已清理 | 检查`history retention`配置，确保保留期足够 | P1 |
 ## 常见问题
 ### Q1：L3-L4压缩可靠性如何？
-A：L3可靠性中等（约85%锚点匹配），L4可靠性低（约70%锚点匹配）。专业版提供多模型验证策略提升可靠性。
-
+A：L3可靠性中等（约85%锚点匹配），L4可靠性低（约70%锚点匹配）。专业版提供多模型验证策略提升可靠性.
 ### Q2：批量压缩支持多少文件？
-A：单批最多10000个文件，无总大小限制（按文件分块处理）。每日配额100批次。
-
+A：单批最多10000个文件，无总大小限制（按文件分块处理）。每日配额100批次.
 ### Q3：多模型验证支持哪些模型？
-A：支持OpenAI GPT系列、Anthropic Claude系列、Google Gemini系列、开源模型（通过Ollama）等主流模型。
-
+A：支持OpenAI GPT系列、Anthropic Claude系列、Google Gemini系列、开源模型（通过Ollama）等主流模型.
 ### Q4：自定义锚点支持哪些规则？
-A：支持正则表达式模式、命名实体识别（NER）、关键词列表、引号包裹内容等多种锚点类型。
-
+A：支持正则表达式模式、命名实体识别（NER）、关键词列表、引号包裹内容等多种锚点类型.
 ### Q5：跨格式策略支持哪些格式？
-A：支持代码（Python/JS/Go/Java等）、JSON、YAML、Markdown、HTML、XML等主流格式。
-
+A：支持代码（Python/JS/Go/Java等）、JSON、YAML、Markdown、HTML、XML等主流格式.
 ### Q6：压缩历史保留多久？
-A：默认90天，可配置最长1年。历史记录包含原文、压缩结果、验证报告、配置参数。
-
+A：默认90天，可配置最长1年。历史记录包含原文、压缩结果、验证报告、配置参数.
 ### Q7：质量报告包含哪些指标？
-A：包含锚点匹配率、语义保留度、信息密度、可读性评分、压缩比、迭代次数、置信度等10+指标。
-
+A：包含锚点匹配率、语义保留度、信息密度、可读性评分、压缩比、迭代次数、置信度等10+指标.
 ### Q8：能否在CI/CD流水线中使用？
-A：完全支持。批量压缩设计为幂等，配置文件可版本化，输出可缓存。建议在GitHub Actions或GitLab CI中作为构建步骤。
-
+A：完全支持。批量压缩设计为幂等，配置文件可版本化，输出可缓存。建议在GitHub Actions或GitLab CI中作为构建步骤.
 ### Q9：压缩如何避免敏感信息泄露？
-A：所有压缩在本地执行（除调用LLM API外），不上传至任何第三方服务。敏感字段可通过`preserve_keys`配置排除。
-
+A：所有压缩在本地执行（除调用LLM API外），不上传至任何第三方服务。敏感字段可通过`preserve_keys`配置排除.
 ### Q10：多模型验证会增加多少成本？
-A：每个文件压缩成本 = 压缩1次 + 验证N次（N=模型数）。3模型验证约4-5次LLM调用，比单模型多2-3倍成本。
-
+A：每个文件压缩成本 = 压缩1次 + 验证N次（N=模型数）。3模型验证约4-5次LLM调用，比单模型多2-3倍成本.
 ## 版本升级迁移指南
 | 版本 | 变更 | 迁移建议 |
 |---:|---:|---:|
@@ -347,8 +328,7 @@ retrieved = rag.retrieve(compressed, query)
 | 100KB | 12s | 18s | 28s | 38s |
 | 1MB | 85s | 125s | 195s | 265s |
 
-基准条件：GPT-4o模型、单文件、单模型验证。
-
+基准条件：GPT-4o模型、单文件、单模型验证.
 ## 错误处理补充
 所有错误返回结构化格式：
 
@@ -364,8 +344,7 @@ retrieved = rag.retrieve(compressed, query)
 }
 ```
 
-错误码列表：`ANCHOR_MISMATCH`、`ITERATION_LIMIT_EXCEEDED`、`MODEL_API_ERROR`、`FORMAT_UNSUPPORTED`、`BATCH_PARTIAL_FAILURE`、`CHECKPOINT_CORRUPTED`、`CONFIG_VALIDATION_ERROR`。
-
+错误码列表：`ANCHOR_MISMATCH`、`ITERATION_LIMIT_EXCEEDED`、`MODEL_API_ERROR`、`FORMAT_UNSUPPORTED`、`BATCH_PARTIAL_FAILURE`、`CHECKPOINT_CORRUPTED`、`CONFIG_VALIDATION_ERROR`.
 ## 专业版特性
 本专业版相比免费版新增以下8项能力：
 
@@ -384,8 +363,7 @@ retrieved = rag.retrieve(compressed, query)
 | 免费体验版 | ¥0 | L1-L2压缩+基础锚点+迭代验证 | 个人开发者提示词优化 |
 | 收费专业版 | ¥29.9/月 | 全功能+L3-L4+批量+多模型+自定义锚点+跨格式+质量报告+优先支持 | 团队/企业知识库优化 |
 
-专业版通过SkillHub SkillPay发布，提供工单优先响应与SLA保障。
-
+专业版通过SkillHub SkillPay发布，提供工单优先响应与SLA保障.
 ## 依赖说明
 ### 运行环境
 - **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）

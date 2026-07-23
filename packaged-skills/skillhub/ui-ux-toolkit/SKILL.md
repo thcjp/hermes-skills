@@ -24,15 +24,14 @@ tags:
   - 技术栈
   - 批量处理
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
+
 ---
 # UI/UX设计工具箱专业版
 
@@ -65,7 +64,7 @@ tags: "UI设计,前端,设计"
 | `web` | Web界面规范 | aria, focus, 键盘, 语义化 |
 | `prompt` | AI提示词与CSS关键词 | (风格名称) |
 
-**输入**: 用户提供全域设计数据库所需的指令和必要参数。
+**输入**: 用户提供全域设计数据库所需的指令和必要参数.
 **输出**: 返回全域设计数据库的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`批量搜索与多格式输出`的配置文档进行参数调优
 ### 2. 全技术栈支持
@@ -82,7 +81,7 @@ tags: "UI设计,前端,设计"
 | `shadcn` | shadcn/ui组件, 主题, 表单 |
 | `jetpack-compose` | Composables, Modifiers, State Hoisting |
 
-**输出**: 返回全技术栈支持的处理结果,包含执行状态码、结果数据和执行日志。
+**输出**: 返回全技术栈支持的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. 设计系统持久化(核心高级功能)
 通过 `--persist` 标志将设计系统保存为文件,实现跨会话一致性:
 
@@ -105,9 +104,8 @@ design-system/
     └── profile.md     # 个人中心页面覆盖规则
 ```
 
-**层级检索机制**:构建特定页面时,优先检查 `pages/<page>.md`。若存在,其规则覆盖MASTER文件;若不存在,则使用MASTER规则。
-
-**输入**: 用户提供设计系统持久化(核心高级功能)所需的指令和必要参数。
+**层级检索机制**:构建特定页面时,优先检查 `pages/<page>.md`。若存在,其规则覆盖MASTER文件;若不存在,则使用MASTER规则.
+**输入**: 用户提供设计系统持久化(核心高级功能)所需的指令和必要参数.
 ### 4. 推理规则引擎
 专业版集成 `ui-reasoning.csv` 推理规则,在设计系统生成时自动应用:
 
@@ -121,7 +119,7 @@ python3 （请参考skill目录中的脚本文件） "healthcare SaaS" --design-
 - 配色方案及适用原因
 - 反模式警示(应避免的设计决策)
 
-**输入**: 用户提供推理规则引擎所需的指令和必要参数。
+**输入**: 用户提供推理规则引擎所需的指令和必要参数.
 ### 5. 批量搜索与多格式输出
 
 ```bash
@@ -139,8 +137,7 @@ python3 （请参考skill目录中的脚本文件） "fintech" --domain color -n
 
 ### 场景一:企业级多页面应用设计系统管理
 
-一家金融科技公司需要为包含仪表盘、结算、个人中心等10+页面的Web应用建立统一设计系统。
-
+一家金融科技公司需要为包含仪表盘、结算、个人中心等10+页面的Web应用建立统一设计系统.
 ```bash
 # 第1步:生成并持久化MASTER设计系统
 python3 （请参考skill目录中的脚本文件） "fintech SaaS dashboard professional" \
@@ -161,17 +158,16 @@ python3 （请参考skill目录中的脚本文件） "state hooks performance" -
 层级检索使用提示(提供给Agent的上下文):
 
 ```text
-我正在构建 dashboard 页面。请读取 design-system/MASTER.md。
-同时检查 design-system/pages/dashboard.md 是否存在。
-如果页面文件存在,优先使用其规则。
-如果不存在,则使用 MASTER 规则。
+我正在构建 dashboard 页面。请读取 design-system/MASTER.md.
+同时检查 design-system/pages/dashboard.md 是否存在.
+如果页面文件存在,优先使用其规则.
+如果不存在,则使用 MASTER 规则.
 现在开始生成代码...
 ```
 
 ### 场景二:跨技术栈团队统一设计规范
 
-团队同时维护Web(React)、iOS(SwiftUI)、Android(Jetpack Compose)三端,需要统一设计语言。
-
+团队同时维护Web(React)、iOS(SwiftUI)、Android(Jetpack Compose)三端,需要统一设计语言.
 ```bash
 # 统一的设计系统
 python3 （请参考skill目录中的脚本文件） "enterprise SaaS professional" --design-system --persist -p "UnifiedApp"
@@ -326,13 +322,11 @@ winget install Python.Python.3.12
 
 ### API Key 配置
 
-本Skill的CLI搜索工具基于本地数据文件运行,无需额外API Key。设计建议的生成由Agent内置LLM驱动。推理规则引擎读取本地CSV文件,不依赖外部API。
-
+本Skill的CLI搜索工具基于本地数据文件运行,无需额外API Key。设计建议的生成由Agent内置LLM驱动。推理规则引擎读取本地CSV文件,不依赖外部API.
 ### 可用性分类
 
 - **分类**: MD+EXEC()
-- **说明**: 基于Markdown的AI Skill,。核心查询、持久化和批量搜索功能依赖Python CLI脚本执行,需确保exec工具和Python环境可用。设计系统持久化创建的文件建议纳入版本控制以保障团队协作。
-
+- **说明**: 基于Markdown的AI Skill,。核心查询、持久化和批量搜索功能依赖Python CLI脚本执行,需确保exec工具和Python环境可用。设计系统持久化创建的文件建议纳入版本控制以保障团队协作.
 ## 案例展示
 
 ### 企业设计系统配置
@@ -368,27 +362,27 @@ winget install Python.Python.3.12
 # ...
 ### Q1: 专业版是否兼容免费版的查询语法?
 # ...
-完全兼容。专业版支持免费版的所有命令和参数,免费版用户可无缝升级。专业版新增 `--persist`、`--page`、`-f markdown`、`--domain react/web/chart/prompt` 等高级参数。
+完全兼容。专业版支持免费版的所有命令和参数,免费版用户可无缝升级。专业版新增 `--persist`、`--page`、`-f markdown`、`--domain react/web/chart/prompt` 等高级参数.
 # ...
 ### Q2: MASTER和页面覆盖的优先级如何工作?
 # ...
-构建特定页面时:首先检查 `design-system/pages/<page>.md`。若存在,其规则**覆盖**MASTER文件中的对应规则;若不存在,则使用MASTER规则。页面覆盖文件只需定义与MASTER不同的规则。
+构建特定页面时:首先检查 `design-system/pages/<page>.md`。若存在,其规则**覆盖**MASTER文件中的对应规则;若不存在,则使用MASTER规则。页面覆盖文件只需定义与MASTER不同的规则.
 # ...
 ### Q3: 如何在团队中共享设计系统?
 # ...
-将 `design-system/` 目录纳入版本控制(Git),团队成员克隆仓库后即可使用相同的MASTER和页面覆盖规则。每次修改设计系统后提交变更,确保全员设计决策一致。
+将 `design-system/` 目录纳入版本控制(Git),团队成员克隆仓库后即可使用相同的MASTER和页面覆盖规则。每次修改设计系统后提交变更,确保全员设计决策一致.
 # ...
 ### Q4: 推理规则引擎如何工作?
 # ...
-推理引擎读取 `ui-reasoning.csv` 中定义的规则,在生成设计系统时自动匹配产品类型、行业和风格关键词,选择优秀设计方案并解释选择理由,同时标注应避免的反模式。
+推理引擎读取 `ui-reasoning.csv` 中定义的规则,在生成设计系统时自动匹配产品类型、行业和风格关键词,选择优秀设计方案并解释选择理由,同时标注应避免的反模式.
 # ...
 ### Q5: 支持哪些输出格式?
 # ...
-专业版支持纯文本(默认)和Markdown格式输出。使用 `-f markdown` 获取格式化输出,便于直接粘贴到文档或Wiki中。
+专业版支持纯文本(默认)和Markdown格式输出。使用 `-f markdown` 获取格式化输出,便于直接粘贴到文档或Wiki中.
 # ...
 ### Q6: 批量搜索如何提升效率?
 # ...
-通过组合多个域的搜索结果,一次性获取完整的设计系统建议。例如,同时搜索style + typography + color + landing + chart五个域,获取从风格到图表的完整推荐。
+通过组合多个域的搜索结果,一次性获取完整的设计系统建议。例如,同时搜索style + typography + color + landing + chart五个域,获取从风格到图表的完整推荐.
 # ...
 ## 错误处理
 # ...

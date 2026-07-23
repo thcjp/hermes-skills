@@ -7,19 +7,18 @@ summary: "提取汇总Reddit趋势话题/反复问题/内容空白"
 license: "Proprietary"
 description: |-
   Extracts and summarizes trending topics, recurring issues, and content
-  gaps across targeted Reddi。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。
+  gaps across targeted Reddi。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
   - Integrations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+
 ---
 # Reddit Research
 
@@ -43,7 +42,9 @@ tags: "搜索,检索,工具"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 提取汇总Reddit | 目标数据与配置参数 | 处理结果与执行状态 |
+| 反复问题 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 内容空白 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -144,8 +145,7 @@ tags: "搜索,检索,工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Reddit Research？

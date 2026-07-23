@@ -6,10 +6,10 @@ displayName: "AWS Infra Inspector"
 summary: "通过AWS CLI执行只读基础设施查询,覆盖实例清单、健康检查、安全审计、成本分析、变更追踪五大场景"
 license: "Proprietary"
 description: |-
-  AWS基础设施只读检查工具。通过AWS CLI执行read-only查询,帮助开发者和管理员快速了解云资源状态。
+  AWS基础设施只读检查工具。通过AWS CLI执行read-only查询,帮助开发者和管理员快速了解云资源状态.
   覆盖五大场景:EC2/S3/RDS资源清单、实例健康检查与CloudWatch告警、IAM用户与安全组审计、
-  Cost Explorer成本分析、CloudTrail变更追踪。默认只读模式,所有变更操作需显式确认并使用--dry-run。
-  适用于日常运维、安全审计、成本优化和故障排查场景。
+  Cost Explorer成本分析、CloudTrail变更追踪。默认只读模式,所有变更操作需显式确认并使用--dry-run.
+  适用于日常运维、安全审计、成本优化和故障排查场景.
 tags:
   - Cloud
   - DevOps
@@ -22,13 +22,11 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "AWS,云计算,DevOps"
+
 ---
 # AWS Infra Inspector
 
-通过AWS CLI执行只读基础设施查询,覆盖五大运维场景。
-
+通过AWS CLI执行只读基础设施查询,覆盖五大运维场景.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -69,7 +67,7 @@ tags: "AWS,云计算,DevOps"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### 1. 资源清单查询 (Inventory)
@@ -92,7 +90,7 @@ export API_KEY="your_api_key_here"
 - **ELB目标健康**: 检查负载均衡器目标组的健康状态
   `aws elbv2 describe-target-health --target-group-arn arn:aws:elasticloadbalancing:REGION:ACCOUNT:targetgroup/TG_NAME/TG_ID`
 
-**输入**: 用户提供健康检查 (Health)所需的指令和必要参数。
+**输入**: 用户提供健康检查 (Health)所需的指令和必要参数.
 ### 3. 安全审计 (Security)
 - **IAM用户列表**: 查询所有IAM用户及其最后登录时间
   `aws iam list-users --query 'Users[].[UserName,CreateDate,PasswordLastUsed]' --output table`
@@ -113,10 +111,9 @@ export API_KEY="your_api_key_here"
 - **成本预测**: 获取本月剩余时间的成本预测
   `aws ce get-cost-forecast --time-period Start=2024-01-15,End=2024-02-15 --granularity MONTHLY --metric BLENDED_COST`
 
-**输入**: 用户提供成本分析 (Costs)所需的指令和必要参数。
-**处理**: 解析成本分析 (Costs)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回成本分析 (Costs)的处理结果,包含执行状态码、结果数据和执行日志。
-
+**输入**: 用户提供成本分析 (Costs)所需的指令和必要参数.
+**处理**: 解析成本分析 (Costs)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回成本分析 (Costs)的处理结果,包含执行状态码、结果数据和执行日志.
 ### 5. 变更追踪 (Changes)
 - **CloudTrail事件查询**: 查询特定的API调用事件(如谁启动了实例)
   `aws cloudtrail lookup-events --lookup-attributes AttributeKey=EventName,AttributeValue=RunInstances --max-results 20`
@@ -210,8 +207,7 @@ aws ec2 describe-instance-status --include-all-instances \
 +----------------------+-------------------+-----------------+--------------------+
 ```
 
-**分析**: `i-0def456ghi789123`的实例状态为`impaired`,需要进一步检查;`i-0ghi789jkl123456`的系统状态为`insufficient`,可能需要重启或联系AWS支持。
-
+**分析**: `i-0def456ghi789123`的实例状态为`impaired`,需要进一步检查;`i-0ghi789jkl123456`的系统状态为`insufficient`,可能需要重启或联系AWS支持.
 ### 案例2: 安全合规审计 (检查开放的安全组)
 **场景**: 安全团队需要检查是否有安全组对互联网开放了敏感端口
 
@@ -234,8 +230,7 @@ aws ec2 describe-security-groups \
 +------------+-----------------+----------+--------+-------------+------------+
 ```
 
-**分析**: `db-sg`安全组对0.0.0.0/0开放了3306端口(MySQL),这是**高风险**配置,数据库不应直接暴露在公网。建议立即修改安全组规则,仅允许应用服务器的内网IP访问。
-
+**分析**: `db-sg`安全组对0.0.0.0/0开放了3306端口(MySQL),这是**高风险**配置,数据库不应直接暴露在公网。建议立即修改安全组规则,仅允许应用服务器的内网IP访问.
 ### 案例3: 月度成本分析 (按服务分组)
 **场景**: 财务团队需要了解上个月各AWS服务的成本分布
 
@@ -262,8 +257,7 @@ aws ce get-cost-and-usage \
 +------------------------+----------------------------+
 ```
 
-**分析**: EC2成本占比最高(57%),建议检查是否有闲置实例可优化;RDS成本较高(27%),可考虑预留实例或Savings Plans降低成本。
-
+**分析**: EC2成本占比最高(57%),建议检查是否有闲置实例可优化;RDS成本较高(27%),可考虑预留实例或Savings Plans降低成本.
 ## 异常处理
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
@@ -307,7 +301,7 @@ aws ec2 describe-instances
 # 配置多个Profile (在~/.aws/credentials中)
 # [production]
 # aws_access_key_id = AKIAXXXXXXXX
-# aws_secret_access_key = xxxxxxxxxxxxxx
+# aws_secret_access_key = YOUR_API_KEY
 # [staging]
 # aws_access_key_id = AKIAYYYYYYYY
 # aws_secret_access_key = yyyyyyyyyyyy

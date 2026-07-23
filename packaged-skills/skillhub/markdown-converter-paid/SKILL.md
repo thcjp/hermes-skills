@@ -8,7 +8,7 @@ license: "Proprietary"
 edition: "pro"
 description: |-
   Markdown转换器专业版为企业与内容团队提供系统化的文档转换解决方案。在免费版基础转换能力之上,增加批量处理、目录扫描、自定义输出模板、
-  元数据提取、文档质量审计与CI/CD集成能力。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
+  元数据提取、文档质量审计与CI/CD集成能力。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
   - Markdown
   - 文档转换
@@ -17,15 +17,14 @@ tags:
   - 自动化
   - CI/CD
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Markdown,文档,工具"
+
 ---
 # Markdown转换器专业版
 
@@ -176,7 +175,7 @@ quality_audit = {
 }
 ```
 
-**输入**: 用户提供文档质量审计所需的指令和必要参数。
+**输入**: 用户提供文档质量审计所需的指令和必要参数.
 **输出**: 返回文档质量审计的处理结果,包含执行状态码、结果数据和执行日志。### 转换历史与版本管理
 ```python
 # 转换历史管理
@@ -196,8 +195,7 @@ history_config = {
 ## 适用场景
 
 ### 场景一:企业文档库数字化
-需求:企业需要将历史文档库(数千文件)批量转为Markdown。
-
+需求:企业需要将历史文档库(数千文件)批量转为Markdown.
 ```bash
 # 批量转换企业文档库
 python3 batch_convert.py \
@@ -235,8 +233,7 @@ company/markdown/
 ```
 
 ### 场景二:团队知识库建设
-需求:技术团队需要将各类文档统一转为Markdown建立知识库。
-
+需求:技术团队需要将各类文档统一转为Markdown建立知识库.
 ```python
 # 知识库建设配置
 knowledge_base = {
@@ -259,8 +256,7 @@ knowledge_base = {
 ```
 
 ### 场景三:技术文档自动化处理
-需求:将API文档、设计文档等自动转为Markdown并集成到文档站。
-
+需求:将API文档、设计文档等自动转为Markdown并集成到文档站.
 ```bash
 # CI/CD集成的文档处理
 python3 process_docs.py \
@@ -360,7 +356,7 @@ python3 audit_conversion.py \
 | Git | 版本控制 | 推荐 | git-scm.com |
 
 ### API Key 配置
-- 本Skill基于指令驱动驱动,无需额外API Key
+- 本Skill基于指令驱动驱动,基础LLM由Agent平台提供
 - 基础转换使用本地工具,无需云端服务
 - 如使用Azure文档智能,需配置Azure端点与API Key
 - 企业版支持密钥管理与轮换
@@ -461,20 +457,15 @@ jobs:
 ## 常见问题
 
 ### Q1: 如何从免费版迁移至PRO版?
-A: PRO版完全兼容免费版。现有的转换命令与选项可直接使用。安装PRO版增强包即可启用批量处理、模板与审计功能。
-
+A: PRO版完全兼容免费版。现有的转换命令与选项可直接使用。安装PRO版增强包即可启用批量处理、模板与审计功能.
 ### Q2: 批量转换时如何处理大文件?
-A: PRO版支持大文件分块处理,自动跳过内存不足的文件并记录到错误日志。可通过`--max-file-size`参数限制单文件大小。
-
+A: PRO版支持大文件分块处理,自动跳过内存不足的文件并记录到错误日志。可通过`--max-file-size`参数限制单文件大小.
 ### Q3: 如何自定义输出格式?
-A: 使用自定义模板文件(`--template`),可定义header、body、footer结构与元数据字段。模板支持变量插值。
-
+A: 使用自定义模板文件(`--template`),可定义header、body、footer结构与元数据字段。模板支持变量插值.
 ### Q4: 转换历史如何管理?
-A: PRO版自动记录每次转换的元数据(源文件、时间、格式、质量分等),存储在数据库中。支持差异对比与版本回滚。
-
+A: PRO版自动记录每次转换的元数据(源文件、时间、格式、质量分等),存储在数据库中。支持差异对比与版本回滚.
 ### Q5: 支持哪些CI/CD平台?
-A: 支持GitHub Actions、GitLab CI、Jenkins等主流CI/CD平台。提供标准命令行接口与配置文件,易于集成到任意流水线。
-
+A: 支持GitHub Actions、GitLab CI、Jenkins等主流CI/CD平台。提供标准命令行接口与配置文件,易于集成到任意流水线.
 ## 错误处理
 
 | 错误场景(续)| 原因 | 处理方式 |

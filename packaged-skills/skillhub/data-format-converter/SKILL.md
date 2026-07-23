@@ -6,7 +6,7 @@ displayName: "数据格式转换器"
 summary: "在CSV、JSON、XML、YAML、TOML格式间高效互转，支持批量处理与嵌套结构处理"
 license: "Proprietary"
 description: |-
-  数据格式转换器——在CSV、JSON、XML、YAML、TOML等主流数据格式间高效转换。
+  数据格式转换器——在CSV、JSON、XML、YAML、TOML等主流数据格式间高效转换.
   核心能力包括：
   - CSV与JSON互转（支持嵌套结构展开与扁平化）
   - JSON与YAML互转（保留注释与锚点引用）
@@ -27,8 +27,7 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob"]
-tags: "数据处理,数据分析,工具"
+
 ---
 # 数据格式转换器
 
@@ -53,8 +52,7 @@ tags: "数据处理,数据分析,工具"
 
 ## 概述
 
-在不同数据格式间高效转换：CSV、JSON、XML、YAML、TOML。支持单文件转换与目录级批量处理，自动处理编码、嵌套结构、特殊字符等常见问题。
-
+在不同数据格式间高效转换：CSV、JSON、XML、YAML、TOML。支持单文件转换与目录级批量处理，自动处理编码、嵌套结构、特殊字符等常见问题.
 ## 依赖说明
 
 ### 运行环境
@@ -76,12 +74,11 @@ tags: "数据处理,数据分析,工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### CSV与JSON互转
-**CSV转JSON**：使用 `csv.DictReader()` 逐行读取为字典，通过 `json.dumps(ensure_ascii=False, indent=2)` 输出UTF-8中文JSON。
-
+**CSV转JSON**：使用 `csv.DictReader()` 逐行读取为字典，通过 `json.dumps(ensure_ascii=False, indent=2)` 输出UTF-8中文JSON.
 ```python
 import csv, json
 # ...
@@ -92,8 +89,7 @@ with open('data.csv', 'r', encoding='utf-8') as f:
 json_str = json.dumps(rows, ensure_ascii=False, indent=2)
 ```
 
-**JSON转CSV**：使用 `csv.DictWriter()` 写入，需指定 `fieldnames`。嵌套JSON需先扁平化（如 `{"a": {"b": 1}}` → `{"a.b": 1}`）。
-
+**JSON转CSV**：使用 `csv.DictWriter()` 写入，需指定 `fieldnames`。嵌套JSON需先扁平化（如 `{"a": {"b": 1}}` → `{"a.b": 1}`）.
 ```python
 import csv, json
 # ...
@@ -107,11 +103,10 @@ with open('output.csv', 'w', encoding='utf-8-sig', newline='') as f:
     writer.writerows(data)
 ```
 
-**输入**: 用户提供CSV与JSON互转所需的指令和必要参数。
+**输入**: 用户提供CSV与JSON互转所需的指令和必要参数.
 **处理**: 解析CSV与JSON互转的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### JSON与YAML互转
 
-**JSON转YAML**：使用 `yaml.safe_dump()` 输出，`default_flow_style=False` 使用块样式（更易读），`allow_unicode=True` 保留中文。
-
+**JSON转YAML**：使用 `yaml.safe_dump()` 输出，`default_flow_style=False` 使用块样式（更易读），`allow_unicode=True` 保留中文.
 ```python
 import yaml, json
 # ...
@@ -121,8 +116,7 @@ with open('data.json', 'r', encoding='utf-8') as f:
 yaml_str = yaml.safe_dump(data, default_flow_style=False, allow_unicode=True, sort_keys=False)
 ```
 
-**YAML转JSON**：使用 `yaml.safe_load()` 解析（安全加载，不执行任意Python对象）。
-
+**YAML转JSON**：使用 `yaml.safe_load()` 解析（安全加载，不执行任意Python对象）.
 ```python
 import yaml, json
 # ...
@@ -133,8 +127,7 @@ json_str = json.dumps(data, ensure_ascii=False, indent=2)
 ```
 
 ### XML与JSON互转
-**XML转JSON**：使用 `xmltodict.parse()` 将XML解析为有序字典，属性以 `@` 前缀标记。
-
+**XML转JSON**：使用 `xmltodict.parse()` 将XML解析为有序字典，属性以 `@` 前缀标记.
 ```python
 import xmltodict, json
 # ...
@@ -145,8 +138,7 @@ data = xmltodict.parse(xml_str)
 json_str = json.dumps(data, ensure_ascii=False, indent=2)
 ```
 
-**JSON转XML**：使用 `xmltodict.unparse()` 将字典转回XML，`pretty=True` 格式化输出。
-
+**JSON转XML**：使用 `xmltodict.unparse()` 将字典转回XML，`pretty=True` 格式化输出.
 ```python
 import xmltodict, json
 # ...
@@ -161,8 +153,7 @@ xml_str = xmltodict.unparse(data, pretty=True)
 - 关键参数: `xml与json互转` 选项
 
 ### TOML与JSON互转
-**TOML转JSON**：使用 `toml.load()` 解析TOML文件，支持表数组和嵌套表。
-
+**TOML转JSON**：使用 `toml.load()` 解析TOML文件，支持表数组和嵌套表.
 ```python
 import toml, json
 # ...
@@ -172,8 +163,7 @@ with open('data.toml', 'r', encoding='utf-8') as f:
 json_str = json.dumps(data, ensure_ascii=False, indent=2)
 ```
 
-**JSON转TOML**：使用 `toml.dumps()` 输出TOML格式字符串。
-
+**JSON转TOML**：使用 `toml.dumps()` 输出TOML格式字符串.
 ```python
 import toml, json
 # ...
@@ -216,8 +206,7 @@ def batch_convert(input_dir, output_dir, from_fmt, to_fmt):
 | XML | 间接 | 支持 | 间接 | - | 间接 |
 | TOML | 间接 | 支持 | 间接 | 间接 | - |
 
-> "间接"表示先转为JSON再转为目标格式。JSON是所有转换的中心枢纽。
-
+> "间接"表示先转为JSON再转为目标格式。JSON是所有转换的中心枢纽.
 ## 使用流程
 
 1. **识别源格式**：根据文件扩展名（`.csv`/`.json`/`.yaml`/`.xml`/`.toml`）确定输入格式
@@ -305,23 +294,17 @@ name = "admin"
 ## 常见问题
 
 ### Q1: JSON转CSV时，JSON值是数组或对象怎么办？
-A: CSV是扁平格式，无法直接表示嵌套结构。需先将嵌套值扁平化（如 `{"a": {"b": 1}}` → `{"a.b": 1}`），或将数组/对象转为JSON字符串存入单元格。
-
+A: CSV是扁平格式，无法直接表示嵌套结构。需先将嵌套值扁平化（如 `{"a": {"b": 1}}` → `{"a.b": 1}`），或将数组/对象转为JSON字符串存入单元格.
 ### Q2: 转换后中文变成 `\u5f20\u4e09` 怎么办？
-A: 输出JSON时设置 `ensure_ascii=False`，如 `json.dumps(data, ensure_ascii=False, indent=2)`。YAML设置 `allow_unicode=True`。
-
+A: 输出JSON时设置 `ensure_ascii=False`，如 `json.dumps(data, ensure_ascii=False, indent=2)`。YAML设置 `allow_unicode=True`.
 ### Q3: XML的属性和子元素在JSON中如何区分？
-A: `xmltodict.parse()` 默认将XML属性加 `@` 前缀。如 `<user id="1"><name>张三</name></user>` 转为 `{"user": {"@id": "1", "name": "张三"}}`。
-
+A: `xmltodict.parse()` 默认将XML属性加 `@` 前缀。如 `<user id="1"><name>张三</name></user>` 转为 `{"user": {"@id": "1", "name": "张三"}}`.
 ### Q4: YAML转JSON时遇到 `!!python/object` 标签怎么办？
-A: 这是非安全YAML标签，可能含恶意代码。务必使用 `yaml.safe_load()` 而非 `yaml.load()`，`safe_load` 会拒绝执行任意Python对象。
-
+A: 这是非安全YAML标签，可能含恶意代码。务必使用 `yaml.safe_load()` 而非 `yaml.load()`，`safe_load` 会拒绝执行任意Python对象.
 ### Q5: TOML文件中的表数组 `[[users]]` 转JSON后是什么结构？
-A: 转为JSON数组。多个 `[[users]]` 块合并为 `"users": [{"name": "admin"}, {"name": "guest"}]`。
-
+A: 转为JSON数组。多个 `[[users]]` 块合并为 `"users": [{"name": "admin"}, {"name": "guest"}]`.
 ### Q6: 批量转换时如何保持文件名一致？
-A: 使用 `Path.stem` 获取文件名（不含扩展名），拼接目标扩展名：`output_file = output_path / f'{file.stem}.{to_fmt}'`。
-
+A: 使用 `Path.stem` 获取文件名（不含扩展名），拼接目标扩展名：`output_file = output_path / f'{file.stem}.{to_fmt}'`.
 ## 已知限制
 
 - CSV是扁平格式，无法无损表示JSON的嵌套结构，需扁平化或字符串化处理

@@ -8,8 +8,8 @@ license: "Proprietary"
 description: |-
   飞书机器人发送文件附件技能。覆盖普通文件(HTML/ZIP/PDF/代码文件等)与图片两类链路,
   解决"本地图片路径被发成路径文本"的常见故障,提供脚本化与手动两步两种调用方式,
-  适配中国版飞书(open.feishu.cn)与国际版 Lark(open.larksuite.com)。
-  适用于自动化工作流、企业团队通知与开发者文件分发场景。
+  适配中国版飞书(open.feishu.cn)与国际版 Lark(open.larksuite.com).
+  适用于自动化工作流、企业团队通知与开发者文件分发场景.
 tags:
   - 研发工具
   - Automation
@@ -21,15 +21,12 @@ homepage: "https://skillhub.cn"
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+
 ---
 # feishu-send-file
 
-飞书机器人发送文件附件需要区分两条链路:普通文件走 `im/v1/files` 拿 `file_key` 后发 `msg_type=file`;图片走 `im/v1/images` 拿 `image_key` 后发 `msg_type=image`。混用会导致用户在飞书里看到路径文本而不是文件本体。
-
-本技能封装两条链路的稳定调用方式,并提供针对"本地图片路径被发成路径文本"故障的可靠补救脚本。
-
+飞书机器人发送文件附件需要区分两条链路:普通文件走 `im/v1/files` 拿 `file_key` 后发 `msg_type=file`;图片走 `im/v1/images` 拿 `image_key` 后发 `msg_type=image`。混用会导致用户在飞书里看到路径文本而不是文件本体.
+本技能封装两条链路的稳定调用方式,并提供针对"本地图片路径被发成路径文本"故障的可靠补救脚本.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -70,7 +67,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 - 普通文件两步发送:上传到 `im/v1/files` 获取 `file_key`,再用 `msg_type=file` 推送到指定 `open_id` 或 `chat_id`
@@ -151,10 +148,8 @@ curl -s -X POST "https://open.feishu.cn/open-apis/im/v1/messages?receive_id_type
 
 ### 何时切换到图片链路
 
-当本地图片路径(尤其是 `/root/myfiles/...`)通过 `message` 工具 `media` 参数发送后,用户在飞书里看到的是 `📎 /root/myfiles/xxx.png` 路径文本而不是图片本体,说明本地媒体上传链路已降级为路径回显。此时不要重试同一参数组合,直接改走本技能的稳定图片上传脚本。
-
-关键判断:`messageId` 返回成功不等于用户真的看到图片。唯一成功标准是用户在飞书里实际看到图片本体。
-
+当本地图片路径(尤其是 `/root/myfiles/...`)通过 `message` 工具 `media` 参数发送后,用户在飞书里看到的是 `📎 /root/myfiles/xxx.png` 路径文本而不是图片本体,说明本地媒体上传链路已降级为路径回显。此时不要重试同一参数组合,直接改走本技能的稳定图片上传脚本.
+关键判断:`messageId` 返回成功不等于用户真的看到图片。唯一成功标准是用户在飞书里实际看到图片本体.
 ### 推荐脚本
 
 ```bash
@@ -182,8 +177,7 @@ python3 （请参考skill目录中的脚本文件） /root/myfiles/demo.png ou_x
 - 普通文件:`im/v1/files` 获取 `file_key`,`msg_type=file`
 - 图片:`im/v1/images` 获取 `image_key`,`msg_type=image`
 
-两条链路不可混用。把本地路径直接塞给 `msg_type=file` 的 content 字段只会回显路径文本。
-
+两条链路不可混用。把本地路径直接塞给 `msg_type=file` 的 content 字段只会回显路径文本.
 ## 适用场景
 
 ### 场景一:自动化工作流分发产物
@@ -210,8 +204,7 @@ python3 （请参考skill目录中的脚本文件） /root/myfiles/demo.png ou_x
 
 ### 案例一:HTML 报告投递失败排查
 
-某用户反馈飞书机器人发送的 HTML 报告,接收方只看到 `📎 /root/myfiles/report.html` 文本,无法点击预览。
-
+某用户反馈飞书机器人发送的 HTML 报告,接收方只看到 `📎 /root/myfiles/report.html` 文本,无法点击预览.
 排查步骤:
 1. 检查发送链路,确认使用的是 `message` 工具的 `filePath` 参数直传本地路径
 2. 确认这是降级回显,不是真正发送成功
@@ -226,12 +219,10 @@ python3 /root/.skill-platform/workspace/skills/feishu-send-file/（请参考skil
   report.html
 ```
 
-4. 接收方在飞书中收到可预览的 HTML 文件附件,问题解决。
-
+4. 接收方在飞书中收到可预览的 HTML 文件附件,问题解决.
 ### 案例二:群聊批量推送 PDF 周报
 
-需要将 `/root/reports/2026-W28.pdf` 推送到部门群聊 `oc_def678ghi901`。
-
+需要将 `/root/reports/2026-W28.pdf` 推送到部门群聊 `oc_def678ghi901`.
 操作:
 1. 将 `receive_id_type` 从 `open_id` 改为 `chat_id`
 2. 调用:
@@ -245,12 +236,10 @@ python3 /root/.skill-platform/workspace/skills/feishu-send-file/（请参考skil
   2026-W28-周报.pdf
 ```
 
-3. 群聊所有成员收到 PDF 附件。
-
+3. 群聊所有成员收到 PDF 附件.
 ### 案例三:本地图片路径被发成文本的补救
 
-用户通过 `message` 工具 `media` 参数发送 `/root/myfiles/generated-images/banner.png`,飞书侧显示 `📎 /root/myfiles/generated-images/banner.png` 路径文本。
-
+用户通过 `message` 工具 `media` 参数发送 `/root/myfiles/generated-images/banner.png`,飞书侧显示 `📎 /root/myfiles/generated-images/banner.png` 路径文本.
 补救步骤:
 1. 立即停止重试 `media` 参数
 2. 切换到稳定图片脚本:
@@ -263,8 +252,7 @@ python3 /root/.skill-platform/workspace/skills/feishu-send-file/（请参考skil
   secretAbCdEfGhIjKlMnOp
 ```
 
-3. 接收方在飞书中看到图片本体,问题解决。
-
+3. 接收方在飞书中看到图片本体,问题解决.
 ## 异常处理
 
 ### 1. tenant_access_token 获取失败
@@ -320,28 +308,22 @@ python3 /root/.skill-platform/workspace/skills/feishu-send-file/（请参考skil
 
 ### Q1:为什么文件发送返回成功,但用户看不到文件?
 
-`messageId` 返回成功只代表消息已投递到飞书服务器,不代表用户看到文件本体。如果用户看到的是 `📎 /root/...` 路径文本,说明本地路径被降级回显,需要改用本技能的两步上传链路或 `send_image.py` 脚本。
-
+`messageId` 返回成功只代表消息已投递到飞书服务器,不代表用户看到文件本体。如果用户看到的是 `📎 /root/...` 路径文本,说明本地路径被降级回显,需要改用本技能的两步上传链路或 `send_image.py` 脚本.
 ### Q2:普通文件和图片为什么必须走不同链路?
 
-飞书 API 设计上,普通文件走 `im/v1/files` 获取 `file_key`,图片走 `im/v1/images` 获取 `image_key`,两条链路的 `msg_type` 分别为 `file` 与 `image`。混用会导致文件无法正确渲染。
-
+飞书 API 设计上,普通文件走 `im/v1/files` 获取 `file_key`,图片走 `im/v1/images` 获取 `image_key`,两条链路的 `msg_type` 分别为 `file` 与 `image`。混用会导致文件无法正确渲染.
 ### Q3:如何获取接收者的 open_id?
 
-从 inbound_meta 的 `chat_id` 字段获取,格式为 `user:ou_xxx`,取 `ou_xxx` 部分。群聊场景从消息事件的 `event.message.chat_id` 获取,格式为 `oc_xxx`。
-
+从 inbound_meta 的 `chat_id` 字段获取,格式为 `user:ou_xxx`,取 `ou_xxx` 部分。群聊场景从消息事件的 `event.message.chat_id` 获取,格式为 `oc_xxx`.
 ### Q4:国际版 Lark 如何切换域名?
 
-脚本化调用时给 `send_image.py` 传入第四个参数 `lark`。手动调用时将所有 URL 的 `open.feishu.cn` 替换为 `open.larksuite.com`,token 获取接口同步替换。
-
+脚本化调用时给 `send_image.py` 传入第四个参数 `lark`。手动调用时将所有 URL 的 `open.feishu.cn` 替换为 `open.larksuite.com`,token 获取接口同步替换.
 ### Q5:file_type 必须用 stream 吗?
 
-是的。普通文件一律使用 `file_type=stream`,这是飞书 API 对通用文件的统一类型。`pdf`、`opus`、`mp4` 等枚举值仅用于特定媒体类型,普通文件使用会导致上传失败。
-
+是的。普通文件一律使用 `file_type=stream`,这是飞书 API 对通用文件的统一类型。`pdf`、`opus`、`mp4` 等枚举值仅用于特定媒体类型,普通文件使用会导致上传失败.
 ### Q6:机器人首次向用户发消息为什么失败?
 
-飞书要求用户先主动向机器人发过任意消息建立会话,机器人才能主动推送消息。首次发送返回 `230001` 时,需引导用户先向机器人发送一条消息。
-
+飞书要求用户先主动向机器人发过任意消息建立会话,机器人才能主动推送消息。首次发送返回 `230001` 时,需引导用户先向机器人发送一条消息.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

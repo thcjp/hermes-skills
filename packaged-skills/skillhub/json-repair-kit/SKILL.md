@@ -8,7 +8,7 @@ license: "Proprietary"
 description: |-
   JSON修复工具通过Node.js解析将格式错误的"宽松"JSON文件（如含尾逗号、单引号、未加引号键）
   解析为JavaScript对象并重新序列化为有效JSON。支持Trailing Commas、Single Quotes、
-  Unquoted Keys、Comments、Hex/Octal Numbers五种修复模式，内置备份与验证安全机制。
+  Unquoted Keys、Comments、Hex/Octal Numbers五种修复模式，内置备份与验证安全机制.
 tags:
   - 研发工具
   - JSON
@@ -21,8 +21,7 @@ homepage: "https://skillhub.cn"
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # JSON Repair Kit — JSON修复工具
 
@@ -66,21 +65,18 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### Trailing Commas 修复
-修复JSON中多余的尾逗号。将 `{"a": 1,}` 规范化为 `{"a": 1}`，消除解析器拒绝的尾逗号问题。解析为JavaScript对象后重新序列化，自动去除逗号。
-
-**输入**: 用户提供Trailing Commas 修复所需的指令和必要参数。
+修复JSON中多余的尾逗号。将 `{"a": 1,}` 规范化为 `{"a": 1}`，消除解析器拒绝的尾逗号问题。解析为JavaScript对象后重新序列化，自动去除逗号.
+**输入**: 用户提供Trailing Commas 修复所需的指令和必要参数.
 **输出**: 返回Trailing Commas 修复的处理结果,包含执行状态码、结果数据和执行日志。### Single Quotes 修复
-修复JSON中使用单引号而非双引号的问题。将 `{'a': 'b'}` 转换为 `{"a": "b"}`，确保字符串使用标准双引号。通过Node.js的JavaScript对象解析能力自动转换引号风格。
-
-**输入**: 用户提供Single Quotes 修复所需的指令和必要参数。
+修复JSON中使用单引号而非双引号的问题。将 `{'a': 'b'}` 转换为 `{"a": "b"}`，确保字符串使用标准双引号。通过Node.js的JavaScript对象解析能力自动转换引号风格.
+**输入**: 用户提供Single Quotes 修复所需的指令和必要参数.
 **输出**: 返回Single Quotes 修复的处理结果,包含执行状态码、结果数据和执行日志。### Unquoted Keys 修复
-修复JSON中键名未加引号的问题。将 `{key: "value"}` 转换为 `{"key": "value"}`，确保所有键名使用双引号包裹。JavaScript对象语法允许未加引号的键，修复后重新序列化为标准JSON。
-
-**输入**: 用户提供Unquoted Keys 修复所需的指令和必要参数。
+修复JSON中键名未加引号的问题。将 `{key: "value"}` 转换为 `{"key": "value"}`，确保所有键名使用双引号包裹。JavaScript对象语法允许未加引号的键，修复后重新序列化为标准JSON.
+**输入**: 用户提供Unquoted Keys 修复所需的指令和必要参数.
 **输出**: 返回Unquoted Keys 修复的处理结果,包含执行状态码、结果数据和执行日志。### Comments 移除
 
 移除JS风格注释。处理 `//` 行注释（标准Node解析器在字符串外时会剥离行注释），确保输出为纯净JSON。注释在JavaScript对象解析阶段被自动移除。- 验证返回数据的完整性和格式正确性
@@ -110,8 +106,7 @@ export API_KEY="your_api_key_here"
 
 ### 输出说明
 
-Agent将根据指令调用对应能力,返回响应数据。响应格式取决于具体能力点的输出定义。
-
+Agent将根据指令调用对应能力,返回响应数据。响应格式取决于具体能力点的输出定义.
 ## 使用方式
 
 ```bash
@@ -148,12 +143,10 @@ node skills/json-repair-kit/index.js --dir config/ --recursive
 
 ### 如何开始使用？
 
-阅读使用流程章节,按步骤配置环境和参数后即可开始使用。首次使用建议先阅读依赖说明章节确认环境就绪。
-
+阅读使用流程章节,按步骤配置环境和参数后即可开始使用。首次使用建议先阅读依赖说明章节确认环境就绪.
 ### 遇到错误怎么办？
 
-查看错误处理章节,对照错误场景找到对应的处理方式。如错误处理章节未覆盖,收集错误信息后通过已知限制章节了解skill能力边界。
-
+查看错误处理章节,对照错误场景找到对应的处理方式。如错误处理章节未覆盖,收集错误信息后通过已知限制章节了解skill能力边界.
 ## 已知限制
 
 - 仅支持5种修复模式：Trailing Commas、Single Quotes、Unquoted Keys、Comments、Hex/Octal Numbers

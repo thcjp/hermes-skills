@@ -3,7 +3,7 @@ slug: google-workspace-toolkit-free
 name: google-workspace-toolkit-free
 version: 1.0.0
 displayName: 谷歌办公工具接口免费版
-summary: 免配置云控制台的Google办公工具接口,OAuth登录即用,支持Gmail、日历、Drive核心工具调用。
+summary: 免配置云控制台的Google办公工具接口,OAuth登录即用,支持Gmail、日历、Drive核心工具调用.
 license: Proprietary
 edition: free
 description: '谷歌办公工具接口免费版,通过工具协议直接调用 Google Workspace 服务,无需创建云控制台项目,OAuth 登录即可使用。核心能力:
@@ -17,7 +17,6 @@ description: '谷歌办公工具接口免费版,通过工具协议直接调用 G
   - Google Drive 文件搜索与下载
 
   - 通过工具协议统一调用,无需管理多个 SDK
-
 
   适用场景:
 
@@ -33,23 +32,20 @@ tags:
 - OAuth认证
 - 个人效率
 tools:
-- - read
+- read
 - exec
 homepage: https://skillhub.cn
 pricing_tier: "L1-入门级"
 pricing_model: per_use
 suggested_price: "9.9 CNY/per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+
 ---
 # 谷歌办公工具接口 - 免费版
 
 ## 概述
 
-谷歌办公工具接口免费版是一款零云控制台配置的 Google Workspace 访问工具。传统方式使用 Google API 需要在云控制台创建项目、启用 API、创建 OAuth 凭据、下载密钥文件、配置回调地址等繁琐步骤。本工具完全跳过这些流程,只需用 Google 账号 OAuth 登录,即可通过工具协议直接调用 Gmail、日历、Drive 等核心服务。
-
-本版本适合个人用户、轻量办公场景以及对云控制台配置不熟悉的用户,几分钟内即可开始使用。
-
+谷歌办公工具接口免费版是一款零云控制台配置的 Google Workspace 访问工具。传统方式使用 Google API 需要在云控制台创建项目、启用 API、创建 OAuth 凭据、下载密钥文件、配置回调地址等繁琐步骤。本工具完全跳过这些流程,只需用 Google 账号 OAuth 登录,即可通过工具协议直接调用 Gmail、日历、Drive 等核心服务.
+本版本适合个人用户、轻量办公场景以及对云控制台配置不熟悉的用户,几分钟内即可开始使用.
 ## 核心能力
 
 ### 零配置快速接入
@@ -61,10 +57,9 @@ tags: "工具,效率,自动化"
 - 无需配置回调地址
 - 只需 Google 账号登录授权
 
-**输入**: 用户提供零配置快速接入所需的指令和必要参数。
-**处理**: 解析零配置快速接入的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回零配置快速接入的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供零配置快速接入所需的指令和必要参数.
+**处理**: 解析零配置快速接入的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回零配置快速接入的响应数据,包含状态码、结果和日志.
 ### Gmail 邮件工具
 
 - `gmail.search`:搜索邮件,支持 Gmail 原生语法
@@ -72,10 +67,9 @@ tags: "工具,效率,自动化"
 - `gmail.send`:发送邮件
 - `gmail.createDraft`:创建草稿
 
-**输入**: 用户提供Gmail 邮件工具所需的指令和必要参数。
-**处理**: 解析Gmail 邮件工具的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回Gmail 邮件工具的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供Gmail 邮件工具所需的指令和必要参数.
+**处理**: 解析Gmail 邮件工具的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回Gmail 邮件工具的响应数据,包含状态码、结果和日志.
 ### Calendar 日历工具
 
 - `calendar.list`:列出所有日历
@@ -83,36 +77,32 @@ tags: "工具,效率,自动化"
 - `calendar.createEvent`:创建日历事件
 - `calendar.findFreeTime`:查找空闲时间段
 
-**输入**: 用户提供Calendar 日历工具所需的指令和必要参数。
-**处理**: 解析Calendar 日历工具的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回Calendar 日历工具的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供Calendar 日历工具所需的指令和必要参数.
+**处理**: 解析Calendar 日历工具的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回Calendar 日历工具的响应数据,包含状态码、结果和日志.
 ### Drive 文件工具
 
 - `drive.search`:搜索云端文件
 - `drive.downloadFile`:下载文件到本地
 
-**输入**: 用户提供Drive 文件工具所需的指令和必要参数。
-**处理**: 解析Drive 文件工具的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回Drive 文件工具的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供Drive 文件工具所需的指令和必要参数.
+**处理**: 解析Drive 文件工具的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回Drive 文件工具的响应数据,包含状态码、结果和日志.
 ### 认证管理
 
 - OAuth 登录即用,凭据本地存储
 - 支持重新认证与令牌刷新
 - 支持清除凭据重新授权
 
-**输入**: 用户提供认证管理所需的指令和必要参数。
-**处理**: 解析认证管理的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回认证管理的响应数据,包含状态码、结果和日志。
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：免配置云控制台的、办公工具接口、核心工具调用、谷歌办公工具接口、免费版、通过工具协议直接、Workspace、无需创建云控制台、登录即可使用、核心能力、零云控制台配置、账号登录即用、邮件搜索、日历事件列表、文件搜索与下载、通过工具协议统一、无需管理多个、SDK等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+**输入**: 用户提供认证管理所需的指令和必要参数.
+**处理**: 解析认证管理的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回认证管理的响应数据,包含状态码、结果和日志.
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：免配置云控制台的、办公工具接口、核心工具调用、谷歌办公工具接口、免费版、通过工具协议直接、Workspace、无需创建云控制台、登录即可使用、核心能力、零云控制台配置、账号登录即用、邮件搜索、日历事件列表、文件搜索与下载、通过工具协议统一、无需管理多个、SDK等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 使用场景
 
 ### 场景一:零配置开始使用 Gmail
 
-用户无需任何云控制台配置,安装后直接登录 Google 账号即可搜索邮件。
-
+用户无需任何云控制台配置,安装后直接登录 Google 账号即可搜索邮件.
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
 |---|---|---|---|
@@ -135,12 +125,10 @@ gwtool config add google-workspace \
 gwtool call --server google-workspace --tool "gmail.search" query="is:unread" maxResults=10
 ```
 
-首次执行任意命令时,系统会自动打开浏览器引导用户完成 Google OAuth 授权。授权后凭据存储在 `~/.config/google-workspace-toolkit/` 目录,后续无需重复登录。
-
+首次执行任意命令时,系统会自动打开浏览器引导用户完成 Google OAuth 授权。授权后凭据存储在 `~/.config/google-workspace-toolkit/` 目录,后续无需重复登录.
 ### 场景二:快速查看本周日历安排
 
-无需打开日历应用,命令行直接查看本周会议安排。
-
+无需打开日历应用,命令行直接查看本周会议安排.
 ```bash
 # 列出所有日历
 gwtool call --server google-workspace --tool "calendar.list"
@@ -155,8 +143,7 @@ gwtool call --server google-workspace \
 
 ### 场景三:搜索并下载云端文件
 
-快速在 Google Drive 中搜索特定文件并下载到本地。
-
+快速在 Google Drive 中搜索特定文件并下载到本地.
 ```bash
 # 搜索文件
 gwtool call --server google-workspace \
@@ -180,8 +167,7 @@ gwtool call --server google-workspace \
 
 ## 触发条件
 
-需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于非本工具能力范围的需求。
-
+需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
 ### 第一步:安装与注册
@@ -207,8 +193,7 @@ gwtool config add google-workspace \
 gwtool call --server google-workspace --tool "gmail.search" query="is:unread" maxResults=5
 ```
 
-浏览器中登录 Google 账号并授权后,凭据自动保存到本地。
-
+浏览器中登录 Google 账号并授权后,凭据自动保存到本地.
 ### 第三步:开始日常使用
 
 ```bash
@@ -278,8 +263,7 @@ for mail in emails:
 
 ### 1. 善用 OAuth 自动续期
 
-工具接口会自动管理令牌刷新,正常使用无需手动干预。若长时间未使用导致令牌过期,执行任意命令会自动触发刷新。
-
+工具接口会自动管理令牌刷新,正常使用无需手动干预。若长时间未使用导致令牌过期,执行任意命令会自动触发刷新.
 ```bash
 # 令牌过期后,执行任意命令自动刷新
 gwtool call --server google-workspace --tool "gmail.search" query="is:unread" maxResults=1
@@ -287,8 +271,7 @@ gwtool call --server google-workspace --tool "gmail.search" query="is:unread" ma
 
 ### 2. 跨设备使用需重新授权
 
-凭据存储在本地,不同设备需分别完成 OAuth 授权。请勿手动复制凭据文件到其他设备,可能导致授权失效。
-
+凭据存储在本地,不同设备需分别完成 OAuth 授权。请勿手动复制凭据文件到其他设备,可能导致授权失效.
 ### 3. 查询参数使用 JSON 字符串
 
 复杂参数(如事件时间)使用 JSON 字符串传递:
@@ -320,8 +303,7 @@ gwtool call --server google-workspace \
 
 ### Q1: 首次调用时浏览器没有弹出怎么办?
 
-**A**: 检查系统默认浏览器设置,或手动复制终端中显示的授权 URL 到浏览器打开。完成授权后回到终端即可继续。
-
+**A**: 检查系统默认浏览器设置,或手动复制终端中显示的授权 URL 到浏览器打开。完成授权后回到终端即可继续.
 ### Q2: 提示 "token expired" 怎么处理?
 
 **A**: 执行令牌刷新命令,或直接执行任意业务命令触发自动刷新:
@@ -348,16 +330,13 @@ gwtool call --server google-workspace --tool "gmail.search" query="is:unread" ma
 
 ### Q4: 免费版支持哪些工具?与专业版有何区别?
 
-**A**: 免费版支持 Gmail(4个工具)、Calendar(4个工具)、Drive(2个工具)共 10 个核心工具。专业版提供全部 49 个工具,包含 Docs、Sheets、Slides、Chat、People 等高级服务。
-
+**A**: 免费版支持 Gmail(4个工具)、Calendar(4个工具)、Drive(2个工具)共 10 个核心工具。专业版提供全部 49 个工具,包含 Docs、Sheets、Slides、Chat、People 等高级服务.
 ### Q5: 离线环境可以使用吗?
 
-**A**: 不支持。工具接口需要实时访问 Google API,且 OAuth 授权与令牌刷新均需网络连接。
-
+**A**: 不支持。工具接口需要实时访问 Google API,且 OAuth 授权与令牌刷新均需网络连接.
 ### Q6: 是否支持多账户?
 
-**A**: 免费版默认单账户使用。如需多账户切换,需清除凭据后重新登录。专业版支持多账户管理与快速切换。
-
+**A**: 免费版默认单账户使用。如需多账户切换,需清除凭据后重新登录。专业版支持多账户管理与快速切换.
 ## 依赖说明
 
 ### 运行环境
@@ -388,8 +367,7 @@ gwtool call --server google-workspace --tool "gmail.search" query="is:unread" ma
 ### 可用性分类
 
 - **分类**: MD+EXEC(纯 Markdown 指令,核心功能通过工具协议调用需要 exec 命令行执行能力)
-- **说明**: 基于工具接口的 AI Skill,通过工具协议统一调用 Google Workspace 服务。免费版主打零云控制台配置,OAuth 登录即用,支持 Gmail、Calendar、Drive 三大核心服务共 10 个工具,适合个人轻量办公场景。
-
+- **说明**: 基于工具接口的 AI Skill,通过工具协议统一调用 Google Workspace 服务。免费版主打零云控制台配置,OAuth 登录即用,支持 Gmail、Calendar、Drive 三大核心服务共 10 个工具,适合个人轻量办公场景.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

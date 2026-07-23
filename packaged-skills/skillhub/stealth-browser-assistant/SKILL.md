@@ -23,7 +23,6 @@ tools:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
 ---
 # 反检测浏览器助手 Stealth Browser Assistant v1.1.0
 
@@ -395,7 +394,7 @@ tools: ["read", "write", "exec"]
       "proxy_active": true,
       "overall_stealth_score": 95,
       "details": {
-        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36..",
         "webgl_vendor": "Google Inc. (NVIDIA)",
         "canvas_fingerprint": "randomized",
         "languages": ["zh-CN", "zh", "en"],

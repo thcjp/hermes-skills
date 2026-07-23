@@ -20,15 +20,14 @@ tags:
   - 实时转写
   - 说话人分离
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "Azure,云计算,DevOps"
+
 ---
 # Azure语音转写专业版
 
@@ -93,7 +92,7 @@ for segment in result.segments:
     print(f"[{speaker}] [{segment.start_time:.1f}s-{segment.end_time:.1f}s] {segment.text}")
 ```
 
-**输入**: 用户提供说话人分离（Diarization）所需的指令和必要参数。
+**输入**: 用户提供说话人分离（Diarization）所需的指令和必要参数.
 **处理**: 解析说话人分离（Diarization）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `说话人分离（diarization）` 选项
@@ -190,8 +189,7 @@ class BatchTranscriptionManager:
 
 ### 场景一：企业会议实时字幕
 
-企业会议系统实时生成字幕与会议纪要。
-
+企业会议系统实时生成字幕与会议纪要.
 ```python
 # 会议实时字幕系统
 meeting_manager = BatchTranscriptionManager(
@@ -219,8 +217,7 @@ meeting_manager.submit_transcription(
 
 ### 场景二：客服通话批量转写
 
-客服中心批量转写通话录音，用于质检与分析。
-
+客服中心批量转写通话录音，用于质检与分析.
 ```python
 # 批量转写客服通话
 manager = BatchTranscriptionManager(
@@ -249,8 +246,7 @@ print(f"成功: {len(results['success'])}, 失败: {len(results['failed'])}")
 
 ### 场景三：多语言视频字幕批量生成
 
-视频平台批量生成多语言字幕。
-
+视频平台批量生成多语言字幕.
 ```python
 # 多语言字幕生成
 video_manager = BatchTranscriptionManager(
@@ -385,13 +381,12 @@ manager.export_results(format='srt')
 ### 可用性分类
 
 - **分类**: MD+EXEC（纯Markdown指令，核心功能需要exec命令行执行能力）
-- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行专业语音转写任务。支持实时流式转写、说话人分离、批量队列等企业级功能，通过Python SDK调用Azure AI服务。与免费版完全兼容，可直接复用免费版的认证配置与基础转写流程。
-
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行专业语音转写任务。支持实时流式转写、说话人分离、批量队列等企业级功能，通过Python SDK调用Azure AI服务。与免费版完全兼容，可直接复用免费版的认证配置与基础转写流程.
 **API Key配置方式**:
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 转写参数配置
@@ -418,24 +413,19 @@ export API_KEY="your_api_key_here"
 
 ### Q1：实时转写有延迟怎么办？
 
-实时转写延迟受网络条件影响。建议使用稳定的网络连接，并适当增大音频缓冲区。
-
+实时转写延迟受网络条件影响。建议使用稳定的网络连接，并适当增大音频缓冲区.
 ### Q2：说话人分离准确率如何提升？
 
-确保音频质量良好，说话人间隔清晰。设置合理的max_speakers参数，避免过多或过少。
-
+确保音频质量良好，说话人间隔清晰。设置合理的max_speakers参数，避免过多或过少.
 ### Q3：批量转写如何处理失败任务？
 
-专业版BatchTranscriptionManager自动记录失败任务，可通过retry_failed方法重试。
-
+专业版BatchTranscriptionManager自动记录失败任务，可通过retry_failed方法重试.
 ### Q4：自定义语音模型如何接入？
 
-在Azure门户训练自定义模型后，在转写配置中指定custom_model参数即可。
-
+在Azure门户训练自定义模型后，在转写配置中指定custom_model参数即可.
 ### Q5：与免费版的API配置是否兼容？
 
-完全兼容。专业版与免费版使用相同的TRANSCRIPTION_ENDPOINT和TRANSCRIPTION_KEY配置。
-
+完全兼容。专业版与免费版使用相同的TRANSCRIPTION_ENDPOINT和TRANSCRIPTION_KEY配置.
 ## 错误处理
 
 | 错误场景2 | 原因 | 处理方式 |

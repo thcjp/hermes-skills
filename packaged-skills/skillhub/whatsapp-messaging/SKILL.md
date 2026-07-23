@@ -6,11 +6,11 @@ displayName: "WhatsApp 商业消息"
 summary: "通过 WhatsApp Business API 发送消息、管理模板、处理媒体，支持文本、图片、交互按钮、模板等消息类型。"
 license: "Proprietary"
 description: |-
-  通过 WhatsApp Business API 发送消息、管理模板、处理媒体，自动化 WhatsApp Business 消息工作流。
-  支持文本、图片、视频、音频、文档、位置、联系人、交互按钮、列表、模板等多种消息类型。
-  通过 ClawLink 托管的连接流程与凭据管理，无需自行配置 WhatsApp API 访问。
-  涵盖电话号码查询、消息发送、媒体上传下载、模板创建与审批状态、业务资料读取等完整能力。
-  适用于订单通知、客户支持、预约提醒、营销活动等需要触达 WhatsApp 用户的业务场景。
+  通过 WhatsApp Business API 发送消息、管理模板、处理媒体，自动化 WhatsApp Business 消息工作流.
+  支持文本、图片、视频、音频、文档、位置、联系人、交互按钮、列表、模板等多种消息类型.
+  通过 ClawLink 托管的连接流程与凭据管理，无需自行配置 WhatsApp API 访问.
+  涵盖电话号码查询、消息发送、媒体上传下载、模板创建与审批状态、业务资料读取等完整能力.
+  适用于订单通知、客户支持、预约提醒、营销活动等需要触达 WhatsApp 用户的业务场景.
 tags:
   - 研发工具
   - Automation
@@ -22,13 +22,11 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "WhatsApp,社交,通信"
+
 ---
 # WhatsApp
 
-通过 WhatsApp Business API 发送消息、管理模板、处理媒体，自动化 WhatsApp Business 消息工作流。本技能通过 ClawLink 托管的连接流程与凭据管理，无需自行配置 WhatsApp API 访问。
-
+通过 WhatsApp Business API 发送消息、管理模板、处理媒体，自动化 WhatsApp Business 消息工作流。本技能通过 ClawLink 托管的连接流程与凭据管理，无需自行配置 WhatsApp API 访问.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -69,20 +67,17 @@ tags: "WhatsApp,社交,通信"
    └──────────┘           └──────────┘           └──────────┘
 ```
 
-Agent 会话通过 ClawLink 代理访问 WhatsApp Cloud API。ClawLink 负责OAuth 鉴权、令牌存储与请求转发，Agent 只需调用 `clawlink_call_tool` 系列工具即可完成消息发送与管理。
-
+Agent 会话通过 ClawLink 代理访问 WhatsApp Cloud API。ClawLink 负责OAuth 鉴权、令牌存储与请求转发，Agent 只需调用 `clawlink_call_tool` 系列工具即可完成消息发送与管理.
 ## Install
 
-安装 ClawLink 插件。用户确认后完成完整配置，使 ClawLink 工具在后续会话中可用。
-
+安装 ClawLink 插件。用户确认后完成完整配置，使 ClawLink 工具在后续会话中可用.
 ```bash
 skill-platform plugins install SkillHub:clawlink-plugin
 skill-platform config set tools.alsoAllow '["clawlink-plugin"]' --strict-json
 skill-platform gateway restart
 ```
 
-重启后提示用户：发送 `/new` 开启新会话，再重新请求 WhatsApp 功能。
-
+重启后提示用户：发送 `/new` 开启新会话，再重新请求 WhatsApp 功能.
 ## Quick Start
 
 ```bash
@@ -99,19 +94,16 @@ clawlink_call_tool --tool "whatsapp_get_message_templates" --params '{}'
 2. 执行核心操作,处理输入数据
 3. 验证处理结果的正确性
 
-**结果处理**: 执行完成后,输出格式化的处理结果供用户查看和保存。结果包含执行状态、输出数据和错误信息(如有)。
-
+**结果处理**: 执行完成后,输出格式化的处理结果供用户查看和保存。结果包含执行状态、输出数据和错误信息(如有).
 ## Authentication
 
-所有 WhatsApp 工具调用由 ClawLink 自动鉴权，使用用户已连接的 WhatsApp Business 账户令牌。会话中无需手动传入 API 令牌。ClawLink 安全存储令牌并注入到每个 WhatsApp Business API 请求中。
-
+所有 WhatsApp 工具调用由 ClawLink 自动鉴权，使用用户已连接的 WhatsApp Business 账户令牌。会话中无需手动传入 API 令牌。ClawLink 安全存储令牌并注入到每个 WhatsApp Business API 请求中.
 ### Getting Connected
 
-1. 安装 ClawLink 插件（见 Install）。
-2. 若未配置，调用 `clawlink_begin_pairing` 配对插件。
-3. 打开 `https://claw-link.dev/dashboard?add=whatsapp` 连接 WhatsApp。
-4. 调用 `clawlink_list_integrations` 验证连接已激活。
-
+1. 安装 ClawLink 插件（见 Install）.
+2. 若未配置，调用 `clawlink_begin_pairing` 配对插件.
+3. 打开 `https://claw-link.dev/dashboard?add=whatsapp` 连接 WhatsApp.
+4. 调用 `clawlink_list_integrations` 验证连接已激活.
 ## Connection Management
 
 ### 列出连接
@@ -120,16 +112,14 @@ clawlink_call_tool --tool "whatsapp_get_message_templates" --params '{}'
 clawlink_list_integrations
 ```
 
-返回所有已连接的集成。确认返回列表中包含 `whatsapp`。
-
+返回所有已连接的集成。确认返回列表中包含 `whatsapp`.
 ### 验证连接
 
 ```bash
 clawlink_list_tools --integration whatsapp
 ```
 
-返回 WhatsApp 的实时工具目录。这是工具是否可用的权威来源。
-
+返回 WhatsApp 的实时工具目录。这是工具是否可用的权威来源.
 ### 重新连接
 
 若 WhatsApp 工具缺失或连接报错：
@@ -202,7 +192,7 @@ clawlink_list_tools --integration whatsapp
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
-需要配置对应API Key，详见上文环境配置章节
+如需调用外部API，请参考环境配置章节设置对应密钥
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
@@ -211,7 +201,7 @@ clawlink_list_tools --integration whatsapp
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 - 多类型消息发送：文本、图片、视频、音频、文档、位置、联系人、交互按钮、列表、模板
@@ -225,23 +215,18 @@ export API_KEY="your_api_key_here"
 ## 适用场景
 
 ### 订单与物流通知
-电商订单发货后，通过模板消息向买家推送发货确认，包含订单号、物流单号与预计送达时间。买家收到消息后可通过交互按钮确认收货或反馈问题。窗口外使用模板触达，窗口内可发送自由文本跟进。
-
+电商订单发货后，通过模板消息向买家推送发货确认，包含订单号、物流单号与预计送达时间。买家收到消息后可通过交互按钮确认收货或反馈问题。窗口外使用模板触达，窗口内可发送自由文本跟进.
 ### 客户支持与会话跟进
-用户通过 WhatsApp 咨询售后问题，客服在 24 小时窗口内用自由文本回复，并可发送图片（如操作截图）或文档（如说明书）。需要收集结构化反馈时发送交互按钮，让用户快速选择问题类型。
-
+用户通过 WhatsApp 咨询售后问题，客服在 24 小时窗口内用自由文本回复，并可发送图片（如操作截图）或文档（如说明书）。需要收集结构化反馈时发送交互按钮，让用户快速选择问题类型.
 ### 预约与提醒触达
-医疗、美容、教育等服务行业在预约前通过模板消息提醒客户，包含预约时间、地点与注意事项。模板保证窗口外也能触达，客户可通过按钮确认或改期。适合需要准时提醒且触达率高的场景。
-
+医疗、美容、教育等服务行业在预约前通过模板消息提醒客户，包含预约时间、地点与注意事项。模板保证窗口外也能触达，客户可通过按钮确认或改期。适合需要准时提醒且触达率高的场景.
 ### 营销活动与产品推广
-向已订阅用户发送营销活动，使用已审批的模板保证合规触达。可附带产品图片与说明，通过交互列表展示多个促销选项，用户点击后进入对应详情。须确保用户已同意接收营销消息。
-
+向已订阅用户发送营销活动，使用已审批的模板保证合规触达。可附带产品图片与说明，通过交互列表展示多个促销选项，用户点击后进入对应详情。须确保用户已同意接收营销消息.
 ## 使用案例
 
 ### 案例一：发送发货确认模板消息
 
-订单发货后，向买家发送已审批的 `shipping_confirmation` 模板，填充客户姓名与订单号。
-
+订单发货后，向买家发送已审批的 `shipping_confirmation` 模板，填充客户姓名与订单号.
 ```bash
 clawlink_call_tool --tool "whatsapp_send_template_message" \
   --params '{
@@ -261,12 +246,10 @@ clawlink_call_tool --tool "whatsapp_send_template_message" \
   }'
 ```
 
-`phone_number_id` 从 `whatsapp_get_phone_numbers` 获取。模板须已通过 WhatsApp 审批，语言代码与模板定义一致。窗口外触达必须使用模板，自由文本会被拒绝。
-
+`phone_number_id` 从 `whatsapp_get_phone_numbers` 获取。模板须已通过 WhatsApp 审批，语言代码与模板定义一致。窗口外触达必须使用模板，自由文本会被拒绝.
 ### 案例二：发送交互按钮收集收货反馈
 
-包裹送达后，向买家发送带"是/否"两个按钮的消息，确认是否收到。
-
+包裹送达后，向买家发送带"是/否"两个按钮的消息，确认是否收到.
 ```bash
 clawlink_call_tool --tool "whatsapp_send_interactive_buttons" \
   --params '{
@@ -281,12 +264,10 @@ clawlink_call_tool --tool "whatsapp_send_interactive_buttons" \
   }'
 ```
 
-按钮最多 3 个，每个按钮需有唯一 id 与标题。交互按钮属于自由文本消息，须在 24 小时窗口内发送。买家的回复会触发 webhook，便于后续自动化处理。
-
+按钮最多 3 个，每个按钮需有唯一 id 与标题。交互按钮属于自由文本消息，须在 24 小时窗口内发送。买家的回复会触发 webhook，便于后续自动化处理.
 ### 案例三：上传并发送图片回执
 
-先上传一张回执图片，再用 media ID 发送，避免重复上传同一图片。
-
+先上传一张回执图片，再用 media ID 发送，避免重复上传同一图片.
 ```bash
 # 上传媒体获取 media ID
 clawlink_call_tool --tool "whatsapp_upload_media" \
@@ -306,8 +287,7 @@ clawlink_call_tool --tool "whatsapp_send_media" \
   }'
 ```
 
-`media_url` 须为 WhatsApp 服务器可访问的公网地址。媒体下载 URL 会过期，需要时通过 `whatsapp_get_media_info` 获取新的下载地址。
-
+`media_url` 须为 WhatsApp 服务器可访问的公网地址。媒体下载 URL 会过期，需要时通过 `whatsapp_get_media_info` 获取新的下载地址.
 ## Discovery & Execution
 
 ### 发现工具
@@ -345,49 +325,35 @@ clawlink_call_tool --tool "whatsapp_send_media" \
 ## 异常处理
 
 ### 131026 — 消息无法送达
-收件人手机号不是有效的 WhatsApp 账户，消息被 WhatsApp 拒绝。处理：确认收件人已在 WhatsApp 注册且号码正确（含国家代码），排除座机或未注册号码。
-
+收件人手机号不是有效的 WhatsApp 账户，消息被 WhatsApp 拒绝。处理：确认收件人已在 WhatsApp 注册且号码正确（含国家代码），排除座机或未注册号码.
 ### 133010 — 收件人未注册 WhatsApp
-收件人手机号未在 WhatsApp 注册。处理：与用户确认号码是否正确，或改用短信等其他渠道触达。
-
+收件人手机号未在 WhatsApp 注册。处理：与用户确认号码是否正确，或改用短信等其他渠道触达.
 ### 131047 — 超出 24 小时客服窗口
-向超过 24 小时未主动消息的用户发送自由文本时触发。处理：改用已审批的模板消息发送，模板不受窗口限制。
-
+向超过 24 小时未主动消息的用户发送自由文本时触发。处理：改用已审批的模板消息发送，模板不受窗口限制.
 ### 模板未找到或未审批
-模板名不存在或尚未通过 WhatsApp 审批。处理：调用 `whatsapp_get_message_templates` 确认模板名与状态，仅使用状态为 approved 的模板；新建模板须等待审批通过后再发送。
-
+模板名不存在或尚未通过 WhatsApp 审批。处理：调用 `whatsapp_get_message_templates` 确认模板名与状态，仅使用状态为 approved 的模板；新建模板须等待审批通过后再发送.
 ### 媒体上传失败
-`media_url` 不可访问或格式不受支持。处理：确认 URL 为公网可访问地址（非本地路径），且 media_type 与实际文件类型一致；图片支持 png/jpeg，视频支持 mp4，文档支持 pdf/doc 等。
-
+`media_url` 不可访问或格式不受支持。处理：确认 URL 为公网可访问地址（非本地路径），且 media_type 与实际文件类型一致；图片支持 png/jpeg，视频支持 mp4，文档支持 pdf/doc 等.
 ### 工具未找到
-工具名在当前目录中不存在。处理：调用 `clawlink_list_tools --integration whatsapp` 核实工具名，以实时目录为准；若工具缺失，按"重新连接"步骤恢复。
-
+工具名在当前目录中不存在。处理：调用 `clawlink_list_tools --integration whatsapp` 核实工具名，以实时目录为准；若工具缺失，按"重新连接"步骤恢复.
 ### 连接缺失
-WhatsApp 未连接。处理：引导用户访问 `https://claw-link.dev/dashboard?add=whatsapp` 完成连接，再调用 `clawlink_list_integrations` 验证。
-
+WhatsApp 未连接。处理：引导用户访问 `https://claw-link.dev/dashboard?add=whatsapp` 完成连接，再调用 `clawlink_list_integrations` 验证.
 ### 写操作被拒绝
-用户未确认写操作。处理：所有写操作（发送消息、上传媒体、创建/删除模板）须用户明确确认后再执行，不要跳过确认步骤。
-
+用户未确认写操作。处理：所有写操作（发送消息、上传媒体、创建/删除模板）须用户明确确认后再执行，不要跳过确认步骤.
 ## FAQ
 
 ### 24 小时客服窗口如何计算？
-从用户最后一次向商家发送消息的时刻起算 24 小时。窗口内可发送自由文本、图片、交互按钮等任意消息；窗口外只能发送已审批的模板消息。超出窗口发送自由文本会收到 131047 错误。
-
+从用户最后一次向商家发送消息的时刻起算 24 小时。窗口内可发送自由文本、图片、交互按钮等任意消息；窗口外只能发送已审批的模板消息。超出窗口发送自由文本会收到 131047 错误.
 ### 如何获取 phone_number_id？
-调用 `whatsapp_get_phone_numbers` 列出账户下所有手机号，返回结果中包含每个号码的 `phone_number_id`。发送消息时须传入该 ID 标识发送方。一个账户可有多个号码，按业务需要选择。
-
+调用 `whatsapp_get_phone_numbers` 列出账户下所有手机号，返回结果中包含每个号码的 `phone_number_id`。发送消息时须传入该 ID 标识发送方。一个账户可有多个号码，按业务需要选择.
 ### 消息模板审批需要多久？
-审批时长由 WhatsApp 决定，通常为数分钟到数小时不等。可通过 `whatsapp_get_template_status` 查询状态，状态为 `approved` 后方可用于发送。被拒绝的模板需修改后重新提交。
-
+审批时长由 WhatsApp 决定，通常为数分钟到数小时不等。可通过 `whatsapp_get_template_status` 查询状态，状态为 `approved` 后方可用于发送。被拒绝的模板需修改后重新提交.
 ### 模板删除后能否立即重建同名模板？
-不能。模板删除后有 30 天冷却期，期间同名模板无法创建。处理：删除前确认不再需要，或使用新名称创建。
-
+不能。模板删除后有 30 天冷却期，期间同名模板无法创建。处理：删除前确认不再需要，或使用新名称创建.
 ### 收件人手机号需要什么格式？
-须包含国家代码，例如美国号码以 `+1` 开头，中国号码以 `+86` 开头。不带国家代码会被视为无效号码。发送前务必确认号码完整，消息发出后无法撤回。
-
+须包含国家代码，例如美国号码以 `+1` 开头，中国号码以 `+86` 开头。不带国家代码会被视为无效号码。发送前务必确认号码完整，消息发出后无法撤回.
 ### 媒体下载 URL 会过期吗？
-会。上传媒体后返回的下载 URL 有时效，过期后无法访问。需要下载时调用 `whatsapp_get_media_info` 获取新的下载地址。
-
+会。上传媒体后返回的下载 URL 有时效，过期后无法访问。需要下载时调用 `whatsapp_get_media_info` 获取新的下载地址.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

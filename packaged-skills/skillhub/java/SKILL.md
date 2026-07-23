@@ -6,7 +6,7 @@ displayName: "Java健壮编程"
 summary: "编写健壮Java代码,避免空指针陷阱、相等性Bug与并发问题"
 license: "Proprietary"
 description: |-
-  编写健壮Java代码,避免空指针陷阱、相等性Bug与并发问题。核心能力涵盖空值与Optional处理、集合迭代陷阱、泛型与类型擦除、并发与同步、类继承与内存模型、Stream与CompletableFuture、测试(JUnit/Mockito)及JVM/GC/模块系统,提供关键规则与错误场景防护。
+  编写健壮Java代码,避免空指针陷阱、相等性Bug与并发问题。核心能力涵盖空值与Optional处理、集合迭代陷阱、泛型与类型擦除、并发与同步、类继承与内存模型、Stream与CompletableFuture、测试(JUnit/Mockito)及JVM/GC/模块系统,提供关键规则与错误场景防护.
 tools:
   - read
   - exec
@@ -17,13 +17,11 @@ tags:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Java健壮编程
 
-编写健壮Java代码,避免空指针陷阱、相等性Bug与并发问题。涵盖从基础语法陷阱到高级并发模型的完整防护指南。
-
+编写健壮Java代码,避免空指针陷阱、相等性Bug与并发问题。涵盖从基础语法陷阱到高级并发模型的完整防护指南.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -77,7 +75,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 - **空值与Optional处理**: 使用 `Optional.orElse()`、`orElseGet()`、`ifPresent()` 替代 `Optional.get()` 防止空值异常,避免自动拆箱NPE
@@ -91,26 +89,20 @@ export API_KEY="your_api_key_here"
 - **测试(JUnit/Mockito)**: 使用JUnit断言和Mockito模拟依赖,验证交互行为与状态
 ### 空值与Optional处理
 
-针对空值与Optional,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供空值与Optional处理相关的配置参数、输入数据和处理选项。
-
+针对空值与Optional,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供空值与Optional处理相关的配置参数、输入数据和处理选项.
 **输出**: 返回空值与Optional处理的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`空值与Optional处理`的配置文档进行参数调优
 ### 相等性与hashCode一致性
 
-针对相等性与hashCode一致性,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供相等性与hashCode一致性相关的配置参数、输入数据和处理选项。
-
+针对相等性与hashCode一致性,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供相等性与hashCode一致性相关的配置参数、输入数据和处理选项.
 **输出**: 返回相等性与hashCode一致性的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`相等性与hashCode一致性`的配置文档进行参数调优
 ### 集合与迭代陷阱
 
-针对集合与迭代陷阱,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供集合与迭代陷阱相关的配置参数、输入数据和处理选项。
-
+针对集合与迭代陷阱,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供集合与迭代陷阱相关的配置参数、输入数据和处理选项.
 **输出**: 返回集合与迭代陷阱的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`集合与迭代陷阱`的配置文档进行参数调优
 #
@@ -267,26 +259,19 @@ try (FileReader reader = new FileReader("data.txt");
 ## 常见问题
 
 ### Q1: 为什么 `==` 比较字符串有时正确有时错误?
-A: `==` 比较的是对象引用而非内容。Java对字符串字面量有驻留机制,相同字面量指向同一对象所以 `==` 可能成立。但通过 `new String()` 或运行时拼接的字符串是不同对象,`==` 会返回false。始终使用 `.equals()` 比较字符串内容,`==` 仅用于比较基本类型。
-
+A: `==` 比较的是对象引用而非内容。Java对字符串字面量有驻留机制,相同字面量指向同一对象所以 `==` 可能成立。但通过 `new String()` 或运行时拼接的字符串是不同对象,`==` 会返回false。始终使用 `.equals()` 比较字符串内容,`==` 仅用于比较基本类型.
 ### Q2: `volatile` 能保证 `count++` 的线程安全吗?
-A: 不能。`volatile` 仅保证变量的可见性(一个线程修改后其他线程立即可见),不保证操作的原子性。`count++` 实际上是"读取-修改-写入"三步操作,可能被中断。使用 `AtomicInteger.incrementAndGet()` 或 `synchronized` 块保证原子性。
-
+A: 不能。`volatile` 仅保证变量的可见性(一个线程修改后其他线程立即可见),不保证操作的原子性。`count++` 实际上是"读取-修改-写入"三步操作,可能被中断。使用 `AtomicInteger.incrementAndGet()` 或 `synchronized` 块保证原子性.
 ### Q3: `thenApply` 和 `thenCompose` 有什么区别?
-A: `thenApply` 接收同步函数,将 `CompletableFuture<T>` 转换为 `CompletableFuture<R>`,适用于同步转换。`thenCompose` 接收返回 `CompletableFuture` 的函数,将 `CompletableFuture<T>` 展平为 `CompletableFuture<R>`,适用于异步链式调用。类似 `Stream.map` 与 `flatMap` 的关系。
-
+A: `thenApply` 接收同步函数,将 `CompletableFuture<T>` 转换为 `CompletableFuture<R>`,适用于同步转换。`thenCompose` 接收返回 `CompletableFuture` 的函数,将 `CompletableFuture<T>` 展平为 `CompletableFuture<R>`,适用于异步链式调用。类似 `Stream.map` 与 `flatMap` 的关系.
 ### Q4: 为什么重写 `equals()` 必须重写 `hashCode()`?
-A: Java契约规定: 相等的对象必须有相同的hashCode。如果只重写 `equals()` 不重写 `hashCode()`,`HashMap` 和 `HashSet` 会使用默认的 `Object.hashCode()` (基于内存地址),导致两个 `equals()` 为true的对象hashCode不同,被放到不同的桶中,查找时找不到。使用 `Objects.hash(field1, field2)` 生成一致的hashCode。
-
+A: Java契约规定: 相等的对象必须有相同的hashCode。如果只重写 `equals()` 不重写 `hashCode()`,`HashMap` 和 `HashSet` 会使用默认的 `Object.hashCode()` (基于内存地址),导致两个 `equals()` 为true的对象hashCode不同,被放到不同的桶中,查找时找不到。使用 `Objects.hash(field1, field2)` 生成一致的hashCode.
 ### Q5: 类型擦除会带来什么实际影响?
-A: 泛型类型在运行时被擦除为原始类型或上界。这意味着: 无法在运行时执行 `instanceof List<String>`(只能 `instanceof List`)、无法创建泛型数组 `new T[]`、无法直接实例化类型参数 `new T()`。需要传递 `Class<T>` 类型令牌,通过反射创建实例。这也是方法重载时 `List<String>` 和 `List<Integer>` 不能共存的原因。
-
+A: 泛型类型在运行时被擦除为原始类型或上界。这意味着: 无法在运行时执行 `instanceof List<String>`(只能 `instanceof List`)、无法创建泛型数组 `new T[]`、无法直接实例化类型参数 `new T()`。需要传递 `Class<T>` 类型令牌,通过反射创建实例。这也是方法重载时 `List<String>` 和 `List<Integer>` 不能共存的原因.
 ### Q6: Stream为什么不能复用?
-A: Stream设计为单次使用的管道,终端操作(forEach、collect、count等)会消费Stream并关闭管道。复用已消费的Stream会抛出 `IllegalStateException: stream has already been operated upon or closed`。如需多次遍历,从数据源重新创建Stream,或使用 `Supplier<Stream<T>>` 供应器每次获取新Stream。
-
+A: Stream设计为单次使用的管道,终端操作(forEach、collect、count等)会消费Stream并关闭管道。复用已消费的Stream会抛出 `IllegalStateException: stream has already been operated upon or closed`。如需多次遍历,从数据源重新创建Stream,或使用 `Supplier<Stream<T>>` 供应器每次获取新Stream.
 ### Q7: 什么时候应该用静态嵌套类而非内部类?
-A: 非静态内部类隐式持有外部类实例的引用,这会导致: 外部类无法被GC回收(内存泄漏)、无法独立实例化内部类、序列化时需序列化整个外部类。当内部类不需要访问外部类实例成员时,声明为 `static` 嵌套类,消除隐式引用,降低耦合。
-
+A: 非静态内部类隐式持有外部类实例的引用,这会导致: 外部类无法被GC回收(内存泄漏)、无法独立实例化内部类、序列化时需序列化整个外部类。当内部类不需要访问外部类实例成员时,声明为 `static` 嵌套类,消除隐式引用,降低耦合.
 ## 已知限制
 
 - 泛型类型擦除是Java语言层面设计,无法在运行时获取泛型参数类型

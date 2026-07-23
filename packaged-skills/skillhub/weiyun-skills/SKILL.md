@@ -6,8 +6,7 @@ displayName: "Weiyun Skills"
 summary: "微云技能集合,提供内容生成与专业风格规范,支持多种变体处理,付费版独享批量与高级功能。"
 license: "Proprietary"
 description: |-
-  微云网盘MCP接口完整技能。
-
+  微云网盘MCP接口完整技能.
   核心能力:
 
   - 集成工具领域的专业化AI辅助工具
@@ -26,15 +25,14 @@ description: |-
 tags:
   - Integrations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Weiyun Skills
 
@@ -155,7 +153,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 示例1: 基础用法

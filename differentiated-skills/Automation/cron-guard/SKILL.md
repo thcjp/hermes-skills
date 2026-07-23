@@ -3,7 +3,7 @@ slug: cron-guard
 name: cron-guard
 version: 1.0.0
 displayName: 定时守护
-summary: cron 作业可靠性护栏，脚本优先、确定环境、静默成功，跨平台故障模式一网打尽。
+summary: cron 作业可靠性护栏，脚本优先、确定环境、静默成功，跨平台故障模式一网打尽.
 license: Proprietary
 description: 定时守护为cron作业与后台任务提供可靠性护栏,遵循脚本优先、确定环境、静默成功三原则,覆盖shell引用陷阱、cwd/env漂移、SIGPIPE误报、git推送冲突、并发执行冲突等高频故障模式,提供跨平台适配(POSIX+PowerShell)与上线前预检清单。适用于cron作业加固、后台任务可靠性提升、跨平台定时作业场景。适用关键词:定时守护、cron加固、脚本可靠性、shell陷阱、静默成功、cron、shell、guardrails
 tags:
@@ -11,71 +11,62 @@ tags:
 - 定时调度
 - 可靠性工程
 tools:
-- - read
+- read
 - exec
 homepage: https://skillhub.cn
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+
 ---
 # 定时守护
 
-cron 作业的失败很少是"逻辑 bug",多半是 shell 引用炸了、环境漂移了、管道误报了。本技能用"脚本优先 + 确定环境 + 静默成功"三原则,把这些无聊但致命的坑堵死。
-
+cron 作业的失败很少是"逻辑 bug",多半是 shell 引用炸了、环境漂移了、管道误报了。本技能用"脚本优先 + 确定环境 + 静默成功"三原则,把这些无聊但致命的坑堵死.
 ## 核心能力
 
 ### 1. 脚本优先原则
-禁止在cron里写多行`bash -lc '...'`,把逻辑放进仓库脚本(`tools/<job>.py`),cron只跑一行短命令,避免引用地狱
+禁止在cron里写多行`bash -lc '..'`,把逻辑放进仓库脚本(`tools/<job>.py`),cron只跑一行短命令,避免引用地狱
 
-**输入**: 用户提供脚本优先原则所需的指令和必要参数。
-**处理**: 解析脚本优先原则的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回脚本优先原则的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供脚本优先原则所需的指令和必要参数.
+**处理**: 解析脚本优先原则的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回脚本优先原则的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 2. 确定环境
-显式确定cwd(`cd "$(dirname "$0")/.."`)、PATH(不依赖.bashrc)、文档化必需环境变量(`: "${API_KEY:?未设置}"`),解决"本地能跑cron里失败"
+显式确定cwd(`cd "$(dirname "$0")/."`)、PATH(不依赖.bashrc)、文档化必需环境变量(`: "${API_KEY:?未设置}"`),解决"本地能跑cron里失败"
 
-**输入**: 用户提供确定环境所需的指令和必要参数。
-**处理**: 解析确定环境的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回确定环境的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供确定环境所需的指令和必要参数.
+**处理**: 解析确定环境的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回确定环境的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 3. 静默成功约定
 成功时输出`NO_REPLY`(或空),只在失败时输出`ALERT`到stderr,避免每次成功都发通知淹没用户
 
-**输入**: 用户提供静默成功约定所需的指令和必要参数。
-**处理**: 解析静默成功约定的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回静默成功约定的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供静默成功约定所需的指令和必要参数.
+**处理**: 解析静默成功约定的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回静默成功约定的响应数据,包含状态码、结果和日志.
 ### 4. 故障模式目录
 8种高频故障(EOF引号错误/SIGPIPE误报/cwd漂移/git push被拒/Python -c陷阱/Windows路径/临时文件残留/并发冲突)附修复模板
 
-**输入**: 用户提供故障模式目录所需的指令和必要参数。
-**处理**: 解析故障模式目录的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回故障模式目录的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供故障模式目录所需的指令和必要参数.
+**处理**: 解析故障模式目录的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回故障模式目录的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 5. 跨平台适配
 POSIX(bash/sh)与Windows(PowerShell)等效模式对照表,覆盖三大平台
 
-**输入**: 用户提供跨平台适配所需的指令和必要参数。
-**处理**: 解析跨平台适配的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回跨平台适配的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供跨平台适配所需的指令和必要参数.
+**处理**: 解析跨平台适配的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回跨平台适配的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 6. 上线前预检清单
 10项检查清单(逻辑在脚本/cwd确定/变量校验/PATH设置/静默成功/trap清理/文件锁/无force-push等)+ 本地cron环境模拟测试
 
-**输入**: 用户提供上线前预检清单所需的指令和必要参数。
-**处理**: 解析上线前预检清单的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回上线前预检清单的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供上线前预检清单所需的指令和必要参数.
+**处理**: 解析上线前预检清单的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回上线前预检清单的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：作业可靠性护栏、跨平台故障模式一、网打尽、定时守护为、作业与后台任务提、供可靠性护栏、遵循脚本优先、静默成功三原则、引用陷阱、env、推送冲突、并发执行冲突等高、频故障模式、与上线前预检清单、适用于、作业加固、后台任务可靠性提、跨平台定时作业场、适用关键词、定时守护、脚本可靠性、guardrails等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：作业可靠性护栏、跨平台故障模式一、网打尽、定时守护为、作业与后台任务提、供可靠性护栏、遵循脚本优先、静默成功三原则、引用陷阱、env、推送冲突、并发执行冲突等高、频故障模式、与上线前预检清单、适用于、作业加固、后台任务可靠性提、跨平台定时作业场、适用关键词、定时守护、脚本可靠性、guardrails等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 适用场景
 
 **何时使用**:
@@ -96,8 +87,7 @@ POSIX(bash/sh)与Windows(PowerShell)等效模式对照表,覆盖三大平台
 ## 使用流程
 
 ### Step 1: 逻辑进脚本
-把cron命令的多行逻辑移到`tools/<job>.py`或`tools/<job>.sh`,cron只跑一行短命令。
-
+把cron命令的多行逻辑移到`tools/<job>.py`或`tools/<job>.sh`,cron只跑一行短命令.
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
 |---|---|---|---|
@@ -108,7 +98,7 @@ POSIX(bash/sh)与Windows(PowerShell)等效模式对照表,覆盖三大平台
 ```bash
 # 错误:cron里塞多行shell(引用地狱)
 bash -lc 'cd /app && for f in *.csv; do python3 process.py "$f" && mv "$f" done/; done'
-# ...
+# ..
 # 正确:cron跑一个脚本
 python3 tools/process_all.py
 ```
@@ -118,7 +108,7 @@ python3 tools/process_all.py
 ```bash
 #!/usr/bin/env bash
 set -euo pipefail
-cd "$(dirname "$0")/.." || exit 1
+cd "$(dirname "$0")/." || exit 1
 export PATH="/usr/local/bin:/usr/bin:/bin:$HOME/.local/bin"
 : "${API_KEY:?API_KEY 未设置}"
 : "${DATA_DIR:?DATA_DIR 未设置}"
@@ -141,7 +131,7 @@ fi
 # 临时文件清理
 TMPFILE=$(mktemp)
 trap 'rm -f "$TMPFILE"' EXIT
-# ...
+# ..
 # 文件锁防并发
 LOCKFILE="/tmp/job.lock"
 exec 200>"$LOCKFILE"
@@ -192,9 +182,9 @@ except subprocess.CalledProcessError:
     subprocess.run(["git", "rebase", "origin/main"], check=True)
     subprocess.run(["git", "push"], check=True)
 print("NO_REPLY")
-# ...
+# ..
 # 2. cron改为一行
-# 旧: bash -lc 'cd /app && python3 sync.py && ...'
+# 旧: bash -lc 'cd /app && python3 sync.py && ..'
 # 新: python3 /repo/tools/daily-sync.py
 ```
 
@@ -213,7 +203,7 @@ esac
 
 **PowerShell等效(Windows Task Scheduler)**:
 ```powershell
-Set-Location $PSScriptRoot\..
+Set-Location $PSScriptRoot\.
 if (-not $env:API_KEY) { throw "API_KEY 未设置" }
 try {
     $result = Invoke-WebRequest -Uri "http://localhost:8080/health" -UseBasicParsing
@@ -233,7 +223,7 @@ try {
 
 | 场景 | 原因 | 处理方式 |
 |:-----|:-----|:-----|
-| `unexpected EOF while looking for matching ')'` | `$(...)`命令替换未闭合或`bash -lc`嵌套引号断裂 | 把多行shell替换为脚本,cron只跑`python3 tools/<job>.py` |
+| `unexpected EOF while looking for matching ')'` | `$(..)`命令替换未闭合或`bash -lc`嵌套引号断裂 | 把多行shell替换为脚本,cron只跑`python3 tools/<job>.py` |
 | 明明成功却报失败(SIGPIPE) | `set -o pipefail`下`head`提前关闭管道,上游收到SIGPIPE | 局部`|| true`或改用脚本只读需要的部分 |
 | 本地能跑cron里失败 | cwd不同(默认HOME)、PATH不同(不加载.bashrc)、环境变量缺失 | 脚本内`cd`到仓库、显式设置PATH、文档化并校验环境变量 |
 | `git push`被拒(non-fast-forward) | 远程有新提交,本地推送冲突 | fetch后rebase再执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令;禁止`git push --force` |
@@ -262,20 +252,15 @@ try {
 ## 常见问题
 
 **Q: 我的cron作业在Windows上跑怎么办?**
-A: 用PowerShell脚本替代bash脚本,遵循同样的三原则(脚本优先/确定cwd/静默成功)。Windows Task Scheduler调度`powershell -File tools\job.ps1`。参考跨平台适配表。
-
+A: 用PowerShell脚本替代bash脚本,遵循同样的三原则(脚本优先/确定cwd/静默成功)。Windows Task Scheduler调度`powershell -File tools\job.ps1`。参考跨平台适配表.
 **Q: NO_REPLY必须精确匹配吗?**
-A: 是的,精确输出`NO_REPLY`(大写、无多余空格)。许多平台把精确输出`NO_REPLY`视为"静默成功"(不触发人工通知)。若平台不识别,等效于"成功时无输出"。
-
+A: 是的,精确输出`NO_REPLY`(大写、无多余空格)。许多平台把精确输出`NO_REPLY`视为"静默成功"(不触发人工通知)。若平台不识别,等效于"成功时无输出".
 **Q: 脚本优先是不是过度工程?**
-A: 不是。多行shell在cron里的引号陷阱几乎不可避免。脚本文件可测试、可版本控制、可lint,长期收益远大于"省一个文件"。
-
+A: 不是。多行shell在cron里的引号陷阱几乎不可避免。脚本文件可测试、可版本控制、可lint,长期收益远大于"省一个文件".
 **Q: pipefail到底该不该用?**
-A: 该用,但要注意`| head`场景。`set -euo pipefail`是好习惯,遇到SIGPIPE误报时局部`|| true`或改用脚本读取。
-
+A: 该用,但要注意`| head`场景。`set -euo pipefail`是好习惯,遇到SIGPIPE误报时局部`|| true`或改用脚本读取.
 **Q: force-push真的完全禁止吗?**
-A: 自动化脚本里禁止。个人临时分支可酌情,但cron作业绝不能force-push,会覆盖他人提交。被拒后用fetch+rebase重试。
-
+A: 自动化脚本里禁止。个人临时分支可酌情,但cron作业绝不能force-push,会覆盖他人提交。被拒后用fetch+rebase重试.
 ## 已知限制
 
 1. **聚焦shell与环境陷阱**:本skill处理"被调度的脚本怎么写得可靠",不负责调度系统本身的配置(时区/并发/熔断,由"定时调度专家"负责)

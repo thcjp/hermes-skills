@@ -6,14 +6,14 @@ displayName: "数据库管理(免费版)"
 summary: "基础表结构设计、数据插入与简单查询，支持常用数据类型与事务操作"
 license: "MIT"
 description: |-
-  数据库管理免费版，提供基础的数据库表结构与数据操作能力。
+  数据库管理免费版，提供基础的数据库表结构与数据操作能力.
   核心能力包括：
   - 基础表结构设计（主键、NOT NULL、DEFAULT）
   - 常用数据类型（TEXT、VARCHAR、INT、SERIAL、TIMESTAMP）
   - 单条与批量INSERT数据插入
   - 基础SELECT查询（WHERE、ORDER BY、GROUP BY）
   - 事务操作（BEGIN/COMMIT/ROLLBACK）
-  高级功能（BIGINT/JSONB/UUID类型、COPY批量导入、CTE查询、执行计划分析、VACUUM维护、连接池管理）为付费版专享。
+  高级功能（BIGINT/JSONB/UUID类型、COPY批量导入、CTE查询、执行计划分析、VACUUM维护、连接池管理）为付费版专享.
 tags:
   - 信息检索
   - database
@@ -22,8 +22,7 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec", "glob"]
-tags: "数据处理,数据分析,工具"
+
 ---
 # 数据库管理（免费版）
 
@@ -37,17 +36,15 @@ tags: "数据处理,数据分析,工具"
 
 ## 概述
 
-提供基础的数据库表结构创建、数据插入与查询能力，满足日常数据库操作需求。基于 PostgreSQL 语法规范。
-
+提供基础的数据库表结构创建、数据插入与查询能力，满足日常数据库操作需求。基于 PostgreSQL 语法规范.
 ## 核心能力
 ### 基础表结构设计
 - 自动设计表结构（主键、`NOT NULL`、`DEFAULT`）
 - 支持常用数据类型：`TEXT`、`VARCHAR(n)`、`INT`、`SERIAL`、`TIMESTAMP`、`DECIMAL(p,s)`
 - 创建基础索引（`CREATE INDEX`）
 
-> **升级提示**：`BIGINT`、`UUID`、`JSONB`、`ENUM` 等高级数据类型，外键约束（`FOREIGN KEY`）、检查约束（`CHECK`）为付费版专享功能。
-
-**输入**: 用户提供基础表结构设计所需的指令和必要参数。
+> **升级提示**：`BIGINT`、`UUID`、`JSONB`、`ENUM` 等高级数据类型，外键约束（`FOREIGN KEY`）、检查约束（`CHECK`）为付费版专享功能.
+**输入**: 用户提供基础表结构设计所需的指令和必要参数.
 ### 数据插入
 ```sql
 -- 单条插入
@@ -62,10 +59,9 @@ INSERT INTO stock_info (product_name, quantity, price) VALUES
 COMMIT;
 ```
 
-> **升级提示**：`COPY` 命令高性能批量导入（10万条以上）、`ON CONFLICT` 冲突处理为付费版专享功能。
-
-**输入**: 用户提供数据插入所需的指令和必要参数。
-**输出**: 返回数据插入的处理结果,包含执行状态码、结果数据和执行日志。
+> **升级提示**：`COPY` 命令高性能批量导入（10万条以上）、`ON CONFLICT` 冲突处理为付费版专享功能.
+**输入**: 用户提供数据插入所需的指令和必要参数.
+**输出**: 返回数据插入的处理结果,包含执行状态码、结果数据和执行日志.
 ### 基础查询
 ```sql
 -- 条件查询
@@ -78,10 +74,9 @@ GROUP BY category
 ORDER BY avg_price DESC;
 ```
 
-> **升级提示**：CTE（`WITH` 子句）复杂查询、`EXPLAIN ANALYZE` 执行计划分析、多表 `JOIN` 优化为付费版专享功能。
-
-**输入**: 用户提供基础查询所需的指令和必要参数。
-**输出**: 返回基础查询的处理结果,包含执行状态码、结果数据和执行日志。
+> **升级提示**：CTE（`WITH` 子句）复杂查询、`EXPLAIN ANALYZE` 执行计划分析、多表 `JOIN` 优化为付费版专享功能.
+**输入**: 用户提供基础查询所需的指令和必要参数.
+**输出**: 返回基础查询的处理结果,包含执行状态码、结果数据和执行日志.
 ### 事务操作
 ```sql
 BEGIN;
@@ -90,11 +85,9 @@ INSERT INTO stock_info (product_name, quantity, price) VALUES ('橙子', 80, 5.0
 COMMIT;
 ```
 
-> **升级提示**：连接池（`pgpool`）管理、`VACUUM ANALYZE` 维护操作、`TRUNCATE`、`pg_dump` 备份恢复为付费版专享功能。
-
-**输入**: 用户提供事务操作所需的指令和必要参数。
-**输出**: 返回事务的处理结果,包含执行状态码、结果数据和执行日志。
-
+> **升级提示**：连接池（`pgpool`）管理、`VACUUM ANALYZE` 维护操作、`TRUNCATE`、`pg_dump` 备份恢复为付费版专享功能.
+**输入**: 用户提供事务操作所需的指令和必要参数.
+**输出**: 返回事务的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 依赖说明
 
@@ -117,7 +110,7 @@ COMMIT;
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 使用流程
 
 1. **明确需求**：确认需要建表、插入数据还是查询
@@ -174,20 +167,15 @@ ORDER BY avg_price DESC;
 ## 常见问题
 
 ### Q1: VARCHAR(100) 和 TEXT 有什么区别？
-A: `VARCHAR(100)` 有长度限制（100字符），`TEXT` 无限制。需要长度校验时用 `VARCHAR(n)`，不需要时用 `TEXT`。
-
+A: `VARCHAR(100)` 有长度限制（100字符），`TEXT` 无限制。需要长度校验时用 `VARCHAR(n)`，不需要时用 `TEXT`.
 ### Q2: 如何处理超大整数ID？
-A: `BIGINT` 类型支持（范围至 9223372036854775807）为付费版专享功能。免费版可使用 `TEXT` 存储ID字符串，或升级至付费版获取 `BIGINT` 支持。
-
+A: `BIGINT` 类型支持（范围至 9223372036854775807）为付费版专享功能。免费版可使用 `TEXT` 存储ID字符串，或升级至付费版获取 `BIGINT` 支持.
 ### Q3: 如何批量导入10万条数据？
-A: `COPY` 命令高性能导入为付费版专享功能。免费版可使用多值 `INSERT` 批量插入（单语句插入多行），配合事务 `BEGIN/COMMIT` 优化。
-
+A: `COPY` 命令高性能导入为付费版专享功能。免费版可使用多值 `INSERT` 批量插入（单语句插入多行），配合事务 `BEGIN/COMMIT` 优化.
 ### Q4: 如何分析查询性能？
-A: `EXPLAIN ANALYZE` 执行计划分析为付费版专享功能。免费版可通过观察查询响应时间粗略评估，或升级至付费版获取详细执行计划分析。
-
+A: `EXPLAIN ANALYZE` 执行计划分析为付费版专享功能。免费版可通过观察查询响应时间粗略评估，或升级至付费版获取详细执行计划分析.
 ### Q5: JSONB 和 JSON 有什么区别？
-A: `JSONB` 类型支持为付费版专享功能。免费版可使用 `TEXT` 存储JSON字符串，查询时手动解析。
-
+A: `JSONB` 类型支持为付费版专享功能。免费版可使用 `TEXT` 存储JSON字符串，查询时手动解析.
 ## 已知限制
 
 - 免费版不支持 `BIGINT`、`UUID`、`JSONB`、`ENUM` 高级数据类型

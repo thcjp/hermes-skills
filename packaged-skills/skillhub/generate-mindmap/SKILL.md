@@ -6,19 +6,18 @@ displayName: "Generate Mindmap"
 summary: "生成基于认知科学方法论的交互式思维导图。支持 Markdown 大纲或 JSON 输入，一条命令同时导出 HTML（可交互编辑、8 种布局、深浅双主题）、PNG、JPG、SVG、PDF、XMin..."
 license: "Proprietary"
 description: |-
-  生成基于认知科学方法论的交互式思维导图。支持 Markdown 大纲或 JSON 输入，一条命令同时导出 HTML（可交互编辑、8 种布局、深浅双主题）、PNG、JPG、SVG、PDF、XMin。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
+  生成基于认知科学方法论的交互式思维导图。支持 Markdown 大纲或 JSON 输入，一条命令同时导出 HTML（可交互编辑、8 种布局、深浅双主题）、PNG、JPG、SVG、PDF、XMin。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
   - Knowledge
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Generate Mindmap
 
@@ -42,7 +41,9 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 交互响应 | 事件与回调数据 | 响应状态与交互结果 |
+| 命令执行 | 指令名与参数 | 执行结果与输出日志 |
+| PDF处理 | PDF文件与操作类型 | 提取文本或生成文档 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -68,7 +69,7 @@ cat > /tmp/mindmap_outline.md << 'EOF'
 }
 ```
 # ...
-JSON 也通过 `--data-file` 传入（自动识别 JSON / Markdown）；`--data-file -` 读 stdin；`--data '...'` 仅限极短内容。主分支若缺 emoji，脚本会按语义关键词自动补充。
+JSON 也通过 `--data-file` 传入（自动识别 JSON / Markdown）；`--data-file -` 读 stdin；`--data '...'` 仅限极短内容。主分支若缺 emoji，脚本会按语义关键词自动补充.
 # ...
 ## 输出格式
 # ...
@@ -123,10 +124,10 @@ JSON 也通过 `--data-file` 传入（自动识别 JSON / Markdown）；`--data-
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 # ...
-`{baseDir}/examples/`：`ai_trends.html`、`product_launch.html`、`python_learning.html`（可直接用浏览器打开体验交互与主题切换），以及对应 `.json` 数据和 `outline_example.md` 大纲示例。
+`{baseDir}/examples/`：`ai_trends.html`、`product_launch.html`、`python_learning.html`（可直接用浏览器打开体验交互与主题切换），以及对应 `.json` 数据和 `outline_example.md` 大纲示例.
 # ...
 ## 常见问题
 # ...

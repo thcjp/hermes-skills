@@ -7,20 +7,19 @@ summary: "审代码安全漏洞/实现认证流/审计依赖,安全合规"
 license: "Proprietary"
 description: |-
   Use when reviewing code for security vulnerabilities, implementing authentication
-  flows, auditing。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。
+  flows, auditing。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
 tags:
   - Security
   - Development
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "exec"]
-tags: "安全,加密,工具"
+
 ---
 # Security Auditor
 
@@ -127,8 +126,7 @@ tags: "安全,加密,工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Security Auditor？

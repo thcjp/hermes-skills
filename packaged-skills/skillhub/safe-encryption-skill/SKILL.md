@@ -7,19 +7,18 @@ summary: "用SAFE CLI加解密管密钥,现代GPG替代,抗量子"
 license: "Proprietary"
 description: |-
   Encrypt, decrypt, and manage keys with the SAFE CLI — a modern GPG alternative
-  with post-quantum 。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
+  with post-quantum 。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
   - Other
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Safe Encryption
 
@@ -56,7 +55,7 @@ tags: "工具,效率,自动化"
 | 参数名 | 类型 | 必填 | 说明 |
 |:-----|:-----|:-----|:-----|
 | content | string | 否 | safe-encryption-skill处理的内容输入 |, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| algorithm | string | 否 | 加密算法, 可选: mlkem/x25519/ed25519, 默认: mlkem(抗量子) |
 
 ## 输出格式
 
@@ -120,11 +119,10 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
-## 常见问题
-
+以下是Safe Encryption在实际场景中的应用案例，展示完整的输入处理输出流程.
 ## 错误处理
 
 | 错误场景(续)| 原因 | 处理方式 |

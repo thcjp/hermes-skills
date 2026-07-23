@@ -6,19 +6,17 @@ displayName: "Elite Frontend Desig"
 summary: "前端 UI 界面设计。当用户要创建网页、landing page、dashboard、React/Vue 组件、前端页面时触发。 输出 HTML/CSS/JS"
 license: "Proprietary"
 description: |-
-  前端 UI 界面设计。当用户要创建网页、landing page、dashboard、React/Vue 组件、前端页面时触发。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。
+  前端 UI 界面设计。当用户要创建网页、landing page、dashboard、React/Vue 组件、前端页面时触发。Use when 、品牌视觉时使用。不适用于3D建模和动画制作。
 tags:
   - Creative
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 ---
 # Elite Frontend Desig
 
@@ -44,7 +42,9 @@ tags: "设计,UI/UX,创意"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 网页搭建 | 页面类型(landing/dashboard)与设计需求 | HTML/CSS/JS前端代码 |
+| 组件开发 | React/Vue组件规格与交互需求 | 可复用前端组件代码 |
+| 品牌视觉 | 品牌色板与风格参考 | 前端样式规范与主题配置 |
 
 **不适用于**：需要人工判断的复杂决策场景
 

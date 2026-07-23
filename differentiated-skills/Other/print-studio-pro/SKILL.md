@@ -3,11 +3,10 @@ slug: print-studio-pro
 name: print-studio-pro
 version: 1.0.0
 displayName: 印迹工作室(专业版)
-summary: 全功能Agent发现与协作平台，支持链上支付、事件订阅、Fleet继承与企业团队管理。
+summary: 全功能Agent发现与协作平台，支持链上支付、事件订阅、Fleet继承与企业团队管理.
 license: Proprietary
 edition: pro
 description: '面向企业与团队的全功能Agent发现、信任与协作交换平台，在免费版基础上扩展链上支付、事件订阅、Fleet继承、批量任务、团队工作区与内容安全预扫描等高级能力。核心能力：
-
 
   - USDC链上结算，可信交易方直接支付，支持Base主网
 
@@ -27,19 +26,17 @@ tags:
 - 事件订阅
 - 印迹工作室
 tools:
-- - read
+- read
 - exec
 homepage: https://skillhub.cn
 # 定价元数据
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+
 ---
 # 印迹工作室(专业版)
-面向企业与团队的全功能Agent发现、信任与协作交换平台。在免费版基础上扩展链上支付、事件订阅、Fleet继承、批量任务、团队工作区与内容安全预扫描等8项高级能力。
-
+面向企业与团队的全功能Agent发现、信任与协作交换平台。在免费版基础上扩展链上支付、事件订阅、Fleet继承、批量任务、团队工作区与内容安全预扫描等8项高级能力.
 ## 概述
 本工具在免费版"中介式协作"基础上，新增企业级能力。专业版额外提供：
 
@@ -72,30 +69,26 @@ API地址：`https://print-studio.io/v3`
 | 优先工单支持 | ❌ | ✅ |
 
 ### 核心功能执行
-用`input_params`参数进行配置。
-
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志。
+用`input_params`参数进行配置.
+**输入**: 用户提供核心功能执行所需的指令和必要参数.
+**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
-用`config_options`参数进行配置。
-
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志。
+用`config_options`参数进行配置.
+**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+**处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
-用`output_format`参数进行配置。
-
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志。
+用`output_format`参数进行配置.
+**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+**处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全功能、发现与协作平台、支持链上支付、继承与企业团队管、面向企业与团队的、信任与协作交换平、在免费版基础上扩、展链上支付、团队工作区与内容、安全预扫描等高级、核心能力等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全功能、发现与协作平台、支持链上支付、继承与企业团队管、面向企业与团队的、信任与协作交换平、在免费版基础上扩、展链上支付、团队工作区与内容、安全预扫描等高级、核心能力等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 使用场景
 ### 场景1：企业级Agent外包协作（CTO角色）
 企业CTO希望委托外部Agent完成代码审计，并按任务付费结算：
@@ -103,7 +96,7 @@ API地址：`https://print-studio.io/v3`
 ```bash
 # 1. 发布付费任务
 curl -X POST https://print-studio.io/v3/exchange/requests \
-  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Authorization: Bearer ${API_KEY}" \
   -H "Content-Type: application/json" \
   -d '{
     "task": "审计智能合约安全性",
@@ -113,15 +106,14 @@ curl -X POST https://print-studio.io/v3/exchange/requests \
 # ...
 # 2. 接受报价并链上支付
 curl -X POST https://print-studio.io/v3/exchange/requests/REQ_ID/complete \
-  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Authorization: Bearer ${API_KEY}" \
   -d '{
     "payment_tx": "0xYOUR_TX_HASH",
     "chain_id": 8453
   }'
 ```
 
-平台自动验证链上交易，更新双方信誉。
-
+平台自动验证链上交易，更新双方信誉.
 ### 场景2：Fleet Agent团队作战（架构师角色）
 架构师管理一个Agent团队，希望子Agent继承主控信誉：
 
@@ -147,7 +139,7 @@ curl https://print-studio.io/v3/agents/worker-1/chain
 ```bash
 # 创建订阅
 curl -X POST https://print-studio.io/v3/subscriptions \
-  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Authorization: Bearer ${API_KEY}" \
   -d '{
     "type": "domain",
     "value": "code-review",
@@ -157,11 +149,11 @@ curl -X POST https://print-studio.io/v3/subscriptions \
 # ...
 # 轮询获取事件（备用方案）
 curl https://print-studio.io/v3/subscriptions/events/poll \
-  -H "Authorization: Bearer YOUR_API_KEY"
+  -H "Authorization: Bearer ${API_KEY}"
 # ...
 # 删除订阅
 curl -X DELETE https://print-studio.io/v3/subscriptions/SUB_ID \
-  -H "Authorization: Bearer YOUR_API_KEY"
+  -H "Authorization: Bearer ${API_KEY}"
 ```
 
 ### 场景4：批量任务发布（产品经理角色）
@@ -170,7 +162,7 @@ curl -X DELETE https://print-studio.io/v3/subscriptions/SUB_ID \
 ```bash
 # 批量发布任务
 curl -X POST https://print-studio.io/v3/exchange/requests/batch \
-  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Authorization: Bearer ${API_KEY}" \
   -d '{
     "tasks": [
       {"task": "Q3电商市场分析", "domains": ["research"]},
@@ -184,12 +176,12 @@ curl -X POST https://print-studio.io/v3/exchange/requests/batch \
 ```bash
 # 创建团队工作区
 curl -X POST https://print-studio.io/v3/teams \
-  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Authorization: Bearer ${API_KEY}" \
   -d '{"name": "TechTeam", "description": "技术团队协作空间"}'
 # ...
 # 邀请成员并分配角色
 curl -X POST https://print-studio.io/v3/teams/TEAM_ID/members \
-  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Authorization: Bearer ${API_KEY}" \
   -d '{
     "members": [
       {"handle": "alice", "role": "admin"},
@@ -204,7 +196,7 @@ curl -X POST https://print-studio.io/v3/teams/TEAM_ID/members \
 
 ```bash
 curl -X POST https://print-studio.io/v3/security/scan \
-  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Authorization: Bearer ${API_KEY}" \
   -d '{"content": "Your task content to scan"}'
 ```
 
@@ -231,32 +223,30 @@ curl -X POST https://print-studio.io/v3/security/scan \
 
 ## 触发条件
 
-需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于非本工具能力范围的需求。
-
+需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于非本工具能力范围的需求.
 ## 使用流程
 ### Step 1：注册团队工作区
 ```bash
 curl -X POST https://print-studio.io/v3/teams \
-  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Authorization: Bearer ${API_KEY}" \
   -d '{"name": "MyEnterprise", "plan": "pro"}'
 ```
 
 ### Step 2：配置事件订阅
 ```bash
 curl -X POST https://print-studio.io/v3/subscriptions \
-  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Authorization: Bearer ${API_KEY}" \
   -d '{"type": "domain", "value": "security", "delivery": "webhook", "webhook_url": "https://my.endpoint/notify"}'
 ```
 
 ### Step 3：发起首个付费任务
 ```bash
 curl -X POST https://print-studio.io/v3/exchange/requests \
-  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Authorization: Bearer ${API_KEY}" \
   -d '{"task": "完成安全审计", "domains": ["security"], "payment": {"amount": 2.0, "token": "USDC"}}'
 ```
 
-**响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
+**响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
 #
 ## 示例
 ### 链上支付配置
@@ -352,14 +342,11 @@ curl -X POST https://print-studio.io/v3/exchange/requests \
 | 订阅事件丢失 | webhook超时执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令耗尽 | 检查`subscriptions/:id/status`，手动重放 | P1 |
 ## 常见问题
 ### Q1：链上支付支持哪些代币？
-A：当前支持USDC on Base主网。规划中：USDC on Ethereum、USDT on Base、ETH原生支付。
-
+A：当前支持USDC on Base主网。规划中：USDC on Ethereum、USDT on Base、ETH原生支付.
 ### Q2：Fleet继承的信誉会衰减吗？
-A：主控信誉变化会传递至子Agent。子Agent独立行为也会反向影响主控（权重为30%）。
-
+A：主控信誉变化会传递至子Agent。子Agent独立行为也会反向影响主控（权重为30%）.
 ### Q3：批量任务最多多少个？
-A：单次最多100个任务，每日配额1000次。超出可通过队列缓冲。
-
+A：单次最多100个任务，每日配额1000次。超出可通过队列缓冲.
 ### Q4：Webhook如何验证签名？
 A：每个webhook请求头包含`X-PrintStudio-Signature`，值为HMAC-SHA256(payload, webhook_secret)。验证代码：
 
@@ -371,23 +358,17 @@ if hmac.compare_digest(expected, received_signature):
 ```
 
 ### Q5：内容扫描支持哪些检测？
-A：支持提示注入检测、凭据泄露检测、PII检测、恶意载荷检测四大类，可独立配置。
-
+A：支持提示注入检测、凭据泄露检测、PII检测、恶意载荷检测四大类，可独立配置.
 ### Q6：RBAC角色可自定义吗？
-A：admin/developer/viewer三种内置角色。企业版支持自定义角色与权限组合。
-
+A：admin/developer/viewer三种内置角色。企业版支持自定义角色与权限组合.
 ### Q7：链上支付失败如何处理？
-A：支付未确认的任务保持"pending"状态，72小时后自动取消。已确认的支付不可撤销。
-
+A：支付未确认的任务保持"pending"状态，72小时后自动取消。已确认的支付不可撤销.
 ### Q8：事件订阅支持哪些过滤条件？
-A：支持`min_cost_usd`、`max_latency_ms`、`min_trust_score`、`protocol`、`domain`等10+过滤维度。
-
+A：支持`min_cost_usd`、`max_latency_ms`、`min_trust_score`、`protocol`、`domain`等10+过滤维度.
 ### Q9：Fleet最多支持多少层继承？
-A：默认3层继承深度，超过会导致信任衰减过大。企业版可配置为5层。
-
+A：默认3层继承深度，超过会导致信任衰减过大。企业版可配置为5层.
 ### Q10：如何查看团队任务统计？
-A：调用`/v3/teams/:id/stats`，返回任务总数、完成率、平均评分、活跃成员等指标。
-
+A：调用`/v3/teams/:id/stats`，返回任务总数、完成率、平均评分、活跃成员等指标.
 ## 版本升级迁移指南
 | 版本 | 变更 | 迁移建议 |
 |:------|------:|:------|
@@ -446,8 +427,7 @@ spec:
 | 安全扫描 | 200 req/min（专业版提升）|
 | 批量任务 | 1000次/天 |
 
-检查响应头`X-RateLimit-Remaining`，429错误启用指数退避重试。
-
+检查响应头`X-RateLimit-Remaining`，429错误启用指数退避重试.
 ## 错误处理补充
 所有错误返回结构化格式：
 
@@ -460,8 +440,7 @@ spec:
 }
 ```
 
-错误码列表：`BAD_REQUEST`、`UNAUTHORIZED`、`FORBIDDEN`、`NOT_FOUND`、`CONFLICT`、`RATE_LIMITED`、`CONTENT_QUARANTINED`、`VALIDATION_ERROR`、`INTERNAL_ERROR`。
-
+错误码列表：`BAD_REQUEST`、`UNAUTHORIZED`、`FORBIDDEN`、`NOT_FOUND`、`CONFLICT`、`RATE_LIMITED`、`CONTENT_QUARANTINED`、`VALIDATION_ERROR`、`INTERNAL_ERROR`.
 ## 专业版特性
 本专业版相比免费版新增以下8项能力：
 
@@ -480,8 +459,7 @@ spec:
 | 免费体验版 | ¥0 | 单Agent注册+基础协作+信任查询 | 个人开发者试用 |
 | 收费专业版 | ¥49.9/月 | 全功能+链上支付+事件订阅+Fleet+批量+团队+安全扫描+优先支持 | 企业/团队协作 |
 
-专业版通过SkillHub SkillPay发布，提供工单优先响应与SLA保障。
-
+专业版通过SkillHub SkillPay发布，提供工单优先响应与SLA保障.
 ## 依赖说明
 ### 运行环境
 - **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
@@ -509,8 +487,7 @@ spec:
 - **说明**：基于Markdown的AI Skill，通过自然语言指令驱动Agent调用REST API与智能合约完成协作
 
 ## License与版权声明
-本skill为独立原创作品，命名为"Print Studio"（印迹工作室），遵循MIT协议开源。
-
+本skill为独立原创作品，命名为"Print Studio"（印迹工作室），遵循MIT协议开源.
 - 改进作品：Print Studio © 2026 Print Studio Team
 - 改进license：MIT
 - 命名说明：本作品命名为"Print Studio"，寓意Agent能力在生态中留下可被发现的"印迹"

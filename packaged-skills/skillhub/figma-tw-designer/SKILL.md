@@ -10,22 +10,20 @@ description: |-
   Figma设计助手(专业版)是面向团队与重度用户的Figma全功能交互工具，在免费版基础上新增批量导出、高级缓存、团队协作分析与自定义模板等高级能力。核心能力：
   - 完整的文件结构读取与增量缓存更新
   - 批量图层导出，支持自定义命名规则与模板
-  - 团队评论聚合分析。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。
+  - 团队评论聚合分析。Use when 、品牌视觉时使用。不适用于3D建模和动画制作。
 tags:
   - 集成工具
   - 设计协作
   - Figma
   - 专业版
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 ---
 # Figma设计助手(专业版)
 
@@ -98,7 +96,7 @@ tags: "设计,UI/UX,创意"
 ```bash
 # macOS / Linux
 export FIGMA_TOKEN="你的个人访问令牌"
-# ...
+# .
 # Windows PowerShell
 $env:FIGMA_TOKEN="你的个人访问令牌"
 ```
@@ -107,7 +105,7 @@ $env:FIGMA_TOKEN="你的个人访问令牌"
 ```bash
 # 初始化缓存目录
 python （请参考skill目录中的脚本文件） cache init --dir ~/.figma-cache
-# ...
+# .
 # 首次读取并缓存结构
 python （请参考skill目录中的脚本文件） get-file <file_key> --cache
 ```

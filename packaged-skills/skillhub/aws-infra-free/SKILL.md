@@ -6,10 +6,10 @@ displayName: "AWS Infra LITE"
 summary: "通过AWS CLI执行基础只读查询,覆盖EC2/S3/RDS资源清单和实例健康检查两大场景"
 license: "MIT"
 description: |-
-  AWS基础设施基础查询工具(免费版)。通过AWS CLI执行read-only查询,帮助开发者快速了解云资源状态。
-  覆盖两大基础场景:EC2/S3/RDS资源清单查询、实例健康检查与CloudWatch告警查看。
-  默认只读模式,不执行任何变更操作。适用于日常运维巡检和资源盘点。
-  如需安全审计、成本分析、变更追踪等高级功能,请升级至aws-infra付费版。
+  AWS基础设施基础查询工具(免费版)。通过AWS CLI执行read-only查询,帮助开发者快速了解云资源状态.
+  覆盖两大基础场景:EC2/S3/RDS资源清单查询、实例健康检查与CloudWatch告警查看.
+  默认只读模式,不执行任何变更操作。适用于日常运维巡检和资源盘点.
+  如需安全审计、成本分析、变更追踪等高级功能,请升级至aws-infra付费版.
 tags:
   - Cloud
   - DevOps
@@ -18,13 +18,11 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "AWS,云计算,DevOps"
+
 ---
 # AWS Infra LITE
 
-通过AWS CLI执行基础只读查询,覆盖资源清单和健康检查两大场景。
-
+通过AWS CLI执行基础只读查询,覆盖资源清单和健康检查两大场景.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -54,7 +52,7 @@ tags: "AWS,云计算,DevOps"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### 1. 资源清单查询 (Inventory)
@@ -71,13 +69,11 @@ export API_KEY="your_api_key_here"
 - **CloudWatch告警**: 列出所有处于ALARM状态的CloudWatch告警
   `aws cloudwatch describe-alarms --state-value ALARM --query 'MetricAlarms[].[AlarmName,StateValue,MetricName]' --output table`
 
-> **升级提示**: 安全审计(IAM/安全组检查)、成本分析(Cost Explorer)、变更追踪(CloudTrail)等高级功能仅在[aws-infra付费版](#)中提供。
+> **升级提示**: 安全审计(IAM/安全组检查)、成本分析(Cost Explorer)、变更追踪(CloudTrail)等高级功能仅在[aws-infra付费版](#)中提供.
 ### EC2实例清单
 
-针对EC2实例清单,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供EC2实例清单相关的配置参数、输入数据和处理选项。
-
+针对EC2实例清单,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供EC2实例清单相关的配置参数、输入数据和处理选项.
 **输出**: 返回EC2实例清单的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`EC2实例清单`的配置文档进行参数调优
 #
@@ -146,8 +142,7 @@ aws ec2 describe-instance-status --include-all-instances \
 +----------------------+-------------------+-----------------+--------------------+
 ```
 
-**分析**: `i-0def456ghi789123`的实例状态为`impaired`,需要进一步检查;`i-0ghi789jkl123456`的系统状态为`insufficient`,可能需要重启或联系AWS支持。
-
+**分析**: `i-0def456ghi789123`的实例状态为`impaired`,需要进一步检查;`i-0ghi789jkl123456`的系统状态为`insufficient`,可能需要重启或联系AWS支持.
 ### 案例2: 资源盘点 (S3存储桶列表)
 **场景**: 开发者需要确认账户下有哪些S3存储桶
 

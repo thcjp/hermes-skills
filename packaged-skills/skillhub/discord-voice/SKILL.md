@@ -6,10 +6,9 @@ displayName: "Discord语音助手"
 summary: "Discord语音对话助手,覆盖STT/TTS/VAD/打断/自动重连与流式转录全流程"
 license: "Proprietary"
 description: |-
-  Discord 语音对话专业版 —— 在 Discord 语音频道中实现实时双向语音对话的端到端助手。
+  Discord 语音对话专业版 —— 在 Discord 语音频道中实现实时双向语音对话的端到端助手.
   覆盖语音活动检测(VAD)、语音转文字(STT)、文字转语音(TTS)、打断响应(Barge-in)、
-  自动重连与流式转录等核心能力。
-
+  自动重连与流式转录等核心能力.
   核心能力:
   - 多 STT 引擎:OpenAI Whisper API、Deepgram 流式转录、本地 Whisper 离线模式
   - 多 TTS 引擎:OpenAI TTS、ElevenLabs 多语言、Kokoro 本地离线
@@ -24,7 +23,7 @@ description: |-
   - 直播间互动:实时转写主播发言并合成 TTS 回复
   - 无障碍辅助:为听障用户将语音转为文字并将文字回复合成语音
 
-  不适用于:多频道并发语音(每公会仅支持 1 个语音频道)、长时间录音(大于30 秒)与无网络环境。
+  不适用于:多频道并发语音(每公会仅支持 1 个语音频道)、长时间录音(大于30 秒)与无网络环境.
 tags:
   - Communication
   - 语音对话
@@ -38,13 +37,12 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "Discord,社交,通信"
+
+
 ---
 # Discord 语音助手
 
-在 Discord 语音频道中实现端到端语音对话:VAD 检测说话 → 录音缓冲 → STT 转写 → Agent 处理 → TTS 合成 → 频道播放。支持打断响应与自动重连,提供斜杠命令、CLI、Agent Tool 三种入口。
-
+在 Discord 语音频道中实现端到端语音对话:VAD 检测说话 → 录音缓冲 → STT 转写 → Agent 处理 → TTS 合成 → 频道播放。支持打断响应与自动重连,提供斜杠命令、CLI、Agent Tool 三种入口.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -73,10 +71,9 @@ node -e "require('@discordjs/opus')"  # Opus 编解码
 node -e "require('sodium-native')"    # 加密
 ```
 
-Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`Use Voice Activity`(检测语音活动)。在 Discord Developer Portal > OAuth2 > Permissions 中勾选。
-
-**输入**: 用户提供先验证系统依赖与 Bot 权限所需的指令和必要参数。
-**输出**: 返回先验证系统依赖与 Bot 权限的处理结果,包含执行状态码、结果数据和执行日志。
+Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`Use Voice Activity`(检测语音活动)。在 Discord Developer Portal > OAuth2 > Permissions 中勾选.
+**输入**: 用户提供先验证系统依赖与 Bot 权限所需的指令和必要参数.
+**输出**: 返回先验证系统依赖与 Bot 权限的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. STT/TTS 引擎必须配置 API Key
 | 引擎 | 类型 | 必需环境变量 |
 |---:|---:|---:|
@@ -87,9 +84,8 @@ Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`
 | ElevenLabs | TTS | `ELEVENLABS_API_KEY` |
 | Kokoro | TTS | 无需 API Key,需本地模型 |
 
-未配置 Key 的引擎会在调用时返回 `provider_api_key_missing`。
-
-**输入**: 用户提供STT/TTS 引擎必须配置 API Key所需的指令和必要参数。
+未配置 Key 的引擎会在调用时返回 `provider_api_key_missing`.
+**输入**: 用户提供STT/TTS 引擎必须配置 API Key所需的指令和必要参数.
 ### 3. 单公会单频道约束
 
 每个公会同一时间仅允许 Bot 加入 1 个语音频道。重复调用 `join` 会返回 `already_in_voice_channel`,需先 `leave` 再切换。- 验证返回数据的完整性和格式正确性
@@ -115,7 +111,7 @@ Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
-需要配置对应API Key，详见上文环境配置章节
+本Skill基于Agent平台内置LLM,通常无需额外API Key配置
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
@@ -124,7 +120,7 @@ Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 使用流程
 
 1. 安装系统依赖:`ffmpeg`、`build-essential`、`python3`
@@ -191,14 +187,12 @@ discord_voice speak "你好,欢迎加入频道"
 discord_voice status
 ```
 
-支持动作:`join`(需 channelId)、`leave`、`speak`(需文本)、`status`。
-
+支持动作:`join`(需 channelId)、`leave`、`speak`(需文本)、`status`.
 ## 案例展示
 
 ### 案例1: 社区语音问答助手
 
-公会成员在语音频道提问,Bot 自动转写并通过 Agent 回答,适合技术社区答疑场景。
-
+公会成员在语音频道提问,Bot 自动转写并通过 Agent 回答,适合技术社区答疑场景.
 ```bash
 # 1. 配置 local-whisper + openai TTS(无需外部 STT Key)
 # agent-cli.json 片段:
@@ -234,12 +228,10 @@ agent-cli discord_voice status
 # 输出: Connected to "General" | Latency: 89ms | Uptime: 12m
 ```
 
-输出: 完整的语音问答循环,延迟约 2-3 秒(含 STT + Agent + TTS)。
-
+输出: 完整的语音问答循环,延迟约 2-3 秒(含 STT + Agent + TTS).
 ### 案例2: 直播间实时字幕(Deepgram 流式 STT)
 
-主播语音需要实时转为字幕显示在直播间,要求延迟 < 2 秒。
-
+主播语音需要实时转为字幕显示在直播间,要求延迟 < 2 秒.
 ```bash
 # 1. 配置 Deepgram 流式 STT(端到端延迟降低约 1 秒)
 # agent-cli.json 片段:
@@ -264,12 +256,10 @@ agent-cli discord_voice join 1234567890123456
 # 日志: [discord-voice] Streaming STT failed, fallback to batch
 ```
 
-输出: 实时字幕流,延迟约 1-2 秒;流式失败自动降级为批量转录保证可用性。
-
+输出: 实时字幕流,延迟约 1-2 秒;流式失败自动降级为批量转录保证可用性.
 ### 案例3: 无障碍对话辅助
 
-听障用户通过文字输入,Bot 合成语音在频道播放,实现双向交流。
-
+听障用户通过文字输入,Bot 合成语音在频道播放,实现双向交流.
 ```text
 # 用户通过 Agent Tool 输入文本
 discord_voice speak "大家好,我是新成员,请多关照"
@@ -282,8 +272,7 @@ discord_voice speak "大家好,我是新成员,请多关照"
 # 日志: [discord-voice] STT: "欢迎加入!有问题随时问"
 ```
 
-输出: 文字 → 语音 → 频道播放,反向语音 → 文字 → 用户终端显示。
-
+输出: 文字 → 语音 → 频道播放,反向语音 → 文字 → 用户终端显示.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
@@ -300,23 +289,17 @@ discord_voice speak "大家好,我是新成员,请多关照"
 ## 常见问题
 
 ### Q1: 如何降低端到端延迟?
-A: 三个杠杆:(1) STT 改用 Deepgram 流式模式(`streamingSTT: true`),延迟降低约 1 秒;(2) TTS 选用 OpenAI `tts-1` 而非 `tts-1-hd`,合成更快;(3) 调低 `silenceThresholdMs`(如 800ms)加快触发,但可能误判短停顿。
-
+A: 三个杠杆:(1) STT 改用 Deepgram 流式模式(`streamingSTT: true`),延迟降低约 1 秒;(2) TTS 选用 OpenAI `tts-1` 而非 `tts-1-hd`,合成更快;(3) 调低 `silenceThresholdMs`(如 800ms)加快触发,但可能误判短停顿.
 ### Q2: VAD 灵敏度如何选择?
-A: `low` 适合安静环境,可拾取轻声说话但易被背景噪声触发;`medium` 为默认平衡值,推荐大多数场景;`high` 适合嘈杂环境,需更大声清晰说话。若频繁误触发,先尝试 `medium` 再升 `high`。
-
+A: `low` 适合安静环境,可拾取轻声说话但易被背景噪声触发;`medium` 为默认平衡值,推荐大多数场景;`high` 适合嘈杂环境,需更大声清晰说话。若频繁误触发,先尝试 `medium` 再升 `high`.
 ### Q3: Barge-in(打断响应)如何工作?
-A: 启用后(`bargeIn: true`,默认),Bot 播放 TTS 时若检测到用户开口,立即停止播放并开始录音。这模拟了人类对话中的插话行为。若需让 Bot 完整播完,设置 `bargeIn: false`。
-
+A: 启用后(`bargeIn: true`,默认),Bot 播放 TTS 时若检测到用户开口,立即停止播放并开始录音。这模拟了人类对话中的插话行为。若需让 Bot 完整播完,设置 `bargeIn: false`.
 ### Q4: 自动重连的退避策略是什么?
-A: 心跳检查每 30 秒(可配置 `heartbeatIntervalMs`)执行一次。断线后按指数退避重试:第 1 次 1 秒、第 2 次 2 秒、第 3 次 4 秒。3 次失败后放弃,需手动 `join`。日志会输出 `Reconnection attempt 1/3` 等进度。
-
+A: 心跳检查每 30 秒(可配置 `heartbeatIntervalMs`)执行一次。断线后按指数退避重试:第 1 次 1 秒、第 2 次 2 秒、第 3 次 4 秒。3 次失败后放弃,需手动 `join`。日志会输出 `Reconnection attempt 1/3` 等进度.
 ### Q5: 流式 STT 失败时如何降级?
-A: Deepgram 流式连接失败时,自动降级为批量转录模式(完整录音后一次性送 STT)。日志会显示 `Streaming STT failed, fallback to batch`。降级后延迟增加约 1 秒,但保证对话不中断。
-
+A: Deepgram 流式连接失败时,自动降级为批量转录模式(完整录音后一次性送 STT)。日志会显示 `Streaming STT failed, fallback to batch`。降级后延迟增加约 1 秒,但保证对话不中断.
 ### Q6: 如何限制只有特定用户能触发对话?
-A: 在 `agent-cli.json` 中配置 `allowedUsers: ["user_id_1", "user_id_2"]`。空数组表示允许所有用户。用户 ID 可在 Discord 开发者模式右键用户复制。
-
+A: 在 `agent-cli.json` 中配置 `allowedUsers: ["user_id_1", "user_id_2"]`。空数组表示允许所有用户。用户 ID 可在 Discord 开发者模式右键用户复制.
 ## 已知限制
 
 - 每个公会同一时间仅支持 1 个语音频道,无法多频道并发

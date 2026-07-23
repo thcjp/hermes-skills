@@ -6,22 +6,20 @@ displayName: "版本化写作工具（免费版）"
 summary: "免费版版本化写作工具，支持基础工作流与edit.sh版本控制"
 license: "MIT"
 description: |-
-  带版本控制的写作工具（免费版）。
-  遵循Request→Plan→Draft→Audit→Refine→Deliver基础工作流，通过edit.sh脚本管理版本。
-  支持depth基础配置。免费版不含完整参考文档库与质量审计深度能力。
+  带版本控制的写作工具（免费版）.
+  遵循Request→Plan→Draft→Audit→Refine→Deliver基础工作流，通过edit.sh脚本管理版本.
+  支持depth基础配置。免费版不含完整参考文档库与质量审计深度能力.
 tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
 tags:
   - 通用办公
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+
 ---
 # 版本化写作工具（免费版）
 
-带基础版本控制的写作工具，通过edit.sh脚本管理版本，遵循Request→Plan→Draft→Audit→Refine→Deliver流程。
-
+带基础版本控制的写作工具，通过edit.sh脚本管理版本，遵循Request→Plan→Draft→Audit→Refine→Deliver流程.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -64,7 +62,7 @@ Request → Plan → Draft → Audit → Refine → Deliver
 - **Run quality audit before delivering**：交付前运行quality audit
 - **Offer cleanup only after user confirms**：仅在用户确认piece最终后提供cleanup
 
-**输出**: 返回版本化写作工作流的处理结果,包含执行状态码、结果数据和执行日志。
+**输出**: 返回版本化写作工作流的处理结果,包含执行状态码、结果数据和执行日志.
 ### 基础Scripts工具集
 
 提供核心shell脚本：
@@ -85,7 +83,7 @@ Request → Plan → Draft → Audit → Refine → Deliver
 - **depth**: `"quick"` | `"standard"` | `"thorough"` — 控制研究与修订轮次
 - **auto_audit**: `true`/`false` — drafts后自动运行audits
 
-**输入**: 用户提供配置系统所需的指令和必要参数。
+**输入**: 用户提供配置系统所需的指令和必要参数.
 **输出**: 返回配置系统的处理结果,包含执行状态码、结果数据和执行日志。### 工作空间初始化
 首次使用时创建工作空间：
 
@@ -93,11 +91,9 @@ Request → Plan → Draft → Audit → Refine → Deliver
 （请参考skill目录中的脚本文件） ~/writing
 ```
 
-创建标准项目结构，包含pieces目录、scripts目录、references目录与config.json配置文件。
-
-**输入**: 用户提供工作空间初始化所需的指令和必要参数。
-**处理**: 解析工作空间初始化的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-
+创建标准项目结构，包含pieces目录、scripts目录、references目录与config.json配置文件.
+**输入**: 用户提供工作空间初始化所需的指令和必要参数.
+**处理**: 解析工作空间初始化的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 #
 ## 使用流程
 
@@ -162,14 +158,11 @@ Step 8 - Deliver & Cleanup:
 ## 常见问题
 
 ### Q1: 免费版与付费版有何区别？
-A: 免费版提供基础版本化写作工作流与七项核心scripts。不含完整八份参考文档库（brief.md、execution.md、verification.md、state.md、research.md、versioning.md、audit.md、criteria.md）的详细使用指导与深度质量审计能力。
-
+A: 免费版提供基础版本化写作工作流与七项核心scripts。不含完整八份参考文档库（brief.md、execution.md、verification.md、state.md、research.md、versioning.md、audit.md、criteria.md）的详细使用指导与深度质量审计能力.
 ### Q2: 为什么禁止直接编辑文件？
-A: 直接编辑文件会绕过版本控制系统，导致无法追溯修改历史与恢复旧versions。必须使用`（请参考skill目录中的脚本文件）`编辑，该脚本自动创建version备份。这是本Skill的强制规则（NEVER edit files directly）。
-
+A: 直接编辑文件会绕过版本控制系统，导致无法追溯修改历史与恢复旧versions。必须使用`（请参考skill目录中的脚本文件）`编辑，该脚本自动创建version备份。这是本Skill的强制规则（NEVER edit files directly）.
 ### Q3: depth配置的三个级别如何选择？
-A: `quick`适用于短篇内容，最少研究轮次；`standard`适用于常规写作；`thorough`适用于长篇内容，最多研究轮次与修订passes。在config.json中设置`depth`字段。
-
+A: `quick`适用于短篇内容，最少研究轮次；`standard`适用于常规写作；`thorough`适用于长篇内容，最多研究轮次与修订passes。在config.json中设置`depth`字段.
 ## 已知限制
 
 - 不含完整八份参考文档库（brief.md、execution.md、verification.md、state.md、research.md、versioning.md、audit.md、criteria.md）的详细使用指导

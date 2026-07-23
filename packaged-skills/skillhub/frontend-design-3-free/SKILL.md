@@ -6,24 +6,22 @@ displayName: "Frontend Design Free"
 summary: "基础版前端设计技能，创建独特界面并避免通用 AI 风格，支持 3 种美学方向。"
 license: "MIT"
 description: |-
-  frontend-design-3-free 是前端设计技能的基础版本，创建独特的生产级界面，避免通用"AI slop"美学。
+  frontend-design-3-free 是前端设计技能的基础版本，创建独特的生产级界面，避免通用"AI slop"美学.
   支持 3 种美学方向（brutally minimal、editorial/magazine、brutalist/raw）和基础字体、色彩、
   动效能力。不包含 8 种高级美学方向、Motion 库集成和背景视觉细节。适合快速创建独特界面，
-  升级完整版获取全部 11 种美学方向和高级视觉技巧。
+  升级完整版获取全部 11 种美学方向和高级视觉技巧.
 tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
 tags:
   - 创意设计
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
+
 ---
 # Frontend Design Free
 
-frontend-design-3-free 创建独特的生产级前端界面，避免通用"AI slop"美学。
-基础版支持 3 种美学方向和 CSS-only 动画方案。
-
+frontend-design-3-free 创建独特的生产级前端界面，避免通用"AI slop"美学.
+基础版支持 3 种美学方向和 CSS-only 动画方案.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -53,40 +51,36 @@ frontend-design-3-free 创建独特的生产级前端界面，避免通用"AI sl
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### 1. 设计思维与美学方向选择
-在编码前理解上下文并承诺一个美学方向。分析四个维度：Purpose、Tone、Constraints、Differentiation。
+在编码前理解上下文并承诺一个美学方向。分析四个维度：Purpose、Tone、Constraints、Differentiation.
 基础版支持 3 种美学方向：brutally minimal（极简）、editorial/magazine（编辑杂志）、
 brutalist/raw（粗野主义）。选择一种并极致执行，不要混合多种方向。- 验证返回数据的完整性和格式正确性
 - 参考`设计思维与美学方向选择`的配置文档进行参数调优
 ### 2. 字体策略（Display + Body 配对）
 选择独特的字体，避免通用字体（Arial、Inter、Roboto、system fonts）。将 display 字体与
-body 字体配对。基础版支持字体配对建议，但不包含跨美学方向的完整字体匹配策略。
-禁止使用 Space Grotesk 等 AI 常见选择。
-
-**输入**: 用户提供字体策略（Display + Body 配对）所需的指令和必要参数。
+body 字体配对。基础版支持字体配对建议，但不包含跨美学方向的完整字体匹配策略.
+禁止使用 Space Grotesk 等 AI 常见选择.
+**输入**: 用户提供字体策略（Display + Body 配对）所需的指令和必要参数.
 **输出**: 返回字体策略（Display + Body 配对）的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`字体策略（Display + Body 配对）`的配置文档进行参数调优
 ### 3. 色彩与主题系统
-使用 CSS variables 建立色彩系统。主色配以锐利强调色优于均匀分布的调色板。
+使用 CSS variables 建立色彩系统。主色配以锐利强调色优于均匀分布的调色板.
 支持 light/dark 主题切换。基础版支持单色+一个强调色的配色策略，不包含高饱和度撞色、
-霓虹色+暗色背景等高级配色方案。
-
-**输入**: 用户提供色彩与主题系统所需的指令和必要参数。
-**处理**: 解析色彩与主题系统的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+霓虹色+暗色背景等高级配色方案.
+**输入**: 用户提供色彩与主题系统所需的指令和必要参数.
+**处理**: 解析色彩与主题系统的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回色彩与主题系统的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`色彩与主题系统`的配置文档进行参数调优
 ### 4. CSS-only 动效
 使用 CSS-only 方案实现动画（`@keyframes`、`transition`、`transform`）。聚焦高影响力时刻：
 一次精心编排的页面加载配合 staggered reveals 比散落的微交互更有感染力。基础版不包含
-Motion 库（React）集成。
-
-**输入**: 用户提供CSS-only 动效所需的指令和必要参数。
-**处理**: 解析CSS-only 动效的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回CSS-only 动效的处理结果,包含执行状态码、结果数据和执行日志。
-
+Motion 库（React）集成.
+**输入**: 用户提供CSS-only 动效所需的指令和必要参数.
+**处理**: 解析CSS-only 动效的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回CSS-only 动效的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 使用流程
 
@@ -169,27 +163,22 @@ Motion 库（React）集成。
 ## 常见问题
 
 ### Q1: 免费版支持哪些美学方向？
-A: 免费版支持 3 种美学方向：brutally minimal、editorial/magazine、brutalist/raw。
+A: 免费版支持 3 种美学方向：brutally minimal、editorial/magazine、brutalist/raw.
 完整版支持全部 11 种方向，包括 retro-futuristic、organic/natural、luxury/refined、
-playful/toy-like、art deco/geometric、soft/pastel、industrial/utilitarian、maximalist chaos。
-
+playful/toy-like、art deco/geometric、soft/pastel、industrial/utilitarian、maximalist chaos.
 ### Q2: 免费版可以使用 Motion 库吗？
-A: 免费版仅支持 CSS-only 动画方案（`@keyframes`、`transition`、`transform`）。
+A: 免费版仅支持 CSS-only 动画方案（`@keyframes`、`transition`、`transform`）.
 完整版支持 React 环境下的 Motion 库集成（`motion.div`、`useScroll`、`useTransform`），
-提供更强大的动画编排能力。
-
+提供更强大的动画编排能力.
 ### Q3: 背景视觉细节在免费版中可用吗？
-A: 免费版不包含 gradient meshes、noise textures、grain overlays 等高级背景视觉细节。
-完整版支持全部 8 种背景创意形式，包括 SVG `feTurbulence` 滤镜、`backdrop-filter` 透明层叠等。
-
+A: 免费版不包含 gradient meshes、noise textures、grain overlays 等高级背景视觉细节.
+完整版支持全部 8 种背景创意形式，包括 SVG `feTurbulence` 滤镜、`backdrop-filter` 透明层叠等.
 ### Q4: 免费版支持 React/Vue 代码输出吗？
 A: 免费版主要输出 HTML/CSS 代码。完整版支持 HTML/CSS/JS、React、Vue 等多种框架的
-生产级代码输出，包含 Motion 库集成的 React 组件示例。
-
+生产级代码输出，包含 Motion 库集成的 React 组件示例.
 ### Q5: 如何升级到完整版？
 A: 将技能替换为完整版 frontend-design-3 即可。完整版包含 8 项核心能力、11 种美学方向、
-Motion 库集成、8 种背景视觉细节和反模式完整规避策略。
-
+Motion 库集成、8 种背景视觉细节和反模式完整规避策略.
 ## 已知限制
 
 - 仅支持 3 种美学方向，不包含 retro-futuristic、organic/natural 等 8 种高级方向

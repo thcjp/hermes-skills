@@ -8,11 +8,11 @@ license: "Proprietary"
 description: |-
   Slack 消息管理。通过 slack 工具对 Slack 工作区进行消息操作,涵盖五大动作组:
   reactions(添加回应与列出回应)、messages(发送、编辑、删除、读取消息)、
-  pins(置顶、取消置顶、列出置顶消息)、memberInfo(查询成员信息)、emojiList(列出自定义表情)。
-  工具使用已配置的 Bot Token 进行认证,支持 channel 与 user 两种消息目标。
-  适用于任务标记完成、置顶关键决策、发送通知消息、查询频道历史与成员信息等场景。
-  基于 Markdown 指令驱动,需配合已配置 slack 工具与 Bot Token 的 Agent 平台使用。
-  覆盖 channelId 与 messageId 输入采集、JSON action 调用格式、各动作组的参数规范。
+  pins(置顶、取消置顶、列出置顶消息)、memberInfo(查询成员信息)、emojiList(列出自定义表情).
+  工具使用已配置的 Bot Token 进行认证,支持 channel 与 user 两种消息目标.
+  适用于任务标记完成、置顶关键决策、发送通知消息、查询频道历史与成员信息等场景.
+  基于 Markdown 指令驱动,需配合已配置 slack 工具与 Bot Token 的 Agent 平台使用.
+  覆盖 channelId 与 messageId 输入采集、JSON action 调用格式、各动作组的参数规范.
 tags:
   - 通用办公
   - Collaboration
@@ -24,13 +24,11 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Slack,社交,通信"
+
 ---
 # Slack 消息管理
 
-通过 `slack` 工具对 Slack 工作区进行消息操作,涵盖回应、消息收发与编辑、置顶管理、成员查询、表情列表五大动作组。工具使用已配置的 Bot Token 进行认证。
-
+通过 `slack` 工具对 Slack 工作区进行消息操作,涵盖回应、消息收发与编辑、置顶管理、成员查询、表情列表五大动作组。工具使用已配置的 Bot Token 进行认证.
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
@@ -72,7 +70,7 @@ tags: "Slack,社交,通信"
 - **列出回应**: 查询某条消息上已有的所有回应,返回每个 emoji 的计数与 reacted 用户列表
 - **使用场景**: 用 ✅ 标记已完成任务、用 👀 表示正在查看、用 🎉 庆祝里程碑
 
-**处理**: 解析Reactions(消息回应)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**处理**: 解析Reactions(消息回应)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 2. Messages(消息收发与编辑)
 - **发送消息**: 向 channel 或 user 发送文本消息,to 字段格式为 `channel:<id>` 或 `user:<id>`
 - **编辑消息**: 修改已发送消息的内容,需提供 channelId 与 messageId
@@ -84,23 +82,21 @@ tags: "Slack,社交,通信"
 - **取消置顶**: 移除消息的置顶状态
 - **列出置顶**: 获取频道中所有置顶消息列表
 
-**输入**: 用户提供Pins(置顶管理)所需的指令和必要参数。
-**处理**: 解析Pins(置顶管理)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回Pins(置顶管理)的处理结果,包含执行状态码、结果数据和执行日志。
-
+**输入**: 用户提供Pins(置顶管理)所需的指令和必要参数.
+**处理**: 解析Pins(置顶管理)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回Pins(置顶管理)的处理结果,包含执行状态码、结果数据和执行日志.
 ### 4. MemberInfo(成员信息)
 - **查询成员**: 根据 userId 获取成员的显示名、邮箱、头像、状态等信息
 - **使用场景**: 确认消息发送者身份、获取成员联系方式、查看成员在线状态
 
-**输出**: 返回MemberInfo(成员信息)的处理结果,包含执行状态码、结果数据和执行日志。
+**输出**: 返回MemberInfo(成员信息)的处理结果,包含执行状态码、结果数据和执行日志.
 ### 5. EmojiList(表情列表)
 - **列出表情**: 获取工作区中所有自定义表情的名称与 URL
 - **使用场景**: 查看可用表情名以便在 reactions 中使用 :name: 格式引用
 
-**输入**: 用户提供EmojiList(表情列表)所需的指令和必要参数。
-**处理**: 解析EmojiList(表情列表)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回EmojiList(表情列表)的处理结果,包含执行状态码、结果数据和执行日志。
-
+**输入**: 用户提供EmojiList(表情列表)所需的指令和必要参数.
+**处理**: 解析EmojiList(表情列表)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回EmojiList(表情列表)的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 输入采集
 
@@ -112,8 +108,7 @@ tags: "Slack,社交,通信"
 - **userId**: 用户 ID,格式为 U 开头的字符串(如 U1234567890)
 - **limit**: 读取消息数量,整数
 
-消息上下文行中包含 `slack message id` 与 `channel` 字段,可直接复用。
-
+消息上下文行中包含 `slack message id` 与 `channel` 字段,可直接复用.
 ## 动作组一览
 
 | 动作组 | 默认状态 | 支持动作 | 说明 |
@@ -133,8 +128,7 @@ tags: "Slack,社交,通信"
 | 发送通知消息 | 目标频道 channelId 与通知文本 | 频道收到通知消息,可后续编辑或删除 |
 | 查询频道历史 | 频道 channelId 与读取数量 | 返回最近 N 条消息内容与发送者信息 |
 
-**不适用于**: 需要端到端加密的敏感通信;需要发送文件附件的场景(本 Skill 仅支持文本消息);需要管理频道与用户的场景(本 Skill 仅支持消息级别操作)。
-
+**不适用于**: 需要端到端加密的敏感通信;需要发送文件附件的场景(本 Skill 仅支持文本消息);需要管理频道与用户的场景(本 Skill 仅支持消息级别操作).
 ## 使用流程
 
 1. **确认 Bot 已配置**: 确保 Agent 平台已配置 slack 工具与 Bot Token,Bot 已被邀请加入目标频道
@@ -281,8 +275,7 @@ tags: "Slack,社交,通信"
 }
 ```
 
-**分析**: 先通过 react 动作为周报消息添加 ✅ 回应,表示团队已确认。再通过 pinMessage 将周报置顶到频道顶部,新进群的成员可第一时间看到。messageId 从消息上下文行或 readMessages 返回结果中获取。
-
+**分析**: 先通过 react 动作为周报消息添加 ✅ 回应,表示团队已确认。再通过 pinMessage 将周报置顶到频道顶部,新进群的成员可第一时间看到。messageId 从消息上下文行或 readMessages 返回结果中获取.
 ### 案例 2: 发送通知消息并编辑更新内容
 
 **场景**: 向开发频道发送版本发布通知,随后更新发布细节
@@ -320,8 +313,7 @@ tags: "Slack,社交,通信"
 }
 ```
 
-**分析**: sendMessage 返回的 ts 字段即为后续编辑所需的 messageId。先发送简短通知抢占时间线,再通过 editMessage 补充完整内容,避免重复发送多条消息造成信息分散。
-
+**分析**: sendMessage 返回的 ts 字段即为后续编辑所需的 messageId。先发送简短通知抢占时间线,再通过 editMessage 补充完整内容,避免重复发送多条消息造成信息分散.
 ### 案例 3: 读取频道历史并查询发送者信息
 
 **场景**: 需要了解频道最近讨论内容并确认某位发言者的身份
@@ -378,8 +370,7 @@ tags: "Slack,社交,通信"
 }
 ```
 
-**分析**: readMessages 返回的消息列表中每条含 user 字段(即 userId),可直接用于 memberInfo 查询。通过两步操作确认了频道最近讨论内容与发言者身份。
-
+**分析**: readMessages 返回的消息列表中每条含 user 字段(即 userId),可直接用于 memberInfo 查询。通过两步操作确认了频道最近讨论内容与发言者身份.
 ## 异常处理
 
 | 错误场景 | 错误现象 | 原因分析 | 处理方式 |
@@ -396,23 +387,17 @@ tags: "Slack,社交,通信"
 ## 常见问题
 
 ### Q1: 如何获取频道的 channelId?
-A: 在 Slack 客户端中,右键点击频道名称选择「查看频道详情」,或点击频道名称打开详情面板。channelId 显示在详情页底部或 URL 中,格式为 C 开头的字符串(如 C0LPBBKMQ)。也可通过 readMessages 读取消息时从返回结果的 channel 字段获取。
-
+A: 在 Slack 客户端中,右键点击频道名称选择「查看频道详情」,或点击频道名称打开详情面板。channelId 显示在详情页底部或 URL 中,格式为 C 开头的字符串(如 C0LPBBKMQ)。也可通过 readMessages 读取消息时从返回结果的 channel 字段获取.
 ### Q2: messageId 的格式是什么?如何获取?
-A: messageId 是 Slack 消息的时间戳,格式为 `秒.毫秒`(如 `1712023032.1234`)。获取方式有三种:从消息上下文行中的 `slack message id` 字段直接复用;通过 readMessages 动作读取消息后从返回的 ts 字段获取;通过 sendMessage 发送消息后从返回结果的 message.ts 字段获取。不要手动拼接时间戳,必须从实际消息中获取。
-
+A: messageId 是 Slack 消息的时间戳,格式为 `秒.毫秒`(如 `1712023032.1234`)。获取方式有三种:从消息上下文行中的 `slack message id` 字段直接复用;通过 readMessages 动作读取消息后从返回的 ts 字段获取;通过 sendMessage 发送消息后从返回结果的 message.ts 字段获取。不要手动拼接时间戳,必须从实际消息中获取.
 ### Q3: emoji 参数支持哪些格式?
-A: 支持两种格式。一是 Unicode emoji 字符,直接传入如 ✅、🎉、👀 等字符;二是 Slack 表情名称,格式为 :name:,如 :white_check_mark:、:tada:。如不确定工作区支持哪些自定义表情名称,先调用 emojiList 动作获取完整列表。注意 Unicode emoji 需为完整字符,部分复合 emoji 可能不被支持。
-
+A: 支持两种格式。一是 Unicode emoji 字符,直接传入如 ✅、🎉、👀 等字符;二是 Slack 表情名称,格式为 :name:,如 :white_check_mark:、:tada:。如不确定工作区支持哪些自定义表情名称,先调用 emojiList 动作获取完整列表。注意 Unicode emoji 需为完整字符,部分复合 emoji 可能不被支持.
 ### Q4: sendMessage 的 to 字段如何指定消息目标?
-A: to 字段支持两种格式。发到频道用 `channel:<channelId>`(如 `channel:C0LPBBKMQ`),Bot 需已加入该频道。发给个人用 `user:<userId>`(如 `user:U0ABC`),Bot 需与该用户有过对话历史或用户已允许 Bot 私信。两种格式的前缀(channel: 或 user:)不可省略。
-
+A: to 字段支持两种格式。发到频道用 `channel:<channelId>`(如 `channel:C0LPBBKMQ`),Bot 需已加入该频道。发给个人用 `user:<userId>`(如 `user:U0ABC`),Bot 需与该用户有过对话历史或用户已允许 Bot 私信。两种格式的前缀(channel: 或 user:)不可省略.
 ### Q5: Bot 如何加入频道?
-A: Bot 不能自行加入频道,需由频道成员邀请。在频道中执行 `/invite @botname` 即可邀请 Bot。对于私有频道,Bot 需被频道管理员邀请。Bot 加入频道后才能执行 sendMessage、readMessages、pinMessage 等操作,否则会报 not_in_channel 错误。
-
+A: Bot 不能自行加入频道,需由频道成员邀请。在频道中执行 `/invite @botname` 即可邀请 Bot。对于私有频道,Bot 需被频道管理员邀请。Bot 加入频道后才能执行 sendMessage、readMessages、pinMessage 等操作,否则会报 not_in_channel 错误.
 ### Q6: 频率限制如何处理?
-A: Slack API 对每个 Bot 有调用频率限制,通常单频道每分钟不超过 20 条消息。批量发送时建议在每条消息间加入 3 到 5 秒延迟。如收到 ratelimited 错误,响应头中含 Retry-After 字段,按该值(秒)等待后重试。如需高频推送,考虑使用 Slack 的 Incoming Webhook 替代 Bot API。
-
+A: Slack API 对每个 Bot 有调用频率限制,通常单频道每分钟不超过 20 条消息。批量发送时建议在每条消息间加入 3 到 5 秒延迟。如收到 ratelimited 错误,响应头中含 Retry-After 字段,按该值(秒)等待后重试。如需高频推送,考虑使用 Slack 的 Incoming Webhook 替代 Bot API.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

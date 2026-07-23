@@ -8,21 +8,19 @@ license: "MIT"
 description: |-
   通过API浏览和调用文档数据库云管理平台。支持API目录浏览、端点详情获取、
   Schema定义查询和实时API调用。覆盖50+分类的完整API端点，支持 dry-run
-  预检和自动确认模式。适用于独立开发者、企业团队和自动化工作流场景。
-  不适用于直接数据库查询操作。
+  预检和自动确认模式.
+  不适用于直接数据库查询操作.
 tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
 tags:
   - 数据存储
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+
 ---
 # 文档数据库云管理平台(免费版)
 
-通过API浏览和调用文档数据库云管理平台的管理接口。
-
+通过API浏览和调用文档数据库云管理平台的管理接口.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -34,32 +32,27 @@ tags: "工具,效率,自动化"
 ## 核心能力
 
 ### 1. API目录浏览
-通过 `atlas-api.mjs catalog` 列出所有可用的API分类和端点，覆盖50+分类，包括集群管理、数据库用户、网络配置、备份恢复、监控告警等。
-
+通过 `atlas-api.mjs catalog` 列出所有可用的API分类和端点，覆盖50+分类，包括集群管理、数据库用户、网络配置、备份恢复、监控告警等.
 ```bash
 node （请参考skill目录中的脚本文件） catalog
 ```
 
-**处理**: 解析API目录浏览的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回API目录浏览的处理结果,包含执行状态码、结果数据和执行日志。
-
+**处理**: 解析API目录浏览的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回API目录浏览的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. 端点详情获取
-通过 `atlas-api.mjs detail` 查看特定端点的详细信息，包括HTTP方法、路径参数、请求体Schema和响应格式。
-
+通过 `atlas-api.mjs detail` 查看特定端点的详细信息，包括HTTP方法、路径参数、请求体Schema和响应格式.
 ```bash
 node （请参考skill目录中的脚本文件） detail --category "Clusters" --endpoint "Create Cluster"
 ```- 验证返回数据的完整性和格式正确性
 - 参考`端点详情获取`的配置文档进行参数调优
 ### 3. Schema定义查询
-查看API端点的请求和响应Schema定义，了解参数类型、是否必填和默认值。
-
+查看API端点的请求和响应Schema定义，了解参数类型、是否必填和默认值.
 ```bash
 node （请参考skill目录中的脚本文件） detail --category "Database Users" --endpoint "Create Database User" --schema
 ```- 验证返回数据的完整性和格式正确性
 - 参考`Schema定义查询`的配置文档进行参数调优
 ### 4. 实时API调用
-通过 `atlas-call.mjs` 直接调用API端点，支持 `--dry-run` 预检和 `--yes` 自动确认。
-
+通过 `atlas-call.mjs` 直接调用API端点，支持 `--dry-run` 预检和 `--yes` 自动确认.
 ```bash
 # 预检模式（不实际执行）
 node （请参考skill目录中的脚本文件） --category "Clusters" --endpoint "Create Cluster" --dry-run --data '{"name":"myCluster", "providerSettings": {"providerName": "AWS", "regionName": "US_EAST_1", "instanceSizeName": "M10"}}'
@@ -130,14 +123,11 @@ No changes applied. Remove --dry-run to execute.
 ## 常见问题
 
 ### Q1: 支持哪些API分类？
-A: 覆盖50+分类，包括 Alerts、Atlas Search、Auditing、Backup、Clusters、Database Users、Network Peering、Private Endpoints、Monitoring、Logs 等。用 `atlas-api.mjs catalog` 查看完整列表。
-
+A: 覆盖50+分类，包括 Alerts、Atlas Search、Auditing、Backup、Clusters、Database Users、Network Peering、Private Endpoints、Monitoring、Logs 等。用 `atlas-api.mjs catalog` 查看完整列表.
 ### Q2: `--dry-run`和`--yes`有什么区别？
-A: `--dry-run` 只预检请求不实际执行，显示将要发送的HTTP方法和请求体。`--yes` 跳过交互确认直接执行。建议先用 `--dry-run` 预检再实际执行。
-
+A: `--dry-run` 只预检请求不实际执行，显示将要发送的HTTP方法和请求体。`--yes` 跳过交互确认直接执行。建议先用 `--dry-run` 预检再实际执行.
 ### Q3: 如何配置API凭证？
-A: 设置环境变量 `ATLAS_CLIENT_ID` 和 `ATLAS_CLIENT_SECRET`。这是公私钥认证方式，在云管理平台的API Keys页面创建。
-
+A: 设置环境变量 `ATLAS_CLIENT_ID` 和 `ATLAS_CLIENT_SECRET`。这是公私钥认证方式，在云管理平台的API Keys页面创建.
 ## 已知限制
 
 - 仅管理云平台配置，不执行数据库查询
@@ -165,7 +155,7 @@ A: 设置环境变量 `ATLAS_CLIENT_ID` 和 `ATLAS_CLIENT_SECRET`。这是公私
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 升级提示
 
-本免费版提供基础功能。升级到完整版 mongodb-atlas-admin 获取全部能力和高级特性。
+本免费版提供基础功能。升级到完整版 mongodb-atlas-admin 获取全部能力和高级特性.

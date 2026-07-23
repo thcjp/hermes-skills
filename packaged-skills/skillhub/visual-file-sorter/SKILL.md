@@ -21,7 +21,8 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-tags: "'[''Other'']'"
+tags:
+  - Other
 tools:
   - read
   - exec
@@ -30,7 +31,7 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
+
 ---
 # Visual File Sorter
 
@@ -53,7 +54,9 @@ tools: ["read", "write", "exec"]
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 文件操作 | 文件路径与操作参数 | 操作结果与文件元信息 |
+| 模型调用 | 输入文本与模型参数 | 模型输出与用量统计 |
+| 自动遍历下载文件夹或 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -123,8 +126,7 @@ tools: ["read", "write", "exec"]
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Visual File Sorter？

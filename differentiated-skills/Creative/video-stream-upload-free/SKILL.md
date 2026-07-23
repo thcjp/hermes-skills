@@ -3,7 +3,7 @@ slug: video-stream-upload-free
 name: video-stream-upload-free
 version: 1.0.0
 displayName: 视频上传-免费版
-summary: 轻量级视频上传工具，支持快速上传视频至流媒体平台并获取播放链接，适合个人创作者分发内容。
+summary: 轻量级视频上传工具，支持快速上传视频至流媒体平台并获取播放链接，适合个人创作者分发内容.
 license: Proprietary
 edition: free
 description: '视频上传免费版，为个人用户提供轻量化的视频上传与流媒体分发能力。核心能力:
@@ -18,7 +18,6 @@ description: '视频上传免费版，为个人用户提供轻量化的视频上
 
   - 基础视频信息管理
 
-
   适用场景:
 
   - 个人创作者视频分发
@@ -28,7 +27,6 @@ description: '视频上传免费版，为个人用户提供轻量化的视频上
   - 短视频内容发布
 
   - 视频内容备份托管
-
 
   差异化:
 
@@ -41,21 +39,19 @@ tags:
 - 流媒体
 - 免费版
 tools:
-- - read
+- read
 - exec
 homepage: https://skillhub.cn
 pricing_tier: "L1-入门级"
 pricing_model: per_use
 suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
+
 ---
 # 视频上传工具 - 免费版
 
 ## 概述
 
-视频上传免费版是一款面向个人创作者的轻量级视频上传与流媒体分发工具。它采用三步上传流程（创建视频对象 → 上传文件 → 完成上传），快速将本地视频上传至流媒体平台，并获取 HLS 播放链接。
-
+视频上传免费版是一款面向个人创作者的轻量级视频上传与流媒体分发工具。它采用三步上传流程（创建视频对象 → 上传文件 → 完成上传），快速将本地视频上传至流媒体平台，并获取 HLS 播放链接.
 免费版聚焦默认上传场景：单视频上传、基础标题配置、HLS 流媒体链接返回。配置简单，适合以下用户：
 
 - 个人短视频创作者分发内容
@@ -63,8 +59,7 @@ tags: "视频处理,媒体,创意"
 - 自媒体运营人员发布视频
 - 视频内容备份托管
 
-> 免费版限制：单次上传 1 个视频，使用默认编码配置，不支持自定义分辨率、缩略图、批量上传。如需自定义编码、多分辨率输出、批量上传等能力，请使用 PRO 版本。
-
+> 免费版限制：单次上传 1 个视频，使用默认编码配置，不支持自定义分辨率、缩略图、批量上传。如需自定义编码、多分辨率输出、批量上传等能力，请使用 PRO 版本.
 ## 核心能力
 
 ### 能力清单
@@ -82,10 +77,9 @@ tags: "视频处理,媒体,创意"
 | 视频管理 | 列表/删除/更新 | 不支持 |
 | 转码费用预估 | 上传前估算成本 | 不支持 |
 
-**输入**: 用户提供能力清单所需的指令和必要参数。
-**处理**: 解析能力清单的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回能力清单的响应数据,包含状态码、结果和日志。
-
+**输入**: 用户提供能力清单所需的指令和必要参数.
+**处理**: 解析能力清单的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回能力清单的响应数据,包含状态码、结果和日志.
 ### 工作流程
 
 ## 输入格式
@@ -109,9 +103,9 @@ Step 3: 完成上传（触发转码）
 返回播放链接给用户
 ```
 
-**输入**: 用户提供工作流程所需的指令和必要参数。
-**处理**: 解析工作流程的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回工作流程的响应数据,包含状态码、结果和日志。
+**输入**: 用户提供工作流程所需的指令和必要参数.
+**处理**: 解析工作流程的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回工作流程的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 服务地址
@@ -121,25 +115,22 @@ Step 3: 完成上传（触发转码）
 - **API Base URL**：`https://api-w3stream.attoaioz.cyou`
 - 所有 API 调用统一发往该地址
 
-**输入**: 用户提供服务地址所需的指令和必要参数。
-**处理**: 解析服务地址的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回服务地址的响应数据,包含状态码、结果和日志。
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级视频上传工、支持快速上传视频、至流媒体平台并获、取播放链接、适合个人创作者分、发内容、视频上传免费版、为个人用户提供轻、量化的视频上传与、流媒体分发能力、核心能力、默认快速上传、三步上传流程、流媒体链接获取、上传进度查询、基础视频信息管理等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+**输入**: 用户提供服务地址所需的指令和必要参数.
+**处理**: 解析服务地址的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回服务地址的响应数据,包含状态码、结果和日志.
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级视频上传工、支持快速上传视频、至流媒体平台并获、取播放链接、适合个人创作者分、发内容、视频上传免费版、为个人用户提供轻、量化的视频上传与、流媒体分发能力、核心能力、默认快速上传、三步上传流程、流媒体链接获取、上传进度查询、基础视频信息管理等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ### 核心功能执行
-执行核心功能执行操作,使用`input_params`参数进行配置。
-
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志。
+执行核心功能执行操作,使用`input_params`参数进行配置.
+**输入**: 用户提供核心功能执行所需的指令和必要参数.
+**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
 
 ### 场景 1：个人短视频上传
 
-小张拍摄了一段 vlog，希望上传到流媒体平台获取播放链接分享给朋友。
-
+小张拍摄了一段 vlog，希望上传到流媒体平台获取播放链接分享给朋友.
 **操作步骤：**
 
 1. 告诉 Agent：「帮我上传视频 /videos/vlog.mp4，标题是『周末出游 vlog』」
@@ -152,16 +143,15 @@ Step 3: 完成上传（触发转码）
 ```bash
 # Step 1: 创建视频对象
 curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
-  -H 'stream-public-key: PUBLIC_KEY' \
-  -H 'stream-secret-key: SECRET_KEY' \
+  -H 'stream-public-key: YOUR_PUBLIC_KEY' \
+  -H 'stream-secret-key: YOUR_SECRET_KEY' \
   -H 'Content-Type: application/json' \
   -d '{"title": "周末出游 vlog"}'
 ```
 
 ### 场景 2：教学视频分享
 
-小李录制了一段编程教学视频，希望上传后分享给学生观看。
-
+小李录制了一段编程教学视频，希望上传后分享给学生观看.
 **操作步骤：**
 
 1. 告诉 Agent：「上传 /videos/python-tutorial.mp4，标题『Python 入门教程』」
@@ -178,8 +168,8 @@ END_POS=$((FILE_SIZE - 1))
 HASH=$(md5sum /videos/python-tutorial.mp4 | awk '{print $1}')
 # ...
 curl -s -X POST "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/part" \
-  -H 'stream-public-key: PUBLIC_KEY' \
-  -H 'stream-secret-key: SECRET_KEY' \
+  -H 'stream-public-key: YOUR_PUBLIC_KEY' \
+  -H 'stream-secret-key: YOUR_SECRET_KEY' \
   -H "Content-Range: bytes 0-$END_POS/$FILE_SIZE" \
   -F "file=@/videos/python-tutorial.mp4" \
   -F "index=0" \
@@ -188,8 +178,7 @@ curl -s -X POST "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/part" \
 
 ### 场景 3：视频内容备份
 
-小王想将本地视频上传到流媒体平台作为云端备份。
-
+小王想将本地视频上传到流媒体平台作为云端备份.
 **操作步骤：**
 
 1. 告诉 Agent：「上传 /videos/family-trip.mp4 作为备份」
@@ -202,8 +191,8 @@ curl -s -X POST "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/part" \
 ```bash
 # Step 3: 完成上传
 curl -s -X GET "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/complete" \
-  -H 'stream-public-key: PUBLIC_KEY' \
-  -H 'stream-secret-key: SECRET_KEY'
+  -H 'stream-public-key: YOUR_PUBLIC_KEY' \
+  -H 'stream-secret-key: YOUR_SECRET_KEY'
 ```
 
 ## 不适用场景
@@ -216,8 +205,7 @@ curl -s -X GET "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/complete"
 
 ## 触发条件
 
-需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于非本工具能力范围的需求。
-
+需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
 ### 第一步：获取 API Key
@@ -227,8 +215,7 @@ curl -s -X GET "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/complete"
 - `stream-public-key`：公钥
 - `stream-secret-key`：私钥
 
-若未提供，Agent 会主动询问用户。
-
+若未提供，Agent 会主动询问用户.
 ### 第二步：上传第一个视频
 
 最简单的用法 - 默认快速上传：
@@ -236,14 +223,13 @@ curl -s -X GET "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/complete"
 ```bash
 # Step 1: 创建视频对象（仅需标题）
 curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
-  -H 'stream-public-key: PUBLIC_KEY' \
-  -H 'stream-secret-key: SECRET_KEY' \
+  -H 'stream-public-key: YOUR_PUBLIC_KEY' \
+  -H 'stream-secret-key: YOUR_SECRET_KEY' \
   -H 'Content-Type: application/json' \
   -d '{"title": "我的第一个视频"}'
 ```
 
-从响应中提取 `data.id` 作为 `VIDEO_ID`。
-
+从响应中提取 `data.id` 作为 `VIDEO_ID`.
 ### 第三步：上传文件
 
 ```bash
@@ -254,8 +240,8 @@ HASH=$(md5sum /path/to/video.mp4 | awk '{print $1}')
 # ...
 # 上传文件分片
 curl -s -X POST "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/part" \
-  -H 'stream-public-key: PUBLIC_KEY' \
-  -H 'stream-secret-key: SECRET_KEY' \
+  -H 'stream-public-key: YOUR_PUBLIC_KEY' \
+  -H 'stream-secret-key: YOUR_SECRET_KEY' \
   -H "Content-Range: bytes 0-$END_POS/$FILE_SIZE" \
   -F "file=@/path/to/video.mp4" \
   -F "index=0" \
@@ -267,17 +253,16 @@ curl -s -X POST "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/part" \
 ```bash
 # 完成上传（触发转码）
 curl -s -X GET "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/complete" \
-  -H 'stream-public-key: PUBLIC_KEY' \
-  -H 'stream-secret-key: SECRET_KEY'
+  -H 'stream-public-key: YOUR_PUBLIC_KEY' \
+  -H 'stream-secret-key: YOUR_SECRET_KEY'
 # ...
 # 查询视频详情获取 HLS 链接
 curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID' \
-  -H 'stream-public-key: PUBLIC_KEY' \
-  -H 'stream-secret-key: SECRET_KEY'
+  -H 'stream-public-key: YOUR_PUBLIC_KEY' \
+  -H 'stream-secret-key: YOUR_SECRET_KEY'
 ```
 
-**响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
+**响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
 #
 ## 示例
 
@@ -352,8 +337,8 @@ HASH=$(certutil -hashfile video.mp4 MD5 | grep -v ":" | tr -d ' ')
 ```bash
 # 检查转码状态
 STATUS=$(curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID' \
-  -H 'stream-public-key: PUBLIC_KEY' \
-  -H 'stream-secret-key: SECRET_KEY' | jq -r '.data.status')
+  -H 'stream-public-key: YOUR_PUBLIC_KEY' \
+  -H 'stream-secret-key: YOUR_SECRET_KEY' | jq -r '.data.status')
 # ...
 # 状态说明：
 # transcoding - 转码中（需等待）
@@ -376,8 +361,7 @@ STATUS=$(curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID' \
 
 **A：** 需要流媒体平台账号。注册后可在控制台获取：
 
-若用户未提供，Agent 会主动询问。
-
+若用户未提供，Agent 会主动询问.
 ### Q2：上传大文件失败怎么办？
 
 **A：** 免费版仅支持单分片上传，建议：
@@ -394,8 +378,8 @@ STATUS=$(curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID' \
 # 轮询转码状态
 while true; do
   STATUS=$(curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID' \
-    -H 'stream-public-key: PUBLIC_KEY' \
-    -H 'stream-secret-key: SECRET_KEY' | jq -r '.data.status')
+    -H 'stream-public-key: YOUR_PUBLIC_KEY' \
+    -H 'stream-secret-key: YOUR_SECRET_KEY' | jq -r '.data.status')
 # ...
   if [ "$STATUS" = "done" ]; then
     echo "转码完成"
@@ -415,16 +399,13 @@ done
 
 ### Q5：能否上传自定义封面图？
 
-**A：** 免费版不支持自定义封面。如需上传缩略图，请使用 PRO 版本。
-
+**A：** 免费版不支持自定义封面。如需上传缩略图，请使用 PRO 版本.
 ### Q6：上传后视频是公开的吗？
 
-**A：** 免费版默认上传后为公开状态。如需设置私密视频，请使用 PRO 版本的 `is_public` 参数。
-
+**A：** 免费版默认上传后为公开状态。如需设置私密视频，请使用 PRO 版本的 `is_public` 参数.
 ### Q7：HLS 链接有效期多久？
 
-**A：** HLS 链接长期有效，只要视频未被删除即可访问。
-
+**A：** HLS 链接长期有效，只要视频未被删除即可访问.
 ## 依赖说明
 
 ### 运行环境

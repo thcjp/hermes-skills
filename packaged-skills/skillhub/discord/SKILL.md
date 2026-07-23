@@ -8,9 +8,9 @@ license: "Proprietary"
 description: |-
   通过 discord 工具控制 Discord 机器人,覆盖消息收发与编辑、表情回应与统计、
   贴纸发送与上传、自定义表情包上传、投票创建、线程管理、消息置顶、全文搜索、
-  成员与角色查询、频道信息、语音状态、定时事件、审核操作(禁言/踢出/封禁)等全套能力。
-  支持通过 discord.actions.* 对各操作组进行细粒度门控,角色与审核默认关闭。
-  适用于社区运营自动化、发布通知、团队协作跟进和内容审核场景。
+  成员与角色查询、频道信息、语音状态、定时事件、审核操作(禁言/踢出/封禁)等全套能力.
+  支持通过 discord.actions.* 对各操作组进行细粒度门控,角色与审核默认关闭.
+  适用于社区运营自动化、发布通知、团队协作跟进和内容审核场景.
 tags:
   - Communication
   - Discord
@@ -23,8 +23,7 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Discord,社交,通信"
+
 ---
 # Discord 全能控制
 
@@ -49,97 +48,80 @@ tags: "Discord,社交,通信"
 
 ## 概述
 
-`discord` 工具用于从 Agent 侧控制 Discord 机器人,以 JSON action 的形式管理消息、表情、贴纸、投票、线程、置顶、搜索、成员角色、频道、语音状态、定时事件与审核操作。所有操作依赖为 Clawdbot 配置的 bot token,可通过 `discord.actions.*` 对各操作组进行开关(角色与审核默认关闭,其余默认开启)。
-
+`discord` 工具用于从 Agent 侧控制 Discord 机器人,以 JSON action 的形式管理消息、表情、贴纸、投票、线程、置顶、搜索、成员角色、频道、语音状态、定时事件与审核操作。所有操作依赖为 Clawdbot 配置的 bot token,可通过 `discord.actions.*` 对各操作组进行开关(角色与审核默认关闭,其余默认开启).
 ## 核心能力
 
 ### 消息管理
-- `sendMessage`:向频道 `channel:<id>` 或私信 `user:<id>` 发送消息,支持 `content`、`mediaUrl`(本地 `file:///` 或远程 `https://`)、`replyTo` 回复指定消息。
-- `editMessage`:按 `channelId` + `messageId` 编辑已发消息内容。
-- `deleteMessage`:按 `channelId` + `messageId` 删除消息。
-- `readMessages`:按 `channelId` 拉取最近消息,支持 `limit` 控制条数。
-
-**输出**: 返回消息管理的处理结果,包含执行状态码、结果数据和执行日志。
+- `sendMessage`:向频道 `channel:<id>` 或私信 `user:<id>` 发送消息,支持 `content`、`mediaUrl`(本地 `file:///` 或远程 `https://`)、`replyTo` 回复指定消息.
+- `editMessage`:按 `channelId` + `messageId` 编辑已发消息内容.
+- `deleteMessage`:按 `channelId` + `messageId` 删除消息.
+- `readMessages`:按 `channelId` 拉取最近消息,支持 `limit` 控制条数.
+**输出**: 返回消息管理的处理结果,包含执行状态码、结果数据和执行日志.
 ### 表情回应
-- `react`:对指定消息添加 emoji(如 `✅`、`⚠️`)。
-- `reactions`:列出某条消息的回应及对应用户列表,支持 `limit`。
-- `emojiList`:列出服务器可用自定义表情。
-- `emojiUpload`:上传自定义表情,需 `guildId`、`name`、`mediaUrl`,可选 `roleIds` 限定可见角色。PNG/JPG/GIF,≤256KB。
-
-**处理**: 解析表情回应的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+- `react`:对指定消息添加 emoji(如 `✅`、`⚠️`).
+- `reactions`:列出某条消息的回应及对应用户列表,支持 `limit`.
+- `emojiList`:列出服务器可用自定义表情.
+- `emojiUpload`:上传自定义表情,需 `guildId`、`name`、`mediaUrl`,可选 `roleIds` 限定可见角色。PNG/JPG/GIF,≤256KB.
+**处理**: 解析表情回应的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回表情回应的解析响应,包含完成状态码、响应数据和完成日志。### 贴纸任务
-- `sticker`:发送贴纸,`to` 指定目标,`stickerIds` 最多 3 个,可附带 `content`。
-- `stickerUpload`:上传贴纸,需 `guildId`、`name`、`description`、`tags`、`mediaUrl`。PNG/APNG/Lottie JSON,≤512KB。
-
-**输入**: 用户提供贴纸操作所需的指令和必要参数。
+- `sticker`:发送贴纸,`to` 指定目标,`stickerIds` 最多 3 个,可附带 `content`.
+- `stickerUpload`:上传贴纸,需 `guildId`、`name`、`description`、`tags`、`mediaUrl`。PNG/APNG/Lottie JSON,≤512KB.
+**输入**: 用户提供贴纸操作所需的指令和必要参数.
 **输出**: 返回贴纸的处理结果,包含执行状态码、结果数据和执行日志。### 投票创建
-- `poll`:在频道发起投票,需 `question` + 2~10 个 `answers`,支持 `allowMultiselect`、`durationHours`(默认 24,最大 768 即 32 天)。
-
-**输入**: 用户提供投票创建所需的指令和必要参数。
-**处理**: 解析投票创建的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+- `poll`:在频道发起投票,需 `question` + 2~10 个 `answers`,支持 `allowMultiselect`、`durationHours`(默认 24,最大 768 即 32 天).
+**输入**: 用户提供投票创建所需的指令和必要参数.
+**处理**: 解析投票创建的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回投票创建的处理结果,包含执行状态码、结果数据和执行日志。### 线程管理
-- `threadCreate`:基于消息或频道创建线程,需 `channelId`、`name`,可选 `messageId`。
-- `threadList`:列出服务器下所有活跃线程。
-- `threadReply`:在线程内回复消息。
-
-**输入**: 用户提供线程管理所需的指令和必要参数。
+- `threadCreate`:基于消息或频道创建线程,需 `channelId`、`name`,可选 `messageId`.
+- `threadList`:列出服务器下所有活跃线程.
+- `threadReply`:在线程内回复消息.
+**输入**: 用户提供线程管理所需的指令和必要参数.
 **处理**: 解析线程管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 置顶与搜索
-- `pinMessage` / `listPins`:置顶或列出频道置顶消息。
-- `searchMessages`:按 `guildId` 全文搜索,支持 `content`、`channelIds`、`limit`。
-
-**输入**: 用户提供置顶与搜索所需的指令和必要参数。
+- `pinMessage` / `listPins`:置顶或列出频道置顶消息.
+- `searchMessages`:按 `guildId` 全文搜索,支持 `content`、`channelIds`、`limit`.
+**输入**: 用户提供置顶与搜索所需的指令和必要参数.
 **输出**: 返回置顶与搜索的处理结果,包含执行状态码、结果数据和执行日志。### 成员与角色
-- `memberInfo`:查询成员资料(`guildId` + `userId`)。
-- `roleInfo` / `roleAdd` / `roleRemove`:查询或变更角色(默认关闭,需显式开启 `discord.actions.roles`)。
-
-**处理**: 解析成员与角色的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+- `memberInfo`:查询成员资料(`guildId` + `userId`).
+- `roleInfo` / `roleAdd` / `roleRemove`:查询或变更角色(默认关闭,需显式开启 `discord.actions.roles`).
+**处理**: 解析成员与角色的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回成员与角色的处理结果,包含执行状态码、结果数据和执行日志。### 频道、语音、事件
-- `channelInfo` / `channelList`:频道详情与列表。
-- `voiceStatus`:查询成员当前语音状态。
-- `eventList`:列出服务器定时事件。
-- `permissions`:检查机器人在指定频道的权限。
-
+- `channelInfo` / `channelList`:频道详情与列表.
+- `voiceStatus`:查询成员当前语音状态.
+- `eventList`:列出服务器定时事件.
+- `permissions`:检查机器人在指定频道的权限.
 ### 审核(默认关闭)
-- `timeout`:临时禁言成员(`durationMinutes`)。
-- `kick` / `ban`:踢出或封禁成员。需开启 `discord.actions.moderation`。
-
-**输入**: 用户提供审核(默认关闭)所需的指令和必要参数。
-**处理**: 解析审核(默认关闭)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回审核(默认关闭)的处理结果,包含执行状态码、结果数据和执行日志。
-
+- `timeout`:临时禁言成员(`durationMinutes`).
+- `kick` / `ban`:踢出或封禁成员。需开启 `discord.actions.moderation`.
+**输入**: 用户提供审核(默认关闭)所需的指令和必要参数.
+**处理**: 解析审核(默认关闭)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回审核(默认关闭)的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 适用场景
 
 ### 场景一:发布通知自动化
-- 输入:版本号 `v2.4.0`、发布说明、目标频道 `channel:9876543210`。
-- 输出:机器人向频道发送格式化发布消息,附带 `file:///tmp/changelog.md` 附件,并对关键消息打 ✅ 反应,随后置顶该消息。
-
+- 输入:版本号 `v2.4.0`、发布说明、目标频道 `channel:9876543210`.
+- 输出:机器人向频道发送格式化发布消息,附带 `file:///tmp/changelog.md` 附件,并对关键消息打 ✅ 反应,随后置顶该消息.
 ### 场景二:社区投票决策
-- 输入:问题"下次线下聚会时间"、4 个选项、目标频道。
-- 输出:创建多选投票,`durationHours=48`,机器人 48 小时后通过 `reactions` 统计各选项票数并回填结果。
-
+- 输入:问题"下次线下聚会时间"、4 个选项、目标频道.
+- 输出:创建多选投票,`durationHours=48`,机器人 48 小时后通过 `reactions` 统计各选项票数并回填结果.
 ### 场景三:内容审核分流
-- 输入:被举报消息 `messageId=456`、违规成员 `userId=111`、服务器 `guildId=999`。
-- 输出:机器人删除违规消息,对成员执行 `timeout durationMinutes=30`,在审核日志频道创建线程记录处置经过。
-
+- 输入:被举报消息 `messageId=456`、违规成员 `userId=111`、服务器 `guildId=999`.
+- 输出:机器人删除违规消息,对成员执行 `timeout durationMinutes=30`,在审核日志频道创建线程记录处置经过.
 ### 场景四:团队协作跟进
-- 输入:bug 报告消息、负责人 `userId`。
-- 输出:基于该消息 `threadCreate` 建立"Bug triage"线程,`threadReply` @ 负责人,并在原消息 react ⚠️ 标记待处理。
-
+- 输入:bug 报告消息、负责人 `userId`.
+- 输出:基于该消息 `threadCreate` 建立"Bug triage"线程,`threadReply` @ 负责人,并在原消息 react ⚠️ 标记待处理.
 ## 使用流程
 
-1. **确认权限与门控**:通过 `action: "permissions"` 检查机器人在目标频道的权限;确认所需操作组未被 `discord.actions.*` 关闭(角色、审核默认关闭)。
-2. **定位目标**:明确目标格式——`sendMessage`/`sticker`/`poll` 用 `to: "channel:<id>"` 或 `to: "user:<id>"`;`react`/`readMessages`/`editMessage`/`deleteMessage` 用 `channelId` 直传。
-3. **准备内容**:消息文本遵循 Discord 写作风格(短句、避免 markdown 表格、链接用 `<>` 抑制预览);媒体走 `mediaUrl`,`file:///` 本地或 `https://` 远程;表情包/贴纸确认大小与格式限制。
-4. **执行 action**:以 JSON 调用对应 action,记录返回的 `messageId`、`threadId` 供后续编辑/回复/置顶复用。
-5. **跟进与归档**:按需 `pinMessage`、`threadReply`、`searchMessages` 回溯;审核类操作在日志频道留痕。
-
+1. **确认权限与门控**:通过 `action: "permissions"` 检查机器人在目标频道的权限;确认所需操作组未被 `discord.actions.*` 关闭(角色、审核默认关闭).
+2. **定位目标**:明确目标格式——`sendMessage`/`sticker`/`poll` 用 `to: "channel:<id>"` 或 `to: "user:<id>"`;`react`/`readMessages`/`editMessage`/`deleteMessage` 用 `channelId` 直传.
+3. **准备内容**:消息文本遵循 Discord 写作风格(短句、避免 markdown 表格、链接用 `<>` 抑制预览);媒体走 `mediaUrl`,`file:///` 本地或 `https://` 远程;表情包/贴纸确认大小与格式限制.
+4. **执行 action**:以 JSON 调用对应 action,记录返回的 `messageId`、`threadId` 供后续编辑/回复/置顶复用.
+5. **跟进与归档**:按需 `pinMessage`、`threadReply`、`searchMessages` 回溯;审核类操作在日志频道留痕.
 #
 ## 案例展示
 
 ### 案例 1:发布通知 + 置顶 + 反应
-目标:向 `#releases`(`channel:9876543210`)发布 v2.4.0 并置顶。
-
+目标:向 `#releases`(`channel:9876543210`)发布 v2.4.0 并置顶.
 ```json
 {
   "action": "sendMessage",
@@ -156,11 +138,9 @@ tags: "Discord,社交,通信"
 { "action": "pinMessage", "channelId": "9876543210", "messageId": "1122334455667788" }
 ```
 
-结果:频道出现带附件的发布消息,带 ✅ 反应并置顶。
-
+结果:频道出现带附件的发布消息,带 ✅ 反应并置顶.
 ### 案例 2:多选投票与结果统计
-目标:48 小时多选投票"下周团建活动"。
-
+目标:48 小时多选投票"下周团建活动".
 ```json
 {
   "action": "poll",
@@ -173,19 +153,16 @@ tags: "Discord,社交,通信"
 }
 ```
 
-到期后通过 `reactions` 或投票对象统计各选项票数,在原频道回填"烧烤 12 票 / 密室 9 票"结果。
-
+到期后通过 `reactions` 或投票对象统计各选项票数,在原频道回填"烧烤 12 票 / 密室 9 票"结果.
 ### 案例 3:审核处置 + 线程留痕
-目标:成员 `userId=111` 在 `guildId=999` 发布广告,禁言 30 分钟并记录。
-
+目标:成员 `userId=111` 在 `guildId=999` 发布广告,禁言 30 分钟并记录.
 ```json
 { "action": "deleteMessage", "channelId": "123", "messageId": "456" }
 { "action": "timeout", "guildId": "999", "userId": "111", "durationMinutes": 30 }
 { "action": "threadCreate", "channelId": "123", "name": "mod-log-111-广告", "messageId": "456" }
 ```
 
-在审核日志频道形成可追溯的处置线程。
-
+在审核日志频道形成可追溯的处置线程.
 ## 异常处理
 
 | 错误场景 | 触发原因 | 处理方式 |
@@ -202,23 +179,17 @@ tags: "Discord,社交,通信"
 ## 常见问题
 
 ### Q1:为什么 `sendMessage` 报错说找不到频道,而 `readMessages` 能用?
-`sendMessage` 接收的是 `to: "channel:<id>"` 格式(带 `channel:` 前缀),`readMessages` 接收的是裸 `channelId`。两者格式不可混用,这是最常见的参数错误。
-
+`sendMessage` 接收的是 `to: "channel:<id>"` 格式(带 `channel:` 前缀),`readMessages` 接收的是裸 `channelId`。两者格式不可混用,这是最常见的参数错误.
 ### Q2:如何禁用部分操作防止误用?
-在 Clawdbot 配置中使用 `discord.actions.*` 门控,例如设 `discord.actions.moderation=false`、`discord.actions.roles=false`(两者默认即关闭),也可关闭 `emojiUploads`、`stickerUploads`、`polls` 等。
-
+在 Clawdbot 配置中使用 `discord.actions.*` 门控,例如设 `discord.actions.moderation=false`、`discord.actions.roles=false`(两者默认即关闭),也可关闭 `emojiUploads`、`stickerUploads`、`polls` 等.
 ### Q3:贴纸和表情包上传有什么硬限制?
-表情包:PNG/JPG/GIF,≤256KB,服务器表情数受 Boost 等级限制。贴纸:PNG/APNG/Lottie JSON,≤512KB,普通服务器 5 个动态贴纸位,Boost 后扩展。`stickerUpload` 必须同时提供 `name`、`description`、`tags`。
-
+表情包:PNG/JPG/GIF,≤256KB,服务器表情数受 Boost 等级限制。贴纸:PNG/APNG/Lottie JSON,≤512KB,普通服务器 5 个动态贴纸位,Boost 后扩展。`stickerUpload` 必须同时提供 `name`、`description`、`tags`.
 ### Q4:投票最长时间是多少?到期后怎么取结果?
-`durationHours` 最大 768(32 天)。到期后投票自动关闭,可通过 `reactions` 拉取各选项的投票用户列表自行统计,或在投票消息上读取内置投票结果。
-
+`durationHours` 最大 768(32 天)。到期后投票自动关闭,可通过 `reactions` 拉取各选项的投票用户列表自行统计,或在投票消息上读取内置投票结果.
 ### Q5:线程和频道回复有什么区别?
-`threadCreate` 在频道内创建独立线程(可基于某条消息),`threadReply` 在已存在线程内发消息。普通 `sendMessage` 只发到主频道,不会自动进入线程。`threadList` 可按 `guildId` 列出服务器所有活跃线程以获取 `threadId`。
-
+`threadCreate` 在频道内创建独立线程(可基于某条消息),`threadReply` 在已存在线程内发消息。普通 `sendMessage` 只发到主频道,不会自动进入线程。`threadList` 可按 `guildId` 列出服务器所有活跃线程以获取 `threadId`.
 ### Q6:审核操作默认为什么是关闭的?
-`timeout`/`kick`/`ban` 具有破坏性,默认关闭以防误操作。需要时在配置显式开启 `discord.actions.moderation`,并确保机器人持有 `MODERATE_MEMBERS`(禁言)、`KICK_MEMBERS`、`BAN_MEMBERS` 权限及高于目标成员的角色层级。
-
+`timeout`/`kick`/`ban` 具有破坏性,默认关闭以防误操作。需要时在配置显式开启 `discord.actions.moderation`,并确保机器人持有 `MODERATE_MEMBERS`(禁言)、`KICK_MEMBERS`、`BAN_MEMBERS` 权限及高于目标成员的角色层级.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
@@ -230,15 +201,14 @@ tags: "Discord,社交,通信"
 
 ## 已知限制
 
-- 所有操作依赖为 Clawdbot 配置的 bot token,未配置 token 时任何 action 都无法执行。
-- `sendMessage` 的 `to` 与其他 action 的 `channelId` 格式不同,混用会直接报错。
-- 角色变更(`roleAdd`/`roleRemove`)与审核(`timeout`/`kick`/`ban`)默认关闭,需显式开启且机器人角色须高于目标。
-- 表情包 ≤256KB、贴纸 ≤512KB,超出需先压缩;动画表情/贴纸数量受服务器 Boost 等级约束。
-- 投票 `durationHours` 上限 768 小时(32 天),单次最多 10 个选项。
-- 消息搜索(`searchMessages`)依赖服务器开启该权限,部分大型服务器可能受限或延迟较高。
-- Discord 全局与按频道速率限制由平台强制,高频发送会被 429 限流,需自行节流。
-- markdown 表格在 Discord 渲染为原始 `|` 文本,通知类消息应改用列表或粗体。
-
+- 所有操作依赖为 Clawdbot 配置的 bot token,未配置 token 时任何 action 都无法执行.
+- `sendMessage` 的 `to` 与其他 action 的 `channelId` 格式不同,混用会直接报错.
+- 角色变更(`roleAdd`/`roleRemove`)与审核(`timeout`/`kick`/`ban`)默认关闭,需显式开启且机器人角色须高于目标.
+- 表情包 ≤256KB、贴纸 ≤512KB,超出需先压缩;动画表情/贴纸数量受服务器 Boost 等级约束.
+- 投票 `durationHours` 上限 768 小时(32 天),单次最多 10 个选项.
+- 消息搜索(`searchMessages`)依赖服务器开启该权限,部分大型服务器可能受限或延迟较高.
+- Discord 全局与按频道速率限制由平台强制,高频发送会被 429 限流,需自行节流.
+- markdown 表格在 Discord 渲染为原始 `|` 文本,通知类消息应改用列表或粗体.
 ## 依赖说明
 
 ### 运行环境
@@ -260,4 +230,4 @@ tags: "Discord,社交,通信"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.

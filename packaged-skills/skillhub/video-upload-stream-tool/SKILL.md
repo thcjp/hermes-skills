@@ -1,7 +1,7 @@
 ---
 slug: "video-upload-stream-tool"
 name: "video-upload-stream-tool"
-version: "1.0.1"
+version: "1.0.2"
 displayName: "Video Upload Aioz St"
 summary: "快速上传视频到AIOZ Stream API,建视频对象配编码"
 license: "Proprietary"
@@ -39,33 +39,33 @@ Before uploading, estimate the transcoding cost:
 
 ```bash
 curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/cost?duration=60&qualities=360p,1080p' \
-  -H 'stream-public-key: PUBLIC_KEY' \
-  -H 'stream-secret-key: SECRET_KEY'
+  -H 'stream-public-key: YOUR_PUBLIC_KEY' \
+  -H 'stream-secret-key: YOUR_SECRET_KEY'
 ```
 
-**输入**: 用户提供Calculate Transcode Price所需的指令和必要参数。
-**处理**: 解析Calculate Transcode Price的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输入**: 用户提供Calculate Transcode Price所需的指令和必要参数.
+**处理**: 解析Calculate Transcode Price的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回Calculate Transcode Price的处理结果,包含执行状态码、结果数据和执行日志。### Upload Thumbnail
 After creating a video, upload a custom thumbnail:
 
 ```bash
 curl -s -X POST "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/thumbnail" \
-  -H 'stream-public-key: PUBLIC_KEY' \
-  -H 'stream-secret-key: SECRET_KEY' \
+  -H 'stream-public-key: YOUR_PUBLIC_KEY' \
+  -H 'stream-secret-key: YOUR_SECRET_KEY' \
   -F 'file=@/path/to/thumbnail.jpg'
 ```
 
 Supported formats: `.png`, `.jpg`
 
-**输入**: 用户提供Upload Thumbnail所需的指令和必要参数。
-**处理**: 解析Upload Thumbnail的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**输入**: 用户提供Upload Thumbnail所需的指令和必要参数.
+**处理**: 解析Upload Thumbnail的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回Upload Thumbnail的处理结果,包含执行状态码、结果数据和执行日志。### Update Video Object
 Modify video metadata after creation:
 
 ```bash
 curl -s -X PATCH "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID" \
-  -H 'stream-public-key: PUBLIC_KEY' \
-  -H 'stream-secret-key: SECRET_KEY' \
+  -H 'stream-public-key: YOUR_PUBLIC_KEY' \
+  -H 'stream-secret-key: YOUR_SECRET_KEY' \
   -H 'Content-Type: application/json' \
   -d '{
     "title": "Updated Title",
@@ -75,14 +75,14 @@ curl -s -X PATCH "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID" \
   }'
 ```
 
-**处理**: 解析Update Video Object的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**处理**: 解析Update Video Object的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回Update Video Object的处理结果,包含执行状态码、结果数据和执行日志。### List All Videos
 Retrieve all videos with filtering:
 
 ```bash
 curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos' \
-  -H 'stream-public-key: PUBLIC_KEY' \
-  -H 'stream-secret-key: SECRET_KEY' \
+  -H 'stream-public-key: YOUR_PUBLIC_KEY' \
+  -H 'stream-secret-key: YOUR_SECRET_KEY' \
   -H 'Content-Type: application/json' \
   -d '{
     "limit": 10,
@@ -93,25 +93,27 @@ curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos' \
   }'
 ```
 
-**输入**: 用户提供List All Videos所需的指令和必要参数。
+**输入**: 用户提供List All Videos所需的指令和必要参数.
 **处理**: 解析List All Videos的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### Delete Video
 Remove a video:
 
 ```bash
 curl -s -X DELETE "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID" \
-  -H 'stream-public-key: PUBLIC_KEY' \
-  -H 'stream-secret-key: SECRET_KEY'
+  -H 'stream-public-key: YOUR_PUBLIC_KEY' \
+  -H 'stream-secret-key: YOUR_SECRET_KEY'
 ```
 
-**输入**: 用户提供Delete Video所需的指令和必要参数。
-**处理**: 解析Delete Video的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回Delete Video的处理结果,包含执行状态码、结果数据和执行日志。
+**输入**: 用户提供Delete Video所需的指令和必要参数.
+**处理**: 解析Delete Video的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回Delete Video的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 编码执行 | 需求描述与约束条件 | 代码文件与测试结果 |
+| 视频生成 | 脚本与画面描述 | 视频文件与时长信息 |
+| 快速上传视频到AIO | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -213,7 +215,7 @@ curl -s -X DELETE "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID" \
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 1. User: "Upload my video to AIOZ Stream"

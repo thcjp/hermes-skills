@@ -6,19 +6,18 @@ displayName: "SkillHub Cron Setup"
 summary: "SkillHub Gateway 内置定时任务调度器。用于创建一次性提醒、周期性任务、后台自动化。支持主会话系统事件和独立会话执行，可配置投递到聊天频道或"
 license: "Proprietary"
 description: |-
-  SkillHub Gateway 内置定时任务调度器。用于创建一次性提醒、周期性任务、后台自动化。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
+  SkillHub Gateway 内置定时任务调度器。用于创建一次性提醒、周期性任务、后台自动化。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - Automation
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "定时任务,调度,自动化"
+
 ---
 # SkillHub Cron Setup
 
@@ -44,7 +43,9 @@ tags: "定时任务,调度,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 会话管理 | 用户ID与消息内容 | 消息记录与会话状态 |
+| 定时任务 | Cron表达式与任务定义 | 调度状态与执行记录 |
+| 任务调度 | 任务ID与触发条件 | 执行结果与调度日志 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -193,7 +194,7 @@ skill-platform cron add \
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 当前工作配置示例（`~/.skill-platform/cron/jobs.json`）：

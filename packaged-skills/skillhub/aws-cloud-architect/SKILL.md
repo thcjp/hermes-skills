@@ -8,12 +8,12 @@ license: "Proprietary"
 description: |-
   资深 AWS 云架构师助手,覆盖架构设计、服务选型、成本优化、安全加固、
   性能调优与迁移部署全流程。遵循 Well-Architected Framework 原则,
-  提供 6Rs 迁移框架、零信任安全设计、FinOps 成本治理实践。
+  提供 6Rs 迁移框架、零信任安全设计、FinOps 成本治理实践.
   内置 NAT Gateway/EBS/CloudWatch 等成本陷阱识别、S3/RDS/IAM 等安全漏洞排查、
   Lambda/RDS/EBS 性能模式库。支持 MVP→Growth→Scale 三阶段架构演进,
-  含 Terraform/CloudFormation IaC 模板与 CLI 命令参考。
-  适用于独立开发者、企业团队与自动化运维工作流。
-  不适用于无明确技术栈的模糊需求与非 AWS 平台架构。
+  含 Terraform/CloudFormation IaC 模板与 CLI 命令参考.
+  适用于独立开发者、企业团队与自动化运维工作流.
+  不适用于无明确技术栈的模糊需求与非 AWS 平台架构.
 tags:
   - Operations
   - Creative
@@ -25,13 +25,11 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "AWS,云计算,DevOps"
+
 ---
 # AWS 云架构师
 
-资深 AWS 云架构师,专注架构设计、成本优化、安全加固与运维卓越。遵循 Well-Architected Framework 原则。
-
+资深 AWS 云架构师,专注架构设计、成本优化、安全加固与运维卓越。遵循 Well-Architected Framework 原则.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -66,8 +64,7 @@ aws sts get-caller-identity
 aws ec2 describe-vpcs --query 'Vpcs[].{ID:VpcId,CIDR:CidrBlock,Default:IsDefault}'
 ```
 
-确认: Region(默认 us-east-1,但需询问)、账户类型(个人/初创/企业)、现有基础设施(VPC/子网/安全组)。
-
+确认: Region(默认 us-east-1,但需询问)、账户类型(个人/初创/企业)、现有基础设施(VPC/子网/安全组).
 ### 2. 成本优先架构
 
 | 阶段 | 推荐技术栈 | 月成本 |
@@ -76,8 +73,7 @@ aws ec2 describe-vpcs --query 'Vpcs[].{ID:VpcId,CIDR:CidrBlock,Default:IsDefault
 | Growth(1-10k) | ALB + ASG + RDS Multi-AZ | ~$200 |
 | Scale(10k+) | ECS/EKS + Aurora + ElastiCache | ~$500+ |
 
-**默认使用最小可行实例。** 扩容容易,缩容浪费钱。
-
+**默认使用最小可行实例。** 扩容容易,缩容浪费钱.
 ### 3. 默认安全
 
 - 最小权限 IAM
@@ -99,14 +95,12 @@ terraform init && terraform plan
 
 ### 5. 第一天起监控
 
-部署 CloudWatch 告警: 账单告警、CPU/内存阈值、错误率突增。
-
+部署 CloudWatch 告警: 账单告警、CPU/内存阈值、错误率突增.
 ## 成本陷阱
 
 ### NAT Gateway 数据处理($0.045/GB)
 
-S3/DynamoDB 的 VPC 终端节点免费。高流量应用仅 NAT 费用可达 $500/月。
-
+S3/DynamoDB 的 VPC 终端节点免费。高流量应用仅 NAT 费用可达 $500/月.
 ```bash
 aws ec2 create-vpc-endpoint --vpc-id vpc-xxx \
   --service-name com.amazonaws.us-east-1.s3 --route-table-ids rtb-xxx
@@ -114,8 +108,7 @@ aws ec2 create-vpc-endpoint --vpc-id vpc-xxx \
 
 ### EBS 快照无限累积
 
-自动备份创建的快照永不删除。需设置生命周期策略。
-
+自动备份创建的快照永不删除。需设置生命周期策略.
 ```bash
 aws ec2 describe-snapshots --owner-ids self \
   --query 'Snapshots[?StartTime<=`2024-01-01`].[SnapshotId,StartTime,VolumeSize]'
@@ -129,18 +122,15 @@ aws logs put-retention-policy --log-group-name /aws/lambda/fn --retention-in-day
 
 ### 闲置负载均衡器最低 $16/月
 
-ALB 零流量也计费。删除未使用的负载均衡器。
-
+ALB 零流量也计费。删除未使用的负载均衡器.
 ### 跨 AZ 数据传输 $0.01/GB(单向)
 
-跨 AZ 频繁通信的微服务费用累积快。尽量同置部署。
-
+跨 AZ 频繁通信的微服务费用累积快。尽量同置部署.
 ## 安全陷阱
 
 ### S3 存储桶策略覆盖 ACL
 
-控制台显示 ACL 为 "private",但存储桶策略可能仍暴露全部内容。
-
+控制台显示 ACL 为 "private",但存储桶策略可能仍暴露全部内容.
 ```bash
 aws s3api get-bucket-policy --bucket my-bucket 2>/dev/null || echo "No policy"
 aws s3api get-public-access-block --bucket my-bucket
@@ -148,12 +138,10 @@ aws s3api get-public-access-block --bucket my-bucket
 
 ### 默认 VPC 安全组允许全部出站
 
-攻击者通过出站外泄数据。需限制出站规则。
-
+攻击者通过出站外泄数据。需限制出站规则.
 ### IAM 用户同时有控制台与编程访问
 
-代码中的凭证容易泄露。使用角色 + 临时凭证。
-
+代码中的凭证容易泄露。使用角色 + 临时凭证.
 ### RDS 公有可访问默认为 Yes
 
 ```bash
@@ -176,8 +164,7 @@ aws rds describe-db-instances --query 'DBInstances[].{ID:DBInstanceIdentifier,Pu
 | db.t3.small | 150 |
 | db.t3.medium | 300 |
 
-Lambda 高并发场景使用 RDS Proxy 避免连接耗尽。
-
+Lambda 高并发场景使用 RDS Proxy 避免连接耗尽.
 ### EBS 卷类型
 
 | 类型 | 用途 | IOPS |
@@ -226,8 +213,7 @@ aws ce get-cost-forecast --time-period Start=$(date +%Y-%m-01),End=$(date -v+1m 
 | 安全加固与合规 | VPC、IAM、S3、RDS 配置 | 零信任架构设计与安全漏洞修复清单 |
 | 架构设计与选型 | 业务需求与用户规模 | MVP→Growth→Scale 三阶段服务选型与 IaC 模板 |
 
-**不适用于**: 无明确技术栈的模糊需求、非 AWS 平台架构、需人工判断的合规裁决。
-
+**不适用于**: 无明确技术栈的模糊需求、非 AWS 平台架构、需人工判断的合规裁决.
 ## 依赖说明
 
 ### 运行环境
@@ -249,7 +235,7 @@ aws ce get-cost-forecast --time-period Start=$(date +%Y-%m-01),End=$(date -v+1m 
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 使用流程
 
 1. 用 `aws sts get-caller-identity` 确认账户与 Region
@@ -326,26 +312,19 @@ aws rds create-db-instance --db-instance-identifier mydb \
 ## 常见问题
 
 ### Q1: NAT Gateway 与 VPC 终端节点如何选择?
-A: S3 与 DynamoDB 的 VPC 终端节点免费,应优先使用。NAT Gateway 按 $0.045/GB 计费,仅用于必须经 NAT 的出站流量(如第三方 API)。高流量 S3 场景仅 NAT 费用可达 $500/月。
-
+A: S3 与 DynamoDB 的 VPC 终端节点免费,应优先使用。NAT Gateway 按 $0.045/GB 计费,仅用于必须经 NAT 的出站流量(如第三方 API)。高流量 S3 场景仅 NAT 费用可达 $500/月.
 ### Q2: 如何防止 EBS 快照无限累积?
-A: 使用 Data Lifecycle Manager (DLM) 或 AWS Backup 设置快照保留策略,自动清理超过保留期的快照。用 `describe-snapshots --owner-ids self` 定期审计存量快照。
-
+A: 使用 Data Lifecycle Manager (DLM) 或 AWS Backup 设置快照保留策略,自动清理超过保留期的快照。用 `describe-snapshots --owner-ids self` 定期审计存量快照.
 ### Q3: S3 存储桶策略与 ACL 谁优先?
-A: 存储桶策略优先级高于 ACL。控制台可能显示 ACL 为 "private",但若存储桶策略允许公开访问,数据仍会暴露。需同时检查 `get-bucket-policy` 与 `get-public-access-block`。
-
+A: 存储桶策略优先级高于 ACL。控制台可能显示 ACL 为 "private",但若存储桶策略允许公开访问,数据仍会暴露。需同时检查 `get-bucket-policy` 与 `get-public-access-block`.
 ### Q4: Lambda 冷启动如何优化?
-A: 三步优化: (1)使用 Provisioned Concurrency 预置并发实例;(2)精简部署包至 50MB 以下;(3)将 SDK 客户端初始化移至 handler 外部,复用执行环境。
-
+A: 三步优化: (1)使用 Provisioned Concurrency 预置并发实例;(2)精简部署包至 50MB 以下;(3)将 SDK 客户端初始化移至 handler 外部,复用执行环境.
 ### Q5: RDS 连接数耗尽怎么办?
-A: db.t3.micro 仅 66 连接,Lambda 高并发易耗尽。使用 RDS Proxy 自动管理连接池,支持连接复用与故障切换。或升级至 db.t3.medium(300 连接)。
-
+A: db.t3.micro 仅 66 连接,Lambda 高并发易耗尽。使用 RDS Proxy 自动管理连接池,支持连接复用与故障切换。或升级至 db.t3.medium(300 连接).
 ### Q6: 6Rs 迁移框架如何选择策略?
-A: Rehost(原样搬迁)适合快速迁移;Replatform(平台迁移)适度调整利用云特性;Refactor(重构)需重新设计为云原生;Repurchase 改用 SaaS;Retain 暂不迁移;Retire 下线冗余系统。
-
+A: Rehost(原样搬迁)适合快速迁移;Replatform(平台迁移)适度调整利用云特性;Refactor(重构)需重新设计为云原生;Repurchase 改用 SaaS;Retain 暂不迁移;Retire 下线冗余系统.
 ### Q7: Well-Architected Framework 有哪些支柱?
-A: 六大支柱: 卓越运营、安全、可靠性、性能效率、成本优化、可持续性。每项架构决策应对照支柱评估权衡。
-
+A: 六大支柱: 卓越运营、安全、可靠性、性能效率、成本优化、可持续性。每项架构决策应对照支柱评估权衡.
 ## 已知限制
 
 - 依赖 AWS CLI 与有效凭证,所有写操作需显式确认

@@ -6,22 +6,20 @@ displayName: "社交空间相册基础版"
 summary: "基础社交空间相册管理，扫码登录、列出和浏览相册"
 license: "MIT"
 description: |-
-  社交空间相册自动化管理工具的免费版。支持扫码登录、列出相册和浏览照片等基础功能。
+  社交空间相册自动化管理工具的免费版。支持扫码登录、列出相册和浏览照片等基础功能.
   适用于相册查看和照片URL获取场景。升级至完整版可解锁照片上传、单张下载、
-  整册下载和相册创建功能。
+  整册下载和相册创建功能.
 tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
 tags:
   - 通用办公
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # 社交空间相册（免费版）
 
-社交空间相册自动化管理工具的免费版。支持扫码登录、列出相册和浏览照片等基础功能。通过 `qzone_photos.py` 脚本调用社交空间非官方API实现自动化操作。
-
+社交空间相册自动化管理工具的免费版。支持扫码登录、列出相册和浏览照片等基础功能。通过 `qzone_photos.py` 脚本调用社交空间非官方API实现自动化操作.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -58,13 +56,12 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### 1. 扫码登录
 
-通过 `python3 （请参考skill目录中的脚本文件） --action login --cookies cookies.json` 执行扫码登录。生成二维码供用户扫描，登录成功后自动将Cookie保存到指定的cookies文件中。Cookie包含 `qq_number`、`p_skey`、`skey` 和 `uin` 字段。适用于首次使用或Cookie过期后的重新认证。
-
+通过 `python3 （请参考skill目录中的脚本文件） --action login --cookies cookies.json` 执行扫码登录。生成二维码供用户扫描，登录成功后自动将Cookie保存到指定的cookies文件中。Cookie包含 `qq_number`、`p_skey`、`skey` 和 `uin` 字段。适用于首次使用或Cookie过期后的重新认证.
 ### 2. 列出相册
 
 通过 `python3 （请参考skill目录中的脚本文件） --action list --cookies cookies.json` 列出当前账号的所有相册。返回相册列表，包含相册ID（`album-id`）、相册标题、照片数量等信息。可选参数 `--qq` 指定目标账号。适用于浏览相册结构和获取相册ID。- 验证返回数据的完整性和格式正确性
@@ -82,8 +79,7 @@ export API_KEY="your_api_key_here"
 - **下载整个相册**：`--action download-album` 批量下载整个相册的所有照片
 - **创建相册**：`--action create` 创建新相册，支持设置标题和描述
 
-升级至完整版以获取全部能力。
-
+升级至完整版以获取全部能力.
 ## 使用流程
 
 1. 首次使用执行扫码登录：`python3 （请参考skill目录中的脚本文件） --action login --cookies cookies.json`
@@ -92,8 +88,7 @@ export API_KEY="your_api_key_here"
 4. 如需上传、下载或创建相册功能，升级至完整版
 5. 如遇Cookie过期，重新执行 `login` action获取新Cookie
 
-**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
-
+**结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤.
 ## 示例
 
 ### 示例1：扫码登录并浏览相册
@@ -137,28 +132,22 @@ python3 （请参考skill目录中的脚本文件） --action photos --album-id 
 
 ### Q1: 如何扫码登录？
 
-执行 `python3 （请参考skill目录中的脚本文件） --action login --cookies cookies.json` 命令。脚本会生成二维码，使用社交平台App扫描二维码完成登录。登录成功后Cookie自动保存到指定的cookies文件中，包含 `qq_number`、`p_skey`、`skey` 和 `uin` 字段。
-
+执行 `python3 （请参考skill目录中的脚本文件） --action login --cookies cookies.json` 命令。脚本会生成二维码，使用社交平台App扫描二维码完成登录。登录成功后Cookie自动保存到指定的cookies文件中，包含 `qq_number`、`p_skey`、`skey` 和 `uin` 字段.
 ### Q2: Cookie过期怎么办？
 
-Cookie包含的 `p_skey` 和 `skey` 有时效性，过期后所有操作会返回认证失败。重新执行 `--action login` 扫码登录即可获取新的Cookie。
-
+Cookie包含的 `p_skey` 和 `skey` 有时效性，过期后所有操作会返回认证失败。重新执行 `--action login` 扫码登录即可获取新的Cookie.
 ### Q3: 如何获取相册ID？
 
-执行 `python3 （请参考skill目录中的脚本文件） --action list --cookies cookies.json` 列出所有相册。返回结果包含每个相册的ID（`album-id`）、标题和照片数量。使用返回的 `album-id` 进行后续的照片浏览操作。
-
+执行 `python3 （请参考skill目录中的脚本文件） --action list --cookies cookies.json` 列出所有相册。返回结果包含每个相册的ID（`album-id`）、标题和照片数量。使用返回的 `album-id` 进行后续的照片浏览操作.
 ### Q4: 免费版可以上传照片吗？
 
-不可以。`--action upload` 上传照片是完整版独有功能。免费版仅支持扫码登录、列出相册和浏览照片。如需上传照片，请升级至完整版。
-
+不可以。`--action upload` 上传照片是完整版独有功能。免费版仅支持扫码登录、列出相册和浏览照片。如需上传照片，请升级至完整版.
 ### Q5: 免费版可以下载照片吗？
 
-不可以。`--action download`（单张下载）和 `--action download-album`（整册下载）是完整版独有功能。免费版可以浏览照片并获取照片URL，但不能下载。如需下载照片，请升级至完整版。
-
+不可以。`--action download`（单张下载）和 `--action download-album`（整册下载）是完整版独有功能。免费版可以浏览照片并获取照片URL，但不能下载。如需下载照片，请升级至完整版.
 ### Q6: Cookie文件包含哪些字段？
 
-Cookie文件（`cookies.json`）为JSON格式，包含4个字段：`qq_number`（社交平台账号）、`p_skey`（认证密钥）、`skey`（会话密钥）和 `uin`（用户标识，格式如 `o0123456789`）。推荐使用扫码登录自动获取。
-
+Cookie文件（`cookies.json`）为JSON格式，包含4个字段：`qq_number`（社交平台账号）、`p_skey`（认证密钥）、`skey`（会话密钥）和 `uin`（用户标识，格式如 `o0123456789`）。推荐使用扫码登录自动获取.
 ## 已知限制
 
 - 不支持照片上传（`--action upload`），完整版可用

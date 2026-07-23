@@ -7,19 +7,18 @@ summary: "把项目上下文当受管制品与代码并行,用结构化文档沉
 license: "Proprietary"
 description: |-
   Treat project context as a managed artifact alongside code。Use structured
-  context documents (pro。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。
+  context documents (pro。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Knowledge
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "上下文管理,AI,工具"
+
 ---
 # Context Driven Devel
 
@@ -44,7 +43,9 @@ tags: "上下文管理,AI,工具"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 代码处理 | 源代码文件路径 | 分析报告与修改建议 |
+| 文档处理 | 文件路径与格式选项 | 转换结果与页面信息 |
+| 上下文管理 | 项目文档与变更记录 | 结构化上下文文件 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -145,8 +146,7 @@ tags: "上下文管理,AI,工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Context Driven Devel？

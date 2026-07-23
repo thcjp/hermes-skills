@@ -7,19 +7,18 @@ summary: "创建编辑JSON Canvas文件,含节点/边/分组/连接"
 license: "Proprietary"
 description: |-
   Create and edit JSON Canvas files (。canvas) with nodes, edges, groups,
-  and connections。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。
+  and connections。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
   - Integrations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+
 ---
 # Json Canvas
 
@@ -127,7 +126,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 See [references/EXAMPLES.md](/api/v1/skills/json-canvas/file?path=references%2FEXAMPLES.md&ownerHandle=sadlay) for full canvas examples including mind maps, project boards, research canvases, and flowcharts.

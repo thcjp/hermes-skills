@@ -25,15 +25,14 @@ description: |-
 tags:
   - Security
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Firewall
 
@@ -140,8 +139,7 @@ tags: "工具,效率,自动化"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Firewall？
@@ -159,3 +157,6 @@ A:
 ## 已知限制
 
 - 依赖云服务，需要网络连接
+- 不能替代专业安全审计，仅提供辅助检查能力
+- 加密强度依赖正确配置的密钥与算法参数
+- 安全策略需定期更新以应对新威胁

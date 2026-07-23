@@ -7,19 +7,18 @@ summary: "为任意平台处理/编辑/优化视频,压缩/转码/字幕"
 license: "Proprietary"
 description: |-
   Process, edit, and optimize videos for any platform with compression,
-  format conversion, captioni。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
+  format conversion, captioni
 tags:
   - Creative
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
+
 ---
 # Video
 
@@ -43,7 +42,9 @@ tags: "视频处理,媒体,创意"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 视频生成 | 脚本与画面描述 | 视频文件与时长信息 |
+| 为任意平台处理 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 优化视频 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -144,8 +145,7 @@ tags: "视频处理,媒体,创意"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Video？

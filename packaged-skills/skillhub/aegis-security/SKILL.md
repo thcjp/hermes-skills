@@ -8,7 +8,7 @@ license: "Proprietary"
 description: |-
   面向AI代理的区块链安全API。提供代币蜜罐检测、交易模拟、地址声誉检查等功能，
   支持EVM和Solana多链，集成x402付费协议。适用于DeFi交易前安全审计、代币风险评估、
-  地址欺诈检测等场景。不适用于需要100%确定性的关键决策。
+  地址欺诈检测等场景。不适用于需要100%确定性的关键决策.
 tools:
   - read
   - exec
@@ -19,13 +19,11 @@ tags:
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "exec"]
-tags: "安全,加密,工具"
+
 ---
 # 区块链安全防护
 
-面向AI代理的区块链安全API，提供交易前安全扫描能力。免费额度100次/天，超出后通过x402协议按需付费（USDC on Base或Solana）。
-
+面向AI代理的区块链安全API，提供交易前安全扫描能力。免费额度100次/天，超出后通过x402协议按需付费（USDC on Base或Solana）.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -73,47 +71,37 @@ tags: "安全,加密,工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### 1. 地址声誉检查
 
-通过 `GET /v1/check-address/:address` 端点检查接收地址的链上声誉。传入地址路径参数和 `chain_id` 查询参数（如8453表示Base链），返回 `isSafe` 布尔值、风险等级（LOW/MEDIUM/HIGH/CRITICAL）和威胁信号列表。适用于转账前验证收款方是否为已知恶意地址。
-
+通过 `GET /v1/check-address/:address` 端点检查接收地址的链上声誉。传入地址路径参数和 `chain_id` 查询参数（如8453表示Base链），返回 `isSafe` 布尔值、风险等级（LOW/MEDIUM/HIGH/CRITICAL）和威胁信号列表。适用于转账前验证收款方是否为已知恶意地址.
 ### 2. 交易模拟
 
-通过 `POST /v1/simulate-tx` 端点在链下环境中模拟交易执行。请求体包含 `from`（发送方地址）、`to`（接收方或合约地址）、`value`（wei单位的字符串）、`data`（可选calldata hex）和 `chain_id`（默认8453）。返回交易是否成功执行、状态变更详情和潜在风险警告。适用于DeFi合约交互前的安全预检。
-
+通过 `POST /v1/simulate-tx` 端点在链下环境中模拟交易执行。请求体包含 `from`（发送方地址）、`to`（接收方或合约地址）、`value`（wei单位的字符串）、`data`（可选calldata hex）和 `chain_id`（默认8453）。返回交易是否成功执行、状态变更详情和潜在风险警告。适用于DeFi合约交互前的安全预检.
 ### 3. 代币蜜罐检测
-通过 `GET /v1/check-token/:address` 端点检测代币合约是否存在蜜罐行为。传入代币合约地址和 `chain_id`（1=Ethereum, 8453=Base等），返回蜜罐概率百分比、风险评估和具体风险信号（如买入税率过高、卖出暂停等）。适用于购买新代币前的风险评估。
-
-**输入**: 用户提供代币蜜罐检测所需的指令和必要参数。
-**处理**: 解析代币蜜罐检测的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-
+通过 `GET /v1/check-token/:address` 端点检测代币合约是否存在蜜罐行为。传入代币合约地址和 `chain_id`（1=Ethereum, 8453=Base等），返回蜜罐概率百分比、风险评估和具体风险信号（如买入税率过高、卖出暂停等）。适用于购买新代币前的风险评估.
+**输入**: 用户提供代币蜜罐检测所需的指令和必要参数.
+**处理**: 解析代币蜜罐检测的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 4. 免费额度查询
 
-通过 `GET /v1/usage` 端点查询当前指纹的免费配额使用情况。通过 `X-Client-Fingerprint` 头部识别用户身份，返回 `dailyLimit`（100次/天）、`usedToday`、`remainingChecks` 和 `nextResetAt`（UTC时间戳）。适用于配额监控和调用规划。
-
+通过 `GET /v1/usage` 端点查询当前指纹的免费配额使用情况。通过 `X-Client-Fingerprint` 头部识别用户身份，返回 `dailyLimit`（100次/天）、`usedToday`、`remainingChecks` 和 `nextResetAt`（UTC时间戳）。适用于配额监控和调用规划.
 ### 5. x402付费机制
 
 超出免费额度后，API返回 `402 Payment Required` 状态码并附带x402付费挑战。通过集成 `@x402/fetch` 和 `@x402/evm`（EVM链）或 `@x402/svm`（Solana链）客户端，实现自动支付和请求重试。支持USDC在Base链或Solana上的微额支付。适用于高频安全检查场景。- 验证返回数据的完整性和格式正确性
 - 参考`x402付费机制`的配置文档进行参数调优
 ### 6. 风险等级评估
-根据检查结果自动计算综合风险等级。`LOW` 表示次要风险可放行，`MEDIUM` 表示存在部分风险需人工复核，`HIGH` 表示显著风险需阻止并确认，`CRITICAL` 表示恶意或不安全必须阻止。每个响应包含 `isSafe` 布尔值和详细威胁信号列表。适用于自动化交易策略中的风险决策。
-
-**输入**: 用户提供风险等级评估所需的指令和必要参数。
+根据检查结果自动计算综合风险等级。`LOW` 表示次要风险可放行，`MEDIUM` 表示存在部分风险需人工复核，`HIGH` 表示显著风险需阻止并确认，`CRITICAL` 表示恶意或不安全必须阻止。每个响应包含 `isSafe` 布尔值和详细威胁信号列表。适用于自动化交易策略中的风险决策.
+**输入**: 用户提供风险等级评估所需的指令和必要参数.
 ### 7. 多链支持
-支持8条区块链的地址和代币检查：Ethereum(chain_id=1)、Base(chain_id=8453)、Polygon(chain_id=137)、Arbitrum(chain_id=42161)、Optimism(chain_id=10)、BSC(chain_id=56)、Avalanche(chain_id=43114)和Solana。`check-address` 和 `check-token` 支持全部链，`simulate-tx` 仅支持EVM链（Solana不支持交易模拟）。
-
-**输入**: 用户提供多链支持所需的指令和必要参数。
-**输出**: 返回多链支持的处理结果,包含执行状态码、结果数据和执行日志。
-
+支持8条区块链的地址和代币检查：Ethereum(chain_id=1)、Base(chain_id=8453)、Polygon(chain_id=137)、Arbitrum(chain_id=42161)、Optimism(chain_id=10)、BSC(chain_id=56)、Avalanche(chain_id=43114)和Solana。`check-address` 和 `check-token` 支持全部链，`simulate-tx` 仅支持EVM链（Solana不支持交易模拟）.
+**输入**: 用户提供多链支持所需的指令和必要参数.
+**输出**: 返回多链支持的处理结果,包含执行状态码、结果数据和执行日志.
 ### 8. 反馈提交
-通过 `POST /v1/feedback` 端点提交问题报告或功能反馈，不消耗免费配额。请求体包含 `kind`（issue/feedback/expectation）、`summary`、`endpoint`、`status_code`、`chain_id` 和 `agent` 对象（含name和version）。支持通过 `failed_request_id` 关联 `_meta.requestId` 进行服务端追踪。适用于问题反馈和服务改进。
-
-**处理**: 解析反馈提交的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回反馈提交的处理结果,包含执行状态码、结果数据和执行日志。
-
+通过 `POST /v1/feedback` 端点提交问题报告或功能反馈，不消耗免费配额。请求体包含 `kind`（issue/feedback/expectation）、`summary`、`endpoint`、`status_code`、`chain_id` 和 `agent` 对象（含name和version）。支持通过 `failed_request_id` 关联 `_meta.requestId` 进行服务端追踪。适用于问题反馈和服务改进.
+**处理**: 解析反馈提交的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+**输出**: 返回反馈提交的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 使用流程
 
@@ -189,28 +177,22 @@ curl "https://security-api.example.com/v1/check-token/0xA0b86991c6218b36c1d19D4a
 
 ### Q1: 免费额度是如何计算的？
 
-免费额度按 `X-Client-Fingerprint` 头部进行每日100次配额分配。UTC时间次日0点自动重置。如果未设置该头部，系统回退到IP/User-Agent进行配额计算，可能导致配额不稳定。
-
+免费额度按 `X-Client-Fingerprint` 头部进行每日100次配额分配。UTC时间次日0点自动重置。如果未设置该头部，系统回退到IP/User-Agent进行配额计算，可能导致配额不稳定.
 ### Q2: 如何配置x402付费机制？
 
-安装 `@x402/fetch` 和 `@x402/evm`（EVM链）或 `@x402/svm`（Solana链）npm包，创建x402Client并注册签名方案，用 `wrapFetchWithPayment` 包装fetch函数。配置一个代理管理的钱包签名器（不要在prompt或环境变量中存储原始私钥）。
-
+安装 `@x402/fetch` 和 `@x402/evm`（EVM链）或 `@x402/svm`（Solana链）npm包，创建x402Client并注册签名方案，用 `wrapFetchWithPayment` 包装fetch函数。配置一个代理管理的钱包签名器（不要在prompt或环境变量中存储原始私钥）.
 ### Q3: 哪些链支持交易模拟（simulate-tx）？
 
-`simulate-tx` 支持所有EVM链：Ethereum(1)、Base(8453)、Polygon(137)、Arbitrum(42161)、Optimism(10)、BSC(56)、Avalanche(43114)。Solana链不支持交易模拟，仅支持 `check-address` 和 `check-token`。
-
+`simulate-tx` 支持所有EVM链：Ethereum(1)、Base(8453)、Polygon(137)、Arbitrum(42161)、Optimism(10)、BSC(56)、Avalanche(43114)。Solana链不支持交易模拟，仅支持 `check-address` 和 `check-token`.
 ### Q4: 风险等级HIGH和CRITICAL有什么区别？
 
-`HIGH` 表示显著风险，Agent应阻止交易并请求用户确认。`CRITICAL` 表示地址或交易被判定为恶意或不安全，Agent必须阻止交易且不建议继续。两者都会触发 `isSafe=false`，但CRITICAL通常关联已知诈骗地址或蜜罐合约。
-
+`HIGH` 表示显著风险，Agent应阻止交易并请求用户确认。`CRITICAL` 表示地址或交易被判定为恶意或不安全，Agent必须阻止交易且不建议继续。两者都会触发 `isSafe=false`，但CRITICAL通常关联已知诈骗地址或蜜罐合约.
 ### Q5: X-Client-Fingerprint的作用是什么？
 
-`X-Client-Fingerprint` 是用于免费配额识别的稳定标识符。设置为固定的用户或Agent ID（如 `agent-default`）可确保配额分配一致。轮换指纹可能绕过免费配额限制，但这不是安全机制，仅是尽力而为的防滥用措施。
-
+`X-Client-Fingerprint` 是用于免费配额识别的稳定标识符。设置为固定的用户或Agent ID（如 `agent-default`）可确保配额分配一致。轮换指纹可能绕过免费配额限制，但这不是安全机制，仅是尽力而为的防滥用措施.
 ### Q6: 如何判断代币是否是蜜罐？
 
-调用 `GET /v1/check-token/:address` 并查看返回的 `honeypot` 概率和风险信号。如果蜜罐概率高于阈值或存在卖出暂停、交易税率异常等信号，建议不要购买该代币。同时建议配合 `simulate-tx` 验证交易是否能正常执行。
-
+调用 `GET /v1/check-token/:address` 并查看返回的 `honeypot` 概率和风险信号。如果蜜罐概率高于阈值或存在卖出暂停、交易税率异常等信号，建议不要购买该代币。同时建议配合 `simulate-tx` 验证交易是否能正常执行.
 ## 已知限制
 
 - 免费额度100次/天，高频场景需配置x402付费

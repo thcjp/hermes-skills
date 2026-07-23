@@ -6,19 +6,18 @@ displayName: "Research"
 summary: "开放式主题研究,构建活的Markdown文档,支持交互"
 license: "Proprietary"
 description: |-
-  Conduct open-ended research on a topic, building a living markdown document。Supports interactive。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。
+  Conduct open-ended research on a topic, building a living markdown document。Supports interactive。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
 tags:
   - Research
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+
 ---
 # Research
 
@@ -42,7 +41,9 @@ tags: "搜索,检索,工具"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 交互响应 | 事件与回调数据 | 响应状态与交互结果 |
+| 文档处理 | 文件路径与格式选项 | 转换结果与页面信息 |
+| 开放式主题研究 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -143,8 +144,7 @@ tags: "搜索,检索,工具"
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Research？

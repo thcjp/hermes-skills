@@ -6,15 +6,15 @@ displayName: "记忆快速启动"
 summary: "零依赖本地记忆系统：三层架构+混合检索+WAL日志+关系图谱+迁移工具。"
 license: "Proprietary"
 description: |-
-  面向零依赖场景的本地记忆系统，解决搜索精度不足、上手门槛高、数据格式不统一四大痛点。
-  三层记忆架构（热内存SESSION-STATE.json/冷存储memories/目录/人类可读归档MEMORY.md+daily/）协同提供从快到慢的记忆存取。
-  TF-IDF+近期加权+重要度加权+标签匹配四维混合检索算法，召回率比纯TF-IDF提升40%。
-  WAL写前日志协议确保响应前先写入记忆，避免崩溃丢失上下文。
-  统一JSON schema支持preference/decision/fact/lesson/context五种记忆类型，便于迁移与互操作。
-  记忆关系图谱支持related_to/followed_by关系链，查到一条记忆可顺藤摸瓜找到关联记忆。
-  迁移工具支持从其他记忆系统一键导入。
-  适用于隐私敏感场景、离线开发、学习记忆系统、构建自定义Agent记忆层。
-  无API Key、无云、无追踪，纯本地记忆。
+  面向零依赖场景的本地记忆系统，解决搜索精度不足、上手门槛高、数据格式不统一四大痛点.
+  三层记忆架构（热内存SESSION-STATE.json/冷存储memories/目录/人类可读归档MEMORY.md+daily/）协同提供从快到慢的记忆存取.
+  TF-IDF+近期加权+重要度加权+标签匹配四维混合检索算法，召回率比纯TF-IDF提升40%.
+  WAL写前日志协议确保响应前先写入记忆，避免崩溃丢失上下文.
+  统一JSON schema支持preference/decision/fact/lesson/context五种记忆类型，便于迁移与互操作.
+  记忆关系图谱支持related_to/followed_by关系链，查到一条记忆可顺藤摸瓜找到关联记忆.
+  迁移工具支持从其他记忆系统一键导入.
+  适用于隐私敏感场景、离线开发、学习记忆系统、构建自定义Agent记忆层.
+  无API Key、无云、无追踪，纯本地记忆.
 tools:
   - read
   - exec
@@ -25,13 +25,11 @@ tags:
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
+
 ---
 # 记忆快速启动
 
-面向零依赖场景的本地记忆系统，用三层架构和混合检索算法，在不引入任何外部依赖的前提下，提供开箱即用的记忆能力。无API Key、无云、无追踪，纯本地记忆。
-
+面向零依赖场景的本地记忆系统，用三层架构和混合检索算法，在不引入任何外部依赖的前提下，提供开箱即用的记忆能力。无API Key、无云、无追踪，纯本地记忆.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -53,12 +51,11 @@ tags: "UI设计,前端,设计"
 
 ## 核心能力
 
-- **三层记忆架构**：热内存（SESSION-STATE.json，活跃工作记忆，抗上下文压缩，会话开始立即加载）→ 冷存储（memories/目录，索引化JSON文件，可检索）→ 人类可读归档（MEMORY.md + daily/目录，长期精选，周期性回顾）。三层协同提供从快到慢的记忆存取，热内存毫秒级访问，冷存储支持复杂检索，归档层人类可读可编辑。
-- **混合检索算法**：在TF-IDF基础文本相关性（权重50%）上叠加近期加权（权重20%，近期记忆优先）、重要度加权（权重20%，高重要度优先）、标签匹配（权重10%，标签命中加分）三维加权。召回率比纯TF-IDF提升40%，解决"查用户喜好找不到偏好深色模式"的语义鸿沟问题。执行 `memory-search "关键词"` 返回按综合得分排序的结果。
-- **WAL写前日志协议**：响应前先写入记忆，避免崩溃丢失上下文。用户表达偏好/做决策/给截止时间/纠正错误时，执行三步：更新SESSION-STATE.json → memory-store持久化 → 响应用户。确保任何时刻崩溃，关键上下文已持久化。
-- **统一JSON schema与记忆类型分类**：所有记忆遵循同一schema：`{"id":"uuid-001","type":"preference","content":"用户偏好TypeScript","importance":0.9,"tags":["frontend","typescript"],"timestamp":"2026-07-21T10:00:00Z","context":"项目技术选型","confidence":0.95,"source":"user_input","expires_at":null}`。支持preference（用户喜好，重要度0.8-1.0）/decision（项目决策，0.9-1.0）/fact（重要信息，0.6-0.8）/lesson（错误教训，0.9-1.0）/context（背景信息，0.4-0.6）五种类型。
-- **记忆关系图谱与迁移工具**：支持related_to（相关关系）与followed_by（顺序关系）两种关系链。存储时通过 `--related-to uuid-001` 指定关联，检索时顺关系链找到关联记忆。提供迁移工具支持从其他记忆系统一键导入：`memory-export > old-backup.json` → `node convert-to-memo-quickstart.js old-backup.json > new-backup.json` → `memory-import --file new-backup.json`。
-
+- **三层记忆架构**：热内存（SESSION-STATE.json，活跃工作记忆，抗上下文压缩，会话开始立即加载）→ 冷存储（memories/目录，索引化JSON文件，可检索）→ 人类可读归档（MEMORY.md + daily/目录，长期精选，周期性回顾）。三层协同提供从快到慢的记忆存取，热内存毫秒级访问，冷存储支持复杂检索，归档层人类可读可编辑.
+- **混合检索算法**：在TF-IDF基础文本相关性（权重50%）上叠加近期加权（权重20%，近期记忆优先）、重要度加权（权重20%，高重要度优先）、标签匹配（权重10%，标签命中加分）三维加权。召回率比纯TF-IDF提升40%，解决"查用户喜好找不到偏好深色模式"的语义鸿沟问题。执行 `memory-search "关键词"` 返回按综合得分排序的结果.
+- **WAL写前日志协议**：响应前先写入记忆，避免崩溃丢失上下文。用户表达偏好/做决策/给截止时间/纠正错误时，执行三步：更新SESSION-STATE.json → memory-store持久化 → 响应用户。确保任何时刻崩溃，关键上下文已持久化.
+- **统一JSON schema与记忆类型分类**：所有记忆遵循同一schema：`{"id":"uuid-001","type":"preference","content":"用户偏好TypeScript","importance":0.9,"tags":["frontend","typescript"],"timestamp":"2026-07-21T10:00:00Z","context":"项目技术选型","confidence":0.95,"source":"user_input","expires_at":null}`。支持preference（用户喜好，重要度0.8-1.0）/decision（项目决策，0.9-1.0）/fact（重要信息，0.6-0.8）/lesson（错误教训，0.9-1.0）/context（背景信息，0.4-0.6）五种类型.
+- **记忆关系图谱与迁移工具**：支持related_to（相关关系）与followed_by（顺序关系）两种关系链。存储时通过 `--related-to uuid-001` 指定关联，检索时顺关系链找到关联记忆。提供迁移工具支持从其他记忆系统一键导入：`memory-export > old-backup.json` → `node convert-to-memo-quickstart.js old-backup.json > new-backup.json` → `memory-import --file new-backup.json`.
 ### 记忆类型与重要度参考
 | 类型 | 使用场景 | 重要度范围 |
 |---:|---:|---:|
@@ -68,29 +65,25 @@ tags: "UI设计,前端,设计"
 | lesson | 从错误中学 | 0.9-1.0 |
 | context | 背景信息 | 0.4-0.6 |
 
-**处理**: 解析记忆类型与重要度参考的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
+**处理**: 解析记忆类型与重要度参考的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回记忆类型与重要度参考的处理结果,包含执行状态码、结果数据和执行日志。### 混合检索加权公式
 - TF-IDF（50%）：文本相关性，基础召回
 - 近期加权（20%）：近期记忆优先
 - 重要度加权（20%）：高重要度优先
 - 标签匹配（10%）：标签命中加分
 
-**输入**: 用户提供混合检索加权公式所需的指令和必要参数。
-**输出**: 返回混合检索加权公式的处理结果,包含执行状态码、结果数据和执行日志。
+**输入**: 用户提供混合检索加权公式所需的指令和必要参数.
+**输出**: 返回混合检索加权公式的处理结果,包含执行状态码、结果数据和执行日志.
 ### preference
 
-针对preference,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供preference相关的配置参数、输入数据和处理选项。
-
+针对preference,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供preference相关的配置参数、输入数据和处理选项.
 **输出**: 返回preference的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`preference`的配置文档进行参数调优
 ### decision
 
-针对decision,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供decision相关的配置参数、输入数据和处理选项。
-
+针对decision,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供decision相关的配置参数、输入数据和处理选项.
 **输出**: 返回decision的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`decision`的配置文档进行参数调优
 #
@@ -106,12 +99,10 @@ cd your-project
 memory-init
 ```
 
-初始化创建 `SESSION-STATE.json`（活跃工作记忆）、`MEMORY.md`（长期精选记忆）、`memories/`（记忆存储目录）。
-
+初始化创建 `SESSION-STATE.json`（活跃工作记忆）、`MEMORY.md`（长期精选记忆）、`memories/`（记忆存储目录）.
 ### 第二步：配置Agent（20秒）
 
-在Agent的系统提示词中写入规则：收到重要信息时先写入SESSION-STATE.json再memory-store持久化，然后响应用户；会话开始时读取SESSION-STATE.json并用memory-search检索相关记忆。
-
+在Agent的系统提示词中写入规则：收到重要信息时先写入SESSION-STATE.json再memory-store持久化，然后响应用户；会话开始时读取SESSION-STATE.json并用memory-search检索相关记忆.
 ### 第三步：存储与检索记忆
 
 存储第一条记忆并验证检索功能：
@@ -121,16 +112,13 @@ memory-store --type preference --content "用户偏好TypeScript" --importance 0
 memory-search "TypeScript 偏好"
 ```
 
-确认能召回刚存的记忆，验证混合检索算法工作正常。
-
+确认能召回刚存的记忆，验证混合检索算法工作正常.
 ### 第四步：执行WAL协议（日常使用）
 
-用户表达偏好/做决策/给截止时间/纠正错误时，执行：更新SESSION-STATE.json → memory-store持久化 → 响应用户。确保崩溃前上下文已持久化。
-
+用户表达偏好/做决策/给截止时间/纠正错误时，执行：更新SESSION-STATE.json → memory-store持久化 → 响应用户。确保崩溃前上下文已持久化.
 ### 第五步：定期维护
 
-每日运行 `memory-stats` 查看统计；每周运行 `memory-archive --days 7` 和 `memory-deduplicate` 归档去重；每月运行 `memory-export --format json --output backup.json` 导出备份和 `memory-cleanup --days 30` 清理。
-
+每日运行 `memory-stats` 查看统计；每周运行 `memory-archive --days 7` 和 `memory-deduplicate` 归档去重；每月运行 `memory-export --format json --output backup.json` 导出备份和 `memory-cleanup --days 30` 清理.
 ### CLI命令速查
 
 ```bash
@@ -240,23 +228,17 @@ memory-import --file new-backup.json
 ## FAQ
 
 **Q1：真的完全不需要API Key吗？**
-A：是的。所有存储与检索在本地完成，零网络请求，零外部依赖。数据不离开本机，适合隐私敏感场景与离线开发环境。如需可选的Gist云同步，才需要配置Gist Token。
-
+A：是的。所有存储与检索在本地完成，零网络请求，零外部依赖。数据不离开本机，适合隐私敏感场景与离线开发环境。如需可选的Gist云同步，才需要配置Gist Token.
 **Q2：混合检索比纯TF-IDF好在哪？**
-A：纯TF-IDF只看词频，查"用户喜好"找不到"偏好深色模式"（无共同词）。混合检索叠加标签匹配（10%）与重要度加权（20%），即使无共同词也能通过标签关联召回。整体召回率比纯TF-IDF提升40%。
-
+A：纯TF-IDF只看词频，查"用户喜好"找不到"偏好深色模式"（无共同词）。混合检索叠加标签匹配（10%）与重要度加权（20%），即使无共同词也能通过标签关联召回。整体召回率比纯TF-IDF提升40%.
 **Q3：能和其他记忆系统共存吗？**
-A：可以。本系统独立运行于 `memories/` 目录，不干扰其他系统。提供迁移工具（convert-to-memo-quickstart.js）支持从其他系统导出的JSON互导，转换为本系统统一schema后导入。
-
+A：可以。本系统独立运行于 `memories/` 目录，不干扰其他系统。提供迁移工具（convert-to-memo-quickstart.js）支持从其他系统导出的JSON互导，转换为本系统统一schema后导入.
 **Q4：记忆多了会不会变慢？**
-A：1000条以内无明显延迟（毫秒级检索）。超1000条建议定期执行 `memory-archive` 归档与 `memory-deduplicate` 去重。超10000条检索延迟明显，建议接入Transformers.js本地embedding增强语义检索。
-
+A：1000条以内无明显延迟（毫秒级检索）。超1000条建议定期执行 `memory-archive` 归档与 `memory-deduplicate` 去重。超10000条检索延迟明显，建议接入Transformers.js本地embedding增强语义检索.
 **Q5：SESSION-STATE.json与MEMORY.md有什么区别？**
-A：SESSION-STATE.json是机器优化的活跃上下文（JSON格式），存储当前任务、关键决策、待办动作，频繁更新，会话开始立即加载。MEMORY.md是人类可读的长期归档（Markdown格式），定期从冷存储中精选重要内容整理而成，用于周期性回顾。
-
+A：SESSION-STATE.json是机器优化的活跃上下文（JSON格式），存储当前任务、关键决策、待办动作，频繁更新，会话开始立即加载。MEMORY.md是人类可读的长期归档（Markdown格式），定期从冷存储中精选重要内容整理而成，用于周期性回顾.
 **Q6：记忆关系图谱怎么用？**
-A：存储记忆时通过 `--related-to uuid-001` 参数指定关联记忆。检索时找到一条记忆后，可顺related_to或followed_by关系链找到关联记忆。例如决策记忆关联其依据的评估记忆，检索决策时自动返回完整上下文。关系需在存储时显式指定，系统不会自动发现记忆间关联。
-
+A：存储记忆时通过 `--related-to uuid-001` 参数指定关联记忆。检索时找到一条记忆后，可顺related_to或followed_by关系链找到关联记忆。例如决策记忆关联其依据的评估记忆，检索决策时自动返回完整上下文。关系需在存储时显式指定，系统不会自动发现记忆间关联.
 ## 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
@@ -276,12 +258,11 @@ A：存储记忆时通过 `--related-to uuid-001` 参数指定关联记忆。检
 
 ## 已知限制
 
-1. **无向量语义检索**：基于TF-IDF + 加权的混合检索，无法理解深层语义相似性，查"汽车"找不到"轿车"（无共同词且无标签关联时）。超10000条记忆建议接入Transformers.js本地embedding增强。
-2. **无自动事实抽取**：以手动memory-store和简单规则为主，不会自动从对话流中提取事实，需要Agent主动调用存储命令。
-3. **无跨设备同步**：纯本地存储，默认无云同步。如需跨设备可通过GitHub Gist自行扩展，但非内置功能。
-4. **记忆关系需手动维护**：related_to/followed_by关系链需在存储时显式指定，系统不会自动发现记忆间关联。
-5. **单机性能上限**：10000条以上记忆检索延迟明显，无分区/分片机制，不适合超大规模记忆库。
-
+1. **无向量语义检索**：基于TF-IDF + 加权的混合检索，无法理解深层语义相似性，查"汽车"找不到"轿车"（无共同词且无标签关联时）。超10000条记忆建议接入Transformers.js本地embedding增强.
+2. **无自动事实抽取**：以手动memory-store和简单规则为主，不会自动从对话流中提取事实，需要Agent主动调用存储命令.
+3. **无跨设备同步**：纯本地存储，默认无云同步。如需跨设备可通过GitHub Gist自行扩展，但非内置功能.
+4. **记忆关系需手动维护**：related_to/followed_by关系链需在存储时显式指定，系统不会自动发现记忆间关联.
+5. **单机性能上限**：10000条以上记忆检索延迟明显，无分区/分片机制，不适合超大规模记忆库.
 ## 输出格式
 
 ```json

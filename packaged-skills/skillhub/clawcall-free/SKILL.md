@@ -3,7 +3,7 @@ slug: "clawcall-free"
 name: "clawcall-free"
 version: "1.0.0"
 displayName: "语音通话服务-免费版"
-summary: "AI语音代理拨打美国真实电话的免费版，支持基础外呼与轮询，每日有限试用额度。"
+summary: "AI语音代理拨打美国真实电话的免费版，支持基础外呼与轮询，每日有限试用额度"
 license: "MIT"
 description: |-
   语音通话服务免费版提供基础外呼能力。AI语音代理可拨号、对话、处理简单电话菜单，
@@ -24,8 +24,6 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 ---
 # 语音通话服务（免费版）
 
@@ -49,7 +47,7 @@ tags: "工具,效率,自动化"
 
 ```json
 {
-  "api_key": "voicecall_sk_...",
+  "api_key": "voicecall_sk_..",
   "user_phone_number": "+15559876543"
 }
 ```
@@ -68,7 +66,7 @@ tags: "工具,效率,自动化"
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
-需要配置对应API Key，详见上文环境配置章节
+如需调用外部API，请参考环境配置章节
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
@@ -85,7 +83,7 @@ export API_KEY="your_api_key_here"
 ```
 POST /call
 Content-Type: application/json
-X-Api-Key: voicecall_sk_...
+X-Api-Key: voicecall_sk_..
 ```
 
 仅 `to` 与 `task` 必填。
@@ -94,9 +92,9 @@ X-Api-Key: voicecall_sk_...
 
 ```json
 {
-  "call_id": "ba645d75-...",
+  "call_id": "ba645d75-..",
   "status": "queued",
-  "api_key": "voicecall_sk_..."
+  "api_key": "voicecall_sk_."
 }
 ```
 
@@ -108,7 +106,7 @@ X-Api-Key: voicecall_sk_...
 
 ```
 GET /call/{call_id}
-X-Api-Key: voicecall_sk_...
+X-Api-Key: voicecall_sk_..
 ```
 
 轮询直至 `lifecycle = "finalized"`。生命周期取值：`queued`、`dialing`、`answered`、`finalized`。
@@ -150,10 +148,10 @@ POST /call
 X-Api-Key: voicecall_sk_abc123
 {
   "to": "+12125551234",
-  "task": "询问该餐厅周五晚7点2人位是否可用。若可用询问可保留多久。遇语音信箱留言回拨+15559876543。回报可用性或替代时间。"
+  "task": "询问该餐厅周五晚7点2人位是否可用。若可用询问可保留多久。遇语音信箱留言回拨+15559876543。回报可用性或替代时间"
 }
-响应：{"call_id":"ba645d75-...","status":"queued","api_key":"voicecall_sk_abc123"}
-轮询：GET /call/ba645d75-...  → lifecycle: queued → dialing → answered → finalized
+响应：{"call_id":"ba645d75-..","status":"queued","api_key":"voicecall_sk_abc123"}
+轮询：GET /call/ba645d75-..  → lifecycle: queued → dialing → answered → finalized
 终态：outcome=answered, talk_seconds=42, transcript="周五7点2人位可用，可保留24小时"
 ```
 
@@ -164,7 +162,7 @@ POST /call
 X-Api-Key: voicecall_sk_abc123
 {
   "to": "+18005551000",
-  "task": "查询订单#A-9921的状态与预计送达时间。核验可能需订单号A-9921。回报当前状态与送达时间。"
+  "task": "查询订单#A-9921的状态与预计送达时间。核验可能需订单号A-9921。回报当前状态与送达时间"
 }
 ```
 

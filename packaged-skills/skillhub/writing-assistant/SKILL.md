@@ -6,19 +6,18 @@ displayName: "Writing Assistant"
 summary: "写作团队组长,经MCP工具管理专业写手并分析写作"
 license: "Proprietary"
 description: |-
-  You are a Writing Team Lead managing specialized writers via 协议 tools。Please ANALYZE the writin。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。
+  You are a Writing Team Lead managing specialized writers via 协议 tools。Please ANALYZE the writin。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
   - Productivity
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Writing Assistant
 
@@ -41,7 +40,9 @@ This skill provides specialized capabilities for writing assistant.
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 智能分析 | 数据与分析维度 | 分析报告与关键发现 |
+| 管理操作 | 操作目标与参数 | 操作结果与状态变更 |
+| 写作团队组长 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -111,8 +112,7 @@ This skill provides specialized capabilities for writing assistant.
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
-
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Writing Assistant？

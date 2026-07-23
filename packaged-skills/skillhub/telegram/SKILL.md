@@ -7,19 +7,17 @@ summary: "设计Telegram Bot API工作流与命令驱动对话"
 license: "Proprietary"
 description: |-
   SkillHub skill for designing Telegram Bot API workflows and command-driven
-  conversations using di。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
+  conversations using di。
 tags:
   - Integrations
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Telegram,社交,通信"
 ---
 # Telegram
 
@@ -43,7 +41,8 @@ tags: "Telegram,社交,通信"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| Bot工作流 | Bot功能需求与命令列表 | 命令驱动的对话流程设计 |
+| 对话编排 | 用户意图与回复逻辑 | 状态机式对话流转方案 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -162,4 +161,6 @@ A:
 
 ## 已知限制
 
-- 需要API Key，无Key环境无法使用
+- Bot API单条消息长度限制4096字符，超长内容需分段发送，分段逻辑需开发者自行实现
+- Webhook模式需公网HTTPS端点（需有效TLS证书），本地开发需额外配置ngrok等隧道工具
+- Bot无法主动向未订阅用户发起对话，用户需先向Bot发送/start消息后才能建立会话

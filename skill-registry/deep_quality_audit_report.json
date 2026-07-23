@@ -1,5 +1,5 @@
 {
-  "audit_date": "2026-07-23T21:13:09.120307",
+  "audit_date": "2026-07-24T06:00:32.126229",
   "total_skills": 2097,
   "fix_mode": false,
   "fix_all": false,
@@ -112,18 +112,18 @@
       "D": 0,
       "F": 0
     },
-    "avg_score": 93.3,
+    "avg_score": 93.4,
     "total_with_issues": 0,
     "issues_detail": []
   },
   "sellability": {
     "grade_distribution": {
-      "A": 2041,
-      "B": 56,
+      "A": 2070,
+      "B": 27,
       "C": 0,
       "D": 0
     },
-    "avg_score": 89.7,
+    "avg_score": 89.9,
     "total_below_b": 0,
     "below_b_detail": []
   },
@@ -135,79 +135,13 @@
       "D": 0,
       "F": 0
     },
-    "avg_score": 99.5,
-    "total_with_issues": 15,
-    "total_template_fills": 5,
+    "avg_score": 100.0,
+    "total_with_issues": 2,
+    "total_template_fills": 0,
     "issues_detail": [
       {
-        "slug": "daily-news-brief",
+        "slug": "csv-json-converter",
         "source": "packaged",
-        "grade": "A",
-        "score": 97,
-        "template_count": 0,
-        "empty_sections": 1,
-        "issues": [
-          "EMPTY_LIMITATIONS: 已知限制段落为空"
-        ]
-      },
-      {
-        "slug": "figma",
-        "source": "packaged",
-        "grade": "A",
-        "score": 97,
-        "template_count": 0,
-        "empty_sections": 1,
-        "issues": [
-          "EMPTY_LIMITATIONS: 已知限制段落为空"
-        ]
-      },
-      {
-        "slug": "juejin-skills",
-        "source": "packaged",
-        "grade": "A",
-        "score": 97,
-        "template_count": 0,
-        "empty_sections": 1,
-        "issues": [
-          "EMPTY_LIMITATIONS: 已知限制段落为空"
-        ]
-      },
-      {
-        "slug": "namecheap-dns",
-        "source": "packaged",
-        "grade": "A",
-        "score": 97,
-        "template_count": 0,
-        "empty_sections": 1,
-        "issues": [
-          "EMPTY_LIMITATIONS: 已知限制段落为空"
-        ]
-      },
-      {
-        "slug": "tool-finder",
-        "source": "packaged",
-        "grade": "A",
-        "score": 97,
-        "template_count": 0,
-        "empty_sections": 1,
-        "issues": [
-          "EMPTY_LIMITATIONS: 已知限制段落为空"
-        ]
-      },
-      {
-        "slug": "verify-claims",
-        "source": "packaged",
-        "grade": "A",
-        "score": 97,
-        "template_count": 0,
-        "empty_sections": 1,
-        "issues": [
-          "EMPTY_LIMITATIONS: 已知限制段落为空"
-        ]
-      },
-      {
-        "slug": "cdp-browser-pilot-free",
-        "source": "differentiated/Automation",
         "grade": "A",
         "score": 94,
         "template_count": 0,
@@ -217,89 +151,12 @@
         ]
       },
       {
-        "slug": "cloud-ops-orchestrator",
-        "source": "differentiated/Automation",
+        "slug": "figma-design",
+        "source": "packaged",
         "grade": "A",
-        "score": 91,
+        "score": 94,
         "template_count": 0,
-        "empty_sections": 3,
-        "issues": [
-          "EMPTY_SECTIONS: 3个段落内容为空或过短"
-        ]
-      },
-      {
-        "slug": "cron-assist",
-        "source": "differentiated/Automation",
-        "grade": "A",
-        "score": 91,
-        "template_count": 0,
-        "empty_sections": 3,
-        "issues": [
-          "EMPTY_SECTIONS: 3个段落内容为空或过短"
-        ]
-      },
-      {
-        "slug": "cron-master-pro",
-        "source": "differentiated/Automation",
-        "grade": "A",
-        "score": 95,
-        "template_count": 1,
-        "empty_sections": 0,
-        "issues": [
-          "PLACEHOLDER_CASE: 案例展示为占位符内容"
-        ]
-      },
-      {
-        "slug": "cron-scheduler-pro",
-        "source": "differentiated/Automation",
-        "grade": "A",
-        "score": 92,
-        "template_count": 1,
-        "empty_sections": 1,
-        "issues": [
-          "PLACEHOLDER_CASE: 案例展示为占位符内容"
-        ]
-      },
-      {
-        "slug": "excel-maestro",
-        "source": "differentiated/Automation",
-        "grade": "A",
-        "score": 95,
-        "template_count": 1,
-        "empty_sections": 0,
-        "issues": [
-          "PLACEHOLDER_CASE: 案例展示为占位符内容"
-        ]
-      },
-      {
-        "slug": "flow-architect",
-        "source": "differentiated/Automation",
-        "grade": "A",
-        "score": 95,
-        "template_count": 1,
-        "empty_sections": 0,
-        "issues": [
-          "PLACEHOLDER_CASE: 案例展示为占位符内容"
-        ]
-      },
-      {
-        "slug": "workflow-lite",
-        "source": "differentiated/Automation",
-        "grade": "A",
-        "score": 95,
-        "template_count": 1,
-        "empty_sections": 0,
-        "issues": [
-          "PLACEHOLDER_CASE: 案例展示为占位符内容"
-        ]
-      },
-      {
-        "slug": "note-process-engine-pro",
-        "source": "differentiated/Integrations",
-        "grade": "A",
-        "score": 97,
-        "template_count": 0,
-        "empty_sections": 1,
+        "empty_sections": 2,
         "issues": [
           "EMPTY_LIMITATIONS: 已知限制段落为空"
         ]
@@ -307,7 +164,7 @@
     ]
   },
   "semantic_audit": {
-    "enabled": false,
+    "enabled": true,
     "l7a_available_count": 2097,
     "grade_distribution": {
       "A": 2097,
@@ -319,1022 +176,42 @@
     },
     "avg_score": 100.0,
     "total_template_blocks": 0,
-    "total_with_issues": 2097,
+    "total_with_issues": 2,
     "issues_detail": [
       {
-        "slug": "accounting-and-finance",
+        "slug": "logo-brand-identity-cellcog",
         "source": "packaged",
         "grade": "A",
-        "score": 100,
+        "score": 85,
         "template_block_count": 0,
         "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
         ]
       },
       {
-        "slug": "accounting-and-finance-free",
+        "slug": "ui-ux",
         "source": "packaged",
         "grade": "A",
-        "score": 100,
+        "score": 85,
         "template_block_count": 0,
         "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "accounting-finance",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "ace-music",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "ace-music-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "actor-identifier",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "ad-insight-hub",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "ad-insight-hub-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "admapix",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "admapix-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "aegis-security",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "aegis-security-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "afrexai-cybersecurity-engine",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "afrexai-cybersecurity-engine-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "afrexai-knowledge-management",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "afrexai-knowledge-management-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "agent",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "agent-bom-vulnerability-intel",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "agent-browser-assistant",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "agent-browser-automation",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "agent-browser-cli",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "agent-browser-stagehand",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "agent-chat",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "agent-commercial-contract",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "agent-framework-azure-ai-py",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "agent-group",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "agent-knowledge",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "agent-telegram",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "agent-telegram-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "agentic-security-audit",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "agentvibes-content-skill",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "agentvibes-skill",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "agentvibes-voice-skill",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "agentvibes-voice-skill-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "ai-agent-helper",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "ai-agent-helper-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "ai-artist-workstation",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "ai-assistant",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "ai-assistant-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "ai-image-gen",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "ai-image-gen-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "ai-kujiale-design",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "ai-kujiale-design-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "ai-news",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "ai-podcast",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "ai-podcast-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "ai-video-studio-pro",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "ai-writing-style-cloner",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "aic-dashboard",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "aic-dashboard-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "alephnet-node",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "alephnet-node-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "alephnet-node-manager",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "alibaba-quark-scan",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "alibaba-quark-scan-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "alpha-feed-creator",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "amap-jsapi-skill",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "analytics-dashboard",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "analyze",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "analyze-video-by-qwen",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "analyze-video-by-qwen-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "anthropics-frontend-design",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "anthropics-frontend-design-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "anthrovision-telegram-body-scan",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "anthrovision-telegram-body-scan-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "anygen-diagram",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "anygen-diagram-generator",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "anygen-diagram-generator-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "api-connect-hub",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "api-development",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "api-doc-generator",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "api-doc-writer",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "api-doc-writer-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "api-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "api-gateway",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "api-gateway-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "api-generator",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "api-generator-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "api-integration",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "api-integration-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "api-magic-gen",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "api-scaffold-gen",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "api-toolkit",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "apple-health-skill",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "apple-health-skill-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "archive",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "archive-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "art",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "assistant",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "atlas-admin-console",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "audio-stream-upload",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "audio-upload-aioz-stream",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "audio-upload-aioz-stream-free",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "audit",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "auto-monitor",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "auto-workflow",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "automation-recipe-book",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "automation-recipe-pack",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "aws",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
-        ]
-      },
-      {
-        "slug": "aws-agentcore-langgraph",
-        "source": "packaged",
-        "grade": "A",
-        "score": 100,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DISABLED: Layer 7a 未启用"
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
         ]
       }
     ]
   },
   "executability_audit": {
-    "enabled": true,
-    "l7b_available_count": 2097,
+    "enabled": false,
+    "l7b_available_count": 0,
     "grade_distribution": {
-      "A": 2097,
+      "A": 0,
       "B": 0,
       "C": 0,
       "D": 0,
       "F": 0,
-      "N/A": 0
+      "N/A": 2097
     },
-    "avg_score": 100.0,
+    "avg_score": 0,
     "executable_count": 2097,
     "pass_rate": "100%",
     "check_distribution": {
@@ -1344,6 +221,34 @@
       "L7B_MISSING_INPUT": 0,
       "L7B_NO_OUTPUT": 0,
       "L7B_CONTRADICTION": 0
+    },
+    "total_with_issues": 0,
+    "issues_detail": []
+  },
+  "security_audit": {
+    "enabled": true,
+    "l8_available_count": 2097,
+    "grade_distribution": {
+      "A": 2097,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "F": 0,
+      "N/A": 0
+    },
+    "avg_score": 100.0,
+    "passed_count": 2097,
+    "failed_count": 0,
+    "pass_rate": "100%",
+    "category_distribution": {
+      "EXTERNAL_URL": 0,
+      "INJECTED_MARKETING_TEXT": 0,
+      "API_KEY_EXPOSURE": 0,
+      "SLUG_CONTENT_MISMATCH": 0,
+      "DUPLICATE_YAML_FIELDS": 0,
+      "TAG_MISMATCH": 0,
+      "GARBLED_TEXT": 0,
+      "DEPENDENCY_CONTRADICTION": 0
     },
     "total_with_issues": 0,
     "issues_detail": []

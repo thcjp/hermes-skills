@@ -3,12 +3,12 @@ slug: "logo-design-tool-pro"
 name: "logo-design-tool-pro"
 version: "1.0.0"
 displayName: "Logo设计工具专业版"
-summary: "企业级AI Logo设计系统,支持批量生成、自动矢量化、品牌变体管理、CI/CD集成,适合团队与商业项目。"
+summary: "企业级AI Logo设计系统,支持批量生成、自动矢量化、品牌变体管理、CI/CD集成,适合团队与商业项目"
 license: "Proprietary"
 edition: "pro"
 description: |-
   Logo设计工具专业版为企业与设计团队提供系统化的AI Logo设计解决方案。在免费版基础生成能力之上,增加批量生成、自动矢量化、品牌变体管理、
-  多格式导出、设计审计与CI/CD集成能力。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
+  多格式导出、设计审计与CI/CD集成能力。
 tags:
   - Logo设计
   - 品牌设计
@@ -17,14 +17,12 @@ tags:
   - 自动化
   - 设计系统
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 ---
 # Logo设计工具专业版
 
@@ -52,17 +50,17 @@ batch_config = {
     "directions": [
         {
             "name": "极简几何",
-            "prompt": "minimalist geometric logo, interlocking hexagonal shapes...",
+            "prompt": "minimalist geometric logo, interlocking hexagonal shapes.",
             "variations": 5
         },
         {
             "name": "具象图形",
-            "prompt": "flat vector logo of a fox head in profile...",
+            "prompt": "flat vector logo of a fox head in profile.",
             "variations": 5
         },
         {
             "name": "抽象线条",
-            "prompt": "abstract line art logo, interconnected nodes...",
+            "prompt": "abstract line art logo, interconnected nodes.",
             "variations": 5
         }
     ],
@@ -70,7 +68,7 @@ batch_config = {
     "auto_validate": True,
     "output_dir": "./output/"
 }
-# ...
+# .
 # 执行批量生成
 python3 batch_logo_gen.py --config batch_config
 ```
@@ -96,7 +94,7 @@ vectorization_config = {
         "preserve_details": True         # 保留细节
     }
 }
-# ...
+# .
 # 执行矢量化
 python3 vectorize.py --config vectorization_config
 ```
@@ -143,7 +141,7 @@ brand_variants = {
         "format": "ico_and_png"
     }
 }
-# ...
+# .
 # 批量生成所有变体
 python3 generate_variants.py --config brand_variants
 ```
@@ -174,7 +172,7 @@ quality_audit = {
 **输入**: 用户提供设计质量审计所需的指令和必要参数。
 **处理**: 解析设计质量审计的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回设计质量审计的响应数据,包含状态码、结果和日志。
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、设计系统、支持批量生成、适合团队与商业项、设计工具专业版为、企业与设计团队提、供系统化的、设计解决方案、在免费版基础生成、能力之上、增加批量生成、多格式导出、设计审计与、集成能力、Use、when、需要设计创作、海报制作、品牌视觉时使用、不适用于、建模和动画制作、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、设计系统、支持批量生成、适合团队与商业项、设计工具专业版为、企业与设计团队提、供系统化的、设计解决方案、在免费版基础生成、能力之上、增加批量生成、多格式导出、设计审计与、集成能力、Use、when、、品牌视觉时使用、不适用于、建模和动画制作、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
@@ -231,7 +229,7 @@ sub_brands = [
     {"name": "BrandC", "industry": "education", "color": "#F59E0B"},
     {"name": "BrandD", "industry": "health", "color": "#EF4444"}
 ]
-# ...
+# .
 for brand in sub_brands:
     generate_logo_system(
         brand_name=brand["name"],
@@ -308,7 +306,7 @@ python3 audit_logo.py \
 brand:
   name: "MyBrand"
   tagline: "Innovation Forward"
-# ...
+# .
 logo:
   style: "minimalist geometric"
   colors:
@@ -316,11 +314,11 @@ logo:
     secondary: "#4D7CFF"
     neutral: "#0F172A"
     background: "#FFFFFF"
-# ...
+# .
   typography:
     logo_font: "Inter, sans-serif"
     weights: [400, 600, 700]
-# ...
+# .
   variants:
     - primary
     - horizontal
@@ -329,14 +327,14 @@ logo:
     - dark_mode
     - monochrome
     - favicon
-# ...
+# .
   export_formats:
     - svg
     - png_transparent
     - png_white_bg
     - ico
     - high_res_png
-# ...
+# .
   quality_requirements:
     min_size: 16
     max_complexity: 0.7

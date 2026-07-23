@@ -7,19 +7,18 @@ summary: "用pandoc CLI在40+格式间转文档,Markdown/Word/PDF/HTML"
 license: "Proprietary"
 description: |-
   Convert documents between 40+ formats using pandoc CLI。Handles Markdown
-  ↔ Word ↔ PDF ↔ HTML ↔ La。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
+  ↔ Word ↔ PDF ↔ HTML ↔ La。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
   - Knowledge
 tools:
-  - - read
+  - read
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+
 ---
 # Pandoc Convert
 
@@ -45,26 +44,20 @@ tags: "工具,效率,自动化"
 * **Error Recovery**: Validation and helpful error messages
 ### 40+ Format Support
 
-针对40+ Format Support,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供40+ Format Support相关的配置参数、输入数据和处理选项。
-
+针对40+ Format Support,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供40+ Format Support相关的配置参数、输入数据和处理选项.
 **输出**: 返回40+ Format Support的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`+ Format Support`的配置文档进行参数调优
 ### Dual Toolset
 
-针对Dual Toolset,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供Dual Toolset相关的配置参数、输入数据和处理选项。
-
+针对Dual Toolset,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供Dual Toolset相关的配置参数、输入数据和处理选项.
 **输出**: 返回Dual Toolset的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`Dual Toolset`的配置文档进行参数调优
 ### Professional Templates
 
-针对Professional Templates,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供Professional Templates相关的配置参数、输入数据和处理选项。
-
+针对Professional Templates,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供Professional Templates相关的配置参数、输入数据和处理选项.
 **输出**: 返回Professional Templates的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`Professional Templates`的配置文档进行参数调优
 #
@@ -72,7 +65,9 @@ tags: "工具,效率,自动化"
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+| 格式转换 | 源文件与目标格式(MD/Word/PDF/HTML) | 转换后的目标格式文档 |
+| 批量处理 | 多个源文件与统一输出格式 | 批量转换结果目录 |
+| 模板应用 | 文档与模板类型(学术/商务/网页) | 带目录与元数据的专业文档 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -209,7 +204,7 @@ See `references/troubleshooting.md` for comprehensive solutions.
 ```bash
 export API_KEY="your_api_key_here"
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 ### 示例1：基础用法

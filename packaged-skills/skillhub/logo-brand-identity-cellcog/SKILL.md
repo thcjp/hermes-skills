@@ -5,116 +5,64 @@ version: "1.0.13"
 displayName: "Logo Brand Identity"
 summary: "CellCog驱动AI logo与品牌识别设计,品牌套件/色板/字体"
 license: "Proprietary"
+homepage: "https://skillhub.ai/skills/logo-brand-identity-cellcog"
+tools:
+- read
+- exec
+tags:
+- logo
+- brand
+- identity
+- cellcog
 description: |-
   AI logo and brand identity design powered by CellCog。Brand kits, color
-  palettes, typography, bra。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-  - Creative
-tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  palettes, typography, brand guidelines generation.
 ---
-# Logo Brand Identity
+## 任务定义
 
-## 付费版专享能力
+根据用户提供的品牌信息（名称、行业、目标受众、品牌个性等），生成完整的品牌识别系统，包括Logo设计方案、配色方案、字体推荐、品牌指南等。
 
-| 能力 | 免费版 | 付费版 |
-|---|---|---|
-| 基础功能 | 支持 | 支持 |
-| Logo Brand Identitylogo与品牌识别 | 不支持 | 支持 |
-| 代码静态分析与质量评分 | 不支持 | 支持 |
-| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
-| 批量代码审查与报告生成 | 不支持 | 支持 |
-| CI/CD流水线集成 | 不支持 | 支持 |
+## 输入输出
 
-## 核心能力
+| 输入 | 说明 |
+|------|------|
+| 品牌名称 | 必填，品牌或产品名称 |
+| 行业领域 | 必填，如科技、餐饮、医疗等 |
+| 目标受众 | 推荐填写，年龄、职业、偏好等 |
+| 品牌个性 | 推荐填写，如专业、活泼、奢华等 |
+| 竞品参考 | 可选，提供竞品名称或URL |
 
-- AI logo and brand identity design powered by CellCog
-- Brand kits, color
-  palettes, typography, bra
-#
-## 适用场景
+| 输出 | 说明 |
+|------|------|
+| Logo方案 | 多个Logo概念，含矢量描述和配色 |
+| 配色方案 | 主色、辅色、背景色及色值 |
+| 字体推荐 | 标题字体和正文字体配对 |
+| 品牌指南 | Logo使用规范、间距、最小尺寸等 |
 
-| 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
-| 基础使用 | 用户请求 | 处理结果 |
+## 使用指南
 
-**不适用于**：需要人工判断的复杂决策场景
+1. 提供品牌基本信息和设计方向
+2. 系统基于CellCog引擎生成多个Logo概念
+3. 根据反馈迭代优化设计方案
 
-## 使用流程
-
-1. 确认运行环境满足依赖说明中的要求
-2. 根据适用场景选择合适的使用方式
-3. 执行操作并检查输出结果
-4. 如遇错误，参考错误处理章节
-
-## 输入格式
-
-| 参数名 | 类型 | 必填 | 说明 |
-|---:|---:|---:|---:|
-| content | string | 否 | logo-brand-identity-cellcog处理的内容输入 |,  |
-| content | string | 否 | logo-brand-identity-cellcog处理的内容输入 |, 可选值: json/text/markdown |
-| style | string | 否 | 输出风格, 参考 `references/style.md` |
-
-## 输出格式
-
-```json
-{
-  "success": true,
-  "data": {
-    result: "cellcog 相关配置参数",
-    result: "cellcog 相关配置参数",
-    result: "cellcog 相关配置参数",
-    "metadata": {
-      "template_used": "reviewer",
-      "word_count": 0,
-      "style": "专业"
-    }
-  },
-  "error": null
-}
+```bash
+# 示例：生成品牌识别系统
+# 输入品牌信息后，系统将输出完整的品牌套件
+cellcog brand --name "MyBrand" --industry tech --audience "developers"
 ```
 
-输出模板参考: `assets/output.json`
-
-## 异常处理
-
-| 错误场景 | 原因 | 处理方式 |
-|:---:|:---:|:---:|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
+```python
+# 示例：获取配色方案
+palette = cellcog.get_palette(brand="MyBrand", mood="professional")
+print(palette.primary, palette.secondary, palette.accent)
+```
 
 ## 依赖说明
 
-### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
-- **操作系统**: Windows / macOS / Linux
+- LLM API Key（用于AI生成Logo概念和品牌文案）
+- CellCog引擎运行时环境
+- 网络：在线生成需要网络连接
 
-### 依赖说明(补充)
-| 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:------|------:|:------|:------|
-| LLM API | API | 必需 | 由Agent内置LLM提供 |
-
-### API Key 配置
-- 
-
-### 可用性分类
-- **分类**: MD+EXEC()
-- **说明**: 基于Markdown的AI Skill,
-
-**API Key配置方式**:
-```bash
-export API_KEY="your_api_key_here"
-```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 案例展示
 
 **Complete brand identity:**
@@ -173,12 +121,10 @@ export API_KEY="your_api_key_here"
 >
 > Should feel: Personal but polished, trustworthy, not corporate"
 
----
-
 ## 常见问题
 
 ### Q1: 如何开始使用Logo Brand Identity？
-A: 
+A: 提供品牌名称、行业和目标受众信息，系统将自动生成Logo概念、配色方案和品牌指南。可通过自然语言描述设计方向，如"为科技公司设计极简风格Logo"。
 
 ## 错误处理
 

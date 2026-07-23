@@ -8,9 +8,9 @@ license: "Proprietary"
 description: |-
   Agent 团队 Telegram 通信规范。定义 main、architect、backend、frontend、product、content、crawler、qa
   共 8 类 Agent 角色的 accountId、emoji 标识与消息发送格式。所有 Agent 向用户发送 Telegram 消息时必须遵循此规范，
-  统一使用 message 工具配合 accountId 与 target 字段，确保消息正确路由到用户账号。
-  覆盖任务开始、子任务完成、遇到问题、任务全部完成四类汇报时机，提供标准化消息模板与多角色协作流程。
-  适用于多 Agent 协作开发、自动化工作流通知、团队任务进度同步、问题上报决策等场景。
+  统一使用 message 工具配合 accountId 与 target 字段，确保消息正确路由到用户账号.
+  覆盖任务开始、子任务完成、遇到问题、任务全部完成四类汇报时机，提供标准化消息模板与多角色协作流程.
+  适用于多 Agent 协作开发、自动化工作流通知、团队任务进度同步、问题上报决策等场景.
 tags:
   - 通用办公
   - Automation
@@ -23,13 +23,11 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+
 ---
 # Agent Telegram
 
-所有 Agent 向用户（Legend）发送 Telegram 消息时必须遵循此规范。规范定义了 8 类 Agent 角色的账号映射、消息格式、汇报时机与消息模板，确保多 Agent 协作时消息统一路由到用户 Telegram 账号 `5440561025`。
-
+所有 Agent 向用户（Legend）发送 Telegram 消息时必须遵循此规范。规范定义了 8 类 Agent 角色的账号映射、消息格式、汇报时机与消息模板，确保多 Agent 协作时消息统一路由到用户 Telegram 账号 `5440561025`.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -67,26 +65,20 @@ tags: "AI代理,自动化,智能"
 - **配置集中管理**：账号配置统一存放在 `~/.skill-platform/skill-platform.json` 的 `channels.telegram.accounts` 节点
 ### 8 类角色账号映射
 
-针对8 类角色账号映射,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供8 类角色账号映射相关的配置参数、输入数据和处理选项。
-
+针对8 类角色账号映射,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供8 类角色账号映射相关的配置参数、输入数据和处理选项.
 **输出**: 返回8 类角色账号映射的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`类角色账号映射`的配置文档进行参数调优
 ### 统一消息格式
 
-针对统一消息格式,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供统一消息格式相关的配置参数、输入数据和处理选项。
-
+针对统一消息格式,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供统一消息格式相关的配置参数、输入数据和处理选项.
 **输出**: 返回统一消息格式的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`统一消息格式`的配置文档进行参数调优
 ### 四类汇报时机
 
-针对四类汇报时机,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
-**输入**: 用户提供四类汇报时机相关的配置参数、输入数据和处理选项。
-
+针对四类汇报时机,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供四类汇报时机相关的配置参数、输入数据和处理选项.
 **输出**: 返回四类汇报时机的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`四类汇报时机`的配置文档进行参数调优
 #
@@ -99,8 +91,7 @@ tags: "AI代理,自动化,智能"
 | 团队任务进度同步 | backend 完成 API 开发子任务 | 🔧 前缀消息汇报接口文档路径，main 汇总后转发用户 |
 | 问题上报决策 | qa 测试发现阻塞性 bug | 🧪 前缀消息汇报问题描述与建议方案，请求用户决策 |
 
-**不适用于**：垃圾信息群发、非 Telegram 渠道的消息推送、需要端到端加密的敏感通信、跨团队的大规模广播。
-
+**不适用于**：垃圾信息群发、非 Telegram 渠道的消息推送、需要端到端加密的敏感通信、跨团队的大规模广播.
 ## 使用流程
 
 1. **识别当前 Agent 角色**：根据执行上下文确定自己的 `accountId` 与 emoji（如后端工程师用 `backend` / 🔧）。不确定时回退为 `default` / 🤖
@@ -237,23 +228,17 @@ message({
 ## 常见问题
 
 ### Q1：product 角色的 accountId 为什么是 `sproduct` 而不是 `product`？
-A：`product` 是 JavaScript 保留字，作为 accountId 会引发语法冲突。因此 product 角色统一使用 `sproduct`（safe product 缩写）。这是历史遗留约定，所有 product 角色消息必须用 `sproduct`。
-
+A：`product` 是 JavaScript 保留字，作为 accountId 会引发语法冲突。因此 product 角色统一使用 `sproduct`（safe product 缩写）。这是历史遗留约定，所有 product 角色消息必须用 `sproduct`.
 ### Q2：可以用 `sessions_send` 工具发 Telegram 消息吗？
-A：不可以。`sessions_send` 是 Agent 会话内部通信工具，不会将消息路由到 Telegram。必须使用 `message` 工具并指定 `channel: "telegram"`，消息才会通过 Telegram Bot 发送给用户。
-
+A：不可以。`sessions_send` 是 Agent 会话内部通信工具，不会将消息路由到 Telegram。必须使用 `message` 工具并指定 `channel: "telegram"`，消息才会通过 Telegram Bot 发送给用户.
 ### Q3：target 字段可以改成其他用户 ID 吗？
-A：不可以。本规范约定所有 Agent 消息统一发送给用户 `5440561025`。若需向其他用户发送消息，需另行配置多用户路由，不在本规范范围内。
-
+A：不可以。本规范约定所有 Agent 消息统一发送给用户 `5440561025`。若需向其他用户发送消息，需另行配置多用户路由，不在本规范范围内.
 ### Q4：如何新增一个 Agent 角色？
-A：在 `~/.skill-platform/skill-platform.json` 的 `channels.telegram.accounts` 下新增一个账号节点，配置 Bot Token 与 accountId，然后在本文档账号映射表追加一行。新角色的 emoji 自选，建议与职责语义相关。
-
+A：在 `~/.skill-platform/skill-platform.json` 的 `channels.telegram.accounts` 下新增一个账号节点，配置 Bot Token 与 accountId，然后在本文档账号映射表追加一行。新角色的 emoji 自选，建议与职责语义相关.
 ### Q5：消息中可以发送文件吗？
-A：可以。在 message 内容中包含文件路径（如 `~/Desktop/project/docs/api.md`），用户可点击路径查看。如需直接发送文件附件，需使用 message 工具的 `attachment` 字段（若平台支持）或单独的文件上传工具。
-
+A：可以。在 message 内容中包含文件路径（如 `~/Desktop/project/docs/api.md`），用户可点击路径查看。如需直接发送文件附件，需使用 message 工具的 `attachment` 字段（若平台支持）或单独的文件上传工具.
 ### Q6：多个 Agent 同时发消息会冲突吗？
-A：不会。每个 Agent 使用独立 accountId 与 Bot Token，消息通过各自的 Bot 发送，互不干扰。用户会在 Telegram 中看到不同 Bot 账号发来的消息，前缀 emoji 进一步区分来源。
-
+A：不会。每个 Agent 使用独立 accountId 与 Bot Token，消息通过各自的 Bot 发送，互不干扰。用户会在 Telegram 中看到不同 Bot 账号发来的消息，前缀 emoji 进一步区分来源.
 ## 已知限制
 
 - target 固定为 `5440561025`，不支持向其他用户发送消息

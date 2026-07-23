@@ -117,6 +117,31 @@ def get_l7b_stats():
         return {"available": False, "error": str(e)}
 
 
+def get_l8_security_stats():
+    """获取L8安全审计统计 (从 deep_quality_audit_report.json 读取)"""
+    audit_report = Path(REGISTRY_DIR) / "deep_quality_audit_report.json"
+    if not audit_report.exists():
+        return {"available": False}
+    try:
+        import json as _j
+        data = _j.loads(audit_report.read_text(encoding="utf-8"))
+        sa = data.get("security_audit", {})
+        if not sa:
+            return {"available": False}
+        return {"available": True, "audit_date": data.get("audit_date", ""),
+                "enabled": sa.get("enabled", False),
+                "l8_available_count": sa.get("l8_available_count", 0),
+                "grade_distribution": sa.get("grade_distribution", {}),
+                "avg_score": sa.get("avg_score", 0),
+                "passed_count": sa.get("passed_count", 0),
+                "failed_count": sa.get("failed_count", 0),
+                "pass_rate": sa.get("pass_rate", "0%"),
+                "category_distribution": sa.get("category_distribution", {}),
+                "total_with_issues": sa.get("total_with_issues", 0)}
+    except Exception as e:
+        return {"available": False, "error": str(e)}
+
+
 def get_pricing_stats():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
@@ -1098,6 +1123,9 @@ class DashboardHandler(http.server.BaseHTTPRequestHandler):
 
         elif path == '/api/l7b-audit':
             self._json(get_l7b_stats())
+
+        elif path == '/api/l8-security':
+            self._json(get_l8_security_stats())
 
         elif path == '/api/pricing':
             self._json(get_pricing_stats())
