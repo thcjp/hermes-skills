@@ -97,7 +97,7 @@ tags:
 每次压缩后输出质量报告，四维指标量化压缩效果。
 
 - **参数**：`--quality-report` 标志
-- **用法**：`node scripts/memory-compress.js memory/2026-07-18.md --quality-report`
+- **用法**：`node （请参考skill目录中的脚本文件） memory/2026-07-18.md --quality-report`
 - **输出**：质量评估报告
 
 | 指标 | 计算方法 | 及格线 |
@@ -149,7 +149,7 @@ tags:
 在三层记忆系统（身份层 SOUL.md / 精选记忆 MEMORY.md / 原始日志 memory/YYYY-MM-DD.md）之间执行第三层到第二层的蒸馏转换。
 
 - **参数**：输入日志文件路径、输出文件路径（可选）
-- **用法**：`node scripts/memory-compress.js memory/2026-07-18.md /tmp/compressed.md`
+- **用法**：`node （请参考skill目录中的脚本文件） memory/2026-07-18.md /tmp/compressed.md`
 - **输出**：含溯源链的结构化蒸馏摘要
 
 #
@@ -164,7 +164,7 @@ tags:
 运行蒸馏脚本处理目标日志文件，可选择输出质量评估报告。
 
 ```bash
-node scripts/memory-compress.js memory/2026-07-18.md /tmp/compressed.md --quality-report
+node （请参考skill目录中的脚本文件） memory/2026-07-18.md /tmp/compressed.md --quality-report
 ```
 
 ### 第三步：审查质量报告
@@ -216,7 +216,7 @@ mv memory/2026-07-18.md memory/archive/
 输入文件：memory/2026-07-18.md（2,800 词）
 
 执行：
-1. 运行：node scripts/memory-compress.js memory/2026-07-18.md /tmp/compressed.md --quality-report
+1. 运行：node （请参考skill目录中的脚本文件） memory/2026-07-18.md /tmp/compressed.md --quality-report
 2. 混合提取引擎扫描：
    - 关键词匹配：识别"重大进展""教训""待办""进化"等模式
    - 兜底提取：未匹配的 ## 09:30 站会 等时间标题章节
@@ -269,7 +269,7 @@ mv memory/2026-07-18.md memory/archive/
 执行：
 1. 提取会话历史为日志格式（memory/2026-07-18-session.md）
 2. 运行蒸馏器压缩：
-   node scripts/memory-compress.js memory/2026-07-18-session.md /tmp/session-compressed.md
+   node （请参考skill目录中的脚本文件） memory/2026-07-18-session.md /tmp/session-compressed.md
 3. 分类型压缩：
    - 决策类内容（事件策略）：保留决策内容与原因
    - 教训类内容（教训策略）：保留问题与规避方法
@@ -294,7 +294,7 @@ mv memory/2026-07-18.md memory/archive/
 执行：
 1. 批量处理 7 天日志：
    for file in memory/2026-07-{12..18}.md; do
-       [ -f "$file" ] && node scripts/memory-compress.js "$file" "/tmp/$(basename $file)" --quality-report
+       [ -f "$file" ] && node （请参考skill目录中的脚本文件） "$file" "/tmp/$(basename $file)" --quality-report
    done
 2. 每天单独蒸馏（保留日期维度与溯源链）
 3. 逐个审查质量报告

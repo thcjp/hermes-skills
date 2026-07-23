@@ -61,8 +61,8 @@ Each action delegates to the `liquidity-manager` agent for execution, with optio
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
+| content | string | 否 | manage-liquidity处理的内容输入 |,  |
+| mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
 | skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |
 
@@ -73,9 +73,9 @@ Each action delegates to the `liquidity-manager` agent for execution, with optio
   "success": true,
   "data": {
     "final_result": {
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明"
+      "liquidity_result": "liquidity_result_value",
+      "liquidity_metadata": "liquidity_metadata_value",
+      "liquidity_status": "liquidity_status_value"
     },
     "execution_log": [
       {
@@ -115,7 +115,7 @@ Each action delegates to the `liquidity-manager` agent for execution, with optio
 }
 ```
 
-中间产物模板参考: `assets/（根据实际场景填充）`
+中间产物模板参考: `assets/manage-liquidity_template`
 
 ## 异常处理
 

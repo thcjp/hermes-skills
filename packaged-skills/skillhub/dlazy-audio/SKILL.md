@@ -92,9 +92,9 @@ pricing_model: "per_use"
 
 ### 模型类别
 
-执行模型类别操作,处理用户输入并返回结果。
+执行模型类别,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供模型类别所需的参数和指令。
+**输入**: 用户提供模型类别相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回模型类别的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`模型类别`相关配置参数进行设置
@@ -215,8 +215,8 @@ dlazy elevenlabs-search \
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | dlazy-audio处理的内容输入 |,  |
+| content | string | 否 | dlazy-audio处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -225,9 +225,9 @@ dlazy elevenlabs-search \
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "audio 相关配置参数",
+    result: "audio 相关配置参数",
+    result: "audio 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

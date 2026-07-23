@@ -77,17 +77,17 @@ pricing_model: "per_use"
 **输出**: 返回免费版 vs 专业版对比的执行结果,包含操作状态和输出数据。
 ### 单集下载
 
-执行单集下载操作,处理用户输入并返回结果。
+执行单集下载,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供单集下载所需的参数和指令。
+**输入**: 用户提供单集下载相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回单集下载的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`单集下载`相关配置参数进行设置
 ### MP3 转换
 
-执行MP3 转换操作,处理用户输入并返回结果。
+执行MP3 转换,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供MP3 转换所需的参数和指令。
+**输入**: 用户提供MP3 转换相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回MP3 转换的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`MP3 转换`相关配置参数进行设置
@@ -117,7 +117,7 @@ for url in "${URLs[@]}"; do
         sleep 1
     done
 
-    PODCAST_DIR="$OUTPUT_DIR" ./scripts/download.sh "$url" &
+    PODCAST_DIR="$OUTPUT_DIR" （请参考skill目录中的脚本文件） "$url" &
 done
 
 wait
@@ -199,7 +199,7 @@ class PodcastSubscriber:
             os.system(
                 f"PODCAST_DIR={show['output_dir']} "
                 f"AUDIO_QUALITY={show['quality']} "
-                f"./scripts/download.sh {ep['url']}"
+                f"（请参考skill目录中的脚本文件） {ep['url']}"
             )
             ep_hash = hashlib.md5(ep["url"].encode()).hexdigest()
             self.downloaded.add(ep_hash)
@@ -310,8 +310,8 @@ def embed_metadata(mp3_path, title, artist, album, cover_path=None):
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明"
+    result: "downloader 相关配置参数",
+    result: "downloader 相关配置参数"
   },
   "error": null
 }

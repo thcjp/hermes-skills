@@ -1,12 +1,12 @@
 ---
-name: "（根据实际场景填充）"
+name: "Linear Project Manager 核心处理"
 slug: "linear-project-manager"
 displayName: "Linear项目管理"
 version: "1.0.0"
 summary: "封装Linear项目管理API,请求参数直转响应数据,付费版独享批量与高级配置"
 description: |-
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据。
-  Use when 用户说"（根据实际场景填充）"、（根据实际场景填充）时使用。
+  Use when 用户说"Linear Project Manager 智能分析"、Linear Project Manager 智能分析时使用。
   不适用于需要人工判断的复杂场景。
 license: "Proprietary"
 tools:
@@ -20,29 +20,29 @@ suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
 ---
-# （根据实际场景填充）
+# Linear Project Manager 批量处理
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
 |:-----|:-------|:-------|
-| （根据实际场景填充） | 支持 | 支持 |
-| （根据实际场景填充） | 不支持 | 支持 |
-| （根据实际场景填充） | 不支持 | 支持 |
+| Linear Project Manager 自定义配置 | 支持 | 支持 |
+| Linear Project Manager 结果导出 | 不支持 | 支持 |
+| Linear Project Manager 实时监控 | 不支持 | 支持 |
 | 批量处理 | 不支持 | 支持 |
 | 高级配置 | 不支持 | 支持 |
 
 ## 核心能力
 
-- （根据实际场景填充）
-- （根据实际场景填充）
-- （根据实际场景填充）
+- Linear Project Manager 错误重试
+- Linear Project Manager 多格式支持
+- Linear Project Manager 扩展能力9
 #
 ## 适用场景
 
-- 用户说"（根据实际场景填充）" → 执行API调用
-- 用户说"（根据实际场景填充）" → 执行API调用
-- 用户说"（根据实际场景填充）" → 执行API调用
+- 用户说"Linear Project Manager 扩展能力10" → 执行API调用
+- 用户说"Linear Project Manager 扩展能力11" → 执行API调用
+- 用户说"Linear Project Manager 扩展能力12" → 执行API调用
 - 不适用: 需要人工判断的复杂场景
 
 ## 使用流程
@@ -67,8 +67,8 @@ pricing_model: "per_use"
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明"
+    result: "manager 相关配置参数",
+    result: "manager 相关配置参数"
   },
   "error": null
 }

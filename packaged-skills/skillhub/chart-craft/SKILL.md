@@ -95,9 +95,9 @@ pricing_model: "per_use"
 - 导出格式偏好统计
 ### PNG
 
-执行PNG操作,处理用户输入并返回结果。
+执行PNG,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供PNG所需的参数和指令。
+**输入**: 用户提供PNG相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回PNG的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`PNG`相关配置参数进行设置
@@ -127,43 +127,43 @@ pricing_model: "per_use"
 
 ```bash
 # 初始化存储与模板
-python3 scripts/init_pro.py --workspace ~/.skill-platform/workspace/memory/chart
+python3 （请参考skill目录中的脚本文件） --workspace ~/.skill-platform/workspace/memory/chart
 
 # 查看可用主题
-python3 scripts/list_themes.py
+python3 （请参考skill目录中的脚本文件）
 ```
 
 ### 第二步：生成高级图表
 
 ```bash
 # 雷达图
-python3 scripts/make_chart.py --type radar --title "竞品能力对比" --labels "性能,易用性,成本,支持度,生态" --values "90,85,70,80,75" --theme tech-purple
+python3 （请参考skill目录中的脚本文件） --type radar --title "竞品能力对比" --labels "性能,易用性,成本,支持度,生态" --values "90,85,70,80,75" --theme tech-purple
 
 # 热力图
-python3 scripts/make_chart.py --type heatmap --title "访问密度" --data-file heatmap_data.csv --theme business-blue
+python3 （请参考skill目录中的脚本文件） --type heatmap --title "访问密度" --data-file heatmap_data.csv --theme business-blue
 ```
 
 ### 第三步：批量生成
 
 ```bash
 # 从CSV批量生成
-python3 scripts/batch_generate.py --data monthly_report.csv --template report_template.json --output-dir ./reports/march
+python3 （请参考skill目录中的脚本文件） --data monthly_report.csv --template report_template.json --output-dir ./reports/march
 ```
 
 ### 第四步：多格式导出
 
 ```bash
 # 导出SVG矢量格式
-python3 scripts/make_chart.py --type line --title "增长趋势" --labels "Q1,Q2,Q3,Q4" --values "100,150,180,250" --format svg --output growth.svg
+python3 （请参考skill目录中的脚本文件） --type line --title "增长趋势" --labels "Q1,Q2,Q3,Q4" --values "100,150,180,250" --format svg --output growth.svg
 
 # 导出PDF
-python3 scripts/make_chart.py --type bar --title "营收对比" --labels "2023,2024" --values "1200,1800" --format pdf --output revenue.pdf
+python3 （请参考skill目录中的脚本文件） --type bar --title "营收对比" --labels "2023,2024" --values "1200,1800" --format pdf --output revenue.pdf
 ```
 
 ### 第五步：查看使用统计
 
 ```bash
-python3 scripts/chart_stats.py --range 2024-01-01:2024-03-31
+python3 （请参考skill目录中的脚本文件） --range 2024-01-01:2024-03-31
 ```
 
 #
@@ -171,8 +171,8 @@ python3 scripts/chart_stats.py --range 2024-01-01:2024-03-31
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | chart-craft处理的内容输入 |,  |
+| content | string | 否 | chart-craft处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -181,9 +181,9 @@ python3 scripts/chart_stats.py --range 2024-01-01:2024-03-31
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "craft 相关配置参数",
+    result: "craft 相关配置参数",
+    result: "craft 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,
@@ -315,7 +315,7 @@ Q1营收,bar,Q1,Q2,Q3,Q4,280,320,290,410,business-blue,q1_revenue.png
 雷达图、热力图、箱线图等高级类型依赖matplotlib的额外模块。执行`pip3 install matplotlib numpy pandas`安装完整依赖。
 
 ### Q2：自定义主题如何共享给团队？
-将主题JSON文件提交到团队共享仓库，各成员执行`python3 scripts/import_theme.py --file theme.json`导入。也可放在共享文件系统中直接引用。
+将主题JSON文件提交到团队共享仓库，各成员执行`python3 （请参考skill目录中的脚本文件） --file theme.json`导入。也可放在共享文件系统中直接引用。
 
 ### Q3：批量生成中途失败如何恢复？
 批量生成支持断点续传。重新执行时添加`--resume`参数，从中断处继续。已生成的图表不会重复生成。
@@ -333,7 +333,7 @@ SVG包含完整矢量信息，数据点多时文件较大。使用`--svg-compres
 在主题配置中定义`colormap`字段，支持matplotlib所有内置colormap（如`viridis`、`coolwarm`），也支持自定义颜色列表。
 
 ### Q8：使用统计数据能否导出？
-执行`python3 scripts/chart_stats.py --export stats.csv`导出使用统计为CSV，便于在Excel中分析图表产出趋势。
+执行`python3 （请参考skill目录中的脚本文件） --export stats.csv`导出使用统计为CSV，便于在Excel中分析图表产出趋势。
 
 ## 错误处理
 

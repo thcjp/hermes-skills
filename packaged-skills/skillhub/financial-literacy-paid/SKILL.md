@@ -74,9 +74,9 @@ pricing_model: "per_use"
 **输出**: 返回认证培训课程的执行结果,包含操作状态和输出数据。
 ### 知识体系
 
-执行知识体系操作,处理用户输入并返回结果。
+执行知识体系,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供知识体系所需的参数和指令。
+**输入**: 用户提供知识体系相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回知识体系的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`知识体系`相关配置参数进行设置
@@ -89,7 +89,7 @@ pricing_model: "per_use"
 
 ```bash
 # 生成个性化理财方案
-python3 scripts/financial_plan.py \
+python3 （请参考skill目录中的脚本文件） \
   --age 35 \
   --income 300000 \
   --mortgage 15000 \
@@ -112,18 +112,18 @@ python3 scripts/financial_plan.py \
 
 ```bash
 # 开始认证课程
-python3 scripts/certification.py \
+python3 （请参考skill目录中的脚本文件） \
   --exam "基金从业" \
   --mode study
 
 # 模拟考试
-python3 scripts/certification.py \
+python3 （请参考skill目录中的脚本文件） \
   --exam "基金从业" \
   --mode mock \
   --count 100
 
 # 错题复习
-python3 scripts/certification.py \
+python3 （请参考skill目录中的脚本文件） \
   --exam "基金从业" \
   --mode review \
   --focus wrong_answers
@@ -135,7 +135,7 @@ python3 scripts/certification.py \
 
 ```bash
 # 创建企业内训计划
-python3 scripts/corporate_training.py \
+python3 （请参考skill目录中的脚本文件） \
   --create \
   --company "某科技公司" \
   --employees 50 \
@@ -143,12 +143,12 @@ python3 scripts/corporate_training.py \
   --duration "8周"
 
 # 查看学员进度
-python3 scripts/corporate_training.py \
+python3 （请参考skill目录中的脚本文件） \
   --progress \
   --company "某科技公司"
 
 # 生成培训报告
-python3 scripts/corporate_training.py \
+python3 （请参考skill目录中的脚本文件） \
   --report \
   --output training_report.pdf
 ```
@@ -162,24 +162,24 @@ python3 scripts/corporate_training.py \
 pip install financial-literacy-pro
 
 # 初始化学习档案
-python3 scripts/init.py --user "学员姓名" --level intermediate
+python3 （请参考skill目录中的脚本文件） --user "学员姓名" --level intermediate
 ```
 
 ### 常用命令
 
 ```bash
 # 个性化理财方案
-python3 scripts/financial_plan.py --age 35 --income 300000 --goal retirement
+python3 （请参考skill目录中的脚本文件） --age 35 --income 300000 --goal retirement
 
 # 认证学习
-python3 scripts/certification.py --exam "基金从业" --mode study
-python3 scripts/certification.py --exam "基金从业" --mode mock
+python3 （请参考skill目录中的脚本文件） --exam "基金从业" --mode study
+python3 （请参考skill目录中的脚本文件） --exam "基金从业" --mode mock
 
 # 情景模拟
-python3 scripts/simulator.py --scenario "life_planning" --age 25 --retire 60
+python3 （请参考skill目录中的脚本文件） --scenario "life_planning" --age 25 --retire 60
 
 # 企业内训
-python3 scripts/corporate_training.py --create --company "公司名" --employees 50
+python3 （请参考skill目录中的脚本文件） --create --company "公司名" --employees 50
 ```
 
 #
@@ -187,8 +187,8 @@ python3 scripts/corporate_training.py --create --company "公司名" --employees
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | financial-literacy处理的内容输入 |,  |
+| content | string | 否 | financial-literacy处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -197,9 +197,9 @@ python3 scripts/corporate_training.py --create --company "公司名" --employees
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "literacy 相关配置参数",
+    result: "literacy 相关配置参数",
+    result: "literacy 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

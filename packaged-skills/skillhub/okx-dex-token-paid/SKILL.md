@@ -74,9 +74,9 @@ pricing_model: "per_use"
 **输出**: 返回全链支持的执行结果,包含操作状态和输出数据。
 ### 支持链数
 
-执行支持链数操作,处理用户输入并返回结果。
+执行支持链数,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供支持链数所需的参数和指令。
+**输入**: 用户提供支持链数相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回支持链数的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`支持链数`相关配置参数进行设置
@@ -89,7 +89,7 @@ pricing_model: "per_use"
 
 ```bash
 # 批量查询代币数据
-python3 scripts/batch_query.py \
+python3 （请参考skill目录中的脚本文件） \
   --chain ethereum \
   --top 50 \
   --sort-by liquidity \
@@ -110,7 +110,7 @@ python3 scripts/batch_query.py \
 
 ```bash
 # 设置鲸鱼监控
-python3 scripts/whale_tracker.py \
+python3 （请参考skill目录中的脚本文件） \
   --token 0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984 \
   --chain ethereum \
   --threshold 100000 \
@@ -127,7 +127,7 @@ python3 scripts/whale_tracker.py \
 
 ```bash
 # 设置限价单
-python3 scripts/limit_order.py create \
+python3 （请参考skill目录中的脚本文件） create \
   --token UNIS \
   --chain ethereum \
   --side buy \
@@ -136,7 +136,7 @@ python3 scripts/limit_order.py create \
   --mev-protection
 
 # 监控执行状态
-python3 scripts/limit_order.py status
+python3 （请参考skill目录中的脚本文件） status
 ```
 
 ## 使用流程
@@ -156,19 +156,19 @@ cp config_pro_template.yaml config_pro.yaml
 
 ```bash
 # 批量查询
-python3 scripts/batch_query.py --chain ethereum --top 50 --export
+python3 （请参考skill目录中的脚本文件） --chain ethereum --top 50 --export
 
 # 鲸鱼追踪
-python3 scripts/whale_tracker.py --token 0x... --chain ethereum --threshold 100000
+python3 （请参考skill目录中的脚本文件） --token 0x... --chain ethereum --threshold 100000
 
 # 限价交易
-python3 scripts/limit_order.py create --token UNIS --side buy --price 6.0 --amount 1000
+python3 （请参考skill目录中的脚本文件） create --token UNIS --side buy --price 6.0 --amount 1000
 
 # 套利扫描
-python3 scripts/arb_scanner.py --chains ethereum,bsc,arbitrum
+python3 （请参考skill目录中的脚本文件） --chains ethereum,bsc,arbitrum
 
 # 安全审计
-python3 scripts/security_audit.py --token 0x... --chain ethereum
+python3 （请参考skill目录中的脚本文件） --token 0x... --chain ethereum
 ```
 
 #
@@ -176,7 +176,7 @@ python3 scripts/security_audit.py --token 0x... --chain ethereum
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | okx-dex-token处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式

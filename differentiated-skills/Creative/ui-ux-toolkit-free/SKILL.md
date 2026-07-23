@@ -63,11 +63,11 @@ UI/UX设计工具箱免费版是一款面向个人开发者的轻量级设计资
 
 ```bash
 # 按产品类型和行业搜索设计系统
-python3 scripts/search.py "SaaS dashboard fintech" --design-system
+python3 （请参考skill目录中的脚本文件） "SaaS dashboard fintech" --design-system
 
 # 按特定域搜索
-python3 scripts/search.py "glassmorphism dark" --domain style
-python3 scripts/search.py "elegant luxury" --domain typography
+python3 （请参考skill目录中的脚本文件） "glassmorphism dark" --domain style
+python3 （请参考skill目录中的脚本文件） "elegant luxury" --domain typography
 ```
 
 **输入**: 用户提供设计资源数据库查询所需的指令和必要参数。
@@ -114,7 +114,7 @@ python3 scripts/search.py "elegant luxury" --domain typography
 
 ```bash
 # 获取Tailwind CSS实现建议
-python3 scripts/search.py "layout responsive form" --stack html-tailwind
+python3 （请参考skill目录中的脚本文件） "layout responsive form" --stack html-tailwind
 ```
 
 **输入**: 用户提供默认技术栈指引所需的指令和必要参数。
@@ -130,13 +130,13 @@ python3 scripts/search.py "layout responsive form" --stack html-tailwind
 
 ```bash
 # 步骤1:生成基础设计系统
-python3 scripts/search.py "SaaS productivity tool minimal" --design-system -p "TaskFlow"
+python3 （请参考skill目录中的脚本文件） "SaaS productivity tool minimal" --design-system -p "TaskFlow"
 
 # 步骤2:补充字体搜索
-python3 scripts/search.py "modern clean sans-serif" --domain typography
+python3 （请参考skill目录中的脚本文件） "modern clean sans-serif" --domain typography
 
 # 步骤3:获取Tailwind实现指引
-python3 scripts/search.py "dashboard card layout" --stack html-tailwind
+python3 （请参考skill目录中的脚本文件） "dashboard card layout" --stack html-tailwind
 ```
 
 输出示例(配色方案):
@@ -154,10 +154,10 @@ python3 scripts/search.py "dashboard card layout" --stack html-tailwind
 
 ```bash
 # 搜索适合播客/媒体类产品的风格
-python3 scripts/search.py "podcast media creative bold" --domain style
+python3 （请参考skill目录中的脚本文件） "podcast media creative bold" --domain style
 
 # 搜索落地页结构建议
-python3 scripts/search.py "hero testimonial pricing" --domain landing
+python3 （请参考skill目录中的脚本文件） "hero testimonial pricing" --domain landing
 ```
 
 ### 场景三:UX规则自查
@@ -166,10 +166,10 @@ python3 scripts/search.py "hero testimonial pricing" --domain landing
 
 ```bash
 # 检查动画和无障碍相关规则
-python3 scripts/search.py "animation accessibility" --domain ux
+python3 （请参考skill目录中的脚本文件） "animation accessibility" --domain ux
 
 # 检查布局和响应式规则
-python3 scripts/search.py "responsive viewport" --domain ux
+python3 （请参考skill目录中的脚本文件） "responsive viewport" --domain ux
 ```
 
 ## 不适用场景
@@ -200,21 +200,21 @@ python3 --version
 # 预期输出: Python 3.10+
 
 # 验证搜索工具可用
-python3 scripts/search.py "minimal" --domain style -n 3
+python3 （请参考skill目录中的脚本文件） "minimal" --domain style -n 3
 ```
 
 ### 三步生成设计系统
 
 ```bash
 # 第1步:分析需求并搜索
-python3 scripts/search.py "beauty spa wellness elegant" --design-system -p "Serenity Spa"
+python3 （请参考skill目录中的脚本文件） "beauty spa wellness elegant" --design-system -p "Serenity Spa"
 
 # 第2步:补充详细搜索
-python3 scripts/search.py "elegant luxury serif" --domain typography
-python3 scripts/search.py "soft pastel" --domain color
+python3 （请参考skill目录中的脚本文件） "elegant luxury serif" --domain typography
+python3 （请参考skill目录中的脚本文件） "soft pastel" --domain color
 
 # 第3步:获取技术栈指引
-python3 scripts/search.py "layout responsive" --stack html-tailwind
+python3 （请参考skill目录中的脚本文件） "layout responsive" --stack html-tailwind
 ```
 
 ## 示例
@@ -263,27 +263,27 @@ python3 scripts/search.py "layout responsive" --stack html-tailwind
 
 ```bash
 # 不推荐:过于宽泛
-python3 scripts/search.py "app" --design-system
+python3 （请参考skill目录中的脚本文件） "app" --design-system
 
 # 推荐:具体到产品类型和行业
-python3 scripts/search.py "healthcare SaaS dashboard minimal" --design-system
+python3 （请参考skill目录中的脚本文件） "healthcare SaaS dashboard minimal" --design-system
 ```
 
 ### 2. 多域组合搜索构建完整系统
 
 ```bash
 # 风格 + 字体 + 配色 = 完整设计系统
-python3 scripts/search.py "glassmorphism" --domain style
-python3 scripts/search.py "modern sans-serif" --domain typography
-python3 scripts/search.py "fintech" --domain color
+python3 （请参考skill目录中的脚本文件） "glassmorphism" --domain style
+python3 （请参考skill目录中的脚本文件） "modern sans-serif" --domain typography
+python3 （请参考skill目录中的脚本文件） "fintech" --domain color
 ```
 
 ### 3. 始终检查UX规则
 
 ```bash
 # 开发完成后必查
-python3 scripts/search.py "accessibility focus keyboard" --domain ux
-python3 scripts/search.py "animation performance" --domain ux
+python3 （请参考skill目录中的脚本文件） "accessibility focus keyboard" --domain ux
+python3 （请参考skill目录中的脚本文件） "animation performance" --domain ux
 ```
 
 ### 4. 专业UI质量检查清单

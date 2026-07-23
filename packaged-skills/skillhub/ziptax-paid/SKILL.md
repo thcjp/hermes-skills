@@ -65,25 +65,25 @@ pricing_model: "monthly"
 | 优先支持 | 专属技术支持通道 | Pro 新增 |
 ### 基础查询
 
-执行基础查询操作,处理用户输入并返回结果。
+执行基础查询,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供基础查询所需的参数和指令。
+**输入**: 用户提供基础查询相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回基础查询的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`基础查询`相关配置参数进行设置
 ### 批量查询
 
-执行批量查询操作,处理用户输入并返回结果。
+执行批量查询,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供批量查询所需的参数和指令。
+**输入**: 用户提供批量查询相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回批量查询的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`批量查询`相关配置参数进行设置
 ### 本地缓存
 
-执行本地缓存操作,处理用户输入并返回结果。
+执行本地缓存,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供本地缓存所需的参数和指令。
+**输入**: 用户提供本地缓存相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回本地缓存的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`本地缓存`相关配置参数进行设置
@@ -95,7 +95,7 @@ pricing_model: "monthly"
 
 ```python
 #!/usr/bin/env python3
-# scripts/batch_lookup.py — 批量地址销售税查询
+# （请参考skill目录中的脚本文件） — 批量地址销售税查询
 import asyncio
 import aiohttp
 import json
@@ -162,7 +162,7 @@ if __name__ == "__main__":
 
 ```python
 #!/usr/bin/env python3
-# scripts/cached_lookup.py — 带本地缓存的税率查询
+# （请参考skill目录中的脚本文件） — 带本地缓存的税率查询
 import json
 import time
 import hashlib
@@ -234,7 +234,7 @@ if __name__ == "__main__":
 
 ```python
 #!/usr/bin/env python3
-# scripts/compliance_report.py — 税务合规报告生成
+# （请参考skill目录中的脚本文件） — 税务合规报告生成
 import json
 import csv
 from datetime import datetime, date
@@ -319,10 +319,10 @@ pip install aiohttp requests
 export ZIPTAX_API_KEY="your-key"
 
 # 批量查询
-python3 scripts/batch_lookup.py
+python3 （请参考skill目录中的脚本文件）
 
 # 生成合规报告
-python3 scripts/compliance_report.py
+python3 （请参考skill目录中的脚本文件）
 
 # 查看 CI 集成
 cat .github/workflows/taxrate-sync.yml
@@ -333,8 +333,8 @@ cat .github/workflows/taxrate-sync.yml
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | ziptax处理的内容输入 |,  |
+| content | string | 否 | ziptax处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -343,9 +343,9 @@ cat .github/workflows/taxrate-sync.yml
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "ziptax 相关配置参数",
+    result: "ziptax 相关配置参数",
+    result: "ziptax 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

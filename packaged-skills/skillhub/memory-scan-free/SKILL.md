@@ -60,13 +60,13 @@ tags:
 
 ```bash
 # 扫描全部记忆文件（本地模式）
-python3 scripts/memory-scan.py
+python3 （请参考skill目录中的脚本文件）
 
 # 扫描指定文件
-python3 scripts/memory-scan.py --file memory/2026-07-18.md
+python3 （请参考skill目录中的脚本文件） --file memory/2026-07-18.md
 
 # JSON输出（用于集成）
-python3 scripts/memory-scan.py --json
+python3 （请参考skill目录中的脚本文件） --json
 ```
 
 ### 第二步：分析扫描报告
@@ -78,12 +78,12 @@ python3 scripts/memory-scan.py --json
 对于MEDIUM及以上威胁，系统询问是否隔离。确认后执行隔离：
 
 ```bash
-python3 scripts/quarantine.py memory/2026-07-18.md 42
+python3 （请参考skill目录中的脚本文件） memory/2026-07-18.md 42
 ```
 
 如需恢复误隔离内容：
 ```bash
-python3 scripts/quarantine.py --restore memory/2026-07-18.md 42
+python3 （请参考skill目录中的脚本文件） --restore memory/2026-07-18.md 42
 ```
 
 ## 错误处理
@@ -103,7 +103,7 @@ python3 scripts/quarantine.py --restore memory/2026-07-18.md 42
 
 **执行命令：**
 ```bash
-python3 scripts/memory-scan.py
+python3 （请参考skill目录中的脚本文件）
 ```
 
 **输出：**
@@ -123,7 +123,7 @@ Overall: MEDIUM
 Action: Review memory/2026-07-15.md:42
 ```
 
-**后续操作：** 系统询问是否隔离，用户确认后执行 `python3 scripts/quarantine.py memory/2026-07-15.md 42`。
+**后续操作：** 系统询问是否隔离，用户确认后执行 `python3 （请参考skill目录中的脚本文件） memory/2026-07-15.md 42`。
 
 ## FAQ
 
@@ -131,7 +131,7 @@ Action: Review memory/2026-07-15.md:42
 不会。免费版使用纯本地模式，零网络请求，所有检测在本地完成，不会将任何内容发送到外部服务器。
 
 **Q2：隔离后能恢复吗？**
-可以。隔离前系统自动备份原文件到 `.memory-scan/quarantine/` 目录，用 `python3 scripts/quarantine.py --restore <file> <line>` 即可恢复原始内容。
+可以。隔离前系统自动备份原文件到 `.memory-scan/quarantine/` 目录，用 `python3 （请参考skill目录中的脚本文件） --restore <file> <line>` 即可恢复原始内容。
 
 **Q3：扫描范围包括哪些文件？**
 默认扫描MEMORY.md、memory/*.md（最近30天日志）以及工作区配置文件（AGENTS.md、SOUL.md、USER.md、TOOLS.md等）。可通过 `--file` 参数指定单个文件扫描。

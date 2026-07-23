@@ -147,7 +147,7 @@ suggested_price: 99.9
 **执行命令：**
 
 ```bash
-{baseDir}/scripts/batch_extract.py --config /path/to/batch-config.json --parallel 8
+{baseDir}/（请参考skill目录中的脚本文件） --config /path/to/batch-config.json --parallel 8
 ```
 
 **输出结构：**
@@ -167,7 +167,7 @@ suggested_price: 99.9
 **使用智能关键帧检测：**
 
 ```bash
-{baseDir}/scripts/keyframe_detect.py \
+{baseDir}/（请参考skill目录中的脚本文件） \
   --input /videos/lesson-01.mp4 \
   --output /tmp/keyframes/ \
   --scene-threshold 0.3 \
@@ -214,7 +214,7 @@ segments:
 **执行命令：**
 
 ```bash
-{baseDir}/scripts/segment_extract.py --config /path/to/clips.yaml
+{baseDir}/（请参考skill目录中的脚本文件） --config /path/to/clips.yaml
 ```
 
 ## 快速开始
@@ -244,7 +244,7 @@ python3 --version
 执行批量处理：
 
 ```bash
-{baseDir}/scripts/batch_extract.py \
+{baseDir}/（请参考skill目录中的脚本文件） \
   --config /tmp/videos.json \
   --output-dir /tmp/frames/ \
   --parallel 4 \
@@ -254,7 +254,7 @@ python3 --version
 ### 第三步：智能关键帧检测
 
 ```bash
-{baseDir}/scripts/keyframe_detect.py \
+{baseDir}/（请参考skill目录中的脚本文件） \
   --input /videos/long-video.mp4 \
   --output /tmp/keyframes/ \
   --scene-threshold 0.4
@@ -264,7 +264,7 @@ python3 --version
 
 ```bash
 # 图片水印
-{baseDir}/scripts/frame.sh /videos/promo.mp4 \
+{baseDir}/（请参考skill目录中的脚本文件） /videos/promo.mp4 \
   --time 00:00:10 \
   --out /tmp/watermarked.jpg \
   --watermark /assets/logo.png \
@@ -272,7 +272,7 @@ python3 --version
   --wm-opacity 0.7
 
 # 文字水印
-{baseDir}/scripts/frame.sh /videos/promo.mp4 \
+{baseDir}/（请参考skill目录中的脚本文件） /videos/promo.mp4 \
   --time 00:00:10 \
   --out /tmp/watermarked.jpg \
   --text-watermark "© 2026 Company" \
@@ -361,17 +361,17 @@ report:
 
 ```bash
 # 启动大批量任务（自动入队）
-{baseDir}/scripts/batch_extract.py \
+{baseDir}/（请参考skill目录中的脚本文件） \
   --config /tmp/big-batch.json \
   --parallel 8 \
   --queue /tmp/queue.json \
   --report /tmp/report.json
 
 # 查询进度
-{baseDir}/scripts/queue_status.py --queue /tmp/queue.json
+{baseDir}/（请参考skill目录中的脚本文件） --queue /tmp/queue.json
 
 # 断点续传
-{baseDir}/scripts/batch_extract.py --resume /tmp/queue.json
+{baseDir}/（请参考skill目录中的脚本文件） --resume /tmp/queue.json
 ```
 
 ### 4. 水印设计建议
@@ -392,10 +392,10 @@ report:
 
 ```bash
 # 方式一：仅重试失败任务
-{baseDir}/scripts/batch_extract.py --retry-failed /tmp/queue.json
+{baseDir}/（请参考skill目录中的脚本文件） --retry-failed /tmp/queue.json
 
 # 方式二：从断点续传
-{baseDir}/scripts/batch_extract.py --resume /tmp/queue.json
+{baseDir}/（请参考skill目录中的脚本文件） --resume /tmp/queue.json
 ```
 
 ### Q3：智能关键帧检测的阈值如何选择？
@@ -419,7 +419,7 @@ report:
 **A：** 可以，使用 `custom` 位置并指定坐标：
 
 ```bash
-{baseDir}/scripts/frame.sh video.mp4 \
+{baseDir}/（请参考skill目录中的脚本文件） video.mp4 \
   --time 00:00:10 \
   --out /tmp/output.jpg \
   --watermark /assets/logo.png \
@@ -433,7 +433,7 @@ report:
 
 ```bash
 # 纯文本列表
-{baseDir}/scripts/batch_extract.py --list /tmp/video-list.txt --output-dir /tmp/frames/
+{baseDir}/（请参考skill目录中的脚本文件） --list /tmp/video-list.txt --output-dir /tmp/frames/
 ```
 
 ### Q7：网络 URL 抓帧如何使用？
@@ -441,7 +441,7 @@ report:
 **A：** 专业版支持直接输入网络视频 URL：
 
 ```bash
-{baseDir}/scripts/frame.sh "https://example.com/video.mp4" \
+{baseDir}/（请参考skill目录中的脚本文件） "https://example.com/video.mp4" \
   --time 00:00:10 \
   --out /tmp/frame-from-url.jpg
 ```

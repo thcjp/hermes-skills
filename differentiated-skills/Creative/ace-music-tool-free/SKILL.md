@@ -94,7 +94,7 @@ ACE音乐生成免费版是一款面向个人用户的AI音乐创作工具。通
 用户制作 30 秒短视频,需要一段轻快的流行风格背景音乐。
 
 ```bash
-scripts/generate.sh "upbeat pop song about summer vacation" \
+（请参考skill目录中的脚本文件） "upbeat pop song about summer vacation" \
   --duration 30 \
   --instrumental \
   --output summer_bgm.mp3
@@ -105,7 +105,7 @@ scripts/generate.sh "upbeat pop song about summer vacation" \
 音乐创作者希望快速将一段歌词转化为可听的人声 demo。
 
 ```bash
-scripts/generate.sh "gentle acoustic ballad, female vocal" \
+（请参考skill目录中的脚本文件） "gentle acoustic ballad, female vocal" \
   --lyrics "[Verse 1]\n阳光洒进窗台\n\n[Chorus]\n我们都是追梦人" \
   --duration 60 \
   --language zh \
@@ -117,7 +117,7 @@ scripts/generate.sh "gentle acoustic ballad, female vocal" \
 用户希望生成一段 lo-fi 助眠或专注背景音乐。
 
 ```bash
-scripts/generate.sh "lo-fi hip hop beats, chill, rainy night" \
+（请参考skill目录中的脚本文件） "lo-fi hip hop beats, chill, rainy night" \
   --instrumental \
   --duration 60 \
   --output lofi_focus.mp3
@@ -149,7 +149,7 @@ export ACE_MUSIC_API_KEY="your_api_key_here"
 ### 第二步:执行生成命令
 
 ```bash
-scripts/generate.sh "rock anthem, energetic" \
+（请参考skill目录中的脚本文件） "rock anthem, energetic" \
   --bpm 140 \
   --key "E minor" \
   --output rock.mp3

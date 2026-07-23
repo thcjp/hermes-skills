@@ -217,9 +217,9 @@ ws["A1"] = value
 ### 本地运行
 
 ```bash
-# 进入skill目录或把scripts/加入PATH
-pip install -r scripts/requirements.txt
-python scripts/merge_sheets.py --help
+# 进入skill目录或把（请参考skill目录中的脚本文件）
+pip install -r （请参考skill目录中的脚本文件）
+python （请参考skill目录中的脚本文件） --help
 ```
 
 ---
@@ -416,7 +416,7 @@ A：写入时`encoding="utf-8-sig"`加BOM，Excel就能正确识别UTF-8。
 
 ### 可用性分类
 - **分类**：MD+EXEC（Markdown指令 + Python脚本执行）
-- **说明**：通过自然语言指令驱动Agent调用scripts/下的Python脚本完成Excel处理
+- **说明**：通过自然语言指令驱动Agent调用（请参考skill目录中的脚本文件）
 
 ## 核心能力
 

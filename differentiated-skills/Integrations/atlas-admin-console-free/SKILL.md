@@ -102,24 +102,24 @@ node --version
 
 ```bash
 # 列出所有API分类
-node scripts/atlas-api.mjs catalog
+node （请参考skill目录中的脚本文件） catalog
 
 # 按关键字过滤
-node scripts/atlas-api.mjs catalog Clusters
+node （请参考skill目录中的脚本文件） catalog Clusters
 ```
 
 ### 第三步：查看端点详情
 
 ```bash
 # 获取特定Operation ID的完整定义
-node scripts/atlas-api.mjs detail listClusterDetails
+node （请参考skill目录中的脚本文件） detail listClusterDetails
 ```
 
 ### 第四步：查询Schema定义
 
 ```bash
 # 获取复杂类型的数据模型
-node scripts/atlas-api.mjs schema "#/components/schemas/ApiError"
+node （请参考skill目录中的脚本文件） schema "#/components/schemas/ApiError"
 ```
 
 完整上手时间约60秒。
@@ -145,30 +145,30 @@ export ATLAS_ORG_ID="your-org-id"
 
 ```bash
 # 列出所有集群
-node scripts/atlas-call.mjs GET groups/${ATLAS_GROUP_ID}/clusters
+node （请参考skill目录中的脚本文件） GET groups/${ATLAS_GROUP_ID}/clusters
 
 # 查看集群详情
-node scripts/atlas-call.mjs GET groups/${ATLAS_GROUP_ID}/clusters/DemoCluster
+node （请参考skill目录中的脚本文件） GET groups/${ATLAS_GROUP_ID}/clusters/DemoCluster
 
 # 列出数据库用户
-node scripts/atlas-call.mjs GET groups/${ATLAS_GROUP_ID}/databaseUsers
+node （请参考skill目录中的脚本文件） GET groups/${ATLAS_GROUP_ID}/databaseUsers
 
 # 查看告警
-node scripts/atlas-call.mjs GET groups/${ATLAS_GROUP_ID}/alerts
+node （请参考skill目录中的脚本文件） GET groups/${ATLAS_GROUP_ID}/alerts
 ```
 
 ### 状态变更操作（必须dry-run + 确认）
 
 ```bash
 # 第一步：dry-run预览（不实际执行）
-node scripts/atlas-call.mjs POST groups/${ATLAS_GROUP_ID}/clusters \
+node （请参考skill目录中的脚本文件） POST groups/${ATLAS_GROUP_ID}/clusters \
   --data '{"name":"DemoCluster", "providerSettings":{...}}' \
   --dry-run
 
 # 第二步：人工审核dry-run输出
 
 # 第三步：明确确认后执行（加--yes跳过交互确认）
-node scripts/atlas-call.mjs POST groups/${ATLAS_GROUP_ID}/clusters \
+node （请参考skill目录中的脚本文件） POST groups/${ATLAS_GROUP_ID}/clusters \
   --data '{"name":"DemoCluster", "providerSettings":{...}}' \
   --yes
 ```

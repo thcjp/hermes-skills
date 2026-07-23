@@ -65,7 +65,7 @@ pricing_model: "per_use"
 ```bash
 cd skills/python-dataviz
 python3 -m venv .venv
-source .venv/bin/activate
+source .venv/（请参考skill目录中的脚本文件）
 pip install .
 ```
 
@@ -108,8 +108,8 @@ plt.savefig('output.svg', bbox_inches='tight')
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明"
+    result: "dataviz 相关配置参数",
+    result: "dataviz 相关配置参数"
   },
   "error": null
 }
@@ -152,12 +152,12 @@ export API_KEY="your_api_key_here"
 
 See scripts/ for ready-to-use examples:
 
-* `scripts/bar_chart.py` - Bar and grouped bar charts
-* `scripts/line_chart.py` - Line plots with multiple series
-* `scripts/scatter_plot.py` - Scatter plots with regression
-* `scripts/heatmap.py` - Correlation heatmaps
-* `scripts/distribution.py` - Histograms, KDE, violin plots
-* `scripts/interactive.py` - Plotly interactive charts
+* `（请参考skill目录中的脚本文件）` - Bar and grouped bar charts
+* `（请参考skill目录中的脚本文件）` - Line plots with multiple series
+* `（请参考skill目录中的脚本文件）` - Scatter plots with regression
+* `（请参考skill目录中的脚本文件）` - Correlation heatmaps
+* `（请参考skill目录中的脚本文件）` - Histograms, KDE, violin plots
+* `（请参考skill目录中的脚本文件）` - Plotly interactive charts
 
 ## 错误处理
 

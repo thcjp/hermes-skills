@@ -72,9 +72,9 @@ export API_KEY="your_api_key_here"
 **处理**: 按照skill规范执行会议转写（Transcription）操作,遵循单一意图原则。
 ### 加入会议（Join Meeting）
 
-执行加入会议（Join Meeting）操作,处理用户输入并返回结果。
+执行加入会议（Join Meeting）,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供加入会议（Join Meeting）所需的参数和指令。
+**输入**: 用户提供加入会议（Join Meeting）相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回加入会议（Join Meeting）的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`加入会议（Join Meeting）`相关配置参数进行设置

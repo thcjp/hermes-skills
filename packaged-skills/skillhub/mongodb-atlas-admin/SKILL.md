@@ -65,7 +65,7 @@ export API_KEY="your_api_key_here"
 通过 `atlas-api.mjs catalog` 列出所有可用的API分类和端点，覆盖50+分类，包括集群管理、数据库用户、网络配置、备份恢复、监控告警等。
 
 ```bash
-node scripts/atlas-api.mjs catalog
+node （请参考skill目录中的脚本文件） catalog
 ```
 
 **处理**: 按照skill规范执行API目录浏览操作,遵循单一意图原则。
@@ -75,14 +75,14 @@ node scripts/atlas-api.mjs catalog
 通过 `atlas-api.mjs detail` 查看特定端点的详细信息，包括HTTP方法、路径参数、请求体Schema和响应格式。
 
 ```bash
-node scripts/atlas-api.mjs detail --category "Clusters" --endpoint "Create Cluster"
+node （请参考skill目录中的脚本文件） detail --category "Clusters" --endpoint "Create Cluster"
 ```- 验证执行结果，确认输出符合预期格式
 - 参考`端点详情获取`相关配置参数进行设置
 ### 3. Schema定义查询
 查看API端点的请求和响应Schema定义，了解参数类型、是否必填和默认值。
 
 ```bash
-node scripts/atlas-api.mjs detail --category "Database Users" --endpoint "Create Database User" --schema
+node （请参考skill目录中的脚本文件） detail --category "Database Users" --endpoint "Create Database User" --schema
 ```- 验证执行结果，确认输出符合预期格式
 - 参考`Schema定义查询`相关配置参数进行设置
 ### 4. 实时API调用
@@ -90,10 +90,10 @@ node scripts/atlas-api.mjs detail --category "Database Users" --endpoint "Create
 
 ```bash
 # 预检模式（不实际执行）
-node scripts/atlas-call.mjs --category "Clusters" --endpoint "Create Cluster" --dry-run --data '{"name":"myCluster", "providerSettings": {"providerName": "AWS", "regionName": "US_EAST_1", "instanceSizeName": "M10"}}'
+node （请参考skill目录中的脚本文件） --category "Clusters" --endpoint "Create Cluster" --dry-run --data '{"name":"myCluster", "providerSettings": {"providerName": "AWS", "regionName": "US_EAST_1", "instanceSizeName": "M10"}}'
 
 # 实际执行
-node scripts/atlas-call.mjs --category "Clusters" --endpoint "Create Cluster" --yes --data '{"name":"myCluster", "providerSettings": {"providerName": "AWS", "regionName": "US_EAST_1", "instanceSizeName": "M10"}}'
+node （请参考skill目录中的脚本文件） --category "Clusters" --endpoint "Create Cluster" --yes --data '{"name":"myCluster", "providerSettings": {"providerName": "AWS", "regionName": "US_EAST_1", "instanceSizeName": "M10"}}'
 ```
 
 **输入**: 用户提供实时API调用所需的指令和必要参数。
@@ -101,7 +101,7 @@ node scripts/atlas-call.mjs --category "Clusters" --endpoint "Create Cluster" --
 按关键词搜索API分类，快速定位需要的端点。
 
 ```bash
-node scripts/atlas-api.mjs catalog --search "backup"
+node （请参考skill目录中的脚本文件） catalog --search "backup"
 ```
 
 **输入**: 用户提供分类搜索所需的指令和必要参数。
@@ -132,7 +132,7 @@ export ATLAS_CLIENT_SECRET="your_client_secret"
 ### 示例1：列出所有API分类
 
 ```bash
-node scripts/atlas-api.mjs catalog
+node （请参考skill目录中的脚本文件） catalog
 ```
 
 输出：
@@ -152,7 +152,7 @@ Available API Categories (52):
 ### 示例2：创建集群（dry-run预检）
 
 ```bash
-node scripts/atlas-call.mjs \
+node （请参考skill目录中的脚本文件） \
   --category "Clusters" \
   --endpoint "Create Cluster" \
   --dry-run \
@@ -182,7 +182,7 @@ No changes applied. Remove --dry-run to execute.
 ### 示例3：创建数据库用户
 
 ```bash
-node scripts/atlas-call.mjs \
+node （请参考skill目录中的脚本文件） \
   --category "Database Users" \
   --endpoint "Create Database User" \
   --yes \
@@ -206,7 +206,7 @@ node scripts/atlas-call.mjs \
 ### 示例4：搜索备份相关API
 
 ```bash
-node scripts/atlas-api.mjs catalog --search "backup"
+node （请参考skill目录中的脚本文件） catalog --search "backup"
 ```
 
 输出：

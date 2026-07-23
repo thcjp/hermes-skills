@@ -102,13 +102,13 @@ suggested_price: 29.9
 ollama pull nomic-embed-text
 
 # 初始化记忆系统
-node bin/init.js
+node （请参考skill目录中的脚本文件）
 
 # 存储第一条记忆
-node bin/memory.js store "用户喜欢深色模式" --importance 0.9 --category preference
+node （请参考skill目录中的脚本文件） store "用户喜欢深色模式" --importance 0.9 --category preference
 
 # 检索记忆
-node bin/memory.js search "用户界面偏好"
+node （请参考skill目录中的脚本文件） search "用户界面偏好"
 ```
 
 ### 120 秒基础上手（需安装 Ollama）
@@ -128,7 +128,7 @@ cd skills/local-vector-memory
 npm install
 
 # 第 4 步：初始化记忆系统
-node bin/init.js
+node （请参考skill目录中的脚本文件）
 ```
 
 初始化后创建以下文件：
@@ -185,12 +185,12 @@ node bin/init.js
 
 ```bash
 # 存储开发偏好
-node bin/memory.js store "用户使用 2 空格缩进，偏好驼峰命名" --importance 0.9 --category preference
+node （请参考skill目录中的脚本文件） store "用户使用 2 空格缩进，偏好驼峰命名" --importance 0.9 --category preference
 
-node bin/memory.js store "用户主要用 TypeScript 和 Python" --importance 0.8 --category skill
+node （请参考skill目录中的脚本文件） store "用户主要用 TypeScript 和 Python" --importance 0.8 --category skill
 
 # 新会话开始时检索
-node bin/memory.js search "用户编码偏好"
+node （请参考skill目录中的脚本文件） search "用户编码偏好"
 # 返回：2 空格缩进、驼峰命名、TypeScript/Python
 
 # 更新热内存
@@ -211,15 +211,15 @@ node bin/memory.js search "用户编码偏好"
 ollama serve  # 启动本地服务
 
 # 存储患者概况（脱敏后）
-node bin/memory.js store "患者A：高血压病史3年，药物控制中" --importance 0.95 --category medical_history
+node （请参考skill目录中的脚本文件） store "患者A：高血压病史3年，药物控制中" --importance 0.95 --category medical_history
 
-node bin/memory.js store "患者A：对青霉素过敏" --importance 1.0 --category allergy
+node （请参考skill目录中的脚本文件） store "患者A：对青霉素过敏" --importance 1.0 --category allergy
 
 # 下次问诊前检索
-node bin/memory.js search "患者A 过敏史"
+node （请参考skill目录中的脚本文件） search "患者A 过敏史"
 # 返回：青霉素过敏
 
-node bin/memory.js search "患者A 慢性病"
+node （请参考skill目录中的脚本文件） search "患者A 慢性病"
 # 返回：高血压3年
 ```
 
@@ -235,16 +235,16 @@ node bin/memory.js search "患者A 慢性病"
 # Ollama 本地运行，无需联网
 
 # 记录考察发现
-node bin/memory.js store "样地A：发现稀有兰花品种，海拔1200米" --importance 0.9 --category observation
+node （请参考skill目录中的脚本文件） store "样地A：发现稀有兰花品种，海拔1200米" --importance 0.9 --category observation
 
-node bin/memory.js store "样地A：土壤pH值5.8，湿度偏高" --importance 0.7 --category measurement
+node （请参考skill目录中的脚本文件） store "样地A：土壤pH值5.8，湿度偏高" --importance 0.7 --category measurement
 
 # 语义检索（即使关键词不完全匹配）
-node bin/memory.js search "兰花生长环境"
+node （请参考skill目录中的脚本文件） search "兰花生长环境"
 # 返回：样地A的土壤和海拔数据
 
 # 导出备份
-node bin/memory.js export --format json > expedition.json
+node （请参考skill目录中的脚本文件） export --format json > expedition.json
 ```
 
 **效果**：完全离线运行，语义检索比关键词匹配更精准。
@@ -290,22 +290,22 @@ node bin/memory.js export --format json > expedition.json
 
 ```bash
 # 查看记忆统计
-node bin/memory.js stats
+node （请参考skill目录中的脚本文件） stats
 
 # 浏览全部记忆
-node bin/memory.js search "*" --limit 50
+node （请参考skill目录中的脚本文件） search "*" --limit 50
 
 # 去重
-node bin/memory.js dedup
+node （请参考skill目录中的脚本文件） dedup
 
 # 导出备份
-node bin/memory.js export --format json > memories.json
+node （请参考skill目录中的脚本文件） export --format json > memories.json
 
 # 创建压缩备份
-node bin/memory.js backup ./backups/memory-$(date +%Y%m%d).zip
+node （请参考skill目录中的脚本文件） backup ./backups/memory-$(date +%Y%m%d).zip
 
 # 清理旧记忆（30天前）
-node bin/memory.js cleanup --before 30d
+node （请参考skill目录中的脚本文件） cleanup --before 30d
 ```
 
 ## 错误处理
@@ -313,9 +313,9 @@ node bin/memory.js cleanup --before 30d
 | 序号 | 问题 | 可能原因 | 解决方案 | 优先级 |
 |:---|:---|:---|:---|:---|
 | 1 | Ollama 连接失败 | Ollama 服务未启动 | 运行 `ollama serve`；检查 `OLLAMA_HOST` 环境变量 | 高 |
-| 2 | 向量搜索无结果 | LanceDB 路径错误或无数据 | 确认 `dbPath` 配置；运行 `node bin/memory.js stats` 确认已存储记忆 | 高 |
+| 2 | 向量搜索无结果 | LanceDB 路径错误或无数据 | 确认 `dbPath` 配置；运行 `node （请参考skill目录中的脚本文件） stats` 确认已存储记忆 | 高 |
 | 3 | embedding 生成缓慢 | 模型首次加载 | 首次调用需加载模型到内存，后续调用毫秒级；预热：`ollama run nomic-embed-text ""` | 中 |
-| 4 | 内存占用过高 | 向量库无限增长 | 运行 `node bin/memory.js compact` 压缩向量；`node bin/memory.js cleanup --before 30d` 清理旧记忆 | 中 |
+| 4 | 内存占用过高 | 向量库无限增长 | 运行 `node （请参考skill目录中的脚本文件） compact` 压缩向量；`node （请参考skill目录中的脚本文件） cleanup --before 30d` 清理旧记忆 | 中 |
 | 5 | npm install 失败 | 网络问题或 Node 版本过低 | 确认 Node.js 18+；使用 `npm install --registry https://registry.npmmirror.com` | 高 |
 | 6 | init.js 报权限错误 | 文件系统权限不足 | 确认对目标目录有读写权限；Linux/macOS 运行 `chmod -R 755 ./memory/` | 中 |
 | 7 | 检索结果不相关 | embedding 模型不匹配 | 确认使用 `nomic-embed-text`；重新初始化向量库 | 低 |
@@ -344,7 +344,7 @@ node bin/memory.js cleanup --before 30d
 
 ### Q6: 数据存储在哪里？如何备份？
 
-**A**: 所有数据存储在本地 `memory/` 目录下：向量数据在 `memory/vectors/`（LanceDB），日志在 `memory/YYYY-MM-DD.md`，热内存在 `SESSION-STATE.md`。备份使用 `node bin/memory.js backup ./backups/memory-YYYYMMDD.zip`。
+**A**: 所有数据存储在本地 `memory/` 目录下：向量数据在 `memory/vectors/`（LanceDB），日志在 `memory/YYYY-MM-DD.md`，热内存在 `SESSION-STATE.md`。备份使用 `node （请参考skill目录中的脚本文件） backup ./backups/memory-YYYYMMDD.zip`。
 
 ### Q7: 支持哪些操作系统？
 

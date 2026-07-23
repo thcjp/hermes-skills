@@ -69,15 +69,15 @@ pricing_model: "per_use"
 
 ### 配置并启动全功能中文文件整理
 ```bash
-python3 scripts/zh-organizer-pro.py 初始化 --配置 pro-config.yaml
+python3 （请参考skill目录中的脚本文件） 初始化 --配置 pro-config.yaml
 
-python3 scripts/zh-organizer-pro.py 规则 设置 rules/content-rules.yaml
+python3 （请参考skill目录中的脚本文件） 规则 设置 rules/content-rules.yaml
 
-python3 scripts/zh-organizer-pro.py 查重 ~/文档/ ~/下载/
+python3 （请参考skill目录中的脚本文件） 查重 ~/文档/ ~/下载/
 
-python3 scripts/zh-organizer-pro.py 定时 添加 --cron "0 9 * * *" --路径 ~/下载 ~/桌面
+python3 （请参考skill目录中的脚本文件） 定时 添加 --cron "0 9 * * *" --路径 ~/下载 ~/桌面
 
-python3 scripts/zh-organizer-pro.py 监控 ~/下载/ --自动整理
+python3 （请参考skill目录中的脚本文件） 监控 ~/下载/ --自动整理
 ```
 
 ### 专业版部署模板
@@ -105,13 +105,13 @@ python3 scripts/zh-organizer-pro.py 监控 ~/下载/ --自动整理
 
 ### 2. 精准去重
 ```bash
-python3 scripts/zh-organizer-pro.py 查重 ~/文档/ --哈希 sha256
+python3 （请参考skill目录中的脚本文件） 查重 ~/文档/ --哈希 sha256
 
-python3 scripts/zh-organizer-pro.py 去重方案 ~/文档/ --保留 最新
+python3 （请参考skill目录中的脚本文件） 去重方案 ~/文档/ --保留 最新
 
-python3 scripts/zh-organizer-pro.py 执行去重 ~/文档/ --保留 最新
+python3 （请参考skill目录中的脚本文件） 执行去重 ~/文档/ --保留 最新
 
-python3 scripts/zh-organizer-pro.py 去重报告 ~/文档/
+python3 （请参考skill目录中的脚本文件） 去重报告 ~/文档/
 ```
 
 | 去重能力 | 说明 |
@@ -128,7 +128,7 @@ python3 scripts/zh-organizer-pro.py 去重报告 ~/文档/
 
 ### 3. 批量定时整理
 ```bash
-python3 scripts/zh-organizer-pro.py 定时 添加 \
+python3 （请参考skill目录中的脚本文件） 定时 添加 \
   --名称 "每日中文整理" \
   --cron "0 9 * * *" \
   --路径 ~/下载 ~/桌面 \
@@ -136,9 +136,9 @@ python3 scripts/zh-organizer-pro.py 定时 添加 \
   --去重 \
   --通知 邮件
 
-python3 scripts/zh-organizer-pro.py 定时 列表
+python3 （请参考skill目录中的脚本文件） 定时 列表
 
-python3 scripts/zh-organizer-pro.py 定时 历史 --名称 "每日中文整理"
+python3 （请参考skill目录中的脚本文件） 定时 历史 --名称 "每日中文整理"
 ```
 
 **输入**: 用户提供批量定时整理所需的指令和必要参数。
@@ -148,13 +148,13 @@ python3 scripts/zh-organizer-pro.py 定时 历史 --名称 "每日中文整理"
 
 ### 4. 多目录批量处理
 ```bash
-python3 scripts/zh-organizer-pro.py 批量 整理 \
+python3 （请参考skill目录中的脚本文件） 批量 整理 \
   ~/下载 ~/桌面 ~/文档/临时 \
   --规则 content-rules.yaml \
   --去重 \
   --报告
 
-python3 scripts/zh-organizer-pro.py 批量 统计 \
+python3 （请参考skill目录中的脚本文件） 批量 统计 \
   ~/下载 ~/桌面 ~/文档/
 ```
 
@@ -179,11 +179,11 @@ python3 scripts/zh-organizer-pro.py 批量 统计 \
 
 ### 6. 文件变更实时监控
 ```bash
-python3 scripts/zh-organizer-pro.py 监控 ~/下载/ --自动整理
+python3 （请参考skill目录中的脚本文件） 监控 ~/下载/ --自动整理
 
-python3 scripts/zh-organizer-pro.py 监控 ~/下载 ~/桌面 --自动整理
+python3 （请参考skill目录中的脚本文件） 监控 ~/下载 ~/桌面 --自动整理
 
-python3 scripts/zh-organizer-pro.py 监控 ~/下载/ --自动整理 --去重
+python3 （请参考skill目录中的脚本文件） 监控 ~/下载/ --自动整理 --去重
 ```
 
 **输入**: 用户提供文件变更实时监控所需的指令和必要参数。
@@ -193,11 +193,11 @@ python3 scripts/zh-organizer-pro.py 监控 ~/下载/ --自动整理 --去重
 
 ### 7. 团队中文规则共享
 ```bash
-python3 scripts/zh-organizer-pro.py 规则 创建 --团队 --名称 团队标准
+python3 （请参考skill目录中的脚本文件） 规则 创建 --团队 --名称 团队标准
 
-python3 scripts/zh-organizer-pro.py 规则 部署 --团队 --全部成员
+python3 （请参考skill目录中的脚本文件） 规则 部署 --团队 --全部成员
 
-python3 scripts/zh-organizer-pro.py 规则 同步 --周期 每周
+python3 （请参考skill目录中的脚本文件） 规则 同步 --周期 每周
 ```
 
 **输入**: 用户提供团队中文规则共享所需的指令和必要参数。
@@ -207,11 +207,11 @@ python3 scripts/zh-organizer-pro.py 规则 同步 --周期 每周
 
 ### 8. 智能目录结构优化
 ```bash
-python3 scripts/zh-organizer-pro.py 结构 分析 ~/文档/
+python3 （请参考skill目录中的脚本文件） 结构 分析 ~/文档/
 
-python3 scripts/zh-organizer-pro.py 结构 优化 ~/文档/ --建议
+python3 （请参考skill目录中的脚本文件） 结构 优化 ~/文档/ --建议
 
-python3 scripts/zh-organizer-pro.py 结构 应用 ~/文档/ --方案
+python3 （请参考skill目录中的脚本文件） 结构 应用 ~/文档/ --方案
 ```
 
 **输入**: 用户提供智能目录结构优化所需的指令和必要参数。
@@ -240,7 +240,7 @@ python3 scripts/zh-organizer-pro.py 结构 应用 ~/文档/ --方案
 ```
 
 ```bash
-python3 scripts/zh-organizer-pro.py 内容分类 ~/文档/ --规则 content-rules.yaml
+python3 （请参考skill目录中的脚本文件） 内容分类 ~/文档/ --规则 content-rules.yaml
 ```
 
 **效果**：基于文件内容关键词智能分类，合同归入"文档/合同/"、发票归入"文档/财务/"，分类准确率达90%以上，无需人工逐个查看。
@@ -250,12 +250,12 @@ python3 scripts/zh-organizer-pro.py 内容分类 ~/文档/ --规则 content-rule
 
 **解决方案**：
 ```bash
-python3 scripts/zh-organizer-pro.py 定时 添加 \
+python3 （请参考skill目录中的脚本文件） 定时 添加 \
   --名称 "每日中文整理" --cron "0 9 * * *" \
   --路径 ~/下载 ~/桌面 ~/文档/临时 \
   --操作 整理 --去重 --通知 邮件
 
-python3 scripts/zh-organizer-pro.py 监控 ~/下载/ --自动整理
+python3 （请参考skill目录中的脚本文件） 监控 ~/下载/ --自动整理
 ```
 
 **效果**：每日9点自动整理多个目录，新增文件5秒内自动归位，全程无人值守，执行报告邮件通知。
@@ -265,11 +265,11 @@ python3 scripts/zh-organizer-pro.py 监控 ~/下载/ --自动整理
 
 **解决方案**：
 ```bash
-python3 scripts/zh-organizer-pro.py 规则 创建 --团队 --名称 团队标准
+python3 （请参考skill目录中的脚本文件） 规则 创建 --团队 --名称 团队标准
 
-python3 scripts/zh-organizer-pro.py 规则 部署 --团队 --全部成员
+python3 （请参考skill目录中的脚本文件） 规则 部署 --团队 --全部成员
 
-python3 scripts/zh-organizer-pro.py 规则 同步 --周期 每周
+python3 （请参考skill目录中的脚本文件） 规则 同步 --周期 每周
 ```
 
 **效果**：所有成员使用统一的中文分类规则，整理结果一致，新成员一键部署规则即可上手。
@@ -279,11 +279,11 @@ python3 scripts/zh-organizer-pro.py 规则 同步 --周期 每周
 
 **解决方案**：
 ```bash
-python3 scripts/zh-organizer-pro.py 查重 ~/文档/ --哈希 sha256
+python3 （请参考skill目录中的脚本文件） 查重 ~/文档/ --哈希 sha256
 
-python3 scripts/zh-organizer-pro.py 去重方案 ~/文档/ --保留 最新
+python3 （请参考skill目录中的脚本文件） 去重方案 ~/文档/ --保留 最新
 
-python3 scripts/zh-organizer-pro.py 执行去重 ~/文档/ --保留 最新
+python3 （请参考skill目录中的脚本文件） 执行去重 ~/文档/ --保留 最新
 ```
 
 **效果**：基于内容哈希精准识别重复文件，自动保留最新版本，清理后释放数十GB空间。

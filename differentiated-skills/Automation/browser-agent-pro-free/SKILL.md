@@ -270,7 +270,7 @@ ls ~/workspace/browser/screenshots/2026-07-18/
 
 ```json
 {
-  "browser_path": "/usr/bin/google-chrome",
+  "browser_path": "/usr/（请参考skill目录中的脚本文件）",
   "default_timeout_seconds": 30,
   "screenshot_format": "png",
   "retention_days": 30

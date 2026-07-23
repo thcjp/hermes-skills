@@ -135,7 +135,7 @@ python3 batch_extract.py --config /path/to/batch-extract.json --parallel 8
 **输出结构：**
 
 ```text
-/transcripts/competitors/
+/tran（请参考skill目录中的脚本文件）/
 ├── competitor-a/
 │   ├── VIDEO_1/
 │   │   ├── transcript-zh.txt
@@ -174,13 +174,13 @@ python3 batch_extract.py \
   --url "https://www.youtube.com/watch?v=VIDEO_ID" \
   --languages zh,en \
   --align \
-  --output /transcripts/comparison/
+  --output /tran（请参考skill目录中的脚本文件）/
 ```
 
 **输出示例：**
 
 ```text
-/transcripts/comparison/
+/tran（请参考skill目录中的脚本文件）/
 ├── VIDEO_ID/
 │   ├── transcript-zh.txt       # 中文字幕
 │   ├── transcript-en.txt       # 英文字幕

@@ -411,7 +411,7 @@ Agent：
 cat > ~/multi-search-pro/daily_search.sh << 'EOF'
 #!/bin/bash
 DATE=$(date +%Y%m%d)
-python3 ~/multi-search-pro/scripts/batch_search.py \
+python3 ~/multi-search-pro/（请参考skill目录中的脚本文件） \
     --keywords ~/multi-search-pro/keywords/watchlist.txt \
     --engines google baidu bing \
     --output ~/multi-search-pro/reports/daily_${DATE}.json \

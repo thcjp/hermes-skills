@@ -191,7 +191,7 @@ export API_KEY="your_api_key_here"
 | 资源组 | `az group list --query "[].{name:name,location:location}" -o table` |
 | 虚拟机 | `az vm list --show-details --query "[].{name:name,rg:resourceGroup,state:pow
 
-**输入**: 用户提供基础查询命令所需的参数和指令。
+**输入**: 用户提供基础查询命令相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行基础查询命令操作。
 **输出**: 返回基础查询命令的执行结果,包含操作状态和输出数据。
 
@@ -201,7 +201,7 @@ export API_KEY="your_api_key_here"
 - **VM 实例视图**：`az vm get-instance-view --name <vm> -g <rg> --query "instanceView.statuses" -o table`
 - **失败
 
-**输入**: 用户提供简单健康检查所需的参数和指令。
+**输入**: 用户提供简单健康检查相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行简单健康检查操作。
 **输出**: 返回简单健康检查的执行结果,包含操作状态和输出数据。
 

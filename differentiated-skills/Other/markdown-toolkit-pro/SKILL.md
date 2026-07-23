@@ -88,7 +88,7 @@ pricing_model: "per_use"
 
 ```bash
 # 生成站点目录与 TOC（专业版）
-{baseDir}/scripts/md-site.sh build --src docs/ --toc
+{baseDir}/（请参考skill目录中的脚本文件） build --src docs/ --toc
 ```
 
 ```text
@@ -122,10 +122,10 @@ markdownlint docs/**/*.md --config .markdownlint.json
 
 ```bash
 # 死链检测
-{baseDir}/scripts/md-site.sh check-links docs/
+{baseDir}/（请参考skill目录中的脚本文件） check-links docs/
 
 # 多格式导出
-{baseDir}/scripts/md-site.sh export --to pdf --src docs/ --out build/
+{baseDir}/（请参考skill目录中的脚本文件） export --to pdf --src docs/ --out build/
 ```
 
 ## 不适用场景
@@ -232,20 +232,20 @@ toc:
 
 ```bash
 # 从目录结构生成 TOC
-{baseDir}/scripts/md-site.sh toc --src docs/ --out _toc.yml
+{baseDir}/（请参考skill目录中的脚本文件） toc --src docs/ --out _toc.yml
 ```
 
 ### 死链检测
 
 ```bash
 # 内部链接检测
-{baseDir}/scripts/md-site.sh check-links docs/ --internal
+{baseDir}/（请参考skill目录中的脚本文件） check-links docs/ --internal
 
 # 锚点检测
-{baseDir}/scripts/md-site.sh check-links docs/ --anchors
+{baseDir}/（请参考skill目录中的脚本文件） check-links docs/ --anchors
 
 # 输出报告
-{baseDir}/scripts/md-site.sh check-links docs/ --report broken.json
+{baseDir}/（请参考skill目录中的脚本文件） check-links docs/ --report broken.json
 ```
 
 ```text
@@ -264,7 +264,7 @@ pandoc docs/*.md -o build/manual.pdf \
   -V CJKmainfont="Noto Sans CJK SC"
 
 # 导出 HTML 站点
-{baseDir}/scripts/md-site.sh export --to html --src docs/ --out build/
+{baseDir}/（请参考skill目录中的脚本文件） export --to html --src docs/ --out build/
 
 # 导出 DocBook
 pandoc docs/*.md -o build/manual.xml -t docbook

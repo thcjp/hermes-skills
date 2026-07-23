@@ -94,7 +94,7 @@ AI图像生成免费版是一款面向个人用户的文本生成图像工具。
 用户需要一个独特的社交媒体头像,生成一张 1:1 的艺术风格图片。
 
 ```bash
-python3 scripts/generate_image.py \
+python3 （请参考skill目录中的脚本文件） \
   "一只戴着圆框眼镜的橘猫,水彩风格,柔和色调,简洁背景" \
   --model gemini-3.1-flash-image \
   --output avatar.png
@@ -105,7 +105,7 @@ python3 scripts/generate_image.py \
 内容创作者为短视频制作 16:9 横版封面图。
 
 ```bash
-python3 scripts/generate_image.py \
+python3 （请参考skill目录中的脚本文件） \
   "未来都市夜景,霓虹灯光,赛博朋克风格,雨后湿润街道反射,电影感构图" \
   --model gemini-3.1-flash-image-16x9 \
   --output video_cover.png
@@ -116,7 +116,7 @@ python3 scripts/generate_image.py \
 设计师希望快速将一个创意概念可视化,用于灵感记录。
 
 ```bash
-python3 scripts/generate_image.py \
+python3 （请参考skill目录中的脚本文件） \
   "一座漂浮在云端的图书馆,书籍如瀑布般倾泻而下,暖色调,梦幻氛围,吉卜力风格" \
   --model gemini-3.1-flash-image-3x2 \
   --output inspiration.png
@@ -146,7 +146,7 @@ export IMAGE_GEN_BASE_URL="https://code.newcli.com/gemini"
 ### 第二步:执行生成命令
 
 ```bash
-python3 scripts/generate_image.py \
+python3 （请参考skill目录中的脚本文件） \
   "你的提示词描述" \
   --model gemini-3.1-flash-image \
   --output output.png

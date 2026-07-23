@@ -124,11 +124,11 @@ api-scaffold-gen rest user --template ./templates/company-rest.tpl
 
 /**
  * api-scaffold-gen 接口
- * @company （根据实际场景填充）
- * @author （根据实际场景填充）
+ * @company "gen_result"
+ * @author "gen_metadata"
  */
-router.模板化内容生成('/（根据实际场景填充）', async (req, res) => {
-  // 详情见说明: 实现（根据实际场景填充）逻辑
+router.模板化内容生成('/"gen_status"', async (req, res) => {
+  // 详情见说明: 实现"gen_summary"逻辑
   {% for field in fields %}
   // req.body.api-scaffold-gen - 专业工具
   {% endfor %}
@@ -238,8 +238,8 @@ api-scaffold-gen deploy order-service \
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | api-scaffold-gen处理的内容输入 |,  |
+| content | string | 否 | api-scaffold-gen处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -248,9 +248,9 @@ api-scaffold-gen deploy order-service \
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "gen 相关配置参数",
+    result: "gen 相关配置参数",
+    result: "gen 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

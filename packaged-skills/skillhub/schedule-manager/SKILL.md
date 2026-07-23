@@ -89,11 +89,11 @@ pricing_model: "monthly"
 **告警内容模板**：
 ```text
 🚨 调度告警
-任务：（根据实际场景填充）
-链：（根据实际场景填充）
-失败原因：（根据实际场景填充）
-已重试：（根据实际场景填充）/（根据实际场景填充）
-下次重试：（根据实际场景填充）
+任务："manager_result"
+链："manager_metadata"
+失败原因："manager_status"
+已重试："manager_summary"/"manager_summary"
+下次重试："manager_details"
 建议操作：执行流程
 ```
 
@@ -221,8 +221,8 @@ cat ~/workspace/schedule/preferences.json | grep edition
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
+| content | string | 否 | schedule-manager处理的内容输入 |,  |
+| mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
 | skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |
 
@@ -233,9 +233,9 @@ cat ~/workspace/schedule/preferences.json | grep edition
   "success": true,
   "data": {
     "final_result": {
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明"
+      "manager_count": "manager_count_value",
+      "manager_timestamp": "manager_timestamp_value",
+      "manager_version": "manager_version_value"
     },
     "execution_log": [
       {
@@ -275,7 +275,7 @@ cat ~/workspace/schedule/preferences.json | grep edition
 }
 ```
 
-中间产物模板参考: `assets/（根据实际场景填充）`
+中间产物模板参考: `assets/schedule-manager_template`
 
 ## 异常处理
 

@@ -109,7 +109,7 @@ def run_script(script_path, timeout=300):
         logger.error(f"执行异常：{e}")
         return False, str(e)
 
-success, output = run_script("/opt/scripts/backup.sh", timeout=600)
+success, output = run_script("/opt/（请参考skill目录中的脚本文件）", timeout=600)
 if not success:
     print(f"执行失败，需要异常恢复")
 ```
@@ -223,22 +223,22 @@ class FullCronGuard(CronGuard):
 
 guard = FullCronGuard(log_dir="/tmp/cron_logs")
 
-diagnosis = guard.diagnose_failure("Permission denied: /opt/scripts/backup.sh")
+diagnosis = guard.diagnose_failure("Permission denied: /opt/（请参考skill目录中的脚本文件）")
 for d in diagnosis:
     print(f"故障模式：{d['mode']}")
     print(f"  描述：{d['description']}")
     print(f"  预防：{d['prevention']}")
     print(f"  恢复：{d['recovery']}")
 
-guard.health_check("/opt/scripts/backup.sh")
+guard.health_check("/opt/（请参考skill目录中的脚本文件）")
 ```
 
 ## 核心能力
 ### 脚本优先原则
 | 原则 | 说明 | 示例 |
 |------|------|------|
-| 脚本优先 | 使用独立脚本而非内联命令 | `bash /opt/scripts/backup.sh` |
-| 绝对路径 | 不依赖PATH变量 | `/usr/bin/python3` 而非 `python3` |
+| 脚本优先 | 使用独立脚本而非内联命令 | `bash /opt/（请参考skill目录中的脚本文件）` |
+| 绝对路径 | 不依赖PATH变量 | `/usr/（请参考skill目录中的脚本文件）` 而非 `python3` |
 | 环境自包含 | 脚本内设置所需环境 | `export PATH=/usr/local/bin:$PATH` |
 | 幂等设计 | 重复执行不产生副作用 | 先检查再执行 |
 
@@ -296,7 +296,7 @@ guard.health_check("/opt/scripts/backup.sh")
 ```python
 guard = CronGuard(log_dir="/var/log/cron_guard")
 guard.execute_guarded(
-    script_path="/opt/scripts/db_backup.sh",
+    script_path="/opt/（请参考skill目录中的脚本文件）",
     timeout=3600,      # 1小时超时
     max_retries=2,     # 最多重试2次
     retry_delay=60,    # 重试间隔1分钟
@@ -321,7 +321,7 @@ diagnosis = guard.diagnose_failure("bash: python3: command not found")
 
 ```python
 guard = FullCronGuard(log_dir="/var/log/cron_guard")
-guard.health_check("/opt/scripts/cleanup.sh")
+guard.health_check("/opt/（请参考skill目录中的脚本文件）")
 ```
 
 ## FAQ
@@ -329,7 +329,7 @@ guard.health_check("/opt/scripts/cleanup.sh")
 cron环境与交互式shell环境存在差异（PATH、环境变量等）。使用独立脚本而非内联命令有三个优势：(1) 脚本可以在开头设置所需环境，避免环境差异问题；(2) 脚本可以单独测试和调试，确保正确性；(3) 脚本可以被多个cron任务复用，减少重复。推荐所有cron任务都调用独立脚本。
 
 ### Q2：crontab中能跑但手动执行报错（或反之）怎么办？
-这是典型的环境差异问题。cron环境的PATH最小化，很多命令找不到。解决方法：(1) 在脚本开头设置 `export PATH=/usr/local/bin:/usr/bin:/bin`；(2) 所有命令使用绝对路径（如 `/usr/bin/python3`）；(3) 在脚本内 `source ~/.bashrc` 加载环境变量；(4) 检查cron运行用户与手动执行用户是否一致。
+这是典型的环境差异问题。cron环境的PATH最小化，很多命令找不到。解决方法：(1) 在脚本开头设置 `export PATH=/usr/local/bin:/usr/bin:/bin`；(2) 所有命令使用绝对路径（如 `/usr/（请参考skill目录中的脚本文件）`）；(3) 在脚本内 `source ~/.bashrc` 加载环境变量；(4) 检查cron运行用户与手动执行用户是否一致。
 
 ### Q3：超时保护应该设置多长？
 取决于任务类型：(1) 轻量任务（日志清理、状态检查）：60-300秒；(2) 中量任务（数据同步、文件处理）：300-1800秒；(3) 重量任务（数据库备份、大数据处理）：1800-7200秒。原则是设置为预期执行时间的2-3倍，留出余量。

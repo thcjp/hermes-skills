@@ -153,7 +153,7 @@ suggested_price: 99.9
 
 ```bash
 #!/usr/bin/env bash
-# scripts/lint-report.sh — 生成团队规范违规报告
+# （请参考skill目录中的脚本文件） — 生成团队规范违规报告
 set -euo pipefail
 
 REPORT_DIR="reports/lint"
@@ -256,7 +256,7 @@ npx tsc --noEmit
 npx type-coverage --strict --at-least 95
 
 # 生成首份基线报告
-bash scripts/lint-report.sh
+bash （请参考skill目录中的脚本文件）
 ```
 
 #
@@ -298,7 +298,7 @@ bash scripts/lint-report.sh
 
 ```bash
 #!/usr/bin/env bash
-# scripts/gen-styleguide.sh — 从 ESLint 规则生成规范文档
+# （请参考skill目录中的脚本文件） — 从 ESLint 规则生成规范文档
 set -euo pipefail
 
 OUTPUT="docs/styleguide.md"
@@ -344,7 +344,7 @@ echo "规范文档已生成:$OUTPUT"
 
 ### Q4: 规范文档如何与代码保持同步?
 
-使用 `scripts/gen-styleguide.sh` 在 CI 中自动重新生成规范文档,若文档与规则集不一致则阻断 PR。规范变更通过修改规则集 PR 一次性完成。
+使用 `（请参考skill目录中的脚本文件）` 在 CI 中自动重新生成规范文档,若文档与规则集不一致则阻断 PR。规范变更通过修改规则集 PR 一次性完成。
 
 ### Q5: Pro 版与免费版如何协同?
 

@@ -70,7 +70,7 @@ suggested_price: 29.9
 
 ```bash
 # 初始化任务队列
-python3 scripts/queue_task.py init my-batch-task
+python3 （请参考skill目录中的脚本文件） init my-batch-task
 ```
 
 ```python
@@ -100,10 +100,10 @@ print(queue.status())
 
 ```bash
 # 查看队列状态
-python3 scripts/queue_task.py status my-batch-task
+python3 （请参考skill目录中的脚本文件） status my-batch-task
 
 # 清理过期锁
-python3 scripts/queue_task.py clear-stale-lock my-batch-task
+python3 （请参考skill目录中的脚本文件） clear-stale-lock my-batch-task
 ```
 
 ---
@@ -113,13 +113,13 @@ python3 scripts/queue_task.py clear-stale-lock my-batch-task
 
 | 命令 | 说明 |
 |------|------|
-| `python3 scripts/queue_task.py init <slug>` | 初始化任务目录与状态文件 |
-| `python3 scripts/queue_task.py status <slug>` | 查看队列状态 |
-| `python3 scripts/queue_task.py clear-stale-lock <slug>` | 清理过期锁 |
+| `python3 （请参考skill目录中的脚本文件） init <slug>` | 初始化任务目录与状态文件 |
+| `python3 （请参考skill目录中的脚本文件） status <slug>` | 查看队列状态 |
+| `python3 （请参考skill目录中的脚本文件） clear-stale-lock <slug>` | 清理过期锁 |
 
 ```bash
 # 初始化一个图片处理任务队列
-python3 scripts/queue_task.py init image-processing
+python3 （请参考skill目录中的脚本文件） init image-processing
 
 # 输出：
 # 已创建任务目录: workspace/tasks/image-processing/

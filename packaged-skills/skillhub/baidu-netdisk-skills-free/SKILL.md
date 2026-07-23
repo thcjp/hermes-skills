@@ -46,7 +46,7 @@ homepage: "https://skillhub.cn"
 
 ## 已知限制
 
-1. **登录**：必须使用 `bash ${CLAUDE_SKILL_DIR}/scripts/login.sh`，禁止直接调用 `bdpan login`
+1. **登录**：必须使用 `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）`，禁止直接调用 `bdpan login`
 2. **Token/配置**：禁止读取或输出 `~/.config/bdpan/config.json` 内容
 3. **路径安全**：禁止路径穿越（`..`、`~`）、禁止访问 `/apps/bdpan/` 范围外的绝对路径
 4. **文件大小**：本免费版仅支持 ≤50MB 的小文件下载，不支持 nohup 后台下载策略
@@ -55,8 +55,8 @@ homepage: "https://skillhub.cn"
 
 每次触发时按顺序执行：
 
-1. **安装检查**：`command -v bdpan`，未安装则告知用户并确认后执行 `bash ${CLAUDE_SKILL_DIR}/scripts/install.sh`
-2. **登录检查**：`bdpan whoami`，未登录则引导执行 `bash ${CLAUDE_SKILL_DIR}/scripts/login.sh`
+1. **安装检查**：`command -v bdpan`，未安装则告知用户并确认后执行 `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）`
+2. **登录检查**：`bdpan whoami`，未登录则引导执行 `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）`
 3. **路径校验**：验证远端路径在 `/apps/bdpan/` 范围内
 
 ## 确认规则
@@ -165,13 +165,13 @@ bdpan upload ./notes.md backup/notes.md
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
-| `bdpan: command not found` | 未安装 bdpan 工具 | 引导用户确认后执行 `bash ${CLAUDE_SKILL_DIR}/scripts/install.sh` |
-| `未登录` / `whoami 失败` | Token 过期或未登录 | 引导执行 `bash ${CLAUDE_SKILL_DIR}/scripts/login.sh` 重新登录 |
+| `bdpan: command not found` | 未安装 bdpan 工具 | 引导用户确认后执行 `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）` |
+| `未登录` / `whoami 失败` | Token 过期或未登录 | 引导执行 `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）` 重新登录 |
 | 路径穿越被拦截 | 路径含 `..`、`~` 或绝对路径越界 | 拒绝执行，提示操作仅限 `/apps/bdpan/` 范围内相对路径 |
 | 远端文件不存在 | `bdpan ls` 返回空 | 检查路径拼写，用 `bdpan ls` 确认目录内容 |
 | 文件超过 50MB | 本免费版不支持大文件后台下载 | 提示用户升级至付费版 baidu-netdisk-skills 技能 |
 | 同名文件已存在 | 上传/下载目标路径已有同名文件 | 列出现有文件，询问覆盖还是重命名，确认后执行 |
-| 直接调用 bdpan login 被拦截 | Agent 误用裸 `bdpan login` 命令 | 禁止该调用，必须通过 `scripts/login.sh` 执行登录 |
+| 直接调用 bdpan login 被拦截 | Agent 误用裸 `bdpan login` 命令 | 禁止该调用，必须通过 `（请参考skill目录中的脚本文件）` 执行登录 |
 
 ## 常见问题
 
@@ -193,7 +193,7 @@ A：安全限制。所有操作限定在 `/apps/bdpan/` 范围内，禁止路径
 - 仅支持 ≤50MB 小文件下载，不支持大文件后台下载策略。
 - 不支持转存、分享、搜索、移动、复制、重命名、删除等操作。
 - 不支持 Agent 记忆备份与恢复功能。
-- 登录必须通过 `scripts/login.sh`，禁止直接调用 `bdpan login`。
+- 登录必须通过 `（请参考skill目录中的脚本文件）`，禁止直接调用 `bdpan login`。
 - 禁止读取或输出 `~/.config/bdpan/config.json` 等敏感凭据配置。
 
 ## 升级提示
@@ -238,18 +238,18 @@ export API_KEY="your_api_key_here"
 
 **写操作**
 
-**输入**: 用户提供触发规则所需的参数和指令。
+**输入**: 用户提供触发规则相关的配置参数、输入数据和处理选项。
 **输出**: 返回触发规则的执行结果,包含操作状态和输出数据。
 
 ### 前置检查
 
 每次触发时按顺序执行：
 
-1. **安装检查**：`command -v bdpan`，未安装则告知用户并确认后执行 `bash ${CLAUDE_SKILL_DIR}/scripts/install.sh`
-2. **登录检查**：`bdpan whoami`，未登录则引导执行 `bash ${CLAUDE_SKILL_DIR}/scripts/login.sh`
+1. **安装检查**：`command -v bdpan`，未安装则告知用户并确认后执行 `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）`
+2. **登录检查**：`bdpan whoami`，未登录则引导执行 `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）`
 3. **路径校验**：验证远
 
-**输入**: 用户提供前置检查所需的参数和指令。
+**输入**: 用户提供前置检查相关的配置参数、输入数据和处理选项。
 **输出**: 返回前置检查的执行结果,包含操作状态和输出数据。
 
 ### 确认规则
@@ -260,7 +260,7 @@ export API_KEY="your_api_key_here"
 | **中（路径模糊时确认）** | upload、download | 路径明确直接执行，不明确则确认 |
 | **低（直接执行）** | ls、whoami | 无需确认 |
 
-**输入**: 用户提供确认规则所需的参数和指令。
+**输入**: 用户提供确认规则相关的配置参数、输入数据和处理选项。
 **输出**: 返回确认规则的执行结果,包含操作状态和输出数据。
 
 ### 基础操作
@@ -284,7 +284,7 @@ bdpan ls [目录路径] [--json] [--order name|time|size] [--desc] [--folder]
 ```bash
 bdpan upload <本地路径> <远端路径
 
-**输入**: 用户提供基础操作所需的参数和指令。
+**输入**: 用户提供基础操作相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行基础操作操作。
 **输出**: 返回基础操作的执行结果,包含操作状态和输出数据。
 
@@ -308,7 +308,7 @@ bdpan upload <本地路径> <远端路径
 4. **确认执行**：高风险操作展示影响范围等待确认；低风险直接执行。
 5. **结果呈现**：展示操作结果，路径用中文名呈现。
 
-**输入**: 用户提供工作流程所需的参数和指令。
+**输入**: 用户提供工作流程相关的配置参数、输入数据和处理选项。
 
 ### 触发条件
 

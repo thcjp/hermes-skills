@@ -115,7 +115,7 @@ export JIRA_BOARD="ABC"
 执行以下命令，能正常返回任务列表即代表配置成功：
 
 ```bash
-bash {baseDir}/scripts/jira.sh my 5
+bash {baseDir}/（请参考skill目录中的脚本文件） my 5
 ```
 
 ### 运行环境要求
@@ -139,28 +139,28 @@ bash {baseDir}/scripts/jira.sh my 5
 
 ```bash
 # 检索任务
-bash {baseDir}/scripts/jira.sh search "登录超时" 10
+bash {baseDir}/（请参考skill目录中的脚本文件） search "登录超时" 10
 
 # 查看任务详情
-bash {baseDir}/scripts/jira.sh issue ABC-123
+bash {baseDir}/（请参考skill目录中的脚本文件） issue ABC-123
 
 # 更新状态（自动校验流转）
-bash {baseDir}/scripts/jira.sh status ABC-123 "In Progress"
+bash {baseDir}/（请参考skill目录中的脚本文件） status ABC-123 "In Progress"
 
 # 分配给自己
-bash {baseDir}/scripts/jira.sh assign-me ABC-123
+bash {baseDir}/（请参考skill目录中的脚本文件） assign-me ABC-123
 
 # 添加评论
-bash {baseDir}/scripts/jira.sh comment ABC-123 "已修复并部署到预发"
+bash {baseDir}/（请参考skill目录中的脚本文件） comment ABC-123 "已修复并部署到预发"
 
 # 创建任务
-bash {baseDir}/scripts/jira.sh create "修复登录超时" "用户登录5分钟后被登出"
+bash {baseDir}/（请参考skill目录中的脚本文件） create "修复登录超时" "用户登录5分钟后被登出"
 
 # 记录工时
-bash {baseDir}/scripts/jira.sh log ABC-123 2.5 2025-01-18
+bash {baseDir}/（请参考skill目录中的脚本文件） log ABC-123 2.5 2025-01-18
 
 # 工时统计（按时间区间）
-bash {baseDir}/scripts/jira.sh hours 2025-01-01 2025-01-07
+bash {baseDir}/（请参考skill目录中的脚本文件） hours 2025-01-01 2025-01-07
 ```
 
 ## 最佳实践

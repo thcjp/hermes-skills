@@ -1566,6 +1566,22 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = F
     l7_template_block_total = 0
     l7_available_count = 0
 
+    # Layer 7b (可执行性) 统计
+    l7b_grades = {"A": 0, "B": 0, "C": 0, "D": 0, "F": 0, "N/A": 0}
+    l7b_issues_list = []
+    l7b_score_sum = 0
+    l7b_available_count = 0
+    l7b_executable_count = 0
+    # 6项检查触发分布
+    l7b_check_distribution = {
+        "L7B_NO_CODE": 0,
+        "L7B_BROKEN_REF": 0,
+        "L7B_VAGUE_TASK": 0,
+        "L7B_MISSING_INPUT": 0,
+        "L7B_NO_OUTPUT": 0,
+        "L7B_CONTRADICTION": 0,
+    }
+
     for result in all_results:
         sev = result["severity"]
         by_severity[sev] += 1
@@ -1644,6 +1660,41 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = F
                 "issues": sem["issues"],
             })
 
+        # 收集可执行性审计统计 (Layer 7b)
+        exe = result.get("executability", {})
+        l7b_grade = exe.get("l7b_grade", "N/A")
+        l7b_score = exe.get("l7b_score", -1)
+        if l7b_grade not in l7b_grades:
+            l7b_grades[l7b_grade] = 0
+        l7b_grades[l7b_grade] += 1
+        if l7b_score >= 0:
+            l7b_score_sum += l7b_score
+            l7b_available_count += 1
+        if exe.get("executable"):
+            l7b_executable_count += 1
+        # 统计6项检查触发分布
+        for issue in exe.get("issues", []):
+            issue_code = None
+            if isinstance(issue, dict):
+                issue_code = issue.get("code")
+            elif isinstance(issue, str):
+                # 形如 "L7B_NO_CODE: ..." 
+                m = re.match(r'(L7B_\w+)', issue)
+                issue_code = m.group(1) if m else None
+            if issue_code and issue_code in l7b_check_distribution:
+                l7b_check_distribution[issue_code] += 1
+        if exe.get("issues"):
+            l7b_issues_list.append({
+                "slug": result["slug"],
+                "source": result["source"],
+                "grade": l7b_grade,
+                "score": l7b_score,
+                "executable": exe.get("executable"),
+                "checks_passed": exe.get("checks_passed", 0),
+                "checks_failed": exe.get("checks_failed", 0),
+                "issues": exe["issues"],
+            })
+
         entry = {
             "slug": result["slug"],
             "source": result["source"],
@@ -1659,6 +1710,9 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = F
             "authenticity_score": auth_score,
             "semantic_grade": sem.get("l7a_grade", "N/A") if 'sem' in dir() else "N/A",
             "semantic_score": sem.get("l7a_score", -1) if 'sem' in dir() else -1,
+            "executability_grade": l7b_grade,
+            "executability_score": l7b_score,
+            "executable": exe.get("executable"),
         }
 
         if sev == "critical":
@@ -1711,6 +1765,17 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = F
             "total_template_blocks": l7_template_block_total,
             "total_with_issues": len(l7_issues_list),
             "issues_detail": l7_issues_list[:100],
+        },
+        "executability_audit": {
+            "enabled": enable_l7b,
+            "l7b_available_count": l7b_available_count,
+            "grade_distribution": l7b_grades,
+            "avg_score": round(l7b_score_sum / l7b_available_count, 1) if l7b_available_count else 0,
+            "executable_count": l7b_executable_count,
+            "pass_rate": f"{l7b_executable_count * 100 // total}%" if total else "0%",
+            "check_distribution": l7b_check_distribution,
+            "total_with_issues": len(l7b_issues_list),
+            "issues_detail": l7b_issues_list,
         },
     }
 
@@ -1830,6 +1895,35 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = F
             na_count = l7_grades.get('N/A', 0)
             print(f"  模型不可用: {na_count} 个 skill 跳过 L7a 分析")
             print(f"  安装 sentence-transformers 以启用: pip install sentence-transformers")
+
+    # Layer 7b: 可执行性审计统计
+    if enable_l7b:
+        print()
+        print("─" * 60)
+        print("可执行性审计 (Layer 7b: Executability Audit - L7b 静态可执行性检查):")
+        if l7b_available_count > 0:
+            l7b_avg = l7b_score_sum / l7b_available_count
+            print(f"  已分析: {l7b_available_count} / {total} 个 skill")
+            print(f"  平均分: {l7b_avg:.1f} / 100")
+            print(f"  等级分布: A={l7b_grades.get('A',0)}  B={l7b_grades.get('B',0)}  "
+                  f"C={l7b_grades.get('C',0)}  D={l7b_grades.get('D',0)}  "
+                  f"F={l7b_grades.get('F',0)}  N/A={l7b_grades.get('N/A',0)}")
+            print(f"  可执行: {l7b_executable_count} / {total} ({l7b_executable_count*100//total if total else 0}%)")
+            print(f"  6项检查触发分布:")
+            for code, cnt in l7b_check_distribution.items():
+                print(f"    {code}: {cnt}")
+            print(f"  有问题skill: {len(l7b_issues_list)} 个")
+            if l7b_issues_list:
+                severe_l7b = [item for item in l7b_issues_list if item['grade'] in ('C', 'D', 'F')]
+                if severe_l7b:
+                    print(f"  C+D+F级 (严重可执行性问题): {len(severe_l7b)} 个")
+                    for item in severe_l7b[:20]:
+                        issues_str = '; '.join(
+                            (i if isinstance(i, str) else i.get('message', str(i))) for i in item['issues'][:2]
+                        )
+                        print(f"    [{item['grade']}] {item['slug']} (分:{item['score']}): {issues_str}")
+                    if len(severe_l7b) > 20:
+                        print(f"    ... 还有 {len(severe_l7b) - 20} 个")
 
     if critical_issues:
         print()

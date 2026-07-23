@@ -67,13 +67,13 @@ suggested_price: 29.9
 
 ```bash
 # 压缩单日日志为结构化摘要
-node scripts/context-compressor.js memory/2026-03-14.md
+node （请参考skill目录中的脚本文件） memory/2026-03-14.md
 
 # 指定输出路径
-node scripts/context-compressor.js memory/2026-03-14.md /tmp/compressed.md
+node （请参考skill目录中的脚本文件） memory/2026-03-14.md /tmp/compressed.md
 
 # 压缩后追加到长期记忆
-node scripts/context-compressor.js memory/2026-03-14.md /tmp/today.md
+node （请参考skill目录中的脚本文件） memory/2026-03-14.md /tmp/today.md
 cat /tmp/today.md >> MEMORY.md
 ```
 
@@ -85,7 +85,7 @@ cat /tmp/today.md >> MEMORY.md
 
 #
 ## 记忆维护（每2-3天执行）
-1. 执行：node scripts/context-compressor.js memory/YYYY-MM-DD.md /tmp/compressed.md
+1. 执行：node （请参考skill目录中的脚本文件） memory/YYYY-MM-DD.md /tmp/compressed.md
 2. 人工审核压缩结果准确性
 3. 追加：cat /tmp/compressed.md >> MEMORY.md
 4. 记录时间戳：date +%s > .last-memory-maintenance
@@ -178,7 +178,7 @@ cat /tmp/today.md >> MEMORY.md
 ```bash
 # 每周批量压缩本周日志
 for file in memory/2026-03-{08..14}.md; do
-    [ -f "$file" ] && node scripts/context-compressor.js "$file" "/tmp/$(basename $file)"
+    [ -f "$file" ] && node （请参考skill目录中的脚本文件） "$file" "/tmp/$(basename $file)"
 done
 
 # 合并压缩结果到长期记忆
@@ -194,7 +194,7 @@ cat /tmp/2026-03-*.md >> MEMORY.md
 **解决方案**：
 ```bash
 # 每月定期压缩
-node scripts/context-compressor.js memory/2026-02.md /tmp/feb-summary.md
+node （请参考skill目录中的脚本文件） memory/2026-02.md /tmp/feb-summary.md
 
 # 审核后替换原始日志
 mv /tmp/feb-summary.md memory/2026-02-compressed.md
@@ -210,7 +210,7 @@ mv /tmp/feb-summary.md memory/2026-02-compressed.md
 ```bash
 # 压缩整个项目周期的日志
 for file in memory/2026-{02,03,04}-*.md; do
-    [ -f "$file" ] && node scripts/context-compressor.js "$file" "/tmp/$(basename $file)"
+    [ -f "$file" ] && node （请参考skill目录中的脚本文件） "$file" "/tmp/$(basename $file)"
 done
 
 # 生成项目决策摘要
@@ -225,16 +225,16 @@ cat /tmp/2026-*.md > PROJECT-DECISIONS.md
 
 ```text
 用法：
-  node scripts/context-compressor.js <日志文件> [输出文件]
-  node scripts/context-compressor.js --help
+  node （请参考skill目录中的脚本文件） <日志文件> [输出文件]
+  node （请参考skill目录中的脚本文件） --help
 
 参数：
   <日志文件>    必填，要压缩的日志文件路径
   [输出文件]    可选，压缩结果输出路径，默认输出到标准输出
 
 示例：
-  node scripts/context-compressor.js memory/2026-03-14.md
-  node scripts/context-compressor.js memory/2026-03-14.md /tmp/compressed.md
+  node （请参考skill目录中的脚本文件） memory/2026-03-14.md
+  node （请参考skill目录中的脚本文件） memory/2026-03-14.md /tmp/compressed.md
 ```
 
 ---

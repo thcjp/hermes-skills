@@ -80,7 +80,7 @@ suggested_price: 29.9
 
 ```bash
 # 创建安全沙箱运行
-python3 scripts/sandbox.py run \
+python3 （请参考skill目录中的脚本文件） run \
   --image python:3.11-slim \
   --script ./untrusted.py \
   --no-network \
@@ -98,7 +98,7 @@ python3 scripts/sandbox.py run \
 
 ```bash
 # 沙箱测试镜像
-python3 scripts/sandbox.py test-image \
+python3 （请参考skill目录中的脚本文件） test-image \
   --image my-app:test \
   --network restricted \
   --memory 512m \
@@ -111,7 +111,7 @@ python3 scripts/sandbox.py test-image \
 
 ```bash
 # 创建实验沙箱
-python3 scripts/sandbox.py create \
+python3 （请参考skill目录中的脚本文件） create \
   --image ubuntu:22.04 \
   --name experiment \
   --network none \
@@ -120,7 +120,7 @@ python3 scripts/sandbox.py create \
   --volume /tmp/sandbox:/data:rw
 
 # 进入沙箱
-python3 scripts/sandbox.py exec --name experiment
+python3 （请参考skill目录中的脚本文件） exec --name experiment
 ```
 
 ## 快速开始
@@ -141,27 +141,27 @@ python3 scripts/sandbox.py exec --name experiment
 pip install docker
 
 # 验证
-python3 scripts/sandbox.py info
+python3 （请参考skill目录中的脚本文件） info
 ```
 
 ### 常用命令
 
 ```bash
 # 创建沙箱
-python3 scripts/sandbox.py create --image ubuntu:22.04 --name test --network none
+python3 （请参考skill目录中的脚本文件） create --image ubuntu:22.04 --name test --network none
 
 # 运行脚本
-python3 scripts/sandbox.py run --image python:3.11 --script ./test.py --no-network --timeout 60
+python3 （请参考skill目录中的脚本文件） run --image python:3.11 --script ./test.py --no-network --timeout 60
 
 # 测试镜像
-python3 scripts/sandbox.py test-image --image my-app:test --command "npm test"
+python3 （请参考skill目录中的脚本文件） test-image --image my-app:test --command "npm test"
 
 # 列出沙箱
-python3 scripts/sandbox.py list
+python3 （请参考skill目录中的脚本文件） list
 
 # 清理沙箱
-python3 scripts/sandbox.py cleanup --name test
-python3 scripts/sandbox.py cleanup --all
+python3 （请参考skill目录中的脚本文件） cleanup --name test
+python3 （请参考skill目录中的脚本文件） cleanup --all
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。

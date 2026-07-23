@@ -133,7 +133,7 @@ python3 -c "import sys; print(sys.executable)"
 # 创建虚拟环境
 python3 -m venv .venv
 # 依赖说明
-.venv/bin/pip install -r requirements.txt
+.venv/（请参考skill目录中的脚本文件） install -r requirements.txt
 ```
 
 ### 场景 2: 诊断环境问题
@@ -142,11 +142,11 @@ python3 -m venv .venv
 
 ```bash
 # 诊断步骤
-1. 确认使用 .venv/bin/python
+1. 确认使用 .venv/（请参考skill目录中的脚本文件）
 2. 检查依赖是否已安装
 3. 检查 PYTHONPATH 设置
 4. 重新安装依赖
-.venv/bin/python -m pip list --outdated
+.venv/（请参考skill目录中的脚本文件） -m pip list --outdated
 ```
 
 ## 不适用场景
@@ -178,7 +178,7 @@ python3 -m venv .venv
 ```bash
 # 标准工作流
 python3 -m venv .venv
-source .venv/bin/activate  # Linux/macOS
+source .venv/（请参考skill目录中的脚本文件）  # Linux/macOS
 # .venv\Scripts\activate  # Windows
 python3 -m pip install -r requirements.txt
 python3 -m pip install -e .  # 安装项目包
@@ -218,7 +218,7 @@ Agent 将自动:
 ```bash
 # 标准工作流
 python3 -m venv .venv
-source .venv/bin/activate  # Linux/macOS
+source .venv/（请参考skill目录中的脚本文件）  # Linux/macOS
 # .venv\Scripts\activate  # Windows
 python3 -m pip install -r requirements.txt
 python3 -m pip install -e .  # 安装项目包
@@ -266,7 +266,7 @@ python3 -m pip install -e .  # 安装项目包
 
 ### Q: ModuleNotFoundError 怎么办?
 
-A: 确认命令通过 .venv/bin/python 执行,然后重新安装依赖。
+A: 确认命令通过 .venv/（请参考skill目录中的脚本文件） 执行,然后重新安装依赖。
 
 ### Q: externally-managed-environment 错误?
 

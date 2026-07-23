@@ -54,25 +54,25 @@ pricing_model: "per_use"
 | 优先支持 | SLA保障 | 专属技术支持通道 |
 ### 实体与事实管理
 
-执行实体与事实管理操作,处理用户输入并返回结果。
+执行实体与事实管理,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供实体与事实管理所需的参数和指令。
+**输入**: 用户提供实体与事实管理相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回实体与事实管理的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`实体与事实管理`相关配置参数进行设置
 ### 图谱关系查询
 
-执行图谱关系查询操作,处理用户输入并返回结果。
+执行图谱关系查询,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供图谱关系查询所需的参数和指令。
+**输入**: 用户提供图谱关系查询相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回图谱关系查询的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`图谱关系查询`相关配置参数进行设置
 ### 知识分析
 
-执行知识分析操作,处理用户输入并返回结果。
+执行知识分析,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供知识分析所需的参数和指令。
+**输入**: 用户提供知识分析相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回知识分析的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`知识分析`相关配置参数进行设置
@@ -100,7 +100,7 @@ HR部门希望构建企业内部的专家网络图谱。为每位员工创建实
 
 ### 步骤1：批量导入事实
 ```bash
-python3 scripts/kg.py import \
+python3 （请参考skill目录中的脚本文件） import \
   --file knowledge.csv \
   --format csv \
   --dry-run
@@ -108,7 +108,7 @@ python3 scripts/kg.py import \
 
 ### 步骤2：执行图谱关系查询
 ```bash
-python3 scripts/kg.py graph \
+python3 （请参考skill目录中的脚本文件） graph \
   --entity people/zhangsan \
   --depth 2 \
   --relation similarity \
@@ -117,7 +117,7 @@ python3 scripts/kg.py graph \
 
 ### 步骤3：知识主题分析
 ```bash
-python3 scripts/kg.py analyze \
+python3 （请参考skill目录中的脚本文件） analyze \
   --scope all \
   --cluster-themes \
   --report markdown \
@@ -126,7 +126,7 @@ python3 scripts/kg.py analyze \
 
 ### 步骤4：跨实体关联可视化
 ```bash
-python3 scripts/kg.py network \
+python3 （请参考skill目录中的脚本文件） network \
   --entities people/zhangsan,projects/alpha,technologies/react \
   --format graphml \
   --output knowledge-network.graphml
@@ -134,7 +134,7 @@ python3 scripts/kg.py network \
 
 ### 步骤5：多格式导出
 ```bash
-python3 scripts/kg.py export \
+python3 （请参考skill目录中的脚本文件） export \
   --entity projects/alpha \
   --formats json,markdown,graphml \
   --output-dir ./export
@@ -145,8 +145,8 @@ python3 scripts/kg.py export \
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | graph-knowledge-base处理的内容输入 |,  |
+| content | string | 否 | graph-knowledge-base处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -155,9 +155,9 @@ python3 scripts/kg.py export \
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "base 相关配置参数",
+    result: "base 相关配置参数",
+    result: "base 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

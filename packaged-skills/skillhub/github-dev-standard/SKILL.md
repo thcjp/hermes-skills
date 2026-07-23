@@ -63,25 +63,25 @@ pricing_model: "per_use"
 | 代码审查 | - | 风险点自动识别与建议 |
 ### 能力模块
 
-执行能力模块操作,处理用户输入并返回结果。
+执行能力模块,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供能力模块所需的参数和指令。
+**输入**: 用户提供能力模块相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回能力模块的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`能力模块`相关配置参数进行设置
 ### 开发流程
 
-执行开发流程操作,处理用户输入并返回结果。
+执行开发流程,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供开发流程所需的参数和指令。
+**输入**: 用户提供开发流程相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回开发流程的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`开发流程`相关配置参数进行设置
 ### 编码纪律
 
-执行编码纪律操作,处理用户输入并返回结果。
+执行编码纪律,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供编码纪律所需的参数和指令。
+**输入**: 用户提供编码纪律相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回编码纪律的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`编码纪律`相关配置参数进行设置
@@ -121,7 +121,7 @@ pricing_model: "per_use"
    ```
 
 2. 自动化验收脚本
-   ./scripts/pre-merge-check.sh
+   （请参考skill目录中的脚本文件）
 
 3. CI 集成（自动运行验收脚本）
    参考 .github/workflows/quality-check.yml
@@ -133,7 +133,7 @@ pricing_model: "per_use"
 
 ```bash
 # 质量度量脚本
-cat > scripts/quality-metrics.sh << 'EOF'
+cat > （请参考skill目录中的脚本文件） << 'EOF'
 #!/bin/bash
 
 # 统计指定时间范围内的缺陷修复数据
@@ -163,7 +163,7 @@ echo "平均改动行数: $AVG_DIFF"
 echo ""
 echo "返工率: $(echo "scale=1; $REWORK_FILES * 100 / $FIX_COMMITS" | bc)%"
 EOF
-chmod +x scripts/quality-metrics.sh
+chmod +x （请参考skill目录中的脚本文件）
 ```
 
 ### 场景三：多文件同步修改检查
@@ -172,7 +172,7 @@ chmod +x scripts/quality-metrics.sh
 
 ```bash
 # 依赖说明
-cat > scripts/check-sync.sh << 'EOF'
+cat > （请参考skill目录中的脚本文件） << 'EOF'
 #!/bin/bash
 
 # 检查数据结构变更是否同步所有引用
@@ -203,7 +203,7 @@ git diff --stat HEAD~1
 echo ""
 git diff --shortstat HEAD~1
 EOF
-chmod +x scripts/check-sync.sh
+chmod +x （请参考skill目录中的脚本文件）
 ```
 
 ## 使用流程
@@ -248,14 +248,14 @@ jobs:
 
       - name: 验收清单检查
         run: |
-          ./scripts/pre-merge-check.sh
+          （请参考skill目录中的脚本文件）
 ```
 
 ### 自动化验收脚本
 
 ```bash
 #!/bin/bash
-# scripts/pre-merge-check.sh - 合并前自动化验收
+# （请参考skill目录中的脚本文件） - 合并前自动化验收
 
 set -e
 
@@ -294,7 +294,7 @@ echo "=== 验收完成 ==="
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | github-dev-standard处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式

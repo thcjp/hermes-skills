@@ -299,7 +299,7 @@ gh-manager dashboard live --port 8080
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | github-manager处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式
@@ -456,7 +456,7 @@ gh-manager dashboard live --port 8080
     type: notify
     channel: im
     target: "#pr-reviews"
-    message: "PR #（根据实际场景填充） 待review已超过24小时"
+    message: "PR #"manager_result" 待review已超过24小时"
 ```
 
 ## 常见问题

@@ -79,7 +79,7 @@ suggested_price: 29.9
 
 ```bash
 # 查看系统概览
-python3 scripts/monitor.py status
+python3 （请参考skill目录中的脚本文件） status
 
 # 输出：
 # === 系统状态 2026-07-18 10:30:00 ===
@@ -96,14 +96,14 @@ python3 scripts/monitor.py status
 
 ```bash
 # 设置CPU告警
-python3 scripts/monitor.py alert add \
+python3 （请参考skill目录中的脚本文件） alert add \
   --metric cpu_usage \
   --threshold 80 \
   --condition "above" \
   --notify "email"
 
 # 启动监控
-python3 scripts/monitor.py watch
+python3 （请参考skill目录中的脚本文件） watch
 ```
 
 ### 场景三：查看TOP进程
@@ -112,7 +112,7 @@ python3 scripts/monitor.py watch
 
 ```bash
 # TOP进程
-python3 scripts/monitor.py top --sort cpu --count 10
+python3 （请参考skill目录中的脚本文件） top --sort cpu --count 10
 
 # 输出占用最高的10个进程
 ```
@@ -132,27 +132,27 @@ python3 scripts/monitor.py top --sort cpu --count 10
 pip install psutil
 
 # 查看状态
-python3 scripts/monitor.py status
+python3 （请参考skill目录中的脚本文件） status
 ```
 
 ### 常用命令
 
 ```bash
 # 系统状态
-python3 scripts/monitor.py status
+python3 （请参考skill目录中的脚本文件） status
 
 # TOP进程
-python3 scripts/monitor.py top --sort cpu --count 10
-python3 scripts/monitor.py top --sort memory --count 10
+python3 （请参考skill目录中的脚本文件） top --sort cpu --count 10
+python3 （请参考skill目录中的脚本文件） top --sort memory --count 10
 
 # 设置告警
-python3 scripts/monitor.py alert add --metric cpu_usage --threshold 80 --notify email
+python3 （请参考skill目录中的脚本文件） alert add --metric cpu_usage --threshold 80 --notify email
 
 # 启动监控
-python3 scripts/monitor.py watch --interval 60
+python3 （请参考skill目录中的脚本文件） watch --interval 60
 
 # 历史数据
-python3 scripts/monitor.py history --metric cpu --hours 24
+python3 （请参考skill目录中的脚本文件） history --metric cpu --hours 24
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。

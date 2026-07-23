@@ -25,25 +25,25 @@ pricing_model: "per_use"
 
 | 能力 | 免费版 | 付费版 |
 |:-----|:-------|:-------|
-| （根据实际场景填充） - 生成生成内容 | 支持 | 支持 |
-| （根据实际场景填充） - 遵循专业风格规范 | 不支持 | 支持 |
-| （根据实际场景填充） - 支持多种变体等多种变体 | 不支持 | 支持 |
-| （根据实际场景填充） - 自动适配多种场景 | 不支持 | 支持 |
+| Agent Commercial Contract 核心处理 - 生成生成内容 | 支持 | 支持 |
+| Agent Commercial Contract 智能分析 - 遵循专业风格规范 | 不支持 | 支持 |
+| Agent Commercial Contract 批量处理 - 支持多种变体等多种变体 | 不支持 | 支持 |
+| Agent Commercial Contract 自定义配置 - 自动适配多种场景 | 不支持 | 支持 |
 | 批量处理 | 不支持 | 支持 |
 | 高级配置 | 不支持 | 支持 |
 
 ## 核心能力
 
-- （根据实际场景填充） - 生成生成内容
-- （根据实际场景填充） - 遵循专业风格规范
-- （根据实际场景填充） - 支持多种变体等多种变体
-- （根据实际场景填充） - 自动适配多种场景
+- Agent Commercial Contract 结果导出 - 生成生成内容
+- Agent Commercial Contract 实时监控 - 遵循专业风格规范
+- Agent Commercial Contract 错误重试 - 支持多种变体等多种变体
+- Agent Commercial Contract 多格式支持 - 自动适配多种场景
 #
 ## 适用场景
 
-- 用户说"（根据实际场景填充）" → 生成相关说明
-- 用户说"（根据实际场景填充）" → 生成相关说明
-- 用户说"（根据实际场景填充）" → 生成相关说明
+- 用户说"Agent Commercial Contract 扩展能力9" → 生成contract 相关配置参数
+- 用户说"Agent Commercial Contract 扩展能力10" → 生成contract 相关配置参数
+- 用户说"Agent Commercial Contract 扩展能力11" → 生成contract 相关配置参数
 - 不适用: 需要人工判断的复杂决策场景
 
 ## 使用流程
@@ -58,8 +58,8 @@ pricing_model: "per_use"
 ### Step 2: 模板选择
 根据输入生成专业内容
 根据需求选择对应模板:
-- （根据实际场景填充）: 相关说明
-- （根据实际场景填充）: 相关说明
+- Agent Commercial Contract 扩展能力12: contract 相关配置参数
+- Agent Commercial Contract 扩展能力13: contract 相关配置参数
 
 ### Step 3: 内容生成
 根据输入生成专业内容
@@ -68,16 +68,16 @@ pricing_model: "per_use"
 ### Step 4: 质量校验
 根据输入生成专业内容
 检查生成结果是否满足:
-- （根据实际场景填充）
-- （根据实际场景填充）
-- （根据实际场景填充）
+- Agent Commercial Contract 扩展能力14
+- Agent Commercial Contract 扩展能力15
+- Agent Commercial Contract 扩展能力16
 
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | agent-commercial-contract处理的内容输入 |,  |
+| content | string | 否 | agent-commercial-contract处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -86,9 +86,9 @@ pricing_model: "per_use"
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "contract 相关配置参数",
+    result: "contract 相关配置参数",
+    result: "contract 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

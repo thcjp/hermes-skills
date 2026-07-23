@@ -73,10 +73,10 @@ suggested_price: 19.9
 
 ```bash
 # 登录QQ空间
-python3 scripts/qzone.py login --qq 123456789
+python3 （请参考skill目录中的脚本文件） login --qq 123456789
 
 # 查看相册列表
-python3 scripts/qzone.py albums list
+python3 （请参考skill目录中的脚本文件） albums list
 
 # 输出：
 # === 我的相册 ===
@@ -91,7 +91,7 @@ python3 scripts/qzone.py albums list
 
 ```bash
 # 查看相册照片
-python3 scripts/qzone.py photos list \
+python3 （请参考skill目录中的脚本文件） photos list \
   --album "旅行照片" \
   --page 1
 
@@ -104,7 +104,7 @@ python3 scripts/qzone.py photos list \
 
 ```bash
 # 下载单张照片
-python3 scripts/qzone.py photo download \
+python3 （请参考skill目录中的脚本文件） photo download \
   --photo-id 12345 \
   --output ./downloads/
 
@@ -126,7 +126,7 @@ python3 scripts/qzone.py photo download \
 pip install requests beautifulsoup4
 
 # 登录QQ空间
-python3 scripts/qzone.py login --qq 123456789
+python3 （请参考skill目录中的脚本文件） login --qq 123456789
 # 根据提示完成登录认证
 ```
 
@@ -134,19 +134,19 @@ python3 scripts/qzone.py login --qq 123456789
 
 ```bash
 # 登录
-python3 scripts/qzone.py login --qq 123456789
+python3 （请参考skill目录中的脚本文件） login --qq 123456789
 
 # 相册管理
-python3 scripts/qzone.py albums list
-python3 scripts/qzone.py albums info --name "旅行照片"
+python3 （请参考skill目录中的脚本文件） albums list
+python3 （请参考skill目录中的脚本文件） albums info --name "旅行照片"
 
 # 照片管理
-python3 scripts/qzone.py photos list --album "旅行照片"
-python3 scripts/qzone.py photo download --photo-id 12345 --output ./downloads/
-python3 scripts/qzone.py photo info --photo-id 12345
+python3 （请参考skill目录中的脚本文件） photos list --album "旅行照片"
+python3 （请参考skill目录中的脚本文件） photo download --photo-id 12345 --output ./downloads/
+python3 （请参考skill目录中的脚本文件） photo info --photo-id 12345
 
 # 登出
-python3 scripts/qzone.py logout
+python3 （请参考skill目录中的脚本文件） logout
 ```
 
 ## 示例

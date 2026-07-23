@@ -65,7 +65,7 @@ suggested_price: 29.9
 npm install express@4.21.2
 
 # 2. 启动面板（token自动生成）
-node ~/workspace/dashboard/scripts/server.js
+node ~/workspace/dashboard/（请参考skill目录中的脚本文件）
 
 # 3. 读取打印的URL（含token）
 # 🏠 数据分析面板已就绪
@@ -102,7 +102,7 @@ node ~/workspace/dashboard/scripts/server.js
 ls ~/workspace/dashboard/data/
 
 # 2. 启动面板
-node ~/workspace/dashboard/scripts/server.js
+node ~/workspace/dashboard/（请参考skill目录中的脚本文件）
 
 # 3. 浏览器访问（使用打印的token）
 # http://127.0.0.1:19195/?token=xxx

@@ -206,7 +206,7 @@ pricing_model: "per_use"
 
 ```python
 #!/usr/bin/env python3
-# scripts/a11y_audit.py — WCAG AA 可访问性审查
+# （请参考skill目录中的脚本文件） — WCAG AA 可访问性审查
 import json
 import re
 import sys
@@ -335,7 +335,7 @@ if __name__ == '__main__':
 cp design-tokens.css src/styles/
 
 # 运行可访问性审查
-python3 scripts/a11y_audit.py src/
+python3 （请参考skill目录中的脚本文件） src/
 
 # 启动设计系统文档站点
 npm run storybook
@@ -348,7 +348,7 @@ npm run storybook
 
 ```python
 #!/usr/bin/env python3
-# scripts/export_tokens.py — 多平台令牌导出
+# （请参考skill目录中的脚本文件） — 多平台令牌导出
 import json
 from pathlib import Path
 

@@ -52,7 +52,7 @@ import json
 class GoogleSearcher:
     """Google搜索器（免费版）"""
 
-    def __init__(self, script_path="scripts/search-google.js"):
+    def __init__(self, script_path="（请参考skill目录中的脚本文件）"):
         self.script_path = script_path
         self.runtime = self._detect_runtime()
 
@@ -202,9 +202,9 @@ if result.get("success"):
 
 ### 30秒上手
 ```bash
-node scripts/search-google.js "人工智能" --num 10 --format json
+node （请参考skill目录中的脚本文件） "人工智能" --num 10 --format json
 
-bun scripts/search-google.js "人工智能" --num 10 --format json
+bun （请参考skill目录中的脚本文件） "人工智能" --num 10 --format json
 ```
 
 ### 120秒标准搭建
@@ -215,7 +215,7 @@ npx playwright install chromium
 node --version
 node -e "require('playwright')" && echo "Playwright已安装"
 
-node scripts/search-google.js "Python教程" --num 10 --format json > results.json
+node （请参考skill目录中的脚本文件） "Python教程" --num 10 --format json > results.json
 
 cat results.json | python3 -m json.tool | head -50
 
@@ -230,7 +230,7 @@ import os
 
 class GoogleSearchConfig:
     """谷歌搜索配置（免费版）"""
-    SCRIPT_PATH = os.getenv("GS_SCRIPT_PATH", "scripts/search-google.js")
+    SCRIPT_PATH = os.getenv("GS_SCRIPT_PATH", "（请参考skill目录中的脚本文件）")
     RUNTIME = os.getenv("GS_RUNTIME", "node")  # node 或 bun
     DEFAULT_NUM = int(os.getenv("GS_DEFAULT_NUM", "10"))
     DEFAULT_LANG = os.getenv("GS_DEFAULT_LANG", "zh-CN")

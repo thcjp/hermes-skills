@@ -150,7 +150,7 @@ python3 doge_tipping.py stats alice bob
 
 ```bash
 # 执行健康检查
-./doge_health_check.sh
+（请参考skill目录中的脚本文件）
 
 # 示例
 # [PASS] Dogecoin node process detected.

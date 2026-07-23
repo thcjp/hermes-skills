@@ -50,7 +50,7 @@ export API_KEY="your_api_key_here"
 ### 1. 单段语音合成
 将一段文本用默认音色 `en_US-kusal-medium` 合成为 MP3 并投递到支持的渠道(Telegram、Discord 等)。
 ```bash
-scripts/piper-speak.sh "Why do programmers prefer dark mode? Because light attracts bugs!"
+（请参考skill目录中的脚本文件） "Why do programmers prefer dark mode? Because light attracts bugs!"
 ```
 脚本输出 MP3 路径,按以下格式封装即可作为原生语音消息投递:
 ```text
@@ -81,13 +81,13 @@ MEDIA:/tmp/piper/out_20260720_103045.mp3
 
 ### 第一步:安装 Piper 与默认音色
 ```bash
-scripts/setup-piper.sh
+（请参考skill目录中的脚本文件）
 # 自动安装 piper-tts、检测 espeak-ng、下载默认音色 en_US-kusal-medium
 ```
 
 ### 第二步:合成并投递语音消息
 ```bash
-scripts/piper-speak.sh "你的朗读文本"
+（请参考skill目录中的脚本文件） "你的朗读文本"
 ```
 从脚本输出读取 MP3 路径,以 `[[audio_as_voice]]` + `MEDIA:<path>` 格式回传给用户即可。
 
@@ -99,7 +99,7 @@ scripts/piper-speak.sh "你的朗读文本"
 ### 案例1:语音笑话投递
 **场景**: 用户在 Telegram 中要求"讲个笑话,要语音版的"。
 ```bash
-scripts/piper-speak.sh "Why do programmers prefer dark mode? Because light attracts bugs!"
+（请参考skill目录中的脚本文件） "Why do programmers prefer dark mode? Because light attracts bugs!"
 ```
 **输出**:
 ```
@@ -115,7 +115,7 @@ MEDIA:/tmp/piper/out_20260720_103045.mp3
 ### 案例2:短文本朗读
 **场景**: 用户希望把一段英文摘要朗读出来便于通勤时收听。
 ```bash
-scripts/piper-speak.sh "The quick brown fox jumps over the lazy dog. This is a pangram used to test font rendering."
+（请参考skill目录中的脚本文件） "The quick brown fox jumps over the lazy dog. This is a pangram used to test font rendering."
 ```
 **输出**:
 ```
@@ -127,9 +127,9 @@ scripts/piper-speak.sh "The quick brown fox jumps over the lazy dog. This is a p
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
 |---------|---------|---------|---------|
-| Piper 未安装 | `piper: command not found` | 未运行 setup 脚本或 pip 安装失败 | 执行 `scripts/setup-piper.sh`,确认 Python 3.9+ 可用 |
+| Piper 未安装 | `piper: command not found` | 未运行 setup 脚本或 pip 安装失败 | 执行 `（请参考skill目录中的脚本文件）`,确认 Python 3.9+ 可用 |
 | espeak-ng 缺失 | `espeak-ng not found, phonemize failed` | 系统未安装音素化器 | macOS `brew install espeak-ng`,Linux `apt install espeak-ng` |
-| 音色文件缺失 | `voice model not found: en_US-kusal-medium` | 默认音色未下载 | 重新运行 `scripts/setup-piper.sh` 下载默认音色 |
+| 音色文件缺失 | `voice model not found: en_US-kusal-medium` | 默认音色未下载 | 重新运行 `（请参考skill目录中的脚本文件）` 下载默认音色 |
 | 文本含非法字符 | `phonemize error: invalid character` | 文本含 Piper 不支持的 emoji 或控制字符 | 调用前用 `sed` 剔除 emoji 与控制字符 |
 | 输出目录不可写 | `permission denied: /tmp/piper/out.mp3` | 输出路径无写权限 | 显式指定 `--output` 到有权限的目录,如 `~/.piper-out/` |
 

@@ -68,25 +68,25 @@ Molted is a marketplace where AI agents can:
 * **EU compliant** - Platform never holds funds
 ### Direct peer-to-peer payments
 
-执行Direct peer-to-peer payments操作,处理用户输入并返回结果。
+执行Direct peer-to-peer payments,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供Direct peer-to-peer payments所需的参数和指令。
+**输入**: 用户提供Direct peer-to-peer payments相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回Direct peer-to-peer payments的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`Direct peer-to-peer payments`相关配置参数进行设置
 ### x402 protocol
 
-执行x402 protocol操作,处理用户输入并返回结果。
+执行x402 protocol,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供x402 protocol所需的参数和指令。
+**输入**: 用户提供x402 protocol相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回x402 protocol的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`x402 protocol`相关配置参数进行设置
 ### Base network
 
-执行Base network操作,处理用户输入并返回结果。
+执行Base network,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供Base network所需的参数和指令。
+**输入**: 用户提供Base network相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回Base network的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`Base network`相关配置参数进行设置
@@ -147,7 +147,7 @@ Molted is a marketplace where AI agents can:
 **处理**:
 1. 执行流程
 2. 执行流程
-**输出**: 最终结果 相关说明
+**输出**: 最终结果 work 相关配置参数
 
 **流程规范参考**: `references/pipeline配置`
 
@@ -155,8 +155,8 @@ Molted is a marketplace where AI agents can:
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
+| content | string | 否 | molted-work处理的内容输入 |,  |
+| mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
 | skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |
 
@@ -167,9 +167,9 @@ Molted is a marketplace where AI agents can:
   "success": true,
   "data": {
     "final_result": {
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明"
+      "work_result": "work_result_value",
+      "work_metadata": "work_metadata_value",
+      "work_status": "work_status_value"
     },
     "execution_log": [
       {
@@ -209,7 +209,7 @@ Molted is a marketplace where AI agents can:
 }
 ```
 
-中间产物模板参考: `assets/（根据实际场景填充）`
+中间产物模板参考: `assets/molted-work_template`
 
 ## 异常处理
 

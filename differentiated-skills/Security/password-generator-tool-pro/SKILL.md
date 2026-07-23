@@ -112,7 +112,7 @@ pricing_model: "per_use"
 为新入职员工批量生成初始密码,符合公司安全策略。
 
 ```bash
-python scripts/generate_password.py \
+python （请参考skill目录中的脚本文件） \
   --batch 50 \
   --length 16 \
   --policy enterprise-strict \
@@ -133,7 +133,7 @@ id,username,password,length,entropy,strength,leak_check
 生成符合 PCI-DSS 标准的支付系统密码。
 
 ```bash
-python scripts/generate_password.py \
+python （请参考skill目录中的脚本文件） \
   --policy pci-dss \
   --length 16 \
   --check-leak \
@@ -145,7 +145,7 @@ python scripts/generate_password.py \
 生成易记忆但高安全性的口令短语。
 
 ```bash
-python scripts/generate_password.py \
+python （请参考skill目录中的脚本文件） \
   --type passphrase \
   --words 5 \
   --separator "-" \
@@ -157,7 +157,7 @@ python scripts/generate_password.py \
 ### 场景四:API密钥生成
 
 ```bash
-python scripts/generate_password.py \
+python （请参考skill目录中的脚本文件） \
   --type api-key \
   --length 32 \
   --format hex \
@@ -372,7 +372,7 @@ class PasswordGeneratorPro:
 generate-secrets:
   stage: deploy
   script:
-    - python scripts/generate_password.py --batch 10 --policy enterprise-strict --format json --output secrets.json
+    - python （请参考skill目录中的脚本文件） --batch 10 --policy enterprise-strict --format json --output secrets.json
     - |
       python -c "
       import json
@@ -392,7 +392,7 @@ generate-secrets:
 
 ```bash
 # 每90天自动生成新密码并检测泄露
-python scripts/generate_password.py \
+python （请参考skill目录中的脚本文件） \
   --policy enterprise-strict \
   --check-leak \
   --format json \

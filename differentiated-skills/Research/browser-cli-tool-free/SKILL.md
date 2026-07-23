@@ -148,8 +148,8 @@ agent-browser find role button click --name "提交"
 将签到脚本加入定时任务,实现每日自动签到。
 
 ```bash
-# 创建脚本 ~/.skill-platform/scripts/daily-checkin.sh
-cat > ~/.skill-platform/scripts/daily-checkin.sh << 'EOF'
+# 创建脚本 ~/.skill-platform/（请参考skill目录中的脚本文件）
+cat > ~/.skill-platform/（请参考skill目录中的脚本文件） << 'EOF'
 #!/bin/bash
 agent-browser open https://example.com/checkin
 sleep 2
@@ -158,11 +158,11 @@ agent-browser screenshot /tmp/checkin_$(date +%Y%m%d).png
 agent-browser close
 EOF
 
-chmod +x ~/.skill-platform/scripts/daily-checkin.sh
+chmod +x ~/.skill-platform/（请参考skill目录中的脚本文件）
 
 # 加入 crontab(每天 9:00 执行)
 # crontab -e
-# 0 9 * * * ~/.skill-platform/scripts/daily-checkin.sh
+# 0 9 * * * ~/.skill-platform/（请参考skill目录中的脚本文件）
 ```
 
 ## 快速开始

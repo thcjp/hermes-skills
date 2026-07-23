@@ -112,21 +112,21 @@ export LINEAR_API_KEY="你的Linear API密钥"
 
 ### Step 3：查询团队
 ```bash
-node {baseDir}/scripts/linear-cli.js teams
+node {baseDir}/（请参考skill目录中的脚本文件） teams
 ```
 
 ### Step 4：查看问题
 ```bash
 # 列出所有问题
-node {baseDir}/scripts/linear-cli.js issues
+node {baseDir}/（请参考skill目录中的脚本文件） issues
 
 # 查看特定问题
-node {baseDir}/scripts/linear-cli.js issue ENG-123
+node {baseDir}/（请参考skill目录中的脚本文件） issue ENG-123
 ```
 
 ### Step 5：创建问题
 ```bash
-node {baseDir}/scripts/linear-cli.js createIssue "修复登录页样式" "Safari下按钮错位" "team-id" '{"priority":2}'
+node {baseDir}/（请参考skill目录中的脚本文件） createIssue "修复登录页样式" "Safari下按钮错位" "team-id" '{"priority":2}'
 ```
 
 ## 示例

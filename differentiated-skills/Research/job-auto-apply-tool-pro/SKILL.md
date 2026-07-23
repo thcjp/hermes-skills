@@ -84,7 +84,7 @@ pricing_model: "per_use"
 #### 1. 多平台批量投递
 
 ```bash
-python scripts/batch_apply.py \
+python （请参考skill目录中的脚本文件） \
   --profiles-dir ./candidates/ \
   --platforms linkedin,indeed,glassdoor,ziprecruiter,wellfound \
   --max-applications 100 \
@@ -98,12 +98,12 @@ python scripts/batch_apply.py \
 
 ```bash
 # 追踪所有申请状态
-python scripts/application_tracker.py \
+python （请参考skill目录中的脚本文件） \
   --status all \
   --output=tracking_report.json
 
 # 设置状态变更提醒
-python scripts/application_tracker.py \
+python （请参考skill目录中的脚本文件） \
   --alert-on-change \
   --alert-email=recruiter@agency.com
 ```
@@ -112,7 +112,7 @@ python scripts/application_tracker.py \
 
 ```bash
 # 生成投递效果报告
-python scripts/analytics.py \
+python （请参考skill目录中的脚本文件） \
   --period="2026-01" \
   --output=performance_report.md \
   --include-charts \
@@ -123,7 +123,7 @@ python scripts/analytics.py \
 
 ```bash
 # AI 推荐匹配职位
-python scripts/ai_matcher.py \
+python （请参考skill目录中的脚本文件） \
   --profile ~/candidate_profile.json \
   --recommend-jobs \
   --min-score 0.85 \
@@ -152,7 +152,7 @@ python scripts/ai_matcher.py \
 
 ```bash
 # 批量管理候选人
-python scripts/candidate_manager.py \
+python （请参考skill目录中的脚本文件） \
   --import-dir ./candidate_profiles/ \
   --platforms linkedin,indeed,glassdoor \
   --batch-apply \
@@ -160,7 +160,7 @@ python scripts/candidate_manager.py \
   --tracking-enabled
 
 # 生成候选人状态报告
-python scripts/candidate_report.py \
+python （请参考skill目录中的脚本文件） \
   --output=candidates_status.md \
   --include-applications \
   --include-responses
@@ -174,7 +174,7 @@ python scripts/candidate_report.py \
 
 ```bash
 # 配置大规模投递任务
-python scripts/batch_apply.py \
+python （请参考skill目录中的脚本文件） \
   --profile ~/job_profile.json \
   --platforms linkedin,indeed,glassdoor,ziprecruiter,wellfound \
   --title "Senior Software Engineer" \
@@ -195,7 +195,7 @@ python scripts/batch_apply.py \
 
 ```bash
 # 配置定时投递
-python scripts/scheduled_apply.py \
+python （请参考skill目录中的脚本文件） \
   --profile ~/job_profile.json \
   --title "Software Engineer" \
   --cron="0 9,14,18 * * 1-5" \
@@ -221,10 +221,10 @@ python scripts/scheduled_apply.py \
 pip install pandas apscheduler openai
 
 # 导入免费版资料
-python scripts/migrate.py --from-free --import-profiles
+python （请参考skill目录中的脚本文件） --from-free --import-profiles
 
 # 验证升级
-python scripts/batch_apply.py --version
+python （请参考skill目录中的脚本文件） --version
 # 输出: job-auto-apply-tool-pro v1.0.0
 ```
 
@@ -237,7 +237,7 @@ cp profile_template.json ./candidates/candidate_1.json
 cp profile_template.json ./candidates/candidate_2.json
 
 # 执行批量投递
-python scripts/batch_apply.py \
+python （请参考skill目录中的脚本文件） \
   --profiles-dir ./candidates/ \
   --platforms linkedin,indeed \
   --max-applications 20 \
@@ -309,7 +309,7 @@ team:
 
 ```bash
 # 启动 REST API 服务
-python scripts/api_server.py --port 8000
+python （请参考skill目录中的脚本文件） --port 8000
 
 # 提交批量申请
 curl -X POST http://localhost:8000/batch-apply \
@@ -366,13 +366,13 @@ results = config.execute(
 
 ```bash
 # 查看所有申请状态
-python scripts/application_tracker.py --status all
+python （请参考skill目录中的脚本文件） --status all
 
 # 过滤特定状态
-python scripts/application_tracker.py --status "interview,offer"
+python （请参考skill目录中的脚本文件） --status "interview,offer"
 
 # 生成追踪报告
-python scripts/application_tracker.py \
+python （请参考skill目录中的脚本文件） \
   --output=tracking_report.md \
   --include-timeline \
   --include-responses
@@ -382,14 +382,14 @@ python scripts/application_tracker.py \
 
 ```bash
 # 生成效果分析报告
-python scripts/analytics.py \
+python （请参考skill目录中的脚本文件） \
   --period="2026-01" \
   --output=performance.md \
   --metrics="response_rate,interview_rate,offer_rate" \
   --optimization-suggestions
 
 # 导出详细数据
-python scripts/analytics.py export \
+python （请参考skill目录中的脚本文件） export \
   --format=csv \
   --output=detailed_stats.csv
 ```
@@ -398,13 +398,13 @@ python scripts/analytics.py export \
 
 ```bash
 # 调整匹配参数
-python scripts/ai_matcher.py \
+python （请参考skill目录中的脚本文件） \
   --model=gpt-4 \
   --min-score 0.85 \
   --weights="skills:0.4,experience:0.3,location:0.2,salary:0.1"
 
 # 训练自定义匹配模型
-python scripts/ai_matcher.py train \
+python （请参考skill目录中的脚本文件） train \
   --training-data=historical_applications.json \
   --model-output=custom_matcher.pkl
 ```
@@ -415,23 +415,23 @@ python scripts/ai_matcher.py train \
 
 ```bash
 # 降低投递频率
-python scripts/batch_apply.py --rate-limit 3 --delay 20
+python （请参考skill目录中的脚本文件） --rate-limit 3 --delay 20
 
 # 分散投递时间
-python scripts/scheduled_apply.py --cron="0 9,14,18 * * 1-5"
+python （请参考skill目录中的脚本文件） --cron="0 9,14,18 * * 1-5"
 
 # 使用多账号轮换
-python scripts/batch_apply.py --account-rotation
+python （请参考skill目录中的脚本文件） --account-rotation
 ```
 
 ### 申请状态追踪不准确
 
 ```bash
 # 手动刷新状态
-python scripts/application_tracker.py --refresh --all
+python （请参考skill目录中的脚本文件） --refresh --all
 
 # 检查追踪配置
-python scripts/application_tracker.py --config-check
+python （请参考skill目录中的脚本文件） --config-check
 
 # 查看追踪日志
 cat ./logs/tracking.log
@@ -441,26 +441,26 @@ cat ./logs/tracking.log
 
 ```bash
 # 调整匹配权重
-python scripts/ai_matcher.py --weights="skills:0.5,experience:0.3"
+python （请参考skill目录中的脚本文件） --weights="skills:0.5,experience:0.3"
 
 # 降低匹配阈值
-python scripts/ai_matcher.py --min-score 0.7
+python （请参考skill目录中的脚本文件） --min-score 0.7
 
 # 更换匹配模型
-python scripts/ai_matcher.py --model=gpt-4
+python （请参考skill目录中的脚本文件） --model=gpt-4
 ```
 
 ### 团队协作冲突
 
 ```bash
 # 查看团队任务分配
-python scripts/team_manager.py --tasks --member=all
+python （请参考skill目录中的脚本文件） --tasks --member=all
 
 # 重新分配任务
-python scripts/team_manager.py --reassign --balance
+python （请参考skill目录中的脚本文件） --reassign --balance
 
 # 解决冲突
-python scripts/team_manager.py --resolve-conflicts --strategy=latest
+python （请参考skill目录中的脚本文件） --resolve-conflicts --strategy=latest
 ```
 
 ## 依赖说明

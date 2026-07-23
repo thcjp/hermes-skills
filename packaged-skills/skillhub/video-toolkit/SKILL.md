@@ -314,7 +314,7 @@ ffmpeg -i distorted.mp4 -i reference.mp4 -lavfi libvmaf="model_path=vmaf_v0.6.1.
 
 ```bash
 # 一键批量处理所有视频到所有平台
-bash scripts/video-workflow.sh batch_input/ team_project
+bash （请参考skill目录中的脚本文件） batch_input/ team_project
 
 # 输出:
 # /tmp/video_workflow_team_project/
@@ -344,7 +344,7 @@ ffmpeg -i old_video.mp4 -i output_1080p.mp4 -lavfi ssim -f null - 2>&1 | grep "A
 
 ```bash
 # 生成4档画质的HLS流
-bash scripts/hls-encode.sh source_video.mp4 ./hls_output
+bash （请参考skill目录中的脚本文件） source_video.mp4 ./hls_output
 
 # 输出结构:
 # hls_output/
@@ -374,10 +374,10 @@ whisper --version 2>/dev/null && echo "Whisper: 可用" || echo "Whisper: 未安
 ### 自动化工作流一键启动
 ```bash
 # 单视频多平台处理
-bash scripts/video-workflow.sh input.mp4 "my_project"
+bash （请参考skill目录中的脚本文件） input.mp4 "my_project"
 
 # 批量处理
-bash scripts/batch-process.sh input_folder/ output_folder/ tiktok
+bash （请参考skill目录中的脚本文件） input_folder/ output_folder/ tiktok
 ```
 
 #
@@ -385,8 +385,8 @@ bash scripts/batch-process.sh input_folder/ output_folder/ tiktok
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | video-toolkit处理的内容输入 |,  |
+| content | string | 否 | video-toolkit处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -395,9 +395,9 @@ bash scripts/batch-process.sh input_folder/ output_folder/ tiktok
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "toolkit 相关配置参数",
+    result: "toolkit 相关配置参数",
+    result: "toolkit 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

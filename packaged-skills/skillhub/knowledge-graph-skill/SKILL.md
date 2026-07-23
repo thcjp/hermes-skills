@@ -36,7 +36,7 @@ pricing_model: "per_use"
 ## 首次安装
 
 ```bash
-node scripts/install.mjs [--workspace /path/to/workspace] [--platform agent]
+node （请参考skill目录中的脚本文件） [--workspace /path/to/workspace] [--platform agent]
 ```
 
 自动检测平台并修补助手指令文件,注入知识图谱指令和图摘要。操作幂等,可重复执行。
@@ -89,25 +89,25 @@ export API_KEY="your_api_key_here"
 - **知识整合**: 当实体数 > 80 时运行 `consolidate.mjs` 整合,自动嵌套单关系孤儿、建议相似标签合并、修剪空属性
 ### KGML格式知识表示
 
-执行KGML格式知识表示操作,处理用户输入并返回结果。
+执行KGML格式知识表示,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供KGML格式知识表示所需的参数和指令。
+**输入**: 用户提供KGML格式知识表示相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回KGML格式知识表示的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`KGML格式知识表示`相关配置参数进行设置
 ### 高级查询命令
 
-执行高级查询命令操作,处理用户输入并返回结果。
+执行高级查询命令,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供高级查询命令所需的参数和指令。
+**输入**: 用户提供高级查询命令相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回高级查询命令的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`高级查询命令`相关配置参数进行设置
 ### 实体合并
 
-执行实体合并操作,处理用户输入并返回结果。
+执行实体合并,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供实体合并所需的参数和指令。
+**输入**: 用户提供实体合并相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回实体合并的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`实体合并`相关配置参数进行设置
@@ -115,21 +115,21 @@ export API_KEY="your_api_key_here"
 ## 高级查询命令
 
 ```bash
-node scripts/query.mjs children <id>      # 直接子节点
-node scripts/query.mjs type <type>         # 指定类型的所有实体
-node scripts/query.mjs cat <category>      # 分类下所有实体
-node scripts/query.mjs orphans             # 未链接的孤立实体
-node scripts/query.mjs stats               # 图谱统计
-node scripts/query.mjs recent [--days 7]   # 最近创建/更新的实体
-node scripts/query.mjs timeline [--from YYYY-MM-DD] [--to YYYY-MM-DD]
-node scripts/query.mjs changed             # 创建后修改过的实体
-node scripts/query.mjs uncertain           # 置信度 < 0.5 的实体
+node （请参考skill目录中的脚本文件） children <id>      # 直接子节点
+node （请参考skill目录中的脚本文件） type <type>         # 指定类型的所有实体
+node （请参考skill目录中的脚本文件） cat <category>      # 分类下所有实体
+node （请参考skill目录中的脚本文件） orphans             # 未链接的孤立实体
+node （请参考skill目录中的脚本文件） stats               # 图谱统计
+node （请参考skill目录中的脚本文件） recent [--days 7]   # 最近创建/更新的实体
+node （请参考skill目录中的脚本文件） timeline [--from YYYY-MM-DD] [--to YYYY-MM-DD]
+node （请参考skill目录中的脚本文件） changed             # 创建后修改过的实体
+node （请参考skill目录中的脚本文件） uncertain           # 置信度 < 0.5 的实体
 ```
 
 ## 实体合并
 
 ```bash
-node scripts/merge.mjs --target <id> --source <id> --mode absorb|nest
+node （请参考skill目录中的脚本文件） --target <id> --source <id> --mode absorb|nest
 ```
 
 - `absorb`: 源实体属性合并到目标实体,源实体删除
@@ -138,10 +138,10 @@ node scripts/merge.mjs --target <id> --source <id> --mode absorb|nest
 ## 保管库(密钥)
 
 ```bash
-node scripts/vault.mjs set <key> <value> --note "description"
-node scripts/vault.mjs get <key>          # 原始值(用于管道传递)
-node scripts/vault.mjs list               # 仅显示键名
-node scripts/vault.mjs del <key>
+node （请参考skill目录中的脚本文件） set <key> <value> --note "description"
+node （请参考skill目录中的脚本文件） get <key>          # 原始值(用于管道传递)
+node （请参考skill目录中的脚本文件） list               # 仅显示键名
+node （请参考skill目录中的脚本文件） del <key>
 ```
 
 ## 深度启发式
@@ -149,10 +149,10 @@ node scripts/vault.mjs del <key>
 添加复杂知识项(文章、论文、报告、系统描述)前,先评估复杂度:
 
 ```bash
-node scripts/depth-check.mjs "粘贴文本或摘要"
-echo "article text" | node scripts/depth-check.mjs
-node scripts/depth-check.mjs --file /path/to/article.txt
-node scripts/depth-check.mjs --json    # 机器可读输出
+node （请参考skill目录中的脚本文件） "粘贴文本或摘要"
+echo "article text" | node （请参考skill目录中的脚本文件）
+node （请参考skill目录中的脚本文件） --file /path/to/article.txt
+node （请参考skill目录中的脚本文件） --json    # 机器可读输出
 ```
 
 **关键规则:** 复杂内容永不在2层停止。若得分 ≥ 4,提取所有命名组织、事件、策略和交叉关系,而非仅顶层主题。
@@ -160,8 +160,8 @@ node scripts/depth-check.mjs --json    # 机器可读输出
 ## 可视化
 
 ```bash
-node scripts/visualize.mjs                # → data/kg-viz.html
-node scripts/visualize.mjs --output /tmp/graph.html
+node （请参考skill目录中的脚本文件）                # → data/kg-viz.html
+node （请参考skill目录中的脚本文件） --output /tmp/graph.html
 ```
 
 始终使用此脚本,不要编写自定义HTML。输出自包含、离线、无CDN依赖。
@@ -173,12 +173,12 @@ node scripts/visualize.mjs --output /tmp/graph.html
 所有设置有合理默认值。仅覆盖需要的项,配置仅存储变更。
 
 ```bash
-node scripts/config.mjs                       # 列出所有设置及当前值
-node scripts/config.mjs get <key>              # 获取值(如 summary.tokenBudget)
-node scripts/config.mjs set <key> <value>      # 设置值
-node scripts/config.mjs reset <key>            # 重置单个键到默认
-node scripts/config.mjs reset --all            # 重置全部
-node scripts/config.mjs --json                 # 完整配置为JSON
+node （请参考skill目录中的脚本文件）                       # 列出所有设置及当前值
+node （请参考skill目录中的脚本文件） get <key>              # 获取值(如 summary.tokenBudget)
+node （请参考skill目录中的脚本文件） set <key> <value>      # 设置值
+node （请参考skill目录中的脚本文件） reset <key>            # 重置单个键到默认
+node （请参考skill目录中的脚本文件） reset --all            # 重置全部
+node （请参考skill目录中的脚本文件） --json                 # 完整配置为JSON
 ```
 
 ### 可用设置
@@ -211,16 +211,16 @@ const kg = createReader();
 kg.search("query"); kg.traverse("id", { depth: 2 }); kg.stats();
 ```
 
-或CLI: `node scripts/export.mjs --format json --target /path/to/output.json`
+或CLI: `node （请参考skill目录中的脚本文件） --format json --target /path/to/output.json`
 
 ## 记忆导入
 
 ```bash
-node scripts/import-memory.mjs            # 试运行
-node scripts/import-memory.mjs --apply    # 以置信度 0.5 添加
+node （请参考skill目录中的脚本文件）            # 试运行
+node （请参考skill目录中的脚本文件） --apply    # 以置信度 0.5 添加
 ```
 
-然后: `node scripts/query.mjs uncertain` 审查自动导入的实体。
+然后: `node （请参考skill目录中的脚本文件） uncertain` 审查自动导入的实体。
 
 ## 知识实体指南
 
@@ -243,7 +243,7 @@ node scripts/import-memory.mjs --apply    # 以置信度 0.5 添加
 
 ## 整合
 
-每周或实体数 > 80 时运行 `node scripts/consolidate.mjs`。然后运行 `summarize.mjs`。
+每周或实体数 > 80 时运行 `node （请参考skill目录中的脚本文件）`。然后运行 `summarize.mjs`。
 
 ## 安全
 
@@ -253,15 +253,15 @@ node scripts/import-memory.mjs --apply    # 以置信度 0.5 添加
 
 ## 使用流程
 
-1. 执行 `node scripts/install.mjs` 安装并修补助手指令文件
-2. 使用 `node scripts/depth-check.mjs` 评估知识项复杂度,得分 ≥ 4 时提取完整层级
+1. 执行 `node （请参考skill目录中的脚本文件）` 安装并修补助手指令文件
+2. 使用 `node （请参考skill目录中的脚本文件）` 评估知识项复杂度,得分 ≥ 4 时提取完整层级
 3. 添加知识实体,使用属性和标签区分声明性/程序性知识
-4. 通过 `node scripts/query.mjs` 查询图谱(children/type/cat/orphans/stats/recent/uncertain)
-5. 使用 `node scripts/merge.mjs --mode absorb|nest` 合并相似实体
-6. 通过 `node scripts/vault.mjs` 管理加密密钥,永不在对话中暴露密钥值
-7. 使用 `node scripts/visualize.mjs` 生成自包含可视化HTML
-8. 通过 `node scripts/config.mjs set` 调整 `tokenBudget`、`minEntities`、`levenshteinThreshold` 等参数
-9. 实体数 > 80 时运行 `node scripts/consolidate.mjs` 整合图谱
+4. 通过 `node （请参考skill目录中的脚本文件）` 查询图谱(children/type/cat/orphans/stats/recent/uncertain)
+5. 使用 `node （请参考skill目录中的脚本文件） --mode absorb|nest` 合并相似实体
+6. 通过 `node （请参考skill目录中的脚本文件）` 管理加密密钥,永不在对话中暴露密钥值
+7. 使用 `node （请参考skill目录中的脚本文件）` 生成自包含可视化HTML
+8. 通过 `node （请参考skill目录中的脚本文件） set` 调整 `tokenBudget`、`minEntities`、`levenshteinThreshold` 等参数
+9. 实体数 > 80 时运行 `node （请参考skill目录中的脚本文件）` 整合图谱
 
 #
 ## 示例
@@ -269,14 +269,14 @@ node scripts/import-memory.mjs --apply    # 以置信度 0.5 添加
 ### 示例1:查询孤立实体与统计
 
 ```bash
-node scripts/query.mjs orphans
+node （请参考skill目录中的脚本文件） orphans
 # 输出:
 # Orphan entities (3):
 #   - [e042] DebugTip(调试技巧):howto — steps,context
 #   - [e089] OldIdea(旧想法):idea — summary,status
 #   - [e103] Note(笔记):note — summary
 
-node scripts/query.mjs stats
+node （请参考skill目录中的脚本文件） stats
 # 输出:
 # Graph Statistics:
 #   Total entities: 127
@@ -291,14 +291,14 @@ node scripts/query.mjs stats
 ### 示例2:合并相似实体
 
 ```bash
-node scripts/merge.mjs --target e042 --source e103 --mode absorb
+node （请参考skill目录中的脚本文件） --target e042 --source e103 --mode absorb
 # 输出:
 # Merged e103 → e042 (absorb)
 #   Transferred attributes: summary
 #   Source e103 deleted
 #   3 relations updated
 
-node scripts/merge.mjs --target e042 --source e089 --mode nest
+node （请参考skill目录中的脚本文件） --target e042 --source e089 --mode nest
 # 输出:
 # Nested e089 under e042
 #   e089 is now child of e042
@@ -308,23 +308,23 @@ node scripts/merge.mjs --target e042 --source e089 --mode nest
 ### 示例3:保管库操作
 
 ```bash
-node scripts/vault.mjs set API_KEY "sk-abc123" --note "外部API访问密钥"
+node （请参考skill目录中的脚本文件） set API_KEY "sk-abc123" --note "外部API访问密钥"
 # 输出: Stored key 'API_KEY' with note
 
-node scripts/vault.mjs list
+node （请参考skill目录中的脚本文件） list
 # 输出:
 # Vault keys:
 #   - API_KEY (外部API访问密钥)
 #   - DB_PASSWORD (数据库密码)
 
-node scripts/vault.mjs get API_KEY
+node （请参考skill目录中的脚本文件） get API_KEY
 # 输出: sk-abc123 (仅用于管道传递,不在对话中显示)
 ```
 
 ### 示例4:深度启发式评估
 
 ```bash
-node scripts/depth-check.mjs --file /path/to/article.txt --json
+node （请参考skill目录中的脚本文件） --file /path/to/article.txt --json
 # 输出:
 # {
 #   "score": 5,
@@ -339,7 +339,7 @@ node scripts/depth-check.mjs --file /path/to/article.txt --json
 ### 示例5:可视化生成
 
 ```bash
-node scripts/visualize.mjs --output /tmp/kg-graph.html
+node （请参考skill目录中的脚本文件） --output /tmp/kg-graph.html
 # 输出:
 # Visualization generated: /tmp/kg-graph.html
 # Entities: 127, Relations: 89
@@ -378,7 +378,7 @@ A: 得分 ≥ 4 表示知识内容复杂度高,包含多个命名组织、事件
 A: 每周定期运行一次,或当实体数 > 80 时运行。整合操作包括: 自动嵌套单关系孤儿(`autoNest`)、建议编辑距离 ≤ `levenshteinThreshold`(默认2)的相似标签合并、修剪空属性。整合后运行 `summarize.mjs` 更新摘要。建议整合前备份 `data/kg-config.json`,以防错误合并。
 
 ### Q5: 如何让其他助手访问知识图谱?
-A: 其他助手通过 `reader.mjs` 的 `createReader()` 函数只读访问,支持 `search()`、`traverse()`、`stats()` 方法。或通过CLI `node scripts/export.mjs --format json --target /path/to/output.json` 导出为JSON文件。其他助手无写入权限,写入操作必须在本助手内执行。这确保知识图谱的数据完整性。
+A: 其他助手通过 `reader.mjs` 的 `createReader()` 函数只读访问,支持 `search()`、`traverse()`、`stats()` 方法。或通过CLI `node （请参考skill目录中的脚本文件） --format json --target /path/to/output.json` 导出为JSON文件。其他助手无写入权限,写入操作必须在本助手内执行。这确保知识图谱的数据完整性。
 
 ### Q6: `uncertain` 查询返回的实体如何处理?
 A: `query.mjs uncertain` 返回置信度 < 0.5 的实体,通常是 `import-memory.mjs --apply` 自动导入的。逐个审查这些实体: 确认正确的补充属性并提升置信度,或删除不准确的实体。建议导入记忆后立即运行 `uncertain` 查询审查,避免低质量实体积累影响图谱准确性。

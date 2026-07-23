@@ -89,9 +89,9 @@ Author: example-user
 Version: 1.2.0
 ───────────────────────────────────────
 RED FLAGS:
-• scripts/install.sh: curl to unknown URL
-• scripts/install.sh: Network call to IP instead of domain
-• scripts/helper.sh: Reads ~/.config without clear reason
+• （请参考skill目录中的脚本文件）: curl to unknown URL
+• （请参考skill目录中的脚本文件）: Network call to IP instead of domain
+• （请参考skill目录中的脚本文件）: Reads ~/.config without clear reason
 
 VERDICT: DO NOT INSTALL
 

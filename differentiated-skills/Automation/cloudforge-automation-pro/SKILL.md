@@ -95,7 +95,7 @@ pricing_model: "monthly"
 2. **初始化项目**：生成多云Terraform项目结构
 3. **选择模板**：Web应用、数据库、Kubernetes、Serverless
 4. **配置环境**：dev/staging/prod多环境
-5. **一键部署**：`./cloudforge.sh apply prod`
+5. **一键部署**：`（请参考skill目录中的脚本文件） apply prod`
 
 ### 完整搭建（<300秒）
 
@@ -220,7 +220,7 @@ gcloud config set project your-project-id
 az login --tenant your-tenant-id
 
 # 初始化多云项目
-./cloudforge.sh init multi-cloud
+（请参考skill目录中的脚本文件） init multi-cloud
 ```
 
 > 注：`--tenant`是Azure CLI标准参数，用于指定租户ID。
@@ -386,7 +386,7 @@ jobs:
         run: ansible-playbook -i inventory playbook.yml
 
       - name: 健康检查
-        run: ./scripts/health-check.sh
+        run: （请参考skill目录中的脚本文件）
 ```
 
 **输入**: 用户提供功能三：CI/CD部署流水线 — 专业版启用所需的指令和必要参数。

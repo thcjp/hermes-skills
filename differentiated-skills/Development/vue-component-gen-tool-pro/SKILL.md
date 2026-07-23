@@ -119,7 +119,7 @@ src/
 
 ```bash
 #!/usr/bin/env bash
-# scripts/scaffold-vue-components.sh — 批量生成 Vue 组件
+# （请参考skill目录中的脚本文件） — 批量生成 Vue 组件
 set -euo pipefail
 
 COMPONENTS=(
@@ -388,7 +388,7 @@ const handleClick = (event: MouseEvent) => {
 cp tokens.scss src/styles/
 
 # 批量生成组件骨架
-bash scripts/scaffold-vue-components.sh
+bash （请参考skill目录中的脚本文件）
 
 # 运行单元测试
 npx vitest run

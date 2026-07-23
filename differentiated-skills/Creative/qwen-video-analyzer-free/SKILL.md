@@ -97,11 +97,11 @@ suggested_price: 29.9
 
 ```bash
 # 分析本地视频并生成内容标签
-python scripts/analyze.py /path/to/video.mp4 \
+python （请参考skill目录中的脚本文件） /path/to/video.mp4 \
   --prompt "请为这段视频生成5个内容标签,用逗号分隔"
 
 # 分析远程视频
-python scripts/analyze.py https://example.com/video.mp4 \
+python （请参考skill目录中的脚本文件） https://example.com/video.mp4 \
   --prompt "请为这段视频生成5个内容标签,用逗号分隔"
 ```
 
@@ -111,11 +111,11 @@ python scripts/analyze.py https://example.com/video.mp4 \
 
 ```bash
 # 生成视频内容摘要
-python scripts/analyze.py /path/to/clip.mp4 \
+python （请参考skill目录中的脚本文件） /path/to/clip.mp4 \
   --prompt "请用一段话概括这段视频的主要内容"
 
 # 识别视频中的关键场景
-python scripts/analyze.py /path/to/clip.mp4 \
+python （请参考skill目录中的脚本文件） /path/to/clip.mp4 \
   --prompt "请详细描述视频中的每个场景,按时间顺序列出" \
   --fps 3
 ```
@@ -126,7 +126,7 @@ python scripts/analyze.py /path/to/clip.mp4 \
 
 ```bash
 # 低帧率快速概览(节省成本)
-python scripts/analyze.py /path/to/long_video.mp4 \
+python （请参考skill目录中的脚本文件） /path/to/long_video.mp4 \
   --fps 1 \
   --prompt "这段视频的主要内容是什么?适合什么人群观看?"
 ```
@@ -163,10 +163,10 @@ API Key 从 `~/.skill-platform/skill-platform.json` 的 `skills.dashscope.apiKey
 
 ```bash
 # 默认分析(使用默认提示词与 FPS=2)
-python scripts/analyze.py /path/to/video.mp4
+python （请参考skill目录中的脚本文件） /path/to/video.mp4
 
 # 自定义提示词与帧率
-python scripts/analyze.py /path/to/video.mp4 \
+python （请参考skill目录中的脚本文件） /path/to/video.mp4 \
   --prompt "视频中出现了哪些人物和物体?" \
   --fps 5
 ```

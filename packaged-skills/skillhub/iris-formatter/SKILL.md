@@ -63,25 +63,25 @@ pricing_model: "per_use"
 | 格式化 | 单文件格式化 | 批量格式化 + 自动修正 |
 ### 能力模块
 
-执行能力模块操作,处理用户输入并返回结果。
+执行能力模块,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供能力模块所需的参数和指令。
+**输入**: 用户提供能力模块相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回能力模块的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`能力模块`相关配置参数进行设置
 ### 代码审查
 
-执行代码审查操作,处理用户输入并返回结果。
+执行代码审查,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供代码审查所需的参数和指令。
+**输入**: 用户提供代码审查相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回代码审查的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`代码审查`相关配置参数进行设置
 ### 规范规则
 
-执行规范规则操作,处理用户输入并返回结果。
+执行规范规则,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供规范规则所需的参数和指令。
+**输入**: 用户提供规范规则相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回规范规则的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`规范规则`相关配置参数进行设置
@@ -94,7 +94,7 @@ pricing_model: "per_use"
 
 ```bash
 #!/bin/bash
-# scripts/batch-iris-review.sh - 批量审查 IRIS 代码
+# （请参考skill目录中的脚本文件） - 批量审查 IRIS 代码
 MODULE_DIR=$1
 REPORT_FILE="iris-review-report-$(date +%Y%m%d).md"
 
@@ -222,7 +222,7 @@ severity:
 
 ```bash
 #!/bin/bash
-# scripts/iris-complexity.sh - 代码复杂度分析
+# （请参考skill目录中的脚本文件） - 代码复杂度分析
 TARGET=$1
 
 echo "=== IRIS 代码复杂度分析 ==="
@@ -301,7 +301,7 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
     <table>
         <tr>
             <th>审查时间</th>
-            <td>（根据实际场景填充）</td>
+            <td>"formatter_result"</td>
         </tr>
         <tr>
             <th>审查范围</th>
@@ -309,11 +309,11 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
         </tr>
         <tr>
             <th>文件数量</th>
-            <td>（根据实际场景填充）</td>
+            <td>"formatter_metadata"</td>
         </tr>
         <tr>
             <th>问题总数</th>
-            <td>（根据实际场景填充）</td>
+            <td>"formatter_status"</td>
         </tr>
     </table>
 
@@ -329,12 +329,12 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
         </tr>
         相关信息
         <tr>
-            <td>（根据实际场景填充）</td>
-            <td class="（根据实际场景填充）">（根据实际场景填充）</td>
-            <td>（根据实际场景填充）</td>
-            <td>（根据实际场景填充）</td>
-            <td>相关说明</td>
-            <td>（根据实际场景填充）</td>
+            <td>"formatter_summary"</td>
+            <td class=""formatter_details"">"formatter_details"</td>
+            <td>"formatter_count"</td>
+            <td>"formatter_timestamp"</td>
+            <td>formatter 相关配置参数</td>
+            <td>"formatter_version"</td>
         </tr>
         相关信息
     </table>
@@ -369,7 +369,7 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | iris-formatter处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式
@@ -538,7 +538,7 @@ excludes:
 iris-code-review:
   stage: quality
   script:
-    - ./scripts/batch-iris-review.sh src/
+    - （请参考skill目录中的脚本文件） src/
     - |
       CRITICAL_COUNT=$(grep -c "\[严重\]" iris-review-report-*.md)
       if [ "$CRITICAL_COUNT" -gt 0 ]; then

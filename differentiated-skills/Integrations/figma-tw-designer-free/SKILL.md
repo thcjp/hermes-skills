@@ -119,7 +119,7 @@ $env:FIGMA_TOKEN="你的个人访问令牌"
 获取文件的页面、画板与图层信息：
 
 ```bash
-python scripts/figma_tool.py get-file <file_key>
+python （请参考skill目录中的脚本文件） get-file <file_key>
 ```
 
 其中`file_key`可从Figma文件URL中提取，格式为`https://www.figma.com/file/<file_key>/...`。
@@ -128,7 +128,7 @@ python scripts/figma_tool.py get-file <file_key>
 根据结构中的节点ID导出图片：
 
 ```bash
-python scripts/figma_tool.py export <file_key> \
+python （请参考skill目录中的脚本文件） export <file_key> \
   --ids <id1>,<id2> \
   --format png \
   --scale 2
@@ -138,7 +138,7 @@ python scripts/figma_tool.py export <file_key> \
 获取文件最近的协作评论：
 
 ```bash
-python scripts/figma_tool.py get-comments <file_key>
+python （请参考skill目录中的脚本文件） get-comments <file_key>
 ```
 
 ## 示例

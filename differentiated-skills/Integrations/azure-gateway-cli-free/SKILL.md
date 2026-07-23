@@ -86,7 +86,7 @@ export AZURE_OPENAI_API_VERSION="2025-01-01-preview"
 ### 第二步：启动代理服务
 
 ```bash
-node scripts/server.js
+node （请参考skill目录中的脚本文件）
 ```
 
 ### 第三步：配置客户端指向本地端口

@@ -48,9 +48,9 @@ pricing_model: "per_use"
 #
 ## 适用场景
 
-- 用户说"（根据实际场景填充）" → 执行相关说明
-- 用户说"（根据实际场景填充）" → 执行相关说明
-- 用户说"（根据实际场景填充）" → 执行相关说明
+- 用户说"University Applications 核心处理" → 执行applications 相关配置参数
+- 用户说"University Applications 智能分析" → 执行applications 相关配置参数
+- 用户说"University Applications 批量处理" → 执行applications 相关配置参数
 - 不适用: 需要人工判断的复杂决策场景
 
 ## 使用流程
@@ -64,8 +64,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
+| content | string | 否 | university-applications处理的内容输入 |,  |
+| mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
 | skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |
 
@@ -76,9 +76,9 @@ pricing_model: "per_use"
   "success": true,
   "data": {
     "final_result": {
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明"
+      "applications_result": "applications_result_value",
+      "applications_metadata": "applications_metadata_value",
+      "applications_status": "applications_status_value"
     },
     "execution_log": [
       {
@@ -118,7 +118,7 @@ pricing_model: "per_use"
 }
 ```
 
-中间产物模板参考: `assets/（根据实际场景填充）`
+中间产物模板参考: `assets/university-applications_template`
 
 ## 异常处理
 

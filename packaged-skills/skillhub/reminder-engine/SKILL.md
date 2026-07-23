@@ -105,17 +105,17 @@ pricing_model: "per_use"
 **输出**: 返回生命周期管理的执行结果,包含操作状态和输出数据。
 ### 相对时间
 
-执行相对时间操作,处理用户输入并返回结果。
+执行相对时间,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供相对时间所需的参数和指令。
+**输入**: 用户提供相对时间相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回相对时间的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`相对时间`相关配置参数进行设置
 ### 绝对时间
 
-执行绝对时间操作,处理用户输入并返回结果。
+执行绝对时间,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供绝对时间所需的参数和指令。
+**输入**: 用户提供绝对时间相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回绝对时间的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`绝对时间`相关配置参数进行设置
@@ -187,8 +187,8 @@ skill-platform cron add \
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | reminder-engine处理的内容输入 |,  |
+| content | string | 否 | reminder-engine处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -197,9 +197,9 @@ skill-platform cron add \
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "engine 相关配置参数",
+    result: "engine 相关配置参数",
+    result: "engine 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

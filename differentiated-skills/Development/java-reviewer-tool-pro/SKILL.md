@@ -215,7 +215,7 @@ jobs:
 
       - name: 执行代码审查
         run: |
-          ./scripts/batch-java-review.sh src/
+          （请参考skill目录中的脚本文件） src/
 
       - name: 检查 Critical 问题数
         run: |
@@ -428,7 +428,7 @@ severity_override:
 
 ### Q3：如何集成到 SonarQube？
 ```bash
-./scripts/export-sonarqube.sh reports/java-review-latest/ > sonar-issues.json
+（请参考skill目录中的脚本文件） reports/java-review-latest/ > sonar-issues.json
 
 [
   {

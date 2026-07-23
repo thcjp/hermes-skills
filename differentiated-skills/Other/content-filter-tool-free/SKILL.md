@@ -94,31 +94,31 @@ suggested_price: 29.9
 
 ```bash
 # 添加关键词过滤规则
-{baseDir}/scripts/filter.sh add-keyword "广告"
-{baseDir}/scripts/filter.sh add-keyword --regex "(?i)加微信"
+{baseDir}/（请参考skill目录中的脚本文件） add-keyword "广告"
+{baseDir}/（请参考skill目录中的脚本文件） add-keyword --regex "(?i)加微信"
 
 # 查看规则
-{baseDir}/scripts/filter.sh list
+{baseDir}/（请参考skill目录中的脚本文件） list
 ```
 
 ### 场景二：作者屏蔽与白名单
 
 ```bash
 # 屏蔽作者
-{baseDir}/scripts/filter.sh block-author "spam-user"
+{baseDir}/（请参考skill目录中的脚本文件） block-author "spam-user"
 
 # 加白名单（优先于屏蔽）
-{baseDir}/scripts/filter.sh whitelist-author "friend"
+{baseDir}/（请参考skill目录中的脚本文件） whitelist-author "friend"
 ```
 
 ### 场景三：查看过滤后内容
 
 ```bash
 # 拉取并过滤信息流
-{baseDir}/scripts/filter.sh feed --apply
+{baseDir}/（请参考skill目录中的脚本文件） feed --apply
 
 # 查看被过滤项（调试用）
-{baseDir}/scripts/filter.sh feed --show-blocked
+{baseDir}/（请参考skill目录中的脚本文件） feed --show-blocked
 ```
 
 ## 不适用场景
@@ -188,26 +188,26 @@ A：免费版支持基础时间范围，复杂调度为专业版能力。
 
 ```bash
 # 普通关键词
-{baseDir}/scripts/filter.sh add-keyword "广告"
+{baseDir}/（请参考skill目录中的脚本文件） add-keyword "广告"
 
 # 正则匹配（大小写不敏感）
-{baseDir}/scripts/filter.sh add-keyword --regex "(?i)加微信|加v|加vx"
+{baseDir}/（请参考skill目录中的脚本文件） add-keyword --regex "(?i)加微信|加v|加vx"
 
 # 匹配微信号变体
-{baseDir}/scripts/filter.sh add-keyword --regex "vx[: ]?\\d{6,}|微信[: ]?\\d{6,}"
+{baseDir}/（请参考skill目录中的脚本文件） add-keyword --regex "vx[: ]?\\d{6,}|微信[: ]?\\d{6,}"
 ```
 
 ### 作者管理策略
 
 ```bash
 # 屏蔽作者
-{baseDir}/scripts/filter.sh block-author "spam-user"
+{baseDir}/（请参考skill目录中的脚本文件） block-author "spam-user"
 
 # 白名单（优先于屏蔽）
-{baseDir}/scripts/filter.sh whitelist-author "friend"
+{baseDir}/（请参考skill目录中的脚本文件） whitelist-author "friend"
 
 # 批量屏蔽
-{baseDir}/scripts/filter.sh block-author --file blocklist.txt
+{baseDir}/（请参考skill目录中的脚本文件） block-author --file blocklist.txt
 ```
 
 ```text
@@ -222,10 +222,10 @@ A：免费版支持基础时间范围，复杂调度为专业版能力。
 
 ```bash
 # 查看被过滤项（调试误杀）
-{baseDir}/scripts/filter.sh feed --show-blocked
+{baseDir}/（请参考skill目录中的脚本文件） feed --show-blocked
 
 # 命中规则追踪
-{baseDir}/scripts/filter.sh feed --trace
+{baseDir}/（请参考skill目录中的脚本文件） feed --trace
 ```
 
 ```text

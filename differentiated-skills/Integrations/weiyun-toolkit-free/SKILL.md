@@ -93,7 +93,7 @@ suggested_price: 19.9
 
 ```bash
 # Linux/macOS
-python3 scripts/upload_to_weiyun.py /path/to/file --token <mcp_token> --pdir_key <dir_key>
+python3 （请参考skill目录中的脚本文件） /path/to/file --token <mcp_token> --pdir_key <dir_key>
 
 # Windows PowerShell（需先切换 UTF-8 编码）
 chcp 65001 >nul && python scripts\upload_to_weiyun.py C:\path\to\file --pdir_key <dir_key>

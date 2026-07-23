@@ -275,7 +275,7 @@ custom_feeds:
 
 ### Step 3：执行首次多源聚合
 ```bash
-python3 ~/news-feed-pro/scripts/aggregate.py \
+python3 ~/news-feed-pro/（请参考skill目录中的脚本文件） \
     --sources all \
     --deduplicate \
     --limit 15 \

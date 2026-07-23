@@ -113,7 +113,7 @@ suggested_price: 99.9
 
 ```bash
 # 常见问题
-node scripts/audit.js
+node （请参考skill目录中的脚本文件）
 
 # 示例
 # 审计报告
@@ -131,17 +131,17 @@ node scripts/audit.js
 
 ```bash
 # 完整审计(全面扫描)
-node scripts/audit.js --full
+node （请参考skill目录中的脚本文件） --full
 
 # 输出JSON报告
-node scripts/audit.js --full --json > audit-report.json
+node （请参考skill目录中的脚本文件） --full --json > audit-report.json
 ```
 
 ### 场景三:自动修复常见问题
 
 ```bash
 # 自动修复
-node scripts/audit.js --fix
+node （请参考skill目录中的脚本文件） --fix
 
 # 修复内容:
 # - 设置.env文件权限为600
@@ -154,19 +154,19 @@ node scripts/audit.js --fix
 
 ```bash
 # 只检查凭据泄露
-node scripts/audit.js --credentials
+node （请参考skill目录中的脚本文件） --credentials
 
 # 只检查开放端口
-node scripts/audit.js --ports
+node （请参考skill目录中的脚本文件） --ports
 
 # 只检查配置安全
-node scripts/audit.js --configs
+node （请参考skill目录中的脚本文件） --configs
 
 # 只检查文件权限
-node scripts/audit.js --permissions
+node （请参考skill目录中的脚本文件） --permissions
 
 # 只检查Docker安全
-node scripts/audit.js --docker
+node （请参考skill目录中的脚本文件） --docker
 ```
 
 ## 不适用场景
@@ -435,15 +435,15 @@ class SecurityAuditor:
 
 ```bash
 # 每周执行一次完整审计
-node scripts/audit.js --full --json > "audit-$(date +%Y%m%d).json"
+node （请参考skill目录中的脚本文件） --full --json > "audit-$(date +%Y%m%d).json"
 ```
 
 ### 2. 部署前必审
 
 ```bash
 # 部署前执行快速审计+自动修复
-node scripts/audit.js --fix
-node scripts/audit.js --full
+node （请参考skill目录中的脚本文件） --fix
+node （请参考skill目录中的脚本文件） --full
 ```
 
 ### 3. 关注CRITICAL

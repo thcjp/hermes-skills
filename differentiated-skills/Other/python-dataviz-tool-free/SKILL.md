@@ -188,7 +188,7 @@ fig.write_html('product_scatter.html')
 ```bash
 # 创建虚拟环境
 python3 -m venv .venv
-source .venv/bin/activate  # Linux/macOS
+source .venv/（请参考skill目录中的脚本文件）  # Linux/macOS
 # .venv\Scripts\activate   # Windows
 
 # 依赖说明

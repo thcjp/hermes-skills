@@ -53,25 +53,25 @@ pricing_model: "monthly"
 | 优先支持 | SLA保障 | 专属技术支持通道 |
 ### 问题管理
 
-执行问题管理操作,处理用户输入并返回结果。
+执行问题管理,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供问题管理所需的参数和指令。
+**输入**: 用户提供问题管理相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回问题管理的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`问题管理`相关配置参数进行设置
 ### 冲刺规划
 
-执行冲刺规划操作,处理用户输入并返回结果。
+执行冲刺规划,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供冲刺规划所需的参数和指令。
+**输入**: 用户提供冲刺规划相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回冲刺规划的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`冲刺规划`相关配置参数进行设置
 ### 依赖链管理
 
-执行依赖链管理操作,处理用户输入并返回结果。
+执行依赖链管理,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供依赖链管理所需的参数和指令。
+**输入**: 用户提供依赖链管理相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回依赖链管理的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`依赖链管理`相关配置参数进行设置
@@ -124,7 +124,7 @@ export LINEAR_API_KEY="你的Linear API密钥"
 
 ### 步骤2：冲刺规划
 ```bash
-node {baseDir}/scripts/linear-cli.js sprint-plan \
+node {baseDir}/（请参考skill目录中的脚本文件） sprint-plan \
   --team-id TEAM_ID \
   --cycle-id CYCLE_ID \
   --input sprint-backlog.csv \
@@ -134,7 +134,7 @@ node {baseDir}/scripts/linear-cli.js sprint-plan \
 
 ### 步骤3：依赖链分析
 ```bash
-node {baseDir}/scripts/linear-cli.js dependency-graph \
+node {baseDir}/（请参考skill目录中的脚本文件） dependency-graph \
   --team-id TEAM_ID \
   --cycle-id CYCLE_ID \
   --detect-blockers \
@@ -143,7 +143,7 @@ node {baseDir}/scripts/linear-cli.js dependency-graph \
 
 ### 步骤4：生成迭代报告
 ```bash
-node {baseDir}/scripts/linear-cli.js sprint-report \
+node {baseDir}/（请参考skill目录中的脚本文件） sprint-report \
   --team-id TEAM_ID \
   --cycle-id CYCLE_ID \
   --format html \
@@ -152,7 +152,7 @@ node {baseDir}/scripts/linear-cli.js sprint-report \
 
 ### 步骤5：批量操作
 ```bash
-node {baseDir}/scripts/linear-cli.js bulk-update \
+node {baseDir}/（请参考skill目录中的脚本文件） bulk-update \
   --input updates.csv \
   --checkpoint \
   --parallel 4
@@ -163,7 +163,7 @@ node {baseDir}/scripts/linear-cli.js bulk-update \
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | linear-workflow-skill处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式

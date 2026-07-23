@@ -56,7 +56,7 @@ WhatsApp 表情专业版是面向企业用户和营销团队的进阶 GIF 管理
 #### 1. 批量群发引擎
 
 ```bash
-python scripts/batch_send.py \
+python （请参考skill目录中的脚本文件） \
   --gif-library ./gifs/celebration.mp4 \
   --contacts contacts.csv \
   --message "节日快乐" \
@@ -69,7 +69,7 @@ python scripts/batch_send.py \
 
 ```bash
 # 定时发送节日祝福
-python scripts/scheduled_send.py \
+python （请参考skill目录中的脚本文件） \
   --gif ./gifs/newyear.mp4 \
   --contacts customer_list.csv \
   --cron="0 0 1 1 *" \
@@ -80,22 +80,22 @@ python scripts/scheduled_send.py \
 
 ```bash
 # 添加 GIF 到收藏库
-python scripts/gif_library.py add ./gifs/thanks.mp4 \
+python （请参考skill目录中的脚本文件） add ./gifs/thanks.mp4 \
   --tags="感谢,客户关怀" \
   --category="客户服务"
 
 # 搜索库中的 GIF
-python scripts/gif_library.py search --tag="感谢" --category="客户服务"
+python （请参考skill目录中的脚本文件） search --tag="感谢" --category="客户服务"
 
 # 查看库统计
-python scripts/gif_library.py stats
+python （请参考skill目录中的脚本文件） stats
 ```
 
 #### 4. 品牌水印
 
 ```bash
 # 为 GIF 添加品牌水印
-python scripts/watermark.py \
+python （请参考skill目录中的脚本文件） \
   --input ./gifs/original.mp4 \
   --output ./gifs/branded.mp4 \
   --logo ./assets/logo.png \
@@ -136,13 +136,13 @@ EOF
 gifgrep "mid autumn festival" --max 10 --format url
 
 # 下载并添加品牌水印
-python scripts/watermark.py \
+python （请参考skill目录中的脚本文件） \
   --input /tmp/festival.gif \
   --output ./gifs/festival_branded.mp4 \
   --logo ./assets/company_logo.png
 
 # 批量发送
-python scripts/batch_send.py \
+python （请参考skill目录中的脚本文件） \
   --gif ./gifs/festival_branded.mp4 \
   --contacts customers.csv \
   --message "中秋快乐！感谢您选择我们的服务" \
@@ -158,7 +158,7 @@ python scripts/batch_send.py \
 
 ```bash
 # 配置定时任务
-python scripts/scheduled_send.py \
+python （请参考skill目录中的脚本文件） \
   --gif ./gifs/welcome.mp4 \
   --contacts new_customers.csv \
   --cron="0 10 * * *" \
@@ -175,16 +175,16 @@ python scripts/scheduled_send.py \
 
 ```bash
 # 配置多账号
-python scripts/account_manager.py add \
+python （请参考skill目录中的脚本文件） add \
   --name="客服小王" \
   --phone="+8613800001111"
 
-python scripts/account_manager.py add \
+python （请参考skill目录中的脚本文件） add \
   --name="客服小李" \
   --phone="+8613800002222"
 
 # 分配发送任务
-python scripts/batch_send.py \
+python （请参考skill目录中的脚本文件） \
   --gif ./gifs/thanks.mp4 \
   --contacts customers.csv \
   --account="客服小王" \
@@ -206,12 +206,12 @@ python scripts/batch_send.py \
 pip install pandas schedule pillow
 
 # 初始化 GIF 库
-python scripts/gif_library.py init \
+python （请参考skill目录中的脚本文件） init \
   --storage=./gif_library \
   --categories="客户服务,节日祝福,产品推广,日常沟通"
 
 # 验证升级
-python scripts/batch_send.py --version
+python （请参考skill目录中的脚本文件） --version
 ```
 
 ### 首次批量发送
@@ -222,7 +222,7 @@ echo "name,phone
 测试用户,+8613800000000" > test_contacts.csv
 
 # 执行测试发送
-python scripts/batch_send.py \
+python （请参考skill目录中的脚本文件） \
   --gif ./gifs/welcome.mp4 \
   --contacts test_contacts.csv \
   --message "测试发送" \
@@ -320,17 +320,17 @@ results = config.execute(
 
 ```bash
 # 按场景分类管理 GIF
-python scripts/gif_library.py organize \
+python （请参考skill目录中的脚本文件） organize \
   --auto-classify \
   --tags-from-filename
 
 # 创建标签体系
-python scripts/gif_library.py tags add \
+python （请参考skill目录中的脚本文件） tags add \
   --tag="高优先级" \
   --description="重要客户使用"
 
 # 智能推荐
-python scripts/gif_library.py recommend \
+python （请参考skill目录中的脚本文件） recommend \
   --context="客户感谢" \
   --limit 5
 ```
@@ -339,17 +339,17 @@ python scripts/gif_library.py recommend \
 
 ```bash
 # 生成发送效果报告
-python scripts/analytics.py \
+python （请参考skill目录中的脚本文件） \
   --period="2026-01" \
   --output=monthly_report.md
 
 # 查看发送统计
-python scripts/analytics.py stats \
+python （请参考skill目录中的脚本文件） stats \
   --metric=delivery_rate \
   --period=weekly
 
 # 导出详细数据
-python scripts/analytics.py export \
+python （请参考skill目录中的脚本文件） export \
   --format=csv \
   --output=detailed_stats.csv
 ```
@@ -360,13 +360,13 @@ python scripts/analytics.py export \
 
 ```bash
 # 增加发送间隔
-python scripts/batch_send.py --delay 30 contacts.csv
+python （请参考skill目录中的脚本文件） --delay 30 contacts.csv
 
 # 减少每日发送量
-python scripts/batch_send.py --max-daily=100 contacts.csv
+python （请参考skill目录中的脚本文件） --max-daily=100 contacts.csv
 
 # 使用多账号分流
-python scripts/batch_send.py --split 50 --account=all contacts.csv
+python （请参考skill目录中的脚本文件） --split 50 --account=all contacts.csv
 ```
 
 ### GIF 水印添加失败
@@ -376,10 +376,10 @@ python scripts/batch_send.py --split 50 --account=all contacts.csv
 file ./assets/logo.png
 
 # 确保图片为 PNG 透明背景
-python scripts/watermark.py --validate-logo ./assets/logo.png
+python （请参考skill目录中的脚本文件） --validate-logo ./assets/logo.png
 
 # 调整水印参数
-python scripts/watermark.py \
+python （请参考skill目录中的脚本文件） \
   --input input.mp4 \
   --output output.mp4 \
   --logo logo.png \
@@ -390,13 +390,13 @@ python scripts/watermark.py \
 
 ```bash
 # 检查任务列表
-python scripts/scheduled_send.py --list
+python （请参考skill目录中的脚本文件） --list
 
 # 查看任务日志
 cat ./logs/scheduled_send.log
 
 # 手动触发测试
-python scripts/scheduled_send.py --run-now --task-id=task_001
+python （请参考skill目录中的脚本文件） --run-now --task-id=task_001
 ```
 
 ## 依赖说明

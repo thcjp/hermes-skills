@@ -407,13 +407,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Validate Design Tokens
-        run: python3 scripts/validate_tokens.py
+        run: python3 （请参考skill目录中的脚本文件）
       - name: Check Accessibility
-        run: python3 scripts/a11y_audit.py ./dist/
+        run: python3 （请参考skill目录中的脚本文件） ./dist/
       - name: Performance Audit
-        run: python3 scripts/perf_audit.py ./dist/
+        run: python3 （请参考skill目录中的脚本文件） ./dist/
       - name: Generate Docs
-        run: python3 scripts/gen_docs.py --output ./docs/
+        run: python3 （请参考skill目录中的脚本文件） --output ./docs/
 ```
 
 ## 常见问题

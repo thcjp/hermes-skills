@@ -180,7 +180,7 @@ ontology:
 
 ### 第一步：初始化图谱目录与Schema
 
-创建 `memory/ontology/` 目录和空的 `graph.jsonl` 文件。编写 `schema.yaml` 定义项目所需的实体类型和关系约束。执行 `python3 scripts/ontology.py validate` 验证Schema格式正确。
+创建 `memory/ontology/` 目录和空的 `graph.jsonl` 文件。编写 `schema.yaml` 定义项目所需的实体类型和关系约束。执行 `python3 （请参考skill目录中的脚本文件） validate` 验证Schema格式正确。
 
 ### 第二步：创建核心实体
 
@@ -196,7 +196,7 @@ ontology:
 
 ### 第五步：验证与维护
 
-定期执行 `python3 scripts/ontology.py validate` 检查所有约束。审查变更日志确认操作历史。大规模图谱（1000+实体）可迁移至 SQLite数据库 提升查询性能。
+定期执行 `python3 （请参考skill目录中的脚本文件） validate` 检查所有约束。审查变更日志确认操作历史。大规模图谱（1000+实体）可迁移至 SQLite数据库 提升查询性能。
 
 ## 错误处理
 
@@ -219,38 +219,38 @@ ontology:
 
 ```bash
 # 创建人员
-python3 scripts/ontology.py create --type Person --props '{"name":"Alice","email":"alice@example.com"}'
+python3 （请参考skill目录中的脚本文件） create --type Person --props '{"name":"Alice","email":"alice@example.com"}'
 # 返回: {"id":"p_001","type":"Person","properties":{"name":"Alice","email":"alice@example.com"}}
 
 # 创建项目
-python3 scripts/ontology.py create --type Project --props '{"name":"Website Redesign","status":"active","goals":["提升转化率","改善移动端体验"]}'
+python3 （请参考skill目录中的脚本文件） create --type Project --props '{"name":"Website Redesign","status":"active","goals":["提升转化率","改善移动端体验"]}'
 # 返回: {"id":"proj_001","type":"Project","properties":{"name":"Website Redesign","status":"active"}}
 
 # 建立项目-负责人关系
-python3 scripts/ontology.py relate --from proj_001 --rel has_owner --to p_001
+python3 （请参考skill目录中的脚本文件） relate --from proj_001 --rel has_owner --to p_001
 # 返回: {"from":"proj_001","rel":"has_owner","to":"p_001","validated":true}
 
 # 创建任务
-python3 scripts/ontology.py create --type Task --props '{"title":"设计首页原型","status":"open","priority":8}'
+python3 （请参考skill目录中的脚本文件） create --type Task --props '{"title":"设计首页原型","status":"open","priority":8}'
 # 返回: {"id":"task_001","type":"Task","properties":{"title":"设计首页原型","status":"open","priority":8}}
 
-python3 scripts/ontology.py create --type Task --props '{"title":"前端开发实现","status":"open","priority":7}'
+python3 （请参考skill目录中的脚本文件） create --type Task --props '{"title":"前端开发实现","status":"open","priority":7}'
 # 返回: {"id":"task_002","type":"Task","properties":{"title":"前端开发实现","status":"open","priority":7}}
 
 # 建立任务依赖（task_002 依赖 task_001）
-python3 scripts/ontology.py relate --from task_002 --rel depends_on --to task_001
+python3 （请参考skill目录中的脚本文件） relate --from task_002 --rel depends_on --to task_001
 # 返回: {"from":"task_002","rel":"depends_on","to":"task_001","acyclic_check":true,"validated":true}
 
 # 建立项目-任务关系
-python3 scripts/ontology.py relate --from proj_001 --rel has_task --to task_001
-python3 scripts/ontology.py relate --from proj_001 --rel has_task --to task_002
+python3 （请参考skill目录中的脚本文件） relate --from proj_001 --rel has_task --to task_001
+python3 （请参考skill目录中的脚本文件） relate --from proj_001 --rel has_task --to task_002
 
 # 查询项目所有任务
-python3 scripts/ontology.py related --id proj_001 --rel has_task
+python3 （请参考skill目录中的脚本文件） related --id proj_001 --rel has_task
 # 返回: [task_001, task_002]
 
 # 查询任务依赖链
-python3 scripts/ontology.py related --id task_002 --rel depends_on --depth 3
+python3 （请参考skill目录中的脚本文件） related --id task_002 --rel depends_on --depth 3
 # 返回: [task_001]
 ```
 
@@ -268,28 +268,28 @@ python3 scripts/ontology.py related --id task_002 --rel depends_on --depth 3
 #   validate: "end >= start if end exists"
 
 # 第一步：创建会议事件
-python3 scripts/ontology.py create --type Event --props '{"title":"团队周会","start":"2026-07-20T10:00:00","end":"2026-07-20T11:00:00","attendees":["p_001","p_002"]}'
+python3 （请参考skill目录中的脚本文件） create --type Event --props '{"title":"团队周会","start":"2026-07-20T10:00:00","end":"2026-07-20T11:00:00","attendees":["p_001","p_002"]}'
 # 返回: {"id":"event_001","validated":true}
 
 # 第二步：创建准备议程任务
-python3 scripts/ontology.py create --type Task --props '{"title":"准备会议议程","status":"open","assignee":"p_001"}'
+python3 （请参考skill目录中的脚本文件） create --type Task --props '{"title":"准备会议议程","status":"open","assignee":"p_001"}'
 # 返回: {"id":"task_003","validated":true}
 
 # 第三步：尝试创建状态非法的任务（触发约束违反）
-python3 scripts/ontology.py create --type Task --props '{"title":"发送会议纪要","status":"pending"}'
+python3 （请参考skill目录中的脚本文件） create --type Task --props '{"title":"发送会议纪要","status":"pending"}'
 # 返回错误: {"error":"ENUM_VIOLATION","property":"status","value":"pending","allowed":["open","in_progress","blocked","done"]}
 # 操作被拒绝，task_003 之前创建的实体不受影响
 
 # 修正后重新创建
-python3 scripts/ontology.py create --type Task --props '{"title":"发送会议纪要","status":"open","assignee":"p_001"}'
+python3 （请参考skill目录中的脚本文件） create --type Task --props '{"title":"发送会议纪要","status":"open","assignee":"p_001"}'
 # 返回: {"id":"task_004","validated":true}
 
 # 建立任务依赖（发送纪要依赖准备议程）
-python3 scripts/ontology.py relate --from task_004 --rel depends_on --to task_003
+python3 （请参考skill目录中的脚本文件） relate --from task_004 --rel depends_on --to task_003
 # 返回: {"acyclic_check":true,"validated":true}
 
 # 尝试创建循环依赖（task_003 依赖 task_004，形成环）
-python3 scripts/ontology.py relate --from task_003 --rel depends_on --to task_004
+python3 （请参考skill目录中的脚本文件） relate --from task_003 --rel depends_on --to task_004
 # 返回错误: {"error":"CYCLE_DETECTED","path":["task_003","task_004","task_003"]}
 # 操作被拒绝，无环约束生效
 ```

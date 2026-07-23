@@ -235,15 +235,15 @@ git bisect good v1.2.0
 
 # 自动化二分（带测试脚本）
 git bisect start HEAD v1.2.0
-git bisect run ./test-for-bug.sh
+git bisect run （请参考skill目录中的脚本文件）
 
 # 示例
-cat > /tmp/test-for-bug.sh << 'EOF'
+cat > /tmp/（请参考skill目录中的脚本文件） << 'EOF'
 #!/bin/bash
 npm test -- --grep "login should redirect" 2>/dev/null
 EOF
-chmod +x /tmp/test-for-bug.sh
-git bisect run /tmp/test-for-bug.sh
+chmod +x /tmp/（请参考skill目录中的脚本文件）
+git bisect run /tmp/（请参考skill目录中的脚本文件）
 
 # 跳过无法构建的提交
 git bisect skip

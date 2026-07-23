@@ -306,7 +306,7 @@ bilingual_search("机器学习入门", "machine learning tutorial")
 #!/bin/bash
 # 快速搜索工具(支持参数)
 
-# 用法: ./quick_search.sh <engine> <query>
+# 用法: （请参考skill目录中的脚本文件） <engine> <query>
 # 引擎: baidu, google, bing, ddg, sogou, 360, yandex, bing_cn
 
 ENGINE="${1:-baidu}"
@@ -382,14 +382,14 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
 
 ```bash
 # 使用指定引擎搜索
-./quick_search.sh google "Python tutorial"
+（请参考skill目录中的脚本文件） google "Python tutorial"
 ```
 
 ### 第三步:多引擎对比
 
 ```bash
 # 在所有引擎中搜索同一关键词
-./quick_search.sh all "人工智能"
+（请参考skill目录中的脚本文件） all "人工智能"
 ```
 
 #
@@ -429,7 +429,7 @@ encoded = urllib.parse.quote(query)
 ```bash
 # 最佳实践:精确搜索
 QUERY='"exact match" site:stackoverflow.com'
-./quick_search.sh google "$QUERY"
+（请参考skill目录中的脚本文件） google "$QUERY"
 ```
 
 ## 常见问题

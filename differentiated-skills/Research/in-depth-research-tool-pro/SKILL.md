@@ -85,7 +85,7 @@ pricing_model: "per_use"
 #### 1. 团队协作研究
 
 ```bash
-python scripts/team_research.py \
+python （请参考skill目录中的脚本文件） \
   --project="市场进入策略研究" \
   --members=alice,bob,charlie \
   --roles="lead,researcher,analyst" \
@@ -98,13 +98,13 @@ python scripts/team_research.py \
 
 ```bash
 # 自动收集与管理引用
-python scripts/citation_manager.py \
+python （请参考skill目录中的脚本文件） \
   --style=apa \
   --auto-collect \
   --output=references.bib
 
 # 生成参考文献列表
-python scripts/citation_manager.py \
+python （请参考skill目录中的脚本文件） \
   --format=numbered \
   --output=references.md
 ```
@@ -115,13 +115,13 @@ python scripts/citation_manager.py \
 
 ```bash
 # 保存研究成果到知识库
-python scripts/knowledge_base.py save \
+python （请参考skill目录中的脚本文件） save \
   --research=market_research.md \
   --tags="市场,新能源,2026" \
   --category="行业研究"
 
 # 搜索知识库
-python scripts/knowledge_base.py search \
+python （请参考skill目录中的脚本文件） search \
   --query="新能源市场" \
   --category="行业研究"
 ```
@@ -130,7 +130,7 @@ python scripts/knowledge_base.py search \
 
 ```bash
 # 配置定时研究
-python scripts/scheduled_research.py \
+python （请参考skill目录中的脚本文件） \
   --topic="新能源行业 月度动态" \
   --cron="0 8 1 * *" \
   --incremental \
@@ -161,7 +161,7 @@ python scripts/scheduled_research.py \
 
 ```bash
 # 启动协作研究项目
-python scripts/team_research.py \
+python （请参考skill目录中的脚本文件） \
   --project="东南亚市场进入可行性研究" \
   --members=strategist,analyst1,analyst2,legal_advisor \
   --roles="lead,researcher,researcher,reviewer" \
@@ -179,7 +179,7 @@ python scripts/team_research.py \
 
 ```bash
 # 配置定时研究任务
-python scripts/scheduled_research.py \
+python （请参考skill目录中的脚本文件） \
   --topic="人工智能芯片 行业动态" \
   --cron="0 8 * * 1" \
   --incremental \
@@ -196,7 +196,7 @@ python scripts/scheduled_research.py \
 
 ```bash
 # 创建协作研究
-python scripts/team_research.py \
+python （请参考skill目录中的脚本文件） \
   --project="大语言模型医疗应用综述" \
   --members=researcher1,researcher2,advisor \
   --academic-mode \
@@ -233,10 +233,10 @@ python scripts/team_research.py \
 pip install refactoring pyzotero python-docx reportlab
 
 # 导入免费版研究成果
-python scripts/migrate.py --from-free --import-research
+python （请参考skill目录中的脚本文件） --from-free --import-research
 
 # 验证升级
-python scripts/research.py --version
+python （请参考skill目录中的脚本文件） --version
 # 输出: in-depth-research-tool-pro v1.0.0
 ```
 
@@ -244,19 +244,19 @@ python scripts/research.py --version
 
 ```bash
 # 初始化研究项目
-python scripts/team_research.py init \
+python （请参考skill目录中的脚本文件） init \
   --project="研究项目名称" \
   --members=alice,bob \
   --storage=./research_projects
 
 # 分配研究任务
-python scripts/team_research.py assign \
+python （请参考skill目录中的脚本文件） assign \
   --project="研究项目名称" \
   --task="技术调研" \
   --assignee=alice
 
 # 查看研究进展
-python scripts/team_research.py status --project="研究项目名称"
+python （请参考skill目录中的脚本文件） status --project="研究项目名称"
 ```
 
 #
@@ -317,7 +317,7 @@ analytics:
 
 ```bash
 # 启动 REST API 服务
-python scripts/api_server.py --port 8000
+python （请参考skill目录中的脚本文件） --port 8000
 
 # 提交研究任务
 curl -X POST http://localhost:8000/research \
@@ -366,18 +366,18 @@ config.start()
 
 ```bash
 # 知识库分类管理
-python scripts/knowledge_base.py organize \
+python （请参考skill目录中的脚本文件） organize \
   --auto-classify \
   --tags-from-content
 
 # 知识库搜索
-python scripts/knowledge_base.py search \
+python （请参考skill目录中的脚本文件） search \
   --query="市场趋势" \
   --semantic-search \
   --limit 10
 
 # 导出知识库
-python scripts/knowledge_base.py export \
+python （请参考skill目录中的脚本文件） export \
   --format=json \
   --output=knowledge_export.json
 ```
@@ -386,14 +386,14 @@ python scripts/knowledge_base.py export \
 
 ```bash
 # 生成多格式报告
-python scripts/report_generator.py \
+python （请参考skill目录中的脚本文件） \
   --research=market_research.md \
   --formats=pdf,docx,html \
   --template=corporate \
   --output-dir=./reports
 
 # 自定义报告模板
-python scripts/report_generator.py \
+python （请参考skill目录中的脚本文件） \
   --research=market_research.md \
   --template=custom_template.html \
   --branding=company_branding
@@ -405,22 +405,22 @@ python scripts/report_generator.py \
 
 ```bash
 # 解决同步冲突
-python scripts/team_research.py resolve \
+python （请参考skill目录中的脚本文件） resolve \
   --project="项目名" \
   --strategy=manual
 
 # 查看冲突详情
-python scripts/team_research.py conflicts --project="项目名"
+python （请参考skill目录中的脚本文件） conflicts --project="项目名"
 ```
 
 ### 引用管理格式错误
 
 ```bash
 # 验证引用格式
-python scripts/citation_manager.py validate --style=apa
+python （请参考skill目录中的脚本文件） validate --style=apa
 
 # 重新格式化引用
-python scripts/citation_manager.py reformat \
+python （请参考skill目录中的脚本文件） reformat \
   --input=references.bib \
   --style=mla \
   --output=references_mla.bib
@@ -430,10 +430,10 @@ python scripts/citation_manager.py reformat \
 
 ```bash
 # 重建索引
-python scripts/knowledge_base.py reindex
+python （请参考skill目录中的脚本文件） reindex
 
 # 调整搜索算法
-python scripts/knowledge_base.py search \
+python （请参考skill目录中的脚本文件） search \
   --algorithm=semantic \
   --threshold=0.8
 ```
@@ -442,13 +442,13 @@ python scripts/knowledge_base.py search \
 
 ```bash
 # 检查模板
-python scripts/report_generator.py --validate-template
+python （请参考skill目录中的脚本文件） --validate-template
 
 # 安装报告依赖
 pip install python-docx reportlab weasyprint
 
 # 降级为 Markdown
-python scripts/report_generator.py --format=markdown
+python （请参考skill目录中的脚本文件） --format=markdown
 ```
 
 ## 依赖说明

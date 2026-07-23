@@ -189,10 +189,10 @@ POST https://api.juejin.cn/recommend_api/v1/article/recommend_cate_feed
 
 ```bash
 # 下载单篇（保留元信息）
-{baseDir}/scripts/juejin.sh download https://juejin.cn/post/7300000000000000000
+{baseDir}/（请参考skill目录中的脚本文件） download https://juejin.cn/post/7300000000000000000
 
 # 下载作者全部文章（默认上限 20 篇，需显式确认）
-{baseDir}/scripts/juejin.sh download-author --user-id XXX --confirm
+{baseDir}/（请参考skill目录中的脚本文件） download-author --user-id XXX --confirm
 ```
 
 ```text

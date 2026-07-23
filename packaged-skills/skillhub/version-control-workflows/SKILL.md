@@ -38,9 +38,9 @@ pricing_model: "per_use"
 #
 ## 适用场景
 
-- 用户说"（根据实际场景填充）" → 执行审查
-- 用户说"（根据实际场景填充）" → 执行审查
-- 用户说"（根据实际场景填充）" → 执行审查
+- 用户说"Version Control Workflows 核心处理" → 执行审查
+- 用户说"Version Control Workflows 智能分析" → 执行审查
+- 用户说"Version Control Workflows 批量处理" → 执行审查
 - 不适用: 需要人工判断的复杂决策场景
 
 ## 使用流程
@@ -54,7 +54,7 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | version-control-workflows处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式

@@ -105,7 +105,7 @@ description: Format code with prettier, black, gofmt. Use when user mentions
 ## Quick start
 
 \`\`\`bash
-./scripts/format.sh --language python --file path/to/file.py
+（请参考skill目录中的脚本文件） --language python --file path/to/file.py
 \`\`\`
 
 ## Workflows

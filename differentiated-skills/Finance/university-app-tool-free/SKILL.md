@@ -80,7 +80,7 @@ suggested_price: 19.9
 
 ```bash
 # 排八字命盘
-python3 scripts/bazi.py chart \
+python3 （请参考skill目录中的脚本文件） chart \
   --year 1990 \
   --month 5 \
   --day 15 \
@@ -105,7 +105,7 @@ python3 scripts/bazi.py chart \
 
 ```bash
 # 性格特质解读
-python3 scripts/bazi.py personality \
+python3 （请参考skill目录中的脚本文件） personality \
   --year 1990 --month 5 --day 15 --hour 8
 
 # 输出性格分析报告
@@ -117,7 +117,7 @@ python3 scripts/bazi.py personality \
 
 ```bash
 # 流年运势分析
-python3 scripts/bazi.py fortune \
+python3 （请参考skill目录中的脚本文件） fortune \
   --year 1990 --month 5 --day 15 --hour 8 \
   --target-year 2026
 ```
@@ -137,23 +137,23 @@ python3 scripts/bazi.py fortune \
 pip install lunardate sxtwl
 
 # 排盘
-python3 scripts/bazi.py chart --year 1990 --month 5 --day 15 --hour 8 --gender male
+python3 （请参考skill目录中的脚本文件） chart --year 1990 --month 5 --day 15 --hour 8 --gender male
 ```
 
 ### 常用命令
 
 ```bash
 # 排八字命盘
-python3 scripts/bazi.py chart --year 1990 --month 5 --day 15 --hour 8 --gender male
+python3 （请参考skill目录中的脚本文件） chart --year 1990 --month 5 --day 15 --hour 8 --gender male
 
 # 五行分析
-python3 scripts/bazi.py elements --year 1990 --month 5 --day 15 --hour 8
+python3 （请参考skill目录中的脚本文件） elements --year 1990 --month 5 --day 15 --hour 8
 
 # 性格解读
-python3 scripts/bazi.py personality --year 1990 --month 5 --day 15 --hour 8
+python3 （请参考skill目录中的脚本文件） personality --year 1990 --month 5 --day 15 --hour 8
 
 # 流年运势
-python3 scripts/bazi.py fortune --year 1990 --month 5 --day 15 --hour 8 --target-year 2026
+python3 （请参考skill目录中的脚本文件） fortune --year 1990 --month 5 --day 15 --hour 8 --target-year 2026
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。

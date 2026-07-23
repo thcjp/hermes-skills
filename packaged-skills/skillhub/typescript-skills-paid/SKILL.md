@@ -65,25 +65,25 @@ pricing_model: "per_use"
 | 团队培训材料 | 示例库、反模式集合、培训大纲 | Pro 新增 |
 ### 基础规范指导
 
-执行基础规范指导操作,处理用户输入并返回结果。
+执行基础规范指导,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供基础规范指导所需的参数和指令。
+**输入**: 用户提供基础规范指导相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回基础规范指导的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`基础规范指导`相关配置参数进行设置
 ### 企业级 ESLint 规则集
 
-执行企业级 ESLint 规则集操作,处理用户输入并返回结果。
+执行企业级 ESLint 规则集,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供企业级 ESLint 规则集所需的参数和指令。
+**输入**: 用户提供企业级 ESLint 规则集相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回企业级 ESLint 规则集的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`企业级 ESLint 规则集`相关配置参数进行设置
 ### 自动化代码审查
 
-执行自动化代码审查操作,处理用户输入并返回结果。
+执行自动化代码审查,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供自动化代码审查所需的参数和指令。
+**输入**: 用户提供自动化代码审查相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回自动化代码审查的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`自动化代码审查`相关配置参数进行设置
@@ -157,7 +157,7 @@ pricing_model: "per_use"
 
 ```bash
 #!/usr/bin/env bash
-# scripts/lint-report.sh — 生成团队规范违规报告
+# （请参考skill目录中的脚本文件） — 生成团队规范违规报告
 set -euo pipefail
 
 REPORT_DIR="reports/lint"
@@ -248,7 +248,7 @@ npx tsc --noEmit
 npx type-coverage --strict --at-least 95
 
 # 生成首份基线报告
-bash scripts/lint-report.sh
+bash （请参考skill目录中的脚本文件）
 ```
 
 #
@@ -256,8 +256,8 @@ bash scripts/lint-report.sh
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
+| content | string | 否 | typescript-skills处理的内容输入 |,  |
+| mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
 | skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |
 
@@ -268,9 +268,9 @@ bash scripts/lint-report.sh
   "success": true,
   "data": {
     "final_result": {
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明"
+      "skills_result": "skills_result_value",
+      "skills_metadata": "skills_metadata_value",
+      "skills_status": "skills_status_value"
     },
     "execution_log": [
       {
@@ -310,7 +310,7 @@ bash scripts/lint-report.sh
 }
 ```
 
-中间产物模板参考: `assets/（根据实际场景填充）`
+中间产物模板参考: `assets/typescript-skills_template`
 
 ## 异常处理
 
@@ -393,7 +393,7 @@ bash scripts/lint-report.sh
 
 ```bash
 #!/usr/bin/env bash
-# scripts/gen-styleguide.sh — 从 ESLint 规则生成规范文档
+# （请参考skill目录中的脚本文件） — 从 ESLint 规则生成规范文档
 set -euo pipefail
 
 OUTPUT="docs/styleguide.md"
@@ -428,7 +428,7 @@ echo "规范文档已生成:$OUTPUT"
 
 ### Q4: 规范文档如何与代码保持同步?
 
-使用 `scripts/gen-styleguide.sh` 在 CI 中自动重新生成规范文档,若文档与规则集不一致则阻断 PR。规范变更通过修改规则集 PR 一次性完成。
+使用 `（请参考skill目录中的脚本文件）` 在 CI 中自动重新生成规范文档,若文档与规则集不一致则阻断 PR。规范变更通过修改规则集 PR 一次性完成。
 
 ### Q5: Pro 版与免费版如何协同?
 

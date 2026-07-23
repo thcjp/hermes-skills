@@ -75,10 +75,10 @@ export API_KEY="your_api_key_here"
 
 ## 使用方式
 
-脚本位于技能目录的 `scripts/sentiment_scan.py`,通过Python3执行。
+脚本位于技能目录的 `（请参考skill目录中的脚本文件）`,通过Python3执行。
 
 ```bash
-python3 scripts/sentiment_scan.py <股票代码> [监控天数] [市场]
+python3 （请参考skill目录中的脚本文件） <股票代码> [监控天数] [市场]
 ```
 
 参数说明:
@@ -90,9 +90,9 @@ python3 scripts/sentiment_scan.py <股票代码> [监控天数] [市场]
 示例:
 
 ```bash
-python3 scripts/sentiment_scan.py 002594 7
-python3 scripts/sentiment_scan.py 0700.HK 7
-python3 scripts/sentiment_scan.py AAPL 7 us
+python3 （请参考skill目录中的脚本文件） 002594 7
+python3 （请参考skill目录中的脚本文件） 0700.HK 7
+python3 （请参考skill目录中的脚本文件） AAPL 7 us
 ```
 
 ## 输出格式
@@ -141,7 +141,7 @@ python3 scripts/sentiment_scan.py AAPL 7 us
 对腾讯控股进行7天情绪扫描,了解近期舆情方向。
 
 操作:
-- 执行 `python3 scripts/sentiment_scan.py 0700.HK 7`
+- 执行 `python3 （请参考skill目录中的脚本文件） 0700.HK 7`
 - 查看情绪温度计与重大事件清单,关注公告类事件
 - 参考正负面事件占比判断短期情绪方向
 - 结合自身判断决定是否进一步深入研究
@@ -151,7 +151,7 @@ python3 scripts/sentiment_scan.py AAPL 7 us
 某A股标的发布业绩预告后评估情绪冲击。
 
 操作:
-- 执行 `python3 scripts/sentiment_scan.py 002594 7 a` 扫描近7天
+- 执行 `python3 （请参考skill目录中的脚本文件） 002594 7 a` 扫描近7天
 - 查看业绩相关事件的情绪贡献与置信度
 - 比对正负面事件占比判断市场反应倾向
 

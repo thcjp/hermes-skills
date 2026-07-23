@@ -43,11 +43,11 @@ pricing_model: "per_use"
 Monitor competitor blogs, industry publications, and thought leaders:
 
 ```bash
-node scripts/rss.js add "https://competitor.com/blog/feed" --category competitors
-node scripts/rss.js add "https://techcrunch.com/feed" --category news
-node scripts/rss.js add "https://news.ycombinator.com/rss" --category tech
+node （请参考skill目录中的脚本文件） add "https://competitor.com/blog/feed" --category competitors
+node （请参考skill目录中的脚本文件） add "https://techcrunch.com/feed" --category news
+node （请参考skill目录中的脚本文件） add "https://news.ycombinator.com/rss" --category tech
 
-node scripts/rss.js check --since 24h --format ideas
+node （请参考skill目录中的脚本文件） check --since 24h --format ideas
 ```
 
 ### Newsletter Aggregation
@@ -55,7 +55,7 @@ node scripts/rss.js check --since 24h --format ideas
 Track newsletters and digests:
 
 ```bash
-node scripts/rss.js add "https://newsletter.com/feed" --category newsletters
+node （请参考skill目录中的脚本文件） add "https://newsletter.com/feed" --category newsletters
 ```
 
 ### Keyword Monitoring
@@ -63,21 +63,21 @@ node scripts/rss.js add "https://newsletter.com/feed" --category newsletters
 Filter items by keywords:
 
 ```bash
-node scripts/rss.js check --keywords "AI,agents,automation"
+node （请参考skill目录中的脚本文件） check --keywords "AI,agents,automation"
 ```
 
 ## 使用流程
 
 ```bash
-node scripts/rss.js add "https://example.com/feed.xml" --category tech
+node （请参考skill目录中的脚本文件） add "https://example.com/feed.xml" --category tech
 
-node scripts/rss.js check
+node （请参考skill目录中的脚本文件） check
 
-node scripts/rss.js check --category tech
+node （请参考skill目录中的脚本文件） check --category tech
 
-node scripts/rss.js list
+node （请参考skill目录中的脚本文件） list
 
-node scripts/rss.js remove "https://example.com/feed.xml"
+node （请参考skill目录中的脚本文件） remove "https://example.com/feed.xml"
 ```
 
 #
@@ -92,8 +92,8 @@ node scripts/rss.js remove "https://example.com/feed.xml"
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明"
+    result: "reader 相关配置参数",
+    result: "reader 相关配置参数"
   },
   "error": null
 }
@@ -138,15 +138,15 @@ export API_KEY="your_api_key_here"
 
 ```
 ```bash
-node scripts/rss.js add "https://example.com/feed.xml" --category tech
+node （请参考skill目录中的脚本文件） add "https://example.com/feed.xml" --category tech
 
-node scripts/rss.js check
+node （请参考skill目录中的脚本文件） check
 
-node scripts/rss.js check --category tech
+node （请参考skill目录中的脚本文件） check --category tech
 
-node scripts/rss.js list
+node （请参考skill目录中的脚本文件） list
 
-node scripts/rss.js remove "https://example.com/feed.xml"
+node （请参考skill目录中的脚本文件） remove "https://example.com/feed.xml"
 ```
 ```
 

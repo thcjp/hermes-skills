@@ -116,10 +116,10 @@ suggested_price: 29.9
 
 ```bash
 # 扫描比亚迪(002594)近7天舆情
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 002594 7
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） 002594 7
 
 # 扫描腾讯(0700.HK)近7天舆情
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 0700.HK 7
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） 0700.HK 7
 ```
 
 **输出示例**:
@@ -169,10 +169,10 @@ python3 {SKILL_DIR}/scripts/sentiment_scan.py 0700.HK 7
 
 ```bash
 # 扫描苹果(AAPL)近7天美股舆情
-python3 {SKILL_DIR}/scripts/sentiment_scan.py AAPL 7 us
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） AAPL 7 us
 
 # 扫描特斯拉(TSLA)近30天舆情
-python3 {SKILL_DIR}/scripts/sentiment_scan.py TSLA 30 us
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） TSLA 30 us
 ```
 
 ### 场景三:港股舆情快速扫描
@@ -181,10 +181,10 @@ python3 {SKILL_DIR}/scripts/sentiment_scan.py TSLA 30 us
 
 ```bash
 # 扫描腾讯(0700.HK)近7天舆情
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 0700.HK 7
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） 0700.HK 7
 
 # 或使用5位数字格式
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 00700 7
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） 00700 7
 ```
 
 ## 不适用场景
@@ -208,17 +208,17 @@ python3 {SKILL_DIR}/scripts/sentiment_scan.py 00700 7
 python3 --version
 
 # 确认脚本路径
-ls {SKILL_DIR}/scripts/sentiment_scan.py
+ls {SKILL_DIR}/（请参考skill目录中的脚本文件）
 ```
 
 ### 第二步:执行首次扫描
 
 ```bash
 # 基本用法:扫描指定股票近7天舆情
-python3 {SKILL_DIR}/scripts/sentiment_scan.py <股票代码> [天数] [市场]
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） <股票代码> [天数] [市场]
 
 # 示例
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 600519 7
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） 600519 7
 ```
 
 ### 第三步:解读报告
@@ -240,8 +240,8 @@ python3 {SKILL_DIR}/scripts/sentiment_scan.py 600519 7
 
 ```bash
 # 每周一早上扫描持仓
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 002594 7 > ~/sentiment_002594_$(date +%Y%m%d).log
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 600519 7 > ~/sentiment_600519_$(date +%Y%m%d).log
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） 002594 7 > ~/sentiment_002594_$(date +%Y%m%d).log
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） 600519 7 > ~/sentiment_600519_$(date +%Y%m%d).log
 ```
 
 ### 2. 结合多个时间窗口分析
@@ -250,13 +250,13 @@ python3 {SKILL_DIR}/scripts/sentiment_scan.py 600519 7 > ~/sentiment_600519_$(da
 
 ```bash
 # 短期(3天):捕捉最新动态
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 002594 3
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） 002594 3
 
 # 中期(7天):一周趋势
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 002594 7
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） 002594 7
 
 # 长期(30天):月度趋势
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 002594 30
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） 002594 30
 ```
 
 ### 3. 关注高置信度事件
@@ -290,7 +290,7 @@ python3 {SKILL_DIR}/scripts/sentiment_scan.py 002594 30
 
 ```bash
 # 尝试增大扫描天数
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 002594 30
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） 002594 30
 ```
 
 ### Q2: 情绪分数与实际股价走势不符?

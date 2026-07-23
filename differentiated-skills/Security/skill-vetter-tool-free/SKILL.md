@@ -387,14 +387,14 @@ Skill路径: {skill_path}
 
 ```bash
 # 下载Skill后,先审查再安装
-python scripts/vet_skill.py /path/to/downloaded-skill/
+python （请参考skill目录中的脚本文件） /path/to/downloaded-skill/
 ```
 
 ### 2. 关注CRITICAL红旗
 
 ```bash
 # 只显示严重红旗
-python scripts/vet_skill.py /path/to/skill/ | grep CRITICAL
+python （请参考skill目录中的脚本文件） /path/to/skill/ | grep CRITICAL
 ```
 
 ### 3. 信任但验证

@@ -90,7 +90,7 @@ suggested_price: 99.9
 
 ```python
 # 批量处理合同图片
-python3 scripts/batch_scan.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./contracts/ \
   --scene scan-contract \
   --output ./contracts_hd/ \
@@ -107,7 +107,7 @@ python3 scripts/batch_scan.py \
 
 ```bash
 # 批量去手写
-python3 scripts/batch_scan.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./exams/ \
   --scene remove-handwriting \
   --output ./exams_blank/ \
@@ -115,7 +115,7 @@ python3 scripts/batch_scan.py \
   --format json
 
 # 自定义流水线:去手写 → 去阴影 → 去底色
-python3 scripts/pipeline_scan.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./exams/ \
   --pipeline "remove-handwriting,remove-shadow,remove-background-color" \
   --output ./exams_clean/ \
@@ -128,7 +128,7 @@ python3 scripts/pipeline_scan.py \
 
 ```bash
 # 批量去水印
-python3 scripts/batch_scan.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./product_images/ \
   --scene remove-watermark \
   --output ./products_clean/ \
@@ -136,7 +136,7 @@ python3 scripts/batch_scan.py \
   --format json
 
 # 处理结果归档与审计
-python3 scripts/archive_results.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./products_clean/ \
   --metadata ./metadata.json \
   --output ./archive/
@@ -193,7 +193,7 @@ export SCAN_EDITION="pro"
 ### 第二步:执行批量处理
 
 ```bash
-python3 scripts/batch_scan.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./images/ \
   --scene image-hd-enhance \
   --output ./enhanced/ \
@@ -204,7 +204,7 @@ python3 scripts/batch_scan.py \
 
 ```bash
 # 生成处理报告
-python3 scripts/scan_report.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./enhanced/ \
   --output report.md
 ```

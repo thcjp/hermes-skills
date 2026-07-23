@@ -65,17 +65,17 @@ export API_KEY="your_api_key_here"
 **处理**: 按照skill规范执行付费版专享功能操作,遵循单一意图原则。
 ### rest
 
-执行rest操作,处理用户输入并返回结果。
+执行rest,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供rest所需的参数和指令。
+**输入**: 用户提供rest相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回rest的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`rest`相关配置参数进行设置
 ### graphql
 
-执行graphql操作,处理用户输入并返回结果。
+执行graphql,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供graphql所需的参数和指令。
+**输入**: 用户提供graphql相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回graphql的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`graphql`相关配置参数进行设置
@@ -83,7 +83,7 @@ export API_KEY="your_api_key_here"
 ## 命令用法
 
 ```bash
-bash scripts/apigen.sh <command> <resource_name> [options]
+bash （请参考skill目录中的脚本文件） <command> <resource_name> [options]
 ```
 
 | 命令 | 免费版 | 说明 |
@@ -104,7 +104,7 @@ bash scripts/apigen.sh <command> <resource_name> [options]
 
 ### Step 2: 执行生成命令
 ```bash
-bash scripts/apigen.sh rest user
+bash （请参考skill目录中的脚本文件） rest user
 ```
 
 ### Step 3: 查看输出
@@ -112,8 +112,8 @@ bash scripts/apigen.sh rest user
 
 ### Step 4: 重定向到项目文件
 ```bash
-bash scripts/apigen.sh rest user > routes/user.js
-bash scripts/apigen.sh test user > tests/user.test.js
+bash （请参考skill目录中的脚本文件） rest user > routes/user.js
+bash （请参考skill目录中的脚本文件） test user > tests/user.test.js
 ```
 
 > **提示**: 如需生成 OpenAPI 文档、Mock 服务器、认证代码等,请升级付费版。
@@ -124,7 +124,7 @@ bash scripts/apigen.sh test user > tests/user.test.js
 **场景**: 开发者需要快速搭建用户 CRUD API
 
 ```bash
-bash scripts/apigen.sh rest user
+bash （请参考skill目录中的脚本文件） rest user
 ```
 
 **输出**: Express.js 路由代码,包含:
@@ -140,7 +140,7 @@ bash scripts/apigen.sh rest user
 **场景**: 开发者需要为产品模块定义 GraphQL 类型
 
 ```bash
-bash scripts/apigen.sh graphql product
+bash （请参考skill目录中的脚本文件） graphql product
 ```
 
 **输出**: GraphQL schema 定义,包含:
@@ -152,7 +152,7 @@ bash scripts/apigen.sh graphql product
 **场景**: 开发者需要为订单 API 编写测试
 
 ```bash
-bash scripts/apigen.sh test order
+bash （请参考skill目录中的脚本文件） test order
 ```
 
 **输出**: Jest + Supertest 测试文件,包含:
@@ -168,9 +168,9 @@ bash scripts/apigen.sh test order
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
 |---------|---------|---------|---------|
 | 命令不存在 | `Unknown command: <cmd>` | 使用了未定义的命令 | 使用 rest/graphql/test（免费版）或升级付费版 |
-| 资源名缺失 | `Resource name required` | 未提供 `<name>` 参数 | 补充资源名,如 `bash scripts/apigen.sh rest user` |
+| 资源名缺失 | `Resource name required` | 未提供 `<name>` 参数 | 补充资源名,如 `bash （请参考skill目录中的脚本文件） rest user` |
 | 命令需付费 | `Paid feature: <cmd>` | 使用了付费版专享命令 | 升级付费版解锁 swagger/client/mock/auth/rate-limit |
-| 脚本无执行权限 | `Permission denied` | `scripts/apigen.sh` 无执行权限 | 执行 `chmod +x scripts/apigen.sh` |
+| 脚本无执行权限 | `Permission denied` | `（请参考skill目录中的脚本文件）` 无执行权限 | 执行 `chmod +x （请参考skill目录中的脚本文件）` |
 | Bash 不可用 | `bash: command not found` | Windows 环境未安装 Bash | 安装 Git Bash 或 WSL |
 
 ## 常见问题

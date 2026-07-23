@@ -142,7 +142,7 @@ chmod 600 ~/.vpn/creds.txt
 
 ```bash
 # 允许openvpn和killall免密执行（VPN切换需要root权限）
-echo "$USER ALL=(ALL) NOPASSWD: /usr/sbin/openvpn, /usr/bin/killall" | sudo tee /etc/sudoers.d/openvpn
+echo "$USER ALL=(ALL) NOPASSWD: /usr/s（请参考skill目录中的脚本文件）, /usr/（请参考skill目录中的脚本文件）" | sudo tee /etc/sudoers.d/openvpn
 ```
 
 ### 第四步：使用装饰器自动轮换
@@ -305,7 +305,7 @@ def check_vpn_health(vpn):
 A：这是因为未配置免密sudo。运行以下命令配置：
 
 ```bash
-echo "$USER ALL=(ALL) NOPASSWD: /usr/sbin/openvpn, /usr/bin/killall" | sudo tee /etc/sudoers.d/openvpn
+echo "$USER ALL=(ALL) NOPASSWD: /usr/s（请参考skill目录中的脚本文件）, /usr/（请参考skill目录中的脚本文件）" | sudo tee /etc/sudoers.d/openvpn
 ```
 
 仅授权openvpn和killall两个命令的免密执行，安全性可控。

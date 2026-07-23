@@ -118,7 +118,7 @@ suggested_price: 29.9
 
 ```bash
 # 搜索学术论文相关内容
-python3 scripts/search.py "transformer attention mechanism survey 2026"
+python3 （请参考skill目录中的脚本文件） "transformer attention mechanism survey 2026"
 ```
 
 预期输出包含相关论文、研究博客和学术资源的链接与摘要。
@@ -129,7 +129,7 @@ python3 scripts/search.py "transformer attention mechanism survey 2026"
 
 ```bash
 # 搜索技术文档
-python3 scripts/search.py "Docker compose networking best practices"
+python3 （请参考skill目录中的脚本文件） "Docker compose networking best practices"
 ```
 
 返回官方文档、技术博客和社区讨论的链接，帮助快速定位权威资料。
@@ -140,7 +140,7 @@ python3 scripts/search.py "Docker compose networking best practices"
 
 ```bash
 # 搜索最新动态
-python3 scripts/search.py "2026年 人工智能 最新进展"
+python3 （请参考skill目录中的脚本文件） "2026年 人工智能 最新进展"
 ```
 
 ## 不适用场景
@@ -189,17 +189,17 @@ export GOOGLE_CSE_ID=your_cx_id_here
 
 ```bash
 # 基础搜索
-python3 scripts/search.py "Python 编程教程"
+python3 （请参考skill目录中的脚本文件） "Python 编程教程"
 
 # 指定返回结果数量
-python3 scripts/search.py "machine learning" --max 5
+python3 （请参考skill目录中的脚本文件） "machine learning" --max 5
 ```
 
 ### 验证配置
 
 ```bash
 # 测试 API 连通性
-python3 scripts/search.py "test" --max 1
+python3 （请参考skill目录中的脚本文件） "test" --max 1
 
 # 如果返回结果，说明配置成功
 ```
@@ -211,11 +211,11 @@ python3 scripts/search.py "test" --max 1
 
 ```bash
 # 使用环境变量
-python3 scripts/search.py "搜索关键词"
+python3 （请参考skill目录中的脚本文件） "搜索关键词"
 
 # 直接传入凭证（不推荐，用于测试）
 GOOGLE_API_KEY=xxx GOOGLE_CSE_ID=yyy \
-  python3 scripts/search.py "搜索关键词"
+  python3 （请参考skill目录中的脚本文件） "搜索关键词"
 ```
 
 ### 参数说明
@@ -242,7 +242,7 @@ GOOGLE_API_KEY=xxx GOOGLE_CSE_ID=yyy \
 
 ```bash
 # 查看剩余配额
-python3 scripts/search.py --quota
+python3 （请参考skill目录中的脚本文件） --quota
 
 # 减少不必要的查询
 # 先使用本地知识，仅在需要时搜索
@@ -266,7 +266,7 @@ echo $GOOGLE_API_KEY
 echo $GOOGLE_CSE_ID
 
 # 验证 Key 格式
-python3 scripts/search.py --validate-key
+python3 （请参考skill目录中的脚本文件） --validate-key
 ```
 
 可能原因：
@@ -281,10 +281,10 @@ python3 scripts/search.py --validate-key
 # 确认 CSE 配置为搜索全网（而非限定站点）
 
 # 尝试英文关键词
-python3 scripts/search.py "english keywords"
+python3 （请参考skill目录中的脚本文件） "english keywords"
 
 # 检查配额是否用尽
-python3 scripts/search.py --quota
+python3 （请参考skill目录中的脚本文件） --quota
 ```
 
 ### API 配额用尽
@@ -309,7 +309,7 @@ curl -I https://www.googleapis.com
 
 # 使用代理（如需要）
 export HTTPS_PROXY=http://proxy:port
-python3 scripts/search.py "query"
+python3 （请参考skill目录中的脚本文件） "query"
 ```
 
 ## 依赖说明

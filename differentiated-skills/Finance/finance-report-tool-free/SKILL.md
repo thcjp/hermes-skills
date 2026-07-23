@@ -104,7 +104,7 @@ suggested_price: 29.9
 
 ```bash
 # 从Excel生成分析报告
-python3 scripts/generate_report.py input.xlsx \
+python3 （请参考skill目录中的脚本文件） input.xlsx \
   -o html \
   --company "示例公司" \
   --ticker "000001.SZ"
@@ -118,7 +118,7 @@ python3 scripts/generate_report.py input.xlsx \
 
 ```bash
 # 从PDF提取并生成报告
-python3 scripts/generate_report.py annual_report.pdf \
+python3 （请参考skill目录中的脚本文件） annual_report.pdf \
   -o html \
   --company "某上市公司" \
   --ticker "600519.SH"
@@ -130,7 +130,7 @@ python3 scripts/generate_report.py annual_report.pdf \
 
 ```bash
 # 生成含趋势图的报告
-python3 scripts/generate_report.py financial_data.xlsx \
+python3 （请参考skill目录中的脚本文件） financial_data.xlsx \
   -o html \
   --include-sparkline \
   --include-forecast
@@ -151,24 +151,24 @@ python3 scripts/generate_report.py financial_data.xlsx \
 pip install pandas openpyxl pdfplumber
 
 # 生成报告
-python3 scripts/generate_report.py data.xlsx -o html --company "公司名"
+python3 （请参考skill目录中的脚本文件） data.xlsx -o html --company "公司名"
 ```
 
 ### 常用命令
 
 ```bash
 # 基本用法
-python3 scripts/generate_report.py input.xlsx -o html
+python3 （请参考skill目录中的脚本文件） input.xlsx -o html
 
 # 指定公司信息
-python3 scripts/generate_report.py input.xlsx \
+python3 （请参考skill目录中的脚本文件） input.xlsx \
   -o html \
   --company "公司名" \
   --ticker "000001.SZ" \
   --output-dir ./reports
 
 # 含预测标记
-python3 scripts/generate_report.py input.xlsx \
+python3 （请参考skill目录中的脚本文件） input.xlsx \
   -o html \
   --include-forecast
 ```

@@ -125,12 +125,12 @@ export API_KEY="your_api_key_here"
 ## 案例展示
 
 ```bash
-node {baseDir}/scripts/linear-cli.js teams
-node {baseDir}/scripts/linear-cli.js projects
-node {baseDir}/scripts/linear-cli.js issues
-node {baseDir}/scripts/linear-cli.js issue ENG-123
-node {baseDir}/scripts/linear-cli.js createIssue "Title" "Description" "team-id" '{"priority":2}'
-node {baseDir}/scripts/linear-cli.js updateIssue "issue-id" '{"stateId":"state-id"}'
+node {baseDir}/（请参考skill目录中的脚本文件） teams
+node {baseDir}/（请参考skill目录中的脚本文件） projects
+node {baseDir}/（请参考skill目录中的脚本文件） issues
+node {baseDir}/（请参考skill目录中的脚本文件） issue ENG-123
+node {baseDir}/（请参考skill目录中的脚本文件） createIssue "Title" "Description" "team-id" '{"priority":2}'
+node {baseDir}/（请参考skill目录中的脚本文件） updateIssue "issue-id" '{"stateId":"state-id"}'
 ```
 
 ## 常见问题

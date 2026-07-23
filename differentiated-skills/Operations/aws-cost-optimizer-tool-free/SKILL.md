@@ -74,7 +74,7 @@ suggested_price: 29.9
 
 ```bash
 # 月度成本概览
-python3 scripts/cost.py summary --month 2026-07
+python3 （请参考skill目录中的脚本文件） summary --month 2026-07
 
 # 输出：
 # === AWS成本概览 2026年7月 ===
@@ -95,7 +95,7 @@ python3 scripts/cost.py summary --month 2026-07
 
 ```bash
 # 闲置资源检测
-python3 scripts/cost.py idle-resources --scan
+python3 （请参考skill目录中的脚本文件） idle-resources --scan
 
 # 输出：
 # === 闲置资源 ===
@@ -112,7 +112,7 @@ python3 scripts/cost.py idle-resources --scan
 
 ```bash
 # 优化建议
-python3 scripts/cost.py recommendations
+python3 （请参考skill目录中的脚本文件） recommendations
 
 # 输出：
 # === 优化建议 ===
@@ -142,28 +142,28 @@ pip install boto3
 aws configure
 
 # 分析成本
-python3 scripts/cost.py summary --month 2026-07
+python3 （请参考skill目录中的脚本文件） summary --month 2026-07
 ```
 
 ### 常用命令
 
 ```bash
 # 成本概览
-python3 scripts/cost.py summary --month 2026-07
-python3 scripts/cost.py trend --months 6
+python3 （请参考skill目录中的脚本文件） summary --month 2026-07
+python3 （请参考skill目录中的脚本文件） trend --months 6
 
 # 成本分解
-python3 scripts/cost.py breakdown --by service
-python3 scripts/cost.py breakdown --by region
+python3 （请参考skill目录中的脚本文件） breakdown --by service
+python3 （请参考skill目录中的脚本文件） breakdown --by region
 
 # 闲置资源
-python3 scripts/cost.py idle-resources --scan
+python3 （请参考skill目录中的脚本文件） idle-resources --scan
 
 # 优化建议
-python3 scripts/cost.py recommendations
+python3 （请参考skill目录中的脚本文件） recommendations
 
 # 导出报告
-python3 scripts/cost.py export --month 2026-07 --format csv --output cost_report.csv
+python3 （请参考skill目录中的脚本文件） export --month 2026-07 --format csv --output cost_report.csv
 ```
 
 ## 示例

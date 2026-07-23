@@ -50,25 +50,25 @@ pricing_model: "per_use"
 | 修复建议 | 代码片段 | 批量自动修复脚本 |
 ### 能力模块
 
-执行能力模块操作,处理用户输入并返回结果。
+执行能力模块,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供能力模块所需的参数和指令。
+**输入**: 用户提供能力模块相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回能力模块的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`能力模块`相关配置参数进行设置
 ### 审查范围
 
-执行审查范围操作,处理用户输入并返回结果。
+执行审查范围,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供审查范围所需的参数和指令。
+**输入**: 用户提供审查范围相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回审查范围的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`审查范围`相关配置参数进行设置
 ### 审查规则
 
-执行审查规则操作,处理用户输入并返回结果。
+执行审查规则,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供审查规则所需的参数和指令。
+**输入**: 用户提供审查规则相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回审查规则的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`审查规则`相关配置参数进行设置
@@ -225,7 +225,7 @@ jobs:
 
       - name: 执行代码审查
         run: |
-          ./scripts/batch-java-review.sh src/
+          （请参考skill目录中的脚本文件） src/
 
       - name: 检查 Critical 问题数
         run: |
@@ -306,14 +306,14 @@ jobs:
 <body>
     <h1>Java 代码审查报告</h1>
     <div class="summary">
-        <p><strong>审查日期</strong>: （根据实际场景填充）</p>
+        <p><strong>审查日期</strong>: "reviewer_result"</p>
         <p><strong>审查范围</strong>: 全维度</p>
-        <p><strong>文件数量</strong>: （根据实际场景填充）</p>
-        <p><strong>问题总数</strong>: （根据实际场景填充）</p>
+        <p><strong>文件数量</strong>: "reviewer_metadata"</p>
+        <p><strong>问题总数</strong>: "reviewer_status"</p>
         <ul>
-            <li class="critical">Critical: （根据实际场景填充）</li>
-            <li class="major">Major: （根据实际场景填充）</li>
-            <li class="minor">Minor: （根据实际场景填充）</li>
+            <li class="critical">Critical: "reviewer_summary"</li>
+            <li class="major">Major: "reviewer_details"</li>
+            <li class="minor">Minor: "reviewer_count"</li>
             <li class="suggestion">Suggestion: 建议优化</li>
         </ul>
     </div>
@@ -336,13 +336,13 @@ jobs:
         </tr>
         相关信息
         <tr>
-            <td>（根据实际场景填充）</td>
-            <td class="（根据实际场景填充）">（根据实际场景填充）</td>
-            <td>（根据实际场景填充）</td>
-            <td>（根据实际场景填充）</td>
-            <td>（根据实际场景填充）</td>
-            <td>相关说明</td>
-            <td>（根据实际场景填充）</td>
+            <td>"reviewer_timestamp"</td>
+            <td class=""reviewer_version"">"reviewer_version"</td>
+            <td>"field_9"</td>
+            <td>"field_10"</td>
+            <td>"field_11"</td>
+            <td>reviewer 相关配置参数</td>
+            <td>"field_12"</td>
         </tr>
         相关信息
     </table>
@@ -355,7 +355,7 @@ jobs:
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | java-reviewer处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式
@@ -513,7 +513,7 @@ severity_override:
 
 ### Q3：如何集成到 SonarQube？
 ```bash
-./scripts/export-sonarqube.sh reports/java-review-latest/ > sonar-issues.json
+（请参考skill目录中的脚本文件） reports/java-review-latest/ > sonar-issues.json
 
 [
   {

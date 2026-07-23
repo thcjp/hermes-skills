@@ -266,7 +266,7 @@ window.matchMedia('(prefers-color-scheme: dark)')
 # 构建后批量巡检（专业版）
 npx stylelint "templates/**/*.css" --config .stylelintrc.json
 npx @axe-core/cli http://localhost:8000 --save a11y.json
-python scripts/consistency_check.py --src templates/ --report report.json
+python （请参考skill目录中的脚本文件） --src templates/ --report report.json
 ```
 
 ## 设计系统治理

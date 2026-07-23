@@ -54,25 +54,25 @@ pricing_model: "per_use"
 | 多账号 | 切换/并行/隔离/凭证管理 | 4 | 否 |
 ### 基础消息
 
-执行基础消息操作,处理用户输入并返回结果。
+执行基础消息,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供基础消息所需的参数和指令。
+**输入**: 用户提供基础消息相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回基础消息的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`基础消息`相关配置参数进行设置
 ### 基础搜索
 
-执行基础搜索操作,处理用户输入并返回结果。
+执行基础搜索,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供基础搜索所需的参数和指令。
+**输入**: 用户提供基础搜索相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回基础搜索的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`基础搜索`相关配置参数进行设置
 ### 批量操作
 
-执行批量操作操作,处理用户输入并返回结果。
+执行批量操作,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供批量操作所需的参数和指令。
+**输入**: 用户提供批量操作相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回批量操作的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`批量操作`相关配置参数进行设置
@@ -88,7 +88,7 @@ pricing_model: "per_use"
 python wa_batch_sender.py \
   --store ~/.wacli \
   --recipients "contacts.json" \
-  --message "您好 （根据实际场景填充），我们的产品已更新至 v2.1.0，新增实时协作功能。" \
+  --message "您好 "msg_result"，我们的产品已更新至 v2.1.0，新增实时协作功能。" \
   --rate_limit 3 \
   --retry 3 \
   --dry_run false
@@ -102,7 +102,7 @@ batch_config = {
         {"phone": "+8613900139000", "name": "李四", "company": "B公司"},
         {"phone": "+8613700137000", "name": "王五", "company": "C公司"}
     ],
-    "message_template": "您好 （根据实际场景填充）（（根据实际场景填充）），\n\n产品已更新至 v2.1.0。\n新增功能：实时协作、自动保存。\n\n如有疑问请随时联系。",
+    "message_template": "您好 "msg_metadata"（"msg_metadata"），\n\n产品已更新至 v2.1.0。\n新增功能：实时协作、自动保存。\n\n如有疑问请随时联系。",
     "rate_limit_sec": 3,          # 每条间隔 3 秒
     "max_per_hour": 100,           # 每小时最多 100 条
     "retry_on_failure": 3,
@@ -218,7 +218,7 @@ python wa_batch_sender.py \
   --store ~/.wacli \
   --recipients "contacts.json" \
   --file "/path/to/report.pdf" \
-  --caption "（根据实际场景填充）您好，这是您本月的使用报告。" \
+  --caption ""msg_status"您好，这是您本月的使用报告。" \
   --rate_limit 5 \
   --dry_run true
 ```
@@ -248,8 +248,8 @@ wacli messages search --fulltext "项目交付时间" --index "whatsapp.idx" --l
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | whatsapp-msg处理的内容输入 |,  |
+| content | string | 否 | whatsapp-msg处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -258,9 +258,9 @@ wacli messages search --fulltext "项目交付时间" --index "whatsapp.idx" --l
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "msg 相关配置参数",
+    result: "msg 相关配置参数",
+    result: "msg 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

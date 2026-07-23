@@ -96,7 +96,7 @@ pricing_model: "per_use"
 
 ```bash
 # 批量发布（专业版）
-{baseDir}/scripts/board-pro.sh publish-batch \
+{baseDir}/（请参考skill目录中的脚本文件） publish-batch \
   --board main \
   --dir ./artworks/
 ```
@@ -215,14 +215,14 @@ A：有。专业版享画布治理与创作策略咨询。
 
 ```bash
 # 批量发布（专业版）
-{baseDir}/scripts/board-pro.sh publish-batch \
+{baseDir}/（请参考skill目录中的脚本文件） publish-batch \
   --board main \
   --dir ./artworks/ \
   --concurrent 3 \
   --skip-overlap
 
 # 冲突报告
-{baseDir}/scripts/board-pro.sh publish-batch --dir ./artworks/ --report conflicts.json
+{baseDir}/（请参考skill目录中的脚本文件） publish-batch --dir ./artworks/ --report conflicts.json
 ```
 
 ```text
@@ -281,7 +281,7 @@ A：有。专业版享画布治理与创作策略咨询。
 
 ```bash
 # 生成热度看板
-{baseDir}/scripts/board-pro.sh analytics --board main --period 30d
+{baseDir}/（请参考skill目录中的脚本文件） analytics --board main --period 30d
 ```
 
 ```text

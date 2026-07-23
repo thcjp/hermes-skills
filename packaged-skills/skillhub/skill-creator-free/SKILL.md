@@ -21,8 +21,8 @@ tags:
 
 ## 输入输出
 
-**输入**: 用户提供skill创建需求，包括具体的concrete examples（skill应支持的功能描述与触发场景）、预期触发关键词或短语、skill名称建议、所需的bundled resources类型（scripts/references/assets）、skill的复杂度与自由度偏好（High/Medium/Low freedom）。
-**输出**: SKILL.md结构设计指导（含frontmatter中 `name` 与 `description` 字段的编写规范、body内容组织建议）、Progressive Disclosure三级加载系统设计建议（Level 1 Metadata约100 words / Level 2 SKILL.md body <5k words / Level 3 Bundled resources按需加载）、Bundled Resources基础组织方案（scripts/references/assets三类目录用途说明）、Core Principles三大原则应用建议。免费版不含 `init_skill.py`/`package_skill.py` 脚本集成与完整规范（付费版专享）。
+**输入**: 用户提供skill创建需求，包括具体的concrete examples（skill应支持的功能描述与触发场景）、预期触发关键词或短语、skill名称建议、所需的bundled resources类型（（请参考skill目录中的脚本文件））、skill的复杂度与自由度偏好（High/Medium/Low freedom）。
+**输出**: SKILL.md结构设计指导（含frontmatter中 `name` 与 `description` 字段的编写规范、body内容组织建议）、Progressive Disclosure三级加载系统设计建议（Level 1 Metadata约100 words / Level 2 SKILL.md body <5k words / Level 3 Bundled resources按需加载）、Bundled Resources基础组织方案（（请参考skill目录中的脚本文件））、Core Principles三大原则应用建议。免费版不含 `init_skill.py`/`package_skill.py` 脚本集成与完整规范（付费版专享）。
 
 ## 依赖说明
 
@@ -116,14 +116,14 @@ Step 1 - Understand:
   - 触发: "rotate this PDF"、"rotate PDF"
 Step 2 - Plan:
   - 分析: 旋转PDF每次都需重写相同代码
-  - 资源: scripts/rotate_pdf.py
+  - 资源: （请参考skill目录中的脚本文件）
 Step 3 - 编写 SKILL.md:
   frontmatter:
     name: pdf-editor
     description: "PDF manipulation toolkit. Use when user needs to rotate, split, merge PDFs..."
   body:
     - 旋转PDF的使用说明
-    - 引用 scripts/rotate_pdf.py
+    - 引用 （请参考skill目录中的脚本文件）
 Step 4 - Progressive Disclosure 检查:
   - SKILL.md <500 lines ✓
   - description含触发信息 ✓

@@ -118,10 +118,10 @@ export API_KEY="your_api_key_here"
 
 ## 使用方式
 
-脚本位于技能目录的 `scripts/sentiment_scan.py`,通过Python3执行。
+脚本位于技能目录的 `（请参考skill目录中的脚本文件）`,通过Python3执行。
 
 ```bash
-python3 scripts/sentiment_scan.py <股票代码> [监控天数] [市场]
+python3 （请参考skill目录中的脚本文件） <股票代码> [监控天数] [市场]
 ```
 
 参数说明:
@@ -133,9 +133,9 @@ python3 scripts/sentiment_scan.py <股票代码> [监控天数] [市场]
 示例:
 
 ```bash
-python3 scripts/sentiment_scan.py 002594 7
-python3 scripts/sentiment_scan.py 0700.HK 30
-python3 scripts/sentiment_scan.py AAPL 7 us
+python3 （请参考skill目录中的脚本文件） 002594 7
+python3 （请参考skill目录中的脚本文件） 0700.HK 30
+python3 （请参考skill目录中的脚本文件） AAPL 7 us
 ```
 
 ## 输出格式
@@ -193,7 +193,7 @@ python3 scripts/sentiment_scan.py AAPL 7 us
 腾讯控股发布季报前后进行30天情绪扫描,评估市场反应。
 
 操作:
-- 执行 `python3 scripts/sentiment_scan.py 0700.HK 30`
+- 执行 `python3 （请参考skill目录中的脚本文件） 0700.HK 30`
 - 查看情绪温度计与重大事件清单,关注业绩超预期与研报评级变动
 - 结合来源权重判断情绪主要由公告驱动还是社交媒体炒作
 - 参考操作建议与正负面事件占比决定是否调整持仓
@@ -203,7 +203,7 @@ python3 scripts/sentiment_scan.py AAPL 7 us
 新能源政策发布后评估相关A股标的的情绪冲击。
 
 操作:
-- 执行 `python3 scripts/sentiment_scan.py 002594 7 a` 扫描比亚迪近7天
+- 执行 `python3 （请参考skill目录中的脚本文件） 002594 7 a` 扫描比亚迪近7天
 - 比对政策利好事件的基础分数与实际情绪贡献
 - 检查社交媒体权重是否放大情绪,必要时降低论坛信源可信度
 - 汇总正负面事件占比判断短期情绪方向
@@ -213,7 +213,7 @@ python3 scripts/sentiment_scan.py AAPL 7 us
 对美股科技龙头分别扫描,比较情绪温度计。
 
 操作:
-- 依次执行 `python3 scripts/sentiment_scan.py AAPL 7 us` 与 `python3 scripts/sentiment_scan.py TSLA 7 us`
+- 依次执行 `python3 （请参考skill目录中的脚本文件） AAPL 7 us` 与 `python3 （请参考skill目录中的脚本文件） TSLA 7 us`
 - 对比两只标的的情绪温度计与平均情绪
 - 关注情绪分化明显的事件,如产品发布或监管调查
 - 结合事件置信度筛选高确定性机会

@@ -55,25 +55,25 @@ pricing_model: "per_use"
 | 通知扩展 | 邮件/Webhook/推送/多渠道 | 4 | 否 |
 ### 基础定时
 
-执行基础定时操作,处理用户输入并返回结果。
+执行基础定时,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供基础定时所需的参数和指令。
+**输入**: 用户提供基础定时相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回基础定时的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`基础定时`相关配置参数进行设置
 ### 番茄钟
 
-执行番茄钟操作,处理用户输入并返回结果。
+执行番茄钟,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供番茄钟所需的参数和指令。
+**输入**: 用户提供番茄钟相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回番茄钟的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`番茄钟`相关配置参数进行设置
 ### 多计时器
 
-执行多计时器操作,处理用户输入并返回结果。
+执行多计时器,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供多计时器所需的参数和指令。
+**输入**: 用户提供多计时器相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回多计时器的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`多计时器`相关配置参数进行设置
@@ -241,7 +241,7 @@ node {baseDir}/timer-status.js --all --json
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | timer-alert处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式
@@ -384,23 +384,23 @@ escalation:
     - level: "info"
       delay: "0m"
       channels: ["system"]
-      message_template: "ℹ️ （根据实际场景填充）：（根据实际场景填充）"
+      message_template: "ℹ️ "alert_result"："alert_result""
     - level: "warning"
       delay: "5m"
       condition: "no_ack"
       channels: ["system", "sound"]
-      message_template: "⚠️ （根据实际场景填充）未确认：（根据实际场景填充）"
+      message_template: "⚠️ "alert_metadata"未确认："alert_metadata""
     - level: "urgent"
       delay: "10m"
       condition: "no_ack"
       channels: ["system", "sound", "webhook"]
-      message_template: "🔴 紧急：（根据实际场景填充） 10 分钟未处理！"
+      message_template: "🔴 紧急："alert_status" 10 分钟未处理！"
       webhook_url: "${ALERT_WEBHOOK_URL}"
     - level: "critical"
       delay: "15m"
       condition: "no_ack"
       channels: ["system", "sound", "webhook", "email"]
-      message_template: "🚨 严重：（根据实际场景填充） 15 分钟未处理！已升级。"
+      message_template: "🚨 严重："alert_summary" 15 分钟未处理！已升级。"
       email_to: "ops@example.com"
   auto_ack_after: "30m"           # 30 分钟后自动确认
 ```

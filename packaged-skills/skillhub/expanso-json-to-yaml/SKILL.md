@@ -60,9 +60,9 @@ pricing_model: "per_use"
 **不适用于**：需要人工判断的复杂决策场景
 ### 基础使用
 
-执行基础使用操作,处理用户输入并返回结果。
+执行基础使用,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供基础使用所需的参数和指令。
+**输入**: 用户提供基础使用相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回基础使用的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`基础使用`相关配置参数进行设置
@@ -78,8 +78,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
+| content | string | 否 | expanso-json-to-yaml处理的内容输入 |,  |
+| mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
 | skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |
 
@@ -90,9 +90,9 @@ pricing_model: "per_use"
   "success": true,
   "data": {
     "final_result": {
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明"
+      "yaml_result": "yaml_result_value",
+      "yaml_metadata": "yaml_metadata_value",
+      "yaml_status": "yaml_status_value"
     },
     "execution_log": [
       {
@@ -132,7 +132,7 @@ pricing_model: "per_use"
 }
 ```
 
-中间产物模板参考: `assets/（根据实际场景填充）`
+中间产物模板参考: `assets/expanso-json-to-yaml_template`
 
 ## 异常处理
 

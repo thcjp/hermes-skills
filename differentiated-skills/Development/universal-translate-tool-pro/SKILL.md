@@ -93,7 +93,7 @@ suggested_price: 99.9
 
 ```bash
 #!/usr/bin/env bash
-# scripts/batch-translate.sh — 批量翻译文档目录
+# （请参考skill目录中的脚本文件） — 批量翻译文档目录
 set -euo pipefail
 
 SOURCE_DIR="docs"
@@ -252,7 +252,7 @@ OK, in Q1 we focus on user growth and retention.
 cp glossary.yaml docs/.glossary.yaml
 
 # 执行批量翻译
-bash scripts/batch-translate.sh
+bash （请参考skill目录中的脚本文件）
 
 # 查看翻译报告
 cat reports/translation-$(date +%Y%m%d).md
@@ -292,14 +292,14 @@ jobs:
       - name: 批量翻译
         env:
           TRANSLATE_API_KEY: ${{ secrets.TRANSLATE_API_KEY }}
-        run: bash scripts/batch-translate.sh
+        run: bash （请参考skill目录中的脚本文件）
 
       - name: 翻译质量检查
         run: |
           # 检查术语一致性
-          python3 scripts/check-glossary.py docs/ docs.zh/
+          python3 （请参考skill目录中的脚本文件） docs/ docs.zh/
           # 检查禁用词
-          python3 scripts/check-forbidden.py docs.zh/
+          python3 （请参考skill目录中的脚本文件） docs.zh/
 
       - name: 生成翻译报告
         run: |

@@ -48,7 +48,7 @@ PRO版支持四种会议模式,适应不同场景需求:
 
 ```bash
 # 企业级:头像+屏幕共享模式
-./scripts/run.sh "https://meet.google.com/abc-defg-hij" \
+（请参考skill目录中的脚本文件） "https://meet.google.com/abc-defg-hij" \
   --mode webpage-av-screenshare \
   --bot-name "销售助手" \
   --template pattern \
@@ -204,7 +204,7 @@ teams = {
 
 ```bash
 # 启动销售演示会议
-./scripts/run.sh "https://meet.google.com/sales-demo" \
+（请参考skill目录中的脚本文件） "https://meet.google.com/sales-demo" \
   --mode webpage-av-screenshare \
   --bot-name "产品专家" \
   --template pattern \
@@ -275,7 +275,7 @@ scheduler.start()
 
 ```bash
 # 网络研讨会配置
-./scripts/run.sh "https://zoom.us/j/webinar-123" \
+（请参考skill目录中的脚本文件） "https://zoom.us/j/webinar-123" \
   --mode webpage-av-screenshare \
   --bot-name "学习伙伴" \
   --template avatar \
@@ -295,7 +295,7 @@ scheduler.start()
 ```bash
 # 安装依赖
 pip install aiohttp websockets
-cd scripts/node && npm install
+cd （请参考skill目录中的脚本文件） && npm install
 
 # 配置API Key(继承免费版配置即可)
 # 检查现有配置
@@ -306,7 +306,7 @@ cat ~/.agentcall/config.json
 
 ```bash
 # 首次使用推荐:展示全部功能的模式
-./scripts/run.sh "会议链接" \
+（请参考skill目录中的脚本文件） "会议链接" \
   --mode webpage-av-screenshare \
   --voice-strategy direct \
   --bot-name "助手"
@@ -363,7 +363,7 @@ python -m http.server 3000 --directory ./avatar-page/
 python -m http.server 3001 --directory ./screenshare-content/
 
 # 使用公共URL(无需隧道)
-./scripts/run.sh "会议链接" \
+（请参考skill目录中的脚本文件） "会议链接" \
   --webpage-url "https://your-site.com/bot" \
   --screenshare-url "https://your-site.com/slides"
 ```

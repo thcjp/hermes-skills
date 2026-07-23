@@ -76,7 +76,7 @@ suggested_price: 29.9
 
 ```bash
 # 生成Deployment清单
-python3 scripts/generate.py deployment \
+python3 （请参考skill目录中的脚本文件） deployment \
   --name web-app \
   --image nginx:1.25 \
   --replicas 3 \
@@ -93,7 +93,7 @@ cat deployment.yaml
 
 ```bash
 # 生成应用栈
-python3 scripts/generate.py stack \
+python3 （请参考skill目录中的脚本文件） stack \
   --template "web_db" \
   --app-name my-app \
   --app-image my-app:v1 \
@@ -114,7 +114,7 @@ python3 scripts/generate.py stack \
 
 ```bash
 # 校验清单
-python3 scripts/generate.py validate \
+python3 （请参考skill目录中的脚本文件） validate \
   --file deployment.yaml \
   --dry-run
 
@@ -140,25 +140,25 @@ python3 scripts/generate.py validate \
 pip install pyyaml jsonschema
 
 # 生成清单
-python3 scripts/generate.py deployment --name my-app --image nginx:1.25
+python3 （请参考skill目录中的脚本文件） deployment --name my-app --image nginx:1.25
 ```
 
 ### 常用命令
 
 ```bash
 # 生成单个资源
-python3 scripts/generate.py deployment --name my-app --image my-image:v1 --replicas 3
-python3 scripts/generate.py service --name my-service --port 80 --type ClusterIP
-python3 scripts/generate.py configmap --name my-config --from-file ./config.yaml
+python3 （请参考skill目录中的脚本文件） deployment --name my-app --image my-image:v1 --replicas 3
+python3 （请参考skill目录中的脚本文件） service --name my-service --port 80 --type ClusterIP
+python3 （请参考skill目录中的脚本文件） configmap --name my-config --from-file ./config.yaml
 
 # 生成应用栈
-python3 scripts/generate.py stack --template "web_db" --app-name my-app
+python3 （请参考skill目录中的脚本文件） stack --template "web_db" --app-name my-app
 
 # 校验清单
-python3 scripts/generate.py validate --file deployment.yaml --dry-run
+python3 （请参考skill目录中的脚本文件） validate --file deployment.yaml --dry-run
 
 # 查看模板列表
-python3 scripts/generate.py templates list
+python3 （请参考skill目录中的脚本文件） templates list
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。

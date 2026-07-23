@@ -63,25 +63,25 @@ pricing_model: "per_use"
 | 图表模板 | 团队图表模板库 | 免费版无 |
 ### 能力模块
 
-执行能力模块操作,处理用户输入并返回结果。
+执行能力模块,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供能力模块所需的参数和指令。
+**输入**: 用户提供能力模块相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回能力模块的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`能力模块`相关配置参数进行设置
 ### 基础类型
 
-执行基础类型操作,处理用户输入并返回结果。
+执行基础类型,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供基础类型所需的参数和指令。
+**输入**: 用户提供基础类型相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回基础类型的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`基础类型`相关配置参数进行设置
 ### 进阶类型
 
-执行进阶类型操作,处理用户输入并返回结果。
+执行进阶类型,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供进阶类型所需的参数和指令。
+**输入**: 用户提供进阶类型相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回进阶类型的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`进阶类型`相关配置参数进行设置
@@ -140,7 +140,7 @@ flowchart TB
 
 ```bash
 # 从PRD文档批量生成图表
-node scripts/batch-generate.mjs \
+node （请参考skill目录中的脚本文件） \
   --input docs/prd/ \
   --output docs/diagrams/ \
   --format mermaid \
@@ -174,7 +174,7 @@ themeVariables:
 
 ```bash
 # 应用品牌主题生成图表
-node scripts/render.mjs \
+node （请参考skill目录中的脚本文件） \
   --input diagrams/流程图.mmd \
   --theme theme/brand-theme.yaml \
   --output output/流程图.svg
@@ -199,14 +199,14 @@ cp -r config/templates/* templates/
 
 ```bash
 # 命令行生成单张图表
-node scripts/render.mjs --input input.mmd --output output.svg --theme theme/brand-theme.yaml
+node （请参考skill目录中的脚本文件） --input input.mmd --output output.svg --theme theme/brand-theme.yaml
 ```
 
 ### 3. 批量生成
 
 ```bash
 # 从文档目录批量生成
-node scripts/batch-generate.mjs \
+node （请参考skill目录中的脚本文件） \
   --input docs/specs/ \
   --output docs/diagrams/ \
   --embed \
@@ -241,7 +241,7 @@ jobs:
             }
           done
       - name: 校验嵌入图表
-        run: node scripts/validate-embed.mjs docs/
+        run: node （请参考skill目录中的脚本文件） docs/
 ```
 
 #
@@ -249,8 +249,8 @@ jobs:
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | mermaid-diagram处理的内容输入 |,  |
+| content | string | 否 | mermaid-diagram处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -259,9 +259,9 @@ jobs:
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "diagram 相关配置参数",
+    result: "diagram 相关配置参数",
+    result: "diagram 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

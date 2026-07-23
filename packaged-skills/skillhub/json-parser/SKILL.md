@@ -94,8 +94,8 @@ elements = parser.extract_elements(result.data, "project.building.floors")
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明"
+    result: "parser 相关配置参数",
+    result: "parser 相关配置参数"
   },
   "error": null
 }

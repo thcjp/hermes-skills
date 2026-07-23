@@ -92,7 +92,7 @@ suggested_price: 99.9
 
 ```bash
 #!/usr/bin/env bash
-# scripts/batch-analyze.sh — 多仓库批量分析
+# （请参考skill目录中的脚本文件） — 多仓库批量分析
 set -euo pipefail
 
 REPOS=(
@@ -182,7 +182,7 @@ jobs:
       - name: 执行仓库分析
         run: |
           mkdir -p reports
-          bash scripts/batch-analyze.sh
+          bash （请参考skill目录中的脚本文件）
 
       - name: 生成 PDF 报告(可选)
         run: |
@@ -276,7 +276,7 @@ discussion_starters:
 cp .repo-metrics.yaml ./
 
 # 执行批量分析
-bash scripts/batch-analyze.sh
+bash （请参考skill目录中的脚本文件）
 
 # 查看报告
 cat reports/repo-analysis/summary-*.md

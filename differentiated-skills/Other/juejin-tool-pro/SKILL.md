@@ -226,10 +226,10 @@ for acc in matrix["accounts"]:
 
 ```bash
 # 抓取近 7 天热门，统计关键词趋势
-{baseDir}/scripts/juejin-pro.sh trend --days 7 --top 20
+{baseDir}/（请参考skill目录中的脚本文件） trend --days 7 --top 20
 
 # 输出趋势报告
-{baseDir}/scripts/juejin-pro.sh trend --report trend.json
+{baseDir}/（请参考skill目录中的脚本文件） trend --report trend.json
 ```
 
 ```python

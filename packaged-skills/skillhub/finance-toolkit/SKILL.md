@@ -64,17 +64,17 @@ pricing_model: "per_use"
 | 请求频率 | 低频 | 高频+限流管理 |
 ### 标的类型
 
-执行标的类型操作,处理用户输入并返回结果。
+执行标的类型,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供标的类型所需的参数和指令。
+**输入**: 用户提供标的类型相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回标的类型的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`标的类型`相关配置参数进行设置
 ### 美股/ETF
 
-执行美股/ETF操作,处理用户输入并返回结果。
+执行美股/ETF,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供美股/ETF所需的参数和指令。
+**输入**: 用户提供美股/ETF相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回美股/ETF的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`美股/ETF`相关配置参数进行设置
@@ -87,7 +87,7 @@ pricing_model: "per_use"
 
 ```bash
 # 批量获取组合中所有标的的最新报价
-python scripts/portfolio_valuation.py \
+python （请参考skill目录中的脚本文件） \
   --portfolio portfolio.csv \
   --output valuation_report.xlsx \
   --include-charts
@@ -105,17 +105,17 @@ python scripts/portfolio_valuation.py \
 
 ```bash
 # 设置价格告警
-python scripts/price_alert.py add \
+python （请参考skill目录中的脚本文件） add \
   --ticker AAPL \
   --condition "below" \
   --threshold 170 \
   --channel "console"
 
 # 查看所有告警
-python scripts/price_alert.py list
+python （请参考skill目录中的脚本文件） list
 
 # 启动告警监控
-python scripts/price_alert.py monitor --interval 60
+python （请参考skill目录中的脚本文件） monitor --interval 60
 ```
 
 ### 场景三：跨市场数据导出
@@ -124,7 +124,7 @@ python scripts/price_alert.py monitor --interval 60
 
 ```bash
 # 批量导出历史数据
-python scripts/batch_export.py \
+python （请参考skill目录中的脚本文件） \
   --tickers "AAPL,MSFT,GOOG,AMZN,TSLA,..." \
   --period "1y" \
   --interval "1d" \
@@ -147,7 +147,7 @@ cp config_pro_template.yaml config_pro.yaml
 # 编辑config_pro.yaml填入各数据源API Key
 
 # 验证数据源连通性
-python scripts/verify_sources.py
+python （请参考skill目录中的脚本文件）
 ```
 
 ### 多数据源查询
@@ -174,13 +174,13 @@ quotes = client.get_quotes(["AAPL", "MSFT", "GOOG", "TSLA"])
 
 ```bash
 # 查询BTC价格
-python scripts/crypto_quote.py BTC
+python （请参考skill目录中的脚本文件） BTC
 
 # 查询多币种
-python scripts/crypto_quote.py BTC ETH SOL BNB
+python （请参考skill目录中的脚本文件） BTC ETH SOL BNB
 
 # 获取历史K线
-python scripts/crypto_series.py BTC --days 90 --interval 1h
+python （请参考skill目录中的脚本文件） BTC --days 90 --interval 1h
 ```
 
 #
@@ -188,8 +188,8 @@ python scripts/crypto_series.py BTC --days 90 --interval 1h
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | finance-toolkit处理的内容输入 |,  |
+| content | string | 否 | finance-toolkit处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -198,9 +198,9 @@ python scripts/crypto_series.py BTC --days 90 --interval 1h
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "toolkit 相关配置参数",
+    result: "toolkit 相关配置参数",
+    result: "toolkit 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

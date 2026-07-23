@@ -82,10 +82,10 @@ suggested_price: 29.9
 
 ```bash
 # 下载单集
-./scripts/download.sh "https://www.xiaoyuzhoufm.com/episode/abc123def456"
+（请参考skill目录中的脚本文件） "https://www.xiaoyuzhoufm.com/episode/abc123def456"
 
 # 指定输出目录
-PODCAST_DIR="/mnt/sdcard/podcasts" ./scripts/download.sh "https://www.xiaoyuzhoufm.com/episode/abc123"
+PODCAST_DIR="/mnt/sdcard/podcasts" （请参考skill目录中的脚本文件） "https://www.xiaoyuzhoufm.com/episode/abc123"
 ```
 
 ### 场景二:自定义音质下载
@@ -94,13 +94,13 @@ PODCAST_DIR="/mnt/sdcard/podcasts" ./scripts/download.sh "https://www.xiaoyuzhou
 
 ```bash
 # 最佳音质(文件较大)
-AUDIO_QUALITY=0 ./scripts/download.sh "https://www.xiaoyuzhoufm.com/episode/abc123"
+AUDIO_QUALITY=0 （请参考skill目录中的脚本文件） "https://www.xiaoyuzhoufm.com/episode/abc123"
 
 # 普通音质(节省空间)
-AUDIO_QUALITY=4 ./scripts/download.sh "https://www.xiaoyuzhoufm.com/episode/abc123"
+AUDIO_QUALITY=4 （请参考skill目录中的脚本文件） "https://www.xiaoyuzhoufm.com/episode/abc123"
 
 # 保留原始 m4a 文件
-KEEP_M4A=true ./scripts/download.sh "https://www.xiaoyuzhoufm.com/episode/abc123"
+KEEP_M4A=true （请参考skill目录中的脚本文件） "https://www.xiaoyuzhoufm.com/episode/abc123"
 ```
 
 ### 场景三:节目笔记归档
@@ -109,7 +109,7 @@ KEEP_M4A=true ./scripts/download.sh "https://www.xiaoyuzhoufm.com/episode/abc123
 
 ```bash
 # 下载后自动生成 Show Notes Markdown
-./scripts/download.sh "https://www.xiaoyuzhoufm.com/episode/abc123"
+（请参考skill目录中的脚本文件） "https://www.xiaoyuzhoufm.com/episode/abc123"
 
 # 输出结构
 # /output/节目名-单集标题/
@@ -142,7 +142,7 @@ scoop install curl jq ffmpeg
 
 ```bash
 # 基本用法
-./scripts/download.sh "https://www.xiaoyuzhoufm.com/episode/YOUR_EPISODE_ID"
+（请参考skill目录中的脚本文件） "https://www.xiaoyuzhoufm.com/episode/YOUR_EPISODE_ID"
 ```
 
 ### 3. 查看输出

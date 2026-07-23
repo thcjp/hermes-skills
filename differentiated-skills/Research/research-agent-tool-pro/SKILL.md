@@ -142,7 +142,7 @@ for run_id in $(cat ~/research-agent-pro/run_ids.txt); do
     research-agent status $run_id
 done
 
-python3 scripts/generate_comprehensive_report.py \
+python3 （请参考skill目录中的脚本文件） \
     --run-ids $(cat ~/research-agent-pro/run_ids.txt) \
     --output ~/research-agent-pro/reports/comprehensive.md
 ```

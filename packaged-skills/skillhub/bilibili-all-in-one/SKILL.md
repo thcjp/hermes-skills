@@ -74,25 +74,25 @@ export API_KEY="your_api_key_here"
 - **凭据三态管理**: 环境变量(`BILIBILI_SESSDATA`/`BILIBILI_BILI_JCT`/`BILIBILI_BUVID3`)、JSON文件、直接参数三种注入方式;默认内存存储,`BILIBILI_PERSIST=1` 启用0600权限文件持久化,支持运行时 `auth.persist` 切换与 `auth.clear_persisted()` 清理
 ### 热门监控 (hot_monitor)
 
-执行热门监控 (hot_monitor)操作,处理用户输入并返回结果。
+执行热门监控 (hot_monitor),自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供热门监控 (hot_monitor)所需的参数和指令。
+**输入**: 用户提供热门监控 (hot_monitor)相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回热门监控 (hot_monitor)的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`热门监控 (hot_monitor)`相关配置参数进行设置
 ### 视频下载 (downloader)
 
-执行视频下载 (downloader)操作,处理用户输入并返回结果。
+执行视频下载 (downloader),自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供视频下载 (downloader)所需的参数和指令。
+**输入**: 用户提供视频下载 (downloader)相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回视频下载 (downloader)的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`视频下载 (downloader)`相关配置参数进行设置
 ### 数据追踪 (watcher)
 
-执行数据追踪 (watcher)操作,处理用户输入并返回结果。
+执行数据追踪 (watcher),自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供数据追踪 (watcher)所需的参数和指令。
+**输入**: 用户提供数据追踪 (watcher)相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回数据追踪 (watcher)的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`数据追踪 (watcher)`相关配置参数进行设置

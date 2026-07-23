@@ -74,7 +74,7 @@ suggested_price: 29.9
 
 ```bash
 # 创建EC2实例
-python3 scripts/aws.py ec2 create \
+python3 （请参考skill目录中的脚本文件） ec2 create \
   --name "my-server" \
   --instance-type t3.micro \
   --ami ami-0abcdef1234567890 \
@@ -90,13 +90,13 @@ python3 scripts/aws.py ec2 create \
 
 ```bash
 # 创建存储桶
-python3 scripts/aws.py s3 create-bucket --name my-bucket-2026
+python3 （请参考skill目录中的脚本文件） s3 create-bucket --name my-bucket-2026
 
 # 上传文件
-python3 scripts/aws.py s3 upload --bucket my-bucket-2026 --file ./data.csv
+python3 （请参考skill目录中的脚本文件） s3 upload --bucket my-bucket-2026 --file ./data.csv
 
 # 列出文件
-python3 scripts/aws.py s3 list --bucket my-bucket-2026
+python3 （请参考skill目录中的脚本文件） s3 list --bucket my-bucket-2026
 ```
 
 ### 场景三：VPC网络配置
@@ -105,10 +105,10 @@ python3 scripts/aws.py s3 list --bucket my-bucket-2026
 
 ```bash
 # 创建VPC
-python3 scripts/aws.py vpc create --cidr 10.0.0.0/16 --name my-vpc
+python3 （请参考skill目录中的脚本文件） vpc create --cidr 10.0.0.0/16 --name my-vpc
 
 # 创建子网
-python3 scripts/aws.py vpc create-subnet --vpc-id vpc-xxx --cidr 10.0.1.0/24
+python3 （请参考skill目录中的脚本文件） vpc create-subnet --vpc-id vpc-xxx --cidr 10.0.1.0/24
 ```
 
 ## 快速开始
@@ -138,19 +138,19 @@ pip install boto3
 
 ```bash
 # EC2管理
-python3 scripts/aws.py ec2 create --name "server" --type t3.micro --ami ami-xxx
-python3 scripts/aws.py ec2 list
-python3 scripts/aws.py ec2 start --instance-id i-xxx
-python3 scripts/aws.py ec2 stop --instance-id i-xxx
+python3 （请参考skill目录中的脚本文件） ec2 create --name "server" --type t3.micro --ami ami-xxx
+python3 （请参考skill目录中的脚本文件） ec2 list
+python3 （请参考skill目录中的脚本文件） ec2 start --instance-id i-xxx
+python3 （请参考skill目录中的脚本文件） ec2 stop --instance-id i-xxx
 
 # S3管理
-python3 scripts/aws.py s3 create-bucket --name my-bucket
-python3 scripts/aws.py s3 upload --bucket my-bucket --file ./file.txt
-python3 scripts/aws.py s3 download --bucket my-bucket --key file.txt
+python3 （请参考skill目录中的脚本文件） s3 create-bucket --name my-bucket
+python3 （请参考skill目录中的脚本文件） s3 upload --bucket my-bucket --file ./file.txt
+python3 （请参考skill目录中的脚本文件） s3 download --bucket my-bucket --key file.txt
 
 # VPC管理
-python3 scripts/aws.py vpc create --cidr 10.0.0.0/16
-python3 scripts/aws.py vpc list
+python3 （请参考skill目录中的脚本文件） vpc create --cidr 10.0.0.0/16
+python3 （请参考skill目录中的脚本文件） vpc list
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。

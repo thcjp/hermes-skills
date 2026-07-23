@@ -70,9 +70,9 @@ pricing_model: "per_use"
 **输出**: 返回支持的策略的执行结果,包含操作状态和输出数据。
 ### 策略数量
 
-执行策略数量操作,处理用户输入并返回结果。
+执行策略数量,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供策略数量所需的参数和指令。
+**输入**: 用户提供策略数量相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回策略数量的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`策略数量`相关配置参数进行设置
@@ -85,7 +85,7 @@ pricing_model: "per_use"
 
 ```bash
 # 批量信号扫描
-python3 scripts/batch_scan.py \
+python3 （请参考skill目录中的脚本文件） \
   --sector "科技" \
   --strategies "vegas,macd,bollinger" \
   --export \
@@ -104,7 +104,7 @@ python3 scripts/batch_scan.py \
 
 ```bash
 # 历史回测
-python3 scripts/backtest.py \
+python3 （请参考skill目录中的脚本文件） \
   --ticker AAPL \
   --strategy "vegas" \
   --period "5y" \
@@ -125,7 +125,7 @@ python3 scripts/backtest.py \
 
 ```bash
 # 设置自动监控
-python3 scripts/auto_monitor.py \
+python3 （请参考skill目录中的脚本文件） \
   --watchlist "AAPL,MSFT,GOOG,TSLA" \
   --strategies "vegas,macd" \
   --signal-type "buy" \
@@ -149,19 +149,19 @@ cp config_pro_template.yaml config_pro.yaml
 
 ```bash
 # 批量扫描
-python3 scripts/batch_scan.py --sector "科技" --strategies "vegas,macd" --export
+python3 （请参考skill目录中的脚本文件） --sector "科技" --strategies "vegas,macd" --export
 
 # 多策略分析
-python3 scripts/multi_strategy.py --ticker AAPL --strategies "vegas,macd,bollinger"
+python3 （请参考skill目录中的脚本文件） --ticker AAPL --strategies "vegas,macd,bollinger"
 
 # 历史回测
-python3 scripts/backtest.py --ticker AAPL --strategy "vegas" --period "5y"
+python3 （请参考skill目录中的脚本文件） --ticker AAPL --strategy "vegas" --period "5y"
 
 # 自动监控
-python3 scripts/auto_monitor.py --watchlist "AAPL,MSFT" --notify "telegram"
+python3 （请参考skill目录中的脚本文件） --watchlist "AAPL,MSFT" --notify "telegram"
 
 # 策略优化
-python3 scripts/optimize.py --strategy "vegas" --ticker AAPL --period "3y"
+python3 （请参考skill目录中的脚本文件） --strategy "vegas" --ticker AAPL --period "3y"
 ```
 
 #
@@ -169,8 +169,8 @@ python3 scripts/optimize.py --strategy "vegas" --ticker AAPL --period "3y"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | trading处理的内容输入 |,  |
+| content | string | 否 | trading处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -179,9 +179,9 @@ python3 scripts/optimize.py --strategy "vegas" --ticker AAPL --period "3y"
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "trading 相关配置参数",
+    result: "trading 相关配置参数",
+    result: "trading 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

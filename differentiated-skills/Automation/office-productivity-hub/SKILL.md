@@ -51,12 +51,12 @@ pricing_model: "per_use"
 
 ```bash
 # 批量 Word 转 PDF
-scripts/office batch convert --input ./docs --to pdf --resume failed.log
+（请参考skill目录中的脚本文件） batch convert --input ./docs --to pdf --resume failed.log
 
 # 输出：
 # 处理 50 个文件：成功 47，失败 3
 # 失败列表见 failed.log
-# 续跑命令：scripts/office batch convert --resume failed.log
+# 续跑命令：（请参考skill目录中的脚本文件） batch convert --resume failed.log
 ```
 
 ## 格式保真检查表
@@ -96,7 +96,7 @@ scripts/office batch convert --input ./docs --to pdf --resume failed.log
 
 ```bash
 # 示例
-scripts/office mask --input customers.xlsx --output customers_masked.xlsx \
+（请参考skill目录中的脚本文件） mask --input customers.xlsx --output customers_masked.xlsx \
   --rules "id_card,phone,bank_card,email,name"
 ```
 
@@ -118,7 +118,7 @@ scripts/office mask --input customers.xlsx --output customers_masked.xlsx \
 
 ```bash
 # 用员工名单批量生成劳动合同
-scripts/office batch generate \
+（请参考skill目录中的脚本文件） batch generate \
   --template "劳动合同模板.docx" \
   --data "员工名单.xlsx" \
   --output "./output/劳动合同_$(date +%Y%m%d)/" \
@@ -202,7 +202,7 @@ scripts/office batch generate \
 【失败文件】
   - 王五_劳动合同.pdf（模板变量缺失：hire_date）
   - 赵六_劳动合同.pdf（数据源第 23 行格式错）
-  续跑命令：scripts/office batch generate --resume failed.log
+  续跑命令：（请参考skill目录中的脚本文件） batch generate --resume failed.log
 
 【统计信息】
   文件大小总计: 24.2 MB

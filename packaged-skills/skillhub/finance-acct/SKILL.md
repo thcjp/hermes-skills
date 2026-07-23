@@ -88,9 +88,9 @@ accounts_sets:
 **输出**: 返回全税种计算模块的执行结果,包含操作状态和输出数据。
 ### 功能模块
 
-执行功能模块操作,处理用户输入并返回结果。
+执行功能模块,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供功能模块所需的参数和指令。
+**输入**: 用户提供功能模块相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回功能模块的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`功能模块`相关配置参数进行设置
@@ -201,8 +201,8 @@ yonyou.import_vouchers("vouchers.csv")
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | finance-acct处理的内容输入 |,  |
+| content | string | 否 | finance-acct处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -211,9 +211,9 @@ yonyou.import_vouchers("vouchers.csv")
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "acct 相关配置参数",
+    result: "acct 相关配置参数",
+    result: "acct 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

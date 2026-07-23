@@ -52,7 +52,7 @@ If the blog platform is not yet set up, run the setup script:
 
 ```bash
 cd <skill-directory>/platform
-bash ../scripts/setup.sh
+bash .（请参考skill目录中的脚本文件）
 ```
 
 The setup script will:
@@ -179,13 +179,13 @@ curl -X PUT http://localhost:3000/api/settings \
 #### Deploy to Vercel
 
 ```bash
-bash <skill-directory>/scripts/deploy-vercel.sh
+bash <skill-directory>/（请参考skill目录中的脚本文件）
 ```
 
 #### Deploy to Cloudflare
 
 ```bash
-bash <skill-directory>/scripts/deploy-cloudflare.sh
+bash <skill-directory>/（请参考skill目录中的脚本文件）
 ```
 
 #
@@ -193,7 +193,7 @@ bash <skill-directory>/scripts/deploy-cloudflare.sh
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | write-my-blog处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式
@@ -281,7 +281,7 @@ If the blog platform is not yet set up, run the setup script:
 
 ```bash
 cd <skill-directory>/platform
-bash ../scripts/setup.sh
+bash .（请参考skill目录中的脚本文件）
 ```
 
 The setup script will:

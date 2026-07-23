@@ -180,8 +180,8 @@ pricing_model: "monthly"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | data-analyst-chinese处理的内容输入 |,  |
+| content | string | 否 | data-analyst-chinese处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -190,9 +190,9 @@ pricing_model: "monthly"
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "chinese 相关配置参数",
+    result: "chinese 相关配置参数",
+    result: "chinese 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

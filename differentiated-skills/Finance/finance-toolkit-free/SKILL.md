@@ -73,7 +73,7 @@ suggested_price: 29.9
 
 ```bash
 # 获取苹果公司最新报价
-python scripts/market_quote.py AAPL
+python （请参考skill目录中的脚本文件） AAPL
 
 # 示例
 # AAPL: $178.45 (+1.23%)
@@ -87,7 +87,7 @@ python scripts/market_quote.py AAPL
 
 ```bash
 # 获取30天历史数据
-python scripts/market_series.py VOO --days 30
+python （请参考skill目录中的脚本文件） VOO --days 30
 
 # 输出CSV格式历史数据
 # date,open,high,low,close,volume
@@ -101,13 +101,13 @@ python scripts/market_series.py VOO --days 30
 
 ```bash
 # 添加自选股
-python scripts/market_watchlist.py add AAPL MSFT USD/ZAR
+python （请参考skill目录中的脚本文件） add AAPL MSFT USD/ZAR
 
 # 查看自选股汇总
-python scripts/market_watchlist.py summary
+python （请参考skill目录中的脚本文件） summary
 
 # 移除某只股票
-python scripts/market_watchlist.py remove MSFT
+python （请参考skill目录中的脚本文件） remove MSFT
 ```
 
 ## 快速开始
@@ -128,7 +128,7 @@ python -m venv .venv
 # Windows
 .venv\Scripts\activate
 # macOS/Linux
-source .venv/bin/activate
+source .venv/（请参考skill目录中的脚本文件）
 
 # 依赖说明
 pip install -r requirements.txt
@@ -138,23 +138,23 @@ pip install -r requirements.txt
 
 ```bash
 # 查询股票报价
-python scripts/market_quote.py AAPL
+python （请参考skill目录中的脚本文件） AAPL
 
 # 查询指数
-python scripts/market_quote.py ^GSPC    # 标普500
+python （请参考skill目录中的脚本文件） ^GSPC    # 标普500
 
 # 查询外汇
-python scripts/market_quote.py USD/ZAR
-python scripts/market_quote.py EURUSD
-python scripts/market_quote.py GBP-JPY
+python （请参考skill目录中的脚本文件） USD/ZAR
+python （请参考skill目录中的脚本文件） EURUSD
+python （请参考skill目录中的脚本文件） GBP-JPY
 
 # 历史数据
-python scripts/market_series.py AAPL --days 30
-python scripts/market_series.py USD/ZAR --days 30
+python （请参考skill目录中的脚本文件） AAPL --days 30
+python （请参考skill目录中的脚本文件） USD/ZAR --days 30
 
 # 自选股管理
-python scripts/market_watchlist.py add AAPL MSFT USD/ZAR
-python scripts/market_watchlist.py summary
+python （请参考skill目录中的脚本文件） add AAPL MSFT USD/ZAR
+python （请参考skill目录中的脚本文件） summary
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。

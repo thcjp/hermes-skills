@@ -62,25 +62,25 @@ pricing_model: "per_use"
 | 性能分析 | - | pprof CPU/内存/goroutine 分析 |
 ### 能力模块
 
-执行能力模块操作,处理用户输入并返回结果。
+执行能力模块,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供能力模块所需的参数和指令。
+**输入**: 用户提供能力模块相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回能力模块的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`能力模块`相关配置参数进行设置
 ### 陷阱防范
 
-执行陷阱防范操作,处理用户输入并返回结果。
+执行陷阱防范,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供陷阱防范所需的参数和指令。
+**输入**: 用户提供陷阱防范相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回陷阱防范的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`陷阱防范`相关配置参数进行设置
 ### 并发模式
 
-执行并发模式操作,处理用户输入并返回结果。
+执行并发模式,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供并发模式所需的参数和指令。
+**输入**: 用户提供并发模式相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回并发模式的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`并发模式`相关配置参数进行设置
@@ -336,8 +336,8 @@ func processData(data []byte) string {
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
+| content | string | 否 | golang-toolkit处理的内容输入 |,  |
+| mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
 | skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |
 
@@ -348,9 +348,9 @@ func processData(data []byte) string {
   "success": true,
   "data": {
     "final_result": {
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明"
+      "toolkit_result": "toolkit_result_value",
+      "toolkit_metadata": "toolkit_metadata_value",
+      "toolkit_status": "toolkit_status_value"
     },
     "execution_log": [
       {
@@ -390,17 +390,17 @@ func processData(data []byte) string {
 }
 ```
 
-中间产物模板参考: `assets/（根据实际场景填充）`
+中间产物模板参考: `assets/golang-toolkit_template`
 
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
-| Step （根据实际场景填充）处理失败 | 按流程执行 | 自动(最多max_retries次), 仍失败则记录断点, 暂停流程 |
-| Gate条件不满足 | Step （根据实际场景填充）输出质量不达标 | 返回Step （根据实际场景填充）重新处理, 或提示用户调整输入 |
+| Step Golang Toolkit 核心处理处理失败 | 按流程执行 | 自动(最多max_retries次), 仍失败则记录断点, 暂停流程 |
+| Gate条件不满足 | Step Golang Toolkit 智能分析输出质量不达标 | 返回Step Golang Toolkit 智能分析重新处理, 或提示用户调整输入 |
 | 输入数据格式错误 | content格式不符合要求 | 列出期望格式, 提供示例, 中止流程 |
 | 断点续传失败 | 缓存的中间产物已过期或损坏 | 从Step 1重新开始, 清除旧缓存 |
-| 超时 | 总处理时间超过（根据实际场景填充）分钟 | 返回已完成步骤的结果, 标记为partial |
+| 超时 | 总处理时间超过Golang Toolkit 批量处理分钟 | 返回已完成步骤的结果, 标记为partial |
 | 其他异常 | 内部处理异常 | 检查输入后 |
 
 ## 依赖说明
@@ -432,13 +432,13 @@ func processData(data []byte) string {
 
 ### 交叉编译配置
 ```bash
-GOOS=linux GOARCH=amd64 go build -o bin/app-linux-amd64
+GOOS=linux GOARCH=amd64 go build -o （请参考skill目录中的脚本文件）
 
-GOOS=darwin GOARCH=arm64 go build -o bin/app-darwin-arm64
+GOOS=darwin GOARCH=arm64 go build -o （请参考skill目录中的脚本文件）
 
-GOOS=windows GOARCH=amd64 go build -o bin/app-windows-amd64.exe
+GOOS=windows GOARCH=amd64 go build -o （请参考skill目录中的脚本文件）
 
-go build -ldflags="-s -w" -o bin/app
+go build -ldflags="-s -w" -o （请参考skill目录中的脚本文件）
 
 //go:embed static/*
 var staticFS embed.FS

@@ -43,25 +43,25 @@ pricing_model: "per_use"
 ---
 ### 增量抓取 / Incremental Fetching
 
-执行增量抓取 / Incremental Fetching操作,处理用户输入并返回结果。
+执行增量抓取 / Incremental Fetching,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供增量抓取 / Incremental Fetching所需的参数和指令。
+**输入**: 用户提供增量抓取 / Incremental Fetching相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回增量抓取 / Incremental Fetching的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`增量抓取 / Incremental Fetching`相关配置参数进行设置
 ### 自动标签 / Auto-tagging
 
-执行自动标签 / Auto-tagging操作,处理用户输入并返回结果。
+执行自动标签 / Auto-tagging,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供自动标签 / Auto-tagging所需的参数和指令。
+**输入**: 用户提供自动标签 / Auto-tagging相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回自动标签 / Auto-tagging的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`自动标签 / Auto-tagging`相关配置参数进行设置
 ### HTML报告 / HTML Reports
 
-执行HTML报告 / HTML Reports操作,处理用户输入并返回结果。
+执行HTML报告 / HTML Reports,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供HTML报告 / HTML Reports所需的参数和指令。
+**输入**: 用户提供HTML报告 / HTML Reports相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回HTML报告 / HTML Reports的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`HTML报告 / HTML Reports`相关配置参数进行设置
@@ -80,7 +80,7 @@ pricing_model: "per_use"
 
 ```bash
 cd skills/rss_fetcher
-python3 scripts/init_db.py
+python3 （请参考skill目录中的脚本文件）
 ```
 
 ### 2. 配置RSS源 | Configure RSS Sources
@@ -105,20 +105,20 @@ Edit `config/sources.json` to add your RSS sources:
 ### 3. 执行抓取 | Execute Fetch
 
 ```bash
-python3 scripts/fetch.py
+python3 （请参考skill目录中的脚本文件）
 
-python3 scripts/fetch.py --sources openai huggingface
+python3 （请参考skill目录中的脚本文件） --sources openai huggingface
 
-python3 scripts/fetch.py --hours 48
+python3 （请参考skill目录中的脚本文件） --hours 48
 
-python3 scripts/fetch.py --workers 50
+python3 （请参考skill目录中的脚本文件） --workers 50
 ```
 
 **⚠️ 抓取后记得更新HTML报告** - 新抓取的文章需要重新生成页面才能在浏览器中查看
 **⚠️ Remember to update HTML report after fetching** - New articles require regeneration to view in browser
 
 ```bash
-python3 scripts/fetch.py && python3 scripts/generate_html.py
+python3 （请参考skill目录中的脚本文件） && python3 （请参考skill目录中的脚本文件）
 ```
 
 ### 4. 生成HTML报告 | Generate HTML Report
@@ -127,9 +127,9 @@ python3 scripts/fetch.py && python3 scripts/generate_html.py
 **Note: Must regenerate HTML after fetching new articles to see latest content.**
 
 ```bash
-python3 scripts/fetch.py && python3 scripts/generate_html.py
+python3 （请参考skill目录中的脚本文件） && python3 （请参考skill目录中的脚本文件）
 
-python3 scripts/generate_html.py
+python3 （请参考skill目录中的脚本文件）
 
 open data/index.html  # Mac
 ```
@@ -145,27 +145,27 @@ open data/index.html  # Mac
 ### 5. 源管理 | Source Management
 
 ```bash
-python3 scripts/source.py check
+python3 （请参考skill目录中的脚本文件） check
 
-python3 scripts/source.py stats
+python3 （请参考skill目录中的脚本文件） stats
 
-python3 scripts/source.py add myblog "My Blog" "https://example.com/feed.xml" tech
+python3 （请参考skill目录中的脚本文件） add myblog "My Blog" "https://example.com/feed.xml" tech
 
-python3 scripts/source.py disable myblog
-python3 scripts/source.py enable myblog
-python3 scripts/source.py remove myblog
+python3 （请参考skill目录中的脚本文件） disable myblog
+python3 （请参考skill目录中的脚本文件） enable myblog
+python3 （请参考skill目录中的脚本文件） remove myblog
 ```
 
 ### 6. 查看文章列表 | View Article List
 
 ```bash
-python3 scripts/list.py
+python3 （请参考skill目录中的脚本文件）
 
-python3 scripts/list.py --hours 48
+python3 （请参考skill目录中的脚本文件） --hours 48
 
-python3 scripts/list.py --category tech
+python3 （请参考skill目录中的脚本文件） --category tech
 
-python3 scripts/list.py --json
+python3 （请参考skill目录中的脚本文件） --json
 ```
 
 ---
@@ -175,8 +175,8 @@ python3 scripts/list.py --json
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | rss-fetcher处理的内容输入 |,  |
+| content | string | 否 | rss-fetcher处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -185,9 +185,9 @@ python3 scripts/list.py --json
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "fetcher 相关配置参数",
+    result: "fetcher 相关配置参数",
+    result: "fetcher 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

@@ -288,8 +288,8 @@ print(f"版面: {layout}")
 **第二轮补充(按需)**:
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 条件必填 | 相关说明, 当（根据实际场景填充）时必填 |
-| content | string | 条件必填 | 相关说明, 当（根据实际场景填充）时必填 |
+| content | string | 条件必填 | parse 相关配置参数, 当Doc Parse 核心处理时必填 |
+| content | string | 条件必填 | parse 相关配置参数, 当Doc Parse 智能分析时必填 |
 
 ## 输出格式
 
@@ -297,21 +297,21 @@ print(f"版面: {layout}")
 {
   "success": true,
   "data": {
-    "inversion_type": "（根据实际场景填充）",
+    "inversion_type": ""parse_result"",
     "collected_info": {
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明"
+      "parse_metadata": "parse_metadata_value",
+      "parse_status": "parse_status_value"
     },
     "result": {
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明"
+      "parse_summary": "parse_summary_value",
+      "parse_details": "parse_details_value",
+      "parse_count": "parse_count_value"
     },
     "confidence": 0.95,
     "derivation_steps": [
-      "（根据实际场景填充）",
-      "（根据实际场景填充）",
-      "（根据实际场景填充）"
+      ""parse_timestamp"",
+      ""parse_version"",
+      ""field_9""
     ]
   },
   "error": null

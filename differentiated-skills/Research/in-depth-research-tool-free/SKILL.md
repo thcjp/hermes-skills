@@ -130,7 +130,7 @@ suggested_price: 29.9
 
 ```bash
 # 启动深度研究
-python scripts/research.py \
+python （请参考skill目录中的脚本文件） \
   --topic "Rust vs Go 性能对比 2026" \
   --depth=standard \
   --output=tech_comparison.md
@@ -144,7 +144,7 @@ python scripts/research.py \
 
 ```bash
 # 学术研究
-python scripts/research.py \
+python （请参考skill目录中的脚本文件） \
   --topic "大语言模型在医疗诊断中的应用" \
   --depth=standard \
   --sources=academic \
@@ -157,7 +157,7 @@ python scripts/research.py \
 
 ```bash
 # 行业研究
-python scripts/research.py \
+python （请参考skill目录中的脚本文件） \
   --topic "2026年 新能源汽车 市场趋势" \
   --depth=standard \
   --output=ev_market.md
@@ -193,10 +193,10 @@ pip install requests beautifulsoup4 markdown
 
 ```bash
 # 基础研究
-python scripts/research.py "你的研究主题"
+python （请参考skill目录中的脚本文件） "你的研究主题"
 
 # 指定深度和输出
-python scripts/research.py \
+python （请参考skill目录中的脚本文件） \
   --topic "研究主题" \
   --depth=standard \
   --output=report.md
@@ -319,10 +319,10 @@ python scripts/research.py \
 
 ```bash
 # 提升研究深度
-python scripts/research.py --topic "主题" --depth=thorough
+python （请参考skill目录中的脚本文件） --topic "主题" --depth=thorough
 
 # 增加来源数量
-python scripts/research.py --topic "主题" --max-sources=30
+python （请参考skill目录中的脚本文件） --topic "主题" --max-sources=30
 ```
 
 免费版最高支持「标准」深度，如需更深入研究请升级 PRO 版。
@@ -331,33 +331,33 @@ python scripts/research.py --topic "主题" --max-sources=30
 
 ```bash
 # 启用严格评估模式
-python scripts/research.py --topic "主题" --strict-evaluation
+python （请参考skill目录中的脚本文件） --topic "主题" --strict-evaluation
 
 # 过滤低可信度来源
-python scripts/research.py --topic "主题" --min-credibility=0.7
+python （请参考skill目录中的脚本文件） --topic "主题" --min-credibility=0.7
 ```
 
 ### 矛盾信息无法调和
 
 ```bash
 # 输出矛盾分析
-python scripts/research.py --topic "主题" --show-conflicts
+python （请参考skill目录中的脚本文件） --topic "主题" --show-conflicts
 
 # 分别评估对立观点
-python scripts/research.py --topic "主题" --balanced-view
+python （请参考skill目录中的脚本文件） --topic "主题" --balanced-view
 ```
 
 ### 研究耗时过长
 
 ```bash
 # 限制研究时间
-python scripts/research.py --topic "主题" --timeout=1800
+python （请参考skill目录中的脚本文件） --topic "主题" --timeout=1800
 
 # 减少来源数量
-python scripts/research.py --topic "主题" --max-sources=8
+python （请参考skill目录中的脚本文件） --topic "主题" --max-sources=8
 
 # 降低深度级别
-python scripts/research.py --topic "主题" --depth=quick
+python （请参考skill目录中的脚本文件） --topic "主题" --depth=quick
 ```
 
 ## 依赖说明

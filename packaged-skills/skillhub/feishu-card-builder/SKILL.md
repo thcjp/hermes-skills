@@ -53,7 +53,7 @@ pricing_model: "per_use"
 ### 卡片模板系统
 - **内置模板**: 通知、报告、审批、邀请、告警等企业常用模板
 - **自定义模板**: 创建、编辑、删除自定义模板
-- **变量插值**: 支持 `（根据实际场景填充）` 语法
+- **变量插值**: 支持 `feishu-card-builder_template` 语法
 - **条件渲染**: 支持条件判断与循环
 - **模板预览**: 渲染效果实时预览
 - **版本管理**: 模板版本控制与回滚
@@ -110,17 +110,17 @@ ou_003,王五,财务部,2026年7月,¥13000
 ```json
 {
   "header": {
-    "title": "工资条通知 - （根据实际场景填充）",
+    "title": "工资条通知 - "builder_result"",
     "color": "blue"
   },
   "elements": [
     {
       "type": "div",
-      "text": "尊敬的 **（根据实际场景填充）**（（根据实际场景填充））："
+      "text": "尊敬的 **"builder_metadata"**（"builder_metadata"）："
     },
     {
       "type": "div",
-      "text": "您本月工资为 **（根据实际场景填充）**，请登录系统查看详情。"
+      "text": "您本月工资为 **"builder_status"**，请登录系统查看详情。"
     },
     {
       "type": "action",
@@ -128,7 +128,7 @@ ou_003,王五,财务部,2026年7月,¥13000
         {
           "type": "button",
           "text": "查看详情",
-          "url": "https://hr.company.com/salary/（根据实际场景填充）"
+          "url": "https://hr.company.com/salary/"builder_summary""
         }
       ]
     }
@@ -210,9 +210,9 @@ node skills/feishu-card-builder/interactive-send.js \
     "color": "orange"
   },
   "elements": [
-    {"type": "div", "text": "申请人: **（根据实际场景填充）**"},
-    {"type": "div", "text": "金额: **（根据实际场景填充）**"},
-    {"type": "div", "text": "事由: （根据实际场景填充）"},
+    {"type": "div", "text": "申请人: **"builder_details"**"},
+    {"type": "div", "text": "金额: **"builder_count"**"},
+    {"type": "div", "text": "事由: "builder_timestamp""},
     {
       "type": "action",
       "actions": [
@@ -276,8 +276,8 @@ node skills/feishu-card-builder/interactive-send.js --target "ou_详情见说明
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | feishu-card-builder处理的内容输入 |,  |
+| content | string | 否 | feishu-card-builder处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -286,9 +286,9 @@ node skills/feishu-card-builder/interactive-send.js --target "ou_详情见说明
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "builder 相关配置参数",
+    result: "builder 相关配置参数",
+    result: "builder 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

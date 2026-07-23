@@ -151,7 +151,7 @@ AI助手分解为子任务,路由至学术搜索代理:
 
 ```bash
 # 配置定时搜索任务
-python scripts/search_assistant_pro.py schedule add \
+python （请参考skill目录中的脚本文件） schedule add \
   --name "周度AI技术趋势追踪" \
   --cron "0 9 * * 1" \
   --timezone "Asia/Shanghai" \
@@ -164,10 +164,10 @@ python scripts/search_assistant_pro.py schedule add \
   --compare-previous
 
 # 查看调度任务
-python scripts/search_assistant_pro.py schedule list
+python （请参考skill目录中的脚本文件） schedule list
 
 # 查看历史搜索归档
-python scripts/search_assistant_pro.py archive search "向量数据库" --since 90d --trend
+python （请参考skill目录中的脚本文件） archive search "向量数据库" --since 90d --trend
 ```
 
 ## 不适用场景
@@ -213,15 +213,15 @@ AI助手自动:
 
 ```bash
 # 列出可用模板
-python scripts/search_assistant_pro.py templates list
+python （请参考skill目录中的脚本文件） templates list
 
 # 使用模板执行搜索
-python scripts/search_assistant_pro.py search \
+python （请参考skill目录中的脚本文件） search \
   --template competitive-intel \
   --params "target=竞品X" "focus=最近3个月"
 
 # 创建自定义模板
-python scripts/search_assistant_pro.py templates create \
+python （请参考skill目录中的脚本文件） templates create \
   --name "技术选型调研" \
   --subtasks 5 \
   --domains "通用搜索" "学术搜索" \
@@ -341,7 +341,7 @@ schedules:
 
 ```bash
 # 搜索并按评分排序
-python scripts/search_assistant_pro.py search \
+python （请参考skill目录中的脚本文件） search \
   --query "大模型推理优化方案" \
   --max-subtasks 6 \
   --score \
@@ -374,10 +374,10 @@ python scripts/search_assistant_pro.py search \
 
 ```bash
 # 首次执行后保存为模板
-python scripts/search_assistant_pro.py templates save --from-last --name "竞品调研模板"
+python （请参考skill目录中的脚本文件） templates save --from-last --name "竞品调研模板"
 
 # 后续直接使用模板
-python scripts/search_assistant_pro.py search --template "竞品调研模板" --params "target=竞品Y"
+python （请参考skill目录中的脚本文件） search --template "竞品调研模板" --params "target=竞品Y"
 ```
 
 ### 3. 合理使用多代理路由
@@ -398,7 +398,7 @@ python scripts/search_assistant_pro.py search --template "竞品调研模板" --
 
 ```bash
 # 按综合评分排序,取前20条
-python scripts/search_assistant_pro.py search --query "..." --score --sort-by "relevance" --top 20
+python （请参考skill目录中的脚本文件） search --query "..." --score --sort-by "relevance" --top 20
 ```
 
 ### 5. 定时搜索构建趋势知识库
@@ -407,7 +407,7 @@ python scripts/search_assistant_pro.py search --query "..." --score --sort-by "r
 
 ```bash
 # 查看某关键词的提及趋势
-python scripts/search_assistant_pro.py archive search "向量数据库" --trend --since 90d
+python （请参考skill目录中的脚本文件） archive search "向量数据库" --trend --since 90d
 ```
 
 ## 已知限制

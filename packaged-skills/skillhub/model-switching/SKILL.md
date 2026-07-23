@@ -64,25 +64,25 @@ pricing_model: "monthly"
 | 报告导出 | 周/月成本与切换报告 | 免费版无 |
 ### 能力模块
 
-执行能力模块操作,处理用户输入并返回结果。
+执行能力模块,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供能力模块所需的参数和指令。
+**输入**: 用户提供能力模块相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回能力模块的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`能力模块`相关配置参数进行设置
 ### 三层切换
 
-执行三层切换操作,处理用户输入并返回结果。
+执行三层切换,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供三层切换所需的参数和指令。
+**输入**: 用户提供三层切换相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回三层切换的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`三层切换`相关配置参数进行设置
 ### 黄金规则
 
-执行黄金规则操作,处理用户输入并返回结果。
+执行黄金规则,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供黄金规则所需的参数和指令。
+**输入**: 用户提供黄金规则相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回黄金规则的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`黄金规则`相关配置参数进行设置
@@ -95,7 +95,7 @@ pricing_model: "monthly"
 
 ```bash
 # 查看本月成本仪表盘
-node scripts/cost-dashboard.mjs --period month --group-by project
+node （请参考skill目录中的脚本文件） --period month --group-by project
 
 # 输出
 # 项目成本仪表盘: 2026-07
@@ -243,14 +243,14 @@ const result2 = await switchModel({
 
 ```bash
 # 从文件批量切换
-node scripts/batch-switch.mjs \
+node （请参考skill目录中的脚本文件） \
   --input tasks.json \
   --concurrency 10 \
   --cost-cap 50 \
   --output results.json
 
 # 输出成本与切换报告
-node scripts/batch-switch.mjs \
+node （请参考skill目录中的脚本文件） \
   --input tasks.json \
   --report reports/batch-$(date +%Y%m%d).html
 ```
@@ -259,13 +259,13 @@ node scripts/batch-switch.mjs \
 
 ```bash
 # 月度成本报告
-node scripts/cost-dashboard.mjs --period month --format html > reports/month.html
+node （请参考skill目录中的脚本文件） --period month --format html > reports/month.html
 
 # 按团队分组
-node scripts/cost-dashboard.mjs --period month --group-by team
+node （请参考skill目录中的脚本文件） --period month --group-by team
 
 # 导出CSV
-node scripts/cost-dashboard.mjs --period month --format csv > reports/month.csv
+node （请参考skill目录中的脚本文件） --period month --format csv > reports/month.csv
 ```
 
 #
@@ -273,7 +273,7 @@ node scripts/cost-dashboard.mjs --period month --format csv > reports/month.csv
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | model-switching处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式

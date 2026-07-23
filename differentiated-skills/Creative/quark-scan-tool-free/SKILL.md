@@ -108,7 +108,7 @@ suggested_price: 29.9
 export SCAN_WEBSERVICE_KEY="your_scan_key"
 
 # 去手写笔迹(还原空白试卷)
-python3 scripts/scan.py \
+python3 （请参考skill目录中的脚本文件） \
   --scene "remove-handwriting" \
   --path "./exam_photo.jpg" \
   --platform "community"
@@ -120,7 +120,7 @@ python3 scripts/scan.py \
 
 ```bash
 # 画质增强
-python3 scripts/scan.py \
+python3 （请参考skill目录中的脚本文件） \
   --scene "image-hd-enhance" \
   --path "./old_photo.jpg" \
   --platform "community"
@@ -132,7 +132,7 @@ python3 scripts/scan.py \
 
 ```bash
 # 文档去底色
-python3 scripts/scan.py \
+python3 （请参考skill目录中的脚本文件） \
   --scene "remove-background-color" \
   --path "./red_header_doc.jpg" \
   --platform "community"
@@ -144,7 +144,7 @@ python3 scripts/scan.py \
 
 ```bash
 # 提取线稿
-python3 scripts/scan.py \
+python3 （请参考skill目录中的脚本文件） \
   --scene "extract-lineart" \
   --path "./anime_char.jpg" \
   --platform "community"
@@ -180,7 +180,7 @@ export SCAN_WEBSERVICE_KEY="your_scan_key"
 
 ```bash
 # 单张图片处理(根据意图选择 scene)
-python3 scripts/scan.py \
+python3 （请参考skill目录中的脚本文件） \
   --scene "${SCENE_VALUE}" \
   --path "${IMAGE_FILE_PATH}" \
   --platform "${AGENT_NAME}"
@@ -214,13 +214,13 @@ python3 scripts/scan.py \
 
 ```bash
 # 图片 URL
-python3 scripts/scan.py --scene "${SCENE}" --url "${IMAGE_URL}" --platform "${AGENT}"
+python3 （请参考skill目录中的脚本文件） --scene "${SCENE}" --url "${IMAGE_URL}" --platform "${AGENT}"
 
 # 本地文件路径
-python3 scripts/scan.py --scene "${SCENE}" --path "${IMAGE_PATH}" --platform "${AGENT}"
+python3 （请参考skill目录中的脚本文件） --scene "${SCENE}" --path "${IMAGE_PATH}" --platform "${AGENT}"
 
 # 图片 BASE64
-python3 scripts/scan.py --scene "${SCENE}" --base64 "${IMAGE_BASE64}" --platform "${AGENT}"
+python3 （请参考skill目录中的脚本文件） --scene "${SCENE}" --base64 "${IMAGE_BASE64}" --platform "${AGENT}"
 ```
 
 ## 最佳实践

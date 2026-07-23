@@ -83,7 +83,7 @@ suggested_price: 29.9
 
 ```bash
 # 创建Deployment
-python3 scripts/k8s.py deploy \
+python3 （请参考skill目录中的脚本文件） deploy \
   --name nginx-app \
   --image nginx:1.25 \
   --replicas 3 \
@@ -91,7 +91,7 @@ python3 scripts/k8s.py deploy \
   --namespace default
 
 # 创建Service
-python3 scripts/k8s.py expose \
+python3 （请参考skill目录中的脚本文件） expose \
   --deployment nginx-app \
   --port 80 \
   --type ClusterIP \
@@ -104,13 +104,13 @@ python3 scripts/k8s.py expose \
 
 ```bash
 # 配置多Agent
-python3 scripts/k8s.py agents config \
+python3 （请参考skill目录中的脚本文件） agents config \
   --agent dev-agent --namespace development \
   --agent staging-agent --namespace staging \
   --agent prod-agent --namespace production
 
 # 各Agent独立管理各自命名空间
-python3 scripts/k8s.py agents status
+python3 （请参考skill目录中的脚本文件） agents status
 ```
 
 ### 场景三：资源查询
@@ -119,7 +119,7 @@ python3 scripts/k8s.py agents status
 
 ```bash
 # 查询资源
-python3 scripts/k8s.py list --namespace default --all-resources
+python3 （请参考skill目录中的脚本文件） list --namespace default --all-resources
 
 # 输出：
 # Deployments: nginx-app (3/3)
@@ -144,30 +144,30 @@ python3 scripts/k8s.py list --namespace default --all-resources
 pip install kubernetes
 
 # 验证连接
-python3 scripts/k8s.py info
+python3 （请参考skill目录中的脚本文件） info
 ```
 
 ### 常用命令
 
 ```bash
 # 部署应用
-python3 scripts/k8s.py deploy --name my-app --image my-image:v1 --replicas 3
+python3 （请参考skill目录中的脚本文件） deploy --name my-app --image my-image:v1 --replicas 3
 
 # 查询资源
-python3 scripts/k8s.py list --namespace default
-python3 scripts/k8s.py get pod --name my-app-xxx
-python3 scripts/k8s.py logs --name my-app-xxx --tail 100
+python3 （请参考skill目录中的脚本文件） list --namespace default
+python3 （请参考skill目录中的脚本文件） get pod --name my-app-xxx
+python3 （请参考skill目录中的脚本文件） logs --name my-app-xxx --tail 100
 
 # 更新资源
-python3 scripts/k8s.py scale --deployment my-app --replicas 5
-python3 scripts/k8s.py rollout --deployment my-app --status
+python3 （请参考skill目录中的脚本文件） scale --deployment my-app --replicas 5
+python3 （请参考skill目录中的脚本文件） rollout --deployment my-app --status
 
 # 配置管理
-python3 scripts/k8s.py configmap create --name my-config --from-file ./config.yaml
-python3 scripts/k8s.py secret create --name my-secret --from-literal password=xxx
+python3 （请参考skill目录中的脚本文件） configmap create --name my-config --from-file ./config.yaml
+python3 （请参考skill目录中的脚本文件） secret create --name my-secret --from-literal password=xxx
 
 # 故障排查
-python3 scripts/k8s.py diagnose --pod my-app-xxx
+python3 （请参考skill目录中的脚本文件） diagnose --pod my-app-xxx
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。

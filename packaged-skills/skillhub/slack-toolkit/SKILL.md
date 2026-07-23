@@ -136,7 +136,7 @@ class BroadcastSender:
     def apply_template(self, template, variables):
         """应用模板变量"""
         for key, value in variables.items():
-            template = template.replace(f"{（根据实际场景填充）}", str(value))
+            template = template.replace(f"{"toolkit_result"}", str(value))
         return template
 
 # 示例
@@ -289,8 +289,8 @@ slack-toolkit-pro analytics --channel "C0123456789" --days 30
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | slack-toolkit处理的内容输入 |,  |
+| content | string | 否 | slack-toolkit处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -299,9 +299,9 @@ slack-toolkit-pro analytics --channel "C0123456789" --days 30
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "toolkit 相关配置参数",
+    result: "toolkit 相关配置参数",
+    result: "toolkit 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

@@ -46,16 +46,16 @@ pricing_model: "monthly"
 
 Resolve all paths relative to WORKSPACE=/home/alfred/.skill-platform/workspace. Sanitize inputs to prevent escapes or absolutes.
 
-1. To list directory: exec("scripts/list_files.sh", [rel_path]) → JSON {success: bool, data: array of names, error: string}
-2. To read file: exec("scripts/read_file.sh", [rel_path]) → JSON {success: bool, data: string (text content), error: string}
+1. To list directory: exec("（请参考skill目录中的脚本文件）", [rel_path]) → JSON {success: bool, data: array of names, error: string}
+2. To read file: exec("（请参考skill目录中的脚本文件）", [rel_path]) → JSON {success: bool, data: string (text content), error: string}
 3. Handle errors: For binary/large/non-text files, return error JSON.
 
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
+| content | string | 否 | file-browser-tool处理的内容输入 |,  |
+| mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
 | skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |
 
@@ -66,9 +66,9 @@ Resolve all paths relative to WORKSPACE=/home/alfred/.skill-platform/workspace. 
   "success": true,
   "data": {
     "final_result": {
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明"
+      "tool_result": "tool_result_value",
+      "tool_metadata": "tool_metadata_value",
+      "tool_status": "tool_status_value"
     },
     "execution_log": [
       {
@@ -108,7 +108,7 @@ Resolve all paths relative to WORKSPACE=/home/alfred/.skill-platform/workspace. 
 }
 ```
 
-中间产物模板参考: `assets/（根据实际场景填充）`
+中间产物模板参考: `assets/file-browser-tool_template`
 
 ## 异常处理
 
@@ -150,8 +150,8 @@ export API_KEY="your_api_key_here"
 ```
 Resolve all paths relative to WORKSPACE=/home/alfred/.skill-platform/workspace. Sanitize inputs to prevent escapes or absolutes.
 
-* To list directory: exec("scripts/list_files.sh", [rel_path]) → JSON {success: bool, data: array of names, error: string}
-* To read file: exec("scripts/read_file.sh", [rel_path]) → JSON {success: bool, data: string (text content), error: string}
+* To list directory: exec("（请参考skill目录中的脚本文件）", [rel_path]) → JSON {success: bool, data: array of names, error: string}
+* To read file: exec("（请参考skill目录中的脚本文件）", [rel_path]) → JSON {success: bool, data: string (text content), error: string}
 * Handle errors: For binary/large/non-text files, return error JSON.
 ```
 

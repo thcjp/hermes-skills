@@ -169,7 +169,7 @@ Agent：
 
 ```bash
 # 批量跨仓库搜索
-python3 scripts/gitmcp_pro.py batch-search \
+python3 （请参考skill目录中的脚本文件） batch-search \
     --repos "facebook/react,vuejs/vue,angular/angular" \
     --query "errorHandler" \
     --mode semantic \
@@ -252,7 +252,7 @@ echo "免费版脚本保持兼容，PRO增强脚本已就绪"
 ### Step 3：执行首次批量分析
 ```bash
 # 批量获取多个仓库文档
-python3 scripts/gitmcp_pro.py batch-fetch \
+python3 （请参考skill目录中的脚本文件） batch-fetch \
     --repos "facebook/react,vuejs/vue,angular/angular" \
     --output ~/read-github-pro/reports/batch_fetch.md
 ```
@@ -397,7 +397,7 @@ SELECTION_WORKFLOW = {
 cat > ~/read-github-pro/monthly_audit.sh << 'EOF'
 #!/bin/bash
 DATE=$(date +%Y%m)
-python3 scripts/gitmcp_pro.py audit \
+python3 （请参考skill目录中的脚本文件） audit \
     --repos $(cat ~/read-github-pro/config/dependencies.txt) \
     --checks all \
     --output ~/read-github-pro/audits/monthly_${DATE}.pdf \
@@ -411,22 +411,22 @@ EOF
 ### 3. 利用书签管理常用仓库
 ```bash
 # 添加书签
-python3 scripts/gitmcp_pro.py bookmark add facebook/react --tag "frontend"
+python3 （请参考skill目录中的脚本文件） bookmark add facebook/react --tag "frontend"
 
 # 按标签查询
-python3 scripts/gitmcp_pro.py bookmark list --tag "frontend"
+python3 （请参考skill目录中的脚本文件） bookmark list --tag "frontend"
 
 # 快速访问
-python3 scripts/gitmcp_pro.py bookmark open react
+python3 （请参考skill目录中的脚本文件） bookmark open react
 ```
 
 ### 4. 利用搜索历史
 ```bash
 # 查看搜索历史
-python3 scripts/gitmcp_pro.py history list
+python3 （请参考skill目录中的脚本文件） history list
 
 # 重新执行历史搜索
-python3 scripts/gitmcp_pro.py history replay <search_id>
+python3 （请参考skill目录中的脚本文件） history replay <search_id>
 ```
 
 ## 常见问题

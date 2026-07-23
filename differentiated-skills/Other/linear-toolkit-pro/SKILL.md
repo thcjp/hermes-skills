@@ -90,7 +90,7 @@ pricing_model: "per_use"
 
 ```bash
 # 跨团队聚合（专业版）
-{baseDir}/scripts/linear.sh board --teams A,B,C --status progress
+{baseDir}/（请参考skill目录中的脚本文件） board --teams A,B,C --status progress
 ```
 
 ```text
@@ -204,13 +204,13 @@ A：有。专业版享工作流设计与健康度建模咨询。
 
 ```bash
 # 聚合多团队按状态
-{baseDir}/scripts/linear.sh board --teams A,B,C --status progress
+{baseDir}/（请参考skill目录中的脚本文件） board --teams A,B,C --status progress
 
 # 按优先级聚合
-{baseDir}/scripts/linear.sh board --teams A,B,C --priority urgent,high
+{baseDir}/（请参考skill目录中的脚本文件） board --teams A,B,C --priority urgent,high
 
 # 阻塞项专项
-{baseDir}/scripts/linear.sh board --teams A,B,C --blocked
+{baseDir}/（请参考skill目录中的脚本文件） board --teams A,B,C --blocked
 ```
 
 ### 健康度指标计算

@@ -123,7 +123,7 @@ suggested_price: 29.9
 
 ```bash
 # 获取科技类新闻汇总
-python scripts/news_aggregator.py --category=tech --max=10
+python （请参考skill目录中的脚本文件） --category=tech --max=10
 ```
 
 预期输出包含 36 氪、机器之心、IT 之家等来源的最新科技新闻，每条含标题、来源、时间、要点摘要。
@@ -134,7 +134,7 @@ python scripts/news_aggregator.py --category=tech --max=10
 
 ```bash
 # 获取军事类新闻
-python scripts/news_aggregator.py --category=military --max=5
+python （请参考skill目录中的脚本文件） --category=military --max=5
 ```
 
 返回观察者网、澎湃新闻等来源的军事新闻，包含国内外军事动态。
@@ -145,7 +145,7 @@ python scripts/news_aggregator.py --category=military --max=5
 
 ```bash
 # 获取所有类别新闻
-python scripts/news_aggregator.py --category=all --max=15
+python （请参考skill目录中的脚本文件） --category=all --max=15
 ```
 
 返回科技、军事、社会三大类别的综合新闻汇总。
@@ -177,21 +177,21 @@ python scripts/news_aggregator.py --category=all --max=15
 pip install requests beautifulsoup4 markdown
 
 # 验证安装
-python scripts/news_aggregator.py --version
+python （请参考skill目录中的脚本文件） --version
 ```
 
 ### 执行首次新闻聚合
 
 ```bash
 # 获取今日科技新闻
-python scripts/news_aggregator.py --category=tech
+python （请参考skill目录中的脚本文件） --category=tech
 ```
 
 ### 查看支持的新闻源
 
 ```bash
 # 列出所有新闻源
-python scripts/news_aggregator.py --list-sources
+python （请参考skill目录中的脚本文件） --list-sources
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
@@ -265,10 +265,10 @@ python scripts/news_aggregator.py --list-sources
 
 ```bash
 # 检查网络连通性
-python scripts/news_aggregator.py --check-sources
+python （请参考skill目录中的脚本文件） --check-sources
 
 # 切换可用源
-python scripts/news_aggregator.py --category=tech --fallback
+python （请参考skill目录中的脚本文件） --category=tech --fallback
 ```
 
 可能原因：
@@ -280,23 +280,23 @@ python scripts/news_aggregator.py --category=tech --fallback
 
 ```bash
 # 强制刷新缓存
-python scripts/news_aggregator.py --category=tech --no-cache
+python （请参考skill目录中的脚本文件） --category=tech --no-cache
 
 # 指定时间范围
-python scripts/news_aggregator.py --category=tech --hours=24
+python （请参考skill目录中的脚本文件） --category=tech --hours=24
 ```
 
 ### 返回结果为空
 
 ```bash
 # 检查新闻源状态
-python scripts/news_aggregator.py --diagnose
+python （请参考skill目录中的脚本文件） --diagnose
 
 # 尝试其他类别
-python scripts/news_aggregator.py --category=social
+python （请参考skill目录中的脚本文件） --category=social
 
 # 增加抓取深度
-python scripts/news_aggregator.py --category=tech --depth=2
+python （请参考skill目录中的脚本文件） --category=tech --depth=2
 ```
 
 ### 中文乱码
@@ -304,10 +304,10 @@ python scripts/news_aggregator.py --category=tech --depth=2
 ```bash
 # 设置编码
 export PYTHONIOENCODING=utf-8
-python scripts/news_aggregator.py --category=tech
+python （请参考skill目录中的脚本文件） --category=tech
 
 # 或在脚本中指定
-python scripts/news_aggregator.py --encoding=utf-8
+python （请参考skill目录中的脚本文件） --encoding=utf-8
 ```
 
 ## 依赖说明

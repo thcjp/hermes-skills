@@ -50,7 +50,7 @@ Request → Plan → Draft → Audit → Refine → Deliver
 
 强制规则（Rules）：
 - **Delegate all writing to sub-agents**：所有写作委托给sub-agents，main agent保持自由
-- **NEVER edit files directly**：禁止直接编辑文件，必须使用`./scripts/edit.sh`（强制版本控制）
+- **NEVER edit files directly**：禁止直接编辑文件，必须使用`（请参考skill目录中的脚本文件）`（强制版本控制）
 - **Run quality audit before delivering**：交付前运行quality audit
 - **Offer cleanup only after user confirms**：仅在用户确认piece最终后提供cleanup
 
@@ -80,7 +80,7 @@ Request → Plan → Draft → Audit → Refine → Deliver
 首次使用时创建工作空间：
 
 ```bash
-./scripts/init-workspace.sh ~/writing
+（请参考skill目录中的脚本文件） ~/writing
 ```
 
 创建标准项目结构，包含pieces目录、scripts目录、references目录与config.json配置文件。
@@ -91,14 +91,14 @@ Request → Plan → Draft → Audit → Refine → Deliver
 #
 ## 使用流程
 
-1. **初始化工作空间**：首次使用运行`./scripts/init-workspace.sh ~/writing`创建项目结构
-2. **创建新piece**：运行`./scripts/new-piece.sh`启动新写作piece并获取piece ID
+1. **初始化工作空间**：首次使用运行`（请参考skill目录中的脚本文件） ~/writing`创建项目结构
+2. **创建新piece**：运行`（请参考skill目录中的脚本文件）`启动新写作piece并获取piece ID
 3. **Plan阶段**：制定写作计划，确定depth配置
 4. **Draft阶段**：委托sub-agents起草
-5. **Audit阶段**：运行`./scripts/audit.sh`执行quality audit
-6. **Refine阶段**：通过`./scripts/edit.sh`修订（自动版本备份）
+5. **Audit阶段**：运行`（请参考skill目录中的脚本文件）`执行quality audit
+6. **Refine阶段**：通过`（请参考skill目录中的脚本文件）`修订（自动版本备份）
 7. **Deliver阶段**：交付最终内容
-8. **Cleanup阶段**：用户确认最终后运行`./scripts/cleanup.sh`清除旧versions
+8. **Cleanup阶段**：用户确认最终后运行`（请参考skill目录中的脚本文件）`清除旧versions
 
 #
 ## 示例
@@ -107,11 +107,11 @@ Request → Plan → Draft → Audit → Refine → Deliver
 
 ```
 Step 1 - 初始化工作空间:
-  $ ./scripts/init-workspace.sh ~/writing
+  $ （请参考skill目录中的脚本文件） ~/writing
   → 创建项目结构（pieces/、scripts/、references/、config.json）
 
 Step 2 - 创建新piece:
-  $ ./scripts/new-piece.sh
+  $ （请参考skill目录中的脚本文件）
   → 分配 piece ID: piece-001
 
 Step 3 - 配置:
@@ -124,20 +124,20 @@ Step 4 - Draft（委托sub-agent）:
   Sub-agent: 起草，输出至 pieces/piece-001/draft-v1.md
 
 Step 5 - Audit:
-  $ ./scripts/audit.sh piece-001
+  $ （请参考skill目录中的脚本文件） piece-001
   → 生成审计报告
 
 Step 6 - Refine（通过edit.sh，自动版本备份）:
-  $ ./scripts/edit.sh piece-001
+  $ （请参考skill目录中的脚本文件） piece-001
   → 编辑内容，自动备份为version
 
 Step 7 - 查看versions:
-  $ ./scripts/list.sh
+  $ （请参考skill目录中的脚本文件）
   → 显示 piece-001 的所有versions
 
 Step 8 - Deliver & Cleanup:
   用户确认最终后:
-  $ ./scripts/cleanup.sh piece-001
+  $ （请参考skill目录中的脚本文件） piece-001
   → 清除旧versions（需确认）
 ```
 
@@ -156,7 +156,7 @@ Step 8 - Deliver & Cleanup:
 A: 免费版提供基础版本化写作工作流与七项核心scripts。不含完整八份参考文档库（brief.md、execution.md、verification.md、state.md、research.md、versioning.md、audit.md、criteria.md）的详细使用指导与深度质量审计能力。
 
 ### Q2: 为什么禁止直接编辑文件？
-A: 直接编辑文件会绕过版本控制系统，导致无法追溯修改历史与恢复旧versions。必须使用`./scripts/edit.sh`编辑，该脚本自动创建version备份。这是本Skill的强制规则（NEVER edit files directly）。
+A: 直接编辑文件会绕过版本控制系统，导致无法追溯修改历史与恢复旧versions。必须使用`（请参考skill目录中的脚本文件）`编辑，该脚本自动创建version备份。这是本Skill的强制规则（NEVER edit files directly）。
 
 ### Q3: depth配置的三个级别如何选择？
 A: `quick`适用于短篇内容，最少研究轮次；`standard`适用于常规写作；`thorough`适用于长篇内容，最多研究轮次与修订passes。在config.json中设置`depth`字段。

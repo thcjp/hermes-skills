@@ -38,25 +38,25 @@ pricing_model: "per_use"
 * **Headless 浏览器**：服务器/容器可用，仅开 `--no-sandbox`、`--disable-gpu`、`--disable-dev-shm-usage` 三个标准稳定性参数
 ### 中文环境优化
 
-执行中文环境优化操作,处理用户输入并返回结果。
+执行中文环境优化,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供中文环境优化所需的参数和指令。
+**输入**: 用户提供中文环境优化相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回中文环境优化的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`中文环境优化`相关配置参数进行设置
 ### 可选全文抓取
 
-执行可选全文抓取操作,处理用户输入并返回结果。
+执行可选全文抓取,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供可选全文抓取所需的参数和指令。
+**输入**: 用户提供可选全文抓取相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回可选全文抓取的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`可选全文抓取`相关配置参数进行设置
 ### 智能路由
 
-执行智能路由操作,处理用户输入并返回结果。
+执行智能路由,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供智能路由所需的参数和指令。
+**输入**: 用户提供智能路由相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回智能路由的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`智能路由`相关配置参数进行设置
@@ -110,8 +110,8 @@ export API_KEY="your_api_key_here"
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明"
+    result: "search 相关配置参数",
+    result: "search 相关配置参数"
   },
   "error": null
 }
@@ -135,12 +135,12 @@ export API_KEY="your_api_key_here"
 ## 案例展示
 
 ```bash
-python scripts/web_search.py "Python 异步编程 优秀实践 2026" --max=10
+python （请参考skill目录中的脚本文件） "Python 异步编程 优秀实践 2026" --max=10
 
-python scripts/web_search.py "中国大型邮轮 花城号 出坞" --full=3
+python （请参考skill目录中的脚本文件） "中国大型邮轮 花城号 出坞" --full=3
 
-python scripts/web_search.py "技术教程" --region=cn    # 强制 Bing CN
-python scripts/web_search.py "技术教程" --region=intl  # 强制 DuckDuckGo
+python （请参考skill目录中的脚本文件） "技术教程" --region=cn    # 强制 Bing CN
+python （请参考skill目录中的脚本文件） "技术教程" --region=intl  # 强制 DuckDuckGo
 ```
 
 ## 错误处理

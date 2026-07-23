@@ -42,25 +42,25 @@ pricing_model: "monthly"
 * **Error Recovery**: Validation and helpful error messages
 ### 40+ Format Support
 
-执行40+ Format Support操作,处理用户输入并返回结果。
+执行40+ Format Support,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供40+ Format Support所需的参数和指令。
+**输入**: 用户提供40+ Format Support相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回40+ Format Support的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`+ Format Support`相关配置参数进行设置
 ### Dual Toolset
 
-执行Dual Toolset操作,处理用户输入并返回结果。
+执行Dual Toolset,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供Dual Toolset所需的参数和指令。
+**输入**: 用户提供Dual Toolset相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回Dual Toolset的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`Dual Toolset`相关配置参数进行设置
 ### Professional Templates
 
-执行Professional Templates操作,处理用户输入并返回结果。
+执行Professional Templates,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供Professional Templates所需的参数和指令。
+**输入**: 用户提供Professional Templates相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回Professional Templates的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`Professional Templates`相关配置参数进行设置
@@ -78,20 +78,20 @@ pricing_model: "monthly"
 ### Using Python Helper (Recommended)
 
 ```bash
-python scripts/convert.py input.md output.pdf
+python （请参考skill目录中的脚本文件） input.md output.pdf
 
-python scripts/convert.py report.md report.pdf --template business --toc
+python （请参考skill目录中的脚本文件） report.md report.pdf --template business --toc
 
-python scripts/convert.py --batch *.md --format pdf --output-dir ./pdfs
+python （请参考skill目录中的脚本文件） --batch *.md --format pdf --output-dir ./pdfs
 ```
 
 ### Using Bash Utilities
 
 ```bash
-./scripts/batch_convert.sh input/*.md pdf output/
+（请参考skill目录中的脚本文件） input/*.md pdf output/
 
-./scripts/validate.sh output/document.pdf
-./scripts/validate.sh output/book.epub
+（请参考skill目录中的脚本文件） output/document.pdf
+（请参考skill目录中的脚本文件） output/book.epub
 ```
 
 ### Direct Pandoc
@@ -109,8 +109,8 @@ pandoc input.docx -o output.md --extract-media=./media
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
+| content | string | 否 | pandoc-convert-openclaw处理的内容输入 |,  |
+| mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
 | skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |
 
@@ -121,9 +121,9 @@ pandoc input.docx -o output.md --extract-media=./media
   "success": true,
   "data": {
     "final_result": {
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明"
+      "openclaw_result": "openclaw_result_value",
+      "openclaw_metadata": "openclaw_metadata_value",
+      "openclaw_status": "openclaw_status_value"
     },
     "execution_log": [
       {
@@ -163,7 +163,7 @@ pandoc input.docx -o output.md --extract-media=./media
 }
 ```
 
-中间产物模板参考: `assets/（根据实际场景填充）`
+中间产物模板参考: `assets/pandoc-convert-openclaw_template`
 
 ## 异常处理
 
@@ -217,20 +217,20 @@ export API_KEY="your_api_key_here"
 ### Using Python Helper (Recommended)
 
 ```bash
-python scripts/convert.py input.md output.pdf
+python （请参考skill目录中的脚本文件） input.md output.pdf
 
-python scripts/convert.py report.md report.pdf --template business --toc
+python （请参考skill目录中的脚本文件） report.md report.pdf --template business --toc
 
-python scripts/convert.py --batch *.md --format pdf --output-dir ./pdfs
+python （请参考skill目录中的脚本文件） --batch *.md --format pdf --output-dir ./pdfs
 ```
 
 ### Using Bash Utilities
 
 ```bash
-./scripts/batch_convert.sh input/*.md pdf output/
+（请参考skill目录中的脚本文件） input/*.md pdf output/
 
-./scripts/validate.sh output/document.pdf
-./scripts/validate.sh output/book.epub
+（请参考skill目录中的脚本文件） output/document.pdf
+（请参考skill目录中的脚本文件） output/book.epub
 ```
 
 ### Direct Pandoc

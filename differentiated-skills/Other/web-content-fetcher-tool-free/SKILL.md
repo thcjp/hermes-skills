@@ -37,7 +37,7 @@ suggested_price: 19.9
 |:-----|:-----|
 | 多服务降级 | r.jina.ai → markdown.new → defuddle.md 自动降级 |
 | Markdown 输出 | 所有服务统一输出 Markdown 格式 |
-| 命令行调用 | 提供 fetch.sh 脚本直接调用 |
+| 命令行调用 | 提供 （请参考skill目录中的脚本文件） 脚本直接调用 |
 | Cloudflare 适配 | markdown.new 专为 Cloudflare 保护站点优化 |
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置。
 
@@ -109,12 +109,12 @@ curl -s "https://defuddle.md/https://example.com"
 
 ```bash
 # 1. 直接调用脚本（自动降级）
-./fetch.sh https://example.com
+（请参考skill目录中的脚本文件） https://example.com
 
 # 2. 指定服务
-./fetch.sh https://example.com jina
-./fetch.sh https://example.com markdown
-./fetch.sh https://example.com defuddle
+（请参考skill目录中的脚本文件） https://example.com jina
+（请参考skill目录中的脚本文件） https://example.com markdown
+（请参考skill目录中的脚本文件） https://example.com defuddle
 
 # 3. 使用 curl 直接调用
 curl -s "https://r.jina.ai/https://example.com"

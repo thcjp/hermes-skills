@@ -121,17 +121,17 @@ serve/
 专业版支持自动化多分辨率截图,全面覆盖各设备尺寸:
 
 ```bash
-bash scripts/screenshot.sh "http://localhost:5174/project/page/" /tmp/desktop-full.png 1920 1080
+bash （请参考skill目录中的脚本文件） "http://localhost:5174/project/page/" /tmp/desktop-full.png 1920 1080
 
-bash scripts/screenshot.sh "http://localhost:5174/project/page/" /tmp/desktop.png 1440 900
+bash （请参考skill目录中的脚本文件） "http://localhost:5174/project/page/" /tmp/desktop.png 1440 900
 
-bash scripts/screenshot.sh "http://localhost:5174/project/page/" /tmp/tablet.png 1024 768
+bash （请参考skill目录中的脚本文件） "http://localhost:5174/project/page/" /tmp/tablet.png 1024 768
 
-bash scripts/screenshot.sh "http://localhost:5174/project/page/" /tmp/tablet-portrait.png 768 1024
+bash （请参考skill目录中的脚本文件） "http://localhost:5174/project/page/" /tmp/tablet-portrait.png 768 1024
 
-bash scripts/screenshot.sh "http://localhost:5174/project/page/" /tmp/mobile.png 390 844
+bash （请参考skill目录中的脚本文件） "http://localhost:5174/project/page/" /tmp/mobile.png 390 844
 
-bash scripts/screenshot.sh "http://localhost:5174/project/page/" /tmp/mobile-small.png 320 568
+bash （请参考skill目录中的脚本文件） "http://localhost:5174/project/page/" /tmp/mobile-small.png 320 568
 ```
 
 **输入**: 用户提供自动化多分辨率截图审查所需的指令和必要参数。
@@ -157,7 +157,7 @@ for page in "${PAGES[@]}"; do
     width=$(echo $res | cut -d'x' -f1)
     height=$(echo $res | cut -d'x' -f2)
     output="${OUTPUT_DIR}/${page}_${res}.png"
-    bash scripts/screenshot.sh "${BASE_URL}/${page}/" "$output" "$width" "$height"
+    bash （请参考skill目录中的脚本文件） "${BASE_URL}/${page}/" "$output" "$width" "$height"
     echo "截图完成: ${page} @ ${res}"
   done
 done
@@ -186,7 +186,7 @@ for img in "$INPUT_DIR"/*.{png,jpg,jpeg}; do
     output="$INPUT_DIR/${filename}.webp"
 
     before_size=$(stat -f%z "$img" 2>/dev/null || stat -c%s "$img")
-    bash scripts/convert-image.sh "$img" "$output" "$QUALITY"
+    bash （请参考skill目录中的脚本文件） "$img" "$output" "$QUALITY"
     after_size=$(stat -f%z "$output" 2>/dev/null || stat -c%s "$output")
 
     reduction=$((100 - (after_size * 100 / before_size)))
@@ -250,9 +250,9 @@ mkdir -p serve/client-c/{landing,assets}
 ```bash
 mkdir -p serve/enterprise/{landing,features,pricing,about,contact,assets}
 
-bash scripts/batch-screenshot.sh enterprise
+bash （请参考skill目录中的脚本文件） enterprise
 
-bash scripts/batch-convert-images.sh serve/enterprise/assets 85
+bash （请参考skill目录中的脚本文件） serve/enterprise/assets 85
 
 cd serve && zip -r /tmp/enterprise.zip enterprise/
 ```
@@ -265,7 +265,7 @@ cd serve && zip -r /tmp/enterprise.zip enterprise/
 PROJECT=$1
 ISSUES_FOUND=0
 
-bash scripts/batch-screenshot.sh "$PROJECT"
+bash （请参考skill目录中的脚本文件） "$PROJECT"
 
 for screenshot in /tmp/reviews/${PROJECT}_*/*.png; do
   echo "检查: $(basename $screenshot)"
@@ -301,7 +301,7 @@ fi
 
 ### 专业版项目初始化
 ```bash
-bash scripts/setup.sh 5174
+bash （请参考skill目录中的脚本文件） 5174
 
 PROJECT_NAME="my-enterprise-app"
 mkdir -p serve/${PROJECT_NAME}/{landing,about,pricing,contact,assets}
@@ -330,9 +330,9 @@ cat > serve/${PROJECT_NAME}/project.json << 'EOF'
 }
 EOF
 
-bash scripts/batch-screenshot.sh ${PROJECT_NAME}
+bash （请参考skill目录中的脚本文件） ${PROJECT_NAME}
 
-bash scripts/batch-convert-images.sh serve/${PROJECT_NAME}/assets 85
+bash （请参考skill目录中的脚本文件） serve/${PROJECT_NAME}/assets 85
 
 cd serve && zip -r /tmp/${PROJECT_NAME}.zip ${PROJECT_NAME}/
 ```

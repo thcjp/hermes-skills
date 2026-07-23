@@ -1,12 +1,12 @@
 ---
-name: "（根据实际场景填充）"
+name: "Jira Pat Manager 核心处理"
 slug: "jira-pat-manager"
 displayName: "Jira PAT管理器"
 version: "1.0.0"
 summary: "管理Jira个人访问令牌(PAT),支持创建、撤销和权限配置"
 description: |-
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据。
-  Use when 用户说"（根据实际场景填充）"、（根据实际场景填充）时使用。
+  Use when 用户说"Jira Pat Manager 智能分析"、Jira Pat Manager 智能分析时使用。
   不适用于需要人工判断的复杂场景。
 license: "Proprietary"
 tools:
@@ -20,29 +20,29 @@ suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
 ---
-# （根据实际场景填充）
+# Jira Pat Manager 批量处理
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
 |:-----|:-------|:-------|
-| （根据实际场景填充） | 支持 | 支持 |
-| （根据实际场景填充） | 不支持 | 支持 |
-| （根据实际场景填充） | 不支持 | 支持 |
+| Jira Pat Manager 自定义配置 | 支持 | 支持 |
+| Jira Pat Manager 结果导出 | 不支持 | 支持 |
+| Jira Pat Manager 实时监控 | 不支持 | 支持 |
 | 批量处理 | 不支持 | 支持 |
 | 高级配置 | 不支持 | 支持 |
 
 ## 核心能力
 
-- （根据实际场景填充）
-- （根据实际场景填充）
-- （根据实际场景填充）
+- Jira Pat Manager 错误重试
+- Jira Pat Manager 多格式支持
+- Jira Pat Manager 扩展能力9
 #
 ## 适用场景
 
-- 用户说"（根据实际场景填充）" → 执行API调用
-- 用户说"（根据实际场景填充）" → 执行API调用
-- 用户说"（根据实际场景填充）" → 执行API调用
+- 用户说"Jira Pat Manager 扩展能力10" → 执行API调用
+- 用户说"Jira Pat Manager 扩展能力11" → 执行API调用
+- 用户说"Jira Pat Manager 扩展能力12" → 执行API调用
 - 不适用: 需要人工判断的复杂场景
 
 ## 使用流程
@@ -67,8 +67,8 @@ pricing_model: "per_use"
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明"
+    result: "manager 相关配置参数",
+    result: "manager 相关配置参数"
   },
   "error": null
 }

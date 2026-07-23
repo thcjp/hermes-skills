@@ -67,7 +67,7 @@ pricing_model: "per_use"
 #### 1. 多轮对话式搜索
 
 ```bash
-python scripts/interactive_search.py \
+python （请参考skill目录中的脚本文件） \
   --session=research_session \
   --context-aware
 ```
@@ -77,7 +77,7 @@ python scripts/interactive_search.py \
 #### 2. 批量查询引擎
 
 ```bash
-python scripts/batch_query.py \
+python （请参考skill目录中的脚本文件） \
   --questions-file questions.txt \
   --parallel 4 \
   --output results.json
@@ -89,13 +89,13 @@ python scripts/batch_query.py \
 
 ```bash
 # 导出为 JSON
-python scripts/search_export.py \
+python （请参考skill目录中的脚本文件） \
   --query="关键词" \
   --format=json \
   --output=data.json
 
 # 导出为分析报告
-python scripts/search_export.py \
+python （请参考skill目录中的脚本文件） \
   --query="关键词" \
   --format=md \
   --output=report.md \
@@ -106,7 +106,7 @@ python scripts/search_export.py \
 
 ```bash
 # 配置定时监控
-python scripts/scheduled_monitor.py \
+python （请参考skill目录中的脚本文件） \
   --topic="行业动态 2026" \
   --cron="0 9 * * *" \
   --alert-changes \
@@ -172,7 +172,7 @@ AI 芯片市场主要玩家有哪些
 EOF
 
 # 批量查询并导出
-python scripts/batch_query.py \
+python （请参考skill目录中的脚本文件） \
   --questions-file questions.txt \
   --parallel 4 \
   --export json \
@@ -187,7 +187,7 @@ python scripts/batch_query.py \
 
 ```bash
 # 配置定时监控
-python scripts/scheduled_monitor.py \
+python （请参考skill目录中的脚本文件） \
   --topic="品牌名 负面新闻" \
   --cron="0 8,12,18 * * *" \
   --alert-changes \
@@ -224,7 +224,7 @@ python scripts/scheduled_monitor.py \
 pip install apscheduler pandas redis
 
 # 验证升级
-python scripts/interactive_search.py --version
+python （请参考skill目录中的脚本文件） --version
 # 输出: internet-search-pro-tool-pro v1.0.0
 ```
 
@@ -232,7 +232,7 @@ python scripts/interactive_search.py --version
 
 ```bash
 # 启动交互式搜索会话
-python scripts/interactive_search.py \
+python （请参考skill目录中的脚本文件） \
   --session=market_research \
   --context-aware
 
@@ -252,7 +252,7 @@ echo "问题1
 问题3" > questions.txt
 
 # 执行批量查询
-python scripts/batch_query.py \
+python （请参考skill目录中的脚本文件） \
   --questions-file questions.txt \
   --export json \
   --output=results.json
@@ -312,7 +312,7 @@ analytics:
 
 ```bash
 # 启动 REST API 服务
-python scripts/api_server.py --port 8000
+python （请参考skill目录中的脚本文件） --port 8000
 
 # 单次搜索
 curl -X POST http://localhost:8000/search \
@@ -367,14 +367,14 @@ session = config.start_session("research_topic")
 
 ```bash
 # 优化查询效率
-python scripts/batch_query.py \
+python （请参考skill目录中的脚本文件） \
   --questions-file questions.txt \
   --parallel 8 \
   --cache \
   --delay 0.5
 
 # 分组查询
-python scripts/batch_query.py \
+python （请参考skill目录中的脚本文件） \
   --questions-file questions.txt \
   --group-by topic \
   --export md \
@@ -385,13 +385,13 @@ python scripts/batch_query.py \
 
 ```bash
 # 查看所有监控任务
-python scripts/scheduled_monitor.py --list
+python （请参考skill目录中的脚本文件） --list
 
 # 暂停监控
-python scripts/scheduled_monitor.py --pause --task-id=task_001
+python （请参考skill目录中的脚本文件） --pause --task-id=task_001
 
 # 生成监控报告
-python scripts/monitor_report.py \
+python （请参考skill目录中的脚本文件） \
   --task-id=task_001 \
   --period=monthly \
   --output=monitor_report.md
@@ -403,36 +403,36 @@ python scripts/monitor_report.py \
 
 ```bash
 # 检查会话状态
-python scripts/interactive_search.py --status --session=session_id
+python （请参考skill目录中的脚本文件） --status --session=session_id
 
 # 恢复会话
-python scripts/interactive_search.py --resume --session=session_id
+python （请参考skill目录中的脚本文件） --resume --session=session_id
 
 # 增加上下文窗口
-python scripts/interactive_search.py --context-window=20
+python （请参考skill目录中的脚本文件） --context-window=20
 ```
 
 ### 批量查询速度慢
 
 ```bash
 # 增加并行线程
-python scripts/batch_query.py --parallel 8 questions.txt
+python （请参考skill目录中的脚本文件） --parallel 8 questions.txt
 
 # 启用缓存
-python scripts/batch_query.py --cache questions.txt
+python （请参考skill目录中的脚本文件） --cache questions.txt
 
 # 分批处理
-python scripts/batch_query.py --batch-size 10 questions.txt
+python （请参考skill目录中的脚本文件） --batch-size 10 questions.txt
 ```
 
 ### 监控告警未收到
 
 ```bash
 # 检查告警配置
-python scripts/scheduled_monitor.py --config-check
+python （请参考skill目录中的脚本文件） --config-check
 
 # 测试告警
-python scripts/scheduled_monitor.py --test-alert
+python （请参考skill目录中的脚本文件） --test-alert
 
 # 查看告警日志
 cat ./logs/alerts.log
@@ -442,13 +442,13 @@ cat ./logs/alerts.log
 
 ```bash
 # 调整分析参数
-python scripts/search_export.py --analysis-depth deep
+python （请参考skill目录中的脚本文件） --analysis-depth deep
 
 # 自定义分析模板
-python scripts/search_export.py --template custom_analysis.yaml
+python （请参考skill目录中的脚本文件） --template custom_analysis.yaml
 
 # 启用 AI 洞察
-python scripts/search_export.py --ai-insights
+python （请参考skill目录中的脚本文件） --ai-insights
 ```
 
 ## 依赖说明

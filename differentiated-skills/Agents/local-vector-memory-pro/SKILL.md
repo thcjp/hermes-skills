@@ -120,16 +120,16 @@ pricing_model: "per_use"
 ollama pull nomic-embed-text
 
 # 初始化记忆系统（专业版自动启用全部高级功能）
-node bin/init.js --edition pro
+node （请参考skill目录中的脚本文件） --edition pro
 
 # 存储第一条记忆（自动捕获已开启）
-node bin/memory.js store "用户喜欢深色模式" --importance 0.9 --category preference
+node （请参考skill目录中的脚本文件） store "用户喜欢深色模式" --importance 0.9 --category preference
 
 # 高级检索（带过滤）
-node bin/memory.js search "用户界面偏好" --filter "category=preference" --limit 5
+node （请参考skill目录中的脚本文件） search "用户界面偏好" --filter "category=preference" --limit 5
 
 # 查看知识图谱
-node bin/memory.js graph --list
+node （请参考skill目录中的脚本文件） graph --list
 ```
 
 ### 120 秒基础上手（需安装 Ollama）
@@ -149,7 +149,7 @@ cd skills/local-vector-memory
 npm install
 
 # 第 4 步：初始化专业版记忆系统
-node bin/init.js --edition pro
+node （请参考skill目录中的脚本文件） --edition pro
 ```
 
 初始化后创建以下文件：
@@ -238,10 +238,10 @@ node bin/init.js --edition pro
 # Agent 立即知道：2 空格、驼峰命名
 
 # 手动高级检索（按类别过滤）
-node bin/memory.js search "编码" --filter "category=preference" --limit 10
+node （请参考skill目录中的脚本文件） search "编码" --filter "category=preference" --limit 10
 
 # 批量检索（一次查询多个主题）
-node bin/memory.js batch-search "编码偏好" "技术栈" "项目规范"
+node （请参考skill目录中的脚本文件） batch-search "编码偏好" "技术栈" "项目规范"
 ```
 
 **效果**：零摩擦体验，用户正常对话即可，系统自动捕获关键信息并在需要时召回。
@@ -253,21 +253,21 @@ node bin/memory.js batch-search "编码偏好" "技术栈" "项目规范"
 
 ```bash
 # 存储患者概况（脱敏后）
-node bin/memory.js store "患者A：高血压病史3年" --importance 0.95 --category medical_history
+node （请参考skill目录中的脚本文件） store "患者A：高血压病史3年" --importance 0.95 --category medical_history
 
 # 专业版：将诊疗决策存入知识图谱
-node bin/memory.js graph add-decision \
+node （请参考skill目录中的脚本文件） graph add-decision \
   --patient "患者A" \
   --decision "开具氨氯地平 5mg 每日一次" \
   --reason "高血压3级，一线用药" \
   --branch "2026-07-诊疗"
 
 # 追溯决策
-node bin/memory.js graph trace "患者A" --decision "氨氯地平"
+node （请参考skill目录中的脚本文件） graph trace "患者A" --decision "氨氯地平"
 # 返回：决策时间、原因、分支、关联记忆
 
 # 高级检索（按重要性+日期过滤）
-node bin/memory.js search "患者A" \
+node （请参考skill目录中的脚本文件） search "患者A" \
   --filter "importance>=0.9,date>=2026-01-01" \
   --limit 20
 
@@ -284,19 +284,19 @@ node bin/memory.js search "患者A" \
 
 ```bash
 # 批量导入文档
-node bin/memory.js batch-import ./docs/ --category knowledge --importance 0.7
+node （请参考skill目录中的脚本文件） batch-import ./docs/ --category knowledge --importance 0.7
 
 # 混合检索（向量+关键词+时间衰减）
-node bin/memory.js search "API 设计规范" \
+node （请参考skill目录中的脚本文件） search "API 设计规范" \
   --strategy hybrid \
   --weights "vector=0.6,keyword=0.3,time=0.1" \
   --limit 20
 
 # 按部门过滤
-node bin/memory.js search "部署流程" --filter "department=engineering" --limit 10
+node （请参考skill目录中的脚本文件） search "部署流程" --filter "department=engineering" --limit 10
 
 # 自动卫生：定期去重+衰减
-node bin/memory.js hygiene --auto --schedule weekly
+node （请参考skill目录中的脚本文件） hygiene --auto --schedule weekly
 ```
 
 **效果**：混合检索显著提升召回率，自动卫生保持记忆库精简。
@@ -319,7 +319,7 @@ node bin/memory.js hygiene --auto --schedule weekly
 # - 部署平台：Vercel
 
 # 手动注入上下文到子代理
-node bin/memory.js export-context "项目 Alpha" --format prompt > context.md
+node （请参考skill目录中的脚本文件） export-context "项目 Alpha" --format prompt > context.md
 ```
 
 **效果**：多代理无缝协作，上下文自动传递，无需重复沟通。
@@ -331,24 +331,24 @@ node bin/memory.js export-context "项目 Alpha" --format prompt > context.md
 
 ```bash
 # 离线环境下批量记录
-node bin/memory.js batch-store \
+node （请参考skill目录中的脚本文件） batch-store \
   "样地A：稀有兰花，海拔1200米" \
   "样地A：土壤pH 5.8，湿度偏高" \
   "样地B：松树林，海拔800米" \
   --category observation
 
 # 语义检索（即使关键词不完全匹配）
-node bin/memory.js search "兰花生长环境" --strategy hybrid
+node （请参考skill目录中的脚本文件） search "兰花生长环境" --strategy hybrid
 # 返回：样地A的土壤、海拔、湿度数据
 
 # 知识图谱：记录考察决策
-node bin/memory.js graph add-decision \
+node （请参考skill目录中的脚本文件） graph add-decision \
   --decision "样地A设为长期监测点" \
   --reason "稀有兰花品种，需持续观察" \
   --branch "2026-考察"
 
 # 导出完整备份（含知识图谱）
-node bin/memory.js export --format json --include-graph > expedition-full.json
+node （请参考skill目录中的脚本文件） export --format json --include-graph > expedition-full.json
 ```
 
 **效果**：完全离线运行，结构化记录+语义检索+决策追溯一体化。
@@ -419,11 +419,11 @@ node bin/memory.js export --format json --include-graph > expedition-full.json
 
 ```bash
 # 查看缓存命中率
-node bin/memory.js cache --stats
+node （请参考skill目录中的脚本文件） cache --stats
 # 输出：命中率 87%，节省计算时间 234s
 
 # 清理缓存
-node bin/memory.js cache --clear
+node （请参考skill目录中的脚本文件） cache --clear
 ```
 
 ### 资源占用控制
@@ -439,10 +439,10 @@ node bin/memory.js cache --clear
 
 ```bash
 # 手动触发卫生
-node bin/memory.js hygiene --dedup --decay --promote
+node （请参考skill目录中的脚本文件） hygiene --dedup --decay --promote
 
 # 设置定时卫生
-node bin/memory.js hygiene --auto --schedule weekly
+node （请参考skill目录中的脚本文件） hygiene --auto --schedule weekly
 
 # 卫生策略配置
 # - 去重：相似度 > 0.95 的记忆合并
@@ -455,33 +455,33 @@ node bin/memory.js hygiene --auto --schedule weekly
 
 ```bash
 # 查看记忆统计（含专业版指标）
-node bin/memory.js stats --detailed
+node （请参考skill目录中的脚本文件） stats --detailed
 # 输出：总记忆数、向量数、缓存命中率、图谱节点数、资源占用
 
 # 高级浏览（带过滤）
-node bin/memory.js search "*" --filter "category=preference,importance>=0.8" --limit 50
+node （请参考skill目录中的脚本文件） search "*" --filter "category=preference,importance>=0.8" --limit 50
 
 # 批量去重
-node bin/memory.js dedup --threshold 0.95 --batch
+node （请参考skill目录中的脚本文件） dedup --threshold 0.95 --batch
 
 # 导出备份（含知识图谱）
-node bin/memory.js export --format json --include-graph > memories-full.json
+node （请参考skill目录中的脚本文件） export --format json --include-graph > memories-full.json
 
 # 创建压缩备份
-node bin/memory.js backup ./backups/memory-$(date +%Y%m%d).zip --compress
+node （请参考skill目录中的脚本文件） backup ./backups/memory-$(date +%Y%m%d).zip --compress
 
 # 清理旧记忆（30天前，保留 importance > 0.8）
-node bin/memory.js cleanup --before 30d --preserve "importance>=0.8"
+node （请参考skill目录中的脚本文件） cleanup --before 30d --preserve "importance>=0.8"
 
 # 知识图谱维护
-node bin/memory.js graph --stats
-node bin/memory.js graph --compact
-node bin/memory.js graph --export > graph.json
+node （请参考skill目录中的脚本文件） graph --stats
+node （请参考skill目录中的脚本文件） graph --compact
+node （请参考skill目录中的脚本文件） graph --export > graph.json
 
 # 缓存管理
-node bin/memory.js cache --stats
-node bin/memory.js cache --clear
-node bin/memory.js cache --warmup "常见查询"
+node （请参考skill目录中的脚本文件） cache --stats
+node （请参考skill目录中的脚本文件） cache --clear
+node （请参考skill目录中的脚本文件） cache --warmup "常见查询"
 ```
 
 ## 多平台集成示例
@@ -530,7 +530,7 @@ codex --skill local-vector-memory-pro
 | 序号 | 问题 | 可能原因 | 解决方案 | 优先级 |
 |:---|:---|:---|:---|:---|
 | 1 | Ollama 连接失败 | Ollama 服务未启动 | 运行 `ollama serve`；检查 `OLLAMA_HOST` 环境变量 | 高 |
-| 2 | 向量搜索无结果 | LanceDB 路径错误或无数据 | 确认 `dbPath` 配置；运行 `node bin/memory.js stats` 确认已存储记忆 | 高 |
+| 2 | 向量搜索无结果 | LanceDB 路径错误或无数据 | 确认 `dbPath` 配置；运行 `node （请参考skill目录中的脚本文件） stats` 确认已存储记忆 | 高 |
 | 3 | embedding 生成缓慢 | 模型首次加载 | 首次调用需加载模型；预热：`ollama run nomic-embed-text ""`；启用缓存 | 中 |
 | 4 | 内存占用过高 | 向量库无限增长 | 启用 `autoCompact`；运行 `compact`；调整 `maxMemory` 限制 | 中 |
 | 5 | npm install 失败 | 网络问题或 Node 版本低 | 确认 Node.js 18+；使用 `--registry https://registry.npmmirror.com` | 高 |
@@ -585,7 +585,7 @@ codex --skill local-vector-memory-pro
 
 ### Q7: 如何从免费版升级到专业版？
 
-**A**: 专业版使用相同的存储格式和数据结构，升级步骤：(1) 替换 SKILL.md 为专业版；(2) 更新插件配置中 `autoRecall`、`autoCapture`、`enableKnowledgeGraph` 为 `true`；(3) 运行 `node bin/init.js --edition pro` 补充创建缓存和知识图谱目录。已有记忆数据无需迁移，无缝继承。
+**A**: 专业版使用相同的存储格式和数据结构，升级步骤：(1) 替换 SKILL.md 为专业版；(2) 更新插件配置中 `autoRecall`、`autoCapture`、`enableKnowledgeGraph` 为 `true`；(3) 运行 `node （请参考skill目录中的脚本文件） --edition pro` 补充创建缓存和知识图谱目录。已有记忆数据无需迁移，无缝继承。
 
 ### Q8: 专业版需要联网吗？
 
@@ -605,7 +605,7 @@ codex --skill local-vector-memory-pro
 
 ### Q12: 如何备份和恢复？
 
-**A**: 完整备份使用 `node bin/memory.js backup ./backups/memory-YYYYMMDD.zip --compress --include-graph`，包含向量库、知识图谱、配置文件。恢复时解压到目标目录并运行 `node bin/init.js --edition pro --restore`。
+**A**: 完整备份使用 `node （请参考skill目录中的脚本文件） backup ./backups/memory-YYYYMMDD.zip --compress --include-graph`，包含向量库、知识图谱、配置文件。恢复时解压到目标目录并运行 `node （请参考skill目录中的脚本文件） --edition pro --restore`。
 
 ## 定价
 
@@ -624,15 +624,15 @@ codex --skill local-vector-memory-pro
 
 ```bash
 # 1. 备份现有记忆
-node bin/memory.js backup ./backups/pre-upgrade.zip
+node （请参考skill目录中的脚本文件） backup ./backups/pre-upgrade.zip
 
 # 2. 替换 SKILL.md 为专业版
 # 3. 更新插件配置
 # 4. 重新初始化（补充专业版目录）
-node bin/init.js --edition pro
+node （请参考skill目录中的脚本文件） --edition pro
 
 # 5. 验证数据完整性
-node bin/memory.js stats --detailed
+node （请参考skill目录中的脚本文件） stats --detailed
 # 确认记忆数量与升级前一致
 
 # 6. 启用自动召回与捕获

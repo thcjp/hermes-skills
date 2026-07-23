@@ -173,7 +173,7 @@ kubectl get nodes
 kubectl get pods --all-namespaces
 kubectl describe pod <name>
 kubectl logs <name> --previous
-kubectl exec -it <name> -- /bin/sh
+kubectl exec -it <name> -- /（请参考skill目录中的脚本文件）
 
 # Service管理
 kubectl get svc

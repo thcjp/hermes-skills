@@ -145,7 +145,7 @@ YouTube 视频通常有两种字幕：
 
 ```bash
 # 提取字幕
-python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID"
+python3 {baseDir}/（请参考skill目录中的脚本文件） "https://www.youtube.com/watch?v=VIDEO_ID"
 ```
 
 **返回示例：**
@@ -177,7 +177,7 @@ python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=VID
 
 ```bash
 # 提取字幕
-python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID"
+python3 {baseDir}/（请参考skill目录中的脚本文件） "https://www.youtube.com/watch?v=VIDEO_ID"
 
 # 示例
 grep -A 2 -B 2 "续航" /tmp/transcript.txt
@@ -198,7 +198,7 @@ grep -A 2 -B 2 "续航" /tmp/transcript.txt
 
 ```bash
 # 提取英文字幕
-python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID" --lang en
+python3 {baseDir}/（请参考skill目录中的脚本文件） "https://www.youtube.com/watch?v=VIDEO_ID" --lang en
 ```
 
 ## 不适用场景
@@ -233,7 +233,7 @@ yt-dlp --version
 最简单的用法 - 提取视频字幕：
 
 ```bash
-python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+python3 {baseDir}/（请参考skill目录中的脚本文件） "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 ```
 
 ### 第三步：生成摘要
@@ -242,7 +242,7 @@ python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=dQw
 
 ```bash
 # 提取字幕到文件
-python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID" > /tmp/transcript.txt
+python3 {baseDir}/（请参考skill目录中的脚本文件） "https://www.youtube.com/watch?v=VIDEO_ID" > /tmp/transcript.txt
 
 # 让 Agent 读取并生成摘要
 ```
@@ -251,7 +251,7 @@ python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=VID
 
 ```bash
 # 提取字幕
-python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID" > /tmp/transcript.txt
+python3 {baseDir}/（请参考skill目录中的脚本文件） "https://www.youtube.com/watch?v=VIDEO_ID" > /tmp/transcript.txt
 
 # 搜索关键词
 grep -i "关键词" /tmp/transcript.txt
@@ -278,17 +278,17 @@ CC 字幕准确度更高：
 
 ```bash
 # 优先提取人工字幕
-python3 {baseDir}/scripts/get_transcript.py "URL" --prefer-cc
+python3 {baseDir}/（请参考skill目录中的脚本文件） "URL" --prefer-cc
 ```
 
 ### 3. 字幕语言选择
 
 ```bash
 # 提取中文字幕
-python3 {baseDir}/scripts/get_transcript.py "URL" --lang zh
+python3 {baseDir}/（请参考skill目录中的脚本文件） "URL" --lang zh
 
 # 提取英文字幕
-python3 {baseDir}/scripts/get_transcript.py "URL" --lang en
+python3 {baseDir}/（请参考skill目录中的脚本文件） "URL" --lang en
 ```
 
 ### 4. 长视频处理建议
@@ -345,7 +345,7 @@ brew install yt-dlp
 **A：** 可以：
 
 ```bash
-python3 {baseDir}/scripts/get_transcript.py "URL" > /tmp/transcript.txt
+python3 {baseDir}/（请参考skill目录中的脚本文件） "URL" > /tmp/transcript.txt
 ```
 
 ### Q7：能否提取播放列表的字幕？

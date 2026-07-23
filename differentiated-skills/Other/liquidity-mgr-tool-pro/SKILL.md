@@ -90,8 +90,8 @@ pricing_model: "per_use"
 
 ```bash
 # 批量查询与再平衡（专业版）
-{baseDir}/scripts/liq-pro.sh positions --group portfolio
-{baseDir}/scripts/liq-pro.sh rebalance --threshold 0.15
+{baseDir}/（请参考skill目录中的脚本文件） positions --group portfolio
+{baseDir}/（请参考skill目录中的脚本文件） rebalance --threshold 0.15
 ```
 
 ```json

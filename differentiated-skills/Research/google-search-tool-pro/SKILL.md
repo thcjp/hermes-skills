@@ -66,7 +66,7 @@ pricing_model: "per_use"
 #### 1. 批量查询引擎
 
 ```bash
-python scripts/batch_search.py \
+python （请参考skill目录中的脚本文件） \
   --keywords-file keywords.txt \
   --max 10 \
   --output results.json
@@ -78,29 +78,29 @@ python scripts/batch_search.py \
 
 ```bash
 # 配置多个 CSE
-python scripts/cse_manager.py add \
+python （请参考skill目录中的脚本文件） add \
   --name="学术搜索" \
   --cx_id=academic_cx_id \
   --sites="scholar.google.com,arxiv.org"
 
-python scripts/cse_manager.py add \
+python （请参考skill目录中的脚本文件） add \
   --name="技术文档" \
   --cx_id=tech_cx_id \
   --sites="stackoverflow.com,github.com"
 
 # 使用指定搜索引擎
-python scripts/search.py "query" --engine="学术搜索"
+python （请参考skill目录中的脚本文件） "query" --engine="学术搜索"
 ```
 
 #### 3. 站点限定搜索
 
 ```bash
 # 限定特定站点搜索
-python scripts/search.py "Python 教程" \
+python （请参考skill目录中的脚本文件） "Python 教程" \
   --site=docs.python.org
 
 # 多站点限定
-python scripts/search.py "Docker 部署" \
+python （请参考skill目录中的脚本文件） "Docker 部署" \
   --sites="docs.docker.com,stackoverflow.com"
 ```
 
@@ -108,7 +108,7 @@ python scripts/search.py "Docker 部署" \
 
 ```bash
 # 配置定时搜索
-python scripts/scheduled_search.py \
+python （请参考skill目录中的脚本文件） \
   --keyword "行业动态 2026" \
   --cron="0 9 * * *" \
   --archive-dir=./archive
@@ -144,7 +144,7 @@ cat > market_keywords.txt <<EOF
 EOF
 
 # 批量搜索并导出
-python scripts/batch_search.py \
+python （请参考skill目录中的脚本文件） \
   --keywords-file market_keywords.txt \
   --max 10 \
   --export json \
@@ -159,7 +159,7 @@ python scripts/batch_search.py \
 
 ```bash
 # 使用学术搜索引擎
-python scripts/batch_search.py \
+python （请参考skill目录中的脚本文件） \
   --keywords-file research_topics.txt \
   --engine="学术搜索" \
   --max 10 \
@@ -176,7 +176,7 @@ python scripts/batch_search.py \
 
 ```bash
 # 配置 SEO 监控定时任务
-python scripts/scheduled_search.py \
+python （请参考skill目录中的脚本文件） \
   --keywords-file seo_keywords.txt \
   --cron="0 8 * * 1" \
   --track-rank \
@@ -213,7 +213,7 @@ python scripts/scheduled_search.py \
 pip install apscheduler pandas
 
 # 现有 API Key 自动兼容
-python scripts/search.py --version
+python （请参考skill目录中的脚本文件） --version
 # 输出: google-search-tool-pro v1.0.0
 ```
 
@@ -226,7 +226,7 @@ Docker 容器化部署
 Kubernetes 集群管理" > topics.txt
 
 # 执行批量搜索
-python scripts/batch_search.py \
+python （请参考skill目录中的脚本文件） \
   --keywords-file topics.txt \
   --max 10 \
   --export json \
@@ -281,7 +281,7 @@ analytics:
 
 ```bash
 # 启动 REST API 服务
-python scripts/api_server.py --port 8000
+python （请参考skill目录中的脚本文件） --port 8000
 
 # 调用 API 执行搜索
 curl -X POST http://localhost:8000/search \
@@ -329,13 +329,13 @@ print(f"完成 {len(results)} 个关键词搜索")
 
 ```bash
 # 查看已配置的搜索引擎
-python scripts/cse_manager.py list
+python （请参考skill目录中的脚本文件） list
 
 # 切换默认搜索引擎
-python scripts/cse_manager.py set-default --name="学术搜索"
+python （请参考skill目录中的脚本文件） set-default --name="学术搜索"
 
 # 创建新的搜索引擎配置
-python scripts/cse_manager.py create \
+python （请参考skill目录中的脚本文件） create \
   --name="新闻搜索" \
   --sites="news.google.com,reuters.com"
 ```
@@ -344,14 +344,14 @@ python scripts/cse_manager.py create \
 
 ```bash
 # 合并多个搜索结果并去重
-python scripts/merge_results.py \
+python （请参考skill目录中的脚本文件） \
   --input="./exports/*.json" \
   --output=merged.json \
   --deduplicate \
   --sort-by=relevance
 
 # 生成分析报告
-python scripts/analyze_results.py \
+python （请参考skill目录中的脚本文件） \
   --input=merged.json \
   --output=analysis.md \
   --format=summary
@@ -363,13 +363,13 @@ python scripts/analyze_results.py \
 
 ```bash
 # 增加并行工作线程
-python scripts/batch_search.py --workers 8 keywords.txt
+python （请参考skill目录中的脚本文件） --workers 8 keywords.txt
 
 # 启用缓存
-python scripts/batch_search.py --cache keywords.txt
+python （请参考skill目录中的脚本文件） --cache keywords.txt
 
 # 调整查询间隔
-python scripts/batch_search.py --delay 0.5 keywords.txt
+python （请参考skill目录中的脚本文件） --delay 0.5 keywords.txt
 ```
 
 ### API 配额不足
@@ -390,26 +390,26 @@ Google Custom Search API 配额说明：
 
 ```bash
 # 查看所有配置
-python scripts/cse_manager.py list --verbose
+python （请参考skill目录中的脚本文件） list --verbose
 
 # 验证配置
-python scripts/cse_manager.py validate
+python （请参考skill目录中的脚本文件） validate
 
 # 重置配置
-python scripts/cse_manager.py reset --confirm
+python （请参考skill目录中的脚本文件） reset --confirm
 ```
 
 ### 定时任务不执行
 
 ```bash
 # 检查 cron 配置
-python scripts/scheduled_search.py --list
+python （请参考skill目录中的脚本文件） --list
 
 # 查看任务日志
 cat ./logs/scheduled_search.log
 
 # 手动触发测试
-python scripts/scheduled_search.py --run-now --task-id=task_001
+python （请参考skill目录中的脚本文件） --run-now --task-id=task_001
 ```
 
 ## 依赖说明

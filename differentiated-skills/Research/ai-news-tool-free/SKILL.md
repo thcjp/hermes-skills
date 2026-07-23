@@ -273,11 +273,11 @@ curl -s "https://news-api.example.com/api/v1/articles/8533"
 
 ```bash
 # 获取新闻列表(可选指定日期)
-node scripts/get-daily.js
-node scripts/get-daily.js 2026-03-10
+node （请参考skill目录中的脚本文件）
+node （请参考skill目录中的脚本文件） 2026-03-10
 
 # 获取新闻详情
-node scripts/get-article.js 8533
+node （请参考skill目录中的脚本文件） 8533
 ```
 
 ## 示例

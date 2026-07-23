@@ -125,7 +125,7 @@ cp .env.example .env
 
 ### Step 3：脱敏读取文件
 ```text
-调用: read_file_masked({ file_path: "./call.sh" })
+调用: read_file_masked({ file_path: "（请参考skill目录中的脚本文件）" })
 返回: {
   content: "curl -H 'Authorization: Bearer {{OPENAI_API_KEY}}' https://api.openai.com/v1/chat/completions"
 }

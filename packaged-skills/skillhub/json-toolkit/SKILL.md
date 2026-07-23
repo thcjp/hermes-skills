@@ -57,25 +57,25 @@ pricing_model: "per_use"
 | 敏感数据剥离 | 安全序列化 | 否 | 是 |
 ### Schema 校验
 
-执行Schema 校验操作,处理用户输入并返回结果。
+执行Schema 校验,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供Schema 校验所需的参数和指令。
+**输入**: 用户提供Schema 校验相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回Schema 校验的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`Schema 校验`相关配置参数进行设置
 ### 命名规范
 
-执行命名规范操作,处理用户输入并返回结果。
+执行命名规范,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供命名规范所需的参数和指令。
+**输入**: 用户提供命名规范相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回命名规范的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`命名规范`相关配置参数进行设置
 ### 空值处理
 
-执行空值处理操作,处理用户输入并返回结果。
+执行空值处理,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供空值处理所需的参数和指令。
+**输入**: 用户提供空值处理相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回空值处理的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`空值处理`相关配置参数进行设置
@@ -157,8 +157,8 @@ JSON.parse(sanitizeInput(rawInput));
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | json-toolkit处理的内容输入 |,  |
+| content | string | 否 | json-toolkit处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -167,9 +167,9 @@ JSON.parse(sanitizeInput(rawInput));
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "toolkit 相关配置参数",
+    result: "toolkit 相关配置参数",
+    result: "toolkit 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

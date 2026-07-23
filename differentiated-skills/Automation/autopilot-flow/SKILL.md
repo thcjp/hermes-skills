@@ -111,7 +111,7 @@ pattern:
 按复杂度选实现方式：简单2-3步→无代码平台（Zapier/Make）；复杂逻辑→Python/Node脚本；需定时→cron+脚本。写脚本骨架并配置 cron：
 ```bash
 # 每日18:00跑
-0 18 * * * /usr/bin/python3 /path/to/daily_report.py >> logs/daily.log 2>&1
+0 18 * * * /usr/（请参考skill目录中的脚本文件） /path/to/daily_report.py >> logs/daily.log 2>&1
 ```
 **产物**：可执行脚本 + cron配置。
 

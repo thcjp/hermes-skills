@@ -91,13 +91,13 @@ suggested_price: 19.9
 
 ```bash
 # 生成横幅（1K 草稿）
-uv run scripts/generate_image.py \
+uv run （请参考skill目录中的脚本文件） \
   --prompt "A serene Japanese garden with cherry blossoms, soft morning light, watercolor style" \
   --filename "2026-07-18-blog-banner-draft.png" \
   --resolution 1K
 
 # 满意后生成 4K 终稿
-uv run scripts/generate_image.py \
+uv run （请参考skill目录中的脚本文件） \
   --prompt "A serene Japanese garden with cherry blossoms, soft morning light, watercolor style" \
   --filename "2026-07-18-blog-banner-final.png" \
   --resolution 4K
@@ -109,7 +109,7 @@ uv run scripts/generate_image.py \
 
 ```bash
 # 编辑现有图像
-uv run scripts/generate_image.py \
+uv run （请参考skill目录中的脚本文件） \
   --prompt "make the sky more dramatic with storm clouds, increase contrast" \
   --filename "2026-07-18-edited-sky.png" \
   --input-image "original-photo.jpg" \
@@ -122,7 +122,7 @@ uv run scripts/generate_image.py \
 
 ```bash
 # 1K 快速概念图
-uv run scripts/generate_image.py \
+uv run （请参考skill目录中的脚本文件） \
   --prompt "minimalist mobile app onboarding screen, pastel colors, flat design" \
   --filename "2026-07-18-concept-onboarding.png" \
   --resolution 1K
@@ -141,13 +141,13 @@ uv run scripts/generate_image.py \
 export GEMINI_API_KEY="your-api-key"
 
 # 2. 生成新图像
-uv run scripts/generate_image.py \
+uv run （请参考skill目录中的脚本文件） \
   --prompt "your image description" \
   --filename "output-name.png" \
   --resolution 1K
 
 # 3. 编辑现有图像
-uv run scripts/generate_image.py \
+uv run （请参考skill目录中的脚本文件） \
   --prompt "editing instructions" \
   --filename "output-name.png" \
   --input-image "path/to/input.png" \

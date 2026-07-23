@@ -113,7 +113,7 @@ pricing_model: "monthly"
 对整个企业网络执行全量安全评估。
 
 ```bash
-python scripts/enterprise_scan.py \
+python （请参考skill目录中的脚本文件） \
   --targets assets.txt \
   --workflow full-assessment \
   --threads 10 \
@@ -135,7 +135,7 @@ python scripts/enterprise_scan.py \
 ### 场景二:定时持续监控
 ```bash
 # 配置每日安全扫描
-python scripts/enterprise_scan.py \
+python （请参考skill目录中的脚本文件） \
   --schedule "0 2 * * *" \
   --targets assets.txt \
   --workflow quick-scan \
@@ -179,7 +179,7 @@ steps:
 ### 场景四:多目标批量扫描
 ```bash
 # 批量扫描100个目标
-python scripts/enterprise_scan.py \
+python （请参考skill目录中的脚本文件） \
   --targets targets.txt \
   --workflow quick-scan \
   --threads 20 \
@@ -459,25 +459,25 @@ def schedule_scan(cron_expr, targets_file, workflow, webhook_url=None):
 ### 1. 分级扫描策略
 ```bash
 # 第一轮:快速全网扫描(1小时内)
-python scripts/enterprise_scan.py --targets full_range.txt --workflow quick-scan --threads 20
+python （请参考skill目录中的脚本文件） --targets full_range.txt --workflow quick-scan --threads 20
 
 # 第二轮:深度扫描(对发现的高危目标)
-python scripts/enterprise_scan.py --targets high_risk.txt --workflow full-assessment --threads 5
+python （请参考skill目录中的脚本文件） --targets high_risk.txt --workflow full-assessment --threads 5
 ```
 
 ### 2. 持续监控
 ```bash
 # 每日快速扫描
-python scripts/enterprise_scan.py --schedule "0 2 * * *" --workflow quick-scan
+python （请参考skill目录中的脚本文件） --schedule "0 2 * * *" --workflow quick-scan
 
 # 每周深度扫描
-python scripts/enterprise_scan.py --schedule "0 3 * * 0" --workflow full-assessment
+python （请参考skill目录中的脚本文件） --schedule "0 3 * * 0" --workflow full-assessment
 ```
 
 ### 3. 趋势分析
 ```bash
 # 导出90天趋势
-python scripts/enterprise_scan.py --export-trends --period 90d --format json
+python （请参考skill目录中的脚本文件） --export-trends --period 90d --format json
 ```
 
 ## 常见问题

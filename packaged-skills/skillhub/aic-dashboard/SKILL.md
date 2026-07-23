@@ -71,25 +71,25 @@ export API_KEY="your_api_key_here"
 - **零配置启动**: 未设置 `DASHBOARD_TOKEN` 时自动生成随机 token
 ### 邮件展示
 
-执行邮件展示操作,处理用户输入并返回结果。
+执行邮件展示,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供邮件展示所需的参数和指令。
+**输入**: 用户提供邮件展示相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回邮件展示的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`邮件展示`相关配置参数进行设置
 ### 会话状态
 
-执行会话状态操作,处理用户输入并返回结果。
+执行会话状态,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供会话状态所需的参数和指令。
+**输入**: 用户提供会话状态相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回会话状态的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`会话状态`相关配置参数进行设置
 ### Token 保护
 
-执行Token 保护操作,处理用户输入并返回结果。
+执行Token 保护,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供Token 保护所需的参数和指令。
+**输入**: 用户提供Token 保护相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回Token 保护的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`Token 保护`相关配置参数进行设置
@@ -124,10 +124,10 @@ npm install express@4.21.2
 ### Step 2: 启动服务
 ```bash
 # 零配置启动（自动生成 token）
-node scripts/server.js
+node （请参考skill目录中的脚本文件）
 
 # 自定义端口与 token
-DASHBOARD_TOKEN=mysecret123 PORT=8080 node scripts/server.js
+DASHBOARD_TOKEN=mysecret123 PORT=8080 node （请参考skill目录中的脚本文件）
 ```
 
 ### Step 3: 获取访问 URL
@@ -150,7 +150,7 @@ Access URL: http://127.0.0.1:19195/?token=a3f9c2e7b1d4...
 **场景**: 开发者需要快速查看邮件收集器与浏览器会话状态
 
 ```bash
-node scripts/server.js
+node （请参考skill目录中的脚本文件）
 ```
 
 **输出**:
@@ -165,7 +165,7 @@ Access URL: http://127.0.0.1:19195/?token=a3f9c2e7b1d4f8a6...
 **场景**: 团队需要在同一局域网内共享监控面板
 
 ```bash
-DASHBOARD_HOST=0.0.0.0 PORT=19195 DASHBOARD_TOKEN=team-shared-key node scripts/server.js
+DASHBOARD_HOST=0.0.0.0 PORT=19195 DASHBOARD_TOKEN=team-shared-key node （请参考skill目录中的脚本文件）
 ```
 
 **输出**:
@@ -182,7 +182,7 @@ Access URL: http://0.0.0.0:19195/?token=team-shared-key
 ```bash
 INBOX_PATH=/var/data/mail/inbox.jsonl \
 SESSION_PATH=/var/data/auth/session.json \
-node scripts/server.js
+node （请参考skill目录中的脚本文件）
 ```
 
 **说明**: 通过环境变量指向自定义路径,仪表盘读取指定文件渲染内容。

@@ -138,8 +138,8 @@ curl -s "https://api.相关技术文档 | jq '{stars: .stargazers_count, forks: 
 curl -s "https://api.相关技术文档 | jq '.[].name'
 # 输出：
 # "SKILL.md"
-# "scripts/helper.sh"
-# "scripts/install.sh"
+# "（请参考skill目录中的脚本文件）"
+# "（请参考skill目录中的脚本文件）"
 
 # 3. 读取 SKILL.md 内容
 curl -s "https://raw.githubusercontent.com/example/skill-repo/main/skills/my-skill/SKILL.md"
@@ -159,9 +159,9 @@ METRICS:
 • Files Reviewed: 3
 ───────────────────────────────────────
 RED FLAGS:
-• scripts/install.sh: curl to unknown URL (http://45.33.32.156/install.sh)
-• scripts/install.sh: Network call to IP instead of domain
-• scripts/helper.sh: Reads ~/.config without clear reason
+• （请参考skill目录中的脚本文件）: curl to unknown URL (http://45.33.32.156/install.sh)
+• （请参考skill目录中的脚本文件）: Network call to IP instead of domain
+• （请参考skill目录中的脚本文件）: Reads ~/.config without clear reason
 
 PERMISSIONS NEEDED:
 • Files: ~/.config/app/config.json (write)

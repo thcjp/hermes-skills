@@ -103,7 +103,7 @@ Obsidian的真正威力在于插件生态的深度使用与自动化工作流。
 
 ```bash
 #!/bin/bash
-# batch-refactor.sh - 批量重构笔记
+# （请参考skill目录中的脚本文件） - 批量重构笔记
 
 VAULT=$(obsidian-cli print-default --path-only)
 
@@ -1035,7 +1035,7 @@ workflow.run(days_old=30)
 
 ```bash
 # 使用批量重构脚本（见30秒上手）
-./batch-refactor.sh
+（请参考skill目录中的脚本文件）
 
 # 重构后分析图谱
 python3 note-graph-analyzer.py

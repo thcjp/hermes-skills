@@ -69,15 +69,15 @@ pricing_model: "per_use"
 
 ### 配置并启动团队级文件治理
 ```bash
-python3 scripts/file-toolkit-pro.py init --config team.yaml
+python3 （请参考skill目录中的脚本文件） init --config team.yaml
 
-python3 scripts/file-toolkit-pro.py template create --name standard-project
+python3 （请参考skill目录中的脚本文件） template create --name standard-project
 
-python3 scripts/file-toolkit-pro.py inventory add --type contract --path ~/Documents/Contracts/
+python3 （请参考skill目录中的脚本文件） inventory add --type contract --path ~/Documents/Contracts/
 
-python3 scripts/file-toolkit-pro.py schedule --cron "0 18 * * 5" --path ~/Desktop ~/Downloads
+python3 （请参考skill目录中的脚本文件） schedule --cron "0 18 * * 5" --path ~/Desktop ~/Downloads
 
-python3 scripts/file-toolkit-pro.py report --monthly --output reports/
+python3 （请参考skill目录中的脚本文件） report --monthly --output reports/
 ```
 
 ### 团队部署模板
@@ -191,7 +191,7 @@ inventory:
 | 每季度 | 全量审计+结构优化 | 30分钟 | 优化建议 |
 
 ```bash
-python3 scripts/file-toolkit-pro.py maintain status
+python3 （请参考skill目录中的脚本文件） maintain status
 
 ```
 
@@ -220,9 +220,9 @@ team_structure:
 ```
 
 ```bash
-python3 scripts/file-toolkit-pro.py team deploy --member new-member --path ~/Projects/
+python3 （请参考skill目录中的脚本文件） team deploy --member new-member --path ~/Projects/
 
-python3 scripts/file-toolkit-pro.py team audit --all-members
+python3 （请参考skill目录中的脚本文件） team audit --all-members
 ```
 
 **输入**: 用户提供团队协作配置所需的指令和必要参数。
@@ -232,17 +232,17 @@ python3 scripts/file-toolkit-pro.py team audit --all-members
 
 ### 5. 批量定时整理
 ```bash
-python3 scripts/file-toolkit-pro.py schedule add \
+python3 （请参考skill目录中的脚本文件） schedule add \
   --name "每周桌面清理" \
   --cron "0 18 * * 5" \
   --path ~/Desktop ~/Downloads \
   --action organize \
   --notify email
 
-python3 scripts/file-toolkit-pro.py schedule list
+python3 （请参考skill目录中的脚本文件） schedule list
 
-python3 scripts/file-toolkit-pro.py schedule pause --name "每周桌面清理"
-python3 scripts/file-toolkit-pro.py schedule resume --name "每周桌面清理"
+python3 （请参考skill目录中的脚本文件） schedule pause --name "每周桌面清理"
+python3 （请参考skill目录中的脚本文件） schedule resume --name "每周桌面清理"
 ```
 
 **输入**: 用户提供批量定时整理所需的指令和必要参数。
@@ -263,7 +263,7 @@ python3 scripts/file-toolkit-pro.py schedule resume --name "每周桌面清理"
 ```
 
 ```bash
-python3 scripts/file-toolkit-pro.py archive ~/Projects/website-redesign \
+python3 （请参考skill目录中的脚本文件） archive ~/Projects/website-redesign \
   --review --clean --compress --verify
 ```
 
@@ -274,11 +274,11 @@ python3 scripts/file-toolkit-pro.py archive ~/Projects/website-redesign \
 
 ### 7. 文件版本历史管理
 ```bash
-python3 scripts/file-toolkit-pro.py version enable --path ~/Projects/
+python3 （请参考skill目录中的脚本文件） version enable --path ~/Projects/
 
-python3 scripts/file-toolkit-pro.py version history "需求文档.docx"
+python3 （请参考skill目录中的脚本文件） version history "需求文档.docx"
 
-python3 scripts/file-toolkit-pro.py version rollback "需求文档.docx" --version 3
+python3 （请参考skill目录中的脚本文件） version rollback "需求文档.docx" --version 3
 ```
 
 **输入**: 用户提供文件版本历史管理所需的指令和必要参数。
@@ -288,11 +288,11 @@ python3 scripts/file-toolkit-pro.py version rollback "需求文档.docx" --versi
 
 ### 8. 智能去重
 ```bash
-python3 scripts/file-toolkit-pro.py dedup scan ~/Documents/
+python3 （请参考skill目录中的脚本文件） dedup scan ~/Documents/
 
-python3 scripts/file-toolkit-pro.py dedup plan ~/Documents/ --keep latest
+python3 （请参考skill目录中的脚本文件） dedup plan ~/Documents/ --keep latest
 
-python3 scripts/file-toolkit-pro.py dedup execute ~/Documents/ --keep latest
+python3 （请参考skill目录中的脚本文件） dedup execute ~/Documents/ --keep latest
 ```
 
 **输入**: 用户提供智能去重所需的指令和必要参数。
@@ -307,11 +307,11 @@ python3 scripts/file-toolkit-pro.py dedup execute ~/Documents/ --keep latest
 
 **解决方案**：
 ```bash
-python3 scripts/file-toolkit-pro.py template create --name team-standard
+python3 （请参考skill目录中的脚本文件） template create --name team-standard
 
-python3 scripts/file-toolkit-pro.py team deploy --all --template team-standard
+python3 （请参考skill目录中的脚本文件） team deploy --all --template team-standard
 
-python3 scripts/file-toolkit-pro.py team audit --quarterly
+python3 （请参考skill目录中的脚本文件） team audit --quarterly
 ```
 
 **效果**：所有项目使用统一目录结构与命名规范，新成员一键应用模板即可上手，项目交接时文件可检索性大幅提升。
@@ -321,11 +321,11 @@ python3 scripts/file-toolkit-pro.py team audit --quarterly
 
 **解决方案**：
 ```bash
-python3 scripts/file-toolkit-pro.py inventory build --scan ~/Documents/
+python3 （请参考skill目录中的脚本文件） inventory build --scan ~/Documents/
 
-python3 scripts/file-toolkit-pro.py inventory remind --before 30 --notify email
+python3 （请参考skill目录中的脚本文件） inventory remind --before 30 --notify email
 
-python3 scripts/file-toolkit-pro.py inventory report --format pdf
+python3 （请参考skill目录中的脚本文件） inventory report --format pdf
 ```
 
 **效果**：所有关键文档统一管理，合同到期前30天自动提醒，一键生成"我有哪些重要文档"概览，合规审计有据可查。
@@ -335,11 +335,11 @@ python3 scripts/file-toolkit-pro.py inventory report --format pdf
 
 **解决方案**：
 ```bash
-python3 scripts/file-toolkit-pro.py project init ~/Projects/new-project --template standard
+python3 （请参考skill目录中的脚本文件） project init ~/Projects/new-project --template standard
 
-python3 scripts/file-toolkit-pro.py find "UI组件库" --scope all-projects
+python3 （请参考skill目录中的脚本文件） find "UI组件库" --scope all-projects
 
-python3 scripts/file-toolkit-pro.py project status --all
+python3 （请参考skill目录中的脚本文件） project status --all
 ```
 
 **效果**：所有项目统一目录结构，跨项目检索5秒定位可复用资产，项目状态一目了然。
@@ -349,11 +349,11 @@ python3 scripts/file-toolkit-pro.py project status --all
 
 **解决方案**：
 ```bash
-python3 scripts/file-toolkit-pro.py schedule add \
+python3 （请参考skill目录中的脚本文件） schedule add \
   --name "每日下载整理" --cron "0 9 * * *" \
   --path ~/Downloads --action organize
 
-python3 scripts/file-toolkit-pro.py schedule add \
+python3 （请参考skill目录中的脚本文件） schedule add \
   --name "每周桌面清理" --cron "0 18 * * 5" \
   --path ~/Desktop --action organize --notify email
 ```

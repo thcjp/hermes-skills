@@ -117,28 +117,28 @@ suggested_price: 29.9
 ### 第一步：初始化存储
 
 ```bash
-python3 scripts/init_storage.py
+python3 （请参考skill目录中的脚本文件）
 ```
 
 ### 第二步：生成第一张图表
 
 ```bash
 # 生成柱状图
-python3 scripts/make_chart.py --type bar --title "各产品销量对比" --labels "产品A,产品B,产品C" --values "120,85,150"
+python3 （请参考skill目录中的脚本文件） --type bar --title "各产品销量对比" --labels "产品A,产品B,产品C" --values "120,85,150"
 ```
 
 ### 第三步：使用智能推荐
 
 ```bash
 # 让工具推荐最佳图表类型
-python3 scripts/suggest_chart.py --labels "1月,2月,3月,4月,5月" --values "100,120,115,140,160"
+python3 （请参考skill目录中的脚本文件） --labels "1月,2月,3月,4月,5月" --values "100,120,115,140,160"
 # 输出: 建议使用折线图（line），数据呈时间序列且有明显趋势
 ```
 
 ### 第四步：查看历史图表
 
 ```bash
-python3 scripts/list_charts.py
+python3 （请参考skill目录中的脚本文件）
 ```
 
 输出示例：

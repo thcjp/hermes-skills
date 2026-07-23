@@ -75,10 +75,10 @@ export API_KEY="your_api_key_here"
 ### 脚本路径
 所有脚本相对于此 skill 目录:
 
-- `scripts/comfyui_manager.py` — ComfyUI 启动/关闭/状态检查
-- `scripts/generate.py` — 图片生成（调用 ComfyUI API）
-- `scripts/auto_shutdown.py` — 空闲自动关闭检查
-- `scripts/civitai.py` — CivitAI 集成（搜索/详情
+- `（请参考skill目录中的脚本文件）` — ComfyUI 启动/关闭/状态检查
+- `（请参考skill目录中的脚本文件）` — 图片生成（调用 ComfyUI API）
+- `（请参考skill目录中的脚本文件）` — 空闲自动关闭检查
+- `（请参考skill目录中的脚本文件）` — CivitAI 集成（搜索/详情
 
 **输入**: 用户提供脚本路径所需的指令和必要参数。
 ### ComfyUI 生命周期管理
@@ -102,7 +102,7 @@ mgr.start()  # 自动启动本地 ComfyUI 进程
 ```python
 import scripts.comfyui_manager 
 
-**输入**: 用户提供ComfyUI 生命周期管理所需的参数和指令。
+**输入**: 用户提供ComfyUI 生命周期管理相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行ComfyUI 生命周期管理操作。
 
 **输出**: 返回状态检查的执行结果,包含操作状态和输出数据。
@@ -123,7 +123,7 @@ result = generate(
     batch_size=4,
     width
 
-**输入**: 用户提供图片生成所需的参数和指令。
+**输入**: 用户提供图片生成相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行图片生成操作。
 
 ### CivitAI 集成
@@ -135,7 +135,7 @@ result = generate(
 - 参考`CivitAI 集成`相关配置参数进行设置
 ### 搜索模型
 ```bash
-python3 scripts/civitai.py search "anime checkpoint" --limit 5
+python3 （请参考skill目录中的脚本文件） search "anime checkpoint" --limit 5
 ```
 
 返回模型名称、ID、下载量、基础模型等元数据。
@@ -147,7 +147,7 @@ python3 scripts/civitai.py search "anime checkpoint" --limit 5
 
 ### 查看模型详情
 ```bash
-python3 scripts/civitai.py info 140272
+python3 （请参考skill目录中的脚本文件） info 140272
 ```
 
 **输入**: 用户提供查看模型详情所需的指令和必要参数。
@@ -174,7 +174,7 @@ pyth
 | hassaku | hassakuXLIllustrious_v34 | 140272 | v3.4 | Illustrious 动漫 |
 | noobv6 | pornmasterPro_noobV6 | 1045588 | noob-V6 |
 
-**输入**: 用户提供模型别名所需的参数和指令。
+**输入**: 用户提供模型别名相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行模型别名操作。
 **输出**: 返回模型别名的执行结果,包含操作状态和输出数据。
 
@@ -201,7 +201,7 @@ pyth
 - 动作/姿势用专业标签: `mating press, pov, from below, spread legs`
 - 细节标签: `detailed skin,
 
-**输入**: 用户提供提示词优化指南所需的参数和指令。
+**输入**: 用户提供提示词优化指南相关的配置参数、输入数据和处理选项。
 **输出**: 返回提示词优化指南的执行结果,包含操作状态和输出数据。
 
 #
@@ -209,11 +209,11 @@ pyth
 
 所有脚本相对于此 skill 目录:
 
-- `scripts/comfyui_manager.py` — ComfyUI 启动/关闭/状态检查
-- `scripts/generate.py` — 图片生成（调用 ComfyUI API）
-- `scripts/auto_shutdown.py` — 空闲自动关闭检查
-- `scripts/civitai.py` — CivitAI 集成（搜索/详情/下载/更新检查/推荐参数）
-- `scripts/auto_tune.py` — 自动调参（从 CivitAI 样图元数据提取推荐设置）
+- `（请参考skill目录中的脚本文件）` — ComfyUI 启动/关闭/状态检查
+- `（请参考skill目录中的脚本文件）` — 图片生成（调用 ComfyUI API）
+- `（请参考skill目录中的脚本文件）` — 空闲自动关闭检查
+- `（请参考skill目录中的脚本文件）` — CivitAI 集成（搜索/详情/下载/更新检查/推荐参数）
+- `（请参考skill目录中的脚本文件）` — 自动调参（从 CivitAI 样图元数据提取推荐设置）
 - `config.json` — 配置文件（模型别名、默认参数、路径、CivitAI 关联）
 
 ## 认证
@@ -262,7 +262,7 @@ mgr.stop()
 ### 空闲自动关闭
 
 ```bash
-python3 scripts/auto_shutdown.py
+python3 （请参考skill目录中的脚本文件）
 ```
 
 检查空闲时间,超过 15 分钟无使用自动关闭 ComfyUI 释放显存。建议在心跳回调中调用。
@@ -310,7 +310,7 @@ result = generate(
 ### 搜索模型
 
 ```bash
-python3 scripts/civitai.py search "anime checkpoint" --limit 5
+python3 （请参考skill目录中的脚本文件） search "anime checkpoint" --limit 5
 ```
 
 返回模型名称、ID、下载量、基础模型等元数据。
@@ -318,14 +318,14 @@ python3 scripts/civitai.py search "anime checkpoint" --limit 5
 ### 查看模型详情
 
 ```bash
-python3 scripts/civitai.py info 140272
+python3 （请参考skill目录中的脚本文件） info 140272
 ```
 
 
 ### 获取推荐参数
 
 ```bash
-python3 scripts/civitai.py params 140272
+python3 （请参考skill目录中的脚本文件） params 140272
 ```
 
 从模型样图元数据中提取推荐 Steps、CFG、采样器、分辨率等设置。
@@ -333,7 +333,7 @@ python3 scripts/civitai.py params 140272
 ### 检查本地模型更新
 
 ```bash
-python3 scripts/civitai.py check-updates
+python3 （请参考skill目录中的脚本文件） check-updates
 ```
 
 遍历本地模型文件,计算 SHA256 并与 CivitAI 版本比对。每个文件约需 30 秒。
@@ -341,7 +341,7 @@ python3 scripts/civitai.py check-updates
 ### 下载模型
 
 ```bash
-python3 scripts/civitai.py download "https://civitai.com/api/download/models/XXXXX" --filename model_name.safetensors
+python3 （请参考skill目录中的脚本文件） download "https://civitai.com/api/download/models/XXXXX" --filename model_name.safetensors
 ```
 
 下载完成后自动更新 config.json 中的模型别名映射。
@@ -349,7 +349,7 @@ python3 scripts/civitai.py download "https://civitai.com/api/download/models/XXX
 ### 批量更新推荐参数
 
 ```bash
-python3 scripts/auto_tune.py update-all
+python3 （请参考skill目录中的脚本文件） update-all
 ```
 
 遍历 config.json 中所有模型别名,从 CivitAI 拉取推荐参数并写入 model_params 缓存。
@@ -425,10 +425,10 @@ result = generate(positive="your prompt", model="janku", **params)
 
 ```bash
 # 检查更新
-python3 scripts/civitai.py check-updates
+python3 （请参考skill目录中的脚本文件） check-updates
 
 # 下载新模型
-python3 scripts/civitai.py download "https://civitai.com/api/download/models/XXXXX" --filename new_model.safetensors
+python3 （请参考skill目录中的脚本文件） download "https://civitai.com/api/download/models/XXXXX" --filename new_model.safetensors
 ```
 
 ## 使用流程
@@ -495,13 +495,13 @@ result = generate(
 
 ```bash
 # 检查所有本地模型更新（需计算 SHA256,每个文件约 30 秒）
-python3 scripts/civitai.py check-updates
+python3 （请参考skill目录中的脚本文件） check-updates
 
 # 下载新模型
-python3 scripts/civitai.py download "https://civitai.com/api/download/models/140272" --filename hassakuXLIllustrious_v35.safetensors
+python3 （请参考skill目录中的脚本文件） download "https://civitai.com/api/download/models/140272" --filename hassakuXLIllustrious_v35.safetensors
 
 # 更新所有模型推荐参数到 config
-python3 scripts/auto_tune.py update-all
+python3 （请参考skill目录中的脚本文件） update-all
 ```
 
 **输出**: 更新检查报告 + 下载完成确认 + config.json 已更新

@@ -28,7 +28,7 @@ tags:
 将单日日志文件蒸馏为结构化摘要。
 
 - **参数**：输入日志文件路径、输出文件路径（可选）
-- **用法**：`node scripts/memory-compress.js memory/2026-07-18.md /tmp/compressed.md`
+- **用法**：`node （请参考skill目录中的脚本文件） memory/2026-07-18.md /tmp/compressed.md`
 - **输出**：结构化蒸馏摘要，包含关键事件与待办事项
 
 压缩效果：
@@ -76,7 +76,7 @@ tags:
 运行蒸馏脚本处理目标日志文件。
 
 ```bash
-node scripts/memory-compress.js memory/2026-07-18.md /tmp/compressed.md
+node （请参考skill目录中的脚本文件） memory/2026-07-18.md /tmp/compressed.md
 ```
 
 ### 第三步：追加到精选记忆
@@ -108,7 +108,7 @@ cat /tmp/compressed.md >> MEMORY.md
 输入文件：memory/2026-07-18.md（2,500 词）
 
 执行：
-1. 运行：node scripts/memory-compress.js memory/2026-07-18.md /tmp/compressed.md
+1. 运行：node （请参考skill目录中的脚本文件） memory/2026-07-18.md /tmp/compressed.md
 2. 脚本扫描标题，识别关键词：重大进展、教训、待办
 3. 应用古文压缩四原则
 4. 输出蒸馏摘要

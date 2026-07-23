@@ -36,7 +36,7 @@ suggested_price: 29.9
 
 | 能力 | 说明 |
 | --- | --- |
-| 单文件组件生成 | 生成完整的 `.vue` 文件(template/script/style) |
+| 单文件组件生成 | 生成完整的 `.vue` 文件(template/（请参考skill目录中的脚本文件）) |
 | Composition API | 推荐 API,基于 `setup` 函数 |
 | Options API | 传统 API,适合旧项目兼容 |
 | `<script setup>` | Vue 3 推荐语法,更简洁 |

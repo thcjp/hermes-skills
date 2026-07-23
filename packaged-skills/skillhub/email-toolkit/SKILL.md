@@ -40,7 +40,7 @@ pricing_model: "per_use"
 
 ### 批量发送引擎
 - **收件人列表**: 支持 CSV/JSON 收件人列表文件
-- **变量替换**: 模板中支持 `（根据实际场景填充）`、`（根据实际场景填充）` 等变量插值
+- **变量替换**: 模板中支持 `email-toolkit_template`、`email-toolkit_template` 等变量插值
 - **速率控制**: 可配置发送速率与并发数
 - **失败重试**: 自动重试失败邮件
 - **发送日志**: 完整记录发送结果
@@ -49,7 +49,7 @@ pricing_model: "per_use"
 ### 邮件模板系统
 - **内置模板**: 通知、报告、邀请、提醒、审批等常用模板
 - **自定义模板**: 创建、编辑、删除自定义模板
-- **变量插值**: 支持 `（根据实际场景填充）` 语法
+- **变量插值**: 支持 `email-toolkit_template` 语法
 - **条件渲染**: 支持条件判断逻辑
 - **模板预览**: 渲染效果预览
 
@@ -90,9 +90,9 @@ pricing_model: "per_use"
 ---
 ### 收件人列表
 
-执行收件人列表操作,处理用户输入并返回结果。
+执行收件人列表,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供收件人列表所需的参数和指令。
+**输入**: 用户提供收件人列表相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回收件人列表的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`收件人列表`相关配置参数进行设置
@@ -114,9 +114,9 @@ customer3@example.com,王五,SAVE25,家居
 **创建邮件模板** `templates/promo.html`:
 
 ```html
-<h1>（根据实际场景填充），专属优惠等你来！</h1>
-<p>尊敬的 （根据实际场景填充）：</p>
-<p>感谢您对我们 （根据实际场景填充） 品类的关注，为您奉上专属优惠码：<strong>（根据实际场景填充）</strong></p>
+<h1>"toolkit_result"，专属优惠等你来！</h1>
+<p>尊敬的 "toolkit_metadata"：</p>
+<p>感谢您对我们 "toolkit_status" 品类的关注，为您奉上专属优惠码：<strong>"toolkit_status"</strong></p>
 <p>优惠码有效期至2026年7月31日，请尽快使用。</p>
 ```
 
@@ -127,7 +127,7 @@ customer3@example.com,王五,SAVE25,家居
 python email_sender.py batch-send \
   --recipients customers.csv \
   --template templates/promo.html \
-  --subject "（根据实际场景填充） - 专属优惠码 （根据实际场景填充）" \
+  --subject ""toolkit_summary" - 专属优惠码 "toolkit_summary"" \
   --rate-limit 20 \
   --dry-run
 
@@ -135,7 +135,7 @@ python email_sender.py batch-send \
 python email_sender.py batch-send \
   --recipients customers.csv \
   --template templates/promo.html \
-  --subject "（根据实际场景填充） - 专属优惠码 （根据实际场景填充）" \
+  --subject ""toolkit_details" - 专属优惠码 "toolkit_details"" \
   --rate-limit 20 \
   --pool gmail,outlook \
   --retry 3 \
@@ -168,7 +168,7 @@ python email_sender.py schedule create \
   --name "daily-report" \
   --cron "0 8 * * 1-5" \
   --to "management@company.com" \
-  --subject "系统监控日报 - （根据实际场景填充）" \
+  --subject "系统监控日报 - "toolkit_count"" \
   --template templates/daily_report.html \
   --data-source "generate_report.py" \
   --timezone "Asia/Shanghai"
@@ -305,8 +305,8 @@ sender.batch_send(recipients="list.csv", template="tpl.html", subject="通知")
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | email-toolkit处理的内容输入 |,  |
+| content | string | 否 | email-toolkit处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -315,9 +315,9 @@ sender.batch_send(recipients="list.csv", template="tpl.html", subject="通知")
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "toolkit 相关配置参数",
+    result: "toolkit 相关配置参数",
+    result: "toolkit 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,
@@ -397,7 +397,7 @@ sender.batch_send(recipients="list.csv", template="tpl.html", subject="通知")
       "cron": "0 10 * * 1",
       "recipients": "subscribers.csv",
       "template": "templates/newsletter.html",
-      "subject": "本周资讯 （根据实际场景填充）",
+      "subject": "本周资讯 "toolkit_timestamp"",
       "timezone": "Asia/Shanghai"
     }
   ]

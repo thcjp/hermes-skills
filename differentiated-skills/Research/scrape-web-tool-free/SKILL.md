@@ -126,10 +126,10 @@ suggested_price: 29.9
 
 ```bash
 # 抓取网页纯文本
-python scripts/scrape_web.py --url "https://example.com/article"
+python （请参考skill目录中的脚本文件） --url "https://example.com/article"
 
 # 抓取并保存到文件
-python scripts/scrape_web.py --url "https://example.com/article" --out "article.txt"
+python （请参考skill目录中的脚本文件） --url "https://example.com/article" --out "article.txt"
 ```
 
 输出示例:
@@ -151,13 +151,13 @@ Fetched: 2026-07-18 10:30:00
 
 ```bash
 # 提取页面标题
-python scripts/scrape_web.py --url "https://example.com" --selector "title::text"
+python （请参考skill目录中的脚本文件） --url "https://example.com" --selector "title::text"
 
 # 提取文章标题
-python scripts/scrape_web.py --url "https://example.com/blog" --selector "h1.article-title::text"
+python （请参考skill目录中的脚本文件） --url "https://example.com/blog" --selector "h1.article-title::text"
 
 # 提取多个元素(列表)
-python scripts/scrape_web.py --url "https://example.com/products" --selector "div.product-name::text"
+python （请参考skill目录中的脚本文件） --url "https://example.com/products" --selector "div.product-name::text"
 ```
 
 输出示例:
@@ -175,13 +175,13 @@ vLLM 0.8发布:PagedAttention全面升级
 
 ```bash
 # 提取meta描述
-python scripts/scrape_web.py --url "https://example.com" --selector "meta[name=description]::attr(content)"
+python （请参考skill目录中的脚本文件） --url "https://example.com" --selector "meta[name=description]::attr(content)"
 
 # 提取meta关键词
-python scripts/scrape_web.py --url "https://example.com" --selector "meta[name=keywords]::attr(content)"
+python （请参考skill目录中的脚本文件） --url "https://example.com" --selector "meta[name=keywords]::attr(content)"
 
 # 提取canonical URL
-python scripts/scrape_web.py --url "https://example.com" --selector "link[rel=canonical]::attr(href)"
+python （请参考skill目录中的脚本文件） --url "https://example.com" --selector "link[rel=canonical]::attr(href)"
 ```
 
 ## 不适用场景
@@ -213,17 +213,17 @@ pip install httpx
 
 ```bash
 # 最简用法:抓取网页纯文本
-python scripts/scrape_web.py --url "https://example.com"
+python （请参考skill目录中的脚本文件） --url "https://example.com"
 ```
 
 ### 第三步:使用CSS选择器
 
 ```bash
 # 提取特定元素
-python scripts/scrape_web.py --url "https://example.com" --selector "h1::text"
+python （请参考skill目录中的脚本文件） --url "https://example.com" --selector "h1::text"
 
 # 保存到文件
-python scripts/scrape_web.py --url "https://example.com" --selector "h1::text" --out "title.txt"
+python （请参考skill目录中的脚本文件） --url "https://example.com" --selector "h1::text" --out "title.txt"
 ```
 
 ## 示例
@@ -231,7 +231,7 @@ python scripts/scrape_web.py --url "https://example.com" --selector "h1::text" -
 ### 命令行参数详解
 
 ```text
-python scripts/scrape_web.py [选项]
+python （请参考skill目录中的脚本文件） [选项]
 
 选项:
   --url URL          目标网页URL(必需)
@@ -300,7 +300,7 @@ python -c "import scrapling; print(scrapling.__version__)"
 抓取结果保存为文件后,便于AI助手进一步分析、总结或归档:
 
 ```bash
-python scripts/scrape_web.py --url "https://example.com/long-article" --out "article.txt"
+python （请参考skill目录中的脚本文件） --url "https://example.com/long-article" --out "article.txt"
 # 然后让AI助手阅读article.txt并生成摘要
 ```
 

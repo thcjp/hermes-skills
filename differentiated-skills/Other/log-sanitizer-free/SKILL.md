@@ -75,16 +75,16 @@ suggested_price: 29.9
 
 ```bash
 # 扫描单个日志文件（本地模式，默认）
-python3 scripts/log-sanitizer.py scan app.log
+python3 （请参考skill目录中的脚本文件） scan app.log
 
 # 扫描整个日志目录
-python3 scripts/log-sanitizer.py scan /var/log/myapp/
+python3 （请参考skill目录中的脚本文件） scan /var/log/myapp/
 
 # 输出JSON格式报告（适合自动化集成）
-python3 scripts/log-sanitizer.py scan app.log --json
+python3 （请参考skill目录中的脚本文件） scan app.log --json
 
 # 预览模式（仅显示发现的敏感信息，不修改文件）
-python3 scripts/log-sanitizer.py scan app.log --preview
+python3 （请参考skill目录中的脚本文件） scan app.log --preview
 ```
 
 ### 可复制模板
@@ -95,7 +95,7 @@ python3 scripts/log-sanitizer.py scan app.log --preview
 ## 上线前日志脱敏检查
 
 每次发布前执行日志脱敏扫描：
-python3 scripts/log-sanitizer.py scan logs/ --preview
+python3 （请参考skill目录中的脚本文件） scan logs/ --preview
 
 如发现HIGH级别敏感信息，立即修复后重新扫描。
 ```
@@ -162,10 +162,10 @@ python3 scripts/log-sanitizer.py scan logs/ --preview
 **解决方案**：
 ```bash
 # 预览模式扫描日志目录
-python3 scripts/log-sanitizer.py scan logs/ --preview
+python3 （请参考skill目录中的脚本文件） scan logs/ --preview
 
 # 确认后执行脱敏（自动备份原文件）
-python3 scripts/log-sanitizer.py scan logs/ --redact
+python3 （请参考skill目录中的脚本文件） scan logs/ --redact
 ```
 
 **效果**：5分钟完成日志目录全量扫描，发现敏感信息后自动脱敏并备份原文件，避免密钥泄露到代码仓库。
@@ -177,7 +177,7 @@ python3 scripts/log-sanitizer.py scan logs/ --redact
 **解决方案**：
 ```bash
 # 批量扫描并脱敏日志目录
-python3 scripts/log-sanitizer.py scan /var/log/myapp/ --redact --json > report.json
+python3 （请参考skill目录中的脚本文件） scan /var/log/myapp/ --redact --json > report.json
 
 # 查看脱敏报告
 cat report.json | python3 -m json.tool
@@ -192,10 +192,10 @@ cat report.json | python3 -m json.tool
 **解决方案**：
 ```bash
 # 扫描测试日志
-python3 scripts/log-sanitizer.py scan test-output/debug.log --preview
+python3 （请参考skill目录中的脚本文件） scan test-output/debug.log --preview
 
 # 脱敏后归档
-python3 scripts/log-sanitizer.py scan test-output/debug.log --redact
+python3 （请参考skill目录中的脚本文件） scan test-output/debug.log --redact
 ```
 
 **效果**：三级风险评级直观展示安全状况，脱敏后日志可安全归档，不影响问题排查。
@@ -206,7 +206,7 @@ python3 scripts/log-sanitizer.py scan test-output/debug.log --redact
 
 ```text
 用法：
-  python3 scripts/log-sanitizer.py scan <路径> [选项]
+  python3 （请参考skill目录中的脚本文件） scan <路径> [选项]
 
 选项：
   <路径>           扫描文件或目录
@@ -218,9 +218,9 @@ python3 scripts/log-sanitizer.py scan test-output/debug.log --redact
   --help           显示帮助
 
 示例：
-  python3 scripts/log-sanitizer.py scan app.log --preview
-  python3 scripts/log-sanitizer.py scan logs/ --redact --json
-  python3 scripts/log-sanitizer.py scan app.log --quiet
+  python3 （请参考skill目录中的脚本文件） scan app.log --preview
+  python3 （请参考skill目录中的脚本文件） scan logs/ --redact --json
+  python3 （请参考skill目录中的脚本文件） scan app.log --quiet
 ```
 
 ### 示例
@@ -278,7 +278,7 @@ rules:
 log-security-check:
   stage: test
   script:
-    - python3 scripts/log-sanitizer.py scan logs/ --preview --json > log-report.json
+    - python3 （请参考skill目录中的脚本文件） scan logs/ --preview --json > log-report.json
     - |
       if grep -q '"severity": "HIGH"' log-report.json; then
         echo "发现HIGH级别敏感信息，阻断发布"

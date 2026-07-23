@@ -159,7 +159,7 @@ git bisect good v1.0.0             # 标记v1.0.0是好的
 git bisect good                     # 标记当前提交是好的
 git bisect bad                      # 标记当前提交是坏的
 git bisect start HEAD v1.0.0 --
-git bisect run ./test-script.sh     # 返回0=good, 1=bad
+git bisect run （请参考skill目录中的脚本文件）     # 返回0=good, 1=bad
 git bisect log
 
 git bisect reset                    # 结束并回到原来分支
@@ -168,7 +168,7 @@ git bisect visualize                # 查看剩余范围
 
 ```bash
 #!/bin/bash
-cat > bisect-test.sh << 'EOF'
+cat > （请参考skill目录中的脚本文件） << 'EOF'
 #!/bin/bash
 npm test > /dev/null 2>&1
 if [ $? -eq 0 ]; then
@@ -179,12 +179,12 @@ else
     exit 1
 fi
 EOF
-chmod +x bisect-test.sh
+chmod +x （请参考skill目录中的脚本文件）
 
 git bisect start
 git bisect bad HEAD
 git bisect good v1.0.0
-git bisect run ./bisect-test.sh
+git bisect run （请参考skill目录中的脚本文件）
 ```
 
 **输入**: 用户提供二分查找调试所需的指令和必要参数。

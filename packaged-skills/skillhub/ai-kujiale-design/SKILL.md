@@ -80,7 +80,7 @@ export API_KEY="your_api_key_here"
 - 最终结果只输出渲染图、全景图与设计亮点,严格按 `./outputs/result.md` 格式
 - 已发送的消息不重复输出
 
-**输入**: 用户提供输出规则所需的参数和指令。
+**输入**: 用户提供输出规则相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行输出规则操作。
 
 ### 渠道规则
@@ -88,7 +88,7 @@ export API_KEY="your_api_key_here"
 - **Webchat**: 直接发送图片链接
 - **飞书**: 推送格式 `MEDIA:图片url`,直接展示图片
 
-**输入**: 用户提供渠道规则所需的参数和指令。
+**输入**: 用户提供渠道规则相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行渠道规则操作。
 **输出**: 返回渠道规则的执行结果,包含操作状态和输出数据。
 
@@ -96,7 +96,7 @@ export API_KEY="your_api_key_here"
 
 渲染图按房间优先级输出: 客餐厅 → 主卧 → 次卧 → 其他。
 
-**输入**: 用户提供结果排序所需的参数和指令。
+**输入**: 用户提供结果排序相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行结果排序操作。- 验证执行结果，确认输出符合预期格式
 - 参考`结果排序`相关配置参数进行设置
 ### 设计流程
@@ -119,7 +119,7 @@ export API_KEY="your_api_key_here"
 询问城市与小区(可一并告知户型结构、面积),随后搜索:
 
 ```bash
-node ./scripts/searchPlan.js --token=$TOKEN --query="
+node （请参考skill目录中的脚本文件） --token=$TOKEN --query="
 
 **处理**: 按照skill规范执行设计流程操作。
 
@@ -153,7 +153,7 @@ node ./scripts/searchPlan.js --token=$TOKEN --query="
 每次执行前调用版本校验,确认技能版本可用:
 
 ```bash
-node ./scripts/versionCheck.js --token=$TOKEN --version=1.0.0
+node （请参考skill目录中的脚本文件） --token=$TOKEN --version=1.0.0
 ```
 
 返回 action 含义:
@@ -192,13 +192,13 @@ node ./scripts/versionCheck.js --token=$TOKEN --version=1.0.0
 询问城市与小区(可一并告知户型结构、面积),随后搜索:
 
 ```bash
-node ./scripts/searchPlan.js --token=$TOKEN --query="小区名" --areaId="城市id" --start=0 --num=20
+node （请参考skill目录中的脚本文件） --token=$TOKEN --query="小区名" --areaId="城市id" --start=0 --num=20
 ```
 
 展示结果供用户选择,获得 planId 后获取户型图:
 
 ```bash
-node ./scripts/getFloorplanInfo.js --planId=$PLAN_ID
+node （请参考skill目录中的脚本文件） --planId=$PLAN_ID
 ```
 
 解析返回:
@@ -211,15 +211,15 @@ node ./scripts/getFloorplanInfo.js --planId=$PLAN_ID
 
 ```bash
 # 获取上传凭证
-node ./scripts/getUploadToken.js --token=$TOKEN
+node （请参考skill目录中的脚本文件） --token=$TOKEN
 
 # 按 ./docs/upload.md 执行上传获取 url
 
 # 创建临摹任务
-node ./scripts/createBitmapTask.js --token=$TOKEN --bitmap=$IMAGE_URL
+node （请参考skill目录中的脚本文件） --token=$TOKEN --bitmap=$IMAGE_URL
 
 # 轮询临摹结果
-node ./scripts/getBitmapTaskResult.js --token=$TOKEN --taskId=$TASK_ID
+node （请参考skill目录中的脚本文件） --token=$TOKEN --taskId=$TASK_ID
 ```
 
 获得 planId 后同样调用 `getFloorplanInfo.js` 展示户型图。
@@ -238,7 +238,7 @@ node ./scripts/getBitmapTaskResult.js --token=$TOKEN --taskId=$TASK_ID
 用户确认后创建方案:
 
 ```bash
-node ./scripts/createDesign.js --token=$TOKEN --planId=$PLAN_ID
+node （请参考skill目录中的脚本文件） --token=$TOKEN --planId=$PLAN_ID
 ```
 
 获得 designId，提示用户进入风格选择。
@@ -250,13 +250,13 @@ node ./scripts/createDesign.js --token=$TOKEN --planId=$PLAN_ID
 获取偏好标签:
 
 ```bash
-node ./scripts/getTags.js --token=$TOKEN
+node （请参考skill目录中的脚本文件） --token=$TOKEN
 ```
 
 展示标签列表供用户单选(回复数字),获得 tagItemIds。查询硬装风格:
 
 ```bash
-node ./scripts/getStyles.js --token=$TOKEN --tagItemIds=$TAG_IDS
+node （请参考skill目录中的脚本文件） --token=$TOKEN --tagItemIds=$TAG_IDS
 ```
 
 - 返回多个风格: 展示每个风格的 coverUrl 与 styleName 供用户选择
@@ -273,7 +273,7 @@ node ./scripts/getStyles.js --token=$TOKEN --tagItemIds=$TAG_IDS
 发送"开始布局,请稍等"并触发智能布局:
 
 ```bash
-node ./scripts/triggerLayout.js --token=$TOKEN --designId=$DESIGN_ID \
+node （请参考skill目录中的脚本文件） --token=$TOKEN --designId=$DESIGN_ID \
   --tagIds=$TAG_IDS --styleId=$STYLE_ID \
   --applyDecorationStyle=true --buildCeiling=true --autoDesign=true
 ```
@@ -281,7 +281,7 @@ node ./scripts/triggerLayout.js --token=$TOKEN --designId=$DESIGN_ID \
 查询布局结果,若 `c!=0` 每 10 秒重复查询:
 
 ```bash
-node ./scripts/getLayoutResult.js --token=$TOKEN --designId=$DESIGN_ID
+node （请参考skill目录中的脚本文件） --token=$TOKEN --designId=$DESIGN_ID
 ```
 
 通过 `message(action=send)` 发送各房间布局(房间名 + 家具列表),进入渲染阶段。
@@ -293,13 +293,13 @@ node ./scripts/getLayoutResult.js --token=$TOKEN --designId=$DESIGN_ID
 发送"开始渲染,请稍等"并触发渲染:
 
 ```bash
-node ./scripts/trigger-render.js --obsDesignId=$DESIGN_ID --xToken=$TOKEN
+node （请参考skill目录中的脚本文件） --obsDesignId=$DESIGN_ID --xToken=$TOKEN
 ```
 
 提示"正在生成效果图,预计几分钟..."。等待 10 秒后查询渲染结果:
 
 ```bash
-node ./scripts/getRenderResult.js --token=$TOKEN --designId=$DESIGN_ID
+node （请参考skill目录中的脚本文件） --token=$TOKEN --designId=$DESIGN_ID
 ```
 
 提取 `pictype=0` 的 `img`(渲染图)与 `pictype=1` 的 `panoLink`(全景图)。若为空每分钟重试,超 5 分钟反馈失败。
@@ -328,26 +328,26 @@ node ./scripts/getRenderResult.js --token=$TOKEN --designId=$DESIGN_ID
 
 ```bash
 # 搜索户型
-node ./scripts/searchPlan.js --token=$TOKEN --query="阳光花园" --areaId="330100" --start=0 --num=20
+node （请参考skill目录中的脚本文件） --token=$TOKEN --query="阳光花园" --areaId="330100" --start=0 --num=20
 
 # 用户选定后获取户型图
-node ./scripts/getFloorplanInfo.js --planId=$PLAN_ID
+node （请参考skill目录中的脚本文件） --planId=$PLAN_ID
 
 # 创建方案
-node ./scripts/createDesign.js --token=$TOKEN --planId=$PLAN_ID
+node （请参考skill目录中的脚本文件） --token=$TOKEN --planId=$PLAN_ID
 
 # 获取风格标签并选择
-node ./scripts/getTags.js --token=$TOKEN
-node ./scripts/getStyles.js --token=$TOKEN --tagItemIds=$TAG_IDS
+node （请参考skill目录中的脚本文件） --token=$TOKEN
+node （请参考skill目录中的脚本文件） --token=$TOKEN --tagItemIds=$TAG_IDS
 
 # 触发布局
-node ./scripts/triggerLayout.js --token=$TOKEN --designId=$DESIGN_ID \
+node （请参考skill目录中的脚本文件） --token=$TOKEN --designId=$DESIGN_ID \
   --tagIds=$TAG_IDS --styleId=$STYLE_ID \
   --applyDecorationStyle=true --buildCeiling=true --autoDesign=true
 
 # 触发渲染
-node ./scripts/trigger-render.js --obsDesignId=$DESIGN_ID --xToken=$TOKEN
-node ./scripts/getRenderResult.js --token=$TOKEN --designId=$DESIGN_ID
+node （请参考skill目录中的脚本文件） --obsDesignId=$DESIGN_ID --xToken=$TOKEN
+node （请参考skill目录中的脚本文件） --token=$TOKEN --designId=$DESIGN_ID
 ```
 
 **输出**: 户型图、各房间布局说明、渲染图(客餐厅/主卧/次卧)、全景图链接、方案详情链接
@@ -359,17 +359,17 @@ node ./scripts/getRenderResult.js --token=$TOKEN --designId=$DESIGN_ID
 
 ```bash
 # 获取上传凭证并上传
-node ./scripts/getUploadToken.js --token=$TOKEN
+node （请参考skill目录中的脚本文件） --token=$TOKEN
 
 # 创建临摹任务
-node ./scripts/createBitmapTask.js --token=$TOKEN --bitmap=$IMAGE_URL
+node （请参考skill目录中的脚本文件） --token=$TOKEN --bitmap=$IMAGE_URL
 
 # 轮询临摹结果
-node ./scripts/getBitmapTaskResult.js --token=$TOKEN --taskId=$TASK_ID
+node （请参考skill目录中的脚本文件） --token=$TOKEN --taskId=$TASK_ID
 
 # 后续流程同案例1
-node ./scripts/getFloorplanInfo.js --planId=$PLAN_ID
-node ./scripts/createDesign.js --token=$TOKEN --planId=$PLAN_ID
+node （请参考skill目录中的脚本文件） --planId=$PLAN_ID
+node （请参考skill目录中的脚本文件） --token=$TOKEN --planId=$PLAN_ID
 ```
 
 **输出**: 识别后的户型图、后续风格/布局/渲染结果
@@ -381,10 +381,10 @@ node ./scripts/createDesign.js --token=$TOKEN --planId=$PLAN_ID
 
 ```bash
 # 获取风格标签
-node ./scripts/getTags.js --token=$TOKEN
+node （请参考skill目录中的脚本文件） --token=$TOKEN
 
 # 查询硬装风格(可能返回多个)
-node ./scripts/getStyles.js --token=$TOKEN --tagItemIds=$TAG_IDS
+node （请参考skill目录中的脚本文件） --token=$TOKEN --tagItemIds=$TAG_IDS
 ```
 
 **输出**: 多个风格的 coverUrl 封面图与 styleName

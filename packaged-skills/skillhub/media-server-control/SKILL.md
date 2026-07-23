@@ -25,19 +25,19 @@ pricing_model: "monthly"
 
 | 能力 | 免费版 | 付费版 |
 |:-----|:-------|:-------|
-| （根据实际场景填充） - 生成生成内容 | 支持 | 支持 |
-| （根据实际场景填充） - 遵循专业风格规范 | 不支持 | 支持 |
-| （根据实际场景填充） - 支持多种变体等多种变体 | 不支持 | 支持 |
-| （根据实际场景填充） - 自动适配多种场景 | 不支持 | 支持 |
+| Media Server Control 核心处理 - 生成生成内容 | 支持 | 支持 |
+| Media Server Control 智能分析 - 遵循专业风格规范 | 不支持 | 支持 |
+| Media Server Control 批量处理 - 支持多种变体等多种变体 | 不支持 | 支持 |
+| Media Server Control 自定义配置 - 自动适配多种场景 | 不支持 | 支持 |
 | 批量处理 | 不支持 | 支持 |
 | 高级配置 | 不支持 | 支持 |
 
 ## 核心能力
 
-- （根据实际场景填充） - 生成生成内容
-- （根据实际场景填充） - 遵循专业风格规范
-- （根据实际场景填充） - 支持多种变体等多种变体
-- （根据实际场景填充） - 自动适配多种场景
+- Media Server Control 结果导出 - 生成生成内容
+- Media Server Control 实时监控 - 遵循专业风格规范
+- Media Server Control 错误重试 - 支持多种变体等多种变体
+- Media Server Control 多格式支持 - 自动适配多种场景
 #
 ## 适用场景
 
@@ -138,8 +138,8 @@ pricing_model: "monthly"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | media-server-control处理的内容输入 |,  |
+| content | string | 否 | media-server-control处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -148,9 +148,9 @@ pricing_model: "monthly"
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "control 相关配置参数",
+    result: "control 相关配置参数",
+    result: "control 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

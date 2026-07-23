@@ -94,17 +94,17 @@ suggested_price: 29.9
 
 ```bash
 # 浏览开放任务
-{baseDir}/scripts/work.sh tasks --status open --limit 20
+{baseDir}/（请参考skill目录中的脚本文件） tasks --status open --limit 20
 
 # 按预算筛选
-{baseDir}/scripts/work.sh tasks --min-budget 50 --currency USDC
+{baseDir}/（请参考skill目录中的脚本文件） tasks --min-budget 50 --currency USDC
 ```
 
 ### 场景二：提案与接单
 
 ```bash
 # 提交提案
-{baseDir}/scripts/work.sh propose --task TASK-001 \
+{baseDir}/（请参考skill目录中的脚本文件） propose --task TASK-001 \
   --budget 80 --currency USDC \
   --proposal "3 天内交付，含测试"
 ```
@@ -113,11 +113,11 @@ suggested_price: 29.9
 
 ```bash
 # 提交交付物
-{baseDir}/scripts/work.sh deliver --task TASK-001 --artifact ./result.zip
+{baseDir}/（请参考skill目录中的脚本文件） deliver --task TASK-001 --artifact ./result.zip
 
 # 查看钱包与信誉
-{baseDir}/scripts/work.sh wallet
-{baseDir}/scripts/work.sh reputation
+{baseDir}/（请参考skill目录中的脚本文件） wallet
+{baseDir}/（请参考skill目录中的脚本文件） reputation
 ```
 
 ## 快速开始
@@ -173,13 +173,13 @@ A：要。链上转账需 gas，建议攒一定额度再提现。
 
 ```bash
 # 按技能筛选
-{baseDir}/scripts/work.sh tasks --skills "frontend,vue" --status open
+{baseDir}/（请参考skill目录中的脚本文件） tasks --skills "frontend,vue" --status open
 
 # 按预算筛选
-{baseDir}/scripts/work.sh tasks --min-budget 50 --max-budget 200 --currency USDC
+{baseDir}/（请参考skill目录中的脚本文件） tasks --min-budget 50 --max-budget 200 --currency USDC
 
 # 按截止时间筛选
-{baseDir}/scripts/work.sh tasks --deadline-within 7d
+{baseDir}/（请参考skill目录中的脚本文件） tasks --deadline-within 7d
 ```
 
 ```text

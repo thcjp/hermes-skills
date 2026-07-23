@@ -105,7 +105,7 @@ AI播客生成专业版是一款面向企业团队与专业内容生产者的高
 
 ```python
 # 批量生成播客
-python3 scripts/batch_podcast.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./articles/ \
   --language zh \
   --style interview \
@@ -151,7 +151,7 @@ curl -sS "$MAGICPODCAST_API_URL/agent/v1/podcasts/$PODCAST_ID/download" \
 
 ```bash
 # 批量生成有声试听
-python3 scripts/batch_podcast.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./books/ \
   --language zh \
   --style narrative \
@@ -160,7 +160,7 @@ python3 scripts/batch_podcast.py \
   --output ./audiobooks/
 
 # 生成节目封面
-python3 scripts/generate_cover.py \
+python3 （请参考skill目录中的脚本文件） \
   --title "书籍试听:XXX" \
   --template brand_template_01 \
   --output cover.png
@@ -191,7 +191,7 @@ export MAGICPODCAST_EDITION="pro"
 ### 第二步:执行批量生成
 
 ```bash
-python3 scripts/batch_podcast.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./documents/ \
   --language zh \
   --style interview \
@@ -203,7 +203,7 @@ python3 scripts/batch_podcast.py \
 
 ```bash
 # 下载所有生成的播客音频
-python3 scripts/download_podcasts.py \
+python3 （请参考skill目录中的脚本文件） \
   --job-ids ./podcasts/job_ids.json \
   --output ./audio/
 ```

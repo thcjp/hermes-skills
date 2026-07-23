@@ -82,7 +82,7 @@ suggested_price: 29.9
 
 ```bash
 # 跨链代币查询
-python3 scripts/token.py info \
+python3 （请参考skill目录中的脚本文件） info \
   --symbol USDC \
   --chains "ethereum,bsc,polygon"
 
@@ -99,7 +99,7 @@ python3 scripts/token.py info \
 
 ```bash
 # 跨链价格查询
-python3 scripts/token.py price \
+python3 （请参考skill目录中的脚本文件） price \
   --symbol UNI \
   --chains "ethereum,arbitrum,optimism"
 
@@ -112,7 +112,7 @@ python3 scripts/token.py price \
 
 ```bash
 # 流动性查询
-python3 scripts/token.py liquidity \
+python3 （请参考skill目录中的脚本文件） liquidity \
   --symbol UNI \
   --chain ethereum
 
@@ -134,27 +134,27 @@ python3 scripts/token.py liquidity \
 pip install requests web3
 
 # 查询代币
-python3 scripts/token.py info --symbol USDC --chains "ethereum,bsc"
+python3 （请参考skill目录中的脚本文件） info --symbol USDC --chains "ethereum,bsc"
 ```
 
 ### 常用命令
 
 ```bash
 # 代币信息
-python3 scripts/token.py info --symbol USDC --chains "ethereum,bsc,polygon"
-python3 scripts/token.py info --address 0xA0b8...eB48 --chain ethereum
+python3 （请参考skill目录中的脚本文件） info --symbol USDC --chains "ethereum,bsc,polygon"
+python3 （请参考skill目录中的脚本文件） info --address 0xA0b8...eB48 --chain ethereum
 
 # 价格查询
-python3 scripts/token.py price --symbol UNI --chains "ethereum,arbitrum"
+python3 （请参考skill目录中的脚本文件） price --symbol UNI --chains "ethereum,arbitrum"
 
 # 流动性
-python3 scripts/token.py liquidity --symbol UNI --chain ethereum
+python3 （请参考skill目录中的脚本文件） liquidity --symbol UNI --chain ethereum
 
 # 代币列表
-python3 scripts/token.py list --chain ethereum --top 20
+python3 （请参考skill目录中的脚本文件） list --chain ethereum --top 20
 
 # 合约验证
-python3 scripts/token.py verify --address 0x... --chain ethereum
+python3 （请参考skill目录中的脚本文件） verify --address 0x... --chain ethereum
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。

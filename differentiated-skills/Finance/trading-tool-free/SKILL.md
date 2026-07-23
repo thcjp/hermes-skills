@@ -79,7 +79,7 @@ suggested_price: 19.9
 
 ```bash
 # 维加斯通道分析
-python3 scripts/vegas_analysis.py --ticker AAPL
+python3 （请参考skill目录中的脚本文件） --ticker AAPL
 
 # 输出：
 # === AAPL 维加斯通道分析 ===
@@ -97,7 +97,7 @@ python3 scripts/vegas_analysis.py --ticker AAPL
 
 ```bash
 # 信号检测
-python3 scripts/signal.py --ticker BTC-USD
+python3 （请参考skill目录中的脚本文件） --ticker BTC-USD
 
 # 输出信号类型与建议
 ```
@@ -108,7 +108,7 @@ python3 scripts/signal.py --ticker BTC-USD
 
 ```bash
 # 支撑阻力分析
-python3 scripts/levels.py --ticker TSLA
+python3 （请参考skill目录中的脚本文件） --ticker TSLA
 
 # 输出各关键价位
 ```
@@ -128,24 +128,24 @@ python3 scripts/levels.py --ticker TSLA
 pip install yfinance pandas numpy ta
 
 # 运行分析
-python3 scripts/vegas_analysis.py --ticker AAPL
+python3 （请参考skill目录中的脚本文件） --ticker AAPL
 ```
 
 ### 常用命令
 
 ```bash
 # 维加斯通道分析
-python3 scripts/vegas_analysis.py --ticker AAPL
-python3 scripts/vegas_analysis.py --ticker BTC-USD
+python3 （请参考skill目录中的脚本文件） --ticker AAPL
+python3 （请参考skill目录中的脚本文件） --ticker BTC-USD
 
 # 买卖信号
-python3 scripts/signal.py --ticker AAPL
+python3 （请参考skill目录中的脚本文件） --ticker AAPL
 
 # 支撑阻力
-python3 scripts/levels.py --ticker TSLA
+python3 （请参考skill目录中的脚本文件） --ticker TSLA
 
 # 趋势判断
-python3 scripts/trend.py --ticker MSFT
+python3 （请参考skill目录中的脚本文件） --ticker MSFT
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。

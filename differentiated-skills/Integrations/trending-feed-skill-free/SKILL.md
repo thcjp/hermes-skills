@@ -84,15 +84,15 @@ suggested_price: 29.9
 ### Step 1：抓取默认热榜
 
 ```bash
-python3 ~/.skill-platform/workspace/skills/trending-feed/scripts/fetch_trending.py
+python3 ~/.skill-platform/workspace/skills/trending-feed/（请参考skill目录中的脚本文件）
 ```
 
 ### Step 2：按语言过滤
 
 ```bash
-python3 ~/.skill-platform/workspace/skills/trending-feed/scripts/fetch_trending.py python
-python3 ~/.skill-platform/workspace/skills/trending-feed/scripts/fetch_trending.py javascript
-python3 ~/.skill-platform/workspace/skills/trending-feed/scripts/fetch_trending.py rust
+python3 ~/.skill-platform/workspace/skills/trending-feed/（请参考skill目录中的脚本文件） python
+python3 ~/.skill-platform/workspace/skills/trending-feed/（请参考skill目录中的脚本文件） javascript
+python3 ~/.skill-platform/workspace/skills/trending-feed/（请参考skill目录中的脚本文件） rust
 ```
 
 ### Step 3：查看输出结构

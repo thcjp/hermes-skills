@@ -101,7 +101,7 @@ AI图像提示词专业版是一款面向企业团队与专业设计师的高级
 
 ```python
 # 批量生成商品提示词
-python3 scripts/batch_prompts.py \
+python3 （请参考skill目录中的脚本文件） \
   --products products.json \
   --styles "极简白底,场景化,艺术化,生活方式" \
   --output ./prompts/
@@ -125,14 +125,14 @@ python3 scripts/batch_prompts.py \
 
 ```bash
 # 配置 A/B 测试
-python3 scripts/ab_test.py \
+python3 （请参考skill目录中的脚本文件） \
   --variant-a "cyberpunk city, neon lights, rain, cinematic" \
   --variant-b "futuristic city, holographic ads, night, dramatic lighting" \
   --sample-size 10 \
   --output ./ab_results/
 
 # 自动生成效果对比报告
-python3 scripts/analyze_ab.py \
+python3 （请参考skill目录中的脚本文件） \
   --results ./ab_results/ \
   --metrics "quality,consistency,relevance" \
   --report report.md
@@ -144,18 +144,18 @@ python3 scripts/analyze_ab.py \
 
 ```bash
 # 提交提示词版本
-python3 scripts/prompt_commit.py \
+python3 （请参考skill目录中的脚本文件） \
   --file ./prompts/brand_poster.txt \
   --message "新增品牌海报提示词模板" \
   --tags "海报,品牌,极简"
 
 # 团队成员拉取最新提示词库
-python3 scripts/prompt_pull.py \
+python3 （请参考skill目录中的脚本文件） \
   --remote team-repo \
   --branch main
 
 # 查看提示词历史版本
-python3 scripts/prompt_log.py \
+python3 （请参考skill目录中的脚本文件） \
   --file ./prompts/brand_poster.txt
 ```
 
@@ -184,10 +184,10 @@ export PROMPT_TOOL_LICENSE="your_license_key"
 
 ```bash
 # 查看行业模板库
-python3 scripts/templates.py list --industry ecommerce
+python3 （请参考skill目录中的脚本文件） list --industry ecommerce
 
 # 应用电商模板
-python3 scripts/templates.py apply \
+python3 （请参考skill目录中的脚本文件） apply \
   --template "product_minimal_white" \
   --variables product_name="机械手表",features="复古皮质表带"
 ```
@@ -196,13 +196,13 @@ python3 scripts/templates.py apply \
 
 ```bash
 # 批量生成提示词
-python3 scripts/batch_prompts.py \
+python3 （请参考skill目录中的脚本文件） \
   --products products.json \
   --styles "极简,场景,艺术" \
   --output ./prompts/
 
 # A/B 测试最优提示词
-python3 scripts/ab_test.py \
+python3 （请参考skill目录中的脚本文件） \
   --variant-a ./prompts/watch_minimal.txt \
   --variant-b ./prompts/watch_lifestyle.txt \
   --sample-size 5
@@ -231,18 +231,18 @@ PROMPT_TOOL_DEFAULT_INDUSTRY=ecommerce
 
 ```bash
 # 初始化团队提示词仓库
-python3 scripts/prompt_init.py \
+python3 （请参考skill目录中的脚本文件） \
   --repo ./team-prompts \
   --team "design-team"
 
 # 权限管理
-python3 scripts/prompt_acl.py \
+python3 （请参考skill目录中的脚本文件） \
   --user alice \
   --role editor \
   --scope ./team-prompts/ecommerce/
 
 # 审核流程
-python3 scripts/prompt_review.py \
+python3 （请参考skill目录中的脚本文件） \
   --pr 42 \
   --reviewer bob \
   --action approve

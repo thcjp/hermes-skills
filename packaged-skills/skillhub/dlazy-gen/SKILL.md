@@ -87,9 +87,9 @@ pricing_model: "per_use"
 
 ### 基础文生图
 
-执行基础文生图操作,处理用户输入并返回结果。
+执行基础文生图,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供基础文生图所需的参数和指令。
+**输入**: 用户提供基础文生图相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回基础文生图的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`基础文生图`相关配置参数进行设置
@@ -281,8 +281,8 @@ dlazy recraft-v4-pro-vector \
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
+| content | string | 否 | dlazy-gen处理的内容输入 |,  |
+| mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
 | skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |
 
@@ -293,9 +293,9 @@ dlazy recraft-v4-pro-vector \
   "success": true,
   "data": {
     "final_result": {
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明"
+      "gen_result": "gen_result_value",
+      "gen_metadata": "gen_metadata_value",
+      "gen_status": "gen_status_value"
     },
     "execution_log": [
       {
@@ -335,7 +335,7 @@ dlazy recraft-v4-pro-vector \
 }
 ```
 
-中间产物模板参考: `assets/（根据实际场景填充）`
+中间产物模板参考: `assets/dlazy-gen_template`
 
 ## 异常处理
 

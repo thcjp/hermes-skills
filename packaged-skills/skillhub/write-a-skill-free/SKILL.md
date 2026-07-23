@@ -56,7 +56,7 @@ skills/
 ```markdown
 执行以下命令：
 \`\`\`bash
-python3 scripts/helper.py --input data.json
+python3 （请参考skill目录中的脚本文件） --input data.json
 \`\`\`
 ```
 
@@ -113,7 +113,7 @@ tools:
 
 ## 使用示例
 \`\`\`bash
-python3 scripts/validate.py --input data.json --schema schema.json
+python3 （请参考skill目录中的脚本文件） --input data.json --schema schema.json
 \`\`\`
 
 详见 [REFERENCE.md](REFERENCE.md) 获取完整API参考。

@@ -158,7 +158,7 @@ echo "B3. 数据结构变化已同步所有引用？ [y/n]"
 echo "B4. 新逻辑不会破坏旧逻辑？ [y/n]"
 
 # C. 测试验证
-python3 -m py_compile scripts/xxx.py        # C1. 语法检查
+python3 -m py_compile （请参考skill目录中的脚本文件）        # C1. 语法检查
 python3 -c "from scripts.xxx import ClassName"  # C2. 导入检查
 python3 test_fix.py                          # C3. 样例验证
 python3 -m pytest tests/                     # C4. 回归测试
@@ -208,7 +208,7 @@ git diff --stat   # D1. 确认 diff 大小与任务规模匹配
 
 ```bash
 # 第一层：语法检查
-python3 -m py_compile scripts/xxx.py
+python3 -m py_compile （请参考skill目录中的脚本文件）
 # 或
 node -c src/xxx.js
 

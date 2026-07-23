@@ -74,20 +74,20 @@ suggested_price: 29.9
 
 ```bash
 # 启动信令服务器
-python3 scripts/ocean.py signal start --port 8080
+python3 （请参考skill目录中的脚本文件） signal start --port 8080
 
 # 生成连接码
-python3 scripts/ocean.py connect create
+python3 （请参考skill目录中的脚本文件） connect create
 
 # 输出：
 # 连接码: OCEAN-7K9M-2X4P
 # 分享给对方，对方输入此码建立连接
 
 # 对方连接
-python3 scripts/ocean.py connect join --code OCEAN-7K9M-2X4P
+python3 （请参考skill目录中的脚本文件） connect join --code OCEAN-7K9M-2X4P
 
 # 发送消息
-python3 scripts/ocean.py send --message "你好，这是P2P消息"
+python3 （请参考skill目录中的脚本文件） send --message "你好，这是P2P消息"
 ```
 
 ### 场景二：文件传输
@@ -96,12 +96,12 @@ python3 scripts/ocean.py send --message "你好，这是P2P消息"
 
 ```bash
 # 发送文件
-python3 scripts/ocean.py send-file \
+python3 （请参考skill目录中的脚本文件） send-file \
   --file ./document.pdf \
   --peer OCEAN-7K9M-2X4P
 
 # 接收文件
-python3 scripts/ocean.py receive --output ./received/
+python3 （请参考skill目录中的脚本文件） receive --output ./received/
 ```
 
 ### 场景三：加密通讯
@@ -110,13 +110,13 @@ python3 scripts/ocean.py receive --output ./received/
 
 ```bash
 # 建立加密连接
-python3 scripts/ocean.py connect create --encryption AES-256
+python3 （请参考skill目录中的脚本文件） connect create --encryption AES-256
 
 # 生成密钥对
-python3 scripts/ocean.py keys generate
+python3 （请参考skill目录中的脚本文件） keys generate
 
 # 共享公钥
-python3 scripts/ocean.py keys share --peer OCEAN-7K9M-2X4P
+python3 （请参考skill目录中的脚本文件） keys share --peer OCEAN-7K9M-2X4P
 ```
 
 ## 快速开始
@@ -134,31 +134,31 @@ python3 scripts/ocean.py keys share --peer OCEAN-7K9M-2X4P
 pip install aiohttp cryptography
 
 # 启动信令服务器（用于连接建立）
-python3 scripts/ocean.py signal start --port 8080
+python3 （请参考skill目录中的脚本文件） signal start --port 8080
 
 # 生成连接码
-python3 scripts/ocean.py connect create
+python3 （请参考skill目录中的脚本文件） connect create
 ```
 
 ### 常用命令
 
 ```bash
 # 连接管理
-python3 scripts/ocean.py connect create
-python3 scripts/ocean.py connect join --code OCEAN-XXXX-XXXX
-python3 scripts/ocean.py connect status
+python3 （请参考skill目录中的脚本文件） connect create
+python3 （请参考skill目录中的脚本文件） connect join --code OCEAN-XXXX-XXXX
+python3 （请参考skill目录中的脚本文件） connect status
 
 # 消息发送
-python3 scripts/ocean.py send --message "消息内容"
-python3 scripts/ocean.py send-file --file ./file.txt
+python3 （请参考skill目录中的脚本文件） send --message "消息内容"
+python3 （请参考skill目录中的脚本文件） send-file --file ./file.txt
 
 # 消息历史
-python3 scripts/ocean.py history list
-python3 scripts/ocean.py history clear
+python3 （请参考skill目录中的脚本文件） history list
+python3 （请参考skill目录中的脚本文件） history clear
 
 # 密钥管理
-python3 scripts/ocean.py keys generate
-python3 scripts/ocean.py keys share --peer OCEAN-XXXX
+python3 （请参考skill目录中的脚本文件） keys generate
+python3 （请参考skill目录中的脚本文件） keys share --peer OCEAN-XXXX
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。

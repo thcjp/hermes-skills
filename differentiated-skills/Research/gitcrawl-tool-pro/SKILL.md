@@ -85,7 +85,7 @@ pricing_model: "per_use"
 #### 1. 多仓库批量管理
 
 ```bash
-python scripts/multi_repo.py \
+python （请参考skill目录中的脚本文件） \
   --repos-file repos.txt \
   --sync-all \
   --parallel 4
@@ -112,7 +112,7 @@ gitcrawl cluster-detail owner/repo \
 
 ```bash
 # 配置定时同步任务
-python scripts/scheduled_sync.py \
+python （请参考skill目录中的脚本文件） \
   --repos owner/repo1,owner/repo2 \
   --cron="0 */6 * * *" \
   --archive-dir=./archive
@@ -124,13 +124,13 @@ python scripts/scheduled_sync.py \
 
 ```bash
 # 配置共享归档存储
-python scripts/team_config.py \
+python （请参考skill目录中的脚本文件） \
   --shared-storage=./shared_archive \
   --team-id=dev_team \
   --members=alice,bob,charlie
 
 # 同步团队成员的查询历史
-python scripts/team_sync.py \
+python （请参考skill目录中的脚本文件） \
   --team-id=dev_team \
   --merge-history
 ```
@@ -166,13 +166,13 @@ org/data-platform
 EOF
 
 # 批量同步所有仓库
-python scripts/multi_repo.py \
+python （请参考skill目录中的脚本文件） \
   --repos-file repos.txt \
   --sync-all \
   --parallel 4
 
 # 生成仓库健康度报告
-python scripts/health_report.py \
+python （请参考skill目录中的脚本文件） \
   --repos-file repos.txt \
   --output=health_report.md \
   --metrics=issues,prs,response_time
@@ -197,7 +197,7 @@ for cluster_id in $(gitcrawl clusters owner/repo --json id); do
 done
 
 # 生成合并建议报告
-python scripts/duplicate_report.py \
+python （请参考skill目录中的脚本文件） \
   --repo owner/repo \
   --output=duplicates.md \
   --suggest-merge
@@ -209,7 +209,7 @@ python scripts/duplicate_report.py \
 
 ```bash
 # 配置 PR 监控告警
-python scripts/pr_monitor.py \
+python （请参考skill目录中的脚本文件） \
   --repos repos.txt \
   --watch="state,review,merge" \
   --alert-webhook="https://hooks.slack.com/xxx" \
@@ -245,12 +245,12 @@ python scripts/pr_monitor.py \
 pip install apscheduler redis
 
 # 初始化团队配置
-python scripts/team_config.py init \
+python （请参考skill目录中的脚本文件） init \
   --shared-storage=./shared_archive \
   --team-id=my_team
 
 # 验证升级
-python scripts/multi_repo.py --version
+python （请参考skill目录中的脚本文件） --version
 ```
 
 ### 首次多仓库同步
@@ -262,7 +262,7 @@ org/repo2
 org/repo3" > repos.txt
 
 # 执行批量同步
-python scripts/multi_repo.py \
+python （请参考skill目录中的脚本文件） \
   --repos-file repos.txt \
   --sync-all \
   --parallel 4
@@ -373,7 +373,7 @@ gitcrawl clusters owner/repo \
   --output=clusters.json
 
 # 生成分析报告
-python scripts/cluster_analysis.py \
+python （请参考skill目录中的脚本文件） \
   --input=clusters.json \
   --output=analysis.md
 ```
@@ -382,13 +382,13 @@ python scripts/cluster_analysis.py \
 
 ```bash
 # 配置团队共享
-python scripts/team_config.py setup \
+python （请参考skill目录中的脚本文件） setup \
   --shared-storage=/shared/gitcrawl \
   --team-id=engineering \
   --members=alice,bob,charlie,dave
 
 # 查看团队活动
-python scripts/team_activity.py \
+python （请参考skill目录中的脚本文件） \
   --team-id=engineering \
   --days=7 \
   --output=activity.md
@@ -400,13 +400,13 @@ python scripts/team_activity.py \
 
 ```bash
 # 增加并行线程
-python scripts/multi_repo.py --parallel 8 repos.txt
+python （请参考skill目录中的脚本文件） --parallel 8 repos.txt
 
 # 减少同步频率
-python scripts/multi_repo.py --interval 7200 repos.txt
+python （请参考skill目录中的脚本文件） --interval 7200 repos.txt
 
 # 排除不活跃仓库
-python scripts/multi_repo.py --skip-inactive repos.txt
+python （请参考skill目录中的脚本文件） --skip-inactive repos.txt
 ```
 
 ### 聚类结果不准确
@@ -419,7 +419,7 @@ gitcrawl clusters owner/repo --threshold 0.85
 gitcrawl clusters owner/repo --algorithm=keyword
 
 # 手动标注训练数据
-python scripts/cluster_train.py --labeled-data labels.json
+python （请参考skill目录中的脚本文件） --labeled-data labels.json
 ```
 
 ### 告警通知未收到
@@ -431,7 +431,7 @@ curl -X POST https://hooks.slack.com/xxx \
   -d '{"text":"test alert"}'
 
 # 检查告警配置
-python scripts/pr_monitor.py --config-check
+python （请参考skill目录中的脚本文件） --config-check
 
 # 查看告警日志
 cat ./logs/alerts.log
@@ -441,12 +441,12 @@ cat ./logs/alerts.log
 
 ```bash
 # 解决同步冲突
-python scripts/team_sync.py \
+python （请参考skill目录中的脚本文件） \
   --resolve-conflicts \
   --strategy=latest-wins
 
 # 重置团队配置
-python scripts/team_config.py reset --team-id=engineering
+python （请参考skill目录中的脚本文件） reset --team-id=engineering
 ```
 
 ## 依赖说明

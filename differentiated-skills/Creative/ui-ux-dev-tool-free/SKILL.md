@@ -144,10 +144,10 @@ UI/UX开发工具免费版是一款面向个人开发者的自然语言驱动Rea
 
 ```bash
 # 桌面端截图审查(1400x900)
-bash scripts/screenshot.sh "http://localhost:5174/my-project/landing/" /tmp/landing-review.png 1400 900
+bash （请参考skill目录中的脚本文件） "http://localhost:5174/my-project/landing/" /tmp/landing-review.png 1400 900
 
 # 移动端截图审查(390x844)
-bash scripts/screenshot.sh "http://localhost:5174/my-project/landing/" /tmp/landing-mobile.png 390 844
+bash （请参考skill目录中的脚本文件） "http://localhost:5174/my-project/landing/" /tmp/landing-mobile.png 390 844
 ```
 
 **输入**: 用户提供截图视觉审查所需的指令和必要参数。
@@ -161,13 +161,13 @@ bash scripts/screenshot.sh "http://localhost:5174/my-project/landing/" /tmp/land
 
 ```bash
 # 转换图片为WebP(默认质量80)
-bash scripts/convert-image.sh input.png output.webp 80
+bash （请参考skill目录中的脚本文件） input.png output.webp 80
 
 # Hero横幅图片(质量85)
-bash scripts/convert-image.sh hero.jpg hero.webp 85
+bash （请参考skill目录中的脚本文件） hero.jpg hero.webp 85
 
 # 缩略图/图标(质量70)
-bash scripts/convert-image.sh icon.png icon.webp 70
+bash （请参考skill目录中的脚本文件） icon.png icon.webp 70
 ```
 
 **输入**: 用户提供图片WebP转换所需的指令和必要参数。
@@ -208,10 +208,10 @@ bash scripts/convert-image.sh icon.png icon.webp 70
 
 ```bash
 # 启动本地服务
-bash scripts/setup.sh 5174
+bash （请参考skill目录中的脚本文件） 5174
 
 # 生成页面后截图审查
-bash scripts/screenshot.sh "http://localhost:5174/ProductLaunch/landing/" /tmp/review.png 1400 900
+bash （请参考skill目录中的脚本文件） "http://localhost:5174/ProductLaunch/landing/" /tmp/review.png 1400 900
 ```
 
 ### 场景二:个人作品集页面
@@ -286,7 +286,7 @@ bash scripts/screenshot.sh "http://localhost:5174/ProductLaunch/landing/" /tmp/r
 ```bash
 # 检查端口配置(默认5174)
 # 运行首次设置脚本
-bash scripts/setup.sh 5174
+bash （请参考skill目录中的脚本文件） 5174
 
 # 验证服务启动
 curl http://localhost:5174/
@@ -315,10 +315,10 @@ EOF
 # (Agent根据需求生成页面代码)
 
 # 第4步:截图审查
-bash scripts/screenshot.sh "http://localhost:5174/my-project/landing/" /tmp/review.png 1400 900
+bash （请参考skill目录中的脚本文件） "http://localhost:5174/my-project/landing/" /tmp/review.png 1400 900
 
 # 第5步:移动端审查
-bash scripts/screenshot.sh "http://localhost:5174/my-project/landing/" /tmp/mobile.png 390 844
+bash （请参考skill目录中的脚本文件） "http://localhost:5174/my-project/landing/" /tmp/mobile.png 390 844
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
@@ -377,10 +377,10 @@ serve/
 
 ```bash
 # 桌面端(1400x900)
-bash scripts/screenshot.sh "<url>" /tmp/desktop.png 1400 900
+bash （请参考skill目录中的脚本文件） "<url>" /tmp/desktop.png 1400 900
 
 # 移动端(390x844)
-bash scripts/screenshot.sh "<url>" /tmp/mobile.png 390 844
+bash （请参考skill目录中的脚本文件） "<url>" /tmp/mobile.png 390 844
 ```
 
 ## 错误处理

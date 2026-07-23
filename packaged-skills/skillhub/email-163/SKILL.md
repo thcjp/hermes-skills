@@ -47,7 +47,7 @@ pricing_model: "per_use"
 
 ### 批量操作引擎
 - **批量发送**: 一次性向数百个收件人发送邮件，支持收件人列表文件
-- **变量替换**: 邮件模板中支持 `（根据实际场景填充）`、`（根据实际场景填充）` 等变量插值
+- **变量替换**: 邮件模板中支持 `email-163_template`、`email-163_template` 等变量插值
 - **批量删除/移动**: 按搜索结果批量处理邮件
 - **批量标记**: 批量标记已读、加星标、归类
 
@@ -110,8 +110,8 @@ wangwu@company.com,王五,财务部,2026年7月
 **创建邮件模板** `template/salary_notice.html`:
 
 ```html
-<h1>工资单通知 - （根据实际场景填充）</h1>
-<p>尊敬的 （根据实际场景填充）（（根据实际场景填充））：</p>
+<h1>工资单通知 - "163_result"</h1>
+<p>尊敬的 "163_metadata"（"163_metadata"）：</p>
 <p>您本月工资单已生成，请登录企业系统查看详情。</p>
 <p>如有疑问，请联系财务部。</p>
 ```
@@ -122,7 +122,7 @@ wangwu@company.com,王五,财务部,2026年7月
 email-163-tool batch-send \
   --recipients recipients.csv \
   --template template/salary_notice.html \
-  --subject "（根据实际场景填充） - 工资单通知 （根据实际场景填充）" \
+  --subject ""163_status" - 工资单通知 "163_status"" \
   --rate-limit 10 \
   --dry-run
 ```
@@ -271,7 +271,7 @@ email-163-tool accounts list
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | email-163处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式
@@ -426,7 +426,7 @@ Error: Rate limit exceeded
 **解决**: 降低发送速率，163邮箱对发送频率有严格限制。建议 `--rate-limit` 设置为 5-10 封/分钟，并启用失败重试机制。
 
 ### 问题2：模板变量未替换
-**解决**: 确保变量名与 CSV 列名完全一致（区分大小写），模板中使用 `（根据实际场景填充）` 语法：
+**解决**: 确保变量名与 CSV 列名完全一致（区分大小写），模板中使用 `email-163_template` 语法：
 
 ```bash
 # 验证模板变量

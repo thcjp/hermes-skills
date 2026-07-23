@@ -157,10 +157,10 @@ Never show actual values.
 ### User: "Edit my curl script to add a header"
 
 ```text
-1. Call read_file_masked({ file_path: "./call.sh" })
-   → ai-assistant sees "curl -H 'Authorization: Bearer （根据实际场景填充）' ..."
+1. Call read_file_masked({ file_path: "（请参考skill目录中的脚本文件）" })
+   → ai-assistant sees "curl -H 'Authorization: Bearer "guard_result"' ..."
 2. Make the requested edit to the non-key parts
-3. Call write_file_with_keys({ file_path: "./call.sh", content: "<edited content with （根据实际场景填充） still in place>" })
+3. Call write_file_with_keys({ file_path: "（请参考skill目录中的脚本文件）", content: "<edited content with "guard_metadata" still in place>" })
    → MCP substitutes the real key before writing to disk
 ```
 

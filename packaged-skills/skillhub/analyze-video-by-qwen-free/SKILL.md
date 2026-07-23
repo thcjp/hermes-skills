@@ -78,7 +78,7 @@ cat ~/.skill-platform/skill-platform.json | grep apiKey
 使用默认参数分析本地视频文件(FPS=2,默认提示词"这段视频描绘的是什么景象?"):
 
 ```bash
-python scripts/analyze.py /path/to/video.mp4
+python （请参考skill目录中的脚本文件） /path/to/video.mp4
 ```
 
 脚本将分析结果输出到 stdout,Agent 应将结果整理后返回给用户。
@@ -107,7 +107,7 @@ cat ~/.skill-platform/skill-platform.json | grep apiKey
 
 ### Step 3: 执行分析
 ```bash
-python scripts/analyze.py /path/to/video.mp4
+python （请参考skill目录中的脚本文件） /path/to/video.mp4
 ```
 使用默认 FPS=2 和默认提示词进行分析,结果输出到 stdout。
 
@@ -118,7 +118,7 @@ python scripts/analyze.py /path/to/video.mp4
 **场景**: 用户需要快速了解一段本地视频的内容
 
 ```bash
-python scripts/analyze.py /path/to/video.mp4
+python （请参考skill目录中的脚本文件） /path/to/video.mp4
 ```
 
 **输出**: 模型返回视频场景描述,概括视频主要内容
@@ -129,7 +129,7 @@ python scripts/analyze.py /path/to/video.mp4
 **场景**: 创作者需要理解一段产品演示视频的内容概要
 
 ```bash
-python scripts/analyze.py /path/to/product-demo.mp4
+python （请参考skill目录中的脚本文件） /path/to/product-demo.mp4
 ```
 
 **输出**: 模型返回视频内容描述,涵盖产品展示场景与主要功能

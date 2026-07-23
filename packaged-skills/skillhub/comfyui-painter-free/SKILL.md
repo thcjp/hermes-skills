@@ -54,9 +54,9 @@ export API_KEY="your_api_key_here"
 
 ### 脚本路径
 
-- `scripts/comfyui_manager.py` — ComfyUI 启动/关闭/状态检查
-- `scripts/generate.py` — 图片生成（调用 ComfyUI API）
-- `scripts/auto_shutdown.py` — 空闲自动关闭检查
+- `（请参考skill目录中的脚本文件）` — ComfyUI 启动/关闭/状态检查
+- `（请参考skill目录中的脚本文件）` — 图片生成（调用 ComfyUI API）
+- `（请参考skill目录中的脚本文件）` — 空闲自动关闭检查
 - `config.json` — 配置文件（模型别名、默认参数）
 
 
@@ -82,7 +82,7 @@ mgr.start()
 import scripts.comfyui_manager as mgr
 status = mgr.s
 
-**输入**: 用户提供ComfyUI 生命周期管理所需的参数和指令。
+**输入**: 用户提供ComfyUI 生命周期管理相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行ComfyUI 生命周期管理操作。
 
 **输出**: 返回状态检查的执行结果,包含操作状态和输出数据。
@@ -97,7 +97,7 @@ result = generate(
     width=1024,
    
 
-**输入**: 用户提供基础图片生成所需的参数和指令。
+**输入**: 用户提供基础图片生成相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行基础图片生成操作。
 
 ### 基础模型别名
@@ -132,16 +132,16 @@ result = generate(
 - 用 `BREAK` 分隔不同语义段
 - 负面提示词加入: `censored, mosaic censoring, low quality`
 
-**输入**: 用户提供提示词优化基础所需的参数和指令。
+**输入**: 用户提供提示词优化基础相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行提示词优化基础操作。
 **输出**: 返回提示词优化基础的执行结果,包含操作状态和输出数据。
 
 #
 ## 脚本路径
 
-- `scripts/comfyui_manager.py` — ComfyUI 启动/关闭/状态检查
-- `scripts/generate.py` — 图片生成（调用 ComfyUI API）
-- `scripts/auto_shutdown.py` — 空闲自动关闭检查
+- `（请参考skill目录中的脚本文件）` — ComfyUI 启动/关闭/状态检查
+- `（请参考skill目录中的脚本文件）` — 图片生成（调用 ComfyUI API）
+- `（请参考skill目录中的脚本文件）` — 空闲自动关闭检查
 - `config.json` — 配置文件（模型别名、默认参数）
 
 ## ComfyUI 生命周期管理
@@ -172,7 +172,7 @@ mgr.stop()
 ### 空闲自动关闭
 
 ```bash
-python3 scripts/auto_shutdown.py
+python3 （请参考skill目录中的脚本文件）
 ```
 
 超过 15 分钟无使用自动关闭 ComfyUI 释放显存。

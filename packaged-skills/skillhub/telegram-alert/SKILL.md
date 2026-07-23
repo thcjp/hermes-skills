@@ -84,9 +84,9 @@ triggers:
 **输出**: 返回复合触发条件的执行结果,包含操作状态和输出数据。
 ### 目标群组
 
-执行目标群组操作,处理用户输入并返回结果。
+执行目标群组,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供目标群组所需的参数和指令。
+**输入**: 用户提供目标群组相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回目标群组的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`目标群组`相关配置参数进行设置
@@ -99,7 +99,7 @@ triggers:
 
 ```bash
 # 多群组推送
-python3 scripts/notify.py broadcast \
+python3 （请参考skill目录中的脚本文件） broadcast \
   --message "买入信号: AAPL 突破阻力位180" \
   --chat-ids "@group1,@group2,@group3" \
   --priority high \
@@ -117,7 +117,7 @@ python3 scripts/notify.py broadcast \
 
 ```bash
 # 设置复合触发
-python3 scripts/alert.py add \
+python3 （请参考skill目录中的脚本文件） add \
   --name "BTC突破+量能" \
   --conditions "price:BTC-USD:above:65000,volume:BTC-USD:above:1000000000" \
   --logic AND \
@@ -125,7 +125,7 @@ python3 scripts/alert.py add \
   --priority high
 
 # 启动监控
-python3 scripts/alert.py monitor --multi-channel
+python3 （请参考skill目录中的脚本文件） monitor --multi-channel
 ```
 
 ### 场景三：定时市场播报
@@ -134,7 +134,7 @@ python3 scripts/alert.py monitor --multi-channel
 
 ```bash
 # 设置定时播报
-python3 scripts/schedule.py add \
+python3 （请参考skill目录中的脚本文件） add \
   --name "每日市场播报" \
   --times "09:00,15:00" \
   --message-type "market_summary" \
@@ -161,17 +161,17 @@ cp config_pro_template.yaml config_pro.yaml
 
 ```bash
 # 多群组广播
-python3 scripts/notify.py broadcast --message "信号" --chat-ids "@g1,@g2,@g3"
+python3 （请参考skill目录中的脚本文件） broadcast --message "信号" --chat-ids "@g1,@g2,@g3"
 
 # 复合告警
-python3 scripts/alert.py add --conditions "price:AAPL:above:180,volume:AAPL:above:100M" --logic AND
+python3 （请参考skill目录中的脚本文件） add --conditions "price:AAPL:above:180,volume:AAPL:above:100M" --logic AND
 
 # 定时播报
-python3 scripts/schedule.py add --times "09:00,15:00" --message-type market_summary
+python3 （请参考skill目录中的脚本文件） add --times "09:00,15:00" --message-type market_summary
 
 # 告警历史分析
-python3 scripts/history.py stats --period 30d
-python3 scripts/history.py export --format excel
+python3 （请参考skill目录中的脚本文件） stats --period 30d
+python3 （请参考skill目录中的脚本文件） export --format excel
 ```
 
 #
@@ -179,8 +179,8 @@ python3 scripts/history.py export --format excel
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | telegram-alert处理的内容输入 |,  |
+| content | string | 否 | telegram-alert处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -189,9 +189,9 @@ python3 scripts/history.py export --format excel
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "alert 相关配置参数",
+    result: "alert 相关配置参数",
+    result: "alert 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

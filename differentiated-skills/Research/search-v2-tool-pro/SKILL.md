@@ -111,7 +111,7 @@ pricing_model: "per_use"
 
 ```bash
 # 批量搜索多个查询
-python scripts/search_pro.py batch \
+python （请参考skill目录中的脚本文件） batch \
   --queries "竞品A定价策略" "竞品B用户评价" "竞品C融资动态" "竞品D功能对比" \
   --search-depth advanced \
   --max-results 10 \
@@ -150,7 +150,7 @@ python scripts/search_pro.py batch \
 
 ```bash
 # 新闻主题搜索(最近24小时)
-python scripts/search_pro.py search \
+python （请参考skill目录中的脚本文件） search \
   --query "品牌名 OR 公司名" \
   --topic news \
   --time-range day \
@@ -160,7 +160,7 @@ python scripts/search_pro.py search \
   --output /reports/daily-news-monitor.json
 
 # 配置定时新闻监控
-python scripts/search_pro.py schedule add \
+python （请参考skill目录中的脚本文件） schedule add \
   --name "每日新闻舆情监控" \
   --cron "0 8,12,18 * * *" \
   --query "品牌名 OR 公司名" \
@@ -178,7 +178,7 @@ python scripts/search_pro.py schedule add \
 
 ```bash
 # 金融主题搜索
-python scripts/search_pro.py search \
+python （请参考skill目录中的脚本文件） search \
   --query "AAPL earnings Q4 2024" \
   --topic finance \
   --search-depth advanced \
@@ -189,7 +189,7 @@ python scripts/search_pro.py search \
   --output /reports/aapl-earnings.json
 
 # 批量金融搜索(多股票)
-python scripts/search_pro.py batch \
+python （请参考skill目录中的脚本文件） batch \
   --queries "AAPL earnings" "GOOGL earnings" "MSFT earnings" "AMZN earnings" \
   --topic finance \
   --search-depth advanced \
@@ -228,14 +228,14 @@ echo $TAVILY_API_KEY
 # 输出: tvly-your-api-key-here
 
 # 2. 使用专业版功能
-python scripts/search_pro.py search \
+python （请参考skill目录中的脚本文件） search \
   --query "your question" \
   --topic news \
   --include-raw-content true \
   --max-results 15
 
 # 3. 批量搜索
-python scripts/search_pro.py batch \
+python （请参考skill目录中的脚本文件） batch \
   --queries "query1" "query2" "query3" \
   --merge
 ```
@@ -252,7 +252,7 @@ RAG最佳实践2026
 EOF
 
 # 批量搜索
-python scripts/search_pro.py batch \
+python （请参考skill目录中的脚本文件） batch \
   --queries-file queries.txt \
   --search-depth advanced \
   --max-results 10 \
@@ -266,17 +266,17 @@ python scripts/search_pro.py batch \
 
 ```bash
 # 启用缓存(默认24小时过期)
-python scripts/search_pro.py search \
+python （请参考skill目录中的脚本文件） search \
   --query "Python async patterns" \
   --cache \
   --cache-ttl 3600
 
 # 查看缓存状态
-python scripts/search_pro.py cache stats
+python （请参考skill目录中的脚本文件） cache stats
 # 输出: Cache entries: 156 | Hit rate: 34% | Size: 12MB
 
 # 清理过期缓存
-python scripts/search_pro.py cache cleanup
+python （请参考skill目录中的脚本文件） cache cleanup
 ```
 
 ## 示例
@@ -302,7 +302,7 @@ python scripts/search_pro.py cache cleanup
 
 ```bash
 # 从文件读取查询列表
-python scripts/search_pro.py batch \
+python （请参考skill目录中的脚本文件） batch \
   --queries-file queries.txt \
   --search-depth advanced \
   --max-results 10 \
@@ -312,7 +312,7 @@ python scripts/search_pro.py batch \
   --output results.json
 
 # 命令行直接传入多个查询
-python scripts/search_pro.py batch \
+python （请参考skill目录中的脚本文件） batch \
   --queries "query1" "query2" "query3" \
   --topic news \
   --time-range week \
@@ -357,7 +357,7 @@ schedules:
 
 ```bash
 # 获取全文内容(分块)
-python scripts/search_pro.py search \
+python （请参考skill目录中的脚本文件） search \
   --query "machine learning best practices" \
   --include-raw-content true \
   --chunks-per-source 3 \
@@ -375,7 +375,7 @@ python scripts/search_pro.py search \
 多个查询可能返回重叠结果。使用`--merge --dedup`自动合并去重,避免重复内容干扰分析:
 
 ```bash
-python scripts/search_pro.py batch \
+python （请参考skill目录中的脚本文件） batch \
   --queries "AI推理优化" "LLM推理加速" "大模型部署" \
   --merge --dedup
 ```
@@ -386,10 +386,10 @@ python scripts/search_pro.py batch \
 
 ```bash
 # 新闻舆情
-python scripts/search_pro.py search --query "公司名" --topic news --time-range day
+python （请参考skill目录中的脚本文件） search --query "公司名" --topic news --time-range day
 
 # 金融数据
-python scripts/search_pro.py search --query "AAPL财报" --topic finance
+python （请参考skill目录中的脚本文件） search --query "AAPL财报" --topic finance
 ```
 
 ### 3. 利用缓存节省API调用
@@ -398,10 +398,10 @@ python scripts/search_pro.py search --query "AAPL财报" --topic finance
 
 ```bash
 # 首次搜索(调用API)
-python scripts/search_pro.py search --query "Python设计模式" --cache
+python （请参考skill目录中的脚本文件） search --query "Python设计模式" --cache
 
 # 再次搜索相同查询(命中缓存,即时返回)
-python scripts/search_pro.py search --query "Python设计模式" --cache
+python （请参考skill目录中的脚本文件） search --query "Python设计模式" --cache
 ```
 
 ### 4. 全文提取用于深度分析
@@ -409,7 +409,7 @@ python scripts/search_pro.py search --query "Python设计模式" --cache
 需要AI助手深入分析页面内容时,启用`--include-raw-content`获取全文分块。注意这会增加响应大小和API消耗:
 
 ```bash
-python scripts/search_pro.py search \
+python （请参考skill目录中的脚本文件） search \
   --query "技术方案对比" \
   --include-raw-content true \
   --chunks-per-source 3 \
@@ -422,7 +422,7 @@ python scripts/search_pro.py search \
 配置定时搜索任务,结果自动归档,通过对比不同时间的结果发现趋势变化:
 
 ```bash
-python scripts/search_pro.py schedule add \
+python （请参考skill目录中的脚本文件） schedule add \
   --name "AI技术趋势追踪" \
   --cron "0 8 * * *" \
   --queries-file ai-trend-queries.txt \

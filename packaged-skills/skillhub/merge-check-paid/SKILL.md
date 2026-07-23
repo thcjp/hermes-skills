@@ -62,25 +62,25 @@ pricing_model: "per_use"
 | 风险预警 | 高风险PR实时提醒 | 免费版无 |
 ### 能力模块
 
-执行能力模块操作,处理用户输入并返回结果。
+执行能力模块,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供能力模块所需的参数和指令。
+**输入**: 用户提供能力模块相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回能力模块的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`能力模块`相关配置参数进行设置
 ### 单PR分析
 
-执行单PR分析操作,处理用户输入并返回结果。
+执行单PR分析,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供单PR分析所需的参数和指令。
+**输入**: 用户提供单PR分析相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回单PR分析的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`单PR分析`相关配置参数进行设置
 ### 批量分析
 
-执行批量分析操作,处理用户输入并返回结果。
+执行批量分析,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供批量分析所需的参数和指令。
+**输入**: 用户提供批量分析相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回批量分析的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`批量分析`相关配置参数进行设置
@@ -93,10 +93,10 @@ pricing_model: "per_use"
 
 ```bash
 # 批量分析仓库所有开放PR
-bash scripts/merge-check-batch.sh owner/repo --state open --limit 20
+bash （请参考skill目录中的脚本文件） owner/repo --state open --limit 20
 
 # 输出团队看板
-bash scripts/merge-check-batch.sh owner/repo --format dashboard > pr-dashboard.html
+bash （请参考skill目录中的脚本文件） owner/repo --format dashboard > pr-dashboard.html
 ```
 
 工具输出按合并概率排序的看板:
@@ -118,33 +118,33 @@ vi config/team-rules.json
 ### 2. 单PR深度分析(兼容免费版)
 
 ```bash
-bash scripts/merge-check.sh owner/repo#123 --full-dimensions
+bash （请参考skill目录中的脚本文件） owner/repo#123 --full-dimensions
 ```
 
 ### 3. 批量分析
 
 ```bash
 # 分析所有开放PR
-bash scripts/merge-check-batch.sh owner/repo --state open
+bash （请参考skill目录中的脚本文件） owner/repo --state open
 
 # 按标签筛选
-bash scripts/merge-check-batch.sh owner/repo --label "needs-review"
+bash （请参考skill目录中的脚本文件） owner/repo --label "needs-review"
 
 # 按作者筛选
-bash scripts/merge-check-batch.sh owner/repo --author "alice"
+bash （请参考skill目录中的脚本文件） owner/repo --author "alice"
 
 # 生成HTML看板
-bash scripts/merge-check-batch.sh owner/repo --format dashboard --output pr-board.html
+bash （请参考skill目录中的脚本文件） owner/repo --format dashboard --output pr-board.html
 ```
 
 ### 4. 历史趋势导出
 
 ```bash
 # 导出仓库近6个月合并趋势
-bash scripts/merge-check-trend.sh owner/repo --months 6 --format csv > trend.csv
+bash （请参考skill目录中的脚本文件） owner/repo --months 6 --format csv > trend.csv
 
 # 生成趋势图
-bash scripts/merge-check-trend.sh owner/repo --months 6 --format chart > trend.html
+bash （请参考skill目录中的脚本文件） owner/repo --months 6 --format chart > trend.html
 ```
 
 #
@@ -152,7 +152,7 @@ bash scripts/merge-check-trend.sh owner/repo --months 6 --format chart > trend.h
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | merge-check处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式

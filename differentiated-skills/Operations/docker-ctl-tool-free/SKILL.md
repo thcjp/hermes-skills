@@ -77,7 +77,7 @@ suggested_price: 29.9
 
 ```bash
 # 检查所有容器
-python3 scripts/ctl.py ps --all
+python3 （请参考skill目录中的脚本文件） ps --all
 
 # 输出：
 # NAME        STATUS    AGE    PORTS
@@ -92,13 +92,13 @@ python3 scripts/ctl.py ps --all
 
 ```bash
 # 查看日志
-python3 scripts/ctl.py logs --name web-app --tail 100
+python3 （请参考skill目录中的脚本文件） logs --name web-app --tail 100
 
 # 实时跟踪日志
-python3 scripts/ctl.py logs --name web-app --follow
+python3 （请参考skill目录中的脚本文件） logs --name web-app --follow
 
 # 过滤错误日志
-python3 scripts/ctl.py logs --name web-app --grep "ERROR"
+python3 （请参考skill目录中的脚本文件） logs --name web-app --grep "ERROR"
 ```
 
 ### 场景三：资源使用检查
@@ -107,7 +107,7 @@ python3 scripts/ctl.py logs --name web-app --grep "ERROR"
 
 ```bash
 # 资源使用统计
-python3 scripts/ctl.py stats --sort memory
+python3 （请参考skill目录中的脚本文件） stats --sort memory
 
 # 输出：
 # NAME        CPU%   MEM USAGE      NET I/O
@@ -135,32 +135,32 @@ python3 scripts/ctl.py stats --sort memory
 pip install subprocess
 
 # 验证
-python3 scripts/ctl.py info
+python3 （请参考skill目录中的脚本文件） info
 ```
 
 ### 常用命令
 
 ```bash
 # 容器状态
-python3 scripts/ctl.py ps --all
-python3 scripts/ctl.py inspect --name web-app
+python3 （请参考skill目录中的脚本文件） ps --all
+python3 （请参考skill目录中的脚本文件） inspect --name web-app
 
 # 日志
-python3 scripts/ctl.py logs --name web-app --tail 100
-python3 scripts/ctl.py logs --name web-app --follow
-python3 scripts/ctl.py logs --name web-app --grep "ERROR"
+python3 （请参考skill目录中的脚本文件） logs --name web-app --tail 100
+python3 （请参考skill目录中的脚本文件） logs --name web-app --follow
+python3 （请参考skill目录中的脚本文件） logs --name web-app --grep "ERROR"
 
 # 资源
-python3 scripts/ctl.py stats
-python3 scripts/ctl.py stats --sort cpu
+python3 （请参考skill目录中的脚本文件） stats
+python3 （请参考skill目录中的脚本文件） stats --sort cpu
 
 # 配置检查
-python3 scripts/ctl.py config --name web-app
-python3 scripts/ctl.py ports --name web-app
-python3 scripts/ctl.py volumes --name web-app
+python3 （请参考skill目录中的脚本文件） config --name web-app
+python3 （请参考skill目录中的脚本文件） ports --name web-app
+python3 （请参考skill目录中的脚本文件） volumes --name web-app
 
 # 健康检查
-python3 scripts/ctl.py health --name web-app
+python3 （请参考skill目录中的脚本文件） health --name web-app
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。

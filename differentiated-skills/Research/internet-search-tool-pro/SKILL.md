@@ -64,7 +64,7 @@ pricing_model: "per_use"
 #### 1. 批量查询引擎
 
 ```bash
-python scripts/batch_search.py \
+python （请参考skill目录中的脚本文件） \
   --keywords-file keywords.txt \
   --category=academic \
   --count=10 \
@@ -77,12 +77,12 @@ python scripts/batch_search.py \
 
 ```bash
 # 配置自定义引擎组合
-python scripts/engine_manager.py add \
+python （请参考skill目录中的脚本文件） add \
   --name="学术优先" \
   --engines="arxiv,google scholar,pubmed" \
   --category=academic
 
-python scripts/engine_manager.py add \
+python （请参考skill目录中的脚本文件） add \
   --name="技术搜索" \
   --engines="stackoverflow,github,brave" \
   --category=general
@@ -95,13 +95,13 @@ internet_search("query", engine="学术优先")
 
 ```bash
 # 导出为 JSON
-python scripts/search_export.py \
+python （请参考skill目录中的脚本文件） \
   --query="关键词" \
   --format=json \
   --output=data.json
 
 # 导出为 CSV
-python scripts/search_export.py \
+python （请参考skill目录中的脚本文件） \
   --query="关键词" \
   --format=csv \
   --output=data.csv
@@ -111,7 +111,7 @@ python scripts/search_export.py \
 
 ```bash
 # 配置定时搜索
-python scripts/scheduled_search.py \
+python （请参考skill目录中的脚本文件） \
   --keyword "行业动态 2026" \
   --cron="0 9 * * *" \
   --category=news \
@@ -148,7 +148,7 @@ cat > market_keywords.txt <<EOF
 EOF
 
 # 批量搜索并导出
-python scripts/batch_search.py \
+python （请参考skill目录中的脚本文件） \
   --keywords-file market_keywords.txt \
   --count=10 \
   --category=general \
@@ -164,7 +164,7 @@ python scripts/batch_search.py \
 
 ```bash
 # 使用学术引擎组合
-python scripts/batch_search.py \
+python （请参考skill目录中的脚本文件） \
   --keywords-file research_topics.txt \
   --engine="学术优先" \
   --count=10 \
@@ -178,7 +178,7 @@ python scripts/batch_search.py \
 
 ```bash
 # 配置 SEO 监控定时任务
-python scripts/scheduled_search.py \
+python （请参考skill目录中的脚本文件） \
   --keywords-file seo_keywords.txt \
   --cron="0 8 * * 1" \
   --track-rank \
@@ -201,7 +201,7 @@ python scripts/scheduled_search.py \
 pip install apscheduler pandas redis
 
 # 现有 SearXNG 配置自动兼容
-python scripts/batch_search.py --version
+python （请参考skill目录中的脚本文件） --version
 # 输出: internet-search-tool-pro v1.0.0
 ```
 
@@ -214,7 +214,7 @@ Docker 容器化部署
 Kubernetes 集群管理" > topics.txt
 
 # 执行批量搜索
-python scripts/batch_search.py \
+python （请参考skill目录中的脚本文件） \
   --keywords-file topics.txt \
   --count=10 \
   --export json \
@@ -272,7 +272,7 @@ analytics:
 
 ```bash
 # 启动 REST API 服务
-python scripts/api_server.py --port 8000
+python （请参考skill目录中的脚本文件） --port 8000
 
 # 调用 API 执行搜索
 curl -X POST http://localhost:8000/search \
@@ -325,16 +325,16 @@ print(f"完成 {len(results)} 个关键词搜索")
 
 ```bash
 # 查看已配置的引擎组合
-python scripts/engine_manager.py list
+python （请参考skill目录中的脚本文件） list
 
 # 创建引擎组合
-python scripts/engine_manager.py create \
+python （请参考skill目录中的脚本文件） create \
   --name="综合搜索" \
   --engines="google,bing,brave,ddg" \
   --category=general
 
 # 测试引擎性能
-python scripts/engine_manager.py benchmark \
+python （请参考skill目录中的脚本文件） benchmark \
   --engine="学术优先" \
   --test-queries=test_queries.txt
 ```
@@ -343,14 +343,14 @@ python scripts/engine_manager.py benchmark \
 
 ```bash
 # 合并多个搜索结果并去重
-python scripts/merge_results.py \
+python （请参考skill目录中的脚本文件） \
   --input="./exports/*.json" \
   --output=merged.json \
   --deduplicate \
   --sort-by=relevance
 
 # 生成分析报告
-python scripts/analyze_results.py \
+python （请参考skill目录中的脚本文件） \
   --input=merged.json \
   --output=analysis.md \
   --format=summary
@@ -362,13 +362,13 @@ python scripts/analyze_results.py \
 
 ```bash
 # 增加并行线程
-python scripts/batch_search.py --workers 8 keywords.txt
+python （请参考skill目录中的脚本文件） --workers 8 keywords.txt
 
 # 启用缓存
-python scripts/batch_search.py --cache keywords.txt
+python （请参考skill目录中的脚本文件） --cache keywords.txt
 
 # 调整查询间隔
-python scripts/batch_search.py --delay 0.5 keywords.txt
+python （请参考skill目录中的脚本文件） --delay 0.5 keywords.txt
 ```
 
 ### SearXNG 响应超时
@@ -378,36 +378,36 @@ python scripts/batch_search.py --delay 0.5 keywords.txt
 curl http://localhost:8080/stats
 
 # 减少引擎数量
-python scripts/engine_manager.py optimize --max-engines=3
+python （请参考skill目录中的脚本文件） optimize --max-engines=3
 
 # 增加超时时间
-python scripts/batch_search.py --timeout 30 keywords.txt
+python （请参考skill目录中的脚本文件） --timeout 30 keywords.txt
 ```
 
 ### 引擎配置失效
 
 ```bash
 # 验证引擎可用性
-python scripts/engine_manager.py check-all
+python （请参考skill目录中的脚本文件） check-all
 
 # 禁用失败引擎
-python scripts/engine_manager.py disable-failed
+python （请参考skill目录中的脚本文件） disable-failed
 
 # 重置为默认配置
-python scripts/engine_manager.py reset
+python （请参考skill目录中的脚本文件） reset
 ```
 
 ### 定时任务不执行
 
 ```bash
 # 检查 cron 配置
-python scripts/scheduled_search.py --list
+python （请参考skill目录中的脚本文件） --list
 
 # 查看任务日志
 cat ./logs/scheduled_search.log
 
 # 手动触发测试
-python scripts/scheduled_search.py --run-now --task-id=task_001
+python （请参考skill目录中的脚本文件） --run-now --task-id=task_001
 ```
 
 ## 依赖说明

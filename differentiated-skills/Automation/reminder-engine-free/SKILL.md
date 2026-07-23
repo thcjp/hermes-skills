@@ -97,7 +97,7 @@ skill-platform cron add \
 
 ```bash
 session_status
-./scripts/sanitize-message.sh "检查北京天气"
+（请参考skill目录中的脚本文件） "检查北京天气"
 date -u -d "today 15:00" +"%Y-%m-%dT%H:%M:%SZ"
 
 skill-platform cron add \
@@ -122,7 +122,7 @@ echo "好的，将在下午3点提醒你"
 USER_TIME="$1"        # 用户输入的时间
 TASK_CONTENT="$2"     # 任务内容
 CHANNEL="${3:-discord}" # 投递频道，默认discord
-if ! ./scripts/sanitize-message.sh "$TASK_CONTENT"; then
+if ! （请参考skill目录中的脚本文件） "$TASK_CONTENT"; then
   echo "错误：任务内容包含非法字符"
   echo "请避免使用：\$() \` ; | & > < \" 或危险命令"
   exit 1
@@ -214,7 +214,7 @@ echo "  作业ID：$JOB_ID"
 | 换行符 | `\n` | 可注入多行命令 |
 | 危险命令前缀 | `sudo`、`rm`、`wget`、`curl`、`bash`等 | 高危操作 |
 
-**校验脚本**（`scripts/sanitize-message.sh`）：
+**校验脚本**（`（请参考skill目录中的脚本文件）`）：
 
 ```bash
 #!/bin/bash
@@ -348,7 +348,7 @@ skill-platform cron runs --id <job-id> --limit 5
 
 ```bash
 session_status
-./scripts/sanitize-message.sh "检查北京天气"
+（请参考skill目录中的脚本文件） "检查北京天气"
 date -u -d "+30 seconds" +"%Y-%m-%dT%H:%M:%SZ"
 skill-platform cron add \
   --name "reminder-weather" \
@@ -370,7 +370,7 @@ echo "好的，将在30秒后提醒你查天气"
 **场景描述**：用户说"下午3点提醒我开会"，创建定时提醒。
 
 ```bash
-./scripts/sanitize-message.sh "下午3点开会"
+（请参考skill目录中的脚本文件） "下午3点开会"
 date -u -d "today 15:00" +"%Y-%m-%dT%H:%M:%SZ"
 NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 if [[ "2026-07-18T15:00:00Z" < "$NOW" ]]; then
@@ -398,7 +398,7 @@ echo "好的，将在今天下午3点提醒你开会"
 **场景描述**：用户尝试创建包含危险命令的提醒，引擎拒绝并提示重新表述。
 
 ```bash
-./scripts/sanitize-message.sh "运行 rm -rf /tmp"
+（请参考skill目录中的脚本文件） "运行 rm -rf /tmp"
 echo "抱歉，你的任务内容包含非法字符，请重新表述。"
 echo "请避免使用：sudo、rm、wget、curl、bash等危险命令"
 echo "示例："

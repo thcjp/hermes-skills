@@ -51,25 +51,25 @@ pricing_model: "per_use"
 | 优先支持 | SLA保障 | 专属技术支持通道 |
 ### 文件结构读取
 
-执行文件结构读取操作,处理用户输入并返回结果。
+执行文件结构读取,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供文件结构读取所需的参数和指令。
+**输入**: 用户提供文件结构读取相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回文件结构读取的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`文件结构读取`相关配置参数进行设置
 ### 批量图层导出
 
-执行批量图层导出操作,处理用户输入并返回结果。
+执行批量图层导出,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供批量图层导出所需的参数和指令。
+**输入**: 用户提供批量图层导出相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回批量图层导出的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`批量图层导出`相关配置参数进行设置
 ### 多格式导出
 
-执行多格式导出操作,处理用户输入并返回结果。
+执行多格式导出,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供多格式导出所需的参数和指令。
+**输入**: 用户提供多格式导出相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回多格式导出的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`多格式导出`相关配置参数进行设置
@@ -104,15 +104,15 @@ $env:FIGMA_TOKEN="你的个人访问令牌"
 ### 步骤2：启用高级缓存(推荐)
 ```bash
 # 初始化缓存目录
-python scripts/figma_tool.py cache init --dir ~/.figma-cache
+python （请参考skill目录中的脚本文件） cache init --dir ~/.figma-cache
 
 # 首次读取并缓存结构
-python scripts/figma_tool.py get-file <file_key> --cache
+python （请参考skill目录中的脚本文件） get-file <file_key> --cache
 ```
 
 ### 步骤3：批量导出图层
 ```bash
-python scripts/figma_tool.py export-batch <file_key> \
+python （请参考skill目录中的脚本文件） export-batch <file_key> \
   --ids-file layers.txt \
   --format png,svg \
   --scale 2 \
@@ -123,7 +123,7 @@ python scripts/figma_tool.py export-batch <file_key> \
 
 ### 步骤4：团队评论分析
 ```bash
-python scripts/figma_tool.py analyze-comments <file_key> \
+python （请参考skill目录中的脚本文件） analyze-comments <file_key> \
   --cluster-themes \
   --sentiment \
   --report markdown
@@ -134,7 +134,7 @@ python scripts/figma_tool.py analyze-comments <file_key> \
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | figma-tw-designer处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式

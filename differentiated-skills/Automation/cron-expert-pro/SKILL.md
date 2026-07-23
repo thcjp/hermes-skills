@@ -358,11 +358,11 @@ enterprise.check_sla()
 # 从crontab迁移
 crontab = """
 # 每日备份
-0 2 * * * /usr/bin/backup.sh
+0 2 * * * /usr/（请参考skill目录中的脚本文件）
 # 每周日志清理
-0 3 * * 0 /usr/bin/clean_logs.sh
+0 3 * * 0 /usr/（请参考skill目录中的脚本文件）
 # 每小时健康检查
-0 * * * * /usr/bin/health_check.sh
+0 * * * * /usr/（请参考skill目录中的脚本文件）
 """
 enterprise.migrate_from_crontab(crontab)
 ```
@@ -471,9 +471,9 @@ enterprise.check_sla()
 
 ```python
 enterprise.migrate_from_crontab("""
-0 2 * * * /scripts/backup.sh
-0 4 * * 0 /scripts/cleanup.sh
-*/10 * * * * /scripts/monitor.sh
+0 2 * * * /（请参考skill目录中的脚本文件）
+0 4 * * 0 /（请参考skill目录中的脚本文件）
+*/10 * * * * /（请参考skill目录中的脚本文件）
 """)
 ```
 

@@ -43,9 +43,9 @@ pricing_model: "per_use"
   "merge_results": true
 }
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch search batch_search.json
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch search batch_search.json
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch status
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch status
 ```
 
 **输入**: 用户提供批量并行搜索所需的指令和必要参数。
@@ -57,13 +57,13 @@ pricing_model: "per_use"
 支持团队共享工具发现成果,协作评估。
 
 ```bash
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh team create --name "dev_tools_eval"
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） team create --name "dev_tools_eval"
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh team invite --email "colleague@company.com"
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） team invite --email "colleague@company.com"
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh team share --result search_result.json
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） team share --result search_result.json
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh team collect-ratings --tool "target-tool"
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） team collect-ratings --tool "target-tool"
 ```
 
 **输入**: 用户提供团队推荐与协作所需的指令和必要参数。
@@ -75,9 +75,9 @@ pricing_model: "per_use"
 多维度分析工具质量,生成评估报告。
 
 ```bash
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh evaluate "target-tool" --output report.html
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） evaluate "target-tool" --output report.html
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch evaluate --input tools.json --output reports/
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch evaluate --input tools.json --output reports/
 
 ```
 
@@ -100,9 +100,9 @@ pricing_model: "per_use"
   "auto_configure": true
 }
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch deploy deploy.json
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch deploy deploy.json
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch verify --input deploy.json
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch verify --input deploy.json
 ```
 
 **输入**: 用户提供自动化部署所需的指令和必要参数。
@@ -114,11 +114,11 @@ pricing_model: "per_use"
 追踪工具使用情况,提供数据洞察。
 
 ```bash
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh stats usage --period "2026-07"
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） stats usage --period "2026-07"
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh stats leaderboard --team "dev_team"
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） stats leaderboard --team "dev_team"
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh stats export --format csv --output usage_report.csv
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） stats export --format csv --output usage_report.csv
 ```
 
 **输入**: 用户提供使用统计与分析所需的指令和必要参数。
@@ -130,10 +130,10 @@ pricing_model: "per_use"
 根据团队标准自定义评分规则。
 
 ```bash
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh config set-scoring \
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） config set-scoring \
   --weights '{"community": 0.3, "quality": 0.3, "security": 0.2, "maintenance": 0.2}'
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh config set-scoring \
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） config set-scoring \
   --min-threshold 3.0 \
   --custom-rules custom_rules.json
 ```
@@ -147,8 +147,8 @@ pricing_model: "per_use"
 专业版完全兼容免费版的所有命令和配置,平滑升级。
 
 ```bash
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh search "web search"
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh install "target-tool" --type skill
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） search "web search"
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） install "target-tool" --type skill
 ```
 
 **输入**: 用户提供完整兼容免费版所需的指令和必要参数。
@@ -175,18 +175,18 @@ cat > selection_search.json << 'EOF'
 }
 EOF
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch search selection_search.json --output candidates.json
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch search selection_search.json --output candidates.json
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch evaluate \
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch evaluate \
   --input candidates.json \
   --output evaluations/ \
   --dimensions "community,quality,security,maintenance"
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh team collect-ratings \
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） team collect-ratings \
   --input candidates.json \
   --team "tech_committee"
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh report selection \
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） report selection \
   --evaluations evaluations/ \
   --team-ratings team_ratings.json \
   --output tool_selection_report.html
@@ -211,11 +211,11 @@ cat > project_deploy.json << 'EOF'
 }
 EOF
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch deploy project_deploy.json
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch deploy project_deploy.json
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch verify --input project_deploy.json
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch verify --input project_deploy.json
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh report deploy \
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） report deploy \
   --input project_deploy.json \
   --output deployment_report.html
 ```
@@ -224,18 +224,18 @@ EOF
 某组织需要建立内部工具目录,定期更新和评估。
 
 ```bash
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh catalog scan --output inventory.json
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） catalog scan --output inventory.json
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch evaluate \
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch evaluate \
   --input inventory.json \
   --output evaluations/ \
   --schedule "0 0 1 * *"  # 每月1日评估
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh catalog generate \
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） catalog generate \
   --inventory inventory.json \
   --evaluations evaluations/ \
   --output tool_catalog.html
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh stats analyze \
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） stats analyze \
   --period "2026-Q3" \
   --identify-low-usage \
   --threshold 0.1
@@ -247,9 +247,9 @@ EOF
 cd ~/.skill-platform/workspace/skills/tool-finder-tool-pro
 npm install
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh --version --edition
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） --version --edition
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch --help
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch --help
 ```
 
 ### 第二步:配置团队协作
@@ -277,7 +277,7 @@ cat > team_config.json << 'EOF'
 }
 EOF
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh team init team_config.json
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） team init team_config.json
 ```
 
 ### 第三步:运行首次批量搜索
@@ -293,9 +293,9 @@ cat > first_batch.json << 'EOF'
 }
 EOF
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch search first_batch.json
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch search first_batch.json
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch status
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch status
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
@@ -373,21 +373,21 @@ EOF
 ## 最佳实践
 ### 1. 免费版到专业版的平滑迁移
 ```bash
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh search "web search"
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） search "web search"
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch search batch.json
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch search batch.json
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh evaluate "target-tool"
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） evaluate "target-tool"
 ```
 
 ### 2. 批量搜索的性能优化
 ```bash
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch search \
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch search \
   batch.json \
   --concurrency 8 \
   --timeout 30
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch search \
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch search \
   batch.json \
   --cache-dir ./cache \
   --cache-ttl 3600
@@ -395,7 +395,7 @@ EOF
 
 ### 3. 评估报告的定制化
 ```bash
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh evaluate "tool" \
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） evaluate "tool" \
   --dimensions "community,quality,security" \
   --weights '{"community": 0.4, "quality": 0.4, "security": 0.2}' \
   --output custom_report.html
@@ -403,13 +403,13 @@ EOF
 
 ### 4. 团队协作的流程化
 ```bash
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch search candidates.json
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch search candidates.json
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch evaluate --input results.json
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch evaluate --input results.json
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh team review --input evaluations/
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） team review --input evaluations/
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh report final --output report.html
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） report final --output report.html
 ```
 
 ## 免费版与专业版对比
@@ -447,11 +447,11 @@ EOF
 **A:** 通过角色权限配置实现细粒度访问控制:
 
 ```bash
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh team config set \
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） team config set \
   --role "evaluator" \
   --permissions "search,evaluate,rate"
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh team config set \
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） team config set \
   --role "viewer" \
   --permissions "view,export"
 ```
@@ -460,11 +460,11 @@ EOF
 **A:** 专业版支持部署失败自动回滚:
 
 ```bash
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch deploy \
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch deploy \
   deploy.json \
   --rollback-on-failure
 
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh batch rollback \
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch rollback \
   --deployment-id "deploy_001"
 ```
 
@@ -472,7 +472,7 @@ EOF
 **A:** 专业版提供 API 接口和 Webhook,支持与现有系统集成:
 
 ```bash
-~/.skill-platform/workspace/skills/tool-finder-tool-pro/scripts/tool-finder.sh config set-webhook \
+~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） config set-webhook \
   --url "https://your-system.example.com/webhook" \
   --events "search,evaluate,deploy"
 ```

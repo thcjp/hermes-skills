@@ -69,8 +69,8 @@ agent-browser close         # 关闭浏览器
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
+| content | string | 否 | agent-browser-cli处理的内容输入 |,  |
+| mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
 | skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |
 
@@ -81,9 +81,9 @@ agent-browser close         # 关闭浏览器
   "success": true,
   "data": {
     "final_result": {
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明"
+      "cli_result": "cli_result_value",
+      "cli_metadata": "cli_metadata_value",
+      "cli_status": "cli_status_value"
     },
     "execution_log": [
       {
@@ -123,7 +123,7 @@ agent-browser close         # 关闭浏览器
 }
 ```
 
-中间产物模板参考: `assets/（根据实际场景填充）`
+中间产物模板参考: `assets/agent-browser-cli_template`
 
 ## 异常处理
 

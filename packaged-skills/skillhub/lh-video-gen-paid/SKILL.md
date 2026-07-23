@@ -45,11 +45,11 @@ pricing_model: "per_use"
 ```python
 # 批量生成任务队列
 batch_tasks = [
-    {"script": "scripts/product-a.md", "output": "output/product-a.mp4"},
-    {"script": "scripts/product-b.md", "output": "output/product-b.mp4"},
-    {"script": "scripts/product-c.md", "output": "output/product-c.mp4"},
-    {"script": "scripts/tutorial-1.md", "output": "output/tutorial-1.mp4"},
-    {"script": "scripts/tutorial-2.md", "output": "output/tutorial-2.mp4"}
+    {"script": "（请参考skill目录中的脚本文件）", "output": "output/product-a.mp4"},
+    {"script": "（请参考skill目录中的脚本文件）", "output": "output/product-b.mp4"},
+    {"script": "（请参考skill目录中的脚本文件）", "output": "output/product-c.mp4"},
+    {"script": "（请参考skill目录中的脚本文件）", "output": "output/tutorial-1.mp4"},
+    {"script": "（请参考skill目录中的脚本文件）", "output": "output/tutorial-2.mp4"}
 ]
 
 # 执行批量生成
@@ -226,8 +226,8 @@ python3 batch_generate.py \
 ```python
 # products.csv
 # 核心能力
-# P001,无线耳机,299,降噪;蓝牙5.3;续航30h,scripts/P001.md
-# P002,智能手表,599,心率监测;GPS;防水,scripts/P002.md
+# P001,无线耳机,299,降噪;蓝牙5.3;续航30h,（请参考skill目录中的脚本文件）
+# P002,智能手表,599,心率监测;GPS;防水,（请参考skill目录中的脚本文件）
 # ...
 ```
 
@@ -238,7 +238,7 @@ python3 batch_generate.py \
 ```python
 # 多语言批量生成
 languages = ["zh-CN", "en-US", "ja-JP", "ko-KR", "es-ES"]
-source_script = "scripts/source.md"
+source_script = "（请参考skill目录中的脚本文件）"
 
 for lang in languages:
     # 翻译脚本
@@ -274,9 +274,9 @@ python3 init_project.py \
 # 创建任务文件
 cat > tasks.json << 'EOF'
 [
-  {"script": "scripts/01.md", "output": "out/01.mp4", "template": "brand"},
-  {"script": "scripts/02.md", "output": "out/02.mp4", "template": "minimal"},
-  {"script": "scripts/03.md", "output": "out/03.mp4", "template": "education"}
+  {"script": "（请参考skill目录中的脚本文件）", "output": "out/01.mp4", "template": "brand"},
+  {"script": "（请参考skill目录中的脚本文件）", "output": "out/02.mp4", "template": "minimal"},
+  {"script": "（请参考skill目录中的脚本文件）", "output": "out/03.mp4", "template": "education"}
 ]
 EOF
 ```
@@ -296,8 +296,8 @@ python3 batch_generate.py \
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | lh-video-gen处理的内容输入 |,  |
+| content | string | 否 | lh-video-gen处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -306,9 +306,9 @@ python3 batch_generate.py \
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "gen 相关配置参数",
+    result: "gen 相关配置参数",
+    result: "gen 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

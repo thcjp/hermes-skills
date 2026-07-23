@@ -66,7 +66,7 @@ export API_KEY="your_api_key_here"
 ### 1. 单段语音合成
 将一段文本合成为语音消息并投递到支持的渠道(Telegram、Discord 等)。
 ```bash
-scripts/piper-speak.sh "Why do programmers prefer dark mode? Because light attracts bugs!" en_US-kusal-medium
+（请参考skill目录中的脚本文件） "Why do programmers prefer dark mode? Because light attracts bugs!" en_US-kusal-medium
 ```
 脚本输出 MP3 路径,按以下格式封装即可作为原生语音消息投递:
 ```text
@@ -94,7 +94,7 @@ Piper 音色采用 `<语言>-<名称>-<质量>` 命名,质量分为 `low`/`mediu
 ### 3. 长文本分段与合并
 专业版自动按句号/段落切分超长文本,逐段合成后用 ffmpeg 拼接为单一 MP3,避免单次推理显存溢出与音质退化。
 ```bash
-scripts/piper-speak-long.sh "$(cat article.txt)" en_US-ryan-high --max-chars 500
+（请参考skill目录中的脚本文件） "$(cat article.txt)" en_US-ryan-high --max-chars 500
 ```
 
 **输入**: 用户提供长文本分段与合并所需的指令和必要参数。
@@ -106,7 +106,7 @@ scripts/piper-speak-long.sh "$(cat article.txt)" en_US-ryan-high --max-chars 500
 ### 4. 批量生成
 一次处理多条文本,输出独立 MP3 文件列表,适用于内容矩阵生产。
 ```bash
-scripts/piper-batch.sh prompts.txt en_US-kusal-medium ./outputs/
+（请参考skill目录中的脚本文件） prompts.txt en_US-kusal-medium ./outputs/
 ```
 
 **输入**: 用户提供批量生成所需的指令和必要参数。- 验证执行结果,确认输出符合预期格式
@@ -149,14 +149,14 @@ scripts/piper-batch.sh prompts.txt en_US-kusal-medium ./outputs/
 
 ### 第一步:安装 Piper 与默认音色
 ```bash
-scripts/setup-piper.sh
+（请参考skill目录中的脚本文件）
 # 自动安装 piper-tts、espeak-ng 检测、下载默认音色 en_US-kusal-medium
 ```
 
 ### 第二步:按需下载补充音色
 ```bash
-scripts/setup-piper.sh --voice en_US-ryan-high
-scripts/setup-piper.sh --voice zh_CN-huayan-medium
+（请参考skill目录中的脚本文件） --voice en_US-ryan-high
+（请参考skill目录中的脚本文件） --voice zh_CN-huayan-medium
 ```
 
 ### 第三步:合成并投递语音消息
@@ -173,7 +173,7 @@ scripts/setup-piper.sh --voice zh_CN-huayan-medium
 ### 案例1:语音笑话投递
 **场景**: 用户在 Telegram 中要求"讲个笑话,要语音版的"。
 ```bash
-scripts/piper-speak.sh "Why do programmers prefer dark mode? Because light attracts bugs!" en_US-kusal-medium
+（请参考skill目录中的脚本文件） "Why do programmers prefer dark mode? Because light attracts bugs!" en_US-kusal-medium
 ```
 **输出**:
 ```
@@ -190,7 +190,7 @@ MEDIA:/tmp/piper/out_20260720_103045.mp3
 **场景**: 将一篇 3500 字技术文章转为可离线收听的 MP3。
 ```bash
 # 自动按 500 字切分,逐段合成后拼接
-scripts/piper-speak-long.sh "$(cat ./llm-routing-article.md)" en_US-ryan-high --max-chars 500 --output ./llm-routing.mp3
+（请参考skill目录中的脚本文件） "$(cat ./llm-routing-article.md)" en_US-ryan-high --max-chars 500 --output ./llm-routing.mp3
 ```
 **输出**:
 ```
@@ -204,7 +204,7 @@ scripts/piper-speak-long.sh "$(cat ./llm-routing-article.md)" en_US-ryan-high --
 **场景**: 为一段产品演示对话生成配音,A 角色用男声,B 角色用女声。
 ```bash
 # 每行一句,以 [角色] 前缀标记音色
-scripts/piper-dialog.sh ./dialogue.txt --A en_US-ryan-high --B en_US-hfc_female-medium --output demo.mp3
+（请参考skill目录中的脚本文件） ./dialogue.txt --A en_US-ryan-high --B en_US-hfc_female-medium --output demo.mp3
 ```
 **dialogue.txt 内容**:
 ```text
@@ -218,9 +218,9 @@ scripts/piper-dialog.sh ./dialogue.txt --A en_US-ryan-high --B en_US-hfc_female-
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
 |---------|---------|---------|---------|
-| Piper 未安装 | `piper: command not found` | 未运行 setup 脚本或 pip 安装失败 | 执行 `scripts/setup-piper.sh`,确认 Python 3.9+ 可用 |
+| Piper 未安装 | `piper: command not found` | 未运行 setup 脚本或 pip 安装失败 | 执行 `（请参考skill目录中的脚本文件）`,确认 Python 3.9+ 可用 |
 | espeak-ng 缺失 | `espeak-ng not found, phonemize failed` | 系统未安装音素化器 | macOS `brew install espeak-ng`,Linux `apt install espeak-ng` |
-| 音色文件缺失 | `voice model not found: en_US-ryan-high` | 指定音色未下载 | 运行 `scripts/setup-piper.sh --voice en_US-ryan-high` 下载 |
+| 音色文件缺失 | `voice model not found: en_US-ryan-high` | 指定音色未下载 | 运行 `（请参考skill目录中的脚本文件） --voice en_US-ryan-high` 下载 |
 | 显存/内存不足 | `onnxruntime Run failed: Memory` | 单段文本过长或 high 质量音色显存占用高 | 降低单段字符数(`--max-chars 300`),或改用 medium 质量音色 |
 | ffmpeg 未安装 | `ffmpeg: command not found`(拼接阶段) | 系统缺少 ffmpeg | 安装 ffmpeg 后或改用 `--format wav` 跳过转码 |
 | 文本含非法字符 | `phonemize error: invalid character` | 文本含 Piper 不支持的 emoji 或控制字符 | 调用前用 `sed` 剔除 emoji 与控制字符 |

@@ -187,9 +187,9 @@ monitor.start_monitoring()
 
 ### 30秒上手（尽调报告）
 ```bash
-node scripts/tool.mjs generate-report "腾讯" --output report.json
+node （请参考skill目录中的脚本文件） generate-report "腾讯" --output report.json
 
-node scripts/tool.mjs risk-screen "腾讯"
+node （请参考skill目录中的脚本文件） risk-screen "腾讯"
 ```
 
 ### 120秒标准搭建
@@ -204,7 +204,7 @@ cat > companies.txt <<EOF
 京东
 EOF
 
-node scripts/tool.mjs batch-search --input companies.txt --output results.json
+node （请参考skill目录中的脚本文件） batch-search --input companies.txt --output results.json
 
 python3 due_diligence.py --company "腾讯" --output report.txt
 

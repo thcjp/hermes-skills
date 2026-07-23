@@ -87,7 +87,7 @@ suggested_price: 99.9
 
 ```python
 #!/usr/bin/env python3
-# scripts/batch_lookup.py — 批量地址销售税查询
+# （请参考skill目录中的脚本文件） — 批量地址销售税查询
 import asyncio
 import aiohttp
 import json
@@ -154,7 +154,7 @@ if __name__ == "__main__":
 
 ```python
 #!/usr/bin/env python3
-# scripts/cached_lookup.py — 带本地缓存的税率查询
+# （请参考skill目录中的脚本文件） — 带本地缓存的税率查询
 import json
 import time
 import hashlib
@@ -226,7 +226,7 @@ if __name__ == "__main__":
 
 ```python
 #!/usr/bin/env python3
-# scripts/compliance_report.py — 税务合规报告生成
+# （请参考skill目录中的脚本文件） — 税务合规报告生成
 import json
 import csv
 from datetime import datetime, date
@@ -322,10 +322,10 @@ pip install aiohttp requests
 export ZIPTAX_API_KEY="your-key"
 
 # 批量查询
-python3 scripts/batch_lookup.py
+python3 （请参考skill目录中的脚本文件）
 
 # 生成合规报告
-python3 scripts/compliance_report.py
+python3 （请参考skill目录中的脚本文件）
 
 # 查看 CI 集成
 cat .github/workflows/taxrate-sync.yml
@@ -354,10 +354,10 @@ jobs:
       - name: 同步税率并生成报告
         env:
           ZIPTAX_API_KEY: ${{ secrets.ZIPTAX_API_KEY }}
-        run: python3 scripts/compliance_report.py
+        run: python3 （请参考skill目录中的脚本文件）
 
       - name: 检测异常波动
-        run: python3 scripts/detect-anomaly.py reports/compliance/ || (echo "税率异常" && exit 1)
+        run: python3 （请参考skill目录中的脚本文件） reports/compliance/ || (echo "税率异常" && exit 1)
 
       - name: 提交报告
         run: |

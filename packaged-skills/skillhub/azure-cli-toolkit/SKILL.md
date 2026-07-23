@@ -300,7 +300,7 @@ EOF
 
 ```bash
 # 执行部署脚本
-./.azure-toolkit/scripts/deploy.sh prod
+./.azure-toolkit/（请参考skill目录中的脚本文件） prod
 ```
 
 #
@@ -308,7 +308,7 @@ EOF
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | azure-cli-toolkit处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式

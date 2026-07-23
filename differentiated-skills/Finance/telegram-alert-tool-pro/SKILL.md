@@ -102,7 +102,7 @@ triggers:
 
 ```bash
 # 多群组推送
-python3 scripts/notify.py broadcast \
+python3 （请参考skill目录中的脚本文件） broadcast \
   --message "买入信号: AAPL 突破阻力位180" \
   --chat-ids "@group1,@group2,@group3" \
   --priority high \
@@ -120,7 +120,7 @@ python3 scripts/notify.py broadcast \
 
 ```bash
 # 设置复合触发
-python3 scripts/alert.py add \
+python3 （请参考skill目录中的脚本文件） add \
   --name "BTC突破+量能" \
   --conditions "price:BTC-USD:above:65000,volume:BTC-USD:above:1000000000" \
   --logic AND \
@@ -128,7 +128,7 @@ python3 scripts/alert.py add \
   --priority high
 
 # 启动监控
-python3 scripts/alert.py monitor --multi-channel
+python3 （请参考skill目录中的脚本文件） monitor --multi-channel
 ```
 
 ### 场景三：定时市场播报
@@ -137,7 +137,7 @@ python3 scripts/alert.py monitor --multi-channel
 
 ```bash
 # 设置定时播报
-python3 scripts/schedule.py add \
+python3 （请参考skill目录中的脚本文件） add \
   --name "每日市场播报" \
   --times "09:00,15:00" \
   --message-type "market_summary" \
@@ -170,17 +170,17 @@ cp config_pro_template.yaml config_pro.yaml
 
 ```bash
 # 多群组广播
-python3 scripts/notify.py broadcast --message "信号" --chat-ids "@g1,@g2,@g3"
+python3 （请参考skill目录中的脚本文件） broadcast --message "信号" --chat-ids "@g1,@g2,@g3"
 
 # 复合告警
-python3 scripts/alert.py add --conditions "price:AAPL:above:180,volume:AAPL:above:100M" --logic AND
+python3 （请参考skill目录中的脚本文件） add --conditions "price:AAPL:above:180,volume:AAPL:above:100M" --logic AND
 
 # 定时播报
-python3 scripts/schedule.py add --times "09:00,15:00" --message-type market_summary
+python3 （请参考skill目录中的脚本文件） add --times "09:00,15:00" --message-type market_summary
 
 # 告警历史分析
-python3 scripts/history.py stats --period 30d
-python3 scripts/history.py export --format excel
+python3 （请参考skill目录中的脚本文件） stats --period 30d
+python3 （请参考skill目录中的脚本文件） export --format excel
 ```
 
 #

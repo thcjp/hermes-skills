@@ -74,16 +74,16 @@ suggested_price: 29.9
 
 ```bash
 # 1. 预览整理方案（不实际移动文件）
-python3 scripts/organizer.py organize ~/Downloads --preview
+python3 （请参考skill目录中的脚本文件） organize ~/Downloads --preview
 
 # 2. 确认方案后执行整理
-python3 scripts/organizer.py organize ~/Downloads
+python3 （请参考skill目录中的脚本文件） organize ~/Downloads
 
 # 3. 查看整理统计报告
-python3 scripts/organizer.py stats ~/Downloads
+python3 （请参考skill目录中的脚本文件） stats ~/Downloads
 
 # 4. 按日期整理
-python3 scripts/organizer.py by-date ~/Downloads --preview
+python3 （请参考skill目录中的脚本文件） by-date ~/Downloads --preview
 ```
 
 ### 可复制模板
@@ -99,13 +99,13 @@ python3 scripts/organizer.py by-date ~/Downloads --preview
 
 每周日执行下载文件夹自动整理：
 1. 预览整理方案
-   python3 scripts/organizer.py organize ~/Downloads --preview
+   python3 （请参考skill目录中的脚本文件） organize ~/Downloads --preview
 
 2. 确认后执行
-   python3 scripts/organizer.py organize ~/Downloads
+   python3 （请参考skill目录中的脚本文件） organize ~/Downloads
 
 3. 查看统计报告确认结果
-   python3 scripts/organizer.py stats ~/Downloads
+   python3 （请参考skill目录中的脚本文件） stats ~/Downloads
 ```
 
 ---
@@ -141,10 +141,10 @@ python3 scripts/organizer.py by-date ~/Downloads --preview
 
 ```bash
 # 按天整理
-python3 scripts/organizer.py by-date ~/Downloads --granularity day
+python3 （请参考skill目录中的脚本文件） by-date ~/Downloads --granularity day
 
 # 按月整理
-python3 scripts/organizer.py by-date ~/Downloads --granularity month
+python3 （请参考skill目录中的脚本文件） by-date ~/Downloads --granularity month
 ```
 
 **输入**: 用户提供按日期自动归类所需的指令和必要参数。
@@ -202,13 +202,13 @@ python3 scripts/organizer.py by-date ~/Downloads --granularity month
 **解决方案**：
 ```bash
 # 预览整理方案
-python3 scripts/organizer.py organize ~/Downloads --preview
+python3 （请参考skill目录中的脚本文件） organize ~/Downloads --preview
 
 # 确认后执行
-python3 scripts/organizer.py organize ~/Downloads
+python3 （请参考skill目录中的脚本文件） organize ~/Downloads
 
 # 查看统计报告
-python3 scripts/organizer.py stats ~/Downloads
+python3 （请参考skill目录中的脚本文件） stats ~/Downloads
 ```
 
 **效果**：一键将下载文件夹按类型归类，图片归入图片目录、文档归入文档目录，整理统计报告展示文件分布，5分钟完成原本1小时的手动整理。
@@ -220,10 +220,10 @@ python3 scripts/organizer.py stats ~/Downloads
 **解决方案**：
 ```bash
 # 按类型整理桌面
-python3 scripts/organizer.py by-type ~/Desktop
+python3 （请参考skill目录中的脚本文件） by-type ~/Desktop
 
 # 生成整理报告
-python3 scripts/organizer.py stats ~/Desktop --report
+python3 （请参考skill目录中的脚本文件） stats ~/Desktop --report
 ```
 
 **效果**：桌面文件自动归类到子目录，截图归入图片、文档归入文档，桌面恢复整洁，找文件效率提升。
@@ -235,10 +235,10 @@ python3 scripts/organizer.py stats ~/Desktop --report
 **解决方案**：
 ```bash
 # 按类型整理项目目录
-python3 scripts/organizer.py by-type ~/Projects/my-project --preview
+python3 （请参考skill目录中的脚本文件） by-type ~/Projects/my-project --preview
 
 # 确认后执行
-python3 scripts/organizer.py by-type ~/Projects/my-project
+python3 （请参考skill目录中的脚本文件） by-type ~/Projects/my-project
 ```
 
 **效果**：项目目录按类型初步分类，代码文件、文档、图片各归各位，为后续精细整理奠定基础。
@@ -261,7 +261,7 @@ python3 scripts/organizer.py by-type ~/Projects/my-project
 
 ```text
 用法：
-  python3 scripts/organizer.py <命令> <路径> [选项]
+  python3 （请参考skill目录中的脚本文件） <命令> <路径> [选项]
 
 命令：
   organize <路径>    综合整理（类型+日期）
@@ -278,10 +278,10 @@ python3 scripts/organizer.py by-type ~/Projects/my-project
   --help             显示帮助
 
 示例：
-  python3 scripts/organizer.py organize ~/Downloads --preview
-  python3 scripts/organizer.py by-type ~/Desktop
-  python3 scripts/organizer.py by-date ~/Downloads --granularity month
-  python3 scripts/organizer.py stats ~/Desktop --report
+  python3 （请参考skill目录中的脚本文件） organize ~/Downloads --preview
+  python3 （请参考skill目录中的脚本文件） by-type ~/Desktop
+  python3 （请参考skill目录中的脚本文件） by-date ~/Downloads --granularity month
+  python3 （请参考skill目录中的脚本文件） stats ~/Desktop --report
 ```
 
 ---

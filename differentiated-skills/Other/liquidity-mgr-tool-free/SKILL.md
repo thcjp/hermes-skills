@@ -94,17 +94,17 @@ suggested_price: 29.9
 
 ```bash
 # 查询我的 V3 头寸
-{baseDir}/scripts/liq.sh positions --version v3 --address 0xYOUR
+{baseDir}/（请参考skill目录中的脚本文件） positions --version v3 --address 0xYOUR
 
 # 查询池子信息
-{baseDir}/scripts/liq.sh pool --version v3 --pool 0xPOOL
+{baseDir}/（请参考skill目录中的脚本文件） pool --version v3 --pool 0xPOOL
 ```
 
 ### 场景二：添加流动性
 
 ```bash
 # V3 集中流动性
-{baseDir}/scripts/liq.sh add \
+{baseDir}/（请参考skill目录中的脚本文件） add \
   --version v3 \
   --token0 WETH \
   --token1 USDC \
@@ -229,13 +229,13 @@ print(f"IL: {impermanent_loss(4):.2%}")   # IL: -20.00%
 
 ```bash
 # 查询头寸详情
-{baseDir}/scripts/liq.sh position --id 12345
+{baseDir}/（请参考skill目录中的脚本文件） position --id 12345
 
 # 查看收益
-{baseDir}/scripts/liq.sh earnings --id 12345
+{baseDir}/（请参考skill目录中的脚本文件） earnings --id 12345
 
 # 检查区间偏离
-{baseDir}/scripts/liq.sh deviation --id 12345
+{baseDir}/（请参考skill目录中的脚本文件） deviation --id 12345
 ```
 
 ## V2/V3/V4 对比

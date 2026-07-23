@@ -39,20 +39,20 @@ pricing_model: "per_use"
 单条编解码，立即可用：
 
 ```bash
-node ./bin/emoji-toolkit.js encode "🥜" "隐藏消息"
+node （请参考skill目录中的脚本文件） encode "🥜" "隐藏消息"
 
-node ./bin/emoji-toolkit.js decode "<粘贴消息>"
+node （请参考skill目录中的脚本文件） decode "<粘贴消息>"
 ```
 
 ### 标准搭建（<120秒）
 启用批量处理与加密层：
 
 ```bash
-node ./bin/emoji-toolkit.js --batch encode messages.txt --output encoded/
+node （请参考skill目录中的脚本文件） --batch encode messages.txt --output encoded/
 
-node ./bin/emoji-toolkit.js encode "🥜" "机密消息" --encrypt --key "my-secret-key"
+node （请参考skill目录中的脚本文件） encode "🥜" "机密消息" --encrypt --key "my-secret-key"
 
-node ./bin/emoji-toolkit.js --batch decode encoded/ --output decoded/
+node （请参考skill目录中的脚本文件） --batch decode encoded/ --output decoded/
 ```
 
 > 详细内容已移至 `references/detail.md` - ### 完整搭建（<300秒）
@@ -73,13 +73,13 @@ node ./bin/emoji-toolkit.js --batch decode encoded/ --output decoded/
 多消息一键处理，支持并行与检查点：
 
 ```bash
-node ./bin/emoji-toolkit.js --batch encode messages.txt --output encoded/
+node （请参考skill目录中的脚本文件） --batch encode messages.txt --output encoded/
 
-node ./bin/emoji-toolkit.js --batch decode encoded/ --output decoded/ --parallel 4
+node （请参考skill目录中的脚本文件） --batch decode encoded/ --output decoded/ --parallel 4
 
-node ./bin/emoji-toolkit.js --batch encode messages.txt --encrypt --key "secret"
+node （请参考skill目录中的脚本文件） --batch encode messages.txt --encrypt --key "secret"
 
-node ./bin/emoji-toolkit.js --batch decode encoded/ --checkpoint --resume
+node （请参考skill目录中的脚本文件） --batch decode encoded/ --checkpoint --resume
 ```
 
 **专业版优势**：
@@ -94,11 +94,11 @@ node ./bin/emoji-toolkit.js --batch decode encoded/ --checkpoint --resume
 
 ### 3. 自定义编码方案（专业版）
 ```bash
-node ./bin/emoji-toolkit.js encode "🥜" "消息" --mapping custom-byte-map.json
+node （请参考skill目录中的脚本文件） encode "🥜" "消息" --mapping custom-byte-map.json
 
-node ./bin/emoji-toolkit.js encode "🥜" "消息" --algorithm variant-selector-v2
+node （请参考skill目录中的脚本文件） encode "🥜" "消息" --algorithm variant-selector-v2
 
-node ./bin/emoji-toolkit.js --export-codec --output my-codec.json
+node （请参考skill目录中的脚本文件） --export-codec --output my-codec.json
 ```
 
 | 编码方案 | 说明 | 适用场景 |
@@ -116,11 +116,11 @@ node ./bin/emoji-toolkit.js --export-codec --output my-codec.json
 在变体选择器编码上叠加AES加密：
 
 ```bash
-node ./bin/emoji-toolkit.js encode "🥜" "机密消息" --encrypt --key "my-secret-key"
+node （请参考skill目录中的脚本文件） encode "🥜" "机密消息" --encrypt --key "my-secret-key"
 
-node ./bin/emoji-toolkit.js decode "<消息>" --decrypt --key "my-secret-key"
+node （请参考skill目录中的脚本文件） decode "<消息>" --decrypt --key "my-secret-key"
 
-node ./bin/emoji-toolkit.js encode "🥜" "消息" --encrypt --key-env "EMOJI_ENCRYPT_KEY"
+node （请参考skill目录中的脚本文件） encode "🥜" "消息" --encrypt --key-env "EMOJI_ENCRYPT_KEY"
 ```
 
 | 加密特性 | 说明 |
@@ -137,11 +137,11 @@ node ./bin/emoji-toolkit.js encode "🥜" "消息" --encrypt --key-env "EMOJI_EN
 
 ### 5. 多载体表情管理（专业版）
 ```bash
-node ./bin/emoji-toolkit.js --carrier-library --list
+node （请参考skill目录中的脚本文件） --carrier-library --list
 
-node ./bin/emoji-toolkit.js encode --auto-carrier "消息" --output encoded.txt
+node （请参考skill目录中的脚本文件） encode --auto-carrier "消息" --output encoded.txt
 
-node ./bin/emoji-toolkit.js --carrier-library --add "🎯" --tags "目标,精准"
+node （请参考skill目录中的脚本文件） --carrier-library --add "🎯" --tags "目标,精准"
 ```
 
 | 载体选择策略 | 说明 | 适用场景 |
@@ -157,11 +157,11 @@ node ./bin/emoji-toolkit.js --carrier-library --add "🎯" --tags "目标,精准
 
 ### 6. 传输可靠性检测（专业版）
 ```bash
-node ./bin/emoji-toolkit.js --transport-check --app telegram
-node ./bin/emoji-toolkit.js --transport-check --app wechat
-node ./bin/emoji-toolkit.js --transport-check --app whatsapp
+node （请参考skill目录中的脚本文件） --transport-check --app telegram
+node （请参考skill目录中的脚本文件） --transport-check --app wechat
+node （请参考skill目录中的脚本文件） --transport-check --app whatsapp
 
-node ./bin/emoji-toolkit.js --transport-check --all --report compatibility.json
+node （请参考skill目录中的脚本文件） --transport-check --all --report compatibility.json
 ```
 
 | 检测维度 | 说明 | 检测方法 |
@@ -185,11 +185,11 @@ node ./bin/emoji-toolkit.js --transport-check --all --report compatibility.json
 
 ### 7. 代币安全验证（专业版）
 ```bash
-node ./bin/emoji-toolkit.js decode "<消息>" --verify-token
+node （请参考skill目录中的脚本文件） decode "<消息>" --verify-token
 
-node ./bin/emoji-toolkit.js --batch verify tokens/ --output verified/
+node （请参考skill目录中的脚本文件） --batch verify tokens/ --output verified/
 
-node ./bin/emoji-toolkit.js --verify-cache --status
+node （请参考skill目录中的脚本文件） --verify-cache --status
 ```
 
 | 验证项目 | 说明 | 获取方式 |
@@ -205,13 +205,13 @@ node ./bin/emoji-toolkit.js --verify-cache --status
 
 ### 8. 隐藏水印管理系统（专业版）
 ```bash
-node ./bin/emoji-toolkit.js --watermark --batch embed documents/ \
+node （请参考skill目录中的脚本文件） --watermark --batch embed documents/ \
   --watermark "作者ID:12345" --output watermarked/
 
-node ./bin/emoji-toolkit.js --watermark --trace "<可疑文档>"
+node （请参考skill目录中的脚本文件） --watermark --trace "<可疑文档>"
 
-node ./bin/emoji-toolkit.js --watermark --library --list
-node ./bin/emoji-toolkit.js --watermark --stats
+node （请参考skill目录中的脚本文件） --watermark --library --list
+node （请参考skill目录中的脚本文件） --watermark --stats
 ```
 
 | 水印功能 | 说明 | 适用场景 |
@@ -233,12 +233,12 @@ node ./bin/emoji-toolkit.js --watermark --stats
 
 **操作流程**：
 ```bash
-node ./bin/emoji-toolkit.js encode "🥜" "收购方案已批准" \
+node （请参考skill目录中的脚本文件） encode "🥜" "收购方案已批准" \
   --encrypt --key-env "CORP_COMM_KEY"
 
-node ./bin/emoji-toolkit.js --transport-check --app telegram
+node （请参考skill目录中的脚本文件） --transport-check --app telegram
 
-node ./bin/emoji-toolkit.js decode "<消息>" --decrypt --key-env "CORP_COMM_KEY"
+node （请参考skill目录中的脚本文件） decode "<消息>" --decrypt --key-env "CORP_COMM_KEY"
 ```
 
 **效果**：机密信息通过表情符号加密传输，聊天记录中只显示表情符号，即使消息泄露也无法解密。
@@ -248,13 +248,13 @@ node ./bin/emoji-toolkit.js decode "<消息>" --decrypt --key-env "CORP_COMM_KEY
 
 **操作流程**：
 ```bash
-node ./bin/emoji-toolkit.js --batch encode tokens.txt --output encoded/
+node （请参考skill目录中的脚本文件） --batch encode tokens.txt --output encoded/
 
-node ./bin/emoji-toolkit.js --batch encode tokens.txt --auto-carrier --output encoded/
+node （请参考skill目录中的脚本文件） --batch encode tokens.txt --auto-carrier --output encoded/
 
-node ./bin/emoji-toolkit.js --batch verify tokens/ --output verified/
+node （请参考skill目录中的脚本文件） --batch verify tokens/ --output verified/
 
-node ./bin/emoji-toolkit.js --batch report --output distribution-report.json
+node （请参考skill目录中的脚本文件） --batch report --output distribution-report.json
 ```
 
 **效果**：100个代币批量编码分发，每个用户收到不同的表情符号消息，代币有效性预先验证。
@@ -264,12 +264,12 @@ node ./bin/emoji-toolkit.js --batch report --output distribution-report.json
 
 **操作流程**：
 ```bash
-node ./bin/emoji-toolkit.js --watermark --batch embed documents/ \
+node （请参考skill目录中的脚本文件） --watermark --batch embed documents/ \
   --unique-id --output watermarked/
 
-node ./bin/emoji-toolkit.js --watermark --trace "<泄露文档>"
+node （请参考skill目录中的脚本文件） --watermark --trace "<泄露文档>"
 
-node ./bin/emoji-toolkit.js --watermark --trace "<泄露文档>" --report trace.json
+node （请参考skill目录中的脚本文件） --watermark --trace "<泄露文档>" --report trace.json
 ```
 
 **效果**：每篇文档嵌入唯一水印，泄露时可精确定位来源，版权保护自动化。
@@ -279,11 +279,11 @@ node ./bin/emoji-toolkit.js --watermark --trace "<泄露文档>" --report trace.
 
 **操作流程**：
 ```bash
-node ./bin/emoji-toolkit.js --batch decode chat-logs/ --output decoded/
+node （请参考skill目录中的脚本文件） --batch decode chat-logs/ --output decoded/
 
-node ./bin/emoji-toolkit.js --batch detect-encrypted chat-logs/
+node （请参考skill目录中的脚本文件） --batch detect-encrypted chat-logs/
 
-node ./bin/emoji-toolkit.js --batch audit chat-logs/ --report audit.json
+node （请参考skill目录中的脚本文件） --batch audit chat-logs/ --report audit.json
 ```
 
 **效果**：通讯记录中所有隐藏消息被提取分析，敏感信息泄露可追溯。
@@ -293,11 +293,11 @@ node ./bin/emoji-toolkit.js --batch audit chat-logs/ --report audit.json
 
 **操作流程**：
 ```bash
-node ./bin/emoji-toolkit.js --transport-check --all --report platforms.json
+node （请参考skill目录中的脚本文件） --transport-check --all --report platforms.json
 
-node ./bin/emoji-toolkit.js encode "🥜" "消息" --transport telegram
+node （请参考skill目录中的脚本文件） encode "🥜" "消息" --transport telegram
 
-node ./bin/emoji-toolkit.js decode "<消息>"
+node （请参考skill目录中的脚本文件） decode "<消息>"
 ```
 
 **效果**：根据平台兼容性自动调整编码策略，确保消息在各平台完整传输。
@@ -307,11 +307,11 @@ node ./bin/emoji-toolkit.js decode "<消息>"
 
 **操作流程**：
 ```bash
-node ./bin/emoji-toolkit.js decode "<消息>" --verify-token --json
+node （请参考skill目录中的脚本文件） decode "<消息>" --verify-token --json
 
-node ./bin/emoji-toolkit.js encode "🥜" "tokenB..." --auto-carrier
+node （请参考skill目录中的脚本文件） encode "🥜" "tokenB..." --auto-carrier
 
-node ./bin/emoji-toolkit.js --batch process wallet-transactions.json
+node （请参考skill目录中的脚本文件） --batch process wallet-transactions.json
 ```
 
 **效果**：钱包集成表情符号代币传输，收发过程自动化，代币有效性实时验证。

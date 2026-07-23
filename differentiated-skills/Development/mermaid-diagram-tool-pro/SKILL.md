@@ -138,7 +138,7 @@ flowchart TB
 
 ```bash
 # 从PRD文档批量生成图表
-node scripts/batch-generate.mjs \
+node （请参考skill目录中的脚本文件） \
   --input docs/prd/ \
   --output docs/diagrams/ \
   --format mermaid \
@@ -172,7 +172,7 @@ themeVariables:
 
 ```bash
 # 应用品牌主题生成图表
-node scripts/render.mjs \
+node （请参考skill目录中的脚本文件） \
   --input diagrams/流程图.mmd \
   --theme theme/brand-theme.yaml \
   --output output/流程图.svg
@@ -203,14 +203,14 @@ cp -r config/templates/* templates/
 
 ```bash
 # 命令行生成单张图表
-node scripts/render.mjs --input input.mmd --output output.svg --theme theme/brand-theme.yaml
+node （请参考skill目录中的脚本文件） --input input.mmd --output output.svg --theme theme/brand-theme.yaml
 ```
 
 ### 3. 批量生成
 
 ```bash
 # 从文档目录批量生成
-node scripts/batch-generate.mjs \
+node （请参考skill目录中的脚本文件） \
   --input docs/specs/ \
   --output docs/diagrams/ \
   --embed \
@@ -245,7 +245,7 @@ jobs:
             }
           done
       - name: 校验嵌入图表
-        run: node scripts/validate-embed.mjs docs/
+        run: node （请参考skill目录中的脚本文件） docs/
 ```
 
 ## 示例
@@ -375,14 +375,14 @@ flowchart TB
 
 ```bash
 # CI中校验嵌入图表与源文件同步
-node scripts/validate-embed.mjs docs/ --strict
+node （请参考skill目录中的脚本文件） docs/ --strict
 ```
 
 ### 4. 批量生成与PRD对齐
 
 ```bash
 # PRD变更时重新生成对应图表
-node scripts/batch-generate.mjs \
+node （请参考skill目录中的脚本文件） \
   --input docs/prd/订单PRD.md \
   --output docs/diagrams/ \
   --rule "流程图→flowchart,接口→sequence,状态→state" \

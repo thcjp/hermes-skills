@@ -82,13 +82,13 @@ homepage: "https://skillhub.cn"
 ### 单文件压缩
 
 ```bash
-node scripts/memory-compress.js memory/2026-07-18.md
+node （请参考skill目录中的脚本文件） memory/2026-07-18.md
 
 # 指定输出文件
-node scripts/memory-compress.js memory/2026-07-18.md /tmp/compressed.md
+node （请参考skill目录中的脚本文件） memory/2026-07-18.md /tmp/compressed.md
 
 # 压缩后追加到精选记忆
-node scripts/memory-compress.js memory/2026-07-18.md /tmp/today.md
+node （请参考skill目录中的脚本文件） memory/2026-07-18.md /tmp/today.md
 cat /tmp/today.md >> MEMORY.md
 ```
 
@@ -96,7 +96,7 @@ cat /tmp/today.md >> MEMORY.md
 
 ```bash
 for file in memory/2026-07-{11..18}.md; do
-    [ -f "$file" ] && node scripts/memory-compress.js "$file" "/tmp/$(basename $file)"
+    [ -f "$file" ] && node （请参考skill目录中的脚本文件） "$file" "/tmp/$(basename $file)"
 done
 ```
 
@@ -213,7 +213,7 @@ done
 
 ```markdown
 ## 记忆维护（每 2-3 天）
-1. 运行：node scripts/memory-compress.js memory/YYYY-MM-DD.md /tmp/compressed.md
+1. 运行：node （请参考skill目录中的脚本文件） memory/YYYY-MM-DD.md /tmp/compressed.md
 2. 审查压缩结果准确性
 3. 追加：cat /tmp/compressed.md >> MEMORY.md
 4. 标记维护时间：date +%s > .last-memory-maintenance
@@ -223,10 +223,10 @@ done
 ## CLI 用法
 
 ```text
-node scripts/memory-compress.js <日志文件> [输出文件]
-node scripts/memory-compress.js --help
-node scripts/memory-compress.js --batch memory/2026-07-{11..18}.md
-node scripts/memory-compress.js --quality-report  # 输出质量评估
+node （请参考skill目录中的脚本文件） <日志文件> [输出文件]
+node （请参考skill目录中的脚本文件） --help
+node （请参考skill目录中的脚本文件） --batch memory/2026-07-{11..18}.md
+node （请参考skill目录中的脚本文件） --quality-report  # 输出质量评估
 ```
 
 ## 示例

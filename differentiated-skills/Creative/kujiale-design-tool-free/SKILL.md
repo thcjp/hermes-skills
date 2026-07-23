@@ -105,13 +105,13 @@ suggested_price: 29.9
 5. 渲染出图展示效果
 
 命令示例:
-node ./scripts/searchPlan.js --token=<token> --query="万科未来城" --areaId=<杭州id> --start=0 --num=20
-node ./scripts/getFloorplanInfo.js --planId=<planId>
-node ./scripts/createDesign.js --token=<token> --planId=<planId>
-node ./scripts/getTags.js --token=<token>
-node ./scripts/getStyles.js --token=<token> --tagItemIds=<id1,id2>
-node ./scripts/triggerLayout.js --token=<token> --designId=<designId> --tagIds=<id1> --styleId=<styleId> --applyDecorationStyle=true --buildCeiling=true --autoDesign=true
-node ./scripts/trigger-render.js --obsDesignId=<designId> --xToken=<token>
+node （请参考skill目录中的脚本文件） --token=<token> --query="万科未来城" --areaId=<杭州id> --start=0 --num=20
+node （请参考skill目录中的脚本文件） --planId=<planId>
+node （请参考skill目录中的脚本文件） --token=<token> --planId=<planId>
+node （请参考skill目录中的脚本文件） --token=<token>
+node （请参考skill目录中的脚本文件） --token=<token> --tagItemIds=<id1,id2>
+node （请参考skill目录中的脚本文件） --token=<token> --designId=<designId> --tagIds=<id1> --styleId=<styleId> --applyDecorationStyle=true --buildCeiling=true --autoDesign=true
+node （请参考skill目录中的脚本文件） --obsDesignId=<designId> --xToken=<token>
 ```
 
 ### 场景二:上传户型图识别设计
@@ -128,9 +128,9 @@ node ./scripts/trigger-render.js --obsDesignId=<designId> --xToken=<token>
 4. 后续流程同场景一
 
 命令示例:
-node ./scripts/getUploadToken.js --token=<token>
-node ./scripts/createBitmapTask.js --token=<token> --bitmap=<url>
-node ./scripts/getBitmapTaskResult.js --token=<token> --taskId=<taskId>
+node （请参考skill目录中的脚本文件） --token=<token>
+node （请参考skill目录中的脚本文件） --token=<token> --bitmap=<url>
+node （请参考skill目录中的脚本文件） --token=<token> --taskId=<taskId>
 ```
 
 ### 场景三:装修风格灵感探索
@@ -148,8 +148,8 @@ node ./scripts/getBitmapTaskResult.js --token=<token> --taskId=<taskId>
 5. 选择后触发布局与渲染
 
 命令示例:
-node ./scripts/getTags.js --token=<token>
-node ./scripts/getStyles.js --token=<token> --tagItemIds=<id1,id2>
+node （请参考skill目录中的脚本文件） --token=<token>
+node （请参考skill目录中的脚本文件） --token=<token> --tagItemIds=<id1,id2>
 ```
 
 ## 不适用场景
@@ -181,7 +181,7 @@ node ./scripts/getStyles.js --token=<token> --tagItemIds=<id1,id2>
 ### 第二步:版本校验
 
 ```bash
-node ./scripts/versionCheck.js --token=${token} --version=1.0.0
+node （请参考skill目录中的脚本文件） --token=${token} --version=1.0.0
 ```
 
 ### 第三步:启动设计流程

@@ -66,25 +66,25 @@ pricing_model: "per_use"
 | 翻译质量报告 | 字数、覆盖率、术语一致性统计 | Pro 新增 |
 ### 基础翻译
 
-执行基础翻译操作,处理用户输入并返回结果。
+执行基础翻译,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供基础翻译所需的参数和指令。
+**输入**: 用户提供基础翻译相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回基础翻译的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`基础翻译`相关配置参数进行设置
 ### 批量文件翻译
 
-执行批量文件翻译操作,处理用户输入并返回结果。
+执行批量文件翻译,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供批量文件翻译所需的参数和指令。
+**输入**: 用户提供批量文件翻译相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回批量文件翻译的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`批量文件翻译`相关配置参数进行设置
 ### 术语库管理
 
-执行术语库管理操作,处理用户输入并返回结果。
+执行术语库管理,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供术语库管理所需的参数和指令。
+**输入**: 用户提供术语库管理相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回术语库管理的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`术语库管理`相关配置参数进行设置
@@ -97,7 +97,7 @@ pricing_model: "per_use"
 
 ```bash
 #!/usr/bin/env bash
-# scripts/batch-translate.sh — 批量翻译文档目录
+# （请参考skill目录中的脚本文件） — 批量翻译文档目录
 set -euo pipefail
 
 SOURCE_DIR="docs"
@@ -256,7 +256,7 @@ OK, in Q1 we focus on user growth and retention.
 cp glossary.yaml docs/.glossary.yaml
 
 # 执行批量翻译
-bash scripts/batch-translate.sh
+bash （请参考skill目录中的脚本文件）
 
 # 查看翻译报告
 cat reports/translation-$(date +%Y%m%d).md
@@ -267,8 +267,8 @@ cat reports/translation-$(date +%Y%m%d).md
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
+| content | string | 否 | universal-translate处理的内容输入 |,  |
+| mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
 | skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |
 
@@ -279,9 +279,9 @@ cat reports/translation-$(date +%Y%m%d).md
   "success": true,
   "data": {
     "final_result": {
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明"
+      "translate_result": "translate_result_value",
+      "translate_metadata": "translate_metadata_value",
+      "translate_status": "translate_status_value"
     },
     "execution_log": [
       {
@@ -321,7 +321,7 @@ cat reports/translation-$(date +%Y%m%d).md
 }
 ```
 
-中间产物模板参考: `assets/（根据实际场景填充）`
+中间产物模板参考: `assets/universal-translate_template`
 
 ## 异常处理
 
@@ -397,14 +397,14 @@ jobs:
       - name: 批量翻译
         env:
           TRANSLATE_API_KEY: $相关信息
-        run: bash scripts/batch-translate.sh
+        run: bash （请参考skill目录中的脚本文件）
 
       - name: 翻译质量检查
         run: |
           # 检查术语一致性
-          python3 scripts/check-glossary.py docs/ docs.zh/
+          python3 （请参考skill目录中的脚本文件） docs/ docs.zh/
           # 检查禁用词
-          python3 scripts/check-forbidden.py docs.zh/
+          python3 （请参考skill目录中的脚本文件） docs.zh/
 
       - name: 生成翻译报告
         run: |

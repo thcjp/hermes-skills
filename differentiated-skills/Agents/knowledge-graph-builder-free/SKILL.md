@@ -113,11 +113,11 @@ cat >> memory/knowledge-graph/graph.jsonl << 'EOF'
 EOF
 
 # 已知限制
-python3 scripts/knowledge_graph.py validate
+python3 （请参考skill目录中的脚本文件） validate
 
 # 查询图谱
-python3 scripts/knowledge_graph.py list --type Person
-python3 scripts/knowledge_graph.py related --id proj_001 --rel has_task
+python3 （请参考skill目录中的脚本文件） list --type Person
+python3 （请参考skill目录中的脚本文件） related --id proj_001 --rel has_task
 ```
 
 ---
@@ -193,13 +193,13 @@ python3 scripts/knowledge_graph.py related --id proj_001 --rel has_task
 **验证命令**：
 ```bash
 # 验证整个图谱
-python3 scripts/knowledge_graph.py validate
+python3 （请参考skill目录中的脚本文件） validate
 
 # 验证单个实体
-python3 scripts/knowledge_graph.py validate --id task_001
+python3 （请参考skill目录中的脚本文件） validate --id task_001
 
 # 验证关系
-python3 scripts/knowledge_graph.py validate --relation blocks
+python3 （请参考skill目录中的脚本文件） validate --relation blocks
 ```
 
 **输入**: 用户提供约束验证所需的指令和必要参数。
@@ -227,22 +227,22 @@ python3 scripts/knowledge_graph.py validate --relation blocks
 ### 5. 图遍历查询
 ```bash
 # 按类型查询
-python3 scripts/knowledge_graph.py query --type Task --where '{"status":"open"}'
+python3 （请参考skill目录中的脚本文件） query --type Task --where '{"status":"open"}'
 
 # 按ID获取
-python3 scripts/knowledge_graph.py get --id task_001
+python3 （请参考skill目录中的脚本文件） get --id task_001
 
 # 查询关联实体
-python3 scripts/knowledge_graph.py related --id proj_001 --rel has_task
+python3 （请参考skill目录中的脚本文件） related --id proj_001 --rel has_task
 
 # 依赖说明
-python3 scripts/knowledge_graph.py dependencies --id task_001
+python3 （请参考skill目录中的脚本文件） dependencies --id task_001
 
 # 反向依赖查询
-python3 scripts/knowledge_graph.py dependents --id task_001
+python3 （请参考skill目录中的脚本文件） dependents --id task_001
 
 # 多跳遍历
-python3 scripts/knowledge_graph.py traverse --from p_001 --max-depth 3
+python3 （请参考skill目录中的脚本文件） traverse --from p_001 --max-depth 3
 ```
 
 **输入**: 用户提供图遍历查询所需的指令和必要参数。
@@ -324,15 +324,15 @@ for c in tasks:
 **使用方式**：
 ```bash
 # 创建项目知识图谱
-python3 scripts/knowledge_graph.py create --type Project --props '{"name":"新产品发布","status":"active"}'
-python3 scripts/knowledge_graph.py create --type Person --props '{"name":"李四","email":"li@example.com"}'
-python3 scripts/knowledge_graph.py relate --from proj_002 --rel has_owner --to p_002
+python3 （请参考skill目录中的脚本文件） create --type Project --props '{"name":"新产品发布","status":"active"}'
+python3 （请参考skill目录中的脚本文件） create --type Person --props '{"name":"李四","email":"li@example.com"}'
+python3 （请参考skill目录中的脚本文件） relate --from proj_002 --rel has_owner --to p_002
 
 # 查询项目所有任务
-python3 scripts/knowledge_graph.py related --id proj_002 --rel has_task
+python3 （请参考skill目录中的脚本文件） related --id proj_002 --rel has_task
 
 # 查询阻塞链
-python3 scripts/knowledge_graph.py dependencies --id task_005
+python3 （请参考skill目录中的脚本文件） dependencies --id task_005
 ```
 
 **效果**：项目知识从"散落各处"到"一键查询"，查询时间从10分钟降至10秒。
@@ -343,14 +343,14 @@ python3 scripts/knowledge_graph.py dependencies --id task_005
 **使用方式**：
 ```bash
 # 创建任务依赖
-python3 scripts/knowledge_graph.py relate --from task_002 --rel blocks --to task_003
-python3 scripts/knowledge_graph.py relate --from task_002 --rel blocks --to task_004
+python3 （请参考skill目录中的脚本文件） relate --from task_002 --rel blocks --to task_003
+python3 （请参考skill目录中的脚本文件） relate --from task_002 --rel blocks --to task_004
 
 # 无环约束验证
-python3 scripts/knowledge_graph.py validate --relation blocks
+python3 （请参考skill目录中的脚本文件） validate --relation blocks
 # 若有环，验证失败
 # 查询可并行的任务（无依赖冲突）
-python3 scripts/knowledge_graph.py parallelizable --type Task
+python3 （请参考skill目录中的脚本文件） parallelizable --type Task
 ```
 
 **效果**：依赖关系自动追踪，并行开发冲突减少约80%。

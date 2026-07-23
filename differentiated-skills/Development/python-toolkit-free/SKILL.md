@@ -232,7 +232,7 @@ fi
 ```bash
 uv init myproject
 # 或
-uv venv && source .venv/bin/activate
+uv venv && source .venv/（请参考skill目录中的脚本文件）
 ```
 
 ### 3. 提交前自查

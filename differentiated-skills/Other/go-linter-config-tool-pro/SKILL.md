@@ -276,7 +276,7 @@ issues:
 golangci-lint run --out-format json ./... > "reports/$(date +%F).json"
 
 # 生成趋势
-python scripts/lint_trend.py --dir reports/ --out trend.json
+python （请参考skill目录中的脚本文件） --dir reports/ --out trend.json
 ```
 
 ## 治理流程

@@ -352,8 +352,8 @@ print(json.dumps(data, ensure_ascii=False, indent=2))
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | xml-json-converter处理的内容输入 |,  |
+| content | string | 否 | xml-json-converter处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -362,9 +362,9 @@ print(json.dumps(data, ensure_ascii=False, indent=2))
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "converter 相关配置参数",
+    result: "converter 相关配置参数",
+    result: "converter 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

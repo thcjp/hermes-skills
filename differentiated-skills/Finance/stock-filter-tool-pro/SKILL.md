@@ -97,7 +97,7 @@ strategy:
 
 ```bash
 # 多市场筛选
-python3 scripts/filter_pro.py \
+python3 （请参考skill目录中的脚本文件） \
   --markets "a-share,us-stock" \
   --conditions "pe<20,roe>15" \
   --export \
@@ -115,7 +115,7 @@ python3 scripts/filter_pro.py \
 
 ```bash
 # 历史回测
-python3 scripts/backtest.py \
+python3 （请参考skill目录中的脚本文件） \
   --strategy "value_growth" \
   --period "3y" \
   --rebalance "monthly" \
@@ -136,7 +136,7 @@ python3 scripts/backtest.py \
 
 ```bash
 # 自定义公式筛选
-python3 scripts/filter_pro.py \
+python3 （请参考skill目录中的脚本文件） \
   --formula "peg < 1 and operating_cashflow > 0 and debt_ratio < 0.5" \
   --markets "a-share" \
   --export \
@@ -165,19 +165,19 @@ cp config_pro_template.yaml config_pro.yaml
 
 ```bash
 # 多市场筛选
-python3 scripts/filter_pro.py --markets "a-share,us-stock" --conditions "pe<20,roe>15" --export
+python3 （请参考skill目录中的脚本文件） --markets "a-share,us-stock" --conditions "pe<20,roe>15" --export
 
 # 自定义公式
-python3 scripts/filter_pro.py --formula "peg < 1 and roe > 15" --export
+python3 （请参考skill目录中的脚本文件） --formula "peg < 1 and roe > 15" --export
 
 # 历史回测
-python3 scripts/backtest.py --strategy "value_growth" --period "3y" --benchmark "CSI300"
+python3 （请参考skill目录中的脚本文件） --strategy "value_growth" --period "3y" --benchmark "CSI300"
 
 # 行业基准
-python3 scripts/benchmark.py --industry "白酒" --metric "roe,pe,pb"
+python3 （请参考skill目录中的脚本文件） --industry "白酒" --metric "roe,pe,pb"
 
 # 智能推荐
-python3 scripts/recommend.py --risk-tolerance moderate --count 20
+python3 （请参考skill目录中的脚本文件） --risk-tolerance moderate --count 20
 ```
 
 ## 配置示例

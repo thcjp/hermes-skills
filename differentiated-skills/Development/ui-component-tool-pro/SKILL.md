@@ -158,7 +158,7 @@ suggested_price: 99.9
 
 ```bash
 #!/usr/bin/env bash
-# scripts/scaffold-components.sh — 批量生成企业组件库
+# （请参考skill目录中的脚本文件） — 批量生成企业组件库
 set -euo pipefail
 
 COMPONENTS=(
@@ -267,7 +267,7 @@ echo "已生成 ${#COMPONENTS[@]} 个组件于 $BASE_DIR/"
 
 ```bash
 #!/usr/bin/env bash
-# scripts/a11y-audit.sh — WCAG AA 可访问性审查
+# （请参考skill目录中的脚本文件） — WCAG AA 可访问性审查
 set -euo pipefail
 
 echo "=== WCAG AA 可访问性审查 ==="
@@ -336,10 +336,10 @@ echo "=== 审查完成 ==="
 cp tokens.css src/styles/
 
 # 批量生成组件骨架
-bash scripts/scaffold-components.sh
+bash （请参考skill目录中的脚本文件）
 
 # 运行可访问性审查
-bash scripts/a11y-audit.sh
+bash （请参考skill目录中的脚本文件）
 
 # 启动文档站点(Storybook 等)
 npm run storybook

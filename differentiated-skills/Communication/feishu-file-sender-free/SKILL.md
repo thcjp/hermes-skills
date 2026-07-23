@@ -93,7 +93,7 @@ suggested_price: 29.9
 
 ```bash
 # 使用脚本一键发送
-python3 scripts/send_file.py \
+python3 （请参考skill目录中的脚本文件） \
   /path/to/report.html \
   ou_xxxxxxx \
   your_app_id \
@@ -123,14 +123,14 @@ Step 2: 发送消息...
 
 ```bash
 # 稳定发送图片（国内版飞书）
-python3 scripts/send_image.py \
+python3 （请参考skill目录中的脚本文件） \
   /path/to/chart.png \
   ou_xxxxxxx \
   your_app_id \
   your_app_secret
 
 # 国际版 Lark
-python3 scripts/send_image.py \
+python3 （请参考skill目录中的脚本文件） \
   /path/to/chart.png \
   ou_xxxxxxx \
   your_app_id \
@@ -147,7 +147,7 @@ python3 scripts/send_image.py \
 zip -r project.zip project/
 
 # 发送 ZIP 文件
-python3 scripts/send_file.py \
+python3 （请参考skill目录中的脚本文件） \
   project.zip \
   oc_xxxxxxx \
   your_app_id \
@@ -176,10 +176,10 @@ grep -A 2 '"feishu"' config.json | grep -E '(appId|appSecret)'
 
 ```bash
 # 发送普通文件
-python3 scripts/send_file.py <file_path> <open_id> <app_id> <app_secret> [file_name]
+python3 （请参考skill目录中的脚本文件） <file_path> <open_id> <app_id> <app_secret> [file_name]
 
 # 发送图片
-python3 scripts/send_image.py <image_path> <open_id> <app_id> <app_secret> [domain]
+python3 （请参考skill目录中的脚本文件） <image_path> <open_id> <app_id> <app_secret> [domain]
 ```
 
 ### 参数说明
@@ -204,7 +204,7 @@ python3 scripts/send_image.py <image_path> <open_id> <app_id> <app_secret> [doma
 
 ```bash
 # 完整的文件发送命令
-python3 /path/to/scripts/send_file.py \
+python3 /path/to/（请参考skill目录中的脚本文件） \
   /home/user/documents/report.html \
   ou_abc123def456 \
   cli_a1b2c3d4e5f6 \
@@ -218,7 +218,7 @@ python3 /path/to/scripts/send_file.py \
 
 ```python
 exec(f"""
-python3 /path/to/scripts/send_file.py \\
+python3 /path/to/（请参考skill目录中的脚本文件） \\
   {file_path} \\
   {user_open_id} \\
   {app_id} \\
@@ -276,10 +276,10 @@ curl -s -X POST "https://open.feishu.cn/open-apis/im/v1/messages?receive_id_type
 
 ```bash
 # 普通文件：使用 send_file.py
-python3 scripts/send_file.py report.pdf ou_xxx app_id app_secret
+python3 （请参考skill目录中的脚本文件） report.pdf ou_xxx app_id app_secret
 
 # 图片：使用 send_image.py（不要用 send_file.py 发图片）
-python3 scripts/send_image.py chart.png ou_xxx app_id app_secret
+python3 （请参考skill目录中的脚本文件） chart.png ou_xxx app_id app_secret
 ```
 
 ### 图片发送成功标准
@@ -290,11 +290,11 @@ python3 scripts/send_image.py chart.png ou_xxx app_id app_secret
 - `📎 /path/to/image.png`
 - 纯本地路径文本
 
-此时应立即改用 `scripts/send_image.py` 稳定脚本：
+此时应立即改用 `（请参考skill目录中的脚本文件）` 稳定脚本：
 
 ```bash
 # 检测到路径文本，立即切换稳定脚本
-python3 scripts/send_image.py /path/to/image.png ou_xxx app_id app_secret
+python3 （请参考skill目录中的脚本文件） /path/to/image.png ou_xxx app_id app_secret
 ```
 
 ### 文件大小管理
@@ -306,7 +306,7 @@ python3 scripts/send_image.py /path/to/image.png ou_xxx app_id app_secret
 ```bash
 # 压缩大文件
 zip -r compressed.zip large_folder/
-python3 scripts/send_file.py compressed.zip ou_xxx app_id app_secret
+python3 （请参考skill目录中的脚本文件） compressed.zip ou_xxx app_id app_secret
 ```
 
 ### 群聊发送
@@ -341,10 +341,10 @@ python3 scripts/send_file.py compressed.zip ou_xxx app_id app_secret
 
 ```bash
 # 普通文件
-python3 scripts/send_file.py /path/to/file.pdf ou_xxx app_id app_secret
+python3 （请参考skill目录中的脚本文件） /path/to/file.pdf ou_xxx app_id app_secret
 
 # 图片（特别重要）
-python3 scripts/send_image.py /path/to/image.png ou_xxx app_id app_secret
+python3 （请参考skill目录中的脚本文件） /path/to/image.png ou_xxx app_id app_secret
 ```
 
 ### 问题2：文件上传失败
@@ -384,10 +384,10 @@ curl -s -X POST "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/in
 
 ```bash
 # 国内版飞书（默认）
-python3 scripts/send_image.py image.png ou_xxx app_id app_secret
+python3 （请参考skill目录中的脚本文件） image.png ou_xxx app_id app_secret
 
 # 国际版 Lark
-python3 scripts/send_image.py image.png ou_xxx app_id app_secret lark
+python3 （请参考skill目录中的脚本文件） image.png ou_xxx app_id app_secret lark
 ```
 
 ### 问题5：群聊发送失败

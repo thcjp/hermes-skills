@@ -83,17 +83,17 @@ export API_KEY="your_api_key_here"
 **输出**: 返回工具生成的执行结果,包含操作状态和输出数据。
 ### rest
 
-执行rest操作,处理用户输入并返回结果。
+执行rest,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供rest所需的参数和指令。
+**输入**: 用户提供rest相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回rest的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`rest`相关配置参数进行设置
 ### graphql
 
-执行graphql操作,处理用户输入并返回结果。
+执行graphql,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供graphql所需的参数和指令。
+**输入**: 用户提供graphql相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回graphql的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`graphql`相关配置参数进行设置
@@ -101,7 +101,7 @@ export API_KEY="your_api_key_here"
 ## 命令用法
 
 ```bash
-bash scripts/apigen.sh <command> <resource_name> [options]
+bash （请参考skill目录中的脚本文件） <command> <resource_name> [options]
 ```
 
 | 命令 | 参数 | 说明 |
@@ -122,7 +122,7 @@ bash scripts/apigen.sh <command> <resource_name> [options]
 
 ### Step 2: 执行生成命令
 ```bash
-bash scripts/apigen.sh rest user
+bash （请参考skill目录中的脚本文件） rest user
 ```
 
 ### Step 3: 查看输出
@@ -130,8 +130,8 @@ bash scripts/apigen.sh rest user
 
 ### Step 4: 重定向到项目文件
 ```bash
-bash scripts/apigen.sh rest user > routes/user.js
-bash scripts/apigen.sh test user > tests/user.test.js
+bash （请参考skill目录中的脚本文件） rest user > routes/user.js
+bash （请参考skill目录中的脚本文件） test user > tests/user.test.js
 ```
 
 ### Step 5: 集成到项目
@@ -143,7 +143,7 @@ bash scripts/apigen.sh test user > tests/user.test.js
 **场景**: 开发者需要快速搭建用户 CRUD API
 
 ```bash
-bash scripts/apigen.sh rest user
+bash （请参考skill目录中的脚本文件） rest user
 ```
 
 **输出**: Express.js 路由代码,包含:
@@ -159,7 +159,7 @@ bash scripts/apigen.sh rest user
 **场景**: 开发者需要为产品模块定义 GraphQL 类型
 
 ```bash
-bash scripts/apigen.sh graphql product
+bash （请参考skill目录中的脚本文件） graphql product
 ```
 
 **输出**: GraphQL schema 定义,包含:
@@ -171,7 +171,7 @@ bash scripts/apigen.sh graphql product
 **场景**: 开发者需要为 API 添加 JWT 认证
 
 ```bash
-bash scripts/apigen.sh auth jwt
+bash （请参考skill目录中的脚本文件） auth jwt
 ```
 
 **输出**: JWT 认证中间件代码,包含:
@@ -185,7 +185,7 @@ bash scripts/apigen.sh auth jwt
 **场景**: 开发者需要为订单 API 编写测试
 
 ```bash
-bash scripts/apigen.sh test order
+bash （请参考skill目录中的脚本文件） test order
 ```
 
 **输出**: Jest + Supertest 测试文件,包含:
@@ -198,7 +198,7 @@ bash scripts/apigen.sh test order
 **场景**: 开发者需要为 API 添加速率限制
 
 ```bash
-bash scripts/apigen.sh rate-limit token-bucket
+bash （请参考skill目录中的脚本文件） rate-limit token-bucket
 ```
 
 **输出**: 令牌桶速率限制器代码,包含:
@@ -213,16 +213,16 @@ bash scripts/apigen.sh rate-limit token-bucket
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
 |---------|---------|---------|---------|
 | 命令不存在 | `Unknown command: <cmd>` | 使用了未定义的命令 | 检查命令列表,使用 rest/graphql/swagger/client/mock/auth/rate-limit/test |
-| 资源名缺失 | `Resource name required` | 未提供 `<name>` 参数 | 补充资源名参数,如 `bash scripts/apigen.sh rest user` |
+| 资源名缺失 | `Resource name required` | 未提供 `<name>` 参数 | 补充资源名参数,如 `bash （请参考skill目录中的脚本文件） rest user` |
 | 认证类型无效 | `Invalid auth type: <type>` | auth 命令类型不在支持列表 | 使用 `jwt`、`oauth` 或 `apikey` |
 | 速率限制类型无效 | `Invalid rate-limit type` | rate-limit 命令类型不在支持列表 | 使用 `token-bucket` 或 `sliding-window` |
-| 脚本无执行权限 | `Permission denied` | `scripts/apigen.sh` 无执行权限 | 执行 `chmod +x scripts/apigen.sh` |
+| 脚本无执行权限 | `Permission denied` | `（请参考skill目录中的脚本文件）` 无执行权限 | 执行 `chmod +x （请参考skill目录中的脚本文件）` |
 | Bash 不可用 | `bash: command not found` | Windows 环境未安装 Bash | 安装 Git Bash 或 WSL |
 
 ## 常见问题
 
 ### Q1: 生成的代码输出到哪里?
-A: 所有代码输出到 stdout。可直接查看,或重定向到项目文件: `bash scripts/apigen.sh rest user > routes/user.js`。生成的代码含完整注释,可作为项目起点。
+A: 所有代码输出到 stdout。可直接查看,或重定向到项目文件: `bash （请参考skill目录中的脚本文件） rest user > routes/user.js`。生成的代码含完整注释,可作为项目起点。
 
 ### Q2: rest 命令生成什么框架的代码?
 A: 生成 Express.js 的 RESTful CRUD 端点,包含 GET/POST/PUT/DELETE 路由、参数校验与错误处理。需配合 `express` 包使用。
@@ -245,5 +245,5 @@ A: 生成基于内存存储的 Mock API 服务器,支持 CRUD 操作。适用于
 2. **框架固定**: REST 端点固定为 Express.js,不支持其他框架（如 Fastify、Koa）
 3. **无数据库集成**: 生成的是脚手架代码,数据库连接需开发者自行配置
 4. **无前端代码**: 仅生成后端 API 代码,不生成前端 UI
-5. **依赖 Bash**: 需要 Bash 环境执行 `scripts/apigen.sh`,Windows 需安装 Git Bash 或 WSL
+5. **依赖 Bash**: 需要 Bash 环境执行 `（请参考skill目录中的脚本文件）`,Windows 需安装 Git Bash 或 WSL
 6. **无 OpenAPI 渲染**: swagger 命令生成 OpenAPI 3.0 JSON/YAML 文档,不提供 UI 渲染

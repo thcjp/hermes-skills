@@ -116,7 +116,7 @@ class BatchNewsFetcher:
         try:
             import subprocess
             result = subprocess.run(
-                ["node", "scripts/news_crawler.js", date_str],
+                ["node", "（请参考skill目录中的脚本文件）", date_str],
                 capture_output=True, text=True, timeout=60, encoding="utf-8"
             )
             if result.returncode == 0:
@@ -299,7 +299,7 @@ pusher:
       url: https://oapi.dingtalk.com/robot/send?access_token=xxx
     - name: wechat
       type: wechat
-      url: https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxx
+      url: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=xxx
     - name: email
       type: email
       url: https://api.email-service.com/send

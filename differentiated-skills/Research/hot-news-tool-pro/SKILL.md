@@ -83,7 +83,7 @@ pricing_model: "monthly"
 #### 1. 50+ 新闻源监控
 
 ```bash
-python scripts/multi_source.py \
+python （请参考skill目录中的脚本文件） \
   --sources-file sources.yaml \
   --categories tech,military,social,finance \
   --parallel 8
@@ -95,7 +95,7 @@ python scripts/multi_source.py \
 
 ```bash
 # 配置定时抓取任务
-python scripts/scheduled_fetch.py \
+python （请参考skill目录中的脚本文件） \
   --cron="0 */2 * * *" \
   --incremental \
   --archive-dir=./archive
@@ -107,7 +107,7 @@ python scripts/scheduled_fetch.py \
 
 ```bash
 # 配置关键词告警
-python scripts/alert_monitor.py \
+python （请参考skill目录中的脚本文件） \
   --keywords="品牌名 危机,品牌名 投诉,品牌名 负面" \
   --webhook="https://hooks.slack.com/xxx" \
   --email=alert@company.com \
@@ -120,7 +120,7 @@ python scripts/alert_monitor.py \
 
 ```bash
 # 生成舆情分析报告
-python scripts/sentiment_analysis.py \
+python （请参考skill目录中的脚本文件） \
   --period="2026-01" \
   --keywords="品牌名" \
   --output=sentiment_report.md
@@ -150,7 +150,7 @@ python scripts/sentiment_analysis.py \
 
 ```bash
 # 配置品牌监控任务
-python scripts/brand_monitor.py \
+python （请参考skill目录中的脚本文件） \
   --brand="公司名" \
   --sources sources.yaml \
   --keywords="公司名 正面,公司名 负面,公司名 危机" \
@@ -174,7 +174,7 @@ cat > industry_keywords.txt <<EOF
 EOF
 
 # 批量监控行业动态
-python scripts/industry_monitor.py \
+python （请参考skill目录中的脚本文件） \
   --keywords-file industry_keywords.txt \
   --sources sources.yaml \
   --cron="0 8 * * *" \
@@ -190,7 +190,7 @@ python scripts/industry_monitor.py \
 
 ```bash
 # 配置竞品监控
-python scripts/competitor_monitor.py \
+python （请参考skill目录中的脚本文件） \
   --competitors="竞品A,竞品B,竞品C" \
   --track="产品发布,融资,人事变动,负面新闻" \
   --report-frequency=weekly \
@@ -226,10 +226,10 @@ python scripts/competitor_monitor.py \
 pip install apscheduler pandas matplotlib
 
 # 导入免费版配置
-python scripts/migrate.py --from-free
+python （请参考skill目录中的脚本文件） --from-free
 
 # 验证升级
-python scripts/news_aggregator.py --version
+python （请参考skill目录中的脚本文件） --version
 # 输出: hot-news-tool-pro v1.0.0
 ```
 
@@ -251,7 +251,7 @@ sources:
 EOF
 
 # 执行多源抓取
-python scripts/multi_source.py \
+python （请参考skill目录中的脚本文件） \
   --sources-file sources.yaml \
   --export json \
   --output news.json
@@ -310,7 +310,7 @@ analytics:
 
 ```bash
 # 启动 REST API 服务
-python scripts/api_server.py --port 8000
+python （请参考skill目录中的脚本文件） --port 8000
 
 # 查询最新新闻
 curl http://localhost:8000/news?category=tech&max=10
@@ -359,12 +359,12 @@ config.start()
 
 ```bash
 # 配置多级告警
-python scripts/alert_config.py \
+python （请参考skill目录中的脚本文件） \
   --level=critical \
   --keywords="品牌名 危机,品牌名 诉讼" \
   --immediate=true
 
-python scripts/alert_config.py \
+python （请参考skill目录中的脚本文件） \
   --level=warning \
   --keywords="品牌名 投诉,品牌名 负面" \
   --delay=300
@@ -374,14 +374,14 @@ python scripts/alert_config.py \
 
 ```bash
 # 生成周报
-python scripts/sentiment_analysis.py \
+python （请参考skill目录中的脚本文件） \
   --period="week" \
   --keywords="品牌名" \
   --output=weekly_report.md \
   --include-charts
 
 # 导出趋势数据
-python scripts/trend_export.py \
+python （请参考skill目录中的脚本文件） \
   --period="month" \
   --format=csv \
   --output=trends.csv
@@ -393,23 +393,23 @@ python scripts/trend_export.py \
 
 ```bash
 # 检查所有源状态
-python scripts/multi_source.py --check-sources
+python （请参考skill目录中的脚本文件） --check-sources
 
 # 禁用失败源
-python scripts/multi_source.py --disable-failed
+python （请参考skill目录中的脚本文件） --disable-failed
 
 # 配置备用源
-python scripts/multi_source.py --fallback-sources
+python （请参考skill目录中的脚本文件） --fallback-sources
 ```
 
 ### 告警延迟
 
 ```bash
 # 检查告警服务状态
-python scripts/alert_monitor.py --status
+python （请参考skill目录中的脚本文件） --status
 
 # 减少轮询间隔
-python scripts/alert_monitor.py --poll-interval=60
+python （请参考skill目录中的脚本文件） --poll-interval=60
 
 # 检查 Webhook 连通性
 curl -X POST $WEBHOOK_URL -d '{"test": true}'
@@ -419,13 +419,13 @@ curl -X POST $WEBHOOK_URL -d '{"test": true}'
 
 ```bash
 # 调整情感分析模型
-python scripts/sentiment_analysis.py --model=advanced
+python （请参考skill目录中的脚本文件） --model=advanced
 
 # 添加行业词典
-python scripts/sentiment_analysis.py --dictionary=industry.txt
+python （请参考skill目录中的脚本文件） --dictionary=industry.txt
 
 # 手动标注训练数据
-python scripts/sentiment_train.py --labeled-data.json
+python （请参考skill目录中的脚本文件） --labeled-data.json
 ```
 
 ## 依赖说明

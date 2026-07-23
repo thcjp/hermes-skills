@@ -112,7 +112,7 @@ CSV Insight 解决"快速看一眼 CSV 数据"的日常需求。相比启动 Jup
 ### 依赖详情
 
 ```bash
-python3 {baseDir}/scripts/csv_analyze.py stats data.csv
+python3 {baseDir}/（请参考skill目录中的脚本文件） stats data.csv
 ```
 
 能正常输出统计摘要即代表可用。
@@ -128,7 +128,7 @@ python3 {baseDir}/scripts/csv_analyze.py stats data.csv
 ### 统计摘要
 
 ```bash
-python3 {baseDir}/scripts/csv_analyze.py stats data.csv
+python3 {baseDir}/（请参考skill目录中的脚本文件） stats data.csv
 ```
 
 输出示例：
@@ -159,12 +159,12 @@ python3 {baseDir}/scripts/csv_analyze.py stats data.csv
 
 ```bash
 # 筛选金额大于 1000 的订单
-python3 {baseDir}/scripts/csv_analyze.py filter data.csv \
+python3 {baseDir}/（请参考skill目录中的脚本文件） filter data.csv \
   --where "amount>1000" \
   --output big_orders.csv
 
 # 多条件筛选
-python3 {baseDir}/scripts/csv_analyze.py filter data.csv \
+python3 {baseDir}/（请参考skill目录中的脚本文件） filter data.csv \
   --where "amount>1000 AND status='paid'"
 ```
 
@@ -172,27 +172,27 @@ python3 {baseDir}/scripts/csv_analyze.py filter data.csv \
 
 ```bash
 # 销售额前 10
-python3 {baseDir}/scripts/csv_analyze.py top data.csv --column revenue --n 10
+python3 {baseDir}/（请参考skill目录中的脚本文件） top data.csv --column revenue --n 10
 
 # 销售额后 5
-python3 {baseDir}/scripts/csv_analyze.py bottom data.csv --column revenue --n 5
+python3 {baseDir}/（请参考skill目录中的脚本文件） bottom data.csv --column revenue --n 5
 ```
 
 ### 异常检测
 
 ```bash
 # 检测价格列异常（Z-Score > 2）
-python3 {baseDir}/scripts/csv_analyze.py anomalies data.csv --column price
+python3 {baseDir}/（请参考skill目录中的脚本文件） anomalies data.csv --column price
 
 # 自定义阈值（Z-Score > 3）
-python3 {baseDir}/scripts/csv_analyze.py anomalies data.csv --column price --threshold 3
+python3 {baseDir}/（请参考skill目录中的脚本文件） anomalies data.csv --column price --threshold 3
 ```
 
 ### 分组聚合
 
 ```bash
 # 按类目汇总销售额与订单数
-python3 {baseDir}/scripts/csv_analyze.py group data.csv \
+python3 {baseDir}/（请参考skill目录中的脚本文件） group data.csv \
   --by category \
   --agg "sum:amount" "count:id"
 ```

@@ -119,7 +119,7 @@ suggested_price: 29.9
 个人开发者遇到技术问题时，快速搜索解决方案。
 
 ```bash
-python scripts/web_search.py "Python 异步编程 最佳实践 2026" --max=10
+python （请参考skill目录中的脚本文件） "Python 异步编程 最佳实践 2026" --max=10
 ```
 
 预期输出包含相关技术博客、官方文档链接和社区讨论，帮助快速定位解决方案。
@@ -129,7 +129,7 @@ python scripts/web_search.py "Python 异步编程 最佳实践 2026" --max=10
 用户希望了解最新时事动态，通过关键词搜索获取新闻。
 
 ```bash
-python scripts/web_search.py "2026年 中国航天 发射计划" --max=5
+python （请参考skill目录中的脚本文件） "2026年 中国航天 发射计划" --max=5
 ```
 
 返回最近相关新闻报道，包含标题、摘要和来源链接。
@@ -139,7 +139,7 @@ python scripts/web_search.py "2026年 中国航天 发射计划" --max=5
 学生查找特定主题的学习资源。
 
 ```bash
-python scripts/web_search.py "机器学习 入门教程 免费" --full=3
+python （请参考skill目录中的脚本文件） "机器学习 入门教程 免费" --full=3
 ```
 
 不仅返回搜索结果列表，还抓取前 3 条结果的正文内容，方便深度阅读。
@@ -177,13 +177,13 @@ playwright install chromium
 ### 执行首次搜索
 
 ```bash
-python scripts/web_search.py "你的搜索关键词" --max=10
+python （请参考skill目录中的脚本文件） "你的搜索关键词" --max=10
 ```
 
 ### 验证安装
 
 ```bash
-python scripts/web_search.py "hello world" --max=3
+python （请参考skill目录中的脚本文件） "hello world" --max=3
 ```
 
 如果返回 3 条搜索结果，说明安装成功。
@@ -194,13 +194,13 @@ python scripts/web_search.py "hello world" --max=3
 
 ```bash
 # 默认自动路由（推荐）
-python scripts/web_search.py "Python 教程"
+python （请参考skill目录中的脚本文件） "Python 教程"
 
 # 强制使用 Bing 国内版
-python scripts/web_search.py "Python 教程" --region=cn
+python （请参考skill目录中的脚本文件） "Python 教程" --region=cn
 
 # 强制使用 DuckDuckGo 国际版
-python scripts/web_search.py "Python tutorial" --region=intl
+python （请参考skill目录中的脚本文件） "Python tutorial" --region=intl
 ```
 
 ### 参数说明
@@ -245,7 +245,7 @@ python scripts/web_search.py "Python tutorial" --region=intl
 ping cn.bing.com
 
 # 尝试切换搜索引擎
-python scripts/web_search.py "测试关键词" --region=intl
+python （请参考skill目录中的脚本文件） "测试关键词" --region=intl
 ```
 
 可能原因及解决方案：

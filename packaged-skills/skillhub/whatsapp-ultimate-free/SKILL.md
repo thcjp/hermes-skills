@@ -33,7 +33,7 @@ tags:
 - 文件消息：`message action=send --type document`
 
 ```bash
-python3 scripts/message action=send --to "contact-id@s.whatsapp.net" --type text --content "你好，这是一条测试消息"
+python3 （请参考skill目录中的脚本文件） action=send --to "contact-id@s.whatsapp.net" --type text --content "你好，这是一条测试消息"
 ```
 
 **输入**: 用户提供消息发送所需的指令和必要参数。
@@ -44,8 +44,8 @@ python3 scripts/message action=send --to "contact-id@s.whatsapp.net" --type text
 对消息添加表情反应、回复消息和转发消息。
 
 ```bash
-python3 scripts/message action=react --message-id "msg-abc123" --emoji "👍"
-python3 scripts/message action=reply --message-id "msg-abc123" --content "收到"
+python3 （请参考skill目录中的脚本文件） action=react --message-id "msg-abc123" --emoji "👍"
+python3 （请参考skill目录中的脚本文件） action=reply --message-id "msg-abc123" --content "收到"
 ```
 
 **输入**: 用户提供交互反应所需的指令和必要参数。
@@ -56,7 +56,7 @@ python3 scripts/message action=reply --message-id "msg-abc123" --content "收到
 创建群组、添加/移除成员、修改群组信息。
 
 ```bash
-python3 scripts/message action=group-create --name "项目讨论组" --participants "user1@s.whatsapp.net" "user2@s.whatsapp.net"
+python3 （请参考skill目录中的脚本文件） action=group-create --name "项目讨论组" --participants "user1@s.whatsapp.net" "user2@s.whatsapp.net"
 ```
 
 **处理**: 按照skill规范执行群组管理操作,遵循单一意图原则。
@@ -64,7 +64,7 @@ python3 scripts/message action=group-create --name "项目讨论组" --participa
 搜索聊天历史记录，支持关键词和日期范围。
 
 ```bash
-python3 scripts/message action=search --chat "contact-id@s.whatsapp.net" --query "会议纪要" --limit 20
+python3 （请参考skill目录中的脚本文件） action=search --chat "contact-id@s.whatsapp.net" --query "会议纪要" --limit 20
 ```
 
 **输入**: 用户提供历史搜索所需的指令和必要参数。
@@ -97,7 +97,7 @@ python3 scripts/message action=search --chat "contact-id@s.whatsapp.net" --query
 ### 示例:发送文本消息
 
 ```bash
-python3 scripts/message action=send \
+python3 （请参考skill目录中的脚本文件） action=send \
   --to "8613800138000@s.whatsapp.net" \
   --type text \
   --content "会议已开始，请准时参加"

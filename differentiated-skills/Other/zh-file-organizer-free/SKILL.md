@@ -74,16 +74,16 @@ suggested_price: 29.9
 
 ```bash
 # 1. 预览整理方案（不实际移动文件）
-python3 scripts/zh-organizer.py 整理 ~/Downloads --预览
+python3 （请参考skill目录中的脚本文件） 整理 ~/Downloads --预览
 
 # 2. 确认方案后执行整理
-python3 scripts/zh-organizer.py 整理 ~/Downloads
+python3 （请参考skill目录中的脚本文件） 整理 ~/Downloads
 
 # 3. 按类型分类
-python3 scripts/zh-organizer.py 分类 ~/Desktop --预览
+python3 （请参考skill目录中的脚本文件） 分类 ~/Desktop --预览
 
 # 4. 查看统计
-python3 scripts/zh-organizer.py 统计 ~/Downloads
+python3 （请参考skill目录中的脚本文件） 统计 ~/Downloads
 ```
 
 ### 可复制模板
@@ -113,13 +113,13 @@ Skill: 执行完成,结果如下: 操作成功
 
 每周日执行中文文件整理：
 1. 预览整理方案
-   python3 scripts/zh-organizer.py 整理 ~/Downloads --预览
+   python3 （请参考skill目录中的脚本文件） 整理 ~/Downloads --预览
 
 2. 确认后执行
-   python3 scripts/zh-organizer.py 整理 ~/Downloads
+   python3 （请参考skill目录中的脚本文件） 整理 ~/Downloads
 
 3. 查看统计报告
-   python3 scripts/zh-organizer.py 统计 ~/Downloads
+   python3 （请参考skill目录中的脚本文件） 统计 ~/Downloads
 ```
 
 ---
@@ -147,13 +147,13 @@ Skill: 执行完成,结果如下: 操作成功
 
 ```bash
 # 支持中文路径
-python3 scripts/zh-organizer.py 整理 "~/文档/工作文件"
+python3 （请参考skill目录中的脚本文件） 整理 "~/文档/工作文件"
 
 # 支持中文文件名
-python3 scripts/zh-organizer.py 整理 "D:\下载\新建文件夹"
+python3 （请参考skill目录中的脚本文件） 整理 "D:\下载\新建文件夹"
 
 # 支持空格与特殊字符
-python3 scripts/zh-organizer.py 整理 "~/Desktop/项目 (2026年)"
+python3 （请参考skill目录中的脚本文件） 整理 "~/Desktop/项目 (2026年)"
 ```
 
 **兼容性保障**：
@@ -192,7 +192,7 @@ python3 scripts/zh-organizer.py 整理 "~/Desktop/项目 (2026年)"
 
 ```bash
 # 识别重复文件（基于文件名与大小）
-python3 scripts/zh-organizer.py 查重 ~/Downloads
+python3 （请参考skill目录中的脚本文件） 查重 ~/Downloads
 
 # 输出示例：
 # 发现 3 个重复文件：
@@ -228,13 +228,13 @@ python3 scripts/zh-organizer.py 查重 ~/Downloads
 **解决方案**：
 ```bash
 # 预览整理方案
-python3 scripts/zh-organizer.py 整理 ~/Downloads --预览
+python3 （请参考skill目录中的脚本文件） 整理 ~/Downloads --预览
 
 # 确认后执行
-python3 scripts/zh-organizer.py 整理 ~/Downloads
+python3 （请参考skill目录中的脚本文件） 整理 ~/Downloads
 
 # 查看中文统计报告
-python3 scripts/zh-organizer.py 统计 ~/Downloads
+python3 （请参考skill目录中的脚本文件） 统计 ~/Downloads
 ```
 
 **效果**：下载文件夹按中文类型分类，图片归入"图片/"、文档归入"文档/"，中文目录名一目了然，5分钟完成整理。
@@ -246,10 +246,10 @@ python3 scripts/zh-organizer.py 统计 ~/Downloads
 **解决方案**：
 ```bash
 # 按类型分类桌面
-python3 scripts/zh-organizer.py 分类 ~/Desktop
+python3 （请参考skill目录中的脚本文件） 分类 ~/Desktop
 
 # 启用智能归类（按文件名关键词辅助分类）
-python3 scripts/zh-organizer.py 分类 ~/Desktop --智能归类
+python3 （请参考skill目录中的脚本文件） 分类 ~/Desktop --智能归类
 ```
 
 **效果**：桌面文件自动归类到中文目录，截图归入"图片/截图/"、合同归入"文档/合同/"，符合中文认知习惯。
@@ -261,10 +261,10 @@ python3 scripts/zh-organizer.py 分类 ~/Desktop --智能归类
 **解决方案**：
 ```bash
 # 整理项目目录
-python3 scripts/zh-organizer.py 整理 ~/Projects/我的项目 --预览
+python3 （请参考skill目录中的脚本文件） 整理 ~/Projects/我的项目 --预览
 
 # 确认后执行
-python3 scripts/zh-organizer.py 整理 ~/Projects/我的项目
+python3 （请参考skill目录中的脚本文件） 整理 ~/Projects/我的项目
 ```
 
 **效果**：项目目录按类型中文分类，代码归入"代码/"、文档归入"文档/"，中文路径完美兼容。
@@ -287,7 +287,7 @@ python3 scripts/zh-organizer.py 整理 ~/Projects/我的项目
 
 ```text
 用法：
-  python3 scripts/zh-organizer.py <命令> <路径> [选项]
+  python3 （请参考skill目录中的脚本文件） <命令> <路径> [选项]
 
 命令：
   整理 <路径>      综合整理（类型+智能归类）
@@ -303,10 +303,10 @@ python3 scripts/zh-organizer.py 整理 ~/Projects/我的项目
   --help            显示帮助
 
 示例：
-  python3 scripts/zh-organizer.py 整理 ~/Downloads --预览
-  python3 scripts/zh-organizer.py 分类 ~/Desktop --智能归类
-  python3 scripts/zh-organizer.py 统计 ~/Documents
-  python3 scripts/zh-organizer.py 查重 ~/Downloads
+  python3 （请参考skill目录中的脚本文件） 整理 ~/Downloads --预览
+  python3 （请参考skill目录中的脚本文件） 分类 ~/Desktop --智能归类
+  python3 （请参考skill目录中的脚本文件） 统计 ~/Documents
+  python3 （请参考skill目录中的脚本文件） 查重 ~/Downloads
 ```
 
 ### 输出示例

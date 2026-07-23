@@ -54,8 +54,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
+| content | string | 否 | browser-automation处理的内容输入 |,  |
+| mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
 | skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |
 
@@ -66,9 +66,9 @@ pricing_model: "per_use"
   "success": true,
   "data": {
     "final_result": {
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明"
+      "automation_result": "automation_result_value",
+      "automation_metadata": "automation_metadata_value",
+      "automation_status": "automation_status_value"
     },
     "execution_log": [
       {
@@ -108,18 +108,18 @@ pricing_model: "per_use"
 }
 ```
 
-中间产物模板参考: `assets/（根据实际场景填充）`
+中间产物模板参考: `assets/browser-automation_template`
 
 ## 异常处理
 
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
-| Step （根据实际场景填充）处理失败 | 按流程执行 | 自动(最多max_retries次), 仍失败则记录断点, 暂停流程 |
-| Gate条件不满足 | Step （根据实际场景填充）输出质量不达标 | 返回Step （根据实际场景填充）重新处理, 或提示用户调整输入 |
+| Step Browser Automation 核心处理处理失败 | 按流程执行 | 自动(最多max_retries次), 仍失败则记录断点, 暂停流程 |
+| Gate条件不满足 | Step Browser Automation 智能分析输出质量不达标 | 返回Step Browser Automation 智能分析重新处理, 或提示用户调整输入 |
 | 输入数据格式错误 | content格式不符合要求 | 列出期望格式, 提供示例, 中止流程 |
 | 断点续传失败 | 缓存的中间产物已过期或损坏 | 从Step 1重新开始, 清除旧缓存 |
-| 超时 | 总处理时间超过（根据实际场景填充）分钟 | 返回已完成步骤的结果, 标记为partial |
+| 超时 | 总处理时间超过Browser Automation 批量处理分钟 | 返回已完成步骤的结果, 标记为partial |
 | 其他异常 | 内部处理异常 | 检查输入后 |
 
 ## 依赖说明

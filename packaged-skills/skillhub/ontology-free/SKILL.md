@@ -89,7 +89,7 @@ types:
 
 ### 第一步：初始化图谱目录与Schema
 
-创建 `memory/ontology/` 目录和空的 `graph.jsonl` 文件。编写 `schema.yaml` 定义项目所需的实体类型和关系约束。执行 `python3 scripts/ontology.py validate` 验证Schema格式正确。
+创建 `memory/ontology/` 目录和空的 `graph.jsonl` 文件。编写 `schema.yaml` 定义项目所需的实体类型和关系约束。执行 `python3 （请参考skill目录中的脚本文件） validate` 验证Schema格式正确。
 
 ### 第二步：创建核心实体并建立关系
 
@@ -115,27 +115,27 @@ types:
 
 ```bash
 # 创建人员
-python3 scripts/ontology.py create --type Person --props '{"name":"Alice","email":"alice@example.com"}'
+python3 （请参考skill目录中的脚本文件） create --type Person --props '{"name":"Alice","email":"alice@example.com"}'
 # 返回: {"id":"p_001","type":"Person","properties":{"name":"Alice","email":"alice@example.com"}}
 
 # 创建项目
-python3 scripts/ontology.py create --type Project --props '{"name":"Website Redesign","status":"active"}'
+python3 （请参考skill目录中的脚本文件） create --type Project --props '{"name":"Website Redesign","status":"active"}'
 # 返回: {"id":"proj_001","type":"Project","properties":{"name":"Website Redesign","status":"active"}}
 
 # 建立项目-负责人关系
-python3 scripts/ontology.py relate --from proj_001 --rel has_owner --to p_001
+python3 （请参考skill目录中的脚本文件） relate --from proj_001 --rel has_owner --to p_001
 # 返回: {"from":"proj_001","rel":"has_owner","to":"p_001","validated":true}
 
 # 创建任务
-python3 scripts/ontology.py create --type Task --props '{"title":"设计首页原型","status":"open","priority":8}'
+python3 （请参考skill目录中的脚本文件） create --type Task --props '{"title":"设计首页原型","status":"open","priority":8}'
 # 返回: {"id":"task_001","type":"Task","properties":{"title":"设计首页原型","status":"open","priority":8}}
 
 # 建立项目-任务关系
-python3 scripts/ontology.py relate --from proj_001 --rel has_task --to task_001
+python3 （请参考skill目录中的脚本文件） relate --from proj_001 --rel has_task --to task_001
 # 返回: {"validated":true}
 
 # 查询项目所有任务
-python3 scripts/ontology.py related --id proj_001 --rel has_task
+python3 （请参考skill目录中的脚本文件） related --id proj_001 --rel has_task
 # 返回: [task_001]
 ```
 

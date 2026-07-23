@@ -118,7 +118,7 @@ cat /tmp/game-build/index.html | head -100
 
 ```bash
 # 启动本地服务器
-bash "${SKILL_DIR}/scripts/serve.sh" /tmp/game-build
+bash "${SKILL_DIR}/（请参考skill目录中的脚本文件）" /tmp/game-build
 
 # 输出: http://localhost:8000
 ```

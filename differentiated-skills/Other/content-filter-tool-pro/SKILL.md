@@ -89,7 +89,7 @@ pricing_model: "per_use"
 
 ```bash
 # AI 语义过滤（专业版）
-{baseDir}/scripts/filter-pro.sh feed --ai --lang zh,en
+{baseDir}/（请参考skill目录中的脚本文件） feed --ai --lang zh,en
 ```
 
 ```json
@@ -107,7 +107,7 @@ pricing_model: "per_use"
 
 ```bash
 # 同步团队规则到多账号
-{baseDir}/scripts/filter-pro.sh sync --team baseline.json --accounts acc1,acc2
+{baseDir}/（请参考skill目录中的脚本文件） sync --team baseline.json --accounts acc1,acc2
 ```
 
 ### 场景三：合规审计
@@ -240,7 +240,7 @@ A：有。专业版享过滤策略与合规设计咨询。
 
 ```bash
 # 生成合规审计报告
-{baseDir}/scripts/filter-pro.sh audit --period 30d --report compliance.json
+{baseDir}/（请参考skill目录中的脚本文件） audit --period 30d --report compliance.json
 ```
 
 ```text

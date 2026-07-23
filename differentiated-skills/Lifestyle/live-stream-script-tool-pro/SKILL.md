@@ -123,7 +123,7 @@ class MCNManager:
             "personalize": True,
         }
         resp = requests.post(
-            f"{API_BASE}/scripts/batch",
+            f"{API_BASE}/（请参考skill目录中的脚本文件）",
             headers=self.headers,
             json=payload,
             timeout=300,
@@ -274,7 +274,7 @@ curl -X POST -H "X-API-Key: $LIVE_STREAM_ADMIN_KEY" \
     "template": "ecommerce_beauty",
     "products": [{"name":"精华液","price":159}]
   }' \
-  "https://api.live-stream-pro.local/v1/scripts/batch"
+  "https://api.live-stream-pro.local/v1/（请参考skill目录中的脚本文件）"
 ```
 
 #
@@ -338,7 +338,7 @@ def generate_multilingual_scripts(script_id, target_languages):
         "review": "native_speaker",  # 母语者审核
     }
     resp = requests.post(
-        f"{API_BASE}/scripts/localize",
+        f"{API_BASE}/（请参考skill目录中的脚本文件）",
         headers=mcn.headers,
         json=payload,
         timeout=300,
@@ -436,7 +436,7 @@ def adapt_to_platform(script_id, target_platform):
         },
     }
     resp = requests.post(
-        f"{API_BASE}/scripts/adapt-platform",
+        f"{API_BASE}/（请参考skill目录中的脚本文件）",
         headers=mcn.headers,
         json=payload,
         timeout=120,

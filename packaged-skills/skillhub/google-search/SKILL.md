@@ -55,8 +55,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
+| content | string | 否 | google-search处理的内容输入 |,  |
+| mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
 | skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |
 
@@ -67,9 +67,9 @@ pricing_model: "per_use"
   "success": true,
   "data": {
     "final_result": {
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明"
+      "search_result": "search_result_value",
+      "search_metadata": "search_metadata_value",
+      "search_status": "search_status_value"
     },
     "execution_log": [
       {
@@ -109,7 +109,7 @@ pricing_model: "per_use"
 }
 ```
 
-中间产物模板参考: `assets/（根据实际场景填充）`
+中间产物模板参考: `assets/google-search_template`
 
 ## 异常处理
 
@@ -147,7 +147,7 @@ export API_KEY="your_api_key_here"
 ## 案例展示
 
 ```bash
-GOOGLE_API_KEY=详情见说明 GOOGLE_CSE_ID=yyy python3 skills/google-search/scripts/search.py "Skill平台 documentation"
+GOOGLE_API_KEY=详情见说明 GOOGLE_CSE_ID=yyy python3 skills/google-search/（请参考skill目录中的脚本文件） "Skill平台 documentation"
 ```
 
 ## 常见问题

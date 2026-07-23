@@ -78,7 +78,7 @@ pricing_model: "per_use"
 
 ### Step 3: DOM蒸馏定位(方案A)
 1. 通过CDP连接获取三树数据(DOM树+Accessibility树+DOMSnapshot)
-2. 简化DOM树(过滤style/script/head等非内容元素)
+2. 简化DOM树(过滤style/（请参考skill目录中的脚本文件）)
 3. 按绘制顺序过滤被遮挡的不可见元素
 4. 优化树结构(移除无意义中间容器节点)
 5. 按包围盒传播过滤被父元素覆盖的子元素

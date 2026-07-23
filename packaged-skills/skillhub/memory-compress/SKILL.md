@@ -45,7 +45,7 @@ pricing_model: "per_use"
 在三层记忆系统（身份层 SOUL.md / 精选记忆 MEMORY.md / 原始日志 memory/YYYY-MM-DD.md）之间执行第三层到第二层的压缩转换。
 
 - **参数**：输入日志文件路径、输出文件路径（可选）
-- **用法**：`node scripts/memory-compress.js memory/2026-07-18.md /tmp/compressed.md`
+- **用法**：`node （请参考skill目录中的脚本文件） memory/2026-07-18.md /tmp/compressed.md`
 - **输出**：结构化压缩摘要，包含关键事件、核心教训、待办事项
 
 压缩效果：
@@ -94,7 +94,7 @@ pricing_model: "per_use"
 - **用法**：
   ```bash
   for file in memory/2026-07-{11..18}.md; do
-      [ -f "$file" ] && node scripts/memory-compress.js "$file" "/tmp/$(basename $file)"
+      [ -f "$file" ] && node （请参考skill目录中的脚本文件） "$file" "/tmp/$(basename $file)"
   done
   ```
 - **输出**：每天单独的压缩摘要文件
@@ -111,7 +111,7 @@ pricing_model: "per_use"
 心跳流程：
 
 ```text
-1. 运行：node scripts/memory-compress.js memory/YYYY-MM-DD.md /tmp/compressed.md
+1. 运行：node （请参考skill目录中的脚本文件） memory/YYYY-MM-DD.md /tmp/compressed.md
 2. 审查压缩结果准确性
 3. 追加：cat /tmp/compressed.md >> MEMORY.md
 4. 标记维护时间：date +%s > .last-memory-maintenance
@@ -147,7 +147,7 @@ pricing_model: "per_use"
 运行压缩脚本处理目标日志文件。单文件压缩直接指定输入路径；批量压缩使用通配符遍历多日文件。
 
 ```bash
-node scripts/memory-compress.js memory/2026-07-18.md /tmp/compressed.md
+node （请参考skill目录中的脚本文件） memory/2026-07-18.md /tmp/compressed.md
 ```
 
 ### 第三步：审查压缩结果
@@ -198,7 +198,7 @@ mv memory/2026-07-18.md memory/archive/
 输入文件：memory/2026-07-18.md（2,800 词）
 
 执行：
-1. 运行：node scripts/memory-compress.js memory/2026-07-18.md /tmp/compressed.md
+1. 运行：node （请参考skill目录中的脚本文件） memory/2026-07-18.md /tmp/compressed.md
 2. 脚本扫描标题，识别关键词：重大进展、教训、待办
 3. 兜底提取未匹配章节（如 ## 09:30 站会）
 4. 应用古文压缩四原则
@@ -233,7 +233,7 @@ mv memory/2026-07-18.md memory/archive/
 执行：
 1. 批量处理 7 天日志：
    for file in memory/2026-07-{12..18}.md; do
-       [ -f "$file" ] && node scripts/memory-compress.js "$file" "/tmp/$(basename $file)"
+       [ -f "$file" ] && node （请参考skill目录中的脚本文件） "$file" "/tmp/$(basename $file)"
    done
 2. 每天单独压缩（保留日期维度）
 3. 逐个审查压缩结果

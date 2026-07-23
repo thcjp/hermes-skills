@@ -38,7 +38,7 @@ pricing_model: "per_use"
 Add a new task with optional priority and due date.
 
 ```bash
-bash scripts/script.sh add "Task description" --priority high --due 2026-12-31
+bash （请参考skill目录中的脚本文件） add "Task description" --priority high --due 2026-12-31
 ```
 
 **输入**: 用户提供add所需的指令和必要参数。
@@ -47,7 +47,7 @@ bash scripts/script.sh add "Task description" --priority high --due 2026-12-31
 Display pending or all tasks.
 
 ```bash
-bash scripts/script.sh list --status pending
+bash （请参考skill目录中的脚本文件） list --status pending
 ```
 
 **输入**: 用户提供list所需的指令和必要参数。
@@ -56,7 +56,7 @@ bash scripts/script.sh list --status pending
 Complete a task by ID.
 
 ```bash
-bash scripts/script.sh done 1
+bash （请参考skill目录中的脚本文件） done 1
 ```
 
 **输入**: 用户提供done所需的指令和必要参数。
@@ -82,7 +82,7 @@ Just ask your AI assistant: / 直接告诉 AI 助手：
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | task-planner处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式

@@ -50,25 +50,25 @@ pricing_model: "monthly"
 | 优先支持 | 社区 | 工单优先响应 |
 ### 能力分类
 
-执行能力分类操作,处理用户输入并返回结果。
+执行能力分类,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供能力分类所需的参数和指令。
+**输入**: 用户提供能力分类相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回能力分类的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`能力分类`相关配置参数进行设置
 ### Schema设计
 
-执行Schema设计操作,处理用户输入并返回结果。
+执行Schema设计,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供Schema设计所需的参数和指令。
+**输入**: 用户提供Schema设计相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回Schema设计的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`Schema设计`相关配置参数进行设置
 ### 高可用
 
-执行高可用操作,处理用户输入并返回结果。
+执行高可用,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供高可用所需的参数和指令。
+**输入**: 用户提供高可用相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回高可用的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`高可用`相关配置参数进行设置
@@ -198,8 +198,8 @@ db.articles.createSearchIndex({
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
+| content | string | 否 | mongo-manager处理的内容输入 |,  |
+| mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
 | skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |
 
@@ -210,9 +210,9 @@ db.articles.createSearchIndex({
   "success": true,
   "data": {
     "final_result": {
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明"
+      "manager_result": "manager_result_value",
+      "manager_metadata": "manager_metadata_value",
+      "manager_status": "manager_status_value"
     },
     "execution_log": [
       {
@@ -252,7 +252,7 @@ db.articles.createSearchIndex({
 }
 ```
 
-中间产物模板参考: `assets/（根据实际场景填充）`
+中间产物模板参考: `assets/mongo-manager_template`
 
 ## 异常处理
 

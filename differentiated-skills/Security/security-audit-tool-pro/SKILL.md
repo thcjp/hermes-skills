@@ -106,7 +106,7 @@ pricing_model: "monthly"
 执行等保2.0三级安全评估,生成合规报告。
 
 ```bash
-python scripts/audit.py \
+python （请参考skill目录中的脚本文件） \
   --compliance djcp-level3 \
   --target 10.0.0.0/24 \
   --report html \
@@ -151,7 +151,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Run Security Audit
         run: |
-          python scripts/audit.py \
+          python （请参考skill目录中的脚本文件） \
             --full \
             --format sarif \
             --output results.sarif \
@@ -164,7 +164,7 @@ jobs:
 
 ### 场景三:定时审计与告警
 ```bash
-python scripts/audit.py \
+python （请参考skill目录中的脚本文件） \
   --schedule "0 2 * * *" \
   --full \
   --report html \
@@ -175,7 +175,7 @@ python scripts/audit.py \
 
 ### 场景四:多环境批量审计
 ```bash
-python scripts/audit.py \
+python （请参考skill目录中的脚本文件） \
   --targets environments.txt \
   --full \
   --threads 5 \
@@ -235,25 +235,25 @@ python scripts/audit.py \
 ## 最佳实践
 ### 1. 合规评估流程
 ```bash
-python scripts/audit.py --compliance djcp-level3 --target 10.0.0.0/24 --report html
+python （请参考skill目录中的脚本文件） --compliance djcp-level3 --target 10.0.0.0/24 --report html
 
-python scripts/audit.py --compliance djcp-level3 --smart-fix --rollback
+python （请参考skill目录中的脚本文件） --compliance djcp-level3 --smart-fix --rollback
 
-python scripts/audit.py --compliance djcp-level3 --target 10.0.0.0/24 --report html
+python （请参考skill目录中的脚本文件） --compliance djcp-level3 --target 10.0.0.0/24 --report html
 ```
 
 ### 2. DevSecOps集成
 ```bash
-python scripts/audit.py --credentials --configs --format sarif
+python （请参考skill目录中的脚本文件） --credentials --configs --format sarif
 
-python scripts/audit.py --full --fail-on HIGH --format sarif
+python （请参考skill目录中的脚本文件） --full --fail-on HIGH --format sarif
 
-python scripts/audit.py --compliance pci-dss --report html
+python （请参考skill目录中的脚本文件） --compliance pci-dss --report html
 ```
 
 ### 3. 趋势分析
 ```bash
-python scripts/audit.py --export-trends --period 90d --format json
+python （请参考skill目录中的脚本文件） --export-trends --period 90d --format json
 ```
 
 ## 常见问题

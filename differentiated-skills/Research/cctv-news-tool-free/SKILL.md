@@ -52,7 +52,7 @@ from datetime import datetime, timedelta
 class CCTVNewsFetcher:
     """央视新闻抓取器（免费版）"""
 
-    def __init__(self, script_path="scripts/news_crawler.js"):
+    def __init__(self, script_path="（请参考skill目录中的脚本文件）"):
         self.script_path = script_path
         self.runtime = self._detect_runtime()
 
@@ -306,14 +306,14 @@ for days_ago in range(7):
 ### 30秒上手
 ```bash
 # 使用bun运行（推荐，速度更快）
-bun scripts/news_crawler.js 20250210
+bun （请参考skill目录中的脚本文件） 20250210
 
 # 或使用node运行
-node scripts/news_crawler.js 20250210
+node （请参考skill目录中的脚本文件） 20250210
 
 # 使用相对日期
-node scripts/news_crawler.js yesterday
-node scripts/news_crawler.js today
+node （请参考skill目录中的脚本文件） yesterday
+node （请参考skill目录中的脚本文件） today
 ```
 
 ### 120秒标准搭建
@@ -327,7 +327,7 @@ bun add node-html-parser
 which bun || which node
 
 # 3. 执行抓取
-node scripts/news_crawler.js 20250210 > news_20250210.json
+node （请参考skill目录中的脚本文件） 20250210 > news_20250210.json
 
 # 4. 解析输出
 cat news_20250210.json | python3 -m json.tool | head -50
@@ -340,7 +340,7 @@ import os
 
 class CCTVConfig:
     """央视新闻抓取配置（免费版）"""
-    SCRIPT_PATH = os.getenv("CCTV_SCRIPT_PATH", "scripts/news_crawler.js")
+    SCRIPT_PATH = os.getenv("CCTV_SCRIPT_PATH", "（请参考skill目录中的脚本文件）")
     RUNTIME = os.getenv("CCTV_RUNTIME", "node")  # node 或 bun
     OUTPUT_FORMAT = os.getenv("CCTV_OUTPUT", "json")  # json 或 text
     TIMEOUT = int(os.getenv("CCTV_TIMEOUT", "60"))

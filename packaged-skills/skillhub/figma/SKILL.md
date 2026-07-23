@@ -69,13 +69,13 @@ echo "FIGMA_ACCESS_TOKEN=your-token" >> .env
 ### Basic Operations
 
 ```bash
-python scripts/figma_client.py get-file "your-file-key"
+python （请参考skill目录中的脚本文件） get-file "your-file-key"
 
-python scripts/export_manager.py export-frames "file-key" --formats png,svg
+python （请参考skill目录中的脚本文件） export-frames "file-key" --formats png,svg
 
-python scripts/style_auditor.py audit-file "file-key" --generate-html
+python （请参考skill目录中的脚本文件） audit-file "file-key" --generate-html
 
-python scripts/accessibility_checker.py "file-key" --level AA --format html
+python （请参考skill目录中的脚本文件） "file-key" --level AA --format html
 ```
 
 #
@@ -83,8 +83,8 @@ python scripts/accessibility_checker.py "file-key" --level AA --format html
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | figma处理的内容输入 |,  |
+| content | string | 否 | figma处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -93,9 +93,9 @@ python scripts/accessibility_checker.py "file-key" --level AA --format html
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "figma 相关配置参数",
+    result: "figma 相关配置参数",
+    result: "figma 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,
@@ -146,25 +146,25 @@ export API_KEY="your_api_key_here"
 ### With Development Workflows
 
 ```bash
-python scripts/export_manager.py export-tokens "file-key" --format css
+python （请参考skill目录中的脚本文件） export-tokens "file-key" --format css
 
-python scripts/figma_client.py document-components "file-key" --output docs/
+python （请参考skill目录中的脚本文件） document-components "file-key" --output docs/
 ```
 
 ### With Brand Management
 
 ```bash
-python scripts/style_auditor.py audit-file "file-key" --brand-colors "#FF0000,#00FF00,#0000FF"
+python （请参考skill目录中的脚本文件） audit-file "file-key" --brand-colors "#FF0000,#00FF00,#0000FF"
 
-python scripts/figma_client.py extract-colors "file-key" --output brand-colors.json
+python （请参考skill目录中的脚本文件） extract-colors "file-key" --output brand-colors.json
 ```
 
 ### With Client Deliverables
 
 ```bash
-python scripts/export_manager.py client-package "file-key" --template presentation
+python （请参考skill目录中的脚本文件） client-package "file-key" --template presentation
 
-python scripts/export_manager.py dev-handoff "file-key" --include-specs
+python （请参考skill目录中的脚本文件） dev-handoff "file-key" --include-specs
 ```
 
 ## 常见问题

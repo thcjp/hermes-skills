@@ -26,20 +26,20 @@ pricing_model: "per_use"
 
 | 能力 | 免费版 | 付费版 |
 |:-----|:-------|:-------|
-| （根据实际场景填充） - 按流程执行步端到端pipeline配置流程 | 支持 | 支持 |
-| （根据实际场景填充） - 步骤间自动质量gate检查 | 不支持 | 支持 |
-| （根据实际场景填充） - 支持多种变体等多种处理模式 | 不支持 | 支持 |
-| （根据实际场景填充） - 失败自动重试+断点续传 | 不支持 | 支持 |
+| Browser Automation V2 核心处理 - 按流程执行步端到端pipeline配置流程 | 支持 | 支持 |
+| Browser Automation V2 智能分析 - 步骤间自动质量gate检查 | 不支持 | 支持 |
+| Browser Automation V2 批量处理 - 支持多种变体等多种处理模式 | 不支持 | 支持 |
+| Browser Automation V2 自定义配置 - 失败自动重试+断点续传 | 不支持 | 支持 |
 | 批量处理 | 不支持 | 支持 |
 | 高级配置 | 不支持 | 支持 |
 
 ## 核心能力
 
-- （根据实际场景填充） - 按流程执行步端到端pipeline配置流程
-- （根据实际场景填充） - 步骤间自动质量gate检查
-- （根据实际场景填充） - 支持多种变体等多种处理模式
-- （根据实际场景填充） - 失败自动重试+断点续传
-- （根据实际场景填充） - 全流程可追溯, 输出执行日志
+- Browser Automation V2 结果导出 - 按流程执行步端到端pipeline配置流程
+- Browser Automation V2 实时监控 - 步骤间自动质量gate检查
+- Browser Automation V2 错误重试 - 支持多种变体等多种处理模式
+- Browser Automation V2 多格式支持 - 失败自动重试+断点续传
+- Browser Automation V2 扩展能力9 - 全流程可追溯, 输出执行日志
 #
 ## 适用场景
 
@@ -60,8 +60,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
+| content | string | 否 | browser-automation-v2处理的内容输入 |,  |
+| mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
 | skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |
 
@@ -72,9 +72,9 @@ pricing_model: "per_use"
   "success": true,
   "data": {
     "final_result": {
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明"
+      "v2_result": "v2_result_value",
+      "v2_metadata": "v2_metadata_value",
+      "v2_status": "v2_status_value"
     },
     "execution_log": [
       {
@@ -114,18 +114,18 @@ pricing_model: "per_use"
 }
 ```
 
-中间产物模板参考: `assets/（根据实际场景填充）`
+中间产物模板参考: `assets/browser-automation-v2_template`
 
 ## 异常处理
 
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
-| Step （根据实际场景填充）处理失败 | 按流程执行 | 自动(最多max_retries次), 仍失败则记录断点, 暂停流程 |
-| Gate条件不满足 | Step （根据实际场景填充）输出质量不达标 | 返回Step （根据实际场景填充）重新处理, 或提示用户调整输入 |
+| Step Browser Automation V2 扩展能力10处理失败 | 按流程执行 | 自动(最多max_retries次), 仍失败则记录断点, 暂停流程 |
+| Gate条件不满足 | Step Browser Automation V2 扩展能力11输出质量不达标 | 返回Step Browser Automation V2 扩展能力11重新处理, 或提示用户调整输入 |
 | 输入数据格式错误 | content格式不符合要求 | 列出期望格式, 提供示例, 中止流程 |
 | 断点续传失败 | 缓存的中间产物已过期或损坏 | 从Step 1重新开始, 清除旧缓存 |
-| 超时 | 总处理时间超过（根据实际场景填充）分钟 | 返回已完成步骤的结果, 标记为partial |
+| 超时 | 总处理时间超过Browser Automation V2 扩展能力12分钟 | 返回已完成步骤的结果, 标记为partial |
 | 其他异常 | 内部处理异常 | 检查输入后 |
 
 ## 依赖说明

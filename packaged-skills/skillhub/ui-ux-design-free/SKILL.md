@@ -90,17 +90,17 @@ WCAG基础要求：
 **输出**: 返回基础无障碍（Accessibility）的执行结果,包含操作状态和输出数据。
 ### Mobile-First
 
-执行Mobile-First操作,处理用户输入并返回结果。
+执行Mobile-First,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供Mobile-First所需的参数和指令。
+**输入**: 用户提供Mobile-First相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回Mobile-First的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`Mobile-First`相关配置参数进行设置
 ### Visual Hierarchy
 
-执行Visual Hierarchy操作,处理用户输入并返回结果。
+执行Visual Hierarchy,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供Visual Hierarchy所需的参数和指令。
+**输入**: 用户提供Visual Hierarchy相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回Visual Hierarchy的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`Visual Hierarchy`相关配置参数进行设置

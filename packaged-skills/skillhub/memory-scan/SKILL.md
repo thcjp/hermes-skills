@@ -88,22 +88,22 @@ pricing_model: "monthly"
 
 ```bash
 # 扫描全部记忆文件（本地模式）
-python3 scripts/memory-scan.py
+python3 （请参考skill目录中的脚本文件）
 
 # 允许远程LLM分析（仅传输脱敏内容）
-python3 scripts/memory-scan.py --allow-remote
+python3 （请参考skill目录中的脚本文件） --allow-remote
 
 # 扫描指定文件
-python3 scripts/memory-scan.py --file memory/2026-07-18.md
+python3 （请参考skill目录中的脚本文件） --file memory/2026-07-18.md
 
 # 静默模式（用于自动化场景）
-python3 scripts/memory-scan.py --quiet
+python3 （请参考skill目录中的脚本文件） --quiet
 
 # JSON输出（用于集成到其他工具）
-python3 scripts/memory-scan.py --json
+python3 （请参考skill目录中的脚本文件） --json
 
 # 自定义扫描天数范围
-python3 scripts/memory-scan.py --days 60
+python3 （请参考skill目录中的脚本文件） --days 60
 ```
 
 ### 第二步：分析扫描报告
@@ -120,7 +120,7 @@ python3 scripts/memory-scan.py --days 60
 
 ```bash
 # 隔离指定文件的指定行
-python3 scripts/quarantine.py memory/2026-07-18.md 42
+python3 （请参考skill目录中的脚本文件） memory/2026-07-18.md 42
 ```
 
 隔离操作创建备份文件 `.memory-scan/quarantine/memory_2026-07-18_line42.backup`，并脱敏威胁行。
@@ -129,7 +129,7 @@ python3 scripts/quarantine.py memory/2026-07-18.md 42
 
 ```bash
 # 创建每日扫描定时任务
-bash scripts/schedule-scan.sh
+bash （请参考skill目录中的脚本文件）
 ```
 
 或在心跳任务中添加每周扫描：
@@ -137,13 +137,13 @@ bash scripts/schedule-scan.sh
 ```markdown
 ## Weekly Memory Scan
 Every Sunday, run memory scan:
-python3 scripts/memory-scan.py --quiet
+python3 （请参考skill目录中的脚本文件） --quiet
 ```
 
 ### 第五步：恢复误隔离内容（如需）
 
 ```bash
-python3 scripts/quarantine.py --restore memory/2026-07-18.md 42
+python3 （请参考skill目录中的脚本文件） --restore memory/2026-07-18.md 42
 ```
 
 ## 错误处理
@@ -168,7 +168,7 @@ python3 scripts/quarantine.py --restore memory/2026-07-18.md 42
 
 **执行命令：**
 ```bash
-python3 scripts/memory-scan.py
+python3 （请参考skill目录中的脚本文件）
 ```
 
 **输出：**
@@ -188,7 +188,7 @@ Overall: MEDIUM
 Action: Review memory/2026-07-15.md:42
 ```
 
-**后续操作：** 系统询问是否隔离，用户确认后执行 `python3 scripts/quarantine.py memory/2026-07-15.md 42`。
+**后续操作：** 系统询问是否隔离，用户确认后执行 `python3 （请参考skill目录中的脚本文件） memory/2026-07-15.md 42`。
 
 ### 示例二：引入外部数据后远程LLM增强扫描
 
@@ -196,7 +196,7 @@ Action: Review memory/2026-07-15.md:42
 
 **执行命令：**
 ```bash
-python3 scripts/memory-scan.py --file memory/2026-07-20.md --allow-remote --json
+python3 （请参考skill目录中的脚本文件） --file memory/2026-07-20.md --allow-remote --json
 ```
 
 **输出（JSON格式）：**
@@ -233,7 +233,7 @@ python3 scripts/memory-scan.py --file memory/2026-07-20.md --allow-remote --json
 
 **执行命令：**
 ```bash
-bash scripts/schedule-scan.sh
+bash （请参考skill目录中的脚本文件）
 ```
 
 **输出：**
@@ -255,10 +255,10 @@ Channel: configured alert channel
 本地模式使用纯模式匹配，零网络请求，速度快但无法识别语义级高级注入。远程LLM模式将脱敏内容发送给LLM进行语义分析，可识别更复杂的攻击模式。建议日常使用本地模式，导入外部数据后使用远程模式增强。
 
 **Q3：隔离后能恢复吗？**
-可以。隔离前自动备份到 `.memory-scan/quarantine/` 目录，用 `python3 scripts/quarantine.py --restore <file> <line>` 即可恢复。备份文件命名格式为 `memory_<date>_line<line>.backup`。
+可以。隔离前自动备份到 `.memory-scan/quarantine/` 目录，用 `python3 （请参考skill目录中的脚本文件） --restore <file> <line>` 即可恢复。备份文件命名格式为 `memory_<date>_line<line>.backup`。
 
 **Q4：定时任务怎么配置？**
-运行 `bash scripts/schedule-scan.sh` 创建每日扫描定时任务，默认每天下午3点运行。需要配置告警渠道环境变量才能接收告警通知。仅发现威胁时才会发送告警，减少噪音。
+运行 `bash （请参考skill目录中的脚本文件）` 创建每日扫描定时任务，默认每天下午3点运行。需要配置告警渠道环境变量才能接收告警通知。仅发现威胁时才会发送告警，减少噪音。
 
 **Q5：扫描范围包括哪些文件？**
 默认扫描MEMORY.md、memory/*.md（最近30天日志）、以及工作区配置文件（AGENTS.md、SOUL.md、USER.md、TOOLS.md、HEARTBEAT.md、GUARDRAILS.md、IDENTITY.md、BOOTSTRAP.md等）。可通过 `--days` 调整日志扫描范围，通过 `--file` 指定单个文件。

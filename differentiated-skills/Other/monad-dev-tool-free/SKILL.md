@@ -125,7 +125,7 @@ EOF
 forge install OpenZeppelin/openzeppelin-contracts --no-commit
 
 # 4. 部署到测试网
-forge script script/Deploy.s.sol:DeployScript \
+forge script （请参考skill目录中的脚本文件）:DeployScript \
   --rpc-url https://testnet-rpc.monad.xyz \
   --private-key $PRIVATE_KEY \
   --broadcast

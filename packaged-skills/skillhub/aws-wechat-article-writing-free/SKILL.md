@@ -32,7 +32,7 @@ homepage: "https://skillhub.cn"
 - 内容外发:Prompt 内包含本篇 `article.yaml` / `topic-card.md` / 合并配置,整体 POST 给上述端点
 - 文件读:`.aws-article/config.yaml`、本篇 `article.yaml`、`topic-card.md`
 - 文件写:仅本篇目录下 `draft.md`
-- shell:仅 `python3 {baseDir}/scripts/write.py`
+- shell:仅 `python3 {baseDir}/（请参考skill目录中的脚本文件）`
 
 ## 依赖说明
 

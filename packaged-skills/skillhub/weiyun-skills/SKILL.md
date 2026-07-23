@@ -40,24 +40,24 @@ pricing_model: "per_use"
 
 | 能力 | 免费版 | 付费版 |
 |:-----|:-------|:-------|
-| （根据实际场景填充） - 生成生成内容 | 支持 | 支持 |
-| （根据实际场景填充） - 遵循专业风格规范 | 不支持 | 支持 |
-| （根据实际场景填充） - 支持多种变体等多种变体 | 不支持 | 支持 |
-| （根据实际场景填充） - 自动适配多种场景 | 不支持 | 支持 |
+| Weiyun Skills 核心处理 - 生成生成内容 | 支持 | 支持 |
+| Weiyun Skills 智能分析 - 遵循专业风格规范 | 不支持 | 支持 |
+| Weiyun Skills 批量处理 - 支持多种变体等多种变体 | 不支持 | 支持 |
+| Weiyun Skills 自定义配置 - 自动适配多种场景 | 不支持 | 支持 |
 | 批量处理 | 不支持 | 支持 |
 | 高级配置 | 不支持 | 支持 |
 
 ## 核心能力
 
-- （根据实际场景填充） - 生成生成内容
-- （根据实际场景填充） - 遵循专业风格规范
-- （根据实际场景填充） - 支持多种变体等多种变体
-- （根据实际场景填充） - 自动适配多种场景
+- Weiyun Skills 结果导出 - 生成生成内容
+- Weiyun Skills 实时监控 - 遵循专业风格规范
+- Weiyun Skills 错误重试 - 支持多种变体等多种变体
+- Weiyun Skills 多格式支持 - 自动适配多种场景
 #
 ## 适用场景
 
 * 使用微云 协议 工具进行文件管理（查询、下载、删除、上传、分享、重命名、创建文件夹、移动文件/目录）
-* **上传文件到微云**：优先使用 `scripts/upload_to_weiyun.py` 一键完成，无需手动计算参数或调用 协议
+* **上传文件到微云**：优先使用 `（请参考skill目录中的脚本文件）` 一键完成，无需手动计算参数或调用 协议
 * 按分类（文档、图片、视频等）查找微云文件（`weiyun.list_by_category` Tool）
 * 重命名微云文件或目录（`weiyun.rename_file`、`weiyun.rename_dir` Tool）
 * 在微云中创建文件夹（`weiyun.create_dir` Tool）
@@ -79,8 +79,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | weiyun-skills处理的内容输入 |,  |
+| content | string | 否 | weiyun-skills处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -89,9 +89,9 @@ pricing_model: "per_use"
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "skills 相关配置参数",
+    result: "skills 相关配置参数",
+    result: "skills 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

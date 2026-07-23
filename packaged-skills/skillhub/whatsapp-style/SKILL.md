@@ -159,11 +159,11 @@ print(f"校验结果: {result}")
 ```python
 manager = StylePresetManager()
 
-manager.create_preset("cs_welcome", "service", """*（根据实际场景填充） 客服中心*
+manager.create_preset("cs_welcome", "service", """*"style_result" 客服中心*
 
-您好 （根据实际场景填充）!
+您好 "style_metadata"!
 
-_我是您的专属客服 （根据实际场景填充）_
+_我是您的专属客服 "style_status"_
 
 请问有什么可以帮您?
 1. 查询订单
@@ -239,7 +239,7 @@ python3 validate_whatsapp_style.py --input test_message.txt --pro
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | whatsapp-style处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式

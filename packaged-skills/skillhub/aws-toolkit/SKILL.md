@@ -66,17 +66,17 @@ pricing_model: "monthly"
 | 分析 | Athena/EMR/Kinesis/Glue | 支持 |
 ### 服务覆盖
 
-执行服务覆盖操作,处理用户输入并返回结果。
+执行服务覆盖,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供服务覆盖所需的参数和指令。
+**输入**: 用户提供服务覆盖相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回服务覆盖的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`服务覆盖`相关配置参数进行设置
 ### 部署方式
 
-执行部署方式操作,处理用户输入并返回结果。
+执行部署方式,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供部署方式所需的参数和指令。
+**输入**: 用户提供部署方式相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回部署方式的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`部署方式`相关配置参数进行设置
@@ -89,13 +89,13 @@ pricing_model: "monthly"
 
 ```bash
 # 生成Terraform配置
-python3 scripts/infra.py generate \
+python3 （请参考skill目录中的脚本文件） generate \
   --template "web_app_ha" \
   --regions "us-east-1,us-west-2" \
   --output ./terraform/
 
 # 部署基础设施
-python3 scripts/infra.py apply \
+python3 （请参考skill目录中的脚本文件） apply \
   --config ./terraform/ \
   --auto-approve
 
@@ -113,7 +113,7 @@ python3 scripts/infra.py apply \
 
 ```bash
 # 合规审计
-python3 scripts/audit.py run \
+python3 （请参考skill目录中的脚本文件） run \
   --standards "CIS,PCI-DSS,HIPAA" \
   --output audit_report.pdf
 
@@ -130,12 +130,12 @@ python3 scripts/audit.py run \
 
 ```bash
 # 成本分析
-python3 scripts/cost.py analyze \
+python3 （请参考skill目录中的脚本文件） analyze \
   --period "3m" \
   --output cost_report.xlsx
 
 # 优化建议
-python3 scripts/cost.py optimize \
+python3 （请参考skill目录中的脚本文件） optimize \
   --apply-recommendations \
   --dry-run
 
@@ -167,21 +167,21 @@ cp config_pro_template.yaml config_pro.yaml
 
 ```bash
 # IaC部署
-python3 scripts/infra.py generate --template "web_app_ha" --regions "us-east-1,us-west-2"
-python3 scripts/infra.py apply --config ./terraform/
+python3 （请参考skill目录中的脚本文件） generate --template "web_app_ha" --regions "us-east-1,us-west-2"
+python3 （请参考skill目录中的脚本文件） apply --config ./terraform/
 
 # 合规审计
-python3 scripts/audit.py run --standards "CIS,PCI-DSS"
+python3 （请参考skill目录中的脚本文件） run --standards "CIS,PCI-DSS"
 
 # 成本优化
-python3 scripts/cost.py analyze --period "3m"
-python3 scripts/cost.py optimize --dry-run
+python3 （请参考skill目录中的脚本文件） analyze --period "3m"
+python3 （请参考skill目录中的脚本文件） optimize --dry-run
 
 # 安全扫描
-python3 scripts/security.py scan --output security_report.pdf
+python3 （请参考skill目录中的脚本文件） scan --output security_report.pdf
 
 # 多区域管理
-python3 scripts/regions.py deploy --template web_app --regions "us-east-1,eu-west-1,ap-southeast-1"
+python3 （请参考skill目录中的脚本文件） deploy --template web_app --regions "us-east-1,eu-west-1,ap-southeast-1"
 ```
 
 #
@@ -196,8 +196,8 @@ python3 scripts/regions.py deploy --template web_app --regions "us-east-1,eu-wes
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明"
+    result: "toolkit 相关配置参数",
+    result: "toolkit 相关配置参数"
   },
   "error": null
 }

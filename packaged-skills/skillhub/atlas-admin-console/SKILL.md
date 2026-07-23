@@ -50,25 +50,25 @@ pricing_model: "monthly"
 | 优先支持 | 社区 | 工单优先响应 |
 ### 能力分类
 
-执行能力分类操作,处理用户输入并返回结果。
+执行能力分类,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供能力分类所需的参数和指令。
+**输入**: 用户提供能力分类相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回能力分类的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`能力分类`相关配置参数进行设置
 ### API调用
 
-执行API调用操作,处理用户输入并返回结果。
+执行API调用,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供API调用所需的参数和指令。
+**输入**: 用户提供API调用相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回API调用的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`API调用`相关配置参数进行设置
 ### 结果导出
 
-执行结果导出操作,处理用户输入并返回结果。
+执行结果导出,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供结果导出所需的参数和指令。
+**输入**: 用户提供结果导出相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回结果导出的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`结果导出`相关配置参数进行设置
@@ -160,7 +160,7 @@ steps:
   - name: create-cluster
     operation: createCluster
     params:
-      name: "（根据实际场景填充）"
+      name: ""console_result""
       providerSettings:
         providerName: "AWS"
         instanceSizeName: "M10"
@@ -175,14 +175,14 @@ steps:
     operation: createDatabaseUser
     depends_on: wait-for-ready
     params:
-      username: "（根据实际场景填充）"
-      password: "（根据实际场景填充）"
+      username: ""console_metadata""
+      password: ""console_status""
       roles: [{roleName: "readWrite", databaseName: "admin"}]
   
   - name: add-ip-to-whitelist
     operation: createProjectIpAddress
     params:
-      cidrBlock: "（根据实际场景填充）/32"
+      cidrBlock: ""console_summary"/32"
 ```
 
 ## 使用流程
@@ -227,7 +227,7 @@ atlas-pro alert start --config alert-rules.yml
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | atlas-admin-console处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式
@@ -339,8 +339,8 @@ steps:
   - id: create_snapshot
     operation: createSnapshot
     params:
-      clusterName: "（根据实际场景填充）"
-      description: "automated-test-（根据实际场景填充）"
+      clusterName: ""console_details""
+      description: "automated-test-"console_count""
   
   - id: wait_snapshot_complete
     operation: getSnapshot

@@ -64,7 +64,7 @@ pricing_model: "monthly"
 
 ## 快速命令
 
-所有命令位于 `{baseDir}/scripts/jira.sh`。
+所有命令位于 `{baseDir}/（请参考skill目录中的脚本文件）`。
 
 | 命令 | 用途 |
 |------|------|
@@ -109,7 +109,7 @@ export API_KEY="your_api_key_here"
 
 ### 1. 事务搜索
 ```bash
-{baseDir}/scripts/jira.sh search "payment failure" [maxResults]
+{baseDir}/（请参考skill目录中的脚本文件） search "payment failure" [maxResults]
 ```
 
 在 `JIRA_BOARD` 项目范围内按 summary 或 key 模糊搜索。`maxResults` 可选，控制返回条数。
@@ -117,8 +117,8 @@ export API_KEY="your_api_key_here"
 **输入**: 用户提供事务搜索所需的指令和必要参数。
 ### 2. 事务链接与详情
 ```bash
-{baseDir}/scripts/jira.sh link ABC-321       # 浏览器链接
-{baseDir}/scripts/jira.sh issue ABC-321      # 快速详情
+{baseDir}/（请参考skill目录中的脚本文件） link ABC-321       # 浏览器链接
+{baseDir}/（请参考skill目录中的脚本文件） issue ABC-321      # 快速详情
 ```
 
 **输入**: 用户提供事务链接与详情所需的指令和必要参数。
@@ -127,8 +127,8 @@ export API_KEY="your_api_key_here"
 
 ### 3. 状态流转
 ```bash
-{baseDir}/scripts/jira.sh transitions ABC-321        # 列出可用流转
-{baseDir}/scripts/jira.sh status ABC-321 "Done"      # 变更状态
+{baseDir}/（请参考skill目录中的脚本文件） transitions ABC-321        # 列出可用流转
+{baseDir}/（请参考skill目录中的脚本文件） status ABC-321 "Done"      # 变更状态
 ```
 
 状态变更前先调用 `transitions` 获取服务端提供的可用流转列表，校验通过后才应用，避免无效流转。
@@ -136,8 +136,8 @@ export API_KEY="your_api_key_here"
 **输出**: 返回状态流转的执行结果,包含操作状态和输出数据。
 ### 4. 指派
 ```bash
-{baseDir}/scripts/jira.sh assign ABC-321 "Jane Doe"  # 按姓名/邮箱搜索后指派
-{baseDir}/scripts/jira.sh assign-me ABC-321          # 指派给自己
+{baseDir}/（请参考skill目录中的脚本文件） assign ABC-321 "Jane Doe"  # 按姓名/邮箱搜索后指派
+{baseDir}/（请参考skill目录中的脚本文件） assign-me ABC-321          # 指派给自己
 ```
 
 `assign` 会先按姓名或邮箱搜索用户，解析到 accountId 后再指派。
@@ -145,8 +145,8 @@ export API_KEY="your_api_key_here"
 **输出**: 返回指派的执行结果,包含操作状态和输出数据。
 ### 5. 评论与创建
 ```bash
-{baseDir}/scripts/jira.sh comment ABC-321 "Deployed to staging"
-{baseDir}/scripts/jira.sh create "Fix auth timeout" "Users being logged out after 5m"
+{baseDir}/（请参考skill目录中的脚本文件） comment ABC-321 "Deployed to staging"
+{baseDir}/（请参考skill目录中的脚本文件） create "Fix auth timeout" "Users being logged out after 5m"
 ```
 
 `create` 在 `JIRA_BOARD` 项目创建 Task 类型事务，描述可选。
@@ -154,7 +154,7 @@ export API_KEY="your_api_key_here"
 **处理**: 按照skill规范执行评论与创建操作,遵循单一意图原则。
 ### 6. 工时记录
 ```bash
-{baseDir}/scripts/jira.sh log PB-321 1.5 2025-01-18
+{baseDir}/（请参考skill目录中的脚本文件） log PB-321 1.5 2025-01-18
 ```
 
 按小时记录工时。日期可选，默认今日UTC。数值支持小数（如 `1.5` 表示1.5小时）。
@@ -166,10 +166,10 @@ export API_KEY="your_api_key_here"
 ### 7. 工时统计
 
 ```bash
-{baseDir}/scripts/jira.sh hours 2025-01-01 2025-01-05                       # 自己按事务的工时
-{baseDir}/scripts/jira.sh hours-day 2025-01-05                              # 全员按日工时
-{baseDir}/scripts/jira.sh hours-day 2025-01-05 "jane"                       # 按日+用户过滤
-{baseDir}/scripts/jira.sh hours-issue ABC-321 "jane"                        # 按事务+用户过滤
+{baseDir}/（请参考skill目录中的脚本文件） hours 2025-01-01 2025-01-05                       # 自己按事务的工时
+{baseDir}/（请参考skill目录中的脚本文件） hours-day 2025-01-05                              # 全员按日工时
+{baseDir}/（请参考skill目录中的脚本文件） hours-day 2025-01-05 "jane"                       # 按日+用户过滤
+{baseDir}/（请参考skill目录中的脚本文件） hours-issue ABC-321 "jane"                        # 按事务+用户过滤
 ```
 
 - `hours`：按 `JIRA_EMAIL` 过滤，返回自己在指定日期范围内按事务分组的工时。
@@ -193,32 +193,32 @@ export API_KEY="your_api_key_here"
 ### 示例1：搜索并查看事务
 
 ```bash
-{baseDir}/scripts/jira.sh search "timeout" 5
+{baseDir}/（请参考skill目录中的脚本文件） search "timeout" 5
 # 输出：匹配的5条事务，含key与summary
-{baseDir}/scripts/jira.sh issue ABC-123
+{baseDir}/（请参考skill目录中的脚本文件） issue ABC-123
 # 输出：状态、指派人、优先级、summary
 ```
 
 ### 示例2：变更状态（含流转校验）
 
 ```bash
-{baseDir}/scripts/jira.sh transitions ABC-123
+{baseDir}/（请参考skill目录中的脚本文件） transitions ABC-123
 # 输出：可用流转列表（如 To Do → In Progress → Done）
-{baseDir}/scripts/jira.sh status ABC-123 "In Progress"
+{baseDir}/（请参考skill目录中的脚本文件） status ABC-123 "In Progress"
 # 输出：状态已变更为 In Progress
 ```
 
 ### 示例3：记录工时
 
 ```bash
-{baseDir}/scripts/jira.sh log ABC-123 2.5 2025-01-18
+{baseDir}/（请参考skill目录中的脚本文件） log ABC-123 2.5 2025-01-18
 # 输出：已在 ABC-123 记录 2.5 小时工时，日期 2025-01-18
 ```
 
 ### 示例4：按日全员工时统计
 
 ```bash
-{baseDir}/scripts/jira.sh hours-day 2025-01-07
+{baseDir}/（请参考skill目录中的脚本文件） hours-day 2025-01-07
 # 输出：JSON，含每个用户在每个事务的工时汇总
 {
   "2025-01-07": [
@@ -231,7 +231,7 @@ export API_KEY="your_api_key_here"
 ### 示例5：创建Task
 
 ```bash
-{baseDir}/scripts/jira.sh create "Fix auth timeout" "Users being logged out after 5m"
+{baseDir}/（请参考skill目录中的脚本文件） create "Fix auth timeout" "Users being logged out after 5m"
 # 输出：已创建 ABC-125（Task）
 ```
 

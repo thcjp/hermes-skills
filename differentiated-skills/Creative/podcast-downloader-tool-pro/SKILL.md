@@ -114,7 +114,7 @@ for url in "${URLs[@]}"; do
         sleep 1
     done
 
-    PODCAST_DIR="$OUTPUT_DIR" ./scripts/download.sh "$url" &
+    PODCAST_DIR="$OUTPUT_DIR" （请参考skill目录中的脚本文件） "$url" &
 done
 
 wait
@@ -196,7 +196,7 @@ class PodcastSubscriber:
             os.system(
                 f"PODCAST_DIR={show['output_dir']} "
                 f"AUDIO_QUALITY={show['quality']} "
-                f"./scripts/download.sh {ep['url']}"
+                f"（请参考skill目录中的脚本文件） {ep['url']}"
             )
             ep_hash = hashlib.md5(ep["url"].encode()).hexdigest()
             self.downloaded.add(ep_hash)

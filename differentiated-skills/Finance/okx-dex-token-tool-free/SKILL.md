@@ -79,7 +79,7 @@ suggested_price: 19.9
 
 ```bash
 # 查询代币价格
-python3 scripts/token_info.py --token UNIS --chain ethereum
+python3 （请参考skill目录中的脚本文件） --token UNIS --chain ethereum
 
 # 输出：
 # === UNIS 代币信息 ===
@@ -96,7 +96,7 @@ python3 scripts/token_info.py --token UNIS --chain ethereum
 
 ```bash
 # 查询流动性池
-python3 scripts/liquidity_pool.py \
+python3 （请参考skill目录中的脚本文件） \
   --token-a USDC \
   --token-b WETH \
   --chain ethereum
@@ -110,7 +110,7 @@ python3 scripts/liquidity_pool.py \
 
 ```bash
 # 通过合约地址查询
-python3 scripts/token_info.py \
+python3 （请参考skill目录中的脚本文件） \
   --address 0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984 \
   --chain ethereum
 
@@ -140,17 +140,17 @@ export OKX_API_KEY="your_api_key"  # 可选
 
 ```bash
 # 查询代币
-python3 scripts/token_info.py --token UNIS --chain ethereum
-python3 scripts/token_info.py --token CAKE --chain bsc
+python3 （请参考skill目录中的脚本文件） --token UNIS --chain ethereum
+python3 （请参考skill目录中的脚本文件） --token CAKE --chain bsc
 
 # 流动性池
-python3 scripts/liquidity_pool.py --token-a USDC --token-b WETH --chain ethereum
+python3 （请参考skill目录中的脚本文件） --token-a USDC --token-b WETH --chain ethereum
 
 # 代币列表
-python3 scripts/token_list.py --chain ethereum --top 20
+python3 （请参考skill目录中的脚本文件） --chain ethereum --top 20
 
 # 价格历史
-python3 scripts/price_history.py --token UNIS --days 7
+python3 （请参考skill目录中的脚本文件） --token UNIS --days 7
 ```
 
 ## 示例

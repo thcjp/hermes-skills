@@ -124,7 +124,7 @@ Agent 执行流程：
 示例命令：
 
 ```bash
-python3 {baseDir}/scripts/news.py
+python3 {baseDir}/（请参考skill目录中的脚本文件）
 ```
 
 示例输出：
@@ -176,7 +176,7 @@ Agent：
 ```
 
 ```bash
-python3 {baseDir}/scripts/news.py --source bbc
+python3 {baseDir}/（请参考skill目录中的脚本文件） --source bbc
 ```
 
 ### 场景三：按主题筛选
@@ -194,7 +194,7 @@ Agent：
 ```
 
 ```bash
-python3 {baseDir}/scripts/news.py --topic "climate"
+python3 {baseDir}/（请参考skill目录中的脚本文件） --topic "climate"
 ```
 
 ## 快速开始
@@ -202,7 +202,7 @@ python3 {baseDir}/scripts/news.py --topic "climate"
 ### Step 1：列出可用源
 
 ```bash
-python3 {baseDir}/scripts/news.py --list-sources
+python3 {baseDir}/（请参考skill目录中的脚本文件） --list-sources
 ```
 
 输出示例：
@@ -222,26 +222,26 @@ Available News Sources:
 
 ```bash
 # 获取所有源的最新新闻（默认每源8条）
-python3 {baseDir}/scripts/news.py
+python3 {baseDir}/（请参考skill目录中的脚本文件）
 
 # 获取特定源的新闻
-python3 {baseDir}/scripts/news.py --source bbc
+python3 {baseDir}/（请参考skill目录中的脚本文件） --source bbc
 
 # 按主题筛选
-python3 {baseDir}/scripts/news.py --topic "technology"
+python3 {baseDir}/（请参考skill目录中的脚本文件） --topic "technology"
 
 # 控制每源条目数
-python3 {baseDir}/scripts/news.py --limit 20
+python3 {baseDir}/（请参考skill目录中的脚本文件） --limit 20
 ```
 
 ### Step 3：组合筛选
 
 ```bash
 # 获取BBC关于乌克兰的报道
-python3 {baseDir}/scripts/news.py --source bbc --topic "ukraine"
+python3 {baseDir}/（请参考skill目录中的脚本文件） --source bbc --topic "ukraine"
 
 # 获取Guardian科技类新闻，最多15条
-python3 {baseDir}/scripts/news.py --source guardian --topic "tech" --limit 15
+python3 {baseDir}/（请参考skill目录中的脚本文件） --source guardian --topic "tech" --limit 15
 ```
 
 ## 示例
@@ -333,41 +333,41 @@ ITEM_TEMPLATE = """{index}. **{title}**
 
 ```bash
 # 推荐 - 适度获取
-python3 {baseDir}/scripts/news.py --limit 10
+python3 {baseDir}/（请参考skill目录中的脚本文件） --limit 10
 
 # 不推荐 - 获取过多导致信息过载
-python3 {baseDir}/scripts/news.py --limit 100
+python3 {baseDir}/（请参考skill目录中的脚本文件） --limit 100
 ```
 
 ### 2. 善用主题筛选
 
 ```bash
 # 精准筛选感兴趣的主题
-python3 {baseDir}/scripts/news.py --topic "artificial intelligence"
-python3 {baseDir}/scripts/news.py --topic "climate change"
-python3 {baseDir}/scripts/news.py --topic "space exploration"
+python3 {baseDir}/（请参考skill目录中的脚本文件） --topic "artificial intelligence"
+python3 {baseDir}/（请参考skill目录中的脚本文件） --topic "climate change"
+python3 {baseDir}/（请参考skill目录中的脚本文件） --topic "space exploration"
 ```
 
 ### 3. 按来源偏好选择
 
 ```bash
 # 偏好英国视角
-python3 {baseDir}/scripts/news.py --source bbc --source guardian
+python3 {baseDir}/（请参考skill目录中的脚本文件） --source bbc --source guardian
 
 # 偏好美国视角
-python3 {baseDir}/scripts/news.py --source ap --source npr
+python3 {baseDir}/（请参考skill目录中的脚本文件） --source ap --source npr
 
 # 偏好中东视角
-python3 {baseDir}/scripts/news.py --source aljazeera
+python3 {baseDir}/（请参考skill目录中的脚本文件） --source aljazeera
 ```
 
 ### 4. 多源对比
 
 ```bash
 # 获取多个源关于同一主题的报道
-python3 {baseDir}/scripts/news.py --source bbc --topic "ukraine"
-python3 {baseDir}/scripts/news.py --source reuters --topic "ukraine"
-python3 {baseDir}/scripts/news.py --source aljazeera --topic "ukraine"
+python3 {baseDir}/（请参考skill目录中的脚本文件） --source bbc --topic "ukraine"
+python3 {baseDir}/（请参考skill目录中的脚本文件） --source reuters --topic "ukraine"
+python3 {baseDir}/（请参考skill目录中的脚本文件） --source aljazeera --topic "ukraine"
 ```
 
 ## 常见问题

@@ -111,7 +111,7 @@ AI翻译验证专业版是一款面向企业用户的翻译与本地化平台。
 对产品文档进行多语言本地化,使用翻译记忆库保持一致性。
 
 ```bash
-python scripts/translate.py \
+python （请参考skill目录中的脚本文件） \
   --files docs/*.md \
   --languages fr,de,es,ja,zh \
   --quality-boost \
@@ -126,7 +126,7 @@ python scripts/translate.py \
 对关键内容(法律/医疗)进行AI翻译+人工审核。
 
 ```bash
-python scripts/translate.py \
+python （请参考skill目录中的脚本文件） \
   --file legal_document.pdf \
   --target-lang ja \
   --human-verify \
@@ -136,7 +136,7 @@ python scripts/translate.py \
 
 ### 场景三:批量翻译与并行处理
 ```bash
-python scripts/translate.py \
+python （请参考skill目录中的脚本文件） \
   --batch translations/ \
   --languages fr,de,es,ja,zh \
   --threads 10 \
@@ -444,7 +444,7 @@ Cloud,zh,云,技术
 ## 最佳实践
 ### 1. 翻译记忆库维护
 ```bash
-python scripts/translate.py \
+python （请参考skill目录中的脚本文件） \
   --update-tm \
   --tm-file company_tm.tmx \
   --from-projects "project1,project2,project3"
@@ -477,7 +477,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Translate
         run: |
-          python scripts/translate.py \
+          python （请参考skill目录中的脚本文件） \
             --files docs/*.md \
             --languages fr,de,es,ja,zh \
             --quality-boost \

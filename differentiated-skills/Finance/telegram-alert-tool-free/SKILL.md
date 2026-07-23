@@ -73,7 +73,7 @@ suggested_price: 29.9
 
 ```bash
 # 设置价格告警
-python3 scripts/alert.py add \
+python3 （请参考skill目录中的脚本文件） add \
   --ticker BTC-USD \
   --condition "below" \
   --threshold 60000 \
@@ -81,7 +81,7 @@ python3 scripts/alert.py add \
   --chat-id "@my_trading_group"
 
 # 启动监控
-python3 scripts/alert.py monitor
+python3 （请参考skill目录中的脚本文件） monitor
 ```
 
 ### 场景二：交易信号通知
@@ -90,7 +90,7 @@ python3 scripts/alert.py monitor
 
 ```bash
 # 发送交易信号
-python3 scripts/notify.py send \
+python3 （请参考skill目录中的脚本文件） send \
   --message "买入信号: AAPL 突破阻力位180" \
   --chat-id "@my_trading_group"
 ```
@@ -101,7 +101,7 @@ python3 scripts/notify.py send \
 
 ```bash
 # 设置定时播报
-python3 scripts/alert.py schedule \
+python3 （请参考skill目录中的脚本文件） schedule \
   --time "09:00" \
   --message-type "market_summary" \
   --chat-id "@my_trading_group"
@@ -132,16 +132,16 @@ export TELEGRAM_BOT_TOKEN="your_bot_token"
 
 ```bash
 # 发送消息
-python3 scripts/notify.py send --message "测试消息" --chat-id "@group"
+python3 （请参考skill目录中的脚本文件） send --message "测试消息" --chat-id "@group"
 
 # 添加告警
-python3 scripts/alert.py add --ticker BTC-USD --condition below --threshold 60000
+python3 （请参考skill目录中的脚本文件） add --ticker BTC-USD --condition below --threshold 60000
 
 # 查看告警列表
-python3 scripts/alert.py list
+python3 （请参考skill目录中的脚本文件） list
 
 # 启动监控
-python3 scripts/alert.py monitor
+python3 （请参考skill目录中的脚本文件） monitor
 ```
 
 #

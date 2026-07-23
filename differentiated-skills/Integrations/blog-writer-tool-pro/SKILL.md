@@ -52,7 +52,7 @@ homepage: "https://skillhub.cn"
 | 媒体上传 | POST /api/media | 图片托管与引用 |
 | 数据分析 | GET /api/analytics | 访问量与读者洞察 |
 | 博客设置 | PUT /api/settings | 名称/描述/分页 |
-| 部署 | scripts/deploy-*.sh | Vercel/Cloudflare |
+| 部署 | （请参考skill目录中的脚本文件）*.sh | Vercel/Cloudflare |
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置。
 
 ### 核心功能执行
@@ -107,7 +107,7 @@ Agent 自主生成文章 → 上传封面图 → 引用 URL → 创建文章 →
 2. 切换主题：`PUT /api/themes`
 3. 上传媒体：`POST /api/media`
 4. 查看分析：`GET /api/analytics`
-5. 一键部署：`bash scripts/deploy-vercel.sh`
+5. 一键部署：`bash （请参考skill目录中的脚本文件）`
 
 ### 切换主题
 
@@ -188,13 +188,13 @@ curl -X PUT http://localhost:3000/api/settings \
 ### 部署到 Vercel
 
 ```bash
-bash <skill-directory>/scripts/deploy-vercel.sh
+bash <skill-directory>/（请参考skill目录中的脚本文件）
 ```
 
 ### 部署到 Cloudflare
 
 ```bash
-bash <skill-directory>/scripts/deploy-cloudflare.sh
+bash <skill-directory>/（请参考skill目录中的脚本文件）
 ```
 
 ## 最佳实践

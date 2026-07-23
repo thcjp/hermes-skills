@@ -75,16 +75,16 @@ suggested_price: 99.9
 
 ```bash
 # 1. 分析CSS中的字体使用情况
-python3 scripts/font-manager.py analyze styles.css
+python3 （请参考skill目录中的脚本文件） analyze styles.css
 
 # 2. 检查字体配对是否合理
-python3 scripts/font-manager.py check-pairing --heading "Playfair Display" --body "Source Sans Pro"
+python3 （请参考skill目录中的脚本文件） check-pairing --heading "Playfair Display" --body "Source Sans Pro"
 
 # 3. 生成排版参数建议
-python3 scripts/font-manager.py suggest --type body-text
+python3 （请参考skill目录中的脚本文件） suggest --type body-text
 
 # 4. 检查字体加载性能
-python3 scripts/font-manager.py perf-check index.html
+python3 （请参考skill目录中的脚本文件） perf-check index.html
 ```
 
 ### 可复制模板
@@ -100,13 +100,13 @@ python3 scripts/font-manager.py perf-check index.html
 
 每次页面开发完成后检查：
 1. 分析字体使用
-   python3 scripts/font-manager.py analyze styles.css
+   python3 （请参考skill目录中的脚本文件） analyze styles.css
 
 2. 检查配对合理性
-   python3 scripts/font-manager.py check-pairing --heading "字体A" --body "字体B"
+   python3 （请参考skill目录中的脚本文件） check-pairing --heading "字体A" --body "字体B"
 
 3. 性能检查
-   python3 scripts/font-manager.py perf-check index.html
+   python3 （请参考skill目录中的脚本文件） perf-check index.html
 ```
 
 ---
@@ -312,11 +312,11 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont,
 **解决方案**：
 ```bash
 # 检查字体配对是否合理
-python3 scripts/font-manager.py check-pairing \
+python3 （请参考skill目录中的脚本文件） check-pairing \
   --heading "Playfair Display" --body "Source Sans Pro"
 
 # 生成安全配对建议
-python3 scripts/font-manager.py suggest-pairing --style modern
+python3 （请参考skill目录中的脚本文件） suggest-pairing --style modern
 ```
 
 **效果**：快速获得安全的字体配对建议，避免配对陷阱，5分钟完成字体选型。
@@ -328,10 +328,10 @@ python3 scripts/font-manager.py suggest-pairing --style modern
 **解决方案**：
 ```bash
 # 分析CSS字体使用
-python3 scripts/font-manager.py analyze styles.css
+python3 （请参考skill目录中的脚本文件） analyze styles.css
 
 # 生成排版参数建议
-python3 scripts/font-manager.py suggest --type body-text
+python3 （请参考skill目录中的脚本文件） suggest --type body-text
 ```
 
 **效果**：自动识别字体使用问题（细字重用于正文、行高过密等），给出修复建议。
@@ -343,10 +343,10 @@ python3 scripts/font-manager.py suggest --type body-text
 **解决方案**：
 ```bash
 # 检查字体加载性能
-python3 scripts/font-manager.py perf-check index.html
+python3 （请参考skill目录中的脚本文件） perf-check index.html
 
 # 生成优化建议
-python3 scripts/font-manager.py perf-optimize styles.css
+python3 （请参考skill目录中的脚本文件） perf-optimize styles.css
 ```
 
 **效果**：识别缺少`font-display: swap`、未子集化、未预加载等问题，给出性能优化方案。
@@ -365,7 +365,7 @@ python3 scripts/font-manager.py perf-optimize styles.css
 
 ```text
 用法：
-  python3 scripts/font-manager.py <命令> [选项]
+  python3 （请参考skill目录中的脚本文件） <命令> [选项]
 
 命令：
   analyze <CSS文件>        分析字体使用情况
@@ -383,10 +383,10 @@ python3 scripts/font-manager.py perf-optimize styles.css
   --help              显示帮助
 
 示例：
-  python3 scripts/font-manager.py analyze styles.css
-  python3 scripts/font-manager.py check-pairing --heading "Playfair Display" --body "Inter"
-  python3 scripts/font-manager.py suggest --type body-text
-  python3 scripts/font-manager.py perf-check index.html
+  python3 （请参考skill目录中的脚本文件） analyze styles.css
+  python3 （请参考skill目录中的脚本文件） check-pairing --heading "Playfair Display" --body "Inter"
+  python3 （请参考skill目录中的脚本文件） suggest --type body-text
+  python3 （请参考skill目录中的脚本文件） perf-check index.html
 ```
 
 ---

@@ -106,7 +106,7 @@ pricing_model: "per_use"
 基金经理需对持仓的 20 只股票进行批量舆情扫描,生成组合情绪报告。
 
 ```bash
-python3 {SKILL_DIR}/scripts/sentiment_scan.py --batch portfolio.csv 7 --format json --output report.json
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 --format json --output report.json
 ```
 
 **portfolio.csv 示例**:
@@ -128,7 +128,7 @@ TSLA,us,特斯拉
 研究员需对比新能源汽车板块内多只股票的舆情强弱。
 
 ```bash
-python3 {SKILL_DIR}/scripts/sentiment_scan.py --batch ev_sector.csv 7 --compare --format html --output ev_report.html
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch ev_sector.csv 7 --compare --format html --output ev_report.html
 ```
 
 **ev_sector.csv 示例**:
@@ -171,7 +171,7 @@ NIO,us,蔚来
 企业风控团队需对关注的股票设置情绪预警阈值,当情绪突变时及时通知。
 
 ```bash
-python3 {SKILL_DIR}/scripts/sentiment_monitor.py \
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） \
     --watch watchlist.csv \
     --threshold-negative -5 \
     --threshold-positive 7 \
@@ -228,9 +228,9 @@ EOF
 
 ### 第二步:执行批量扫描
 ```bash
-python3 {SKILL_DIR}/scripts/sentiment_scan.py --batch portfolio.csv 7 --format json --output report.json
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 --format json --output report.json
 
-python3 {SKILL_DIR}/scripts/sentiment_scan.py --batch portfolio.csv 7 --format html --output report.html
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 --format html --output report.html
 ```
 
 ### 第三步:查看分析结果
@@ -251,8 +251,8 @@ for r in data['results']:
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | news-sentiment处理的内容输入 |,  |
+| content | string | 否 | news-sentiment处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -261,9 +261,9 @@ for r in data['results']:
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "sentiment 相关配置参数",
+    result: "sentiment 相关配置参数",
+    result: "sentiment 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,
@@ -325,9 +325,9 @@ for r in data['results']:
 
 ### 定时任务配置
 ```bash
-0 8 * * * python3 {SKILL_DIR}/scripts/sentiment_scan.py --batch portfolio.csv 7 --format json --output /tmp/daily_report.json
+0 8 * * * python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 --format json --output /tmp/daily_report.json
 
-0 8 * * 1 python3 {SKILL_DIR}/scripts/sentiment_scan.py --batch portfolio.csv 7 --compare --format html --output /tmp/weekly_report.html
+0 8 * * 1 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 --compare --format html --output /tmp/weekly_report.html
 ```
 
 ### 企业级自动化工作流

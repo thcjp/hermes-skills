@@ -137,7 +137,7 @@ curl -s "https://api.zip-tax.com/request/v60?postalcode=92618" \
   -H "X-API-KEY: $ZIPTAX_API_KEY"
 
 # 或使用 CLI 封装
-bash scripts/lookup.sh --postalcode 92618
+bash （请参考skill目录中的脚本文件） --postalcode 92618
 ```
 
 #
@@ -147,7 +147,7 @@ bash scripts/lookup.sh --postalcode 92618
 
 ```bash
 #!/usr/bin/env bash
-# scripts/lookup.sh — 销售税查询 CLI 封装
+# （请参考skill目录中的脚本文件） — 销售税查询 CLI 封装
 set -euo pipefail
 
 if [ -z "$ZIPTAX_API_KEY" ]; then

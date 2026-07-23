@@ -103,7 +103,7 @@ pricing_model: "monthly"
 对整个代码仓库执行自动化安全审计。
 
 ```bash
-python scripts/code_audit.py \
+python （请参考skill目录中的脚本文件） \
   --target /path/to/project \
   --languages typescript,python \
   --owasp top10 \
@@ -139,7 +139,7 @@ ASVS合规等级:
 
 ### 场景二:多语言项目审计
 ```bash
-python scripts/code_audit.py \
+python （请参考skill目录中的脚本文件） \
   --target /path/to/monorepo \
   --languages typescript,python,go,java \
   --frameworks nextjs,express,django,spring \
@@ -151,10 +151,10 @@ python scripts/code_audit.py \
 
 ### 场景三:Git Hook持续监控
 ```bash
-python scripts/code_audit.py --install-hook
+python （请参考skill目录中的脚本文件） --install-hook
 
 #!/bin/bash
-python scripts/code_audit.py \
+python （请参考skill目录中的脚本文件） \
   --files $(git diff --cached --name-only) \
   --fail-on HIGH \
   --format text
@@ -165,7 +165,7 @@ python scripts/code_audit.py \
 security-audit:
   stage: test
   script:
-    - python scripts/code_audit.py
+    - python （请参考skill目录中的脚本文件）
         --target .
         --languages typescript
         --owasp top10
@@ -457,11 +457,11 @@ class ASTSecurityAnalyzer:
 ## 最佳实践
 ### 1. 分阶段审计策略
 ```bash
-python scripts/code_audit.py --files $(git diff --name-only) --format text
+python （请参考skill目录中的脚本文件） --files $(git diff --name-only) --format text
 
-python scripts/code_audit.py --target . --owasp top10 --format html
+python （请参考skill目录中的脚本文件） --target . --owasp top10 --format html
 
-python scripts/code_audit.py --target . --owasp top10 --asvs L2 --format pdf
+python （请参考skill目录中的脚本文件） --target . --owasp top10 --asvs L2 --format pdf
 ```
 
 ### 2. 误报抑制
@@ -484,9 +484,9 @@ python scripts/code_audit.py --target . --owasp top10 --asvs L2 --format pdf
 
 ### 3. 持续监控
 ```bash
-python scripts/code_audit.py --install-hook --fail-on HIGH
+python （请参考skill目录中的脚本文件） --install-hook --fail-on HIGH
 
-python scripts/code_audit.py --target . --format sarif --output results.sarif
+python （请参考skill目录中的脚本文件） --target . --format sarif --output results.sarif
 ```
 
 ## 已知限制

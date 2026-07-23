@@ -49,25 +49,25 @@ pricing_model: "monthly"
 | 优先支持 | 社区 | 工单优先响应 |
 ### 能力分类
 
-执行能力分类操作,处理用户输入并返回结果。
+执行能力分类,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供能力分类所需的参数和指令。
+**输入**: 用户提供能力分类相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回能力分类的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`能力分类`相关配置参数进行设置
 ### 批量写入上限
 
-执行批量写入上限操作,处理用户输入并返回结果。
+执行批量写入上限,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供批量写入上限所需的参数和指令。
+**输入**: 用户提供批量写入上限相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回批量写入上限的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`批量写入上限`相关配置参数进行设置
 ### 备份策略
 
-执行备份策略操作,处理用户输入并返回结果。
+执行备份策略,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供备份策略所需的参数和指令。
+**输入**: 用户提供备份策略相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回备份策略的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`备份策略`相关配置参数进行设置
@@ -180,8 +180,8 @@ df = pro.analytics.query("SELECT tags, COUNT(*) FROM memos GROUP BY tags")
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | sqlite-lite-manager处理的内容输入 |,  |
+| content | string | 否 | sqlite-lite-manager处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -190,9 +190,9 @@ df = pro.analytics.query("SELECT tags, COUNT(*) FROM memos GROUP BY tags")
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "manager 相关配置参数",
+    result: "manager 相关配置参数",
+    result: "manager 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

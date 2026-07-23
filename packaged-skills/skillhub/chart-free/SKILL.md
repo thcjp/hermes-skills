@@ -62,7 +62,7 @@ export API_KEY="your_api_key_here"
 2. 选择让对比一目了然的最简图表。
 3. 仅使用本地生成，不调用任何云端图表API。
 
-**输入**: 用户提供核心理念所需的参数和指令。
+**输入**: 用户提供核心理念相关的配置参数、输入数据和处理选项。
 
 ### 存储路径
 
@@ -73,7 +73,7 @@ export API_KEY="your_api_key_here"
 
 无云同步，无第三方图表API。
 
-**输入**: 用户提供存储路径所需的参数和指令。
+**输入**: 用户提供存储路径相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行存储路径操作。
 
 ### 支持的图表类型（免费版）
@@ -85,7 +85,7 @@ export API_KEY="your_api_key_here"
 
 > 饼图 `pie` 与散点图 `scatter` 为付费版专享。
 
-**输入**: 用户提供支持的图表类型（免费版）所需的参数和指令。
+**输入**: 用户提供支持的图表类型（免费版）相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行支持的图表类型（免费版）操作。
 **输出**: 返回支持的图表类型（免费版）的执行结果,包含操作状态和输出数据。
 
@@ -98,7 +98,7 @@ export API_KEY="your_api_key_here"
 
 > `suggest_chart.py`（智能选型）与 `list_charts.py`（历史管理）为付费版专享。
 
-**输入**: 用户提供脚本一览（免费版）所需的参数和指令。
+**输入**: 用户提供脚本一览（免费版）相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行脚本一览（免费版）操作。
 
 ### 核心能力（免费版）
@@ -113,7 +113,7 @@ export API_KEY="your_api_key_here"
 使用 `make_chart.py` 直接从命令行参数生成图表图片：
 
 ```bash
-python3 {baseDir}/scripts/make_chart.py \
+python3 {baseDir}/（请参考skill目录中的脚本文件） \
   --type bar \
   --title "季度销售额" \
   --labels "Q1,Q2,Q3,Q4" \
@@ -134,7 +134,7 @@ python3 {baseDir}/scripts/make_chart.py \
 - **历史管理 `list_charts.py`**：查看历史生成记录，按时间/类型/标题回溯。
 - **多类型组合工作流**：选型→生成→
 
-**输入**: 用户提供付费版专享能力所需的参数和指令。
+**输入**: 用户提供付费版专享能力相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行付费版专享能力操作。
 
 #
@@ -172,7 +172,7 @@ python3 {baseDir}/scripts/make_chart.py \
 使用 `make_chart.py` 直接从命令行参数生成图表图片：
 
 ```bash
-python3 {baseDir}/scripts/make_chart.py \
+python3 {baseDir}/（请参考skill目录中的脚本文件） \
   --type bar \
   --title "季度销售额" \
   --labels "Q1,Q2,Q3,Q4" \
@@ -191,7 +191,7 @@ python3 {baseDir}/scripts/make_chart.py \
 首次使用前运行 `init_storage.py` 创建目录结构与索引文件：
 
 ```bash
-python3 {baseDir}/scripts/init_storage.py
+python3 {baseDir}/（请参考skill目录中的脚本文件）
 ```
 
 ## 使用流程
@@ -207,7 +207,7 @@ python3 {baseDir}/scripts/init_storage.py
 ### 示例1：柱状图对比季度销售
 
 ```bash
-python3 {baseDir}/scripts/make_chart.py \
+python3 {baseDir}/（请参考skill目录中的脚本文件） \
   --type bar \
   --title "2024年季度销售额(万元)" \
   --labels "Q1,Q2,Q3,Q4" \
@@ -219,7 +219,7 @@ python3 {baseDir}/scripts/make_chart.py \
 ### 示例2：折线图展示月度趋势
 
 ```bash
-python3 {baseDir}/scripts/make_chart.py \
+python3 {baseDir}/（请参考skill目录中的脚本文件） \
   --type line \
   --title "月度活跃用户" \
   --labels "1月,2月,3月,4月,5月,6月" \

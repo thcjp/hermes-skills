@@ -57,25 +57,25 @@ pricing_model: "per_use"
 | 优先技术支持 | - | 支持 |
 ### 单条文本合成
 
-执行单条文本合成操作,处理用户输入并返回结果。
+执行单条文本合成,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供单条文本合成所需的参数和指令。
+**输入**: 用户提供单条文本合成相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回单条文本合成的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`单条文本合成`相关配置参数进行设置
 ### 预置音色
 
-执行预置音色操作,处理用户输入并返回结果。
+执行预置音色,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供预置音色所需的参数和指令。
+**输入**: 用户提供预置音色相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回预置音色的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`预置音色`相关配置参数进行设置
 ### 批量合成
 
-执行批量合成操作,处理用户输入并返回结果。
+执行批量合成,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供批量合成所需的参数和指令。
+**输入**: 用户提供批量合成相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回批量合成的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`批量合成`相关配置参数进行设置
@@ -256,13 +256,13 @@ curl -X POST http://localhost:8100/api/tts \
 1. 安装专业版引擎与音色库。
 
 ```bash
-scripts/setup-piper-pro.sh --install-all
+（请参考skill目录中的脚本文件） --install-all
 ```
 
 2. 生成优秀条语音（与免费版命令兼容）。
 
 ```bash
-scripts/piper-speak.sh "专业版语音合成已就绪" zh_CN-huayan-medium
+（请参考skill目录中的脚本文件） "专业版语音合成已就绪" zh_CN-huayan-medium
 ```
 
 3. 尝试批量合成。
@@ -276,8 +276,8 @@ piper-speak-pro --batch input_texts.json --voice zh_CN-huayan-medium --output-di
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | piper-tts-engine处理的内容输入 |,  |
+| content | string | 否 | piper-tts-engine处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -286,9 +286,9 @@ piper-speak-pro --batch input_texts.json --voice zh_CN-huayan-medium --output-di
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "engine 相关配置参数",
+    result: "engine 相关配置参数",
+    result: "engine 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

@@ -86,7 +86,7 @@ suggested_price: 99.9
 
 ```bash
 #!/bin/bash
-# scripts/batch-iris-review.sh - 批量审查 IRIS 代码
+# （请参考skill目录中的脚本文件） - 批量审查 IRIS 代码
 MODULE_DIR=$1
 REPORT_FILE="iris-review-report-$(date +%Y%m%d).md"
 
@@ -214,7 +214,7 @@ severity:
 
 ```bash
 #!/bin/bash
-# scripts/iris-complexity.sh - 代码复杂度分析
+# （请参考skill目录中的脚本文件） - 代码复杂度分析
 TARGET=$1
 
 echo "=== IRIS 代码复杂度分析 ==="
@@ -458,7 +458,7 @@ excludes:
 iris-code-review:
   stage: quality
   script:
-    - ./scripts/batch-iris-review.sh src/
+    - （请参考skill目录中的脚本文件） src/
     - |
       CRITICAL_COUNT=$(grep -c "\[严重\]" iris-review-report-*.md)
       if [ "$CRITICAL_COUNT" -gt 0 ]; then

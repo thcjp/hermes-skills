@@ -75,16 +75,16 @@ suggested_price: 29.9
 
 ```bash
 # 扫描所有记忆文件（本地模式，默认）
-python3 scripts/memory-radar.py
+python3 （请参考skill目录中的脚本文件）
 
 # 扫描指定文件
-python3 scripts/memory-radar.py --file memory/2026-02-01.md
+python3 （请参考skill目录中的脚本文件） --file memory/2026-02-01.md
 
 # JSON格式输出（适合自动化集成）
-python3 scripts/memory-radar.py --json
+python3 （请参考skill目录中的脚本文件） --json
 
 # 静默模式（仅输出威胁，适合定时任务）
-python3 scripts/memory-radar.py --quiet
+python3 （请参考skill目录中的脚本文件） --quiet
 ```
 
 ### 可复制模板
@@ -95,7 +95,7 @@ python3 scripts/memory-radar.py --quiet
 ## 每周记忆安全扫描
 
 每周日执行记忆安全扫描：
-python3 scripts/memory-radar.py --quiet
+python3 （请参考skill目录中的脚本文件） --quiet
 
 如发现MEDIUM及以上威胁，立即审核处理。
 ```
@@ -173,10 +173,10 @@ python3 scripts/memory-radar.py --quiet
 **解决方案**：
 ```bash
 # 每周扫描所有记忆文件
-python3 scripts/memory-radar.py
+python3 （请参考skill目录中的脚本文件）
 
 # 发现威胁时查看详细报告
-python3 scripts/memory-radar.py --file memory/2026-01-30.md
+python3 （请参考skill目录中的脚本文件） --file memory/2026-01-30.md
 ```
 
 **效果**：每周5分钟完成全量记忆安全审计，及时发现凭据泄露并修复，避免潜在安全事故。
@@ -188,10 +188,10 @@ python3 scripts/memory-radar.py --file memory/2026-01-30.md
 **解决方案**：
 ```bash
 # 静默模式扫描，仅输出威胁
-python3 scripts/memory-radar.py --quiet
+python3 （请参考skill目录中的脚本文件） --quiet
 
 # JSON格式输出，便于记录
-python3 scripts/memory-radar.py --json > scan-report.json
+python3 （请参考skill目录中的脚本文件） --json > scan-report.json
 ```
 
 **效果**：本地模式确保记忆内容不上传，5级评级直观展示安全状况，发现MEDIUM及以上威胁时立即告警。
@@ -203,10 +203,10 @@ python3 scripts/memory-radar.py --json > scan-report.json
 **解决方案**：
 ```bash
 # 扫描测试记忆文件
-python3 scripts/memory-radar.py --file test-memory/malicious-test.md
+python3 （请参考skill目录中的脚本文件） --file test-memory/malicious-test.md
 
 # 输出JSON报告用于CI集成
-python3 scripts/memory-radar.py --json --quiet
+python3 （请参考skill目录中的脚本文件） --json --quiet
 ```
 
 **效果**：将安全扫描集成到测试流程，确保Agent记忆系统在发布前通过安全检测。
@@ -217,7 +217,7 @@ python3 scripts/memory-radar.py --json --quiet
 
 ```text
 用法：
-  python3 scripts/memory-radar.py [选项]
+  python3 （请参考skill目录中的脚本文件） [选项]
 
 选项：
   --file <路径>      扫描指定文件（默认扫描全部记忆文件）
@@ -227,10 +227,10 @@ python3 scripts/memory-radar.py --json --quiet
   --help             显示帮助
 
 示例：
-  python3 scripts/memory-radar.py
-  python3 scripts/memory-radar.py --file memory/2026-02-01.md
-  python3 scripts/memory-radar.py --json > report.json
-  python3 scripts/memory-radar.py --quiet --days 7
+  python3 （请参考skill目录中的脚本文件）
+  python3 （请参考skill目录中的脚本文件） --file memory/2026-02-01.md
+  python3 （请参考skill目录中的脚本文件） --json > report.json
+  python3 （请参考skill目录中的脚本文件） --quiet --days 7
 ```
 
 ### 示例

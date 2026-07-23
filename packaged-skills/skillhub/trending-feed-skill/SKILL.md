@@ -55,25 +55,25 @@ pricing_model: "per_use"
 | 成本预估 | Token 用量与请求预算 | 否 | 是 |
 ### 页面抓取
 
-执行页面抓取操作,处理用户输入并返回结果。
+执行页面抓取,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供页面抓取所需的参数和指令。
+**输入**: 用户提供页面抓取相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回页面抓取的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`页面抓取`相关配置参数进行设置
 ### 语言过滤
 
-执行语言过滤操作,处理用户输入并返回结果。
+执行语言过滤,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供语言过滤所需的参数和指令。
+**输入**: 用户提供语言过滤相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回语言过滤的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`语言过滤`相关配置参数进行设置
 ### 批量抓取
 
-执行批量抓取操作,处理用户输入并返回结果。
+执行批量抓取,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供批量抓取所需的参数和指令。
+**输入**: 用户提供批量抓取相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回批量抓取的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`批量抓取`相关配置参数进行设置
@@ -99,7 +99,7 @@ pricing_model: "per_use"
 ### 步骤 1：批量抓取多语言
 
 ```bash
-python3 ~/.skill-platform/workspace/skills/trending-feed/scripts/fetch_trending.py \
+python3 ~/.skill-platform/workspace/skills/trending-feed/（请参考skill目录中的脚本文件） \
   --languages python,rust,go,typescript \
   --since weekly \
   --limit 20
@@ -111,14 +111,14 @@ python3 ~/.skill-platform/workspace/skills/trending-feed/scripts/fetch_trending.
 export TRENDING_CACHE_ENABLED=true
 export TRENDING_CACHE_DIR=~/.trending-cache
 export TRENDING_CACHE_TTL=3600
-python3 ~/.skill-platform/workspace/skills/trending-feed/scripts/fetch_trending.py python
+python3 ~/.skill-platform/workspace/skills/trending-feed/（请参考skill目录中的脚本文件） python
 ```
 
 ### 步骤 3：Token 认证提升速率
 
 ```bash
 export GITHUB_TOKEN=ghp_详情见说明详情见说明详情见说明详情见说明详情见说明详情见说明xx
-python3 ~/.skill-platform/workspace/skills/trending-feed/scripts/fetch_trending.py --languages python,go
+python3 ~/.skill-platform/workspace/skills/trending-feed/（请参考skill目录中的脚本文件） --languages python,go
 ```
 
 ### 步骤 4：定时推送
@@ -132,7 +132,7 @@ python3 ~/.skill-platform/workspace/skills/trending-feed/scripts/fetch_trending.
 
 ```bash
 python3 fetch_trending.py python \
-  --template "（根据实际场景填充）. （根据实际场景填充） (⭐（根据实际场景填充） | （根据实际场景填充）) - 相关说明"
+  --template ""skill_result". "skill_result" (⭐"skill_result" | "skill_result") - skill 相关配置参数"
 ```
 
 #
@@ -140,8 +140,8 @@ python3 fetch_trending.py python \
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | trending-feed-skill处理的内容输入 |,  |
+| content | string | 否 | trending-feed-skill处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -150,9 +150,9 @@ python3 fetch_trending.py python \
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "skill 相关配置参数",
+    result: "skill 相关配置参数",
+    result: "skill 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,
@@ -227,7 +227,7 @@ push:
       webhook: ${FEISHU_WEBHOOK}
     - type: discord
       webhook: ${DISCORD_WEBHOOK}
-template: "（根据实际场景填充）. （根据实际场景填充） (⭐（根据实际场景填充） | （根据实际场景填充）) - 相关说明"
+template: ""skill_metadata". "skill_metadata" (⭐"skill_metadata" | "skill_metadata") - skill 相关配置参数"
 dedup: true
 incremental: true
 ```

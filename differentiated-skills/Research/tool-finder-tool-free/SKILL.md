@@ -37,13 +37,13 @@ suggested_price: 29.9
 
 ```bash
 # 搜索技能
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "web search"
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "web search"
 
 # 搜索 MCP server
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "github" --type mcp
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "github" --type mcp
 
 # 搜索所有类型
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "database" --all
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "database" --all
 ```
 
 **输入**: 用户提供统一搜索所需的指令和必要参数。
@@ -57,10 +57,10 @@ suggested_price: 29.9
 
 ```bash
 # 精确名称搜索(知道工具名时)
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "browser-automation" --exact
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "browser-automation" --exact
 
 # 模糊搜索(不知道确切名称时)
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "browser"
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "browser"
 ```
 
 **输入**: 用户提供名称匹配优先所需的指令和必要参数。
@@ -74,10 +74,10 @@ suggested_price: 29.9
 
 ```bash
 # 默认按评分排序
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "news"
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "news"
 
 # 显示详细评分信息
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "news" --verbose
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "news" --verbose
 ```
 
 **推荐等级体系:**
@@ -100,7 +100,7 @@ suggested_price: 29.9
 
 ```bash
 # 搜索结果显示来源
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "search" --verbose
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "search" --verbose
 
 # 示例
 # tavily-search [SkillHub] ⭐⭐⭐⭐⭐ - Web search skill
@@ -118,10 +118,10 @@ suggested_price: 29.9
 
 ```bash
 # 安装技能
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh install "tavily-search" --type skill
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） install "tavily-search" --type skill
 
 # 安装 MCP server
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh install "github" --type mcp
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） install "github" --type mcp
 ```
 
 **输入**: 用户提供依赖说明所需的指令和必要参数。
@@ -138,13 +138,13 @@ suggested_price: 29.9
 
 ```bash
 # 步骤1:搜索相关技能
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "web search" --type skill
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "web search" --type skill
 
 # 步骤2:查看详细评分
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "web search" --verbose
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "web search" --verbose
 
 # 步骤3:安装推荐的技能
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh install "tavily-search" --type skill
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） install "tavily-search" --type skill
 ```
 
 ### 场景二:探索可用的 MCP server
@@ -153,10 +153,10 @@ suggested_price: 29.9
 
 ```bash
 # 搜索 GitHub 相关 MCP
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "github" --type mcp
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "github" --type mcp
 
 # 搜索代码托管相关 MCP
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "code hosting" --type mcp
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "code hosting" --type mcp
 ```
 
 ### 场景三:发现新工具
@@ -165,10 +165,10 @@ suggested_price: 29.9
 
 ```bash
 # 搜索热门工具
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "automation" --limit 10
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "automation" --limit 10
 
 # 搜索特定类别
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "research" --type skill --limit 5
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "research" --type skill --limit 5
 ```
 
 ## 快速开始
@@ -186,11 +186,11 @@ suggested_price: 29.9
 2. 不要直接使用平台搜索
 3. 搜索命令:
    ```bash
-   ~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "<关键词>" --type skill
+   ~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "<关键词>" --type skill
    ```
 4. 安装命令:
    ```bash
-   ~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh install <名称> --type skill
+   ~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） install <名称> --type skill
    ```
 ```
 
@@ -198,17 +198,17 @@ suggested_price: 29.9
 
 ```bash
 # 搜索 Web 相关技能
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "web"
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "web"
 
 # 查看 MCP server
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "" --type mcp --limit 10
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "" --type mcp --limit 10
 ```
 
 ### 第三步:安装工具
 
 ```bash
 # 安装找到的技能
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh install "target-skill" --type skill
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） install "target-skill" --type skill
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
@@ -258,40 +258,40 @@ suggested_price: 29.9
 
 ```bash
 # 知道工具名时,用精确搜索
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "exact-name" --exact
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "exact-name" --exact
 
 # 不知道工具名时,用模糊搜索
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "function description"
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "function description"
 ```
 
 ### 2. 善用类型过滤
 
 ```bash
 # 只搜技能
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "keyword" --type skill
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "keyword" --type skill
 
 # 只搜 MCP
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "keyword" --type mcp
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "keyword" --type mcp
 
 # 搜全部(默认)
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "keyword"
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "keyword"
 ```
 
 ### 3. 合理设置结果数量
 
 ```bash
 # 快速浏览:少结果
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "keyword" --limit 5
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "keyword" --limit 5
 
 # 深度探索:多结果
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "keyword" --limit 20
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "keyword" --limit 20
 ```
 
 ### 4. 使用 verbose 排查问题
 
 ```bash
 # 遇到问题时查看详细日志
-~/.skill-platform/workspace/skills/tool-finder-tool-free/scripts/tool-finder.sh search "keyword" --verbose
+~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "keyword" --verbose
 ```
 
 ## 常见问题

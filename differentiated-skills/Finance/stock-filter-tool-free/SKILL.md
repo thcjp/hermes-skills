@@ -82,7 +82,7 @@ suggested_price: 19.9
 
 ```bash
 # 基本面筛选
-python3 scripts/filter.py \
+python3 （请参考skill目录中的脚本文件） \
   --market a-share \
   --conditions "pe<20,roe>15" \
   --sort-by roe \
@@ -101,7 +101,7 @@ python3 scripts/filter.py \
 
 ```bash
 # 技术面筛选
-python3 scripts/filter.py \
+python3 （请参考skill目录中的脚本文件） \
   --market a-share \
   --conditions "macd_cross=golden" \
   --sort-by volume
@@ -113,7 +113,7 @@ python3 scripts/filter.py \
 
 ```bash
 # 行业筛选
-python3 scripts/filter.py \
+python3 （请参考skill目录中的脚本文件） \
   --market a-share \
   --industry "白酒" \
   --conditions "pe<30,roe>20"
@@ -134,23 +134,23 @@ python3 scripts/filter.py \
 pip install akshare pandas
 
 # 运行筛选
-python3 scripts/filter.py --conditions "pe<20,roe>15"
+python3 （请参考skill目录中的脚本文件） --conditions "pe<20,roe>15"
 ```
 
 ### 常用命令
 
 ```bash
 # 基本面筛选
-python3 scripts/filter.py --conditions "pe<20,roe>15,debt_ratio<0.6"
+python3 （请参考skill目录中的脚本文件） --conditions "pe<20,roe>15,debt_ratio<0.6"
 
 # 技术面筛选
-python3 scripts/filter.py --conditions "macd_cross=golden,rsi<30"
+python3 （请参考skill目录中的脚本文件） --conditions "macd_cross=golden,rsi<30"
 
 # 行业+基本面
-python3 scripts/filter.py --industry "白酒" --conditions "pe<30,roe>20"
+python3 （请参考skill目录中的脚本文件） --industry "白酒" --conditions "pe<30,roe>20"
 
 # 市值筛选
-python3 scripts/filter.py --market-cap "100亿-1000亿" --conditions "pe<25"
+python3 （请参考skill目录中的脚本文件） --market-cap "100亿-1000亿" --conditions "pe<25"
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。

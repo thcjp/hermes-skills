@@ -97,9 +97,9 @@ pricing_model: "per_use"
 * 用户文章列表：`POST https://api.juejin.cn/content_api/v1/article/query_list`
 ### 子功能
 
-执行子功能操作,处理用户输入并返回结果。
+执行子功能,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供子功能所需的参数和指令。
+**输入**: 用户提供子功能相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回子功能的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`子功能`相关配置参数进行设置
@@ -123,7 +123,7 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | juejin-skills处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式

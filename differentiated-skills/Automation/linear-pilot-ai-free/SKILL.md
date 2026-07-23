@@ -48,12 +48,12 @@ chmod 600 ~/.linear-pilot/linear.env
 
 ```bash
 # 获取团队ID
-./scripts/linear-api.sh teams
+（请参考skill目录中的脚本文件） teams
 # 输出：
 # Team: Engineering (ENG) - ID: team_abc123
 
 # 获取工作流状态ID
-./scripts/linear-api.sh states
+（请参考skill目录中的脚本文件） states
 # 输出：
 # Todo - ID: state_todo123
 # In Progress - ID: state_prog456
@@ -144,13 +144,13 @@ Discord notification
 
 ```bash
 # 标记任务为进行中
-./scripts/linear-api.sh start ENG-123
+（请参考skill目录中的脚本文件） start ENG-123
 
 # 标记任务为完成
-./scripts/linear-api.sh done ENG-123
+（请参考skill目录中的脚本文件） done ENG-123
 
 # 添加结果评论
-./scripts/linear-api.sh comment ENG-123 "任务完成：已生成研究报告，保存至 research/topic.md"
+（请参考skill目录中的脚本文件） comment ENG-123 "任务完成：已生成研究报告，保存至 research/topic.md"
 ```
 
 **输入**: 用户提供Linear状态自动更新所需的指令和必要参数。
@@ -185,8 +185,8 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 ### Step 2：获取团队与状态ID
 
 ```bash
-./scripts/linear-api.sh teams
-./scripts/linear-api.sh states
+（请参考skill目录中的脚本文件） teams
+（请参考skill目录中的脚本文件） states
 ```
 
 将获取的ID填入 `~/.linear-pilot/linear-config.json`。
@@ -382,8 +382,8 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 ### Step 2：获取团队与状态ID
 
 ```bash
-./scripts/linear-api.sh teams
-./scripts/linear-api.sh states
+（请参考skill目录中的脚本文件） teams
+（请参考skill目录中的脚本文件） states
 ```
 
 将获取的ID填入 `~/.linear-pilot/linear-config.json`。

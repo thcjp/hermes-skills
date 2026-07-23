@@ -73,17 +73,17 @@ pricing_model: "monthly"
 ### 配置并启动企业级日志脱敏
 ```bash
 # 1. 初始化企业配置
-python3 scripts/log-sanitizer-pro.py init --config enterprise.yaml
+python3 （请参考skill目录中的脚本文件） init --config enterprise.yaml
 
 # 2. 配置自定义规则与告警通道
-python3 scripts/log-sanitizer-pro.py config set-rules rules/custom-rules.yaml
-python3 scripts/log-sanitizer-pro.py config set-alert email --smtp smtp.example.com
+python3 （请参考skill目录中的脚本文件） config set-rules rules/custom-rules.yaml
+python3 （请参考skill目录中的脚本文件） config set-alert email --smtp smtp.example.com
 
 # 3. 启动定时扫描任务
-python3 scripts/log-sanitizer-pro.py schedule --cron "0 2 * * *" --path /var/log/
+python3 （请参考skill目录中的脚本文件） schedule --cron "0 2 * * *" --path /var/log/
 
 # 4. 立即执行全量脱敏并生成合规报告
-python3 scripts/log-sanitizer-pro.py scan /var/log/ --redact --report pdf --output reports/
+python3 （请参考skill目录中的脚本文件） scan /var/log/ --redact --report pdf --output reports/
 ```
 
 ### 企业部署模板
@@ -233,13 +233,13 @@ pipeline:
 ### 5. 威胁情报更新
 ```bash
 # 手动更新规则库
-python3 scripts/log-sanitizer-pro.py rules update
+python3 （请参考skill目录中的脚本文件） rules update
 
 # 查看规则库版本
-python3 scripts/log-sanitizer-pro.py rules version
+python3 （请参考skill目录中的脚本文件） rules version
 
 # 启用自动更新（每周）
-python3 scripts/log-sanitizer-pro.py rules auto-update --cron "0 3 * * 0"
+python3 （请参考skill目录中的脚本文件） rules auto-update --cron "0 3 * * 0"
 ```
 
 **输入**: 用户提供威胁情报更新所需的指令和必要参数。
@@ -267,11 +267,11 @@ python3 scripts/log-sanitizer-pro.py rules auto-update --cron "0 3 * * 0"
 **解决方案**：
 ```bash
 # 配置企业级定时扫描
-python3 scripts/log-sanitizer-pro.py schedule --cron "0 2 * * *" \
+python3 （请参考skill目录中的脚本文件） schedule --cron "0 2 * * *" \
   --path /var/log/ --rules enterprise-rules.yaml --alert email
 
 # 每月生成合规报告
-python3 scripts/log-sanitizer-pro.py report monthly --format pdf \
+python3 （请参考skill目录中的脚本文件） report monthly --format pdf \
   --output /reports/compliance-$(date +%Y%m).pdf
 ```
 
@@ -296,7 +296,7 @@ business_units:
 
 ```bash
 # 按业务线执行差异化脱敏
-python3 scripts/log-sanitizer-pro.py scan --config business-units.yaml --redact
+python3 （请参考skill目录中的脚本文件） scan --config business-units.yaml --redact
 ```
 
 **效果**：单一配置文件管理多业务线脱敏策略，支付业务启用最严格规则，内容业务使用标准规则，各业务线独立报告。
@@ -307,10 +307,10 @@ python3 scripts/log-sanitizer-pro.py scan --config business-units.yaml --redact
 **解决方案**：
 ```bash
 # 部署MCP工具流水线
-python3 scripts/log-sanitizer-pro.py pipeline deploy pipeline.yaml
+python3 （请参考skill目录中的脚本文件） pipeline deploy pipeline.yaml
 
 # 监控流水线执行状态
-python3 scripts/log-sanitizer-pro.py pipeline status
+python3 （请参考skill目录中的脚本文件） pipeline status
 ```
 
 **效果**：日志采集后自动进入脱敏节点，脱敏后自动归档并生成报告，HIGH级别触发告警节点，全程无人值守。
@@ -321,7 +321,7 @@ python3 scripts/log-sanitizer-pro.py pipeline status
 **解决方案**：
 ```bash
 # 配置实时监控与告警
-python3 scripts/log-sanitizer-pro.py monitor --realtime \
+python3 （请参考skill目录中的脚本文件） monitor --realtime \
   --path /var/log/ --alert email,webhook \
   --threshold HIGH
 ```

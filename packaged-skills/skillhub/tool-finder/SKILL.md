@@ -61,7 +61,7 @@ Smithery 协议 安装需指定客户端（claude-code/cursor/vscode 等）。
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | tool-finder处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式
@@ -153,7 +153,7 @@ export API_KEY="your_api_key_here"
 2. **DO NOT use `SkillHub search` directly**
 3. **Search command:**
    ```bash
-   ~/.skill-platform/workspace/skills/tool-finder/scripts/tool-finder.sh search "<query>" --type skill
+   ~/.skill-platform/workspace/skills/tool-finder/（请参考skill目录中的脚本文件） search "<query>" --type skill
 ```
 
 4. **Install command:**
@@ -161,7 +161,7 @@ export API_KEY="your_api_key_here"
    bash
 
    ```
-   ~/.skill-platform/workspace/skills/tool-finder/scripts/tool-finder.sh install <name> --type skill
+   ~/.skill-platform/workspace/skills/tool-finder/（请参考skill目录中的脚本文件） install <name> --type skill
    ```
 
 **Why tool-finder?**
@@ -366,7 +366,7 @@ Smithery 协议 安装需指定客户端（claude-code/cursor/vscode 等）。
 
 ### 8. 路径问题
 
-* 使用绝对路径：`~/.skill-platform/workspace/skills/tool-finder/scripts/tool-finder.sh`
+* 使用绝对路径：`~/.skill-platform/workspace/skills/tool-finder/（请参考skill目录中的脚本文件）`
 * 或确保 PATH 包含 scripts 目录
 
 ---

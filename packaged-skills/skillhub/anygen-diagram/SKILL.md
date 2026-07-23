@@ -66,25 +66,25 @@ pricing_model: "monthly"
 | 技术支持 | 社区 | 专属 | 工单响应 |
 ### 能力项
 
-执行能力项操作,处理用户输入并返回结果。
+执行能力项,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供能力项所需的参数和指令。
+**输入**: 用户提供能力项相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回能力项的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`能力项`相关配置参数进行设置
 ### 自然语言生成图表
 
-执行自然语言生成图表操作,处理用户输入并返回结果。
+执行自然语言生成图表,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供自然语言生成图表所需的参数和指令。
+**输入**: 用户提供自然语言生成图表相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回自然语言生成图表的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`自然语言生成图表`相关配置参数进行设置
 ### 流程图/架构图/组织图
 
-执行流程图/架构图/组织图操作,处理用户输入并返回结果。
+执行流程图/架构图/组织图,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供流程图/架构图/组织图所需的参数和指令。
+**输入**: 用户提供流程图/架构图/组织图相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回流程图/架构图/组织图的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`流程图/架构图/组织图`相关配置参数进行设置
@@ -97,7 +97,7 @@ pricing_model: "monthly"
 
 ```python
 # 批量生成图表
-python3 scripts/batch_diagram.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./diagram_specs/ \
   --output ./diagrams/ \
   --format svg \
@@ -119,7 +119,7 @@ python3 scripts/batch_diagram.py \
 
 ```bash
 # 创建自定义模板
-python3 scripts/create_template.py \
+python3 （请参考skill目录中的脚本文件） \
   --name "enterprise_arch" \
   --style "企业标准风格" \
   --colors "#1a365d,#2b6cb0,#63b3ed" \
@@ -138,7 +138,7 @@ anygen smart_draw "企业IT架构图" \
 
 ```bash
 # 从 PRD 文档提取描述并生成图表
-python3 scripts/prd_to_diagram.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./prd/user_flow.md \
   --extract "流程图描述" \
   --template product_flow \
@@ -161,19 +161,19 @@ curl -X POST https://api.anygen.io/v1/diagrams \
 
 ```bash
 # 提交图表到团队资产库
-python3 scripts/diagram_commit.py \
+python3 （请参考skill目录中的脚本文件） \
   --file ./diagrams/microservice_arch.svg \
   --description "微服务标准架构图" \
   --tags "架构,微服务,标准" \
   --category "reference"
 
 # 团队成员搜索与复用
-python3 scripts/diagram_search.py \
+python3 （请参考skill目录中的脚本文件） \
   --query "微服务架构" \
   --category "reference"
 
 # 拉取团队最新模板
-python3 scripts/template_pull.py \
+python3 （请参考skill目录中的脚本文件） \
   --remote team-repo \
   --branch main
 ```
@@ -192,7 +192,7 @@ export ANYGEN_EDITION=pro
 ### 第二步:执行批量生成
 
 ```bash
-python3 scripts/batch_diagram.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./specs/ \
   --output ./diagrams/ \
   --format svg \
@@ -203,7 +203,7 @@ python3 scripts/batch_diagram.py \
 
 ```bash
 # 归档到团队资产库
-python3 scripts/diagram_commit.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./diagrams/ \
   --message "批量生成技术文档配图"
 ```
@@ -213,8 +213,8 @@ python3 scripts/diagram_commit.py \
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | anygen-diagram处理的内容输入 |,  |
+| content | string | 否 | anygen-diagram处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -223,9 +223,9 @@ python3 scripts/diagram_commit.py \
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "diagram 相关配置参数",
+    result: "diagram 相关配置参数",
+    result: "diagram 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

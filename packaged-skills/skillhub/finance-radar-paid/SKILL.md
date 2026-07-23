@@ -55,10 +55,10 @@ pricing_model: "per_use"
 ### 批量分析与导出
 ```bash
 # 批量分析多只标的
-python3 scripts/batch.py --tickers AAPL,GOOG,MSFT,AMZN,TSLA
+python3 （请参考skill目录中的脚本文件） --tickers AAPL,GOOG,MSFT,AMZN,TSLA
 
 # 导出CSV对比矩阵
-python3 scripts/batch.py --tickers AAPL,GOOG,MSFT --export --output comparison.csv
+python3 （请参考skill目录中的脚本文件） --tickers AAPL,GOOG,MSFT --export --output comparison.csv
 ```
 
 **输入**: 用户提供批量分析与导出所需的指令和必要参数。- 验证执行结果,确认输出符合预期格式
@@ -71,13 +71,13 @@ python3 scripts/batch.py --tickers AAPL,GOOG,MSFT --export --output comparison.c
 ### 投资组合追踪
 ```bash
 # 导入组合
-python3 scripts/portfolio.py import --file holdings.csv
+python3 （请参考skill目录中的脚本文件） import --file holdings.csv
 
 # 查看组合P&L
-python3 scripts/portfolio.py summary
+python3 （请参考skill目录中的脚本文件） summary
 
 # 风险分析
-python3 scripts/portfolio.py risk-analysis --output risk_report.pdf
+python3 （请参考skill目录中的脚本文件） risk-analysis --output risk_report.pdf
 ```
 
 #
@@ -89,7 +89,7 @@ python3 scripts/portfolio.py risk-analysis --output risk_report.pdf
 
 ```bash
 # 批量分析并导出
-python3 scripts/batch.py \
+python3 （请参考skill目录中的脚本文件） \
   --tickers "AAPL,MSFT,GOOG,AMZN,META,NVDA,TSLA,AMD,INTC,...,AVGO" \
   --skills "analyze,score" \
   --export \
@@ -110,7 +110,7 @@ python3 scripts/batch.py \
 
 ```bash
 # 组合P&L汇总
-python3 scripts/portfolio.py summary
+python3 （请参考skill目录中的脚本文件） summary
 
 # 输出：
 # === 投资组合日报 2026-07-18 ===
@@ -127,7 +127,7 @@ python3 scripts/portfolio.py summary
 
 ```bash
 # 传闻检测
-python3 scripts/rumor.py --scan
+python3 （请参考skill目录中的脚本文件） --scan
 
 # 输出：
 # === 市场传闻扫描 ===
@@ -152,20 +152,20 @@ cp config_pro_template.yaml config_pro.yaml
 
 ```bash
 # 批量分析
-python3 scripts/batch.py --tickers AAPL,GOOG,MSFT --export
+python3 （请参考skill目录中的脚本文件） --tickers AAPL,GOOG,MSFT --export
 
 # 组合管理
-python3 scripts/portfolio.py import --file holdings.csv
-python3 scripts/portfolio.py summary
-python3 scripts/portfolio.py risk-analysis
+python3 （请参考skill目录中的脚本文件） import --file holdings.csv
+python3 （请参考skill目录中的脚本文件） summary
+python3 （请参考skill目录中的脚本文件） risk-analysis
 
 # 价格告警
-python3 scripts/watchlist.py add AAPL --alert-above 180 --alert-below 170
-python3 scripts/watchlist.py monitor
+python3 （请参考skill目录中的脚本文件） add AAPL --alert-above 180 --alert-below 170
+python3 （请参考skill目录中的脚本文件） monitor
 
 # 传闻扫描
-python3 scripts/rumor.py --scan
-python3 scripts/hot_scan.py --viral
+python3 （请参考skill目录中的脚本文件） --scan
+python3 （请参考skill目录中的脚本文件） --viral
 ```
 
 #
@@ -173,7 +173,7 @@ python3 scripts/hot_scan.py --viral
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | finance-radar处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式

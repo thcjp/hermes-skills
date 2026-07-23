@@ -207,11 +207,11 @@ export API_KEY="your_api_key_here"
 根据图片类型，严格使用对应格式：
 
 ```bash
-python3 scripts/scan.py --scene "exam-enhance" --url "https://example.com/exam.jpg" --platform "skill-platform"
+python3 （请参考skill目录中的脚本文件） --scene "exam-enhance" --url "https://example.com/exam.jpg" --platform "skill-platform"
 
-python3 scripts/scan.py --scene "remove-watermark" --path "/tmp/image.png" --platform "skill-platform"
+python3 （请参考skill目录中的脚本文件） --scene "remove-watermark" --path "/tmp/image.png" --platform "skill-platform"
 
-python3 scripts/scan.py --scene "scan-contract" --base64 "iVBORw0KGgoAAAANSUhEUgAA..." --platform "skill-platform"
+python3 （请参考skill目录中的脚本文件） --scene "scan-contract" --base64 "iVBORw0KGgoAAAANSUhEUgAA..." --platform "skill-platform"
 ```
 
 - `--platform` 替换为当前运行的Agent平台名称，无法确定时填 `community`
@@ -227,7 +227,7 @@ python3 scripts/scan.py --scene "scan-contract" --base64 "iVBORw0KGgoAAAANSUhEUg
 ### 示例1：考试试卷增强
 
 ```bash
-python3 scripts/scan.py --scene "exam-enhance" --path "/tmp/exam_photo.jpg" --platform "skill-platform"
+python3 （请参考skill目录中的脚本文件） --scene "exam-enhance" --path "/tmp/exam_photo.jpg" --platform "skill-platform"
 ```
 
 输出：
@@ -242,7 +242,7 @@ python3 scripts/scan.py --scene "exam-enhance" --path "/tmp/exam_photo.jpg" --pl
 ### 示例2：去水印
 
 ```bash
-python3 scripts/scan.py --scene "remove-watermark" --url "https://example.com/watermarked.png" --platform "community"
+python3 （请参考skill目录中的脚本文件） --scene "remove-watermark" --url "https://example.com/watermarked.png" --platform "community"
 ```
 
 输出：

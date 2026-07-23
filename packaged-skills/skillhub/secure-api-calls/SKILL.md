@@ -54,7 +54,7 @@ npm install -g keychains@0.0.13
 ### Basic usage:
 ```
 keychains curl https://api.相关技术文档 \
-  -H "Authorization: Bearer （根据实际场景填充）"
+  -H "Authorization: Bearer "calls_result""
 ```
 
 #
@@ -62,8 +62,8 @@ keychains curl https://api.相关技术文档 \
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | secure-api-calls处理的内容输入 |,  |
+| content | string | 否 | secure-api-calls处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -72,9 +72,9 @@ keychains curl https://api.相关技术文档 \
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "calls 相关配置参数",
+    result: "calls 相关配置参数",
+    result: "calls 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,
@@ -124,10 +124,10 @@ export API_KEY="your_api_key_here"
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 案例展示
 
-- "List GitHub repos: `keychains curl https://api.相关技术文档 -H 'Authorization: Bearer （根据实际场景填充）'`"
-- "Send Slack message: `keychains curl https://slack.com/api/chat.postMessage -X POST -H 'Authorization: Bearer （根据实际场景填充）' -H 'Content-Type: application/json' -d '{\"channel\":\"#general\",\"text\":\"Hello!\"}'`"
-- "List Stripe customers: `keychains curl https://api.stripe.com/v1/customers?limit=5 -H 'Authorization: Bearer （根据实际场景填充）'`"
-- "Read Gmail: `keychains curl 'https://gmail.googleapis.com/gmail/v1/users/me/messages?maxResults=10' -H 'Authorization: Bearer （根据实际场景填充）'`"
+- "List GitHub repos: `keychains curl https://api.相关技术文档 -H 'Authorization: Bearer Secure Api Calls 核心处理'`"
+- "Send Slack message: `keychains curl https://slack.com/api/chat.postMessage -X POST -H 'Authorization: Bearer Secure Api Calls 智能分析' -H 'Content-Type: application/json' -d '{\"channel\":\"#general\",\"text\":\"Hello!\"}'`"
+- "List Stripe customers: `keychains curl https://api.stripe.com/v1/customers?limit=5 -H 'Authorization: Bearer Secure Api Calls 批量处理'`"
+- "Read Gmail: `keychains curl 'https://gmail.googleapis.com/gmail/v1/users/me/messages?maxResults=10' -H 'Authorization: Bearer Secure Api Calls 自定义配置'`"
 
 ## 常见问题
 

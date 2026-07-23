@@ -100,7 +100,7 @@ git push
 ### 自动同步脚本
 
 ```bash
-# scripts/vault-sync.sh
+# （请参考skill目录中的脚本文件）
 #!/usr/bin/env bash
 set -e
 cd "$(obsidian-cli print-default --path-only)"
@@ -151,7 +151,7 @@ git push
 
 ```bash
 # Git 同步时检测冲突
-scripts/vault-sync.sh --check-conflicts
+（请参考skill目录中的脚本文件） --check-conflicts
 # 输出冲突文件列表
 ```
 
@@ -159,7 +159,7 @@ iCloud/Dropbox 同步会生成"冲突副本"文件（如 `note (1).md`、`note (
 
 ```bash
 # 扫描冲突副本
-scripts/conflict-scan --vault "<vault-path>"
+（请参考skill目录中的脚本文件） --vault "<vault-path>"
 # 识别模式：* (1).md、* (conflicted copy).md、*. conflicted
 ```
 
@@ -167,10 +167,10 @@ scripts/conflict-scan --vault "<vault-path>"
 
 ```bash
 # Git 冲突 → 用 merge tool 解决
-scripts/conflict-resolve --strategy merge --vault "<vault-path>"
+（请参考skill目录中的脚本文件） --strategy merge --vault "<vault-path>"
 
 # iCloud/Dropbox 冲突副本 → 三路合并
-scripts/conflict-resolve --strategy three-way \
+（请参考skill目录中的脚本文件） --strategy three-way \
   --base "<vault-path>/note.md" \
   --mine "<vault-path>/note (1).md" \
   --strategy keep-both-on-fail
@@ -184,7 +184,7 @@ scripts/conflict-resolve --strategy three-way \
 ## 同步健康看板
 
 ```bash
-scripts/vault-health
+（请参考skill目录中的脚本文件）
 ```
 
 输出示例：

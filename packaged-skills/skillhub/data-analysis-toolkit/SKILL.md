@@ -66,8 +66,8 @@ pricing_model: "monthly"
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明"
+    result: "toolkit 相关配置参数",
+    result: "toolkit 相关配置参数"
   },
   "error": null
 }

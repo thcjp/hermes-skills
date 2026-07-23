@@ -418,7 +418,7 @@ integration:
   platform: wecom
   mode: webhook_bridge
   outbound:  # 房间消息 → 企微群
-    url: https://qyapi.weixin.qq.com/cgi-bin/webhook/send
+    url: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）
     filter:
       room_tags: [notify_wecom]
   inbound:   # 企微消息 → 房间

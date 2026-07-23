@@ -48,10 +48,10 @@ Control Vector through Wirepod’s `/api-sdk/*` endpoints and the camera stream 
 Use the bundled script:
 
 ```bash
-python3 skills/vector-control/scripts/vector_control.py --serial <ESN> assume
-python3 skills/vector-control/scripts/vector_control.py --serial <ESN> say --text "Hello Dom"
-python3 skills/vector-control/scripts/vector_control.py --serial <ESN> move --lw 160 --rw 160 --time 1.5
-python3 skills/vector-control/scripts/vector_control.py --serial <ESN> snapshot --out /tmp/vector.mjpg
+python3 skills/vector-control/（请参考skill目录中的脚本文件） --serial <ESN> assume
+python3 skills/vector-control/（请参考skill目录中的脚本文件） --serial <ESN> say --text "Hello Dom"
+python3 skills/vector-control/（请参考skill目录中的脚本文件） --serial <ESN> move --lw 160 --rw 160 --time 1.5
+python3 skills/vector-control/（请参考skill目录中的脚本文件） --serial <ESN> snapshot --out /tmp/vector.mjpg
 ```
 
 ### Find ESN/serial
@@ -80,8 +80,8 @@ If you don’t have it, read:
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明"
+    result: "control 相关配置参数",
+    result: "control 相关配置参数"
   },
   "error": null
 }
@@ -130,10 +130,10 @@ export API_KEY="your_api_key_here"
 Use the bundled script:
 
 ```bash
-python3 skills/vector-control/scripts/vector_control.py --serial <ESN> assume
-python3 skills/vector-control/scripts/vector_control.py --serial <ESN> say --text "Hello Dom"
-python3 skills/vector-control/scripts/vector_control.py --serial <ESN> move --lw 160 --rw 160 --time 1.5
-python3 skills/vector-control/scripts/vector_control.py --serial <ESN> snapshot --out /tmp/vector.mjpg
+python3 skills/vector-control/（请参考skill目录中的脚本文件） --serial <ESN> assume
+python3 skills/vector-control/（请参考skill目录中的脚本文件） --serial <ESN> say --text "Hello Dom"
+python3 skills/vector-control/（请参考skill目录中的脚本文件） --serial <ESN> move --lw 160 --rw 160 --time 1.5
+python3 skills/vector-control/（请参考skill目录中的脚本文件） --serial <ESN> snapshot --out /tmp/vector.mjpg
 ```
 
 ### Find ESN/serial

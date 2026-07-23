@@ -223,7 +223,7 @@ schema-designer generate --template knowledge_base --engine mysql --output ddl/m
 schema-designer apply --engine postgresql --ddl ddl/postgres.sql
 
 # 运行性能基线测试
-schema-designer baseline --workload scripts/workload.yaml
+schema-designer baseline --workload （请参考skill目录中的脚本文件）
 
 # 归档测试数据
 schema-designer archive --source manual --content "测试数据" --extractor extract_policy
@@ -234,8 +234,8 @@ schema-designer archive --source manual --content "测试数据" --extractor ext
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | db-schema-designer处理的内容输入 |,  |
+| content | string | 否 | db-schema-designer处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -244,9 +244,9 @@ schema-designer archive --source manual --content "测试数据" --extractor ext
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "designer 相关配置参数",
+    result: "designer 相关配置参数",
+    result: "designer 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

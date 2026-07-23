@@ -97,21 +97,21 @@ export LINEAR_API_KEY="your-key"
 export LINEAR_DEFAULT_TEAM="TEAM"
 
 # 站会摘要：待办、阻塞、评审中、近期完成
-{baseDir}/scripts/linear.sh standup
+{baseDir}/（请参考skill目录中的脚本文件） standup
 ```
 
 ### 场景二：快速建任务
 
 ```bash
 # 从聊天直接建任务
-{baseDir}/scripts/linear.sh create TEAM "修复登录超时" "用户 5 分钟后被登出"
+{baseDir}/（请参考skill目录中的脚本文件） create TEAM "修复登录超时" "用户 5 分钟后被登出"
 ```
 
 ### 场景三：Git 分支联动
 
 ```bash
 # 取任务对应分支名
-BRANCH=$({baseDir}/scripts/linear.sh branch TEAM-212)
+BRANCH=$({baseDir}/（请参考skill目录中的脚本文件） branch TEAM-212)
 
 cd /path/to/repo
 git checkout main && git pull origin main
@@ -140,9 +140,9 @@ git push -u origin "$BRANCH"
 4. 站会前跑 `standup`。
 
 ```bash
-{baseDir}/scripts/linear.sh teams              # 列团队
-{baseDir}/scripts/linear.sh my-issues          # 我的任务
-{baseDir}/scripts/linear.sh urgent             # 紧急/高优
+{baseDir}/（请参考skill目录中的脚本文件） teams              # 列团队
+{baseDir}/（请参考skill目录中的脚本文件） my-issues          # 我的任务
+{baseDir}/（请参考skill目录中的脚本文件） urgent             # 紧急/高优
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
@@ -190,28 +190,28 @@ A：你的待办、团队阻塞项、评审中、近期完成。
 ### 常用查询命令
 
 ```bash
-{baseDir}/scripts/linear.sh my-issues              # 我的任务
-{baseDir}/scripts/linear.sh urgent                 # 紧急/高优
-{baseDir}/scripts/linear.sh backlog TEAM           # 团队待办池
-{baseDir}/scripts/linear.sh search "登录"          # 关键词搜索
-{baseDir}/scripts/linear.sh issue TEAM-123         # 查看详情
-{baseDir}/scripts/linear.sh comments TEAM-123      # 查看评论
+{baseDir}/（请参考skill目录中的脚本文件） my-issues              # 我的任务
+{baseDir}/（请参考skill目录中的脚本文件） urgent                 # 紧急/高优
+{baseDir}/（请参考skill目录中的脚本文件） backlog TEAM           # 团队待办池
+{baseDir}/（请参考skill目录中的脚本文件） search "登录"          # 关键词搜索
+{baseDir}/（请参考skill目录中的脚本文件） issue TEAM-123         # 查看详情
+{baseDir}/（请参考skill目录中的脚本文件） comments TEAM-123      # 查看评论
 ```
 
 ### 任务更新操作
 
 ```bash
 # 更新状态
-{baseDir}/scripts/linear.sh update TEAM-123 --status "In Progress"
+{baseDir}/（请参考skill目录中的脚本文件） update TEAM-123 --status "In Progress"
 
 # 设置优先级
-{baseDir}/scripts/linear.sh update TEAM-123 --priority urgent
+{baseDir}/（请参考skill目录中的脚本文件） update TEAM-123 --priority urgent
 
 # 指派
-{baseDir}/scripts/linear.sh assign TEAM-123 用户名
+{baseDir}/（请参考skill目录中的脚本文件） assign TEAM-123 用户名
 
 # 添加评论
-{baseDir}/scripts/linear.sh comment TEAM-123 "已复现，预计今日修复"
+{baseDir}/（请参考skill目录中的脚本文件） comment TEAM-123 "已复现，预计今日修复"
 ```
 
 ### 站会摘要详解

@@ -25,20 +25,20 @@ pricing_model: "per_use"
 
 | 能力 | 免费版 | 付费版 |
 |:-----|:-------|:-------|
-| （根据实际场景填充） - 按流程执行步端到端pipeline配置流程 | 支持 | 支持 |
-| （根据实际场景填充） - 步骤间自动质量gate检查 | 不支持 | 支持 |
-| （根据实际场景填充） - 支持多种变体等多种处理模式 | 不支持 | 支持 |
-| （根据实际场景填充） - 失败自动重试+断点续传 | 不支持 | 支持 |
+| Rss Feed Digest 核心处理 - 按流程执行步端到端pipeline配置流程 | 支持 | 支持 |
+| Rss Feed Digest 智能分析 - 步骤间自动质量gate检查 | 不支持 | 支持 |
+| Rss Feed Digest 批量处理 - 支持多种变体等多种处理模式 | 不支持 | 支持 |
+| Rss Feed Digest 自定义配置 - 失败自动重试+断点续传 | 不支持 | 支持 |
 | 批量处理 | 不支持 | 支持 |
 | 高级配置 | 不支持 | 支持 |
 
 ## 核心能力
 
-- （根据实际场景填充） - 按流程执行步端到端pipeline配置流程
-- （根据实际场景填充） - 步骤间自动质量gate检查
-- （根据实际场景填充） - 支持多种变体等多种处理模式
-- （根据实际场景填充） - 失败自动重试+断点续传
-- （根据实际场景填充） - 全流程可追溯, 输出执行日志
+- Rss Feed Digest 结果导出 - 按流程执行步端到端pipeline配置流程
+- Rss Feed Digest 实时监控 - 步骤间自动质量gate检查
+- Rss Feed Digest 错误重试 - 支持多种变体等多种处理模式
+- Rss Feed Digest 多格式支持 - 失败自动重试+断点续传
+- Rss Feed Digest 扩展能力9 - 全流程可追溯, 输出执行日志
 #
 ## 适用场景
 
@@ -60,8 +60,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
+| content | string | 否 | rss-feed-digest处理的内容输入 |,  |
+| mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
 | skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |
 
@@ -72,9 +72,9 @@ pricing_model: "per_use"
   "success": true,
   "data": {
     "final_result": {
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明"
+      "digest_result": "digest_result_value",
+      "digest_metadata": "digest_metadata_value",
+      "digest_status": "digest_status_value"
     },
     "execution_log": [
       {
@@ -114,7 +114,7 @@ pricing_model: "per_use"
 }
 ```
 
-中间产物模板参考: `assets/（根据实际场景填充）`
+中间产物模板参考: `assets/rss-feed-digest_template`
 
 ## 异常处理
 

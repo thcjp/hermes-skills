@@ -113,13 +113,13 @@ ou_003,王五,财务部,reports/finance_july.pdf,财务部7月报表.pdf
 
 ```bash
 # 试运行（预览不实际发送）
-python3 scripts/batch_send_file.py \
+python3 （请参考skill目录中的脚本文件） \
   --recipients recipients.csv \
   --rate-limit 10 \
   --dry-run
 
 # 正式发送
-python3 scripts/batch_send_file.py \
+python3 （请参考skill目录中的脚本文件） \
   --recipients recipients.csv \
   --rate-limit 10 \
   --retry 3 \
@@ -148,7 +148,7 @@ python3 scripts/batch_send_file.py \
 
 ```bash
 # 批量上传多个文件并打包发送
-python3 scripts/multi_send_file.py \
+python3 （请参考skill目录中的脚本文件） \
   --target "oc_project_group" \
   --files "docs/design.pdf,docs/api.md,docs/test_report.xlsx,source/code.zip" \
   --package "project_delivery.zip" \
@@ -161,7 +161,7 @@ python3 scripts/multi_send_file.py \
 
 ```bash
 # 创建定时分发任务
-python3 scripts/schedule_send.py create \
+python3 （请参考skill目录中的脚本文件） create \
   --name "daily-monitor-report" \
   --cron "0 9 * * 1-5" \
   --recipients monitor_team.csv \
@@ -169,10 +169,10 @@ python3 scripts/schedule_send.py create \
   --timezone "Asia/Shanghai"
 
 # 查看定时任务
-python3 scripts/schedule_send.py list
+python3 （请参考skill目录中的脚本文件） list
 
 # 查看任务历史
-python3 scripts/schedule_send.py history --name "daily-monitor-report"
+python3 （请参考skill目录中的脚本文件） history --name "daily-monitor-report"
 ```
 
 ---
@@ -185,12 +185,12 @@ python3 scripts/schedule_send.py history --name "daily-monitor-report"
 
 ```bash
 # 免费版命令依然有效
-python3 scripts/send_file.py file.pdf ou_详情见说明 app_id app_secret
-python3 scripts/send_image.py image.png ou_详情见说明 app_id app_secret
+python3 （请参考skill目录中的脚本文件） file.pdf ou_详情见说明 app_id app_secret
+python3 （请参考skill目录中的脚本文件） image.png ou_详情见说明 app_id app_secret
 
 # 专业版新增命令
-python3 scripts/batch_send_file.py --recipients list.csv
-python3 scripts/multi_send_file.py --target oc_详情见说明 --files f1.pdf,f2.pdf
+python3 （请参考skill目录中的脚本文件） --recipients list.csv
+python3 （请参考skill目录中的脚本文件） --target oc_详情见说明 --files f1.pdf,f2.pdf
 ```
 
 ### 配置批量分发
@@ -230,8 +230,8 @@ python3 scripts/multi_send_file.py --target oc_详情见说明 --files f1.pdf,f2
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | feishu-file-sender处理的内容输入 |,  |
+| content | string | 否 | feishu-file-sender处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -240,9 +240,9 @@ python3 scripts/multi_send_file.py --target oc_详情见说明 --files f1.pdf,f2
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "sender 相关配置参数",
+    result: "sender 相关配置参数",
+    result: "sender 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,
@@ -341,7 +341,7 @@ python3 scripts/multi_send_file.py --target oc_详情见说明 --files f1.pdf,f2
       "timezone": "Asia/Shanghai",
       "recipients": "recipients.csv",
       "file_generator": "generate_report.py",
-      "file_name": "周报_（根据实际场景填充）.pdf"
+      "file_name": "周报_"sender_result".pdf"
     }
   ]
 }
@@ -364,7 +364,7 @@ python3 scripts/multi_send_file.py --target oc_详情见说明 --files f1.pdf,f2
 **解决**: 降低发送速率，飞书 API 有频率限制：
 
 ```bash
-python3 scripts/batch_send_file.py --recipients list.csv --rate-limit 5
+python3 （请参考skill目录中的脚本文件） --recipients list.csv --rate-limit 5
 ```
 
 ### 问题2：大文件上传超时
@@ -373,7 +373,7 @@ python3 scripts/batch_send_file.py --recipients list.csv --rate-limit 5
 
 ```bash
 # 使用分片上传
-python3 scripts/send_file_large.py \
+python3 （请参考skill目录中的脚本文件） \
   --file large_video.mp4 \
   --target ou_详情见说明 \
   --chunk-size 5 \
@@ -386,10 +386,10 @@ python3 scripts/send_file_large.py \
 
 ```bash
 # 查看队列状态
-python3 scripts/queue_manager.py status
+python3 （请参考skill目录中的脚本文件） status
 
 # 增加并发数
-python3 scripts/queue_manager.py config --concurrency 10
+python3 （请参考skill目录中的脚本文件） config --concurrency 10
 ```
 
 ### 问题4：审计日志占用空间过大
@@ -398,10 +398,10 @@ python3 scripts/queue_manager.py config --concurrency 10
 
 ```bash
 # 压缩旧日志
-python3 scripts/audit.py compress --older-than 30
+python3 （请参考skill目录中的脚本文件） compress --older-than 30
 
 # 清理过期日志
-python3 scripts/audit.py clean --older-than 365
+python3 （请参考skill目录中的脚本文件） clean --older-than 365
 ```
 
 ### 问题5：部分接收者未收到文件
@@ -413,7 +413,7 @@ python3 scripts/audit.py clean --older-than 365
 cat failures.csv
 
 # 重发失败文件
-python3 scripts/batch_send_file.py --recipients failures.csv --retry 3
+python3 （请参考skill目录中的脚本文件） --recipients failures.csv --retry 3
 ```
 
 ---

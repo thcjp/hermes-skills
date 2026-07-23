@@ -58,25 +58,25 @@ pricing_model: "per_use"
 | 处理上限 | 20 条/次 | 无限制 |
 ### 书签抓取
 
-执行书签抓取操作,处理用户输入并返回结果。
+执行书签抓取,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供书签抓取所需的参数和指令。
+**输入**: 用户提供书签抓取相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回书签抓取的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`书签抓取`相关配置参数进行设置
 ### 文章全文提取
 
-执行文章全文提取操作,处理用户输入并返回结果。
+执行文章全文提取,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供文章全文提取所需的参数和指令。
+**输入**: 用户提供文章全文提取相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回文章全文提取的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`文章全文提取`相关配置参数进行设置
 ### 关键词分析
 
-执行关键词分析操作,处理用户输入并返回结果。
+执行关键词分析,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供关键词分析所需的参数和指令。
+**输入**: 用户提供关键词分析相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回关键词分析的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`关键词分析`相关配置参数进行设置
@@ -162,7 +162,7 @@ print(json.dumps(analysis, ensure_ascii=False, indent=2))
 
 ```bash
 # 全文检索知识库
-node scripts/search.js --query "向量检索" --limit 10
+node （请参考skill目录中的脚本文件） --query "向量检索" --limit 10
 
 # 输出示例
 # 🔍 搜索结果: "向量检索"
@@ -176,7 +176,7 @@ node scripts/search.js --query "向量检索" --limit 10
 
 ```bash
 # 发现趋势主题
-node scripts/trends.js --period "30d"
+node （请参考skill目录中的脚本文件） --period "30d"
 
 # 输出示例
 # 📈 近30天趋势主题:
@@ -227,8 +227,8 @@ pm2 logs bookmark-smart-hub --lines 20
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | bookmark-smart-hub处理的内容输入 |,  |
+| content | string | 否 | bookmark-smart-hub处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -237,9 +237,9 @@ pm2 logs bookmark-smart-hub --lines 20
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "hub 相关配置参数",
+    result: "hub 相关配置参数",
+    result: "hub 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

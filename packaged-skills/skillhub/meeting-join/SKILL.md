@@ -53,7 +53,7 @@ PRO版支持四种会议模式,适应不同场景需求:
 
 ```bash
 # 企业级:头像+屏幕共享模式
-./scripts/run.sh "https://meet.google.com/abc-defg-hij" \
+（请参考skill目录中的脚本文件） "https://meet.google.com/abc-defg-hij" \
   --mode webpage-av-screenshare \
   --bot-name "销售助手" \
   --template pattern \
@@ -200,7 +200,7 @@ teams = {
 
 ```bash
 # 启动销售演示会议
-./scripts/run.sh "https://meet.google.com/sales-demo" \
+（请参考skill目录中的脚本文件） "https://meet.google.com/sales-demo" \
   --mode webpage-av-screenshare \
   --bot-name "产品专家" \
   --template pattern \
@@ -271,7 +271,7 @@ scheduler.start()
 
 ```bash
 # 网络研讨会配置
-./scripts/run.sh "https://zoom.us/j/webinar-123" \
+（请参考skill目录中的脚本文件） "https://zoom.us/j/webinar-123" \
   --mode webpage-av-screenshare \
   --bot-name "学习伙伴" \
   --template avatar \
@@ -322,8 +322,8 @@ scheduler.start()
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | meeting-join处理的内容输入 |,  |
+| content | string | 否 | meeting-join处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -332,9 +332,9 @@ scheduler.start()
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "join 相关配置参数",
+    result: "join 相关配置参数",
+    result: "join 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,
@@ -405,7 +405,7 @@ python -m http.server 3000 --directory ./avatar-page/
 python -m http.server 3001 --directory ./screenshare-content/
 
 # 使用公共URL(无需隧道)
-./scripts/run.sh "会议链接" \
+（请参考skill目录中的脚本文件） "会议链接" \
   --webpage-url "https://your-site.com/bot" \
   --screenshare-url "https://your-site.com/slides"
 ```

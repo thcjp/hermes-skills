@@ -126,7 +126,7 @@ suggested_price: 99.9
 基金经理需对持仓的 20 只股票进行批量舆情扫描,生成组合情绪报告。
 
 ```bash
-python3 {SKILL_DIR}/scripts/sentiment_scan.py --batch portfolio.csv 7 --format json --output report.json
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 --format json --output report.json
 ```
 
 **portfolio.csv 示例**:
@@ -148,7 +148,7 @@ TSLA,us,特斯拉
 研究员需对比新能源汽车板块内多只股票的舆情强弱。
 
 ```bash
-python3 {SKILL_DIR}/scripts/sentiment_scan.py --batch ev_sector.csv 7 --compare --format html --output ev_report.html
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch ev_sector.csv 7 --compare --format html --output ev_report.html
 ```
 
 **ev_sector.csv 示例**:
@@ -191,7 +191,7 @@ NIO,us,蔚来
 企业风控团队需对关注的股票设置情绪预警阈值,当情绪突变时及时通知。
 
 ```bash
-python3 {SKILL_DIR}/scripts/sentiment_monitor.py \
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） \
     --watch watchlist.csv \
     --threshold-negative -5 \
     --threshold-positive 7 \
@@ -259,9 +259,9 @@ EOF
 
 ### 第二步:执行批量扫描
 ```bash
-python3 {SKILL_DIR}/scripts/sentiment_scan.py --batch portfolio.csv 7 --format json --output report.json
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 --format json --output report.json
 
-python3 {SKILL_DIR}/scripts/sentiment_scan.py --batch portfolio.csv 7 --format html --output report.html
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 --format html --output report.html
 ```
 
 ### 第三步:查看分析结果
@@ -285,9 +285,9 @@ for r in data['results']:
 
 ### 定时任务配置
 ```bash
-0 8 * * * python3 {SKILL_DIR}/scripts/sentiment_scan.py --batch portfolio.csv 7 --format json --output /tmp/daily_report.json
+0 8 * * * python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 --format json --output /tmp/daily_report.json
 
-0 8 * * 1 python3 {SKILL_DIR}/scripts/sentiment_scan.py --batch portfolio.csv 7 --compare --format html --output /tmp/weekly_report.html
+0 8 * * 1 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 --compare --format html --output /tmp/weekly_report.html
 ```
 
 ### 企业级自动化工作流
@@ -299,20 +299,20 @@ for r in data['results']:
 避免命令行传入大量参数,使用 CSV 文件管理股票清单,便于维护与复用:
 
 ```bash
-python3 {SKILL_DIR}/scripts/sentiment_scan.py --batch portfolio.csv 7
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7
 
-python3 {SKILL_DIR}/scripts/sentiment_scan.py --codes "002594,600519,0700.HK" 7
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --codes "002594,600519,0700.HK" 7
 ```
 
 ### 2. 按场景保存多套权重方案
 不同分析场景适用不同权重,建议保存多套配置:
 
 ```bash
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 002594 7 --weights conservative.json
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） 002594 7 --weights conservative.json
 
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 002594 7 --weights aggressive.json
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） 002594 7 --weights aggressive.json
 
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 002594 7
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） 002594 7
 ```
 
 ### 3. 历史报告按日期归档
@@ -320,7 +320,7 @@ python3 {SKILL_DIR}/scripts/sentiment_scan.py 002594 7
 
 ```bash
 DATE=$(date +%Y%m%d)
-python3 {SKILL_DIR}/scripts/sentiment_scan.py --batch portfolio.csv 7 \
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 \
     --format json \
     --output ~/reports/sentiment_${DATE}.json
 ```
@@ -336,9 +336,9 @@ python3 {SKILL_DIR}/scripts/sentiment_scan.py --batch portfolio.csv 7 \
 优先使用 JSON 或 CSV 格式,便于导入数据库或 BI 工具做深度分析:
 
 ```bash
-python3 {SKILL_DIR}/scripts/sentiment_scan.py --batch portfolio.csv 7 --format csv --output report.csv
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 --format csv --output report.csv
 
-python3 {SKILL_DIR}/scripts/sentiment_scan.py --batch portfolio.csv 7 --format json --output report.json
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 --format json --output report.json
 ```
 
 ## 常见问题

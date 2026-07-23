@@ -100,7 +100,7 @@ AI图像生成专业版是一款面向企业团队与专业设计师的高级文
 广告公司需为线下活动制作 4K 高清海报,使用专业版 4K 分辨率输出。
 
 ```bash
-python3 scripts/generate_image.py \
+python3 （请参考skill目录中的脚本文件） \
   "一场科技产品发布会的主视觉海报,深蓝色宇宙背景,中心是发光的产品轮廓,几何光线辐射四周,极简未来主义风格,高对比度" \
   --model gemini-3.1-flash-image-4k-16x9 \
   --output poster_4k.png
@@ -112,14 +112,14 @@ python3 scripts/generate_image.py \
 
 ```bash
 # 基于参考图生成水彩风格版本
-python3 scripts/generate_image.py \
+python3 （请参考skill目录中的脚本文件） \
   "将这张产品照片转换为水彩画风格,保持构图不变,柔和笔触,淡雅色调" \
   --image-input product.jpg \
   --model gemini-3.1-flash-image-2k \
   --output product_watercolor.png
 
 # 生成赛博朋克风格版本
-python3 scripts/generate_image.py \
+python3 （请参考skill目录中的脚本文件） \
   "将产品置于赛博朋克都市夜景中,霓虹灯光反射,雨后湿润质感" \
   --image-input product.jpg \
   --model gemini-3.1-flash-image-2k-16x9 \
@@ -132,14 +132,14 @@ python3 scripts/generate_image.py \
 
 ```bash
 # 批量生成不同风格的商品图
-python3 scripts/batch_generate.py \
+python3 （请参考skill目录中的脚本文件） \
   --prompt "一款复古风格的机械手表,皮质表带" \
   --styles "水彩,油画,赛博朋克,吉卜力,写实摄影,中国工笔" \
   --model gemini-3.1-flash-image-2k \
   --output ./batch_results/
 
 # 多比例批量生成
-python3 scripts/batch_generate.py \
+python3 （请参考skill目录中的脚本文件） \
   --prompt "春季新品发布会主视觉" \
   --ratios "1:1,16:9,9:16,4:5" \
   --model-prefix "gemini-3.1-flash-image-2k" \
@@ -172,7 +172,7 @@ export IMAGE_GEN_EDITION="pro"
 ### 第二步:执行 4K 生成
 
 ```bash
-python3 scripts/generate_image.py \
+python3 （请参考skill目录中的脚本文件） \
   "你的提示词描述" \
   --model gemini-3.1-flash-image-4k-16x9 \
   --output output_4k.png
@@ -182,7 +182,7 @@ python3 scripts/generate_image.py \
 
 ```bash
 # 批量生成并自动归档
-python3 scripts/batch_generate.py \
+python3 （请参考skill目录中的脚本文件） \
   --prompt "品牌春季营销主视觉" \
   --styles "极简,复古,未来主义,自然" \
   --model gemini-3.1-flash-image-4k \

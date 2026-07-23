@@ -54,8 +54,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
+| content | string | 否 | finance-radar处理的内容输入 |,  |
+| mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
 | skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |
 
@@ -66,9 +66,9 @@ pricing_model: "per_use"
   "success": true,
   "data": {
     "final_result": {
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明"
+      "radar_result": "radar_result_value",
+      "radar_metadata": "radar_metadata_value",
+      "radar_status": "radar_status_value"
     },
     "execution_log": [
       {
@@ -108,7 +108,7 @@ pricing_model: "per_use"
 }
 ```
 
-中间产物模板参考: `assets/（根据实际场景填充）`
+中间产物模板参考: `assets/finance-radar_template`
 
 ## 异常处理
 
@@ -146,14 +146,14 @@ export API_KEY="your_api_key_here"
 ## 案例展示
 
 ```bash
-python3 scripts/analyze.py --ticker AAPL
+python3 （请参考skill目录中的脚本文件） --ticker AAPL
 
-python3 scripts/analyze.py --ticker BTC-USD
+python3 （请参考skill目录中的脚本文件） --ticker BTC-USD
 
-python3 scripts/batch.py --tickers AAPL,GOOG,MSFT
-python3 scripts/batch.py --tickers AAPL,GOOG,MSFT --export  # Export CSV
+python3 （请参考skill目录中的脚本文件） --tickers AAPL,GOOG,MSFT
+python3 （请参考skill目录中的脚本文件） --tickers AAPL,GOOG,MSFT --export  # Export CSV
 
-python3 scripts/score.py --ticker TSLA
+python3 （请参考skill目录中的脚本文件） --ticker TSLA
 ```
 
 ## 常见问题

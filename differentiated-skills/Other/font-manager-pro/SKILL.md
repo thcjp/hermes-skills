@@ -40,15 +40,15 @@ pricing_model: "per_use"
 
 ### 配置并启动专业级字体管理
 ```bash
-python3 scripts/font-manager-pro.py init --config pro-config.yaml
+python3 （请参考skill目录中的脚本文件） init --config pro-config.yaml
 
-python3 scripts/font-manager-pro.py smart-pair --style modern --language zh
+python3 （请参考skill目录中的脚本文件） smart-pair --style modern --language zh
 
-python3 scripts/font-manager-pro.py subset --font "Inter" --chars "常用中文字符集"
+python3 （请参考skill目录中的脚本文件） subset --font "Inter" --chars "常用中文字符集"
 
-python3 scripts/font-manager-pro.py a11y-check styles.css --standard WCAG-AA
+python3 （请参考skill目录中的脚本文件） a11y-check styles.css --standard WCAG-AA
 
-python3 scripts/font-manager-pro.py audit --output reports/ --format pdf
+python3 （请参考skill目录中的脚本文件） audit --output reports/ --format pdf
 ```
 
 ### 专业版部署模板
@@ -81,10 +81,10 @@ Skill: 执行完成,结果如下: 操作成功
 | 配对评分 | 量化配对质量评分（0-100） | 客观评估配对优劣 |
 
 ```bash
-python3 scripts/font-manager-pro.py smart-pair \
+python3 （请参考skill目录中的脚本文件） smart-pair \
   --style modern --language zh
 
-python3 scripts/font-manager-pro.py analyze-pair \
+python3 （请参考skill目录中的脚本文件） analyze-pair \
   --heading "Playfair Display" --body "Inter" --language zh
 ```
 
@@ -94,17 +94,17 @@ python3 scripts/font-manager-pro.py analyze-pair \
 
 ### 2. 字体子集化工具
 ```bash
-python3 scripts/font-manager-pro.py subset \
+python3 （请参考skill目录中的脚本文件） subset \
   --font "Inter-Regular.ttf" \
   --chars "latin" \
   --output "inter-latin.woff2"
 
-python3 scripts/font-manager-pro.py subset \
+python3 （请参考skill目录中的脚本文件） subset \
   --font "NotoSansSC-Regular.otf" \
   --chars "zh-CN-common" \
   --output "noto-sc-common.woff2"
 
-python3 scripts/font-manager-pro.py subset-dynamic \
+python3 （请参考skill目录中的脚本文件） subset-dynamic \
   --font "NotoSansSC" \
   --content index.html \
   --output "noto-sc-page.woff2"
@@ -127,11 +127,11 @@ python3 scripts/font-manager-pro.py subset-dynamic \
 > 详细代码示例已移至 `references/detail.md`
 
 ```bash
-python3 scripts/font-manager-pro.py design-sync \
+python3 （请参考skill目录中的脚本文件） design-sync \
   --tokens design-tokens.yaml \
   --output styles/typography.css
 
-python3 scripts/font-manager-pro.py design-export \
+python3 （请参考skill目录中的脚本文件） design-export \
   --tokens design-tokens.yaml \
   --format css-variables \
   --output styles/variables.css
@@ -152,10 +152,10 @@ python3 scripts/font-manager-pro.py design-export \
 | 焦点可见 | 有焦点样式 | 键盘导航焦点可见 |
 
 ```bash
-python3 scripts/font-manager-pro.py a11y-check \
+python3 （请参考skill目录中的脚本文件） a11y-check \
   styles.css --standard WCAG-AA
 
-python3 scripts/font-manager-pro.py a11y-fix \
+python3 （请参考skill目录中的脚本文件） a11y-fix \
   styles.css --standard WCAG-AA --output styles-fixed.css
 ```
 
@@ -189,10 +189,10 @@ languages:
 ```
 
 ```bash
-python3 scripts/font-manager-pro.py i18n-check \
+python3 （请参考skill目录中的脚本文件） i18n-check \
   styles.css --languages zh-CN,ja-JP,ko-KR,en
 
-python3 scripts/font-manager-pro.py i18n-fontstack \
+python3 （请参考skill目录中的脚本文件） i18n-fontstack \
   --languages zh-CN,en --output multilingual.css
 ```
 
@@ -255,11 +255,11 @@ cdn:
 
 **解决方案**：
 ```bash
-python3 scripts/font-manager-pro.py design-sync \
+python3 （请参考skill目录中的脚本文件） design-sync \
   --tokens design-tokens.yaml \
   --output styles/typography.css
 
-python3 scripts/font-manager-pro.py design-audit \
+python3 （请参考skill目录中的脚本文件） design-audit \
   styles.css --tokens design-tokens.yaml
 ```
 
@@ -270,10 +270,10 @@ python3 scripts/font-manager-pro.py design-audit \
 
 **解决方案**：
 ```bash
-python3 scripts/font-manager-pro.py i18n-fontstack \
+python3 （请参考skill目录中的脚本文件） i18n-fontstack \
   --languages zh-CN --output zh-typography.css
 
-python3 scripts/font-manager-pro.py subset \
+python3 （请参考skill目录中的脚本文件） subset \
   --font "NotoSansSC" --chars "zh-CN-common" \
   --output "noto-sc.woff2"
 ```
@@ -285,10 +285,10 @@ python3 scripts/font-manager-pro.py subset \
 
 **解决方案**：
 ```bash
-python3 scripts/font-manager-pro.py a11y-check \
+python3 （请参考skill目录中的脚本文件） a11y-check \
   styles.css --standard WCAG-AA
 
-python3 scripts/font-manager-pro.py a11y-fix \
+python3 （请参考skill目录中的脚本文件） a11y-fix \
   styles.css --standard WCAG-AA \
   --output styles-fixed.css
 ```
@@ -300,11 +300,11 @@ python3 scripts/font-manager-pro.py a11y-fix \
 
 **解决方案**：
 ```bash
-python3 scripts/font-manager-pro.py subset-dynamic \
+python3 （请参考skill目录中的脚本文件） subset-dynamic \
   --font "NotoSansSC" --content index.html \
   --output "noto-sc-page.woff2"
 
-python3 scripts/font-manager-pro.py cdn-config \
+python3 （请参考skill目录中的脚本文件） cdn-config \
   --primary "https://cdn.example.com/fonts/" \
   --fallback "https://fonts.googleapis.com/" "/fonts/local/"
 ```

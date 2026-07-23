@@ -92,10 +92,10 @@ suggested_price: 99.9
 
 ```bash
 # 批量分析仓库所有开放PR
-bash scripts/merge-check-batch.sh owner/repo --state open --limit 20
+bash （请参考skill目录中的脚本文件） owner/repo --state open --limit 20
 
 # 输出团队看板
-bash scripts/merge-check-batch.sh owner/repo --format dashboard > pr-dashboard.html
+bash （请参考skill目录中的脚本文件） owner/repo --format dashboard > pr-dashboard.html
 ```
 
 工具输出按合并概率排序的看板:
@@ -148,7 +148,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          REPORT=$(bash scripts/merge-check.sh ${{ github.repository }}#${{ github.event.pull_request.number }})
+          REPORT=$(bash （请参考skill目录中的脚本文件） ${{ github.repository }}#${{ github.event.pull_request.number }})
           SCORE=$(echo "$REPORT" | jq -r '.merge_score // 0')
           if [ "$SCORE" -lt 50 ]; then
             echo "::error::合并性评分 ${SCORE} 低于阈值50,请处理后重试"
@@ -168,7 +168,7 @@ jobs:
 
 ```bash
 # 分析仓库近90天所有已关闭PR,生成贡献者健康度报告
-bash scripts/merge-check-batch.sh owner/repo \
+bash （请参考skill目录中的脚本文件） owner/repo \
   --state closed \
   --since 2026-04-19 \
   --group-by author \
@@ -209,33 +209,33 @@ vi config/team-rules.json
 ### 2. 单PR深度分析(兼容免费版)
 
 ```bash
-bash scripts/merge-check.sh owner/repo#123 --full-dimensions
+bash （请参考skill目录中的脚本文件） owner/repo#123 --full-dimensions
 ```
 
 ### 3. 批量分析
 
 ```bash
 # 分析所有开放PR
-bash scripts/merge-check-batch.sh owner/repo --state open
+bash （请参考skill目录中的脚本文件） owner/repo --state open
 
 # 按标签筛选
-bash scripts/merge-check-batch.sh owner/repo --label "needs-review"
+bash （请参考skill目录中的脚本文件） owner/repo --label "needs-review"
 
 # 按作者筛选
-bash scripts/merge-check-batch.sh owner/repo --author "alice"
+bash （请参考skill目录中的脚本文件） owner/repo --author "alice"
 
 # 生成HTML看板
-bash scripts/merge-check-batch.sh owner/repo --format dashboard --output pr-board.html
+bash （请参考skill目录中的脚本文件） owner/repo --format dashboard --output pr-board.html
 ```
 
 ### 4. 历史趋势导出
 
 ```bash
 # 导出仓库近6个月合并趋势
-bash scripts/merge-check-trend.sh owner/repo --months 6 --format csv > trend.csv
+bash （请参考skill目录中的脚本文件） owner/repo --months 6 --format csv > trend.csv
 
 # 生成趋势图
-bash scripts/merge-check-trend.sh owner/repo --months 6 --format chart > trend.html
+bash （请参考skill目录中的脚本文件） owner/repo --months 6 --format chart > trend.html
 ```
 
 #
@@ -288,32 +288,32 @@ bash scripts/merge-check-trend.sh owner/repo --months 6 --format chart > trend.h
 
 ```bash
 #!/usr/bin/env bash
-# daily-triage.sh 每日PR分流
+# （请参考skill目录中的脚本文件） 每日PR分流
 set -euo pipefail
 
-REPO="${1:?用法: ./daily-triage.sh owner/repo}"
+REPO="${1:?用法: （请参考skill目录中的脚本文件） owner/repo}"
 
 echo "## 每日PR分流 - $(date +%Y-%m-%d)"
 echo ""
 
 # 高概率可合并
 echo "### 可合并(评分≥80)"
-bash scripts/merge-check-batch.sh "$REPO" --state open --min-score 80 --format list
+bash （请参考skill目录中的脚本文件） "$REPO" --state open --min-score 80 --format list
 
 # 需关注(评分50-79)
 echo "### 需关注(评分50-79)"
-bash scripts/merge-check-batch.sh "$REPO" --state open --score-range 50-79 --format list
+bash （请参考skill目录中的脚本文件） "$REPO" --state open --score-range 50-79 --format list
 
 # 需介入(评分<50)
 echo "### 需介入(评分<50)"
-bash scripts/merge-check-batch.sh "$REPO" --state open --max-score 49 --format list
+bash （请参考skill目录中的脚本文件） "$REPO" --state open --max-score 49 --format list
 ```
 
 ### 2. 贡献者健康度周报
 
 ```bash
 # 生成周报
-bash scripts/merge-check-report.sh owner/repo \
+bash （请参考skill目录中的脚本文件） owner/repo \
   --period weekly \
   --format markdown \
   --output reports/week-$(date +%Y-W%V).md
@@ -361,7 +361,7 @@ jobs:
       - name: 检查合并性
         id: check
         run: |
-          SCORE=$(bash scripts/merge-check.sh ${{ github.repository }}#${{ github.event.pull_request.number }} | jq -r '.merge_score')
+          SCORE=$(bash （请参考skill目录中的脚本文件） ${{ github.repository }}#${{ github.event.pull_request.number }} | jq -r '.merge_score')
           echo "score=$SCORE" >> $GITHUB_OUTPUT
       - name: 低分预警
         if: steps.check.outputs.score < 30

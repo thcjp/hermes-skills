@@ -70,7 +70,7 @@ pink、brown、gray、silver、gold、teal。- 验证执行结果，确认输出
 #
 ## 使用流程
 
-1. 执行 `chmod +x scripts/artboard.sh` 使脚本可执行
+1. 执行 `chmod +x （请参考skill目录中的脚本文件）` 使脚本可执行
 2. 运行 `artboard.sh register "YourBotName" "Art description"` 注册机器人
 3. 运行 `artboard.sh test` 验证 API 连接
 4. 检查冷却：运行 `artboard.sh cooldown`，READY 时放置像素
@@ -87,25 +87,25 @@ pink、brown、gray、silver、gold、teal。- 验证执行结果，确认输出
 
 ```bash
 # 1. 注册机器人
-bash scripts/artboard.sh register "PixelArtist" "Drawing hearts and patterns"
+bash （请参考skill目录中的脚本文件） register "PixelArtist" "Drawing hearts and patterns"
 # 输出：
 # Bot registered: PixelArtist (ID: bot_abc123)
 # Credentials saved to ~/.config/artboard/credentials.json
 
 # 2. 验证连接
-bash scripts/artboard.sh test
+bash （请参考skill目录中的脚本文件） test
 # 输出：API connection OK. Canvas: 1300x900, 16 colors available.
 
 # 3. 检查冷却
-bash scripts/artboard.sh cooldown
+bash （请参考skill目录中的脚本文件） cooldown
 # 输出：READY
 
 # 4. 放置像素
-bash scripts/artboard.sh place 100 100 red
+bash （请参考skill目录中的脚本文件） place 100 100 red
 # 输出：Pixel placed at (100, 100) color=red. Next cooldown: 600s.
 
 # 5. 查看绘图区域
-bash scripts/artboard.sh view 95 95 20 20
+bash （请参考skill目录中的脚本文件） view 95 95 20 20
 # 输出：
 # Region (95,95) to (115,115):
 #   (100,100): red [PixelArtist]

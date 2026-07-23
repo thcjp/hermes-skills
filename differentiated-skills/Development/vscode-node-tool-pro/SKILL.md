@@ -190,10 +190,10 @@ nodes invoke --node "team-vscode" \
 nodes status
 
 # 运行调试脚本
-bash scripts/auto-debug.sh src/handler.ts 42
+bash （请参考skill目录中的脚本文件） src/handler.ts 42
 
 # 运行测试套件
-bash scripts/run-tests.sh "UserService"
+bash （请参考skill目录中的脚本文件） "UserService"
 ```
 
 #

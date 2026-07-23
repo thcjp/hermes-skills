@@ -27,7 +27,7 @@ tags:
 通过 `manager.js report` 实时查看当前会话和累计的Token使用量、费用和余额。
 
 ```bash
-node scripts/manager.js report
+node （请参考skill目录中的脚本文件） report
 ```
 
 **处理**: 按照skill规范执行使用量监控操作,遵循单一意图原则。
@@ -40,7 +40,7 @@ node scripts/manager.js report
 - ¥5余额阈值：余额低于¥5时预警
 
 ```bash
-node scripts/scheduler.js check --interval 300
+node （请参考skill目录中的脚本文件） check --interval 300
 ```
 
 **输出**: 返回定时提醒的执行结果,包含操作状态和输出数据。
@@ -48,14 +48,14 @@ node scripts/scheduler.js check --interval 300
 通过 `session-tracker.js record` 记录每次API调用的Token消耗，自动分类和统计。
 
 ```bash
-node scripts/session-tracker.js record --input 1200 --output 800 --model "moonshot-v1-8k"
+node （请参考skill目录中的脚本文件） record --input 1200 --output 800 --model "moonshot-v1-8k"
 ```- 验证执行结果，确认输出符合预期格式
 - 参考`工具集成`相关配置参数进行设置
 ### 4. 跨会话分析
 汇总多个会话的Token使用数据，分析使用趋势和费用分布。
 
 ```bash
-node scripts/manager.js report --range 7d --format table
+node （请参考skill目录中的脚本文件） report --range 7d --format table
 ```
 
 **输入**: 用户提供跨会话分析所需的指令和必要参数。
@@ -88,7 +88,7 @@ node scripts/manager.js report --range 7d --format table
 ### 示例:查看使用报告
 
 ```bash
-node scripts/manager.js report
+node （请参考skill目录中的脚本文件） report
 ```
 
 输出：

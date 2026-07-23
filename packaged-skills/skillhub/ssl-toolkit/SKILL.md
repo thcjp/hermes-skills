@@ -57,25 +57,25 @@ pricing_model: "per_use"
 | mTLS | 双向TLS配置 | 免费版无 |
 ### 能力模块
 
-执行能力模块操作,处理用户输入并返回结果。
+执行能力模块,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供能力模块所需的参数和指令。
+**输入**: 用户提供能力模块相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回能力模块的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`能力模块`相关配置参数进行设置
 ### 基础证书申请
 
-执行基础证书申请操作,处理用户输入并返回结果。
+执行基础证书申请,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供基础证书申请所需的参数和指令。
+**输入**: 用户提供基础证书申请相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回基础证书申请的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`基础证书申请`相关配置参数进行设置
 ### 证书类型
 
-执行证书类型操作,处理用户输入并返回结果。
+执行证书类型,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供证书类型所需的参数和指令。
+**输入**: 用户提供证书类型相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回证书类型的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`证书类型`相关配置参数进行设置
@@ -96,7 +96,7 @@ acme.sh --issue --dns dns_cf \
   -d "*.example.com" -d "example.com"
 
 # 查看企业所有证书资产
-node scripts/cert-inventory.mjs --root /etc/letsencrypt/live/
+node （请参考skill目录中的脚本文件） --root /etc/letsencrypt/live/
 ```
 
 证书资产清单输出:
@@ -238,7 +238,7 @@ jobs:
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | ssl-toolkit处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式
@@ -341,7 +341,7 @@ jobs:
 
 ```bash
 # 扫描TLS配置并评分
-node scripts/tls-audit.mjs --host example.com --port 443 --format html > audit-report.html
+node （请参考skill目录中的脚本文件） --host example.com --port 443 --format html > audit-report.html
 
 # 输出
 # TLS安全审计报告: example.com
@@ -397,7 +397,7 @@ server {
 
 ```bash
 # 配置监控
-node scripts/cert-monitor.mjs --config config/cert-watch.yaml
+node （请参考skill目录中的脚本文件） --config config/cert-watch.yaml
 
 # 证书监控配置
 ```

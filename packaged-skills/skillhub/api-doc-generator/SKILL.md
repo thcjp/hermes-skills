@@ -150,7 +150,7 @@ curl http://localhost:8080/api/v1/users?mock_delay=2000        # 慢响应
 ```bash
 api-doc generate --spec ./openapi.yaml --template ./templates/company.md.tpl
 
-版本：（根据实际场景填充）  日期：（根据实际场景填充）
+版本："generator_result"  日期："generator_result"
 {% for path in paths %}
 **接口**：按流程执行 相关信息
 {% endfor %}
@@ -267,8 +267,8 @@ api-doc collab enable --reviewers @zhang,@li
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | api-doc-generator处理的内容输入 |,  |
+| content | string | 否 | api-doc-generator处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -277,9 +277,9 @@ api-doc collab enable --reviewers @zhang,@li
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "generator 相关配置参数",
+    result: "generator 相关配置参数",
+    result: "generator 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

@@ -277,7 +277,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: 执行规约审计
-        run: ./scripts/java-convention-audit.sh src/
+        run: （请参考skill目录中的脚本文件） src/
 
       - name: 检查 Critical 违规
         run: |

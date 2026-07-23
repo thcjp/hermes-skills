@@ -63,25 +63,25 @@ pricing_model: "per_use"
 | 审计日志 | 否 | 是 | 操作追溯 |
 ### 能力项
 
-执行能力项操作,处理用户输入并返回结果。
+执行能力项,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供能力项所需的参数和指令。
+**输入**: 用户提供能力项相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回能力项的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`能力项`相关配置参数进行设置
 ### 单张图片处理
 
-执行单张图片处理操作,处理用户输入并返回结果。
+执行单张图片处理,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供单张图片处理所需的参数和指令。
+**输入**: 用户提供单张图片处理相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回单张图片处理的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`单张图片处理`相关配置参数进行设置
 ### 批量处理
 
-执行批量处理操作,处理用户输入并返回结果。
+支持批量输入处理,自动队列管理,并行执行提高效率,结果统一汇总输出。
 
-**输入**: 用户提供批量处理所需的参数和指令。
+**输入**: 用户提供批量处理相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回批量处理的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`批量处理`相关配置参数进行设置
@@ -94,7 +94,7 @@ pricing_model: "per_use"
 
 ```python
 # 批量处理合同图片
-python3 scripts/batch_scan.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./contracts/ \
   --scene scan-contract \
   --output ./contracts_hd/ \
@@ -111,7 +111,7 @@ python3 scripts/batch_scan.py \
 
 ```bash
 # 批量去手写
-python3 scripts/batch_scan.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./exams/ \
   --scene remove-handwriting \
   --output ./exams_blank/ \
@@ -119,7 +119,7 @@ python3 scripts/batch_scan.py \
   --format json
 
 # 自定义流水线:去手写 → 去阴影 → 去底色
-python3 scripts/pipeline_scan.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./exams/ \
   --pipeline "remove-handwriting,remove-shadow,remove-background-color" \
   --output ./exams_clean/ \
@@ -132,7 +132,7 @@ python3 scripts/pipeline_scan.py \
 
 ```bash
 # 批量去水印
-python3 scripts/batch_scan.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./product_images/ \
   --scene remove-watermark \
   --output ./products_clean/ \
@@ -140,7 +140,7 @@ python3 scripts/batch_scan.py \
   --format json
 
 # 处理结果归档与审计
-python3 scripts/archive_results.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./products_clean/ \
   --metadata ./metadata.json \
   --output ./archive/
@@ -185,7 +185,7 @@ export SCAN_EDITION="pro"
 ### 第二步:执行批量处理
 
 ```bash
-python3 scripts/batch_scan.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./images/ \
   --scene image-hd-enhance \
   --output ./enhanced/ \
@@ -196,7 +196,7 @@ python3 scripts/batch_scan.py \
 
 ```bash
 # 生成处理报告
-python3 scripts/scan_report.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./enhanced/ \
   --output report.md
 ```
@@ -206,7 +206,7 @@ python3 scripts/scan_report.py \
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | quark-scan处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式

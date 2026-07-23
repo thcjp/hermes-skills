@@ -64,9 +64,9 @@ pricing_model: "per_use"
 **输出**: 返回支持的命理体系的执行结果,包含操作状态和输出数据。
 ### 命理体系
 
-执行命理体系操作,处理用户输入并返回结果。
+执行命理体系,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供命理体系所需的参数和指令。
+**输入**: 用户提供命理体系相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回命理体系的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`命理体系`相关配置参数进行设置
@@ -79,7 +79,7 @@ pricing_model: "per_use"
 
 ```bash
 # 紫微斗数排盘
-python3 scripts/ziwei.py chart \
+python3 （请参考skill目录中的脚本文件） chart \
   --year 1990 --month 5 --day 15 --hour 8 \
   --gender male \
   --output ziwei_chart.html
@@ -97,7 +97,7 @@ python3 scripts/ziwei.py chart \
 
 ```bash
 # 合婚分析
-python3 scripts/match.py analyze \
+python3 （请参考skill目录中的脚本文件） analyze \
   --person1 "1990-05-15 08:00 male" \
   --person2 "1992-08-20 14:00 female" \
   --output marriage_report.pdf
@@ -115,7 +115,7 @@ python3 scripts/match.py analyze \
 
 ```bash
 # 批量排盘
-python3 scripts/batch.py \
+python3 （请参考skill目录中的脚本文件） \
   --input people.csv \
   --output-dir ./charts/ \
   --format html \
@@ -136,26 +136,26 @@ python3 scripts/batch.py \
 pip install -r requirements_pro.txt
 
 # 示例
-python3 scripts/init.py --load-cases
+python3 （请参考skill目录中的脚本文件） --load-cases
 ```
 
 ### 常用命令
 
 ```bash
 # 紫微斗数
-python3 scripts/ziwei.py chart --year 1990 --month 5 --day 15 --hour 8 --gender male
+python3 （请参考skill目录中的脚本文件） chart --year 1990 --month 5 --day 15 --hour 8 --gender male
 
 # 合婚分析
-python3 scripts/match.py analyze --person1 "1990-05-15 08:00 male" --person2 "1992-08-20 14:00 female"
+python3 （请参考skill目录中的脚本文件） analyze --person1 "1990-05-15 08:00 male" --person2 "1992-08-20 14:00 female"
 
 # 大运流年
-python3 scripts/bazi.py dayun --year 1990 --month 5 --day 15 --hour 8 --gender male
+python3 （请参考skill目录中的脚本文件） dayun --year 1990 --month 5 --day 15 --hour 8 --gender male
 
 # 批量排盘
-python3 scripts/batch.py --input people.csv --output-dir ./charts/
+python3 （请参考skill目录中的脚本文件） --input people.csv --output-dir ./charts/
 
 # 案例查询
-python3 scripts/cases.py search --keyword "富贵命"
+python3 （请参考skill目录中的脚本文件） search --keyword "富贵命"
 ```
 
 #
@@ -163,8 +163,8 @@ python3 scripts/cases.py search --keyword "富贵命"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | university-app处理的内容输入 |,  |
+| content | string | 否 | university-app处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -173,9 +173,9 @@ python3 scripts/cases.py search --keyword "富贵命"
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "app 相关配置参数",
+    result: "app 相关配置参数",
+    result: "app 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

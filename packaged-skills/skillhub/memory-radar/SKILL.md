@@ -93,19 +93,19 @@ pricing_model: "monthly"
 
 ```bash
 # 扫描全部记忆文件（本地模式，零网络请求）
-python3 scripts/memory-scan.py
+python3 （请参考skill目录中的脚本文件）
 
 # 允许远程LLM分析（仅传输脱敏内容）
-python3 scripts/memory-scan.py --allow-remote
+python3 （请参考skill目录中的脚本文件） --allow-remote
 
 # 扫描指定文件
-python3 scripts/memory-scan.py --file memory/2026-07-18.md
+python3 （请参考skill目录中的脚本文件） --file memory/2026-07-18.md
 
 # JSON输出（用于集成到CI/CD或其他工具链）
-python3 scripts/memory-scan.py --json
+python3 （请参考skill目录中的脚本文件） --json
 
 # 强制全量扫描（忽略增量缓存）
-python3 scripts/memory-scan.py --force
+python3 （请参考skill目录中的脚本文件） --force
 ```
 
 ### 第二步：分析扫描报告
@@ -122,7 +122,7 @@ python3 scripts/memory-scan.py --force
 
 ```bash
 # 隔离指定文件的指定行
-python3 scripts/quarantine.py memory/2026-07-18.md 42
+python3 （请参考skill目录中的脚本文件） memory/2026-07-18.md 42
 ```
 
 隔离操作会：备份原文件到 `.memory-radar/quarantine/` → 脱敏威胁行 → 记录隔离日志。
@@ -132,7 +132,7 @@ python3 scripts/quarantine.py memory/2026-07-18.md 42
 如确认隔离内容为误报或需要恢复：
 
 ```bash
-python3 scripts/quarantine.py --restore memory/2026-07-18.md 42
+python3 （请参考skill目录中的脚本文件） --restore memory/2026-07-18.md 42
 ```
 
 系统从备份恢复原始内容，并清除隔离标记。
@@ -141,7 +141,7 @@ python3 scripts/quarantine.py --restore memory/2026-07-18.md 42
 
 ```bash
 # 创建每日扫描定时任务
-bash scripts/schedule-scan.sh
+bash （请参考skill目录中的脚本文件）
 ```
 
 标记误报后系统自动学习：记录该模式到白名单 → 后续扫描自动跳过相似模式 → 白名单可手动审查与清理。
@@ -169,7 +169,7 @@ bash scripts/schedule-scan.sh
 
 **执行命令：**
 ```bash
-python3 scripts/memory-scan.py
+python3 （请参考skill目录中的脚本文件）
 ```
 
 **输出：**
@@ -190,7 +190,7 @@ python3 scripts/memory-scan.py
 建议处置：审查 memory/2026-07-15.md:42
 ```
 
-**后续操作：** 用户确认后执行 `python3 scripts/quarantine.py memory/2026-07-15.md 42` 隔离威胁行。
+**后续操作：** 用户确认后执行 `python3 （请参考skill目录中的脚本文件） memory/2026-07-15.md 42` 隔离威胁行。
 
 ### 示例二：引入外部数据后检查注入
 
@@ -198,7 +198,7 @@ python3 scripts/memory-scan.py
 
 **执行命令：**
 ```bash
-python3 scripts/memory-scan.py --file memory/2026-07-20.md --allow-remote
+python3 （请参考skill目录中的脚本文件） --file memory/2026-07-20.md --allow-remote
 ```
 
 **输出：**
@@ -231,7 +231,7 @@ python3 scripts/memory-scan.py --file memory/2026-07-20.md --allow-remote
 三种方式降低误报：(1) 用白名单机制标记合法内容（如测试Key、API文档示例）；(2) 启用上下文感知降级（检测到"示例"/"测试"关键词自动降级）；(3) 标记误报后系统自动学习，后续扫描跳过相似模式。白名单可定期审查清理，防止过度抑制。
 
 **Q3：隔离后能恢复吗？**
-可以。隔离前系统自动备份原文件到 `.memory-radar/quarantine/` 目录，用 `python3 scripts/quarantine.py --restore <file> <line>` 命令即可恢复原始内容。恢复操作会清除隔离标记并还原原始行。
+可以。隔离前系统自动备份原文件到 `.memory-radar/quarantine/` 目录，用 `python3 （请参考skill目录中的脚本文件） --restore <file> <line>` 命令即可恢复原始内容。恢复操作会清除隔离标记并还原原始行。
 
 **Q4：增量扫描会不会漏掉威胁？**
 不会。增量扫描基于文件hash，任何内容变更都会触发重新扫描该文件。未变更文件复用上次扫描结果，不影响检测率。如担心遗漏，可用 `--force` 参数强制全量扫描所有文件。

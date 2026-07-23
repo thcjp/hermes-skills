@@ -43,7 +43,7 @@ pricing_model: "per_use"
 
 **专业版能力**：
 - YAML声明式定义测试集，支持setup/teardown与变量提取
-- 依赖编排：步骤间变量传递（`（根据实际场景填充）`），自动拓扑排序
+- 依赖编排：步骤间变量传递（`api-toolkit_template`），自动拓扑排序
 - 断言链：状态码、响应体字段、响应时间、Header多维度断言
 - 数据驱动：CSV/JSON数据源，同一测试用多组数据跑
 - 失败重试：网络层错误自动重试，业务错误不重试
@@ -261,8 +261,8 @@ api-toolkit load-test \
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | api-toolkit处理的内容输入 |,  |
+| content | string | 否 | api-toolkit处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -271,9 +271,9 @@ api-toolkit load-test \
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "toolkit 相关配置参数",
+    result: "toolkit 相关配置参数",
+    result: "toolkit 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,
@@ -380,7 +380,7 @@ api-toolkit test run ./tests/smoke.yaml --schedule "*/5 * * * *" \
 专业版默认支持20人团队。更大团队可联系销售升级企业版。协作空间支持读/写/管理员三角色，测试集用Git版本化，支持分支与PR评审。
 
 ### Q8：回归测试集能复用免费版的curl命令吗？
-可以。用 `api-toolkit test import --from-curl ./cmds.sh` 可批量导入curl命令为测试集steps。导入后需补充断言。专业版也支持从Postman Collection、Insomnia导出文件导入。
+可以。用 `api-toolkit test import --from-curl （请参考skill目录中的脚本文件）` 可批量导入curl命令为测试集steps。导入后需补充断言。专业版也支持从Postman Collection、Insomnia导出文件导入。
 
 ### Q9：Mock录制会泄露敏感数据吗？
 录制数据默认存本地，可配置脱敏规则（如对 `Authorization` 头、`email` 字段脱敏）。录制数据不应提交到Git，建议加入 `.gitignore`。协作空间上传前会自动扫描敏感字段并提示。

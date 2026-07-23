@@ -55,25 +55,25 @@ pricing_model: "per_use"
 | 数据统计 | 消息量/活跃度/成员分析 | 3 | 否 |
 ### 基础消息
 
-执行基础消息操作,处理用户输入并返回结果。
+执行基础消息,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供基础消息所需的参数和指令。
+**输入**: 用户提供基础消息相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回基础消息的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`基础消息`相关配置参数进行设置
 ### 消息操作
 
-执行消息操作操作,处理用户输入并返回结果。
+执行消息操作,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供消息操作所需的参数和指令。
+**输入**: 用户提供消息操作相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回消息操作的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`消息操作`相关配置参数进行设置
 ### 聊天查询
 
-执行聊天查询操作,处理用户输入并返回结果。
+执行聊天查询,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供聊天查询所需的参数和指令。
+**输入**: 用户提供聊天查询相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回聊天查询的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`聊天查询`相关配置参数进行设置
@@ -104,7 +104,7 @@ batch_config = {
         {"chat_id": "-1001234567891", "name": "测试群"},
         {"chat_id": "-1001234567892", "name": "用户群"}
     ],
-    "message_template": "v（根据实际场景填充） 已发布！\n\n新增功能：\n内容生成工具\n\n更新时间：（根据实际场景填充）",
+    "message_template": "v"toolkit_result" 已发布！\n\n新增功能：\n内容生成工具\n\n更新时间："toolkit_result"",
     "variables": {
         "version": "2.1.0",
         "features": "- 实时协作\n- 自动保存\n- 版本回溯",
@@ -191,17 +191,17 @@ python tg_channel_scheduler.py \
 
 ```bash
 # 设置 Webhook
-curl -X POST "https://api.telegram.org/bot（根据实际场景填充）/setWebhook" \
+curl -X POST "https://api.telegram.org/bot"toolkit_metadata"/setWebhook" \
   -H "Content-Type: application/json" \
   -d '{
     "url": "https://your-app.com/webhook/telegram",
-    "secret_token": "（根据实际场景填充）",
+    "secret_token": ""toolkit_status"",
     "allowed_updates": ["message", "callback_query", "chat_member"],
     "max_connections": 40
   }'
 
 # 获取 Webhook 信息
-curl "https://api.telegram.org/bot（根据实际场景填充）/getWebhookInfo"
+curl "https://api.telegram.org/bot"toolkit_summary"/getWebhookInfo"
 ```
 
 ## 使用流程
@@ -218,17 +218,17 @@ curl "https://api.telegram.org/bot（根据实际场景填充）/getWebhookInfo"
 
 ```bash
 # 踢出成员（可恢复）
-curl -X POST "https://api.telegram.org/bot（根据实际场景填充）/kickChatMember" \
+curl -X POST "https://api.telegram.org/bot"toolkit_details"/kickChatMember" \
   -H "Content-Type: application/json" \
   -d '{"chat_id": "-1001234567890", "user_id": 123456789, "until_date": 0}'
 
 # 解除封禁
-curl -X POST "https://api.telegram.org/bot（根据实际场景填充）/unbanChatMember" \
+curl -X POST "https://api.telegram.org/bot"toolkit_count"/unbanChatMember" \
   -H "Content-Type: application/json" \
   -d '{"chat_id": "-1001234567890", "user_id": 123456789, "only_if_banned": true}'
 
 # 已知限制
-curl -X POST "https://api.telegram.org/bot（根据实际场景填充）/restrictChatMember" \
+curl -X POST "https://api.telegram.org/bot"toolkit_timestamp"/restrictChatMember" \
   -H "Content-Type: application/json" \
   -d '{
     "chat_id": "-1001234567890",
@@ -243,7 +243,7 @@ curl -X POST "https://api.telegram.org/bot（根据实际场景填充）/restric
   }'
 
 # 提升为管理员
-curl -X POST "https://api.telegram.org/bot（根据实际场景填充）/promoteChatMember" \
+curl -X POST "https://api.telegram.org/bot"toolkit_version"/promoteChatMember" \
   -H "Content-Type: application/json" \
   -d '{
     "chat_id": "-1001234567890",
@@ -258,7 +258,7 @@ curl -X POST "https://api.telegram.org/bot（根据实际场景填充）/promote
 
 ```bash
 # 创建邀请链接
-curl -X POST "https://api.telegram.org/bot（根据实际场景填充）/createChatInviteLink" \
+curl -X POST "https://api.telegram.org/bot"field_9"/createChatInviteLink" \
   -H "Content-Type: application/json" \
   -d '{
     "chat_id": "-1001234567890",
@@ -268,12 +268,12 @@ curl -X POST "https://api.telegram.org/bot（根据实际场景填充）/createC
   }'
 
 # 编辑邀请链接
-curl -X POST "https://api.telegram.org/bot（根据实际场景填充）/editChatInviteLink" \
+curl -X POST "https://api.telegram.org/bot"field_10"/editChatInviteLink" \
   -H "Content-Type: application/json" \
   -d '{"chat_id": "-1001234567890", "invite_link": "https://t.me/+ABC...", "member_limit": 100}'
 
 # 撤销邀请链接
-curl -X POST "https://api.telegram.org/bot（根据实际场景填充）/revokeChatInviteLink" \
+curl -X POST "https://api.telegram.org/bot"field_11"/revokeChatInviteLink" \
   -H "Content-Type: application/json" \
   -d '{"chat_id": "-1001234567890", "invite_link": "https://t.me/+ABC..."}'
 ```
@@ -283,8 +283,8 @@ curl -X POST "https://api.telegram.org/bot（根据实际场景填充）/revokeC
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | telegram-msg-toolkit处理的内容输入 |,  |
+| content | string | 否 | telegram-msg-toolkit处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -293,9 +293,9 @@ curl -X POST "https://api.telegram.org/bot（根据实际场景填充）/revokeC
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "toolkit 相关配置参数",
+    result: "toolkit 相关配置参数",
+    result: "toolkit 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

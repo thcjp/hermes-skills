@@ -86,7 +86,7 @@ export API_KEY="your_api_key_here"
 /agent-vibes:list                    # 列出全部声音
 /
 
-**输入**: 用户提供声音命令所需的参数和指令。
+**输入**: 用户提供声音命令相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行声音命令操作。
 **输出**: 返回声音命令的执行结果,包含操作状态和输出数据。
 
@@ -104,7 +104,7 @@ export API_KEY="your_api_key_here"
 /agent-vibes:personality dramatic      # 切换戏剧风格
 /agent-vibes:personality reset         
 
-**输入**: 用户提供个性与风格所需的参数和指令。
+**输入**: 用户提供个性与风格相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行个性与风格操作。
 **输出**: 返回个性与风格的执行结果,包含操作状态和输出数据。
 
@@ -132,7 +132,7 @@ export API_KEY="your_api_key_here"
 ```bash
 /agent-vibes
 
-**输入**: 用户提供语速与效果所需的参数和指令。
+**输入**: 用户提供语速与效果相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行语速与效果操作。
 **输出**: 返回语速与效果的执行结果,包含操作状态和输出数据。
 
@@ -145,7 +145,7 @@ export API_KEY="your_api_key_here"
 /agent-vibes:background-music switch jazz  # 切换到爵士曲目
 ```
 
-**输入**: 用户提供背景音乐所需的参数和指令。
+**输入**: 用户提供背景音乐相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行背景音乐操作。
 **输出**: 返回背景音乐的执行结果,包含操作状态和输出数据。
 
@@ -158,7 +158,7 @@ export API_KEY="your_api_key_here"
 /agent-vibes:verbosity high            # 完整推理过程
 ```
 
-**输入**: 用户提供Verbosity 控制所需的参数和指令。
+**输入**: 用户提供Verbosity 控制相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行Verbosity 控制操作。
 **输出**: 返回Verbosity 控制的执行结果,包含操作状态和输出数据。
 
@@ -170,7 +170,7 @@ export API_KEY="your_api_key_here"
 /agent-vibes:replay                    # 回放最近一次
 /agent-vibes:replay 2                  # 回放倒数第二
 
-**输入**: 用户提供静音与回放所需的参数和指令。
+**输入**: 用户提供静音与回放相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行静音与回放操作。
 **输出**: 返回静音与回放的执行结果,包含操作状态和输出数据。
 
@@ -198,7 +198,7 @@ export API_KEY="your_api_key_here"
 /agent-vibes:learn on                  # 启用双语播报（母语 + 目标语言）
 /agent-vibes:learn off                 
 
-**输入**: 用户提供语言与学习所需的参数和指令。
+**输入**: 用户提供语言与学习相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行语言与学习操作。
 **输出**: 返回语言与学习的执行结果,包含操作状态和输出数据。
 
@@ -210,7 +210,7 @@ export API_KEY="your_api_key_here"
 /agent-vibes:provider switch macos     # 切换到 macOS Say（仅 Mac）
 /agent-vi
 
-**输入**: 用户提供Provider 管理所需的参数和指令。
+**输入**: 用户提供Provider 管理相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行Provider 管理操作。
 **输出**: 返回Provider 管理的执行结果,包含操作状态和输出数据。
 

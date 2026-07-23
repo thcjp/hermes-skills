@@ -124,17 +124,17 @@ Google Fonts CDN 在部分地区（如欧盟 GDPR 场景）可能有隐私问题
 **输出**: 返回Self-Hosting（自托管字体方案）的执行结果,包含操作状态和输出数据。
 ### 配对方案
 
-执行配对方案操作,处理用户输入并返回结果。
+执行配对方案,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供配对方案所需的参数和指令。
+**输入**: 用户提供配对方案相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回配对方案的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`配对方案`相关配置参数进行设置
 ### Playfair Display（heading）+ Source Sans Pro（body）
 
-执行Playfair Display（heading）+ Source Sans Pro（body）操作,处理用户输入并返回结果。
+执行Playfair Display（heading）+ Source Sans Pro（body）,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供Playfair Display（heading）+ Source Sans Pro（body）所需的参数和指令。
+**输入**: 用户提供Playfair Display（heading）+ Source Sans Pro（body）相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回Playfair Display（heading）+ Source Sans Pro（body）的处理结果。
 

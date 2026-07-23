@@ -102,9 +102,9 @@ suggested_price: 29.9
 
 ```bash
 # 采集PR数据
-bash scripts/merge-check.sh owner/repo#123
+bash （请参考skill目录中的脚本文件） owner/repo#123
 # 或使用完整URL
-bash scripts/merge-check.sh 
+bash （请参考skill目录中的脚本文件） 
 ```
 
 工具解析JSON输出后,生成结构化报告:
@@ -153,7 +153,7 @@ PR本身质量不错且CI全绿、作者活跃,但卡在未处理的评审反馈
 
 ```bash
 # 采集后重点关注作者历史与评审情绪
-bash scripts/merge-check.sh owner/repo#456
+bash （请参考skill目录中的脚本文件） owner/repo#456
 ```
 
 工具会分析作者在该仓库的历史合并率、评审评论情绪(正面/中立/对抗)、是否首次贡献者等社交信号。
@@ -164,7 +164,7 @@ bash scripts/merge-check.sh owner/repo#456
 
 ```bash
 # 分析一个已合并的成功PR
-bash scripts/merge-check.sh owner/repo#100
+bash （请参考skill目录中的脚本文件） owner/repo#100
 ```
 
 工具会输出该PR的优势点(规模合理、单一职责、CI全绿、活跃讨论等),作为最佳实践参考。
@@ -191,10 +191,10 @@ gh auth login
 
 ```bash
 # 标准用法
-bash scripts/merge-check.sh owner/repo#123
+bash （请参考skill目录中的脚本文件） owner/repo#123
 
 # 使用URL
-bash scripts/merge-check.sh 
+bash （请参考skill目录中的脚本文件） 
 ```
 
 脚本输出单个JSON对象,包含以下键:
@@ -231,12 +231,12 @@ Agent 读取JSON后,按维度分析并产出报告。
 ### 单PR分析命令封装
 
 ```bash
-# quick-check.sh 快速检查单个PR
+# （请参考skill目录中的脚本文件） 快速检查单个PR
 #!/usr/bin/env bash
 set -euo pipefail
 
-PR_REF="${1:?用法: ./quick-check.sh owner/repo#123}"
-OUTPUT=$(bash scripts/merge-check.sh "$PR_REF")
+PR_REF="${1:?用法: （请参考skill目录中的脚本文件） owner/repo#123}"
+OUTPUT=$(bash （请参考skill目录中的脚本文件） "$PR_REF")
 
 echo "$OUTPUT" | jq '{
   title: .pr.title,

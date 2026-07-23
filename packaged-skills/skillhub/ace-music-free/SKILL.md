@@ -50,16 +50,16 @@ export API_KEY="your_api_key_here"
 
 ### 基础生成
 
-使用 `scripts/generate.sh` 完成一站式生成:
+使用 `（请参考skill目录中的脚本文件）` 完成一站式生成:
 
 ```bash
 # 基础文本生成
-scripts/generate.sh "upbeat pop song about summer" --duration 30 --output summer.mp3
+（请参考skill目录中的脚本文件） "upbeat pop song about summer" --duration 30 --output summer.mp3
 
 # 自定义歌词
-scripts/generate.sh "gentle acoustic ballad, female vo
+（请参考skill目录中的脚本文件） "gentle acoustic ballad, female vo
 
-**输入**: 用户提供基础生成所需的参数和指令。
+**输入**: 用户提供基础生成相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行基础生成操作。
 
 ### 参数指南（基础参数）
@@ -94,19 +94,19 @@ scripts/generate.sh "gentle acoustic ballad, female vo
 
 ## 基础生成
 
-使用 `scripts/generate.sh` 完成一站式生成:
+使用 `（请参考skill目录中的脚本文件）` 完成一站式生成:
 
 ```bash
 # 基础文本生成
-scripts/generate.sh "upbeat pop song about summer" --duration 30 --output summer.mp3
+（请参考skill目录中的脚本文件） "upbeat pop song about summer" --duration 30 --output summer.mp3
 
 # 自定义歌词
-scripts/generate.sh "gentle acoustic ballad, female vocal" \
+（请参考skill目录中的脚本文件） "gentle acoustic ballad, female vocal" \
   --lyrics "[Verse 1]\nSunlight through the window\n\n[Chorus]\nWe are the dreamers" \
   --duration 60 --output ballad.mp3
 
 # 纯音乐（无人声）
-scripts/generate.sh "lo-fi hip hop beats, chill, rainy day" --instrumental --duration 120 --output lofi.mp3
+（请参考skill目录中的脚本文件） "lo-fi hip hop beats, chill, rainy day" --instrumental --duration 120 --output lofi.mp3
 ```
 
 脚本将生成的文件路径输出到 stdout,Agent 应将文件发送给用户。
@@ -162,7 +162,7 @@ scripts/generate.sh "lo-fi hip hop beats, chill, rainy day" --instrumental --dur
 **场景**: 用户需要快速生成一段 30 秒的夏日主题流行歌
 
 ```bash
-scripts/generate.sh "upbeat pop song about summer, sunny beach, upbeat tempo" \
+（请参考skill目录中的脚本文件） "upbeat pop song about summer, sunny beach, upbeat tempo" \
   --duration 30 --output summer.mp3
 ```
 
@@ -174,7 +174,7 @@ scripts/generate.sh "upbeat pop song about summer, sunny beach, upbeat tempo" \
 **场景**: 创作者需要生成一首带歌词的民谣
 
 ```bash
-scripts/generate.sh "gentle acoustic ballad, female vocal, fingerstyle guitar" \
+（请参考skill目录中的脚本文件） "gentle acoustic ballad, female vocal, fingerstyle guitar" \
   --lyrics "[Verse 1]\nSunlight through the window\nCoffee getting cold\n\n[Chorus]\nWe are the dreamers\nChasing after light" \
   --duration 60 --output ballad.mp3
 ```

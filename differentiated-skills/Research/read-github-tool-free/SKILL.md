@@ -116,7 +116,7 @@ Agent 执行流程：
 命令执行：
 
 ```bash
-python3 scripts/gitmcp.py fetch-docs facebook/react
+python3 （请参考skill目录中的脚本文件） fetch-docs facebook/react
 ```
 
 示例输出：
@@ -154,7 +154,7 @@ Agent：
 ```
 
 ```bash
-python3 scripts/gitmcp.py search-code facebook/react "useState"
+python3 （请参考skill目录中的脚本文件） search-code facebook/react "useState"
 ```
 
 ### 场景三：搜索文档内容
@@ -171,7 +171,7 @@ Agent：
 ```
 
 ```bash
-python3 scripts/gitmcp.py search-docs facebook/react "hooks"
+python3 （请参考skill目录中的脚本文件） search-docs facebook/react "hooks"
 ```
 
 ## 快速开始
@@ -180,38 +180,38 @@ python3 scripts/gitmcp.py search-docs facebook/react "hooks"
 
 ```bash
 # 获取仓库完整文档
-python3 scripts/gitmcp.py fetch-docs owner/repo
+python3 （请参考skill目录中的脚本文件） fetch-docs owner/repo
 
 # 示例
-python3 scripts/gitmcp.py fetch-docs facebook/react
-python3 scripts/gitmcp.py fetch-docs vuejs/vue
+python3 （请参考skill目录中的脚本文件） fetch-docs facebook/react
+python3 （请参考skill目录中的脚本文件） fetch-docs vuejs/vue
 ```
 
 ### Step 2：搜索文档
 
 ```bash
 # 语义搜索文档
-python3 scripts/gitmcp.py search-docs owner/repo "query"
+python3 （请参考skill目录中的脚本文件） search-docs owner/repo "query"
 
 # 示例
-python3 scripts/gitmcp.py search-docs facebook/react "state management"
+python3 （请参考skill目录中的脚本文件） search-docs facebook/react "state management"
 ```
 
 ### Step 3：搜索代码
 
 ```bash
 # 精确匹配搜索代码
-python3 scripts/gitmcp.py search-code owner/repo "function_name"
+python3 （请参考skill目录中的脚本文件） search-code owner/repo "function_name"
 
 # 示例
-python3 scripts/gitmcp.py search-code facebook/react "useState"
+python3 （请参考skill目录中的脚本文件） search-code facebook/react "useState"
 ```
 
 ### Step 4：列出可用工具
 
 ```bash
 # 查看仓库可用的MCP工具
-python3 scripts/gitmcp.py list-tools owner/repo
+python3 （请参考skill目录中的脚本文件） list-tools owner/repo
 ```
 
 ## 示例
@@ -319,17 +319,17 @@ output:
 
 ```bash
 # 推荐 - 精确函数名
-python3 scripts/gitmcp.py search-code facebook/react "useState"
+python3 （请参考skill目录中的脚本文件） search-code facebook/react "useState"
 
 # 不推荐 - 模糊描述
-python3 scripts/gitmcp.py search-code facebook/react "state hook function"
+python3 （请参考skill目录中的脚本文件） search-code facebook/react "state hook function"
 ```
 
 ### 3. 善用文档语义搜索
 
 ```bash
 # 文档搜索支持语义匹配，可以用自然语言
-python3 scripts/gitmcp.py search-docs facebook/react "how to manage state in components"
+python3 （请参考skill目录中的脚本文件） search-docs facebook/react "how to manage state in components"
 ```
 
 ### 4. 利用外部URL获取
@@ -338,7 +338,7 @@ python3 scripts/gitmcp.py search-docs facebook/react "how to manage state in com
 
 ```bash
 # 获取文档中引用的外部URL
-python3 scripts/gitmcp.py fetch-url owner/repo "https://example.com/api-docs"
+python3 （请参考skill目录中的脚本文件） fetch-url owner/repo "https://example.com/api-docs"
 ```
 
 ## 已知限制

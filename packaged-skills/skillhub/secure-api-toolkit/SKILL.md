@@ -49,25 +49,25 @@ pricing_model: "monthly"
 | 静态加密 | AES-256-GCM加密存储 | 是 |
 ### 占位符模板
 
-执行占位符模板操作,处理用户输入并返回结果。
+执行占位符模板,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供占位符模板所需的参数和指令。
+**输入**: 用户提供占位符模板相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回占位符模板的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`占位符模板`相关配置参数进行设置
 ### 多语言SDK
 
-执行多语言SDK操作,处理用户输入并返回结果。
+执行多语言SDK,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供多语言SDK所需的参数和指令。
+**输入**: 用户提供多语言SDK相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回多语言SDK的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`多语言SDK`相关配置参数进行设置
 ### 团队凭据金库
 
-执行团队凭据金库操作,处理用户输入并返回结果。
+执行团队凭据金库,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供团队凭据金库所需的参数和指令。
+**输入**: 用户提供团队凭据金库相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回团队凭据金库的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`团队凭据金库`相关配置参数进行设置
@@ -130,7 +130,7 @@ pricing_model: "monthly"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | secure-api-toolkit处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式
@@ -212,7 +212,7 @@ session = Session(vault="engineering-team")
 response = session.post(
     "https://slack.com/api/chat.postMessage",
     json={"channel": "#general", "text": "Hello team!"},
-    headers={"Authorization": "Bearer （根据实际场景填充）"}
+    headers={"Authorization": "Bearer "toolkit_result""}
 )
 print(response.json())
 ```
@@ -224,7 +224,7 @@ import { secureFetch, SecureProxyError } from '@secure-proxy/machine-sdk';
 
 try {
   const res = await secureFetch('https://api.相关技术文档 {
-    headers: { Authorization: 'Bearer （根据实际场景填充）' },
+    headers: { Authorization: 'Bearer "toolkit_metadata"' },
     vault: 'engineering-team'
   });
   console.log(await res.json());
@@ -247,7 +247,7 @@ const client = new ClientSDK({
 });
 
 const result = await client.request('https://api.stripe.com/v1/customers', {
-  headers: { Authorization: 'Bearer （根据实际场景填充）' }
+  headers: { Authorization: 'Bearer "toolkit_status"' }
 });
 ```
 

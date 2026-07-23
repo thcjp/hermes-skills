@@ -40,7 +40,7 @@ workflows/
 └── flows/{name}/
     ├── flow.md              # 流程定义
     ├── config.yaml          # 参数配置
-    ├── run.sh               # 可执行脚本
+    ├── （请参考skill目录中的脚本文件）               # 可执行脚本
     ├── state/               # 持久化状态
     │   ├── cursor.json      # 游标：上次执行到哪
     │   ├── seen.json        # 已处理：避免重复
@@ -84,7 +84,7 @@ cat > workflows/flows/my-first-flow/flow.md << 'EOF'
 EOF
 
 # 3. 创建可执行脚本
-cat > workflows/flows/my-first-flow/run.sh << 'EOF'
+cat > workflows/flows/my-first-flow/（请参考skill目录中的脚本文件） << 'EOF'
 #!/bin/bash
 set -euo pipefail
 LOCKFILE="/tmp/workflow-my-first-flow.lock"
@@ -103,10 +103,10 @@ jq '[.[] | {id, name, status}]' data/02-filter.json > data/03-transform.json
 # 节点4：输出结果
 cp data/03-transform.json output.json
 EOF
-chmod +x workflows/flows/my-first-flow/run.sh
+chmod +x workflows/flows/my-first-flow/（请参考skill目录中的脚本文件）
 
 # 4. 执行工作流
-cd workflows/flows/my-first-flow && ./run.sh
+cd workflows/flows/my-first-flow && （请参考skill目录中的脚本文件）
 ```
 
 ### 依赖详情
@@ -233,10 +233,10 @@ source workflows/components/connections/api-auth.sh
 
 ```bash
 # ETL工作流
-./run.sh
+（请参考skill目录中的脚本文件）
 
 # 中断后恢复（从游标继续）
-./run.sh  # 自动读取cursor.json，从上次位置继续
+（请参考skill目录中的脚本文件）  # 自动读取cursor.json，从上次位置继续
 ```
 
 **效果**：中断恢复零数据丢失，避免重复处理。
@@ -289,7 +289,7 @@ done
 
 ### Q2：工作流中断后能恢复吗？
 
-能。通过cursor.json（游标）和checkpoint.json（检查点）实现断点恢复。重新执行run.sh会自动从上次位置继续。
+能。通过cursor.json（游标）和checkpoint.json（检查点）实现断点恢复。重新执行（请参考skill目录中的脚本文件）会自动从上次位置继续。
 
 ### Q3：如何防止并发执行？
 

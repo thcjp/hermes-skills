@@ -105,7 +105,7 @@ suggested_price: 29.9
 用户需要为新注册的网站账户生成一个安全密码。
 
 ```bash
-python scripts/generate_password.py
+python （请参考skill目录中的脚本文件）
 ```
 
 输出示例:
@@ -121,7 +121,7 @@ python scripts/generate_password.py
 在需要手动输入密码的场景下,排除容易混淆的字符。
 
 ```bash
-python scripts/generate_password.py --exclude-ambiguous
+python （请参考skill目录中的脚本文件） --exclude-ambiguous
 ```
 
 排除字符: `0 O o 1 l I | ` 等
@@ -129,7 +129,7 @@ python scripts/generate_password.py --exclude-ambiguous
 ### 场景三:生成指定长度密码
 
 ```bash
-python scripts/generate_password.py --length 16
+python （请参考skill目录中的脚本文件） --length 16
 ```
 
 ## 快速开始
@@ -144,10 +144,10 @@ python scripts/generate_password.py --length 16
 
 ```bash
 # 直接运行生成密码
-python scripts/generate_password.py
+python （请参考skill目录中的脚本文件）
 
 # 查看帮助
-python scripts/generate_password.py --help
+python （请参考skill目录中的脚本文件） --help
 ```
 
 ### 示例
@@ -242,7 +242,7 @@ PASSWORD_CONFIG = {
 
 ```bash
 # 建议每90天生成新密码
-python scripts/generate_password.py
+python （请参考skill目录中的脚本文件）
 ```
 
 ### 2. 不同账户使用不同密码
@@ -259,7 +259,7 @@ for service in services:
 
 在需要口头传达或手写输入时使用:
 ```bash
-python scripts/generate_password.py --exclude-ambiguous
+python （请参考skill目录中的脚本文件） --exclude-ambiguous
 ```
 
 ## 常见问题

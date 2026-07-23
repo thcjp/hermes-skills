@@ -51,25 +51,25 @@ pricing_model: "per_use"
 | 团队规范 | ESLint、目录约定、命名约定、PR 模板 | 协作效率 |
 ### 响应式进阶
 
-执行响应式进阶操作,处理用户输入并返回结果。
+执行响应式进阶,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供响应式进阶所需的参数和指令。
+**输入**: 用户提供响应式进阶相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回响应式进阶的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`响应式进阶`相关配置参数进行设置
 ### 性能优化
 
-执行性能优化操作,处理用户输入并返回结果。
+执行性能优化,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供性能优化所需的参数和指令。
+**输入**: 用户提供性能优化相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回性能优化的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`性能优化`相关配置参数进行设置
 ### SSR/SSG
 
-执行SSR/SSG操作,处理用户输入并返回结果。
+执行SSR/SSG,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供SSR/SSG所需的参数和指令。
+**输入**: 用户提供SSR/SSG相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回SSR/SSG的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`SSR/SSG`相关配置参数进行设置
@@ -132,8 +132,8 @@ const HeavyChart = defineAsyncComponent(() => import('./HeavyChart.vue'))
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | vue-toolkit处理的内容输入 |,  |
+| content | string | 否 | vue-toolkit处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -142,9 +142,9 @@ const HeavyChart = defineAsyncComponent(() => import('./HeavyChart.vue'))
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "toolkit 相关配置参数",
+    result: "toolkit 相关配置参数",
+    result: "toolkit 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

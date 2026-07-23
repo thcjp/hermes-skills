@@ -51,14 +51,14 @@ pricing_model: "per_use"
 ### 基础用法
 
 ```bash
-python3 ~/.skill-platform/workspace/skills/github-trending/scripts/fetch_trending.py
+python3 ~/.skill-platform/workspace/skills/github-trending/（请参考skill目录中的脚本文件）
 ```
 
 ### 语言过滤
 
 ```bash
-python3 ~/.skill-platform/workspace/skills/github-trending/scripts/fetch_trending.py python
-python3 ~/.skill-platform/workspace/skills/github-trending/scripts/fetch_trending.py javascript
+python3 ~/.skill-platform/workspace/skills/github-trending/（请参考skill目录中的脚本文件） python
+python3 ~/.skill-platform/workspace/skills/github-trending/（请参考skill目录中的脚本文件） javascript
 ```
 
 ### 输出格式
@@ -113,8 +113,8 @@ python3 ~/.skill-platform/workspace/skills/github-trending/scripts/fetch_trendin
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明"
+    result: "feed 相关配置参数",
+    result: "feed 相关配置参数"
   },
   "error": null
 }

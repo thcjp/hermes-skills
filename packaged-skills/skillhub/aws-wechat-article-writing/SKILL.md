@@ -33,7 +33,7 @@ pricing_model: "per_use"
 |:-----|:-------|:-------|
 | 凭证读取:`write.py` 读取仓库根 `aws.env` 的 `WRITING_MODEL_API_KEY` | 支持 | 支持 |
 | 文件写:仅本篇目录下 `draft.md`、`article.md` | 不支持 | 支持 |
-| shell:仅 `python3 {baseDir}/scripts/write.py` | 不支持 | 支持 |
+| shell:仅 `python3 {baseDir}/（请参考skill目录中的脚本文件）` | 不支持 | 支持 |
 | 批量处理 | 不支持 | 支持 |
 | 高级配置 | 不支持 | 支持 |
 
@@ -46,7 +46,7 @@ pricing_model: "per_use"
 - 内容外发:Prompt 内包含本篇 `article.yaml` / `topic-card.md` / 合并配置 / 用户通过 `--reference` 指定的参考文档全文,整体 POST 给上述端点
 - 文件读(仓库内):`.aws-article/config.yaml`、本篇 `article.yaml`、`topic-card.md`、`.aws-article/products/{产品名}/*.md`
 - 文件写:仅本篇目录下 `draft.md`、`article.md`
-- shell:仅 `python3 {baseDir}/scripts/write.py`
+- shell:仅 `python3 {baseDir}/（请参考skill目录中的脚本文件）`
 
 可使用 `write.py prompt` 子命令只输出 prompt JSON 不调用 LLM,由 Agent 代写 —— 想避免把内容发给第三方时用这条路径。
 

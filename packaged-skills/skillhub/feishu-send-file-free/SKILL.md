@@ -64,7 +64,7 @@ export API_KEY="your_api_key_here"
 ### 方式一:脚本化调用(推荐)
 
 ```bash
-python3 scripts/send_file.py <file_path> <open_id> <app_id> <app_secret> [file_name]
+python3 （请参考skill目录中的脚本文件） <file_path> <open_id> <app_id> <app_secret> [file_name]
 ```
 
 参数说明:
@@ -84,7 +84,7 @@ grep -A 2 '"feishu"' /root/.skill-platform/skill-platform.json | grep -E '(appId
 完整示例:
 
 ```bash
-python3 /root/.skill-platform/workspace/skills/feishu-send-file/scripts/send_file.py \
+python3 /root/.skill-platform/workspace/skills/feishu-send-file/（请参考skill目录中的脚本文件） \
   /root/myfiles/report.html \
   ou_abc123def456 \
   cli_a1b2c3d4e5f6g7h8 \
@@ -143,7 +143,7 @@ curl -s -X POST "https://open.feishu.cn/open-apis/im/v1/messages?receive_id_type
 3. 改用脚本化调用:
 
 ```bash
-python3 /root/.skill-platform/workspace/skills/feishu-send-file/scripts/send_file.py \
+python3 /root/.skill-platform/workspace/skills/feishu-send-file/（请参考skill目录中的脚本文件） \
   /root/myfiles/report.html \
   ou_abc123def456 \
   cli_a1b2c3d4e5f6g7h8 \

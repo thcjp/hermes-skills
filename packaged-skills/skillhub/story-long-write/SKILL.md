@@ -214,9 +214,9 @@ export API_KEY="your_api_key_here"
 每章落盘后必须在同一轮内跑完Phase 4步骤10-11扫描、确定性收尾脚本与叙事审查代理审查,blocking清零才算本章完成。唯一豁免:用户显式说"本章不去味/跳过检查",在标题行下加 `<!-- 去味:跳过 -->`。- 验证执行结果，确认输出符合预期格式
 - 参考`写后同轮清零`相关配置参数进行设置
 ### 18. 确定性收尾
-- `node scripts/check-ai-patterns.js --check --fail-on=blocking 正文/第XXX章_*.md`:blocking命中先回正文改写并复扫,advisory作读感提示
-- `node scripts/normalize-punctuation.js 正文/第XXX章_*.md`:清理无功能省略号、破折号、双连字符和独立分隔线
-- `node scripts/check-degeneration.js --check 正文/第XXX章_*.md`:blocking(复读、截断、拒绝语、tier1工程词泄漏)重写受影响章节，最多2次
+- `node （请参考skill目录中的脚本文件） --check --fail-on=blocking 正文/第XXX章_*.md`:blocking命中先回正文改写并复扫,advisory作读感提示
+- `node （请参考skill目录中的脚本文件） 正文/第XXX章_*.md`:清理无功能省略号、破折号、双连字符和独立分隔线
+- `node （请参考skill目录中的脚本文件） --check 正文/第XXX章_*.md`:blocking(复读、截断、拒绝语、tier1工程词泄漏)重写受影响章节，最多2次
 
 **输入**: 用户提供确定性收尾所需的指令和必要参数。
 **处理**: 按照skill规范执行确定性收尾操作,遵循单一意图原则。
@@ -292,14 +292,14 @@ export API_KEY="your_api_key_here"
 
 ### 示例3:确定性收尾
 ```
-$ node scripts/check-ai-patterns.js --check --fail-on=blocking 正文/第001章_觉醒.md
+$ node （请参考skill目录中的脚本文件） --check --fail-on=blocking 正文/第001章_觉醒.md
   BLOCKING: 0 命中
   ADVISORY: 2 命中(比喻堆叠 x1, 翻转句式 x1)
 
-$ node scripts/normalize-punctuation.js 正文/第001章_觉醒.md
+$ node （请参考skill目录中的脚本文件） 正文/第001章_觉醒.md
   清理: 省略号 x3, 双连字符 x1
 
-$ node scripts/check-degeneration.js --check 正文/第001章_觉醒.md
+$ node （请参考skill目录中的脚本文件） --check 正文/第001章_觉醒.md
   BLOCKING: 0
   本章清零完成
 ```

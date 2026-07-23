@@ -81,17 +81,17 @@ pricing_model: "per_use"
 **处理**: 按照skill规范执行核心能力操作,遵循单一意图原则。
 ### 图表类型
 
-执行图表类型操作,处理用户输入并返回结果。
+执行图表类型,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供图表类型所需的参数和指令。
+**输入**: 用户提供图表类型相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回图表类型的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`图表类型`相关配置参数进行设置
 ### 流程图
 
-执行流程图操作,处理用户输入并返回结果。
+执行流程图,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供流程图所需的参数和指令。
+**输入**: 用户提供流程图相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回流程图的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`流程图`相关配置参数进行设置
@@ -339,8 +339,8 @@ mcp__mcp-diagram-generator__get_config
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | diagram-gen处理的内容输入 |,  |
+| content | string | 否 | diagram-gen处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -349,9 +349,9 @@ mcp__mcp-diagram-generator__get_config
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "gen 相关配置参数",
+    result: "gen 相关配置参数",
+    result: "gen 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

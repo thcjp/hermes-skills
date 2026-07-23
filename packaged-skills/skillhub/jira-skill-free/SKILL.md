@@ -46,7 +46,7 @@ Jira集成助手免费版提供Jira事务的只读浏览能力。支持模糊搜
 
 ## 快速命令（免费版）
 
-所有命令位于 `{baseDir}/scripts/jira.sh`。
+所有命令位于 `{baseDir}/（请参考skill目录中的脚本文件）`。
 
 | 命令 | 用途 |
 |------|------|
@@ -92,13 +92,13 @@ export API_KEY="your_api_key_here"
    export JIRA_EMAIL="you@example.com"
    export JIRA_API_TOKEN="[REDACTED]
 
-**输入**: 用户提供环境配置所需的参数和指令。
+**输入**: 用户提供环境配置相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行环境配置操作。
 **输出**: 返回环境配置的执行结果,包含操作状态和输出数据。
 
 ### 快速命令（免费版）
 
-所有命令位于 `{baseDir}/scripts/jira.sh`。
+所有命令位于 `{baseDir}/（请参考skill目录中的脚本文件）`。
 
 | 命令 | 用途 |
 |------|------|
@@ -106,7 +106,7 @@ export API_KEY="your_api_key_here"
 | `jira.sh link ABC-123` | 生成事务浏览器链接 |
 | `jira.sh issue ABC-123` | 
 
-**输入**: 用户提供快速命令（免费版）所需的参数和指令。
+**输入**: 用户提供快速命令（免费版）相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行快速命令（免费版）操作。
 
 ### 核心能力（免费版）
@@ -118,7 +118,7 @@ export API_KEY="your_api_key_here"
 - 参考`核心能力（免费版）`相关配置参数进行设置
 ### 1. 事务搜索
 ```bash
-{baseDir}/scripts/jira.sh search "payment failure" [maxResults]
+{baseDir}/（请参考skill目录中的脚本文件） search "payment failure" [maxResults]
 ```
 
 在 `JIRA_BOARD` 项目范围内按 summary 或 key 模糊搜索。`maxResults` 可选，控制返回条数。
@@ -126,9 +126,9 @@ export API_KEY="your_api_key_here"
 **输入**: 用户提供事务搜索所需的指令和必要参数。
 ### 2. 事务链接与详情
 ```bash
-{baseDir}/scripts/ji
+{baseDir}/（请参考skill目录中的脚本文件）
 
-**输入**: 用户提供核心能力（免费版）所需的参数和指令。
+**输入**: 用户提供核心能力（免费版）相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行核心能力（免费版）操作。
 
 **输出**: 返回事务链接与详情的执行结果,包含操作状态和输出数据。
@@ -141,14 +141,14 @@ export API_KEY="your_api_key_here"
 - **评论**：`comment ABC-123 "Deployed to staging"` 添加评论。
 - **创建事务**：
 
-**输入**: 用户提供付费版专享能力所需的参数和指令。
+**输入**: 用户提供付费版专享能力相关的配置参数、输入数据和处理选项。
 **处理**: 按照skill规范执行付费版专享能力操作。
 **输出**: 返回付费版专享能力的执行结果,包含操作状态和输出数据。
 ### jira.sh search "关键词" max
 
-执行jira.sh search "关键词" max操作,处理用户输入并返回结果。
+执行jira.sh search "关键词" max,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供jira.sh search "关键词" max所需的参数和指令。
+**输入**: 用户提供jira.sh search "关键词" max相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回jira.sh search "关键词" max的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`jira.sh search "关键词" max`相关配置参数进行设置
@@ -159,7 +159,7 @@ export API_KEY="your_api_key_here"
 ### 1. 事务搜索
 
 ```bash
-{baseDir}/scripts/jira.sh search "payment failure" [maxResults]
+{baseDir}/（请参考skill目录中的脚本文件） search "payment failure" [maxResults]
 ```
 
 在 `JIRA_BOARD` 项目范围内按 summary 或 key 模糊搜索。`maxResults` 可选，控制返回条数。
@@ -167,14 +167,14 @@ export API_KEY="your_api_key_here"
 ### 2. 事务链接与详情
 
 ```bash
-{baseDir}/scripts/jira.sh link ABC-321       # 浏览器链接
-{baseDir}/scripts/jira.sh issue ABC-321      # 快速详情
+{baseDir}/（请参考skill目录中的脚本文件） link ABC-321       # 浏览器链接
+{baseDir}/（请参考skill目录中的脚本文件） issue ABC-321      # 快速详情
 ```
 
 ### 3. 可用流转列表
 
 ```bash
-{baseDir}/scripts/jira.sh transitions ABC-321
+{baseDir}/（请参考skill目录中的脚本文件） transitions ABC-321
 ```
 
 查看事务当前可用的流转列表（只读，不执行变更）。
@@ -182,7 +182,7 @@ export API_KEY="your_api_key_here"
 ### 4. 自己的未关闭事务
 
 ```bash
-{baseDir}/scripts/jira.sh my [max]
+{baseDir}/（请参考skill目录中的脚本文件） my [max]
 ```
 
 列出指派给自己且未关闭的事务。
@@ -203,30 +203,30 @@ export API_KEY="your_api_key_here"
 ### 示例1：搜索并查看事务
 
 ```bash
-{baseDir}/scripts/jira.sh search "timeout" 5
+{baseDir}/（请参考skill目录中的脚本文件） search "timeout" 5
 # 输出：匹配的5条事务，含key与summary
-{baseDir}/scripts/jira.sh issue ABC-123
+{baseDir}/（请参考skill目录中的脚本文件） issue ABC-123
 # 输出：状态、指派人、优先级、summary
 ```
 
 ### 示例2：查看可用流转
 
 ```bash
-{baseDir}/scripts/jira.sh transitions ABC-123
+{baseDir}/（请参考skill目录中的脚本文件） transitions ABC-123
 # 输出：可用流转列表（如 To Do → In Progress → Done）
 ```
 
 ### 示例3：生成浏览器链接
 
 ```bash
-{baseDir}/scripts/jira.sh link ABC-123
+{baseDir}/（请参考skill目录中的脚本文件） link ABC-123
 # 输出：https://your-domain.atlassian.net/browse/ABC-123
 ```
 
 ### 示例4：查看自己的待办
 
 ```bash
-{baseDir}/scripts/jira.sh my 10
+{baseDir}/（请参考skill目录中的脚本文件） my 10
 # 输出：指派给自己的10条未关闭事务
 ```
 

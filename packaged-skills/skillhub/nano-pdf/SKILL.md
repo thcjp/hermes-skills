@@ -77,8 +77,8 @@ pricing_model: "per_use"
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明"
+    result: "pdf 相关配置参数",
+    result: "pdf 相关配置参数"
   },
   "error": null
 }

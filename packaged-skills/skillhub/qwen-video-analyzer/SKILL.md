@@ -69,25 +69,25 @@ pricing_model: "per_use"
 | 技术支持 | 社区 | 专属 | 工单响应 |
 ### 能力项
 
-执行能力项操作,处理用户输入并返回结果。
+执行能力项,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供能力项所需的参数和指令。
+**输入**: 用户提供能力项相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回能力项的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`能力项`相关配置参数进行设置
 ### 本地视频分析
 
-执行本地视频分析操作,处理用户输入并返回结果。
+执行本地视频分析,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供本地视频分析所需的参数和指令。
+**输入**: 用户提供本地视频分析相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回本地视频分析的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`本地视频分析`相关配置参数进行设置
 ### 远程 URL 分析
 
-执行远程 URL 分析操作,处理用户输入并返回结果。
+执行远程 URL 分析,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供远程 URL 分析所需的参数和指令。
+**输入**: 用户提供远程 URL 分析相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回远程 URL 分析的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`远程 URL 分析`相关配置参数进行设置
@@ -100,7 +100,7 @@ pricing_model: "per_use"
 
 ```python
 # 批量审核视频内容
-python3 scripts/batch_analyze.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./uploads/ \
   --model qwen-vl-max \
   --prompt "请审核这段视频是否包含违规、暴力、色情等敏感内容,输出审核结论与风险等级" \
@@ -109,7 +109,7 @@ python3 scripts/batch_analyze.py \
   --parallel 5
 
 # 生成审核汇总报告
-python3 scripts/audit_summary.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./audit_reports/ \
   --output audit_summary.xlsx
 ```
@@ -120,7 +120,7 @@ python3 scripts/audit_summary.py \
 
 ```bash
 # 批量生成视频标注
-python3 scripts/batch_analyze.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./footage/ \
   --model qwen-vl-plus \
   --prompt "请为这段视频生成:1.内容摘要(50字内)2.场景标签(5个)3.人物/物体清单4.情绪基调" \
@@ -129,7 +129,7 @@ python3 scripts/batch_analyze.py \
   --parallel 8
 
 # 导出为 Excel 索引表
-python3 scripts/export_index.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./annotations/ \
   --output footage_index.xlsx \
   --columns "文件名,摘要,标签,物体,情绪"
@@ -141,7 +141,7 @@ python3 scripts/export_index.py \
 
 ```bash
 # 多维度分析监控视频
-python3 scripts/batch_analyze.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./surveillance/ \
   --model qwen-vl-max \
   --prompt "请分析这段监控视频:1.出现的人物数量与行为2.是否有异常事件(闯入/打斗/聚集)3.时间轴事件记录" \
@@ -151,7 +151,7 @@ python3 scripts/batch_analyze.py \
   --parallel 3
 
 # 异常事件告警
-python3 scripts/alert_anomalies.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./security_reports/ \
   --threshold "high" \
   --notify webhook_url
@@ -163,7 +163,7 @@ python3 scripts/alert_anomalies.py \
 
 ```bash
 # 生成视频章节与知识点
-python3 scripts/batch_analyze.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./training_videos/ \
   --model qwen-vl-max \
   --prompt "请为这段培训视频生成:1.章节目录(带时间戳)2.每章核心知识点3.适合的考核问题(3个)" \
@@ -192,7 +192,7 @@ python3 scripts/batch_analyze.py \
 ### 第二步:执行批量分析
 
 ```bash
-python3 scripts/batch_analyze.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./videos/ \
   --model qwen-vl-max \
   --prompt "请详细描述视频内容" \
@@ -204,7 +204,7 @@ python3 scripts/batch_analyze.py \
 ### 第三步:生成汇总报告
 
 ```bash
-python3 scripts/summary_report.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./reports/ \
   --output summary.xlsx \
   --format excel
@@ -215,8 +215,8 @@ python3 scripts/summary_report.py \
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | qwen-video-analyzer处理的内容输入 |,  |
+| content | string | 否 | qwen-video-analyzer处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -225,9 +225,9 @@ python3 scripts/summary_report.py \
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "analyzer 相关配置参数",
+    result: "analyzer 相关配置参数",
+    result: "analyzer 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

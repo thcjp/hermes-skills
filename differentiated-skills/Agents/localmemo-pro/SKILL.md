@@ -59,7 +59,7 @@ L1 热内存（SESSION-STATE.md 活跃任务上下文）→ L2 温向量（Lance
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 一键初始化与维护
-`node bin/init.js` 初始化、`memory.js` CLI 提供 store/search/stats/forget/compact/cleanup/dedup/backup/cache-clean 等命令。
+`node （请参考skill目录中的脚本文件）` 初始化、`memory.js` CLI 提供 store/search/stats/forget/compact/cleanup/dedup/backup/cache-clean 等命令。
 
 **输入**: 用户提供一键初始化与维护所需的指令和必要参数。
 **处理**: 按照skill规范执行一键初始化与维护操作,遵循单一意图原则。
@@ -111,7 +111,7 @@ ollama --version
 ```bash
 cd skills/localmemo-pro
 npm install
-node bin/init.js
+node （请参考skill目录中的脚本文件）
 ```
 
 初始化创建：
@@ -125,16 +125,16 @@ node bin/init.js
 
 ```bash
 # 存储
-node bin/memory.js store "用户喜欢深色模式" --importance 0.9 --category preference
+node （请参考skill目录中的脚本文件） store "用户喜欢深色模式" --importance 0.9 --category preference
 
 # 搜索
-node bin/memory.js search "用户界面偏好"
+node （请参考skill目录中的脚本文件） search "用户界面偏好"
 
 # 统计
-node bin/memory.js stats
+node （请参考skill目录中的脚本文件） stats
 
 # 遗忘
-node bin/memory.js forget --query "深色模式"
+node （请参考skill目录中的脚本文件） forget --query "深色模式"
 ```
 
 ### Step 4：配置 Agent 集成（可选）
@@ -176,12 +176,12 @@ node bin/memory.js forget --query "深色模式"
 ### Step 6：定期维护
 
 ```bash
-node bin/memory.js stats --detailed    # 查看资源占用
-node bin/memory.js compact             # 压缩向量库
-node bin/memory.js cleanup --before 30d  # 清理旧记忆
-node bin/memory.js dedup               # 去重
-node bin/memory.js backup ./backups/memory-$(date +%Y%m%d).zip  # 导出备份
-node bin/memory.js cache-clean --older-than 30d  # 清理 embedding 缓存
+node （请参考skill目录中的脚本文件） stats --detailed    # 查看资源占用
+node （请参考skill目录中的脚本文件） compact             # 压缩向量库
+node （请参考skill目录中的脚本文件） cleanup --before 30d  # 清理旧记忆
+node （请参考skill目录中的脚本文件） dedup               # 去重
+node （请参考skill目录中的脚本文件） backup ./backups/memory-$(date +%Y%m%d).zip  # 导出备份
+node （请参考skill目录中的脚本文件） cache-clean --older-than 30d  # 清理 embedding 缓存
 ```
 
 #
@@ -257,8 +257,8 @@ embedding 由本地 nomic-embed-text 生成，数据未离开本机
 |:---|:---|:---|
 | Ollama 连接失败 | Ollama 服务未启动 | `ollama serve` 启动服务；检查 `curl http://localhost:11434/api/tags` |
 | 模型未找到 | 未拉取 embedding 模型 | `ollama pull nomic-embed-text`；`ollama list` 确认 |
-| 向量搜索无结果 | 记忆库为空或 dbPath 错误 | `node bin/memory.js stats` 确认已存储记忆；检查 dbPath 配置 |
-| 内存占用过高 | 向量库无限增长 | `node bin/memory.js stats --detailed` 查看占用；运行 `compact` + `cleanup` |
+| 向量搜索无结果 | 记忆库为空或 dbPath 错误 | `node （请参考skill目录中的脚本文件） stats` 确认已存储记忆；检查 dbPath 配置 |
+| 内存占用过高 | 向量库无限增长 | `node （请参考skill目录中的脚本文件） stats --detailed` 查看占用；运行 `compact` + `cleanup` |
 | embedding 速度慢 | 缓存未启用或命中率低 | 确认 cache.enabled=true；检查缓存目录权限；首次运行命中率低属正常 |
 | 磁盘满 | vectors/ 和 cache/ 过大 | 清理缓存 `cache-clean --older-than 30d`；归档旧记忆；调低 maxSizeMb |
 | 检索质量差 | minScore 过高或模型太小 | 降低 minScore 到 0.25；换更大模型（bge-m3） |
@@ -299,7 +299,7 @@ A：每条记忆的 embedding 约 3KB（768 维 float32）。10000 条记忆约 
 A：可以。重要记忆用云端高质量 embedding，日常用本地。但需注意维度一致性，建议统一用一种。
 
 **Q5：向量库损坏怎么办？**
-A：定期 `node bin/memory.js backup` 备份。损坏后从备份恢复，或从 MEMORY.md + daily/ 重建（记忆内容仍在文件中，仅丢失向量索引）。
+A：定期 `node （请参考skill目录中的脚本文件） backup` 备份。损坏后从备份恢复，或从 MEMORY.md + daily/ 重建（记忆内容仍在文件中，仅丢失向量索引）。
 
 ## 已知限制
 

@@ -40,9 +40,9 @@ pricing_model: "per_use"
 * **[业务示例](/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)** - 登录认证、文件上传、导出等
 ### 语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)
 
-执行语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)操作,处理用户输入并返回结果。
+执行语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32),自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)所需的参数和指令。
+**输入**: 用户提供语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)的处理结果。
 
@@ -51,9 +51,9 @@ pricing_model: "per_use"
 - 参考`语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)`相关配置参数进行设置
 ### 数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)
 
-执行数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)操作,处理用户输入并返回结果。
+执行数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32),自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)所需的参数和指令。
+**输入**: 用户提供数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)的处理结果。
 
@@ -62,9 +62,9 @@ pricing_model: "per_use"
 - 参考`数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)`相关配置参数进行设置
 ### 业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)
 
-执行业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)操作,处理用户输入并返回结果。
+执行业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32),自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)所需的参数和指令。
+**输入**: 用户提供业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)的处理结果。
 
@@ -108,8 +108,8 @@ export API_KEY="your_api_key_here"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | magic-api-generate处理的内容输入 |,  |
+| content | string | 否 | magic-api-generate处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -118,9 +118,9 @@ export API_KEY="your_api_key_here"
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "generate 相关配置参数",
+    result: "generate 相关配置参数",
+    result: "generate 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

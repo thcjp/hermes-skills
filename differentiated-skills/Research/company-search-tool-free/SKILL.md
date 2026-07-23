@@ -174,24 +174,24 @@ else:
 
 ### 30秒上手
 ```bash
-node scripts/tool.mjs discover "企业基本信息"
+node （请参考skill目录中的脚本文件） discover "企业基本信息"
 
-node scripts/tool.mjs call biz_fuzzy_search --params '{"key":"腾讯"}'
+node （请参考skill目录中的脚本文件） call biz_fuzzy_search --params '{"key":"腾讯"}'
 
-node scripts/tool.mjs call biz_shareholders --params '{"entid":"AerjZTfkSh0"}'
+node （请参考skill目录中的脚本文件） call biz_shareholders --params '{"entid":"AerjZTfkSh0"}'
 ```
 
 ### 120秒标准搭建
 ```bash
 node --version  # 需要 16+
-node scripts/tool.mjs discover "企业"
+node （请参考skill目录中的脚本文件） discover "企业"
 
-node scripts/tool.mjs call biz_fuzzy_search --params '{"key":"阿里巴巴"}' > search_result.json
+node （请参考skill目录中的脚本文件） call biz_fuzzy_search --params '{"key":"阿里巴巴"}' > search_result.json
 ENTID=$(cat search_result.json | python3 -c "import json,sys; print(json.load(sys.stdin)['data'][0]['entid'])")
 echo "企业ID：$ENTID"
 
-node scripts/tool.mjs call biz_basic_info --params "{\"entid\":\"$ENTID\"}"
-node scripts/tool.mjs call biz_shareholders --params "{\"entid\":\"$ENTID\"}"
+node （请参考skill目录中的脚本文件） call biz_basic_info --params "{\"entid\":\"$ENTID\"}"
+node （请参考skill目录中的脚本文件） call biz_shareholders --params "{\"entid\":\"$ENTID\"}"
 ```
 
 ## 配置示例
@@ -201,7 +201,7 @@ import os
 
 class CompanySearchConfig:
     """企业查询配置（免费版）"""
-    SCRIPT_PATH = os.getenv("CS_SCRIPT_PATH", "scripts/tool.mjs")
+    SCRIPT_PATH = os.getenv("CS_SCRIPT_PATH", "（请参考skill目录中的脚本文件）")
     RUNTIME = os.getenv("CS_RUNTIME", "node")
     PRIVATE_API_KEY = os.getenv("FN_API_KEY", "")
     TIMEOUT = int(os.getenv("CS_TIMEOUT", "30"))

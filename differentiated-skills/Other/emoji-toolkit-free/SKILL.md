@@ -65,16 +65,16 @@ suggested_price: 29.9
 
 ```bash
 # 解码隐藏在表情符号中的消息
-node ./bin/emoji-toolkit.js decode "<粘贴含隐藏消息的文本>"
+node （请参考skill目录中的脚本文件） decode "<粘贴含隐藏消息的文本>"
 
 # 编码隐藏消息到表情符号中
-node ./bin/emoji-toolkit.js encode "🥜" "你好，这是隐藏消息"
+node （请参考skill目录中的脚本文件） encode "🥜" "你好，这是隐藏消息"
 
 # 解码并显示元数据
-node ./bin/emoji-toolkit.js decode "<粘贴消息>" --metadata
+node （请参考skill目录中的脚本文件） decode "<粘贴消息>" --metadata
 
 # JSON格式输出（便于程序化处理）
-node ./bin/emoji-toolkit.js decode "<粘贴消息>" --metadata --json
+node （请参考skill目录中的脚本文件） decode "<粘贴消息>" --metadata --json
 ```
 
 ### 可复制模板
@@ -111,10 +111,10 @@ node ./bin/emoji-toolkit.js decode "<粘贴消息>" --metadata --json
 **编码示例**：
 ```bash
 # 将文本编码到表情符号中
-node ./bin/emoji-toolkit.js encode "🥜" "你好"
+node （请参考skill目录中的脚本文件） encode "🥜" "你好"
 
 # 将代币字符串编码到表情符号中
-node ./bin/emoji-toolkit.js encode "🥜" "tokenA..."
+node （请参考skill目录中的脚本文件） encode "🥜" "tokenA..."
 ```
 
 **载体表情符号选择建议**：
@@ -145,13 +145,13 @@ node ./bin/emoji-toolkit.js encode "🥜" "tokenA..."
 
 ```bash
 # 解码隐藏消息
-node ./bin/emoji-toolkit.js decode "<粘贴完整消息>"
+node （请参考skill目录中的脚本文件） decode "<粘贴完整消息>"
 
 # 解码并显示元数据
-node ./bin/emoji-toolkit.js decode "<粘贴完整消息>" --metadata
+node （请参考skill目录中的脚本文件） decode "<粘贴完整消息>" --metadata
 
 # JSON格式输出
-node ./bin/emoji-toolkit.js decode "<粘贴完整消息>" --metadata --json
+node （请参考skill目录中的脚本文件） decode "<粘贴完整消息>" --metadata --json
 ```
 
 **JSON输出示例（代币）**：
@@ -251,11 +251,11 @@ node ./bin/emoji-toolkit.js decode "<粘贴完整消息>" --metadata --json
 **解决方案**：
 ```bash
 # 编码隐藏消息
-node ./bin/emoji-toolkit.js encode "🥜" "晚上8点老地方见"
+node （请参考skill目录中的脚本文件） encode "🥜" "晚上8点老地方见"
 
 # 发送：群聊中只显示🥜，接收方解码获取消息
 # 解码：
-node ./bin/emoji-toolkit.js decode "<复制的消息>"
+node （请参考skill目录中的脚本文件） decode "<复制的消息>"
 ```
 
 **效果**：群聊中只显示一个花生表情符号，只有知道方法的人才能解码出隐藏消息。
@@ -267,10 +267,10 @@ node ./bin/emoji-toolkit.js decode "<复制的消息>"
 **解决方案**：
 ```bash
 # 将代币编码到表情符号中
-node ./bin/emoji-toolkit.js encode "🥜" "tokenB..."
+node （请参考skill目录中的脚本文件） encode "🥜" "tokenB..."
 
 # 接收方解码并检查元数据
-node ./bin/emoji-toolkit.js decode "<复制的消息>" --metadata --json
+node （请参考skill目录中的脚本文件） decode "<复制的消息>" --metadata --json
 
 # 输出：面额、单位、铸造源等元数据
 ```
@@ -284,7 +284,7 @@ node ./bin/emoji-toolkit.js decode "<复制的消息>" --metadata --json
 **解决方案**：
 ```bash
 # 在文章末尾的表情符号中嵌入水印
-node ./bin/emoji-toolkit.js encode "🎯" "作者ID:12345 时间:2026-07-18"
+node （请参考skill目录中的脚本文件） encode "🎯" "作者ID:12345 时间:2026-07-18"
 
 # 文章末尾显示🎯，但隐藏了作者标识和时间戳
 # 追溯时解码即可获取水印信息

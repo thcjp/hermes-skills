@@ -63,25 +63,25 @@ pricing_model: "per_use"
 | CI 质量门禁 | 类型检查、测试、可访问性、视觉回归 | Pro 新增 |
 ### 单组件生成
 
-执行单组件生成操作,处理用户输入并返回结果。
+执行单组件生成,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供单组件生成所需的参数和指令。
+**输入**: 用户提供单组件生成相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回单组件生成的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`单组件生成`相关配置参数进行设置
 ### 企业组件库结构
 
-执行企业组件库结构操作,处理用户输入并返回结果。
+执行企业组件库结构,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供企业组件库结构所需的参数和指令。
+**输入**: 用户提供企业组件库结构相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回企业组件库结构的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`企业组件库结构`相关配置参数进行设置
 ### 批量组件生成
 
-执行批量组件生成操作,处理用户输入并返回结果。
+执行批量组件生成,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供批量组件生成所需的参数和指令。
+**输入**: 用户提供批量组件生成相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回批量组件生成的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`批量组件生成`相关配置参数进行设置
@@ -123,7 +123,7 @@ src/
 
 ```bash
 #!/usr/bin/env bash
-# scripts/scaffold-vue-components.sh — 批量生成 Vue 组件
+# （请参考skill目录中的脚本文件） — 批量生成 Vue 组件
 set -euo pipefail
 
 COMPONENTS=(
@@ -253,7 +253,7 @@ EOF
 cp tokens.scss src/styles/
 
 # 批量生成组件骨架
-bash scripts/scaffold-vue-components.sh
+bash （请参考skill目录中的脚本文件）
 
 # 运行单元测试
 npx vitest run
@@ -267,8 +267,8 @@ npm run storybook
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | vue-component-gen处理的内容输入 |,  |
+| content | string | 否 | vue-component-gen处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -277,9 +277,9 @@ npm run storybook
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "gen 相关配置参数",
+    result: "gen 相关配置参数",
+    result: "gen 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

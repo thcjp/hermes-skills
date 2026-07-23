@@ -157,7 +157,7 @@ AI图像提示词免费版是一款面向个人用户的图像生成提示词 cr
 
 ```python
 # 示例
-python3 scripts/build_prompt.py \
+python3 （请参考skill目录中的脚本文件） \
   --subject "月光下奔跑的狼" \
   --style "写实摄影" \
   --tone "冷色调,蓝月光" \

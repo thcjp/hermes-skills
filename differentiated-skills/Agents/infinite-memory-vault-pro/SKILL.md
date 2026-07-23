@@ -124,13 +124,13 @@ pricing_model: "per_use"
 
 ```bash
 # 初始化专业版记忆库（自动创建目录+索引+语义搜索配置）
-node bin/vault-init.js --edition pro
+node （请参考skill目录中的脚本文件） --edition pro
 
 # 存储第一条记忆
-node bin/vault.js store "用户喜欢深色模式" --category preference
+node （请参考skill目录中的脚本文件） store "用户喜欢深色模式" --category preference
 
 # 语义搜索（无需关键词匹配）
-node bin/vault.js search "界面颜色偏好"
+node （请参考skill目录中的脚本文件） search "界面颜色偏好"
 # 返回：用户喜欢深色模式（即使没有"颜色"关键词）
 ```
 
@@ -138,7 +138,7 @@ node bin/vault.js search "界面颜色偏好"
 
 ```bash
 # 第 1 步：初始化专业版
-node bin/vault-init.js --edition pro
+node （请参考skill目录中的脚本文件） --edition pro
 # 自动创建：
 # - ~/memory/ 目录结构
 # - ~/memory/INDEX.md 总索引
@@ -146,15 +146,15 @@ node bin/vault-init.js --edition pro
 # - ~/memory/config.json 专业版配置
 
 # 第 2 步：创建分类并存储
-node bin/vault.js create-category projects
-node bin/vault.js store "项目Alpha：React+TypeScript，2026-07开始" --category projects --name alpha
+node （请参考skill目录中的脚本文件） create-category projects
+node （请参考skill目录中的脚本文件） store "项目Alpha：React+TypeScript，2026-07开始" --category projects --name alpha
 
 # 第 3 步：语义搜索
-node bin/vault.js search "前端技术栈" --category projects
+node （请参考skill目录中的脚本文件） search "前端技术栈" --category projects
 # 返回：项目Alpha（语义匹配"前端技术栈"→"React+TypeScript"）
 
 # 第 4 步：自动同步内置记忆
-node bin/vault.js sync --enable --source built-in --target preferences
+node （请参考skill目录中的脚本文件） sync --enable --source built-in --target preferences
 ```
 
 ### 120 秒完整配置
@@ -185,26 +185,26 @@ node bin/vault.js sync --enable --source built-in --target preferences
 
 ```bash
 # 配置语义搜索（本地 embedding）
-node bin/vault.js config set semantic.enabled true
-node bin/vault.js config set semantic.model "nomic-embed-text"
-node bin/vault.js config set semantic.ollamaUrl "http://localhost:11434"
+node （请参考skill目录中的脚本文件） config set semantic.enabled true
+node （请参考skill目录中的脚本文件） config set semantic.model "nomic-embed-text"
+node （请参考skill目录中的脚本文件） config set semantic.ollamaUrl "http://localhost:11434"
 
 # 构建语义索引
-node bin/vault.js index rebuild
+node （请参考skill目录中的脚本文件） index rebuild
 # 扫描所有 .md 文件，生成 embedding 向量
 
 # 配置自动同步
-node bin/vault.js config set sync.enabled true
-node bin/vault.js config set sync.schedule "hourly"
-node bin/vault.js config set sync.rules '[{"source":"built-in/preferences","target":"sync/preferences.md"}]'
+node （请参考skill目录中的脚本文件） config set sync.enabled true
+node （请参考skill目录中的脚本文件） config set sync.schedule "hourly"
+node （请参考skill目录中的脚本文件） config set sync.rules '[{"source":"built-in/preferences","target":"sync/preferences.md"}]'
 
 # 配置大规模索引
-node bin/vault.js config set largeScale.enabled true
-node bin/vault.js config set largeScale.autoSplit true
-node bin/vault.js config set largeScale.splitThreshold 100
+node （请参考skill目录中的脚本文件） config set largeScale.enabled true
+node （请参考skill目录中的脚本文件） config set largeScale.autoSplit true
+node （请参考skill目录中的脚本文件） config set largeScale.splitThreshold 100
 
 # 启动后台服务（自动同步 + 索引维护）
-node bin/vault.js daemon start
+node （请参考skill目录中的脚本文件） daemon start
 ```
 
 ## 专业版特性
@@ -224,21 +224,21 @@ node bin/vault.js daemon start
 
 ```bash
 # 批量导入现有文档
-node bin/vault.js batch-import ./docs/ --category knowledge --recursive
+node （请参考skill目录中的脚本文件） batch-import ./docs/ --category knowledge --recursive
 
 # 构建语义索引
-node bin/vault.js index rebuild
+node （请参考skill目录中的脚本文件） index rebuild
 # 输出：已索引 3427 个文件，生成 3427 个向量
 
 # 语义搜索（无需关键词匹配）
-node bin/vault.js search "如何处理高并发场景"
+node （请参考skill目录中的脚本文件） search "如何处理高并发场景"
 # 返回：
 # 1. [95%] scaling-strategies.md — "水平扩展、读写分离..."
 # 2. [89%] performance-tuning.md — "连接池优化、缓存策略..."
 # 3. [85%] architecture-decisions.md — "微服务拆分决策..."
 
 # 跨分类搜索
-node bin/vault.js search "用户认证方案" --cross-category
+node （请参考skill目录中的脚本文件） search "用户认证方案" --cross-category
 # 同时搜索 knowledge/ 和 decisions/ 分类
 ```
 
@@ -251,22 +251,22 @@ node bin/vault.js search "用户认证方案" --cross-category
 
 ```bash
 # 批量导入客户档案
-node bin/vault.js batch-import ./contacts/ --category people --recursive
+node （请参考skill目录中的脚本文件） batch-import ./contacts/ --category people --recursive
 # 输出：已导入 1247 个客户档案
 
 # 自动拆分子分类（> 100 条时）
-node bin/vault.js index auto-split --category people
+node （请参考skill目录中的脚本文件） index auto-split --category people
 # 自动拆分为：
 # ~/memory/people/active/ (312 条)
 # ~/memory/people/inactive/ (528 条)
 # ~/memory/people/prospects/ (407 条)
 
 # 语义搜索客户
-node bin/vault.js search "对数据安全关注的客户" --category people
+node （请参考skill目录中的脚本文件） search "对数据安全关注的客户" --category people
 # 返回：张三（ABC科技CTO）、李四（XYZ金融架构师）...
 
 # 按状态过滤
-node bin/vault.js search "本月需跟进" --filter "status=following,date=this-month"
+node （请参考skill目录中的脚本文件） search "本月需跟进" --filter "status=following,date=this-month"
 ```
 
 **效果**：万级联系人秒级检索，自动拆分保持索引精简。
@@ -278,7 +278,7 @@ node bin/vault.js search "本月需跟进" --filter "status=following,date=this-
 
 ```bash
 # 配置自动同步规则
-node bin/vault.js sync add-rule \
+node （请参考skill目录中的脚本文件） sync add-rule \
   --source "built-in/decisions" \
   --target "decisions/" \
   --format "structured" \
@@ -291,11 +291,11 @@ node bin/vault.js sync add-rule \
 # 包含：日期、决策内容、关联上下文
 
 # 语义追溯决策
-node bin/vault.js search "为什么选 PostgreSQL" --category decisions
+node （请参考skill目录中的脚本文件） search "为什么选 PostgreSQL" --category decisions
 # 返回：决策文件 + 关联讨论 + 备选方案
 
 # 决策时间线
-node bin/vault.js timeline --category decisions --from 2026-01 --to 2026-07
+node （请参考skill目录中的脚本文件） timeline --category decisions --from 2026-01 --to 2026-07
 # 输出：1-7 月所有技术决策的时间线
 ```
 
@@ -308,19 +308,19 @@ node bin/vault.js timeline --category decisions --from 2026-01 --to 2026-07
 
 ```bash
 # 创建创作分类
-node bin/vault.js create-category collections/ideas
-node bin/vault.js create-category collections/drafts
-node bin/vault.js create-category collections/references
+node （请参考skill目录中的脚本文件） create-category collections/ideas
+node （请参考skill目录中的脚本文件） create-category collections/drafts
+node （请参考skill目录中的脚本文件） create-category collections/references
 
 # 存储灵感
-node bin/vault.js store "关于AI替代创意工作的思考：工具增强而非替代" --category collections/ideas
+node （请参考skill目录中的脚本文件） store "关于AI替代创意工作的思考：工具增强而非替代" --category collections/ideas
 
 # 语义搜索灵感（模糊匹配）
-node bin/vault.js search "人工智能对创作的影响"
+node （请参考skill目录中的脚本文件） search "人工智能对创作的影响"
 # 返回：AI替代创意工作的思考（语义匹配）
 
 # 跨分类检索
-node bin/vault.js search "AI 创意" --cross-category
+node （请参考skill目录中的脚本文件） search "AI 创意" --cross-category
 # 同时搜索 ideas/、drafts/、references/
 ```
 
@@ -333,15 +333,15 @@ node bin/vault.js search "AI 创意" --cross-category
 
 ```bash
 # 批量导入文献笔记
-node bin/vault.js batch-import ./papers/ --category knowledge --recursive
+node （请参考skill目录中的脚本文件） batch-import ./papers/ --category knowledge --recursive
 # 输出：已导入 856 篇文献笔记
 
 # 语义搜索（学术概念匹配）
-node bin/vault.js search "对比学习方法" --category knowledge
+node （请参考skill目录中的脚本文件） search "对比学习方法" --category knowledge
 # 返回：相关文献，按语义相似度排序
 
 # 自动生成主题聚类
-node bin/vault.js cluster --category knowledge --algorithm semantic
+node （请参考skill目录中的脚本文件） cluster --category knowledge --algorithm semantic
 # 输出：
 # 聚类1：对比学习（23 篇）
 # 聚类2：自监督学习（45 篇）
@@ -397,13 +397,13 @@ node bin/vault.js cluster --category knowledge --algorithm semantic
 
 ```bash
 # 手动更新索引
-node bin/vault.js index update --category projects
+node （请参考skill目录中的脚本文件） index update --category projects
 
 # 自动维护（新增文件时自动更新索引）
-node bin/vault.js config set index.autoUpdate true
+node （请参考skill目录中的脚本文件） config set index.autoUpdate true
 
 # 索引健康检查
-node bin/vault.js index health-check
+node （请参考skill目录中的脚本文件） index health-check
 # 输出：各分类索引状态、过期索引、缺失索引
 ```
 
@@ -422,7 +422,7 @@ node bin/vault.js index health-check
 
 ```bash
 # 手动存储
-node bin/vault.js store "内容" --category projects --name alpha
+node （请参考skill目录中的脚本文件） store "内容" --category projects --name alpha
 
 # 自动捕获（已开启时无需手动）
 # 系统自动识别：项目信息、联系人、决策、偏好等
@@ -443,14 +443,14 @@ node bin/vault.js store "内容" --category projects --name alpha
 
 ```bash
 # 语义搜索（专业版推荐）
-node bin/vault.js search "用户界面颜色偏好"
+node （请参考skill目录中的脚本文件） search "用户界面颜色偏好"
 # 返回语义匹配结果，无需关键词精确匹配
 
 # 带过滤的语义搜索
-node bin/vault.js search "项目技术栈" --category projects --filter "status=active"
+node （请参考skill目录中的脚本文件） search "项目技术栈" --category projects --filter "status=active"
 
 # 跨分类搜索
-node bin/vault.js search "AI 相关" --cross-category
+node （请参考skill目录中的脚本文件） search "AI 相关" --cross-category
 
 # grep 关键词搜索（仍可用）
 grep -r "关键词" ~/memory/
@@ -466,16 +466,16 @@ grep -r "关键词" ~/memory/
 
 ```bash
 # 配置同步规则
-node bin/vault.js sync add-rule \
+node （请参考skill目录中的脚本文件） sync add-rule \
   --source "built-in/preferences" \
   --target "sync/preferences.md" \
   --schedule "hourly"
 
 # 手动触发同步
-node bin/vault.js sync run
+node （请参考skill目录中的脚本文件） sync run
 
 # 查看同步状态
-node bin/vault.js sync status
+node （请参考skill目录中的脚本文件） sync status
 # 输出：最后同步时间、同步条目数、冲突项
 
 # 同步是单向的：内置 → 本系统
@@ -493,11 +493,11 @@ node bin/vault.js sync status
 
 ```bash
 # 自动拆分（> 100 条时触发）
-node bin/vault.js config set largeScale.autoSplit true
-node bin/vault.js config set largeScale.splitThreshold 100
+node （请参考skill目录中的脚本文件） config set largeScale.autoSplit true
+node （请参考skill目录中的脚本文件） config set largeScale.splitThreshold 100
 
 # 手动拆分
-node bin/vault.js split --category projects --by status
+node （请参考skill目录中的脚本文件） split --category projects --by status
 # 自动拆分为：active/、archived/、paused/
 
 # 自动生成子索引
@@ -530,11 +530,11 @@ node bin/vault.js split --category projects --by status
 
 ```bash
 # 索引优化
-node bin/vault.js index optimize
+node （请参考skill目录中的脚本文件） index optimize
 # 输出：压缩 23% 磁盘占用，预热 50 个常用查询
 
 # 索引重建（重大变更后）
-node bin/vault.js index rebuild --incremental
+node （请参考skill目录中的脚本文件） index rebuild --incremental
 ```
 
 ### 大规模检索优化
@@ -550,11 +550,11 @@ node bin/vault.js index rebuild --incremental
 
 ```bash
 # 手动触发卫生
-node bin/vault.js hygiene --dedup --archive --split
+node （请参考skill目录中的脚本文件） hygiene --dedup --archive --split
 
 # 设置自动卫生
-node bin/vault.js config set hygiene.auto true
-node bin/vault.js config set hygiene.schedule "weekly"
+node （请参考skill目录中的脚本文件） config set hygiene.auto true
+node （请参考skill目录中的脚本文件） config set hygiene.schedule "weekly"
 
 # 卫生策略：
 # - 去重：语义相似度 > 0.95 的条目合并
@@ -567,41 +567,41 @@ node bin/vault.js config set hygiene.schedule "weekly"
 
 ```bash
 # 查看记忆库统计（专业版详细）
-node bin/vault.js stats --detailed
+node （请参考skill目录中的脚本文件） stats --detailed
 # 输出：总文件数、分类数、索引大小、语义向量数、缓存命中率
 
 # 语义搜索
-node bin/vault.js search "自然语言查询" --cross-category --limit 20
+node （请参考skill目录中的脚本文件） search "自然语言查询" --cross-category --limit 20
 
 # 批量导入
-node bin/vault.js batch-import ./docs/ --category knowledge --recursive
+node （请参考skill目录中的脚本文件） batch-import ./docs/ --category knowledge --recursive
 
 # 索引管理
-node bin/vault.js index rebuild
-node bin/vault.js index update --category projects
-node bin/vault.js index optimize
-node bin/vault.js index health-check
+node （请参考skill目录中的脚本文件） index rebuild
+node （请参考skill目录中的脚本文件） index update --category projects
+node （请参考skill目录中的脚本文件） index optimize
+node （请参考skill目录中的脚本文件） index health-check
 
 # 同步管理
-node bin/vault.js sync run
-node bin/vault.js sync status
-node bin/vault.js sync add-rule --source "built-in/preferences" --target "sync/preferences.md"
+node （请参考skill目录中的脚本文件） sync run
+node （请参考skill目录中的脚本文件） sync status
+node （请参考skill目录中的脚本文件） sync add-rule --source "built-in/preferences" --target "sync/preferences.md"
 
 # 大规模管理
-node bin/vault.js split --category projects --by status
-node bin/vault.js cluster --category knowledge --algorithm semantic
+node （请参考skill目录中的脚本文件） split --category projects --by status
+node （请参考skill目录中的脚本文件） cluster --category knowledge --algorithm semantic
 
 # 卫生管理
-node bin/vault.js hygiene --dedup --archive --split
-node bin/vault.js hygiene --auto --schedule weekly
+node （请参考skill目录中的脚本文件） hygiene --dedup --archive --split
+node （请参考skill目录中的脚本文件） hygiene --auto --schedule weekly
 
 # 备份（含语义索引）
-node bin/vault.js backup ./backups/vault-$(date +%Y%m%d).zip --include-index
+node （请参考skill目录中的脚本文件） backup ./backups/vault-$(date +%Y%m%d).zip --include-index
 
 # 后台服务
-node bin/vault.js daemon start    # 启动自动同步+索引维护
-node bin/vault.js daemon stop
-node bin/vault.js daemon status
+node （请参考skill目录中的脚本文件） daemon start    # 启动自动同步+索引维护
+node （请参考skill目录中的脚本文件） daemon stop
+node （请参考skill目录中的脚本文件） daemon status
 ```
 
 ## 多平台集成示例
@@ -649,7 +649,7 @@ codex --skill infinite-memory-vault-pro
 
 | 序号 | 问题 | 可能原因 | 解决方案 | 优先级 |
 |:---|:---|:---|:---|:---|
-| 1 | 语义搜索无结果 | 索引未构建或为空 | 运行 `node bin/vault.js index rebuild`；确认 Ollama 运行 | 高 |
+| 1 | 语义搜索无结果 | 索引未构建或为空 | 运行 `node （请参考skill目录中的脚本文件） index rebuild`；确认 Ollama 运行 | 高 |
 | 2 | 语义搜索慢 | 索引未优化或文件过多 | 运行 `index optimize`；启用大规模索引自动拆分 | 中 |
 | 3 | 自动同步不触发 | 同步规则未配置或 daemon 未启动 | 运行 `sync status` 检查；`daemon start` 启动后台服务 | 高 |
 | 4 | 索引构建失败 | Ollama 连接问题或文件权限 | 确认 Ollama 运行；检查 `~/memory/` 写权限 | 高 |
@@ -701,7 +701,7 @@ codex --skill infinite-memory-vault-pro
 
 ### Q6: 如何从免费版升级到专业版？
 
-**A**: 专业版使用相同的目录结构和文件格式，升级步骤：(1) 替换 SKILL.md 为专业版；(2) 运行 `node bin/vault-init.js --edition pro` 补充创建语义索引和配置；(3) 运行 `node bin/vault.js index rebuild` 为现有文件构建语义索引。已有记忆数据无需迁移，无缝继承。
+**A**: 专业版使用相同的目录结构和文件格式，升级步骤：(1) 替换 SKILL.md 为专业版；(2) 运行 `node （请参考skill目录中的脚本文件） --edition pro` 补充创建语义索引和配置；(3) 运行 `node （请参考skill目录中的脚本文件） index rebuild` 为现有文件构建语义索引。已有记忆数据无需迁移，无缝继承。
 
 ### Q7: 自动捕获如何工作？
 
@@ -717,7 +717,7 @@ codex --skill infinite-memory-vault-pro
 
 ### Q10: 如何备份和恢复？
 
-**A**: 完整备份使用 `node bin/vault.js backup ./backups/vault-YYYYMMDD.zip --include-index`，包含所有文件、索引和配置。恢复时解压到 `~/memory/` 并运行 `node bin/vault.js index rebuild --incremental` 重建索引。
+**A**: 完整备份使用 `node （请参考skill目录中的脚本文件） backup ./backups/vault-YYYYMMDD.zip --include-index`，包含所有文件、索引和配置。恢复时解压到 `~/memory/` 并运行 `node （请参考skill目录中的脚本文件） index rebuild --incremental` 重建索引。
 
 ### Q11: 多代理可以共享同一个记忆库吗？
 
@@ -748,23 +748,23 @@ cp -r ~/memory/ ~/backups/pre-upgrade/
 
 # 2. 替换 SKILL.md 为专业版
 # 3. 运行专业版初始化（补充创建语义索引和配置）
-node bin/vault-init.js --edition pro
+node （请参考skill目录中的脚本文件） --edition pro
 
 # 4. 为现有文件构建语义索引
-node bin/vault.js index rebuild
+node （请参考skill目录中的脚本文件） index rebuild
 # 输出：已索引 N 个文件，生成 N 个向量
 
 # 5. 验证数据完整性
-node bin/vault.js stats --detailed
+node （请参考skill目录中的脚本文件） stats --detailed
 # 确认文件数量与升级前一致
 
 # 6. 启用高级功能
-node bin/vault.js config set semantic.enabled true
-node bin/vault.js config set sync.enabled true
-node bin/vault.js config set largeScale.enabled true
+node （请参考skill目录中的脚本文件） config set semantic.enabled true
+node （请参考skill目录中的脚本文件） config set sync.enabled true
+node （请参考skill目录中的脚本文件） config set largeScale.enabled true
 
 # 7. 启动后台服务
-node bin/vault.js daemon start
+node （请参考skill目录中的脚本文件） daemon start
 ```
 
 ### 专业版版本升级

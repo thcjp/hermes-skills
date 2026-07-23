@@ -94,7 +94,7 @@ suggested_price: 29.9
 
 ```bash
 # 发布作品到画布（免费版）
-{baseDir}/scripts/board.sh publish \
+{baseDir}/（请参考skill目录中的脚本文件） publish \
   --board main \
   --x 100 --y 200 \
   --art ./my-art.json
@@ -115,17 +115,17 @@ suggested_price: 29.9
 
 ```bash
 # 查看画布概览
-{baseDir}/scripts/board.sh view --board main
+{baseDir}/（请参考skill目录中的脚本文件） view --board main
 
 # 定位我的作品
-{baseDir}/scripts/board.sh locate --board main --mine
+{baseDir}/（请参考skill目录中的脚本文件） locate --board main --mine
 ```
 
 ### 场景三：个人发布历史
 
 ```bash
 # 我的发布历史
-{baseDir}/scripts/board.sh history --mine
+{baseDir}/（请参考skill目录中的脚本文件） history --mine
 ```
 
 ## 不适用场景
@@ -215,7 +215,7 @@ A：免费版单作品颜色无硬限，但建议控制在调色板范围。
   - 记录自己的作品坐标，便于定位
 
 坐标查询:
-  {baseDir}/scripts/board.sh view --board main --region 100,100,200,200
+  {baseDir}/（请参考skill目录中的脚本文件） view --board main --region 100,100,200,200
 ```
 
 ### 颜色调色板管理
@@ -232,10 +232,10 @@ A：免费版单作品颜色无硬限，但建议控制在调色板范围。
 
 ```bash
 # 查看我的发布历史
-{baseDir}/scripts/board.sh history --mine
+{baseDir}/（请参考skill目录中的脚本文件） history --mine
 
 # 导出我的作品备份
-{baseDir}/scripts/board.sh export --mine --out my-artworks.tar.gz
+{baseDir}/（请参考skill目录中的脚本文件） export --mine --out my-artworks.tar.gz
 ```
 
 ## 创作规范

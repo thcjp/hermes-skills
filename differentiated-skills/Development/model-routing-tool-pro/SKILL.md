@@ -93,7 +93,7 @@ suggested_price: 99.9
 
 ```bash
 # 查看本月成本仪表盘
-node scripts/cost-dashboard.mjs --period month --group-by project
+node （请参考skill目录中的脚本文件） --period month --group-by project
 
 # 输出
 # 项目成本仪表盘: 2026-07
@@ -260,14 +260,14 @@ const result2 = await route({
 
 ```bash
 # 从文件批量路由
-node scripts/batch-route.mjs \
+node （请参考skill目录中的脚本文件） \
   --input tasks.json \
   --concurrency 10 \
   --cost-cap 50 \
   --output results.json
 
 # 输出成本与路由报告
-node scripts/batch-route.mjs \
+node （请参考skill目录中的脚本文件） \
   --input tasks.json \
   --report reports/batch-$(date +%Y%m%d).html
 ```
@@ -276,13 +276,13 @@ node scripts/batch-route.mjs \
 
 ```bash
 # 月度成本报告
-node scripts/cost-dashboard.mjs --period month --format html > reports/month.html
+node （请参考skill目录中的脚本文件） --period month --format html > reports/month.html
 
 # 按团队分组
-node scripts/cost-dashboard.mjs --period month --group-by team
+node （请参考skill目录中的脚本文件） --period month --group-by team
 
 # 导出CSV
-node scripts/cost-dashboard.mjs --period month --format csv > reports/month.csv
+node （请参考skill目录中的脚本文件） --period month --format csv > reports/month.csv
 ```
 
 #
@@ -385,23 +385,23 @@ providers:
 
 ```bash
 # 健康检查
-node scripts/health-check.mjs --all-providers
+node （请参考skill目录中的脚本文件） --all-providers
 
 # 手动切换主供应商
-node scripts/switch-provider.mjs --primary provider-b
+node （请参考skill目录中的脚本文件） --primary provider-b
 
 # 成本对比报告
-node scripts/compare-providers.mjs --period month
+node （请参考skill目录中的脚本文件） --period month
 ```
 
 ### 6. 合规与审计
 
 ```bash
 # 查询路由审计日志
-node scripts/audit-query.mjs --task-id t-2026-07-18-001
+node （请参考skill目录中的脚本文件） --task-id t-2026-07-18-001
 
 # 导出合规报告
-node scripts/audit-export.mjs \
+node （请参考skill目录中的脚本文件） \
   --since 2026-07-01 \
   --format csv \
   --output reports/compliance-july.csv

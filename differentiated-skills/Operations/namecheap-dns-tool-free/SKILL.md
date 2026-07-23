@@ -75,7 +75,7 @@ suggested_price: 29.9
 
 ```bash
 # 添加A记录
-python3 scripts/dns.py record add \
+python3 （请参考skill目录中的脚本文件） record add \
   --domain example.com \
   --type A \
   --host "@" \
@@ -83,7 +83,7 @@ python3 scripts/dns.py record add \
   --ttl 1800
 
 # 查看记录
-python3 scripts/dns.py record list --domain example.com
+python3 （请参考skill目录中的脚本文件） record list --domain example.com
 ```
 
 ### 场景二：配置邮件MX记录
@@ -92,7 +92,7 @@ python3 scripts/dns.py record list --domain example.com
 
 ```bash
 # 添加MX记录
-python3 scripts/dns.py record add \
+python3 （请参考skill目录中的脚本文件） record add \
   --domain example.com \
   --type MX \
   --host "@" \
@@ -107,7 +107,7 @@ python3 scripts/dns.py record add \
 
 ```bash
 # 添加CNAME记录
-python3 scripts/dns.py record add \
+python3 （请参考skill目录中的脚本文件） record add \
   --domain example.com \
   --type CNAME \
   --host "www" \
@@ -142,19 +142,19 @@ export NAMECHEAP_CLIENT_IP="your_ip"
 
 ```bash
 # 域名列表
-python3 scripts/dns.py domains list
+python3 （请参考skill目录中的脚本文件） domains list
 
 # 记录管理
-python3 scripts/dns.py record list --domain example.com
-python3 scripts/dns.py record add --domain example.com --type A --host "@" --value 192.168.1.1
-python3 scripts/dns.py record update --domain example.com --record-id 123 --value 192.168.1.2
-python3 scripts/dns.py record delete --domain example.com --record-id 123
+python3 （请参考skill目录中的脚本文件） record list --domain example.com
+python3 （请参考skill目录中的脚本文件） record add --domain example.com --type A --host "@" --value 192.168.1.1
+python3 （请参考skill目录中的脚本文件） record update --domain example.com --record-id 123 --value 192.168.1.2
+python3 （请参考skill目录中的脚本文件） record delete --domain example.com --record-id 123
 
 # DNS传播检查
-python3 scripts/dns.py propagate check --domain example.com --type A
+python3 （请参考skill目录中的脚本文件） propagate check --domain example.com --type A
 
 # 设置默认DNS服务器
-python3 scripts/dns.py nameservers set --domain example.com --dns "dns1.namecheaphosting.com,dns2.namecheaphosting.com"
+python3 （请参考skill目录中的脚本文件） nameservers set --domain example.com --dns "dns1.namecheaphosting.com,dns2.namecheaphosting.com"
 ```
 
 ## 示例

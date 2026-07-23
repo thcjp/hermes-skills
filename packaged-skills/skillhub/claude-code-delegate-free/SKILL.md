@@ -66,7 +66,7 @@ homepage: "https://skillhub.cn"
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
 | task_description | string | 是 | 自然语言描述的编程任务 |
-| target_language | string | 否 | 目标编程语言，可选: python/java/go/javascript/typescript，默认: python |
+| target_language | string | 否 | 目标编程语言，可选: python/java/go/java（请参考skill目录中的脚本文件），默认: python |
 | output_format | string | 否 | 输出格式，可选: code/markdown/json，默认: code |
 | max_retries | integer | 否 | 单步最大重试次数，默认: 1 |
 

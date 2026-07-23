@@ -128,7 +128,7 @@ jobs:
 # 在 NAS/服务器上跑，无 GUI
 notesmd-cli set-default "my-vault" --open-type editor
 # 把 30 天前的 daily 归档
-scripts/archive-daily --days 30 --to "Archive/Daily/"
+（请参考skill目录中的脚本文件） --days 30 --to "Archive/Daily/"
 ```
 
 ## frontmatter 治理
@@ -163,7 +163,7 @@ for note in $(notesmd-cli search-content "status: draft" --paths-only); do
 done
 
 # 按状态过滤并导出清单
-scripts/frontmatter-query --filter "status=published" --output published.md
+（请参考skill目录中的脚本文件） --filter "status=published" --output published.md
 ```
 
 ## daily note 模板化
@@ -205,7 +205,7 @@ tags: [daily]
 
 ```bash
 # 补建过去 7 天缺失的 daily
-scripts/backfill-daily --days 7
+（请参考skill目录中的脚本文件） --days 7
 # 检查 Daily/ 目录，缺失的按模板生成
 ```
 
@@ -248,7 +248,7 @@ scripts/backfill-daily --days 7
 ```
 用户：把 30 天前的 daily 移到 Archive/
 执行：
-1. scripts/archive-daily --days 30 --to "Archive/Daily/"
+1. （请参考skill目录中的脚本文件） --days 30 --to "Archive/Daily/"
 2. move 每个旧 daily（自动更新链接）
 3. 报告：归档 30 篇
 ```
@@ -258,7 +258,7 @@ scripts/backfill-daily --days 7
 ```
 用户：列出所有 tags 含 "project" 且 status=active 的笔记
 执行：
-1. scripts/frontmatter-query --filter "tags~project,status=active"
+1. （请参考skill目录中的脚本文件） --filter "tags~project,status=active"
 2. 输出：8 篇匹配，含路径与摘要
 ```
 
@@ -386,7 +386,7 @@ obsidian/daily-notes
 ```
 用户：把 30 天前的 daily 移到 Archive/
 执行：
-1. scripts/archive-daily --days 30 --to "Archive/Daily/"
+1. （请参考skill目录中的脚本文件） --days 30 --to "Archive/Daily/"
 2. move 每个旧 daily（自动更新链接）
 3. 报告：归档 30 篇
 ```
@@ -396,7 +396,7 @@ obsidian/daily-notes
 ```
 用户：列出所有 tags 含 "project" 且 status=active 的笔记
 执行：
-1. scripts/frontmatter-query --filter "tags~project,status=active"
+1. （请参考skill目录中的脚本文件） --filter "tags~project,status=active"
 2. 输出：8 篇匹配，含路径与摘要
 ```
 

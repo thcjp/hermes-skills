@@ -248,10 +248,10 @@ for md in Path("content/").glob("*.md"):
 
 ```bash
 # 归档每次评分
-python scripts/trace_score.py --input content/ --save scores/$(date +%F).json
+python （请参考skill目录中的脚本文件） --input content/ --save scores/$(date +%F).json
 
 # 趋势对比
-python scripts/trace_trend.py --dir scores/ --baseline main
+python （请参考skill目录中的脚本文件） --dir scores/ --baseline main
 ```
 
 ```text

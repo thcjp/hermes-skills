@@ -49,19 +49,19 @@ pricing_model: "per_use"
 ### Using the Script
 
 ```bash
-./scripts/search.sh '<json>'
+（请参考skill目录中的脚本文件） '<json>'
 ```
 
 **Examples:**
 
 ```bash
-./scripts/search.sh '{"query": "python async patterns"}'
+（请参考skill目录中的脚本文件） '{"query": "python async patterns"}'
 
-./scripts/search.sh '{"query": "React hooks tutorial", "max_results": 10}'
+（请参考skill目录中的脚本文件） '{"query": "React hooks tutorial", "max_results": 10}'
 
-./scripts/search.sh '{"query": "AI news", "topic": "news", "time_range": "week", "max_results": 10}'
+（请参考skill目录中的脚本文件） '{"query": "AI news", "topic": "news", "time_range": "week", "max_results": 10}'
 
-./scripts/search.sh '{"query": "machine learning", "include_domains": ["arxiv.org", "github.com"], "search_depth": "advanced"}'
+（请参考skill目录中的脚本文件） '{"query": "machine learning", "include_domains": ["arxiv.org", "github.com"], "search_depth": "advanced"}'
 ```
 
 ### Basic Search
@@ -98,8 +98,8 @@ curl --request POST \
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | search-2处理的内容输入 |,  |
+| content | string | 否 | search-2处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -108,9 +108,9 @@ curl --request POST \
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "2 相关配置参数",
+    result: "2 相关配置参数",
+    result: "2 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

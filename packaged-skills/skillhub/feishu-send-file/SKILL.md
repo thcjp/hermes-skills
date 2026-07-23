@@ -81,7 +81,7 @@ export API_KEY="your_api_key_here"
 ### 方式一:脚本化调用(推荐)
 
 ```bash
-python3 scripts/send_file.py <file_path> <open_id> <app_id> <app_secret> [file_name]
+python3 （请参考skill目录中的脚本文件） <file_path> <open_id> <app_id> <app_secret> [file_name]
 ```
 
 参数说明:
@@ -101,7 +101,7 @@ grep -A 2 '"feishu"' /root/.skill-platform/skill-platform.json | grep -E '(appId
 完整示例:
 
 ```bash
-python3 /root/.skill-platform/workspace/skills/feishu-send-file/scripts/send_file.py \
+python3 /root/.skill-platform/workspace/skills/feishu-send-file/（请参考skill目录中的脚本文件） \
   /root/myfiles/report.html \
   ou_abc123def456 \
   cli_a1b2c3d4e5f6g7h8 \
@@ -147,13 +147,13 @@ curl -s -X POST "https://open.feishu.cn/open-apis/im/v1/messages?receive_id_type
 ### 推荐脚本
 
 ```bash
-python3 scripts/send_image.py <image_path> <open_id> <app_id> <app_secret> [domain]
+python3 （请参考skill目录中的脚本文件） <image_path> <open_id> <app_id> <app_secret> [domain]
 ```
 
 中国版飞书示例:
 
 ```bash
-python3 /root/.skill-platform/workspace/skills/feishu-send-file/scripts/send_image.py \
+python3 /root/.skill-platform/workspace/skills/feishu-send-file/（请参考skill目录中的脚本文件） \
   /root/myfiles/generated-images/demo.png \
   ou_abc123def456 \
   cli_a1b2c3d4e5f6g7h8 \
@@ -163,7 +163,7 @@ python3 /root/.skill-platform/workspace/skills/feishu-send-file/scripts/send_ima
 国际版 Lark 加第四个参数 `lark`:
 
 ```bash
-python3 scripts/send_image.py /root/myfiles/demo.png ou_xxx cli_xxx secret_xxx lark
+python3 （请参考skill目录中的脚本文件） /root/myfiles/demo.png ou_xxx cli_xxx secret_xxx lark
 ```
 
 ### 普通文件与图片的区别
@@ -207,7 +207,7 @@ python3 scripts/send_image.py /root/myfiles/demo.png ou_xxx cli_xxx secret_xxx l
 3. 改用脚本化调用:
 
 ```bash
-python3 /root/.skill-platform/workspace/skills/feishu-send-file/scripts/send_file.py \
+python3 /root/.skill-platform/workspace/skills/feishu-send-file/（请参考skill目录中的脚本文件） \
   /root/myfiles/report.html \
   ou_abc123def456 \
   cli_a1b2c3d4e5f6g7h8 \
@@ -226,7 +226,7 @@ python3 /root/.skill-platform/workspace/skills/feishu-send-file/scripts/send_fil
 2. 调用:
 
 ```bash
-python3 /root/.skill-platform/workspace/skills/feishu-send-file/scripts/send_file.py \
+python3 /root/.skill-platform/workspace/skills/feishu-send-file/（请参考skill目录中的脚本文件） \
   /root/reports/2026-W28.pdf \
   oc_def678ghi901 \
   cli_a1b2c3d4e5f6g7h8 \
@@ -245,7 +245,7 @@ python3 /root/.skill-platform/workspace/skills/feishu-send-file/scripts/send_fil
 2. 切换到稳定图片脚本:
 
 ```bash
-python3 /root/.skill-platform/workspace/skills/feishu-send-file/scripts/send_image.py \
+python3 /root/.skill-platform/workspace/skills/feishu-send-file/（请参考skill目录中的脚本文件） \
   /root/myfiles/generated-images/banner.png \
   ou_abc123def456 \
   cli_a1b2c3d4e5f6g7h8 \
@@ -278,7 +278,7 @@ python3 /root/.skill-platform/workspace/skills/feishu-send-file/scripts/send_ima
 
 现象:`messageId` 返回成功,但用户侧看到 `📎 /root/myfiles/xxx.png`
 原因:本地路径场景下 `message` 工具 `media` 链路降级,未真正走 `im/v1/images`
-处理:立即改用 `scripts/send_image.py`,走 `im/v1/images` 获取 `image_key` 后发 `msg_type=image`
+处理:立即改用 `（请参考skill目录中的脚本文件）`,走 `im/v1/images` 获取 `image_key` 后发 `msg_type=image`
 
 ### 5. 国际版 Lark 调用 404
 

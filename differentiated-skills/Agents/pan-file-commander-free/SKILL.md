@@ -43,18 +43,18 @@ suggested_price: 29.9
 未通过触发规则时,禁止执行任何 bdpan 命令。
 
 ## 已知限制
-1. **登录**:必须使用 `bash ${CLAUDE_SKILL_DIR}/scripts/login.sh`,禁止直接调用 `bdpan login` 及其任何子命令/参数(包括 `--get-auth-url`、`--set-code` 等,即使在 GUI 环境也禁止)
+1. **登录**:必须使用 `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）`,禁止直接调用 `bdpan login` 及其任何子命令/参数(包括 `--get-auth-url`、`--set-code` 等,即使在 GUI 环境也禁止)
 2. **Token/配置**:禁止读取或输出 `~/.config/bdpan/config.json` 内容(含 access_token 等敏感凭据)
 3. **更新/登录**:更新必须由用户明确指令触发,禁止自动或静默执行;Agent 禁止使用 `--yes` 参数执行 update.sh 或 login.sh
 4. **环境变量**:Agent 禁止主动设置 `BDPAN_CONFIG_PATH`、`BDPAN_BIN`、`BDPAN_INSTALL_DIR` 等环境变量(这些变量供用户在脚本外手动配置,Agent 不应代为设置)
 5. **路径安全**:禁止路径穿越(`..`、`~`)、禁止访问 `/apps/bdpan/` 范围外的绝对路径
-6. **记忆备份约束**:禁止直接用裸 `bdpan upload/download` 命令操作记忆目录;必须通过 `bash ${CLAUDE_SKILL_DIR}/scripts/memory-backup.sh` 脚本执行,以确保 manifest 生成、路径安全检查、safety net 备份等机制正常运行(记忆备份为专业版功能)
+6. **记忆备份约束**:禁止直接用裸 `bdpan upload/download` 命令操作记忆目录;必须通过 `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）` 脚本执行,以确保 manifest 生成、路径安全检查、safety net 备份等机制正常运行(记忆备份为专业版功能)
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
 ## 前置检查
 每次触发时按顺序执行:
 
-1. **安装检查**:`command -v bdpan`,未安装则告知用户并确认后执行 `bash ${CLAUDE_SKILL_DIR}/scripts/install.sh`(用户确认后可加 `--yes` 跳过安装器内部确认)
-2. **登录检查**:`bdpan whoami`,未登录则引导执行 `bash ${CLAUDE_SKILL_DIR}/scripts/login.sh`
+1. **安装检查**:`command -v bdpan`,未安装则告知用户并确认后执行 `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）`(用户确认后可加 `--yes` 跳过安装器内部确认)
+2. **登录检查**:`bdpan whoami`,未登录则引导执行 `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）`
 3. **路径校验**:验证远端路径在 `/apps/bdpan/` 范围内
 
 ## 确认规则(差异化:分层风险模型)
@@ -75,7 +75,7 @@ suggested_price: 29.9
 ```bash
 bdpan whoami
 ```
-未登录则运行: `bash ${CLAUDE_SKILL_DIR}/scripts/login.sh`
+未登录则运行: `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）`
 
 ### 60秒:浏览文件并执行一次操作
 ```bash
@@ -248,27 +248,27 @@ validate_path "/etc/passwd"      # 拒绝
 **禁止:** 命令中使用中文路径(`我的应用数据/...`)、展示时暴露 API 路径(`/apps/bdpan/...`)。
 
 ## 授权码处理
-用户发送 32 位十六进制字符串时,先确认:"这是百度网盘授权码吗?确认后将执行登录流程。" 确认后执行 `bash ${CLAUDE_SKILL_DIR}/scripts/login.sh`(不使用 `--yes`,保留安全确认环节)。
+用户发送 32 位十六进制字符串时,先确认:"这是百度网盘授权码吗?确认后将执行登录流程。" 确认后执行 `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）`(不使用 `--yes`,保留安全确认环节)。
 
 ## 管理功能
 ### 安装
 ```bash
-bash ${CLAUDE_SKILL_DIR}/scripts/install.sh [--yes]
+bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） [--yes]
 ```
 
 安装器从百度 CDN(`issuecdn.baidupcs.com`)下载并执行。注意:install.sh 不执行本地 SHA256 校验,完整性依赖 HTTPS 传输保护。安全敏感场景建议先手动审查安装器内容或在沙箱中执行。
 
 ### 登录 / 注销 / 卸载
 ```bash
-bash ${CLAUDE_SKILL_DIR}/scripts/login.sh              # 登录(内置安全免责声明)
+bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）              # 登录(内置安全免责声明)
 bdpan logout                                            # 注销
-bash ${CLAUDE_SKILL_DIR}/scripts/uninstall.sh [--yes]   # 卸载
+bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） [--yes]   # 卸载
 ```
 
 ### 更新(必须用户明确指令触发)
 ```bash
-bash ${CLAUDE_SKILL_DIR}/scripts/update.sh              # 检查并更新(需用户确认)
-bash ${CLAUDE_SKILL_DIR}/scripts/update.sh --check       # 仅检查更新
+bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）              # 检查并更新(需用户确认)
+bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） --check       # 仅检查更新
 ```
 
 ## 示例
@@ -348,8 +348,8 @@ A: 使用 `--category` 参数:0=全部,1=视频,2=音频,3=图片,4=文档,5=应
 ## 故障排查
 | 问题 | 原因 | 解决方案 |
 |------|------|----------|
-| `bdpan: command not found` | 未安装 | 运行 `bash ${CLAUDE_SKILL_DIR}/scripts/install.sh` |
-| `not logged in` | 未登录 | 运行 `bash ${CLAUDE_SKILL_DIR}/scripts/login.sh` |
+| `bdpan: command not found` | 未安装 | 运行 `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）` |
+| `not logged in` | 未登录 | 运行 `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）` |
 | 上传路径错误 | 远端路径以`/`结尾 | 单文件上传远端路径必须是文件名 |
 | 路径穿越报错 | 路径含`..`或`~` | 使用相对路径,禁止路径穿越 |
 | 中文路径报错 | 命令中使用了中文路径 | 命令参数使用相对路径,展示时用中文名 |
@@ -367,14 +367,14 @@ A: 使用 `--category` 参数:0=全部,1=视频,2=音频,3=图片,4=文档,5=应
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
-| bdpan CLI | 工具 | 必需 | `bash ${CLAUDE_SKILL_DIR}/scripts/install.sh` |
+| bdpan CLI | 工具 | 必需 | `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）` |
 | 百度网盘账户 | 账户 | 必需 | 注册百度网盘账号 |
 | bash | 运行时 | 必需 | 系统自带或安装Git Bash |
 | jq | 工具 | 可选(JSON处理与分类视图) | 从stedolan.github.io/jq安装 |
 
 ### API Key 配置
 - 通过百度网盘OAuth授权登录,无需手动配置API Key
-- 授权码通过 `bash ${CLAUDE_SKILL_DIR}/scripts/login.sh` 流程获取
+- 授权码通过 `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）` 流程获取
 - **禁止**读取或输出 `~/.config/bdpan/config.json` 内容(含敏感凭据)
 
 ### 可用性分类
@@ -419,7 +419,7 @@ A: 使用 `--category` 参数:0=全部,1=视频,2=音频,3=图片,4=文档,5=应
 ## 核心能力
 ### 安装
 ```bash
-bash ${CLAUDE_SKILL_DIR}/scripts/install.sh [--yes]
+bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） [--yes]
 ```
 
 安装器从百度 CDN(`issuecdn.baidupcs.com`)下载并执行。注意:install.sh 不执行本地 SHA256 校验,完整性依赖 HTTPS 传输保护。安全敏感场景建议先手动审查安装器内容或在沙箱中执行。
@@ -430,9 +430,9 @@ bash ${CLAUDE_SKILL_DIR}/scripts/install.sh [--yes]
 
 ### 登录 / 注销 / 卸载
 ```bash
-bash ${CLAUDE_SKILL_DIR}/scripts/login.sh              # 登录(内置安全免责声明)
+bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）              # 登录(内置安全免责声明)
 bdpan logout                                            # 注销
-bash ${CLAUDE_SKILL_DIR}/scripts/uninstall.sh [--yes]   # 卸载
+bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） [--yes]   # 卸载
 ```
 
 **输入**: 用户提供登录 / 注销 / 卸载所需的指令和必要参数。
@@ -442,8 +442,8 @@ bash ${CLAUDE_SKILL_DIR}/scripts/uninstall.sh [--yes]   # 卸载
 
 ### 更新(必须用户明确指令触发)
 ```bash
-bash ${CLAUDE_SKILL_DIR}/scripts/update.sh              # 检查并更新(需用户确认)
-bash ${CLAUDE_SKILL_DIR}/scripts/update.sh --check       # 仅检查更新
+bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）              # 检查并更新(需用户确认)
+bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） --check       # 仅检查更新
 ```
 
 **输入**: 用户提供更新(必须用户明确指令触发)所需的指令和必要参数。

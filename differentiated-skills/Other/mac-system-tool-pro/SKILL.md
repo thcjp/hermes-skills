@@ -95,7 +95,7 @@ pricing_model: "per_use"
 
 ```bash
 # 批量查询设备状态（专业版）
-{baseDir}/scripts/fleet.sh exec --group dev-team --cmd "pmset -g batt"
+{baseDir}/（请参考skill目录中的脚本文件） exec --group dev-team --cmd "pmset -g batt"
 ```
 
 ```text
@@ -207,13 +207,13 @@ A：有。专业版享设备管理策略与合规设计咨询。
 
 ```bash
 # 批量查询设备状态
-{baseDir}/scripts/fleet.sh exec --group dev-team --cmd "pmset -g batt"
+{baseDir}/（请参考skill目录中的脚本文件） exec --group dev-team --cmd "pmset -g batt"
 
 # 批量更新软件
-{baseDir}/scripts/fleet.sh exec --group all --cmd "softwareupdate -ia"
+{baseDir}/（请参考skill目录中的脚本文件） exec --group all --cmd "softwareupdate -ia"
 
 # 批量收集资产清单
-{baseDir}/scripts/fleet.sh inventory --group all --out assets.json
+{baseDir}/（请参考skill目录中的脚本文件） inventory --group all --out assets.json
 ```
 
 ```text
@@ -255,10 +255,10 @@ A：有。专业版享设备管理策略与合规设计咨询。
 
 ```bash
 # 合规扫描
-{baseDir}/scripts/fleet.sh compliance --baseline baseline.json
+{baseDir}/（请参考skill目录中的脚本文件） compliance --baseline baseline.json
 
 # 输出报告
-{baseDir}/scripts/fleet.sh compliance --report compliance.json
+{baseDir}/（请参考skill目录中的脚本文件） compliance --report compliance.json
 ```
 
 ```text

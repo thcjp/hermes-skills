@@ -222,8 +222,8 @@ cat ~/workspace/news-digest/config.json | grep edition
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | news-daily-digest处理的内容输入 |,  |
+| content | string | 否 | news-daily-digest处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -232,9 +232,9 @@ cat ~/workspace/news-digest/config.json | grep edition
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "digest 相关配置参数",
+    result: "digest 相关配置参数",
+    result: "digest 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,
@@ -364,7 +364,7 @@ cat ~/workspace/news-digest/config.json | grep edition
 各源可用性不同：Hacker News与Reddit有公开API，最稳定；RSS源取决于源站稳定性；X.com与微博热搜依赖浏览器抓取，可能受反爬影响。建议配置多源，单源不可用时自动降级，不影响整体聚合。
 
 ### Q4：自定义海报模板如何制作？
-在`config.json`的`template`段定义配色、字体、布局。如需完全自定义，可在`~/workspace/news-digest/templates/`目录放置HTML模板文件，使用变量占位符（如`基础用法`、`全功能新闻聚合系统，含8+源、多关键词组合、10+主题、情感分析、多格式导出与品牌定制，支撑企业级资讯场景。`、`（根据实际场景填充）`），技能自动填充数据。
+在`config.json`的`template`段定义配色、字体、布局。如需完全自定义，可在`~/workspace/news-digest/templates/`目录放置HTML模板文件，使用变量占位符（如`基础用法`、`全功能新闻聚合系统，含8+源、多关键词组合、10+主题、情感分析、多格式导出与品牌定制，支撑企业级资讯场景。`、`news-daily-digest_template`），技能自动填充数据。
 
 ### Q5：品牌水印会侵权吗？
 品牌水印使用用户自有的Logo与品牌名，由用户自行确保拥有使用权。本技能仅提供水印添加功能，不对水印内容版权负责。建议使用公司注册商标与官方Logo。

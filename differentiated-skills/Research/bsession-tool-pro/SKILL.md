@@ -211,7 +211,7 @@ CHECK_INTERVAL=1800
 N8N_WEBHOOK_URL=https://n8n.example.com/webhook/xxx
 EOF
 
-cat > ~/.bsession/workspace/scripts/batch-monitor.py <<'PYEOF'
+cat > ~/.bsession/workspace/（请参考skill目录中的脚本文件） <<'PYEOF'
 import os, sys, time
 sys.path.insert(0, "/app")
 from lib.browser import ab, find_ref, send_webhook, make_logger
@@ -256,7 +256,7 @@ sessions:
 
   - name: stock-check
     interval: 3600
-    webhook: https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxx
+    webhook: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=xxx
     timeout: 90
 
 monitoring:

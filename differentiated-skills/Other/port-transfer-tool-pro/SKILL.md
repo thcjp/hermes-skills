@@ -90,7 +90,7 @@ pricing_model: "per_use"
 
 ```bash
 # 同步到多个环境（专业版）
-{baseDir}/scripts/port-pro.sh sync \
+{baseDir}/（请参考skill目录中的脚本文件） sync \
   --bundle team-baseline.json \
   --targets claude,cursor,codex,gemini
 ```
@@ -107,7 +107,7 @@ pricing_model: "per_use"
 
 ```bash
 # 三方合并冲突配置
-{baseDir}/scripts/port-pro.sh merge \
+{baseDir}/（请参考skill目录中的脚本文件） merge \
   --base base.json \
   --ours local.json \
   --theirs upstream.json \
@@ -201,10 +201,10 @@ A：有。专业版享配置治理与凭证策略咨询。
 
 ```bash
 # 同步前一致性校验
-{baseDir}/scripts/port-pro.sh check --targets claude,cursor,codex,gemini
+{baseDir}/（请参考skill目录中的脚本文件） check --targets claude,cursor,codex,gemini
 
 # 同步并生成差异报告
-{baseDir}/scripts/port-pro.sh sync \
+{baseDir}/（请参考skill目录中的脚本文件） sync \
   --bundle team-baseline.json \
   --targets claude,cursor,codex,gemini \
   --report sync-report.json
@@ -223,7 +223,7 @@ A：有。专业版享配置治理与凭证策略咨询。
 
 ```bash
 # 三方合并
-{baseDir}/scripts/port-pro.sh merge \
+{baseDir}/（请参考skill目录中的脚本文件） merge \
   --base base.json \
   --ours local.json \
   --theirs upstream.json \

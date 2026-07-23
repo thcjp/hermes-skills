@@ -74,9 +74,9 @@ pricing_model: "per_use"
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "api 相关配置参数",
+    result: "api 相关配置参数",
+    result: "api 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

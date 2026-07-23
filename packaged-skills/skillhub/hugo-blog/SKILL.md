@@ -64,25 +64,25 @@ pricing_model: "per_use"
 | 性能 | - | 站点性能优化与监控 |
 ### 能力模块
 
-执行能力模块操作,处理用户输入并返回结果。
+执行能力模块,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供能力模块所需的参数和指令。
+**输入**: 用户提供能力模块相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回能力模块的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`能力模块`相关配置参数进行设置
 ### 文章发布
 
-执行文章发布操作,处理用户输入并返回结果。
+执行文章发布,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供文章发布所需的参数和指令。
+**输入**: 用户提供文章发布相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回文章发布的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`文章发布`相关配置参数进行设置
 ### Front Matter
 
-执行Front Matter操作,处理用户输入并返回结果。
+执行Front Matter,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供Front Matter所需的参数和指令。
+**输入**: 用户提供Front Matter相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回Front Matter的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`Front Matter`相关配置参数进行设置
@@ -308,8 +308,8 @@ echo "=== 优化完成 ==="
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | hugo-blog处理的内容输入 |,  |
+| content | string | 否 | hugo-blog处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -318,9 +318,9 @@ echo "=== 优化完成 ==="
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "blog 相关配置参数",
+    result: "blog 相关配置参数",
+    result: "blog 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,
@@ -439,7 +439,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: 构建并部署
-        run: hugo --minify && ./deploy.sh
+        run: hugo --minify && （请参考skill目录中的脚本文件）
 ```
 
 ### Q2：多语言站点的标签如何管理？

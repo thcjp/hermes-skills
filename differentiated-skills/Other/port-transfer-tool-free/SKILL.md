@@ -94,7 +94,7 @@ suggested_price: 29.9
 
 ```bash
 # 导出当前环境 MCP工具配置
-{baseDir}/scripts/port.sh export --from claude --out bundle.json
+{baseDir}/（请参考skill目录中的脚本文件） export --from claude --out bundle.json
 ```
 
 ```json
@@ -109,17 +109,17 @@ suggested_price: 29.9
 
 ```bash
 # 导入到另一个 Agent 环境
-{baseDir}/scripts/port.sh import --to cursor --bundle bundle.json
+{baseDir}/（请参考skill目录中的脚本文件） import --to cursor --bundle bundle.json
 
 # 替换占位符（导入后填真实凭证）
-{baseDir}/scripts/port.sh fill --bundle bundle.json --env .env
+{baseDir}/（请参考skill目录中的脚本文件） fill --bundle bundle.json --env .env
 ```
 
 ### 场景三：配置校验
 
 ```bash
 # 依赖说明
-{baseDir}/scripts/port.sh validate --bundle bundle.json
+{baseDir}/（请参考skill目录中的脚本文件） validate --bundle bundle.json
 ```
 
 ## 快速开始
@@ -199,7 +199,7 @@ A：能。清单为 JSON，路径用占位符，导入时按 OS 适配。
 SEARCH_API_KEY=sk-real-key-xxx
 
 # 导入时自动替换占位符
-{baseDir}/scripts/port.sh import --to cursor --bundle bundle.json --env .env
+{baseDir}/（请参考skill目录中的脚本文件） import --to cursor --bundle bundle.json --env .env
 ```
 
 ```text
@@ -214,10 +214,10 @@ SEARCH_API_KEY=sk-real-key-xxx
 
 ```bash
 # 校验格式与依赖
-{baseDir}/scripts/port.sh validate --bundle bundle.json
+{baseDir}/（请参考skill目录中的脚本文件） validate --bundle bundle.json
 
 # 校验结果
-{baseDir}/scripts/port.sh validate --bundle bundle.json --report
+{baseDir}/（请参考skill目录中的脚本文件） validate --bundle bundle.json --report
 ```
 
 ```text

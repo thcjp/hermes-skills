@@ -105,7 +105,7 @@ export API_KEY="your_api_key_here"
 使用 `suggest_chart.py` 根据数据特征自动推荐最佳图表类型：
 
 ```bash
-python3 {baseDir}/scripts/suggest_chart.py --labels "Q1,Q2,Q3,Q4" --values "10,20,15,25"
+python3 {baseDir}/（请参考skill目录中的脚本文件） --labels "Q1,Q2,Q3,Q4" --values "10,20,15,25"
 ```
 
 输出推荐类型与理由，便于在生成前确认选择。
@@ -117,7 +117,7 @@ python3 {baseDir}/scripts/suggest_chart.py --labels "Q1,Q2,Q3,Q4" --values "10,2
 使用 `make_chart.py` 直接从命令行参数生成图表图片：
 
 ```bash
-python3 {baseDir}/scripts/make_chart.py \
+python3 {baseDir}/（请参考skill目录中的脚本文件） \
   --type bar \
   --title "季度销售额" \
   --labels "Q1,Q2,Q3,Q4" \
@@ -136,7 +136,7 @@ python3 {baseDir}/scripts/make_chart.py \
 使用 `list_charts.py` 查看历史生成记录：
 
 ```bash
-python3 {baseDir}/scripts/list_charts.py
+python3 {baseDir}/（请参考skill目录中的脚本文件）
 ```
 
 返回JSON格式的历史索引，包含生成时间、类型、标题、输出路径。
@@ -148,7 +148,7 @@ python3 {baseDir}/scripts/list_charts.py
 首次使用前运行 `init_storage.py` 创建目录结构与索引文件：
 
 ```bash
-python3 {baseDir}/scripts/init_storage.py
+python3 {baseDir}/（请参考skill目录中的脚本文件）
 ```
 
 **输入**: 用户提供存储初始化所需的指令和必要参数。
@@ -174,7 +174,7 @@ python3 {baseDir}/scripts/init_storage.py
 ### 示例1：柱状图对比季度销售
 
 ```bash
-python3 {baseDir}/scripts/make_chart.py \
+python3 {baseDir}/（请参考skill目录中的脚本文件） \
   --type bar \
   --title "2024年季度销售额(万元)" \
   --labels "Q1,Q2,Q3,Q4" \
@@ -186,7 +186,7 @@ python3 {baseDir}/scripts/make_chart.py \
 ### 示例2：折线图展示月度趋势
 
 ```bash
-python3 {baseDir}/scripts/make_chart.py \
+python3 {baseDir}/（请参考skill目录中的脚本文件） \
   --type line \
   --title "月度活跃用户" \
   --labels "1月,2月,3月,4月,5月,6月" \
@@ -196,7 +196,7 @@ python3 {baseDir}/scripts/make_chart.py \
 ### 示例3：饼图展示市场份额
 
 ```bash
-python3 {baseDir}/scripts/make_chart.py \
+python3 {baseDir}/（请参考skill目录中的脚本文件） \
   --type pie \
   --title "云服务商市场份额" \
   --labels "AWS,Azure,GCP,其他" \
@@ -206,7 +206,7 @@ python3 {baseDir}/scripts/make_chart.py \
 ### 示例4：散点图展示广告投入与销量关系
 
 ```bash
-python3 {baseDir}/scripts/make_chart.py \
+python3 {baseDir}/（请参考skill目录中的脚本文件） \
   --type scatter \
   --title "广告投入vs销量" \
   --labels "A,B,C,D,E" \
@@ -216,7 +216,7 @@ python3 {baseDir}/scripts/make_chart.py \
 ### 示例5：智能选型
 
 ```bash
-python3 {baseDir}/scripts/suggest_chart.py --labels "1月,2月,3月" --values "100,120,150"
+python3 {baseDir}/（请参考skill目录中的脚本文件） --labels "1月,2月,3月" --values "100,120,150"
 # 输出推荐：line（时序趋势）
 ```
 

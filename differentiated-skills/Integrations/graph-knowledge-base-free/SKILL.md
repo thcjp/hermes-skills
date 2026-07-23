@@ -109,7 +109,7 @@ suggested_price: 29.9
 
 ### Step 1：添加第一条事实
 ```bash
-python3 scripts/kg.py add \
+python3 （请参考skill目录中的脚本文件） add \
   --entity people/zhangsan \
   --category status \
   --fact "担任前端开发工程师" \
@@ -118,13 +118,13 @@ python3 scripts/kg.py add \
 
 ### Step 2：查看实体事实
 ```bash
-python3 scripts/kg.py list --entity people/zhangsan
+python3 （请参考skill目录中的脚本文件） list --entity people/zhangsan
 ```
 
 ### Step 3：替代旧事实
 当信息变化时，标记旧事实为已替代并创建新事实：
 ```bash
-python3 scripts/kg.py supersede \
+python3 （请参考skill目录中的脚本文件） supersede \
   --entity people/zhangsan \
   --old zhangsan-001 \
   --category status \
@@ -133,7 +133,7 @@ python3 scripts/kg.py supersede \
 
 ### Step 4：生成实体摘要
 ```bash
-python3 scripts/kg.py summarize --entity people/zhangsan
+python3 （请参考skill目录中的脚本文件） summarize --entity people/zhangsan
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。

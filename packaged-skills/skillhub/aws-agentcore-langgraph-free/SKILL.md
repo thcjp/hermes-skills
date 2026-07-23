@@ -64,25 +64,25 @@ app.run()
 - **AgentCore Memory**: 托管式跨会话记忆(免费版仅支持基础 STM,不含 LTM)
 ### AgentCore Runtime
 
-执行AgentCore Runtime操作,处理用户输入并返回结果。
+执行AgentCore Runtime,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供AgentCore Runtime所需的参数和指令。
+**输入**: 用户提供AgentCore Runtime相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回AgentCore Runtime的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`AgentCore Runtime`相关配置参数进行设置
 ### LangGraph Routing
 
-执行LangGraph Routing操作,处理用户输入并返回结果。
+执行LangGraph Routing,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供LangGraph Routing所需的参数和指令。
+**输入**: 用户提供LangGraph Routing相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回LangGraph Routing的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`LangGraph Routing`相关配置参数进行设置
 ### AgentCore Memory
 
-执行AgentCore Memory操作,处理用户输入并返回结果。
+执行AgentCore Memory,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供AgentCore Memory所需的参数和指令。
+**输入**: 用户提供AgentCore Memory相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回AgentCore Memory的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`AgentCore Memory`相关配置参数进行设置

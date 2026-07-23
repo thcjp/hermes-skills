@@ -114,7 +114,7 @@ pricing_model: "monthly"
 
 ```bash
 # 初始化索引数据库
-python scripts/init_index.py --db can_index.db
+python （请参考skill目录中的脚本文件） --db can_index.db
 
 # 创建配置文件
 cat > config.yaml << 'EOF'
@@ -149,34 +149,34 @@ EOF
 ### 第二步：启动专业版服务
 
 ```bash
-python scripts/can_service.py --config config.yaml
+python （请参考skill目录中的脚本文件） --config config.yaml
 ```
 
 ### 第三步：提交OTS时间戳（可选）
 
 ```bash
 # 为某条记录提交OTS时间戳
-python scripts/ots_stamp.py --when 1742428800000 --where a7f3b2c1d4e5
+python （请参考skill目录中的脚本文件） --when 1742428800000 --where a7f3b2c1d4e5
 
 # 验证OTS时间戳
-python scripts/ots_verify.py --when 1742428800000 --where a7f3b2c1d4e5
+python （请参考skill目录中的脚本文件） --when 1742428800000 --where a7f3b2c1d4e5
 ```
 
 ### 第四步：构建并行索引
 
 ```bash
 # 全量构建索引
-python scripts/build_index.py --log can.log --db can_index.db --parallel 4
+python （请参考skill目录中的脚本文件） --log can.log --db can_index.db --parallel 4
 
 # 按哈希查找
-python scripts/lookup.py --where a7f3b2c1d4e5
+python （请参考skill目录中的脚本文件） --where a7f3b2c1d4e5
 ```
 
 ### 第五步：导出审计报表
 
 ```bash
 # 导出HTML报表
-python scripts/export_report.py --format html --range 2024-01-01:2024-03-31 --output ./reports/q1_audit.html
+python （请参考skill目录中的脚本文件） --format html --range 2024-01-01:2024-03-31 --output ./reports/q1_audit.html
 ```
 
 #
@@ -184,7 +184,7 @@ python scripts/export_report.py --format html --range 2024-01-01:2024-03-31 --ou
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | can-bus-toolkit处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式
@@ -335,7 +335,7 @@ OTS服务偶尔不可用。配置中设置了fallback服务器与重试机制。
 适配器拦截MCP工具协议的数据流转，在数据从一个MCP工具传递到另一个时自动计算哈希、记录时间戳并追加到日志，无需修改现有MCP工具代码。
 
 ### Q5：多个日志文件如何合并？
-使用`scripts/merge_logs.py`工具，按WHEN列排序合并多个日志文件，并重建索引。合并时自动去重（相同WHEN+WHERE视为重复）。
+使用`（请参考skill目录中的脚本文件）`工具，按WHEN列排序合并多个日志文件，并重建索引。合并时自动去重（相同WHEN+WHERE视为重复）。
 
 ### Q6：OTS时间戳验证需要比特币全节点吗？
 不需要。OTS验证只需下载对应的区块链头信息（约50MB），无需运行全节点。验证工具会自动从可信节点获取所需信息。

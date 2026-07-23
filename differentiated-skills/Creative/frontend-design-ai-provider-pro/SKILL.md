@@ -131,7 +131,7 @@ homepage: "https://skillhub.cn"
 
 ```bash
 # 批量生成组件
-python3 scripts/generate_components.py \
+python3 （请参考skill目录中的脚本文件） \
   --config components.yaml \
   --output ./src/components/ \
   --framework react \
@@ -191,7 +191,7 @@ python3 scripts/generate_components.py \
 
 ```bash
 # 可访问性检查
-python3 scripts/a11y_check.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./src/ \
   --standard wcag2.1-aa \
   --output ./reports/a11y_report.md \
@@ -225,7 +225,7 @@ export FRONTEND_DESIGN_LICENSE="your_license_key"
 
 ```bash
 # 生成完整设计系统
-python3 scripts/generate_design_system.py \
+python3 （请参考skill目录中的脚本文件） \
   --brand "企业品牌" \
   --tone "精致奢华" \
   --output ./design-system/ \
@@ -235,7 +235,7 @@ python3 scripts/generate_design_system.py \
 ### 第三步:批量生成组件
 
 ```bash
-python3 scripts/generate_components.py \
+python3 （请参考skill目录中的脚本文件） \
   --config components.yaml \
   --output ./src/components/ \
   --storybook

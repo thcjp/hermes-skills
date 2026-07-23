@@ -67,7 +67,7 @@ pricing_model: "per_use"
 
 ### 1. 快速统计（stats）
 ```bash
-python3 {baseDir}/scripts/csv_analyze.py stats data.csv
+python3 {baseDir}/（请参考skill目录中的脚本文件） stats data.csv
 ```
 
 返回行数、列类型、数值列的min/max/mean、文本列的unique计数。
@@ -78,7 +78,7 @@ python3 {baseDir}/scripts/csv_analyze.py stats data.csv
 
 ### 2. 灵活筛选（filter）
 ```bash
-python3 {baseDir}/scripts/csv_analyze.py filter data.csv --where "amount>1000" --output big_orders.csv
+python3 {baseDir}/（请参考skill目录中的脚本文件） filter data.csv --where "amount>1000" --output big_orders.csv
 ```
 
 支持比较运算符（`>`、`<`、`>=`、`<=`、`==`、`!=`），可将筛选结果导出为CSV。
@@ -86,8 +86,8 @@ python3 {baseDir}/scripts/csv_analyze.py filter data.csv --where "amount>1000" -
 **输入**: 用户提供灵活筛选（filter）所需的指令和必要参数。
 ### 3. Top/Bottom N
 ```bash
-python3 {baseDir}/scripts/csv_analyze.py top data.csv --column revenue --n 10
-python3 {baseDir}/scripts/csv_analyze.py bottom data.csv --column revenue --n 5
+python3 {baseDir}/（请参考skill目录中的脚本文件） top data.csv --column revenue --n 10
+python3 {baseDir}/（请参考skill目录中的脚本文件） bottom data.csv --column revenue --n 5
 ```
 
 按指定列取前N或后N行。
@@ -97,7 +97,7 @@ python3 {baseDir}/scripts/csv_analyze.py bottom data.csv --column revenue --n 5
 
 ### 4. 异常检测（anomalies）
 ```bash
-python3 {baseDir}/scripts/csv_analyze.py anomalies data.csv --column price
+python3 {baseDir}/（请参考skill目录中的脚本文件） anomalies data.csv --column price
 ```
 
 基于z-score检测超出2σ（2倍标准差）的值。
@@ -107,7 +107,7 @@ python3 {baseDir}/scripts/csv_analyze.py anomalies data.csv --column price
 
 ### 5. 分组聚合（group）
 ```bash
-python3 {baseDir}/scripts/csv_analyze.py group data.csv --by category --agg "sum:amount" "count:id"
+python3 {baseDir}/（请参考skill目录中的脚本文件） group data.csv --by category --agg "sum:amount" "count:id"
 ```
 
 按指定列分组，支持 `sum`、`count` 等多种聚合函数，可同时指定多个聚合。
@@ -151,7 +151,7 @@ pandas很强大，但：
 ### 示例1：快速统计
 
 ```bash
-python3 {baseDir}/scripts/csv_analyze.py stats orders.csv
+python3 {baseDir}/（请参考skill目录中的脚本文件） stats orders.csv
 # 输出：
 # 行数: 1500
 # 列: order_id(text, 1500 unique), amount(numeric, min=10.5, max=9999.0, mean=456.78),
@@ -161,21 +161,21 @@ python3 {baseDir}/scripts/csv_analyze.py stats orders.csv
 ### 示例2：筛选大额订单并导出
 
 ```bash
-python3 {baseDir}/scripts/csv_analyze.py filter orders.csv --where "amount>1000" --output big_orders.csv
+python3 {baseDir}/（请参考skill目录中的脚本文件） filter orders.csv --where "amount>1000" --output big_orders.csv
 # 输出：筛选出87行，已导出到 big_orders.csv
 ```
 
 ### 示例3：取销售额前10
 
 ```bash
-python3 {baseDir}/scripts/csv_analyze.py top orders.csv --column amount --n 10
+python3 {baseDir}/（请参考skill目录中的脚本文件） top orders.csv --column amount --n 10
 # 输出：amount最大的10行记录
 ```
 
 ### 示例4：检测价格异常
 
 ```bash
-python3 {baseDir}/scripts/csv_analyze.py anomalies orders.csv --column amount
+python3 {baseDir}/（请参考skill目录中的脚本文件） anomalies orders.csv --column amount
 # 输出：超出2σ的异常值，共23行
 # 例如：amount=9999.0（z-score=3.8），amount=5.0（z-score=-2.5）
 ```
@@ -183,7 +183,7 @@ python3 {baseDir}/scripts/csv_analyze.py anomalies orders.csv --column amount
 ### 示例5：按类别分组聚合
 
 ```bash
-python3 {baseDir}/scripts/csv_analyze.py group orders.csv --by category --agg "sum:amount" "count:order_id"
+python3 {baseDir}/（请参考skill目录中的脚本文件） group orders.csv --by category --agg "sum:amount" "count:order_id"
 # 输出：
 # category=electronics, sum:amount=125000.50, count:order_id=320
 # category=clothing, sum:amount=45000.20, count:order_id=180
@@ -193,8 +193,8 @@ python3 {baseDir}/scripts/csv_analyze.py group orders.csv --by category --agg "s
 ### 示例6：多条件组合（先filter再stats）
 
 ```bash
-python3 {baseDir}/scripts/csv_analyze.py filter orders.csv --where "amount>500" --output high_value.csv
-python3 {baseDir}/scripts/csv_analyze.py stats high_value.csv
+python3 {baseDir}/（请参考skill目录中的脚本文件） filter orders.csv --where "amount>500" --output high_value.csv
+python3 {baseDir}/（请参考skill目录中的脚本文件） stats high_value.csv
 # 输出：高价值订单的统计概况
 ```
 

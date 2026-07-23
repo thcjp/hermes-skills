@@ -69,25 +69,25 @@ pricing_model: "per_use"
 | 技术支持 | 社区 | 专属 | 工单响应 |
 ### 能力项
 
-执行能力项操作,处理用户输入并返回结果。
+执行能力项,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供能力项所需的参数和指令。
+**输入**: 用户提供能力项相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回能力项的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`能力项`相关配置参数进行设置
 ### 设计思维引导
 
-执行设计思维引导操作,处理用户输入并返回结果。
+执行设计思维引导,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供设计思维引导所需的参数和指令。
+**输入**: 用户提供设计思维引导相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回设计思维引导的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`设计思维引导`相关配置参数进行设置
 ### 字体选择指导
 
-执行字体选择指导操作,处理用户输入并返回结果。
+执行字体选择指导,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供字体选择指导所需的参数和指令。
+**输入**: 用户提供字体选择指导相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回字体选择指导的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`字体选择指导`相关配置参数进行设置
@@ -139,7 +139,7 @@ pricing_model: "per_use"
 
 ```bash
 # 批量生成组件
-python3 scripts/generate_components.py \
+python3 （请参考skill目录中的脚本文件） \
   --config components.yaml \
   --output ./src/components/ \
   --framework react \
@@ -199,7 +199,7 @@ python3 scripts/generate_components.py \
 
 ```bash
 # 可访问性检查
-python3 scripts/a11y_check.py \
+python3 （请参考skill目录中的脚本文件） \
   --input ./src/ \
   --standard wcag2.1-aa \
   --output ./reports/a11y_report.md \
@@ -221,7 +221,7 @@ export FRONTEND_DESIGN_LICENSE="your_license_key"
 
 ```bash
 # 生成完整设计系统
-python3 scripts/generate_design_system.py \
+python3 （请参考skill目录中的脚本文件） \
   --brand "企业品牌" \
   --tone "精致奢华" \
   --output ./design-system/ \
@@ -231,7 +231,7 @@ python3 scripts/generate_design_system.py \
 ### 第三步:批量生成组件
 
 ```bash
-python3 scripts/generate_components.py \
+python3 （请参考skill目录中的脚本文件） \
   --config components.yaml \
   --output ./src/components/ \
   --storybook
@@ -242,8 +242,8 @@ python3 scripts/generate_components.py \
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | frontend-design-anthropic处理的内容输入 |,  |
+| content | string | 否 | frontend-design-anthropic处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -252,9 +252,9 @@ python3 scripts/generate_components.py \
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "anthropic 相关配置参数",
+    result: "anthropic 相关配置参数",
+    result: "anthropic 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

@@ -139,7 +139,7 @@ suggested_price: 99.9
 公司行政需向多个部门群组同时推送放假通知,避免逐群发送。
 
 ```bash
-python3 {SKILL_DIR}/scripts/telegram_broadcast.py \
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） \
     --bot "company_bot" \
     --targets "研发群,市场群,财务群,行政群" \
     --message "【放假通知】2026年国庆假期为10月1日至10月7日,10月8日正常上班。请各部门提前安排好工作。" \
@@ -178,7 +178,7 @@ python3 {SKILL_DIR}/scripts/telegram_broadcast.py \
 团队希望每天早上 9:50 自动在群组中推送站会提醒。
 
 ```bash
-python3 {SKILL_DIR}/scripts/telegram_schedule.py \
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） \
     --bot "team_bot" \
     --target "研发群" \
     --time "09:50" \
@@ -193,13 +193,13 @@ python3 {SKILL_DIR}/scripts/telegram_schedule.py \
 **定时任务管理**:
 
 ```bash
-python3 {SKILL_DIR}/scripts/telegram_schedule.py --list
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --list
 
-python3 {SKILL_DIR}/scripts/telegram_schedule.py --pause task_id_001
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --pause task_id_001
 
-python3 {SKILL_DIR}/scripts/telegram_schedule.py --resume task_id_001
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --resume task_id_001
 
-python3 {SKILL_DIR}/scripts/telegram_schedule.py --delete task_id_001
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --delete task_id_001
 ```
 
 ## 不适用场景
@@ -242,9 +242,9 @@ messaging:
 
 ### 第二步:验证多 Bot 配置
 ```bash
-python3 {SKILL_DIR}/scripts/telegram_status.py --all
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --all
 
-python3 {SKILL_DIR}/scripts/telegram_status.py --bot "dev_team_bot"
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --bot "dev_team_bot"
 ```
 
 **状态输出示例**:
@@ -262,13 +262,13 @@ Bot 状态总览
 
 ### 第三步:开始使用高级功能
 ```bash
-python3 {SKILL_DIR}/scripts/telegram_push.py \
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） \
     --bot "dev_team_bot" \
     --target "研发群" \
     --message "版本 v2.1.0 已发布,请更新测试。" \
     --format markdown
 
-python3 {SKILL_DIR}/scripts/telegram_broadcast.py \
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） \
     --bot "company_bot" \
     --targets "研发群,市场群" \
     --message "公司年会定于1月20日举办,请各部门准备节目。"
@@ -319,7 +319,7 @@ webhooks:
 大量群组广播时,分批发送避免触发 Telegram 速率限制:
 
 ```bash
-python3 {SKILL_DIR}/scripts/telegram_broadcast.py \
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） \
     --bot "company_bot" \
     --targets-file "all_groups.txt" \
     --message "通知内容" \
@@ -331,17 +331,17 @@ python3 {SKILL_DIR}/scripts/telegram_broadcast.py \
 广播、消息删除、成员踢出等敏感操作务必记录审计日志:
 
 ```bash
-python3 {SKILL_DIR}/scripts/telegram_audit.py --log /var/log/telegram_audit.log \
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --log /var/log/telegram_audit.log \
     --from "2026-07-01" --to "2026-07-18"
 
-python3 {SKILL_DIR}/scripts/telegram_audit.py --action "broadcast" --limit 50
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --action "broadcast" --limit 50
 ```
 
 ### 4. 消息模板统一管理
 常用消息使用模板管理,确保格式一致:
 
 ```bash
-python3 {SKILL_DIR}/scripts/telegram_push.py \
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） \
     --bot "dev_team_bot" \
     --target "研发群" \
     --template "release_notify" \
@@ -362,7 +362,7 @@ python3 {SKILL_DIR}/scripts/telegram_push.py \
 **A**: 专业版为每个 Bot 维护独立身份标识。归档记录与审计日志中会标注消息来源 Bot 名称,便于追溯:
 
 ```bash
-python3 {SKILL_DIR}/scripts/telegram_archive.py --search "关键词" --show-source
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --search "关键词" --show-source
 ```
 
 ### Q2: 广播任务部分群组失败怎么办?
@@ -374,17 +374,17 @@ python3 {SKILL_DIR}/scripts/telegram_archive.py --search "关键词" --show-sour
 查看广播报告中的失败列表,针对性修复后重试:
 
 ```bash
-python3 {SKILL_DIR}/scripts/telegram_broadcast.py --retry task_id_001
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --retry task_id_001
 ```
 
 ### Q3: 定时任务如何管理?
 **A**: 专业版提供完整的定时任务管理:
 
 ```bash
-python3 {SKILL_DIR}/scripts/telegram_schedule.py --list          # 查看所有任务
-python3 {SKILL_DIR}/scripts/telegram_schedule.py --pause <id>    # 暂停任务
-python3 {SKILL_DIR}/scripts/telegram_schedule.py --resume <id>   # 恢复任务
-python3 {SKILL_DIR}/scripts/telegram_schedule.py --delete <id>   # 删除任务
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --list          # 查看所有任务
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --pause <id>    # 暂停任务
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --resume <id>   # 恢复任务
+python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --delete <id>   # 删除任务
 ```
 
 ### Q4: 消息归档占用空间过大怎么办?

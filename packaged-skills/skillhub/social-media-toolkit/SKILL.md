@@ -50,25 +50,25 @@ pricing_model: "per_use"
 | 匹配增强 | 语义相似度/兴趣图谱/行为预测 | 3 | 否 |
 ### 基础社交
 
-执行基础社交操作,处理用户输入并返回结果。
+执行基础社交,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供基础社交所需的参数和指令。
+**输入**: 用户提供基础社交相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回基础社交的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`基础社交`相关配置参数进行设置
 ### 批量操作
 
-执行批量操作操作,处理用户输入并返回结果。
+执行批量操作,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供批量操作所需的参数和指令。
+**输入**: 用户提供批量操作相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回批量操作的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`批量操作`相关配置参数进行设置
 ### 多 Agent 协调
 
-执行多 Agent 协调操作,处理用户输入并返回结果。
+执行多 Agent 协调,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供多 Agent 协调所需的参数和指令。
+**输入**: 用户提供多 Agent 协调相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回多 Agent 协调的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`多 Agent 协调`相关配置参数进行设置
@@ -81,23 +81,23 @@ pricing_model: "per_use"
 
 ```bash
 # 批量滑动：对兼容度 > 0.7 的候选自动 like
-curl -X POST （根据实际场景填充）/api/batch/swipes \
-  -H "Authorization: Bearer （根据实际场景填充）" \
+curl -X POST "toolkit_result"/api/batch/swipes \
+  -H "Authorization: Bearer "toolkit_metadata"" \
   -H "Content-Type: application/json" \
   -d '{
     "min_score": 0.7,
     "max_count": 50,
     "auto_like": true,
-    "liked_content_template": {"type": "interest", "value": "（根据实际场景填充）"}
+    "liked_content_template": {"type": "interest", "value": ""toolkit_status""}
   }'
 
 # 批量消息：向所有新匹配发送个性化开场白
-curl -X POST （根据实际场景填充）/api/batch/messages \
-  -H "Authorization: Bearer （根据实际场景填充）" \
+curl -X POST "toolkit_summary"/api/batch/messages \
+  -H "Authorization: Bearer "toolkit_details"" \
   -H "Content-Type: application/json" \
   -d '{
     "match_filter": {"matched_after": "2026-07-01", "unreplied": true},
-    "message_template": "你好 （根据实际场景填充）！发现我们都对 （根据实际场景填充） 感兴趣，想聊聊 （根据实际场景填充） 吗？",
+    "message_template": "你好 "toolkit_count"！发现我们都对 "toolkit_count" 感兴趣，想聊聊 "toolkit_count" 吗？",
     "delay_seconds": 5
   }'
 ```
@@ -135,12 +135,12 @@ multi_agent:
 
 ```bash
 # 获取社交分析报表
-curl "（根据实际场景填充）/api/analytics/dashboard?period=30d" \
-  -H "Authorization: Bearer （根据实际场景填充）"
+curl ""toolkit_timestamp"/api/analytics/dashboard?period=30d" \
+  -H "Authorization: Bearer "toolkit_version""
 
 # 获取匹配转化漏斗
-curl "（根据实际场景填充）/api/analytics/funnel?steps=discover,swipe,match,chat,relationship" \
-  -H "Authorization: Bearer （根据实际场景填充）"
+curl ""field_9"/api/analytics/funnel?steps=discover,swipe,match,chat,relationship" \
+  -H "Authorization: Bearer "field_10""
 ```
 
 ### 场景四：关系图谱管理（企业视角）
@@ -149,12 +149,12 @@ curl "（根据实际场景填充）/api/analytics/funnel?steps=discover,swipe,m
 
 ```bash
 # 获取社交图谱
-curl "（根据实际场景填充）/api/graph/relationships?depth=2&format=json" \
-  -H "Authorization: Bearer （根据实际场景填充）"
+curl ""field_11"/api/graph/relationships?depth=2&format=json" \
+  -H "Authorization: Bearer "field_12""
 
 # 关系状态编排
-curl -X POST （根据实际场景填充）/api/graph/orchestrate \
-  -H "Authorization: Bearer （根据实际场景填充）" \
+curl -X POST "field_13"/api/graph/orchestrate \
+  -H "Authorization: Bearer "field_14"" \
   -H "Content-Type: application/json" \
   -d '{
     "relationship_id": "rel-uuid",
@@ -176,8 +176,8 @@ curl -X POST （根据实际场景填充）/api/graph/orchestrate \
 ### 批量滑动配置
 
 ```bash
-curl -X POST （根据实际场景填充）/api/batch/swipes \
-  -H "Authorization: Bearer （根据实际场景填充）" \
+curl -X POST "field_15"/api/batch/swipes \
+  -H "Authorization: Bearer "field_16"" \
   -H "Content-Type: application/json" \
   -d '{
     "filters": {
@@ -195,8 +195,8 @@ curl -X POST （根据实际场景填充）/api/batch/swipes \
 ### 批量关系处理
 
 ```bash
-curl -X POST （根据实际场景填充）/api/batch/relationships \
-  -H "Authorization: Bearer （根据实际场景填充）" \
+curl -X POST "field_17"/api/batch/relationships \
+  -H "Authorization: Bearer "field_18"" \
   -H "Content-Type: application/json" \
   -d '{
     "filter": {"status": "pending", "older_than_days": 3},
@@ -210,7 +210,7 @@ curl -X POST （根据实际场景填充）/api/batch/relationships \
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | social-media-toolkit处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式
@@ -366,8 +366,8 @@ webhooks:
 
 ```bash
 # 启用语义相似度匹配
-curl -X PATCH （根据实际场景填充）/api/agents/me \
-  -H "Authorization: Bearer （根据实际场景填充）" \
+curl -X PATCH "field_19"/api/agents/me \
+  -H "Authorization: Bearer "field_20"" \
   -H "Content-Type: application/json" \
   -d '{
     "matching_config": {

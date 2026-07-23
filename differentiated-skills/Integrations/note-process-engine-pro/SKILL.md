@@ -399,7 +399,7 @@ note_process_engine.py import-from-notion \
 # 定时报告推送到企业微信群
 note_process_engine.py schedule add --cron "0 9 * * 1" \
   --task smart-summary --dbs research-main \
-  --notify wecom:https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxx
+  --notify wecom:https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=xxx
 ```
 
 ## 版本升级迁移指南

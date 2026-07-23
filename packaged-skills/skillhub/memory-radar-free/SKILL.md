@@ -59,13 +59,13 @@ tags:
 
 ```bash
 # 扫描全部记忆文件（本地模式）
-python3 scripts/memory-scan.py
+python3 （请参考skill目录中的脚本文件）
 
 # 扫描指定文件
-python3 scripts/memory-scan.py --file memory/2026-07-18.md
+python3 （请参考skill目录中的脚本文件） --file memory/2026-07-18.md
 
 # JSON输出（用于集成）
-python3 scripts/memory-scan.py --json
+python3 （请参考skill目录中的脚本文件） --json
 ```
 
 ### 第二步：分析扫描报告
@@ -77,12 +77,12 @@ python3 scripts/memory-scan.py --json
 对于MEDIUM及以上威胁，系统会询问是否隔离。确认后执行隔离操作：
 
 ```bash
-python3 scripts/quarantine.py memory/2026-07-18.md 42
+python3 （请参考skill目录中的脚本文件） memory/2026-07-18.md 42
 ```
 
 如需恢复误隔离内容：
 ```bash
-python3 scripts/quarantine.py --restore memory/2026-07-18.md 42
+python3 （请参考skill目录中的脚本文件） --restore memory/2026-07-18.md 42
 ```
 
 #
@@ -102,7 +102,7 @@ python3 scripts/quarantine.py --restore memory/2026-07-18.md 42
 
 **执行命令：**
 ```bash
-python3 scripts/memory-scan.py
+python3 （请参考skill目录中的脚本文件）
 ```
 
 **输出：**
@@ -122,7 +122,7 @@ python3 scripts/memory-scan.py
 建议处置：审查 memory/2026-07-15.md:42
 ```
 
-**后续操作：** 用户确认后执行 `python3 scripts/quarantine.py memory/2026-07-15.md 42` 隔离威胁行。
+**后续操作：** 用户确认后执行 `python3 （请参考skill目录中的脚本文件） memory/2026-07-15.md 42` 隔离威胁行。
 
 ## FAQ
 
@@ -130,7 +130,7 @@ python3 scripts/memory-scan.py
 不会。免费版使用纯本地模式，零网络请求，所有检测在本地完成，不会将任何内容发送到外部服务器。
 
 **Q2：隔离后能恢复吗？**
-可以。隔离前系统自动备份原文件到 `.memory-radar/quarantine/` 目录，用 `python3 scripts/quarantine.py --restore <file> <line>` 命令即可恢复原始内容。
+可以。隔离前系统自动备份原文件到 `.memory-radar/quarantine/` 目录，用 `python3 （请参考skill目录中的脚本文件） --restore <file> <line>` 命令即可恢复原始内容。
 
 **Q3：凭证检测能覆盖所有类型的密钥吗？**
 凭证检测基于已知前缀模式（sk-/AKIA/ghp_/xoxb-等），可覆盖主流云服务和API平台的密钥格式。对于自定义格式或无固定前缀的密码，可能无法检测到，建议结合人工审查。

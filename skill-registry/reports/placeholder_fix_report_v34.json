@@ -1,0 +1,2474 @@
+{
+  "files_scanned": 995,
+  "files_modified": 411,
+  "placeholder_fixed": 884,
+  "template_fixed": 1271,
+  "details": [
+    {
+      "slug": "ace-music-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ace-music-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 1
+    },
+    {
+      "slug": "actor-identifier",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\actor-identifier\\SKILL.md",
+      "placeholder_changes": 1,
+      "template_changes": 6
+    },
+    {
+      "slug": "admapix",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\admapix\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 1
+    },
+    {
+      "slug": "admapix-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\admapix-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 1
+    },
+    {
+      "slug": "agent-browser-assistant",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\agent-browser-assistant\\SKILL.md",
+      "placeholder_changes": 12,
+      "template_changes": 0
+    },
+    {
+      "slug": "agent-browser-automation",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\agent-browser-automation\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "agent-browser-cli",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\agent-browser-cli\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "agent-browser-stagehand",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\agent-browser-stagehand\\SKILL.md",
+      "placeholder_changes": 7,
+      "template_changes": 0
+    },
+    {
+      "slug": "agent-chat",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\agent-chat\\SKILL.md",
+      "placeholder_changes": 13,
+      "template_changes": 0
+    },
+    {
+      "slug": "agent-commercial-contract",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\agent-commercial-contract\\SKILL.md",
+      "placeholder_changes": 16,
+      "template_changes": 0
+    },
+    {
+      "slug": "agent-framework-azure-ai-py",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\agent-framework-azure-ai-py\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "agent-group",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\agent-group\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "agent-telegram",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\agent-telegram\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "agent-telegram-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\agent-telegram-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "agentvibes-content-skill",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\agentvibes-content-skill\\SKILL.md",
+      "placeholder_changes": 11,
+      "template_changes": 0
+    },
+    {
+      "slug": "agentvibes-skill",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\agentvibes-skill\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "agentvibes-voice-skill",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\agentvibes-voice-skill\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 8
+    },
+    {
+      "slug": "agentvibes-voice-skill-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\agentvibes-voice-skill-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 3
+    },
+    {
+      "slug": "ai-image-gen",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ai-image-gen\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "ai-image-gen-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ai-image-gen-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 3
+    },
+    {
+      "slug": "ai-kujiale-design",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ai-kujiale-design\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 3
+    },
+    {
+      "slug": "ai-kujiale-design-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ai-kujiale-design-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "aic-dashboard",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\aic-dashboard\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "aic-dashboard-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\aic-dashboard-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "alephnet-node-manager",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\alephnet-node-manager\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "alpha-feed-creator",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\alpha-feed-creator\\SKILL.md",
+      "placeholder_changes": 1,
+      "template_changes": 6
+    },
+    {
+      "slug": "analytics-dashboard",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\analytics-dashboard\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "anthropics-frontend-design",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\anthropics-frontend-design\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "anthropics-frontend-design-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\anthropics-frontend-design-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 1
+    },
+    {
+      "slug": "anygen-diagram",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\anygen-diagram\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "anygen-diagram-generator",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\anygen-diagram-generator\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "anygen-diagram-generator-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\anygen-diagram-generator-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "api-connect-hub",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\api-connect-hub\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "api-development",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\api-development\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "api-doc-generator",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\api-doc-generator\\SKILL.md",
+      "placeholder_changes": 1,
+      "template_changes": 0
+    },
+    {
+      "slug": "api-doc-writer",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\api-doc-writer\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "api-doc-writer-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\api-doc-writer-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "api-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\api-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "api-gateway",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\api-gateway\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "api-gateway-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\api-gateway-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "api-generator",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\api-generator\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "api-generator-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\api-generator-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "api-integration",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\api-integration\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "api-integration-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\api-integration-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "api-magic-gen",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\api-magic-gen\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "api-scaffold-gen",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\api-scaffold-gen\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "api-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\api-toolkit\\SKILL.md",
+      "placeholder_changes": 1,
+      "template_changes": 0
+    },
+    {
+      "slug": "art",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\art\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "atlas-admin-console",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\atlas-admin-console\\SKILL.md",
+      "placeholder_changes": 6,
+      "template_changes": 6
+    },
+    {
+      "slug": "audio-upload-aioz-stream",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\audio-upload-aioz-stream\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "audio-upload-aioz-stream-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\audio-upload-aioz-stream-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "auto-workflow",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\auto-workflow\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "aws",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\aws\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "aws-agentcore-langgraph",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\aws-agentcore-langgraph\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "aws-agentcore-langgraph-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\aws-agentcore-langgraph-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "aws-infra-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\aws-infra-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "aws-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\aws-toolkit\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "azure",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\azure\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "azure-cli",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\azure-cli\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "azure-infra",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\azure-infra\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "azure-infra-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\azure-infra-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "baidu-netdisk-skills-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\baidu-netdisk-skills-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 5
+    },
+    {
+      "slug": "baoyu-md-formatter",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\baoyu-md-formatter\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "bilibili-all-in-one",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\bilibili-all-in-one\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "bilibili-all-in-one-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\bilibili-all-in-one-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "bookmark-smart-hub",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\bookmark-smart-hub\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "browser-automation",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\browser-automation\\SKILL.md",
+      "placeholder_changes": 7,
+      "template_changes": 0
+    },
+    {
+      "slug": "browser-automation-v2",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\browser-automation-v2\\SKILL.md",
+      "placeholder_changes": 16,
+      "template_changes": 0
+    },
+    {
+      "slug": "bsession",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\bsession\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "calendar",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\calendar\\SKILL.md",
+      "placeholder_changes": 8,
+      "template_changes": 0
+    },
+    {
+      "slug": "can-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\can-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 3
+    },
+    {
+      "slug": "canvas-json-handler",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\canvas-json-handler\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "cashu-emoji",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\cashu-emoji\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "chart-craft",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\chart-craft\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "chart-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\chart-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 5
+    },
+    {
+      "slug": "china-news",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\china-news\\SKILL.md",
+      "placeholder_changes": 13,
+      "template_changes": 0
+    },
+    {
+      "slug": "claude-code-delegate",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\claude-code-delegate\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "claude-code-runner",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\claude-code-runner\\SKILL.md",
+      "placeholder_changes": 8,
+      "template_changes": 0
+    },
+    {
+      "slug": "claude-tmux",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\claude-tmux\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "clawddocs",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\clawddocs\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "cloud",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\cloud\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "cloud-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\cloud-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "cloud-manager",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\cloud-manager\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "code",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\code\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "code-analysis-skills",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\code-analysis-skills\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "comfyui-painter",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\comfyui-painter\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "comfyui-painter-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\comfyui-painter-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 3
+    },
+    {
+      "slug": "communication-skill-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\communication-skill-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "context-driven-development",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\context-driven-development\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "cron-scheduler-setup",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\cron-scheduler-setup\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "cron-setup-guide",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\cron-setup-guide\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "csv-analyzer-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\csv-analyzer-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 3
+    },
+    {
+      "slug": "csv-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\csv-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 3
+    },
+    {
+      "slug": "csv-insight",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\csv-insight\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "csv-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\csv-toolkit\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "daily-report-writer",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\daily-report-writer\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "dashboard-analytics-tool",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\dashboard-analytics-tool\\SKILL.md",
+      "placeholder_changes": 11,
+      "template_changes": 0
+    },
+    {
+      "slug": "data",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\data\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "db",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\db\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "decision-architect",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\decision-architect\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "decision-architect-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\decision-architect-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "deepseek-chat",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\deepseek-chat\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "design",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\design\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "design-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\design-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "design-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\design-toolkit\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "diagram-gen",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\diagram-gen\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "diagram-generator",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\diagram-generator\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 3
+    },
+    {
+      "slug": "diagram-generator-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\diagram-generator-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "discord-chat-manager",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\discord-chat-manager\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "discord-community-hub",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\discord-community-hub\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "discord-hub",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\discord-hub\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "discord-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\discord-toolkit\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "dlazy-audio",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\dlazy-audio\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "dlazy-audio-generate",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\dlazy-audio-generate\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "dlazy-gen",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\dlazy-gen\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 2
+    },
+    {
+      "slug": "dns",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\dns\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "dns-config",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\dns-config\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "dns-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\dns-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "dns-networking",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\dns-networking\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "doc-guard",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\doc-guard\\SKILL.md",
+      "placeholder_changes": 2,
+      "template_changes": 4
+    },
+    {
+      "slug": "doc-parse",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\doc-parse\\SKILL.md",
+      "placeholder_changes": 11,
+      "template_changes": 0
+    },
+    {
+      "slug": "docker",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\docker\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "docker-ctl",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\docker-ctl\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "dogecoin-node",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\dogecoin-node\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "doubao-chat",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\doubao-chat\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "elite-frontend",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\elite-frontend\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "elite-longterm-memory-local",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\elite-longterm-memory-local\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "elite-longterm-memory-local-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\elite-longterm-memory-local-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "email-163",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\email-163\\SKILL.md",
+      "placeholder_changes": 5,
+      "template_changes": 0
+    },
+    {
+      "slug": "email-163-com",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\email-163-com\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "email-163-com-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\email-163-com-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "email-daily-summary",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\email-daily-summary\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "email-daily-summary-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\email-daily-summary-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "email-gmail-outlook",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\email-gmail-outlook\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "email-gmail-outlook-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\email-gmail-outlook-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "email-skill",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\email-skill\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "email-skill-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\email-skill-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "email-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\email-toolkit\\SKILL.md",
+      "placeholder_changes": 9,
+      "template_changes": 2
+    },
+    {
+      "slug": "encoding-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\encoding-toolkit\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "evolution-engine",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\evolution-engine\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "evolution-engine-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\evolution-engine-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "excel-craft",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\excel-craft\\SKILL.md",
+      "placeholder_changes": 1,
+      "template_changes": 4
+    },
+    {
+      "slug": "excel-expert",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\excel-expert\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "excel-studio",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\excel-studio\\SKILL.md",
+      "placeholder_changes": 8,
+      "template_changes": 0
+    },
+    {
+      "slug": "expanso-csv-to-json",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\expanso-csv-to-json\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "expanso-json-to-yaml",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\expanso-json-to-yaml\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 2
+    },
+    {
+      "slug": "expanso-json-validate",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\expanso-json-validate\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "expanso-log-sanitize",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\expanso-log-sanitize\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "expanso-xml-to-json",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\expanso-xml-to-json\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "feed-digest",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\feed-digest\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "feishu-card-builder",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\feishu-card-builder\\SKILL.md",
+      "placeholder_changes": 8,
+      "template_changes": 0
+    },
+    {
+      "slug": "feishu-doc-write",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\feishu-doc-write\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "feishu-file-sender",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\feishu-file-sender\\SKILL.md",
+      "placeholder_changes": 1,
+      "template_changes": 0
+    },
+    {
+      "slug": "figma-design",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\figma-design\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "figma-design-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\figma-design-paid\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "figma-tw-designer",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\figma-tw-designer\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "file-browser-tool",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\file-browser-tool\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "finance-acct",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\finance-acct\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "finance-radar",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\finance-radar\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "finance-report",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\finance-report\\SKILL.md",
+      "placeholder_changes": 1,
+      "template_changes": 4
+    },
+    {
+      "slug": "finance-report-analyzer",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\finance-report-analyzer\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 6
+    },
+    {
+      "slug": "finance-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\finance-toolkit\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "financial-literacy-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\financial-literacy-paid\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "free-ride",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\free-ride\\SKILL.md",
+      "placeholder_changes": 7,
+      "template_changes": 0
+    },
+    {
+      "slug": "free-web-search",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\free-web-search\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "frontend-design-anthropic",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\frontend-design-anthropic\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "frontend-design-v3",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\frontend-design-v3\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "game-asset-gen",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\game-asset-gen\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "game-developer-skill",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\game-developer-skill\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "generate-presentation",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\generate-presentation\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "gif-whatsapp",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\gif-whatsapp\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "git-essentials",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\git-essentials\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "git-helper",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\git-helper\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "git-workflow-cn",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\git-workflow-cn\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "git-workflow-cn-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\git-workflow-cn-paid\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "git-workflows-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\git-workflows-paid\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "github",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\github\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "github-dev-standard",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\github-dev-standard\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "github-development-standard",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\github-development-standard\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "github-manager",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\github-manager\\SKILL.md",
+      "placeholder_changes": 1,
+      "template_changes": 0
+    },
+    {
+      "slug": "github-repos",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\github-repos\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "glitch-dashboard",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\glitch-dashboard\\SKILL.md",
+      "placeholder_changes": 8,
+      "template_changes": 0
+    },
+    {
+      "slug": "go-security-vulnerability",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\go-security-vulnerability\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "golang-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\golang-toolkit\\SKILL.md",
+      "placeholder_changes": 7,
+      "template_changes": 6
+    },
+    {
+      "slug": "google-fonts",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\google-fonts\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "google-search",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\google-search\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "grain-crawler",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\grain-crawler\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "graph-knowledge-base",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\graph-knowledge-base\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "graph-query",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\graph-query\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "grok-image",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\grok-image\\SKILL.md",
+      "placeholder_changes": 1,
+      "template_changes": 2
+    },
+    {
+      "slug": "heygen-tts",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\heygen-tts\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "html-coder-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\html-coder-paid\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "hugo-blog",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\hugo-blog\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "image",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\image\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "interview-simulator",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\interview-simulator\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "iris-formatter",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\iris-formatter\\SKILL.md",
+      "placeholder_changes": 8,
+      "template_changes": 6
+    },
+    {
+      "slug": "java",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\java\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "java-dev-manual",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\java-dev-manual\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "java-development-manual",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\java-development-manual\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "java-reviewer",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\java-reviewer\\SKILL.md",
+      "placeholder_changes": 12,
+      "template_changes": 6
+    },
+    {
+      "slug": "javascript-sdk",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\javascript-sdk\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "javascript-sdk-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\javascript-sdk-paid\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "javascript-skills-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\javascript-skills-paid\\SKILL.md",
+      "placeholder_changes": 1,
+      "template_changes": 6
+    },
+    {
+      "slug": "javascript-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\javascript-toolkit\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "jira-api",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\jira-api\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "jira-api-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\jira-api-toolkit\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 6
+    },
+    {
+      "slug": "jira-flow-skill",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\jira-flow-skill\\SKILL.md",
+      "placeholder_changes": 6,
+      "template_changes": 6
+    },
+    {
+      "slug": "jira-integration-skill",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\jira-integration-skill\\SKILL.md",
+      "placeholder_changes": 11,
+      "template_changes": 0
+    },
+    {
+      "slug": "jira-pat-manager",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\jira-pat-manager\\SKILL.md",
+      "placeholder_changes": 12,
+      "template_changes": 0
+    },
+    {
+      "slug": "jira-skill-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\jira-skill-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "job-auto-apply",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\job-auto-apply\\SKILL.md",
+      "placeholder_changes": 13,
+      "template_changes": 0
+    },
+    {
+      "slug": "join-meeting-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\join-meeting-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "json",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\json\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "json-beautifier",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\json-beautifier\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "json-lint",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\json-lint\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "json-parse-engine",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\json-parse-engine\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "json-repair",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\json-repair\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "json-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\json-toolkit\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "juejin-skills",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\juejin-skills\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "key-guard",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\key-guard\\SKILL.md",
+      "placeholder_changes": 2,
+      "template_changes": 0
+    },
+    {
+      "slug": "key-vault-manager",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\key-vault-manager\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "knowledge",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\knowledge\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "knowledge-capture",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\knowledge-capture\\SKILL.md",
+      "placeholder_changes": 13,
+      "template_changes": 0
+    },
+    {
+      "slug": "knowledge-graph-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\knowledge-graph-paid\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "knowledge-graph-skill",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\knowledge-graph-skill\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "knowledge-ontology",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\knowledge-ontology\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "knowledge-ontology-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\knowledge-ontology-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "kujiale-design",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\kujiale-design\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "learn-cog-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\learn-cog-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "linear-api-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\linear-api-toolkit\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "linear-project-manager",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\linear-project-manager\\SKILL.md",
+      "placeholder_changes": 12,
+      "template_changes": 0
+    },
+    {
+      "slug": "linear-sync",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\linear-sync\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "linear-workflow-skill",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\linear-workflow-skill\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "llm-assistant-hub",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\llm-assistant-hub\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "llm-assistant-hub-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\llm-assistant-hub-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "longmemo-elite",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\longmemo-elite\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "longmemo-elite-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\longmemo-elite-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "mac-node-snapshot",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\mac-node-snapshot\\SKILL.md",
+      "placeholder_changes": 7,
+      "template_changes": 0
+    },
+    {
+      "slug": "magic-api-generate",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\magic-api-generate\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "manage-liquidity",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\manage-liquidity\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "markdown-converter-compdf",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\markdown-converter-compdf\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "market-news",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\market-news\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "md-export",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\md-export\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "media-server-control",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\media-server-control\\SKILL.md",
+      "placeholder_changes": 8,
+      "template_changes": 0
+    },
+    {
+      "slug": "meeting-note",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\meeting-note\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "memo-quickstart",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\memo-quickstart\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "memo-quickstart-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\memo-quickstart-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "merge-check-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\merge-check-paid\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "mermaid-diagram-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\mermaid-diagram-paid\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "miniprogram-development",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\miniprogram-development\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "model-routing",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\model-routing\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "model-switching",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\model-switching\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "molted-work",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\molted-work\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 6
+    },
+    {
+      "slug": "mongo-manager",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\mongo-manager\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 6
+    },
+    {
+      "slug": "mongodb",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\mongodb\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "multi-source-research",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\multi-source-research\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "music",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\music\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "music-gen-cellcog",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\music-gen-cellcog\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "news-daily-digest",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\news-daily-digest\\SKILL.md",
+      "placeholder_changes": 1,
+      "template_changes": 0
+    },
+    {
+      "slug": "node-connect",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\node-connect\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "node-connect-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\node-connect-paid\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "notion-api-skill",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\notion-api-skill\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "notion-api-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\notion-api-toolkit\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "notion-cli",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\notion-cli\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "notion-pages",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\notion-pages\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "obsidian-cli",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\obsidian-cli\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "ocean-chat-assistant",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ocean-chat-assistant\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "okx-dex-token",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\okx-dex-token\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "okx-dex-token-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\okx-dex-token-paid\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "ollama-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ollama-toolkit\\SKILL.md",
+      "placeholder_changes": 1,
+      "template_changes": 6
+    },
+    {
+      "slug": "openai-ai",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\openai-ai\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "openai-ai-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\openai-ai-paid\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "openai-whisper-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\openai-whisper-paid\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "openai-whisper-v1",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\openai-whisper-v1\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "openclaw-dashboard",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\openclaw-dashboard\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "ops-dashboard",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ops-dashboard\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "pandoc-convert-openclaw",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\pandoc-convert-openclaw\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 6
+    },
+    {
+      "slug": "pandoc-document-converter",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\pandoc-document-converter\\SKILL.md",
+      "placeholder_changes": 12,
+      "template_changes": 0
+    },
+    {
+      "slug": "paper-parse",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\paper-parse\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "parallel-ai-research",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\parallel-ai-research\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "pentest-commands",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\pentest-commands\\SKILL.md",
+      "placeholder_changes": 7,
+      "template_changes": 0
+    },
+    {
+      "slug": "pg-job-queue",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\pg-job-queue\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "photo-caption",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\photo-caption\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "photo-webcam",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\photo-webcam\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "ping-monitor",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ping-monitor\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "pipedrive-api",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\pipedrive-api\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "pipedrive-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\pipedrive-toolkit\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 6
+    },
+    {
+      "slug": "piper-tts-engine",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\piper-tts-engine\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "podcast-chaptering",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\podcast-chaptering\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "podcast-downloader-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\podcast-downloader-paid\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "podcast-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\podcast-toolkit\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "powerpoint",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\powerpoint\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "powerpoint-pptx",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\powerpoint-pptx\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "powerpoint-pptx-cn",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\powerpoint-pptx-cn\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "pptx-pdf-font-fix",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\pptx-pdf-font-fix\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "productivity-bot",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\productivity-bot\\SKILL.md",
+      "placeholder_changes": 13,
+      "template_changes": 0
+    },
+    {
+      "slug": "py",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\py\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "py-data-analyzer",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\py-data-analyzer\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "python-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\python-toolkit\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "quant-data-quality",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\quant-data-quality\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "quark-scan",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\quark-scan\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "qwen-video-analyzer",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\qwen-video-analyzer\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "reddit-research",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\reddit-research\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "reddit-research-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\reddit-research-paid\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "reminder-engine",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\reminder-engine\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "remix-api-key-auth",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\remix-api-key-auth\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "remix-auth",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\remix-auth\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "repo-reader-tool",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\repo-reader-tool\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "report",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\report\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "research-agent",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\research-agent\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "rest-api-reference",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\rest-api-reference\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "rss-digest",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\rss-digest\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "rss-feed-digest",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\rss-feed-digest\\SKILL.md",
+      "placeholder_changes": 13,
+      "template_changes": 0
+    },
+    {
+      "slug": "rss-fetcher",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\rss-fetcher\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "schedule-manager",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\schedule-manager\\SKILL.md",
+      "placeholder_changes": 9,
+      "template_changes": 0
+    },
+    {
+      "slug": "scrape-web",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\scrape-web\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "secure-api-calls",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\secure-api-calls\\SKILL.md",
+      "placeholder_changes": 5,
+      "template_changes": 0
+    },
+    {
+      "slug": "secure-api-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\secure-api-toolkit\\SKILL.md",
+      "placeholder_changes": 3,
+      "template_changes": 6
+    },
+    {
+      "slug": "security-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\security-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "self-integration",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\self-integration\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "self-integration-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\self-integration-paid\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "sequential-read",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\sequential-read\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 2
+    },
+    {
+      "slug": "slack-api",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\slack-api\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "slack-api-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\slack-api-toolkit\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "slack-crawler",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\slack-crawler\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "slack-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\slack-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "slack-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\slack-toolkit\\SKILL.md",
+      "placeholder_changes": 1,
+      "template_changes": 0
+    },
+    {
+      "slug": "smart-auto-updater",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\smart-auto-updater\\SKILL.md",
+      "placeholder_changes": 7,
+      "template_changes": 0
+    },
+    {
+      "slug": "smart-cache",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\smart-cache\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "smart-crawler",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\smart-crawler\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "smart-weekly-report",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\smart-weekly-report\\SKILL.md",
+      "placeholder_changes": 13,
+      "template_changes": 0
+    },
+    {
+      "slug": "social",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\social\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "social-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\social-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "social-media-scheduler",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\social-media-scheduler\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "social-media-scheduler-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\social-media-scheduler-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "social-media-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\social-media-toolkit\\SKILL.md",
+      "placeholder_changes": 20,
+      "template_changes": 6
+    },
+    {
+      "slug": "social-sentiment",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\social-sentiment\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "solo-research-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\solo-research-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "sql-gen",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\sql-gen\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "sql-master",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\sql-master\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "sql-query",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\sql-query\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "sqlite-lite-manager",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\sqlite-lite-manager\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "sqlite-manager",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\sqlite-manager\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "ssl-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ssl-toolkit\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "stagehand-browser-cli",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\stagehand-browser-cli\\SKILL.md",
+      "placeholder_changes": 7,
+      "template_changes": 0
+    },
+    {
+      "slug": "stock-filter",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\stock-filter\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "straker-verify",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\straker-verify\\SKILL.md",
+      "placeholder_changes": 8,
+      "template_changes": 0
+    },
+    {
+      "slug": "t-trading",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\t-trading\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "tailwindcss-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\tailwindcss-toolkit\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "tardis",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\tardis\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "task-bot-orchestrator",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\task-bot-orchestrator\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "telegram",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\telegram\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "telegram-agent-comm",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\telegram-agent-comm\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "telegram-alert",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\telegram-alert\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "telegram-messaging",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\telegram-messaging\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "telegram-messaging-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\telegram-messaging-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "telegram-msg-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\telegram-msg-toolkit\\SKILL.md",
+      "placeholder_changes": 11,
+      "template_changes": 6
+    },
+    {
+      "slug": "telegram-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\telegram-toolkit\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "text-to-sql",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\text-to-sql\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "text2sql-engine",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\text2sql-engine\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "tg-body-scan",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\tg-body-scan\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "tg-bot-builder",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\tg-bot-builder\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "timer-alert",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\timer-alert\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 6
+    },
+    {
+      "slug": "tool",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\tool\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "trading",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\trading\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "trending-feed-skill",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\trending-feed-skill\\SKILL.md",
+      "placeholder_changes": 2,
+      "template_changes": 6
+    },
+    {
+      "slug": "tts-whatsapp-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\tts-whatsapp-paid\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "typescript-skills-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\typescript-skills-paid\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 6
+    },
+    {
+      "slug": "typescript-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\typescript-toolkit\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "ui-component-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ui-component-paid\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "ui-design-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ui-design-toolkit\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "ui-ux",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ui-ux\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "ui-ux-design",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ui-ux-design\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "ui-ux-design-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ui-ux-design-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "ui-ux-developer-tool",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ui-ux-developer-tool\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "universal-translate",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\universal-translate\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "universal-translate-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\universal-translate-paid\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 6
+    },
+    {
+      "slug": "university-app",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\university-app\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "university-applications",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\university-applications\\SKILL.md",
+      "placeholder_changes": 7,
+      "template_changes": 0
+    },
+    {
+      "slug": "vector-db-manager",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\vector-db-manager\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "verify-claims",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\verify-claims\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "version-control-workflows",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\version-control-workflows\\SKILL.md",
+      "placeholder_changes": 3,
+      "template_changes": 0
+    },
+    {
+      "slug": "video",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\video\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "video-editing",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\video-editing\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "video-frames",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\video-frames\\SKILL.md",
+      "placeholder_changes": 5,
+      "template_changes": 0
+    },
+    {
+      "slug": "video-upload-stream-tool",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\video-upload-stream-tool\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "vpn-rotator",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\vpn-rotator\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "vscode-node",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\vscode-node\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "vscode-node-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\vscode-node-paid\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "vue-component-gen",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\vue-component-gen\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "vue-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\vue-toolkit\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "web-dev-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\web-dev-toolkit\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "web-notepad",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\web-notepad\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "weekly-report-writer",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\weekly-report-writer\\SKILL.md",
+      "placeholder_changes": 3,
+      "template_changes": 0
+    },
+    {
+      "slug": "weiyun-skills",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\weiyun-skills\\SKILL.md",
+      "placeholder_changes": 8,
+      "template_changes": 0
+    },
+    {
+      "slug": "weiyun-toolkit",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\weiyun-toolkit\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "whatsapp-image-send",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\whatsapp-image-send\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "whatsapp-master",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\whatsapp-master\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 2
+    },
+    {
+      "slug": "whatsapp-msg",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\whatsapp-msg\\SKILL.md",
+      "placeholder_changes": 3,
+      "template_changes": 6
+    },
+    {
+      "slug": "whatsapp-style",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\whatsapp-style\\SKILL.md",
+      "placeholder_changes": 3,
+      "template_changes": 0
+    },
+    {
+      "slug": "who-is-actor",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\who-is-actor\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "workflow",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\workflow\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "workflow-orchestrator",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\workflow-orchestrator\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "workflow-splitter",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\workflow-splitter\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "ws-excel-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ws-excel-paid\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "x-news-daily",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\x-news-daily\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "x-news-daily-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\x-news-daily-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    },
+    {
+      "slug": "xlsx-handler",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\xlsx-handler\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 4
+    },
+    {
+      "slug": "z-card-image-free",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\z-card-image-free\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 5
+    },
+    {
+      "slug": "ziptax",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ziptax\\SKILL.md",
+      "placeholder_changes": 4,
+      "template_changes": 0
+    },
+    {
+      "slug": "ziptax-paid",
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ziptax-paid\\SKILL.md",
+      "placeholder_changes": 0,
+      "template_changes": 6
+    }
+  ]
+}

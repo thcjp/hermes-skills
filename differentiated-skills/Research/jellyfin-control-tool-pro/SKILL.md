@@ -95,7 +95,7 @@ node skills/jellyfin-control/cli.js sync-play \
 #### 2. 多用户配置
 ```bash
 # 添加用户
-python scripts/user_manager.py add \
+python （请参考skill目录中的脚本文件） add \
   --name="Alice" \
   --permissions="play,search" \
   --library-filter="movies,tvshows"
@@ -107,7 +107,7 @@ node skills/jellyfin-control/cli.js switch-user "Alice"
 #### 3. 定时播放
 ```bash
 # 定时播放（闹钟模式）
-python scripts/scheduled_play.py \
+python （请参考skill目录中的脚本文件） \
   --content "morning_playlist" \
   --cron="0 7 * * 1-5" \
   --device "bedroom" \
@@ -115,7 +115,7 @@ python scripts/scheduled_play.py \
   --fade-in 60
 
 # 就寝模式
-python scripts/scheduled_play.py \
+python （请参考skill目录中的脚本文件） \
   --content "sleep_sounds" \
   --cron="0 22 * * *" \
   --device "bedroom" \
@@ -126,7 +126,7 @@ python scripts/scheduled_play.py \
 #### 4. 媒体库自动扫描
 ```bash
 # 配置自动扫描
-python scripts/library_scanner.py \
+python （请参考skill目录中的脚本文件） \
   --schedule="0 3 * * *" \
   --libraries "movies,tvshows,music" \
   --notify=true
@@ -169,7 +169,7 @@ node skills/jellyfin-control/cli.js multi-volume \
 
 ```bash
 # 配置工作日闹钟
-python scripts/scheduled_play.py \
+python （请参考skill目录中的脚本文件） \
   --content "morning_classical" \
   --cron="0 7 * * 1-5" \
   --device "bedroom" \
@@ -179,7 +179,7 @@ python scripts/scheduled_play.py \
   --auto-off 30
 
 # 周末延迟播放
-python scripts/scheduled_play.py \
+python （请参考skill目录中的脚本文件） \
   --content "weekend_jazz" \
   --cron="0 9 * * 6,0" \
   --device "bedroom" \
@@ -191,7 +191,7 @@ python scripts/scheduled_play.py \
 
 ```bash
 # 配置媒体库自动扫描
-python scripts/library_scanner.py \
+python （请参考skill目录中的脚本文件） \
   --schedule="0 3 * * *" \
   --libraries "movies,tvshows,music" \
   --scan-type "full" \
@@ -200,7 +200,7 @@ python scripts/library_scanner.py \
   --notify-email=admin@family.com
 
 # 生成媒体库报告
-python scripts/library_report.py \
+python （请参考skill目录中的脚本文件） \
   --output=library_report.md \
   --include-stats \
   --include-duplicates
@@ -334,7 +334,7 @@ analytics:
 ### API 服务模式
 ```bash
 # 启动 REST API 服务
-python scripts/api_server.py --port 8000
+python （请参考skill目录中的脚本文件） --port 8000
 
 # 播放控制
 curl -X POST http://localhost:8000/play \
@@ -374,7 +374,7 @@ node skills/jellyfin-control/cli.js multi-volume \
 ### 定时播放配置
 ```bash
 # 工作日闹钟
-python scripts/scheduled_play.py \
+python （请参考skill目录中的脚本文件） \
   --content "morning_playlist" \
   --cron="0 7 * * 1-5" \
   --device "bedroom" \
@@ -382,7 +382,7 @@ python scripts/scheduled_play.py \
   --auto-off 30
 
 # 就寝模式
-python scripts/scheduled_play.py \
+python （请参考skill目录中的脚本文件） \
   --content "sleep_sounds" \
   --cron="0 22 * * *" \
   --device "bedroom" \
@@ -394,13 +394,13 @@ python scripts/scheduled_play.py \
 ### 媒体库管理
 ```bash
 # 扫描并修复元数据
-python scripts/library_scanner.py \
+python （请参考skill目录中的脚本文件） \
   --scan-type full \
   --fix-metadata \
   --download-images
 
 # 生成媒体库报告
-python scripts/library_report.py \
+python （请参考skill目录中的脚本文件） \
   --output=report.md \
   --include-duplicates \
   --include-stats
@@ -422,13 +422,13 @@ ping each_device_ip
 ### 定时播放不执行
 ```bash
 # 检查定时任务
-python scripts/scheduled_play.py --list
+python （请参考skill目录中的脚本文件） --list
 
 # 查看任务日志
 cat ./logs/scheduled_play.log
 
 # 手动触发测试
-python scripts/scheduled_play.py --run-now --task-id=task_001
+python （请参考skill目录中的脚本文件） --run-now --task-id=task_001
 ```
 
 ### 媒体库扫描失败
@@ -437,7 +437,7 @@ python scripts/scheduled_play.py --run-now --task-id=task_001
 ls -la /media/library
 
 # 手动触发扫描
-python scripts/library_scanner.py --scan-now
+python （请参考skill目录中的脚本文件） --scan-now
 
 # 查看扫描日志
 cat ./logs/library_scan.log
@@ -446,13 +446,13 @@ cat ./logs/library_scan.log
 ### 多用户权限问题
 ```bash
 # 检查用户配置
-python scripts/user_manager.py list
+python （请参考skill目录中的脚本文件） list
 
 # 验证权限
-python scripts/user_manager.py check-permissions --user=Alice
+python （请参考skill目录中的脚本文件） check-permissions --user=Alice
 
 # 重置用户权限
-python scripts/user_manager.py reset --user=Alice
+python （请参考skill目录中的脚本文件） reset --user=Alice
 ```
 
 ## 依赖说明

@@ -97,22 +97,22 @@ suggested_price: 29.9
 
 ```bash
 # 1. 初始化工作区
-./scripts/init-workspace.sh ~/writing
+（请参考skill目录中的脚本文件） ~/writing
 
 # 2. 创建新作品
-./scripts/new-piece.sh "async-programming-guide"
+（请参考skill目录中的脚本文件） "async-programming-guide"
 
 # 3. 编辑（自动版本备份）
-./scripts/edit.sh async-programming-guide "添加异步基础概念部分"
+（请参考skill目录中的脚本文件） async-programming-guide "添加异步基础概念部分"
 
 # 4. 质量审计
-./scripts/audit.sh async-programming-guide
+（请参考skill目录中的脚本文件） async-programming-guide
 
 # 5. 列出所有版本
-./scripts/list.sh async-programming-guide
+（请参考skill目录中的脚本文件） async-programming-guide
 
 # 6. 交付（用户确认后清理）
-./scripts/cleanup.sh async-programming-guide
+（请参考skill目录中的脚本文件） async-programming-guide
 ```
 
 ### 场景二：长篇内容的版本管理
@@ -121,17 +121,17 @@ suggested_price: 29.9
 
 ```bash
 # 编辑时自动创建版本备份
-./scripts/edit.sh long-article "精炼第三章的逻辑表述"
+（请参考skill目录中的脚本文件） long-article "精炼第三章的逻辑表述"
 
 # 查看历史版本
-./scripts/list.sh long-article
+（请参考skill目录中的脚本文件） long-article
 # 输出:
 # v1.0 - 2026-07-15 初稿
 # v1.1 - 2026-07-16 修订第二章
 # v1.2 - 2026-07-18 精炼第三章
 
 # 回滚至历史版本
-./scripts/restore.sh long-article v1.1
+（请参考skill目录中的脚本文件） long-article v1.1
 ```
 
 ### 场景三：交付前质量审计
@@ -140,7 +140,7 @@ suggested_price: 29.9
 
 ```bash
 # 执行质量审计
-./scripts/audit.sh my-article
+（请参考skill目录中的脚本文件） my-article
 
 # 输出审计报告
 # 📊 质量审计报告
@@ -178,25 +178,25 @@ suggested_price: 29.9
 
 ```bash
 # 1. 初始化工作区
-./scripts/init-workspace.sh ~/writing
+（请参考skill目录中的脚本文件） ~/writing
 
 # 2. 创建新作品（带 ID）
-./scripts/new-piece.sh "article-slug"
+（请参考skill目录中的脚本文件） "article-slug"
 
 # 3. 编辑（强制版本化）
-./scripts/edit.sh article-slug "编辑说明"
+（请参考skill目录中的脚本文件） article-slug "编辑说明"
 
 # 4. 审计
-./scripts/audit.sh article-slug
+（请参考skill目录中的脚本文件） article-slug
 
 # 5. 列出作品与版本
-./scripts/list.sh
+（请参考skill目录中的脚本文件）
 
 # 6. 回滚
-./scripts/restore.sh article-slug v1.0
+（请参考skill目录中的脚本文件） article-slug v1.0
 
 # 7. 清理（用户确认后）
-./scripts/cleanup.sh article-slug
+（请参考skill目录中的脚本文件） article-slug
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。

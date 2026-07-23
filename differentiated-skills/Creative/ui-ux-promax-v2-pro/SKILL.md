@@ -87,10 +87,10 @@ UI/UX ProMax V2专业版是一款面向设计团队和企业的综合UI/UX设计
 
 ```bash
 # 持久化MASTER设计系统
-python3 scripts/search.py "fintech SaaS dashboard" --design-system --persist -p "FinApp"
+python3 （请参考skill目录中的脚本文件） "fintech SaaS dashboard" --design-system --persist -p "FinApp"
 
 # 创建页面级覆盖
-python3 scripts/search.py "real-time data dark" --design-system --persist -p "FinApp" --page "dashboard"
+python3 （请参考skill目录中的脚本文件） "real-time data dark" --design-system --persist -p "FinApp" --page "dashboard"
 ```
 
 文件结构:
@@ -114,7 +114,7 @@ design-system/
 
 ```bash
 # 推理引擎自动选择最佳方案并解释原因
-python3 scripts/search.py "healthcare SaaS" --design-system --persist -p "MedApp"
+python3 （请参考skill目录中的脚本文件） "healthcare SaaS" --design-system --persist -p "MedApp"
 ```
 
 输出包含:
@@ -150,14 +150,14 @@ python3 scripts/search.py "healthcare SaaS" --design-system --persist -p "MedApp
 
 ```bash
 # 生成MASTER
-python3 scripts/search.py "fintech SaaS professional" --design-system --persist -p "FinApp"
+python3 （请参考skill目录中的脚本文件） "fintech SaaS professional" --design-system --persist -p "FinApp"
 
 # 页面覆盖
-python3 scripts/search.py "real-time data dark" --design-system --persist -p "FinApp" --page "dashboard"
-python3 scripts/search.py "checkout payment trust" --design-system --persist -p "FinApp" --page "checkout"
+python3 （请参考skill目录中的脚本文件） "real-time data dark" --design-system --persist -p "FinApp" --page "dashboard"
+python3 （请参考skill目录中的脚本文件） "checkout payment trust" --design-system --persist -p "FinApp" --page "checkout"
 
 # React实现指引
-python3 scripts/search.py "state hooks performance" --stack react
+python3 （请参考skill目录中的脚本文件） "state hooks performance" --stack react
 ```
 
 层级检索上下文:
@@ -173,25 +173,25 @@ python3 scripts/search.py "state hooks performance" --stack react
 
 ```bash
 # 统一设计系统
-python3 scripts/search.py "enterprise SaaS" --design-system --persist -p "UnifiedApp"
+python3 （请参考skill目录中的脚本文件） "enterprise SaaS" --design-system --persist -p "UnifiedApp"
 
 # 多端实现
-python3 scripts/search.py "component state" --stack react
-python3 scripts/search.py "views navigation" --stack swiftui
-python3 scripts/search.py "composables state" --stack jetpack-compose
+python3 （请参考skill目录中的脚本文件） "component state" --stack react
+python3 （请参考skill目录中的脚本文件） "views navigation" --stack swiftui
+python3 （请参考skill目录中的脚本文件） "composables state" --stack jetpack-compose
 ```
 
 ### 场景三:深度UX审计
 
 ```bash
 # 无障碍深度审计
-python3 scripts/search.py "accessibility focus keyboard aria" --domain ux -n 10
+python3 （请参考skill目录中的脚本文件） "accessibility focus keyboard aria" --domain ux -n 10
 
 # React性能反模式
-python3 scripts/search.py "rerender waterfall bundle memo suspense" --domain react -n 10
+python3 （请参考skill目录中的脚本文件） "rerender waterfall bundle memo suspense" --domain react -n 10
 
 # Web界面规范
-python3 scripts/search.py "semantic virtualize aria focus" --domain web -n 10
+python3 （请参考skill目录中的脚本文件） "semantic virtualize aria focus" --domain web -n 10
 ```
 
 ## 不适用场景
@@ -221,18 +221,18 @@ python3 scripts/search.py "semantic virtualize aria focus" --domain web -n 10
 # 产品类型、行业、风格、技术栈
 
 # 第2步:MASTER持久化
-python3 scripts/search.py "beauty spa elegant" --design-system --persist -p "Serenity Spa"
+python3 （请参考skill目录中的脚本文件） "beauty spa elegant" --design-system --persist -p "Serenity Spa"
 
 # 第3步:页面覆盖
-python3 scripts/search.py "booking calendar" --design-system --persist -p "Serenity Spa" --page "booking"
+python3 （请参考skill目录中的脚本文件） "booking calendar" --design-system --persist -p "Serenity Spa" --page "booking"
 
 # 第4步:补充搜索
-python3 scripts/search.py "animation accessibility" --domain ux
-python3 scripts/search.py "hero testimonial" --domain landing
-python3 scripts/search.py "real-time trend" --domain chart
+python3 （请参考skill目录中的脚本文件） "animation accessibility" --domain ux
+python3 （请参考skill目录中的脚本文件） "hero testimonial" --domain landing
+python3 （请参考skill目录中的脚本文件） "real-time trend" --domain chart
 
 # 第5步:技术栈指引
-python3 scripts/search.py "layout form" --stack html-tailwind
+python3 （请参考skill目录中的脚本文件） "layout form" --stack html-tailwind
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
@@ -278,11 +278,11 @@ python3 scripts/search.py "layout form" --stack html-tailwind
 
 ```bash
 # 正确
-python3 scripts/search.py "enterprise SaaS" --design-system --persist -p "MyApp"
-python3 scripts/search.py "data table" --design-system --persist -p "MyApp" --page "reports"
+python3 （请参考skill目录中的脚本文件） "enterprise SaaS" --design-system --persist -p "MyApp"
+python3 （请参考skill目录中的脚本文件） "data table" --design-system --persist -p "MyApp" --page "reports"
 
 # 错误:跳过MASTER
-python3 scripts/search.py "data table" --design-system --persist -p "MyApp" --page "reports"
+python3 （请参考skill目录中的脚本文件） "data table" --design-system --persist -p "MyApp" --page "reports"
 ```
 
 ### 2. 页面覆盖只定义差异

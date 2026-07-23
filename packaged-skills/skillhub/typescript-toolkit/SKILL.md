@@ -62,25 +62,25 @@ pricing_model: "per_use"
 | 团队代码审查 | PR 级别类型安全审查与规则一致性检查 | Pro 新增 |
 ### 类型收窄与字面量陷阱
 
-执行类型收窄与字面量陷阱操作,处理用户输入并返回结果。
+执行类型收窄与字面量陷阱,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供类型收窄与字面量陷阱所需的参数和指令。
+**输入**: 用户提供类型收窄与字面量陷阱相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回类型收窄与字面量陷阱的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`类型收窄与字面量陷阱`相关配置参数进行设置
 ### 批量 JS→TS 迁移
 
-执行批量 JS→TS 迁移操作,处理用户输入并返回结果。
+执行批量 JS→TS 迁移,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供批量 JS→TS 迁移所需的参数和指令。
+**输入**: 用户提供批量 JS→TS 迁移相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回批量 JS→TS 迁移的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`批量 JS→TS 迁移`相关配置参数进行设置
 ### 企业 tsconfig 模板
 
-执行企业 tsconfig 模板操作,处理用户输入并返回结果。
+执行企业 tsconfig 模板,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供企业 tsconfig 模板所需的参数和指令。
+**输入**: 用户提供企业 tsconfig 模板相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回企业 tsconfig 模板的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`企业 tsconfig 模板`相关配置参数进行设置
@@ -205,8 +205,8 @@ npx type-coverage --detail --strict | grep -E "^[^|]+\\| +[0-9]+%" | sort -t'|' 
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | typescript-toolkit处理的内容输入 |,  |
+| content | string | 否 | typescript-toolkit处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -215,9 +215,9 @@ npx type-coverage --detail --strict | grep -E "^[^|]+\\| +[0-9]+%" | sort -t'|' 
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "toolkit 相关配置参数",
+    result: "toolkit 相关配置参数",
+    result: "toolkit 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

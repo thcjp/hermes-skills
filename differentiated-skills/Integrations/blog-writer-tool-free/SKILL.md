@@ -101,7 +101,7 @@ homepage: "https://skillhub.cn"
 ## 快速开始
 
 ### 60 秒上手
-1. 运行 `bash scripts/setup.sh` 完成初始化（安装依赖、生成配置、创建管理员）
+1. 运行 `bash （请参考skill目录中的脚本文件）` 完成初始化（安装依赖、生成配置、创建管理员）
 2. 启动开发服务器 `npm run dev`，访问 `http://localhost:3000`
 3. 使用 API Key 调用 REST API 创建文章
 
@@ -109,7 +109,7 @@ homepage: "https://skillhub.cn"
 
 ```bash
 cd <skill-directory>/platform
-bash ../scripts/setup.sh
+bash .（请参考skill目录中的脚本文件）
 ```
 
 setup 脚本会：
@@ -234,7 +234,7 @@ curl -X DELETE http://localhost:3000/api/posts/my-first-post \
 ## 常见问题
 
 ### Q1：API Key 怎么获取？
-A：运行 `bash scripts/setup.sh` 初始化时创建管理员账户，管理员可在博客后台生成 API Key。API Key 通过 `X-API-Key` 头传递。
+A：运行 `bash （请参考skill目录中的脚本文件）` 初始化时创建管理员账户，管理员可在博客后台生成 API Key。API Key 通过 `X-API-Key` 头传递。
 
 ### Q2：创建文章时 slug 重复怎么办？
 A：slug 必须唯一。如重复，API 会返回 409 错误。建议在 slug 后追加日期或序号，如 `my-post-20260718`。

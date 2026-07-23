@@ -374,7 +374,7 @@ notion sync-to-warehouse \
 ```bash
 notion notify tasks \
   --filter "Status=Done" \
-  --webhook https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxx \
+  --webhook https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=xxx \
   --template wecom
 ```
 

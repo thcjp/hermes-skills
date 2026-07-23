@@ -168,13 +168,13 @@ cat > deploy.config.json << 'EOF'
 EOF
 
 # 依赖说明
-./deploy.sh --env testnet --batch --verify
+（请参考skill目录中的脚本文件） --env testnet --batch --verify
 
 # 3. 安全审计
-./audit.sh --contracts src/ --check reentrancy,overflow,access
+（请参考skill目录中的脚本文件） --contracts src/ --check reentrancy,overflow,access
 
 # 4. 主网部署(需多签确认)
-./deploy.sh --env mainnet --batch --multisig --require-approvals 3
+（请参考skill目录中的脚本文件） --env mainnet --batch --multisig --require-approvals 3
 ```
 
 ### 场景二:CI/CD 自动化部署流水线
@@ -203,19 +203,19 @@ jobs:
       - name: Deploy to testnet
         if: github.ref == 'refs/heads/develop'
         run: |
-          forge script script/Deploy.s.sol:DeployScript \
+          forge script （请参考skill目录中的脚本文件）:DeployScript \
             --rpc-url https://testnet-rpc.monad.xyz \
             --private-key ${{ secrets.TESTNET_PRIVATE_KEY }} \
             --broadcast
       - name: Deploy to mainnet
         if: github.event_name == 'release'
         run: |
-          forge script script/Deploy.s.sol:DeployScript \
+          forge script （请参考skill目录中的脚本文件）:DeployScript \
             --rpc-url https://rpc.monad.xyz \
             --private-key ${{ secrets.MAINNET_PRIVATE_KEY }} \
             --broadcast
       - name: Verify contracts
-        run: ./scripts/verify-all.sh
+        run: （请参考skill目录中的脚本文件）
 ```
 
 ### 场景三:Gas 优化与安全审计
@@ -227,7 +227,7 @@ jobs:
 forge test --gas-report --json > gas-report.json
 
 # 安全审计扫描
-./audit.sh --contracts src/ --output audit-report.md
+（请参考skill目录中的脚本文件） --contracts src/ --output audit-report.md
 
 # 示例
 # === Monad 合约安全审计报告 ===
@@ -277,7 +277,7 @@ cast chain-id --rpc-url https://rpc.monad.xyz
 forge test -vvv
 
 # 2. 安全审计
-./audit.sh --contracts src/
+（请参考skill目录中的脚本文件） --contracts src/
 
 # 3. Gas 优化
 forge test --gas-report
@@ -287,7 +287,7 @@ cast wallet new --unsafe-password
 # 将生成的签名者地址加入多签合约
 
 # 5. 主网部署
-forge script script/Deploy.s.sol:DeployScript \
+forge script （请参考skill目录中的脚本文件）:DeployScript \
   --rpc-url https://rpc.monad.xyz \
   --private-key $MONAD_MAINNET_PRIVATE_KEY \
   --broadcast \

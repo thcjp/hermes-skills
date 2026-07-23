@@ -372,7 +372,7 @@ series_weight: 2
 
 3. **图片先优化再发布**：减少站点体积，提升加载速度
    ```bash
-   ./scripts/optimize-images.sh
+   （请参考skill目录中的脚本文件）
    ```
 
 4. **CI/CD 自动化部署**：推送即部署，减少手动操作
@@ -403,7 +403,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: 构建并部署
-        run: hugo --minify && ./deploy.sh
+        run: hugo --minify && （请参考skill目录中的脚本文件）
 ```
 
 ### Q2：多语言站点的标签如何管理？

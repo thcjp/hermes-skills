@@ -24,7 +24,7 @@ pricing_model: "monthly"
 ---
 # Qwen 视频智能分析
 
-基于阿里云 Qwen 3.5 Plus 多模态模型对视频进行智能分析。支持本地视频文件和远程 URL 两种输入方式,通过自定义提示词与抽帧频率(FPS)灵活控制分析精度与成本。核心脚本为 `scripts/analyze.py`。
+基于阿里云 Qwen 3.5 Plus 多模态模型对视频进行智能分析。支持本地视频文件和远程 URL 两种输入方式,通过自定义提示词与抽帧频率(FPS)灵活控制分析精度与成本。核心脚本为 `（请参考skill目录中的脚本文件）`。
 
 **范围外**(本技能不做): 视频剪辑与转码、实时视频流分析、模型微调训练、视频字幕硬编码。
 
@@ -104,19 +104,19 @@ cat ~/.skill-platform/skill-platform.json | grep apiKey
 默认设置分析本地视频文件:
 
 ```bash
-python scripts/analyze.py /path/to/video.mp4
+python （请参考skill目录中的脚本文件） /path/to/video.mp4
 ```
 
 自定义提示词,引导模型关注特定内容:
 
 ```bash
-python scripts/analyze.py /path/to/video.mp4 --prompt "请详细描述视频中的每个场景,包括人物动作和背景环境"
+python （请参考skill目录中的脚本文件） /path/to/video.mp4 --prompt "请详细描述视频中的每个场景,包括人物动作和背景环境"
 ```
 
 自定义抽帧频率(FPS 越高,分析越精细):
 
 ```bash
-python scripts/analyze.py /path/to/video.mp4 --fps 5
+python （请参考skill目录中的脚本文件） /path/to/video.mp4 --fps 5
 ```
 
 ### 分析远程视频 URL
@@ -124,14 +124,14 @@ python scripts/analyze.py /path/to/video.mp4 --fps 5
 直接分析可公开访问的远程视频直链:
 
 ```bash
-python scripts/analyze.py https://example.com/video.mp4
+python （请参考skill目录中的脚本文件） https://example.com/video.mp4
 ```
 
 组合使用参数:
 
 ```bash
-python scripts/analyze.py /path/to/video.mp4 --fps 3 --prompt "视频中出现了哪些人物和物体?请逐一列出"
-python scripts/analyze.py https://example.com/video.mp4 --fps 4 --prompt "请详细描述视频场景的色调和构图"
+python （请参考skill目录中的脚本文件） /path/to/video.mp4 --fps 3 --prompt "视频中出现了哪些人物和物体?请逐一列出"
+python （请参考skill目录中的脚本文件） https://example.com/video.mp4 --fps 4 --prompt "请详细描述视频场景的色调和构图"
 ```
 
 ## 适用场景
@@ -171,7 +171,7 @@ cat ~/.skill-platform/skill-platform.json | grep apiKey
 
 ### Step 5: 执行分析并返回结果
 ```bash
-python scripts/analyze.py <video_source> --fps <fps> --prompt "<prompt>"
+python （请参考skill目录中的脚本文件） <video_source> --fps <fps> --prompt "<prompt>"
 ```
 脚本将分析结果输出到 stdout,Agent 应将结果整理后返回给用户。
 
@@ -182,7 +182,7 @@ python scripts/analyze.py <video_source> --fps <fps> --prompt "<prompt>"
 **场景**: 内容创作者需要理解一段产品演示视频的内容,用于编写文案
 
 ```bash
-python scripts/analyze.py /path/to/product-demo.mp4 \
+python （请参考skill目录中的脚本文件） /path/to/product-demo.mp4 \
   --fps 3 \
   --prompt "请详细描述视频中展示的产品外观、使用场景和主要功能特点"
 ```
@@ -195,7 +195,7 @@ python scripts/analyze.py /path/to/product-demo.mp4 \
 **场景**: 运营团队需要审核一段在线视频是否包含不适宜内容
 
 ```bash
-python scripts/analyze.py https://example.com/user-upload.mp4 \
+python （请参考skill目录中的脚本文件） https://example.com/user-upload.mp4 \
   --fps 4 \
   --prompt "请审查视频内容是否包含暴力、色情或违规信息,逐帧描述可疑画面并给出风险等级"
 ```
@@ -208,7 +208,7 @@ python scripts/analyze.py https://example.com/user-upload.mp4 \
 **场景**: 体育教练需要分析运动员的训练视频,识别动作细节
 
 ```bash
-python scripts/analyze.py /path/to/training.mp4 \
+python （请参考skill目录中的脚本文件） /path/to/training.mp4 \
   --fps 5 \
   --prompt "请逐帧分析运动员的动作轨迹、身体姿态和发力方式,指出动作中的不足之处并给出改进建议"
 ```

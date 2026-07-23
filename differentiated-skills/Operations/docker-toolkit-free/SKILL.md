@@ -74,19 +74,19 @@ suggested_price: 29.9
 
 ```bash
 # 构建镜像
-python3 scripts/docker.py image build \
+python3 （请参考skill目录中的脚本文件） image build \
   --tag my-app:latest \
   --path ./Dockerfile
 
 # 运行容器
-python3 scripts/docker.py container run \
+python3 （请参考skill目录中的脚本文件） container run \
   --image my-app:latest \
   --name my-app \
   --port 8080:80 \
   --detach
 
 # 查看运行状态
-python3 scripts/docker.py container ps
+python3 （请参考skill目录中的脚本文件） container ps
 ```
 
 ### 场景二：Docker Compose编排
@@ -95,15 +95,15 @@ python3 scripts/docker.py container ps
 
 ```bash
 # 生成docker-compose.yml
-python3 scripts/docker.py compose generate \
+python3 （请参考skill目录中的脚本文件） compose generate \
   --template "web_db" \
   --output docker-compose.yml
 
 # 启动服务
-python3 scripts/docker.py compose up --detach
+python3 （请参考skill目录中的脚本文件） compose up --detach
 
 # 查看状态
-python3 scripts/docker.py compose ps
+python3 （请参考skill目录中的脚本文件） compose ps
 ```
 
 ### 场景三：数据卷管理
@@ -112,10 +112,10 @@ python3 scripts/docker.py compose ps
 
 ```bash
 # 创建数据卷
-python3 scripts/docker.py volume create --name my-data
+python3 （请参考skill目录中的脚本文件） volume create --name my-data
 
 # 挂载运行
-python3 scripts/docker.py container run \
+python3 （请参考skill目录中的脚本文件） container run \
   --image postgres:15 \
   --name my-db \
   --volume my-data:/var/lib/postgresql/data \
@@ -149,28 +149,28 @@ docker --version
 
 ```bash
 # 镜像管理
-python3 scripts/docker.py image build --tag my-app:latest --path ./Dockerfile
-python3 scripts/docker.py image pull nginx:latest
-python3 scripts/docker.py image list
-python3 scripts/docker.py image delete my-app:old
+python3 （请参考skill目录中的脚本文件） image build --tag my-app:latest --path ./Dockerfile
+python3 （请参考skill目录中的脚本文件） image pull nginx:latest
+python3 （请参考skill目录中的脚本文件） image list
+python3 （请参考skill目录中的脚本文件） image delete my-app:old
 
 # 容器管理
-python3 scripts/docker.py container run --image nginx --name web --port 8080:80 --detach
-python3 scripts/docker.py container ps
-python3 scripts/docker.py container stop --name web
-python3 scripts/docker.py container logs --name web --tail 100
+python3 （请参考skill目录中的脚本文件） container run --image nginx --name web --port 8080:80 --detach
+python3 （请参考skill目录中的脚本文件） container ps
+python3 （请参考skill目录中的脚本文件） container stop --name web
+python3 （请参考skill目录中的脚本文件） container logs --name web --tail 100
 
 # 数据卷
-python3 scripts/docker.py volume create --name my-data
-python3 scripts/docker.py volume list
+python3 （请参考skill目录中的脚本文件） volume create --name my-data
+python3 （请参考skill目录中的脚本文件） volume list
 
 # 网络
-python3 scripts/docker.py network create --name my-net
-python3 scripts/docker.py network list
+python3 （请参考skill目录中的脚本文件） network create --name my-net
+python3 （请参考skill目录中的脚本文件） network list
 
 # Compose
-python3 scripts/docker.py compose up --detach
-python3 scripts/docker.py compose down
+python3 （请参考skill目录中的脚本文件） compose up --detach
+python3 （请参考skill目录中的脚本文件） compose down
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。

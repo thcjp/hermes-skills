@@ -56,8 +56,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | monad-development处理的内容输入 |,  |
+| content | string | 否 | monad-development处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -66,9 +66,9 @@ pricing_model: "per_use"
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "development 相关配置参数",
+    result: "development 相关配置参数",
+    result: "development 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,
@@ -157,7 +157,7 @@ contract MyToken is ERC20 {
 forge install OpenZeppelin/openzeppelin-contracts --no-commit
 ```
 
-**5. Create deploy script `script/Deploy.s.sol`:**
+**5. Create deploy script `（请参考skill目录中的脚本文件）`:**
 
 solidity
 
@@ -180,7 +180,7 @@ contract DeployScript is Script {
 **6. Deploy:**
 
 ```bash
-forge script script/Deploy.s.sol:DeployScript \
+forge script （请参考skill目录中的脚本文件）:DeployScript \
   --rpc-url https://testnet-rpc.monad.xyz \
   --private-key $PRIVATE_KEY \
   --broadcast

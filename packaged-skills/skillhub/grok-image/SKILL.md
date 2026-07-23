@@ -73,7 +73,7 @@ pricing_model: "per_use"
 
 提示词管理:
   - 模板库（主题/风格/氛围）
-  - 变量替换（（根据实际场景填充） （根据实际场景填充））
+  - 变量替换（"image_result" "image_result"）
   - 历史记录
   - 收藏与复用
 
@@ -97,9 +97,9 @@ pricing_model: "per_use"
 
 ### 能力维度
 
-执行能力维度操作,处理用户输入并返回结果。
+执行能力维度,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供能力维度所需的参数和指令。
+**输入**: 用户提供能力维度相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回能力维度的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`能力维度`相关配置参数进行设置
@@ -354,8 +354,8 @@ python3 batch_workflow.py --queue prompts.json --output ./generated-images --int
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | grok-image处理的内容输入 |,  |
+| content | string | 否 | grok-image处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -364,9 +364,9 @@ python3 batch_workflow.py --queue prompts.json --output ./generated-images --int
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "image 相关配置参数",
+    result: "image 相关配置参数",
+    result: "image 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

@@ -90,9 +90,9 @@ python3 generate.py <脚本路径> [选项]
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "gen 相关配置参数",
+    result: "gen 相关配置参数",
+    result: "gen 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

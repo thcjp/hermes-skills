@@ -67,7 +67,7 @@ pricing_model: "per_use"
 #### 1. 批量查询引擎
 
 ```bash
-python scripts/batch_search.py \
+python （请参考skill目录中的脚本文件） \
   --keywords-file keywords.txt \
   --max=20 \
   --full=5 \
@@ -80,33 +80,33 @@ python scripts/batch_search.py \
 
 ```bash
 # 导出为 JSON
-python scripts/web_search.py "关键词" --export=json --output=data.json
+python （请参考skill目录中的脚本文件） "关键词" --export=json --output=data.json
 
 # 导出为 CSV
-python scripts/web_search.py "关键词" --export=csv --output=data.csv
+python （请参考skill目录中的脚本文件） "关键词" --export=csv --output=data.csv
 
 # 导出为 Markdown 报告
-python scripts/web_search.py "关键词" --export=md --output=report.md
+python （请参考skill目录中的脚本文件） "关键词" --export=md --output=report.md
 ```
 
 #### 3. 代理与网络配置
 
 ```bash
 # 使用 HTTP 代理
-python scripts/web_search.py "关键词" --proxy=http://127.0.0.1:7890
+python （请参考skill目录中的脚本文件） "关键词" --proxy=http://127.0.0.1:7890
 
 # 使用 SOCKS5 代理
-python scripts/web_search.py "关键词" --proxy=socks5://127.0.0.1:1080
+python （请参考skill目录中的脚本文件） "关键词" --proxy=socks5://127.0.0.1:1080
 
 # 配置请求超时与重试
-python scripts/web_search.py "关键词" --timeout=30 --retry=5
+python （请参考skill目录中的脚本文件） "关键词" --timeout=30 --retry=5
 ```
 
 #### 4. 定时任务调度
 
 ```bash
 # 每日 9 点执行搜索并归档
-python scripts/scheduled_search.py \
+python （请参考skill目录中的脚本文件） \
   --keyword "行业动态" \
   --cron="0 9 * * *" \
   --archive-dir=./archive
@@ -142,7 +142,7 @@ cat > competitors.txt <<EOF
 EOF
 
 # 批量搜索并导出
-python scripts/batch_search.py \
+python （请参考skill目录中的脚本文件） \
   --keywords-file competitors.txt \
   --max=20 \
   --full=5 \
@@ -157,7 +157,7 @@ python scripts/batch_search.py \
 研究人员需要系统化检索特定主题的学术资料。
 
 ```bash
-python scripts/batch_search.py \
+python （请参考skill目录中的脚本文件） \
   --keywords-file research_topics.txt \
   --max=15 \
   --full=3 \
@@ -175,7 +175,7 @@ python scripts/batch_search.py \
 
 ```bash
 # 配置定时监控任务
-python scripts/scheduled_search.py \
+python （请参考skill目录中的脚本文件） \
   --keyword "品牌名 负面 OR 危机 OR 投诉" \
   --cron="0 8,12,18 * * *" \
   --max=20 \
@@ -214,7 +214,7 @@ python scripts/scheduled_search.py \
 pip install requests-cache apscheduler
 
 # 验证升级
-python scripts/web_search.py --version
+python （请参考skill目录中的脚本文件） --version
 # 输出: free-web-search-tool-pro v1.0.0
 ```
 
@@ -227,7 +227,7 @@ Docker 容器化部署
 Kubernetes 集群管理" > topics.txt
 
 # 执行批量搜索
-python scripts/batch_search.py \
+python （请参考skill目录中的脚本文件） \
   --keywords-file topics.txt \
   --max=10 \
   --export=json \
@@ -273,7 +273,7 @@ schedule:
 
 ```bash
 # 启动 REST API 服务
-python scripts/api_server.py --port=8000
+python （请参考skill目录中的脚本文件） --port=8000
 
 # 调用 API 执行搜索
 curl -X POST http://localhost:8000/search \
@@ -325,13 +325,13 @@ print(f"完成 {len(results)} 个关键词搜索")
 
 ```bash
 # 共享搜索历史
-python scripts/team_sync.py \
+python （请参考skill目录中的脚本文件） \
   --team-id=market_research \
   --share-dir=./shared_searches \
   --members=alice,bob,charlie
 
 # 查看团队成员搜索记录
-python scripts/team_history.py \
+python （请参考skill目录中的脚本文件） \
   --team-id=market_research \
   --member=alice \
   --days=7
@@ -341,14 +341,14 @@ python scripts/team_history.py \
 
 ```bash
 # 合并多个搜索结果并去重
-python scripts/merge_results.py \
+python （请参考skill目录中的脚本文件） \
   --input=./exports/*.json \
   --output=merged.json \
   --deduplicate \
   --sort-by=relevance
 
 # 生成分析报告
-python scripts/analyze_results.py \
+python （请参考skill目录中的脚本文件） \
   --input=merged.json \
   --output=analysis.md \
   --format=summary
@@ -360,13 +360,13 @@ python scripts/analyze_results.py \
 
 ```bash
 # 增加并行工作线程
-python scripts/batch_search.py --workers=8 keywords.txt
+python （请参考skill目录中的脚本文件） --workers=8 keywords.txt
 
 # 启用缓存减少重复请求
-python scripts/batch_search.py --cache keywords.txt
+python （请参考skill目录中的脚本文件） --cache keywords.txt
 
 # 调整查询间隔
-python scripts/batch_search.py --delay=1 keywords.txt
+python （请参考skill目录中的脚本文件） --delay=1 keywords.txt
 ```
 
 ### 代理连接失败
@@ -376,20 +376,20 @@ python scripts/batch_search.py --delay=1 keywords.txt
 curl --proxy socks5://127.0.0.1:1080 https://www.google.com
 
 # 切换代理协议
-python scripts/web_search.py "测试" --proxy=http://127.0.0.1:7890
+python （请参考skill目录中的脚本文件） "测试" --proxy=http://127.0.0.1:7890
 ```
 
 ### 定时任务不执行
 
 ```bash
 # 检查 cron 配置
-python scripts/scheduled_search.py --list
+python （请参考skill目录中的脚本文件） --list
 
 # 查看任务日志
 cat ./logs/scheduled_search.log
 
 # 手动触发测试
-python scripts/scheduled_search.py --run-now --task-id=task_001
+python （请参考skill目录中的脚本文件） --run-now --task-id=task_001
 ```
 
 ### API 服务无法访问
@@ -399,7 +399,7 @@ python scripts/scheduled_search.py --run-now --task-id=task_001
 netstat -tlnp | grep 8000
 
 # 查看服务日志
-python scripts/api_server.py --debug
+python （请参考skill目录中的脚本文件） --debug
 
 # 验证 API 响应
 curl http://localhost:8000/health

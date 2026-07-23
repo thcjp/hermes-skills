@@ -63,25 +63,25 @@ pricing_model: "per_use"
 | 技术支持 | 社区 | 专属 | 工单响应 |
 ### 能力项
 
-执行能力项操作,处理用户输入并返回结果。
+执行能力项,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供能力项所需的参数和指令。
+**输入**: 用户提供能力项相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回能力项的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`能力项`相关配置参数进行设置
 ### 声音切换
 
-执行声音切换操作,处理用户输入并返回结果。
+执行声音切换,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供声音切换所需的参数和指令。
+**输入**: 用户提供声音切换相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回声音切换的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`声音切换`相关配置参数进行设置
 ### 神经声音引擎
 
-执行神经声音引擎操作,处理用户输入并返回结果。
+执行神经声音引擎,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供神经声音引擎所需的参数和指令。
+**输入**: 用户提供神经声音引擎相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回神经声音引擎的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`神经声音引擎`相关配置参数进行设置
@@ -100,7 +100,7 @@ pricing_model: "per_use"
 /agent-vibes:personality dramatic
 
 # 批量导出章节音频(脚本调用)
-python scripts/batch_tts.py \
+python （请参考skill目录中的脚本文件） \
   --input ./chapters/ \
   --output ./audio/ \
   --voice soprano-zh-female-1 \
@@ -119,7 +119,7 @@ python scripts/batch_tts.py \
 /agent-vibes:role-add villain soprano-zh-male-3
 
 # 执行对话剧本播报
-/agent-vibes:dialogue ./scripts/dialogue.txt \
+/agent-vibes:dialogue （请参考skill目录中的脚本文件） \
   --output game_voices.mp3
 
 # 添加背景音乐与音效
@@ -133,7 +133,7 @@ python scripts/batch_tts.py \
 
 ```bash
 # 批量生成多语种 IVR 语音
-python scripts/ivr_batch.py \
+python （请参考skill目录中的脚本文件） \
   --config ivr_prompts.json \
   --languages zh,en,ja,ko \
   --output ./ivr_audio/ \
@@ -172,7 +172,7 @@ export AGENTVIBES_LICENSE="your_license_key"
 
 ```bash
 # 批量导出
-python scripts/batch_tts.py \
+python （请参考skill目录中的脚本文件） \
   --input texts/ \
   --output audio/ \
   --voice soprano-zh-female-1 \
@@ -184,8 +184,8 @@ python scripts/batch_tts.py \
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | agentvibes-skill处理的内容输入 |,  |
+| content | string | 否 | agentvibes-skill处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -194,9 +194,9 @@ python scripts/batch_tts.py \
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "skill 相关配置参数",
+    result: "skill 相关配置参数",
+    result: "skill 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

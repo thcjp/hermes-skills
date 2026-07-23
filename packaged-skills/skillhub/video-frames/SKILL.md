@@ -66,8 +66,8 @@ pricing_model: "per_use"
 ### Step 2: 模板选择
 根据输入生成专业内容
 根据需求选择对应模板:
-- （根据实际场景填充）: 相关说明
-- （根据实际场景填充）: 相关说明
+- Video Frames 核心处理: frames 相关配置参数
+- Video Frames 智能分析: frames 相关配置参数
 
 ### Step 3: 内容生成
 根据输入生成专业内容
@@ -76,16 +76,16 @@ pricing_model: "per_use"
 ### Step 4: 质量校验
 根据输入生成专业内容
 检查生成结果是否满足:
-- （根据实际场景填充）
-- （根据实际场景填充）
-- （根据实际场景填充）
+- Video Frames 批量处理
+- Video Frames 自定义配置
+- Video Frames 结果导出
 
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | video-frames处理的内容输入 |,  |
+| content | string | 否 | video-frames处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -94,9 +94,9 @@ pricing_model: "per_use"
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "frames 相关配置参数",
+    result: "frames 相关配置参数",
+    result: "frames 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,
@@ -150,13 +150,13 @@ export API_KEY="your_api_key_here"
 First frame:
 
 ```bash
-{baseDir}/scripts/frame.sh /path/to/video.mp4 --out /tmp/frame.jpg
+{baseDir}/（请参考skill目录中的脚本文件） /path/to/video.mp4 --out /tmp/frame.jpg
 ```
 
 At a timestamp:
 
 ```bash
-{baseDir}/scripts/frame.sh /path/to/video.mp4 --time 00:00:10 --out /tmp/frame-10s.jpg
+{baseDir}/（请参考skill目录中的脚本文件） /path/to/video.mp4 --time 00:00:10 --out /tmp/frame-10s.jpg
 ```
 ```
 

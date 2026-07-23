@@ -134,7 +134,7 @@ done
 
 ```bash
 # 列出未被任何笔记引用的附件
-scripts/orphan-scan --vault "<vault-path>" --attachments "Attachments"
+（请参考skill目录中的脚本文件） --vault "<vault-path>" --attachments "Attachments"
 # 输出：orphan-attachments.csv，含文件路径、大小、最后修改时间
 ```
 
@@ -142,7 +142,7 @@ scripts/orphan-scan --vault "<vault-path>" --attachments "Attachments"
 
 ```bash
 # 把图片归到 Attachments/Images/，PDF 归到 Attachments/PDF/
-scripts/organize-attachments --vault "<vault-path>" \
+（请参考skill目录中的脚本文件） --vault "<vault-path>" \
   --rule "image:Attachments/Images" \
   --rule "pdf:Attachments/PDF" \
   --rule "audio:Attachments/Audio"
@@ -152,8 +152,8 @@ scripts/organize-attachments --vault "<vault-path>" \
 
 ```bash
 # 删除连续 90 天未被引用的附件（先 dry-run）
-scripts/clean-orphans --vault "<vault-path>" --days 90 --dry-run
-scripts/clean-orphans --vault "<vault-path>" --days 90   # 实删
+（请参考skill目录中的脚本文件） --vault "<vault-path>" --days 90 --dry-run
+（请参考skill目录中的脚本文件） --vault "<vault-path>" --days 90   # 实删
 ```
 
 ## 跨库搜索
@@ -162,12 +162,12 @@ scripts/clean-orphans --vault "<vault-path>" --days 90   # 实删
 |:-----|:-----|
 | `obsidian-cli search "query"` | 按笔记名搜索 |
 | `obsidian-cli search-content "query"` | 全文搜索，返回片段与行号 |
-| `scripts/cross-vault-search "query"` | 跨多个 vault 同时搜索（自定义脚本） |
+| `（请参考skill目录中的脚本文件） "query"` | 跨多个 vault 同时搜索（自定义脚本） |
 
 跨库搜索示例：
 
 ```bash
-scripts/cross-vault-search "OKR" --vaults work,personal
+（请参考skill目录中的脚本文件） "OKR" --vaults work,personal
 # 输出：每个 vault 的命中笔记 + 片段
 ```
 

@@ -122,7 +122,7 @@ python3 batch_extract.py --config /path/to/batch-extract.json --parallel 8
 **输出结构：**
 
 ```text
-/transcripts/competitors/
+/tran（请参考skill目录中的脚本文件）/
 ├── competitor-a/
 │   ├── VIDEO_1/
 │   │   ├── transcript-zh.txt
@@ -161,13 +161,13 @@ python3 batch_extract.py \
   --url "https://www.youtube.com/watch?v=VIDEO_ID" \
   --languages zh,en \
   --align \
-  --output /transcripts/comparison/
+  --output /tran（请参考skill目录中的脚本文件）/
 ```
 
 **输出示例：**
 
 ```text
-/transcripts/comparison/
+/tran（请参考skill目录中的脚本文件）/
 ├── VIDEO_ID/
 │   ├── transcript-zh.txt       # 中文字幕
 │   ├── transcript-en.txt       # 英文字幕
@@ -252,8 +252,8 @@ python3 keyword_tracker.py \
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | youtube-watcher处理的内容输入 |,  |
+| content | string | 否 | youtube-watcher处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -262,9 +262,9 @@ python3 keyword_tracker.py \
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "watcher 相关配置参数",
+    result: "watcher 相关配置参数",
+    result: "watcher 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

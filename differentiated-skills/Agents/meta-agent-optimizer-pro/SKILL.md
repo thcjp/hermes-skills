@@ -316,14 +316,14 @@ Top 5 瓶颈：
     "UserPromptSubmit": [{
       "hooks": [{
         "type": "command",
-        "command": "${CLAUDE_PROJECT_DIR}/.claude/skills/meta-optimizer/scripts/activator.sh"
+        "command": "${CLAUDE_PROJECT_DIR}/.claude/skills/meta-optimizer/（请参考skill目录中的脚本文件）"
       }]
     }],
     "PostToolUse": [{
       "matcher": "Bash",
       "hooks": [{
         "type": "command",
-        "command": "${CLAUDE_PROJECT_DIR}/.claude/skills/meta-optimizer/scripts/error-detector.sh"
+        "command": "${CLAUDE_PROJECT_DIR}/.claude/skills/meta-optimizer/（请参考skill目录中的脚本文件）"
       }]
     }]
   }

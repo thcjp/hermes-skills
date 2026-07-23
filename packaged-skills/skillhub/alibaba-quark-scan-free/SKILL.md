@@ -116,13 +116,13 @@ export SCAN_WEBSERVICE_KEY="your_scan_webservice_key_here"
 
 ```bash
 # URL输入
-python3 scripts/scan.py --scene "${SCENE_VALUE}" --url "${IMAGE_URL}" --platform "${AGENT_NAME}"
+python3 （请参考skill目录中的脚本文件） --scene "${SCENE_VALUE}" --url "${IMAGE_URL}" --platform "${AGENT_NAME}"
 
 # 本地文件输入
-python3 scripts/scan.py --scene "${SCENE_VALUE}" --path "${IMAGE_FILE_PATH}" --platform "${AGENT_NAME}"
+python3 （请参考skill目录中的脚本文件） --scene "${SCENE_VALUE}" --path "${IMAGE_FILE_PATH}" --platform "${AGENT_NAME}"
 
 # BASE64输入
-python3 scripts/scan.py --scene "${SCENE_VALUE}" --base64 "${IMAGE_BASE64}" --platform "${AGENT_NAME}"
+python3 （请参考skill目录中的脚本文件） --scene "${SCENE_VALUE}" --base64 "${IMAGE_BASE64}" --platform "${AGENT_NAME}"
 ```
 
 AGENT_NAME替换为当前运行的Agent平台名称，无法确定时填community。

@@ -119,9 +119,9 @@ ws.onmessage = function(event) {
 **输出**: 返回功能八：实时数据推送的执行结果,包含操作状态和输出数据。
 ### Widget类型
 
-执行Widget类型操作,处理用户输入并返回结果。
+执行Widget类型,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供Widget类型所需的参数和指令。
+**输入**: 用户提供Widget类型相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回Widget类型的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`Widget类型`相关配置参数进行设置
@@ -180,7 +180,7 @@ Agent："已创建widget：
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | analytics-dashboard处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式

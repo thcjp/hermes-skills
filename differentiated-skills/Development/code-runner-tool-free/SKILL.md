@@ -172,7 +172,7 @@ python3 --version  # 需要 3.8+
 which claude
 
 # 赋予脚本执行权限
-chmod +x scripts/run_code.py
+chmod +x （请参考skill目录中的脚本文件）
 ```
 
 ### 第二步: 基本用法
@@ -195,7 +195,7 @@ print(result)
 **通过命令行:**
 
 ```bash
-python3 scripts/run_code.py /path/to/project "实现健康检查端点"
+python3 （请参考skill目录中的脚本文件） /path/to/project "实现健康检查端点"
 ```
 
 ### 第三步: 高级选项
@@ -292,7 +292,7 @@ prompt='修复登录问题'
 
 ```bash
 # 创建专用执行用户(推荐)
-sudo useradd -m -s /bin/bash code-runner
+sudo useradd -m -s /（请参考skill目录中的脚本文件） code-runner
 
 # 已知限制
 sudo chown -R code-runner:code-runner /path/to/projects
@@ -328,7 +328,7 @@ if os.path.exists(temp_dir):
 
 ```bash
 # 以 root 或 sudo 运行
-sudo python3 scripts/run_code.py /path/to/project "任务描述"
+sudo python3 （请参考skill目录中的脚本文件） /path/to/project "任务描述"
 ```
 
 ### Q2: 找不到代码 CLI 怎么办?
@@ -358,7 +358,7 @@ result = run_code_task(
 在脚本中添加新的提示模式:
 
 ```python
-# 编辑 scripts/run_code.py
+# 编辑 （请参考skill目录中的脚本文件）
 if b'new prompt text' in output:
     os.write(master_fd, b'y\n')
 ```

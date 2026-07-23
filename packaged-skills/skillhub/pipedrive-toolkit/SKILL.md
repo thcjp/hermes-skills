@@ -54,25 +54,25 @@ pricing_model: "per_use"
 | 高级过滤 | 支持 | 创建和管理自定义过滤器 |
 ### 能力模块
 
-执行能力模块操作,处理用户输入并返回结果。
+执行能力模块,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供能力模块所需的参数和指令。
+**输入**: 用户提供能力模块相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回能力模块的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`能力模块`相关配置参数进行设置
 ### 商机管理
 
-执行商机管理操作,处理用户输入并返回结果。
+执行商机管理,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供商机管理所需的参数和指令。
+**输入**: 用户提供商机管理相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回商机管理的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`商机管理`相关配置参数进行设置
 ### 联系人管理
 
-执行联系人管理操作,处理用户输入并返回结果。
+执行联系人管理,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供联系人管理所需的参数和指令。
+**输入**: 用户提供联系人管理相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回联系人管理的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`联系人管理`相关配置参数进行设置
@@ -217,8 +217,8 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| mode | string | 否 | 处理模式, 可选: json/text/markdown, 默认: 默认值 |
+| content | string | 否 | pipedrive-toolkit处理的内容输入 |,  |
+| mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
 | skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |
 
@@ -229,9 +229,9 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
   "success": true,
   "data": {
     "final_result": {
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明",
-      （根据实际场景填充）: "相关说明"
+      "toolkit_result": "toolkit_result_value",
+      "toolkit_metadata": "toolkit_metadata_value",
+      "toolkit_status": "toolkit_status_value"
     },
     "execution_log": [
       {
@@ -271,7 +271,7 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 }
 ```
 
-中间产物模板参考: `assets/（根据实际场景填充）`
+中间产物模板参考: `assets/pipedrive-toolkit_template`
 
 ## 异常处理
 

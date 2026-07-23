@@ -54,25 +54,25 @@ pricing_model: "per_use"
 | `check_skill_update` | 版本检查 | version |
 ### weiyun.list
 
-执行weiyun.list操作,处理用户输入并返回结果。
+执行weiyun.list,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供weiyun.list所需的参数和指令。
+**输入**: 用户提供weiyun.list相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回weiyun.list的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`weiyun.list`相关配置参数进行设置
 ### weiyun.list_by_category
 
-执行weiyun.list_by_category操作,处理用户输入并返回结果。
+执行weiyun.list_by_category,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供weiyun.list_by_category所需的参数和指令。
+**输入**: 用户提供weiyun.list_by_category相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回weiyun.list_by_category的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`weiyun.list_by_category`相关配置参数进行设置
 ### weiyun.download
 
-执行weiyun.download操作,处理用户输入并返回结果。
+执行weiyun.download,自动处理参数解析、任务调度和结果格式化,返回结构化输出。
 
-**输入**: 用户提供weiyun.download所需的参数和指令。
+**输入**: 用户提供weiyun.download相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回weiyun.download的处理结果。- 验证执行结果，确认输出符合预期格式
 - 参考`weiyun.download`相关配置参数进行设置
@@ -123,8 +123,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | weiyun-toolkit处理的内容输入 |,  |
+| content | string | 否 | weiyun-toolkit处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -133,9 +133,9 @@ pricing_model: "per_use"
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "toolkit 相关配置参数",
+    result: "toolkit 相关配置参数",
+    result: "toolkit 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

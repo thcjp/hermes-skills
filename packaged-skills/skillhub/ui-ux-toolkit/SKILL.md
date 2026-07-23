@@ -86,10 +86,10 @@ pricing_model: "per_use"
 
 ```bash
 # 持久化设计系统到项目目录
-python3 scripts/search.py "fintech crypto dashboard" --design-system --persist -p "FinApp"
+python3 （请参考skill目录中的脚本文件） "fintech crypto dashboard" --design-system --persist -p "FinApp"
 
 # 创建页面级覆盖
-python3 scripts/search.py "fintech crypto" --design-system --persist -p "FinApp" --page "dashboard"
+python3 （请参考skill目录中的脚本文件） "fintech crypto" --design-system --persist -p "FinApp" --page "dashboard"
 ```
 
 持久化创建的文件结构:
@@ -111,7 +111,7 @@ design-system/
 
 ```bash
 # 推理引擎自动选择优秀匹配并解释原因
-python3 scripts/search.py "healthcare SaaS" --design-system --persist -p "MedApp"
+python3 （请参考skill目录中的脚本文件） "healthcare SaaS" --design-system --persist -p "MedApp"
 ```
 
 输出包含:
@@ -124,12 +124,12 @@ python3 scripts/search.py "healthcare SaaS" --design-system --persist -p "MedApp
 
 ```bash
 # Markdown格式输出
-python3 scripts/search.py "fintech crypto" --design-system -f markdown
+python3 （请参考skill目录中的脚本文件） "fintech crypto" --design-system -f markdown
 
 # 批量搜索多个域并合并结果
-python3 scripts/search.py "glassmorphism" --domain style -n 5
-python3 scripts/search.py "modern elegant" --domain typography -n 5
-python3 scripts/search.py "fintech" --domain color -n 5
+python3 （请参考skill目录中的脚本文件） "glassmorphism" --domain style -n 5
+python3 （请参考skill目录中的脚本文件） "modern elegant" --domain typography -n 5
+python3 （请参考skill目录中的脚本文件） "fintech" --domain color -n 5
 ```- 验证执行结果，确认输出符合预期格式
 - 参考`批量搜索与多格式输出`相关配置参数进行设置
 #
@@ -141,19 +141,19 @@ python3 scripts/search.py "fintech" --domain color -n 5
 
 ```bash
 # 第1步:生成并持久化MASTER设计系统
-python3 scripts/search.py "fintech SaaS dashboard professional" \
+python3 （请参考skill目录中的脚本文件） "fintech SaaS dashboard professional" \
   --design-system --persist -p "FinApp"
 
 # 第2步:为仪表盘页面创建覆盖规则
-python3 scripts/search.py "real-time data visualization dark" \
+python3 （请参考skill目录中的脚本文件） "real-time data visualization dark" \
   --design-system --persist -p "FinApp" --page "dashboard"
 
 # 第3步:为结算页面创建覆盖规则
-python3 scripts/search.py "checkout payment trust security" \
+python3 （请参考skill目录中的脚本文件） "checkout payment trust security" \
   --design-system --persist -p "FinApp" --page "checkout"
 
 # 第4步:获取React技术栈实现指引
-python3 scripts/search.py "state hooks performance" --stack react
+python3 （请参考skill目录中的脚本文件） "state hooks performance" --stack react
 ```
 
 层级检索使用提示(提供给Agent的上下文):
@@ -172,16 +172,16 @@ python3 scripts/search.py "state hooks performance" --stack react
 
 ```bash
 # 统一的设计系统
-python3 scripts/search.py "enterprise SaaS professional" --design-system --persist -p "UnifiedApp"
+python3 （请参考skill目录中的脚本文件） "enterprise SaaS professional" --design-system --persist -p "UnifiedApp"
 
 # Web端实现指引
-python3 scripts/search.py "component state hooks" --stack react
+python3 （请参考skill目录中的脚本文件） "component state hooks" --stack react
 
 # iOS端实现指引
-python3 scripts/search.py "views state navigation" --stack swiftui
+python3 （请参考skill目录中的脚本文件） "views state navigation" --stack swiftui
 
 # Android端实现指引
-python3 scripts/search.py "composables modifiers state" --stack jetpack-compose
+python3 （请参考skill目录中的脚本文件） "composables modifiers state" --stack jetpack-compose
 ```
 
 ### 场景三:设计系统审计与反模式检测
@@ -190,13 +190,13 @@ python3 scripts/search.py "composables modifiers state" --stack jetpack-compose
 
 ```bash
 # 审计无障碍和交互规则
-python3 scripts/search.py "accessibility focus keyboard touch" --domain ux -n 10
+python3 （请参考skill目录中的脚本文件） "accessibility focus keyboard touch" --domain ux -n 10
 
 # 审计性能和布局规则
-python3 scripts/search.py "performance layout responsive" --domain ux -n 10
+python3 （请参考skill目录中的脚本文件） "performance layout responsive" --domain ux -n 10
 
 # 审计React性能反模式
-python3 scripts/search.py "rerender waterfall bundle memo" --domain react -n 10
+python3 （请参考skill目录中的脚本文件） "rerender waterfall bundle memo" --domain react -n 10
 ```
 
 ## 使用流程
@@ -209,7 +209,7 @@ python3 --version
 # 预期: Python 3.10+
 
 # 验证专业版功能
-python3 scripts/search.py "test" --design-system --persist -p "TestProject"
+python3 （请参考skill目录中的脚本文件） "test" --design-system --persist -p "TestProject"
 ls design-system/MASTER.md
 ```
 
@@ -220,19 +220,19 @@ ls design-system/MASTER.md
 # 提取:产品类型、行业、风格关键词、技术栈
 
 # 第2步:生成并持久化MASTER设计系统
-python3 scripts/search.py "beauty spa wellness elegant" \
+python3 （请参考skill目录中的脚本文件） "beauty spa wellness elegant" \
   --design-system --persist -p "Serenity Spa"
 
 # 第3步:创建页面级覆盖(按需)
-python3 scripts/search.py "booking calendar soft" \
+python3 （请参考skill目录中的脚本文件） "booking calendar soft" \
   --design-system --persist -p "Serenity Spa" --page "booking"
 
 # 第4步:补充详细搜索
-python3 scripts/search.py "animation accessibility" --domain ux
-python3 scripts/search.py "hero testimonial pricing" --domain landing
+python3 （请参考skill目录中的脚本文件） "animation accessibility" --domain ux
+python3 （请参考skill目录中的脚本文件） "hero testimonial pricing" --domain landing
 
 # 第5步:获取技术栈指引
-python3 scripts/search.py "layout responsive form" --stack html-tailwind
+python3 （请参考skill目录中的脚本文件） "layout responsive form" --stack html-tailwind
 ```
 
 #
@@ -240,7 +240,7 @@ python3 scripts/search.py "layout responsive form" --stack html-tailwind
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
+| content | string | 否 | ui-ux-toolkit处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
 ## 输出格式

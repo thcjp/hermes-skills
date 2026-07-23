@@ -172,7 +172,7 @@ schedule:
 push:
   feishu: https://open.feishu.cn/open-apis/bot/v2/hook/xxx
   dingtalk: https://oapi.dingtalk.com/robot/send?access_token=xxx
-  wechat: https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxx
+  wechat: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=xxx
   email: https://api.email-service.com/send
   slack: https://hooks.slack.com/services/xxx
 
@@ -230,7 +230,7 @@ push:
       url: https://oapi.dingtalk.com/robot/send?access_token=xxx
     - name: wechat
       type: wechat
-      url: https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxx
+      url: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=xxx
     - name: email
       type: email
       url: https://api.email-service.com/send

@@ -51,9 +51,9 @@ pricing_model: "per_use"
    bash
 
    ```
-   bash skills/merge-check/scripts/merge-check.sh owner/repo#123
+   bash skills/merge-check/（请参考skill目录中的脚本文件） owner/repo#123
    # or
-   bash skills/merge-check/scripts/merge-check.sh (已移除GitHub链接)
+   bash skills/merge-check/（请参考skill目录中的脚本文件） (已移除GitHub链接)
    ```
 2. Parse the JSON output
 3. Analyze against the dimensions below

@@ -65,8 +65,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 默认值 |
-| content | string | 否 | 相关说明, 可选值: json/text/markdown |
+| content | string | 否 | youtube-watcher处理的内容输入 |,  |
+| content | string | 否 | youtube-watcher处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -75,9 +75,9 @@ pricing_model: "per_use"
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "watcher 相关配置参数",
+    result: "watcher 相关配置参数",
+    result: "watcher 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,
@@ -132,7 +132,7 @@ export API_KEY="your_api_key_here"
    bash
 
    ```
-   python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+   python3 {baseDir}/（请参考skill目录中的脚本文件） "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
    ```
 2. Read the output and summarize it for the user.
 

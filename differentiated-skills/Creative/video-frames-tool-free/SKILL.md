@@ -132,7 +132,7 @@ suggested_price: 29.9
 **示例命令：**
 
 ```bash
-{baseDir}/scripts/frame.sh /videos/vlog-01.mp4 --time 00:00:08 --out /tmp/cover-08s.jpg
+{baseDir}/（请参考skill目录中的脚本文件） /videos/vlog-01.mp4 --time 00:00:08 --out /tmp/cover-08s.jpg
 ```
 
 ### 场景 2：视频内容快速预览
@@ -149,7 +149,7 @@ suggested_price: 29.9
 
 ```bash
 # 免费版支持最多 10 张缩略图
-{baseDir}/scripts/frame.sh /videos/meeting.mp4 --thumbs 6 --out /tmp/thumbs/
+{baseDir}/（请参考skill目录中的脚本文件） /videos/meeting.mp4 --thumbs 6 --out /tmp/thumbs/
 ```
 
 ### 场景 3：学习笔记配图整理
@@ -165,9 +165,9 @@ suggested_price: 29.9
 **示例命令：**
 
 ```bash
-{baseDir}/scripts/frame.sh /videos/tutorial.mp4 --time 00:02:15 --out /tmp/step-1.png
-{baseDir}/scripts/frame.sh /videos/tutorial.mp4 --time 00:05:30 --out /tmp/step-2.png
-{baseDir}/scripts/frame.sh /videos/tutorial.mp4 --time 00:08:45 --out /tmp/step-3.png
+{baseDir}/（请参考skill目录中的脚本文件） /videos/tutorial.mp4 --time 00:02:15 --out /tmp/step-1.png
+{baseDir}/（请参考skill目录中的脚本文件） /videos/tutorial.mp4 --time 00:05:30 --out /tmp/step-2.png
+{baseDir}/（请参考skill目录中的脚本文件） /videos/tutorial.mp4 --time 00:08:45 --out /tmp/step-3.png
 ```
 
 ## 不适用场景
@@ -199,7 +199,7 @@ ffmpeg -version
 最简单的用法 - 抓取视频第一帧：
 
 ```bash
-{baseDir}/scripts/frame.sh /path/to/video.mp4 --out /tmp/first-frame.jpg
+{baseDir}/（请参考skill目录中的脚本文件） /path/to/video.mp4 --out /tmp/first-frame.jpg
 ```
 
 ### 第三步：指定时间点抓取
@@ -207,7 +207,7 @@ ffmpeg -version
 抓取第 10 秒的画面：
 
 ```bash
-{baseDir}/scripts/frame.sh /path/to/video.mp4 --time 00:00:10 --out /tmp/frame-10s.jpg
+{baseDir}/（请参考skill目录中的脚本文件） /path/to/video.mp4 --time 00:00:10 --out /tmp/frame-10s.jpg
 ```
 
 ### 第四步：生成缩略图
@@ -215,7 +215,7 @@ ffmpeg -version
 为长视频生成预览缩略图：
 
 ```bash
-{baseDir}/scripts/frame.sh /path/to/video.mp4 --thumbs 8 --out /tmp/thumbs/
+{baseDir}/（请参考skill目录中的脚本文件） /path/to/video.mp4 --thumbs 8 --out /tmp/thumbs/
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
@@ -261,10 +261,10 @@ video_frames_free:
 
 ```bash
 # 网络分享用 JPG（体积小）
-{baseDir}/scripts/frame.sh video.mp4 --time 00:00:05 --out /tmp/share.jpg
+{baseDir}/（请参考skill目录中的脚本文件） video.mp4 --time 00:00:05 --out /tmp/share.jpg
 
 # UI 设计稿用 PNG（无损画质）
-{baseDir}/scripts/frame.sh video.mp4 --time 00:00:05 --out /tmp/ui-frame.png
+{baseDir}/（请参考skill目录中的脚本文件） video.mp4 --time 00:00:05 --out /tmp/ui-frame.png
 ```
 
 ### 3. 缩略图数量建议

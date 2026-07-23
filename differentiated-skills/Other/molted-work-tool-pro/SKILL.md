@@ -96,10 +96,10 @@ pricing_model: "per_use"
 
 ```bash
 # 批量提案（专业版）
-{baseDir}/scripts/work-pro.sh propose-batch --tasks tasks.json
+{baseDir}/（请参考skill目录中的脚本文件） propose-batch --tasks tasks.json
 
 # 智能派单给团队成员
-{baseDir}/scripts/work-pro.sh dispatch --team team.json --strategy skill-match
+{baseDir}/（请参考skill目录中的脚本文件） dispatch --team team.json --strategy skill-match
 ```
 
 ```json
@@ -132,10 +132,10 @@ TOP 技能: backend（$1,800）
 
 ```bash
 # 发起争议（专业版）
-{baseDir}/scripts/work-pro.sh dispute --task TASK-001 --reason "交付方失联"
+{baseDir}/（请参考skill目录中的脚本文件） dispute --task TASK-001 --reason "交付方失联"
 
 # 缴纳保证金
-{baseDir}/scripts/work-pro.sh deposit --amount 100 --currency USDC
+{baseDir}/（请参考skill目录中的脚本文件） deposit --amount 100 --currency USDC
 ```
 
 ## 不适用场景
@@ -254,14 +254,14 @@ def match_skills(required, have):
 
 ```bash
 # 缴纳保证金
-{baseDir}/scripts/work-pro.sh deposit --amount 100 --currency USDC
+{baseDir}/（请参考skill目录中的脚本文件） deposit --amount 100 --currency USDC
 
 # 发起争议
-{baseDir}/scripts/work-pro.sh dispute --task TASK-001 \
+{baseDir}/（请参考skill目录中的脚本文件） dispute --task TASK-001 \
   --reason "交付方失联" --evidence ./chat-log.txt
 
 # 查看仲裁进度
-{baseDir}/scripts/work-pro.sh arbitration --task TASK-001
+{baseDir}/（请参考skill目录中的脚本文件） arbitration --task TASK-001
 ```
 
 ```text

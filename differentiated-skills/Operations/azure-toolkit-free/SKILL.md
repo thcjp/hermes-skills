@@ -74,7 +74,7 @@ suggested_price: 29.9
 
 ```bash
 # 创建虚拟机
-python3 scripts/azure.py vm create \
+python3 （请参考skill目录中的脚本文件） vm create \
   --name "my-vm" \
   --resource-group my-rg \
   --image UbuntuLTS \
@@ -90,13 +90,13 @@ python3 scripts/azure.py vm create \
 
 ```bash
 # 创建存储账户
-python3 scripts/azure.py storage create \
+python3 （请参考skill目录中的脚本文件） storage create \
   --name mystorage2026 \
   --resource-group my-rg \
   --sku Standard_LRS
 
 # 上传文件
-python3 scripts/azure.py storage upload \
+python3 （请参考skill目录中的脚本文件） storage upload \
   --account mystorage2026 \
   --container data \
   --file ./data.csv
@@ -108,13 +108,13 @@ python3 scripts/azure.py storage upload \
 
 ```bash
 # 创建虚拟网络
-python3 scripts/azure.py vnet create \
+python3 （请参考skill目录中的脚本文件） vnet create \
   --name my-vnet \
   --resource-group my-rg \
   --address-prefix 10.0.0.0/16
 
 # 创建子网
-python3 scripts/azure.py vnet subnet create \
+python3 （请参考skill目录中的脚本文件） vnet subnet create \
   --vnet my-vnet \
   --name my-subnet \
   --address-prefix 10.0.1.0/24
@@ -146,17 +146,17 @@ pip install azure-mgmt-compute azure-mgmt-storage azure-identity
 
 ```bash
 # 虚拟机管理
-python3 scripts/azure.py vm create --name "my-vm" --resource-group my-rg --image UbuntuLTS --size Standard_B1s
-python3 scripts/azure.py vm list --resource-group my-rg
-python3 scripts/azure.py vm start --name "my-vm" --resource-group my-rg
-python3 scripts/azure.py vm stop --name "my-vm" --resource-group my-rg
+python3 （请参考skill目录中的脚本文件） vm create --name "my-vm" --resource-group my-rg --image UbuntuLTS --size Standard_B1s
+python3 （请参考skill目录中的脚本文件） vm list --resource-group my-rg
+python3 （请参考skill目录中的脚本文件） vm start --name "my-vm" --resource-group my-rg
+python3 （请参考skill目录中的脚本文件） vm stop --name "my-vm" --resource-group my-rg
 
 # 存储管理
-python3 scripts/azure.py storage create --name mystorage --resource-group my-rg
-python3 scripts/azure.py storage upload --account mystorage --container data --file ./file.txt
+python3 （请参考skill目录中的脚本文件） storage create --name mystorage --resource-group my-rg
+python3 （请参考skill目录中的脚本文件） storage upload --account mystorage --container data --file ./file.txt
 
 # 虚拟网络
-python3 scripts/azure.py vnet create --name my-vnet --resource-group my-rg --address-prefix 10.0.0.0/16
+python3 （请参考skill目录中的脚本文件） vnet create --name my-vnet --resource-group my-rg --address-prefix 10.0.0.0/16
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。

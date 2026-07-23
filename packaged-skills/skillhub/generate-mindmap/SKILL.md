@@ -72,9 +72,9 @@ JSON 也通过 `--data-file` 传入（自动识别 JSON / Markdown）；`--data-
 {
   "success": true,
   "data": {
-    result: "相关说明",
-    result: "相关说明",
-    result: "相关说明",
+    result: "mindmap 相关配置参数",
+    result: "mindmap 相关配置参数",
+    result: "mindmap 相关配置参数",
     "metadata": {
       "template_used": "reviewer",
       "word_count": 0,

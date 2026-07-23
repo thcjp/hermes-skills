@@ -82,7 +82,7 @@ suggested_price: 19.9
 
 ```bash
 # 综合分析
-python3 scripts/analyze.py --ticker AAPL
+python3 （请参考skill目录中的脚本文件） --ticker AAPL
 
 # 输出：
 # === AAPL 综合分析 ===
@@ -100,7 +100,7 @@ python3 scripts/analyze.py --ticker AAPL
 
 ```bash
 # 8维度评分
-python3 scripts/score.py --ticker TSLA
+python3 （请参考skill目录中的脚本文件） --ticker TSLA
 
 # 输出评分报告与建议
 ```
@@ -111,7 +111,7 @@ python3 scripts/score.py --ticker TSLA
 
 ```bash
 # 股息分析
-python3 scripts/dividend.py --ticker KO
+python3 （请参考skill目录中的脚本文件） --ticker KO
 
 # 输出：当前股息率、历史派息记录、派息增长率
 ```
@@ -131,24 +131,24 @@ python3 scripts/dividend.py --ticker KO
 pip install yfinance pandas numpy
 
 # 验证安装
-python3 scripts/analyze.py --ticker AAPL
+python3 （请参考skill目录中的脚本文件） --ticker AAPL
 ```
 
 ### 常用命令
 
 ```bash
 # 综合分析
-python3 scripts/analyze.py --ticker AAPL
-python3 scripts/analyze.py --ticker BTC-USD    # 加密货币
+python3 （请参考skill目录中的脚本文件） --ticker AAPL
+python3 （请参考skill目录中的脚本文件） --ticker BTC-USD    # 加密货币
 
 # 评分
-python3 scripts/score.py --ticker TSLA
+python3 （请参考skill目录中的脚本文件） --ticker TSLA
 
 # 股息
-python3 scripts/dividend.py --ticker KO
+python3 （请参考skill目录中的脚本文件） --ticker KO
 
 # 热门扫描
-python3 scripts/hot_scan.py
+python3 （请参考skill目录中的脚本文件）
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。

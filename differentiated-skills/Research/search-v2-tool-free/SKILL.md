@@ -130,13 +130,13 @@ suggested_price: 29.9
 
 ```bash
 # 基础搜索
-./scripts/search.sh '{"query": "Python async patterns best practices"}'
+（请参考skill目录中的脚本文件） '{"query": "Python async patterns best practices"}'
 
 # 高级搜索(更精确)
-./scripts/search.sh '{"query": "Python async patterns", "max_results": 5, "search_depth": "advanced"}'
+（请参考skill目录中的脚本文件） '{"query": "Python async patterns", "max_results": 5, "search_depth": "advanced"}'
 
 # 限定可信域名
-./scripts/search.sh '{"query": "React hooks tutorial", "max_results": 5, "include_domains": ["docs.python.org", "realpython.com"]}'
+（请参考skill目录中的脚本文件） '{"query": "React hooks tutorial", "max_results": 5, "include_domains": ["docs.python.org", "realpython.com"]}'
 ```
 
 输出示例:
@@ -168,10 +168,10 @@ suggested_price: 29.9
 
 ```bash
 # 搜索最近一周的内容
-./scripts/search.sh '{"query": "AI news", "time_range": "week", "max_results": 10}'
+（请参考skill目录中的脚本文件） '{"query": "AI news", "time_range": "week", "max_results": 10}'
 
 # 搜索最近一天的内容
-./scripts/search.sh '{"query": "GPT-5 release", "time_range": "day", "max_results": 5}'
+（请参考skill目录中的脚本文件） '{"query": "GPT-5 release", "time_range": "day", "max_results": 5}'
 ```
 
 ### 场景三:域名过滤聚焦可信源
@@ -180,7 +180,7 @@ suggested_price: 29.9
 
 ```bash
 # 只在学术和技术文档站点搜索
-./scripts/search.sh '{
+（请参考skill目录中的脚本文件） '{
   "query": "machine learning transformer architecture",
   "include_domains": ["arxiv.org", "github.com", "docs.pytorch.org"],
   "search_depth": "advanced",
@@ -188,7 +188,7 @@ suggested_price: 29.9
 }'
 
 # 排除特定域名
-./scripts/search.sh '{
+（请参考skill目录中的脚本文件） '{
   "query": "Python web frameworks",
   "exclude_domains": ["pinterest.com", "quora.com"],
   "max_results": 5
@@ -236,14 +236,14 @@ export TAVILY_API_KEY="tvly-your-api-key-here"
 
 ```bash
 # 最简搜索
-./scripts/search.sh '{"query": "what is RAG in AI"}'
+（请参考skill目录中的脚本文件） '{"query": "what is RAG in AI"}'
 ```
 
 ### 第四步:使用高级选项
 
 ```bash
 # 高级搜索深度+域名过滤
-./scripts/search.sh '{
+（请参考skill目录中的脚本文件） '{
   "query": "vector database comparison",
   "search_depth": "advanced",
   "include_domains": ["arxiv.org", "github.com"],
@@ -276,19 +276,19 @@ export TAVILY_API_KEY="tvly-your-api-key-here"
 
 ```bash
 # 快速搜索(基础深度)
-./scripts/search.sh '{"query": "your question", "max_results": 5}'
+（请参考skill目录中的脚本文件） '{"query": "your question", "max_results": 5}'
 
 # 精确搜索(高级深度)
-./scripts/search.sh '{"query": "your question", "search_depth": "advanced", "max_results": 10}'
+（请参考skill目录中的脚本文件） '{"query": "your question", "search_depth": "advanced", "max_results": 10}'
 
 # 时间限定搜索
-./scripts/search.sh '{"query": "your question", "time_range": "week"}'
+（请参考skill目录中的脚本文件） '{"query": "your question", "time_range": "week"}'
 
 # 域名限定搜索
-./scripts/search.sh '{"query": "your question", "include_domains": ["arxiv.org"]}'
+（请参考skill目录中的脚本文件） '{"query": "your question", "include_domains": ["arxiv.org"]}'
 
 # 获取AI答案
-./scripts/search.sh '{"query": "your question", "include_answer": true}'
+（请参考skill目录中的脚本文件） '{"query": "your question", "include_answer": true}'
 ```
 
 ## 最佳实践
@@ -299,10 +299,10 @@ export TAVILY_API_KEY="tvly-your-api-key-here"
 
 ```bash
 # 好:简洁精准
-./scripts/search.sh '{"query": "vLLM PagedAttention optimization"}'
+（请参考skill目录中的脚本文件） '{"query": "vLLM PagedAttention optimization"}'
 
 # 不好:过于冗长
-./scripts/search.sh '{"query": "请帮我详细解释一下vLLM中的PagedAttention机制是如何优化KV缓存管理的,以及它与传统方法相比有哪些优势"}'
+（请参考skill目录中的脚本文件） '{"query": "请帮我详细解释一下vLLM中的PagedAttention机制是如何优化KV缓存管理的,以及它与传统方法相比有哪些优势"}'
 ```
 
 ### 2. 善用域名过滤提升质量
@@ -311,10 +311,10 @@ export TAVILY_API_KEY="tvly-your-api-key-here"
 
 ```bash
 # 学术研究:限定学术站点
-./scripts/search.sh '{"query": "transformer attention", "include_domains": ["arxiv.org", "scholar.google.com"]}'
+（请参考skill目录中的脚本文件） '{"query": "transformer attention", "include_domains": ["arxiv.org", "scholar.google.com"]}'
 
 # 编程问题:限定文档站点
-./scripts/search.sh '{"query": "FastAPI dependency injection", "include_domains": ["fastapi.tiangolo.com", "stackoverflow.com"]}'
+（请参考skill目录中的脚本文件） '{"query": "FastAPI dependency injection", "include_domains": ["fastapi.tiangolo.com", "stackoverflow.com"]}'
 ```
 
 ### 3. 高级深度用于精确需求
@@ -323,10 +323,10 @@ export TAVILY_API_KEY="tvly-your-api-key-here"
 
 ```bash
 # 日常:basic
-./scripts/search.sh '{"query": "Python list comprehension"}'
+（请参考skill目录中的脚本文件） '{"query": "Python list comprehension"}'
 
 # 精确:advanced
-./scripts/search.sh '{"query": "Python GIL impact on multithreading", "search_depth": "advanced"}'
+（请参考skill目录中的脚本文件） '{"query": "Python GIL impact on multithreading", "search_depth": "advanced"}'
 ```
 
 ### 4. 利用时间范围获取最新信息
@@ -335,10 +335,10 @@ export TAVILY_API_KEY="tvly-your-api-key-here"
 
 ```bash
 # 最新新闻
-./scripts/search.sh '{"query": "AI model releases", "time_range": "week"}'
+（请参考skill目录中的脚本文件） '{"query": "AI model releases", "time_range": "week"}'
 
 # 年度回顾
-./scripts/search.sh '{"query": "AI industry report", "time_range": "month"}'
+（请参考skill目录中的脚本文件） '{"query": "AI industry report", "time_range": "month"}'
 ```
 
 ### 5. 按相关度评分筛选
@@ -347,7 +347,7 @@ export TAVILY_API_KEY="tvly-your-api-key-here"
 
 ```bash
 # 搜索后让AI助手按score排序并筛选
-./scripts/search.sh '{"query": "your question", "max_results": 10}'
+（请参考skill目录中的脚本文件） '{"query": "your question", "max_results": 10}'
 # AI助手会优先分析高score结果
 ```
 

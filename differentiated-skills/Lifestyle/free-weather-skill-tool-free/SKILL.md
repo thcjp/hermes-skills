@@ -280,7 +280,7 @@ class WeatherTool:
 
 ```bash
 #!/bin/bash
-# ~/.local/bin/weather
+# ~/.local/（请参考skill目录中的脚本文件）
 
 CITY="${1:-Beijing}"
 FORMAT="${2:-default}"

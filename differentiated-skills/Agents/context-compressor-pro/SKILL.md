@@ -98,10 +98,10 @@ pricing_model: "per_use"
 
 ```bash
 # 压缩单日日志
-node scripts/context-compressor.js memory/2026-03-14.md
+node （请参考skill目录中的脚本文件） memory/2026-03-14.md
 
 # 指定输出路径
-node scripts/context-compressor.js memory/2026-03-14.md /tmp/compressed.md
+node （请参考skill目录中的脚本文件） memory/2026-03-14.md /tmp/compressed.md
 ```
 
 ### 标准搭建（<120秒）
@@ -110,10 +110,10 @@ node scripts/context-compressor.js memory/2026-03-14.md /tmp/compressed.md
 
 ```bash
 # 批量压缩本周日志（专业版一键命令）
-node scripts/context-compressor.js --batch memory/2026-03-{08..14}.md --output /tmp/week-compressed.md
+node （请参考skill目录中的脚本文件） --batch memory/2026-03-{08..14}.md --output /tmp/week-compressed.md
 
 # 智能分类压缩（自动归档到五个类别）
-node scripts/context-compressor.js memory/2026-03-14.md --classify --output memory/classified/
+node （请参考skill目录中的脚本文件） memory/2026-03-14.md --classify --output memory/classified/
 ```
 
 ### 完整搭建（<300秒）
@@ -192,13 +192,13 @@ node scripts/context-compressor.js memory/2026-03-14.md --classify --output memo
 
 ```bash
 # 批量压缩指定日期范围
-node scripts/context-compressor.js --batch memory/2026-03-{01..31}.md --output memory/compressed/2026-03.md
+node （请参考skill目录中的脚本文件） --batch memory/2026-03-{01..31}.md --output memory/compressed/2026-03.md
 
 # 并行压缩（4进程）
-node scripts/context-compressor.js --batch memory/2026-03-*.md --parallel 4
+node （请参考skill目录中的脚本文件） --batch memory/2026-03-*.md --parallel 4
 
 # 启用检查点（中断后可恢复）
-node scripts/context-compressor.js --batch memory/2026-03-*.md --checkpoint
+node （请参考skill目录中的脚本文件） --batch memory/2026-03-*.md --checkpoint
 ```
 
 **专业版优势**：
@@ -217,7 +217,7 @@ node scripts/context-compressor.js --batch memory/2026-03-*.md --checkpoint
 
 ```bash
 # 智能分类压缩
-node scripts/context-compressor.js memory/2026-03-14.md --classify --output memory/classified/
+node （请参考skill目录中的脚本文件） memory/2026-03-14.md --classify --output memory/classified/
 ```
 
 输出结构：
@@ -248,13 +248,13 @@ memory/classified/2026-03-14/
 
 ```bash
 # 增量压缩（首次执行为全量，后续为增量）
-node scripts/context-compressor.js memory/2026-03-14.md --incremental
+node （请参考skill目录中的脚本文件） memory/2026-03-14.md --incremental
 
 # 查看增量缓存
-node scripts/context-compressor.js --cache-status
+node （请参考skill目录中的脚本文件） --cache-status
 
 # 清理增量缓存
-node scripts/context-compressor.js --cache-clear
+node （请参考skill目录中的脚本文件） --cache-clear
 ```
 
 **专业版优势**：
@@ -273,7 +273,7 @@ node scripts/context-compressor.js --cache-clear
 
 ```bash
 # 压缩并评分
-node scripts/context-compressor.js memory/2026-03-14.md --score
+node （请参考skill目录中的脚本文件） memory/2026-03-14.md --score
 
 # 评分维度
 # - retention: 信息保留率（关键实体覆盖率）
@@ -310,10 +310,10 @@ node scripts/context-compressor.js memory/2026-03-14.md --score
 
 ```bash
 # 使用自定义模板
-node scripts/context-compressor.js memory/2026-03-14.md --template ~/workspace/.compressor-templates/team-meeting.md
+node （请参考skill目录中的脚本文件） memory/2026-03-14.md --template ~/workspace/.compressor-templates/team-meeting.md
 
 # 列出可用模板
-node scripts/context-compressor.js --list-templates
+node （请参考skill目录中的脚本文件） --list-templates
 ```
 
 模板示例（`team-meeting.md`）：
@@ -348,13 +348,13 @@ node scripts/context-compressor.js --list-templates
 
 ```bash
 # 查看压缩历史
-node scripts/context-compressor.js --history
+node （请参考skill目录中的脚本文件） --history
 
 # 查看指定文件的历史
-node scripts/context-compressor.js --history --file memory/2026-03-14.md
+node （请参考skill目录中的脚本文件） --history --file memory/2026-03-14.md
 
 # 导出历史报告
-node scripts/context-compressor.js --history --export /tmp/compression-report.json
+node （请参考skill目录中的脚本文件） --history --export /tmp/compression-report.json
 ```
 
 历史记录格式：
@@ -420,11 +420,11 @@ node scripts/context-compressor.js --history --export /tmp/compression-report.js
 **操作流程**：
 ```bash
 # 批量压缩团队本周所有日志
-node scripts/context-compressor.js --batch team-logs/2026-03-{08..14}-*.md \
+node （请参考skill目录中的脚本文件） --batch team-logs/2026-03-{08..14}-*.md \
   --classify --output team-archive/2026-W11/
 
 # 生成团队周报摘要
-node scripts/context-compressor.js team-archive/2026-W11/ --template weekly-report.md \
+node （请参考skill目录中的脚本文件） team-archive/2026-W11/ --template weekly-report.md \
   --output reports/2026-W11-summary.md
 ```
 
@@ -437,11 +437,11 @@ node scripts/context-compressor.js team-archive/2026-W11/ --template weekly-repo
 **操作流程**：
 ```bash
 # 增量压缩整个项目周期日志
-node scripts/context-compressor.js --batch project-logs/ --incremental \
+node （请参考skill目录中的脚本文件） --batch project-logs/ --incremental \
   --classify --output knowledge-base/
 
 # 按主题生成知识库
-node scripts/context-compressor.js knowledge-base/decisions/ \
+node （请参考skill目录中的脚本文件） knowledge-base/decisions/ \
   --template architecture-decisions.md \
   --output deliverables/architecture-decisions.md
 ```
@@ -455,12 +455,12 @@ node scripts/context-compressor.js knowledge-base/decisions/ \
 **操作流程**：
 ```bash
 # 压缩审计日志（要求质量评分>90）
-node scripts/context-compressor.js audit-logs/2026-03/ \
+node （请参考skill目录中的脚本文件） audit-logs/2026-03/ \
   --batch --quality --min-score 90 \
   --output archive/2026-03-compressed/
 
 # 导出压缩报告用于合规证明
-node scripts/context-compressor.js --history --export \
+node （请参考skill目录中的脚本文件） --history --export \
   /tmp/audit-compression-report.json
 ```
 
@@ -473,7 +473,7 @@ node scripts/context-compressor.js --history --export \
 **操作流程**：
 ```bash
 # 多语言混合压缩
-node scripts/context-compressor.js team-logs/ \
+node （请参考skill目录中的脚本文件） team-logs/ \
   --batch --multilingual \
   --output archive/multilingual/
 ```
@@ -487,10 +487,10 @@ node scripts/context-compressor.js team-logs/ \
 **操作流程**：
 ```bash
 # 分析Token使用情况
-node scripts/context-compressor.js --analyze memory/ --token-report
+node （请参考skill目录中的脚本文件） --analyze memory/ --token-report
 
 # 批量压缩并评估Token节省
-node scripts/context-compressor.js --batch memory/ \
+node （请参考skill目录中的脚本文件） --batch memory/ \
   --incremental --token-savings-report
 ```
 
@@ -550,7 +550,7 @@ node scripts/context-compressor.js --batch memory/ \
 
 ```bash
 # 在CI流水线中自动压缩构建日志
-node scripts/context-compressor.js build-logs/ \
+node （请参考skill目录中的脚本文件） build-logs/ \
   --batch --classify --output archive/builds/$(date +%Y%m%d)/
 ```
 
