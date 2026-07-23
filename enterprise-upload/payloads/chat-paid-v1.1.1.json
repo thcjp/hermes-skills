@@ -1,0 +1,13 @@
+{
+  "slug": "chat",
+  "version": "1.1.1",
+  "displayName": "Chat",
+  "summary": "从显式反馈学习沟通偏好,自适应语气/格式/风格,越用越懂你",
+  "changelog": "Auto-sync v1.1.1",
+  "pricing": {
+    "billingType": "per_call",
+    "pricingMode": "unified",
+    "pricePerCall": "9.90",
+    "currency": "CNY"
+  }
+}

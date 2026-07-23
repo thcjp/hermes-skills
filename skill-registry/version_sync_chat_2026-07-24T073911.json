@@ -1,0 +1,37 @@
+{
+  "slug": "chat",
+  "timestamp": "2026-07-24T07:39:11",
+  "phases": {
+    "quality_check": {
+      "passed": true,
+      "score": "13/13",
+      "failed_checks": []
+    },
+    "github": {
+      "slug": "chat",
+      "platform": "github",
+      "version": "1.1.1",
+      "status": "success",
+      "commit_message": "feat(chat): upgrade to v1.1.1 - Auto-sync: content updated, version 1.1.0 → 1.1.1"
+    },
+    "skillhub": {
+      "slug": "chat",
+      "platform": "skillhub",
+      "version": "1.1.1",
+      "status": "failed",
+      "free_upload": {
+        "status": "failed",
+        "output": "'skillhub' is not recognized as an internal or external command,\noperable program or batch file.\n"
+      },
+      "paid_upload": {
+        "status": "payload_ready",
+        "path": "d:\\skills\\enterprise-upload\\payloads\\chat-paid-v1.1.1.json"
+      }
+    },
+    "clawhub": {
+      "status": "skipped"
+    }
+  },
+  "source": "packaged",
+  "status": "partial_success"
+}

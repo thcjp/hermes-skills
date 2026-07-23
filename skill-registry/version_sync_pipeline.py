@@ -348,7 +348,8 @@ def run_quality_check(skill_md: Path) -> Dict[str, Any]:
 # ============================================================
 
 def sync_to_github(slug: str, skill_md: Path, new_version: str,
-                   changelog: str, source: str) -> Dict[str, Any]:
+                   changelog: str, source: str,
+                   skill_id: int = None) -> Dict[str, Any]:
     """同步skill到GitHub开放库
 
     执行: git add → git commit → git push
@@ -392,26 +393,38 @@ def sync_to_github(slug: str, skill_md: Path, new_version: str,
         # git push
         push_result = subprocess.run(
             ['git', 'push', 'origin', GITHUB_BRANCH],
-            capture_output=True, text=True, timeout=60,
+            capture_output=True, text=True, timeout=180,
             cwd=str(SKILLS_ROOT)
         )
         if push_result.returncode != 0:
             result['status'] = 'committed_not_pushed'
             result['error'] = f'git push failed: {push_result.stderr}'
             result['commit_hash'] = commit_result.stdout.strip().split('\n')[0] if commit_result.stdout else ''
+            if skill_id:
+                record_platform_upload(skill_id, new_version, 'github', slug,
+                                       'committed_not_pushed', error=result['error'][:200])
             return result
 
         result['status'] = 'success'
         result['commit_message'] = commit_msg
+        if skill_id:
+            record_platform_upload(skill_id, new_version, 'github', slug,
+                                   'success', visibility='public', pricing='free')
         return result
 
     except subprocess.TimeoutExpired:
         result['status'] = 'timeout'
         result['error'] = 'git operation timed out'
+        if skill_id:
+            record_platform_upload(skill_id, new_version, 'github', slug,
+                                   'timeout', error='git operation timed out')
         return result
     except Exception as e:
         result['status'] = 'error'
         result['error'] = str(e)
+        if skill_id:
+            record_platform_upload(skill_id, new_version, 'github', slug,
+                                   'error', error=str(e)[:200])
         return result
 
 
@@ -442,6 +455,7 @@ def sync_to_skillhub(slug: str, skill_md: Path, new_version: str,
     if len(content) > SKILLHUB_MAX_CONTENT:
         result['status'] = 'blocked_content_too_long'
         result['error'] = f'内容过长({len(content)}>{SKILLHUB_MAX_CONTENT})'
+        result['free_upload'] = {'status': 'blocked_content_too_long', 'error': result['error']}
         record_platform_upload(skill_id, new_version, 'skillhub', slug,
                                'blocked_content_too_long', error=result['error'])
         return result
@@ -520,7 +534,7 @@ def sync_to_clawhub(slug: str, skill_md: Path, new_version: str,
                     skill_id: int) -> Dict[str, Any]:
     """同步skill到ClawHub
 
-    通过clawhub_batch_uploader.py上传
+    通过npx clawhub publish直接上传单个skill
     """
     result = {
         'slug': slug,
@@ -529,11 +543,15 @@ def sync_to_clawhub(slug: str, skill_md: Path, new_version: str,
         'status': 'unknown',
     }
 
+    skill_dir = skill_md.parent
+    changelog = f'Auto-sync v{new_version}'
+
     try:
-        cmd = ['python', str(CLAWHUB_UPLOADER), '--slug', slug, '--version', new_version]
+        cmd_str = f'npx clawhub --registry "https://clawhub.ai" publish "{skill_dir}" --changelog "{changelog}"'
         proc = subprocess.run(
-            cmd, capture_output=True, text=True, timeout=120,
-            cwd=str(SKILL_REGISTRY_DIR)
+            cmd_str,
+            capture_output=True, text=True, timeout=120,
+            cwd=str(SKILLS_ROOT), shell=True
         )
         output = proc.stdout + proc.stderr
 
@@ -542,16 +560,16 @@ def sync_to_clawhub(slug: str, skill_md: Path, new_version: str,
             result['output'] = output[:200]
             record_platform_upload(skill_id, new_version, 'clawhub', slug,
                                    'success', visibility='public', pricing='free')
-        elif 'VERSION_EXISTS' in output:
-            result['status'] = 'version_exists'
-            result['output'] = output[:200]
-            record_platform_upload(skill_id, new_version, 'clawhub', slug,
-                                   'version_exists', error='VERSION_EXISTS')
-        elif 'rate limit' in output.lower() or '429' in output:
+        elif 'Rate limit' in output or 'rate limit' in output:
             result['status'] = 'rate_limited'
             result['output'] = output[:200]
             record_platform_upload(skill_id, new_version, 'clawhub', slug,
                                    'rate_limited', error='RATE_LIMITED')
+        elif 'Version' in output and 'already exists' in output:
+            result['status'] = 'version_exists'
+            result['output'] = output[:200]
+            record_platform_upload(skill_id, new_version, 'clawhub', slug,
+                                   'version_exists', error='VERSION_EXISTS')
         else:
             result['status'] = 'failed'
             result['output'] = output[:200]
@@ -656,7 +674,7 @@ def sync_skill_to_all_platforms(slug: str, skip_github: bool = False,
     # 7. GitHub同步
     if not skip_github:
         print(f"  [4/7] 同步到GitHub...")
-        gh_result = sync_to_github(slug, skill_md, new_version, changelog, source)
+        gh_result = sync_to_github(slug, skill_md, new_version, changelog, source, skill_id)
         result['phases']['github'] = gh_result
         if gh_result['status'] == 'success':
             print(f"  ✓ GitHub同步成功")
@@ -673,7 +691,8 @@ def sync_skill_to_all_platforms(slug: str, skip_github: bool = False,
         is_paid = bool(db_skill.get('is_paid', False))
         sh_result = sync_to_skillhub(slug, skill_md, new_version, skill_id, is_paid)
         result['phases']['skillhub'] = sh_result
-        free_status = sh_result.get('free_upload', {}).get('status', 'unknown')
+        free_upload = sh_result.get('free_upload') or {}
+        free_status = free_upload.get('status', 'unknown')
         if free_status == 'success':
             print(f"  ✓ SkillHub同步成功")
         else:

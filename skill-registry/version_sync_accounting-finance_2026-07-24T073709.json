@@ -1,0 +1,32 @@
+{
+  "slug": "accounting-finance",
+  "timestamp": "2026-07-24T07:37:09",
+  "phases": {
+    "quality_check": {
+      "passed": true,
+      "score": "13/13",
+      "failed_checks": []
+    },
+    "github": {
+      "status": "skipped"
+    },
+    "skillhub": {
+      "slug": "accounting-finance",
+      "platform": "skillhub",
+      "version": "1.0.1",
+      "status": "blocked_content_too_long",
+      "free_upload": null,
+      "paid_upload": null,
+      "error": "内容过长(9857>5800)"
+    },
+    "clawhub": {
+      "slug": "accounting-finance",
+      "platform": "clawhub",
+      "version": "1.0.1",
+      "status": "failed",
+      "output": "usage: clawhub_batch_uploader.py [-h] [--limit LIMIT] [--dry-run] [--resume]\nclawhub_batch_uploader.py: error: unrecognized arguments: --slug accounting-finance --version 1.0.1\n"
+    }
+  },
+  "source": "packaged",
+  "status": "failed"
+}

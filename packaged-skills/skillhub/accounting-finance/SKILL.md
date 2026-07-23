@@ -1,7 +1,7 @@
 ---
 slug: "accounting-finance"
 name: "accounting-finance"
-version: "1.0.0"
+version: 1.0.1
 displayName: "财务分析专业套件"
 summary: "企业级财务分析与估值建模全套技能，58个专业分析模块，支持批量处理与自动化报告。"
 license: "Proprietary"
