@@ -36,6 +36,18 @@ tags:
 | 字体配对 | 57组字体配对中的推荐组合 |
 | UX规则 | 99条规则中相关的最佳实践 |
 
+## 输出格式
+
+设计系统以结构化 Markdown 输出，包含以下内容块：
+
+- **设计系统定义**：风格关键词列表 + 设计理念段落描述
+- **色彩变量**：CSS 自定义属性代码块（`--color-primary`、`--color-secondary` 等），含 HEX 值和 WCAG AA 对比度标注
+- **排版规范**：字体配对方案 + 七级字体层级表（Display 到 Caption，含 `font-size`、`font-weight`、`line-height`）
+- **组件规范**：按钮、表单、卡片等组件的 HTML + CSS 代码片段，标注设计要点
+- **UX规则**：匹配到的规则编号、规则标题、应用建议
+
+输出结果可直接粘贴到项目的设计文档或 `design-tokens.css` 文件中使用。
+
 ## 使用指南
 
 1. 分析设计需求，提取关键词
@@ -43,14 +55,14 @@ tags:
 
 ```bash
 # 搜索设计系统
-python3 design_db.py "beauty spa wellness service elegant" --design-system -p "Serenity Spa"
+python3 design_db.py "saas dashboard data-heavy minimal" --design-system -p "MetricsPro"
 
 # 补充搜索UX规则和字体
-python3 design_db.py "animation accessibility" --domain ux
-python3 design_db.py "elegant luxury serif" --domain typography
+python3 design_db.py "form validation feedback" --domain ux
+python3 design_db.py "modern geometric sans" --domain typography
 
 # 搜索技术栈组件
-python3 design_db.py "layout responsive form" --stack html-tailwind
+python3 design_db.py "table chart navigation" --stack react
 ```
 
 ## 依赖说明
@@ -89,16 +101,16 @@ Then synthesize design system + detailed searches and implement.
 ## 常见问题
 
 ### Q1: 如何开始使用UI / UX？
-A: 提供设计需求关键词（如"beauty spa elegant"），系统会从50+风格、97色板、57字体对和99条UX规则中检索匹配方案，输出完整设计系统供直接使用。
+A: 上手的关键在于"关键词质量"：叠加风格、场景与情绪词（如"fitness app energetic bold dark-mode"）远比单写"fitness"匹配精准。建议先用主检索拿到整体骨架，再按"缺什么补什么"逐项追加细分领域检索；若首轮风格偏离预期，调整关键词往往比反复更换项目名更见效。所有检索结果可合并为 CSS 变量与组件规范直接落地，无需手动换算色值。
 
 ## 错误处理
 
-| 错误场景(续)| 原因 | 处理方式 |
-|----:|:----|----:|
-| LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
-| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
-| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
-| 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
+| 错误场景 | 原因 | 处理方式 |
+|:----|:----|:----|
+| design_db.py返回空结果 | 关键词过于宽泛或与库中风格标签不匹配 | 拆分关键词为"风格+场景+情绪"三层叠加，如将"modern"改为"minimal saas dashboard dark-mode"后重试 |
+| 配色方案WCAG对比度不足 | 选中色板的前景/背景色对未达AA标准 | 在输出CSS变量中手动将浅色背景调暗10-15%，或使用design_db.py追加--domain ux搜索更高对比度的替代色板 |
+| 字体配对在目标平台不可用 | Google Fonts在部分地区加载缓慢或被阻断 | 下载字体文件本地托管，在font-family栈末尾添加系统字体fallback如system-ui, sans-serif |
+| UX规则与项目设计规范冲突 | 99条规则为通用最佳实践，未覆盖特定行业合规要求 | 以项目设计规范为准，将冲突规则记录为例外并在团队设计文档中注明偏差理由 |
 
 ## 已知限制
 

@@ -34,10 +34,104 @@ pricing_model: "per_use"
 
 ## 核心能力
 
-- Score startup idea through S
-- niche check + STREAM 6-layer analysis
-  + Devil's Advocate inve
-#
+- Score startup idea through S.E.E.D. niche validation
+- Niche check + STREAM 6-layer analysis
+- Devil's Advocate investgation (反方论证压力测试)
+
+## S.E.E.D. 利基检查框架
+
+S.E.E.D. 是对创业点子进行市场利基验证的四维框架，每个维度按 0-10 分打分：
+
+| 维度 | 全称 | 核心问题 | 评分标准 |
+|:-----|:-----|:------|:------|
+| **S** | Search Demand | 用户是否在主动搜索解决方案？ | 0=无人搜索, 10=高搜索量低竞争 |
+| **E** | Entry Barrier | 进入门槛是否合理？ | 0=门槛过高无法启动, 10=门槛适中可快速验证 |
+| **E** | Expansion Path | 是否有清晰的扩展路径？ | 0=单一场景无法扩展, 10=多场景多市场可扩展 |
+| **D** | Defensibility | 能否建立防御壁垒？ | 0=无壁垒极易被复制, 10=有网络效应/数据壁垒/专利 |
+
+**利基评分计算**: `S.E.E.D. Score = (S + E + E + D) / 4`，总分 ≥ 7.0 为值得深入验证的点子。
+
+## STREAM 六层分析法
+
+STREAM 是对创业点子进行深度结构化分析的多层框架：
+
+| 层级 | 名称 | 分析内容 | 关键产出 |
+|:-----|:-----|:------|:------|
+| **S** | Surface | 表面市场概况：TAM/SAM/SOM估算 | 市场规模量化 |
+| **T** | Target | 目标用户画像与痛点深度访谈模拟 | 用户画像与痛点优先级 |
+| **R** | Revenue | 商业模式与收入结构分析 | 定价策略与收入预测 |
+| **E** | Execution | 执行路径与MVP定义 | 最小可行产品规格 |
+| **A** | Advantage | 竞争优势与差异化分析 | 竞品对比矩阵 |
+| **M** | Market | 市场时机与趋势分析 | 时机评分与趋势图谱 |
+
+## Devil's Advocate 反方论证
+
+在 S.E.E.D. 和 STREAM 分析完成后，执行 Devil's Advocate 压力测试，从以下角度对点子进行攻击性质疑：
+
+1. **市场否定**: "这个市场可能根本不存在，用户说的需求未必是真实付费意愿"
+2. **竞争否定**: "巨头一旦入场，你没有任何还手之力"
+3. **执行否定**: "你缺乏该领域的关键经验和资源"
+4. **时机否定**: "市场太早（教育成本高）或太晚（格局已定）"
+5. **模式否定**: "收入模型无法覆盖获客成本，LTV < CAC"
+
+每个否定论点需提供反驳证据，无法反驳的论点计入风险评分。
+
+## 验证流程
+
+### 步骤一：输入创业点子
+
+用户提供点子描述（1-3句话），例如：
+> "一个面向自由职业者的自动化税务计算工具，连接银行流水和税务系统，自动生成报税表"
+
+### 步骤二：S.E.E.D. 快速打分
+
+对点子进行四维评分，输出初步利基分数。若分数 < 5.0，建议调整方向后重新评分。
+
+### 步骤三：STREAM 深度分析
+
+对通过初筛的点子执行六层分析，每层输出结构化结论和量化指标。
+
+### 步骤四：Devil's Advocate 压力测试
+
+执行五项反方论证，标注每项的反驳难度（Easy/Medium/Hard/Unresolved）。
+
+### 步骤五：综合评分与建议
+
+输出最终验证报告，包含：
+- S.E.E.D. 总分与各维度得分
+- STREAM 六层分析摘要
+- Devil's Advocate 未解决问题列表
+- 综合建议：GO / PIVOT / KILL
+- 推荐的下一步行动（用户访谈、MVP构建、竞品分析等）
+
+## 评分输出示例
+
+```json
+{
+  "idea": "面向自由职业者的自动化税务计算工具",
+  "seed_score": {
+    "search": 7,
+    "entry": 6,
+    "expansion": 8,
+    "defensibility": 5,
+    "total": 6.5
+  },
+  "stream_analysis": {
+    "surface": "TAM ~$2.1B, SAM ~$340M, SOM ~$12M",
+    "target": "核心用户: 月收入5K-30K的自由设计师/开发者/咨询顾问",
+    "revenue": "SaaS订阅 $15/月 + 按次报税 $9/次",
+    "execution": "MVP: 银行API对接 + 税务规则引擎 + PDF导出",
+    "advantage": "差异化: 针对自由职业场景优化, 非通用会计软件",
+    "market": "时机: 零工经济增速18% YoY, 税务合规趋严"
+  },
+  "devils_advocate": [
+    {"attack": "巨头入场风险", "refutation_difficulty": "Medium", "evidence": "TurboTax专注个人报税, 未覆盖自由职业细分"},
+    {"attack": "获客成本高", "refutation_difficulty": "Hard", "evidence": "CAC估算$45, LTV$180, LTV/CAC=4.0 可接受但需验证"}
+  ],
+  "recommendation": "PIVOT",
+  "next_steps": ["进行10位自由职业者深度访谈", "验证付费意愿与定价区间", "分析竞品缺失功能"]
+}
+```
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -117,7 +211,16 @@ export API_KEY="your_api_key_here"
 ## 常见问题
 
 ### Q1: 如何开始使用Validate？
-A: 
+A: 直接用1-3句话描述你的创业点子即可触发验证流程。例如输入"一个AI驱动的宠物健康监测App"，系统会自动执行S.E.E.D.打分、STREAM六层分析和Devil's Advocate压力测试，最终输出GO/PIVOT/KILL建议。
+
+### Q2: S.E.E.D.评分低于7.0是否意味着点子不好？
+A: 不一定。低分可能意味着该点子需要调整方向而非完全放弃。系统会在报告中标注低分维度的具体原因，例如Defensibility低分可能建议增加数据壁垒或网络效应设计。建议结合STREAM分析中的Execution层，评估是否存在低成本的改进方案。
+
+### Q3: Devil's Advocate中有Unresolved问题怎么办？
+A: Unresolved问题表示当前无法用数据和逻辑有效反驳的风险。建议将其转化为验证假设，通过用户访谈、竞品分析或MVP测试来收集证据。通常1-2个Unresolved问题不意味着KILL，但3个以上建议重新评估点子可行性。
+
+### Q4: 验证结果为PIVOT时如何确定调整方向？
+A: PIVOT建议会附带具体的调整方向提示，通常基于STREAM分析中得分最低的层级。例如若Revenue层得分最低，建议调整定价模型；若Advantage层得分最低，建议重新定位差异化。报告中 `next_steps` 字段会给出3-5个具体行动建议。
 
 ## 错误处理
 

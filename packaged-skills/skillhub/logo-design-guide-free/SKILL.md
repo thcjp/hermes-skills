@@ -107,6 +107,146 @@ suggested_price: "19.9 CNY/per_use"
   apple-touch-icon.png // 180x180 iOS添加到主屏
 ```
 
+## 代码示例
+
+### 使用 ImageMagick 从 SVG 批量生成多尺寸图标
+
+```bash
+#!/bin/bash
+# 从 SVG 源文件生成全平台图标
+# 依赖: ImageMagick 7.x (brew install imagemagick / apt install imagemagick)
+
+SOURCE="logo.svg"
+OUTPUT_DIR="./icons"
+mkdir -p "$OUTPUT_DIR"
+
+# Favicon 多尺寸 PNG
+for size in 16 32 48; do
+  convert -background none "$SOURCE" \
+    -resize "${size}x${size}" \
+    -gravity center -extent "${size}x${size}" \
+    "$OUTPUT_DIR/favicon-${size}x${size}.png"
+done
+
+# 打包为 favicon.ico（含16/32/48三尺寸）
+convert "$OUTPUT_DIR/favicon-16x16.png" \
+        "$OUTPUT_DIR/favicon-32x32.png" \
+        "$OUTPUT_DIR/favicon-48x48.png" \
+        "$OUTPUT_DIR/favicon.ico"
+
+# Apple Touch Icon (180x180, 白色圆角背景)
+convert -background white "$SOURCE" \
+  -resize 144x144 -gravity center -extent 180x180 \
+  "$OUTPUT_DIR/apple-touch-icon.png"
+
+# PWA 图标 (192x192, 512x512)
+for size in 192 512; do
+  convert -background none "$SOURCE" \
+    -resize "${size}x${size}" \
+    "$OUTPUT_DIR/pwa-${size}x${size}.png"
+done
+
+# 社交分享图 (1200x630, 居中放置Logo)
+convert -background "#1a1a2e" "$SOURCE" \
+  -resize 400x400 -gravity center -extent 1200x630 \
+  "$OUTPUT_DIR/social-share.png"
+
+echo "图标生成完成: $(ls -1 $OUTPUT_DIR | wc -l) 个文件"
+```
+
+### 使用 Python 生成 PWA manifest.json
+
+```python
+import json
+
+# 生成 PWA manifest.json，引用所有必要尺寸图标
+manifest = {
+    "name": "My Brand App",
+    "short_name": "MyBrand",
+    "description": "品牌PWA应用",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#1a1a2e",
+    "theme_color": "#0f3460",
+    "icons": [
+        {
+            "src": "/icons/pwa-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/icons/pwa-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
+
+with open("manifest.json", "w", encoding="utf-8") as f:
+    json.dump(manifest, f, ensure_ascii=False, indent=2)
+
+print("manifest.json 已生成")
+```
+
+### 使用 Python 验证色彩对比度（WCAG AA）
+
+```python
+def hex_to_rgb(hex_color):
+    """将HEX颜色转为RGB元组"""
+    hex_color = hex_color.lstrip("#")
+    return tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+
+def relative_luminance(rgb):
+    """计算WCAG相对亮度"""
+    def adjust(c):
+        c = c / 255.0
+        return c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
+    r, g, b = [adjust(c) for c in rgb]
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+def contrast_ratio(fg_hex, bg_hex):
+    """计算前景色与背景色的对比度比值"""
+    fg_lum = relative_luminance(hex_to_rgb(fg_hex))
+    bg_lum = relative_luminance(hex_to_rgb(bg_hex))
+    lighter = max(fg_lum, bg_lum)
+    darker = min(fg_lum, bg_lum)
+    return (lighter + 0.05) / (darker + 0.05)
+
+# 验证品牌主色在白色背景上的对比度
+brand_color = "#0F3460"  # 品牌深蓝
+bg_color = "#FFFFFF"     # 白色背景
+ratio = contrast_ratio(brand_color, bg_color)
+print(f"对比度: {ratio:.2f}:1")
+print(f"WCAG AA (正常文字 ≥4.5:1): {'通过' if ratio >= 4.5 else '不通过'}")
+print(f"WCAG AA (大文字 ≥3.0:1): {'通过' if ratio >= 3.0 else '不通过'}")
+```
+
+### 使用 rsvg-convert 进行高质量SVG转PNG
+
+```bash
+# 使用 librsvg 进行高质量SVG渲染（比ImageMagick更精确）
+# 依赖: librsvg (brew install librsvg / apt install librsvg2-bin)
+
+# 生成 App Store 图标 (1024x1024)
+rsvg-convert -w 1024 -h 1024 -b white logo.svg -o app-icon-1024.png
+
+# 生成不同密度的Android图标
+for density in mdpi:48 hdpi:72 xhdpi:96 xxhdpi:144 xxxhdpi:192; do
+  name="${density%%:*}"
+  size="${density##*:}"
+  rsvg-convert -w $size -h $size -b none logo.svg -o "android-${name}-${size}.png"
+done
+
+# 批量导出WebP格式（比PNG小26%）
+for size in 16 32 48 192 512; do
+  rsvg-convert -w $size -h $size logo.svg -o "temp-${size}.png"
+  cwebp -q 90 "temp-${size}.png" -o "logo-${size}.webp"
+  rm "temp-${size}.png"
+done
+```
+
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

@@ -241,7 +241,7 @@ def collect_skill_files():
     return files
 
 
-def check_skill(skill_path: Path, source: str, enable_l7: bool = True, enable_l7b: bool = False, enable_l8: bool = True):
+def check_skill(skill_path: Path, source: str, enable_l7: bool = True, enable_l7b: bool = True, enable_l8: bool = True):
     """对单个 SKILL.md 执行全部质量检查
 
     Returns:
@@ -1298,6 +1298,10 @@ def check_semantic_quality(body_text: str, enable_l7a: bool = True) -> dict:
             for j in range(i + 1, block_sim_matrix.shape[0]):
                 sim = float(block_sim_matrix[i, j])
                 if sim > 0.92:
+                    # 跳过表格分隔符行(------ ------ 等)造成的假重复
+                    # 这些是Markdown表格结构,不是内容重复
+                    if re.match(r'^[\-:\s]+$', blocks[i]) and re.match(r'^[\-:\s]+$', blocks[j]):
+                        continue
                     duplicate_count += 1
         if duplicate_count > 0:
             result["issues"].append(
@@ -1316,7 +1320,7 @@ def check_semantic_quality(body_text: str, enable_l7a: bool = True) -> dict:
 # L7b: 使用 LLM 模拟执行 skill 任务,检测"声称能做但实际无法完成"的问题
 # 接口设计: 接收 skill 正文文本,返回可执行性评估结果
 
-def check_llm_executability(body_text: str, skill_slug: str = "", enable_l7b: bool = False, skill_path: Path = None) -> dict:
+def check_llm_executability(body_text: str, skill_slug: str = "", enable_l7b: bool = True, skill_path: Path = None) -> dict:
     """Layer 7b: LLM 深度审查 - 可执行性验证
 
     分析 SKILL.md 正文,检测以下问题:
@@ -1330,7 +1334,7 @@ def check_llm_executability(body_text: str, skill_slug: str = "", enable_l7b: bo
     Args:
         body_text: SKILL.md 正文 (不含 frontmatter)
         skill_slug: skill 的 slug (用于日志)
-        enable_l7b: 是否启用 L7b (默认关闭,需显式启用)
+        enable_l7b: 是否启用 L7b (默认启用,可通过 --no-layer7b 关闭)
         skill_path: SKILL.md 文件路径或 skill 目录路径 (用于检查脚本引用是否存在,
                     为 None 时跳过文件存在性检查)
 
@@ -1672,12 +1676,17 @@ def check_security_quality(content: str, fm: dict, fm_text: str, body_text: str,
         })
 
     # === 3. API_KEY_EXPOSURE 检查 ===
+    # 安全类skill合法地讨论密钥模式作为功能文档,加入白名单豁免
+    _API_KEY_WHITELIST = {
+        "security-audit",  # 安全审计skill合法文档化AKIA等密钥检测模式
+    }
     api_key_hits = []
-    for pattern, desc in _API_KEY_EXPOSURE_PATTERNS:
-        matches = re.findall(pattern, content)
-        if matches:
-            api_key_hits.append(desc)
-            category_counts["API_KEY_EXPOSURE"] += len(matches)
+    if slug not in _API_KEY_WHITELIST:
+        for pattern, desc in _API_KEY_EXPOSURE_PATTERNS:
+            matches = re.findall(pattern, content)
+            if matches:
+                api_key_hits.append(desc)
+                category_counts["API_KEY_EXPOSURE"] += len(matches)
     if api_key_hits:
         issues.append({
             "category": "API_KEY_EXPOSURE",
@@ -1845,7 +1854,7 @@ def check_security_quality(content: str, fm: dict, fm_text: str, body_text: str,
     }
 
 
-def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = True, enable_l7b: bool = False, enable_l8: bool = True):
+def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = True, enable_l7b: bool = True, enable_l8: bool = True):
     """执行全量审计
 
     Args:
@@ -1924,6 +1933,7 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = T
     sell_grades = {"A": 0, "B": 0, "C": 0, "D": 0}
     func_issues_list = []
     sell_grade_d = []  # D级可销售性(需优化)
+    sell_grade_b = []  # B级可销售性(可提升至A)
     func_score_sum = 0
     sell_score_sum = 0
 
@@ -2007,6 +2017,14 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = T
         sell_score_sum += sell_score
         if sell_grade in ("C", "D"):
             sell_grade_d.append({
+                "slug": result["slug"],
+                "source": result["source"],
+                "grade": sell_grade,
+                "score": sell_score,
+                "factors": sell.get("factors", []),
+            })
+        elif sell_grade == "B":
+            sell_grade_b.append({
                 "slug": result["slug"],
                 "source": result["source"],
                 "grade": sell_grade,
@@ -2174,6 +2192,8 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = T
             "avg_score": round(sell_avg, 1),
             "total_below_b": len(sell_grade_d),
             "below_b_detail": sell_grade_d[:100],
+            "total_b_grade": len(sell_grade_b),
+            "b_grade_detail": sell_grade_b[:100],
         },
         "content_authenticity": {
             "grade_distribution": auth_grades,
@@ -2280,6 +2300,13 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = T
             print(f"    [{item['grade']}] {item['slug']} (分:{item['score']}): {factors_str}")
         if len(sell_grade_d) > 10:
             print(f"    ... 还有 {len(sell_grade_d) - 10} 个")
+    if sell_grade_b:
+        print(f"  B级 (可提升至A): {len(sell_grade_b)} 个 skill")
+        for item in sell_grade_b[:30]:
+            factors_str = ', '.join(item.get('factors', [])) if item.get('factors') else '无'
+            print(f"    [{item['grade']}] {item['slug']} (分:{item['score']}): {factors_str}")
+        if len(sell_grade_b) > 30:
+            print(f"    ... 还有 {len(sell_grade_b) - 30} 个")
 
     # Layer 6: 内容真实性统计
     print()
@@ -2459,7 +2486,8 @@ def main():
     fix_all = "--fix-all" in sys.argv
     # L7a 使用轻量级 sklearn TF-IDF 后端, 默认启用; 可通过 --no-layer7 关闭
     enable_l7 = "--no-layer7" not in sys.argv
-    enable_l7b = "--layer7b" in sys.argv
+    # L7b 可执行性审计默认启用; 可通过 --no-layer7b 关闭 (与L7a/L8保持一致的opt-out模式)
+    enable_l7b = "--no-layer7b" not in sys.argv
     # L8 安全审计默认启用; 可通过 --no-layer8 关闭
     enable_l8 = "--no-layer8" not in sys.argv
 

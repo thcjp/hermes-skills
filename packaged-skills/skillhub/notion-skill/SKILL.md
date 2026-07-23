@@ -48,30 +48,43 @@ pricing_model: "per_use"
 
 ## 核心能力
 
-- Work with Notion pages and databases via the official Notion API
-#
+- **官方API集成**：通过Notion官方REST API（v1）操作页面与数据库，支持完整的CRUD操作
+- **数据库管理**：创建内联数据库、配置属性schema（文本/数字/选择/日期/公式/关联等14种属性类型）、查询与排序
+- **页面内容编辑**：通过Block API追加、更新、删除页面内容块，支持段落、标题、列表、代码、引用、Callout等块类型
+- **Markdown双向转换**：将Markdown文本转换为Notion Block JSON格式写入页面，或将Notion页面内容导出为Markdown
+- **模板应用**：基于预设模板批量创建结构化页面，自动填充属性与内容块
+- **关联关系管理**：创建与维护数据库间的Relation属性，实现跨数据库引用与Rollup汇总
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 数据处理 | 数据源与处理规则 | 清洗结果与统计摘要 |
-| 经官方Notion  | 目标数据与配置参数 | 处理结果与执行状态 |
+| 任务看板自动化 | 任务名称与状态 | 数据库条目 + 状态流转 + 分配记录 |
+| 文档批量创建 | 模板与数据列表 | 结构化页面集合 + 属性填充 + 关联链接 |
+| 数据库迁移 | 外部数据源(CSV/JSON) | Notion数据库 + 属性映射 + 批量导入结果 |
+| 知识库索引 | 文档标题与标签 | 可搜索数据库 + 分类标签 + 内容摘要 |
+| 周报自动化 | 时间范围与项目列表 | 周报页面 + 任务汇总 + 进度更新 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：Notion页面实时编辑监听、用户权限与角色管理、工作区级别的设置变更、Notion Calendar集成
 
 ## 使用流程
 
-1. 确认运行环境满足依赖说明中的要求
-2. 根据适用场景选择合适的使用方式
-3. 执行操作并检查输出结果
-4. 如遇错误，参考错误处理章节
+1. 确认运行环境满足依赖说明中的要求，已获取Notion API Token
+2. 确认目标页面/数据库已与Integration共享（在Notion中添加连接）
+3. 选择操作类型并构造请求参数（数据库ID、页面ID、Block内容等）
+4. 执行API调用，获取返回的页面ID、块ID或查询结果
+5. 验证操作结果：在Notion界面中检查页面内容与属性是否正确
+6. 对于批量操作，使用分页游标（start_cursor）获取完整结果集
 
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
 |---:|---:|---:|---:|
-| content | string | 否 | notion-skill处理的内容输入 |,  |
-| content | string | 否 | notion-skill处理的内容输入 |, 可选值: json/text/markdown |
+| content | string | 否 | 操作指令或JSON格式的页面/数据库/块内容 |
+| action | string | 否 | API动作，可选值: `create`/`read`/`update`/`delete`/`query`/`convert`，默认 `read` |
+| target | string | 否 | 操作目标类型，可选值: `page`/`database`/`block`/`user`，默认 `page` |
+| id | string | 否 | 目标对象ID（页面ID/数据库ID/块ID） |
+| markdown | string | 否 | Markdown文本（`convert`动作时使用，转为Notion Block格式） |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
 
 ## 输出格式
@@ -80,12 +93,19 @@ pricing_model: "per_use"
 {
   "success": true,
   "data": {
-    result: "skill 相关配置参数",
-    result: "skill 相关配置参数",
-    result: "skill 相关配置参数",
+    "object": "page",
+    "id": "page-uuid-hex-string",
+    "created_time": "2024-01-15T10:00:00.000Z",
+    "last_edited_time": "2024-01-15T10:05:00.000Z",
+    "url": "https://www.notion.so/page-uuid-hex-string",
+    "properties": {
+      "title": {"title": [{"plain_text": "周报-2024W03"}]}
+    },
     "metadata": {
       "template_used": "reviewer",
-      "word_count": 0,
+      "action": "create",
+      "target": "page",
+      "blocks_appended": 5,
       "style": "专业"
     }
   },
@@ -95,13 +115,147 @@ pricing_model: "per_use"
 
 输出模板参考: `assets/output.json`
 
+## 详细使用示例
+
+### 示例1：Markdown转Notion页面内容
+
+```text
+输入(action): convert
+输入(markdown):
+## 本周完成
+- 完成用户认证模块
+- 修复3个P0级别Bug
+
+## 下周计划
+1. 开始支付模块开发
+2. 性能优化
+
+输出(Notion Block JSON):
+{
+  "children": [
+    {"type": "heading_2", "heading_2": {"rich_text": [{"text": {"content": "本周完成"}}]}},
+    {"type": "bulleted_list_item", "bulleted_list_item": {"rich_text": [{"text": {"content": "完成用户认证模块"}}]}},
+    {"type": "bulleted_list_item", "bulleted_list_item": {"rich_text": [{"text": {"content": "修复3个P0级别Bug"}}]}},
+    {"type": "heading_2", "heading_2": {"rich_text": [{"text": {"content": "下周计划"}}]}},
+    {"type": "numbered_list_item", "numbered_list_item": {"rich_text": [{"text": {"content": "开始支付模块开发"}}]}},
+    {"type": "numbered_list_item", "numbered_list_item": {"rich_text": [{"text": {"content": "性能优化"}}]}}
+  ]
+}
+```
+
+### 示例2：创建带属性的数据库条目
+
+```json
+{
+  "action": "create",
+  "target": "page",
+  "id": "database-uuid",
+  "content": {
+    "properties": {
+      "Name": {"title": [{"text": {"content": "API网关重构"}}]},
+      "Status": {"status": {"name": "In Progress"}},
+      "Owner": {"people": [{"id": "user-uuid"}]},
+      "Tags": {"multi_select": [{"name": "后端"}, {"name": "架构"}]},
+      "Estimate": {"number": 5},
+      "Start Date": {"date": {"start": "2024-01-15"}},
+      "URL": {"url": "https://jira.example.com/DEV-123"}
+    },
+    "children": [
+      {"type": "heading_3", "heading_3": {"rich_text": [{"text": {"content": "任务描述"}}]}},
+      {"type": "paragraph", "paragraph": {"rich_text": [{"text": {"content": "将现有API网关从Nginx迁移到Kong..."}}]}},
+      {"type": "callout", "callout": {"rich_text": [{"text": {"content": "注意：迁移期间需保持双运行"}}], "color": "yellow_background"}}
+    ]
+  }
+}
+```
+
+### 示例3：查询数据库并按多个属性排序
+
+```json
+{
+  "action": "query",
+  "target": "database",
+  "id": "database-uuid",
+  "content": {
+    "filter": {
+      "or": [
+        {"property": "Status", "status": {"equals": "In Progress"}},
+        {"property": "Priority", "select": {"equals": "Critical"}}
+      ]
+    },
+    "sorts": [
+      {"property": "Priority", "direction": "descending"},
+      {"property": "Start Date", "direction": "ascending"}
+    ],
+    "page_size": 20,
+    "start_cursor": "cursor-from-previous-page"
+  }
+}
+```
+
+### 示例4：更新页面属性
+
+```json
+{
+  "action": "update",
+  "target": "page",
+  "id": "page-uuid",
+  "content": {
+    "properties": {
+      "Status": {"status": {"name": "Done"}},
+      "Completed Date": {"date": {"start": "2024-01-20"}},
+      "Notes": {"rich_text": [{"text": {"content": "已完成所有测试用例"}}]}
+    }
+  }
+}
+```
+
+## 数据库属性类型速查
+
+| 属性类型 | API标识 | JSON格式 | 说明 |
+|:---------|:--------|:---------|:-----|
+| 标题 | `title` | `{"title": [{"text": {"content": "..."}}]}` | 每库仅一个 |
+| 富文本 | `rich_text` | `{"rich_text": [{"text": {"content": "..."}}]}` | 支持样式 |
+| 数字 | `number` | `{"number": 42}` | 支持小数 |
+| 选择 | `select` | `{"select": {"name": "选项名"}}` | 单选 |
+| 多选 | `multi_select` | `{"multi_select": [{"name": "标签1"}]}` | 多选 |
+| 日期 | `date` | `{"date": {"start": "2024-01-15", "end": "2024-01-16"}}` | ISO格式 |
+| 人员 | `people` | `{"people": [{"id": "user-uuid"}]}` | 需用户ID |
+| 复选框 | `checkbox` | `{"checkbox": true}` | 布尔值 |
+| URL | `url` | `{"url": "https://..."}` | 链接 |
+| 邮箱 | `email` | `{"email": "user@example.com"}` | 邮箱 |
+| 关联 | `relation` | `{"relation": [{"id": "page-uuid"}]}` | 跨库引用 |
+| 状态 | `status` | `{"status": {"name": "Done"}}` | 状态机 |
+
+## 最佳实践
+
+### Token安全
+- 使用环境变量存储Token：`export NOTION_API_KEY="secret_xxx"`
+- 不要将Token硬编码在代码或配置文件中
+- 定期在Notion Integration设置中轮换Token
+
+### 高效查询
+- 查询数据库时始终使用 `filter` 减少返回数据量
+- 使用 `page_size`（最大100）和 `start_cursor` 分页获取大量数据
+- 避免频繁 `read` 操作，可本地缓存页面内容并定期同步
+
+### 错误重试
+- Notion API限制每秒3次请求，超限返回429状态码
+- 收到429时等待 `Retry-After` 头指定的秒数后重试
+- 批量创建操作应添加至少350ms的请求间隔
+
+### Markdown转换注意
+- Notion不支持Markdown的HTML标签，转换时会被丢弃
+- Markdown表格转为Notion表格块，但合并单元格不支持
+- 代码块的语言标识需匹配Notion支持的语言列表
+
 ## 异常处理
 
 | 错误场景 | 原因 | 处理方式 |
 |:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
+| 网络错误 | 连接超时或不可达 | 检查网络连接与代理设置 |
 
 ## 依赖说明
 
@@ -113,6 +267,7 @@ pricing_model: "per_use"
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
+| Notion API Key | API | 必需 | https://www.notion.so/my-integrations |
 
 ### API Key 配置
 - 
@@ -123,23 +278,41 @@ pricing_model: "per_use"
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export NOTION_API_KEY="secret_your_integration_token"
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
+
 ## 常见问题
 
-### Q1: 如何开始使用Notion？
-A: 
+### Q1: 如何开始使用Notion API操作？
+A: 在 https://www.notion.so/my-integrations 创建Integration获取API Key（`secret_` 开头）。在Notion中打开目标页面或数据库，点击"..."菜单 → "Connections" → 添加你的Integration名称。设置环境变量 `NOTION_API_KEY` 后，即可使用 `create`、`read`、`update`、`delete`、`query` 等action操作页面、数据库和块。
+
+### Q2: Markdown转换有哪些限制？
+A: Notion Block API不支持所有Markdown语法：HTML标签会被丢弃；Markdown表格转为Notion原生表格块但不支持合并单元格；嵌套列表最多支持3层缩进；图片链接需通过File API单独上传后引用；脚注和定义列表不支持。转换后建议在Notion中检查格式是否正确。
+
+### Q3: 如何获取数据库中所有条目？
+A: 使用 `query` action配合分页参数。首次请求设置 `page_size: 100`（最大值），响应中包含 `has_more` 字段和 `next_cursor`。如果 `has_more` 为true，将 `next_cursor` 作为 `start_cursor` 再次请求，重复直到 `has_more` 为false。合并所有页的 `results` 数组即为完整数据集。
+
+### Q4: Relation和Rollup属性如何操作？
+A: Relation属性通过 `{"relation": [{"id": "目标页面UUID"}]}` 设置关联。需先在Notion中为两个数据库创建Relation属性（指定关联的目标数据库）。Rollup属性是只读的，自动从关联页面聚合计算（如求和、计数、最早日期等），不能通过API直接设置值，只能通过更新关联的源数据间接更新。
 
 ## 错误处理
 
 | 错误场景(续)| 原因 | 处理方式 |
 |----:|:----|----:|
-| LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 重试请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
+| validation_error (400) | 请求参数格式不正确 | 检查JSON结构，确认属性类型与API规范匹配 |
+| restricted_resource (403) | Integration无权限操作目标资源 | 在Notion页面中添加Integration连接 |
+| rate_limited (429) | 请求频率超过3次/秒 | 等待Retry-After秒数后重试，添加请求间隔 |
 
 ## 已知限制
 
 - 需要API Key，无Key环境无法使用
+- API版本为v1，Notion API变更可能导致兼容性问题
+- 不支持通过API创建新的数据库（仅支持在已有页面下创建内联数据库）
+- Markdown转Block不支持嵌套引用块和嵌套代码块
+- 文件上传需使用单独的files API，本Skill不直接支持
+- 每次API请求限制返回100条记录，大量数据需分页获取

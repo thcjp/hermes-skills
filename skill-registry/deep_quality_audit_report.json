@@ -1,5 +1,5 @@
 {
-  "audit_date": "2026-07-24T06:00:32.126229",
+  "audit_date": "2026-07-24T07:23:19.320309",
   "total_skills": 2097,
   "fix_mode": false,
   "fix_all": false,
@@ -112,20 +112,22 @@
       "D": 0,
       "F": 0
     },
-    "avg_score": 93.4,
+    "avg_score": 93.6,
     "total_with_issues": 0,
     "issues_detail": []
   },
   "sellability": {
     "grade_distribution": {
-      "A": 2070,
-      "B": 27,
+      "A": 2097,
+      "B": 0,
       "C": 0,
       "D": 0
     },
-    "avg_score": 89.9,
+    "avg_score": 90.3,
     "total_below_b": 0,
-    "below_b_detail": []
+    "below_b_detail": [],
+    "total_b_grade": 0,
+    "b_grade_detail": []
   },
   "content_authenticity": {
     "grade_distribution": {
@@ -136,32 +138,9 @@
       "F": 0
     },
     "avg_score": 100.0,
-    "total_with_issues": 2,
+    "total_with_issues": 0,
     "total_template_fills": 0,
-    "issues_detail": [
-      {
-        "slug": "csv-json-converter",
-        "source": "packaged",
-        "grade": "A",
-        "score": 94,
-        "template_count": 0,
-        "empty_sections": 2,
-        "issues": [
-          "EMPTY_LIMITATIONS: 已知限制段落为空"
-        ]
-      },
-      {
-        "slug": "figma-design",
-        "source": "packaged",
-        "grade": "A",
-        "score": 94,
-        "template_count": 0,
-        "empty_sections": 2,
-        "issues": [
-          "EMPTY_LIMITATIONS: 已知限制段落为空"
-        ]
-      }
-    ]
+    "issues_detail": []
   },
   "semantic_audit": {
     "enabled": true,
@@ -176,42 +155,21 @@
     },
     "avg_score": 100.0,
     "total_template_blocks": 0,
-    "total_with_issues": 2,
-    "issues_detail": [
-      {
-        "slug": "logo-brand-identity-cellcog",
-        "source": "packaged",
-        "grade": "A",
-        "score": 85,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
-        ]
-      },
-      {
-        "slug": "ui-ux",
-        "source": "packaged",
-        "grade": "A",
-        "score": 85,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
-        ]
-      }
-    ]
+    "total_with_issues": 0,
+    "issues_detail": []
   },
   "executability_audit": {
-    "enabled": false,
-    "l7b_available_count": 0,
+    "enabled": true,
+    "l7b_available_count": 2097,
     "grade_distribution": {
-      "A": 0,
+      "A": 2097,
       "B": 0,
       "C": 0,
       "D": 0,
       "F": 0,
-      "N/A": 2097
+      "N/A": 0
     },
-    "avg_score": 0,
+    "avg_score": 100.0,
     "executable_count": 2097,
     "pass_rate": "100%",
     "check_distribution": {
